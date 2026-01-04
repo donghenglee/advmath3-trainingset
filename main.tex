@@ -1,0 +1,241 @@
+\documentclass[12pt]{exam}
+\usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{yhmath} % \wideparen
+\usepackage[colorlinks=true, linkcolor=brown, urlcolor=brown]{hyperref}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{pgfornament}
+\usepackage{multicol}
+\usetikzlibrary{shapes.geometric, positioning}
+\setCJKmainfont{KaiTi}
+
+%\includeonly{微积分}
+%\includeonly{代数,组合数学,微积分}
+\includeonly{几何}
+%includeonly{代数}
+%\setCJKmainfont[BoldFont=Noto Sans CJK SC Bold]{AR PL KaitiM GB} 
+
+%\begin{solution}
+    %\textcolor{red}{(待验证)}
+%\end{solution}
+
+%ifprintanswers
+%\begin{figure}[H]
+    %\centering        
+    %\includegraphics[width=0.5\textwidth]{images/image25.png}
+%\end{figure}
+%\fi
+
+%简体字版本latex code,注意一定要简体字,以\question开始然后才\begin{solution},尽量按照原文,用\[\]或\begin{align*}或$...$但不要用$$...$$,中文字不可以在\[\]里面,不要用\text{中文字},把\over换成\frac{}{},不要用\textbf{} ,\boxed及\ans,去掉\overline{},句号不要在\[...\]
+%give copyable latex code for every screenshot i provide
+%give copyable latex code in a chunk&
+%write into single line of \[...\] with ,\quad in between
+%put into single \[...\] with \Rightarrow in between
+%write into begin align*
+
+%unexplored/to expand later areas: 
+%2d vector
+%两圆正交
+%u\cdot v^hat=u^hat\cdot v
+%projection matrices are idempotent and symmetric
+%\int_{b}^{a} y \, dx + \int_{f(a)}^{f(b)} x \, dy = b f(b) - a f(a)
+%linear algebra线代启示录
+%陈景润,华罗庚,APMO,SEAMO,CTMC,CSMC,AMC,台湾,中国
+
+%大排版/clean up issues:
+%跟着solution排版
+%由易至难/跟着课文走?跟着课文走+综合题/挑战题
+%拆掉一元二次方程式、方程组
+%函数与方程组要group在一起?
+%轨迹方程式要从抛物线拉出来?
+%三角不等式放哪?
+%数列里有用到复数?
+%直角坐标
+%圆锥曲线
+%轨迹方程式、参数方程式、极坐标(旋转的进去极坐标)
+%三角恒等式?
+%不等式要等号成立条件
+
+%fixed issues:
+%余弦定理求边时打横写
+%\mathbb{R}显示不正常,但如果comment out \usepackage{amsmath, amssymb, amsfonts} 就不能放\square,
+%\mathbb{R}显示不正常,\setmathfont{TeX Gyre Termes Math} for \unicodemath,but not compatible with xelatex? - \usepackage{yhmath} for \wideparen
+%inverse trig,differential equations
+%微分方程步骤中间用小写c, 最后答案用大C - C_1,C_2,...
+%若指数为一积分,用exp()
+
+\newcommand{\ans}[1]{{\color{blue}#1}}
+\newcommand*{\perm}[2]{{}^{#1}\!P_{#2}}
+\newcommand*{\comb}[2]{{}^{#1}C_{#2}}
+\newcommand{\parallels}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\congr}{\ \reflectbox{$\cong$} \ }
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\leq}{\leqslant}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\separator}{% 
+  {\par\noindent
+  \begin{tikzpicture}
+    \coordinate (C) at (0,0);
+    \coordinate (D) at (\textwidth,0);
+    \path (C) to[ornament=88,options/.append style={yshift=.52pt,scale=0.8}] (D);
+  \end{tikzpicture}}
+}
+\printanswers
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{1.0,0.98,0.8} %https://latexcolor.com/
+\definecolor{PageColor}{rgb}{1.0,0.98,0.8}
+\renewcommand{\solutiontitle}{\noindent}
+\solutionsreseteqcounter
+%\SolutionEmphasis{\color{red}}
+\linespread{1.3}
+\setlength{\footskip}{0.5cm} 
+\newcommand{\figureornament}[2][1]{%
+  \raisebox{.5\fontcharht\font`0}{%
+    \pgfornament[scale=#1,color=brown]{#2}%
+  }%
+}
+\runningfooter{}{\figureornament[0.2]{11}\;\; \thepage \;\; \figureornament[0.2]{14}}{}
+
+\begin{document}
+\input{titlepage}
+\thispagestyle{empty} %clear away page 1
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont 前言
+  }
+\end{center}
+\vspace{1cm}
+
+\begin{tikzpicture}[every node/.style={inner sep=0pt}]
+\node[text width=11.5cm](Text){%
+\qquad 此训练集的雏形要追溯到 2019 年,依稀记得为当时的备赛爬了大量的AMC历届考题,创了“AMC 10 精选”的文档,其中我认为是属于统考范围的难题,便收录于另一个文档。\\[10pt]
+
+\qquad 尘封已久,直到今年5月,我在整理电脑资料时偶然翻出,看着当年的内容,心想:读了一个数学系,难免觉得发展空间实属不少。在这几个月内,我随性地在网络上寻找、采集、整理更有趣(恶心)、更值得深思(烧脑)的题目,于是诞生了——高级数学(III)训练集。\\[10pt]
+
+\qquad 起初,我并没想过要为每一题整理出解析,但发现到不少当年的题目只附答案没附解法。可惜的是,我的脑袋算是停止运作了一年,发现有一些题目对于现在的我实在是难以下咽。好吧,此乃下下策,但我决定用LaTeX开始动手为每一题补上解法、重写排版、增加新的内容。也好,既是备忘录,也是为了防止未来的我看到这些题目时会再次怀疑人生:「咦？是不是百尺竿头,更蠢一步？」\\[10pt]
+
+\qquad 依据统考范围,我把训练集大致分为代数、组合数学、几何及微积分。若你想自行动手尝试,可以在 \texttt{preamble} 中将 \verb|\printanswers| 这行注释掉。\\[10pt]
+
+\qquad 绝大部分解法都由官方或我提供,只有某些是\texttt{ChatGpt}生成后由我再校对,之中一定会有纰漏,欢迎批评指正,也希望这份训练集能助你一路披荆斩棘、越战越勇！\\[10pt]
+\hfill —— 冬恒} ;
+\color{brown}
+\node[shift={(-1.5cm,1.5cm)},anchor=north west](CNW)
+at (Text.north west) {\pgfornament[width=1.75cm]{61}};
+\node[shift={(1.5cm,1.5cm)},anchor=north east](CNE)
+at (Text.north east) {\pgfornament[width=1.75cm,symmetry=v]{61}};
+\node[shift={(-1.5cm,-1.5cm)},anchor=south west](CSW)
+at (Text.south west) {\pgfornament[width=1.75cm,symmetry=h]{61}};
+\node[shift={(1.5cm,-1.5cm)},anchor=south east](CSE)
+at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
+\pgfornamenthline{CNW}{CNE}{north}{87}
+\pgfornamenthline{CSW}{CSE}{south}{87}
+\pgfornamentvline{CNW}{CSW}{west}{87}
+\pgfornamentvline{CNE}{CSE}{east}{87}
+\end{tikzpicture}
+
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont 目录
+  }
+\end{center}
+\separator
+\begin{center}
+    {\Large 代数}
+\end{center}
+\hyperlink{函数}{函数} \dotfill \pageref{函数} \\
+\hyperlink{一元二次方程、多项式}{一元二次方程、多项式} \dotfill \pageref{一元二次方程、多项式} \\
+\hyperlink{因式定理、余式定理}{因式定理、余式定理} \dotfill \pageref{因式定理、余式定理} \\
+\hyperlink{根式}{根式} \dotfill \pageref{根式} \\
+\hyperlink{取整函数}{取整函数} \dotfill \pageref{取整函数} \\
+\hyperlink{方程组}{方程组} \dotfill \pageref{方程组} \\
+\hyperlink{指数与对数}{指数与对数} \dotfill \pageref{指数与对数} \\
+\hyperlink{不等式}{不等式} \dotfill \pageref{不等式} \\
+\hyperlink{数列与级数}{数列与级数} \dotfill \pageref{数列与级数} \\
+\hyperlink{泰勒展开式}{泰勒展开式} \dotfill \pageref{泰勒展开式} \\
+\hyperlink{二项展开式}{二项展开式} \dotfill \pageref{二项展开式} \\
+\hyperlink{数学归纳法}{数学归纳法} \dotfill \pageref{数学归纳法} \\
+\hyperlink{行列式、矩阵}{行列式、矩阵} \dotfill \pageref{行列式、矩阵} \\
+\hyperlink{复数}{复数} \dotfill \pageref{复数} 
+\begin{center}
+    {\Large 组合数学}
+\end{center}
+\hyperlink{排列与组合}{排列与组合} \dotfill \pageref{排列与组合} \\
+\hyperlink{概率、期望值}{概率、期望值} \dotfill \pageref{概率、期望值} \\
+\hyperlink{统计}{统计} \dotfill \pageref{统计}
+\begin{center}
+    {\Large 几何}
+\end{center}
+\hyperlink{解三角形}{解三角形} \dotfill \pageref{解三角形} \\
+\hyperlink{三角函数}{三角函数} \dotfill \pageref{三角函数} \\
+\hyperlink{反三角函数}{反三角函数} \dotfill \pageref{反三角函数} \\
+\hyperlink{平面向量}{平面向量} \dotfill \pageref{平面向量} \\
+\hyperlink{直角坐标}{直角坐标} \dotfill \pageref{直角坐标} \\
+\hyperlink{圆锥曲线}{圆锥曲线} \dotfill \pageref{圆锥曲线} \\
+\hyperlink{轨迹方程式、参数方程式、极坐标}{轨迹方程式、参数方程式、极坐标} \dotfill \pageref{轨迹方程式、参数方程式、极坐标} \\
+\hyperlink{立体几何、空间向量}{立体几何、空间向量} \dotfill \pageref{立体几何、空间向量} 
+\begin{center}
+    {\Large 微积分}
+\end{center}
+\hyperlink{极限}{极限} \dotfill \pageref{极限} \\
+\hyperlink{微分}{微分} \dotfill \pageref{微分} \\
+\hyperlink{积分}{积分} \dotfill \pageref{积分} \\
+\hyperlink{微分方程}{微分方程} \dotfill \pageref{微分方程} 
+
+\include{代数}
+\include{组合数学}
+\include{几何}
+\include{微积分}
+
+\pagecolor{PageColor}
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont 参考出处
+  }
+\end{center}
+\separator
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item \href{https://artofproblemsolving.com/community/c13_contests}{Arts of Problem Solving (AoPS): Contest Collections}
+    \item \href{https://brilliant.org/}{Brilliant (Kudos to the unmonetized version in the past)}
+    \item \href{https://www.imc-math.org.uk/}{International Mathematics Competition (IMC) for University Students}
+    \item \href{http://sections.maa.org/missouri/contest_archives.html}{Missouri Collegiate Mathematics Competition}
+    \item \href{https://artofproblemsolving.com/community/c3414_amc_10}{American Mathematics Competition 10}
+    \item \href{https://cemc.uwaterloo.ca/resources/past-contests?grade=All&academic_year=All&contest_category=24}{University of Waterloo CEMC - Euclid, Fermat, Cayley, Hypatia, Galois}
+    \item \href{https://www.lehigh.edu/~dmd1/oldcontests.html}{Lehigh University High School Math Contest}
+    \item \href{https://www.youtube.com/@LetsSolveMathProblems}{LetsSolveMathProblems - Weekly Math Challenges}
+    \item \href{https://www.youtube.com/@maths_505}{Maths 505 - Differential Equations}
+    \item \href{https://www.youtube.com/@MichaelPennMath}{Michael Penn}
+    \item \href{https://www.cpshs.hcc.edu.tw/resource/openfid.php?id=2000}{TRML}
+    \item \href{https://madasmaths.com/archive_maths_booklets_standard_topics_integration.html}{MadasMaths}
+    \item \href{https://math.fudan.edu.cn/gdsx/34379/list.htm}{中国复旦大学往年试题}
+    \item \href{https://www.newera.edu.my/competition/hua_lo_geng/ch/passyear.php}{雪隆森中学华罗庚杯数学比赛}
+    \item \href{https://mathcompetition.wixsite.com/chenjingrun}{厦门大学马来西亚分校-陈景润杯中学数学竞赛}
+    \item \href{https://calcgospel.top/2023/%e5%85%a9%e7%a8%ae%e9%87%8d%e8%a6%81%e6%a5%b5%e9%99%90%e6%b7%b7%e5%90%88%e7%9a%84%e6%a5%b5%e9%99%90%e9%a1%8c/}{微积分福音}
+    \item \href{https://ccjou.wordpress.com/category/%e7%b7%9a%e6%80%a7%e4%bb%a3%e6%95%b8%e5%b0%88%e6%ac%84/linear-equations/}{线代启示录}
+    \item \href{http://cfc.ehosting.com.tw/LT_C/course_3_4.html}{福气老师}    
+    \item \href{https://www.ceec.edu.tw/xmfile?xsmsid=0J052427633128416650&page=14}{指考历届试题}
+    \item \href{http://library.yuda-cloudstudy.com.tw/submenu/index/old-exam}{统测历届试题与解答}
+    \item \href{https://www.doubtnut.com/class-12/maths/determinants}{印度人的作业}
+    \item \href{https://www.gaokzx.com/search?keywords=%E6%95%B0%E5%AD%A6%E8%AF%95%E9%A2%98%E5%8F%8A%E7%AD%94%E6%A1%88}{北京高考在线}
+    \item \href{https://chu246.blogspot.com/search/label/%E6%95%99%E7%94%84}{朱式幸福教甄}
+    \item \href{https://cantor.math.ntnu.edu.tw/workshop/110hsm/index.php?menu=Exam}{普通型高级中学数学科能力竞赛(决赛)}
+    \item \href{https://www.zizzs.com/gk/jingsai/162865.html}{2014-2024全国中学生数学竞赛联赛试题及答案汇总}
+    \item \href{http://www.360doc.com/userhome.aspx?userid=31600819&cid=8}{如此醉的图书馆}
+    \item \href{https://www.jyeoo.com/shijuan/gzsx/101/}{菁优网}
+    \item \href{https://shijuan.zww.cn/gaozhong/shuxue/gaokao/1/1707.htm}{08高考文科试题分类圆锥曲线}
+    \item \href{https://shijuan.zww.cn/gaozhong/shuxue/gaokao/1/1709.htm}{08高考文科试题分类数列}
+    \item \href{https://www.facebook.com/fulun.tan.58}{福伦的数学笔记}
+\end{itemize}
+\end{multicols}
+总题数: \numquestions{}
+\end{document}

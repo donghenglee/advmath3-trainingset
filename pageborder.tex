@@ -1,0 +1,14 @@
+\begin{tikzpicture}[remember picture,overlay,every node/.style={inner sep=0pt}]
+        \node [shift={(1cm,-1cm)},brown,scale=2,anchor=north west] (CNW)
+        at (current page.north west) {\pgfornament[height=1cm,width=1cm]{61}};
+        \node [shift={(-1cm,-1cm)},brown,scale=2,anchor=north east] (CNE)
+        at (current page.north east) {\pgfornament[height=1cm,width=1cm,symmetry=v]{61}};
+        \node [shift={(1cm,1cm)},brown,scale=2,anchor=south west] (CSW)
+        at (current page.south west) {\pgfornament[height=1cm,width=1cm,symmetry=h]{61}};
+        \node [shift={(-1cm,1cm)},brown,scale=2,anchor=south east] (CSE)
+        at (current page.south east) {\pgfornament[height=1cm,width=1cm,symmetry=c]{61}};
+        \pgfornamentline[color=brown]{current page.north west}{current page.north east}{2}{87}
+        \pgfornamentline{current page.south west}{current page.south east}{2}{87}
+        \pgfornamentline{current page.north west}{current page.south west}{3}{87}
+        \pgfornamentline{current page.north east}{current page.south east}{3}{87}
+        \end{tikzpicture}%
