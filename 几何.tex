@@ -6292,7 +6292,53 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \sin \frac{\pi}{n} \cdot \sin \frac{2\pi}{n} \cdots \sin \frac{(n-1)\pi}{n} = \frac{n}{2^{n-1}}.
         \]
     \end{solution}
+\question
+计算下列乘积：
 
+(a) $\sin \frac{\pi}{2n + 1} \sin \frac{2\pi}{2n + 1} \sin \frac{3\pi}{2n + 1} \dots \sin \frac{n\pi}{2n + 1}$
+以及
+$\sin \frac{\pi}{n} \sin \frac{2\pi}{n} \sin \frac{3\pi}{n} \dots \sin \frac{(n - 1)\pi}{n}$
+
+(b) $\cos \frac{\pi}{2n + 1} \cos \frac{2\pi}{2n + 1} \cos \frac{3\pi}{2n + 1} \dots \cos \frac{n\pi}{2n + 1}$
+以及
+$\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{(n - 1)\pi}{2n}$
+
+\begin{solution}
+    (a) 设 $\omega = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n}$ 为单位的 $n$ 次复根。
+    考虑方程 $x^{n-1} + x^{n-2} + \cdots + 1 = 0$，其根为 $\omega^k$ ($k=1,2,\dots,n-1$)。
+    因此有恒等式：
+    \[ f(x) = x^{n-1} + x^{n-2} + \cdots + 1 = (x-\omega^1)(x-\omega^2)\cdots (x-\omega^{n-1}) \]
+    令 $x=1$，得：
+    \[ f(1) = n = (1-\omega^1)(1-\omega^2)\cdots (1-\omega^{n-1}) \]
+    由于 $|1 - \omega^k| = |1 - (\cos \frac{2k\pi}{n} + i \sin \frac{2k\pi}{n})| = |2 \sin^2 \frac{k\pi}{n} - 2i \sin \frac{k\pi}{n} \cos \frac{k\pi}{n}| = 2 \sin \frac{k\pi}{n}$。
+    取模可得：
+    \[ n = 2^{n-1} \sin \frac{\pi}{n} \sin \frac{2\pi}{n} \dots \sin \frac{(n-1)\pi}{n} \]
+    由此得出第一个重要结果：
+    \[ \sin \frac{\pi}{n} \sin \frac{2\pi}{n} \dots \sin \frac{(n-1)\pi}{n} = \frac{n}{2^{n-1}} \]
+    同理可证
+    （通过替换 $n$ 为 $2n+1$ 并利用对称性）：
+    \[ \sin \frac{\pi}{2n + 1} \sin \frac{2\pi}{2n + 1} \dots \sin \frac{n\pi}{2n + 1} = \frac{\sqrt{2n + 1}}{2^n} \]
+
+    (b) 对于余弦乘积，我们利用倍角公式 $\sin 2\theta = 2 \sin \theta \cos \theta$。
+    对于 $2n+1$ 的情形：
+    \[ \sin \frac{2k\pi}{2n + 1} = 2 \sin \frac{k\pi}{2n + 1} \cos \frac{k\pi}{2n + 1} \]
+    将 $k=1, 2, \dots, n$ 的等式全部相乘：
+    \[ \prod_{k=1}^{n} \sin \frac{2k\pi}{2n+1} = 2^n \left( \prod_{k=1}^{n} \sin \frac{k\pi}{2n+1} \right) \left( \prod_{k=1}^{n} \cos \frac{k\pi}{2n+1} \right) \]
+    由于 $\sin \frac{2k\pi}{2n+1}$ 的集合（当 $k$ 超过 $n/2$ 时利用 $\sin(\pi-\theta)=\sin\theta$）与 $\sin \frac{k\pi}{2n+1}$ 的集合完全相同，两边的正弦乘积项约去，得：
+    \[ \cos \frac{\pi}{2n + 1} \cos \frac{2\pi}{2n + 1} \dots \cos \frac{n\pi}{2n + 1} = \frac{1}{2^n} \]
+
+    对于 $\cos \frac{k\pi}{2n}$ 的乘积：
+    利用 $\sin \theta \cos \theta = \frac{1}{2} \sin 2\theta$：
+    \[ \left[ \prod_{k=1}^{n-1} \cos \frac{k\pi}{2n} \right] \left[ \prod_{k=1}^{n-1} \sin \frac{k\pi}{2n} \right] = \frac{1}{2^{n-1}} \prod_{k=1}^{n-1} \sin \frac{k\pi}{n} \]
+    已知右侧乘积为 $\frac{1}{2^{n-1}} \cdot \frac{n}{2^{n-1}} = \frac{n}{2^{2n-2}}$。
+    又因为 $\sin \frac{k\pi}{2n} = \cos \frac{(n-k)\pi}{2n}$，所以左侧两个括号内的数值相等。
+    取平方根（项均为正）得：
+    \[ \cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \dots \cos \frac{(n - 1)\pi}{2n} = \frac{\sqrt{n}}{2^{n-1}} \]
+
+    注：若将 (a) 的结果除以 (b) 的结果，可得正切乘积：
+    \[ \tan \frac{\pi}{2n + 1} \tan \frac{2\pi}{2n + 1} \dots \tan \frac{n\pi}{2n + 1} = \sqrt{2n + 1} \]
+    \[ \tan \frac{\pi}{2n} \tan \frac{2\pi}{2n} \dots \tan \frac{(n - 1)\pi}{2n} = 1 \]
+\end{solution}
     \question 证明:对于任意正整数 $n$,有
         \[
         \tan \frac{\pi}{2n+1} \tan \frac{2\pi}{2n+1} \cdots \tan \frac{n\pi}{2n+1} = \sqrt{2n+1}.

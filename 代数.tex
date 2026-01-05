@@ -2148,6 +2148,49 @@ S=9
 \end{solution}
 \end{parts}
 
+\question
+若相异三数 $a, b, c$ 均不为 0，且 $a + b + c = 0$，求下式的值：
+\[ \left(\frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c}\right) \left(\frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b}\right) \]
+
+\begin{solution}
+    首先，我们处理第一个括号内的通分：
+    \begin{align*}
+    \frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c} &= \frac{b^2 c - b c^2 + a c^2 - a^2 c + a^2 b - a b^2}{abc} \\
+    &= \frac{c^2(a - b) + ab(a - b) - (ac + bc)(a - b)}{abc} \\
+    &= \frac{(a - b)(c^2 + ab - ac - bc)}{abc} \\
+    &= \frac{(a - b)[c(c - a) - b(c - a)]}{abc} \\
+    &= \frac{(a - b)(c - b)(c - a)}{abc} \\
+    &= -\frac{(a - b)(b - c)(c - a)}{abc}
+    \end{align*}
+
+    接下来处理第二个括号。令 $a' = b - c$，$b' = c - a$，$c' = a - b$。
+    观察 $b' - c'$ 的关系：
+    \[ b' - c' = (c - a) - (a - b) = b + c - 2a \]
+    根据条件 $a + b + c = 0$，可知 $b + c = -a$，代入上式得：
+    \[ b' - c' = -a - 2a = -3a \]
+    由此可得 $a = -\frac{b' - c'}{3}$。同理可得：
+    \[ b = -\frac{c' - a'}{3}, \quad c = -\frac{a' - b'}{3} \]
+
+    代入第二个括号的各项中：
+    \begin{align*}
+    \frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b} &= \frac{a}{a'} + \frac{b}{b'} + \frac{c}{c'} \\
+    &= -\frac{1}{3} \left(\frac{b' - c'}{a'} + \frac{c' - a'}{b'} + \frac{a' - b'}{c'}\right)
+    \end{align*}
+    利用之前对第一部分推导的结论，将 $a', b', c'$ 代回：
+    \begin{align*}
+    \frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b} &= -\frac{1}{3} \left[ -\frac{(a' - b')(b' - c')(c' - a')}{a' b' c'} \right] \\
+    &= \frac{1}{3} \frac{(-3c)(-3a)(-3b)}{(b - c)(c - a)(a - b)} \\
+    &= -9 \frac{abc}{(a - b)(b - c)(c - a)}
+    \end{align*}
+
+    最后，将两部分相乘：
+    \begin{align*}
+    &\left[ -\frac{(a - b)(b - c)(c - a)}{abc} \right] \left[ -9 \frac{abc}{(a - b)(b - c)(c - a)} \right] \\
+    &= 9
+    \end{align*}
+    因此，原式的值为 9。
+\end{solution}
+
     \question 已知 $x^5=1$ 且 $x \neq 1$, 求
     \[
     \frac{x}{1+x^2} + \frac{x^2}{1+x^4} + \frac{x^3}{1+x} + \frac{x^4}{1+x^3} 
@@ -2886,7 +2929,7 @@ x = 1 \quad \text{或} \quad x = -\frac{a+2b}{2a+b}
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{根式}{根式} \label{根式}
+    \hypertarget{根式、绝对值、取整}{根式、绝对值、取整} \label{根式、绝对值、取整}
   }
 \end{center}
 \separator
@@ -3433,6 +3476,57 @@ x=\frac{5}{4}.
 
 \end{solution}
 
+\question
+求方程的实根：
+\[ \sqrt{x+3-4\sqrt{x-1}} + \sqrt{x+8-6\sqrt{x-1}} = 1 \]
+（所有根号均取正值）
+
+\begin{solution}
+    我们有
+    \[ x+3-4\sqrt{x-1} = x-1-4\sqrt{x-1}+4 \]
+    \[ = (\sqrt{x-1})^2-4\sqrt{x-1}+4=(\sqrt{x-1}-2)^2 \]
+
+    类似地，
+    \[ x+8-6\sqrt{x-1} = x-1-6\sqrt{x-1}+9 \]
+    \[ = (\sqrt{x-1}-3)^2 \]
+
+    因此，原方程可以写成
+    \[ \sqrt{(\sqrt{x-1}-2)^2} + \sqrt{(\sqrt{x-1}-3)^2} = 1 \]
+
+    由于题目指定根号取正值，即
+    \[ |\sqrt{x-1}-2| + |\sqrt{x-1}-3| = 1 \]
+    其中 $|y|$ 表示 $y$ 的绝对值。我们分几种情况讨论。
+
+    第一，若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \ge 0$，即若 $\sqrt{x-1} \ge 3$，$x-1 \ge 9$，$x \ge 10$，则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$，$|\sqrt{x-1}-3|=\sqrt{x-1}-3$，方程变为
+    \[ \sqrt{x-1}-2+\sqrt{x-1}-3=1 \]
+
+    由此得，
+    \begin{align*}
+    2\sqrt{x-1} &= 6 \\
+    \sqrt{x-1} &= 3 \\
+    x &= 10
+    \end{align*}
+
+    若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \le 0$，即若 $\sqrt{x-1} \ge 2$，$x \ge 5$，但 $\sqrt{x-1} \le 3$，$x \le 10$，则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$，$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$，方程变为恒等式
+    \[ \sqrt{x-1}-2-\sqrt{x-1}+3=1 \]
+    \[ 1 = 1 \]
+    因此，在 $x=5$ 和 $x=10$ 之间的所有 $x$ 值都满足方程。
+
+    若 $\sqrt{x-1}-2 \le 0$ 且 $\sqrt{x-1}-3 \le 0$，即若 $\sqrt{x-1} \le 2$，$x \le 5$，则 $|\sqrt{x-1}-2|=-\sqrt{x-1}+2$，$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$，方程变为
+    \[ -\sqrt{x-1}+2-\sqrt{x-1}+3=1 \]
+
+    由此推得
+    \begin{align*}
+    2\sqrt{x-1} &= 4 \\
+    \sqrt{x-1} &= 2 \\
+    x &= 5
+    \end{align*}
+
+    而 $\sqrt{x-1}-2 \le 0$ 且 $\sqrt{x-1}-3 \ge 0$ 的情况是不可能的。
+
+    总结以上结果，所有介于 5 和 10 之间的 $x$ 值（包含 5 和 10），即 $5 \le x \le 10$，都是原方程的解。
+\end{solution}
+
 \question 求值
 \[
 \sqrt[3]{9+4\sqrt{5}}+\sqrt[3]{9-4\sqrt{5}}
@@ -3586,6 +3680,63 @@ x=3
         \]
     \end{solution}
 
+    \question 解方程
+\[ 
+|x + 1|-|x|+3|x-1|-2|x-2|=x+2 
+\]
+
+\begin{solution}
+    我们将根据绝对值号内各项为零的临界点（$-1, 0, 1, 2$），分区间讨论其实根。
+
+    第一，设 $x \ge 2$。此时 $x + 1 > 0$，$x > 0$，$x - 1 > 0$，$x - 2 \ge 0$。
+    因此 $|x+1|= x + 1$，$|x| = x$，$|x - 1| = x - 1$，$|x - 2| = x - 2$。方程变为：
+    \[ (x+1) - x + 3(x-1) - 2(x-2) = x+2 \]
+    整理得：
+    \[ x+1 - x + 3x - 3 - 2x + 4 = x+2 \]
+    \[ x+2 = x+2 \]
+    这是一个恒等式。因此，所有大于或等于 2 的实数都是原方程的根。
+
+    第二，设 $1 \le x < 2$。此时 $x+1 > 0$，$x > 0$，$x-1 \ge 0$，$x-2 < 0$。
+    绝对值展开为：
+    \begin{align*}
+    |x+1| &= x+1 \\
+    |x| &= x \\
+    |x-1| &= x-1 \\
+    |x-2| &= -(x-2)
+    \end{align*}
+    代入方程得：
+    \[ (x+1) - x + 3(x-1) + 2(x-2) = x+2 \]
+    整理得：
+    \[ x+1 - x + 3x - 3 + 2x - 4 = x+2 \]
+    \[ 4x = 8 \implies x = 2 \]
+    该值已在之前的区间中考虑过，故在 $[1, 2)$ 区间内无新根。
+
+    第三，设 $0 \le x < 1$。此时 $|x+1| = x+1$，$|x| = x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    \[ (x+1) - x - 3(x-1) + 2(x-2) = x + 2 \]
+    整理得：
+    \[ x+1 - x - 3x + 3 + 2x - 4 = x+2 \]
+    \[ -x = x+2 \implies 2x = -2 \implies x = -1 \]
+    由于 $x = -1$ 不在区间 $[0, 1)$ 内，故应舍去。此区间无实根。
+
+    第四，设 $-1 \le x < 0$。此时 $|x+1| = x+1$，$|x| = -x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    \[ (x+1) + x - 3(x-1) + 2(x-2) = x + 2 \]
+    整理得：
+    \[ x+1 + x - 3x + 3 + 2x - 4 = x+2 \]
+    \[ x = x+2 \]
+    此方程无解。
+
+    第五，设 $x < -1$。此时 $|x+1| = -(x+1)$，$|x| = -x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    \begin{align*}
+    -(x+1) + x - 3(x-1) + 2(x-2) &= x+2 \\
+    -x - 1 + x - 3x + 3 + 2x - 4 &= x+2 \\
+    -x - 2 &= x+2 \\
+    2x &= -4 \implies x = -2
+    \end{align*}
+    $x = -2$ 属于该区间，是一个有效的根。
+
+    总结以上结果，原方程的解为 $x = -2$ 以及所有满足 $x \ge 2$ 的实数。
+\end{solution}
+
     \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
     \begin{solution}
         令
@@ -3605,17 +3756,7 @@ x=3
         969 < a^6 < 970 \quad \Rightarrow \quad \lceil a^6 \rceil = 970
         \]
     \end{solution}
-\end{questions}
-\pagebreak
 
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{取整函数}{取整函数} \label{取整函数}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
     \question
 求所有满足
 \[
@@ -11448,8 +11589,88 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
         \]
     \end{solution}
 
-    \question
-求
+    \question 证明不等式：
+(1) \[ \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} > \frac{1}{2} \]
+(2) \[ \frac{1}{n} + \frac{1}{n+1} + \cdots + \frac{1}{2n} < \frac{3}{4} + \frac{1}{n} \]
+
+\begin{solution}
+    (a) 首先，容易看出：
+    \[ \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} > \frac{1}{2n} + \frac{1}{2n} + \cdots + \frac{1}{2n} = \frac{1}{2} \]
+    上述不等式右边共有 $n$ 项。
+
+    但同时，我们可以将第二部分的和式通过倒序相加（或首尾配对）的方法重写：
+    \begin{align*}
+    \frac{1}{n} + \frac{1}{n+1} + \cdots + \frac{1}{2n} &= \frac{1}{2} \left[ \left(\frac{1}{n} + \frac{1}{2n}\right) + \left(\frac{1}{n+1} + \frac{1}{2n-1}\right) + \cdots + \left(\frac{1}{2n} + \frac{1}{n}\right) \right] \\
+    &= \frac{1}{2} \left[ \frac{3n}{2n^2} + \frac{3n}{2n^2 + (n-1)} + \frac{3n}{2n^2 + 2(n-2)} + \cdots + \frac{3n}{2n^2} \right]
+    \end{align*}
+    由于分母中的项 $k(n-k) \ge 0$，我们可以通过放缩去掉这些正项从而增大分数值：
+    \[ < \frac{1}{2} \left[ \frac{3n}{2n^2} + \frac{3n}{2n^2} + \cdots + \frac{3n}{2n^2} \right] \]
+    上式括号内共有 $n+1$ 项。于是：
+    \[ = \frac{1}{2} (n+1) \frac{3}{2n} = \frac{3}{4} + \frac{1}{4n} < \frac{3}{4} + \frac{1}{n} \]
+    这就证明了题目中的结论。
+\end{solution}
+
+\question
+计算数 $1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{4}} + \cdots + \frac{1}{\sqrt{1,000,000}}$ 的整数部分。
+
+\begin{solution}
+    (a) 首先我们证明不等式：
+    \[ 2\sqrt{n+1} - 2\sqrt{n} < \frac{1}{\sqrt{n}} < 2\sqrt{n} - 2\sqrt{n-1} \]
+    
+    对于左边的不等式，我们将分子有理化：
+    \[ 2\sqrt{n+1} - 2\sqrt{n} = \frac{2(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{\sqrt{n+1} + \sqrt{n}} = \frac{2}{\sqrt{n+1} + \sqrt{n}} < \frac{2}{\sqrt{n} + \sqrt{n}} = \frac{1}{\sqrt{n}} \]
+    同理可证右边的不等式。
+    
+    现在利用上述不等式对原和式进行估计。
+    对于下界，我们利用左边的不等式 $ \frac{1}{\sqrt{n}} > 2(\sqrt{n+1} - \sqrt{n}) $：
+    \begin{align*}
+    1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{1,000,000}} &> 1 + 2 [(\sqrt{3} - \sqrt{2}) + (\sqrt{4} - \sqrt{3}) + \cdots + (\sqrt{1,000,001} - \sqrt{1,000,000})] \\
+    &= 1 + 2(\sqrt{1,000,001} - \sqrt{2}) \\
+    &> 2 \cdot 1000 - \sqrt{8} + 1 > 2000 - 3 + 1 = 1998
+    \end{align*}
+    
+    对于上界，我们利用右边的不等式 $ \frac{1}{\sqrt{n}} < 2(\sqrt{n} - \sqrt{n-1}) $：
+    \begin{align*}
+    1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{1,000,000}} &< 1 + 2 [(\sqrt{2} - 1) + (\sqrt{3} - \sqrt{2}) + \cdots + (\sqrt{1,000,000} - \sqrt{999,999})] \\
+    &= 1 + 2(\sqrt{1,000,000} - 1) \\
+    &= 1 + 2 \cdot 999 = 1999
+    \end{align*}
+    
+    综上所述，该数的整数部分等于 1998。
+\end{solution}
+
+\question
+求数 $\frac{1}{\sqrt[3]{4}} + \frac{1}{\sqrt[3]{5}} + \frac{1}{\sqrt[3]{6}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}}$ 的整数部分。
+
+\begin{solution}
+    首先，通过比较二项式展开式，我们注意到对于每一个自然数 $n$：
+    \[ \left(1 + \frac{2}{3} \cdot \frac{1}{n}\right)^3 > \left(1 + \frac{1}{n}\right)^2 \]
+    两边开立方根并整理可得：
+    \[ \frac{1}{\sqrt[3]{n^2}} > \frac{3}{2} [ \sqrt[3]{(n+1)^2} - \sqrt[3]{n^2} ] \]
+    同理，利用类似的展开比较可以得到下界放缩：
+    \[ \frac{1}{\sqrt[3]{n^2}} < \frac{3}{2} [ \sqrt[3]{n^2} - \sqrt[3]{(n-1)^2} ] \]
+    由此我们得到关键的不等式：
+    \[ \frac{3}{2} [ \sqrt[3]{(n+1)^2} - \sqrt[3]{n^2} ] < \frac{1}{\sqrt[3]{n}} < \frac{3}{2} [ \sqrt[3]{n^2} - \sqrt[3]{(n-1)^2} ] \]
+    
+    现在利用此不等式对原和式进行估计。对于下界：
+    \begin{align*}
+    \frac{1}{\sqrt[3]{4}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}} &> \frac{3}{2} [(\sqrt[3]{5^2} - \sqrt[3]{4^2}) + \cdots + (\sqrt[3]{1,000,001^2} - \sqrt[3]{1,000,000^2})] \\
+    &= \frac{3}{2} (\sqrt[3]{1,000,002,000,001} - \sqrt[3]{16}) \\
+    &> \frac{3}{2} \cdot 10,000 - \sqrt[3]{54} \\
+    &> 15,000 - 4 = 14,996
+    \end{align*}
+    
+    对于上界：
+    \begin{align*}
+    \frac{1}{\sqrt[3]{4}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}} &< \frac{3}{2} [(\sqrt[3]{4^2} - \sqrt[3]{3^2}) + \cdots + (\sqrt[3]{1,000,000^2} - \sqrt[3]{999,999^2})] \\
+    &= \frac{3}{2} (\sqrt[3]{1,000,000,000,000} - \sqrt[3]{9}) \\
+    &< \frac{3}{2} (10,000 - 2) = 14,997
+    \end{align*}
+    
+    综上所述，该数的整数部分等于 14,996。
+\end{solution}
+
+    \question 求
 \[
 \sum_{m=1}^{19} \sum_{n=m}^{19} (2m+n).
 \]
@@ -12789,7 +13010,8 @@ I(1)
 \begin{questions}
     \question 求\((x^2 + x + y)^5\) 展开式中\( x^5 y^2 \) 的系数。  
     \begin{solution}
-        系数为\[
+        系数为
+        \[
         \comb{5}{2}\comb{3}{1}\comb{2}{2}=30
         \]
     \end{solution}
@@ -12819,6 +13041,51 @@ I(1)
         
         展开式$(1+x^2)^{11}$中 $x^8$ 系数为 $\comb{10}{4} = \dfrac{11 \cdot 10 \cdot 9 \cdot 8}{4 \cdot 3 \cdot 2} = 330$,故原式中 $x^6$ 系数为 $330$.
     \end{solution}
+
+    \question
+求下列多项式中 $x^{50}$ 的系数：
+
+(a) $(1+x)^{1000} + x(1+x)^{999} + x^2(1+x)^{998} + \dots + x^{1000}$
+
+(b) $(1+x) + 2(1+x)^2 + 3(1+x)^3 + \dots + 1000(1+x)^{1000}$
+
+\begin{solution}
+    (a) 利用等比数列求和公式以及二项式定理，我们得到：
+    \begin{align*}
+    (1+x)^{1000} + x(1+x)^{999} + \dots + x^{1000} &= \frac{(1+x)^{1001} - x^{1001}}{(1+x) - x} \\
+    &= \frac{(1+x)^{1001} - x^{1001}}{1} \\
+    &= (1+x)^{1001} - x^{1001} \\
+    &= 1 + \comb{1001}{1}x + \comb{1001}{2}x^2 + \dots + \comb{1001}{1001}x^{1001} - x^{1001}
+    \end{align*}
+    因此，所求的系数等于：
+    \[ \comb{1001}{50} = \frac{1001!}{50!\,951!} \]
+
+    (b) 设所给多项式为 $P(x)$。我们可以写出：
+    \begin{align*}
+    x P(x) &= (1+x)P(x) - P(x) \\
+    &= \left[(1+x)^2 + 2(1+x)^3 + \dots + 999(1+x)^{1000} + 1000(1+x)^{1001}\right] \\
+    &\quad - \left[(1+x) + 2(1+x)^2 + 3(1+x)^3 + \dots + 1000(1+x)^{1000}\right] \\
+    &= 1000(1+x)^{1001} - \left[(1+x) + (1+x)^2 + (1+x)^3 + \dots + (1+x)^{1000}\right] \\
+    &= 1000(1+x)^{1001} - \frac{(1+x)[(1+x)^{1000} - 1]}{(1+x) - 1} \\
+    &= 1000(1+x)^{1001} - \frac{(1+x)^{1001} - (1+x)}{x}
+    \end{align*}
+    从而得出：
+    \[ P(x) = \frac{1000(1+x)^{1001}}{x} - \frac{(1+x)^{1001} - (1+x)}{x^2} \]
+    
+    为了找到 $P(x)$ 中 $x^{50}$ 的系数，我们需要找到 $\frac{1000(1+x)^{1001}}{x}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{51}$ 的系数），以及 $\frac{(1+x)^{1001}}{x^2}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{52}$ 的系数）。
+    
+    展开式如下：
+    \begin{align*}
+    P(x) &= 1000 \sum_{k=0}^{1001} \comb{1001}{k} x^{k-1} - \sum_{k=0}^{1001} \comb{1001}{k} x^{k-2} + \frac{1+x}{x^2} \\
+    \end{align*}
+    
+    因此，所求的系数为：
+    \begin{align*}
+    1000 \comb{1001}{51} - \comb{1001}{52} &= \frac{1000 \cdot 1001!}{51!\,950!} - \frac{1001!}{52!\,950!} \\
+    &= \frac{1001!}{52!\,950!} \left[52 \cdot 1000 - 950\right] \\
+    &= \frac{51050 \cdot 1001!}{52!\,950!}
+    \end{align*}
+\end{solution}
 
     \question 求\(\left[a + (b + c)^2\right]^8\) 展开式中 \( a^5 b^4 c^2 \) 的系数。
     \begin{solution}
@@ -13694,6 +13961,32 @@ f\left(\frac{1}{2}\right)
 \]
 \end{solution}
 
+\question
+计算：
+\[ \cos \alpha + \comb{n}{1} \cos 2\alpha + \comb{n}{2} \cos 3\alpha + \dots + \comb{n}{n-1} \cos n\alpha + \cos (n + 1)\alpha \]
+以及
+\[ \sin \alpha + \comb{n}{1} \sin 2\alpha + \comb{n}{2} \sin 3\alpha + \dots + \comb{n}{n-1} \sin n\alpha + \sin (n + 1)\alpha \]
+
+\begin{solution}
+    我们需要计算下列复数和的实部与虚部系数：
+    \[ (\cos \alpha + i \sin \alpha) + \comb{n}{1}(\cos 2\alpha + i \sin 2\alpha) + \comb{n}{2}(\cos 3\alpha + i \sin 3\alpha) + \dots + [\cos (n + 1)\alpha + i \sin (n + 1)\alpha] \]
+    令 $x = \cos \alpha + i \sin \alpha$。利用棣莫弗公式（De Moivre's formula）和二项式定理，我们可以将该和式转化为以下形式：
+    \begin{align*}
+    x + \comb{n}{1} x^2 + \comb{n}{2} x^3 + \dots + x^{n+1} &= x(1 + x)^n \\
+    &= (\cos \alpha + i \sin \alpha)(1 + \cos \alpha + i \sin \alpha)^n \\
+    &= (\cos \alpha + i \sin \alpha)\left(2\cos^2 \frac{\alpha}{2} + 2i \sin \frac{\alpha}{2} \cos \frac{\alpha}{2}\right)^n \\
+    &= (\cos \alpha + i \sin \alpha) \left[ 2\cos \frac{\alpha}{2} \left(\cos \frac{\alpha}{2} + i \sin \frac{\alpha}{2}\right) \right]^n \\
+    &= 2^n \cos^n \frac{\alpha}{2} (\cos \alpha + i \sin \alpha)\left(\cos \frac{n\alpha}{2} + i \sin \frac{n\alpha}{2}\right) \\
+    &= 2^n \cos^n \frac{\alpha}{2} \left[ \cos \left(\alpha + \frac{n\alpha}{2}\right) + i \sin \left(\alpha + \frac{n\alpha}{2}\right) \right] \\
+    &= 2^n \cos^n \frac{\alpha}{2} \left(\cos \frac{n+2}{2} \alpha + i \sin \frac{n+2}{2} \alpha\right)
+    \end{align*}
+    由此可得：
+    \begin{align*}
+    \cos \alpha + \comb{n}{1} \cos 2\alpha + \comb{n}{2} \cos 3\alpha + \dots + \cos (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \cos \frac{n+2}{2} \alpha \\
+    \sin \alpha + \comb{n}{1} \sin 2\alpha + \comb{n}{2} \sin 3\alpha + \dots + \sin (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \sin \frac{n+2}{2} \alpha
+    \end{align*}
+\end{solution}
+
     \question
 (a) 证明对于任意正整数 $n$ 有
 \begin{align*}
@@ -13860,6 +14153,109 @@ f(x)=\sum_{r=0}^{\infty}\binom{2r}{r}\left(\frac{1}{4}x\right)^r。
 \vspace{1pt}
 
 \begin{questions}
+    \question 证明对任意正整数 $n$, 
+\[
+(n + 1)(n + 2)(n + 3) \cdots (2n - 1)(2n) = 2^n \cdot 1 \cdot 3 \cdot 5 \cdots (2n - 1)
+\]
+
+\begin{solution}
+    定义命题：
+    \[
+    P_n: (n + 1)(n + 2) \cdots (2n) = 2^n \cdot 1 \cdot 3 \cdots (2n - 1)
+    \]
+    其中 $n \in \mathbb{Z}^{+}$。观察当 $n=1$ 时，
+    \[
+    \text{左边} = 1+1=2, \quad \text{右边} = 2^1 \cdot 1 = 2
+    \]
+    左边等于右边，即 $P_1$ 成立。现假设 $P_k$ 成立，即当 $n=k$ 时，
+    \[
+    (k + 1)(k + 2) \cdots (2k) = 2^k \cdot 1 \cdot 3 \cdots (2k - 1)
+    \]
+    观察当 $n=k+1$ 时，左边为：
+    \begin{align*}
+    (k + 2)(k + 3) \cdots (2k)(2k + 1)(2k + 2) &= \frac{(k + 1)(k + 2) \cdots (2k) \cdot (2k + 1) \cdot 2(k + 1)}{k + 1} \\
+    &= \frac{2^k \cdot 1 \cdot 3 \cdots (2k - 1) \cdot (2k + 1) \cdot 2(k + 1)}{k + 1} \\
+    &= 2^{k + 1} \cdot 1 \cdot 3 \cdots (2k - 1)(2k + 1)
+    \end{align*}
+    此时左边等于 $P_{k+1}$ 的右边，因此 $P_{k+1}$ 亦成立。
+    
+    即 $P_k \implies P_{k+1}$。由数学归纳法，$P_n$ 对任意正整数 $n$ 都成立。
+\end{solution}
+
+\question 证明对任意正整数 $n \ge p$,
+\[
+\sum_{i=1}^{n-p+1} \frac{1}{i(i+1)\cdots(i+p-1)} = \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(n-p+2)(n-p+3)\cdots n} \right]
+\]
+
+\begin{solution}
+    定义命题 $P_n$ 为上述等式。其中 $n, p \in \mathbb{Z}^{+}$ 且 $p > 1$。
+    
+    第一步：当 $n = p$ 时，
+    左边 $= \frac{1}{1 \cdot 2 \cdots p} = \frac{1}{p!}$。
+    右边 $= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{2 \cdot 3 \cdots p} \right] = \frac{1}{p-1} \cdot \frac{p-1}{p!} = \frac{1}{p!}$。
+    左边等于右边，即 $P_p$ 成立。
+
+    第二步：假设当 $n = k$ ($k \ge p$) 时结论成立，即：
+    \[
+    \sum_{i=1}^{k-p+1} \frac{1}{i \cdots (i+p-1)} = \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+2) \cdots k} \right]
+    \]
+
+    第三步：考虑当 $n = k + 1$ 时的情况，左边为：
+    \begin{align*}
+    \sum_{i=1}^{k-p+2} \frac{1}{i \cdots (i+p-1)} &= \sum_{i=1}^{k-p+1} \frac{1}{i \cdots (i+p-1)} + \frac{1}{(k-p+2) \cdots (k+1)} \\
+    &= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+2) \cdots k} \right] + \frac{1}{(k-p+2) \cdots (k+1)} \\
+    &= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \left( \frac{1}{(k-p+2) \cdots k} - \frac{p-1}{(k-p+2) \cdots (k+1)} \right) \right]
+    \end{align*}
+    对括号内进行通分：
+    \[
+    \frac{(k+1) - (p-1)}{(k-p+2) \cdots (k+1)} = \frac{k-p+2}{(k-p+2)(k-p+3) \cdots (k+1)} = \frac{1}{(k-p+3) \cdots (k+1)}
+    \]
+    由此可得：
+    \[
+    \text{左边} = \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+3) \cdots (k+1)} \right]
+    \]
+    此时左边等于 $P_{k+1}$ 的右边，因此 $P_{k+1}$ 亦成立。
+    
+    即 $P_k \implies P_{k+1}$。由数学归纳法，$P_n$ 对任意正整数 $n \ge p$ 均成立。
+\end{solution}
+
+\question
+证明：对于任意整数 $n > 1$，有
+\[ \frac{1}{2} \cdot \frac{3}{4} \cdot \frac{5}{6} \cdots \frac{2n - 1}{2n} < \frac{1}{\sqrt{3n + 1}} \]
+据此,试证
+\[
+\frac{1}{2} \cdot \frac{3}{4} \cdot \frac{5}{6} \cdots \frac{99}{100} < \frac{1}{12}
+\]
+\begin{solution}
+    我们使用数学归纳法进行证明。
+
+    第一步：当 $n = 1$ 时，
+    \[ \text{左边} = \frac{1}{2}, \quad \text{右边} = \frac{1}{\sqrt{3(1) + 1}} = \frac{1}{2} \]
+    此时左边等于右边（注：题目要求证明 $n>1$ 时的严格不等式，此处作为归纳基础）。
+
+    第二步：假设当 $n = k$ 时不等式（或等式）成立，即：
+    \[ \frac{1}{2} \cdot \frac{3}{4} \cdots \frac{2k - 1}{2k} \le \frac{1}{\sqrt{3k + 1}} \]
+
+    第三步：考虑当 $n = k + 1$ 时，左边乘积项变为：
+    \[ \text{左边} = \left( \frac{1}{2} \cdots \frac{2k - 1}{2k} \right) \cdot \frac{2k + 1}{2k + 2} \le \frac{1}{\sqrt{3k + 1}} \cdot \frac{2k + 1}{2k + 2} \]
+    为了证明结论成立，我们需要证明 $\frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} < \frac{1}{\sqrt{3(k + 1) + 1}}$。
+    我们对不等式左边项的平方进行分析：
+    \begin{align*}
+    \left[ \frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} \right]^2 &= \frac{(2k + 1)^2}{(4k^2 + 8k + 4)(3k + 1)} \\
+    &= \frac{(2k + 1)^2}{12k^3 + 28k^2 + 20k + 4} \\
+    &= \frac{(2k + 1)^2}{(12k^3 + 28k^2 + 19k + 4) + k}
+    \end{align*}
+    注意到上式分母中括号内的部分恰好等于 $(2k + 1)^2(3k + 4)$。因此：
+    \[ \frac{(2k + 1)^2}{(2k + 1)^2(3k + 4) + k} < \frac{(2k + 1)^2}{(2k + 1)^2(3k + 4)} = \frac{1}{3k + 4} \]
+    这表明：
+    \[ \frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} < \frac{1}{\sqrt{3k + 4}} \]
+    即 $P_{k+1}$ 成立。
+
+    综上所述，由数学归纳法可知，原不等式对所有 $n > 1$ 均成立。
+
+    据此,令$n=50$,得
+\end{solution}
+
 \question 已知
 \[
 f(n)=3^{2n+4}-2^{2n},\quad n\in\mathbb{N},
