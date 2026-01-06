@@ -1734,7 +1734,7 @@ BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow 
         \]
     \end{solution}
 
-    \question 在直角$\triangle ABC$中，$D,E,F$分别为三边的中点，$G$为重心，且
+    \question 在直角$\triangle ABC$中,$D,E,F$分别为三边的中点,$G$为重心,且
     \[
     GD^2+GE^2+GF^2=\frac{50}{3}
     \]
@@ -1768,7 +1768,7 @@ BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow 
         \[
         GA^2+GB^2+GC^2=\frac13(AB^2+BC^2+AC^2)
         \]
-        又$D,E,F$分别为三边的中点，$G$为重心，有
+        又$D,E,F$分别为三边的中点,$G$为重心,有
         \[
         GD^2+GE^2+GF^2=\frac14(GA^2+GB^2+GC^2)=\frac1{12}(AB^2+BC^2+AC^2)
         \]
@@ -6305,10 +6305,10 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
 
 \begin{solution}
     (a) 设 $\omega = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n}$ 为单位的 $n$ 次复根。
-    考虑方程 $x^{n-1} + x^{n-2} + \cdots + 1 = 0$，其根为 $\omega^k$ ($k=1,2,\dots,n-1$)。
+    考虑方程 $x^{n-1} + x^{n-2} + \cdots + 1 = 0$,其根为 $\omega^k$ ($k=1,2,\dots,n-1$)。
     因此有恒等式：
     \[ f(x) = x^{n-1} + x^{n-2} + \cdots + 1 = (x-\omega^1)(x-\omega^2)\cdots (x-\omega^{n-1}) \]
-    令 $x=1$，得：
+    令 $x=1$,得：
     \[ f(1) = n = (1-\omega^1)(1-\omega^2)\cdots (1-\omega^{n-1}) \]
     由于 $|1 - \omega^k| = |1 - (\cos \frac{2k\pi}{n} + i \sin \frac{2k\pi}{n})| = |2 \sin^2 \frac{k\pi}{n} - 2i \sin \frac{k\pi}{n} \cos \frac{k\pi}{n}| = 2 \sin \frac{k\pi}{n}$。
     取模可得：
@@ -6319,23 +6319,23 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
     （通过替换 $n$ 为 $2n+1$ 并利用对称性）：
     \[ \sin \frac{\pi}{2n + 1} \sin \frac{2\pi}{2n + 1} \dots \sin \frac{n\pi}{2n + 1} = \frac{\sqrt{2n + 1}}{2^n} \]
 
-    (b) 对于余弦乘积，我们利用倍角公式 $\sin 2\theta = 2 \sin \theta \cos \theta$。
+    (b) 对于余弦乘积,我们利用倍角公式 $\sin 2\theta = 2 \sin \theta \cos \theta$。
     对于 $2n+1$ 的情形：
     \[ \sin \frac{2k\pi}{2n + 1} = 2 \sin \frac{k\pi}{2n + 1} \cos \frac{k\pi}{2n + 1} \]
     将 $k=1, 2, \dots, n$ 的等式全部相乘：
     \[ \prod_{k=1}^{n} \sin \frac{2k\pi}{2n+1} = 2^n \left( \prod_{k=1}^{n} \sin \frac{k\pi}{2n+1} \right) \left( \prod_{k=1}^{n} \cos \frac{k\pi}{2n+1} \right) \]
-    由于 $\sin \frac{2k\pi}{2n+1}$ 的集合（当 $k$ 超过 $n/2$ 时利用 $\sin(\pi-\theta)=\sin\theta$）与 $\sin \frac{k\pi}{2n+1}$ 的集合完全相同，两边的正弦乘积项约去，得：
+    由于 $\sin \frac{2k\pi}{2n+1}$ 的集合（当 $k$ 超过 $n/2$ 时利用 $\sin(\pi-\theta)=\sin\theta$）与 $\sin \frac{k\pi}{2n+1}$ 的集合完全相同,两边的正弦乘积项约去,得：
     \[ \cos \frac{\pi}{2n + 1} \cos \frac{2\pi}{2n + 1} \dots \cos \frac{n\pi}{2n + 1} = \frac{1}{2^n} \]
 
     对于 $\cos \frac{k\pi}{2n}$ 的乘积：
     利用 $\sin \theta \cos \theta = \frac{1}{2} \sin 2\theta$：
     \[ \left[ \prod_{k=1}^{n-1} \cos \frac{k\pi}{2n} \right] \left[ \prod_{k=1}^{n-1} \sin \frac{k\pi}{2n} \right] = \frac{1}{2^{n-1}} \prod_{k=1}^{n-1} \sin \frac{k\pi}{n} \]
     已知右侧乘积为 $\frac{1}{2^{n-1}} \cdot \frac{n}{2^{n-1}} = \frac{n}{2^{2n-2}}$。
-    又因为 $\sin \frac{k\pi}{2n} = \cos \frac{(n-k)\pi}{2n}$，所以左侧两个括号内的数值相等。
+    又因为 $\sin \frac{k\pi}{2n} = \cos \frac{(n-k)\pi}{2n}$,所以左侧两个括号内的数值相等。
     取平方根（项均为正）得：
     \[ \cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \dots \cos \frac{(n - 1)\pi}{2n} = \frac{\sqrt{n}}{2^{n-1}} \]
 
-    注：若将 (a) 的结果除以 (b) 的结果，可得正切乘积：
+    注：若将 (a) 的结果除以 (b) 的结果,可得正切乘积：
     \[ \tan \frac{\pi}{2n + 1} \tan \frac{2\pi}{2n + 1} \dots \tan \frac{n\pi}{2n + 1} = \sqrt{2n + 1} \]
     \[ \tan \frac{\pi}{2n} \tan \frac{2\pi}{2n} \dots \tan \frac{(n - 1)\pi}{2n} = 1 \]
 \end{solution}
@@ -6455,71 +6455,32 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
         \]
     \end{solution}
 
-\question
-已知锐角 $\theta$ 和 $\phi$ 满足
-\[
-2\cos\theta = \cos\phi, \quad 2\sin\theta = 3\sin\phi,
-\]
-证明
-\[
-\theta + \phi = \pi - \arctan \sqrt{15}.
-\]
-
-\begin{solution}
-
-\noindent
-将已知两式平方并相加得,
-\[
-4(\cos^2\theta + \sin^2\theta) = \cos^2\phi + 9\sin^2\phi \implies 4 = \cos^2\phi + 9\sin^2\phi.
-\]
-
-\noindent
-利用 $\cos^2\phi = 1-\sin^2\phi$：
-\[
-4 = 1 - \sin^2\phi + 9\sin^2\phi = 1 + 8\sin^2\phi \implies 3 = 8\sin^2\phi \implies \sin^2\phi = \frac{3}{8}.
-\]
-
-\noindent
-由于 $\phi$ 为锐角,取正号：
-\[
-\sin\phi = \sqrt{\frac{3}{8}}.
-\]
-
-\medskip
-\textbf{步骤 2：求 $\theta$}：
-
-\[
-4\sin^2\theta = 9\sin^2\phi = 9 \cdot \frac{3}{8} = \frac{27}{8} \implies \sin\theta = \sqrt{\frac{27}{32}}.
-\]
-
-\medskip
-\textbf{步骤 3：求 $\tan\theta$ 和 $\tan\phi$}：
-
-\[
-\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{\sqrt{27/32}}{\sqrt{5}/4} = \frac{\sqrt{27}}{\sqrt{5}}, \quad 
-\tan\phi = \frac{\sin\phi}{\cos\phi} = \frac{\sqrt{3/8}}{\sqrt{5}/4} = \frac{\sqrt{3}}{\sqrt{5}}.
-\]
-
-\medskip
-\textbf{步骤 4：使用 $\tan$ 的和角公式}：
-
-\[
-\tan(\theta+\phi) = \frac{\tan\theta + \tan\phi}{1 - \tan\theta\tan\phi} = \frac{\frac{\sqrt{27}}{\sqrt{5}} + \frac{\sqrt{3}}{\sqrt{5}}}{1 - \frac{\sqrt{27}}{\sqrt{5}}\cdot \frac{\sqrt{3}}{\sqrt{5}}} = \frac{\frac{4\sqrt{3}}{\sqrt{5}}}{1 - \frac{9}{5}} = \frac{4\sqrt{3}/\sqrt{5}}{-4/5} = -\sqrt{15}.
-\]
-
-\medskip
-\textbf{步骤 5：确定象限}：
-
-\[
-\tan(\theta+\phi) = -\sqrt{15} \implies \theta+\phi = \arctan(-\sqrt{15}) + n\pi.
-\]
-
-由于 $0<\theta+\phi<\pi$,取
-\[
-\theta+\phi = \pi - \arctan\sqrt{15}.
-\]
-
-\end{solution}
+    \question 已知锐角 $\theta,\phi$ 满足
+    \[
+    2\cos\theta = \cos\phi, \quad 2\sin\theta = 3\sin\phi,
+    \]
+    证明
+    \[
+    \theta + \phi = \pi - \arctan \sqrt{15}.
+    \]
+    \begin{solution}
+        将已知两式平方并相加,可得
+        \[
+        4(\cos^2\theta + \sin^2\theta) = \cos^2\phi + 9\sin^2\phi \Rightarrow \sin^2\phi = \frac{3}{8} \Rightarrow \sin\phi = \sqrt{\frac{3}{8}}>0
+        \]
+        同时可得
+        \[
+        4\sin^2\theta = 9\sin^2\phi = \frac{27}{8} \Rightarrow \sin\theta = \sqrt{\frac{27}{32}}
+        \]
+        于是$\tan\theta =\sqrt{\dfrac{27}{5}},\tan\phi=\sqrt{\dfrac{3}{5}}$,且
+        \[
+        \tan(\theta+\phi) = \frac{\tan\theta + \tan\phi}{1 - \tan\theta\tan\phi} = -\sqrt{15}
+        \]
+        由于 $0<\theta+\phi<\pi$,取
+        \[
+        \theta+\phi = \pi - \arctan\sqrt{15}
+        \]
+    \end{solution}
 
     \question 已知
     \[
@@ -6564,97 +6525,42 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
         \]
     \end{solution}
 
-    \question
-解方程
-\[
-\tan^{-1}\!\left[x\cos\!\left(2\sin^{-1}\frac{1}{x}\right)\right]=\frac{\pi}{4}.
-\]
-
-\begin{solution}
-两边取正切,得
-\[
-x\cos\left(2\sin^{-1}\frac{1}{x}\right)=1,
-\]
-从而
-\[
-\cos\left(2\sin^{-1}\frac{1}{x}\right)=\frac{1}{x}.
-\]
-
-于是有
-\[
-2\sin^{-1}\frac{1}{x}=\pm\cos^{-1}\frac{1}{x}\pm 2n\pi,\quad n\in\mathbb{Z}.
-\]
-
-利用恒等式
-\[
-\sin^{-1}A+\cos^{-1}A=\frac{\pi}{2},
-\]
-可得
-\[
-2\sin^{-1}\frac{1}{x}
-=\pm\left(\frac{\pi}{2}-\sin^{-1}\frac{1}{x}\right)\pm 2n\pi.
-\]
-
-分别讨论两种情况：
-
-第一种情况,
-\[
-2\sin^{-1}\frac{1}{x}
-=\frac{\pi}{2}-\sin^{-1}\frac{1}{x}\pm 2n\pi,
-\]
-即
-\[
-3\sin^{-1}\frac{1}{x}=\frac{\pi}{2}\pm 2n\pi,
-\]
-从而
-\[
-\sin^{-1}\frac{1}{x}=\frac{\pi}{6}\pm\frac{2n\pi}{3}.
-\]
-
-第二种情况,
-\[
-2\sin^{-1}\frac{1}{x}
-=-\frac{\pi}{2}+\sin^{-1}\frac{1}{x}\pm 2n\pi,
-\]
-即
-\[
-\sin^{-1}\frac{1}{x}=-\frac{\pi}{2}\pm 2n\pi.
-\]
-
-由于反正弦函数的值域为
-\[
--\frac{\pi}{2}\leq \sin^{-1}t\leq \frac{\pi}{2},
-\]
-故只可能取
-\[
-\sin^{-1}\frac{1}{x}=\frac{\pi}{6}
-\quad\text{或}\quad
-\sin^{-1}\frac{1}{x}=-\frac{\pi}{2}.
-\]
-
-当 $\sin^{-1}\frac{1}{x}=\frac{\pi}{6}$ 时,
-\[
-\frac{1}{x}=\sin\frac{\pi}{6}=\frac{1}{2},
-\]
-得
-\[
-x=2.
-\]
-
-当 $\sin^{-1}\frac{1}{x}=-\frac{\pi}{2}$ 时,
-\[
-\frac{1}{x}=\sin\left(-\frac{\pi}{2}\right)=-1,
-\]
-得
-\[
-x=-1.
-\]
-
-综上,原方程的解为
-\[
-x=2 \quad \text{或} \quad x=-1.
-\]
-\end{solution}
+    \question 解方程
+    \[
+    \tan^{-1}\!\left[x\cos\!\left(2\sin^{-1}\frac{1}{x}\right)\right]=\frac{\pi}{4}.
+    \]
+    \begin{solution}
+        两边取正切,得
+        \[
+        x\cos\left(2\sin^{-1}\frac{1}{x}\right)=1 \Rightarrow
+        \cos\left(2\sin^{-1}\frac{1}{x}\right)=\frac{1}{x}
+        \]
+        于是有
+        \[
+        2\sin^{-1}\frac{1}{x}=\pm\cos^{-1}\frac{1}{x}\pm 2n\pi,\quad n=0,1,2,3,\dots
+        \]
+        利用恒等式$\sin^{-1}t+\cos^{-1}t=\dfrac{\pi}{2}$,可得
+        \[
+        2\sin^{-1}\frac{1}{x}
+        =\pm\left(\frac{\pi}{2}-\sin^{-1}\frac{1}{x}\right)\pm 2n\pi.
+        \]
+        给出
+        \[
+        \sin^{-1}\frac{1}{x}=\frac{\pi}{6}\pm\frac{2n\pi}{3}
+        \quad \text{或} \quad
+        \sin^{-1}\frac{1}{x}=-\frac{\pi}{2}\pm 2n\pi
+        \]
+        由于$-\dfrac{\pi}{2}\leq \sin^{-1}t\leq \dfrac{\pi}{2}$,故取
+        \[
+        \sin^{-1}\frac{1}{x}=\frac{\pi}{6}\quad\text{或}\quad
+        \sin^{-1}\frac{1}{x}=-\frac{\pi}{2}.
+        \]
+        即
+        \[
+        x=2 \quad \text{或} \quad x=-1
+        \]
+        经检验,可知都是原方程式的解。
+    \end{solution}
 
     \question 解方程
     \[
@@ -6711,143 +6617,59 @@ x=2 \quad \text{或} \quad x=-1.
         \]
     \end{solution}
 
-    \question
-求解方程
-\[
-\sin[\cot^{-1}(x+1)]=\cos(\tan^{-1}x).
-\]
+    \question 解方程
+    \[
+    \sin(\cot^{-1}(x+1)) = \cos(\tan^{-1} x)
+    \]
+    \begin{solution}
+        由 $\cos A = \sin\left(\frac{\pi}{2} - A\right)$,
+        \[ 
+        \sin[\cot^{-1}(x+1)] = \sin\left[\frac{\pi}{2} - \tan^{-1} x\right] 
+        \]
+        于是解为
+        \[
+        \cot^{-1}(x+1) = \frac{\pi}{2} - \tan^{-1} x \quad \text{或} \quad \cot^{-1}(x+1) = \pi - \left(\frac{\pi}{2} - \tan^{-1} x\right) 
+        \]
+        又由 $\cot^{-1} A = \tan^{-1}\dfrac{1}{A}$,
+        \[ 
+        \tan^{-1}\left(\frac{1}{x+1}\right) + \tan^{-1} x = \frac{\pi}{2} \quad \text{或} \quad \tan^{-1}\left(\frac{1}{x+1}\right) - \tan^{-1} x = \frac{\pi}{2} 
+        \]
+        两边取正切,对于左侧方程
+        \begin{align*}
+        \tan\left[\tan^{-1}\left(\frac{1}{x+1}\right) + \tan^{-1} x\right] &= \tan \frac{\pi}{2} \\
+        \frac{\frac{1}{x+1} + x}{1 - \frac{1}{x+1} \cdot x} &= \infty \\
+        x^2 + x + 1 &= \infty
+        \end{align*}
+        得 $x = \pm \infty$,而对于右侧方程,
+        \begin{align*}
+        \tan\left[\tan^{-1}\left(\frac{1}{x+1}\right) - \tan^{-1} x\right] &= \tan \frac{\pi}{2} \\
+        \frac{\frac{1}{x+1} - x}{1 + \frac{1}{x+1} \cdot x} &= \infty \\
+        \frac{1 - x^2 - x}{2x + 1} &= \infty \\
+        2x + 1 &= 0 \\
+        x &= -\frac{1}{2}
+        \end{align*}
+        所以解为 $x = -\dfrac{1}{2}$,经检验都是方程的解。
+    \end{solution}
 
-\begin{solution}
-由恒等式
-\[
-\cos A=\sin\left(\frac{\pi}{2}-A\right),
-\]
-原方程可化为
-\[
-\sin[\cot^{-1}(x+1)]
-=\sin\left(\frac{\pi}{2}-\tan^{-1}x\right).
-\]
-
-由于 $\cot^{-1}(x+1)\in(0,\pi)$,$\frac{\pi}{2}-\tan^{-1}x\in(0,\pi)$,故只需考虑
-\[
-\cot^{-1}(x+1)=\frac{\pi}{2}-\tan^{-1}x.
-\]
-两边同加 $\tan^{-1}x$,得
-\[
-\cot^{-1}(x+1)+\tan^{-1}x=\frac{\pi}{2}.
-\]
-
-利用恒等式
-\[
-\cot^{-1}t=\tan^{-1}\frac{1}{t}\quad(t>0),
-\]
-可得
-\[
-\tan^{-1}\frac{1}{x+1}+\tan^{-1}x=\frac{\pi}{2}.
-\]
-
-两边取正切,得
-\[
-\tan\left(\tan^{-1}\frac{1}{x+1}+\tan^{-1}x\right)=\tan\frac{\pi}{2}.
-\]
-由正切加法公式,
-\[
-\tan\left(\tan^{-1}\frac{1}{x+1}+\tan^{-1}x\right)
-=\frac{\frac{1}{x+1}+x}{1-\frac{x}{x+1}}.
-\]
-当右端趋于无穷大时,分母为零,故
-\[
-1-\frac{x}{x+1}=0.
-\]
-解得
-\[
-x+1-x=0\quad\Rightarrow\quad x=-\frac{1}{2}.
-\]
-
-经检验,$x=-\frac{1}{2}$ 满足原方程。
-
-因此,原方程的解为
-\[
-x=-\frac{1}{2}.
-\]
-\end{solution}
-
-\question
-解方程
-\[
-(\tan^{-1} x)^2+(\cot^{-1} x)^2=\frac{5\pi^2}{8}.
-\]
-
-\begin{solution}
-设
-\[
-\theta=\tan^{-1}x,
-\]
-则
-\[
-\tan\theta=x.
-\]
-另一方面,若
-\[
-\phi=\cot^{-1}x,
-\]
-则
-\[
-\cot\phi=x \;\Rightarrow\; \tan\phi=\frac{1}{x}.
-\]
-由反三角函数的基本关系可知
-\[
-\theta+\phi=\frac{\pi}{2}.
-\]
-
-因此,
-\[
-\theta^2+\left(\frac{\pi}{2}-\theta\right)^2=\frac{5\pi^2}{8}.
-\]
-展开得
-\[
-\theta^2+\frac{\pi^2}{4}-\pi\theta+\theta^2=\frac{5\pi^2}{8},
-\]
-即
-\[
-2\theta^2-\pi\theta+\frac{\pi^2}{4}-\frac{5\pi^2}{8}=0,
-\]
-化简为
-\[
-2\theta^2-\pi\theta-\frac{3\pi^2}{8}=0.
-\]
-两边同乘以 $8$,得
-\[
-16\theta^2-8\pi\theta-3\pi^2=0.
-\]
-因式分解,
-\[
-(4\theta-3\pi)(4\theta+\pi)=0.
-\]
-故
-\[
-\theta=\frac{3\pi}{4}\quad \text{或}\quad \theta=-\frac{\pi}{4}.
-\]
-
-注意到
-\[
--\frac{\pi}{2}\le \tan^{-1}x\le \frac{\pi}{2},
-\]
-因此舍去 $\theta=\frac{3\pi}{4}$,只剩
-\[
-\theta=-\frac{\pi}{4}.
-\]
-于是
-\[
-x=\tan\left(-\frac{\pi}{4}\right)=-1.
-\]
-
-综上,原方程的解为
-\[
-x=-1.
-\]
-\end{solution}
-
+    \question 解方程
+    \[
+    (\tan^{-1} x)^2+(\cot^{-1} x)^2=\frac{5\pi^2}{8}.
+    \]
+    \begin{solution}
+        设$\theta=\tan^{-1}x$,原方程式变为
+        \[
+        \theta^2+\left(\frac{\pi}{2}-\theta\right)^2=\frac{5\pi^2}{8}.
+        \]
+        整理得
+        \[
+        (4\theta-3\pi)(4\theta+\pi)=0 \Rightarrow \theta=\frac{3\pi}{4}\quad \text{或}\quad \theta=-\frac{\pi}{4}.
+        \]
+        注意到$-\dfrac{\pi}{2}\le \tan^{-1}x\le \dfrac{\pi}{2}$,因此舍去 $\theta=\dfrac{3\pi}{4}$,于是
+        \[
+        x=\tan\left(-\frac{\pi}{4}\right)=-1
+        \]
+        经检验是原方程的解。
+    \end{solution}
 
     \question 若 
     \[
@@ -6948,97 +6770,52 @@ x=-1.
         即得证。
     \end{solution}
 
-    \question
-证明下列恒等式：
-\[
-\tan^{-1} \left[ \frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{\sqrt{1+\sin x}+\sqrt{1-\sin x}} \right] = \frac{x}{2}, \quad 0 < x < \frac{\pi}{4}.
-\]
-
-\begin{solution}
-从左边出发：
-\begin{align*}
-\tan^{-1} \left[ \frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{\sqrt{1+\sin x}+\sqrt{1-\sin x}} \right] 
-&= \tan^{-1} \left[ \frac{(\sqrt{1+\sin x}-\sqrt{1-\sin x})(\sqrt{1+\sin x}+\sqrt{1-\sin x})}{(\sqrt{1+\sin x}+\sqrt{1-\sin x})^2} \right] \\
-&= \tan^{-1} \left[ \frac{(1+\sin x)-(1-\sin x)}{(\sqrt{1+\sin x}+\sqrt{1-\sin x})^2} \right] \\
-&= \tan^{-1} \left[ \frac{2\sin x}{(\sqrt{1+\sin x}+\sqrt{1-\sin x})^2} \right].
-\end{align*}
-
-\noindent
-利用平方和公式：
-\[
-(\sqrt{1+\sin x}+\sqrt{1-\sin x})^2 = (1+\sin x)+(1-\sin x)+2\sqrt{1-\sin^2 x} = 2 + 2\cos x = 2(1+\cos x).
-\]
-
-\noindent
-因此：
-\[
-\tan^{-1} \left[ \frac{2\sin x}{2(1+\cos x)} \right] = \tan^{-1} \left[ \frac{\sin x}{1+\cos x} \right].
-\]
-
-\noindent
-使用半角公式：
-\[
-\sin x = 2\sin \frac{x}{2} \cos \frac{x}{2}, \quad 1+\cos x = 2\cos^2 \frac{x}{2}.
-\]
-
-\noindent
-于是
-\[
-\frac{\sin x}{1+\cos x} = \frac{2\sin \frac{x}{2}\cos \frac{x}{2}}{2\cos^2 \frac{x}{2}} = \tan \frac{x}{2}.
-\]
-
-\noindent
-因此：
-\[
-\tan^{-1} \left[ \frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{\sqrt{1+\sin x}+\sqrt{1-\sin x}} \right] = \tan^{-1}\left(\tan \frac{x}{2}\right) = \frac{x}{2}, \quad 0<x<\frac{\pi}{4}.
-\]
-\end{solution}
-
-    \question 已知
-    \[ 
-    f(x) = \tan^{-1} 3x + \sin^{-1} \left[(9x^2+1)^{-\frac{1}{2}}\right] 
+    \question 化简
+    \[
+    \tan^{-1} \left( \frac{\sqrt{1+\sin x} - \sqrt{1-\sin x}}{\sqrt{1+\sin x} + \sqrt{1-\sin x}} \right), 
     \]
-证明下列结论：
-(a) $f'(x)=0$；
-(b) $\tan^{-1}(3x)+\sin^{-1}\!\left(\frac{1}{\sqrt{9x^2+1}}\right)=k\pi$,并写出常数 $k$ 的值。
-\begin{solution}
-(a) 设
-\[
-f(x)=\tan^{-1}(3x)+\sin^{-1}\!\left(\frac{1}{\sqrt{9x^2+1}}\right)
-=\tan^{-1}(3x)+\sin^{-1}\!\left((9x^2+1)^{-\frac{1}{2}}\right).
-\]
-对 $x$ 求导,
-\begin{align*}
-f'(x)
-&=\frac{3}{1+(3x)^2}
-+\frac{1}{\sqrt{1-(9x^2+1)^{-1}}}
-\cdot\left(-\frac{1}{2}\right)(18x)(9x^2+1)^{-\frac{3}{2}} \\
-&=\frac{3}{1+9x^2}
--\frac{9x}{\sqrt{1-\frac{1}{9x^2+1}}}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
-&=\frac{3}{1+9x^2}
--\frac{9x}{\sqrt{\frac{9x^2}{9x^2+1}}}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
-&=\frac{3}{1+9x^2}
--\frac{9x}{\frac{3x}{\sqrt{9x^2+1}}}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
-&=\frac{3}{1+9x^2}
--3\sqrt{9x^2+1}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
-&=\frac{3}{1+9x^2}-\frac{3}{9x^2+1} \\
-&=0.
-\end{align*}
-(b) 由 (a) 知 $f'(x)=0$,因此 $f(x)$ 为常数。
-取 $x=0$,得
-\[
-f(0)=\tan^{-1}0+\sin^{-1}(1)=\frac{\pi}{2}.
-\]
-于是
-\[
-\tan^{-1}(3x)+\sin^{-1}\!\left(\frac{1}{\sqrt{9x^2+1}}\right)=\frac{\pi}{2}.
-\]
-故常数
-\[
-k=\frac{1}{2}.
-\]
-\end{solution}
+    其中$0 < x < \dfrac{\pi}{4}$。
+    \begin{solution}
+        有理化分母,可得
+        \begin{align*}
+        \tan^{-1} \left( \frac{\sqrt{1+\sin x} - \sqrt{1-\sin x}}{\sqrt{1+\sin x} + \sqrt{1-\sin x}} \right) 
+        &= \tan^{-1} \left( \frac{(\sqrt{1+\sin x} - \sqrt{1-\sin x})^2}{(1+\sin x) - (1-\sin x)} \right) \\
+        &= \tan^{-1} \left( \frac{2 - 2\sqrt{1-\sin^2 x}}{2\sin x} \right) \\
+        &= \tan^{-1} \left( \frac{1 - \cos x}{\sin x} \right) \\
+        &= \tan^{-1} \left( \frac{2\sin^2 \frac{x}{2}}{2\sin \frac{x}{2} \cos \frac{x}{2}} \right) \\
+        &= \tan^{-1} \left(\tan \frac{x}{2}\right) \\
+        &= \frac{x}{2}
+        \end{align*}
+    \end{solution}
 
+    \question 证明
+    \[ 
+    f(x) = \tan^{-1} (3x) + \sin^{-1} \left[(9x^2+1)^{-\frac{1}{2}}\right] 
+    \]
+    为一常数,并求此常数。
+    \begin{solution}
+        对 $x$ 求导,
+        \begin{align*}
+        f'(x)
+        &=\frac{3}{1+(3x)^2}
+        +\frac{1}{\sqrt{1-(9x^2+1)^{-1}}}
+        \cdot\left(-\frac{1}{2}\right)(18x)(9x^2+1)^{-\frac{3}{2}} \\
+        &=\frac{3}{1+9x^2}
+        -\frac{9x}{\sqrt{\frac{9x^2}{9x^2+1}}}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
+        &=\frac{3}{1+9x^2}
+        -3\sqrt{9x^2+1}\cdot\frac{1}{(9x^2+1)^{\frac{3}{2}}} \\
+        &=\frac{3}{1+9x^2}-\frac{3}{9x^2+1} \\
+        &=0.
+        \end{align*}
+        因此 $f(x)$ 为常数,取 $x=0$得
+        \[
+        f(0)=\tan^{-1}0+\sin^{-1}(1)=\frac{\pi}{2}.
+        \]
+        于是
+        \[
+        \tan^{-1}(3x)+\sin^{-1}\!\left(\frac{1}{\sqrt{9x^2+1}}\right)=\frac{\pi}{2}
+        \]
+    \end{solution}
 
     \question 若 $0 \le x \le 1$, 求证
     \[
@@ -7101,91 +6878,64 @@ k=\frac{1}{2}.
         \]
     \end{solution}
 
-    \question
-已知
-\[
-(\sin^{-1} x)^3+(\cos^{-1} x)^3=k\pi^3,\quad |x|\le 1,
-\]
-其中 $k$ 为常数。
-
-\begin{solution}
-\textbf{(一)} 由恒等式
-\[
-\sin^{-1} x+\cos^{-1} x=\frac{\pi}{2},
-\]
-得
-\[
-(\sin^{-1} x)^3+\left(\frac{\pi}{2}-\sin^{-1} x\right)^3=k\pi^3.
-\]
-展开并化简,得
-\begin{align*}
-(\sin^{-1} x)^3+\frac{\pi^3}{8}-\frac{3\pi^2}{4}(\sin^{-1} x)
-+\frac{3\pi}{2}(\sin^{-1} x)^2-(\sin^{-1} x)^3&=k\pi^3,\\
-\frac{3\pi}{2}(\sin^{-1} x)^2-\frac{3\pi^2}{4}(\sin^{-1} x)
-+\frac{\pi^3}{8}-k\pi^3&=0.
-\end{align*}
-两边同除以 $\frac{3\pi}{2}$,得
-\[
-(\sin^{-1} x)^2-\frac{\pi}{2}(\sin^{-1} x)+\frac{\pi^2}{12}(1-8k)=0.
-\]
-这是关于 $\sin^{-1} x$ 的二次方程。要有实数解,判别式需满足
-\[
-\left(\frac{\pi}{2}\right)^2-4\cdot1\cdot\frac{\pi^2}{12}(1-8k)\ge 0.
-\]
-化简得
-\begin{align*}
-\frac{\pi^2}{4}-\frac{\pi^2}{3}(1-8k)&\ge 0,\\
-\frac{1}{4}-\frac{1}{3}(1-8k)&\ge 0,\\
--\frac{1}{12}+\frac{8k}{3}&\ge 0,\\
-k&\ge\frac{1}{32}.
-\end{align*}
-因此,$k\ge\frac{1}{32}$ 是原方程有解的必要但非充分条件。
-
-\medskip
-\textbf{(二)} 若方程只有一个解,则判别式等于零,即
-\[
-k=\frac{1}{32}.
-\]
-代入上式得
-\[
-(\sin^{-1} x)^2-\frac{\pi}{2}(\sin^{-1} x)+\frac{\pi^2}{16}=0,
-\]
-从而
-\[
-\left(\sin^{-1} x-\frac{\pi}{4}\right)^2=0.
-\]
-于是
-\[
-\sin^{-1} x=\frac{\pi}{4},\quad x=\sin\frac{\pi}{4}.
-\]
-
-\medskip
-\textbf{(三)} 当 $k=\frac{7}{96}$ 时,有
-\[
-(\sin^{-1} x)^2-\frac{\pi}{2}(\sin^{-1} x)+\frac{\pi^2}{12}\left(1-\frac{7}{12}\right)=0,
-\]
-即
-\[
-(\sin^{-1} x)^2-\frac{\pi}{2}(\sin^{-1} x)+\frac{5\pi^2}{144}=0.
-\]
-配方得
-\[
-\left(\sin^{-1} x-\frac{\pi}{4}\right)^2=\frac{\pi^2}{36}.
-\]
-因此
-\[
-\sin^{-1} x-\frac{\pi}{4}=\pm\frac{\pi}{6},
-\]
-从而
-\[
-\sin^{-1} x=\frac{5\pi}{12}\quad\text{或}\quad\frac{\pi}{12}.
-\]
-故所求两解为
-\[
-x=\sin\frac{5\pi}{12},\quad x=\sin\frac{\pi}{12}.
-\]
-\end{solution}
-
+    \question 已知方程
+    \[
+    (\sin^{-1} x)^3 + (\cos^{-1} x)^3 = k\pi^3, |x| \le 1,
+    \]
+    其中 $k$ 为常数。
+    \begin{parts}
+    \part 证明该方程有解的一个必要非充分条件是 $k \ge \frac{1}{32}$。
+    \begin{solution}
+        由恒等式 $\sin^{-1} x + \cos^{-1} x = \dfrac{\pi}{2}$,
+        \[
+        (\sin^{-1} x)^3 + \left(\frac{\pi}{2} - \sin^{-1} x\right)^3 = k\pi^3 
+        \]
+        整理得
+        \[
+        (\sin^{-1} x)^2 - \frac{\pi}{2}(\sin^{-1} x) + \frac{\pi^2}{12}(1-8k) = 0 \tag{1}
+        \]
+        欲使(1)有实数解,判别式为非负:
+        \begin{align*}
+        \left(-\frac{\pi}{2}\right)^2 - 4 \cdot 1 \cdot \frac{\pi^2}{12}(1-8k) &\ge 0 \\
+        \frac{\pi^2}{4} - \frac{\pi^2}{3}(1-8k) &\ge 0 \\
+        \frac{1}{4} - \frac{1}{3} + \frac{8}{3}k &\ge 0 \\
+        32k &\ge 1 \\
+        k &\ge \frac{1}{32}
+        \end{align*}
+        由于条件$k \ge \dfrac{1}{32}$可能会生成 $|\sin^{-1} x| > 1$的解即非实数解,故此条件为必要非充分条件。
+    \end{solution}
+    \part 若方程只有一个解,求该解。
+    \begin{solution}
+        若只有一个解,则 $k = \dfrac{1}{32}$,方程变为
+        \[
+        (\sin^{-1} x)^2 - \frac{\pi}{2}(\sin^{-1} x) + \frac{\pi^2}{12}\left(1 - 8 \cdot \frac{1}{32}\right) = 0 
+        \]
+        即
+        \[
+        \left(\sin^{-1} x - \frac{\pi}{4}\right)^2 = 0 
+        \]
+        解得
+        \[
+        \sin^{-1} x = \frac{\pi}{4} \Rightarrow x = \frac{\sqrt{2}}{2}
+        \]
+    \end{solution}
+    \part 若 $k = \dfrac{7}{96}$,求方程的两个解。
+    \begin{solution}
+        若 $k = \dfrac{7}{96}$,将方程配方可得
+        \[
+        \left(\sin^{-1} x - \frac{\pi}{4}\right)^2 = \frac{\pi^2}{36} 
+        \]
+        于是解为
+        \[
+        \sin^{-1} x - \frac{\pi}{4} = \pm \frac{\pi}{6} \Rightarrow
+        \sin^{-1} x = \frac{5\pi}{12} \quad \text{或} \quad \sin^{-1} x = \frac{\pi}{12} 
+        \]
+        即
+        \[
+        x = \sin\frac{5\pi}{12} \quad \text{或} \quad  x = \sin\frac{\pi}{12}
+        \]
+    \end{solution}
+    \end{parts}
 \end{questions}
 
 \pagebreak
@@ -7215,7 +6965,7 @@ x=\sin\frac{5\pi}{12},\quad x=\sin\frac{\pi}{12}.
         \]
     \end{solution}
 
-    \question 在 \(\triangle ABC\) 中,已知 \(AB=4\), \(BC=5\), \(AC=6\),求 $\overrightarrow{AB} \cdot \overrightarrow{BC}$ 。
+    \question 在 \(\triangle ABC\) 中,已知 \(AB=4,BC=5,AC=6\),求 $\overrightarrow{AB} \cdot \overrightarrow{BC}$ 。
     \begin{solution}
     由余弦定理,
     \[
@@ -7251,75 +7001,29 @@ x=\sin\frac{5\pi}{12},\quad x=\sin\frac{\pi}{12}.
         \]
     \end{solution}
 
-    \question 已知 $|a|=2$, $|b|=5$, $|c|=6$, 且 $a+b+c=0$,求 $|2a+3b+4c|$。
-
-\begin{solution}
-由 $a+b+c=0$ 得 $c = -a-b$,于是
-\[
-2a+3b+4c = 2a + 3b + 4(-a-b) = 2a + 3b -4a -4b = -2a - b.
-\]
-取模：
-\[
-|2a+3b+4c| = |-2a-b| = |2a+b|.
-\]
-
-计算 $|2a+b|^2$：
-\[
-|2a+b|^2 = (2a+b)\cdot(2a+b) = 4|a|^2 + 4 a\cdot b + |b|^2.
-\]
-
-利用 $|a+b|^2 = |a|^2 + 2a\cdot b + |b|^2 = 36$,得到
-\[
-4 + 2 a\cdot b + 25 = 36 \implies 2 a\cdot b = 7 \implies a\cdot b = \frac{7}{2}.
-\]
-
-代入 $|2a+b|^2$：
-\[
-|2a+b|^2 = 4(4) + 4\cdot \frac{7}{2} + 25 = 16 + 14 + 25 = 55.
-\]
-
-因此
-\[
-|2a+3b+4c| = |2a+b| = \sqrt{55}.
-\]
-\end{solution}
-
-\question 已知 $|a|=1$, 且 $b\cdot(b-a)=0$,求 $|b-a||b+a|$ 的最大值。
-
-\begin{solution}
-由 $b\cdot(b-a)=0$ 得
-\[
-|b|^2 - a\cdot b = 0 \implies a\cdot b = |b|^2.
-\]
-
-计算
-\[
-|b-a|^2|b+a|^2 = [(b-a)\cdot(b-a)][(b+a)\cdot(b+a)].
-\]
-
-展开：
-\begin{align*}
-|b-a|^2|b+a|^2 &= (|b|^2 - 2 a\cdot b + |a|^2)(|b|^2 + 2 a\cdot b + |a|^2) \\
-&= (|b|^2 - 2|b|^2 + 1)(|b|^2 + 2|b|^2 + 1) \\
-&= (1 - |b|^2)(3|b|^2 + 1).
-\end{align*}
-
-设 $|b|^2 = m$,则
-\[
-|b-a|^2|b+a|^2 = (1 - m)(3m + 1) = -3m^2 + 2m + 1.
-\]
-
-配方：
-\[
--3m^2 + 2m + 1 = -3\left(m^2 - \frac{2}{3}m\right) + 1 = -3\left(m - \frac{1}{3}\right)^2 + \frac{10}{3}.
-\]
-
-当 $m = \frac{1}{3}$ 时取得最大值：
-\[
-|b-a|^2|b+a|^2 = \frac{8}{3} \implies |b-a||b+a| = \sqrt{\frac{8}{3}} = \frac{2\sqrt{6}}{3}.
-\]
-\end{solution}
-
+    \question 已知 $|\mathbf{a}|=1$, 且 $\mathbf{b}\cdot(\mathbf{b}-\mathbf{a})=0$, 求 $|\mathbf{b}-\mathbf{a}||\mathbf{b}+\mathbf{a}|$ 的最大值。
+    \begin{solution}
+        由 $\mathbf{b}\cdot(\mathbf{b}-\mathbf{a})=0$ 得
+        \[
+        |\mathbf{b}|^2 - \mathbf{a}\cdot \mathbf{b} = 0 \implies \mathbf{a}\cdot \mathbf{b} = |\mathbf{b}|^2
+        \]
+        于是
+        \begin{align*}
+        |\mathbf{b}-\mathbf{a}|^2|\mathbf{b}+\mathbf{a}|^2 
+        &= [(\mathbf{b}-\mathbf{a})\cdot(\mathbf{b}-\mathbf{a})][(\mathbf{b}+\mathbf{a})\cdot(\mathbf{b}+\mathbf{a})] \\
+        &= (|\mathbf{b}|^2 - 2 \mathbf{a}\cdot \mathbf{b} + |\mathbf{a}|^2)(|\mathbf{b}|^2 + 2 \mathbf{a}\cdot \mathbf{b} + |\mathbf{a}|^2) \\
+        &= (|\mathbf{b}|^2 - 2|\mathbf{b}|^2 + 1)(|\mathbf{b}|^2 + 2|\mathbf{b}|^2 + 1) \\
+        &= (1 - |\mathbf{b}|^2)(3|\mathbf{b}|^2 + 1)
+        \end{align*}
+        设 $|\mathbf{b}|^2 = m$, 配方得
+        \[
+        |\mathbf{b}-\mathbf{a}|^2|\mathbf{b}+\mathbf{a}|^2 = (1 - m)(3m + 1) = -3m^2 + 2m + 1 = -3\left(m - \frac{1}{3}\right)^2 + \frac{4}{3}
+        \]
+        当 $m = \dfrac{1}{3}$ 时取得最大值$\dfrac{4}{3}$,此时
+        \[
+        |\mathbf{b}-\mathbf{a}||\mathbf{b}+\mathbf{a}| = \frac{2\sqrt{3}}{3}
+        \]
+    \end{solution}
 
     \question 平面上非零向量 $\mathbf{a},\mathbf{b},\mathbf{c}$ 满足 $\mathbf{a}\perp\mathbf{b}$, 且 $\mathbf{b}\cdot\mathbf{c}=20|\mathbf{a}|\cdot|\mathbf{b}|,\mathbf{c}\cdot\mathbf{a}=25|\mathbf{b}|\cdot|\mathbf{c}|$, 求 $|\mathbf{c}|$ 的最小值。
     \begin{solution}
@@ -7827,23 +7531,28 @@ B(3k,3t).
 
     \question 已知 $A(1,2),B(3,3)$, 线段 $AB$ 绕某点 $P$ 旋转后变成了线段 $A'B'$, 其中 $A'(3,1),B'(4,3)$。求 $P$ 的坐标。
     \begin{solution}
-        发现旋转中心 $P$ 即线段 $AA'$ 和 $BB'$ 垂直平分线的交点。$A(1,2)$,$A'(3,1)$中点为$\left(2,\dfrac{3}{2}\right)$,于是垂直平分线为 \[
+        发现旋转中心 $P$ 即线段 $AA'$ 和 $BB'$ 垂直平分线的交点。$A(1,2)$,$A'(3,1)$中点为$\left(2,\dfrac{3}{2}\right)$,于是垂直平分线为 
+        \[
         y - \frac{3}{2} = 2(x - 2) \Rightarrow y = 2x - \frac{1}{2}
-        \] 同理可得 $B(3,3),B'(4,3)$垂直平分线为\[
+        \] 
+        同理可得 $B(3,3),B'(4,3)$垂直平分线为
+        \[
         x = \frac{7}{2}
-        \] 联立方程解得 $P\left( \dfrac{7}{2}, \dfrac{9}{2} \right)$
+        \] 
+        联立方程解得 $P\left( \dfrac{7}{2}, \dfrac{9}{2} \right)$
     \end{solution}
     
     \question 直线 $y = mx + 2$ 与 $|x| + |y| = 1$ 相交, 求 $m$ 的范围。
     \begin{solution}
-        即求方程组 \[
+        即求方程组 
+        \[
         \begin{cases}
-            y = mx + 2 \\ |x| + |y| = 1
+        y = mx + 2 \\ |x| + |y| = 1
         \end{cases}
         \]
         有实数解时$m$的范围。发现,由作图知即求\[
         \begin{cases}
-            y = mx + 2 \\ x + |y| = 1
+        y = mx + 2 \\ x + |y| = 1
         \end{cases}
         \]有实数解时$m$的范围。分情况再以判别式的性质可求得 $m \ge 2 , m \le -2$
     \end{solution}
@@ -7853,9 +7562,9 @@ B(3k,3t).
         是否在考虑作$P_1P_2$的直线方程式$\rightarrow$与直线 $x + y + 1 = 0$联立解得点$P\rightarrow$用距离公式？其实只需这样:由相似三角形,
         \[
         \begin{aligned}
-            \dfrac{P_1P}{PP_2} 
-            &= \frac{\left|\dfrac{1+1+1}{\sqrt{1^2+1^2}}\right|}{\left|\dfrac{-2-1+1}{\sqrt{1^2+1^2}}\right|}
-            &= \dfrac{3}{2}
+        \dfrac{P_1P}{PP_2} 
+        &= \frac{\left|\dfrac{1+1+1}{\sqrt{1^2+1^2}}\right|}{\left|\dfrac{-2-1+1}{\sqrt{1^2+1^2}}\right|}
+        &= \dfrac{3}{2}
         \end{aligned}
         \]轻轻松松。
     \end{solution}
@@ -7885,7 +7594,6 @@ B(3k,3t).
         y-q=\dfrac{2}{3}(x-p)\\ y-q=-\dfrac{3}{2}(x-p-26)
         \end{cases}
         \]
-    
         可得$L_1, L_2$的交点为$(p+18,q+12)$。故三角形面积为$\dfrac{1}{2} \cdot 26 \cdot 12=156$。
     \end{solution}    
         
@@ -7961,7 +7669,8 @@ B(3k,3t).
     \]
     函数 \(P = x + k y\) 在点 \((1,-2)\) 取得唯一最小值,求实数 \(k\) 的范围。
     \begin{solution}
-        由作图得知求出可行解之顶点分别为 $(1,-2),(3,6),(-2,1)$, 据题意有\[
+        由作图得知求出可行解之顶点分别为 $(1,-2),(3,6),(-2,1)$, 据题意有
+        \[
         \begin{cases}
             P(1,-2)<P(-2,1)\\P(1,-2)<P(3,6)
         \end{cases}\quad \Rightarrow \quad
@@ -8007,7 +7716,6 @@ B(3k,3t).
     \end{solution}
 
     \question 设 $P_1, P_2, P_3$ 为抛物线 $y=x^2$ 上的三点,$l_1, l_2, l_3$ 分别为抛物线在这些点处的切线。切线两两相交,设 $Q_{12}=l_1 \cap l_2, Q_{13}=l_1 \cap l_3, Q_{23}=l_2 \cap l_3$。求 $\triangle P_1P_2P_3$ 与 $\triangle Q_{12}Q_{13}Q_{23}$ 面积之比。
-
 \begin{solution}
 设 $P_1=(a,a^2), P_2=(b,b^2), P_3=(c,c^2)$ 且 $a \neq b \neq c$。切线方程为
 \[
