@@ -6,990 +6,6 @@
 \input{pageborder}
 \thispagestyle{empty}
 \pagebreak
-
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{函数}{函数} \label{函数}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\nopagecolor
-\begin{questions}
-    \question 求下列函数的值域:
-    \begin{parts}
-    \part $f(x) = x^2-2x+5$,其中$D_f= [-1,2]$
-    \begin{solution}
-        配方法得
-        \[
-        f(x) = x^2-2x+5 = (x-1)^2+4
-        \]
-        当$x=1,f_{\min}=4$;当$x=-1,f_{\max}=8$,故
-        \[
-        R_f = [4,8]
-        \]
-    \end{solution}
-    \part $f(x) = x+\sqrt{x(2-x)}$
-    \begin{solution}
-        设$y=x+\sqrt{x(2-x)}$,则
-        \[
-        2x^2-2(y+1)x+y^2=0
-        \]
-        由于$x\in \mathbb{R}$,判别式为非负,
-        \[
-        4(y+1)^2-8y \ge 0 \Rightarrow 1-\sqrt{2} \le y \le 1+\sqrt{2}
-        \]
-        但$0 \le x \le 2, y=x+\sqrt{x(2-x)} \ge 0$,故$y_{\min}=0$。 
-
-        而当$y=1+\sqrt{2},x_1=\dfrac{2+\sqrt{2}-2\sqrt[4]{2}}{\sqrt{2}} \in [0,2]$,故$y_{\max}=1+\sqrt{2}$。
-
-        于是
-        \[
-        R_f = [0,1+\sqrt{2}]
-        \]
-    \end{solution}
-    \part $f(x) = \dfrac{3x+4}{5x+6}$
-    \begin{solution}
-        设$y=\dfrac{3x+4}{5x+6}$,则$x=\dfrac{4-6y}{5y-3}$,故反函数
-        \[
-        f^{-1}(x)=\frac{4-6x}{5x-3}
-        \]
-        的定义域为
-        \[
-        D_{f^{-1}}=\left(-\infty,\frac{3}{5}\right)\cup\left(\frac{3}{5},\infty\right)
-        \]
-        即$R_f$。
-    \end{solution}
-    \part $f(x) = \dfrac{3x+2}{x+1}$
-    \begin{solution}  
-        发现
-        \[
-        f(x) = \dfrac{3x+2}{x+1} = 3 - \frac{1}{x+1} \neq 3
-        \]
-        故
-        \[
-        R_f=(-\infty,3) \cup (3,\infty)
-        \]
-    \end{solution}
-    \part $f(x) = \dfrac{\cos x}{\sin x-3}$
-    \begin{solution}
-        设$y=\dfrac{\cos x}{\sin x-3}$,则
-        \[
-        3y=y \sin x -\cos x=\sqrt{y^2+1}\cos(x-\alpha)
-        \Rightarrow \cos(x-\alpha)=\frac{3y}{\sqrt{y^2+1}} 
-        \]
-        由于$\cos(x-\alpha)\in [-1,1]$,解得
-        \[
-        -1 \le \frac{3y}{\sqrt{y^2+1}} \le 1 \Rightarrow -\frac{\sqrt{2}}{4} \le y \le \frac{\sqrt{2}}{4}
-        \]
-        即
-        \[
-        R_f = \left[-\frac{\sqrt{2}}{4},\frac{\sqrt{2}}{4}\right]
-        \]
-    \end{solution}
-    \part $f(x) = 2^{x-5}+\log_3 \sqrt{x-1}$,其中$D_f= [2,10]$
-    \begin{solution}
-        由于$2^{x-5}$与$\log_3 \sqrt{x-1}$在$[2,10]$上皆为增函数,故$f(x)$也为增函数。
-
-        当$x=2,f(x)=\dfrac{1}{8}$;当$x=10,f(x)=33$。故
-        \[
-        R_f=\left[\frac{1}{8},33\right]
-        \]
-    \end{solution}
-    \part $f(x) = \sqrt{x+1}-\sqrt{x-1}$
-    \begin{solution}
-        发现
-        \[
-        f(x) = \frac{2}{\sqrt{x+1}+\sqrt{x-1}}
-        \]
-        由$x\ge 1$,得$\sqrt{x+1}+\sqrt{x-1} \ge 2$,于是
-        \[
-        0 < \frac{2}{\sqrt{x+1}+\sqrt{x-1}} \le \frac{2}{\sqrt{2}} = \sqrt{2}
-        \]
-        即
-        \[
-        R_f=(0,\sqrt{2}]
-        \]
-    \end{solution}
-    \part $f(x) = x+2+\sqrt{1-(x+1)^2}$
-    \begin{solution}
-        由于$1-(x+1)^2 \ge 0$,有$(x+1)^2 \le 1$,不妨设 $x+1 = \cos \alpha,\alpha \in [0,\pi]$,则
-        \[
-        f(x) = \cos \alpha + 1 + \sqrt{1-\cos^2 \alpha} = \sin \alpha + \cos \alpha + 1 = \sqrt{2}\cos\left(\alpha-\frac{\pi}{4}\right)+1
-        \]
-        由$\alpha \in [0,\pi]$,可知
-        \[
-        -\frac{\sqrt{2}}{2} \le \cos\left(\alpha-\frac{\pi}{4}\right) \le 1 \Rightarrow 0 \le \sqrt{2}\cos\left(\alpha-\frac{\pi}{4}\right) +1\le 1+\sqrt{2}
-        \]
-        即
-        \[
-        R_f=[0,1+\sqrt{2}]
-        \]
-    \end{solution}
-    \part $f(x) = \dfrac{x^3-x}{x^4+2x^2+1}$
-    \begin{solution}
-        首先有
-        \[
-        f(x)=\frac{1}{2}\cdot \frac{2x}{1+x^2} \cdot \frac{1-x^2}{1+x^2}
-        \]
-        令$x=\tan \beta$,则
-        \[
-        f(x)=\frac{1}{2}\sin 2\beta \cos 2\beta=\frac{1}{4}\sin 4\beta
-        \]
-        若$k \in \mathbb{Z}$,当$\beta=\dfrac{k\pi}{2}-\dfrac{\pi}{8},f_{\max}=\dfrac{1}{4}$;当$\beta=\dfrac{k\pi}{2}+\dfrac{\pi}{8},f_{\min}=-\dfrac{1}{4}$,且此时$\tan \beta$有意义,于是
-        \[
-        R_f=\left[-\frac{1}{4},\frac{1}{4}\right]
-        \]
-    \end{solution}
-    \part $f(x) = x+4+\sqrt{5-x^2}$
-    \begin{solution}
-        由$5-x^2 \ge 0$得$|x| \le \sqrt{5}$,令$x=\sqrt{5}\cos\alpha, \alpha \in [0,\pi]$,则
-        \[
-        f(x)=\sqrt{5}\cos\alpha+4+\sqrt{5}\sin\alpha=4+\sqrt{10}\cos\left(\alpha-\frac{\pi}{4}\right)
-        \]
-        由于$\alpha \in [0,\pi],\alpha-\dfrac{\pi}{4}\in\left[-\dfrac{\pi}{4},\,\dfrac{3\pi}{4}\right]$,故
-        \[
-        f_{\max}=4+\sqrt{10}\cdot 1,\quad f_{\min}=4+\sqrt{10}\cdot \left(-\frac{\sqrt2}{2}\right)
-        \]
-        故
-        \[
-        R_f=[4-\sqrt{5},4+\sqrt{10}]
-        \]
-    \end{solution}
-    \part $f(x)= \dfrac{\sqrt{x+2}}{x+3}$
-    \begin{solution}
-        设$t=\sqrt{x+2},t \ge 0$,则$x+3=t^2+1$。当$t>0$,
-        \[
-        f(x)=\frac{t}{t^2+1} = \frac{1}{t+\frac{1}{t}} \le \frac{1}{2}
-        \]
-        等号成立当且仅当$t=1$即$x=-1$,于是
-        \[
-        0 < f(x) \le \frac{1}{2}
-        \]
-        而当$t=0$时,$f(x)=0$,故
-        \[
-        R_f=\left[0,\frac{1}{2}\right]
-        \]
-    \end{solution}
-    \part $f(x) = (\sin x + 1)(\cos x + 1),x \in \left[-\dfrac{\pi}{12},\dfrac{\pi}{2}\right]$
-    \begin{solution}
-        由
-        \[
-        f(x)=\sin x \cos x +\sin x +\cos x +1
-        \]
-        令$t=\sin x +\cos x$,则$\sin x \cos x=\dfrac{1}{2}(t^2-1)$,化为
-        \[
-        f(x)=\frac{1}{2}(t^2-1)+t+1=\frac{1}{2}(t+1)^2
-        \]
-        又由$t=\sin x +\cos x=\sqrt{2}\cos\left(x-\dfrac{\pi}{4}\right),x \in \left[-\dfrac{\pi}{12},\dfrac{\pi}{2}\right]$知
-        \[
-        \frac{\sqrt{2}}{2}\le t\le \sqrt{2}
-        \]
-        当$t=\sqrt{2},f_{\max}=\dfrac{3}{2}+\sqrt{2}$;当$t=\dfrac{\sqrt{2}}{2},f_{\min}=\dfrac{3}{4}+\dfrac{\sqrt{2}}{2}$,于是
-        \[
-        R_f=\left[\frac{3}{4}+\frac{\sqrt{2}}{2},\frac{3}{2}+\sqrt{2}\right]
-        \]
-    \end{solution}
-    \part $f(x)=\left(\sin x + \dfrac{1}{\sin x}\right)^2+\left(\cos x + \dfrac{1}{\cos x}\right)^2$
-    \begin{solution}
-        展开得
-        \[
-        f(x)=\sin^2 x + \cos^2 x + \csc^2 x + \sec^2 x + 4 = 7 + \tan^2 x + \cot^2 x 
-        \]
-        由AM-GM不等式,
-        \[
-        f(x) \ge 7 + 2 \sqrt{1} = 9
-        \]
-        等号成立当且仅当$\tan x =\cot x$即$x=k\pi \pm \dfrac{\pi}{4}, k \in \mathbb{Z}$,故
-        \[
-        R_f=[9,\infty)
-        \]
-    \end{solution}
-    \part $f(x)=2 \sin x \sin 2x$
-    \begin{solution}
-        由AM-GM不等式,
-        \[
-        [f(x)]^2=16\sin^4 x \cos^2 x = 8\sin ^2 x \sin ^2 x(2-2\sin ^2 x) \le 8\cdot \left(2\cdot \frac{1}{3}\right)^3=\frac{64}{27}
-        \]
-        等号成立当且仅当$\sin ^2 x =2-2\sin ^2 x$即$\sin ^2 x=\dfrac{2}{3}$,故
-        \[
-        R_f=\left[-\frac{8\sqrt{3}}{9},\frac{8\sqrt{3}}{9}\right]
-        \]
-    \end{solution}
-    \part $f(x)=|x-2|+|x+8|$
-    \begin{solution}
-        在一维数轴上设$A=-8,B=2$,当动点$P$在线段$AB$上,
-        \[
-        f(x)=|x-2|+|x+8| = |AB| = 10
-        \]
-        当动点$P$在线段$AB$外,
-        \[
-        f(x)=|x-2|+|x+8| > |AB| = 10
-        \]
-        故
-        \[
-        R_f = [10,\infty)
-        \]
-    \end{solution}
-    \part $f(x)=\sqrt{x^2-6x+13}+\sqrt{x^2+4x+5}$
-    \begin{solution}
-        写成
-        \[
-        f(x)=\sqrt{(x-3)^2+(0-2)^2}+\sqrt{(x+2)^2+(0+1)^2}
-        \]
-        即$x$轴上的动点$P(x,0)$到两定点$A(3,2),B(-2,-1)$的距离之和,而当$P$为线段与$x$轴的交点时,
-        \[
-        f_{\min}=|AB|=\sqrt{(3+2)^2+(2+1)^2}=\sqrt{43}
-        \]
-        于是
-        \[
-        R_f = [\sqrt{43},\infty)
-        \]
-    \end{solution}
-    \part $f(x)=\sqrt{x^2-6x+13}-\sqrt{x^2+4x+5}$
-    \begin{solution}
-        写成
-        \[
-        f(x)=\sqrt{(x-3)^2+(0-2)^2}-\sqrt{(x+2)^2+(0-1)^2}
-        \]
-        即$AP$距离与$BP$距离之差,其中$A(3,2),B(-2,1),P(x,0)$。当$P$在$x$轴上且不是直线$AB$与$x$轴的交点时,即$P'$,则构成$\triangle ABP'$,有
-        \[
-        \bigl||AP'|-|BP'|\bigr|<|AB|=\sqrt{(3+2)^2+(2-1)^2}=\sqrt{26}
-        \]
-        即
-        \[
-        -\sqrt{26} < f(x) < \sqrt{26}
-        \]
-        而当$P$恰好在直线$AB$与$x$轴的交点时,有
-        \[
-        \bigl||AP'|-|BP'|\bigr|=|AB|=\sqrt{26}
-        \]
-        故
-        \[
-        R_f=(-\sqrt{26},\sqrt{26}]
-        \]
-    \end{solution}
-    \part $f(x) = x^2+\sqrt{x^4-3x^2+2x+5}$
-    \begin{solution}
-        变形可得
-        \[
-        f(x)=x^2+\sqrt{(x^2-2)^2+(x+1)^2}
-        \]
-        发现$f(x)$表示抛物线$y=x^2$上动点$P(x,x^2)$到点$A(-1,2)$和$x$轴的距离之和。
-        
-        过$P$点作$PB \perp x$轴于$B$, 过$A$点作$AC \perp x$轴于$C$,
-        $BC$交抛物线$y=x^2$于点$P_0$,
-        故
-        \[
-        |PA|+|PB| \ge |P_0A|+|P_0C| = |AC| = 2
-        \]
-        所以
-        \[
-        R_f = [2,\infty)
-        \]
-    \end{solution}
-    \end{parts}
-
-    \question 设函数 $f:\mathbb{R}\setminus\{0,-b\}\to \mathbb{R}\setminus\{1\}$满足
-    \[
-    f(x) = \frac{x+a}{x+b}
-    \]
-    求出所有实数对 $(a,b)$ 使得
-    \[
-    f(f(x)) = -\frac{1}{x}
-    \]
-    \begin{solution}
-        据题意,
-        \[
-        f(f(x)) = \frac{\frac{x+a}{x+b} + a}{\frac{x+a}{x+b} + b}
-        = \frac{(1+a)x + a + ab}{(1+b)x + a + b^2} = -\frac{1}{x}
-        \]
-        整理得
-        \[
-        (1+a)x^2 + (a(1+b) + 1 + b)x + a + b^2 = 0.
-        \]
-        解得
-        \[
-        \begin{cases}
-        1 + a = 0 \\
-        a + b^2 = 0 
-        \end{cases}
-        \Rightarrow a = -1,b = \pm 1
-        \]
-        经检验,$(-1, -1)$ 不合题意,故解为$(-1, 1)$
-    \end{solution}
-
-    \question 已知函数 $f,g:\mathbb{R} \to \mathbb{R}$ 互为反函数,且函数
-    \[
-    F(x) = f(x+1)-2, \quad G(x) = g(2x+1),
-    \]
-    也互为反函数,若 $f(1)=4$,求 $f(100)$。
-    \begin{solution}
-        由于 $F,G$ 互为反函数,有
-        \[
-        G(F(x))=g(2F(x)+1)=g(2(f(x+1)-2)+1)=x
-        \]
-        又$f,g$ 互为反函数,则
-        \[
-        2f(x+1)-3=f(x) \Rightarrow f(x+1) = \frac{1}{2}f(x) + \frac{3}{2}
-        \]
-        由 $f(1)=4$,可依次得到
-        \[
-        f(2)=3+\frac{1}{2}, \quad f(3)=3+\frac{1}{4}, \dots
-        \]
-        归纳可得
-        \[
-        f(n) = 3 + \frac{1}{2^{\,n-1}}, \ n \in \mathbb{N}
-        \]
-        因此
-        \[
-        f(100) = 3 + \frac{1}{2^{99}}
-        \]
-    \end{solution}
-
-    \question 已知函数 $g(x)=2x-4$, 其反函数为 $g^{-1}$,且函数 $f$ 对任意实数 $x$ 皆满足
-    \[
-    g(f(g^{-1}(x))) = 2x^2 + 16x + 26,
-    \]
-    求 $f(\pi)$ 的值。
-    \begin{solution}
-        已知 $g$ 可逆,令$x=g(y)$,则$y=g^{-1}(x)$,由题意得
-        \[
-        g(f(y)) = 2(g(y))^2 + 16g(y) + 26 
-        = 2(2y-4)^2 + 16(2y-4) + 26 = 8y^2 - 6
-        \]
-        于是有
-        \[
-        f(y) = g^{-1}(g(f(y)))= g^{-1}(8y^2 - 6) = \frac{8y^2 -6 +4}{2} = 4y^2 - 1
-        \]
-        所以
-        \[
-        f(\pi) = 4\pi^2 - 1
-        \]
-    \end{solution}
-\begin{solution}
-    由$y=g(x)=2x-4$,得
-    \[
-    x=g^{-1}(y) = \frac{y+4}{2}
-    \]
-    由$g(f(g(x))) = 2x^2 + 16x + 26$,
-    \[
-    f(g(x)) = g^{-1}(2x^2 + 16x + 26) = x^2 + 8x + 15 = (x+4)^2 - 1
-    \]
-    且
-    \[
-    f(g(x)) = f\left(\textcolor{red}{\frac{x+4}{2}}\right) = (x+4)^2 - 1
-    \]
-    令 $\dfrac{x+4}{2} = \pi$, 则
-    \[
-    f(\pi) = 4\pi^2 - 1.
-    \]
-    \textcolor{red}{请问是哪一行有误?}
-\end{solution}
-
-    % \question 求 $k$ 的求值范围,使得函数 $f(x) = x^3 + 2x^2 + kx - 1$ 反函数存在。
-    % \begin{solution}
-    %     对$f(x)$ 求导得
-    %     $$ f'(x) = 3x^2 + 4x + k = 3\left(x + \frac{2}{3}\right)^2 + k - \frac{4}{3} $$
-    %     只有当$k> \dfrac{4}{3}$时, $f(x)$ 单调递增,故$f(x)$在$\mathbb{R}$上一对一,反函数$f^{-1}(x)$ 存在。
-        
-    %     现考虑$k=\dfrac{4}{3}$,因$f'(x)=0$有唯一解$x=-\dfrac23$,
-    %     且$f$在$(-\infty,-\dfrac23)$及$(-\dfrac23,\infty)$上严格递增,故$x=-\dfrac23$是一驻点。由图像法可知,$f(x)$在$\mathbb{R}$上一对一,此时反函数$f^{-1}(x)$ 存在。\textcolor{red}{(待验证)}
-    
-    %     综上,当$k\ge \dfrac{4}{3}$时,反函数存在。
-    % \end{solution}
-
-
-    \question 已知$f(x) + 2 f(4-x) = x + 8,$求 $f(16)$。 
-    \begin{solution}
-        令$x=-12,16$,可得联立方程
-        \[
-        \begin{cases}
-            f(-12)+2(16)=-4\\f(16)+2f(-12)=24
-        \end{cases}
-        \]
-        解得 $$f(16)= -\dfrac{32}{3}$$
-    \end{solution}
-        
-    \question 若 $f(x)$ 为实系数二次多项式,已知 $p,q,r$ 为三相异非零实数,使得 $f(p)=qr,f(q)=rp,f(r)=pq$,证明$f(p+q+r) = f(p)+f(q)+f(r)$。
-    \begin{solution}
-        取 $g(x) = x f(x) - pqr$,则 $g(p) = g(q) = g(r) = 0$,且有
-        \[
-        g(x) = x f(x) - pqr = a(x - p)(x - q)(x - r)
-        \]
-        于是
-        \[
-        f(x) = \frac{1}{x} \left( a x^3 - a(p + q + r)x^2 + a(pq + qr + rp)x - apqr + pqr \right)
-        \]
-        由于 $f(x)$ 为二次多项式,因此 $-apqr + pqr = 0 \Rightarrow a = 1$,得
-        \[
-        f(x) = x^2 - (p + q + r)x + pq + qr + rp
-        \]
-        故得证
-        \[
-        f(p + q + r) = pq + qr + rp = f(p)+f(q)+f(r)
-        \]
-    \end{solution}
-    
-    \question 设 $Q(x)$ 是一个 $2017$ 次多项式,且满足
-    \[
-    Q'(r)=\frac{2017!}{r} \quad ,r=1,2,3,\cdots, 2017
-    \]
-    另定义
-    \[
-    P(x)=xQ(x)-\int Q(x)\,dx.
-    \]
-    若多项式 $P(x)$ 的所有根之和为 $a$,求 $a \pmod{1000}$。
-    \begin{solution}
-        有
-        \[
-        P'(x)=xQ'(x) +Q(x)-Q(x) \Rightarrow P(x) = \int xQ'(x)\,dx
-        \]
-        考虑函数
-        \[
-        R(x)=xQ(x)-2017!
-        \]
-        则$R(r)=0,r=1,2,3,\cdots, 2017$,故可设
-        \[
-        R(x)=A(x-1)(x-2)(x-3)\cdots(x-2017)
-        \]
-        令$x=0$可得$A=1$,故
-        \[
-        Q'(x)=\frac{(x-1)(x-2)(x-3)\cdots(x-2017)+2017!}{x}
-        \]
-        且
-        \begin{align*}
-        P(x) = \int xQ'(x)\,dx 
-        &= \int ((x-1)(x-2)(x-3)\cdots(x-2017)+2017!)\,dx \\
-        &=\int \left(x^{2017}-\frac{2017\cdot2018}{2}x^{2016} +\cdots\right)\,dx \\
-        &=\frac{1}{2018}x^{2018} - 1009 x^{2017}+\cdots
-        \end{align*}
-        由韦达定理,$\ P(x)$ 的所有根之和为 
-        \[
-        a=1009 \cdot 2018 \equiv 162 \pmod{1000}
-        \]
-    \end{solution}
-
-    \question 定义函数 $f: \mathbb{R} \to \mathbb{R}$,使得对所有实数 $x$ 有
-    \[
-    f(f(x)) = x^2 - x + 1.
-    \]
-    求 $f(0)$。
-    \begin{solution}
-        设 $f(0) = b$,则
-        \[
-        f(b) = f(f(0)) = 0^2 - 0 + 1 = 1
-        \]
-        又有
-        \[
-        f(f(b)) = f(1) = b^2 - b + 1
-        \]
-        因为 $f(b) = 1$,所以
-        \[
-        f(f(b)) = f(1) = 1 = b^2 - b + 1 \implies b(b-1) = 0.
-        \]
-        若 $b=0$,则 $f(0)=0$,但 $f(f(0)) = f(0) = 0 \neq 1$,矛盾。故 $b = 1$,即
-        \[
-        f(0) = 1
-        \]
-    \end{solution}
-
-    \question 已知 $f(x) = e(x) + o(x)$,其中 $e(x)$ 为偶函数,$o(x)$ 为奇函数,且
-    \[
-    e(x) + x^2 = o(x),
-    \]
-    求 $f(2)$。
-    \begin{solution}
-        由已知$e(x)=f(x)-o(x)$,换元得
-        \[
-        e(-x)=f(-x)-o(-x) \Rightarrow e(x)=f(-x)+o(x)
-        \]
-        故
-        \[
-        f(-x)=-x^2 \Rightarrow f(2)=4
-        \]
-    \end{solution}
-
-    \question 定义 $f$ 在 $[0,1]$ 上满足
-    \[
-    2f\left(\frac{x}{3}\right) = f(x), \quad f(x) + f(1-x) = 1,
-    \]
-    求 $f\left(\dfrac{1}{3}\right)$。
-    \begin{solution}
-        由递推公式,则
-        \[
-        f\left(\frac{1}{13}\right) + f\left(\frac{12}{13}\right) = 1,
-        \]
-        且
-        \[
-        f\left(\frac{12}{13}\right) 
-        = 2 f\left(\frac{4}{13}\right) 
-        = 2 \left[1-f\left(\frac{9}{13}\right)\right]
-        = 2 - 2 f\left(\frac{9}{13}\right)
-        = 2 - 4 f\left(\frac{3}{13}\right)
-        = 2 - 8 f\left(\frac{1}{13}\right)
-        \]
-        解得
-        \[
-        f\left(\frac{1}{13}\right) = \frac{1}{7}.
-        \]
-    \end{solution}
-
-    \question 已知$f(x)$是定义在$\mathbb{R}$上的函数,且对任意实数$x$均有$2f(x)+f(x^2-1)=1$,试求$f(\sqrt{2})$的值。
-    \begin{solution}
-        分别令 $x=-1,0,1,\sqrt{2}$ 可得
-        \begin{align*}
-            2f(-1) + f(0) = 1 \tag{1}\\
-            2f(0) + f(-1) = 1 \tag{2}\\
-            2f(1) + f(0) = 1 \tag{3}\\
-            2f(\sqrt{2}) + f(1) = 1 \tag{4}
-        \end{align*}
-        由 $(1),(2),(3)$ 解得
-        \[
-        f(-1) = f(0)= f(1)= \frac{1}{3}
-        \]
-        故由(4)得
-        \[
-        f(\sqrt{2}) = \frac{1}{3}
-        \]
-        \end{solution}
-
-    \question 设函数 $f(x)=\cos x+\log_{2}x,$其中$x>0$ ,若正实数 $a$ 满足 $f(a)=f(2a)$ ,求$f(2a)-f(4a)$ 的值。
-    \begin{solution}
-        由条件得 $$\cos a+\log_{2}a=\cos 2a+\log_{2}2a=2\cos^{2}a-1+\log_{2}a+1$$
-        所以
-        $$\cos a(2\cos a-1) =0\Rightarrow (\cos a,\cos 2a) = (0,-1) \text{或}\; (\frac{1}{2},-\frac{1}{2})$$
-        于是
-        \begin{align*}
-        f(2a) - f(4a) 
-        &= \cos 2a + \log_2 2a - \cos 4a - \log_2 4a \\
-        &= \cos 2a - 2 \cos^2 2a\\
-        &= \begin{cases}
-            -3, & \text{若 } \cos 2a = -1, \\
-            -1, & \text{若 } \cos 2a = -\frac{1}{2}
-        \end{cases}
-        \end{align*}
-    \end{solution}
-
-    \question 已知函数 $f(x)$ 的定义域为 $\mathbb{R}$, 且 $f(x+2)-2$ 为奇函数, $f(2x+1)$ 为偶函数。 若 $f(1)=0$, 求 $f(1)+f(2)+\cdots+f(2023)$ 的值。
-    \begin{solution}
-        $f(x+2)-2$ 为奇函数, 则
-        \[
-        f(-x+2)-2+f(x+2)-2=0 \Rightarrow f(2-x)+f(2+x)=4
-        \]
-        于是 $f(2)=2$, $f(x)$ 的图象关于点 $(2,2)$ 对称,又由 $f(2x+1)$ 为偶函数, 
-        $$f(-2x+1)=f(2x+1)\Rightarrow f(1-2x)=f(1+2x)$$ 
-        即
-        $$f(1-x)=f(1+x)$$
-        $f(x)$ 图象关于直线 $x=1$ 对称,
-        由上可得 
-        $$f(x)=f(2-x)=4-f(2+x)=4-f(-x)=4-[4-f(x+4)]=f(x+4)$$
-        所以 $f(x)$ 是周期为4的函数,且
-        \[
-        f(1)=0,f(2)=2,f(3)=4,f(4)=2
-        \]
-        故
-        \begin{align*}   
-        &f(1)+f(2)+\cdots+f(2023)\\
-        &=505[f(1)+f(2)+f(3)+f(4)]+f(1)+f(2)+f(3)\\
-        &=4046 
-        \end{align*}
-    \end{solution}
-
-    \question 设 $f$ 为实值函数,且对任意实数 $x$ 满足
-\begin{enumerate}
-\item $f(10+x) = f(10-x)$；
-\item $f(20+x) = -f(20-x)$。
-\end{enumerate}
-证明 $f$ 是奇函数并且是周期函数。
-
-\begin{solution}
-令 $x = n - 10$ 在 (a) 中,则
-\[
-f(n) = f(20 - n)。
-\]
-
-又令 $x = n$ 在 (b) 中,则
-\[
-f(20 - n) = -f(20 + n)。
-\]
-
-因此
-\[
-f(n) = -f(20 + n)。
-\]
-
-再令 $x = n + 10$ 在 (a) 中,则
-\[
-f(n + 20) = f(-n)。
-\]
-
-结合上式可得
-\[
-f(n) = -f(20+n) = f(-n),
-\]
-所以 $f$ 是奇函数。
-
-最后,令 $x = n - 20$ 在 (b) 中,则
-\[
-f(n) = -f(40 - n)。
-\]
-
-由于 $f$ 是奇函数,$-f(40-n) = f(n-40)$,所以
-\[
-f(n) = f(n-40),
-\]
-因此 $f$ 是周期函数,周期为 $40$。
-\end{solution}
-
-
-    \question 若整数 $m\ge 1$,函数 $f$ 满足
-    \[
-    f(m+1)=m(-1)^{m+1}-2f(m), \quad f(1)=f(2001),
-    \]
-    求 $f(1)+f(2)+\cdots+f(2000)$。
-    \begin{solution}
-        由递推式可得
-        \[
-        f(2)=1-2f(1),\quad f(3)=-2-2f(2),\quad f(4)=3-2f(3),\;\ldots,\quad f(2001)=2000-2f(2000),
-        \]
-        将 $f(2001)$ 替换为 $f(1)$ 并将所有式子相加,得
-        \[
-        \sum_{i=1}^{2000} f(i)=1-2+3-4+\cdots+1999-2000-2\sum_{i=1}^{2000} f(i).
-        \]
-        所以
-        \[
-        \sum_{i=1}^{2000} f(i)=\frac{1}{3}\left(\frac{2000}{2}-2000\right)=-\frac{1000}{3}.
-        \]
-    \end{solution}
-
-    \question 若实数 \(x, y, z\) 满足
-    \[
-    \begin{cases}
-    \displaystyle \frac{x}{1^2 + 4^2} + \frac{y}{1^2 + 5^2} + \frac{z}{1^2 + 6^2} = 1 \\[2mm]
-    \displaystyle \frac{x}{2^2 + 4^2} + \frac{y}{2^2 + 5^2} + \frac{z}{2^2 + 6^2} = 1 \\[2mm]
-    \displaystyle\frac{x}{3^2 + 4^2} + \frac{y}{3^2 + 5^2} + \frac{z}{3^2 + 6^2} = 1
-    \end{cases}
-    \]
-    求 \(x + y + z\)。
-    \begin{solution}
-        设
-        \[
-        f(k) = \frac{x}{k + 4^2} + \frac{y}{k + 5^2} + \frac{z}{k + 6^2} - 1,
-        \]
-        据题意
-        \[
-        f(1^2) = f(1) = 0, \quad f(2^2) = f(4) = 0, \quad f(3^2) = f(9) = 0。
-        \]
-        因此 \(f(k)\) 有三个根\(k = 1, 4, 9\),所以
-        \[
-        (k - 1)(k - 4)(k - 9)
-        \]
-        与
-        \[
-        (k + 4^2)(k + 5^2)(k + 6^2) - x(k + 5^2)(k + 6^2) - y(k + 4^2)(k + 6^2) - z(k + 4^2)(k + 5^2)
-        \]
-        相等,比较 \(k^2\) 系数得
-        \[
-        - (1 + 4 + 9) = 4^2 + 5^2 + 6^2 - (x + y + z) \Rightarrow x + y + z = 91
-        \]
-    \end{solution}
-
-    \question 已知实数 $\alpha$、$\beta$ 满足
-    \[
-    3^{\frac{\alpha}{2}} = \sqrt{3} - \alpha, \quad \log_3 \beta = 2\sqrt{3} - 2\beta
-    \]
-    求
-    \[
-    (\alpha + \beta)^2 - 2 (\sqrt{3})^\alpha - \log_3 \beta
-    \]
-    \begin{solution}
-        将底改为 $\sqrt{3}$:
-        \[
-        \sqrt{3}^\alpha = \sqrt{3} - \alpha, \quad \log_{\sqrt{3}} \beta = \sqrt{3} - \beta
-        \]
-        设 $A(\alpha, \sqrt{3}-\alpha)$ 为两图形 $y = \sqrt{3}^x$ 与 $y = \sqrt{3} - x$ 的交点$,B(\beta, \sqrt{3}-\beta)$ 为两图形 $y = \log_{\sqrt{3}} x$ 与 $y = \sqrt{3}-x$ 的交点。  
-
-        由于 $y = \sqrt{3}^x$ 与 $y = \log_{\sqrt{3}} x$ 关于 $y = x$ 对称,
-        \[
-        \alpha = \sqrt{3} - \beta \Rightarrow \alpha+\beta = \sqrt{3}
-        \]
-        因此
-        \[
-        (\alpha + \beta)^2 - 2 (\sqrt{3})^\alpha - \log_3 \beta = (\sqrt{3})^2 - 2(\sqrt{3}-\alpha) - 2(\sqrt{3}-\beta) = 3 - 2\sqrt{3}
-        \]
-    \end{solution}
-
-    \question 设实数 $\alpha$、$\beta$ 满足
-    \[
-    \begin{cases}
-    \alpha^3 - 6\alpha^2 + 13\alpha = 6 \\
-    \beta^3 - 6\beta^2 + 13\beta = 14
-    \end{cases}
-    \]
-    求 $\alpha + \beta$。
-
-    \begin{solution}
-        令 $$f(x) = x^3 - 6x^2 + 13x \Rightarrow f(\alpha) = 6,\ f(\beta) = 14$$
-
-        又 $$f'(x) = 3x^2 - 12x + 13 \Rightarrow f''(x) = 6x - 12 = 0 \Rightarrow x = 2$$
-        因此图形 $y = f(x)$ 的对称中心为 $(2, f(2) = 10)$,所以 $P(\alpha, 6), Q(\beta, 14)$的对称点为
-        \[
-        P' = (4 - \alpha, 14), Q' = (4 - \beta, 6)
-        \]
-        于是由$P = Q' ,\quad Q = P'$解得
-        \[
-        \alpha = 4 - \beta,\quad \beta = 4 - \alpha \Rightarrow \alpha + \beta = 4
-        \]
-    \end{solution}
-
-    \question 解方程
-    \[
-    e^{x-1} \ln x + e^{y-1} \ln y = \ln(xy)
-    \]
-    \begin{solution}
-        原式化为:
-        \[
-        (e^{x-1} - 1)\ln x + (e^{y-1} - 1)\ln y = 0
-        \]
-        考虑函数 \(f(t) = (e^{t-1} - 1)\ln t\),
-        \begin{itemize}
-        \item 当 \(t > 1\) 时,\(\;e^{t-1} - 1 > 0\),\(\;\ln t > 0\),故 \(f(t) > 0\)
-        \item 当 \(0 < t < 1\) 时,\(\;e^{t-1} - 1 < 0\),\(\;\ln t < 0\),故 \(f(t) > 0\)
-        \item 当 \(t = 1\) 时,\(\;e^{t-1} - 1 = 0\),\(\;\ln 1 = 0\),故 \(f(1) = 0\)
-        \end{itemize}
-        故 $$f(x) + f(y) = 0 \Rightarrow x = y = 1$$
-    \end{solution}
-
-    \question 已知$x,y \in \mathbb{R}$, 且满足
-    \[
-    \begin{cases}
-    \;(x+1)^{3}+2023(x+1)=-2023 \\
-    \;(y+1)^{3}+2023(y+1)=2023
-    \end{cases}
-    \]
-    求$x+y$的值。
-    \begin{solution}
-    考虑函数 \( f(t) = t^3 + 2023t \),据题意有
-        \[
-        f(x+1) = -2023, \quad f(y+1) = 2023
-        \]
-        注意到 \( f(t) \) 是奇函数,
-        \[
-        f(x+1) = -f(y+1)= f(-(y+1))
-        \]
-        且导数为
-        \[
-        f'(t) = 3t^2 + 2023 > 0, \quad \forall\, t \in \mathbb{R}
-        \]
-        所以$f$在$\mathbb{R}$上严格递增,故$f$一对一,因此有
-        \[
-        x+1 = -(y+1) \Rightarrow x + y = -2
-        \]
-    \end{solution}
-
-    \question 设函数 $f:(0,\infty)\rightarrow\mathbb{R}$,满足
-    \[
-    f\left(1-\frac{1}{1+t}\right) + f\left(\frac{1+t}{t}\right)\log(1+t) = f\left(\frac{1+t}{t}\right)\log t + 2022,
-    \]
-    求 $f(1000)$。
-    \begin{solution}
-        令 
-        \[x = \frac{t}{1+t} = 1 - \frac{1}{1+t},
-        \]
-        则原式变为
-        \[
-        f(x) + f\left(\frac{1}{x}\right) \log(1+t) = f\left(\frac{1}{x}\right) \log t + 2022
-        \]
-        即
-        \[
-        f(x) - f\left(\frac{1}{x}\right) \log x = 2022 \tag{1}
-        \]
-        再换元得
-        \[
-        f\left(\frac{1}{x}\right) - f(x)\log \frac{1}{x} = 2022 \Rightarrow f\left(\frac{1}{x}\right) + f(x) \log x = 2022
-        \]
-        代入 (1)得
-        \[
-        f(x) - 2022 \log x + f(x)(\log x)^2 = 2022 \Rightarrow f(x) = \frac{2022 (1 + \log x)}{1 + (\log x)^2}
-        \]
-        故
-        \[
-        f(1000) = \frac{2022 \cdot 4}{1 + 9} = 808.8
-        \]
-    \end{solution}
-
-    \question 设函数 \( f:\mathbb{R}\setminus\{0,1\} \to \mathbb{R} \) 使得
-        \[
-        f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)}.
-        \]
-        求 $f(x)$。
-    \begin{solution}
-        代入 \( x \), \( \dfrac{1}{1-x} \), 及\( \dfrac{x-1}{x} \) 得
-        \[
-        f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)} \tag{1} 
-        \]
-        \[
-        f\left(\frac{1}{1-x}\right) + f\left(\frac{x-1}{x}\right) = -\frac{(x-1)^2}{x}\tag{2}
-        \]
-        \[
-        f\left(\frac{x-1}{x}\right) + f(x) = \frac{x^2}{x-1} \tag{3}
-        \]
-        $(1)+(3)-(2)$,得
-        \begin{align*}
-            2f(x) &= \frac{1}{x(1-x)}+\frac{x^2}{x-1}+\frac{(x-1)^2}{x}\\
-            &=\frac{-1+x^3+(x-1)^3}{x(x-1)}\\
-            &=\frac{(x^2+x+1)+(x^2-2x+1)}{x}\\
-            &=\frac{2x^2-x+2}{x}
-        \end{align*}
-        故
-        \[
-        f(x)=x+\frac1x-\frac12
-        \]
-    \end{solution}
-
-    \question 已知函数 $f(x)$ 定义在 $\mathbb{R}$ 上, 且满足 $f(1)=1$, 对所有实数 $x$ 有
-    \[
-    f(x+5) \geq x+5, \quad f(x+1) \leq f(x)+1.
-    \]
-    若定义函数 $g(x) = f(x)+1 - x$, 求 $g(2002)$。     
-    %https://artofproblemsolving.com/community/c1076938h2031392p14321295
-    \begin{solution}
-        $\forall x \in \mathbb{R}$,由 $f(x+1) \leq f(x)+1$,
-        \[
-        g(x+1)=f(x+1)+1-(x+1)\leq f(x)+1-x= g(x) 
-        \]
-        即$g(x)$是递减函数,且由$f(x+5)\geq x+5$,
-        \[
-        g(x+5)=f(x+5)+1 - (x+5) \geq x+5+1 - (x+5)=1 
-        \]
-        因为 $g(1)=f(1)+1-1=1$,故$g(x)=1\;\forall x \in \mathbb{R}$,即$g(2002)=1$
-    \end{solution}
-
-    \question 设$f: R\setminus\{0\}\to \mathbb{R}$,使得对于所有非零实数$x, y$有
-    \[
-    xy(f(x) - f(y)) + 2x = xf(x) - yf(y) + 2y
-    \]
-    若$f'(1) = 2018$,求$f(2018)$。
-    \begin{solution}
-        令$y=1$,有
-        \[
-        xf(x) - xf(1) + 2x= xf(x) - f(1) + 2 \Rightarrow f(1)=2
-        \] 
-        令$y=-1$,有
-        \[
-        -x(f(x) - f(-1)) + 2x = xf(x) + f(-1) -2 \Rightarrow f(x) = \frac{f(-1) + 2}{2} + \frac{2 - f(-1)}{2x}
-        \]
-        求导得
-        \[
-        f'(x) = \frac{f(-1) - 2}{2x^2} 
-        \]
-        故由
-        \[
-        f'(1) = \frac{f(-1) - 2}{2} = 2018
-        \]
-        得$f(-1)=4038$,于是
-        \[
-        f(x)=2020-\frac{2018}{x}
-        \]
-        经检验,原方程式左式=右式$=2020x-2018y$,故
-        \[
-        f(2018)=2019
-        \]
-    \end{solution}
-    \begin{solution}
-        将原式写成
-        \[
-        xf(x) (y-1) + 2x = yf(y) (x-1) + 2y 
-        \]
-        \[
-        xf(x)(y-1) + 2(x-1) = yf(y)(x-1) + 2(y-1)
-        \]
-        \[
-        \frac{xf(x)}{x-1} + \frac{2}{y-1} = \frac{yf(y)}{y-1} + \frac{2}{x-1}
-        \]
-        \[
-        \frac{xf(x)-2}{x-1} = \frac{yf(y)-2}{y-1} \quad \forall x, y \neq 0, 1
-        \]
-        设
-        \[
-        \frac{xf(x)-2}{x-1} = c \Rightarrow f(x) = \frac{c(x-1)+2}{x} = c + \frac{2-c}{x}
-        \]  
-        求导得
-        \[
-        f'(x) = \frac{c-2}{x^2} 
-        \]
-        由$f'(1) = 2018$得 $c=2020$,故
-        \[
-        f(x)=2020-\frac{2018}{x}
-        \]
-        经检验,原方程式左式=右式$=2020x-2018y$,故
-        \[
-        f(2018)=2019
-        \]
-    \end{solution}
-    
-    \question 设函数 $f(x), g(x)$ 在 $\mathbb{R}$ 上连续且满足
-    \[
-    \begin{cases}
-    f(x+y) = f(x)g(y) + g(x)f(y) \\
-    g(x+y) = f(x)f(y) + g(x)g(y)
-    \end{cases}
-    \]
-    且 $g(x)$ 为偶函数,$\;g(x) > 0$ 恒成立,$\;g(0) \ne \dfrac{1}{2}$,已知 $f(2) + g(2) = \dfrac{\sqrt{5}}{15}$,求 $f(8) - g(8)$。
-    \begin{solution}
-        两式相加得
-        \[
-        f(x+y) + g(x+y) = (f(x) + g(x))(f(y) + g(y))
-        \]
-        设 $h(x) = f(x) + g(x)$,则 $h(x+y) = h(x)h(y)$,得 $h(x) = a^x$。
-        两式相减得
-        \[
-        g(x+y) - f(x+y) = (g(x) - f(x))(g(y) - f(y))
-        \]
-        设 $k(x) = g(x) - f(x)$,同理得 $k(x) = b^x$,于是
-        \[
-        f(x) = \frac{h(x) - k(x)}{2} = \frac{a^x - b^x}{2},\quad
-        g(x) = \frac{h(x) + k(x)}{2} = \frac{a^x + b^x}{2}
-        \]
-        由于 $g(x)$ 为偶函数,$\,g(x) = g(-x)$,即
-        \[
-        \frac{a^x + b^x}{2} = \frac{a^{-x} + b^{-x}}{2} \Rightarrow (a^x + b^x) a^x b^x = b^x + a^x \Rightarrow (ab)^x = 1 \Rightarrow ab = 1,\ b = \frac{1}{a}
-        \]
-        故
-        \[
-        f(x) = \frac{a^x - a^{-x}}{2},\quad
-        g(x) = \frac{a^x + a^{-x}}{2}
-        \]
-        由 $f(2) + g(2) = \dfrac{\sqrt{5}}{15}$ 可知
-        \[
-        h(2) = a^2 = \frac{\sqrt{5}}{15}
-        \Rightarrow a^8 = \left( \frac{\sqrt{5}}{15} \right)^4 = \frac{1}{2025}
-        \]
-        所以
-        \[
-        f(8) - g(8) = -k(8) = -b^8 = -\frac{1}{a^8} = -2025
-        \]
-    \end{solution}
-
-    \question  设 $a,b>0$使得关于 $x$ 的方程 $\sqrt{|x|}+\sqrt{|x+a|}=b$ 恰有三个相异实数解 $x_1,x_2,x_3$, 且 $x_1<x_2<x_3=b$, 求 $a+b$ 的值。
-    \begin{solution}
-        令 $t=x+\frac{a}{2}$, 则关于 $t$ 的方程 $$\sqrt{\left|t-\frac{a}{2}\right|}+\sqrt{\left|t+\frac{a}{2}\right|}=b$$ 恰有三个不同的实数解 $$t_i=x_i+\frac{a}{2},i=1,2,3$$
-
-        由于 $f(t)=\sqrt{|t-\frac{a}{2}|}+\sqrt{|t+\frac{a}{2}|}$ 为偶函数, 故方程 $f(t)=b$ 的三个实数解关于原点对称分布, 从而必有 $b=f(0)=\sqrt{2a}$
-        
-        现求方程 $f(t)=\sqrt{2a}$ 的实数解:
-        \begin{itemize}
-            \item 当 $|t|\le\frac{a}{2}$ 时, $f(t)=\sqrt{\frac{a}{2}-t}+\sqrt{\frac{a}{2}+t}=\sqrt{a+\sqrt{a^2-4t^2}}\le\sqrt{2a}$, 等号成立当且仅当 $t=0$
-            \item 当 $t>\frac{a}{2}$ 时, $f(t)$ 单调递增, 且当 $t=\frac{5a}{8}$ 时 $f(t)=\sqrt{2a}$
-            \item 当 $t<-\frac{a}{2}$ 时, $f(t)$ 单调递减, 且当 $t=-\frac{5a}{8}$ 时 $f(t)=\sqrt{2a}$
-        \end{itemize}
-        从而方程 $f(t)=\sqrt{2a}$ 恰有三个实数解 $$t_1=-\frac{5a}{8},\ t_2=0,\ t_3=\frac{5a}{8}$$
-        由条件知 $b=x_3=t_3-\frac{a}{2}=\frac{a}{8}$, 结合 $b=\sqrt{2a}$ 得 $a=128$,于是 $a+b=\frac{9a}{8}=144$
-    \end{solution}  
-\end{questions}
-
-\pagebreak
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{一元二次方程、多项式}{一元二次方程、多项式} \label{一元二次方程、多项式}
@@ -997,7 +13,7 @@ f(n) = f(n-40),
 \end{center}
 \separator
 \vspace{1pt}
-
+\nopagecolor
 \begin{questions}
     \question 已知方程 
     \[
@@ -4609,6 +3625,775 @@ x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{指数与对数}{指数与对数} \label{指数与对数}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+
+\begin{questions}
+    \question 设 \( a=2019^{2017}, b=2019^{2018}, c=2019^{2019} \),计算
+    \[
+    \frac{1}{2019^{a - a} + 2019^{a - b} + 2019^{a - c}} + \frac{1}{2019^{b - a} + 2019^{b - b} + 2019^{b - c}} + \frac{1}{2019^{c - a} + 2019^{c - b} + 2019^{c - c}} 
+    \]
+    \begin{solution}
+        观察到原式为
+        \[
+        \frac{2019^{-a}}{2019^{- a} + 2019^{- b} + 2019^{- c}} + \frac{2019^{-b}}{2019^{- a} + 2019^{- b} + 2019^{- c}} + \frac{2019^{-c}}{2019^{- a} + 2019^{- b} + 2019^{- c}} 
+        \]
+        答案呼之欲出$\Rightarrow1$
+    \end{solution}          
+
+    \question 试证
+    \[
+    2^{\sqrt{\log_2 3}} = 3^{\sqrt{\log_3 2}}
+    \]
+    \begin{solution}
+        注意到
+        \[
+        2^{\sqrt{\log_2 3}} 
+        = 2^{\frac{\log_2 3}{\sqrt{\log_2 3}}} 
+        = \left(2^{\log_2 3}\right)^{\sqrt{\log_3 2}} 
+        = 3^{\sqrt{\log_3 2}}
+        \]
+        故左式等于右式,得证。
+    \end{solution}
+    \begin{solution}
+        设$x=2^{\sqrt{\log_2 3}},y=3^{\sqrt{\log_3 2}}$,则\[
+        \log x=\sqrt{\log_2 3}\cdot \log 2 = \sqrt{\frac{\log 3}{\log 2}}\cdot\log 2 = \sqrt{\log 2 \log 3}
+        \]同理\[
+        \log y=\sqrt{\log_3 2} \cdot\log 3 = \sqrt{\frac{\log 2}{\log 3}}\cdot\log 3 = \sqrt{\log 2 \log 3}
+        \]故\[\log x = \log y \Rightarrow x=y \quad\text{（得证）}\]
+    \end{solution}
+
+    \question 解方程
+    \[
+    2^{x+2}5^{6-x} = 10^{x^{2}},
+    \]
+    \begin{solution}
+        两边取$\log$得\[
+        (x+2)\log 2+(6-x)\log5=x^2 \Rightarrow x^2-\left(\log \frac{2}{5}\right)x-2\log 250=0
+        \]
+        因式分解给出\[
+        (x-2)(x+\log 250)=0 \Rightarrow x = 2, -\log 250
+        \]
+    \end{solution}
+
+    \question
+\noindent
+求解方程
+\[
+\frac{e^{2x}+16^x}{(4e)^x} = \frac{4+e}{2\sqrt{e}}, \quad x \in \mathbb{R}.
+\]
+
+\begin{solution}
+\noindent
+\textbf{步骤 1: 化简方程两边}
+
+给定方程：
+\[
+\frac{e^{2x}+16^x}{(4e)^x} = \frac{4+e}{2\sqrt{e}}
+\]
+
+利用指数法则化简左边：
+\[
+\frac{e^{2x}}{(4e)^x} + \frac{16^x}{(4e)^x} = \left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x
+\]
+
+右边化简为：
+\[
+\frac{4+e}{2\sqrt{e}} = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
+\]
+
+因此方程变为：
+\[
+\left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
+\]
+
+\noindent
+\textbf{步骤 2: 代换化为二次方程}
+
+令
+\[
+y = \left(\frac{e}{4}\right)^x
+\]
+
+则方程可写作：
+\[
+y + \frac{1}{y} = \left(\frac{e}{4}\right)^{1/2} + \frac{1}{\left(\frac{e}{4}\right)^{1/2}}
+\]
+
+两边乘以 $y$ 得到二次形式：
+\[
+y^2 - \left(\left(\frac{e}{4}\right)^{1/2} + \left(\frac{e}{4}\right)^{-1/2}\right)y + 1 = 0
+\]
+
+因式分解得到：
+\[
+\left(y - \left(\frac{e}{4}\right)^{1/2}\right)\left(y - \left(\frac{e}{4}\right)^{-1/2}\right) = 0
+\]
+
+\noindent
+\textbf{步骤 3: 求 $x$ 的值}
+
+\begin{align*}
+\left(\frac{e}{4}\right)^x &= \left(\frac{e}{4}\right)^{1/2} \implies x = \frac{1}{2} \\
+\left(\frac{e}{4}\right)^x &= \left(\frac{e}{4}\right)^{-1/2} \implies x = -\frac{1}{2}
+\end{align*}
+
+\noindent
+\textbf{答案:} 
+\[
+x = \frac{1}{2}, \quad x = -\frac{1}{2}
+\]
+\end{solution}
+
+    \question 解 
+    \[
+    x^{x^{x}} = (x^{x})^{x}
+    \]
+    \begin{solution}
+        原方程即
+        \[
+        x^{x^{x}} = x^{x^2}
+        \]
+        先考虑指数方程的特殊情况$x=-1,0,1$,可得解
+        \[
+        x=-1,1
+        \]
+        当$x \neq -1,0,1$时,由底数相等所以指数相等的性质得,
+        \[
+        x=2
+        \]
+        故原方程式的解为
+        \[
+        x=-1 \quad \text{或} \quad x=1 \quad \text{或} \quad x=2
+        \]
+    \end{solution}
+
+    \question 已知 
+    \[
+    (x\sqrt{x}\sqrt[3]{x})^{x} = x^{x\sqrt{x}\sqrt[3]{x}},
+    \]
+    试求 $x^{5}$ 的值。
+    \begin{solution}
+        \begin{align*}
+        (x\sqrt{x}\sqrt[3]{x})^{x} &= x^{x\sqrt{x}\sqrt[3]{x}} \\
+        x^{(1+\frac{1}{2}+\frac{1}{3})x} &= x^{x^{1+\frac{1}{2}+\frac{1}{3}}}\\
+        x^{(\frac{11}{6})x} &= x^{x^{\frac{11}{6}}}
+        \end{align*}
+        考虑特殊情况 $x=-1, 0, 1,$ 可得解 $x=1$,此时因底数相等所以指数相等,得
+        \[
+        \frac{11}{6}x = x^{\frac{11}{6}} \Rightarrow x^5 = \left(\frac{11}{6}\right)^{6} 
+        \]
+        故$x^5$的可能值为
+        \[
+        x^5=1 \quad \text{或} \quad x^5 = \left(\frac{11}{6}\right)^{6}
+        \]
+    \end{solution}
+
+    \question 求满足方程 
+    \[
+    (x^{2}+2x)^{x^{2}-3x+2}=1
+    \] 
+    的实数解。
+    \begin{solution}
+        设 $A=x^{2}+2x$, $B=x^{2}-3x+2$。欲使 $A^{B}=1$,仅以下三种情况成立:
+        \begin{itemize}
+        \item $B=0$:
+        \[
+        x^{2}-3x+2=0 \;\;\Rightarrow\;\; (x-1)(x-2)=0\Rightarrow\;\;x=1,2
+        \]
+        \item $A=1$:
+        \[
+        x^{2}+2x=1 \;\;\Rightarrow\;\; x=-1\pm\sqrt{2}
+        \]
+        \item $A=-1$ 且 $B$ 为偶数:  
+        \[
+        x^{2}+2x=-1 \;\;\Rightarrow\;\; (x+1)^{2}=0 \;\;\Rightarrow\;\; x=-1
+        \]  
+        此时  
+        \[
+        B=(-1)^{2}-3(-1)+2=6
+        \]  
+        为偶数,成立。
+        \end{itemize}
+        综上,解为  
+        \[
+        x\in \{1,2,-1+\sqrt{2},-1-\sqrt{2},-1\}
+        \]
+    \end{solution}
+
+    \question 计算
+    \[
+    5^{(\log 2)^3} \cdot 8^{(\log 5)^2} \cdot 5^{(\log 5)^3}
+    \]
+    \begin{solution}
+        令$a=\log 2,b=\log 5$,则$a+b=1$,原式为
+        \[
+        L=5^{a^3}\cdot 8^{b^2} \cdot 5^{b^3}
+        \]
+        两边取对数,则
+        \[
+        \log L 
+        = (a^3 + b^3)b + 3ab^2 
+        = (a+b)(a^2-ab+b^2) b + 3ab^2 
+        = b(a+b)^2 
+        = \log 5
+        \]
+        因此
+        \[
+        L = 5
+        \]
+    \end{solution}
+
+    \question 已知正实数 $x$ 满足
+    \[
+    \log_2 x\log_4 x\log_6 x = \log_2 x\log_4 x+\log_2 x\log_6 x+\log_4 x\log_6 x,
+    \]
+    求 $x$。
+    \begin{solution}
+        设$\log_2 x=a, \log_6 x=b$,则$\log_4 x=\dfrac{1}{2}a$,原式为
+        \[
+        \frac{1}{2}a^2 b = \frac{1}{2}a^2 + ab + \frac{1}{2}ab
+        \Rightarrow ab = a + 3b
+        \]
+        将 $a=\dfrac{\log x}{\log 2},b=\dfrac{\log x}{\log 6}$ 代入得
+        \[
+        \frac{(\log x)^2}{(\log 2)(\log 6)}
+        = \frac{\log x(\log 6+3\log 2)}{(\log 2)(\log 6)} \Rightarrow \log x(\log x-\log 48)=0
+        \]
+        所以
+        \[
+        x=1\quad\text{或}\quad x=48
+        \]
+    \end{solution}
+
+    \question 求
+    \[
+    \sqrt{\log_3 \sqrt{6} + \sqrt{\log_3 2}} + \sqrt{\log_3 \sqrt{6} - \sqrt{\log_3 2}}
+    \]
+    之值。
+    \begin{solution}
+        令
+        \[
+        a = \log_3 \sqrt{6} = \frac{1}{2} (1 + \log_3 2), \quad 
+        b = \sqrt{\log_3 2} < 1
+        \]
+        则有
+        \[
+        a = \frac{b^2 + 1}{2}
+        \]
+        因此
+        \begin{align*}
+        \sqrt{a+b} + \sqrt{a-b} &= \sqrt{\frac{b^2+1}{2} + b} + \sqrt{\frac{b^2+1}{2} - b} \\
+        &= \sqrt{\frac{1}{2} (b+1)^2} + \sqrt{\frac{1}{2} (b-1)^2} \\
+        &= \frac{1}{\sqrt{2}} (b+1) + \frac{1}{\sqrt{2}} (1-b) = \sqrt{2}
+        \end{align*}
+    \end{solution}
+
+    \question 解不等式
+    \[
+    \sqrt{\log_2 x - 1} + \frac{1}{2} \log_{\frac{1}{2}} x^3 + 2 > 0
+    \]
+    \begin{solution}
+        设 \( y = \log_2 x \),则不等式化为
+        \[
+        \sqrt{y - 1} - \frac{3}{2} y + 2 > 0, \quad \text{且} \;y \ge 1.
+        \]
+        设$z=\sqrt{y - 1}$,则$y=z^2+1$,方程变为
+        \[
+        z - \frac{3}{2} (z^2+1) + 2 > 0 \Rightarrow (3z+1)(z-1)<0 
+        \]
+        于是
+        \[
+        -\frac13<z<1 \Rightarrow 0\leq z^2<1 \Rightarrow1\leq y<2 
+        \]
+        再考虑$y$的定义域$y\geq1$,经检验有
+        \[
+        2\leq x <4
+        \]
+    \end{solution}
+    
+    \question 求不等式的解集
+    \[
+    \log (x - 40) + \log (60 - x) < 2
+    \]
+    \begin{solution}
+        变为
+        \[
+            (x - 40)(60 - x) < 100
+        \]
+        注意到\((x - 40)(60 - x) = -(x - 50)^2 + 100\),所以不等式等价于
+        \[
+        -(x - 50)^2 + 100 < 100 \Rightarrow (x - 50)^2 > 0\Rightarrow x \ne 50
+        \]
+        且由定义域\[
+        \begin{cases}
+        x - 40 > 0 \\
+        60 - x > 0
+        \end{cases} \Rightarrow 40<x<60
+        \]经检验得解集
+        \[
+        (40,\;50)\cup(50,\;60).
+        \]
+    \end{solution}
+
+    \question 解不等式：
+    \[
+    \left(\log_{\frac{1}{3}} x - 1\right)\left(\log_{\frac{1}{4}} x + 2\right)\left(\log_{\frac{1}{5}} x - 3\right) > 0.
+    \]
+    \begin{solution}
+    换底得
+    \[
+    \left(\frac{\log x}{-\log 3} - 1\right)\left(\frac{\log x}{-\log 4} + 2\right)\left(\frac{\log x}{-\log 5} - 3\right) > 0
+    \]
+    即
+    \[
+    (\log x + \log 3)(\log x - 2\log 4)(\log x + 3\log 5) < 0
+    \]
+    符号分析得
+    \[
+    -\log 3 < \log x < 2\log 4, \quad \log x < -3\log 5
+    \]
+    解集为
+    \[
+    \frac{1}{3} < x < 16 \quad \text{或} \quad 0 < x < \frac{1}{125}
+    \]
+    \end{solution}
+
+    \question 求 
+    \[
+    |x - 1|^{\log_{2}(4 - x)} < |x - 1|^{\log_{2}(1 + x)}
+    \]
+    的解之范围。
+    \begin{solution}
+        由$\log_{2}(4 - x)$及$\log_{2}(1 + x)$的定义域,得
+        \[  
+        x < 4 \quad \text{且} \quad x > -1 
+        \]
+        即  $x \in (-1, 4)$,且$x \neq 0,1,2$,否则不等式不成立。分四种情况讨论：
+
+        情况1: $x \in (-1, 0)$,则
+        \begin{align*}
+        (1-x)^{\log_2 (4-x)} < (1-x)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) < \log_2 (1+x) \\
+        & \Rightarrow 4-x < 1+x \\
+        & \Rightarrow x > \frac{3}{2}
+        \end{align*}
+        此情况解集为 $(-1, 0) \cap \left(\dfrac{3}{2}, \infty\right) = \emptyset$,无解。
+
+        情况2: $x \in (0, 1)$,则
+        \begin{align*}
+        (1-x)^{\log_2 (4-x)} < (1-x)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) > \log_2 (1+x) \\
+        & \Rightarrow 4-x > 1+x \\
+        & \Rightarrow x < \frac{3}{2} 
+        \end{align*}
+        此情况解集为 $(0, 1) \cap \left(-\infty, \dfrac{3}{2}\right) = (0, 1)$。
+
+        情况3: $x \in (1, 2)$,则
+        \begin{align*}
+        (x-1)^{\log_2 (4-x)} < (x-1)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) > \log_2 (1+x) \\
+        & \Rightarrow 4-x > 1+x \\
+        & \Rightarrow x < \frac{3}{2}
+        \end{align*}
+        此情况解集为 $(1, 2) \cap \left(-\infty, \dfrac{3}{2}\right) = \left(1, \dfrac{3}{2}\right)$。
+
+        情况4: $x \in (2, 4)$,则
+        \begin{align*}
+        (x-1)^{\log_2 (4-x)} < (x-1)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) < \log_2 (1+x) \\
+        & \Rightarrow 4-x < 1+x \\
+        & \Rightarrow x > \frac{3}{2}
+        \end{align*}
+        此情况解集为 $(2, 4) \cap \left(\dfrac{3}{2},\infty \right) = (2, 4)$。
+
+        综上所述,原方程式的解集为 $\left(0, \dfrac{3}{2}\right) \cup (2, 4) \setminus \{1\}$。
+    \end{solution}
+
+
+    \question 求所有实数 $x$,使得
+    \[
+    \sqrt{\log_2 x \cdot \log_2 (4x) + 1} + \sqrt{\log_2 x \cdot \log_2 \left(\frac{x}{64}\right) + 9} = 4
+    \]
+    \begin{solution}
+        发现
+        \begin{align*}
+        f(x) 
+        &= \sqrt{\log_2 x \cdot \log_2(4x) + 1} + \sqrt{\log_2 x \cdot \log_2\left(\frac{x}{64}\right) + 9} \\
+        &= \sqrt{\log_2 x (2 + \log_2 x) + 1} + \sqrt{\log_2 x (\log_2 x - 6) + 9} \\
+        &= \sqrt{(\log_2 x + 1)^2} + \sqrt{(\log_2 x - 3)^2} \\
+        &= 
+        \begin{cases}
+            \begin{aligned}
+            &-2\log_2 x+ 2&&, \log_2 x \le -1 \\[1mm]
+            &4&&, -1 < \log_2 x \le 3 \\[1mm]
+            &2\log_2 x- 2&&, \log_2 x > 3
+            \end{aligned}
+        \end{cases}
+        \end{align*}
+        欲使$f(x)=4$,当 $\log_2 x \le -1,\log_2x = -1$;
+        当 $-1 < \log_2x \le 3,f(x) = 4$ 恒成立;
+        当 $\log_2x > 3$,无解;因此解为
+        \[
+        -1 \le \log_2x \le 3 \Rightarrow \frac{1}{2} \le x \le 8
+        \]
+    \end{solution}
+
+    \question 已知 
+    \[
+    \frac{\log a}{b - c} = \frac{\log b}{c - a} = \frac{\log c}{a - b},
+    \]
+    其中 $a \neq b \neq c$, 试求 $a^{a}b^{b}c^{c}$ 的值。
+    \begin{solution}
+        设
+        \[
+        \frac{\log a}{b-c} = \frac{\log b}{c-a} = \frac{\log c}{a-b} = k
+        \]
+        则
+        \[
+        \log a = k(b-c), \quad \log b = k(c-a), \quad \log c = k(a-b)
+        \]
+        因此
+        \begin{align*}
+        \log(a^a b^b c^c) &= a\log a + b\log b + c\log c \\
+        &= ak(b-c) + bk(c-a) + ck(a-b) \\
+        &= k[ab - ac + bc - ab + ca - cb] \\
+        &= 0
+        \end{align*}
+        即 
+        \[
+        a^a b^b c^c = 1
+        \]
+    \end{solution}
+
+    \question 设 $a,b$同号,且 $a^2 - 2ab - 9b^2 = 0$,求
+    \[
+    \log(a^2 + ab - 6b^2) - \log(a^2 + 4ab + 15b^2)
+    \]
+    的值。
+    \begin{solution}
+        由 $a^2 - 2ab - 9b^2 = 0 $解得
+        $$a = (\sqrt{10} + 1)b$$
+        故
+        \[
+        \begin{aligned}
+        &\log(a^2 + ab - 6b^2) - \log(a^2 + 4ab + 15b^2) \\
+        &= \log(3ab + 3b^2) - \log(6ab + 24b^2) \\
+        &= \log\left(\frac{3b(a + b)}{6b(a + 4b)}\right)\\
+        &= \log\left(\frac{1}{2} \cdot \frac{a + b}{a + 4b}\right) \\
+        &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)b}{(\sqrt{10} + 5)b}\right) \\
+        &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)(5 - \sqrt{10})}{(\sqrt{10} + 5)(5 - \sqrt{10})}\right) \\
+        &= \log\left(\frac{1}{2} \cdot \frac{3\sqrt{10}}{15}\right)= \log\left(\frac{\sqrt{10}}{10}\right) = -\frac{1}{2}
+        \end{aligned}
+        \]
+    \end{solution}
+
+    \question 设正实数 \( x, y \)（\( x \neq 1, y \neq 1 \)）满足
+    \[
+    \log_2 x = \log_y 16, \quad xy = 64,
+    \]
+    求
+    \[
+    \left(\log_2 \frac{x}{y}\right)^2。
+    \]
+    \begin{solution}
+        由 \(xy = 64\)得 \(x = \frac{64}{y}\),代入第一式:
+        \[
+        \log_2 \left( \frac{64}{y} \right) = \log_y 16
+        \Rightarrow 6 - \log_2 y = \frac{4}{\log_2 y}
+        \]
+        设 \(a = \log_2 y\),则变为
+        \[
+        6 - a = \frac{4}{a} \Rightarrow a^2 - 6a + 4 = 0
+        \]
+        解得
+        \[
+        \log_2 y =a= 3 \pm \sqrt{5}
+        \]
+        所求为
+        \[
+        \left(\log_2 x - \log_2 y\right)^2 = (a - (6 - a))^2 = (2a - 6)^2 = (\pm 2\sqrt{5})^2 = 20
+        \]
+    \end{solution}
+    
+    \question 已知 $a^x = bc,b^y = ac,c^z = ab,$ 证明 $$xyz = x + y + z + 2$$
+
+    \begin{solution}
+        由 $a^x = bc$,两边取 $yz$ 次方
+        \[
+        (a^x)^{yz} = (bc)^{yz} \Rightarrow a^{xyz} = b^{yz} \cdot c^{yz}
+        \]
+        由 $b^y = ac$,得 $b^{yz} = (ac)^z = a^z c^z$ ;由 $c^z = ab$,得 $c^{yz} = (ab)^y = a^y b^y$;于是        
+        \[
+        a^{xyz} = (a^z c^z)(a^y b^y) = a^{z+y} b^y c^z = a^{z+y} \cdot ac \cdot ab = a^{z+y+2} bc
+        \]
+        又 $a^x = bc$,故
+        \[
+        a^{xyz} = a^{z+y+2} \cdot a^x = a^{x+y+z+2} \Rightarrow xyz = x + y + z + 2
+        \]
+    \end{solution}
+
+    \question 设 \(a, b, c\) 均为异于 1 的正数,且满足 \(abc = 1\), 证明
+    \[
+    \log_a b + \log_a c + \log_b c + \log_b a + \log_c b + \log_c a = -3
+    \]
+    \begin{solution}
+    有\begin{align*}
+          &\log_a a+\log_a b + \log_a c + \log_b b+ \log_b c + \log_b a + \log_c c + \log_c b + \log_c a \\ &=\log_a (abc)+\log_b (abc)+\log_c (abc)\\&=0
+      \end{align*}
+      故原式得证。
+    \end{solution}
+
+    \question 已知
+        \[
+        \log_{10} \sin x + \log_{10} \cos x = -1,
+        \]
+        且整数 $n$ 满足
+        \[
+        \log_{10} (\sin x + \cos x) = \frac{1}{2} (\log_{10} n - 1),
+        \]
+        求 \( n\)。
+    \begin{solution}
+        由
+        \[
+        \log_{10} \sin x + \log_{10} \cos x = -1
+        \Rightarrow \sin x \cos x = 10^{-1}= \frac{1}{10}
+        \]
+        又$\sin x + \cos x=\sqrt{1+2\cdot\dfrac{1}{10}}=\sqrt{\dfrac{6}{5}}$ ,则
+        \[
+        \log_{10}{n} = 2 \log_{10}{\sqrt{\frac{6}{5}}} + 1 = \log_{10}{\frac{6}{5}} + \log_{10}{10} = \log_{10}{12} \Rightarrow n=12
+        \]
+    \end{solution}
+
+    \question 解方程式 
+    \[
+    (\log_{5}x)^{2} + \log_{5x}\left(\frac{5}{x}\right) = 1
+    \]
+    \begin{solution}
+        设$\log_5 x = t$,则
+        \[
+        \log_{5x}\left(\frac{5}{x}\right) = \frac{\log_5\frac{5}{x}}{\log_5(5x)} = \frac{\log_5 5 - \log_5 x}{\log_5 5 + \log_5 x} = \frac{1-t}{1+t}
+        \]
+        原方程式变为
+        \begin{align*}
+        t^2 + \frac{1-t}{1+t} &= 1 \\
+        t^2(1+t) + 1-t &= 1+t \\
+        t^3 + t^2 - 2t &= 0 \\
+        t(t+2)(t-1) &= 0
+        \end{align*}
+        解得 $t = 0, -2, 1$,即 
+        \[
+        x = 5^0 = 1, \quad \text{或} \quad x = 5^{-2} = \frac{1}{25}, \quad \text{或} \quad x = 5^1 = 5
+        \]
+        经检验得$x = 1, x = \dfrac{1}{25}, x=5$都是原方程的解。
+    \end{solution}
+    
+    \question 解方程
+    \[
+    \log_{2x} \left( 48 \sqrt[3]{3} \right) = \log_{3x} \left( 162 \sqrt[3]{2} \right)
+    \]
+    \begin{solution}
+        原式变为
+        \[
+        \frac{\log (48 \sqrt[3]{3})}{\log (2x)} = \frac{\log (162 \sqrt[3]{2})}{\log (3x)}.
+        \]
+        又因
+        \[
+        \log (48 \sqrt[3]{3}) = 4 \log 2 + \frac{4}{3} \log 3,\quad 
+        \log (162 \sqrt[3]{2}) = \frac{4}{3} \log 2 + 4 \log 3.
+        \]
+        于是有
+        \[
+        \frac{4 \log 2 + \frac{4}{3} \log 3}{\log 2 +  \log x}
+        =
+        \frac{\frac{4}{3} \log 2 + 4 \log 3}{\log 3 +  \log x}.
+        \]
+        化简最终得到
+        \[
+        \log x = \frac{1}{2} \log 6 \Rightarrow x = \sqrt{6}.
+        \]
+    \end{solution}
+    
+    \question 求所有实数 $x$,使得
+    \[
+    \log_{5x+9}(x^2+6x+9) + \log_{x+3}(5x^2+24x+27) = 4.
+    \]
+    \begin{solution}
+        原方程式化为
+        \begin{align*}
+        \frac{\log(x^2+6x+9)}{\log(5x+9)} + \frac{\log(5x^2+24x+27)}{\log(x+3)} &= 4 \\
+        \frac{2\log(x+3)}{\log(5x+9)} + \frac{\log(5x+9)+\log(x+3)}{\log(x+3)} &= 4 \\
+        2 \frac{\log(x+3)}{\log(5x+9)} + \frac{\log(5x+9)}{\log(x+3)} + 1 &= 4
+        \end{align*}
+        令 $t = \dfrac{\log(x+3)}{\log(5x+9)}$,解得
+        \[
+        2t + \frac{1}{t} = 3 \Rightarrow t = 1 \ \text{或}\ t = \frac{1}{2}
+        \]
+        当$t = 1$,解得
+        \[
+        \log(x+3) = \log(5x+9) \Rightarrow x = -\frac{3}{2}
+        \]
+        当$t = \frac{1}{2}$,则 $2\log(x+3) = \log(5x+9)$,即
+        \[
+        2\log(x+3) = \log(5x+9) \Rightarrow x = 0 \ \text{或}\ x = -1
+        \]
+        经检验得,原方程的实数解为
+        \[
+        x = 0, -1, -\frac{3}{2}
+        \]
+    \end{solution}
+
+    \question
+\noindent
+求解下列方程组：
+\begin{align*}
+(2x)^{\ln 2} &= (3y)^{\ln 3} \\
+3^{\ln x} &= 2^{\ln y}
+\end{align*}
+
+\begin{solution}
+\noindent
+\textbf{步骤 1: 对方程取自然对数化简}
+
+对第一个方程两边取 $\ln$：
+\begin{align*}
+\ln\left((2x)^{\ln 2}\right) &= \ln\left((3y)^{\ln 3}\right) \\
+(\ln 2)\ln(2x) &= (\ln 3)\ln(3y) \\
+(\ln 2)(\ln 2 + \ln x) &= (\ln 3)(\ln 3 + \ln y) \\
+(\ln 2)^2 + (\ln 2)\ln x &= (\ln 3)^2 + (\ln 3)\ln y \quad (\text{方程 } 1')
+\end{align*}
+
+对第二个方程取 $\ln$：
+\begin{align*}
+\ln\left(3^{\ln x}\right) &= \ln\left(2^{\ln y}\right) \\
+(\ln x)\ln 3 &= (\ln y)\ln 2 \quad (\text{方程 } 2')
+\end{align*}
+
+\noindent
+\textbf{步骤 2: 代换求解}
+
+令 $u = \ln x$,$v = \ln y$：
+\begin{align*}
+(\ln 2)^2 + u \ln 2 &= (\ln 3)^2 + v \ln 3 \\
+u \ln 3 &= v \ln 2 \implies u = v \frac{\ln 2}{\ln 3}
+\end{align*}
+
+将 $u$ 代入方程 $1'$：
+\begin{align*}
+(\ln 2)^2 + \left(v\frac{\ln 2}{\ln 3}\right)\ln 2 &= (\ln 3)^2 + v \ln 3 \\
+(\ln 2)^2 + v\frac{(\ln 2)^2}{\ln 3} &= (\ln 3)^2 + v \ln 3 \\
+v\left(\frac{(\ln 2)^2}{\ln 3} - \ln 3\right) &= (\ln 3)^2 - (\ln 2)^2 \\
+v\left(\frac{(\ln 2)^2 - (\ln 3)^2}{\ln 3}\right) &= -((\ln 2)^2 - (\ln 3)^2) \\
+v &= -\ln 3
+\end{align*}
+
+\noindent
+\textbf{步骤 3: 求 $u$,$x$ 和 $y$}
+
+\[
+u = v \frac{\ln 2}{\ln 3} = -\ln 3 \cdot \frac{\ln 2}{\ln 3} = -\ln 2
+\]
+
+转回 $x$ 和 $y$：
+\begin{align*}
+\ln x &= -\ln 2 \implies x = e^{-\ln 2} = \frac{1}{2} \\
+\ln y &= -\ln 3 \implies y = e^{-\ln 3} = \frac{1}{3}
+\end{align*}
+\end{solution}
+
+
+    \question 求下列方程组的所有实数解:
+    \begin{align*}
+    x + \log_{10} x &= y-1 \\
+    y + \log_{10}(y-1) &= z-1 \\
+    z + \log_{10}(z-2) &= x+2
+    \end{align*}
+    \begin{solution}
+        将方程组改写为
+        \begin{align*}
+        x + \log_{10} x &= y-1 \\
+        (y-1) + \log_{10}(y-1) &= z-2 \\
+        (z-2) + \log_{10}(z-2) &= x
+        \end{align*}
+        令 $a = x,b = y-1,c = z-2$,方程组可改写为:
+        \begin{align}
+        a + \log_{10} a &= b \tag{1} \\
+        b + \log_{10} b &= c \tag{2} \\
+        c + \log_{10} c &= a \tag{3}
+        \end{align}
+        容易验证 $(a,b,c)=(1,1,1)$ 是一解,现考虑 $a>1$,则
+        \[
+        \log_{10} a > 0 \Rightarrow b = a+\log_{10}a > a > 1 \Rightarrow c = b+\log_{10}b > b > a > 1
+        \]
+        由 (3) 得 $a = c + \log_{10}c > c > b > a$,矛盾。而当 $0<a<1$,
+        \[
+        \log_{10} a < 0 \Rightarrow b = a+\log_{10}a < a < 1 \Rightarrow c = b+\log_{10}b < b < a < 1
+        \]
+        由 (3) 得 $a = c + \log_{10}c < c < b < a$,矛盾。
+        因此$(a,b,c)=(1,1,1)$ 是唯一解,即 
+        \[
+        (x,y,z)=(1,2,3)
+        \]
+    \end{solution}
+
+    \question 若正实数 $x,y,z$ 满足
+    \[
+    \begin{cases}
+    \log_{2}x + \log_{4}y + \log_{4}z = 2 \\
+    \log_{3}y + \log_{9}z + \log_{9}x = 2 \\
+    \log_{4}z + \log_{16}x + \log_{16}y = 2
+    \end{cases}
+    \]
+    求 $xyz$。
+    \begin{solution}
+        原方程组给出
+        \[
+        \begin{cases}
+        \log_2 x + \log_2 \sqrt{y} + \log_2 \sqrt{z} = 2 \Rightarrow x\sqrt{yz} = 2^2 \\
+        \log_3 y + \log_3 \sqrt{z} + \log_3 \sqrt{x} = 2 \Rightarrow y\sqrt{xz} = 3^2 \\
+        \log_4 z + \log_4 \sqrt{x} + \log_4 \sqrt{y} = 2
+        \Rightarrow z\sqrt{xy} = 4^2
+        \end{cases}
+        \]
+        将三式相乘得
+        \[
+        (xyz)^2 = 2^6 \cdot 3^2 \Rightarrow xyz = 24
+        \]
+    \end{solution}
+
+    \question 解联立方程组
+    \[
+    \begin{cases}
+    \log x \log y - 3 \log 5 y - \log 8 x = -4 \\
+    \log y \log z - 4 \log 5 y - \log 16 z = 4 \\
+    \log z \log x - 4 \log 8 x - 3 \log 625 z = -18
+    \end{cases}
+    \]
+    \begin{solution}
+        三式化简得
+        \begin{align*}
+        \log x \log y - 3 \log  y - \log x &= -1 \\
+        \log y \log z - 4 \log  y - \log  z &= 8 \\
+        \log z \log x - 4 \log  x - 3 \log z &= -6
+        \end{align*}
+        因式分解:
+        \begin{align}
+        (\log x-3)( \log y -1 )&= 2 \\
+        (\log y-1)( \log z -4 )&= 12 \\
+        (\log z-4)( \log x -3 )&= 6 
+        \end{align}
+        三式相乘可得
+        \begin{equation}
+        (\log x-3)( \log y -1 )(\log z-4)= \pm\sqrt{2\cdot 6\cdot 12} =\pm12
+        \end{equation}
+        分别作$\dfrac{(4)}{(2)},\dfrac{(4)}{(3)},\dfrac{(4)}{(1)}$得解   $\log x-3= \pm1,\log y -1=\pm2,\log z-4=\pm6$,即\[
+        (x,y,z) = (10^4, 10^3, 10^{10}) \quad \text{或} \quad (10^2, 10^{-1}, 10^{-2})
+        \]
+    \end{solution}
+\end{questions}
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{方程组}{方程组} \label{方程组}
   }
 \end{center}
@@ -6406,772 +6191,985 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{指数与对数}{指数与对数} \label{指数与对数}
+    \hypertarget{函数}{函数} \label{函数}
   }
 \end{center}
 \separator
 \vspace{1pt}
 
 \begin{questions}
-    \question 设 \( a=2019^{2017}, b=2019^{2018}, c=2019^{2019} \),计算
-    \[
-    \frac{1}{2019^{a - a} + 2019^{a - b} + 2019^{a - c}} + \frac{1}{2019^{b - a} + 2019^{b - b} + 2019^{b - c}} + \frac{1}{2019^{c - a} + 2019^{c - b} + 2019^{c - c}} 
-    \]
+    \question 求下列函数的值域:
+    \begin{parts}
+    \part $f(x) = x^2-2x+5$,其中$D_f= [-1,2]$
     \begin{solution}
-        观察到原式为
+        配方法得
         \[
-        \frac{2019^{-a}}{2019^{- a} + 2019^{- b} + 2019^{- c}} + \frac{2019^{-b}}{2019^{- a} + 2019^{- b} + 2019^{- c}} + \frac{2019^{-c}}{2019^{- a} + 2019^{- b} + 2019^{- c}} 
+        f(x) = x^2-2x+5 = (x-1)^2+4
         \]
-        答案呼之欲出$\Rightarrow1$
-    \end{solution}          
-
-    \question 试证
-    \[
-    2^{\sqrt{\log_2 3}} = 3^{\sqrt{\log_3 2}}
-    \]
-    \begin{solution}
-        注意到
+        当$x=1,f_{\min}=4$;当$x=-1,f_{\max}=8$,故
         \[
-        2^{\sqrt{\log_2 3}} 
-        = 2^{\frac{\log_2 3}{\sqrt{\log_2 3}}} 
-        = \left(2^{\log_2 3}\right)^{\sqrt{\log_3 2}} 
-        = 3^{\sqrt{\log_3 2}}
-        \]
-        故左式等于右式,得证。
-    \end{solution}
-    \begin{solution}
-        设$x=2^{\sqrt{\log_2 3}},y=3^{\sqrt{\log_3 2}}$,则\[
-        \log x=\sqrt{\log_2 3}\cdot \log 2 = \sqrt{\frac{\log 3}{\log 2}}\cdot\log 2 = \sqrt{\log 2 \log 3}
-        \]同理\[
-        \log y=\sqrt{\log_3 2} \cdot\log 3 = \sqrt{\frac{\log 2}{\log 3}}\cdot\log 3 = \sqrt{\log 2 \log 3}
-        \]故\[\log x = \log y \Rightarrow x=y \quad\text{（得证）}\]
-    \end{solution}
-
-    \question 解方程
-    \[
-    2^{x+2}5^{6-x} = 10^{x^{2}},
-    \]
-    \begin{solution}
-        两边取$\log$得\[
-        (x+2)\log 2+(6-x)\log5=x^2 \Rightarrow x^2-\left(\log \frac{2}{5}\right)x-2\log 250=0
-        \]
-        因式分解给出\[
-        (x-2)(x+\log 250)=0 \Rightarrow x = 2, -\log 250
+        R_f = [4,8]
         \]
     \end{solution}
-
-    \question
-\noindent
-求解方程
-\[
-\frac{e^{2x}+16^x}{(4e)^x} = \frac{4+e}{2\sqrt{e}}, \quad x \in \mathbb{R}.
-\]
-
-\begin{solution}
-\noindent
-\textbf{步骤 1: 化简方程两边}
-
-给定方程：
-\[
-\frac{e^{2x}+16^x}{(4e)^x} = \frac{4+e}{2\sqrt{e}}
-\]
-
-利用指数法则化简左边：
-\[
-\frac{e^{2x}}{(4e)^x} + \frac{16^x}{(4e)^x} = \left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x
-\]
-
-右边化简为：
-\[
-\frac{4+e}{2\sqrt{e}} = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
-\]
-
-因此方程变为：
-\[
-\left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
-\]
-
-\noindent
-\textbf{步骤 2: 代换化为二次方程}
-
-令
-\[
-y = \left(\frac{e}{4}\right)^x
-\]
-
-则方程可写作：
-\[
-y + \frac{1}{y} = \left(\frac{e}{4}\right)^{1/2} + \frac{1}{\left(\frac{e}{4}\right)^{1/2}}
-\]
-
-两边乘以 $y$ 得到二次形式：
-\[
-y^2 - \left(\left(\frac{e}{4}\right)^{1/2} + \left(\frac{e}{4}\right)^{-1/2}\right)y + 1 = 0
-\]
-
-因式分解得到：
-\[
-\left(y - \left(\frac{e}{4}\right)^{1/2}\right)\left(y - \left(\frac{e}{4}\right)^{-1/2}\right) = 0
-\]
-
-\noindent
-\textbf{步骤 3: 求 $x$ 的值}
-
-\begin{align*}
-\left(\frac{e}{4}\right)^x &= \left(\frac{e}{4}\right)^{1/2} \implies x = \frac{1}{2} \\
-\left(\frac{e}{4}\right)^x &= \left(\frac{e}{4}\right)^{-1/2} \implies x = -\frac{1}{2}
-\end{align*}
-
-\noindent
-\textbf{答案:} 
-\[
-x = \frac{1}{2}, \quad x = -\frac{1}{2}
-\]
-\end{solution}
-
-    \question 解 
-    \[
-    x^{x^{x}} = (x^{x})^{x}
-    \]
+    \part $f(x) = x+\sqrt{x(2-x)}$
     \begin{solution}
-        原方程即
+        设$y=x+\sqrt{x(2-x)}$,则
         \[
-        x^{x^{x}} = x^{x^2}
+        2x^2-2(y+1)x+y^2=0
         \]
-        先考虑指数方程的特殊情况$x=-1,0,1$,可得解
+        由于$x\in \mathbb{R}$,判别式为非负,
         \[
-        x=-1,1
+        4(y+1)^2-8y \ge 0 \Rightarrow 1-\sqrt{2} \le y \le 1+\sqrt{2}
         \]
-        当$x \neq -1,0,1$时,由底数相等所以指数相等的性质得,
-        \[
-        x=2
-        \]
-        故原方程式的解为
-        \[
-        x=-1 \quad \text{或} \quad x=1 \quad \text{或} \quad x=2
-        \]
-    \end{solution}
+        但$0 \le x \le 2, y=x+\sqrt{x(2-x)} \ge 0$,故$y_{\min}=0$。 
 
-    \question 已知 
-    \[
-    (x\sqrt{x}\sqrt[3]{x})^{x} = x^{x\sqrt{x}\sqrt[3]{x}},
-    \]
-    试求 $x^{5}$ 的值。
-    \begin{solution}
-        \begin{align*}
-        (x\sqrt{x}\sqrt[3]{x})^{x} &= x^{x\sqrt{x}\sqrt[3]{x}} \\
-        x^{(1+\frac{1}{2}+\frac{1}{3})x} &= x^{x^{1+\frac{1}{2}+\frac{1}{3}}}\\
-        x^{(\frac{11}{6})x} &= x^{x^{\frac{11}{6}}}
-        \end{align*}
-        考虑特殊情况 $x=-1, 0, 1,$ 可得解 $x=1$,此时因底数相等所以指数相等,得
-        \[
-        \frac{11}{6}x = x^{\frac{11}{6}} \Rightarrow x^5 = \left(\frac{11}{6}\right)^{6} 
-        \]
-        故$x^5$的可能值为
-        \[
-        x^5=1 \quad \text{或} \quad x^5 = \left(\frac{11}{6}\right)^{6}
-        \]
-    \end{solution}
+        而当$y=1+\sqrt{2},x_1=\dfrac{2+\sqrt{2}-2\sqrt[4]{2}}{\sqrt{2}} \in [0,2]$,故$y_{\max}=1+\sqrt{2}$。
 
-    \question 求满足方程 
-    \[
-    (x^{2}+2x)^{x^{2}-3x+2}=1
-    \] 
-    的实数解。
-    \begin{solution}
-        设 $A=x^{2}+2x$, $B=x^{2}-3x+2$。欲使 $A^{B}=1$,仅以下三种情况成立:
-        \begin{itemize}
-        \item $B=0$:
-        \[
-        x^{2}-3x+2=0 \;\;\Rightarrow\;\; (x-1)(x-2)=0\Rightarrow\;\;x=1,2
-        \]
-        \item $A=1$:
-        \[
-        x^{2}+2x=1 \;\;\Rightarrow\;\; x=-1\pm\sqrt{2}
-        \]
-        \item $A=-1$ 且 $B$ 为偶数:  
-        \[
-        x^{2}+2x=-1 \;\;\Rightarrow\;\; (x+1)^{2}=0 \;\;\Rightarrow\;\; x=-1
-        \]  
-        此时  
-        \[
-        B=(-1)^{2}-3(-1)+2=6
-        \]  
-        为偶数,成立。
-        \end{itemize}
-        综上,解为  
-        \[
-        x\in \{1,2,-1+\sqrt{2},-1-\sqrt{2},-1\}
-        \]
-    \end{solution}
-
-    \question 计算
-    \[
-    5^{(\log 2)^3} \cdot 8^{(\log 5)^2} \cdot 5^{(\log 5)^3}
-    \]
-    \begin{solution}
-        令$a=\log 2,b=\log 5$,则$a+b=1$,原式为
-        \[
-        L=5^{a^3}\cdot 8^{b^2} \cdot 5^{b^3}
-        \]
-        两边取对数,则
-        \[
-        \log L 
-        = (a^3 + b^3)b + 3ab^2 
-        = (a+b)(a^2-ab+b^2) b + 3ab^2 
-        = b(a+b)^2 
-        = \log 5
-        \]
-        因此
-        \[
-        L = 5
-        \]
-    \end{solution}
-
-    \question 已知正实数 $x$ 满足
-    \[
-    \log_2 x\log_4 x\log_6 x = \log_2 x\log_4 x+\log_2 x\log_6 x+\log_4 x\log_6 x,
-    \]
-    求 $x$。
-    \begin{solution}
-        设$\log_2 x=a, \log_6 x=b$,则$\log_4 x=\dfrac{1}{2}a$,原式为
-        \[
-        \frac{1}{2}a^2 b = \frac{1}{2}a^2 + ab + \frac{1}{2}ab
-        \Rightarrow ab = a + 3b
-        \]
-        将 $a=\dfrac{\log x}{\log 2},b=\dfrac{\log x}{\log 6}$ 代入得
-        \[
-        \frac{(\log x)^2}{(\log 2)(\log 6)}
-        = \frac{\log x(\log 6+3\log 2)}{(\log 2)(\log 6)} \Rightarrow \log x(\log x-\log 48)=0
-        \]
-        所以
-        \[
-        x=1\quad\text{或}\quad x=48
-        \]
-    \end{solution}
-
-    \question 求
-    \[
-    \sqrt{\log_3 \sqrt{6} + \sqrt{\log_3 2}} + \sqrt{\log_3 \sqrt{6} - \sqrt{\log_3 2}}
-    \]
-    之值。
-    \begin{solution}
-        令
-        \[
-        a = \log_3 \sqrt{6} = \frac{1}{2} (1 + \log_3 2), \quad 
-        b = \sqrt{\log_3 2} < 1
-        \]
-        则有
-        \[
-        a = \frac{b^2 + 1}{2}
-        \]
-        因此
-        \begin{align*}
-        \sqrt{a+b} + \sqrt{a-b} &= \sqrt{\frac{b^2+1}{2} + b} + \sqrt{\frac{b^2+1}{2} - b} \\
-        &= \sqrt{\frac{1}{2} (b+1)^2} + \sqrt{\frac{1}{2} (b-1)^2} \\
-        &= \frac{1}{\sqrt{2}} (b+1) + \frac{1}{\sqrt{2}} (1-b) = \sqrt{2}
-        \end{align*}
-    \end{solution}
-
-    \question 解不等式
-    \[
-    \sqrt{\log_2 x - 1} + \frac{1}{2} \log_{\frac{1}{2}} x^3 + 2 > 0
-    \]
-    \begin{solution}
-        设 \( y = \log_2 x \),则不等式化为
-        \[
-        \sqrt{y - 1} - \frac{3}{2} y + 2 > 0, \quad \text{且} \;y \ge 1.
-        \]
-        设$z=\sqrt{y - 1}$,则$y=z^2+1$,方程变为
-        \[
-        z - \frac{3}{2} (z^2+1) + 2 > 0 \Rightarrow (3z+1)(z-1)<0 
-        \]
         于是
         \[
-        -\frac13<z<1 \Rightarrow 0\leq z^2<1 \Rightarrow1\leq y<2 
-        \]
-        再考虑$y$的定义域$y\geq1$,经检验有
-        \[
-        2\leq x <4
+        R_f = [0,1+\sqrt{2}]
         \]
     \end{solution}
-    
-    \question 求不等式的解集
-    \[
-    \log (x - 40) + \log (60 - x) < 2
-    \]
+    \part $f(x) = \dfrac{3x+4}{5x+6}$
     \begin{solution}
-        变为
+        设$y=\dfrac{3x+4}{5x+6}$,则$x=\dfrac{4-6y}{5y-3}$,故反函数
         \[
-            (x - 40)(60 - x) < 100
+        f^{-1}(x)=\frac{4-6x}{5x-3}
         \]
-        注意到\((x - 40)(60 - x) = -(x - 50)^2 + 100\),所以不等式等价于
+        的定义域为
         \[
-        -(x - 50)^2 + 100 < 100 \Rightarrow (x - 50)^2 > 0\Rightarrow x \ne 50
+        D_{f^{-1}}=\left(-\infty,\frac{3}{5}\right)\cup\left(\frac{3}{5},\infty\right)
         \]
-        且由定义域\[
-        \begin{cases}
-        x - 40 > 0 \\
-        60 - x > 0
-        \end{cases} \Rightarrow 40<x<60
-        \]经检验得解集
-        \[
-        (40,\;50)\cup(50,\;60).
-        \]
+        即$R_f$。
     \end{solution}
-
-    \question 解不等式：
-    \[
-    \left(\log_{\frac{1}{3}} x - 1\right)\left(\log_{\frac{1}{4}} x + 2\right)\left(\log_{\frac{1}{5}} x - 3\right) > 0.
-    \]
-    \begin{solution}
-    换底得
-    \[
-    \left(\frac{\log x}{-\log 3} - 1\right)\left(\frac{\log x}{-\log 4} + 2\right)\left(\frac{\log x}{-\log 5} - 3\right) > 0
-    \]
-    即
-    \[
-    (\log x + \log 3)(\log x - 2\log 4)(\log x + 3\log 5) < 0
-    \]
-    符号分析得
-    \[
-    -\log 3 < \log x < 2\log 4, \quad \log x < -3\log 5
-    \]
-    解集为
-    \[
-    \frac{1}{3} < x < 16 \quad \text{或} \quad 0 < x < \frac{1}{125}
-    \]
-    \end{solution}
-
-    \question 求 
-    \[
-    |x - 1|^{\log_{2}(4 - x)} < |x - 1|^{\log_{2}(1 + x)}
-    \]
-    的解之范围。
-    \begin{solution}
-        由$\log_{2}(4 - x)$及$\log_{2}(1 + x)$的定义域,得
-        \[  
-        x < 4 \quad \text{且} \quad x > -1 
-        \]
-        即  $x \in (-1, 4)$,且$x \neq 0,1,2$,否则不等式不成立。分四种情况讨论：
-
-        情况1: $x \in (-1, 0)$,则
-        \begin{align*}
-        (1-x)^{\log_2 (4-x)} < (1-x)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) < \log_2 (1+x) \\
-        & \Rightarrow 4-x < 1+x \\
-        & \Rightarrow x > \frac{3}{2}
-        \end{align*}
-        此情况解集为 $(-1, 0) \cap \left(\dfrac{3}{2}, \infty\right) = \emptyset$,无解。
-
-        情况2: $x \in (0, 1)$,则
-        \begin{align*}
-        (1-x)^{\log_2 (4-x)} < (1-x)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) > \log_2 (1+x) \\
-        & \Rightarrow 4-x > 1+x \\
-        & \Rightarrow x < \frac{3}{2} 
-        \end{align*}
-        此情况解集为 $(0, 1) \cap \left(-\infty, \dfrac{3}{2}\right) = (0, 1)$。
-
-        情况3: $x \in (1, 2)$,则
-        \begin{align*}
-        (x-1)^{\log_2 (4-x)} < (x-1)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) > \log_2 (1+x) \\
-        & \Rightarrow 4-x > 1+x \\
-        & \Rightarrow x < \frac{3}{2}
-        \end{align*}
-        此情况解集为 $(1, 2) \cap \left(-\infty, \dfrac{3}{2}\right) = \left(1, \dfrac{3}{2}\right)$。
-
-        情况4: $x \in (2, 4)$,则
-        \begin{align*}
-        (x-1)^{\log_2 (4-x)} < (x-1)^{\log_2 (1+x)} & \Rightarrow \log_2 (4-x) < \log_2 (1+x) \\
-        & \Rightarrow 4-x < 1+x \\
-        & \Rightarrow x > \frac{3}{2}
-        \end{align*}
-        此情况解集为 $(2, 4) \cap \left(\dfrac{3}{2},\infty \right) = (2, 4)$。
-
-        综上所述,原方程式的解集为 $\left(0, \dfrac{3}{2}\right) \cup (2, 4) \setminus \{1\}$。
-    \end{solution}
-
-
-    \question 求所有实数 $x$,使得
-    \[
-    \sqrt{\log_2 x \cdot \log_2 (4x) + 1} + \sqrt{\log_2 x \cdot \log_2 \left(\frac{x}{64}\right) + 9} = 4
-    \]
-    \begin{solution}
+    \part $f(x) = \dfrac{3x+2}{x+1}$
+    \begin{solution}  
         发现
-        \begin{align*}
-        f(x) 
-        &= \sqrt{\log_2 x \cdot \log_2(4x) + 1} + \sqrt{\log_2 x \cdot \log_2\left(\frac{x}{64}\right) + 9} \\
-        &= \sqrt{\log_2 x (2 + \log_2 x) + 1} + \sqrt{\log_2 x (\log_2 x - 6) + 9} \\
-        &= \sqrt{(\log_2 x + 1)^2} + \sqrt{(\log_2 x - 3)^2} \\
-        &= 
-        \begin{cases}
-            \begin{aligned}
-            &-2\log_2 x+ 2&&, \log_2 x \le -1 \\[1mm]
-            &4&&, -1 < \log_2 x \le 3 \\[1mm]
-            &2\log_2 x- 2&&, \log_2 x > 3
-            \end{aligned}
-        \end{cases}
-        \end{align*}
-        欲使$f(x)=4$,当 $\log_2 x \le -1,\log_2x = -1$;
-        当 $-1 < \log_2x \le 3,f(x) = 4$ 恒成立;
-        当 $\log_2x > 3$,无解;因此解为
         \[
-        -1 \le \log_2x \le 3 \Rightarrow \frac{1}{2} \le x \le 8
+        f(x) = \dfrac{3x+2}{x+1} = 3 - \frac{1}{x+1} \neq 3
         \]
-    \end{solution}
-
-    \question 已知 
-    \[
-    \frac{\log a}{b - c} = \frac{\log b}{c - a} = \frac{\log c}{a - b},
-    \]
-    其中 $a \neq b \neq c$, 试求 $a^{a}b^{b}c^{c}$ 的值。
-    \begin{solution}
-        设
-        \[
-        \frac{\log a}{b-c} = \frac{\log b}{c-a} = \frac{\log c}{a-b} = k
-        \]
-        则
-        \[
-        \log a = k(b-c), \quad \log b = k(c-a), \quad \log c = k(a-b)
-        \]
-        因此
-        \begin{align*}
-        \log(a^a b^b c^c) &= a\log a + b\log b + c\log c \\
-        &= ak(b-c) + bk(c-a) + ck(a-b) \\
-        &= k[ab - ac + bc - ab + ca - cb] \\
-        &= 0
-        \end{align*}
-        即 
-        \[
-        a^a b^b c^c = 1
-        \]
-    \end{solution}
-
-    \question 设 $a,b$同号,且 $a^2 - 2ab - 9b^2 = 0$,求
-    \[
-    \log(a^2 + ab - 6b^2) - \log(a^2 + 4ab + 15b^2)
-    \]
-    的值。
-    \begin{solution}
-        由 $a^2 - 2ab - 9b^2 = 0 $解得
-        $$a = (\sqrt{10} + 1)b$$
         故
         \[
-        \begin{aligned}
-        &\log(a^2 + ab - 6b^2) - \log(a^2 + 4ab + 15b^2) \\
-        &= \log(3ab + 3b^2) - \log(6ab + 24b^2) \\
-        &= \log\left(\frac{3b(a + b)}{6b(a + 4b)}\right)\\
-        &= \log\left(\frac{1}{2} \cdot \frac{a + b}{a + 4b}\right) \\
-        &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)b}{(\sqrt{10} + 5)b}\right) \\
-        &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)(5 - \sqrt{10})}{(\sqrt{10} + 5)(5 - \sqrt{10})}\right) \\
-        &= \log\left(\frac{1}{2} \cdot \frac{3\sqrt{10}}{15}\right)= \log\left(\frac{\sqrt{10}}{10}\right) = -\frac{1}{2}
-        \end{aligned}
+        R_f=(-\infty,3) \cup (3,\infty)
         \]
     \end{solution}
-
-    \question 设正实数 \( x, y \)（\( x \neq 1, y \neq 1 \)）满足
-    \[
-    \log_2 x = \log_y 16, \quad xy = 64,
-    \]
-    求
-    \[
-    \left(\log_2 \frac{x}{y}\right)^2。
-    \]
+    \part $f(x) = \dfrac{\cos x}{\sin x-3}$
     \begin{solution}
-        由 \(xy = 64\)得 \(x = \frac{64}{y}\),代入第一式:
+        设$y=\dfrac{\cos x}{\sin x-3}$,则
         \[
-        \log_2 \left( \frac{64}{y} \right) = \log_y 16
-        \Rightarrow 6 - \log_2 y = \frac{4}{\log_2 y}
+        3y=y \sin x -\cos x=\sqrt{y^2+1}\cos(x-\alpha)
+        \Rightarrow \cos(x-\alpha)=\frac{3y}{\sqrt{y^2+1}} 
         \]
-        设 \(a = \log_2 y\),则变为
+        由于$\cos(x-\alpha)\in [-1,1]$,解得
         \[
-        6 - a = \frac{4}{a} \Rightarrow a^2 - 6a + 4 = 0
+        -1 \le \frac{3y}{\sqrt{y^2+1}} \le 1 \Rightarrow -\frac{\sqrt{2}}{4} \le y \le \frac{\sqrt{2}}{4}
         \]
-        解得
+        即
         \[
-        \log_2 y =a= 3 \pm \sqrt{5}
-        \]
-        所求为
-        \[
-        \left(\log_2 x - \log_2 y\right)^2 = (a - (6 - a))^2 = (2a - 6)^2 = (\pm 2\sqrt{5})^2 = 20
+        R_f = \left[-\frac{\sqrt{2}}{4},\frac{\sqrt{2}}{4}\right]
         \]
     \end{solution}
-    
-    \question 已知 $a^x = bc,b^y = ac,c^z = ab,$ 证明 $$xyz = x + y + z + 2$$
-
+    \part $f(x) = 2^{x-5}+\log_3 \sqrt{x-1}$,其中$D_f= [2,10]$
     \begin{solution}
-        由 $a^x = bc$,两边取 $yz$ 次方
+        由于$2^{x-5}$与$\log_3 \sqrt{x-1}$在$[2,10]$上皆为增函数,故$f(x)$也为增函数。
+
+        当$x=2,f(x)=\dfrac{1}{8}$;当$x=10,f(x)=33$。故
         \[
-        (a^x)^{yz} = (bc)^{yz} \Rightarrow a^{xyz} = b^{yz} \cdot c^{yz}
-        \]
-        由 $b^y = ac$,得 $b^{yz} = (ac)^z = a^z c^z$ ;由 $c^z = ab$,得 $c^{yz} = (ab)^y = a^y b^y$;于是        
-        \[
-        a^{xyz} = (a^z c^z)(a^y b^y) = a^{z+y} b^y c^z = a^{z+y} \cdot ac \cdot ab = a^{z+y+2} bc
-        \]
-        又 $a^x = bc$,故
-        \[
-        a^{xyz} = a^{z+y+2} \cdot a^x = a^{x+y+z+2} \Rightarrow xyz = x + y + z + 2
+        R_f=\left[\frac{1}{8},33\right]
         \]
     \end{solution}
-
-    \question 设 \(a, b, c\) 均为异于 1 的正数,且满足 \(abc = 1\), 证明
-    \[
-    \log_a b + \log_a c + \log_b c + \log_b a + \log_c b + \log_c a = -3
-    \]
+    \part $f(x) = \sqrt{x+1}-\sqrt{x-1}$
     \begin{solution}
-    有\begin{align*}
-          &\log_a a+\log_a b + \log_a c + \log_b b+ \log_b c + \log_b a + \log_c c + \log_c b + \log_c a \\ &=\log_a (abc)+\log_b (abc)+\log_c (abc)\\&=0
-      \end{align*}
-      故原式得证。
+        发现
+        \[
+        f(x) = \frac{2}{\sqrt{x+1}+\sqrt{x-1}}
+        \]
+        由$x\ge 1$,得$\sqrt{x+1}+\sqrt{x-1} \ge 2$,于是
+        \[
+        0 < \frac{2}{\sqrt{x+1}+\sqrt{x-1}} \le \frac{2}{\sqrt{2}} = \sqrt{2}
+        \]
+        即
+        \[
+        R_f=(0,\sqrt{2}]
+        \]
     \end{solution}
-
-    \question 已知
+    \part $f(x) = x+2+\sqrt{1-(x+1)^2}$
+    \begin{solution}
+        由于$1-(x+1)^2 \ge 0$,有$(x+1)^2 \le 1$,不妨设 $x+1 = \cos \alpha,\alpha \in [0,\pi]$,则
         \[
-        \log_{10} \sin x + \log_{10} \cos x = -1,
+        f(x) = \cos \alpha + 1 + \sqrt{1-\cos^2 \alpha} = \sin \alpha + \cos \alpha + 1 = \sqrt{2}\cos\left(\alpha-\frac{\pi}{4}\right)+1
         \]
-        且整数 $n$ 满足
+        由$\alpha \in [0,\pi]$,可知
         \[
-        \log_{10} (\sin x + \cos x) = \frac{1}{2} (\log_{10} n - 1),
+        -\frac{\sqrt{2}}{2} \le \cos\left(\alpha-\frac{\pi}{4}\right) \le 1 \Rightarrow 0 \le \sqrt{2}\cos\left(\alpha-\frac{\pi}{4}\right) +1\le 1+\sqrt{2}
         \]
-        求 \( n\)。
+        即
+        \[
+        R_f=[0,1+\sqrt{2}]
+        \]
+    \end{solution}
+    \part $f(x) = \dfrac{x^3-x}{x^4+2x^2+1}$
+    \begin{solution}
+        首先有
+        \[
+        f(x)=\frac{1}{2}\cdot \frac{2x}{1+x^2} \cdot \frac{1-x^2}{1+x^2}
+        \]
+        令$x=\tan \beta$,则
+        \[
+        f(x)=\frac{1}{2}\sin 2\beta \cos 2\beta=\frac{1}{4}\sin 4\beta
+        \]
+        若$k \in \mathbb{Z}$,当$\beta=\dfrac{k\pi}{2}-\dfrac{\pi}{8},f_{\max}=\dfrac{1}{4}$;当$\beta=\dfrac{k\pi}{2}+\dfrac{\pi}{8},f_{\min}=-\dfrac{1}{4}$,且此时$\tan \beta$有意义,于是
+        \[
+        R_f=\left[-\frac{1}{4},\frac{1}{4}\right]
+        \]
+    \end{solution}
+    \part $f(x) = x+4+\sqrt{5-x^2}$
+    \begin{solution}
+        由$5-x^2 \ge 0$得$|x| \le \sqrt{5}$,令$x=\sqrt{5}\cos\alpha, \alpha \in [0,\pi]$,则
+        \[
+        f(x)=\sqrt{5}\cos\alpha+4+\sqrt{5}\sin\alpha=4+\sqrt{10}\cos\left(\alpha-\frac{\pi}{4}\right)
+        \]
+        由于$\alpha \in [0,\pi],\alpha-\dfrac{\pi}{4}\in\left[-\dfrac{\pi}{4},\,\dfrac{3\pi}{4}\right]$,故
+        \[
+        f_{\max}=4+\sqrt{10}\cdot 1,\quad f_{\min}=4+\sqrt{10}\cdot \left(-\frac{\sqrt2}{2}\right)
+        \]
+        故
+        \[
+        R_f=[4-\sqrt{5},4+\sqrt{10}]
+        \]
+    \end{solution}
+    \part $f(x)= \dfrac{\sqrt{x+2}}{x+3}$
+    \begin{solution}
+        设$t=\sqrt{x+2},t \ge 0$,则$x+3=t^2+1$。当$t>0$,
+        \[
+        f(x)=\frac{t}{t^2+1} = \frac{1}{t+\frac{1}{t}} \le \frac{1}{2}
+        \]
+        等号成立当且仅当$t=1$即$x=-1$,于是
+        \[
+        0 < f(x) \le \frac{1}{2}
+        \]
+        而当$t=0$时,$f(x)=0$,故
+        \[
+        R_f=\left[0,\frac{1}{2}\right]
+        \]
+    \end{solution}
+    \part $f(x) = (\sin x + 1)(\cos x + 1),x \in \left[-\dfrac{\pi}{12},\dfrac{\pi}{2}\right]$
     \begin{solution}
         由
         \[
-        \log_{10} \sin x + \log_{10} \cos x = -1
-        \Rightarrow \sin x \cos x = 10^{-1}= \frac{1}{10}
+        f(x)=\sin x \cos x +\sin x +\cos x +1
         \]
-        又$\sin x + \cos x=\sqrt{1+2\cdot\dfrac{1}{10}}=\sqrt{\dfrac{6}{5}}$ ,则
+        令$t=\sin x +\cos x$,则$\sin x \cos x=\dfrac{1}{2}(t^2-1)$,化为
         \[
-        \log_{10}{n} = 2 \log_{10}{\sqrt{\frac{6}{5}}} + 1 = \log_{10}{\frac{6}{5}} + \log_{10}{10} = \log_{10}{12} \Rightarrow n=12
+        f(x)=\frac{1}{2}(t^2-1)+t+1=\frac{1}{2}(t+1)^2
+        \]
+        又由$t=\sin x +\cos x=\sqrt{2}\cos\left(x-\dfrac{\pi}{4}\right),x \in \left[-\dfrac{\pi}{12},\dfrac{\pi}{2}\right]$知
+        \[
+        \frac{\sqrt{2}}{2}\le t\le \sqrt{2}
+        \]
+        当$t=\sqrt{2},f_{\max}=\dfrac{3}{2}+\sqrt{2}$;当$t=\dfrac{\sqrt{2}}{2},f_{\min}=\dfrac{3}{4}+\dfrac{\sqrt{2}}{2}$,于是
+        \[
+        R_f=\left[\frac{3}{4}+\frac{\sqrt{2}}{2},\frac{3}{2}+\sqrt{2}\right]
+        \]
+    \end{solution}
+    \part $f(x)=\left(\sin x + \dfrac{1}{\sin x}\right)^2+\left(\cos x + \dfrac{1}{\cos x}\right)^2$
+    \begin{solution}
+        展开得
+        \[
+        f(x)=\sin^2 x + \cos^2 x + \csc^2 x + \sec^2 x + 4 = 7 + \tan^2 x + \cot^2 x 
+        \]
+        由AM-GM不等式,
+        \[
+        f(x) \ge 7 + 2 \sqrt{1} = 9
+        \]
+        等号成立当且仅当$\tan x =\cot x$即$x=k\pi \pm \dfrac{\pi}{4}, k \in \mathbb{Z}$,故
+        \[
+        R_f=[9,\infty)
+        \]
+    \end{solution}
+    \part $f(x)=2 \sin x \sin 2x$
+    \begin{solution}
+        由AM-GM不等式,
+        \[
+        [f(x)]^2=16\sin^4 x \cos^2 x = 8\sin ^2 x \sin ^2 x(2-2\sin ^2 x) \le 8\cdot \left(2\cdot \frac{1}{3}\right)^3=\frac{64}{27}
+        \]
+        等号成立当且仅当$\sin ^2 x =2-2\sin ^2 x$即$\sin ^2 x=\dfrac{2}{3}$,故
+        \[
+        R_f=\left[-\frac{8\sqrt{3}}{9},\frac{8\sqrt{3}}{9}\right]
+        \]
+    \end{solution}
+    \part $f(x)=|x-2|+|x+8|$
+    \begin{solution}
+        在一维数轴上设$A=-8,B=2$,当动点$P$在线段$AB$上,
+        \[
+        f(x)=|x-2|+|x+8| = |AB| = 10
+        \]
+        当动点$P$在线段$AB$外,
+        \[
+        f(x)=|x-2|+|x+8| > |AB| = 10
+        \]
+        故
+        \[
+        R_f = [10,\infty)
+        \]
+    \end{solution}
+    \part $f(x)=\sqrt{x^2-6x+13}+\sqrt{x^2+4x+5}$
+    \begin{solution}
+        写成
+        \[
+        f(x)=\sqrt{(x-3)^2+(0-2)^2}+\sqrt{(x+2)^2+(0+1)^2}
+        \]
+        即$x$轴上的动点$P(x,0)$到两定点$A(3,2),B(-2,-1)$的距离之和,而当$P$为线段与$x$轴的交点时,
+        \[
+        f_{\min}=|AB|=\sqrt{(3+2)^2+(2+1)^2}=\sqrt{43}
+        \]
+        于是
+        \[
+        R_f = [\sqrt{43},\infty)
+        \]
+    \end{solution}
+    \part $f(x)=\sqrt{x^2-6x+13}-\sqrt{x^2+4x+5}$
+    \begin{solution}
+        写成
+        \[
+        f(x)=\sqrt{(x-3)^2+(0-2)^2}-\sqrt{(x+2)^2+(0-1)^2}
+        \]
+        即$AP$距离与$BP$距离之差,其中$A(3,2),B(-2,1),P(x,0)$。当$P$在$x$轴上且不是直线$AB$与$x$轴的交点时,即$P'$,则构成$\triangle ABP'$,有
+        \[
+        \bigl||AP'|-|BP'|\bigr|<|AB|=\sqrt{(3+2)^2+(2-1)^2}=\sqrt{26}
+        \]
+        即
+        \[
+        -\sqrt{26} < f(x) < \sqrt{26}
+        \]
+        而当$P$恰好在直线$AB$与$x$轴的交点时,有
+        \[
+        \bigl||AP'|-|BP'|\bigr|=|AB|=\sqrt{26}
+        \]
+        故
+        \[
+        R_f=(-\sqrt{26},\sqrt{26}]
+        \]
+    \end{solution}
+    \part $f(x) = x^2+\sqrt{x^4-3x^2+2x+5}$
+    \begin{solution}
+        变形可得
+        \[
+        f(x)=x^2+\sqrt{(x^2-2)^2+(x+1)^2}
+        \]
+        发现$f(x)$表示抛物线$y=x^2$上动点$P(x,x^2)$到点$A(-1,2)$和$x$轴的距离之和。
+        
+        过$P$点作$PB \perp x$轴于$B$, 过$A$点作$AC \perp x$轴于$C$,
+        $BC$交抛物线$y=x^2$于点$P_0$,
+        故
+        \[
+        |PA|+|PB| \ge |P_0A|+|P_0C| = |AC| = 2
+        \]
+        所以
+        \[
+        R_f = [2,\infty)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 设函数 $f:\mathbb{R}\setminus\{0,-b\}\to \mathbb{R}\setminus\{1\}$满足
+    \[
+    f(x) = \frac{x+a}{x+b}
+    \]
+    求出所有实数对 $(a,b)$ 使得
+    \[
+    f(f(x)) = -\frac{1}{x}
+    \]
+    \begin{solution}
+        据题意,
+        \[
+        f(f(x)) = \frac{\frac{x+a}{x+b} + a}{\frac{x+a}{x+b} + b}
+        = \frac{(1+a)x + a + ab}{(1+b)x + a + b^2} = -\frac{1}{x}
+        \]
+        整理得
+        \[
+        (1+a)x^2 + (a(1+b) + 1 + b)x + a + b^2 = 0.
+        \]
+        解得
+        \[
+        \begin{cases}
+        1 + a = 0 \\
+        a + b^2 = 0 
+        \end{cases}
+        \Rightarrow a = -1,b = \pm 1
+        \]
+        经检验,$(-1, -1)$ 不合题意,故解为$(-1, 1)$
+    \end{solution}
+
+    \question 已知函数 $f,g:\mathbb{R} \to \mathbb{R}$ 互为反函数,且函数
+    \[
+    F(x) = f(x+1)-2, \quad G(x) = g(2x+1),
+    \]
+    也互为反函数,若 $f(1)=4$,求 $f(100)$。
+    \begin{solution}
+        由于 $F,G$ 互为反函数,有
+        \[
+        G(F(x))=g(2F(x)+1)=g(2(f(x+1)-2)+1)=x
+        \]
+        又$f,g$ 互为反函数,则
+        \[
+        2f(x+1)-3=f(x) \Rightarrow f(x+1) = \frac{1}{2}f(x) + \frac{3}{2}
+        \]
+        由 $f(1)=4$,可依次得到
+        \[
+        f(2)=3+\frac{1}{2}, \quad f(3)=3+\frac{1}{4}, \dots
+        \]
+        归纳可得
+        \[
+        f(n) = 3 + \frac{1}{2^{\,n-1}}, \ n \in \mathbb{N}
+        \]
+        因此
+        \[
+        f(100) = 3 + \frac{1}{2^{99}}
         \]
     \end{solution}
 
-    \question 解方程式 
+    \question 已知函数 $g(x)=2x-4$, 其反函数为 $g^{-1}$,且函数 $f$ 对任意实数 $x$ 皆满足
     \[
-    (\log_{5}x)^{2} + \log_{5x}\left(\frac{5}{x}\right) = 1
+    g(f(g^{-1}(x))) = 2x^2 + 16x + 26,
     \]
+    求 $f(\pi)$ 的值。
     \begin{solution}
-        设$\log_5 x = t$,则
+        已知 $g$ 可逆,令$x=g(y)$,则$y=g^{-1}(x)$,由题意得
         \[
-        \log_{5x}\left(\frac{5}{x}\right) = \frac{\log_5\frac{5}{x}}{\log_5(5x)} = \frac{\log_5 5 - \log_5 x}{\log_5 5 + \log_5 x} = \frac{1-t}{1+t}
-        \]
-        原方程式变为
-        \begin{align*}
-        t^2 + \frac{1-t}{1+t} &= 1 \\
-        t^2(1+t) + 1-t &= 1+t \\
-        t^3 + t^2 - 2t &= 0 \\
-        t(t+2)(t-1) &= 0
-        \end{align*}
-        解得 $t = 0, -2, 1$,即 
-        \[
-        x = 5^0 = 1, \quad \text{或} \quad x = 5^{-2} = \frac{1}{25}, \quad \text{或} \quad x = 5^1 = 5
-        \]
-        经检验得$x = 1, x = \dfrac{1}{25}, x=5$都是原方程的解。
-    \end{solution}
-    
-    \question 解方程
-    \[
-    \log_{2x} \left( 48 \sqrt[3]{3} \right) = \log_{3x} \left( 162 \sqrt[3]{2} \right)
-    \]
-    \begin{solution}
-        原式变为
-        \[
-        \frac{\log (48 \sqrt[3]{3})}{\log (2x)} = \frac{\log (162 \sqrt[3]{2})}{\log (3x)}.
-        \]
-        又因
-        \[
-        \log (48 \sqrt[3]{3}) = 4 \log 2 + \frac{4}{3} \log 3,\quad 
-        \log (162 \sqrt[3]{2}) = \frac{4}{3} \log 2 + 4 \log 3.
+        g(f(y)) = 2(g(y))^2 + 16g(y) + 26 
+        = 2(2y-4)^2 + 16(2y-4) + 26 = 8y^2 - 6
         \]
         于是有
         \[
-        \frac{4 \log 2 + \frac{4}{3} \log 3}{\log 2 +  \log x}
-        =
-        \frac{\frac{4}{3} \log 2 + 4 \log 3}{\log 3 +  \log x}.
+        f(y) = g^{-1}(g(f(y)))= g^{-1}(8y^2 - 6) = \frac{8y^2 -6 +4}{2} = 4y^2 - 1
         \]
-        化简最终得到
+        所以
         \[
-        \log x = \frac{1}{2} \log 6 \Rightarrow x = \sqrt{6}.
+        f(\pi) = 4\pi^2 - 1
+        \]
+    \end{solution}
+\begin{solution}
+    由$y=g(x)=2x-4$,得
+    \[
+    x=g^{-1}(y) = \frac{y+4}{2}
+    \]
+    由$g(f(g(x))) = 2x^2 + 16x + 26$,
+    \[
+    f(g(x)) = g^{-1}(2x^2 + 16x + 26) = x^2 + 8x + 15 = (x+4)^2 - 1
+    \]
+    且
+    \[
+    f(g(x)) = f\left(\textcolor{red}{\frac{x+4}{2}}\right) = (x+4)^2 - 1
+    \]
+    令 $\dfrac{x+4}{2} = \pi$, 则
+    \[
+    f(\pi) = 4\pi^2 - 1.
+    \]
+    \textcolor{red}{请问是哪一行有误?}
+\end{solution}
+
+    % \question 求 $k$ 的求值范围,使得函数 $f(x) = x^3 + 2x^2 + kx - 1$ 反函数存在。
+    % \begin{solution}
+    %     对$f(x)$ 求导得
+    %     $$ f'(x) = 3x^2 + 4x + k = 3\left(x + \frac{2}{3}\right)^2 + k - \frac{4}{3} $$
+    %     只有当$k> \dfrac{4}{3}$时, $f(x)$ 单调递增,故$f(x)$在$\mathbb{R}$上一对一,反函数$f^{-1}(x)$ 存在。
+        
+    %     现考虑$k=\dfrac{4}{3}$,因$f'(x)=0$有唯一解$x=-\dfrac23$,
+    %     且$f$在$(-\infty,-\dfrac23)$及$(-\dfrac23,\infty)$上严格递增,故$x=-\dfrac23$是一驻点。由图像法可知,$f(x)$在$\mathbb{R}$上一对一,此时反函数$f^{-1}(x)$ 存在。\textcolor{red}{(待验证)}
+    
+    %     综上,当$k\ge \dfrac{4}{3}$时,反函数存在。
+    % \end{solution}
+
+
+    \question 已知$f(x) + 2 f(4-x) = x + 8,$求 $f(16)$。 
+    \begin{solution}
+        令$x=-12,16$,可得联立方程
+        \[
+        \begin{cases}
+            f(-12)+2(16)=-4\\f(16)+2f(-12)=24
+        \end{cases}
+        \]
+        解得 $$f(16)= -\dfrac{32}{3}$$
+    \end{solution}
+        
+    \question 若 $f(x)$ 为实系数二次多项式,已知 $p,q,r$ 为三相异非零实数,使得 $f(p)=qr,f(q)=rp,f(r)=pq$,证明$f(p+q+r) = f(p)+f(q)+f(r)$。
+    \begin{solution}
+        取 $g(x) = x f(x) - pqr$,则 $g(p) = g(q) = g(r) = 0$,且有
+        \[
+        g(x) = x f(x) - pqr = a(x - p)(x - q)(x - r)
+        \]
+        于是
+        \[
+        f(x) = \frac{1}{x} \left( a x^3 - a(p + q + r)x^2 + a(pq + qr + rp)x - apqr + pqr \right)
+        \]
+        由于 $f(x)$ 为二次多项式,因此 $-apqr + pqr = 0 \Rightarrow a = 1$,得
+        \[
+        f(x) = x^2 - (p + q + r)x + pq + qr + rp
+        \]
+        故得证
+        \[
+        f(p + q + r) = pq + qr + rp = f(p)+f(q)+f(r)
         \]
     \end{solution}
     
-    \question 求所有实数 $x$,使得
+    \question 设 $Q(x)$ 是一个 $2017$ 次多项式,且满足
     \[
-    \log_{5x+9}(x^2+6x+9) + \log_{x+3}(5x^2+24x+27) = 4.
+    Q'(r)=\frac{2017!}{r} \quad ,r=1,2,3,\cdots, 2017
     \]
+    另定义
+    \[
+    P(x)=xQ(x)-\int Q(x)\,dx.
+    \]
+    若多项式 $P(x)$ 的所有根之和为 $a$,求 $a \pmod{1000}$。
     \begin{solution}
-        原方程式化为
+        有
+        \[
+        P'(x)=xQ'(x) +Q(x)-Q(x) \Rightarrow P(x) = \int xQ'(x)\,dx
+        \]
+        考虑函数
+        \[
+        R(x)=xQ(x)-2017!
+        \]
+        则$R(r)=0,r=1,2,3,\cdots, 2017$,故可设
+        \[
+        R(x)=A(x-1)(x-2)(x-3)\cdots(x-2017)
+        \]
+        令$x=0$可得$A=1$,故
+        \[
+        Q'(x)=\frac{(x-1)(x-2)(x-3)\cdots(x-2017)+2017!}{x}
+        \]
+        且
         \begin{align*}
-        \frac{\log(x^2+6x+9)}{\log(5x+9)} + \frac{\log(5x^2+24x+27)}{\log(x+3)} &= 4 \\
-        \frac{2\log(x+3)}{\log(5x+9)} + \frac{\log(5x+9)+\log(x+3)}{\log(x+3)} &= 4 \\
-        2 \frac{\log(x+3)}{\log(5x+9)} + \frac{\log(5x+9)}{\log(x+3)} + 1 &= 4
+        P(x) = \int xQ'(x)\,dx 
+        &= \int ((x-1)(x-2)(x-3)\cdots(x-2017)+2017!)\,dx \\
+        &=\int \left(x^{2017}-\frac{2017\cdot2018}{2}x^{2016} +\cdots\right)\,dx \\
+        &=\frac{1}{2018}x^{2018} - 1009 x^{2017}+\cdots
         \end{align*}
-        令 $t = \dfrac{\log(x+3)}{\log(5x+9)}$,解得
+        由韦达定理,$\ P(x)$ 的所有根之和为 
         \[
-        2t + \frac{1}{t} = 3 \Rightarrow t = 1 \ \text{或}\ t = \frac{1}{2}
-        \]
-        当$t = 1$,解得
-        \[
-        \log(x+3) = \log(5x+9) \Rightarrow x = -\frac{3}{2}
-        \]
-        当$t = \frac{1}{2}$,则 $2\log(x+3) = \log(5x+9)$,即
-        \[
-        2\log(x+3) = \log(5x+9) \Rightarrow x = 0 \ \text{或}\ x = -1
-        \]
-        经检验得,原方程的实数解为
-        \[
-        x = 0, -1, -\frac{3}{2}
+        a=1009 \cdot 2018 \equiv 162 \pmod{1000}
         \]
     \end{solution}
 
-    \question
-\noindent
-求解下列方程组：
-\begin{align*}
-(2x)^{\ln 2} &= (3y)^{\ln 3} \\
-3^{\ln x} &= 2^{\ln y}
-\end{align*}
+    \question 定义函数 $f: \mathbb{R} \to \mathbb{R}$,使得对所有实数 $x$ 有
+    \[
+    f(f(x)) = x^2 - x + 1.
+    \]
+    求 $f(0)$。
+    \begin{solution}
+        设 $f(0) = b$,则
+        \[
+        f(b) = f(f(0)) = 0^2 - 0 + 1 = 1
+        \]
+        又有
+        \[
+        f(f(b)) = f(1) = b^2 - b + 1
+        \]
+        因为 $f(b) = 1$,所以
+        \[
+        f(f(b)) = f(1) = 1 = b^2 - b + 1 \implies b(b-1) = 0.
+        \]
+        若 $b=0$,则 $f(0)=0$,但 $f(f(0)) = f(0) = 0 \neq 1$,矛盾。故 $b = 1$,即
+        \[
+        f(0) = 1
+        \]
+    \end{solution}
+
+    \question 已知 $f(x) = e(x) + o(x)$,其中 $e(x)$ 为偶函数,$o(x)$ 为奇函数,且
+    \[
+    e(x) + x^2 = o(x),
+    \]
+    求 $f(2)$。
+    \begin{solution}
+        由已知$e(x)=f(x)-o(x)$,换元得
+        \[
+        e(-x)=f(-x)-o(-x) \Rightarrow e(x)=f(-x)+o(x)
+        \]
+        故
+        \[
+        f(-x)=-x^2 \Rightarrow f(2)=4
+        \]
+    \end{solution}
+
+    \question 定义 $f$ 在 $[0,1]$ 上满足
+    \[
+    2f\left(\frac{x}{3}\right) = f(x), \quad f(x) + f(1-x) = 1,
+    \]
+    求 $f\left(\dfrac{1}{3}\right)$。
+    \begin{solution}
+        由递推公式,则
+        \[
+        f\left(\frac{1}{13}\right) + f\left(\frac{12}{13}\right) = 1,
+        \]
+        且
+        \[
+        f\left(\frac{12}{13}\right) 
+        = 2 f\left(\frac{4}{13}\right) 
+        = 2 \left[1-f\left(\frac{9}{13}\right)\right]
+        = 2 - 2 f\left(\frac{9}{13}\right)
+        = 2 - 4 f\left(\frac{3}{13}\right)
+        = 2 - 8 f\left(\frac{1}{13}\right)
+        \]
+        解得
+        \[
+        f\left(\frac{1}{13}\right) = \frac{1}{7}.
+        \]
+    \end{solution}
+
+    \question 已知$f(x)$是定义在$\mathbb{R}$上的函数,且对任意实数$x$均有$2f(x)+f(x^2-1)=1$,试求$f(\sqrt{2})$的值。
+    \begin{solution}
+        分别令 $x=-1,0,1,\sqrt{2}$ 可得
+        \begin{align*}
+            2f(-1) + f(0) = 1 \tag{1}\\
+            2f(0) + f(-1) = 1 \tag{2}\\
+            2f(1) + f(0) = 1 \tag{3}\\
+            2f(\sqrt{2}) + f(1) = 1 \tag{4}
+        \end{align*}
+        由 $(1),(2),(3)$ 解得
+        \[
+        f(-1) = f(0)= f(1)= \frac{1}{3}
+        \]
+        故由(4)得
+        \[
+        f(\sqrt{2}) = \frac{1}{3}
+        \]
+        \end{solution}
+
+    \question 设函数 $f(x)=\cos x+\log_{2}x,$其中$x>0$ ,若正实数 $a$ 满足 $f(a)=f(2a)$ ,求$f(2a)-f(4a)$ 的值。
+    \begin{solution}
+        由条件得 $$\cos a+\log_{2}a=\cos 2a+\log_{2}2a=2\cos^{2}a-1+\log_{2}a+1$$
+        所以
+        $$\cos a(2\cos a-1) =0\Rightarrow (\cos a,\cos 2a) = (0,-1) \text{或}\; (\frac{1}{2},-\frac{1}{2})$$
+        于是
+        \begin{align*}
+        f(2a) - f(4a) 
+        &= \cos 2a + \log_2 2a - \cos 4a - \log_2 4a \\
+        &= \cos 2a - 2 \cos^2 2a\\
+        &= \begin{cases}
+            -3, & \text{若 } \cos 2a = -1, \\
+            -1, & \text{若 } \cos 2a = -\frac{1}{2}
+        \end{cases}
+        \end{align*}
+    \end{solution}
+
+    \question 已知函数 $f(x)$ 的定义域为 $\mathbb{R}$, 且 $f(x+2)-2$ 为奇函数, $f(2x+1)$ 为偶函数。 若 $f(1)=0$, 求 $f(1)+f(2)+\cdots+f(2023)$ 的值。
+    \begin{solution}
+        $f(x+2)-2$ 为奇函数, 则
+        \[
+        f(-x+2)-2+f(x+2)-2=0 \Rightarrow f(2-x)+f(2+x)=4
+        \]
+        于是 $f(2)=2$, $f(x)$ 的图象关于点 $(2,2)$ 对称,又由 $f(2x+1)$ 为偶函数, 
+        $$f(-2x+1)=f(2x+1)\Rightarrow f(1-2x)=f(1+2x)$$ 
+        即
+        $$f(1-x)=f(1+x)$$
+        $f(x)$ 图象关于直线 $x=1$ 对称,
+        由上可得 
+        $$f(x)=f(2-x)=4-f(2+x)=4-f(-x)=4-[4-f(x+4)]=f(x+4)$$
+        所以 $f(x)$ 是周期为4的函数,且
+        \[
+        f(1)=0,f(2)=2,f(3)=4,f(4)=2
+        \]
+        故
+        \begin{align*}   
+        &f(1)+f(2)+\cdots+f(2023)\\
+        &=505[f(1)+f(2)+f(3)+f(4)]+f(1)+f(2)+f(3)\\
+        &=4046 
+        \end{align*}
+    \end{solution}
+
+    \question 设 $f$ 为实值函数,且对任意实数 $x$ 满足
+\begin{enumerate}
+\item $f(10+x) = f(10-x)$；
+\item $f(20+x) = -f(20-x)$。
+\end{enumerate}
+证明 $f$ 是奇函数并且是周期函数。
 
 \begin{solution}
-\noindent
-\textbf{步骤 1: 对方程取自然对数化简}
-
-对第一个方程两边取 $\ln$：
-\begin{align*}
-\ln\left((2x)^{\ln 2}\right) &= \ln\left((3y)^{\ln 3}\right) \\
-(\ln 2)\ln(2x) &= (\ln 3)\ln(3y) \\
-(\ln 2)(\ln 2 + \ln x) &= (\ln 3)(\ln 3 + \ln y) \\
-(\ln 2)^2 + (\ln 2)\ln x &= (\ln 3)^2 + (\ln 3)\ln y \quad (\text{方程 } 1')
-\end{align*}
-
-对第二个方程取 $\ln$：
-\begin{align*}
-\ln\left(3^{\ln x}\right) &= \ln\left(2^{\ln y}\right) \\
-(\ln x)\ln 3 &= (\ln y)\ln 2 \quad (\text{方程 } 2')
-\end{align*}
-
-\noindent
-\textbf{步骤 2: 代换求解}
-
-令 $u = \ln x$,$v = \ln y$：
-\begin{align*}
-(\ln 2)^2 + u \ln 2 &= (\ln 3)^2 + v \ln 3 \\
-u \ln 3 &= v \ln 2 \implies u = v \frac{\ln 2}{\ln 3}
-\end{align*}
-
-将 $u$ 代入方程 $1'$：
-\begin{align*}
-(\ln 2)^2 + \left(v\frac{\ln 2}{\ln 3}\right)\ln 2 &= (\ln 3)^2 + v \ln 3 \\
-(\ln 2)^2 + v\frac{(\ln 2)^2}{\ln 3} &= (\ln 3)^2 + v \ln 3 \\
-v\left(\frac{(\ln 2)^2}{\ln 3} - \ln 3\right) &= (\ln 3)^2 - (\ln 2)^2 \\
-v\left(\frac{(\ln 2)^2 - (\ln 3)^2}{\ln 3}\right) &= -((\ln 2)^2 - (\ln 3)^2) \\
-v &= -\ln 3
-\end{align*}
-
-\noindent
-\textbf{步骤 3: 求 $u$,$x$ 和 $y$}
-
+令 $x = n - 10$ 在 (a) 中,则
 \[
-u = v \frac{\ln 2}{\ln 3} = -\ln 3 \cdot \frac{\ln 2}{\ln 3} = -\ln 2
+f(n) = f(20 - n)。
 \]
 
-转回 $x$ 和 $y$：
-\begin{align*}
-\ln x &= -\ln 2 \implies x = e^{-\ln 2} = \frac{1}{2} \\
-\ln y &= -\ln 3 \implies y = e^{-\ln 3} = \frac{1}{3}
-\end{align*}
+又令 $x = n$ 在 (b) 中,则
+\[
+f(20 - n) = -f(20 + n)。
+\]
+
+因此
+\[
+f(n) = -f(20 + n)。
+\]
+
+再令 $x = n + 10$ 在 (a) 中,则
+\[
+f(n + 20) = f(-n)。
+\]
+
+结合上式可得
+\[
+f(n) = -f(20+n) = f(-n),
+\]
+所以 $f$ 是奇函数。
+
+最后,令 $x = n - 20$ 在 (b) 中,则
+\[
+f(n) = -f(40 - n)。
+\]
+
+由于 $f$ 是奇函数,$-f(40-n) = f(n-40)$,所以
+\[
+f(n) = f(n-40),
+\]
+因此 $f$ 是周期函数,周期为 $40$。
 \end{solution}
 
 
-    \question 求下列方程组的所有实数解:
-    \begin{align*}
-    x + \log_{10} x &= y-1 \\
-    y + \log_{10}(y-1) &= z-1 \\
-    z + \log_{10}(z-2) &= x+2
-    \end{align*}
+    \question 若整数 $m\ge 1$,函数 $f$ 满足
+    \[
+    f(m+1)=m(-1)^{m+1}-2f(m), \quad f(1)=f(2001),
+    \]
+    求 $f(1)+f(2)+\cdots+f(2000)$。
     \begin{solution}
-        将方程组改写为
-        \begin{align*}
-        x + \log_{10} x &= y-1 \\
-        (y-1) + \log_{10}(y-1) &= z-2 \\
-        (z-2) + \log_{10}(z-2) &= x
-        \end{align*}
-        令 $a = x,b = y-1,c = z-2$,方程组可改写为:
-        \begin{align}
-        a + \log_{10} a &= b \tag{1} \\
-        b + \log_{10} b &= c \tag{2} \\
-        c + \log_{10} c &= a \tag{3}
-        \end{align}
-        容易验证 $(a,b,c)=(1,1,1)$ 是一解,现考虑 $a>1$,则
+        由递推式可得
         \[
-        \log_{10} a > 0 \Rightarrow b = a+\log_{10}a > a > 1 \Rightarrow c = b+\log_{10}b > b > a > 1
+        f(2)=1-2f(1),\quad f(3)=-2-2f(2),\quad f(4)=3-2f(3),\;\ldots,\quad f(2001)=2000-2f(2000),
         \]
-        由 (3) 得 $a = c + \log_{10}c > c > b > a$,矛盾。而当 $0<a<1$,
+        将 $f(2001)$ 替换为 $f(1)$ 并将所有式子相加,得
         \[
-        \log_{10} a < 0 \Rightarrow b = a+\log_{10}a < a < 1 \Rightarrow c = b+\log_{10}b < b < a < 1
+        \sum_{i=1}^{2000} f(i)=1-2+3-4+\cdots+1999-2000-2\sum_{i=1}^{2000} f(i).
         \]
-        由 (3) 得 $a = c + \log_{10}c < c < b < a$,矛盾。
-        因此$(a,b,c)=(1,1,1)$ 是唯一解,即 
+        所以
         \[
-        (x,y,z)=(1,2,3)
+        \sum_{i=1}^{2000} f(i)=\frac{1}{3}\left(\frac{2000}{2}-2000\right)=-\frac{1000}{3}.
         \]
     \end{solution}
 
-    \question 若正实数 $x,y,z$ 满足
+    \question 若实数 \(x, y, z\) 满足
     \[
     \begin{cases}
-    \log_{2}x + \log_{4}y + \log_{4}z = 2 \\
-    \log_{3}y + \log_{9}z + \log_{9}x = 2 \\
-    \log_{4}z + \log_{16}x + \log_{16}y = 2
+    \displaystyle \frac{x}{1^2 + 4^2} + \frac{y}{1^2 + 5^2} + \frac{z}{1^2 + 6^2} = 1 \\[2mm]
+    \displaystyle \frac{x}{2^2 + 4^2} + \frac{y}{2^2 + 5^2} + \frac{z}{2^2 + 6^2} = 1 \\[2mm]
+    \displaystyle\frac{x}{3^2 + 4^2} + \frac{y}{3^2 + 5^2} + \frac{z}{3^2 + 6^2} = 1
     \end{cases}
     \]
-    求 $xyz$。
+    求 \(x + y + z\)。
     \begin{solution}
-        原方程组给出
+        设
         \[
-        \begin{cases}
-        \log_2 x + \log_2 \sqrt{y} + \log_2 \sqrt{z} = 2 \Rightarrow x\sqrt{yz} = 2^2 \\
-        \log_3 y + \log_3 \sqrt{z} + \log_3 \sqrt{x} = 2 \Rightarrow y\sqrt{xz} = 3^2 \\
-        \log_4 z + \log_4 \sqrt{x} + \log_4 \sqrt{y} = 2
-        \Rightarrow z\sqrt{xy} = 4^2
-        \end{cases}
+        f(k) = \frac{x}{k + 4^2} + \frac{y}{k + 5^2} + \frac{z}{k + 6^2} - 1,
         \]
-        将三式相乘得
+        据题意
         \[
-        (xyz)^2 = 2^6 \cdot 3^2 \Rightarrow xyz = 24
+        f(1^2) = f(1) = 0, \quad f(2^2) = f(4) = 0, \quad f(3^2) = f(9) = 0。
+        \]
+        因此 \(f(k)\) 有三个根\(k = 1, 4, 9\),所以
+        \[
+        (k - 1)(k - 4)(k - 9)
+        \]
+        与
+        \[
+        (k + 4^2)(k + 5^2)(k + 6^2) - x(k + 5^2)(k + 6^2) - y(k + 4^2)(k + 6^2) - z(k + 4^2)(k + 5^2)
+        \]
+        相等,比较 \(k^2\) 系数得
+        \[
+        - (1 + 4 + 9) = 4^2 + 5^2 + 6^2 - (x + y + z) \Rightarrow x + y + z = 91
         \]
     \end{solution}
 
-    \question 解联立方程组
+    \question 已知实数 $\alpha$、$\beta$ 满足
     \[
-    \begin{cases}
-    \log x \log y - 3 \log 5 y - \log 8 x = -4 \\
-    \log y \log z - 4 \log 5 y - \log 16 z = 4 \\
-    \log z \log x - 4 \log 8 x - 3 \log 625 z = -18
-    \end{cases}
+    3^{\frac{\alpha}{2}} = \sqrt{3} - \alpha, \quad \log_3 \beta = 2\sqrt{3} - 2\beta
+    \]
+    求
+    \[
+    (\alpha + \beta)^2 - 2 (\sqrt{3})^\alpha - \log_3 \beta
     \]
     \begin{solution}
-        三式化简得
-        \begin{align*}
-        \log x \log y - 3 \log  y - \log x &= -1 \\
-        \log y \log z - 4 \log  y - \log  z &= 8 \\
-        \log z \log x - 4 \log  x - 3 \log z &= -6
-        \end{align*}
-        因式分解:
-        \begin{align}
-        (\log x-3)( \log y -1 )&= 2 \\
-        (\log y-1)( \log z -4 )&= 12 \\
-        (\log z-4)( \log x -3 )&= 6 
-        \end{align}
-        三式相乘可得
-        \begin{equation}
-        (\log x-3)( \log y -1 )(\log z-4)= \pm\sqrt{2\cdot 6\cdot 12} =\pm12
-        \end{equation}
-        分别作$\dfrac{(4)}{(2)},\dfrac{(4)}{(3)},\dfrac{(4)}{(1)}$得解   $\log x-3= \pm1,\log y -1=\pm2,\log z-4=\pm6$,即\[
-        (x,y,z) = (10^4, 10^3, 10^{10}) \quad \text{或} \quad (10^2, 10^{-1}, 10^{-2})
+        将底改为 $\sqrt{3}$:
+        \[
+        \sqrt{3}^\alpha = \sqrt{3} - \alpha, \quad \log_{\sqrt{3}} \beta = \sqrt{3} - \beta
+        \]
+        设 $A(\alpha, \sqrt{3}-\alpha)$ 为两图形 $y = \sqrt{3}^x$ 与 $y = \sqrt{3} - x$ 的交点$,B(\beta, \sqrt{3}-\beta)$ 为两图形 $y = \log_{\sqrt{3}} x$ 与 $y = \sqrt{3}-x$ 的交点。  
+
+        由于 $y = \sqrt{3}^x$ 与 $y = \log_{\sqrt{3}} x$ 关于 $y = x$ 对称,
+        \[
+        \alpha = \sqrt{3} - \beta \Rightarrow \alpha+\beta = \sqrt{3}
+        \]
+        因此
+        \[
+        (\alpha + \beta)^2 - 2 (\sqrt{3})^\alpha - \log_3 \beta = (\sqrt{3})^2 - 2(\sqrt{3}-\alpha) - 2(\sqrt{3}-\beta) = 3 - 2\sqrt{3}
         \]
     \end{solution}
+
+    \question 设实数 $\alpha$、$\beta$ 满足
+    \[
+    \begin{cases}
+    \alpha^3 - 6\alpha^2 + 13\alpha = 6 \\
+    \beta^3 - 6\beta^2 + 13\beta = 14
+    \end{cases}
+    \]
+    求 $\alpha + \beta$。
+
+    \begin{solution}
+        令 $$f(x) = x^3 - 6x^2 + 13x \Rightarrow f(\alpha) = 6,\ f(\beta) = 14$$
+
+        又 $$f'(x) = 3x^2 - 12x + 13 \Rightarrow f''(x) = 6x - 12 = 0 \Rightarrow x = 2$$
+        因此图形 $y = f(x)$ 的对称中心为 $(2, f(2) = 10)$,所以 $P(\alpha, 6), Q(\beta, 14)$的对称点为
+        \[
+        P' = (4 - \alpha, 14), Q' = (4 - \beta, 6)
+        \]
+        于是由$P = Q' ,\quad Q = P'$解得
+        \[
+        \alpha = 4 - \beta,\quad \beta = 4 - \alpha \Rightarrow \alpha + \beta = 4
+        \]
+    \end{solution}
+
+    \question 解方程
+    \[
+    e^{x-1} \ln x + e^{y-1} \ln y = \ln(xy)
+    \]
+    \begin{solution}
+        原式化为:
+        \[
+        (e^{x-1} - 1)\ln x + (e^{y-1} - 1)\ln y = 0
+        \]
+        考虑函数 \(f(t) = (e^{t-1} - 1)\ln t\),
+        \begin{itemize}
+        \item 当 \(t > 1\) 时,\(\;e^{t-1} - 1 > 0\),\(\;\ln t > 0\),故 \(f(t) > 0\)
+        \item 当 \(0 < t < 1\) 时,\(\;e^{t-1} - 1 < 0\),\(\;\ln t < 0\),故 \(f(t) > 0\)
+        \item 当 \(t = 1\) 时,\(\;e^{t-1} - 1 = 0\),\(\;\ln 1 = 0\),故 \(f(1) = 0\)
+        \end{itemize}
+        故 $$f(x) + f(y) = 0 \Rightarrow x = y = 1$$
+    \end{solution}
+
+    \question 已知$x,y \in \mathbb{R}$, 且满足
+    \[
+    \begin{cases}
+    \;(x+1)^{3}+2023(x+1)=-2023 \\
+    \;(y+1)^{3}+2023(y+1)=2023
+    \end{cases}
+    \]
+    求$x+y$的值。
+    \begin{solution}
+    考虑函数 \( f(t) = t^3 + 2023t \),据题意有
+        \[
+        f(x+1) = -2023, \quad f(y+1) = 2023
+        \]
+        注意到 \( f(t) \) 是奇函数,
+        \[
+        f(x+1) = -f(y+1)= f(-(y+1))
+        \]
+        且导数为
+        \[
+        f'(t) = 3t^2 + 2023 > 0, \quad \forall\, t \in \mathbb{R}
+        \]
+        所以$f$在$\mathbb{R}$上严格递增,故$f$一对一,因此有
+        \[
+        x+1 = -(y+1) \Rightarrow x + y = -2
+        \]
+    \end{solution}
+
+    \question 设函数 $f:(0,\infty)\rightarrow\mathbb{R}$,满足
+    \[
+    f\left(1-\frac{1}{1+t}\right) + f\left(\frac{1+t}{t}\right)\log(1+t) = f\left(\frac{1+t}{t}\right)\log t + 2022,
+    \]
+    求 $f(1000)$。
+    \begin{solution}
+        令 
+        \[x = \frac{t}{1+t} = 1 - \frac{1}{1+t},
+        \]
+        则原式变为
+        \[
+        f(x) + f\left(\frac{1}{x}\right) \log(1+t) = f\left(\frac{1}{x}\right) \log t + 2022
+        \]
+        即
+        \[
+        f(x) - f\left(\frac{1}{x}\right) \log x = 2022 \tag{1}
+        \]
+        再换元得
+        \[
+        f\left(\frac{1}{x}\right) - f(x)\log \frac{1}{x} = 2022 \Rightarrow f\left(\frac{1}{x}\right) + f(x) \log x = 2022
+        \]
+        代入 (1)得
+        \[
+        f(x) - 2022 \log x + f(x)(\log x)^2 = 2022 \Rightarrow f(x) = \frac{2022 (1 + \log x)}{1 + (\log x)^2}
+        \]
+        故
+        \[
+        f(1000) = \frac{2022 \cdot 4}{1 + 9} = 808.8
+        \]
+    \end{solution}
+
+    \question 设函数 \( f:\mathbb{R}\setminus\{0,1\} \to \mathbb{R} \) 使得
+        \[
+        f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)}.
+        \]
+        求 $f(x)$。
+    \begin{solution}
+        代入 \( x \), \( \dfrac{1}{1-x} \), 及\( \dfrac{x-1}{x} \) 得
+        \[
+        f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)} \tag{1} 
+        \]
+        \[
+        f\left(\frac{1}{1-x}\right) + f\left(\frac{x-1}{x}\right) = -\frac{(x-1)^2}{x}\tag{2}
+        \]
+        \[
+        f\left(\frac{x-1}{x}\right) + f(x) = \frac{x^2}{x-1} \tag{3}
+        \]
+        $(1)+(3)-(2)$,得
+        \begin{align*}
+            2f(x) &= \frac{1}{x(1-x)}+\frac{x^2}{x-1}+\frac{(x-1)^2}{x}\\
+            &=\frac{-1+x^3+(x-1)^3}{x(x-1)}\\
+            &=\frac{(x^2+x+1)+(x^2-2x+1)}{x}\\
+            &=\frac{2x^2-x+2}{x}
+        \end{align*}
+        故
+        \[
+        f(x)=x+\frac1x-\frac12
+        \]
+    \end{solution}
+
+    \question 已知函数 $f(x)$ 定义在 $\mathbb{R}$ 上, 且满足 $f(1)=1$, 对所有实数 $x$ 有
+    \[
+    f(x+5) \geq x+5, \quad f(x+1) \leq f(x)+1.
+    \]
+    若定义函数 $g(x) = f(x)+1 - x$, 求 $g(2002)$。     
+    %https://artofproblemsolving.com/community/c1076938h2031392p14321295
+    \begin{solution}
+        $\forall x \in \mathbb{R}$,由 $f(x+1) \leq f(x)+1$,
+        \[
+        g(x+1)=f(x+1)+1-(x+1)\leq f(x)+1-x= g(x) 
+        \]
+        即$g(x)$是递减函数,且由$f(x+5)\geq x+5$,
+        \[
+        g(x+5)=f(x+5)+1 - (x+5) \geq x+5+1 - (x+5)=1 
+        \]
+        因为 $g(1)=f(1)+1-1=1$,故$g(x)=1\;\forall x \in \mathbb{R}$,即$g(2002)=1$
+    \end{solution}
+
+    \question 设$f: R\setminus\{0\}\to \mathbb{R}$,使得对于所有非零实数$x, y$有
+    \[
+    xy(f(x) - f(y)) + 2x = xf(x) - yf(y) + 2y
+    \]
+    若$f'(1) = 2018$,求$f(2018)$。
+    \begin{solution}
+        令$y=1$,有
+        \[
+        xf(x) - xf(1) + 2x= xf(x) - f(1) + 2 \Rightarrow f(1)=2
+        \] 
+        令$y=-1$,有
+        \[
+        -x(f(x) - f(-1)) + 2x = xf(x) + f(-1) -2 \Rightarrow f(x) = \frac{f(-1) + 2}{2} + \frac{2 - f(-1)}{2x}
+        \]
+        求导得
+        \[
+        f'(x) = \frac{f(-1) - 2}{2x^2} 
+        \]
+        故由
+        \[
+        f'(1) = \frac{f(-1) - 2}{2} = 2018
+        \]
+        得$f(-1)=4038$,于是
+        \[
+        f(x)=2020-\frac{2018}{x}
+        \]
+        经检验,原方程式左式=右式$=2020x-2018y$,故
+        \[
+        f(2018)=2019
+        \]
+    \end{solution}
+    \begin{solution}
+        将原式写成
+        \[
+        xf(x) (y-1) + 2x = yf(y) (x-1) + 2y 
+        \]
+        \[
+        xf(x)(y-1) + 2(x-1) = yf(y)(x-1) + 2(y-1)
+        \]
+        \[
+        \frac{xf(x)}{x-1} + \frac{2}{y-1} = \frac{yf(y)}{y-1} + \frac{2}{x-1}
+        \]
+        \[
+        \frac{xf(x)-2}{x-1} = \frac{yf(y)-2}{y-1} \quad \forall x, y \neq 0, 1
+        \]
+        设
+        \[
+        \frac{xf(x)-2}{x-1} = c \Rightarrow f(x) = \frac{c(x-1)+2}{x} = c + \frac{2-c}{x}
+        \]  
+        求导得
+        \[
+        f'(x) = \frac{c-2}{x^2} 
+        \]
+        由$f'(1) = 2018$得 $c=2020$,故
+        \[
+        f(x)=2020-\frac{2018}{x}
+        \]
+        经检验,原方程式左式=右式$=2020x-2018y$,故
+        \[
+        f(2018)=2019
+        \]
+    \end{solution}
+    
+    \question 设函数 $f(x), g(x)$ 在 $\mathbb{R}$ 上连续且满足
+    \[
+    \begin{cases}
+    f(x+y) = f(x)g(y) + g(x)f(y) \\
+    g(x+y) = f(x)f(y) + g(x)g(y)
+    \end{cases}
+    \]
+    且 $g(x)$ 为偶函数,$\;g(x) > 0$ 恒成立,$\;g(0) \ne \dfrac{1}{2}$,已知 $f(2) + g(2) = \dfrac{\sqrt{5}}{15}$,求 $f(8) - g(8)$。
+    \begin{solution}
+        两式相加得
+        \[
+        f(x+y) + g(x+y) = (f(x) + g(x))(f(y) + g(y))
+        \]
+        设 $h(x) = f(x) + g(x)$,则 $h(x+y) = h(x)h(y)$,得 $h(x) = a^x$。
+        两式相减得
+        \[
+        g(x+y) - f(x+y) = (g(x) - f(x))(g(y) - f(y))
+        \]
+        设 $k(x) = g(x) - f(x)$,同理得 $k(x) = b^x$,于是
+        \[
+        f(x) = \frac{h(x) - k(x)}{2} = \frac{a^x - b^x}{2},\quad
+        g(x) = \frac{h(x) + k(x)}{2} = \frac{a^x + b^x}{2}
+        \]
+        由于 $g(x)$ 为偶函数,$\,g(x) = g(-x)$,即
+        \[
+        \frac{a^x + b^x}{2} = \frac{a^{-x} + b^{-x}}{2} \Rightarrow (a^x + b^x) a^x b^x = b^x + a^x \Rightarrow (ab)^x = 1 \Rightarrow ab = 1,\ b = \frac{1}{a}
+        \]
+        故
+        \[
+        f(x) = \frac{a^x - a^{-x}}{2},\quad
+        g(x) = \frac{a^x + a^{-x}}{2}
+        \]
+        由 $f(2) + g(2) = \dfrac{\sqrt{5}}{15}$ 可知
+        \[
+        h(2) = a^2 = \frac{\sqrt{5}}{15}
+        \Rightarrow a^8 = \left( \frac{\sqrt{5}}{15} \right)^4 = \frac{1}{2025}
+        \]
+        所以
+        \[
+        f(8) - g(8) = -k(8) = -b^8 = -\frac{1}{a^8} = -2025
+        \]
+    \end{solution}
+
+    \question 设 $a,b>0$使得关于 $x$ 的方程 $\sqrt{|x|}+\sqrt{|x+a|}=b$ 恰有三个相异实数解 $x_1,x_2,x_3$, 且 $x_1<x_2<x_3=b$, 求 $a+b$ 的值。
+    \begin{solution}
+        令 $t=x+\frac{a}{2}$, 则关于 $t$ 的方程 $$\sqrt{\left|t-\frac{a}{2}\right|}+\sqrt{\left|t+\frac{a}{2}\right|}=b$$ 恰有三个不同的实数解 $$t_i=x_i+\frac{a}{2},i=1,2,3$$
+
+        由于 $f(t)=\sqrt{|t-\frac{a}{2}|}+\sqrt{|t+\frac{a}{2}|}$ 为偶函数, 故方程 $f(t)=b$ 的三个实数解关于原点对称分布, 从而必有 $b=f(0)=\sqrt{2a}$
+        
+        现求方程 $f(t)=\sqrt{2a}$ 的实数解:
+        \begin{itemize}
+            \item 当 $|t|\le\frac{a}{2}$ 时, $f(t)=\sqrt{\frac{a}{2}-t}+\sqrt{\frac{a}{2}+t}=\sqrt{a+\sqrt{a^2-4t^2}}\le\sqrt{2a}$, 等号成立当且仅当 $t=0$
+            \item 当 $t>\frac{a}{2}$ 时, $f(t)$ 单调递增, 且当 $t=\frac{5a}{8}$ 时 $f(t)=\sqrt{2a}$
+            \item 当 $t<-\frac{a}{2}$ 时, $f(t)$ 单调递减, 且当 $t=-\frac{5a}{8}$ 时 $f(t)=\sqrt{2a}$
+        \end{itemize}
+        从而方程 $f(t)=\sqrt{2a}$ 恰有三个实数解 $$t_1=-\frac{5a}{8},\ t_2=0,\ t_3=\frac{5a}{8}$$
+        由条件知 $b=x_3=t_3-\frac{a}{2}=\frac{a}{8}$, 结合 $b=\sqrt{2a}$ 得 $a=128$,于是 $a+b=\frac{9a}{8}=144$
+    \end{solution}  
 \end{questions}
-
 \pagebreak
 
 \begin{center}
@@ -11978,1029 +11976,6 @@ g(n)-g(n+1)
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{泰勒展开式}{泰勒展开式} \label{泰勒展开式}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
-    \question
-设 $y = e^{\tan x}$,$x \in \mathbb{R}$。
-
-\textbf{a)} 求 $\frac{d^2y}{dx^2}$ 并证明
-\[
-\frac{d^2y}{dx^2} = (1+\tan^2 x + 2 \tan x) \frac{dy}{dx}.
-\]
-
-\begin{solution}
-首先对 $y$ 求导：
-\[
-\frac{dy}{dx} = e^{\tan x} \sec^2 x = y \sec^2 x.
-\]
-
-再次求导：
-\[
-\frac{d^2y}{dx^2} = \frac{d}{dx}(y \sec^2 x) = \frac{dy}{dx} \sec^2 x + y \cdot 2 \sec^2 x \tan x.
-\]
-
-将 $y \sec^2 x$ 替换为 $\frac{dy}{dx}$：
-\[
-\frac{d^2y}{dx^2} = \frac{dy}{dx} \sec^2 x + 2 \frac{dy}{dx} \tan x = \frac{dy}{dx} ( \sec^2 x + 2 \tan x ) = \frac{dy}{dx} (1 + \tan^2 x + 2 \tan x ).
-\]
-\end{solution}
-
-\textbf{b)} 求 $e^{\tan x}$ 的 $x^3$ 展开式。
-
-\begin{solution}
-使用 Taylor 展开：
-\[
-y = y_0 + y'_0 x + \frac{y''_0}{2!} x^2 + \frac{y'''_0}{3!} x^3 + O(x^4),
-\]
-在 $x=0$ 时,$y_0 = 1$,$y'_0 = 1$,$y''_0 = 1$。
-
-计算三阶导数：
-\[
-\frac{d^3y}{dx^3} = 2(1+\tan x) \sec^2 x \frac{dy}{dx} + (1+\tan x)^2 \frac{d^2y}{dx^2},
-\]
-代入 $x=0$ 得 $y'''_0 = 3$。
-
-于是
-\[
-e^{\tan x} = 1 + x + \frac{1}{2}x^2 + \frac{1}{2}x^3 + O(x^4).
-\]
-\end{solution}
-
-\question
-设 $f(x) \equiv \sin[\ln(1+x)]$,$x \in \mathbb{R}$,$x > -1$。
-
-\textbf{a)} 求 $f(x)$ 满足的微分方程。
-
-\begin{solution}
-首先求导：
-\[
-f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
-\]
-\[
-(1+x) f'(x) = \cos[\ln(1+x)].
-\]
-
-再次求导：
-\[
-(1+x) f''(x) + f'(x) = - \sin[\ln(1+x)] \frac{1}{1+x}.
-\]
-
-两边乘以 $(1+x)$：
-\[
-(1+x)^2 f''(x) + (1+x) f'(x) = - \sin[\ln(1+x)].
-\]
-
-移项得微分方程：
-\[
-(1+x)^2 f''(x) + (1+x) f'(x) + f(x) = 0.
-\]
-\end{solution}
-
-\textbf{b)} 求 Maclaurin 展开前 3 个非零项。
-
-\begin{solution}
-利用微分方程可求各阶导数在 $x=0$ 的值：
-\[
-f(0) = \sin(\ln 1) = 0, \quad f'(0) = \cos(\ln 1) = 1.
-\]
-由微分方程 $(1+x)^2 f'' + (1+x) f' + f = 0$ 得：
-\[
-f''(0) + f'(0) + f(0) = 0 \implies f''(0) = -1.
-\]
-
-三阶导数：
-\[
-(1+x)^2 f''' + 3(1+x) f'' + 2 f' = 0 \implies f'''(0) + 3 f''(0) + 2 f'(0) = 0 \implies f'''(0) = 1.
-\]
-
-因此 Maclaurin 展开：
-\[
-f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
-= x - \frac{1}{2} x^2 + \frac{1}{6} x^3 + \dots
-\]
-\end{solution}
-
-\textbf{c)} 用结果求 $\sin[\ln(1+x)]$ 的前 2 个非零项的 Maclaurin 展开。
-
-\begin{solution}
-从 (b) 的展开式可直接得到前 2 个非零项：
-\[
-\sin[\ln(1+x)] = x - \frac{1}{2} x^2 + \dots
-\]
-\end{solution}
-
-\question
-设 $y = \tan x$, $0 \le x < \frac{\pi}{2}$。
-
-\textbf{a) 证明下列公式：}
-
-\textbf{i)}
-\[
-\frac{d^2y}{dx^2} = 2y \frac{dy}{dx}
-\]
-
-\textbf{ii)}
-\[
-\frac{d^5y}{dx^5} = 6 \left(\frac{d^2y}{dx^2}\right)^2 + 8 \frac{dy}{dx} \frac{d^3y}{dx^3} + 2y \frac{d^4y}{dx^4}
-\]
-
-\begin{solution}
-\textbf{(i) 求二阶导数}：
-\[
-y = \tan x \implies \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1+y^2
-\]
-\[
-y' = 1+y^2
-\]
-对 $x$ 求导：
-\[
-y'' = 2y y'
-\]
-
-\textbf{(ii) 高阶导数}：
-\[
-y''' = 2y'y' + 2yy'' = 2(y')^2 + 2yy''
-\]
-\[
-y^{(4)} = 6y'y'' + 2yy'''
-\]
-\[
-y^{(5)} = 6(y'')^2 + 8y'y''' + 2y y^{(4)}
-\]
-\end{solution}
-
-\textbf{b) 求 $y = \tan x$ 的 Maclaurin 展开前 3 个非零项}
-
-\begin{solution}
-在 $x=0$ 处求各阶导数：
-\[
-y_0 = \tan(0) = 0
-\]
-\[
-y'_0 = 1+y_0^2 = 1
-\]
-\[
-y''_0 = 2y_0y'_0 = 0
-\]
-\[
-y'''_0 = 2y_0y''_0 + 2(y'_0)^2 = 2
-\]
-\[
-y^{(4)}_0 = 6y'_0y''_0 + 2y_0y'''_0 = 0
-\]
-\[
-y^{(5)}_0 = 6(y''_0)^2 + 8y'_0y'''_0 + 2y_0y^{(4)}_0 = 16
-\]
-
-Maclaurin 展开式：
-\[
-y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + \frac{x^4}{4!}y^{(4)}_0 + \frac{x^5}{5!}y^{(5)}_0 + O(x^6)
-\]
-代入各阶导数值：
-\[
-y = 0 + x + \frac{x^3}{3} + \frac{2}{15}x^5 + O(x^6)
-\]
-
-因此,
-\[
-\tan x = x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + O(x^6)
-\]
-\end{solution}
-
-\question
-设 $y = \ln(2-e^x)$, $x<\ln 2$。
-
-\textbf{a) 证明下列公式：}
-\[
-e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac{dy}{dx}\right)^3 \right] + e^x = 0
-\]
-
-\begin{solution}
-由 $y = \ln(2-e^x)$ 得
-\[
-e^y = 2-e^x
-\]
-两边对 $x$ 求导：
-\[
-\frac{d}{dx}(e^y) = \frac{d}{dx}(2-e^x) \implies e^y y' = -e^x \implies e^y y' + e^x = 0
-\]
-
-再次求导：
-\[
-\frac{d}{dx}(e^y y' + e^x) = 0 \implies e^y[(y')^2 + y''] + e^x = 0
-\]
-
-再求一次导数：
-\[
-\frac{d}{dx}\big(e^y[(y')^2 + y''] + e^x\big) = 0 \implies e^y[y''' + 3y'y'' + (y')^3] + e^x = 0
-\]
-\end{solution}
-
-\textbf{b) 求 Maclaurin 展开式的前三个非零项}
-
-\begin{solution}
-在 $x=0$ 处求各阶导数：
-
-\[
-y_0 = \ln(2-e^0) = \ln 1 = 0
-\]
-\[
-e^y y' + e^x = 0 \implies y'_0 + 1 = 0 \implies y'_0 = -1
-\]
-\[
-e^y[(y')^2 + y''] + e^x = 0 \implies (-1)^2 + y''_0 + 1 = 0 \implies y''_0 = -2
-\]
-\[
-e^y[(y')^3 + 3y'y'' + y'''] + e^x = 0 \implies (-1)^3 + 3(-1)(-2) + y'''_0 + 1 = 0 \implies y'''_0 = -6
-\]
-
-Maclaurin 展开式：
-\[
-y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + O(x^4)
-\]
-代入各阶导数值：
-\[
-y = 0 - x - x^2 - x^3 + O(x^4)
-\]
-
-因此
-\[
-\ln(2-e^x) = -x - x^2 - x^3 + O(x^4)
-\]
-\end{solution}
-
-\question
-函数 $f$ 和 $g$ 定义如下：
-\[
-f(x) = \arctan\left(\frac{2}{3}x\right), \quad x\in \mathbb{R},
-\]
-\[
-g(y) = \frac{1}{1+y}, \quad y\in \mathbb{R}, \quad -1<y<1.
-\]
-
-\textbf{a)} 将 $g(y)$ 展开为二项级数,并保留 $y^3$ 项。
-
-\begin{solution}
-使用二项式定理：
-\[
-(1+y)^{-1} = 1 + (-1)y + \frac{(-1)(-2)}{2!}y^2 + \frac{(-1)(-2)(-3)}{3!}y^3 + O(y^4)
-\]
-\[
-(1+y)^{-1} = 1 - y + y^2 - y^3 + O(y^4)
-\]
-\end{solution}
-
-\textbf{b)} 利用 $f'(x)$ 和 (a) 的结果,求 $\arctan\left(\frac{2}{3}x\right)$ 的级数展开。
-
-\begin{solution}
-\[
-f(x) = \arctan\left(\frac{2}{3}x\right)
-\]
-\[
-f'(x) = \frac{2/3}{1+(\frac{2}{3}x)^2} = \frac{2}{3}\left(1+\frac{4}{9}x^2\right)^{-1}
-\]
-
-将 (a) 的结果代入,令 $y = \frac{4}{9}x^2$：
-\[
-f'(x) \approx \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^2 - \left(\frac{4}{9}x^2\right)^3 + O(x^8)\right]
-\]
-\[
-f'(x) \approx \frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8)
-\]
-
-对 $x$ 积分：
-\[
-f(x) \approx \int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8) \right] dx
-\]
-\[
-\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7 + C
-\]
-
-由 $x=0$ 可得 $C=0$,因此：
-\[
-\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7.
-\]
-\end{solution}
-
-\question
-\noindent
-已知 $y = \tan x$。
-
-\noindent
-\textbf{a)} 证明
-\[
-\frac{d^3 y}{dx^3} = 2y \frac{d^2 y}{dx^2} + 2 \left(\frac{dy}{dx}\right)^2
-\]
-
-\noindent
-\textbf{b)} 求 $\tan x$ 在 $x=\frac{\pi}{4}$ 附近的前四项泰勒展开式
-
-\noindent
-\textbf{c)} 从上式近似计算
-\[
-\tan \frac{5\pi}{18} \approx 1+\frac{\pi}{18}+\frac{\pi^2}{648}+\frac{\pi^3}{17496}
-\]
-
-\begin{solution}
-\noindent
-\textbf{a) 计算高阶导数}
-
-\[
-y = \tan x
-\]
-\[
-\frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1 + y^2
-\]
-
-\noindent
-对 $x$ 再求两次导数：
-\[
-\frac{d^2 y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d}{dx}(1+y^2) = 2y \frac{dy}{dx}
-\]
-
-\[
-\frac{d^3 y}{dx^3} = \frac{d}{dx}\left(2y \frac{dy}{dx}\right) = 2y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2
-\]
-
-\noindent
-\textbf{b) 泰勒展开式}
-
-在 $x=a=\frac{\pi}{4}$ 处计算各阶导数：
-\[
-y = \tan a = 1
-\]
-\[
-\frac{dy}{dx} = 1 + y^2 = 2
-\]
-\[
-\frac{d^2 y}{dx^2} = 2 y \frac{dy}{dx} = 2 \cdot 1 \cdot 2 = 4
-\]
-\[
-\frac{d^3 y}{dx^3} = 2 y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2 = 2\cdot1\cdot4 + 2\cdot2^2 = 16
-\]
-
-\noindent
-泰勒展开公式：
-\[
-\tan x \approx f(a) + (x-a)f'(a) + \frac{(x-a)^2}{2!}f''(a) + \frac{(x-a)^3}{3!}f'''(a) + \dots
-\]
-
-代入各阶导数：
-\[
-\tan x \approx 1 + 2(x-\frac{\pi}{4}) + 2(x-\frac{\pi}{4})^2 + \frac{8}{3}(x-\frac{\pi}{4})^3 + \dots
-\]
-
-\noindent
-\textbf{c) 近似计算 $\tan\frac{5\pi}{18}$}
-
-\[
-x-\frac{\pi}{4} = \frac{5\pi}{18} - \frac{\pi}{4} = \frac{\pi}{36}
-\]
-
-代入泰勒展开：
-\[
-\tan \frac{5\pi}{18} \approx 1 + 2\cdot \frac{\pi}{36} + 2\cdot \left(\frac{\pi}{36}\right)^2 + \frac{8}{3} \cdot \left(\frac{\pi}{36}\right)^3
-\]
-
-\[
-\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{2\pi^2}{1296} + \frac{8\pi^3}{139968}
-\]
-
-\[
-\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{\pi^2}{648} + \frac{\pi^3}{17496}
-\]
-\end{solution}
-
-
-\question
-\noindent
-求 $\arctan x$ 的麦克劳林展开式,并利用该展开证明
-\[
-\pi=\sum_{n=0}^{\infty} f(n)
-\]
-其中 $f(n)$ 为适当的函数
-
-\begin{solution}
-\noindent
-先对 $\arctan x$ 求导
-\[
-\frac{d}{dx}(\arctan x)=\frac{1}{1+x^{2}}
-\]
-
-当 $|x|<1$ 时,有几何级数展开
-\[
-\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+x^{8}-\cdots
-\]
-\[
-=\sum_{n=0}^{\infty}(-1)^{n}x^{2n}
-\]
-
-对上式逐项积分,且取积分常数
-\[
-\arctan x=\sum_{n=0}^{\infty}\int(-1)^{n}x^{2n}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}+C
-\]
-
-令 $x=0$,则 $\arctan 0=0$,从而 $C=0$,于是
-\[
-\arctan x=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
-\]
-
-代入 $x=1$ 得
-\[
-\arctan 1=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\]
-而 $\arctan 1=\frac{\pi}{4}$,故
-\[
-\frac{\pi}{4}=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\]
-
-两边同乘 $4$,得
-\[
-\pi=\sum_{n=0}^{\infty}\frac{4(-1)^{n}}{2n+1}
-\]
-
-因此可取
-\[
-f(n)=\frac{4(-1)^{n}}{2n+1}
-\]
-\end{solution}
-
-\question
-\noindent
-利用适当的二项式展开式,证明
-\[
-\arcsin x = \sum_{r=0}^{\infty} \left[ \frac{\binom{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1} \right]
-\]
-
-\begin{solution}
-\noindent
-从二项式展开 $(1-x^2)^{-1/2}$ 出发
-\[
-\frac{1}{\sqrt{1-x^2}} = (1-x^2)^{-1/2} = 1 + \frac{-1/2}{1}(-x^2) + \frac{-1/2(-3/2)}{1\cdot 2}(-x^2)^2 + \frac{-1/2(-3/2)(-5/2)}{1\cdot 2\cdot 3}(-x^2)^3 + O(x^8)
-\]
-
-化简符号得
-\[
-\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1}{2}x^2 + \frac{1/2\cdot 3/2}{1\cdot 2}x^4 + \frac{1/2\cdot 3/2\cdot 5/2}{1\cdot 2\cdot 3}x^6 + O(x^{8})
-\]
-
-整理成阶乘形式
-\[
-\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1\cdot 3}{2\cdot 2}x^4 + \frac{1\cdot 3\cdot 5}{3!} \frac{x^6}{8} + O(x^8)
-\]
-
-进一步写成二项式系数
-\[
-\frac{1}{\sqrt{1-x^2}} = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} x^{2r}
-\]
-
-对两边在收敛半径内积分
-\[
-\int \frac{1}{\sqrt{1-x^2}}\,dx = \int \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} x^{2r}\,dx
-\]
-
-逐项积分得
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} \frac{x^{2r+1}}{2r+1} + C
-\]
-
-代入 $x=0$ 得 $C=0$,于是
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{2r+1} \frac{x^{2r+1}}{4^r}
-\]
-
-重写为所需形式
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1}
-\]
-\end{solution}
-
-\question
-求下列无穷级数的和：
-\[
-1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\frac{1}{9\times4^4}+\cdots
-\]
-
-\begin{solution}
-考虑对数的幂级数展开：
-\[
-\ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
-\]
-\[
-\ln(1-x) = -x - \frac{1}{2}x^2 - \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
-\]
-
-两式相减：
-\[
-\ln(1+x) - \ln(1-x) = 2\left( x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots \right)
-\]
-\[
-\ln\left(\frac{1+x}{1-x}\right) = 2 \sum_{k=0}^{\infty} \frac{x^{2k+1}}{2k+1}
-\]
-
-在收敛半径内令 $x = \frac{1}{2}$：
-\[
-\ln\left(\frac{1+\frac{1}{2}}{1-\frac{1}{2}}\right) = 2 \sum_{k=0}^{\infty} \frac{(1/2)^{2k+1}}{2k+1}
-\]
-\[
-\ln 3 = 2 \sum_{k=0}^{\infty} \frac{1}{(2k+1)2^{2k+1}} = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
-\]
-
-注意到原级数的形式与此一致：
-\[
-1 + \frac{1}{3\cdot 4} + \frac{1}{5\cdot 4^2} + \frac{1}{7\cdot 4^3} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
-\]
-
-\[
-\therefore 1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\cdots = \ln 3
-\]
-\end{solution}
-
-\question
-求下列交错级数的和：
-\[
-\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \frac{1}{1+4+9+16} + \frac{1}{1+4+9+16+25} - \cdots
-\]
-
-\begin{solution}
-首先写成紧凑形式：
-\[
-\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{1^2 + 2^2 + \cdots + n^2} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\frac{1}{6}n(n+1)(2n+1)} = \sum_{n=1}^{\infty} \frac{6(-1)^{n+1}}{n(n+1)(2n+1)}
-\]
-
-对 $\frac{1}{n(n+1)(2n+1)}$ 做部分分式分解：
-\[
-\frac{1}{n(n+1)(2n+1)} = \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1}
-\]
-
-因此级数可写为：
-\[
-\sum_{n=1}^{\infty} 6(-1)^{n+1} \left( \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1} \right)
-= 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} + 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} - 24\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1}
-\]
-
-分别处理各个级数：
-\[
-\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \ln 2
-\]
-
-\[
-6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} = 6 - 6 \ln 2
-\]
-
-再利用 $\arctan x$ 展开：
-\[
-\arctan x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1} \implies \arctan 1 = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}
-\]
-
-\[
-24 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1} = 24 \left(\frac{\pi}{4} - 1\right) = 6\pi - 24
-\]
-
-将所有部分相加：
-\[
-6\ln 2 + (6 - 6\ln 2) - (6\pi - 24) = 6 - 6\pi + 24 = 30 - 6\pi
-\]
-
-因此原级数的和为：
-\[
-\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \cdots = 6(\pi - 3)
-\]
-\end{solution}
-
-\question
-证明
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]=3\ln\left(\frac{3}{2}\right).
-\]
-
-\begin{solution}
-先对通项进行代数变形：
-\[
-\frac{2r+3}{(r+1)3^r}
-=\frac{2(r+1)+1}{r+1}\left(\frac{1}{3}\right)^r
-=2\left(\frac{1}{3}\right)^r+\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-
-因此
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
-+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-
-第一项为等比级数,其首项为 $\frac{2}{3}$,公比为 $\frac{1}{3}$,故
-\[
-\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
-=\frac{\frac{2}{3}}{1-\frac{1}{3}}=1
-\]
-
-对第二项,考虑
-\[
-\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\frac{1}{4}x^4-\cdots
-\]
-两边同除以 $-x$,得
-\[
--\frac{1}{x}\ln(1-x)
-=1+\frac{1}{2}x+\frac{1}{3}x^2+\frac{1}{4}x^3+\cdots
-=1+\sum_{r=1}^{\infty}\frac{1}{r+1}x^r
-\]
-
-取 $x=\frac{1}{3}$,由于 $|x|<1$,级数收敛,于是
-\[
--3\ln\left(\frac{2}{3}\right)
-=1+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-从而
-\[
-\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-=-3\ln\left(\frac{2}{3}\right)-1
-\]
-
-将两部分相加：
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=1-3\ln\left(\frac{2}{3}\right)-1
-=-3\ln\left(\frac{2}{3}\right)
-\]
-
-整理得
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=3\ln\left(\frac{3}{2}\right)
-\]
-\end{solution}
-
-\question
-通过考虑 $\ln(1-x^2)$ 与 $\ln\left(\frac{1+x}{1-x}\right)$ 的级数展开,或用其他方法,求下列级数的精确值：
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right].
-\]
-
-\begin{solution}
-由
-\[
-\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\cdots,\quad |x|<1
-\]
-\[
-\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\cdots,\quad |x|<1
-\]
-可得
-\[
-\ln(1-x^2)= -x^2-\frac{1}{2}x^4-\frac{1}{3}x^6-\cdots
-\]
-
-因此
-\[
--\frac{1}{2}\ln(1-x^2)=\frac{1}{2}x^2+\frac{1}{4}x^4+\frac{1}{6}x^6+\cdots
-\]
-
-令 $x=\frac{1}{2}$,得
-\[
-\frac{1}{2}\cdot\frac{1}{4}+\frac{1}{4}\cdot\frac{1}{16}+\frac{1}{6}\cdot\frac{1}{64}+\cdots
-=-\frac{1}{2}\ln\frac{3}{4}
-\]
-
-再考虑
-\[
-\ln\left(\frac{1+x}{1-x}\right)
-=2\left(x+\frac{x^3}{3}+\frac{x^5}{5}+\cdots\right)
-\]
-从而
-\[
-\frac{1}{2x}\ln\left(\frac{1+x}{1-x}\right)
-=1+\frac{x^2}{3}+\frac{x^4}{5}+\cdots
-\]
-
-令 $x=\frac{1}{2}$,得
-\[
-1+\frac{1}{3}\frac{1}{2^2}+\frac{1}{5}\frac{1}{2^4}+\frac{1}{7}\frac{1}{2^6}+\cdots
-=\ln 3
-\]
-
-因此
-\[
-\frac{1}{3}\cdot\frac{1}{4}+\frac{1}{5}\cdot\frac{1}{16}+\frac{1}{7}\cdot\frac{1}{64}+\cdots
-=\ln 3-1
-\]
-
-将两部分相加：
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
-=-\frac{1}{2}\ln\frac{3}{4}+\ln 3-1
-\]
-
-化简得
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
-=\frac{1}{2}\ln 12-1
-\]
-\end{solution}
-
-\question
-\noindent
-\textbf{a)} 用适当的积分方法计算
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-\]
-
-\noindent
-\textbf{b)} 求 $\arctan x$ 的无穷级数展开,并利用该展开验证 a) 的结果
-
-\begin{solution}
-\noindent
-\textbf{a)} 先用分部积分法  
-取
-\[
-u=\arctan x,\quad dv=x^{3}\,dx
-\]
-则
-\[
-du=\frac{1}{1+x^{2}}\,dx,\quad v=\frac{x^{4}}{4}
-\]
-
-于是
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
--\frac{1}{4}\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
-\]
-
-边界项为
-\[
-\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
-=\frac{\pi}{16}
-\]
-
-化简被积函数
-\[
-\frac{x^{4}}{1+x^{2}}=x^{2}-1+\frac{1}{1+x^{2}}
-\]
-
-因此
-\[
-\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
-=\int_{0}^{1}x^{2}\,dx-\int_{0}^{1}1\,dx+\int_{0}^{1}\frac{1}{1+x^{2}}\,dx
-\]
-\[
-=\frac{1}{3}-1+\frac{\pi}{4}
-\]
-
-代回得
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\frac{\pi}{16}-\frac{1}{4}\left(\frac{1}{3}-1+\frac{\pi}{4}\right)
-\]
-\[
-=\frac{1}{6}
-\]
-
-\noindent
-\textbf{b)} 由
-\[
-\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
-\]
-两边积分得
-\[
-\arctan x
-=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
-\]
-
-代入积分
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\int_{0}^{1}x^{3}\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\int_{0}^{1}x^{2n+4}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)(2n+5)}
-\]
-
-作部分分式分解
-\[
-\frac{1}{(2n+1)(2n+5)}
-=\frac{1}{4}\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
-\]
-
-于是
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\frac{1}{4}\sum_{n=0}^{\infty}(-1)^{n}
-\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
-\]
-
-该级数为望远镜型,化简得
-\[
-=\frac{1}{4}\left(1-\frac{1}{3}\right)
-=\frac{1}{6}
-\]
-
-与 a) 的结果一致
-\end{solution}
-
-\question
-已知
-\[
-1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots=\frac{\pi}{4},
-\quad
-1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\cdots=\frac{\pi^2}{12},
-\quad
-1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots=\ln 2.
-\]
-在假设下列积分收敛的前提下,求
-\[
-\int_0^1 (\ln x)(\arctan x)\,dx
-\]
-的精确值。
-
-\begin{solution}
-先利用反正切函数的幂级数展开。由
-\[
-\frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}=1-x^2+x^4-x^6+\cdots
-\]
-逐项积分得
-\[
-\arctan x=x-\frac{1}{3}x^3+\frac{1}{5}x^5-\frac{1}{7}x^7+\cdots
-=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1},
-\quad 0\le x\le1.
-\]
-
-将其代入积分,并交换求和与积分次序：
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}
-\int_0^1 x^{2n+1}\ln x\,dx.
-\]
-
-对积分作分部积分,取
-$u=\ln x$,$dv=x^{2n+1}dx$,则
-\[
-\int_0^1 x^{2n+1}\ln x\,dx
-=\left[\frac{x^{2n+2}\ln x}{2n+2}\right]_0^1
--\frac{1}{2n+2}\int_0^1 x^{2n+1}\,dx.
-\]
-端点项为零,因此
-\[
-\int_0^1 x^{2n+1}\ln x\,dx
-=-\frac{1}{(2n+2)^2}.
-\]
-
-于是
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)(2n+2)^2}.
-\]
-
-对通项作部分分式分解：
-\[
-\frac{1}{(2n+1)(2n+2)^2}
-=\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}.
-\]
-
-代回得
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\sum_{n=0}^{\infty}(-1)^n
-\left[
-\frac{1}{2n+1}
--\frac{1}{2n+2}
--\frac{1}{(2n+2)^2}
-\right].
-\]
-
-将其拆分为三个已知级数：
-\[
-\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
-\quad
-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\ln 2,
-\quad
-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\frac{\pi^2}{12}.
-\]
-
-因此
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\left[
-\frac{\pi}{4}
--\frac{1}{2}\ln 2
--\frac{1}{4}\cdot\frac{\pi^2}{12}
-\right].
-\]
-
-化简得
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=\frac{\pi^2}{48}+\frac{1}{2}\ln 2-\frac{\pi}{4}
-=\frac{\pi^2-12\pi+24\ln 2}{48}.
-\]
-\end{solution}
-\begin{solution}
-设
-\[
-I(a)=\int_0^1 (\ln x)\arctan(ax)\,dx,
-\quad a\ge0.
-\]
-所求积分为 $I(1)$。
-
-对参数 $a$ 求导,有
-\[
-I'(a)=\int_0^1 (\ln x)\frac{x}{1+a^2x^2}\,dx.
-\]
-
-交换积分顺序,令 $u=ax$,得
-\[
-I'(a)=\int_0^1 x\ln x
-\int_0^{a}\frac{du}{1+u^2x^2}\,dx.
-\]
-
-改为先对 $x$ 积分。注意到
-\[
-\int_0^1 \frac{x\ln x}{1+u^2x^2}\,dx
-=-\frac{1}{2u^2}\ln(1+u^2),
-\]
-因此
-\[
-I'(a)
-=-\frac12\int_0^{a}\frac{\ln(1+u^2)}{u^2}\,du.
-\]
-
-对该积分作分部积分,取
-$U=\ln(1+u^2)$,$dV=\frac{du}{u^2}$,
-则
-\[
-I'(a)
-=-\frac12
-\left[
--\frac{\ln(1+u^2)}{u}
-+\int_0^{a}\frac{2u}{1+u^2}\cdot\frac{1}{u}\,du
-\right].
-\]
-
-化简得
-\[
-I'(a)
-=\frac12\frac{\ln(1+a^2)}{a}
--\int_0^{a}\frac{du}{1+u^2}.
-\]
-
-于是
-\[
-I'(a)=\frac12\frac{\ln(1+a^2)}{a}-\arctan a.
-\]
-
-再对 $a$ 从 $0$ 积分到 $1$,注意 $I(0)=0$,得到
-\[
-I(1)=\int_0^1
-\left(
-\frac12\frac{\ln(1+a^2)}{a}-\arctan a
-\right)da.
-\]
-
-分项计算。首先
-\[
-\int_0^1 \arctan a\,da
-=\frac{\pi}{4}-\frac12\ln2.
-\]
-
-其次
-\[
-\int_0^1 \frac{\ln(1+a^2)}{a}\,da
-=\int_0^1\int_0^{a^2}\frac{1}{a(1+t)}\,dt\,da
-=\int_0^1\frac{1-a^2}{a(1+a^2)}\,da
-=\frac{\pi^2}{12}.
-\]
-
-综上
-\[
-I(1)
-=\frac12\cdot\frac{\pi^2}{12}
--\left(\frac{\pi}{4}-\frac12\ln2\right).
-\]
-
-因此
-\[
-\int_0^1 (\ln x)(\arctan x)\,dx
-=\frac{\pi^2}{48}+\frac12\ln2-\frac{\pi}{4}
-=\frac{\pi^2-12\pi+24\ln2}{48}.
-\]
-\end{solution}
-
-\end{questions}
-\pagebreak
-
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{二项展开式}{二项展开式} \label{二项展开式}
   }
 \end{center}
@@ -14142,7 +13117,1029 @@ f(x)=\sum_{r=0}^{\infty}\binom{2r}{r}\left(\frac{1}{4}x\right)^r。
 
 
 \end{questions}
+\pagebreak
 
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{泰勒展开式}{泰勒展开式} \label{泰勒展开式}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question
+设 $y = e^{\tan x}$,$x \in \mathbb{R}$。
+
+\textbf{a)} 求 $\frac{d^2y}{dx^2}$ 并证明
+\[
+\frac{d^2y}{dx^2} = (1+\tan^2 x + 2 \tan x) \frac{dy}{dx}.
+\]
+
+\begin{solution}
+首先对 $y$ 求导：
+\[
+\frac{dy}{dx} = e^{\tan x} \sec^2 x = y \sec^2 x.
+\]
+
+再次求导：
+\[
+\frac{d^2y}{dx^2} = \frac{d}{dx}(y \sec^2 x) = \frac{dy}{dx} \sec^2 x + y \cdot 2 \sec^2 x \tan x.
+\]
+
+将 $y \sec^2 x$ 替换为 $\frac{dy}{dx}$：
+\[
+\frac{d^2y}{dx^2} = \frac{dy}{dx} \sec^2 x + 2 \frac{dy}{dx} \tan x = \frac{dy}{dx} ( \sec^2 x + 2 \tan x ) = \frac{dy}{dx} (1 + \tan^2 x + 2 \tan x ).
+\]
+\end{solution}
+
+\textbf{b)} 求 $e^{\tan x}$ 的 $x^3$ 展开式。
+
+\begin{solution}
+使用 Taylor 展开：
+\[
+y = y_0 + y'_0 x + \frac{y''_0}{2!} x^2 + \frac{y'''_0}{3!} x^3 + O(x^4),
+\]
+在 $x=0$ 时,$y_0 = 1$,$y'_0 = 1$,$y''_0 = 1$。
+
+计算三阶导数：
+\[
+\frac{d^3y}{dx^3} = 2(1+\tan x) \sec^2 x \frac{dy}{dx} + (1+\tan x)^2 \frac{d^2y}{dx^2},
+\]
+代入 $x=0$ 得 $y'''_0 = 3$。
+
+于是
+\[
+e^{\tan x} = 1 + x + \frac{1}{2}x^2 + \frac{1}{2}x^3 + O(x^4).
+\]
+\end{solution}
+
+\question
+设 $f(x) \equiv \sin[\ln(1+x)]$,$x \in \mathbb{R}$,$x > -1$。
+
+\textbf{a)} 求 $f(x)$ 满足的微分方程。
+
+\begin{solution}
+首先求导：
+\[
+f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
+\]
+\[
+(1+x) f'(x) = \cos[\ln(1+x)].
+\]
+
+再次求导：
+\[
+(1+x) f''(x) + f'(x) = - \sin[\ln(1+x)] \frac{1}{1+x}.
+\]
+
+两边乘以 $(1+x)$：
+\[
+(1+x)^2 f''(x) + (1+x) f'(x) = - \sin[\ln(1+x)].
+\]
+
+移项得微分方程：
+\[
+(1+x)^2 f''(x) + (1+x) f'(x) + f(x) = 0.
+\]
+\end{solution}
+
+\textbf{b)} 求 Maclaurin 展开前 3 个非零项。
+
+\begin{solution}
+利用微分方程可求各阶导数在 $x=0$ 的值：
+\[
+f(0) = \sin(\ln 1) = 0, \quad f'(0) = \cos(\ln 1) = 1.
+\]
+由微分方程 $(1+x)^2 f'' + (1+x) f' + f = 0$ 得：
+\[
+f''(0) + f'(0) + f(0) = 0 \implies f''(0) = -1.
+\]
+
+三阶导数：
+\[
+(1+x)^2 f''' + 3(1+x) f'' + 2 f' = 0 \implies f'''(0) + 3 f''(0) + 2 f'(0) = 0 \implies f'''(0) = 1.
+\]
+
+因此 Maclaurin 展开：
+\[
+f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
+= x - \frac{1}{2} x^2 + \frac{1}{6} x^3 + \dots
+\]
+\end{solution}
+
+\textbf{c)} 用结果求 $\sin[\ln(1+x)]$ 的前 2 个非零项的 Maclaurin 展开。
+
+\begin{solution}
+从 (b) 的展开式可直接得到前 2 个非零项：
+\[
+\sin[\ln(1+x)] = x - \frac{1}{2} x^2 + \dots
+\]
+\end{solution}
+
+\question
+设 $y = \tan x$, $0 \le x < \frac{\pi}{2}$。
+
+\textbf{a) 证明下列公式：}
+
+\textbf{i)}
+\[
+\frac{d^2y}{dx^2} = 2y \frac{dy}{dx}
+\]
+
+\textbf{ii)}
+\[
+\frac{d^5y}{dx^5} = 6 \left(\frac{d^2y}{dx^2}\right)^2 + 8 \frac{dy}{dx} \frac{d^3y}{dx^3} + 2y \frac{d^4y}{dx^4}
+\]
+
+\begin{solution}
+\textbf{(i) 求二阶导数}：
+\[
+y = \tan x \implies \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1+y^2
+\]
+\[
+y' = 1+y^2
+\]
+对 $x$ 求导：
+\[
+y'' = 2y y'
+\]
+
+\textbf{(ii) 高阶导数}：
+\[
+y''' = 2y'y' + 2yy'' = 2(y')^2 + 2yy''
+\]
+\[
+y^{(4)} = 6y'y'' + 2yy'''
+\]
+\[
+y^{(5)} = 6(y'')^2 + 8y'y''' + 2y y^{(4)}
+\]
+\end{solution}
+
+\textbf{b) 求 $y = \tan x$ 的 Maclaurin 展开前 3 个非零项}
+
+\begin{solution}
+在 $x=0$ 处求各阶导数：
+\[
+y_0 = \tan(0) = 0
+\]
+\[
+y'_0 = 1+y_0^2 = 1
+\]
+\[
+y''_0 = 2y_0y'_0 = 0
+\]
+\[
+y'''_0 = 2y_0y''_0 + 2(y'_0)^2 = 2
+\]
+\[
+y^{(4)}_0 = 6y'_0y''_0 + 2y_0y'''_0 = 0
+\]
+\[
+y^{(5)}_0 = 6(y''_0)^2 + 8y'_0y'''_0 + 2y_0y^{(4)}_0 = 16
+\]
+
+Maclaurin 展开式：
+\[
+y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + \frac{x^4}{4!}y^{(4)}_0 + \frac{x^5}{5!}y^{(5)}_0 + O(x^6)
+\]
+代入各阶导数值：
+\[
+y = 0 + x + \frac{x^3}{3} + \frac{2}{15}x^5 + O(x^6)
+\]
+
+因此,
+\[
+\tan x = x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + O(x^6)
+\]
+\end{solution}
+
+\question
+设 $y = \ln(2-e^x)$, $x<\ln 2$。
+
+\textbf{a) 证明下列公式：}
+\[
+e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac{dy}{dx}\right)^3 \right] + e^x = 0
+\]
+
+\begin{solution}
+由 $y = \ln(2-e^x)$ 得
+\[
+e^y = 2-e^x
+\]
+两边对 $x$ 求导：
+\[
+\frac{d}{dx}(e^y) = \frac{d}{dx}(2-e^x) \implies e^y y' = -e^x \implies e^y y' + e^x = 0
+\]
+
+再次求导：
+\[
+\frac{d}{dx}(e^y y' + e^x) = 0 \implies e^y[(y')^2 + y''] + e^x = 0
+\]
+
+再求一次导数：
+\[
+\frac{d}{dx}\big(e^y[(y')^2 + y''] + e^x\big) = 0 \implies e^y[y''' + 3y'y'' + (y')^3] + e^x = 0
+\]
+\end{solution}
+
+\textbf{b) 求 Maclaurin 展开式的前三个非零项}
+
+\begin{solution}
+在 $x=0$ 处求各阶导数：
+
+\[
+y_0 = \ln(2-e^0) = \ln 1 = 0
+\]
+\[
+e^y y' + e^x = 0 \implies y'_0 + 1 = 0 \implies y'_0 = -1
+\]
+\[
+e^y[(y')^2 + y''] + e^x = 0 \implies (-1)^2 + y''_0 + 1 = 0 \implies y''_0 = -2
+\]
+\[
+e^y[(y')^3 + 3y'y'' + y'''] + e^x = 0 \implies (-1)^3 + 3(-1)(-2) + y'''_0 + 1 = 0 \implies y'''_0 = -6
+\]
+
+Maclaurin 展开式：
+\[
+y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + O(x^4)
+\]
+代入各阶导数值：
+\[
+y = 0 - x - x^2 - x^3 + O(x^4)
+\]
+
+因此
+\[
+\ln(2-e^x) = -x - x^2 - x^3 + O(x^4)
+\]
+\end{solution}
+
+\question
+函数 $f$ 和 $g$ 定义如下：
+\[
+f(x) = \arctan\left(\frac{2}{3}x\right), \quad x\in \mathbb{R},
+\]
+\[
+g(y) = \frac{1}{1+y}, \quad y\in \mathbb{R}, \quad -1<y<1.
+\]
+
+\textbf{a)} 将 $g(y)$ 展开为二项级数,并保留 $y^3$ 项。
+
+\begin{solution}
+使用二项式定理：
+\[
+(1+y)^{-1} = 1 + (-1)y + \frac{(-1)(-2)}{2!}y^2 + \frac{(-1)(-2)(-3)}{3!}y^3 + O(y^4)
+\]
+\[
+(1+y)^{-1} = 1 - y + y^2 - y^3 + O(y^4)
+\]
+\end{solution}
+
+\textbf{b)} 利用 $f'(x)$ 和 (a) 的结果,求 $\arctan\left(\frac{2}{3}x\right)$ 的级数展开。
+
+\begin{solution}
+\[
+f(x) = \arctan\left(\frac{2}{3}x\right)
+\]
+\[
+f'(x) = \frac{2/3}{1+(\frac{2}{3}x)^2} = \frac{2}{3}\left(1+\frac{4}{9}x^2\right)^{-1}
+\]
+
+将 (a) 的结果代入,令 $y = \frac{4}{9}x^2$：
+\[
+f'(x) \approx \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^2 - \left(\frac{4}{9}x^2\right)^3 + O(x^8)\right]
+\]
+\[
+f'(x) \approx \frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8)
+\]
+
+对 $x$ 积分：
+\[
+f(x) \approx \int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8) \right] dx
+\]
+\[
+\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7 + C
+\]
+
+由 $x=0$ 可得 $C=0$,因此：
+\[
+\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7.
+\]
+\end{solution}
+
+\question
+\noindent
+已知 $y = \tan x$。
+
+\noindent
+\textbf{a)} 证明
+\[
+\frac{d^3 y}{dx^3} = 2y \frac{d^2 y}{dx^2} + 2 \left(\frac{dy}{dx}\right)^2
+\]
+
+\noindent
+\textbf{b)} 求 $\tan x$ 在 $x=\frac{\pi}{4}$ 附近的前四项泰勒展开式
+
+\noindent
+\textbf{c)} 从上式近似计算
+\[
+\tan \frac{5\pi}{18} \approx 1+\frac{\pi}{18}+\frac{\pi^2}{648}+\frac{\pi^3}{17496}
+\]
+
+\begin{solution}
+\noindent
+\textbf{a) 计算高阶导数}
+
+\[
+y = \tan x
+\]
+\[
+\frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1 + y^2
+\]
+
+\noindent
+对 $x$ 再求两次导数：
+\[
+\frac{d^2 y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d}{dx}(1+y^2) = 2y \frac{dy}{dx}
+\]
+
+\[
+\frac{d^3 y}{dx^3} = \frac{d}{dx}\left(2y \frac{dy}{dx}\right) = 2y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2
+\]
+
+\noindent
+\textbf{b) 泰勒展开式}
+
+在 $x=a=\frac{\pi}{4}$ 处计算各阶导数：
+\[
+y = \tan a = 1
+\]
+\[
+\frac{dy}{dx} = 1 + y^2 = 2
+\]
+\[
+\frac{d^2 y}{dx^2} = 2 y \frac{dy}{dx} = 2 \cdot 1 \cdot 2 = 4
+\]
+\[
+\frac{d^3 y}{dx^3} = 2 y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2 = 2\cdot1\cdot4 + 2\cdot2^2 = 16
+\]
+
+\noindent
+泰勒展开公式：
+\[
+\tan x \approx f(a) + (x-a)f'(a) + \frac{(x-a)^2}{2!}f''(a) + \frac{(x-a)^3}{3!}f'''(a) + \dots
+\]
+
+代入各阶导数：
+\[
+\tan x \approx 1 + 2(x-\frac{\pi}{4}) + 2(x-\frac{\pi}{4})^2 + \frac{8}{3}(x-\frac{\pi}{4})^3 + \dots
+\]
+
+\noindent
+\textbf{c) 近似计算 $\tan\frac{5\pi}{18}$}
+
+\[
+x-\frac{\pi}{4} = \frac{5\pi}{18} - \frac{\pi}{4} = \frac{\pi}{36}
+\]
+
+代入泰勒展开：
+\[
+\tan \frac{5\pi}{18} \approx 1 + 2\cdot \frac{\pi}{36} + 2\cdot \left(\frac{\pi}{36}\right)^2 + \frac{8}{3} \cdot \left(\frac{\pi}{36}\right)^3
+\]
+
+\[
+\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{2\pi^2}{1296} + \frac{8\pi^3}{139968}
+\]
+
+\[
+\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{\pi^2}{648} + \frac{\pi^3}{17496}
+\]
+\end{solution}
+
+
+\question
+\noindent
+求 $\arctan x$ 的麦克劳林展开式,并利用该展开证明
+\[
+\pi=\sum_{n=0}^{\infty} f(n)
+\]
+其中 $f(n)$ 为适当的函数
+
+\begin{solution}
+\noindent
+先对 $\arctan x$ 求导
+\[
+\frac{d}{dx}(\arctan x)=\frac{1}{1+x^{2}}
+\]
+
+当 $|x|<1$ 时,有几何级数展开
+\[
+\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+x^{8}-\cdots
+\]
+\[
+=\sum_{n=0}^{\infty}(-1)^{n}x^{2n}
+\]
+
+对上式逐项积分,且取积分常数
+\[
+\arctan x=\sum_{n=0}^{\infty}\int(-1)^{n}x^{2n}\,dx
+\]
+\[
+=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}+C
+\]
+
+令 $x=0$,则 $\arctan 0=0$,从而 $C=0$,于是
+\[
+\arctan x=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
+\]
+
+代入 $x=1$ 得
+\[
+\arctan 1=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
+\]
+而 $\arctan 1=\frac{\pi}{4}$,故
+\[
+\frac{\pi}{4}=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
+\]
+
+两边同乘 $4$,得
+\[
+\pi=\sum_{n=0}^{\infty}\frac{4(-1)^{n}}{2n+1}
+\]
+
+因此可取
+\[
+f(n)=\frac{4(-1)^{n}}{2n+1}
+\]
+\end{solution}
+
+\question
+\noindent
+利用适当的二项式展开式,证明
+\[
+\arcsin x = \sum_{r=0}^{\infty} \left[ \frac{\binom{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1} \right]
+\]
+
+\begin{solution}
+\noindent
+从二项式展开 $(1-x^2)^{-1/2}$ 出发
+\[
+\frac{1}{\sqrt{1-x^2}} = (1-x^2)^{-1/2} = 1 + \frac{-1/2}{1}(-x^2) + \frac{-1/2(-3/2)}{1\cdot 2}(-x^2)^2 + \frac{-1/2(-3/2)(-5/2)}{1\cdot 2\cdot 3}(-x^2)^3 + O(x^8)
+\]
+
+化简符号得
+\[
+\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1}{2}x^2 + \frac{1/2\cdot 3/2}{1\cdot 2}x^4 + \frac{1/2\cdot 3/2\cdot 5/2}{1\cdot 2\cdot 3}x^6 + O(x^{8})
+\]
+
+整理成阶乘形式
+\[
+\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1\cdot 3}{2\cdot 2}x^4 + \frac{1\cdot 3\cdot 5}{3!} \frac{x^6}{8} + O(x^8)
+\]
+
+进一步写成二项式系数
+\[
+\frac{1}{\sqrt{1-x^2}} = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} x^{2r}
+\]
+
+对两边在收敛半径内积分
+\[
+\int \frac{1}{\sqrt{1-x^2}}\,dx = \int \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} x^{2r}\,dx
+\]
+
+逐项积分得
+\[
+\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{4^r} \frac{x^{2r+1}}{2r+1} + C
+\]
+
+代入 $x=0$ 得 $C=0$,于是
+\[
+\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{2r+1} \frac{x^{2r+1}}{4^r}
+\]
+
+重写为所需形式
+\[
+\arcsin x = \sum_{r=0}^{\infty} \frac{\binom{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1}
+\]
+\end{solution}
+
+\question
+求下列无穷级数的和：
+\[
+1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\frac{1}{9\times4^4}+\cdots
+\]
+
+\begin{solution}
+考虑对数的幂级数展开：
+\[
+\ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
+\]
+\[
+\ln(1-x) = -x - \frac{1}{2}x^2 - \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
+\]
+
+两式相减：
+\[
+\ln(1+x) - \ln(1-x) = 2\left( x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots \right)
+\]
+\[
+\ln\left(\frac{1+x}{1-x}\right) = 2 \sum_{k=0}^{\infty} \frac{x^{2k+1}}{2k+1}
+\]
+
+在收敛半径内令 $x = \frac{1}{2}$：
+\[
+\ln\left(\frac{1+\frac{1}{2}}{1-\frac{1}{2}}\right) = 2 \sum_{k=0}^{\infty} \frac{(1/2)^{2k+1}}{2k+1}
+\]
+\[
+\ln 3 = 2 \sum_{k=0}^{\infty} \frac{1}{(2k+1)2^{2k+1}} = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
+\]
+
+注意到原级数的形式与此一致：
+\[
+1 + \frac{1}{3\cdot 4} + \frac{1}{5\cdot 4^2} + \frac{1}{7\cdot 4^3} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
+\]
+
+\[
+\therefore 1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\cdots = \ln 3
+\]
+\end{solution}
+
+\question
+求下列交错级数的和：
+\[
+\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \frac{1}{1+4+9+16} + \frac{1}{1+4+9+16+25} - \cdots
+\]
+
+\begin{solution}
+首先写成紧凑形式：
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{1^2 + 2^2 + \cdots + n^2} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\frac{1}{6}n(n+1)(2n+1)} = \sum_{n=1}^{\infty} \frac{6(-1)^{n+1}}{n(n+1)(2n+1)}
+\]
+
+对 $\frac{1}{n(n+1)(2n+1)}$ 做部分分式分解：
+\[
+\frac{1}{n(n+1)(2n+1)} = \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1}
+\]
+
+因此级数可写为：
+\[
+\sum_{n=1}^{\infty} 6(-1)^{n+1} \left( \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1} \right)
+= 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} + 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} - 24\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1}
+\]
+
+分别处理各个级数：
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \ln 2
+\]
+
+\[
+6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} = 6 - 6 \ln 2
+\]
+
+再利用 $\arctan x$ 展开：
+\[
+\arctan x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1} \implies \arctan 1 = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}
+\]
+
+\[
+24 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1} = 24 \left(\frac{\pi}{4} - 1\right) = 6\pi - 24
+\]
+
+将所有部分相加：
+\[
+6\ln 2 + (6 - 6\ln 2) - (6\pi - 24) = 6 - 6\pi + 24 = 30 - 6\pi
+\]
+
+因此原级数的和为：
+\[
+\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \cdots = 6(\pi - 3)
+\]
+\end{solution}
+
+\question
+证明
+\[
+\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]=3\ln\left(\frac{3}{2}\right).
+\]
+
+\begin{solution}
+先对通项进行代数变形：
+\[
+\frac{2r+3}{(r+1)3^r}
+=\frac{2(r+1)+1}{r+1}\left(\frac{1}{3}\right)^r
+=2\left(\frac{1}{3}\right)^r+\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+\]
+
+因此
+\[
+\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
+=\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
++\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+\]
+
+第一项为等比级数,其首项为 $\frac{2}{3}$,公比为 $\frac{1}{3}$,故
+\[
+\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
+=\frac{\frac{2}{3}}{1-\frac{1}{3}}=1
+\]
+
+对第二项,考虑
+\[
+\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\frac{1}{4}x^4-\cdots
+\]
+两边同除以 $-x$,得
+\[
+-\frac{1}{x}\ln(1-x)
+=1+\frac{1}{2}x+\frac{1}{3}x^2+\frac{1}{4}x^3+\cdots
+=1+\sum_{r=1}^{\infty}\frac{1}{r+1}x^r
+\]
+
+取 $x=\frac{1}{3}$,由于 $|x|<1$,级数收敛,于是
+\[
+-3\ln\left(\frac{2}{3}\right)
+=1+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+\]
+从而
+\[
+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+=-3\ln\left(\frac{2}{3}\right)-1
+\]
+
+将两部分相加：
+\[
+\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
+=1-3\ln\left(\frac{2}{3}\right)-1
+=-3\ln\left(\frac{2}{3}\right)
+\]
+
+整理得
+\[
+\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
+=3\ln\left(\frac{3}{2}\right)
+\]
+\end{solution}
+
+\question
+通过考虑 $\ln(1-x^2)$ 与 $\ln\left(\frac{1+x}{1-x}\right)$ 的级数展开,或用其他方法,求下列级数的精确值：
+\[
+\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right].
+\]
+
+\begin{solution}
+由
+\[
+\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\cdots,\quad |x|<1
+\]
+\[
+\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\cdots,\quad |x|<1
+\]
+可得
+\[
+\ln(1-x^2)= -x^2-\frac{1}{2}x^4-\frac{1}{3}x^6-\cdots
+\]
+
+因此
+\[
+-\frac{1}{2}\ln(1-x^2)=\frac{1}{2}x^2+\frac{1}{4}x^4+\frac{1}{6}x^6+\cdots
+\]
+
+令 $x=\frac{1}{2}$,得
+\[
+\frac{1}{2}\cdot\frac{1}{4}+\frac{1}{4}\cdot\frac{1}{16}+\frac{1}{6}\cdot\frac{1}{64}+\cdots
+=-\frac{1}{2}\ln\frac{3}{4}
+\]
+
+再考虑
+\[
+\ln\left(\frac{1+x}{1-x}\right)
+=2\left(x+\frac{x^3}{3}+\frac{x^5}{5}+\cdots\right)
+\]
+从而
+\[
+\frac{1}{2x}\ln\left(\frac{1+x}{1-x}\right)
+=1+\frac{x^2}{3}+\frac{x^4}{5}+\cdots
+\]
+
+令 $x=\frac{1}{2}$,得
+\[
+1+\frac{1}{3}\frac{1}{2^2}+\frac{1}{5}\frac{1}{2^4}+\frac{1}{7}\frac{1}{2^6}+\cdots
+=\ln 3
+\]
+
+因此
+\[
+\frac{1}{3}\cdot\frac{1}{4}+\frac{1}{5}\cdot\frac{1}{16}+\frac{1}{7}\cdot\frac{1}{64}+\cdots
+=\ln 3-1
+\]
+
+将两部分相加：
+\[
+\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
+=-\frac{1}{2}\ln\frac{3}{4}+\ln 3-1
+\]
+
+化简得
+\[
+\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
+=\frac{1}{2}\ln 12-1
+\]
+\end{solution}
+
+\question
+\noindent
+\textbf{a)} 用适当的积分方法计算
+\[
+\int_{0}^{1} x^{3}\arctan x\,dx
+\]
+
+\noindent
+\textbf{b)} 求 $\arctan x$ 的无穷级数展开,并利用该展开验证 a) 的结果
+
+\begin{solution}
+\noindent
+\textbf{a)} 先用分部积分法  
+取
+\[
+u=\arctan x,\quad dv=x^{3}\,dx
+\]
+则
+\[
+du=\frac{1}{1+x^{2}}\,dx,\quad v=\frac{x^{4}}{4}
+\]
+
+于是
+\[
+\int_{0}^{1} x^{3}\arctan x\,dx
+=\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
+-\frac{1}{4}\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
+\]
+
+边界项为
+\[
+\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
+=\frac{\pi}{16}
+\]
+
+化简被积函数
+\[
+\frac{x^{4}}{1+x^{2}}=x^{2}-1+\frac{1}{1+x^{2}}
+\]
+
+因此
+\[
+\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
+=\int_{0}^{1}x^{2}\,dx-\int_{0}^{1}1\,dx+\int_{0}^{1}\frac{1}{1+x^{2}}\,dx
+\]
+\[
+=\frac{1}{3}-1+\frac{\pi}{4}
+\]
+
+代回得
+\[
+\int_{0}^{1} x^{3}\arctan x\,dx
+=\frac{\pi}{16}-\frac{1}{4}\left(\frac{1}{3}-1+\frac{\pi}{4}\right)
+\]
+\[
+=\frac{1}{6}
+\]
+
+\noindent
+\textbf{b)} 由
+\[
+\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
+\]
+两边积分得
+\[
+\arctan x
+=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots
+=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
+\]
+
+代入积分
+\[
+\int_{0}^{1} x^{3}\arctan x\,dx
+=\int_{0}^{1}x^{3}\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}\,dx
+\]
+\[
+=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
+\int_{0}^{1}x^{2n+4}\,dx
+\]
+\[
+=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)(2n+5)}
+\]
+
+作部分分式分解
+\[
+\frac{1}{(2n+1)(2n+5)}
+=\frac{1}{4}\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
+\]
+
+于是
+\[
+\int_{0}^{1} x^{3}\arctan x\,dx
+=\frac{1}{4}\sum_{n=0}^{\infty}(-1)^{n}
+\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
+\]
+
+该级数为望远镜型,化简得
+\[
+=\frac{1}{4}\left(1-\frac{1}{3}\right)
+=\frac{1}{6}
+\]
+
+与 a) 的结果一致
+\end{solution}
+
+\question
+已知
+\[
+1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots=\frac{\pi}{4},
+\quad
+1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\cdots=\frac{\pi^2}{12},
+\quad
+1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots=\ln 2.
+\]
+在假设下列积分收敛的前提下,求
+\[
+\int_0^1 (\ln x)(\arctan x)\,dx
+\]
+的精确值。
+
+\begin{solution}
+先利用反正切函数的幂级数展开。由
+\[
+\frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}=1-x^2+x^4-x^6+\cdots
+\]
+逐项积分得
+\[
+\arctan x=x-\frac{1}{3}x^3+\frac{1}{5}x^5-\frac{1}{7}x^7+\cdots
+=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1},
+\quad 0\le x\le1.
+\]
+
+将其代入积分,并交换求和与积分次序：
+\[
+\int_0^1 (\arctan x)(\ln x)\,dx
+=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}
+\int_0^1 x^{2n+1}\ln x\,dx.
+\]
+
+对积分作分部积分,取
+$u=\ln x$,$dv=x^{2n+1}dx$,则
+\[
+\int_0^1 x^{2n+1}\ln x\,dx
+=\left[\frac{x^{2n+2}\ln x}{2n+2}\right]_0^1
+-\frac{1}{2n+2}\int_0^1 x^{2n+1}\,dx.
+\]
+端点项为零,因此
+\[
+\int_0^1 x^{2n+1}\ln x\,dx
+=-\frac{1}{(2n+2)^2}.
+\]
+
+于是
+\[
+\int_0^1 (\arctan x)(\ln x)\,dx
+=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)(2n+2)^2}.
+\]
+
+对通项作部分分式分解：
+\[
+\frac{1}{(2n+1)(2n+2)^2}
+=\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}.
+\]
+
+代回得
+\[
+\int_0^1 (\arctan x)(\ln x)\,dx
+=-\sum_{n=0}^{\infty}(-1)^n
+\left[
+\frac{1}{2n+1}
+-\frac{1}{2n+2}
+-\frac{1}{(2n+2)^2}
+\right].
+\]
+
+将其拆分为三个已知级数：
+\[
+\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
+\quad
+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\ln 2,
+\quad
+\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\frac{\pi^2}{12}.
+\]
+
+因此
+\[
+\int_0^1 (\arctan x)(\ln x)\,dx
+=-\left[
+\frac{\pi}{4}
+-\frac{1}{2}\ln 2
+-\frac{1}{4}\cdot\frac{\pi^2}{12}
+\right].
+\]
+
+化简得
+\[
+\int_0^1 (\arctan x)(\ln x)\,dx
+=\frac{\pi^2}{48}+\frac{1}{2}\ln 2-\frac{\pi}{4}
+=\frac{\pi^2-12\pi+24\ln 2}{48}.
+\]
+\end{solution}
+\begin{solution}
+设
+\[
+I(a)=\int_0^1 (\ln x)\arctan(ax)\,dx,
+\quad a\ge0.
+\]
+所求积分为 $I(1)$。
+
+对参数 $a$ 求导,有
+\[
+I'(a)=\int_0^1 (\ln x)\frac{x}{1+a^2x^2}\,dx.
+\]
+
+交换积分顺序,令 $u=ax$,得
+\[
+I'(a)=\int_0^1 x\ln x
+\int_0^{a}\frac{du}{1+u^2x^2}\,dx.
+\]
+
+改为先对 $x$ 积分。注意到
+\[
+\int_0^1 \frac{x\ln x}{1+u^2x^2}\,dx
+=-\frac{1}{2u^2}\ln(1+u^2),
+\]
+因此
+\[
+I'(a)
+=-\frac12\int_0^{a}\frac{\ln(1+u^2)}{u^2}\,du.
+\]
+
+对该积分作分部积分,取
+$U=\ln(1+u^2)$,$dV=\frac{du}{u^2}$,
+则
+\[
+I'(a)
+=-\frac12
+\left[
+-\frac{\ln(1+u^2)}{u}
++\int_0^{a}\frac{2u}{1+u^2}\cdot\frac{1}{u}\,du
+\right].
+\]
+
+化简得
+\[
+I'(a)
+=\frac12\frac{\ln(1+a^2)}{a}
+-\int_0^{a}\frac{du}{1+u^2}.
+\]
+
+于是
+\[
+I'(a)=\frac12\frac{\ln(1+a^2)}{a}-\arctan a.
+\]
+
+再对 $a$ 从 $0$ 积分到 $1$,注意 $I(0)=0$,得到
+\[
+I(1)=\int_0^1
+\left(
+\frac12\frac{\ln(1+a^2)}{a}-\arctan a
+\right)da.
+\]
+
+分项计算。首先
+\[
+\int_0^1 \arctan a\,da
+=\frac{\pi}{4}-\frac12\ln2.
+\]
+
+其次
+\[
+\int_0^1 \frac{\ln(1+a^2)}{a}\,da
+=\int_0^1\int_0^{a^2}\frac{1}{a(1+t)}\,dt\,da
+=\int_0^1\frac{1-a^2}{a(1+a^2)}\,da
+=\frac{\pi^2}{12}.
+\]
+
+综上
+\[
+I(1)
+=\frac12\cdot\frac{\pi^2}{12}
+-\left(\frac{\pi}{4}-\frac12\ln2\right).
+\]
+
+因此
+\[
+\int_0^1 (\ln x)(\arctan x)\,dx
+=\frac{\pi^2}{48}+\frac12\ln2-\frac{\pi}{4}
+=\frac{\pi^2-12\pi+24\ln2}{48}.
+\]
+\end{solution}
+
+\end{questions}
 \pagebreak
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
