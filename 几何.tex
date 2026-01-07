@@ -7716,45 +7716,42 @@ B(3k,3t).
     \end{solution}
 
     \question 设 $P_1, P_2, P_3$ 为抛物线 $y=x^2$ 上的三点,$l_1, l_2, l_3$ 分别为抛物线在这些点处的切线。切线两两相交,设 $Q_{12}=l_1 \cap l_2, Q_{13}=l_1 \cap l_3, Q_{23}=l_2 \cap l_3$。求 $\triangle P_1P_2P_3$ 与 $\triangle Q_{12}Q_{13}Q_{23}$ 面积之比。
-\begin{solution}
-设 $P_1=(a,a^2), P_2=(b,b^2), P_3=(c,c^2)$ 且 $a \neq b \neq c$。切线方程为
-\[
-l_1: y = 2ax - a^2, \quad l_2: y = 2bx - b^2, \quad l_3: y = 2cx - c^2。
-\]
+    \begin{solution}
+        设 $P_1=(a,a^2), P_2=(b,b^2), P_3=(c,c^2)$ 且 $a \neq b \neq c$,切线方程为
+        \[
+        l_1: y = 2ax - a^2, \quad l_2: y = 2bx - b^2, \quad l_3: y = 2cx - c^2。
+        \]
+        可解得
+        \[
+        Q_{12} = \left(\frac{a+b}{2}, ab\right), \quad Q_{13} = \left(\frac{a+c}{2}, ac\right), \quad Q_{23} = \left(\frac{b+c}{2}, bc\right)。
+        \]
+        于是
+        \[
+        [\triangle P_1P_2P_3] = \frac{1}{2}
+        \left|\begin{vmatrix}
+        1 & 1 & 1 \\
+        a & b & c \\
+        a^2 & b^2 & c^2
+        \end{vmatrix}\right|
+        =\frac{1}{2}|(a-b)(b-c)(c-a)|
+        \]
+        \[
+        [\triangle Q_{12}Q_{13}Q_{23}] = \frac{1}{2} \cdot \frac{1}{2}
+        \left|\begin{vmatrix}
+        1 & 1 & 1 \\
+        a+b & a+c & b+c \\
+        ab & ac & bc
+        \end{vmatrix}\right|
+        =\frac{1}{4}|(a-b)(b-c)(c-a)|
+        \]
+        故
+        \[
+        \frac{[\triangle P_1P_2P_3]}{[\triangle Q_{12}Q_{13}Q_{23}]} = 2
+        \]
+    \end{solution}
 
-因此
-\[
-Q_{12} = \left(\frac{a+b}{2}, ab\right), \quad Q_{13} = \left(\frac{a+c}{2}, ac\right), \quad Q_{23} = \left(\frac{b+c}{2}, bc\right)。
-\]
-
-利用向量叉积求面积：
-\[
-2 \cdot \text{Area}(P_1P_2P_3) = \left|\vec{P_1P_2} \times \vec{P_1P_3}\right| 
-= \left|
-\begin{vmatrix}
-\vec{i} & \vec{j} & \vec{k} \\
-b-a & b^2-a^2 & 0 \\
-c-a & c^2-a^2 & 0
-\end{vmatrix}
-\right| 
-= |(b-a)(c-a)(c-b)|。
-\]
-
-类似地,
-\[
-2 \cdot \text{Area}(Q_{12}Q_{13}Q_{23}) = \left|\vec{Q_{12}Q_{13}} \times \vec{Q_{12}Q_{23}}\right| 
-= \frac{1}{2} |(b-a)(c-a)(c-b)|。
-\]
-
-故
-\[
-\frac{\text{Area}(P_1P_2P_3)}{\text{Area}(Q_{12}Q_{13}Q_{23})} = 2。
-\]
-\end{solution}
-
-
-\question 已知抛物线 $P_1: f(x) = x^2 + bx + c$ 的顶点为 $P$,抛物线 $P_2: g(x) = -x^2 + dx + e$ 的顶点为 $Q$。$P,Q$ 不重合,且都在$P_1,P_2$上。
-\begin{parts}
+    \question 已知抛物线 $P_1: f(x) = x^2 + bx + c$ 的顶点为 $P$,抛物线 $P_2: g(x) = -x^2 + dx + e$ 的顶点为 $Q$。$P,Q$ 不重合,且都在$P_1,P_2$上。
+    \begin{parts}
     \part 证明 $bd=2(e - c)$。
     \begin{solution}
         抛物线$P_1$顶点 $P$ 在 $x = -\dfrac{1}{2}b$上。由于 $P$ 在两条抛物线上,
@@ -8743,52 +8740,27 @@ c-a & c^2-a^2 & 0
     \textcolor{red}{移走}
     \end{solution}
 
-    \question 已知 $C_1 = x^2+y^2+2ax+12y+10a+8=0$, $C_2 = x^2+y^2-2x-a^2+2a=0$,
-$C_3 = x^2+y^2-22x-6ay+8a^2-25a+36=0$,若三圆的圆心共线,求 $a$ 的值。
+    \question 已知三圆方程为 $C_1: x^2+y^2+2ax+12y+10a+8=0,C_2: x^2+y^2-2x-a^2+2a=0,C_3: x^2+y^2-22x-6ay+8a^2-25a+36=0$,若三圆的圆心共线,求 $a$ 的值。
+    \begin{solution}
+        设$C_1,C_2,C_3$ 的圆心分别为$(-a, -6),(1, 0),(11, 3a)$,已知三圆心共线,所以斜率满足
+        \[
+        \frac{0 - (-6)}{1 - (-a)} = \frac{3a - 0}{11 - 1}
+        \]
+        解得
+        \[
+        a = -5 \quad \text{ 或 } \quad a = 4
+        \]
+        验证 $C_3$ 的半径,
+        \[
+        r_3^2 = 11^2 + (3a)^2 - (8a^2 - 25a + 36) = a^2 + 25a + 85
+        \]
+        当$a=4, r_3^2 = 201 > 0$,当$a=-5, r_3^2 = -15 < 0$,故可行解只有
+        \[
+        a = 4
+        \]
+    \end{solution}
 
-\begin{solution}
-$C_1$ 的圆心：$(-a, -6)$ \\
-$C_2$ 的圆心：$(1, 0)$ \\
-$C_3$ 的圆心：$(11, 3a)$
-
-三圆心共线,所以斜率满足
-\[
-m_{12} = m_{23}.
-\]
-
-\[
-\frac{0 - (-6)}{1 - (-a)} = \frac{3a - 0}{11 - 1} \implies \frac{6}{1+a} = \frac{3a}{10}
-\]
-
-\[
-60 = 3a(1+a) \implies 3a^2 + 3a - 60 = 0 \implies a^2 + a - 20 = 0
-\]
-
-\[
-(a+5)(a-4) = 0 \implies a = -5 \text{ 或 } a = 4
-\]
-
-检查 $C_3$ 的半径：
-\[
-r_3^2 = 11^2 + (3a)^2 - (8a^2 - 25a + 36) = 121 + 9a^2 - 8a^2 + 25a - 36 = a^2 + 25a + 85
-\]
-
-\[
-\text{当 } a=4: r_3^2 = 16 + 100 + 85 = 201 > 0
-\]
-
-\[
-\text{当 } a=-5: r_3^2 = 25 - 125 + 85 = -15 < 0
-\]
-
-\[
-\therefore a = 4
-\]
-
-\end{solution}
-
-
-    \question 若方程 \( x^2 + y^2 + 4k x - 6k y + 12k^2 - 4k - 8 = 0 \) 表示一个圆,求面积为最小时圆的方程。
+    \question 若方程 $ x^2 + y^2 + 4k x - 6k y + 12k^2 - 4k - 8 = 0 $ 表示一个圆,求面积为最小时圆的方程。
     \begin{solution}
         将原式配方成
         \[
@@ -8891,60 +8863,45 @@ r_3^2 = 11^2 + (3a)^2 - (8a^2 - 25a + 36) = 121 + 9a^2 - 8a^2 + 25a - 36 = a^2 +
         \]
     \end{solution}
 
-    \question 求两圆的公切线方程：
-
-已知两圆：
-\[
-C_1: x^2+y^2-2y-4=0, \quad C_2: x^2+y^2-6x-11=0
-\]
-
-\begin{solution}
-圆心与半径：
-\[
-C_1: A(0,1),\ r_1 = \sqrt{0^2+(1)^2+4} = \sqrt{5}, \quad 
-C_2: B(3,0),\ r_2 = \sqrt{3^2+0^2+11} = \sqrt{20} = 2\sqrt{5}
-\]
-
-圆心距：
-\[
-AB = \sqrt{(3-0)^2 + (0-1)^2} = \sqrt{10}
-\]
-
-\[
-r_1 + r_2 = 3\sqrt{5}, \quad r_2 - r_1 = \sqrt{5}
-\]
-
-由于 $r_2-r_1 < AB < r_1+r_2$,两圆相交于两点。
-
-设外公切线的交点为 $P(-3,2)$（根据题图计算）。
-
-设直线方程为 $L: y-2 = m(x+3) \implies mx - y + 3m + 2 = 0$。
-
-过圆心 $A(0,1)$,距离等于半径 $r_1$：
-\[
-\frac{|m(0)-1+3m+2|}{\sqrt{m^2+1}} = \sqrt{5} \implies \frac{|3m+1|}{\sqrt{m^2+1}} = \sqrt{5}
-\]
-
-\[
-(3m+1)^2 = 5(m^2+1) \implies 9m^2 + 6m + 1 = 5m^2 + 5 \implies 4m^2 + 6m - 4 = 0 \implies 2m^2 + 3m -2 =0
-\]
-
-解得：
-\[
-m = \frac{1}{2}, \quad m = -2
-\]
-
-对应的公切线方程：
-\[
-y-2 = \frac{1}{2}(x+3) \implies 2y - 4 = x + 3 \implies x - 2y + 7 =0
-\]
-
-\[
-y-2 = -2(x+3) \implies y-2 = -2x -6 \implies 2x + y +4 = 0
-\]
-
-\end{solution}
-
+    \question 求两圆
+    \[
+    C_1: x^2+y^2-2y-4=0, \quad C_2: x^2+y^2-6x-11=0
+    \]
+    的公切线方程。
+    \begin{solution}
+        $C_1$圆心为 $A(0,1)$,半径为 $r_1 = \sqrt{5}$。$C_2$圆心为 $B(3,0)$,半径为 $r_2 = 2\sqrt{5}$。圆心距为
+        \[
+        AB = \sqrt{(3-0)^2 + (0-1)^2} = \sqrt{10}
+        \]
+        且
+        \[
+        r_1 + r_2 = 3\sqrt{5}, \quad r_2 - r_1 = \sqrt{5}
+        \]
+        由于 $r_2-r_1 < AB < r_1+r_2$,两圆相交于两点。设两条所求外公切线的交点为 $P(a,b)$,由相似三角形,$P$的$x,y$-坐标满足
+        \[
+        \frac{0-a}{3-a}=\frac{1-b}{0-b}=\frac{PA}{PB}=\frac{1}{2}
+        \]
+        解得$P(-3,2)$,现设切线方程为 
+        \[
+        L: y-2 = m(x+3) \Rightarrow mx - y + 3m + 2 = 0
+        \]
+        由于圆心$A(0,1)$至切线的距离等于半径,
+        \[
+        \frac{|m(0)-1+3m+2|}{\sqrt{m^2+1}} = \sqrt{5} 
+        \]
+        解得
+        \[
+        m = \frac{1}{2}, \quad m = -2
+        \]
+        故对应的公切线方程为
+        \[
+        y-2 = \frac{1}{2}(x+3) \Rightarrow x - 2y + 7 =0
+        \]
+        及
+        \[
+        y-2 = -2(x+3) \Rightarrow 2x + y +4 = 0
+        \]
+    \end{solution}
 
     \question 已知有一圆方程式为 $x^2+y^2=37$, 且圆的内部有一点 $P(1,2)$。
     \begin{parts}
@@ -9173,321 +9130,114 @@ y-2 = -2(x+3) \implies y-2 = -2x -6 \implies 2x + y +4 = 0
         \]
     \end{solution}
 
-    \question
-点 $A(6,-1)$ 在圆
-\[
-x^2+y^2-4x+6y=7
-\]
-上。过 $A$ 的切线经过点 $P$,且 $P$ 到圆心的距离为 $\sqrt{65}$。  
-再作圆的一条切线,于另一点 $B$ 与前一切线相交于 $P$。  
-求 $P$ 与 $B$ 的两组可能坐标。
+    \question 由圆$x^2+y^2-4x+6y=7$外一点 $P$向该圆引两条切线,切于两点 $A(6,-1),B$。若点 $P$ 到圆心 $C$ 的距离为 $\sqrt{65}$,求 $B,P$ 的坐标。
+    \begin{solution}
+        圆$x^2+y^2-4x+6y=7$的圆心为$C(2,-3)$,半径为$r=\sqrt{20}$。设 $P(a,b)$,由于 $AP \perp AC$,
+        \[
+        \frac{-1-(-3)}{6-2}\cdot\frac{b+1}{a-6}=-1 \Rightarrow b=11-2a.
+        \]
+        由毕氏定理, $PA=\sqrt{65-20}=\sqrt{45}$,即
+        \[
+        (a-6)^2+(b+1)^2=45
+        \]
+        代入 $b=11-2a$解得
+        \[
+        (a-6)^2+(12-2a)^2=45 \Rightarrow a=3 \quad \text{或} \quad a=9
+        \]
+        故
+        \[
+        P(3,5)\quad \text{或}\quad P(9,-7).
+        \]
+        现求对应的 $B$,设 $B(k,h)$,由$BP=\sqrt{45},BC=\sqrt{20}$,当 $P(3,5)$,解
+        \[
+        \begin{cases}
+        (k-3)^2+(h-5)^2=45,\\
+        (k-2)^2+(h+3)^2=20.
+        \end{cases}
+        \]
+        可得
+        \[
+        B\left(-\frac{18}{13},-\frac{1}{13}\right).
+        \]
+        当 $P(9,-7)$,解
+        \[
+        \begin{cases}
+        (k-9)^2+(h+7)^2=45,\\
+        (k-2)^2+(h+3)^2=20,
+        \end{cases}
+        \]
+        得
+        \[
+        B\left(\frac{30}{13},-\frac{17}{13}\right).
+        \]
+        故所求为
+        \[
+        P(3,5),\; B\left(-\frac{18}{13},-\frac{1}{13}\right) \quad \text{或 } \quad P(9,-7),\; B\left(\frac{30}{13},-\frac{17}{13}\right)
+        \]
+    \end{solution}
 
-\begin{solution}
-先化圆的一般式为标准式：
-\[
-x^2-4x+y^2+6y=7
-\]
-\[
-(x-2)^2+(y+3)^2=20
-\]
-故圆心为
-\[
-C(2,-3),\quad r=\sqrt{20}.
-\]
+    \question 已知两条平行直线 $L_1:y = 2x + 5,L_2:y = 2x - 1$是以点 $C$ 为圆心的圆的切线。若另一直线$L_3$经过点 $(9,0)$且垂直于 $L_1,L_2$,求圆心 $C$。
+    \begin{solution}
+        据题意,圆的半径为 $r = \dfrac{1}{2}\left|\dfrac{5+1}{\sqrt{2^2+(-1)^2}}\right|= \dfrac{3}{\sqrt{5}}$,且圆心 $C$ 位于中位线 $L:y = 2x + 2$ 上, $L_3$ 的方程为
+        \[ 
+        y - 0 = -\frac{1}{2}(x - 9) \Rightarrow y = \frac{1}{2}(9 - x) 
+        \]
+        联立$L,L_3$,
+        \[ 
+        2x + 2 = \frac{1}{2}(9 - x) \Rightarrow x = 1, y=4
+        \]
+        可知交点为 $M(1,4)$。设 $D(0,2)$ 为中位线在 $y$ 轴的截距,$L_3$与圆交于两点 $A, B$,考虑相似三角形 $\triangle AMC \backsim \triangle ADC \ \text{(AAA)}$,设$MC = x$,有
+        \[
+        \frac{MC}{AC} = \frac{AC}{DC} \Rightarrow \frac{x}{\frac{3}{\sqrt{5}}} = \frac{\frac{3}{\sqrt{5}}}{\sqrt{5} + x} ,
+        \]
+        其中$DM = \sqrt{1^2 + (4-2)^2} = \sqrt{5}$,舍去负根,解得
+        \[ 
+        x = \frac{-5\sqrt{5} + \sqrt{305}}{10} 
+        \]
+        由此得 
+        \[
+        DC = \sqrt{5} + \frac{-5\sqrt{5} + \sqrt{305}}{10} = \frac{5\sqrt{5} + \sqrt{305}}{10}
+        \]
+        设$CD$与水平轴的夹角为$\theta$,由已知可得$\tan \theta=2$,故圆心$C$的$x,y-$坐标为
+        \[ 
+        x = DC \cos \theta = \frac{5\sqrt{5} + \sqrt{305}}{10}\cdot \frac{1}{\sqrt{5}} = \frac{5 + \sqrt{61}}{10}
+        \]
+        \[ 
+        y+2 = DC \sin \theta + 2 = \frac{5\sqrt{5} + \sqrt{305}}{10} \cdot \frac{2}{\sqrt{5}} + 2 = \frac{15 + \sqrt{61}}{5} 
+        \]
+        因此圆心 $C$ 的坐标为
+        \[ 
+        C\left( \frac{5 + \sqrt{61}}{10}, \frac{15 + \sqrt{61}}{5} \right) 
+        \]
+    \end{solution}
 
-\bigskip
-由于 $PA$ 与 $CA$ 垂直,设 $P(a,b)$,则
-\[
-\frac{-1-(-3)}{6-2}\cdot\frac{b+1}{a-6}=-1
-\]
-\[
-\frac{1}{2}\cdot\frac{b+1}{a-6}=-1
-\]
-\[
-b+1=-2(a-6)
-\]
-\[
-b=11-2a.
-\]
-
-\bigskip
-又由已知
-\[
-|PA|=\sqrt{45},\quad |PC|=\sqrt{65}.
-\]
-
-先由 $|PA|=\sqrt{45}$：
-\[
-(a-6)^2+(b+1)^2=45
-\]
-代入 $b=11-2a$：
-\[
-(a-6)^2+(12-2a)^2=45
-\]
-\[
-a^2-12a+36+4a^2-48a+144=45
-\]
-\[
-5a^2-60a+135=0
-\]
-\[
-a^2-12a+27=0
-\]
-\[
-a=3 \quad \text{或} \quad a=9.
-\]
-
-对应
-\[
-P(3,5)\quad \text{或}\quad P(9,-7).
-\]
-
-\bigskip
-下面分别求对应的 $B$。
-
-\bigskip
-当 $P(3,5)$ 时,由
-\[
-|BP|=\sqrt{45},\quad |BC|=\sqrt{20}
-\]
-设 $B(k,h)$,则
-\[
-\begin{cases}
-(k-3)^2+(h-5)^2=45,\\
-(k-2)^2+(h+3)^2=20.
-\end{cases}
-\]
-
-相减得
-\[
--2k-16h-4=0
-\]
-\[
-k=-2-8h.
-\]
-
-代回第二式：
-\[
-(-4-8h)^2+(h+3)^2=20
-\]
-\[
-64h^2+64h+16+h^2+6h+9=20
-\]
-\[
-65h^2+70h+5=0
-\]
-\[
-(13h+1)(h+1)=0.
-\]
-
-舍去对应点 $A$ 的解,得
-\[
-h=-\frac{1}{13},\quad k=-\frac{18}{13}.
-\]
-
-\[
-B\left(-\frac{18}{13},-\frac{1}{13}\right).
-\]
-
-\bigskip
-当 $P(9,-7)$ 时,同理解
-\[
-\begin{cases}
-(k-9)^2+(h+7)^2=45,\\
-(k-2)^2+(h+3)^2=20,
-\end{cases}
-\]
-得
-\[
-B\left(\frac{30}{13},-\frac{17}{13}\right).
-\]
-
-\bigskip
-因此所求结果为
-\[
-\text{或 } P(3,5),\; B\left(-\frac{18}{13},-\frac{1}{13}\right),
-\]
-\[
-\text{或 } P(9,-7),\; B\left(\frac{30}{13},-\frac{17}{13}\right).
-\]
-\end{solution}
-
-\question
-两条平行直线 $L_1$ 与 $L_2$ 的斜率均为 $2$,它们是同一圆的切线,圆心为 $C$。  
-第三条直线 $L_3$ 与 $L_1,L_2$ 垂直,并与圆交于不同的两点 $A,B$。  
-已知 $L_3$ 经过点 $(9,0)$,求圆心 $C$ 的坐标。
-\begin{solution}
-
-先求两条平行直线之间的距离。
-
-已知斜率为 $2$, 因此
-\[
-\tan\theta = 2
-\]
-由此可得
-\[
-\sin\theta = \frac{2}{\sqrt{5}}, \qquad \cos\theta = \frac{1}{\sqrt{5}}
-\]
-于是两平行线之间的距离为
-\[
-d = 6\cos\theta = 6\times\frac{1}{\sqrt{5}} = \frac{6}{\sqrt{5}}
-\]
-
-因此圆的半径为 $\frac{3}{\sqrt{5}}$, 圆心在直线
-\[
-y = 2x + 2
-\]
-上。
-
-作切线 $L_3$, 其斜率为 $-\frac{1}{2}$, 且经过点 $(9,0)$, 方程为
-\begin{align*}
-y - 0 &= -\frac{1}{2}(x - 9) \\
-y &= -\frac{1}{2}(x - 9)
-\end{align*}
-
-联立上述直线与 $y = 2x + 2$, 求交点 $M$ 的坐标。
-\begin{align*}
-\frac{1}{2}(9 - x) &= 2x + 2 \\
-9 - x &= 4x + 4 \\
-5 &= 5x \\
-x &= 1
-\end{align*}
-代回得
-\[
-y = 4
-\]
-故
-\[
-M(1,4)
-\]
-
-接下来在另一示意图中考虑相似三角形。
-
-已知
-\[
-D(0,2), \qquad M(1,4)
-\]
-
-由 $\triangle AMC \sim \triangle ADC$, 得
-\[
-\frac{|MC|}{|AC|} = \frac{|AC|}{|DC|}
-\]
-设 $|MC| = x$, 则
-\[
-\frac{x}{\sqrt{5}} = \frac{\sqrt{5}}{x+2}
-\]
-化简得
-\[
-x^2 + \sqrt{5}x = \frac{9}{5}
-\]
-两边同乘 $5$,
-\[
-5x^2 + 5\sqrt{5}x = 9
-\]
-即
-\[
-5x^2 + 5\sqrt{5}x - 9 = 0
-\]
-解得
-\[
-x = \frac{-5\sqrt{5} + \sqrt{305}}{10}
-\]
-
-因此
-\[
-|DC| = \sqrt{5} + \frac{-5\sqrt{5} + \sqrt{305}}{10}
-      = \frac{5\sqrt{5} + \sqrt{305}}{10}
-\]
-
-由于圆心 $C$ 在直线 $y = 2x + 2$ 上, 且
-\[
-\cos\theta = \frac{1}{\sqrt{5}}, \qquad \sin\theta = \frac{2}{\sqrt{5}}
-\]
-
-圆心的 $x$ 坐标为
-\begin{align*}
-x &= |DC|\cos\theta \\
-  &= \frac{5\sqrt{5} + \sqrt{305}}{10}\times\frac{1}{\sqrt{5}} \\
-  &= \frac{5\sqrt{5} + \sqrt{305}}{10\sqrt{5}} \\
-  &= \frac{1}{2} + \frac{1}{10}\sqrt{61} \\
-  &= \frac{1}{10}(5 + \sqrt{61})
-\end{align*}
-
-对应的 $y$ 坐标满足
-\begin{align*}
-y + 2 &= 2 + |DC|\sin\theta \\
-      &= 2 + \frac{5\sqrt{5} + \sqrt{305}}{10}\times\frac{2}{\sqrt{5}} \\
-      &= 3 + \frac{1}{5}\sqrt{61} \\
-      &= \frac{1}{5}(15 + \sqrt{61})
-\end{align*}
-
-因此圆心为
-\[
-C\left(\frac{1}{10}(5+\sqrt{61}),\ \frac{1}{5}(15+\sqrt{61})\right)
-\]
-\end{solution}
-
-\question
-直线 $L$ 与圆 $C$ 的方程分别为
-\[
-L:\; y=\lambda(x-a)+a\sqrt{\lambda^{2}+1},\qquad
-C:\; x^{2}+y^{2}=2ax,
-\]
-其中 $a$ 为正常数,$\lambda$ 为参数。证明：对任意 $\lambda$,直线 $L$ 恒为圆 $C$ 的切线。
-
-\begin{solution}
-先将圆的方程化为标准形式：
-\begin{align*}
-x^{2}+y^{2} &= 2ax \\
-x^{2}-2ax+y^{2} &= 0 \\
-(x-a)^{2}-a^{2}+y^{2} &= 0 \\
-(x-a)^{2}+y^{2} &= a^{2}.
-\end{align*}
-可见圆心为 $P(a,0)$,半径为 $a$。
-
-直线 $L$ 的斜率为 $\lambda$,因此过点 $P(a,0)$ 且与 $L$ 垂直的直线斜率为 $-\frac{1}{\lambda}$,其方程为
-\begin{align*}
-y-0 &= -\frac{1}{\lambda}(x-a) \\
-x &= a-y\lambda.
-\end{align*}
-
-设该垂线与直线 $L$ 交于点 $Q$,联立两直线方程：
-\begin{align*}
-y &= \lambda(x-a)+a\sqrt{\lambda^{2}+1}, \\
-x &= a-y\lambda.
-\end{align*}
-代入得
-\begin{align*}
-y &= \lambda(a-y\lambda-a)+a\sqrt{\lambda^{2}+1} \\
-y &= -\lambda^{2}y+a\sqrt{\lambda^{2}+1} \\
-y(1+\lambda^{2}) &= a\sqrt{\lambda^{2}+1} \\
-y &= \frac{a}{\sqrt{\lambda^{2}+1}}.
-\end{align*}
-于是
-\[
-x=a-y\lambda
- =a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}}.
-\]
-故
-\[
-Q\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}},\;\frac{a}{\sqrt{\lambda^{2}+1}}\right).
-\]
-
-计算圆心 $P(a,0)$ 到直线 $L$ 的距离,即 $|PQ|$：
-\begin{align*}
-|PQ|
-&=\sqrt{\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}}-a\right)^{2}
-+\left(\frac{a}{\sqrt{\lambda^{2}+1}}-0\right)^{2}} \\
-&=\sqrt{\frac{a^{2}\lambda^{2}}{\lambda^{2}+1}
-+\frac{a^{2}}{\lambda^{2}+1}} \\
-&=\sqrt{\frac{a^{2}(\lambda^{2}+1)}{\lambda^{2}+1}} \\
-&=a.
-\end{align*}
-
-由于圆心到直线 $L$ 的距离恒等于圆的半径 $a$,且与 $\lambda$ 无关,因此对任意 $\lambda$,直线 $L$ 始终与圆 $C$ 相切。
-
-故直线 $L$ 对所有 $\lambda$ 均为圆 $C$ 的切线。
-\end{solution}
+    \question 直线 $L$ 与圆 $C$ 的方程分别为
+    \[
+    L: y=\lambda(x-a)+a\sqrt{\lambda^{2}+1},\quad
+    C: x^{2}+y^{2}=2ax,
+    \]
+    其中 $a$ 为正数,$\lambda$ 为参数。证明对任意 $\lambda$,直线 $L$ 恒为圆 $C$ 的切线。
+    \begin{solution}
+        将圆$C$化为标准形式,
+        \[
+        (x-a)^{2}+y^{2} = a^{2}
+        \]
+        可知圆心为 $P(a,0)$,半径为 $a$;直线 $L$ 的斜率为 $\lambda$,因此过点 $P(a,0)$ 且与 $L$ 垂直的直线斜率为 $-\dfrac{1}{\lambda}$,其方程为
+        \[
+        y-0 = -\frac{1}{\lambda}(x-a) \Rightarrow x = a-y\lambda
+        \]
+        设该垂线与直线 $L$ 交于点 $Q$,联立两直线方程解得
+        \[
+        Q\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}},\;\frac{a}{\sqrt{\lambda^{2}+1}}\right)
+        \]
+        于是圆心 $P(a,0)$ 到直线 $L$ 的距离为
+        \[
+        PQ=\sqrt{\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}}-a\right)^{2}+\left(\frac{a}{\sqrt{\lambda^{2}+1}}-0\right)^{2}} 
+        =\sqrt{\frac{a^{2}(\lambda^{2}+1)}{\lambda^{2}+1}} 
+        =a
+        \]
+        由于$PQ$与 $\lambda$ 无关,因此对任意 $\lambda$,直线 $L$ 始终与圆 $C$ 相切,故直线 $L$ 对所有 $\lambda$ 均为圆 $C$ 的切线。
+    \end{solution}
 
     \question 已知圆 \((x - p)^2 + y^2 = r^2\) 及 \((y - p)^2 + x^2 = r^2\)交于相异点 \(A ,B\),且 \(a ,b\) 分别是 \(A ,B\) 的 \(x\)-坐标。 若\(C ,D\) 分别为两圆的圆心,
     \begin{parts}
@@ -9537,124 +9287,20 @@ Q\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}},\;\frac{a}{\sqrt{\lambda^{2}+1}}\
     \end{solution}
     \end{parts}
 
-    \question 坐标平面上有一圆 $C: x^2 + y^2 = 20$,试回答下列问题:
-    \begin{parts}
-    \part 抛物线 $\Gamma_1$ 与圆 $C$ 相切于 $A(-\sqrt{10}, \sqrt{10})$ 和 $B(\sqrt{10}, \sqrt{10})$ 两点,求抛物线 $\Gamma_1$ 的方程式为何？
-    \begin{solution}
-        由切点可知抛物线关于 $y$ 轴对称且开口向下,设
-        \[
-        \Gamma_1: y = ax^2 + b,\quad a < 0
-        \]
-        将$A(-\sqrt{10}, \sqrt{10})$ 代入得$10a + b = \sqrt{10}$;将 $\Gamma_1$ 代入圆 $C$:
-        \[
-        x^2 + (ax^2 + b)^2 = 20 \Rightarrow a^2x^4 + (2ab + 1)x^2 + b^2 - 20 = 0
-        \]
-        令判别式为 $0$,
-        \[
-        (2ab + 1)^2 - 4a^2(b^2 - 20) = 0
-        \]
-        代入 $b = \sqrt{10} - 10a$ 得
-        \[
-        80a^2 + 4a(\sqrt{10} - 10a) + 1 = 0 \Rightarrow 40a^2 + 4\sqrt{10}a + 1 = 0
-        \]
-        解得$\displaystyle a = -\frac{\sqrt{10}}{20}, b = \frac{3\sqrt{10}}{2}$,所以抛物线方程为
-        \[
-        y = -\frac{\sqrt{10}}{20}x^2 + \frac{3\sqrt{10}}{2}
-        \]
-        \end{solution}
-        \part 抛物线 $\Gamma_2$ 与圆 $C$ 相切于 $D(2,4)$ 和 $E(-4,2)$ 两点,求抛物线 $\Gamma_2$ 的顶点坐标为何？
-        \begin{solution}
-        考虑将 $\Gamma_1$ 旋转使其与 $\Gamma_2$ 对应,设旋转矩阵为
-        \[
-        T = 
-        \begin{bmatrix}
-        \cos \theta & -\sin \theta \\
-        \sin \theta & \cos \theta
-        \end{bmatrix}
-        \]
-        满足
-        \[
-        T
-        \begin{bmatrix}
-        \sqrt{10} \\
-        \sqrt{10}
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-        2 \\
-        4
-        \end{bmatrix}
-        \Rightarrow
-        \cos \theta = \frac{3}{\sqrt{10}} ,\sin \theta = \frac{1}{\sqrt{10}}
-        \]
-        又$\Gamma_1$ 顶点为 $P(0, \frac{3\sqrt{10}}{2})$,则 $\Gamma_2$ 顶点为
-        \[
-        T(P) = 
-        \begin{bmatrix}
-        \cos \theta & -\sin \theta \\
-        \sin \theta & \cos \theta
-        \end{bmatrix}
-        \begin{bmatrix}
-        0 \\
-        \frac{3\sqrt{10}}{2}
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-        -\frac{3}{2} \\
-        \frac{9}{2}
-        \end{bmatrix}
-        \Rightarrow
-        \Gamma_2 \text{ 顶点 } = \left(-\frac{3}{2}, \frac{9}{2} \right)
-        \]
-    \end{solution}
-    \end{parts}
-
-    \question 在平面直角坐标系$xOy$中,点$P(0,1)$,点$A$为动点,以线段$AP$为直径的圆与$x$轴相切,设$A$点的轨迹为曲线$E$.
-    \begin{parts}
-    \part 求轨迹$E$的方程.
-    \begin{solution}
-        设$A(x,y),AP$中点$(\frac{x}{2},\frac{y+1}{2})$,则由题意$$\sqrt{x^2+(y-1)^2}=2\left|\frac{y+1}{2}\right|$$
-        化简即得轨迹$E$的方程式$x^2=4y$。
-    \end{solution}
-    
-    \part 若直线$AP$与$E$交于另一点$B,\triangle AOB$的外接圆交$E$于点$C$(不与$O,A,B$重合),过点$C$作$E$的切线交直线$AP$于点$N$,求$|ON|$的最小值.
-    \begin{solution}
-        设$l_{AP}: y=kx+1,A(x_1, y_1), B(x_2, y_2), C(x_3,y_3)$,
-        $$\begin{cases} y=kx+1 \\ x^2=4y \end{cases} \Rightarrow x^3-4kx-4=0$$
-        其中$$x_1+x_2=4k, x_1x_2=-4$$
-        又$O,A,B,C$四点共圆,设$\triangle AOB$外接圆方程为$x^2+y^2+dx+ey=0$,解得
-        $$\begin{cases} x^2+y^2+dx+ey=0 \\ x^2=4y \end{cases} \Rightarrow x^3+(16+4e)x+16d=0$$
-        其中$x_1,x_2,x_3$是方程$x^3+(4e+16)x+16d=0$的三个根,且$$x_1+x_2+x_3=0$$
-        即$$x_3=-(x_1+x_2)=-4k$$代入$E$得$y_3=4k^2$得$C(-4k,4k^2)$,过$C$曲线$E$的切线方程为 $$2kx+y+4k^2=0$$
-        与$l_{AP}: y=kx+1$联立得
-        $$N\left(-\frac{4k^2+1}{3k}, -\frac{4k^2-2}{3}\right)$$
-        故
-        \begin{align*}
-        |ON|^2
-        &=\left(-\frac{4k^2+1}{3k}\right)^2+\left(-\frac{4k^2-2}{3}\right)^2 \\
-        &= \frac{1}{9}\left(16k^4+12+\frac{1}{k^2}\right)\\
-        &\ge \dfrac{1}{9}\left(3\sqrt[3]{16k^4 \cdot \dfrac{1}{2k^2} \cdot \dfrac{1}{2k^2}}+12\right) \\
-        &=\dfrac{\sqrt[3]{4}+4}{3}
-        \end{align*}
-        
-        当且仅当$16k^4 = \dfrac{1}{2k^2}\iff k^6 = \dfrac{1}{32}\iff k=\pm\left(\dfrac{1}{2}\right)^{\frac{5}{6}}$时,$$|ON|_{\min}=\sqrt{\frac{\sqrt[3]{4}+4}{3}}$$
-    \end{solution}
-    \end{parts}
-
     \question 求抛物线 \(y^{2}=16x\) 上距直线 \(4x-3y+24=0\) 最近的点坐标。  
     \begin{solution}
-    设抛物线上一点为 \((t^2, 4t),\;t\in \mathbb{R}\),则到直线的距离为:
-    \[
-    d = \frac{|4t^2 - 12t + 24|}{\sqrt{4^2 + (-3)^2}} = \frac{4}{5}|t^2 - 3t + 6|
-    \]
-    又    
-    \[
-    t^2 - 3t + 6 = \left(t - \frac{3}{2}\right)^2 + \frac{15}{4}
-    \]
-    在 \(t = \dfrac{3}{2}\) 时最小,所以最近的点坐标为
-    \[
-    \left(t^2, 4t\right) = \left(\frac{9}{4}, 6\right)
-    \]
+        设抛物线上一点为 \((t^2, 4t),\;t\in \mathbb{R}\),则到直线的距离为:
+        \[
+        d = \frac{|4t^2 - 12t + 24|}{\sqrt{4^2 + (-3)^2}} = \frac{4}{5}|t^2 - 3t + 6|
+        \]
+        又    
+        \[
+        t^2 - 3t + 6 = \left(t - \frac{3}{2}\right)^2 + \frac{15}{4}
+        \]
+        在 \(t = \dfrac{3}{2}\) 时最小,所以最近的点坐标为
+        \[
+        \left(t^2, 4t\right) = \left(\frac{9}{4}, 6\right)
+        \]
     \end{solution}
     
     \question 已知抛物线的焦弦 \(AB\),准线到焦弦两端的垂足满足 \(AM=9,\ BN=4\),求 \(MN\)。
@@ -9786,152 +9432,28 @@ Q\left(a-\frac{a\lambda}{\sqrt{\lambda^{2}+1}},\;\frac{a}{\sqrt{\lambda^{2}+1}}\
         \]
     \end{solution}
 
-    \question AB 为抛物线 $y^2=4ax$ 之一动弦, 且 $\angle AOB = 90^\circ$, 其中 O 为原点, TA 与 TB 为切线, NA 与 NB 为其法线, 证明 TN 之中点轨迹方程式 $2y^2 = 25a(x-a)$。
-
-\begin{solution}
-设 $A(at_1^2, 2at_1)$, $B(at_2^2, 2at_2)$。
-
-抛物线 $y^2=4ax$ 在 $A$ 点的切线：
-\[
-y t_1 = x + at_1^2 \implies t_1y - x = at_1^2
-\]
-
-同理 $B$ 点的切线：
-\[
-t_2y - x = at_2^2
-\]
-
-$\angle AOB = 90^\circ \implies \text{OA} \perp \text{OB} \implies m_{\text{OA}}\cdot m_{\text{OB}}=-1$：
-\[
-\frac{2at_1}{at_1^2} \cdot \frac{2at_2}{at_2^2} = -1 \implies t_1 t_2 = -4
-\]
-
-切线交点 $T$：
-\[
-y = a(t_1 + t_2), \quad x = a t_1 t_2 = -4a
-\]
-
-法线在 $A$ 点方程：
-\[
-y - 2at_1 = -t_1(x - at_1^2) \implies t_1 x + y = a t_1^3 + 2at_1
-\]
-
-联立求 $N$ 点坐标：
-\[
-N(x_N, y_N) = (a(t_1+t_2)^2 - 2a, 4a(t_1+t_2))
-\]
-
-TN 中点坐标：
-\[
-x_M = \frac{-4a + a(t_1+t_2)^2 - 2a}{2} = \frac{a(t_1+t_2)^2 - 6a}{2}, \quad 
-y_M = \frac{a(t_1+t_2) + 4a(t_1+t_2)}{2} = \frac{5a(t_1+t_2)}{2}
-\]
-
-令 $t_1+t_2 = \frac{2y_M}{5a}$,代入 $x_M$：
-\[
-x_M = \frac{a\left(\frac{2y_M}{5a}\right)^2 - 6a}{2} = \frac{4y_M^2}{50a} - 3a = \frac{2y_M^2}{25a} - 3a
-\]
-
-整理得轨迹方程：
-\[
-2y^2 = 25a(x-a)
-\]
-
-\end{solution}
-
-
-    \question 已知抛物线 $\Gamma:y = x^2$ 上三个不同点 $A(1,1),B,C$ 满足 $AB \perp AC$,过 $B,C$ 分别作 $\Gamma$ 的切线交于点 $P$,求点 $P$ 的轨迹方程。
+    \question 已知 $P(a, -a^2),Q(b, -b^2)$在抛物线$y = -x^2$上,其中$a < 0,b > 0$。设 $M$ 为线段 $PQ$ 的中点,$R$ 为过点 $M$ 的垂直直线与抛物线的交点, $l$ 为抛物线在点 $Q$ 处的切线。证明任何一端在 $PQ$ 上、另一端在 $l$ 上的垂直线段均被过 $Q,R$ 的直线平分。
     \begin{solution}
-        设 $B(x_1, x_1^2),C(x_2, x_2^2)$,直线 $BC$ 的方程为 $y = kx + m$,联立$\Gamma:y = x^2$得
-        \[
-        x^2 - kx - m = 0
+        切线 $l$ 的方程为
+        \[ 
+        y = -2bx + b^2 
         \]
-        由韦达定理
-        \[
-        x_1 + x_2 = k,\quad x_1 x_2 = -m
+        包含点 $P,Q$ 的直线方程为
+        \[ 
+        \frac{y+b^2}{x+a^2}=\frac{b+b^2}{a+a^2} \Rightarrow y = -(b+a)x + ab 
         \]
-        于是
-        \[
-        y_1 + y_2 = x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1 x_2 = k^2 + 2m
+        $M$ 坐标为 $\left(\dfrac{a+b}{2},-\dfrac{a^2+b^2}{2}\right)$,故 $R$ 坐标为 $\left(\dfrac{a+b}{2}, -\left(\dfrac{a+b}{2}\right)^2\right)$,过
+        $Q$ 及 $R$ 的直线方程为
+        \[ 
+        y = -\left(\frac{a+3b}{2}\right)x + \left(\frac{ab+b^2}{2}\right) 
         \]
-        \[
-        y_1 y_2 = x_1^2 x_2^2 = (x_1 x_2)^2 = m^2
+        从线段 $PQ$ 到切线 $l$ 的垂直线段的中点 $y$ 坐标,是两条直线纵坐标的平均值
+        \[ 
+        y_{avg} = \frac{1}{2}(-2bx + b^2 - (b+a)x + ab) = -\left(\frac{a+3b}{2}\right)x + \left(\frac{ab+b^2}{2}\right)
         \]
-        由 $AB \perp AC$,即 $\overrightarrow{AB} \cdot \overrightarrow{AC} = 0$,有
-        \[
-        (x_1 - 1)(x_2 - 1) + (y_1 - 1)(y_2 - 1) = 0
-        \]
-        展开整理得
-        \[
-        x_1 x_2 - (x_1 + x_2) + 1 + y_1 y_2 - (y_1 + y_2) + 1 = 0
-        \]
-        代入上式各值,得到
-        \[
-        -m - k + 1 + m^2 - (k^2 + 2m) + 1 = 0
-        \Rightarrow m^2 - 3m - k^2 - k + 2 = 0
-        \]
-        解得
-        \[
-        m = k + 2 \quad \text{或} \quad m = -k + 1
-        \]
-        若 $m = -k + 1$,则直线 $BC$ 方程为 $y = k(x - 1) + 1$,经过 $A(1,1)$,舍去;因此 $m = k + 2,BC$ 方程为
-        \[
-        y = k(x + 1) + 2
-        \]
-        即 $BC$ 恒过定点 $(-1, 2)$。分别作点 $B(x_1, x_1^2)$ 与 $C(x_2, x_2^2)$ 的切线方程:
-        \[
-        y - x_1^2 = 2x_1(x - x_1)\; ,\; y - x_2^2 = 2x_2(x - x_2) 
-        \]
-        联立两式得切线交点$P$,
-        \[
-        x = \frac{x_1 + x_2}{2} = \frac{k}{2}, \quad y = x_1 x_2 = -m = -k-2
-        \]
-        消去参数 $k$即得点P的轨迹方程
-        \[
-        2x + y + 2 = 0
-        \]
+        与经过 $Q$ 和 $R$ 的直线方程完全一致,故得证。
     \end{solution}
 
-    \question 已知抛物线 $y = x^2$,取 $a < 0$,$b > 0$,点 $P=(a,a^2)$,$Q=(b,b^2)$。设 $M$ 为 $PQ$ 的中点,$R$ 为通过 $M$ 的竖直线与抛物线的交点。设 $l$ 为抛物线在 $Q$ 处的切线。证明：所有以一端在 $PQ$ 上、另一端在 $l$ 上的竖直线段,都被通过 $Q$ 与 $R$ 的直线平分。
-
-\begin{solution}
-抛物线在 $Q$ 处的切线方程为
-\[
-y = 2b(x-b) + b^2 = 2b x - b^2,
-\] 
-注意原文中为 $y=-2bx+b^2$,根据方向可以调整符号。
-
-直线 $PQ$ 的方程为
-\[
-y - a^2 = \frac{b^2 - a^2}{b-a}(x-a) = (b+a)x - ab.
-\]
-
-中点 $M$ 坐标为
-\[
-M = \left(\frac{a+b}{2}, \frac{a^2+b^2}{2}\right),
-\] 
-通过 $M$ 的竖直线 $x = \frac{a+b}{2}$ 与抛物线 $y = x^2$ 的交点为
-\[
-R = \left(\frac{a+b}{2}, \left(\frac{a+b}{2}\right)^2\right).
-\]
-
-直线 $QR$ 的方程为
-\[
-y - b^2 = \frac{(\frac{a+b}{2})^2 - b^2}{\frac{a+b}{2} - b} \left(x - b\right) 
-= \frac{(a+b)^2/4 - b^2}{(a-b)/2} (x-b) 
-= -\frac{a+3b}{2} (x-b) + b^2 
-= -\frac{a+3b}{2} x + \frac{ab+b^2}{2}.
-\]
-
-设竖直线段的上端在 $l$ 上,端点坐标为 $(x_0, y_1)$,下端在 $PQ$ 上,坐标为 $(x_0, y_2)$,则竖直线段的中点纵坐标为
-\[
-\frac{y_1 + y_2}{2} = \frac{l(x_0) + PQ(x_0)}{2} = \frac{(-2bx_0 + b^2) + ((a+b)x_0 - ab)}{2} = -\frac{a+3b}{2} x_0 + \frac{ab+b^2}{2}.
-\]
-
-这正是直线 $QR$ 的方程,因此每个竖直线段都被 $QR$ 平分。
-\end{solution}
-
-    
     \question 已知抛物线 $$y^2 = 2px$$ 与双曲线 $$y = -\dfrac{1}{x}$$ 相交于点 $R$,一条同时与抛物线和双曲线相切的公切线分别相切于点$S,T$,求证对于任意正实数 $p,\triangle RST$ 的面积与$p$无关,即为一定值。
     \begin{solution}
         设公切线为 $y=mx+c$,代入抛物线得
@@ -10044,6 +9566,108 @@ y - b^2 = \frac{(\frac{a+b}{2})^2 - b^2}{\frac{a+b}{2} - b} \left(x - b\right)
         9y^2 = 4cx - 32c^2
         \]
     \end{solution}
+
+    \question 坐标平面上有一圆 $C: x^2 + y^2 = 20$,试回答下列问题:
+    \begin{parts}
+    \part 抛物线 $\Gamma_1$ 与圆 $C$ 相切于 $A(-\sqrt{10}, \sqrt{10})$ 和 $B(\sqrt{10}, \sqrt{10})$ 两点,求抛物线 $\Gamma_1$ 的方程式为何？
+    \begin{solution}
+        由切点可知抛物线关于 $y$ 轴对称且开口向下,设
+        \[
+        \Gamma_1: y = ax^2 + b,\quad a < 0
+        \]
+        将$A(-\sqrt{10}, \sqrt{10})$ 代入得$10a + b = \sqrt{10}$;将 $\Gamma_1$ 代入圆 $C$:
+        \[
+        x^2 + (ax^2 + b)^2 = 20 \Rightarrow a^2x^4 + (2ab + 1)x^2 + b^2 - 20 = 0
+        \]
+        令判别式为 $0$,
+        \[
+        (2ab + 1)^2 - 4a^2(b^2 - 20) = 0
+        \]
+        代入 $b = \sqrt{10} - 10a$ 得
+        \[
+        80a^2 + 4a(\sqrt{10} - 10a) + 1 = 0 \Rightarrow 40a^2 + 4\sqrt{10}a + 1 = 0
+        \]
+        解得$\displaystyle a = -\frac{\sqrt{10}}{20}, b = \frac{3\sqrt{10}}{2}$,所以抛物线方程为
+        \[
+        y = -\frac{\sqrt{10}}{20}x^2 + \frac{3\sqrt{10}}{2}
+        \]
+        \end{solution}
+        \part 抛物线 $\Gamma_2$ 与圆 $C$ 相切于 $D(2,4)$ 和 $E(-4,2)$ 两点,求抛物线 $\Gamma_2$ 的顶点坐标为何？
+        \begin{solution}
+        考虑将 $\Gamma_1$ 旋转使其与 $\Gamma_2$ 对应,设旋转矩阵为
+        \[
+        T = 
+        \begin{bmatrix}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+        \end{bmatrix}
+        \]
+        满足
+        \[
+        T
+        \begin{bmatrix}
+        \sqrt{10} \\
+        \sqrt{10}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+        2 \\
+        4
+        \end{bmatrix}
+        \Rightarrow
+        \cos \theta = \frac{3}{\sqrt{10}} ,\sin \theta = \frac{1}{\sqrt{10}}
+        \]
+        又$\Gamma_1$ 顶点为 $P(0, \frac{3\sqrt{10}}{2})$,则 $\Gamma_2$ 顶点为
+        \[
+        T(P) = 
+        \begin{bmatrix}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+        \end{bmatrix}
+        \begin{bmatrix}
+        0 \\
+        \frac{3\sqrt{10}}{2}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+        -\frac{3}{2} \\
+        \frac{9}{2}
+        \end{bmatrix}
+        \Rightarrow
+        \Gamma_2 \text{ 顶点 } = \left(-\frac{3}{2}, \frac{9}{2} \right)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 在平面直角坐标系$xOy$中,点$P(0,1)$,点$A$为动点,以线段$AP$为直径的圆与$x$轴相切,设$A$点的轨迹为曲线$E$.
+    \begin{parts}
+    \part 求轨迹$E$的方程.
+    \begin{solution}
+        设$A(x,y),AP$中点$(\frac{x}{2},\frac{y+1}{2})$,则由题意$$\sqrt{x^2+(y-1)^2}=2\left|\frac{y+1}{2}\right|$$
+        化简即得轨迹$E$的方程式$x^2=4y$。
+    \end{solution}
+    \part 若直线$AP$与$E$交于另一点$B,\triangle AOB$的外接圆交$E$于点$C$(不与$O,A,B$重合),过点$C$作$E$的切线交直线$AP$于点$N$,求$|ON|$的最小值.
+    \begin{solution}
+        设$l_{AP}: y=kx+1,A(x_1, y_1), B(x_2, y_2), C(x_3,y_3)$,
+        $$\begin{cases} y=kx+1 \\ x^2=4y \end{cases} \Rightarrow x^3-4kx-4=0$$
+        其中$$x_1+x_2=4k, x_1x_2=-4$$
+        又$O,A,B,C$四点共圆,设$\triangle AOB$外接圆方程为$x^2+y^2+dx+ey=0$,解得
+        $$\begin{cases} x^2+y^2+dx+ey=0 \\ x^2=4y \end{cases} \Rightarrow x^3+(16+4e)x+16d=0$$
+        其中$x_1,x_2,x_3$是方程$x^3+(4e+16)x+16d=0$的三个根,且$$x_1+x_2+x_3=0$$
+        即$$x_3=-(x_1+x_2)=-4k$$代入$E$得$y_3=4k^2$得$C(-4k,4k^2)$,过$C$曲线$E$的切线方程为 $$2kx+y+4k^2=0$$
+        与$l_{AP}: y=kx+1$联立得
+        $$N\left(-\frac{4k^2+1}{3k}, -\frac{4k^2-2}{3}\right)$$
+        故
+        \begin{align*}
+        |ON|^2
+        &=\left(-\frac{4k^2+1}{3k}\right)^2+\left(-\frac{4k^2-2}{3}\right)^2 \\
+        &= \frac{1}{9}\left(16k^4+12+\frac{1}{k^2}\right)\\
+        &\ge \dfrac{1}{9}\left(3\sqrt[3]{16k^4 \cdot \dfrac{1}{2k^2} \cdot \dfrac{1}{2k^2}}+12\right) \\
+        &=\dfrac{\sqrt[3]{4}+4}{3}
+        \end{align*}
+        当且仅当$16k^4 = \dfrac{1}{2k^2}\iff k^6 = \dfrac{1}{32}\iff k=\pm\left(\dfrac{1}{2}\right)^{\frac{5}{6}}$时,$$|ON|_{\min}=\sqrt{\frac{\sqrt[3]{4}+4}{3}}$$
+    \end{solution}
+    \end{parts}
 
     \question 已知正$\triangle ABC$ 内接于抛物线$$y=x^2-\frac{71}{36},$$点$P$满足$\overrightarrow{PA}+\overrightarrow{PB}+\overrightarrow{PC}=\textbf{0}$,是否存在定点$Q$,使得点$P$到点$Q$的距离与点$P$到$x$轴的距离相等？若存在,求出点$Q$的坐标；若不存在,请说明理由。
     \begin{solution}
@@ -10348,9 +9972,7 @@ f'(P)=\frac{2(P^2+1)^2(P^2-2)}{P^5}.
     \begin{parts}
     \part 证明直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 与直线 $PQ$ 垂直。
     \begin{solution}
-        点 $P$ 在抛物线上,故 $P(m,\dfrac{m^{2}}{2 p})$,抛物线 $E: x^{2} = 2 p y$求导得切线$l$斜率$\dfrac{m}{p}$,
-        
-        故过点 $P$ 作抛物线的切线 $l$方程为
+        点 $P$ 在抛物线上,故 $P(m,\dfrac{m^{2}}{2 p})$,抛物线 $E: x^{2} = 2 p y$求导得切线$l$斜率$\dfrac{m}{p}$,故过点 $P$ 作抛物线的切线 $l$方程为
         \[
         y-\frac{m^{2}}{2 p}=\dfrac{m}{p}(x-m)\Rightarrow y = \frac{m}{p} x - \frac{m^{2}}{2 p}.
         \]
@@ -12942,6 +12564,109 @@ k=\pm2.
         所以中点轨迹方程为
         \[
         y^2 = 4x - \frac{9}{4}.
+        \]
+    \end{solution}
+
+    \question AB 为抛物线 $y^2=4ax$ 之一动弦, 且 $\angle AOB = 90^\circ$, 其中 O 为原点, TA 与 TB 为切线, NA 与 NB 为其法线, 证明 TN 之中点轨迹方程式 $2y^2 = 25a(x-a)$。
+
+\begin{solution}
+设 $A(at_1^2, 2at_1)$, $B(at_2^2, 2at_2)$。
+
+抛物线 $y^2=4ax$ 在 $A$ 点的切线：
+\[
+y t_1 = x + at_1^2 \implies t_1y - x = at_1^2
+\]
+
+同理 $B$ 点的切线：
+\[
+t_2y - x = at_2^2
+\]
+
+$\angle AOB = 90^\circ \implies \text{OA} \perp \text{OB} \implies m_{\text{OA}}\cdot m_{\text{OB}}=-1$：
+\[
+\frac{2at_1}{at_1^2} \cdot \frac{2at_2}{at_2^2} = -1 \implies t_1 t_2 = -4
+\]
+
+切线交点 $T$：
+\[
+y = a(t_1 + t_2), \quad x = a t_1 t_2 = -4a
+\]
+
+法线在 $A$ 点方程：
+\[
+y - 2at_1 = -t_1(x - at_1^2) \implies t_1 x + y = a t_1^3 + 2at_1
+\]
+
+联立求 $N$ 点坐标：
+\[
+N(x_N, y_N) = (a(t_1+t_2)^2 - 2a, 4a(t_1+t_2))
+\]
+
+TN 中点坐标：
+\[
+x_M = \frac{-4a + a(t_1+t_2)^2 - 2a}{2} = \frac{a(t_1+t_2)^2 - 6a}{2}, \quad 
+y_M = \frac{a(t_1+t_2) + 4a(t_1+t_2)}{2} = \frac{5a(t_1+t_2)}{2}
+\]
+
+令 $t_1+t_2 = \frac{2y_M}{5a}$,代入 $x_M$：
+\[
+x_M = \frac{a\left(\frac{2y_M}{5a}\right)^2 - 6a}{2} = \frac{4y_M^2}{50a} - 3a = \frac{2y_M^2}{25a} - 3a
+\]
+整理得轨迹方程：
+\[
+2y^2 = 25a(x-a)
+\]
+\end{solution}
+
+    \question 已知抛物线 $\Gamma:y = x^2$ 上三个不同点 $A(1,1),B,C$ 满足 $AB \perp AC$,过 $B,C$ 分别作 $\Gamma$ 的切线交于点 $P$,求点 $P$ 的轨迹方程。
+    \begin{solution}
+        设 $B(x_1, x_1^2),C(x_2, x_2^2)$,直线 $BC$ 的方程为 $y = kx + m$,联立$\Gamma:y = x^2$得
+        \[
+        x^2 - kx - m = 0
+        \]
+        由韦达定理
+        \[
+        x_1 + x_2 = k,\quad x_1 x_2 = -m
+        \]
+        于是
+        \[
+        y_1 + y_2 = x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1 x_2 = k^2 + 2m
+        \]
+        \[
+        y_1 y_2 = x_1^2 x_2^2 = (x_1 x_2)^2 = m^2
+        \]
+        由 $AB \perp AC$,即 $\overrightarrow{AB} \cdot \overrightarrow{AC} = 0$,有
+        \[
+        (x_1 - 1)(x_2 - 1) + (y_1 - 1)(y_2 - 1) = 0
+        \]
+        展开整理得
+        \[
+        x_1 x_2 - (x_1 + x_2) + 1 + y_1 y_2 - (y_1 + y_2) + 1 = 0
+        \]
+        代入上式各值,得到
+        \[
+        -m - k + 1 + m^2 - (k^2 + 2m) + 1 = 0
+        \Rightarrow m^2 - 3m - k^2 - k + 2 = 0
+        \]
+        解得
+        \[
+        m = k + 2 \quad \text{或} \quad m = -k + 1
+        \]
+        若 $m = -k + 1$,则直线 $BC$ 方程为 $y = k(x - 1) + 1$,经过 $A(1,1)$,舍去;因此 $m = k + 2,BC$ 方程为
+        \[
+        y = k(x + 1) + 2
+        \]
+        即 $BC$ 恒过定点 $(-1, 2)$。分别作点 $B(x_1, x_1^2)$ 与 $C(x_2, x_2^2)$ 的切线方程:
+        \[
+        y - x_1^2 = 2x_1(x - x_1)\; ,\; y - x_2^2 = 2x_2(x - x_2) 
+        \]
+        联立两式得切线交点$P$,
+        \[
+        x = \frac{x_1 + x_2}{2} = \frac{k}{2}, \quad y = x_1 x_2 = -m = -k-2
+        \]
+        消去参数 $k$即得点P的轨迹方程
+        \[
+        2x + y + 2 = 0
         \]
     \end{solution}
 
