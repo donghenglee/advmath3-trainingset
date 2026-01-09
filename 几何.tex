@@ -9697,276 +9697,157 @@ B(3k,3t).
         由抛物线的定义得点 $Q$ 的坐标为 $$Q(0,\frac{1}{18}).$$
     \end{solution}
 
-    \question
-抛物线 $C$ 的直角坐标方程为
-\[
-y^2 = 4ax,
-\]
-其中 $a$ 为正常数。点 $P(ap^2,2ap)$ 与 $Q(aq^2,2aq)$ 为抛物线 $C$ 上的两个不同点。过 $P,Q$ 作抛物线的切线,两切线相交于点 $R$。设 $S$ 为抛物线的焦点,证明
-\[
-|SR|^2 = |SP||SQ|.
-\]
-
-\begin{solution}
-首先求抛物线在 $P$ 与 $Q$ 处的切线方程。
-
-由
-\[
-y^2 = 4ax
-\]
-对 $x$ 求导得
-\[
-2y\frac{dy}{dx} = 4a,
-\]
-从而
-\[
-\frac{dy}{dx} = \frac{2a}{y}.
-\]
-
-在点 $P(ap^2,2ap)$ 处,
-\[
-\frac{dy}{dx} = \frac{2a}{2ap} = \frac{1}{p},
-\]
-故切线方程为
-\[
-y-2ap=\frac{1}{p}(x-ap^2).
-\]
-
-同理,在点 $Q(aq^2,2aq)$ 处切线方程为
-\[
-y-2aq=\frac{1}{q}(x-aq^2).
-\]
-
-联立两条切线方程:
-\begin{align*}
-y-2ap &= \frac{1}{p}(x-ap^2),\\
-y-2aq &= \frac{1}{q}(x-aq^2).
-\end{align*}
-
-相减得
-\[
-2a(q-p)=\frac{p(x-aq^2)-q(x-ap^2)}{pq}.
-\]
-化简得
-\[
-x=apq.
-\]
-
-将其代入第一条切线方程,
-\begin{align*}
-y &= 2ap+\frac{1}{p}(apq-ap^2) \\
-  &= ap+aq.
-\end{align*}
-因此
-\[
-R(apq,a(p+q)).
-\]
-
-接下来计算距离。
-
-抛物线 $y^2=4ax$ 的焦点为
-\[
-S(a,0).
-\]
-
-\[
-|SP|=\sqrt{(ap^2-a)^2+(2ap)^2}
-     =\sqrt{a^2(p^2+1)^2}
-     =a(p^2+1).
-\]
-
-同理
-\[
-|SQ|=a(q^2+1).
-\]
-
-再计算
-\begin{align*}
-|SR|^2
-&=(apq-a)^2+(a(p+q))^2 \\
-&=a^2(pq-1)^2+a^2(p+q)^2 \\
-&=a^2(p^2q^2+p^2+q^2+1) \\
-&=a^2(p^2+1)(q^2+1).
-\end{align*}
-
-于是
-\[
-|SR|^2=[a(p^2+1)][a(q^2+1)]=|SP||SQ|.
-\]
-
-证毕。
-\end{solution}
-
-\question
-抛物线 $P$ 的焦点为 $S(6,0)$,准线为 $x=0$。
-
-\begin{enumerate}
-    \item 证明 $P$ 的直角坐标方程为 $y^2 = 12(x-3)$。
-    \item 验证 $P$ 的参数方程为
+    \question 抛物线 $C$ 的直角坐标方程为
     \[
-    x = 3t^2+3, \quad y = 6t.
+    y^2 = 4ax,
     \]
-    \item 证明过点 $Q(3q^2+3,6q)$ 的切线方程为
+    其中 $a>0$。$P(ap^2,2ap),Q(aq^2,2aq)$ 为抛物线 $C$ 上的相异点。过 $P,Q$ 作抛物线的切线,两切线相交于点 $R$。设 $S$ 为抛物线的焦点,证明
     \[
-    qy + 3 = x + 3q^2.
+    SR^2 = SP \cdot SQ
     \]
-    \item 设 $R$ 为抛物线上一点,使 $QSR$ 在一条直线上,证明过 $Q$ 和 $R$ 的切线交于 $y$ 轴。
-\end{enumerate}
+    \begin{solution}
+        由$y^2 = 4ax$,求导得
+        \[
+        \frac{dy}{dx}=\frac{2a}{y} \Rightarrow \left.\frac{dy}{dx}\right|_{x=ap^2,y=2ap} =\frac{1}{p}
+        \]
+        同理,在$P(ap^2,2ap),Q(aq^2,2aq)$切线方程为
+        \[
+        y-2ap=\frac{1}{p}(x-ap^2),\quad y-2aq=\frac{1}{q}(x-aq^2)
+        \]
+        联立方程解得
+        \[
+        x=apq,y=a(p+q) \Rightarrow R(apq,a(p+q))
+        \]
+        抛物线 $y^2=4ax$ 的焦点为$S(a,0)$,于是
+        \[
+        SP=\sqrt{(ap^2-a)^2+(2ap)^2}=\sqrt{a^2(p^2+1)^2}=a(p^2+1)
+        \]
+        同理
+        \[
+        SQ=a(q^2+1)
+        \]
+        而
+        \[
+        SR^2=(apq-a)^2+(a(p+q))^2 =a^2(p^2q^2+p^2+q^2+1) =a^2(p^2+1)(q^2+1)
+        \]
+        于是
+        \[
+        SR^2=[a(p^2+1)][a(q^2+1)]=SP \cdot SQ
+        \]
+        证毕。
+    \end{solution}
 
-\begin{solution}
-(a) 任取抛物线上一点 $A(x,y)$,根据焦点定义,$AS = \text{距准线距离}$：
-\[
-\sqrt{(x-6)^2 + y^2} = x.
-\]
-两边平方：
-\[
-(x-6)^2 + y^2 = x^2 \implies x^2 - 12x + 36 + y^2 = x^2 \implies y^2 = 12x - 36 = 12(x-3).
-\]
+    \question 抛物线 $P$ 的焦点为 $S(6,0)$,准线为 $x=0$。
+    \begin{parts}
+    \part 证明 $P$ 的直角坐标方程为 $y^2 = 12(x-3)$。
+    \begin{solution}
+        由抛物线定义,
+        \[
+        \sqrt{(x-6)^2 + y^2} = x
+        \]
+        化简得
+        \[
+        y^2 = 12(x-3)
+        \]
+    \end{solution}
+    \part 验证 $P$ 的参数方程为
+    \[
+    x = 3t^2+3, \quad y = 6t
+    \]
+    \begin{solution}
+        将参数方程 $x = 3t^2+3, y=6t$ 代入 
+        \[
+        y^2 = 36t^2, \quad 12(x-3) = 36t^2 \Rightarrow y^2 = 12(x-3)
+        \]
+        验证成立。
+    \end{solution}
+    \part 证明过点 $Q(3q^2+3,6q)$ 的切线方程为
+    \[
+    qy + 3 = x + 3q^2
+    \]
+    \begin{solution}
+        由链导法,
+        \[
+        \frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{6}{6t} = \frac{1}{t}
+        \]
+        过 $Q(3q^2+3,6q)$的切线方程为
+        \[
+        y - 6q = \frac{1}{q}(x - (3q^2+3)) \Rightarrow qy + 3 = x + 3q^2
+        \]
+    \end{solution}
+    \part 设 $R$ 为抛物线上一点,使 $QSR$ 在一条直线上,证明过 $Q$ 和 $R$ 的切线交于 $y$ 轴。
+    \begin{solution}
+        直线 $QSR$ 的方程为
+        \[
+        y - 0 = \frac{6 - 0}{3q^2+3 - 6}(x-6) \Rightarrow y= \frac{2q}{q^2-1}(x-6).
+        \]
+        与抛物线 $x = 3t^2+3, y = 6t$ 联立得
+        \[
+        6t = \frac{6q(t^2-1)}{q^2-1} \Rightarrow t = -\frac{1}{q}
+        \]
+        其中点 $Q$ 对应$t=q$,于是$R\left(\dfrac{3}{q^2}+3, -\dfrac{6}{q}\right)$,过$R$的切线方程为
+        \[
+        -\frac{1}{q}y + 3 = x + \frac{3}{q^2}
+        \]
+        联立
+        \[
+        qy + 3 = x + 3q^2,\quad -\frac{1}{q}y + 3 = x + \frac{3}{q^2}
+        \]
+        可得交点为
+        \[
+        (0,\frac{3(q^2-1)}{q})
+        \]
+        所以切线交于 $y$ 轴,证毕。
+    \end{solution}
+    \end{parts}
 
-(b) 参数方程 $x = 3t^2+3, y=6t$ 代入：
-\[
-y^2 = (6t)^2 = 36t^2, \quad 12(x-3) = 12(3t^2+3-3) = 36t^2,
-\]
-验证成立。
-
-(c) 切线方程可用参数法求导：
-\[
-\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{6}{6t} = \frac{1}{t}.
-\]
-过 $Q(3q^2+3,6q)$：
-\[
-y - 6q = \frac{1}{q}(x - (3q^2+3)) \implies qy + 3 = x + 3q^2.
-\]
-
-(d) 设 $R$ 位于 $QSR$ 直线上。直线 $QSR$ 斜率由焦点 $S(6,0)$ 与 $Q$ 决定：
-\[
-y - 0 = \frac{6 - 0}{3q^2+3 - 6}(x-6) = \frac{6q}{3(q^2-1)}(x-6) = \frac{2q}{q^2-1}(x-6).
-\]
-
-与抛物线 $x = 3t^2+3, y = 6t$ 联立：
-\[
-6t = \frac{2q}{q^2-1}(3t^2 + 3 - 6) = \frac{6q(t^2-1)}{q^2-1} \implies t = -\frac{1}{q} \quad (\text{点 $Q$ 对应 } t=q).
-\]
-
-于是
-\[
-R = \left(3\left(-\frac{1}{q}\right)^2+3, 6\left(-\frac{1}{q}\right)\right) = \left(\frac{3}{q^2}+3, -\frac{6}{q}\right).
-\]
-
-切线方程过 $R$：
-\[
-ry + 3 = x + 3r^2, \quad r = -\frac{1}{q} \implies -\frac{1}{q}y + 3 = x + \frac{3}{q^2}.
-\]
-
-求 $Q$、$R$ 的切线交点：
-\[
-\begin{cases}
-qy + 3 = x + 3q^2,\\
--\frac{1}{q}y + 3 = x + \frac{3}{q^2}.
-\end{cases}
-\]
-
-相减：
-\[
-qy + \frac{1}{q}y = 3q^2 - \frac{3}{q^2} \implies y \left(q + \frac{1}{q}\right) = 3\frac{q^4-1}{q^2} = 3\frac{(q^2-1)(q^2+1)}{q^2}.
-\]
-
-两边除以 $q + 1/q = (q^2+1)/q$：
-\[
-y = \frac{3(q^2-1)(q^2+1)/q^2}{(q^2+1)/q} = 3\frac{q^2-1}{q}.
-\]
-
-代入 $x = qy + 3 - 3q^2$：
-\[
-x = q \cdot 3\frac{q^2-1}{q} + 3 - 3q^2 = 3(q^2-1) +3 - 3q^2 = 0.
-\]
-
-所以切线交于 $y$ 轴,证毕。
-\end{solution}
-
-    \question
-已知抛物线由参数方程
-\[
-x=\frac{1}{3}t^2,\quad y=\frac{2}{3}t,\quad t\in\mathbb R
-\]
-给出。曲线在点 $P$ 处的法线与抛物线再次相交于点 $Q$。证明 $|PQ|$ 的最小值为 $\sqrt{12}$。
-
-\begin{solution}
-由参数方程消去参数 $t$：
-\[
-3x=t^2,\quad 3y=2t
-\]
-于是
-\[
-9y^2=4t^2=4(3x)\Rightarrow y^2=\frac{4}{3}x.
-\]
-
-对 $y^2=\frac{4}{3}x$ 求导,
-\[
-2y\frac{dy}{dx}=\frac{4}{3}\Rightarrow \frac{dy}{dx}=\frac{2}{3y}.
-\]
-
-设点 $P$ 对应参数值为 $t=P$,则
-\[
-P\left(\frac{P^2}{3},\frac{2P}{3}\right).
-\]
-此时切线斜率为
-\[
-\frac{dy}{dx}\Big|_{P}=\frac{1}{P},
-\]
-故法线斜率为 $-P$。法线方程为
-\begin{align*}
-y-\frac{2P}{3}&=-P\left(x-\frac{P^2}{3}\right)\\
-\Rightarrow\ 3y+3Px&=2P+P^3.
-\end{align*}
-
-将 $x=\frac{3}{4}y^2$ 代入上式,得
-\begin{align*}
-3y+3P\left(\frac{3}{4}y^2\right)&=2P+P^3\\
-12y+9Py^2&=8P+4P^3\\
-9Py^2+12y-8P-4P^3&=0\\
-(3y-2P)(3Py+4+2P^2)&=0.
-\end{align*}
-除去对应点 $P$ 的解 $y=\frac{2P}{3}$,得点 $Q$ 的纵坐标
-\[
-y=-\frac{4+2P^2}{3P}.
-\]
-
-由 $y=\frac{2}{3}t$,可得点 $Q$ 对应的参数
-\[
-t=-\frac{2+P^2}{P},
-\]
-从而
-\[
-Q\left(\frac{(2+P^2)^2}{3P^2},-\frac{4+2P^2}{3P}\right).
-\]
-
-于是
-\begin{align*}
-|PQ|^2
-&=\left(\frac{(2+P^2)^2}{3P^2}-\frac{P^2}{3}\right)^2
-+\left(-\frac{4+2P^2}{3P}-\frac{2P}{3}\right)^2\\
-&=\frac{16(P^2+1)^3}{9P^4}.
-\end{align*}
-
-设
-\[
-f(P)=\frac{(P^2+1)^3}{P^4},
-\]
-则
-\[
-f'(P)=\frac{2(P^2+1)^2(P^2-2)}{P^5}.
-\]
-令 $f'(P)=0$,得 $P=\pm\sqrt{2}$。此时
-\[
-|PQ|^2=\frac{16(2+1)^3}{9\cdot 2^2}=12.
-\]
-
-因此
-\[
-|PQ|_{\min}=\sqrt{12}.
-\]
-\end{solution}
+    \question 已知抛物线的参数方程为
+    \[
+    x=\frac{1}{3}t^2,\quad y=\frac{2}{3}t,\quad t\in\mathbb R,
+    \]
+    曲线在抛物线上一点 $P$ 的法线与抛物线相交于异与$P$的点 $Q$。求 $PQ$ 的最小值。
+    \begin{solution}
+        由参数方程消去参数 $t$, 得
+        \[
+        y^2=\frac{4}{3}x
+        \]
+        于是过$P\left(\dfrac{p^2}{3}, \dfrac{2p}{3}\right)$的切线斜率为
+        \[
+        \frac{dy}{dx}=\frac{2}{3y} \left.\frac{dy}{dx}\right|_{t=p}= \frac{1}{p}
+        \]
+        故法线斜率为 $-p$,过$P$法线方程为
+        \[
+        y - \frac{2p}{3} = -p\left(x - \frac{p^2}{3}\right) \Rightarrow 3y + 3px = 2p + p^3
+        \]
+        与 $x = \frac{3}{4}y^2$ 联立得,
+        \[
+        3y + 3p\left(\frac{3}{4}y^2\right) = 2p + p^3 \Rightarrow (3y - 2p)(3py + 4 + 2p^2) = 0
+        \]
+        由于点 $P$对应$y = \dfrac{2p}{3}$,点 $Q$ 的纵坐标为
+        \[
+        y_Q = -\frac{4 + 2p^2}{3p}
+        \]
+        此时由$y = \frac{2}{3}t$知$Q$处的参数为
+        \[
+        q = -p - \frac{2}{p}
+        \]
+        故
+        \begin{align*}
+        |PQ|^2 &= \left(\frac{q^2}{3} - \frac{p^2}{3}\right)^2 + \left(\frac{2q}{3} - \frac{2p}{3}\right)^2 \\
+        &= \frac{1}{9}(q - p)^2 [(q + p)^2 + 4] \\
+        &= \frac{1}{9}\left(-2p - \frac{2}{p}\right)^2 \left[\left(-\frac{2}{p}\right)^2 + 4\right] \\
+        &= \frac{16(p^2 + 1)^3}{9p^4}
+        \end{align*}
+        设 
+        \[
+        f(p) = \frac{(p^2 + 1)^3}{p^4},
+        \]
+        求导得
+        \[
+        f'(p) = \frac{2(p^2 + 1)^2(p^2 - 2)}{p^5}
+        \]
+        令 $f'(p) = 0$，得 $p^2 = 2$。此时 $|PQ|^2$ 取得最小值$\dfrac{16(2 + 1)^3}{9 \cdot 2^2} = 12$, 因此$PQ$ 的最小值为 $\sqrt{12} = 2\sqrt{3}$。
+    \end{solution}
 
     \question 已知抛物线 $$E: x^{2} = 2 p y \;(p > 0)$$ 的焦点为 $F$,点 $P(m,n)\; (m \neq 0)$ 在 $E$ 上,过点 $P$ 作抛物线的切线 $l$,直线 $l$ 与椭圆 $$C: \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1\; (a > b > 0)$$ 交于两不同点 $A, B$,记线段 $AB$ 的中点为 $D$。设直线 $OD$（$O$ 为原点）与直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 交于点 $Q$。
     \begin{parts}
@@ -10005,22 +9886,17 @@ f'(P)=\frac{2(P^2+1)^2(P^2-2)}{P^5}.
     \end{solution}
     \part 设 $a = 2 b$,直线 $l$ 与 $F Q$ 交于 $G$,证明
     \[
-    1 < \frac{S_{\triangle F P G}}{S_{\triangle P G Q}} < 2
+    1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
     \]
     \begin{solution}
         当 $a = 2 b$,直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 即
         \[
         y = -\frac{p}{4},
         \]
-        为介于抛物线准线 $y = -\dfrac{p}{2}$ 和 $x$ 轴之间的平行线。
-        
-        延长 $PQ$ 与抛物线准线交于点 $H (m, -\frac{p}{2})$,焦点 $F (0, \frac{p}{2})$。
-        
-        直线 $HF$ 斜率
+        为介于抛物线准线 $y = -\dfrac{p}{2}$ 和 $x$ 轴之间的平行线。延长 $PQ$ 与抛物线准线交于点 $H \left(m, -\dfrac{p}{2}\right)$,焦点 $F \left(0, \dfrac{p}{2}\right)$,则直线 $HF$ 斜率
         \[
-        k_{HF} = \frac{\frac{p}{2} + \frac{p}{2}}{0 - m} = -\frac{p}{m}.
+        k_{HF} = \frac{\frac{p}{2} + \frac{p}{2}}{0 - m} = -\frac{p}{m}
         \]
-        
         切线 $l$ 斜率为
         \[
         k = \frac{m}{p},
@@ -10032,11 +9908,11 @@ f'(P)=\frac{2(P^2+1)^2(P^2-2)}{P^5}.
         \]
         $\triangle PFH$ 为等腰三角形,且切线 $l$ 平分 $\angle F P H$,由角平分线性质,
         \[
-        \frac{S_{\triangle F P G}}{S_{\triangle P G Q}} = \frac{F G}{G Q} = \frac{P F}{P Q} = \frac{2 m^{2} + 2 p^{2}}{2 m^{2} + p^{2}}
+        \frac{[\triangle F P G]}{[\triangle P G Q]} = \frac{F G}{G Q} = \frac{P F}{P Q} = \frac{2 m^{2} + 2 p^{2}}{2 m^{2} + p^{2}}
         \]
         显然,
         \[
-        1 < \frac{S_{\triangle F P G}}{S_{\triangle P G Q}} < 2
+        1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
         \]
     \end{solution}
     \end{parts}
@@ -10192,47 +10068,32 @@ f'(P)=\frac{2(P^2+1)^2(P^2-2)}{P^5}.
     \end{solution}
 
     \question 求椭圆 $E: x^2 + 16y^2 = 16$ 与圆 $C: x^2 + y^2 = 4$ 的公切线方程。
-
-\begin{solution}
-椭圆与圆可写为：
-\[
-E: \frac{x^2}{16} + y^2 = 1, \quad C: x^2 + y^2 = 4
-\]
-
-设切线斜率为 $m$。
-
-椭圆上斜率为 $m$ 的切线：
-\[
-y = mx \pm \sqrt{16m^2 + 1}
-\]
-
-圆上斜率为 $m$ 的切线：
-\[
-y = mx \pm 2\sqrt{1+m^2}
-\]
-
-两条切线相同,取绝对值：
-\[
-\sqrt{16m^2 + 1} = 2\sqrt{1+m^2} \implies 16m^2 + 1 = 4(1+m^2) \implies 12m^2 = 3 \implies m^2 = \frac{1}{4} \implies m = \pm \frac{1}{2}
-\]
-
-当 $m = \frac{1}{2}$ 时：
-\[
-y = \frac{1}{2}x \pm \sqrt{5} \implies x - 2y + 2\sqrt{5} = 0, \quad x - 2y - 2\sqrt{5} = 0
-\]
-
-当 $m = -\frac{1}{2}$ 时：
-\[
-y = -\frac{1}{2}x \pm \sqrt{5} \implies x + 2y - 2\sqrt{5} = 0, \quad x + 2y + 2\sqrt{5} = 0
-\]
-
-\noindent 所以四条公切线方程为：
-\[
-x - 2y + 2\sqrt{5} = 0, \quad x - 2y - 2\sqrt{5} = 0, \quad x + 2y - 2\sqrt{5} = 0, \quad x + 2y + 2\sqrt{5} = 0
-\]
-
-\end{solution}
-
+    \begin{solution}
+        设切线斜率为 $m$,椭圆与圆
+        \[
+        E: \frac{x^2}{16} + y^2 = 1, \quad C: x^2 + y^2 = 4
+        \]
+        上斜率为 $m$ 的切线分别为
+        \[
+        y = mx \pm \sqrt{16m^2 + 1},\quad y = mx \pm 2\sqrt{1+m^2}
+        \]
+        联立解得
+        \[
+        \sqrt{16m^2 + 1} = 2\sqrt{1+m^2} \Rightarrow m = \pm \frac{1}{2}
+        \]
+        当 $m = \dfrac{1}{2}$,
+        \[
+        y = \frac{1}{2}x \pm \sqrt{5} \Rightarrow x - 2y + 2\sqrt{5} = 0, \quad x - 2y - 2\sqrt{5} = 0
+        \]
+        当 $m = -\frac{1}{2}$,
+        \[
+        y = -\frac{1}{2}x \pm \sqrt{5} \Rightarrow x + 2y - 2\sqrt{5} = 0, \quad x + 2y + 2\sqrt{5} = 0
+        \]
+        所以四条公切线方程为
+        \[
+        x - 2y + 2\sqrt{5} = 0, \quad x - 2y - 2\sqrt{5} = 0, \quad x + 2y - 2\sqrt{5} = 0, \quad x + 2y + 2\sqrt{5} = 0
+        \]
+    \end{solution}
 
     \question 在椭圆$\Omega$中,$F_1, F_2$为焦点,$A$为长轴的一个端点,$B$为短轴的一个端点,若$\angle F_1BF_2 = \angle FAB$,求$\Omega$的离心率。
     \begin{solution}
@@ -10299,187 +10160,117 @@ x - 2y + 2\sqrt{5} = 0, \quad x - 2y - 2\sqrt{5} = 0, \quad x + 2y - 2\sqrt{5} =
         联立$$\frac{64}{a^2}+\frac{81}{b^2}=1$$解得$$a^2=160,b^2=135$$从而$\Gamma$的焦距为$$2\sqrt{a^2-b^2}=10$$
     \end{solution}
 
-    \question 已知 $P$ 是椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 上任意一点,$PN$ 是过点 $P$ 的法线,$F_1, F_2$ 为椭圆焦点。证明 $PN$ 平分 $\angle F_1PF_2$。
+    \question 已知 $P$ 是椭圆 
+    \[
+    \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+    \]
+    上任意一点,$PN$ 是过点 $P$ 的法线,$F_1, F_2$ 为椭圆焦点。证明 $PN$ 平分 $\angle F_1PF_2$。
+    \begin{solution}
+        设椭圆上动点为 $P(a\cos\theta, b\sin\theta),\theta \in \mathbb{R}$,过$P$的切线斜率为
+        \[
+        \frac{dy}{dx} = -\frac{b^2 x}{a^2 y}
+        \]
+        则过$P$的法线斜率为
+        \[
+        m_{PN} = -\frac{1}{m_\text{tangent}} = \frac{a^2 y}{b^2 x} = \frac{a\sin\theta}{b\cos\theta}
+        \]
+        焦点坐标 $F_1(-ae,0)$, $F_2(ae,0)$,其中$e$为离心率,则
+        \[
+        m_{PF_1} = \frac{b\sin\theta - 0}{a\cos\theta + ae} = \frac{b\sin\theta}{a(\cos\theta + e)},\quad
+        m_{PF_2} = \frac{b\sin\theta - 0}{a\cos\theta - ae} = \frac{b\sin\theta}{a(\cos\theta - e)}
+        \]
+        代入
+        \[
+        \tan\theta_1 = \frac{m_{PN} - m_{PF_1}}{1 + m_{PN} m_{PF_1}},\quad
+        \tan\theta_2 = \frac{m_{PF_2} - m_{PN}}{1 + m_{PN} m_{PF_2}}
+        \]
+        整理得
+        \[
+        \tan\theta_1 = \tan\theta_2= \frac{ae\sin\theta}{b},
+        \]
+        由于角为锐角,$\theta_1 = \theta_2$,得证$PN$平分$\angle F_1PF_2$。
+    \end{solution}
 
-\begin{solution}
-设 $P(a\cos\theta, b\sin\theta)$。椭圆斜率：
-\[
-\frac{dy}{dx} = -\frac{b^2 x}{a^2 y} \implies m_\text{tangent} = -\frac{b^2 x}{a^2 y}.
-\]
-法线斜率：
-\[
-m_{PN} = -\frac{1}{m_\text{tangent}} = \frac{a^2 y}{b^2 x} = \frac{a\sin\theta}{b\cos\theta}.
-\]
+    \question 已知两椭圆 $E_1,E_2$ 的方程分别为  
+    \[
+    E_1: \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{2x}{c} = 0, \quad
+    E_2: \frac{x^2}{b^2} + \frac{y^2}{a^2} + \frac{2x}{c} = 0.
+    \]  
+    设两椭圆的公切线与椭圆$E_1,E_2$分别交于$A,B$,且$O$为原点,证明$\angle AOB$ 为直角。
+    \begin{solution}
+        对 $E_1,E_2$配方得
+        \[
+        E_1:\frac{\left(x - \frac{a^2}{c}\right)^2}{\frac{a^4}{c^2}} + \frac{y^2}{\frac{a^2 b^2}{c^2}} = 1, \quad \frac{\left(x - \frac{b^2}{c}\right)^2}{\frac{b^4}{c^2}} + \frac{y^2}{\frac{a^2 b^2}{c^2}} = 1.
+        \]
+        因此,$E_1$ 与 $E_2$ 的公切线为水平线,则
+        \[
+        A = \left(\frac{a^2}{c}, \pm \frac{c}{ab}\right), \quad B = \left(\frac{b^2}{c}, \pm \frac{c}{ab}\right),
+        \]
+        观察到
+        \[
+        m_{OA}\cdot m_{OB}  = \frac{\frac{c}{ab}}{\frac{a^2}{c}} \cdot \frac{\frac{c}{ab}}{\frac{b^2}{c}} = 1
+        \]
+        因此$OA \perp OB,\angle AOB$ 为直角。
+    \end{solution}
 
-焦点坐标 $F_1(-ae,0)$, $F_2(ae,0)$,则
-\[
-m_{PF_1} = \frac{b\sin\theta - 0}{a\cos\theta + ae} = \frac{b\sin\theta}{a(\cos\theta + e)},\quad
-m_{PF_2} = \frac{b\sin\theta - 0}{a\cos\theta - ae} = \frac{b\sin\theta}{a(\cos\theta - e)}.
-\]
-
-角度公式：
-\[
-\tan\theta_1 = \frac{m_{PN} - m_{PF_1}}{1 + m_{PN} m_{PF_1}},\quad
-\tan\theta_2 = \frac{m_{PF_2} - m_{PN}}{1 + m_{PN} m_{PF_2}}.
-\]
-
-代入得：
-\[
-\tan\theta_1 = \frac{\frac{a\sin\theta}{b\cos\theta} - \frac{b\sin\theta}{a(\cos\theta + e)}}{1 + \frac{a\sin\theta}{b\cos\theta} \cdot \frac{b\sin\theta}{a(\cos\theta + e)}} = \frac{ae\sin\theta}{b},
-\]
-\[
-\tan\theta_2 = \frac{\frac{b\sin\theta}{a(\cos\theta - e)} - \frac{a\sin\theta}{b\cos\theta}}{1 + \frac{a\sin\theta}{b\cos\theta} \cdot \frac{b\sin\theta}{a(\cos\theta - e)}} = \frac{ae\sin\theta}{b}.
-\]
-
-因此 $\tan\theta_1 = \tan\theta_2$,由于角为锐角：
-\[
-\theta_1 = \theta_2 \implies PN \text{平分 } \angle F_1PF_2.
-\]
-
-\end{solution}
-
-    \question 已知两椭圆 $E_1$ 与 $E_2$ 的方程分别为  
-\[
-E_1: \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{2x}{c} = 0, \quad
-E_2: \frac{x^2}{b^2} + \frac{y^2}{a^2} + \frac{2x}{c} = 0.
-\]  
-设 $AB$ 是它们的公共切线,$A \in E_1$, $B \in E_2$。证明：将 $A$ 和 $B$ 与原点 $O$ 相连,$\angle AOB$ 为直角。
-
-\begin{solution}
-对 $E_1$,对 $x$ 完全平方并整理：
-\[
-\frac{x^2 - \frac{2a^2}{c}x + \frac{a^4}{c^2}}{a^2} + \frac{y^2}{b^2} = \frac{a^2}{c^2} 
-\quad \Rightarrow \quad
-\frac{\left(x - \frac{a^2}{c}\right)^2}{\frac{a^4}{c^2}} + \frac{y^2}{\frac{a^2 b^2}{c^2}} = 1.
-\]
-
-同理,对 $E_2$：
-\[
-\frac{x^2}{b^2} + \frac{y^2}{a^2} + \frac{2x}{c} = 0 \quad \Rightarrow \quad
-\frac{\left(x - \frac{b^2}{c}\right)^2}{\frac{b^4}{c^2}} + \frac{y^2}{\frac{a^2 b^2}{c^2}} = 1.
-\]
-
-因此,$E_1$ 与 $E_2$ 的公共切线为水平线。设该切线与 $E_1$、$E_2$ 的交点分别为 $A$ 和 $B$,则
-\[
-A = \left(\frac{a^2}{c}, y_0\right), \quad B = \left(\frac{b^2}{c}, y_0\right),
-\]
-其中 $y_0$ 为切线的 $y$ 坐标。
-
-原点 $O$ 到 $A$、$B$ 的斜率分别为
-\[
-\text{slope of } OA = \frac{y_0}{\frac{a^2}{c}} = \frac{c y_0}{a^2}, \quad
-\text{slope of } OB = \frac{y_0}{\frac{b^2}{c}} = \frac{c y_0}{b^2}.
-\]
-
-因此
-\[
-\text{slope of } OA \cdot \text{slope of } OB = \frac{c y_0}{a^2} \cdot \frac{c y_0}{b^2} = 1 \quad \Rightarrow \quad OA \perp OB.
-\]
-
-所以 $\angle AOB$ 为直角。
-\end{solution}
-
-\question 试证连接椭圆 $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$ 上的两点, $P(a\cos\theta, b\sin\theta)$
-和 $Q(a\cos\phi, b\sin\phi)$ 之弦的方程式为
-(a) $\frac{x}{a}\cos\frac{\theta+\phi}{2}+\frac{y}{b}\sin\frac{\theta+\phi}{2}=\cos\frac{\theta-\phi}{2}$
-若弦 PQ 与圆相切, 试证: $\odot = x^{2}+y^{2}=b^{2}$
-(b) $a^{2}\cos^{2}(\frac{\theta-\phi}{2})=b^{2}\cos^{2}(\frac{\theta+\phi}{2})+a^{2}\sin^{2}(\frac{\theta+\phi}{2})$
-(c) 由此结果证明, 若 $\sin(\theta-\phi)\ge 0$, 则 PQ 之长属 $a\sin(\theta-\phi)$
-$b\sin\theta - b\sin\phi$
-\begin{solution}
-(a) 弦 $PQ$ 方程：
-
-斜率：
-\[
-m = \frac{b\sin\phi - b\sin\theta}{a\cos\phi - a\cos\theta} 
-= \frac{b}{a} \frac{\sin\phi - \sin\theta}{\cos\phi - \cos\theta} 
-= \frac{b}{a} \frac{2\cos\frac{\theta+\phi}{2}\sin\frac{\phi-\theta}{2}}{-2\sin\frac{\theta+\phi}{2}\sin\frac{\phi-\theta}{2}}
-= -\frac{b}{a} \cot\frac{\theta+\phi}{2}.
-\]
-
-弦 $PQ$ 的点斜式：
-\[
-y - b\sin\theta = -\frac{b}{a}\frac{\cos\frac{\theta+\phi}{2}}{\sin\frac{\theta+\phi}{2}}(x - a\cos\theta).
-\]
-
-整理得到标准形式：
-\[
-\frac{x}{a}\cos\frac{\theta+\phi}{2} + \frac{y}{b}\sin\frac{\theta+\phi}{2} = \cos\left(\theta - \frac{\theta+\phi}{2}\right)
-= \cos\frac{\theta-\phi}{2}.
-\]
-
-(b) 弦 $PQ$ 与圆 $x^2+y^2=b^2$ 相切：
-
-弦到圆心 $(0,0)$ 的距离：
-\[
-\frac{|\cos\frac{\theta-\phi}{2}|}{\sqrt{\frac{\cos^2\frac{\theta+\phi}{2}}{a^2} + \frac{\sin^2\frac{\theta+\phi}{2}}{b^2}}} = b
-\implies \cos^2\frac{\theta-\phi}{2} = b^2\left(\frac{\cos^2\frac{\theta+\phi}{2}}{a^2} + \frac{\sin^2\frac{\theta+\phi}{2}}{b^2}\right).
-\]
-
-(c) 弦长：
-
-\begin{align*}
-|PQ|^2 &= (a\cos\theta - a\cos\phi)^2 + (b\sin\theta - b\sin\phi)^2 \\
-&= a^2(-2\sin\frac{\theta+\phi}{2}\sin\frac{\theta-\phi}{2})^2 + b^2(2\cos\frac{\theta+\phi}{2}\sin\frac{\theta-\phi}{2})^2 \\
-&= 4\sin^2\frac{\theta-\phi}{2} \left[a^2 \sin^2\frac{\theta+\phi}{2} + b^2 \cos^2\frac{\theta+\phi}{2}\right].
-\end{align*}
-
-若满足 $a=b$（圆特殊情况）,则：
-\[
-|PQ|^2 = 4 a^2 \sin^2\frac{\theta-\phi}{2} \left[\cos^2\frac{\theta-\phi}{2}\right] = a^2 \sin^2(\theta-\phi)
-\implies |PQ| = a \sin(\theta-\phi).
-\]
-
-\end{solution}
-
-\question 已知椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 的焦点 $F(ae,0)$,作椭圆切线的垂线,求垂足 $N$ 的轨迹。
-
-\begin{solution}
-设 $P(a\cos\theta, b\sin\theta)$ 为椭圆上一动点,切线斜率为
-\[
-m_\text{tangent} = -\frac{b^2 x}{a^2 y} = -\frac{b\cos\theta}{a\sin\theta}.
-\]
-
-切线方程：
-\[
-y - b\sin\theta = -\frac{b\cos\theta}{a\sin\theta} (x - a\cos\theta) \implies bx\cos\theta + ay\sin\theta = ab.
-\]
-
-过焦点 $F(ae,0)$,垂直于切线的直线 $FN$：
-\[
-m_{FN} = \frac{a\sin\theta}{b\cos\theta} \implies y - 0 = \frac{a\sin\theta}{b\cos\theta}(x - ae) \implies -ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
-\]
-
-设 $N(x,y)$ 为交点,解方程组：
-\[
-\begin{cases}
-bx\cos\theta + ay\sin\theta = ab, \\
-- ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
-\end{cases}
-\]
-
-两式平方相加：
-\[
-(bx\cos\theta + ay\sin\theta)^2 + (-ay\cos\theta + bx\sin\theta)^2 = (ab)^2 + (a^2 e \sin\theta)^2.
-\]
-
-整理：
-\[
-x^2(b^2\cos^2\theta + b^2\sin^2\theta) + y^2(a^2\sin^2\theta + a^2\cos^2\theta) + 0 = a^2 b^2 + a^4 e^2 \sin^2\theta.
-\]
-
-利用 $b^2 = a^2(1-e^2)$：
-\[
-x^2 + y^2 = a^2.
-\]
-
-\noindent $\therefore$ 垂足 $N$ 的轨迹为圆：
-\[
-\boxed{x^2 + y^2 = a^2}.
-\]
-
-\end{solution}
-
+    \question 已知$a,b>0$,
+    \begin{parts}
+    \part 试证过椭圆 
+    \[
+    \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1
+    \] 
+    上两点$P(a\cos\theta, b\sin\theta),Q(a\cos\phi, b\sin\phi)$的直线方程式为
+    \[
+    \frac{x}{a}\cos\frac{\theta+\phi}{2}+\frac{y}{b}\sin\frac{\theta+\phi}{2}=\cos\frac{\theta-\phi}{2}
+    \]
+    \begin{solution}
+        $PQ$直线方程斜率为
+        \[
+        m = \frac{b\sin\phi - b\sin\theta}{a\cos\phi - a\cos\theta} 
+        = \frac{b}{a} \frac{2\cos\frac{\theta+\phi}{2}\sin\frac{\phi-\theta}{2}}{-2\sin\frac{\theta+\phi}{2}\sin\frac{\phi-\theta}{2}}
+        = -\frac{b}{a} \cot\frac{\theta+\phi}{2}.
+        \]
+        故$PQ$直线方程为
+        \[
+        y - b\sin\theta = -\frac{b}{a}\frac{\cos\frac{\theta+\phi}{2}}{\sin\frac{\theta+\phi}{2}}(x - a\cos\theta).
+        \]
+        整理得
+        \[
+        \frac{x}{a}\cos\frac{\theta+\phi}{2} + \frac{y}{b}\sin\frac{\theta+\phi}{2} = \cos\left(\theta - \frac{\theta+\phi}{2}\right)
+        = \cos\frac{\theta-\phi}{2}.
+        \]
+    \end{solution}
+    \part 若弦 $PQ$ 与圆$x^{2}+y^{2}=b^{2}$相切, 试证: 
+    \[
+    a^{2}\cos^{2}\frac{\theta-\phi}{2}=b^{2}\cos^{2}\frac{\theta+\phi}{2}+a^{2}\sin^{2}\frac{\theta+\phi}{2}
+    \]
+    \begin{solution}
+        由于弦$PQ$到圆心 $(0,0)$ 的距离等于半径,
+        \[
+        \frac{|\cos\frac{\theta-\phi}{2}|}{\sqrt{\frac{\cos^2\frac{\theta+\phi}{2}}{a^2} + \frac{\sin^2\frac{\theta+\phi}{2}}{b^2}}} = b
+        \]
+        整理得
+        \[
+        a^{2}\cos^{2}\frac{\theta-\phi}{2}=b^{2}\cos^{2}\frac{\theta+\phi}{2}+a^{2}\sin^{2}\frac{\theta+\phi}{2}
+        \]
+    \end{solution}
+    \part 若 $\sin(\theta-\phi)\ge 0$, 证明弦 $PQ$ 之长为 $a\sin(\theta-\phi)$。
+    \begin{solution}
+        有
+        \begin{align*}
+        PQ^2 &= (a\cos\theta - a\cos\phi)^2 + (b\sin\theta - b\sin\phi)^2 \\
+        &= a^2\left(-2\sin\frac{\theta+\phi}{2}\sin\frac{\theta-\phi}{2}\right)^2 + b^2\left(2\cos\frac{\theta+\phi}{2}\sin\frac{\theta-\phi}{2}\right)^2 \\
+        &= 4\sin^2\frac{\theta-\phi}{2} \left(a^2 \sin^2\frac{\theta+\phi}{2} + b^2 \cos^2\frac{\theta+\phi}{2}\right) \\
+        &= 4\sin^2\frac{\theta-\phi}{2} \left(a^{2}\cos^{2}\frac{\theta-\phi}{2}\right) \\
+        &= a^2 \left(2\sin\frac{\theta-\phi}{2}\cos\frac{\theta-\phi}{2}\right)^2 \\
+        &= a^2 \sin^2(\theta-\phi)
+        \end{align*}
+        由于$a>0,\sin(\theta-\phi)\ge 0$,故
+        \[
+        PQ = a \sin(\theta-\phi)
+        \]
+    \end{solution}
+    \end{parts}
 
     \question 设 $A,B,C$ 为椭圆 
     \[
@@ -10517,10 +10308,7 @@ x^2 + y^2 = a^2.
         \]
     \end{solution}
 
-    \question
-2．（北京19）（本小题共14分）
-
-已知 $\triangle ABC$ 的顶点 $A,B$ 在椭圆
+    \question 已知 $\triangle ABC$ 的顶点 $A,B$ 在椭圆
 \[
 \frac{x^2}{4}+\frac{y^2}{3}=1
 \]
@@ -10729,7 +10517,6 @@ y_{2}=-\frac{6}{y_{1}}.
 证毕。
 \end{solution}
 
-
     \question 小何在打篮球时发现地面上的篮球在灯光照射下在地面形成的影子是一个椭圆, 并观察到地面与篮球接触点正是椭圆的焦点。如图,已知篮球半径为 $1$,灯源 $P$ 离地高度为 $4$,其正下方为点 $A$, 地面上椭圆右顶点与点 $A$ 的水平距离为 $3$,求该椭圆的离心率 $e$。
     \begin{figure}[H]
         \centering        
@@ -10863,117 +10650,6 @@ x_2 - x_1 = \sqrt{(x_1 + x_2)^2 - 4 x_1 x_2} = \sqrt{\frac{16}{289} + \frac{48}{
 \frac{|AB|}{\sqrt{2}} = \frac{4\sqrt{65}}{17\sqrt{2}}.
 \]
 
-\end{solution}
-
-\question 15.（天津 22）（本小题满分 14 分）
-
-已知中心在原点的双曲线 $C$ 的一个焦点为 $F_{1}(-3,0)$,
-一条渐近线的方程是
-\[
-\sqrt{5}x-2y=0.
-\]
-
-(I) 求双曲线 $C$ 的方程；
-
-(II) 若以 $k(k\ne 0)$ 为斜率的直线 $l$ 与双曲线 $C$ 相交于两个不同的点
-$M,N$,且线段 $MN$ 的垂直平分线与两坐标轴围成的三角形面积为
-$\frac{81}{2}$,求 $k$ 的取值范围。
-
-\begin{solution}
-(I) 设双曲线 $C$ 的方程为
-\[
-\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1 \quad (a>0,b>0).
-\]
-由焦点坐标得
-\[
-c=3,\quad c^{2}=a^{2}+b^{2}.
-\]
-又由渐近线方程
-\[
-y=\frac{\sqrt{5}}{2}x
-\]
-可得
-\[
-\frac{b}{a}=\frac{\sqrt{5}}{2}.
-\]
-于是
-\[
-\begin{cases}
-a^{2}+b^{2}=9,\\
-\frac{b^{2}}{a^{2}}=\frac{5}{4}.
-\end{cases}
-\]
-解得
-\[
-a^{2}=4,\quad b^{2}=5.
-\]
-故双曲线 $C$ 的方程为
-\[
-\frac{x^{2}}{4}-\frac{y^{2}}{5}=1.
-\]
-
-(II) 设直线 $l$ 的方程为
-\[
-y=kx+m \quad (k\ne 0),
-\]
-与双曲线交于 $M(x_{1},y_{1})$、$N(x_{2},y_{2})$。
-
-将 $y=kx+m$ 代入双曲线方程,得
-\[
-\frac{x^{2}}{4}-\frac{(kx+m)^{2}}{5}=1,
-\]
-化简为
-\[
-(5-4k^{2})x^{2}-8kmx-4m^{2}-20=0.
-\]
-该方程有两个不等实根,故
-\[
-5-4k^{2}\ne 0,
-\]
-且判别式
-\[
-\Delta>0 \;\Rightarrow\; m^{2}+5-4k^{2}>0. \tag{1}
-\]
-
-由根与系数关系,线段 $MN$ 的中点
-\[
-(x_{0},y_{0})=\left(\frac{4km}{5-4k^{2}},\ \frac{5m}{5-4k^{2}}\right).
-\]
-因此,$MN$ 的垂直平分线与 $x$ 轴、$y$ 轴的截距分别为
-\[
-\left(\frac{9km}{5-4k^{2}},0\right),\quad
-\left(0,\frac{9m}{5-4k^{2}}\right).
-\]
-由题设三角形面积为 $\frac{81}{2}$,得
-\[
-\frac{1}{2}\left|\frac{9km}{5-4k^{2}}\right|
-\left|\frac{9m}{5-4k^{2}}\right|
-=\frac{81}{2},
-\]
-化简得
-\[
-m^{2}=\frac{(5-4k^{2})^{2}}{|k|},\quad k\ne 0. \quad \tag{2}
-\]
-
-将 (2) 代入 (1),得
-\[
-\frac{(5-4k^{2})^{2}}{|k|}+5-4k^{2}>0,
-\]
-整理为
-\[
-(4k^{2}-5)(4k^{2}-|k|-5)>0,\quad k\ne 0.
-\]
-解得
-\[
-0<|k|<\frac{\sqrt{5}}{2}
-\quad \text{或} \quad
-|k|>\frac{5}{4}.
-\]
-因此,
-\[
-k\in(-\infty,-\tfrac{5}{4})\cup(-\tfrac{\sqrt{5}}{2},0)\cup
-(0,\tfrac{\sqrt{5}}{2})\cup(\tfrac{5}{4},+\infty).
-\]
 \end{solution}
 
 
@@ -12199,7 +11875,117 @@ y=-\frac{1}{2}+2=\frac{3}{2}。
 \]
 \end{solution}
 
-    
+    \question 15.（天津 22）（本小题满分 14 分）
+
+已知中心在原点的双曲线 $C$ 的一个焦点为 $F_{1}(-3,0)$,
+一条渐近线的方程是
+\[
+\sqrt{5}x-2y=0.
+\]
+
+(I) 求双曲线 $C$ 的方程；
+
+(II) 若以 $k(k\ne 0)$ 为斜率的直线 $l$ 与双曲线 $C$ 相交于两个不同的点
+$M,N$,且线段 $MN$ 的垂直平分线与两坐标轴围成的三角形面积为
+$\frac{81}{2}$,求 $k$ 的取值范围。
+
+\begin{solution}
+(I) 设双曲线 $C$ 的方程为
+\[
+\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1 \quad (a>0,b>0).
+\]
+由焦点坐标得
+\[
+c=3,\quad c^{2}=a^{2}+b^{2}.
+\]
+又由渐近线方程
+\[
+y=\frac{\sqrt{5}}{2}x
+\]
+可得
+\[
+\frac{b}{a}=\frac{\sqrt{5}}{2}.
+\]
+于是
+\[
+\begin{cases}
+a^{2}+b^{2}=9,\\
+\frac{b^{2}}{a^{2}}=\frac{5}{4}.
+\end{cases}
+\]
+解得
+\[
+a^{2}=4,\quad b^{2}=5.
+\]
+故双曲线 $C$ 的方程为
+\[
+\frac{x^{2}}{4}-\frac{y^{2}}{5}=1.
+\]
+
+(II) 设直线 $l$ 的方程为
+\[
+y=kx+m \quad (k\ne 0),
+\]
+与双曲线交于 $M(x_{1},y_{1})$、$N(x_{2},y_{2})$。
+
+将 $y=kx+m$ 代入双曲线方程,得
+\[
+\frac{x^{2}}{4}-\frac{(kx+m)^{2}}{5}=1,
+\]
+化简为
+\[
+(5-4k^{2})x^{2}-8kmx-4m^{2}-20=0.
+\]
+该方程有两个不等实根,故
+\[
+5-4k^{2}\ne 0,
+\]
+且判别式
+\[
+\Delta>0 \;\Rightarrow\; m^{2}+5-4k^{2}>0. \tag{1}
+\]
+
+由根与系数关系,线段 $MN$ 的中点
+\[
+(x_{0},y_{0})=\left(\frac{4km}{5-4k^{2}},\ \frac{5m}{5-4k^{2}}\right).
+\]
+因此,$MN$ 的垂直平分线与 $x$ 轴、$y$ 轴的截距分别为
+\[
+\left(\frac{9km}{5-4k^{2}},0\right),\quad
+\left(0,\frac{9m}{5-4k^{2}}\right).
+\]
+由题设三角形面积为 $\frac{81}{2}$,得
+\[
+\frac{1}{2}\left|\frac{9km}{5-4k^{2}}\right|
+\left|\frac{9m}{5-4k^{2}}\right|
+=\frac{81}{2},
+\]
+化简得
+\[
+m^{2}=\frac{(5-4k^{2})^{2}}{|k|},\quad k\ne 0. \quad \tag{2}
+\]
+
+将 (2) 代入 (1),得
+\[
+\frac{(5-4k^{2})^{2}}{|k|}+5-4k^{2}>0,
+\]
+整理为
+\[
+(4k^{2}-5)(4k^{2}-|k|-5)>0,\quad k\ne 0.
+\]
+解得
+\[
+0<|k|<\frac{\sqrt{5}}{2}
+\quad \text{或} \quad
+|k|>\frac{5}{4}.
+\]
+因此,
+\[
+k\in(-\infty,-\tfrac{5}{4})\cup(-\tfrac{\sqrt{5}}{2},0)\cup
+(0,\tfrac{\sqrt{5}}{2})\cup(\tfrac{5}{4},+\infty).
+\]
+\end{solution}
+
     \question 已知双曲线$$E: \dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1$$的左、右顶点分别为 $A, B$,点 $M$ 在 $E$ 上使得 $\triangle ABM$ 是等腰三角形,且$\triangle ABM$外接圆面积为 $3 \pi a^{2}$,求双曲线的离心率。
     \begin{solution}
         不妨设$M$在第二象限,则在等腰$\triangle ABM$中, $|AB|=|AM|=2a$,
@@ -13331,6 +13117,56 @@ x^2+y^2
 x^2+y^2=2,
 \]
 即点 $P$ 恒在以原点为圆心、半径为 $\sqrt{2}$ 的圆上。
+\end{solution}
+
+    \question 从椭圆 
+    \[
+    \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+    \]
+    的焦点 $F$作椭圆的切线的垂线,求垂足 $N$ 的轨迹。
+    \begin{solution}
+设 $P(a\cos\theta, b\sin\theta)$ 为椭圆上一动点,切线斜率为
+\[
+m_\text{tangent} = -\frac{b^2 x}{a^2 y} = -\frac{b\cos\theta}{a\sin\theta}.
+\]
+切线方程：
+\[
+y - b\sin\theta = -\frac{b\cos\theta}{a\sin\theta} (x - a\cos\theta) \implies bx\cos\theta + ay\sin\theta = ab.
+\]
+
+过焦点 $F(ae,0)$,垂直于切线的直线 $FN$：
+\[
+m_{FN} = \frac{a\sin\theta}{b\cos\theta} \implies y - 0 = \frac{a\sin\theta}{b\cos\theta}(x - ae) \implies -ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
+\]
+
+设 $N(x,y)$ 为交点,解方程组：
+\[
+\begin{cases}
+bx\cos\theta + ay\sin\theta = ab, \\
+- ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
+\end{cases}
+\]
+
+两式平方相加：
+\[
+(bx\cos\theta + ay\sin\theta)^2 + (-ay\cos\theta + bx\sin\theta)^2 = (ab)^2 + (a^2 e \sin\theta)^2.
+\]
+
+整理：
+\[
+x^2(b^2\cos^2\theta + b^2\sin^2\theta) + y^2(a^2\sin^2\theta + a^2\cos^2\theta) + 0 = a^2 b^2 + a^4 e^2 \sin^2\theta.
+\]
+
+利用 $b^2 = a^2(1-e^2)$：
+\[
+x^2 + y^2 = a^2.
+\]
+
+\noindent $\therefore$ 垂足 $N$ 的轨迹为圆：
+\[
+\boxed{x^2 + y^2 = a^2}.
+\]
+
 \end{solution}
 
     \question
