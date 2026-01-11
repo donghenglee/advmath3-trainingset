@@ -12073,9 +12073,13 @@ B(3k,3t).
         \]
     \end{solution}
 
-    \question 一抛物线 $y^2 = 4x$ 与一直线交于 $A,B$ 两点, 已知抛物线与直线所围出的面积为 $\dfrac{9}{8}$, 求 $A,B$ 的中点轨迹方程。
+    \question 一抛物线 $y^2 = 4x$ 与一直线交于 $A,B$ 两点,已知抛物线与直线所围出的面积为 $\dfrac{9}{8}$, 求 $A,B$ 的中点轨迹方程。
     \begin{solution}
-        不失一般性,设交点为$A\left(\dfrac{1}{4}y_1^2, y_1\right), B\left(\dfrac{1}{4}y_2^2, y_2\right),y_2\le y_1$,斜率$m_L = \dfrac{y_1 - y_2}{\frac{1}{4}(y_1^2 - y_2^2)} = \dfrac{4}{y_1 + y_2}$,则直线方程为
+        不失一般性,设交点为$A\left(\dfrac{1}{4}y_1^2, y_1\right), B\left(\dfrac{1}{4}y_2^2, y_2\right),y_2\le y_1$,斜率
+        \[
+        m_L = \frac{y_1 - y_2}{\frac{1}{4}(y_1^2 - y_2^2)} = \frac{4}{y_1 + y_2},
+        \]
+        则直线方程为
         \[
         x = \frac{1}{4}(y_1 + y_2)y - \frac{1}{4}y_1 y_2.
         \]
@@ -12103,56 +12107,52 @@ B(3k,3t).
         \]
     \end{solution}
 
-    \question AB 为抛物线 $y^2=4ax$ 之一动弦, 且 $\angle AOB = 90^\circ$, 其中 O 为原点, TA 与 TB 为切线, NA 与 NB 为其法线, 证明 TN 之中点轨迹方程式 $2y^2 = 25a(x-a)$。
-
-\begin{solution}
-设 $A(at_1^2, 2at_1)$, $B(at_2^2, 2at_2)$。
-
-抛物线 $y^2=4ax$ 在 $A$ 点的切线：
-\[
-y t_1 = x + at_1^2 \implies t_1y - x = at_1^2
-\]
-
-同理 $B$ 点的切线：
-\[
-t_2y - x = at_2^2
-\]
-
-$\angle AOB = 90^\circ \implies \text{OA} \perp \text{OB} \implies m_{\text{OA}}\cdot m_{\text{OB}}=-1$：
-\[
-\frac{2at_1}{at_1^2} \cdot \frac{2at_2}{at_2^2} = -1 \implies t_1 t_2 = -4
-\]
-
-切线交点 $T$：
-\[
-y = a(t_1 + t_2), \quad x = a t_1 t_2 = -4a
-\]
-
-法线在 $A$ 点方程：
-\[
-y - 2at_1 = -t_1(x - at_1^2) \implies t_1 x + y = a t_1^3 + 2at_1
-\]
-
-联立求 $N$ 点坐标：
-\[
-N(x_N, y_N) = (a(t_1+t_2)^2 - 2a, 4a(t_1+t_2))
-\]
-
-TN 中点坐标：
-\[
-x_M = \frac{-4a + a(t_1+t_2)^2 - 2a}{2} = \frac{a(t_1+t_2)^2 - 6a}{2}, \quad 
-y_M = \frac{a(t_1+t_2) + 4a(t_1+t_2)}{2} = \frac{5a(t_1+t_2)}{2}
-\]
-
-令 $t_1+t_2 = \frac{2y_M}{5a}$,代入 $x_M$：
-\[
-x_M = \frac{a\left(\frac{2y_M}{5a}\right)^2 - 6a}{2} = \frac{4y_M^2}{50a} - 3a = \frac{2y_M^2}{25a} - 3a
-\]
-整理得轨迹方程：
-\[
-2y^2 = 25a(x-a)
-\]
-\end{solution}
+    \question 设 $AB$ 为抛物线 $y^2=4ax$ 之一动弦, 且 $\angle AOB = 90^\circ$, 其中 $O$ 为原点,从抛物线外一点$T$作点$A,B$的切线,且$A,B$处的法线交于点$N$,证明 $TN$ 之中点轨迹方程式为 
+    \[
+    2y^2 = 25a(x-a).
+    \]
+    \begin{solution}
+        设 $A(at_1^2, 2at_1),B(at_2^2, 2at_2)$,已知$OA \perp OB$,故
+        \[
+        m_{OA}\cdot m_{OB}=\frac{2at_1}{at_1^2} \cdot \frac{2at_2}{at_2^2} = -1 \Rightarrow t_1 t_2 = -4
+        \]
+        由链导法,在点$A(at_1^2, 2at_1)$的切线斜率为
+        \[
+        \frac{dy}{dx}=\frac{dy}{dt} \div \frac{dy}{dt} \frac{2a}{2at_1}=\frac{1}{t_1}
+        \]
+        故在 $A$的切线方程为
+        \[
+        y-2at_1=\frac{1}{t}(x-at_1^2) \Rightarrow t_1y - x = at_1^2 \tag{1}
+        \]
+        同理, 点$B$ 的切线方程为
+        \[
+        t_2y - x = at_2^2 \tag{2}
+        \]
+        联立$(1),(2)$,解得切线交点 $T$
+        \[
+        T(a t_1 t_2,a(t_1 + t_2))=(-4a,a(t_1 + t_2))
+        \]
+        在$A$的法线方程为
+        \[
+        y - 2at_1 = -t_1(x - at_1^2) \Rightarrow t_1 x + y = a t_1^3 + 2at_1 \tag{3}
+        \]
+        同理, 点$B$ 的切线方程为
+        \[
+        t_2 x + y = a t_2^3 + 2at_2 \tag{4}
+        \]
+        联立$(3),(4)$,解得 $N$ 点坐标
+        \[
+        N(a(t_1+t_2)^2 + 6a, 4a(t_1+t_2))
+        \]
+        故$TN$ 中点坐标为
+        \[
+        M\left(\frac{1}{2}a(t_1+t_2)^2 + a,\frac{5a}{2}(t_1+t_2)\right)
+        \]
+        消去参数$t_1+t_2$,即得
+        \[
+        2y^2 = 25a(x-a)
+        \]
+    \end{solution}
 
     \question 已知抛物线 $\Gamma:y = x^2$ 上三个不同点 $A(1,1),B,C$ 满足 $AB \perp AC$,过 $B,C$ 分别作 $\Gamma$ 的切线交于点 $P$,求点 $P$ 的轨迹方程。
     \begin{solution}
@@ -12206,106 +12206,77 @@ x_M = \frac{a\left(\frac{2y_M}{5a}\right)^2 - 6a}{2} = \frac{4y_M^2}{50a} - 3a =
         \]
     \end{solution}
 
-    \question 设一点 $P$ 在半径为 $r$ 的圆的内部。在点 $P$ 作一直角,记该直角的两边分别与圆相交于 $A,B$ 两点。设点 $Q$ 使 $PAQB$ 构成矩形。求点 $Q$ 的轨迹。
-\begin{solution}
-把圆心取为原点 $O$。由于坐标系可以旋转而不改变问题的本质,我们可取坐标轴使点 $P$ 位于 $x$ 轴上,设
-\[
-P=(d,0),\qquad 0<d<r.
-\]
-设直角的两条边沿方向与 $x$ 轴的夹角分别为 $\theta$ 和 $\theta+\frac{\pi}{2}$,即沿单位方向
-\[
-(\cos\theta,\sin\theta)\quad\text{和}\quad(-\sin\theta,\cos\theta).
-\]
-于是点 $A$ 可以表示为
-\[
-A=\bigl(d+s\cos\theta,\; s\sin\theta\bigr),
-\]
-其中 $s>0$ 为 $PA$ 的长度；点 $B$ 表示为
-\[
-B=\bigl(d-t\sin\theta,\; t\cos\theta\bigr),
-\]
-其中 $t>0$ 为 $PB$ 的长度。因为 $A,B$ 在圆上,满足
-\[
-(d+s\cos\theta)^2+(s\sin\theta)^2=r^2,
-\]
-\[
-(d-t\sin\theta)^2+(t\cos\theta)^2=r^2.
-\]
-
-将两式展开并化简得关于 $s$ 和 $t$ 的等式：
-\[
-s^2+2d s\cos\theta + d^2 = r^2, \qquad t^2 - 2d t\sin\theta + d^2 = r^2.
-\]
-从而
-\[
-s^2 = r^2 - d^2 - 2d s\cos\theta, \qquad
-t^2 = r^2 - d^2 + 2d t\sin\theta.
-\]
-
-点 $Q$ 的坐标为矩形关系得到
-\[
-Q = (x_Q,y_Q) = \bigl(d+s\cos\theta - t\sin\theta,\; s\sin\theta + t\cos\theta\bigr).
-\]
-计算 $Q$ 到原点的距离的平方：
-\begin{align*}
-x_Q^2+y_Q^2
-&= \bigl(d+s\cos\theta - t\sin\theta\bigr)^2 + \bigl(s\sin\theta + t\cos\theta\bigr)^2 \\
-&= d^2 + 2d\bigl(s\cos\theta - t\sin\theta\bigr) + s^2 + t^2.
-\end{align*}
-
-代入上面关于 $s^2,t^2$ 的表达式：
-\[
-s^2+t^2 = 2(r^2-d^2) + 2d\bigl(t\sin\theta - s\cos\theta\bigr).
-\]
-因此
-\begin{align*}
-x_Q^2+y_Q^2
-&= d^2 + 2d\bigl(s\cos\theta - t\sin\theta\bigr) + 2(r^2-d^2) + 2d\bigl(t\sin\theta - s\cos\theta\bigr) \\
-&= 2r^2 - d^2.
-\end{align*}
-
-右端与 $\theta,s,t$ 无关,仅依赖于 $r$ 与 $d=OP$。因此 $|OQ|^2$ 为常数 $2r^2-d^2$。即点 $Q$ 的轨迹是以 $O$ 为圆心、半径为 $\sqrt{2r^2-d^2}$ 的圆。
-
-（注意当初用坐标将 $P$ 放在 $x$ 轴上是对坐标系的旋转,不改变原题的几何关系；若原始 $P$ 坐标为 $(h,k)$,结论同样是 $|OQ|^2=2r^2-(h^2+k^2)$。）
-\end{solution}
-\begin{solution}
-设圆心为原点 $O$, 向量 $\vec{p}$ 为 $\vec{OP}$。因为 $P$ 在圆内, 所以 $|\vec{p}|^2<r^2$。设
-\[
-\vec{v}=\vec{PA},\quad \vec{w}=\vec{PB},
-\]
-且 $\vec{v}\perp\vec{w}$。再设
-\[
-\vec{a}=\vec{OA},\quad \vec{b}=\vec{OB},
-\]
-则 $|\vec{a}|=|\vec{b}|=r$, 并且
-\[
-\vec{a}=\vec{p}+\vec{v},\quad \vec{b}=\vec{p}+\vec{w}。
-\]
-
-设 $\vec{q}=\vec{OQ}=\vec{p}+\vec{v}+\vec{w}$。于是
-\[
-|\vec{q}|^2=(\vec{p}+\vec{v}+\vec{w})\cdot(\vec{p}+\vec{v}+\vec{w})。
-\]
-
-\begin{align*}
-|\vec{q}|^2
-&=|\vec{p}|^2+2\vec{p}\cdot\vec{v}+2\vec{p}\cdot\vec{w}+\vec{v}\cdot\vec{v}+\vec{w}\cdot\vec{w} \\
-&=|\vec{p}|^2+\vec{a}\cdot\vec{v}+\vec{b}\cdot\vec{w}+\vec{p}\cdot\vec{v}+\vec{p}\cdot\vec{w} \\
-&=|\vec{p}|^2+(\vec{a}+\vec{p})\cdot\vec{v}+(\vec{b}+\vec{p})\cdot\vec{w} \\
-&=|\vec{p}|^2+(\vec{a}+\vec{p})\cdot(\vec{a}-\vec{p})+(\vec{b}+\vec{p})\cdot(\vec{b}-\vec{p}) \\
-&=|\vec{p}|^2+|\vec{a}|^2-|\vec{p}|^2+|\vec{b}|^2-|\vec{p}|^2 \\
-&=2r^2-|\vec{p}|^2。
-\end{align*}
-
-因此 $Q$ 到圆心 $O$ 的距离为常数, 所以 $Q$ 的轨迹是以 $O$ 为圆心、(半径)$^2$ 等于 $2r^2-|\vec{p}|^2$ 的圆。
-\end{solution}
+    \question 已知点 $P$ 在一半径为 $r$ 的圆的内部,在 $P$ 作一直角,使得直角的两边分别与圆相交于 $A,B$ 两点。设点 $Q$ 使得 $PAQB$ 构成矩形,求点 $Q$ 的轨迹。
+    \begin{solution}
+        不失平移及旋转的一般性,设圆心为原点 $O$,点 $P(d,0)$为圆
+        \[
+        x^2+y^2=r^2,
+        \]
+        内一点其中 $d=OP,0<d<r$,设在点 $P$ 作的直角的两条边的方向分别与 $x$ 轴成角 $\theta,\theta+\dfrac{\pi}{2}$,对应的单位方向向量分别为
+        \[
+        (\cos\theta,\sin\theta),\quad(-\sin\theta,\cos\theta).
+        \]
+        故可设
+        \[
+        A\left(d+s\cos\theta,\;s\sin\theta\right),\quad B\left(d-t\sin\theta,\;t\cos\theta\right)
+        \]
+        其中 $s,t>0,$ 为 $PA,PB$ 的长度,由于 $A,B$ 在圆上,有
+        \[
+        (d+s\cos\theta)^2+(s\sin\theta)^2=r^2,\quad 
+        (d-t\sin\theta)^2+(t\cos\theta)^2=r^2
+        \]
+        整理得
+        \[
+        s^2=r^2-d^2-2ds\cos\theta,\quad t^2=r^2-d^2+2dt\sin\theta \tag{1}
+        \]
+        由于$PAQB$为矩形,点 $Q$坐标为
+        \[
+        Q(x,y)=\left(d+s\cos\theta-t\sin\theta,\;s\sin\theta+t\cos\theta\right)
+        \]
+        观察
+        \begin{align*}
+        x^2+y^2
+        &=\bigl(d+s\cos\theta-t\sin\theta\bigr)^2+\bigl(s\sin\theta+t\cos\theta\bigr)^2 \\
+        &=d^2+2d\bigl(s\cos\theta-t\sin\theta\bigr)+s^2+t^2.
+        \end{align*}
+        将$(1)$代入得
+        \begin{align*}
+        x^2+y^2
+        &=d^2+2d\bigl(s\cos\theta-t\sin\theta\bigr)
+        +2(r^2-d^2)+2d\bigl(t\sin\theta-s\cos\theta\bigr) \\
+        &=2r^2-d^2.
+        \end{align*}
+        右式与 $\theta,s,t$ 无关,仅与 $r$ 及 $d=OP$ 有关。因此
+        \[
+        OQ^2=2r^2-d^2
+        \]
+        为常数。由此可知,在适当的平移、旋转后的坐标系中,点 $Q$ 的轨迹是以原点为圆心、半径为 $\sqrt{2r^2-d^2}$ 的圆。将坐标系平移回去,得点 $Q$ 的轨迹为以圆心 $O(h,k)$ 为圆心、半径为 $\sqrt{2r^2-OP^2}$ 的圆。
+    \end{solution}
+    \begin{solution}
+        不失一般性,设圆心为原点 $O$, 则向量 $\mathbf{p}=\overrightarrow{OP},\ |\mathbf{p}|^2<r^2$,且
+        \[
+        \mathbf{v}=\overrightarrow{PA},\quad \mathbf{w}=\overrightarrow{PB},\quad \mathbf{a}=\overrightarrow{OA},\quad \mathbf{b}=\overrightarrow{OB},
+        \]
+        其中 $\mathbf{v}\perp\mathbf{w},|\mathbf{a}|=|\mathbf{b}|=r$,且$\mathbf{a}=\mathbf{p}+\mathbf{v},\mathbf{b}=\mathbf{p}+\mathbf{w}$,设 $\mathbf{q}=\overrightarrow{OQ}=\mathbf{p}+\mathbf{v}+\mathbf{w}$,于是
+        \begin{align*}
+        |\mathbf{q}|^2
+        &=(\mathbf{p}+\mathbf{v}+\mathbf{w})\cdot(\mathbf{p}+\mathbf{v}+\mathbf{w})\\
+        &=|\mathbf{p}|^2+2\mathbf{p}\cdot\mathbf{v}+2\mathbf{p}\cdot\mathbf{w}+\mathbf{v}\cdot\mathbf{v}+\mathbf{w}\cdot\mathbf{w} \\
+        &=|\mathbf{p}|^2+\mathbf{a}\cdot\mathbf{v}+\mathbf{b}\cdot\mathbf{w}+\mathbf{p}\cdot\mathbf{v}+\mathbf{p}\cdot\mathbf{w} \\
+        &=|\mathbf{p}|^2+(\mathbf{a}+\mathbf{p})\cdot\mathbf{v}+(\mathbf{b}+\mathbf{p})\cdot\mathbf{w} \\
+        &=|\mathbf{p}|^2+(\mathbf{a}+\mathbf{p})\cdot(\mathbf{a}-\mathbf{p})+(\mathbf{b}+\mathbf{p})\cdot(\mathbf{b}-\mathbf{p}) \\
+        &=|\mathbf{p}|^2+|\mathbf{a}|^2-|\mathbf{p}|^2+|\mathbf{b}|^2-|\mathbf{p}|^2 \\
+        &=2r^2-|\mathbf{p}|^2。
+        \end{align*}
+        因此 $Q$ 到圆心 $O$ 的距离为常数, 所以 $Q$ 的轨迹是以 $O$ 为圆心、半径为 $\sqrt{2r^2-|\mathbf{p}|^2}$ 的圆。
+    \end{solution}
 
     \question 设 $A(1,\sqrt{3})$, $B(1,-\sqrt{3})$ 为平面上两定点,动点 $P$ 在线段 ${AB}$ 上。$O$ 为原点,且 $Q$ 在射线 $OP$ 上,满足 ${OP} \cdot {OQ} = 4$。当动点 $P$ 从 $A$ 沿线段 ${AB}$ 移动到 $B$,求点 $Q$ 轨迹的路径长。
     \ifprintanswers
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image27.png}
-        \end{figure}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/image27.png}
+    \end{figure}
     \fi
     \begin{solution}
         设$P$ 点坐标为$P(1,t), -\sqrt{3} \le t \le \sqrt{3},$则
@@ -12346,98 +12317,69 @@ x_Q^2+y_Q^2
         \]
     \end{solution}
 
-\question (浙江22)(本题15分)
-
-已知曲线 $C$ 是到点 $P\!\left(-\frac12,\frac38\right)$ 和到直线 $y=-\frac58$ 距离相等的点的轨迹。
-直线 $l$ 过点 $Q(-1,0)$,点 $M$ 是 $C$ 上（不在 $l$ 上）的动点；$A,B$ 在 $l$ 上,
-且 $MA\perp l,\ MB\perp x$ 轴。
-
-\begin{enumerate}
-\item 求曲线 $C$ 的方程；
-\item 求直线 $l$ 的方程,使 $\dfrac{|QB|^2}{|QA|}$ 为常数。
-\end{enumerate}
-\begin{solution}
-
-(I) 解
-设 $N(x,y)$ 为 $C$ 上的点,则
-\[
-|NP|=\sqrt{\left(x+\frac12\right)^2+\left(y-\frac38\right)^2},\qquad
-d(N,y=-\tfrac58)=\left|y+\frac58\right|.
-\]
-由题意
-\[
-\sqrt{\left(x+\frac12\right)^2+\left(y-\frac38\right)^2}=\left|y+\frac58\right|.
-\]
-两边平方并化简,得
-\[
-x^2+x-2y=0\quad\Rightarrow\quad
-\boxed{\,y=\frac12(x^2+x)\,}.
-\]
-
-(II) 解法一
-由 (I) 知 $C:\ y=\frac12(x^2+x)$。
-设
-\[
-M\!\left(x,\frac{x^2+x}{2}\right),\qquad l:\ y=kx+k\ (k\neq0),
-\]
-则 $B(x,kx+k)$,
-\[
-|QB|=\sqrt{1+k^2}\,|x+1|.
-\]
-在直角三角形 $\triangle QMA$ 中,
-\[
-|QM|^2=(x+1)^2\!\left(1+\frac{x^2}{4}\right),\quad
-|MA|^2=\frac{(x+1)^2\left(k-\frac{x}{2}\right)^2}{1+k^2}.
-\]
-于是
-\[
-|QA|^2=\frac{(x+1)^2}{4(1+k^2)}(kx+2)^2,\quad
-|QA|=\frac{|x+1||kx+2|}{2\sqrt{1+k^2}}.
-\]
-故
-\[
-\frac{|QB|^2}{|QA|}
-=\frac{2(1+k^2)\sqrt{1+k^2}}{|k|}
-\left|\frac{x+1}{x+\frac{2}{k}}\right|.
-\]
-要使其为常数,需 $\frac{2}{k}=1$,得 $k=2$。
-此时
-\[
-\frac{|QB|^2}{|QA|}=5\sqrt5,
-\]
-故
-\[
-\boxed{\,l:\ 2x-y+2=0\,}.
-\]
-
-解法二
-仍设
-\[
-M\!\left(x,\frac{x^2+x}{2}\right),\qquad l:\ y=kx+k.
-\]
-则
-\[
-|QB|=\sqrt{1+k^2}\,|x+1|.
-\]
-过 $Q(-1,0)$ 作垂直于 $l$ 的直线
-\[
-l_1:\ y=-\frac1k(x+1).
-\]
-因 $|QA|=|MH|$（$H$ 为 $M$ 到 $l_1$ 的垂足）,计算得
-\[
-|QA|=\frac{|x+1||kx+2|}{2\sqrt{1+k^2}}.
-\]
-于是
-\[
-\frac{|QB|^2}{|QA|}
-=\frac{2(1+k^2)\sqrt{1+k^2}}{|k|}
-\left|\frac{x+1}{x+\frac{2}{k}}\right|.
-\]
-同理得 $k=2$,从而
-\[
-\boxed{\,l:\ 2x-y+2=0\,}.
-\]
-\end{solution}
+    \question 已知曲线 $C$ 是到点 $P\!\left(-\dfrac12,\dfrac38\right)$ 和到直线 $y=-\dfrac58$ 距离相等的点的轨迹。直线 $l$ 过点 $Q(-1,0)$,点 $M$ 是 $C$ 上（不在 $l$ 上）的动点；$A,B$ 在 $l$ 上,且 $MA\perp l,\ MB\perp x$ 轴。
+    \begin{parts}
+    \part 求曲线 $C$ 的方程；
+    \begin{solution}
+        设 $N(x,y)$ 为 $C$ 上的点,据题意有
+        \[
+        \sqrt{\left(x+\frac12\right)^2+\left(y-\frac38\right)^2}=\left|y+\frac58\right|.
+        \]
+        两边平方并化简得
+        \[
+        y=\frac12(x^2+x)
+        \]
+    \end{solution}
+    \part 求直线 $l$ 的方程,使 $\dfrac{QB^2}{QA}$ 为常数。
+    \end{parts}
+    \begin{solution}
+        设$M\left(x,\frac{x^2+x}{2}\right),l: y=kx+k\ (k\neq0)$,则 $B(x,kx+k)$,从而
+        \[
+        QB=\sqrt{1+k^2}\,|x+1|
+        \]
+        在直角 $\triangle QMA$ 中,由毕氏定理,
+        \[
+        QA^2=QM^2-MA^2=(x+1)^2\!\left(1+\frac{x^2}{4}\right)-\frac{(x+1)^2\left(k-\frac{x}{2}\right)^2}{1+k^2}=\frac{(x+1)^2}{4(1+k^2)}(kx+2)^2,
+        \]
+        即
+        \[
+        QA=\frac{|x+1||kx+2|}{2\sqrt{1+k^2}}
+        \]
+        故欲使
+        \[
+        \frac{QB^2}{QA}
+        =\frac{2(1+k^2)\sqrt{1+k^2}}{|k|}
+        \left|\frac{x+1}{x+\frac{2}{k}}\right|
+        \]
+        为常数,需 $\dfrac{2}{k}=1$即 $k=2$,此时$\dfrac{QB^2}{QA}=5\sqrt5$,故直线 $l$ 的方程为
+        \[
+        l: 2x-y+2=0
+        \]
+    \end{solution}
+    \begin{solution}
+        设$M\left(x,\frac{x^2+x}{2}\right), l: y=kx+k$,则
+        \[
+        QB=\sqrt{1+k^2}\,|x+1|
+        \]
+        过 $Q(-1,0)$ 作垂直于 $l$ 的直线
+        \[
+        l_1: y=-\frac1k(x+1)
+        \]
+        设$H$ 为 $M$ 到 $l_1$ 的垂足,因 $QA=MH$,得
+        \[
+        QA=\frac{|x+1||kx+2|}{2\sqrt{1+k^2}}
+        \]
+        于是
+        \[
+        \frac{QB^2}{QA}
+        =\frac{2(1+k^2)\sqrt{1+k^2}}{|k|}
+        \left|\frac{x+1}{x+\frac{2}{k}}\right|
+        \]
+        同理得 $k=2$,从而
+        \[
+        l: 2x-y+2=0
+        \]
+    \end{solution}
 
     \question 已知平面内动点 $P$ 到 $F(1,0)$ 的距离与点 $P$ 到 $y$ 轴的距离差为 $1$,求:
     \ifprintanswers
@@ -12499,64 +12441,40 @@ ab^2 + 4a = a^2b + 4b
 \textcolor{red}{(待验证,为何极值出现在 $\overline{AB} = \overline{CD}$)}
 \end{solution}
 \end{parts}
-\question 在曲线
-\[
-\left(\frac{x}{a}\right)^{2/3} + \left(\frac{y}{b}\right)^{2/3} = 1,
-\]
-上的点 $P$ 处作曲线的切线,该切线与 $x$ 轴交于 $(h, 0)$,与 $y$ 轴交于 $(0, k)$。当 $P$ 沿给定曲线移动时,求点 $Q(h, k)$ 的轨迹。
 
-\begin{solution}
-解：
-
-如果用参数方程形式表示曲线,代数运算会更简便：
-\[
-x = a \cos^3 \theta \quad \text{和} \quad y = b \sin^3 \theta.
-\]
-
-则
-\begin{align*}
-\frac{dx}{d\theta} &= 3a \cos^2 \theta (-\sin \theta), \\
-\frac{dy}{d\theta} &= 3b \sin^2 \theta (\cos \theta), \\
-\text{以及} \quad \frac{dy}{dx} &= \frac{dy/d\theta}{dx/d\theta} = \frac{3b \sin^2 \theta \cos \theta}{3a \cos^2 \theta (-\sin \theta)} = -\frac{b}{a} \tan \theta.
-\end{align*}
-
-在任意点 $\theta$ 处的切线方程为
-\[
-y - b \sin^3 \theta = -\frac{b}{a} \tan \theta (x - a \cos^3 \theta).
-\]
-
-对切线方程两边同乘以 $a \cos \theta$,并整理得简化形式：
-\[
-b x \sin \theta + a y \cos \theta = a b \sin \theta \cos \theta.
-\]
-
-然后求出该切线的 $x$ 轴截距 $h$ 和 $y$ 轴截距 $k$。
-
-令 $y = 0$,得到 $x$ 轴截距 $h$：
-\[
-b h \sin \theta = a b \sin \theta \cos \theta \implies h = a \cos \theta.
-\]
-
-令 $x = 0$,得到 $y$ 轴截距 $k$：
-\[
-a k \cos \theta = a b \sin \theta \cos \theta \implies k = b \sin \theta.
-\]
-
-这表明点 $Q(h, k)$ 的轨迹是通过消去参数 $\theta$ 得到的。
-由 $h = a \cos \theta$ 和 $k = b \sin \theta$,可得
-\[
-\cos \theta = \frac{h}{a} \quad \text{和} \quad \sin \theta = \frac{k}{b}.
-\]
-利用恒等式 $\cos^2 \theta + \sin^2 \theta = 1$,得到
-\[
-\left(\frac{h}{a}\right)^2 + \left(\frac{k}{b}\right)^2 = 1.
-\]
-
-因此,点 $Q(h, k)$ 的轨迹是一个椭圆,其方程为
-\[
-\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.
-\]
-\end{solution}
+    \question 在曲线
+    \[
+    \left(\frac{x}{a}\right)^{\frac{2}{3}} + \left(\frac{y}{b}\right)^{\frac{2}{3}} = 1,
+    \]
+    上的点 $P$ 处作曲线的切线,该切线与 $x$ 轴交于 $(h, 0)$,与 $y$ 轴交于 $(0, k)$。当 $P$ 沿给定曲线移动时,求点 $Q(h, k)$ 的轨迹。
+    \begin{solution}
+        考虑参数变换$P(x,y)=(a \cos^3 \theta,y = b \sin^3 \theta)$,则
+        \[
+        \frac{dy}{dx} 
+        = \frac{dy}{d\theta} \div \frac{dx}{d\theta}
+        = \frac{3b \sin^2 \theta \cos \theta}{3a \cos^2 \theta (-\sin \theta)} = -\frac{b}{a} \tan \theta
+        \]
+        在任意点 $\theta$ 处的切线方程为
+        \[
+        y - b \sin^3 \theta = -\frac{b}{a} \tan \theta (x - a \cos^3 \theta).
+        \]
+        整理得
+        \[
+        b x \sin \theta + a y \cos \theta = a b \sin \theta \cos \theta
+        \]
+        分别令$x=0,y=0$可得
+        \[
+        k = b \sin \theta,\quad h = a \cos \theta
+        \]
+        消去参数 $\theta$即得$Q(h, k)$的轨迹方程式
+        \[
+        \left(\frac{h}{a}\right)^2 + \left(\frac{k}{b}\right)^2 = 1.
+        \]
+        因此,点 $Q(h, k)$ 的轨迹是一个椭圆,其方程为
+        \[
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.
+        \]
+    \end{solution}
 
     \question 以 $O$ 为原点的 $xy$ 平面上,取两点 $A(\sqrt{3},1),B(-1,\sqrt{3}),t \in \mathbb{R}$,点 $P$ 满足
     \[
@@ -12728,61 +12646,55 @@ a k \cos \theta = a b \sin \theta \cos \theta \implies k = b \sin \theta.
         \]
         为一常数,于是得证点 $S$ 的轨迹是一条平行于 $BC$ 的直线。
     \end{solution}
-
     
-    \question
-如图所示,一根长度为 4 的刚性杆 $AB$ 可以绕位于 $M(1,0)$ 的铰链旋转。铰链允许杆在 $x$-$y$ 平面内任意方向转动。杆的端点 $A$ 可在 $y$ 轴上滑动,且 $|OA|\le 4$。设 $\theta$ 为杆与正 $x$ 轴的夹角。
+    \question 如图所示,一根长度为 4 的刚性杆 $AB$ 可以绕位于 $M(1,0)$ 的铰链旋转。铰链允许杆在 $x$-$y$ 平面内任意方向转动。杆的端点 $A$ 可在 $y$ 轴上滑动,且 $|OA|\le 4$。设 $\theta$ 为杆与正 $x$ 轴的夹角。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image235.png}
+    \end{figure}
+    \begin{parts}
+    \part 证明当 $A$ 在 $y$ 轴上滑动时,$B$ 的轨迹满足参数方程
+    \[
+    x=4\cos\theta, \quad y=4\sin\theta-\tan\theta, \quad -\theta_0 \le \theta \le \theta_0,
+    \]
+    并说明 $\theta_0$ 的精确值。
+    \begin{solution}
+        设 $OM$ 为 1 个单位长度,$AM$ 为从 $A$ 到 $M$ 的杆长部分,$MB$ 为从 $M$ 到 $B$ 的杆长部分。由几何关系有
+        \[
+        \cos\theta = \frac{|OM|}{|AM|} \implies |AM| = \frac{1}{\cos\theta} = \sec\theta.
+        \]
+        杆总长为 4,则
+        \[
+        |MB| = 4 - |AM| = 4 - \sec\theta.
+        \]
+        由几何关系得到 $B$ 的坐标：
+        \begin{align*}
+        x &= |OM| + |MB|\cos\theta = 1 + (4-\sec\theta)\cos\theta = 4\cos\theta, \\
+        y &= |MB|\sin\theta = (4-\sec\theta)\sin\theta = 4\sin\theta - \tan\theta.
+        \end{align*}
+        端点 $A$ 可在 $y$ 轴上滑动的约束 $|OA|\le 4$ 对应 $\theta$ 的最大值为
+        \[
+        \theta_0 = \operatorname{arsech}\frac{1}{4}.
+        \]
+    \end{solution}
+    \part 进一步证明该轨迹的直角坐标方程为
+    \[
+    y^2 = \frac{(16-x^2)(x-1)^2}{x^2}.
+    \]
+    \begin{solution}
+        将参数方程改写为直角坐标方程：
+        \begin{align*}
+        y &= 4\sin\theta - \tan\theta = 4\sin\theta - \frac{\sin\theta}{\cos\theta} = \sin\theta \left(4 - \frac{1}{\cos\theta}\right) = \sin\theta \frac{4\cos\theta - 1}{\cos\theta}, \\
+        y^2 &= \sin^2\theta \frac{(4\cos\theta - 1)^2}{\cos^2\theta} = (1 - \cos^2\theta) \frac{(4\cos\theta - 1)^2}{\cos^2\theta}.
+        \end{align*}
+        由 $x = 4\cos\theta \implies \cos\theta = \frac{x}{4}$,得
+        \begin{align*}
+        y^2 &= \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{x^2/16} = \frac{16-x^2}{16} \cdot \frac{16(x-1)^2}{x^2} = \frac{(16-x^2)(x-1)^2}{x^2}.
+        \end{align*}
+    \end{solution}
+    \end{parts}
 
-(a) 证明当 $A$ 在 $y$ 轴上滑动时,$B$ 的轨迹满足参数方程
-\[
-x=4\cos\theta, \quad y=4\sin\theta-\tan\theta, \quad -\theta_0 \le \theta \le \theta_0,
-\]
-并说明 $\theta_0$ 的精确值。
-
-(b) 进一步证明该轨迹的直角坐标方程为
-\[
-y^2 = \frac{(16-x^2)(x-1)^2}{x^2}.
-\]
-\begin{figure}[H]
-    \centering        
-    \includegraphics[width=0.5\textwidth]{images/image235.png}
-\end{figure}
-\begin{solution}
-(a) 设 $OM$ 为 1 个单位长度,$AM$ 为从 $A$ 到 $M$ 的杆长部分,$MB$ 为从 $M$ 到 $B$ 的杆长部分。由几何关系有
-\[
-\cos\theta = \frac{|OM|}{|AM|} \implies |AM| = \frac{1}{\cos\theta} = \sec\theta.
-\]
-杆总长为 4,则
-\[
-|MB| = 4 - |AM| = 4 - \sec\theta.
-\]
-
-由几何关系得到 $B$ 的坐标：
-\begin{align*}
-x &= |OM| + |MB|\cos\theta = 1 + (4-\sec\theta)\cos\theta = 4\cos\theta, \\
-y &= |MB|\sin\theta = (4-\sec\theta)\sin\theta = 4\sin\theta - \tan\theta.
-\end{align*}
-
-端点 $A$ 可在 $y$ 轴上滑动的约束 $|OA|\le 4$ 对应 $\theta$ 的最大值为
-\[
-\theta_0 = \operatorname{arsech}\frac{1}{4}.
-\]
-
-(b) 将参数方程改写为直角坐标方程：
-\begin{align*}
-y &= 4\sin\theta - \tan\theta = 4\sin\theta - \frac{\sin\theta}{\cos\theta} = \sin\theta \left(4 - \frac{1}{\cos\theta}\right) = \sin\theta \frac{4\cos\theta - 1}{\cos\theta}, \\
-y^2 &= \sin^2\theta \frac{(4\cos\theta - 1)^2}{\cos^2\theta} = (1 - \cos^2\theta) \frac{(4\cos\theta - 1)^2}{\cos^2\theta}.
-\end{align*}
-
-由 $x = 4\cos\theta \implies \cos\theta = \frac{x}{4}$,得
-\begin{align*}
-y^2 &= \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{x^2/16} = \frac{16-x^2}{16} \cdot \frac{16(x-1)^2}{x^2} = \frac{(16-x^2)(x-1)^2}{x^2}.
-\end{align*}
-
-\end{solution}
-
-    \question
-直线
+    \question 直线
 \[
 \frac{x}{p}+\frac{y}{q}=1
 \]
@@ -12791,7 +12703,6 @@ y^2 &= \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{x^2/16} = \frac{16-x^2}{16
 \frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2}.
 \]
 点 $P$ 为原点 $O$ 到直线 $L$ 的垂足。证明：无论 $p,q$ 取何值,点 $P$ 恒在一圆 $C$ 上,并求该圆的半径。
-
 \begin{solution}
 将直线方程化为一般式：
 \[
@@ -12799,7 +12710,6 @@ y^2 &= \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{x^2/16} = \frac{16-x^2}{16
 \quad\Rightarrow\quad
 qx+py-pq=0.
 \]
-
 设直线为
 \[
 Ax+By+C=0,
@@ -12811,12 +12721,10 @@ Ax+By+C=0,
 -\frac{BC}{A^2+B^2}
 \right).
 \]
-
 在此
 \[
 A=q,\quad B=p,\quad C=-pq.
 \]
-
 因此点 $P$ 的坐标为
 \[
 P\left(
@@ -12824,7 +12732,6 @@ P\left(
 \frac{p^2q}{p^2+q^2}
 \right).
 \]
-
 由已知约束条件
 \[
 \frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2},
@@ -12835,7 +12742,6 @@ P\left(
 \quad\Rightarrow\quad
 p^2+q^2=\frac{1}{2}p^2q^2.
 \]
-
 代入点 $P$ 的坐标：
 \[
 x=\frac{pq^2}{p^2+q^2}
@@ -12847,12 +12753,10 @@ y=\frac{p^2q}{p^2+q^2}
 =\frac{p^2q}{\frac{1}{2}p^2q^2}
 =\frac{2}{q}.
 \]
-
 于是
 \[
 P\left(\frac{2}{p},\frac{2}{q}\right).
 \]
-
 计算
 \[
 x^2+y^2
@@ -12861,7 +12765,6 @@ x^2+y^2
 =4\times\frac{1}{2}
 =2.
 \]
-
 因此点 $P$ 的轨迹满足
 \[
 x^2+y^2=2,
