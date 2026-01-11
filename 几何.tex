@@ -9848,72 +9848,128 @@ B(3k,3t).
         \]
         令 $f'(p) = 0$,得 $p^2 = 2$。此时 $|PQ|^2$ 取得最小值$\dfrac{16(2 + 1)^3}{9 \cdot 2^2} = 12$, 因此$PQ$ 的最小值为 $\sqrt{12} = 2\sqrt{3}$。
     \end{solution}
-
-    \question 已知抛物线 $$E: x^{2} = 2 p y \;(p > 0)$$ 的焦点为 $F$,点 $P(m,n)\; (m \neq 0)$ 在 $E$ 上,过点 $P$ 作抛物线的切线 $l$,直线 $l$ 与椭圆 $$C: \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1\; (a > b > 0)$$ 交于两不同点 $A, B$,记线段 $AB$ 的中点为 $D$。设直线 $OD$（$O$ 为原点）与直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 交于点 $Q$。
-    \begin{parts}
-    \part 证明直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 与直线 $PQ$ 垂直。
-    \begin{solution}
-        点 $P$ 在抛物线上,故 $P(m,\dfrac{m^{2}}{2 p})$,抛物线 $E: x^{2} = 2 p y$求导得切线$l$斜率$\dfrac{m}{p}$,故过点 $P$ 作抛物线的切线 $l$方程为
-        \[
-        y-\frac{m^{2}}{2 p}=\dfrac{m}{p}(x-m)\Rightarrow y = \frac{m}{p} x - \frac{m^{2}}{2 p}.
-        \]
-        与椭圆方程
-        \[
-        \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1,
-        \]
-        联立得化为关于 $x$ 的二次方程
-        \[
-        4(a^{2} m^{2} + b^{2} p^{2}) x^{2} - 4 a^{2} m^{3} x + a^{2} (m^{4} - 4 p^{2} b^{2}) = 0.
-        \]
-        记两根为 $x_{1}, x_{2}$,则
-        \[
-        x_{1} + x_{2} = \frac{a^{2} m^{3}}{a^{2} m^{2} + b^{2} p^{2}}, \quad
-        y_{1} + y_{2} = \frac{m}{p} (x_{1} + x_{2}) - \frac{m^{2}}{p} = - \frac{m^{2} b^{2} p}{a^{2} m^{2} + b^{2} p^{2}}.
-        \]
-        中点 $D$ 坐标为
-        \[
-        D \left( \frac{a^{2} m^{3}}{2 (a^{2} m^{2} + b^{2} p^{2})}, \, -\frac{m^{2} b^{2} p}{2 (a^{2} m^{2} + b^{2} p^{2})} \right)
-        \]
-        故直线 $OD$ 方程为
-        \[
-        y=-\frac{b^{2} p}{a^{2} m}x
-        \]
-        与 $y = -\dfrac{p b^{2}}{a^{2}}$ 联立得点$Q$的方程
-        \[
-        x = m
-        \]
-        故 $PQ$ 是垂直于 $x$ 轴的直线,而直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 是水平线,二者垂直。
-    \end{solution}
-    \part 设 $a = 2 b$,直线 $l$ 与 $F Q$ 交于 $G$,证明
+    
+    \question 已知抛物线
     \[
-    1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
+    C: y=2x^{2},
     \]
+    直线 $y=kx+2$ 交 $C$ 于 $A,B$ 两点,$M$ 为线段 $AB$ 的中点,过 $M$ 作 $x$ 轴的垂线,垂足为 $N$。
+    \begin{parts}
+    \part 证明：抛物线 $C$ 在点 $N$ 处的切线与 $AB$ 平行；
     \begin{solution}
-        当 $a = 2 b$,直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 即
+        设$A(x_1,2x_1^2),B(x_2,2x_2^2)$,将 $y=kx+2$ 代入 $y=2x^2$,得
         \[
-        y = -\frac{p}{4},
+        2x^2-kx-2=0
         \]
-        为介于抛物线准线 $y = -\dfrac{p}{2}$ 和 $x$ 轴之间的平行线。延长 $PQ$ 与抛物线准线交于点 $H \left(m, -\dfrac{p}{2}\right)$,焦点 $F \left(0, \dfrac{p}{2}\right)$,则直线 $HF$ 斜率
+        由韦达定理,
         \[
-        k_{HF} = \frac{\frac{p}{2} + \frac{p}{2}}{0 - m} = -\frac{p}{m}
+        x_1+x_2=\frac{k}{2},\quad x_1x_2=-1
         \]
-        切线 $l$ 斜率为
+        由于 $M$ 为 $AB$ 的中点,
         \[
-        k = \frac{m}{p},
+        x_N=x_M=\frac{x_1+x_2}{2}=\frac{k}{4}
         \]
-        故 $l \perp HF$。由抛物线定义
+        故
         \[
-        PF = PH = \frac{m^{2}}{2 p} + \frac{p}{2}, \quad
-        PQ = PH - \frac{p}{4} = \frac{m^{2}}{2 p} + \frac{p}{4}
+        N\left(\frac{k}{4},0\right)
         \]
-        $\triangle PFH$ 为等腰三角形,且切线 $l$ 平分 $\angle F P H$,由角平分线性质,
+        设抛物线在点 $N$ 处的切线为
         \[
-        \frac{[\triangle F P G]}{[\triangle P G Q]} = \frac{F G}{G Q} = \frac{P F}{P Q} = \frac{2 m^{2} + 2 p^{2}}{2 m^{2} + p^{2}}
+        y-\frac{k^2}{8}=m\left(x-\frac{k}{4}\right)
         \]
-        显然,
+        将 $y=2x^2$ 代入上式,得
         \[
-        1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
+        2x^2-mx+\frac{mk}{4}-\frac{k^2}{8}=0
         \]
+        由于该直线与抛物线相切,判别式为零：
+        \[
+        \Delta=m^2-8\left(\frac{mk}{4}-\frac{k^2}{8}\right)=(m-k)^2=0
+        \]
+        解得 $m=k$,即切线与 $AB$ 平行。
+    \end{solution}
+    \begin{solution}
+        设$A(x_1,2x_1^2), B(x_2,2x_2^2)$,由
+        \[
+        2x^2-kx-2=0
+        \]
+        得
+        \[
+        x_1+x_2=\frac{k}{2},\quad x_1x_2=-1
+        \]
+        因为
+        \[
+        x_N=\frac{x_1+x_2}{2}=\frac{k}{4}
+        \]
+        又 $N$ 在抛物线上,故
+        \[
+        N\left(\frac{k}{4},\frac{k^2}{8}\right)
+        \]
+        抛物线 $y=2x^2$ 的导数为 $y'=4x$,因此在点 $N$ 处的切线斜率为
+        \[
+        4\cdot \frac{k}{4}=k
+        \]
+        而 $AB$ 的斜率为 $k$,故切线与 $AB$ 平行。
+    \end{solution}
+    \part 是否存在实数 $k$ 使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$？若存在,求 $k$ 的值；若不存在,说明理由。
+    \begin{solution}
+        假设存在实数 $k$ 使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$,则 $NA\perp NB$,由于 $M$ 是 $AB$ 的中点,故
+        \[
+        MN=\frac{1}{2}AB
+        \]
+        又
+        \[
+        y_M=\frac{1}{2}(y_1+y_2)
+        =\frac{1}{2}(kx_1+2+kx_2+2)
+        =\frac{1}{2}\left[k(x_1+x_2)+4\right]
+        =\frac{k^2}{4}+2
+        \]
+        因为 $MN\perp x$ 轴,
+        \[
+        MN=|y_M-y_N|
+        =\left|\frac{k^2}{4}+2-\frac{k^2}{8}\right|
+        =\frac{k^2+16}{8}.
+        \]
+        而
+        \[
+        AB=\sqrt{1+k^2}\,|x_1-x_2|
+        =\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}
+        =\frac{1}{2}\sqrt{k^2+10}\sqrt{k^2+16}.
+        \]
+        由 $MN=\dfrac{1}{2}AB$,解得
+        \[
+        \frac{k^2+16}{8}=\frac{1}{4}\sqrt{k^2+10}\sqrt{k^2+16} \Rightarrow k=\pm2
+        \]
+        因此存在 $k=\pm2$,使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$。
+    \end{solution}
+    \begin{solution}
+        假设存在实数 $k$ 使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$。由
+        \[
+        \overrightarrow{NA}=\left(x_1-\frac{k}{4},\,2x_1^2-\frac{k^2}{8}\right),
+        \quad
+        \overrightarrow{NB}=\left(x_2-\frac{k}{4},\,2x_2^2-\frac{k^2}{8}\right),
+        \]
+        得
+        \begin{align*}
+        \overrightarrow{NA}\cdot\overrightarrow{NB}
+        &=\left(x_1-\frac{k}{4}\right)\left(x_2-\frac{k}{4}\right)
+        +\left(2x_1^2-\frac{k^2}{8}\right)\left(2x_2^2-\frac{k^2}{8}\right) \\
+        &=\left(x_1x_2-\frac{k}{4}(x_1+x_2)+\frac{k^2}{16}\right)
+        \left(1+4x_1x_2+k(x_1+x_2)+\frac{k^2}{4}\right)
+        \end{align*}
+        代入
+        \[
+        x_1+x_2=\frac{k}{2},\quad x_1x_2=-1,
+        \]
+        得
+        \[
+        \overrightarrow{NA}\cdot\overrightarrow{NB}
+        =\left(-1-\frac{k^2}{16}\right)\left(-3+\frac{3}{4}k^2\right).
+        \]
+        由于 $-1-\dfrac{k^2}{16}\neq0$,故
+        \[
+        -3+\frac{3}{4}k^2=0 \Rightarrow k=\pm2.
+        \]
+        因此存在实数 $k=\pm2$,使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$。
     \end{solution}
     \end{parts}
 
@@ -9927,9 +9983,11 @@ B(3k,3t).
     \]
     的最小值。
     \begin{solution}
-        发现到椭圆方程$\dfrac{(x+1)^{2}}{25}+\dfrac{(y-1)^{2}}{9}=1$焦点为$F_1(-5,1),F_2(3,1)$,
-        
-        由椭圆定义,椭圆上一点$P(x,y)$满足
+        发现到椭圆方程
+        \[
+        \dfrac{(x+1)^{2}}{25}+\dfrac{(y-1)^{2}}{9}=1
+        \]
+        焦点为$F_1(-5,1),F_2(3,1)$,由椭圆定义,椭圆上一点$P(x,y)$满足
         \[
         \sqrt{(x+5)^2 + (y-1)^2} + \sqrt{(x-3)^2 + (y-1)^2} =PF_1 + PF_2 = 2\cdot 5= 10
         \]
@@ -10037,28 +10095,32 @@ B(3k,3t).
         \]
     \end{solution}
 
-    \question 已知 $a>b>0,F$ 是 \[\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\] 的一个焦点,$AB$ 是 $\Gamma$ 的弦且 $F$ 在 $AB$ 上。试证明
+    \question 已知 $a>b>0,F$ 是 
     \[
-    \frac{1}{FA}+\frac{1}{FB}=\frac{2a}{b^2}。
+    \Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+    \] 
+    的一个焦点,$AB$ 是 $\Gamma$ 的弦且 $F$ 在 $AB$ 上。试证明
+    \[
+    \frac{1}{FA}+\frac{1}{FB}=\frac{2a}{b^2}
     \]
     \begin{solution}
         假设两焦点为 $F,F'$ 且$FA=p, FB=q$,则
         \[
-        F'A=2a-p,\quad F'B=2a-q。
+        F'A=2a-p,\quad F'B=2a-q
         \]
         由余弦定理,
         \[
         \cos \angle AFF' = \frac{p^2+(2c)^2-(2a-p)^2}{2p(2c)}, \quad
-        \cos \angle BFF' = \frac{q^2+(2c)^2-(2a-q)^2}{2q(2c)}。
+        \cos \angle BFF' = \frac{q^2+(2c)^2-(2a-q)^2}{2q(2c)}
         \]
         由于 $\angle AFF' + \angle BFF' = 180^\circ$,
         \[
         \frac{p^2+(2c)^2-(2a-p)^2}{2p(2c)}
-        = -\frac{q^2+(2c)^2-(2a-q)^2}{2q(2c)}。
+        = -\frac{q^2+(2c)^2-(2a-q)^2}{2q(2c)}
         \]
         可化简得
         \[
-        \frac{1}{FA}+\frac{1}{FB}=\frac{2a}{b^2}。
+        \frac{1}{FA}+\frac{1}{FB}=\frac{2a}{b^2}
         \]
     \end{solution}
 
@@ -10098,8 +10160,14 @@ B(3k,3t).
     \question 在椭圆$\Omega$中,$F_1, F_2$为焦点,$A$为长轴的一个端点,$B$为短轴的一个端点,若$\angle F_1BF_2 = \angle FAB$,求$\Omega$的离心率。
     \begin{solution}
         因为$\angle F_1BF_2 = \angle FAB$,所以
-        $$\triangle BF_1F_2 \backsim \triangle ABF_1\Rightarrow\angle BF_1F_2 = \angle ABF_1\Rightarrow|AB| = |AF_1|,$$
-        即$$\sqrt{a^2+b^2}=a+c\Rightarrow2e^2+2e-1=0$$解得$e=\dfrac{\sqrt{3}-1}{2}$(负解舍去)。
+        \[
+        \triangle BF_1F_2 \backsim \triangle ABF_1\Rightarrow\angle BF_1F_2 = \angle ABF_1\Rightarrow|AB| = |AF_1|,
+        \]
+        即
+        \[
+        \sqrt{a^2+b^2}=a+c\Rightarrow2e^2+2e-1=0
+        \]
+        解得$e=\dfrac{\sqrt{3}-1}{2}$(负解舍去)。
     \end{solution}
     
     \question 已知椭圆 \(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1\) 的左焦点为 \(F\),右顶点为 \(A\),上顶点为 \(B\),离心率为 \(\dfrac{\sqrt{5}-1}{2}\),求 \(\angle ABF\)。  
@@ -10423,6 +10491,82 @@ B(3k,3t).
         =\vec{0}.
         \]
         证毕。
+    \end{solution}
+    \end{parts}
+
+    \question 已知抛物线 
+    \[
+    E: x^{2} = 2 p y \;(p > 0)
+    \]
+    的焦点为 $F$,点 $P(m,n)\; (m \neq 0)$ 在 $E$ 上,过点 $P$ 作抛物线的切线 $l$,直线 $l$ 与椭圆 
+    \[
+    C: \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1\; (a > b > 0)
+    \]
+    交于两不同点 $A, B$,记线段 $AB$ 的中点为 $D$。设$O$ 为原点,直线 $OD$与直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 交于点 $Q$。
+    \begin{parts}
+    \part 证明直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 与直线 $PQ$ 垂直。
+    \begin{solution}
+        点 $P$ 在抛物线上,故 $P(m,\dfrac{m^{2}}{2 p})$,抛物线 $E: x^{2} = 2 p y$求导得切线$l$斜率$\dfrac{m}{p}$,故过点 $P$ 作抛物线的切线 $l$方程为
+        \[
+        y-\frac{m^{2}}{2 p}=\dfrac{m}{p}(x-m)\Rightarrow y = \frac{m}{p} x - \frac{m^{2}}{2 p}.
+        \]
+        与椭圆方程
+        \[
+        \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1,
+        \]
+        联立得化为关于 $x$ 的二次方程
+        \[
+        4(a^{2} m^{2} + b^{2} p^{2}) x^{2} - 4 a^{2} m^{3} x + a^{2} (m^{4} - 4 p^{2} b^{2}) = 0.
+        \]
+        记两根为 $x_{1}, x_{2}$,则
+        \[
+        x_{1} + x_{2} = \frac{a^{2} m^{3}}{a^{2} m^{2} + b^{2} p^{2}}, \quad
+        y_{1} + y_{2} = \frac{m}{p} (x_{1} + x_{2}) - \frac{m^{2}}{p} = - \frac{m^{2} b^{2} p}{a^{2} m^{2} + b^{2} p^{2}}.
+        \]
+        中点 $D$ 坐标为
+        \[
+        D \left( \frac{a^{2} m^{3}}{2 (a^{2} m^{2} + b^{2} p^{2})}, \, -\frac{m^{2} b^{2} p}{2 (a^{2} m^{2} + b^{2} p^{2})} \right)
+        \]
+        故直线 $OD$ 方程为
+        \[
+        y=-\frac{b^{2} p}{a^{2} m}x
+        \]
+        与 $y = -\dfrac{p b^{2}}{a^{2}}$ 联立得点$Q$的方程
+        \[
+        x = m
+        \]
+        故 $PQ$ 是垂直于 $x$ 轴的直线,而直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 是水平线,二者垂直。
+    \end{solution}
+    \part 设 $a = 2 b$,直线 $l$ 与 $F Q$ 交于 $G$,证明
+    \[
+    1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
+    \]
+    \begin{solution}
+        当 $a = 2 b$,直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 即
+        \[
+        y = -\frac{p}{4},
+        \]
+        为介于抛物线准线 $y = -\dfrac{p}{2}$ 和 $x$ 轴之间的平行线。延长 $PQ$ 与抛物线准线交于点 $H \left(m, -\dfrac{p}{2}\right)$,焦点 $F \left(0, \dfrac{p}{2}\right)$,则直线 $HF$ 斜率
+        \[
+        k_{HF} = \frac{\frac{p}{2} + \frac{p}{2}}{0 - m} = -\frac{p}{m}
+        \]
+        切线 $l$ 斜率为
+        \[
+        k = \frac{m}{p},
+        \]
+        故 $l \perp HF$。由抛物线定义
+        \[
+        PF = PH = \frac{m^{2}}{2 p} + \frac{p}{2}, \quad
+        PQ = PH - \frac{p}{4} = \frac{m^{2}}{2 p} + \frac{p}{4}
+        \]
+        $\triangle PFH$ 为等腰三角形,且切线 $l$ 平分 $\angle F P H$,由角平分线性质,
+        \[
+        \frac{[\triangle F P G]}{[\triangle P G Q]} = \frac{F G}{G Q} = \frac{P F}{P Q} = \frac{2 m^{2} + 2 p^{2}}{2 m^{2} + p^{2}}
+        \]
+        显然,
+        \[
+        1 < \frac{[\triangle F P G]}{[\triangle P G Q]} < 2
+        \]
     \end{solution}
     \end{parts}
 
@@ -11451,448 +11595,334 @@ B(3k,3t).
     \begin{parts}
     \part 求双曲线 $C$ 的方程；
     \begin{solution}
-        依题意,由双曲线焦距关系
+        据题意,由$a^2+b^2=4$,双曲线方程为
         \[
-        a^2+b^2=4,
+        \frac{x^2}{a^2}-\frac{y^2}{4-a^2}=1\quad 0<a^2<4
         \]
-        得双曲线方程
+        将点 $(3,\sqrt7)$ 代入得
         \[
-        \frac{x^2}{a^2}-\frac{y^2}{4-a^2}=1\ (0<a^2<4).
-        \]
-        将点 $(3,\sqrt7)$ 代入,得
-        \[
-        \frac{9}{a^2}-\frac{7}{4-a^2}=1.
-        \]
-        解得
-        \[
-        a^2=18\ (\text{舍去})\quad\text{或}\quad a^2=2.
+        \frac{9}{a^2}-\frac{7}{4-a^2}=1 \Rightarrow a^2=18\ (\text{舍去})\quad\text{或}\quad a^2=2
         \]
         故所求双曲线方程为
         \[
-        \frac{x^2}{2}-\frac{y^2}{2}=1.
+        \frac{x^2}{2}-\frac{y^2}{2}=1
         \]
     \end{solution}
     \begin{solution}
         依题意得双曲线的半焦距 $c=2$。又
         \[
-        2a=|PF_1|-|PF_2|
+        2a=PF_1-PF_2
         =\sqrt{(3+2)^2+(\sqrt7)^2}-\sqrt{(3-2)^2+(\sqrt7)^2}
-        =2\sqrt2,
+        =2\sqrt2
         \]
         故
         \[
-        a^2=2,\quad b^2=c^2-a^2=2.
+        a^2=2,\quad b^2=c^2-a^2=2
         \]
         因此双曲线 $C$ 的方程为
         \[
-        \frac{x^2}{2}-\frac{y^2}{2}=1.
+        \frac{x^2}{2}-\frac{y^2}{2}=1
         \]
     \end{solution}
     \part 记 $O$ 为坐标原点,过点 $Q(0,2)$ 的直线与双曲线 $C$ 相交于不同的两点 $E,F$,若 $\triangle OEF$ 的面积为 $2\sqrt2$,求直线的方程。
     \begin{solution}
-    设直线的方程为
-    \[
-    y=kx+2,
-    \]
-    代入双曲线 $C$ 的方程并整理,得
-    \[
-    (1-k^2)x^2-4kx-6=0.
-    \]
-    故直线 $l$ 与双曲线 $C$ 相交于不同的两点 $E,F$,需满足
-    \[
-    \begin{cases}
-    1-k^2\neq0,\\
-    \Delta=(-4k)^2+4\times6(1-k^2)>0,
-    \end{cases}
-    \]
-    即
-    \[
-    k\neq\pm1,\quad -\sqrt3<k<\sqrt3,
-    \]
-    从而
-    \[
-    k\in(-\sqrt3,-1)\cup(1,\sqrt3).
-    \]
-
-    设 $E(x_1,y_1),F(x_2,y_2)$,由上式得
-    \[
-    x_1+x_2=\frac{4k}{1-k^2},\quad x_1x_2=\frac{6}{1-k^2}.
-    \]
-    于是
-    \[
-    |EF|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
-    =\sqrt{1+k^2}\,|x_1-x_2|
-    \]
-    \[
-    =\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}
-    =\sqrt{1+k^2}\cdot\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-    \]
-
-    原点 $O$ 到直线的距离为
-    \[
-    d=\frac{2}{\sqrt{1+k^2}},
-    \]
-    故
-    \[
-    S_{\triangle OEF}
-    =\frac12 d\cdot|EF|
-    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-    \]
-    由
-    \[
-    S_{\triangle OEF}=2\sqrt2
-    \]
-    得
-    \[
-    \frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}=2\sqrt2
-    \Longleftrightarrow k^4-k^2-2=0.
-    \]
-    解得
-    \[
-    k=\pm\sqrt2,
-    \]
-    满足取值范围。
-
-    故满足条件的直线有两条,其方程分别为
-    \[
-    y=\sqrt2x+2,\quad y=-\sqrt2x+2.
-    \]
-    \end{solution}
-    \begin{solution}
-    仍设直线方程为
-    \[
-    y=kx+2,
-    \]
-    代入双曲线 $C$ 得
-    \[
-    (1-k^2)x^2-4kx-6=0.
-    \]
-    设交点为 $E(x_1,y_1),F(x_2,y_2)$,则
-    \[
-    x_1-x_2=\frac{\sqrt{\Delta}}{|1-k^2|}
-    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-    \]
-    当 $E,F$ 在同一支上时,
-    \[
-    S_{\triangle OEF}
-    =S_{\triangle OQF}-S_{\triangle OQE}
-    =\frac12|OQ|\cdot|x_1-x_2|.
-    \]
-    当 $E,F$ 在不同支上时,
-    \[
-    S_{\triangle OEF}
-    =S_{\triangle OQF}+S_{\triangle OQE}
-    =\frac12|OQ|\cdot|x_1-x_2|.
-    \]
-    综上,
-    \[
-    S_{\triangle OEF}
-    =\frac12|OQ|\cdot|x_1-x_2|.
-    \]
-    由 $OQ=2$,得
-    \[
-    S_{\triangle OEF}
-    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-    \]
-    令
-    \[
-    S_{\triangle OEF}=2\sqrt2,
-    \]
-    得
-    \[
-    k^4-k^2-2=0,
-    \]
-    解得
-    \[
-    k=\pm\sqrt2.
-    \]
-    因此满足条件的直线为
-    \[
-    y=\sqrt2x+2,\quad y=-\sqrt2x+2.
-    \]
+        设直线的方程为$y=kx+2$,代入双曲线 $C$ 整理,
+        \[
+        (1-k^2)x^2-4kx-6=0
+        \]
+        故直线 $l$ 与双曲线 $C$ 相交于不同的两点 $E,F$,需满足
+        \[
+        \begin{cases}
+        1-k^2\neq0,\\
+        \Delta=(-4k)^2+4\cdot 6(1-k^2)>0,
+        \end{cases}
+        \]
+        即$k\in(-\sqrt3,-1)\cup(1,\sqrt3)$,设 $E(x_1,y_1),F(x_2,y_2)$,由韦达定理,
+        \[
+        x_1+x_2=\frac{4k}{1-k^2},\quad x_1x_2=\frac{6}{1-k^2}.
+        \]
+        于是
+        \begin{align*}
+        EF&=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}\\
+        &=\sqrt{1+k^2}\,|x_1-x_2|\\
+        &=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}\\
+        &=\sqrt{1+k^2}\cdot\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}
+        \end{align*}
+        原点 $O$ 到直线的距离为
+        \[
+        d=\frac{2}{\sqrt{1+k^2}},
+        \]
+        故
+        \[
+        [\triangle OEF]
+        =\frac12 d\cdot EF
+        =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}=2\sqrt2 \Rightarrow k^4-k^2-2=0
+        \]
+        解得
+        \[
+        k=\pm\sqrt2 \in(-\sqrt3,-1)\cup(1,\sqrt3)
+        \]
+        故所求直线方程为
+        \[
+        y=\sqrt2x+2,\quad y=-\sqrt2x+2.
+        \]
     \end{solution}
     \end{parts}
 
-\question
-点
-\[
-P\left(p+\frac{1}{p},\,p-\frac{1}{p}\right),\ p\neq 0
-\]
-在直角双曲线
-\[
-x^2-y^2=4
-\]
-上。曲线在 $P$ 处的法线与 $y$ 轴交于点 $Q(0,-k)$,其中 $k>0$。
-
-已知三角形 $OPQ$ 的面积为 $\frac{15}{4}$,其中 $O$ 为原点。求点 $P$ 的两个可能坐标。
-
-\begin{solution}
-曲线可参数表示为
-\[
-x=p+\frac{1}{p},\quad y=p-\frac{1}{p}。
-\]
-
-对参数 $p$ 求导,
-\[
-\frac{dx}{dp}=1-\frac{1}{p^2},\quad
-\frac{dy}{dp}=1+\frac{1}{p^2}。
-\]
-于是切线斜率为
-\[
-\frac{dy}{dx}
-=\frac{1+\frac{1}{p^2}}{1-\frac{1}{p^2}}
-=\frac{p^2+1}{p^2-1}。
-\]
-
-因此法线斜率为
-\[
--\frac{p^2-1}{p^2+1}。
-\]
-
-点 $P$ 处法线方程为
-\[
-y-\left(p-\frac{1}{p}\right)
-=-\frac{p^2-1}{p^2+1}\left(x-\left(p+\frac{1}{p}\right)\right)。
-\]
-
-该法线经过点 $Q(0,-k)$,代入得
-\begin{align*}
--k-\left(p-\frac{1}{p}\right)
-&=-\frac{p^2-1}{p^2+1}\left(0-\left(p+\frac{1}{p}\right)\right)\\
-&=\frac{p^2-1}{p^2+1}\cdot\frac{p^2+1}{p}\\
-&=\frac{p^2-1}{p}。
-\end{align*}
-化简得
-\[
--k=\frac{2(p^2-1)}{p},
-\quad
-k=-\frac{2(p^2-1)}{p}。
-\]
-
-三角形 $OPQ$ 的底为 $OP$ 在 $x$ 轴上的投影 $p+\frac{1}{p}$,高为 $k$,故
-\[
-\frac{1}{2}\,k\left(p+\frac{1}{p}\right)=\frac{15}{4}。
-\]
-即
-\[
-k=\frac{15p}{2(p^2+1)}。
-\]
-
-消去 $k$,得
-\[
-\frac{15p}{2(p^2+1)}
-=-\frac{2(p^2-1)}{p}。
-\]
-两边同乘 $2p(p^2+1)$,
-\[
-15p^2=-4(p^2-1)(p^2+1)。
-\]
-化简得
-\[
-4p^4+15p^2-4=0。
-\]
-因式分解,
-\[
-(4p^2-1)(p^2+4)=0。
-\]
-由于 $p^2+4>0$,故
-\[
-p^2=\frac{1}{4},
-\quad
-p=\pm\frac{1}{2}。
-\]
-
-当 $p=\frac{1}{2}$ 时,
-\[
-x=\frac{1}{2}+2=\frac{5}{2},\quad
-y=\frac{1}{2}-2=-\frac{3}{2}。
-\]
-
-当 $p=-\frac{1}{2}$ 时,
-\[
-x=-\frac{1}{2}-2=-\frac{5}{2},\quad
-y=-\frac{1}{2}+2=\frac{3}{2}。
-\]
-
-因此点 $P$ 的两个可能坐标为
-\[
-\left(\frac{5}{2},-\frac{3}{2}\right),
-\quad
-\left(-\frac{5}{2},\frac{3}{2}\right)。
-\]
-\end{solution}
-
-    \question 15.（天津 22）（本小题满分 14 分）
-
-已知中心在原点的双曲线 $C$ 的一个焦点为 $F_{1}(-3,0)$,
-一条渐近线的方程是
-\[
-\sqrt{5}x-2y=0.
-\]
-
-(I) 求双曲线 $C$ 的方程；
-
-(II) 若以 $k(k\ne 0)$ 为斜率的直线 $l$ 与双曲线 $C$ 相交于两个不同的点
-$M,N$,且线段 $MN$ 的垂直平分线与两坐标轴围成的三角形面积为
-$\frac{81}{2}$,求 $k$ 的取值范围。
-
-\begin{solution}
-(I) 设双曲线 $C$ 的方程为
-\[
-\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1 \quad (a>0,b>0).
-\]
-由焦点坐标得
-\[
-c=3,\quad c^{2}=a^{2}+b^{2}.
-\]
-又由渐近线方程
-\[
-y=\frac{\sqrt{5}}{2}x
-\]
-可得
-\[
-\frac{b}{a}=\frac{\sqrt{5}}{2}.
-\]
-于是
-\[
-\begin{cases}
-a^{2}+b^{2}=9,\\
-\frac{b^{2}}{a^{2}}=\frac{5}{4}.
-\end{cases}
-\]
-解得
-\[
-a^{2}=4,\quad b^{2}=5.
-\]
-故双曲线 $C$ 的方程为
-\[
-\frac{x^{2}}{4}-\frac{y^{2}}{5}=1.
-\]
-
-(II) 设直线 $l$ 的方程为
-\[
-y=kx+m \quad (k\ne 0),
-\]
-与双曲线交于 $M(x_{1},y_{1})$、$N(x_{2},y_{2})$。
-
-将 $y=kx+m$ 代入双曲线方程,得
-\[
-\frac{x^{2}}{4}-\frac{(kx+m)^{2}}{5}=1,
-\]
-化简为
-\[
-(5-4k^{2})x^{2}-8kmx-4m^{2}-20=0.
-\]
-该方程有两个不等实根,故
-\[
-5-4k^{2}\ne 0,
-\]
-且判别式
-\[
-\Delta>0 \;\Rightarrow\; m^{2}+5-4k^{2}>0. \tag{1}
-\]
-
-由根与系数关系,线段 $MN$ 的中点
-\[
-(x_{0},y_{0})=\left(\frac{4km}{5-4k^{2}},\ \frac{5m}{5-4k^{2}}\right).
-\]
-因此,$MN$ 的垂直平分线与 $x$ 轴、$y$ 轴的截距分别为
-\[
-\left(\frac{9km}{5-4k^{2}},0\right),\quad
-\left(0,\frac{9m}{5-4k^{2}}\right).
-\]
-由题设三角形面积为 $\frac{81}{2}$,得
-\[
-\frac{1}{2}\left|\frac{9km}{5-4k^{2}}\right|
-\left|\frac{9m}{5-4k^{2}}\right|
-=\frac{81}{2},
-\]
-化简得
-\[
-m^{2}=\frac{(5-4k^{2})^{2}}{|k|},\quad k\ne 0. \quad \tag{2}
-\]
-
-将 (2) 代入 (1),得
-\[
-\frac{(5-4k^{2})^{2}}{|k|}+5-4k^{2}>0,
-\]
-整理为
-\[
-(4k^{2}-5)(4k^{2}-|k|-5)>0,\quad k\ne 0.
-\]
-解得
-\[
-0<|k|<\frac{\sqrt{5}}{2}
-\quad \text{或} \quad
-|k|>\frac{5}{4}.
-\]
-因此,
-\[
-k\in(-\infty,-\tfrac{5}{4})\cup(-\tfrac{\sqrt{5}}{2},0)\cup
-(0,\tfrac{\sqrt{5}}{2})\cup(\tfrac{5}{4},+\infty).
-\]
-\end{solution}
-
-    \question 已知双曲线$$E: \dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1$$的左、右顶点分别为 $A, B$,点 $M$ 在 $E$ 上使得 $\triangle ABM$ 是等腰三角形,且$\triangle ABM$外接圆面积为 $3 \pi a^{2}$,求双曲线的离心率。
+    \question 点$P\left(p+\dfrac{1}{p},\,p-\dfrac{1}{p}\right),\ p\neq 0$在直角双曲线
+    \[
+    x^2-y^2=4
+    \]
+    上。曲线在 $P$ 处的法线与 $y$ 轴交于点 $Q(0,-k)$,其中 $k>0$。已知三角形 $OPQ$ 的面积为 $\dfrac{15}{4}$,其中 $O$ 为原点,求点 $P$ 的坐标。
     \begin{solution}
-        不妨设$M$在第二象限,则在等腰$\triangle ABM$中, $|AB|=|AM|=2a$,
+        曲线可参数表示为
+        \[
+        x=p+\frac{1}{p},\quad y=p-\frac{1}{p}
+        \]
+        由链导法,
+        \[
+        \frac{dy}{dx}=\frac{dy}{dp} \div \frac{dx}{dp}
+        =\frac{1+\frac{1}{p^2}}{1-\frac{1}{p^2}}
+        =\frac{p^2+1}{p^2-1}
+        \]
+        因此法线斜率为$-\dfrac{p^2-1}{p^2+1}$,点 $P$ 处法线方程为
+        \[
+        y-\left(p-\frac{1}{p}\right)
+        =-\frac{p^2-1}{p^2+1}\left(x-\left(p+\frac{1}{p}\right)\right)
+        \]
+        该法线经过点 $Q(0,-k)$,代入得
+        \[
+        -k-p+\frac{1}{p}=\frac{p^2-1}{p^2+1}\left(p+\frac{1}{p}\right) \Rightarrow k=-\frac{2(p^2-1)}{p} \tag{1}
+        \]
+        已知 $\triangle OPQ$ 的面积为 $\dfrac{15}{4}$,有
+        \[
+        \frac{1}{2}\,k\left(p+\frac{1}{p}\right)=\frac{15}{4} \tag{2}
+        \]
+        联立$(1),(2)$解得
+        \[
+        (4p^2-1)(p^2+4)=0 \Rightarrow p=\pm\frac{1}{2}
+        \]
+        因此点 $P$ 的可能坐标为
+        \[
+        \left(\frac{5}{2},-\frac{3}{2}\right),        \left(-\frac{5}{2},\frac{3}{2}\right)
+        \]
+    \end{solution}
+
+    \question 已知中心在原点的双曲线 $C$ 的一个焦点为 $F_{1}(-3,0)$,一条渐近线的方程是$\sqrt{5}x-2y=0$,
+    \begin{parts}
+    \part 求双曲线 $C$ 的方程；
+    \begin{solution}
+        设双曲线 $C$ 的方程为
+        \[
+        \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1 
+        \]
+        其中$a>0,b>0$,由焦点坐标得$c=\sqrt{a^2+b^2}=3$,又由渐近线方程$y=\dfrac{\sqrt{5}}{2}x$得
+        \[
+        \frac{b}{a}=\frac{\sqrt{5}}{2}
+        \]
+        于是可解得
+        \[
+        a^{2}=4,\quad b^{2}=5
+        \]
+        故双曲线 $C$ 的方程为
+        \[
+        \frac{x^{2}}{4}-\frac{y^{2}}{5}=1
+        \]
+    \end{solution}
+    \part 若以 $k\ne 0$ 为斜率的直线 $l$ 与双曲线 $C$ 相交于两个不同的点$M,N$,且线段 $MN$ 的垂直平分线与两坐标轴围成的三角形面积为$\dfrac{81}{2}$,求 $k$ 的取值范围。
+    \begin{solution}
+        设直线 $l$ 的方程为
+        \[
+        y=kx+m, \quad k\ne 0,
+        \]
+        与双曲线交于 $M(x_{1},y_{1}),N(x_{2},y_{2})$,将 $y=kx+m$ 代入双曲线方程得
+        \[
+        \frac{x^{2}}{4}-\frac{(kx+m)^{2}}{5}=1,
+        \]
+        化简为
+        \[
+        (5-4k^{2})x^{2}-8kmx-4m^{2}-20=0.
+        \]
+        该方程有两个不等实根,故
+        \[
+        5-4k^{2}\ne 0,
+        \]
+        且判别式
+        \[
+        \Delta>0 \;\Rightarrow\; m^{2}+5-4k^{2}>0. \tag{1}
+        \]
+        由韦达定理,线段 $MN$ 的中点
+        \[
+        (x_{0},y_{0})=\left(\frac{4km}{5-4k^{2}},\ \frac{5m}{5-4k^{2}}\right).
+        \]
+        因此$MN$ 的垂直平分线与 $x$ 轴、$y$ 轴的截距分别为
+        \[
+        \left(\frac{9km}{5-4k^{2}},0\right),\quad
+        \left(0,\frac{9m}{5-4k^{2}}\right).
+        \]
+        由题设三角形面积得
+        \[
+        \frac{1}{2}\left|\frac{9km}{5-4k^{2}}\right|
+        \left|\frac{9m}{5-4k^{2}}\right|
+        =\frac{81}{2},
+        \]
+        化简得
+        \[
+        m^{2}=\frac{(5-4k^{2})^{2}}{|k|},\quad k\ne 0. \quad \tag{2}
+        \]
+        将 (2) 代入 (1),整理为
+        \[
+        (4k^{2}-5)(4k^{2}-|k|-5)>0,\quad k\ne 0.
+        \]
+        解得
+        \[
+        0<|k|<\frac{\sqrt{5}}{2}
+        \quad \text{或} \quad
+        |k|>\frac{5}{4}.
+        \]
+        因此$k$ 的取值范围为
+        \[
+        k\in\left(-\infty,-\frac{5}{4}\right)\cup\left(-\frac{\sqrt{5}}{2},0\right)\cup
+        \left(0,\frac{\sqrt{5}}{2}\right)\cup\left(\frac{5}{4},+\infty\right)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知双曲线
+    \[
+    E: \frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1
+    \]
+    的左、右顶点分别为 $A, B$,点 $M$ 在 $E$ 上使得 $\triangle ABM$ 是等腰三角形,且$\triangle ABM$外接圆面积为 $3 \pi a^{2}$,求双曲线的离心率。
+    \begin{solution}
+        不妨设$M$在第二象限,则在等腰$\triangle ABM$中, $AB=AM=2a$,
         
         设 $\angle ABM=\angle AMB=\theta$, 则 $\angle FAM=2\theta$,又$\triangle ABM$外接圆面积 $3\pi a^{2}$, 则半径为 $\sqrt{3}a$.
         
         由正弦定理,
-        $$2R = \frac{|AB|}{\sin\theta} \Rightarrow 2\sqrt{3}a = \frac{2a}{\sin\theta} \Rightarrow \sin\theta = \frac{\sqrt{3}}{3}$$
+        \[
+        2R = \frac{AB}{\sin\theta} \Rightarrow 2\sqrt{3}a = \frac{2a}{\sin\theta} \Rightarrow \sin\theta = \frac{\sqrt{3}}{3}
+        \]
         于是
-        $$\cos\theta = \frac{\sqrt{6}}{3},\;\sin 2\theta = \frac{2\sqrt{2}}{3},\;\cos 2\theta = \frac{1}{3}$$
+        \[
+        \cos\theta = \frac{\sqrt{6}}{3},\;\sin 2\theta = \frac{2\sqrt{2}}{3},\;\cos 2\theta = \frac{1}{3}
+        \]
         设$M$点坐标为 $(x,y)$, 则 
-        \[x = -a - |AM|\cos 2\theta = -a - 2a \times \frac{1}{3} = -\frac{5a}{3}\]
-        \[y = |AM|\sin 2\theta = 2a \times \frac{2\sqrt{2}}{3} = \frac{4\sqrt{2}a}{3}\]
+        \[
+        x = -a - AM\cos 2\theta = -a - 2a \cdot \frac{1}{3} = -\frac{5a}{3}
+        \]
+        \[
+        y = AM\sin 2\theta = 2a \cdot \frac{2\sqrt{2}}{3} = \frac{4\sqrt{2}a}{3}
+        \]
         即$M$点坐标为 $\left(-\dfrac{5a}{3},\dfrac{4\sqrt{2}a}{3}\right)$,由$M$点在双曲线上得 
-        \[\frac{\left(-\frac{5a}{3}\right)^{2}}{a^{2}}-\frac{\left(\frac{4\sqrt{2}a}{3}\right)^{2}}{b^{2}}=1
+        \[
+        \frac{\left(-\frac{5a}{3}\right)^{2}}{a^{2}}-\frac{\left(\frac{4\sqrt{2}a}{3}\right)^{2}}{b^{2}}=1
         \Rightarrow b^2 = 2a^2
         \]
-        故$e = \sqrt{1+\dfrac{b^{2}}{a^{2}}}  =\sqrt{3}$.  
+        故
+        \[
+        e = \sqrt{1+\dfrac{b^{2}}{a^{2}}}  =\sqrt{3}
+        \]
     \end{solution}  
         
-    \question 双曲线 $$\Gamma: x^{2}-y^{2}=1$$ 的右顶点为 $A$,将圆心在 $y$ 轴上, 且与 $\Gamma$ 的两支各恰有一个公共点的圆称为“好圆”, 若两个好圆外切于点 $P$, 圆心距为 $d$, 求 $\dfrac{d}{|PA|}$ 的所有可能值。
+    \question 双曲线 
+    \[
+    \Gamma: x^{2}-y^{2}=1
+    \] 
+    的右顶点为 $A$,将圆心在 $y$ 轴上, 且与 $\Gamma$ 的两支各恰有一个公共点的圆称为“好圆”, 若两个好圆外切于点 $P$, 圆心距为 $d$, 求 $\dfrac{d}{PA}$ 的所有可能值。
     \begin{solution}
         考虑以 $(0, y_{0})$ 为圆心的好圆 
-        $$\Omega_{0}: x^{2}+(y-y_{0})^{2}=r_{0}^{2}\left(r_{0}>0\right)$$
-        由 $\Omega_{0}$ 与 $\Gamma$ 的方程消去 $x$, 得关于 $y$ 的二次方程
-        $$2y^{2}-2y_{0}y+y_{0}^{2}+1-r_{0}^{2}=0$$
-        令判别式为零,
-        $$\Delta=4y_{0}^{2}-8\left(y_{0}^{2}+1-r_{0}^{2}\right)=0\Rightarrow y_{0}^{2}=2r_{0}^{2}-2$$
-        对于外切于点 $P$ 的两个好圆 $\Omega_{1}, \Omega_{2}$, 显然 $P$ 在 $y$ 轴上;设 $P(0, h)$, $\Omega_{1}, \Omega_{2}$ 的半径分别为 $r_{1}, r_{2}$, 不妨设 $\Omega_{1}, \Omega_{2}$ 的圆心分别为 $(0, h+r_{1}), (0, h-r_{2})$, 则有
-        $$(h+r_{1})^{2}=2r_{1}^{2}-2,(h-r_{2})^{2}=2r_{2}^{2}-2$$
-        两式相减得 $$2h(r_{1}+r_{2})=r_{1}^{2}-r_{2}^{2}$$
-        而 $r_{1}+r_{2}>0$, 故化简得 $h=\dfrac{r_{1}-r_{2}}{2}$,进而 
-        \[\left(\frac{r_{1}-r_{2}}{2}+r_{1}\right)^{2}=2r_{1}^{2}-2 \Rightarrow r_{1}^{2}-6r_{1}r_{2}+r_{2}^{2}+8=0 \tag{1}
+        \[
+        \Omega_{0}: x^{2}+(y-y_{0})^{2}=r_{0}^{2}\left(r_{0}>0\right)
         \]
-        由于 $d=r_{1}+r_{2},A(1,0)$,且 $$|PA|^{2}=h^{2}+1=\frac{(r_{1}-r_{2})^{2}}{4}+1$$
+        由 $\Omega_{0}$ 与 $\Gamma$ 的方程消去 $x$, 得关于 $y$ 的二次方程
+        \[
+        2y^{2}-2y_{0}y+y_{0}^{2}+1-r_{0}^{2}=0
+        \]
+        令判别式为零,
+        \[
+        \Delta=4y_{0}^{2}-8\left(y_{0}^{2}+1-r_{0}^{2}\right)=0\Rightarrow y_{0}^{2}=2r_{0}^{2}-2
+        \]
+        对于外切于点 $P$ 的两个好圆 $\Omega_{1}, \Omega_{2}$, 显然 $P$ 在 $y$ 轴上;设 $P(0, h)$, $\Omega_{1}, \Omega_{2}$ 的半径分别为 $r_{1}, r_{2}$, 不妨设 $\Omega_{1}, \Omega_{2}$ 的圆心分别为 $(0, h+r_{1}), (0, h-r_{2})$, 则有
+        \[
+        (h+r_{1})^{2}=2r_{1}^{2}-2,(h-r_{2})^{2}=2r_{2}^{2}-2
+        \]
+        两式相减得 
+        \[
+        2h(r_{1}+r_{2})=r_{1}^{2}-r_{2}^{2}
+        \]
+        而 $r_{1}+r_{2}>0$, 故化简得 $h=\dfrac{r_{1}-r_{2}}{2}$,进而 
+        \[
+        \left(\frac{r_{1}-r_{2}}{2}+r_{1}\right)^{2}=2r_{1}^{2}-2 \Rightarrow r_{1}^{2}-6r_{1}r_{2}+r_{2}^{2}+8=0 \tag{1}
+        \]
+        由于 $d=r_{1}+r_{2},A(1,0)$,且 
+        \[
+        PA^{2}=h^{2}+1=\frac{(r_{1}-r_{2})^{2}}{4}+1
+        \]
         而 (1)可等价地写为
-        $$2(r_{1}-r_{2})^{2}+8=(r_{1}+r_{2})^{2}$$
-        即 $8|PA|^{2}=d^{2}$, 所以 $$\frac{d}{|PA|}=2\sqrt{2}$$
+        \[
+        2(r_{1}-r_{2})^{2}+8=(r_{1}+r_{2})^{2}
+        \]
+        即 $8PA^{2}=d^{2}$, 所以 
+        \[
+        \frac{d}{PA}=2\sqrt{2}
+        \]
     \end{solution}
     
-    \question 设$A,B$为双曲线$$W: \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1$$与实轴的交点, $P(0,1)$为双曲线外一点,$PA,PB$分别交双曲线于另一点$C,D$,过$C,D$的切线相交于$Q$,若$\triangle QCD$是一个正三角形且面积为$\dfrac{16\sqrt{3}}{27}$,求双曲线$W$的方程式。
+    \question 设$A,B$为双曲线
+    \[
+    W: \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
+    \]
+    与实轴的交点, $P(0,1)$为双曲线外一点,$PA,PB$分别交双曲线于另一点$C,D$,过$C,D$的切线相交于$Q$,若$\triangle QCD$是一个正三角形且面积为$\dfrac{16\sqrt{3}}{27}$,求双曲线$W$的方程式。
     \begin{solution}
-        设$A(-a,0),B(a,0),C(-a \sec \alpha,b \tan \alpha),D(a \sec \alpha,b \tan \alpha)$ 且$\sec \alpha > 0$,
-        从而$PB$的直线方程为$$y=-\frac{1}{a}x+1$$ 于是有
-        \[\tan \alpha=-\sec \alpha+1 \tag{1}
+        设
+        \[
+        A(-a,0),B(a,0),C(-a \sec \alpha,b \tan \alpha),D(a \sec \alpha,b \tan \alpha)
         \]
-        则$QD$的直线方程为$$\frac{x \sec \alpha}{a}-\frac{y \tan \alpha}{b}=1$$ 
-        $QC$的直线方程为:$$-\frac{x \sec \alpha}{a}-\frac{y \tan \alpha}{b}=1$$
-        得$Q(0,-\dfrac{b}{\tan \alpha})$;又由对称性及$\triangle QCD$是正三角形可得$$\frac{1}{2}\cdot2a \sec \alpha\cdot\sqrt{3}a \sec \alpha=\frac{16\sqrt{3}}{27},\ -\frac{b}{\tan \alpha}-b \tan \alpha=\sqrt{3}a \sec \alpha$$
-        即$$a^{2}\sec^{2}\alpha=\frac{16}{27},-b \sec \alpha=\sqrt{3}a \tan \alpha$$
-        联立(1)可得 $$\sec \alpha=\frac{\sqrt{3}a}{\sqrt{3}a-b^{2}},\tan \alpha=\frac{-b}{\sqrt{3}a-b^{2}}$$
-        由 $1+\tan^{2}\alpha=\sec^{2}\alpha$得$b^{2}=2\sqrt{3}a-1$,
-        代入$a \sec \alpha=\frac{4}{3\sqrt{3}}$得$$9a^{2}+4\sqrt{3}a-4=0\Rightarrow a=\frac{2\sqrt{3}}{9}, b=\frac{\sqrt{3}}{3}$$
-        所以双曲线$W$的方程是$$\frac{27x^{2}}{4}-3y^{2}=1$$ 
+        且$\sec \alpha > 0$,从而$PB$的直线方程为
+        \[
+        y=-\frac{1}{a}x+1
+        \] 
+        $D$在$PB$上,于是有
+        \[
+        b\tan \alpha=-\sec \alpha+1 \tag{1}
+        \]
+        且$QC,QD$的直线方程为
+        \[
+        -\frac{x \sec \alpha}{a}-\frac{y \tan \alpha}{b}=1,\quad \frac{x \sec \alpha}{a}-\frac{y \tan \alpha}{b}=1
+        \]
+        两式联立得
+        \[
+        Q\left(0,-\dfrac{b}{\tan \alpha}\right)
+        \]
+        又由对称性及$\triangle QCD$是正三角形可得
+        \[
+        \frac{1}{2}\cdot2a \sec \alpha\cdot\sqrt{3}a \sec \alpha=\frac{16\sqrt{3}}{27},\quad -\frac{b}{\tan \alpha}-b \tan \alpha=\sqrt{3}a \sec \alpha
+        \]
+        即
+        \[
+        a^{2}\sec^{2}\alpha=\frac{16}{27},\quad -b \sec \alpha=\sqrt{3}a \tan \alpha
+        \]
+        联立(1)可得 
+        \[
+        \sec \alpha=\frac{\sqrt{3}a}{\sqrt{3}a-b^{2}},\quad \tan \alpha=\frac{-b}{\sqrt{3}a-b^{2}}
+        \]
+        由 $1+\tan^{2}\alpha=\sec^{2}\alpha$得$b^{2}=2\sqrt{3}a-1$,代入$a \sec \alpha=\dfrac{4}{3\sqrt{3}}$得
+        \[
+        9a^{2}+4\sqrt{3}a-4=0\Rightarrow a=\frac{2\sqrt{3}}{9}, b=\frac{\sqrt{3}}{3}
+        \]
+        所以双曲线$W$方程为
+        \[
+        \frac{27x^{2}}{4}-3y^{2}=1
+        \]
     \end{solution}
 
-    \question 已知双曲线 $$\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\ (a>0,b>0)$$ 的左、右焦点分别为 $F_1, F_2$。  
+    \question 已知双曲线 
+    \[
+    \frac{x^2}{a^2}-\frac{y^2}{b^2}=1\ (a>0,b>0)
+    \]
+    的左、右焦点分别为 $F_1, F_2$。  
     过点 $F_1$ 作直线分别交双曲线左支和一条渐近线于点 $A,B$（$A,B$ 在同一象限）,且满足 $F_1A = AB$。  
     连接 $AF_2$,若满足 $AF_2 \perp BF_1$,求该双曲线离心率的平方$e^2$。
-    
     \begin{solution}
         不妨设 $A(x_0,y_0)$在第二象限,由 $AF_2\perp BF_1$ 得 
         \[
@@ -11935,197 +11965,70 @@ k\in(-\infty,-\tfrac{5}{4})\cup(-\tfrac{\sqrt{5}}{2},0)\cup
     \]
     求双曲线的离心率。
         \begin{solution}
-        设$D$为$MN$的中点,连接$F_{2}D$,易知$\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N}=2\overrightarrow{F_{2}D}$,所以$$(\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N})\cdot\overrightarrow{MN}=2\overrightarrow{F_{2}D}\cdot\overrightarrow{MN}=0\Rightarrow F_{2}D \perp MN$$
-        所以$|F_{2}M|=|F_{2}N|$,现设$t=|F_{2}M|=|F_{2}N|$,
-        由双曲线定义\[
-        |MF_{1}|=t-2a,\;|NF_{1}|=t+2a\Rightarrow|MN|=|NF_{1}|-|MF_{1}|=4a
+        设$D$为$MN$的中点,连接$F_{2}D$,易知$\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N}=2\overrightarrow{F_{2}D}$,所以
+        \[
+        (\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N})\cdot\overrightarrow{MN}=2\overrightarrow{F_{2}D}\cdot\overrightarrow{MN}=0\Rightarrow F_{2}D \perp MN
+        \]
+        所以$F_{2}M=F_{2}N$,现设$t=F_{2}M=F_{2}N$,
+        由双曲线定义
+        \[
+        MF_{1}=t-2a,\;NF_{1}=t+2a\Rightarrow MN=NF_{1}-MF_{1}=4a
         \]
         又$D$是$MN$的中点,
-        $$|MD|=|ND|=2a,\;|F_{1}D|=|F_{1}M|+|MD|=t$$
+        \[
+        MD=ND=2a,\;F_{1}D=F_{1}M+MD=t
+        \]
         在直角$\triangle F_{1}DF_{2}$及直角$\triangle MDF_{2}$中,
-        $$|F_{2}D|=\sqrt{4c^{2}-t^{2}}=\sqrt{t^{2}-4a^{2}}\Rightarrow t^{2}=2a^{2}+2c^{2}$$
+        \[
+        F_{2}D=\sqrt{4c^{2}-t^{2}}=\sqrt{t^{2}-4a^{2}}\Rightarrow t^{2}=2a^{2}+2c^{2}
+        \]
         所以 
-        $$|F_{1}D|=\sqrt{2c^{2}-2a^{2}}, |F_{2}D|=t=\sqrt{2a^{2}+2c^{2}}$$
+        \[
+        F_{1}D=\sqrt{2c^{2}-2a^{2}}, F_{2}D=t=\sqrt{2a^{2}+2c^{2}}
+        \]
         直线的斜率为 $\frac{\sqrt{3}}{3}$,
-        $$\tan\angle DF_{1}F_{2}=\frac{|F_{2}D|}{|F_{1}D|}=\frac{\sqrt{2c^{2}-2a^{2}}}{\sqrt{2a^{2}+2c^{2}}}=\frac{\sqrt{3}}{3}$$
+        \[
+        \tan\angle DF_{1}F_{2}=\frac{F_{2}D}{F_{1}D}=\frac{\sqrt{2c^{2}-2a^{2}}}{\sqrt{2a^{2}+2c^{2}}}=\frac{\sqrt{3}}{3}
+        \]
         所以
-        $$\frac{c^{2}-a^{2}}{a^{2}+c^{2}}=\frac{1}{3}\Rightarrow c=\sqrt{2}a$$
-        离心率为 $\dfrac{c}{a}=\sqrt{2}$
+        \[
+        \frac{c^{2}-a^{2}}{a^{2}+c^{2}}=\frac{1}{3}\Rightarrow c=\sqrt{2}a
+        \]
+        离心率为 
+        \[
+        \frac{c}{a}=\sqrt{2}
+        \]
     \end{solution}
     
-    \question 已知双曲线 $$C:\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1\ (a>0,\ b>0)$$ 的左焦点为 $F_1$,离心率为 $e$,  
-    直线 $y = kx\ (k \ne 0)$ 分别与 $C$ 的左右两支交于点 $M, N$,  
+    \question 已知双曲线 
+    \[
+    C:\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1\quad a>0, b>0
+    \] 
+    的左焦点为 $F_1$,离心率为 $e$, 直线 $y = kx\ (k \ne 0)$ 分别与 $C$ 的左右两支交于点 $M, N$,  
     若 $\triangle MF_1N$ 的面积为 $\sqrt{3}$,且 $\angle MF_1N = 60^\circ$,求 $e^2 + 3a^2$ 的最小值。
     \begin{solution}
-        连接$NF_{2},MF_{2}$,由对称性可知四边形$MF_{1}NF_{2}$为平行四边形,故$$|NF_{2}|=|MF_{1}|,|NF_{1}|=|MF_{2}|,\angle F_{1}NF_{2}=120^{\circ},S_{\triangle F_{1}NF_{2}}=S_{\triangle MF_{1}N}=\sqrt{3}$$
-        由面积公式得$$\frac{1}{2}|NF_{1}|\cdot|NF_{2}|\sin120^{\circ}=\sqrt{3}\Rightarrow|NF_{1}|\cdot|NF_{2}|=4$$
-        由$|F_{1}N|-|F_{2}N|=2a$,在三角形$F_{1}NF_{2}$中,由余弦定理得
+        连接$NF_{2},MF_{2}$,由对称性可知四边形$MF_{1}NF_{2}$为平行四边形,故
+        \[
+        NF_{2}=MF_{1},NF_{1}=MF_{2},\angle F_{1}NF_{2}=120^{\circ},S_{\triangle F_{1}NF_{2}}=S_{\triangle MF_{1}N}=\sqrt{3}
+        \]
+        由面积公式得
+        \[
+        \frac{1}{2}NF_{1} \cdot NF_{2}\sin120^{\circ}=\sqrt{3}\Rightarrow NF_{1}\cdot NF_{2}=4
+        \]
+        由$F_{1}N-F_{2}N=2a$,在三角形$F_{1}NF_{2}$中,由余弦定理得
         \begin{align*}
-            \cos120^{\circ}
-            &=\frac{F_{1}N^{2}+F_{2}N^{2}-4c^{2}}{2F_{1}N\cdot F_{2}N} \\
-            &=\frac{(F_{1}N-F_{2}N)^{2}+2F_{1}N\cdot F_{2}N-4c^{2}}{2F_{1}N\cdot F_{2}N} \\
-            &=\frac{(2a)^{2}+2\cdot4-4c^{2}}{2\cdot4}\\
-            &=\frac{a^{2}+2-c^{2}}{2}=-\frac{1}{2}
+        \cos120^{\circ}
+        &=\frac{F_{1}N^{2}+F_{2}N^{2}-4c^{2}}{2F_{1}N\cdot F_{2}N} \\
+        &=\frac{(F_{1}N-F_{2}N)^{2}+2F_{1}N\cdot F_{2}N-4c^{2}}{2F_{1}N\cdot F_{2}N} \\
+        &=\frac{(2a)^{2}+2\cdot4-4c^{2}}{2\cdot4}\\
+        &=\frac{a^{2}+2-c^{2}}{2}=-\frac{1}{2}
         \end{align*}
         解得$b^{2}=c^{2}-a^{2}=3$,由AM-GM不等式,
-        $$e^{2}+3a^{2}=1+\frac{b^{2}}{a^{2}}+3a^{2}=1+\frac{3}{a^{2}}+3a^{2}\ge1+2\sqrt{\frac{3}{a^{2}}\cdot3a^{2}}=7$$
+        \[
+        e^{2}+3a^{2}=1+\frac{b^{2}}{a^{2}}+3a^{2}=1+\frac{3}{a^{2}}+3a^{2}\ge1+2\sqrt{\frac{3}{a^{2}}\cdot3a^{2}}=7
+        \]
         当且仅当$\dfrac{3}{a^{2}}=3a^{2}$即$a^{2}=1$时等号成立。
     \end{solution}
-
-    \question
-18.（陕西21）（本小题满分12分）
-
-已知抛物线
-\[
-C: y=2x^{2},
-\]
-直线 $y=kx+2$ 交 $C$ 于 $A,B$ 两点,$M$ 为线段 $AB$ 的中点,过 $M$ 作 $x$ 轴的垂线,垂足为 $N$。
-
-(I) 证明：抛物线 $C$ 在点 $N$ 处的切线与 $AB$ 平行；
-
-(II) 是否存在实数 $k$ 使 $\vec{NA}\cdot\vec{NB}=0$？若存在,求 $k$ 的值；若不存在,说明理由。
-
-\begin{solution}
-\textbf{解法一}
-
-(I) 设
-\[
-A(x_1,2x_1^2),\quad B(x_2,2x_2^2).
-\]
-将 $y=kx+2$ 代入 $y=2x^2$,得
-\[
-2x^2-kx-2=0.
-\]
-由韦达定理,
-\[
-x_1+x_2=\frac{k}{2},\quad x_1x_2=-1.
-\]
-因为 $M$ 为 $AB$ 的中点,
-\[
-x_N=x_M=\frac{x_1+x_2}{2}=\frac{k}{4},
-\]
-故
-\[
-N\left(\frac{k}{4},0\right).
-\]
-设抛物线在点 $N$ 处的切线为
-\[
-y-\frac{k^2}{8}=m\left(x-\frac{k}{4}\right).
-\]
-将 $y=2x^2$ 代入上式,得
-\[
-2x^2-mx+\frac{mk}{4}-\frac{k^2}{8}=0.
-\]
-由于该直线与抛物线相切,判别式为零：
-\[
-\Delta=m^2-8\left(\frac{mk}{4}-\frac{k^2}{8}\right)
-=m^2-2mk+k^2=(m-k)^2=0,
-\]
-解得 $m=k$,即切线与 $AB$ 平行。
-
-\medskip
-(II) 假设存在实数 $k$ 使 $\vec{NA}\cdot\vec{NB}=0$,则 $NA\perp NB$。
-
-由于 $M$ 是 $AB$ 的中点,故
-\[
-|MN|=\frac{1}{2}|AB|.
-\]
-又
-\[
-y_M=\frac{1}{2}(y_1+y_2)
-=\frac{1}{2}(kx_1+2+kx_2+2)
-=\frac{1}{2}\left[k(x_1+x_2)+4\right]
-=\frac{k^2}{4}+2.
-\]
-因为 $MN\perp x$ 轴,
-\[
-|MN|=|y_M-y_N|
-=\left|\frac{k^2}{4}+2-\frac{k^2}{8}\right|
-=\frac{k^2+16}{8}.
-\]
-而
-\[
-|AB|=\sqrt{1+k^2}\,|x_1-x_2|
-=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}
-=\frac{1}{2}\sqrt{k^2+10}\sqrt{k^2+16}.
-\]
-由 $|MN|=\frac{1}{2}|AB|$,得
-\[
-\frac{k^2+16}{8}
-=\frac{1}{4}\sqrt{k^2+10}\sqrt{k^2+16}.
-\]
-解得
-\[
-k=\pm2.
-\]
-因此存在 $k=\pm2$,使 $\vec{NA}\cdot\vec{NB}=0$。
-
-\medskip
-\textbf{解法二}
-
-(I) 设
-\[
-A(x_1,2x_1^2),\quad B(x_2,2x_2^2).
-\]
-由
-\[
-2x^2-kx-2=0,
-\]
-得
-\[
-x_1+x_2=\frac{k}{2},\quad x_1x_2=-1.
-\]
-因为
-\[
-x_N=\frac{x_1+x_2}{2}=\frac{k}{4},
-\]
-又 $N$ 在抛物线上,故
-\[
-N\left(\frac{k}{4},\frac{k^2}{8}\right).
-\]
-抛物线 $y=2x^2$ 的导数为 $y'=4x$,因此在点 $N$ 处的切线斜率为
-\[
-4\times\frac{k}{4}=k.
-\]
-而 $AB$ 的斜率为 $k$,故切线与 $AB$ 平行。
-
-\medskip
-(II) 假设存在实数 $k$ 使 $\vec{NA}\cdot\vec{NB}=0$。
-
-由
-\[
-\vec{NA}=\left(x_1-\frac{k}{4},\,2x_1^2-\frac{k^2}{8}\right),
-\quad
-\vec{NB}=\left(x_2-\frac{k}{4},\,2x_2^2-\frac{k^2}{8}\right),
-\]
-得
-\begin{align*}
-\vec{NA}\cdot\vec{NB}
-&=(x_1-\tfrac{k}{4})(x_2-\tfrac{k}{4})
-+(2x_1^2-\tfrac{k^2}{8})(2x_2^2-\tfrac{k^2}{8}) \\
-&=\left(x_1x_2-\frac{k}{4}(x_1+x_2)+\frac{k^2}{16}\right)
-\left(1+4x_1x_2+k(x_1+x_2)+\frac{k^2}{4}\right).
-\end{align*}
-代入
-\[
-x_1+x_2=\frac{k}{2},\quad x_1x_2=-1,
-\]
-得
-\[
-\vec{NA}\cdot\vec{NB}
-=\left(-1-\frac{k^2}{16}\right)\left(-3+\frac{3}{4}k^2\right).
-\]
-由于 $-1-\frac{k^2}{16}\neq0$,故
-\[
--3+\frac{3}{4}k^2=0,
-\]
-解得
-\[
-k=\pm2.
-\]
-因此存在实数 $k=\pm2$,使 $\vec{NA}\cdot\vec{NB}=0$。
-\end{solution}
-
 
     \question 点 \(A(-1,1)\),\(B,C\) 在双曲线 \(x^{2}-y^{2}=1\) 上,且 \(\triangle ABC\) 为正三角形。求其面积。  
     \begin{solution}
