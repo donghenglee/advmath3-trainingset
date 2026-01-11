@@ -9846,7 +9846,7 @@ B(3k,3t).
         \[
         f'(p) = \frac{2(p^2 + 1)^2(p^2 - 2)}{p^5}
         \]
-        令 $f'(p) = 0$，得 $p^2 = 2$。此时 $|PQ|^2$ 取得最小值$\dfrac{16(2 + 1)^3}{9 \cdot 2^2} = 12$, 因此$PQ$ 的最小值为 $\sqrt{12} = 2\sqrt{3}$。
+        令 $f'(p) = 0$,得 $p^2 = 2$。此时 $|PQ|^2$ 取得最小值$\dfrac{16(2 + 1)^3}{9 \cdot 2^2} = 12$, 因此$PQ$ 的最小值为 $\sqrt{12} = 2\sqrt{3}$。
     \end{solution}
 
     \question 已知抛物线 $$E: x^{2} = 2 p y \;(p > 0)$$ 的焦点为 $F$,点 $P(m,n)\; (m \neq 0)$ 在 $E$ 上,过点 $P$ 作抛物线的切线 $l$,直线 $l$ 与椭圆 $$C: \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1\; (a > b > 0)$$ 交于两不同点 $A, B$,记线段 $AB$ 的中点为 $D$。设直线 $OD$（$O$ 为原点）与直线 $y = -\dfrac{p b^{2}}{a^{2}}$ 交于点 $Q$。
@@ -10309,213 +10309,122 @@ B(3k,3t).
     \end{solution}
 
     \question 已知 $\triangle ABC$ 的顶点 $A,B$ 在椭圆
-\[
-\frac{x^2}{4}+\frac{y^2}{3}=1
-\]
-上,点 $C$ 在直线 $l:y=x+2$ 上,且 $AB\parallel l$。
+    \[
+    \frac{x^2}{4}+\frac{y^2}{3}=1
+    \]
+    上,点 $C$ 在直线 $l:y=x+2$ 上,且 $AB\parallel l$。
+    \begin{parts}
+    \part 若 $AB$ 通过坐标原点 $O$ 时,求 $AB$ 的长及 $\triangle ABC$ 的面积；
+    \begin{solution}
+        设 $A,B$ 两点坐标分别为 $(x_1,y_1),(x_2,y_2)$,已知 $AB\parallel l$,且 $AB$ 经过原点 $O(0,0)$,
+        故 $AB$ 直线方程为$y=x$,与椭圆方程
+        \[
+        \frac{x^2}{4}+\frac{y^2}{3}=1
+        \]
+        联立解得$x=\pm1$,于是
+        \[
+        AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
+        =\sqrt{2}\,|x_1-x_2|=2\sqrt{2}
+        \]
+        又 $AB$ 上的高等于原点到直线 $l:y=x+2$ 的距离,
+        故
+        \[
+        [\triangle ABC]=\frac{1}{2}\cdot 2\sqrt{2}\cdot \frac{|2|}{\sqrt{2}}=2
+        \]
+    \end{solution}
+    \part 若 $\angle ABC=90^\circ$ 且斜边 $AC$ 的长最大时,求 $AB$ 所在直线的方程。
+    \begin{solution}
+        设 $AB$ 所在直线的方程为$y = x + c $,将其代入方程 $x^2 + 3y^2 = 4$,整理得
+        \[ 
+        4x^2 + 6cx + 3c^2 - 4 = 0 
+        \]
+        因为 $A, B$ 在椭圆上,故判别式满足
+        \[ 
+        \Delta = (6c)^2 - 4 \cdot 4 \cdot (3c^2 - 4) = 64 - 12c^2 > 0 \Rightarrow c^2 < \frac{16}{3}
+        \]
+        设 $A, B$ 两点的坐标分别为 $(x_1, y_1), (x_2, y_2)$,由韦达定理得
+        \[ 
+        x_1 + x_2 = -\frac{3c}{2}, \quad x_1x_2 = \frac{3c^2 - 4}{4} 
+        \]
+        于是线段 $AB$ 的长度平方为
+        \[ 
+        AB^2 = 2(x_1 - x_2)^2 = 2\left[(x_1 + x_2)^2 - 4x_1x_2\right] = \frac{32 - 3c^2}{2} 
+        \]
+        点 $B$ 到直线 $l: y = x + 2$ 的距离 $|BC|$ 为
+        \[ 
+        |BC| = \frac{|2 - c|}{\sqrt{2}}
+        \]
+        因为 $\angle ABC = 90^\circ$,由毕氏定理,
+        \[ 
+        AC^2 = AB^2 + BC^2 = \frac{32 - 3c^2}{2}  + \frac{(2 - c)^2}{2} = -(c + 1)^2 + 19
+        \]
+        当 $c = -1$ 时,$AC^2$ 取得最大值 $19$,此时 $c^2 = 1 < \frac{16}{3}$,符合判别式条件,因此$AB$ 所在直线的方程为：
+        \[ 
+        y = x - 1 
+        \]
+    \end{solution}
+    \end{parts}
 
-(I) 当 $AB$ 边通过坐标原点 $O$ 时,求 $AB$ 的长及 $\triangle ABC$ 的面积；
-
-(II) 当 $\angle ABC=90^\circ$,且斜边 $AC$ 的长最大时,求 $AB$ 所在直线的方程。
-
-\begin{solution}
-
-(I) 因为 $AB\parallel l$,而直线 $l$ 的斜率为 $1$,且 $AB$ 经过原点 $O(0,0)$,
-故 $AB$ 所在直线的方程为
-\[
-y=x.
-\]
-
-设 $A,B$ 两点坐标分别为 $(x_1,y_1),(x_2,y_2)$。
-将 $y=x$ 代入椭圆方程
-\[
-\frac{x^2}{4}+\frac{y^2}{3}=1
-\]
-得
-\[
-\frac{x^2}{4}+\frac{x^2}{3}=1,
-\]
-即
-\[
-x^2=1,
-\]
-从而 $x=\pm1$。
-
-于是
-\[
-|AB|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
-=\sqrt{2}\,|x_1-x_2|=2\sqrt{2}.
-\]
-
-又因为 $AB$ 上的高等于原点到直线 $l:y=x+2$ 的距离,
-故
-\[
-h=\frac{|2|}{\sqrt{2}}=\sqrt{2}.
-\]
-因此
-\[
-S_{\triangle ABC}
-=\frac{1}{2}|AB|\cdot h
-=\frac{1}{2}\cdot 2\sqrt{2}\cdot \sqrt{2}
-=2.
-\]
-
-(II) 设 $AB$ 所在直线的方程为
-\[
-y=x+m.
-\]
-将其代入椭圆方程
-\[
-\frac{x^2}{4}+\frac{y^2}{3}=1
-\]
-得
-\[
-x^2+3(x+m)^2=4,
-\]
-即
-\[
-4x^2+6mx+3m^2-4=0.
-\]
-
-因为 $A,B$ 在椭圆上,故判别式
-\[
-\Delta=36m^2-16(3m^2-4)=-12m^2+64>0.
-\]
-
-设 $A,B$ 两点坐标分别为 $(x_1,y_1),(x_2,y_2)$,
-则
-\[
-x_1+x_2=-\frac{3m}{2},\quad
-x_1x_2=\frac{3m^2-4}{4}.
-\]
-于是
-\[
-|AB|
-=\sqrt{2}|x_1-x_2|
-=\frac{\sqrt{32-6m^2}}{2}.
-\]
-
-又因为 $\angle ABC=90^\circ$,
-故
-\[
-|AC|^2=|AB|^2+|BC|^2.
-\]
-点 $B$ 到直线 $l:y=x+2$ 的距离为
-\[
-|BC|=\frac{|2-m|}{\sqrt{2}}.
-\]
-从而
-\[
-|AC|^2
-=\frac{32-6m^2}{4}+\frac{(2-m)^2}{2}
-=-m^2-2m+10
-=-(m+1)^2+11.
-\]
-
-当 $m=-1$ 时,$|AC|^2$ 取得最大值,
-且此时 $\Delta>0$,条件满足。
-因此 $AB$ 所在直线的方程为
-\[
-y=x-1.
-\]
-
-\end{solution}
-
-\question 14.（四川 22）（本小题满分 14 分）
-
-设椭圆
-\[
-\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1\ (a>b>0)
-\]
-的左右焦点分别为 $F_{1},F_{2}$,离心率
-\[
-e=\frac{\sqrt{2}}{2},
-\]
-点 $F_{2}$ 到右准线 $l$ 的距离为 $\sqrt{2}$。
-
-(1) 求 $a,b$ 的值；
-
-(2) 设 $M,N$ 是 $l$ 上的两个动点,且
-\[
-\overrightarrow{F_{1}M}\cdot\overrightarrow{F_{2}N}=0,
-\]
-证明：当 $|MN|$ 取最小值时,
-\[
-\overrightarrow{F_{1}F_{2}}+\overrightarrow{F_{1}M}+\overrightarrow{F_{2}N}=\vec{0}.
-\]
-
-\begin{solution}
-(1) 由离心率定义
-\[
-e=\frac{c}{a}=\frac{\sqrt{2}}{2},
-\]
-又点 $F_{2}$ 到右准线 $l$ 的距离
-\[
-d=\frac{a}{e}-c=\sqrt{2},
-\]
-由题设得
-\[
-\begin{cases}
-\frac{c}{a}=\frac{\sqrt{2}}{2},\\
-\frac{a}{e}-c=\sqrt{2}.
-\end{cases}
-\]
-解得
-\[
-c=\sqrt{2},\ a=2.
-\]
-又
-\[
-b^{2}=a^{2}-c^{2}=4-2=2,
-\]
-故
-\[
-b=\sqrt{2}.
-\]
-
-(2) 由 $c=\sqrt{2},a=2$,可得
-\[
-F_{1}(-\sqrt{2},0),\quad F_{2}(\sqrt{2},0),
-\]
-右准线 $l$ 的方程为
-\[
-x=2\sqrt{2}.
-\]
-设
-\[
-M(2\sqrt{2},y_{1}),\quad N(2\sqrt{2},y_{2}).
-\]
-由
-\[
-\overrightarrow{F_{1}M}\cdot\overrightarrow{F_{2}N}=0
-\]
-得
-\[
-(2\sqrt{2}+\sqrt{2},y_{1})\cdot(2\sqrt{2}-\sqrt{2},y_{2})=0,
-\]
-即
-\[
-y_{1}y_{2}=-6,
-\]
-从而
-\[
-y_{2}=-\frac{6}{y_{1}}.
-\]
-于是
-\[
-|MN|=|y_{1}-y_{2}|=\left|y_{1}+\frac{6}{y_{1}}\right|\ge 2\sqrt{6}.
-\]
-当且仅当 $y_{1}=\pm\sqrt{6}$ 时取等号,此时 $y_{2}=-y_{1}$。
-
-此时
-\[
-\overrightarrow{F_{1}F_{2}}+\overrightarrow{F_{1}M}+\overrightarrow{F_{2}N}
-=(-2\sqrt{2},0)+(\sqrt{2},y_{1})+(\sqrt{2},y_{2})
-=(0,y_{1}+y_{2})
-=\vec{0}.
-\]
-证毕。
-\end{solution}
+    \question 设椭圆
+    \[
+    \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1\ (a>b>0)
+    \]
+    的左右焦点分别为 $F_{1},F_{2}$,离心率
+    \[
+    e=\frac{\sqrt{2}}{2},
+    \]
+    点 $F_{2}$ 到右准线 $l$ 的距离为 $\sqrt{2}$。
+    \begin{parts}
+    \part 求 $a,b$ 的值；
+    \begin{solution}
+        由离心率定义
+        \[
+        e=\frac{c}{a}=\frac{\sqrt{2}}{2}
+        \]
+        又点 $F_{2}$ 到右准线 $l$ 的距离为
+        \[
+        d=\frac{a}{e}-c=\sqrt{2}
+        \]
+        联立解得
+        \[
+        a=2,c=\sqrt{2}
+        \]
+        又
+        \[
+        b^{2}=\sqrt{a^{2}-c^{2}}=\sqrt{2}
+        \]
+    \end{solution}
+    \part 设 $M,N$ 是 $l$ 上的两个动点,且
+    \[
+    \overrightarrow{F_{1}M}\cdot\overrightarrow{F_{2}N}=0,
+    \]
+    证明当 $MN$ 取最小值时,
+    \[
+    \overrightarrow{F_{2}F_{1}}+\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N}=\vec{0}.
+    \]
+    \begin{solution}
+        由 $c=\sqrt{2},a=2$可得$F_{1}(-\sqrt{2},0), F_{2}(\sqrt{2},0)$,右准线 $l$ 的方程为
+        \[
+        x=2\sqrt{2}
+        \]
+        设$M(2\sqrt{2},y_{1}), N(2\sqrt{2},y_{2})$,由$\overrightarrow{F_{1}M}\cdot\overrightarrow{F_{2}N}=0$得
+        \[
+        (2\sqrt{2}+\sqrt{2},y_{1})\cdot(2\sqrt{2}-\sqrt{2},y_{2})=0 \Rightarrow y_1y_2=-6 \Rightarrow y_{2}=-\frac{6}{y_{1}}
+        \]
+        于是由AM-GM不等式,
+        \[
+        MN=|y_{1}-y_{2}|=\left|y_{1}+\frac{6}{y_{1}}\right|\ge 2\sqrt{6}
+        \]
+        当且仅当 $y_{1}=\pm\sqrt{6}$ 时取等号,即 $y_{2}=-y_{1}$,此时
+        \[
+        \overrightarrow{F_{2}F_{1}}+\overrightarrow{F_{2}M}+\overrightarrow{F_{2}N}
+        =(2\sqrt{2},0)+(-\sqrt{2},y_{1})+(-\sqrt{2},y_{2})
+        =(0,y_{1}+y_{2})
+        =\vec{0}.
+        \]
+        证毕。
+    \end{solution}
+    \end{parts}
 
     \question 小何在打篮球时发现地面上的篮球在灯光照射下在地面形成的影子是一个椭圆, 并观察到地面与篮球接触点正是椭圆的焦点。如图,已知篮球半径为 $1$,灯源 $P$ 离地高度为 $4$,其正下方为点 $A$, 地面上椭圆右顶点与点 $A$ 的水平距离为 $3$,求该椭圆的离心率 $e$。
     \begin{figure}[H]
@@ -10585,448 +10494,387 @@ y_{2}=-\frac{6}{y_{1}}.
         \]
     \end{solution}
 
-    9. (辽宁 21) (本小题满分 12分)
-
-在平面直角坐标系 $xOy$ 中,两点到点 $(0, -\sqrt{3})$、$(0, \sqrt{3})$ 的距离之和等于 4,设点 $P$ 的轨迹为 $C$。
-
-(I) 写出 $C$ 的方程；
-
-(II) 设直线 $y = kx + 1$ 与 $C$ 交于 $A, B$ 两点,求 $k$ 使得 $\vec{OA} \perp \vec{OB}$,并求此时 $\frac{|AB|}{\sqrt{2}}$ 的值。
-
-\begin{solution}
-
-(I) 由题意,点 $P$ 的轨迹为以 $(0,-\sqrt{3})$, $(0,\sqrt{3})$ 为焦点,长轴 $2a=4$ 的椭圆,故 $a=2$。焦距 $c = \sqrt{3}$,短半轴 $b$ 满足
-\[
-b^2 = a^2 - c^2 = 4 - 3 = 1.
-\]
-
-因此椭圆 $C$ 的方程为
-\[
-\frac{x^2}{1} + \frac{y^2}{4} = 1 \implies x^2 + \frac{y^2}{4} = 1.
-\]
-
-(II) 设 $A(x_1, y_1)$, $B(x_2, y_2)$, 满足
-\[
-\begin{cases}
-x^2 + \frac{y^2}{4} = 1,\\
-y = kx + 1.
-\end{cases}
-\]
-
-代入 $y$ 得
-\[
-x^2 + \frac{(kx + 1)^2}{4} = 1 \implies (k^2 + 4)x^2 + 2kx - 3 = 0.
-\]
-
-设 $x_1, x_2$ 为该二次方程根,则
-\[
-x_1 + x_2 = -\frac{2k}{k^2 + 4},\quad x_1 x_2 = -\frac{3}{k^2 + 4}.
-\]
-
-$\vec{OA} \perp \vec{OB}$ 等价于 $x_1 x_2 + y_1 y_2 = 0$,而 $y_1 y_2 = (kx_1+1)(kx_2+1) = k^2 x_1 x_2 + k(x_1+x_2) + 1$,所以
-\[
-x_1x_2 + y_1y_2 = (k^2+1)x_1 x_2 + k(x_1+x_2) + 1 = (k^2+1)\left(-\frac{3}{k^2+4}\right) + k\left(-\frac{2k}{k^2+4}\right) + 1 = \frac{-4k^2 + 1}{k^2 + 4}.
-\]
-
-令其等于 0 得 $-4k^2 + 1 = 0 \implies k = \pm \frac{1}{2}$。
-
-此时
-\[
-x_1 + x_2 = -\frac{2(\pm 1/2)}{(1/2)^2 + 4} = \mp \frac{1}{\frac{17}{4}} = \mp \frac{4}{17},\quad x_1 x_2 = -\frac{3}{(1/2)^2 + 4} = -\frac{3}{\frac{17}{4}} = -\frac{12}{17}.
-\]
-
-直线距离公式得
-\[
-x_2 - x_1 = \sqrt{(x_1 + x_2)^2 - 4 x_1 x_2} = \sqrt{\frac{16}{289} + \frac{48}{17}} = \sqrt{\frac{16 + 816}{289}} = \sqrt{\frac{832}{289}} = \frac{8\sqrt{13}}{17}.
-\]
-
-直线斜率 $k = \frac{1}{2}$ 时
-\[
-|AB| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \sqrt{(1+k^2)(x_2-x_1)^2} = \sqrt{\frac{5}{4}} \cdot \frac{8\sqrt{13}}{17} = \frac{4\sqrt{65}}{17}.
-\]
-
-因此
-\[
-\frac{|AB|}{\sqrt{2}} = \frac{4\sqrt{65}}{17\sqrt{2}}.
-\]
-
-\end{solution}
-
-
-\question 11.（全国 II 22）（本小题满分 12 分）
-
-设椭圆中心在坐标原点,$A(2,0)$,$B(0,1)$ 是它的两个顶点,直线 $y=kx\,(k>0)$ 与 $AB$ 相交于点 $D$,与椭圆相交于 $E,F$ 两点。
-
-(I) 若 $\overrightarrow{ED}=6\overrightarrow{DF}$,求 $k$ 的值；
-
-(II) 求四边形 $AEBF$ 面积的最大值。
-
-\begin{solution}
-(I) 由题意,椭圆的方程为
-\[
-\frac{x^2}{4}+y^2=1.
-\]
-直线 $AB$ 的方程为
-\[
-x+2y=2,
-\]
-直线 $EF$ 的方程为
-\[
-y=kx\ (k>0).
-\]
-
-设 $D(x_0,kx_0)$,$E(x_1,kx_1)$,$F(x_2,kx_2)$,且 $x_1<x_2$。
-由
-\[
-\frac{x^2}{4}+k^2x^2=1
-\]
-得
-\[
-(1+4k^2)x^2=4,
-\]
-于是
-\[
-x_2=-x_1=\frac{2}{\sqrt{1+4k^2}}.\tag{1}
-\]
-
-由 $\overrightarrow{ED}=6\overrightarrow{DF}$,得
-\[
-x_0-x_1=6(x_2-x_0),
-\]
-从而
-\[
-x_0=\frac{1}{7}(6x_2+x_1)=\frac{5}{7}x_2=\frac{10}{7\sqrt{1+4k^2}}.
-\]
-
-又因 $D$ 在 $AB$ 上,
-\[
-x_0+2kx_0=2,
-\]
-即
-\[
-x_0=\frac{2}{1+2k}.
-\]
-于是
-\[
-\frac{2}{1+2k}=\frac{10}{7\sqrt{1+4k^2}},
-\]
-化简得
-\[
-24k^2-25k+6=0,
-\]
-解得
-\[
-k=\frac{2}{3}\ \text{或}\ k=\frac{3}{8}.
-\]
-
-(II) 由(1)式及点到直线距离公式,点 $E,F$ 到直线 $AB$ 的距离分别为
-\[
-h_1=\frac{|x_1+2kx_1-2|}{\sqrt{5}}
-=\frac{2(1+2k-\sqrt{1+4k^2})}{\sqrt{5(1+4k^2)}},
-\]
-\[
-h_2=\frac{|x_2+2kx_2-2|}{\sqrt{5}}
-=\frac{2(1+2k+\sqrt{1+4k^2})}{\sqrt{5(1+4k^2)}}.
-\]
-
-又
-\[
-|AB|=\sqrt{2^2+1^2}=\sqrt{5},
-\]
-所以四边形 $AEBF$ 的面积为
-\[
-S=\frac{1}{2}|AB|(h_1+h_2)
-=\frac{4(1+2k)}{\sqrt{1+4k^2}}
-=2\sqrt{1+\frac{4k}{1+4k^2}}
-\le 2\sqrt{2}.
-\]
-当 $k=\frac{1}{2}$ 时取等号。
-
-因此,四边形 $AEBF$ 的最大面积为
-\[
-2\sqrt{2}.
-\]
-\end{solution}
-
-
-
-    \question
-3．（福建22）（本小题满分14分）
-
-如图,椭圆 $C: \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ $(a>b>0)$ 的一个焦点为 $F(1,0)$,且椭圆过点 $(2,0)$。
-
-(I) 求椭圆 $C$ 的方程；
-
-(II) 若 $AB$ 为垂直于 $x$ 轴的弦,直线 $l: x=4$ 与 $x$ 轴交于点 $N$,直线 $AF$ 与 $BN$ 交于点 $M$。
-
-(i) 证：点 $M$ 恒在椭圆 $C$ 上；
-
-(ii) 求 $\triangle AMN$ 面积的最大值。
-
-\begin{solution}
-
-(I) 由题意,椭圆的半长轴 $a=2$,焦距 $c=1$,则
-\[
-b^2 = a^2 - c^2 = 4 - 1 = 3.
-\]
-因此椭圆方程为
-\[
-\frac{x^2}{4} + \frac{y^2}{3} = 1.
-\]
-
-(II)(i) 设 $A(m,n)$,则 $B(m,-n)$（$n\ne 0$）,且满足椭圆方程
-\[
-\frac{m^2}{4} + \frac{n^2}{3} = 1. \tag{1}
-\]
-
-直线 $AF$ 方程为
-\[
-n(x-1) - (m-1)y = 0, \tag{2}
-\]
-直线 $BN$ 方程为
-\[
-n(x-4) - (m-4)y = 0. \tag{3}
-\]
-
-设 $M(x_0,y_0)$ 为交点,则由 (2),(3) 得
-\[
-x_0 = \frac{5m-8}{2m-5},\quad y_0 = \frac{3n}{2m-5}.
-\]
-
-代入椭圆方程检验：
-\[
-\frac{x_0^2}{4} + \frac{y_0^2}{3} 
-= \frac{(5m-8)^2}{4(2m-5)^2} + \frac{9n^2}{(2m-5)^2}
-= \frac{(5m-8)^2 + 36 - 9m^2}{4(2m-5)^2} 
-= \frac{16m^2 - 80m + 100}{4(2m-5)^2} 
-= \frac{4(4m^2 - 20m +25)}{4(2m-5)^2} 
-= 1.
-\]
-
-因此点 $M$ 恒在椭圆 $C$ 上。
-
-(ii) 设 $AM$ 的方程为 $x = t y + 1$,代入椭圆方程：
-\[
-\frac{x^2}{4} + \frac{y^2}{3} = 1 \implies (3t^2+4)y^2 + 6t y - 9 = 0.
-\]
-
-设 $y_1, y_2$ 为方程根,则
-\[
-y_1 + y_2 = \frac{-6t}{3t^2+4},\quad y_1y_2 = \frac{-9}{3t^2+4}.
-\]
-
-于是
-\[
-|y_1 - y_2| = \sqrt{(y_1+y_2)^2 - 4y_1y_2} = \frac{4\sqrt{3}\sqrt{3t^2+3}}{3t^2+4}.
-\]
-
-令 $3t^2+4 = \lambda \ (\lambda\ge 4)$,得
-\[
-|y_1-y_2| = 4\sqrt{3} \sqrt{\frac{\lambda-1}{\lambda^2}}
-= 4\sqrt{3} \sqrt{-\left(\frac{1}{\lambda}-\frac{1}{2}\right)^2 + \frac{1}{4}}.
-\]
-
-当 $\lambda=4$,即 $t=0$ 时,$|y_1-y_2|$ 取得最大值
-\[
-|y_1-y_2|_{\max} = 3.
-\]
-
-此时
-\[
-S_{\triangle AMN} = \frac{1}{2}|FN|\,|y_1-y_2| = \frac{1}{2}\cdot |4-1|\cdot 3 = \frac{9}{2}.
-\]
-
-又解:(II) (i) 由题意得 $F(1, 0), N(4, 0)$。
-
-设 $A(m, n)$,则 $B(m, -n)$ $(n \neq 0)$,满足椭圆方程
-\[
-\frac{m^2}{4} + \frac{n^2}{3} = 1. \tag{1}
-\]
-
-直线 $AF$ 与 $BN$ 的方程分别为：
-\[
-n(x-1) - (m-1)y = 0, \tag{2}
-\]
-\[
-n(x-4) - (m-4)y = 0. \tag{3}
-\]
-
-由 (2),(3) 可得交点 $M(x,y)$：
-\[
-x \ne \frac{5}{2} \implies m = \frac{5x-8}{2x-5},\quad n = \frac{3y}{2x-5}. \tag{4}
-\]
-
-将 (4) 代入 (1) 得
-\[
-\frac{x^2}{4} + \frac{y^2}{3} = 1, \quad y \ne 0.
-\]
-
-当 $x = \frac{5}{2}$ 时,由 (2),(3) 得
-\[
-\begin{cases}
-\frac{3}{2} n - (m-1)y = 0 \\
--\frac{3}{2} n + (m+4)y = 0
-\end{cases}
-\implies n=0,\, y=0,
-\]
-与 $n \ne 0$ 矛盾。
-
-因此点 $M$ 的轨迹方程为
-\[
-\frac{x^2}{4} + \frac{y^2}{3} = 1, \quad y \ne 0,
-\]
-即点 $M$ 恒在椭圆 $C$ 上。
-
-(ii) 面积最大值同解法一。
-
-\end{solution}
-
-\question
-1.（安徽22）（本小题满分14分）
-
-设椭圆
-\[
-C:\ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1\ (a>b>0),
-\]
-其相应于焦点 $F(2,0)$ 的准线方程为 $x=4$。
-
-(I) 求椭圆 $C$ 的方程；
-
-(II) 已知过点 $F_1(-2,0)$、倾斜角为 $\theta$ 的直线交椭圆 $C$ 于 $A,B$ 两点,证明
-\[
-|AB|=\frac{4\sqrt{2}}{2-\cos^2\theta};
-\]
-
-(III) 过点 $F_1(-2,0)$ 作两条互相垂直的直线分别交椭圆 $C$ 于 $A,B$ 和 $D,E$,求 $|AB|+|DE|$ 的最小值。
-
-\begin{solution}
-
-(I) 由题意知椭圆的右焦点为 $F(2,0)$,其对应准线为 $x=4$,
-故椭圆的离心率
-\[
-e=\frac{2}{4}=\frac{1}{2}.
-\]
-又椭圆的焦距为 $2c=4$,得 $c=2$,
-于是
-\[
-e=\frac{c}{a}=\frac{1}{2},
-\]
-从而 $a=4$。
-
-由 $c^2=a^2-b^2$ 得
-\[
-b^2=a^2-c^2=16-4=12.
-\]
-因此椭圆 $C$ 的方程为
-\[
-\frac{x^2}{16}+\frac{y^2}{12}=1,
-\]
-即
-\[
-x^2+ \frac{4}{3}y^2=16,
-\]
-或
-\[
-x^2+2y^2=8.
-\]
-
-(II) 由 (I) 知 $F_1(-2,0)$ 为椭圆 $C$ 的左焦点,离心率
-\[
-e=\frac{\sqrt{2}}{2},
-\]
-左准线方程为 $x=-4$。
-
-设直线 $AB$ 的倾斜角为 $\theta$,作 $AA_1\perp x=-4$,$BB_1\perp x=-4$。
-由椭圆的定义,对点 $A$ 有
-\[
-|AF_1|=e|AA_1|.
-\]
-由几何关系可得
-\[
-|AA_1|=|F_1H|+|AF_1|\cos\theta=2+|AF_1|\cos\theta.
-\]
-于是
-\[
-|AF_1|=\frac{\sqrt{2}}{2}\bigl(2+|AF_1|\cos\theta\bigr),
-\]
-解得
-\[
-|AF_1|=\frac{2}{\sqrt{2}-\cos\theta}.
-\]
-同理
-\[
-|BF_1|=\frac{2}{\sqrt{2}+\cos\theta}.
-\]
-因此
-\[
-|AB|=|AF_1|+|BF_1|
-=\frac{2}{\sqrt{2}-\cos\theta}+\frac{2}{\sqrt{2}+\cos\theta}
-=\frac{4\sqrt{2}}{2-\cos^2\theta}.
-\]
-
-(III) 设 $AB$ 的倾斜角为 $\theta$,则 $DE\perp AB$,
-其倾斜角为 $\theta+\frac{\pi}{2}$。
-
-由 (II) 可得
-\[
-|AB|=\frac{4\sqrt{2}}{2-\cos^2\theta},\quad
-|DE|=\frac{4\sqrt{2}}{2-\sin^2\theta}.
-\]
-于是
-\begin{align*}
-|AB|+|DE|
-&=\frac{4\sqrt{2}}{2-\cos^2\theta}+\frac{4\sqrt{2}}{2-\sin^2\theta} \\
-&=\frac{12\sqrt{2}}{2+\sin^2\theta\cos^2\theta}
-=\frac{12\sqrt{2}}{2+\frac{1}{4}\sin^2 2\theta}.
-\end{align*}
-
-当 $\sin^2 2\theta=1$,即 $\theta=\frac{\pi}{4}$ 或 $\frac{3\pi}{4}$ 时,
-$|AB|+|DE|$ 取得最小值
-\[
-|AB|+|DE|_{\min}=\frac{16\sqrt{2}}{3}.
-\]
-
-\end{solution}
-
-    \question 已知椭圆$$C: \frac{y^{2}}{a^{2}}+\frac{x^{2}}{b^{2}}=1,\ a>b>0$$的离心率为$\dfrac{1}{2}$,上下焦点为$F_{1},F_{2}$,右顶点为$D$;过$F_{1}$做垂直于$DF_{2}$的直线交椭圆$C$于$A,B$两点, 且$$|BD|-|AF_{1}|=\frac{8\sqrt{3}}{39},$$
+    \question 在平面直角坐标系中,两点到点 $(0, -\sqrt{3}),(0, \sqrt{3})$ 的距离之和等于 4,设点 $P$ 的轨迹为 $C$。
     \begin{parts}
-    \part 求$|AD|+|BD|$的值.
+    \part 写出 $C$ 的方程；
     \begin{solution}
-        由椭圆离心率可知$a:b:c=2:\sqrt{3}:1$,
-        则$$|F_{1}F_{2}|=|F_{1}D|=|F_{2}D|=2c=a$$
-        即$\triangle F_{1}F_{2}D$为等边三角形;因为$ AB\perp DF_{2}$, 直线$AB$过$F_{1}$
-        故直线$AB$垂直平分$DF_{2}$即
-        $$|AD|=|AF_{2}|, \ |BD|=|BF_{2}|$$
-        由椭圆定义$|BF_{1}|+|BF_{2}|=2a$, 则
-        $$|BD|-|AF_{1}|=|BF_{2}|-(|AB|-|BF_{1}|)=2a-|AB|=4c-|AB|=\frac{8\sqrt{3}}{39}$$
-        \textbf{解法一}:设$A(x_{1},y_{1}),B(x_{2},y_{2}),$
-        解得$$\begin{cases}
-        l_{AB}:y=-\sqrt{3}x+c\\ 
-        C:\dfrac{y^{2}}{4c^{2}}+\dfrac{x^{2}}{3c^{2}}=1
-        \end{cases}\Rightarrow13x^{2}-6\sqrt{3}cx-9c^{2}=0$$ 
+        据题意,所求轨迹方程式为
+        \[
+        \sqrt{x^2+(y+\sqrt{3})^2}+\sqrt{x^2+(y-\sqrt{3})^2}=4
+        \]
+        化简得
+        \[
+        x^2 + \frac{y^2}{4} = 1
+        \]
+    \end{solution}
+    \part 设直线 $y = kx + 1$ 与 $C$ 交于 $A, B$ 两点,求 $k$ 使得 $OA \perp OB$,并求此时 $AB$ 的长。
+    \begin{solution}
+        设 $A(x_1, y_1)$, $B(x_2, y_2)$, 满足
+        \[
+        x^2 + \frac{y^2}{4} = 1,\quad y = kx + 1
+        \]
+        联立得
+        \[
+        (k^2 + 4)x^2 + 2kx - 3 = 0
+        \]
         由韦达定理,
         \[
-        |AB| = \sqrt{1+(-\sqrt3)^2}|x_1-x_2| 
-        = 2\sqrt{(x_1+x_2)^2-4x_1x_2} 
-        = \frac{2}{13}\sqrt{108c^2+4\cdot 9 \cdot 13c^2} = \frac{48c}{13}
+        x_1 + x_2 = -\frac{2k}{k^2 + 4},\quad x_1 x_2 = -\frac{3}{k^2 + 4}.
         \]
-        所以 $$4c-|AB| = \frac{4c}{13} = \frac{8\sqrt{3}}{39}c \Rightarrow c = \frac{2\sqrt{3}}{3}\Rightarrow a=\frac{4\sqrt{3}}{3}, b=2$$
+        由于$OA \perp OB$ 等价于 $x_1 x_2 + y_1 y_2 = 0$,而 
+        \[
+        y_1 y_2 = (kx_1+1)(kx_2+1) = k^2 x_1 x_2 + k(x_1+x_2) + 1,
+        \]
+        所以
+        \[
+        x_1x_2 + y_1y_2 = (k^2+1)x_1 x_2 + k(x_1+x_2) + 1 = \frac{-4k^2 + 1}{k^2 + 4}
+        \]
+        所以当 $k = \pm \dfrac{1}{2}$时,有$x_1 x_2 + y_1 y_2 = 0$即$OA \perp OB$。且当 $k = \pm \dfrac{1}{2}$,
+        \[
+        x_1 + x_2 = \mp \frac{4}{17},\quad x_1 x_2 = -\frac{12}{17},
+        \]
+        于是
+        \begin{align*}
+        AB &= \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \\
+        &= \sqrt{(1+k^2)(x_2-x_1)^2} \\
+        &= \sqrt{(1+k^2)((x_2+x_1)^2-4x_1x_2)} \\
+        &= \sqrt{\frac{5}{4}\cdot\left(\frac{16}{289} + \frac{48}{17}\right)} \\
+        &= \frac{8\sqrt{13}}{17}
+        \end{align*}   
+    \end{solution}
+    \end{parts}
+
+    \question 设椭圆中心在坐标原点,$A(2,0),B(0,1)$ 是它的两个顶点,直线 $y=kx,k>0$ 与 $AB$ 相交于点 $D$,与椭圆相交于 $E,F$ 两点。
+    \begin{parts}
+    \part 若 $\overrightarrow{ED}=6\overrightarrow{DF}$,求 $k$ 的值；
+    \begin{solution}
+        由题意,椭圆方程为
+        \[
+        \frac{x^2}{4}+y^2=1.
+        \]
+        直线 $AB,EF$ 的方程分别为
+        \[
+        x+2y=2,\quad y=kx\ ,k>0
+        \]
+        设 $D(x_0,kx_0),E(x_1,kx_1),F(x_2,kx_2),x_1<x_2$,联立椭圆与$y=kx$,解得
+        \[
+        \frac{x^2}{4}+k^2x^2=1 \Rightarrow x_2=-x_1=\frac{2}{\sqrt{1+4k^2}} 
+        \]
+        由 $\overrightarrow{ED}=6\overrightarrow{DF}$,得$x_0-x_1=6(x_2-x_0)$,从而
+        \[
+        x_0=\frac{1}{7}(6x_2+x_1)=\frac{5}{7}x_2=\frac{10}{7\sqrt{1+4k^2}} \tag{1}
+        \]
+        又因 $D$ 在 $AB$ 上,
+        \[
+        x_0+2kx_0=2 \Rightarrow x_0=\frac{2}{1+2k} \tag{2}
+        \]
+        联立$(1),(2)$,解得
+        \[
+        24k^2-25k+6=0 \Rightarrow k=\frac{2}{3}\ \text{或}\ k=\frac{3}{8}
+        \]
+    \end{solution}
+    \part 求四边形 $AEBF$ 面积的最大值。
+    \begin{solution}
+        点 $E,F$ 到直线 $AB$ 的距离分别为
+        \[
+        h_1=\frac{|x_1+2kx_1-2|}{\sqrt{5}}
+        =\frac{2(1+2k-\sqrt{1+4k^2})}{\sqrt{5(1+4k^2)}},
+        \]
+        \[
+        h_2=\frac{|x_2+2kx_2-2|}{\sqrt{5}}
+        =\frac{2(1+2k+\sqrt{1+4k^2})}{\sqrt{5(1+4k^2)}}.
+        \]
+        又$AB=\sqrt{2^2+1^2}=\sqrt{5}$,四边形 $AEBF$ 的面积为
+        \[
+        [AEBF]=\frac{1}{2} AB (h_1+h_2)
+        =\frac{1}{2}\cdot \sqrt{5} \cdot \frac{4(1+2k)}{\sqrt{5(1+4k^2)}}
+        =\frac{2(1+2k)}{\sqrt{1+4k^2}}
+        =2\sqrt{1+\frac{4k}{1+4k^2}}
+        \]
+        由AM-GM不等式,
+        \[
+        \frac{1+4k^2}{4k}=\frac{1}{4k}+k \ge 1
+        \]
+        当 $k=\dfrac{1}{2}$ 时等号成立,此时四边形 $AEBF$ 面积取最大值$2\sqrt{2}$。
+    \end{solution}
+    \begin{solution}
+        已知 $BO=1, AO=2$,设 $y_1 = kx_1, y_2 = kx_2$,由$x_2=\dfrac{2}{\sqrt{1+4k^2}}$ 知 $x_2 > 0, y_2 = -y_1 > 0$,故四边形 $AEBF$ 面积为
+        \[ 
+        [AEBF] = [\triangle BEF] + [\triangle AEF] = x_2 + 2y_2 = \sqrt{(x_2 + 2y_2)^2}
+        \]
+        由柯西不等式,
+        \[ 
+        [AEBF] \le \sqrt{2(x_2^2 + 4y_2^2)} = 2\sqrt{2} 
+        \]
+        当 $x_2 = 2y_2$ 时,四边形 $AEBF$ 面积取得最大值 $2\sqrt{2}$。
+    \end{solution}
+    \end{parts}
+
+    \question 已知椭圆 
+    \[
+    C: \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1,\quad a>b>0,
+    \]
+    的一个焦点为 $F(1,0)$,且椭圆过点 $(2,0)$。
+    \begin{parts}
+    \part 求椭圆$C$的方程。
+    \begin{solution}
+        由题意,椭圆的半长轴 $a=2$,焦距 $c=1$,则$b^2 = a^2 - c^2 = 3$,因此椭圆方程为
+        \[
+        \frac{x^2}{4} + \frac{y^2}{3} = 1
+        \]
+    \end{solution}
+    \part 若 $AB$ 为垂直于 $x$ 轴的弦,直线 $l: x=4$ 与 $x$ 轴交于点 $N$,直线 $AF$ 与 $BN$ 交于点 $M$,试证点 $M$ 恒在椭圆 $C$ 上。
+    \begin{solution}
+        设 $A(m,n)$,则 $B(m,-n),n\ne 0$,且满足椭圆方程
+        \[
+        \frac{m^2}{4} + \frac{n^2}{3} = 1 \Rightarrow 4n^2=12-3m^2
+        \]
+        直线 $AF,BN$ 方程分别为
+        \[
+        n(x-1) - (m-1)y = 0, \quad n(x-4) - (m-4)y = 0 
+        \]
+        联立解得交点 $M(x_0,y_0)$
+        \[
+        x_0 = \frac{5m-8}{2m-5},\quad y_0 = \frac{3n}{2m-5}.
+        \]
+        由于
+        \[
+        \frac{x_0^2}{4} + \frac{y_0^2}{3} 
+        = \frac{(5m-8)^2}{4(2m-5)^2} + \frac{3n^2}{(2m-5)^2}
+        = \frac{(5m-8)^2 + 3(12-3m^2)}{4(2m-5)^2} 
+        = 1
+        \]
+        因此点 $M$ 恒在椭圆 $C$ 上。
+    \end{solution}
+    \begin{solution}
+        由题意得 $F(1, 0), N(4, 0)$,设 $A(m, n)$,则 $B(m, -n),n \neq 0$,满足椭圆方程
+        \[
+        \frac{m^2}{4} + \frac{n^2}{3} = 1 \tag{1}
+        \]
+        直线 $AF$ 与 $BN$ 的方程分别为
+        \[
+        n(x-1) - (m-1)y = 0, \quad n(x-4) - (m-4)y = 0 \tag{2}
+        \]
+        联立可得当$x \ne \dfrac{5}{2}$时,
+        \[
+        m = \frac{5x-8}{2x-5},\quad n = \frac{3y}{2x-5}
+        \]
+        代入 (1),整理得
+        \[
+        \frac{x^2}{4} + \frac{y^2}{3} = 1, \quad y \ne 0.
+        \]
+        而当 $x = \dfrac{5}{2}$ 时,由 (2) 得
+        \[
+        \begin{cases}
+        \dfrac{3}{2} n - (m-1)y = 0 \\[6pt]
+        -\dfrac{3}{2} n + (m+4)y = 0
+        \end{cases}
+        \Rightarrow n=0,\, y=0,
+        \]
+        与 $n \ne 0$ 矛盾,因此点 $M$ 的轨迹方程为
+        \[
+        \frac{x^2}{4} + \frac{y^2}{3} = 1, \quad y \ne 0,
+        \]
+        即点 $M$ 恒在椭圆 $C$ 上。
+    \end{solution}
+    \part 求 $\triangle AMN$ 面积的最大值。
+    \begin{solution}
+        设 $AM$ 的方程为 $x = t y + 1$,代入椭圆方程,化简得
+        \[
+        (3t^2+4)y^2 + 6t y - 9 = 0
+        \]
+        设 $A(x_1,y_1),M(x_2,y_2)$,由韦达定理,
+        \[
+        y_1 + y_2 = -\frac{6t}{3t^2+4},\quad y_1y_2 = -\frac{9}{3t^2+4}.
+        \]
+        于是
+        \[
+        |y_1 - y_2| = \sqrt{(y_1+y_2)^2 - 4y_1y_2} = \frac{4\sqrt{3}\sqrt{3t^2+3}}{3t^2+4}.
+        \]
+        令 $3t^2+4 = \lambda \ge 4$,得
+        \[
+        |y_1-y_2| = 4\sqrt{3} \sqrt{\frac{\lambda-1}{\lambda^2}}
+        = 4\sqrt{3} \sqrt{-\left(\frac{1}{\lambda}-\frac{1}{2}\right)^2 + \frac{1}{4}}.
+        \]
+        因为$\lambda \ge 4,0<\dfrac{1}{\lambda}\le\dfrac{1}{4}$,所以当$\dfrac{1}{\lambda}=\dfrac{1}{4}$即 $\lambda=4,t=0$ 时,$|y_1-y_2|$ 取得最大值 $3$,此时
+        \[
+        [\triangle AMN] = \frac{1}{2}FN |y_1-y_2| = \frac{3}{2}|4-1| = \frac{9}{2}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 设椭圆
+    \[
+    C: \frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\quad a>b>0,
+    \]
+    其相应于焦点 $F(2,0)$ 的准线方程为 $x=4$。
+    \begin{parts}
+    \part 求椭圆 $C$ 的方程。
+    \begin{solution}
+        由题意得,
+        \[
+        \begin{cases} 
+        c = 2 \\[3pt]
+        \dfrac{a^2}{c} = 4 \\[3pt]
+        a^2 = b^2 + c^2 
+        \end{cases}
+        \implies a^2 = 8,\; b^2 = 4 
+        \]
+        因此,椭圆 $C$ 的方程为 
+        \[
+        \frac{x^2}{8} + \frac{y^2}{4} = 1
+        \]
+    \end{solution}
+    \part 已知过点 $F_1(-2,0)$、倾斜角为 $\theta$ 的直线交椭圆 $C$ 于 $A,B$ 两点,证明
+    \[
+    AB=\frac{4\sqrt{2}}{2-\cos^2\theta};
+    \]
+    \begin{solution}
+        椭圆 $C$ 的左焦点为$F_1(-2,0)$,离心率$e=\dfrac{\sqrt{2}}{2}$,左准线方程为 $l:x=-4$。
+        
+        设直线 $AB$ 的倾斜角为 $\theta$,作 $AA_1\perp l$于$A_1,BB_1\perp l$于$B_1$,且$l$于$x$轴交于点$H$,由于 $A$ 在椭圆上,
+        \[
+        AF_1=\frac{\sqrt{2}}{2}AA_1=\frac{\sqrt{2}}{2}(F_1H+AF_1\cos\theta)=\sqrt{2}+\frac{\sqrt{2}}{2}AF_1\cos\theta
+        \]
+        可得
+        \[
+        AF_1=\frac{2}{\sqrt{2}-\cos\theta}
+        \]
+        同理
+        \[
+        BF_1=\frac{2}{\sqrt{2}+\cos\theta}
+        \]
+        因此
+        \[
+        AB=AF_1+BF_1=\frac{2}{\sqrt{2}-\cos\theta}+\frac{2}{\sqrt{2}+\cos\theta}=\frac{4\sqrt{2}}{2-\cos^2\theta}
+        \]
+    \end{solution}
+    \begin{solution}
+        当 $\theta \neq \dfrac{\pi}{2}$ 时,记 $k = \tan \theta$,则直线 $AB$ 的方程为$y = k(x+2)$,将其代入椭圆方程 $x^2 + 2y^2 = 8$,整理得
+        \[ 
+        (1+2k^2)x^2 + 8k^2x + 8(k^2-1) = 0 
+        \]
+        设 $A(x_1, y_1), B(x_2, y_2)$,由韦达定理得
+        \[ 
+        x_1 + x_2 = -\frac{8k^2}{1+2k^2}, \quad x_1x_2 = \frac{8(k^2-1)}{1+2k^2} 
+        \]
+        计算弦长$AB$,
+        \begin{align*}
+        AB &= \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} \\
+        &= \sqrt{(1+k^2)(x_1-x_2)^2} \\
+        &= \sqrt{(1+k^2)[(x_1+x_2)^2 - 4x_1x_2]} \\
+        &= \sqrt{(1+k^2)\left[\left(\frac{-8k^2}{1+2k^2}\right)^2 - \frac{32(k^2-1)}{1+2k^2}\right]} \\
+        &= \frac{4\sqrt{2}(1+k^2)}{1+2k^2}
+        \end{align*}
+        将 $k^2 = \tan^2 \theta$代入得
+        \[ 
+        AB = \frac{4\sqrt{2}}{2-\cos^2 \theta} \tag{1}
+        \]
+        当 $\theta = \dfrac{\pi}{2}$ 时,$AB = 2\sqrt{2}$,仍满足式(1),于是得证
+        \[ 
+        AB = \frac{4\sqrt{2}}{2-\cos^2 \theta} 
+        \]
+    \end{solution}
+    \part 过点 $F_1(-2,0)$ 作两条互相垂直的直线分别交椭圆 $C$ 于 $A,B$ 和 $D,E$,求 $AB+DE$ 的最小值。
+    \begin{solution}
+        因为 $AB\perp DE$,其倾斜角为 $\theta+\dfrac{\pi}{2}$,由 $(b)$ 可得
+        \[
+        AB=\frac{4\sqrt{2}}{2-\cos^2\theta},\quad
+        DE=\frac{4\sqrt{2}}{2-\sin^2\theta}.
+        \]
+        于是
+        \[
+        AB+DE
+        =\frac{4\sqrt{2}}{2-\cos^2\theta}+\frac{4\sqrt{2}}{2-\sin^2\theta} 
+        =\frac{12\sqrt{2}}{2+\sin^2\theta\cos^2\theta}
+        =\frac{12\sqrt{2}}{2+\frac{1}{4}\sin^2 2\theta}
+        \]
+        当 $\sin^2 2\theta=1$,即 $\theta=\dfrac{\pi}{4}$ 或 $\dfrac{3\pi}{4}$ 时,$\ AB+DE$ 取得最小值$\dfrac{16\sqrt{2}}{3}$。
+    \end{solution}
+    \end{parts}
+
+    \question 已知椭圆
+    \[
+    C: \frac{y^{2}}{a^{2}}+\frac{x^{2}}{b^{2}}=1,\quad a>b>0
+    \]
+    的离心率为 $\dfrac{1}{2}$,上下焦点为 $F_{1}, F_{2}$,右顶点为 $D$；过 $F_{1}$ 做垂直于 $DF_{2}$ 的直线交椭圆 $C$ 于 $A, B$ 两点,且
+    \[
+    BD - AF_{1} = \frac{8\sqrt{3}}{39}
+    \]
+    \begin{parts}
+    \part 求 $AD + BD$ 的值。
+    \begin{solution}
+        由椭圆离心率可知 $a:b:c = 2:\sqrt{3}:1$,则 $F_{1}F_{2} = F_{1}D = F_{2}D = 2c = a$,即 $\triangle F_{1}F_{2}D$ 为等边三角形；因为 $AB \perp DF_{2}$,且直线 $AB$ 过焦点 $F_{1}$,
+        故直线 $AB$ 垂直平分线段 $DF_{2}$,由此得
+        \[ 
+        AD = AF_{2}, \quad BD = BF_{2} 
+        \]
+        由椭圆定义知 $BF_{1} + BF_{2} = 2a$,则有
+        \[ 
+        BD - AF_{1} = BF_{2} - (AB - BF_{1}) = 2a - AB = 4c - AB = \frac{8\sqrt{3}}{39} 
+        \]
+        解法一：设 $A(x_{1}, y_{1}), B(x_{2}, y_{2})$,
+        \[ 
+        \begin{cases}
+        l_{AB}: y = -\sqrt{3}x + c \\ 
+        C: \dfrac{y^{2}}{4c^{2}} + \dfrac{x^{2}}{3c^{2}} = 1
+        \end{cases} \implies 13x^{2} - 6\sqrt{3}cx - 9c^{2} = 0 
+        \]
+        由韦达定理,
+        \[
+        AB = \sqrt{1+(-\sqrt{3})^2} \cdot \sqrt{(x_1+x_2)^2 - 4x_1x_2} 
+        = \frac{2}{13}\sqrt{108c^2 + 36 \cdot 13c^2} = \frac{48c}{13}
+        \]
+        由 
+        \[
+        4c - AB = \frac{4c}{13} = \frac{8\sqrt{3}}{39},
+        \]
+        解得 
+        \[
+        c = \frac{2\sqrt{3}}{3} \Rightarrow a = \frac{4\sqrt{3}}{3}, b = 2
+        \],
         故
-        $$|AD|+|BD| = |AF_2|+|BF_2| = 2a-|AF_1|+2a-|BF_1| = 4a-|AB| = \frac{112\sqrt{3}}{39}$$ 
+        \[ 
+        AD + BD = AF_2 + BF_2 = (2a - AF_1) + (2a - BF_1) = 4a - AB = \frac{112\sqrt{3}}{39} 
+        \]
     \end{solution}
     \begin{solution}
-        \textbf{解法二}: 由焦半径公式知 $$|AB| = \frac{2ab^2}{a^2-c^2\cos^2\theta} = \frac{4c \cdot 3c^2}{4c^2-\frac{3}{4}c^2} = \frac{48}{13}c$$ 
-        其中$\theta$ 为直线 $AB$ 与  $y$ 轴夹角,其余同解法一。
+        解法二：由焦半径公式可知 
+        \[ 
+        AB = \frac{2ab^2}{a^2 - c^2\cos^2\theta} = \frac{4c \cdot 3c^2}{4c^2 - c^2 \cdot \frac{3}{4}} = \frac{48}{13}c 
+        \]
+        其中 $\theta$ 为直线 $AB$ 与 $y$ 轴的夹角,其余步骤同解法一。
     \end{solution}
-    \part 过$A,B$做椭圆$C$的两条切线交于点$E$, 若$F_{1}E$交$x$轴于$P$, $F_{2}E$交$x$轴于$Q$, 求$|PQ|$的值.
+    \part 过 $A, B$ 做椭圆 $C$ 的两条切线交于点 $E$,若 $F_{1}E$ 交 $x$ 轴于 $P$,$F_{2}E$ 交 $x$ 轴于 $Q$,求线段 $PQ$ 的长度。
     \begin{solution}
-        由(a)知: 直线 $AB$ 方程为 $$y=-\sqrt{3}x+\frac{2\sqrt{3}}{3}$$椭圆 $C$ 方程为 $$\frac{3y^2}{16}+\frac{x^2}{4}=1$$ 且 $F_1(0,-\frac{2\sqrt{3}}{3}), F_2(0,\frac{2\sqrt{3}}{3})$;设 $E(x_0,y_0),$ 直线 $AB$ 的方程为$$\frac{3y_0}{16}y+\frac{x_0}{4}x=1$$ 即 $x_0=6, y_0=-\frac{8\sqrt{3}}{3};$
-        
-        直线 $EF_1$ 方程为 $y=x+\frac{2\sqrt{3}}{3}$, 令 $y=0$ 得 $x=-2$ 即 $P(-2,0);$
-        
-        直线 $EF_2$ 方程为 $y=\frac{5\sqrt{3}}{9}x-\frac{2\sqrt{3}}{3}$, 令 $y=0$ 得 $x=\dfrac{6}{5}$ 即 $Q(\frac{6}{5},0);$
-        
-        所以 $$|PQ| = \frac{6}{5}-(-2) = \frac{16}{5}$$ 
+        由 (a) 知直线 $AB$ 的方程为 
+        \[
+        y = -\sqrt{3}x + \frac{2\sqrt{3}}{3},
+        \]
+        且椭圆 $C$ 方程为 
+        \[
+        \frac{3y^2}{16} + \frac{x^2}{4} = 1,
+        \]
+        且焦点坐标为 $F_1(0, -\frac{2\sqrt{3}}{3}), F_2(0, \frac{2\sqrt{3}}{3})$。设 $E(x_0, y_0)$,则切点弦 $AB$ 的方程为 
+        \[
+        \frac{3y_0}{16}y + \frac{x_0}{4}x = 1
+        \]
+        对照直线 $AB$ 的方程,对应项系数成比例,解得 
+        \[
+        x_0 = 6, y_0 = -\frac{8\sqrt{3}}{3}
+        \]
+        直线 $EF_1$ 的方程为 
+        \[
+        y = x + \frac{2\sqrt{3}}{3},
+        \]
+        令 $y = 0$ 得 $x = -2$,即 $P(-2, 0)$；直线 $EF_2$ 的方程为 
+        \[
+        y = \frac{5\sqrt{3}}{9}x - \frac{2\sqrt{3}}{3},
+        \]
+        令 $y = 0$ 得 $x = \frac{6}{5}$,即 $Q(\frac{6}{5}, 0)$,所以线段 $PQ$ 的长度为
+        \[ 
+        PQ = \frac{6}{5} - (-2) = \frac{16}{5} 
+        \]
     \end{solution}
     \end{parts}
 
@@ -11129,7 +10977,10 @@ $|AB|+|DE|$ 取得最小值
     \begin{parts}
     \part 若$\tan \angle B_{1}PB_{2}=2 \tan \angle B_{1}QB_{2}$ ,求直线 $l$ 的方程;
     \begin{solution}
-        椭圆下顶点$B_{1}(0,-2)$,上顶点$B_{2}(0,2)$,直线 $l$ 斜率存在,设 $l$ 方程为 $$y=kx-2\sqrt{2}$$
+        椭圆下顶点$B_{1}(0,-2)$,上顶点$B_{2}(0,2)$,直线 $l$ 斜率存在,设 $l$ 方程为 
+        \[
+        y=kx-2\sqrt{2}
+        \]
         与椭圆方程
         \[
         \frac{x^{2}}{8}+\frac{y^{2}}{4}=1 
@@ -11138,9 +10989,12 @@ $|AB|+|DE|$ 取得最小值
         \[
         (1+2k^{2})x^{2}-8\sqrt{2}kx+8=0
         \]
-        则 $$\triangle=(8\sqrt{2}k)^{2}-32(1+2k^{2})>0 \Rightarrow k^{2}>\frac{1}{2}$$ 
-        设 $P(x_{1},y_{1}),Q(x_{2},y_{2}),$
-        则 \[
+        则 
+        \[
+        \triangle=(8\sqrt{2}k)^{2}-32(1+2k^{2})>0 \Rightarrow k^{2}>\frac{1}{2}
+        \]
+        设 $P(x_{1},y_{1}),Q(x_{2},y_{2})$,则 
+        \[
         x_{1}+x_{2}=\frac{8\sqrt{2}k}{1+2k^{2}}, \ x_{1}x_{2}=\frac{8}{1+2k^{2}}
         \]
         由点 $P,Q$ 在椭圆上知
@@ -11152,38 +11006,60 @@ $|AB|+|DE|$ 取得最小值
         \tan \angle B_{1}PB_{2}=\left|\frac{k_{PB_{1}}-k_{PB_{2}}}{1+k_{PB_{1}}k_{PB_{2}}}\right|=\left|\frac{\frac{y_{1}-(-2)}{x_{1}}-\frac{y_{1}-2}{x_{1}}}{1+\frac{y_{1}-(-2)}{x_{1}}\frac{y_{1}-2}{x_{1}}}\right|=\left|\frac{4x_{1}}{x_{1}^{2}+y_{1}^{2}-4}\right|=\left|\frac{4x_{1}}{x_{1}^{2}-\frac{1}{2}x_{1}^{2}}\right|=\left|\frac{8}{x_{1}}\right|
         \]
         同理$\tan \angle B_{1}QB_{2}=\dfrac{8}{|x_{2}|}$;由 $\tan \angle B_{1}PB_{2}=2 \tan \angle B_{1}QB_{2}$ ,得 $$\frac{8}{|x_{1}|}=2\cdot\frac{8}{|x_{2}|}$$
-        又 $x_{1}x_{2}=\dfrac{8}{1+2k^{2}}>0$,于是 $$x_{2}=2x_{1}\Rightarrow x_{1}+x_{2}=3x_1=\frac{8\sqrt{2}k}{1+2k^{2}}\Rightarrow x_{1}=\frac{8\sqrt{2}k}{3(1+2k^{2})}
-        $$
-        且\[
+        又 $x_{1}x_{2}=\dfrac{8}{1+2k^{2}}>0$,于是 
+        \[
+        x_{2}=2x_{1}\Rightarrow x_{1}+x_{2}=3x_1=\frac{8\sqrt{2}k}{1+2k^{2}}\Rightarrow x_{1}=\frac{8\sqrt{2}k}{3(1+2k^{2})}
+        \]
+        且
+        \[
         x_{2}=2x_{1}\Rightarrow x_{1}x_{2}=2x_1^2=\frac{16\sqrt{2}k}{3(1+2k^{2})}\Rightarrow x_{1}=\frac{8}{1+2k^{2}}
         \]
-        故$$32k^{2}=9(1+2k^{2})\Rightarrow k^{2}=\frac{9}{14}>\frac{1}{2}$$因此直线 $l$ 方程为 $$y=\frac{3\sqrt{14}}{14}x-2\sqrt{2}$$
+        故
+        \[
+        32k^{2}=9(1+2k^{2})\Rightarrow k^{2}=\frac{9}{14}>\frac{1}{2}
+        \]
+        因此直线 $l$ 方程为 
+        \[
+        y=\frac{3\sqrt{14}}{14}x-2\sqrt{2}
+        \]
     \end{solution}
     \part 设 $R$ 为直线 $B_{1}P$ 、 $B_{2}Q$ 的交点,求 ${AR}\cdot{B_{1}B_{2}}$ 的值.
     \begin{solution}
-        直线 $B_{1}P$ 方程为 $$y=\frac{y_{1}+2}{x_{1}}x-2$$ 直线 $B_{2}Q$ 方程为 $$y=\frac{y_{2}-2}{x_{2}}x+2$$
-        两式联立得 $$\frac{y+2}{y-2}=\frac{(y_{1}+2)x_{2}}{(y_{2}-2)x_{1}}=\frac{(kx_{1}-2\sqrt{2}+2)x_{2}}{(kx_{2}-2\sqrt{2}-2)x_{1}}$$
+        直线 $B_{1}P,B_{2}Q$ 方程分别为 
+        \[
+        y=\frac{y_{1}+2}{x_{1}}x-2,\quad y=\frac{y_{2}-2}{x_{2}}x+2
+        \]
+        两式联立得 
+        \[
+        \frac{y+2}{y-2}=\frac{(y_{1}+2)x_{2}}{(y_{2}-2)x_{1}}=\frac{(kx_{1}-2\sqrt{2}+2)x_{2}}{(kx_{2}-2\sqrt{2}-2)x_{1}}
+        \]
         因为 
         \begin{align*}
-            &(kx_{1}-2\sqrt{2}+2)x_{2}-(-3+2\sqrt{2})(kx_{2}-2\sqrt{2}-2)x_{1}\\
-            &=(4-2\sqrt{2})kx_{1}x_{2}+(-2\sqrt{2}+2)(x_{1}+x_{2})\\
-            &=(4-2\sqrt{2})k\cdot\frac{8}{1+2k^{2}}+(-2\sqrt{2}+2)\cdot\frac{8\sqrt{2}k}{1+2k^{2}}=0
+        &(kx_{1}-2\sqrt{2}+2)x_{2}-(-3+2\sqrt{2})(kx_{2}-2\sqrt{2}-2)x_{1}\\
+        &=(4-2\sqrt{2})kx_{1}x_{2}+(-2\sqrt{2}+2)(x_{1}+x_{2})\\
+        &=(4-2\sqrt{2})k\cdot\frac{8}{1+2k^{2}}+(-2\sqrt{2}+2)\cdot\frac{8\sqrt{2}k}{1+2k^{2}}=0
         \end{align*}
-        所以$$\frac{y+2}{y-2}=-3+2\sqrt{2}\Rightarrow y=-\sqrt{2}$$
+        所以
+        \[
+        \frac{y+2}{y-2}=-3+2\sqrt{2}\Rightarrow y=-\sqrt{2}
+        \]
         即点$R$在定直线 $y=-\sqrt{2}$ 上;设 $R(t,-\sqrt{2}),$则 ${AR}=(t,\sqrt{2})$,又 ${B_{1}B_{2}}=(0,4),$ 因此 $${AR}\cdot{B_{1}B_{2}}=4\sqrt{2}$$
-        \end{solution}
+    \end{solution}
     \end{parts}
 
-    \question 双曲线 \[\frac{x^{2}}{9}-\frac{y^{2}}{16}=1\] 的焦点为 \(F_1,F_2\)。设第一象限点 \(P\) 满足 \(|PF_1|:|PF_2|=1:3\)。求 \(\triangle F_1PF_2\) 周长。  
-
+    \question 双曲线 
+    \[
+    \frac{x^{2}}{9}-\frac{y^{2}}{16}=1
+    \] 
+    的焦点为 \(F_1,F_2\)。设第一象限点 \(P\) 满足 \(PF_1:PF_2=1:3\)。求 \(\triangle F_1PF_2\) 周长。  
     \begin{solution}
-        双曲线焦点$F_1=(-5,0),\ F_2=(5,0)$,已知$|PF_1|:|PF_2|=1:3$,由双曲线定义,
+        双曲线焦点$F_1=(-5,0),\ F_2=(5,0)$,已知$PF_1:PF_2=1:3$,由双曲线定义,
         \[
-        |PF_2| - |PF_1| = 2a \Rightarrow 3|PF_1| - |PF_1| = 6 \Rightarrow |PF_1| = 3
+        PF_2 - PF_1 = 2a \Rightarrow 3PF_1 - PF_1 = 6 \Rightarrow PF_1 = 3
         \]
         \(\triangle F_1PF_2\)周长为
         \[
-        |PF_1| + |PF_2| + |F_1F_2| = 3 + 9 + 10 = 22
+        PF_1 + PF_2 + F_1F_2 = 3 + 9 + 10 = 22
         \]
     \end{solution}
     
@@ -11344,95 +11220,46 @@ $|AB|+|DE|$ 取得最小值
         \frac{\tan \theta_2 + \frac{3 - \sqrt{5}}{2}}{1 - \tan \theta_2 \cdot \frac{3 - \sqrt{5}}{2}} = 1 \Rightarrow \tan \theta_2 = \frac{-1 + \sqrt{5}}{5 - \sqrt{5}} = \frac{\sqrt{5}}{5}
         \]
     \end{solution}
-\question
-一条双曲线与一条椭圆的方程分别为
-\[
-\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
-\quad\text{和}\quad
-\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1,
-\]
-其中 $a>b>0$。
+    
+    \question 已知双曲线与椭圆的方程分别为
+    \[
+    \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1,
+    \quad
+    \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1,
+    \]
+    其中 $a>b>0$。在双曲线上取一坐标均为正的点作切线,该切线经过椭圆的正 $x$ 轴焦点。证明该切线的斜率恒为 $1$。
+    \begin{solution}
+        设双曲线上一点$P(a\sec\theta,b\tan\theta)$,其中 $\theta\in\left(0,\dfrac{\pi}{2}\right)$,对双曲线方程求导得
+        \[
+        \frac{2x}{a^{2}}-\frac{2y}{b^{2}}\frac{dy}{dx}=0 \Rightarrow \frac{dy}{dx}=\frac{b^{2}x}{a^{2}y} 
+        \]
+        则在点$P$处的切线斜率为$\dfrac{b^{2}a\sec\theta}{a^{2}b\tan\theta}=\dfrac{b}{a\sin\theta}$,因此切线方程为
+        \[
+        y-b\tan\theta=\frac{b}{a\sin\theta}(x-a\sec\theta).
+        \]
+        该切线经过椭圆的正 $x$ 轴焦点 $(ae,0)$,其中 $e$ 为椭圆的离心率,代入得
+        \[
+        0-b\tan\theta=\frac{b}{a\sin\theta}(ae-a\sec\theta) \Rightarrow e = \cos\theta
+        \]
+        而椭圆的离心率满足$b^{2}=a^{2}(1-e^{2})$,代入 $e=\cos\theta$,得
+        \[
+        \frac{b^{2}}{a^{2}}=1-\cos^{2}\theta=\sin^{2}\theta \Rightarrow \frac{b}{a}=\sin\theta
+        \]
+        因此得证切线斜率为
+        \[
+        \frac{b}{a\sin\theta}=\sin\theta\cdot\frac{1}{\sin\theta}=1
+        \]
+    \end{solution}
 
-在双曲线上取一坐标均为正的点作切线,该切线经过椭圆的正 $x$ 轴焦点。
-
-证明:该切线的斜率为 $1$。
-
-\begin{solution}
-先对双曲线方程求导:
-\begin{align*}
-\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}&=1\\
-\Rightarrow \frac{2x}{a^{2}}-\frac{2y}{b^{2}}\frac{dy}{dx}&=0\\
-\Rightarrow \frac{2x}{a^{2}}&=\frac{2y}{b^{2}}\frac{dy}{dx}\\
-\Rightarrow \frac{dy}{dx}&=\frac{b^{2}x}{a^{2}y}.
-\end{align*}
-
-设双曲线上一点
-\[
-P(a\sec\theta,b\tan\theta),
-\]
-其中 $\theta\in(0,\frac{\pi}{2})$。
-
-则该点处切线的斜率为
-\begin{align*}
-\left.\frac{dy}{dx}\right|_{P}
-&=\frac{b^{2}a\sec\theta}{a^{2}b\tan\theta}
-=\frac{b\sec\theta}{a\tan\theta}\\
-&=\frac{b}{a}\cdot\frac{\sec\theta}{\tan\theta}
-=\frac{b}{a}\cdot\frac{1}{\sin\theta}.
-\end{align*}
-
-因此切线方程为
-\[
-y-b\tan\theta=\frac{b}{a\sin\theta}(x-a\sec\theta).
-\]
-
-该切线经过椭圆的正 $x$ 轴焦点 $(ae,0)$,其中 $e$ 为椭圆的离心率。代入得
-\begin{align*}
-0-b\tan\theta
-&=\frac{b}{a\sin\theta}(ae-a\sec\theta)\\
--\tan\theta
-&=\frac{1}{\sin\theta}(e-\sec\theta)\\
--\tan\theta\sin\theta
-&=e-\sec\theta\\
-\sec\theta-\tan\theta\sin\theta
-&=e.
-\end{align*}
-
-注意到
-\[
-\tan\theta\sin\theta=\frac{\sin^{2}\theta}{\cos\theta},
-\]
-于是
-\begin{align*}
-e
-&=\frac{1}{\cos\theta}-\frac{\sin^{2}\theta}{\cos\theta}
-=\frac{1-\sin^{2}\theta}{\cos\theta}
-=\frac{\cos^{2}\theta}{\cos\theta}
-=\cos\theta.
-\end{align*}
-
-而椭圆的离心率满足
-\[
-b^{2}=a^{2}(1-e^{2}),
-\]
-代入 $e=\cos\theta$,得
-\begin{align*}
-\frac{b^{2}}{a^{2}}&=1-\cos^{2}\theta=\sin^{2}\theta\\
-\Rightarrow \frac{b}{a}&=\sin\theta.
-\end{align*}
-
-因此切线斜率为
-\begin{align*}
-\frac{b}{a\sin\theta}
-=\frac{b}{a}\cdot\frac{1}{\sin\theta}
-=\sin\theta\cdot\frac{1}{\sin\theta}
-=1.
-\end{align*}
-
-故该切线的斜率必为 $1$。
-\end{solution}
-
-    \question 已知双曲线 $$H: \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1\ ,a > 0,\ b > 0,$$$l$ 为双曲线 $H$ 的一条渐近线,$\ F_1,\ F_2$ 是双曲线 $H$ 的左、右焦点。若 $F_1$ 关于直线 $l$ 的对称点在圆 $$C:(x - c)^2 + y^2 = c^2$$ 上,其中 $c$ 为双曲线的半焦距,求双曲线 $H$ 的离心率。
+    \question 已知双曲线 
+    \[
+    H: \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1\ ,a > 0,\ b > 0,
+    \]
+    $l$ 为双曲线 $H$ 的一条渐近线,$\ F_1, F_2$ 是双曲线 $H$ 的左、右焦点。若 $F_1$ 关于直线 $l$ 的对称点在圆 
+    \[
+    C:(x - c)^2 + y^2 = c^2
+    \]
+    上,其中 $c$ 为双曲线的半焦距,求双曲线 $H$ 的离心率。
     \begin{solution}
         双曲线左焦点为 $F_1 = (-c,\ 0)$,其中 $c^2 = a^2 + b^2$。  
         渐近线 $l$ 的一个方程为 $y = \dfrac{b}{a}x$,即 
@@ -11459,11 +11286,19 @@ b^{2}=a^{2}(1-e^{2}),
         \]
         所以双曲线离心率为
         \[
-        e = \dfrac{c}{a} = 2
+        e = \frac{c}{a} = 2
         \]
     \end{solution}
 
-    \question 已知双曲线 $$C: \dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1 \; (a>0,\; b>0)$$与椭圆$$\dfrac{x^{2}}{4} + \dfrac{y^{2}}{3} = 1,$$过椭圆上一点 $P\left(-1,\dfrac{3}{2}\right)$ 作椭圆的切线 $l$与 $x$ 轴交于 $M$ 点,且$l$ 与双曲线 $C$ 的两条渐近线分别交于 $N,Q$,若 $N$ 为 $MQ$ 的中点,求双曲线 $C$ 的离心率。
+    \question 已知双曲线 
+    \[
+    C: \frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1 \; (a>0,\; b>0)
+    \]
+    与椭圆
+    \[
+    \frac{x^{2}}{4} + \frac{y^{2}}{3} = 1,
+    \]
+    过椭圆上一点 $P\left(-1,\dfrac{3}{2}\right)$ 作椭圆的切线 $l$与 $x$ 轴交于 $M$ 点,且$l$ 与双曲线 $C$ 的两条渐近线分别交于 $N,Q$,若 $N$ 为 $MQ$ 的中点,求双曲线 $C$ 的离心率。
     \begin{solution}
         设过$P(-1,\dfrac{3}{2})$的切线$l$方程为
         \[
@@ -11474,21 +11309,22 @@ b^{2}=a^{2}(1-e^{2}),
         \[
         \frac{x^{2}}{4} + \frac{y^{2}}{3} = 1.
         \]
-        整理得\[
+        整理得
+        \[
         (4k^2+3)x^2+(8k^2+12k)x+4k^2+12k-3=0
         \]
         令判别式为零得
         \[
-         \Delta = (8k^2+12k)^2-4(4k^2+3)(4k^2+12k-3)=0\Rightarrow k = \frac{1}{2}.
+        \Delta = (8k^2+12k)^2-4(4k^2+3)(4k^2+12k-3)=0\Rightarrow k = \frac{1}{2}.
         \]
         所以切线 $l$ 的方程为$y = \dfrac{1}{2}x + 2$,令$y = 0$得 $M(-4, 0)$
         
-        双曲线的渐近线方程为$y = \pm \dfrac{b}{a}x$,联立 $y = \dfrac{b}{a}x$ 与 $y = \dfrac{1}{2}x + 2$,得 $x_Q = \dfrac{4a}{2b - a}$
+        双曲线的渐近线方程为$y = \pm \dfrac{b}{a}x$,联立 $y = \dfrac{b}{a}x$ 与 $y = \dfrac{1}{2}x + 2$,得 $x_Q = \dfrac{4a}{2b - a}$,
         
         联立 $y = -\dfrac{b}{a}x$ 与 $y = \dfrac{1}{2}x + 2$,得
-        $x_N = -\dfrac{4a}{2b + a}$
+        $x_N = -\dfrac{4a}{2b + a}$,
         
-        由 $N$ 是 $MQ$ 的中点,
+        由于 $N$ 是 $MQ$ 的中点,
         \[
         -\frac{4a}{2b + a} = \frac{1}{2} \left( \frac{4a}{2b - a} - 4 \right) \Rightarrow\frac{b}{a} = \frac{3}{2}
         \]
@@ -11498,7 +11334,11 @@ b^{2}=a^{2}(1-e^{2}),
         \]
     \end{solution}
 
-    \question 已知双曲线 $$C:\dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1\ (a>0,\ b>0)$$ 的左、右顶点分别是 $A_1,A_2$,  圆 $x^2 + y^2 = a^2$ 与 $C$ 的渐近线在第一象限的交点为 $M$,直线 $A_1M$ 交 $C$ 的右支于点 $P$。若 $\triangle MPA_2$ 是等腰三角形,且 $\angle PA_2M$ 的内角平分线与 $y$ 轴平行,求双曲线的离心率。
+    \question 已知双曲线 
+    \[
+    C:\dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1\ (a>0,\ b>0)
+    \]
+    的左、右顶点分别是 $A_1,A_2$,  圆 $x^2 + y^2 = a^2$ 与 $C$ 的渐近线在第一象限的交点为 $M$,直线 $A_1M$ 交 $C$ 的右支于点 $P$。若 $\triangle MPA_2$ 是等腰三角形,且 $\angle PA_2M$ 的内角平分线与 $y$ 轴平行,求双曲线的离心率。
     \begin{solution}
         双曲线顶点 $A_1(-a, 0), A_2(a, 0)$,渐近线为 $y = \dfrac{b}{a}x$,圆为 $x^2 + y^2 = a^2$,联立得
         \[
@@ -11506,265 +11346,272 @@ b^{2}=a^{2}(1-e^{2}),
         \]
         故点 $M\left( \dfrac{a^2}{c}, \dfrac{ab}{c} \right)$,其中 $c = \sqrt{a^2 + b^2}$ 为半焦距,又
         \[
-        |MA_1|^2 = \left(\frac{a^2}{c} + a\right)^2 + \left( \frac{ab}{c} \right)^2 = 2a^2\left(1 + \frac{a}{c}\right)\]
+        MA_1^2 = \left(\frac{a^2}{c} + a\right)^2 + \left( \frac{ab}{c} \right)^2 = 2a^2\left(1 + \frac{a}{c}\right)
+        \]
         \[
-        |MA_2|^2 = \left(\frac{a^2}{c} - a\right)^2 + \left( \frac{ab}{c} \right)^2 = 2a^2\left(1 - \frac{a}{c}\right)
+        MA_2^2 = \left(\frac{a^2}{c} - a\right)^2 + \left( \frac{ab}{c} \right)^2 = 2a^2\left(1 - \frac{a}{c}\right)
         \]
         由题设$\angle A_{1}MA_{2}=\angle PMA_{2}=90^{\circ},\triangle MPA_{2}$是等腰直角三角形,$\;\angle MA_{2}P=45^{\circ}$
         
-        $\angle PA_{2}M$的内角平分线与$y$轴平行,
-        所以$\angle MA_{1}A_{2}=22.5^{\circ}$
+        $\angle PA_{2}M$的内角平分线与$y$轴平行,所以$\angle MA_{1}A_{2}=22.5^{\circ}$
         
         又$\tan 45^{\circ}=\dfrac{2\tan 22.5^{\circ}}{1-\tan^{2}22.5^{\circ}}=1$可得$\tan 22.5^{\circ}=\sqrt{2}-1$,所以
-        $$\tan^{2}\angle MA_{1}A_{2}=\left(\dfrac{|MA_{2}|}{|MA_{1}|}\right)^{2}=\dfrac{1-\frac{a}{c}}{1+\frac{a}{c}}=(\sqrt{2}-1)^{2}$$
-        解得$$\dfrac{e-1}{e+1}=3-2\sqrt{2}\Rightarrow e=\sqrt{2}$$
+        \[
+        \tan^{2}\angle MA_{1}A_{2}=\left(\frac{MA_{2}}{MA_{1}}\right)^{2}=\frac{1-\frac{a}{c}}{1+\frac{a}{c}}=(\sqrt{2}-1)^{2}
+        \]
+        解得
+        \[
+        \frac{e-1}{e+1}=3-2\sqrt{2}\Rightarrow e=\sqrt{2}
+        \]
     \end{solution}
 
     \question 已知双曲线的两个焦点分别为 $F_1, F_2$,若过点 $F_1$ 的直线与双曲线交于 $A, B$ 两点,且 $\angle AF_1F_2 = 30^\circ,F_2A = F_2B$,求双曲线的离心率。
-    
     \begin{solution}
         不妨 $A$ 在双曲线靠近 $F_1$ 的这一支上, 取 $AB$ 中点 $C$, 则 $F_2C \perp AB$。
         
-        设 $|AF_1|=x$, 由双曲线定义知
-        $$|AF_2| = |BF_2|= x+2a, \;|BF_1|=x+4a$$
-        从而 $$|AB|=4a,\;|AC|=2a$$
-        由 $\angle AF_1F_2=30^\circ$ 知 $|CF_1|=\frac{\sqrt{3}}{2}|F_1F_2|$,可得
-        \[x=\sqrt{3}c-2a\tag{1}\]
-        又由 $|CF_2|=\dfrac{\sqrt3}{3}|CF_1|$ 及 $|AC|^2+|CF_2|^2=|AF_2|^2$,可得 
-        \[(2a)^2 + \frac{(x+2a)^2}{3}=(x+2a)^2 \Rightarrow x=(\sqrt{6}-2)a \tag{2}
+        设 $AF_1=x$, 由双曲线定义知
+        \[
+        AF_2 = BF_2= x+2a, \;BF_1=x+4a
         \]
-        由(1)(2)解得离心率 $e=\dfrac{c}{a}=\sqrt{2}$.
+        从而 
+        \[
+        AB=4a,\;AC=2a
+        \]
+        由 $\angle AF_1F_2=30^\circ$ 知 $CF_1=\dfrac{\sqrt{3}}{2}F_1F_2$,可得
+        \[
+        x=\sqrt{3}c-2a\tag{1}
+        \]
+        又由 $CF_2=\dfrac{\sqrt3}{3}CF_1$ 及 $AC^2+CF_2^2=AF_2^2$,可得 
+        \[
+        (2a)^2 + \frac{(x+2a)^2}{3}=(x+2a)^2 \Rightarrow x=(\sqrt{6}-2)a \tag{2}
+        \]
+        由$(1),(2)$解得离心率 
+        \[
+        e=\frac{c}{a}=\sqrt{2}
+        \]
     \end{solution}
 
-    10. (\text{全国} 122) (本小题满分 12 分)
+    \question 双曲线的中心为原点 $O$,焦点在 $x$ 轴上,两条渐近线分别为 $l_1, l_2$,过右焦点 $F$ 垂直于 $l_1$ 的直线分别交 $l_1, l_2$ 于 $A, B$ 两点。已知 $|\overrightarrow{OA}|, |\overrightarrow{AB}|, |\overrightarrow{OB}|$ 成等差数列,且 $\overrightarrow{BF}$ 与 $\overrightarrow{FA}$ 同向。
+    \begin{parts}
+    \part 求双曲线的离心率；
+    \begin{solution}
+        已知$OA,AB,OB$成等差数列,设 $OA = m-d,AB = m,OB = m+d$,由毕氏定理,
+        \[
+        (m-d)^2 + m^2 = (m+d)^2 \Rightarrow d = \frac{1}{4} m
+        \]
+        设双曲线半轴为 $a, b$,右焦点 $F(c,0)$,则
+        \[
+        \tan \angle AOF = \frac{b}{a}, \quad \tan \angle AOB = \tan (2 \ \angle AOF) = \frac{AB}{OA} = \frac{4}{3}
+        \]
+        由倍角公式 $\tan 2\theta = \dfrac{2\tan\theta}{1-(\tan\theta)^2}$得
+        \[
+        \frac{\frac{2b}{a}}{1-\frac{b^2}{a^2}} = \frac{4}{3} \Rightarrow \frac{b}{a} = \frac{1}{2}
+        \]
+        故离心率为 
+        \[
+        e = \sqrt{1 + \left(\frac{b}{a}\right)^2} = \frac{\sqrt{5}}{2}
+        \]
+    \end{solution}
+    \part 若 $AB$ 被双曲线所截得的线段的长为 $4$,求双曲线的方程。
+    \begin{solution}
+        过 $F$ 直线方程为 
+        \[
+        y = -\frac{a}{b}(x-c)
+        \]
+        与双曲线方程 
+        \[
+        \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+        \]
+        联立,将 $a = 2b,c = \sqrt{5}b$ 代入,化简得
+        \[
+        \frac{15}{4b^2}x^2 - \frac{8\sqrt{5}}{b}x + 21 = 0
+        \]
+        由韦达定理,
+        \begin{align*}
+        4 = \sqrt{1+\left(\frac{a}{b}\right)^2} |x_1-x_2| 
+        &= \sqrt{1+\left(\frac{a}{b}\right)^2} \sqrt{(x_1+x_2)^2 - 4x_1x_2} \\
+        &= \sqrt{5} \sqrt{\left(\frac{32\sqrt{5}b}{15}\right)^2 - 4 \cdot \frac{28b^2}{5}}
+        \end{align*}
+        解得 
+        \[
+        b = 3
+        \]
+        故双曲线方程为
+        \[
+        \frac{x^2}{36} - \frac{y^2}{9} = 1
+        \]
+    \end{solution}
+    \end{parts}
 
-双曲线的中心为原点 $O$,焦点在 $x$ 轴上,两条渐近线分别为 $l_1, l_2$,过右焦点 $F$ 垂直于 $l_1$ 的直线分别交 $l_1, l_2$ 于 $A, B$ 两点。已知 $|\vec{OA}|, |\vec{AB}|, |\vec{OB}|$ 成等差数列,且 $\vec{BF}$ 与 $\vec{FA}$ 同向。
+    \question 已知双曲线
+    \[
+    C:\frac{x^2}{a^2}-\frac{y^2}{b^2}=1 \quad a>0,b>0
+    \]
+    的两个焦点为 $F_1(-2,0),F_2(2,0)$,点 $P(3,\sqrt7)$ 在曲线 $C$ 上。
+    \begin{parts}
+    \part 求双曲线 $C$ 的方程；
+    \begin{solution}
+        依题意,由双曲线焦距关系
+        \[
+        a^2+b^2=4,
+        \]
+        得双曲线方程
+        \[
+        \frac{x^2}{a^2}-\frac{y^2}{4-a^2}=1\ (0<a^2<4).
+        \]
+        将点 $(3,\sqrt7)$ 代入,得
+        \[
+        \frac{9}{a^2}-\frac{7}{4-a^2}=1.
+        \]
+        解得
+        \[
+        a^2=18\ (\text{舍去})\quad\text{或}\quad a^2=2.
+        \]
+        故所求双曲线方程为
+        \[
+        \frac{x^2}{2}-\frac{y^2}{2}=1.
+        \]
+    \end{solution}
+    \begin{solution}
+        依题意得双曲线的半焦距 $c=2$。又
+        \[
+        2a=|PF_1|-|PF_2|
+        =\sqrt{(3+2)^2+(\sqrt7)^2}-\sqrt{(3-2)^2+(\sqrt7)^2}
+        =2\sqrt2,
+        \]
+        故
+        \[
+        a^2=2,\quad b^2=c^2-a^2=2.
+        \]
+        因此双曲线 $C$ 的方程为
+        \[
+        \frac{x^2}{2}-\frac{y^2}{2}=1.
+        \]
+    \end{solution}
+    \part 记 $O$ 为坐标原点,过点 $Q(0,2)$ 的直线与双曲线 $C$ 相交于不同的两点 $E,F$,若 $\triangle OEF$ 的面积为 $2\sqrt2$,求直线的方程。
+    \begin{solution}
+    设直线的方程为
+    \[
+    y=kx+2,
+    \]
+    代入双曲线 $C$ 的方程并整理,得
+    \[
+    (1-k^2)x^2-4kx-6=0.
+    \]
+    故直线 $l$ 与双曲线 $C$ 相交于不同的两点 $E,F$,需满足
+    \[
+    \begin{cases}
+    1-k^2\neq0,\\
+    \Delta=(-4k)^2+4\times6(1-k^2)>0,
+    \end{cases}
+    \]
+    即
+    \[
+    k\neq\pm1,\quad -\sqrt3<k<\sqrt3,
+    \]
+    从而
+    \[
+    k\in(-\sqrt3,-1)\cup(1,\sqrt3).
+    \]
 
-(I) 求双曲线的离心率；
+    设 $E(x_1,y_1),F(x_2,y_2)$,由上式得
+    \[
+    x_1+x_2=\frac{4k}{1-k^2},\quad x_1x_2=\frac{6}{1-k^2}.
+    \]
+    于是
+    \[
+    |EF|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
+    =\sqrt{1+k^2}\,|x_1-x_2|
+    \]
+    \[
+    =\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}
+    =\sqrt{1+k^2}\cdot\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
+    \]
 
-(II) 设 $AB$ 被双曲线所截得的线段的长为 $4$,求双曲线的方程。
+    原点 $O$ 到直线的距离为
+    \[
+    d=\frac{2}{\sqrt{1+k^2}},
+    \]
+    故
+    \[
+    S_{\triangle OEF}
+    =\frac12 d\cdot|EF|
+    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
+    \]
+    由
+    \[
+    S_{\triangle OEF}=2\sqrt2
+    \]
+    得
+    \[
+    \frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}=2\sqrt2
+    \Longleftrightarrow k^4-k^2-2=0.
+    \]
+    解得
+    \[
+    k=\pm\sqrt2,
+    \]
+    满足取值范围。
 
-\begin{solution}
-
-(I) 设 $OA = m-d$, $AB = m$, $OB = m+d$,由勾股定理：
-\[
-(OA)^2 + (AB)^2 = (OB)^2 \implies (m-d)^2 + m^2 = (m+d)^2 \implies d = \frac{1}{4} m.
-\]
-
-设双曲线半轴为 $a, b$,右焦点 $F(c,0)$,渐近线方程斜率 $b/a$。则
-\[
-\tan \angle AOF = \frac{b}{a}, \quad \tan \angle AOB = \tan 2 \angle AOF = \frac{AB}{OA} = \frac{4}{3}.
-\]
-
-由倍角公式 $\tan 2\theta = \frac{2\tan\theta}{1-(\tan\theta)^2}$,得
-\[
-\frac{2 (b/a)}{1-(b/a)^2} = \frac{4}{3} \implies \frac{b}{a} = \frac{1}{2}.
-\]
-
-离心率 $e = \sqrt{1 + (b/a)^2} = \sqrt{1 + 1/4} = \frac{\sqrt{5}}{2}$。
-
-(II) 过 $F$ 点的直线垂直于 $l_1$ 的方程为
-\[
-y = -\frac{a}{b}(x-c).
-\]
-
-与双曲线 $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ 联立,设 $AB$ 被双曲线截得的长度为 $4$,则
-\[
-4 = \sqrt{1 + (a/b)^2} |x_1 - x_2|,
-\]
-代入 $a=2b$, $c = \sqrt{5} b$,解得 $b=3$,于是 $a = 6$。
-
-因此双曲线的方程为
-\[
-\frac{x^2}{36} - \frac{y^2}{9} = 1.
-\]
-
-\end{solution}
-
-\question
-18．（湖北20）（本小题满分13分）
-
-已知双曲线
-\[
-C:\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\ (a>0,b>0)
-\]
-的两个焦点为 $F_1(-2,0),F_2(2,0)$,点 $P(3,\sqrt7)$ 在曲线 $C$ 上。
-
-(I) 求双曲线 $C$ 的方程；
-
-(II) 记 $O$ 为坐标原点,过点 $Q(0,2)$ 的直线与双曲线 $C$ 相交于不同的两点 $E,F$,若 $\triangle OEF$ 的面积为 $2\sqrt2$,求直线的方程。
-
-\begin{solution}
-\textbf{(I) 解法一}
-
-依题意,由双曲线焦距关系
-\[
-a^2+b^2=4,
-\]
-得双曲线方程
-\[
-\frac{x^2}{a^2}-\frac{y^2}{4-a^2}=1\ (0<a^2<4).
-\]
-将点 $(3,\sqrt7)$ 代入,得
-\[
-\frac{9}{a^2}-\frac{7}{4-a^2}=1.
-\]
-解得
-\[
-a^2=18\ (\text{舍去})\quad\text{或}\quad a^2=2.
-\]
-故所求双曲线方程为
-\[
-\frac{x^2}{2}-\frac{y^2}{2}=1.
-\]
-
-\medskip
-\textbf{(I) 解法二}
-
-依题意得双曲线的半焦距 $c=2$。
-
-又
-\[
-2a=|PF_1|-|PF_2|
-=\sqrt{(3+2)^2+(\sqrt7)^2}-\sqrt{(3-2)^2+(\sqrt7)^2}
-=2\sqrt2,
-\]
-故
-\[
-a^2=2,\quad b^2=c^2-a^2=2.
-\]
-因此双曲线 $C$ 的方程为
-\[
-\frac{x^2}{2}-\frac{y^2}{2}=1.
-\]
-
-\medskip
-\textbf{(II) 解法一}
-
-设直线的方程为
-\[
-y=kx+2,
-\]
-代入双曲线 $C$ 的方程并整理,得
-\[
-(1-k^2)x^2-4kx-6=0.
-\]
-故直线 $l$ 与双曲线 $C$ 相交于不同的两点 $E,F$,需满足
-\[
-\begin{cases}
-1-k^2\neq0,\\
-\Delta=(-4k)^2+4\times6(1-k^2)>0,
-\end{cases}
-\]
-即
-\[
-k\neq\pm1,\quad -\sqrt3<k<\sqrt3,
-\]
-从而
-\[
-k\in(-\sqrt3,-1)\cup(1,\sqrt3).
-\]
-
-设 $E(x_1,y_1),F(x_2,y_2)$,由上式得
-\[
-x_1+x_2=\frac{4k}{1-k^2},\quad x_1x_2=\frac{6}{1-k^2}.
-\]
-于是
-\[
-|EF|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
-=\sqrt{1+k^2}\,|x_1-x_2|
-\]
-\[
-=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}
-=\sqrt{1+k^2}\cdot\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-\]
-
-原点 $O$ 到直线的距离为
-\[
-d=\frac{2}{\sqrt{1+k^2}},
-\]
-故
-\[
-S_{\triangle OEF}
-=\frac12 d\cdot|EF|
-=\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-\]
-由
-\[
-S_{\triangle OEF}=2\sqrt2
-\]
-得
-\[
-\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}=2\sqrt2
-\Longleftrightarrow k^4-k^2-2=0.
-\]
-解得
-\[
-k=\pm\sqrt2,
-\]
-满足取值范围。
-
-故满足条件的直线有两条,其方程分别为
-\[
-y=\sqrt2x+2,\quad y=-\sqrt2x+2.
-\]
-
-\medskip
-\textbf{(II) 解法二}
-
-仍设直线方程为
-\[
-y=kx+2,
-\]
-代入双曲线 $C$ 得
-\[
-(1-k^2)x^2-4kx-6=0.
-\]
-设交点为 $E(x_1,y_1),F(x_2,y_2)$,则
-\[
-x_1-x_2=\frac{\sqrt{\Delta}}{|1-k^2|}
-=\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-\]
-
-当 $E,F$ 在同一支上时,
-\[
-S_{\triangle OEF}
-=S_{\triangle OQF}-S_{\triangle OQE}
-=\frac12|OQ|\cdot|x_1-x_2|.
-\]
-当 $E,F$ 在不同支上时,
-\[
-S_{\triangle OEF}
-=S_{\triangle OQF}+S_{\triangle OQE}
-=\frac12|OQ|\cdot|x_1-x_2|.
-\]
-综上,
-\[
-S_{\triangle OEF}
-=\frac12|OQ|\cdot|x_1-x_2|.
-\]
-由 $OQ=2$,得
-\[
-S_{\triangle OEF}
-=\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
-\]
-令
-\[
-S_{\triangle OEF}=2\sqrt2,
-\]
-得
-\[
-k^4-k^2-2=0,
-\]
-解得
-\[
-k=\pm\sqrt2.
-\]
-因此满足条件的直线为
-\[
-y=\sqrt2x+2,\quad y=-\sqrt2x+2.
-\]
-\end{solution}
+    故满足条件的直线有两条,其方程分别为
+    \[
+    y=\sqrt2x+2,\quad y=-\sqrt2x+2.
+    \]
+    \end{solution}
+    \begin{solution}
+    仍设直线方程为
+    \[
+    y=kx+2,
+    \]
+    代入双曲线 $C$ 得
+    \[
+    (1-k^2)x^2-4kx-6=0.
+    \]
+    设交点为 $E(x_1,y_1),F(x_2,y_2)$,则
+    \[
+    x_1-x_2=\frac{\sqrt{\Delta}}{|1-k^2|}
+    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
+    \]
+    当 $E,F$ 在同一支上时,
+    \[
+    S_{\triangle OEF}
+    =S_{\triangle OQF}-S_{\triangle OQE}
+    =\frac12|OQ|\cdot|x_1-x_2|.
+    \]
+    当 $E,F$ 在不同支上时,
+    \[
+    S_{\triangle OEF}
+    =S_{\triangle OQF}+S_{\triangle OQE}
+    =\frac12|OQ|\cdot|x_1-x_2|.
+    \]
+    综上,
+    \[
+    S_{\triangle OEF}
+    =\frac12|OQ|\cdot|x_1-x_2|.
+    \]
+    由 $OQ=2$,得
+    \[
+    S_{\triangle OEF}
+    =\frac{2\sqrt2\sqrt{3-k^2}}{|1-k^2|}.
+    \]
+    令
+    \[
+    S_{\triangle OEF}=2\sqrt2,
+    \]
+    得
+    \[
+    k^4-k^2-2=0,
+    \]
+    解得
+    \[
+    k=\pm\sqrt2.
+    \]
+    因此满足条件的直线为
+    \[
+    y=\sqrt2x+2,\quad y=-\sqrt2x+2.
+    \]
+    \end{solution}
+    \end{parts}
 
 \question
 点
