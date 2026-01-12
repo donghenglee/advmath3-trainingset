@@ -12040,7 +12040,7 @@ B(3k,3t).
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{轨迹方程式、参数方程式、极坐标}{轨迹方程式、参数方程式、极坐标} \label{轨迹方程式、参数方程式、极坐标}
+    \hypertarget{轨迹方程式、参数方程式}{轨迹方程式、参数方程式} \label{轨迹方程式、参数方程式}
   }
 \end{center}
 \separator
@@ -12647,7 +12647,7 @@ ab^2 + 4a = a^2b + 4b
         为一常数,于是得证点 $S$ 的轨迹是一条平行于 $BC$ 的直线。
     \end{solution}
     
-    \question 如图所示,一根长度为 4 的刚性杆 $AB$ 可以绕位于 $M(1,0)$ 的铰链旋转。铰链允许杆在 $x$-$y$ 平面内任意方向转动。杆的端点 $A$ 可在 $y$ 轴上滑动,且 $|OA|\le 4$。设 $\theta$ 为杆与正 $x$ 轴的夹角。
+    \question 如图,一长度为 4 单位的刚性杆 $AB$穿过位于定点 $M(1,0)$ 的铰链滑动,该铰链允许杆在 $x-y$ 平面内的任意方向转动。杆端$A$在 $y$ 轴上滑动使得 $OA \le 4$,令 $\theta$ 为杆在正 $x$ 轴的倾角。
     \begin{figure}[H]
         \centering        
         \includegraphics[width=0.5\textwidth]{images/image235.png}
@@ -12657,1144 +12657,738 @@ ab^2 + 4a = a^2b + 4b
     \[
     x=4\cos\theta, \quad y=4\sin\theta-\tan\theta, \quad -\theta_0 \le \theta \le \theta_0,
     \]
-    并说明 $\theta_0$ 的精确值。
+    并给出 $\theta_0$ 的值。
     \begin{solution}
-        设 $OM$ 为 1 个单位长度,$AM$ 为从 $A$ 到 $M$ 的杆长部分,$MB$ 为从 $M$ 到 $B$ 的杆长部分。由几何关系有
+        在$\triangle AOM$中,
         \[
-        \cos\theta = \frac{|OM|}{|AM|} \implies |AM| = \frac{1}{\cos\theta} = \sec\theta.
+        \cos \theta = \frac{1}{AM} \Rightarrow AM = \sec \theta
         \]
-        杆总长为 4,则
-        \[
-        |MB| = 4 - |AM| = 4 - \sec\theta.
-        \]
-        由几何关系得到 $B$ 的坐标：
+        于是$MB=4-\sec \theta$,由几何关系得到 $B$的坐标,
         \begin{align*}
-        x &= |OM| + |MB|\cos\theta = 1 + (4-\sec\theta)\cos\theta = 4\cos\theta, \\
-        y &= |MB|\sin\theta = (4-\sec\theta)\sin\theta = 4\sin\theta - \tan\theta.
+        x &= OM + MB\cos\theta = 4\cos\theta, \\
+        y &= MB\sin\theta = 4\sin\theta - \tan\theta
         \end{align*}
-        端点 $A$ 可在 $y$ 轴上滑动的约束 $|OA|\le 4$ 对应 $\theta$ 的最大值为
+        且明显地,
         \[
-        \theta_0 = \operatorname{arsech}\frac{1}{4}.
+        \theta_0 = \tan^{-1} 4
         \]
     \end{solution}
-    \part 进一步证明该轨迹的直角坐标方程为
+    \part 证明轨迹的直角坐标方程为
     \[
     y^2 = \frac{(16-x^2)(x-1)^2}{x^2}.
     \]
     \begin{solution}
-        将参数方程改写为直角坐标方程：
-        \begin{align*}
-        y &= 4\sin\theta - \tan\theta = 4\sin\theta - \frac{\sin\theta}{\cos\theta} = \sin\theta \left(4 - \frac{1}{\cos\theta}\right) = \sin\theta \frac{4\cos\theta - 1}{\cos\theta}, \\
-        y^2 &= \sin^2\theta \frac{(4\cos\theta - 1)^2}{\cos^2\theta} = (1 - \cos^2\theta) \frac{(4\cos\theta - 1)^2}{\cos^2\theta}.
-        \end{align*}
-        由 $x = 4\cos\theta \implies \cos\theta = \frac{x}{4}$,得
-        \begin{align*}
-        y^2 &= \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{x^2/16} = \frac{16-x^2}{16} \cdot \frac{16(x-1)^2}{x^2} = \frac{(16-x^2)(x-1)^2}{x^2}.
-        \end{align*}
+        写成
+        \[
+        y = 4\sin\theta - \tan\theta = \sin\theta \left(4 - \frac{1}{\cos\theta}\right), 
+        \]
+        两边平方得
+        \[
+        y^2 = \sin^2\theta \frac{(4\cos\theta - 1)^2}{\cos^2\theta} = (1 - \cos^2\theta) \frac{(4\cos\theta - 1)^2}{\cos^2\theta}
+        \]
+        将 $\cos\theta = \dfrac{x}{4}$代入得
+        \[
+        y^2 = \left(1 - \frac{x^2}{16}\right) \frac{(x-1)^2}{\frac{x^2}{16}} 
+        \]
+        即
+        \[
+        y^2 = \frac{(16-x^2)(x-1)^2}{x^2}.
+        \]
     \end{solution}
     \end{parts}
 
     \question 直线
-\[
-\frac{x}{p}+\frac{y}{q}=1
-\]
-其中 $p,q\neq 0$,并满足约束条件
-\[
-\frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2}.
-\]
-点 $P$ 为原点 $O$ 到直线 $L$ 的垂足。证明：无论 $p,q$ 取何值,点 $P$ 恒在一圆 $C$ 上,并求该圆的半径。
-\begin{solution}
-将直线方程化为一般式：
-\[
-\frac{x}{p}+\frac{y}{q}-1=0
-\quad\Rightarrow\quad
-qx+py-pq=0.
-\]
-设直线为
-\[
-Ax+By+C=0,
-\]
-则原点到该直线的垂足坐标为
-\[
-\left(
--\frac{AC}{A^2+B^2},
--\frac{BC}{A^2+B^2}
-\right).
-\]
-在此
-\[
-A=q,\quad B=p,\quad C=-pq.
-\]
-因此点 $P$ 的坐标为
-\[
-P\left(
-\frac{pq^2}{p^2+q^2},
-\frac{p^2q}{p^2+q^2}
-\right).
-\]
-由已知约束条件
-\[
-\frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2},
-\]
-得
-\[
-\frac{p^2+q^2}{p^2q^2}=\frac{1}{2}
-\quad\Rightarrow\quad
-p^2+q^2=\frac{1}{2}p^2q^2.
-\]
-代入点 $P$ 的坐标：
-\[
-x=\frac{pq^2}{p^2+q^2}
-=\frac{pq^2}{\frac{1}{2}p^2q^2}
-=\frac{2}{p},
-\]
-\[
-y=\frac{p^2q}{p^2+q^2}
-=\frac{p^2q}{\frac{1}{2}p^2q^2}
-=\frac{2}{q}.
-\]
-于是
-\[
-P\left(\frac{2}{p},\frac{2}{q}\right).
-\]
-计算
-\[
-x^2+y^2
-=\frac{4}{p^2}+\frac{4}{q^2}
-=4\left(\frac{1}{p^2}+\frac{1}{q^2}\right)
-=4\times\frac{1}{2}
-=2.
-\]
-因此点 $P$ 的轨迹满足
-\[
-x^2+y^2=2,
-\]
-即点 $P$ 恒在以原点为圆心、半径为 $\sqrt{2}$ 的圆上。
-\end{solution}
+    \[
+    L:\frac{x}{p}+\frac{y}{q}=1
+    \]
+    其中 $p,q\neq 0$满足
+    \[
+    \frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2}.
+    \]
+    点 $P$ 为原点 $O$ 到直线 $L$ 的垂足。证明无论 $p,q$ 取何值,点 $P$ 恒在一圆 $C$ 上,并求该圆的半径。
+    \begin{solution}
+        直线方程$L$即
+        \[
+        y=q-\frac{q}{p}x
+        \]
+        于是$OP$直线方程为
+        \[
+        y=\frac{p}{q}x
+        \]
+        联立两式,解得点 $P$ 的坐标为
+        \[
+        P\left(\frac{pq^2}{p^2+q^2},\frac{p^2q}{p^2+q^2}\right)
+        \]
+        将已知条件
+        \[
+        \frac{1}{p^2}+\frac{1}{q^2}=\frac{1}{2}\Rightarrow p^2+q^2=\frac{1}{2}p^2q^2
+        \]
+        代入点 $P$ 的坐标得
+        \[
+        P\left(\frac{2}{p},\frac{2}{q}\right)
+        \]
+        因此点 $P$ 的轨迹满足
+        \[
+        x^2+y^2=4\left(\frac{1}{p^2}+\frac{1}{q^2}\right)=2
+        \]
+        即点 $P$ 恒在以原点为圆心、半径为 $\sqrt{2}$ 的圆上。
+    \end{solution}
 
-    \question 从椭圆 
+    \question 由椭圆 
     \[
     \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
     \]
-    的焦点 $F$作椭圆的切线的垂线,求垂足 $N$ 的轨迹。
+    的焦点 $F$,作椭圆上一动点$P(\cos\theta, b\sin\theta)$的切线的垂线,求该垂足 $N$ 的轨迹。
     \begin{solution}
-设 $P(a\cos\theta, b\sin\theta)$ 为椭圆上一动点,切线斜率为
-\[
-m_\text{tangent} = -\frac{b^2 x}{a^2 y} = -\frac{b\cos\theta}{a\sin\theta}.
-\]
-切线方程：
-\[
-y - b\sin\theta = -\frac{b\cos\theta}{a\sin\theta} (x - a\cos\theta) \implies bx\cos\theta + ay\sin\theta = ab.
-\]
-
-过焦点 $F(ae,0)$,垂直于切线的直线 $FN$：
-\[
-m_{FN} = \frac{a\sin\theta}{b\cos\theta} \implies y - 0 = \frac{a\sin\theta}{b\cos\theta}(x - ae) \implies -ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
-\]
-
-设 $N(x,y)$ 为交点,解方程组：
-\[
-\begin{cases}
-bx\cos\theta + ay\sin\theta = ab, \\
-- ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
-\end{cases}
-\]
-
-两式平方相加：
-\[
-(bx\cos\theta + ay\sin\theta)^2 + (-ay\cos\theta + bx\sin\theta)^2 = (ab)^2 + (a^2 e \sin\theta)^2.
-\]
-
-整理：
-\[
-x^2(b^2\cos^2\theta + b^2\sin^2\theta) + y^2(a^2\sin^2\theta + a^2\cos^2\theta) + 0 = a^2 b^2 + a^4 e^2 \sin^2\theta.
-\]
-
-利用 $b^2 = a^2(1-e^2)$：
-\[
-x^2 + y^2 = a^2.
-\]
-
-\noindent $\therefore$ 垂足 $N$ 的轨迹为圆：
-\[
-\boxed{x^2 + y^2 = a^2}.
-\]
-
-\end{solution}
-
-    \question
-椭圆由参数方程
-\[
-x=3\sqrt{2}\cos\theta,\quad y=4\sin\theta,\quad 0<\theta<2\pi
-\]
-给出。
-
-(a) 求  
-(i) 椭圆的焦点坐标；  
-(ii) 椭圆的准线方程。
-
-(b) 证明椭圆在一般点处的切线方程为
-\[
-\frac{y\sin\theta}{4}+\frac{x\cos\theta}{3\sqrt{2}}=1。
-\]
-
-一条过原点的直线与上述切线相交于点 $P$。
-
-(c) 证明当 $\theta$ 变化时,点 $P$ 的轨迹满足
-\[
-(x^2+y^2)^2=2(9x^2+8y^2)。
-\]
-
-\begin{solution}
-(a) 由
-\[
-x=3\sqrt{2}\cos\theta,\quad y=4\sin\theta
-\]
-得
-\[
-\cos\theta=\frac{x}{3\sqrt{2}},\quad \sin\theta=\frac{y}{4}。
-\]
-平方相加得
-\[
-\frac{x^2}{18}+\frac{y^2}{16}=1。
-\]
-因此
-\[
-a^2=18,\quad b^2=16,\quad a>b。
-\]
-离心率 $e$ 满足
-\[
-b^2=a^2(1-e^2),
-\]
-即
-\[
-16=18(1-e^2)\Rightarrow e^2=\frac{1}{9},\ e=\frac{1}{3}。
-\]
-
-(i) 焦点为
-\[
-(\pm ae,0)=(\pm\sqrt{2},0)。
-\]
-
-(ii) 准线方程为
-\[
-x=\pm\frac{a}{e}=\pm9\sqrt{2}。
-\]
-
-(b) 由参数方程求导,
-\[
-\frac{dy}{dx}=\frac{4\cos\theta}{-3\sqrt{2}\sin\theta}。
-\]
-在点 $(3\sqrt{2}\cos\theta,4\sin\theta)$ 处的切线为
-\[
-y-4\sin\theta=\frac{4\cos\theta}{-3\sqrt{2}\sin\theta}(x-3\sqrt{2}\cos\theta)。
-\]
-整理得
-\[
-3\sqrt{2}y\sin\theta+4x\cos\theta=12\sqrt{2}。
-\]
-两边同除以 $12\sqrt{2}$,
-\[
-\frac{y\sin\theta}{4}+\frac{x\cos\theta}{3\sqrt{2}}=1。
-\]
-
-(c) 设过原点的直线与切线相交于 $P(x,y)$。  
-过原点的直线可设为
-\[
-y=\tan\theta\,x。
-\]
-代入切线方程,
-\[
-\frac{x\tan\theta\sin\theta}{4}+\frac{x\cos\theta}{3\sqrt{2}}=1。
-\]
-即
-\[
-x\left(\frac{\sin^2\theta}{4\cos\theta}+\frac{\cos\theta}{3\sqrt{2}}\right)=1。
-\]
-化简得
-\[
-x=\frac{24\sqrt{2}\cos\theta}{9\sin^2\theta+8\cos^2\theta},\quad
-y=\frac{24\sqrt{2}\sin\theta}{9\sin^2\theta+8\cos^2\theta}。
-\]
-
-于是
-\[
-\frac{y}{x}=\tan\theta。
-\]
-消去 $\theta$,
-\[
-x^2+y^2=\frac{1152}{(9\sin^2\theta+8\cos^2\theta)^2}。
-\]
-利用
-\[
-\sin^2\theta=\frac{y^2}{x^2+y^2},\quad \cos^2\theta=\frac{x^2}{x^2+y^2},
-\]
-代入并整理得
-\[
-(x^2+y^2)^2=2(9x^2+8y^2)。
-\]
-因此点 $P$ 的轨迹满足所求方程。
-\end{solution}
-
-\question
-一条双曲线 $H$ 与一条直线 $L$ 的直角坐标方程分别为
-\[
-H:\ \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1,
-\]
-\[
-L:\ y=mx+c,
-\]
-其中 $a,b,m,c$ 均为非零常数。
-
-\noindent
-(a) 证明:直线 $L$ 与双曲线 $H$ 的交点的 $x$ 坐标满足方程
-\[
-(a^{2}m^{2}-b^{2})x^{2}+2a^{2}mcx+a^{2}(b^{2}+c^{2})=0。
-\]
-
-\noindent
-(b) 已知直线 $L$ 为双曲线 $H$ 的切线,证明
-\[
-a^{2}m^{2}=b^{2}+c^{2}。
-\]
-
-\noindent
-(c) 求经过点 $(1,4)$ 且与双曲线
-\[
-\frac{x^{2}}{25}-\frac{y^{2}}{16}=1
-\]
-相切的两条切线方程,并分别求出切点坐标。
-
-\begin{solution}
-(a) 将 $y=mx+c$ 代入双曲线方程:
-\begin{align*}
-\frac{x^{2}}{a^{2}}-\frac{(mx+c)^{2}}{b^{2}}&=1\\
-\Rightarrow b^{2}x^{2}-a^{2}(mx+c)^{2}&=a^{2}b^{2}\\
-b^{2}x^{2}-a^{2}(m^{2}x^{2}+2mcx+c^{2})&=a^{2}b^{2}\\
-(b^{2}-a^{2}m^{2})x^{2}-2a^{2}mcx-a^{2}(b^{2}+c^{2})&=0。
-\end{align*}
-两边同乘以 $-1$,即得
-\[
-(a^{2}m^{2}-b^{2})x^{2}+2a^{2}mcx+a^{2}(b^{2}+c^{2})=0,
-\]
-结论成立。
-
-(b) 若 $L$ 为切线,则上述关于 $x$ 的二次方程有重根,其判别式为零:
-\begin{align*}
-(2a^{2}mc)^{2}-4(a^{2}m^{2}-b^{2})a^{2}(b^{2}+c^{2})&=0\\
-4a^{4}m^{2}c^{2}-4a^{2}(a^{2}m^{2}-b^{2})(b^{2}+c^{2})&=0。
-\end{align*}
-两边同时除以 $4a^{2}$,得
-\[
-a^{2}m^{2}c^{2}-(a^{2}m^{2}-b^{2})(b^{2}+c^{2})=0。
-\]
-展开并化简:
-\begin{align*}
-a^{2}m^{2}c^{2}-a^{2}m^{2}b^{2}-a^{2}m^{2}c^{2}+b^{4}+b^{2}c^{2}&=0\\
-b^{2}(b^{2}+c^{2}-a^{2}m^{2})&=0。
-\end{align*}
-由于 $b\neq0$,故
-\[
-a^{2}m^{2}=b^{2}+c^{2}。
-\]
-
-(c) 由题意 $a^{2}=25,b^{2}=16$。设切线为
-\[
-y=mx+c,
-\]
-且经过点 $(1,4)$,则
-\[
-4=m+c,\quad m=4-c。
-\]
-由切线条件 $a^{2}m^{2}=b^{2}+c^{2}$,得
-\begin{align*}
-25(4-c)^{2}&=16+c^{2}\\
-25(c^{2}-8c+16)&=16+c^{2}\\
-24c^{2}-200c+384&=0\\
-3c^{2}-25c+48&=0。
-\end{align*}
-解得
-\[
-c=3 \quad \text{或} \quad c=\frac{16}{3}。
-\]
-对应
-\[
-m=1 \quad \text{或} \quad m=-\frac{4}{3}。
-\]
-故两条切线方程为
-\[
-y=x+3,
-\]
-\[
-y=-\frac{4}{3}x+\frac{16}{3}。
-\]
-
-下面求切点坐标。
-
-当 $y=x+3$ 时,代入双曲线:
-\begin{align*}
-\frac{x^{2}}{25}-\frac{(x+3)^{2}}{16}&=1\\
-(3x+25)^{2}&=0,
-\end{align*}
-得
-\[
-x=-\frac{25}{3},\quad y=-\frac{16}{3}。
-\]
-
-当 $y=-\frac{4}{3}x+\frac{16}{3}$ 时,代入双曲线:
-\begin{align*}
-(4x-25)^{2}&=0,
-\end{align*}
-得
-\[
-x=\frac{25}{4},\quad y=-3。
-\]
-
-因此两条切线及其切点分别为
-\[
-y=x+3,\quad \left(-\frac{25}{3},-\frac{16}{3}\right),
-\]
-\[
-y=-\frac{4}{3}x+\frac{16}{3},\quad \left(\frac{25}{4},-3\right)。
-\]
-\end{solution}
-
-    \question 已知双曲线 $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ 上一点 $P$,过 $P$ 的法线分别交 $x$ 轴、$y$ 轴于 $A$、$B$,若 $OABQ$ 为矩形,求点 $Q$ 的轨迹方程。
-
-\begin{solution}
-设 $P(a\sec\theta, b\tan\theta)$ 为双曲线上任意动点。双曲线导数：
-\[
-\frac{d}{dx}\left(\frac{x^2}{a^2}-\frac{y^2}{b^2}\right) = 0 \implies \frac{2x}{a^2} - \frac{2y}{b^2}\frac{dy}{dx} = 0 \implies \frac{dy}{dx} = \frac{b^2 x}{a^2 y}.
-\]
-
-在 $P$ 点,切线斜率：
-\[
-m_\text{tangent} = \frac{b^2(a\sec\theta)}{a^2(b\tan\theta)} = \frac{b\sec\theta}{a\tan\theta}.
-\]
-
-法线斜率为：
-\[
-m_\text{normal} = -\frac{1}{m_\text{tangent}} = -\frac{a\tan\theta}{b\sec\theta}.
-\]
-
-法线方程：
-\[
-y - b\tan\theta = -\frac{a\tan\theta}{b\sec\theta} (x - a\sec\theta) \implies a\tan\theta\, x + b\sec\theta\, y - \frac{ab}{\cos\theta} = 0.
-\]
-
-与坐标轴交点：
-\[
-A\left(\frac{a^2+b^2}{a}\sec\theta, 0\right),\quad B\left(0, -\frac{a^2+b^2}{b}\tan\theta\right), \quad O(0,0)
-\]
-
-由矩形性质,$Q$ 点坐标：
-\[
-Q = \left(\frac{a^2+b^2}{a}\sec\theta, -\frac{a^2+b^2}{b}\tan\theta \right).
-\]
-
-利用恒等式 $\sec^2\theta - \tan^2\theta = 1$,得：
-\[
-\left(\frac{ax}{a^2+b^2}\right)^2 - \left(\frac{by}{a^2+b^2}\right)^2 = 1 \implies a^2 x^2 - b^2 y^2 = (a^2+b^2)^2.
-\]
-
-\noindent $\therefore$ 点 $Q$ 的轨迹方程为
-\[
-\boxed{a^2 x^2 - b^2 y^2 = (a^2+b^2)^2}.
-\]
-\end{solution}
-
-\question
-动点 $P$ 在矩形双曲线
-\[
-xy=a^{2}
-\]
-上运动,其中 $a>0$ 为常数。过点 $P$ 作双曲线的法线,该法线再次与双曲线相交于点 $Q$。设 $M$ 为线段 $PQ$ 的中点。
-
-求点 $M$ 的轨迹方程,并写成 $f(x,y)=0$ 的形式。
-
-\begin{solution}
-设点 $P$ 的坐标为
-\[
-P\left(p,\frac{a^{2}}{p}\right),
-\]
-因为 $P$ 在曲线 $y=\frac{a^{2}}{x}$ 上。
-
-对 $y=\frac{a^{2}}{x}$ 求导,
-\[
-\frac{dy}{dx}=-\frac{a^{2}}{x^{2}},
-\]
-所以在点 $P$ 处切线的斜率为
-\[
--\frac{a^{2}}{p^{2}},
-\]
-从而法线的斜率为
-\[
-\frac{p^{2}}{a^{2}}。
-\]
-
-法线方程为
-\[
-y-\frac{a^{2}}{p}=\frac{p^{2}}{a^{2}}(x-p)。
-\]
-
-将 $y=\frac{a^{2}}{x}$ 代入法线方程,得
-\begin{align*}
-\frac{a^{2}}{x}-\frac{a^{2}}{p} &= \frac{p^{2}}{a^{2}}(x-p)。
-\end{align*}
-两边同乘以 $a^{2}xp$,化简得
-\begin{align*}
-a^{4}p-a^{4}x &= a^{2}p^{3}(x-p)。
-\end{align*}
-整理为关于 $x$ 的方程:
-\[
-p^{3}x^{2}+(a^{4}-p^{4})x-a^{4}p=0。
-\]
-
-由于 $x=p$ 对应点 $P$ 也是该方程的解,因而可因式分解为
-\[
-(x-p)(p^{3}x+a^{4})=0。
-\]
-故另一交点 $Q$ 的 $x$ 坐标为
-\[
-x=-\frac{a^{4}}{p^{3}},
-\]
-相应的
-\[
-y=\frac{a^{2}}{x}=-\frac{p^{3}}{a^{2}}。
-\]
-因此
-\[
-Q\left(-\frac{a^{4}}{p^{3}},-\frac{p^{3}}{a^{2}}\right)。
-\]
-
-点 $M$ 为 $PQ$ 的中点,其坐标为
-\begin{align*}
-M\left(
-\frac{p-\frac{a^{4}}{p^{3}}}{2},
-\frac{\frac{a^{2}}{p}-\frac{p^{3}}{a^{2}}}{2}
-\right)
-=
-\left(
-\frac{p^{4}-a^{4}}{2p^{3}},
-\frac{a^{4}-p^{4}}{2a^{2}p}
-\right)。
-\end{align*}
-
-设
-\[
-x=\frac{p^{4}-a^{4}}{2p^{3}},\quad
-y=\frac{a^{4}-p^{4}}{2a^{2}p}。
-\]
-则
-\[
-\frac{x}{y}=-\frac{a^{2}}{p^{2}},
-\]
-从而
-\[
-p^{2}=-\frac{a^{2}y}{x}。
-\]
-
-由
-\[
-y^{2}=\frac{(a^{4}-p^{4})^{2}}{4a^{4}p^{2}},
-\]
-代入 $p^{2}=-\frac{a^{2}y}{x}$ 并化简,可得
-\[
-a^{2}(x^{2}-y^{2})^{2}+4x^{3}y^{3}=0。
-\]
-
-因此,点 $M$ 的轨迹方程为
-\[
-a^{2}(x^{2}-y^{2})^{2}+4x^{3}y^{3}=0。
-\]
-\end{solution}
-
-\question
-点 $P,Q$ 为曲线
-\[
-y=\frac{1}{x},\ x\in\mathbb{R},\ x\neq 0
-\]
-上的两个不同点。$P,Q$ 可在曲线上运动,使得线段 $PQ$ 为曲线在 $P$ 处的法线。曲线在 $P,Q$ 处的切线相交于点 $R$。
-
-证明点 $R$ 的轨迹方程为
-\[
-(y^2-x^2)^2+4xy=0。
-\]
-
-\begin{solution}
-曲线为
-\[
-y=\frac{1}{x},
-\]
-求导得
-\[
-\frac{dy}{dx}=-\frac{1}{x^2}。
-\]
-
-设
-\[
-P\left(p,\frac{1}{p}\right),\quad Q\left(q,\frac{1}{q}\right),\quad p\neq q。
-\]
-
-弦 $PQ$ 的斜率为
-\[
-\frac{\frac{1}{p}-\frac{1}{q}}{p-q}
-=\frac{q-p}{pq(p-q)}
-=-\frac{1}{pq}。
-\]
-
-曲线在 $P$ 处切线斜率为 $-\frac{1}{p^2}$,故法线斜率为 $p^2$。
-由于 $PQ$ 为 $P$ 处的法线,有
-\[
-\left(-\frac{1}{pq}\right)\left(-\frac{1}{p^2}\right)=-1,
-\]
-从而
-\[
-p^2q=-1,
-\quad q=-\frac{1}{p^2}。
-\]
-
-曲线在 $P$ 处的切线方程为
-\[
-y-\frac{1}{p}=-\frac{1}{p^2}(x-p),
-\]
-即
-\[
-y=\frac{2}{p}-\frac{1}{p^2}x。
-\]
-
-同理,曲线在 $Q$ 处的切线方程为
-\[
-y=\frac{2}{q}-\frac{1}{q^2}x。
-\]
-
-联立两切线方程求交点 $R$:
-\begin{align*}
-\frac{2}{p}-\frac{1}{p^2}x &= \frac{2}{q}-\frac{1}{q^2}x, \\
-x\left(\frac{1}{q^2}-\frac{1}{p^2}\right) &= \frac{2}{q}-\frac{2}{p}。
-\end{align*}
-化简得
-\[
-x=\frac{2pq}{p+q}。
-\]
-
-代回求 $y$:
-\begin{align*}
-y &= \frac{2}{q}-\frac{1}{q^2}\cdot\frac{2pq}{p+q}
-= \frac{2}{p+q}。
-\end{align*}
-
-因此
-\[
-R\left(\frac{2pq}{p+q},\frac{2}{p+q}\right)。
-\]
-
-由 $q=-\frac{1}{p^2}$,
-\begin{align*}
-x &= \frac{2p\left(-\frac{1}{p^2}\right)}{p-\frac{1}{p^2}}
-= -\frac{2p}{p^3-1},\\
-y &= \frac{2}{p-\frac{1}{p^2}}
-= \frac{2p^2}{p^3-1}。
-\end{align*}
-
-消去参数 $p$,由
-\[
-\frac{y}{x}=-\frac{p}{1},
-\quad p=-\frac{y}{x},
-\]
-代入并化简,可得
-\[
-(y^2-x^2)^2+4xy=0。
-\]
-
-因此,点 $R$ 的轨迹方程为
-\[
-(y^2-x^2)^2+4xy=0。
-\]
-\end{solution}
-
-\question
-一般点
-\[
-P\left(5t,\frac{5}{t}\right),\ t\neq 0
-\]
-在双曲线
-\[
-xy=25
-\]
-上。
-
-(a) 证明该双曲线在点 $P$ 处的法线方程为
-\[
-y=t^2x+\frac{5}{t}-5t^3。
-\]
-
-该法线再次与双曲线相交于点 $Q$。
-
-(b) 证明点 $Q$ 的坐标为
-\[
-\left(-\frac{5}{t^3},-5t^3\right)。
-\]
-
-(c) 证明线段 $PQ$ 的中点轨迹的笛卡尔方程为
-\[
-4xy+25\left(\frac{y}{x}-\frac{x}{y}\right)^2=0。
-\]
-
-\begin{solution}
-(a) 由
-\[
-xy=25
-\]
-得
-\[
-y=\frac{25}{x}。
-\]
-对 $x$ 求导,
-\[
-\frac{dy}{dx}=-\frac{25}{x^2}。
-\]
-在 $x=5t$ 处,
-\[
-\frac{dy}{dx}=-\frac{25}{(5t)^2}=-\frac{1}{t^2}。
-\]
-故法线斜率为 $t^2$。
-
-点 $P\left(5t,\frac{5}{t}\right)$ 处法线方程为
-\[
-y-\frac{5}{t}=t^2(x-5t)。
-\]
-整理得
-\[
-y=t^2x+\frac{5}{t}-5t^3。
-\]
-
-(b) 联立
-\[
-xy=25,\quad y=t^2x+\frac{5}{t}-5t^3。
-\]
-代入得
-\[
-x\left(t^2x+\frac{5}{t}-5t^3\right)=25。
-\]
-化简得
-\[
-t^2x^2+\left(\frac{5}{t}-5t^3\right)x-25=0。
-\]
-两边同乘 $t$,
-\[
-t^3x^2+(5-5t^4)x-25t=0。
-\]
-由于 $x=5t$ 为一根,因式分解得
-\[
-(x-5t)(t^3x+5)=0。
-\]
-故另一交点满足
-\[
-x=-\frac{5}{t^3}。
-\]
-由 $xy=25$,
-\[
-y=\frac{25}{x}=-5t^3。
-\]
-因此
-\[
-Q\left(-\frac{5}{t^3},-5t^3\right)。
-\]
-
-(c) 设 $M$ 为 $PQ$ 的中点,则
-\[
-M\left(\frac{5t-\frac{5}{t^3}}{2},\frac{\frac{5}{t}-5t^3}{2}\right)
-=\left(\frac{5}{2}\left(t-\frac{1}{t^3}\right),\frac{5}{2}\left(\frac{1}{t}-t^3\right)\right)。
-\]
-设
-\[
-x=\frac{5}{2}\left(t-\frac{1}{t^3}\right),\quad
-y=\frac{5}{2}\left(\frac{1}{t}-t^3\right)。
-\]
-
-则
-\[
-\frac{x}{y}
-=\frac{t-\frac{1}{t^3}}{\frac{1}{t}-t^3}
-=-\frac{1}{t^2},
-\]
-从而
-\[
-t^2=-\frac{y}{x}。
-\]
-
-又
-\[
-y=\frac{5}{2}\left(\frac{1-t^4}{t}\right)。
-\]
-平方得
-\[
-y^2=\frac{25}{4}\frac{(1-t^4)^2}{t^2}。
-\]
-整理得
-\[
-4y^2t^2=25(1-t^4)^2。
-\]
-代入 $t^2=-\frac{y}{x}$,
-\[
--4xy^3=25\frac{(x^2-y^2)^2}{x^3}。
-\]
-两边同乘 $x^3$,
-\[
--4x^3y^3=25(x^2-y^2)^2。
-\]
-移项得
-\[
-4x^3y^3+25(x^2-y^2)^2=0。
-\]
-两边同除以 $x^2y^2$,得
-\[
-4xy+25\left(\frac{y}{x}-\frac{x}{y}\right)^2=0。
-\]
-\end{solution}
-    \question
-曲线由参数方程给出：
-\[
-x = \sin^2 t, \quad y = \sin t \cos t + \cos t, \quad 0 \le t < 2\pi.
-\]
-证明其直角坐标方程为：
-\[
-(x^2 + y^2 - 1)^2 = 4x(1-x)^2.
-\]
-
-\begin{solution}
-将 $y$ 写为
-\[
-y = \cos t (\sin t + 1) \implies y^2 = \cos^2 t (\sin t + 1)^2.
-\]
-
-利用恒等式 $\cos^2 t = 1 - \sin^2 t$,并令 $x = \sin^2 t$：
-\[
-y^2 = (1 - x)(\sin^2 t + 2\sin t + 1) = (1 - x)(x + 2\sin t + 1).
-\]
-
-整理得到：
-\[
-\dfrac{y^2}{1 - x} = x + 2\sin t + 1 \implies \dfrac{y^2}{1-x} - (1+x) = 2\sin t.
-\]
-
-两边平方：
-\[
-\left( \dfrac{y^2 - (1-x^2)}{1-x} \right)^2 = 4 \sin^2 t.
-\]
-
-由 $x = \sin^2 t$ 可得 $4 \sin^2 t = 4x$,于是：
-\[
-\dfrac{(y^2 + x^2 - 1)^2}{(1-x)^2} = 4x \implies (y^2 + x^2 - 1)^2 = 4x (1-x)^2.
-\]
-
-\end{solution}
-
-\question
-曲线 $C$ 由参数方程给出：
-\[
-x = \tan\theta - \sec\theta, \quad y = \cot\theta - \csc\theta, \quad 0 < \theta < \frac{\pi}{2}.
-\]
-
-证明：
-
-a) $C$ 的直角坐标方程为
-\[
-(x^2 - 1)(y^2 - 1) = 4xy,
-\]
-
-b) \(\dfrac{dy}{dx} = \dfrac{1-y^2}{2x}\)。
-
-\begin{solution}
-\textbf{(a) 消去 $\theta$}
-
-从 $x = \tan\theta - \sec\theta$ 开始：
-\begin{align*}
-x^2 &= (\tan\theta - \sec\theta)^2 \\
-&= \tan^2\theta - 2\tan\theta\sec\theta + \sec^2\theta \\
-&= \tan^2\theta - 2\tan\theta\sec\theta + (1+\tan^2\theta) \\
-&= 2\tan^2\theta - 2\tan\theta\sec\theta + 1 \\
-&= 2\tan\theta(\tan\theta - \sec\theta) + 1 \\
-&= 2\tan\theta \cdot x + 1
-\end{align*}
-所以
-\[
-\tan\theta = \frac{x^2-1}{2x}.
-\]
-
-类似地,由 $y = \cot\theta - \csc\theta$ 和恒等式 $1+\cot^2\theta = \csc^2\theta$ 得：
-\[
-\cot\theta = \frac{y^2-1}{2y}.
-\]
-
-于是
-\[
-\tan\theta \cot\theta = \frac{x^2-1}{2x} \cdot \frac{y^2-1}{2y} = 1 \implies (x^2-1)(y^2-1) = 4xy.
-\]
-
-\textbf{(b) 求导}
-
-参数求导：
-\[
-\frac{dx}{d\theta} = \sec^2\theta - \sec\theta\tan\theta = \sec\theta(\sec\theta - \tan\theta), \quad
-\frac{dy}{d\theta} = -\csc^2\theta + \csc\theta \cot\theta = \csc\theta(\cot\theta - \csc\theta).
-\]
-
-所以
-\[
-\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{\csc\theta(\cot\theta - \csc\theta)}{\sec\theta(\sec\theta - \tan\theta)}.
-\]
-
-将 $\csc\theta/\sec\theta = \cos\theta/\sin\theta = \cot\theta$,并注意 $\frac{\cot\theta - \csc\theta}{\sec\theta - \tan\theta} = -\frac{y}{x}$,得到
-\[
-\frac{dy}{dx} = -\frac{\cot\theta y}{x} = -\frac{y}{x} \cdot \frac{y^2-1}{2y} = \frac{1-y^2}{2x}.
-\]
-
-\end{solution}
-
-\question
-曲线由参数方程给出：
-\[
-x = \sin\theta, \quad y = \theta \cos\theta, \quad -\pi < \theta < \pi.
-\]
-求曲线在 $\theta = -\frac{\pi}{4}$ 和 $\theta = \frac{\pi}{4}$ 处的切线,它们平行,距离为 $d$。
-
-证明：
-\[
-d = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
-\]
-
-\begin{solution}
-曲线的导数：
-\[
-\frac{dx}{d\theta} = \cos\theta, \quad \frac{dy}{d\theta} = \cos\theta - \theta\sin\theta \implies \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = 1 - \theta\tan\theta.
-\]
-
-在 $\theta=-\frac{\pi}{4}$ 和 $\theta=\frac{\pi}{4}$ 时：
-\[
-x = \mp \frac{1}{\sqrt{2}}, \quad y = \mp \frac{\pi}{4\sqrt{2}}, \quad \frac{dy}{dx} = 1 - \frac{\pi}{4}.
-\]
-
-切线方程：
-\[
-y + \frac{\pi}{4\sqrt{2}} = \left(1 - \frac{\pi}{4}\right)\left(x + \frac{1}{\sqrt{2}}\right), \quad
-y - \frac{\pi}{4\sqrt{2}} = \left(1 - \frac{\pi}{4}\right)\left(x - \frac{1}{\sqrt{2}}\right).
-\]
-
-两切线在 $x=0$ 时的纵坐标：
-\[
-y_1 = \frac{\sqrt{2}(2-\pi)}{4}, \quad y_2 = \frac{\sqrt{2}(\pi-2)}{4}.
-\]
-
-纵坐标差：
-\[
-|y_2 - y_1| = \frac{\sqrt{2}(\pi-2)}{2}.
-\]
-
-切线梯度 $m = 1 - \frac{\pi}{4} = \frac{4-\pi}{4}$,与水平的夹角 $\theta$ 满足
-\[
-\cos\theta = \frac{1}{\sqrt{1+m^2}} = \frac{4}{\sqrt{(4-\pi)^2 + 16}} = \frac{4}{\sqrt{\pi^2 - 8\pi + 32}}.
-\]
-
-切线间距离：
-\[
-d = |y_2 - y_1| \cos\theta = \frac{\sqrt{2}(\pi-2)}{2} \cdot \frac{4}{\sqrt{\pi^2 - 8\pi + 32}} = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
-\]
-
-\end{solution}
-
-    \question
-曲线 $C$ 的极坐标方程为
-\[
-r=\tan\theta,\quad 0\le\theta<\frac{\pi}{2}.
-\]
-求曲线 $C$ 的直角坐标方程,写成 $y=f(x)$ 的形式。
-
-\begin{solution}
-由已知
-\[
-r=\tan\theta.
-\]
-两边平方得
-\[
-r^2=\tan^2\theta.
-\]
-利用 $\tan\theta=\frac{\sin\theta}{\cos\theta}$,有
-\[
-r^2=\frac{\sin^2\theta}{\cos^2\theta},
-\]
-即
-\[
-r^2\cos^2\theta=\sin^2\theta.
-\]
-注意到 $r\cos\theta=x$,于是
-\[
-x^2=\sin^2\theta.
-\]
-又因为
-\[
-\sin^2\theta=1-\cos^2\theta,
-\]
-所以
-\[
-\cos^2\theta=1-x^2.
-\]
-从而
-\[
-\sec^2\theta=\frac{1}{1-x^2}.
-\]
-由恒等式 $1+\tan^2\theta=\sec^2\theta$,得
-\[
-\tan^2\theta=\frac{1}{1-x^2}-1=\frac{x^2}{1-x^2}.
-\]
-由于 $r=\tan\theta$,于是
-\[
-r^2=\frac{x^2}{1-x^2}.
-\]
-又有 $r^2=x^2+y^2$,因此
-\[
-x^2+y^2=\frac{x^2}{1-x^2}.
-\]
-化简得
-\[
-y^2=\frac{x^4}{1-x^2}.
-\]
-因为 $0\le\theta<\frac{\pi}{2}$,对应 $y\ge0$,故
-\[
-y=\frac{x^2}{\sqrt{1-x^2}},
-\]
-其中 $0\le x<1$。
-\end{solution}
-
-\question
-曲线 $C_1$ 和 $C_2$ 的极坐标方程分别为
-\[
-C_1:\ r=2\cos\theta-\sin\theta,\quad 0<\theta\le\frac{\pi}{3},
-\]
-\[
-C_2:\ r=\sqrt{2+\sin\theta},\quad 0\le\theta<2\pi.
-\]
-
-点 $P$ 在 $C_1$ 上,且 $P$ 点处的切线与极轴平行。
-
-(a) 证明在点 $P$ 处有
-\[
-\tan 2\theta=2.
-\]
-
-(b) 进一步证明点 $P$ 到原点 $O$ 的精确距离为
-\[
-\sqrt{\frac{5-\sqrt{5}}{2}}.
-\]
-
-点 $Q$ 为 $C_1$ 与 $C_2$ 的交点。
-
-(c) 求点 $Q$ 处对应的 $\theta$ 值。
-
-\begin{solution}
-(a) 对于极坐标曲线,有
-\[
-x=r\cos\theta,\quad y=r\sin\theta.
-\]
-切线与极轴平行等价于
-\[
-\frac{\mathrm{d}y}{\mathrm{d}x}=0,
-\]
-即
-\[
-\frac{\mathrm{d}}{\mathrm{d}\theta}(r\sin\theta)=0.
-\]
-由 $r=2\cos\theta-\sin\theta$,得
-\[
-\frac{\mathrm{d}}{\mathrm{d}\theta}\bigl((2\cos\theta-\sin\theta)\sin\theta\bigr)=0.
-\]
-化简括号内表达式,
-\[
-(2\cos\theta-\sin\theta)\sin\theta
-=2\sin\theta\cos\theta-\sin^2\theta
-=\sin 2\theta-\sin^2\theta.
-\]
-对 $\theta$ 求导得
-\[
-2\cos 2\theta-2\sin\theta\cos\theta=0.
-\]
-注意到 $2\sin\theta\cos\theta=\sin 2\theta$,于是
-\[
-2\cos 2\theta-\sin 2\theta=0,
-\]
-从而
-\[
-\tan 2\theta=2.
-\]
-
-(b) 由 $\tan 2\theta=2$,利用公式
-\[
-\tan 2\theta=\frac{2\tan\theta}{1-\tan^2\theta},
-\]
-设 $T=\tan\theta$,则
-\[
-\frac{2T}{1-T^2}=2.
-\]
-整理得
-\[
-2T=2(1-T^2),
-\]
-即
-\[
-T^2+T-1=0.
-\]
-解得
-\[
-T=\frac{-1\pm\sqrt{5}}{2}.
-\]
-由于 $0<\theta<\frac{\pi}{3}$,取
-\[
-\tan\theta=\frac{-1+\sqrt{5}}{2}.
-\]
-由此可得
-\[
-\sin\theta=\frac{-1+\sqrt{5}}{\sqrt{10-2\sqrt{5}}},\quad
-\cos\theta=\frac{2}{\sqrt{10-2\sqrt{5}}}.
-\]
-代入 $r=2\cos\theta-\sin\theta$,得到
-\[
-r_P=\frac{5-\sqrt{5}}{\sqrt{10-2\sqrt{5}}}.
-\]
-化简得
-\[
-r_P=\sqrt{\frac{5-\sqrt{5}}{2}}.
-\]
-
-(c) 点 $Q$ 为两曲线交点,满足
-\[
-2\cos\theta-\sin\theta=\sqrt{2+\sin\theta}.
-\]
-两边平方并整理,可得
-\[
-\cos\theta-\sin\theta=\frac{\sqrt{2}}{2}.
-\]
-利用恒等式
-\[
-\cos\theta-\sin\theta=\sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr),
-\]
-于是
-\[
-\sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{\sqrt{2}}{2},
-\]
-即
-\[
-\cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{1}{2}.
-\]
-在 $0\le\theta\le\frac{\pi}{3}$ 内,解得
-\[
-\theta+\frac{\pi}{4}=\frac{\pi}{3},
-\]
-因此
-\[
-\theta=\frac{\pi}{12}.
-\]
-\end{solution}
+        设 $P(a\cos\theta, b\sin\theta)$ 为椭圆上一动点,切线斜率为
+        \[
+        \frac{dy}{dx} = -\frac{b^2 x}{a^2 y} = -\frac{b\cos\theta}{a\sin\theta}
+        \]
+        切线方程为
+        \[
+        y - b\sin\theta = -\frac{b\cos\theta}{a\sin\theta} (x - a\cos\theta) \Rightarrow bx\cos\theta + ay\sin\theta = ab.
+        \]
+        过焦点 $F(ae,0)$,垂直于切线的直线 $FN$：
+        \[
+        y - 0 = \frac{a\sin\theta}{b\cos\theta}(x - ae) \Rightarrow -ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
+        \]
+        设 $N(x,y)$ 为交点,解方程组
+        \[
+        \begin{cases}
+        bx\cos\theta + ay\sin\theta = ab, \\
+        - ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
+        \end{cases}
+        \]
+        两式平方相加得
+        \[
+        (bx\cos\theta + ay\sin\theta)^2 + (-ay\cos\theta + bx\sin\theta)^2 = (ab)^2 + (a^2 e \sin\theta)^2.
+        \]
+        \[
+        x^2(b^2\cos^2\theta + b^2\sin^2\theta) + y^2(a^2\sin^2\theta + a^2\cos^2\theta) = a^2 b^2 + a^4 e^2 \sin^2\theta.
+        \]
+        由 $b^2 = a^2(1-e^2)$化简得垂足 $N$ 的轨迹为
+        \[
+        x^2 + y^2 = a^2
+        \]
+    \end{solution}
+
+    \question 椭圆由参数方程
+    \[
+    x=3\sqrt{2}\cos\theta,\quad y=4\sin\theta,\quad 0<\theta<2\pi
+    \]
+    给出。
+    \begin{parts}
+    \part 求椭圆的焦点坐标及准线方程。
+    \begin{solution}
+        由已知得
+        \[
+        \cos\theta=\frac{x}{3\sqrt{2}},\quad \sin\theta=\frac{y}{4}
+        \]
+        平方相加得
+        \[
+        \frac{x^2}{18}+\frac{y^2}{16}=1
+        \]
+        因此
+        \[
+        a^2=18,b^2=16, \Rightarrow e=\frac{1}{3}
+        \]
+        焦点为
+        \[
+        (\pm ae,0)=(\pm\sqrt{2},0)
+        \]
+        准线方程为
+        \[
+        x=\pm\frac{a}{e}=\pm 9\sqrt{2}
+        \]
+    \end{solution}
+    \part 证明椭圆在任意点的切线方程为
+    \[
+    \frac{y\sin\theta}{4}+\frac{x\cos\theta}{3\sqrt{2}}=1
+    \]
+    \begin{solution}
+        由参数方程求导,
+        \[
+        \frac{dy}{dx}=\frac{4\cos\theta}{-3\sqrt{2}\sin\theta}
+        \]
+        在点 $(3\sqrt{2}\cos\theta,4\sin\theta)$ 处的切线为
+        \[
+        y-4\sin\theta=\frac{4\cos\theta}{-3\sqrt{2}\sin\theta}(x-3\sqrt{2}\cos\theta)
+        \]
+        整理得
+        \[
+        \frac{y\sin\theta}{4}+\frac{x\cos\theta}{3\sqrt{2}}=1
+        \]
+    \end{solution}
+    \part 一条过原点的直线与上述切线相交于点 $P$,证明点 $P$ 的轨迹满足
+    \[
+    (x^2+y^2)^2=2(9x^2+8y^2).
+    \]
+    \begin{solution}
+        设过原点 $O$ 且垂直于切线的直线方程为
+        \[ 
+        y = \frac{3\sqrt{2} \sin \theta}{4 \cos \theta} x 
+        \]
+        将其与切线方程联立得
+        \[
+        \frac{3\sqrt{2} \sin^2 \theta}{16 \cos \theta} x + \frac{\cos \theta}{3\sqrt{2}} x = 1 \Rightarrow
+        x = \frac{24\sqrt{2} \cos \theta}{8 + \sin^2 \theta},y=\frac{36 \sin \theta}{8 + \sin^2 \theta}
+        \]
+        考虑$\dfrac{y}{x}$,可得
+        \[ 
+        \frac{y}{x} = \frac{3}{2\sqrt{2}} \tan \theta \Rightarrow \tan \theta = \frac{2\sqrt{2} y}{3x} 
+        \]
+        由恒等式 $\sec^2 \theta = 1 + \tan^2 \theta$，将 $x$ 的表达式写成
+        \[ x = \frac{24\sqrt{2} \sec \theta}{8 \sec^2 \theta + \tan^2 \theta} = \frac{24\sqrt{2} \sec \theta}{9 \tan^2 \theta + 8} \]
+        平方后,将$\tan^2 \theta = \dfrac{8y^2}{9x^2}$代入,
+        \[
+        x^2 = \frac{1152 (1 + \tan^2 \theta)}{(8 + 9 \tan^2 \theta)^2} 
+        = \frac{18 \left( 1 + \frac{8y^2}{9x^2} \right)}{\left( 1 + \frac{y^2}{x^2} \right)^2}
+        = \frac{2x^2 (9x^2 + 8y^2)}{(x^2 + y^2)^2}
+        \]
+        故$P$轨迹方程为
+        \[ 
+        (x^2 + y^2)^2 = 2(9x^2 + 8y^2).
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知双曲线 $H$ 与直线 $L$ 的方程分别为
+    \[
+    H: \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1, \quad L: y=mx+c,
+    \]
+    其中 $a,b,m,c$ 均为非零实数。
+    \begin{parts}
+    \part 证明直线 $L$ 与双曲线 $H$ 的交点的 $x$ 坐标满足方程
+    \[
+    (a^{2}m^{2}-b^{2})x^{2}+2a^{2}mcx+a^{2}(b^{2}+c^{2})=0
+    \]
+    \begin{solution}
+        将 $y=mx+c$ 代入双曲线方程,
+        \[
+        \frac{x^{2}}{a^{2}}-\frac{(mx+c)^{2}}{b^{2}}=1
+        \]
+        展开整理得
+        \[
+        (a^{2}m^{2}-b^{2})x^{2}+2a^{2}mcx+a^{2}(b^{2}+c^{2})=0
+        \]
+    \end{solution}
+    \part 已知直线 $L$ 为双曲线 $H$ 的切线,证明
+    \[
+    a^{2}m^{2}=b^{2}+c^{2}
+    \]
+    \begin{solution}
+        已知 $L$ 为切线,则上述关于 $x$ 的二次方程有重根,其判别式为零:
+        \[
+        \Delta = 4a^{4}m^{2}c^{2}-4a^{2}(a^{2}m^{2}-b^{2})(b^{2}+c^{2})=0
+        \]
+        化简得
+        \[
+        b^{2}(b^{2}+c^{2}-a^{2}m^{2})=0
+        \]
+        由于 $b\neq0$,故得证
+        \[
+        a^{2}m^{2}=b^{2}+c^{2}
+        \]
+    \end{solution}
+    \part 求经过点 $(1,4)$ 且与双曲线
+    \[
+    \frac{x^{2}}{25}-\frac{y^{2}}{16}=1
+    \]
+    相切的两条切线方程,并分别求出切点坐标。
+    \begin{solution}
+        由题意 $a^{2}=25,b^{2}=16$,切线$y=mx+c$经过点 $(1,4)$,则
+        \[
+        m=4-c
+        \]
+        由切线条件 $a^{2}m^{2}=b^{2}+c^{2}$,解得
+        \[
+        25(4-c)^{2}=16+c^{2} \Rightarrow c=3 \quad \text{或} \quad c=\frac{16}{3}
+        \]
+        对应
+        \[
+        m=1 \quad \text{或} \quad m=-\frac{4}{3}
+        \]
+        故两条切线方程为
+        \[
+        y=x+3, \quad y=-\frac{4}{3}x+\frac{16}{3}
+        \]
+        现求切点坐标。当 $y=x+3$ 时,代入双曲线解得
+        \[
+        x=-\frac{25}{3},\quad y=-\frac{16}{3}
+        \]
+        当 $y=-\dfrac{4}{3}x+\dfrac{16}{3}$ 时,代入双曲线解得
+        \[
+        x=\frac{25}{4},\quad y=-3
+        \]
+        因此两条切线及其切点分别为
+        \[
+        y=x+3,\; \left(-\frac{25}{3},-\frac{16}{3}\right)\quad \text{及} \quad y=-\frac{4}{3}x+\frac{16}{3},\; \left(\frac{25}{4},-3\right)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知双曲线 
+    \[
+    \frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+    \] 
+    上一点 $P$,过 $P$ 的法线分别交 $x$ 轴、$y$ 轴于 $A,B$,若 $OABQ$ 为矩形,求点 $Q$ 的轨迹方程。
+    \begin{solution}
+        设 $P(a\sec\theta, b\tan\theta)$ 为双曲线上的动点,有
+        \[
+        \frac{dy}{dx} = \frac{b^2 x}{a^2 y}.
+        \]
+        在 $P$ 点的切线斜率为$\dfrac{b\sec\theta}{a\tan\theta}$,法线斜率为$-\dfrac{a\tan\theta}{b\sec\theta}$,故$P$处的法线方程为
+        \[
+        y - b\tan\theta = -\frac{a\tan\theta}{b\sec\theta} (x - a\sec\theta) \Rightarrow a\tan\theta\, x + b\sec\theta\, y - \frac{ab}{\cos\theta} = 0
+        \]
+        与坐标轴交点分别为
+        \[
+        A\left(\frac{a^2+b^2}{a}\sec\theta, 0\right),\quad B\left(0, -\frac{a^2+b^2}{b}\tan\theta\right)
+        \]
+        由矩形性质,$Q$ 点坐标为
+        \[
+        Q\left(\frac{a^2+b^2}{a}\sec\theta, -\frac{a^2+b^2}{b}\tan\theta \right)
+        \]
+        利用恒等式 $\sec^2\theta - \tan^2\theta = 1$,得点 $Q$ 的轨迹方程为
+        \[
+        \left(\frac{ax}{a^2+b^2}\right)^2 - \left(\frac{by}{a^2+b^2}\right)^2 = 1 \Rightarrow a^2 x^2 - b^2 y^2 = (a^2+b^2)^2
+        \]
+    \end{solution}
+
+    \question 动点 $P$ 在矩形双曲线
+    \[
+    xy=a^{2}
+    \]
+    上运动,其中 $a>0$ 为常数。过点 $P$ 作双曲线的法线,该法线再次与双曲线相交于点 $Q$。设 $M$ 为线段 $PQ$ 的中点。求点 $M$ 的轨迹方程。
+    \begin{solution}
+        设点 $P\left(ap, \frac{a}{p}\right)$,其中 $p \neq 0$。由链导法,在点 $P(ap, \frac{a}{p})$ 处切线的斜率为
+        \[
+        \frac{dy}{dx}=\frac{dy}{dp} \div \frac{dx}{dp} = \frac{-\frac{a}{p^2}}{a}=-\frac{1}{p^{2}}
+        \]
+        从而 $P$ 处法线方程为
+        \[
+        y - \frac{a}{p} = p^{2}(x - ap)
+        \]
+        与$xy=a^{2}$联立解得
+        \[
+        \frac{a^{2}}{x} - \frac{a}{p} = p^{2}(x - ap) \Rightarrow Q\left(-\frac{a}{p^{3}}, -ap^{3}\right)
+        \]
+        其中$x = ap$对应点$P$;点 $M(x, y)$ 为 $PQ$ 的中点, 其坐标为
+        \[
+        x = \frac{ap - \frac{a}{p^{3}}}{2} = \frac{a(p^{4}-1)}{2p^{3}}, \quad y = \frac{\frac{a}{p} - ap^{3}}{2} = \frac{a(1-p^{4})}{2p}
+        \]
+        两式相除得
+        \[
+        p^{2} = -\frac{y}{x}
+        \]
+        将之带入$y$ 的表达式平方得
+        \[
+        y^{2} = \frac{a^{2}\left(1 - \frac{y^{2}}{x^{2}}\right)^{2}}{4\left(-\frac{y}{x}\right)} = \frac{a^{2}(x^{2}-y^{2})^{2}}{-4x^{3}y}
+        \]
+        整理得点 $M$ 的轨迹方程为
+        \[
+        a^{2}(x^{2}-y^{2})^{2} + 4x^{3}y^{3} = 0
+        \]
+    \end{solution}
+
+    \question 点 $P,Q$ 为曲线
+    \[
+    xy=1,\ x\in\mathbb{R} \setminus \{0\}
+    \]
+    上的两个相异点,使得线段 $PQ$ 为曲线在 $P$ 处的法线。曲线在 $P,Q$ 处的切线相交于点 $R$。证明点 $R$ 的轨迹方程为
+    \[
+    (y^2-x^2)^2+4xy=0。
+    \]
+    \begin{solution}
+        对曲线$y=\frac{1}{x}$求导得
+        \[
+        \frac{dy}{dx}=-\frac{1}{x^2}
+        \]
+        设$P\left(p,\dfrac{1}{p}\right), Q\left(q,\dfrac{1}{q}\right), p\neq q$,弦 $PQ$ 的斜率为
+        \[
+        \frac{\frac{1}{p}-\frac{1}{q}}{p-q}=-\frac{1}{pq}
+        \]
+        曲线在 $P$ 处切线斜率为 $-\frac{1}{p^2}$,故法线斜率为 $p^2$。
+        由于 $PQ$ 为 $P$ 处的法线,有
+        \[
+        \left(-\frac{1}{pq}\right)\left(-\frac{1}{p^2}\right)=-1 \Rightarrow q=-\frac{1}{p^2}
+        \]
+        曲线在 $P$ 处的切线方程为
+        \[
+        y-\frac{1}{p}=-\frac{1}{p^2}(x-p) \Rightarrow y=\frac{2}{p}-\frac{1}{p^2}x
+        \]
+        同理,曲线在 $Q$ 处的切线方程为
+        \[
+        y=\frac{2}{q}-\frac{1}{q^2}x
+        \]
+        联立两切线方程解得交点为
+        \[
+        R\left(\frac{2pq}{p+q},\frac{2}{p+q}\right)。
+        \]
+        由 $q=-\frac{1}{p^2}$,
+        \[
+        x = \frac{2p\left(-\frac{1}{p^2}\right)}{p-\frac{1}{p^2}}= -\frac{2p}{p^3-1},\quad
+        y = \frac{2}{p-\frac{1}{p^2}}= \frac{2p^2}{p^3-1}
+        \]
+        于是由
+        \[
+        p=-\frac{y}{x}
+        \]
+        可得点 $R$ 的轨迹方程
+        \[
+        (y^2-x^2)^2+4xy=0
+        \]
+    \end{solution}
+
+    \question 已知动点
+    \[
+    P\left(5t,\frac{5}{t}\right),\ t\neq 0
+    \]
+    在双曲线
+    \[
+    xy=25
+    \]
+    上。
+    \begin{parts}
+    \part 证明该双曲线在点 $P$ 处的法线方程为
+    \[
+    y=t^2x+\frac{5}{t}-5t^3
+    \]
+    \begin{solution}
+        对双曲线$y=\frac{25}{x}$求导得
+        \[
+        \frac{dy}{dx}=-\frac{25}{x^2}
+        \]
+        在$P$处的斜率为
+        \[
+        \frac{dy}{dx}=-\frac{25}{(5t)^2}=-\frac{1}{t^2}
+        \]
+        故法线斜率为 $t^2$。点 $P\left(5t,\frac{5}{t}\right)$ 处法线方程为
+        \[
+        y-\frac{5}{t}=t^2(x-5t) \Rightarrow  y=t^2x+\frac{5}{t}-5t^3
+        \]
+    \end{solution}
+    \part 该法线再次与双曲线相交于点 $Q$,证明点 $Q$ 的坐标为
+    \[
+    \left(-\frac{5}{t^3},-5t^3\right)
+    \]
+    \begin{solution}
+        联立
+        \[
+        xy=25,\quad y=t^2x+\frac{5}{t}-5t^3
+        \]
+        化简得
+        \[
+        t^3x^2+(5-5t^4)x-25t=0
+        \]
+        由于 $x=5t$ 为一根,因式分解得
+        \[
+        (x-5t)(t^3x+5)=0
+        \]
+        故另一交点满足
+        \[
+        x=-\frac{5}{t^3} \Rightarrow y=\frac{25}{x}=-5t^3
+        \]
+        因此得证
+        \[
+        Q\left(-\frac{5}{t^3},-5t^3\right)
+        \]
+    \end{solution}
+    \part 证明线段 $PQ$ 的中点轨迹的笛卡尔方程为
+    \[
+    4xy+25\left(\frac{y}{x}-\frac{x}{y}\right)^2=0
+    \]
+    \begin{solution}
+        设 $M$ 为 $PQ$ 的中点,则
+        \[
+        M\left(\frac{5}{2}\left(t-\frac{1}{t^3}\right),\frac{5}{2}\left(\frac{1}{t}-t^3\right)\right)
+        \]
+        设
+        \[
+        x=\frac{5}{2}\left(t-\frac{1}{t^3}\right),\quad
+        y=\frac{5}{2}\left(\frac{1}{t}-t^3\right)
+        \]
+        则
+        \[
+        \frac{x}{y}=-\frac{1}{t^2} \Rightarrow t^2=-\frac{y}{x}
+        \]
+        将$y$表达式平方得
+        \[
+        4y^2t^2=25(1-t^4)^2
+        \]
+        代入$t^2=-\dfrac{y}{x}$得,
+        \[
+        -4xy^3=25\frac{(x^2-y^2)^2}{x^3}
+        \]
+        即
+        \[
+        4xy+25\left(\frac{y}{x}-\frac{x}{y}\right)^2=0
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 曲线由参数方程给出
+    \[
+    x = \sin^2 t, \quad y = \sin t \cos t + \cos t, \quad 0 \le t < 2\pi.
+    \]
+    证明其直角坐标方程为
+    \[
+    (x^2 + y^2 - 1)^2 = 4x(1-x)^2.
+    \]
+    \begin{solution}
+        将 $y$ 写为
+        \[
+        y = \cos t (\sin t + 1) \implies y^2 = \cos^2 t (\sin t + 1)^2.
+        \]
+        利用恒等式 $\cos^2 t = 1 - \sin^2 t$,并令 $x = \sin^2 t$:
+        \[
+        y^2 = (1 - x)(x + 2\sin t + 1) \Rightarrow \frac{y^2}{1-x} - (1+x) = 2\sin t
+        \]
+        两边平方,
+        \[
+        \left( \dfrac{y^2 - (1-x^2)}{1-x} \right)^2 = 4 \sin^2 t = 4x
+        \]
+        于是所求直角坐标方程为
+        \[
+        (y^2 + x^2 - 1)^2 = 4x (1-x)^2
+        \]
+    \end{solution}
+
+    \question 曲线 $C$ 由参数方程
+    \[
+    x = \tan\theta - \sec\theta, \quad y = \cot\theta - \csc\theta, \quad 0 < \theta < \frac{\pi}{2}.
+    \]
+    给出,证明
+    \begin{parts}
+    \part $C$ 的直角坐标方程为
+    \[
+    (x^2 - 1)(y^2 - 1) = 4xy,
+    \]
+    \begin{solution}
+        从 $x = \tan\theta - \sec\theta$ 开始:
+        \begin{align*}
+        x^2 &= (\tan\theta - \sec\theta)^2 \\
+        &= \tan^2\theta - 2\tan\theta\sec\theta + \sec^2\theta \\
+        &= \tan^2\theta - 2\tan\theta\sec\theta + (1+\tan^2\theta) \\
+        &= 2\tan^2\theta - 2\tan\theta\sec\theta + 1 \\
+        &= 2\tan\theta(\tan\theta - \sec\theta) + 1 \\
+        &= 2\tan\theta \cdot x + 1
+        \end{align*}
+        所以
+        \[
+        \tan\theta = \frac{x^2-1}{2x}
+        \]
+        类似地,由 $y = \cot\theta - \csc\theta$ 和恒等式 $1+\cot^2\theta = \csc^2\theta$ 得
+        \[
+        \cot\theta = \frac{y^2-1}{2y}
+        \]
+        于是
+        \[
+        \tan\theta \cot\theta = \frac{x^2-1}{2x} \cdot \frac{y^2-1}{2y} = 1 \Rightarrow (x^2-1)(y^2-1) = 4xy
+        \]
+    \end{solution}
+    \part 
+    \[
+    \frac{dy}{dx} = \frac{1-y^2}{2x}.
+    \]
+    \begin{solution}
+        参数求导得
+        \[
+        \frac{dx}{d\theta} = \sec^2\theta - \sec\theta\tan\theta = \sec\theta(\sec\theta - \tan\theta)
+        \]
+        \[
+        \frac{dy}{d\theta} = -\csc^2\theta + \csc\theta \cot\theta = \csc\theta(\cot\theta - \csc\theta)
+        \]
+        所以
+        \[
+        \frac{dy}{dx} = \frac{dy}{d\theta} \div \frac{dx}{d\theta} = \frac{\csc\theta(\cot\theta - \csc\theta)}{\sec\theta(\sec\theta - \tan\theta)}
+        \]
+        注意到
+        \[
+        \csc\theta/\sec\theta = \cos\theta/\sin\theta = \cot\theta,
+        \]
+        且
+        \[
+        \frac{\cot\theta - \csc\theta}{\sec\theta - \tan\theta} = -\frac{y}{x}
+        \]
+        得到
+        \[
+        \frac{dy}{dx} = -\frac{y}{x} \cdot \frac{y^2-1}{2y} = \frac{1-y^2}{2x}
+        \]
+        故得证。
+    \end{solution}
+    \end{parts}
+
+    \question 曲线的参数方程为
+    \[
+    x = \sin\theta, \quad y = \theta \cos\theta, \quad -\pi < \theta < \pi.
+    \]
+    已知曲线在 $\theta = -\frac{\pi}{4}$ 及 $\theta = \frac{\pi}{4}$ 处的切线平行,且间距为 $d$,证明：
+    \[
+    d = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
+    \]
+    \begin{solution}
+        先求曲线的导数,
+        \[
+        \frac{dx}{d\theta} = \cos\theta, \quad \frac{dy}{d\theta} = \cos\theta - \theta\sin\theta \implies \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = 1 - \theta\tan\theta.
+        \]
+        当 $\theta=\pm \frac{\pi}{4}$ 和 $\theta=\frac{\pi}{4}$ 时：
+        \[
+        x = \pm \frac{1}{\sqrt{2}}, \quad y = \pm \frac{\pi}{4\sqrt{2}}, \quad \frac{dy}{dx} = 1 - \frac{\pi}{4}.
+        \]
+        故在$\theta=\pm \frac{\pi}{4}$处的切线方程为
+        \[
+        y - \frac{\pi}{4\sqrt{2}} = \left(1 - \frac{\pi}{4}\right)\left(x - \frac{1}{\sqrt{2}}\right), \quad y + \frac{\pi}{4\sqrt{2}} = \left(1 - \frac{\pi}{4}\right)\left(x + \frac{1}{\sqrt{2}}\right).
+        \]
+        两切线在 $x=0$ 时的纵坐标差为
+        \[
+        y_1 = \frac{\sqrt{2}(2-\pi)}{4}, y_2 = \frac{\sqrt{2}(\pi-2)}{4} \Rightarrow |y_2 - y_1| = \frac{\sqrt{2}(\pi-2)}{2}
+        \]
+        且切线与水平的夹角 $\theta$ 满足
+        \[
+        \cos\theta = \frac{1}{\sqrt{1+(\frac{dy}{dx})^2}} = \frac{4}{\sqrt{\pi^2 - 8\pi + 32}}.
+        \]
+        故切线间距为
+        \[
+        d = |y_2 - y_1| \cos\theta = \frac{\sqrt{2}(\pi-2)}{2} \cdot \frac{4}{\sqrt{\pi^2 - 8\pi + 32}} = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
+        \]
+    \end{solution}
+
+\end{questions}
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{极坐标}{极坐标} \label{极坐标}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+
+\begin{questions}
+    \question 曲线 $C$ 的极坐标方程为
+    \[
+    r=\tan\theta,\quad 0\le\theta<\frac{\pi}{2}.
+    \]
+    求曲线 $C$ 的直角坐标方程,写成 $y=f(x)$ 的形式。
+    \begin{solution}
+        由已知$r=\tan\theta$,两边平方得
+        \[
+        r^2=\tan^2\theta \Rightarrow r^2\cos^2\theta=\sin^2\theta.
+        \]
+        由 $r\cos\theta=x$,得
+        \[
+        x^2=\sin^2\theta
+        \]
+        至此,欲以$\tan^2\theta$表示$\sin^2\theta$,不妨考虑
+        \[
+        1+\tan^2\theta=\sec^2\theta=\frac{1}{\cos^2 \theta}=\frac{1}{1-\sin^2 \theta}
+        \]
+        据此有
+        \[
+        \tan^2\theta=\frac{1}{1-x^2}-1=\frac{x^2}{1-x^2}.
+        \]
+        又有 $r=\tan\theta$及$r^2=x^2+y^2$,于是
+        \[
+        x^2+y^2=\frac{x^2}{1-x^2} \Rightarrow y^2=\frac{x^4}{1-x^2}
+        \]
+        因为 $0\le\theta<\dfrac{\pi}{2}$,有 $y\ge0$,故
+        \[
+        y=\frac{x^2}{\sqrt{1-x^2}},
+        \]
+        其中 $0\le x<1$。
+    \end{solution}
+
+    \question 曲线 $C_1,C_2$ 的极坐标方程分别为
+    \[
+    C_1:\ r=2\cos\theta-\sin\theta,\quad 0<\theta\le\frac{\pi}{3},
+    \]
+    \[
+    C_2:\ r=\sqrt{2+\sin\theta},\quad 0\le\theta<2\pi.
+    \]
+    点 $P$ 在 $C_1$ 上,且 $P$ 点处的切线与极轴平行。
+    \begin{parts}
+    \part 证明在点 $P$ 处有
+    \[
+    \tan 2\theta=2.
+    \]
+    \begin{solution}
+        $P$ 点处的切线与极轴平行,意味
+        \[
+        \frac{dy}{dx}=0\Rightarrow\frac{dy}{d\theta}=0
+        \]
+        即
+        \[
+        \frac{d}{d\theta}(r\sin\theta)=\frac{d}{d\theta}\left((2\cos\theta-\sin\theta)\sin\theta\right)=\frac{d}{d\theta}(\sin 2\theta-\sin^2\theta)=0
+        \]
+        对 $\theta$ 求导得
+        \[
+        2\cos 2\theta-2\sin\theta\cos\theta=0.
+        \]
+        即
+        \[
+        2\cos 2\theta=\sin 2\theta \Rightarrow \tan 2\theta=2
+        \]
+    \end{solution}
+    \part 证明点 $P$ 到原点 $O$ 的距离为
+    \[
+    \sqrt{\frac{5-\sqrt{5}}{2}}.
+    \]
+    \begin{solution}
+        由 $\tan 2\theta=2$,利用倍角公式
+        \[
+        \tan 2\theta=\frac{2\tan\theta}{1-\tan^2\theta}
+        \]
+        解得
+        \[
+        \tan\theta=\frac{-1\pm\sqrt{5}}{2}
+        \]
+        由于 $0<\theta<\dfrac{\pi}{3}$,取
+        \[
+        \tan\theta=\frac{-1+\sqrt{5}}{2}
+        \]
+        由此可得
+        \[
+        \sin\theta=\frac{-1+\sqrt{5}}{\sqrt{10-2\sqrt{5}}},\quad
+        \cos\theta=\frac{2}{\sqrt{10-2\sqrt{5}}}
+        \]
+        代入 $r=2\cos\theta-\sin\theta$,得到
+        \[
+        r_P=\frac{5-\sqrt{5}}{\sqrt{10-2\sqrt{5}}}=\sqrt{\frac{5-\sqrt{5}}{2}}
+        \]
+    \end{solution}
+    \part 设点 $Q$ 为 $C_1$ 与 $C_2$ 的交点,求点 $Q$ 处对应的 $\theta$ 值。
+    \begin{solution}
+        点 $Q$ 为两曲线交点,满足
+        \[
+        2\cos\theta-\sin\theta=\sqrt{2+\sin\theta}.
+        \]
+        两边平方并整理,可得
+        \[
+        \cos\theta-\sin\theta=\frac{\sqrt{2}}{2}.
+        \]
+        利用恒等式
+        \[
+        \cos\theta-\sin\theta=\sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr),
+        \]
+        于是
+        \[
+        \sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{\sqrt{2}}{2},
+        \]
+        即
+        \[
+        \cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{1}{2}
+        \]
+        在 $0\le\theta\le\frac{\pi}{3}$ 内,解得
+        \[
+        \theta+\frac{\pi}{4}=\frac{\pi}{3},
+        \]
+        因此
+        \[
+        \theta=\frac{\pi}{12}
+        \]
+    \end{solution}
+    \end{parts}
 
 \question
 如图,曲线的极坐标方程为
