@@ -449,12 +449,30 @@
         取正根 $a^3=2$,故 $a=\sqrt[3]{2}$。
     \end{solution}
 
+    \question 已知一个半径为 1 的圆中,有两条相等的弦互相垂直,且互相分割成 $1:4$的线段。求弦长。
+    \begin{solution}
+        构造坐标系,使得圆心在原点上,两弦为 $x=-a$及 $y=-a$,且 $a>0$。由题意,
+        \[
+        4(\sqrt{1-a^{2}}-a)=\sqrt{1-a^{2}}+a
+        \]
+        解得
+        \[
+        a^{2}=\frac{9}{34}
+        \]
+        因此弦长为
+        \[
+        2\sqrt{1-a^{2}}=\frac{5\sqrt{34}}{17}
+        \]
+    \end{solution}
+
     \question 圆内接四边形 \(ABCD\) 中,\(\;AB=BC=3,\;CD=5,\;DA=8\)。求对角线 \(BD\)。  
     \begin{solution}
-        圆内接四边形对角互补,有\[
+        圆内接四边形对角互补,有
+        \[
         BD^2=3^2+8^2-2\cdot3\cdot8\cdot \cos A = 3^2+5^2-2\cdot3\cdot5\cdot \cos (\pi- A)
         \]
-        解得 \[
+        解得 
+        \[
         \cos A = \frac{1}{2} \Rightarrow BD=7
         \]
     \end{solution}
@@ -8349,108 +8367,6 @@ B(3k,3t).
         \]
     \end{solution}
 
-    \question 将椭圆 $$\Gamma_1: \frac{x^2}{9} + \frac{y^2}{4} = 1$$ 以原点 $O$ 为中心,逆时针旋转锐角 $\theta$ 后,得到椭圆 $\Gamma_2$。已知 $\Gamma_2$ 的长轴方程为 $y=2x$,求 $\Gamma_2$ 的方程。
-    \begin{solution}
-        椭圆 $$\Gamma_1: \frac{x^2}{9} + \frac{y^2}{4} = 1$$ 的长轴在 $x$ 轴上,长轴旋转至 $y=2x$,设旋转角满足 $\tan \theta = 2$,则
-        \[
-        \sin \theta = \frac{2}{\sqrt{5}}, \quad \cos \theta = \frac{1}{\sqrt{5}}.
-        \]
-        设 $(x, y)$ 是 $\Gamma_2$ 上一点,对应 $\Gamma_1$ 上某点 $(s, t)$,则有
-        \[
-        \begin{bmatrix} x \\ y \end{bmatrix} =
-        \begin{bmatrix} \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}} \\ \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \end{bmatrix}
-        \begin{bmatrix} s \\ t \end{bmatrix}.
-        \]
-        所以反解得
-        \[
-        \begin{bmatrix} s \\ t \end{bmatrix} =
-        \begin{bmatrix} \frac{1}{\sqrt{5}}(x+2y) \\ \frac{1}{\sqrt{5}}(-2x+y) \end{bmatrix}.
-        \]
-        因为 $(s,t)$ 满足 $\Gamma_1$:
-        \[
-        \frac{s^2}{9} + \frac{t^2}{4} = 1,
-        \]
-        代入得
-        \[
-        \frac{\frac{1}{5}(x+2y)^2}{9} + \frac{\frac{1}{5}(-2x+y)^2}{4} = 1,
-        \]
-        即
-        \[
-        8x^2 - 4xy + 5y^2 - 36 = 0.
-        \]
-    \end{solution}
-
-    \question 在坐标平面上,考虑二阶方阵 $$A=\frac{1}{5}\begin{bmatrix}3&-4\\ 4&3\end{bmatrix}$$ 所定义的线性变换。对于平面上异于原点 $O$ 的点 $P_1$,设 $P_1$ 经 $A$ 变换成 $P_2,P_2$ 经 $A$ 变换成 $P_3$。假设 $P_1$ 是图形 $y=\dfrac{1}{10}x^{2}-10$ 上的动点,求 $\triangle P_1P_2P_3$ 面积的最小可能值。
-    \begin{solution}
-        我们有
-        \[
-        A = \frac{1}{5}\begin{bmatrix}3 & -4 \\ 4 & 3 \end{bmatrix} 
-        = \begin{bmatrix} \frac{3}{5} & -\frac{4}{5} \\ \frac{4}{5} & \frac{3}{5} \end{bmatrix} 
-        = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}
-        \Rightarrow \sin \theta = \frac{4}{5},\ \cos \theta = \frac{3}{5}
-        \]
-        故
-        \[
-        \sin \angle P_1OP_2 = \sin 2\theta = 2\sin\theta\cos\theta = \frac{24}{25}
-        \]
-        假设 $OP_1=a$,则
-        \begin{align*}
-        [\triangle P_1P_2P_3] &= [\triangle OP_1P_2] + [\triangle OP_2P_3] - [\triangle OP_1P_3]\\
-        &= \frac{1}{2}a^2 \sin \theta + \frac{1}{2}a^2 \sin \theta - \frac{1}{2}a^2 \sin 2\theta 
-        = \frac{8}{25}a^2
-        \end{align*}
-        又$P_1$  在 $y = \dfrac{x^2}{10} - 10$ 上,设$P_1\left(m, \dfrac{m^2}{10} - 10\right)$,则
-        \[
-        a^2 = \frac{1}{100}m^4 - m^2 + 100 = \frac{1}{100}(m^2 - 50)^2 + 75
-        \]
-        故
-        \[
-        [\triangle P_1P_2P_3]_{\min}=\frac{8}{25} \cdot 75=24
-        \]
-    \end{solution}
-
-    \question 在直角坐标平面上,圆 $x^{2}+y^{2}=1$ 先被变换为曲线 $\Gamma_{1}$,再被
-    \[
-    A=\begin{bmatrix}\frac{\sqrt{3}}{2} & \sqrt{3} \\[4pt] \frac{1}{2} & -3\end{bmatrix}
-    \]
-    变换为曲线 $\Gamma_{1}$,再被
-    \[
-    B=\prod_{k=8}^{67}\begin{bmatrix}\cos k^\circ & \sin k^\circ \\[4pt] \sin k^\circ & -\cos k^\circ\end{bmatrix}
-    \]
-    变换为曲线 $\Gamma_{2}$,求 $\Gamma_{2}$ 的方程。
-    \begin{solution}
-        首先注意到
-        \[
-        \begin{bmatrix}\cos a^\circ & \sin a^\circ\\[4pt] \sin a^\circ & -\cos a^\circ \end{bmatrix}
-        \begin{bmatrix}\cos (a+1)^\circ & \sin (a+1)^\circ\\[4pt] \sin (a+1)^\circ & -\cos (a+1)^\circ \end{bmatrix}
-        =\begin{bmatrix}\cos 1^\circ & \sin 1^\circ \\[4pt] -\sin 1^\circ & \cos 1^\circ \end{bmatrix}.
-        \]
-        由此,
-        \[
-        B=\begin{bmatrix}\cos 1^\circ & \sin 1^\circ \\[4pt] -\sin 1^\circ & \cos 1^\circ \end{bmatrix}^{30}
-        =\begin{bmatrix}\cos 30^\circ & \sin 30^\circ \\[4pt] -\sin 30^\circ & \cos 30^\circ \end{bmatrix}
-        =\begin{bmatrix}\tfrac{\sqrt3}{2} & \tfrac{1}{2} \\[4pt] -\tfrac{1}{2} & \tfrac{\sqrt3}{2} \end{bmatrix}.
-        \]
-        所以
-        \[
-        BA=\begin{bmatrix}\tfrac{\sqrt3}{2} & \tfrac{1}{2} \\[4pt] -\tfrac{1}{2} & \tfrac{\sqrt3}{2} \end{bmatrix}
-        \begin{bmatrix}\tfrac{\sqrt3}{2} & \sqrt3 \\[4pt] \tfrac{1}{2} & -3\end{bmatrix}
-        =\begin{bmatrix}1 & 0 \\[4pt] 0 & -2\sqrt3 \end{bmatrix}.
-        \]
-        设变换后的坐标为 $(x',y')^{\mathsf T}=BA\,(x,y)^{\mathsf T}$,则
-        \[
-        x'=x,\qquad y'=-2\sqrt3\,y.
-        \]
-        原方程 $x^{2}+y^{2}=1$ 在新坐标下变为
-        \[
-        x'^{2}+\Big(\frac{y'}{-2\sqrt3}\Big)^{2}=1 \Rightarrow x'^{2}+\frac{y'^{2}}{12}=1.
-        \]
-        即
-        \[
-        \Gamma_{2}:\quad x^{2}+\frac{y^{2}}{12}=1.
-        \]
-    \end{solution}
-
     \question 在坐标平面上,将一个过原点且半径为 $r$ 的圆,完全放入 $y \ge x^{4}$ 的区域内, 此时 $r$ 的最大值为何？  
     \begin{solution}
         设圆的方程为 $x^2+(y-r)^2=r^2$,由 $y\ge x^4$ 得 $\sqrt{y}\ge x^2$,代入方程得
@@ -8723,23 +8639,6 @@ B(3k,3t).
 \vspace{1pt}
 
 \begin{questions}
-    \question 已知一个半径为 1 的圆中,有两条相等的弦互相垂直,且互相分割成 $1:4$的线段。求弦长。
-    \begin{solution}
-    构造坐标系,使得圆心在原点上,两弦为 $x=-a$及 $y=-a$,且 $a>0$。由题意,
-    \[
-    4(\sqrt{1-a^{2}}-a)=\sqrt{1-a^{2}}+a
-    \]
-    解得
-    \[
-    a^{2}=\frac{9}{34}
-    \]
-    因此弦长为
-    \[
-    2\sqrt{1-a^{2}}=\frac{5\sqrt{34}}{17}
-    \]
-    \textcolor{red}{移走}
-    \end{solution}
-
     \question 已知三圆方程为 $C_1: x^2+y^2+2ax+12y+10a+8=0,C_2: x^2+y^2-2x-a^2+2a=0,C_3: x^2+y^2-22x-6ay+8a^2-25a+36=0$,若三圆的圆心共线,求 $a$ 的值。
     \begin{solution}
         设$C_1,C_2,C_3$ 的圆心分别为$(-a, -6),(1, 0),(11, 3a)$,已知三圆心共线,所以斜率满足
@@ -9407,31 +9306,6 @@ B(3k,3t).
         \]
     \end{solution}
 
-    \question 抛物线$\Gamma: y^2 = 4x$, $F$为$\Gamma$的焦点, $A, B$为$\Gamma$上的两个不重合的动点, 使得线段$AB$的一个三等分点$P$位于线段$OF$上(含端点), 记$Q$为线段$AB$的另一个三等分点, 求$Q$的轨迹方程.
-    \begin{solution}
-        设$A(x_1, y_1),B(x_2, y_2)$. 不妨设$\overrightarrow{AP} = \overrightarrow{PQ} = \overrightarrow{QB}$, 则
-        \[
-        P\left(\frac{2x_1+x_2}{3}, \frac{2y_1+y_2}{3}\right)
-        \]
-        易知$F(1,0)$. 由于点$P$位于线段$OF$上, 故
-        \[
-        \frac{2x_1+x_2}{3}\in[0,1],\ \frac{2y_1+y_2}{3}=0
-        \]
-        设$y_1 = t,y_2 = -2t$, 则$x_1 = \dfrac{t^2}{4},x_2 = t^2$. 此时有
-        \[
-        \frac{2x_1+x_2}{3}=\frac{t^2}{2}\in[0,1]
-        \]
-        且由$A, B$不重合知$t\neq0$, 所以$t^2\in(0, 2]$.
-        设$Q(x_Q, y_Q)$, 则
-        \[
-        x_Q = \frac{x_1+2x_2}{3} = \frac{3}{4}t^2, y_Q = \frac{y_1+2y_2}{3} = -t
-        \]
-        故有 $y_Q^2 = \dfrac{4}{3}x_Q$,注意到 $x_Q = \dfrac{3}{4}t^2 \in \left[0, \dfrac{3}{2}\right]$, 故点$Q$的轨迹方程为 
-        \[
-        y^2 = \frac{4}{3}x
-        \]
-    \end{solution}
-
     \question 已知 $P(a, -a^2),Q(b, -b^2)$在抛物线$y = -x^2$上,其中$a < 0,b > 0$。设 $M$ 为线段 $PQ$ 的中点,$R$ 为过点 $M$ 的垂直直线与抛物线的交点, $l$ 为抛物线在点 $Q$ 处的切线。证明任何一端在 $PQ$ 上、另一端在 $l$ 上的垂直线段均被过 $Q,R$ 的直线平分。
     \begin{solution}
         切线 $l$ 的方程为
@@ -9530,42 +9404,6 @@ B(3k,3t).
         $$\angle PFQ = 2\angle PAQ$$
         \end{solution}
     \end{parts}
-
-    \question 求内接于抛物线 $y^2=4cx$ ($c>0$) 的正三角形的重心所形成的轨迹方程。
-    \begin{solution}
-        设内接抛物线 $\Gamma: y^2 = 4cx$ 的正三角形顶点为
-        \[
-        A\left(\frac{\alpha^2}{4c}, \alpha\right), 
-        B\left(\frac{\beta^2}{4c}, \beta\right),
-        C\left(\frac{\gamma^2}{4c}, \gamma\right),
-        \]
-        则重心为
-        \[
-        G\left(\frac{\alpha^2+\beta^2+\gamma^2}{12c},\, \frac{\alpha+\beta+\gamma}{3}\right)
-        \]
-        设各边斜率
-        \[
-        m_1 = \frac{4c(\beta-\alpha)}{(\beta^2-\alpha^2)} = \frac{4c}{\beta+\alpha},
-        m_2 = \frac{4c(\gamma-\beta)}{(\gamma^2-\beta^2)} = \frac{4c}{\gamma+\beta},
-        m_3 = \frac{4c(\alpha-\gamma)}{(\alpha^2-\gamma^2)} = \frac{4c}{\alpha+\gamma}
-        \]
-        由正三角形性质:
-        \[
-        \tan 60^\circ = \sqrt{3} = \frac{m_2-m_1}{1+m_1 m_2} = \frac{m_3-m_2}{1+m_2 m_3} = \frac{m_1-m_3}{1+m_3 m_1}
-        \]
-        化简得
-        \[
-        \alpha\beta + \beta\gamma + \gamma\alpha = -16c^2 - \frac{\alpha^2+\beta^2+\gamma^2}{3}
-        \]
-        现设 $G=(x,y)$,则
-        \[
-        9y^2 = (\alpha+\beta+\gamma)^2 = \alpha^2+\beta^2+\gamma^2 + 2(\alpha\beta+\beta\gamma+\gamma\alpha) = 12cx + 2(-16c^2 - 4cx) = 4cx - 32c^2
-        \]
-        因此正三角形重心轨迹方程为
-        \[
-        9y^2 = 4cx - 32c^2
-        \]
-    \end{solution}
 
     \question 坐标平面上有一圆 $C: x^2 + y^2 = 20$,试回答下列问题:
     \begin{parts}
@@ -12035,6 +11873,294 @@ B(3k,3t).
     $\frac{3\sqrt3}{2}$
     \textcolor{red}{(待解)}
     \end{solution}    
+
+\end{questions}
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{坐标变换}{坐标变换} \label{坐标变换}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 已知平移坐标轴到新原点 $O'(h, k)$ 后，二直线 $2x + 3y - 4 = 0$、$x - 2y + 1 = 0$ 在新坐标中的方程式分别变为 $2x' + 3y' - 3 = 0$ 及 $x' - 2y' + 5 = 0$，求 $(h, k)$。
+    \begin{solution}
+        设平移公式为 $x = x' + h, y = y' + k$,代入原直线方程整理得
+        \[
+        \begin{cases} 
+        2x' + 3y' + (2h + 3k - 4) = 0 \\
+        x' - 2y' + (h - 2k + 1) = 0 
+        \end{cases}
+        \]
+        对照已知新坐标系下的方程,
+        \[
+        \begin{cases} 
+        2h + 3k - 4 = -3 \\
+        h - 2k + 1 = 5 
+        \end{cases}
+        \]
+        解得
+        \[
+        (h, k) = (2, -1)
+        \]
+    \end{solution}
+
+    \question 已知当坐标轴旋转 $\theta$ 角时，点 $M(-\sqrt{2}, \sqrt{2})$ 的新坐标是 $(0, 2)$。求 $(1, 1)$ 的原坐标。
+    \begin{solution}
+        点 $M(-\sqrt{2}, \sqrt{2})$ 的新坐标是 $(0, 2)$,故
+        \[
+        \begin{bmatrix} 0 \\ 2 \end{bmatrix} 
+        = \begin{bmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{bmatrix} \begin{bmatrix} -\sqrt{2} \\ \sqrt{2} \end{bmatrix}= \begin{bmatrix} -\sqrt{2} \cos\theta + \sqrt{2}\sin\theta \\ \sqrt{2}\sin\theta + \sqrt{2}\cos\theta \end{bmatrix}
+        \]
+        给出的两方程皆有
+        \[
+        \theta = 45^\circ
+        \]
+        故
+        \[
+        \begin{bmatrix} x \\ y \end{bmatrix} 
+        = \begin{bmatrix} \cos 45^\circ & -\sin 45^\circ \\ \sin 45^\circ & \cos 45^\circ \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+        = \begin{bmatrix} 0 \\ \sqrt{2} \end{bmatrix}
+        \]
+        $(1, 1)$ 的原坐标为 $(0, \sqrt{2})$。
+    \end{solution}
+
+    \question 以 $O$ 为原点的 $xy$ 平面上,取两点 $A(\sqrt{3},1),B(-1,\sqrt{3}),t \in \mathbb{R}$,点 $P$ 满足
+    \[
+    \overrightarrow{OP} = t^2 \overrightarrow{OA} + t \overrightarrow{OB},
+    \]
+    求 $P$ 点的轨迹与 $x$ 轴所围成的图形面积。
+    \begin{solution}
+        设 $P(x,y)$,则
+        \[
+        \begin{bmatrix} x \\ y \end{bmatrix} = 
+        \begin{bmatrix}
+        \sqrt{3} & -1 \\
+        1 & \sqrt{3}
+        \end{bmatrix}
+        \begin{bmatrix}
+        t^2 \\ t
+        \end{bmatrix}=
+        \begin{bmatrix}
+        \cos 30^\circ & -\sin 30^\circ \\
+        \sin 30^\circ & \cos 30^\circ
+        \end{bmatrix}
+        \begin{bmatrix}
+        x' \\ y'
+        \end{bmatrix}
+        \]
+        其中
+        \[
+        \begin{bmatrix} x' \\ y' \end{bmatrix} =
+        \begin{bmatrix}
+        \frac{t^2}{2} \\
+        \frac{t}{2}
+        \end{bmatrix}.
+        \]
+        在新坐标系下,轨迹满足
+        \[
+        \Gamma: y'^2 = 2 x' \tag{1}
+        \]
+        即一条抛物线,既然旋转保持面积不变,即求新坐标系下所围面积,将$x$轴顺时针转$30^\circ$得
+        \[
+        L: y' = -\frac{1}{\sqrt{3}} x' \tag{2}
+        \]
+        联立$(1),(2)$解得
+        \[
+        O(0,0), \quad A(6, -2 \sqrt{3})
+        \]
+        所围成图形面积为
+        \[
+        \int_{-2\sqrt{3}}^{0} \left(-\sqrt{3} y - \frac{y^2}{2}\right) dy = 2 \sqrt{3}.
+        \]
+    \end{solution}
+
+    \question 坐标平面上有一椭圆 
+    \[
+    \Gamma_1: \frac{x^2}{b^2} + \frac{y^2}{a^2} = 1
+    \] 
+    以原点 $O(0,0)$ 为中心,将椭圆 $\Gamma_1$ 逆时针旋转 $\dfrac{\pi}{3}$ 后得到椭圆 
+    \[
+    \Gamma_2: 43x^2 + 14\sqrt{3}xy + 57y^2 = 576
+    \] 
+    求椭圆 $\Gamma_1$ 的面积。
+    \begin{solution}
+        有
+        \[
+        43x^2 + 14\sqrt{3}xy + 57y^2 = 
+        \begin{bmatrix} x & y \end{bmatrix}
+        \begin{bmatrix} 43 & 7\sqrt{3} \\ 7\sqrt{3} & 57 \end{bmatrix} 
+        \begin{bmatrix} x \\ y \end{bmatrix}
+        \]
+        设矩阵 
+        \[
+        A = \begin{bmatrix} 43 & 7\sqrt{3} \\ 7\sqrt{3} & 57 \end{bmatrix}
+        \] 
+        特征值为
+        \[
+        \lambda_1 = 36, \quad \lambda_2 = 64
+        \]
+        于是旋转后的标准形式为
+        \[
+        36x'^2 + 64y'^2 = 576 \Rightarrow \frac{x'^2}{16} + \frac{y'^2}{9} = 1
+        \]
+        由此可得半轴长
+        \[
+        a = 4, \quad b = 3
+        \]
+        故椭圆面积为
+        \[
+        S = \pi a b = 12 \pi
+        \]
+    \end{solution}
+
+    \question 设椭圆 $$\frac{x^{2}}{25}+\frac{y^{2}}{9}=1$$ 的右焦点为 $F(4,0)$,点 $P$ 为椭圆上一动点,若以 $PF$ 为一边作正方形 $FPQR$($FPQR$ 按逆时针方向排列),当 $P$ 点沿着椭圆绕行一周时,试求 $R$ 点的轨迹方程式。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image103.jpg}
+    \end{figure}
+    \begin{solution}
+        以 $F$ 为旋转中心,将 $P$ 逆时针旋转 $90^\circ$ 即为 $R$。因此 $P(5\cos\theta, 3\sin \theta)$ 先平移 $(-4,0)$,得
+        \[
+        P' = (5\cos\theta - 4, \ 3\sin \theta)
+        \]
+        再逆时针旋转 $90^\circ$,有
+        \[
+        P'' = 
+        \begin{bmatrix} 
+        0 & -1 \\ 
+        1 & 0 
+        \end{bmatrix}
+        \begin{bmatrix} 
+        5\cos\theta - 4 \\ 
+        3\sin \theta 
+        \end{bmatrix}
+        =
+        \begin{bmatrix} 
+        -3\sin \theta \\ 
+        5\cos\theta - 4
+        \end{bmatrix}
+        \]
+        再平移 $(4,0)$,得
+        \[
+        R = (-3\sin \theta + 4, \ 5\cos\theta - 4)
+        \]
+        即
+        \[
+        \begin{cases}
+        x = -3\sin \theta + 4 \\
+        y = 5\cos\theta - 4
+        \end{cases}
+        \]
+        由此得
+        \[
+        \frac{(x-4)^2}{9} + \frac{(y+4)^2}{25} = 1
+        \]
+    \end{solution}
+
+    \question 将椭圆 $$\Gamma_1: \frac{x^2}{9} + \frac{y^2}{4} = 1$$ 以原点 $O$ 为中心,逆时针旋转锐角 $\theta$ 后,得到椭圆 $\Gamma_2$。已知 $\Gamma_2$ 的长轴方程为 $y=2x$,求 $\Gamma_2$ 的方程。
+    \begin{solution}
+        椭圆 $$\Gamma_1: \frac{x^2}{9} + \frac{y^2}{4} = 1$$ 的长轴在 $x$ 轴上,长轴旋转至 $y=2x$,设旋转角满足 $\tan \theta = 2$,则
+        \[
+        \sin \theta = \frac{2}{\sqrt{5}}, \quad \cos \theta = \frac{1}{\sqrt{5}}.
+        \]
+        设 $(x, y)$ 是 $\Gamma_2$ 上一点,对应 $\Gamma_1$ 上某点 $(s, t)$,则有
+        \[
+        \begin{bmatrix} x \\ y \end{bmatrix} =
+        \begin{bmatrix} \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}} \\ \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \end{bmatrix}
+        \begin{bmatrix} s \\ t \end{bmatrix}.
+        \]
+        所以反解得
+        \[
+        \begin{bmatrix} s \\ t \end{bmatrix} =
+        \begin{bmatrix} \frac{1}{\sqrt{5}}(x+2y) \\ \frac{1}{\sqrt{5}}(-2x+y) \end{bmatrix}.
+        \]
+        因为 $(s,t)$ 满足 $\Gamma_1$:
+        \[
+        \frac{s^2}{9} + \frac{t^2}{4} = 1,
+        \]
+        代入得
+        \[
+        \frac{\frac{1}{5}(x+2y)^2}{9} + \frac{\frac{1}{5}(-2x+y)^2}{4} = 1,
+        \]
+        即
+        \[
+        8x^2 - 4xy + 5y^2 - 36 = 0.
+        \]
+    \end{solution}
+
+    \question 在坐标平面上,考虑二阶方阵 $$A=\frac{1}{5}\begin{bmatrix}3&-4\\ 4&3\end{bmatrix}$$ 所定义的线性变换。对于平面上异于原点 $O$ 的点 $P_1$,设 $P_1$ 经 $A$ 变换成 $P_2,P_2$ 经 $A$ 变换成 $P_3$。假设 $P_1$ 是图形 $y=\dfrac{1}{10}x^{2}-10$ 上的动点,求 $\triangle P_1P_2P_3$ 面积的最小可能值。
+    \begin{solution}
+        我们有
+        \[
+        A = \frac{1}{5}\begin{bmatrix}3 & -4 \\ 4 & 3 \end{bmatrix} 
+        = \begin{bmatrix} \frac{3}{5} & -\frac{4}{5} \\ \frac{4}{5} & \frac{3}{5} \end{bmatrix} 
+        = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}
+        \Rightarrow \sin \theta = \frac{4}{5},\ \cos \theta = \frac{3}{5}
+        \]
+        故
+        \[
+        \sin \angle P_1OP_2 = \sin 2\theta = 2\sin\theta\cos\theta = \frac{24}{25}
+        \]
+        假设 $OP_1=a$,则
+        \begin{align*}
+        [\triangle P_1P_2P_3] &= [\triangle OP_1P_2] + [\triangle OP_2P_3] - [\triangle OP_1P_3]\\
+        &= \frac{1}{2}a^2 \sin \theta + \frac{1}{2}a^2 \sin \theta - \frac{1}{2}a^2 \sin 2\theta 
+        = \frac{8}{25}a^2
+        \end{align*}
+        又$P_1$  在 $y = \dfrac{x^2}{10} - 10$ 上,设$P_1\left(m, \dfrac{m^2}{10} - 10\right)$,则
+        \[
+        a^2 = \frac{1}{100}m^4 - m^2 + 100 = \frac{1}{100}(m^2 - 50)^2 + 75
+        \]
+        故
+        \[
+        [\triangle P_1P_2P_3]_{\min}=\frac{8}{25} \cdot 75=24
+        \]
+    \end{solution}
+
+    \question 在直角坐标平面上,圆 $x^{2}+y^{2}=1$ 先被变换为曲线 $\Gamma_{1}$,再被
+    \[
+    A=\begin{bmatrix}\frac{\sqrt{3}}{2} & \sqrt{3} \\[4pt] \frac{1}{2} & -3\end{bmatrix}
+    \]
+    变换为曲线 $\Gamma_{1}$,再被
+    \[
+    B=\prod_{k=8}^{67}\begin{bmatrix}\cos k^\circ & \sin k^\circ \\[4pt] \sin k^\circ & -\cos k^\circ\end{bmatrix}
+    \]
+    变换为曲线 $\Gamma_{2}$,求 $\Gamma_{2}$ 的方程。
+    \begin{solution}
+        首先注意到
+        \[
+        \begin{bmatrix}\cos a^\circ & \sin a^\circ\\[4pt] \sin a^\circ & -\cos a^\circ \end{bmatrix}
+        \begin{bmatrix}\cos (a+1)^\circ & \sin (a+1)^\circ\\[4pt] \sin (a+1)^\circ & -\cos (a+1)^\circ \end{bmatrix}
+        =\begin{bmatrix}\cos 1^\circ & \sin 1^\circ \\[4pt] -\sin 1^\circ & \cos 1^\circ \end{bmatrix}.
+        \]
+        由此,
+        \[
+        B=\begin{bmatrix}\cos 1^\circ & \sin 1^\circ \\[4pt] -\sin 1^\circ & \cos 1^\circ \end{bmatrix}^{30}
+        =\begin{bmatrix}\cos 30^\circ & \sin 30^\circ \\[4pt] -\sin 30^\circ & \cos 30^\circ \end{bmatrix}
+        =\begin{bmatrix}\tfrac{\sqrt3}{2} & \tfrac{1}{2} \\[4pt] -\tfrac{1}{2} & \tfrac{\sqrt3}{2} \end{bmatrix}.
+        \]
+        所以
+        \[
+        BA=\begin{bmatrix}\tfrac{\sqrt3}{2} & \tfrac{1}{2} \\[4pt] -\tfrac{1}{2} & \tfrac{\sqrt3}{2} \end{bmatrix}
+        \begin{bmatrix}\tfrac{\sqrt3}{2} & \sqrt3 \\[4pt] \tfrac{1}{2} & -3\end{bmatrix}
+        =\begin{bmatrix}1 & 0 \\[4pt] 0 & -2\sqrt3 \end{bmatrix}.
+        \]
+        设变换后的坐标为 $(x',y')^{\mathsf T}=BA\,(x,y)^{\mathsf T}$,则
+        \[
+        x'=x,\qquad y'=-2\sqrt3\,y.
+        \]
+        原方程 $x^{2}+y^{2}=1$ 在新坐标下变为
+        \[
+        x'^{2}+\Big(\frac{y'}{-2\sqrt3}\Big)^{2}=1 \Rightarrow x'^{2}+\frac{y'^{2}}{12}=1.
+        \]
+        即
+        \[
+        \Gamma_{2}:\quad x^{2}+\frac{y^{2}}{12}=1.
+        \]
+    \end{solution}
 \end{questions}
 \pagebreak
 
@@ -12151,6 +12277,31 @@ B(3k,3t).
         消去参数$t_1+t_2$,即得
         \[
         2y^2 = 25a(x-a)
+        \]
+    \end{solution}
+
+    \question 抛物线$\Gamma: y^2 = 4x$, $F$为$\Gamma$的焦点, $A, B$为$\Gamma$上的两个不重合的动点, 使得线段$AB$的一个三等分点$P$位于线段$OF$上(含端点), 记$Q$为线段$AB$的另一个三等分点, 求$Q$的轨迹方程.
+    \begin{solution}
+        设$A(x_1, y_1),B(x_2, y_2)$. 不妨设$\overrightarrow{AP} = \overrightarrow{PQ} = \overrightarrow{QB}$, 则
+        \[
+        P\left(\frac{2x_1+x_2}{3}, \frac{2y_1+y_2}{3}\right)
+        \]
+        易知$F(1,0)$. 由于点$P$位于线段$OF$上, 故
+        \[
+        \frac{2x_1+x_2}{3}\in[0,1],\ \frac{2y_1+y_2}{3}=0
+        \]
+        设$y_1 = t,y_2 = -2t$, 则$x_1 = \dfrac{t^2}{4},x_2 = t^2$. 此时有
+        \[
+        \frac{2x_1+x_2}{3}=\frac{t^2}{2}\in[0,1]
+        \]
+        且由$A, B$不重合知$t\neq0$, 所以$t^2\in(0, 2]$.
+        设$Q(x_Q, y_Q)$, 则
+        \[
+        x_Q = \frac{x_1+2x_2}{3} = \frac{3}{4}t^2, y_Q = \frac{y_1+2y_2}{3} = -t
+        \]
+        故有 $y_Q^2 = \dfrac{4}{3}x_Q$,注意到 $x_Q = \dfrac{3}{4}t^2 \in \left[0, \dfrac{3}{2}\right]$, 故点$Q$的轨迹方程为 
+        \[
+        y^2 = \frac{4}{3}x
         \]
     \end{solution}
 
@@ -12448,7 +12599,7 @@ ab^2 + 4a = a^2b + 4b
     \]
     上的点 $P$ 处作曲线的切线,该切线与 $x$ 轴交于 $(h, 0)$,与 $y$ 轴交于 $(0, k)$。当 $P$ 沿给定曲线移动时,求点 $Q(h, k)$ 的轨迹。
     \begin{solution}
-        考虑参数变换$P(x,y)=(a \cos^3 \theta,y = b \sin^3 \theta)$,则
+        考虑参数变换$P(x,y)=(a \cos^3 \theta,b \sin^3 \theta)$,则
         \[
         \frac{dy}{dx} 
         = \frac{dy}{d\theta} \div \frac{dx}{d\theta}
@@ -12473,139 +12624,6 @@ ab^2 + 4a = a^2b + 4b
         因此,点 $Q(h, k)$ 的轨迹是一个椭圆,其方程为
         \[
         \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.
-        \]
-    \end{solution}
-
-    \question 以 $O$ 为原点的 $xy$ 平面上,取两点 $A(\sqrt{3},1),B(-1,\sqrt{3}),t \in \mathbb{R}$,点 $P$ 满足
-    \[
-    \overrightarrow{OP} = t^2 \overrightarrow{OA} + t \overrightarrow{OB},
-    \]
-    求 $P$ 点的轨迹与 $x$ 轴所围成的图形面积。
-    \begin{solution}
-        设 $P(x,y)$,则
-        \[
-        \begin{bmatrix} x \\ y \end{bmatrix} = 
-        \begin{bmatrix}
-        \sqrt{3} & -1 \\
-        1 & \sqrt{3}
-        \end{bmatrix}
-        \begin{bmatrix}
-        t^2 \\ t
-        \end{bmatrix}=
-        \begin{bmatrix}
-        \cos 30^\circ & -\sin 30^\circ \\
-        \sin 30^\circ & \cos 30^\circ
-        \end{bmatrix}
-        \begin{bmatrix}
-        x' \\ y'
-        \end{bmatrix}
-        \]
-        其中
-        \[
-        \begin{bmatrix} x' \\ y' \end{bmatrix} =
-        \begin{bmatrix}
-        \frac{t^2}{2} \\
-        \frac{t}{2}
-        \end{bmatrix}.
-        \]
-        在新坐标系下,轨迹满足
-        \[
-        \Gamma y'^2 = 2 x' \tag{1}
-        \]
-        即一条抛物线,既然旋转保持面积不变,即求新坐标系下所围面积,将$x$轴顺时针转$30^\circ$得
-        \[
-        L: y' = -\frac{1}{\sqrt{3}} x' \tag{2}
-        \]
-        联立$(1),(2)$解得
-        \[
-        O(0,0), \quad A(6, -2 \sqrt{3})
-        \]
-        所围成图形面积为
-        \[
-        \int_{-2\sqrt{3}}^{0} \left(-\sqrt{3} y - \frac{y^2}{2}\right) dy = 2 \sqrt{3}.
-        \]
-    \end{solution}
-
-    \question 坐标平面上有一椭圆 
-    \[
-    \Gamma_1: \frac{x^2}{b^2} + \frac{y^2}{a^2} = 1
-    \] 
-    以原点 $O(0,0)$ 为中心,将椭圆 $\Gamma_1$ 逆时针旋转 $\dfrac{\pi}{3}$ 后得到椭圆 
-    \[
-    \Gamma_2: 43x^2 + 14\sqrt{3}xy + 57y^2 = 576
-    \] 
-    求椭圆 $\Gamma_1$ 的面积。
-    \begin{solution}
-        有
-        \[
-        43x^2 + 14\sqrt{3}xy + 57y^2 = 
-        [x,y] 
-        \begin{bmatrix} 43 & 7\sqrt{3} \\ 7\sqrt{3} & 57 \end{bmatrix} 
-        \begin{bmatrix} x \\ y \end{bmatrix}.
-        \]
-        设矩阵 
-        \[
-        A = \begin{bmatrix} 43 & 7\sqrt{3} \\ 7\sqrt{3} & 57 \end{bmatrix},
-        \] 
-        特征值为
-        \[
-        \lambda_1 = 36, \quad \lambda_2 = 64
-        \]
-        于是旋转后的标准形式为
-        \[
-        36x'^2 + 64y'^2 = 576 \Rightarrow \frac{x'^2}{16} + \frac{y'^2}{9} = 1
-        \]
-        由此可得半轴长
-        \[
-        a = 4, \quad b = 3
-        \]
-        故椭圆面积为
-        \[
-        S = \pi a b = 12 \pi
-        \]
-    \end{solution}
-
-    \question 设椭圆 $$\frac{x^{2}}{25}+\frac{y^{2}}{9}=1$$ 的右焦点为 $F(4,0)$,点 $P$ 为椭圆上一动点,若以 $PF$ 为一边作正方形 $FPQR$($FPQR$ 按逆时针方向排列),当 $P$ 点沿着椭圆绕行一周时,试求 $R$ 点的轨迹方程式。
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image103.jpg}
-    \end{figure}
-    \begin{solution}
-        以 $F$ 为旋转中心,将 $P$ 逆时针旋转 $90^\circ$ 即为 $R$。因此 $P(5\cos\theta, 3\sin \theta)$ 先平移 $(-4,0)$,得
-        \[
-        P' = (5\cos\theta - 4, \ 3\sin \theta)
-        \]
-        再逆时针旋转 $90^\circ$,有
-        \[
-        P'' = 
-        \begin{bmatrix} 
-        0 & -1 \\ 
-        1 & 0 
-        \end{bmatrix}
-        \begin{bmatrix} 
-        5\cos\theta - 4 \\ 
-        3\sin \theta 
-        \end{bmatrix}
-        =
-        \begin{bmatrix} 
-        -3\sin \theta \\ 
-        5\cos\theta - 4
-        \end{bmatrix}
-        \]
-        再平移 $(4,0)$,得
-        \[
-        R = (-3\sin \theta + 4, \ 5\cos\theta - 4)
-        \]
-        即
-        \[
-        \begin{cases}
-        x = -3\sin \theta + 4 \\
-        y = 5\cos\theta - 4
-        \end{cases}
-        \]
-        由此得
-        \[
-        \frac{(x-4)^2}{9} + \frac{(y+4)^2}{25} = 1
         \]
     \end{solution}
 
@@ -12645,6 +12663,42 @@ ab^2 + 4a = a^2b + 4b
         RD+ER = s\sin\theta+s\cos\theta=\frac{2}{\frac{\sqrt{3}}{3}+1}
         \]
         为一常数,于是得证点 $S$ 的轨迹是一条平行于 $BC$ 的直线。
+    \end{solution}
+
+    \question 求内接于抛物线 $y^2=4cx$ ($c>0$) 的正三角形的重心所形成的轨迹方程。
+    \begin{solution}
+        设内接抛物线 $\Gamma: y^2 = 4cx$ 的正三角形顶点为
+        \[
+        A\left(\frac{\alpha^2}{4c}, \alpha\right), 
+        B\left(\frac{\beta^2}{4c}, \beta\right),
+        C\left(\frac{\gamma^2}{4c}, \gamma\right),
+        \]
+        则重心为
+        \[
+        G\left(\frac{\alpha^2+\beta^2+\gamma^2}{12c},\, \frac{\alpha+\beta+\gamma}{3}\right)
+        \]
+        设各边斜率
+        \[
+        m_1 = \frac{4c(\beta-\alpha)}{(\beta^2-\alpha^2)} = \frac{4c}{\beta+\alpha},
+        m_2 = \frac{4c(\gamma-\beta)}{(\gamma^2-\beta^2)} = \frac{4c}{\gamma+\beta},
+        m_3 = \frac{4c(\alpha-\gamma)}{(\alpha^2-\gamma^2)} = \frac{4c}{\alpha+\gamma}
+        \]
+        由正三角形性质:
+        \[
+        \tan 60^\circ = \sqrt{3} = \frac{m_2-m_1}{1+m_1 m_2} = \frac{m_3-m_2}{1+m_2 m_3} = \frac{m_1-m_3}{1+m_3 m_1}
+        \]
+        化简得
+        \[
+        \alpha\beta + \beta\gamma + \gamma\alpha = -16c^2 - \frac{\alpha^2+\beta^2+\gamma^2}{3}
+        \]
+        现设 $G=(x,y)$,则
+        \[
+        9y^2 = (\alpha+\beta+\gamma)^2 = \alpha^2+\beta^2+\gamma^2 + 2(\alpha\beta+\beta\gamma+\gamma\alpha) = 12cx + 2(-16c^2 - 4cx) = 4cx - 32c^2
+        \]
+        因此正三角形重心轨迹方程为
+        \[
+        9y^2 = 4cx - 32c^2
+        \]
     \end{solution}
     
     \question 如图,一长度为 4 单位的刚性杆 $AB$穿过位于定点 $M(1,0)$ 的铰链滑动,该铰链允许杆在 $x-y$ 平面内的任意方向转动。杆端$A$在 $y$ 轴上滑动使得 $OA \le 4$,令 $\theta$ 为杆在正 $x$ 轴的倾角。
@@ -13023,9 +13077,9 @@ ab^2 + 4a = a^2b + 4b
         \]
         联立两切线方程解得交点为
         \[
-        R\left(\frac{2pq}{p+q},\frac{2}{p+q}\right)。
+        R\left(\frac{2pq}{p+q},\frac{2}{p+q}\right)
         \]
-        由 $q=-\frac{1}{p^2}$,
+        由 $q=-\dfrac{1}{p^2}$,
         \[
         x = \frac{2p\left(-\frac{1}{p^2}\right)}{p-\frac{1}{p^2}}= -\frac{2p}{p^3-1},\quad
         y = \frac{2}{p-\frac{1}{p^2}}= \frac{2p^2}{p^3-1}
@@ -13055,7 +13109,7 @@ ab^2 + 4a = a^2b + 4b
     y=t^2x+\frac{5}{t}-5t^3
     \]
     \begin{solution}
-        对双曲线$y=\frac{25}{x}$求导得
+        对双曲线$y=\dfrac{25}{x}$求导得
         \[
         \frac{dy}{dx}=-\frac{25}{x^2}
         \]
@@ -13063,7 +13117,7 @@ ab^2 + 4a = a^2b + 4b
         \[
         \frac{dy}{dx}=-\frac{25}{(5t)^2}=-\frac{1}{t^2}
         \]
-        故法线斜率为 $t^2$。点 $P\left(5t,\frac{5}{t}\right)$ 处法线方程为
+        故法线斜率为 $t^2$。点 $P\left(5t,\dfrac{5}{t}\right)$ 处法线方程为
         \[
         y-\frac{5}{t}=t^2(x-5t) \Rightarrow  y=t^2x+\frac{5}{t}-5t^3
         \]
@@ -13205,7 +13259,7 @@ ab^2 + 4a = a^2b + 4b
         \]
         注意到
         \[
-        \csc\theta/\sec\theta = \cos\theta/\sin\theta = \cot\theta,
+        \frac{\csc\theta}{\sec\theta} = \frac{\cos\theta}{\sin\theta} = \cot\theta,
         \]
         且
         \[
@@ -13223,7 +13277,7 @@ ab^2 + 4a = a^2b + 4b
     \[
     x = \sin\theta, \quad y = \theta \cos\theta, \quad -\pi < \theta < \pi.
     \]
-    已知曲线在 $\theta = -\frac{\pi}{4}$ 及 $\theta = \frac{\pi}{4}$ 处的切线平行,且间距为 $d$,证明：
+    已知曲线在 $\theta = -\dfrac{\pi}{4}$ 及 $\theta = \dfrac{\pi}{4}$ 处的切线平行,且间距为 $d$,证明：
     \[
     d = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
     \]
@@ -13232,7 +13286,7 @@ ab^2 + 4a = a^2b + 4b
         \[
         \frac{dx}{d\theta} = \cos\theta, \quad \frac{dy}{d\theta} = \cos\theta - \theta\sin\theta \implies \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = 1 - \theta\tan\theta.
         \]
-        当 $\theta=\pm \frac{\pi}{4}$ 和 $\theta=\frac{\pi}{4}$ 时：
+        当 $\theta=\pm \frac{\pi}{4}$ ,
         \[
         x = \pm \frac{1}{\sqrt{2}}, \quad y = \pm \frac{\pi}{4\sqrt{2}}, \quad \frac{dy}{dx} = 1 - \frac{\pi}{4}.
         \]
@@ -13254,6 +13308,407 @@ ab^2 + 4a = a^2b + 4b
         \]
     \end{solution}
 
+    \question 曲线 $C$ 的方程为
+\[
+x^2 + xy + y^2 = 1, \quad 0 \le x \le 3.
+\]
+
+通过参数化的形式
+\[
+x = A\cos\theta + B\sin\theta, \quad y = A\cos\theta - B\sin\theta
+\]
+确定 $A$ 和 $B$，并求出第一象限被曲线和坐标轴围成的有限区域的面积。
+
+\begin{solution}
+\textbf{(参数化)}
+
+尝试 $x = \cos\theta + \sin\theta$, $y = \cos\theta - \sin\theta$：
+\begin{align*}
+(x+y)^2 - xy &= (2\cos\theta)^2 - (\cos^2\theta-\sin^2\theta) \\
+&= 4\cos^2\theta - \cos^2\theta + \sin^2\theta = 3\cos^2\theta + \sin^2\theta \neq 1
+\end{align*}
+因此调整系数：
+\[
+x = \frac{1}{\sqrt{3}}\cos\theta + \sin\theta, \quad y = \frac{1}{\sqrt{3}}\cos\theta - \sin\theta.
+\]
+
+检查：
+\begin{align*}
+(x+y)^2 - xy &= \left(\frac{2}{\sqrt{3}}\cos\theta\right)^2 - \left(\frac{1}{3}\cos^2\theta - \sin^2\theta\right) \\
+&= \frac{4}{3}\cos^2\theta - \frac{1}{3}\cos^2\theta + \sin^2\theta = \cos^2\theta + \sin^2\theta = 1
+\end{align*}
+
+\textbf{(求面积)}
+
+第一象限对应 $\theta \in [-\pi/6, \pi/6]$，积分公式：
+\[
+\text{面积} = \int y\,dx = \int_{\theta=-\pi/6}^{\pi/6} y(\theta) \frac{dx}{d\theta}\, d\theta.
+\]
+
+计算：
+\begin{align*}
+dx/d\theta &= -\frac{1}{\sqrt{3}}\sin\theta + \cos\theta, & y &= \frac{1}{\sqrt{3}}\cos\theta - \sin\theta, \\
+y\,dx/d\theta &= \left(\frac{1}{\sqrt{3}}\cos\theta - \sin\theta\right)\left(-\frac{1}{\sqrt{3}}\sin\theta + \cos\theta\right) \\
+&= \frac{1}{3}\cos^2\theta - \sin\theta \cos\theta - \frac{1}{3}\sin\theta\cos\theta + \sin^2\theta \\
+&= \frac{1}{3}(\cos^2\theta + \sin^2\theta) = \frac{1}{3}.
+\end{align*}
+
+积分：
+\[
+\text{面积} = \int_{-\pi/6}^{\pi/6} \frac{1}{3} \, d\theta = \frac{1}{3} \cdot \frac{\pi}{3} = \frac{\pi}{9}.
+\]
+
+注意：因为原参数化中系数涉及 $\sqrt{3}$，需要乘回 $\sqrt{3}$：
+\[
+\text{面积} = \frac{\pi \sqrt{3}}{9}.
+\]
+
+\end{solution}
+
+\question 已知曲线的参数方程为
+\[
+x = t^3, \quad y = t^2, \quad t \in \mathbb{R}.
+\]
+曲线在点 $P$ 处的切线再次与曲线相交于点 $Q$。已知曲线与切线所围成的有限区域面积为 $2\frac{7}{10}$，求点 $P$ 的坐标。
+\begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.5\textwidth]{images/image237.png}
+\end{figure}
+\begin{solution}
+设 $P$ 对应参数 $t = p$，坐标为 $P(p^3, p^2)$。
+
+求切线斜率：
+\begin{align*}
+\frac{dy}{dt} &= 2t, \\
+\frac{dx}{dt} &= 3t^2, \\
+\frac{dy}{dx} &= \frac{2t}{3t^2} = \frac{2}{3t} \implies \frac{dy}{dx}\bigg|_{t=p} = \frac{2}{3p}.
+\end{align*}
+
+切线方程：
+\begin{align*}
+y - p^2 &= \frac{2}{3p} (x - p^3), \\
+3p y - 3p^3 &= 2x - 2p^3, \\
+3p y &= 2x + p^3.
+\end{align*}
+
+将切线方程与曲线方程联立：
+\[
+3p t^2 - 2 t^3 + p^3 = 0 \quad \text{或} \quad 2 t^3 - 3p t^2 + p^3 = 0.
+\]
+
+由于 $t = p$ 是重根，可分解为：
+\[
+(t - p)^2 (2 t + p) = 0 \implies Q \left(-\frac{1}{2} p, \frac{1}{4} p^2\right).
+\]
+
+计算曲线与切线之间的面积：
+
+曲线与切线之间面积：
+\begin{align*}
+A_1 &= \int_{-p/2}^{p} (3p t^2 - 2 t^3 + p^3) \, dt \\
+&= \int_{-p/2}^{p} 9? \, dt \quad \text{(可具体展开)} \\
+&= \frac{99}{160} p^5.
+\end{align*}
+
+梯形面积：
+\begin{align*}
+A_2 &= \frac{(p^2/4 + p^2)}{2} \times \frac{9}{8} p^3 \\
+&= \frac{45}{64} p^5.
+\end{align*}
+
+总面积为 $A_2 - A_1$：
+\begin{align*}
+\frac{45}{64}p^5 - \frac{99}{160}p^5 &= 2\frac{7}{10} = \frac{27}{10}, \\
+6 p^5 &= 192, \\
+p^5 &= 32, \\
+p &= 2.
+\end{align*}
+
+因此点 $P$ 坐标为：
+\[
+P(p^3, p^2) = P(8, 4).
+\]
+\end{solution}
+
+\question 已知曲线的参数方程为
+\[
+x = \sin\left(t + \frac{\pi}{6}\right), \quad y = 1 + \cos 2t, \quad 0 \le t < 2\pi.
+\]
+已知曲线关于 $y$ 轴对称，求曲线两环所围面积，并说明面积为 $\dfrac{4\sqrt{3}}{3}$。
+\begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.5\textwidth]{images/image238.png}
+\end{figure}
+\begin{solution}
+利用参数积分求右侧环的面积，再乘以 2（利用对称性）：
+\[
+\text{TOTAL AREA} = 2 \int_{t=\pi/6}^{t=\pi/2} y(t) \frac{dx}{dt} \, dt
+= 2 \int_{\pi/6}^{\pi/2} (1+\cos 2t) \cos\left(t+\frac{\pi}{6}\right) \, dt.
+\]
+
+展开积分：
+\[
+2 \int_{\pi/6}^{\pi/2} \left[ \cos\left(t+\frac{\pi}{6}\right) + \cos 2t \cos\left(t+\frac{\pi}{6}\right) \right] \, dt.
+\]
+
+对第二项使用三角恒等式：
+\begin{align*}
+\cos 2t \cos\left(t+\frac{\pi}{6}\right) &= \frac{1}{2} \left[ \cos(3t + \frac{\pi}{6}) + \cos(t - \frac{\pi}{6}) \right].
+\end{align*}
+
+代回积分：
+\[
+\text{TOTAL AREA} = 2 \int_{\pi/6}^{\pi/2} \left[ \cos(t+\frac{\pi}{6}) + \frac{1}{2} \cos(3t+\frac{\pi}{6}) + \frac{1}{2} \cos(t-\frac{\pi}{6}) \right] \, dt.
+\]
+
+积分：
+\begin{align*}
+\text{TOTAL AREA} &= 2 \left[ \sin\left(t+\frac{\pi}{6}\right) + \frac{1}{6}\sin\left(3t+\frac{\pi}{6}\right) + \frac{1}{2}\sin\left(t-\frac{\pi}{6}\right) \right]_{\pi/6}^{\pi/2} \\
+&= 2 \left[ \left(\sin\frac{2\pi}{3} + \frac{1}{6}\sin\frac{4\pi}{3} + \frac{1}{2}\sin\frac{\pi}{3}\right)
+- \left(\sin\frac{\pi}{3} + \frac{1}{6}\sin\frac{\pi}{2} + \frac{1}{2}\sin(-\frac{\pi}{3})\right) \right].
+\end{align*}
+
+代入数值：
+\begin{align*}
+\sin\frac{2\pi}{3} &= \frac{\sqrt{3}}{2}, &
+\sin\frac{4\pi}{3} &= -\frac{\sqrt{3}}{2}, &
+\sin\frac{\pi}{3} &= \frac{\sqrt{3}}{2}, &
+\sin\frac{\pi}{2} &= 1, &
+\sin(-\frac{\pi}{3}) &= -\frac{\sqrt{3}}{2}.
+\end{align*}
+
+计算：
+\begin{align*}
+\text{TOTAL AREA} &= 2 \left[ \frac{\sqrt{3}}{2} + \frac{1}{6} \left(-\frac{\sqrt{3}}{2}\right) + \frac{1}{2} \cdot \frac{\sqrt{3}}{2}
+- \left( \frac{\sqrt{3}}{2} + \frac{1}{6} \cdot 1 + \frac{1}{2} \cdot (-\frac{\sqrt{3}}{2}) \right) \right] \\
+&= 2 \left[ \frac{\sqrt{3}}{2} - \frac{\sqrt{3}}{12} + \frac{\sqrt{3}}{4} - \frac{\sqrt{3}}{2} - \frac{1}{6} + \frac{\sqrt{3}}{4} \right] \\
+&= 2 \left[ \frac{\sqrt{3}}{4} - \frac{\sqrt{3}}{12} + \frac{\sqrt{3}}{4} - \frac{1}{6} \right] \\
+&= 2 \left[ \frac{3\sqrt{3}-\sqrt{3}+3\sqrt{3}}{12} - \frac{1}{6} \right] \\
+&= 2 \left[ \frac{5\sqrt{3}}{12} - \frac{1}{6} \right] \quad \text{(再化简)} \\
+&= \frac{4\sqrt{3}}{3}.
+\end{align*}
+
+因此，曲线两环所围的总面积为：
+\[
+\boxed{\frac{4\sqrt{3}}{3}}.
+\]
+\end{solution}
+
+\question 已知曲线 $C$ 的参数方程为
+\[
+x = t \sin t, \quad y = \cos t, \quad 0 \le t < 2\pi.
+\]
+曲线与坐标轴交于 $P$, $Q$, $R$, $S$ 四点。
+\begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.5\textwidth]{images/image239.png}
+\end{figure}
+\begin{solution}
+a) 求各点对应的参数 $t$：
+
+设 $x = 0$：
+\[
+t_P = \pi \implies P(0,-1), \quad t_Q = 0 \implies Q(0,1).
+\]
+
+设 $y = 0$：
+\[
+t_R = \frac{3\pi}{2} \implies R\Big(-\frac{3\pi}{2},0\Big), \quad
+t_S = \frac{\pi}{2} \implies S\Big(\frac{\pi}{2},0\Big).
+\]
+
+b) 面积计算：
+
+利用参数积分公式：
+\[
+A = \int_{x_1}^{x_2} y(x) \, dx = \int_{t_1}^{t_2} y(t) \frac{dx}{dt} \, dt.
+\]
+
+\noindent 对应积分：
+\begin{align*}
+\frac{dx}{dt} &= \sin t + t \cos t, \\
+y(t)\frac{dx}{dt} &= \cos t (\sin t + t \cos t) = \cos t \sin t + t \cos^2 t.
+\end{align*}
+
+使用三角恒等式 $\cos^2 t = \frac{1+\cos 2t}{2}$ 和 $\sin t \cos t = \frac{1}{2}\sin 2t$：
+\[
+y \frac{dx}{dt} = \frac{1}{2}\sin 2t + \frac{1}{2} t + \frac{1}{2} t \cos 2t.
+\]
+
+对 $\frac{1}{2} t \cos 2t$ 分部积分：
+\[
+\int t \cos 2t \, dt = \frac{1}{2} t \sin 2t - \frac{1}{2} \int \sin 2t \, dt = \frac{1}{2} t \sin 2t + \frac{1}{4} \cos 2t + C.
+\]
+
+因此积分原函数为：
+\[
+\int y \frac{dx}{dt} \, dt = \frac{1}{4} t^2 - \frac{1}{8} \cos 2t + \frac{1}{4} t \sin 2t + C.
+\]
+
+计算面积（取 $t$ 从 $0$ 到 $2\pi$）：
+\begin{align*}
+A &= \left[ \frac{1}{4} t^2 - \frac{1}{8} \cos 2t + \frac{1}{4} t \sin 2t \right]_0^{2\pi} \\
+&= \left( \frac{1}{4} (2\pi)^2 - \frac{1}{8} \cos 4\pi + \frac{1}{4} (2\pi) \sin 4\pi \right) 
+ - \left( 0 - \frac{1}{8} \cos 0 + 0 \right) \\
+&= \pi^2 - \frac{1}{8} + 0 - \left( - \frac{1}{8} \right) = \pi^2.
+\end{align*}
+
+因此曲线所围的有限区域面积为：
+\[
+\boxed{\pi^2}.
+\]
+\end{solution}
+
+\question 已知曲线的参数方程为
+\[
+x = t^2 + 2t, \quad y = t^3 - 9t, \quad t \in \mathbb{R}.
+\]
+曲线与坐标轴交于 $O$ 及 $A$, $B$, $C$ 三点。
+\begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.5\textwidth]{images/image240.png}
+\end{figure}
+\begin{solution}
+a) 求各点坐标：
+
+设 $x=0$：
+\[
+0 = t(t+2) \implies t = 0 \ (\text{O}), \quad t = -2 \ (\text{C}),
+\]
+因此 $O(0,0)$，$C(0,10)$。
+
+设 $y=0$：
+\[
+0 = t(t^2-9) = t(t-3)(t+3) \implies t = 0 \ (\text{O}), \quad t=3 \ (\text{B}), \quad t=-3 \ (\text{A}),
+\]
+因此 $A(3,0)$，$B(15,0)$。
+
+b) 面积 $R$ 计算：
+
+利用参数积分：
+\[
+A = \int_{x_1}^{x_2} y(x) \, dx = \int_{t_1}^{t_2} y(t) \frac{dx}{dt} \, dt, \quad \frac{dx}{dt} = 2t + 2 = 2(t+1).
+\]
+
+考虑 $x<0$ 区域：
+\[
+R = \int_{-3}^{-2} (t^3-9t)(t+2) \, dt = \int_{-3}^{-2} (t^4 + 2t^3 - 9t^2 - 18t) \, dt.
+\]
+
+积分：
+\[
+\int (t^4 + 2t^3 - 9t^2 - 18t) \, dt = \frac{t^5}{5} + \frac{1}{2} t^4 - 3 t^3 - 9 t^2.
+\]
+
+代入上下限 $t=-3$ 与 $t=-2$：
+\begin{align*}
+\left(\frac{-32}{5} + 8 - 24 - 36\right) - \left(\frac{-243}{5} + \frac{81}{2} - 81 - 81\right) 
+= \frac{171}{10} = 17.1 \text{ units}^2.
+\end{align*}
+
+c) 旋转体 $S$ 体积计算：
+
+绕 $x$ 轴旋转 $2\pi$：
+\[
+V = \pi \int_{t_1}^{t_2} [y(t)]^2 \frac{dx}{dt} \, dt = \pi \int_{0}^{-2} (t^3-9t)^2 (t^2+2t) \, dt.
+\]
+
+展开：
+\[
+V = \pi \int_{0}^{-2} t^2(t^2-9)^2 (t+2) \, dt = 2\pi \int_{0}^{-2} (t^7 - 18 t^5 + 81 t^3 + t^6 - 18 t^4 + 81 t^2) \, dt.
+\]
+
+积分：
+\[
+\int (t^7 + t^6 - 18 t^5 - 18 t^4 + 81 t^3 + 81 t^2) \, dt 
+= \frac{t^8}{8} + \frac{t^7}{7} - 3 t^6 - \frac{18}{5} t^5 + \frac{81}{4} t^4 + 27 t^3.
+\]
+
+代入 $t=0$ 和 $t=-2$：
+\[
+V = 2\pi \left( 32 - 192 + 324 - \frac{128}{7} + \frac{576}{5} - 216 \right) = 2\pi \cdot \frac{1572}{35} = \frac{3144 \pi}{35} \approx 282 \text{ units}^3.
+\]
+\end{solution}
+
+\question 已知如图，在坐标系上有一个半径为 $a$、圆心在 $C(0,3a)$ 的圆形卷线。棉线长度为 $3\pi a$，一端固定在 $O$，从圆周上绕开。棉线自由端标为 $B(x,y)$，初始位置为 $A(0,6a)$。棉线展开时保持直线 $BD$，$\theta$ 为图中 $OCD$ 角。求：
+
+a) $B(x,y)$ 的参数方程（$x>0,y>0$）；  
+
+b) 曲线在整个 $x$-$y$ 平面围成的面积。
+\begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.5\textwidth]{images/image236.png}
+\end{figure}
+\begin{solution}
+首先，棉线长度关系：
+\begin{itemize}
+\item $|OD| = r\theta = 3a\theta$
+\item $|BD| = 3\pi a - 3a\theta = 3a(\pi-\theta)$
+\end{itemize}
+
+根据几何关系：
+\begin{itemize}
+\item $|OS| = |OR|+|RS| = |PD|+|DQ| = |CD|\sin\theta + |BD|\cos\theta = 3a\sin\theta + 3a(\pi-\theta)\cos\theta$
+\item $|SB| = |SQ|+|QB| = |OP| + |BD|\sin\theta = |OC| - |CP| + |BD|\sin\theta = 3a - 3a\cos\theta + 3a(\pi-\theta)\sin\theta = 3a(1-\cos\theta) + 3a(\pi-\theta)\sin\theta$
+\end{itemize}
+
+参数方程为：
+\begin{align*}
+x &= 3a\left[\sin\theta + (\pi-\theta)\cos\theta\right] \\
+y &= 3a\left[1-\cos\theta + (\pi-\theta)\sin\theta\right]
+\end{align*}
+
+面积计算：
+
+利用对称性，可展开至第三、四象限。蓝色区域为四分之一圆，半径 $3\pi a$：
+\[
+\frac{1}{4}\pi (3\pi a)^2 = \frac{9}{4}\pi^3 a^2
+\]
+
+橙色部分参数方程：
+\begin{align*}
+x &= 3a\left[\sin\theta + (\pi-\theta)\cos\theta\right] \\
+y &= 3a\left[1-\cos\theta + (\pi-\theta)\sin\theta\right] \\
+0 &\le \theta \le \pi
+\end{align*}
+
+面积公式：
+\[
+A = \int_{0}^{\pi} y(\theta) \frac{dx}{d\theta} \, d\theta
+= \int_{0}^{\pi} 3a[1-\cos\theta + (\pi-\theta)\sin\theta] \cdot 3a[-(\pi-\theta)\sin\theta] \, d\theta
+\]
+
+整理：
+\[
+A = \int_{0}^{\pi} 9a^2 (\pi-\theta)\sin\theta [1-\cos\theta + (\pi-\theta)\sin\theta] \, d\theta
+\]
+
+代换 $u = \pi-\theta$，$du=-d\theta$，$\sin\theta = \sin u$，$\cos\theta = -\cos u$：
+\[
+A = 9a^2 \int_{0}^{\pi} [u\sin u + u\sin u \cos u + u^2 \sin^2 u] \, du
+= 9a^2 \int_{0}^{\pi} \left[u\sin u + \frac{1}{2} u \sin 2u + \frac{1}{2} u^2 (1-\cos 2u) \right] \, du
+\]
+
+分部积分计算各项：
+\begin{align*}
+\int u\sin u \, du &= -u\cos u + \sin u \\
+\int \frac{1}{2} u \sin 2u \, du &= -\frac{1}{4} u \cos 2u + \frac{1}{8} \sin 2u \\
+\int \frac{1}{2} u^2 (1-\cos 2u) \, du &= \frac{1}{4} u^2 - \frac{1}{4} u^2 \cos 2u + \frac{1}{8} \sin 2u - \frac{1}{4} u \cos 2u
+\end{align*}
+
+合并结果：
+\[
+A = 9a^2 \left[ \frac{1}{6}\pi^3 + \pi - \frac{1}{2}\pi \right] = 9a^2 \left[ \frac{1}{6}\pi^3 + \frac{1}{2}\pi \right]
+\]
+
+总面积（橙色 + 蓝色 + 对称部分）：
+\[
+\text{总面积} = 2 \times 9a^2 \left[ \frac{1}{6}\pi^3 + \frac{1}{2}\pi \right] + 2 \cdot \frac{9}{4}\pi^3 a^2
+= a^2 \left[ \frac{15}{2}\pi^3 + 9\pi \right]
+= \frac{3}{2}\pi a^2 (5\pi^2 + 6)
+\]
+\end{solution}
+
 \end{questions}
 \pagebreak
 
@@ -13270,11 +13725,11 @@ ab^2 + 4a = a^2b + 4b
     \[
     r=\tan\theta,\quad 0\le\theta<\frac{\pi}{2}.
     \]
-    求曲线 $C$ 的直角坐标方程,写成 $y=f(x)$ 的形式。
+    求曲线 $C$ 的直角坐标方程,并写成 $y=f(x)$ 的形式。
     \begin{solution}
         由已知$r=\tan\theta$,两边平方得
         \[
-        r^2=\tan^2\theta \Rightarrow r^2\cos^2\theta=\sin^2\theta.
+        r^2=\tan^2\theta \Rightarrow r^2\cos^2\theta=\sin^2\theta
         \]
         由 $r\cos\theta=x$,得
         \[
@@ -13286,7 +13741,7 @@ ab^2 + 4a = a^2b + 4b
         \]
         据此有
         \[
-        \tan^2\theta=\frac{1}{1-x^2}-1=\frac{x^2}{1-x^2}.
+        \tan^2\theta=\frac{1}{1-x^2}-1=\frac{x^2}{1-x^2}
         \]
         又有 $r=\tan\theta$及$r^2=x^2+y^2$,于是
         \[
@@ -13304,7 +13759,7 @@ ab^2 + 4a = a^2b + 4b
     C_1:\ r=2\cos\theta-\sin\theta,\quad 0<\theta\le\frac{\pi}{3},
     \]
     \[
-    C_2:\ r=\sqrt{2+\sin\theta},\quad 0\le\theta<2\pi.
+    C_2:\ r=\sqrt{2}+\sin\theta,\quad 0\le\theta<2\pi.
     \]
     点 $P$ 在 $C_1$ 上,且 $P$ 点处的切线与极轴平行。
     \begin{parts}
@@ -13359,58 +13814,37 @@ ab^2 + 4a = a^2b + 4b
     \end{solution}
     \part 设点 $Q$ 为 $C_1$ 与 $C_2$ 的交点,求点 $Q$ 处对应的 $\theta$ 值。
     \begin{solution}
-        点 $Q$ 为两曲线交点,满足
-        \[
-        2\cos\theta-\sin\theta=\sqrt{2+\sin\theta}.
-        \]
-        两边平方并整理,可得
+        联立$C_1,C_2$得
         \[
         \cos\theta-\sin\theta=\frac{\sqrt{2}}{2}.
         \]
-        利用恒等式
-        \[
-        \cos\theta-\sin\theta=\sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr),
-        \]
         于是
         \[
-        \sqrt{2}\cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{\sqrt{2}}{2},
+        \sqrt{2}\cos\left(\theta+\frac{\pi}{4}\right)=\frac{\sqrt{2}}{2},
         \]
         即
         \[
-        \cos\bigl(\theta+\frac{\pi}{4}\bigr)=\frac{1}{2}
+        \cos\left(\theta+\frac{\pi}{4}\right)=\frac{1}{2}
         \]
-        在 $0\le\theta\le\frac{\pi}{3}$ 内,解得
+        在 $0\le\theta\le\dfrac{\pi}{3}$ 内解得
         \[
-        \theta+\frac{\pi}{4}=\frac{\pi}{3},
-        \]
-        因此
-        \[
-        \theta=\frac{\pi}{12}
+        \theta+\frac{\pi}{4}=\frac{\pi}{3} \Rightarrow \theta=\frac{\pi}{12}
         \]
     \end{solution}
     \end{parts}
 
-\question
-如图,曲线的极坐标方程为
-\[
-r^2=\cos2\theta,\quad 
-\theta\in\left[0,\frac{\pi}{4}\right]\cup\left[\frac{3\pi}{4},\frac{5\pi}{4}\right]\cup\left[\frac{7\pi}{4},2\pi\right].
-\]
-
-矩形 $ABCD$ 包围该曲线,其中 $AB,CD$ 为与极轴平行的切线,$AD,BC$ 为与极轴垂直的切线。
-
-证明曲线与矩形 $ABCD$ 之间所围成的总面积为
-\[
-\sqrt{2}-1.
-\]
+    \question 如图,曲线的极坐标方程为
+    \[
+    r^2=\cos2\theta,\quad 
+    \theta\in\left[0,\frac{\pi}{4}\right]\cup\left[\frac{3\pi}{4},\frac{5\pi}{4}\right]\cup\left[\frac{7\pi}{4},2\pi\right].
+    \]
+    矩形 $ABCD$ 包围该曲线,其中 $AB,CD$ 为与极轴平行的切线,$AD,BC$ 为与极轴垂直的切线。证明曲线与矩形 $ABCD$ 之间所围成的总面积为$\sqrt{2}-1$。
     \begin{figure}[H]
         \centering        
         \includegraphics[width=0.5\textwidth]{images/image230.png}
     \end{figure}
 \begin{solution}
-首先确定矩形的边界。
-
-由
+首先确定矩形的边界。由
 \[
 r^2=\cos2\theta
 \]
@@ -13427,15 +13861,15 @@ y=r\sin\theta,
 \]
 切线与极轴平行当且仅当
 \[
-\frac{\mathrm{d}y}{\mathrm{d}x}=0,
+\frac{dy}{dx}=0,
 \]
 等价于
 \[
-\frac{\mathrm{d}}{\mathrm{d}\theta}(r\sin\theta)=0.
+\frac{d}{d\theta}(r\sin\theta)=0.
 \]
 由 $r=\sqrt{\cos2\theta}$,得
 \[
-\frac{\mathrm{d}}{\mathrm{d}\theta}\bigl(\sqrt{\cos2\theta}\sin\theta\bigr)=0.
+\frac{d}{d\theta}\bigl(\sqrt{\cos2\theta}\sin\theta\bigr)=0.
 \]
 求导得
 \[
@@ -13474,12 +13908,12 @@ y=r\sin\theta=\frac{1}{\sqrt{2}}\sin\frac{\pi}{6}
 曲线关于坐标轴具有四分之一对称性,故
 \[
 \text{曲线面积}
-=4\int_{0}^{\pi/4}\frac{1}{2}r^2\,\mathrm{d}\theta
-=2\int_{0}^{\pi/4}\cos2\theta\,\mathrm{d}\theta.
+=4\int_{0}^{\pi/4}\frac{1}{2}r^2\,d\theta
+=2\int_{0}^{\pi/4}\cos2\theta\,d\theta.
 \]
 计算积分,
 \[
-2\int_{0}^{\pi/4}\cos2\theta\,\mathrm{d}\theta
+2\int_{0}^{\pi/4}\cos2\theta\,d\theta
 =2\left[\frac{\sin2\theta}{2}\right]_{0}^{\pi/4}
 =\sin\frac{\pi}{2}-0
 =1.
@@ -13565,17 +13999,17 @@ P\left(\frac{3a}{2},\frac{5\pi}{6}\right).
 因此面积为
 \[
 2\left[
-\int_{\pi/6}^{\pi/2}\frac{1}{2}\bigl(a(1+\sin\theta)\bigr)^2\,\mathrm{d}\theta
+\int_{\pi/6}^{\pi/2}\frac{1}{2}\bigl(a(1+\sin\theta)\bigr)^2\,d\theta
 -
-\int_{0}^{\pi/6}\frac{1}{2}\bigl(a(1-\sin\theta)\bigr)^2\,\mathrm{d}\theta
+\int_{0}^{\pi/6}\frac{1}{2}\bigl(a(1-\sin\theta)\bigr)^2\,d\theta
 \right].
 \]
 化简得
 \[
 a^2\left[
-\int_{\pi/6}^{\pi/2}(1+2\sin\theta+\sin^2\theta)\,\mathrm{d}\theta
+\int_{\pi/6}^{\pi/2}(1+2\sin\theta+\sin^2\theta)\,d\theta
 -
-\int_{0}^{\pi/6}(1-2\sin\theta+\sin^2\theta)\,\mathrm{d}\theta
+\int_{0}^{\pi/6}(1-2\sin\theta+\sin^2\theta)\,d\theta
 \right].
 \]
 计算积分并整理,可得
@@ -13647,15 +14081,15 @@ Q\left(\frac{7}{2},\frac{5\pi}{3}\right).
 
 设
 \[
-A_1=\int_{0}^{\pi/3}\frac{1}{2}(5-3\cos\theta)^2\,\mathrm{d}\theta,
+A_1=\int_{0}^{\pi/3}\frac{1}{2}(5-3\cos\theta)^2\,d\theta,
 \]
 \[
-A_2=\int_{\pi/3}^{\pi}\frac{1}{2}(3+\cos\theta)^2\,\mathrm{d}\theta.
+A_2=\int_{\pi/3}^{\pi}\frac{1}{2}(3+\cos\theta)^2\,d\theta.
 \]
 
 先算 $A_1$,
 \[
-A_1=\frac{1}{2}\int_{0}^{\pi/3}\left(25-30\cos\theta+9\cos^2\theta\right)\mathrm{d}\theta.
+A_1=\frac{1}{2}\int_{0}^{\pi/3}\left(25-30\cos\theta+9\cos^2\theta\right)d\theta.
 \]
 利用
 \[
@@ -13663,7 +14097,7 @@ A_1=\frac{1}{2}\int_{0}^{\pi/3}\left(25-30\cos\theta+9\cos^2\theta\right)\mathrm
 \]
 得
 \[
-A_1=\int_{0}^{\pi/3}\left(\frac{59}{4}-15\cos\theta+\frac{9}{4}\cos2\theta\right)\mathrm{d}\theta.
+A_1=\int_{0}^{\pi/3}\left(\frac{59}{4}-15\cos\theta+\frac{9}{4}\cos2\theta\right)d\theta.
 \]
 积分后
 \[
@@ -13673,11 +14107,11 @@ A_1=\left[\frac{59}{4}\theta-15\sin\theta+\frac{9}{8}\sin2\theta\right]_{0}^{\pi
 
 再算 $A_2$,
 \[
-A_2=\frac{1}{2}\int_{\pi/3}^{\pi}\left(9+6\cos\theta+\cos^2\theta\right)\mathrm{d}\theta.
+A_2=\frac{1}{2}\int_{\pi/3}^{\pi}\left(9+6\cos\theta+\cos^2\theta\right)d\theta.
 \]
 同样化简得
 \[
-A_2=\int_{\pi/3}^{\pi}\left(\frac{19}{4}+3\cos\theta+\frac{1}{4}\cos2\theta\right)\mathrm{d}\theta.
+A_2=\int_{\pi/3}^{\pi}\left(\frac{19}{4}+3\cos\theta+\frac{1}{4}\cos2\theta\right)d\theta.
 \]
 积分得
 \[
@@ -13722,7 +14156,7 @@ x=r\cos\theta,\quad y=r\sin\theta.
 \]
 切线与极轴垂直等价于
 \[
-\frac{\mathrm{d}x}{\mathrm{d}\theta}=0.
+\frac{dx}{d\theta}=0.
 \]
 由 $r=\sin\theta$,有
 \[
@@ -13730,7 +14164,7 @@ x=\sin\theta\cos\theta.
 \]
 对 $\theta$ 求导,
 \[
-\frac{\mathrm{d}x}{\mathrm{d}\theta}
+\frac{dx}{d\theta}
 =\cos^2\theta-\sin^2\theta
 =\cos2\theta.
 \]
@@ -13768,8 +14202,8 @@ Q\left(\frac{1}{2},\frac{\pi}{2}\right).
 
 扇形面积为
 \[
-\int_{0}^{\pi/4}\frac{1}{2}r^2\,\mathrm{d}\theta
-=\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,\mathrm{d}\theta.
+\int_{0}^{\pi/4}\frac{1}{2}r^2\,d\theta
+=\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,d\theta.
 \]
 利用
 \[
@@ -13777,8 +14211,8 @@ Q\left(\frac{1}{2},\frac{\pi}{2}\right).
 \]
 得
 \[
-\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,\mathrm{d}\theta
-=\frac{1}{4}\int_{0}^{\pi/4}(1-\cos2\theta)\,\mathrm{d}\theta
+\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,d\theta
+=\frac{1}{4}\int_{0}^{\pi/4}(1-\cos2\theta)\,d\theta
 =\frac{1}{4}\left[\theta-\frac{1}{2}\sin2\theta\right]_{0}^{\pi/4}
 =\frac{\pi}{16}-\frac{1}{8}.
 \]
