@@ -192,7 +192,7 @@
     \[
     AB^2+BC^2+CA^2=8
     \]
-    证明：$\triangle ABC$ 为直角三角形。
+    证明:$\triangle ABC$ 为直角三角形。
     \begin{solution}
         三点$A,B,C$在单位圆上,外接圆半径为 $1$,由正弦定理,
         \[
@@ -4025,7 +4025,7 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \[
         \sin x = \frac{2\sqrt{2}}{3}, \quad \sin y = \frac{\sqrt{3}}{2}
         \]
-        使用差角公式：
+        使用差角公式:
         \[
         \cos(x-y) = \cos x \cos y + \sin x \sin y = \frac{1}{3}\cdot \frac{1}{2} + \frac{2\sqrt{2}}{3} \cdot \frac{\sqrt{3}}{2} = \frac{1+\sqrt{6}}{6}
         \]
@@ -5034,7 +5034,7 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \[
         \cos^3 x = \frac{1}{4} \left(3\cos x + \cos 3x\right).
         \]
-        因此：
+        因此:
         \begin{align*}
         &\cos^3 \theta + \cos^3\left(\theta + \frac{2\pi}{3}\right) + \cos^3\left(\theta + \frac{4\pi}{3}\right) \\ 
         &= \frac{1}{4} \left[3\left[\cos \theta + \cos\left(\theta + \frac{2\pi}{3}\right) + \cos\left(\theta + \frac{4\pi}{3}\right)\right]+\cos 3\theta + \cos (3\theta+2\pi) + \cos (3\theta+4\pi) \right] \\
@@ -6070,7 +6070,7 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \[
         S = \frac{-1 - z}{z^2 - 1} = \frac{1}{1-z}
         \]
-        代入 $z = \cos \theta + i \sin \theta$：
+        代入 $z = \cos \theta + i \sin \theta$:
         \begin{align*}
         S &= \frac{1}{1-\cos \theta - i \sin \theta} \\
         &= \frac{(1-\cos \theta) + i \sin \theta}{(1-\cos \theta)^2 + \sin^2 \theta} \\
@@ -6311,7 +6311,7 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \]
     \end{solution}
 \question
-计算下列乘积：
+计算下列乘积:
 
 (a) $\sin \frac{\pi}{2n + 1} \sin \frac{2\pi}{2n + 1} \sin \frac{3\pi}{2n + 1} \dots \sin \frac{n\pi}{2n + 1}$
 以及
@@ -6324,36 +6324,36 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
 \begin{solution}
     (a) 设 $\omega = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n}$ 为单位的 $n$ 次复根。
     考虑方程 $x^{n-1} + x^{n-2} + \cdots + 1 = 0$,其根为 $\omega^k$ ($k=1,2,\dots,n-1$)。
-    因此有恒等式：
+    因此有恒等式:
     \[ f(x) = x^{n-1} + x^{n-2} + \cdots + 1 = (x-\omega^1)(x-\omega^2)\cdots (x-\omega^{n-1}) \]
-    令 $x=1$,得：
+    令 $x=1$,得:
     \[ f(1) = n = (1-\omega^1)(1-\omega^2)\cdots (1-\omega^{n-1}) \]
     由于 $|1 - \omega^k| = |1 - (\cos \frac{2k\pi}{n} + i \sin \frac{2k\pi}{n})| = |2 \sin^2 \frac{k\pi}{n} - 2i \sin \frac{k\pi}{n} \cos \frac{k\pi}{n}| = 2 \sin \frac{k\pi}{n}$。
-    取模可得：
+    取模可得:
     \[ n = 2^{n-1} \sin \frac{\pi}{n} \sin \frac{2\pi}{n} \dots \sin \frac{(n-1)\pi}{n} \]
-    由此得出第一个重要结果：
+    由此得出第一个重要结果:
     \[ \sin \frac{\pi}{n} \sin \frac{2\pi}{n} \dots \sin \frac{(n-1)\pi}{n} = \frac{n}{2^{n-1}} \]
     同理可证
-    （通过替换 $n$ 为 $2n+1$ 并利用对称性）：
+    （通过替换 $n$ 为 $2n+1$ 并利用对称性）:
     \[ \sin \frac{\pi}{2n + 1} \sin \frac{2\pi}{2n + 1} \dots \sin \frac{n\pi}{2n + 1} = \frac{\sqrt{2n + 1}}{2^n} \]
 
     (b) 对于余弦乘积,我们利用倍角公式 $\sin 2\theta = 2 \sin \theta \cos \theta$。
-    对于 $2n+1$ 的情形：
+    对于 $2n+1$ 的情形:
     \[ \sin \frac{2k\pi}{2n + 1} = 2 \sin \frac{k\pi}{2n + 1} \cos \frac{k\pi}{2n + 1} \]
-    将 $k=1, 2, \dots, n$ 的等式全部相乘：
+    将 $k=1, 2, \dots, n$ 的等式全部相乘:
     \[ \prod_{k=1}^{n} \sin \frac{2k\pi}{2n+1} = 2^n \left( \prod_{k=1}^{n} \sin \frac{k\pi}{2n+1} \right) \left( \prod_{k=1}^{n} \cos \frac{k\pi}{2n+1} \right) \]
-    由于 $\sin \frac{2k\pi}{2n+1}$ 的集合（当 $k$ 超过 $n/2$ 时利用 $\sin(\pi-\theta)=\sin\theta$）与 $\sin \frac{k\pi}{2n+1}$ 的集合完全相同,两边的正弦乘积项约去,得：
+    由于 $\sin \frac{2k\pi}{2n+1}$ 的集合（当 $k$ 超过 $n/2$ 时利用 $\sin(\pi-\theta)=\sin\theta$）与 $\sin \frac{k\pi}{2n+1}$ 的集合完全相同,两边的正弦乘积项约去,得:
     \[ \cos \frac{\pi}{2n + 1} \cos \frac{2\pi}{2n + 1} \dots \cos \frac{n\pi}{2n + 1} = \frac{1}{2^n} \]
 
-    对于 $\cos \frac{k\pi}{2n}$ 的乘积：
-    利用 $\sin \theta \cos \theta = \frac{1}{2} \sin 2\theta$：
+    对于 $\cos \frac{k\pi}{2n}$ 的乘积:
+    利用 $\sin \theta \cos \theta = \frac{1}{2} \sin 2\theta$:
     \[ \left[ \prod_{k=1}^{n-1} \cos \frac{k\pi}{2n} \right] \left[ \prod_{k=1}^{n-1} \sin \frac{k\pi}{2n} \right] = \frac{1}{2^{n-1}} \prod_{k=1}^{n-1} \sin \frac{k\pi}{n} \]
     已知右侧乘积为 $\frac{1}{2^{n-1}} \cdot \frac{n}{2^{n-1}} = \frac{n}{2^{2n-2}}$。
     又因为 $\sin \frac{k\pi}{2n} = \cos \frac{(n-k)\pi}{2n}$,所以左侧两个括号内的数值相等。
-    取平方根（项均为正）得：
+    取平方根（项均为正）得:
     \[ \cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \dots \cos \frac{(n - 1)\pi}{2n} = \frac{\sqrt{n}}{2^{n-1}} \]
 
-    注：若将 (a) 的结果除以 (b) 的结果,可得正切乘积：
+    注:若将 (a) 的结果除以 (b) 的结果,可得正切乘积:
     \[ \tan \frac{\pi}{2n + 1} \tan \frac{2\pi}{2n + 1} \dots \tan \frac{n\pi}{2n + 1} = \sqrt{2n + 1} \]
     \[ \tan \frac{\pi}{2n} \tan \frac{2\pi}{2n} \dots \tan \frac{(n - 1)\pi}{2n} = 1 \]
 \end{solution}
@@ -6762,7 +6762,7 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
         \[
         \tan(A+B+C)=1=\tan\frac{\pi}{4}
         \]
-        现证明 $\tan^{-1} t<t$：设 $f(x)=\tan x - x$,则 $f'(x)=\sec^2 x - 1 = \tan^2 x > 0$,且 $f(0)=0$,故对所有$x>0$有$f(x)>0$,即 $\tan x > x$对$x=\tan^{-1}t \in \left(0,\dfrac{\pi}{2}\right)$恒成立,从而 $\tan^{-1} t < t$。因此
+        现证明 $\tan^{-1} t<t$:设 $f(x)=\tan x - x$,则 $f'(x)=\sec^2 x - 1 = \tan^2 x > 0$,且 $f(0)=0$,故对所有$x>0$有$f(x)>0$,即 $\tan x > x$对$x=\tan^{-1}t \in \left(0,\dfrac{\pi}{2}\right)$恒成立,从而 $\tan^{-1} t < t$。因此
         \[
         A+B+C < \frac{1}{2}+\frac{1}{5}+\frac{1}{8}=\frac{33}{40}<\frac{\pi}{2}
         \]
@@ -7623,11 +7623,11 @@ B(3k,3t).
     \]
     将平面分成六个区域, 求$a$的所有可能值。
     \begin{solution}
-        情况一：$L_1 \parallels L_3$,有 $a=-1$。
+        情况一:$L_1 \parallels L_3$,有 $a=-1$。
 
-        情况二：$L_2 \parallels L_3$,有 $a=\dfrac{3}{2}$。
+        情况二:$L_2 \parallels L_3$,有 $a=\dfrac{3}{2}$。
 
-        情况三：$L_1,L_2$与$L_3$有唯一公共点,解$L_1,L_2$得 $\left(1,-\dfrac{1}{3}\right)$,故$a=-9$。
+        情况三:$L_1,L_2$与$L_3$有唯一公共点,解$L_1,L_2$得 $\left(1,-\dfrac{1}{3}\right)$,故$a=-9$。
 
         经检验,$a$的所有可能值为 
         \[
@@ -7641,13 +7641,13 @@ B(3k,3t).
     \]
     不能围成一三角形, 求实数$a$之值。
     \begin{solution}
-        情况一：$L_1 \parallels L_2$,有 $a=-1$。
+        情况一:$L_1 \parallels L_2$,有 $a=-1$。
 
-        情况二：$L_1 \parallels L_3$,有 $a=2$。
+        情况二:$L_1 \parallels L_3$,有 $a=2$。
 
-        情况三：$L_2 \parallels L_3$,有 $a^2=-2$,此时无实数解。
+        情况三:$L_2 \parallels L_3$,有 $a^2=-2$,此时无实数解。
 
-        情况四：$L_1,L_2$与$L_3$有唯一公共点,联立$L_1,L_3$得
+        情况四:$L_1,L_2$与$L_3$有唯一公共点,联立$L_1,L_3$得
         \[
         x=\frac{3}{a-2},\quad y=\frac{12-3a}{a-2}, \quad a \neq 2
         \]
@@ -9693,7 +9693,7 @@ B(3k,3t).
     \]
     直线 $y=kx+2$ 交 $C$ 于 $A,B$ 两点,$M$ 为线段 $AB$ 的中点,过 $M$ 作 $x$ 轴的垂线,垂足为 $N$。
     \begin{parts}
-    \part 证明：抛物线 $C$ 在点 $N$ 处的切线与 $AB$ 平行；
+    \part 证明:抛物线 $C$ 在点 $N$ 处的切线与 $AB$ 平行；
     \begin{solution}
         设$A(x_1,2x_1^2),B(x_2,2x_2^2)$,将 $y=kx+2$ 代入 $y=2x^2$,得
         \[
@@ -9719,7 +9719,7 @@ B(3k,3t).
         \[
         2x^2-mx+\frac{mk}{4}-\frac{k^2}{8}=0
         \]
-        由于该直线与抛物线相切,判别式为零：
+        由于该直线与抛物线相切,判别式为零:
         \[
         \Delta=m^2-8\left(\frac{mk}{4}-\frac{k^2}{8}\right)=(m-k)^2=0
         \]
@@ -10264,7 +10264,7 @@ B(3k,3t).
         \[ 
         AC^2 = AB^2 + BC^2 = \frac{32 - 3c^2}{2}  + \frac{(2 - c)^2}{2} = -(c + 1)^2 + 19
         \]
-        当 $c = -1$ 时,$AC^2$ 取得最大值 $19$,此时 $c^2 = 1 < \frac{16}{3}$,符合判别式条件,因此$AB$ 所在直线的方程为：
+        当 $c = -1$ 时,$AC^2$ 取得最大值 $19$,此时 $c^2 = 1 < \frac{16}{3}$,符合判别式条件,因此$AB$ 所在直线的方程为:
         \[ 
         y = x - 1 
         \]
@@ -10795,7 +10795,7 @@ B(3k,3t).
         \[ 
         BD - AF_{1} = BF_{2} - (AB - BF_{1}) = 2a - AB = 4c - AB = \frac{8\sqrt{3}}{39} 
         \]
-        解法一：设 $A(x_{1}, y_{1}), B(x_{2}, y_{2})$,
+        解法一:设 $A(x_{1}, y_{1}), B(x_{2}, y_{2})$,
         \[ 
         \begin{cases}
         l_{AB}: y = -\sqrt{3}x + c \\ 
@@ -10821,7 +10821,7 @@ B(3k,3t).
         \]
     \end{solution}
     \begin{solution}
-        解法二：由焦半径公式可知 
+        解法二:由焦半径公式可知 
         \[ 
         AB = \frac{2ab^2}{a^2 - c^2\cos^2\theta} = \frac{4c \cdot 3c^2}{4c^2 - c^2 \cdot \frac{3}{4}} = \frac{48}{13}c 
         \]
@@ -12814,7 +12814,7 @@ ab^2 + 4a = a^2b + 4b
         \[
         y - b\sin\theta = -\frac{b\cos\theta}{a\sin\theta} (x - a\cos\theta) \Rightarrow bx\cos\theta + ay\sin\theta = ab.
         \]
-        过焦点 $F(ae,0)$,垂直于切线的直线 $FN$：
+        过焦点 $F(ae,0)$,垂直于切线的直线 $FN$:
         \[
         y - 0 = \frac{a\sin\theta}{b\cos\theta}(x - ae) \Rightarrow -ay\cos\theta + bx\sin\theta = a^2 e \sin\theta.
         \]
@@ -13289,7 +13289,7 @@ ab^2 + 4a = a^2b + 4b
     \[
     x = \sin\theta, \quad y = \theta \cos\theta, \quad -\pi < \theta < \pi.
     \]
-    已知曲线在 $\theta = -\dfrac{\pi}{4}$ 及 $\theta = \dfrac{\pi}{4}$ 处的切线平行,且间距为 $d$,证明：
+    已知曲线在 $\theta = -\dfrac{\pi}{4}$ 及 $\theta = \dfrac{\pi}{4}$ 处的切线平行,且间距为 $d$,证明:
     \[
     d = \sqrt{\frac{8\pi^2 - 32\pi + 32}{\pi^2 - 8\pi + 32}}.
     \]
@@ -13561,6 +13561,51 @@ ab^2 + 4a = a^2b + 4b
         其中 $0\le x<1$。
     \end{solution}
 
+    \question 心脏线的极坐标方程为 
+    \[
+    r=4(1+\cos \theta),0 \le \theta \le \frac{\pi}{2}
+    \]
+    曲线在点 $P$ 处的切线斜率为 $-1$。求该切线的极坐标方程,结果以 $r=f(\theta)$ 的形式表示。
+    \begin{solution}
+        由链导法,
+        \[ 
+        \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{\frac{d}{d\theta}(r \sin \theta)}{\frac{d}{d\theta}(r \cos \theta)} = \frac{\frac{d}{d\theta}[4(1+\cos \theta)\sin \theta]}{\frac{d}{d\theta}[4(1+\cos \theta)\cos \theta]} 
+        \]
+        展开并求导得
+        \[ 
+        \frac{dy}{dx} = \frac{\cos \theta + \cos^2 \theta - \sin^2 \theta}{-\sin \theta - 2\sin \theta \cos \theta} = \frac{\cos \theta + \cos 2\theta}{-\sin \theta - \sin 2\theta} 
+        \]
+        令斜率为 $-1$,
+        \[ 
+        \frac{\cos \theta + \cos 2\theta}{-\sin \theta - \sin 2\theta} = -1 \Rightarrow \cos \theta + \cos 2\theta = \sin \theta + \sin 2\theta 
+        \]
+        和差化积得
+        \[ 
+        2\cos \frac{3\theta}{2} \cos \frac{\theta}{2} = 2\sin \frac{3\theta}{2} \cos \frac{\theta}{2} \Rightarrow
+        \cos \frac{\theta}{2} \left( \cos \frac{3\theta}{2} - \sin \frac{3\theta}{2} \right) = 0 
+        \]
+        在范围 $0 \le \theta \le \dfrac{\pi}{2}$ 内,$\cos \dfrac{\theta}{2} \neq 0$,故有
+        \[ 
+        \tan \frac{3\theta}{2} = 1 \Rightarrow \theta = \frac{\pi}{6} 
+        \]
+        此时
+        \[ 
+        r = 4\left(1 + \cos \frac{\pi}{6}\right) = 4 + 2\sqrt{3} 
+        \]
+        点 $P$ 的直角坐标为
+        \[ 
+        P\left(r \cos \frac{\pi}{6},r \sin \frac{\pi}{6}\right) = (2\sqrt{3} + 3 ,2 + \sqrt{3})
+        \]
+        故切线的方程为 
+        \[ 
+        y - (2 + \sqrt{3}) = -(x - (3 + 2\sqrt{3})) \implies y + x = 5 + 3\sqrt{3} 
+        \]
+        转换为极坐标方程:
+        \[ 
+        r\sin \theta + r\cos \theta = 5 + 3\sqrt{3} \Rightarrow r = \frac{5 + 3\sqrt{3}}{\cos \theta + \sin \theta} 
+        \]
+    \end{solution}
+
     \question 曲线 $C_1,C_2$ 的极坐标方程分别为
     \[
     C_1:\ r=2\cos\theta-\sin\theta,\quad 0<\theta\le\frac{\pi}{3},
@@ -13636,6 +13681,190 @@ ab^2 + 4a = a^2b + 4b
         在 $0\le\theta\le\dfrac{\pi}{3}$ 内解得
         \[
         \theta+\frac{\pi}{4}=\frac{\pi}{3} \Rightarrow \theta=\frac{\pi}{12}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 曲线 $C_1,C_2$ 的极坐标方程分别为 
+    \[
+    r_1 = 3 + 2\cos \theta, 0 \le \theta < 2\pi,\quad r_2 = 2
+    \]
+    两曲线交于点 $P,Q$,经过 $P$ 点和极点 $O$ 的直线与 $C_1$ 再次交于 $R$ 点,证明 $RQ$ 是 $C_2$ 在 $Q$ 点处的切线。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image240.png}
+    \end{figure}
+    \begin{solution}
+        联立$C_1,C_2$得
+        \[ 
+        3 + 2\cos \theta = 2 \Rightarrow \theta = \frac{2\pi}{3},\frac{4\pi}{3} \Rightarrow P\left(2, \frac{2\pi}{3}\right),Q\left(2, \frac{4\pi}{3}\right)
+        \]
+        由于 $PR$ 通过极点 $O$,则 $R$ 点的角度为 $\dfrac{2\pi}{3} + \pi = \dfrac{5\pi}{3}$,代入 $C_1$ 方程:
+        \[
+        r_R = 3 + 2\cos(\frac{5\pi}{3}) = 4
+        \]
+        故 $R(4, \frac{5\pi}{3})$,在 $\triangle OQR$ 中,由余弦定理,
+        $\angle QOR = \frac{5\pi}{3} - \frac{4\pi}{3} = \frac{\pi}{3}$。
+        \[ 
+        QR^2 = 2^2 + 4^2 - 2 \cdot 2 \cdot 4 \cos \left(\frac{5\pi}{3} - \frac{4\pi}{3}\right) \Rightarrow QR = \sqrt{12} 
+        \]
+        此时发现
+        \[
+        QR^2+OQ^2=OR^2=16
+        \]
+        由毕氏定理,$\angle OQR = \dfrac{\pi}{2}$,即$RQ$ 与圆 $C_2$ 在 $Q$ 点垂直,故$RQ$ 是 $C_2$ 在 $Q$ 点处的切线。
+    \end{solution}
+
+    \question 已知两曲线极坐标方程
+    \[
+    C_1: r = 12 \cos \theta, \quad -\frac{\pi}{2}< \theta \le \frac{\pi}{2}, \quad C_2: r = 4 + 4 \cos \theta, \quad -\pi < \theta \le \pi
+    \]
+    已知 $C_1$ 与 $C_2$ 的一个交点为 $A$,由 $C_1$ 与线段 $OA$ 围成的较小区域面积为 $6\pi - 9\sqrt{3}$。若有限区域 $R$ 表示在 $C_1$ 内但在 $C_2$ 外的点,证明 $R$ 的面积为 $16\pi$。
+    \begin{solution}
+        首先求交点:
+        \[ 
+        12 \cos \theta = 4 + 4 \cos \theta \Rightarrow \theta = \pm \frac{\pi}{3} \Rightarrow
+        \]
+        记$A\left(6,\frac{\pi}{3}\right)$,所求面积即
+        \[ 
+        2 \cdot \left[ \frac{1}{2}\pi(6)^2 - \left( \int_{0}^{\frac{\pi}{3}} \frac{1}{2}(4 + 4 \cos \theta)^2 \, d\theta + 6\pi - 9\sqrt{3} \right) \right] =16\pi
+        \]
+        其中
+        \begin{align*}
+        \int_{0}^{\frac{\pi}{3}} \frac{1}{2}(4 + 4 \cos \theta)^2 \, d\theta = 4\pi + 9\sqrt{3} 
+        &= \int_{0}^{\frac{\pi}{3}} \left(8 + 16 \cos\theta+8\cos^2\theta\right) \, d\theta \\
+        &= \int_{0}^{\frac{\pi}{3}} \left(12 + 16 \cos\theta+4\cos 2\theta\right) \, d\theta \\
+        &= \left[12\theta +16\sin \theta +2 \sin 2 \theta\right]_{0}^{\frac{\pi}{3}} \\
+        &= 4\pi + 9\sqrt{3}
+        \end{align*}
+    \end{solution}
+
+    \question 曲线 $C_1,C_2$ 的极坐标方程分别为
+    \[ 
+    r = 1 + \sin \theta, \quad 0 < \theta < \frac{\pi}{2}, \quad r = 1 + \cos 2\theta, \quad 0 < \theta < \frac{\pi}{2}
+    \]
+    点 $P$ 是 $C_1,_2$ 的交点。一条平行于极轴的直线通过点 $P$ 并与曲线 $C_2$ 交于点 $Q$。证明
+    \[ 
+    PQ = \frac{1}{32} \left[ 24\sqrt{3} - (2 + 2\sqrt{13})^{\frac{3}{2}} \right] 
+    \]
+    \begin{solution}
+        联立方程求交点 $P$ 的极坐标:
+        \[ 
+        1 + \sin \theta = 1 + \cos 2\theta \Rightarrow \theta = \frac{1}{2}
+        \]
+        故 $P\left(\dfrac{3}{2}, \dfrac{\pi}{6}\right)$,过 $P$且平行于极轴的直线极坐标方程为 
+        \[
+        r \sin \theta = \frac{3}{4}
+        \]
+        与 $C_2$ 联立可解得
+        \[
+        (1+\cos 2\theta)\sin \theta = \frac{3}{4} \Rightarrow (2\sin \theta-1)(4\sin^2 \theta+2\sin \theta-3)=0 \Rightarrow \sin \theta = \frac{\sqrt{13}-1}{4}
+        \]
+        此时
+        \[
+        r = \frac{1 + \sqrt{13}}{4}, \quad \cos \theta = \frac{1}{4}\sqrt{2 + 2\sqrt{13}}
+        \]
+        故$PQ$的长度为
+        \begin{align*}
+        |x_P - x_Q| 
+        &= r_P \cos \theta_P - r_Q \cos \theta_Q \\
+        &= \frac{3}{2} \cdot \frac{\sqrt{3}}{2} - \left( \frac{1 + \sqrt{13}}{4} \right) \left( \frac{\sqrt{2 + 2\sqrt{13}}}{4} \right) \\
+        &= \frac{1}{32} \left[ 24\sqrt{3} - (2 + 2\sqrt{13})^{\frac{3}{2}} \right]
+        \end{align*}
+        证毕。
+    \end{solution}
+
+    \question 曲线的极坐标方程为 
+    \[
+    r = 1 + \tan \theta,\quad 0 \le \theta \le \frac{\pi}{2}
+    \]
+    点 $P$ 位于曲线上 $\theta = \dfrac{\pi}{3}$ 处。点 $Q$ 位于极轴上,使得直线 $L$ 经过 $P$ 和 $Q$ 且与极轴垂直。求由该曲线与直线 $L$ 所围成的有限区域的面积。
+    \begin{solution}
+        $P$ 点坐标为$\left(1 + \sqrt{3},\dfrac{\pi}{3}\right)$,
+        因此 
+        \[
+        OQ = (1 + \sqrt{3}) \cos \frac{\pi}{3} = \frac{1}{2}(1 + \sqrt{3})
+        \]
+        直线 $L$ 的极坐标方程为 
+        \[
+        r \cos \theta = \frac{1}{2}(1 + \sqrt{3})
+        \]
+        与曲线联立,解得
+        \[
+        (1 + \tan\theta)\cos\theta = \frac{1}{2}(1 + \sqrt{3}) \Rightarrow \theta = \frac{\pi}{6}
+        \]
+        故得$R\left(1 + \dfrac{\sqrt{3}}{3},\dfrac{\pi}{6}\right)$,于是$\triangle OPR$ 的面积为
+        \[
+        \frac{1}{2}\cdot OP \cdot OR \sin \left(\frac{\pi}{3}-\frac{\pi}{6}\right)=\frac{1}{2}(1 + \sqrt{3})\left(1 + \frac{\sqrt{3}}{3}\right)\sin \frac{\pi}{6}=\frac{1}{2}+\frac{\sqrt{3}}{3}
+        \]
+        而极坐标扇形面积为
+        \begin{align*}
+        \frac{1}{2} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} (1 + \tan \theta)^2 \, d\theta 
+        &= \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \left( \tan \theta + \frac{1}{2} \sec^2 \theta \right) d\theta \\
+        &= \left[ \ln(\sec \theta) + \frac{1}{2} \tan \theta \right]_{\frac{\pi}{6}}^{\frac{\pi}{3}} \\
+        &= \frac{1}{3} \sqrt{3} + \frac{1}{2} \ln 3
+        \end{align*}
+        所求面积为
+        \[ 
+        \frac{1}{3} \sqrt{3} + \frac{1}{2} \ln 3-\left(\frac{1}{2}+\frac{\sqrt{3}}{3}\right) = \frac{1}{2}(\ln3-1)
+        \]
+    \end{solution}
+
+    \question 如图,曲线方程为 
+    \[
+    r = 2 + 2\sin\theta, \quad 0 \le \theta \le 2\pi
+    \]
+    直线方程为 
+    \[
+    2r\sin\theta = 3, \quad 0 < \theta < \pi
+    \]
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image243.png}
+    \end{figure}
+    \begin{parts}
+    \part 求交点 $P,Q$ 的坐标。
+    \begin{solution}
+        联立得
+        \[ 
+        2(2 + 2\sin\theta)\sin\theta = 3 \Rightarrow (2\sin\theta - 1)(2\sin\theta + 3) = 0
+        \]
+        由于 $-1 \le \sin\theta \le 1$,方程 $2\sin\theta + 3 = 0$ 无解,因此
+        \[ 
+        \sin\theta = \frac{1}{2} \Rightarrow \theta = \frac{\pi}{6}, \frac{5\pi}{6}
+        \]
+        所以交点坐标为
+        \[
+        P\left(3, \frac{\pi}{6}\right),Q\left(3, \frac{5\pi}{6}\right)
+        \]
+    \end{solution}
+    \part 证明$\triangle OPQ$ 的面积为 $\dfrac{9\sqrt{3}}{4}\sqrt{3}$。
+    \begin{solution}
+        已知 $OP = 3,OQ = 3$,夹角为 
+        \[
+        \frac{5\pi}{6} - \frac{\pi}{6} = \frac{2\pi}{3}
+        \]
+        故$\triangle OPQ$面积为
+        \[ 
+        \frac{1}{2} \cdot 3 \cdot 3 \cdot \sin\frac{2\pi}{3} = \frac{9\sqrt{3}}{4} 
+        \]
+    \end{solution}
+    \part 求由曲线和直线围成的阴影区域的面积。
+    \begin{solution}
+        阴影区域面积等于曲线在对应角度内围成的面积减去$\triangle OPQ$ 的面积,
+        \[
+        \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \frac{1}{2} (2 + 2\sin\theta)^2\, d\theta - [\triangle OPQ]
+        \]
+        其中
+        \begin{align*}
+        \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \frac{1}{2} (2 + 2\sin\theta)^2\, d\theta
+        &= \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} (3 + 4\sin\theta - \cos 2\theta)\, d\theta \\
+        &= \Bigl[3\theta - 4\cos\theta - \frac{1}{2}\sin 2\theta\Bigr]_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \\
+        &= 2\pi + \frac{9\sqrt{3}}{2}
+        \end{align*}
+        故阴影部分的面积为
+        \[ 
+        (2\pi + \frac{9\sqrt{3}}{2}) - \frac{9\sqrt{3}}{4} = 2\pi + \frac{9}{4}\sqrt{3} 
         \]
     \end{solution}
     \end{parts}
@@ -13738,7 +13967,7 @@ ab^2 + 4a = a^2b + 4b
         &= a^2 \int_{\frac{\pi}{6}}^{\frac{\pi}{2}} (-8 + 20\sin\theta - 8\sin^2 \theta) d\theta \\
         &= a^2 \int_{\frac{\pi}{6}}^{\frac{\pi}{2}} (-12 + 20\sin\theta + 4\cos 2\theta) d\theta \\
         &= a^2 \Bigl[ -12\theta - 20\cos\theta + 2\sin 2\theta \Bigr]_{\frac{\pi}{6}}^{\frac{\pi}{2}} \\
-        &= 3\sqrt{3} - \frac{4}{3}\pi
+        &= 3\sqrt{3} - \frac{4\pi}{3}
         \end{align*}
         \end{solution}
     \end{parts}
@@ -13797,248 +14026,134 @@ ab^2 + 4a = a^2b + 4b
     \end{solution}
     \end{parts}
 
-    \question 曲线的极坐标方程为
-\[
-r=\sin\theta,\quad 0\le\theta\le\frac{\pi}{2}.
-\]
-点 $P$ 在曲线上,且曲线在 $P$ 处的切线与极轴垂直。
-(a) 求点 $P$ 的极坐标。
-
-点 $Q$ 在射线 $\theta=\frac{\pi}{2}$ 上,使得 $PQ$ 与极轴平行。  
-由曲线及线段 $PQ, OQ$ 所围成的有限区域记为 $R$。
-
-(b) 求区域 $R$ 的面积,结果用精确的最简形式表示。
+    \question 曲线 $C$ 的极坐标方程为 $r = \tan\frac{\theta}{2}$,其中 $0 \le \theta < \frac{\pi}{2}$。点 $P$ 位于曲线 $C$ 上,且该点处的切线垂直于极轴。射线 $\theta = \alpha$ 经过点 $P$。求曲线 $C$ 与该射线所围成区域的面积。
     \begin{figure}[H]
         \centering        
-        \includegraphics[width=0.5\textwidth]{images/image232.png}
+        \includegraphics[width=0.5\textwidth]{images/image242.png}
     \end{figure}
-\begin{solution}
-(a) 极坐标下
-\[
-x=r\cos\theta,\quad y=r\sin\theta.
-\]
-切线与极轴垂直等价于
-\[
-\frac{dx}{d\theta}=0.
-\]
-由 $r=\sin\theta$,有
-\[
-x=\sin\theta\cos\theta.
-\]
-对 $\theta$ 求导,
-\[
-\frac{dx}{d\theta}
-=\cos^2\theta-\sin^2\theta
-=\cos2\theta.
-\]
-令其为零,得
-\[
-\cos2\theta=0.
-\]
-在 $0\le\theta\le\frac{\pi}{2}$ 内,
-\[
-2\theta=\frac{\pi}{2},\quad \theta=\frac{\pi}{4}.
-\]
-于是
-\[
-r=\sin\frac{\pi}{4}=\frac{\sqrt{2}}{2}.
-\]
-故
-\[
-P\left(\frac{\sqrt{2}}{2},\frac{\pi}{4}\right).
-\]
+    \begin{solution}
+        由于点 $P$ 处的切线垂直于极轴,意味 
+        \[ 
+        \frac{dx}{d\theta} = \frac{d}{d\theta} \left[ \tan\frac{\theta}{2}\cos \theta \right] = \frac{1}{2} \sec^2\frac{\theta}{2} \cos \theta - \tan\frac{\theta}{2} \sin \theta = 0 
+        \]
+        注意到 $\theta < \frac{\pi}{2}$,故 $\cos \theta \neq 0$,于是
+        \[ 
+        \sec^2\frac{\theta}{2} - 2 \tan\frac{\theta}{2} \tan \theta = 0 
+        \]
+        设$t=\tan\dfrac{\theta}{2}$,解得
+        \[ 
+        (1 + t^2) - 2t \left( \frac{2t}{1 - t^2} \right) = 0 \Rightarrow t^2 = -2 + \sqrt{5} \Rightarrow t = \sqrt{-2 + \sqrt{5}}
+        \]
+        因此点 $P$ 对应的极角 $\alpha$ 为
+        \[ 
+        \alpha = 2 \arctan \sqrt{-2 + \sqrt{5}} 
+        \]
+        所围图形的面积为
+        \[
+        \frac{1}{2} \int_{0}^{\alpha} \left[ \sec^2\frac{\theta}{2} - 1 \right] \, d\theta 
+        = \frac{1}{2} \left[ 2 \tan\frac{\theta}{2} - \theta \right]_{0}^{\alpha} 
+        = \tan\left(\frac{1}{2}\alpha\right) - \frac{1}{2}\alpha
+        = \sqrt{-2 + \sqrt{5}} - \arctan \sqrt{-2 + \sqrt{5}}
+        \]
+    \end{solution}
 
-(b) 先确定点 $Q$。  
-点 $Q$ 在 $\theta=\frac{\pi}{2}$ 上,且 $PQ$ 与极轴平行,因此 $P$ 与 $Q$ 的纵坐标相同。
-由
-\[
-y_P=r_P\sin\theta_P
-=\frac{\sqrt{2}}{2}\sin\frac{\pi}{4}
-=\frac{1}{2},
-\]
-而在 $\theta=\frac{\pi}{2}$ 上有 $y=r$,故
-\[
-Q\left(\frac{1}{2},\frac{\pi}{2}\right).
-\]
-
-区域 $R$ 可视为扇形 $OPP'$ 与三角形 $OPQ$ 的差,其中 $P'$ 为 $\theta=\frac{\pi}{4}$ 与曲线的交点。
-
-扇形面积为
-\[
-\int_{0}^{\pi/4}\frac{1}{2}r^2\,d\theta
-=\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,d\theta.
-\]
-利用
-\[
-\sin^2\theta=\frac{1-\cos2\theta}{2},
-\]
-得
-\[
-\frac{1}{2}\int_{0}^{\pi/4}\sin^2\theta\,d\theta
-=\frac{1}{4}\int_{0}^{\pi/4}(1-\cos2\theta)\,d\theta
-=\frac{1}{4}\left[\theta-\frac{1}{2}\sin2\theta\right]_{0}^{\pi/4}
-=\frac{\pi}{16}-\frac{1}{8}.
-\]
-
-三角形 $OPQ$ 的面积为
-\[
-\frac{1}{2}\times OQ\times x_P
-=\frac{1}{2}\times\frac{1}{2}\times\left(\frac{\sqrt{2}}{2}\cos\frac{\pi}{4}\right)
-=\frac{1}{8}.
-\]
-
-因此区域 $R$ 的面积为
-\[
-\left(\frac{\pi}{16}-\frac{1}{8}\right)-\frac{1}{8}
-=\frac{\pi}{16}-\frac{1}{4}.
-\]
-\end{solution}
-
-\question
-如图,双曲线与圆的直角坐标方程分别为
-\[
-y=\frac{6}{x},\ x>0
-\quad\text{及}\quad
-x^2+y^2=24,\ x>0,\ y>0.
-\]
-
-点 $P,Q$ 为双曲线与圆的交点,点 $R$ 在双曲线上,且 $OR$ 的距离最小。
-
-(a) 求 $P,Q,R$ 的极坐标。
-
-(b) 计算 $\angle PRQ$ 的大小,结果用弧度表示,并保留三位小数。
+    \question 曲线 $C_1$ 和 $C_2$ 的极坐标方程分别为 
+    \[
+    r_1 = \sec \theta(1 - \tan^2 \theta), \quad r_2 = \frac{1}{2}\sec^3 \theta,\quad 0 \le \theta < \frac{\pi}{4},
+    \]
     \begin{figure}[H]
         \centering        
-        \includegraphics[width=0.5\textwidth]{images/image231.png}
+        \includegraphics[width=0.5\textwidth]{images/image241.png}
     \end{figure}
-\begin{solution}
-(a) 先将双曲线写成极坐标形式。  
-由
-\[
-y=\frac{6}{x}
-\]
-得
-\[
-xy=6.
-\]
-代入 $x=r\cos\theta,\ y=r\sin\theta$,有
-\[
-(r\cos\theta)(r\sin\theta)=6,
-\]
-即
-\[
-r^2\sin\theta\cos\theta=6.
-\]
-利用 $\sin2\theta=2\sin\theta\cos\theta$,得到
-\[
-r^2=\frac{12}{\sin2\theta}.
-\]
+    \begin{parts}
+    \part 证明 $\tan \angle OAP = -3\sqrt{3}$。
+    \begin{solution}
+        联立可知
+        \[ 
+        \frac{1}{2}\sec^3 \theta = \sec \theta(1 - \tan^2 \theta) \Rightarrow \tan \theta = \frac{1}{\sqrt{3}} 
+        \]
+        于是$A\left(\dfrac{4}{3\sqrt{3}},\dfrac{\pi}{6}\right)$,设 $\angle OAP = \psi$,在 $\triangle OAP$ 中,由正弦定理,
+        \[ 
+        \frac{\sin \psi}{1} = \frac{\sin(\frac{5\pi}{6} - \psi)}{\frac{4}{3\sqrt{3}}}
+        \]
+        化简得
+        \[ 
+        4\sqrt{3} \sin \psi = 9 \left(\frac{1}{2}\cos \psi+\frac{\sqrt{3}}{2}\sin\psi\right)
+        \Rightarrow \tan \psi = -3\sqrt{3} 
+        \]
+        故得证。
+    \end{solution}
+    \part 求曲边三角形 $OAQ$ 的面积,其中 $O$ 为极点。
+    \begin{solution}
+        面积为 
+        \begin{align*}
+        &\frac{1}{2} \int_{0}^{\frac{\pi}{6}} \frac{1}{4}\sec^6\theta\, d\theta + \frac{1}{2} \int_{\frac{\pi}{6}}^{\frac{\pi}{4}} \sec^2\theta\ (1 - \tan\theta)^2\, d\theta \\
+        &= \frac{1}{8} \int_{0}^{\frac{\pi}{6}} \sec^2\theta(1 + \tan\theta)^2\, d\theta + \frac{1}{2} \int_{\frac{\pi}{6}}^{\frac{\pi}{4}} \sec^2\theta\ (1 - \tan\theta)^2\, d\theta \\
+        &= \frac{1}{8}\left[\frac{1}{5}\tan^5 \theta + \frac{2}{3}\tan^3 \theta + \tan \theta\right]_{0}^{\frac{\pi}{6}} + \frac{1}{2} \left[\frac{1}{5}\tan^5 \theta - \frac{2}{3}\tan^3 \theta + \tan \theta\right]_{\frac{\pi}{6}}^{\frac{\pi}{4}} \\
+        &= \frac{36-11\sqrt{3}}{135}
+        \end{align*}
+    \end{solution}
+    \end{parts}
 
-圆的方程为
-\[
-x^2+y^2=24,
-\]
-在极坐标下即
-\[
-r^2=24.
-\]
-
-联立得
-\[
-24=\frac{12}{\sin2\theta},
-\]
-从而
-\[
-\sin2\theta=\frac{1}{2}.
-\]
-在第一象限内,
-\[
-2\theta=\frac{\pi}{6},\ \frac{5\pi}{6},
-\]
-故
-\[
-\theta=\frac{\pi}{12},\ \frac{5\pi}{12}.
-\]
-此时
-\[
-r=\sqrt{24}=2\sqrt{6}.
-\]
-因此
-\[
-Q\left(2\sqrt{6},\frac{\pi}{12}\right),\quad
-P\left(2\sqrt{6},\frac{5\pi}{12}\right).
-\]
-
-再求点 $R$。  
-由
-\[
-r^2=\frac{12}{\sin2\theta},
-\]
-可知当 $\sin2\theta$ 取最大值 $1$ 时,$r^2$ 最小。  
-于是
-\[
-2\theta=\frac{\pi}{2},\quad \theta=\frac{\pi}{4}.
-\]
-此时
-\[
-r^2=12,\quad r=2\sqrt{3}.
-\]
-所以
-\[
-R\left(2\sqrt{3},\frac{\pi}{4}\right).
-\]
-
-(b) 先求有关中心角。  
-有
-\[
-\angle ROQ=\frac{\pi}{4}-\frac{\pi}{12}=\frac{\pi}{6},
-\]
-\[
-\angle POR=\frac{5\pi}{12}-\frac{\pi}{4}=\frac{\pi}{6}.
-\]
-
-在三角形 $ORQ$ 中,由余弦定理,
-\[
-RQ^2=OR^2+OQ^2-2\cdot OR\cdot OQ\cos\frac{\pi}{6}.
-\]
-代入
-\[
-OR^2=12,\quad OQ^2=24,
-\]
-得
-\[
-RQ^2=36-12\sqrt{6},
-\]
-即
-\[
-RQ=\sqrt{36-12\sqrt{6}}.
-\]
-
-在三角形 $PRQ$ 中,利用正弦定理,
-\[
-\frac{PR}{\sin\angle PRQ}
-=\frac{RQ}{\sin\angle ROP}.
-\]
-注意到
-\[
-PR=OQ=2\sqrt{6},\quad \angle ROP=\frac{\pi}{6},
-\]
-于是
-\[
-\sin\angle PRQ
-=\frac{2\sqrt{6}\cdot\sin(\pi/6)}{\sqrt{36-12\sqrt{6}}}
-\approx 0.495.
-\]
-由此
-\[
-\angle PRQ\approx 2.526.
-\]
-
-因此
-\[
-\angle PRQ\approx 2.526\ \text{弧度}.
-\]
-\end{solution}
+    \question 一斜率为 $-\frac{3}{11}$ 的直线 $L$ 是曲线
+    \[
+    r = 25\cos 2\theta,\quad 0 \le \theta \le \frac{\pi}{2}
+    \] 
+    的切线。证明由该曲线、直线 $L$ 以及极轴所围成的区域的面积为
+    \[ 
+    \frac{25}{12} \left( 46 - 75 \tan^{-1} \frac{1}{3} \right) 
+    \]
+    \begin{solution}
+        由$r = 25\cos 2\theta$及链导法得
+        \[ 
+        \frac{dy}{dx} = \frac{\frac{d}{d\theta}(r \sin \theta)}{\frac{d}{d\theta}(r \cos \theta)} = \frac{\cos 2\theta \cos \theta - 2\sin 2\theta \sin \theta}{-2\sin 2\theta \cos \theta - \cos 2\theta \sin \theta}=-\frac{3}{11}
+        \]
+        即
+        \[
+        \frac{2\tan\theta\tan2\theta-1}{2\tan2\theta+\tan\theta}=-\frac{3}{11}
+        \]
+        设$t=\tan\theta$,化简得
+        \[ 
+        (3t - 1)(t^2 - 18t - 11) = 0 \Rightarrow \tan \theta = \frac{1}{3},9 \pm \sqrt{92}
+        \]
+        为了丢弃增根,解
+        \[
+        \frac{dy}{dx}=0 \Rightarrow \cos 2\theta \cos \theta - 2\sin 2\theta \sin \theta = 0 \Rightarrow \theta = \sin^{-1}\frac{\sqrt{6}}{6} \approx 24.1^\circ
+        \]
+        由于
+        \[
+        \tan^{-1}(9+\sqrt{92})>24.1^\circ,\quad \tan^{-1}(9-\sqrt{92})<0
+        \]
+        解为
+        \[
+        \theta=\tan^{-1}\frac{1}{3}<24.1^\circ
+        \]
+        当 $\tan \theta = \dfrac{1}{3}$ 时,易知$P$直角坐标为
+        \[
+        \left(20\cdot\frac{3}{\sqrt{10}},20\cdot\frac{1}{\sqrt{10}}\right)=(6\sqrt{10}, 2\sqrt{10})
+        \]
+        故直线 $L$ 的方程为
+        \[ 
+        y - 2\sqrt{10} = -\frac{3}{11}(x - 6\sqrt{10}) 
+        \]
+        当 $y = 0$ ,得 $x = \dfrac{40\sqrt{10}}{3}$。设$Q$ 是直线与 $x$ 轴的交点， $\triangle OPQ$ 的面积为
+        \[ 
+        [\triangle OPQ] = \frac{1}{2} \cdot \frac{40\sqrt{10}}{3} \cdot 2\sqrt{10} = \frac{400}{3} 
+        \]
+        从 $\theta = 0$ 到 $\theta = \tan^{-1} \dfrac{1}{3}$扫过的面积为
+        \begin{align*}
+        I &= \frac{1}{2} \int_{0}^{\tan^{-1} \frac{1}{3}} (25 \cos 2\theta)^2\, d\theta \\
+        &= \frac{625}{4} \int_{0}^{\tan^{-1} \frac{1}{3}} (1+\cos 4\theta)2\theta\, d\theta \\
+        &= \frac{625}{4} \left[ \theta + \frac{1}{4}\sin 4\theta \right]_{0}^{\tan^{-1} \frac{1}{3}} \\
+        &= \frac{625}{4} \left[ \theta + \frac{1}{2}\sin 2\theta \cos 2\theta \right]_{0}^{\tan^{-1} \frac{1}{3}} \\
+        &= \frac{625}{4} \tan^{-1} \frac{1}{3} + \frac{75}{2} 
+        \end{align*}
+        故所求面积为
+        \[ 
+        \frac{400}{3} - \left( \frac{625}{4} \tan^{-1} \frac{1}{3} + \frac{75}{2} \right) = \frac{25}{12} \left( 46 - 75\tan^{-1} \frac{1}{3} \right) 
+        \]
+        证毕。
+    \end{solution}
 \end{questions}
 \pagebreak
 
@@ -16002,7 +16117,7 @@ PR=OQ=2\sqrt{6},\quad \angle ROP=\frac{\pi}{6},
         \]
     \end{solution}
 
-    \question 某房间内设有一盏聚光灯,其照射的光线为直圆锥状。为描述其空间几何关系,建立如图所示的空间坐标系。已知光源 $S(2\sqrt{6},3\sqrt{6},12)$,分别沿对称轴 $L$ 的方向向量 $\left(\dfrac{\sqrt{2}}{2},-\dfrac{\sqrt{2}}{2},-\sqrt{3}\right)$ 以及其中一条母线 $M$ 的方向向量 $(0,0,-1)$ 向地面 $z=0$ 照射。试问：此聚光灯照射在墙面（即平面 $y=0$）上的光线边缘,为哪一种圆锥曲线图形的一部分？该圆锥曲线在墙面上的顶点坐标为何？
+    \question 某房间内设有一盏聚光灯,其照射的光线为直圆锥状。为描述其空间几何关系,建立如图所示的空间坐标系。已知光源 $S(2\sqrt{6},3\sqrt{6},12)$,分别沿对称轴 $L$ 的方向向量 $\left(\dfrac{\sqrt{2}}{2},-\dfrac{\sqrt{2}}{2},-\sqrt{3}\right)$ 以及其中一条母线 $M$ 的方向向量 $(0,0,-1)$ 向地面 $z=0$ 照射。试问:此聚光灯照射在墙面（即平面 $y=0$）上的光线边缘,为哪一种圆锥曲线图形的一部分？该圆锥曲线在墙面上的顶点坐标为何？
     \ifprintanswers
     \begin{figure}[H]
         \centering        
