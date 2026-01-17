@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.8.12)  17 JAN 2026 20:49
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.8.12)  17 JAN 2026 21:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -5621,14 +5621,14 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [71]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [72]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -5641,28 +5641,28 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [74]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
+091.
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
+File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3091.
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 3091.
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [75]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
-170.
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-3170.
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 3170.
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -5765,13 +5765,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [92]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [93]
-Overfull \hbox (86.53322pt too wide) detected at line 4170
+Overfull \hbox (86.53322pt too wide) detected at line 4091
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 y \OT1/c
 mr/m/n/12 + \OML/cmm/m/it/12 z\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr
 /m/n/12 2(\OML/cmm/m/it/12 xy \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 xz \OT1/cmr/m/
@@ -5786,10 +5780,16 @@ mr/m/n/12 ) = 40  [][]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 xy \OT1/cmr/m/n/12 +
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4192
+Underfull \vbox (badness 10000) detected at line 4113
  []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [93]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -5838,12 +5838,6 @@ Underfull \vbox (badness 10000) detected at line 4192
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [101]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [102]
 File: images/image97.jpg Graphic file (type bmp)
 <images/image97.jpg>
 
@@ -5852,7 +5846,7 @@ File: images/image97.jpg Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [103]
+\vectorian14.pgf) [102]
 File: images/image149.png Graphic file (type bmp)
 <images/image149.png>
 
@@ -5861,13 +5855,13 @@ File: images/image149.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [104]
+\vectorian14.pgf) [103]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [105]
+\vectorian14.pgf) [104]
 File: images/image71.png Graphic file (type bmp)
 <images/image71.png>
 
@@ -5876,10 +5870,16 @@ File: images/image71.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [106]
+\vectorian14.pgf) [105]
 File: images/image115.jpg Graphic file (type bmp)
 <images/image115.jpg>
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [106]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -5898,12 +5898,6 @@ File: images/image115.jpg Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [109]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [110]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 
@@ -5911,17 +5905,23 @@ File: images/image115.jpg Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [110]
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [111]
+Overfull \vbox (0.86124pt too high) detected at line 5051
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [112]
-Overfull \vbox (0.86124pt too high) detected at line 5130
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -5964,16 +5964,16 @@ Overfull \vbox (0.86124pt too high) detected at line 5130
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [119]
+Underfull \vbox (badness 2846) detected at line 5474
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [120]
-Underfull \vbox (badness 2846) detected at line 5553
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6004,14 +6004,14 @@ Underfull \vbox (badness 2846) detected at line 5553
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [125]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [126]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6030,16 +6030,16 @@ Underfull \vbox (badness 2846) detected at line 5553
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [129]
+Overfull \vbox (1.41882pt too high) detected at line 5940
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [130]
-Overfull \vbox (1.41882pt too high) detected at line 6019
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6082,16 +6082,18 @@ Overfull \vbox (1.41882pt too high) detected at line 6019
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [137]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [138]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -6100,8 +6102,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [139]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6144,14 +6144,14 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [146]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [147]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6314,15 +6314,15 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [174]
+File: images/image42.png Graphic file (type bmp)
+<images/image42.png>
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [175]
-File: images/image42.png Graphic file (type bmp)
-<images/image42.png>
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6407,12 +6407,17 @@ File: images/image42.png Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [189]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [190]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -6421,25 +6426,20 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [191]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [192]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [193]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6464,12 +6464,20 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [197]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [198]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -6478,14 +6486,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [199]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6588,12 +6588,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [216]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [217]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -6601,11 +6595,17 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [218]
+\vectorian14.pgf) [217]
 Missing character: There is no 其 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 他 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 项 in font [lmroman12-regular]:mapping=tex-text;!
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [218]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6618,14 +6618,14 @@ Missing character: There is no 项 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [220]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [221]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6650,12 +6650,24 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [225]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [226]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
@@ -6673,33 +6685,24 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [227]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [228]
+Overfull \vbox (0.4483pt too high) detected at line 10638
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [229]
-Overfull \vbox (0.4483pt too high) detected at line 10717
- []
-
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 
@@ -6709,6 +6712,7 @@ Overfull \vbox (0.4483pt too high) detected at line 10717
 \vectorian14.pgf) [230]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 
@@ -6716,10 +6720,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [231]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6744,13 +6744,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [235]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [236]
-Underfull \vbox (badness 4036) detected at line 11097
+Underfull \vbox (badness 4036) detected at line 11018
  []
 
 
@@ -6759,10 +6753,16 @@ Underfull \vbox (badness 4036) detected at line 11097
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [237]
+\vectorian14.pgf) [236]
 Overfull \vbox (30.82413pt too high) has occurred while \output is active []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [237]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6775,37 +6775,37 @@ Overfull \vbox (30.82413pt too high) has occurred while \output is active []
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [239]
+Overfull \hbox (40.34996pt too wide) detected at line 11138
+[]
+ []
+
+
+Overfull \hbox (19.21117pt too wide) detected at line 11145
+[]
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [240]
-Overfull \hbox (40.34996pt too wide) detected at line 11217
-[]
- []
-
-
-Overfull \hbox (19.21117pt too wide) detected at line 11224
-[]
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [241]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [242]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6818,12 +6818,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [244]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [245]
 File: images/image197.png Graphic file (type bmp)
 <images/image197.png>
 
@@ -6832,7 +6826,7 @@ File: images/image197.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [246]
+\vectorian14.pgf) [245]
 File: images/image198.png Graphic file (type bmp)
 <images/image198.png>
 File: images/image199.png Graphic file (type bmp)
@@ -6843,7 +6837,7 @@ File: images/image199.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [247]
+\vectorian14.pgf) [246]
 File: images/image90.png Graphic file (type bmp)
 <images/image90.png>
 
@@ -6852,15 +6846,21 @@ File: images/image90.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [247]
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [248]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [249]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6933,13 +6933,7 @@ File: images/image90.png Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [261]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [262]
-Overfull \hbox (15.50447pt too wide) detected at line 12162
+Overfull \hbox (15.50447pt too wide) detected at line 12083
 []
  []
 
@@ -6949,11 +6943,17 @@ Overfull \hbox (15.50447pt too wide) detected at line 12162
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [263]
-Underfull \vbox (badness 10000) detected at line 12221
+\vectorian14.pgf) [262]
+Underfull \vbox (badness 10000) detected at line 12142
  []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [263]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6990,13 +6990,7 @@ Underfull \vbox (badness 10000) detected at line 12221
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [269]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [270]
-Underfull \vbox (badness 2326) detected at line 12552
+Underfull \vbox (badness 2326) detected at line 12473
  []
 
 
@@ -7005,26 +6999,32 @@ Underfull \vbox (badness 2326) detected at line 12552
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [270]
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [271]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [272]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7037,14 +7037,14 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [274]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [275]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7081,13 +7081,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [281]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [282]
-Overfull \hbox (26.02026pt too wide) detected at line 13179
+Overfull \hbox (26.02026pt too wide) detected at line 13100
 [] \OT1/cmr/m/n/12 = (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/1
 2 )[] = 1 + [](\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) + [](\
 OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] + [](\OMS/cmsy/m/n/1
@@ -7096,6 +7090,12 @@ OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] + [](\OMS/cmsy/m/n/1
  []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [282]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7150,14 +7150,14 @@ OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] + [](\OMS/cmsy/m/n/1
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [291]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [292]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7177,16 +7177,16 @@ OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] + [](\OMS/cmsy/m/n/1
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [295]
 
+LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 13825.
+
+
+
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [296]
-
-LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 13904.
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7217,13 +7217,7 @@ LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [301]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [302]
-Overfull \hbox (87.54626pt too wide) detected at line 14232
+Overfull \hbox (87.54626pt too wide) detected at line 14153
 []
  []
 
@@ -7233,40 +7227,48 @@ Overfull \hbox (87.54626pt too wide) detected at line 14232
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [302]
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [303]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [304]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [305]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [306]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -7276,6 +7278,8 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [307]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 
@@ -7283,10 +7287,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [308]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7341,6 +7341,8 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [317]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7349,19 +7351,17 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian14.pgf) [318]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
+Overfull \hbox (74.97406pt too wide) detected at line 14967
+[]
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [319]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
-Overfull \hbox (74.97406pt too wide) detected at line 15046
-[]
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7410,14 +7410,14 @@ Overfull \hbox (74.97406pt too wide) detected at line 15046
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [327]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [328]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7430,13 +7430,7 @@ Overfull \hbox (74.97406pt too wide) detected at line 15046
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [330]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [331]
-Overfull \hbox (156.42616pt too wide) detected at line 15597
+Overfull \hbox (156.42616pt too wide) detected at line 15518
 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C  [][]\OMS/cmsy/
 m/n/12 )  [] \OML/cmm/m/it/12 A \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 B \OT1/cm
 r/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C \OT1/cmr/m/n/12 + [] \OML
@@ -7446,6 +7440,12 @@ mr/m/n/12 = [] \OML/cmm/m/it/12 A [] B [] C:
  []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [331]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7464,13 +7464,17 @@ mr/m/n/12 = [] \OML/cmm/m/it/12 A [] B [] C:
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [334]
+Underfull \vbox (badness 3240) detected at line 15841
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [335]
-Underfull \vbox (badness 3240) detected at line 15920
+Overfull \vbox (14.1278pt too high) detected at line 15915
  []
 
 
@@ -7480,7 +7484,7 @@ Underfull \vbox (badness 3240) detected at line 15920
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [336]
-Overfull \vbox (14.1278pt too high) detected at line 15994
+Overfull \vbox (21.51662pt too high) detected at line 15968
  []
 
 
@@ -7490,10 +7494,6 @@ Overfull \vbox (14.1278pt too high) detected at line 15994
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [337]
-Overfull \vbox (21.51662pt too high) detected at line 16047
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7512,16 +7512,16 @@ Overfull \vbox (21.51662pt too high) detected at line 16047
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [340]
+Overfull \vbox (15.10226pt too high) detected at line 16241
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [341]
-Overfull \vbox (15.10226pt too high) detected at line 16320
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7534,16 +7534,16 @@ Overfull \vbox (15.10226pt too high) detected at line 16320
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [343]
+Overfull \vbox (24.04279pt too high) detected at line 16446
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [344]
-Overfull \vbox (24.04279pt too high) detected at line 16525
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7556,18 +7556,18 @@ Overfull \vbox (24.04279pt too high) detected at line 16525
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [346]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
+Overfull \vbox (31.31523pt too high) detected at line 16577
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [347]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
-Overfull \vbox (31.31523pt too high) detected at line 16656
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7580,14 +7580,14 @@ Overfull \vbox (31.31523pt too high) detected at line 16656
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [349]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [350]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7612,16 +7612,16 @@ Overfull \vbox (31.31523pt too high) detected at line 16656
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [354]
+Overfull \vbox (3.45009pt too high) detected at line 17082
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [355]
-Overfull \vbox (3.45009pt too high) detected at line 17161
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7646,12 +7646,19 @@ Overfull \vbox (3.45009pt too high) detected at line 17161
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [359]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [360]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
@@ -7660,13 +7667,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [361]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7703,15 +7703,9 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [367]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [368]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
-Overfull \hbox (13.91858pt too wide) detected at line 17718
+Overfull \hbox (13.91858pt too wide) detected at line 17639
 []
  []
 
@@ -7721,13 +7715,13 @@ Overfull \hbox (13.91858pt too wide) detected at line 17718
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [369]
+\vectorian14.pgf) [368]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [370]
+\vectorian14.pgf) [369]
 File: images/image14.png Graphic file (type bmp)
 <images/image14.png>
 
@@ -7736,13 +7730,13 @@ File: images/image14.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [371]
+\vectorian14.pgf) [370]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [372]
+\vectorian14.pgf) [371]
 File: images/image19.png Graphic file (type bmp)
 <images/image19.png>
 File: images/image30.png Graphic file (type bmp)
@@ -7753,7 +7747,7 @@ File: images/image30.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [373]
+\vectorian14.pgf) [372]
 File: images/image77.png Graphic file (type bmp)
 <images/image77.png>
 
@@ -7762,27 +7756,33 @@ File: images/image77.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [374]
-Overfull \vbox (8.88135pt too high) detected at line 17997
+\vectorian14.pgf) [373]
+Overfull \vbox (8.88135pt too high) detected at line 17918
  []
 
 
+
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian11.pgf)
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian14.pgf) [374]
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [375]
+Underfull \vbox (badness 2205) detected at line 18031
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [376]
-Underfull \vbox (badness 2205) detected at line 18110
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7807,15 +7807,15 @@ Underfull \vbox (badness 2205) detected at line 18110
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [380]
+File: images/image75.png Graphic file (type bmp)
+<images/image75.png>
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [381]
-File: images/image75.png Graphic file (type bmp)
-<images/image75.png>
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7894,16 +7894,16 @@ File: images/image75.png Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [394]
+Underfull \vbox (badness 3849) detected at line 19062
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [395]
-Underfull \vbox (badness 3849) detected at line 19141
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7934,35 +7934,29 @@ Underfull \vbox (badness 3849) detected at line 19141
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [400]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [401]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [402]
+\vectorian14.pgf) [402])
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [403])
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [404]
+\vectorian14.pgf) [403]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 
@@ -8001,12 +7995,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32067 strings out of 403250
- 727789 string characters out of 5460888
+ 32061 strings out of 403250
+ 727513 string characters out of 5460888
  1593221 words of memory out of 5000000
- 58329 multiletter control sequences out of 15000+600000
+ 58327 multiletter control sequences out of 15000+600000
  641001 words of font info for 121 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,21n,92p,589b,1132s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (406 pages).
+Output written on main.pdf (405 pages).
