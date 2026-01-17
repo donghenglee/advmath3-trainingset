@@ -115,9 +115,11 @@
 
     \question 已知$k$为有理数,且使得方程式 $kx^{2}+(k-1)x+(k+1)=0$ 只有整数解,求$k$的所有可能值。
     \begin{solution}
-        \textbf{情况一}:$k=0,$则原方程式为$-x+1=0 \Rightarrow x=1 \in \mathbb{Z}$
-
-        \textbf{情况二}:$k\ne 0$,原方程式变为
+        情况一:$k=0,$则原方程式为
+        \[
+        -x+1=0 \Rightarrow x=1 \in \mathbb{Z}
+        \]
+        情况二:$k\ne 0$,原方程式变为
         \[
         k(x^2+x+1)=x-1 \Rightarrow k=\frac{x-1}{x^2+x+1} \tag{1}
         \]
@@ -258,79 +260,57 @@
     \end{solution}
 
     \question 解方程
-    \[ (x+1)(x+2)(x+3)^2(x+4)(x+5)=360 \]
+    \[ 
+    (x+1)(x+2)(x+3)^2(x+4)(x+5)=360 
+    \]
     \begin{solution}   
-        排版后有\[
-            \begin{aligned}
-                (x+1)(x+5)(x+2)(x+4)(x+3)(x+3)&=360 \\
-                (x^2+6x+5)(x^2+6x+8)(x^2+6x+9)&=360
-            \end{aligned}
-        \] 设 $y=x^2+6x$,变为\[
-            \begin{aligned}
-                 (y+5)(y+8)(y+9)&=360\\
-                 y(y^2+22y+157)&=0
-            \end{aligned}
+        排版后有
+        \begin{align*}
+        (x+1)(x+5)(x+2)(x+4)(x+3)(x+3)&=360 \\
+        (x^2+6x+5)(x^2+6x+8)(x^2+6x+9)&=360
+        \end{align*}
+        设 $y=x^2+6x$,变为
+        \begin{align*}
+        (y+5)(y+8)(y+9)&=360\\
+        y(y^2+22y+157)&=0
+        \end{align*}
+        其中$y^2+22y+157=0$无实数解,解 $x^2+6x=0$ 可得 
+        \[
+        x=0, -6
         \]
-        其中$y^2+22y+157=0$无实数解。解 $x^2+6x=0$ 可得 $x=0, -6$
     \end{solution}
 
     \question 解方程
-\[
-9x^4 - 24x^3 - 2x^2 - 24x + 9 = 0, \quad x\in \mathbb{R}
-\]
-
-\begin{solution}
-
-\noindent
-此方程是对称四次方程,设 $x\neq 0$,两边除以 $x^2$：
-\begin{align*}
-9x^2 - 24x - 2 - \frac{24}{x} + \frac{9}{x^2} &= 0 \\
-9\left(x^2 + \frac{1}{x^2}\right) - 24\left(x + \frac{1}{x}\right) - 2 &= 0
-\end{align*}
-
-\noindent
-设 $V = x + \frac{1}{x}$,则
-\[
-x^2 + \frac{1}{x^2} = V^2 - 2
-\]
-
-\noindent
-代入方程得
-\begin{align*}
-9(V^2-2) - 24V - 2 &= 0 \\
-9V^2 - 18 - 24V - 2 &= 0 \\
-9V^2 - 24V - 20 &= 0 \\
-(3V-10)(3V+2) &= 0
-\end{align*}
-\[
-V = \frac{10}{3}, \quad V = -\frac{2}{3}
-\]
-
-\noindent
-分别解 $x + \frac{1}{x} = V$：
-
-\noindent
-1. $x + \frac{1}{x} = \frac{10}{3}$
-\begin{align*}
-3x^2 - 10x + 3 &= 0 \\
-(3x-1)(x-3) &= 0 \\
-x &= \frac{1}{3}, \quad x = 3
-\end{align*}
-
-\noindent
-2. $x + \frac{1}{x} = -\frac{2}{3}$
-\begin{align*}
-3x^2 + 2x + 3 &= 0
-\end{align*}
-判别式 $b^2 - 4ac = 4-36 = -32 < 0$,无实根
-
-\noindent
-因此实根为
-\[
-x = 3, \quad x = \frac{1}{3}
-\]
-
-\end{solution}
+    \[
+    9x^4 - 24x^3 - 2x^2 - 24x + 9 = 0 \quad x \in \mathbb{R}
+    \]
+    \begin{solution}
+        此方程为倒数方程式,将原方程写成
+        \begin{align*}
+        9x^2 - 24x - 2 - \frac{24}{x} + \frac{9}{x^2} &= 0 \\
+        9\left(x^2 + \frac{1}{x^2}\right) - 24\left(x + \frac{1}{x}\right) - 2 &= 0
+        \end{align*}
+        设 $y = x + \frac{1}{x}$,则
+        \[
+        x^2 + \frac{1}{x^2} = y^2 - 2
+        \]
+        代入方程得
+        \[
+        9(y^2-2) - 24y - 2 = 0 \Rightarrow y = \frac{10}{3},-\frac{2}{3}
+        \]
+        当$x + \dfrac{1}{x} = \dfrac{10}{3}$,解得
+        \[
+        x = \frac{1}{3}, \quad x = 3
+        \]
+        当$x + \dfrac{1}{x} = -\dfrac{2}{3}$,方程
+        \begin{align*}
+        3x^2 + 2x + 3 &= 0
+        \end{align*}
+        的判别式 $2^2-4\cdot3\cdot3 = -32 < 0$,故无实数解,因此原方程式的实根为
+        \[
+        x = \frac{1}{3}, \quad x = 3
+        \]
+    \end{solution}
 
     \question 解
         \[
@@ -354,92 +334,57 @@ x = 3, \quad x = \frac{1}{3}
         经检验,原方程的解为 $x = -\dfrac{19}{3},\dfrac{-27\pm\sqrt{17}}{4}$
     \end{solution}
 
-    \question 
-在$\mathbb{C}$内解
-\[
-(x+1)^5+(x+1)^4(x-1)+\cdots+(x-1)^5=0
-\]
-\begin{solution}
-利用恒等式
-\[
-\frac{a^6-b^6}{a-b}=a^5+a^4b+a^3b^2+a^2b^3+ab^4+b^5
-\]
+    \question 解
+    \[
+    (x+1)^5+(x+1)^4(x-1)+(x+1)^3(x-1)^2+(x+1)^2(x-1)^3+(x+1)(x-1)^4+(x-1)^5=0
+    \]
+    其中$x \in \mathbb{C}$。
+    \begin{solution}
+        利用恒等式
+        \[
+        \frac{a^6-b^6}{a-b}=a^5+a^4b+a^3b^2+a^2b^3+ab^4+b^5
+        \]
+        则原式可写为
+        \[
+        \frac{(x+1)^6-(x-1)^6}{(x+1)-(x-1)}=0 (x+1)^6-(x-1)^6=0
+        \]
+        展开并化简得
+        \[
+        x(3x^2+1)(x^2+3)=0
+        \]
+        解得
+        \[
+        x=0,\quad x=\pm\frac{\sqrt{3}}{3}i,\quad x=\pm\sqrt{3}i
+        \]
+    \end{solution}
 
-令
-\[
-a=x+1,\quad b=x-1
-\]
-
-则原式可写为
-\[
-\frac{(x+1)^6-(x-1)^6}{(x+1)-(x-1)}=0
-\]
-
-由于
-\[
-(x+1)-(x-1)=2
-\]
-
-因此
-\[
-(x+1)^6-(x-1)^6=0
-\]
-
-展开并化简得
-\[
-x(3x^4+10x^2+3)=0
-\]
-
-进一步分解
-\[
-x(3x^2+1)(x^2+3)=0
-\]
-
-解得
-\[
-x=0,\quad x=\pm\frac{\sqrt{3}}{3}i,\quad x=\pm\sqrt{3}i
-\]
-\end{solution}
-
-\question
-已知 $\alpha$ 和 $\beta$ 是方程
-\[
-x^2 + (m-2)x + 1 = 0
-\]
-的根,求
-\[
-(1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2)
-\]
-
-\begin{solution}
-将原方程重写为
-\[
-x^2 + mx - 2x + 1 = 0
-\]
-\[
-x^2 + mx + 1 = 2x
-\]
-
-因为 $\alpha$ 和 $\beta$ 是根,满足
-\[
-\alpha^2 + m\alpha + 1 = 2\alpha
-\]
-\[
-\beta^2 + m\beta + 1 = 2\beta
-\]
-
-于是
-\[
-(1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2) = (\alpha^2 + m\alpha + 1)(\beta^2 + m\beta + 1) = (2\alpha)(2\beta) = 4\alpha\beta
-\]
-
-由原方程,根的乘积 $\alpha\beta = 1$,因此
-\[
-(1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2) = 4 \cdot 1 = 4
-\]
-\end{solution}
-
-
+    \question 已知 $\alpha,\beta$ 是方程
+    \[
+    x^2 + (m-2)x + 1 = 0
+    \]
+    的根,求
+    \[
+    (1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2).
+    \]
+    \begin{solution}
+        由于 $\alpha,\beta$ 是方程
+        \[
+        x^2 + mx - 2x + 1 = 0
+        \]
+        的根,故满足
+        \[
+        \alpha^2 + m\alpha + 1 = 2\alpha,\quad 
+        \beta^2 + m\beta + 1 = 2\beta
+        \]
+        于是
+        \[
+        (1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2)  = (2\alpha)(2\beta) = 4\alpha\beta
+        \]
+        由韦达定理,$\alpha\beta = 1$,因此
+        \[
+        (1 + m\alpha + \alpha^2)(1 + m\beta + \beta^2) = 4 \cdot 1 = 4
+        \]
+    \end{solution}
 
     \question 若三次多项式 $x^{3}+3x-2=0$ 的根为 $a,b,c$,求以 $(a-b)^{2},(b-c)^{2},(c-a)^{2}$ 为根且首项系数为 $1$ 的三次多项式。
     \begin{solution}
@@ -576,55 +521,44 @@ x^2 + mx + 1 = 2x
         \end{align*}
     \end{solution}
 
-    \question
-已知
-\[
-x^3 + \frac{1}{x^3} = 18
-\]
-求
-\[
-x^{11} + \frac{1}{x^{11}}
-\]
-
-\begin{solution}
-设
-\[
-a = x + \frac{1}{x}
-\]
-
-利用恒等式
-\[
-x^3 + \frac{1}{x^3} = a^3 - 3a
-\]
-得
-\[
-a^3 - 3a = 18
-\]
-\[
-a^3 - 3a - 18 = 0
-\]
-
-因式分解
-\[
-(a-3)(a^2 + 3a + 6) = 0
-\]
-所以
-\[
-a = x + \frac{1}{x} = 3
-\]
-则
-\[
-x^2+\frac{1}{x^2} = 3^2-2=7,\quad x^4+\frac{1}{x^4} = 47,\quad x^8+\frac{1}{x^8} = 2207
-\]
-于是
-\[
-\left(x^2+\frac{1}{x^2}\right)\left(x^3 + \frac{1}{x^3}\right)=x^5+\frac{1}{x^5} + x + \frac{1}{x}= 126 \Rightarrow x^5+\frac{1}{x^5}=123
-\]
-且
-\[
-\left(x^3+\frac{1}{x^3}\right)\left(x^8 + \frac{1}{x^8}\right)=x^{11}+\frac{1}{x^{11}} + x^5 + \frac{1}{x^5}= 39726 \Rightarrow x^{11}+\frac{1}{x^{11}}=39726-123=39603
-\]
-\end{solution}
+    \question 已知实数$x$满足
+    \[
+    x^3 + \frac{1}{x^3} = 18
+    \]
+    求
+    \[
+    x^{11} + \frac{1}{x^{11}}.
+    \]
+    \begin{solution}
+        设$a = x + \frac{1}{x}$,则
+        \[
+        a^3 - 3a = 18 \Rightarrow (a-3)(a^2 + 3a + 6) = 0
+        \]
+        所以
+        \[
+        a = x + \frac{1}{x} = 3 \in \mathbb{R}
+        \]
+        则
+        \[
+        x^2+\frac{1}{x^2} = 3^2-2=7
+        \]
+        同理得
+        \[
+        x^4+\frac{1}{x^4} = 47,\quad x^8+\frac{1}{x^8} = 2207
+        \]
+        于是
+        \[
+        \left(x^2+\frac{1}{x^2}\right)\left(x^3 + \frac{1}{x^3}\right)=x^5+\frac{1}{x^5} + x + \frac{1}{x}= 126 \Rightarrow x^5+\frac{1}{x^5}=123
+        \]
+        且
+        \[
+        \left(x^3+\frac{1}{x^3}\right)\left(x^8 + \frac{1}{x^8}\right)=x^{11}+\frac{1}{x^{11}} + x^5 + \frac{1}{x^5}= 39726
+        \]
+        故
+        \[
+        x^{11}+\frac{1}{x^{11}}=39726-123=39603
+        \]
+    \end{solution}
 
     \question 已知 $\alpha, \beta, \gamma$ 是方程
     \[
@@ -1047,7 +981,11 @@ x^2+\frac{1}{x^2} = 3^2-2=7,\quad x^4+\frac{1}{x^4} = 47,\quad x^8+\frac{1}{x^8}
         \end{align*}
     \end{solution}
 
-    \question 已知三实数 $a,b,c$ 满足 $\sqrt{3}(a-b)+3(b-c)+(c-a)=0$,且 $b \neq c$,求 $$\frac{(a-b)(a-c)}{(b-c)^2}$$ 的值。
+    \question 已知三实数 $a,b,c$ 满足 $\sqrt{3}(a-b)+3(b-c)+(c-a)=0$,且 $b \neq c$,求 
+    \[
+    \frac{(a-b)(a-c)}{(b-c)^2}
+    \]
+    的值。
     \begin{solution}
         令$\alpha = a-b, \beta = b-c, \gamma = c-a$,则
         \[
@@ -1062,43 +1000,24 @@ x^2+\frac{1}{x^2} = 3^2-2=7,\quad x^4+\frac{1}{x^4} = 47,\quad x^8+\frac{1}{x^8}
         \frac{(a-b)(a-c)}{(b-c)^2} = \frac{-\alpha \gamma}{\beta^2} = \frac{\alpha(\alpha+\beta)}{\left(\frac{1-\sqrt{3}}{2}\right)^2 \alpha^2} = \frac{\frac{3-\sqrt{3}}{2}\alpha^2}{\frac{4-2\sqrt{3}}{4}\alpha^2} = \frac{3-\sqrt{3}}{2-\sqrt{3}} \cdot \frac{2+\sqrt{3}}{2+\sqrt{3}}= 3+\sqrt{3}
         \]
     \end{solution}
-\question 26)
-已知 $a+b+c=6$,$\frac{1}{a}+\frac{1}{b}+\frac{1}{c}=2$,求
-\[
-\frac{b+c}{a}+\frac{c+a}{b}+\frac{a+b}{c}
-\]
-
-\begin{solution}
-设
-\[
-S=\frac{b+c}{a}+\frac{c+a}{b}+\frac{a+b}{c}
-\]
-
-两边同时加 $3$,得
-\[
-S+3=\left(\frac{b+c}{a}+1\right)+\left(\frac{c+a}{b}+1\right)+\left(\frac{a+b}{c}+1\right)
-\]
-
-化简得
-\[
-S+3=\frac{a+b+c}{a}+\frac{a+b+c}{b}+\frac{a+b+c}{c}
-\]
-
-提取公因式
-\[
-S+3=(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right)
-\]
-
-代入已知条件
-\[
-S+3=6\times2=12
-\]
-
-因此
-\[
-S=9
-\]
-\end{solution}
+    \question 已知 $a+b+c=6$,且
+    \[
+    \frac{1}{a}+\frac{1}{b}+\frac{1}{c}=2,
+    \]
+    求
+    \[
+    \frac{b+c}{a}+\frac{c+a}{b}+\frac{a+b}{c}
+    \]
+    的值。
+    \begin{solution}
+        不难发现
+        \begin{align*}
+        &\frac{b+c}{a}+\frac{c+a}{b}+\frac{a+b}{c} \\
+        &=\left(\frac{b+c}{a}+1\right)+\left(\frac{c+a}{b}+1\right)+\left(\frac{a+b}{c}+1\right)-3 \\
+        &=\frac{a+b+c}{a}+\frac{a+b+c}{b}+\frac{a+b+c}{c}-3 \\
+        &=6\cdot2-3=9
+        \end{align*}
+    \end{solution}
 
     \question 已知 $a,b,c$ 皆为实数,若
     \[
@@ -1124,88 +1043,70 @@ S=9
         \]
     \end{solution}
 
-\question 已知 $abc=1$,证明
-\begin{parts}
-\part 
-\[
-\frac{a}{ab+a+1} + \frac{b}{bc+b+1} + \frac{c}{ca+c+1}=1
-\]
-\begin{solution}
-    由$abc=1$,
-    \begin{align*}       
-    \frac{a}{ab+a+1} + \frac{b}{bc+b+1} + \frac{c}{ca+c+1}
-    &= \frac{a}{ab+a+1} + \frac{ab}{abc+ab+a} + \frac{abc}{abca+abc+ab} \\
-    &= \frac{a}{ab+a+1} + \frac{ab}{1+ab+a} + \frac{1}{a+1+ab} \\
-    &= \frac{a+ab+1}{ab+a+1} = 1
-    \end{align*}
-\end{solution}
-\part 
-\[
-\frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ca+c+1}=1
-\]
-\begin{solution}
-    由$abc=1$,
-    \begin{align*}
-    \frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ca+c+1}
-    &= \frac{1}{ab+a+abc} + \frac{1}{bc+b+1} + \frac{1}{ca+c+1}\\
-    &= \frac{a(b+1+bc)}{bc+b+1} + \frac{1}{ca+c+1}\\
-    &= \frac{a(b+1+bc)}{1+a} + \frac{1}{ca+c+1}\\
-    &= \frac{a(b+abc+bc)}{1+a} + \frac{1}{ca+c+1}\\
-    &= \frac{ab(1+ac+c)}{1+a+ab} + \frac{1}{ca+c+1}\\
-    &= \frac{ab(1+ac+c)}{1+a+ab}\\
-    &= \frac{ab+a^2bc+abc}{1+a+ab}\\
-    &= \frac{1+a+ab}{ab+a+1} = 1
-    \end{align*}
+    \question 已知 $abc=1$,证明
+    \begin{parts}
+    \part 
+    \[
+    \frac{a}{ab+a+1} + \frac{b}{bc+b+1} + \frac{c}{ca+c+1}=1
+    \]
+    \begin{solution}
+        由$abc=1$,
+        \begin{align*}       
+        &\frac{a}{ab+a+1} + \frac{b}{bc+b+1} + \frac{c}{ca+c+1}\\
+        &= \frac{a}{ab+a+1} + \frac{ab}{abc+ab+a} + \frac{abc}{abca+abc+ab} \\
+        &= \frac{a}{ab+a+1} + \frac{ab}{1+ab+a} + \frac{1}{a+1+ab} \\
+        &= \frac{a+ab+1}{ab+a+1} \\
+        &= 1
+        \end{align*}
     \end{solution}
-\begin{solution}
-    \begin{align*}
-    \frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ac+c+1} =\frac{c}{abc+ac+c} + \frac{a}{abc+ab+a} + \frac{b}{abc+bc+b}
-    \end{align*}
-\end{solution}
-\end{parts}
+    \part 
+    \[
+    \frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ca+c+1}=1
+    \]
+    \begin{solution}
+        由(a),
+        \begin{align*}
+        &\frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ac+c+1} \\
+        &=\frac{c}{abc+ac+c} + \frac{a}{abc+ab+a} + \frac{b}{abc+bc+b} \\
+        &=\frac{c}{1+ac+c} + \frac{a}{1+ab+a} + \frac{b}{1+bc+b} \\
+        &=1
+        \end{align*}
+    \end{solution}
+    \end{parts}
 
-\question
-若相异三数 $a, b, c$ 均不为 0，且 $a + b + c = 0$，求下式的值：
-\[ \left(\frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c}\right) \left(\frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b}\right) \]
-
-\begin{solution}
-    首先，我们处理第一个括号内的通分：
-    \begin{align*}
-    \frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c} &= \frac{b^2 c - b c^2 + a c^2 - a^2 c + a^2 b - a b^2}{abc} \\
-    &= \frac{c^2(a - b) + ab(a - b) - (ac + bc)(a - b)}{abc} \\
-    &= \frac{(a - b)(c^2 + ab - ac - bc)}{abc} \\
-    &= \frac{(a - b)[c(c - a) - b(c - a)]}{abc} \\
-    &= \frac{(a - b)(c - b)(c - a)}{abc} \\
-    &= -\frac{(a - b)(b - c)(c - a)}{abc}
-    \end{align*}
-
-    接下来处理第二个括号。令 $a' = b - c$，$b' = c - a$，$c' = a - b$。
-    观察 $b' - c'$ 的关系：
-    \[ b' - c' = (c - a) - (a - b) = b + c - 2a \]
-    根据条件 $a + b + c = 0$，可知 $b + c = -a$，代入上式得：
-    \[ b' - c' = -a - 2a = -3a \]
-    由此可得 $a = -\frac{b' - c'}{3}$。同理可得：
-    \[ b = -\frac{c' - a'}{3}, \quad c = -\frac{a' - b'}{3} \]
-
-    代入第二个括号的各项中：
-    \begin{align*}
-    \frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b} &= \frac{a}{a'} + \frac{b}{b'} + \frac{c}{c'} \\
-    &= -\frac{1}{3} \left(\frac{b' - c'}{a'} + \frac{c' - a'}{b'} + \frac{a' - b'}{c'}\right)
-    \end{align*}
-    利用之前对第一部分推导的结论，将 $a', b', c'$ 代回：
-    \begin{align*}
-    \frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b} &= -\frac{1}{3} \left[ -\frac{(a' - b')(b' - c')(c' - a')}{a' b' c'} \right] \\
-    &= \frac{1}{3} \frac{(-3c)(-3a)(-3b)}{(b - c)(c - a)(a - b)} \\
-    &= -9 \frac{abc}{(a - b)(b - c)(c - a)}
-    \end{align*}
-
-    最后，将两部分相乘：
-    \begin{align*}
-    &\left[ -\frac{(a - b)(b - c)(c - a)}{abc} \right] \left[ -9 \frac{abc}{(a - b)(b - c)(c - a)} \right] \\
-    &= 9
-    \end{align*}
-    因此，原式的值为 9。
-\end{solution}
+    \question 已知 $a, b, c$ 为非零相异实数,且 $a + b + c = 0$,求
+    \[ 
+    \left(\frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c}\right) \left(\frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b}\right) 
+    \]
+    的值。
+    \begin{solution}
+        首先有
+        \begin{align*}
+        \frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c} &= \frac{b^2 c - b c^2 + a c^2 - a^2 c + a^2 b - a b^2}{abc} \\
+        &= -\frac{(a - b)(b - c)(c - a)}{abc}
+        \end{align*}
+        现令 $a' = b - c,b' = c - a,c' = a - b$,发现
+        \[ 
+        b' - c' = (c - a) - (a - b) = b + c - 2a = -3a
+        \]
+        由此得 $a = -\dfrac{b' - c'}{3}$,同理有
+        \[ 
+        b = -\frac{c' - a'}{3}, \quad c = -\frac{a' - b'}{3} \]
+        于是
+        \begin{align*}
+        \frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b} &= \frac{a}{a'} + \frac{b}{b'} + \frac{c}{c'} \\
+        &= -\frac{1}{3} \left(\frac{b' - c'}{a'} + \frac{c' - a'}{b'} + \frac{a' - b'}{c'}\right) \\
+        &= -\frac{1}{3} \left[ -\frac{(a' - b')(b' - c')(c' - a')}{a' b' c'} \right] \\
+        &= \frac{1}{3} \frac{(-3c)(-3a)(-3b)}{(b - c)(c - a)(a - b)} \\
+        &= -9 \frac{abc}{(a - b)(b - c)(c - a)}
+        \end{align*}
+        故所求的值为
+        \begin{align*}
+        &\left(\frac{b - c}{a} + \frac{c - a}{b} + \frac{a - b}{c}\right) \left(\frac{a}{b - c} + \frac{b}{c - a} + \frac{c}{a - b}\right) \\
+        &=\left[ -\frac{(a - b)(b - c)(c - a)}{abc} \right] \left[ -9 \frac{abc}{(a - b)(b - c)(c - a)} \right] \\
+        &= 9
+        \end{align*}
+    \end{solution}
 
     \question 已知 $x^5=1$ 且 $x \neq 1$, 求
     \[
@@ -1230,16 +1131,14 @@ S=9
     的值。
     \begin{solution}
         由$a+b+c+d=0$,得
-        \[
-        \begin{aligned}
+        \begin{align*}
         S &= a\left(\frac{1}{b}+\frac{1}{c}+\frac{1}{d}\right) + b\left(\frac{1}{c}+\frac{1}{d}+\frac{1}{a}\right) + c\left(\frac{1}{d}+\frac{1}{a}+\frac{1}{b}\right) + d\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) \\
         &= -(b+c+d)\left(\frac{1}{b}+\frac{1}{c}+\frac{1}{d}\right) - (a+c+d)\left(\frac{1}{c}+\frac{1}{d}+\frac{1}{a}\right) \\
         &\quad - (a+b+d)\left(\frac{1}{d}+\frac{1}{a}+\frac{1}{b}\right) - (a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) \\
         &= -12-\frac{2(b+c+d)}{a}-\frac{2(a+c+d)}{b} -\frac{2(a+b+d)}{c} -\frac{2(a+b+c)}{d}\\
         &= -12-\frac{-2a}{a} -\frac{-2b}{b} -\frac{-2c}{c} -\frac{-2d}{d}\\
         &= -4
-        \end{aligned}
-        \]
+        \end{align*}
     \end{solution}
 
     \question 设 $a,b,c$ 满足 $a+b+c=a^{3}+b^{3}+c^{3}=0$, $n$ 为任意实数, 求 $a^{2n+1}+b^{2n+1}+c^{2n+1}$的值。
@@ -1289,131 +1188,49 @@ S=9
     \end{solution}
 
     \question 解方程
-\[
-3(x+1)^6-2(x-1)^6 = (x^2-1)^3
-\]
+    \[
+    (x+1)^6-2(x-1)^6 = (x^2-1)^3
+    \]
+    \begin{solution}
+        原方程两边除以 $(x-1)^6$,得
+        \[
+        \left(\frac{x+1}{x-1}\right)^6 - 2 = \left(\frac{x+1}{x-1}\right)^3
+        \]
+        设 $y = \left(\dfrac{x+1}{x-1}\right)^3$,得到二次方程:
+        \[
+        y^2 - y - 2 = 0 \Rightarrow y = 2 \quad \text{或} \quad y=-1
+        \]
+        解为
+        \[
+        \frac{x+1}{x-1} = 2^{\frac{1}{3}} \Rightarrow x = \frac{2^{\frac{1}{3}}+1}{2^{\frac{1}{3}}-1} = 3+2^{\frac{2}{3}}+2^{\frac{1}{3}}
+        \]
+        或
+        \[
+        \frac{x+1}{x-1} = -1 \Rightarrow x = 0
+        \]
+    \end{solution}
 
-\begin{solution}
-
-\noindent
-\textbf{方法 A}
-
-\noindent
-原方程化为
-\[
-(x+1)^6 - 2(x-1)^6 = (x^2-1)^3 = (x+1)^3(x-1)^3
-\]
-除以 $(x-1)^6$（$x\neq 1$）：
-\[
-\left(\frac{x+1}{x-1}\right)^6 - 2 = \left(\frac{x+1}{x-1}\right)^3
-\]
-设 $y = \left(\frac{x+1}{x-1}\right)^3$,得到二次方程：
-\[
-y^2 - y - 2 = 0 \implies (y-2)(y+1) = 0
-\]
-\[
-y = 2 \quad \text{或} \quad y=-1
-\]
-
-\noindent
-分别解得 $x$：
-\[
-\frac{x+1}{x-1} = 2^{\frac{1}{3}} \implies x = \frac{1+2^{\frac{1}{3}}}{2^{\frac{1}{3}}-1} = 3+2^{\frac{2}{3}}+2^{\frac{1}{3}}
-\]
-\[
-\frac{x+1}{x-1} = -1 \implies x = 0
-\]
-
-\vspace{0.5em}
-\noindent
-\textbf{方法 B}
-
-\noindent
-设 $a=(x+1)^3, \ b=(x-1)^3$,原方程化为
-\[
-a^2 - 2b^2 = ab \implies a^2 - ab - 2b^2 = 0 \implies (a-2b)(a+b)=0
-\]
-
-\noindent
-解每个因式：
-
-\[
-a+b=0 \implies (x+1)^3 + (x-1)^3 = 0 \implies x = 0
-\]
-
-\[
-a-2b=0 \implies (x+1)^3 = 2(x-1)^3 \implies x = 3+2^{\frac{2}{3}}+2^{\frac{1}{3}}
-\]
-
-\noindent
-\textbf{结论}：
-\[
-x = 0 \quad \text{或} \quad x = 3+\sqrt[3]{4}+\sqrt[3]{2}
-\]
-
-\end{solution}
-
-\question 解方程
-\[
-(a+b)(ax+b)(a-bx)=(a^2x-b^2)(a+bx), \quad x\in \mathbb{R}.
-\]
-
-\begin{solution}
-
-\noindent
-\textbf{整理方程并展开}
-\begin{align*}
-0 &= (a^2x-b^2)(a+bx) - (a+b)(ax+b)(a-bx) \\
-0 &= a^3x + a^2bx^2 - a^2b - b^3x - (a+b)(a^2x - abx^2 + ab - b^2x) \\
-0 &= a^3x + a^2bx^2 - a^2b - b^3x - (a^3x - a^2bx^2 + a^2b - ab^2x + a^2bx - ab^2x^2 + ab^2 - b^3x) \\
-0 &= (2a^2b + ab^2)x^2 + (ab^2 - a^2b)x - (a^2b + ab^2)
-\end{align*}
-
-\noindent
-\textbf{除以 $ab$ 得二次方程}
-\[
-(2a+b)x^2 + (b-a)x - (a+2b) = 0
-\]
-
-\noindent
-\textbf{判别式}
-\begin{align*}
-\Delta &= (b-a)^2 + 4(2a+b)(a+2b) \\
-&= b^2-2ab+a^2 + 4(2a^2+5ab+2b^2) \\
-&= b^2-2ab+a^2 + 8a^2+20ab+8b^2 \\
-&= 9a^2+18ab+9b^2 \\
-&= 9(a+b)^2
-\end{align*}
-
-\noindent
-\textbf{使用二次公式}
-\[
-x = \frac{-(b-a) \pm \sqrt{9(a+b)^2}}{2(2a+b)} = \frac{a-b \pm 3(a+b)}{2(2a+b)}
-\]
-
-\noindent
-\textbf{求两根}
-
-\noindent
-第一根：
-\[
-x = \frac{a-b + 3(a+b)}{2(2a+b)} = \frac{4a+2b}{2(2a+b)} = 1
-\]
-
-\noindent
-第二根：
-\[
-x = \frac{a-b - 3(a+b)}{2(2a+b)} = \frac{-2a-4b}{2(2a+b)} = -\frac{a+2b}{2a+b}
-\]
-
-\noindent
-\textbf{结论}：
-\[
-x = 1 \quad \text{或} \quad x = -\frac{a+2b}{2a+b}
-\]
-
-\end{solution}
-
+    \question 若$a,b$为正实数,解方程
+    \[
+    (a+b)(ax+b)(a-bx)=(a^2x-b^2)(a+bx), \quad x\in \mathbb{R}.
+    \]
+    \begin{solution}
+        首先设
+        \[
+        f(x)=(a+b)(ax+b)(a-bx)-(a^2x-b^2)(a+bx)
+        \]
+        不难发现$f(1)=0$,故$(x-1)$是$f(x)$的因式。正所谓:解决问题仍需暴力,展开并整理得
+        \begin{align*}
+        f(x) &= a^3x + a^2bx^2 - a^2b - b^3x - (a^3x - a^2bx^2 + a^2b - ab^2x + a^2bx - ab^2x^2 + ab^2 - b^3x) \\
+        &= (2a^2b + ab^2)x^2 + (ab^2 - a^2b)x - (a^2b + ab^2) \\
+        &= ab[(2a+b)x^2 + (b-a)x - (a+2b)] \\
+        &= ab(x-1)((2a+b)x+a+2b)
+        \end{align*}
+        故$f(x)=0$给出了
+        \[
+        x = 1 \quad \text{或} \quad x = -\frac{a+2b}{2a+b}
+        \]
+    \end{solution}
 \end{questions}
 \pagebreak
 
@@ -1945,7 +1762,7 @@ x = 1 \quad \text{或} \quad x = -\frac{a+2b}{2a+b}
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{根式、绝对值、取整}{根式、绝对值、取整} \label{根式、绝对值、取整}
+    \hypertarget{根式、绝对值}{根式、绝对值} \label{根式、绝对值}
   }
 \end{center}
 \separator
@@ -1969,15 +1786,15 @@ a + b = c
 \]
 
 \noindent
-对两边立方：
+对两边立方:
 \[
 (a+b)^3 = c^3
 \]
-利用立方展开公式：
+利用立方展开公式:
 \[
 a^3 + 3a^2b + 3ab^2 + b^3 = c^3
 \]
-代入 $a^3 = x$, $b^3 = 2x-3$, $c^3 = 12(x-1)$：
+代入 $a^3 = x$, $b^3 = 2x-3$, $c^3 = 12(x-1)$:
 \[
 x + (2x-3) + 3a b (a+b) = 12(x-1)
 \]
@@ -1992,7 +1809,7 @@ x + (2x-3) + 3a b (a+b) = 12(x-1)
 \]
 
 \noindent
-两边同时立方：
+两边同时立方:
 \[
 27 \cdot x(2x-3)12(x-1) = 729(x-1)^3
 \]
@@ -2001,7 +1818,7 @@ x + (2x-3) + 3a b (a+b) = 12(x-1)
 \]
 
 \noindent
-因为 $x=1$ 是一个解,可以除去 $(x-1)$：
+因为 $x=1$ 是一个解,可以除去 $(x-1)$:
 \[
 324 x(2x-3) = 729(x-1)^2
 \]
@@ -2010,7 +1827,7 @@ x + (2x-3) + 3a b (a+b) = 12(x-1)
 \]
 
 \noindent
-化简得到二次方程：
+化简得到二次方程:
 \[
 8x^2 -12x = 9x^2 -18x + 9
 \]
@@ -2037,20 +1854,20 @@ x = 1 \quad \text{或} \quad x = 3
 \begin{solution}
 
 \noindent
-\textbf{步骤 1：利用平方差公式}
+\textbf{步骤 1:利用平方差公式}
 
 \[
 (\sqrt{6x-9} + \sqrt{2x-5})(\sqrt{6x-9} - \sqrt{2x-5}) = (6x-9) - (2x-5) = 4x-4
 \]
 
 \noindent
-将原方程除以上式：
+将原方程除以上式:
 \[
 \sqrt{6x-9} - \sqrt{2x-5} = \frac{4x-4}{x-1} = 4
 \]
 
 \noindent
-\textbf{步骤 2：两边平方}
+\textbf{步骤 2:两边平方}
 \begin{align*}
 (\sqrt{6x-9} - \sqrt{2x-5})^2 &= 16 \\
 6x-9 - 2\sqrt{(6x-9)(2x-5)} + 2x-5 &= 16 \\
@@ -2060,7 +1877,7 @@ x = 1 \quad \text{或} \quad x = 3
 \end{align*}
 
 \noindent
-\textbf{步骤 3：再次平方}
+\textbf{步骤 3:再次平方}
 \begin{align*}
 (4x-15)^2 &= 12x^2 - 48x + 45 \\
 16x^2 - 120x + 225 &= 12x^2 - 48x + 45 \\
@@ -2070,7 +1887,7 @@ x^2 - 18x + 45 &= 0 \\
 \end{align*}
 
 \noindent
-\textbf{步骤 4：检验根}
+\textbf{步骤 4:检验根}
 \[
 x=3: \sqrt{6\cdot 3 -9} + \sqrt{2\cdot 3 -5} = \sqrt{9} + \sqrt{1} = 3+1 = 4 \neq 2
 \]
@@ -2079,7 +1896,7 @@ x=15: \sqrt{6\cdot 15 -9} + \sqrt{2\cdot 15 -5} = \sqrt{81} + \sqrt{25} = 9+5 = 
 \]
 
 \noindent
-\textbf{结论：实数根为}
+\textbf{结论:实数根为}
 \[
 \boxed{x=15}
 \]
@@ -2094,20 +1911,20 @@ x=15: \sqrt{6\cdot 15 -9} + \sqrt{2\cdot 15 -5} = \sqrt{81} + \sqrt{25} = 9+5 = 
 \begin{solution}
 
 \noindent
-将方程化为三项形式：
+将方程化为三项形式:
 \[
 \sqrt{x^2-6x+13} = x-4 + \sqrt{2x-5}
 \]
 
 \noindent
-设 $x-4 = y$,则 $x = y+4$：
+设 $x-4 = y$,则 $x = y+4$:
 \begin{align*}
 \sqrt{(y+4)^2 - 6(y+4) + 13} &= y + \sqrt{2(y+4)-5} \\
 \sqrt{y^2 + 2y + 5} &= y + \sqrt{2y+3}
 \end{align*}
 
 \noindent
-两边平方：
+两边平方:
 \begin{align*}
 y^2 + 2y + 5 &= y^2 + 2y\sqrt{2y+3} + 2y + 3 \\
 5 &= 2y\sqrt{2y+3} + 3 \\
@@ -2116,13 +1933,13 @@ y^2 + 2y + 5 &= y^2 + 2y\sqrt{2y+3} + 2y + 3 \\
 \end{align*}
 
 \noindent
-再次平方：
+再次平方:
 \[
 1 = y^2(2y+3) \implies 2y^3 + 3y^2 - 1 = 0
 \]
 
 \noindent
-通过因式分解：
+通过因式分解:
 \[
 2y^3 + 3y^2 - 1 = (y+1)(2y^2+y-1) = 0
 \]
@@ -2134,13 +1951,13 @@ y = -1, \quad y = \frac{1}{2}
 \]
 
 \noindent
-回代 $x = y+4$：
+回代 $x = y+4$:
 \[
 x = 3, \quad x = \frac{9}{2}
 \]
 
 \noindent
-检验：
+检验:
 \begin{align*}
 x = 3: &\quad 4+\sqrt{9-18+13} = 6 \neq 3+\sqrt{6-5} = 4 \\
 x = \frac{9}{2}: &\quad 4+\sqrt{\frac{81}{4}-27+13} = 4+\frac{5}{2} = \frac{13}{2} = \frac{9}{2} + \sqrt{9-5} 
@@ -2259,7 +2076,7 @@ y = \sqrt{\frac{x}{8} + \frac{13}{64}}
 x - \sqrt{\frac{x}{2} + \frac{7}{8} - y} = 179
 \]
 
-两边平方：
+两边平方:
 \[
 (x - 179)^2 = \frac{x}{2} + \frac{7}{8} - y
 \]
@@ -2298,7 +2115,7 @@ x = 188.5
 \frac{x-7}{2+\sqrt{x-3}} + \frac{x-5}{1+\sqrt{x-4}} &= \sqrt{10}
 \end{align*}
 
-对各项有理化分母：
+对各项有理化分母:
 \begin{align*}
 \frac{x-7}{2+\sqrt{x-3}} &= \frac{(x-7)(2-\sqrt{x-3})}{(2+\sqrt{x-3})(2-\sqrt{x-3})} = \frac{(x-7)(2-\sqrt{x-3})}{4-(x-3)} = \frac{(x-7)(2-\sqrt{x-3})}{7-x} \\
 \frac{x-5}{1+\sqrt{x-4}} &= \frac{(x-5)(1-\sqrt{x-4})}{1-(x-4)} = \frac{(x-5)(1-\sqrt{x-4})}{5-x}
@@ -2316,7 +2133,7 @@ x = 188.5
 \sqrt{x-3} = \sqrt{10}+1 + \sqrt{x-4}
 \]
 
-两边平方：
+两边平方:
 \[
 x-3 = (\sqrt{10}+1+\sqrt{x-4})^2
 \]
@@ -2326,12 +2143,12 @@ x-3 = (\sqrt{10}+1+\sqrt{x-4})^2
 x+7 = 2\sqrt{10(x-3)}
 \]
 
-再次平方：
+再次平方:
 \[
 x^2+14x+49 = 40(x-3)
 \]
 
-化简：
+化简:
 \[
 x^2 - 26x + 169 = 0
 \]
@@ -2450,7 +2267,7 @@ x = 13
 \frac{2\sqrt{x+1}}{2\sqrt{x-1}}=\frac{4x+1}{4x-3}.
 \]
 
-平方两边：
+平方两边:
 \[
 \frac{x+1}{x-1}=\frac{(4x+1)^2}{(4x-3)^2}
 =\frac{16x^2+8x+1}{16x^2-24x+9}.
@@ -2473,7 +2290,7 @@ x = 13
 x=\frac{16x^2-8x+5}{16x-4}.
 \]
 
-交叉相乘（注意分母非零）：
+交叉相乘（注意分母非零）:
 \[
 16x^2-4x=16x^2-8x+5,
 \]
@@ -2493,7 +2310,7 @@ x=\frac{5}{4}.
 \end{solution}
 
 \question
-求方程的实根：
+求方程的实根:
 \[ \sqrt{x+3-4\sqrt{x-1}} + \sqrt{x+8-6\sqrt{x-1}} = 1 \]
 （所有根号均取正值）
 
@@ -2502,33 +2319,33 @@ x=\frac{5}{4}.
     \[ x+3-4\sqrt{x-1} = x-1-4\sqrt{x-1}+4 \]
     \[ = (\sqrt{x-1})^2-4\sqrt{x-1}+4=(\sqrt{x-1}-2)^2 \]
 
-    类似地，
+    类似地,
     \[ x+8-6\sqrt{x-1} = x-1-6\sqrt{x-1}+9 \]
     \[ = (\sqrt{x-1}-3)^2 \]
 
-    因此，原方程可以写成
+    因此,原方程可以写成
     \[ \sqrt{(\sqrt{x-1}-2)^2} + \sqrt{(\sqrt{x-1}-3)^2} = 1 \]
 
-    由于题目指定根号取正值，即
+    由于题目指定根号取正值,即
     \[ |\sqrt{x-1}-2| + |\sqrt{x-1}-3| = 1 \]
     其中 $|y|$ 表示 $y$ 的绝对值。我们分几种情况讨论。
 
-    第一，若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \ge 0$，即若 $\sqrt{x-1} \ge 3$，$x-1 \ge 9$，$x \ge 10$，则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$，$|\sqrt{x-1}-3|=\sqrt{x-1}-3$，方程变为
+    第一,若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \ge 0$,即若 $\sqrt{x-1} \ge 3$,$x-1 \ge 9$,$x \ge 10$,则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$,$|\sqrt{x-1}-3|=\sqrt{x-1}-3$,方程变为
     \[ \sqrt{x-1}-2+\sqrt{x-1}-3=1 \]
 
-    由此得，
+    由此得,
     \begin{align*}
     2\sqrt{x-1} &= 6 \\
     \sqrt{x-1} &= 3 \\
     x &= 10
     \end{align*}
 
-    若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \le 0$，即若 $\sqrt{x-1} \ge 2$，$x \ge 5$，但 $\sqrt{x-1} \le 3$，$x \le 10$，则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$，$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$，方程变为恒等式
+    若 $\sqrt{x-1}-2 \ge 0$ 且 $\sqrt{x-1}-3 \le 0$,即若 $\sqrt{x-1} \ge 2$,$x \ge 5$,但 $\sqrt{x-1} \le 3$,$x \le 10$,则 $|\sqrt{x-1}-2|=\sqrt{x-1}-2$,$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$,方程变为恒等式
     \[ \sqrt{x-1}-2-\sqrt{x-1}+3=1 \]
     \[ 1 = 1 \]
-    因此，在 $x=5$ 和 $x=10$ 之间的所有 $x$ 值都满足方程。
+    因此,在 $x=5$ 和 $x=10$ 之间的所有 $x$ 值都满足方程。
 
-    若 $\sqrt{x-1}-2 \le 0$ 且 $\sqrt{x-1}-3 \le 0$，即若 $\sqrt{x-1} \le 2$，$x \le 5$，则 $|\sqrt{x-1}-2|=-\sqrt{x-1}+2$，$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$，方程变为
+    若 $\sqrt{x-1}-2 \le 0$ 且 $\sqrt{x-1}-3 \le 0$,即若 $\sqrt{x-1} \le 2$,$x \le 5$,则 $|\sqrt{x-1}-2|=-\sqrt{x-1}+2$,$|\sqrt{x-1}-3|=-\sqrt{x-1}+3$,方程变为
     \[ -\sqrt{x-1}+2-\sqrt{x-1}+3=1 \]
 
     由此推得
@@ -2540,7 +2357,7 @@ x=\frac{5}{4}.
 
     而 $\sqrt{x-1}-2 \le 0$ 且 $\sqrt{x-1}-3 \ge 0$ 的情况是不可能的。
 
-    总结以上结果，所有介于 5 和 10 之间的 $x$ 值（包含 5 和 10），即 $5 \le x \le 10$，都是原方程的解。
+    总结以上结果,所有介于 5 和 10 之间的 $x$ 值（包含 5 和 10）,即 $5 \le x \le 10$,都是原方程的解。
 \end{solution}
 
 \question 求值
@@ -2702,922 +2519,55 @@ x=3
 \]
 
 \begin{solution}
-    我们将根据绝对值号内各项为零的临界点（$-1, 0, 1, 2$），分区间讨论其实根。
+    我们将根据绝对值号内各项为零的临界点（$-1, 0, 1, 2$）,分区间讨论其实根。
 
-    第一，设 $x \ge 2$。此时 $x + 1 > 0$，$x > 0$，$x - 1 > 0$，$x - 2 \ge 0$。
-    因此 $|x+1|= x + 1$，$|x| = x$，$|x - 1| = x - 1$，$|x - 2| = x - 2$。方程变为：
+    第一,设 $x \ge 2$。此时 $x + 1 > 0$,$x > 0$,$x - 1 > 0$,$x - 2 \ge 0$。
+    因此 $|x+1|= x + 1$,$|x| = x$,$|x - 1| = x - 1$,$|x - 2| = x - 2$。方程变为:
     \[ (x+1) - x + 3(x-1) - 2(x-2) = x+2 \]
-    整理得：
+    整理得:
     \[ x+1 - x + 3x - 3 - 2x + 4 = x+2 \]
     \[ x+2 = x+2 \]
-    这是一个恒等式。因此，所有大于或等于 2 的实数都是原方程的根。
+    这是一个恒等式。因此,所有大于或等于 2 的实数都是原方程的根。
 
-    第二，设 $1 \le x < 2$。此时 $x+1 > 0$，$x > 0$，$x-1 \ge 0$，$x-2 < 0$。
-    绝对值展开为：
+    第二,设 $1 \le x < 2$。此时 $x+1 > 0$,$x > 0$,$x-1 \ge 0$,$x-2 < 0$。
+    绝对值展开为:
     \begin{align*}
     |x+1| &= x+1 \\
     |x| &= x \\
     |x-1| &= x-1 \\
     |x-2| &= -(x-2)
     \end{align*}
-    代入方程得：
+    代入方程得:
     \[ (x+1) - x + 3(x-1) + 2(x-2) = x+2 \]
-    整理得：
+    整理得:
     \[ x+1 - x + 3x - 3 + 2x - 4 = x+2 \]
     \[ 4x = 8 \implies x = 2 \]
-    该值已在之前的区间中考虑过，故在 $[1, 2)$ 区间内无新根。
+    该值已在之前的区间中考虑过,故在 $[1, 2)$ 区间内无新根。
 
-    第三，设 $0 \le x < 1$。此时 $|x+1| = x+1$，$|x| = x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    第三,设 $0 \le x < 1$。此时 $|x+1| = x+1$,$|x| = x$,$|x-1| = -(x-1)$,$|x-2| = -(x-2)$。方程变为:
     \[ (x+1) - x - 3(x-1) + 2(x-2) = x + 2 \]
-    整理得：
+    整理得:
     \[ x+1 - x - 3x + 3 + 2x - 4 = x+2 \]
     \[ -x = x+2 \implies 2x = -2 \implies x = -1 \]
-    由于 $x = -1$ 不在区间 $[0, 1)$ 内，故应舍去。此区间无实根。
+    由于 $x = -1$ 不在区间 $[0, 1)$ 内,故应舍去。此区间无实根。
 
-    第四，设 $-1 \le x < 0$。此时 $|x+1| = x+1$，$|x| = -x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    第四,设 $-1 \le x < 0$。此时 $|x+1| = x+1$,$|x| = -x$,$|x-1| = -(x-1)$,$|x-2| = -(x-2)$。方程变为:
     \[ (x+1) + x - 3(x-1) + 2(x-2) = x + 2 \]
-    整理得：
+    整理得:
     \[ x+1 + x - 3x + 3 + 2x - 4 = x+2 \]
     \[ x = x+2 \]
     此方程无解。
 
-    第五，设 $x < -1$。此时 $|x+1| = -(x+1)$，$|x| = -x$，$|x-1| = -(x-1)$，$|x-2| = -(x-2)$。方程变为：
+    第五,设 $x < -1$。此时 $|x+1| = -(x+1)$,$|x| = -x$,$|x-1| = -(x-1)$,$|x-2| = -(x-2)$。方程变为:
     \begin{align*}
     -(x+1) + x - 3(x-1) + 2(x-2) &= x+2 \\
     -x - 1 + x - 3x + 3 + 2x - 4 &= x+2 \\
     -x - 2 &= x+2 \\
     2x &= -4 \implies x = -2
     \end{align*}
-    $x = -2$ 属于该区间，是一个有效的根。
+    $x = -2$ 属于该区间,是一个有效的根。
 
-    总结以上结果，原方程的解为 $x = -2$ 以及所有满足 $x \ge 2$ 的实数。
-\end{solution}
-
-    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
-    \begin{solution}
-        令
-        \[
-        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
-        \]
-        则
-        \[
-        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
-        \]
-        所以
-        \[
-        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
-        \]
-        由于 $0 < b^2 < 1$,所以
-        \[
-        969 < a^6 < 970 \quad \Rightarrow \quad \lceil a^6 \rceil = 970
-        \]
-    \end{solution}
-
-    \question
-求所有满足
-\[
-\lfloor 0.5+\lfloor x\rfloor \rfloor = 20
-\]
-的$x$的取值范围
-
-\begin{solution}
-设
-\[
-\lfloor x\rfloor = y
-\]
-则
-\[
-\lfloor 0.5+y\rfloor = 20
-\]
-
-由于$y$为整数,所以$0.5+y$必须满足
-\[
-20 \le 0.5+y < 21
-\]
-
-化简得
-\[
-19.5 \le y < 20.5
-\]
-
-因为$y$为整数,所以
-\[
-y=20
-\]
-
-代回$\lfloor x\rfloor = y$,得
-\[
-\lfloor x\rfloor = 20
-\]
-
-因此
-\[
-20 \le x < 21
-\]
-\end{solution}
-
-\question
-求满足条件的$x$的取值范围
-\[
-\lceil y-1.3\rceil = 16
-\]
-其中$y=\lceil x\rceil$
-
-\begin{solution}
-设
-\[
-\lceil x\rceil = y
-\]
-则
-\[
-\lceil y-1.3\rceil = 16
-\]
-
-根据取整定义,有
-\[
-15 \le y-1.3 < 16
-\]
-
-两边同时加$1.3$,得
-\[
-16.3 \le y < 17.3
-\]
-
-由于$y$为整数,所以
-\[
-y=17
-\]
-
-即
-\[
-\lceil x\rceil = 17
-\]
-
-因此
-\[
-16 < x \le 17
-\]
-\end{solution}
-
-\question
-求满足
-\[
-\lceil x\rceil \lceil 2x\rceil = 15
-\]
-的$x$的取值范围
-
-\begin{solution}
-设
-\[
-x=n-r
-\]
-其中$n$为整数,$0<r\le 1$,则 $\lceil 2x \rceil = 2n$ 或 $2n-1$.
-
-当 $r < 1/2$,
-\[
-\lceil x \rceil = n, \quad \lceil 2x \rceil = 2n
-\]
-\[\implies n(2n) = 15\]
-
-当  $r \ge 1/2$,
-\[\lfloor x \rceil = n, \quad \lceil 2x \rceil = 2n-1\]
-\[\implies n(2n-1) = 15\]
-\[2n^2-n-15 = 0\]
-\[(n-3)(2n+5) = 0\]
-\[\therefore n = 3\]
-
-$x$的取值范围$(2, 2.5]$
-\end{solution}
-
-\question
-计算
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-\]
-
-\begin{solution}
-解法一  
-
-将整数部分与小数部分分开，
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=\sum_{r=1}^{34}\frac{18r}{35}
--\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
-\]
-
-先计算第一项，
-\[
-\sum_{r=1}^{34}\frac{18r}{35}
-=\frac{18}{35}\sum_{r=1}^{34}r
-=\frac{18}{35}\cdot\frac{34\cdot35}{2}
-=18\cdot17
-=306
-\]
-
-注意到对任意$r$，
-\[
-\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=1
-\]
-
-当$r$从$1$到$34$时，可以配成$17$对，因此
-\[
-\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
-\]
-
-于是
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=306-17
-=289
-\]
-
-解法二  
-
-注意到
-\[
-\frac{18r}{35}+\frac{18(35-r)}{35}=18
-\]
-
-因此
-\[
-\left\lfloor \frac{18r}{35}\right\rfloor
-+\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-+\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=18
-\]
-
-又因为
-\[
-\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=1
-\]
-
-所以
-\[
-\left\lfloor \frac{18r}{35}\right\rfloor
-+\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-=17
-\]
-
-当$r$从$1$到$34$时，可配成$17$组
-\[
-(1,34),(2,33),\dots,(17,18)
-\]
-
-每一组的和均为$17$，因此
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=17\times17
-=289
-\]
-\end{solution}
-
-\question
-已知
-\[
-\begin{cases}
-\lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
-\lceil c \rceil + \lfloor b \rfloor + \{a\} = 11.3 \\
-\lceil a \rceil + \lceil c \rceil + \{b\} = 9.7
-\end{cases}
-\]
-求$a+b+c$
-
-\begin{solution}
-由题意可知，小数部分分别为
-\[
-\{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
-\]
-
-代入原方程组，得
-\[
-\lfloor b \rfloor + \lceil a \rceil = 16
-\]
-\[
-\lceil c \rceil + \lfloor b \rfloor = 11
-\]
-\[
-\lceil a \rceil + \lceil c \rceil = 9
-\]
-
-由第二式与第三式可得
-\[
-\lceil c \rceil = 2
-\]
-\[
-\lfloor b \rfloor = 9-1=8
-\]
-\[
-\lceil a \rceil = 9-2=7
-\]
-
-因此
-\[
-\lfloor a \rfloor = 7,\quad \lfloor b \rfloor = 8,\quad \lfloor c \rfloor = 2
-\]
-
-结合小数部分，
-\[
-a=7.3,\quad b=8.7,\quad c=2
-\]
-
-于是
-\[
-a+b+c=18
-\]
-\end{solution}
-\question
-设$x$为正实数，且满足
-\[
-x^2+\{x\}^2=27
-\]
-求$x$
-
-\begin{solution}
-设
-\[
-x=n+r
-\]
-其中$n$为整数，$0\le r<1$
-
-注意到
-\[
-x^2 \le x^2+\{x\}^2 < x^2+1
-\]
-因此
-\[
-26<x^2\le27
-\]
-从而
-\[
-n=5
-\]
-
-代入$x=5+r$，得
-\begin{align*}
-(5+r)^2+r^2&=27 \\
-25+10r+r^2+r^2&=27 \\
-2r^2+10r-2&=0 \\
-r^2+5r-1&=0
-\end{align*}
-
-解得
-\[
-r=\frac{-5\pm\sqrt{29}}{2}
-\]
-由于$0\le r<1$，故
-\[
-r=\frac{-5+\sqrt{29}}{2}
-\]
-
-于是
-\[
-x=5+r=\frac{5+\sqrt{29}}{2}
-\]
-\end{solution}
-\question
-设$r$为实数，且满足
-\[
-\left\lfloor r+\frac{19}{100}\right\rfloor
-+\left\lfloor r+\frac{20}{100}\right\rfloor
-+\cdots
-+\left\lfloor r+\frac{97}{100}\right\rfloor
-=546
-\]
-求$\lfloor100r\rfloor$
-
-\begin{solution}
-从$\frac{19}{100}$到$\frac{97}{100}$，共有
-\[
-97-19+1=79
-\]
-项
-
-设这些取整值只可能为$7$或$8$
-
-若全部等于$7$，则和为
-\[
-79\times7=553
-\]
-
-若全部等于$8$，则和为
-\[
-79\times8=632
-\]
-
-由于
-\[
-553>546,\quad 632>546
-\]
-说明其中既有$7$也有$8$
-
-设前$k$项等于$7$，其余$79-k$项等于$8$，则
-\begin{align*}
-7k+8(79-k)&=546 \\
-7k+632-8k&=546 \\
-632-k&=546 \\
-k&=86
-\end{align*}
-
-这表示
-\[
-\left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
-\left\lfloor r+\frac{57}{100}\right\rfloor=8
-\]
-
-于是
-\[
-7\le r+\frac{56}{100}<8
-\]
-\[
-8\le r+\frac{57}{100}<9
-\]
-
-化简得
-\[
-7.43\le r<7.44
-\]
-
-两边同乘$100$，得到
-\[
-743\le100r<744
-\]
-
-因此
-\[
-\lfloor100r\rfloor=743
-\]
-\end{solution}
-
-\question
-5) 求
-\[
-\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
-\]
-
-\begin{solution}
-因为
-\[
-\lfloor \sqrt{202}\rfloor=14
-\]
-所以$\lfloor \sqrt{k}\rfloor\in\{1,2,3,\dots,14\}$
-
-当
-\[
-(n-1)^2<k\le n^2
-\]
-时，有
-\[
-\lfloor \sqrt{k}\rfloor=n
-\]
-对应的$k$的个数为
-\[
-n^2-(n-1)^2=2n-1
-\]
-其中$n=1,2,\dots,13$
-
-当$n=14$时，对应的个数为
-\[
-202-13^2=202-169=33
-\]
-
-因此
-\[
-\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
-=\sum_{n=1}^{13}n(2n-1)+14\times33
-\]
-
-\begin{align*}
-&=\sum_{n=1}^{13}(2n^2-n)+462 \\
-&=2\sum_{n=1}^{13}n^2-\sum_{n=1}^{13}n+462 \\
-&=2\left(\frac{13\times14\times27}{6}\right)-\frac{13\times14}{2}+462 \\
-&=1638-91+462 \\
-&=2009
-\end{align*}
-\end{solution}
-
-\question
-6) 求满足
-\[
-\lfloor \sqrt{x}\rfloor-\lfloor \sqrt{x+34}\rfloor=0
-\]
-的最小整数$x$
-
-\begin{solution}
-设
-\[
-\lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor=y
-\]
-则$x$与$x+34$必须落在同一个平方区间内，即
-\[
-y^2\le x<x+34<(y+1)^2
-\]
-
-于是有
-\[
-(y+1)^2-y^2>34
-\]
-
-化简得
-\begin{align*}
-2y+1&>34 \\
-2y&>33 \\
-y&>16.5
-\end{align*}
-
-因此
-\[
-y=17
-\]
-
-最小的$x$为
-\[
-x=y^2=17^2=289
-\]
-\end{solution}
-
-\question
-7)
-\[
-\lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
-\]
-
-\begin{solution}
-\[
-\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
-=\frac{143}{2}(1+995)
-\]
-
-\[
-\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
-=\frac{143}{2}(2+996)
-\]
-
-\[
-\lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil
-=\frac{142}{2}(7+994)
-\]
-
-\[
-\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil
-=\frac{142}{2}(8+995)
-\]
-
-\[
-\text{最终结果}=715285
-\]
-\end{solution}
-
-\question
-8)
-\[
-x^2 - 6\lfloor x \rfloor + 5 = 0
-\]
-
-\begin{solution}
-令 $\lfloor x \rfloor = n$, 代入方程得
-\[
-x^2 - 6n + 5 = 0 \implies x^2 = 6n - 5
-\]
-
-检查每个可能的 $n$ 值：
-
-\begin{align*}
-n=1 &: x^2 = 1 \implies x = 1 \quad (\text{有效, } 1 \le x < 2)\\
-n=2 &: x^2 = 7 \implies x = \sqrt{7} \quad (2 < \sqrt{7} < 3)\\
-n=3 &: x^2 = 13 \implies x = \sqrt{13} \quad (3 < \sqrt{13} < 4)\\
-n=4 &: x^2 = 19 \implies x = \sqrt{19} \quad (4 < \sqrt{19} < 5)\\
-n=5 &: x^2 = 25 \implies x = 5 \quad (\text{有效})
-\end{align*}
-
-\noindent
-因此，方程的解为
-\[
-x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
-\]
-\end{solution}
-
-\question
-9)
-\[
-\lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
-\]
-
-\begin{solution}
-令 $x = n + r$, $0 \le r < 1$. 则
-\[
-\lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
-\]
-
-展开得：
-\begin{align*}
-2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
-\end{align*}
-
-解不等式：
-\[
-2n^2+n+1 \le 111,\quad 2n^2+3n \ge 111
-\]
-得$n=7$,因此解
-\[
-\lceil 7r \rceil + \lfloor 8r \rfloor =6
-\]
-得
-\[
-\frac{3}{8} \le r \le \frac{3}{7} \Rightarrow 7 + \frac{3}{8} \le x \le 7 + \frac{3}{7}
-\]
-\end{solution}
-
-\question
-12)
-\[
-\left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
-\]
-
-\begin{solution}
-要找序列中不同整数的个数，考虑连续两项的差：
-\[
-\frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
-\]
-
-\noindent
-\textbf{前 1007 项:} $n = 1,2,\dots,1007$  
-\[
-\frac{1007^2}{2016} \approx 503.0005 > 503
-\]  
-因此前 1007 项产生整数 $0,1,2,\dots,503$，共有 $504$ 个不同整数。
-
-\noindent
-\textbf{第 1008 项到 2016 项:}  
-每项至少比前一项大 1，因此产生 $2016-1008+1 = 1009$ 个不同整数。
-
-\noindent
-\textbf{总不同整数数:}  
-\[
-504 + 1009 = 1513
-\]
-
-\noindent
-因此序列中共有 $1513$ 个不同整数。
-\end{solution}
-
-\question
-13)
-\[
-\sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
-\]
-
-\begin{solution}
-令 
-\[
-A_n = \left\lfloor \frac{2^n}{3} \right\rfloor
-\]
-
-注意到 
-\[
-A_n = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}.
-\]
-
-因此
-\begin{align*}
-S &= \sum_{n=0}^{1000} A_n = \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
-&= \frac{1}{3} \sum_{n=0}^{1000} 2^n - \frac{1001}{2} + \frac{1}{6} \sum_{n=0}^{1000} (-1)^n \\
-&= \frac{1}{3} (2^{1001}-1) - \frac{1001}{2} + \frac{1}{6} \cdot 0 \\
-&= \frac{2^{1001}-1}{3} - \frac{1001}{2} + \frac{1}{6} \\
-&= \frac{2(2^{1001}-1) - 3\cdot 1001 + 1}{6} \\
-&= \frac{2^{1002} - 3004}{6} = \frac{2^{1001}-1502}{3}.
-\end{align*}
-
-\noindent
-因此和可表示为
-\[
-S = 2^{1001}/3 - 1502/3 = 2^{1001} - 1502 \text{ (經約分後)}.
-\]
-\end{solution}
-
-\question
-14)
-\[
-\lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
-\]
-
-\begin{solution}
-設 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$. 則
-\[
-\lfloor x^2 \rfloor - n^2 = \lfloor 2 n r + r^2 \rfloor = 1999.
-\]
-
-最小的 $n$ 滿足
-\[
-2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
-\]
-
-因此
-\[
-2 \cdot 1000 \cdot r + r^2 = 1999 \implies r^2 + 2000 r - 1999 = 0
-\]
-
-解得
-\[
-r = -1000 + \sqrt{1001999}.
-\]
-
-\noindent
-所以
-\[
-x = n + r = 1000 + (-1000 + \sqrt{1001999}) = \sqrt{1001999}.
-\]
-\end{solution}
-
-\question
-16) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
-\]
-在 $n \in \mathbb{N}$ 且 $1 \le n \le 100$ 的解的个数。
-
-\begin{solution}
-设 $f(n) = \lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor$, 则
-\[
-f(n+6) = f(n) + 6
-\]
-成立。
-
-定义 $g(n) = f(n) - (n-1)$, 则
-\[
-g(n+6) = g(n).
-\]
-
-检查前几个值:
-\[
-g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
-\]
-
-因此在 1 到 100 之间共有 68 个解。
-\end{solution}
-
-\question
-17) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{5} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{5}
-\]
-的解。
-
-\begin{solution}
-右边为整数，左边为整数，因此 $n/2$, $n/3$, $n/5$ 都必须为整数，即 $n$ 为 30 的倍数。
-
-在允许范围内，共有 3 个解。
-\end{solution}
-
-\question
-18) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
-\]
-的解。
-
-\begin{solution}
-由于
-\[
-\lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor \le n/2 + n/3 + n/6 = n,
-\]
-因此等号成立的情况共有 16 个。
-\end{solution}
-
-\question
-19) 求 $x$ 满足方程
-\[
-2\lfloor x \rfloor + 3x = 4 - 5\{x\}
-\]
-
-\begin{solution}
-设 $x = n+r$, 其中 $n = \lfloor x \rfloor$ 是整数部分, $r = \{x\}$ 是小数部分 ($0 \le r < 1$)。代入方程得
-\[
-2n + 3(n+r) = 4 - 5r
-\]
-化简得
-\[
-5n + 3r = 4 - 5r
-\]
-\[
-5n + 8r = 4
-\]
-
-由 $0 \le r < 1$, 有
-\[
-0 \le 8r < 8
-\]
-\[
--4 < 5n \le 4
-\]
-
-唯一满足该不等式的整数是 $n=0$，因此
-\[
-n = \lfloor x \rfloor = 0
-\]
-
-代入 $n=0$ 回到方程 $5n+8r=4$:
-\[
-8r = 4 \implies r = \frac{1}{2}
-\]
-
-因此解为
-\[
-x = n + r = 0 + \frac{1}{2} = \frac{1}{2}
-\]
-\end{solution}
-
-\question
-20) 求满足条件的正整数 $x$ 的个数
-\[
-\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor
-\]
-
-\begin{solution}
-设
-\[
-\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
-\]
-
-由定义有
-\[
-m \le \frac{x}{99} < m+1 \implies 99m \le x < 99(m+1)
-\]
-\[
-m \le \frac{x}{101} < m+1 \implies 101m \le x < 101(m+1)
-\]
-
-因此
-\[
-101m \le x < 99(m+1)
-\]
-
-当 $m>49$ 时, $101m > 99(m+1)$, 无解。
-
-对于 $0 \le m \le 49$, 可行整数个数为
-\[
-(99(m+1)-1) - 101 m +1 = 99(m+1)-101 m = 99-2m
-\]
-
-总和为
-\[
-\sum_{m=0}^{49} (99-2m) = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} = 4950 - 2450 = 2500
-\]
-
-排除 $x=0$ 不是正整数, 最终答案为
-\[
-\boxed{2499}
-\]
-\end{solution}
-
-\question
-21) 求满足条件的整数 $x$
-\[
-\left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
-\]
-
-\begin{solution}
-首先近似使用不取整的值：
-\[
-\frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
-\]
-
-\[
-\frac{6x+3x+x}{6} -3 < 224 < \frac{6x+3x+x}{6} \implies \frac{10x}{6}-3 <224<\frac{10x}{6}
-\]
-
-\[
-\frac{5x}{3}-3 < 224 < \frac{5x}{3} \implies 134.4 \le x < 136.2
-\]
-
-由于 $x$ 为整数，只有 $x=135$ 可行。
-\[
-\therefore x = 135
-\]
-\end{solution}
-
-\question
-22) 求满足条件的最大实数 $x$
-\[
-\frac{\lfloor x \rfloor}{x} = \frac{9}{10}
-\]
-
-\begin{solution}
-设 $x = \lfloor x \rfloor + \{x\}$, 则有
-\[
-10 \lfloor x \rfloor = 9 x = 9 (\lfloor x \rfloor + \{x\})
-\]
-\[
-10 \lfloor x \rfloor = 9 \lfloor x \rfloor + 9 \{x\} \implies \lfloor x \rfloor = 9 \{x\}
-\]
-
-由于 $0 \le \{x\} < 1$, 可得 $\lfloor x \rfloor = 1,2,\dots,8$, 对应 $\{x\} = 1/9, 2/9, \dots, 8/9$
-
-取最大值 $\{x\} = 8/9$, $\lfloor x \rfloor = 8$
-\[
-x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
-\]
+    总结以上结果,原方程的解为 $x = -2$ 以及所有满足 $x \ge 2$ 的实数。
 \end{solution}
 
 \end{questions}
@@ -3690,22 +2640,22 @@ x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
 \noindent
 \textbf{步骤 1: 化简方程两边}
 
-给定方程：
+给定方程:
 \[
 \frac{e^{2x}+16^x}{(4e)^x} = \frac{4+e}{2\sqrt{e}}
 \]
 
-利用指数法则化简左边：
+利用指数法则化简左边:
 \[
 \frac{e^{2x}}{(4e)^x} + \frac{16^x}{(4e)^x} = \left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x
 \]
 
-右边化简为：
+右边化简为:
 \[
 \frac{4+e}{2\sqrt{e}} = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
 \]
 
-因此方程变为：
+因此方程变为:
 \[
 \left(\frac{e}{4}\right)^x + \left(\frac{4}{e}\right)^x = \frac{\sqrt{e}}{2} + \frac{2}{\sqrt{e}}
 \]
@@ -3718,17 +2668,17 @@ x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
 y = \left(\frac{e}{4}\right)^x
 \]
 
-则方程可写作：
+则方程可写作:
 \[
 y + \frac{1}{y} = \left(\frac{e}{4}\right)^{1/2} + \frac{1}{\left(\frac{e}{4}\right)^{1/2}}
 \]
 
-两边乘以 $y$ 得到二次形式：
+两边乘以 $y$ 得到二次形式:
 \[
 y^2 - \left(\left(\frac{e}{4}\right)^{1/2} + \left(\frac{e}{4}\right)^{-1/2}\right)y + 1 = 0
 \]
 
-因式分解得到：
+因式分解得到:
 \[
 \left(y - \left(\frac{e}{4}\right)^{1/2}\right)\left(y - \left(\frac{e}{4}\right)^{-1/2}\right) = 0
 \]
@@ -3939,7 +2889,7 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
         \]
     \end{solution}
 
-    \question 解不等式：
+    \question 解不等式:
     \[
     \left(\log_{\frac{1}{3}} x - 1\right)\left(\log_{\frac{1}{4}} x + 2\right)\left(\log_{\frac{1}{5}} x - 3\right) > 0.
     \]
@@ -3972,7 +2922,7 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
         \[  
         x < 4 \quad \text{且} \quad x > -1 
         \]
-        即  $x \in (-1, 4)$,且$x \neq 0,1,2$,否则不等式不成立。分四种情况讨论：
+        即  $x \in (-1, 4)$,且$x \neq 0,1,2$,否则不等式不成立。分四种情况讨论:
 
         情况1: $x \in (-1, 0)$,则
         \begin{align*}
@@ -4244,7 +3194,7 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
 
     \question
 \noindent
-求解下列方程组：
+求解下列方程组:
 \begin{align*}
 (2x)^{\ln 2} &= (3y)^{\ln 3} \\
 3^{\ln x} &= 2^{\ln y}
@@ -4254,7 +3204,7 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
 \noindent
 \textbf{步骤 1: 对方程取自然对数化简}
 
-对第一个方程两边取 $\ln$：
+对第一个方程两边取 $\ln$:
 \begin{align*}
 \ln\left((2x)^{\ln 2}\right) &= \ln\left((3y)^{\ln 3}\right) \\
 (\ln 2)\ln(2x) &= (\ln 3)\ln(3y) \\
@@ -4262,7 +3212,7 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
 (\ln 2)^2 + (\ln 2)\ln x &= (\ln 3)^2 + (\ln 3)\ln y \quad (\text{方程 } 1')
 \end{align*}
 
-对第二个方程取 $\ln$：
+对第二个方程取 $\ln$:
 \begin{align*}
 \ln\left(3^{\ln x}\right) &= \ln\left(2^{\ln y}\right) \\
 (\ln x)\ln 3 &= (\ln y)\ln 2 \quad (\text{方程 } 2')
@@ -4271,13 +3221,13 @@ x = \frac{1}{2}, \quad x = -\frac{1}{2}
 \noindent
 \textbf{步骤 2: 代换求解}
 
-令 $u = \ln x$,$v = \ln y$：
+令 $u = \ln x$,$v = \ln y$:
 \begin{align*}
 (\ln 2)^2 + u \ln 2 &= (\ln 3)^2 + v \ln 3 \\
 u \ln 3 &= v \ln 2 \implies u = v \frac{\ln 2}{\ln 3}
 \end{align*}
 
-将 $u$ 代入方程 $1'$：
+将 $u$ 代入方程 $1'$:
 \begin{align*}
 (\ln 2)^2 + \left(v\frac{\ln 2}{\ln 3}\right)\ln 2 &= (\ln 3)^2 + v \ln 3 \\
 (\ln 2)^2 + v\frac{(\ln 2)^2}{\ln 3} &= (\ln 3)^2 + v \ln 3 \\
@@ -4293,7 +3243,7 @@ v &= -\ln 3
 u = v \frac{\ln 2}{\ln 3} = -\ln 3 \cdot \frac{\ln 2}{\ln 3} = -\ln 2
 \]
 
-转回 $x$ 和 $y$：
+转回 $x$ 和 $y$:
 \begin{align*}
 \ln x &= -\ln 2 \implies x = e^{-\ln 2} = \frac{1}{2} \\
 \ln y &= -\ln 3 \implies y = e^{-\ln 3} = \frac{1}{3}
@@ -4537,6 +3487,98 @@ u = v \frac{\ln 2}{\ln 3} = -\ln 3 \cdot \frac{\ln 2}{\ln 3} = -\ln 2
         \]
     \end{solution}
 
+    \question 计算所有实数 $(x, y, z)$ 可能的 $x$ 值的平方和
+\[
+\begin{cases}
+xy + 4z = 60 \\
+yz + 4x = 60 \\
+zx + 4y = 60 
+\end{cases}
+\]
+\begin{solution}
+由 \textcircled{1} - \textcircled{2} 得 $y(x-z)+4(z-x)=0$
+即 $(x-z)(y-4)=0$
+解得 $y=4$ 或 $x=z$
+
+同理,由 \textcircled{2} - \textcircled{3} 得 $(y-x)(z-4)=0$,即 $z=4$ 或 $x=y$
+由 \textcircled{3} - \textcircled{1} 得 $(z-y)(x-4)=0$,即 $x=4$ 或 $y=z$
+
+
+情形 1:$x, y, z$ 全相等,即 $x=y=z$
+代入 \textcircled{1} 得 $x^2+4x-60=0$
+解得 $(x+10)(x-6)=0$
+此时 $x=-10$ 或 $x=6$
+
+情形 2:$x, y, z$ 中有两个相等,另一个为 4
+若 $y=z=4$,代入 \textcircled{1} 得 $4x+16=60$,解得 $4x=44$,即 $x=11$
+若 $x=y=4$,代入 \textcircled{2} 得 $4z+16=60$,解得 $z=11$,此时 $x=4$
+若 $x=z=4$,代入 \textcircled{1} 得 $4y+16=60$,解得 $y=11$,此时 $x=4$
+
+情形 3:若 $x$ 为 4,且 $y, z$ 不一定为 4
+当 $x=4$ 时,由 \textcircled{1} 和 \textcircled{2} 得:
+$4y+4z=60 \implies y+z=15$
+$yz+16=60 \implies yz=44$
+由此可知 $y, z$ 是方程 $t^2-15t+44=0$ 的根
+解得 $(t-4)(t-11)=0$,即 $\{y, z\} = \{4, 11\}$
+这涵盖了情形 2 中的情况,此时 $x=4$ 或 $x=11$
+
+综合以上所有情形,$x$ 的所有可能取值为 $\{-10, 6, 4, 11\}$
+$x$ 的平方和计算如下:
+\[(-10)^2 + 6^2 + 4^2 + 11^2\]
+\[100 + 36 + 16 + 121 = 273\]
+所以所有可能的 $x$ 的平方和为 273。
+\end{solution}
+
+    \question 解方程组
+    \[
+    \begin{cases}
+    x+y+z=6 \\
+    x^{2}+y^{2}+z^{2}=18 \\
+    \sqrt{x}+\sqrt{y}+\sqrt{z}=4
+    \end{cases}
+    \]
+    \begin{solution}
+    根据韦达定理,令 $x, y, z$ 为三次方程
+\[t^{3}-\alpha t^{2}+\beta t-\gamma=0\]
+的根。
+
+由题意可知,
+\[\alpha=6, \beta=?, \gamma=?\]
+因为 $\beta = xy+xz+yz$
+且 $(x+y+z)^{2} = x^{2}+y^{2}+z^{2}+2(xy+xz+yz)$
+所以 $6^{2} = 18+2(xy+xz+yz)$
+解得 $9 = xy+xz+yz$。
+
+又因为 $(\sqrt{x}+\sqrt{y}+\sqrt{z})^{2} = x+y+z+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})$
+所以 $4^{2} = 6+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})$
+由此可得
+\[\sqrt{xy}+\sqrt{xz}+\sqrt{yz} = 5\]
+对上式两边平方,有
+\[(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})^{2} = 5^{2}\]
+展开得
+\[xy+xz+yz+2\sqrt{xyz}(\sqrt{x}+\sqrt{y}+\sqrt{z})=25\]
+代入已知数值
+\[9+2\sqrt{xyz} \cdot 4=25\]
+解得 $\sqrt{xyz}=2$,即 $xyz=4$。
+
+因此,该三次方程为
+\[t^3 - 6t^2 + 9t - 4 = 0\]
+利用有理根定理进行综合除法:
+\[\begin{array}{r|cccc}
+1 & 1 & -6 & 9 & -4 \\
+\cline{2-5}
+& & 1 & -5 & 4 \\
+\cline{2-5}
+& 1 & -5 & 4 & 0 \\
+\end{array}\]
+方程可分解为
+\[(t-1)(t^2 - 5t + 4) = 0\]
+进一步分解得
+\[(t-1)(t-1)(t-4) = 0\]
+解得根为 $t=1, 1, 4$。
+所以,方程组的解为 $(x,y,z) = (1, 1, 4), (1, 4, 1), (4, 1, 1)$。
+\end{solution}
+
     \question 若 $x,y,z$ 满足
     \[
     \begin{cases} 
@@ -4597,7 +3639,7 @@ u = v \frac{\ln 2}{\ln 3} = -\ln 3 \cdot \frac{\ln 2}{\ln 3} = -\ln 2
 \begin{solution}
 
 \noindent
-\textbf{步骤 1：令代换}
+\textbf{步骤 1:令代换}
 \[
 u = \sqrt{\frac{x+y}{x}} \implies \frac{x+y}{x} = u^2
 \]
@@ -4619,17 +3661,17 @@ u + \frac{1}{u} &= \frac{5}{2} \\
 \]
 
 \noindent
-\textbf{步骤 2：得到 $y$ 与 $x$ 的线性关系}
+\textbf{步骤 2:得到 $y$ 与 $x$ 的线性关系}
 \begin{align*}
 \text{若 } u^2 = \frac{1}{4} &\implies \frac{x+y}{x} = \frac{1}{4} \implies y = -\frac{3}{4}x \\
 \text{若 } u^2 = 16 &\implies \frac{x+y}{x} = 16 \implies y = 3x
 \end{align*}
 
 \noindent
-\textbf{步骤 3：代入 $2x^2+y^2=176$ 求 $x$ 和 $y$}
+\textbf{步骤 3:代入 $2x^2+y^2=176$ 求 $x$ 和 $y$}
 
 \noindent
-\textbf{情况 1：} $y=-\frac{3}{4}x$
+\textbf{情况 1:} $y=-\frac{3}{4}x$
 \begin{align*}
 2x^2 + \left(-\frac{3}{4}x\right)^2 &= 176 \\
 2x^2 + \frac{9}{16}x^2 &= 176 \\
@@ -4640,7 +3682,7 @@ y &= -\frac{3}{4}x = \mp 12 \sqrt{\frac{11}{41}}
 \end{align*}
 
 \noindent
-\textbf{情况 2：} $y=3x$
+\textbf{情况 2:} $y=3x$
 \begin{align*}
 2x^2 + (3x)^2 &= 176 \\
 2x^2 + 9x^2 &= 176 \\
@@ -4651,7 +3693,7 @@ y &= 3x = \pm 12
 \end{align*}
 
 \noindent
-\textbf{步骤 4：解集}
+\textbf{步骤 4:解集}
 \[
 (x,y) = (4,12), \quad (-4,-12), \quad \left(16\sqrt{\frac{11}{41}}, -12\sqrt{\frac{11}{41}}\right), \quad \left(-16\sqrt{\frac{11}{41}}, 12\sqrt{\frac{11}{41}}\right)
 \]
@@ -4683,13 +3725,13 @@ x = u^3, \quad y = v^3.
 91-2u^3 = 6 u v^2, \quad 37-2v^3 = 6 u^2 v.
 \]
 
-移项整理：
+移项整理:
 \[
 6 u v^2 + 2 u^3 = 91, \quad 6 u^2 v + 2 v^3 = 37.
 \]
 
 \noindent
-两式相加：
+两式相加:
 \begin{align*}
 6 u v^2 + 2 u^3 + 6 u^2 v + 2 v^3 &= 91 + 37 = 128 \\
 2(u^3 + v^3 + 3 u^2 v + 3 u v^2) &= 128 \\
@@ -4699,7 +3741,7 @@ u+v &= 4.
 \end{align*}
 
 \noindent
-代入 $v = 4-u$ 至第一方程：
+代入 $v = 4-u$ 至第一方程:
 \begin{align*}
 6 u (4-u)^2 + 2 u^3 &= 91 \\
 6 u (16 - 8u + u^2) + 2 u^3 &= 91 \\
@@ -4709,12 +3751,12 @@ u+v &= 4.
 \end{align*}
 
 \noindent
-观察因式分解：
+观察因式分解:
 \[
 u^3 - 6 u^2 + 12 u = (u-2)^3 + 27/8?
 \]
 
-更精确地：
+更精确地:
 \[
 u^3 - 6 u^2 + 12 u = (u-2)^3 + 27/8 \quad \text{（通过立方展开或系数对比）}.
 \]
@@ -4731,13 +3773,13 @@ v = 4 - u = 4 - \frac{7}{2} = \frac{1}{2}.
 \]
 
 \noindent
-回代 $x = u^3$, $y = v^3$：
+回代 $x = u^3$, $y = v^3$:
 \[
 x = \left(\frac{7}{2}\right)^3 = \frac{343}{8}, \quad y = \left(\frac{1}{2}\right)^3 = \frac{1}{8}.
 \]
 
 \noindent
-最终解为：
+最终解为:
 \[
 \boxed{x = \frac{343}{8}, \quad y = \frac{1}{8}}.
 \]
@@ -4821,7 +3863,7 @@ a^2=\frac{9b^2}{400-9b^2}.
 -225b^3+1600b^2+10000b=0.
 \]
 
-提取公因式 $25b$：
+提取公因式 $25b$:
 \[
 25b(-9b^2+64b+400)=0.
 \]
@@ -4846,7 +3888,7 @@ b=\frac{64\pm136}{18},
 b=\frac{100}{9}\quad\text{或}\quad b=-4.
 \]
 
-代入第二原方程检验：
+代入第二原方程检验:
 $b=\frac{100}{9}$ 使 $4(a^2+b^2)+25b>0$,不成立,舍去。
 
 当 $b=-4$ 时,
@@ -4883,13 +3925,13 @@ x^3 + 9x^2y = -28, \quad y^3 + xy^2 = 1
 \begin{solution}
 
 \noindent
-将第二个方程乘以 27,使方程的结构便于使用立方和公式：
+将第二个方程乘以 27,使方程的结构便于使用立方和公式:
 \[
 x^3 + 9x^2y = -28, \quad 27y^3 + 27xy^2 = 27
 \]
 
 \noindent
-将两式相加并整理：
+将两式相加并整理:
 \begin{align*}
 x^3 + 9x^2y + 27xy^2 + 27y^3 &= -28 + 27 = -1 \\
 x^3 + 3(x)^2 (3y) + 3(x)(3y)^2 + (3y)^3 &= -1 \\
@@ -4897,13 +3939,13 @@ x^3 + 3(x)^2 (3y) + 3(x)(3y)^2 + (3y)^3 &= -1 \\
 \end{align*}
 
 \noindent
-取实数解：
+取实数解:
 \[
 x + 3y = -1 \quad \implies \quad x = -1 - 3y
 \]
 
 \noindent
-将 $x = -1 - 3y$ 代入较简单的方程 $y^3 + xy^2 = 1$：
+将 $x = -1 - 3y$ 代入较简单的方程 $y^3 + xy^2 = 1$:
 \begin{align*}
 y^3 + (-1 - 3y)y^2 &= 1 \\
 y^3 - y^2 - 3y^3 &= 1 \\
@@ -4912,26 +3954,26 @@ y^3 - y^2 - 3y^3 &= 1 \\
 \end{align*}
 
 \noindent
-通过观察,$y = -1$ 是一个解：
+通过观察,$y = -1$ 是一个解:
 \[
 2(-1)^3 + (-1)^2 + 1 = -2 + 1 + 1 = 0
 \]
 
 \noindent
-分解余式：
+分解余式:
 \[
 2y^3 + y^2 + 1 = (y+1)(2y^2 - y + 1)
 \]
 
 \noindent
-判别式：
+判别式:
 \[
 \Delta = (-1)^2 - 4\cdot 2 \cdot 1 = 1 - 8 < 0
 \]
 二次方程无实数解,因此唯一实数解为 $y=-1$。
 
 \noindent
-由 $x = -1 - 3y$ 得到：
+由 $x = -1 - 3y$ 得到:
 \[
 x = -1 - 3(-1) = 2
 \]
@@ -4961,7 +4003,7 @@ x^3 + 6 x (m^2 x^2) = x^3 + 6 m^2 x^3 = x^3 (1 + 6 m^2) = 99,
 \]
 
 \noindent
-两式相除消去 $x^3$：
+两式相除消去 $x^3$:
 \[
 \frac{1 + 6 m^2}{2 m^3 + 3 m} = \frac{99}{70}.
 \]
@@ -4979,7 +4021,7 @@ x^3 + 6 x (m^2 x^2) = x^3 + 6 m^2 x^3 = x^3 (1 + 6 m^2) = 99,
 \]
 
 \noindent
-检查二次项的判别式：
+检查二次项的判别式:
 \[
 \Delta = (-96)^2 - 4 \cdot 66 \cdot 35 = 9216 - 9240 = -24 < 0
 \]
@@ -4989,7 +4031,7 @@ m = \frac{2}{3} \quad \implies \quad y = \frac{2}{3} x.
 \]
 
 \noindent
-将 $y = \frac{2}{3} x$ 代入第一个方程：
+将 $y = \frac{2}{3} x$ 代入第一个方程:
 \[
 x^3 + 6 x \left(\frac{2}{3} x\right)^2 = x^3 + 6 x \cdot \frac{4}{9} x^2 = x^3 + \frac{24}{9} x^3 = x^3 + \frac{8}{3} x^3 = \frac{11}{3} x^3 = 99,
 \]
@@ -5020,13 +4062,13 @@ y = \frac{2}{3} x = 2.
 \begin{solution}
 
 \noindent
-\textbf{步骤 1：对两个方程进行倒数代换}
+\textbf{步骤 1:对两个方程进行倒数代换}
 \[
 X = \frac{1}{x}, \quad Y = \frac{1}{y}
 \]
 
 \noindent
-第一个方程：
+第一个方程:
 \begin{align*}
 \frac{36y^2(x+1)}{36x^2y^2} + \frac{36x^2(y+1)}{36x^2y^2} &= \frac{7x^2y^2}{36x^2y^2} \\
 \frac{x+1}{x^2} + \frac{y+1}{y^2} &= \frac{7}{36} \\
@@ -5035,7 +4077,7 @@ X + X^2 + Y + Y^2 &= \frac{7}{36} \quad (1)
 \end{align*}
 
 \noindent
-第二个方程：
+第二个方程:
 \begin{align*}
 \frac{6x}{xy} + \frac{6y}{xy} + \frac{xy}{xy} &= 0 \\
 \frac{6}{y} + \frac{6}{x} + 1 &= 0 \\
@@ -5063,7 +4105,7 @@ Y = -X-\frac{1}{6} \implies Y = \frac{1}{6} \quad \text{or} \quad Y = -\frac{2}{
 \]
 
 \noindent
-\textbf{步骤 4：返回到 } x, y
+\textbf{步骤 4:返回到 } x, y
 \[
 x = \frac{1}{X}, \quad y = \frac{1}{Y}
 \]
@@ -5073,7 +4115,7 @@ x = \frac{1}{X}, \quad y = \frac{1}{Y}
 \]
 
 \noindent
-\textbf{结论：实数解为}
+\textbf{结论:实数解为}
 \[
 (x,y) = (3,6), \quad (x,y) = (-2,-\frac{3}{2})
 \]
@@ -5088,7 +4130,7 @@ x^4 + y^4 = 97, \quad x+y=5
 \begin{solution}
 
 \noindent
-\textbf{方法 A：使用对称替换}
+\textbf{方法 A:使用对称替换}
 
 \noindent
 设
@@ -5114,7 +4156,7 @@ u^4 + 6u^2v^2 + v^4 &= \frac{97}{2}
 \end{align*}
 
 \noindent
-代入 $u=\frac{5}{2}$：
+代入 $u=\frac{5}{2}$:
 \begin{align*}
 \left(\frac{5}{2}\right)^4 + 6\left(\frac{5}{2}\right)^2 v^2 + v^4 &= \frac{97}{2} \\
 \frac{625}{16} + 6 \cdot \frac{25}{4} v^2 + v^4 &= \frac{97}{2} \\
@@ -5131,23 +4173,23 @@ v^4 + \frac{75}{2} v^2 - \frac{151}{16} &= 0 \\
 \]
 
 \noindent
-回代得到：
+回代得到:
 \[
 x = u+v = \frac{5}{2} \pm \frac{1}{2} = 3 \text{ 或 } 2, \quad y = u-v = \frac{5}{2} \mp \frac{1}{2} = 2 \text{ 或 } 3
 \]
 
 \noindent
-\textbf{解对称性：}
+\textbf{解对称性:}
 \[
 (x,y) = (3,2), \quad (2,3)
 \]
 
 \vspace{1em}
 \noindent
-\textbf{方法 B：直接代入法}
+\textbf{方法 B:直接代入法}
 
 \noindent
-由 $x+y=5$ 得 $y=5-x$,代入第一个方程：
+由 $x+y=5$ 得 $y=5-x$,代入第一个方程:
 \begin{align*}
 x^4 + (5-x)^4 &= 97 \\
 x^4 + 625 - 500x + 150x^2 - 20x^3 + x^4 &= 97 \\
@@ -5448,7 +4490,7 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
 \end{align*}
 
 \begin{solution}
-由(2)式：
+由(2)式:
 \[
 (x+y+z)^2 - 2(xy+xz+yz) = 41
 \implies 9^2 - 2(xy+xz+yz) = 41
@@ -5456,7 +4498,7 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
 \implies xy+xz+yz = 20.
 \]
 
-由(3)式：
+由(3)式:
 \begin{align*}
 x^2(y+z) + y^2(z+x) + z^2(x+y) &= 180 \\
 x^2(9-x) + y^2(9-y) + z^2(9-z) &= 180 \\
@@ -5468,7 +4510,7 @@ x^2(9-x) + y^2(9-y) + z^2(9-z) &= 180 \\
 3xyz &= 0 \implies xyz = 0.
 \end{align*}
 
-因此,\(x, y, z\) 为三根的方程式为：
+因此,\(x, y, z\) 为三根的方程式为:
 \[
 t^3 - 9t^2 + 20t = 0 \implies t(t^2 - 9t + 20) = 0 \implies t(t-5)(t-4) = 0.
 \]
@@ -5531,29 +4573,29 @@ x^3+y^3+z^3=-3 & \text{---(3)}
 求 $x^4+y^4+z^4$ 之值。
 
 \begin{solution}
-由(2)式：
+由(2)式:
 \[
 (x+y+z)^2 - 2(xy+yz+xz) = 6 \implies 0 - 2(xy+yz+xz) = 6 \implies xy+yz+xz = -3.
 \]
 
-由(3)式：
+由(3)式:
 \[
 x^3+y^3+z^3 = (x+y+z)(x^2+y^2+z^2 - xy - yz - xz) + 3xyz \implies -3 = 0 + 3xyz \implies xyz = -1.
 \]
 
-因此,以 $x,y,z$ 为三根的方程式为：
+因此,以 $x,y,z$ 为三根的方程式为:
 \[
 t^3 - 3t + 1 = 0.
 \]
 
-于是有：
+于是有:
 \begin{align*}
 x^3-3x+1=0 &\implies x^4-3x^2+x=0, \\
 y^3-3y+1=0 &\implies y^4-3y^2+y=0, \\
 z^3-3z+1=0 &\implies z^4-3z^2+z=0.
 \end{align*}
 
-三式相加：
+三式相加:
 \[
 x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
 \]
@@ -6186,6 +5228,882 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
         a=-2,\;b=\sqrt{3},\;c=-4
         \]
     \end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{取整}{取整} \label{取整}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+        \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
+    \begin{solution}
+        令
+        \[
+        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
+        \]
+        则
+        \[
+        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
+        \]
+        所以
+        \[
+        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
+        \]
+        由于 $0 < b^2 < 1$,所以
+        \[
+        969 < a^6 < 970 \quad \Rightarrow \quad \lceil a^6 \rceil = 970
+        \]
+    \end{solution}
+
+    \question
+求所有满足
+\[
+\lfloor 0.5+\lfloor x\rfloor \rfloor = 20
+\]
+的$x$的取值范围
+
+\begin{solution}
+设
+\[
+\lfloor x\rfloor = y
+\]
+则
+\[
+\lfloor 0.5+y\rfloor = 20
+\]
+
+由于$y$为整数,所以$0.5+y$必须满足
+\[
+20 \le 0.5+y < 21
+\]
+
+化简得
+\[
+19.5 \le y < 20.5
+\]
+
+因为$y$为整数,所以
+\[
+y=20
+\]
+
+代回$\lfloor x\rfloor = y$,得
+\[
+\lfloor x\rfloor = 20
+\]
+
+因此
+\[
+20 \le x < 21
+\]
+\end{solution}
+
+\question
+求满足条件的$x$的取值范围
+\[
+\lceil y-1.3\rceil = 16
+\]
+其中$y=\lceil x\rceil$
+
+\begin{solution}
+设
+\[
+\lceil x\rceil = y
+\]
+则
+\[
+\lceil y-1.3\rceil = 16
+\]
+
+根据取整定义,有
+\[
+15 \le y-1.3 < 16
+\]
+
+两边同时加$1.3$,得
+\[
+16.3 \le y < 17.3
+\]
+
+由于$y$为整数,所以
+\[
+y=17
+\]
+
+即
+\[
+\lceil x\rceil = 17
+\]
+
+因此
+\[
+16 < x \le 17
+\]
+\end{solution}
+
+\question
+求满足
+\[
+\lceil x\rceil \lceil 2x\rceil = 15
+\]
+的$x$的取值范围
+
+\begin{solution}
+设
+\[
+x=n-r
+\]
+其中$n$为整数,$0<r\le 1$,则 $\lceil 2x \rceil = 2n$ 或 $2n-1$.
+
+当 $r < 1/2$,
+\[
+\lceil x \rceil = n, \quad \lceil 2x \rceil = 2n
+\]
+\[\implies n(2n) = 15\]
+
+当  $r \ge 1/2$,
+\[\lfloor x \rceil = n, \quad \lceil 2x \rceil = 2n-1\]
+\[\implies n(2n-1) = 15\]
+\[2n^2-n-15 = 0\]
+\[(n-3)(2n+5) = 0\]
+\[\therefore n = 3\]
+
+$x$的取值范围$(2, 2.5]$
+\end{solution}
+
+\question
+计算
+\[
+\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+\]
+
+\begin{solution}
+解法一  
+
+将整数部分与小数部分分开,
+\[
+\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+=\sum_{r=1}^{34}\frac{18r}{35}
+-\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
+\]
+
+先计算第一项,
+\[
+\sum_{r=1}^{34}\frac{18r}{35}
+=\frac{18}{35}\sum_{r=1}^{34}r
+=\frac{18}{35}\cdot\frac{34\cdot35}{2}
+=18\cdot17
+=306
+\]
+
+注意到对任意$r$,
+\[
+\left\{\frac{18r}{35}\right\}
++\left\{\frac{18(35-r)}{35}\right\}=1
+\]
+
+当$r$从$1$到$34$时,可以配成$17$对,因此
+\[
+\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
+\]
+
+于是
+\[
+\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+=306-17
+=289
+\]
+
+解法二  
+
+注意到
+\[
+\frac{18r}{35}+\frac{18(35-r)}{35}=18
+\]
+
+因此
+\[
+\left\lfloor \frac{18r}{35}\right\rfloor
++\left\lfloor \frac{18(35-r)}{35}\right\rfloor
++\left\{\frac{18r}{35}\right\}
++\left\{\frac{18(35-r)}{35}\right\}=18
+\]
+
+又因为
+\[
+\left\{\frac{18r}{35}\right\}
++\left\{\frac{18(35-r)}{35}\right\}=1
+\]
+
+所以
+\[
+\left\lfloor \frac{18r}{35}\right\rfloor
++\left\lfloor \frac{18(35-r)}{35}\right\rfloor
+=17
+\]
+
+当$r$从$1$到$34$时,可配成$17$组
+\[
+(1,34),(2,33),\dots,(17,18)
+\]
+
+每一组的和均为$17$,因此
+\[
+\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+=17\times17
+=289
+\]
+\end{solution}
+
+\question
+已知
+\[
+\begin{cases}
+\lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
+\lceil c \rceil + \lfloor b \rfloor + \{a\} = 11.3 \\
+\lceil a \rceil + \lceil c \rceil + \{b\} = 9.7
+\end{cases}
+\]
+求$a+b+c$
+
+\begin{solution}
+由题意可知,小数部分分别为
+\[
+\{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
+\]
+
+代入原方程组,得
+\[
+\lfloor b \rfloor + \lceil a \rceil = 16
+\]
+\[
+\lceil c \rceil + \lfloor b \rfloor = 11
+\]
+\[
+\lceil a \rceil + \lceil c \rceil = 9
+\]
+
+由第二式与第三式可得
+\[
+\lceil c \rceil = 2
+\]
+\[
+\lfloor b \rfloor = 9-1=8
+\]
+\[
+\lceil a \rceil = 9-2=7
+\]
+
+因此
+\[
+\lfloor a \rfloor = 7,\quad \lfloor b \rfloor = 8,\quad \lfloor c \rfloor = 2
+\]
+
+结合小数部分,
+\[
+a=7.3,\quad b=8.7,\quad c=2
+\]
+
+于是
+\[
+a+b+c=18
+\]
+\end{solution}
+\question
+设$x$为正实数,且满足
+\[
+x^2+\{x\}^2=27
+\]
+求$x$
+
+\begin{solution}
+设
+\[
+x=n+r
+\]
+其中$n$为整数,$0\le r<1$
+
+注意到
+\[
+x^2 \le x^2+\{x\}^2 < x^2+1
+\]
+因此
+\[
+26<x^2\le27
+\]
+从而
+\[
+n=5
+\]
+
+代入$x=5+r$,得
+\begin{align*}
+(5+r)^2+r^2&=27 \\
+25+10r+r^2+r^2&=27 \\
+2r^2+10r-2&=0 \\
+r^2+5r-1&=0
+\end{align*}
+
+解得
+\[
+r=\frac{-5\pm\sqrt{29}}{2}
+\]
+由于$0\le r<1$,故
+\[
+r=\frac{-5+\sqrt{29}}{2}
+\]
+
+于是
+\[
+x=5+r=\frac{5+\sqrt{29}}{2}
+\]
+\end{solution}
+\question
+设$r$为实数,且满足
+\[
+\left\lfloor r+\frac{19}{100}\right\rfloor
++\left\lfloor r+\frac{20}{100}\right\rfloor
++\cdots
++\left\lfloor r+\frac{97}{100}\right\rfloor
+=546
+\]
+求$\lfloor100r\rfloor$
+
+\begin{solution}
+从$\frac{19}{100}$到$\frac{97}{100}$,共有
+\[
+97-19+1=79
+\]
+项
+
+设这些取整值只可能为$7$或$8$
+
+若全部等于$7$,则和为
+\[
+79\times7=553
+\]
+
+若全部等于$8$,则和为
+\[
+79\times8=632
+\]
+
+由于
+\[
+553>546,\quad 632>546
+\]
+说明其中既有$7$也有$8$
+
+设前$k$项等于$7$,其余$79-k$项等于$8$,则
+\begin{align*}
+7k+8(79-k)&=546 \\
+7k+632-8k&=546 \\
+632-k&=546 \\
+k&=86
+\end{align*}
+
+这表示
+\[
+\left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
+\left\lfloor r+\frac{57}{100}\right\rfloor=8
+\]
+
+于是
+\[
+7\le r+\frac{56}{100}<8
+\]
+\[
+8\le r+\frac{57}{100}<9
+\]
+
+化简得
+\[
+7.43\le r<7.44
+\]
+
+两边同乘$100$,得到
+\[
+743\le100r<744
+\]
+
+因此
+\[
+\lfloor100r\rfloor=743
+\]
+\end{solution}
+
+\question
+5) 求
+\[
+\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
+\]
+
+\begin{solution}
+因为
+\[
+\lfloor \sqrt{202}\rfloor=14
+\]
+所以$\lfloor \sqrt{k}\rfloor\in\{1,2,3,\dots,14\}$
+
+当
+\[
+(n-1)^2<k\le n^2
+\]
+时,有
+\[
+\lfloor \sqrt{k}\rfloor=n
+\]
+对应的$k$的个数为
+\[
+n^2-(n-1)^2=2n-1
+\]
+其中$n=1,2,\dots,13$
+
+当$n=14$时,对应的个数为
+\[
+202-13^2=202-169=33
+\]
+
+因此
+\[
+\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
+=\sum_{n=1}^{13}n(2n-1)+14\times33
+\]
+
+\begin{align*}
+&=\sum_{n=1}^{13}(2n^2-n)+462 \\
+&=2\sum_{n=1}^{13}n^2-\sum_{n=1}^{13}n+462 \\
+&=2\left(\frac{13\times14\times27}{6}\right)-\frac{13\times14}{2}+462 \\
+&=1638-91+462 \\
+&=2009
+\end{align*}
+\end{solution}
+
+\question
+6) 求满足
+\[
+\lfloor \sqrt{x}\rfloor-\lfloor \sqrt{x+34}\rfloor=0
+\]
+的最小整数$x$
+
+\begin{solution}
+设
+\[
+\lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor=y
+\]
+则$x$与$x+34$必须落在同一个平方区间内,即
+\[
+y^2\le x<x+34<(y+1)^2
+\]
+
+于是有
+\[
+(y+1)^2-y^2>34
+\]
+
+化简得
+\begin{align*}
+2y+1&>34 \\
+2y&>33 \\
+y&>16.5
+\end{align*}
+
+因此
+\[
+y=17
+\]
+
+最小的$x$为
+\[
+x=y^2=17^2=289
+\]
+\end{solution}
+
+\question
+7)
+\[
+\lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
+\]
+
+\begin{solution}
+\[
+\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
+=\frac{143}{2}(1+995)
+\]
+
+\[
+\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
+=\frac{143}{2}(2+996)
+\]
+
+\[
+\lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil
+=\frac{142}{2}(7+994)
+\]
+
+\[
+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil
+=\frac{142}{2}(8+995)
+\]
+
+\[
+\text{最终结果}=715285
+\]
+\end{solution}
+
+\question
+8)
+\[
+x^2 - 6\lfloor x \rfloor + 5 = 0
+\]
+
+\begin{solution}
+令 $\lfloor x \rfloor = n$, 代入方程得
+\[
+x^2 - 6n + 5 = 0 \implies x^2 = 6n - 5
+\]
+
+检查每个可能的 $n$ 值:
+
+\begin{align*}
+n=1 &: x^2 = 1 \implies x = 1 \quad (\text{有效, } 1 \le x < 2)\\
+n=2 &: x^2 = 7 \implies x = \sqrt{7} \quad (2 < \sqrt{7} < 3)\\
+n=3 &: x^2 = 13 \implies x = \sqrt{13} \quad (3 < \sqrt{13} < 4)\\
+n=4 &: x^2 = 19 \implies x = \sqrt{19} \quad (4 < \sqrt{19} < 5)\\
+n=5 &: x^2 = 25 \implies x = 5 \quad (\text{有效})
+\end{align*}
+
+\noindent
+因此,方程的解为
+\[
+x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
+\]
+\end{solution}
+
+\question
+9)
+\[
+\lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
+\]
+
+\begin{solution}
+令 $x = n + r$, $0 \le r < 1$. 则
+\[
+\lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
+\]
+
+展开得:
+\begin{align*}
+2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
+\end{align*}
+
+解不等式:
+\[
+2n^2+n+1 \le 111,\quad 2n^2+3n \ge 111
+\]
+得$n=7$,因此解
+\[
+\lceil 7r \rceil + \lfloor 8r \rfloor =6
+\]
+得
+\[
+\frac{3}{8} \le r \le \frac{3}{7} \Rightarrow 7 + \frac{3}{8} \le x \le 7 + \frac{3}{7}
+\]
+\end{solution}
+
+\question
+12)
+\[
+\left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
+\]
+
+\begin{solution}
+要找序列中不同整数的个数,考虑连续两项的差:
+\[
+\frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
+\]
+
+\noindent
+\textbf{前 1007 项:} $n = 1,2,\dots,1007$  
+\[
+\frac{1007^2}{2016} \approx 503.0005 > 503
+\]  
+因此前 1007 项产生整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。
+
+\noindent
+\textbf{第 1008 项到 2016 项:}  
+每项至少比前一项大 1,因此产生 $2016-1008+1 = 1009$ 个不同整数。
+
+\noindent
+\textbf{总不同整数数:}  
+\[
+504 + 1009 = 1513
+\]
+
+\noindent
+因此序列中共有 $1513$ 个不同整数。
+\end{solution}
+
+\question
+13)
+\[
+\sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
+\]
+
+\begin{solution}
+令 
+\[
+A_n = \left\lfloor \frac{2^n}{3} \right\rfloor
+\]
+
+注意到 
+\[
+A_n = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}.
+\]
+
+因此
+\begin{align*}
+S &= \sum_{n=0}^{1000} A_n = \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
+&= \frac{1}{3} \sum_{n=0}^{1000} 2^n - \frac{1001}{2} + \frac{1}{6} \sum_{n=0}^{1000} (-1)^n \\
+&= \frac{1}{3} (2^{1001}-1) - \frac{1001}{2} + \frac{1}{6} \cdot 0 \\
+&= \frac{2^{1001}-1}{3} - \frac{1001}{2} + \frac{1}{6} \\
+&= \frac{2(2^{1001}-1) - 3\cdot 1001 + 1}{6} \\
+&= \frac{2^{1002} - 3004}{6} = \frac{2^{1001}-1502}{3}.
+\end{align*}
+
+\noindent
+因此和可表示为
+\[
+S = 2^{1001}/3 - 1502/3 = 2^{1001} - 1502 \text{ (經約分後)}.
+\]
+\end{solution}
+
+\question
+14)
+\[
+\lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
+\]
+
+\begin{solution}
+設 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$. 則
+\[
+\lfloor x^2 \rfloor - n^2 = \lfloor 2 n r + r^2 \rfloor = 1999.
+\]
+
+最小的 $n$ 滿足
+\[
+2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
+\]
+
+因此
+\[
+2 \cdot 1000 \cdot r + r^2 = 1999 \implies r^2 + 2000 r - 1999 = 0
+\]
+
+解得
+\[
+r = -1000 + \sqrt{1001999}.
+\]
+
+\noindent
+所以
+\[
+x = n + r = 1000 + (-1000 + \sqrt{1001999}) = \sqrt{1001999}.
+\]
+\end{solution}
+
+\question
+16) 求方程
+\[
+\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
+\]
+在 $n \in \mathbb{N}$ 且 $1 \le n \le 100$ 的解的个数。
+
+\begin{solution}
+设 $f(n) = \lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor$, 则
+\[
+f(n+6) = f(n) + 6
+\]
+成立。
+
+定义 $g(n) = f(n) - (n-1)$, 则
+\[
+g(n+6) = g(n).
+\]
+
+检查前几个值:
+\[
+g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
+\]
+
+因此在 1 到 100 之间共有 68 个解。
+\end{solution}
+
+\question
+17) 求方程
+\[
+\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{5} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{5}
+\]
+的解。
+
+\begin{solution}
+右边为整数,左边为整数,因此 $n/2$, $n/3$, $n/5$ 都必须为整数,即 $n$ 为 30 的倍数。
+
+在允许范围内,共有 3 个解。
+\end{solution}
+
+\question
+18) 求方程
+\[
+\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
+\]
+的解。
+
+\begin{solution}
+由于
+\[
+\lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor \le n/2 + n/3 + n/6 = n,
+\]
+因此等号成立的情况共有 16 个。
+\end{solution}
+
+\question
+19) 求 $x$ 满足方程
+\[
+2\lfloor x \rfloor + 3x = 4 - 5\{x\}
+\]
+
+\begin{solution}
+设 $x = n+r$, 其中 $n = \lfloor x \rfloor$ 是整数部分, $r = \{x\}$ 是小数部分 ($0 \le r < 1$)。代入方程得
+\[
+2n + 3(n+r) = 4 - 5r
+\]
+化简得
+\[
+5n + 3r = 4 - 5r
+\]
+\[
+5n + 8r = 4
+\]
+
+由 $0 \le r < 1$, 有
+\[
+0 \le 8r < 8
+\]
+\[
+-4 < 5n \le 4
+\]
+
+唯一满足该不等式的整数是 $n=0$,因此
+\[
+n = \lfloor x \rfloor = 0
+\]
+
+代入 $n=0$ 回到方程 $5n+8r=4$:
+\[
+8r = 4 \implies r = \frac{1}{2}
+\]
+
+因此解为
+\[
+x = n + r = 0 + \frac{1}{2} = \frac{1}{2}
+\]
+\end{solution}
+
+\question
+20) 求满足条件的正整数 $x$ 的个数
+\[
+\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor
+\]
+
+\begin{solution}
+设
+\[
+\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
+\]
+
+由定义有
+\[
+m \le \frac{x}{99} < m+1 \implies 99m \le x < 99(m+1)
+\]
+\[
+m \le \frac{x}{101} < m+1 \implies 101m \le x < 101(m+1)
+\]
+
+因此
+\[
+101m \le x < 99(m+1)
+\]
+
+当 $m>49$ 时, $101m > 99(m+1)$, 无解。
+
+对于 $0 \le m \le 49$, 可行整数个数为
+\[
+(99(m+1)-1) - 101 m +1 = 99(m+1)-101 m = 99-2m
+\]
+
+总和为
+\[
+\sum_{m=0}^{49} (99-2m) = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} = 4950 - 2450 = 2500
+\]
+
+排除 $x=0$ 不是正整数, 最终答案为
+\[
+\boxed{2499}
+\]
+\end{solution}
+
+\question
+21) 求满足条件的整数 $x$
+\[
+\left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
+\]
+
+\begin{solution}
+首先近似使用不取整的值:
+\[
+\frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
+\]
+
+\[
+\frac{6x+3x+x}{6} -3 < 224 < \frac{6x+3x+x}{6} \implies \frac{10x}{6}-3 <224<\frac{10x}{6}
+\]
+
+\[
+\frac{5x}{3}-3 < 224 < \frac{5x}{3} \implies 134.4 \le x < 136.2
+\]
+
+由于 $x$ 为整数,只有 $x=135$ 可行。
+\[
+\therefore x = 135
+\]
+\end{solution}
+
+\question
+22) 求满足条件的最大实数 $x$
+\[
+\frac{\lfloor x \rfloor}{x} = \frac{9}{10}
+\]
+
+\begin{solution}
+设 $x = \lfloor x \rfloor + \{x\}$, 则有
+\[
+10 \lfloor x \rfloor = 9 x = 9 (\lfloor x \rfloor + \{x\})
+\]
+\[
+10 \lfloor x \rfloor = 9 \lfloor x \rfloor + 9 \{x\} \implies \lfloor x \rfloor = 9 \{x\}
+\]
+
+由于 $0 \le \{x\} < 1$, 可得 $\lfloor x \rfloor = 1,2,\dots,8$, 对应 $\{x\} = 1/9, 2/9, \dots, 8/9$
+
+取最大值 $\{x\} = 8/9$, $\lfloor x \rfloor = 8$
+\[
+x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
+\]
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -7959,7 +7877,7 @@ f(n) = f(n-40),
         &= 5 \sqrt[5]{\frac{a+b}{16a^2b^2(a+b)^2}} \\
         &\ge 5 \sqrt[5]{\frac{20}{16\cdot 2000^2}} = \frac{1}{4}
         \end{align*}
-        等号成立当且仅当$a=b=10$。以下为错误示范：
+        等号成立当且仅当$a=b=10$。以下为错误示范:
 
         由 AM–GM不等式,
         \[
@@ -8158,7 +8076,7 @@ a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 10.
 a^2+b^2+c^2+d^2 \ge 4.
 \]
 
-同样地,对六个二次项之和应用 A.M.-G.M.：
+同样地,对六个二次项之和应用 A.M.-G.M.:
 \[
 \frac{ab+ac+ad+bc+bd+cd}{6} \ge \sqrt[6]{(ab)(ac)(ad)(bc)(bd)(cd)}
 = \sqrt[6]{a^3b^3c^3d^3}=\sqrt[6]{(abcd)^3}=1,
@@ -8176,13 +8094,13 @@ a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 4+6=10,
 \end{solution}
 
 \question
-设 $a$, $b$ 和 $c$ 为正实数,且满足 $a^2+b^2+c^2 = 1$。证明：
+设 $a$, $b$ 和 $c$ 为正实数,且满足 $a^2+b^2+c^2 = 1$。证明:
 \[
 \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \ge 3 + \frac{2(a^3+b^3+c^3)}{abc}.
 \]
 
 \begin{solution}
-考虑左边减右边：
+考虑左边减右边:
 \begin{align*}
 &\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} - 3 - \frac{2(a^3+b^3+c^3)}{abc} \\
 &= \frac{a^2+b^2+c^2}{a^2} + \frac{a^2+b^2+c^2}{b^2} + \frac{a^2+b^2+c^2}{c^2} - 3 - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
@@ -9153,7 +9071,7 @@ A-G \ge \frac{(\sqrt{M}-\sqrt{m})^2}{n},
 \sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \ge n\Big(\prod_{j=1}^n x_j\Big)^{1/n}.
 \]
 
-把右端的几何平均下界由算术—几何均值不等式给出：对这 $n$ 个数
+把右端的几何平均下界由算术—几何均值不等式给出:对这 $n$ 个数
 \[
 \sqrt{Mm},\; x_2,\; x_3,\;\dots,\; x_{n-1},\; \sqrt{Mm}
 \]
@@ -9209,7 +9127,7 @@ A-G \ge \frac{1}{n}\bigl(\sqrt{M}-\sqrt{m}\bigr)^2.
 \sum_{i=1}^n x_i\le \frac{n}{3}。
 \]
 
-注：当且仅当 $n=9k$,其中 $k$ 个 $x_i=-1$,其余 $8k$ 个 $x_i=\frac12$ 时取等号。
+注:当且仅当 $n=9k$,其中 $k$ 个 $x_i=-1$,其余 $8k$ 个 $x_i=\frac12$ 时取等号。
 \end{solution}
 
     \question 已知非负实数 $x_1, x_2, \ldots, x_5$ 满足 $x_1^2 + x_2^2 + \cdots + x_5^2 = 4$. 求下列表达式的最大值:
@@ -9497,7 +9415,7 @@ a_{61}=\frac{3660}{3661}.
         \]
     \end{solution}
 
-    \question 已知数列 $\{a_n\}$ 由递推关系定义如下：
+    \question 已知数列 $\{a_n\}$ 由递推关系定义如下:
 \[
 a_0 = 1, \quad a_{n+1} = \frac{a_n}{2(n+1)}, \quad n \ge 0,
 \]
@@ -9766,7 +9684,7 @@ S_n=2a_n-2^n.
 
 (I) 求 $a_1,a_4$；
 
-(II) 证明：$\{a_{n+1}-2a_n\}$ 是等比数列；
+(II) 证明:$\{a_{n+1}-2a_n\}$ 是等比数列；
 
 (III) 求数列 $\{a_n\}$ 的通项公式。
 
@@ -9842,7 +9760,7 @@ a_n=2^{n-1}(n+1).
 a_{n+1}=\frac{2a_n}{a_n+1}\quad (n=1,2,3,\dots).
 \]
 
-(I) 证明：数列 $\left\{\frac{1}{a_n}-1\right\}$ 是等比数列；
+(I) 证明:数列 $\left\{\frac{1}{a_n}-1\right\}$ 是等比数列；
 
 (II) 求数列 $\{a_n\}$ 的前 $n$ 项和 $S_n$。
 
@@ -10233,11 +10151,11 @@ c_n=\frac{b_n}{a_n}\ (n\in \mathbf{N}^*).
 (II) 设数列 $\{\ln a_n\}$,$\{\ln b_n\}$ 的前 $n$ 项和分别为 $S_n$,$T_n$。
 若 $a_1=2$,$\frac{S_n}{T_n}=\frac{n}{2n+1}$,求数列 $\{c_n\}$ 的前 $n$ 项和。
 
-\noindent 解：
+\noindent 解:
 
 (I) $\{c_n\}$ 是等比数列。
 
-证明：设 $\{a_n\}$ 的公比为 $q_1(q_1>0)$,$\{b_n\}$ 的公比为 $q_2(q_2>0)$,则
+证明:设 $\{a_n\}$ 的公比为 $q_1(q_1>0)$,$\{b_n\}$ 的公比为 $q_2(q_2>0)$,则
 \[
 \frac{c_{n+1}}{c_n}
 =\frac{b_{n+1}}{a_{n+1}}\cdot\frac{a_n}{b_n}
@@ -10290,7 +10208,7 @@ c_1+c_2+\cdots+c_n
 
 \question（山东20）（本小题满分12分）
 
-将数列 $\{a_n\}$ 中的所有项按每一行比上一行多一项的规则排成如下数表：
+将数列 $\{a_n\}$ 中的所有项按每一行比上一行多一项的规则排成如下数表:
 \[
 \begin{array}{l}
 a_1\\
@@ -10311,7 +10229,7 @@ $b_1=a_1=1$。$S_n$ 为数列 $\{b_n\}$ 的前 $n$ 项和,且满足
 (II) 上表中,若从第三行起,每一行中的数按从左到右的顺序均构成等比数列,且公比为同一个正数。
 当 $a_{81}=-\frac{4}{91}$ 时,求上表中第 $k(k\ge3)$ 行所有项的和。
 \begin{solution}
-\noindent 解：
+\noindent 解:
 
 (I) 由已知,当 $n\ge2$ 时,
 \[
@@ -10516,23 +10434,23 @@ k=3,4,5.
     \end{solution}
 
     \question
-用标准求和公式证明：
+用标准求和公式证明:
 \[
 \sum_{r=n}^{2n} (n-r)^2 = \sum_{r=1}^{n} r^2.
 \]
 
 \begin{solution}
-首先展开平方：
+首先展开平方:
 \[
 \sum_{r=n}^{2n} (n-r)^2 = \sum_{r=n}^{2n} (n^2 - 2nr + r^2) = \sum_{r=n}^{2n} n^2 - 2n \sum_{r=n}^{2n} r + \sum_{r=n}^{2n} r^2.
 \]
 
-利用标准求和公式：
+利用标准求和公式:
 \[
 \sum_{r=a}^{b} 1 = b-a+1, \quad \sum_{r=a}^{b} r = \frac{(b-a+1)(a+b)}{2}, \quad \sum_{r=a}^{b} r^2 = \frac{(b-a+1)(2a^2+2ab+b^2+a+b)}{6}.
 \]
 
-代入 $a=n, b=2n$：
+代入 $a=n, b=2n$:
 \[
 \sum_{r=n}^{2n} n^2 = n^2 (2n-n+1) = n^2 (n+1),
 \]
@@ -10543,17 +10461,17 @@ k=3,4,5.
 \sum_{r=n}^{2n} r^2 = \frac{(n+1)(n^2 + 2n^2 + (2n)^2 + \dots)}{6} \quad \text{(整理后为)} \frac{n(n+1)(2n+1)}{6} + \frac{其他项}{6}.
 \]
 
-代入到展开式：
+代入到展开式:
 \[
 \sum_{r=n}^{2n} (n-r)^2 = n^2(n+1) - 2n \cdot \frac{3n(n+1)}{2} + \sum_{r=n}^{2n} r^2.
 \]
 
-化简系数：
+化简系数:
 \[
 n^2(n+1) - 3n^2(n+1) + \sum_{r=n}^{2n} r^2 = -2n^2(n+1) + \sum_{r=n}^{2n} r^2.
 \]
 
-进一步整理 $\sum_{r=n}^{2n} r^2$ 并化简,可得：
+进一步整理 $\sum_{r=n}^{2n} r^2$ 并化简,可得:
 \[
 \sum_{r=n}^{2n} (n-r)^2 = \frac{n(n+1)(2n+1)}{6} = \sum_{r=1}^{n} r^2.
 \]
@@ -10565,18 +10483,18 @@ n^2(n+1) - 3n^2(n+1) + \sum_{r=n}^{2n} r^2 = -2n^2(n+1) + \sum_{r=n}^{2n} r^2.
 \end{solution}
 
 \question
-设 $m,n \in \mathbb{N}$,证明：
+设 $m,n \in \mathbb{N}$,证明:
 \[
 \sum_{r=m}^{m+n} (m-r)^2 = \sum_{r=0}^{n} r^2.
 \]
 
 \begin{solution}
-首先展开平方：
+首先展开平方:
 \[
 \sum_{r=m}^{m+n} (m-r)^2 = \sum_{r=m}^{m+n} (r-m)^2 \quad \text{(因为平方对符号不变)}.
 \]
 
-令 $k = r-m$,则 $r = k + m$,当 $r=m$ 时 $k=0$,当 $r=m+n$ 时 $k=n$,于是：
+令 $k = r-m$,则 $r = k + m$,当 $r=m$ 时 $k=0$,当 $r=m+n$ 时 $k=n$,于是:
 \[
 \sum_{r=m}^{m+n} (m-r)^2 = \sum_{k=0}^{n} (-k)^2 = \sum_{k=0}^{n} k^2 = \sum_{r=0}^{n} r^2.
 \]
@@ -10594,12 +10512,12 @@ n^2(n+1) - 3n^2(n+1) + \sum_{r=n}^{2n} r^2 = -2n^2(n+1) + \sum_{r=n}^{2n} r^2.
 \]
 
 \begin{solution}
-首先将被加数进行拆分：
+首先将被加数进行拆分:
 \[
 \frac{n^3-n^2+1}{n^2-n} = \frac{n(n^2-n)+1}{n^2-n} = n + \frac{1}{n^2-n} = n + \frac{1}{n(n-1)}
 \]
 
-将分式拆成部分分式：
+将分式拆成部分分式:
 \[
 \frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}
 \]
@@ -10609,7 +10527,7 @@ n^2(n+1) - 3n^2(n+1) + \sum_{r=n}^{2n} r^2 = -2n^2(n+1) + \sum_{r=n}^{2n} r^2.
 \frac{n^3-n^2+1}{n^2-n} = n + \frac{1}{n-1} - \frac{1}{n}.
 \]
 
-写出前几项：
+写出前几项:
 \[
 n=2: 2 + 1 - \frac{1}{2}, \quad
 n=3: 3 + \frac{1}{2} - \frac{1}{3}, \quad
@@ -10617,17 +10535,17 @@ n=4: 4 + \frac{1}{3} - \frac{1}{4}, \dots, \quad
 n=20: 20 + \frac{1}{19} - \frac{1}{20}.
 \]
 
-求和时,分式部分是望远镜求和：
+求和时,分式部分是望远镜求和:
 \[
 \sum_{n=2}^{20} \left( \frac{1}{n-1} - \frac{1}{n} \right) = 1 - \frac{1}{20}.
 \]
 
-整数部分求和：
+整数部分求和:
 \[
 \sum_{n=2}^{20} n = \frac{19}{2}(2+20) = 209.
 \]
 
-因此总和为：
+因此总和为:
 \[
 \sum_{n=2}^{20} \frac{n^3-n^2+1}{n^2-n} = 209 + 1 - \frac{1}{20} = 210 - \frac{1}{20} = \frac{4199}{20}.
 \]
@@ -10735,7 +10653,7 @@ f(x,n)=\sum_{r=1}^{n}\left[\frac{1}{(x-1)^r}\right]
 的化简,求 $f(x,n)$ 的简化表达式。
 
 \begin{solution}
-先化简给定的差：
+先化简给定的差:
 \[
 \frac{1}{(x-1)^r(x-2)}-\frac{1}{(x-2)(x-1)^{r+1}}
 =\frac{(x-1)-1}{(x-1)^{r+1}(x-2)}
@@ -10849,19 +10767,19 @@ f(x,n)=\frac{1}{x-2}-\frac{1}{(x-1)^n(x-2)}
 \begin{solution}
 
 \noindent
-将级数写成求和符号形式：
+将级数写成求和符号形式:
 \[
 S_\infty = \sum_{r=1}^{\infty} \frac{1}{(r+3)(r+1)!}
 \]
 
 \noindent
-对一般项进行拆项：
+对一般项进行拆项:
 \[
 \frac{1}{(r+3)(r+1)!} = \frac{1}{(r+2)!} - \frac{1}{(r+3)!}
 \]
 
 \noindent
-因此有限部分和为：
+因此有限部分和为:
 \begin{align*}
 \sum_{r=1}^{N} \frac{1}{(r+3)(r+1)!}
 &= \sum_{r=1}^{N} \left( \frac{1}{(r+2)!} - \frac{1}{(r+3)!} \right) \\
@@ -10873,7 +10791,7 @@ S_\infty = \sum_{r=1}^{\infty} \frac{1}{(r+3)(r+1)!}
 \[
 \frac{1}{(N+3)!} \to 0
 \]
-可得无穷级数的和：
+可得无穷级数的和:
 \[
 S_\infty = \frac{1}{3!} = \frac{1}{6}
 \]
@@ -10891,7 +10809,7 @@ S_n=n(n+1)!。
 \]
 
 \begin{solution}
-先将数列写成求和形式：
+先将数列写成求和形式:
 \[
 S_n=\sum_{r=1}^{n}(r^2+1)r!。
 \]
@@ -10928,7 +10846,7 @@ S_n=\sum_{r=1}^{n}(r^2+1)r!。
 (r^2+1)r!=(r+2)!-3(r+1)!+2r!。
 \]
 
-将其代入求和式：
+将其代入求和式:
 \[
 \sum_{r=1}^{n}(r^2+1)r!
 =\sum_{r=1}^{n}\big[(r+2)!-3(r+1)!+2r!\big]。
@@ -10939,7 +10857,7 @@ S_n=\sum_{r=1}^{n}(r^2+1)r!。
 S_n=(n+2)!-2(n+1)!。
 \]
 
-提取 $(n+1)!$：
+提取 $(n+1)!$:
 \[
 S_n=[(n+2)-2](n+1)!。
 \]
@@ -10973,7 +10891,7 @@ S_n=n(n+1)!。
 =\sum_{r=1}^{n}\left[\frac{1}{(r+3)!}-\frac{1}{(r+5)!}\right]。
 \]
 
-将各项写出：
+将各项写出:
 \[
 \begin{aligned}
 r=1&:\ \frac{1}{4!}-\frac{1}{6!},\\
@@ -10990,7 +10908,7 @@ r=n&:\ \frac{1}{(n+3)!}-\frac{1}{(n+5)!}.
 -\left(\frac{1}{(n+4)!}+\frac{1}{(n+5)!}\right)。
 \]
 
-化简常数项：
+化简常数项:
 \[
 \frac{1}{4!}+\frac{1}{5!}
 =\frac{5}{120}+\frac{1}{120}
@@ -11095,13 +11013,13 @@ S(x) = \lim_{N\to\infty} S_N(x)
 \]
 \end{solution}
 
-\question 求下列无穷乘积的值：
+\question 求下列无穷乘积的值:
 \[
 \left(\frac{7}{9}\right) \cdot \left(\frac{26}{28}\right) \cdot \left(\frac{63}{65}\right) \cdot \dots = \lim_{n \to \infty} \prod_{k=2}^{n} \frac{k^3 - 1}{k^3 + 1}.
 \]
 
 \begin{solution}
-将部分积改写为两个可望远镜相消的乘积：
+将部分积改写为两个可望远镜相消的乘积:
 \[
 \prod_{k=2}^{n} \frac{k^3 - 1}{k^3 + 1} = \prod_{k=2}^{n} \frac{k-1}{k+1} \prod_{k=2}^{n} \frac{k^2+k+1}{k^2-k+1}.
 \]
@@ -11354,7 +11272,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
         \end{align*}
     \end{solution}
 
-    \question 求下列级数的值或证明其发散：
+    \question 求下列级数的值或证明其发散:
     \[
     \sum_{k=1}^{\infty} \arctan\left(-\frac{2}{k^{2}}\right)
     \]
@@ -11438,7 +11356,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \begin{solution}
 
 \noindent
-先化简 $\sin^4\theta$：
+先化简 $\sin^4\theta$:
 \begin{align*}
 \sin^4\theta
 &= (\sin^2\theta)^2 \\
@@ -11455,7 +11373,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \]
 
 \noindent
-考虑前 $n$ 项和：
+考虑前 $n$ 项和:
 \begin{align*}
 \sum_{r=0}^{n}\frac{\sin^4(\pi x 2^{r-2})}{4^r}
 &=\sum_{r=0}^{n}\frac{1}{4^r}
@@ -11467,7 +11385,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \end{align*}
 
 \noindent
-这是一个望远镜求和,展开可得：
+这是一个望远镜求和,展开可得:
 \begin{align*}
 &\sin^2\frac{\pi x}{4}
 -\frac{1}{4}\sin^2\frac{\pi x}{2}
@@ -11498,7 +11416,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \[
 0\le \frac{1}{4^{n+1}}\sin^2(\pi 2^{n-1}) \le \frac{1}{4^{n+1}}\to 0
 \]
-可得无穷级数的和：
+可得无穷级数的和:
 \[
 \sum_{r=0}^{\infty}\frac{\sin^4(\pi 2^{r-2})}{4^r}
 = \sin^2\frac{\pi}{4}
@@ -11508,39 +11426,39 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \end{solution}
 
     \question
-求下列级数的和：
+求下列级数的和:
 \[
 \sum_{n=0}^{\infty} \frac{\cos^2\left(\frac{n\pi}{6}\right)}{2^n}.
 \]
 
 \begin{solution}
-\textbf{步骤 1：使用余弦平方恒等式}：
+\textbf{步骤 1:使用余弦平方恒等式}:
 \[
 \cos^2\frac{n\pi}{6} = \frac{1+\cos\frac{n\pi}{3}}{2} \implies
 \sum_{n=0}^{\infty} \frac{\cos^2(n\pi/6)}{2^n} = \frac{1}{2} \sum_{n=0}^{\infty} \frac{1+\cos(n\pi/3)}{2^n}.
 \]
 
 \medskip
-\textbf{步骤 2：拆分为两部分}：
+\textbf{步骤 2:拆分为两部分}:
 \[
 \frac{1}{2} \sum_{n=0}^{\infty} \frac{1}{2^n} + \frac{1}{2} \sum_{n=0}^{\infty} \frac{\cos(n\pi/3)}{2^n} = \frac{1}{2} \sum_{n=0}^{\infty} \frac{1}{2^n} + \frac{1}{2} \Re \sum_{n=0}^{\infty} \frac{e^{in\pi/3}}{2^n}.
 \]
 
 \medskip
-\textbf{步骤 3：求几何级数和}：
+\textbf{步骤 3:求几何级数和}:
 \[
 \sum_{n=0}^{\infty} \frac{1}{2^n} = \frac{1}{1-1/2} = 2.
 \]
 
 \medskip
-\textbf{步骤 4：复数形式求和}：
+\textbf{步骤 4:复数形式求和}:
 \[
 \sum_{n=0}^{\infty} \left(\frac{e^{i\pi/3}}{2}\right)^n = \frac{1}{1 - e^{i\pi/3}/2} \implies 
 \sum_{n=0}^{\infty} \frac{\cos(n\pi/3)}{2^n} = \Re \frac{1}{1 - e^{i\pi/3}/2}.
 \]
 
 \medskip
-\textbf{步骤 5：提取实部}：
+\textbf{步骤 5:提取实部}:
 \[
 \frac{1}{1 - e^{i\pi/3}/2} = \frac{2 - e^{-i\pi/3}}{4 - 2(e^{i\pi/3} + e^{-i\pi/3}) + 1} = \frac{2 - e^{-i\pi/3}}{5 - 4\cos(\pi/3)} = \frac{2 - (\frac{1}{2} - i\frac{\sqrt{3}}{2})}{3} = \frac{3/2 + i\sqrt{3}/2}{3}.
 \]
@@ -11550,7 +11468,7 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \]
 
 \medskip
-\textbf{步骤 6：求最终和}：
+\textbf{步骤 6:求最终和}:
 \[
 \sum_{n=0}^{\infty} \frac{\cos^2(n\pi/6)}{2^n} = \frac{1}{2} \cdot 2 + \frac{1}{2} \cdot \frac{1}{2} = 1 + \frac{1}{2} = \frac{3}{2}.
 \]
@@ -11587,23 +11505,23 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
         \]
     \end{solution}
 
-    \question 证明不等式：
+    \question 证明不等式:
 (1) \[ \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} > \frac{1}{2} \]
 (2) \[ \frac{1}{n} + \frac{1}{n+1} + \cdots + \frac{1}{2n} < \frac{3}{4} + \frac{1}{n} \]
 
 \begin{solution}
-    (a) 首先，容易看出：
+    (a) 首先,容易看出:
     \[ \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} > \frac{1}{2n} + \frac{1}{2n} + \cdots + \frac{1}{2n} = \frac{1}{2} \]
     上述不等式右边共有 $n$ 项。
 
-    但同时，我们可以将第二部分的和式通过倒序相加（或首尾配对）的方法重写：
+    但同时,我们可以将第二部分的和式通过倒序相加（或首尾配对）的方法重写:
     \begin{align*}
     \frac{1}{n} + \frac{1}{n+1} + \cdots + \frac{1}{2n} &= \frac{1}{2} \left[ \left(\frac{1}{n} + \frac{1}{2n}\right) + \left(\frac{1}{n+1} + \frac{1}{2n-1}\right) + \cdots + \left(\frac{1}{2n} + \frac{1}{n}\right) \right] \\
     &= \frac{1}{2} \left[ \frac{3n}{2n^2} + \frac{3n}{2n^2 + (n-1)} + \frac{3n}{2n^2 + 2(n-2)} + \cdots + \frac{3n}{2n^2} \right]
     \end{align*}
-    由于分母中的项 $k(n-k) \ge 0$，我们可以通过放缩去掉这些正项从而增大分数值：
+    由于分母中的项 $k(n-k) \ge 0$,我们可以通过放缩去掉这些正项从而增大分数值:
     \[ < \frac{1}{2} \left[ \frac{3n}{2n^2} + \frac{3n}{2n^2} + \cdots + \frac{3n}{2n^2} \right] \]
-    上式括号内共有 $n+1$ 项。于是：
+    上式括号内共有 $n+1$ 项。于是:
     \[ = \frac{1}{2} (n+1) \frac{3}{2n} = \frac{3}{4} + \frac{1}{4n} < \frac{3}{4} + \frac{1}{n} \]
     这就证明了题目中的结论。
 \end{solution}
@@ -11612,45 +11530,45 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 计算数 $1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{4}} + \cdots + \frac{1}{\sqrt{1,000,000}}$ 的整数部分。
 
 \begin{solution}
-    (a) 首先我们证明不等式：
+    (a) 首先我们证明不等式:
     \[ 2\sqrt{n+1} - 2\sqrt{n} < \frac{1}{\sqrt{n}} < 2\sqrt{n} - 2\sqrt{n-1} \]
     
-    对于左边的不等式，我们将分子有理化：
+    对于左边的不等式,我们将分子有理化:
     \[ 2\sqrt{n+1} - 2\sqrt{n} = \frac{2(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{\sqrt{n+1} + \sqrt{n}} = \frac{2}{\sqrt{n+1} + \sqrt{n}} < \frac{2}{\sqrt{n} + \sqrt{n}} = \frac{1}{\sqrt{n}} \]
     同理可证右边的不等式。
     
     现在利用上述不等式对原和式进行估计。
-    对于下界，我们利用左边的不等式 $ \frac{1}{\sqrt{n}} > 2(\sqrt{n+1} - \sqrt{n}) $：
+    对于下界,我们利用左边的不等式 $ \frac{1}{\sqrt{n}} > 2(\sqrt{n+1} - \sqrt{n}) $:
     \begin{align*}
     1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{1,000,000}} &> 1 + 2 [(\sqrt{3} - \sqrt{2}) + (\sqrt{4} - \sqrt{3}) + \cdots + (\sqrt{1,000,001} - \sqrt{1,000,000})] \\
     &= 1 + 2(\sqrt{1,000,001} - \sqrt{2}) \\
     &> 2 \cdot 1000 - \sqrt{8} + 1 > 2000 - 3 + 1 = 1998
     \end{align*}
     
-    对于上界，我们利用右边的不等式 $ \frac{1}{\sqrt{n}} < 2(\sqrt{n} - \sqrt{n-1}) $：
+    对于上界,我们利用右边的不等式 $ \frac{1}{\sqrt{n}} < 2(\sqrt{n} - \sqrt{n-1}) $:
     \begin{align*}
     1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{1,000,000}} &< 1 + 2 [(\sqrt{2} - 1) + (\sqrt{3} - \sqrt{2}) + \cdots + (\sqrt{1,000,000} - \sqrt{999,999})] \\
     &= 1 + 2(\sqrt{1,000,000} - 1) \\
     &= 1 + 2 \cdot 999 = 1999
     \end{align*}
     
-    综上所述，该数的整数部分等于 1998。
+    综上所述,该数的整数部分等于 1998。
 \end{solution}
 
 \question
 求数 $\frac{1}{\sqrt[3]{4}} + \frac{1}{\sqrt[3]{5}} + \frac{1}{\sqrt[3]{6}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}}$ 的整数部分。
 
 \begin{solution}
-    首先，通过比较二项式展开式，我们注意到对于每一个自然数 $n$：
+    首先,通过比较二项式展开式,我们注意到对于每一个自然数 $n$:
     \[ \left(1 + \frac{2}{3} \cdot \frac{1}{n}\right)^3 > \left(1 + \frac{1}{n}\right)^2 \]
-    两边开立方根并整理可得：
+    两边开立方根并整理可得:
     \[ \frac{1}{\sqrt[3]{n^2}} > \frac{3}{2} [ \sqrt[3]{(n+1)^2} - \sqrt[3]{n^2} ] \]
-    同理，利用类似的展开比较可以得到下界放缩：
+    同理,利用类似的展开比较可以得到下界放缩:
     \[ \frac{1}{\sqrt[3]{n^2}} < \frac{3}{2} [ \sqrt[3]{n^2} - \sqrt[3]{(n-1)^2} ] \]
-    由此我们得到关键的不等式：
+    由此我们得到关键的不等式:
     \[ \frac{3}{2} [ \sqrt[3]{(n+1)^2} - \sqrt[3]{n^2} ] < \frac{1}{\sqrt[3]{n}} < \frac{3}{2} [ \sqrt[3]{n^2} - \sqrt[3]{(n-1)^2} ] \]
     
-    现在利用此不等式对原和式进行估计。对于下界：
+    现在利用此不等式对原和式进行估计。对于下界:
     \begin{align*}
     \frac{1}{\sqrt[3]{4}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}} &> \frac{3}{2} [(\sqrt[3]{5^2} - \sqrt[3]{4^2}) + \cdots + (\sqrt[3]{1,000,001^2} - \sqrt[3]{1,000,000^2})] \\
     &= \frac{3}{2} (\sqrt[3]{1,000,002,000,001} - \sqrt[3]{16}) \\
@@ -11658,14 +11576,14 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
     &> 15,000 - 4 = 14,996
     \end{align*}
     
-    对于上界：
+    对于上界:
     \begin{align*}
     \frac{1}{\sqrt[3]{4}} + \cdots + \frac{1}{\sqrt[3]{1,000,000}} &< \frac{3}{2} [(\sqrt[3]{4^2} - \sqrt[3]{3^2}) + \cdots + (\sqrt[3]{1,000,000^2} - \sqrt[3]{999,999^2})] \\
     &= \frac{3}{2} (\sqrt[3]{1,000,000,000,000} - \sqrt[3]{9}) \\
     &< \frac{3}{2} (10,000 - 2) = 14,997
     \end{align*}
     
-    综上所述，该数的整数部分等于 14,996。
+    综上所述,该数的整数部分等于 14,996。
 \end{solution}
 
     \question 求
@@ -11674,42 +11592,42 @@ f(r)=\sum_{j=2}^{2013}\frac{1}{j^r}
 \]
 
 \begin{solution}
-首先,将求和顺序交换,更容易计算：
+首先,将求和顺序交换,更容易计算:
 \[
 \sum_{m=1}^{19} \sum_{n=m}^{19} (2m+n) = \sum_{n=1}^{19} \sum_{m=1}^{n} (2m+n).
 \]
 
-将内层求和拆开：
+将内层求和拆开:
 \[
 \sum_{n=1}^{19} \sum_{m=1}^{n} (2m+n) = \sum_{n=1}^{19} \left[ 2 \sum_{m=1}^{n} m + \sum_{m=1}^{n} n \right].
 \]
 
-利用标准求和公式：
+利用标准求和公式:
 \[
 \sum_{m=1}^{n} m = \frac{n(n+1)}{2}, \quad \sum_{m=1}^{n} n = n \times n = n^2.
 \]
 
-于是：
+于是:
 \[
 \sum_{n=1}^{19} \left[ 2 \sum_{m=1}^{n} m + \sum_{m=1}^{n} n \right] = \sum_{n=1}^{19} [2 \cdot \frac{n(n+1)}{2} + n^2] = \sum_{n=1}^{19} [n^2+n+n^2] = \sum_{n=1}^{19} (2n^2+n).
 \]
 
-再分开求和：
+再分开求和:
 \[
 \sum_{n=1}^{19} (2n^2+n) = 2 \sum_{n=1}^{19} n^2 + \sum_{n=1}^{19} n.
 \]
 
-代入求和公式：
+代入求和公式:
 \[
 \sum_{n=1}^{19} n^2 = \frac{19 \cdot 20 \cdot 39}{6}, \quad \sum_{n=1}^{19} n = \frac{19 \cdot 20}{2}.
 \]
 
-于是：
+于是:
 \[
 2 \sum_{n=1}^{19} n^2 + \sum_{n=1}^{19} n = 2 \cdot \frac{19 \cdot 20 \cdot 39}{6} + \frac{19 \cdot 20}{2} = \frac{19 \cdot 20 \cdot 39}{3} + 190.
 \]
 
-计算：
+计算:
 \[
 \frac{19 \cdot 20 \cdot 39}{3} + 190 = 19 \cdot 20 \cdot 13 + 190 = 4940 + 190 = 5130.
 \]
@@ -12018,24 +11936,24 @@ g(n)-g(n+1)
     \end{solution}
 
     \question
-求下列多项式中 $x^{50}$ 的系数：
+求下列多项式中 $x^{50}$ 的系数:
 
 (a) $(1+x)^{1000} + x(1+x)^{999} + x^2(1+x)^{998} + \dots + x^{1000}$
 
 (b) $(1+x) + 2(1+x)^2 + 3(1+x)^3 + \dots + 1000(1+x)^{1000}$
 
 \begin{solution}
-    (a) 利用等比数列求和公式以及二项式定理，我们得到：
+    (a) 利用等比数列求和公式以及二项式定理,我们得到:
     \begin{align*}
     (1+x)^{1000} + x(1+x)^{999} + \dots + x^{1000} &= \frac{(1+x)^{1001} - x^{1001}}{(1+x) - x} \\
     &= \frac{(1+x)^{1001} - x^{1001}}{1} \\
     &= (1+x)^{1001} - x^{1001} \\
     &= 1 + \comb{1001}{1}x + \comb{1001}{2}x^2 + \dots + \comb{1001}{1001}x^{1001} - x^{1001}
     \end{align*}
-    因此，所求的系数等于：
+    因此,所求的系数等于:
     \[ \comb{1001}{50} = \frac{1001!}{50!\,951!} \]
 
-    (b) 设所给多项式为 $P(x)$。我们可以写出：
+    (b) 设所给多项式为 $P(x)$。我们可以写出:
     \begin{align*}
     x P(x) &= (1+x)P(x) - P(x) \\
     &= \left[(1+x)^2 + 2(1+x)^3 + \dots + 999(1+x)^{1000} + 1000(1+x)^{1001}\right] \\
@@ -12044,17 +11962,17 @@ g(n)-g(n+1)
     &= 1000(1+x)^{1001} - \frac{(1+x)[(1+x)^{1000} - 1]}{(1+x) - 1} \\
     &= 1000(1+x)^{1001} - \frac{(1+x)^{1001} - (1+x)}{x}
     \end{align*}
-    从而得出：
+    从而得出:
     \[ P(x) = \frac{1000(1+x)^{1001}}{x} - \frac{(1+x)^{1001} - (1+x)}{x^2} \]
     
-    为了找到 $P(x)$ 中 $x^{50}$ 的系数，我们需要找到 $\frac{1000(1+x)^{1001}}{x}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{51}$ 的系数），以及 $\frac{(1+x)^{1001}}{x^2}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{52}$ 的系数）。
+    为了找到 $P(x)$ 中 $x^{50}$ 的系数,我们需要找到 $\frac{1000(1+x)^{1001}}{x}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{51}$ 的系数）,以及 $\frac{(1+x)^{1001}}{x^2}$ 中 $x^{50}$ 的系数（即 $(1+x)^{1001}$ 中 $x^{52}$ 的系数）。
     
-    展开式如下：
+    展开式如下:
     \begin{align*}
     P(x) &= 1000 \sum_{k=0}^{1001} \comb{1001}{k} x^{k-1} - \sum_{k=0}^{1001} \comb{1001}{k} x^{k-2} + \frac{1+x}{x^2} \\
     \end{align*}
     
-    因此，所求的系数为：
+    因此,所求的系数为:
     \begin{align*}
     1000 \comb{1001}{51} - \comb{1001}{52} &= \frac{1000 \cdot 1001!}{51!\,950!} - \frac{1001!}{52!\,950!} \\
     &= \frac{1001!}{52!\,950!} \left[52 \cdot 1000 - 950\right] \\
@@ -12190,17 +12108,17 @@ g(n)-g(n+1)
 的值,并以根式形式表示。
 
 \begin{solution}
-注意到该级数的分子是连续奇数的乘积,而分母是阶乘。我们可以尝试与二项式展开式的广义形式联系起来：
+注意到该级数的分子是连续奇数的乘积,而分母是阶乘。我们可以尝试与二项式展开式的广义形式联系起来:
 \[
 (1+x)^{-\frac{1}{2}} = 1 - \frac{1}{2}x + \frac{(-\frac{1}{2})(-\frac{3}{2})}{2!} x^2 - \frac{(-\frac{1}{2})(-\frac{3}{2})(-\frac{5}{2})}{3!} x^3 + \dots
 \]
 
-通过调整系数,可以将原级数写成：
+通过调整系数,可以将原级数写成:
 \[
 2 \left[ 1 + \frac{3 \cdot 5}{2!} \left(\frac{2}{3}\right)^2 + \frac{3 \cdot 5 \cdot 7}{3!} \left(\frac{2}{3}\right)^3 + \dots \right].
 \]
 
-这个形式与广义二项式展开 \((1 - x)^{-1/2}\) 对应,其中 \(x = \frac{2}{3}\)。于是：
+这个形式与广义二项式展开 \((1 - x)^{-1/2}\) 对应,其中 \(x = \frac{2}{3}\)。于是:
 \[
 \sum = 2 \cdot \left(1 - \frac{2}{3}\right)^{-1/2} = 2 \cdot \left(\frac{1}{3}\right)^{-1/2} = 2 \cdot \sqrt{3} = 2\sqrt{3}.
 \]
@@ -12272,7 +12190,7 @@ S=1.
 \]
 
 \begin{solution}
-先将前几项写出以观察其结构：
+先将前几项写出以观察其结构:
 \begin{align*}
 \sum_{k=1}^{\infty}\left[\prod_{r=1}^{k}\left(\frac{8r-7}{40r}\right)\right]
 &= \prod_{r=1}^{1}\left(\frac{8r-7}{40r}\right)
@@ -12286,7 +12204,7 @@ S=1.
  + \cdots .
 \end{align*}
 
-将每一项写成阶乘形式：
+将每一项写成阶乘形式:
 \begin{align*}
 &= \frac{1}{40\cdot 1!}
  + \frac{1\cdot 9}{40^2\cdot(1\cdot 2)}
@@ -12385,7 +12303,7 @@ S
 +\cdots
 \end{align*}
 
-在级数前补上缺失项,可构成完整的二项式展开：
+在级数前补上缺失项,可构成完整的二项式展开:
 \begin{align*}
 \frac{1}{36}S
 &=\left[1+\frac{-\frac{1}{3}}{1!}\left(\frac{1}{6}\right)
@@ -12423,7 +12341,7 @@ k \comb{n}{k} = n \comb{n-1}{k-1}
 \]
 
 \begin{solution}
-从组合数的定义出发：
+从组合数的定义出发:
 \begin{align*}
 k \comb{n}{k} &= k \cdot \frac{n!}{k!(n-k)!} \\
 &= \frac{n!}{(k-1)!(n-k)!} \\
@@ -12505,17 +12423,17 @@ k \comb{n}{k} &= k \cdot \frac{n!}{k!(n-k)!} \\
 \[\sum_{r=0}^{n} \binom{n}{r}^2 = \binom{2n}{n}, \quad n \ge 0\]
 
 \begin{solution}
-设 $S$ 是一个有 $2n$ 个元素的集合，$\binom{2n}{n}$ 为计数 $S$ 的 $n$ 子集的数目。
+设 $S$ 是一个有 $2n$ 个元素的集合,$\binom{2n}{n}$ 为计数 $S$ 的 $n$ 子集的数目。
 
-又把 $S$ 划分成 $A$ 和 $B$ 两个子集，每一个子集都有 $n$ 个元素。利用 $S$ 的这个划分去划分 $S$ 的 $n$ 子集。$S$ 的每一个 $n$ 子集包含 $k$ 个 $A$ 的元素和 $n-k$ 个 $B$ 的元素，$k$ 是介于 $0$ 和 $n$ 之间的任意整数。我们把 $S$ 的 $n$ 子集划分成 $n+1$ 个部分：
+又把 $S$ 划分成 $A$ 和 $B$ 两个子集,每一个子集都有 $n$ 个元素。利用 $S$ 的这个划分去划分 $S$ 的 $n$ 子集。$S$ 的每一个 $n$ 子集包含 $k$ 个 $A$ 的元素和 $n-k$ 个 $B$ 的元素,$k$ 是介于 $0$ 和 $n$ 之间的任意整数。我们把 $S$ 的 $n$ 子集划分成 $n+1$ 个部分:
 \[C_0, C_1, \dots, C_n\]
-其中 $C_k$ 是由包含 $k$ 个 $A$ 的元素和 $n-k$ 个 $B$ 的元素组成的 $n$ 子集。根据加法原理，有
+其中 $C_k$ 是由包含 $k$ 个 $A$ 的元素和 $n-k$ 个 $B$ 的元素组成的 $n$ 子集。根据加法原理,有
 \[\binom{2n}{n} = |C_0| + |C_1| + \dots + |C_n|\]
 
-$C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素，再从 $B$ 中选择 $n-k$ 个元素而得到。根据乘法原理，
+$C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素,再从 $B$ 中选择 $n-k$ 个元素而得到。根据乘法原理,
 \[|C_k| = \binom{n}{k} \binom{n}{n-k} = \binom{n}{k}^2, \quad k \ge 0.\]
 
-把上式代入得：
+把上式代入得:
 \[\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{n}{0}^2 + \binom{n}{1}^2 + \dots + \binom{n}{n}^2 = \binom{2n}{n}\]
 \end{solution}
 
@@ -12526,12 +12444,12 @@ $C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素，再从 $B$ 
 \comb{n}{0} + \comb{n}{2} + \dots = \comb{n}{1} + \comb{n}{3} + \dots = 2^{\,n-1}
 \]
 \begin{solution}
-使用二项式定理的交错和：
+使用二项式定理的交错和:
 \[
 \comb{n}{0} - \comb{n}{1} + \comb{n}{2} - \dots + (-1)^n \comb{n}{n} = 0
 \]
 
-由此可得：
+由此可得:
 \[
 \comb{n}{0} + \comb{n}{2} + \dots = \comb{n}{1} + \comb{n}{3} + \dots
 \]
@@ -12541,7 +12459,7 @@ $C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素，再从 $B$ 
 \comb{n}{0} + \comb{n}{1} + \comb{n}{2} + \dots + \comb{n}{n} = 2^n
 \]
 
-因此：
+因此:
 \[
 \comb{n}{0} + \comb{n}{2} + \dots = \comb{n}{1} + \comb{n}{3} + \dots = \frac{1}{2}(2^n) = 2^{\,n-1}
 \]
@@ -12553,7 +12471,7 @@ $C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素，再从 $B$ 
 \begin{solution}  
 由二项式定理  
 \[(x+y)^n = \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y + \binom{n}{2}x^{n-2}y^2 + \dots + \binom{n}{n}y^n\]  
-令 $x=1, y=-1$，得到  
+令 $x=1, y=-1$,得到  
 \begin{align*}
 (1+(-1))^n &= \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^n \binom{n}{n} \\
 0 &= \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^n \binom{n}{n}
@@ -12573,11 +12491,11 @@ $C_k$ 中的 $n$ 子集可以通过从 $A$ 中选择 $k$ 个元素，再从 $B$ 
 \end{align*}
 \end{solution}
     \begin{solution}
-考虑 $(1+x)^n = \sum_{k=0}^n \comb{n}{k} x^k$,两边对 $x$ 求导：
+考虑 $(1+x)^n = \sum_{k=0}^n \comb{n}{k} x^k$,两边对 $x$ 求导:
 \[
 n(1+x)^{n-1} = \sum_{k=1}^n k \comb{n}{k} x^{k-1}.
 \]
-令 $x=1$：
+令 $x=1$:
 \[
 n 2^{n-1} = \sum_{k=1}^n k \comb{n}{k}.
 \]
@@ -12590,7 +12508,7 @@ n 2^{n-1} = \sum_{k=1}^n k \comb{n}{k}.
 由二项式定理:
 \[(1+x)^n = \binom{n}{0} + \binom{n}{1}x + \binom{n}{2}x^2 + \dots + \binom{n}{n}x^n\]
 
-两边求导，并乘以 $x$ 得:
+两边求导,并乘以 $x$ 得:
 \begin{align*}
 x \frac{d}{dx}(1+x)^n &= x \sum_{k=1}^{n} k \binom{n}{k} x^{k-1} \\
 x n (1+x)^{n-1} &= \sum_{k=1}^{n} k \binom{n}{k} x^k
@@ -12642,7 +12560,7 @@ n(n+1) 2^{n-2} &= \sum_{k=1}^{n} k^2 \binom{n}{k}
 n(1+x)^{n-1} = \binom{n}{1} + 2\binom{n}{2}x + 3\binom{n}{3}x^2 + \dots + n\binom{n}{n}x^{n-1}
 \]
 
-同理，将 $x$ 替换为 $-x$:
+同理,将 $x$ 替换为 $-x$:
 \[
 n(1-x)^{n-1} = \binom{n}{1} - 2\binom{n}{2}x + 3\binom{n}{3}x^2 - \dots + (-1)^{n-1} n \binom{n}{n}x^{n-1}
 \]
@@ -12888,7 +12806,7 @@ f(x)
 \]
 
 \textbf{(b)}  
-展开求和中 $x^n$ 的系数：
+展开求和中 $x^n$ 的系数:
 \[
 \frac{1}{2}\left[(a+b+c)n^2+(3a+b-c)n+2a\right].
 \]
@@ -12937,15 +12855,15 @@ f\left(\frac{1}{2}\right)
 \end{solution}
 
 \question
-计算：
+计算:
 \[ \cos \alpha + \comb{n}{1} \cos 2\alpha + \comb{n}{2} \cos 3\alpha + \dots + \comb{n}{n-1} \cos n\alpha + \cos (n + 1)\alpha \]
 以及
 \[ \sin \alpha + \comb{n}{1} \sin 2\alpha + \comb{n}{2} \sin 3\alpha + \dots + \comb{n}{n-1} \sin n\alpha + \sin (n + 1)\alpha \]
 
 \begin{solution}
-    我们需要计算下列复数和的实部与虚部系数：
+    我们需要计算下列复数和的实部与虚部系数:
     \[ (\cos \alpha + i \sin \alpha) + \comb{n}{1}(\cos 2\alpha + i \sin 2\alpha) + \comb{n}{2}(\cos 3\alpha + i \sin 3\alpha) + \dots + [\cos (n + 1)\alpha + i \sin (n + 1)\alpha] \]
-    令 $x = \cos \alpha + i \sin \alpha$。利用棣莫弗公式（De Moivre's formula）和二项式定理，我们可以将该和式转化为以下形式：
+    令 $x = \cos \alpha + i \sin \alpha$。利用棣莫弗公式（De Moivre's formula）和二项式定理,我们可以将该和式转化为以下形式:
     \begin{align*}
     x + \comb{n}{1} x^2 + \comb{n}{2} x^3 + \dots + x^{n+1} &= x(1 + x)^n \\
     &= (\cos \alpha + i \sin \alpha)(1 + \cos \alpha + i \sin \alpha)^n \\
@@ -12955,7 +12873,7 @@ f\left(\frac{1}{2}\right)
     &= 2^n \cos^n \frac{\alpha}{2} \left[ \cos \left(\alpha + \frac{n\alpha}{2}\right) + i \sin \left(\alpha + \frac{n\alpha}{2}\right) \right] \\
     &= 2^n \cos^n \frac{\alpha}{2} \left(\cos \frac{n+2}{2} \alpha + i \sin \frac{n+2}{2} \alpha\right)
     \end{align*}
-    由此可得：
+    由此可得:
     \begin{align*}
     \cos \alpha + \comb{n}{1} \cos 2\alpha + \comb{n}{2} \cos 3\alpha + \dots + \cos (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \cos \frac{n+2}{2} \alpha \\
     \sin \alpha + \comb{n}{1} \sin 2\alpha + \comb{n}{2} \sin 3\alpha + \dots + \sin (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \sin \frac{n+2}{2} \alpha
@@ -12976,7 +12894,7 @@ T_n(x) = \cos(n \cos^{-1} x)
 是 $x$ 的次数为 $n$ 的多项式,且首项系数为 $2^{\,n-1}$。
 
 \begin{solution}
-(a) 由德·摩根定理 (De Moivre's Theorem)：
+(a) 由德·摩根定理 (De Moivre's Theorem):
 \[
 (\cos\theta + i \sin\theta)^n = \cos n\theta + i \sin n\theta,
 \]
@@ -13136,17 +13054,17 @@ f(x)=\sum_{r=0}^{\infty}\binom{2r}{r}\left(\frac{1}{4}x\right)^r。
 \]
 
 \begin{solution}
-首先对 $y$ 求导：
+首先对 $y$ 求导:
 \[
 \frac{dy}{dx} = e^{\tan x} \sec^2 x = y \sec^2 x.
 \]
 
-再次求导：
+再次求导:
 \[
 \frac{d^2y}{dx^2} = \frac{d}{dx}(y \sec^2 x) = \frac{dy}{dx} \sec^2 x + y \cdot 2 \sec^2 x \tan x.
 \]
 
-将 $y \sec^2 x$ 替换为 $\frac{dy}{dx}$：
+将 $y \sec^2 x$ 替换为 $\frac{dy}{dx}$:
 \[
 \frac{d^2y}{dx^2} = \frac{dy}{dx} \sec^2 x + 2 \frac{dy}{dx} \tan x = \frac{dy}{dx} ( \sec^2 x + 2 \tan x ) = \frac{dy}{dx} (1 + \tan^2 x + 2 \tan x ).
 \]
@@ -13155,13 +13073,13 @@ f(x)=\sum_{r=0}^{\infty}\binom{2r}{r}\left(\frac{1}{4}x\right)^r。
 \textbf{b)} 求 $e^{\tan x}$ 的 $x^3$ 展开式。
 
 \begin{solution}
-使用 Taylor 展开：
+使用 Taylor 展开:
 \[
 y = y_0 + y'_0 x + \frac{y''_0}{2!} x^2 + \frac{y'''_0}{3!} x^3 + O(x^4),
 \]
 在 $x=0$ 时,$y_0 = 1$,$y'_0 = 1$,$y''_0 = 1$。
 
-计算三阶导数：
+计算三阶导数:
 \[
 \frac{d^3y}{dx^3} = 2(1+\tan x) \sec^2 x \frac{dy}{dx} + (1+\tan x)^2 \frac{d^2y}{dx^2},
 \]
@@ -13179,7 +13097,7 @@ e^{\tan x} = 1 + x + \frac{1}{2}x^2 + \frac{1}{2}x^3 + O(x^4).
 \textbf{a)} 求 $f(x)$ 满足的微分方程。
 
 \begin{solution}
-首先求导：
+首先求导:
 \[
 f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
 \]
@@ -13187,17 +13105,17 @@ f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
 (1+x) f'(x) = \cos[\ln(1+x)].
 \]
 
-再次求导：
+再次求导:
 \[
 (1+x) f''(x) + f'(x) = - \sin[\ln(1+x)] \frac{1}{1+x}.
 \]
 
-两边乘以 $(1+x)$：
+两边乘以 $(1+x)$:
 \[
 (1+x)^2 f''(x) + (1+x) f'(x) = - \sin[\ln(1+x)].
 \]
 
-移项得微分方程：
+移项得微分方程:
 \[
 (1+x)^2 f''(x) + (1+x) f'(x) + f(x) = 0.
 \]
@@ -13206,21 +13124,21 @@ f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
 \textbf{b)} 求 Maclaurin 展开前 3 个非零项。
 
 \begin{solution}
-利用微分方程可求各阶导数在 $x=0$ 的值：
+利用微分方程可求各阶导数在 $x=0$ 的值:
 \[
 f(0) = \sin(\ln 1) = 0, \quad f'(0) = \cos(\ln 1) = 1.
 \]
-由微分方程 $(1+x)^2 f'' + (1+x) f' + f = 0$ 得：
+由微分方程 $(1+x)^2 f'' + (1+x) f' + f = 0$ 得:
 \[
 f''(0) + f'(0) + f(0) = 0 \implies f''(0) = -1.
 \]
 
-三阶导数：
+三阶导数:
 \[
 (1+x)^2 f''' + 3(1+x) f'' + 2 f' = 0 \implies f'''(0) + 3 f''(0) + 2 f'(0) = 0 \implies f'''(0) = 1.
 \]
 
-因此 Maclaurin 展开：
+因此 Maclaurin 展开:
 \[
 f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
 = x - \frac{1}{2} x^2 + \frac{1}{6} x^3 + \dots
@@ -13230,7 +13148,7 @@ f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
 \textbf{c)} 用结果求 $\sin[\ln(1+x)]$ 的前 2 个非零项的 Maclaurin 展开。
 
 \begin{solution}
-从 (b) 的展开式可直接得到前 2 个非零项：
+从 (b) 的展开式可直接得到前 2 个非零项:
 \[
 \sin[\ln(1+x)] = x - \frac{1}{2} x^2 + \dots
 \]
@@ -13239,7 +13157,7 @@ f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
 \question
 设 $y = \tan x$, $0 \le x < \frac{\pi}{2}$。
 
-\textbf{a) 证明下列公式：}
+\textbf{a) 证明下列公式:}
 
 \textbf{i)}
 \[
@@ -13252,19 +13170,19 @@ f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
 \]
 
 \begin{solution}
-\textbf{(i) 求二阶导数}：
+\textbf{(i) 求二阶导数}:
 \[
 y = \tan x \implies \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1+y^2
 \]
 \[
 y' = 1+y^2
 \]
-对 $x$ 求导：
+对 $x$ 求导:
 \[
 y'' = 2y y'
 \]
 
-\textbf{(ii) 高阶导数}：
+\textbf{(ii) 高阶导数}:
 \[
 y''' = 2y'y' + 2yy'' = 2(y')^2 + 2yy''
 \]
@@ -13279,7 +13197,7 @@ y^{(5)} = 6(y'')^2 + 8y'y''' + 2y y^{(4)}
 \textbf{b) 求 $y = \tan x$ 的 Maclaurin 展开前 3 个非零项}
 
 \begin{solution}
-在 $x=0$ 处求各阶导数：
+在 $x=0$ 处求各阶导数:
 \[
 y_0 = \tan(0) = 0
 \]
@@ -13299,11 +13217,11 @@ y^{(4)}_0 = 6y'_0y''_0 + 2y_0y'''_0 = 0
 y^{(5)}_0 = 6(y''_0)^2 + 8y'_0y'''_0 + 2y_0y^{(4)}_0 = 16
 \]
 
-Maclaurin 展开式：
+Maclaurin 展开式:
 \[
 y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + \frac{x^4}{4!}y^{(4)}_0 + \frac{x^5}{5!}y^{(5)}_0 + O(x^6)
 \]
-代入各阶导数值：
+代入各阶导数值:
 \[
 y = 0 + x + \frac{x^3}{3} + \frac{2}{15}x^5 + O(x^6)
 \]
@@ -13317,7 +13235,7 @@ y = 0 + x + \frac{x^3}{3} + \frac{2}{15}x^5 + O(x^6)
 \question
 设 $y = \ln(2-e^x)$, $x<\ln 2$。
 
-\textbf{a) 证明下列公式：}
+\textbf{a) 证明下列公式:}
 \[
 e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac{dy}{dx}\right)^3 \right] + e^x = 0
 \]
@@ -13327,17 +13245,17 @@ e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac
 \[
 e^y = 2-e^x
 \]
-两边对 $x$ 求导：
+两边对 $x$ 求导:
 \[
 \frac{d}{dx}(e^y) = \frac{d}{dx}(2-e^x) \implies e^y y' = -e^x \implies e^y y' + e^x = 0
 \]
 
-再次求导：
+再次求导:
 \[
 \frac{d}{dx}(e^y y' + e^x) = 0 \implies e^y[(y')^2 + y''] + e^x = 0
 \]
 
-再求一次导数：
+再求一次导数:
 \[
 \frac{d}{dx}\big(e^y[(y')^2 + y''] + e^x\big) = 0 \implies e^y[y''' + 3y'y'' + (y')^3] + e^x = 0
 \]
@@ -13346,7 +13264,7 @@ e^y = 2-e^x
 \textbf{b) 求 Maclaurin 展开式的前三个非零项}
 
 \begin{solution}
-在 $x=0$ 处求各阶导数：
+在 $x=0$ 处求各阶导数:
 
 \[
 y_0 = \ln(2-e^0) = \ln 1 = 0
@@ -13361,11 +13279,11 @@ e^y[(y')^2 + y''] + e^x = 0 \implies (-1)^2 + y''_0 + 1 = 0 \implies y''_0 = -2
 e^y[(y')^3 + 3y'y'' + y'''] + e^x = 0 \implies (-1)^3 + 3(-1)(-2) + y'''_0 + 1 = 0 \implies y'''_0 = -6
 \]
 
-Maclaurin 展开式：
+Maclaurin 展开式:
 \[
 y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + O(x^4)
 \]
-代入各阶导数值：
+代入各阶导数值:
 \[
 y = 0 - x - x^2 - x^3 + O(x^4)
 \]
@@ -13377,7 +13295,7 @@ y = 0 - x - x^2 - x^3 + O(x^4)
 \end{solution}
 
 \question
-函数 $f$ 和 $g$ 定义如下：
+函数 $f$ 和 $g$ 定义如下:
 \[
 f(x) = \arctan\left(\frac{2}{3}x\right), \quad x\in \mathbb{R},
 \]
@@ -13388,7 +13306,7 @@ g(y) = \frac{1}{1+y}, \quad y\in \mathbb{R}, \quad -1<y<1.
 \textbf{a)} 将 $g(y)$ 展开为二项级数,并保留 $y^3$ 项。
 
 \begin{solution}
-使用二项式定理：
+使用二项式定理:
 \[
 (1+y)^{-1} = 1 + (-1)y + \frac{(-1)(-2)}{2!}y^2 + \frac{(-1)(-2)(-3)}{3!}y^3 + O(y^4)
 \]
@@ -13407,7 +13325,7 @@ f(x) = \arctan\left(\frac{2}{3}x\right)
 f'(x) = \frac{2/3}{1+(\frac{2}{3}x)^2} = \frac{2}{3}\left(1+\frac{4}{9}x^2\right)^{-1}
 \]
 
-将 (a) 的结果代入,令 $y = \frac{4}{9}x^2$：
+将 (a) 的结果代入,令 $y = \frac{4}{9}x^2$:
 \[
 f'(x) \approx \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^2 - \left(\frac{4}{9}x^2\right)^3 + O(x^8)\right]
 \]
@@ -13415,7 +13333,7 @@ f'(x) \approx \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^
 f'(x) \approx \frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8)
 \]
 
-对 $x$ 积分：
+对 $x$ 积分:
 \[
 f(x) \approx \int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8) \right] dx
 \]
@@ -13423,7 +13341,7 @@ f(x) \approx \int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \fra
 \arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7 + C
 \]
 
-由 $x=0$ 可得 $C=0$,因此：
+由 $x=0$ 可得 $C=0$,因此:
 \[
 \arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7.
 \]
@@ -13460,7 +13378,7 @@ y = \tan x
 \]
 
 \noindent
-对 $x$ 再求两次导数：
+对 $x$ 再求两次导数:
 \[
 \frac{d^2 y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d}{dx}(1+y^2) = 2y \frac{dy}{dx}
 \]
@@ -13472,7 +13390,7 @@ y = \tan x
 \noindent
 \textbf{b) 泰勒展开式}
 
-在 $x=a=\frac{\pi}{4}$ 处计算各阶导数：
+在 $x=a=\frac{\pi}{4}$ 处计算各阶导数:
 \[
 y = \tan a = 1
 \]
@@ -13487,12 +13405,12 @@ y = \tan a = 1
 \]
 
 \noindent
-泰勒展开公式：
+泰勒展开公式:
 \[
 \tan x \approx f(a) + (x-a)f'(a) + \frac{(x-a)^2}{2!}f''(a) + \frac{(x-a)^3}{3!}f'''(a) + \dots
 \]
 
-代入各阶导数：
+代入各阶导数:
 \[
 \tan x \approx 1 + 2(x-\frac{\pi}{4}) + 2(x-\frac{\pi}{4})^2 + \frac{8}{3}(x-\frac{\pi}{4})^3 + \dots
 \]
@@ -13504,7 +13422,7 @@ y = \tan a = 1
 x-\frac{\pi}{4} = \frac{5\pi}{18} - \frac{\pi}{4} = \frac{\pi}{36}
 \]
 
-代入泰勒展开：
+代入泰勒展开:
 \[
 \tan \frac{5\pi}{18} \approx 1 + 2\cdot \frac{\pi}{36} + 2\cdot \left(\frac{\pi}{36}\right)^2 + \frac{8}{3} \cdot \left(\frac{\pi}{36}\right)^3
 \]
@@ -13626,13 +13544,13 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \end{solution}
 
 \question
-求下列无穷级数的和：
+求下列无穷级数的和:
 \[
 1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\frac{1}{9\times4^4}+\cdots
 \]
 
 \begin{solution}
-考虑对数的幂级数展开：
+考虑对数的幂级数展开:
 \[
 \ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
 \]
@@ -13640,7 +13558,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \ln(1-x) = -x - \frac{1}{2}x^2 - \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
 \]
 
-两式相减：
+两式相减:
 \[
 \ln(1+x) - \ln(1-x) = 2\left( x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots \right)
 \]
@@ -13648,7 +13566,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \ln\left(\frac{1+x}{1-x}\right) = 2 \sum_{k=0}^{\infty} \frac{x^{2k+1}}{2k+1}
 \]
 
-在收敛半径内令 $x = \frac{1}{2}$：
+在收敛半径内令 $x = \frac{1}{2}$:
 \[
 \ln\left(\frac{1+\frac{1}{2}}{1-\frac{1}{2}}\right) = 2 \sum_{k=0}^{\infty} \frac{(1/2)^{2k+1}}{2k+1}
 \]
@@ -13656,7 +13574,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \ln 3 = 2 \sum_{k=0}^{\infty} \frac{1}{(2k+1)2^{2k+1}} = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
 \]
 
-注意到原级数的形式与此一致：
+注意到原级数的形式与此一致:
 \[
 1 + \frac{1}{3\cdot 4} + \frac{1}{5\cdot 4^2} + \frac{1}{7\cdot 4^3} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
 \]
@@ -13667,29 +13585,29 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \end{solution}
 
 \question
-求下列交错级数的和：
+求下列交错级数的和:
 \[
 \frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \frac{1}{1+4+9+16} + \frac{1}{1+4+9+16+25} - \cdots
 \]
 
 \begin{solution}
-首先写成紧凑形式：
+首先写成紧凑形式:
 \[
 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{1^2 + 2^2 + \cdots + n^2} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\frac{1}{6}n(n+1)(2n+1)} = \sum_{n=1}^{\infty} \frac{6(-1)^{n+1}}{n(n+1)(2n+1)}
 \]
 
-对 $\frac{1}{n(n+1)(2n+1)}$ 做部分分式分解：
+对 $\frac{1}{n(n+1)(2n+1)}$ 做部分分式分解:
 \[
 \frac{1}{n(n+1)(2n+1)} = \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1}
 \]
 
-因此级数可写为：
+因此级数可写为:
 \[
 \sum_{n=1}^{\infty} 6(-1)^{n+1} \left( \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1} \right)
 = 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} + 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} - 24\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1}
 \]
 
-分别处理各个级数：
+分别处理各个级数:
 \[
 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \ln 2
 \]
@@ -13698,7 +13616,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} = 6 - 6 \ln 2
 \]
 
-再利用 $\arctan x$ 展开：
+再利用 $\arctan x$ 展开:
 \[
 \arctan x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1} \implies \arctan 1 = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}
 \]
@@ -13707,12 +13625,12 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 24 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1} = 24 \left(\frac{\pi}{4} - 1\right) = 6\pi - 24
 \]
 
-将所有部分相加：
+将所有部分相加:
 \[
 6\ln 2 + (6 - 6\ln 2) - (6\pi - 24) = 6 - 6\pi + 24 = 30 - 6\pi
 \]
 
-因此原级数的和为：
+因此原级数的和为:
 \[
 \frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \cdots = 6(\pi - 3)
 \]
@@ -13725,7 +13643,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \]
 
 \begin{solution}
-先对通项进行代数变形：
+先对通项进行代数变形:
 \[
 \frac{2r+3}{(r+1)3^r}
 =\frac{2(r+1)+1}{r+1}\left(\frac{1}{3}\right)^r
@@ -13767,7 +13685,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 =-3\ln\left(\frac{2}{3}\right)-1
 \]
 
-将两部分相加：
+将两部分相加:
 \[
 \sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
 =1-3\ln\left(\frac{2}{3}\right)-1
@@ -13782,7 +13700,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 \end{solution}
 
 \question
-通过考虑 $\ln(1-x^2)$ 与 $\ln\left(\frac{1+x}{1-x}\right)$ 的级数展开,或用其他方法,求下列级数的精确值：
+通过考虑 $\ln(1-x^2)$ 与 $\ln\left(\frac{1+x}{1-x}\right)$ 的级数展开,或用其他方法,求下列级数的精确值:
 \[
 \sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right].
 \]
@@ -13834,7 +13752,7 @@ f(n)=\frac{4(-1)^{n}}{2n+1}
 =\ln 3-1
 \]
 
-将两部分相加：
+将两部分相加:
 \[
 \sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
 =-\frac{1}{2}\ln\frac{3}{4}+\ln 3-1
@@ -13979,7 +13897,7 @@ du=\frac{1}{1+x^{2}}\,dx,\quad v=\frac{x^{4}}{4}
 \quad 0\le x\le1.
 \]
 
-将其代入积分,并交换求和与积分次序：
+将其代入积分,并交换求和与积分次序:
 \[
 \int_0^1 (\arctan x)(\ln x)\,dx
 =\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}
@@ -14005,7 +13923,7 @@ $u=\ln x$,$dv=x^{2n+1}dx$,则
 =-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)(2n+2)^2}.
 \]
 
-对通项作部分分式分解：
+对通项作部分分式分解:
 \[
 \frac{1}{(2n+1)(2n+2)^2}
 =\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}.
@@ -14022,7 +13940,7 @@ $u=\ln x$,$dv=x^{2n+1}dx$,则
 \right].
 \]
 
-将其拆分为三个已知级数：
+将其拆分为三个已知级数:
 \[
 \sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
 \quad
@@ -14156,27 +14074,27 @@ I(1)
 \]
 
 \begin{solution}
-    定义命题：
+    定义命题:
     \[
     P_n: (n + 1)(n + 2) \cdots (2n) = 2^n \cdot 1 \cdot 3 \cdots (2n - 1)
     \]
-    其中 $n \in \mathbb{Z}^{+}$。观察当 $n=1$ 时，
+    其中 $n \in \mathbb{Z}^{+}$。观察当 $n=1$ 时,
     \[
     \text{左边} = 1+1=2, \quad \text{右边} = 2^1 \cdot 1 = 2
     \]
-    左边等于右边，即 $P_1$ 成立。现假设 $P_k$ 成立，即当 $n=k$ 时，
+    左边等于右边,即 $P_1$ 成立。现假设 $P_k$ 成立,即当 $n=k$ 时,
     \[
     (k + 1)(k + 2) \cdots (2k) = 2^k \cdot 1 \cdot 3 \cdots (2k - 1)
     \]
-    观察当 $n=k+1$ 时，左边为：
+    观察当 $n=k+1$ 时,左边为:
     \begin{align*}
     (k + 2)(k + 3) \cdots (2k)(2k + 1)(2k + 2) &= \frac{(k + 1)(k + 2) \cdots (2k) \cdot (2k + 1) \cdot 2(k + 1)}{k + 1} \\
     &= \frac{2^k \cdot 1 \cdot 3 \cdots (2k - 1) \cdot (2k + 1) \cdot 2(k + 1)}{k + 1} \\
     &= 2^{k + 1} \cdot 1 \cdot 3 \cdots (2k - 1)(2k + 1)
     \end{align*}
-    此时左边等于 $P_{k+1}$ 的右边，因此 $P_{k+1}$ 亦成立。
+    此时左边等于 $P_{k+1}$ 的右边,因此 $P_{k+1}$ 亦成立。
     
-    即 $P_k \implies P_{k+1}$。由数学归纳法，$P_n$ 对任意正整数 $n$ 都成立。
+    即 $P_k \implies P_{k+1}$。由数学归纳法,$P_n$ 对任意正整数 $n$ 都成立。
 \end{solution}
 
 \question 证明对任意正整数 $n \ge p$,
@@ -14187,37 +14105,37 @@ I(1)
 \begin{solution}
     定义命题 $P_n$ 为上述等式。其中 $n, p \in \mathbb{Z}^{+}$ 且 $p > 1$。
     
-    第一步：当 $n = p$ 时，
+    第一步:当 $n = p$ 时,
     左边 $= \frac{1}{1 \cdot 2 \cdots p} = \frac{1}{p!}$。
     右边 $= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{2 \cdot 3 \cdots p} \right] = \frac{1}{p-1} \cdot \frac{p-1}{p!} = \frac{1}{p!}$。
-    左边等于右边，即 $P_p$ 成立。
+    左边等于右边,即 $P_p$ 成立。
 
-    第二步：假设当 $n = k$ ($k \ge p$) 时结论成立，即：
+    第二步:假设当 $n = k$ ($k \ge p$) 时结论成立,即:
     \[
     \sum_{i=1}^{k-p+1} \frac{1}{i \cdots (i+p-1)} = \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+2) \cdots k} \right]
     \]
 
-    第三步：考虑当 $n = k + 1$ 时的情况，左边为：
+    第三步:考虑当 $n = k + 1$ 时的情况,左边为:
     \begin{align*}
     \sum_{i=1}^{k-p+2} \frac{1}{i \cdots (i+p-1)} &= \sum_{i=1}^{k-p+1} \frac{1}{i \cdots (i+p-1)} + \frac{1}{(k-p+2) \cdots (k+1)} \\
     &= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+2) \cdots k} \right] + \frac{1}{(k-p+2) \cdots (k+1)} \\
     &= \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \left( \frac{1}{(k-p+2) \cdots k} - \frac{p-1}{(k-p+2) \cdots (k+1)} \right) \right]
     \end{align*}
-    对括号内进行通分：
+    对括号内进行通分:
     \[
     \frac{(k+1) - (p-1)}{(k-p+2) \cdots (k+1)} = \frac{k-p+2}{(k-p+2)(k-p+3) \cdots (k+1)} = \frac{1}{(k-p+3) \cdots (k+1)}
     \]
-    由此可得：
+    由此可得:
     \[
     \text{左边} = \frac{1}{p-1} \left[ \frac{1}{(p-1)!} - \frac{1}{(k-p+3) \cdots (k+1)} \right]
     \]
-    此时左边等于 $P_{k+1}$ 的右边，因此 $P_{k+1}$ 亦成立。
+    此时左边等于 $P_{k+1}$ 的右边,因此 $P_{k+1}$ 亦成立。
     
-    即 $P_k \implies P_{k+1}$。由数学归纳法，$P_n$ 对任意正整数 $n \ge p$ 均成立。
+    即 $P_k \implies P_{k+1}$。由数学归纳法,$P_n$ 对任意正整数 $n \ge p$ 均成立。
 \end{solution}
 
 \question
-证明：对于任意整数 $n > 1$，有
+证明:对于任意整数 $n > 1$,有
 \[ \frac{1}{2} \cdot \frac{3}{4} \cdot \frac{5}{6} \cdots \frac{2n - 1}{2n} < \frac{1}{\sqrt{3n + 1}} \]
 据此,试证
 \[
@@ -14226,29 +14144,29 @@ I(1)
 \begin{solution}
     我们使用数学归纳法进行证明。
 
-    第一步：当 $n = 1$ 时，
+    第一步:当 $n = 1$ 时,
     \[ \text{左边} = \frac{1}{2}, \quad \text{右边} = \frac{1}{\sqrt{3(1) + 1}} = \frac{1}{2} \]
-    此时左边等于右边（注：题目要求证明 $n>1$ 时的严格不等式，此处作为归纳基础）。
+    此时左边等于右边（注:题目要求证明 $n>1$ 时的严格不等式,此处作为归纳基础）。
 
-    第二步：假设当 $n = k$ 时不等式（或等式）成立，即：
+    第二步:假设当 $n = k$ 时不等式（或等式）成立,即:
     \[ \frac{1}{2} \cdot \frac{3}{4} \cdots \frac{2k - 1}{2k} \le \frac{1}{\sqrt{3k + 1}} \]
 
-    第三步：考虑当 $n = k + 1$ 时，左边乘积项变为：
+    第三步:考虑当 $n = k + 1$ 时,左边乘积项变为:
     \[ \text{左边} = \left( \frac{1}{2} \cdots \frac{2k - 1}{2k} \right) \cdot \frac{2k + 1}{2k + 2} \le \frac{1}{\sqrt{3k + 1}} \cdot \frac{2k + 1}{2k + 2} \]
-    为了证明结论成立，我们需要证明 $\frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} < \frac{1}{\sqrt{3(k + 1) + 1}}$。
-    我们对不等式左边项的平方进行分析：
+    为了证明结论成立,我们需要证明 $\frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} < \frac{1}{\sqrt{3(k + 1) + 1}}$。
+    我们对不等式左边项的平方进行分析:
     \begin{align*}
     \left[ \frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} \right]^2 &= \frac{(2k + 1)^2}{(4k^2 + 8k + 4)(3k + 1)} \\
     &= \frac{(2k + 1)^2}{12k^3 + 28k^2 + 20k + 4} \\
     &= \frac{(2k + 1)^2}{(12k^3 + 28k^2 + 19k + 4) + k}
     \end{align*}
-    注意到上式分母中括号内的部分恰好等于 $(2k + 1)^2(3k + 4)$。因此：
+    注意到上式分母中括号内的部分恰好等于 $(2k + 1)^2(3k + 4)$。因此:
     \[ \frac{(2k + 1)^2}{(2k + 1)^2(3k + 4) + k} < \frac{(2k + 1)^2}{(2k + 1)^2(3k + 4)} = \frac{1}{3k + 4} \]
-    这表明：
+    这表明:
     \[ \frac{2k + 1}{(2k + 2)\sqrt{3k + 1}} < \frac{1}{\sqrt{3k + 4}} \]
     即 $P_{k+1}$ 成立。
 
-    综上所述，由数学归纳法可知，原不等式对所有 $n > 1$ 均成立。
+    综上所述,由数学归纳法可知,原不等式对所有 $n > 1$ 均成立。
 
     据此,令$n=50$,得
 \end{solution}
@@ -14335,7 +14253,7 @@ f(n)=3^{2n+4}-2^{2n}
 \sqrt{k} + \frac{1}{\sqrt{k+1}} \ge \sqrt{k+1}.
 \]
 
-两边同减 $\sqrt{k+1}$：
+两边同减 $\sqrt{k+1}$:
 \begin{align*}
 \sqrt{k} + \frac{1}{\sqrt{k+1}} - \sqrt{k+1} 
 &= \frac{\sqrt{k(k+1)} + 1 - (k+1)}{\sqrt{k+1}} \\
@@ -14353,7 +14271,7 @@ f(n)=3^{2n+4}-2^{2n}
 由数学归纳法,命题对所有正整数 $n$ 成立。
 \end{solution}
 
-\question 用数学归纳法证明：若 $n \in \mathbb{N}, n \geq 3$,则
+\question 用数学归纳法证明:若 $n \in \mathbb{N}, n \geq 3$,则
 \[
 n^{n+1} > (n+1)^n,
 \]
@@ -14365,41 +14283,41 @@ n^{n+1} > (n+1)^n,
 \begin{solution}
 首先进行归纳证明。
 
-\textbf{基础情况：} $n=3$  
+\textbf{基础情况:} $n=3$  
 \[
 3^{3+1} = 81 > 64 = 4^3,
 \]  
 因此结果对 $n=3$ 成立。
 
-\textbf{归纳假设：} 假设对于 $n=k \ge 3$,不等式成立：
+\textbf{归纳假设:} 假设对于 $n=k \ge 3$,不等式成立:
 \[
 k^{k+1} > (k+1)^k.
 \]
 
-\textbf{归纳步骤：} 需要证明若归纳假设成立,则
+\textbf{归纳步骤:} 需要证明若归纳假设成立,则
 \[
 (k+1)^{(k+1)+1} = (k+1)^{k+2} > (k+2)^{k+1}.
 \]
 
-根据归纳假设：
+根据归纳假设:
 \[
 k^{k+1} > (k+1)^k \implies k^{k+1} (k+1)^2 > (k+1)^k (k+2)^{k+1} ?
 \]
 
-考虑简单的方法：对任意 $k \ge 3$,有
+考虑简单的方法:对任意 $k \ge 3$,有
 \[
 (k+1)^2 > k(k+2) \implies k^2 + 2k + 1 > k^2 + 2k,
 \]  
 这显然成立,因此归纳步骤成立。
 
-因此,如果不等式对 $n=k$ 成立,则对 $n=k+1$ 也成立。结合基础情况 $n=3$,则对所有 $n \ge 3$,不等式成立：
+因此,如果不等式对 $n=k$ 成立,则对 $n=k+1$ 也成立。结合基础情况 $n=3$,则对所有 $n \ge 3$,不等式成立:
 \[
 n^{n+1} > (n+1)^n.
 \]
 
-\textbf{推导 $\sqrt{n} > \sqrt[n+1]{n+1}$：}
+\textbf{推导 $\sqrt{n} > \sqrt[n+1]{n+1}$:}
 
-两边同时取 $(n(n+1))$ 次根：
+两边同时取 $(n(n+1))$ 次根:
 \begin{align*}
 \left(\frac{n^{n+1}}{(n+1)^{n+1}}\right)^{\frac{1}{n(n+1)}} &> \left(\frac{(n+1)^n}{(n+1)^{n+1}}\right)^{\frac{1}{n(n+1)}} \\
 \frac{n^{\frac{1}{n}}}{(n+1)^{\frac{1}{n+1}}} &> \frac{1}{(n+1)^{\frac{1}{n+1}}} \\
@@ -14431,12 +14349,12 @@ x_1^2-25=\left(\frac{26}{5}\right)^2-25=\frac{51}{25}=2.04,
 x_{k+1}^2-25=\Big(x_k+\frac{1}{x_k}\Big)^2-25=(x_k^2-25)+2+\frac{1}{x_k^2}.
 \]
 
-首先给出下界：由于 $\dfrac{1}{x_k^2}>0$,有
+首先给出下界:由于 $\dfrac{1}{x_k^2}>0$,有
 \[
 x_{k+1}^2-25>(x_k^2-25)+2>2k+2=2(k+1).
 \]
 
-再给出上界：由归纳假设 $x_k^2-25<\dfrac{47k}{23}$,所以
+再给出上界:由归纳假设 $x_k^2-25<\dfrac{47k}{23}$,所以
 \[
 x_{k+1}^2-25<( \tfrac{47k}{23} )+2+\frac{1}{x_k^2}.
 \]
@@ -14634,7 +14552,7 @@ a_{k+1}=\frac{2\cdot2^{k+1}-5}{2\cdot2^{k+1}-3}
 S_n = \sum_{k=1}^{n} \Bigg(\sin \left(\frac{\pi/2}{k}\right) - \cos \left(\frac{\pi/2}{k}\right) - \sin \left(\frac{\pi/2}{k+2}\right) + \cos \left(\frac{\pi/2}{k+2}\right)\Bigg).
 \]
 
-观察前几项的望远镜消去规律：
+观察前几项的望远镜消去规律:
 \begin{align*}
 S_1 &= 1 - \sin(\pi/6) + \cos(\pi/6), \\
 S_2 &= S_1 + \sin(\pi/4) - \cos(\pi/4) - \sin(\pi/8) + \cos(\pi/8) = 1 - \sin(\pi/6) + \cos(\pi/6) - \sin(\pi/8) + \cos(\pi/8), \\
@@ -14642,7 +14560,7 @@ S_3 &= S_2 + \sin(\pi/6) - \cos(\pi/6) - \sin(\pi/10) + \cos(\pi/10) = 1 - \sin(
 S_4 &= S_3 + \sin(\pi/8) - \cos(\pi/8) - \sin(\pi/12) + \cos(\pi/12) = 1 - \sin(\pi/10) + \cos(\pi/10) - \sin(\pi/12) + \cos(\pi/12).
 \end{align*}
 
-由归纳法可得一般形式：
+由归纳法可得一般形式:
 \[
 S_n = 1 - \sin \frac{\pi/2}{n+1} - \sin \frac{\pi/2}{n+2} + \cos \frac{\pi/2}{n+1} + \cos \frac{\pi/2}{n+2}.
 \]
@@ -15002,7 +14920,7 @@ x_{n+1} &= \frac{1}{\tan(\pi/2^{\,n+1})}\Bigl(\sqrt{1+\tan^2(\pi/2^{\,n+1})}-1\B
 \begin{solution}
 用归纳法对 $n$ 证明。空积视作 1,则 $n=0$ 时显然成立。
 
-假设对某个 $n$ 结论成立,考虑 $n+1$。不等式可以拆为两部分：
+假设对某个 $n$ 结论成立,考虑 $n+1$。不等式可以拆为两部分:
 \[
 1+\left(1+\frac{1}{a_0}\right)\cdots\left(1+\frac{1}{a_n-a_0}\right) \le \left(1+\frac{1}{a_0}\right)\cdots\left(1+\frac{1}{a_n}\right)
 \]
@@ -15098,7 +15016,7 @@ a_n=\sum_{k=0}^\infty \frac{k^n}{k!}, \quad b_n=\sum_{k=0}^\infty \frac{(-1)^k k
 证明 $a_n\cdot b_n$ 是整数。
 
 \begin{solution}
-我们用归纳法证明：对所有 $n\ge 0$,$a_n/e$ 与 $b_n e$ 都是整数。这里也包含 $n=0$ 的情形（在定义中约定 $0^0=1$）。
+我们用归纳法证明:对所有 $n\ge 0$,$a_n/e$ 与 $b_n e$ 都是整数。这里也包含 $n=0$ 的情形（在定义中约定 $0^0=1$）。
 
 由指数函数的幂级数展开可知
 \[
@@ -15241,14 +15159,14 @@ a_n b_n=\left(\frac{a_n}{e}\right)\left(b_n e\right)
         猜测亦成立,故猜测对所有$m,n\in \mathbb{N}\cup\{0\}$且$m\ge n$皆成立。
     \end{solution}
     \end{parts}
-\question 用数学归纳法证明：若 $n \ge 1,\; n \in \mathbb{N}$,则
+\question 用数学归纳法证明:若 $n \ge 1,\; n \in \mathbb{N}$,则
 \[
 \prod_{r=1}^{n} \cos\left(2^{r-1}x\right)
 = \frac{\sin\left(2^{n}x\right)}{2^{n}\sin x}.
 \]
 
 \begin{solution}
-先将乘积符号展开：
+先将乘积符号展开:
 \[
 \prod_{r=1}^{n} \cos\left(2^{r-1}x\right)
 = \cos x \cos 2x \cos 4x \cos 8x \cdots \cos\left(2^{n-1}x\right).
@@ -15337,7 +15255,7 @@ a_n b_n=\left(\frac{a_n}{e}\right)\left(b_n e\right)
 &= \sin[(2k+2)x] - \sin(2kx).
 \end{align*}
 
-现在考虑 $n=k+1$：
+现在考虑 $n=k+1$:
 \begin{align*}
 \sum_{r=1}^{k+1} \cos[(2r-1)x]
 &= \left(\sum_{r=1}^{k} \cos[(2r-1)x]\right)
@@ -15354,7 +15272,7 @@ a_n b_n=\left(\frac{a_n}{e}\right)\left(b_n e\right)
 由于结论对 $n=1$ 成立,根据数学归纳法,结论对所有 $n\in\mathbb{N}$ 成立。
 \end{solution}
 
-    \question 用数学归纳法证明：
+    \question 用数学归纳法证明:
 \[
 \frac{d^n}{dx^n}[e^x \cos x]
 = 2^{\frac{n}{2}} e^x \cos\left(x + \frac{n\pi}{4}\right),
@@ -15794,7 +15712,7 @@ I_1 &= \int_0^{\pi/2} \frac{\sin 3x}{\sin x} \,dx \\
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{行列式、矩阵}{行列式、矩阵} \label{行列式、矩阵}
+    \hypertarget{行列式}{行列式} \label{行列式}
   }
 \end{center}
 \separator
@@ -15905,7 +15823,7 @@ I_1 &= \int_0^{\pi/2} \frac{\sin 3x}{\sin x} \,dx \\
 \]
 
 \begin{solution}
-将乘积写成和：
+将乘积写成和:
 \[
 \begin{vmatrix} 
 \log a & \log b & -\log a - \log b \\ 
@@ -15984,7 +15902,7 @@ I_1 &= \int_0^{\pi/2} \frac{\sin 3x}{\sin x} \,dx \\
 \]
 
 \begin{solution}
-展开行列式：
+展开行列式:
 \[
 \begin{vmatrix} 
 \tan A & 1 & 1 \\ 
@@ -16083,7 +16001,7 @@ c & c^2 & \cos C
 \]
 
 \begin{solution}
-利用余弦定理 \(\cos A = \frac{b^2+c^2-a^2}{2bc}\) 等,代入行列式：
+利用余弦定理 \(\cos A = \frac{b^2+c^2-a^2}{2bc}\) 等,代入行列式:
 \[
 \begin{vmatrix} 
 a & a^2 & \frac{b^2+c^2-a^2}{2bc} \\ 
@@ -16092,7 +16010,7 @@ c & c^2 & \frac{a^2+b^2-c^2}{2ab}
 \end{vmatrix}.
 \]
 
-提取公因子 \(\frac{1}{2abc}\)：
+提取公因子 \(\frac{1}{2abc}\):
 \[
 = \frac{1}{2abc} 
 \begin{vmatrix} 
@@ -16102,7 +16020,7 @@ c & c^2 & c(a^2+b^2-c^2)
 \end{vmatrix}.
 \]
 
-提取 \(a,b,c\)：
+提取 \(a,b,c\):
 \[
 = \frac{1}{2} 
 \begin{vmatrix} 
@@ -16112,7 +16030,7 @@ c & c^2 & c(a^2+b^2-c^2)
 \end{vmatrix}.
 \]
 
-行变换：
+行变换:
 \[
 R_2 \leftarrow R_2-R_1, \quad R_3 \leftarrow R_3-R_1
 \implies
@@ -16124,7 +16042,7 @@ R_2 \leftarrow R_2-R_1, \quad R_3 \leftarrow R_3-R_1
 \end{vmatrix}.
 \]
 
-按第一列展开：
+按第一列展开:
 \[
 = \frac{1}{2} 
 \begin{vmatrix} 
@@ -16138,7 +16056,7 @@ c-a & (a-c)(a+c)
 \end{vmatrix}.
 \]
 
-提取公因子 \((b-a)(c-a)\)：
+提取公因子 \((b-a)(c-a)\):
 \[
 = (b-a)(c-a) 
 \begin{vmatrix} 
@@ -16152,12 +16070,12 @@ c-a & (a-c)(a+c)
 \end{vmatrix}.
 \]
 
-计算 2×2 行列式：
+计算 2×2 行列式:
 \[
 = -(b-a)(c-a) ((a+c)-(a+b)) = -(b-a)(c-a)(c-b) = (a-b)(a-c)(b-c).
 \]
 
-最终结果：
+最终结果:
 \[
 \begin{vmatrix} 
 a & a^2 & \cos A \\ 
@@ -16284,7 +16202,7 @@ y+z & z+x & x+y
 \]
 
 \begin{solution}
-先对行和列进行初等变换：
+先对行和列进行初等变换:
 \begin{align*}
 \begin{vmatrix} 
 b+c & c+a & a+b \\ 
@@ -16340,7 +16258,7 @@ c & c & a+b
 \]
 
 \begin{solution}
-先对第三列进行变换：
+先对第三列进行变换:
 \[
 C_3 \leftarrow C_3 - C_2 \implies 
 \begin{vmatrix} 
@@ -16350,7 +16268,7 @@ c & c & a
 \end{vmatrix}.
 \]
 
-对第一行和第二行进行行变换：
+对第一行和第二行进行行变换:
 \[
 R_1 \leftarrow R_1 + R_2, \quad R_2 \leftarrow R_2 + R_3 \implies
 \begin{vmatrix} 
@@ -16360,7 +16278,7 @@ R_1 \leftarrow R_1 + R_2, \quad R_2 \leftarrow R_2 + R_3 \implies
 \end{vmatrix}.
 \]
 
-提取公因子 2：
+提取公因子 2:
 \[
 = 2 \begin{vmatrix} 
 b & a & -b \\ 
@@ -16369,7 +16287,7 @@ c & c & a
 \end{vmatrix}.
 \]
 
-对第三列进行列变换：
+对第三列进行列变换:
 \[
 C_3 \leftarrow C_3 + C_1 \implies
 2 \begin{vmatrix} 
@@ -16379,7 +16297,7 @@ c & c & a+c
 \end{vmatrix}.
 \]
 
-对第二行进行行变换：
+对第二行进行行变换:
 \[
 R_2 \leftarrow R_2 - R_1 \implies
 2 \begin{vmatrix} 
@@ -16389,12 +16307,12 @@ c & c & a+c
 \end{vmatrix}.
 \]
 
-展开计算：
+展开计算:
 \[
 2 \big( b(c(a+c)) - a(0) + 0 \big) = 2(abc + bc^2).
 \]
 
-最后整理得到：
+最后整理得到:
 \[
 \begin{vmatrix} 
 b+c & a & a \\ 
@@ -16853,7 +16771,7 @@ c & c & a+b
         \]
     \end{solution}
 
-    \question 设 $V_n$ 为 $n$ 阶范德蒙行列式,定义如下：
+    \question 设 $V_n$ 为 $n$ 阶范德蒙行列式,定义如下:
     \[
     V_n = \begin{vmatrix}
     1 & x_1 & x_1^2 & \dots & x_1^{n-1} \\
@@ -16935,7 +16853,7 @@ c & c & a+b
         \]
     \end{solution}
 
-    \question 写出帕斯卡三角形的无限数组如下：
+    \question 写出帕斯卡三角形的无限数组如下:
 %\begin{tabular}{cccccc}
 %1 & 1 & 1 & 1 & 1 & \dots \\
 %1 & 2 & 3 & 4 & 5 & \dots \\
@@ -16949,9 +16867,9 @@ c & c & a+b
 \begin{solution}
 对小的 $n$ 直接计算表明 $\det(D_n) = 1$ 对所有 $n$ 成立。
 
-\textbf{证明思路：}
+\textbf{证明思路:}
 
-对 $D_n$ 依次对行做初等变换,从第 $n$ 行到第 $2$ 行：
+对 $D_n$ 依次对行做初等变换,从第 $n$ 行到第 $2$ 行:
 \begin{enumerate}
     \item 第 $n$ 行减去第 $n-1$ 行,
     \item 第 $n-1$ 行减去第 $n-2$ 行,
@@ -16961,7 +16879,7 @@ c & c & a+b
 
 根据数组的构造方式,这将使每列向右平移一位,并使第一列变为首项为 $1$,其余 $n-1$ 项为 $0$。对行 $n$ 到 $3$,再到 $n$ 到 $4$ 等重复此过程,可以得到上三角矩阵,且对角线上全为 $1$,显然行列式为 $1$。
 
-另一种方法：在第一次行变换后展开第一列的余子式,可得到 $\det(D_n)=\det(D_{n-1})$。结合小 $n$ 的值即可得出结果。
+另一种方法:在第一次行变换后展开第一列的余子式,可得到 $\det(D_n)=\det(D_{n-1})$。结合小 $n$ 的值即可得出结果。
 \end{solution}
 
 \question 证明
@@ -17135,7 +17053,17 @@ c & c & a+b
         与第三式 $x_2 + 2x_3 = 2$ 矛盾,因此方程组无解。
         \end{itemize}
     \end{solution}
+\end{questions}
+\pagebreak
 
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{矩阵}{矩阵} \label{矩阵}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
     \question 已知
     \[
     A=\begin{bmatrix}1&0&0\\ -2&3&0\\ 0&-4&5\end{bmatrix},\quad
@@ -17681,7 +17609,7 @@ C(A-B) = A^{-1}B.
 \[
 A^{-1}+B^{-1}=(A+B)^{-1}.
 \]
-证明 $\det A=\det B$。问：若 $A,B$ 为复矩阵,结论是否仍成立？
+证明 $\det A=\det B$。问:若 $A,B$ 为复矩阵,结论是否仍成立？
 
 \begin{solution}
 两边同乘以 $(A+B)$,得
@@ -17763,7 +17691,7 @@ I+B+\overline{B}=0.
 \[
 A^2+B^2=AB。
 \]
-证明：若 $BA-AB$ 为可逆矩阵,则 $n$ 能被 $3$ 整除。
+证明:若 $BA-AB$ 为可逆矩阵,则 $n$ 能被 $3$ 整除。
 
 \begin{solution}
 设
@@ -17831,7 +17759,7 @@ A^4-A=0.
 \Lambda=0,\quad \Lambda=1,\quad \Lambda=\frac{-1\pm i\sqrt{3}}{2}.
 \]
 
-下面验证这些值均可实现。考虑如下矩阵：
+下面验证这些值均可实现。考虑如下矩阵:
 \[
 A_0=(0),\qquad
 A_1=(1),
@@ -17889,7 +17817,7 @@ AB = \begin{pmatrix}
 求 $BA$。
 
 \begin{solution}
-将矩阵分块表示：
+将矩阵分块表示:
 \[
 A = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix}, \quad B = \begin{pmatrix} B_1 & B_2 \end{pmatrix},
 \]
@@ -17899,12 +17827,12 @@ AB = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} \begin{pmatrix} B_1 & B_2 \end{pma
 \begin{pmatrix} A_1B_1 & A_1B_2 \\ A_2B_1 & A_2B_2 \end{pmatrix}.
 \]
 
-比较分块得到：
+比较分块得到:
 \[
 A_1B_1 = A_2B_2 = I_2, \quad A_1B_2 = A_2B_1 = -I_2.
 \]
 
-于是可解得：
+于是可解得:
 \[
 B_1 = A_1^{-1}, \quad B_2 = -A_1^{-1}, \quad A_2 = -A_1.
 \]
@@ -17996,7 +17924,7 @@ X^2 = (v^t w - I)^2 = I - 2 v^t w + v^t w v^t w = I + (w v^t - 2)v^t w.
 \mathrm{trace}(X^2) = n + (n-2)n = n(n-1).
 \]
 
-另一种方法是利用秩为 $1$ 的条件：因为 $X+I$ 的秩为 $1$,它有 $0$ 的特征值,重数为 $n-1$。因此 $X$ 有 $-1$ 的特征值,重数为 $n-1$。由于 $\mathrm{trace}(X) = 0$,剩余的特征值为 $n-1$。于是
+另一种方法是利用秩为 $1$ 的条件:因为 $X+I$ 的秩为 $1$,它有 $0$ 的特征值,重数为 $n-1$。因此 $X$ 有 $-1$ 的特征值,重数为 $n-1$。由于 $\mathrm{trace}(X) = 0$,剩余的特征值为 $n-1$。于是
 \[
 \mathrm{trace}(X^2) = (n-1)^2 + (n-1)\cdot 1^2 = n(n-1).
 \]
@@ -18026,7 +17954,7 @@ A^2(X + AX + XA^2)A^2 = A^2 X A^2 + A^3 X A^2 + A^2 X A^4 = A^2 X A^2.
 A^2 X A^2 = 0.
 \]
 
-同理可得：
+同理可得:
 \begin{align*}
 A^2 X &= A^2(X + AX + XA^2) = A^3 = 0, \\
 AXA &= A(X + AX + XA^2)A = A^3 = 0, \\
@@ -18042,7 +17970,7 @@ AX = A(X + AX + XA^2) = A^2,
 X = A - AX - XA^2 = A - A^2.
 \]
 
-因此,唯一可能的解为 $X = A - A^2$。为了验证其确实满足方程：
+因此,唯一可能的解为 $X = A - A^2$。为了验证其确实满足方程:
 \[
 X + AX + X A^2 = (A - A^2) + A(A - A^2) + (A - A^2) A^2 = A - A^4 = A.
 \]
@@ -18209,22 +18137,22 @@ B^3 = I \implies A^6 = B^6 = I.
 S = 1 + 2i + 3i^2 + 4i^3 + \dots + (4n+1)i^{4n}.
 \]
 
-两边乘以 $i$：
+两边乘以 $i$:
 \[
 iS = i + 2i^2 + 3i^3 + 4i^4 + \dots + (4n)i^{4n} + (4n+1)i^{4n+1}.
 \]
 
-原式减去该式：
+原式减去该式:
 \[
 (1-i)S = 1 + i + i^2 + i^3 + \dots + i^{4n} - (4n+1)i^{4n+1}.
 \]
 
-右边的几何级数求和（注意 $i^{4n+1} = i$）：
+右边的几何级数求和（注意 $i^{4n+1} = i$）:
 \[
 (1-i)S = \frac{i^{4n+1}-1}{i-1} - (4n+1)i = 1 - (4n+1)i.
 \]
 
-解 $S$：
+解 $S$:
 \begin{align*}
 S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
 &= \frac{1 + i - (4n+1)i - (4n+1)i^2}{1 - i^2} \\
@@ -18476,7 +18404,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
 \]
 
 \begin{solution}
-先将表达式化简：
+先将表达式化简:
 \begin{align*}
 \Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right] 
 &= \Re \left[ \frac{z - z\bar{z}}{\bar{z} + z\bar{z}} \right] 
@@ -18485,7 +18413,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
 = \Re \left[ \frac{e^{i\theta} - 1}{e^{-i\theta} + 1} \right].
 \end{align*}
 
-乘以共轭以简化：
+乘以共轭以简化:
 \begin{align*}
 \Re \left[ \frac{e^{i\theta}-1}{e^{-i\theta}+1} \right] 
 &= \Re \left[ \frac{(e^{i\theta}-1)(e^{i\theta}+1)}{(e^{-i\theta}+1)(e^{i\theta}+1)} \right] \\
@@ -18498,7 +18426,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
 &= -\frac{\sin^2\theta}{1+\cos\theta}.
 \end{align*}
 
-使用半角公式化简：
+使用半角公式化简:
 \[
 -\frac{\sin^2\theta}{1+\cos\theta} 
 = -\frac{(2\sin\frac{\theta}{2}\cos\frac{\theta}{2})^2}{2\cos^2\frac{\theta}{2}} 
@@ -18708,7 +18636,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     \question 确定所有满足 $|a|=|b|=1$ 且 $a + b + a\bar{b} \in \mathbb{R}$ 的复数对 $(a,b)$。
 
 \begin{solution}
-方法一：设 $a = e^{ix}$,$b = e^{iy}$,其中 $x, y \in [0, 2\pi)$。利用欧拉公式以及恒等式
+方法一:设 $a = e^{ix}$,$b = e^{iy}$,其中 $x, y \in [0, 2\pi)$。利用欧拉公式以及恒等式
 \[
 \sin x + \sin y = 2 \sin \frac{x+y}{2} \cos \frac{x-y}{2}, \quad \sin(x-y) = 2 \sin \frac{x-y}{2} \cos \frac{x-y}{2},
 \]
@@ -18734,7 +18662,7 @@ x = 2k\pi, \quad y = (2k+1)\pi, \quad x = y + (2k+1)\pi, \quad k \in \mathbb{Z}.
 (a,b) = (1, b), \quad (a,-1), \quad (a,-a), \quad \text{其中 } |a|=|b|=1.
 \]
 
-方法二：注意到
+方法二:注意到
 \[
 a+b+a\bar{b}\in\mathbb{R} \iff 1+a+b+a\bar{b} \in \mathbb{R}.
 \]
@@ -18747,7 +18675,7 @@ a+b+a\bar{b}\in\mathbb{R} \iff 1+a+b+a\bar{b} \in \mathbb{R}.
 \[
 (a+b)(1+\overline{b}) = 1+a+b+a\overline{b}=0,
 \]
-得到 $a=-b$ 或 $b=-1$。所以得到的三族解为：
+得到 $a=-b$ 或 $b=-1$。所以得到的三族解为:
 \[
 (a,b) = (1,b), \quad (a,-1), \quad (a,-a), \quad |a|=|b|=1.
 \]
@@ -19025,7 +18953,7 @@ z^2-z+1
 
     \end{solution}
 
-    \question 证明：
+    \question 证明:
     \begin{parts}
         \part 如果 $z = \cos \theta + i \sin \theta$,则
 \[
@@ -19033,17 +18961,17 @@ z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
 \]
 
 \begin{solution}
-由 De Moivre 定理：
+由 De Moivre 定理:
 \[
 z^n = \cos n\theta + i \sin n\theta, \quad z^{-n} = \cos(-n\theta) + i \sin(-n\theta) = \cos n\theta - i \sin n\theta.
 \]
 
-相加得到：
+相加得到:
 \[
 z^n + z^{-n} = (\cos n\theta + i \sin n\theta) + (\cos n\theta - i \sin n\theta) = 2\cos n\theta.
 \]
 
-相减得到：
+相减得到:
 \[
 z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta) = 2i \sin n\theta.
 \]
@@ -19055,7 +18983,7 @@ z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta)
 \]
 
 \begin{solution}
-对于第一个恒等式,使用 $2i \sin \theta = z - z^{-1}$：
+对于第一个恒等式,使用 $2i \sin \theta = z - z^{-1}$:
 \begin{align*}
 (2i \sin \theta)^5 &= (z - z^{-1})^5 \\
 32 i^5 \sin^5 \theta &= z^5 - 5 z^3 z^{-2} + 10 z z^{-4} - 10 z^2 z^{-3} + 5 z z^{-4} - z^{-5} \\
@@ -19064,7 +18992,7 @@ z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta)
 16 \sin^5 \theta &= \sin 5\theta - 5 \sin 3\theta + 10 \sin \theta.
 \end{align*}
 
-对于第二个恒等式,使用 $2 \cos \theta = z + z^{-1}$：
+对于第二个恒等式,使用 $2 \cos \theta = z + z^{-1}$:
 \begin{align*}
 (2 \cos \theta)^6 &= (z + z^{-1})^6 \\
 64 \cos^6 \theta &= (z^6 + z^{-6}) + 6(z^4 + z^{-4}) + 15 (z^2 + z^{-2}) + 20 \\
@@ -19074,7 +19002,7 @@ z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta)
 \end{solution}
 \end{parts}
 
-\question 证明：
+\question 证明:
 \[
 \cos^5\theta \sin^3\theta = \frac{1}{128}\Bigl(6\sin 2\theta + 2\sin 4\theta - 2\sin 6\theta - \sin 8\theta\Bigr)
 \]
@@ -19089,7 +19017,7 @@ z^n = \cos n\theta + i\sin n\theta, \quad z^{-n} = \cos n\theta - i\sin n\theta,
 z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
 \]
 
-使用 $2\cos\theta = z + z^{-1}$ 得：
+使用 $2\cos\theta = z + z^{-1}$ 得:
 \begin{align*}
 (2\cos\theta)^5 &= (z + z^{-1})^5 \\
 32 \cos^5\theta &= z^5 + 5 z^4 z^{-1} + 10 z^3 z^{-2} + 10 z^2 z^{-3} + 5 z z^{-4} + z^{-5} \\
@@ -19102,7 +19030,7 @@ z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
 16\cos^5\theta \cdot 4 \sin^3\theta = (\cos 5\theta + 5\cos 3\theta + 10\cos\theta)(3\sin\theta - \sin 3\theta).
 \]
 
-展开并使用和差化积公式：
+展开并使用和差化积公式:
 \begin{align*}
 64 \cos^5\theta \sin^3\theta &= 3\cos 5\theta \sin\theta - \cos 5\theta \sin 3\theta + 15 \cos 3\theta \sin\theta - 5 \cos 3\theta \sin 3\theta \\
 &\quad + 30 \cos\theta \sin\theta - 10 \cos\theta \sin 3\theta \\
@@ -19153,13 +19081,13 @@ z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
     \end{solution}
 
     \question
-证明下列无穷级数的和：
+证明下列无穷级数的和:
 \[
 \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = e^{-\cos\theta}\sin(\sin\theta).
 \]
 
 \begin{solution}
-\textbf{步骤 1：定义两个级数 $C$ 与 $S$}
+\textbf{步骤 1:定义两个级数 $C$ 与 $S$}
 
 \[
 C = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)}{n!},\quad 
@@ -19167,7 +19095,7 @@ S = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!}.
 \]
 
 \medskip
-\textbf{步骤 2：使用复数形式合并}
+\textbf{步骤 2:使用复数形式合并}
 
 \[
 C+iS = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)+i\sin(n\theta)}{n!} 
@@ -19175,24 +19103,24 @@ C+iS = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)+i\sin(n\theta)}{n!}
 \]
 
 \medskip
-\textbf{步骤 3：识别指数级数}
+\textbf{步骤 3:识别指数级数}
 
 \[
 C+iS = e^{i\theta} - \frac{(e^{i\theta})^2}{2!} + \frac{(e^{i\theta})^3}{3!} - \cdots = \sum_{n=1}^{\infty} \frac{(-1)^{n+1} (e^{i\theta})^n}{n!}.
 \]
 
-利用指数函数展开式：
+利用指数函数展开式:
 \[
 e^{-z} = 1 - z + \frac{z^2}{2!} - \frac{z^3}{3!} + \cdots \implies \sum_{n=1}^{\infty} \frac{(-1)^{n+1} z^n}{n!} = 1 - e^{-z}.
 \]
 
-取 $z = e^{i\theta}$,得到：
+取 $z = e^{i\theta}$,得到:
 \[
 C+iS = 1 - e^{-e^{i\theta}} = 1 - e^{-(\cos\theta + i\sin\theta)} = 1 - e^{-\cos\theta} e^{-i\sin\theta}.
 \]
 
 \medskip
-\textbf{步骤 4：分离实部和虚部}
+\textbf{步骤 4:分离实部和虚部}
 
 \[
 C+iS = 1 - e^{-\cos\theta} [\cos(\sin\theta) - i \sin(\sin\theta)] 
@@ -19200,7 +19128,7 @@ C+iS = 1 - e^{-\cos\theta} [\cos(\sin\theta) - i \sin(\sin\theta)]
 \]
 
 \medskip
-\textbf{步骤 5：取虚部得到原级数和}
+\textbf{步骤 5:取虚部得到原级数和}
 
 \[
 \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = \Im(C+iS) = e^{-\cos\theta}\sin(\sin\theta).
@@ -19209,7 +19137,7 @@ C+iS = 1 - e^{-\cos\theta} [\cos(\sin\theta) - i \sin(\sin\theta)]
 \end{solution}
 
 \question
-求下列多项式方程的所有实数解,并在适当情况下用精确的三角形式表示：
+求下列多项式方程的所有实数解,并在适当情况下用精确的三角形式表示:
 \[
 x^7-7x^6-21x^5+35x^4+35x^3-21x^2-7x+1=0.
 \]
@@ -19406,7 +19334,7 @@ Z=\sin^2\theta,
 (1+i\tan\theta)^4+(1-i\tan\theta)^4=\frac{2\cos4\theta}{\cos^4\theta}.
 \]
 
-\item[(b)] 利用(a)的结果,通过构造合适的多项式,进一步证明：
+\item[(b)] 利用(a)的结果,通过构造合适的多项式,进一步证明:
 \begin{enumerate}
 \item[i.] $\tan^2\left(\frac{\pi}{8}\right)\tan^2\left(\frac{3\pi}{8}\right)=1$
 \item[ii.] $\tan^2\left(\frac{\pi}{8}\right)+\tan^2\left(\frac{3\pi}{8}\right)=6$
@@ -19415,7 +19343,7 @@ Z=\sin^2\theta,
 
 \begin{solution}
 \textbf{(a)}  
-从左边开始：
+从左边开始:
 \begin{align*}
 (1+i\tan\theta)^4+(1-i\tan\theta)^4
 &=\left(1+i\frac{\sin\theta}{\cos\theta}\right)^4+\left(1-i\frac{\sin\theta}{\cos\theta}\right)^4 \\
@@ -19495,7 +19423,7 @@ i\tan\frac{5\pi}{8},\quad i\tan\frac{7\pi}{8}.
 w^5 - 1 = 0 \implies (w-1)(1+w+w^2+w^3+w^4) = 0 \implies 1+w+w^2+w^3+w^4 = 0.
 \]
 
-(b) 考虑乘积 $P = (1-w)(1-w^2)(1-w^3)(1-w^4)$。使用共轭与代数关系：
+(b) 考虑乘积 $P = (1-w)(1-w^2)(1-w^3)(1-w^4)$。使用共轭与代数关系:
 \begin{align*}
 P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
 &= (1-w)(1-w^4)(1-w^2)(1-w^3) \\
@@ -19508,7 +19436,7 @@ P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
 &= 5.
 \end{align*}
 
-(c) $(1-w)(1-w^4)$：
+(c) $(1-w)(1-w^4)$:
 \begin{align*}
 (1-w)(1-w^4) &= 1 - w - w^4 + w^5 = 2 - (w + w^4) \\
 &= 2 - \left(\cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5} + \cos\frac{8\pi}{5} + i\sin\frac{8\pi}{5}\right) \\
@@ -19516,7 +19444,7 @@ P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
 &= 2\left(1 - \cos\frac{2\pi}{5}\right) = 2\cdot 2 \sin^2\frac{\pi}{5} = 4\sin^2\frac{\pi}{5}.
 \end{align*}
 
-(d) $(1-w^2)(1-w^3)$：
+(d) $(1-w^2)(1-w^3)$:
 \begin{align*}
 (1-w^2)(1-w^3) &= 1 - w^2 - w^3 + w^5 = 2 - (w^2 + w^3) \\
 &= 2 - (\cos\frac{4\pi}{5} + \cos\frac{6\pi}{5}) \\
@@ -19524,7 +19452,7 @@ P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
 &= 2\left(1 - \cos\frac{4\pi}{5}\right) = 2\cdot 2 \sin^2\frac{2\pi}{5} = 4\sin^2\frac{2\pi}{5}.
 \end{align*}
 
-(e) 由前面结果可知：
+(e) 由前面结果可知:
 \begin{align*}
 16 \sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} &= (1-w)(1-w^2)(1-w^3)(1-w^4) = 5, \\
 \sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} &= \frac{5}{16}, \\
