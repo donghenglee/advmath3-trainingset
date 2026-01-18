@@ -2099,6 +2099,26 @@
         \]
     \end{solution}
 
+    \question 解方程
+    \[
+    \sqrt{x+\sqrt{x}} - \sqrt{x-\sqrt{x}} = \frac{199}{100} \sqrt{\frac{x}{x+\sqrt{x}}}.
+    \]
+    \begin{solution}
+        设 $a=x+\sqrt{x}, b=x-\sqrt{x}$,则 $a-b=\sqrt{a}-\sqrt{b}=2\sqrt{x}$,原方程化为
+        \[
+        \sqrt{a}+\sqrt{b} = \frac{200}{199}\sqrt{x+\sqrt{x}}, \quad
+        \sqrt{a}-\sqrt{b} = \frac{199}{100}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x}}}
+        \]
+        两式相加得
+        \[
+        2\sqrt{x+\sqrt{x}}= \frac{200}{199}\sqrt{x+\sqrt{x}}+\frac{199}{100}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x}}}
+        \]
+        解得
+        \[
+        \sqrt{x}(19800\sqrt{x}-19801)=0 \Rightarrow \sqrt{x} = \frac{19801}{19800}>0 \Rightarrow x = \frac{19801^2}{19800^2}
+        \]
+    \end{solution}
+
     \question 设 $a,b$ 为正实数,且
     \[
     \frac{1}{a}+\frac{1}{b}=1,\quad 2022a^2=2023b^2,
@@ -3079,47 +3099,70 @@
         \]
     \end{solution}
 
-    \question 计算所有实数 $(x, y, z)$ 可能的 $x$ 值的平方和
-\[
-\begin{cases}
-xy + 4z = 60 \\
-yz + 4x = 60 \\
-zx + 4y = 60 
-\end{cases}
-\]
-\begin{solution}
-由 \textcircled{1} - \textcircled{2} 得 $y(x-z)+4(z-x)=0$
-即 $(x-z)(y-4)=0$
-解得 $y=4$ 或 $x=z$
-
-同理,由 \textcircled{2} - \textcircled{3} 得 $(y-x)(z-4)=0$,即 $z=4$ 或 $x=y$
-由 \textcircled{3} - \textcircled{1} 得 $(z-y)(x-4)=0$,即 $x=4$ 或 $y=z$
-
-
-情形 1:$x, y, z$ 全相等,即 $x=y=z$
-代入 \textcircled{1} 得 $x^2+4x-60=0$
-解得 $(x+10)(x-6)=0$
-此时 $x=-10$ 或 $x=6$
-
-情形 2:$x, y, z$ 中有两个相等,另一个为 4
-若 $y=z=4$,代入 \textcircled{1} 得 $4x+16=60$,解得 $4x=44$,即 $x=11$
-若 $x=y=4$,代入 \textcircled{2} 得 $4z+16=60$,解得 $z=11$,此时 $x=4$
-若 $x=z=4$,代入 \textcircled{1} 得 $4y+16=60$,解得 $y=11$,此时 $x=4$
-
-情形 3:若 $x$ 为 4,且 $y, z$ 不一定为 4
-当 $x=4$ 时,由 \textcircled{1} 和 \textcircled{2} 得:
-$4y+4z=60 \implies y+z=15$
-$yz+16=60 \implies yz=44$
-由此可知 $y, z$ 是方程 $t^2-15t+44=0$ 的根
-解得 $(t-4)(t-11)=0$,即 $\{y, z\} = \{4, 11\}$
-这涵盖了情形 2 中的情况,此时 $x=4$ 或 $x=11$
-
-综合以上所有情形,$x$ 的所有可能取值为 $\{-10, 6, 4, 11\}$
-$x$ 的平方和计算如下:
-\[(-10)^2 + 6^2 + 4^2 + 11^2\]
-\[100 + 36 + 16 + 121 = 273\]
-所以所有可能的 $x$ 的平方和为 273。
-\end{solution}
+    \question 已知实数 $x, y, z$ 满足
+    \[
+    \begin{cases}
+    xy + 4z = 60 \\
+    yz + 4x = 60 \\
+    zx + 4y = 60 
+    \end{cases}
+    \]
+    求$x$的可能值。
+    \begin{solution}
+        \[
+        xy + 4z = 60 \tag{1}
+        \]
+        \[
+        yz + 4x = 60 \tag{2}
+        \]
+        \[
+        zx + 4y = 60 \tag{3}
+        \]
+        由 (1) -(2) 得
+        \[
+        y(x-z)+4(z-x)=0 \Rightarrow (x-z)(y-4)=0 \Rightarrow y=4 \; \text{或} \; x=z
+        \]
+        同理有
+        \[
+        z=4 \; \text{或} \; x=y
+        \]
+        及
+        \[
+        x=4 \; \text{或} \; y=z
+        \]
+        若$x=4$,由(1)及(2)得
+        \[
+        y+z=15,\quad yz=44 
+        \]
+        由此可知$y, z$ 是方程 
+        \[
+        t^2-15t+44=0
+        \]
+        的根,解得
+        \[
+        (x,y,z)=(4,4,11),(4,11,4)
+        \]
+        若$y=z$,由(2)-(1)得
+        \[
+        y^2-(x+4)y+4x=0 \Rightarrow (y-4)(y-x)=0 
+        \]
+        当$y=4$有
+        \[
+        (x,y,z)=(11,4,4)
+        \]
+        而当$y=x$有$x=y=z$,代入(1)得
+        \[
+        x^2+4x-60=0 \Rightarrow (x+10)(x-6)=0 
+        \]
+        给出
+        \[
+        (x,y,z)=(-10,-10,-10),(6,6,6)
+        \]
+        所以原方程组的解为
+        \[
+        (x,y,z)=(-10,-10,-10),(6,6,6),(11,4,4),(4,11,4),(4,4,11)
+        \]
+    \end{solution}
 
     \question 解方程组
     \[
@@ -3130,46 +3173,43 @@ $x$ 的平方和计算如下:
     \end{cases}
     \]
     \begin{solution}
-    根据韦达定理,令 $x, y, z$ 为三次方程
-\[t^{3}-\alpha t^{2}+\beta t-\gamma=0\]
-的根。
-
-由题意可知,
-\[\alpha=6, \beta=?, \gamma=?\]
-因为 $\beta = xy+xz+yz$
-且 $(x+y+z)^{2} = x^{2}+y^{2}+z^{2}+2(xy+xz+yz)$
-所以 $6^{2} = 18+2(xy+xz+yz)$
-解得 $9 = xy+xz+yz$。
-
-又因为 $(\sqrt{x}+\sqrt{y}+\sqrt{z})^{2} = x+y+z+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})$
-所以 $4^{2} = 6+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})$
-由此可得
-\[\sqrt{xy}+\sqrt{xz}+\sqrt{yz} = 5\]
-对上式两边平方,有
-\[(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})^{2} = 5^{2}\]
-展开得
-\[xy+xz+yz+2\sqrt{xyz}(\sqrt{x}+\sqrt{y}+\sqrt{z})=25\]
-代入已知数值
-\[9+2\sqrt{xyz} \cdot 4=25\]
-解得 $\sqrt{xyz}=2$,即 $xyz=4$。
-
-因此,该三次方程为
-\[t^3 - 6t^2 + 9t - 4 = 0\]
-利用有理根定理进行综合除法:
-\[\begin{array}{r|cccc}
-1 & 1 & -6 & 9 & -4 \\
-\cline{2-5}
-& & 1 & -5 & 4 \\
-\cline{2-5}
-& 1 & -5 & 4 & 0 \\
-\end{array}\]
-方程可分解为
-\[(t-1)(t^2 - 5t + 4) = 0\]
-进一步分解得
-\[(t-1)(t-1)(t-4) = 0\]
-解得根为 $t=1, 1, 4$。
-所以,方程组的解为 $(x,y,z) = (1, 1, 4), (1, 4, 1), (4, 1, 1)$。
-\end{solution}
+        由
+        \[
+        (x+y+z)^{2} = x^{2}+y^{2}+z^{2}+2(xy+xz+yz)
+        \]
+        给出
+        \[
+        xy+xz+yz = \frac{1}{2}(6^2-18) = 9
+        \]
+        又由 
+        \[
+        (\sqrt{x}+\sqrt{y}+\sqrt{z})^{2} = x+y+z+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz})
+        \]
+        所以 
+        \[
+        4^{2} = 6+2(\sqrt{xy}+\sqrt{xz}+\sqrt{yz}) \Rightarrow \sqrt{xy}+\sqrt{xz}+\sqrt{yz} = 5
+        \]
+        对上式两边平方,有
+        \[
+        xy+xz+yz+2\sqrt{xyz}(\sqrt{x}+\sqrt{y}+\sqrt{z})=25
+        \]
+        即
+        \[
+        9+2\sqrt{xyz} \cdot 4=25 \Rightarrow xyz=4
+        \]
+        由韦达定理, $x, y, z$ 为三次方程
+        \[
+        t^3 - 6t^2 + 9t - 4 = 0
+        \]
+        的根,因式分解得
+        \[
+        (t-1)^2(t-4) = 0 \Rightarrow t=1, 4
+        \]
+        所以方程组的解为 
+        \[
+        (x,y,z) = (1, 1, 4), (1, 4, 1), (4, 1, 1)
+        \]
+    \end{solution}
 
     \question 若 $x,y,z$ 满足
     \[
@@ -3224,584 +3264,229 @@ $x$ 的平方和计算如下:
     \end{solution}
 
     \question 解方程组
-\[
-\sqrt{\frac{x+y}{x}}+\sqrt{\frac{x}{x+y}}=\frac{5}{2}, \quad 2x^{2}+y^{2}=176
-\]
-
-\begin{solution}
-
-\noindent
-\textbf{步骤 1:令代换}
-\[
-u = \sqrt{\frac{x+y}{x}} \implies \frac{x+y}{x} = u^2
-\]
-
-\noindent
-方程变为
-\begin{align*}
-u + \frac{1}{u} &= \frac{5}{2} \\
-2u + 2 &= 5\sqrt{u} \\
-2u - 5\sqrt{u} + 2 &= 0 \\
-(2\sqrt{u}-1)(\sqrt{u}-2) &= 0
-\end{align*}
-
-\noindent
-解得
-\[
-\sqrt{u} = \frac{1}{2} \implies u = \frac{1}{4}, \quad
-\sqrt{u} = 2 \implies u = 4
-\]
-
-\noindent
-\textbf{步骤 2:得到 $y$ 与 $x$ 的线性关系}
-\begin{align*}
-\text{若 } u^2 = \frac{1}{4} &\implies \frac{x+y}{x} = \frac{1}{4} \implies y = -\frac{3}{4}x \\
-\text{若 } u^2 = 16 &\implies \frac{x+y}{x} = 16 \implies y = 3x
-\end{align*}
-
-\noindent
-\textbf{步骤 3:代入 $2x^2+y^2=176$ 求 $x$ 和 $y$}
-
-\noindent
-\textbf{情况 1:} $y=-\frac{3}{4}x$
-\begin{align*}
-2x^2 + \left(-\frac{3}{4}x\right)^2 &= 176 \\
-2x^2 + \frac{9}{16}x^2 &= 176 \\
-\frac{41}{16}x^2 &= 176 \\
-x^2 &= \frac{176 \cdot 16}{41} = \frac{2816}{41} \\
-x &= \pm 16 \sqrt{\frac{11}{41}} \\
-y &= -\frac{3}{4}x = \mp 12 \sqrt{\frac{11}{41}}
-\end{align*}
-
-\noindent
-\textbf{情况 2:} $y=3x$
-\begin{align*}
-2x^2 + (3x)^2 &= 176 \\
-2x^2 + 9x^2 &= 176 \\
-11x^2 &= 176 \\
-x^2 &= 16 \\
-x &= \pm 4 \\
-y &= 3x = \pm 12
-\end{align*}
-
-\noindent
-\textbf{步骤 4:解集}
-\[
-(x,y) = (4,12), \quad (-4,-12), \quad \left(16\sqrt{\frac{11}{41}}, -12\sqrt{\frac{11}{41}}\right), \quad \left(-16\sqrt{\frac{11}{41}}, 12\sqrt{\frac{11}{41}}\right)
-\]
-
-\end{solution}
-
+    \[
+    \begin{cases} 
+    \sqrt{\dfrac{x+y}{x}}+\sqrt{\dfrac{x}{x+y}}=\dfrac{5}{2} \\[8pt]
+    2x^{2}+y^{2}=176
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        \sqrt{\frac{x+y}{x}}+\sqrt{\frac{x}{x+y}}=\frac{5}{2} \tag{1}
+        \]
+        \[
+        2x^{2}+y^{2}=176 \tag{2}
+        \]
+        设
+        \[
+        u = \sqrt{\frac{x+y}{x}}
+        \]
+        方程(1)变为
+        \[
+        u + \frac{1}{u} = \frac{5}{2} \Rightarrow (2u-1)(u-2)=0
+        \]
+        当$u=\frac{1}{2}$,
+        \[
+        \frac{x+y}{x} = \frac{1}{4} \Rightarrow y = -\frac{3}{4}x
+        \]
+        代入(2),解得
+        \[
+        x = \pm 16 \sqrt{\frac{11}{41}}, \quad y = -\frac{3}{4}x = \mp 12 \sqrt{\frac{11}{41}}
+        \]
+        而当$u=2$,
+        \[
+        \frac{x+y}{x} = 16 \Rightarrow y = 3x
+        \]
+        代入(2),解得
+        \[
+        x = \pm 4, \quad y = 3x = \pm 12
+        \]
+        故原方程组解为
+        \[
+        (x,y) = (4,12), (-4,-12), \left(16\sqrt{\frac{11}{41}}, -12\sqrt{\frac{11}{41}}\right), \left(-16\sqrt{\frac{11}{41}}, 12\sqrt{\frac{11}{41}}\right)
+        \]
+    \end{solution}
 
     \question 解方程组
-\[
-(91-2x)^{3}=216xy^{2}, \quad (37-2y)^{3}=216x^{2}y.
-\]
-
-\begin{solution}
-
-\noindent
-注意到 $216 = 6^3$,于是两边同时开立方更为直观。令
-\[
-x = u^3, \quad y = v^3.
-\]
-
-\noindent
-则方程组变为
-\[
-(91-2u^3)^3 = 216 u^3 v^6, \quad (37-2v^3)^3 = 216 u^6 v^3.
-\]
-
-开立方得
-\[
-91-2u^3 = 6 u v^2, \quad 37-2v^3 = 6 u^2 v.
-\]
-
-移项整理:
-\[
-6 u v^2 + 2 u^3 = 91, \quad 6 u^2 v + 2 v^3 = 37.
-\]
-
-\noindent
-两式相加:
-\begin{align*}
-6 u v^2 + 2 u^3 + 6 u^2 v + 2 v^3 &= 91 + 37 = 128 \\
-2(u^3 + v^3 + 3 u^2 v + 3 u v^2) &= 128 \\
-u^3 + v^3 + 3 u^2 v + 3 u v^2 &= 64 \\
-(u+v)^3 &= 64 \\
-u+v &= 4.
-\end{align*}
-
-\noindent
-代入 $v = 4-u$ 至第一方程:
-\begin{align*}
-6 u (4-u)^2 + 2 u^3 &= 91 \\
-6 u (16 - 8u + u^2) + 2 u^3 &= 91 \\
-96 u - 48 u^2 + 6 u^3 + 2 u^3 &= 91 \\
-8 u^3 - 48 u^2 + 96 u &= 91 \\
-8 (u^3 - 6 u^2 + 12 u) &= 91.
-\end{align*}
-
-\noindent
-观察因式分解:
-\[
-u^3 - 6 u^2 + 12 u = (u-2)^3 + 27/8?
-\]
-
-更精确地:
-\[
-u^3 - 6 u^2 + 12 u = (u-2)^3 + 27/8 \quad \text{（通过立方展开或系数对比）}.
-\]
-
-于是
-\[
-8 (u-2)^3 + 64 = 91 \quad \implies \quad 8(u-2)^3 = 27 \quad \implies \quad u-2 = \frac{3}{2} \quad \implies \quad u = \frac{7}{2}.
-\]
-
-\noindent
-因此
-\[
-v = 4 - u = 4 - \frac{7}{2} = \frac{1}{2}.
-\]
-
-\noindent
-回代 $x = u^3$, $y = v^3$:
-\[
-x = \left(\frac{7}{2}\right)^3 = \frac{343}{8}, \quad y = \left(\frac{1}{2}\right)^3 = \frac{1}{8}.
-\]
-
-\noindent
-最终解为:
-\[
-\boxed{x = \frac{343}{8}, \quad y = \frac{1}{8}}.
-\]
-
-\end{solution}
-
-\question 已知 $a\in\mathbb{R},\, b\in\mathbb{R}$,解方程组
-\[
-3(a^2+b^2)^{\frac32}-125a=0,\qquad
-4(a^2+b^2)+25b=0.
-\]
-
-\begin{solution}
-先考虑是否存在平凡解。
-
-若 $a^2+b^2=0$,则 $a=b=0$,代入原方程组显然成立,
-故 $(a,b)=(0,0)$ 为一组解。
-
-以下假设 $a^2+b^2\neq0$。
-
-由第一式得
-\[
-125a=3(a^2+b^2)^{\frac32}.
-\]
-由第二式得
-\[
--25b=4(a^2+b^2).
-\]
-
-将第二式两边同乘 $(a^2+b^2)^{\frac12}$,得
-\[
--25b(a^2+b^2)^{\frac12}=4(a^2+b^2)^{\frac32}.
-\]
-
-于是
-\[
-125a=3(a^2+b^2)^{\frac32},\qquad
--125b=20(a^2+b^2)^{\frac32}.
-\]
-
-两式相除,得
-\[
-\frac{-a}{b}=\frac{3}{20}(a^2+b^2)^{\frac12}.
-\]
-
-平方得
-\[
-\frac{400a^2}{9b^2}=a^2+b^2.
-\]
-
-整理得
-\[
-400a^2=9b^2(a^2+b^2),
-\]
-即
-\[
-a^2(400-9b^2)=9b^2,
-\]
-从而
-\[
-a^2=\frac{9b^2}{400-9b^2}.
-\]
-
-代入第二个原方程
-\[
-4(a^2+b^2)+25b=0,
-\]
-得
-\begin{align*}
-4\left(\frac{9b^2}{400-9b^2}+b^2\right)+25b&=0\\
-4\left(\frac{400b^2}{400-9b^2}\right)+25b&=0\\
-\frac{1600b^2}{400-9b^2}+25b&=0.
-\end{align*}
-
-两边同乘 $400-9b^2$,得
-\[
-1600b^2+25b(400-9b^2)=0,
-\]
-即
-\[
--225b^3+1600b^2+10000b=0.
-\]
-
-提取公因式 $25b$:
-\[
-25b(-9b^2+64b+400)=0.
-\]
-
-因此
-\[
-b=0 \quad \text{或} \quad 9b^2-64b-400=0.
-\]
-
-当 $b=0$ 时,由第二原方程得 $a=0$,即平凡解。
-
-解二次方程
-\[
-9b^2-64b-400=0
-\]
-得
-\[
-b=\frac{64\pm136}{18},
-\]
-即
-\[
-b=\frac{100}{9}\quad\text{或}\quad b=-4.
-\]
-
-代入第二原方程检验:
-$b=\frac{100}{9}$ 使 $4(a^2+b^2)+25b>0$,不成立,舍去。
-
-当 $b=-4$ 时,
-\[
-4(a^2+16)-100=0,
-\]
-得
-\[
-a^2=9,
-\]
-即
-\[
-a=\pm3.
-\]
-
-代入第一原方程,$a=-3$ 不满足,$a=3$ 满足。
-
-因此非平凡解为
-\[
-(a,b)=(3,-4).
-\]
-
-综上,方程组的解为
-\[
-(a,b)=(0,0)\quad \text{或} \quad (3,-4).
-\]
-\end{solution}
-
-\question 解方程组
-\[
-x^3 + 9x^2y = -28, \quad y^3 + xy^2 = 1
-\]
-
-\begin{solution}
-
-\noindent
-将第二个方程乘以 27,使方程的结构便于使用立方和公式:
-\[
-x^3 + 9x^2y = -28, \quad 27y^3 + 27xy^2 = 27
-\]
-
-\noindent
-将两式相加并整理:
-\begin{align*}
-x^3 + 9x^2y + 27xy^2 + 27y^3 &= -28 + 27 = -1 \\
-x^3 + 3(x)^2 (3y) + 3(x)(3y)^2 + (3y)^3 &= -1 \\
-[x + 3y]^3 &= -1
-\end{align*}
-
-\noindent
-取实数解:
-\[
-x + 3y = -1 \quad \implies \quad x = -1 - 3y
-\]
-
-\noindent
-将 $x = -1 - 3y$ 代入较简单的方程 $y^3 + xy^2 = 1$:
-\begin{align*}
-y^3 + (-1 - 3y)y^2 &= 1 \\
-y^3 - y^2 - 3y^3 &= 1 \\
--2y^3 - y^2 - 1 &= 0 \\
-2y^3 + y^2 + 1 &= 0
-\end{align*}
-
-\noindent
-通过观察,$y = -1$ 是一个解:
-\[
-2(-1)^3 + (-1)^2 + 1 = -2 + 1 + 1 = 0
-\]
-
-\noindent
-分解余式:
-\[
-2y^3 + y^2 + 1 = (y+1)(2y^2 - y + 1)
-\]
-
-\noindent
-判别式:
-\[
-\Delta = (-1)^2 - 4\cdot 2 \cdot 1 = 1 - 8 < 0
-\]
-二次方程无实数解,因此唯一实数解为 $y=-1$。
-
-\noindent
-由 $x = -1 - 3y$ 得到:
-\[
-x = -1 - 3(-1) = 2
-\]
-
-\noindent
-最终实数解为
-\[
-(x, y) = (2, -1).
-\]
-
-\end{solution}
-
-\question 解方程组
-\[
-x^3 + 6xy^2 = 99, \quad 2y^3 + 3x^2y = 70
-\]
-
-\begin{solution}
-
-\noindent
-先设 $y = m x$,其中 $m \neq 0$。代入方程得到
-\[
-x^3 + 6 x (m^2 x^2) = x^3 + 6 m^2 x^3 = x^3 (1 + 6 m^2) = 99,
-\]
-\[
-2 (m^3 x^3) + 3 x^2 (m x) = 2 m^3 x^3 + 3 m x^3 = x^3 (2 m^3 + 3 m) = 70.
-\]
-
-\noindent
-两式相除消去 $x^3$:
-\[
-\frac{1 + 6 m^2}{2 m^3 + 3 m} = \frac{99}{70}.
-\]
-
-\noindent
-交叉相乘得到
-\[
-70(1 + 6 m^2) = 99 (2 m^3 + 3 m) \quad \implies \quad 198 m^3 - 420 m^2 + 297 m - 70 = 0.
-\]
-
-\noindent
-通过观察可知 $m = \frac{2}{3}$ 是一个根。利用多项式除法可分解为
-\[
-198 m^3 - 420 m^2 + 297 m - 70 = (3m - 2)(66 m^2 - 96 m + 35).
-\]
-
-\noindent
-检查二次项的判别式:
-\[
-\Delta = (-96)^2 - 4 \cdot 66 \cdot 35 = 9216 - 9240 = -24 < 0
-\]
-二次方程无实根,因此唯一实根为
-\[
-m = \frac{2}{3} \quad \implies \quad y = \frac{2}{3} x.
-\]
-
-\noindent
-将 $y = \frac{2}{3} x$ 代入第一个方程:
-\[
-x^3 + 6 x \left(\frac{2}{3} x\right)^2 = x^3 + 6 x \cdot \frac{4}{9} x^2 = x^3 + \frac{24}{9} x^3 = x^3 + \frac{8}{3} x^3 = \frac{11}{3} x^3 = 99,
-\]
-\[
-x^3 = 27 \quad \implies \quad x = 3.
-\]
-
-\noindent
-得到
-\[
-y = \frac{2}{3} x = 2.
-\]
-
-\noindent
-最终解为
-\[
-(x, y) = (3, 2).
-\]
-
-\end{solution}
-
-
-\question 求实数解
-\[
-36y^{2}(x+1)+36x^{2}(y+1)=7x^{2}y^{2}, \quad 6x+6y+xy=0
-\]
-
-\begin{solution}
-
-\noindent
-\textbf{步骤 1:对两个方程进行倒数代换}
-\[
-X = \frac{1}{x}, \quad Y = \frac{1}{y}
-\]
-
-\noindent
-第一个方程:
-\begin{align*}
-\frac{36y^2(x+1)}{36x^2y^2} + \frac{36x^2(y+1)}{36x^2y^2} &= \frac{7x^2y^2}{36x^2y^2} \\
-\frac{x+1}{x^2} + \frac{y+1}{y^2} &= \frac{7}{36} \\
-\frac{1}{x} + \frac{1}{x^2} + \frac{1}{y} + \frac{1}{y^2} &= \frac{7}{36} \\
-X + X^2 + Y + Y^2 &= \frac{7}{36} \quad (1)
-\end{align*}
-
-\noindent
-第二个方程:
-\begin{align*}
-\frac{6x}{xy} + \frac{6y}{xy} + \frac{xy}{xy} &= 0 \\
-\frac{6}{y} + \frac{6}{x} + 1 &= 0 \\
-X + Y &= -\frac{1}{6} \quad (2)
-\end{align*}
-
-\begin{align*}
-X^2 + \left(-X-\frac{1}{6}\right)^2 &= \frac{13}{36} \\
-X^2 + X^2 + \frac{1}{3}X + \frac{1}{36} &= \frac{13}{36} \\
-2X^2 + \frac{1}{3}X - \frac{12}{36} &= 0 \\
-2X^2 + \frac{1}{3}X - \frac{1}{3} &= 0 \\
-6X^2 + X - 1 &= 0
-\end{align*}
-
-\[
-6X^2 + X - 1 = 0 \implies (3X-1)(2X+1) = 0
-\]
-
-\[
-X = \frac{1}{3} \quad \text{or} \quad X = -\frac{1}{2}
-\]
-
-\[
-Y = -X-\frac{1}{6} \implies Y = \frac{1}{6} \quad \text{or} \quad Y = -\frac{2}{3}
-\]
-
-\noindent
-\textbf{步骤 4:返回到 } x, y
-\[
-x = \frac{1}{X}, \quad y = \frac{1}{Y}
-\]
-
-\[
-(x,y) = (3,6), \quad (-2,-\frac{3}{2})
-\]
-
-\noindent
-\textbf{结论:实数解为}
-\[
-(x,y) = (3,6), \quad (x,y) = (-2,-\frac{3}{2})
-\]
-
-\end{solution}
-
-\question Solve the following simultaneous equations for real $x$ and $y$:
-\[
-x^4 + y^4 = 97, \quad x+y=5
-\]
-
-\begin{solution}
-
-\noindent
-\textbf{方法 A:使用对称替换}
-
-\noindent
-设
-\[
-x = u+v, \quad y = u-v
-\]
-
-\noindent
-则第二个方程给出
-\begin{align*}
-(u+v) + (u-v) &= 5 \\
-2u &= 5 \\
-u &= \frac{5}{2}
-\end{align*}
-
-\noindent
-第一个方程变为
-\begin{align*}
-(u+v)^4 + (u-v)^4 &= 97 \\
-(u^4 + 4u^3v + 6u^2v^2 + 4uv^3 + v^4) + (u^4 - 4u^3v + 6u^2v^2 - 4uv^3 + v^4) &= 97 \\
-2u^4 + 12u^2v^2 + 2v^4 &= 97 \\
-u^4 + 6u^2v^2 + v^4 &= \frac{97}{2}
-\end{align*}
-
-\noindent
-代入 $u=\frac{5}{2}$:
-\begin{align*}
-\left(\frac{5}{2}\right)^4 + 6\left(\frac{5}{2}\right)^2 v^2 + v^4 &= \frac{97}{2} \\
-\frac{625}{16} + 6 \cdot \frac{25}{4} v^2 + v^4 &= \frac{97}{2} \\
-v^4 + \frac{75}{2} v^2 + \frac{625}{16} - \frac{97}{2} &= 0 \\
-v^4 + \frac{75}{2} v^2 - \frac{151}{16} &= 0 \\
-16 v^4 + 600 v^2 - 151 &= 0 \\
-(4v^2 - 1)(4v^2 + 151) &= 0
-\end{align*}
-
-\noindent
-所以
-\[
-4v^2 - 1 = 0 \implies v^2 = \frac{1}{4} \implies v = \pm \frac{1}{2}
-\]
-
-\noindent
-回代得到:
-\[
-x = u+v = \frac{5}{2} \pm \frac{1}{2} = 3 \text{ 或 } 2, \quad y = u-v = \frac{5}{2} \mp \frac{1}{2} = 2 \text{ 或 } 3
-\]
-
-\noindent
-\textbf{解对称性:}
-\[
-(x,y) = (3,2), \quad (2,3)
-\]
-
-\vspace{1em}
-\noindent
-\textbf{方法 B:直接代入法}
-
-\noindent
-由 $x+y=5$ 得 $y=5-x$,代入第一个方程:
-\begin{align*}
-x^4 + (5-x)^4 &= 97 \\
-x^4 + 625 - 500x + 150x^2 - 20x^3 + x^4 &= 97 \\
-2x^4 - 20x^3 + 150x^2 - 500x + 528 &= 0 \\
-x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
-\end{align*}
-
-\noindent
-观察到整数根 $x=2$ 或 $x=3$,所以
-\[
-(x-2)(x-3)(x^2 - 5x + 44) = 0
-\]
-
-\noindent
-二次方程无实根,因此实数解为
-\[
-(x,y) = (2,3), \quad (3,2)
-\]
-
-\end{solution}
+    \[
+    \begin{cases}
+    (91-2x)^{3}=216xy^{2} \\
+    (37-2y)^{3}=216x^{2}y
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        (91-2x)^{3}=216xy^{2} \tag{1}
+        \]
+        \[
+        (37-2y)^{3}=216x^{2}y \tag{2}
+        \]
+        令
+        \[
+        x = u^3, \quad y = v^3.
+        \]
+        将(1),(2)两边开立方得
+        \[
+        91-2u^3 = 6 u v^2, \quad 37-2v^3 = 6 u^2 v.
+        \]
+        两式相加,
+        \[
+        2(u+v)^3=128 \Rightarrow u+v=4
+        \]
+        将 $v = 4-u$ 代入 (1),
+        \[
+        6 u (4-u)^2 + 2 u^3 = 91 \Rightarrow (2 u - 7) (4 u^2 - 10 u + 13)=0 \Rightarrow u=\frac{7}{2} \in \mathbb{R}
+        \]
+        因此
+        \[
+        v = 4 - u = \frac{1}{2}
+        \]
+        最终解为
+        \[
+        x = \frac{343}{8}, \quad y = \frac{1}{8}
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \begin{cases}
+    3(a^2+b^2)^{\frac32}=125a\\[4pt]
+    4(a^2+b^2)=-25b
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        3(a^2+b^2)^{\frac32}=125a \tag{1}
+        \]
+        \[
+        4(a^2+b^2)=-25b \tag{2}
+        \]
+        由$\dfrac{(1)}{(2)}$得
+        \[
+        -\frac{20a}{3b}=(a^2+b^2)^{\frac12}
+        \]
+        平方得
+        \[
+        \frac{400a^2}{9b^2}=a^2+b^2 \Rightarrow a^2=\frac{9b^2}{400-9b^2}
+        \]
+        代入(2)得
+        \[
+        4\left(\frac{9b^2}{400-9b^2}+b^2\right)+25b=0 \Rightarrow b(b+4)(9b-100)=0 
+        \]
+        经检验得$b=\dfrac{100}{9}$是增根,原方程组的解为
+        \[
+        (a,b)=(0,0)\quad \text{或} \quad (3,-4)
+        \]
+    \end{solution}
+
+    \question 解方程组
+    \[
+    \begin{cases}
+    x^3 + 9x^2y = -28 \\
+    y^3 + xy^2 = 1
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        x^3 + 9x^2y = -28 \tag{1}
+        \]
+        \[
+        y^3 + xy^2 = 1 \tag{2}
+        \]
+        $(1)+27\cdot (2)$,得
+        \[
+        x^3 + 9x^2y + 27xy^2 + 27y^3 = -1 
+        \]
+        即
+        \[
+        (x + 3y)^3 = -1 \Rightarrow x + 3y = -1
+        \]
+        将 $x = -1 - 3y$ 代入(2),
+        \[
+        y^3 + (-1 - 3y)y^2 = 1 \Rightarrow (y+1)(2y^2 - y + 1)=0
+        \]
+        其中$2y^2 - y + 1$的判别式
+        \[
+        \Delta = (-1)^2 - 4\cdot 2 \cdot 1 = -7 < 0
+        \]
+        故$2y^2 - y + 1=0$无实数解,因此唯一实数解为 
+        \[
+        (x, y) = (2, -1)
+        \]
+    \end{solution}
+
+    \question 解方程组
+    \[
+    \begin{cases}
+    x^3 + 6xy^2 = 99 \\
+    2y^3 + 3x^2y = 70 
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        x^3 + 6xy^2 = 99 \tag{1}
+        \]
+        \[
+        2y^3 + 3x^2y = 70 \tag{2}
+        \]
+        观察到方程式齐次,不妨设 $y = m x$,其中 $m \neq 0$,代入方程得到
+        \[
+        x^3 (1 + 6 m^2) = 99, \quad x^3 (2 m^3 + 3 m) = 70.
+        \]
+        两式相除得
+        \[
+        \frac{1 + 6 m^2}{2 m^3 + 3 m} = \frac{99}{70} \Rightarrow (3m - 2)(66 m^2 - 96 m + 35)=0
+        \]
+        其中$66 m^2 - 96 m + 35$的判别式为
+        \[
+        \Delta = (-96)^2 - 4 \cdot 66 \cdot 35 = -24 < 0
+        \]
+        故$66 m^2 - 96 m + 35=0$无实根,因此唯一实根为
+        \[
+        m = \frac{2}{3} \Rightarrow  y = \frac{2}{3} x
+        \]
+        将之代入(1),
+        \[
+        x^3 + 6 x \left(\frac{2}{3} x\right)^2 = 99 \Rightarrow x = 3
+        \]
+        得到
+        \[
+        (x, y) = (3, 2)
+        \]
+    \end{solution}
+
+    \question 求方程
+    \[
+    \begin{cases}
+    36y^{2}(x+1)+36x^{2}(y+1)=7x^{2}y^{2} \\
+    6x+6y+xy=0
+    \end{cases}
+    \]
+    的实数解。
+    \begin{solution}
+        \[
+        36y^{2}(x+1)+36x^{2}(y+1)=7x^{2}y^{2} \tag{1}
+        \]
+        \[
+        6x+6y+xy=0
+        \]
+        由(1),
+        \[
+        \frac{1}{x} + \frac{1}{x^2} + \frac{1}{y} + \frac{1}{y^2} = \frac{7}{36} \tag{3}
+        \]
+        由(2),
+        \[
+        \frac{1}{x} + \frac{1}{y} = -\frac{1}{6} \tag{4}
+        \]
+        将(3)代入(4),得
+        \[
+        \frac{1}{x^2} + \left(-\frac{1}{x}-\frac{1}{6}\right)^2 = \frac{13}{36} \Rightarrow (x-3)(x+2)=0
+        \]
+        故原方程式的解为
+        \[
+        (x,y) = (3,6),\quad \left(-2,-\frac{3}{2}\right)
+        \]
+    \end{solution}
 
     \question 设 $a,b,c$ 为相异非零实数,且
     \[
@@ -3922,26 +3607,34 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
     \end{solution}
 
     \question 已知存在实数 $a, b, x, y$ 满足以下方程:
-        \[
-        \begin{cases}
-        a x^{2014} + b y^{2014} = 6 \\
-        a x^{2015} + b y^{2015} = 7 \\
-        a x^{2016} + b y^{2016} = 3 \\
-        a x^{2017} + b y^{2017} = 50
-        \end{cases}
-        \]
-        求 $a x^{2018} + b y^{2018}$ 的值。
+    \[
+    \begin{cases}
+    a x^{2014} + b y^{2014} = 6 \\
+    a x^{2015} + b y^{2015} = 7 \\
+    a x^{2016} + b y^{2016} = 3 \\
+    a x^{2017} + b y^{2017} = 50
+    \end{cases}
+    \]
+    求 $a x^{2018} + b y^{2018}$ 的值。
     \begin{solution} 
-        不妨设 $f(n)=ax^n+by^n$,于是$f(2014)=6,f(2015)=7,f(2016)=3,f(2017)=50,$
-        
-        发现\[
-            (x+y)f(2015)=ax^{2016}+by^{2016}+ax^{2015}y + bxy^{2015} =f(2016)+xyf(2014)
-        \]\[
-            (x+y)f(2016)=ax^{2017}+by^{2017}+ax^{2016}y + bxy^{2016} =f(2017)+xyf(2015)
-        \]解得\[
+        不妨设 $f(n)=ax^n+by^n$,于是
+        \[
+        f(2014)=6,f(2015)=7,f(2016)=3,f(2017)=50,
+        \]
+        发现
+        \[
+        (x+y)f(2015)=ax^{2016}+by^{2016}+ax^{2015}y + bxy^{2015} =f(2016)+xyf(2014)
+        \]
+        \[
+        (x+y)f(2016)=ax^{2017}+by^{2017}+ax^{2016}y + bxy^{2016} =f(2017)+xyf(2015)
+        \]
+        解得
+        \[
         x+y=-9,\;xy=-11
-        \]故\[
-            (x+y)f(2017)=f(2018)+xyf(2016) \Rightarrow a x^{2018} + b y^{2018}=f(2018)=-417
+        \]
+        故
+        \[
+        (x+y)f(2017)=f(2018)+xyf(2016) \Rightarrow a x^{2018} + b y^{2018}=f(2018)=-417
         \]
     \end{solution}
 
@@ -3953,7 +3646,6 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
     \end{cases}
     \]
     的所有实数解 $(x, y)$。
-    
     \begin{solution}
         \begin{align}
         x\left(2x^2 + y - \dfrac{1}{2}\right) &= 0 \\[3pt]
@@ -4013,11 +3705,11 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
     \begin{solution}
         三式相加得
         \[
-            x^2 - 6x +y^2 - 6y+2z^2-4z = -20,
+        x^2 - 6x +y^2 - 6y+2z^2-4z = -20,
         \]
         经配方后变为
         \[
-            (x-3)^2+(y-3)^2+2(z-1)^2=0
+        (x-3)^2+(y-3)^2+2(z-1)^2=0
         \]
         故$x-3=0,y-3=0,z-1=0$,解为$(3, 3, 1)$
     \end{solution}
@@ -4031,21 +3723,28 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
     \]
     求 $x + y + z$ 的所有可能值。
     \begin{solution}
-        眼光发现$xyz=1$提示了换元$x=\dfrac{a}{b},\;y=\dfrac{b}{c},\;z=\dfrac{c}{a}$,第一式变为\[
-            4\left(\dfrac{a}{b}\right)+2\left(\dfrac{b}{c}\right)\left(\dfrac{c}{a}\right)-6\left(\dfrac{c}{a}\right)+9\left(\dfrac{a}{b}\right)\left(\dfrac{c}{a}\right)^2=4 
-        \]化简得\[
-            4a^2-4ab+2b^2−6bc+9c^2=0 \Rightarrow (2a-b)^2+(b+3c)^2=0
-        \]于是$2a-b=0,b+3c=0$,即\[
-        x=\frac{a}{b}=\frac{1}{2},\;y=\frac{b}{c}=-3,\;z=\frac{1}{xy}=-\frac{2}{3}\]解得\[
-            (x,y,z)=\left(\frac{1}{2},-3,-\frac{2}{3}\right) \Rightarrow x+y+z = -\frac{13}{6}
+        眼光发现$xyz=1$提示了换元$x=\dfrac{a}{b},\;y=\dfrac{b}{c},\;z=\dfrac{c}{a}$,第一式变为
+        \[
+        4\left(\dfrac{a}{b}\right)+2\left(\dfrac{b}{c}\right)\left(\dfrac{c}{a}\right)-6\left(\dfrac{c}{a}\right)+9\left(\dfrac{a}{b}\right)\left(\dfrac{c}{a}\right)^2=4 
         \]
-        
+        化简得
+        \[
+        4a^2-4ab+2b^2−6bc+9c^2=0 \Rightarrow (2a-b)^2+(b+3c)^2=0
+        \]
+        于是$2a-b=0,b+3c=0$,即
+        \[
+        x=\frac{a}{b}=\frac{1}{2},\;y=\frac{b}{c}=-3,\;z=\frac{1}{xy}=-\frac{2}{3}
+        \]
+        解得
+        \[
+        (x,y,z)=\left(\frac{1}{2},-3,-\frac{2}{3}\right) \Rightarrow x+y+z = -\frac{13}{6}
+        \]
     \end{solution}
     
     \question 求所有非零实数对 $(x, y)$, 使得满足
-        \[
-        \frac{x}{x^2 + y} + \frac{y}{x + y^2} = -1 \quad \text{且} \quad \frac{1}{x} + \frac{1}{y} = 1
-        \]
+    \[
+    \frac{x}{x^2 + y} + \frac{y}{x + y^2} = -1 \quad \text{且} \quad \frac{1}{x} + \frac{1}{y} = 1
+    \]
     \begin{solution}
         令 $u = x + y,\; v = xy$,则第二式化为 $\dfrac{u}{v} = 1 \Rightarrow u = v$。
         
@@ -4075,43 +3774,44 @@ x^4 - 10x^3 + 75x^2 - 250x + 264 &= 0
     \end{solution}
 
     \question 解方程组
-\begin{align*}
-& x+y+z = 9 && (1) \\
-& x^2+y^2+z^2 = 41 && (2) \\
-& x^2(y+z) + y^2(z+x) + z^2(x+y) = 180 && (3)
-\end{align*}
-
-\begin{solution}
-由(2)式:
-\[
-(x+y+z)^2 - 2(xy+xz+yz) = 41
-\implies 9^2 - 2(xy+xz+yz) = 41
-\implies 2(xy+xz+yz) = 40
-\implies xy+xz+yz = 20.
-\]
-
-由(3)式:
-\begin{align*}
-x^2(y+z) + y^2(z+x) + z^2(x+y) &= 180 \\
-x^2(9-x) + y^2(9-y) + z^2(9-z) &= 180 \\
-9(x^2+y^2+z^2) - (x^3+y^3+z^3) &= 180 \\
-9(41) - [(x+y+z)(x^2+y^2+z^2 - xy - yz - zx) + 3xyz] &= 180 \\
-369 - [9(41-20) + 3xyz] &= 180 \\
-369 - (189 + 3xyz) &= 180 \\
-180 - 3xyz &= 180 \\
-3xyz &= 0 \implies xyz = 0.
-\end{align*}
-
-因此,\(x, y, z\) 为三根的方程式为:
-\[
-t^3 - 9t^2 + 20t = 0 \implies t(t^2 - 9t + 20) = 0 \implies t(t-5)(t-4) = 0.
-\]
-
-\[
-\therefore \text{解集} = \{(0,5,4), (0,4,5), (4,5,0), (4,0,5), (5,0,4), (5,4,0)\}.
-\]
-\end{solution}
-
+    \[
+    \begin{cases}
+    x+y+z = 9  \\
+    x^2+y^2+z^2 = 41  \\
+    x^2(y+z) + y^2(z+x) + z^2(x+y) = 180
+    \end{cases}
+    \]
+    \begin{solution}
+        \[
+        x+y+z = 9 \tag{1}
+        \]
+        \[
+        x^2+y^2+z^2 = 41 \tag{2}
+        \]
+        \[
+        x^2(y+z) + y^2(z+x) + z^2(x+y) = 180 \tag{3}
+        \]
+        由(2),
+        \[
+        (x+y+z)^2 - 2(xy+xz+yz) = 41 \Rightarrow xy+xz+yz = 20
+        \]
+        由(3),
+        \begin{align*}
+        x^2(9-x) + y^2(9-y) + z^2(9-z) &= 180 \\
+        9(x^2+y^2+z^2) - (x^3+y^3+z^3) &= 180 \\
+        9(41) - [(x+y+z)(x^2+y^2+z^2 - xy - yz - zx) + 3xyz] &= 180 \\
+        369 - [9(41-20) + 3xyz] &= 180 \\
+        xyz &= 0
+        \end{align*}
+        由韦达定理,实数$x, y, z$ 为方程式
+        \[
+        t^3 - 9t^2 + 20t = 0 \Rightarrow t(t-5)(t-4) = 0.
+        \]
+        的三根,于是解为
+        \[
+        (0,5,4), (0,4,5), (4,5,0), (4,0,5), (5,0,4), (5,4,0)
+        \]
+    \end{solution}
 
     \question 已知实数 $x, y, z$ 满足方程组
     \[
@@ -4155,47 +3855,45 @@ t^3 - 9t^2 + 20t = 0 \implies t(t^2 - 9t + 20) = 0 \implies t(t-5)(t-4) = 0.
     \end{solution}
 
     \question 已知方程组
-\[
-\begin{cases}
-x+y+z=0 & \text{---(1)} \\
-x^2+y^2+z^2=6 & \text{---(2)} \\
-x^3+y^3+z^3=-3 & \text{---(3)}
-\end{cases}
-\]
-求 $x^4+y^4+z^4$ 之值。
-
-\begin{solution}
-由(2)式:
-\[
-(x+y+z)^2 - 2(xy+yz+xz) = 6 \implies 0 - 2(xy+yz+xz) = 6 \implies xy+yz+xz = -3.
-\]
-
-由(3)式:
-\[
-x^3+y^3+z^3 = (x+y+z)(x^2+y^2+z^2 - xy - yz - xz) + 3xyz \implies -3 = 0 + 3xyz \implies xyz = -1.
-\]
-
-因此,以 $x,y,z$ 为三根的方程式为:
-\[
-t^3 - 3t + 1 = 0.
-\]
-
-于是有:
-\begin{align*}
-x^3-3x+1=0 &\implies x^4-3x^2+x=0, \\
-y^3-3y+1=0 &\implies y^4-3y^2+y=0, \\
-z^3-3z+1=0 &\implies z^4-3z^2+z=0.
-\end{align*}
-
-三式相加:
-\[
-x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
-\]
-
-\[
-\therefore x^4+y^4+z^4 = 18.
-\]
-\end{solution}
+    \[
+    \begin{cases}
+    x+y+z=0 \\
+    x^2+y^2+z^2=6 \\
+    x^3+y^3+z^3=-3
+    \end{cases}
+    \]
+    求 $x^4+y^4+z^4$ 之值。
+    \begin{solution}
+        \[
+        x+y+z=0 \tag{1}
+        \]
+        \[
+        x^2+y^2+z^2=6 \tag{2}
+        \]
+        \[
+        x^3+y^3+z^3=-3 \tag{3}
+        \]
+        由(2),
+        \[
+        (x+y+z)^2 - 2(xy+yz+xz) = 6 \Rightarrow xy+yz+xz = -3
+        \]
+        由(3),
+        \[
+        x^3+y^3+z^3 = (x+y+z)(x^2+y^2+z^2 - xy - yz - xz) + 3xyz \Rightarrow xyz = -1
+        \]
+        因此 $x,y,z$ 为方程式
+        \[
+        t^3 - 3t + 1 = 0
+        \]
+        的三根,于是有
+        \[
+        x^3=3x-1,\quad y^3=3y-1,\quad z^3=3z-1
+        \]
+        故
+        \[
+        x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18
+        \]
+    \end{solution}
 
     \question 求序对 $(x,y,z)$ 满足
     \[
@@ -4326,26 +4024,6 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
         (0,0,0), \left(\cos\frac{2\pi}{7},\cos\frac{4\pi}{7},\cos\frac{8\pi}{7}\right), \left(\cos\frac{2\pi}{9},\cos\frac{4\pi}{9},\cos\frac{8\pi}{9}\right), \left(\cos\frac{2\pi}{3},\cos\frac{2\pi}{3},\cos\frac{2\pi}{3}\right)
         \] 
         故原方程式无序三元组个数为$4$。
-    \end{solution}
-
-    \question 解方程
-    \[
-    \sqrt{x+\sqrt{x}} - \sqrt{x-\sqrt{x}} = \frac{199}{100} \sqrt{\frac{x}{x+\sqrt{x}}}.
-    \]
-    \begin{solution}
-        设 $a=x+\sqrt{x}, b=x-\sqrt{x}$,则 $a-b=\sqrt{a}-\sqrt{b}=2\sqrt{x}$,原方程化为
-        \[
-        \sqrt{a}+\sqrt{b} = \frac{200}{199}\sqrt{x+\sqrt{x}}, \quad
-        \sqrt{a}-\sqrt{b} = \frac{199}{100}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x}}}
-        \]
-        两式相加得
-        \[
-        2\sqrt{x+\sqrt{x}}= \frac{200}{199}\sqrt{x+\sqrt{x}}+\frac{199}{100}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x}}}
-        \]
-        解得
-        \[
-        \sqrt{x}(19800\sqrt{x}-19801)=0 \Rightarrow \sqrt{x} = \frac{19801}{19800}>0 \Rightarrow x = \frac{19801^2}{19800^2}
-        \]
     \end{solution}
 
     \question 若 $x,y,z$ 为相异复数,满足
@@ -4623,7 +4301,7 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
         \]
         构造\(\triangle ABC\),满足边长:
         \[
-        \overline{AB} = \sqrt{18}, \quad \overline{BC} = \sqrt{13}, \quad \overline{AC} = \sqrt{19}, \quad \overline{OA} = x, \quad \overline{OB} = y, \quad \overline{OC} = z
+        AB = \sqrt{18}, \quad BC = \sqrt{13}, \quad AC = \sqrt{19}, \quad OA = x, \quad OB = y, \quad OC = z
         \]
         及夹角
         \[
@@ -4645,7 +4323,7 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
         \[
         \frac{1}{2} \left( x y + \frac{1}{2} y z + \frac{\sqrt{3}}{2} x z \right) = 3 \sqrt{\frac{11}{2}} \implies 2 x y + y z + \sqrt{3} x z = 6 \sqrt{22}.
         \]
-        \end{solution}
+    \end{solution}
 
     \question 已知联立方程组
     \[
@@ -4758,11 +4436,17 @@ x^4+y^4+z^4 = 3(x^2+y^2+z^2) - (x+y+z) = 3\cdot 6 - 0 = 18.
     \end{solution}
 
     \question 已知正实数 $x,y,z$ 满足
-        \begin{align*}
-        x+y+z&=xyz\\
-        \frac{x^2}{16(1+x^2)}=\frac{y^2}{25(1+y^2)}&=\frac{z^2}{36(1+z^2)}
-        \end{align*}
-        求$\displaystyle \frac{x^2(1+x^2)^2}{z^2(1+z^2)^2}.$
+    \[
+    \begin{cases}
+    x+y+z=xyz\\
+    \frac{x^2}{16(1+x^2)}=\frac{y^2}{25(1+y^2)}=\frac{z^2}{36(1+z^2)}
+    \end{cases}
+    \]
+    求
+    \[
+    \frac{x^2(1+x^2)^2}{z^2(1+z^2)^2}
+    \]
+    的值。
     \begin{solution}
         考虑换元$x=\tan A,y=\tan B,z=\tan C$,其中$A,B,C\in \left(0,\dfrac{\pi}{2}\right),$且注意到
         \[
@@ -12174,8 +11858,6 @@ n 2^{n-1} + n 0^{n-1} = 2 \sum_{k \text{ even}} k \binom{n}{k}
 \end{solution}
 
     \end{parts}
-\section*{Vandermonde's Identity}
-
 \question 证明 Vandermonde 恒等式:
 \[\binom{n+m}{k} = \sum_{i=0}^{k} \binom{n}{i}\binom{m}{k-i}\]
 
