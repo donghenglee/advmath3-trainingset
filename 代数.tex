@@ -1943,7 +1943,7 @@
         \[
         (\sqrt{8x + 13} - 39)(\sqrt{8x + 13} + 37) = 0
         \]
-        由于 $\sqrt{8x + 13} \ge 0$，所以 
+        由于 $\sqrt{8x + 13} \ge 0$,所以 
         \[
         \sqrt{8x + 13} = 39 \Rightarrow x = 188.5
         \]
@@ -4514,7 +4514,7 @@
 \separator
 \vspace{1pt}
 \begin{questions}
-        \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
+    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
     \begin{solution}
         令
         \[
@@ -4530,856 +4530,551 @@
         \]
         由于 $0 < b^2 < 1$,所以
         \[
-        969 < a^6 < 970 \quad \Rightarrow \quad \lceil a^6 \rceil = 970
+        969 < a^6 < 970 \quad \Rightarrow \quad \ceil{a^6} = 970
         \]
     \end{solution}
 
-    \question
-求所有满足
-\[
-\lfloor 0.5+\lfloor x\rfloor \rfloor = 20
-\]
-的$x$的取值范围
-
-\begin{solution}
-设
-\[
-\lfloor x\rfloor = y
-\]
-则
-\[
-\lfloor 0.5+y\rfloor = 20
-\]
-
-由于$y$为整数,所以$0.5+y$必须满足
-\[
-20 \le 0.5+y < 21
-\]
-
-化简得
-\[
-19.5 \le y < 20.5
-\]
-
-因为$y$为整数,所以
-\[
-y=20
-\]
-
-代回$\lfloor x\rfloor = y$,得
-\[
-\lfloor x\rfloor = 20
-\]
-
-因此
-\[
-20 \le x < 21
-\]
-\end{solution}
-
-\question
-求满足条件的$x$的取值范围
-\[
-\lceil y-1.3\rceil = 16
-\]
-其中$y=\lceil x\rceil$
-
-\begin{solution}
-设
-\[
-\lceil x\rceil = y
-\]
-则
-\[
-\lceil y-1.3\rceil = 16
-\]
-
-根据取整定义,有
-\[
-15 \le y-1.3 < 16
-\]
-
-两边同时加$1.3$,得
-\[
-16.3 \le y < 17.3
-\]
-
-由于$y$为整数,所以
-\[
-y=17
-\]
-
-即
-\[
-\lceil x\rceil = 17
-\]
-
-因此
-\[
-16 < x \le 17
-\]
-\end{solution}
-
-\question
-求满足
-\[
-\lceil x\rceil \lceil 2x\rceil = 15
-\]
-的$x$的取值范围
-
-\begin{solution}
-设
-\[
-x=n-r
-\]
-其中$n$为整数,$0<r\le 1$,则 $\lceil 2x \rceil = 2n$ 或 $2n-1$.
-
-当 $r < 1/2$,
-\[
-\lceil x \rceil = n, \quad \lceil 2x \rceil = 2n
-\]
-\[\implies n(2n) = 15\]
-
-当  $r \ge 1/2$,
-\[\lfloor x \rceil = n, \quad \lceil 2x \rceil = 2n-1\]
-\[\implies n(2n-1) = 15\]
-\[2n^2-n-15 = 0\]
-\[(n-3)(2n+5) = 0\]
-\[\therefore n = 3\]
-
-$x$的取值范围$(2, 2.5]$
-\end{solution}
-
-\question
-计算
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-\]
-
-\begin{solution}
-解法一  
-
-将整数部分与小数部分分开,
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=\sum_{r=1}^{34}\frac{18r}{35}
--\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
-\]
-
-先计算第一项,
-\[
-\sum_{r=1}^{34}\frac{18r}{35}
-=\frac{18}{35}\sum_{r=1}^{34}r
-=\frac{18}{35}\cdot\frac{34\cdot35}{2}
-=18\cdot17
-=306
-\]
-
-注意到对任意$r$,
-\[
-\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=1
-\]
-
-当$r$从$1$到$34$时,可以配成$17$对,因此
-\[
-\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
-\]
-
-于是
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=306-17
-=289
-\]
-
-解法二  
-
-注意到
-\[
-\frac{18r}{35}+\frac{18(35-r)}{35}=18
-\]
-
-因此
-\[
-\left\lfloor \frac{18r}{35}\right\rfloor
-+\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-+\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=18
-\]
-
-又因为
-\[
-\left\{\frac{18r}{35}\right\}
-+\left\{\frac{18(35-r)}{35}\right\}=1
-\]
-
-所以
-\[
-\left\lfloor \frac{18r}{35}\right\rfloor
-+\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-=17
-\]
-
-当$r$从$1$到$34$时,可配成$17$组
-\[
-(1,34),(2,33),\dots,(17,18)
-\]
-
-每一组的和均为$17$,因此
-\[
-\sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-=17\times17
-=289
-\]
-\end{solution}
-
-\question
-已知
-\[
-\begin{cases}
-\lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
-\lceil c \rceil + \lfloor b \rfloor + \{a\} = 11.3 \\
-\lceil a \rceil + \lceil c \rceil + \{b\} = 9.7
-\end{cases}
-\]
-求$a+b+c$
-
-\begin{solution}
-由题意可知,小数部分分别为
-\[
-\{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
-\]
-
-代入原方程组,得
-\[
-\lfloor b \rfloor + \lceil a \rceil = 16
-\]
-\[
-\lceil c \rceil + \lfloor b \rfloor = 11
-\]
-\[
-\lceil a \rceil + \lceil c \rceil = 9
-\]
-
-由第二式与第三式可得
-\[
-\lceil c \rceil = 2
-\]
-\[
-\lfloor b \rfloor = 9-1=8
-\]
-\[
-\lceil a \rceil = 9-2=7
-\]
-
-因此
-\[
-\lfloor a \rfloor = 7,\quad \lfloor b \rfloor = 8,\quad \lfloor c \rfloor = 2
-\]
-
-结合小数部分,
-\[
-a=7.3,\quad b=8.7,\quad c=2
-\]
-
-于是
-\[
-a+b+c=18
-\]
-\end{solution}
-\question
-设$x$为正实数,且满足
-\[
-x^2+\{x\}^2=27
-\]
-求$x$
-
-\begin{solution}
-设
-\[
-x=n+r
-\]
-其中$n$为整数,$0\le r<1$
-
-注意到
-\[
-x^2 \le x^2+\{x\}^2 < x^2+1
-\]
-因此
-\[
-26<x^2\le27
-\]
-从而
-\[
-n=5
-\]
-
-代入$x=5+r$,得
-\begin{align*}
-(5+r)^2+r^2&=27 \\
-25+10r+r^2+r^2&=27 \\
-2r^2+10r-2&=0 \\
-r^2+5r-1&=0
-\end{align*}
-
-解得
-\[
-r=\frac{-5\pm\sqrt{29}}{2}
-\]
-由于$0\le r<1$,故
-\[
-r=\frac{-5+\sqrt{29}}{2}
-\]
-
-于是
-\[
-x=5+r=\frac{5+\sqrt{29}}{2}
-\]
-\end{solution}
-\question
-设$r$为实数,且满足
-\[
-\left\lfloor r+\frac{19}{100}\right\rfloor
-+\left\lfloor r+\frac{20}{100}\right\rfloor
-+\cdots
-+\left\lfloor r+\frac{97}{100}\right\rfloor
-=546
-\]
-求$\lfloor100r\rfloor$
-
-\begin{solution}
-从$\frac{19}{100}$到$\frac{97}{100}$,共有
-\[
-97-19+1=79
-\]
-项
-
-设这些取整值只可能为$7$或$8$
-
-若全部等于$7$,则和为
-\[
-79\times7=553
-\]
-
-若全部等于$8$,则和为
-\[
-79\times8=632
-\]
-
-由于
-\[
-553>546,\quad 632>546
-\]
-说明其中既有$7$也有$8$
-
-设前$k$项等于$7$,其余$79-k$项等于$8$,则
-\begin{align*}
-7k+8(79-k)&=546 \\
-7k+632-8k&=546 \\
-632-k&=546 \\
-k&=86
-\end{align*}
-
-这表示
-\[
-\left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
-\left\lfloor r+\frac{57}{100}\right\rfloor=8
-\]
-
-于是
-\[
-7\le r+\frac{56}{100}<8
-\]
-\[
-8\le r+\frac{57}{100}<9
-\]
-
-化简得
-\[
-7.43\le r<7.44
-\]
-
-两边同乘$100$,得到
-\[
-743\le100r<744
-\]
-
-因此
-\[
-\lfloor100r\rfloor=743
-\]
-\end{solution}
-
-\question
-5) 求
-\[
-\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
-\]
-
-\begin{solution}
-因为
-\[
-\lfloor \sqrt{202}\rfloor=14
-\]
-所以$\lfloor \sqrt{k}\rfloor\in\{1,2,3,\dots,14\}$
-
-当
-\[
-(n-1)^2<k\le n^2
-\]
-时,有
-\[
-\lfloor \sqrt{k}\rfloor=n
-\]
-对应的$k$的个数为
-\[
-n^2-(n-1)^2=2n-1
-\]
-其中$n=1,2,\dots,13$
-
-当$n=14$时,对应的个数为
-\[
-202-13^2=202-169=33
-\]
-
-因此
-\[
-\sum_{k=1}^{202}\lfloor \sqrt{k}\rfloor
-=\sum_{n=1}^{13}n(2n-1)+14\times33
-\]
-
-\begin{align*}
-&=\sum_{n=1}^{13}(2n^2-n)+462 \\
-&=2\sum_{n=1}^{13}n^2-\sum_{n=1}^{13}n+462 \\
-&=2\left(\frac{13\times14\times27}{6}\right)-\frac{13\times14}{2}+462 \\
-&=1638-91+462 \\
-&=2009
-\end{align*}
-\end{solution}
-
-\question
-6) 求满足
-\[
-\lfloor \sqrt{x}\rfloor-\lfloor \sqrt{x+34}\rfloor=0
-\]
-的最小整数$x$
-
-\begin{solution}
-设
-\[
-\lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor=y
-\]
-则$x$与$x+34$必须落在同一个平方区间内,即
-\[
-y^2\le x<x+34<(y+1)^2
-\]
-
-于是有
-\[
-(y+1)^2-y^2>34
-\]
-
-化简得
-\begin{align*}
-2y+1&>34 \\
-2y&>33 \\
-y&>16.5
-\end{align*}
-
-因此
-\[
-y=17
-\]
-
-最小的$x$为
-\[
-x=y^2=17^2=289
-\]
-\end{solution}
-
-\question
-7)
-\[
-\lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
-\]
-
-\begin{solution}
-\[
-\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
-=\frac{143}{2}(1+995)
-\]
-
-\[
-\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
-=\frac{143}{2}(2+996)
-\]
-
-\[
-\lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil
-=\frac{142}{2}(7+994)
-\]
-
-\[
-\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil
-=\frac{142}{2}(8+995)
-\]
-
-\[
-\text{最终结果}=715285
-\]
-\end{solution}
-
-\question
-8)
-\[
-x^2 - 6\lfloor x \rfloor + 5 = 0
-\]
-
-\begin{solution}
-令 $\lfloor x \rfloor = n$, 代入方程得
-\[
-x^2 - 6n + 5 = 0 \implies x^2 = 6n - 5
-\]
-
-检查每个可能的 $n$ 值:
-
-\begin{align*}
-n=1 &: x^2 = 1 \implies x = 1 \quad (\text{有效, } 1 \le x < 2)\\
-n=2 &: x^2 = 7 \implies x = \sqrt{7} \quad (2 < \sqrt{7} < 3)\\
-n=3 &: x^2 = 13 \implies x = \sqrt{13} \quad (3 < \sqrt{13} < 4)\\
-n=4 &: x^2 = 19 \implies x = \sqrt{19} \quad (4 < \sqrt{19} < 5)\\
-n=5 &: x^2 = 25 \implies x = 5 \quad (\text{有效})
-\end{align*}
-
-\noindent
-因此,方程的解为
-\[
-x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
-\]
-\end{solution}
-
-\question
-9)
-\[
-\lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
-\]
-
-\begin{solution}
-令 $x = n + r$, $0 \le r < 1$. 则
-\[
-\lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
-\]
-
-展开得:
-\begin{align*}
-2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
-\end{align*}
-
-解不等式:
-\[
-2n^2+n+1 \le 111,\quad 2n^2+3n \ge 111
-\]
-得$n=7$,因此解
-\[
-\lceil 7r \rceil + \lfloor 8r \rfloor =6
-\]
-得
-\[
-\frac{3}{8} \le r \le \frac{3}{7} \Rightarrow 7 + \frac{3}{8} \le x \le 7 + \frac{3}{7}
-\]
-\end{solution}
-
-\question
-12)
-\[
-\left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
-\]
-
-\begin{solution}
-要找序列中不同整数的个数,考虑连续两项的差:
-\[
-\frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
-\]
-
-\noindent
-\textbf{前 1007 项:} $n = 1,2,\dots,1007$  
-\[
-\frac{1007^2}{2016} \approx 503.0005 > 503
-\]  
-因此前 1007 项产生整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。
-
-\noindent
-\textbf{第 1008 项到 2016 项:}  
-每项至少比前一项大 1,因此产生 $2016-1008+1 = 1009$ 个不同整数。
-
-\noindent
-\textbf{总不同整数数:}  
-\[
-504 + 1009 = 1513
-\]
-
-\noindent
-因此序列中共有 $1513$ 个不同整数。
-\end{solution}
-
-\question
-13)
-\[
-\sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
-\]
-
-\begin{solution}
-令 
-\[
-A_n = \left\lfloor \frac{2^n}{3} \right\rfloor
-\]
-
-注意到 
-\[
-A_n = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}.
-\]
-
-因此
-\begin{align*}
-S &= \sum_{n=0}^{1000} A_n = \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
-&= \frac{1}{3} \sum_{n=0}^{1000} 2^n - \frac{1001}{2} + \frac{1}{6} \sum_{n=0}^{1000} (-1)^n \\
-&= \frac{1}{3} (2^{1001}-1) - \frac{1001}{2} + \frac{1}{6} \cdot 0 \\
-&= \frac{2^{1001}-1}{3} - \frac{1001}{2} + \frac{1}{6} \\
-&= \frac{2(2^{1001}-1) - 3\cdot 1001 + 1}{6} \\
-&= \frac{2^{1002} - 3004}{6} = \frac{2^{1001}-1502}{3}.
-\end{align*}
-
-\noindent
-因此和可表示为
-\[
-S = 2^{1001}/3 - 1502/3 = 2^{1001} - 1502 \text{ (經約分後)}.
-\]
-\end{solution}
-
-\question
-14)
-\[
-\lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
-\]
-
-\begin{solution}
-設 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$. 則
-\[
-\lfloor x^2 \rfloor - n^2 = \lfloor 2 n r + r^2 \rfloor = 1999.
-\]
-
-最小的 $n$ 滿足
-\[
-2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
-\]
-
-因此
-\[
-2 \cdot 1000 \cdot r + r^2 = 1999 \implies r^2 + 2000 r - 1999 = 0
-\]
-
-解得
-\[
-r = -1000 + \sqrt{1001999}.
-\]
-
-\noindent
-所以
-\[
-x = n + r = 1000 + (-1000 + \sqrt{1001999}) = \sqrt{1001999}.
-\]
-\end{solution}
-
-\question
-16) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
-\]
-在 $n \in \mathbb{N}$ 且 $1 \le n \le 100$ 的解的个数。
-
-\begin{solution}
-设 $f(n) = \lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor$, 则
-\[
-f(n+6) = f(n) + 6
-\]
-成立。
-
-定义 $g(n) = f(n) - (n-1)$, 则
-\[
-g(n+6) = g(n).
-\]
-
-检查前几个值:
-\[
-g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
-\]
-
-因此在 1 到 100 之间共有 68 个解。
-\end{solution}
-
-\question
-17) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{5} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{5}
-\]
-的解。
-
-\begin{solution}
-右边为整数,左边为整数,因此 $n/2$, $n/3$, $n/5$ 都必须为整数,即 $n$ 为 30 的倍数。
-
-在允许范围内,共有 3 个解。
-\end{solution}
-
-\question
-18) 求方程
-\[
-\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
-\]
-的解。
-
-\begin{solution}
-由于
-\[
-\lfloor n/2 \rfloor + \lfloor n/3 \rfloor + \lfloor n/6 \rfloor \le n/2 + n/3 + n/6 = n,
-\]
-因此等号成立的情况共有 16 个。
-\end{solution}
-
-\question
-19) 求 $x$ 满足方程
-\[
-2\lfloor x \rfloor + 3x = 4 - 5\{x\}
-\]
-
-\begin{solution}
-设 $x = n+r$, 其中 $n = \lfloor x \rfloor$ 是整数部分, $r = \{x\}$ 是小数部分 ($0 \le r < 1$)。代入方程得
-\[
-2n + 3(n+r) = 4 - 5r
-\]
-化简得
-\[
-5n + 3r = 4 - 5r
-\]
-\[
-5n + 8r = 4
-\]
-
-由 $0 \le r < 1$, 有
-\[
-0 \le 8r < 8
-\]
-\[
--4 < 5n \le 4
-\]
-
-唯一满足该不等式的整数是 $n=0$,因此
-\[
-n = \lfloor x \rfloor = 0
-\]
-
-代入 $n=0$ 回到方程 $5n+8r=4$:
-\[
-8r = 4 \implies r = \frac{1}{2}
-\]
-
-因此解为
-\[
-x = n + r = 0 + \frac{1}{2} = \frac{1}{2}
-\]
-\end{solution}
-
-\question
-20) 求满足条件的正整数 $x$ 的个数
-\[
-\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor
-\]
-
-\begin{solution}
-设
-\[
-\left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
-\]
-
-由定义有
-\[
-m \le \frac{x}{99} < m+1 \implies 99m \le x < 99(m+1)
-\]
-\[
-m \le \frac{x}{101} < m+1 \implies 101m \le x < 101(m+1)
-\]
-
-因此
-\[
-101m \le x < 99(m+1)
-\]
-
-当 $m>49$ 时, $101m > 99(m+1)$, 无解。
-
-对于 $0 \le m \le 49$, 可行整数个数为
-\[
-(99(m+1)-1) - 101 m +1 = 99(m+1)-101 m = 99-2m
-\]
-
-总和为
-\[
-\sum_{m=0}^{49} (99-2m) = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} = 4950 - 2450 = 2500
-\]
-
-排除 $x=0$ 不是正整数, 最终答案为
-\[
-\boxed{2499}
-\]
-\end{solution}
-
-\question
-21) 求满足条件的整数 $x$
-\[
-\left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
-\]
-
-\begin{solution}
-首先近似使用不取整的值:
-\[
-\frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
-\]
-
-\[
-\frac{6x+3x+x}{6} -3 < 224 < \frac{6x+3x+x}{6} \implies \frac{10x}{6}-3 <224<\frac{10x}{6}
-\]
-
-\[
-\frac{5x}{3}-3 < 224 < \frac{5x}{3} \implies 134.4 \le x < 136.2
-\]
-
-由于 $x$ 为整数,只有 $x=135$ 可行。
-\[
-\therefore x = 135
-\]
-\end{solution}
-
-\question
-22) 求满足条件的最大实数 $x$
-\[
-\frac{\lfloor x \rfloor}{x} = \frac{9}{10}
-\]
-
-\begin{solution}
-设 $x = \lfloor x \rfloor + \{x\}$, 则有
-\[
-10 \lfloor x \rfloor = 9 x = 9 (\lfloor x \rfloor + \{x\})
-\]
-\[
-10 \lfloor x \rfloor = 9 \lfloor x \rfloor + 9 \{x\} \implies \lfloor x \rfloor = 9 \{x\}
-\]
-
-由于 $0 \le \{x\} < 1$, 可得 $\lfloor x \rfloor = 1,2,\dots,8$, 对应 $\{x\} = 1/9, 2/9, \dots, 8/9$
-
-取最大值 $\{x\} = 8/9$, $\lfloor x \rfloor = 8$
-\[
-x = \lfloor x \rfloor + \{x\} = 8 + \frac{8}{9} = \frac{80}{9}
-\]
-\end{solution}
+    \question 求满足
+    \[
+    \floor{0.5+\floor{x}} = 20
+    \]
+    的所有$x$的取值范围。
+    \begin{solution}
+        由下取整定义,原方程即
+        \[
+        20 \le 0.5+\floor{x}< 21 \Rightarrow 19.5 \le \floor{x} < 20.5
+        \]
+        由于$\floor{x} \in \mathbb{Z}$,
+        \[
+        \floor{x}=20 \Rightarrow 20 \le x < 21
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \ceil{\ceil{x}-1.3} = 16
+    \]
+    的所有$x$。
+    \begin{solution}
+        由上取整定义,原方程即
+        \[
+        15 \le \ceil{x} -1.3 < 16 \Rightarrow 16.3 \le \ceil{x} < 17.3
+        \]
+        由于$\ceil{x} \in \mathbb{Z}$,
+        \[
+        \ceil{x}=17 \Rightarrow 16 < x \le 17
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lceil x\rceil \lceil 2x\rceil = 15
+    \]
+    \begin{solution}
+        设
+        \[
+        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \]
+        当 $r < \dfrac{1}{2}$,原方程即
+        \[
+        n(2n) = 15 \Rightarrow n = \sqrt{\frac{15}{2}} \not \in \mathbb{Z}
+        \]
+        当  $r \ge \dfrac{1}{2}$,原方程即
+        \[
+        n(2n-1) = 15 \Rightarrow (n-3)(2n+5) = 0 \Rightarrow n = 3 \in \mathbb{Z}
+        \]
+        故$x$的取值范围为
+        \[
+        2 < x \le 2.5
+        \]
+    \end{solution}
+
+    \question 已知
+    \[
+    \begin{cases}
+    \lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
+    \lfloor c \rfloor + \lceil b \rceil + \{a\} = 11.3 \\
+    \lfloor a \rfloor + \lceil c \rceil + \{b\} = 9.7
+    \end{cases}
+    \]
+    求$a+b+c$的值。
+    \begin{solution}
+        由题意可知,小数部分分别为
+        \[
+        \{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
+        \]
+        原方程组变为
+        \[
+        \begin{cases}
+        \lfloor b \rfloor + \lfloor a \rfloor + 1 = 16 \\
+        \lfloor c \rfloor + \lfloor b \rfloor + 1 = 11 \\
+        \lfloor a \rfloor + \lfloor c \rfloor = 9
+        \end{cases}
+        \]
+        由第二式与第三式可得
+        \[
+        \lfloor a \rfloor =7, \quad \lfloor b \rfloor = 9-1=8, \quad \lfloor c \rfloor = 2
+        \]
+        因此
+        \[
+        a=7.3,\quad b=8.7,\quad c=2 \Rightarrow a+b+c=18
+        \]
+    \end{solution}
+
+    \question 求正实数$x$满足
+    \[
+    x^2+\{x\}^2=27
+    \]
+    \begin{solution}
+        设
+        \[
+        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \]
+        且注意到
+        \[
+        x^2 \le x^2+\{x\}^2 < x^2+1
+        \]
+        因此
+        \[
+        26<x^2\le27 \Rightarrow n=5
+        \]
+        代入原方程得
+        \[
+        (5+r)^2+r^2=27 \Rightarrow r=\frac{-5+\sqrt{29}}{2}
+        \]
+        于是
+        \[
+        x=5+r=\frac{5+\sqrt{29}}{2}
+        \]
+    \end{solution}
+
+    \question 计算
+    \[
+    \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+    \]
+    \begin{solution}
+        将整数部分与小数部分分开,
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+        =\sum_{r=1}^{34}\frac{18r}{35}
+        -\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
+        \]
+        其中
+        \[
+        \sum_{r=1}^{34}\frac{18r}{35}
+        =\frac{18}{35}\cdot\frac{34\cdot35}{2}
+        =306
+        \]
+        注意到对任意正整数$1 \le r \le 34$,
+        \[
+        \left\{\frac{18r}{35}\right\}+\left\{\frac{18(35-r)}{35}\right\}=1
+        \]
+        当$r$从$1$到$34$时,可以配成$17$对,因此
+        \[
+        \sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
+        \]
+        于是
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+        =289
+        \]
+    \end{solution}
+    \begin{solution}
+        对任意正整数$1 \le r \le 34$,有
+        \[
+        \frac{18r}{35}+\frac{18(35-r)}{35}=18
+        \]
+        因此
+        \[
+        \left\lfloor \frac{18r}{35}\right\rfloor
+        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
+        +\left\{\frac{18r}{35}\right\}
+        +\left\{\frac{18(35-r)}{35}\right\}=18
+        \]
+        又因为
+        \[
+        \left\{\frac{18r}{35}\right\}
+        +\left\{\frac{18(35-r)}{35}\right\}=1
+        \]
+        所以
+        \[
+        \left\lfloor \frac{18r}{35}\right\rfloor
+        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
+        =17
+        \]
+        因此
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor=17\cdot 17=289
+        \]
+    \end{solution}
+
+    \question 设$r$为实数,且满足
+    \[
+    \left\lfloor r+\frac{19}{100}\right\rfloor
+    +\left\lfloor r+\frac{20}{100}\right\rfloor
+    +\cdots
+    +\left\lfloor r+\frac{91}{100}\right\rfloor
+    =546
+    \]
+    求$\lfloor100r\rfloor$的值。
+    \begin{solution}
+        从$\dfrac{19}{100}$到$\dfrac{91}{100}$,共有
+        \[
+        91-19+1=73
+        \]
+        项,这些取整值只可能为$7$或$8$。
+
+        若全部等于$7$,则和为$73\cdot 7=521$;若全部等于$8$,则和为$73\cdot 8=581$,
+
+        设前$k$项等于$7$,其余$79-k$项等于$8$,则
+        \[
+        7k+8(73-k)=546 \Rightarrow k=38
+        \]
+        这表示
+        \[
+        \left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
+        \left\lfloor r+\frac{57}{100}\right\rfloor=8
+        \]
+        于是
+        \[
+        \floor{100r}=\floor{r}+\cdots + \left\lfloor r+\frac{56}{100}\right\rfloor+\left\lfloor r+\frac{57}{100}\right\rfloor+\cdots +\left\lfloor r+\frac{99}{100}\right\rfloor=57\cdot7+43\cdot8=743
+        \]
+    \end{solution}
+
+    \question 求
+    \[
+    \sum_{k=1}^{202}\lceil \sqrt{k}\rceil
+    \]
+    \begin{solution}
+        因为$\lceil \sqrt{202}\rceil=15$,所以
+        \[
+        \lceil \sqrt{k}\rceil\in\{1,2,3,\dots,15\}
+        \]
+        当$(n-1)^2<k\le n^2$时,有$\lceil \sqrt{k}\rceil=n$,且个数为
+        \[
+        n^2-(n-1)^2=2n-1
+        \]
+        其中$n=1,2,\dots,14$,当$n=15$时,对应的个数为$202-14^2=6$,因此
+        \begin{align*}
+        \sum_{k=1}^{202}\lceil \sqrt{k}\rceil
+        &=\sum_{n=1}^{14}n(2n-1)+6\cdot 15 \\
+        &=2\left(\frac{14\cdot 15 \cdot 29}{6}\right)-\frac{14\cdot 15}{2}+90 \\
+        &=2015
+        \end{align*}
+    \end{solution}
+
+    \question 求满足
+    \[
+    \lfloor \sqrt{x}\rfloor-\lfloor \sqrt{x+34}\rfloor=0
+    \]
+    的最小整数$x$。
+    \begin{solution}
+        设$y,y+1$为连续正整数,使得他们的平方根的差不小于34,则
+        \[
+        (y+1)^2-y^2>34 \Rightarrow y>16.5
+        \]
+        由于$y \in \mathbb{Z}$,最小的$x$为
+        \[
+        x=y^2=17^2=289
+        \]
+    \end{solution}
+
+    \question 求
+    \[
+    \lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
+    \]
+    \begin{solution}
+        首先发现
+        \[
+        \lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
+        =\frac{143}{2}(1+995)
+        \]
+        \[
+        \lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
+        =\frac{143}{2}(2+996)
+        \]
+        以此类推,原式即
+        \begin{align*}
+        &\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil+\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil \\
+        &\lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil \\
+        &=\frac{143}{2}(1+995+2+996+3+997+4+998+4+998+5+999+6+1000+6+1000)\\
+        &\quad+\frac{142}{2}(7+994+8+995)\\
+        &=715285
+        \end{align*}
+    \end{solution}
+
+    \question 解
+    \[
+    x^2 - 6\lfloor x \rfloor + 5 = 0
+    \]
+    \begin{solution}
+        原方程化为
+        \[
+        x^2 - 6\lfloor x \rfloor + 5 = 0 \Rightarrow x^2 - 6x + 5 = -6 \{x\}
+        \]
+        $-6 \{x\}$的值域为$(-6,0]$,且对于$x \in [1,5]$,有
+        \[
+        x^2 - 6x + 5 \in (-6,0]
+        \]
+        当$x \in [1,2)$,有$\floor{x}=1$,则
+        \[
+        x^2=6\cdot1-5 \Rightarrow x=1
+        \]
+        类似地,
+        \begin{align*}
+        \floor{x}&=2 \Rightarrow x^2 = 7 \Rightarrow x = \sqrt{7} \\
+        \floor{x}&=3 \Rightarrow x^2 = 13 \Rightarrow x = \sqrt{13} \\
+        \floor{x}&=4 \Rightarrow x^2 = 19 \Rightarrow x = \sqrt{19} \\
+        \floor{x}&=5 \Rightarrow x^2 = 25 \Rightarrow x = 5 
+        \end{align*}
+        因此,方程的解为
+        \[
+        x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
+    \]
+    \begin{solution}
+        令 $x = n + r$,其中 $n\in \mathbb{Z}, 0 \le r < 1$,则
+        \[
+        \lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
+        \]
+        展开得
+        \[
+        2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
+        \]
+        解不等式组
+        \[
+        \begin{cases}
+        2n^2+n+1 \le 111 \\
+        2n^2+3n \ge 111
+        \end{cases}
+        \]
+        得$n=7$,因此解
+        \[
+        \lceil 7r \rceil + \lfloor 8r \rfloor =6
+        \]
+        得
+        \[
+        \frac{3}{8} \le r \le \frac{3}{7} \Rightarrow \frac{59}{8} \le x \le \frac{52}{7}
+        \]
+    \end{solution}
+
+    \question 求数列
+    \[
+    \left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
+    \]
+    中相异整数的个数。
+    \begin{solution}
+        考虑连续两项的差
+        \[
+        \frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
+        \]
+        由于
+        \[
+        \frac{1007^2}{2016} \approx 503.0005 > 503
+        \]  
+        前 1007 项即整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。对于第 1008 项到 2016 项,
+        每项至少比前一项大 1,因此产生 
+        \[
+        2016-1008+1 = 1009
+        \]
+        个不同整数,因此数列中相异整数的个数为
+        \[
+        504 + 1009 = 1513
+        \]
+    \end{solution}
+
+    \question 
+    \[
+    \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
+    \]
+    \begin{solution}
+        利用二项式展开,
+        \begin{align*}
+        a_n &= \left\lfloor \frac{(3-1)^n}{3} \right\rfloor \\
+        &= \left\lfloor 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} + \frac{(-1)^n}{3} \right\rfloor \\
+        &= 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} 
+        \end{align*}
+        且注意到 
+        \[
+        a_n 
+        = \begin{cases}
+        \dfrac{2^n-1}{3}, \quad n\text{为偶数} \\[8pt]
+        \dfrac{2^n-2}{3}, \quad n\text{为奇数}
+        \end{cases}
+        = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}
+        \]
+        因此
+        \begin{align*}
+        \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
+        &= \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
+        &= \frac{1}{3} \cdot \frac{2^{1001}-1}{2-1} - \frac{1001}{2} + \frac{1}{6} \\
+        &= \frac{2^{1001}-1502}{3}
+        \end{align*}
+    \end{solution}
+
+    \question 解
+    \[
+    \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
+    \]
+    \begin{solution}
+        设 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$,则
+        \[
+        \lfloor x^2 \rfloor - n^2 = \floor{(n+r)^2-n^2} =\lfloor 2 n r + r^2 \rfloor
+        \]
+        故
+        \[
+        \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999 \Rightarrow 2 n r + r^2 \ge 1999
+        \]
+        最小的 $n$ 滿足
+        \[
+        2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
+        \]
+        此时有
+        \[
+        r^2 + 2000 r - 1999 = 0 \Rightarrow r = -1000 + \sqrt{1001999}
+        \]
+        所以
+        \[
+        x = n + r = \sqrt{1001999}
+        \]
+    \end{solution}
+
+    \question 
+    \begin{parts}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        原方程化为
+        \[
+        \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{6}
+        \]
+        明示了
+        \[
+        \frac{n}{2},\frac{n}{3},\frac{n}{6}
+        \]
+        皆为整数, 于是$n$ 必须为 6 的倍数,因此正整数解共有 $\left\lfloor\dfrac{100}{6}\right\rfloor=16$ 个。
+    \end{solution}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        设 
+        \[
+        f(n) = \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor, 
+        \]
+        则
+        \[
+        f(n+6) = f(n) + 6
+        \]
+        定义 $g(n) = f(n) - (n-1)$, 则
+        \[
+        g(n+6) = g(n).
+        \]
+        且有
+        \[
+        g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
+        \]
+        因此正整数解共有 
+        \[
+        17+17+17+17=68
+        \]
+        个。
+    \end{solution}
+    \end{parts}
+
+    \question 解方程
+    \[
+    2\lfloor x \rfloor + 3x = 4 - 5\{x\}
+    \]
+    \begin{solution}
+        设 $x = n+r$, 其中 $n = \lfloor x \rfloor,r = \{x\}$,代入方程得
+        \[
+        2n + 3(n+r) = 4 - 5r \Rightarrow 5x=4-3r
+        \]
+        由 $0 \le r < 1$, 有
+        \[
+        1 < 4-3r \le 4 \Rightarrow \frac{1}{5} < x \le \frac{4}{5}
+        \]
+        由此可得$x=\{x\}$,即$\floor{x}=0$,此时
+        \[
+        2\cdot 0 +3x=4-5x \Rightarrow x=\frac{1}{2}
+        \]
+    \end{solution}
+
+    \question 求满足以下条件的正整数 $x$ 的个数:
+    \[
+    \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor.
+    \]
+    \begin{solution}
+        设
+        \[
+        \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
+        \]
+        由定义有
+        \[
+        m \le \frac{x}{99} < m+1 \Rightarrow 99m \le x < 99(m+1)
+        \]
+        \[
+        m \le \frac{x}{101} < m+1 \Rightarrow 101m \le x < 101(m+1)
+        \]
+        因此
+        \[
+        101m \le x < 99(m+1)
+        \]
+        当 $m>49$ 时, $101m > 99(m+1)$, 无解。对于 $0 \le m \le 49$, 由于 $x=0$ 不是正整数,可行整数个数为
+        \[
+        \sum_{m=0}^{49} (99(m+1)-101m) =\sum_{m=0}^{49} 99-2m) -1 = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} -1 = 2499
+        \]
+    \end{solution}
+
+    \question 求解 $x\in \mathbb{Z}$ 满足
+    \[
+    \left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
+    \]
+    \begin{solution}
+        原方程给出
+        \[
+        \frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
+        \]
+        化简得
+        \[
+        134.4 \le x < 136.2
+        \]
+        由于 $x \in \mathbb{Z}$,且 $x=136$ 不满足原方程,故原方程式的解只有
+        \[
+        x = 135
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \frac{\lfloor x \rfloor}{x} = \frac{9}{10}
+    \]
+    的最大实数 $x$。
+    \begin{solution}
+        由 $x = \lfloor x \rfloor + \{x\}$, 交叉相乘得
+        \[
+        10 \lfloor x \rfloor = 9 (\lfloor x \rfloor + \{x\}) \Rightarrow \lfloor x \rfloor = 9 \{x\}
+        \]
+        由于 $0 \le \{x\} < 1,\{x\}$的可能值为
+        \[
+        = \frac{1}{9}, \frac{2}{9}, \dots, \frac{8}{9}, 
+        \]
+        取最大值 $\{x\} = \frac{8}{9}$, 于是
+        \[
+        x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
+        \]
+    \end{solution}
 \end{questions}
 \pagebreak
 
