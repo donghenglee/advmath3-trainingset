@@ -42,6 +42,8 @@
 %write into begin align*
 
 %unexplored/to expand later areas: 
+%曾龙文师-高二数理培训队笔记
+%JEE
 %Prime Newtons
 %2d vector
 %两圆正交
@@ -50,12 +52,13 @@
 %projection matrices are idempotent and symmetric
 %\int_{b}^{a} y \, dx + \int_{f(a)}^{f(b)} x \, dy = b f(b) - a f(a)
 %linear algebra线代启示录
-%陈景润,华罗庚,JEE,指考,APMO,SEAMO,CTMC,CSMC,AMC,台湾,中国
+%陈景润,华罗庚,指考,APMO,SEAMO,CTMC,CSMC,AMC,台湾,中国
 
 %大排版/clean up issues:
 %跟着solution排版
 %由易至难/跟着课文走?跟着课文走+综合题/挑战题
 %难度:眼光、麻烦、雾里看花、课外太空
+%函数的递推题丢去数列
 %三角不等式放哪?
 %数列里有用到复数?
 %圆锥曲线
@@ -100,6 +103,7 @@
 %\SolutionEmphasis{\color{red}}
 \linespread{1.3}
 \setlength{\footskip}{0.5cm} 
+\setlength{\columnsep}{1cm}
 \newcommand{\figureornament}[2][1]{%
   \raisebox{.5\fontcharht\font`0}{%
     \pgfornament[scale=#1,color=brown]{#2}%
@@ -149,6 +153,8 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
   }
 \end{center}
 \separator
+
+\begin{multicols}{2}
 \begin{center}
     {\Large 代数}
 \end{center}
@@ -163,16 +169,17 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \hyperlink{数列与级数}{数列与级数} \dotfill \pageref{数列与级数} \\
 \hyperlink{二项展开式}{二项展开式} \dotfill \pageref{二项展开式} \\
 \hyperlink{泰勒展开式}{泰勒展开式} \dotfill \pageref{泰勒展开式} \\
-\hyperlink{数学归纳法}{数学归纳法} \dotfill \pageref{数学归纳法} \\
-\hyperlink{行列式}{行列式} \dotfill \pageref{行列式} \\
 \hyperlink{矩阵}{矩阵} \dotfill \pageref{矩阵} \\
-\hyperlink{复数}{复数} \dotfill \pageref{复数} 
+\hyperlink{行列式}{行列式} \dotfill \pageref{行列式} \\
+\hyperlink{复数}{复数} \dotfill \pageref{复数} \\
+\hyperlink{数学归纳法}{数学归纳法} \dotfill \pageref{数学归纳法} 
 \begin{center}
     {\Large 组合数学}
 \end{center}
 \hyperlink{排列与组合}{排列与组合} \dotfill \pageref{排列与组合} \\
 \hyperlink{概率、期望值}{概率、期望值} \dotfill \pageref{概率、期望值} \\
 \hyperlink{统计}{统计} \dotfill \pageref{统计}
+\columnbreak
 \begin{center}
     {\Large 几何}
 \end{center}
@@ -193,8 +200,9 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \hyperlink{微分}{微分} \dotfill \pageref{微分} \\
 \hyperlink{积分}{积分} \dotfill \pageref{积分} \\
 \hyperlink{微分方程}{微分方程} \dotfill \pageref{微分方程} 
+\end{multicols}
 \vfill
-总题数: \numquestions{}
+\noindent 总题数: \numquestions{}
 \include{代数}
 \include{组合数学}
 \include{几何}
