@@ -5668,51 +5668,53 @@
     \end{solution}
 
     \question 设 $f$ 为实值函数,且对任意实数 $x$ 满足
-\begin{enumerate}
-\item $f(10+x) = f(10-x)$；
-\item $f(20+x) = -f(20-x)$。
-\end{enumerate}
-证明 $f$ 是奇函数并且是周期函数。
-
-\begin{solution}
-令 $x = n - 10$ 在 (a) 中,则
-\[
-f(n) = f(20 - n)。
-\]
-
-又令 $x = n$ 在 (b) 中,则
-\[
-f(20 - n) = -f(20 + n)。
-\]
-
-因此
-\[
-f(n) = -f(20 + n)。
-\]
-
-再令 $x = n + 10$ 在 (a) 中,则
-\[
-f(n + 20) = f(-n)。
-\]
-
-结合上式可得
-\[
-f(n) = -f(20+n) = f(-n),
-\]
-所以 $f$ 是奇函数。
-
-最后,令 $x = n - 20$ 在 (b) 中,则
-\[
-f(n) = -f(40 - n)。
-\]
-
-由于 $f$ 是奇函数,$-f(40-n) = f(n-40)$,所以
-\[
-f(n) = f(n-40),
-\]
-因此 $f$ 是周期函数,周期为 $40$。
-\end{solution}
-
+    \[
+    f(10+x) = f(10-x), \quad f(20+x) = -f(20-x)
+    \]
+    \begin{parts}
+    \part 证明 $f$ 是奇函数。
+    \begin{solution}
+        \[
+        f(10+x) = f(10-x) \tag{1}
+        \]
+        \[
+        f(20+x) = -f(20-x) \tag{2}
+        \]
+        由(1),令$x = y - 10$,
+        \[
+        f(y) = f(20 - y)
+        \]
+        由(2),令 $x = - y$,
+        \[
+        f(20 - y) = -f(20 + y)
+        \]
+        因此
+        \[
+        f(y) = -f(20 + y)
+        \]
+        由(1),令 $x = y + 10$,
+        \[
+        f(y + 20) = f(-y)
+        \]
+        结合上式可得
+        \[
+        f(y) = -f(20+y) = f(-y),
+        \]
+        所以得证 $f$ 是奇函数。
+    \end{solution}
+    \part 证明 $f$ 是周期函数。
+    \begin{solution}
+        由(2),令 $x = y - 20$ 在 (b) 中,则
+        \[
+        f(y) = -f(40 - y)
+        \]
+        由于 $f$ 是奇函数,有$-f(40-y) = f(y-40)$,所以
+        \[
+        f(y) = f(y-40),
+        \]
+        因此得证 $f$ 是周期函数。
+    \end{solution}
+    \end{parts}
 
     \question 若整数 $m\ge 1$,函数 $f$ 满足
     \[
@@ -5766,7 +5768,7 @@ f(n) = f(n-40),
         \]
     \end{solution}
 
-    \question 已知实数 $\alpha$、$\beta$ 满足
+    \question 已知实数 $\alpha,\beta$ 满足
     \[
     3^{\frac{\alpha}{2}} = \sqrt{3} - \alpha, \quad \log_3 \beta = 2\sqrt{3} - 2\beta
     \]
@@ -5791,7 +5793,7 @@ f(n) = f(n-40),
         \]
     \end{solution}
 
-    \question 设实数 $\alpha$、$\beta$ 满足
+    \question 设实数 $\alpha,\beta$ 满足
     \[
     \begin{cases}
     \alpha^3 - 6\alpha^2 + 13\alpha = 6 \\
@@ -5908,10 +5910,10 @@ f(n) = f(n-40),
         \]
         $(1)+(3)-(2)$,得
         \begin{align*}
-            2f(x) &= \frac{1}{x(1-x)}+\frac{x^2}{x-1}+\frac{(x-1)^2}{x}\\
-            &=\frac{-1+x^3+(x-1)^3}{x(x-1)}\\
-            &=\frac{(x^2+x+1)+(x^2-2x+1)}{x}\\
-            &=\frac{2x^2-x+2}{x}
+        2f(x) &= \frac{1}{x(1-x)}+\frac{x^2}{x-1}+\frac{(x-1)^2}{x}\\
+        &=\frac{-1+x^3+(x-1)^3}{x(x-1)}\\
+        &=\frac{(x^2+x+1)+(x^2-2x+1)}{x}\\
+        &=\frac{2x^2-x+2}{x}
         \end{align*}
         故
         \[
@@ -6163,7 +6165,11 @@ f(n) = f(n-40),
         因此区间为 $[-1, 3+2\sqrt{5}]$。
     \end{solution}
 
-    \question 已知不等式 $|x^2 + ax + 2| \ge |x + 1|$ 对任意 $x \in \mathbb{R}$ 恒成立,求实数 $a$ 的取值范围。
+    \question 已知不等式 
+    \[
+    |x^2 + ax + 2| \ge |x + 1|
+    \]
+    对任意 $x \in \mathbb{R}$ 恒成立,求实数 $a$ 的取值范围。
     \begin{solution}
         将不等式两边平方得
         \[
@@ -6196,9 +6202,13 @@ f(n) = f(n-40),
         \]
     \end{solution}
         
-    \question 求 $$|2|x-2|-5| \le 3$$ 的正整数解。
+    \question 求 
+    \[
+    |2|x-2|-5| \le 3
+    \]
+    的正整数解。
     \begin{solution}
-        \textbf{情况一}:$\ |2|x-2|-5| = 3$  
+        情况一:$\ |2|x-2|-5| = 3$  
         \[
         \Rightarrow
         \begin{cases}
@@ -6214,8 +6224,7 @@ f(n) = f(n-40),
         \end{cases}
         \end{cases}
         \]
-        
-        \textbf{情况二}:$\ |2|x-2|-5| = 2$  
+        情况二:$\ |2|x-2|-5| = 2$  
         \[
         \Rightarrow
         \begin{cases}
@@ -6223,8 +6232,7 @@ f(n) = f(n-40),
         2|x-2| - 5 = -2 \Rightarrow |x-2| = \frac{3}{2} \notin \mathbb{Z}
         \end{cases}
         \]
-        
-        \textbf{情况三}:$\ |2|x-2|-5| = 1$  
+        情况三:$\ |2|x-2|-5| = 1$  
         \[
         \Rightarrow
         \begin{cases}
@@ -6240,13 +6248,14 @@ f(n) = f(n-40),
         \end{cases}
         \end{cases}
         \]
-        
-        \textbf{情况四}:$\ |2|x-2|-5| = 0$  
+        情况四:$\ |2|x-2|-5| = 0$  
         \[
         \Rightarrow |x-2| = \frac{5}{2} \notin \mathbb{Z}
         \]
-        
-        综上,正整数解为$x = 1, 3, 4, 5, 6$
+        综上,正整数解为
+        \[
+        x = 1, 3, 4, 5, 6
+        \]
     \end{solution}
 
     \question 若实数 $a$ 可使得对任意实数 $x$,不等式 
@@ -7032,59 +7041,33 @@ f(n) = f(n-40),
     \textcolor{red}{等号成立$y=0,x=z=\frac{1}{2}$？}
 \end{solution}
 
-\question 设 $a,b,c,d$ 为正实数且 $abcd=1$。证明
-\[
-a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 10.
-\]
+    \question 设 $a,b,c,d$ 为正实数,且满足 $abcd=1$,求
+    \[
+    a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd
+    \]
+    的最小值。
+    \begin{solution}
+        由AM-GM不等式,有
+        \[
+        a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge \sqrt[4]{(abcd)^2} + \sqrt[6]{(abcd)^3}= 4+6=10
+        \]
+        等号成立当且仅当$a=b=c=d=1$。
+    \end{solution}
 
-\begin{solution}
-由算术几何均值不等式（A.M.-G.M.）,有
-\[
-\frac{a^2+b^2+c^2+d^2}{4} \ge \sqrt[4]{a^2b^2c^2d^2} = \sqrt[4]{(abcd)^2} = 1,
-\]
-因此
-\[
-a^2+b^2+c^2+d^2 \ge 4.
-\]
-
-同样地,对六个二次项之和应用 A.M.-G.M.:
-\[
-\frac{ab+ac+ad+bc+bd+cd}{6} \ge \sqrt[6]{(ab)(ac)(ad)(bc)(bd)(cd)}
-= \sqrt[6]{a^3b^3c^3d^3}=\sqrt[6]{(abcd)^3}=1,
-\]
-于是
-\[
-ab+ac+ad+bc+bd+cd \ge 6.
-\]
-
-将两式相加得到
-\[
-a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 4+6=10,
-\]
-证毕。
-\end{solution}
-
-\question
-设 $a$, $b$ 和 $c$ 为正实数,且满足 $a^2+b^2+c^2 = 1$。证明:
-\[
-\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \ge 3 + \frac{2(a^3+b^3+c^3)}{abc}.
-\]
-
-\begin{solution}
-考虑左边减右边:
-\begin{align*}
-&\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} - 3 - \frac{2(a^3+b^3+c^3)}{abc} \\
-&= \frac{a^2+b^2+c^2}{a^2} + \frac{a^2+b^2+c^2}{b^2} + \frac{a^2+b^2+c^2}{c^2} - 3 - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
-&= \left(1 + \frac{b^2+c^2}{a^2}\right) + \left(1 + \frac{a^2+c^2}{b^2}\right) + \left(1 + \frac{a^2+b^2}{c^2}\right) - 3 - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
-&= \frac{b^2+c^2}{a^2} + \frac{a^2+c^2}{b^2} + \frac{a^2+b^2}{c^2} - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
-&= a^2\left(\frac{1}{b^2} + \frac{1}{c^2}\right) + b^2\left(\frac{1}{c^2} + \frac{1}{a^2}\right) + c^2\left(\frac{1}{a^2} + \frac{1}{b^2}\right) - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
-&= a^2\left(\frac{1}{b} - \frac{1}{c}\right)^2 + b^2\left(\frac{1}{c} - \frac{1}{a}\right)^2 + c^2\left(\frac{1}{a} - \frac{1}{b}\right)^2 \ge 0.
-\end{align*}
-
-等号成立当且仅当 $a = b = c$。
-\end{solution}
-
-
+    \question 设 $a,b,c$ 为正实数,且满足 $a^2+b^2+c^2 = 1$,证明
+    \[
+    \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \ge 3 + \frac{2(a^3+b^3+c^3)}{abc}.
+    \]
+    \begin{solution}
+        考虑左式减右式,有
+        \begin{align*}
+        &\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} - 3 - \frac{2(a^3+b^3+c^3)}{abc} \\
+        &= \frac{a^2+b^2+c^2}{a^2} + \frac{a^2+b^2+c^2}{b^2} + \frac{a^2+b^2+c^2}{c^2} - 3 - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
+        &= \frac{b^2+c^2}{a^2} + \frac{a^2+c^2}{b^2} + \frac{a^2+b^2}{c^2} - 2 \left(\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}\right) \\
+        &= a^2\left(\frac{1}{b} - \frac{1}{c}\right)^2 + b^2\left(\frac{1}{c} - \frac{1}{a}\right)^2 + c^2\left(\frac{1}{a} - \frac{1}{b}\right)^2 \ge 0
+        \end{align*}
+        等号成立当且仅当 $a = b = c$。
+    \end{solution}
 
     \question 若 $a,b,c$ 为实数且 $a+b+c=12$,且
     \[
@@ -7192,10 +7175,10 @@ a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 4+6=10,
         \]
         由AM-GM不等式,
         \begin{align*}
-            (1+r_1^3)(1+r_2^3)(1+r_3^3) 
-            &= 1 + (r_1^3+r_2^3+r_3^3) + (r_1 r_2)^3+(r_2 r_3)^3+(r_3 r_1)^3 + r_1^3 r_2^3 r_3^3 \\
-            &\ge 1 + 3 r_1 r_2 r_3 + 3 r_1^2 r_2^2 r_3^2 + r_1^3 r_2^3 r_3^3  \\
-            &= (1+r_1 r_2 r_3)^3
+        (1+r_1^3)(1+r_2^3)(1+r_3^3) 
+        &= 1 + (r_1^3+r_2^3+r_3^3) + (r_1 r_2)^3+(r_2 r_3)^3+(r_3 r_1)^3 + r_1^3 r_2^3 r_3^3 \\
+        &\ge 1 + 3 r_1 r_2 r_3 + 3 r_1^2 r_2^2 r_3^2 + r_1^3 r_2^3 r_3^3  \\
+        &= (1+r_1 r_2 r_3)^3
         \end{align*}
         因此得证
         \[
@@ -7496,41 +7479,35 @@ a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd \ge 4+6=10,
     \end{solution}
 
     \question 设 $a, b, c$ 是一个三角形的三边,周长为 $2$。证明
-\[
-\frac{3}{2} < a^2+b^2+c^2 + 2abc < 2.
-\]
-
-\begin{solution}
-由于周长为 $2$,任意一边都不大于 $1$,则三角形面积
-\[
-A = \frac{1}{2} bc \sin \alpha
-\]
-小于 $1/2$。又 $A^2 = (1-a)(1-b)(1-c)$,因此
-\begin{align*}
-0 &< (1-a)(1-b)(1-c) < \frac{1}{4}, \\
-0 &< 1 - (a+b+c) + (ab+ac+bc) - abc < \frac{1}{4}, \\
-0 &< 1 - 2 + (ab+ac+bc) - abc < \frac{1}{4}, \\
-1 &< (ab+ac+bc) - abc < \frac{5}{4},
-\end{align*}
-于是
-\[
-2 < 2(ab+ac+bc) - 2abc < \frac{5}{2}.
-\]
-
-另一方面,
-\[
-a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
-\]
-因此
-\[
-4 - \frac{5}{2} < a^2+b^2+c^2 + 2abc < 4 - 2,
-\]
-即
-\[
-\frac{3}{2} < a^2+b^2+c^2 + 2abc < 2.
-\]
-\end{solution}
-
+    \[
+    \frac{3}{2} < a^2+b^2+c^2 + 2abc < 2.
+    \]
+    \begin{solution}
+        由于周长为 $2$,有$a,b,c <1$,则三角形面积
+        \[
+        A = \frac{1}{2} bc \sin \alpha < \frac{1}{2}
+        \]
+        由海伦公式,
+        \[
+        A^2 = (1-a)(1-b)(1-c),
+        \]
+        因此展开
+        \[
+        0 < (1-a)(1-b)(1-c) < \frac{1}{4}
+        \]
+        可得
+        \[
+        1 < (ab+ac+bc) - abc < \frac{5}{4}
+        \]
+        且由
+        \[
+        a^2+b^2+c^2 = (a+b+c)^2 - 2(ab+ac+bc),
+        \]
+        因此
+        \[
+        4 - \frac{5}{2} < a^2+b^2+c^2 + 2abc < 4 - 2 \Rightarrow \frac{3}{2} < a^2+b^2+c^2 + 2abc < 2
+        \]
+    \end{solution}
         
     \question 在 $\triangle ABC$ 中,角 $A, B, C$ 所对的边为 $a, b, c$,且
     \[
@@ -7538,8 +7515,6 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
     \]
     求 $\triangle ABC$ 面积的最大值。
     \begin{solution}
-        \textbf{解法一}
-        
         由余弦定理
         \[
         \cos C = \frac{a^2 + b^2 - c^2}{2ab}= \frac{8 - 3c^2}{2ab}
@@ -7558,8 +7533,6 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
         \]
     \end{solution}
     \begin{solution}
-        \textbf{解法二}
-        
         以 $AB$ 所在直线为 $x$ 轴,$AB$ 中垂线为 $y$ 轴,设 $A(-\dfrac{c}{2},0),B(\dfrac{c}{2},0),C(x,y)$,由条件
         \[
         a^2 + b^2 + 2c^2 = 8
@@ -7618,7 +7591,6 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
         \]
         求 $\tan A \tan B \tan C$ 的最小值。
     \begin{solution}
-        \textbf{解法一}\\
         由余弦定理,有
         \[
         2ab\cos C = a^2+b^2-c^2
@@ -7656,7 +7628,6 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
         $\therefore\; f(t)$在$t=1$有最小值 $f(1)=6$。
     \end{solution}
     \begin{solution}
-        \textbf{解法二}\\
         以 $AB$ 所在直线为 $x$ 轴,$\;AB$ 中垂线为 $y$ 轴, 设 $A(-\dfrac{c}{2},0),B(\dfrac{c}{2},0),C(x,y)$,       
         由距离公式
         \[
@@ -7684,16 +7655,20 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
         因此有
         \[
         \tan A = 3 \tan B
-        \]解法同上。
+        \]
+        解法同上。
     \end{solution}
     
-    \question 已知非负实数 $a, b, c,d$ 满足 $a \le 1, a+b \le 5, a+b+c \le 14, a+b+c+d \le 30$,试证$$\sqrt{a}+\sqrt{b}+\sqrt{c}+\sqrt{d}\le10$$
+    \question 已知非负实数 $a, b, c,d$ 满足 $a \le 1, a+b \le 5, a+b+c \le 14, a+b+c+d \le 30$,试证
+    \[
+    \sqrt{a}+\sqrt{b}+\sqrt{c}+\sqrt{d}\le10
+    \]
     \begin{solution}
         由柯西不等式,
         \begin{align*}
-            &(\sqrt{a}+\sqrt{b}+\sqrt{c}+\sqrt{d})^2\\
-            &=\left(\sqrt{a}+\frac{\sqrt{b}}{2}+\frac{\sqrt{b}}{2}+\frac{\sqrt{c}}{3}+\frac{\sqrt{c}}{3}+\frac{\sqrt{c}}{3}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}\right)^{2} \\
-            &\le\left(a+\frac{b}{2}+\frac{b}{2}+\frac{c}{9}+\frac{c}{9}+\frac{c}{9}+\frac{d}{16}+\frac{d}{16}+\frac{d}{16}+\frac{d}{16}\right)(1+...+1)=10(a+\frac{b}{2}+\frac{c}{3}+\frac{d}{4})
+        &(\sqrt{a}+\sqrt{b}+\sqrt{c}+\sqrt{d})^2\\
+        &=\left(\sqrt{a}+\frac{\sqrt{b}}{2}+\frac{\sqrt{b}}{2}+\frac{\sqrt{c}}{3}+\frac{\sqrt{c}}{3}+\frac{\sqrt{c}}{3}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}+\frac{\sqrt{d}}{4}\right)^{2} \\
+        &\le\left(a+\frac{b}{2}+\frac{b}{2}+\frac{c}{9}+\frac{c}{9}+\frac{c}{9}+\frac{d}{16}+\frac{d}{16}+\frac{d}{16}+\frac{d}{16}\right)(1+...+1)=10(a+\frac{b}{2}+\frac{c}{3}+\frac{d}{4})
         \end{align*}
         而
         \begin{align*}
@@ -7727,64 +7702,53 @@ a^2+b^2+c^2+2abc = (a+b+c)^2 + (2abc - 2(ab+ac+bc)),
         \ge \frac{3}{2}\sqrt[3]{(abc)^2} = \frac{3}{2}
         \]
     \end{solution}
+    \begin{solution}
+        由 $abc=1$,有
+        \[
+        \sum_{cyc} \frac{1}{a^3(b+c)} = \sum_{cyc} \frac{bc}{a^2(b+c)} = \sum_{cyc} \frac{(\frac{1}{a})^2}{\frac{1}{b}+\frac{1}{c}}
+        \]
+        由 AM–GM 不等式,可推出
+        \[
+        \frac{x^2}{y} \ge x - \frac{y}{4}, \quad x,y>0,
+        \]
+        据此得到
+        \[
+        \sum_{cyc} \frac{(\frac{1}{a})^2}{\frac{1}{b}+\frac{1}{c}} \ge \sum_{cyc} \left[ \frac{1}{a} - \frac{1}{4}\left( \frac{1}{b} + \frac{1}{c} \right) \right] = \frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \right)
+        \]
+        再由 AM–GM 不等式,
+        \[
+        \frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \right) \ge \frac{3}{2} \sqrt[3]{\frac{1}{abc}} = \frac{3}{2}
+        \]
+        因此原不等式成立。
+    \end{solution}
 
-\begin{solution}
-由 $abc=1$,有
-\[
-\sum_{cyc} \frac{1}{a^3(b+c)} = \sum_{cyc} \frac{bc}{a^2(b+c)} = \sum_{cyc} \frac{(\frac{1}{a})^2}{\frac{1}{b}+\frac{1}{c}}.
-\]
-
-利用不等式
-\[
-\frac{x^2}{y} \ge x - \frac{y}{4}, \quad x,y>0,
-\]
-得到
-\[
-\sum_{cyc} \frac{(\frac{1}{a})^2}{\frac{1}{b}+\frac{1}{c}} \ge \sum_{cyc} \left[ \frac{1}{a} - \frac{1}{4}\left( \frac{1}{b} + \frac{1}{c} \right) \right] = \frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \right).
-\]
-
-由 AM–GM 不等式:
-\[
-\frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \right) \ge \frac{3}{2} \sqrt[3]{\frac{1}{abc}} = \frac{3}{2}.
-\]
-
-因此原不等式成立。
-\end{solution}
-
-\question 已知 $0\le x,y,z\le1$ 且
-\[
-xyz=(1-x)(1-y)(1-z),
-\]
-证明
-\[
-x(1-z)+y(1-x)+z(1-y)\ge\frac{3}{4}.
-\]
-
-\begin{solution}
-由于 $0\le x\le1$,有 $(x-\tfrac12)^2\ge0$,从而 $0\le x(1-x)\le\tfrac14$。对 $y,z$ 同理成立。于是
-\[
-xyz(1-x)(1-y)(1-z)\le\frac{1}{64}.
-\]
-
-由已知关系 $xyz=(1-x)(1-y)(1-z)$,左端等于 $(xyz)^2$,因此
-\[
-(xyz)^2\le\frac{1}{64}\quad\Longrightarrow\quad xyz\le\frac{1}{8}.
-\]
-
-再利用已知等式可得
-\[
-x(1-z)+y(1-x)+z(1-y)
-= x+y+z - (xy+yz+zx)
-= 1 - 2xyz,
-\]
-其中最后一步由 $xyz=(1-x)(1-y)(1-z)$ 展开并化简得到。于是
-\[
-x(1-z)+y(1-x)+z(1-y)=1-2xyz\ge 1-2\cdot\frac{1}{8}=\frac{3}{4}.
-\]
-
-当 $x=y=z=\tfrac12$ 时取等号。因此不等式成立,且在 $x=y=z=\tfrac12$ 时达等号。
-\end{solution}
-
+    \question 已知 $0\le x,y,z\le1$ 且
+    \[
+    xyz=(1-x)(1-y)(1-z),
+    \]
+    证明
+    \[
+    x(1-z)+y(1-x)+z(1-y)\ge\frac{3}{4}.
+    \]
+    \begin{solution}
+        由于 $0\le x\le1$,有
+        \[
+        (x-\frac12)^2 \ge 0 \Rightarrow 0\le x(1-x)\le\frac14,
+        \]
+        对 $y,z$ 同理成立。于是
+        \[
+        xyz(1-x)(1-y)(1-z)\le\frac{1}{64}
+        \]
+        由已知关系 $xyz=(1-x)(1-y)(1-z)$得
+        \[
+        (xyz)^2\le\frac{1}{64} \Rightarrow xyz\le\frac{1}{8}
+        \]
+        于是
+        \[
+        x(1-z)+y(1-x)+z(1-y)= x+y+z - (xy+yz+zx)= 1 - 2xyz \ge 1-2\cdot\frac{1}{8}=\frac{3}{4}
+        \]
+        当 $x=y=z=\dfrac12$ 时等号成立,
+    \end{solution}
 
     \question 设正实数 $a,b,c,x,y,z$ 满足 $a+b+c = x+y+z$,证明
     \[
@@ -7902,217 +7866,177 @@ x(1-z)+y(1-x)+z(1-y)=1-2xyz\ge 1-2\cdot\frac{1}{8}=\frac{3}{4}.
     \end{solution}
 
     \question 证明
-\[
-\sum_{n=1}^\infty \frac{1}{\sqrt{n(n+1)}}<2.
-\]
+    \[
+    \sum_{n=1}^\infty \frac{1}{\sqrt{n}(n+1)} < 2.
+    \]
+    \begin{solution}
+        首先证明对任意正整数 $n$,都有如下不等式成立
+        \[
+        \frac{1}{\sqrt{n}(n+1)} < \frac{2}{\sqrt{n}} - \frac{2}{\sqrt{n+1}} \tag{1}
+        \]
+        将不等式 (1) 两边同乘以 $\sqrt{n}(n+1)$, 可得其等价形式
+        \[
+        1 < 2(n+1) - 2\sqrt{n(n+1)} \Longleftrightarrow 2\sqrt{n(n+1)} < n + (n+1)
+        \]
+        由AM-GM不等式,显然上述等价形式成立，故       
+        \[
+        \sum_{n=1}^\infty \frac{1}{\sqrt{n}(n+1)} < \sum_{n=1}^\infty \left( \frac{2}{\sqrt{n}} - \frac{2}{\sqrt{n+1}} \right)
+        \]
+        右端为裂项级数，其前 $k$ 项部分和为
+        \[
+        \sum_{n=1}^k\left( \frac{2}{\sqrt{n}} - \frac{2}{\sqrt{n+1}} \right) = 2 \left( 1 - \frac{1}{\sqrt{k+1}} \right)
+        \]
+        当 $k \to \infty$ 时, $S_k \to 2$,因此
+        \[
+        \sum_{n=1}^\infty \frac{1}{\sqrt{n}(n+1)} < 2
+        \]
+    \end{solution}
 
-\begin{solution}
-我们证明对任意正整数 $n$,都有
-\[
-\frac{1}{\sqrt{n(n+1)}}<\frac{2}{\sqrt{n}}-\frac{2}{\sqrt{n+1}}.
-\]
-将不等式两边同乘以 $\sqrt{n(n+1)}$,等价于
-\[
-1<2\sqrt{n+1}-2\sqrt{n}.
-\]
-等价地,
-\[
-2\sqrt{n(n+1)}<n+(n+1).
-\]
-由于 $n$ 与 $n+1$ 均为正数,由算术平均与几何平均不等式可知
-\[
-2\sqrt{n(n+1)}\le n+(n+1),
-\]
-且不等号严格成立,因此上述不等式成立。
+    \question 设实数 $a,b,c \in [-1,1]$ 满足
+    \[
+    1 + 2abc \ge a^2 + b^2 + c^2.
+    \]
+    证明对所有正整数 $n$ 有
+    \[
+    1 + 2(abc)^n \ge a^{2n} + b^{2n} + c^{2n}.
+    \]
+    \begin{solution}
+        条件可改写为
+        \[
+        (a - bc)^2 \le (1-b^2)(1-c^2). \tag{1}
+        \]
+        由柯西不等式,
+        \begin{align*}
+        (a^{n-1} + a^{n-2} bc + \cdots + b^{n-1} c^{n-1})^2 
+        &\le (|a|^{n-1} + |a|^{n-2}|bc| + \cdots + |bc|^{n-1})^2 \\
+        &\le (1 + |bc| + \cdots + |bc|^{n-1})^2 \\
+        &\le (1 + |b|^2 + \cdots + |b|^{2(n-1)}) (1 + |c|^2 + \cdots + |c|^{2(n-1)})
+        \end{align*}
+        乘以不等式 (1),得到
+        \begin{align*}
+        (a - bc)^2 (a^{n-1} + a^{n-2} bc + \cdots + b^{n-1} c^{n-1})^2 
+        &\le ((1-b^2)(1 + |b|^2 + \cdots + |b|^{2(n-1)})) \\
+        &\quad \cdot ((1-c^2)(1 + |c|^2 + \cdots + |c|^{2(n-1)})) 
+        \end{align*}
+        即
+        \[
+        (a^n - b^n c^n)^2 \le (1 - b^{2n})(1 - c^{2n})
+        \]
+        从而得到
+        \[
+        1 + 2(abc)^n \ge a^{2n} + b^{2n} + c^{2n}
+        \]
+    \end{solution}
 
-于是
-\[
-\sum_{n=1}^\infty \frac{1}{\sqrt{n(n+1)}}<
-\sum_{n=1}^\infty \left(\frac{2}{\sqrt{n}}-\frac{2}{\sqrt{n+1}}\right).
-\]
-右端为裂项求和,
-\[
-\sum_{n=1}^\infty \left(\frac{2}{\sqrt{n}}-\frac{2}{\sqrt{n+1}}\right)
-=2.
-\]
-因此
-\[
-\sum_{n=1}^\infty \frac{1}{\sqrt{n(n+1)}}<2.
-\]
-\end{solution}
+    \question 设 $a_1,\dots,a_n$ 为正实数,且设 $s=a_1+\cdots+a_n$，试证明
+    \[
+    (1+a_1)(1+a_2)\cdots(1+a_n) \le 1+\frac{s}{1!}+\frac{s^2}{2!}+\cdots+\frac{s^n}{n!}.
+    \]
+    \begin{solution}
+        由AM-GM不等式,
+        \[
+        \prod_{j=1}^n(1+a_j)\le \left(\frac{1}{n}\sum_{j=1}^n(1+a_j)\right)^n=\left(1+\frac{s}{n}\right)^n
+        \]
+        二项展开得
+        \[
+        \Big(1+\frac{s}{n}\Big)^n=\sum_{j=0}^n\binom{n}{j}\frac{s^j}{n^j}
+        =\sum_{j=0}^n\frac{n!}{(n-j)!\,j!}\,\frac{s^j}{n^j}.
+        \]
+        注意当 $0\le j\le n$ 时,
+        \[
+        \frac{n!}{(n-j)!\,n^j}=\prod_{k=0}^{j-1}\Big(1-\frac{k}{n}\Big)\le 1,
+        \]
+        因此每一项满足
+        \[
+        \frac{n!}{(n-j)!\,j!}\,\frac{s^j}{n^j}\le\frac{s^j}{j!}.
+        \]
+        代入二项和得到
+        \[
+        \prod_{j=1}^n(1+a_j)\le\sum_{j=0}^n\frac{s^j}{j!},
+        \]
+        即
+        \[
+        (1+a_1)\cdots(1+a_n)\le 1+\frac{s}{1!}+\frac{s^2}{2!}+\cdots+\frac{s^n}{n!},
+        \]
+        证毕。
+    \end{solution}
 
+    \question 设 $n$ 个正实数的最小值为 $m$, 最大值为 $M$, 记它们的算术平均为 $A$, 几何平均为 $G$。证明
+    \[
+    A - G \ge \frac{1}{n} \left( \sqrt{M} - \sqrt{m} \right)^2.
+    \]
+    \begin{solution}
+        设 $n$ 个正实数为 $x_1, \dots, x_n$, 不妨令 $x_1 = m, x_n = M$。不等式等价于
+        \begin{align*}
+        & A - G \ge \frac{\left( \sqrt{M} - \sqrt{m} \right)^2}{n} \\
+        \Longleftrightarrow & \sum_{j=1}^n x_j - n \left( \prod_{j=1}^n x_j \right)^{\frac{1}{n}} \ge M - 2\sqrt{Mm} + m \\
+        \Longleftrightarrow & \sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \ge n \left( \prod_{j=1}^n x_j \right)^{\frac{1}{n}}
+        \end{align*}
+        对这 $n$ 个数
+        \[
+        \sqrt{Mm}, \; x_2, \; x_3, \; \dots, \; x_{n-1}, \; \sqrt{Mm}
+        \]
+        应用 AM-GM 不等式，有
+        \[
+        \frac{1}{n} \left( \sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \right) \ge \left( Mm \prod_{j=2}^{n-1} x_j \right)^{\frac{1}{n}} = \left( x_1 x_n \prod_{j=2}^{n-1} x_j \right)^{\frac{1}{n}} = \left( \prod_{j=1}^n x_j \right)^{\frac{1}{n}}
+        \]
+        即
+        \[
+        \sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \ge n \left( \prod_{j=1}^n x_j \right)^{\frac{1}{n}}
+        \]
+        故原不等式得证。
+    \end{solution}
 
-    \question 假设实数 $a,b,c \in [-1,1]$ 并且满足
-\[
-1 + 2abc \ge a^2 + b^2 + c^2.
-\]
+    \question 设 $x_1,\ldots,x_n\ge -1$,且
+    \[
+    \sum_{i=1}^n x_i^3=0,
+    \]
+    证明
+    \[
+    \sum_{i=1}^n x_i\le \frac{n}{3}.
+    \]
+    \begin{solution}
+        当 $x\ge -1$ 时,有不等式
+        \[
+        0\le x^3-\frac34 x+\frac14=(x+1)\left(x-\frac12\right)^2
+        \]
+        将 $x_1,\ldots,x_n$ 代入上式并求和,得到
+        \[
+        0\le =\sum_{i=1}^n x_i^3-\frac34\sum_{i=1}^n x_i+\frac{n}{4}
+        \]
+        由已知条件 
+        \[
+        \sum_{i=1}^n x_i^3=0,
+        \]
+        可得
+        \[
+        0\le -\frac34\sum_{i=1}^n x_i+\frac{n}{4} \Rightarrow \sum_{i=1}^n x_i\le \frac{n}{3}
+        \]
+        当且仅当 $n=9k$,其中 $k$ 个 $x_i=-1$,其余 $8k$ 个 $x_i=\dfrac12$ 时取等号。
+    \end{solution}
 
-\noindent
-证明对所有正整数 $n$ 有
-\[
-1 + 2(abc)^n \ge a^{2n} + b^{2n} + c^{2n}.
-\]
-
-\begin{solution}
-约束条件可以改写为
-\[
-(a - bc)^2 \le (1-b^2)(1-c^2). \tag{1}
-\]
-
-利用 Cauchy-Schwarz 不等式,有
-\begin{align*}
-(a^{n-1} + a^{n-2} bc + \cdots + b^{n-1} c^{n-1})^2 
-&\le (|a|^{n-1} + |a|^{n-2}|bc| + \cdots + |bc|^{n-1})^2 \\
-&\le (1 + |bc| + \cdots + |bc|^{n-1})^2 \\
-&\le (1 + |b|^2 + \cdots + |b|^{2(n-1)}) (1 + |c|^2 + \cdots + |c|^{2(n-1)}).
-\end{align*}
-
-将不等式 (1) 乘以上式得到
-\begin{align*}
-(a - bc)^2 (a^{n-1} + a^{n-2} bc + \cdots + b^{n-1} c^{n-1})^2 
-&\le ((1-b^2)(1 + |b|^2 + \cdots + |b|^{2(n-1)})) \\
-&\quad \times ((1-c^2)(1 + |c|^2 + \cdots + |c|^{2(n-1)})) \\
-(a^n - b^n c^n)^2 &\le (1 - b^{2n})(1 - c^{2n}),
-\end{align*}
-从而得到
-\[
-1 + 2(abc)^n \ge a^{2n} + b^{2n} + c^{2n}.
-\]
-\end{solution}
-
-
-    \question 设 $a_1,\dots,a_n$ 为正实数,且设 $s=a_1+\cdots+a_n$。证明
-\[
-(1+a_1)(1+a_2)\cdots(1+a_n) \le 1+\frac{s}{1!}+\frac{s^2}{2!}+\cdots+\frac{s^n}{n!}.
-\]
-
-\begin{solution}
-由算术—几何均值不等式(A.M.-G.M.),有
-\[
-\Big(\prod_{j=1}^n(1+a_j)\Big)^{\frac{1}{n}}
-\le \frac{1}{n}\sum_{j=1}^n(1+a_j)=1+\frac{s}{n}.
-\]
-因此
-\[
-\prod_{j=1}^n(1+a_j)\le\Big(1+\frac{s}{n}\Big)^n.
-\]
-
-对右端使用二项展开得
-\[
-\Big(1+\frac{s}{n}\Big)^n=\sum_{j=0}^n\binom{n}{j}\frac{s^j}{n^j}
-=\sum_{j=0}^n\frac{n!}{(n-j)!\,j!}\,\frac{s^j}{n^j}.
-\]
-
-注意当 $0\le j\le n$ 时
-\[
-\frac{n!}{(n-j)!\,n^j}=\prod_{k=0}^{j-1}\Big(1-\frac{k}{n}\Big)\le 1,
-\]
-因此每一项满足
-\[
-\frac{n!}{(n-j)!\,j!}\,\frac{s^j}{n^j}\le\frac{s^j}{j!}.
-\]
-
-将这些不等式代入二项和得到
-\[
-\prod_{j=1}^n(1+a_j)\le\sum_{j=0}^n\frac{s^j}{j!},
-\]
-即
-\[
-(1+a_1)\cdots(1+a_n)\le 1+\frac{s}{1!}+\frac{s^2}{2!}+\cdots+\frac{s^n}{n!},
-\]
-证毕。
-\end{solution}
-
-\question 设 $n$ 个正实数的最小值为 $m$,最大值为 $M$,记它们的算术平均为 $A$,几何平均为 $G$。证明
-\[
-A-G \ge \frac{1}{n}\bigl(\sqrt{M}-\sqrt{m}\bigr)^2.
-\]
-
-\begin{solution}
-设这 $n$ 个正实数为 $x_1,\dots,x_n$,且不妨令 $x_1=m,\ x_n=M$。由题不等式等价于
-\[
-A-G \ge \frac{(\sqrt{M}-\sqrt{m})^2}{n},
-\]
-即等价于
-\[
-\sum_{j=1}^n x_j - n\Big(\prod_{j=1}^n x_j\Big)^{1/n} \ge M - 2\sqrt{Mm} + m.
-\]
-移项得等价形式
-\[
-\sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \ge n\Big(\prod_{j=1}^n x_j\Big)^{1/n}.
-\]
-
-把右端的几何平均下界由算术—几何均值不等式给出:对这 $n$ 个数
-\[
-\sqrt{Mm},\; x_2,\; x_3,\;\dots,\; x_{n-1},\; \sqrt{Mm}
-\]
-应用 A.M.-G.M.,有
-\[
-\frac{1}{n}\Big(\sum_{j=2}^{n-1} x_j + 2\sqrt{Mm}\Big)
-\ge \Big(\sqrt{Mm}\cdot\prod_{j=2}^{n-1} x_j\cdot\sqrt{Mm}\Big)^{1/n}.
-\]
-右端化简为
-\[
-\Big(Mm\prod_{j=2}^{n-1} x_j\Big)^{1/n}
-=\Big(x_1x_n\prod_{j=2}^{n-1} x_j\Big)^{1/n}
-=\Big(\prod_{j=1}^n x_j\Big)^{1/n}.
-\]
-
-两边同时乘以 $n$ 即得
-\[
-\sum_{j=2}^{n-1} x_j + 2\sqrt{Mm} \ge n\Big(\prod_{j=1}^n x_j\Big)^{1/n},
-\]
-从而恢复到所需不等式
-\[
-A-G \ge \frac{1}{n}\bigl(\sqrt{M}-\sqrt{m}\bigr)^2.
-\]
-证毕。
-\end{solution}
-
-\question 设 $x_1,\ldots,x_n\ge -1$,且
-\[
-\sum_{i=1}^n x_i^3=0。
-\]
-证明
-\[
-\sum_{i=1}^n x_i\le \frac{n}{3}。
-\]
-
-\begin{solution}
-当 $x\ge -1$ 时,有不等式
-\[
-0\le x^3-\frac34 x+\frac14=(x+1)\left(x-\frac12\right)^2。
-\]
-
-将 $x_1,\ldots,x_n$ 代入上式并求和,得到
-\[
-0\le \sum_{i=1}^n\left(x_i^3-\frac34 x_i+\frac14\right)
-=\sum_{i=1}^n x_i^3-\frac34\sum_{i=1}^n x_i+\frac{n}{4}。
-\]
-由已知条件 $\sum_{i=1}^n x_i^3=0$,可得
-\[
-0\le -\frac34\sum_{i=1}^n x_i+\frac{n}{4},
-\]
-从而
-\[
-\sum_{i=1}^n x_i\le \frac{n}{3}。
-\]
-
-注:当且仅当 $n=9k$,其中 $k$ 个 $x_i=-1$,其余 $8k$ 个 $x_i=\frac12$ 时取等号。
-\end{solution}
-
-    \question 已知非负实数 $x_1, x_2, \ldots, x_5$ 满足 $x_1^2 + x_2^2 + \cdots + x_5^2 = 4$. 求下列表达式的最大值:
-    $$S = \sum_{i=1}^5 \frac{1}{x_i+1}\sum_{i=1}^5 x_i$$
+    \question 已知非负实数 $x_1, x_2, \ldots, x_5$ 满足 $x_1^2 + x_2^2 + \cdots + x_5^2 = 4$. 求下式的最大值:
+    \[
+    S = \sum_{i=1}^5 \frac{1}{x_i+1}\sum_{i=1}^5 x_i
+    \]
     \begin{solution}
         当 $x_1 = x_2 = x_3 = x_4 = 1, x_5 = 0$ 时, $S = 12$,下面证明 $S \le 12$.
         注意到 
-        $$\frac{x(x-1)^2}{x+1} \ge 0$$ 对 $x \ge 0$ 成立, 由此可得$$\sum_{i=1}^5 \frac{x_i(x_i-1)^2}{x_i+1} \ge 0$$
+        \[
+        \frac{x(x-1)^2}{x+1} \ge 0$$ 对 $x \ge 0$ 成立, 由此可得$$\sum_{i=1}^5 \frac{x_i(x_i-1)^2}{x_i+1} \ge 0
+        \]
         展开可知
-        $$\sum_{i=1}^5 \left(x_i^2 - 3x_i + 4 - \frac{4}{x_i+1}\right) \ge 0$$
+        \[
+        \sum_{i=1}^5 \left(x_i^2 - 3x_i + 4 - \frac{4}{x_i+1}\right) \ge 0
+        \]
         整理得
-        $$\sum_{i=1}^5 \frac{1}{x_i+1} \le 6 - \frac{3}{4} \sum_{i=1}^5 x_i$$
+        \[
+        \sum_{i=1}^5 \frac{1}{x_i+1} \le 6 - \frac{3}{4} \sum_{i=1}^5 x_i
+        \]
         由上式及AM-GM不等式可知 
-        $$S \le \frac{4}{3} \left(6 - \frac{3}{4}\sum_{i=1}^5 x_i\right) \left(\frac{3}{4}\sum_{i=1}^5 x_i\right) \le \frac{4}{3} \times 3^2 = 12$$
+        \[
+        S \le \frac{4}{3} \left(6 - \frac{3}{4}\sum_{i=1}^5 x_i\right) \left(\frac{3}{4}\sum_{i=1}^5 x_i\right) \le \frac{4}{3} \cdot 3^2 = 12
+        \]
     \end{solution}
 \end{questions}
 
@@ -8129,11 +8053,14 @@ A-G \ge \frac{1}{n}\bigl(\sqrt{M}-\sqrt{m}\bigr)^2.
 \begin{questions}
     \question 设 \(a, b, c\) 三数成等比数列,且满足 \(a + b + c = 9\) 及 \(a^2 + b^2 + c^2 = 189\),求 $b$。
     \begin{solution}
-      关键:运用恒等式\[
+        关键:运用恒等式
+        \[
         (a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ac)
-      \]又已知 $b^2=ac$,故\[
-      81=189+2(b(9-b)+b^2) \Rightarrow b=6
-      \]
+        \]
+        又已知 $b^2=ac$,故
+        \[
+        81=189+2(b(9-b)+b^2) \Rightarrow b=6
+        \]
     \end{solution}
     
     \question 已知 $a,b,c,d$ 成等差数列,且实数 $x,y,z,u$ 满足
@@ -8153,10 +8080,10 @@ A-G \ge \frac{1}{n}\bigl(\sqrt{M}-\sqrt{m}\bigr)^2.
         &=(a+d)(y+z)+(b+c)(x+u)\\
         &=30(x+y+z+u)= 360
         \end{align*}
-    故
-    \[
-    ay + bx + cu + dz=192
-    \]
+        故
+        \[
+        ay + bx + cu + dz=192
+        \]
     \end{solution}
     
     \question 已知 $a_1=-1$, $a_{n+1}=2a_n-3$, 求 $a_{2017}$。
@@ -8249,7 +8176,6 @@ a_{61}=\frac{3660}{3661}.
 \]
 
 \end{solution}
-
 
     \question 数列 \(a_0, a_1, a_2, \ldots, a_n, \ldots\) 满足 \(a_0 = 3\),且
     \[
