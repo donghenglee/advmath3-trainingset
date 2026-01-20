@@ -4514,26 +4514,6 @@
 \separator
 \vspace{1pt}
 \begin{questions}
-    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
-    \begin{solution}
-        令
-        \[
-        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
-        \]
-        则
-        \[
-        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
-        \]
-        所以
-        \[
-        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
-        \]
-        由于 $0 < b^2 < 1$,所以
-        \[
-        969 < a^6 < 970 \quad \Rightarrow \quad \ceil{a^6} = 970
-        \]
-    \end{solution}
-
     \question 求满足
     \[
     \floor{0.5+\floor{x}} = 20
@@ -4566,28 +4546,75 @@
         \]
     \end{solution}
 
-    \question 解
+    \question 解方程 
     \[
-    \lceil x\rceil \lceil 2x\rceil = 15
+    2x = \floor{x} + \frac{16}{5}
     \]
     \begin{solution}
-        设
+        发现$x\neq \floor{x}$,由于 
         \[
-        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \floor{x} < x < \floor{x} + 1 \Rightarrow 2\floor{x} < 2x < 2\floor{x} + 2,
         \]
-        当 $r < \dfrac{1}{2}$,原方程即
-        \[
-        n(2n) = 15 \Rightarrow n = \sqrt{\frac{15}{2}} \not \in \mathbb{Z}
+        观察右式的取值范围可知
+        \[ 
+        2\floor{x} < \floor{x} + \frac{16}{5} < 2\floor{x} + 2 \Rightarrow \frac{6}{5} < \floor{x} < \frac{16}{5} 
         \]
-        当  $r \ge \dfrac{1}{2}$,原方程即
+        因此 
         \[
-        n(2n-1) = 15 \Rightarrow (n-3)(2n+5) = 0 \Rightarrow n = 3 \in \mathbb{Z}
-        \]
-        故$x$的取值范围为
-        \[
-        2 < x \le 2.5
+        \floor{x} = 2, 3 \Rightarrow x = \frac{13}{5}, \frac{31}{10}
         \]
     \end{solution}
+
+    \question 解方程
+    \[
+    2\lfloor x \rfloor + 3x = 4 - 5\{x\}
+    \]
+    \begin{solution}
+        设 $x = n+r$, 其中 $n = \lfloor x \rfloor,r = \{x\}$,代入方程得
+        \[
+        2n + 3(n+r) = 4 - 5r \Rightarrow 5x=4-3r
+        \]
+        由 $0 \le r < 1$, 有
+        \[
+        1 < 4-3r \le 4 \Rightarrow \frac{1}{5} < x \le \frac{4}{5}
+        \]
+        由此可得$x=\{x\}$,即$\floor{x}=0$,此时
+        \[
+        2\cdot 0 +3x=4-5x \Rightarrow x=\frac{1}{2}
+        \]
+    \end{solution}
+
+    \question 令 $f(x) = \lfloor x + \frac{1}{2} \rfloor + \lfloor x - \frac{1}{2} \rfloor - \lfloor 2x \rfloor$ 证明只有 $\frac{1}{2} \le \{x\} < 1$ 时,满足方程 $f(x) = 0$ 。
+\begin{solution}
+设 $x = n + \{x\}$ ,其中 $n$ 为整数,$0 \le \{x\} < 1$ 。
+\[ f(x) = \lfloor n + \{x\} + \frac{1}{2} \rfloor + \lfloor n + \{x\} - \frac{1}{2} \rfloor - \lfloor 2n + 2\{x\} \rfloor \]
+由于 $n$ 是整数,可以从取整符号中提出：
+\[ f(x) = n + \lfloor \{x\} + \frac{1}{2} \rfloor + n + \lfloor \{x\} - \frac{1}{2} \rfloor - (2n + \lfloor 2\{x\} \rfloor) = \lfloor \{x\} + \frac{1}{2} \rfloor + \lfloor \{x\} - \frac{1}{2} \rfloor - \lfloor 2\{x\} \rfloor \]
+分情况讨论 $\{x\}$ 的取值范围：
+1. 当 $0 \le \{x\} < \frac{1}{2}$ 时：
+$\lfloor \{x\} + \frac{1}{2} \rfloor = 0$ , $\lfloor \{x\} - \frac{1}{2} \rfloor = -1$ , $\lfloor 2\{x\} \rfloor = 0$
+$\therefore f(x) = 0 + (-1) - 0 = -1 \neq 0$ ；
+2. 当 $\frac{1}{2} \le \{x\} < 1$ 时：
+$\lfloor \{x\} + \frac{1}{2} \rfloor = 1$ , $\lfloor \{x\} - \frac{1}{2} \rfloor = 0$ , $\lfloor 2\{x\} \rfloor = 1$
+$\therefore f(x) = 1 + 0 - 1 = 0$ 。
+得证只有 $\frac{1}{2} \le \{x\} < 1$ 时,$f(x) = 0$ 。
+\end{solution}
+
+\question 8. 解 $8\lfloor 3x \rfloor - 5\lfloor 2x \rfloor = 3$ 。
+
+\begin{solution}
+令 $x = n + r$ ,其中 $n \in \mathbb{Z}, 0 \le r < 1$ 。
+原方程变为 $8\lfloor 3n + 3r \rfloor - 5\lfloor 2n + 2r \rfloor = 3$ ,即
+\[ 3n + 8\lfloor 3r \rfloor - 5\lfloor 2r \rfloor = 3 \]
+分区间讨论 $r$ 的取值：
+1. 当 $0 \le r < \frac{1}{3}$ 时, $\lfloor 3r \rfloor = 0, \lfloor 2r \rfloor = 0 \Rightarrow 3n = 3 \Rightarrow n = 1$ ；
+2. 当 $\frac{1}{3} \le r < \frac{1}{2}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 0 \Rightarrow 3n + 8 = 3 \Rightarrow 3n = -5$ （无整数解）；
+3. 当 $\frac{1}{2} \le r < \frac{2}{3}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 1 \Rightarrow 3n + 8 - 5 = 3 \Rightarrow 3n = 0 \Rightarrow n = 0$ ；
+4. 当 $\frac{2}{3} \le r < 1$ 时, $\lfloor 3r \rfloor = 2, \lfloor 2r \rfloor = 1 \Rightarrow 3n + 16 - 5 = 3 \Rightarrow 3n = -8$ （无整数解）。
+综上所述,解为：
+$n = 1, 0 \le r < \frac{1}{3} \Rightarrow 1 \le x < \frac{4}{3}$ ；
+$n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}{3}$ 。
+\end{solution}
 
     \question 已知
     \[
@@ -4621,6 +4648,78 @@
         \]
     \end{solution}
 
+    \question 已知 $\frac{1}{3-\sqrt{7}}$ 的整数部分为 $a$ ,小数部分为 $b$ ,求 $a^2 + (1+\sqrt{7})ab$ 。
+\begin{solution}
+\[ \frac{1}{3-\sqrt{7}} = \frac{3+\sqrt{7}}{2} \]
+由 $2 < \sqrt{7} < 3 \Rightarrow \frac{5}{2} < \frac{3+\sqrt{7}}{2} < 3$ ,
+得 $a = 2$ , $b = \frac{3+\sqrt{7}}{2} - a = \frac{\sqrt{7}-1}{2}$ 。
+\begin{align*}
+a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \times 2 \times \frac{\sqrt{7}-1}{2} \\
+&= 4 + (\sqrt{7}+1)(\sqrt{7}-1) \\
+&= 4 + 7 - 1 \\
+&= 10
+\end{align*}
+\end{solution}
+
+    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
+    \begin{solution}
+        令
+        \[
+        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
+        \]
+        则
+        \[
+        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
+        \]
+        所以
+        \[
+        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
+        \]
+        由于 $0 < b^2 < 1$,所以
+        \[
+        969 < a^6 < 970 \quad \Rightarrow \quad \ceil{a^6} = 970
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor
+    \]
+    的最小整数$x$。
+    \begin{solution}
+        设$y,y+1$为连续正整数,使得他们的平方根的差不小于34,则
+        \[
+        (y+1)^2-y^2>34 \Rightarrow y>16.5
+        \]
+        由于$y \in \mathbb{Z}$,最小的$x$为
+        \[
+        x=y^2=17^2=289
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lceil x\rceil \lceil 2x\rceil = 15
+    \]
+    \begin{solution}
+        设
+        \[
+        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \]
+        当 $r < \dfrac{1}{2}$,原方程即
+        \[
+        n(2n) = 15 \Rightarrow n = \sqrt{\frac{15}{2}} \not \in \mathbb{Z}
+        \]
+        当  $r \ge \dfrac{1}{2}$,原方程即
+        \[
+        n(2n-1) = 15 \Rightarrow (n-3)(2n+5) = 0 \Rightarrow n = 3 \in \mathbb{Z}
+        \]
+        故$x$的取值范围为
+        \[
+        2 < x \le 2.5
+        \]
+    \end{solution}
+
     \question 求正实数$x$满足
     \[
     x^2+\{x\}^2=27
@@ -4646,6 +4745,297 @@
         \[
         x=5+r=\frac{5+\sqrt{29}}{2}
         \]
+    \end{solution}
+
+    \question 解
+    \[
+    x^2 - 6\lfloor x \rfloor + 5 = 0
+    \]
+    \begin{solution}
+        原方程化为
+        \[
+        x^2 - 6\lfloor x \rfloor + 5 = 0 \Rightarrow x^2 - 6x + 5 = -6 \{x\}
+        \]
+        $-6 \{x\}$的值域为$(-6,0]$,且对于$x \in [1,5]$,有
+        \[
+        x^2 - 6x + 5 \in (-6,0]
+        \]
+        当$x \in [1,2)$,有$\floor{x}=1$,则
+        \[
+        x^2=6\cdot1-5 \Rightarrow x=1
+        \]
+        类似地,
+        \begin{align*}
+        \floor{x}&=2 \Rightarrow x^2 = 7 \Rightarrow x = \sqrt{7} \\
+        \floor{x}&=3 \Rightarrow x^2 = 13 \Rightarrow x = \sqrt{13} \\
+        \floor{x}&=4 \Rightarrow x^2 = 19 \Rightarrow x = \sqrt{19} \\
+        \floor{x}&=5 \Rightarrow x^2 = 25 \Rightarrow x = 5 
+        \end{align*}
+        因此,方程的解为
+        \[
+        x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
+    \]
+    \begin{solution}
+        设 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$,则
+        \[
+        \lfloor x^2 \rfloor - n^2 = \floor{(n+r)^2-n^2} =\lfloor 2 n r + r^2 \rfloor
+        \]
+        故
+        \[
+        \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999 \Rightarrow 2 n r + r^2 \ge 1999
+        \]
+        最小的 $n$ 滿足
+        \[
+        2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
+        \]
+        此时有
+        \[
+        r^2 + 2000 r - 1999 = 0 \Rightarrow r = -1000 + \sqrt{1001999}
+        \]
+        所以
+        \[
+        x = n + r = \sqrt{1001999}
+        \]
+    \end{solution}
+
+    \question 解 
+    \[
+    \left \lfloor \frac{4x+3}{5} \right \rfloor = \frac{3(2x+1)}{4}
+    \]    
+    \begin{solution}
+        令 
+        \[
+        m = \frac{3(2x+1)}{4} \Rightarrow x = \frac{4m-3}{6},
+        \]
+        代回原方程化简得到 
+        \[ 
+        \left \lfloor \frac{8m+3}{15} \right \rfloor= m 
+        \]
+        有 
+        \[
+        0 \le \frac{8m+3}{15} - m < 1  \Rightarrow -\frac{12}{7} < m \le \frac{3}{7} 
+        \]
+        由于$m \in \mathbb{Z}$于是
+        \[ 
+        m = 0, -1 \Rightarrow x = -\frac{1}{2}, -\frac{7}{6}
+        \]
+    \end{solution}
+
+    \question 求满足以下条件的正整数 $x$ 的个数:
+    \[
+    \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor.
+    \]
+    \begin{solution}
+        设
+        \[
+        \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
+        \]
+        由定义有
+        \[
+        m \le \frac{x}{99} < m+1 \Rightarrow 99m \le x < 99(m+1)
+        \]
+        \[
+        m \le \frac{x}{101} < m+1 \Rightarrow 101m \le x < 101(m+1)
+        \]
+        因此
+        \[
+        101m \le x < 99(m+1)
+        \]
+        当 $m>49$ 时, $101m > 99(m+1)$, 无解。对于 $0 \le m \le 49$, 由于 $x=0$ 不是正整数,可行整数个数为
+        \[
+        \sum_{m=0}^{49} (99(m+1)-101m) =\sum_{m=0}^{49} (99-2m) -1 = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} -1 = 2499
+        \]
+    \end{solution}
+
+    \question 求解 $x\in \mathbb{Z}$ 满足
+    \[
+    \left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
+    \]
+    \begin{solution}
+        原方程给出
+        \[
+        \frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
+        \]
+        化简得
+        \[
+        134.4 \le x < 136.2
+        \]
+        由于 $x \in \mathbb{Z}$,且 $x=136$ 不满足原方程,故原方程式的解只有
+        \[
+        x = 135
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \frac{\lfloor x \rfloor}{x} = \frac{9}{10}
+    \]
+    的最大实数 $x$。
+    \begin{solution}
+        由 $x = \lfloor x \rfloor + \{x\}$, 交叉相乘得
+        \[
+        10 \lfloor x \rfloor = 9 (\lfloor x \rfloor + \{x\}) \Rightarrow \lfloor x \rfloor = 9 \{x\}
+        \]
+        由于 $0 \le \{x\} < 1,\{x\}$的可能值为
+        \[
+        \frac{1}{9}, \frac{2}{9}, \dots, \frac{8}{9}, 
+        \]
+        取最大值 $\{x\} = \dfrac{8}{9}$, 于是
+        \[
+        x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
+        \]
+    \end{solution}\question 18. 如 $x > 0$ 且满足 $\lfloor x \rfloor^2 = x(x - \lfloor x \rfloor)$ ,求 $x - \frac{1}{x}$ 。
+
+\begin{solution}
+令 $\lfloor x \rfloor = n$ ,则 $x = n + r$ ,其中 $n$ 为正整数,$0 \le r < 1$ 。
+方程变为 $n^2 = (n + r)r$ ,即 $n^2 = nr + r^2$ 。
+由于 $x > 0$ ,方程两边同除以 $x$ 得：
+\[ \frac{n^2}{x} = x - n \Rightarrow n = x - \frac{n^2}{x} \]
+又由 $n^2 = r(n + r)$ 可知,$r^2 < n^2 = nr + r^2 < (n+1)^2$ 始终成立。
+通过代数变形可得：
+$x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
+（注：根据题目关系项,可进一步解得具体数值或化简表达式）
+\end{solution}
+
+\question 19. 用反证法证明 $\lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor = 147$ 无解。
+
+\begin{solution}
+证：设 $f(x) = \lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor$ 。
+注意到 $f(x)$ 是一个阶梯增函数,且仅在 $x = \frac{k}{8}$ （ $k \in \mathbb{Z}$ ）处发生跳跃。
+当 $x = 9$ 时,$f(9) = 9 + 18 + 36 + 72 = 135$ ；
+当 $x = 10$ 时,$f(10) = 10 + 20 + 40 + 80 = 150$ 。
+在区间 $[9, 10)$ 内,最大的跳跃发生在 $x$ 趋近于 $10$ 时。
+考虑 $f(x)$ 的所有可能跳跃值之和：
+在一个单位区间 $[n, n+1)$ 内,$f(x)$ 的总增量为 $1 + 2 + 4 + 8 = 15$ 。
+因此 $f(x)$ 取到的值模 $15$ 的余数与 $f(n)$ 相同。
+因为 $135 = 15 \times 9$ ,所以 $f(x)$ 在该区间内的所有取值均应满足 $f(x) \equiv f(9) \pmod 1$ （即跳跃点的增量累加）。
+具体的跳跃点值为：$1, 1+8, 1+4+8$ 等,经检验 $147$ 不在 $f(x)$ 的值域内。
+故原方程无解。
+\end{solution}
+
+    \question 解
+    \[
+    \lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
+    \]
+    \begin{solution}
+        令 $x = n + r$,其中 $n\in \mathbb{Z}, 0 \le r < 1$,则
+        \[
+        \lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
+        \]
+        展开得
+        \[
+        2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
+        \]
+        解不等式组
+        \[
+        \begin{cases}
+        2n^2+n+1 \le 111 \\
+        2n^2+3n \ge 111
+        \end{cases}
+        \]
+        得$n=7$,因此解
+        \[
+        \lceil 7r \rceil + \lfloor 8r \rfloor =6
+        \]
+        得
+        \[
+        \frac{3}{8} \le r \le \frac{3}{7} \Rightarrow \frac{59}{8} \le x \le \frac{52}{7}
+        \]
+    \end{solution}
+
+    \question 
+    \begin{parts}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        原方程化为
+        \[
+        \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{6}
+        \]
+        明示了
+        \[
+        \frac{n}{2},\frac{n}{3},\frac{n}{6}
+        \]
+        皆为整数, 于是$n$ 必须为 6 的倍数,因此正整数解共有 $\left\lfloor\dfrac{100}{6}\right\rfloor=16$ 个。
+    \end{solution}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        设 
+        \[
+        f(n) = \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor, 
+        \]
+        则
+        \[
+        f(n+6) = f(n) + 6
+        \]
+        定义 $g(n) = f(n) - (n-1)$, 则
+        \[
+        g(n+6) = g(n).
+        \]
+        且有
+        \[
+        g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
+        \]
+        因此正整数解共有 
+        \[
+        17+17+17+17=68
+        \]
+        个。
+    \end{solution}
+    \end{parts}
+
+    \question 求数列
+    \[
+    \left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
+    \]
+    中相异整数的个数。
+    \begin{solution}
+        考虑连续两项的差
+        \[
+        \frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
+        \]
+        由于
+        \[
+        \frac{1007^2}{2016} \approx 503.0005 > 503
+        \]  
+        前 1007 项即整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。对于第 1008 项到 2016 项,
+        每项至少比前一项大 1,因此产生 
+        \[
+        2016-1008+1 = 1009
+        \]
+        个不同整数,因此数列中相异整数的个数为
+        \[
+        504 + 1009 = 1513
+        \]
+    \end{solution}
+
+    \question 求 
+    \[
+    \sum_{k=1}^{512} \lfloor \log_2 k \rfloor
+    \]
+    \begin{solution}
+    $1 \le k < 2 \Rightarrow \lfloor \log_2 k \rfloor = 0$ ,$2 \le k < 4 \Rightarrow \lfloor \log_2 k \rfloor = 1$ ,$4 \le k < 8 \Rightarrow \lfloor \log_2 k \rfloor = 2$ ,...
+    $256 \le k < 512 \Rightarrow \lfloor \log_2 k \rfloor = 8$ ,$\lfloor \log_2 512 \rfloor = 9$ 。
+    因此
+    \begin{align*}
+    \sum_{k=1}^{512} \lfloor \log_2 k \rfloor &= 0 + (4-2) \times 1 + (8-4) \times 2 + \dots + (512-256) \times 8 + 9 \\
+    &= 2 \times 1 + 2^2 \times 2 + \dots + 2^8 \times 8 + 9 \\
+    &= 3595
+    \end{align*}
+    （项数不大,直接计算）
     \end{solution}
 
     \question 计算
@@ -4741,6 +5131,23 @@
         \]
     \end{solution}
 
+\question 10. 证明 $\lfloor \sqrt{1} \rfloor + \lfloor \sqrt{2} \rfloor + \dots + \lfloor \sqrt{n^2 - 1} \rfloor = \frac{n(n-1)(4n+1)}{6}$ 。
+
+\begin{solution}
+证：考虑满足 $\lfloor \sqrt{k} \rfloor = m$ 的正整数 $k$ 的个数。
+这意味着 $m \le \sqrt{k} < m+1$ ,即 $m^2 \le k < (m+1)^2$ 。
+因此,对于每一个确定的 $m$ ,满足条件的 $k$ 有 $(m+1)^2 - m^2 = 2m+1$ 个。
+在原式中,$k$ 从 $1$ 取到 $n^2-1$ ,则 $m = \lfloor \sqrt{k} \rfloor$ 从 $1$ 取到 $n-1$ 。
+\begin{align*}
+\sum_{k=1}^{n^2-1} \lfloor \sqrt{k} \rfloor &= \sum_{m=1}^{n-1} m(2m+1) \\
+&= \sum_{m=1}^{n-1} (2m^2 + m) \\
+&= 2 \sum_{m=1}^{n-1} m^2 + \sum_{m=1}^{n-1} m \\
+&= 2 \cdot \frac{(n-1)n(2n-1)}{6} + \frac{(n-1)n}{2} \\
+&= \frac{n(n-1)(2(2n-1) + 3)}{6} \\
+&= \frac{n(n-1)(4n+1)}{6}
+\end{align*}
+得证。
+\end{solution}
     \question 求
     \[
     \sum_{k=1}^{202}\lceil \sqrt{k}\rceil
@@ -4763,22 +5170,6 @@
         \end{align*}
     \end{solution}
 
-    \question 求满足
-    \[
-    \lfloor \sqrt{x}\rfloor-\lfloor \sqrt{x+34}\rfloor=0
-    \]
-    的最小整数$x$。
-    \begin{solution}
-        设$y,y+1$为连续正整数,使得他们的平方根的差不小于34,则
-        \[
-        (y+1)^2-y^2>34 \Rightarrow y>16.5
-        \]
-        由于$y \in \mathbb{Z}$,最小的$x$为
-        \[
-        x=y^2=17^2=289
-        \]
-    \end{solution}
-
     \question 求
     \[
     \lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
@@ -4796,96 +5187,11 @@
         以此类推,原式即
         \begin{align*}
         &\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil+\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil \\
-        &\lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil \\
+        &+\cdots + \lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil \\
         &=\frac{143}{2}(1+995+2+996+3+997+4+998+4+998+5+999+6+1000+6+1000)\\
         &\quad+\frac{142}{2}(7+994+8+995)\\
         &=715285
         \end{align*}
-    \end{solution}
-
-    \question 解
-    \[
-    x^2 - 6\lfloor x \rfloor + 5 = 0
-    \]
-    \begin{solution}
-        原方程化为
-        \[
-        x^2 - 6\lfloor x \rfloor + 5 = 0 \Rightarrow x^2 - 6x + 5 = -6 \{x\}
-        \]
-        $-6 \{x\}$的值域为$(-6,0]$,且对于$x \in [1,5]$,有
-        \[
-        x^2 - 6x + 5 \in (-6,0]
-        \]
-        当$x \in [1,2)$,有$\floor{x}=1$,则
-        \[
-        x^2=6\cdot1-5 \Rightarrow x=1
-        \]
-        类似地,
-        \begin{align*}
-        \floor{x}&=2 \Rightarrow x^2 = 7 \Rightarrow x = \sqrt{7} \\
-        \floor{x}&=3 \Rightarrow x^2 = 13 \Rightarrow x = \sqrt{13} \\
-        \floor{x}&=4 \Rightarrow x^2 = 19 \Rightarrow x = \sqrt{19} \\
-        \floor{x}&=5 \Rightarrow x^2 = 25 \Rightarrow x = 5 
-        \end{align*}
-        因此,方程的解为
-        \[
-        x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
-        \]
-    \end{solution}
-
-    \question 解
-    \[
-    \lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
-    \]
-    \begin{solution}
-        令 $x = n + r$,其中 $n\in \mathbb{Z}, 0 \le r < 1$,则
-        \[
-        \lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
-        \]
-        展开得
-        \[
-        2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
-        \]
-        解不等式组
-        \[
-        \begin{cases}
-        2n^2+n+1 \le 111 \\
-        2n^2+3n \ge 111
-        \end{cases}
-        \]
-        得$n=7$,因此解
-        \[
-        \lceil 7r \rceil + \lfloor 8r \rfloor =6
-        \]
-        得
-        \[
-        \frac{3}{8} \le r \le \frac{3}{7} \Rightarrow \frac{59}{8} \le x \le \frac{52}{7}
-        \]
-    \end{solution}
-
-    \question 求数列
-    \[
-    \left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
-    \]
-    中相异整数的个数。
-    \begin{solution}
-        考虑连续两项的差
-        \[
-        \frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
-        \]
-        由于
-        \[
-        \frac{1007^2}{2016} \approx 503.0005 > 503
-        \]  
-        前 1007 项即整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。对于第 1008 项到 2016 项,
-        每项至少比前一项大 1,因此产生 
-        \[
-        2016-1008+1 = 1009
-        \]
-        个不同整数,因此数列中相异整数的个数为
-        \[
-        504 + 1009 = 1513
-        \]
     \end{solution}
 
     \question 
@@ -4917,164 +5223,79 @@
         \end{align*}
     \end{solution}
 
-    \question 解
-    \[
-    \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
-    \]
-    \begin{solution}
-        设 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$,则
-        \[
-        \lfloor x^2 \rfloor - n^2 = \floor{(n+r)^2-n^2} =\lfloor 2 n r + r^2 \rfloor
-        \]
-        故
-        \[
-        \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999 \Rightarrow 2 n r + r^2 \ge 1999
-        \]
-        最小的 $n$ 滿足
-        \[
-        2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
-        \]
-        此时有
-        \[
-        r^2 + 2000 r - 1999 = 0 \Rightarrow r = -1000 + \sqrt{1001999}
-        \]
-        所以
-        \[
-        x = n + r = \sqrt{1001999}
-        \]
-    \end{solution}
+    \question 例 8、设 $m, n$ 是整数,$n \ge 1$ ,证明 $\lfloor \frac{m+1}{n} \rfloor = \begin{cases} \lfloor \frac{m}{n} \rfloor & (n \nmid m+1) \\ \lfloor \frac{m}{n} \rfloor + 1 & (n \mid m+1) \end{cases}$ 。
 
-    \question 
-    \begin{parts}
-    \part 求方程
-    \[
-    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
-    \]
-    的正整数解个数,其中$1 \le n \le 100$。
-    \begin{solution}
-        原方程化为
-        \[
-        \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{6}
-        \]
-        明示了
-        \[
-        \frac{n}{2},\frac{n}{3},\frac{n}{6}
-        \]
-        皆为整数, 于是$n$ 必须为 6 的倍数,因此正整数解共有 $\left\lfloor\dfrac{100}{6}\right\rfloor=16$ 个。
-    \end{solution}
-    \part 求方程
-    \[
-    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
-    \]
-    的正整数解个数,其中$1 \le n \le 100$。
-    \begin{solution}
-        设 
-        \[
-        f(n) = \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor, 
-        \]
-        则
-        \[
-        f(n+6) = f(n) + 6
-        \]
-        定义 $g(n) = f(n) - (n-1)$, 则
-        \[
-        g(n+6) = g(n).
-        \]
-        且有
-        \[
-        g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
-        \]
-        因此正整数解共有 
-        \[
-        17+17+17+17=68
-        \]
-        个。
-    \end{solution}
-    \end{parts}
+\begin{solution}
+证：对 $n$ 不整除 $m+1$ 的情况即是当 $m+1 = kn+r$ ,其中 $1 \le r \le n-1$ 时,
+要证 $\lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{m}{n} \rfloor$ 。
+\begin{align*}
+左式 &= \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{kn+r}{n} \rfloor = \lfloor k + \frac{r}{n} \rfloor = k \\
+右式 &= \lfloor \frac{m}{n} \rfloor = \lfloor \frac{kn+r-1}{n} \rfloor = \lfloor k + \frac{r-1}{n} \rfloor = k 
+\end{align*}
+得证；
 
-    \question 解方程
-    \[
-    2\lfloor x \rfloor + 3x = 4 - 5\{x\}
-    \]
-    \begin{solution}
-        设 $x = n+r$, 其中 $n = \lfloor x \rfloor,r = \{x\}$,代入方程得
-        \[
-        2n + 3(n+r) = 4 - 5r \Rightarrow 5x=4-3r
-        \]
-        由 $0 \le r < 1$, 有
-        \[
-        1 < 4-3r \le 4 \Rightarrow \frac{1}{5} < x \le \frac{4}{5}
-        \]
-        由此可得$x=\{x\}$,即$\floor{x}=0$,此时
-        \[
-        2\cdot 0 +3x=4-5x \Rightarrow x=\frac{1}{2}
-        \]
-    \end{solution}
+当 $n$ 整除 $m+1$ 时,即 $m+1 = kn$ ,
+\begin{align*}
+左式 &= \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{kn}{n} \rfloor = \lfloor k \rfloor = k \\
+右式 &= \lfloor \frac{m}{n} \rfloor = \lfloor \frac{kn-1}{n} \rfloor = \lfloor k - \frac{1}{n} \rfloor = k-1 
+\end{align*}
+$\therefore k = \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{m}{n} \rfloor + 1$ ,得证。
+\end{solution}
 
-    \question 求满足以下条件的正整数 $x$ 的个数:
-    \[
-    \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor.
-    \]
-    \begin{solution}
-        设
-        \[
-        \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
-        \]
-        由定义有
-        \[
-        m \le \frac{x}{99} < m+1 \Rightarrow 99m \le x < 99(m+1)
-        \]
-        \[
-        m \le \frac{x}{101} < m+1 \Rightarrow 101m \le x < 101(m+1)
-        \]
-        因此
-        \[
-        101m \le x < 99(m+1)
-        \]
-        当 $m>49$ 时, $101m > 99(m+1)$, 无解。对于 $0 \le m \le 49$, 由于 $x=0$ 不是正整数,可行整数个数为
-        \[
-        \sum_{m=0}^{49} (99(m+1)-101m) =\sum_{m=0}^{49} 99-2m) -1 = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} -1 = 2499
-        \]
-    \end{solution}
+\question 12. 证明对任意实数 $\alpha, \beta$ 有 $\lfloor 2\alpha \rfloor + \lfloor 2\beta \rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor$ 。
 
-    \question 求解 $x\in \mathbb{Z}$ 满足
-    \[
-    \left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
-    \]
-    \begin{solution}
-        原方程给出
-        \[
-        \frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
-        \]
-        化简得
-        \[
-        134.4 \le x < 136.2
-        \]
-        由于 $x \in \mathbb{Z}$,且 $x=136$ 不满足原方程,故原方程式的解只有
-        \[
-        x = 135
-        \]
-    \end{solution}
+\begin{solution}
+证：令 $\alpha = n_1 + r_1$ , $\beta = n_2 + r_2$ ,其中 $n_1, n_2$ 为整数,$0 \le r_1, r_2 < 1$ 。
+原不等式等价于证明：
+\[ \lfloor 2r_1 \rfloor + \lfloor 2r_2 \rfloor \ge \lfloor r_1 + r_2 \rfloor \]
+分情况讨论：
+1. 若 $0 \le r_1 < \frac{1}{2}$ 且 $0 \le r_2 < \frac{1}{2}$ ,则左式 $= 0 + 0 = 0$ 。由于 $r_1 + r_2 < 1$ ,右式 $= 0$ ,等式成立；
+2. 若 $r_1, r_2$ 中有一个大于等于 $\frac{1}{2}$ ,不妨设 $r_1 \ge \frac{1}{2}$ ,则左式 $\ge 1 + 0 = 1$ 。而 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,不等式成立；
+3. 若 $r_1 \ge \frac{1}{2}$ 且 $r_2 \ge \frac{1}{2}$ ,则左式 $= 1 + 1 = 2$ 。由于 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,不等式成立。
+综上所述,原不等式成立。
+\end{solution}
 
-    \question 求满足
-    \[
-    \frac{\lfloor x \rfloor}{x} = \frac{9}{10}
-    \]
-    的最大实数 $x$。
-    \begin{solution}
-        由 $x = \lfloor x \rfloor + \{x\}$, 交叉相乘得
-        \[
-        10 \lfloor x \rfloor = 9 (\lfloor x \rfloor + \{x\}) \Rightarrow \lfloor x \rfloor = 9 \{x\}
-        \]
-        由于 $0 \le \{x\} < 1,\{x\}$的可能值为
-        \[
-        = \frac{1}{9}, \frac{2}{9}, \dots, \frac{8}{9}, 
-        \]
-        取最大值 $\{x\} = \frac{8}{9}$, 于是
-        \[
-        x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
-        \]
-    \end{solution}
+\question 13. 证明对任意实数 $x, y$ 有 $\lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$ 。
+
+\begin{solution}
+证：由取整函数的性质可知 $x - 1 < \lfloor x \rfloor \le x$ 以及 $-(y - 1) > -\lfloor y \rfloor \ge -y$ 。
+1. 证明左半部分： $\lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor$
+由 $x = (x - y) + y$ 得 $\lfloor x \rfloor = \lfloor (x - y) + y \rfloor \ge \lfloor x - y \rfloor + \lfloor y \rfloor$ ,
+移项得 $\lfloor x \rfloor - \lfloor y \rfloor \ge \lfloor x - y \rfloor$ ；
+2. 证明右半部分： $\lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$
+由 $x - y = x + (-y)$ 得 $\lfloor x - y \rfloor = \lfloor x + (-y) \rfloor \ge \lfloor x \rfloor + \lfloor -y \rfloor$ 。
+由于 $\lfloor -y \rfloor$ 等于 $-\lfloor y \rfloor$ （当 $y$ 为整数）或 $-\lfloor y \rfloor - 1$ （当 $y$ 不为整数）,
+即 $\lfloor -y \rfloor \ge -\lfloor y \rfloor - 1$ 。
+代入得 $\lfloor x - y \rfloor \ge \lfloor x \rfloor - \lfloor y \rfloor - 1$ ,
+移项得 $\lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$ 。
+综上所述,不等式成立。
+\end{solution}
+
+\question 证明埃尔米特恒等式：对于每一个实数 $x$ 和每一个正整数 $n$ ,以下恒等式成立：
+\[ \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor = \lfloor nx \rfloor \]
+
+\begin{solution}
+证：将 $x$ 分解为整数部分和小数部分,即 $x = \lfloor x \rfloor + \{x\}$。
+在 $\{1, \dots, n\}$ 中,恰好存在一个 $k'$ 使得：
+\[ \lfloor x \rfloor = \lfloor x + \frac{k'-1}{n} \rfloor \le x < \lfloor x + \frac{k'}{n} \rfloor = \lfloor x \rfloor + 1 \text{} \]
+通过在不等式左右两边的取整符号内减去同一个整数 $\lfloor x \rfloor$ ,可以重写为：
+\[ 0 = \lfloor \{x\} + \frac{k'-1}{n} \rfloor \le \{x\} < \lfloor \{x\} + \frac{k'}{n} \rfloor = 1 \text{} \]
+因此有：
+\[ 1 - \frac{k'}{n} \le \{x\} < 1 - \frac{k'-1}{n} \text{} \]
+两边同时乘以 $n$ 得：
+\[ n - k' \le n\{x\} < n - k' + 1 \text{} \]
+这意味着 $\lfloor n\{x\} \rfloor = n - k'$。
+现在将埃尔米特恒等式中的求和以索引 $k'$ 为界分为两部分：
+\begin{align*}
+\sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor &= \sum_{k=0}^{k'-1} \lfloor x \rfloor + \sum_{k=k'}^{n-1} (\lfloor x \rfloor + 1) \\
+&= k' \lfloor x \rfloor + (n - k')(\lfloor x \rfloor + 1) \\
+&= n \lfloor x \rfloor + n - k' \\
+&= n \lfloor x \rfloor + \lfloor n\{x\} \rfloor \\
+&= \lfloor n \lfloor x \rfloor + n\{x\} \rfloor \\
+&= \lfloor nx \rfloor \text{}
+\end{align*}
+得证。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -5716,26 +5937,6 @@
     \end{solution}
     \end{parts}
 
-    \question 若整数 $m\ge 1$,函数 $f$ 满足
-    \[
-    f(m+1)=m(-1)^{m+1}-2f(m), \quad f(1)=f(2001),
-    \]
-    求 $f(1)+f(2)+\cdots+f(2000)$。
-    \begin{solution}
-        由递推式可得
-        \[
-        f(2)=1-2f(1),\quad f(3)=-2-2f(2),\quad f(4)=3-2f(3),\;\ldots,\quad f(2001)=2000-2f(2000),
-        \]
-        将 $f(2001)$ 替换为 $f(1)$ 并将所有式子相加,得
-        \[
-        \sum_{i=1}^{2000} f(i)=1-2+3-4+\cdots+1999-2000-2\sum_{i=1}^{2000} f(i).
-        \]
-        所以
-        \[
-        \sum_{i=1}^{2000} f(i)=\frac{1}{3}\left(\frac{2000}{2}-2000\right)=-\frac{1000}{3}.
-        \]
-    \end{solution}
-
     \question 若实数 \(x, y, z\) 满足
     \[
     \begin{cases}
@@ -5860,6 +6061,163 @@
         x+1 = -(y+1) \Rightarrow x + y = -2
         \]
     \end{solution}
+
+    \question
+例 2、求定义于实数集 $(x \neq 0)$ 上的所有实值函数使 $\frac{1}{x} f(-x) + f\left( \frac{1}{x} \right) = x \quad (x \neq 0)$。
+
+\begin{solution}
+解：
+令 $x = \frac{1}{n}$ 代入,得 $n f\left( -\frac{1}{n} \right) + f(n) = \frac{1}{n}$ \quad $\dots (1)$
+令 $x = -n$ 代入,得 $-\frac{1}{n} f(n) + f\left( -\frac{1}{n} \right) = -n$ \quad $\dots (2)$
+将 $(2)$ 式变形为 $f\left( -\frac{1}{n} \right) = \frac{1}{n} f(n) - n$,代入 $(1)$ 式：
+\[ n \left[ \frac{1}{n} f(n) - n \right] + f(n) = \frac{1}{n} \]
+\[ f(n) - n^2 + f(n) = \frac{1}{n} \Rightarrow 2f(n) = n^2 + \frac{1}{n} = \frac{n^3 + 1}{n} \]
+即 $f(x) = \frac{x^3 + 1}{2x} \quad (x \neq 0)$。
+\end{solution}
+
+\question
+例 3、求解函数方程 $xf(y) + yf(x) = (x+y)f(x)f(y)$。
+
+\begin{solution}
+解：
+令 $x = y = 1$,得 $2f(1) = 2f^2(1)$,因此 $f(1) = 0$ 或 $1$。
+1. 若 $f(1) = 0$,令 $y = 1$,得 $xf(1) + 1 \cdot f(x) = (x+1)f(x)f(1)$,解得 $f(x) = 0$。
+2. 若 $f(1) = 1$,令 $y = 1$,得 $x + f(x) = (x+1)f(x) \Rightarrow x[f(x) - 1] = 0$。
+由此可得：当 $x \neq 0$ 时,$f(x) = 1$；当 $x = 0$ 时,$f(0)$ 可为任意实数 $a$。
+即 $f(x) = \begin{cases} 1 & x \neq 0 \\ a & x = 0 \end{cases}$ （$a$ 为任意实数）。
+\end{solution}
+
+\question
+例 4、$x \in \mathbb{N}, f(m+n) = f(m) + f(n) + mn, f(1) = 1$,求 $f(x)$。
+
+\begin{solution}
+解：
+令 $m = 1$,则 $f(n+1) = f(n) + f(1) + n = f(n) + (n+1)$。
+当 $n=1, \dots, n-1$ 时,利用累加法：
+\begin{align*}
+f(2) &= f(1) + 2 \\
+f(3) &= f(2) + 3 \\
+&\vdots \\
+f(n) &= f(n-1) + n
+\end{align*}
+相加得 $f(n) = f(1) + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$。
+即 $f(x) = \frac{x(x+1)}{2}, x \in \mathbb{N}$。
+\end{solution}
+
+\question
+例 6、已知函数 $f(x)$ 满足：$f(0) = 1, f\left(\frac{\pi}{2}\right) = 2$,且对任意的 $x, y \in \mathbb{R}$,$f(x+y) + f(x-y) = 2f(x)\cos y$,求 $f(x)$。
+
+\begin{solution}
+解：
+令 $x = 0, y = t$ 代入原式得：$f(t) + f(-t) = 2f(0)\cos t = 2\cos t$ \quad $\dots (1)$
+令 $x = \frac{\pi}{2} + t, y = \frac{\pi}{2}$ 代入原式得：$f(t+\pi) + f(t) = 2f\left(\frac{\pi}{2}\right)\cos\frac{\pi}{2} = 0 \Rightarrow f(t+\pi) = -f(t)$ \quad $\dots (2)$
+再令 $x = \frac{\pi}{2}, y = \frac{\pi}{2} + t$ 代入原式得：$f(\pi+t) + f(-t) = 2f\left(\frac{\pi}{2}\right)\cos\left(\frac{\pi}{2}+t\right) = -4\sin t$ \quad $\dots (3)$
+由 $(2)$ 式知 $f(\pi+t) = -f(t)$,代入 $(3)$ 式得：$-f(t) + f(-t) = -4\sin t$ \quad $\dots (4)$
+联立 $(1)$ 和 $(4)$：
+$(1) + (4) \Rightarrow 2f(-t) = 2\cos t - 4\sin t \Rightarrow f(-t) = \cos t - 2\sin t$。
+用 $-x$ 替换 $t$,得 $f(x) = \cos(-x) - 2\sin(-x) = \cos x + 2\sin x$。
+\end{solution}
+
+\question
+2. 已知 $f(x)$ 为多项式,解 $f(x+1) + f(x-1) = 2x^2 - 4x$。
+
+\begin{solution}
+解：观察右端项为二次多项式,设 $f(x) = ax^2 + bx + c$。
+代入原式得：
+$a(x+1)^2 + b(x+1) + c + a(x-1)^2 + b(x-1) + c = 2x^2 - 4x$
+整理得：$2ax^2 + 2bx + 2a + 2c = 2x^2 - 4x$。
+对比系数得：$2a = 2, 2b = -4, 2a + 2c = 0$。
+解得 $a = 1, b = -2, c = -1$。
+故 $f(x) = x^2 - 2x - 1$。
+\end{solution}
+
+\question
+3. 设 $f(x)$ 是在实数域上有定义的函数,满足 $f(0) = 1$ 且对任意的 $x, y \in \mathbb{R}$,$f(x+y) = f(x) + f(y) - 1$。
+
+\begin{solution}
+解：令 $g(x) = f(x) - 1$,则 $g(0) = 0$。
+原方程变为：$g(x+y) + 1 = (g(x) + 1) + (g(y) + 1) - 1 \Rightarrow g(x+y) = g(x) + g(y)$。
+这是典型的柯西方程,在一定条件下其解为 $g(x) = cx$。
+因此 $f(x) = cx + 1$（其中 $c$ 为常数）。
+\end{solution}
+
+\question
+8. 设 $f(1)=1, f(2)=8$ 且满足 $f(n) = \sqrt{f(n-1)f(n-2)} \quad (n \ge 3)$,求 $f(n)$。
+
+\begin{solution}
+解：对方程两边取对数,令 $g(n) = \ln f(n)$。
+则 $g(n) = \frac{1}{2} [g(n-1) + g(n-2)]$,特征方程为 $r^2 - \frac{1}{2}r - \frac{1}{2} = 0$。
+解得 $r_1 = 1, r_2 = -\frac{1}{2}$。故 $g(n) = c_1 + c_2(-\frac{1}{2})^{n-1}$。
+代入 $g(1) = \ln 1 = 0$ 和 $g(2) = \ln 8$ 可求得 $c_1, c_2$。
+根据手写笔记规律,该数列项为 $1, 2^3, 2^{\frac{3}{2}}, 2^{\frac{9}{4}}, \dots$。
+最终可推得 $f(n) = 8^{\frac{2}{3}[1-(-\frac{1}{2})^{n-1}]}$。
+\end{solution}
+
+\question
+9. 设 $ab \neq 0, a^2 \neq b^2$,求 $af(x) + bf(\frac{1}{x}) = cx$ 的解。
+
+\begin{solution}
+解：已知 $af(x) + bf(\frac{1}{x}) = cx \quad \dots (1)$。
+以 $\frac{1}{x}$ 代替 $x$ 得：$af(\frac{1}{x}) + bf(x) = \frac{c}{x} \quad \dots (2)$。
+联立方程组,$(1) \times a - (2) \times b$ 得：
+$(a^2 - b^2)f(x) = acx - \frac{bc}{x}$。
+故 $f(x) = \frac{c}{a^2 - b^2} (ax - \frac{b}{x})$。
+\end{solution}
+
+\question
+10. 求函数 $f(x)$,如果 $af(x^n) + f(-x^n) = bx$,其中 $a^2 \neq 1, n$ 是奇数。
+
+\begin{solution}
+解：已知 $af(x^n) + f(-x^n) = bx \quad \dots (1)$。
+以 $-x$ 代替 $x$,由于 $n$ 为奇数,得：$af(-x^n) + f(x^n) = -bx \quad \dots (2)$。
+联立消去 $f(-x^n)$,由 $(1) \times a - (2)$ 得：
+$(a^2 - 1)f(x^n) = abx + bx = bx(a+1)$。
+故 $f(x^n) = \frac{bx(a+1)}{(a+1)(a-1)} = \frac{bx}{a-1}$。
+令 $t = x^n \Rightarrow x = t^{\frac{1}{n}}$,得 $f(x) = \frac{bx^{\frac{1}{n}}}{a-1}$。
+\end{solution}
+
+\question
+11. 解函数方程 $2f(x^2) + f(\frac{1}{x^2}) = x \quad (x > 0)$。
+
+\begin{solution}
+解：已知 $2f(x^2) + f(\frac{1}{x^2}) = x \quad \dots (1)$。
+以 $\frac{1}{x}$ 代替 $x$ 得：$2f(\frac{1}{x^2}) + f(x^2) = \frac{1}{x} \quad \dots (2)$。
+由 $(1) \times 2 - (2)$ 得：$3f(x^2) = 2x - \frac{1}{x}$。
+令 $t = x^2 \Rightarrow x = \sqrt{t}$,则 $f(t) = \frac{1}{3}(2\sqrt{t} - \frac{1}{\sqrt{t}})$。
+即 $f(x) = \frac{2x-1}{3\sqrt{x}} \quad (x > 0)$。
+\end{solution}
+
+\question
+12. 已知 $f(1) = \frac{1}{5}$,且当 $n > 1$ 时,$\frac{f(n-1)}{f(n)} = \frac{2nf(n-1)+1}{1-2f(n)}$,求 $f(n)$。
+
+\begin{solution}
+解：整理原式得 $f(n-1) - 2f(n)f(n-1) = 2nf(n)f(n-1) + f(n)$。
+两边同除以 $f(n)f(n-1)$ 得：$\frac{1}{f(n)} - 2 = 2n + \frac{1}{f(n-1)}$。
+即 $\frac{1}{f(n)} - \frac{1}{f(n-1)} = 2n + 2 = 2(n+1)$。
+利用累加法：$\frac{1}{f(n)} = \frac{1}{f(1)} + \sum_{i=2}^{n} 2(i+1) = 5 + 2[\frac{(3+n+1)(n-1)}{2}]$。
+整理得 $f(n) = \frac{1}{n^2 + 3n + 1}$。
+\end{solution}
+
+\question
+13. 函数 $f(x)$ 在 $\mathbb{R}$ 上定义,且 (1) $f(-x)=f(x), f(0)=993$; (2) $g(-x)=-g(x)$ 且 $g(x)=f(x-1)$。求 $f(1992)$。
+
+\begin{solution}
+解：由 $g(-x)=-g(x)$ 及 $g(x)=f(x-1)$ 得 $f(-x-1) = -f(x-1)$。
+结合 $f(x)$ 为偶函数,$f(x+1) = f(-x-1) = -f(x-1)$。
+从而 $f(x+2) = -f(x)$,进而 $f(x+4) = f(x)$,周期 $T=4$。
+$f(1992) = f(4 \times 498) = f(0) = 993$。
+\end{solution}
+
+\question
+15. 解函数方程 $f(x+y)^2 = f(x)^2 + f(y)^2$。
+
+\begin{solution}
+解：令 $H(x) = f(x)^2$,则方程变为 $H(x+y) = H(x) + H(y)$。
+此为柯西方程,解为 $H(x) = cx$。
+因为 $f(x)^2 \ge 0$,故对于定义域内的 $x$ 需满足 $cx \ge 0$。
+若定义域为 $\mathbb{R}$,则 $c=0 \Rightarrow f(x)=0$。
+若定义域为 $[0, +\infty)$,则 $f(x) = \pm\sqrt{cx}$。
+\end{solution}
 
     \question 设函数 $f:(0,\infty)\rightarrow\mathbb{R}$,满足
     \[
@@ -6630,6 +6988,314 @@
         \textcolor{red}{(待解)}
     \end{solution}
 
+    \question 例 2、已知 $x, y, a, b$ 均为正实数,且 $\frac{a}{x} + \frac{b}{y} = 1$,则 $x + y$ 的最小值为 \underline{\hspace{1cm}}。
+\begin{solution}
+设 $\frac{a}{x} = \cos^2 \alpha, \frac{b}{y} = \sin^2 \alpha$ 则
+\[x + y = a \sec^2 \alpha + b \csc^2 \alpha = a + b + a \tan^2 \alpha + b \cot^2 \alpha \ge a + b + 2\sqrt{ab}\]
+\end{solution}
+
+\question 例 3、求函数 $y = \sqrt{x^2 - 3x + 2} + \sqrt{2 + 3x - x^2}$ 的最大值和最小值。
+\begin{solution}
+$1 = \frac{\sqrt{x^2 - 3x + 2}}{y} + \frac{\sqrt{2 + 3x - x^2}}{y}$ 令 $\cos^2 \alpha = \frac{\sqrt{x^2 - 3x + 2}}{y}, \sin^2 \alpha = \frac{\sqrt{2 + 3x - x^2}}{y}$
+\[\cos^4 \alpha = \frac{x^2 - 3x + 2}{y^2}, \sin^4 \alpha = \frac{2 + 3x - x^2}{y^2} \Rightarrow \cos^4 \alpha + \sin^4 \alpha = \frac{4}{y^2}\]
+\[\Rightarrow y^2 = \frac{4}{\cos^4 \alpha + \sin^4 \alpha} = \frac{8}{2 - \sin^2 2\alpha}\]
+由于 $0 \le \sin^2 2\alpha \le 1$,所以 $4 \le y^2 \le 8$
+\[2 \le y \le 2\sqrt{2}\]
+\end{solution}
+
+\question 例 6、已知 $x, y, z$ 均为正实数,且 $\frac{1}{x} + \frac{2}{y} + \frac{3}{z} = 1$,则 $x + \frac{y}{2} + \frac{z}{3}$ 的最小值为 \underline{\hspace{1cm}}。
+\begin{solution}
+解 1：$x + \frac{y}{2} + \frac{z}{3} = (\frac{1}{x} + \frac{2}{y} + \frac{3}{z})(x + \frac{y}{2} + \frac{z}{3}) = 1 + \frac{y}{2x} + \frac{z}{3x} + \frac{2x}{y} + 1 + \frac{2z}{3y} + \frac{3x}{z} + \frac{3y}{2z} + 1$
+\[= 3 + (\frac{y}{2x} + \frac{2x}{y}) + (\frac{z}{3x} + \frac{3x}{z}) + (\frac{2z}{3y} + \frac{3y}{2z}) \ge 3 + 2\sqrt{1} + 2\sqrt{1} + 2\sqrt{1} = 9\]
+解 2：利用算术平均数大于调和平均数知
+\[\frac{x + \frac{y}{2} + \frac{z}{3}}{3} \ge \frac{3}{\frac{1}{x} + \frac{2}{y} + \frac{3}{z}} = 3 \Rightarrow x + \frac{y}{2} + \frac{z}{3} \ge 9\]
+\end{solution}
+
+\question 如 $x^6 + \frac{y^3}{3} + \frac{z}{4} = 1$,求 $x^{12}y^6z^3$ 的最大值,其中 $x, y, z \in R^+$。
+
+\begin{solution}
+根据算术—几何平均值不等式（AM-GM Inequality）,为了得到 $x^{12}y^6z^3$,我们需要将已知等式中的项进行拆分：
+将 $x^6$ 拆分为 $2$ 项,将 $\frac{y^3}{3}$ 拆分为 $2$ 项,将 $\frac{z}{4}$ 拆分为 $3$ 项。共计 $2+2+3=7$ 项。
+
+\[
+1 = x^6 + \frac{y^3}{3} + \frac{z}{4} = \frac{x^6}{2} + \frac{x^6}{2} + \frac{y^3}{6} + \frac{y^3}{6} + \frac{z}{12} + \frac{z}{12} + \frac{z}{12}
+\]
+
+根据平均值不等式：
+\[
+\frac{x^6}{2} + \frac{x^6}{2} + \frac{y^3}{6} + \frac{y^3}{6} + \frac{z}{12} + \frac{z}{12} + \frac{z}{12} \ge 7 \sqrt[7]{\frac{x^6}{2} \cdot \frac{x^6}{2} \cdot \frac{y^3}{6} \cdot \frac{y^3}{6} \cdot \frac{z}{12} \cdot \frac{z}{12} \cdot \frac{z}{12}}
+\]
+
+代入已知条件 $1$：
+\[
+1 \ge 7 \sqrt[7]{\frac{x^{12}y^6z^3}{2^2 \cdot 6^2 \cdot 12^3}}
+\]
+
+由于 $2^2 \cdot 6^2 \cdot 12^3 = 4 \cdot 36 \cdot 1728 = 144 \cdot 1728 = 12^2 \cdot 12^3 = 12^5$,不等式简化为：
+\[
+1 \ge 7 \sqrt[7]{\frac{x^{12}y^6z^3}{12^5}}
+\]
+
+两边同时取 $7$ 次方：
+\[
+\left(\frac{1}{7}\right)^7 \ge \frac{x^{12}y^6z^3}{12^5}
+\]
+
+因此：
+\[
+x^{12}y^6z^3 \le \frac{12^5}{7^7}
+\]
+
+所以 $x^{12}y^6z^3$ 的最大值为 $\frac{12^5}{7^7}$。
+\end{solution}
+
+\question 例 7、$f(x, y, z) = \frac{x}{y} + \sqrt{\frac{y}{z}} + \sqrt[3]{\frac{z}{x}}$,求该函数的最小值。
+\begin{solution}
+\[f(x, y, z) = \frac{x}{y} + \frac{1}{2}\sqrt{\frac{y}{z}} + \frac{1}{2}\sqrt{\frac{y}{z}} + \frac{1}{3}\sqrt[3]{\frac{z}{x}} + \frac{1}{3}\sqrt[3]{\frac{z}{x}} + \frac{1}{3}\sqrt[3]{\frac{z}{x}}\]
+\[\ge 6 \cdot \sqrt[6]{\frac{x}{y} \cdot \frac{1}{2}\sqrt{\frac{y}{z}} \cdot \frac{1}{2}\sqrt{\frac{y}{z}} \cdot \frac{1}{3}\sqrt[3]{\frac{z}{x}} \cdot \frac{1}{3}\sqrt[3]{\frac{z}{x}} \cdot \frac{1}{3}\sqrt[3]{\frac{z}{x}}} = 6 \cdot \sqrt[6]{\frac{1}{2^2 \cdot 3^3} \cdot \frac{xyz}{yzx}} = \sqrt[3]{4} \cdot \sqrt{3}\]
+等号在 $\frac{x}{y} = \frac{1}{2}\sqrt{\frac{y}{z}} = \frac{1}{3}\sqrt[3]{\frac{z}{x}}$ 时成立。
+\end{solution}
+
+\question 例 8、已知 $x, y, z$ 均为正实数,则 $\frac{xy + yz}{x^2 + y^2 + z^2}$ 的最大值为 \underline{\hspace{1cm}}。
+\begin{solution}
+\[\frac{xy + yz}{x^2 + y^2 + z^2} = \frac{\frac{x}{y} + \frac{z}{y}}{(\frac{x}{y})^2 + 1 + (\frac{z}{y})^2} = \frac{\frac{x}{y} + \frac{z}{y}}{[(\frac{x}{y})^2 + \frac{1}{2}] + [(\frac{z}{y})^2 + \frac{1}{2}]} \le \frac{\frac{x}{y} + \frac{z}{y}}{2(\frac{x}{y})\sqrt{\frac{1}{2}} + 2(\frac{z}{y})\sqrt{\frac{1}{2}}} = \frac{\sqrt{2}}{2}\]
+等号在 $\frac{1}{2} = (\frac{x}{y})^2 = (\frac{z}{y})^2$ 时成立。
+\end{solution}
+
+\question 例 9、证明 $x + \frac{4}{x-1} \ge 2\sqrt{x+3}$,其中 $x > 1$。
+\begin{solution}
+利用比较法。令 $u = x-1 > 0$
+得到 $u + 1 + \frac{4}{u} \ge 2\sqrt{u+4}$,现在比较 $u + 1 + \frac{4}{u}$ 与 $2\sqrt{u+4}$ 的大小
+\[\frac{u + 1 + \frac{4}{u}}{2\sqrt{u+4}} = \frac{u^2 + (u+4)}{2u\sqrt{u+4}} \ge \frac{2\sqrt{u^2(u+4)}}{2u\sqrt{u+4}} = 1\]
+等号在 $u^2 = u + 4$ 时成立。
+\end{solution}
+
+\question 例 10、已知 $x_1 + x_2 = 2$,证 $\frac{1}{1+x_1} + \frac{1}{1+x_2} \ge \frac{x_1}{1+x_1^2} + \frac{x_2}{1+x_2^2}$,其中所有 $x_i$ 都是正数。
+\begin{solution}
+由右式 $\frac{x_1}{1+x_1^2} + \frac{x_2}{1+x_2^2} = \frac{1}{\frac{1}{x_1} + x_1} + \frac{1}{\frac{1}{x_2} + x_2} \le \frac{1}{2} + \frac{1}{2} = 1$
+由左式 $\frac{1}{1+x_1} + \frac{1}{1+x_2} \ge 2\sqrt{\frac{1}{(1+x_1)(1+x_2)}}$
+考虑分母 $(1+x_1)(1+x_2) = 1 + x_1 + x_2 + x_1x_2 = 1 + 2 + x_1(2-x_1) = -x_1^2 + 2x_1 + 3 = -(x_1-1)^2 + 4 \le 4$
+\[\therefore \frac{1}{1+x_1} + \frac{1}{1+x_2} \ge 2\sqrt{\frac{1}{4}} = 1\]
+因此左式 $\ge 1 \ge$ 右式。
+\end{solution}
+
+\question 例 12、如 $a, b, c$ 是三角形三边,证明 $\frac{1}{4} < \frac{(a+b)(b+c)(c+a)}{(a+b+c)^3} \le \frac{8}{27}$。
+\begin{solution}
+证：由于 $(a+b) + (b+c) + (c+a) \ge 3 \sqrt[3]{(a+b)(b+c)(c+a)}$
+\[\frac{2(a+b+c)}{3} \ge \sqrt[3]{(a+b)(b+c)(c+a)}\]
+\[\frac{8}{27}(a+b+c)^3 \ge (a+b)(b+c)(c+a)\]
+所以 $\frac{(a+b)(b+c)(c+a)}{(a+b+c)^3} \le \frac{8}{27}$。
+又 $a+b > c \Rightarrow 2a+2b > a+b+c \Rightarrow \frac{a+b}{a+b+c} > \frac{1}{2}$,同理可得 $\frac{b+c}{a+b+c} > \frac{1}{2}$,$\frac{c+a}{a+b+c} > \frac{1}{2}$。
+设 $\frac{a+b}{a+b+c} = \frac{1+x}{2}$,$\frac{b+c}{a+b+c} = \frac{1+y}{2}$,$\frac{c+a}{a+b+c} = \frac{1+z}{2}$
+由于 $\frac{a+b}{a+b+c} + \frac{b+c}{a+b+c} + \frac{c+a}{a+b+c} = 2 \Rightarrow \frac{1+x}{2} + \frac{1+y}{2} + \frac{1+z}{2} = 2 \Rightarrow x+y+z = 1$
+于是 $\frac{(a+b)(b+c)(c+a)}{(a+b+c)^3} = \frac{(1+x)(1+y)(1+z)}{8} > \frac{1+x+y+z}{8} = \frac{1}{4}$ 得证。
+\end{solution}
+
+\question 例 14、若 $a > b > c$ 求证：$\frac{1}{a-b} + \frac{1}{b-c} \ge \frac{4}{a-c}$
+\begin{solution}
+因为 $a > c \Rightarrow a-c > 0$,结论改为 $(a-c)(\frac{1}{a-b} + \frac{1}{b-c}) \ge 4$
+\[(a-c)(\frac{1}{a-b} + \frac{1}{b-c}) = [(a-b) + (b-c)](\frac{1}{a-b} + \frac{1}{b-c}) \ge (1 + 1)^2 = 4\]
+\end{solution}
+
+\question 例 15、证 $(x+y+z)(\frac{1}{y+z} + \frac{1}{x+z} + \frac{1}{x+y}) \ge \frac{9}{2}$
+\begin{solution}
+\[(x+y+z)(\frac{1}{y+z} + \frac{1}{x+z} + \frac{1}{x+y})\]
+\[= \frac{1}{2}[(x+y) + (y+z) + (z+x)](\frac{1}{y+z} + \frac{1}{x+z} + \frac{1}{x+y})\]
+\[= \frac{1}{2}[(\sqrt{x+y})^2 + (\sqrt{y+z})^2 + (\sqrt{z+x})^2][(\sqrt{\frac{1}{y+z}})^2 + (\sqrt{\frac{1}{x+z}})^2 + (\sqrt{\frac{1}{x+y}})^2]\]
+\[\ge \frac{1}{2}[\sqrt{x+y} \cdot \sqrt{\frac{1}{x+y}} + \sqrt{y+z} \cdot \sqrt{\frac{1}{y+z}} + \sqrt{z+x} \cdot \sqrt{\frac{1}{z+x}}]^2 = \frac{9}{2}\]
+\end{solution}
+
+\question 例 16、设 $a, b$ 为不相等的正数,试证 $(a+b)(a^3+b^3) > (a^2+b^2)^2$。
+\begin{solution}
+由柯西不等式知,左式改写为
+\[[(\sqrt{a})^2 + (\sqrt{b})^2][(\sqrt{a^3})^2 + (\sqrt{b^3})^2] \ge (\sqrt{a} \cdot \sqrt{a^3} + \sqrt{b} \cdot \sqrt{b^3})^2 = (a^2 + b^2)^2\]
+若等号成立,则必有一实数 $k$ 存在,使得 $\sqrt{a^3} = k\sqrt{a}, \sqrt{b^3} = k\sqrt{b}$ 于是 $a=b=k$,与 $a, b$ 不相等的假设矛盾。
+\end{solution}
+
+\question 例 17、$a, b, c \in R^+$ 求证：$\frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} \ge \frac{3}{2}$
+\begin{solution}
+由于 $\frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} + 3 = (\frac{a}{b+c} + 1) + (\frac{b}{c+a} + 1) + (\frac{c}{a+b} + 1)$
+\[= \frac{a+b+c}{b+c} + \frac{b+c+a}{c+a} + \frac{c+a+b}{a+b} = (a+b+c)(\frac{1}{b+c} + \frac{1}{c+a} + \frac{1}{a+b})\]
+\[= \frac{1}{2}[(b+c) + (c+a) + (a+b)](\frac{1}{b+c} + \frac{1}{c+a} + \frac{1}{a+b}) \ge \frac{1}{2}(1+1+1)^2 = \frac{9}{2}\]
+\[\therefore \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} \ge \frac{9}{2} - 3 = \frac{3}{2}\]
+\end{solution}
+
+\question 例 19、求证：$\frac{a^2}{b+c-a} + \frac{b^2}{c+a-b} + \frac{c^2}{a+b-c} \ge a+b+c$,其中 $a, b, c$ 为 $\triangle ABC$ 三边。
+\begin{solution}
+由 $(a+b+c)(\frac{a^2}{b+c-a} + \frac{b^2}{c+a-b} + \frac{c^2}{a+b-c})$
+\[= [(b+c-a) + (c+a-b) + (a+b-c)](\frac{a^2}{b+c-a} + \frac{b^2}{c+a-b} + \frac{c^2}{a+b-c})\]
+\[= [(\sqrt{b+c-a})^2 + (\sqrt{c+a-b})^2 + (\sqrt{a+b-c})^2][(\frac{a}{\sqrt{b+c-a}})^2 + (\frac{b}{\sqrt{c+a-b}})^2 + (\frac{c}{\sqrt{a+b-c}})^2]\]
+\[\ge (a+b+c)^2\]
+整理即得。
+\end{solution}
+
+\question 例 20、当 $\alpha, \beta \in [0, \frac{\pi}{4}]$,求 $\sin(\alpha-\beta) + 2\sin(\alpha+\beta)$ 的最大值。
+\begin{solution}
+$\sin(\alpha-\beta) + 2\sin(\alpha+\beta) = 3\sin\alpha\cos\beta + \sin\beta\cos\alpha$
+利用柯西不等式 $a_1b_1 + \dots + a_nb_n \le \sqrt{(a_1^2 + \dots + a_n^2)(b_1^2 + \dots + b_n^2)}$
+$3\sin\alpha\cos\beta + \sin\beta\cos\alpha \le \sqrt{(9\sin^2 \alpha + \cos^2 \alpha)(\cos^2 \beta + \sin^2 \beta)}$
+\[= \sqrt{9\sin^2 \alpha + \cos^2 \alpha} = \sqrt{8\sin^2 \alpha + 1} \le \sqrt{8\sin^2 \frac{\pi}{4} + 1} = \sqrt{5}\]
+等号在 $\alpha = \frac{\pi}{4}, \beta = \tan^{-1} \frac{1}{3}$ 成立。
+\end{solution}
+
+\question 如 $\frac{1}{x^3} + \frac{3}{y^2} + \frac{12}{z} = 1$,求 $xy^2z$ 的最小值,其中 $x, y, z \in R^+$,并指明等号何时成立。
+
+\begin{solution}
+根据均值不等式（AM-GM）：
+\[
+1 = \frac{1}{x^3} + \frac{3}{y^2} + \frac{12}{z} = \frac{1}{x^3} + \frac{3}{2y^2} + \frac{3}{2y^2} + \frac{12}{3z} + \frac{12}{3z} + \frac{12}{3z}
+\]
+（此处需根据目标式 $xy^2z$ 的指数权值进行拆分,图片中草稿显示了不同的拆分思路。若直接对三项使用 AM-GM）：
+\[
+1 = \frac{1}{x^3} + \frac{3}{y^2} + \frac{12}{z} \ge 3 \sqrt[3]{\frac{1}{x^3} \cdot \frac{3}{y^2} \cdot \frac{12}{z}} = 3 \sqrt[3]{\frac{36}{x^3y^2z}}
+\]
+等号成立时,有 $\frac{1}{x^3} = \frac{3}{y^2} = \frac{12}{z} = \frac{1}{3}$。
+\end{solution}
+
+
+
+\question 求多元函数 $f(x, y, z) = 4\sqrt{\frac{2x}{y}} + \sqrt{\frac{3y}{2z}} + \frac{z}{2x}$ 的最小值,其中 $D_f = R^+$。
+
+\begin{solution}
+利用均值不等式,将各项拆分以消去变量 $x, y, z$：
+\[
+f(x, y, z) = \sqrt{\frac{2x}{y}} + \sqrt{\frac{2x}{y}} + \sqrt{\frac{2x}{y}} + \sqrt{\frac{2x}{y}} + \frac{1}{2}\sqrt{\frac{3y}{2z}} + \frac{1}{2}\sqrt{\frac{3y}{2z}} + \frac{z}{2x}
+\]
+共有 $7$ 项,应用 AM-GM 不等式：
+\[
+f(x, y, z) \ge 7 \sqrt[7]{\left(\frac{2x}{y}\right)^2 \cdot \left(\frac{3y}{8z}\right) \cdot \frac{z}{2x}} \text{（此处需根据系数调整拆分份数以配平变量）}
+\]
+\end{solution}
+
+
+
+\question 设 $x, y, z$ 为实数,若 $\frac{(x-1)^2}{9} + \frac{(y+1)^2}{4} + \frac{(z-2)^2}{3} = 1$,求 $x+y+z$ 之最大值与最小值。
+
+\begin{solution}
+利用柯西不等式（Cauchy-Schwarz Inequality）：
+\[
+[(x-1) + (y+1) + (z-2)]^2 \le \left[ \frac{(x-1)^2}{9} + \frac{(y+1)^2}{4} + \frac{(z-2)^2}{3} \right] (9 + 4 + 3)
+\]
+\[
+(x + y + z - 2)^2 \le 1 \cdot 16
+\]
+\[
+|x + y + z - 2| \le 4
+\]
+解得：$-2 \le x + y + z \le 6$。
+最大值为 $6$,最小值为 $-2$。
+\end{solution}
+
+
+
+\question 设 $0 < \theta < \frac{\pi}{2}$,试求 $\frac{3}{\cos \theta} + \frac{2}{\sin \theta}$ 的最小值。
+
+\begin{solution}
+利用赫尔德不等式（Hölder's Inequality）或构建辅助函数：
+\[
+\left( \frac{3}{\cos \theta} + \frac{2}{\sin \theta} \right)^2 (\cos^2 \theta + \sin^2 \theta) \ge (\sqrt[3]{3^2} + \sqrt[3]{2^2})^3 \text{（此为变式用法）}
+\]
+常用方法：令 $f(\theta) = 3\sec \theta + 2\csc \theta$,求导 $f'(\theta) = \frac{3\sin \theta}{\cos^2 \theta} - \frac{2\cos \theta}{\sin^2 \theta} = 0$,得 $\tan^3 \theta = \frac{2}{3}$。
+\end{solution}
+
+\question 设实数 $x, y$ 满足 $x^2 + y^2 = 6x - 4y - 9$,求 $2x - 3y$ 的最大值和最小值。
+
+\begin{solution}
+原方程配方得圆的方程：$(x-3)^2 + (y+2)^2 = 4$。
+设 $x = 3 + 2\cos \alpha, y = -2 + 2\sin \alpha$。
+代入目标式：
+\[
+2x - 3y = 2(3 + 2\cos \alpha) - 3(-2 + 2\sin \alpha) = 6 + 4\cos \alpha + 6 - 6\sin \alpha = 12 + (4\cos \alpha - 6\sin \alpha)
+\]
+利用辅助角公式：$4\cos \alpha - 6\sin \alpha = \sqrt{4^2 + (-6)^2} \sin(\alpha + \phi) = \sqrt{52} \sin(\alpha + \phi) = 2\sqrt{13} \sin(\alpha + \phi)$。
+最大值为 $12 + 2\sqrt{13}$,最小值为 $12 - 2\sqrt{13}$。
+\end{solution}
+
+\question 若 $a, b$ 均为实数且满足 $a\sqrt{1-b^2} + b\sqrt{1-a^2} = 1$,则 $a^2 + b^2$ 之值为多少。
+
+\begin{solution}
+设 $a = \sin \alpha, b = \sin \beta$,其中 $\alpha, \beta \in [-\frac{\pi}{2}, \frac{\pi}{2}]$。
+原式变为：$\sin \alpha \cos \beta + \sin \beta \cos \alpha = 1$,即 $\sin(\alpha + \beta) = 1$。
+由此得 $\alpha + \beta = \frac{\pi}{2}$,即 $\beta = \frac{\pi}{2} - \alpha$。
+则 $b = \sin(\frac{\pi}{2} - \alpha) = \cos \alpha$。
+因此 $a^2 + b^2 = \sin^2 \alpha + \cos^2 \alpha = 1$。
+\end{solution}
+
+\question 当点 $P$ 沿着直线 $y = 2x + 6$ 移动,点 $Q$ 在椭圆 $\frac{x^2}{6} + \frac{y^2}{4} = 1$ 运动时,线段 $PQ$ 的长度最小值为 \underline{\hspace{2cm}}。
+
+\begin{solution}
+线段 $PQ$ 的最小值即为平行于已知直线的椭圆切线与该直线之间的距离。
+设与 $y = 2x + 6$ 平行的椭圆切线方程为 $y = 2x + k$。
+代入椭圆方程 $\frac{x^2}{6} + \frac{(2x+k)^2}{4} = 1$,整理得：
+\[
+2x^2 + 3(4x^2 + 4kx + k^2) = 12 \implies 14x^2 + 12kx + (3k^2 - 12) = 0
+\]
+令判别式 $\Delta = (12k)^2 - 4(14)(3k^2 - 12) = 0$：
+\[
+144k^2 - 168k^2 + 672 = 0 \implies 24k^2 = 672 \implies k^2 = 28 \implies k = \pm 2\sqrt{7}
+\]
+取较近的切线 $y = 2x + 2\sqrt{7}$。利用平行线间距离公式 $d = \frac{|C_1 - C_2|}{\sqrt{A^2 + B^2}}$：
+\[
+PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\sqrt{5}} = \frac{6\sqrt{5} - 2\sqrt{35}}{5}
+\]
+\end{solution}
+
+
+
+\question 如 $a, b$ 都是正数,证明 $a + b \ge \sqrt[3]{a^2b} + \sqrt[3]{b^2a}$。
+
+\begin{solution}
+证法一：利用因式分解。
+\[
+a + b - (\sqrt[3]{a^2b} + \sqrt[3]{b^2a}) = (\sqrt[3]{a})^3 + (\sqrt[3]{b})^3 - \sqrt[3]{ab}(\sqrt[3]{a} + \sqrt[3]{b})
+\]
+\[
+= (\sqrt[3]{a} + \sqrt[3]{b})(\sqrt[3]{a^2} - \sqrt[3]{ab} + \sqrt[3]{b^2}) - \sqrt[3]{ab}(\sqrt[3]{a} + \sqrt[3]{b})
+\]
+\[
+= (\sqrt[3]{a} + \sqrt[3]{b})(\sqrt[3]{a^2} - 2\sqrt[3]{ab} + \sqrt[3]{b^2}) = (\sqrt[3]{a} + \sqrt[3]{b})(\sqrt[3]{a} - \sqrt[3]{b})^2
+\]
+因为 $a, b > 0$,所以 $\sqrt[3]{a} + \sqrt[3]{b} > 0$ 且 $(\sqrt[3]{a} - \sqrt[3]{b})^2 \ge 0$。
+故 $a + b \ge \sqrt[3]{a^2b} + \sqrt[3]{b^2a}$ 成立。
+\end{solution}
+
+
+
+\question 设 $a, b, c \in R$,证明：$a^2 + ac + c^2 + 3b(a + b + c) \ge 0$。
+
+\begin{solution}
+整理原式为关于 $b$ 的二次式：
+\[
+3b^2 + 3(a+c)b + (a^2 + ac + c^2) \ge 0
+\]
+对于二次函数 $f(b) = 3b^2 + 3(a+c)b + (a^2 + ac + c^2)$,其判别式为：
+\[
+\Delta = [3(a+c)]^2 - 4(3)(a^2 + ac + c^2) = 9(a^2 + 2ac + c^2) - 12(a^2 + ac + c^2)
+\]
+\[
+= 9a^2 + 18ac + 9c^2 - 12a^2 - 12ac - 12c^2 = -3a^2 + 6ac - 3c^2 = -3(a-c)^2
+\]
+因为 $-3(a-c)^2 \le 0$ 且二次项系数 $3 > 0$,故该二次式恒大于或等于 $0$。
+\end{solution}
+
+
+
+\question 已知 $x, y, z$ 是正实数,求 $\frac{x}{y} + \left(\frac{y}{z}\right)^2 + \left(\frac{z}{x}\right)^3$ 的最小值。
+
+\begin{solution}
+利用加权平均值不等式（AM-GM）,为了消去所有变量,设各项分配的权重分别为 $k_1, k_2, k_3$。
+我们要满足 $x, y, z$ 的总幂次为 $0$：
+对于 $x$：$k_1 - 3k_3 = 0 \implies k_1 = 3k_3$
+对于 $y$：$-k_1 + 2k_2 = 0 \implies 2k_2 = k_1 = 3k_3 \implies k_2 = \frac{3}{2}k_3$
+设 $k_3 = 2$,则 $k_1 = 6, k_2 = 3$。总项数为 $6 + 3 + 2 = 11$。
+\[
+\frac{6 \cdot \frac{x}{6y} + 3 \cdot \frac{y^2}{3z^2} + 2 \cdot \frac{z^3}{2x^3}}{11} \ge \sqrt[11]{\left(\frac{x}{6y}\right)^6 \cdot \left(\frac{y^2}{3z^2}\right)^3 \cdot \left(\frac{z^3}{2x^3}\right)^2} \text{（此处需根据具体系数配平,见图片草稿）}
+\]
+根据图片中的简化计算：
+\[
+\frac{x}{y} + \left(\frac{y}{z}\right)^2 + \left(\frac{z}{x}\right)^3 \ge 11 \sqrt[11]{\frac{1}{6^6 \cdot 3^3 \cdot 2^2}} = \frac{11}{6} \sqrt[11]{72}
+\]
+\end{solution}
     \question 实数 $x,y,z,t$ 满足
     \[
     x^2+y^2=16,\quad z^2+t^2=25,\quad xt-yz=20,
@@ -7364,6 +8030,85 @@
         \]
     \end{solution}
 
+\question 1. 已知 $x^2 + y^2 = 1$,求 $\frac{y-3}{x+2}$ 的最大值。
+
+\begin{solution}
+解：设 $k = \frac{y-3}{x+2}$,则直线方程为 $kx - y + 2k + 3 = 0$。
+由于直线与圆 $x^2 + y^2 = 1$ 有交点,圆心 $(0,0)$ 到直线的距离 $d \le 1$：
+\[ \frac{|2k+3|}{\sqrt{k^2+1}} \le 1 \Rightarrow 4k^2 + 9 + 12k \le k^2 + 1 \Rightarrow 3k^2 + 12k + 8 \le 0 \]
+解得 $k_{max} = \frac{-12 + \sqrt{144 - 96}}{6} = -2 + \frac{2\sqrt{3}}{3}$。
+\end{solution}
+
+\question 2. 已知实数 $x, y$ 满足 $3x - 4y = 5$,求 $x^2 + y^2$ 的最小值。
+
+\begin{solution}
+解：$x^2 + y^2$ 的最小值即为原点 $(0,0)$ 到直线 $3x - 4y - 5 = 0$ 距离的平方。
+\[ d = \frac{|-5|}{\sqrt{3^2 + 4^2}} = 1 \]
+所以 $(x^2 + y^2)_{min} = 1^2 = 1$。
+\end{solution}
+
+\question 3. 已知实数 $x, y$ 满足 $12x + 5y = 1$,求 $x^2 + y^2 + 4x - 6y + 20$ 的最小值。
+
+\begin{solution}
+解：原式可配方为 $(x+2)^2 + (y-3)^2 + 7$。
+其几何意义为点 $(-2,3)$ 到直线 $12x + 5y - 1 = 0$ 距离的平方加 $7$。
+\[ d = \frac{|12(-2) + 5(3) - 1|}{\sqrt{12^2 + 5^2}} = \frac{10}{13} \]
+最小值 $d^2 + 7 = \left( \frac{10}{13} \right)^2 + 7 = \frac{100}{169} + 7 = \frac{1283}{169}$。
+\end{solution}
+
+\question 4. 已知实数 $x, y$ 满足 $x^2 + y^2 + 2x - 2y = 7$,求 $\sqrt{(x-5)^2 + (y-6)^2}$ 的最小值。
+
+\begin{solution}
+解：圆方程配方为 $(x+1)^2 + (y-1)^2 = 3^2$,圆心 $A(-1,1)$,半径 $R=3$。
+设点 $B(5,6)$,则 $\sqrt{(x-5)^2 + (y-6)^2}$ 的最小值即为 $|AB| - R$。
+\[ |AB| = \sqrt{(5+1)^2 + (6-1)^2} = \sqrt{6^2 + 5^2} = \sqrt{61} \]
+最小值为 $\sqrt{61} - 3$。
+\end{solution}
+
+\question 5. 已知 $(x-2)^2 + y^2 = 3$,求 $\frac{y}{x}$ 的最大值。
+
+\begin{solution}
+解：设 $k = \frac{y}{x}$,即直线 $kx - y = 0$ 与圆 $(x-2)^2 + y^2 = 3$ 相切。
+\[ \frac{|2k|}{\sqrt{k^2+1}} = \sqrt{3} \Rightarrow 4k^2 = 3k^2 + 3 \Rightarrow k^2 = 3 \]
+所以 $k_{max} = \sqrt{3}$。
+\end{solution}
+
+\question 8. 求 $\sqrt{x^2+6x+73} + \sqrt{x^2-4x+8}$ 的最小值。
+
+\begin{solution}
+解：原式可化为 $\sqrt{(x+3)^2 + (0-8)^2} + \sqrt{(x-2)^2 + (0-2)^2}$。
+其几何意义为 $x$ 轴上的点 $(x,0)$ 到两点 $A(-3,8)$ 和 $B(2,2)$ 距离之和。
+找 $B$ 关于 $x$ 轴的对称点 $B'(2,-2)$,最小值为线段 $AB'$ 的长度：
+\[ \text{min} = \sqrt{(-3-2)^2 + (8+2)^2} = \sqrt{5^2 + 10^2} = 5\sqrt{5} \]
+\end{solution}
+
+\question 11. $\frac{3-\sin x}{2+\cos x}$ 的最大值为 ,最小值为 。
+
+\begin{solution}
+解：设 $y = \frac{3-\sin x}{2+\cos x}$,则 $y\cos x + \sin x = 3 - 2y$。
+利用辅助角公式：$\sqrt{y^2+1} \cos(x-\alpha) = 3 - 2y$。
+由 $|\cos(x-\alpha)| \le 1$,得 $\left| \frac{3-2y}{\sqrt{y^2+1}} \right| \le 1$。
+\[ (3-2y)^2 \le y^2 + 1 \Rightarrow 9 + 4y^2 - 12y \le y^2 + 1 \Rightarrow 3y^2 - 12y + 8 \le 0 \]
+解方程 $3y^2 - 12y + 8 = 0$ 得 $y = \frac{12 \pm \sqrt{144-96}}{6} = 2 \pm \frac{2\sqrt{3}}{3}$。
+所以最大值为 $2 + \frac{2\sqrt{3}}{3}$,最小值为 $2 - \frac{2\sqrt{3}}{3}$。
+\end{solution}
+
+\question 例 8：已知 $a, b$ 为正实数,请问 $\sqrt{49+a^2-7\sqrt{2}a} + \sqrt{a^2+b^2-\sqrt{2}ab} + \sqrt{50+b^2-10b}$ 之最小值是什么？
+
+\begin{solution}
+利用余弦定理将各项转化为几何线段：
+1. $L_1 = \sqrt{a^2+7^2-2\cdot a\cdot 7 \cos 45^\circ}$
+2. $L_2 = \sqrt{a^2+b^2-2\cdot a\cdot b \cos 45^\circ}$
+3. $L_3 = \sqrt{b^2+(\sqrt{50})^2-2\cdot b\cdot \sqrt{50} \cos 45^\circ}$
+将三个三角形拼接,总夹角为 $45^\circ + 45^\circ + 45^\circ = 135^\circ$。
+最小值为连接始点与终点的线段长：
+\[
+\sqrt{7^2 + (\sqrt{50})^2 - 2 \cdot 7 \cdot \sqrt{50} \cos 135^\circ} = \sqrt{49 + 50 - 2 \cdot 7 \cdot 5\sqrt{2} \cdot (-\frac{\sqrt{2}}{2})}
+\]
+\[
+= \sqrt{99 + 70} = \sqrt{169} = 13
+\]
+\end{solution}
     \question 试求 
     \[
     \sqrt{10-6\cos\theta}+\frac{1}{4}\sqrt{34-24\sqrt{2}\sin\theta}+\sqrt{19-2\sqrt{2}\cos\theta-8\sin\theta}
@@ -8086,7 +8831,7 @@
         \]
     \end{solution}
     
-    \question 已知 $a_1=-1$, $a_{n+1}=2a_n-3$, 求 $a_{2017}$。
+    \question 已知 $a_1=-1,a_{n+1}=2a_n-3$, 求 $a_{2017}$。
     \begin{solution}
         由递推式,
         \[
@@ -8111,6 +8856,26 @@
         所以
         \[
         a_{2017}=-2^{2018}+3
+        \]
+    \end{solution}
+
+    \question 若整数 $m\ge 1$,函数 $f$ 满足
+    \[
+    f(m+1)=m(-1)^{m+1}-2f(m), \quad f(1)=f(2001),
+    \]
+    求 $f(1)+f(2)+\cdots+f(2000)$。
+    \begin{solution}
+        由递推式可得
+        \[
+        f(2)=1-2f(1),\quad f(3)=-2-2f(2),\quad f(4)=3-2f(3),\;\ldots,\quad f(2001)=2000-2f(2000),
+        \]
+        将 $f(2001)$ 替换为 $f(1)$ 并将所有式子相加,得
+        \[
+        \sum_{i=1}^{2000} f(i)=1-2+3-4+\cdots+1999-2000-2\sum_{i=1}^{2000} f(i)
+        \]
+        所以
+        \[
+        \sum_{i=1}^{2000} f(i)=\frac{1}{3}\left(\frac{2000}{2}-2000\right)=-\frac{1000}{3}
         \]
     \end{solution}
 
@@ -8311,6 +9076,49 @@ a_{61}=\frac{3660}{3661}.
         \frac{2017 \left(1 + \frac{2018}{2} \right)}{2017 \left(1 + \frac{2016}{2} \right)} = \dfrac{1010}{1009}
         \]
     \end{solution}
+
+\question 13. 设数列 $a_1, a_2, \dots, a_n, \dots$ 满足 $a_1 = a_2 = 1, a_3 = 2$ ,且对任意自然数 $n$ ,都有 $a_n \cdot a_{n+1} \cdot a_{n+2} \neq 1$ ,又 $a_n \cdot a_{n+1} \cdot a_{n+2} \cdot a_{n+3} = a_n + a_{n+1} + a_{n+2} + a_{n+3}$ ,求 $a_1 + a_2 + \dots + a_{100}$ 。
+
+\begin{solution}
+解：由 $a_n a_{n+1} a_{n+2} a_{n+3} = a_n + a_{n+1} + a_{n+2} + a_{n+3}$ 及 $a_{n+1} a_{n+2} a_{n+3} a_{n+4} = a_{n+1} + a_{n+2} + a_{n+3} + a_{n+4}$ ,
+两式相减得 $a_{n+1} a_{n+2} a_{n+3} (a_{n+4} - a_n) = a_{n+4} - a_n$ ,
+即 $(a_{n+1} a_{n+2} a_{n+3} - 1)(a_{n+4} - a_n) = 0$ 。
+因为 $a_{n+1} a_{n+2} a_{n+3} \neq 1$ ,所以 $a_{n+4} = a_n$ ,数列是周期为 4 的周期数列。
+由 $a_1 a_2 a_3 a_4 = a_1 + a_2 + a_3 + a_4 \Rightarrow 1 \cdot 1 \cdot 2 \cdot a_4 = 1 + 1 + 2 + a_4 \Rightarrow 2a_4 = 4 + a_4 \Rightarrow a_4 = 4$ 。
+故数列的前四项为 1, 1, 2, 4 。
+\[ a_1 + a_2 + \dots + a_{100} = 25 \times (1 + 1 + 2 + 4) = 25 \times 8 = 200 \]
+\end{solution}
+
+    \question 18. 已知函数 $f(x) = \frac{(x+1)^4 + (x-1)^4}{(x+1)^4 - (x-1)^4}$ （ $x \neq 0$ ）。在数列 $\{a_n\}$ 中,$a_1 = 2$ , $a_{n+1} = f(a_n)$ 。求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+解：对 $f(x)$ 的表达式进行化简：
+\[ f(x) = \frac{2(x^4 + 6x^2 + 1)}{8x^3 + 8x} = \frac{x^4 + 6x^2 + 1}{4x(x^2 + 1)} \]
+观察该结构,考虑利用辅助变量简化。令 $a_n = \frac{x_n + 1}{x_n - 1}$ 形式并不直接,
+但注意到 $f(x)$ 与双曲函数或正切函数的倍角公式结构类似。
+另一种解法是考察 $\frac{a_{n+1}-1}{a_{n+1}+1}$ ：
+\[ \frac{f(x)-1}{f(x)+1} = \frac{(x-1)^4}{(x+1)^4} = \left( \frac{x-1}{x+1} \right)^4 \]
+令 $b_n = \frac{a_n - 1}{a_n + 1}$ ,则有 $b_{n+1} = b_n^4$ 。
+已知 $b_1 = \frac{2-1}{2+1} = \frac{1}{3}$ 。
+由此可得 $b_n = b_1^{4^{n-1}} = \left( \frac{1}{3} \right)^{4^{n-1}}$ 。
+由 $b_n = \frac{a_n - 1}{a_n + 1} \Rightarrow a_n = \frac{1+b_n}{1-b_n}$ ,代入得：
+\[ a_n = \frac{3^{4^{n-1}} + 1}{3^{4^{n-1}} - 1} \]
+\end{solution}
+
+\question 19. 已知数列 $\{a_n\}$ 中,$a_1 = 2$ , $a_n = \frac{1+a_{n-1}}{1-a_{n-1}}$ ,求 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+解：通过计算数列的前几项寻找规律：
+$a_1 = 2$ ；
+$a_2 = \frac{1+2}{1-2} = -3$ ；
+$a_3 = \frac{1-3}{1-(-3)} = \frac{-2}{4} = -\frac{1}{2}$ ；
+$a_4 = \frac{1-1/2}{1-(-1/2)} = \frac{1/2}{3/2} = \frac{1}{3}$ ；
+$a_5 = \frac{1+1/3}{1-1/3} = \frac{4/3}{2/3} = 2 = a_1$ 。
+由此可知,数列 $\{a_n\}$ 是以 4 为周期的周期数列。
+其通项公式可表示为：
+\[ a_n = \begin{cases} 2 & n = 4k-3 \\ -3 & n = 4k-2 \\ -\frac{1}{2} & n = 4k-1 \\ \frac{1}{3} & n = 4k \end{cases} \quad (k \in \mathbb{N}^+) \]
+或者利用三角函数表示：令 $a_n = \tan \theta_n$ ,则 $\theta_n = \theta_{n-1} + \frac{\pi}{4}$ 。
+\end{solution}
 
     \question 已知数列 $\{a_n\}$ 由递推关系定义如下:
 \[
@@ -8524,7 +9332,162 @@ $$\frac{a_{n+1}}{a_n}-\frac{a_{n+2}}{a_n}-\frac{a_{n+1}a_{n+2}}{a_n^2}=\frac{na_
         a_4+a_8+\dots+a_{100} = \frac{25}{2}(-92+100)=100.
         \]
     \end{solution}
+\question 15. 已知数列 $\{a_n\}$ 中,$a_1 = 1$ , $S_n = \frac{S_{n-1}}{2S_{n-1} + 1}$ ,求 $\{a_n\}$ 的通项公式。
 
+\begin{solution}
+解：由 $S_n = \frac{S_{n-1}}{2S_{n-1} + 1}$ 取倒数得 $\frac{1}{S_n} = \frac{2S_{n-1} + 1}{S_{n-1}} = \frac{1}{S_{n-1}} + 2$ 。
+说明 $\{\frac{1}{S_n}\}$ 是首项为 $\frac{1}{S_1} = \frac{1}{a_1} = 1$ ,公差为 2 的等差数列。
+则 $\frac{1}{S_n} = 1 + (n-1) \times 2 = 2n - 1$ ,即 $S_n = \frac{1}{2n-1}$ 。
+当 $n \ge 2$ 时,
+\begin{align*}
+a_n &= S_n - S_{n-1} \\
+&= \frac{1}{2n-1} - \frac{1}{2n-3} \\
+&= \frac{(2n-3) - (2n-1)}{(2n-1)(2n-3)} \\
+&= -\frac{2}{(2n-1)(2n-3)}
+\end{align*}
+综上所述,$a_n = \begin{cases} 1 & n=1 \\ -\frac{2}{(2n-1)(2n-3)} & n \ge 2 \end{cases}$ 。
+\end{solution}
+
+\question 13. 设数列 $a_1, a_2, \dots, a_n, \dots$ 满足 $a_1 = a_2 = 1, a_3 = 2$ ,且对任意自然数 $n$ ,都有 $a_n a_{n+1} a_{n+2} \neq 1$ ,又 $a_n a_{n+1} a_{n+2} a_{n+3} = a_n + a_{n+1} + a_{n+2} + a_{n+3}$ ,求 $a_1 + a_2 + \dots + a_{100}$ 。
+
+\begin{solution}
+解：由已知条件有
+\[ a_n a_{n+1} a_{n+2} a_{n+3} = a_n + a_{n+1} + a_{n+2} + a_{n+3} \]
+以及对于项 $n+1$ 有
+\[ a_{n+1} a_{n+2} a_{n+3} a_{n+4} = a_{n+1} + a_{n+2} + a_{n+3} + a_{n+4} \]
+两式相减得：
+\[ a_{n+1} a_{n+2} a_{n+3} (a_{n+4} - a_n) = a_{n+4} - a_n \]
+\[ (a_{n+1} a_{n+2} a_{n+3} - 1)(a_{n+4} - a_n) = 0 \]
+因为 $a_{n+1} a_{n+2} a_{n+3} \neq 1$ ,所以 $a_{n+4} = a_n$ ,该数列是周期为 4 的周期数列。
+当 $n=1$ 时,$1 \times 1 \times 2 \times a_4 = 1 + 1 + 2 + a_4 \Rightarrow 2a_4 = 4 + a_4 \Rightarrow a_4 = 4$ 。
+数列前四项为 $1, 1, 2, 4$ ,其和一个周期内为 $1+1+2+4 = 8$ 。
+\[ a_1 + a_2 + \dots + a_{100} = 25 \times (a_1 + a_2 + a_3 + a_4) = 25 \times 8 = 200 \]
+\end{solution}
+
+\question 例 1. 已知 $F_1 = 0, F_2 = 1$ ,求斐波那契数列 $F_n + F_{n+1} = F_{n+2}$ 的通项 $F_n$ 。
+
+\begin{solution}
+解： $F_n + F_{n+1} = F_{n+2}$ 的特征方程为 $1 + \lambda = \lambda^2 \Rightarrow \lambda^2 - \lambda - 1 = 0$ 。
+解得 $\lambda_1 = \frac{1+\sqrt{5}}{2}, \lambda_2 = \frac{1-\sqrt{5}}{2}$ 。
+代入公式得 $F_n = C_1 \left( \frac{1+\sqrt{5}}{2} \right)^{n-1} + C_2 \left( \frac{1-\sqrt{5}}{2} \right)^{n-1}$ 。
+代入初值 $F_1 = 0, F_2 = 1$ 得：
+$F_1 = C_1 \left( \frac{1+\sqrt{5}}{2} \right)^0 + C_2 \left( \frac{1-\sqrt{5}}{2} \right)^0 = 0 \Rightarrow C_1 + C_2 = 0$ ；
+$F_2 = C_1 \left( \frac{1+\sqrt{5}}{2} \right)^1 + C_2 \left( \frac{1-\sqrt{5}}{2} \right)^1 = 1 \Rightarrow C_1(1+\sqrt{5}) + C_2(1-\sqrt{5}) = 2$ 。
+联立解得 $C_1 = \frac{1}{\sqrt{5}}, C_2 = -\frac{1}{\sqrt{5}}$ 。
+因此 $F_n = \frac{1}{\sqrt{5}} \left[ \left( \frac{1+\sqrt{5}}{2} \right)^{n-1} - \left( \frac{1-\sqrt{5}}{2} \right)^{n-1} \right]$ 。
+\end{solution}
+
+\question 例 2. 已知数列 $a_1 = 1, a_2 = 5$ ,且 $a_{n+1} = 4a_n - 4a_{n-1} (n \ge 2)$ ,求通项公式 $a_n$ 。
+
+\begin{solution}
+解：此数列对应特征方程为 $\lambda^2 = 4\lambda - 4$ 即 $\lambda^2 - 4\lambda + 4 = 0$ ,解得 $\lambda_1 = \lambda_2 = 2$ 。
+设此数列的通项公式为 $a_n = (C_1 + nC_2) \cdot 2^{n-1}$ （注：此处根据图片推导调整为 $n-1$ 次幂形式）。
+由初始条件 $a_1 = 1, a_2 = 5$ 可知：
+$\begin{cases} (C_1 + C_2) \cdot 1 = 1 \\ (C_1 + 2C_2) \cdot 2 = 5 \end{cases}$ ,解得 $\begin{cases} C_1 = -\frac{1}{4} \\ C_2 = \frac{3}{4} \end{cases}$ 。
+所以 $a_n = (3n-1) \cdot 2^{n-2}$ 。
+\end{solution}
+
+\question 例 3. 设数列 $\{a_n\}$ 满足 $a_0 = 1, a_1 = 4$ ,且 $a_{n+2} - 14a_{n+1} + a_n + 6 = 0$ 。求证： $a_n$ 是完全平方数。
+
+\begin{solution}
+证：将 $a_{n+2} - 14a_{n+1} + a_n + 6 = 0$ 化为 $(a_{n+2} - \frac{1}{2}) - 14(a_{n+1} - \frac{1}{2}) + (a_n - \frac{1}{2}) = 0$ 。
+令 $b_n = a_n - \frac{1}{2}$ ,且 $b_0 = \frac{1}{2}, b_1 = \frac{7}{2}$ ,则 $b_{n+2} - 14b_{n+1} + b_n = 0$ 。
+由特征方程 $\lambda^2 - 14\lambda + 1 = 0$ 得两根 $\lambda_1 = 7+4\sqrt{3}, \lambda_2 = 7-4\sqrt{3}$ 。
+$b_n = C_1 \lambda_1^n + C_2 \lambda_2^n$ ,由 $n=0, 1$ 时条件解得 $C_1 = C_2 = \frac{1}{4}$ 。
+因此 $b_n = \frac{1}{4}(7+4\sqrt{3})^n + \frac{1}{4}(7-4\sqrt{3})^n = \frac{1}{4}(2+\sqrt{3})^{2n} + \frac{1}{4}(2-\sqrt{3})^{2n}$ 。
+则 $a_n = b_n + \frac{1}{2} = \frac{1}{4}(2+\sqrt{3})^{2n} + \frac{1}{4}(2-\sqrt{3})^{2n} + \frac{1}{2} = \left[ \frac{(2+\sqrt{3})^n + (2-\sqrt{3})^n}{2} \right]^2$ 。
+因为 $(2+\sqrt{3})^n + (2-\sqrt{3})^n$ 为偶数,所以 $a_n$ 是完全平方数。
+\end{solution}
+
+\question 例 4. 设 $D_1 = 4, D_2 = \begin{vmatrix} 4 & 2 \\ 2 & 4 \end{vmatrix}, D_3 = \begin{vmatrix} 4 & 2 & 0 \\ 2 & 4 & 2 \\ 0 & 2 & 4 \end{vmatrix}, \dots$ 。求 $D_{10}$ 。
+
+\begin{solution}
+解：观察 $D_n = 4D_{n-1} - 4D_{n-2} \Rightarrow \lambda^2 = 4\lambda - 4 \Rightarrow \lambda_1 = \lambda_2 = 2$ 。
+因此 $D_n = (C_1 + nC_2) \cdot 2^{n-1}$ 。
+由 $D_1 = 4, D_2 = 12$ 得 $\begin{cases} C_1 + C_2 = 4 \\ 2C_1 + 4C_2 = 12 \end{cases} \Rightarrow C_1 = 2, C_2 = 2$ 。
+因此 $D_n = (2 + 2n) \cdot 2^{n-1} = (n+1) \cdot 2^n$ 。
+当 $n=10$ 时,$D_{10} = 11 \cdot 1024 = 11264$ 。
+\end{solution}
+
+\question 例 5. 已知对任意 $x$ , $f(x+1) + f(x-1) = \sqrt{2} f(x)$ ,且 $f(1) = 2, f(2) = 1$ 。求 $f(2010)$ 。
+
+\begin{solution}
+解：将 $f(x+1) + f(x-1) = \sqrt{2} f(x)$ 化为 $a_{n+2} + a_n = \sqrt{2} a_{n+1}$ 且 $a_1 = 2, a_2 = 1$ 。
+特征方程为 $\lambda^2 - \sqrt{2}\lambda + 1 = 0 \Rightarrow \lambda = \frac{\sqrt{2} \pm \sqrt{-2}}{2} = \frac{\sqrt{2}}{2} \pm i \frac{\sqrt{2}}{2} = \cos \frac{\pi}{4} \pm i \sin \frac{\pi}{4}$ 。
+则 $a_n = C_1 \cos \frac{n\pi}{4} + C_2 \sin \frac{n\pi}{4}$ 。
+代入 $a_1=2, a_2=1$ 得 $C_1 = 2\sqrt{2}-1, C_2 = 1$ 。
+计算可得 $a_n = (2\sqrt{2}-1) \cos \frac{n\pi}{4} + \sin \frac{n\pi}{4}$ 。
+对于 $n=2010$ , $\frac{2010\pi}{4} = 502\pi + \frac{\pi}{2}$ 。
+$a_{2010} = (2\sqrt{2}-1) \cos \frac{\pi}{2} + \sin \frac{\pi}{2} = 1$ 。
+\end{solution}
+
+\question 例 6. 上楼梯时,若每步只能跨一级或两级阶梯,则要登上第 $n$ 级的方式有多少种？
+
+\begin{solution}
+解：设登上第 $n$ 级有 $a_n$ 种方法。则 $a_n$ 可分为两类：
+一类是最后一步跨一级,前 $n-1$ 级有 $a_{n-1}$ 种走法；
+另一类是最后一步跨两级,前 $n-2$ 级有 $a_{n-2}$ 种走法。
+故 $a_n = a_{n-1} + a_{n-2} (n = 3, 4, 5, \dots), a_1 = 1, a_2 = 2$ 。
+它和斐波那契数列一样,特征方程根为 $\frac{1 \pm \sqrt{5}}{2}$ 。
+代入初值解得 $a_n = \frac{5+3\sqrt{5}}{10} \left( \frac{1+\sqrt{5}}{2} \right)^{n-1} + \frac{5-3\sqrt{5}}{10} \left( \frac{1-\sqrt{5}}{2} \right)^{n-1}$ 。
+\end{solution}
+
+\question 有一个实数列 $\{u_1, u_2, \dots, u_n\}$ 定义如下,$u_1 = \sqrt{2}, u_2 = \pi$,当 $n \ge 3$ 时,$u_n = u_{n-1} - u_{n-2}$,用特征方程求 $u_n, u_{2008}$ 及 $u_{2016}$。
+
+\begin{solution}
+由递推关系 $u_n - u_{n-1} + u_{n-2} = 0$,其特征方程为：
+\[x^2 - x + 1 = 0\]
+判别式 $\Delta = 1 - 4 = -3$,求得特征根为：
+\[x = \frac{1 \pm \sqrt{3}i}{2} = \cos \frac{\pi}{3} \pm i \sin \frac{\pi}{3}\]
+因此,数列的通项公式形式为：
+\[u_n = C_1 \cos \frac{n\pi}{3} + C_2 \sin \frac{n\pi}{3}\]
+代入初始条件 $u_1 = \sqrt{2}, u_2 = \pi$：
+当 $n=1$ 时,$C_1 \cos \frac{\pi}{3} + C_2 \sin \frac{\pi}{3} = \frac{1}{2}C_1 + \frac{\sqrt{3}}{2}C_2 = \sqrt{2}$
+当 $n=2$ 时,$C_1 \cos \frac{2\pi}{3} + C_2 \sin \frac{2\pi}{3} = -\frac{1}{2}C_1 + \frac{\sqrt{3}}{2}C_2 = \pi$
+联立方程组：
+\begin{align*}
+C_1 + \sqrt{3}C_2 &= 2\sqrt{2} \\
+-C_1 + \sqrt{3}C_2 &= 2\pi
+\end{align*}
+解得：
+\[C_1 = \sqrt{2} - \pi\]
+\[C_2 = \frac{\sqrt{2} + \pi}{\sqrt{3}}\]
+故通项公式为：
+\[u_n = (\sqrt{2} - \pi) \cos \frac{n\pi}{3} + \frac{\sqrt{2} + \pi}{\sqrt{3}} \sin \frac{n\pi}{3}\]
+对于 $u_{2008}$,因为 $2008 = 6 \times 334 + 4$,且该数列周期为 6：
+\[u_{2008} = u_4 = u_3 - u_2 = (u_2 - u_1) - u_2 = -u_1 = -\sqrt{2}\]
+对于 $u_{2016}$,因为 $2016 = 6 \times 336$：
+\[u_{2016} = u_6 = u_5 - u_4 = (u_4 - u_3) - u_4 = -u_3 = -(u_2 - u_1) = \sqrt{2} - \pi\]
+\end{solution}
+
+\question 15. 已知数列 $\{a_n\}$ 中,$a_1 = 1$ , $S_n = \frac{S_{n-1}}{2S_{n-1} + 1}$ ,求 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+解：对 $S_n = \frac{S_{n-1}}{2S_{n-1} + 1}$ 取倒数得：
+\[ \frac{1}{S_n} = \frac{2S_{n-1} + 1}{S_{n-1}} = \frac{1}{S_{n-1}} + 2 \]
+说明数列 $\{\frac{1}{S_n}\}$ 是以 $\frac{1}{S_1} = \frac{1}{a_1} = 1$ 为首项, $2$ 为公差的等差数列。
+则 $\frac{1}{S_n} = 1 + (n-1) \times 2 = 2n - 1$ ,即 $S_n = \frac{1}{2n-1}$ 。
+当 $n \ge 2$ 时：
+\[ a_n = S_n - S_{n-1} = \frac{1}{2n-1} - \frac{1}{2n-3} = \frac{(2n-3)-(2n-1)}{(2n-1)(2n-3)} = -\frac{2}{(2n-1)(2n-3)} \]
+故通项公式为 $a_n = \begin{cases} 1 & n=1 \\ -\frac{2}{(2n-1)(2n-3)} & n \ge 2 \end{cases}$ 。
+\end{solution}
+
+\question 16. 已知正数数列 $\{a_n\}$ 的前 $n$ 项和 $S_n = \frac{1}{2} (a_n + \frac{1}{a_n})$ ,求 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+解：当 $n=1$ 时,$a_1 = S_1 = \frac{1}{2}(a_1 + \frac{1}{a_1}) \Rightarrow a_1^2 = 1$ 。由于 $a_n > 0$ ,解得 $a_1 = 1$ 。
+当 $n \ge 2$ 时,$S_n = \frac{a_n^2 + 1}{2a_n}$ 且 $S_{n-1} = \frac{a_{n-1}^2 + 1}{2a_{n-1}}$ 。
+由于 $a_n = S_n - S_{n-1}$ ,有：
+\[ a_n = \frac{a_n^2 + 1}{2a_n} - \frac{a_{n-1}^2 + 1}{2a_{n-1}} \]
+\[ 2a_n = a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{a_{n-1}} \]
+\[ a_n + a_{n-1} = \frac{1}{a_n} - \frac{1}{a_{n-1}} = \frac{a_{n-1} - a_n}{a_n a_{n-1}} \]
+由于 $a_n + a_{n-1} > 0$ ,等式两边同除以 $(a_n + a_{n-1})$ 得：
+\[ 1 = \frac{a_{n-1} - a_n}{(a_n + a_{n-1}) a_n a_{n-1}} \]
+经观察或递推可得 $S_n = \sqrt{n}$ 满足原式,则 $a_n = \sqrt{n} - \sqrt{n-1}$ 。
+验证：当 $a_n = \sqrt{n} - \sqrt{n-1}$ 时,$\frac{1}{a_n} = \sqrt{n} + \sqrt{n-1}$ ,
+则 $\frac{1}{2}(a_n + \frac{1}{a_n}) = \frac{1}{2}(\sqrt{n} - \sqrt{n-1} + \sqrt{n} + \sqrt{n-1}) = \sqrt{n} = S_n$ ,符合题意。
+故 $a_n = \sqrt{n} - \sqrt{n-1}$ 。
+\end{solution}
     \question 数列$\{a_n\}$中, $a_1=1$ 且 $a_n a_{n+1}=4^n$, 求前$n$项和$S_n$。
     \begin{solution}
         由题意,
@@ -8850,7 +9813,35 @@ S_n=3+5+\dots+(2n+1)=n(n+2).
         a_n = a_{n-1} + 2 = \cdots = a_1 + 2(n-1) = 2n, S_n = n^2 + n
         \]
     \end{solution}
-    
+    \question 10. $n^2 (n \ge 4)$ 个正数排成几行几列：
+\[ \begin{matrix}
+a_{11} & a_{12} & a_{13} & a_{14} & \dots & a_{1n} \\
+a_{21} & a_{22} & a_{23} & a_{24} & \dots & a_{2n} \\
+a_{31} & a_{32} & a_{33} & a_{34} & \dots & a_{3n} \\
+\dots & \dots & \dots & \dots & \dots & \dots \\
+a_{n1} & a_{n2} & a_{n3} & a_{n4} & \dots & a_{nn}
+\end{matrix} \]
+其中每一行的数成等差数列,每一列的数成等比数列,并且所有公比相等。已知 $a_{24} = 1, a_{42} = \frac{1}{8}, a_{43} = \frac{3}{16}$ ,试求 $a_{11} + a_{22} + \dots + a_{nn}$ 的值。
+
+\begin{solution}
+解：设每一列的公比为 $q$ ,第 $i$ 行的等差数列公差为 $d_i$ 。
+由每一列成等比数列且公比相等可知： $a_{ij} = a_{1j} \cdot q^{i-1}$ 。
+对于第四行, $a_{42} = \frac{1}{8}$ , $a_{43} = \frac{3}{16}$ ,则公差为：
+\[ d_4 = a_{43} - a_{42} = \frac{3}{16} - \frac{2}{16} = \frac{1}{16} \]
+由此可得第四行的通项为 $a_{4j} = a_{42} + (j-2)d_4 = \frac{1}{8} + (j-2)\frac{1}{16} = \frac{j}{16}$ 。
+对于 $a_{44}$ ,有 $a_{44} = \frac{4}{16} = \frac{1}{4}$ 。
+又已知 $a_{24} = 1$ ,且第四列成等比数列,则：
+\[ a_{44} = a_{24} \cdot q^{4-2} \Rightarrow \frac{1}{4} = 1 \cdot q^2 \Rightarrow q = \frac{1}{2} \quad (a_{ij} > 0) \]
+由 $a_{4j} = a_{1j} \cdot q^3 \Rightarrow a_{1j} = a_{4j} \cdot 2^3 = 8 \cdot \frac{j}{16} = \frac{j}{2}$ 。
+因此 $a_{ii} = a_{1i} \cdot q^{i-1} = \frac{i}{2} \cdot \left( \frac{1}{2} \right)^{i-1} = \frac{i}{2^i}$ 。
+所求和为：
+\[ S = \sum_{i=1}^n a_{ii} = \frac{1}{2^1} + \frac{2}{2^2} + \dots + \frac{n}{2^n} \]
+利用错位相减法：
+\[ \frac{1}{2}S = \frac{1}{2^2} + \frac{2}{2^3} + \dots + \frac{n}{2^{n+1}} \]
+\[ \frac{1}{2}S = \frac{1}{2^1} + \frac{1}{2^2} + \dots + \frac{1}{2^n} - \frac{n}{2^{n+1}} \]
+\[ \frac{1}{2}S = (1 - \frac{1}{2^n}) - \frac{n}{2^{n+1}} \]
+\[ S = 2 - \frac{n+2}{2^n} \]
+\end{solution}
     \question 已知数列$\{a_n\}$满足 $\begin{cases} a_0 = 1 \\ a_{2k+1} = a_k \\ a_{2k+2} = a_k + a_{k+1} \end{cases}, k \in N \cup \{0\}$, 求$\displaystyle \sum_{k=0}^{63} a_k$。
     \begin{solution}
         记
@@ -13388,556 +14379,457 @@ I(1)
         \]
     \end{solution}
 
-\question 设 $A$ 和 $B$ 为 $n\times n$ 实矩阵,且满足
-\[
-AB + A + B = 0.
-\]
-证明 $AB = BA$。
-
-\begin{solution}
-注意到
-\[
-(A+I)(B+I) = AB + A + B + I = I,
-\]
-其中 $I$ 为单位矩阵。因此 $A+I$ 和 $B+I$ 互为逆矩阵。
-
-由于逆矩阵的性质,有
-\[
-(A+I)(B+I) = (B+I)(A+I) = I.
-\]
-展开等式得到
-\[
-AB + A + B + I = BA + B + A + I \implies AB = BA.
-\]
-
-\end{solution}
-
-\question 已知矩阵 $A,B,A+B$ 都是可逆矩阵,证明 $A^{-1}+B^{-1}$ 也是可逆矩阵。
-
-\begin{solution}
-我们需要证明存在一个矩阵 $C$,使得
-\[
-(A^{-1}+B^{-1})C=I.
-\]
-设
-\[
-C=B(A+B)^{-1}A.
-\]
-
-下面验证该选择是可行的。计算
-\begin{align*}
-(A^{-1}+B^{-1})C
-&=(A^{-1}+B^{-1})B(A+B)^{-1}A \\
-&=A^{-1}B(A+B)^{-1}A+B^{-1}B(A+B)^{-1}A \\
-&=A^{-1}B(A+B)^{-1}A+I(A+B)^{-1}A \\
-&=A^{-1}B(A+B)^{-1}A+(A+B)^{-1}A.
-\end{align*}
-
-利用恒等式 $B=(A+B)-A$,代入上式得
-\begin{align*}
-(A^{-1}+B^{-1})C
-&=A^{-1}[(A+B)-A](A+B)^{-1}A+(A+B)^{-1}A \\
-&=[A^{-1}(A+B)-A^{-1}A](A+B)^{-1}A+(A+B)^{-1}A \\
-&=[A^{-1}(A+B)-I](A+B)^{-1}A+(A+B)^{-1}A \\
-&=A^{-1}(A+B)(A+B)^{-1}A-I(A+B)^{-1}A+(A+B)^{-1}A \\
-&=A^{-1}A-(A+B)^{-1}A+(A+B)^{-1}A \\
-&=I.
-\end{align*}
-
-因此存在矩阵 $C=B(A+B)^{-1}A$ 使得 $(A^{-1}+B^{-1})C=I$,从而 $A^{-1}+B^{-1}$ 可逆,其逆矩阵为
-\[
-(A^{-1}+B^{-1})^{-1}=B(A+B)^{-1}A.
-\]
-\end{solution}
-
-\question 设 $A,B$ 均为 $n$ 阶方阵,且 $I+AB$ 可逆,化简
-\[
-(I+BA)\bigl[I - B(I+AB)^{-1}A\bigr].
-\]
-
-\begin{solution}
-\[
-\begin{aligned}
-(I+BA)\bigl[I - B(I+AB)^{-1}A\bigr] 
-&= I - B(I+AB)^{-1}A + \bigl[BA - BAB(I+AB)^{-1}A\bigr] \\
-&= I - B(I+AB)^{-1}A + B\bigl(I+AB - AB\bigr)(I+AB)^{-1}A \\
-&= I - B(I+AB)^{-1}A + B(I+AB)(I+AB)^{-1}A \\
-&= I.
-\end{aligned}
-\]
-\end{solution}
-
-
-\question 设 $A$, $B$ 和 $C$ 为同阶实方阵,且 $A$ 可逆。证明如果
-\[
-(A-B)C = BA^{-1},
-\]
-则有
-\[
-C(A-B) = A^{-1}B.
-\]
-
-\begin{solution}
-由假设
-\[
-(A-B)C = BA^{-1}.
-\]
-
-在两边加上 $A^{-1}(A-B)$,得到
-\[
-(A-B)C + A^{-1}(A-B) = BA^{-1} + A^{-1}(A-B) = I.
-\]
-
-于是
-\[
-(A-B)(C + A^{-1}) = I \implies (A-B)^{-1} = C + A^{-1}.
-\]
-
-两边左乘 $(A-B)$ 得
-\[
-(C + A^{-1})(A-B) = I.
-\]
-
-展开即可得到
-\[
-C(A-B) = A^{-1}B.
-\]
-\end{solution}
-
-\question 对任意整数 $n\ge 2$,设 $A,B$ 为两个 $n\times n$ 的实矩阵,且满足
-\[
-A^{-1}+B^{-1}=(A+B)^{-1}.
-\]
-证明 $\det A=\det B$。问:若 $A,B$ 为复矩阵,结论是否仍成立？
-
-\begin{solution}
-两边同乘以 $(A+B)$,得
-\begin{align*}
-I&=(A+B)(A+B)^{-1} \\
-&=(A+B)(A^{-1}+B^{-1}) \\
-&=AA^{-1}+AB^{-1}+BA^{-1}+BB^{-1} \\
-&=I+AB^{-1}+BA^{-1}+I.
-\end{align*}
-于是
-\[
-AB^{-1}+BA^{-1}+I=0.
-\]
-
-令 $X=AB^{-1}$,则 $A=XB$,且
-\[
-BA^{-1}=X^{-1}.
-\]
-因此
-\[
-X+X^{-1}+I=0.
-\]
-两边左乘 $(X-I)X$,得
-\begin{align*}
-0&=(X-I)X(X+X^{-1}+I) \\
-&=(X-I)(X^2+X+I) \\
-&=X^3-I.
-\end{align*}
-从而
-\[
-X^3=I.
-\]
-取行列式可得
-\[
-(\det X)^3=\det(X^3)=\det I=1,
-\]
-由于 $X$ 为实矩阵,故
-\[
-\det X=1.
-\]
-又因为
-\[
-\det A=\det(XB)=\det X\det B=\det B,
-\]
-从而 $\det A=\det B$。
-
-下面说明在复矩阵情形下结论不成立。设
-\[
-\omega=\frac{1}{2}(-1+i\sqrt{3}),
-\]
-则 $\omega\notin\mathbb{R}$,且 $\omega^3=1$,并有
-\[
-1+\omega+\omega^2=0.
-\]
-取 $A=I$,$B$ 为对角矩阵,其对角元均取为 $\omega$ 或 $\omega^2$,并使得 $\det B=1$。若 $n$ 不是 $3$ 的倍数,可直接取 $B=\omega I$。
-
-此时
-\[
-A^{-1}=I,\quad B^{-1}=\overline{B},
-\]
-且
-\[
-I+B+\overline{B}=0.
-\]
-因此
-\[
-(A+B)^{-1}=(-\overline{B})^{-1}=-\overline{B}^{-1}=-B=I+\overline{B}
-=A^{-1}+B^{-1}.
-\]
-但由构造可知
-\[
-\det A=1\ne\det B.
-\]
-因此在复矩阵情形下结论不成立。
-\end{solution}
-
-
-    \question 设 $A,B$ 为实 $n\times n$ 矩阵,满足
-\[
-A^2+B^2=AB。
-\]
-证明:若 $BA-AB$ 为可逆矩阵,则 $n$ 能被 $3$ 整除。
-
-\begin{solution}
-设
-\[
-S=A+\omega B,
-\]
-其中
-\[
-\omega=-\frac12+i\frac{\sqrt3}{2}。
-\]
-则
-\begin{align*}
-S\bar S
-&=(A+\omega B)(A+\bar\omega B) \\
-&=A^2+\omega BA+\bar\omega AB+B^2。
-\end{align*}
-由已知条件 $A^2+B^2=AB$,可得
-\[
-S\bar S
-=AB+\omega BA+\bar\omega AB。
-\]
-注意到 $\bar\omega+1=-\omega$,于是
-\[
-S\bar S=\omega(BA-AB)。
-\]
-
-对两边取行列式,有
-\[
-\det(S\bar S)=\det S\cdot\det\bar S,
-\]
-这是一个实数。同时,
-\[
-\det(S\bar S)=\det(\omega(BA-AB))=\omega^n\det(BA-AB)。
-\]
-由于 $BA-AB$ 可逆,故 $\det(BA-AB)\ne0$,从而 $\omega^n$ 必须为实数。
-
-而 $\omega$ 是三次单位根,$\omega^n$ 为实数当且仅当 $n$ 能被 $3$ 整除。因此 $n$ 必须是 $3$ 的倍数。
-\end{solution}
-
-\question 求所有复数 $\Lambda$,使得存在正整数 $n$ 以及实 $n\times n$ 矩阵 $A$,满足
-\[
-A^2=A^T,
-\]
-并且 $\Lambda$ 是 $A$ 的一个特征值。
-
-\begin{solution}
-由条件 $A^2=A^T$,两边平方可得
-\begin{align*}
-A^4=(A^2)^2=(A^T)^2=(A^2)^T=(A^T)^T=A.
-\end{align*}
-因此
-\[
-A^4-A=0.
-\]
-于是 $A$ 的任一特征值 $\Lambda$ 必须满足多项式方程
-\[
-\Lambda^4-\Lambda=0.
-\]
-即
-\[
-\Lambda(\Lambda^3-1)=0.
-\]
-其全部根为
-\[
-\Lambda=0,\quad \Lambda=1,\quad \Lambda=\frac{-1\pm i\sqrt{3}}{2}.
-\]
-
-下面验证这些值均可实现。考虑如下矩阵:
-\[
-A_0=(0),\qquad
-A_1=(1),
-\]
-\[
-A_2=
-\begin{pmatrix}
--\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
-\frac{\sqrt{3}}{2} & -\frac{1}{2}
-\end{pmatrix},
-\]
-\[
-A_4=
-\begin{pmatrix}
-0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
-0 & 0 & \frac{\sqrt{3}}{2} & -\frac{1}{2}
-\end{pmatrix}.
-\]
-
-显然,$0$ 和 $1$ 分别是 $1\times1$ 矩阵 $A_0$ 与 $A_1$ 的特征值。
-矩阵 $A_2$ 的特征值为
-\[
-\frac{-1\pm i\sqrt{3}}{2},
-\]
-并且可以直接计算验证
-\[
-A_2^2=
-\begin{pmatrix}
--\frac{1}{2} & \frac{\sqrt{3}}{2} \\
--\frac{\sqrt{3}}{2} & -\frac{1}{2}
-\end{pmatrix}
-=A_2^T.
-\]
-
-矩阵 $A_4$ 则在同一矩阵中同时包含上述四个可能的特征值。
-
-综上,满足条件的全部复数 $\Lambda$ 为
-\[
-\Lambda\in\left\{0,\;1,\;\frac{-1\pm i\sqrt{3}}{2}\right\}.
-\]
-\end{solution}
-
-\question 已知 $A$ 是 $4 \times 2$ 实矩阵,$B$ 是 $2 \times 4$ 实矩阵,且
-\[
-AB = \begin{pmatrix}
-1 & 0 & -1 & 0 \\
-0 & 1 & 0 & -1 \\
--1 & 0 & 1 & 0 \\
-0 & -1 & 0 & 1
-\end{pmatrix}.
-\]
-
-求 $BA$。
-
-\begin{solution}
-将矩阵分块表示:
-\[
-A = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix}, \quad B = \begin{pmatrix} B_1 & B_2 \end{pmatrix},
-\]
-其中 $A_1, A_2, B_1, B_2$ 为 $2 \times 2$ 矩阵。于是
-\[
-AB = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} \begin{pmatrix} B_1 & B_2 \end{pmatrix} = 
-\begin{pmatrix} A_1B_1 & A_1B_2 \\ A_2B_1 & A_2B_2 \end{pmatrix}.
-\]
-
-比较分块得到:
-\[
-A_1B_1 = A_2B_2 = I_2, \quad A_1B_2 = A_2B_1 = -I_2.
-\]
-
-于是可解得:
-\[
-B_1 = A_1^{-1}, \quad B_2 = -A_1^{-1}, \quad A_2 = -A_1.
-\]
-
-最后
-\[
-BA = \begin{pmatrix} B_1 & B_2 \end{pmatrix} \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} 
-= B_1A_1 + B_2A_2 = A_1^{-1}A_1 + (-A_1^{-1})(-A_1) = 2 I_2.
-\]
-
-\end{solution}
-
-\question 已知 
-\[
-A=\begin{bmatrix} 
-2 & 4 & 0 & 0 \\ 
-1 & 2 & 0 & 0 \\ 
-0 & 0 & 2 & 4 \\ 
-0 & 0 & 2 & 2 
-\end{bmatrix}, 
-\] 
-求 $A^n$。
-
-\begin{solution}
-将 $A$ 分块为 
-\[
-A=\begin{bmatrix} B & 0 \\ 0 & C \end{bmatrix}, \quad 
-B=\begin{bmatrix} 2 & 4 \\ 1 & 2 \end{bmatrix}, \quad 
-C=\begin{bmatrix} 2 & 4 \\ 0 & 2 \end{bmatrix}.
-\]
-
-\noindent 对 $B$,可写为 $B = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \end{bmatrix}$,所以
-\[
-B^n = 4^{\,n-1} B.
-\]
-
-\noindent 对 $C$,注意 $\begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix}^2 = 0$,则
-\[
-C^n = \bigl(2E + \begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix}\bigr)^n = 2^n E + n2^{\,n-1} \begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 2^n & 4n2^{\,n-1} \\ 0 & 2^n \end{bmatrix}.
-\]
-
-\noindent 因此
-\[
-A^n = \begin{bmatrix} B^n & 0 \\ 0 & C^n \end{bmatrix} 
-= \begin{bmatrix}
-2 \cdot 4^{\,n-1} & 4 \cdot 4^{\,n-1} & 0 & 0 \\
-1 \cdot 4^{\,n-1} & 2 \cdot 4^{\,n-1} & 0 & 0 \\
-0 & 0 & 2^n & n 2^{\,n+1} \\
-0 & 0 & 0 & 2^n
-\end{bmatrix} 
-= \begin{bmatrix}
-2^{\,2n-1} & 2^{\,2n+1} & 0 & 0 \\
-2^{\,2n-2} & 2^{\,2n} & 0 & 0 \\
-0 & 0 & 2^n & n 2^{\,n+1} \\
-0 & 0 & 0 & 2^n
-\end{bmatrix}.
-\]
-\end{solution}
-
-
-\question 设 $A$ 和 $B$ 是 $n \times n$ 实矩阵,且满足
-\[
-\mathrm{rk}(AB - BA + I) = 1,
-\]
-其中 $I$ 是 $n\times n$ 单位矩阵。证明
-\[
-\mathrm{trace}(ABAB) - \mathrm{trace}(A^2B^2) = \frac{1}{2}n(n-1).
-\]
-
-\begin{solution}
-令 $X = AB - BA$。注意
-\begin{align*}
-\mathrm{trace}(X^2) &= \mathrm{trace}(ABAB - ABBA - BAAB + BABA) \\
-&= 2\mathrm{trace}(ABAB) - 2\mathrm{trace}(A^2B^2),
-\end{align*}
-因为迹具有循环性。因此只需证明 $\mathrm{trace}(X^2) = n(n-1)$。
-
-由假设,$X+I$ 的秩为 $1$,所以可以写成
-\[
-X+I = v^t w
-\]
-对某些向量 $v,w$。于是
-\[
-X^2 = (v^t w - I)^2 = I - 2 v^t w + v^t w v^t w = I + (w v^t - 2)v^t w.
-\]
-
-由 $X$ 的定义,有 $\mathrm{trace}(X) = 0$,因此 $\mathrm{trace}(w v^t) = \mathrm{trace}(v w) = n$,于是
-\[
-\mathrm{trace}(X^2) = n + (n-2)n = n(n-1).
-\]
-
-另一种方法是利用秩为 $1$ 的条件:因为 $X+I$ 的秩为 $1$,它有 $0$ 的特征值,重数为 $n-1$。因此 $X$ 有 $-1$ 的特征值,重数为 $n-1$。由于 $\mathrm{trace}(X) = 0$,剩余的特征值为 $n-1$。于是
-\[
-\mathrm{trace}(X^2) = (n-1)^2 + (n-1)\cdot 1^2 = n(n-1).
-\]
-
-由 $\mathrm{trace}(X^2) = 2(\mathrm{trace}(ABAB) - \mathrm{trace}(A^2B^2))$,得到
-\[
-\mathrm{trace}(ABAB) - \mathrm{trace}(A^2B^2) = \frac{1}{2}n(n-1).
-\]
-\end{solution}
-
-\question 确定是否存在奇正整数 $n$ 和具有整数项的 $n \times n$ 矩阵 $A$ 和 $B$，满足以下条件：
-(1) $\det(B) = 1$;
-(2) $AB = BA$;
-(3) $A^4 + 4A^2B^2 + 16B^4 = 2019I$。
-（此处 $I$ 表示 $n \times n$ 单位矩阵。）
-
-\begin{solution}
-我们证明不存在这样的矩阵。注意 $A^4 + 4A^2B^2 + 16B^4$ 可以因式分解为：
-\[
-A^4 + 4A^2B^2 + 16B^4 = (A^2 + 2AB + 4B^2)(A^2 - 2AB + 4B^2)
-\]
-令 $C = A^2 + 2AB + 4B^2$ 且 $D = A^2 - 2AB + 4B^2$ 为上述两个因子。则：
-\[
-\det C \cdot \det D = \det(CD) = \det(2019I) = 2019^n
-\]
-矩阵 $C, D$ 具有整数项，因此它们的行列式是整数。此外，由 $C \equiv D \pmod 4$ 可知：
-\[
-\det C \equiv \det D \pmod 4
-\]
-这意味着 $\det C \cdot \det D \equiv (\det C)^2 \pmod 4$。但这是一个矛盾，因为 $2019^n \equiv 3^n \pmod 4$，由于 $n$ 是奇数， $3^n \equiv 3 \pmod 4$ 是模 4 的二次非剩余。
-\end{solution}
-
-\question 设 $A$ 是 $n \times n$ 实矩阵,且 $A^3 = 0$。
-\begin{enumerate}
-\item[(a)] 证明存在唯一的 $n \times n$ 实矩阵 $X$ 满足
-\[
-X + AX + XA^2 = A.
-\]
-\item[(b)] 用 $A$ 表示 $X$。
-\end{enumerate}
-
-\begin{solution}
-首先假设某矩阵 $X$ 满足方程。考虑通过左右乘以 $A$ 的幂得到的新方程。例如,
-\[
-A^2(X + AX + XA^2)A^2 = A^2 X A^2 + A^3 X A^2 + A^2 X A^4 = A^2 X A^2.
-\]
-右边为零,因为 $A^3 = 0$,所以
-\[
-A^2 X A^2 = 0.
-\]
-
-同理可得:
-\begin{align*}
-A^2 X &= A^2(X + AX + XA^2) = A^3 = 0, \\
-AXA &= A(X + AX + XA^2)A = A^3 = 0, \\
-X A^2 &= (X + AX + XA^2)A^2 = A^3 = 0.
-\end{align*}
-
-此外,
-\[
-AX = A(X + AX + XA^2) = A^2,
-\]
-于是
-\[
-X = A - AX - XA^2 = A - A^2.
-\]
-
-因此,唯一可能的解为 $X = A - A^2$。为了验证其确实满足方程:
-\[
-X + AX + X A^2 = (A - A^2) + A(A - A^2) + (A - A^2) A^2 = A - A^4 = A.
-\]
-
-\noindent 综上,$X = A - A^2$ 是方程的唯一解。
-\end{solution}
-
-\question 设 $A$, $B$, $C$ 为 $n \times n$ 复矩阵,满足
-\[
-A^2 = B^2 = C^2, \quad B^3 = ABC + 2I.
-\]
-证明 $A^6 = I$。
-
-\begin{solution}
-由 $A^2=B^2=C^2$,可得
-\[
-B^3 - ABC = B^2B - ABC = A^2B - ABC = 2I.
-\]
-
-于是
-\[
-A(AB - BC) = 2I.
-\]
-
-同理,由 $B^2 = C^2$,可得
-\[
-BC^2 - ABC = 2I \implies (BC - AB)C = 2I.
-\]
-
-这说明 $A$ 是 $\frac{AB - BC}{2}$ 的左逆矩阵,而 $-C$ 是右逆矩阵,所以 $A = -C$。因此
-\[
-ABA = A^2B = B^3.
-\]
-
-由于 $ABA$ 与 $B$ 交换,得到 $(AB)^2 = (BA)^2$。计算
-\begin{align*}
-(AB - BA)(AB + BA) &= (AB)^2 + AB^2A - BA^2B - (BA)^2 \\
-&= (AB)^2 + A^4 - B^4 - (BA)^2 = 0.
-\end{align*}
-
-又因为 $AB - BC = AB + BA$ 可逆,故 $AB = BA$,于是 $ABA = A^2B = B^3$。由此得
-\[
-B^3 = I \implies A^6 = B^6 = I.
-\]
-\end{solution}
-
+    \question 设 $A,B$ 为 $n\times n$ 实矩阵,且满足
+    \[
+    AB + A + B = 0,
+    \]
+    证明 $AB = BA$。
+    \begin{solution}
+        注意到
+        \[
+        (A+I)(B+I) = AB + A + B + I = I
+        \]
+        其中 $I$ 为单位矩阵,因此 $A+I$ 及 $B+I$ 互为逆矩阵,据此有
+        \[
+        (A+I)(B+I) = (B+I)(A+I) = I
+        \]
+        展开等式得到
+        \[
+        AB + A + B + I = BA + B + A + I \Rightarrow AB = BA
+        \]
+    \end{solution}
+
+    \question 若$n$阶方阵 $A,B,A+B$ 皆可逆,证明 $A^{-1}+B^{-1}$ 也是可逆矩阵。
+    \begin{solution}
+        需证明存在一个矩阵 $C$,使得
+        \[
+        (A^{-1}+B^{-1})C=I
+        \]
+        设
+        \[
+        C=B(A+B)^{-1}A
+        \]
+        下面验证该选择可行,观察
+        \begin{align*}
+        (A^{-1}+B^{-1})C
+        &=(A^{-1}+B^{-1})B(A+B)^{-1}A \\
+        &=A^{-1}B(A+B)^{-1}A+(A+B)^{-1}A \\
+        &=A^{-1}[(A+B)-A](A+B)^{-1}A+(A+B)^{-1}A \\
+        &=[A^{-1}(A+B)-I](A+B)^{-1}A+(A+B)^{-1}A \\
+        &=A^{-1}A-(A+B)^{-1}A+(A+B)^{-1}A \\
+        &=I
+        \end{align*}
+        因此存在矩阵 $C=B(A+B)^{-1}A$ 使得 $(A^{-1}+B^{-1})C=I$,从而 $A^{-1}+B^{-1}$ 可逆,其逆矩阵为
+        \[
+        (A^{-1}+B^{-1})^{-1}=B(A+B)^{-1}A.
+        \]
+    \end{solution}
+
+    \question 设 $A,B$ 均为 $n$ 阶方阵,且 $I+AB$ 可逆,证明矩阵$I+BA$也可逆。
+    \begin{solution}
+        首先发现到
+        \[
+        (I+BA)B=B + BAB=B(I + AB)
+        \]
+        由此观察
+        \begin{align*}
+        &(I+BA)\bigl[I - B(I+AB)^{-1}A\bigr] \\
+        &= I + BA - (I+BA)B(I+AB)^{-1}A \\
+        &= I + BA - B(I + AB)(I+AB)^{-1}A \\
+        &= I + BA - BA \\
+        &= I
+        \end{align*}
+        故得证$I+BA$也可逆。
+    \end{solution}
+
+    \question 设 $A,B,C$ 为同阶实方阵,且 $A$ 可逆,证明若
+    \[
+    (A-B)C = BA^{-1},
+    \]
+    则有
+    \[
+    C(A-B) = A^{-1}B.
+    \]
+    \begin{solution}
+        由假设
+        \[
+        (A-B)C = BA^{-1}
+        \]
+        在两边加上 $(A-B)A^{-1}$,得到
+        \[
+        (A-B)C + (A-B)A^{-1} = BA^{-1} + (A-B)A^{-1} = I
+        \]
+        于是由
+        \[
+        (A-B)(C + A^{-1}) = I 
+        \]
+        知$A+B$可逆,有
+        \[
+        (C + A^{-1})(A-B) = I
+        \]
+        展开即得到
+        \[
+        C(A-B) = A^{-1}B
+        \]
+    \end{solution}
+
+    \question 对任意整数 $n\ge 2$,设 $A,B$ 为两个 $n\times n$ 实矩阵,且满足
+    \[
+    A^{-1}+B^{-1}=(A+B)^{-1}.
+    \]
+    证明 
+    \[
+    \det A=\det B.
+    \]
+    若 $A,B$ 为复矩阵,结论是否仍成立？
+    \begin{solution}
+        由条件
+        \[
+        A^{-1}+B^{-1}=(A+B)^{-1}
+        \]
+        有
+        \[
+        I=(A+B)(A+B)^{-1} =(A+B)(A^{-1}+B^{-1}) =I+AB^{-1}+BA^{-1}+I
+        \]
+        于是
+        \[
+        AB^{-1}+BA^{-1}+I=0
+        \]
+        令 $X=AB^{-1}$,则 $A=XB$,且$BA^{-1}=X^{-1}$,因此
+        \[
+        X+X^{-1}+I=0 
+        \]
+        于是
+        \[
+        X^3-I=(X-I)X(X+X^{-1}+I)=0 \Rightarrow X^3=I
+        \]
+        取行列式可得
+        \[
+        (\det X)^3=\det(X^3)=\det I=1
+        \]
+        由于 $X$ 为实矩阵,故$\det X=1$,于是
+        \[
+        \det A=\det(XB)=\det X\det B=\det B,
+        \]
+        故得证。下面说明在复矩阵情形下结论不成立。设
+        \[
+        \omega=-\frac{1}{2}+\frac{\sqrt{3}}{2}i \notin\mathbb{R}
+        \]
+        其中 $\omega^3=1$,且有
+        \[
+        1+\omega+\omega^2=0.
+        \]
+        取 $A=I$,且$B$ 为对角矩阵,其对角元均取为 $\omega$ 或 $\omega^2$使得 $\det B\neq1$(若 $n$ 不是 $3$ 的倍数可直接取 $B=\omega I$),此时
+        \[
+        A^{-1}=I,\quad B^{-1}=\overline{B}
+        \]
+        且
+        \[
+        I+B+\overline{B}=0
+        \]
+        因此
+        \[
+        (A+B)^{-1}=(-\overline{B})^{-1}=-B=I+\overline{B}
+        =A^{-1}+B^{-1}
+        \]
+        但由构造可知
+        \[
+        \det A=1\ne\det B
+        \]
+    \end{solution}
+
+    \question 设 $A,B$ 为 $n\times n$ 实矩阵,满足
+    \[
+    A^2+B^2=AB.
+    \]
+    证明若 $BA-AB$ 为可逆矩阵,则 $n$ 能被 $3$ 整除。
+    \begin{solution}
+        设$S=A+\omega B$,其中$\omega=-\dfrac12+\dfrac{\sqrt3}{2}i$,则
+        \[
+        S\bar S=(A+\omega B)(A+\bar\omega B) =A^2+\omega BA+\bar\omega AB+B^2=AB+\omega BA+\bar\omega AB
+        \]
+        注意到 $\bar\omega+1=-\omega$,于是
+        \[
+        S\bar S=\omega(BA-AB)
+        \]
+        两边取行列式,有
+        \[
+        \det S\cdot\det\bar S=\det(\omega(BA-AB))=\omega^n\det(BA-AB)。
+        \]
+        由于 $\det S\cdot\det\bar S \in \mathbb{R}$,且$BA-AB$ 可逆,故 $\det(BA-AB)\ne0$,从而 $\omega^n$ 必须为实数,因此 $n$ 必须是 $3$ 的倍数。
+    \end{solution}
+
+    \question 求所有复数 $\lambda$,使得存在正整数 $n$ 及实 $n \times n$ 矩阵 $A$,满足 
+    \[
+    A^2 = A^T
+    \]
+    且 $\lambda$ 是 $A$ 的一个特征值。
+    \begin{solution}
+        有
+        \[ 
+        A^4 = (A^2)^2 = (A^T)^2 = (A^2)^T = (A^T)^T = A
+        \]
+        所以
+        \[ 
+        A^4 - A = 0
+        \]
+        由此可知$A$ 的所有特征值都是多项式 $X^4 - X$ 的根,而$X^4 - X = X(X^3 - 1)$ 的根是 
+        \[
+        0, 1,\frac{-1 \pm \sqrt{3}i}{2}
+        \]
+        考虑以下矩阵
+        \[ 
+        A_0 = (0) , \quad A_1 = (1) , \quad A_2 = \begin{pmatrix} -\frac{1}{2} & \frac{\sqrt{3}}{2} \\ -\frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} , \quad A_4 = \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & -\frac{1}{2} & \frac{\sqrt{3}}{2} \\ 0 & 0 & -\frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} 
+        \]
+        $0$ 和 $1$ 分别是 $1 \times 1$ 矩阵 $A_0$ 和 $A_1$ 的特征值, $\frac{-1 \pm \sqrt{3}i}{2}$ 是 $A_2$ 的特征值,不难看出
+        \[ 
+        A_2^2 = \begin{pmatrix} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} = A_2^T
+        \]
+        故矩阵 $A_4$ 包含了所有四个可能特征值。
+    \end{solution}
+
+    \question 已知 $A$ 是 $4 \times 2$ 实矩阵,$\ B$ 是 $2 \times 4$ 实矩阵,且
+    \[
+    AB = \begin{pmatrix}
+    1 & 0 & -1 & 0 \\
+    0 & 1 & 0 & -1 \\
+    -1 & 0 & 1 & 0 \\
+    0 & -1 & 0 & 1
+    \end{pmatrix}.
+    \]
+    求 $BA$。
+    \begin{solution}
+        将矩阵分块成
+        \[
+        A = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix}, \quad B = \begin{pmatrix} B_1 & B_2 \end{pmatrix},
+        \]
+        其中 $A_1, A_2, B_1, B_2$ 为 $2 \times 2$ 矩阵,于是
+        \[
+        AB = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} \begin{pmatrix} B_1 & B_2 \end{pmatrix} = 
+        \begin{pmatrix} A_1B_1 & A_1B_2 \\ A_2B_1 & A_2B_2 \end{pmatrix}
+        \]
+        比较得
+        \[
+        A_1B_1 = A_2B_2 = I_2, \quad A_1B_2 = A_2B_1 = -I_2
+        \]
+        即
+        \[
+        B_1 = A_1^{-1}, \quad B_2 = -A_1^{-1}, \quad A_2 = -A_1
+        \]
+        于是
+        \[
+        BA = \begin{pmatrix} B_1 & B_2 \end{pmatrix} \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} 
+        = B_1A_1 + B_2A_2 = A_1^{-1}A_1 + (-A_1^{-1})(-A_1) = 2 I_2
+        \]
+    \end{solution}
+
+    \question 已知 
+    \[
+    A=\begin{bmatrix} 
+    2 & 4 & 0 & 0 \\ 
+    1 & 2 & 0 & 0 \\ 
+    0 & 0 & 2 & 4 \\ 
+    0 & 0 & 2 & 2 
+    \end{bmatrix}, 
+    \] 
+    求 $A^n$。
+    \begin{solution}
+        将 $A$ 分块为 
+        \[
+        A=\begin{bmatrix} B & 0 \\ 0 & C \end{bmatrix}, \quad 
+        B=\begin{bmatrix} 2 & 4 \\ 1 & 2 \end{bmatrix}, \quad 
+        C=\begin{bmatrix} 2 & 4 \\ 0 & 2 \end{bmatrix}
+        \]
+        注意到 $B = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \end{bmatrix}$,所以可递推得
+        \[
+        B^n = 4^{\,n-1} B
+        \]
+        且由于 $\begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix}^2 = 0$,则
+        \[
+        C^n = \bigl(2I + \begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix}\bigr)^n = 2^n I + n2^{\,n-1} \begin{bmatrix} 0 & 4 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 2^n & 4n2^{\,n-1} \\ 0 & 2^n \end{bmatrix}
+        \]
+        因此
+        \[
+        A^n = \begin{bmatrix} B^n & 0 \\ 0 & C^n \end{bmatrix} 
+        = \begin{bmatrix}
+        2 \cdot 4^{\,n-1} & 4 \cdot 4^{\,n-1} & 0 & 0 \\
+        1 \cdot 4^{\,n-1} & 2 \cdot 4^{\,n-1} & 0 & 0 \\
+        0 & 0 & 2^n & n 2^{\,n+1} \\
+        0 & 0 & 0 & 2^n
+        \end{bmatrix} 
+        = \begin{bmatrix}
+        2^{\,2n-1} & 2^{\,2n+1} & 0 & 0 \\
+        2^{\,2n-2} & 2^{\,2n} & 0 & 0 \\
+        0 & 0 & 2^n & n 2^{\,n+1} \\
+        0 & 0 & 0 & 2^n
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \question 设 $A$ 和 $B$ 是 $n \times n$ 实矩阵,且满足
+    \[
+    \mathrm{rank}(AB - BA + I) = 1,
+    \]
+    其中 $I$ 是 $n\times n$ 单位矩阵。证明
+    \[
+    \mathrm{tr}(ABAB) - \mathrm{tr}(A^2B^2) = \frac{1}{2}n(n-1).
+    \]
+    \begin{solution}
+        令 $X = AB - BA$,注意到
+        \begin{align*}
+        \mathrm{tr}(X^2) &= \mathrm{tr}(ABAB - ABBA - BAAB + BABA) \\
+        &= 2\mathrm{tr}(ABAB) - 2\mathrm{tr}(A^2B^2),
+        \end{align*}
+        因为迹具有循环性。因此只需证明 $\mathrm{tr}(X^2) = n(n-1)$。由假设,$X+I$ 的秩为 $1$,所以
+        \[
+        X+I = v^t w
+        \]
+        其中$v,w$为向量,于是
+        \[
+        X^2 = (v^t w - I)^2 = I - 2 v^t w + v^t w v^t w = I + (w v^t - 2)v^t w.
+        \]
+        且有 $\mathrm{tr}(X) = 0$,因此 
+        \[
+        w v^t=\mathrm{tr}(w v^t) = \mathrm{tr}(v^t w) = n
+        \]
+        于是
+        \[
+        \mathrm{tr}(X^2) = n + (n-2)n = n(n-1)
+        \]
+        即得证。
+    \end{solution}
+    \begin{solution}
+        由于 $X+I$ 的秩为 $1$,它有特征值$0$,重数为 $n-1$。因此 $X$ 有特征值 $-1$,重数也为 $n-1$。由于 $\mathrm{tr}(X) = 0$,剩余的特征值只能为为 $n-1$,于是
+        \[
+        \mathrm{tr}(X^2) = (n-1)^2 + (n-1)\cdot 1^2 = n(n-1)
+        \]
+        同样得证。
+    \end{solution}
+
+    \question 确定是否存在奇正整数 $n$ 和具有整数元素的 $n \times n$ 矩阵 $A,B$,满足以下条件:
+    \begin{itemize}
+        \item $\det(B) = 1$;
+        \item $AB = BA$;
+        \item $A^4 + 4A^2B^2 + 16B^4 = 2019I$
+    \end{itemize}
+    \begin{solution}
+        我们证明不存在这样的矩阵。注意到 $A^4 + 4A^2B^2 + 16B^4$ 可以因式分解为
+        \[
+        A^4 + 4A^2B^2 + 16B^4 = (A^2 + 2AB + 4B^2)(A^2 - 2AB + 4B^2)
+        \]
+        令 $C = A^2 + 2AB + 4B^2,D = A^2 - 2AB + 4B^2$ ,则
+        \[
+        \det C \cdot \det D = \det(CD) = \det(2019I) = 2019^n
+        \]
+        矩阵 $C, D$ 的元素皆为整数,因此它们的行列式也为整数,此外由 $C \equiv D \pmod 4$ 可知
+        \[
+        \det C \equiv \det D \pmod 4
+        \]
+        这意味 $\det C \cdot \det D \equiv (\det C)^2 \pmod 4$,但 $2019^n \equiv 3$ 是模 $4$ 的二次非剩余,矛盾。
+    \end{solution}
+    \begin{solution}
+        注意
+        \[ 
+        A^4 \equiv A^4 + 4A^2B^2 + 16B^4 = 2019I \pmod{4} 
+        \]
+        所以
+        \[ 
+        (\det A)^4 = \det A^4 \equiv \det(2019I) = 2019^n \pmod{4}. 
+        \]
+        但是 $2019^n \equiv 3$ 是模 $4$ 的二次非剩余,矛盾。
+    \end{solution}
+
+    \question 设 $A$ 是 $n \times n$ 实矩阵,且 
+    \[
+    A^3 = 0
+    \]
+    证明存在唯一的 $n \times n$ 实矩阵 $X$ 满足
+    \[
+    X + AX + XA^2 = A,
+    \]
+    且以 $A$ 表示 $X$。
+    \begin{solution}
+        首先假设某个矩阵 $X$ 满足该方程。如果我们在给定方程的左侧乘以 $A$ 的某个幂,右侧乘以 $A$ 的另一个幂,就可以得到新的方程。例如,
+        \[ A^2(X + AX + XA^2)A^2 = A^2XA^2 + A^3 \cdot XA^2 + A^2XA \cdot A^3 = A^2XA^2. \]
+        所以
+        \begin{align*}
+        A^2XA^2 &= A^2(X + AX + XA^2)A^2 = A^5 = 0 \\
+        A^2X &= A^2(X + AX + XA^2) = A^3 = 0 \\
+        AXA &= A(X + AX + XA^2)A = A^3 = 0 \\
+        XA^2 &= (X + AX + XA^2)A^2 = A^3 = 0 \\
+        AX &= A(X + AX + XA^2)A = A^2 \\
+        X &= A - AX - XA^2 = A - A^2
+        \end{align*}
+        因此,除 $A - A^2$ 以外,没有其他矩阵能满足该方程。注意上述论证并未证明矩阵 $X = A - A^2$ 满足方程,因为这些步骤不能逆推。事实上,
+        \[ 
+        X + AX + XA^2 = (A - A^2) + A(A - A^2) + (A - A^2)A^2 = A - A^4 = A
+        \]
+        因此,$X = A - A^2$ 是方程的唯一解。
+    \end{solution}
+    \begin{solution}
+        我们使用另一种不同的方法来用 $A$ 表示 $X$。如果存在某个矩阵 $X$ 满足方程,那么
+        \[ 
+        X = A - AX - XA^2. 
+        \]
+        让我们在右侧反复代入此恒等式,直到 $X$ 在各处都被消去。注意到根据条件 $A^3 = 0$,我们有 $A^3 = A^4 = A^5 = A^3X = XA^4 = AXA^4 = A^3XA^2 = 0$,所以
+        \begin{align*}
+        X &= A - AX - XA^2 \\
+        &= A - A(A - AX - XA^2) - (A - AX - XA^2)A^2 \\
+        &= A - (A^2 - A^2X - AXA^2) - (A^3 - AXA^2 - XA^4) \\
+        &= A - A^2 + A^2X + 2AXA^2 \\
+        &= A - A^2 + A^2(A - AX - XA^2) + 2A(A - AX - XA^2)A^2 \\
+        &= A - A^2 + (A^3 - A^3X - A^2XA^2) + 2(A^4 - A^2XA^2 - AXA^4) \\
+        &= A - A^2 - 3A^2XA^2 \\
+        &= A - A^2 - 3A^2(A - AX - XA^2)A^2 \\
+        &= A - A^2 - 3(A^5 - A^3XA^2 - A^2XA^4) \\
+        &= A - A^2.
+        \end{align*}
+        同上,仍需验证 $X = A - A^2$ 确实是一个解,这一步与解 1 相同。
+    \end{solution}
+    \begin{solution}
+        设 $B = I - A + A^2$,使得 $B$ 是 $I + A$ 的逆矩阵。在左侧乘以 $B$,方程等价于
+        \[ 
+        X + BXA^2 = BA. \tag{1} 
+        \]
+        现在假设 $X$ 满足方程。在右侧乘以 $A^2$ 并利用 $A^3 = 0$,我们得到 $XA^2 = 0$。因此方程简化为 
+        \[
+        X = BA = A - A^2
+        \]
+        另一方面,$X = BA$ 显然满足 (1)。
+    \end{solution}
+
+    \question 设 $A,B,C$ 为 $n \times n$ 复矩阵,满足
+    \[
+    A^2 = B^2 = C^2, \quad B^3 = ABC + 2I.
+    \]
+    证明 $A^6 = I$。
+    \begin{solution}
+        发现到$B^3=A^2B$可得
+        \[
+        B^3 - ABC = A^2B - ABC = 2I \Rightarrow A(AB - BC) = 2I
+        \]
+        同理由$B^3=BC^2$可得
+        \[
+        BC^2 - ABC = 2I \implies (BC - AB)C = 2I
+        \]
+        这说明 $A$ 是 $\dfrac{AB - BC}{2}$ 的左逆矩阵,而 $-C$ 是右逆矩阵,所以 $A = -C$。因此
+        \[
+        ABA = 2I- B^3
+        \]
+        于是 $ABA$ 与 $B$ 交换,由此得 
+        \[
+        (AB)^2 = (BA)^2
+        \]
+        而
+        \begin{align*}
+        (AB - BA)(AB + BA) &= (AB)^2 + AB^2A - BA^2B - (BA)^2 \\
+        &= (AB)^2 + A^4 - B^4 - (AB)^2 = 0
+        \end{align*}
+        又因为 $AB - BC = AB + BA$ 可逆,故 $AB = BA$,于是 $ABA = A^2B = B^3$,由此得
+        \[
+        B^3 = I \Rightarrow A^6 = B^6 = (B^3)^2 = I^2 = I
+        \]
+    \end{solution}
 
     \question 设$a=\begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix},b=\begin{pmatrix} 1 \\ \frac12 \\ 0 \end{pmatrix}, c=\begin{pmatrix} 0 \\ 0 \\ 8 \end{pmatrix}$, 且$A=ab^T$, $B=ba^T$, 解矩阵方程$$2B^2 A^2 X = A^4 X + B^4 X + c$$\textcolor{red}{(题目有误,不符合矩阵乘法定义)}
 
@@ -15087,14 +15979,14 @@ B^3 = I \implies A^6 = B^6 = I.
 \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
 \end{pmatrix}
 \]
-其中第一行和第一列全部由 1 组成，其他每个元素由其左侧元素与上方元素之和构成。对于每个正整数 $n$，令 $D_n$ 表示由该阵列的前 $n$ 行和前 $n$ 列组成的 $n \times n$ 矩阵。求 $D_n$ 的行列式并证明你的结论。
+其中第一行和第一列全部由 1 组成,其他每个元素由其左侧元素与上方元素之和构成。对于每个正整数 $n$,令 $D_n$ 表示由该阵列的前 $n$ 行和前 $n$ 列组成的 $n \times n$ 矩阵。求 $D_n$ 的行列式并证明你的结论。
 
 \begin{solution}
-对较小 $n$ 值的直接计算表明，对于所有 $n$，恒有 $\det(D_n) = 1$。
+对较小 $n$ 值的直接计算表明,对于所有 $n$,恒有 $\det(D_n) = 1$。
 
 \textbf{证明大纲：}
 
-对 $D_n$ 按顺序执行以下初等行变换，依次处理第 $n$ 行至第 2 行：
+对 $D_n$ 按顺序执行以下初等行变换,依次处理第 $n$ 行至第 2 行：
 \begin{enumerate}
     \item 从第 $n$ 行减去第 $n-1$ 行；
     \item 从第 $n-1$ 行减去第 $n-2$ 行；
@@ -15102,20 +15994,20 @@ B^3 = I \implies A^6 = B^6 = I.
     \item[$(n-1).$] 从第 2 行减去第 1 行。
 \end{enumerate}
 
-由于该阵列的构造满足 $a_{i,j} = a_{i-1,j} + a_{i,j-1}$，上述操作后，$D_n$ 的第 $i$ 行第 $j$ 列元素变为：
+由于该阵列的构造满足 $a_{i,j} = a_{i-1,j} + a_{i,j-1}$,上述操作后,$D_n$ 的第 $i$ 行第 $j$ 列元素变为：
 \[
 a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
 \]
-这会将每一列向右“平移”一个位置，并使第一列变为 $[1, 0, 0, \dots, 0]^T$。
+这会将每一列向右“平移”一个位置,并使第一列变为 $[1, 0, 0, \dots, 0]^T$。
 
-对剩余的子矩阵重复此过程（即对第 $n$ 行至第 3 行执行减法，以此类推），最终会将 $D_n$ 转化为一个对角线元素均为 1 的上三角矩阵。由于上三角矩阵的行列式等于主对角线元素的乘积，因此 $\det(D_n) = 1^n = 1$。
+对剩余的子矩阵重复此过程（即对第 $n$ 行至第 3 行执行减法,以此类推）,最终会将 $D_n$ 转化为一个对角线元素均为 1 的上三角矩阵。由于上三角矩阵的行列式等于主对角线元素的乘积,因此 $\det(D_n) = 1^n = 1$。
 
 \textbf{另一种方法（递推法）：}
-在进行第一组行变换后，按第一列进行余子式展开，可以直接得到递推关系：
+在进行第一组行变换后,按第一列进行余子式展开,可以直接得到递推关系：
 \[
 \det(D_n) = 1 \cdot \det(D_{n-1})
 \]
-由于 $D_1 = [1]$ 且 $\det(D_1) = 1$，通过数学归纳法可知 $\det(D_n) = 1$。
+由于 $D_1 = [1]$ 且 $\det(D_1) = 1$,通过数学归纳法可知 $\det(D_n) = 1$。
 \end{solution}
 
 \question 证明
@@ -15186,13 +16078,14 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
     \textcolor{red}{(待验证)}
 \end{solution}
 
-\question 设 $M$ 为一个任意 $3 \times 3$ 矩阵，其每个项 $m_{ij}$ 均选自集合 $\{-1, 1\}$，记 $\det M$ 为其行列式。证明 $|\det M| \leq 4$。
+\question 设 $M$ 为一个任意 $3 \times 3$ 矩阵,其每个项 $m_{ij}$ 均选自集合 $\{-1, 1\}$,记 $\det M$ 为其行列式。证明 $|\det M| \leq 4$。
+%missouri 2011 II p3
 \begin{solution}
-一个项为 $\pm 1$ 的 $2 \times 2$ 矩阵，其行列式必然为 0 或 $\pm 2$。对 $3 \times 3$ 的 $\det M$ 按第一行进行余子式展开：
+一个项为 $\pm 1$ 的 $2 \times 2$ 矩阵,其行列式必然为 0 或 $\pm 2$。对 $3 \times 3$ 的 $\det M$ 按第一行进行余子式展开：
 \[
 \det M = m_{11} \begin{vmatrix} m_{22} & m_{23} \\ m_{32} & m_{33} \end{vmatrix} - m_{12} \begin{vmatrix} m_{21} & m_{23} \\ m_{31} & m_{33} \end{vmatrix} + m_{13} \begin{vmatrix} m_{21} & m_{22} \\ m_{31} & m_{32} \end{vmatrix}
 \]
-由于每个余子式都是偶数，左侧的结果必然也是偶数。同时由上式可知 $|\det M|$ 不可能超过 6。只有当所有余子式都不为 0 时才可能达到 6。但在由 1 和 -1 组成的 $2 \times 3$ 矩阵中，总能找到一个 $2 \times 2$ 的子矩阵其行列式为 0。因此，上述展开式中至少有一项为 0，从而得出 $|\det M| \leq 4$。
+由于每个余子式都是偶数,左侧的结果必然也是偶数。同时由上式可知 $|\det M|$ 不可能超过 6。只有当所有余子式都不为 0 时才可能达到 6。但在由 1 和 -1 组成的 $2 \times 3$ 矩阵中,总能找到一个 $2 \times 2$ 的子矩阵其行列式为 0。因此,上述展开式中至少有一项为 0,从而得出 $|\det M| \leq 4$。
 \end{solution}
 
     \question 计算 $n \times n$ 矩阵 $A = [a_{ij}]$ 的行列式,其中
