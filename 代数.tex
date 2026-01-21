@@ -16288,8 +16288,10 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
 
 \begin{questions}
     \question 已知 $i = \sqrt{-1}$, 若 
-    \[\frac{1}{i^{2025}} - \frac{2}{i^{2024}} + \frac{3}{i^{2023}} - \frac{4}{i^{2022}} + \dots - \frac{2024}{i^2} + \frac{2025}{i} = a+bi
-    \]其中 $a,b$ 为实数, 求 $a-b$。
+    \[
+    \frac{1}{i^{2025}} - \frac{2}{i^{2024}} + \frac{3}{i^{2023}} - \frac{4}{i^{2022}} + \dots - \frac{2024}{i^2} + \frac{2025}{i} = a+bi
+    \]
+    其中 $a,b$ 为实数, 求 $a-b$。
     \begin{solution}
         \begin{align*}
         &\frac{1}{i^{2025}} - \frac{2}{i^{2024}} + \frac{3}{i^{2023}} - \frac{4}{i^{2022}} + \cdots - \frac{2024}{i^2} + \frac{2025}{i} \\
@@ -16339,19 +16341,23 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
     \left(\frac{\sqrt{3}+1}{2\sqrt{2}} + \frac{\sqrt{3}-1}{2\sqrt{2}} i \right)^6
     \]
     \begin{solution}
-    观察
-    \[
-    \left(\frac{\sqrt{3}+1}{2\sqrt{2}} + \frac{\sqrt{3}-1}{2\sqrt{2}} i \right)^2 
-    = \frac{\sqrt{3}}{2} + \frac{1}{2} i 
-    = \cos 30^\circ + i \sin 30^\circ.
-    \]
-    由棣莫弗定理,原式为
-    \[
-    (\cos 30^\circ + i \sin 30^\circ)^3 = \cos 90^\circ + i \sin 90^\circ = i.
-    \]
+        观察
+        \[
+        \left(\frac{\sqrt{3}+1}{2\sqrt{2}} + \frac{\sqrt{3}-1}{2\sqrt{2}} i \right)^2 
+        = \frac{\sqrt{3}}{2} + \frac{1}{2} i 
+        = \cos 30^\circ + i \sin 30^\circ.
+        \]
+        由棣莫弗定理,原式为
+        \[
+        (\cos 30^\circ + i \sin 30^\circ)^3 = \cos 90^\circ + i \sin 90^\circ = i.
+        \]
     \end{solution}
 
-    \question 已知 $a,b,c \in \mathbb{C}$, 且 $a+b+c=a^2+b^2+c^2=3, a^3+b^3+c^3=6$, 试求 \[(a-1)^{2023}+(b-1)^{2023}+(c-1)^{2023}\]的值。
+    \question 已知 $a,b,c \in \mathbb{C}$, 且 $a+b+c=a^2+b^2+c^2=3, a^3+b^3+c^3=6$, 试求 
+    \[
+    (a-1)^{2023}+(b-1)^{2023}+(c-1)^{2023}
+    \]
+    的值。
     \begin{solution}
         由
         \[
@@ -16381,42 +16387,28 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
     \end{solution}
 
     \question 证明
-\[
-1 + 2i + 3i^2 + 4i^3 + \dots + (4n+1)i^{4n}=(2n+1) - 2n i, \quad n \in \mathbb{N}.
-\]
-
-\begin{solution}
-设
-\[
-S = 1 + 2i + 3i^2 + 4i^3 + \dots + (4n+1)i^{4n}.
-\]
-
-两边乘以 $i$:
-\[
-iS = i + 2i^2 + 3i^3 + 4i^4 + \dots + (4n)i^{4n} + (4n+1)i^{4n+1}.
-\]
-
-原式减去该式:
-\[
-(1-i)S = 1 + i + i^2 + i^3 + \dots + i^{4n} - (4n+1)i^{4n+1}.
-\]
-
-右边的几何级数求和（注意 $i^{4n+1} = i$）:
-\[
-(1-i)S = \frac{i^{4n+1}-1}{i-1} - (4n+1)i = 1 - (4n+1)i.
-\]
-
-解 $S$:
-\begin{align*}
-S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
-&= \frac{1 + i - (4n+1)i - (4n+1)i^2}{1 - i^2} \\
-&= \frac{1 + i - 4n i - i + 4n + 1}{2} \\
-&= \frac{2 + 4n - 4n i}{2} \\
-&= 1 + 2n - 2n i \\
-&= (2n+1) - 2n i.
-\end{align*}
-\end{solution}
-
+    \[
+    1 + 2i + 3i^2 + 4i^3 + \dots + (4n+1)i^{4n}=(2n+1) - 2n i, \quad n \in \mathbb{N}.
+    \]
+    \begin{solution}
+        设
+        \[
+        S = 1 + 2i + 3i^2 + 4i^3 + \dots + (4n+1)i^{4n}
+        \]
+        则
+        \[
+        iS = i + 2i^2 + 3i^3 + 4i^4 + \dots + (4n)i^{4n} + (4n+1)i^{4n+1}
+        \]
+        两式相减得
+        \begin{align*}
+        (1-i)S &= 1 + i + i^2 + i^3 + \dots + i^{4n} - (4n+1)i^{4n+1} \\
+        &= \frac{i^{4n+1}-1}{i-1} - (4n+1)i = 1 - (4n+1)i
+        \end{align*}
+        故
+        \[
+        S = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} = (2n+1) - 2n i
+        \]
+    \end{solution}
 
     \question 考虑复平面作图 \(z=\sqrt{2}(1+i),\,w=\sqrt{3}-i\),证
     \[
@@ -16480,8 +16472,10 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
         AB &= AC = |\lambda\omega - \omega| = 5(\lambda - 1) \\
         \end{aligned}
         \]
-        又由于 $\triangle ABC$ 是正三角形,因此 $\angle OAB = 180^\circ - 60^\circ = 120^\circ$。
-        
+        又由于 $\triangle ABC$ 是正三角形,因此 
+        \[
+        \angle OAB = 180^\circ - 60^\circ = 120^\circ
+        \]        
         在 $\triangle OAB$中,由余弦定理,
         \[
         \cos \angle OAB = \frac{OA^2 + AB^2 - OB^2}{2 \cdot OA \cdot AB}
@@ -16584,8 +16578,6 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
         |z+w|^2-|z+\overline{w}|^2=4\Re(z)\Re(w)
         \]
     \begin{solution}
-        \textbf{解法一}
-        
         设$z = x + iy,\;w = u + iv,$其中$x,y,u,i\in \mathbb{R}$,则
         \begin{align*}
         |z+w|^2 - |z-\overline{w}|^2 
@@ -16596,9 +16588,8 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
         &= 4 \Re(z) \Re(w)
         \end{align*}
     \end{solution}
-    
     \begin{solution}
-        \textbf{解法二}
+        又解:
         \begin{align*} 
         |z + w|^2 - |z - w|^2 
         &= (z + w)(\overline{z+w}) - (z - \overline{w})(\overline{z - \overline{w}}) \\
@@ -16612,9 +16603,9 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     \end{solution}    
     
     \question 已知 \(z=\cos\theta+i\sin\theta,\ 0\leq\theta<2\pi\),证明:
-        \[
-        \frac{2}{1+z}=1-i\tan\frac{\theta}{2}
-        \]
+    \[
+    \frac{2}{1+z}=1-i\tan\frac{\theta}{2}
+    \]
     \begin{solution}
         运用各位三角恒等式化简
         \begin{align*}
@@ -16631,7 +16622,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     
     % \question 若 \(m,n\in\mathbb{N}\),证明方程 \(z^m=2-i\) 与 \(z^n=1+i\) 无公共复根。  
     % \begin{solution}
-    %     $\forall\;m,n\in\mathbb{N}$,假设存在复数 \(z\),使得
+    %     设$m,n\in\mathbb{N}$,假设存在复数 \(z\)使得
     %     \[
     %     z^m = 2 - i,\quad z^n = 1 + i
     %     \]
@@ -16650,64 +16641,45 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     %     \Rightarrow 5^n = 2^m
     %     \]
     %     左边是奇数,右边是偶数,矛盾!
-    %     \end{solution}
-\question
-设复数 $z$ 满足 $|z|=1$ 且 $z = e^{i\theta}$,求
-\[
-\Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right].
-\]
+    % \end{solution}
 
-\begin{solution}
-先将表达式化简:
-\begin{align*}
-\Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right] 
-&= \Re \left[ \frac{z - z\bar{z}}{\bar{z} + z\bar{z}} \right] 
-= \Re \left[ \frac{z - |z|^2}{\bar{z} + |z|^2} \right] \\
-&= \Re \left[ \frac{z - 1}{\bar{z} + 1} \right] 
-= \Re \left[ \frac{e^{i\theta} - 1}{e^{-i\theta} + 1} \right].
-\end{align*}
-
-乘以共轭以简化:
-\begin{align*}
-\Re \left[ \frac{e^{i\theta}-1}{e^{-i\theta}+1} \right] 
-&= \Re \left[ \frac{(e^{i\theta}-1)(e^{i\theta}+1)}{(e^{-i\theta}+1)(e^{i\theta}+1)} \right] \\
-&= \Re \left[ \frac{e^{i2\theta}-1}{2 + e^{i\theta}+e^{-i\theta}} \right] 
-= \Re \left[ \frac{e^{i\theta} (e^{i\theta}-e^{-i\theta})}{2 + 2\cos\theta} \right] \\
-&= \Re \left[ \frac{e^{i\theta} \cdot 2i\sin\theta}{2(1+\cos\theta)} \right] 
-= \Re \left[ \frac{e^{i\theta} \cdot i\sin\theta}{1+\cos\theta} \right] \\
-&= \frac{1}{1+\cos\theta} \Re \left[ i \sin\theta (\cos\theta + i\sin\theta) \right] \\
-&= \frac{1}{1+\cos\theta} \Re \left[ i \sin\theta \cos\theta - \sin^2\theta \right] \\
-&= -\frac{\sin^2\theta}{1+\cos\theta}.
-\end{align*}
-
-使用半角公式化简:
-\[
--\frac{\sin^2\theta}{1+\cos\theta} 
-= -\frac{(2\sin\frac{\theta}{2}\cos\frac{\theta}{2})^2}{2\cos^2\frac{\theta}{2}} 
-= -2 \sin^2 \frac{\theta}{2}.
-\]
-
-\[
-\therefore \Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right] = -2 \sin^2 \frac{\theta}{2}.
-\]
-\end{solution}
-
-
+    \question 设复数 $z$ 满足 $|z|=1$ 且 $z = e^{i\theta}$,求证
+    \[
+    \Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right]=-2 \sin^2 \frac{\theta}{2}
+    \]
+    \begin{solution}
+        先将表达式化简,
+        \begin{align*}
+        \frac{z(1-\bar{z})}{\bar{z}(1+z)} 
+        &= \frac{z - |z|^2}{\bar{z} + |z|^2}  \\
+        &= \frac{e^{i\theta} - 1}{e^{-i\theta} + 1} \\
+        &=  \frac{(e^{i\theta}-1)(e^{i\theta}+1)}{(e^{-i\theta}+1)(e^{i\theta}+1)}  \\
+        &=  \frac{e^{i2\theta}-1}{2 + e^{i\theta}+e^{-i\theta}} \\
+        &=  \frac{e^{i\theta} (e^{i\theta}-e^{-i\theta})}{2 + 2\cos\theta}  \\
+        &=  \frac{e^{i\theta} \cdot 2i\sin\theta}{2(1+\cos\theta)} \\
+        &=  \frac{e^{i\theta} \cdot i\sin\theta}{1+\cos\theta} 
+        \end{align*}
+        故
+        \begin{align*}
+        \Re \left[ \frac{z(1-\bar{z})}{\bar{z}(1+z)} \right]=\Re \left[ \frac{e^{i\theta} \cdot i\sin\theta}{1+\cos\theta} \right] &= \frac{1}{1+\cos\theta} \Re \left[ i \sin\theta (\cos\theta + i\sin\theta) \right] \\
+        &= \frac{1}{1+\cos\theta} \Re \left[ i \sin\theta \cos\theta - \sin^2\theta \right] \\
+        &= -\frac{\sin^2\theta}{1+\cos\theta} \\
+        &= -\frac{(2\sin\frac{\theta}{2}\cos\frac{\theta}{2})^2}{2\cos^2\frac{\theta}{2}} \\
+        &= -2 \sin^2 \frac{\theta}{2}
+        \end{align*}
+    \end{solution}
     
     \question 已知两个相异复数 \(z_1,z_2\),且 \(|z_1|=|z_2|\ne 0\),证明
-        \[
-        \frac{z_1+z_2}{z_1-z_2}
-        \]
-        是纯虚数。  
+    \[
+    \frac{z_1+z_2}{z_1-z_2}
+    \]
+    是纯虚数。  
     \begin{solution}
-        设$w = \dfrac{z_1 + z_2}{z_1 - z_2}$ ,欲证 \(\overline{w} = -w\)。
-        
-        因为 \(|z_1| = |z_2| = r\),且 \(z_1, z_2 \ne 0\),根据性质
+        设$w = \dfrac{z_1 + z_2}{z_1 - z_2}$ ,欲证 \(\overline{w} = -w\),因为 \(|z_1| = |z_2| = r\),且 \(z_1, z_2 \ne 0\),根据性质
         \[
         \overline{z} = \frac{r^2}{z}
         \Rightarrow \overline{z_1} = \frac{r^2}{z_1},\quad \overline{z_2} = \frac{r^2}{z_2}
         \]
-        
         因此
         \begin{align*}
         \overline{w} 
@@ -16717,7 +16689,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
         = \frac{\dfrac{1}{z_1} + \dfrac{1}{z_2}}{\dfrac{1}{z_1} - \dfrac{1}{z_2}} 
         = \frac{z_2 + z_1}{z_2 - z_1} = -\frac{z_1 + z_2}{z_1 - z_2} = -w
         \end{align*}
-        \end{solution}
+    \end{solution}
     
     % \question 复数 \(z\) 满足关系式:
     %     \[
@@ -16801,7 +16773,7 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     %     \]
     % \end{solution}
 
-    \question 设复数 $z_1, z_2$ 满足 $|z_1|=2$, $|z_2|=3$, $|z_1+z_2|=4$, 求 $\dfrac{z_1}{z_2}$。 
+    \question 设复数 $z_1, z_2$ 满足 $|z_1|=2,|z_2|=3,|z_1+z_2|=4$, 求 $\dfrac{z_1}{z_2}$。 
     \begin{solution}
         设 $w = \dfrac{z_1}{z_2}$,则 $z_1 = w z_2$。由
         \[
@@ -16824,14 +16796,26 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
 
     \question 若复数 $z$ 使得$\dfrac{z-3i}{z+i}$ 为负实数, $\dfrac{z-3}{z+1}$ 为纯虚数,求 $z$。
     \begin{solution}
-        设 $z=a+bi,a,b\in \mathbb{R}$,由于 $$\frac{z-3i}{z+i}=\frac{a+(b-3)i}{a+(b+1)i}$$ 为负实数,则 $$(a+(b-3)i)(a-(b+1)i)<0$$
+        设 $z=a+bi,a,b\in \mathbb{R}$,由于 
+        \[
+        \frac{z-3i}{z+i}=\frac{a+(b-3)i}{a+(b+1)i}
+        \]
+        为负实数,则 
+        \[
+        (a+(b-3)i)(a-(b+1)i)<0
+        \]
         所以 $a^{2}+(b-3)(b+1)<0$ 且 $-4a=0$,即 $a=0$ 且 $b-3,b+1$ 异号; 又此时
-        $$\frac{z-3}{z+1}=\frac{-3+bi}{1+bi}$$为纯虚数,故 
-        $$\Re((-3+bi)(1-bi))=b^{2}-3=0$$又 $b-3,b+1$异号知 $b=\sqrt{3}$,所以 $z=\sqrt{3}i$.
+        \[
+        \frac{z-3}{z+1}=\frac{-3+bi}{1+bi}
+        \]
+        为纯虚数,故 
+        \[
+        \Re((-3+bi)(1-bi))=b^{2}-3=0
+        \]
+        又 $b-3,b+1$异号知 $b=\sqrt{3}$,所以 $z=\sqrt{3}i$.
     \end{solution}
     
     \question  已知虚数 $z$ 使得 $z_1 = \dfrac{z}{1+z^2}$ 和 $z_2 = \dfrac{z^2}{1+z}$ 都是实数,求 $z$。
-    
     \begin{solution}
         由已知$(z^2 + 1)z_1 = z, (1 + z)z_2 = z^2$,联立两式
         \[
@@ -16862,79 +16846,72 @@ S &= \frac{1 - (4n+1)i}{1-i} = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} \\
     
     \question 已知复数 \(z\ne 0\),满足方程 \(z^2=z+i|z|\),求 \(|z|\) 的值。
     \begin{solution}
-    设 $z = x + iy,\;x,y\in \mathbb{R},$则
-    \[
-    z^2 = z + i|z| \Rightarrow x^2 - y^2 + 2ixy  = x + i\left(y + \sqrt{x^2 + y^2}\right)
-    \]
-    比较实部与虚部得
-    \[
-    x^2 - y^2 = x \tag{1}
-    \]
-    \[
-    2xy = y + \sqrt{x^2 + y^2} \tag{2}
-    \]
-    将(2)移项并平方
-    \[
-    y^2(2x - 1)^2 = x^2 + y^2 
-    \]
-    由(1)得
-    \[
-    (x^2 - x)(2x - 1)^2 = 2x^2 - x \Rightarrow x^2(2x-3)(2x-1)=0
-    \]
-    解得 $x=0,\dfrac{1}{2},\dfrac{3}{2}$,其中$x=0$不合理$(z\neq 0)$,且$x=\dfrac{1}{2}$不合理$(y^2=-\dfrac{1}{4}<0)$,故
-    \[
-    x = \dfrac{3}{2},\; y^2 = \dfrac{3}{4}\Rightarrow|z| = \sqrt{\frac{9}{4} + \frac{3}{4}} = \sqrt3
-    \]
+        设 $z = x + iy,\;x,y\in \mathbb{R},$则
+        \[
+        z^2 = z + i|z| \Rightarrow x^2 - y^2 + 2ixy  = x + i\left(y + \sqrt{x^2 + y^2}\right)
+        \]
+        比较实部与虚部得
+        \[
+        x^2 - y^2 = x \tag{1}
+        \]
+        \[
+        2xy = y + \sqrt{x^2 + y^2} \tag{2}
+        \]
+        将(2)移项并平方
+        \[
+        y^2(2x - 1)^2 = x^2 + y^2 
+        \]
+        由(1)得
+        \[
+        (x^2 - x)(2x - 1)^2 = 2x^2 - x \Rightarrow x^2(2x-3)(2x-1)=0
+        \]
+        解得 $x=0,\dfrac{1}{2},\dfrac{3}{2}$,其中$x=0$不合理$(z\neq 0)$,且$x=\dfrac{1}{2}$不合理$(y^2=-\dfrac{1}{4}<0)$,故
+        \[
+        x = \dfrac{3}{2},\; y^2 = \dfrac{3}{4}\Rightarrow|z| = \sqrt{\frac{9}{4} + \frac{3}{4}} = \sqrt3
+        \]
     \end{solution}
 
     \question 确定所有满足 $|a|=|b|=1$ 且 $a + b + a\bar{b} \in \mathbb{R}$ 的复数对 $(a,b)$。
-
-\begin{solution}
-方法一:设 $a = e^{ix}$,$b = e^{iy}$,其中 $x, y \in [0, 2\pi)$。利用欧拉公式以及恒等式
-\[
-\sin x + \sin y = 2 \sin \frac{x+y}{2} \cos \frac{x-y}{2}, \quad \sin(x-y) = 2 \sin \frac{x-y}{2} \cos \frac{x-y}{2},
-\]
-得到
-\begin{align*}
-\operatorname{Im}(a+b+a\bar{b}) &= (\sin x + \sin y) + \sin(x-y) \\
-&= 2 \sin \frac{x+y}{2} \cos \frac{x-y}{2} + 2 \sin \frac{x-y}{2} \cos \frac{x-y}{2} \\
-&= 2 \left(\sin \frac{x+y}{2} + \sin \frac{x-y}{2}\right) \cos \frac{x-y}{2} \\
-&= 4 \sin \frac{x}{2} \cos \frac{y}{2} \cos \frac{x-y}{2}.
-\end{align*}
-
-因此,$a+b+a\bar{b}$ 为实数当且仅当
-\[
-\sin \frac{x}{2} = 0, \quad \cos \frac{y}{2} = 0, \quad \text{或} \quad \cos \frac{x-y}{2} = 0,
-\]
-分别对应
-\[
-x = 2k\pi, \quad y = (2k+1)\pi, \quad x = y + (2k+1)\pi, \quad k \in \mathbb{Z}.
-\]
-
-所以解集为
-\[
-(a,b) = (1, b), \quad (a,-1), \quad (a,-a), \quad \text{其中 } |a|=|b|=1.
-\]
-
-方法二:注意到
-\[
-a+b+a\bar{b}\in\mathbb{R} \iff 1+a+b+a\bar{b} \in \mathbb{R}.
-\]
-
-设 $c \in \mathbb{C}$ 且 $a=c^2$,则
-\[
-\overline{c}(1+a+b+a\bar{b}) = \overline{c} + \overline{c}c^2 + \overline{c}b + \overline{c}c^2\overline{b} = \overline{c}+c+\overline{c}b+c\overline{b} \in \mathbb{R},
-\]
-利用 $\overline{c}c = 1$ 以及 $z+\overline{z} \in \mathbb{R}$。因此要么 $c \in \mathbb{R}$,要么 $1+a+b+a\overline{b}=0$。第一种情况 $c=\pm 1$,于是 $a=1$。第二种情况将等式因式分解为
-\[
-(a+b)(1+\overline{b}) = 1+a+b+a\overline{b}=0,
-\]
-得到 $a=-b$ 或 $b=-1$。所以得到的三族解为:
-\[
-(a,b) = (1,b), \quad (a,-1), \quad (a,-a), \quad |a|=|b|=1.
-\]
-\end{solution}
-
+    \begin{solution}
+        设 $a = e^{ix},b = e^{iy}$,其中 $x, y \in [0, 2\pi)$,由欧拉公式,
+        \begin{align*}
+        \Im(a+b+a\bar{b}) &= (\sin x + \sin y) + \sin(x-y) \\
+        &= 2 \sin \frac{x+y}{2} \cos \frac{x-y}{2} + 2 \sin \frac{x-y}{2} \cos \frac{x-y}{2} \\
+        &= 2 \left(\sin \frac{x+y}{2} + \sin \frac{x-y}{2}\right) \cos \frac{x-y}{2} \\
+        &= 4 \sin \frac{x}{2} \cos \frac{y}{2} \cos \frac{x-y}{2}.
+        \end{align*}
+        因此$a+b+a\bar{b}$ 为实数当且仅当
+        \[
+        \sin \frac{x}{2} = 0, \quad \cos \frac{y}{2} = 0, \quad \text{或} \quad \cos \frac{x-y}{2} = 0,
+        \]
+        分别对应
+        \[
+        x = 2k\pi, \quad y = (2k+1)\pi, \quad x = y + (2k+1)\pi, \quad k \in \mathbb{Z}.
+        \]
+        所以解集为
+        \[
+        (a,b) = (1, b), \quad (a,-1), \quad (a,-a),
+        \]
+        其中$|a|=|b|=1$。
+    \end{solution}
+    \begin{solution}
+        注意到
+        \[
+        a+b+a\bar{b}\in\mathbb{R} \iff 1+a+b+a\bar{b} \in \mathbb{R}.
+        \]
+        设 $c \in \mathbb{C}$ 且 $a=c^2$,则
+        \[
+        \overline{c}(1+a+b+a\bar{b}) = \overline{c} + \overline{c}c^2 + \overline{c}b + \overline{c}c^2\overline{b} = \overline{c}+c+\overline{c}b+c\overline{b} \in \mathbb{R},
+        \]
+        因此 $c \in \mathbb{R}$或 $1+a+b+a\overline{b}=0$。第一种情况 $c=\pm 1$,于是 $a=1$。第二种情况将等式因式分解为
+        \[
+        (a+b)(1+\overline{b}) = 1+a+b+a\overline{b}=0,
+        \]
+        得到 $a=-b$ 或 $b=-1$,所以得到解为
+        \[
+        (a,b) = (1,b), \quad (a,-1), \quad (a,-a), \quad |a|=|b|=1.
+        \]
+    \end{solution}
 
     \question 已知两复数 $z_1, z_2$ 满足 $|z_1 - (3 + 3i)| = 2,|iz_2 - 1| = 1$,求 $|z_1 - z_2|$ 的最小值。
     \begin{solution}
@@ -17116,70 +17093,56 @@ a+b+a\bar{b}\in\mathbb{R} \iff 1+a+b+a\bar{b} \in \mathbb{R}.
         |z_1 + 2 z_2 + 3 z_3| = |-i + 5| = \sqrt{26}
         \]
     \end{solution}
-\question 设 $z$ 为复数,且满足 $|z+1|>2$。证明
-\[
-|z^3+1|>1.
-\]
 
-\begin{solution}
-注意到
-\[
-z^3+1=(z+1)(z^2-z+1),
-\]
-因此只需证明
-\[
-|z^2-z+1|\ge \frac{1}{2}.
-\]
-
-设
-\[
-z+1=re^{i\varphi},
-\]
-其中 $r=|z+1|>2$,$\varphi$ 为某个实数。于是
-\begin{align*}
-z^2-z+1
-&=(re^{i\varphi}-1)^2-(re^{i\varphi}-1)+1 \\
-&=r^2e^{2i\varphi}-3re^{i\varphi}+3.
-\end{align*}
-
-于是
-\begin{align*}
-|z^2-z+1|^2
-&=(r^2e^{2i\varphi}-3re^{i\varphi}+3)
-(r^2e^{-2i\varphi}-3re^{-i\varphi}+3) \\
-&=r^4+9r^2+9-(6r^3+18r)\cos\varphi+6r^2\cos 2\varphi \\
-&=r^4+9r^2+9-(6r^3+18r)\cos\varphi+6r^2(2\cos^2\varphi-1) \\
-&=12\left(r\cos\varphi-\frac{r^2+3}{4}\right)^2
-+\frac{1}{4}(r^2-3)^2.
-\end{align*}
-
-由于 $r>2$,可得
-\[
-|z^2-z+1|^2>\frac{1}{4},
-\]
-从而
-\[
-|z^2-z+1|>\frac{1}{2}.
-\]
-
-因此
-\[
-|z^3+1|=|z+1|\,|z^2-z+1|>2\cdot\frac{1}{2}=1.
-\]
-证毕。
-\end{solution}
+    \question 设 $z$ 为复数,且满足 $|z+1|>2$。证明
+    \[
+    |z^3+1|>1.
+    \]
+    \begin{solution}
+        注意到
+        \[
+        z^3+1=(z+1)(z^2-z+1),
+        \]
+        因此只需证明
+        \[
+        |z^2-z+1|> \frac{1}{2}.
+        \]
+        设$z+1=re^{i\varphi}$,其中 $r=|z+1|>2$,$\varphi$ 为某个实数。于是
+        \[
+        z^2-z+1=(re^{i\varphi}-1)^2-(re^{i\varphi}-1)+1 =r^2e^{2i\varphi}-3re^{i\varphi}+3
+        \]
+        于是
+        \begin{align*}
+        |z^2-z+1|^2
+        &=(r^2e^{2i\varphi}-3re^{i\varphi}+3)
+        (r^2e^{-2i\varphi}-3re^{-i\varphi}+3) \\
+        &=r^4+9r^2+9-(6r^3+18r)\cos\varphi+6r^2\cos 2\varphi \\
+        &=r^4+9r^2+9-(6r^3+18r)\cos\varphi+6r^2(2\cos^2\varphi-1) \\
+        &=12\left(r\cos\varphi-\frac{r^2+3}{4}\right)^2
+        +\frac{1}{4}(r^2-3)^2.
+        \end{align*}
+        由于 $r>2$,可得
+        \[
+        |z^2-z+1|^2>\frac{1}{4}\Rightarrow |z^2-z+1|>\frac{1}{2}
+        \]
+        因此
+        \[
+        |z^3+1|=|z+1|\,|z^2-z+1|>2\cdot\frac{1}{2}=1
+        \]
+        证毕。
+    \end{solution}
 
     \question 复数 $z_1,z_2,z_3,z_4,z_5$ 满足
-        \begin{equation*}
-        \begin{cases}
-        \;|z_1| \leq 1 \\
-        \;|z_2| \leq 1 \\
-        \;|2z_3 - (z_1 + z_2)| \leq |z_1 - z_2| \\
-        \;|2z_4 - (z_1 + z_2)| \leq |z_1 - z_2| \\
-        \;|2z_5 - (z_3 + z_4)| \leq |z_3 - z_4|
-        \end{cases}
-        \end{equation*}
-        求 $|z_5|$ 的最大值.
+    \begin{equation*}
+    \begin{cases}
+    \;|z_1| \leq 1 \\
+    \;|z_2| \leq 1 \\
+    \;|2z_3 - (z_1 + z_2)| \leq |z_1 - z_2| \\
+    \;|2z_4 - (z_1 + z_2)| \leq |z_1 - z_2| \\
+    \;|2z_5 - (z_3 + z_4)| \leq |z_3 - z_4|
+    \end{cases}
+    \end{equation*}
+    求 $|z_5|$ 的最大值。
     \begin{solution}
         由\[
         |z_1 - z_2| \geq |2z_3 - (z_1 + z_2)| \geq |2|z_3| - |z_1 + z_2||
@@ -17207,97 +17170,95 @@ z^2-z+1
 
     \end{solution}
 
-    \question 证明:
+    \question 
     \begin{parts}
-        \part 如果 $z = \cos \theta + i \sin \theta$,则
-\[
-z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
-\]
+    \part 已知 $z = \cos \theta + i \sin \theta$,证明
+    \[
+    z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
+    \]
+    \begin{solution}
+        由棣莫弗定理,
+        \[
+        z^n = \cos n\theta + i \sin n\theta, \quad z^{-n} = \cos n\theta - i \sin n\theta
+        \]
+        相加得到
+        \[
+        z^n + z^{-n} = (\cos n\theta + i \sin n\theta) + (\cos n\theta - i \sin n\theta) = 2\cos n\theta
+        \]
+        而相减得到
+        \[
+        z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta) = 2i \sin n\theta
+        \]
+    \end{solution}
+    \part 证明
+    \[
+    16 \sin^5\theta = \sin 5\theta - 5 \sin 3\theta + 10 \sin \theta,
+    \]
+    且
+    \[
+    32 \cos^6\theta = \cos 6\theta + 6 \cos 4\theta + 15 \cos 2\theta + 10.
+    \]
+    \begin{solution}
+        令$n=1$,则 
+        \[
+        2i \sin \theta = z - z^{-1}, \quad 2 \cos \theta = z + z^{-1}
+        \]
+        由第一式,二项式展开得
+        \begin{align*}
+        (2i \sin \theta)^5 &= (z - z^{-1})^5 \\
+        32 i^5 \sin^5 \theta &= z^5 - 5 z^3 z^{-2} + 10 z z^{-4} - 10 z^2 z^{-3} + 5 z z^{-4} - z^{-5} \\
+        32 i \sin^5 \theta &= (z^5 - z^{-5}) - 5(z^3 - z^{-3}) + 10 (z - z^{-1}) \\
+        32 i \sin^5 \theta &= 2i \sin 5\theta - 10 i \sin 3\theta + 20 i \sin \theta \\
+        16 \sin^5 \theta &= \sin 5\theta - 5 \sin 3\theta + 10 \sin \theta
+        \end{align*}
+        由第二式,
+        \begin{align*}
+        (2 \cos \theta)^6 &= (z + z^{-1})^6 \\
+        64 \cos^6 \theta &= (z^6 + z^{-6}) + 6(z^4 + z^{-4}) + 15 (z^2 + z^{-2}) + 20 \\
+        64 \cos^6 \theta &= 2 \cos 6\theta + 12 \cos 4\theta + 30 \cos 2\theta + 20 \\
+        32 \cos^6 \theta &= \cos 6\theta + 6 \cos 4\theta + 15 \cos 2\theta + 10
+        \end{align*}
+        故得证。
+    \end{solution}
+    \end{parts}
 
-\begin{solution}
-由 De Moivre 定理:
-\[
-z^n = \cos n\theta + i \sin n\theta, \quad z^{-n} = \cos(-n\theta) + i \sin(-n\theta) = \cos n\theta - i \sin n\theta.
-\]
-
-相加得到:
-\[
-z^n + z^{-n} = (\cos n\theta + i \sin n\theta) + (\cos n\theta - i \sin n\theta) = 2\cos n\theta.
-\]
-
-相减得到:
-\[
-z^n - z^{-n} = (\cos n\theta + i \sin n\theta) - (\cos n\theta - i \sin n\theta) = 2i \sin n\theta.
-\]
-\end{solution}
-
-\part 证明
-\[
-16 \sin^5\theta = \sin 5\theta - 5 \sin 3\theta + 10 \sin \theta, \quad 32 \cos^6\theta = \cos 6\theta + 6 \cos 4\theta + 15 \cos 2\theta + 10.
-\]
-
-\begin{solution}
-对于第一个恒等式,使用 $2i \sin \theta = z - z^{-1}$:
-\begin{align*}
-(2i \sin \theta)^5 &= (z - z^{-1})^5 \\
-32 i^5 \sin^5 \theta &= z^5 - 5 z^3 z^{-2} + 10 z z^{-4} - 10 z^2 z^{-3} + 5 z z^{-4} - z^{-5} \\
-32 i \sin^5 \theta &= (z^5 - z^{-5}) - 5(z^3 - z^{-3}) + 10 (z - z^{-1}) \\
-32 i \sin^5 \theta &= 2i \sin 5\theta - 10 i \sin 3\theta + 20 i \sin \theta \\
-16 \sin^5 \theta &= \sin 5\theta - 5 \sin 3\theta + 10 \sin \theta.
-\end{align*}
-
-对于第二个恒等式,使用 $2 \cos \theta = z + z^{-1}$:
-\begin{align*}
-(2 \cos \theta)^6 &= (z + z^{-1})^6 \\
-64 \cos^6 \theta &= (z^6 + z^{-6}) + 6(z^4 + z^{-4}) + 15 (z^2 + z^{-2}) + 20 \\
-64 \cos^6 \theta &= 2 \cos 6\theta + 12 \cos 4\theta + 30 \cos 2\theta + 20 \\
-32 \cos^6 \theta &= \cos 6\theta + 6 \cos 4\theta + 15 \cos 2\theta + 10.
-\end{align*}
-\end{solution}
-\end{parts}
-
-\question 证明:
-\[
-\cos^5\theta \sin^3\theta = \frac{1}{128}\Bigl(6\sin 2\theta + 2\sin 4\theta - 2\sin 6\theta - \sin 8\theta\Bigr)
-\]
-
-\begin{solution}
-设 $z = \cos\theta + i \sin\theta$,则
-\[
-z^n = \cos n\theta + i\sin n\theta, \quad z^{-n} = \cos n\theta - i\sin n\theta,
-\]
-并且
-\[
-z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
-\]
-
-使用 $2\cos\theta = z + z^{-1}$ 得:
-\begin{align*}
-(2\cos\theta)^5 &= (z + z^{-1})^5 \\
-32 \cos^5\theta &= z^5 + 5 z^4 z^{-1} + 10 z^3 z^{-2} + 10 z^2 z^{-3} + 5 z z^{-4} + z^{-5} \\
-32 \cos^5\theta &= (z^5 + z^{-5}) + 5(z^3 + z^{-3}) + 10(z + z^{-1}) \\
-16 \cos^5\theta &= \cos 5\theta + 5\cos 3\theta + 10\cos\theta.
-\end{align*}
-
-利用 $4\sin^3\theta = 3\sin\theta - \sin 3\theta$,得到
-\[
-16\cos^5\theta \cdot 4 \sin^3\theta = (\cos 5\theta + 5\cos 3\theta + 10\cos\theta)(3\sin\theta - \sin 3\theta).
-\]
-
-展开并使用和差化积公式:
-\begin{align*}
-64 \cos^5\theta \sin^3\theta &= 3\cos 5\theta \sin\theta - \cos 5\theta \sin 3\theta + 15 \cos 3\theta \sin\theta - 5 \cos 3\theta \sin 3\theta \\
-&\quad + 30 \cos\theta \sin\theta - 10 \cos\theta \sin 3\theta \\
-&= \frac{3}{2}(\sin 6\theta - \sin 4\theta) - \frac{1}{2}(\sin 8\theta - \sin 2\theta) + \frac{15}{2}(\sin 4\theta - \sin 2\theta) \\
-&\quad - \frac{5}{2} \sin 6\theta + \frac{30}{2} \sin 2\theta - \frac{10}{2} \sin 4\theta \\
-128 \cos^5\theta \sin^3\theta &= 6 \sin 2\theta + 2 \sin 4\theta - 2 \sin 6\theta - \sin 8\theta.
-\end{align*}
-
-因此
-\[
-\cos^5\theta \sin^3\theta = \frac{1}{128}\Bigl(6\sin 2\theta + 2\sin 4\theta - 2\sin 6\theta - \sin 8\theta\Bigr).
-\]
-\end{solution}
+    \question 证明
+    \[
+    \cos^5\theta \sin^3\theta = \frac{1}{128}\Bigl(6\sin 2\theta + 2\sin 4\theta - 2\sin 6\theta - \sin 8\theta\Bigr)
+    \]
+    \begin{solution}
+        设 $z = \cos\theta + i \sin\theta$,由棣莫弗定理,
+        \[
+        z^n = \cos n\theta + i\sin n\theta, \quad z^{-n} = \cos n\theta - i\sin n\theta,
+        \]
+        且
+        \[
+        z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
+        \]
+        由 $2\cos\theta = z + z^{-1}$ 得
+        \begin{align*}
+        (2\cos\theta)^5 &= (z + z^{-1})^5 \\
+        32 \cos^5\theta &= z^5 + 5 z^4 z^{-1} + 10 z^3 z^{-2} + 10 z^2 z^{-3} + 5 z z^{-4} + z^{-5} \\
+        32 \cos^5\theta &= (z^5 + z^{-5}) + 5(z^3 + z^{-3}) + 10(z + z^{-1}) \\
+        16 \cos^5\theta &= \cos 5\theta + 5\cos 3\theta + 10\cos\theta
+        \end{align*}
+        由 $4\sin^3\theta = 3\sin\theta - \sin 3\theta$,得到
+        \[
+        16\cos^5\theta \cdot 4 \sin^3\theta = (\cos 5\theta + 5\cos 3\theta + 10\cos\theta)(3\sin\theta - \sin 3\theta).
+        \]
+        展开并和差化积,
+        \begin{align*}
+        64 \cos^5\theta \sin^3\theta &= 3\cos 5\theta \sin\theta - \cos 5\theta \sin 3\theta + 15 \cos 3\theta \sin\theta - 5 \cos 3\theta \sin 3\theta \\
+        &\quad + 30 \cos\theta \sin\theta - 10 \cos\theta \sin 3\theta \\
+        &= \frac{3}{2}(\sin 6\theta - \sin 4\theta) - \frac{1}{2}(\sin 8\theta - \sin 2\theta) + \frac{15}{2}(\sin 4\theta - \sin 2\theta) \\
+        &\quad - \frac{5}{2} \sin 6\theta + \frac{30}{2} \sin 2\theta - \frac{10}{2} \sin 4\theta \\
+        128 \cos^5\theta \sin^3\theta &= 6 \sin 2\theta + 2 \sin 4\theta - 2 \sin 6\theta - \sin 8\theta
+        \end{align*}
+        因此得证
+        \[
+        \cos^5\theta \sin^3\theta = \frac{1}{128}\left(6\sin 2\theta + 2\sin 4\theta - 2\sin 6\theta - \sin 8\theta\right)
+        \]
+    \end{solution}
 
     \question 定义无穷级数
         \[
@@ -17311,7 +17272,6 @@ z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
         C+iS = \frac{2e^{i\theta}}{2 - e^{4i\theta}}, \quad 
         S = \frac{4\sin\theta + 2\sin3\theta}{5 - 4\cos4\theta}
         \]
-        
     \begin{solution}
         记
         \begin{align*}
@@ -17331,143 +17291,86 @@ z^n + z^{-n} = 2\cos n\theta, \quad z^n - z^{-n} = 2i \sin n\theta.
         \[
         S = \Im(C + iS) = \frac{4\sin\theta + 2\sin3\theta}{5 - 4\cos4\theta}
         \]
-       
     \end{solution}
 
-    \question
-证明下列无穷级数的和:
-\[
-\sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = e^{-\cos\theta}\sin(\sin\theta).
-\]
+    \question 证明下列无穷级数的和:
+    \[
+    \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = e^{-\cos\theta}\sin(\sin\theta)
+    \]
+    \begin{solution}
+        定义
+        \[
+        C = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)}{n!},\quad 
+        S = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!}
+        \]
+        则
+        \[
+        C+iS = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)+i\sin(n\theta)}{n!} 
+        = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{(e^{i\theta})^n}{n!}
+        \]
+        观察到指数函数的展开式为
+        \[
+        e^{-z} = 1 - z + \frac{z^2}{2!} - \frac{z^3}{3!} + \cdots
+        \]
+        于是
+        \[
+        \sum_{n=1}^{\infty} \frac{(-1)^{n+1} z^n}{n!} = 1 - e^{-z}
+        \]
+        取 $z = e^{i\theta}$,得
+        \begin{align*}
+        C+iS &= 1 - e^{-e^{i\theta}} = 1 - e^{-(\cos\theta + i\sin\theta)} = 1 - e^{-\cos\theta} e^{-i\sin\theta}\\
+        &= 1 - e^{-\cos\theta} [\cos(\sin\theta) - i \sin(\sin\theta)] \\
+        &= [1 - e^{-\cos\theta}\cos(\sin\theta)] + i [e^{-\cos\theta}\sin(\sin\theta)]
+        \end{align*}
+        取虚部得到
+        \[
+        \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = \Im(C+iS) = e^{-\cos\theta}\sin(\sin\theta)
+        \]
+    \end{solution}
 
-\begin{solution}
-\textbf{步骤 1:定义两个级数 $C$ 与 $S$}
-
-\[
-C = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)}{n!},\quad 
-S = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!}.
-\]
-
-\medskip
-\textbf{步骤 2:使用复数形式合并}
-
-\[
-C+iS = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{\cos(n\theta)+i\sin(n\theta)}{n!} 
-= \sum_{n=1}^{\infty} (-1)^{n+1} \frac{(e^{i\theta})^n}{n!}.
-\]
-
-\medskip
-\textbf{步骤 3:识别指数级数}
-
-\[
-C+iS = e^{i\theta} - \frac{(e^{i\theta})^2}{2!} + \frac{(e^{i\theta})^3}{3!} - \cdots = \sum_{n=1}^{\infty} \frac{(-1)^{n+1} (e^{i\theta})^n}{n!}.
-\]
-
-利用指数函数展开式:
-\[
-e^{-z} = 1 - z + \frac{z^2}{2!} - \frac{z^3}{3!} + \cdots \implies \sum_{n=1}^{\infty} \frac{(-1)^{n+1} z^n}{n!} = 1 - e^{-z}.
-\]
-
-取 $z = e^{i\theta}$,得到:
-\[
-C+iS = 1 - e^{-e^{i\theta}} = 1 - e^{-(\cos\theta + i\sin\theta)} = 1 - e^{-\cos\theta} e^{-i\sin\theta}.
-\]
-
-\medskip
-\textbf{步骤 4:分离实部和虚部}
-
-\[
-C+iS = 1 - e^{-\cos\theta} [\cos(\sin\theta) - i \sin(\sin\theta)] 
-= [1 - e^{-\cos\theta}\cos(\sin\theta)] + i [e^{-\cos\theta}\sin(\sin\theta)].
-\]
-
-\medskip
-\textbf{步骤 5:取虚部得到原级数和}
-
-\[
-\sum_{n=1}^{\infty} (-1)^{n+1} \frac{\sin(n\theta)}{n!} = \Im(C+iS) = e^{-\cos\theta}\sin(\sin\theta).
-\]
-
-\end{solution}
-
-\question
-求下列多项式方程的所有实数解,并在适当情况下用精确的三角形式表示:
-\[
-x^7-7x^6-21x^5+35x^4+35x^3-21x^2-7x+1=0.
-\]
-
-\begin{solution}
-注意到系数呈现正负交替的规律,并且与二项式系数有关,因此考虑利用三角恒等式进行处理。
-
-设
-\[
-\cos\theta=C,\quad \sin\theta=S,
-\]
-则
-\[
-C+iS=\cos\theta+i\sin\theta.
-\]
-由棣莫弗定理,
-\[
-(C+iS)^7=\cos7\theta+i\sin7\theta.
-\]
-另一方面,展开得
-\begin{align*}
-(C+iS)^7
-&=C^7+7iC^6S-21C^5S^2-35iC^4S^3 \\
-&\quad+35C^3S^4+21iC^2S^5-7CS^6-iS^7.
-\end{align*}
-
-比较实部与虚部,得到
-\begin{align*}
-\cos7\theta&=C^7-21C^5S^2+35C^3S^4-7CS^6,\\
-\sin7\theta&=7C^6S-35C^4S^3+21C^2S^5-S^7.
-\end{align*}
-
-于是
-\[
-\tan7\theta=\frac{\sin7\theta}{\cos7\theta}.
-\]
-令
-\[
-T=\tan\theta=\frac{S}{C},
-\]
-则
-\begin{align*}
-\tan7\theta
-&=\frac{7T-35T^3+21T^5-T^7}{1-21T^2+35T^4-7T^6}.
-\end{align*}
-
-令 $\tan7\theta=1$,得到
-\[
-\frac{7T-35T^3+21T^5-T^7}{1-21T^2+35T^4-7T^6}=1,
-\]
-整理可得
-\[
-T^7-7T^6-21T^5+35T^4+35T^3-21T^2-7T+1=0.
-\]
-这正是题目所给的多项式方程,其中 $T=x$。
-
-由 $\tan7\theta=1$,
-\[
-7\theta=\frac{\pi}{4}+n\pi,
-\]
-从而
-\[
-\theta=\frac{(4n+1)\pi}{28},\quad n=0,1,2,3,4,5,6.
-\]
-
-因此方程的所有实数解为
-\begin{align*}
-x_0&=\tan\frac{\pi}{28},\\
-x_1&=\tan\frac{5\pi}{28},\\
-x_2&=\tan\frac{9\pi}{28},\\
-x_3&=\tan\frac{13\pi}{28},\\
-x_4&=\tan\frac{17\pi}{28},\\
-x_5&=\tan\frac{21\pi}{28}=-1,\\
-x_6&=\tan\frac{25\pi}{28}.
-\end{align*}
-\end{solution}
+    \question 求下列多项式方程的所有实数解:
+    \[
+    x^7-7x^6-21x^5+35x^4+35x^3-21x^2-7x+1=0.
+    \]
+    \begin{solution}
+        设$\cos\theta=c, \sin\theta=s$,由棣莫弗定理,
+        \[
+        (c+is)^7=(\cos\theta+i\sin\theta)^7=\cos7\theta+i\sin7\theta
+        \]
+        且由二项展开得
+        \[
+        (c+is)^7=c^7+7ic^6s-21c^5s^2-35ic^4s^3+35c^3s^4+21ic^2s^5-7cs^6-is^7
+        \]
+        比较实部与虚部,得到
+        \begin{align*}
+        \cos7\theta&=c^7-21c^5s^2+35c^3s^4-7cs^6,\\
+        \sin7\theta&=7c^6s-35c^4s^3+21c^2s^5-s^7.
+        \end{align*}
+        设$t=\tan\theta=\dfrac{s}{c}$,则
+        \begin{align*}
+        \tan7\theta=\frac{\sin7\theta}{\cos7\theta}=\frac{7t-35t^3+21t^5-t^7}{1-21t^2+35t^4-7t^6}.
+        \end{align*}
+        令 $\tan7\theta=1$,得到
+        \[
+        \frac{7t-35t^3+21t^5-t^7}{1-21t^2+35t^4-7t^6}=1,
+        \]
+        整理得
+        \[
+        t^7-7t^6-21t^5+35t^4+35t^3-21t^2-7t+1=0.
+        \]
+        这正是题目所给的多项式方程,其中 $t=x$。由 $\tan7\theta=1$,
+        \[
+        7\theta=\frac{\pi}{4}+n\pi,
+        \]
+        从而
+        \[
+        \theta=\frac{(4n+1)\pi}{28},\quad n=0,1,2,3,4,5,6.
+        \]
+        因此方程的所有实数解为
+        \[
+        \tan\frac{\pi}{28},\tan\frac{5\pi}{28},\tan\frac{9\pi}{28},\tan\frac{13\pi}{28},\tan\frac{17\pi}{28},\tan\frac{21\pi}{28},\tan\frac{25\pi}{28}.
+        \]
+    \end{solution}
 
     \question 
     \begin{parts}
@@ -17512,227 +17415,220 @@ x_6&=\tan\frac{25\pi}{28}.
         7\theta = \dots,-\frac{5\pi}{2},-\frac{\pi}{2},\frac{3\pi}{2},\frac{7\pi}{2},\dots
         \Rightarrow  \theta = \dots,-\frac{5\pi}{14},-\frac{\pi}{14},\frac{3\pi}{14},\frac{7\pi}{14},\dots
         \]
-        所以\[
+        所以
+        \[
         x=\sin \theta = \sin\left(-\frac{5\pi}{14}\right),\sin\left(-\frac{\pi}{14}\right),\sin \frac{3\pi}{14},\sin \frac{7\pi}{14}=-0.901, -0.223, 0.623, 1
         \]
     \end{solution}
-    \part 通过构造合适的多项式方程式,证明
+    \part 通过构造合适的多项式方程,证明
     \[
-    \csc^2\left(\frac{\pi}{7}\right)+\csc^2\left(\frac{2\pi}{7}\right)+\csc^2\left(\frac{3\pi}{7}\right)=8.
+    \csc^2\frac{\pi}{7}+\csc^2\frac{2\pi}{7}+\csc^2\frac{3\pi}{7}=8
     \]
-\begin{solution}
-由
-\[
-\sin 7\theta=0
-\]
-可得解
-\[
-\theta=0,\ \frac{\pi}{7},\ \frac{2\pi}{7},\ \frac{3\pi}{7},\ \dots
-\]
-利用三角恒等式
-\[
-\sin7\theta
-=7\sin\theta-56\sin^3\theta+112\sin^5\theta-64\sin^7\theta,
-\]
-得
-\[
--\sin\theta\bigl(64\sin^6\theta-112\sin^4\theta+56\sin^2\theta-7\bigr)=0.
-\]
-
-对非零解 $\theta\neq0$,令
-\[
-Z=\sin^2\theta,
-\]
-则
-\[
-64Z^3-112Z^2+56Z-7=0.
-\]
-设该三次方程的三个正根为
-\[
-\alpha=\sin^2\frac{\pi}{7},\quad
-\beta=\sin^2\frac{2\pi}{7},\quad
-\gamma=\sin^2\frac{3\pi}{7}.
-\]
-
-由韦达定理,
-\begin{align*}
-\alpha+\beta+\gamma &= \frac{112}{64}=\frac{7}{4},\\
-\alpha\beta+\beta\gamma+\gamma\alpha &= \frac{56}{64}=\frac{7}{8},\\
-\alpha\beta\gamma &= \frac{7}{64}.
-\end{align*}
-
-注意到
-\[
-\sin\frac{\pi}{7}=\sin\frac{6\pi}{7},\quad
-\sin\frac{2\pi}{7}=\sin\frac{5\pi}{7},\quad
-\sin\frac{3\pi}{7}=\sin\frac{4\pi}{7},
-\]
-因此上述三根正好对应所需角度。
-
-于是
-\begin{align*}
-\csc^2\frac{\pi}{7}+\csc^2\frac{2\pi}{7}+\csc^2\frac{3\pi}{7}
-&=\frac{1}{\alpha}+\frac{1}{\beta}+\frac{1}{\gamma}\\
-&=\frac{\alpha\beta+\beta\gamma+\gamma\alpha}{\alpha\beta\gamma}\\
-&=\frac{\frac{7}{8}}{\frac{7}{64}}\\
-&=8.
-\end{align*}
-证毕。
-\end{solution}
+    \begin{solution}
+        考虑解为
+        \[
+        \theta=\cdots,0, \frac{\pi}{7}, \frac{2\pi}{7}, \frac{3\pi}{7},\cdots2
+        \]
+        的方程
+        \[
+        \sin 7\theta=0,
+        \]
+        由三角恒等式
+        \[
+        \sin7\theta
+        =7\sin\theta-56\sin^3\theta+112\sin^5\theta-64\sin^7\theta,
+        \]
+        方程变为
+        \[
+        -\sin\theta\bigl(64\sin^6\theta-112\sin^4\theta+56\sin^2\theta-7\bigr)=0.
+        \]
+        注意到
+        \[
+        \sin\frac{\pi}{7}=\sin\frac{6\pi}{7},\quad
+        \sin\frac{2\pi}{7}=\sin\frac{5\pi}{7},\quad
+        \sin\frac{3\pi}{7}=\sin\frac{4\pi}{7},
+        \]
+        则对非零解 $\sin\theta\neq0$,令$z=\sin^2\theta$,则方程
+        \[
+        64z^3-112z^2+56z-7=0
+        \]
+        的三根为
+        \[
+        \alpha=\sin^2\frac{\pi}{7},\quad
+        \beta=\sin^2\frac{2\pi}{7},\quad
+        \gamma=\sin^2\frac{3\pi}{7}.
+        \]
+        由韦达定理,
+        \[
+        \alpha+\beta+\gamma = \frac{112}{64}=\frac{7}{4},\quad
+        \alpha\beta+\beta\gamma+\gamma\alpha = \frac{56}{64}=\frac{7}{8},\quad
+        \alpha\beta\gamma = \frac{7}{64}
+        \]
+        于是
+        \[
+        \csc^2\frac{\pi}{7}+\csc^2\frac{2\pi}{7}+\csc^2\frac{3\pi}{7}
+        =\frac{1}{\alpha}+\frac{1}{\beta}+\frac{1}{\gamma}
+        =\frac{\alpha\beta+\beta\gamma+\gamma\alpha}{\alpha\beta\gamma}
+        =8
+        \]
+        证毕。
+    \end{solution}
     \end{parts}
 
-\question
-\begin{enumerate}
-\item[(a)] 证明
-\[
-(1+i\tan\theta)^4+(1-i\tan\theta)^4=\frac{2\cos4\theta}{\cos^4\theta}.
-\]
+    \question
+    \begin{parts}
+    \part 证明
+    \[
+    (1+i\tan\theta)^4+(1-i\tan\theta)^4=\frac{2\cos4\theta}{\cos^4\theta}.
+    \]
+    \begin{solution}
+        由
+        \begin{align*}
+        (1+i\tan\theta)^4 + (1-i\tan\theta)^4 &= \left(1 + \frac{i\sin\theta}{\cos\theta}\right)^4 + \left(1 - \frac{i\sin\theta}{\cos\theta}\right)^4 \\
+        &= \left(\frac{\cos\theta + i\sin\theta}{\cos\theta}\right)^4 + \left(\frac{\cos\theta - i\sin\theta}{\cos\theta}\right)^4 \\
+        &= \frac{\cos 4\theta + i\sin 4\theta}{\cos^4\theta} + \frac{\cos 4\theta - i\sin 4\theta}{\cos^4\theta} \\
+        &= \frac{2\cos 4\theta}{\cos^4\theta}
+        \end{align*}
+        故左式=右式,等式得证。
+    \end{solution}
+    \part 通过构造合适的多项式方程,证明
+    \[
+    \tan^2\frac{\pi}{8}\tan^2\frac{3\pi}{8}=1, \quad
+    \tan^2\frac{\pi}{8}+\tan^2\frac{3\pi}{8}=6
+    \]
+    \begin{solution}
+        考虑 $\cos 4\theta = 0$的解
+        \[ 
+        4\theta = \frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2}, \frac{7\pi}{2}, \dots \Rightarrow \theta = \frac{\pi}{8}, \frac{3\pi}{8}, \frac{5\pi}{8}, \frac{7\pi}{8}, \dots 
+        \]
+        则 
+        \[
+        z=i\tan\frac{\pi}{8},\; i\tan\frac{3\pi}{8},\; i\tan\frac{5\pi}{8},\; i\tan\frac{7\pi}{8}
+        \]
+        为方程
+        \[
+        (1+z)^4 + (1-z)^4=0 \Rightarrow z^4 + 6z^2 + 1 = 0
+        \]
+        的解,由韦达定理,
+        \[ 
+        i\tan\frac{\pi}{8} \cdot i\tan\frac{3\pi}{8} \cdot i\tan\frac{5\pi}{8} \cdot i\tan\frac{7\pi}{8} = 1 
+        \]
+        又因为 
+        \[
+        \tan\frac{7\pi}{8} = -\tan\frac{\pi}{8},\quad \tan\frac{5\pi}{8} = -\tan\frac{3\pi}{8}
+        \]
+        故得证
+        \[ 
+        \tan^2\frac{\pi}{8} \tan^2\frac{3\pi}{8} = 1 
+        \]
+        又由韦达定理,
+        \[
+        i\tan\frac{\pi}{8} + i\tan\frac{3\pi}{8} + i\tan\frac{5\pi}{8} + i\tan\frac{7\pi}{8} = 0
+        \]
+        两边平方得
+        \[
+        \left(i\tan\frac{\pi}{8}\right)^2 + \left(i\tan\frac{3\pi}{8}\right)^2 + \left(i\tan\frac{5\pi}{8}\right)^2 + \left(i\tan\frac{7\pi}{8}\right)^2 + 2\cdot 6=0
+        \]
+        给出
+        \[ 
+        \tan^2\frac{\pi}{8} + \tan^2\frac{3\pi}{8} = 6
+        \]
+    \end{solution}
+    \end{parts}
 
-\item[(b)] 利用(a)的结果,通过构造合适的多项式,进一步证明:
-\begin{enumerate}
-\item[i.] $\tan^2\left(\frac{\pi}{8}\right)\tan^2\left(\frac{3\pi}{8}\right)=1$
-\item[ii.] $\tan^2\left(\frac{\pi}{8}\right)+\tan^2\left(\frac{3\pi}{8}\right)=6$
-\end{enumerate}
-\end{enumerate}
-
-\begin{solution}
-\textbf{(a)}  
-从左边开始:
-\begin{align*}
-(1+i\tan\theta)^4+(1-i\tan\theta)^4
-&=\left(1+i\frac{\sin\theta}{\cos\theta}\right)^4+\left(1-i\frac{\sin\theta}{\cos\theta}\right)^4 \\
-&=\left(\frac{\cos\theta+i\sin\theta}{\cos\theta}\right)^4
- +\left(\frac{\cos\theta-i\sin\theta}{\cos\theta}\right)^4 \\
-&=\frac{(\cos\theta+i\sin\theta)^4+(\cos\theta-i\sin\theta)^4}{\cos^4\theta}.
-\end{align*}
-
-由棣莫弗定理,
-\[
-(\cos\theta\pm i\sin\theta)^4=\cos4\theta\pm i\sin4\theta.
-\]
-因此
-\begin{align*}
-(1+i\tan\theta)^4+(1-i\tan\theta)^4
-&=\frac{\cos4\theta+i\sin4\theta+\cos4\theta-i\sin4\theta}{\cos^4\theta} \\
-&=\frac{2\cos4\theta}{\cos^4\theta},
-\end{align*}
-结论得证。
-
-\medskip
-\textbf{(b)}  
-当 $\cos4\theta=0$ 时,由(a)可得
-\[
-(1+i\tan\theta)^4+(1-i\tan\theta)^4=0.
-\]
-令 $z=i\tan\theta$,则
-\[
-(1+z)^4+(1-z)^4=0.
-\]
-展开得
-\begin{align*}
-(1+4z+6z^2+4z^3+z^4)+(1-4z+6z^2-4z^3+z^4)&=0 \\
-2+12z^2+2z^4&=0,
-\end{align*}
-即
-\[
-z^4+6z^2+1=0.
-\]
-
-设其四个根为
-\[
-i\tan\frac{\pi}{8},\quad i\tan\frac{3\pi}{8},\quad
-i\tan\frac{5\pi}{8},\quad i\tan\frac{7\pi}{8}.
-\]
-
-\textbf{(i)}  
-由常数项与首项系数之比,
-\[
-\alpha\beta\gamma\delta=1.
-\]
-利用 $\tan(\pi-\theta)=-\tan\theta$,
-\[
-\tan^2\left(\frac{\pi}{8}\right)\tan^2\left(\frac{3\pi}{8}\right)=1.
-\]
-
-\textbf{(ii)}  
-由二次项系数,
-\[
-\alpha\beta+\alpha\gamma+\cdots+\gamma\delta=6,
-\]
-同样配对并利用对称性,可得
-\[
-\tan^2\left(\frac{\pi}{8}\right)+\tan^2\left(\frac{3\pi}{8}\right)=6.
-\]
-\end{solution}
-
-    \question 设 $w = \cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5}$,
-(a) 证明 \(1+w+w^2+w^3+w^4=0\). 
-(b) 求 \((1-w)(1-w^2)(1-w^3)(1-w^4)\). 
-(c) 证明 \((1-w)(1-w^4) = 4\sin^2\frac{\pi}{5}\). 
-(d) 证明 \((1-w^2)(1-w^3) = 4\sin^2\frac{2\pi}{5}\). 
-(e) 证明 \(\sin\frac{\pi}{5}\sin\frac{2\pi}{5} = \frac{\sqrt{5}}{4}\).
-\begin{solution}
-(a) 因为 $w^5 = (\cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5})^5 = \cos 2\pi + i \sin 2\pi = 1$,且 $w \neq 1$,所以
-\[
-w^5 - 1 = 0 \implies (w-1)(1+w+w^2+w^3+w^4) = 0 \implies 1+w+w^2+w^3+w^4 = 0.
-\]
-
-(b) 考虑乘积 $P = (1-w)(1-w^2)(1-w^3)(1-w^4)$。使用共轭与代数关系:
-\begin{align*}
-P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
-&= (1-w)(1-w^4)(1-w^2)(1-w^3) \\
-&= [2-(w+w^4)][2-(w^2+w^3)] \\
-&= 4 - 2(w+w^4+w^2+w^3) + (w+w^4)(w^2+w^3) \\
-&= 4 - 2(-1) + (w+w^4)(w^2+w^3) \quad (\text{由 } 1+w+\cdots+w^4=0)\\
-&= 6 + (w^3+w^4+w^6+w^7) \\
-&= 6 + (w^3+w^4+w+w^2) \quad (w^5=1 \implies w^6=w, w^7=w^2)\\
-&= 6 + (-1) \\
-&= 5.
-\end{align*}
-
-(c) $(1-w)(1-w^4)$:
-\begin{align*}
-(1-w)(1-w^4) &= 1 - w - w^4 + w^5 = 2 - (w + w^4) \\
-&= 2 - \left(\cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5} + \cos\frac{8\pi}{5} + i\sin\frac{8\pi}{5}\right) \\
-&= 2 - 2\cos\frac{2\pi}{5} \\
-&= 2\left(1 - \cos\frac{2\pi}{5}\right) = 2\cdot 2 \sin^2\frac{\pi}{5} = 4\sin^2\frac{\pi}{5}.
-\end{align*}
-
-(d) $(1-w^2)(1-w^3)$:
-\begin{align*}
-(1-w^2)(1-w^3) &= 1 - w^2 - w^3 + w^5 = 2 - (w^2 + w^3) \\
-&= 2 - (\cos\frac{4\pi}{5} + \cos\frac{6\pi}{5}) \\
-&= 2 - 2 \cos\frac{4\pi}{5} \\
-&= 2\left(1 - \cos\frac{4\pi}{5}\right) = 2\cdot 2 \sin^2\frac{2\pi}{5} = 4\sin^2\frac{2\pi}{5}.
-\end{align*}
-
-(e) 由前面结果可知:
-\begin{align*}
-16 \sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} &= (1-w)(1-w^2)(1-w^3)(1-w^4) = 5, \\
-\sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} &= \frac{5}{16}, \\
-\sin\frac{\pi}{5} \sin\frac{2\pi}{5} &= \pm \frac{\sqrt{5}}{4}.
-\end{align*}
-
-因为 $0 < \frac{\pi}{5} < \frac{\pi}{2}$ 且 $0 < \frac{2\pi}{5} < \frac{\pi}{2}$,所以
-\[
-\sin\frac{\pi}{5} > 0, \quad \sin\frac{2\pi}{5} > 0,
-\]
-于是
-\[
-\sin\frac{\pi}{5} \sin\frac{2\pi}{5} > 0 \implies \sin\frac{\pi}{5} \sin\frac{2\pi}{5} = \frac{\sqrt{5}}{4}.
-\]
-\end{solution}
-
+    \question 设 
+    \[
+    w = \cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5},
+    \]
+    \begin{parts}
+    \part 证明 
+    \[
+    1+w+w^2+w^3+w^4=0.
+    \] 
+    \begin{solution}
+        由棣莫弗定理, 
+        \[
+        w^5 = (\cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5})^5 = \cos 2\pi + i \sin 2\pi = 1,
+        \]
+        由于$w \neq 1$,所以由$w^5 - 1 = 0$得
+        \[
+       (w-1)(1+w+w^2+w^3+w^4) = 0 \Rightarrow 1+w+w^2+w^3+w^4 = 0.
+        \]
+    \end{solution}
+    \part 求 
+    \[
+    (1-w)(1-w^2)(1-w^3)(1-w^4)
+    \]
+    的值。
+    \begin{solution}
+        有
+        \begin{align*}
+        &(1-w)(1-w^2)(1-w^3)(1-w^4) \\
+        &= (1-w)(1-w^4)(1-w^2)(1-w^3) \\
+        &= [2-(w+w^4)][2-(w^2+w^3)] \\
+        &= 4 - 2(w+w^4+w^2+w^3) + (w+w^4)(w^2+w^3) \\
+        &= 4 - 2(-1) + w^3+w^4+w^6+w^7 \\
+        &= 6 + w^3+w^4+w+w^2 \\
+        &= 6 - 1 \\
+        &= 5
+        \end{align*}
+    \end{solution}
+    \part 证明 
+    \[
+    (1-w)(1-w^4) = 4\sin^2\frac{\pi}{5}.
+    \] 
+    \begin{solution}
+        由于$w$与$w^4$共轭,有
+        \begin{align*}
+        (1-w)(1-w^4) &= 1 - w - w^4 + w^5 \\
+        &= 2 - (w + w^4) \\
+        &= 2 - 2\cos\frac{2\pi}{5} \\
+        &= 4\sin^2\frac{\pi}{5}
+        \end{align*}
+    \end{solution}
+    \part 证明 
+    \[
+    (1-w^2)(1-w^3) = 4\sin^2\frac{2\pi}{5}.
+    \] 
+    \begin{solution}
+        同理由于$w^2$与$w^3$共轭,有
+        \begin{align*}
+        (1-w^2)(1-w^3) &= 1 - w^2 - w^3 + w^5 \\ 
+        &= 2 - (w^2 + w^3) \\
+        &= 2 - 2 \cos\frac{4\pi}{5} \\
+        &= 4\sin^2\frac{2\pi}{5}
+        \end{align*}
+    \end{solution}
+    \part 证明 
+    \[
+    \sin\frac{\pi}{5}\sin\frac{2\pi}{5} = \frac{\sqrt{5}}{4}.
+    \]
+    \begin{solution}
+        由(b),(c),(d)得
+        \[
+        16 \sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} = (1-w)(1-w^2)(1-w^3)(1-w^4) = 5, 
+        \]
+        即       
+        \[
+        \sin^2\frac{\pi}{5} \sin^2\frac{2\pi}{5} = \frac{5}{16},
+        \]
+        由于 $\frac{\pi}{5},\frac{2\pi}{5}$为锐角,所以$\sin\dfrac{\pi}{5},\sin\dfrac{2\pi}{5}>0$,故取正值
+        \[
+        \sin\frac{\pi}{5} \sin\frac{2\pi}{5} = \frac{\sqrt{5}}{4}
+        \]
+    \end{solution}
+    \end{parts}
 
     \question 设 \(S_n=a^n+b^n\),其中 \(a,b\) 是方程 \(x^2+x+1=0\) 的根,求
-        \[
-        \sum_{n=0}^{1729}(-1)^n S_n
-        \]
-
+    \[
+    \sum_{n=0}^{1729}(-1)^n S_n
+    \]
     \begin{solution}
-        方程根为 \(a = \omega,\ b = \omega^2\),其中 \(\omega = e^{2\pi i/3}\),满足 \(\omega^3 = 1\)。
-        
-        设 \(S_n = \omega^n + \omega^{2n}\),发现 \(S_n\) 是周期为 $3$ 的数列:
+        方程根为 \(a = \omega,\ b = \omega^2\),其中 \(\omega = e^{2\pi i/3}\),满足 \(\omega^3 = 1\)。设 
+        \[
+        S_n = \omega^n + \omega^{2n},
+        \]
+        发现 \(S_n\) 是周期为 $3$ 的数列:
         \[
         S_0 = 2,\quad S_1 = -1,\quad S_2 = -1
         \]
@@ -17805,9 +17701,9 @@ P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
     \end{solution}
 
     \question 设 \(z=\cos\dfrac{\pi}{6}+i\sin\dfrac{\pi}{6}\),求
-        \[
-        \left|1+2z+3z^2+\cdots+2016z^{2015}\right|
-        \]
+    \[
+    \left|1+2z+3z^2+\cdots+2016z^{2015}\right|
+    \]
     \begin{solution}
         记
         \[
@@ -17886,75 +17782,82 @@ P &= (1-w)(1-w^2)(1-w^3)(1-w^4) \\
 \]
 且 $\alpha$ 的实部和虚部均为正数,  
 当 $\triangle ABC$ 的重心 $G$ 为 $\frac{\alpha}{2^{110}}$ 时,求 $\beta$ 及 $\gamma$ 各为何？
-
 \begin{solution}
-由 $G = \frac{\alpha+\beta+\gamma}{3} = \frac{\alpha}{2^{110}}$,可得
-\[
-\beta + \gamma = \frac{3\alpha}{2^{110}} - \alpha.
-\]
-又因 $ABC$ 是正三角形,满足
-\[
-\beta = \alpha + (\gamma - \alpha)\omega,
-\]
-其中 $\omega = -\frac12 + \frac{\sqrt{3}}{2}i$。
+求解 $\alpha$ 的值
+由原式因式分解得：
+\[ (\alpha^2 - \alpha\beta)^2 - 4(\alpha - \gamma)^2 = 0 \implies \alpha(\alpha - \beta) = \pm 2(\alpha - \gamma) \]
+由于 $\triangle ABC$ 为正三角形，满足 $\alpha - \beta = (\alpha - \gamma)e^{\pm i\frac{\pi}{3}}$，代入上式：
+\[ \alpha (\alpha - \gamma) e^{\pm i\frac{\pi}{3}} = \pm 2(\alpha - \gamma) \implies \alpha = \pm 2 e^{\mp i\frac{\pi}{3}} \]
+已知 $\alpha$ 的实部与虚部均为正，故：
+\[ \alpha = 2e^{i\frac{\pi}{3}} = 1 + \sqrt{3}i \]
 
-将 $\beta$ 与 $\gamma$ 表示式代入原方程,化简可得
-\[
-\alpha^4 - 2\alpha^3\left[\alpha + (\gamma - \alpha)\omega\right] + \left[\left(\alpha + (\gamma - \alpha)\omega\right)^2 - 4\right]\alpha^2 + 8\alpha\gamma - 4\gamma^2 = 0.
-\]
-经过整理与代数运算,可解得
-\[
-\alpha = 2 + 2i.
-\]
-代回 $\beta+\gamma$ 与正三角形条件,可得
-\[
-\beta = 1 + (2+\sqrt{3})i, \quad \gamma = 1 + (2-\sqrt{3})i
-\]
+利用重心与旋转性质求解 $\beta, \gamma$
+
+已知重心 $G = \frac{\alpha}{2^{1110}}$。根据正三角形的几何性质，顶点 $\beta$ 和 $\gamma$ 是由顶点 $\alpha$ 绕重心 $G$ 分别旋转 $120^\circ$ 和 $-120^\circ$ 得到的：
+\begin{align*}
+\beta &= G + (\alpha - G)e^{i\frac{2\pi}{3}} = \frac{\alpha}{2^{1110}} + \alpha\left(1 - \frac{1}{2^{1110}}\right)e^{i\frac{2\pi}{3}} \\
+\gamma &= G + (\alpha - G)e^{-i\frac{2\pi}{3}} = \frac{\alpha}{2^{1110}} + \alpha\left(1 - \frac{1}{2^{1110}}\right)e^{-i\frac{2\pi}{3}}
+\end{align*}
+
+具体数值计算
+将 $\alpha = 2e^{i\frac{\pi}{3}}$ 代入 $\beta$：
+\begin{align*}
+\beta &= \frac{2e^{i\frac{\pi}{3}}}{2^{1110}} + 2e^{i\frac{\pi}{3}}\left(1 - \frac{1}{2^{1110}}\right)e^{i\frac{2\pi}{3}} \\
+&= \frac{1 + \sqrt{3}i}{2^{1110}} + 2\left(1 - \frac{1}{2^{1110}}\right)e^{i\pi} \\
+&= \frac{1 + \sqrt{3}i}{2^{1110}} - 2 + \frac{2}{2^{1110}} \\
+&= \left( \frac{3}{2^{1110}} - 2 \right) + \frac{\sqrt{3}}{2^{1110}}i
+\end{align*}
+
+将 $\alpha = 2e^{i\frac{\pi}{3}}$ 代入 $\gamma$：
+\begin{align*}
+\gamma &= \frac{2e^{i\frac{\pi}{3}}}{2^{1110}} + 2e^{i\frac{\pi}{3}}\left(1 - \frac{1}{2^{1110}}\right)e^{-i\frac{2\pi}{3}} \\
+&= \frac{1 + \sqrt{3}i}{2^{1110}} + 2\left(1 - \frac{1}{2^{1110}}\right)e^{-i\frac{\pi}{3}} \\
+&= \frac{1 + \sqrt{3}i}{2^{1110}} + 2\left(1 - \frac{1}{2^{1110}}\right)\left(\frac{1}{2} - \frac{\sqrt{3}}{2}i\right) \\
+&= \frac{1 + \sqrt{3}i}{2^{1110}} + \left(1 - \frac{1}{2^{1110}}\right) - \sqrt{3}\left(1 - \frac{1}{2^{1110}}\right)i \\
+&= 1 + \sqrt{3}\left(\frac{2}{2^{1110}} - 1\right)i
+\end{align*}
+
+综上所述：
+\[ \beta = \left( \frac{3}{2^{1110}} - 2 \right) + \frac{\sqrt{3}}{2^{1110}}i \]
+\[ \gamma = 1 + \left( \frac{\sqrt{3}}{2^{1109}} - \sqrt{3} \right)i \]
 \textcolor{red}{(待验证)}
 \end{solution}
 
-\question 设 $P(z)$ 是一个 $n$ 次复系数多项式,其所有零点都位于复平面的单位圆上。证明多项式
-\[
-\tilde{P}(z)=2zP'(z)-nP(z)
-\]
-的所有零点也都位于同一单位圆上。
-
-\begin{solution}
-不妨只考虑首项系数为 $1$ 的多项式。设
-\[
-P(z)=(z-\alpha_1)(z-\alpha_2)\cdots(z-\alpha_n),
-\]
-其中 $|\alpha_j|=1$,$j=1,2,\ldots,n$,并允许这些复数 $\alpha_1,\alpha_2,\ldots,\alpha_n$ 相同。
-
-计算得
-\[
-\tilde{P}(z)=2zP'(z)-nP(z)
-=(z+\alpha_1)(z-\alpha_2)\cdots(z-\alpha_n)+\cdots+(z-\alpha_1)(z-\alpha_2)\cdots(z+\alpha_n)。
-\]
-因此
-\[
-\frac{\tilde{P}(z)}{P(z)}=\sum_{k=1}^n \frac{z+\alpha_k}{z-\alpha_k}。
-\]
-
-注意到对任意复数 $z,\alpha$ 且 $z\neq\alpha$,都有
-\[
-\operatorname{Re}\frac{z+\alpha}{z-\alpha}
-=\frac{|z|^2-|\alpha|^2}{|z-\alpha|^2}。
-\]
-于是,在当前情形下,
-\[
-\operatorname{Re}\frac{\tilde{P}(z)}{P(z)}
-=\sum_{k=1}^n \frac{|z|^2-|\alpha_k|^2}{|z-\alpha_k|^2}。
-\]
-由于 $|\alpha_k|=1$,可知当 $|z|\neq1$ 时,上式不为零。
-
-因此,若 $\tilde{P}(z)=0$,则必有
-\[
-\operatorname{Re}\frac{\tilde{P}(z)}{P(z)}=0,
-\]
-从而推出 $|z|=1$。这说明 $\tilde{P}(z)$ 的所有零点也都位于单位圆上。
-\end{solution}
-
+    \question 设 $P(z)$ 是一个 $n$ 次复系数多项式,其所有零点都位于复平面的单位圆上。证明多项式
+    \[
+    \tilde{P}(z)=2zP'(z)-nP(z)
+    \]
+    的所有零点也都位于同一单位圆上。
+    \begin{solution}
+        不失一般性,考虑首项系数为 $1$ 的多项式。设
+        \[
+        P(z)=(z-\alpha_1)(z-\alpha_2)\cdots(z-\alpha_n),
+        \]
+        其中 $|\alpha_j|=1,j=1,2,\ldots,n$,并允许这些复数 $\alpha_1,\alpha_2,\ldots,\alpha_n$ 相同,则
+        \begin{align*}
+        \tilde{P}(z)&=2zP'(z)-nP(z)\\
+        &=(z+\alpha_1)(z-\alpha_2)\cdots(z-\alpha_n)+\cdots+(z-\alpha_1)(z-\alpha_2)\cdots(z+\alpha_n)
+        \end{align*}
+        因此
+        \[
+        \frac{\tilde{P}(z)}{P(z)}=\sum_{k=1}^n \frac{z+\alpha_k}{z-\alpha_k}。
+        \]
+        注意到,对任意复数 $z,\alpha$ 且 $z\neq\alpha$,皆有
+        \[
+        \Re\left[\frac{z+\alpha}{z-\alpha}\right]
+        =\frac{|z|^2-|\alpha|^2}{|z-\alpha|^2}。
+        \]
+        于是
+        \[
+        \Re\left[\frac{\tilde{P}(z)}{P(z)}\right]
+        =\sum_{k=1}^n \frac{|z|^2-|\alpha_k|^2}{|z-\alpha_k|^2}。
+        \]
+        由于 $|\alpha_k|=1$,可知当 $|z|\neq1$ 时,上式不为零,因此若 $\tilde{P}(z)=0$,则必有
+        \[
+        \Re\left[\frac{\tilde{P}(z)}{P(z)}\right]=0,
+        \]
+        从而推出 $|z|=1$。这说明 $\tilde{P}(z)$ 的所有零点也都位于单位圆上。
+    \end{solution}
 
     \question 复数平面上以原点为中心的单位圆中,有一内接四边形,其顶点为 $z_1, z_2, z_3, z_4$,设
     \[

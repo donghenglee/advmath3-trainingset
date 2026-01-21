@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.8.12)  21 JAN 2026 00:57
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.8.12)  21 JAN 2026 22:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2426,6 +2426,12 @@ LaTeX Warning: Label `question@37' multiply defined.
 LaTeX Warning: Label `question@38' multiply defined.
 
 
+LaTeX Warning: Label `part@38@1' multiply defined.
+
+
+LaTeX Warning: Label `part@38@2' multiply defined.
+
+
 LaTeX Warning: Label `question@39' multiply defined.
 
 
@@ -4506,6 +4512,12 @@ LaTeX Warning: Label `part@36@2' multiply defined.
 
 
 LaTeX Warning: Label `question@37' multiply defined.
+
+
+LaTeX Warning: Label `part@37@1' multiply defined.
+
+
+LaTeX Warning: Label `part@37@2' multiply defined.
 
 
 LaTeX Warning: Label `question@38' multiply defined.
@@ -7755,7 +7767,7 @@ Overfull \hbox (40.17088pt too wide) detected at line 16268
 \vectorian14.pgf) [346]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
-Overfull \hbox (13.91858pt too wide) detected at line 16301
+Overfull \hbox (13.91858pt too wide) detected at line 16303
 []
  []
 
@@ -7807,7 +7819,7 @@ File: images/image77.png Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [352]
-Overfull \vbox (8.88135pt too high) detected at line 16580
+Overfull \vbox (8.88135pt too high) detected at line 16574
  []
 
 
@@ -7823,10 +7835,6 @@ Overfull \vbox (8.88135pt too high) detected at line 16580
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [354]
-Underfull \vbox (badness 2205) detected at line 16693
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7944,10 +7952,6 @@ File: images/image75.png Graphic file (type bmp)
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [373]
-Underfull \vbox (badness 3849) detected at line 17724
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7972,6 +7976,10 @@ Underfull \vbox (badness 3849) detected at line 17724
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [377]
+Overfull \vbox (11.39673pt too high) detected at line 17776
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7984,7 +7992,6 @@ Underfull \vbox (badness 3849) detected at line 17724
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [379]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
@@ -8035,7 +8042,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian14.pgf) [386]
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 18189.
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 18092.
 
 
 
@@ -8074,7 +8081,7 @@ LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [392]
-Overfull \hbox (87.54626pt too wide) detected at line 18517
+Overfull \hbox (87.54626pt too wide) detected at line 18420
 []
  []
 
@@ -8208,7 +8215,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian14.pgf) [409]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
-Overfull \hbox (74.97406pt too wide) detected at line 19331
+Overfull \hbox (74.97406pt too wide) detected at line 19234
 []
  []
 
@@ -8305,10 +8312,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32348 strings out of 403250
- 737936 string characters out of 5460888
- 1593808 words of memory out of 5000000
- 58562 multiletter control sequences out of 15000+600000
+ 32373 strings out of 403250
+ 738852 string characters out of 5460888
+ 1593935 words of memory out of 5000000
+ 58587 multiletter control sequences out of 15000+600000
  640690 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,21n,92p,589b,1132s stack positions out of 10000i,1000n,20000p,200000b,200000s
