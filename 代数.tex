@@ -4584,37 +4584,61 @@
         \]
     \end{solution}
 
-    \question 令 $f(x) = \lfloor x + \frac{1}{2} \rfloor + \lfloor x - \frac{1}{2} \rfloor - \lfloor 2x \rfloor$ 证明只有 $\frac{1}{2} \le \{x\} < 1$ 时,满足方程 $f(x) = 0$ 。
-\begin{solution}
-设 $x = n + \{x\}$ ,其中 $n$ 为整数,$0 \le \{x\} < 1$ 。
-\[ f(x) = \lfloor n + \{x\} + \frac{1}{2} \rfloor + \lfloor n + \{x\} - \frac{1}{2} \rfloor - \lfloor 2n + 2\{x\} \rfloor \]
-由于 $n$ 是整数,可以从取整符号中提出：
-\[ f(x) = n + \lfloor \{x\} + \frac{1}{2} \rfloor + n + \lfloor \{x\} - \frac{1}{2} \rfloor - (2n + \lfloor 2\{x\} \rfloor) = \lfloor \{x\} + \frac{1}{2} \rfloor + \lfloor \{x\} - \frac{1}{2} \rfloor - \lfloor 2\{x\} \rfloor \]
-分情况讨论 $\{x\}$ 的取值范围：
-1. 当 $0 \le \{x\} < \frac{1}{2}$ 时：
-$\lfloor \{x\} + \frac{1}{2} \rfloor = 0$ , $\lfloor \{x\} - \frac{1}{2} \rfloor = -1$ , $\lfloor 2\{x\} \rfloor = 0$
-$\therefore f(x) = 0 + (-1) - 0 = -1 \neq 0$ ；
-2. 当 $\frac{1}{2} \le \{x\} < 1$ 时：
-$\lfloor \{x\} + \frac{1}{2} \rfloor = 1$ , $\lfloor \{x\} - \frac{1}{2} \rfloor = 0$ , $\lfloor 2\{x\} \rfloor = 1$
-$\therefore f(x) = 1 + 0 - 1 = 0$ 。
-得证只有 $\frac{1}{2} \le \{x\} < 1$ 时,$f(x) = 0$ 。
-\end{solution}
+    \question 令 
+    \[
+    f(x) = \left\lfloor x + \frac{1}{2} \right\rfloor + \left\lfloor x - \frac{1}{2} \right\rfloor - \lfloor 2x \rfloor,
+    \]
+    证明只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,满足方程 $f(x) = 0$ 。
+    \begin{solution}
+        设 $x = n + \{x\}$ ,其中 $n$ 为整数,且$0 \le \{x\} < 1$,将$n$从取整符号中提出,
+        \[ 
+        f(x) = \left\lfloor \{x\} + \frac{1}{2} \right\rfloor + \left\lfloor \{x\} - \frac{1}{2} \right\rfloor - \lfloor 2\{x\} \rfloor 
+        \]
+        当 $0 \le \{x\} < \dfrac{1}{2}$ 时,
+        \[ 
+        f(x) = 0 + (-1) - 0 = -1 \neq 0
+        \]
+        而当 $\dfrac{1}{2} \le \{x\} < 1$ 时,
+        \[
+        f(x) = 1 + 0 - 1 = 0
+        \]
+        得证只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,$f(x) = 0$。
+    \end{solution}
 
-\question 8. 解 $8\lfloor 3x \rfloor - 5\lfloor 2x \rfloor = 3$ 。
-
-\begin{solution}
-令 $x = n + r$ ,其中 $n \in \mathbb{Z}, 0 \le r < 1$ 。
-原方程变为 $8\lfloor 3n + 3r \rfloor - 5\lfloor 2n + 2r \rfloor = 3$ ,即
-\[ 3n + 8\lfloor 3r \rfloor - 5\lfloor 2r \rfloor = 3 \]
-分区间讨论 $r$ 的取值：
-1. 当 $0 \le r < \frac{1}{3}$ 时, $\lfloor 3r \rfloor = 0, \lfloor 2r \rfloor = 0 \Rightarrow 3n = 3 \Rightarrow n = 1$ ；
-2. 当 $\frac{1}{3} \le r < \frac{1}{2}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 0 \Rightarrow 3n + 8 = 3 \Rightarrow 3n = -5$ （无整数解）；
-3. 当 $\frac{1}{2} \le r < \frac{2}{3}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 1 \Rightarrow 3n + 8 - 5 = 3 \Rightarrow 3n = 0 \Rightarrow n = 0$ ；
-4. 当 $\frac{2}{3} \le r < 1$ 时, $\lfloor 3r \rfloor = 2, \lfloor 2r \rfloor = 1 \Rightarrow 3n + 16 - 5 = 3 \Rightarrow 3n = -8$ （无整数解）。
-综上所述,解为：
-$n = 1, 0 \le r < \frac{1}{3} \Rightarrow 1 \le x < \frac{4}{3}$ ；
-$n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}{3}$ 。
-\end{solution}
+    \question 解 
+    \[
+    8\lfloor 3x \rfloor - 5\lfloor 2x \rfloor = 3
+    \]
+    \begin{solution}
+        令 $x = n + r$ ,其中 $n \in \mathbb{Z}, 0 \le r < 1$,原方程变为 
+        \[ 
+        3n + 8\lfloor 3r \rfloor - 5\lfloor 2r \rfloor = 3 
+        \]
+        当 $0 \le r < \dfrac{1}{3}$ 时,$\lfloor 3r \rfloor = 0, \lfloor 2r \rfloor = 0$,有
+        \[
+        3n = 3 \Rightarrow n = 1
+        \]
+        当 $\dfrac{1}{3} \le r < \dfrac{1}{2}$ 时,$\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 0$,有
+        \[
+        3n + 8 = 3 \Rightarrow n = -\frac{5}{3} \notin \mathbb{Z}
+        \]
+        当 $\dfrac{1}{2} \le r < \dfrac{2}{3}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 1$,有
+        \[
+        3n + 8 - 5 = 3 \Rightarrow n = 0
+        \]
+        当 $\dfrac{2}{3} \le r < 1$ 时,$\lfloor 3r \rfloor = 2, \lfloor 2r \rfloor = 1$,有
+        \[
+        3n + 16 - 5 = 3 \Rightarrow n = -\frac{8}{3} \notin \mathbb{Z}
+        \]
+        综上,解为
+        \[
+        n = 1, 0 \le r < \frac{1}{3} \Rightarrow 1 \le x < \frac{4}{3}
+        \]
+        或
+        \[
+        n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}{3}
+        \]
+    \end{solution}
 
     \question 已知
     \[
@@ -4648,18 +4672,27 @@ $n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}
         \]
     \end{solution}
 
-    \question 已知 $\frac{1}{3-\sqrt{7}}$ 的整数部分为 $a$ ,小数部分为 $b$ ,求 $a^2 + (1+\sqrt{7})ab$ 。
-\begin{solution}
-\[ \frac{1}{3-\sqrt{7}} = \frac{3+\sqrt{7}}{2} \]
-由 $2 < \sqrt{7} < 3 \Rightarrow \frac{5}{2} < \frac{3+\sqrt{7}}{2} < 3$ ,
-得 $a = 2$ , $b = \frac{3+\sqrt{7}}{2} - a = \frac{\sqrt{7}-1}{2}$ 。
-\begin{align*}
-a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \times 2 \times \frac{\sqrt{7}-1}{2} \\
-&= 4 + (\sqrt{7}+1)(\sqrt{7}-1) \\
-&= 4 + 7 - 1 \\
-&= 10
-\end{align*}
-\end{solution}
+    \question 已知 $\dfrac{1}{3-\sqrt{7}}$ 的整数部分为 $a$ ,小数部分为 $b$ ,求 $a^2 + (1+\sqrt{7})ab$ 。
+    \begin{solution}
+        有理化得
+        \[ 
+        \frac{1}{3-\sqrt{7}} = \frac{3+\sqrt{7}}{2} 
+        \]
+        由 
+        \[
+        2 < \sqrt{7} < 3 \Rightarrow \frac{5}{2} < \frac{3+\sqrt{7}}{2} < 3,
+        \]
+        得 
+        \[
+        a = 2 ,\quad b = \frac{3+\sqrt{7}}{2} - a = \frac{\sqrt{7}-1}{2}
+        \]
+        故
+        \begin{align*}
+        a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \cdot 2 \cdot \frac{\sqrt{7}-1}{2} \\
+        &= 4 + (\sqrt{7}+1)(\sqrt{7}-1) \\
+        &= 10
+        \end{align*}
+    \end{solution}
 
     \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
     \begin{solution}
@@ -4727,7 +4760,7 @@ a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \times 2 \times \frac{\sqrt{7}-1}{2} \\
     \begin{solution}
         设
         \[
-        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        x=n+r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
         \]
         且注意到
         \[
@@ -4890,33 +4923,69 @@ a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \times 2 \times \frac{\sqrt{7}-1}{2} \\
         \[
         x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
         \]
-    \end{solution}\question 18. 如 $x > 0$ 且满足 $\lfloor x \rfloor^2 = x(x - \lfloor x \rfloor)$ ,求 $x - \frac{1}{x}$ 。
+    \end{solution}
+    
+    \question 18. 如 $x > 0$ 且满足 $\lfloor x \rfloor^2 = x(x - \lfloor x \rfloor)$ ,求 $x - \frac{1}{x}$ 。
+    \begin{solution}
+        设 $n = \lfloor x \rfloor$。由于 $x > 0$,故 $n \ge 0$。
+        方程变为
+        \[ 
+        n^2 = x(x - n) \Rightarrow x^2 - nx - n^2 = 0
+        \]
+        由于 $x > 0$,取正根
+        \[ 
+        x = \frac{(1 + \sqrt{5})n}{2} 
+        \]
+        根据 $\lfloor x \rfloor = n$ 的定义,必须满足
+        \[ 
+        n \le \frac{(1 + \sqrt{5})n}{2} < n + 1 \tag{1}
+        \]
+        对于 $n=0$,(1) 成立但 $x=0$,与 $x>0$ 矛盾。对于 $n \ge 1$,(1)左侧 
+        \[
+        \frac{1+\sqrt{5}}{2} \approx 1.618 \ge 1
+        \]
+        恒成立,而右侧
+        \[
+        \frac{(1 + \sqrt{5})n}{2} < n + 1 \implies 0.618n < 1 \implies n < \frac{1 + \sqrt{5}}{2}
+        \]
+        故只能$n = 1$,此时
+        \[
+        x - \frac{1}{x} = \frac{1 + \sqrt{5}}{2} - \frac{2}{1 + \sqrt{5}} = \frac{1 + \sqrt{5}}{2} - \frac{\sqrt{5} - 1}{2} = 1
+        \]
+    \end{solution}
 
+\question 证明方程 $\lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor = 147$ 无实数解。
 \begin{solution}
-令 $\lfloor x \rfloor = n$ ,则 $x = n + r$ ,其中 $n$ 为正整数,$0 \le r < 1$ 。
-方程变为 $n^2 = (n + r)r$ ,即 $n^2 = nr + r^2$ 。
-由于 $x > 0$ ,方程两边同除以 $x$ 得：
-\[ \frac{n^2}{x} = x - n \Rightarrow n = x - \frac{n^2}{x} \]
-又由 $n^2 = r(n + r)$ 可知,$r^2 < n^2 = nr + r^2 < (n+1)^2$ 始终成立。
-通过代数变形可得：
-$x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
-（注：根据题目关系项,可进一步解得具体数值或化简表达式）
-\end{solution}
+    设 $x = n + \alpha$，其中 $n = \lfloor x \rfloor$ 为整数部分，$\alpha \in [0, 1)$ 为小数部分。
+    将 $\alpha$ 表示为二进制形式：
+    \[ \alpha = (0.b_1 b_2 b_3 b_4 \dots)_2 = \frac{b_1}{2} + \frac{b_2}{4} + \frac{b_3}{8} + \frac{b_4}{16} + \dots \]
+    其中 $b_i \in \{0, 1\}$。
 
-\question 19. 用反证法证明 $\lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor = 147$ 无解。
+    利用性质 $\lfloor m + y \rfloor = m + \lfloor y \rfloor$（$m$ 为整数）以及二进制移位性质：
+    \begin{align*}
+    \lfloor x \rfloor &= n \\
+    \lfloor 2x \rfloor &= 2n + \lfloor 2\alpha \rfloor = 2n + b_1 \\
+    \lfloor 4x \rfloor &= 4n + \lfloor 4\alpha \rfloor = 4n + 2b_1 + b_2 \\
+    \lfloor 8x \rfloor &= 8n + \lfloor 8\alpha \rfloor = 8n + 4b_1 + 2b_2 + b_3
+    \end{align*}
+   
+    将上述结果代入原方程左式（LHS）：
+    \begin{align*}
+    \text{LHS} &= (n + 2n + 4n + 8n) + (b_1 + 2b_1 + 4b_1) + (b_2 + 2b_2) + b_3 \\
+    &= 15n + 7b_1 + 3b_2 + b_3
+    \end{align*}
 
-\begin{solution}
-证：设 $f(x) = \lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor$ 。
-注意到 $f(x)$ 是一个阶梯增函数,且仅在 $x = \frac{k}{8}$ （ $k \in \mathbb{Z}$ ）处发生跳跃。
-当 $x = 9$ 时,$f(9) = 9 + 18 + 36 + 72 = 135$ ；
-当 $x = 10$ 时,$f(10) = 10 + 20 + 40 + 80 = 150$ 。
-在区间 $[9, 10)$ 内,最大的跳跃发生在 $x$ 趋近于 $10$ 时。
-考虑 $f(x)$ 的所有可能跳跃值之和：
-在一个单位区间 $[n, n+1)$ 内,$f(x)$ 的总增量为 $1 + 2 + 4 + 8 = 15$ 。
-因此 $f(x)$ 取到的值模 $15$ 的余数与 $f(n)$ 相同。
-因为 $135 = 15 \times 9$ ,所以 $f(x)$ 在该区间内的所有取值均应满足 $f(x) \equiv f(9) \pmod 1$ （即跳跃点的增量累加）。
-具体的跳跃点值为：$1, 1+8, 1+4+8$ 等,经检验 $147$ 不在 $f(x)$ 的值域内。
-故原方程无解。
+    已知方程为 $15n + 7b_1 + 3b_2 + b_3 = 147$。
+    由于 $b_1, b_2, b_3 \in \{0, 1\}$，系数部分 $7b_1 + 3b_2 + b_3$ 的最大取值为：
+    \[ 7(1) + 3(1) + 1(1) = 11 \]
+    
+    这意味着对于特定的 $n$，函数值的波动范围仅为 $[15n, 15n + 11]$。
+
+    若 $n = 9$，最大值为 $15(9) + 11 = 135 + 11 = 146$。
+    若 $n = 10$，最小值为 $15(10) + 0 = 150$。
+    
+    数值 147 恰好落在两个区间之间（$146 < 147 < 150$），因此该方程在实数范围内无解。
+    \textcolor{red}{(待验证)}
 \end{solution}
 
     \question 解
@@ -5027,15 +5096,16 @@ $x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
     \sum_{k=1}^{512} \lfloor \log_2 k \rfloor
     \]
     \begin{solution}
-    $1 \le k < 2 \Rightarrow \lfloor \log_2 k \rfloor = 0$ ,$2 \le k < 4 \Rightarrow \lfloor \log_2 k \rfloor = 1$ ,$4 \le k < 8 \Rightarrow \lfloor \log_2 k \rfloor = 2$ ,...
-    $256 \le k < 512 \Rightarrow \lfloor \log_2 k \rfloor = 8$ ,$\lfloor \log_2 512 \rfloor = 9$ 。
-    因此
-    \begin{align*}
-    \sum_{k=1}^{512} \lfloor \log_2 k \rfloor &= 0 + (4-2) \times 1 + (8-4) \times 2 + \dots + (512-256) \times 8 + 9 \\
-    &= 2 \times 1 + 2^2 \times 2 + \dots + 2^8 \times 8 + 9 \\
-    &= 3595
-    \end{align*}
-    （项数不大,直接计算）
+        一般地,对所有整数$n\ge 0,k \ge 1$,
+        \[
+        2^n \le k \le 2^{n+1} \lfloor \log_2 k \rfloor = n
+        \]
+        因此
+        \begin{align*}
+        \sum_{k=1}^{512} \lfloor \log_2 k \rfloor &= 0 + (4-2) \cdot 1 + (8-4) \cdot 2 + \dots + (512-256) \cdot 8 + 9 \\
+        &= 2 \cdot 1 + 2^2 \cdot 2 + \dots + 2^8 \cdot 8 + 9 \\
+        &= 3595
+        \end{align*}
     \end{solution}
 
     \question 计算
@@ -5131,23 +5201,33 @@ $x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
         \]
     \end{solution}
 
-\question 10. 证明 $\lfloor \sqrt{1} \rfloor + \lfloor \sqrt{2} \rfloor + \dots + \lfloor \sqrt{n^2 - 1} \rfloor = \frac{n(n-1)(4n+1)}{6}$ 。
+    \question 证明 
+    \[
+    \lfloor \sqrt{1} \rfloor + \lfloor \sqrt{2} \rfloor + \dots + \lfloor \sqrt{n^2 - 1} \rfloor = \frac{n(n-1)(4n+1)}{6}
+    \]
+    \begin{solution}
+        考虑满足 
+        \[
+        \lfloor \sqrt{k} \rfloor = m \tag{1}
+        \]
+        的正整数 $k$ 的个数。(1)等价于
+        \[
+        m \le \sqrt{k} < m+1 \Longleftrightarrow m^2 \le k < (m+1)^2 
+        \]
+        因此,对于每一个确定的 $m$ ,满足条件的 $k$ 有 
+        \[
+        (m+1)^2 - m^2 = 2m+1
+        \]
+        个,于是
+        \begin{align*}
+        \sum_{k=1}^{n^2-1} \lfloor \sqrt{k} \rfloor &= \sum_{m=1}^{n-1} m(2m+1) \\
+        &= 2 \sum_{m=1}^{n-1} m^2 + \sum_{m=1}^{n-1} m \\
+        &= 2 \cdot \frac{(n-1)n(2n-1)}{6} + \frac{(n-1)n}{2} \\
+        &= \frac{n(n-1)(4n+1)}{6}
+        \end{align*}
+        得证。
+    \end{solution}
 
-\begin{solution}
-证：考虑满足 $\lfloor \sqrt{k} \rfloor = m$ 的正整数 $k$ 的个数。
-这意味着 $m \le \sqrt{k} < m+1$ ,即 $m^2 \le k < (m+1)^2$ 。
-因此,对于每一个确定的 $m$ ,满足条件的 $k$ 有 $(m+1)^2 - m^2 = 2m+1$ 个。
-在原式中,$k$ 从 $1$ 取到 $n^2-1$ ,则 $m = \lfloor \sqrt{k} \rfloor$ 从 $1$ 取到 $n-1$ 。
-\begin{align*}
-\sum_{k=1}^{n^2-1} \lfloor \sqrt{k} \rfloor &= \sum_{m=1}^{n-1} m(2m+1) \\
-&= \sum_{m=1}^{n-1} (2m^2 + m) \\
-&= 2 \sum_{m=1}^{n-1} m^2 + \sum_{m=1}^{n-1} m \\
-&= 2 \cdot \frac{(n-1)n(2n-1)}{6} + \frac{(n-1)n}{2} \\
-&= \frac{n(n-1)(2(2n-1) + 3)}{6} \\
-&= \frac{n(n-1)(4n+1)}{6}
-\end{align*}
-得证。
-\end{solution}
     \question 求
     \[
     \sum_{k=1}^{202}\lceil \sqrt{k}\rceil
@@ -5194,7 +5274,7 @@ $x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
         \end{align*}
     \end{solution}
 
-    \question 
+    \question 求
     \[
     \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
     \]
@@ -5223,79 +5303,140 @@ $x - \frac{1}{x} = n + r - \frac{1}{n+r}$ 。
         \end{align*}
     \end{solution}
 
-    \question 例 8、设 $m, n$ 是整数,$n \ge 1$ ,证明 $\lfloor \frac{m+1}{n} \rfloor = \begin{cases} \lfloor \frac{m}{n} \rfloor & (n \nmid m+1) \\ \lfloor \frac{m}{n} \rfloor + 1 & (n \mid m+1) \end{cases}$ 。
+    \question 设 $m, n$ 是整数,$n \ge 1$ ,证明 
+    \[
+    \left\lfloor \dfrac{m+1}{n} \right\rfloor = 
+    \begin{cases} 
+    \left\lfloor \dfrac{m}{n} \right\rfloor &,n \nmid m+1 \\[8pt]
+    \left\lfloor \dfrac{m}{n} \right\rfloor + 1 &,n \mid m+1
+    \end{cases}
+    \]
+    \begin{solution}
+        当 $n$ 不整除 $m+1$,有$m+1 = kn+r$ ,其中 $k \in \mathbb{Z},1 \le r \le n-1$,此时欲证 
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor \tag{1}
+        \]
+        观察左式为
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn+r}{n} \right\rfloor = \left\lfloor k + \frac{r}{n} \right\rfloor = k 
+        \]
+        右式为
+        \[
+        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn+r-1}{n} \right\rfloor = \left\lfloor k + \frac{r-1}{n} \right\rfloor = k
+        \]
+        故(1)得证。当 $n$ 整除 $m+1$ 时,即 $m+1 = kn$,欲证
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor + 1 \tag{2}
+        \]
+        此时左式为
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn}{n} \right\rfloor = \left\lfloor k \right\rfloor = k
+        \]
+        右式为
+        \[
+        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn-1}{n} \right\rfloor = \left\lfloor k - \frac{1}{n} \right\rfloor = k-1 
+        \]
+        故(2)得证。
+    \end{solution}
 
-\begin{solution}
-证：对 $n$ 不整除 $m+1$ 的情况即是当 $m+1 = kn+r$ ,其中 $1 \le r \le n-1$ 时,
-要证 $\lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{m}{n} \rfloor$ 。
-\begin{align*}
-左式 &= \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{kn+r}{n} \rfloor = \lfloor k + \frac{r}{n} \rfloor = k \\
-右式 &= \lfloor \frac{m}{n} \rfloor = \lfloor \frac{kn+r-1}{n} \rfloor = \lfloor k + \frac{r-1}{n} \rfloor = k 
-\end{align*}
-得证；
+    \question 证明对任意实数 $\alpha, \beta$ 有 
+    \[
+    \lfloor 2\alpha \rfloor + \lfloor 2\beta \rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor
+    \]
+    \begin{solution}
+        令 
+        \[
+        \alpha = n_1 + r_1,\beta = n_2 + r_2, \quad n_1, n_2 \in \mathbb{Z},\quad 0 \le r_1, r_2 < 1
+        \]
+        则原不等式等价于
+        \[ 
+        \lfloor 2r_1 \rfloor + \lfloor 2r_2 \rfloor \ge \lfloor r_1 + r_2 \rfloor \tag{1}
+        \]
+        若 $0 \le r_1 < \dfrac{1}{2}$ 且 $0 \le r_2 < \frac{1}{2}$ ,则左式 $= 0 + 0 = 0$ 。由于 $r_1 + r_2 < 1$ ,右式 $= 0$,(1)成立；
 
-当 $n$ 整除 $m+1$ 时,即 $m+1 = kn$ ,
-\begin{align*}
-左式 &= \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{kn}{n} \rfloor = \lfloor k \rfloor = k \\
-右式 &= \lfloor \frac{m}{n} \rfloor = \lfloor \frac{kn-1}{n} \rfloor = \lfloor k - \frac{1}{n} \rfloor = k-1 
-\end{align*}
-$\therefore k = \lfloor \frac{m+1}{n} \rfloor = \lfloor \frac{m}{n} \rfloor + 1$ ,得证。
-\end{solution}
+        若 $r_1, r_2$ 中有一个大于等于 $\frac{1}{2}$ ,不妨设 $r_1 \ge \dfrac{1}{2}$ ,则左式 $\ge 1 + 0 = 1$ 。而 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)成立；
 
-\question 12. 证明对任意实数 $\alpha, \beta$ 有 $\lfloor 2\alpha \rfloor + \lfloor 2\beta \rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor$ 。
+        若 $r_1 \ge \dfrac{1}{2}$ 且 $r_2 \ge \frac{1}{2}$ ,则左式 $= 1 + 1 = 2$ 。由于 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)也成立。
 
-\begin{solution}
-证：令 $\alpha = n_1 + r_1$ , $\beta = n_2 + r_2$ ,其中 $n_1, n_2$ 为整数,$0 \le r_1, r_2 < 1$ 。
-原不等式等价于证明：
-\[ \lfloor 2r_1 \rfloor + \lfloor 2r_2 \rfloor \ge \lfloor r_1 + r_2 \rfloor \]
-分情况讨论：
-1. 若 $0 \le r_1 < \frac{1}{2}$ 且 $0 \le r_2 < \frac{1}{2}$ ,则左式 $= 0 + 0 = 0$ 。由于 $r_1 + r_2 < 1$ ,右式 $= 0$ ,等式成立；
-2. 若 $r_1, r_2$ 中有一个大于等于 $\frac{1}{2}$ ,不妨设 $r_1 \ge \frac{1}{2}$ ,则左式 $\ge 1 + 0 = 1$ 。而 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,不等式成立；
-3. 若 $r_1 \ge \frac{1}{2}$ 且 $r_2 \ge \frac{1}{2}$ ,则左式 $= 1 + 1 = 2$ 。由于 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,不等式成立。
-综上所述,原不等式成立。
-\end{solution}
+        综上,原不等式成立。
+    \end{solution}
 
-\question 13. 证明对任意实数 $x, y$ 有 $\lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$ 。
+    \question 证明对任意实数 $x, y$ 有 
+    \[
+    \lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1
+    \]
+    \begin{solution}
+        由取整函数的性质可知 
+        \[
+        x - 1 < \lfloor x \rfloor \le x,\quad -(y - 1) > -\lfloor y \rfloor \ge -y
+        \]
+        由 $x = (x - y) + y$ 得 
+        \[
+        \lfloor x \rfloor = \lfloor (x - y) + y \rfloor \ge \lfloor x - y \rfloor + \lfloor y \rfloor
+        \]
+        移项得 
+        \[
+        \lfloor x \rfloor - \lfloor y \rfloor \ge \lfloor x - y \rfloor
+        \]
+        得证左边不等式,又因 $x - y = x + (-y)$ 得 
+        \[
+        \lfloor x - y \rfloor = \lfloor x + (-y) \rfloor \ge \lfloor x \rfloor + \lfloor -y \rfloor
+        \]
+        由于 
+        \[
+        \lfloor -y \rfloor = 
+        \begin{cases}
+        -\lfloor y \rfloor &,y \in \mathbb{Z} \\ 
+        -\lfloor y \rfloor - 1 &,y \not\in \mathbb{Z}
+        \end{cases}
+        \]
+        即 
+        \[
+        \lfloor -y \rfloor \ge -\lfloor y \rfloor - 1
+        \]
+        代入得 
+        \[
+        \lfloor x - y \rfloor \ge \lfloor x \rfloor - \lfloor y \rfloor - 1
+        \]
+        得证右边不等式,综上原不等式成立。
+    \end{solution}
 
-\begin{solution}
-证：由取整函数的性质可知 $x - 1 < \lfloor x \rfloor \le x$ 以及 $-(y - 1) > -\lfloor y \rfloor \ge -y$ 。
-1. 证明左半部分： $\lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor$
-由 $x = (x - y) + y$ 得 $\lfloor x \rfloor = \lfloor (x - y) + y \rfloor \ge \lfloor x - y \rfloor + \lfloor y \rfloor$ ,
-移项得 $\lfloor x \rfloor - \lfloor y \rfloor \ge \lfloor x - y \rfloor$ ；
-2. 证明右半部分： $\lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$
-由 $x - y = x + (-y)$ 得 $\lfloor x - y \rfloor = \lfloor x + (-y) \rfloor \ge \lfloor x \rfloor + \lfloor -y \rfloor$ 。
-由于 $\lfloor -y \rfloor$ 等于 $-\lfloor y \rfloor$ （当 $y$ 为整数）或 $-\lfloor y \rfloor - 1$ （当 $y$ 不为整数）,
-即 $\lfloor -y \rfloor \ge -\lfloor y \rfloor - 1$ 。
-代入得 $\lfloor x - y \rfloor \ge \lfloor x \rfloor - \lfloor y \rfloor - 1$ ,
-移项得 $\lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1$ 。
-综上所述,不等式成立。
-\end{solution}
-
-\question 证明埃尔米特恒等式：对于每一个实数 $x$ 和每一个正整数 $n$ ,以下恒等式成立：
-\[ \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor = \lfloor nx \rfloor \]
-
-\begin{solution}
-证：将 $x$ 分解为整数部分和小数部分,即 $x = \lfloor x \rfloor + \{x\}$。
-在 $\{1, \dots, n\}$ 中,恰好存在一个 $k'$ 使得：
-\[ \lfloor x \rfloor = \lfloor x + \frac{k'-1}{n} \rfloor \le x < \lfloor x + \frac{k'}{n} \rfloor = \lfloor x \rfloor + 1 \text{} \]
-通过在不等式左右两边的取整符号内减去同一个整数 $\lfloor x \rfloor$ ,可以重写为：
-\[ 0 = \lfloor \{x\} + \frac{k'-1}{n} \rfloor \le \{x\} < \lfloor \{x\} + \frac{k'}{n} \rfloor = 1 \text{} \]
-因此有：
-\[ 1 - \frac{k'}{n} \le \{x\} < 1 - \frac{k'-1}{n} \text{} \]
-两边同时乘以 $n$ 得：
-\[ n - k' \le n\{x\} < n - k' + 1 \text{} \]
-这意味着 $\lfloor n\{x\} \rfloor = n - k'$。
-现在将埃尔米特恒等式中的求和以索引 $k'$ 为界分为两部分：
-\begin{align*}
-\sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor &= \sum_{k=0}^{k'-1} \lfloor x \rfloor + \sum_{k=k'}^{n-1} (\lfloor x \rfloor + 1) \\
-&= k' \lfloor x \rfloor + (n - k')(\lfloor x \rfloor + 1) \\
-&= n \lfloor x \rfloor + n - k' \\
-&= n \lfloor x \rfloor + \lfloor n\{x\} \rfloor \\
-&= \lfloor n \lfloor x \rfloor + n\{x\} \rfloor \\
-&= \lfloor nx \rfloor \text{}
-\end{align*}
-得证。
-\end{solution}
+    \question 证明埃尔米特恒等式：对所有实数 $x$ 及所有正整数 $n$ ,以下恒等式成立：
+    \[ 
+    \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = \lfloor nx \rfloor 
+    \]
+    \begin{solution}
+        将 $x$ 分解为整数部分和小数部分,即 
+        \[
+        x = \lfloor x \rfloor + \{x\}
+        \]
+        在 $\{1, \dots, n\}$ 中,恰好存在一个 $k'$ 使得：
+        \[ 
+        \lfloor x \rfloor = \left\lfloor x + \frac{k'-1}{n} \right\rfloor \le x < \left\lfloor x + \frac{k'}{n} \right\rfloor = \lfloor x \rfloor + 1 
+        \]
+        通过在不等式左右两边的取整符号内减去同一个整数 $\lfloor x \rfloor$ ,可以重写为：
+        \[ 
+        0 = \left\lfloor \{x\} + \frac{k'-1}{n} \right\rfloor \le \{x\} < \left\lfloor \{x\} + \frac{k'}{n} \right\rfloor = 1  
+        \]
+        因此有
+        \[ 
+        1 - \frac{k'}{n} \le \{x\} < 1 - \frac{k'-1}{n}  
+        \]
+        即求点
+        \[ 
+        n - k' \le n\{x\} < n - k' + 1 
+        \]
+        这意味着 $\lfloor n\{x\} \rfloor = n - k'$,于是
+        \begin{align*}
+        \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor &= \sum_{k=0}^{k'-1} \lfloor x \rfloor + \sum_{k=k'}^{n-1} (\lfloor x \rfloor + 1) \\
+        &= k' \lfloor x \rfloor + (n - k')(\lfloor x \rfloor + 1) \\
+        &= n \lfloor x \rfloor + n - k' \\
+        &= n \lfloor x \rfloor + \lfloor n\{x\} \rfloor \\
+        &= \lfloor n \lfloor x \rfloor + n\{x\} \rfloor \\
+        &= \lfloor nx \rfloor
+        \end{align*}
+        得证。
+    \end{solution}
 \end{questions}
 \pagebreak
 
@@ -17786,14 +17927,14 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
 求解 $\alpha$ 的值
 由原式因式分解得：
 \[ (\alpha^2 - \alpha\beta)^2 - 4(\alpha - \gamma)^2 = 0 \implies \alpha(\alpha - \beta) = \pm 2(\alpha - \gamma) \]
-由于 $\triangle ABC$ 为正三角形，满足 $\alpha - \beta = (\alpha - \gamma)e^{\pm i\frac{\pi}{3}}$，代入上式：
+由于 $\triangle ABC$ 为正三角形,满足 $\alpha - \beta = (\alpha - \gamma)e^{\pm i\frac{\pi}{3}}$,代入上式：
 \[ \alpha (\alpha - \gamma) e^{\pm i\frac{\pi}{3}} = \pm 2(\alpha - \gamma) \implies \alpha = \pm 2 e^{\mp i\frac{\pi}{3}} \]
-已知 $\alpha$ 的实部与虚部均为正，故：
+已知 $\alpha$ 的实部与虚部均为正,故：
 \[ \alpha = 2e^{i\frac{\pi}{3}} = 1 + \sqrt{3}i \]
 
 利用重心与旋转性质求解 $\beta, \gamma$
 
-已知重心 $G = \frac{\alpha}{2^{1110}}$。根据正三角形的几何性质，顶点 $\beta$ 和 $\gamma$ 是由顶点 $\alpha$ 绕重心 $G$ 分别旋转 $120^\circ$ 和 $-120^\circ$ 得到的：
+已知重心 $G = \frac{\alpha}{2^{1110}}$。根据正三角形的几何性质,顶点 $\beta$ 和 $\gamma$ 是由顶点 $\alpha$ 绕重心 $G$ 分别旋转 $120^\circ$ 和 $-120^\circ$ 得到的：
 \begin{align*}
 \beta &= G + (\alpha - G)e^{i\frac{2\pi}{3}} = \frac{\alpha}{2^{1110}} + \alpha\left(1 - \frac{1}{2^{1110}}\right)e^{i\frac{2\pi}{3}} \\
 \gamma &= G + (\alpha - G)e^{-i\frac{2\pi}{3}} = \frac{\alpha}{2^{1110}} + \alpha\left(1 - \frac{1}{2^{1110}}\right)e^{-i\frac{2\pi}{3}}
@@ -17856,7 +17997,7 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         \[
         \Re\left[\frac{\tilde{P}(z)}{P(z)}\right]=0,
         \]
-        从而推出 $|z|=1$。这说明 $\tilde{P}(z)$ 的所有零点也都位于单位圆上。
+        从而推出 $|z|=1$,这说明 $\tilde{P}(z)$ 的所有零点也都位于单位圆上。
     \end{solution}
 
     \question 复数平面上以原点为中心的单位圆中,有一内接四边形,其顶点为 $z_1, z_2, z_3, z_4$,设
