@@ -12840,1016 +12840,747 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
 \separator
 \vspace{1pt}
 \begin{questions}
+    \question 设 
+    \[
+    y = e^{\tan x},\quad x \in \mathbb{R}
+    \]
+    \begin{parts}
+    \part 证明
+    \[
+    \frac{d^2y}{dx^2} = (1+\tan^2 x + 2 \tan x) \frac{dy}{dx}.
+    \]
+    \begin{solution}
+        首先对 $y$ 求导
+        \[
+        \frac{dy}{dx} = e^{\tan x} \sec^2 x = y \sec^2 x.
+        \]
+        再次求导得
+        \begin{align*}
+        \frac{d^2y}{dx^2} 
+        &= \frac{dy}{dx} \sec^2 x + y \cdot 2 \sec^2 x \tan x \\
+        &= \frac{dy}{dx} \sec^2 x + 2 \frac{dy}{dx} \tan x \\
+        &= \frac{dy}{dx} ( \sec^2 x + 2 \tan x ) \\
+        &= \frac{dy}{dx} (1 + \tan^2 x + 2 \tan x ) 
+        \end{align*}
+    \end{solution}
+    \part 求 $e^{\tan x}$ 展开至 $x^3$项的麦克劳林展开式。
+    \begin{solution}
+        在 $x=0$处的泰勒展开式为
+        \[
+        y = y_0 + y'_0 x + \frac{y''_0}{2!} x^2 + \frac{y'''_0}{3!} x^3 + O(x^4),
+        \]
+        其中$y_0 = 1,y'_0 = 1,y''_0 = 1$,计算三阶导数:
+        \[
+        \frac{d^3y}{dx^3} = 2(1+\tan x) \sec^2 x \frac{dy}{dx} + (1+\tan x)^2 \frac{d^2y}{dx^2},
+        \]
+        代入 $x=0$ 得 $y'''_0 = 3$,于是
+        \[
+        e^{\tan x} = 1 + x + \frac{1}{2}x^2 + \frac{1}{2}x^3 + O(x^4)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 设 
+    \[
+    f(x) = \sin[\ln(1+x)],\quad x \in \mathbb{R},\quad x > -1
+    \]
+    \begin{parts}
+    \part 求关于 $f(x)$ 的微分方程。
+    \begin{solution}
+        首先求导得
+        \[
+        f'(x) = \cos[\ln(1+x)] \frac{1}{1+x} \Rightarrow 
+        (1+x) f'(x) = \cos[\ln(1+x)]
+        \]
+        再次求导
+        \[
+        (1+x) f''(x) + f'(x) = - \sin[\ln(1+x)] \frac{1}{1+x}
+        \]
+        移项得微分方程
+        \[
+        (1+x)^2 f''(x) + (1+x) f'(x) + f(x) = 0 \tag{1}
+        \]
+    \end{solution}
+    \part 求$f(x)$的麦克劳林展开前 3 个非零项。
+    \begin{solution}
+        利用微分方程可求各阶导数在 $x=0$ 的值,首先有
+        \[
+        f(0) = \sin(\ln 1) = 0, \quad f'(0) = \cos(\ln 1) = 1.
+        \]
+        由(1)得,
+        \[
+        f''(0) + f'(0) + f(0) = 0 \implies f''(0) = -1.
+        \]
+        对(1)再求导得
+        \[
+        (1+x)^2 f''' + 3(1+x) f'' + 2 f' = 0
+        \]
+        于是
+        \[
+        f'''(0) + 3 f''(0) + 2 f'(0) = 0 \Rightarrow f'''(0) = 1.
+        \]
+        因此麦克劳林展开为
+        \[
+        f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
+        = x - \frac{1}{2} x^2 + \frac{1}{6} x^3 + \dots
+        \]
+    \end{solution}
+    \part 据此,求 $\cos[\ln(1+x)]$ 的麦克劳林展开前 2 个非零项。
+    \begin{solution}
+    由(b),
+        \[ 
+        \sin[\ln(1+x)] = x - \frac{1}{2}x^2 + \frac{1}{6}x^3 + \dots 
+        \]
+        两边关于 $x$ 求导,
+        \[ 
+        \cos[\ln(1+x)] \cdot \frac{1}{1+x} = 1 - x + \frac{1}{2}x^2 + \dots 
+        \]
+        于是
+        \begin{align*}
+        \cos[\ln(1+x)] 
+        &= (1+x)(1 - x + \frac{1}{2}x^2 + \dots) \\
+        &= 1 - x + \frac{1}{2}x^2 + x - x^2 + \dots \\
+        &= 1 - \frac{1}{2}x^2 + \dots
+        \end{align*}
+    \end{solution}
+    \end{parts}
+
+    \question 设 
+    \[
+    y = \tan x,\quad 0 \le x < \frac{\pi}{2}
+    \]
+    \begin{parts}
+    \part 证明下列公式:
+    \begin{subparts}
+    \subpart 
+    \[
+    \frac{d^2y}{dx^2} = 2y \frac{dy}{dx}
+    \]
+    \begin{solution}
+        对$x$求导得,
+        \[
+        \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1+y^2
+        \]
+        再求导得
+        \[
+        y'' = 2y y'
+        \]
+    \end{solution}
+    \subpart 
+    \[
+    \frac{d^5y}{dx^5} = 6 \left(\frac{d^2y}{dx^2}\right)^2 + 8 \frac{dy}{dx} \frac{d^3y}{dx^3} + 2y \frac{d^4y}{dx^4}
+    \]
+    \begin{solution}
+        再次求导得,
+        \[
+        y''' = 2(y')^2 + 2yy''
+        \]
+        \[
+        y^{(4)} = 4y'y''+2y'y'' + 2yy''' =6y'y''+ 2yy'''
+        \]
+        \[
+        y^{(5)} = 6(y'')^2 + 6y'y''' + 2y'y''' + 2yy^{(4)} = 6(y'')^2 + 8y'y''' + 2y y^{(4)}
+        \]
+    \end{solution}
+    \end{subparts}
+    \part 求 $y = \tan x$ 的麦克劳林展开前 3 个非零项。
+    \begin{solution}
+        在 $x=0$ 处求各阶导数为
+        \[
+        y_0 = \tan(0) = 0, \quad y'_0 =1, \quad y''_0 = 0, \quad y'''_0 = 2, \quad y^{(4)}_0 = 0, \quad y^{(5)}_0 = 16.
+        \]
+        故麦克劳林展开式为
+        \[
+        \tan x = x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + O(x^6)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 设 
+    \[
+    y = \ln(2-e^x),\quad x<\ln 2
+    \]
+    \begin{parts}
+    \part 证明下列公式:
+    \[
+    e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac{dy}{dx}\right)^3 \right] + e^x = 0
+    \]
+    \begin{solution}
+        由 $y = \ln(2-e^x)$ 得
+        \[
+        e^y = 2-e^x
+        \]
+        两边对 $x$ 求导,
+        \[
+        e^y y' = -e^x \Rightarrow e^y y' + e^x = 0
+        \]
+        再次求导,
+        \[
+        e^y[(y')^2 + y''] + e^x = 0
+        \]
+        再求一次导数,
+        \[
+        e^y[y''' + 3y'y'' + (y')^3] + e^x = 0
+        \]
+    \end{solution}
+    \part 求麦克劳林展开式的前三个非零项。
+    \begin{solution}
+        在 $x=0$ 处求各阶导数:
+        \[
+        y_0 = \ln(2-e^0)= 0
+        \]
+        \[
+        y'_0 + 1 = 0 \Rightarrow y'_0 = -1
+        \]
+        \[
+        (-1)^2 + y''_0 + 1 = 0 \Rightarrow y''_0 = -2
+        \]
+        \[
+        (-1)^3 + 3(-1)(-2) + y'''_0 + 1 = 0 \Rightarrow y'''_0 = -6
+        \]
+        故麦克劳林展开式为
+        \[
+        \ln(2-e^x) = -x - x^2 - x^3 + O(x^4)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 函数 $f,g$ 定义如下
+    \[
+    f(x) = \arctan\left(\frac{2}{3}x\right), \quad x\in \mathbb{R},
+    \]
+    \[
+    g(y) = \frac{1}{1+y}, \quad y\in \mathbb{R}, \quad -1<y<1.
+    \]
+    \begin{parts}
+    \part 将 $g(y)$ 展开为二项级数,并保留 $y^3$ 项。
+    \begin{solution}
+        二项展开得,
+        \begin{align*}
+        g(y) = (1+y)^{-1} 
+        &= 1 + (-1)y + \frac{(-1)(-2)}{2!}y^2 + \frac{(-1)(-2)(-3)}{3!}y^3 + O(y^4) \\
+        &= 1 - y + y^2 - y^3 + O(y^4)
+        \end{align*}
+    \end{solution}
+    \part 利用 (a) 的结果,证明
+    \[
+    \arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7
+    \]
+    \begin{solution}
+        对 $x$ 求导,
+        \[
+        f'(x) = \frac{\frac{2}{3}}{1+(\frac{2}{3}x)^2} = \frac{2}{3}\left(1+\frac{4}{9}x^2\right)^{-1}
+        \]
+        令$y = \dfrac{4}{9}x^2$,
+        \begin{align*}
+        f'(x) 
+        &= \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^2 - \left(\frac{4}{9}x^2\right)^3 + O(x^8)\right]\\
+        &= \frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8)
+        \end{align*}
+        两边积分得
+        \begin{align*}
+        \arctan\left(\frac{2}{3}x\right) 
+        &=\int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8) \right] dx \\
+        &= \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7 + O(x^9)+ C
+        \end{align*}
+        由 $x=0$ 可得 $C=0$,因此
+        \[
+        \arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知 
+    \[
+    y = \tan x
+    \]
+    \begin{parts}
+    \part 证明
+    \[
+    \frac{d^3 y}{dx^3} = 2y \frac{d^2 y}{dx^2} + 2 \left(\frac{dy}{dx}\right)^2
+    \]
+    \begin{solution}
+        求导,
+        \[
+        \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1 + y^2
+        \]
+        再求两次导数得
+        \[
+        \frac{d^2 y}{dx^2} = 2y \frac{dy}{dx},\quad \frac{d^3 y}{dx^3} = 2y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2
+        \]
+    \end{solution}
+    \part 求 $\tan x$ 关于 $\left(x - \dfrac{\pi}{4}\right)$ 的泰勒级数展开式的前四项。
+    \begin{solution}
+        计算 $f(x)$ 及其各阶导数在 $x = \dfrac{\pi}{4}$ 的值:
+        \[ 
+        f\left(\frac{\pi}{4}\right) = \tan\frac{\pi}{4} = 1 
+        \]
+        \[ 
+        f'(x) = \sec^2 x , \quad f'\left(\frac{\pi}{4}\right) = \sec^2\frac{\pi}{4} = (\sqrt{2})^2 = 2 
+        \]
+        \[ 
+        f''(x) = 2\sec x \cdot (\sec x \tan x) = 2\sec^2 x \tan x, \quad f''\left(\frac{\pi}{4}\right) = 2(2)(1) = 4 
+        \]
+        \[ 
+        f'''(x) = 4\sec x(\sec x \tan x)\tan x + 2\sec^2 x(\sec^2 x) = 4\sec^2 x \tan^2 x + 2\sec^4 x 
+        \]
+        \[ 
+        f'''\left(\frac{\pi}{4}\right) = 4(2)(1)^2 + 2(2)^2 = 16 
+        \]
+        将上述数值代入泰勒公式：
+        \begin{align*}
+        \tan x &= 1 + 2\left(x - \frac{\pi}{4}\right) + \frac{4}{2!}\left(x - \frac{\pi}{4}\right)^2 + \frac{16}{3!}\left(x - \frac{\pi}{4}\right)^3 + \dots \\
+        &= 1 + 2\left(x - \frac{\pi}{4}\right) + 2\left(x - \frac{\pi}{4}\right)^2 + \frac{8}{3}\left(x - \frac{\pi}{4}\right)^3 + \dots 
+        \end{align*}
+    \end{solution}
+    \part 据此,求证
+    \[
+    \tan \frac{5\pi}{18} \approx 1+\frac{\pi}{18}+\frac{\pi^2}{648}+\frac{\pi^3}{17496}
+    \]
+    \begin{solution}
+        令$x=\dfrac{5\pi}{18}$,则
+        \[
+        x-\frac{\pi}{4} = \frac{\pi}{36}
+        \]
+        代入泰勒展开得
+        \[
+        \tan \frac{5\pi}{18} \approx 1 + 2\cdot \frac{\pi}{36} + 2\cdot \left(\frac{\pi}{36}\right)^2 + \frac{8}{3} \cdot \left(\frac{\pi}{36}\right)^3
+        \]
+        即
+        \[
+        \tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{\pi^2}{648} + \frac{\pi^3}{17496}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 求 $\arctan x$ 的麦克劳林展开式,并利用该展开证明
+    \[
+    \pi=\sum_{n=0}^{\infty} f(n)
+    \]
+    其中 $f(n)$ 为某函数。
+    \begin{solution}
+        考虑
+        \[
+        \frac{d}{dx}(\arctan x)=\frac{1}{1+x^{2}}
+        \]
+        当 $|x|<1$ 时,有几何级数展开
+        \[
+        \frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+x^{8}-\cdots=\sum_{n=0}^{\infty}(-1)^{n}x^{2n}
+        \]
+        对上式逐项积分,有
+        \[
+        \arctan x=\sum_{n=0}^{\infty}\int(-1)^{n}x^{2n}\,dx =\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}+C
+        \]
+        令 $x=0$,则 $C=0$,于是
+        \[
+        \arctan x=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
+        \]
+        代入 $x=1$ 得
+        \[
+        \arctan 1=\frac{\pi}{4}=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
+        \]
+        即
+        \[
+        \pi=\sum_{n=0}^{\infty}\frac{4(-1)^{n}}{2n+1}
+        \]
+        其中
+        \[
+        f(n)=\frac{4(-1)^{n}}{2n+1}
+        \]
+    \end{solution}
+
+    \question 选择适当的二项展开式,证明
+    \[
+    \arcsin x = \sum_{r=0}^{\infty} \left[ \binom{2r}{r}\frac{2}{2r+1}\left(\frac{x}{2}\right)^{2r+1} \right]
+    \]
+    \begin{solution}
+        从二项式展开 $(1-x^2)^{-\frac{1}{2}}$ 出发,
+        \[
+        \frac{1}{\sqrt{1-x^2}} = (1-x^2)^{-\frac{1}{2}} = 1 + \frac{-\frac{1}{2}}{1}(-x^2) + \frac{-\frac{1}{2}(-\frac{3}{2})}{1\cdot 2}(-x^2)^2 + \frac{-\frac{1}{2}(-\frac{3}{2})(-\frac{5}{2})}{1\cdot 2\cdot 3}(-x^2)^3 + O(x^8)
+        \]
+        整理得
+        \begin{align*}
+        \frac{1}{\sqrt{1-x^2}} 
+        &= 1 + \frac{2!}{(1!)^2} \frac{x^2}{2^2} + \frac{4!}{(2!)^2} \frac{x^4}{2^4} + \frac{6!}{(3!)^2} \frac{x^6}{2^6} + O(x^8)  \\
+        &= \sum_{r=0}^{\infty} \left[ \frac{(2r)!}{(r!)^2} \left( \frac{x}{2} \right)^{2r} \right] \\
+        &= \sum_{r=0}^{\infty} \left[ \binom{2r}{r} \left( \frac{x}{2} \right)^{2r} \right] 
+        \end{align*}
+        在收敛半径内，对等式两边积分：
+        \[ 
+        \int \frac{1}{\sqrt{1-x^2}} dx = \int \sum_{r=0}^{\infty} \left[ \binom{2r}{r} \frac{x^{2r}}{2^{2r}} \right] dx 
+        \]
+        得到
+        \[ 
+        \arcsin x = \sum_{r=0}^{\infty} \left[ \binom{2r}{r} \frac{x^{2r+1}}{2r+1} \cdot \frac{1}{2^{2r}} \right] + C =\sum_{r=0}^{\infty} \left[ \binom{2r}{r} \frac{2}{2r+1} \left( \frac{x}{2} \right)^{2r+1} \right] +C
+        \]
+        当 $x=0$ 时，故 $C=0$,因此
+        \[ 
+        \arcsin x = \sum_{r=0}^{\infty} \left[ \binom{2r}{r} \frac{2}{2r+1} \left( \frac{x}{2} \right)^{2r+1} \right] 
+        \]
+    \end{solution}
+
+    \question 求下列无穷级数的和
+    \[
+    1+\frac{1}{3\cdot4}+\frac{1}{5\cdot4^2}+\frac{1}{7\cdot4^3}+\frac{1}{9\cdot4^4}+\cdots
+    \]
+    \begin{solution}
+        考虑$\ln(1+x)$及$\ln(1-x)$的幂展开:
+        \[
+        \ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
+        \]
+        \[
+        \ln(1-x) = -x - \frac{1}{2}x^2 - \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
+        \]
+        两式相减得
+        \[
+        \ln(1+x) - \ln(1-x) = 2\left( x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots \right)
+        \]
+        即
+        \[
+        \ln\left(\frac{1+x}{1-x}\right) = 2 \sum_{k=0}^{\infty} \frac{x^{2k+1}}{2k+1}
+        \]
+        在收敛半径内令 $x = \frac{1}{2}$,则
+        \[
+        \ln 3 = 2 \sum_{k=0}^{\infty} \frac{1}{(2k+1)2^{2k+1}} = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
+        \]
+        即所求级数的和为$\ln 3$。
+    \end{solution}
+
+    \question 求下列交错级数的和
+    \[
+    \frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \frac{1}{1+4+9+16} + \frac{1}{1+4+9+16+25} - \cdots
+    \]
+    \begin{solution}
+        写成
+        \[
+        \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{1^2 + 2^2 + \cdots + n^2} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\frac{1}{6}n(n+1)(2n+1)} = \sum_{n=1}^{\infty} \frac{6(-1)^{n+1}}{n(n+1)(2n+1)}
+        \]
+        部分分式分解得
+        \[
+        \frac{1}{n(n+1)(2n+1)} = \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1}
+        \]
+        因此级数可写为
+        \[
+        6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} + 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} - 24\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1}
+        \]
+        分别处理各个级数
+        \[
+        \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \ln 2, \quad 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} = 6 - 6 \ln 2
+        \]
+        而由 $\arctan x$ 的展开,
+        \[
+        \arctan x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1}  
+        \]
+        令$x=1$,易知
+        \[
+        \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}
+        \]
+        因此原级数的和为
+        \[
+        \frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \cdots = 6\ln 2 + (6 - 6\ln 2) - 24\left(\frac{\pi}{4} - 1\right) = 6(\pi - 3)
+        \]
+    \end{solution}
+
+    \question 证明
+    \[
+    \sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]=3\ln\frac{3}{2}
+    \]
+    \begin{solution}
+        首先注意到
+        \[
+        \frac{2r+3}{(r+1)3^r}
+        =2\left(\frac{1}{3}\right)^r+\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+        \]
+        因此
+        \[
+        \sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
+        =\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
+        +\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+        \]
+        第一项是首项为 $\dfrac{2}{3}$,公比为 $\dfrac{1}{3}$的等比级数,故
+        \[
+        \sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
+        =\frac{\frac{2}{3}}{1-\frac{1}{3}}=1
+        \]
+        对第二项,考虑
+        \[
+        \ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\frac{1}{4}x^4-\cdots
+        \]
+        两边除以 $-x$,得
+        \[
+        -\frac{1}{x}\ln(1-x)
+        =1+\frac{1}{2}x+\frac{1}{3}x^2+\frac{1}{4}x^3+\cdots
+        =1+\sum_{r=1}^{\infty}\frac{1}{r+1}x^r
+        \]
+        取 $x=\dfrac{1}{3}$,由于 $|x|<1$,级数收敛,于是
+        \[
+        \sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
+        =-3\ln\frac{2}{3}-1
+        \]
+        故
+        \[
+        \sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
+        =1-3\ln\frac{2}{3}-1
+        =3\ln\frac{3}{2}
+        \]
+    \end{solution}
+
+    \question 求下列级数的值:
+    \[
+    \sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
+    \]
+    \begin{solution}
+        由
+        \[
+        \ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\cdots,\quad |x|<1
+        \]
+        \[
+        \ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\cdots,\quad |x|<1
+        \]
+        两式相加得
+        \[
+        \ln(1-x^2)= -x^2-\frac{1}{2}x^4-\frac{1}{3}x^6-\cdots
+        \]
+        即
+        \[
+        -\frac{1}{2}\ln(1-x^2)=\frac{1}{2}x^2+\frac{1}{4}x^4+\frac{1}{6}x^6+\cdots
+        \]
+        令 $x=\dfrac{1}{2}$,得
+        \[
+        \sum_{r=1}^{\infty} \frac{1}{2r} \cdot \left(\frac{1}{4}\right)^r
+        =-\frac{1}{2}\ln\frac{3}{4}
+        \]
+        同理,两式相减得
+        \[
+        \ln\left(\frac{1+x}{1-x}\right)
+        =2\left(x+\frac{x^3}{3}+\frac{x^5}{5}+\cdots\right)
+        \]
+        从而
+        \[
+        \frac{1}{2x}\ln\left(\frac{1+x}{1-x}\right)
+        =1+\frac{x^2}{3}+\frac{x^4}{5}+\cdots
+        \]
+        令 $x=\dfrac{1}{2}$,得
+        \[
+        \sum_{r=1}^{\infty} \frac{1}{2r+1} \cdot \left(\frac{1}{4}\right)^r
+        =\ln 3-1
+        \]
+        将两部分相加,
+        \[
+        \sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
+        =-\frac{1}{2}\ln\frac{3}{4}+\ln 3-1=\frac{1}{2}\ln 12-1
+        \]
+    \end{solution}
+
     \question
-设 $y = e^{\tan x}$,$x \in \mathbb{R}$。
+    \begin{parts} 
+    \part 以适当的积分方法计算
+    \[
+    \int_{0}^{1} x^{3}\arctan x\,dx
+    \]
+    \begin{solution}
+        先用分部积分法,
+        \[
+        \int_{0}^{1} x^{3}\arctan x\,dx
+        =\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
+        -\frac{1}{4}\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
+        \]
+        其中
+        \begin{align*}
+        \int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
+        &=\int_{0}^{1}\left(x^{2}-1+\frac{1}{1+x^{2}}\right)\,dx \\
+        &= \left[\frac{x^{3}}{3}-x+\arctan x\right]_{0}^{1} \\
+        &=\frac{1}{3}-1+\frac{\pi}{4} 
+        \end{align*}
+        代回得
+        \[
+        \int_{0}^{1} x^{3}\arctan x\,dx
+        =\frac{\pi}{16}-\frac{1}{4}\left(\frac{1}{3}-1+\frac{\pi}{4}\right)=\frac{1}{6}
+        \]
+    \end{solution}
+    \part 求 $\arctan x$ 的无穷级数展开,并利用该展开验证 (a) 的结果
+    \begin{solution}
+        由
+        \[
+        \frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
+        \]
+        两边积分得
+        \[
+        \arctan x
+        =x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots
+        =\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
+        \]
+        根据富比尼定理（在满足一致收敛或绝对收敛的条件下），可以将积分号与求和号交换。代入积分式得
+        \begin{align*}
+        \int_{0}^{1} x^{3}\arctan x\,dx
+        &=\int_{0}^{1}x^{3}\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}\,dx\\
+        &=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}\int_{0}^{1}x^{2n+4}\,dx\\
+        &=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)(2n+5)}
+        \end{align*}
+        部分分式分解,
+        \[
+        \frac{1}{(2n+1)(2n+5)}
+        =\frac{1}{4}\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
+        \]
+        于是由累加法,
+        \[
+        \int_{0}^{1} x^{3}\arctan x\,dx
+        =\frac{1}{4}\sum_{n=0}^{\infty}(-1)^{n}
+        \left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)=\frac{1}{4}\left(1-\frac{1}{3}\right)
+        =\frac{1}{6}
+        \]
+        与 (a) 的结果一致。
+    \end{solution}
+    \end{parts}
 
-\textbf{a)} 求 $\frac{d^2y}{dx^2}$ 并证明
-\[
-\frac{d^2y}{dx^2} = (1+\tan^2 x + 2 \tan x) \frac{dy}{dx}.
-\]
-
+    \question
+    已知
+    \[
+    \sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
+    \quad
+    \sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\ln 2,
+    \quad
+    \sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\frac{\pi^2}{12}.
+    \]
+    求
+    \[
+    \int_0^1 (\ln x)(\arctan x)\,dx
+    \]
+    的值。
+    \begin{solution}
+        考虑$\arctan x$的幂级数展开,由
+        \[
+        \frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}=1-x^2+x^4-x^6+\cdots
+        \]
+        逐项积分得
+        \[
+        \arctan x=x-\frac{1}{3}x^3+\frac{1}{5}x^5-\frac{1}{7}x^7+\cdots
+        =\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1},
+        \quad 0\le x\le1.
+        \]
+        将其代入积分,并交换求和与积分次序:
+        \[
+        \int_0^1 (\arctan x)(\ln x)\,dx
+        =\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}
+        \int_0^1 x^{2n+1}\ln x\,dx.
+        \]
+        作分部积分,取$u=\ln x,dv=x^{2n+1}dx$,则
+        \[
+        \int_0^1 x^{2n+1}\ln x\,dx
+        =\left[\frac{x^{2n+2}\ln x}{2n+2}\right]_0^1
+        -\frac{1}{2n+2}\int_0^1 x^{2n+1}\,dx.
+        \]
+        化简得
+        \[
+        \int_0^1 x^{2n+1}\ln x\,dx=-\frac{1}{(2n+2)^2}.
+        \]
+        于是
+        \[
+        \int_0^1 (\arctan x)(\ln x)\,dx
+        =-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)(2n+2)^2}.
+        \]
+        作部分分式分解
+        \[
+        \frac{1}{(2n+1)(2n+2)^2}
+        =\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}.
+        \]
+        代回得
+        \[
+        \int_0^1 (\arctan x)(\ln x)\,dx=-\sum_{n=0}^{\infty}(-1)^n\left[\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}\right]
+        \]
+        将其拆分为三个已知级数:
+        \[
+        \sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
+        \quad
+        \sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\ln 2,
+        \quad
+        \sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\frac{\pi^2}{12}.
+        \]
+        因此
+        \[
+        \int_0^1 (\arctan x)(\ln x)\,dx
+        =-\left[\frac{\pi}{4}-\frac{1}{2}\ln 2-\frac{1}{4}\cdot\frac{\pi^2}{12}\right]
+        =\frac{\pi^2-12\pi+24\ln 2}{48}
+        \]
+    \end{solution}
 \begin{solution}
-首先对 $y$ 求导:
-\[
-\frac{dy}{dx} = e^{\tan x} \sec^2 x = y \sec^2 x.
-\]
-
-再次求导:
-\[
-\frac{d^2y}{dx^2} = \frac{d}{dx}(y \sec^2 x) = \frac{dy}{dx} \sec^2 x + y \cdot 2 \sec^2 x \tan x.
-\]
-
-将 $y \sec^2 x$ 替换为 $\frac{dy}{dx}$:
-\[
-\frac{d^2y}{dx^2} = \frac{dy}{dx} \sec^2 x + 2 \frac{dy}{dx} \tan x = \frac{dy}{dx} ( \sec^2 x + 2 \tan x ) = \frac{dy}{dx} (1 + \tan^2 x + 2 \tan x ).
-\]
-\end{solution}
-
-\textbf{b)} 求 $e^{\tan x}$ 的 $x^3$ 展开式。
-
-\begin{solution}
-使用 Taylor 展开:
-\[
-y = y_0 + y'_0 x + \frac{y''_0}{2!} x^2 + \frac{y'''_0}{3!} x^3 + O(x^4),
-\]
-在 $x=0$ 时,$y_0 = 1$,$y'_0 = 1$,$y''_0 = 1$。
-
-计算三阶导数:
-\[
-\frac{d^3y}{dx^3} = 2(1+\tan x) \sec^2 x \frac{dy}{dx} + (1+\tan x)^2 \frac{d^2y}{dx^2},
-\]
-代入 $x=0$ 得 $y'''_0 = 3$。
-
-于是
-\[
-e^{\tan x} = 1 + x + \frac{1}{2}x^2 + \frac{1}{2}x^3 + O(x^4).
-\]
-\end{solution}
-
-\question
-设 $f(x) \equiv \sin[\ln(1+x)]$,$x \in \mathbb{R}$,$x > -1$。
-
-\textbf{a)} 求 $f(x)$ 满足的微分方程。
-
-\begin{solution}
-首先求导:
-\[
-f'(x) = \cos[\ln(1+x)] \frac{1}{1+x}.
-\]
-\[
-(1+x) f'(x) = \cos[\ln(1+x)].
-\]
-
-再次求导:
-\[
-(1+x) f''(x) + f'(x) = - \sin[\ln(1+x)] \frac{1}{1+x}.
-\]
-
-两边乘以 $(1+x)$:
-\[
-(1+x)^2 f''(x) + (1+x) f'(x) = - \sin[\ln(1+x)].
-\]
-
-移项得微分方程:
-\[
-(1+x)^2 f''(x) + (1+x) f'(x) + f(x) = 0.
-\]
-\end{solution}
-
-\textbf{b)} 求 Maclaurin 展开前 3 个非零项。
-
-\begin{solution}
-利用微分方程可求各阶导数在 $x=0$ 的值:
-\[
-f(0) = \sin(\ln 1) = 0, \quad f'(0) = \cos(\ln 1) = 1.
-\]
-由微分方程 $(1+x)^2 f'' + (1+x) f' + f = 0$ 得:
-\[
-f''(0) + f'(0) + f(0) = 0 \implies f''(0) = -1.
-\]
-
-三阶导数:
-\[
-(1+x)^2 f''' + 3(1+x) f'' + 2 f' = 0 \implies f'''(0) + 3 f''(0) + 2 f'(0) = 0 \implies f'''(0) = 1.
-\]
-
-因此 Maclaurin 展开:
-\[
-f(x) = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f'''(0)}{3!} x^3 + \dots
-= x - \frac{1}{2} x^2 + \frac{1}{6} x^3 + \dots
-\]
-\end{solution}
-
-\textbf{c)} 用结果求 $\sin[\ln(1+x)]$ 的前 2 个非零项的 Maclaurin 展开。
-
-\begin{solution}
-从 (b) 的展开式可直接得到前 2 个非零项:
-\[
-\sin[\ln(1+x)] = x - \frac{1}{2} x^2 + \dots
-\]
-\end{solution}
-
-\question
-设 $y = \tan x$, $0 \le x < \frac{\pi}{2}$。
-
-\textbf{a) 证明下列公式:}
-
-\textbf{i)}
-\[
-\frac{d^2y}{dx^2} = 2y \frac{dy}{dx}
-\]
-
-\textbf{ii)}
-\[
-\frac{d^5y}{dx^5} = 6 \left(\frac{d^2y}{dx^2}\right)^2 + 8 \frac{dy}{dx} \frac{d^3y}{dx^3} + 2y \frac{d^4y}{dx^4}
-\]
-
-\begin{solution}
-\textbf{(i) 求二阶导数}:
-\[
-y = \tan x \implies \frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1+y^2
-\]
-\[
-y' = 1+y^2
-\]
-对 $x$ 求导:
-\[
-y'' = 2y y'
-\]
-
-\textbf{(ii) 高阶导数}:
-\[
-y''' = 2y'y' + 2yy'' = 2(y')^2 + 2yy''
-\]
-\[
-y^{(4)} = 6y'y'' + 2yy'''
-\]
-\[
-y^{(5)} = 6(y'')^2 + 8y'y''' + 2y y^{(4)}
-\]
-\end{solution}
-
-\textbf{b) 求 $y = \tan x$ 的 Maclaurin 展开前 3 个非零项}
-
-\begin{solution}
-在 $x=0$ 处求各阶导数:
-\[
-y_0 = \tan(0) = 0
-\]
-\[
-y'_0 = 1+y_0^2 = 1
-\]
-\[
-y''_0 = 2y_0y'_0 = 0
-\]
-\[
-y'''_0 = 2y_0y''_0 + 2(y'_0)^2 = 2
-\]
-\[
-y^{(4)}_0 = 6y'_0y''_0 + 2y_0y'''_0 = 0
-\]
-\[
-y^{(5)}_0 = 6(y''_0)^2 + 8y'_0y'''_0 + 2y_0y^{(4)}_0 = 16
-\]
-
-Maclaurin 展开式:
-\[
-y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + \frac{x^4}{4!}y^{(4)}_0 + \frac{x^5}{5!}y^{(5)}_0 + O(x^6)
-\]
-代入各阶导数值:
-\[
-y = 0 + x + \frac{x^3}{3} + \frac{2}{15}x^5 + O(x^6)
-\]
-
-因此,
-\[
-\tan x = x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + O(x^6)
-\]
-\end{solution}
-
-\question
-设 $y = \ln(2-e^x)$, $x<\ln 2$。
-
-\textbf{a) 证明下列公式:}
-\[
-e^y \left[ \frac{d^3 y}{dx^3} + 3 \frac{dy}{dx} \frac{d^2 y}{dx^2} + \left(\frac{dy}{dx}\right)^3 \right] + e^x = 0
-\]
-
-\begin{solution}
-由 $y = \ln(2-e^x)$ 得
-\[
-e^y = 2-e^x
-\]
-两边对 $x$ 求导:
-\[
-\frac{d}{dx}(e^y) = \frac{d}{dx}(2-e^x) \implies e^y y' = -e^x \implies e^y y' + e^x = 0
-\]
-
-再次求导:
-\[
-\frac{d}{dx}(e^y y' + e^x) = 0 \implies e^y[(y')^2 + y''] + e^x = 0
-\]
-
-再求一次导数:
-\[
-\frac{d}{dx}\big(e^y[(y')^2 + y''] + e^x\big) = 0 \implies e^y[y''' + 3y'y'' + (y')^3] + e^x = 0
-\]
-\end{solution}
-
-\textbf{b) 求 Maclaurin 展开式的前三个非零项}
-
-\begin{solution}
-在 $x=0$ 处求各阶导数:
-
-\[
-y_0 = \ln(2-e^0) = \ln 1 = 0
-\]
-\[
-e^y y' + e^x = 0 \implies y'_0 + 1 = 0 \implies y'_0 = -1
-\]
-\[
-e^y[(y')^2 + y''] + e^x = 0 \implies (-1)^2 + y''_0 + 1 = 0 \implies y''_0 = -2
-\]
-\[
-e^y[(y')^3 + 3y'y'' + y'''] + e^x = 0 \implies (-1)^3 + 3(-1)(-2) + y'''_0 + 1 = 0 \implies y'''_0 = -6
-\]
-
-Maclaurin 展开式:
-\[
-y = y_0 + xy'_0 + \frac{x^2}{2!}y''_0 + \frac{x^3}{3!}y'''_0 + O(x^4)
-\]
-代入各阶导数值:
-\[
-y = 0 - x - x^2 - x^3 + O(x^4)
-\]
-
-因此
-\[
-\ln(2-e^x) = -x - x^2 - x^3 + O(x^4)
-\]
-\end{solution}
-
-\question
-函数 $f$ 和 $g$ 定义如下:
-\[
-f(x) = \arctan\left(\frac{2}{3}x\right), \quad x\in \mathbb{R},
-\]
-\[
-g(y) = \frac{1}{1+y}, \quad y\in \mathbb{R}, \quad -1<y<1.
-\]
-
-\textbf{a)} 将 $g(y)$ 展开为二项级数,并保留 $y^3$ 项。
-
-\begin{solution}
-使用二项式定理:
-\[
-(1+y)^{-1} = 1 + (-1)y + \frac{(-1)(-2)}{2!}y^2 + \frac{(-1)(-2)(-3)}{3!}y^3 + O(y^4)
-\]
-\[
-(1+y)^{-1} = 1 - y + y^2 - y^3 + O(y^4)
-\]
-\end{solution}
-
-\textbf{b)} 利用 $f'(x)$ 和 (a) 的结果,求 $\arctan\left(\frac{2}{3}x\right)$ 的级数展开。
-
-\begin{solution}
-\[
-f(x) = \arctan\left(\frac{2}{3}x\right)
-\]
-\[
-f'(x) = \frac{2/3}{1+(\frac{2}{3}x)^2} = \frac{2}{3}\left(1+\frac{4}{9}x^2\right)^{-1}
-\]
-
-将 (a) 的结果代入,令 $y = \frac{4}{9}x^2$:
-\[
-f'(x) \approx \frac{2}{3}\left[1 - \frac{4}{9}x^2 + \left(\frac{4}{9}x^2\right)^2 - \left(\frac{4}{9}x^2\right)^3 + O(x^8)\right]
-\]
-\[
-f'(x) \approx \frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8)
-\]
-
-对 $x$ 积分:
-\[
-f(x) \approx \int \left[\frac{2}{3} - \frac{8}{27}x^2 + \frac{32}{243}x^4 - \frac{128}{2187}x^6 + O(x^8) \right] dx
-\]
-\[
-\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7 + C
-\]
-
-由 $x=0$ 可得 $C=0$,因此:
-\[
-\arctan\left(\frac{2}{3}x\right) \approx \frac{2}{3}x - \frac{8}{81}x^3 + \frac{32}{1215}x^5 - \frac{128}{15309}x^7.
-\]
-\end{solution}
-
-\question
-\noindent
-已知 $y = \tan x$。
-
-\noindent
-\textbf{a)} 证明
-\[
-\frac{d^3 y}{dx^3} = 2y \frac{d^2 y}{dx^2} + 2 \left(\frac{dy}{dx}\right)^2
-\]
-
-\noindent
-\textbf{b)} 求 $\tan x$ 在 $x=\frac{\pi}{4}$ 附近的前四项泰勒展开式
-
-\noindent
-\textbf{c)} 从上式近似计算
-\[
-\tan \frac{5\pi}{18} \approx 1+\frac{\pi}{18}+\frac{\pi^2}{648}+\frac{\pi^3}{17496}
-\]
-
-\begin{solution}
-\noindent
-\textbf{a) 计算高阶导数}
-
-\[
-y = \tan x
-\]
-\[
-\frac{dy}{dx} = \sec^2 x = 1 + \tan^2 x = 1 + y^2
-\]
-
-\noindent
-对 $x$ 再求两次导数:
-\[
-\frac{d^2 y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d}{dx}(1+y^2) = 2y \frac{dy}{dx}
-\]
-
-\[
-\frac{d^3 y}{dx^3} = \frac{d}{dx}\left(2y \frac{dy}{dx}\right) = 2y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2
-\]
-
-\noindent
-\textbf{b) 泰勒展开式}
-
-在 $x=a=\frac{\pi}{4}$ 处计算各阶导数:
-\[
-y = \tan a = 1
-\]
-\[
-\frac{dy}{dx} = 1 + y^2 = 2
-\]
-\[
-\frac{d^2 y}{dx^2} = 2 y \frac{dy}{dx} = 2 \cdot 1 \cdot 2 = 4
-\]
-\[
-\frac{d^3 y}{dx^3} = 2 y \frac{d^2 y}{dx^2} + 2\left(\frac{dy}{dx}\right)^2 = 2\cdot1\cdot4 + 2\cdot2^2 = 16
-\]
-
-\noindent
-泰勒展开公式:
-\[
-\tan x \approx f(a) + (x-a)f'(a) + \frac{(x-a)^2}{2!}f''(a) + \frac{(x-a)^3}{3!}f'''(a) + \dots
-\]
-
-代入各阶导数:
-\[
-\tan x \approx 1 + 2(x-\frac{\pi}{4}) + 2(x-\frac{\pi}{4})^2 + \frac{8}{3}(x-\frac{\pi}{4})^3 + \dots
-\]
-
-\noindent
-\textbf{c) 近似计算 $\tan\frac{5\pi}{18}$}
-
-\[
-x-\frac{\pi}{4} = \frac{5\pi}{18} - \frac{\pi}{4} = \frac{\pi}{36}
-\]
-
-代入泰勒展开:
-\[
-\tan \frac{5\pi}{18} \approx 1 + 2\cdot \frac{\pi}{36} + 2\cdot \left(\frac{\pi}{36}\right)^2 + \frac{8}{3} \cdot \left(\frac{\pi}{36}\right)^3
-\]
-
-\[
-\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{2\pi^2}{1296} + \frac{8\pi^3}{139968}
-\]
-
-\[
-\tan \frac{5\pi}{18} \approx 1 + \frac{\pi}{18} + \frac{\pi^2}{648} + \frac{\pi^3}{17496}
-\]
-\end{solution}
-
-
-\question
-\noindent
-求 $\arctan x$ 的麦克劳林展开式,并利用该展开证明
-\[
-\pi=\sum_{n=0}^{\infty} f(n)
-\]
-其中 $f(n)$ 为适当的函数
-
-\begin{solution}
-\noindent
-先对 $\arctan x$ 求导
-\[
-\frac{d}{dx}(\arctan x)=\frac{1}{1+x^{2}}
-\]
-
-当 $|x|<1$ 时,有几何级数展开
-\[
-\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+x^{8}-\cdots
-\]
-\[
-=\sum_{n=0}^{\infty}(-1)^{n}x^{2n}
-\]
-
-对上式逐项积分,且取积分常数
-\[
-\arctan x=\sum_{n=0}^{\infty}\int(-1)^{n}x^{2n}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}+C
-\]
-
-令 $x=0$,则 $\arctan 0=0$,从而 $C=0$,于是
-\[
-\arctan x=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
-\]
-
-代入 $x=1$ 得
-\[
-\arctan 1=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\]
-而 $\arctan 1=\frac{\pi}{4}$,故
-\[
-\frac{\pi}{4}=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\]
-
-两边同乘 $4$,得
-\[
-\pi=\sum_{n=0}^{\infty}\frac{4(-1)^{n}}{2n+1}
-\]
-
-因此可取
-\[
-f(n)=\frac{4(-1)^{n}}{2n+1}
-\]
-\end{solution}
-
-\question
-\noindent
-利用适当的二项式展开式,证明
-\[
-\arcsin x = \sum_{r=0}^{\infty} \left[ \frac{\comb{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1} \right]
-\]
-
-\begin{solution}
-\noindent
-从二项式展开 $(1-x^2)^{-1/2}$ 出发
-\[
-\frac{1}{\sqrt{1-x^2}} = (1-x^2)^{-1/2} = 1 + \frac{-1/2}{1}(-x^2) + \frac{-1/2(-3/2)}{1\cdot 2}(-x^2)^2 + \frac{-1/2(-3/2)(-5/2)}{1\cdot 2\cdot 3}(-x^2)^3 + O(x^8)
-\]
-
-化简符号得
-\[
-\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1}{2}x^2 + \frac{1/2\cdot 3/2}{1\cdot 2}x^4 + \frac{1/2\cdot 3/2\cdot 5/2}{1\cdot 2\cdot 3}x^6 + O(x^{8})
-\]
-
-整理成阶乘形式
-\[
-\frac{1}{\sqrt{1-x^2}} = 1 + \frac{1\cdot 3}{2\cdot 2}x^4 + \frac{1\cdot 3\cdot 5}{3!} \frac{x^6}{8} + O(x^8)
-\]
-
-进一步写成二项式系数
-\[
-\frac{1}{\sqrt{1-x^2}} = \sum_{r=0}^{\infty} \frac{\comb{2r}{r}}{4^r} x^{2r}
-\]
-
-对两边在收敛半径内积分
-\[
-\int \frac{1}{\sqrt{1-x^2}}\,dx = \int \sum_{r=0}^{\infty} \frac{\comb{2r}{r}}{4^r} x^{2r}\,dx
-\]
-
-逐项积分得
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\comb{2r}{r}}{4^r} \frac{x^{2r+1}}{2r+1} + C
-\]
-
-代入 $x=0$ 得 $C=0$,于是
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\comb{2r}{r}}{2r+1} \frac{x^{2r+1}}{4^r}
-\]
-
-重写为所需形式
-\[
-\arcsin x = \sum_{r=0}^{\infty} \frac{\comb{2r}{r}}{2r+1} \frac{2}{4^r} \left(\frac{x}{2}\right)^{2r+1}
-\]
-\end{solution}
-
-\question
-求下列无穷级数的和:
-\[
-1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\frac{1}{9\times4^4}+\cdots
-\]
-
-\begin{solution}
-考虑对数的幂级数展开:
-\[
-\ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
-\]
-\[
-\ln(1-x) = -x - \frac{1}{2}x^2 - \frac{1}{3}x^3 - \frac{1}{4}x^4 + \dots
-\]
-
-两式相减:
-\[
-\ln(1+x) - \ln(1-x) = 2\left( x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots \right)
-\]
-\[
-\ln\left(\frac{1+x}{1-x}\right) = 2 \sum_{k=0}^{\infty} \frac{x^{2k+1}}{2k+1}
-\]
-
-在收敛半径内令 $x = \frac{1}{2}$:
-\[
-\ln\left(\frac{1+\frac{1}{2}}{1-\frac{1}{2}}\right) = 2 \sum_{k=0}^{\infty} \frac{(1/2)^{2k+1}}{2k+1}
-\]
-\[
-\ln 3 = 2 \sum_{k=0}^{\infty} \frac{1}{(2k+1)2^{2k+1}} = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
-\]
-
-注意到原级数的形式与此一致:
-\[
-1 + \frac{1}{3\cdot 4} + \frac{1}{5\cdot 4^2} + \frac{1}{7\cdot 4^3} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)4^k}
-\]
-
-\[
-\therefore 1+\frac{1}{3\times4}+\frac{1}{5\times4^2}+\frac{1}{7\times4^3}+\cdots = \ln 3
-\]
-\end{solution}
-
-\question
-求下列交错级数的和:
-\[
-\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \frac{1}{1+4+9+16} + \frac{1}{1+4+9+16+25} - \cdots
-\]
-
-\begin{solution}
-首先写成紧凑形式:
-\[
-\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{1^2 + 2^2 + \cdots + n^2} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\frac{1}{6}n(n+1)(2n+1)} = \sum_{n=1}^{\infty} \frac{6(-1)^{n+1}}{n(n+1)(2n+1)}
-\]
-
-对 $\frac{1}{n(n+1)(2n+1)}$ 做部分分式分解:
-\[
-\frac{1}{n(n+1)(2n+1)} = \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1}
-\]
-
-因此级数可写为:
-\[
-\sum_{n=1}^{\infty} 6(-1)^{n+1} \left( \frac{1}{n} + \frac{1}{n+1} - \frac{4}{2n+1} \right)
-= 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} + 6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} - 24\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1}
-\]
-
-分别处理各个级数:
-\[
-\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \ln 2
-\]
-
-\[
-6\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n+1} = 6 - 6 \ln 2
-\]
-
-再利用 $\arctan x$ 展开:
-\[
-\arctan x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1} \implies \arctan 1 = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}
-\]
-
-\[
-24 \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n+1} = 24 \left(\frac{\pi}{4} - 1\right) = 6\pi - 24
-\]
-
-将所有部分相加:
-\[
-6\ln 2 + (6 - 6\ln 2) - (6\pi - 24) = 6 - 6\pi + 24 = 30 - 6\pi
-\]
-
-因此原级数的和为:
-\[
-\frac{1}{1} - \frac{1}{1+4} + \frac{1}{1+4+9} - \cdots = 6(\pi - 3)
-\]
-\end{solution}
-
-\question
-证明
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]=3\ln\left(\frac{3}{2}\right).
-\]
-
-\begin{solution}
-先对通项进行代数变形:
-\[
-\frac{2r+3}{(r+1)3^r}
-=\frac{2(r+1)+1}{r+1}\left(\frac{1}{3}\right)^r
-=2\left(\frac{1}{3}\right)^r+\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-
-因此
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
-+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-
-第一项为等比级数,其首项为 $\frac{2}{3}$,公比为 $\frac{1}{3}$,故
-\[
-\sum_{r=1}^{\infty}2\left(\frac{1}{3}\right)^r
-=\frac{\frac{2}{3}}{1-\frac{1}{3}}=1
-\]
-
-对第二项,考虑
-\[
-\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\frac{1}{4}x^4-\cdots
-\]
-两边同除以 $-x$,得
-\[
--\frac{1}{x}\ln(1-x)
-=1+\frac{1}{2}x+\frac{1}{3}x^2+\frac{1}{4}x^3+\cdots
-=1+\sum_{r=1}^{\infty}\frac{1}{r+1}x^r
-\]
-
-取 $x=\frac{1}{3}$,由于 $|x|<1$,级数收敛,于是
-\[
--3\ln\left(\frac{2}{3}\right)
-=1+\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-\]
-从而
-\[
-\sum_{r=1}^{\infty}\frac{1}{r+1}\left(\frac{1}{3}\right)^r
-=-3\ln\left(\frac{2}{3}\right)-1
-\]
-
-将两部分相加:
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=1-3\ln\left(\frac{2}{3}\right)-1
-=-3\ln\left(\frac{2}{3}\right)
-\]
-
-整理得
-\[
-\sum_{r=1}^{\infty}\left[\frac{2r+3}{(r+1)3^r}\right]
-=3\ln\left(\frac{3}{2}\right)
-\]
-\end{solution}
-
-\question
-通过考虑 $\ln(1-x^2)$ 与 $\ln\left(\frac{1+x}{1-x}\right)$ 的级数展开,或用其他方法,求下列级数的精确值:
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right].
-\]
-
-\begin{solution}
-由
-\[
-\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\cdots,\quad |x|<1
-\]
-\[
-\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\cdots,\quad |x|<1
-\]
-可得
-\[
-\ln(1-x^2)= -x^2-\frac{1}{2}x^4-\frac{1}{3}x^6-\cdots
-\]
-
-因此
-\[
--\frac{1}{2}\ln(1-x^2)=\frac{1}{2}x^2+\frac{1}{4}x^4+\frac{1}{6}x^6+\cdots
-\]
-
-令 $x=\frac{1}{2}$,得
-\[
-\frac{1}{2}\cdot\frac{1}{4}+\frac{1}{4}\cdot\frac{1}{16}+\frac{1}{6}\cdot\frac{1}{64}+\cdots
-=-\frac{1}{2}\ln\frac{3}{4}
-\]
-
-再考虑
-\[
-\ln\left(\frac{1+x}{1-x}\right)
-=2\left(x+\frac{x^3}{3}+\frac{x^5}{5}+\cdots\right)
-\]
-从而
-\[
-\frac{1}{2x}\ln\left(\frac{1+x}{1-x}\right)
-=1+\frac{x^2}{3}+\frac{x^4}{5}+\cdots
-\]
-
-令 $x=\frac{1}{2}$,得
-\[
-1+\frac{1}{3}\frac{1}{2^2}+\frac{1}{5}\frac{1}{2^4}+\frac{1}{7}\frac{1}{2^6}+\cdots
-=\ln 3
-\]
-
-因此
-\[
-\frac{1}{3}\cdot\frac{1}{4}+\frac{1}{5}\cdot\frac{1}{16}+\frac{1}{7}\cdot\frac{1}{64}+\cdots
-=\ln 3-1
-\]
-
-将两部分相加:
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
-=-\frac{1}{2}\ln\frac{3}{4}+\ln 3-1
-\]
-
-化简得
-\[
-\sum_{r=1}^{\infty} \left[\left(\frac{1}{2r}+\frac{1}{2r+1}\right)\left(\frac{1}{4}\right)^r\right]
-=\frac{1}{2}\ln 12-1
-\]
-\end{solution}
-
-\question
-\noindent
-\textbf{a)} 用适当的积分方法计算
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-\]
-
-\noindent
-\textbf{b)} 求 $\arctan x$ 的无穷级数展开,并利用该展开验证 a) 的结果
-
-\begin{solution}
-\noindent
-\textbf{a)} 先用分部积分法  
-取
-\[
-u=\arctan x,\quad dv=x^{3}\,dx
-\]
-则
-\[
-du=\frac{1}{1+x^{2}}\,dx,\quad v=\frac{x^{4}}{4}
-\]
-
-于是
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
--\frac{1}{4}\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
-\]
-
-边界项为
-\[
-\left[\frac{x^{4}}{4}\arctan x\right]_{0}^{1}
-=\frac{\pi}{16}
-\]
-
-化简被积函数
-\[
-\frac{x^{4}}{1+x^{2}}=x^{2}-1+\frac{1}{1+x^{2}}
-\]
-
-因此
-\[
-\int_{0}^{1}\frac{x^{4}}{1+x^{2}}\,dx
-=\int_{0}^{1}x^{2}\,dx-\int_{0}^{1}1\,dx+\int_{0}^{1}\frac{1}{1+x^{2}}\,dx
-\]
-\[
-=\frac{1}{3}-1+\frac{\pi}{4}
-\]
-
-代回得
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\frac{\pi}{16}-\frac{1}{4}\left(\frac{1}{3}-1+\frac{\pi}{4}\right)
-\]
-\[
-=\frac{1}{6}
-\]
-
-\noindent
-\textbf{b)} 由
-\[
-\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
-\]
-两边积分得
-\[
-\arctan x
-=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}
-\]
-
-代入积分
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\int_{0}^{1}x^{3}\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}
-\int_{0}^{1}x^{2n+4}\,dx
-\]
-\[
-=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)(2n+5)}
-\]
-
-作部分分式分解
-\[
-\frac{1}{(2n+1)(2n+5)}
-=\frac{1}{4}\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
-\]
-
-于是
-\[
-\int_{0}^{1} x^{3}\arctan x\,dx
-=\frac{1}{4}\sum_{n=0}^{\infty}(-1)^{n}
-\left(\frac{1}{2n+1}-\frac{1}{2n+5}\right)
-\]
-
-该级数为望远镜型,化简得
-\[
-=\frac{1}{4}\left(1-\frac{1}{3}\right)
-=\frac{1}{6}
-\]
-
-与 a) 的结果一致
-\end{solution}
-
-\question
-已知
-\[
-1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots=\frac{\pi}{4},
-\quad
-1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\cdots=\frac{\pi^2}{12},
-\quad
-1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots=\ln 2.
-\]
-在假设下列积分收敛的前提下,求
-\[
-\int_0^1 (\ln x)(\arctan x)\,dx
-\]
-的精确值。
-
-\begin{solution}
-先利用反正切函数的幂级数展开。由
-\[
-\frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}=1-x^2+x^4-x^6+\cdots
-\]
-逐项积分得
-\[
-\arctan x=x-\frac{1}{3}x^3+\frac{1}{5}x^5-\frac{1}{7}x^7+\cdots
-=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1},
-\quad 0\le x\le1.
-\]
-
-将其代入积分,并交换求和与积分次序:
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}
-\int_0^1 x^{2n+1}\ln x\,dx.
-\]
-
-对积分作分部积分,取
-$u=\ln x$,$dv=x^{2n+1}dx$,则
-\[
-\int_0^1 x^{2n+1}\ln x\,dx
-=\left[\frac{x^{2n+2}\ln x}{2n+2}\right]_0^1
--\frac{1}{2n+2}\int_0^1 x^{2n+1}\,dx.
-\]
-端点项为零,因此
-\[
-\int_0^1 x^{2n+1}\ln x\,dx
-=-\frac{1}{(2n+2)^2}.
-\]
-
-于是
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)(2n+2)^2}.
-\]
-
-对通项作部分分式分解:
-\[
-\frac{1}{(2n+1)(2n+2)^2}
-=\frac{1}{2n+1}-\frac{1}{2n+2}-\frac{1}{(2n+2)^2}.
-\]
-
-代回得
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\sum_{n=0}^{\infty}(-1)^n
-\left[
-\frac{1}{2n+1}
--\frac{1}{2n+2}
--\frac{1}{(2n+2)^2}
-\right].
-\]
-
-将其拆分为三个已知级数:
-\[
-\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4},
-\quad
-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\ln 2,
-\quad
-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\frac{\pi^2}{12}.
-\]
-
-因此
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=-\left[
-\frac{\pi}{4}
--\frac{1}{2}\ln 2
--\frac{1}{4}\cdot\frac{\pi^2}{12}
-\right].
-\]
-
-化简得
-\[
-\int_0^1 (\arctan x)(\ln x)\,dx
-=\frac{\pi^2}{48}+\frac{1}{2}\ln 2-\frac{\pi}{4}
-=\frac{\pi^2-12\pi+24\ln 2}{48}.
-\]
-\end{solution}
-\begin{solution}
-设
-\[
-I(a)=\int_0^1 (\ln x)\arctan(ax)\,dx,
-\quad a\ge0.
-\]
-所求积分为 $I(1)$。
-
-对参数 $a$ 求导,有
-\[
-I'(a)=\int_0^1 (\ln x)\frac{x}{1+a^2x^2}\,dx.
-\]
-
-交换积分顺序,令 $u=ax$,得
-\[
-I'(a)=\int_0^1 x\ln x
-\int_0^{a}\frac{du}{1+u^2x^2}\,dx.
-\]
-
-改为先对 $x$ 积分。注意到
-\[
-\int_0^1 \frac{x\ln x}{1+u^2x^2}\,dx
-=-\frac{1}{2u^2}\ln(1+u^2),
-\]
-因此
-\[
-I'(a)
-=-\frac12\int_0^{a}\frac{\ln(1+u^2)}{u^2}\,du.
-\]
-
-对该积分作分部积分,取
-$U=\ln(1+u^2)$,$dV=\frac{du}{u^2}$,
-则
-\[
-I'(a)
-=-\frac12
-\left[
--\frac{\ln(1+u^2)}{u}
-+\int_0^{a}\frac{2u}{1+u^2}\cdot\frac{1}{u}\,du
-\right].
-\]
-
-化简得
-\[
-I'(a)
-=\frac12\frac{\ln(1+a^2)}{a}
--\int_0^{a}\frac{du}{1+u^2}.
-\]
-
-于是
-\[
-I'(a)=\frac12\frac{\ln(1+a^2)}{a}-\arctan a.
-\]
-
-再对 $a$ 从 $0$ 积分到 $1$,注意 $I(0)=0$,得到
-\[
-I(1)=\int_0^1
-\left(
-\frac12\frac{\ln(1+a^2)}{a}-\arctan a
-\right)da.
-\]
-
-分项计算。首先
-\[
-\int_0^1 \arctan a\,da
-=\frac{\pi}{4}-\frac12\ln2.
-\]
-
-其次
-\[
-\int_0^1 \frac{\ln(1+a^2)}{a}\,da
-=\int_0^1\int_0^{a^2}\frac{1}{a(1+t)}\,dt\,da
-=\int_0^1\frac{1-a^2}{a(1+a^2)}\,da
-=\frac{\pi^2}{12}.
-\]
-
-综上
-\[
-I(1)
-=\frac12\cdot\frac{\pi^2}{12}
--\left(\frac{\pi}{4}-\frac12\ln2\right).
-\]
-
-因此
-\[
-\int_0^1 (\ln x)(\arctan x)\,dx
-=\frac{\pi^2}{48}+\frac12\ln2-\frac{\pi}{4}
-=\frac{\pi^2-12\pi+24\ln2}{48}.
-\]
+    使用莱布尼兹积分法则。设
+    \[
+    I(a)=\int_0^1 (\ln x)\arctan(ax)\,dx,
+    \quad a\ge0.
+    \]
+    所求积分为 $I(1)$,对参数 $a$ 求导,有
+    \[
+    I'(a)=\int_0^1 (\ln x)\frac{x}{1+a^2x^2}\,dx.
+    \]
+    交换积分顺序,令 $u=ax$,得
+    \[
+    I'(a)=\int_0^1 x\ln x
+    \int_0^{a}\frac{du}{1+u^2x^2}\,dx.
+    \]
+    改为先对 $x$ 积分。注意到
+    \[
+    \int_0^1 \frac{x\ln x}{1+u^2x^2}\,dx
+    =-\frac{1}{2u^2}\ln(1+u^2),
+    \]
+    因此
+    \[
+    I'(a)
+    =-\frac12\int_0^{a}\frac{\ln(1+u^2)}{u^2}\,du.
+    \]
+    对该积分作分部积分,取
+    $U=\ln(1+u^2)$,$dV=\frac{du}{u^2}$,
+    则
+    \[
+    I'(a)
+    =-\frac12
+    \left[
+    -\frac{\ln(1+u^2)}{u}
+    +\int_0^{a}\frac{2u}{1+u^2}\cdot\frac{1}{u}\,du
+    \right].
+    \]
+    化简得
+    \[
+    I'(a)
+    =\frac12\frac{\ln(1+a^2)}{a}
+    -\int_0^{a}\frac{du}{1+u^2}.
+    \]
+    于是
+    \[
+    I'(a)=\frac12\frac{\ln(1+a^2)}{a}-\arctan a.
+    \]
+    再对 $a$ 从 $0$ 积分到 $1$,注意 $I(0)=0$,得到
+    \[
+    I(1)=\int_0^1
+    \left(
+    \frac12\frac{\ln(1+a^2)}{a}-\arctan a
+    \right)da.
+    \]
+    分项计算。首先
+    \[
+    \int_0^1 \arctan a\,da
+    =\frac{\pi}{4}-\frac12\ln2.
+    \]
+    其次
+    \[
+    \int_0^1 \frac{\ln(1+a^2)}{a}\,da
+    =\int_0^1\int_0^{a^2}\frac{1}{a(1+t)}\,dt\,da
+    =\int_0^1\frac{1-a^2}{a(1+a^2)}\,da
+    =\frac{\pi^2}{12}
+    \]
+    综上
+    \[
+    I(1)
+    =\frac12\cdot\frac{\pi^2}{12}
+    -\left(\frac{\pi}{4}-\frac12\ln2\right)
+    \]
+    因此
+    \[
+    \int_0^1 (\ln x)(\arctan x)\,dx
+    =\frac{\pi^2}{48}+\frac12\ln2-\frac{\pi}{4}
+    =\frac{\pi^2-12\pi+24\ln2}{48}
+    \]
+    \textcolor{red}{(待验证)}
 \end{solution}
 
 \end{questions}
