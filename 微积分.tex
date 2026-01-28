@@ -2753,6 +2753,41 @@ S_n &= \frac{1}{2}\sum_{k=1}^n k \log k - \frac{1}{2}\log n \\
         \end{align*}
     \end{solution}
 
+    \question 设函数 $f(x)$ 在闭区间 $[0, 1]$ 上具有连续导数，$f(0) = 0$，$f(1) = 1$。证明：
+\[
+\lim_{n \to \infty} n \left( \int_{0}^{1} f(x) dx - \frac{1}{n} \sum_{k=1}^{n} f\left( \frac{k}{n} \right) \right) = -\frac{1}{2}.
+\]
+
+\begin{solution}
+考察括号中的项，将其写为累加形式：
+\begin{align*}
+\int_{0}^{1} f(x) dx - \frac{1}{n} \sum_{k=1}^{n} f\left( \frac{k}{n} \right) &= \sum_{k=1}^{n} \left( \int_{\frac{k-1}{n}}^{\frac{k}{n}} f(x) dx - \frac{1}{n} f\left( \frac{k}{n} \right) \right)
+\end{align*}
+在区间 $[\frac{k-1}{n}, \frac{k}{n}]$ 上对 $f(x)$ 在 $\frac{k}{n}$ 处进行一阶泰勒展开：
+\[
+f(x) = f\left( \frac{k}{n} \right) + f'\left( \frac{k}{n} \right) \left( x - \frac{k}{n} \right) + O\left( \left( x - \frac{k}{n} \right)^2 \right)
+\]
+代入积分项中：
+\begin{align*}
+&\sum_{k=1}^{n} \left( \int_{\frac{k-1}{n}}^{\frac{k}{n}} \left( f\left( \frac{k}{n} \right) + f'\left( \frac{k}{n} \right) \left( x - \frac{k}{n} \right) \right) dx - \frac{1}{n} f\left( \frac{k}{n} \right) \right) \\
+&= \sum_{k=1}^{n} \left( \left[ f\left( \frac{k}{n} \right) x + \frac{f'\left( \frac{k}{n} \right)}{2} \left( x - \frac{k}{n} \right)^2 \right]_{\frac{k-1}{n}}^{\frac{k}{n}} - \frac{1}{n} f\left( \frac{k}{n} \right) \right) \\
+&= \sum_{k=1}^{n} \left( \frac{1}{n} f\left( \frac{k}{n} \right) - \frac{f'\left( \frac{k}{n} \right)}{2n^2} - \frac{1}{n} f\left( \frac{k}{n} \right) \right) \\
+&= -\sum_{k=1}^{n} \frac{f'\left( \frac{k}{n} \right)}{2n^2}
+\end{align*}
+将此结果代入原极限式中：
+\begin{align*}
+\lim_{n \to \infty} n \left( -\sum_{k=1}^{n} \frac{f'\left( \frac{k}{n} \right)}{2n^2} \right) &= \lim_{n \to \infty} -\frac{1}{2} \left( \frac{1}{n} \sum_{k=1}^{n} f'\left( \frac{k}{n} \right) \right)
+\end{align*}
+根据黎曼和的定义，该和式收敛于 $f'(x)$ 在 $[0, 1]$ 上的定积分：
+\begin{align*}
+-\frac{1}{2} \int_{0}^{1} f'(x) dx &= -\frac{1}{2} [f(x)]_0^1 \\
+&= -\frac{1}{2} (f(1) - f(0)) \\
+&= -\frac{1}{2} (1 - 0) \\
+&= -\frac{1}{2}
+\end{align*}
+证毕。
+\end{solution}
+
     \question 计算
     \[
     \int_{-2}^{2} \max\{x,\;x^{2},\;x^{3}-2x\}\,dx
