@@ -4707,7 +4707,7 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
     \[
     \frac{\sin 2\theta}{1+\cos 2\theta} \cdot \frac{\cos \theta}{1+\cos \theta} \equiv \tan \frac{\theta}{2}
     \]
-        \begin{solution}
+    \begin{solution}
         有
         \begin{align*}
         \frac{\sin 2\theta}{1+\cos 2\theta} \cdot \frac{\cos \theta}{1+\cos \theta} 
@@ -4956,6 +4956,75 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \]
         证毕。
     \end{solution}
+
+    \question
+证明：$\frac{\cos x - \cot x}{\sin x + \tan x} + \frac{\cos x + \cot x}{\tan x - \sin x} = 2 \cot^2 x \csc x (1 + \cot x)$。
+\begin{solution}
+左边 (L.H.S.)：
+\[ = \frac{(\cos x - \cot x)(\sin x - \tan x) - (\cos x + \cot x)(\sin x + \tan x)}{\sin^2 x - \tan^2 x} \]
+\[ = \frac{(\sin x \cos x - \cos x \tan x - \cot x \sin x + \cot x \tan x) - (\sin x \cos x + \cos x \tan x + \cot x \sin x + \cot x \tan x)}{\sin^2 x - \tan^2 x} \]
+\[ = \frac{- \cos x \tan x - \cot x \sin x - \cos x \tan x - \cot x \sin x}{\sin^2 x - \tan^2 x} \]
+\[ = \frac{- 2 (\cos x \tan x + \cot x \sin x)}{\sin^2 x - \tan^2 x} \]
+\[ = \frac{- 2 (\sin x + \cos x)}{\sin^2 x - \frac{\sin^2 x}{\cos^2 x}} = \frac{- 2 (\sin x + \cos x) \cos^2 x}{\sin^2 x \cos^2 x - \sin^2 x} \]
+\[ = \frac{2 \cos^2 x (\sin x + \cos x)}{\sin^2 x (1 - \cos^2 x)} \]
+\[ = 2 (\frac{1}{\sin^2 x}) (\frac{\cos^2 x}{\sin^2 x}) (\sin x + \cos x) \]
+\[ = 2 (\frac{1}{\sin x}) (\frac{\cos^2 x}{\sin^2 x}) (\frac{\sin x + \cos x}{\sin x}) \]
+\[ = 2 \cot^2 x \csc x (1 + \cot x) \]
+\[ = \text{右边 (R.H.S.)} \]
+\end{solution}
+
+\question
+证明：$\frac{\tan^4 \beta + \cot^4 \beta + 1}{\sec^4 \beta + \csc^4 \beta + 1} = \frac{7 + \cos 4\beta}{9 - \cos 4\beta}$。
+
+\begin{solution}
+右边 (R.H.S.)：
+\[ = \frac{\tan^4 \beta + \cot^4 \beta + 1}{\sec^4 \beta + \csc^4 \beta + 1} \]
+\[ = \frac{\frac{\sin^8 \beta + \sin^4 \beta \cos^4 \beta + \cos^8 \beta}{\sin^4 \beta \cos^4 \beta}}{\frac{\sin^4 \beta + \cos^4 \beta + \sin^4 \beta \cos^4 \beta}{\sin^4 \beta \cos^4 \beta}} \]
+\[ = \frac{(\sin^4 \beta + \cos^4 \beta)^2 - 2\sin^4 \beta \cos^4 \beta + \sin^4 \beta \cos^4 \beta}{\sin^4 \beta \cos^4 \beta + 1} \]
+利用 $\sin^2 \beta \cos^2 \beta = \frac{1 - \cos 2\beta}{2} \cdot \frac{1 + \cos 2\beta}{2} = \frac{1 - \cos^2 2\beta}{4}$：
+\[ = \frac{1 - (\frac{1 + \cos 2\beta}{2})(\frac{1 - \cos 2\beta}{2})}{1 + (\frac{1 + \cos 2\beta}{2})(\frac{1 - \cos 2\beta}{2})} \]
+\[ = \frac{1 - \frac{1 - \frac{1 + \cos 4\beta}{2}}{4}}{1 + \frac{1 - \frac{1 + \cos 4\beta}{2}}{4}} \]
+\[ = \frac{7 + \cos 4\beta}{9 - \cos 4\beta} = \text{左边 (L.H.S.)} \]
+\end{solution}
+
+\question
+证明：$\frac{\sin 6x - \sin 4x - \sin 2x}{\cos 5x + \cos 3x + \cos x} = \frac{8 \sin^3 x}{4 \sin^2 x - 1}$。
+
+\begin{solution}
+左边 (L.H.S.)：
+\[ = \frac{\sin 6x - \sin 4x - \sin 2x}{\cos 5x + \cos 3x + \cos x} = \frac{2 \cos \frac{6x+2x}{2} \sin \frac{6x-2x}{2} - \sin 4x}{2 \cos \frac{5x+x}{2} \cos \frac{5x-x}{2} + \cos 3x} \]
+\[ = \frac{2 \cos 4x \sin 2x - \sin 4x}{2 \cos 3x \cos 2x + \cos 3x} \]
+\[ = \frac{2 \sin 2x (\cos 4x - \cos 2x)}{\cos 3x (2 \cos 2x + 1)} \]
+\[ = \frac{2 \sin 2x [-2 \sin \frac{4x+2x}{2} \sin \frac{4x-2x}{2}]}{\cos 3x (2 \cos 2x + 1)} \]
+\[ = \frac{-4 \sin x \sin 2x \sin 3x}{\cos 3x (2 \cos 2x + 1)} \]
+\[ = \frac{-4 \sin x (2 \sin x \cos x) (3 \sin x - 4 \sin^3 x)}{(4 \cos^3 x - 3 \cos x) (2 \cos 2x + 1)} \]
+\[ = \frac{-8 \sin^3 x (3 - 4 \sin^2 x)}{(4 \cos^2 x - 3) (3 - 4 \sin^2 x)} \]
+\[ = \frac{8 \sin^3 x}{-4 (1 - \sin^2 x) + 3} = \frac{8 \sin^3 x}{4 \sin^2 x - 1} \]
+\[ = \text{右边 (R.H.S.)} \]
+因此，等式成立。
+\end{solution}
+
+\question
+证明：$\frac{1}{4}x^2 - \frac{\sqrt{3}}{2}x + \sin^2 \frac{\pi}{12} = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \frac{1}{2}(1 + \cos \frac{\pi}{6})(1 - 2\cos \frac{\pi}{6})$。
+
+\begin{solution}
+左边 (L.H.S.)：
+\[ = \frac{1}{4}x^2 - \frac{\sqrt{3}}{2}x + \sin^2 \frac{\pi}{12} \]
+\[ = \frac{1}{4}(x - \sqrt{3})^2 - \frac{3}{4} + \sin^2 \frac{\pi}{12} \]
+\[ = (\frac{1}{2}x - \frac{\sqrt{3}}{2})^2 + \sin^2 \frac{\pi}{12} - \frac{3}{4} \]
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \sin^2 \frac{\pi}{12} - \frac{3}{4} \]
+
+右边 (R.H.S.)：
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \frac{1}{2}(1 + \cos \frac{\pi}{6})(1 - 2\cos \frac{\pi}{6}) \]
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \frac{1}{2}(1 - \cos \frac{\pi}{6} - 2\cos^2 \frac{\pi}{6}) \]
+代入数值 $\cos \frac{\pi}{6} = \frac{\sqrt{3}}{2}$：
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \frac{1}{2}(1 - \frac{\sqrt{3}}{2} - 2(\frac{3}{4})) \]
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \frac{1}{2}(- \frac{1}{2} - \frac{\sqrt{3}}{2}) \]
+利用半角公式 $\sin^2 \frac{\pi}{12} = \frac{1 - \cos \frac{\pi}{6}}{2} = \frac{1 - \frac{\sqrt{3}}{2}}{2} = \frac{1}{2} - \frac{\sqrt{3}}{4}$：
+根据左边结果整理：
+\[ = (\sin \frac{\pi}{6}x - \cos \frac{\pi}{6})^2 + \sin^2 \frac{\pi}{12} - \frac{3}{4} \]
+\[ = \text{左边 (L.H.S.)} \]
+\end{solution}
 
     \question 证明以下恒等式:
     \begin{parts}
