@@ -15,14 +15,13 @@
 \usepackage{pgfornament}
 \usepackage{multicol}
 \usepackage{worldflags}
-% \usepackage{pifont} % for \ding{}
 \usetikzlibrary{shapes.geometric, positioning}
 \setCJKmainfont{KaiTi}
 
 %\includeonly{微积分}
 %\includeonly{代数,组合数学,微积分}
 %\includeonly{几何}
-\includeonly{代数}
+%\includeonly{代数}
 %\setCJKmainfont[BoldFont=Noto Sans CJK SC Bold]{AR PL KaitiM GB} 
 
 %\begin{solution}
@@ -50,7 +49,7 @@
 %数形结合in不等式
 %JEE
 %Prime Newtons
-%2d vector
+%2d vector证明whatsapp 29 Jan
 %两圆正交
 %limit的泰勒展开
 %u\cdot v^hat=u^hat\cdot v
@@ -58,6 +57,7 @@
 %\int_{b}^{a} y \, dx + \int_{f(a)}^{f(b)} x \, dy = b f(b) - a f(a)
 %linear algebra线代启示录
 %陈景润,华罗庚,指考,APMO,SEAMO,CTMC,CSMC,AMC,台湾,中国
+%integral marathon, integration bee
 
 %大排版/clean up issues:
 %跟着solution排版
@@ -100,12 +100,6 @@
     \path (C) to[ornament=88,options/.append style={yshift=.52pt,scale=0.8}] (D);
   \end{tikzpicture}}
 }
-% \newcommand{\difficulty}[2]{%
-%     % #1 是实心星数量，#2 是总星星数量
-%     \foreach \i in {1,...,#1} {\ding{72}}%
-%     \foreach \j in {1,...,\numexpr#2-#1\relax} {\ding{73}}%
-% }
-%\difficulty{3}{5}
 \printanswers
 \shadedsolutions
 \definecolor{SolutionColor}{rgb}{1.0,0.98,0.8} %https://latexcolor.com/
@@ -212,6 +206,7 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \hyperlink{极限}{极限} \dotfill \pageref{极限} \\
 \hyperlink{微分}{微分} \dotfill \pageref{微分} \\
 \hyperlink{积分}{积分} \dotfill \pageref{积分} \\
+\hyperlink{积分技巧}{积分技巧} \dotfill \pageref{积分技巧} \\
 \hyperlink{微分方程}{微分方程} \dotfill \pageref{微分方程} 
 \end{multicols}
 \vfill

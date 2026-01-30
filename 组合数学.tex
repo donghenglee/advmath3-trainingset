@@ -2175,6 +2175,21 @@ We first calculate the probability that the center is in the union of the four t
         \]
     \end{solution}
 
+    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
+\begin{solution}
+将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
+根据已知条件：
+\[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
+我们需要计算：
+\[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
+利用标准正态分布的对称性：
+\[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
+根据全概率性质：
+\[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
+\[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
+因此，$P(X < 0) = 0.2$。
+\end{solution}
+
     \question 某实验测得20组样本点 $(x_1,y_1), (x_2,y_2), \dots, (x_{20},y_{20})$,已知
     \[
     \sum_{i=1}^{20} x_i = 400, \quad \sum_{i=1}^{20} y_i = 900.

@@ -7676,6 +7676,22 @@ B(3k,3t).
         \end{cases}\quad \Rightarrow \quad 
         -5<k<1\]
     \end{solution}
+
+    \question 已知点 $P(2,1)$，$Q(5,5)$，点 $R(x, 3x)$。若 $\triangle PQR$ 分别以 $P$ 或 $Q$ 为直角顶点，求点 $R$ 的坐标。
+\begin{solution}
+情况一：若 $\angle RPQ = 90^\circ$，则 $k_{PR} \cdot k_{PQ} = -1$。
+已知 $k_{PQ} = \frac{5-1}{5-2} = \frac{4}{3}$，则 $k_{PR} = -\frac{3}{4}$：
+\[ \frac{3x - 1}{x - 2} = -\frac{3}{4} \implies 4(3x - 1) = -3(x - 2) \]
+\[ 12x - 4 = -3x + 6 \implies 15x = 10 \implies x = \frac{2}{3} \]
+此时 $y = 3(\frac{2}{3}) = 2$，点 $R$ 坐标为 $(\frac{2}{3}, 2)$。
+
+情况二：若 $\angle PQR = 90^\circ$，则 $k_{QR} \cdot k_{PQ} = -1$。
+则 $k_{QR} = -\frac{3}{4}$：
+\[ \frac{3x - 5}{x - 5} = -\frac{3}{4} \implies 4(3x - 5) = -3(x - 5) \]
+\[ 12x - 20 = -3x + 15 \implies 15x = 35 \implies x = \frac{7}{3} \]
+此时 $y = 3(\frac{7}{3}) = 7$，点 $R$ 坐标为 $(\frac{7}{3}, 7)$。
+综上所述，所有可能的点 $R$ 坐标为 $(\frac{2}{3}, 2)$ 或 $(\frac{7}{3}, 7)$。
+\end{solution}
     
     \question 设 \(x,y\) 为二元一次联立不等式图形上的任一点,已知
     \[
@@ -10241,11 +10257,11 @@ $r = 6, \frac{6}{25}$。
     \[
     \frac{x^2}{4}+\frac{y^2}{3}=1
     \]
-    上,点 $C$ 在直线 $l:y=x+2$ 上,且 $AB\parallel l$。
+    上,点 $C$ 在直线 $l:y=x+2$ 上,且 $AB \parallels l$。
     \begin{parts}
     \part 若 $AB$ 通过坐标原点 $O$ 时,求 $AB$ 的长及 $\triangle ABC$ 的面积；
     \begin{solution}
-        设 $A,B$ 两点坐标分别为 $(x_1,y_1),(x_2,y_2)$,已知 $AB\parallel l$,且 $AB$ 经过原点 $O(0,0)$,
+        设 $A,B$ 两点坐标分别为 $(x_1,y_1),(x_2,y_2)$,已知 $AB\parallels l$,且 $AB$ 经过原点 $O(0,0)$,
         故 $AB$ 直线方程为$y=x$,与椭圆方程
         \[
         \frac{x^2}{4}+\frac{y^2}{3}=1
@@ -15121,7 +15137,7 @@ ab^2 + 4a = a^2b + 4b
         \]
         法向量
         \[
-        \vec{n} = \overrightarrow{AF} \times \overrightarrow{AG} \parallel (3\sqrt{7}, -2\sqrt{7}, -3)
+        \vec{n} = \overrightarrow{AF} \times \overrightarrow{AG} \parallels (3\sqrt{7}, -2\sqrt{7}, -3)
         \]
         侧面 $AEG$ 平面方程与底面 $AECF$ 方程分别为
         \[
