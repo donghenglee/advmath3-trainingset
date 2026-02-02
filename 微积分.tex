@@ -3339,95 +3339,47 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
 \separator
 \vspace{1pt}
 \begin{questions}
-
 %substitution methods
-\question 计算 $[\int_2^4 (\log_x 2 - \frac{\log_x^2 2}{\ln 2}) dx]$。
-\begin{solution}
-利用换底公式简化被积函数:
-\[\log_x 2 - \frac{(\frac{\ln 2}{\ln x})^2}{\ln 2} = \frac{\ln 2}{\ln x} - \frac{\ln 2}{(\ln x)^2} = \ln 2 (\frac{1}{\ln x} - \frac{1}{\ln^2 x})\]
-由于 $\frac{d}{dx}(\frac{x}{\ln x}) = \frac{\ln x - 1}{\ln^2 x} = \frac{1}{\ln x} - \frac{1}{\ln^2 x}$,
-该积分的原始函数为:
-\[I = \ln 2 [\frac{x}{\ln x}]_2^4 = \ln 2 (\frac{4}{\ln 4} - \frac{2}{\ln 2})\]
-已知 $\ln 4 = 2 \ln 2$,代入得:
-\[I = \ln 2 (\frac{4}{2 \ln 2} - \frac{2}{\ln 2}) = \ln 2 (\frac{2}{\ln 2} - \frac{2}{\ln 2}) = 0\]
-\end{solution}
+    \question
+    \[
+    \int_{80^{-\frac{1}{4}}}^{15^{-\frac{1}{4}}} \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}} \, dx
+    \]
+    \begin{solution}
+        改写次方,注意到
+        \[
+        \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}}= x^{-5} (1+x^{-4})^{-\frac{3}{4}} 
+        \]
+        设$u=1+x^{-4}$,则$du=-4x^{-5}\,dx$,因此
+        \begin{align*}
+        \int_{80^{-\frac{1}{4}}}^{15^{-\frac{1}{4}}} \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}} \, dx
+        &= \int_{81}^{16} -\frac{1}{4} u^{-\frac{3}{4}} \, du\\
+        &= \frac{1}{4} \left[ 4 u^{\frac{1}{4}} \right]_{16}^{81}\\
+        &= 1
+        \end{align*}
+    \end{solution}
+
+    \question 
+    \[ 
+    \int_{0}^{1} \frac{1}{(x^{\frac{7}{6}} + 4x^{\frac{2}{3}})^{\frac{3}{4}}} \, dx 
+    \]
+    \begin{solution}
+        首先注意到
+        \[
+        \frac{1}{(x^{\frac{7}{6}} + 4x^{\frac{2}{3}})^{\frac{3}{4}}} = \frac{1}{[x^{\frac{2}{3}}(x^{\frac{1}{2}} + 4)]^{\frac{3}{4}}} = \frac{1}{x^{\frac{1}{2}} (x^{\frac{1}{2}} + 4)^{\frac{3}{4}}}
+        \]
+        令 $u = x^{\frac{1}{2}}$，则 $x = u^{2},dx = 2u du$,代入得
+        \begin{align*}
+        \int_{0}^{1} \frac{1}{(x^{\frac{7}{6}} + 4x^{\frac{2}{3}})^{\frac{3}{4}}} \, dx \\
+        &= \int_{0}^{1} \frac{1}{u (u + 4)^{\frac{3}{4}}} \cdot 2u \,du \\
+        &= [8(u + 4)^{\frac{1}{4}}]_{0}^{1} \\
+        &= 8[\sqrt[4]{5} - \sqrt{2}]
+        \end{align*}
+    \end{solution}
 
 \question
-计算积分substitution methods
 \[
-\int_{80^4}^{15^4} \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}} \, dx
+\int_{0}^{4} x^3 \sqrt{9+x^2} dx
 \]
-
-\begin{solution}
-因为积分区间为正,可将被积式中的 $x^4$ 提出:
-\[
-\int_{80^4}^{15^4} \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}} \, dx
-= \int_{80^4}^{15^4} \frac{1}{x^2 (x^4)^{\frac{3}{4}} (x^{-4}+1)^{\frac{3}{4}}} \, dx
-= \int_{80^4}^{15^4} \frac{1}{x^2 x^3 (x^{-4}+1)^{\frac{3}{4}}} \, dx
-= \int_{80^4}^{15^4} x^{-5} (1+x^{-4})^{-\frac{3}{4}} \, dx
-\]
-
-注意到
-\[
-\frac{d}{dx} \left[ (1+x^{-4})^{\frac{1}{4}} \right] 
-= \frac{1}{4} (1+x^{-4})^{-\frac{3}{4}} \cdot (-4 x^{-5}) 
-= - x^{-5} (1+x^{-4})^{-\frac{3}{4}}
-\]
-
-因此
-\[
-\int_{80^4}^{15^4} x^{-5} (1+x^{-4})^{-\frac{3}{4}} \, dx
-= - \left[ (1+x^{-4})^{\frac{1}{4}} \right]_{80^4}^{15^4}
-= - \left[ (1+15^{-4})^{\frac{1}{4}} - (1+80^{-4})^{\frac{1}{4}} \right]
-= - (16^{\frac{1}{4}} - 81^{\frac{1}{4}})
-= - (2-3)
-= 1
-\]
-
-最终结果:
-\[
-\int_{80^4}^{15^4} \frac{1}{x^2 (1+x^4)^{\frac{3}{4}}} \, dx = 1
-\]
-\end{solution}
-
-\question 计算积分
-\[
-\int_{0}^{1} \frac{1}{(x^{2} + 4x^{3})^{\frac{2}{4}}} \, dx
-\]
-\begin{solution}
-先将分母中的根式因式分解:
-\[
-x^{2} + 4x^{3} = x^{2}(1 + 4x) = [x^{\frac{1}{2}}(x^{\frac{1}{2}}+4)^{\frac{3}{4}}]^{?} \quad \text{（整理成适合代换的形式）}
-\]
-
-更简便地处理:
-\[
-\int_{0}^{1} \frac{1}{(x^{2}+4x^{3})^{\frac{1}{2}}} \, dx
-= \int_{0}^{1} \frac{1}{x^{\frac{1}{2}} (x^{\frac{1}{2}}+4)^{\frac{3}{4}}} \, dx
-\]
-
-作代换:
-\[
-u = x^{\frac{1}{2}} \implies x = u^2, \quad dx = 2u \, du
-\]
-
-积分上下限不变（$x=0\to u=0$, $x=1\to u=1$）:
-\[
-\int_{0}^{1} \frac{1}{u (u+4)^{\frac{3}{4}}} \cdot 2u \, du = \int_{0}^{1} \frac{2}{(u+4)^{\frac{3}{4}}} \, du
-\]
-
-直接积分:
-\[
-\int_{0}^{1} 2 (u+4)^{-\frac{3}{4}} \, du = \left[ 8 (u+4)^{\frac{1}{4}} \right]_{0}^{1} = 8 \left( 5^{\frac{1}{4}} - 4^{\frac{1}{4}} \right)
-\]
-
-\[
-= 8 \left( \sqrt[4]{5} - \sqrt{2} \right)
-\]
-\end{solution}
-
-\question
-7) 计算定积分:$\int_{0}^{4} x^3 \sqrt{9+x^2} dx$
 \begin{solution}
 设 $u = 9+x^2, du = 2x dx$:
 \begin{align*}
@@ -3457,7 +3409,7 @@ I &= \frac{1}{2} \int_{9}^{25} (u-9) \sqrt{u} du = \frac{1}{2} \left[ \frac{2}{5
 \[ \int \frac{1}{1+x^4} dx = \frac{\sqrt{2}}{4} \tan^{-1}\left(\frac{x^2-1}{\sqrt{2}x}\right) - \frac{\sqrt{2}}{8} \ln\left| \frac{x^2-\sqrt{2}x+1}{x^2+\sqrt{2}x+1} \right| + C \]
 \end{solution}
 %exponential
-\question 计算积分
+\question 
 \[
 \int \frac{4}{e^{3x}\sqrt{e^{2x}+4}} \, dx
 \]
@@ -3532,7 +3484,7 @@ x = \pi \implies u = 1 + \pi
 \end{solution}
 
 
-\question 计算积分
+\question 
 \[
 \int_{0}^{\ln 2} \sqrt{e^x - 1} \, dx
 \]
@@ -3567,7 +3519,7 @@ x = 0 \implies u = 0, \quad x = \ln 2 \implies u = \sqrt{2-1} = 1.
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{0}^{\infty} \frac{e^{8x}-e^{2x}}{(e^{8x}+3)(e^{2x}+3)} \, dx
 \]
@@ -3826,7 +3778,7 @@ x=\frac{1}{u},\quad u=\frac{1}{x},\quad dx=-\frac{1}{u^{2}} \, du
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int \frac{9}{(9 - x^2)^{3/2}} \, dx
 \]
@@ -3886,7 +3838,7 @@ dx = 3\cos\theta \, d\theta, \quad \frac{x}{3} = \sin\theta
 \[ I = \sqrt{(x+1)(x+3)} - \frac{\sqrt{2}}{2} \ln \left| \frac{(2x+6) + \sqrt{2(x+1)(x+3)}}{x+1} \right| + C \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{0}^{\sqrt{3}} \frac{x}{x^4 + 9} \, dx
 \]
@@ -4271,7 +4223,7 @@ u=1+\cos^2 x \Rightarrow 1+\cos^4 x=u^2-2u+2
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int \sqrt{(1+x)(5-x)} \, dx
 \]
@@ -4335,7 +4287,7 @@ $\cos\theta = \frac{\sqrt{9-(x-2)^2}}{3}$ \\
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{0}^{1} \frac{\sqrt{1-x}}{1-\sqrt{x}} \, dx
 \]
@@ -4417,7 +4369,7 @@ u=0 \implies \theta=0, \quad u=1 \implies \theta=\frac{\pi}{2}
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{7}^{9} \sqrt{\frac{x-7}{11-x}} \, dx
 \]
@@ -4594,7 +4546,7 @@ x=0 \to \theta=0, \quad x=4 \to \theta = \pi/3
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int \frac{(3x^2+5x)\sqrt{x}}{(x+1)^2} \, dx
 \]
@@ -4696,7 +4648,7 @@ x = 2\tan^2\theta \implies dx = 4\tan\theta \sec^2\theta \, d\theta, \quad \tan\
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{\frac{1}{2}}^{2} \frac{x^4-1}{x^2\sqrt{x^4+1}} \, dx
 \]
@@ -5300,7 +5252,7 @@ b) 积分变换:
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{0.2}^{0.5} \frac{\sqrt{x-x^2}}{x^4} \, dx
 \]
@@ -5582,7 +5534,7 @@ u = \frac{\sqrt{5-4x-x^2}}{1-x} \implies \frac{1}{u} = \frac{1-x}{\sqrt{5-4x-x^2
         \]
     \end{solution}
 
-    \question 计算积分
+    \question 
 \[
 I = \int_{\frac{1}{2}}^{2} \frac{\ln x}{1 + x^2} \, dx.
 \]
@@ -5718,7 +5670,7 @@ I &= \int_{0}^{\frac{\pi}{3}} \cos^2 \theta \cdot (2\theta) \cdot \sec^2 \theta 
 \[ I = \tan^{-1} x + \frac{1}{3} \tan^{-1} x^3 + C \]
 \end{solution}
     \question
-计算积分
+
 \[
 \int_{0}^{1} \frac{x^4(1-x)^4}{x^2+1} \, dx
 \]
@@ -5801,7 +5753,7 @@ I &= \int_{0}^{\frac{\pi}{3}} \cos^2 \theta \cdot (2\theta) \cdot \sec^2 \theta 
     \end{solution}
 
     \question
-计算积分
+
 \[
 \int_{0}^{\frac{1}{3}} \frac{32x^2}{(x^2-1)(x+1)^3}\,dx
 \]
@@ -6325,7 +6277,7 @@ I &= \int_{0}^{\pi/4} (\sec^4 x - 2\sec^2 x + 1) dx \quad (\text{或利用之前
 \textbf{结果核对:} 与截图结果 $\frac{\pi}{4} - \frac{2}{3}$ 一致。
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{\frac{\pi}{12}}^{\frac{\pi}{4}}\frac{\sin 3x}{(\cos 7x+\cos x)^{2}+(\sin 7x+\sin x)^{2}} \, dx
 \]
@@ -6637,7 +6589,7 @@ x = \frac{\pi}{6} \implies u = \frac{2}{3}
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int \frac{\sin^{8}x - \cos^{8}x}{1 - \frac{1}{2} \sin^{2} 2x} \, dx
 \]
@@ -6672,7 +6624,7 @@ x = \frac{\pi}{6} \implies u = \frac{2}{3}
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int \frac{3 \sin^2 x \cos^2 x}{(\cos^3 x - \sin^3 x)^2} \, dx
 \]
@@ -6717,7 +6669,7 @@ d(1-u^3) = -3 u^2 du \implies u^2 du = -\frac{1}{3} d(1-u^3)
 
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{\frac{\pi}{8}}^{\frac{\pi}{4}} \frac{\sin^6 x + \cos^6 x}{\sin^2 x \cos^2 x} \, dx
 \]
@@ -6766,7 +6718,7 @@ d(1-u^3) = -3 u^2 du \implies u^2 du = -\frac{1}{3} d(1-u^3)
 = \left[\arcsin \frac{u}{2}\right]_{0}^{1} = \arcsin \frac{1}{2} - \arcsin 0 = \frac{\pi}{6}
 \]
 \end{solution}
-\question 计算积分
+\question 
 \[
 \int_{0}^{\frac{\pi}{2}} \frac{1+\cos x + \sin x - \tan x}{1+\tan x} \, dx
 \]
@@ -7033,7 +6985,7 @@ B+D = 0 \implies D=-B, \quad Bk^2 + D = k \implies B = \frac{k}{k^2-1}, \ D = \f
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{0}^{\pi/3} \frac{6}{\sin x + \sin 2x} \, dx
 \]
@@ -7100,7 +7052,7 @@ u=-\frac{1}{2} \implies 6 = \frac{3}{4}C \implies C = 8
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int \frac{\cos^3 x}{(1+\sin x)\sin x} \, dx
 \]
@@ -7549,7 +7501,7 @@ u=\sec x+\tan x
 \end{solution}
 
 \question
-计算积分
+
 \[
 I=\int_{0}^{\frac{\pi}{4}}4\sin x\sqrt{\cos 2x}\,dx
 \]
@@ -7919,7 +7871,7 @@ u^2 = (\sin x - \cos x)^2 = \sin^2 x + \cos^2 x - 2 \sin x \cos x = 1 - 2 \sin x
 \[ I = \tan^{-1} \sqrt{\cos x + \sec x + 1} + C \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{\frac{1}{2}}^{\frac{\sqrt{3}}{2}} \frac{1 - \sqrt{\arcsin x}}{\sqrt{1-x^2}\sqrt{\arcsin x}} \, dx
 \]
@@ -8198,6 +8150,21 @@ du=d\theta,\quad v=-\frac12\cos(2\theta)
 \end{align*}
 \end{solution}
 
+    \question  
+    \[
+    \int_2^4 \left(\log_x 2 - \frac{\log_x^2 2}{\ln 2}\right)\, dx
+    \]
+    \begin{solution}
+        由分部积分,
+        \begin{align*}
+        \int_2^4 \left(\log_x 2 - \frac{\log_x^2 2}{\ln 2}\right)\, dx
+        &= \ln 2 \left(\int_2^4 \frac{1}{\ln x}\, dx - \int_2^4 \frac{1}{(\ln x)^2}\, dx \right) \\
+        &= \ln 2 \left(\left[\frac{x}{\ln x}\right]_2^4+ \int_2^4 \frac{1}{(\ln x)^2}\, dx - \int_2^4 \frac{1}{(\ln x)^2}\, dx \right) \\
+        &= \ln 2 \cdot \left(\frac{4}{\ln 4} - \frac{2}{\ln 2}\right) \\
+        &= 0
+        \end{align*}
+    \end{solution}
+
 \question
 3) 计算不定积分:\[ \int x e^x \cos x dx \]
 
@@ -8407,7 +8374,7 @@ I &= x \sin^{-1} \sqrt{\frac{x}{1+x}} - \int x \cdot \frac{1}{\sqrt{1 - \frac{x}
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x)(\ln \cos x + \ln \sin x) \, dx
 \]
@@ -8497,7 +8464,7 @@ x = \pi/4: \quad \sin 2x = 1, \quad \cos 2x = 0 \implies \text{得到 } \frac{1}
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \, dx
 \]
@@ -8591,7 +8558,7 @@ x=0 \to w=1, \quad x=1 \to w=2
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx
 \]
@@ -8931,7 +8898,7 @@ du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
 \end{solution}
 
 \question
-计算积分
+
 \[
 J = \int_{0}^{1} \frac{x^2+1}{(x+1)^2} e^x \, dx.
 \]
@@ -9045,7 +9012,7 @@ f = \ln u, \quad dg = -2 u^2 du \implies df = \frac{1}{u} du, \quad g = -\frac{2
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{\sqrt{e}}^{e} \left[ \ln(\ln x) + \frac{1}{(\ln x)^2} \right] \, dx.
 \]
@@ -9682,7 +9649,7 @@ I_5 &= \frac{5}{6}\left(\frac{3}{4}I_1 + \frac{1}{4} x(1-x^2)^{3/2}\right) + \fr
 \end{align*}
 \end{solution}
 
-\question 计算积分 $\displaystyle \int \frac{x^4}{\sqrt{x^2+1}}\,dx$,使用降次公式。
+\question  $\displaystyle \int \frac{x^4}{\sqrt{x^2+1}}\,dx$,使用降次公式。
 
 \begin{solution}
 (a) 证明对任意整数 $n\ge 2$ 有
@@ -9721,7 +9688,7 @@ I_4 &= -\frac{x^3\sqrt{x^2+1}}{3} - \frac{2}{3}(-x\sqrt{x^2+1}) \\
 \end{align*}
 
 \end{solution}
-\question 计算积分
+\question 
 \[
 I_n = \int_{0}^{a} \frac{x^n}{\sqrt{a^2-x^2}} \, dx, \quad n\in \mathbb{N}, \quad a>0
 \]
@@ -10852,7 +10819,7 @@ J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \l
         \int_{-2}^2 f(x)\,dx = \int_{-2}^{-1} x^2\,dx + \int_{-1}^0 (x^3-2x)\,dx +\int_0^1x\,dx +\int_1^2 x^2\,dx = \frac{7}{3}+\frac{3}{4}+\frac{1}{2} +\frac{7}{3} =\frac{71}{12}
         \]
     \end{solution}
-        \question 计算积分
+        \question 
 \[
 \int_{0}^{2} \bigl(\sqrt{1+x^3}+\sqrt{x^2+2x}\bigr)\,dx.
 \]
@@ -11095,7 +11062,7 @@ x-[x], & \text{当 } [x] \text{ 为奇数} \\
 \]
 \end{solution}
 
-\question 计算积分
+\question 
 \[
 \int_{0}^{\frac{\pi}{2}} x \cot x \, dx
 \]
@@ -11265,7 +11232,7 @@ I &= \frac{\pi}{2} \int_{1}^{-1} \frac{-du}{4 - u^2} \\
 因此,$I = \frac{1}{4}$。
 \end{solution}
 \question
-计算积分
+
 \[
 \int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^{\sqrt{2} e}} \, dx
 \]
@@ -11417,7 +11384,7 @@ I=\frac{1}{\sqrt{2}}\ln(\sqrt{2}+1)
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{0}^{\pi} \frac{x \tan x}{\sec x + \tan x} \, dx
 \]
@@ -11482,7 +11449,7 @@ I = \frac{1}{2} \pi (\pi - 2)
 \end{solution}
 
 \question
-计算积分
+
 \[
 \int_{\sqrt{2}}^{\sqrt{\ln 3}} \frac{4x\sin(x^2)}{\sin(x^2)+\sin(\ln 6-x^2)} \, dx.
 \]
@@ -12050,7 +12017,7 @@ f'(x) = \frac{1}{1+\left(\frac{1}{2x^2}\right)^2} \cdot \frac{d}{dx}\left(\frac{
 \end{solution}
 
 \question 
-24) 计算积分 $I = \int_{1}^{\infty} \left( \frac{1}{u^2} - \frac{1}{u^4} \right) \frac{du}{\ln u}$
+24)  $I = \int_{1}^{\infty} \left( \frac{1}{u^2} - \frac{1}{u^4} \right) \frac{du}{\ln u}$
 
 \begin{solution}
 设含参积分 $f(a) = \int_{1}^{\infty} \frac{u^{-2} - u^{-a}}{\ln u} du$,则原积分为 $f(4)$。
@@ -12229,7 +12196,7 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
 令 $u = \sqrt{a}(x + \frac{b}{2a})$,利用标准高斯积分 $\int_{-\infty}^{\infty} e^{-u^2} du = \sqrt{\pi}$:
 \[ e^{\frac{b^2-4ac}{4a}} \frac{1}{\sqrt{a}} \sqrt{\pi} = e^{\frac{b^2-4ac}{4a}} \sqrt{\frac{\pi}{a}} \]
 \end{solution}
-\question 计算积分 $\int_0^1 (-1)^x dx$。
+\question  $\int_0^1 (-1)^x dx$。
 \begin{solution}
 利用欧拉恒等式,将 $(-1)^x$ 写成指数形式:
 \[ (-1)^x = (e^{i(2n+1)\pi})^x = e^{i(2n+1)\pi x} \]
