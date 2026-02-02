@@ -1096,7 +1096,6 @@
         \lim_{n\to\infty} \frac{N(n)}{n^{\frac{3}{2}}} = \frac{2}{3}
         \]
     \end{solution}
-
 \end{questions}
 
 \pagebreak
@@ -1110,24 +1109,24 @@
 \vspace{1pt}
 
 \begin{questions}
-    \question 
-已知 $f(x) = x^{2013} - x^{2012} + x^{2011} - x^{2010} + 1$,求 $\lim_{h \to 0} \frac{f(1+h) - f(1-h)}{h}$。
-
-\begin{solution}
-首先计算导数:
-\[ f'(x) = 2013x^{2012} - 2012x^{2011} + 2011x^{2010} - 2010x^{2009} \]
-对目标极限进行变形:
-\begin{align*}
-\lim_{h \to 0} \frac{f(1+h) - f(1-h)}{h} &= \lim_{h \to 0} \frac{f(1+h) - f(1) + f(1) - f(1-h)}{h} \\
-&= \lim_{h \to 0} \frac{f(1+h) - f(1)}{h} + \lim_{h \to 0} \frac{f(1) - f(1-h)}{h} \\
-&= f'(1) + f'(1) \\
-&= 2f'(1)
-\end{align*}
-代入 $x=1$:
-\[ f'(1) = 2013 - 2012 + 2011 - 2010 = 2 \]
-所以:
-\[ 2f'(1) = 2 \times 2 = 4 \]
-\end{solution}
+    \question 已知 $f(x) = x^{2013} - x^{2012} + x^{2011} - x^{2010} + 1$,求 
+    \[
+    \lim_{h \to 0} \frac{f(1+h) - f(1-h)}{h}
+    \]
+    \begin{solution}
+        计算导数:
+        \[ 
+        f'(x) = 2013x^{2012} - 2012x^{2011} + 2011x^{2010} - 2010x^{2009} 
+        \]
+        于是
+        \begin{align*}
+        \lim_{h \to 0} \frac{f(1+h) - f(1-h)}{h} 
+        &= \lim_{h \to 0} \frac{f(1+h) - f(1)}{h} + \lim_{h \to 0} \frac{f(1) - f(1-h)}{h} \\
+        &= f'(1) + f'(1) \\
+        &= 2 \cdot (2013-2012+2011-2010) \\
+        &= 4
+        \end{align*}
+    \end{solution}
 
     \question 已知 \( f'(1) = 12 \),求
     \[
@@ -1138,359 +1137,236 @@
         \begin{align*}
         \frac{f(1 + 4h) - f(1 - 2h)}{3h}
         &= \frac{f(1 + 4h) - f(1)}{3h} + \frac{f(1) - f(1 - 2h)}{3h} \\
-        &= \frac{4}{3} f'(1) + \frac{2}{3} f'(1) = 24
+        &= \frac{4}{3} f'(1) + \frac{2}{3} f'(1) \\
+        &= 24
         \end{align*}
     \end{solution}
 
-    \question 计算极限
-\[
-\lim_{h \to 0} \left[ \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \frac{2\sqrt{\sin x}}{\pi h} \, dx \right]
-\]
+    \question 求
+    \[
+    \lim_{h \to 0} \left[ \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \frac{2\sqrt{\sin x}}{\pi h} \, dx \right]
+    \]
+    \begin{solution}
+        先提取常数
+        \[
+        \lim_{h \to 0} \left[ \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \frac{2\sqrt{\sin x}}{\pi h} \, dx \right] 
+        = \frac{2}{\pi} \lim_{h \to 0} \left[ \frac{1}{h} \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \sqrt{\sin x} \, dx \right]
+        \]
+        令
+        \[
+        F(x) = \int \sqrt{\sin x} \, dx \Rightarrow F'(x) = \sqrt{\sin x}
+        \]
+        则
+        \[
+        \frac{1}{h} \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \sqrt{\sin x} \, dx = \frac{F\left(\frac{\pi}{6}+h\right) - F\left(\frac{\pi}{6}\right)}{h}
+        \]
+        当 \(h \to 0\) 时,上式为导数定义:
+        \[
+        \lim_{h \to 0} \frac{F\left(\frac{\pi}{6}+h\right) - F\left(\frac{\pi}{6}\right)}{h} = F'\left(\frac{\pi}{6}\right) = \sqrt{\sin \frac{\pi}{6}}
+        \]
+        因此原极限为
+        \[
+        \frac{2}{\pi} \cdot \sqrt{\sin \frac{\pi}{6}} = \frac{2}{\pi} \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2}}{\pi}
+        \]
+    \end{solution}
 
-\begin{solution}
-先提取常数:
-\[
-\lim_{h \to 0} \left[ \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \frac{2\sqrt{\sin x}}{\pi h} \, dx \right] 
-= \frac{2}{\pi} \lim_{h \to 0} \left[ \frac{1}{h} \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \sqrt{\sin x} \, dx \right]
-\]
+    \question 由导数定义,证明 
+    \[
+    \frac{d}{dx}(\sec x) = \sec x \tan x
+    \]
+    \begin{solution}
+        由导数的定义,
+        \begin{align*}
+        \frac{d}{dx}(\sec x) 
+        &= \lim_{h \to 0} \frac{\sec(x+h) - \sec x}{h}\\
+        &= \lim_{h \to 0} \frac{\cos x - \cos(x+h)}{h \cos x \cos(x+h)}\\
+        &= \lim_{h \to 0} \frac{2 \sin\left(x+\frac{h}{2}\right) \sin\frac{h}{2}}{h \cos x \cos(x+h)}\\
+        &= \lim_{h \to 0} \left[ \frac{\sin\frac{h}{2}}{\frac{h}{2}} \cdot \frac{\sin\left(x+\frac{h}{2}\right)}{\cos x \cos(x+h)} \right] \\
+        &= 1 \cdot \frac{\sin x}{\cos^2 x} \\
+        &= \sec x \tan x
+        \end{align*}
+    \end{solution}
 
-令
-\[
-F(x) = \int \sqrt{\sin x} \, dx \implies F'(x) = \sqrt{\sin x}
-\]
+    \question 通过导数的定义,求 
+    \[
+    f(x) = \frac{1}{\sqrt{x^2-1}}, \quad |x|>1
+    \]
+    的导数$f'(x)$。
+    \begin{solution}
+        由导数的定义,
+        \begin{align*}
+        f'(x) &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+        &= \lim_{h \to 0} \frac{\frac{1}{\sqrt{(x+h)^2-1}} - \frac{1}{\sqrt{x^2-1}}}{h} \\
+        &= lim_{h \to 0} \frac{\sqrt{x^2-1} - \sqrt{(x+h)^2-1}}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1}} \\
+        &= \lim_{h \to 0} \frac{(x^2-1) - ((x+h)^2-1)}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})} \\
+        &= \lim_{h \to 0} \frac{-2xh - h^2}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})} \\
+        &= \lim_{h \to 0} \frac{-2x - h}{\sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})} \\
+        &= \frac{-2x}{\sqrt{x^2-1} \sqrt{x^2-1} (2\sqrt{x^2-1})} \\
+        &= -\frac{x}{(x^2-1)^{\frac{3}{2}}}
+        \end{align*}
+    \end{solution}
 
-则
-\[
-\frac{1}{h} \int_{\frac{\pi}{6}}^{\frac{\pi}{6}+h} \sqrt{\sin x} \, dx = \frac{F\left(\frac{\pi}{6}+h\right) - F\left(\frac{\pi}{6}\right)}{h}
-\]
+    \question 设 
+    \[
+    y = \frac{(x^4 + 2)(x^3 - 2)}{(x + 2)(x^2 - 2)},
+    \]
+    求 $\dfrac{dy}{dx}$。
+    \begin{solution}
+        对等式两边取自然对数,
+        \[ 
+        \ln y = \ln(x^4 + 2) + \ln(x^3 - 2) - \ln(x + 2) - \ln(x^2 - 2) 
+        \]
+        对 $x$ 求导,
+        \[ 
+        \frac{1}{y} \frac{dy}{dx} = \frac{4x^3}{x^4 + 2} + \frac{3x^2}{x^3 - 2} - \frac{1}{x + 2} - \frac{2x}{x^2 - 2} 
+        \]
+        整理得
+        \[ 
+        \frac{dy}{dx} = \frac{4x^3(x^3 - 2)}{(x + 2)(x^2 - 2)} + \frac{3x^2(x^4 + 2)}{(x + 2)(x^2 - 2)} - \frac{(x^4 + 2)(x^3 - 2)}{(x + 2)^2(x^2 - 2)} - \frac{2x(x^4 + 2)(x^3 - 2)}{(x + 2)(x^2 - 2)^2} 
+        \]
+    \end{solution}
 
-当 \(h \to 0\) 时,上式为导数定义:
-\[
-\lim_{h \to 0} \frac{F\left(\frac{\pi}{6}+h\right) - F\left(\frac{\pi}{6}\right)}{h} = F'\left(\frac{\pi}{6}\right) = \sqrt{\sin \frac{\pi}{6}}
-\]
+    \question 已知曲线方程
+    \[
+    y = 2^{3e^{2x}}, \quad x \in \mathbb{R}.
+    \]
+    以$y$ 表示 $\frac{dy}{dx}$。
+    \begin{solution}
+        由链导法,
+        \[
+        \frac{dy}{dx} = 2^{3e^{2x}} \cdot \ln 2 \cdot 6 e^{2x} = = y \cdot \ln 2 \cdot 6 e^{2x}
+        \]
+        又由原式取自然对数得
+        \[
+        \ln y = 3 e^{2x} \ln 2 \Rightarrow 2 \ln y = 6 e^{2x} \ln 2
+        \]
+        因此得到
+        \[
+        \frac{dy}{dx} = 2y \ln y
+        \]
+    \end{solution}
+    \begin{solution}
+        不如一开始就取$\ln$,
+        \[
+        \ln y = 3 e^{2x} \ln 2.
+        \]
+        对 $x$ 求导,
+        \[
+        \frac{1}{y}\frac{dy}{dx} = \ln 2 \cdot 6 e^{2x} 
+        \]
+        同样代入 $\ln y = 3 e^{2x} \ln 2$ 得
+        \[
+        \frac{dy}{dx} = = y \cdot (\ln 2) \cdot 6 e^{2x} = 2 y \ln y
+        \]
+    \end{solution}
 
-因此原极限为:
-\[
-\frac{2}{\pi} \cdot \sqrt{\sin \frac{\pi}{6}} = \frac{2}{\pi} \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2}}{\pi}
-\]
+    \question 已知曲线由方程
+    \[
+    x^m y^n = (x+y)^{m+n}, \quad x\neq 0,\; y\neq 0,\; x+y\neq 0,\; my-nx\neq 0
+    \]
+    隐式定义,其中 $m,n$ 为有理数。证明
+    \[
+    \frac{dy}{dx} = \frac{y}{x}
+    \]
+    \begin{solution}
+        两边取对数,
+        \[
+        m\ln x + n\ln y = (m+n)\ln(x+y)
+        \]
+        对 $x$ 求导,
+        \[
+        \frac{m}{x} + \frac{n}{y} \frac{dy}{dx} = \frac{m+n}{x+y}\left(1+\frac{dy}{dx}\right)
+        \]
+        整理得
+        \[
+        \frac{my-nx}{x(x+y)} = \frac{my-nx}{y(x+y)} \frac{dy}{dx}
+        \]
+        由于$x+y\neq 0, my-nx\neq 0$,故
+        \[
+        \frac{dy}{dx} = \frac{y}{x}
+        \]
+    \end{solution}
 
-\end{solution}
+    \question 已知曲线 $C$ 的隐函数方程为
+    \[
+    y = xe^y, \quad x \neq 0, \; y \neq 1, \; y \neq 2.
+    \]
+    证明
+    \[
+    (1-y)\frac{d^2 y}{dx^2} = (2-y)\left(\frac{dy}{dx}\right)^2.
+    \]
+    \begin{solution}
+        对 $y = xe^y$ 两边求导,
+        \[
+        \frac{dy}{dx} = e^y + x e^y \frac{dy}{dx} \Rightarrow \frac{dy}{dx}(1 - y) = e^y 
+        \]
+        再次求导,
+        \[
+        \frac{d^2 y}{dx^2}(1-y) - \left(\frac{dy}{dx}\right)^2 = e^y \frac{dy}{dx}
+        \]
+        代入 $e^y = \dfrac{dy}{dx}(1-y)$,
+        \[
+        \frac{d^2 y}{dx^2}(1-y) - \left(\frac{dy}{dx}\right)^2 = \left(\frac{dy}{dx}\right)^2 (1-y)
+        \]
+        即 
+        \[
+        \frac{d^2 y}{dx^2}(1-y) = \left(\frac{dy}{dx}\right)^2 (2-y)
+        \]
+    \end{solution}
 
-\question 由导数定义,证明 $\frac{d}{dx}(\sec x) = \sec x \tan x$
+    \question 求曲线 $C$ 
+    \[
+    x^2 + 3xy - 2y^2 + 17 = 0
+    \]
+    的极值。
+    \begin{solution}
+        设 $F(x, y) = x^2 + 3xy - 2y^2 + 17$。对方程$F(x, y)=0$两边求导,
+        \[
+        2x + 3y + 3x y' - 4y y' = 0
+        \]
+        整理得：
+        \[
+        y' = -\frac{2x + 3y}{3x - 4y}
+        \]
+        令 $y' = 0$，得到 
+        \[
+        y = -\frac{2}{3}x
+        \]
+        代入原方程解得
+        \[
+        x^2 + 3x\left(-\frac{2}{3}x\right) - 2\left(-\frac{2}{3}x\right)^2 + 17 = 0 \Rightarrow x_1 = 3, x_2 = -3
+        \]
+        得临界点$P_1(3, -2),P_2(-3, 2)$。再求导得,
+        \[
+        y'' (3x - 4y) + y' (3 - 4y') = -(2 + 3y')
+        \]
+        在临界点处 $y' = 0$,化简得
+        \[
+        y'' (3x - 4y) = -2 \Rightarrow y'' = \frac{-2}{3x - 4y}
+        \]
+        由于
+        \[
+        y''(3, -2) = \frac{-2}{3(3) - 4(-2)}= -\frac{2}{17} < 0, \quad y''(-3, 2) = \frac{-2}{3(-3) - 4(2)} = \frac{2}{17} > 0
+        \]
+        故 $y_1 = -2$ 是极大值,$y_2 = 2$ 是极小值。该曲线在 $x=3$ 处取得极大值 $-2$，在 $x=-3$ 处取得极小值 $2$。
+    \end{solution}
 
-\begin{solution}
-导数的定义为
-\[
-f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
-\]
-对于 $f(x) = \sec x$,我们有
-\[
-\frac{d}{dx}(\sec x) = \lim_{h \to 0} \frac{\sec(x+h) - \sec x}{h}
-\]
-
-将正割函数写成余弦函数并通分:
-\[
-\lim_{h \to 0} \frac{\frac{1}{\cos(x+h)} - \frac{1}{\cos x}}{h} = \lim_{h \to 0} \frac{\cos x - \cos(x+h)}{h \cos x \cos(x+h)}
-\]
-
-使用和差化积公式:
-\[
-\cos A - \cos B = -2 \sin\frac{A+B}{2} \sin\frac{A-B}{2}
-\]
-令 $A = x$, $B = x+h$,则
-\begin{align*}
-\cos x - \cos(x+h) &= -2 \sin\frac{2x+h}{2} \sin\frac{-h}{2} \\
-&= 2 \sin\left(x+\frac{h}{2}\right) \sin\frac{h}{2}
-\end{align*}
-
-代回极限:
-\[
-\lim_{h \to 0} \frac{2 \sin\left(x+\frac{h}{2}\right) \sin\frac{h}{2}}{h \cos x \cos(x+h)}
-\]
-
-拆分极限:
-\[
-\lim_{h \to 0} \left[ \frac{\sin\frac{h}{2}}{\frac{h}{2}} \cdot \frac{\sin\left(x+\frac{h}{2}\right)}{\cos x \cos(x+h)} \right]
-\]
-
-利用标准极限:
-\[
-\lim_{h \to 0} \frac{\sin\frac{h}{2}}{\frac{h}{2}} = 1, \quad 
-\lim_{h \to 0} \frac{\sin\left(x+\frac{h}{2}\right)}{\cos x \cos(x+h)} = \frac{\sin x}{\cos^2 x}
-\]
-
-因此最终结果为:
-\[
-\frac{d}{dx}(\sec x) = 1 \cdot \frac{\sin x}{\cos^2 x} = \sec x \tan x
-\]
-\end{solution}
-
-\question 使用导数的极限定理求 $f(x) = \frac{1}{\sqrt{x^2-1}}, \quad |x|>1$ 的导数
-\[
-f'(x) = ?
-\]
-
-\begin{solution}
-由导数的定义:
-\[
-f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{\frac{1}{\sqrt{(x+h)^2-1}} - \frac{1}{\sqrt{x^2-1}}}{h}
-\]
-
-分子通分:
-\[
-= \lim_{h \to 0} \frac{\sqrt{x^2-1} - \sqrt{(x+h)^2-1}}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1}}
-\]
-
-对分子进行有理化（乘以共轭）:
-\[
-= \lim_{h \to 0} \frac{(\sqrt{x^2-1} - \sqrt{(x+h)^2-1})(\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}
-\]
-
-分子化简（平方差公式）:
-\[
-= \lim_{h \to 0} \frac{(x^2-1) - ((x+h)^2-1)}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}
-\]
-
-展开平方:
-\[
-= \lim_{h \to 0} \frac{(x^2-1) - (x^2 + 2xh + h^2 -1)}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}
-= \lim_{h \to 0} \frac{-2xh - h^2}{h \sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}
-\]
-
-约去 $h$:
-\[
-= \lim_{h \to 0} \frac{-2x - h}{\sqrt{x^2-1} \sqrt{(x+h)^2-1} (\sqrt{x^2-1} + \sqrt{(x+h)^2-1})}
-\]
-
-令 $h \to 0$:
-\[
-f'(x) = \frac{-2x}{\sqrt{x^2-1} \sqrt{x^2-1} (2\sqrt{x^2-1})} = \frac{-2x}{2(x^2-1)^{3/2}} = -\frac{x}{(x^2-1)^{3/2}}
-\]
-\end{solution}
-
-\question
-设 $y = \frac{(x^4 + 2)(x^3 - 2)}{(x + 2)(x^2 - 2)}$,求 $\frac{dy}{dx}$。
-\begin{solution}
-对等式两边取自然对数:
-\[ \ln y = \ln(x^4 + 2) + \ln(x^3 - 2) - \ln(x + 2) - \ln(x^2 - 2) \]
-两边同时对 $x$ 求导:
-\[ \frac{1}{y} \frac{dy}{dx} = \frac{4x^3}{x^4 + 2} + \frac{3x^2}{x^3 - 2} - \frac{1}{x + 2} - \frac{2x}{x^2 - 2} \]
-整理得:
-\[ \frac{dy}{dx} = \frac{4x^3(x^3 - 2)}{(x + 2)(x^2 - 2)} + \frac{3x^2(x^4 + 2)}{(x + 2)(x^2 - 2)} - \frac{(x^4 + 2)(x^3 - 2)}{(x + 2)^2(x^2 - 2)} - \frac{2x(x^4 + 2)(x^3 - 2)}{(x + 2)(x^2 - 2)^2} \]
-\end{solution}
-
-\question 已知曲线方程
-\[
-y = 2^{3e^{2x}}, \quad x \in \mathbb{R}.
-\]
-求 $\frac{dy}{dx}$ 用 $y$ 表示。
-
-\begin{solution}
-
-\textbf{方法一:直接求导}  
-使用公式 $\frac{d}{dx}[a^{f(x)}] = f'(x)a^{f(x)}\ln a$,有
-\[
-y = 2^{3e^{2x}} \implies \frac{dy}{dx} = 2^{3e^{2x}} \cdot \ln 2 \cdot 6 e^{2x}.
-\]
-由于 $y = 2^{3e^{2x}}$,可以将其代回:
-\[
-\frac{dy}{dx} = y \cdot \ln 2 \cdot 6 e^{2x}.
-\]
-注意
-\[
-\ln y = \ln 2^{3e^{2x}} = 3 e^{2x} \ln 2 \implies 6 e^{2x} \ln 2 = 2 \ln y.
-\]
-因此得到
-\[
-\frac{dy}{dx} = y \cdot 2 \ln y = 2y \ln y.
-\]
-
-\textbf{方法二:先取对数再隐函数求导}  
-取对数:
-\[
-\ln y = \ln 2^{3e^{2x}} = 3 e^{2x} \ln 2.
-\]
-对 $x$ 求导:
-\[
-\frac{1}{y}\frac{dy}{dx} = (\ln 2) \cdot 6 e^{2x} \implies \frac{dy}{dx} = y \cdot (\ln 2) \cdot 6 e^{2x}.
-\]
-同样代入 $\ln y = 3 e^{2x} \ln 2$ 得:
-\[
-\frac{dy}{dx} = 2 y \ln y.
-\]
-
-\end{solution}
-
-\question 已知曲线由方程
-\[
-x^m y^n = (x+y)^{m+n}
-\]
-隐式定义,其中 $m,n$ 为有理常数,且 $x\neq 0, y\neq 0, x+y\neq 0, my-nx\neq 0$。证明
-\[
-\frac{dy}{dx} = \frac{y}{x}.
-\]
-
-\begin{solution}
-
-\textbf{步骤 1: 对两边取对数}  
-\[
-\ln(x^m y^n) = \ln((x+y)^{m+n}) \implies m\ln x + n\ln y = (m+n)\ln(x+y)
-\]
-
-\textbf{步骤 2: 对 $x$ 求导}  
-\[
-\frac{d}{dx}\big(m\ln x + n\ln y\big) = \frac{d}{dx}\big((m+n)\ln(x+y)\big)
-\]
-\[
-\frac{m}{x} + \frac{n}{y} \frac{dy}{dx} = \frac{m+n}{x+y}\left(1+\frac{dy}{dx}\right)
-\]
-
-\textbf{步骤 3: 整理含 $\frac{dy}{dx}$ 的项}  
-\[
-\frac{m}{x} - \frac{m+n}{x+y} = \left(\frac{m+n}{x+y} - \frac{n}{y}\right)\frac{dy}{dx}
-\]
-
-\textbf{步骤 4: 合并分子}  
-\[
-\frac{mx + my - mx - nx}{x(x+y)} = \frac{my - nx}{y(x+y)} \frac{dy}{dx} \implies \frac{my-nx}{x(x+y)} = \frac{my-nx}{y(x+y)} \frac{dy}{dx}
-\]
-
-\textbf{步骤 5: 消去公共因子,得到最终结果}  
-\[
-\frac{1}{x} = \frac{1}{y} \frac{dy}{dx} \implies \frac{dy}{dx} = \frac{y}{x}
-\]
-
-\end{solution}
-
-\question 已知曲线 $C$ 的隐函数方程为
-\[
-y = xe^y, \quad x \neq 0, \quad y \neq 1, \quad y \neq 2.
-\]
-证明
-\[
-(1-y)\frac{d^2 y}{dx^2} = (2-y)\left(\frac{dy}{dx}\right)^2.
-\]
-
-\begin{solution}
-
-\textbf{第一步:对方程求一阶导}  
-对 $y = xe^y$ 两边关于 $x$ 求导:
-\[
-\frac{dy}{dx} = e^y + x e^y \frac{dy}{dx}
-\]
-\[
-\implies \frac{dy}{dx} - x e^y \frac{dy}{dx} = e^y
-\]
-\[
-\implies \frac{dy}{dx}(1 - x e^y) = e^y
-\]
-由于 $y = x e^y \implies x e^y = y$,所以
-\[
-\frac{dy}{dx}(1 - y) = e^y
-\]
-
-\textbf{第二步:对一阶导求二阶导}  
-对 $\frac{dy}{dx}(1-y) = e^y$ 两边再次求导:
-\[
-\frac{d^2 y}{dx^2}(1-y) + \frac{dy}{dx}(-\frac{dy}{dx}) = e^y \frac{dy}{dx}
-\]
-\[
-\implies \frac{d^2 y}{dx^2}(1-y) - \left(\frac{dy}{dx}\right)^2 = e^y \frac{dy}{dx}
-\]
-
-\textbf{第三步:代入 $e^y = \frac{dy}{dx}(1-y)$}  
-\[
-\frac{d^2 y}{dx^2}(1-y) - \left(\frac{dy}{dx}\right)^2 = \frac{dy}{dx}(1-y) \frac{dy}{dx}
-\]
-\[
-\implies \frac{d^2 y}{dx^2}(1-y) - \left(\frac{dy}{dx}\right)^2 = \left(\frac{dy}{dx}\right)^2 (1-y)
-\]
-
-\textbf{第四步:整理得到所需结果}  
-\[
-\frac{d^2 y}{dx^2}(1-y) = \left(\frac{dy}{dx}\right)^2 (1-y) + \left(\frac{dy}{dx}\right)^2 = \left(\frac{dy}{dx}\right)^2 (2-y)
-\]
-
-\end{solution}
-
-    \question 已知曲线 $C$ 由隐函数方程给出:
-\[
-x^2 + 3xy - 2y^2 + 17 = 0.
-\]
-\begin{solution}
-
-\textbf{a) 求转折点坐标}  
-
-在转折点处 $\frac{dy}{dx} = 0$。先对方程求导:
-\[
-\frac{d}{dx}\big(x^2 + 3xy - 2y^2 + 17\big) = 2x + 3y + 3x\frac{dy}{dx} - 4y\frac{dy}{dx} = 0
-\]
-令 $\frac{dy}{dx} = 0$,得到
-\[
-2x + 3y = 0 \implies y = -\frac{2}{3}x
-\]
-代回原方程:
-\[
-x^2 + 3x\left(-\frac{2}{3}x\right) -2\left(-\frac{2}{3}x\right)^2 + 17 = x^2 - 2x^2 - \frac{8}{9}x^2 + 17 = -\frac{11}{9}x^2 + 17 = 0
-\]
-\[
-x^2 = \frac{17 \cdot 9}{11} = \frac{153}{11} \implies x = \pm 3 \quad \text{(取整简化示例)}
-\]
-对应 $y$:
-\[
-x=3 \implies y=-2, \quad x=-3 \implies y=2
-\]
-所以转折点为 $A(3,-2)$ 和 $B(-3,2)$。
-
-\textbf{b) 导出二阶导数关系}  
-
-对 $\frac{dy}{dx}$ 的表达式再次对 $x$ 求导:
-\[
-2 + 3\frac{dy}{dx} + 3\frac{dy}{dx} + 3x\frac{d^2 y}{dx^2} -4\frac{dy}{dx}\frac{dy}{dx} -4y\frac{d^2 y}{dx^2} = 0
-\]
-合并同类项:
-\[
-2 + 6\frac{dy}{dx} -4\left(\frac{dy}{dx}\right)^2 + (3x-4y)\frac{d^2 y}{dx^2} = 0
-\]
-
-\textbf{c) 判定转折点的性质}  
-
-在转折点 $\frac{dy}{dx}=0$ 时:
-\[
-2 + (3x-4y)\frac{d^2 y}{dx^2} = 0 \implies (3x-4y)\frac{d^2 y}{dx^2} = -2 \implies (4y-3x)\frac{d^2 y}{dx^2} = 2
-\]
-
-\textbf{在 $A(3,-2)$}:
-\[
-(4(-2)-3(3))\frac{d^2 y}{dx^2} = (-8-9)\frac{d^2 y}{dx^2} = -17\frac{d^2 y}{dx^2} = 2
-\]
-\[
-\frac{d^2 y}{dx^2} = -\frac{2}{17} < 0 \implies A \text{为最大点}
-\]
-
-\textbf{在 $B(-3,2)$}:
-\[
-(4(2)-3(-3))\frac{d^2 y}{dx^2} = (8+9)\frac{d^2 y}{dx^2} = 17\frac{d^2 y}{dx^2} = 2
-\]
-\[
-\frac{d^2 y}{dx^2} = \frac{2}{17} > 0 \implies B \text{为最小点}
-\]
-    
-\end{solution}
-
-    \question 设函数 \( f(x) \) 处处可导,且 \( f'(0) = 1 \),并对任意实数 \( x \)、\( h \) 恒有
+    \question 设函数 \( f(x) \) 处处可导,且 \( f'(0) = 1 \),并对任意实数 \( x,h \) 恒有
     \[
     f(x + h) = f(x) + f(h) + 2hx,
     \]
     求 \( f'(x) \)。
     \begin{solution}
-        已知$\forall \:x,h \in \mathbb{R},$\[
+        已知$\forall \:x,h \in \mathbb{R}$,
+        \[
         f(x + h) = f(x) + f(h) + 2hx
         \]
-        对$h$微分,\[
+        对$h$微分,
+        \[
         f'(x+h)=f'(h)+2x
         \]
-        令$h=0$,则\[
+        令$h=0$,则
+        \[
         f'(x)=f'(0)+2x=1+2x
         \]
     \end{solution}
@@ -1610,115 +1486,114 @@ x=3 \implies y=-2, \quad x=-3 \implies y=2
         $\therefore (a, b) = (2, -1) \ \text{或} \ (-2, 5)$
     \end{solution}
 
-    \question
-\noindent
-函数 $f$ 定义为
-\[
-f(n, y) = \sum_{x=1}^{n} \frac{x^2 y^x}{k}, \quad n \in \mathbb{N}, \quad y \in \mathbb{R}
-\]
-其中
-\[
-k = \sum_{r=1}^{n} r^2.
-\]
-
-\noindent
-利用常用的数列求和公式,证明
-\[
-\left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2 = \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2}.
-\]
-
-你可以假设如下求和公式:
-\[
-\sum_{r=1}^{n} r^4 = \frac{1}{30} n(n+1)(6n^3+9n^2+n-1).
-\]
-
-\begin{solution}
-首先,利用标准求和公式:
-\[
-k = \sum_{x=1}^{n} x^2 = \frac{n(n+1)(2n+1)}{6}.
-\]
-
-因为 $k$ 不依赖于 $x$,所以可以提出求和号外:
-\[
-f(n,y) = \frac{1}{k} \sum_{x=1}^{n} x^2 y^x.
-\]
-
-对 $y$ 求导:
-\[
-\frac{df}{dy} = \frac{1}{k} \sum_{x=1}^{n} x^3 y^{x-1}, \quad
-\left. \frac{df}{dy} \right|_{y=1} = \frac{1}{k} \sum_{x=1}^{n} x^3.
-\]
-
-再次对 $y$ 求导:
-\[
-\frac{d^2f}{dy^2} = \frac{1}{k} \sum_{x=1}^{n} x^3 (x-1) y^{x-2} = \frac{1}{k} \sum_{x=1}^{n} x^4 y^{x-2} - \frac{1}{k} \sum_{x=1}^{n} x^3 y^{x-2}.
-\]
-
-在 $y=1$ 时:
-\[
-\left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2
-= \frac{1}{k} \sum_{x=1}^{n} x^4 - \frac{1}{k^2} \left( \sum_{x=1}^{n} x^3 \right)^2.
-\]
-
-代入 $k = \frac{n(n+1)(2n+1)}{6}$ 及求和公式:
-\begin{align*}
-& \frac{6}{n(n+1)(2n+1)} \cdot \frac{1}{30} n(n+1)(6n^3+9n^2+n-1) - \frac{36}{n^2(n+1)^2(2n+1)^2} \cdot \left[ \frac{n^2(n+1)^2}{4} \right] \\
-&= \frac{6n^3+9n^2+n-1}{5(2n+1)} - \frac{9}{4(2n+1)^2} \\
-&= \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2}.
-\end{align*}
-
-因此,
-\[
-\left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2 = \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2},
-\]
-如所需。
-\end{solution}
+    \question 函数 $f$ 定义为
+    \[
+    f(n, y) = \sum_{x=1}^{n} \frac{x^2 y^x}{k}, \quad n \in \mathbb{N}, \quad y \in \mathbb{R}
+    \]
+    其中
+    \[
+    k = \sum_{r=1}^{n} r^2,
+    \]
+    若已知数列求和公式
+    \[
+    \sum_{r=1}^{n} r^4 = \frac{1}{30} n(n+1)(6n^3+9n^2+n-1),
+    \]
+    证明
+    \[
+    \left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2 = \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2}.
+    \]
+    \begin{solution}
+        首先,利用标准求和公式:
+        \[
+        k = \sum_{x=1}^{n} x^2 = \frac{n(n+1)(2n+1)}{6}.
+        \]
+        既然 $k$ 与 $x$ 无关，可以将其作为常数因子提取到求和号外
+        \[
+        f(n,y) = \frac{1}{k} \sum_{x=1}^{n} x^2 y^x.
+        \]
+        对 $y$ 求导,
+        \[
+        \frac{df}{dy} = \frac{1}{k} \sum_{x=1}^{n} x^3 y^{x-1}, \quad
+        \left. \frac{df}{dy} \right|_{y=1} = \frac{1}{k} \sum_{x=1}^{n} x^3.
+        \]
+        再次对 $y$ 求导,
+        \[
+        \frac{d^2f}{dy^2} = \frac{1}{k} \sum_{x=1}^{n} x^3 (x-1) y^{x-2} = \frac{1}{k} \sum_{x=1}^{n} x^4 y^{x-2} - \frac{1}{k} \sum_{x=1}^{n} x^3 y^{x-2}.
+        \]
+        在 $y=1$ 时,
+        \[
+        \left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2
+        = \frac{1}{k} \sum_{x=1}^{n} x^4 - \frac{1}{k^2} \left( \sum_{x=1}^{n} x^3 \right)^2.
+        \]
+        代入求和公式得
+        \begin{align*}
+        & \frac{6}{n(n+1)(2n+1)} \cdot \frac{1}{30} n(n+1)(6n^3+9n^2+n-1) - \frac{36}{n^2(n+1)^2(2n+1)^2} \cdot \left[ \frac{n^2(n+1)^2}{4} \right] \\
+        &= \frac{6n^3+9n^2+n-1}{5(2n+1)} - \frac{9}{4(2n+1)^2} \\
+        &= \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2}.
+        \end{align*}
+        因此,
+        \[
+        \left. \frac{d^2f}{dy^2} \right|_{y=1} + \left. \frac{df}{dy} \right|_{y=1} - \left[ \left. \frac{df}{dy} \right|_{y=1} \right]^2 = \frac{3n^4+6n^3-n^2-4n}{20(2n+1)^2},
+        \]
+        得证。
+    \end{solution}
 
     \question 
-(a) 设 $f(x) = x^3 + x$,$g(x)$ 为 $f(x)$ 的反函数,求 $g'(10)$。\\
-(b) 对 $x>0$,定义 $h(x) = 1/f(x)$,证明函数 $f(x)+h(x)$ 在 $x = g(1)$ 处取得绝对最小值。
-
-\begin{solution}
-(a) 由于 $f$ 与 $g$ 为反函数,$f(g(x)) = x$。对两边求导得到
-\[
-f'(g(x)) g'(x) = 1.
-\]
-又因为 $f(2) = 10$,所以 $g(10) = 2$。令 $x = 10$,则
-\[
-f'(g(10)) g'(10) = 1 \quad \Rightarrow \quad f'(2) g'(10) = 1.
-\]
-而 $f'(x) = 3x^2 + 1$,所以 $f'(2) = 13$,因此
-\[
-g'(10) = \frac{1}{13}.
-\]
-
-(b) 令 
-\[
-F(x) = f(x) + h(x) = f(x) + \frac{1}{f(x)}.
-\] 
-则
-\[
-F'(x) = f'(x) - \frac{f'(x)}{[f(x)]^2} = f'(x) \frac{[f(x)]^2 - 1}{[f(x)]^2}.
-\] 
-因为 $f'(x) > 1$,所以在临界点有 $f(x_0)^2 - 1 = 0$,即 $f(x_0) = 1$,因此 $x_0 = g(1)$。  
-
-为了判断临界点的性质,计算
-\[
-F''(x) = f''(x) - \frac{[f(x)]^2 f''(x) - 2 f(x) [f'(x)]^2}{[f(x)]^4}.
-\] 
-在 $x = x_0$ 时,$f(x_0) = 1$,$f''(x_0) = 6 g(1)$,$f'(x_0) = 3(g(1))^2 + 1$,所以
-\[
-F''(x_0) = 6g(1) - \big(6g(1) - 2 [3(g(1))^2 + 1]^2\big) = 2 [3(g(1))^2 + 1]^2 > 0.
-\] 
-因此 $x = x_0$ 为相对最小值。由于
-\[
-\lim_{x \to 0^+} F(x) = \lim_{x \to \infty} F(x) = \infty,
-\] 
-故 $x = g(1)$ 为 $F(x)$ 的绝对最小值。
-\end{solution}
-
+    \begin{parts}
+    \part 设 
+    \[
+    f(x) = x^3 + x,
+    \]
+    且$g(x)$ 为 $f(x)$ 的反函数,求 $g'(10)$。
+    \begin{solution}
+        由于 $f$ 与 $g$ 为反函数,$f(g(x)) = x$,对两边求导得到
+        \[
+        f'(g(x)) g'(x) = 1
+        \]
+        又因为 $f(2) = 10$,所以 $g(10) = 2$。令 $x = 10$,则
+        \[
+        f'(2) g'(10) = 1
+        \]
+        而 $f'(x) = 3x^2 + 1$,所以 $f'(2) = 13$,因此
+        \[
+        g'(10) = \frac{1}{13}
+        \]
+    \end{solution}
+    \part 对 $x>0$,定义 
+    \[
+    h(x) = \frac{1}{f(x)},
+    \]
+    证明函数 $f(x)+h(x)$ 在 $x = g(1)$ 处取得最小值。
+    \begin{solution}
+        令 
+        \[
+        F(x) = f(x) + h(x) = f(x) + \frac{1}{f(x)}
+        \] 
+        则
+        \[
+        F'(x) = f'(x) - \frac{f'(x)}{[f(x)]^2} = f'(x) \frac{[f(x)]^2 - 1}{[f(x)]^2}
+        \] 
+        因为 $f'(x) > 1$,所以在临界点有 $f(x_0)^2 - 1 = 0$,即 $f(x_0) = 1$,因此 $x_0 = g(1)$,再次求导,
+        \[
+        F''(x) = f''(x) - \frac{[f(x)]^2 f''(x) - 2 f(x) [f'(x)]^2}{[f(x)]^4}
+        \] 
+        在 $x = x_0$ 时,$f(x_0) = 1,f''(x_0) = 6 g(1),f'(x_0) = 3(g(1))^2 + 1$,所以
+        \[
+        F''(x_0) = 6g(1) - \big(6g(1) - 2 [3(g(1))^2 + 1]^2\big) = 2 [3(g(1))^2 + 1]^2 > 0
+        \] 
+        因此 $x = x_0$ 为极小值。由于
+        \[
+        \lim_{x \to 0^+} F(x) = \lim_{x \to \infty} F(x) = \infty,
+        \] 
+        故 $x = g(1)$ 为 $F(x)$ 的最小值。
+    \end{solution}
+    \end{parts}
     
-    \question 已知对任意正整数 $k$,方程 $$x^{k}-x^{k-1}-x^{k-2}-\cdots-x-1=0$$ 恰有一个正实根,设该方程唯一正实根为 $\alpha_k$,试证该无穷数列 $\langle \alpha_k \rangle$ 收敛,且 $$\lim\limits_{k \to \infty} \alpha_k = 2$$
+    \question 已知对任意正整数 $k$,方程 
+    \[
+    x^{k}-x^{k-1}-x^{k-2}-\cdots-x-1=0
+    \]
+    恰有一个正实根,设该方程唯一正实根为 $\alpha_k$,试证该无穷数列 $\langle \alpha_k \rangle$ 收敛,且 $$\lim\limits_{k \to \infty} \alpha_k = 2$$
     \begin{solution}
         原方程可化为
         \[
@@ -1751,541 +1626,421 @@ F''(x_0) = 6g(1) - \big(6g(1) - 2 [3(g(1))^2 + 1]^2\big) = 2 [3(g(1))^2 + 1]^2 >
         \[
         2 - \frac{2}{k+1} < \alpha_k < 2
         \]
-        故由夹挤定理:
+        故由夹挤定理,
         \[
         \lim_{k \to \infty} \alpha_k = 2
         \]
         因此 $\alpha_k$ 收敛,且收敛至 $2$,故得证。
     \end{solution}
 
-    \question 已知 $a < b < c$, $f'(x)$ 在 $(a, c)$ 上严格递增, 且 $f(x)$ 在 $[a, c]$ 上连续, 证明
-\[
-(b-a) f(c) + (c-b) f(a) > (c-a) f(b).
-\]
-
-\begin{solution}
-由假设可使用导数的中值定理, 因此存在 $\alpha$ 和 $\beta$ 使得
-\[
-\frac{f(c)-f(b)}{c-b} = f'(\beta), \quad b < \beta < c,
-\]
-以及
-\[
-\frac{f(b)-f(a)}{b-a} = f'(\alpha), \quad a < \alpha < b.
-\]
-
-由于 $f'$ 严格递增, 我们有 $f'(\beta) > f'(\alpha)$, 因此
-\[
-\frac{f(c)-f(b)}{c-b} > \frac{f(b)-f(a)}{b-a}.
-\]
-
-对上式进行初等代数变形即可得到所需不等式:
-\[
-(b-a) f(c) + (c-b) f(a) > (c-a) f(b).
-\]
-\end{solution}
-
-\question 设 $f,g:\mathbb{R}\to\mathbb{R}$ 是连续函数,且 $g$ 可导。假设
-\[
-(f(0)-g'(0))(g'(1)-f(1))>0.
-\]
-证明存在 $c\in(0,1)$,使得 $f(c)=g'(c)$。
-
-\begin{solution}
-令
-\[
-F(x)=\int_0^x f(t)\,dt, \quad h(x)=F(x)-g(x).
-\]
-由 $f$ 的连续性,$F$ 可导且 $F'=f$,因此
-\[
-h'(x)=F'(x)-g'(x)=f(x)-g'(x).
-\]
-
-假设可以改写为
-\[
-h'(0)(-h'(1))>0,
-\]
-因此 $h'(0)$ 和 $h'(1)$ 异号。由导数的 Darboux 性质（中值性质）可知,存在 $c\in(0,1)$,使得
-\[
-h'(c)=0 \implies f(c)=g'(c).
-\]
-\end{solution}
-
-\question 设 $f: (0,\infty) \to \mathbb{R}$ 为连续可微函数,$b > a > 0$ 且 $f(a) = f(b) = k$。证明存在 $\xi \in (a, b)$ 使得
-\[
-f(\xi) - \xi f'(\xi) = k.
-\]
-
-\begin{solution}
-定义函数 $g(x) = \frac{f(x)}{x}$,则
-\[
-g'(x) = \frac{xf'(x) - f(x)}{x^2},
-\]
-分子正好是题目中涉及的表达式。
-
-考虑函数 $g(x) = f(x)/x$ 和 $h(x) = 1/x$ 在 $[a,b]$ 上,应用柯西中值定理,存在 $\xi \in (a, b)$ 使得
-\[
-\frac{g(a) - g(b)}{h(a) - h(b)} = \frac{g'(\xi)}{h'(\xi)}.
-\]
-
-注意到
-\[
-\frac{g'(\xi)}{h'(\xi)} = \frac{\frac{\xi f'(\xi) - f(\xi)}{\xi^2}}{-\frac{1}{\xi^2}} = f(\xi) - \xi f'(\xi),
-\]
-而
-\[
-\frac{g(a) - g(b)}{h(a) - h(b)} = \frac{\frac{f(a)}{a} - \frac{f(b)}{b}}{\frac{1}{a} - \frac{1}{b}} = \frac{\frac{k}{a} - \frac{k}{b}}{\frac{b - a}{ab}} = k.
-\]
-
-因此存在 $\xi \in (a, b)$ 满足
-\[
-f(\xi) - \xi f'(\xi) = k.
-\]
-\end{solution}
-
-
-\question 设 $f:\mathbb{R}\to\mathbb{R}$ 为二阶可导函数,且 $f(0)=0$。证明:存在
-$\xi\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$,使得
-\[
-f''(\xi)=f(\xi)\bigl(1+2\tan^2\xi\bigr).
-\]
-
-\begin{solution}
-设
-\[
-g(x)=f(x)\cos x.
-\]
-由于
-\[
-g\left(-\frac{\pi}{2}\right)=g(0)=g\left(\frac{\pi}{2}\right)=0,
-\]
-由罗尔定理,存在
-\[
-\xi_1\in\left(-\frac{\pi}{2},0\right),\quad 
-\xi_2\in\left(0,\frac{\pi}{2}\right)
-\]
-使得
-\[
-g'(\xi_1)=g'(\xi_2)=0.
-\]
-
-再考虑函数
-\[
-h(x)=\frac{g'(x)}{\cos^2 x}
-=\frac{f'(x)\cos x-f(x)\sin x}{\cos^2 x}.
-\]
-显然有
-\[
-h(\xi_1)=h(\xi_2)=0.
-\]
-再次由罗尔定理,存在
-\[
-\xi\in(\xi_1,\xi_2)\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)
-\]
-使得 $h'(\xi)=0$。
-
-计算导数,
-\begin{align*}
-0=h'(\xi)
-&=\frac{g''(\xi)\cos^2\xi+2\cos\xi\sin\xi\,g'(\xi)}{\cos^4\xi} \\
-&=\frac{(f''(\xi)\cos\xi-2f'(\xi)\sin\xi-f(\xi)\cos\xi)\cos\xi
-+2\sin\xi\bigl(f'(\xi)\cos\xi-f(\xi)\sin\xi\bigr)}{\cos^3\xi} \\
-&=\frac{f''(\xi)\cos^2\xi-f(\xi)\bigl(\cos^2\xi+2\sin^2\xi\bigr)}{\cos^3\xi}.
-\end{align*}
-整理得
-\[
-0=\frac{1}{\cos\xi}\Bigl(f''(\xi)-f(\xi)\bigl(1+2\tan^2\xi\bigr)\Bigr).
-\]
-因此
-\[
-f''(\xi)=f(\xi)\bigl(1+2\tan^2\xi\bigr),
-\]
-结论得证。
-\end{solution}
-
-
-    \question
-对于足够小但正的 $\theta$,有 $\tan \theta > \theta$。在另一方面,证明当 $0 < \theta < \pi/4$ 时,有
-\[
-\tan \theta < \frac{4\theta}{\pi}.
-\]
-
-\begin{solution}
-\textbf{解法 I.} 设 $f(x) = \tan x$,令 $x = \theta \in (0, \pi/4)$。由拉格朗日中值定理（$f$ 在 $[0, \pi/4]$ 上连续,$(0, \pi/4)$ 上可导）有
-\[
-\begin{cases} 
-\tan\theta = \tan 0 + (\theta - 0) \sec^2 \xi, \\ 
-\tan \frac{\pi}{4} = \tan \theta + \left(\frac{\pi}{4} - \theta\right) \sec^2 \xi', 
-\end{cases}
-\]
-其中 $0 < \xi < \theta$,$\theta < \xi' < \pi/4$。由于 $\sec^2 x$ 在 $(0, \pi/4)$ 上单调递增,因此 $\sec^2 \xi' > \sec^2 \xi$。由此得到
-\[
-\frac{1 - \tan \theta}{\pi/4 - \theta} > \frac{\tan \theta}{\theta}.
-\]
-代数整理得
-\[
-\frac{4\theta}{\pi} > \tan \theta.
-\]
-
-\textbf{解法 II.} 令
-\[
-f(\theta) = \frac{4\theta}{\pi} - \tan \theta.
-\]
-则
-\[
-f'(\theta) = \frac{4}{\pi} - \sec^2 \theta.
-\]
-因此,存在唯一 $\xi \in (0, \pi/4)$ 使得 $f'(\xi) = 0$。并且 $f'(\theta) < 0$ 对 $\theta \in (0, \xi)$,$f'(\theta) > 0$ 对 $\theta \in (\xi, \pi/4)$。因此,$f$ 在 $(0,\xi)$ 上递减,在 $(\xi, \pi/4)$ 上递增。同时 $f(0) = f(\pi/4) = 0$,所以 $f(\theta) < 0$ 对 $(0, \pi/4)$ 成立,即
-\[
-\tan \theta < \frac{4\theta}{\pi}.
-\]
-\end{solution}
-
-\question 证明对于所有非负整数 $n$,有
-\[
-2(3n-1)^n \ge (3n+1)^n.
-\]
-
-\begin{solution}
-当 $n=0$ 时,不等式显然成立,因为
-\[
-2(3\cdot 0 - 1)^0 = 2 \cdot 1 = 2 \ge 1 = (3\cdot 0 + 1)^0.
-\]
-
-因此我们只需考虑 $n \ge 1$ 的情况。将原不等式两边同时除以 $(3n+1)^n$,得到
-\[
-\frac{2(3n-1)^n}{(3n+1)^n} \ge 1,
-\]
-即
-\[
-2 \left(\frac{3n-1}{3n+1}\right)^n \ge 1,
-\]
-等价于
-\[
-\left(\frac{3n-1}{3n+1}\right)^n \ge \frac{1}{2}.
-\]
-
-对两边取自然对数,得到
-\[
-n \ln \frac{3n-1}{3n+1} \ge \ln \frac{1}{2} = -\ln 2.
-\]
-
-为分析左边的表达式,定义函数
-\[
-f(x) = x \ln \frac{3x-1}{3x+1}, \quad x \ge 1.
-\]
-
-对 $f(x)$ 求导数:
-\[
-f'(x) = \ln \frac{3x-1}{3x+1} + x \left(\frac{3}{3x-1} - \frac{3}{3x+1}\right)
-= \ln \frac{3x-1}{3x+1} + x \cdot \frac{6}{(3x-1)(3x+1)}
-= \ln \frac{3x-1}{3x+1} + \frac{6x}{9x^2 -1}.
-\]
-
-再求二阶导数:
-\[
-f''(x) = \frac{6}{(3x-1)(3x+1)} - \frac{6x(6x)}{(9x^2-1)^2} = \frac{6(9x^2-1)-36x^2}{(9x^2-1)^2} = \frac{18x^2 - 6}{(9x^2-1)^2} = \frac{6(3x^2-1)}{(9x^2-1)^2}.
-\]
-
-由于 $x \ge 1$,分子 $3x^2-1 > 0$,分母 $(9x^2-1)^2 >0$,所以 $f''(x) > 0$。因此 $f'(x)$ 是递增函数。  
-
-接下来分析 $f'(x)$ 的极限:
-\[
-\lim_{x\to\infty} f'(x) = \lim_{x\to\infty} \ln \frac{3x-1}{3x+1} + \frac{6x}{9x^2-1} = \ln 1 + \lim_{x\to\infty} \frac{6x}{9x^2} = 0 + 0 = 0.
-\]
-
-由于 $f'(x)$ 在 $[1, \infty)$ 上递增且极限为 0,因此对于 $x \ge 1$,有 $f'(x) > 0$。  
-
-于是 $f(x)$ 在 $[1, \infty)$ 上严格递增。又
-\[
-f(1) = 1 \cdot \ln \frac{3\cdot 1 -1}{3\cdot 1 +1} = \ln \frac{2}{4} = \ln \frac{1}{2} = -\ln 2.
-\]
-
-因此对任意 $n \ge 1$,都有
-\[
-f(n) = n \ln \frac{3n-1}{3n+1} \ge f(1) = -\ln 2,
-\]
-即
-\[
-n \ln \frac{3n-1}{3n+1} \ge -\ln 2.
-\]
-
-这正是我们要证明的
-\[
-\left(\frac{3n-1}{3n+1}\right)^n \ge \frac{1}{2}.
-\]
-
-所以原不等式成立:
-\[
-2(3n-1)^n \ge (3n+1)^n \quad \text{对所有非负整数 } n.
-\]
-
-\end{solution}
-
-\question 比较 $\tan(\sin x)$ 和 $\sin(\tan x)$ 对所有 $x \in (0, \frac{\pi}{2})$ 的大小。
-
-\begin{solution}
-设
-\[
-f(x) = \tan(\sin x) - \sin(\tan x).
-\]
-
-计算导数:
-\[
-f'(x) = \frac{\cos x}{\cos^2(\sin x)} - \frac{\cos(\tan x)}{\cos^2 x} = \frac{\cos^3 x - \cos(\tan x)\cdot \cos^2(\sin x)}{\cos^2 x \cdot \cos^2(\tan x)}.
-\]
-
-对 $0 < x < \arctan \frac{\pi}{2}$,由 $\cos$ 在 $(0, \frac{\pi}{2})$ 上的凹性可得
-\[
-\sqrt[3]{\cos(\tan x)\cdot \cos^2(\sin x)} < \frac{1}{3}[\cos(\tan x) + 2\cos(\sin x)] \le \cos\left(\frac{\tan x + 2\sin x}{3}\right) < \cos x,
-\]
-其中最后一个不等式由
-\[
-\left(\frac{\tan x + 2\sin x}{3}\right)' = \frac{1}{3}\left(\frac{1}{\cos^2 x} + 2\cos x\right) \ge 1
-\]
-得到。
-
-由此得到
-\[
-\cos^3 x - \cos(\tan x) \cdot \cos^2(\sin x) > 0 \implies f'(x) > 0,
-\]
-因此 $f$ 在 $[0, \arctan \frac{\pi}{2}]$ 上单调递增。
-
-注意到
-\[
-\tan\bigl(\sin(\arctan \frac{\pi}{2})\bigr) = \tan\frac{\pi/2}{\sqrt{1+\pi^2/4}} > \tan\frac{\pi}{4} = 1,
-\]
-因此对于 $x \in [\arctan \frac{\pi}{2}, \frac{\pi}{2}]$,有 $\tan(\sin x) > 1$,所以 $f(x) > 0$。
-
-综上,对于所有 $x \in (0, \frac{\pi}{2})$,
-\[
-\tan(\sin x) > \sin(\tan x).
-\]
-\end{solution}
-
-
-\question 证明:对半开区间 $(0, \pi/2]$ 内的任意 $x$,有
-\[
-\left(\frac{\sin x}{x}\right)^3 > \cos x.
-\]
-
-\begin{solution}
-在 $(0, \pi/2]$ 上,有泰勒展开的不等式:
-\[
-\sin x > x - \frac{x^3}{6}, \quad \cos x < 1 - \frac{x^2}{2} + \frac{x^4}{24}.
-\]
-
-因此
-\[
-\left(\frac{\sin x}{x}\right)^3 > \left(1 - \frac{x^2}{6}\right)^3.
-\]
-
-展开右边并与 $\cos x$ 比较:
-\[
-\left(1 - \frac{x^2}{6}\right)^3 = 1 - \frac{x^2}{2} + \frac{x^4}{12} - \frac{x^6}{216} > 1 - \frac{x^2}{2} + \frac{x^4}{24} > \cos x.
-\]
-
-只需验证
-\[
-\frac{x^4}{12} - \frac{x^6}{216} > \frac{x^4}{24} \quad \Rightarrow \quad \frac{x^4}{24} > \frac{x^6}{216} \quad \Rightarrow \quad x^2 < 9 \quad \Rightarrow \quad x < 3.
-\]
-
-因为 $x \le \pi/2 \approx 1.57 < 3$,所以不等式成立。
-\end{solution}
-
-\question 证明不等式:当 $0 < x \le 1$ 时,有
-\[
-\sin x + \arcsin x > 2x.
-\]
-
-\begin{solution}
-解法一:
-
-$\sin x$ 与 $\arcsin x$ 的麦克劳林展开式分别为
-\[
-\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
-\]
-\[
-\arcsin x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot 3}{2\cdot 4}\frac{x^5}{5} + \frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}\frac{x^7}{7} + \cdots
-\]
-
-因此,对任意 $0 < x \le 1$,存在 $\theta_1,\theta_2$,满足 $0<\theta_1<x$,$0<\theta_2<x$,使得
-\[
-\sin x = x - \frac{x^3}{3!} + \frac{\theta_1^5}{5!},
-\]
-\[
-\arcsin x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot 3}{2\cdot 4}\frac{\theta_2^5}{5}.
-\]
-
-于是
-\[
-\sin x + \arcsin x = 2x + \frac{\theta_1^5}{5!} + \frac{1\cdot 3}{2\cdot 4}\frac{\theta_2^5}{5} > 2x.
-\]
-
-解法二:
-
-设
-\[
-f(x) = \sin x + \arcsin x,
-\]
-则 $f(0)=0$,且
-\[
-f'(x) = \cos x + \frac{1}{\sqrt{1-x^2}},
-\]
-从而
-\[
-f'(0) = 2,
-\]
-故直线 $y=2x$ 是曲线 $y=f(x)$ 在原点处的切线。
-
-进一步计算二阶导数:
-\[
-f''(x) = -\sin x + \frac{x}{(1-x^2)^{3/2}}.
-\]
-
-当 $0<x<1$ 时,有
-\[
-\frac{x}{(1-x^2)^{3/2}} > \sin x,
-\]
-因此 $f''(x)>0$,函数 $f(x)$ 在区间 $(0,1)$ 上是上凸的。
-
-由此可知,$f(x)$ 在 $(0,1]$ 上位于其在原点处的切线 $y=2x$ 之上,即
-\[
-\sin x + \arcsin x > 2x,
-\]
-结论得证。
-\end{solution}
-
-\question 设 $f: \mathbb{R} \to \mathbb{R}$ 为二次可微函数,满足 $f(0)=1$, $f'(0)=0$,且对所有 $x \in [0,\infty)$ 有
-\[
-f''(x)-5f'(x)+6f(x)\ge0.
-\]
-证明对所有 $x \in [0,\infty)$ 有
-\[
-f(x) \ge 3 e^{2x} - 2 e^{3x}.
-\]
-
-\begin{solution}
-重写不等式为
-\[
-f''(x)-2f'(x)-3(f'(x)-2f(x)) \ge 0, \quad x \in [0,\infty).
-\]
-
-令 $g(x) = f'(x) - 2f(x)$. 则
-\[
-g'(x) - 3 g(x) \ge 0, \quad x \in [0,\infty),
-\]
-即
-\[
-\bigl(g(x) e^{-3x}\bigr)' \ge 0, \quad x \in [0,\infty).
-\]
-
-因此
-\[
-g(x)e^{-3x} \ge g(0) = f'(0) - 2 f(0) = -2, \quad x \in [0,\infty),
-\]
-或者等价地
-\[
-f'(x) - 2f(x) \ge -2 e^{3x}, \quad x \in [0,\infty).
-\]
-
-两边同乘 $e^{-2x}$ 并整理得
-\[
-(f(x)e^{-2x})' \ge -2 e^{x}, \quad x \in [0,\infty),
-\]
-等价于
-\[
-(f(x)e^{-2x} + 2 e^x)' \ge 0, \quad x \in [0,\infty).
-\]
-
-于是
-\[
-f(x)e^{-2x} + 2 e^x \ge f(0) + 2 = 3, \quad x \in [0,\infty),
-\]
-即
-\[
-f(x) \ge 3 e^{2x} - 2 e^{3x}, \quad x \in [0,\infty).
-\]
-\end{solution}
-
-\question 设函数
-\[
-F(x) = e^{-x} - \left(1-\frac{x}{n}\right)^n.
-\]
-证明:当 $n \ge 2$ 且 $x \in [0,n]$ 时,
-\[
-0 \le F(x) \le \frac{e^{-1}}{n}.
-\]
-
-\begin{solution}
-函数 $F(x)$ 在区间 $[0,n]$ 上连续且可微,因此在该区间内必有最大值与最小值,且只能出现在端点或临界点处。
-
-首先计算端点值:
-\[
-F(0) = 1-1 = 0,\qquad F(n) = e^{-n}.
-\]
-
-再计算导数:
-\[
-F'(x) = -e^{-x} + \left(1-\frac{x}{n}\right)^{\,n-1}.
-\]
-
-先证明 $F(x) \ge 0$。只需证明
-\[
-\left(1-\frac{x}{n}\right)^n \le e^{-x}, \quad x \in [0,n].
-\]
-等价于
-\[
-1-\frac{x}{n} \le e^{-x/n}, \quad x \in [0,n].
-\]
-
-令 $t=\frac{x}{n}$,则 $t \in [0,1]$,上述不等式化为
-\[
-1-t \le e^{-t}, \quad t \in [0,1].
-\]
-
-这是显然成立的,因为直线 $y=1-t$ 是曲线 $y=e^{-t}$ 在 $(0,1)$ 处的切线,而 $y=e^{-t}$ 在整个区间上向上凹,因此图像始终位于其切线之上。故
-\[
-F(x) \ge 0,
-\]
-最小值在 $x=0$ 处取得。
-
-接下来确定最大值。由于
-\[
-F'(n) = -e^{-n} < 0,
-\]
-最大值不可能出现在 $x=n$,因此必存在 $x_0 \in (0,n)$ 使得
-\[
-F'(x_0)=0.
-\]
-即
-\[
-e^{-x_0} = \left(1-\frac{x_0}{n}\right)^{n-1}.
-\]
-
-于是
-\begin{align*}
-F(x_0)
-&= e^{-x_0}-\left(1-\frac{x_0}{n}\right)^n \\
-&= e^{-x_0}-\left(1-\frac{x_0}{n}\right)^{n-1}\left(1-\frac{x_0}{n}\right) \\
-&= e^{-x_0}-e^{-x_0}\left(1-\frac{x_0}{n}\right) \\
-&= e^{-x_0}\frac{x_0}{n}.
-\end{align*}
-
-设 $g(x)=x e^{-x}$,由初等微积分可知,$g(x)$ 在 $x=1$ 处取得最大值 $e^{-1}$,因此
-\[
-F(x_0) \le \frac{e^{-1}}{n}.
-\]
-
-综上所述,当 $n\ge 2$ 且 $x \in [0,n]$ 时,
-\[
-0 \le F(x) \le \frac{e^{-1}}{n}.
-\]
-\end{solution}
-
-
+    \question 已知 $a < b < c,f'(x)$ 在 $(a, c)$ 上严格递增, 且 $f(x)$ 在 $[a, c]$ 上连续, 证明
+    \[
+    (b-a) f(c) + (c-b) f(a) > (c-a) f(b).
+    \]
+    \begin{solution}
+        由拉格朗日中值定理, 因此存在 $\alpha$ 和 $\beta$ 使得
+        \[
+        \frac{f(c)-f(b)}{c-b} = f'(\beta), \quad b < \beta < c
+        \]
+        以及
+        \[
+        \frac{f(b)-f(a)}{b-a} = f'(\alpha), \quad a < \alpha < b
+        \]
+        由于 $f'$ 严格递增, 我们有 $f'(\beta) > f'(\alpha)$, 因此
+        \[
+        \frac{f(c)-f(b)}{c-b} > \frac{f(b)-f(a)}{b-a}
+        \]
+        即
+        \[
+        (b-a) f(c) + (c-b) f(a) > (c-a) f(b)
+        \]
+    \end{solution}
+
+    \question 设 $f,g:\mathbb{R}\to\mathbb{R}$ 是连续函数,且 $g$ 可导,若
+    \[
+    (f(0)-g'(0))(g'(1)-f(1))>0,
+    \]
+    证明存在实数 $c\in(0,1)$,使得 $f(c)=g'(c)$。
+    \begin{solution}
+        令
+        \[
+        F(x)=\int_0^x f(t)\,dt, \quad h(x)=F(x)-g(x).
+        \]
+        由 $f$ 的连续性,$F$ 可导且 $F'=f$,因此
+        \[
+        h'(x)=F'(x)-g'(x)=f(x)-g'(x).
+        \]
+        故由$(f(0)-g'(0))(g'(1)-f(1))>0$知
+        \[
+        h'(0)(-h'(1))>0,
+        \]
+        因此 $h'(0)$ 和 $h'(1)$ 异号。由达布定理,存在 $c\in(0,1)$使得
+        \[
+        h'(c)=0 \Rightarrow f(c)=g'(c).
+        \]
+    \end{solution}
+
+    \question 设 $f: (0,\infty) \to \mathbb{R}$ 为连续可微函数,$b > a > 0$ 且 $f(a) = f(b) = k$。证明存在 $\xi \in (a, b)$ 使得
+    \[
+    f(\xi) - \xi f'(\xi) = k.
+    \]
+    \begin{solution}
+        若考虑函数 $g(x) = \dfrac{f(x)}{x}$,则
+        \[
+        g'(x) = \frac{xf'(x) - f(x)}{x^2},
+        \]
+        其中分子与已知正好对应。考虑在 $[a,b]$ 上的函数 
+        \[
+        g(x) = \frac{f(x)}{x},\quad h(x) = \frac{1}{x}
+        \]
+        由柯西中值定理,存在 $\xi \in (a, b)$ 使得
+        \[
+        \frac{g(a) - g(b)}{h(a) - h(b)} = \frac{g'(\xi)}{h'(\xi)}
+        \]
+        注意到
+        \[
+        \frac{g'(\xi)}{h'(\xi)} = \frac{\frac{\xi f'(\xi) - f(\xi)}{\xi^2}}{-\frac{1}{\xi^2}} = f(\xi) - \xi f'(\xi)
+        \]
+        而
+        \[
+        \frac{g(a) - g(b)}{h(a) - h(b)} = \frac{\frac{f(a)}{a} - \frac{f(b)}{b}}{\frac{1}{a} - \frac{1}{b}} = k
+        \]
+        故原命题得证。
+    \end{solution}
+
+    \question 设 $f:\mathbb{R}\to\mathbb{R}$ 为二阶可导函数,且 $f(0)=0$。证明:存在
+    $\xi\in\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$使得
+    \[
+    f''(\xi)=f(\xi)\bigl(1+2\tan^2\xi\bigr).
+    \]
+    \begin{solution}
+        设$g(x)=f(x)\cos x$,由于
+        \[
+        g\left(-\frac{\pi}{2}\right)=g(0)=g\left(\frac{\pi}{2}\right)=0
+        \]
+        由罗尔定理,存在
+        \[
+        \xi_1\in\left(-\frac{\pi}{2},0\right),\quad
+        \xi_2\in\left(0,\frac{\pi}{2}\right)
+        \]
+        使得
+        \[
+        g'(\xi_1)=g'(\xi_2)=0
+        \]
+        考虑函数
+        \[
+        h(x)=\frac{g'(x)}{\cos^2 x}
+        =\frac{f'(x)\cos x-f(x)\sin x}{\cos^2 x}
+        \]
+        显然有
+        \[
+        h(\xi_1)=h(\xi_2)=0
+        \]
+        再由罗尔定理,存在
+        \[
+        \xi\in(\xi_1,\xi_2)\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)
+        \]
+        使得 $h'(\xi)=0$,$h$导数为
+        \begin{align*}
+        0=h'(\xi)
+        &=\frac{g''(\xi)\cos^2\xi+2\cos\xi\sin\xi\,g'(\xi)}{\cos^4\xi} \\
+        &=\frac{(f''(\xi)\cos\xi-2f'(\xi)\sin\xi-f(\xi)\cos\xi)\cos\xi
+        +2\sin\xi\bigl(f'(\xi)\cos\xi-f(\xi)\sin\xi\bigr)}{\cos^3\xi} \\
+        &=\frac{f''(\xi)\cos^2\xi-f(\xi)\bigl(\cos^2\xi+2\sin^2\xi\bigr)}{\cos^3\xi}
+        \end{align*}
+        整理得
+        \[
+        0=\frac{1}{\cos\xi}\Bigl(f''(\xi)-f(\xi)\bigl(1+2\tan^2\xi\bigr)\Bigr)
+        \]
+        因此得证
+        \[
+        f''(\xi)=f(\xi)\bigl(1+2\tan^2\xi\bigr)
+        \]
+    \end{solution}
+
+    \question 证明当 $0 < \theta < \dfrac{\pi}{4}$ 时,有
+    \[
+    \tan \theta < \frac{4\theta}{\pi}.
+    \]
+    \begin{solution}
+        设 
+        \[
+        f(x) = \tan x,\quad x = \theta \in \left(0, \frac{\pi}{4}\right)
+        \]
+        因为$f$ 在 $\left[0, \dfrac{\pi}{4}\right]$ 上连续,$\left(0, \dfrac{\pi}{4}\right)$ 上可导,由拉格朗日中值定理,存在
+        \[
+        0 < \xi < \theta,\theta < \xi' < \frac{\pi}{4}\]
+        使得
+        \[
+        \sec^2 \xi = \frac{\tan \theta - \tan 0}{\theta - 0},\quad \sec^2 \xi' = \frac{\tan\frac{\pi}{4}-\tan \theta}{\frac{\pi}{4}-\theta}
+        \]
+        由于 $\sec^2 x$ 在 $\left(0, \dfrac{\pi}{4}\right)$ 上单调递增,因此 $\sec^2 \xi' > \sec^2 \xi$,即
+        \[
+        \frac{1 - \tan \theta}{\frac{\pi}{4} - \theta} > \frac{\tan \theta}{\theta} \Rightarrow \frac{4\theta}{\pi} > \tan \theta
+        \]
+    \end{solution}
+    \begin{solution}
+        令
+        \[
+        f(\theta) = \frac{4\theta}{\pi} - \tan \theta.
+        \]
+        则
+        \[
+        f'(\theta) = \frac{4}{\pi} - \sec^2 \theta
+        \]
+        因此可解得唯一的 $\xi \in \left(0, \dfrac{\pi}{4}\right)$ 使得 $f'(\xi) = 0$,又 
+        \[
+        f'(\theta) < 0,\; \forall \theta \in (0, \xi),\quad f'(\theta) > 0,\; \forall \theta \in \left(\xi, \frac{\pi}{4}\right)
+        \]
+        因此$f$ 在 $(0,\xi)$ 上严格递减,在 $\left(\xi, \dfrac{\pi}{4}\right)$ 上严格递增。又 $f(0) = f\left(\dfrac{\pi}{4}\right) = 0$,所以对所有 $\left(0, \dfrac{\pi}{4}\right)$ 皆有 $f(\theta) < 0$ ,即
+        \[
+        \tan \theta < \frac{4\theta}{\pi}, \quad 0 < \theta < \dfrac{\pi}{4}
+        \]
+    \end{solution}
+
+    \question 证明对于所有非负整数 $n$,有
+    \[
+    2(3n-1)^n \ge (3n+1)^n
+    \]
+    \begin{solution}
+        当 $n=0$ 时,不等式显然成立,因为
+        \[
+        2(3\cdot 0 - 1)^0 = 2 \cdot 1 = 2 \ge 1 = (3\cdot 0 + 1)^0.
+        \]
+        考虑 $n \ge 1$,命题等价于
+        \[
+        2(3n-1)^n \ge (3n+1)^n
+        \Longleftrightarrow \left(\frac{3n-1}{3n+1}\right)^n \ge \frac{1}{2}
+        \Longleftrightarrow n \ln \frac{3n-1}{3n+1} \ge -\ln 2
+        \]
+        定义函数
+        \[
+        f(x) = x \ln \frac{3x-1}{3x+1}, \quad x \ge 1.
+        \]
+        对 $f(x)$ 求导,
+        \[
+        f'(x) = \ln \frac{3x-1}{3x+1} + \frac{6x}{9x^2 -1},\quad f''(x) = \frac{6(3x^2-1)}{(9x^2-1)^2}
+        \]
+        当 $x \ge 1$ 时, $f''(x) > 0$, 故 $f'(x)$ 在 $[1, +\infty)$ 上严格递增。
+        又因为
+        \[
+        \lim_{x \to +\infty} f'(x) = \lim_{x \to +\infty} \left( \ln \frac{3-1/x}{3+1/x} + \frac{6/x}{9-1/x^2} \right) = 0
+        \]
+        由 $f'(x)$ 严格递增且趋于 0 可知，在 $[1, +\infty)$ 上 $f'(x) < 0$。
+        因此 $f(x)$ 在 $[1, +\infty)$ 上严格递减。
+        根据其极限：
+        \[
+        \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \ln \left( 1 - \frac{2}{3x+1} \right)^x = -\frac{2}{3}
+        \]
+        由于 $f(x)$ 严格递减且下界为 $-\frac{2}{3}$，而 $-\frac{2}{3} > -0.693 \approx -\ln 2$。
+        故对于所有 $n \ge 1$, 有 $f(n) > -\frac{2}{3} > -\ln 2$, 原不等式成立。
+        \textcolor{red}{(待验证)}
+    \end{solution}
+
+    \question 当 $x \in (0, \frac{\pi}{2})$,比较 $\tan(\sin x)$ 及 $\sin(\tan x)$ 的大小。
+    \begin{solution}
+        设
+        \[
+        f(x) = \tan(\sin x) - \sin(\tan x)
+        \]
+        求导得,
+        \[
+        f'(x) = \frac{\cos x}{\cos^2(\sin x)} - \frac{\cos(\tan x)}{\cos^2 x} = \frac{\cos^3 x - \cos(\tan x)\cdot \cos^2(\sin x)}{\cos^2 x \cdot \cos^2(\tan x)}
+        \]
+        对 $0 < x < \arctan \dfrac{\pi}{2}$,由与 $\cos$ 在 $(0, \frac{\pi}{2})$ 上凸,由琴生不等式及AM-GM不等式,
+        \[
+        \sqrt[3]{\cos(\tan x)\cdot \cos^2(\sin x)} < \frac{1}{3}[\cos(\tan x) + 2\cos(\sin x)] \le \cos\left(\frac{\tan x + 2\sin x}{3}\right) < \cos x
+        \]
+        其中最后一个不等式由
+        \[
+        \left(\frac{\tan x + 2\sin x}{3}\right)' = \frac{1}{3}\left(\frac{1}{\cos^2 x} + 2\cos x\right) \ge 1
+        \]
+        得到,据此有
+        \[
+        \cos^3 x - \cos(\tan x) \cdot \cos^2(\sin x) > 0 \Rightarrow f'(x) > 0
+        \]
+        因此 $f$ 在 $\left[0, \arctan \dfrac{\pi}{2}\right]$ 上单调递增。又注意到
+        \[
+        \tan\left(\sin(\arctan \frac{\pi}{2})\right) = \tan\frac{\frac{\pi}{2}}{\sqrt{1+\frac{\pi^2}{4}}} > \tan\frac{\pi}{4} = 1
+        \]
+        因此对于 $x \in \left[\arctan \frac{\pi}{2}, \frac{\pi}{2}\right]$,有 $\tan(\sin x) > 1$,所以 $f(x) > 0$。综上,对于所有 $x \in (0, \frac{\pi}{2})$,
+        \[
+        \tan(\sin x) > \sin(\tan x).
+        \]
+    \end{solution}
+
+    \question 证明:对半开区间 $\left(0, \dfrac{\pi}{2}\right]$ 内的任意 $x$,有
+    \[
+    \left(\frac{\sin x}{x}\right)^3 > \cos x.
+    \]
+    \begin{solution}
+        在 $\left(0, \dfrac{\pi}{2}\right]$ 上,有泰勒展开的不等式:
+        \[
+        \sin x > x - \frac{x^3}{6}, \quad \cos x < 1 - \frac{x^2}{2} + \frac{x^4}{24}
+        \]
+        因此
+        \[
+        \left(\frac{\sin x}{x}\right)^3 > \left(1 - \frac{x^2}{6}\right)^3
+        \]
+        展开右边并与 $\cos x$ 比较:
+        \[
+        \left(1 - \frac{x^2}{6}\right)^3 = 1 - \frac{x^2}{2} + \frac{x^4}{12} - \frac{x^6}{216} > 1 - \frac{x^2}{2} + \frac{x^4}{24} > \cos x
+        \]
+        其中
+        \[
+        0 < x \le \frac{\pi}{2} < 3 \Rightarrow x^2 < 9   \Rightarrow \frac{x^4}{12} - \frac{x^6}{216} > \frac{x^4}{24} 
+        \]
+        故原不等式得证。
+    \end{solution}
+
+    \question 证明不等式:当 $0 < x \le 1$ 时,有
+    \[
+    \sin x + \arcsin x > 2x.
+    \]
+    \begin{solution}
+        $\sin x$ 与 $\arcsin x$ 的麦克劳林展开式分别为
+        \[
+        \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
+        \]
+        \[
+        \arcsin x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot 3}{2\cdot 4}\frac{x^5}{5} + \frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}\frac{x^7}{7} + \cdots
+        \]
+        因此,对任意 $0 < x \le 1$,存在 $\theta_1,\theta_2$,满足 $0<\theta_1<x,0<\theta_2<x$,使得
+        \[
+        \sin x = x - \frac{x^3}{3!} + \frac{\theta_1^5}{5!},\quad \arcsin x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot 3}{2\cdot 4}\frac{\theta_2^5}{5}
+        \]
+        于是
+        \[
+        \sin x + \arcsin x = 2x + \frac{\theta_1^5}{5!} + \frac{1\cdot 3}{2\cdot 4}\frac{\theta_2^5}{5} > 2x
+        \]
+        故得证。
+    \end{solution}
+    \begin{solution}
+        设
+        \[
+        f(x) = \sin x + \arcsin x,
+        \]
+        则 $f(0)=0$,且
+        \[
+        f'(x) = \cos x + \frac{1}{\sqrt{1-x^2}},
+        \]
+        从而
+        \[
+        f'(0) = 2,
+        \]
+        故直线 $y=2x$ 是曲线 $y=f(x)$ 在原点处的切线。又
+        \[
+        f''(x) = -\sin x + \frac{x}{(1-x^2)^{\frac{3}{2}}}.
+        \]
+        当 $0<x<1$ 时,有
+        \[
+        \frac{x}{(1-x^2)^{\frac{3}{2}}} > \sin x,
+        \]
+        因此 $f''(x)>0$,函数 $f(x)$ 在区间 $(0,1)$ 上上凸,即$f(x)$ 在 $(0,1]$ 上位于其在原点处的切线 $y=2x$ 之上,故得证
+        \[
+        \sin x + \arcsin x > 2x
+        \]
+    \end{solution}
+
+    \question 设 $f: \mathbb{R} \to \mathbb{R}$ 为二次可微函数,满足 $f(0)=1$, $f'(0)=0$,且对所有 $x \in [0,\infty)$ 有
+    \[
+    f''(x)-5f'(x)+6f(x)\ge0.
+    \]
+    证明对所有 $x \in [0,\infty)$ 有
+    \[
+    f(x) \ge 3 e^{2x} - 2 e^{3x}.
+    \]
+    \begin{solution}
+        设$x \in [0,\infty)$,令 $g(x) = f'(x) - 2f(x)$. 则
+        \[
+        g'(x) - 3 g(x) \ge 0
+        \]
+        即
+        \[
+        \bigl(g(x) e^{-3x}\bigr)' \ge 0
+        \]
+        因此
+        \[
+        g(x)e^{-3x} \ge g(0) = f'(0) - 2 f(0) = -2
+        \]
+        即
+        \[
+        f'(x) - 2f(x) \ge -2 e^{3x}
+        \]
+        两边同乘 $e^{-2x}$ 并整理得
+        \[
+        (f(x)e^{-2x})' \ge -2 e^{x}
+        \]
+        即
+        \[
+        (f(x)e^{-2x} + 2 e^x)' \ge 0
+        \]
+        于是
+        \[
+        f(x)e^{-2x} + 2 e^x \ge f(0) + 2 = 3
+        \]
+        即
+        \[
+        f(x) \ge 3 e^{2x} - 2 e^{3x}
+        \]
+    \end{solution}
+
+    \question 设函数
+    \[
+    F(x) = e^{-x} - \left(1-\frac{x}{n}\right)^n,
+    \]
+    证明:当 $n \ge 2$ 且 $x \in [0,n]$ 时,
+    \[
+    0 \le F(x) \le \frac{e^{-1}}{n}.
+    \]
+    \begin{solution}
+        函数 $F(x)$ 在区间 $[0,n]$ 上连续且可微,因此在该区间内必有最大值与最小值,且只能出现在端点或临界点处。有$F(0) = 1-1 = 0,F(n) = e^{-n}$,且
+        \[
+        F'(x) = -e^{-x} + \left(1-\frac{x}{n}\right)^{\,n-1}
+        \]
+        先证明 $F(x) \ge 0$。只需证明
+        \[
+        \left(1-\frac{x}{n}\right)^n \le e^{-x}, \quad x \in [0,n]
+        \]
+        等价于
+        \[
+        0 \le 1-\frac{x}{n} \le e^{-x/n}, \quad x \in [0,n]
+        \]
+        令 $t=\frac{x}{n}$,则 $t \in [0,1]$,上述不等式化为
+        \[
+        1-t \le e^{-t}, \quad t \in [0,1]
+        \]
+        这是显然成立的,因为直线 $y=1-t$ 是曲线 $y=e^{-t}$ 在 $(0,1)$ 处的切线,而 $y=e^{-t}$ 在$[0,1]$上向下凸,因此图像始终位于其切线之上,故$F(x) \ge 0$,最小值在 $x=0$ 处取得。接下来确定最大值,由于
+        \[
+        F'(n) = -e^{-n} < 0,
+        \]
+        最大值不可能出现在 $x=n$,因此必存在 $x_0 \in (0,n)$ 使得
+        $F'(x_0)=0$,这意味
+        \[
+        e^{-x_0} = \left(1-\frac{x_0}{n}\right)^{n-1}
+        \]
+        于是
+        \begin{align*}
+        F(x_0)
+        &= e^{-x_0}-\left(1-\frac{x_0}{n}\right)^n \\
+        &= e^{-x_0}-\left(1-\frac{x_0}{n}\right)^{n-1}\left(1-\frac{x_0}{n}\right) \\
+        &= e^{-x_0}-e^{-x_0}\left(1-\frac{x_0}{n}\right) \\
+        &= e^{-x_0}\frac{x_0}{n}
+        \end{align*}
+        设 $g(x)=x e^{-x}$,可推导得知$g(x)$ 在 $x=1$ 处取得最大值 $e^{-1}$,因此
+        \[
+        F(x_0) \le \frac{e^{-1}}{n}
+        \]
+        综上所述 $n\ge 2$ 且 $x \in [0,n]$ 时,
+        \[
+        0 \le F(x) \le \frac{e^{-1}}{n}
+        \]
+    \end{solution}
 
     \question 已知在$(-\infty, +\infty)$上具有二阶连续导数的函数$f(x)$满足方程
-    $$x^2 f''(x)-2x\sin x f'(x) = e^x + e^{-x}-2,$$
+    \[
+    x^2 f''(x)-2x\sin x f'(x) = e^x + e^{-x}-2,
+    \]
     若$f(x)$在$x=a$处取极值,问$f(a)$是函数$f(x)$的极大值还是极小值?请说明理由。
     \begin{solution}
         因为 $f(x)$ 在 $x = a$ 处取极值,所以
@@ -2319,68 +2074,60 @@ F(x_0) \le \frac{e^{-1}}{n}.
         因此\( f''(0) > 0 \)仍为极小值,故\( f(a) \) 是函数 \( f(x) \) 的极小值。
     \end{solution}
 
-    \question 已知函数 $f(t)$ 在 $[a,x]$ 上可微,且 $f'(t)$ 可微。对于每个 $x$,存在 $c_x$ 满足 $a < c_x < x$ 且
-\[
-\int_{a}^{x} f(t) \, dt = f(c_x)(x-a).
-\]
-假设 $f'(a) \neq 0$,证明
-\[
-\lim_{x \to a} \frac{c_x - a}{x-a} = \frac{1}{2}.
-\]
-
-\begin{solution}
-设
-\[
-F(x) = \int_{a}^{x} f(t) \, dt.
-\]
-
-利用 $F(x)$ 的泰勒展开,有
-\[
-F(x) = F(a) + (x-a)F'(a) + \frac{(x-a)^2}{2} F''(\theta_x),
-\]
-其中 $\theta_x$ 位于 $a$ 与 $x$ 之间,且当 $x \to a$ 时,$\theta_x \to a$。又 $F(a) = 0$,$F'(x) = f(x)$,$F''(x) = f'(x)$,所以
-\[
-F(x) = 0 + (x-a) f(a) + \frac{(x-a)^2}{2} f'(\theta_x).
-\]
-
-由定义有
-\[
-f(c_x) = \frac{F(x)}{x-a} = f(a) + \frac{x-a}{2} f'(\theta_x).
-\]
-
-因此
-\[
-\frac{f(c_x) - f(a)}{x-a} = \frac{1}{2} f'(\theta_x).
-\]
-
-另一方面可以写成
-\[
-\frac{f(c_x) - f(a)}{x-a} = \frac{f(c_x) - f(a)}{c_x - a} \cdot \frac{c_x - a}{x-a}.
-\]
-
-对 $x \to a$ 取极限,得到
-\[
-\lim_{x \to a} \frac{1}{2} f'(\theta_x) = \lim_{x \to a} \frac{f(c_x) - f(a)}{c_x - a} \cdot \lim_{x \to a} \frac{c_x - a}{x - a}.
-\]
-
-由此可得
-\[
-\frac{1}{2} f'(a) = f'(a) \cdot \lim_{x \to a} \frac{c_x - a}{x - a}.
-\]
-
-因此
-\[
-\lim_{x \to a} \frac{c_x - a}{x - a} = \frac{1}{2}.
-\]
-\end{solution}
+    \question 已知函数 $f(t)$ 在 $[a,x]$ 上可微,且 $f'(t)$ 可微。对所有 $x > a$,存在 $c_x$ 满足 $a < c_x < x$ 且
+    \[
+    \int_{a}^{x} f(t) \, dt = f(c_x)(x-a).
+    \]
+    假设 $f'(a) \neq 0$,证明
+    \[
+    \lim_{x \to a} \frac{c_x - a}{x-a} = \frac{1}{2}.
+    \]
+    \begin{solution}
+        设
+        \[
+        F(x) = \int_{a}^{x} f(t) \, dt
+        \]
+        利用 $F(x)$ 的泰勒展开,有
+        \[
+        F(x) = F(a) + (x-a)F'(a) + \frac{(x-a)^2}{2} F''(\theta_x)
+        \]
+        其中 $a<\theta_x<x$,且当 $x \to a$ 时,$\theta_x \to a$。又 $F(a) = 0,F'(x) = f(x),F''(x) = f'(x)$,所以
+        \[
+        F(x) = 0 + (x-a) f(a) + \frac{(x-a)^2}{2} f'(\theta_x)
+        \]
+        由定义有
+        \[
+        f(c_x) = \frac{F(x)}{x-a} = f(a) + \frac{x-a}{2} f'(\theta_x)
+        \]
+        因此
+        \[
+        \frac{f(c_x) - f(a)}{x-a} = \frac{1}{2} f'(\theta_x)
+        \]
+        另一方面可以写成
+        \[
+        \frac{f(c_x) - f(a)}{x-a} = \frac{f(c_x) - f(a)}{c_x - a} \cdot \frac{c_x - a}{x-a}
+        \]
+        取极限得到
+        \[
+        \lim_{x \to a} \frac{1}{2} f'(\theta_x) = \lim_{x \to a} \frac{f(c_x) - f(a)}{c_x - a} \cdot \lim_{x \to a} \frac{c_x - a}{x - a}
+        \]
+        由此可得
+        \[
+        \frac{1}{2} f'(a) = f'(a) \cdot \lim_{x \to a} \frac{c_x - a}{x - a}
+        \]
+        即
+        \[
+        \lim_{x \to a} \frac{c_x - a}{x - a} = \frac{1}{2}
+        \]
+    \end{solution}
 
     \question 
     \begin{parts}
     \part 已知 $f(x)$ 在 $[0,+\infty)$ 上连续且单调增加,且 $f(0) \ge 0$,证明:
     \[
     F(x) = \begin{cases}
-        \dfrac{1}{x^n} \displaystyle\int_0^x t^{n-1} f(t)\,dt, & x > 0, \\
-        0, & x = 0
+    \dfrac{1}{x^n} \displaystyle\int_0^x t^{n-1} f(t)\,dt, & x > 0, \\
+    0, & x = 0
     \end{cases}
     \]
     在 $[0,+\infty)$ 上连续且单调增加,其中 $n > 0$。
@@ -2393,44 +2140,44 @@ f(c_x) = \frac{F(x)}{x-a} = f(a) + \frac{x-a}{2} f'(\theta_x).
 
         再证单调性。对于 \( x > 0 \),由积分中值定理可得:
         \[
-            \int_0^x t^{n-1} f(t)\,dt = f(\xi) \int_0^x t^{n-1}\,dt = f(\xi) \cdot \frac{x^n}{n}, \quad \text{其中 } \xi \in (0, x).
+        \int_0^x t^{n-1} f(t)\,dt = f(\xi) \int_0^x t^{n-1}\,dt = f(\xi) \cdot \frac{x^n}{n}, \quad \text{其中 } \xi \in (0, x).
         \]
         因此,
         \[
-            F(x) = \frac{1}{x^n} \cdot \int_0^x t^{n-1} f(t)\,dt = \frac{1}{x^n} \cdot f(\xi) \cdot \frac{x^n}{n} = \frac{f(\xi)}{n}.
+        F(x) = \frac{1}{x^n} \cdot \int_0^x t^{n-1} f(t)\,dt = \frac{1}{x^n} \cdot f(\xi) \cdot \frac{x^n}{n} = \frac{f(\xi)}{n}.
         \]
         因为 \( f \) 单调递增,\( \xi \in (0,x) \),所以 \( x \uparrow \Rightarrow \xi \uparrow \Rightarrow f(\xi) \uparrow \),
         故 \( F(x) \) 单调递增。
     \end{solution}
     \part 设 \( f(x) \) 在 \( [0,1] \) 上二阶可导,且满足 \( |f''(x)| \le 1 \)。已知 \( f(x) \) 在 \( (0,1) \) 内取最大值为 \( \dfrac{1}{4} \),证明:
     \[
-        |f(0)| + |f(1)| \le 1.
+    |f(0)| + |f(1)| \le 1.
     \]
     \begin{solution}
         设 \( x_0 \in (0,1) \),使得 \( f(x_0) = \dfrac{1}{4} \),且 \( f'(x_0) = 0 \)。
         对 \( f(0) \) 做 Taylor 展开（Lagrange 余项形式）得:
         \[
-            f(0) = f(x_0) + f'(x_0)(0 - x_0) + \frac{1}{2} f''(\xi) (0 - x_0)^2 = \frac{1}{4} + \frac{1}{2} f''(\xi) x_0^2,
+        f(0) = f(x_0) + f'(x_0)(0 - x_0) + \frac{1}{2} f''(\xi) (0 - x_0)^2 = \frac{1}{4} + \frac{1}{2} f''(\xi) x_0^2,
         \]
         其中 \( \xi \in (0, x_0) \)。
         同理,
         \[
-            f(1) = \frac{1}{4} + \frac{1}{2} f''(\eta)(1 - x_0)^2, \quad \eta \in (x_0, 1).
+        f(1) = \frac{1}{4} + \frac{1}{2} f''(\eta)(1 - x_0)^2, \quad \eta \in (x_0, 1).
         \]
         因为 \( |f''(x)| \le 1 \),故
         \[
-            |f(0)| \le \left| \frac{1}{4} + \frac{1}{2} f''(\xi) x_0^2 \right| \le \frac{1}{4} + \frac{1}{2} x_0^2,
+        |f(0)| \le \left| \frac{1}{4} + \frac{1}{2} f''(\xi) x_0^2 \right| \le \frac{1}{4} + \frac{1}{2} x_0^2,
         \]
         \[
-            |f(1)| \le \left| \frac{1}{4} + \frac{1}{2} f''(\eta)(1 - x_0)^2 \right| \le \frac{1}{4} + \frac{1}{2} (1 - x_0)^2.
+        |f(1)| \le \left| \frac{1}{4} + \frac{1}{2} f''(\eta)(1 - x_0)^2 \right| \le \frac{1}{4} + \frac{1}{2} (1 - x_0)^2.
         \]
         相加得:
         \[
-            |f(0)| + |f(1)| \le \frac{1}{2} + \frac{1}{2} \left( x_0^2 + (1 - x_0)^2 \right).
+        |f(0)| + |f(1)| \le \frac{1}{2} + \frac{1}{2} \left( x_0^2 + (1 - x_0)^2 \right).
         \]
         注意 \( x_0^2 + (1 - x_0)^2 = 1 - 2x_0(1 - x_0) \le 1 \),因此:
         \[
-            |f(0)| + |f(1)| \le \frac{1}{2} + \frac{1}{2} \cdot 1 = 1.
+        |f(0)| + |f(1)| \le \frac{1}{2} + \frac{1}{2} \cdot 1 = 1.
         \]
     \end{solution}
     \end{parts}
@@ -2798,7 +2545,7 @@ S_n &= \frac{1}{2}\sum_{k=1}^n k \log k - \frac{1}{2}\log n \\
         \end{align*}
     \end{solution}
 
-    \question 设函数 $f(x)$ 在闭区间 $[0, 1]$ 上具有连续导数,$f(0) = 0$,$f(1) = 1$。证明:
+    \question 设函数 $f(x)$ 在闭区间 $[0, 1]$ 上具有连续导数,$f(0) = 0,f(1) = 1$。证明:
 \[
 \lim_{n \to \infty} n \left( \int_{0}^{1} f(x) dx - \frac{1}{n} \sum_{k=1}^{n} f\left( \frac{k}{n} \right) \right) = -\frac{1}{2}.
 \]
@@ -3168,7 +2915,7 @@ g(x)\ge g(0)+g'(0)x=ax.
 \[
 f(x)=f(x)-f(a)=f'(\xi_1)(x-a)=f(x)-f(b)=f'(\xi_2)(x-b),
 \]
-其中 $\xi_1\in(a,x)$,$\xi_2\in(x,b)$。
+其中 $\xi_1\in(a,x),\xi_2\in(x,b)$。
 
 设
 \[
@@ -3323,15 +3070,15 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
 \textcolor{red}{(待验证)}
 \end{solution}
 
-\question 已知 $\int_0^2 f(x) dx = 1$,$f(2) = \frac{1}{2}$,$f'(2) = 0$,计算 $[\int_0^1 x^2 f''(2x) dx]$。
+\question 已知 $\int_0^2 f(x) dx = 1,f(2) = \frac{1}{2},f'(2) = 0$,计算 $[\int_0^1 x^2 f''(2x) dx]$。
 \begin{solution}
 首先进行变量代换,令 $t = 2x$,则 $dt = 2dx$:
 \[ I = [\int_0^1 x^2 f''(2x) dx] = [\frac{1}{2} \int_0^2 (\frac{t}{2})^2 f''(t) dt] = [\frac{1}{8} \int_0^2 t^2 f''(t) dt] \]
-使用分部积分法,令 $u = t^2$,$dv = f''(t)dt$:
+使用分部积分法,令 $u = t^2,dv = f''(t)dt$:
 \[ I = \frac{1}{8} ([t^2 f'(t)]_0^2 - \int_0^2 2t f'(t) dt) \]
 代入 $f'(2) = 0$:
 \[ I = \frac{1}{8} (0 - 2 \int_0^2 t f'(t) dt) = -\frac{1}{4} [\int_0^2 t f'(t) dt] \]
-再次使用分部积分法,令 $u = t$,$dv = f'(t)dt$:
+再次使用分部积分法,令 $u = t,dv = f'(t)dt$:
 \[ I = -\frac{1}{4} ([t f(t)]_0^2 - \int_0^2 f(t) dt) \]
 代入 $f(2) = \frac{1}{2}$ 和 $\int_0^2 f(t) dt = 1$:
 \[ I = -\frac{1}{4} (2 \cdot \frac{1}{2} - 1) = -\frac{1}{4} (1 - 1) = 0 \]
@@ -3683,7 +3430,7 @@ A = \int_{a}^{b} [f(x)]^2 \, dx, \quad B = 2\int_{a}^{b} f(x)g(x) \, dx, \quad C
 B^2 - 4AC \leq 0 \implies \left[ \int_{a}^{b} f(x)g(x) \, dx \right]^2 \leq \left[ \int_{a}^{b} [f(x)]^2 \, dx \right]\left[ \int_{a}^{b} [g(x)]^2 \, dx \right]
 \]
 
-c) 令 $f(x) = \sqrt{\sin x}$,$g(x)=1$:
+c) 令 $f(x) = \sqrt{\sin x},g(x)=1$:
 \[
 \left[ \int_{0}^{\pi/2} \sqrt{\sin x} \, dx \right]^2 \leq \left[ \int_{0}^{\pi/2} \sin x \, dx \right]\left[ \int_{0}^{\pi/2} 1 \, dx \right]
 \]
@@ -3694,7 +3441,7 @@ c) 令 $f(x) = \sqrt{\sin x}$,$g(x)=1$:
 \int_{0}^{\pi/2} \sqrt{\sin x} \, dx \leq \sqrt{\frac{\pi}{2}}
 \]
 
-d) 令 $f(x) = (\sin x)^{1/4}$,$g(x) = \cos x$:
+d) 令 $f(x) = (\sin x)^{1/4},g(x) = \cos x$:
 \[
 \left[ \int_{0}^{\pi/2} (\sin x)^{1/4}\cos x \, dx \right]^2 \leq \left[ \int_{0}^{\pi/2} (\sin x)^{1/2} \, dx \right]\left[ \int_{0}^{\pi/2} \cos^2 x \, dx \right]
 \]
@@ -4054,7 +3801,7 @@ x=0 \to u=0, \quad x=1 \to u = e^{-1}
 \[ \int \left( \frac{\ln x - 1}{1 + (\ln x)^2} \right)^2 dx \]
 
 \begin{solution}
-这道题可以通过换元法简化。设 $u = \ln x$,则 $x = e^u$,$dx = e^u du$。
+这道题可以通过换元法简化。设 $u = \ln x$,则 $x = e^u,dx = e^u du$。
 
 代入原式:
 \begin{align*}
@@ -4132,7 +3879,7 @@ I &= \int_{0}^{3} (\sqrt{3+t+2\sqrt{3t}} + \sqrt{3+t-2\sqrt{3t}}) \, dt \\
 25) 计算不定积分 $\int \frac{\sqrt{4+x}}{x} dx$
 
 \begin{solution}
-设 $u = \sqrt{4+x}$,则 $x = u^2 - 4$,$dx = 2u \, du$:
+设 $u = \sqrt{4+x}$,则 $x = u^2 - 4,dx = 2u \, du$:
 \begin{align*}
 \int \frac{u}{u^2-4} \cdot 2u \, du &= 2 \int \frac{u^2}{u^2-4} du \\
 &= 2 \int \left( 1 + \frac{4}{u^2-4} \right) du \\
@@ -5982,7 +5729,7 @@ I = \int_{\frac{1}{2}}^{2} \frac{\ln x}{1 + x^2} \, dx.
 I = \int_{\frac{1}{2}}^{1} \frac{\ln x}{1 + x^2} \, dx + \int_{1}^{2} \frac{\ln x}{1 + x^2} \, dx.
 \]
 
-在第二个积分中作代换 $x = 1/u$,则 $dx = -\frac{1}{u^2} du$,积分限变为 $x=1 \to u=1$,$x=2 \to u=1/2$:
+在第二个积分中作代换 $x = 1/u$,则 $dx = -\frac{1}{u^2} du$,积分限变为 $x=1 \to u=1,x=2 \to u=1/2$:
 \[
 \int_{1}^{2} \frac{\ln x}{1 + x^2} \, dx = \int_{1}^{1/2} \frac{\ln (1/u)}{1 + (1/u)^2} \left(-\frac{1}{u^2} du\right) = -\int_{1/2}^{1} \frac{-\ln u}{1 + u^2} \, du = -\int_{1/2}^{1} \frac{\ln u}{1 + u^2} \, du.
 \]
@@ -6473,7 +6220,7 @@ I &= \int \frac{x-1}{x^2-x+1} dx + \int \frac{2}{x+1} dx - \int \frac{1}{(x+1)^2
 47) 计算不定积分:\[ \int \frac{\sqrt[3]{1+\sqrt[4]{x}}}{\sqrt{x}} dx \]
 
 \begin{solution}
-设 $1 + x^{\frac{1}{4}} = t^3$,则 $x = (t^3-1)^4$,$dx = 12t^2(t^3-1)^3 dt$。
+设 $1 + x^{\frac{1}{4}} = t^3$,则 $x = (t^3-1)^4,dx = 12t^2(t^3-1)^3 dt$。
 代入积分式:
 \[ I = \int \frac{t}{(t^3-1)^2} \cdot 12t^2(t^3-1)^3 dt = 12 \int (t^6 - t^3) dt \]
 进行积分计算:
@@ -6498,7 +6245,7 @@ I &= \int \frac{x-1}{x^2-x+1} dx + \int \frac{2}{x+1} dx - \int \frac{1}{(x+1)^2
 49) 计算不定积分:\[ \int \frac{x}{(x-1)\sqrt{x^2-2x}} dx \]
 
 \begin{solution}
-设 $t = x-1$,则 $x = t+1$,$x^2-2x = t^2-1$。
+设 $t = x-1$,则 $x = t+1,x^2-2x = t^2-1$。
 代入积分式:
 \[ I = \int \frac{t+1}{t\sqrt{t^2-1}} dt = \int \frac{1}{\sqrt{t^2-1}} dt + \int \frac{1}{t\sqrt{t^2-1}} dt \]
 进行积分计算:
@@ -6869,7 +6616,7 @@ du=\cos x \, dx
 56) 计算不定积分:\[ \int x^2 e^{\sin^{-1} x} dx \]
 
 \begin{solution}
-采用换元法,设 $x = \sin t$,则 $dx = \cos t dt$,$t = \sin^{-1} x$。
+采用换元法,设 $x = \sin t$,则 $dx = \cos t dt,t = \sin^{-1} x$。
 代入积分式:
 \[ I = \int \sin^2 t e^t \cos t dt \]
 利用三角恒等式 $\sin^2 t \cos t = \frac{1}{4} (\cos t - \cos 3t)$:
@@ -8514,7 +8261,7 @@ du=d\theta,\quad v=-\frac12\cos(2\theta)
 令 $z = \frac{2}{\sqrt{3}} \sin\theta$,则 $\frac{dz}{d\theta} = \frac{2}{\sqrt{3}} \cos\theta \implies dz = \frac{2}{\sqrt{3}} \cos\theta d\theta$。
 \[ [\int \frac{1}{4-4\sin^2\theta} (\frac{2}{\sqrt{3}}\cos\theta) d\theta] = [\int \frac{1}{4\cos^2\theta} (\frac{2}{\sqrt{3}}\cos\theta) d\theta] \]
 \[ = \frac{1}{2\sqrt{3}} [\int \sec\theta d\theta] = \frac{1}{2\sqrt{3}} \ln |\sec\theta + \tan\theta| + C \]
-根据辅助三角形,$\sin\theta = \frac{\sqrt{3}z}{2}$,$\sec\theta = \frac{2}{\sqrt{4-3z^2}}$,$\tan\theta = \frac{\sqrt{3}z}{\sqrt{4-3z^2}}$。
+根据辅助三角形,$\sin\theta = \frac{\sqrt{3}z}{2},\sec\theta = \frac{2}{\sqrt{4-3z^2}},\tan\theta = \frac{\sqrt{3}z}{\sqrt{4-3z^2}}$。
 \[ = \frac{1}{2\sqrt{3}} \ln |\frac{2+\sqrt{3}z}{\sqrt{4-3z^2}}| + C = \frac{1}{2\sqrt{3}} \ln |\sqrt{\frac{(2+\sqrt{3}z)^2}{(2-\sqrt{3}z)(2+\sqrt{3}z)}}| + C \]
 \[ = \frac{1}{4\sqrt{3}} \ln |\frac{2+\sqrt{3}z}{2-\sqrt{3}z}| + C = \frac{\sqrt{3}}{12} \ln |\frac{2+\sqrt{3}z}{2-\sqrt{3}z}| + C \]
 \end{solution}
@@ -8524,7 +8271,7 @@ du=d\theta,\quad v=-\frac12\cos(2\theta)
 \begin{solution}
 \[ [\int \frac{\cos u}{\frac{\sin^2 u}{\cos^2 u} + 4} du] = [\int \frac{\cos^3 u}{\sin^2 u + 4\cos^2 u} du] \]
 \[ = [\int \frac{\cos^3 u}{\sin^2 u + 4(1-\sin^2 u)} du] = [\int \frac{\cos^3 u}{4-3\sin^2 u} du] \]
-令 $t = \sin u$,则 $dt = \cos u du$,$\cos^2 u = 1 - t^2$。
+令 $t = \sin u$,则 $dt = \cos u du,\cos^2 u = 1 - t^2$。
 \[ = [\int \frac{1-t^2}{4-3t^2} dt] = [\int \frac{\frac{1}{3}(4-3t^2) - \frac{1}{3}}{4-3t^2} dt] = \frac{1}{3} ( [\int 1 dt] - [\int \frac{1}{4-3t^2} dt] ) \]
 利用(a)的结果:
 \[ = \frac{\sin u}{3} - \frac{1}{3} (\frac{\sqrt{3}}{12} \ln |\frac{2+\sqrt{3}\sin u}{2-\sqrt{3}\sin u}|) + C = \frac{\sin u}{3} - \frac{\sqrt{3}}{36} \ln |\frac{2+\sqrt{3}\sin u}{2-\sqrt{3}\sin u}| + C \]
@@ -8610,7 +8357,7 @@ du=d\theta,\quad v=-\frac12\cos(2\theta)
 令 $x = \sin \theta$,则 $dx = \cos \theta d\theta$。
 积分式转化为:
 \[I = [\int_0^{\pi/2} \frac{\theta \cos \theta}{\sin \theta} d\theta] = [\int_0^{\pi/2} \theta \cot \theta d\theta]\]
-使用分部积分法,令 $u = \theta$,$dv = \cot \theta d\theta$:
+使用分部积分法,令 $u = \theta,dv = \cot \theta d\theta$:
 \[I = [\theta \ln(\sin \theta)]_0^{\pi/2} - [\int_0^{\pi/2} \ln(\sin \theta) d\theta]\]
 第一项代入上下限后为 $0$。利用标准积分公式 $[\int_0^{\pi/2} \ln(\sin \theta) d\theta] = -\frac{\pi}{2} \ln 2$:
 \[I = -(-\frac{\pi}{2} \ln 2) = \frac{\pi}{2} \ln 2\]
@@ -9051,7 +8798,7 @@ I &= \int e^y \cos y \, dy \\
 2I = e^y (\sin y + \cos y) \implies I = \frac{1}{2} e^y (\sin y + \cos y) + C.
 \]
 
-代回 $y = \arcsin x$,$\sin y = x$,$\cos y = \sqrt{1-x^2}$:
+代回 $y = \arcsin x,\sin y = x,\cos y = \sqrt{1-x^2}$:
 \[
 \int e^{\arcsin x} \, dx = \frac{1}{2} e^{\arcsin x} \bigl(x + \sqrt{1-x^2}\bigr) + C.
 \]
@@ -9102,7 +8849,7 @@ I = \int_0^1 (x^2 - x + 1)(e^{-2x+1} + 1) dx
 I = \frac{1}{3} \int (\ln y)^2\,dy.
 \]
 
-分部积分,取 $u=(\ln y)^2$,$dv=dy$,则 $du = \frac{2\ln y}{y}\,dy$,$v=y$:
+分部积分,取 $u=(\ln y)^2,dv=dy$,则 $du = \frac{2\ln y}{y}\,dy,v=y$:
 \begin{align*}
 I &= \frac{1}{3} \left[ y(\ln y)^2 - \int y \frac{2\ln y}{y}\,dy \right] \\
 &= \frac{1}{3} \left[ y(\ln y)^2 - 2 \int \ln y\,dy \right].
@@ -10014,7 +9761,7 @@ I_4=84\pi
 \int \sqrt{1-x^2}\,dx = \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2} + C.
 \]
 
-令 $x = \sin\theta$,$\theta \in [-\pi/2, \pi/2]$,则 $dx = \cos\theta\,d\theta$:
+令 $x = \sin\theta,\theta \in [-\pi/2, \pi/2]$,则 $dx = \cos\theta\,d\theta$:
 \[
 \int \sqrt{1-\sin^2\theta}\,\cos\theta\,d\theta = \int \cos^2\theta\,d\theta.
 \]
@@ -10930,7 +10677,7 @@ u = \sqrt{x} \implies x = u^2, \quad dx = 2u \, du
 \int \sqrt{x} e^{-x} \, dx = \int u \cdot e^{-u^2} \cdot 2u \, du = \int 2u^2 e^{-u^2} \, du
 \]
 
-对 $\int 2u^2 e^{-u^2} \, du$ 使用分部积分,设 $U = u$,$dV = 2u e^{-u^2} du$:
+对 $\int 2u^2 e^{-u^2} \, du$ 使用分部积分,设 $U = u,dV = 2u e^{-u^2} du$:
 \[
 \int u \cdot 2u e^{-u^2} \, du = - u e^{-u^2} + \int e^{-u^2} \, du
 \]
@@ -11458,7 +11205,7 @@ x-[x], & \text{当 } [x] \text{ 为奇数} \\
 \item $\cos(\cos x)\sin x$ 积分对称消去
 \end{itemize}
 
-令 $u = \cos x \implies du = -\sin x \, dx$,积分限 $x=0 \implies u=1$,$x=\pi/2 \implies u=0$:
+令 $u = \cos x \implies du = -\sin x \, dx$,积分限 $x=0 \implies u=1,x=\pi/2 \implies u=0$:
 \[
 2 \int_0^{\pi/2} e^{\sin x} \sin(\cos x) \sin x \, dx = 2 \int_{1}^{0} e^{\sin x} \sin u \, (-du) = 2 \int_0^1 e^{\sin x} \sin u \, du
 \]
@@ -11525,7 +11272,7 @@ I = \int_{0}^{\frac{\pi}{2}} \ln(\sin x) \, dx = \int_{0}^{\frac{\pi}{2}} \ln(\c
 2I = \int_{0}^{\frac{\pi}{2}} \ln \frac{1}{2} + \ln(\sin 2x) \, dx = \int_{0}^{\frac{\pi}{2}} -\ln 2 \, dx + \int_{0}^{\frac{\pi}{2}} \ln(\sin 2x) \, dx
 \]
 
-作代换 $u = 2x$,$du = 2dx \implies dx = \frac{1}{2} du$,积分上下限 $x=0 \to u=0$, $x=\frac{\pi}{2} \to u=\pi$,得到
+作代换 $u = 2x,du = 2dx \implies dx = \frac{1}{2} du$,积分上下限 $x=0 \to u=0$, $x=\frac{\pi}{2} \to u=\pi$,得到
 \[
 2I = -\frac{\pi}{2} \ln 2 + \frac{1}{2} \int_{0}^{\pi} \ln(\sin u) \, du
 \]
@@ -11816,7 +11563,7 @@ I=\frac{1}{\sqrt{2}}\ln(\sqrt{2}+1)
 \[
 x = \pi - \theta, \quad dx = -d\theta
 \]
-当 $x = \pi \implies \theta = 0$,$x = 0 \implies \theta = \pi$
+当 $x = \pi \implies \theta = 0,x = 0 \implies \theta = \pi$
 
 有
 \[
@@ -12580,7 +12327,7 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
 
 \textbf{第一步:引入 Beta 函数}
 注意到 Beta 函数的定义为 $B(x, y) = \int_{0}^{1} (1-t)^{x-1} t^{y-1} dt$。
-对应上述积分形式,令 $x = \frac{1}{n}$,$y = 1 - \frac{1}{n}$,则有:
+对应上述积分形式,令 $x = \frac{1}{n},y = 1 - \frac{1}{n}$,则有:
 \[ I = \frac{1}{n} B\left(\frac{1}{n}, 1 - \frac{1}{n}\right) \]
 
 \textbf{第二步:利用 Gamma 函数转换}
@@ -12801,7 +12548,7 @@ f(x) = \left(\frac{dy}{dx}\right)^2.
 y+k = Ae^{2x} \implies y = Ae^{2x} - k.
 \]
 
-由初值条件 $x=0$,$f(0) = (dy/dx)^2 = \frac{1}{4}$,得到
+由初值条件 $x=0,f(0) = (dy/dx)^2 = \frac{1}{4}$,得到
 \[
 \frac{dy}{dx}\Big|_{x=0} = 2A e^{0} = 2A = \frac{1}{2} \implies A = \frac{1}{4}.
 \]
