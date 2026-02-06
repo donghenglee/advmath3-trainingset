@@ -1330,11 +1330,11 @@
         \[
         2x + 3y + 3x y' - 4y y' = 0
         \]
-        整理得：
+        整理得:
         \[
         y' = -\frac{2x + 3y}{3x - 4y}
         \]
-        令 $y' = 0$，得到 
+        令 $y' = 0$,得到 
         \[
         y = -\frac{2}{3}x
         \]
@@ -1354,7 +1354,7 @@
         \[
         y''(3, -2) = \frac{-2}{3(3) - 4(-2)}= -\frac{2}{17} < 0, \quad y''(-3, 2) = \frac{-2}{3(-3) - 4(2)} = \frac{2}{17} > 0
         \]
-        故 $y_1 = -2$ 是极大值,$y_2 = 2$ 是极小值。该曲线在 $x=3$ 处取得极大值 $-2$，在 $x=-3$ 处取得极小值 $2$。
+        故 $y_1 = -2$ 是极大值,$y_2 = 2$ 是极小值。该曲线在 $x=3$ 处取得极大值 $-2$,在 $x=-3$ 处取得极小值 $2$。
     \end{solution}
 
     \question 设函数 \( f(x) \) 处处可导,且 \( f'(0) = 1 \),并对任意实数 \( x,h \) 恒有
@@ -1513,7 +1513,7 @@
         \[
         k = \sum_{x=1}^{n} x^2 = \frac{n(n+1)(2n+1)}{6}.
         \]
-        既然 $k$ 与 $x$ 无关，可以将其作为常数因子提取到求和号外
+        既然 $k$ 与 $x$ 无关,可以将其作为常数因子提取到求和号外
         \[
         f(n,y) = \frac{1}{k} \sum_{x=1}^{n} x^2 y^x.
         \]
@@ -1832,13 +1832,13 @@
         \[
         \lim_{x \to +\infty} f'(x) = \lim_{x \to +\infty} \left( \ln \frac{3-1/x}{3+1/x} + \frac{6/x}{9-1/x^2} \right) = 0
         \]
-        由 $f'(x)$ 严格递增且趋于 0 可知，在 $[1, +\infty)$ 上 $f'(x) < 0$。
+        由 $f'(x)$ 严格递增且趋于 0 可知,在 $[1, +\infty)$ 上 $f'(x) < 0$。
         因此 $f(x)$ 在 $[1, +\infty)$ 上严格递减。
-        根据其极限：
+        根据其极限:
         \[
         \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \ln \left( 1 - \frac{2}{3x+1} \right)^x = -\frac{2}{3}
         \]
-        由于 $f(x)$ 严格递减且下界为 $-\frac{2}{3}$，而 $-\frac{2}{3} > -0.693 \approx -\ln 2$。
+        由于 $f(x)$ 严格递减且下界为 $-\frac{2}{3}$,而 $-\frac{2}{3} > -0.693 \approx -\ln 2$。
         故对于所有 $n \ge 1$, 有 $f(n) > -\frac{2}{3} > -\ln 2$, 原不等式成立。
         \textcolor{red}{(待验证)}
     \end{solution}
@@ -2422,7 +2422,7 @@
     \]
     其中 $\log$ 表示自然对数。求 $\lim_{n \to \infty} S_n$。
     \begin{solution}
-        将 $S_n$ 变形如下：
+        将 $S_n$ 变形如下:
         \begin{align*}
         S_n &= \frac{1}{n^2} \sum_{k=1}^n k \log k - \frac{1}{2} \log n \\
         &= \frac{1}{n} \sum_{k=1}^n \left( \frac{k}{n} \left(\log \frac{k}{n} + \log n\right) \right) - \frac{1}{2} \log n \\
@@ -2430,7 +2430,7 @@
         &= \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \log \frac{k}{n} + \frac{\log n}{n^2} \cdot \frac{n(n+1)}{2} - \frac{1}{2} \log n \\
         &= \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \log \frac{k}{n} + \frac{\log n}{2n}
         \end{align*}
-        当 $n \to \infty$ 时，最后一项 $\frac{\log n}{2n}$ 趋于 0,而第一项是函数 $f(x) = x \log x$ 在区间 $[0, 1]$ 上的黎曼和,因此
+        当 $n \to \infty$ 时,最后一项 $\frac{\log n}{2n}$ 趋于 0,而第一项是函数 $f(x) = x \log x$ 在区间 $[0, 1]$ 上的黎曼和,因此
         \[
         \lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \log \frac{k}{n} = \int_0^1 x \log x \, dx
         \]
@@ -2438,7 +2438,7 @@
         \[
         \int_0^1 x \log x \, dx = \left[ \frac{x^2}{2} \log x - \frac{x^2}{4} \right]_0^1 = -\frac{1}{4}
         \]
-        所以极限 $\lim_{n \to \infty} S_n$ 存在，且
+        所以极限 $\lim_{n \to \infty} S_n$ 存在,且
         \[
         \lim_{n \to \infty} S_n = -\frac{1}{4}
         \]
@@ -3074,7 +3074,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \[
     L_1:x=-\frac{3}{2},\quad L_2:x=\frac{3}{2}
     \]
-    上。已知$AB \perp L_1$,且 $M,N$ 为 $AB$ 的三等分点,并满足 $AM=MN=NB$。设 $\Gamma_1$ 为以 $L_1$ 为准线,$N$ 为焦点的抛物线；$\Gamma_2$ 为以 $L_2$ 为准线,$N$ 为顶点的抛物线,求 $\Gamma_1$ 与 $\Gamma_2$ 所围区域的面积。
+    上。已知$AB \perp L_1$,且 $M,N$ 为 $AB$ 的三等分点,并满足 $AM=MN=NB$。设 $\Gamma_1$ 为以 $L_1$ 为准线,$N$ 为焦点的抛物线;$\Gamma_2$ 为以 $L_2$ 为准线,$N$ 为顶点的抛物线,求 $\Gamma_1$ 与 $\Gamma_2$ 所围区域的面积。
     \ifprintanswers
     \begin{figure}[H]
         \centering
@@ -3380,7 +3380,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         \frac{1}{(x^{\frac{7}{6}} + 4x^{\frac{2}{3}})^{\frac{3}{4}}} = \frac{1}{[x^{\frac{2}{3}}(x^{\frac{1}{2}} + 4)]^{\frac{3}{4}}} = \frac{1}{x^{\frac{1}{2}} (x^{\frac{1}{2}} + 4)^{\frac{3}{4}}}
         \]
-        令 $u = x^{\frac{1}{2}}$，则 $x = u^{2},dx = 2u\, du$,代入得
+        令 $u = x^{\frac{1}{2}}$,则 $x = u^{2},dx = 2u\, du$,代入得
         \begin{align*}
         \int_{0}^{1} \frac{1}{(x^{\frac{7}{6}} + 4x^{\frac{2}{3}})^{\frac{3}{4}}} \, dx 
         &= \int_{0}^{1} \frac{1}{u (u + 4)^{\frac{3}{4}}} \cdot 2u \,du \\
@@ -3442,7 +3442,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         = \int 4t^3 \cdot \frac{1}{\sqrt{t^{-2}+4}} \cdot \left(-\frac{1}{t}\right) \, dt
         = -4 \int \frac{t^3}{\sqrt{1+4t^2}} \, dt
         \]
-        再设 $u = \sqrt{1+4t^2}$，则 $u^2 = 1+4t^2,u \, du = 4t \, dt$,
+        再设 $u = \sqrt{1+4t^2}$,则 $u^2 = 1+4t^2,u \, du = 4t \, dt$,
         \[
         I = -4 \int \frac{t^2}{u} \cdot \frac{u}{4} \, du 
         = \frac{1}{4} \int (1 - u^2) \, du 
@@ -3716,11 +3716,11 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I = \int \frac{x+2}{\sqrt{(x+2)^2-1}} \,dx - \int \frac{1}{\sqrt{(x+2)^2-1}} \,dx
         \]
-        分别计算两个积分。对于第一个积分，
+        分别计算两个积分。对于第一个积分,
         \[
         \int \frac{x+2}{\sqrt{(x+2)^2-1}} \,dx = \frac{1}{2} \int ((x+2)^2-1)^{-\frac{1}{2}} \,d((x+2)^2-1) = \sqrt{(x+2)^2-1} +C_1
         \]
-        对于第二个积分，设 $x+2 = \sec \theta$，则 $dx = \sec \theta \tan \theta \, d\theta$,
+        对于第二个积分,设 $x+2 = \sec \theta$,则 $dx = \sec \theta \tan \theta \, d\theta$,
         \begin{align*}
         \int \frac{1}{\sqrt{(x+2)^2-1}} \,dx &= \int \frac{\sec \theta \tan \theta}{\sqrt{\sec^2 \theta - 1}} \, d\theta \\
         &= \int \frac{\sec \theta \tan \theta}{\tan \theta} \, d\theta \\
@@ -3777,13 +3777,13 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \begin{align*}
         I= \int \frac{x}{(x^2-4x+13)^2} \,dx
         &= \frac{1}{2} \int \frac{2x-4+4}{(x^2-4x+13)^2} \,dx \\
-        &= \frac{1}{2} \int \frac{d(x^2-4x+13)}{(x^2-4x+13)^2} + 2 \int \frac{1}{((x-2)^2+9)^2} \,dx 
+        &= \frac{1}{2} \int \frac{2x-4}{(x^2-4x+13)^2} + 2 \int \frac{1}{((x-2)^2+9)^2} \,dx 
         \end{align*}
-        对于第一个积分
+        对于第一个积分,
         \[
-        \frac{1}{2} \int \frac{d(x^2-4x+13)}{(x^2-4x+13)^2} = -\frac{1}{2((x-2)^2+9)} + C_1
+        \frac{1}{2} \int \frac{d(x^2-4x+13)}{(x^2-4x+13)^2} = -\frac{1}{2(x^2-4x+13)} + C_1
         \]
-        对于第二个积分，设 $x-2 = 3 \tan \theta, dx = 3 \sec^2 \theta \, d\theta$，则
+        对于第二个积分,设 $x-2 = 3 \tan \theta, dx = 3 \sec^2 \theta \, d\theta$,则
         \begin{align*}
         2 \int \frac{1}{((x-2)^2+9)^2} \,dx 
         &= 2 \int \frac{3 \sec^2 \theta}{(9 \sec^2 \theta)^2} \, d\theta \\
@@ -3874,7 +3874,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \sqrt{\frac{x}{1-x}} \, dx
     \]
     \begin{solution}
-        设 $\sqrt{x} = \sin \theta$，则 $x = \sin^2 \theta, dx = 2 \sin \theta \cos \theta \, d\theta$，于是
+        设 $\sqrt{x} = \sin \theta$,则 $x = \sin^2 \theta, dx = 2 \sin \theta \cos \theta \, d\theta$,于是
         \begin{align*}
         \int \sqrt{\frac{x}{1-x}} \, dx &= \int \frac{\sin \theta}{\sqrt{1 - \sin^2 \theta}} \cdot 2 \sin \theta \cos \theta \, d\theta \\
         &= \int \frac{\sin \theta}{\cos \theta} \cdot 2 \sin \theta \cos \theta \, d\theta \\
@@ -3891,7 +3891,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int_{7}^{9} \sqrt{\frac{x-7}{11-x}} \, dx
     \]
     \begin{solution}
-        设 $x = 7\cos^2 \theta + 11\sin^2 \theta = 7 + 4\sin^2 \theta$，则 $dx = 8\sin \theta \cos \theta \, d\theta$。
+        设 $x = 7\cos^2 \theta + 11\sin^2 \theta = 7 + 4\sin^2 \theta$,则 $dx = 8\sin \theta \cos \theta \, d\theta$。
         于是
         \begin{align*}
         \int_{7}^{9} \sqrt{\frac{x-7}{11-x}} \, dx 
@@ -3903,7 +3903,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \end{align*}
     \end{solution}
     \begin{solution}
-        令 $x = 9 - 2\sin \theta$，则 $dx = -2\cos \theta \, d\theta$。
+        令 $x = 9 - 2\sin \theta$,则 $dx = -2\cos \theta \, d\theta$。
         于是
         \begin{align*}
         \int_{7}^{9} \sqrt{\frac{x-7}{11-x}} \, dx  &= \int_{\frac{\pi}{2}}^{0} \sqrt{\frac{(9-2\sin \theta)-7}{11-(9-2\sin \theta)}} (-2\cos \theta) \, d\theta \\
@@ -3921,7 +3921,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \frac{1}{(x+1)\sqrt{x^2+4x+2}} \, dx
     \]
     \begin{solution}
-        令 $x+1 = \dfrac{1}{u}$，则 $dx = -\dfrac{1}{u^2} \, du$，且 
+        令 $x+1 = \dfrac{1}{u}$,则 $dx = -\dfrac{1}{u^2} \, du$,且 
         \[
         x = \dfrac{1}{u}-1 \Rightarrow x^2+4x+2 = (x+2)^2-2 = \left(\frac{1}{u}+1\right)^2-2 = \frac{1}{u^2}+\frac{2}{u}-1
         \]
@@ -3942,7 +3942,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int_{0}^{4} \frac{16}{3(3x^2+16)^{\frac{5}{2}}} \, dx
     \]
     \begin{solution}
-        设 $\sqrt{3}x = 4 \tan \theta$，则 $dx = \dfrac{4}{\sqrt{3}}\sec^2 \theta \, d\theta$,
+        设 $\sqrt{3}x = 4 \tan \theta$,则 $dx = \dfrac{4}{\sqrt{3}}\sec^2 \theta \, d\theta$,
         \begin{align*}
         \int_{0}^{4} \frac{16}{3(3x^2+16)^{\frac{5}{2}}} \, dx
         &= \int_{0}^{\frac{\pi}{3}} \frac{16}{3(16\sec^2 \theta)^{\frac{5}{2}}} \cdot \frac{4}{\sqrt{3}}\sec^2 \theta \, d\theta \\
@@ -3958,33 +3958,27 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \frac{(3x^2+5x)\sqrt{x}}{(x+1)^2} \, dx
     \]
     \begin{solution}
-    设 $\sqrt{x} = \tan\theta$，则 $x = \tan^2\theta, dx = 2\tan\theta \sec^2\theta \, d\theta$。
-    代入积分得：
-    \begin{align*}
-    I &= \int \frac{(3\tan^4\theta + 5\tan^2\theta)\tan\theta}{(\sec^2\theta)^2} \cdot 2\tan\theta \sec^2\theta \, d\theta \\
-    &= \int \frac{6\tan^6\theta + 10\tan^4\theta}{\sec^2\theta} \, d\theta \\
-    &= \int \left( \frac{6\sin^6\theta}{\cos^4\theta} + \frac{10\sin^4\theta}{\cos^2\theta} \right) d\theta
-    \end{align*}
-    利用 $\sin^2\theta = 1-\cos^2\theta$ 展开分子：
-    \begin{align*}
-    I &= \int \left[ \frac{6(1-\cos^2\theta)^3}{\cos^4\theta} + \frac{10(1-\cos^2\theta)^2}{\cos^2\theta} \right] d\theta \\
-    &= \int \left[ \frac{6(1 - 3\cos^2\theta + 3\cos^4\theta - \cos^6\theta)}{\cos^4\theta} + \frac{10(1 - 2\cos^2\theta + \cos^4\theta)}{\cos^2\theta} \right] d\theta \\
-    &= \int (6\sec^4\theta - 18\sec^2\theta + 18 - 6\cos^2\theta + 10\sec^2\theta - 20 + 10\cos^2\theta) \, d\theta \\
-    &= \int (6\sec^4\theta - 8\sec^2\theta - 2 + 4\cos^2\theta) \, d\theta
-    \end{align*}
-    进一步将 $6\sec^4\theta$ 改写为 $6\sec^2\theta(1+\tan^2\theta)$：
-    \begin{align*}
-    I &= \int (6\sec^2\theta \tan^2\theta - 2\sec^2\theta + 4\cos^2\theta - 2) \, d\theta \\
-    &= \int (6\sec^2\theta \tan^2\theta - 2\sec^2\theta + 2\cos 2\theta) \, d\theta \\
-    &= 2\tan^3\theta - 2\tan\theta + \sin 2\theta + C \\
-    &= 2\tan^3\theta - 2\tan\theta + \frac{2\tan\theta}{1+\tan^2\theta} + C
-    \end{align*}
-    回代 $\tan\theta = \sqrt{x}$ 并通分简化：
-    \begin{align*}
-    I &= 2x\sqrt{x} - 2\sqrt{x} + \frac{2\sqrt{x}}{1+x} + C \\
-    &= \frac{2\sqrt{x}(x-1)(x+1) + 2\sqrt{x}}{x+1} + C \\
-    &= \frac{2x^2\sqrt{x}}{x+1} + C
-    \end{align*}
+        设 $u = \sqrt{x}$,则 $x = u^2, dx = 2u \, du$,代入积分得
+        \begin{align*}
+        I = \int \frac{(3x^2+5x)\sqrt{x}}{(x+1)^2} \, dx
+        &= \int \frac{(3u^4+5u^2)u}{(u^2+1)^2} \cdot 2u \, du \\
+        &= \int \frac{6u^6+10u^4}{(u^2+1)^2} \, du \\
+        &= \int (6u^2 - 2) \, du + \int \frac{-2u^2 + 2}{(u^2+1)^2} \, du
+        \end{align*}
+        对于第二部分积分,设 $u = \tan\theta$,则 $du = \sec^2\theta \, d\theta$,
+        \begin{align*}
+        \int \frac{-2u^2 + 2}{(u^2+1)^2} \, du &= \int \frac{2(1 - \tan^2\theta)}{(\sec^2\theta)^2} \cdot \sec^2\theta \, d\theta \\
+        &= \int 2(\cos^2\theta - \sin^2\theta) \, d\theta \\
+        &= \int 2\cos(2\theta) \, d\theta \\
+        &= \sin(2\theta) + C_1 \\
+        &= \frac{2u}{u^2+1} + C_1
+        \end{align*}
+        故
+        \begin{align*}
+        I &= 2u^3 - 2u + \frac{2u}{u^2+1} + C \\
+        &= 2x\sqrt{x} - 2\sqrt{x} + \frac{2\sqrt{x}}{x+1} + C \\
+        &= \frac{2x^2\sqrt{x}}{x+1} + C
+        \end{align*}
     \end{solution}
 
     \question
@@ -3992,18 +3986,17 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \frac{2-x}{\sqrt{x}(x+2)^2} \, dx
     \]
     \begin{solution}
-    设 $x = 2\tan^2\theta$，则 $dx = 4\tan\theta \sec^2\theta \, d\theta$。
-    \begin{align*}
-    I &= \int \frac{2-2\tan^2\theta}{\sqrt{2}\tan\theta (2\sec^2\theta)^2} \cdot 4\tan\theta \sec^2\theta \, d\theta \\
-    &= \sqrt{2} \int \frac{1-\tan^2\theta}{\sec^2\theta} \, d\theta \\
-    &= \sqrt{2} \int (\cos^2\theta - \sin^2\theta) \, d\theta \\
-    &= \sqrt{2} \int \cos 2\theta \, d\theta = \frac{\sqrt{2}}{2} \sin 2\theta + C \\
-    &= \sqrt{2} \sin\theta \cos\theta + C
-    \end{align*}
-    由 $\tan\theta = \sqrt{\frac{x}{2}}$，得 $\sin\theta = \frac{\sqrt{x}}{\sqrt{x+2}}, \cos\theta = \frac{\sqrt{2}}{\sqrt{x+2}}$，代回得：
-    \[
-    I = \sqrt{2} \cdot \frac{\sqrt{x}}{\sqrt{x+2}} \cdot \frac{\sqrt{2}}{\sqrt{x+2}} + C = \frac{2\sqrt{x}}{x+2} + C
-    \]
+        设 $x = 2\tan^2\theta$,则 $dx = 4\tan\theta \sec^2\theta \, d\theta$,于是
+        \begin{align*}
+        I &= \int \frac{2-2\tan^2\theta}{\sqrt{2}\tan\theta (2\sec^2\theta)^2} \cdot 4\tan\theta \sec^2\theta \, d\theta \\
+        &= \sqrt{2} \int \frac{1-\tan^2\theta}{\sec^2\theta} \, d\theta \\
+        &= \sqrt{2} \int (\cos^2\theta - \sin^2\theta) \, d\theta \\
+        &= \sqrt{2} \int \cos 2\theta \, d\theta \\
+        &= \frac{\sqrt{2}}{2} \sin 2\theta + C \\
+        &= \sqrt{2} \sin\theta \cos\theta + C \\
+        &= \sqrt{2} \cdot \sqrt{\frac{x}{x+2}} \cdot \sqrt{\frac{2}{x+2}}  + C \\
+        &= \frac{2\sqrt{x}}{x+2} + C
+        \end{align*}
     \end{solution}
 
     \question 
@@ -4011,220 +4004,95 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int_{\frac{1}{2}}^{2} \frac{x^4-1}{x^2\sqrt{x^4+1}} \, dx
     \]
     \begin{solution}
-    设 $I = \int_{\frac{1}{2}}^{2} \frac{x^4-1}{x^2\sqrt{x^4+1}} \, dx$。令 $x = \frac{1}{t}$，则 $dx = -\frac{1}{t^2} \, dt$。
-    当 $x=\frac{1}{2}$ 时 $t=2$；当 $x=2$ 时 $t=\frac{1}{2}$。代入得：
+    令 $x = \dfrac{1}{t}$,则 $dx = -\dfrac{1}{t^2} \, dt$,于是有
     \begin{align*}
-    I &= \int_{2}^{\frac{1}{2}} \frac{\frac{1}{t^4}-1}{\frac{1}{t^2}\sqrt{\frac{1}{t^4}+1}} \left(-\frac{1}{t^2}\right) \, dt \\
-    &= \int_{2}^{\frac{1}{2}} \frac{\frac{1-t^4}{t^4}}{\frac{1}{t^2} \cdot \frac{\sqrt{t^4+1}}{t^2}} \cdot \left(-\frac{1}{t^2}\right) \, dt \\
-    &= \int_{2}^{\frac{1}{2}} \frac{1-t^4}{\sqrt{t^4+1}} \cdot \left(-\frac{1}{t^2}\right) \, dt \\
+    I =\int_{\frac{1}{2}}^{2} \frac{x^4-1}{x^2\sqrt{x^4+1}} \, dx &= \int_{2}^{\frac{1}{2}} \frac{\frac{1}{t^4}-1}{\frac{1}{t^2}\sqrt{\frac{1}{t^4}+1}} \left(-\frac{1}{t^2}\right) \, dt \\
     &= \int_{\frac{1}{2}}^{2} \frac{1-t^4}{t^2\sqrt{t^4+1}} \, dt = -I
     \end{align*}
-    由 $I = -I$ 知 $2I = 0$，故：
+    由 $I = -I$ 知 $2I = 0$,故
     \[
     \int_{\frac{1}{2}}^{2} \frac{x^4-1}{x^2\sqrt{x^4+1}} \, dx = 0
     \]
     \end{solution}
 
-\question 
-1) 计算不定积分 $\int \frac{1+x^2}{(1-x^2)\sqrt{1+x^4}} dx$
+    \question 
+    \[
+    \int \frac{1+x^2}{(1-x^2)\sqrt{1+x^4}} \, dx
+    \]
+    \begin{solution}
+        分子分母同时除以 $x^2$,变形为
+        \[
+        I = \int \frac{1+x^2}{(1-x^2)\sqrt{1+x^4}} \, dx = \int \frac{1+\frac{1}{x^2}}{(\frac{1}{x}-x)\sqrt{x^2+\frac{1}{x^2}}} \, dx
+        \]
+        注意到分母根号内可配方为 
+        \[
+        x^2+\frac{1}{x^2} = \left(x-\frac{1}{x}\right)^2+2
+        \]
+        令 $t = x-\dfrac{1}{x}$,则 $dt = \left(1+\dfrac{1}{x^2}\right) \, dx$,积分变为
+        \[
+        I = -\int \frac{1}{t\sqrt{t^2+2}} \, dt
+        \]
+        对该式进行倒代换,令 $t = \dfrac{\sqrt{2}}{z}$,则 $dt = -\dfrac{\sqrt{2}}{z^2} \, dz$,代入得
+        \begin{align*}
+        I &= -\int \frac{1}{\frac{\sqrt{2}}{z}\sqrt{\frac{2}{z^2}+2}} \cdot \left(-\frac{\sqrt{2}}{z^2}\right) \, dz \\
+        &= \int \frac{1}{\sqrt{2z^2+2}} \, dz = \frac{1}{\sqrt{2}} \ln|z+\sqrt{z^2+1}| + C
+        \end{align*}
+        代回变量 $z = \frac{\sqrt{2}}{x-\frac{1}{x}}$,化简整理即得结果。
+    \end{solution}
 
-\begin{solution}
-\begin{align*}
-\int \frac{1+x^2}{(1-x^2)\sqrt{1+x^4}} dx &= \int \frac{\frac{1}{x^2}+1}{(\frac{1}{x}-x)\sqrt{\frac{1}{x^2}+x^2}} dx \\
-&= -\int \frac{1+\frac{1}{x^2}}{(x-\frac{1}{x})\sqrt{(x-\frac{1}{x})^2+2}} dx \\
-\intertext{设 $t = x - \frac{1}{x}$,则 $dt = (1 + \frac{1}{x^2}) dx$:}
-&= -\int \frac{1}{t\sqrt{t^2+2}} dt \\
-\intertext{设 $y = \sqrt{t^2+2}$,则 $2y dy = 2t dt \implies \frac{dt}{t} = \frac{y dy}{y^2-2}$:}
-&= -\int \frac{1}{y^2-2} dy = \int \frac{1}{2-y^2} dy \\
-&= \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2}+y}{\sqrt{2}-y} \right| + C \\
-&= \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2}+\sqrt{(x-\frac{1}{x})^2+2}}{\sqrt{2}-\sqrt{(x-\frac{1}{x})^2+2}} \right| + C
-\end{align*}
-\end{solution}
+    \question 
+    \[
+    \int \frac{1+x+\sqrt{x^2+x}}{\sqrt{x}+\sqrt{x+1}} \, dx 
+    \]
+    \begin{solution}
+        别急,先注意到
+        \[
+        1+x+\sqrt{x^2+x} = \sqrt{x+1} (\sqrt{x+1} + \sqrt{x})
+        \]
+        代入原积分式,分母被巧妙约去,
+        \begin{align*}
+        I &= \int \frac{\sqrt{x+1} (\sqrt{x+1} + \sqrt{x})}{\sqrt{x}+\sqrt{x+1}} \, dx \\
+        &= \int \sqrt{x+1} \, dx \\
+        &= \frac{2}{3}(x+1)^{\frac{3}{2}} + C
+        \end{align*}
+    \end{solution}
 
-\question 
-计算不定积分 $I = \int \frac{1+x+\sqrt{x^2+x}}{\sqrt{x}+\sqrt{x+1}} dx$ ($x \ge 0$)
-
-\begin{solution}
-使用换元法,设 $x = \tan^2 \theta$,则 $dx = 2 \tan \theta \sec^2 \theta d\theta$。
-同时有:
-\begin{itemize}
-    \item $\sqrt{x} = \tan \theta$
-    \item $\sqrt{x+1} = \sqrt{\tan^2 \theta + 1} = \sec \theta$
-    \item $\sqrt{x^2+x} = \sqrt{x(x+1)} = \tan \theta \sec \theta$
-\end{itemize}
-
-代入原积分式:
-\begin{align*}
-I &= \int \frac{1 + \tan^2 \theta + \tan \theta \sec \theta}{\tan \theta + \sec \theta} d\theta \quad (\text{此处忽略了 } dx \text{ 中的系数进行化简示范}) \\
-&= \int \frac{\sec^2 \theta + \tan \theta \sec \theta}{\tan \theta + \sec \theta} d\theta \\
-&= \int \frac{\sec \theta (\sec \theta + \tan \theta)}{\tan \theta + \sec \theta} d\theta \\
-&= \int \sec \theta d\theta \\
-&= \ln |\tan \theta + \sec \theta| + C \\
-&= \ln (\sqrt{x} + \sqrt{x+1}) + C
-\end{align*}
-\end{solution}
-
-\question 
-\[
-\int_{0}^{\infty} \frac{1}{(\sqrt{x^2+1}+2)^3} \, dx
-\]
-\text{a) 使用给定代换}
-\begin{solution}
-令 $u = \sqrt{x^2+1} + x \implies u - x = \sqrt{x^2+1} \implies u^2 - 2ux + x^2 = x^2 + 1 \implies u^2 - 1 = 2ux$
-
-\[
-x = \frac{u^2-1}{2u} = \frac{1}{2}u - \frac{1}{2u}
-\]
-
-\text{积分上下限:}
-\begin{tabular}{|l|}
-\hline
-$x=0 \implies u=1$ \\
-$x \to \infty \implies u \to \infty$ \\
-\hline
-\end{tabular}
-
-\[
-\frac{dx}{du} = \frac{1}{2} + \frac{1}{2u^2} = \frac{1}{2}\left(1+\frac{1}{u^2}\right)
-\]
-
-\text{因此积分变为:}
-\[
-\int_{0}^{\infty} \frac{1}{(\sqrt{x^2+1}+x)^2} \, dx 
-= \int_{1}^{\infty} \frac{1}{u^2} \cdot \frac{1}{2}\left(\frac{u^2+1}{u^2}\right) \, du
-= \frac{1}{2} \int_{1}^{\infty} \frac{u^2+1}{u^4} \, du
-\]
-
-\[
-= \frac{1}{2} \int_{1}^{\infty} \frac{1}{u^2} + \frac{1}{u^4} \, du
-= \frac{1}{2} \left[ -\frac{1}{2u^2} - \frac{1}{4u^4} \right]_{1}^{\infty}
-\]
-
-\[
-= \frac{1}{2} \left[ \left(\frac{1}{2} + \frac{1}{4}\right) - 0 \right]
-= \frac{1}{2} \cdot \frac{3}{4} 
-= \frac{3}{8}
-\]
-
-使用三角代换验证
-
-令 $x = \tan\theta \implies dx = \sec^2\theta \, d\theta$
-
-积分上下限:
-$x=0 \implies \theta=0, \quad x \to \infty \implies \theta \to \frac{\pi}{2}$
-
-\[
-\int_{0}^{\infty} \frac{1}{(\sqrt{x^2+1}+2)^3} \, dx
-= \int_{0}^{\frac{\pi}{2}} \frac{\sec^2 \theta}{(\sec \theta + 2)^3} \, d\theta
-= \int_{0}^{\frac{\pi}{2}} \frac{\sec^2 \theta}{\left(\frac{1}{\cos\theta} + \frac{2\cos\theta}{\cos\theta}\right)^3} \, d\theta
-\]
-
-\[
-= \int_{0}^{\frac{\pi}{2}} \frac{\sec^2 \theta}{\left(\frac{1+2\cos\theta}{\cos\theta}\right)^3} \, d\theta
-= \int_{0}^{\frac{\pi}{2}} \frac{\sec^2 \theta \cos^3 \theta}{(1+2\cos\theta)^3} \, d\theta
-= \int_{0}^{\frac{\pi}{2}} \frac{\cos \theta}{(1+2\cos\theta)^3} \, d\theta
-\]
-
-\text{由已知公式可得:}
-\[
-\left[ -\frac{1}{2} (1+\sin\theta)^{-2} \right]_{0}^{\frac{\pi}{2}} 
-= \frac{1}{2} - \frac{1}{8} = \frac{3}{8}
-\]
-\end{solution}
-
-\question
-a) 利用复角公式 $\cos(A+B)$ 证明
-\[
-\cos\left(\frac{5\pi}{12}\right)=\frac{\sqrt{6}-\sqrt{2}}{4}
-\]
-
-b) 利用适当的三角代换,求积分的精确值
-\[
-\int_{\sqrt{2}}^{\sqrt{\frac{\sqrt{6}+\sqrt{2}}{2}}}
-\frac{2}{x\sqrt{x^4-1}}\,dx
-\]
-
-\begin{solution}
-a) 
-\[
-\cos\frac{5\pi}{12}
-=\cos\left(\frac{\pi}{4}+\frac{\pi}{6}\right)
-\]
-
-\[
-=\cos\frac{\pi}{4}\cos\frac{\pi}{6}
--\sin\frac{\pi}{4}\sin\frac{\pi}{6}
-\]
-
-\[
-=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}
--\frac{\sqrt{2}}{2}\cdot\frac{1}{2}
-\]
-
-\[
-=\frac{\sqrt{6}}{4}-\frac{\sqrt{2}}{4}
-=\frac{\sqrt{6}-\sqrt{2}}{4}
-\]
-
-b) 设
-\[
-x^2=\sec\theta
-\]
-
-则
-\[
-2x\frac{dx}{d\theta}=\sec\theta\tan\theta
-\]
-
-\[
-dx=\frac{\sec\theta\tan\theta}{2x}\,d\theta
-\]
-
-当 $x=\sqrt{2}$ 时,
-\[
-x^2=2,\quad \sec\theta=2,\quad \theta=\frac{\pi}{3}
-\]
-
-当 $x=\sqrt{\sqrt{6}+\sqrt{2}}$ 时,
-\[
-x^2=\sqrt{6}+\sqrt{2},\quad \sec\theta=\sqrt{6}+\sqrt{2}
-\]
-
-\[
-\cos\theta=\frac{1}{\sqrt{6}+\sqrt{2}}
-=\frac{\sqrt{6}-\sqrt{2}}{(\sqrt{6}+\sqrt{2})(\sqrt{6}-\sqrt{2})}
-=\frac{\sqrt{6}-\sqrt{2}}{4}
-\]
-
-\[
-\theta=\frac{5\pi}{12}
-\]
-
-原积分化为
-\begin{align*}
-&\int_{\sqrt{2}}^{\sqrt{\sqrt{6}+\sqrt{2}}}
-\frac{2}{x\sqrt{x^4-1}}\,dx \\
-=&\int_{\frac{\pi}{3}}^{\frac{5\pi}{12}}
-\frac{1}{x\sqrt{\sec^2\theta-1}}
-\cdot\frac{\sec\theta\tan\theta}{2x}\,d\theta \\
-=&\int_{\frac{\pi}{3}}^{\frac{5\pi}{12}}
-\frac{\sec\theta\tan\theta}{2x^2\sqrt{\tan^2\theta}}\,d\theta \\
-=&\int_{\frac{\pi}{3}}^{\frac{5\pi}{12}}
-\frac{\sec\theta\tan\theta}{2\sec\theta\tan\theta}\,d\theta \\
-=&\int_{\frac{\pi}{3}}^{\frac{5\pi}{12}}
-\frac{1}{2}\,d\theta
-\end{align*}
-
-\[
-=\left[\frac{1}{2}\theta\right]_{\frac{\pi}{3}}^{\frac{5\pi}{12}}
-\]
-
-\[
-=\frac{1}{2}\left(\frac{5\pi}{12}-\frac{\pi}{3}\right)
-=\frac{1}{2}\cdot\frac{\pi}{12}
-=\frac{\pi}{24}
-\]
-\end{solution}
+    \question
+    \begin{parts}
+    \part 利用复角公式 $\cos(A+B)$ 证明
+    \[
+    \cos\frac{5\pi}{12} = \frac{\sqrt{6}-\sqrt{2}}{4}
+    \]
+    \begin{solution}
+        注意到 
+        \[
+        \frac{5\pi}{12} = \frac{\pi}{4} + \frac{\pi}{6},
+        \]
+        应用复角公式:
+        \begin{align*}
+        \cos\frac{5\pi}{12} 
+        &= \cos\frac{\pi}{4}\cos\frac{\pi}{6} - \sin\frac{\pi}{4}\sin\frac{\pi}{6}\\
+        &= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{1}{2}\\
+        &= \frac{\sqrt{6}-\sqrt{2}}{4}
+        \end{align*}
+    \end{solution}
+    \part 利用适当的三角代换,求
+    \[
+    \int_{\sqrt{2}}^{\sqrt{\sqrt{6}+\sqrt{2}}} \frac{2}{x\sqrt{x^4-1}} \, dx
+    \]
+    \begin{solution}
+        设 $x^2 = \sec\theta$,则 $2x \, dx = \sec\theta\tan\theta \, d\theta$,当 $x = \sqrt{2}$ ,得 $\theta = \dfrac{\pi}{3}$,当 $x = \sqrt{\sqrt{6}+\sqrt{2}}$,
+        \[
+        \cos\theta = \frac{1}{\sqrt{6}+\sqrt{2}} = \frac{\sqrt{6}-\sqrt{2}}{4},
+        \]
+        由(a)部分知 $\theta = \dfrac{5\pi}{12}$,代入积分式,
+        \begin{align*}
+        I &= \int_{\frac{\pi}{3}}^{\frac{5\pi}{12}} \frac{2}{x\sqrt{\sec^2\theta-1}} \cdot \frac{\sec\theta\tan\theta}{2x} \, d\theta \\
+        &= \int_{\frac{\pi}{3}}^{\frac{5\pi}{12}} \frac{\sec\theta}{\sec\theta} \cdot \frac{1}{2} \, d\theta \\
+        &= \left[ \frac{1}{2}\theta \right]_{\frac{\pi}{3}}^{\frac{5\pi}{12}} = \frac{\pi}{24}
+        \end{align*}
+    \end{solution}
+    \end{parts}
 
     \question 
     \[
@@ -4241,414 +4109,169 @@ x^2=\sqrt{6}+\sqrt{2},\quad \sec\theta=\sqrt{6}+\sqrt{2}
         \end{align*}
     \end{solution}  
 
-    \question
-使用代换 $u=\sqrt{\frac{1+x}{1-x}}$ 计算积分
-\[
-\int_{0}^{\frac{1}{4}} \frac{3}{(4x+5)\sqrt{1-x^2}-3(1-x^2)}\,dx
-\]
-
-\begin{solution}
-先整理给定代换。
-\[
-u^2=\frac{1+x}{1-x}
-\]
-于是
-\[
-u^2(1-x)=1+x
-\]
-整理得
-\[
-u^2-1=x(1+u^2)
-\]
-从而
-\[
-x=\frac{u^2-1}{u^2+1}
-\]
-
-对 $x$ 求导,
-\begin{align*}
-\frac{dx}{du}
-&=\frac{(u^2+1)(2u)-(u^2-1)(2u)}{(u^2+1)^2} \\
-&=\frac{4u}{(u^2+1)^2}
-\end{align*}
-因此
-\[
-dx=\frac{4u}{(u^2+1)^2}\,du
-\]
-
-再分别化简被积式中的各项。
-\begin{align*}
-1-x^2
-&=1-\left(\frac{u^2-1}{u^2+1}\right)^2 \\
-&=\frac{(u^2+1)^2-(u^2-1)^2}{(u^2+1)^2} \\
-&=\frac{4u^2}{(u^2+1)^2}
-\end{align*}
-从而
-\[
-\sqrt{1-x^2}=\frac{2u}{u^2+1}
-\]
-
-同时
-\begin{align*}
-4x+5
-&=4\left(\frac{u^2-1}{u^2+1}\right)+5 \\
-&=\frac{9u^2+1}{u^2+1}
-\end{align*}
-
-积分上下限变为
-\[
-x=0 \Rightarrow u=1,\qquad x=\frac{1}{4} \Rightarrow u=\sqrt{\frac{5}{3}}
-\]
-
-代入原积分得
-\[
-\int_{1}^{\sqrt{5/3}} 
-\frac{3}{\left(\frac{9u^2+1}{u^2+1}\right)\left(\frac{2u}{u^2+1}\right)
--3\left(\frac{4u^2}{(u^2+1)^2}\right)}
-\frac{4u}{(u^2+1)^2}\,du
-\]
-
-化简后得到
-\begin{align*}
-&=\int_{1}^{\sqrt{5/3}} \frac{12u}{2u(9u^2+1)-12u^2}\,du \\
-&=\int_{1}^{\sqrt{5/3}} \frac{6u}{9u^3-6u^2+u}\,du \\
-&=\int_{1}^{\sqrt{5/3}} \frac{6}{9u^2-6u+1}\,du \\
-&=\int_{1}^{\sqrt{5/3}} \frac{6}{(3u-1)^2}\,du
-\end{align*}
-
-直接积分,
-\[
-\int \frac{6}{(3u-1)^2}\,du=-\frac{2}{3u-1}
-\]
-
-代入上下限,
-\begin{align*}
-&=\left[-\frac{2}{3u-1}\right]_{1}^{\sqrt{5/3}} \\
-&=-\frac{2}{3\sqrt{5/3}-1}+\frac{2}{2}
-\end{align*}
-
-继续化简,
-\begin{align*}
-&=1-\frac{2}{\sqrt{15}-1} \\
-&=1-\frac{2(\sqrt{15}+1)}{14} \\
-&=\frac{6-\sqrt{15}}{7}
-\end{align*}
-
-因此积分结果为
-\[
-\frac{6-\sqrt{15}}{7}
-\]
-\end{solution}
-
-\question
-使用代换 $x=\frac{ab}{t}$ 求积分
-\[
-\int_{0}^{\infty} \frac{\ln x}{(x+a)(x+b)}\,dx
-\]
-其中 $a>b>0$。
-
-\begin{solution}
-设
-\[
-I=\int_{0}^{\infty} \frac{\ln x}{(x+a)(x+b)}\,dx
-\]
-
-作代换
-\[
-x=\frac{ab}{t},\quad dx=-\frac{ab}{t^2}\,dt
-\]
-当 $x=0$ 时,$t=\infty$；当 $x=\infty$ 时,$t=0$。
-
-则
-\[
-I=\int_{\infty}^{0} \frac{\ln\left(\frac{ab}{t}\right)}{\left(\frac{ab}{t}+a\right)\left(\frac{ab}{t}+b\right)}\left(-\frac{ab}{t^2}\right)dt
-\]
-
-整理得
-\begin{align*}
-I
-&=\int_{0}^{\infty} \frac{\ln(ab)-\ln t}{\frac{ab(b+t)(a+t)}{t^2}} \frac{ab}{t^2}\,dt \\
-&=\int_{0}^{\infty} \frac{\ln(ab)-\ln t}{(t+a)(t+b)}\,dt
-\end{align*}
-
-因此
-\begin{align*}
-I
-&=\ln(ab)\int_{0}^{\infty} \frac{1}{(t+a)(t+b)}\,dt
- -\int_{0}^{\infty} \frac{\ln t}{(t+a)(t+b)}\,dt \\
-&=\ln(ab)\int_{0}^{\infty} \frac{1}{(t+a)(t+b)}\,dt - I
-\end{align*}
-
-移项得
-\[
-2I=\ln(ab)\int_{0}^{\infty} \frac{1}{(t+a)(t+b)}\,dt
-\]
-
-对分式作部分分式分解
-\[
-\frac{1}{(t+a)(t+b)}=\frac{1}{a-b}\left(\frac{1}{t+b}-\frac{1}{t+a}\right)
-\]
-
-于是
-\begin{align*}
-2I
-&=\frac{\ln(ab)}{a-b}\int_{0}^{\infty}\left(\frac{1}{t+b}-\frac{1}{t+a}\right)dt \\
-&=\frac{\ln(ab)}{a-b}\left[\ln\left(\frac{t+b}{t+a}\right)\right]_{0}^{\infty}
-\end{align*}
-
-计算上下限
-\[
-\left[\ln\left(\frac{t+b}{t+a}\right)\right]_{0}^{\infty}
-=0-\ln\left(\frac{b}{a}\right)
-=\ln\left(\frac{a}{b}\right)
-\]
-
-因此
-\[
-2I=\frac{\ln(ab)}{a-b}\ln\left(\frac{a}{b}\right)
-\]
-
-从而
-\[
-I=\frac{\ln(ab)}{2(a-b)}\ln\left(\frac{a}{b}\right)
-\]
-\end{solution}
-
-\question
-使用代换求
-\[
-\int \frac{2 \sin x \sqrt{\tan x} + 1}{2 \cos x \sqrt{\tan x} (\cos x \sqrt{\tan x} + 1)} \, dx
-\]
-\begin{solution}
-代换:
-\[
-u = \sec x + \sqrt{\tan x} = \sec x + (\tan x)^{\frac{1}{2}}
-\]
-
-求导:
-\[
-\frac{du}{dx} = \sec x \tan x + \frac{1}{2} (\tan x)^{-\frac{1}{2}} \sec^2 x
-= \frac{\sin x}{\cos^3 x} + \frac{\cos^{1/2} x}{2 \sin^{1/2} x \cos^2 x}
-= \frac{1}{\cos^2 x} \left( \frac{2\sin^{3/2} x + \cos^{3/2} x}{2 \sin^{1/2} x \cos^{1/2} x} \right)
-\]
-
-所以:
-\[
-dx = \frac{2 \cos^3 x \sin^{1/2} x \cos^{1/2} x}{2 \sin^{3/2} x + \cos^{3/2} x} \, du
-\]
-
-原积分:
-\[
-\int \frac{2 \sin x \sqrt{\tan x} + 1}{2 \cos x \sqrt{\tan x} (\cos x \sqrt{\tan x} + 1)} \, dx
-\]
-
-代入 \(dx\):
-\[
-= \int \frac{2 \sin^{3/2} x + \cos^{1/2} x}{2 \cos^{1/2} x \sin^{1/2} x (\cos^{1/2} x \sin^{1/2} x + 1)} 
-\times \frac{2 \cos^{3/2} x \sin^{1/2} x}{2 \sin^{3/2} x + \cos^{3/2} x} \, du
-\]
-
-化简:
-\[
-= \int \frac{\cos x}{\cos x \sin x + 1} \, du
-\]
-
-两边同时乘 \(\sec x\):
-\[
-= \int \frac{\sec x}{\sec x (\cos x \sin x + 1)} \, du
-= \int \frac{1}{\sin x + \sec x} \, du
-= \int \frac{1}{\sqrt{\tan x} + \sec x} \, du
-\]
-
-最终积分:
-\[
-\int \frac{1}{u} \, du = \ln|u| + C = \ln|\sqrt{\tan x} + \sec x| + C
-\]
-\end{solution}
-
-
-\question 使用代换求积分
-\[
-\int \frac{16}{(x+6)(x-2)\sqrt{x+2}} \, dx
-\]
-\begin{solution}
-使用代换 \(u = \sqrt{x+2} \implies x = u^2 - 2, \ dx = 2u \, du\):
-\[
-\int \frac{16}{(x+6)(x-2)\sqrt{x+2}} \, dx
-= \int \frac{16}{(u^2+4)(u^2-4) u} \cdot 2u \, du
-= \int \frac{32}{(u^2+4)(u^2-4)} \, du
-\]
-
-分解为部分分式:
-\[
-\frac{32}{(u^2+4)(u^2-4)} = \frac{4}{u^2-4} - \frac{4}{u^2+4} = \frac{1}{u-2} - \frac{1}{u+2} - \frac{4}{u^2+4}
-\]
-
-积分得到:
-\[
-\int \frac{16}{(x+6)(x-2)\sqrt{x+2}} \, dx = \ln|u-2| - \ln|u+2| - 2\arctan\left(\frac{u}{2}\right) + C
-\]
-
-回代 \(u = \sqrt{x+2}\):
-\[
-\int \frac{16}{(x+6)(x-2)\sqrt{x+2}} \, dx = \ln\left|\frac{\sqrt{x+2}-2}{\sqrt{x+2}+2}\right| - 2\arctan\left(\frac{\sqrt{x+2}}{2}\right) + C
-\]
-\end{solution}
-
-\question
-11) 计算不定积分 $\int \frac{\sqrt{x+1} - \sqrt{x-1}}{\sqrt{x+1} + \sqrt{x-1}} dx$
-
-\begin{solution}
-分子有理化:
-\begin{align*}
-\int \frac{(\sqrt{x+1} - \sqrt{x-1})^2}{(x+1) - (x-1)} dx &= \int \frac{x+1 + x-1 - 2\sqrt{x^2-1}}{2} dx \\
-&= \int (x - \sqrt{x^2-1}) dx \\
-&= \frac{1}{2}x^2 - \left( \frac{x}{2}\sqrt{x^2-1} - \frac{1}{2} \ln|x + \sqrt{x^2-1}| \right) + C \\
-&= \frac{1}{2}x^2 - \frac{x}{2}\sqrt{x^2-1} + \frac{1}{2} \ln|x + \sqrt{x^2-1}| + C
-\end{align*}
-\end{solution}
-
-
-\question 使用代换 $x = e^{-u/2}$求
-\[
-\int \frac{x^4 - 1}{x^2 \sqrt{x^4 + 1}} \, dx
-\]
-\begin{solution}
-使用代换 \(x = e^{-u/2} \implies dx = -\frac{1}{2}e^{-u/2} \, du\):
-\[
-\int \frac{x^4 - 1}{x^2 \sqrt{x^4 + 1}} \, dx
-= \int \frac{e^{-2u} - 1}{e^{-u} \sqrt{e^{-4u} + 1}} \left(-\frac{1}{2}e^{-u/2} \, du\right)
-\]
-
-化简得到:
-\[
-= \frac{1}{\sqrt{2}} \int \sinh u \, (\cosh u)^{-1/2} \, du
-= \frac{1}{\sqrt{2}} \cdot 2 (\cosh u)^{1/2} + C
-= \sqrt{2 \cosh u} + C
-\]
-
-回代 \(x = e^{-u/2} \implies \cosh u = \frac{1}{2}(e^{u} + e^{-u}) = \frac{1}{2}\left(\frac{1}{x^2} + x^2\right)\):
-\[
-\sqrt{2\cosh u} + C = \sqrt{\frac{1}{x^2} + x^2} + C = \frac{\sqrt{x^4 + 1}}{x} + C
-\]
-
-因此积分的简化形式为:
-\[
-\int \frac{x^4 - 1}{x^2 \sqrt{x^4 + 1}} \, dx = \frac{\sqrt{x^4 + 1}}{x} + C
-\]
-\end{solution}
-
-\question
-已知
-\[
-x^2 + x + 2 = (u-x)^2
-\]
-求
-\[
-\int \frac{1}{x\sqrt{x^2+x+2}} \, dx
-\]
-\begin{solution}
-a) (i) 解 $x$ 关于 $u$ 的关系:
-
-\[
-x^2 + x + 2 = u^2 - 2ux + x^2
-\]
-
-\[
-x + 2 = u^2 - 2ux
-\]
-
-\[
-x(2u+1) = u^2 - 2
-\]
-
-\[
-x = \frac{u^2 - 2}{2u+1}
-\]
-
-(ii) 对 $x$ 求导:
-\[
-\frac{dx}{du} = \frac{(2u+1)(2u) - 2(u^2-2)}{(2u+1)^2} = \frac{4u^2 + 2u - 2u^2 + 4}{(2u+1)^2} = \frac{2u^2 + 2u + 4}{(2u+1)^2} = \frac{2(u^2 + u + 2)}{(2u+1)^2}
-\]
-
-b) 积分变换:
-\[
-\int \frac{1}{x\sqrt{x^2+x+2}} \, dx = \int \frac{1}{x(u-x)} \cdot \frac{2(u^2+u+2)}{(2u+1)^2} \, du
-\]
-
-代入 $x = \frac{u^2-2}{2u+1}$ 和 $u-x = \sqrt{x^2+x+2}$:
-
-\[
-\int \frac{1}{\frac{u^2-2}{2u+1} \cdot \frac{u^2+u+2}{2u+1}} \cdot \frac{2(u^2+u+2)}{(2u+1)^2} \, du
-= \int \frac{(2u+1)^2}{(u^2-2)(u^2+u+2)} \cdot \frac{2(u^2+u+2)}{(2u+1)^2} \, du
-= \int \frac{2}{u^2-2} \, du
-\]
-
-使用标准积分公式:
-\[
-\int \frac{1}{u^2-a^2} \, du = \frac{1}{2a} \ln \left| \frac{u-a}{u+a} \right| + C
-\]
-
-得:
-\[
-\int \frac{2}{u^2-2} \, du = \frac{1}{\sqrt{2}} \ln \left| \frac{u-\sqrt{2}}{u+\sqrt{2}} \right| + C
-\]
-
-最后代回 $u = x + \sqrt{x^2+x+2}$:
-\[
-\int \frac{1}{x\sqrt{x^2+x+2}} \, dx = \frac{1}{\sqrt{2}} \ln \left| \frac{x + \sqrt{x^2+x+2} - \sqrt{2}}{x + \sqrt{x^2+x+2} + \sqrt{2}} \right| + C
-\]
-\end{solution}
-
-\question 
-\[
-\int_{0.2}^{0.5} \frac{\sqrt{x-x^2}}{x^4} \, dx
-\]
-\begin{solution}
-作代换:
-\[
-x = \frac{1}{u^2+1} \implies dx = -\frac{2u}{(u^2+1)^2} \, du
-\]
-
-积分上下限变化:
-\[
-x=0.2 \implies u = 2, \quad x=0.5 \implies u = 1
-\]
-
-代入积分:
-\[
-\int_{0.2}^{0.5} \frac{\sqrt{x-x^2}}{x^4} \, dx = \int_{2}^{1} \frac{\sqrt{\frac{1}{u^2+1}-\frac{1}{(u^2+1)^2}}}{\left(\frac{1}{u^2+1}\right)^4} \left(-\frac{2u}{(u^2+1)^2} \, du\right)
-\]
-
-整理被积函数:
-\[
-\sqrt{\frac{1}{u^2+1}-\frac{1}{(u^2+1)^2}} = \sqrt{\frac{u^2}{(u^2+1)^2}} = \frac{u}{u^2+1}
-\]
-
-\[
-\frac{1}{\left(\frac{1}{u^2+1}\right)^4} = (u^2+1)^4
-\]
-
-因此积分变为:
-\[
-\int_{1}^{2} \frac{u}{u^2+1} (u^2+1)^4 \cdot \frac{2u}{(u^2+1)^2} \, du = \int_{1}^{2} 2 u^2 (u^2+1) \, du
-\]
-
-展开:
-\[
-\int_{1}^{2} 2u^4 + 2u^2 \, du = \left[ \frac{2}{5} u^5 + \frac{2}{3} u^3 \right]_{1}^{2}
-\]
-
-代入上下限:
-\[
-\left( \frac{64}{5} + \frac{16}{3} \right) - \left( \frac{2}{5} + \frac{2}{3} \right) = \frac{256}{15}
-\]
-
-\[
-\therefore \int_{0.2}^{0.5} \frac{\sqrt{x-x^2}}{x^4} \, dx = \frac{256}{15}
-\]
-\end{solution}
-
+    \question 使用代换 $u=\sqrt{\dfrac{1+x}{1-x}}$,计算
+    \[
+    \int_{0}^{\frac{1}{4}} \frac{3}{(4x+5)\sqrt{1-x^2}-3(1-x^2)}\,dx
+    \]
+    \begin{solution}
+        由代换 $u^2 = \dfrac{1+x}{1-x}$ 可得 $x = \dfrac{u^2-1}{u^2+1}$,对 $x$ 求导得
+        \[
+        dx = \frac{4u}{(u^2+1)^2}\,du
+        \]
+        将被积式中的各项用 $u$ 表示:
+        \[
+        \sqrt{1-x^2} = \sqrt{\frac{(u^2+1)^2-(u^2-1)^2}{(u^2+1)^2}} = \frac{2u}{u^2+1},\quad 1-x^2 = \frac{4u^2}{(u^2+1)^2}
+        \]
+        \[
+        4x+5 = 4\left(\frac{u^2-1}{u^2+1}\right)+5 = \frac{9u^2+1}{u^2+1}
+        \]
+        当 $x=0$ 时 $u=1$;当 $x=\dfrac{1}{4}$ 时 $u=\sqrt{\dfrac{5}{3}}$,代入原积分:
+        \begin{align*}
+        I &= \int_{1}^{\sqrt{\frac{5}{3}}} \frac{3}{\frac{9u^2+1}{u^2+1} \cdot \frac{2u}{u^2+1} - 3 \cdot \frac{4u^2}{(u^2+1)^2}} \cdot \frac{4u}{(u^2+1)^2}\,du \\
+        &= \int_{1}^{\sqrt{\frac{5}{3}}} \frac{12u}{2u(9u^2+1)-12u^2}\,du = \int_{1}^{\sqrt{\frac{5}{3}}} \frac{6}{9u^2-6u+1}\,du \\
+        &= \int_{1}^{\sqrt{\frac{5}{3}}} \frac{6}{(3u-1)^2}\,du = \left[ -\frac{2}{3u-1} \right]_{1}^{\sqrt{\frac{5}{3}}} \\
+        &= 1 - \frac{2}{\sqrt{15}-1} = \frac{6-\sqrt{15}}{7}
+        \end{align*}
+    \end{solution}
+
+    \question 已知实数$a>b>0$,使用代换 $x=\dfrac{ab}{t}$,求积分
+    \[
+    \int_{0}^{\infty} \frac{\ln x}{(x+a)(x+b)}\,dx
+    \]
+    \begin{solution}
+        设原积分为 $I$，作代换 $x = \dfrac{ab}{t}$，则 $dx = -\dfrac{ab}{t^2}\,dt$,
+        \[
+        I = \int_{\infty}^{0} \frac{\ln(ab/t)}{(\frac{ab}{t}+a)(\frac{ab}{t}+b)} \left( -\frac{ab}{t^2} \right) \,dt = \int_{0}^{\infty} \frac{\ln(ab)-\ln t}{(t+b)(t+a)}\,dt
+        \]
+        整理得
+        \[
+        I = \ln(ab) \int_{0}^{\infty} \frac{1}{(t+a)(t+b)}\,dt - I \implies 2I = \ln(ab) \int_{0}^{\infty} \frac{1}{(t+a)(t+b)}\,dt
+        \]
+        对被积函数作部分分式分解:
+        \[
+        2I = \frac{\ln(ab)}{a-b} \int_{0}^{\infty} \left( \frac{1}{t+b} - \frac{1}{t+a} \right) \,dt 
+        = \frac{\ln(ab)}{a-b} \left[ \ln\left( \frac{t+b}{t+a} \right) \right]_{0}^{\infty} = \frac{\ln(ab)\ln\left(\frac{a}{b}\right)}{a-b}
+        \]
+        故
+        \[
+        I = \frac{\ln(ab)\ln\left(\frac{a}{b}\right)}{2(a-b)}
+        \]
+    \end{solution}
+
+    \question 使用代换$u = \sec x + \sqrt{\tan x}$,求
+    \[
+    \int \frac{2 \sin x \sqrt{\tan x} + 1}{2 \cos x \sqrt{\tan x} (\cos x \sqrt{\tan x} + 1)} \, dx
+    \]
+    \begin{solution}
+        设 $u = \sec x + \sqrt{\tan x}$，则
+        \[
+        du = \left( \sec x \tan x + \frac{\sec^2 x}{2\sqrt{\tan x}} \right) \, dx = \frac{2\sin x \sqrt{\tan x} + 1}{2\cos^2 x \sqrt{\tan x}} \, dx
+        \]
+        整理原积分:
+        \begin{align*}
+        I &= \int \frac{2\sin x \sqrt{\tan x} + 1}{2\cos^2 x \sqrt{\tan x} (\sqrt{\tan x} + \sec x)} \, dx \\
+        &= \int \frac{1}{\sqrt{\tan x} + \sec x} \cdot \frac{2\sin x \sqrt{\tan x} + 1}{2\cos^2 x \sqrt{\tan x}} \, dx \\
+        &= \int \frac{1}{u} \, du = \ln|u| + C
+        \end{align*}
+        代回变量得 
+        \[
+        I = \ln|\sec x + \sqrt{\tan x}| + C
+        \]
+    \end{solution}
+
+    \question 
+    \[
+    \int \frac{16}{(x+6)(x-2)\sqrt{x+2}} \, dx
+    \]
+    \begin{solution}
+        设 $u = \sqrt{x+2}$，则 $x = u^2-2, dx = 2u\,du$。代入得
+        \[
+        I = \int \frac{16}{(u^2+4)(u^2-4)u} \cdot 2u\,du = \int \frac{32}{(u^2+4)(u^2-4)}\,du
+        \]
+        应用部分分式分解:
+        \[
+        \frac{32}{(u^2+4)(u^2-4)} = \frac{4}{u^2-4} - \frac{4}{u^2+4}
+        \]
+        积分得
+        \begin{align*}
+        I &= \int \left( \frac{1}{u-2} - \frac{1}{u+2} - \frac{4}{u^2+4} \right) \,du \\
+        &= \ln\left| \frac{u-2}{u+2} \right| - 2\arctan\left( \frac{u}{2} \right) + C
+        \end{align*}
+        代回 $u = \sqrt{x+2}$ 得
+        \[
+        I = \ln\left| \frac{\sqrt{x+2}-2}{\sqrt{x+2}+2} \right| - 2\arctan\left( \frac{\sqrt{x+2}}{2} \right) + C
+        \]
+    \end{solution}
+
+    
+
+    \question 
+    \[
+    \int \frac{x^4 - 1}{x^2 \sqrt{x^4 + 1}} \, dx
+    \]
+    \begin{solution}
+        应用配凑法
+        \[
+        I = \int \frac{x^2 - \frac{1}{x^2}}{\sqrt{x^4 + 1}} \, dx = \int \frac{x - \frac{1}{x^3}}{\sqrt{x^2 + \frac{1}{x^2}}} \, dx
+        \]
+        此时注意到
+        \[
+        \frac{d}{dx}\left(x^2 + \frac{1}{x^2}\right) = 2x - \frac{2}{x^3} = 2\left(x - \frac{1}{x^3}\right)
+        \]
+        于是原积分可化为
+        \[
+        I = \frac{1}{2} \int \frac{d(x^2 + \frac{1}{x^2})}{\sqrt{x^2 + \frac{1}{x^2}}}
+        = \sqrt{x^2 + \frac{1}{x^2}} + C
+        = \frac{\sqrt{x^4 + 1}}{x} + C
+        \]
+    \end{solution}
+
+    \question 已使用代换 $x^2 + x + 2 = (u-x)^2$，求 
+    \[
+    \int \frac{1}{x\sqrt{x^2+x+2}} \, dx
+    \]
+    \begin{solution}
+        由已知关系得 
+        \[
+        x^2 + x + 2 = u^2 - 2ux + x^2 \Rightarrow x = \frac{u^2-2}{2u+1}
+        \]
+        则
+        \[
+        dx = \frac{2(u^2+u+2)}{(2u+1)^2} \, du
+        \]
+        注意到 
+        \[
+        \sqrt{x^2+x+2} = u-x = u - \frac{u^2-2}{2u+1} = \frac{u^2+u+2}{2u+1}
+        \]
+        代入积分得
+        \begin{align*}
+        I &= \int \frac{1}{\frac{u^2-2}{2u+1} \cdot \frac{u^2+u+2}{2u+1}} \cdot \frac{2(u^2+u+2)}{(2u+1)^2} \, du \\
+        &= \int \frac{2}{u^2-2} \, du \\
+        &= \frac{1}{\sqrt{2}} \ln \left| \frac{u-\sqrt{2}}{u+\sqrt{2}} \right| + C \\
+        &= \frac{1}{\sqrt{2}} \ln \left| \frac{x + \sqrt{x^2+x+2} - \sqrt{2}}{x + \sqrt{x^2+x+2} + \sqrt{2}} \right| + C
+        \end{align*}
+    \end{solution}
+
+    \question 
+    \[
+    \int_{0.2}^{0.5} \frac{\sqrt{x-x^2}}{x^4} \, dx
+    \]
+    \begin{solution}
+        将被积函数变形:
+        \[
+        \frac{\sqrt{x-x^2}}{x^4} = \frac{1}{x^3}\sqrt{\frac{1}{x}-1}
+        \]
+        设 $u = \sqrt{\dfrac{1}{x}-1}$，则 
+        \[
+        x = \frac{1}{u^2+1} \Rightarrow dx = -\frac{2u}{(u^2+1)^2} \, du
+        \]
+        于是
+        \begin{align*}
+        I &= \int_{2}^{1} (u^2+1)^3 \cdot u \cdot \frac{-2u}{(u^2+1)^2} \, du \\
+        &= \int_{1}^{2} 2u^2(u^2+1) \, du = \int_{1}^{2} (2u^4 + 2u^2) \, du \\
+        &= \left[ \frac{2}{5}u^5 + \frac{2}{3}u^3 \right]_{1}^{2} = \frac{256}{15}
+        \end{align*}
+    \end{solution}
 
     \question
     \[
@@ -4670,203 +4293,67 @@ x=0.2 \implies u = 2, \quad x=0.5 \implies u = 1
         &= -\frac{1}{a^3} \int \left( 1 - \frac{2b}{u} + \frac{b^2}{u^2}\right) du \\
         &= -\frac{1}{a^3} \left( u - 2b \ln|u| - \frac{b^2}{u} \right) + C
         \end{align*}
-        代回 \( u = \frac{a + bx}{x} \),得:
+        代回 \( u = \dfrac{a + bx}{x} \)得
         \[
         \int \frac{dx}{x^2(a + bx)^2}
         = -\frac{1}{a^3} \left( \frac{a + bx}{x} - 2b \ln\left| \frac{a + bx}{x} \right| - \frac{b^2 x}{a + bx} \right) + C
         \]
     \end{solution}
 
-    \question
-使用代换$2x+1=4\cosh\theta$,求不定积分
-\[
-\int \sqrt{(2x+5)(2x-3)} \, dx
-\]
+    \question 使用代换 $\sqrt{5-4x-x^2} = (1-x)u$，其中 $x\neq 1$，求 
+    \[
+    \int \frac{x}{(5-4x-x^2)^{\frac{3}{2}}} \, dx
+    \]
+    \begin{solution}
+        代换给出
+        \[
+        5-4x-x^2=(1-x)(x+5) = (1-x)^2u^2 \Rightarrow x = \frac{u^2-5}{u^2+1} \Rightarrow dx = \frac{12u}{(u^2+1)^2} \, du
+        \]
+        由 $1-x = \dfrac{6}{u^2+1}$ 得，
+        \begin{align*}
+        I =\int \frac{x}{(5-4x-x^2)^{\frac{3}{2}}} \, dx 
+        &= \int \frac{u^2-5}{u^2+1} \cdot \frac{1}{\left(\frac{6u}{u^2+1}\right)^3} \cdot \frac{12u}{(u^2+1)^2} \, du \\
+        &= \int \frac{u^2-5}{u^2+1} \cdot \frac{(u^2+1)^3}{216u^3} \cdot \frac{12u}{(u^2+1)^2} \, du \\
+        &= \frac{1}{18} \int \frac{u^2-5}{u^2} \, du \\
+        &= \frac{1}{18} \left( u + \frac{5}{u} \right) + C
+        \end{align*}
+        代回 $u = \dfrac{\sqrt{5-4x-x^2}}{1-x}$，整理得 
+        \[
+        I = \frac{5-2x}{9\sqrt{5-4x-x^2}} + C
+        \]
+    \end{solution}
 
-\begin{solution}
-先化简被积式,
-\[
-(2x+5)(2x-3)=4x^2+4x-15=(2x+1)^2-16
-\]
-因此原积分化为
-\[
-\int \sqrt{(2x+1)^2-16} \, dx
-\]
+    \question 
+    \[
+    \int \frac{\sqrt{1 + \sqrt[3]{x}}}{\sqrt[3]{x^2}} \, dx
+    \]
+    \begin{solution}
+        注意到 
+        \[
+        d(\sqrt[3]{x}) = \frac{1}{3\sqrt[3]{x^2}} \, dx
+        \]
+        于是
+        \[
+        \int \frac{\sqrt{1 + \sqrt[3]{x}}}{\sqrt[3]{x^2}} \, dx = 3 \int (1+\sqrt[3]{x})^{\frac{1}{2}} \, d(\sqrt[3]{x}) = 2(1+\sqrt[3]{x})^{\frac{3}{2}} + C
+        \]
+    \end{solution}
 
-采用双曲函数换元,令
-\[
-2x+1=4\cosh\theta
-\]
-则
-\[
-2\,dx=4\sinh\theta\,d\theta,\quad dx=2\sinh\theta\,d\theta
-\]
-
-利用恒等式
-\[
-\cosh^2\theta-\sinh^2\theta=1
-\]
-可得
-\[
-\sqrt{(2x+1)^2-16}
-=\sqrt{16(\cosh^2\theta-1)}
-=4\sinh\theta
-\]
-
-代入积分,
-\[
-\int \sqrt{(2x+1)^2-16}\,dx
-=\int 4\sinh\theta\,(2\sinh\theta\,d\theta)
-=8\int\sinh^2\theta\,d\theta
-\]
-
-又有
-\[
-\sinh^2\theta=\frac{1}{2}\cosh(2\theta)-\frac{1}{2}
-\]
-于是
-\begin{align*}
-8\int\sinh^2\theta\,d\theta
-&=8\int\left(\frac{1}{2}\cosh(2\theta)-\frac{1}{2}\right)d\theta \\
-&=4\int\cosh(2\theta)\,d\theta-4\int d\theta \\
-&=2\sinh(2\theta)-4\theta+C
-\end{align*}
-
-利用
-\[
-\sinh(2\theta)=2\sinh\theta\cosh\theta
-\]
-得
-\[
-2\sinh(2\theta)=4\sinh\theta\cosh\theta
-\]
-
-又因为
-\[
-\sinh\theta=\frac{\sqrt{(2x+1)^2-16}}{4},\quad
-\cosh\theta=\frac{2x+1}{4}
-\]
-且
-\[
-\theta=\operatorname{arccosh}\frac{2x+1}{4}
-\]
-
-代回原变量,
-\[
-\int \sqrt{(2x+5)(2x-3)} \, dx
-=\frac{1}{4}(2x+1)\sqrt{(2x+5)(2x-3)}
--4\operatorname{arccosh}\frac{2x+1}{4}+C
-\]
-
-利用
-\[
-\operatorname{arccosh}u=\ln\left(u+\sqrt{u^2-1}\right)
-\]
-可进一步写为
-\[
-\int \sqrt{(2x+5)(2x-3)} \, dx
-=\frac{1}{4}(2x+1)\sqrt{(2x+5)(2x-3)}
--4\ln\left(2x+1+\sqrt{(2x+5)(2x-3)}\right)+C
-\]
-
-\end{solution}
-
-\question
-已知
-\[
-\sqrt{5-4x-x^2} = (1-x)u, \quad x\neq 1, x\neq -5
-\]
-
-\begin{solution}
-a) 代换与求导
-
-i) 两边平方
-\[
-5-4x-x^2 = (1-x)^2 u^2
-\]
-
-移项整理
-\[
--(x^2+4x-5) = u^2(x-1)^2 \implies -(x-1)(x+5) = u^2(x-1)^2
-\]
-
-两边除以 $x-1$
-\[
--(x+5) = u^2 (x-1) \implies u^2 - 5 = x(u^2+1) \implies x = \frac{u^2-5}{u^2+1}
-\]
-
-ii) 对 x 求导
-\[
-dx = \frac{d}{du} \frac{u^2-5}{u^2+1} \, du
-= \frac{(u^2+1)(2u) - (u^2-5)(2u)}{(u^2+1)^2} \, du
-= \frac{12u}{(u^2+1)^2} \, du
-\]
-
-b) 积分化简
-
-由 a) 可得
-\[
-\int \frac{x}{(5-4x-x^2)^{3/2}} \, dx
-= \int \frac{x}{((1-x)u)^3} \cdot \frac{12u}{(u^2+1)^2} \, du
-\]
-
-\[
-x = \frac{u^2-5}{u^2+1}, \quad (1-x)^3 = \left(\frac{6}{u^2+1}\right)^3
-\]
-
-\[
-\implies \int \frac{x}{(5-4x-x^2)^{3/2}} \, dx
-= \int \frac{u^2-5}{u^2+1} \cdot \frac{12u}{216 u^3} \, du
-= \int \frac{u^2-5}{18 u^2} \, du
-\]
-
-c) 积分求解
-
-分拆积分
-\[
-\int \frac{u^2-5}{18 u^2} \, du = \int \frac{1}{18} - \frac{5}{18u^2} \, du
-= \frac{1}{18} u + \frac{5}{18u} + C
-\]
-
-代回 u
-\[
-u = \frac{\sqrt{5-4x-x^2}}{1-x} \implies \frac{1}{u} = \frac{1-x}{\sqrt{5-4x-x^2}}
-\]
-
-\[
-\implies \int \frac{x}{(5-4x-x^2)^{3/2}} \, dx
-= \frac{1}{18} \frac{\sqrt{5-4x-x^2}}{1-x} + \frac{5}{18} \frac{1-x}{\sqrt{5-4x-x^2}} + C
-\]
-
-整理为
-\[
-\int \frac{x}{(5-4x-x^2)^{3/2}} \, dx
-= \frac{5-2x}{9 \sqrt{5-4x-x^2}} + C
-\]
-\end{solution}
-
-\question
-28) 计算不定积分:\[ \int \frac{\sqrt{1 + \sqrt[3]{x}}}{\sqrt[3]{x^2}} dx \]
-
-\begin{solution}
-设 $u = \sqrt[3]{x}$,则 $du = \frac{1}{3} x^{-\frac{2}{3}} dx$,即 $dx = 3 \sqrt[3]{x^2} du$。
-代入积分式:
-\[ I = 3 \int \sqrt{1+u} du \]
-进行积分计算:
-\[ I = 2 (1+u)^{\frac{3}{2}} + C \]
-还原变量 $u = \sqrt[3]{x}$:
-\[ I = 2 (1 + \sqrt[3]{x})^{\frac{3}{2}} + C \]
-\end{solution}
-\question
-16) 计算不定积分:\[ \int \frac{1}{x(1+x^{119})} dx \]
-
-\begin{solution}
-分子分母同乘 $x^{118}$:
-\[ \int \frac{x^{118}}{x^{119}(1+x^{119})} dx \]
-设 $t = x^{119}$,则 $dt = 119x^{118} dx$:
-\[ I = \frac{1}{119} \int \frac{1}{t(1+t)} dt = \frac{1}{119} \int \left( \frac{1}{t} - \frac{1}{1+t} \right) dt \]
-\[ = \frac{1}{119} \ln\left| \frac{t}{1+t} \right| + C = \frac{1}{119} \ln\left| \frac{x^{119}}{1+x^{119}} \right| + C \]
-\end{solution}
+    \question 
+    \[
+    \int \frac{1}{x(1+x^{119})} \, dx
+    \]
+    \begin{solution}
+        分子分母同乘 $x^{118}$，构造 $\frac{f'}{f}$ 形式:
+        \[
+        I = \int \frac{1}{x(1+x^{119})} \, dx = \int \frac{x^{118}}{x^{119}(1+x^{119})} \, dx
+        \]
+        设 $t = x^{119}$，则 $dt = 119x^{118} \, dx$,
+        \begin{align*}
+        I &= \frac{1}{119} \int \frac{1}{t(1+t)} \, dt = \frac{1}{119} \int \left( \frac{1}{t} - \frac{1}{1+t} \right) \, dt \\
+        &= \frac{1}{119} \ln\left| \frac{t}{1+t} \right| + C = \frac{1}{119} \ln\left| \frac{x^{119}}{1+x^{119}} \right| + C
+        \end{align*}
+    \end{solution}
+    
     \question  
     \[
     \int_{-1}^1 \frac{x^2}{1+2^x} \,dx 
@@ -4883,59 +4370,56 @@ u = \frac{\sqrt{5-4x-x^2}}{1-x} \implies \frac{1}{u} = \frac{1-x}{\sqrt{5-4x-x^2
     \end{solution}
 
     \question 
-\[
-I = \int_{\frac{1}{2}}^{2} \frac{\ln x}{1 + x^2} \, dx.
-\]
+    \[
+    I = \int_{\frac{1}{2}}^{2} \frac{\ln x}{1 + x^2} \, dx
+    \]
+    \begin{solution}
+        应用倒数代换法,设 $x = \dfrac{1}{t}$，则 $dx = -\dfrac{1}{t^2} \, dt$,整理得
+        \[
+        I = \int_{2}^{\frac{1}{2}} \frac{\ln\frac{1}{t}}{1 + (\frac{1}{t})^2} \left( -\frac{1}{t^2} \right) \, dt = \int_{2}^{\frac{1}{2}} \frac{\ln t}{t^2+1} \, dt = -I
+        \]
+        由于 $I = -I$，故 $I = 0$。
+    \end{solution}
 
-\begin{solution}
-将积分分成两部分:
-\[
-I = \int_{\frac{1}{2}}^{1} \frac{\ln x}{1 + x^2} \, dx + \int_{1}^{2} \frac{\ln x}{1 + x^2} \, dx.
-\]
+    \question 
+    \[
+    \int_{0}^{\sqrt{3}} \frac{1}{1+x^2} \sin^{-1} \frac{2x}{1+x^2} \, dx
+    \]
+    \begin{solution}
+        设 $x = \tan\theta$，则 $dx = \sec^2 \theta \, d\theta$。原积分变形为:
+        \[
+        I = \int_{0}^{\frac{\pi}{3}} \sin^{-1}(\sin 2\theta) \, d\theta
+        \]
+        注意到 $\sin^{-1}(\sin \alpha)$ 的值取决于 $\alpha$ 所在的区间:当 $0 \le 2\theta \le \dfrac{\pi}{2}$，即 $0 \le \theta \le \dfrac{\pi}{4}$ 时，
+        \[
+        \sin^{-1}(\sin 2\theta) = 2\theta;
+        \]
+        当 $\dfrac{\pi}{2} < 2\theta \le \dfrac{2\pi}{3}$，即 $\dfrac{\pi}{4} < \theta \le \dfrac{\pi}{3}$ 时，
+        \[
+        \sin^{-1}(\sin 2\theta) = \pi - 2\theta
+        \]
+        因此，积分需分段计算:
+        \begin{align*}
+        I &= \int_{0}^{\frac{\pi}{4}} 2\theta \, d\theta + \int_{\frac{\pi}{4}}^{\frac{\pi}{3}} (\pi - 2\theta) \, d\theta \\
+        &= \Bigl[ \theta^2 \Bigr]_{0}^{\frac{\pi}{4}} + \Bigl[ \pi\theta - \theta^2 \Bigr]_{\frac{\pi}{4}}^{\frac{\pi}{3}} \\
+        &= \frac{\pi^2}{16} + \frac{2\pi^2}{9} - \frac{3\pi^2}{16} \\
+        &= \frac{7\pi^2}{72}
+        \end{align*}
+    \end{solution}
 
-在第二个积分中作代换 $x = 1/u$,则 $dx = -\frac{1}{u^2} du$,积分限变为 $x=1 \to u=1,x=2 \to u=1/2$:
-\[
-\int_{1}^{2} \frac{\ln x}{1 + x^2} \, dx = \int_{1}^{1/2} \frac{\ln (1/u)}{1 + (1/u)^2} \left(-\frac{1}{u^2} du\right) = -\int_{1/2}^{1} \frac{-\ln u}{1 + u^2} \, du = -\int_{1/2}^{1} \frac{\ln u}{1 + u^2} \, du.
-\]
-
-因此
-\[
-I = \int_{1/2}^{1} \frac{\ln x}{1 + x^2} \, dx - \int_{1/2}^{1} \frac{\ln u}{1 + u^2} \, du = 0.
-\]
-\end{solution}
-
-\question 
-30) 计算定积分 $I = \int_{0}^{\sqrt{3}} \frac{1}{1+x^2} \sin^{-1} \frac{2x}{1+x^2} dx$
-
-\begin{solution}
-使用换元法,设 $x = \tan\theta$,则 $dx = \sec^2 \theta d\theta$ 且 $\frac{1}{1+x^2} = \cos^2 \theta$。
-同时利用二倍角公式可知 $\sin^{-1} \frac{2x}{1+x^2} = \sin^{-1}(\sin 2\theta) = 2\theta$。
-
-更换积分上下限:
-\begin{itemize}
-    \item 当 $x = 0$ 时,$\theta = 0$
-    \item 当 $x = \sqrt{3}$ 时,$\theta = \frac{\pi}{3}$
-\end{itemize}
-
-代入原积分式:
-\begin{align*}
-I &= \int_{0}^{\frac{\pi}{3}} \cos^2 \theta \cdot (2\theta) \cdot \sec^2 \theta d\theta \\
-&= \int_{0}^{\frac{\pi}{3}} 2\theta d\theta \\
-&= \left[ \theta^2 \right]_{0}^{\frac{\pi}{3}} \\
-&= \left( \frac{\pi}{3} \right)^2 - 0 \\
-&= \frac{\pi^2}{9}
-\end{align*}
-\end{solution}
-
-\question 计算 $[\int_{1/2}^2 \frac{x^{2012}-1}{x^{2014}+1} dx]$。
-\begin{solution}
-令 $x = \frac{1}{t}$,则 $dx = -\frac{1}{t^2} dt$。
-积分上下限从 $1/2 \to 2$ 变为 $2 \to 1/2$:
-\[I = [\int_2^{1/2} \frac{(1/t)^{2012}-1}{(1/t)^{2014}+1} (-\frac{1}{t^2}) dt]\]
-\[I = [\int_{1/2}^2 \frac{\frac{1-t^{2012}}{t^{2012}}}{\frac{1+t^{2014}}{t^{2014}}} \frac{1}{t^2} dt] = [\int_{1/2}^2 \frac{1-t^{2012}}{1+t^{2014}} dt]\]
-注意到 $[\int_{1/2}^2 \frac{1-x^{2012}}{1+x^{2014}} dx] = -[\int_{1/2}^2 \frac{x^{2012}-1}{x^{2014}+1} dx] = -I$。
-即 $I = -I$,故 $I = 0$。
-\end{solution}
+    \question 
+    \[
+    I = \int_{\frac{1}{2}}^{2} \frac{x^{2012}-1}{x^{2014}+1} \, dx
+    \]
+    \begin{solution}
+        设 $x = \dfrac{1}{t}$，则 $dx = -\dfrac{1}{t^2} \, dt$,代入积分得:
+        \begin{align*}
+        I &= \int_{2}^{\frac{1}{2}} \frac{\left(\frac{1}{t}\right)^{2012}-1}{\left(\frac{1}{t}\right)^{2014}+1} \left( -\frac{1}{t^2} \right) \, dt \\
+        &= \int_{\frac{1}{2}}^{2} \frac{1-t^{2012}}{1+t^{2014}} \cdot \frac{t^{2014}}{t^{2012} \cdot t^2} \, dt \\
+        &= -\int_{\frac{1}{2}}^{2} \frac{t^{2012}-1}{t^{2014}+1} \, dt = -I
+        \end{align*}
+        由 $I = -I$ 可知 $I = 0$。
+    \end{solution}
 
     \question 若正整数$k$满足
     \[
@@ -4971,10 +4455,6 @@ I &= \int_{0}^{\frac{\pi}{3}} \cos^2 \theta \cdot (2\theta) \cdot \sec^2 \theta 
     \int \frac{dx}{x^3 + 1}
     \]
     \begin{solution}
-        \[
-        \int \frac{dx}{x^3 + 1}
-        = \int \frac{dx}{(x + 1)(x^2 - x + 1)}
-        \]
         部分分式分解得
         \[
         \frac{1}{x^3 + 1}
@@ -5005,418 +4485,344 @@ I &= \int_{0}^{\frac{\pi}{3}} \cos^2 \theta \cdot (2\theta) \cdot \sec^2 \theta 
         + \frac{1}{\sqrt{3}} \arctan\left( \frac{2x - 1}{\sqrt{3}} \right) + C
         \]
     \end{solution}
-\question
-17) 计算不定积分:\[ \int \frac{x^4+1}{x^6+1} dx \]
 
-\begin{solution}
-由于 $x^6+1 = (x^2+1)(x^4-x^2+1)$,拆分分子:
-\[ \int \frac{(x^4-x^2+1) + x^2}{x^6+1} dx = \int \frac{1}{x^2+1} dx + \int \frac{x^2}{x^6+1} dx \]
-第一部分:$\int \frac{1}{x^2+1} dx = \tan^{-1} x$。
-第二部分:设 $u = x^3, du = 3x^2 dx$:
-\[ \frac{1}{3} \int \frac{1}{u^2+1} du = \frac{1}{3} \tan^{-1} u = \frac{1}{3} \tan^{-1} x^3 \]
-合并结果:
-\[ I = \tan^{-1} x + \frac{1}{3} \tan^{-1} x^3 + C \]
-\end{solution}
+    \question 
+    \[
+    \int \frac{x^4+1}{x^6+1} \, dx
+    \]
+    \begin{solution}
+        注意到 $x^6+1 = (x^2+1)(x^4-x^2+1)$，将被积函数分子进行配凑:
+        \[
+        \frac{x^4+1}{x^6+1} = \frac{(x^4-x^2+1) + x^2}{x^6+1} = \frac{1}{x^2+1} + \frac{x^2}{x^6+1}
+        \]
+        于是积分拆分为:
+        \[
+        I = \int \frac{x^4+1}{x^6+1} \, dx = \int \frac{1}{x^2+1} \, dx + \int \frac{x^2}{(x^3)^2+1} \, dx
+        \]
+        第一部分为 $\tan^{-1} x$；第二部分通过 $d(x^3) = 3x^2 \, dx$ 得:
+        \[
+        \frac{1}{3} \int \frac{d(x^3)}{(x^3)^2+1} = \frac{1}{3} \tan^{-1}(x^3)
+        \]
+        故结果为:
+        \[
+        I = \tan^{-1} x + \frac{1}{3} \tan^{-1}(x^3) + C
+        \]
+    \end{solution}
+
     \question
-
-\[
-\int_{0}^{1} \frac{x^4(1-x)^4}{x^2+1} \, dx
-\]
-
-\begin{solution}
-首先展开分子 \( (1-x)^4 \):
-\[
-(1-x)^4 = 1 - 4x + 6x^2 - 4x^3 + x^4
-\]
-
-因此积分变为:
-\[
-\int_{0}^{1} \frac{x^4 (1-4x+6x^2-4x^3+x^4)}{x^2+1} \, dx
-= \int_{0}^{1} \frac{x^8 - 4x^7 + 6x^6 - 4x^5 + x^4}{x^2+1} \, dx
-\]
-
-进行多项式除法,将分子按 \(x^2+1\) 除:
-\[
-\frac{x^8 - 4x^7 + 6x^6 - 4x^5 + x^4}{x^2+1} = x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1}
-\]
-
-于是积分拆分为:
-\[
-\int_{0}^{1} x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1} \, dx
-\]
-
-分别积分各项:
-\[
-\int x^6 \, dx = \frac{1}{7} x^7, \quad
-\int -4x^5 \, dx = -\frac{2}{3} x^6, \quad
-\int 5x^4 \, dx = x^5,
-\]
-\[
-\int -4x^2 \, dx = -\frac{4}{3} x^3, \quad
-\int 4 \, dx = 4x, \quad
-\int -\frac{4}{x^2+1} \, dx = -4 \arctan x
-\]
-
-组合结果:
-\[
-\int_{0}^{1} \frac{x^4(1-x)^4}{x^2+1} \, dx
-= \left[ \frac{1}{7}x^7 - \frac{2}{3}x^6 + x^5 - \frac{4}{3}x^3 + 4x - 4\arctan x \right]_{0}^{1}
-\]
-
-代入上下限:
-\[
-\left( \frac{1}{7} - \frac{2}{3} + 1 - \frac{4}{3} + 4 - 4 \cdot \frac{\pi}{4} \right) - 0
-= \frac{1}{7} - \frac{6}{3} + 5 - \pi
-= \frac{1}{7} - 2 + 5 - \pi
-= 3 + \frac{1}{7} - \pi
-= \frac{22}{7} - \pi
-\]
-
-因此最终结果为:
-\[
-\int_{0}^{1} \frac{x^4(1-x)^4}{x^2+1} \, dx = \frac{22}{7} - \pi
-\]
-\end{solution}
+    \[
+    \int_{0}^{1} \frac{x^4(1-x)^4}{x^2+1} \, dx
+    \]
+    \begin{solution}
+        进行多项式除法,
+        \[
+        \frac{x^4(1-x)^4}{x^2+1}=\frac{x^8-4x^7+6x^6-4x^5+x^4}{x^2+1} = x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1}
+        \]
+        逐项积分得
+        \begin{align*}
+        I &= \int_{0}^{1} \left( x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1} \right) \, dx \\
+        &= \left[ \frac{1}{7}x^7 - \frac{2}{3}x^6 + x^5 - \frac{4}{3}x^3 + 4x - 4\tan^{-1}x \right]_{0}^{1} \\
+        &= \frac{22}{7} - \pi
+        \end{align*}
+    \end{solution}
 
     \question 
     \[
     \int_{0}^{1} \frac{(x^2+1)(x^2+4)}{(x^2+3)(x^2-4)} \, dx
     \]
     \begin{solution}
+        将被积函数化为真分式:
         \[
-\int_{0}^{1} \frac{(x^2+1)(x^2+4)}{(x^2+3)(x^2-4)} \, dx = \int_{0}^{1} \left[1 + \frac{2}{7}\left[\frac{1}{x^2+3} + \frac{5}{x-2} - \frac{5}{x+2}\right]\right] \, dx
-\]
-\[
-= \left[x + \frac{2}{7}\left[\frac{1}{\sqrt{3}}\arctan\left(\frac{x}{\sqrt{3}}\right) + 5\ln|x-2| - 5\ln|x+2|\right]\right]_{0}^{1}
-\]
-\[
-= \left[1 + \frac{2}{7}\left[\frac{1}{\sqrt{3}}\times\frac{\pi}{6} + 5\ln|-1| - 5\ln|3|\right]\right] - \left[\frac{2}{7}[5\ln|-2| - 5\ln|2|]\right]
-\]
-\[
-= 1 + \frac{2}{7}\left[\frac{\pi}{6\sqrt{3}} - 5\ln3\right]
-\]
-\[
-= 1 + \frac{1}{7}\left[\frac{\pi}{3\sqrt{3}} - 10\ln3\right]
-\]
+        \frac{x^4+5x^2+4}{x^4-x^2-12} = 1 + \frac{6x^2+16}{(x^2+3)(x-2)(x+2)}
+        \]
+        对真分式部分设待定系数:
+        \[
+        \frac{6x^2+16}{(x^2+3)(x-2)(x+2)} = \frac{Ax+B}{x^2+3} + \frac{C}{x-2} + \frac{D}{x+2}
+        \]
+        两边同乘以分母得
+        \[
+        6x^2+16 = (Ax+B)(x^2-4) + C(x^2+3)(x+2) + D(x^2+3)(x-2)
+        \]
+        利用特殊值法求解:
+        \begin{itemize}
+        \item 令 $x = 2$:$6(4)+16 = C(7)(4) \Rightarrow C = \dfrac{10}{7}$。
+        \item 令 $x = -2$:$6(4)+16 = D(7)(-4) \Rightarrow D = -\dfrac{10}{7}$。
+        \item 令 $x = 0$:$16 = B(-4) + 2(3)C - 2(3)D\Rightarrow B = \dfrac{2}{7}$。
+        \item 比较 $x^3$ 项系数:$0 = A + C + D$,故 $A = 0$。
+        \end{itemize}
+        于是被积函数为
+        \[
+        1 + \frac{2}{7(x^2+3)} + \frac{10}{7(x-2)} - \frac{10}{7(x+2)}
+        \]
+        积分得
+        \begin{align*}
+        I &= \left[ x + \frac{2}{7\sqrt{3}}\tan^{-1}\left(\frac{x}{\sqrt{3}}\right) + \frac{10}{7}\ln\left| \frac{x-2}{x+2} \right| \right]_{0}^{1} \\
+        &= \left( 1 + \frac{2}{7\sqrt{3}} \cdot \frac{\pi}{6} + \frac{10}{7}\ln\frac{1}{3} \right) - 0 \\
+        &= 1 + \frac{\pi}{21\sqrt{3}} - \frac{10}{7}\ln 3
+        \end{align*}
     \end{solution}
 
     \question
+    \[
+    \int_{0}^{\frac{1}{3}} \frac{32x^2}{(x^2-1)(x+1)^3} \, dx
+    \]
+    \begin{solution}
+        化简分母得 $\dfrac{32x^2}{(x-1)(x+1)^4}$。设 $u = x+1$，则 $dx = du$,于是
+        \[
+        I = \int_{1}^{\frac{4}{3}} \frac{32(u-1)^2}{(u-2)u^4} \, du = \int_{1}^{\frac{4}{3}} \frac{32u^2-64u+32}{u^4(u-2)} \, du
+        \]
+        进行部分分式分解:
+        \[
+        \frac{32u^2-64u+32}{u^4(u-2)} = -\frac{16}{u^4} + \frac{24}{u^3} - \frac{4}{u^2} - \frac{2}{u} + \frac{2}{u-2}
+        \]
+        逐项积分得
+        \begin{align*}
+        I &= \left[ \frac{16}{3u^3} - \frac{12}{u^2} + \frac{4}{u} - 2\ln|u| + 2\ln|u-2| \right]_{1}^{\frac{4}{3}} \\
+        &= \left( \frac{9}{4} - \frac{27}{4} + 3 - 2\ln\frac{4}{3} + 2\ln\frac{2}{3} \right) - \left( \frac{16}{3} - 12 + 4 \right) \\
+        &= \frac{7}{6} - 2\ln 2
+        \end{align*}
+    \end{solution}
 
-\[
-\int_{0}^{\frac{1}{3}} \frac{32x^2}{(x^2-1)(x+1)^3}\,dx
-\]
+    \question 
+    \[
+    \int \frac{1}{\sqrt[4]{1+x^4}} \, dx
+    \]
+    \begin{solution}
+        设 $(tx)^4 = 1+x^4$，则 $x = (t^4-1)^{-\frac{1}{4}}$,对 $x$ 求导得 $dx = -t^3(t^4-1)^{-\frac{5}{4}} \, dt$,代入得
+        \[
+        I = \int \frac{1}{tx} \cdot dx = \int (t^4-1)^{\frac{1}{4}} \cdot \frac{1}{t} \cdot [-t^3(t^4-1)^{-\frac{5}{4}}] \, dt = -\int \frac{t^2}{t^4-1} \, dt
+        \]
+        利用部分分式拆分,
+        \[
+        I = -\frac{1}{2} \int \left( \frac{1}{t^2-1} + \frac{1}{t^2+1} \right) \, dt = -\frac{1}{4} \ln\left| \frac{t-1}{t+1} \right| - \frac{1}{2} \tan^{-1} t + C
+        \]
+        其中 
+        \[
+        t = \frac{\sqrt[4]{1+x^4}}{x}
+        \]
+    \end{solution}
 
-\begin{solution}
-先化简被积函数
-\[
-\int_{0}^{\frac{1}{3}} \frac{32x^2}{(x^2-1)(x+1)^3}\,dx
-= \int_{0}^{\frac{1}{3}} \frac{32x^2}{(x-1)(x+1)^4}\,dx
-\]
-
-作代换
-\[
-u=x+1,\quad x=u-1,\quad du=dx
-\]
-当 $x=0$ 时,$u=1$  
-当 $x=\frac{1}{3}$ 时,$u=\frac{4}{3}$  
-
-则积分化为
-\[
-\int_{1}^{\frac{4}{3}} \frac{32(u-1)^2}{(u-2)u^4}\,du
-= \int_{1}^{\frac{4}{3}} \frac{32}{u^4}\cdot\frac{u^2-2u+1}{u-2}\,du
-\]
-
-将有理函数分解后得
-\[
-\int_{1}^{\frac{4}{3}}
-\left(
--\frac{16}{u^4}
-+\frac{24}{u^3}
--\frac{4}{u^2}
--\frac{2}{u}
-+\frac{2}{u-2}
-\right)\,du
-\]
-
-逐项积分
-\[
-=\left[
-\frac{16}{3u^3}
--\frac{12}{u^2}
-+\frac{4}{u}
--2\ln|u|
-+2\ln|u-2|
-\right]_{1}^{\frac{4}{3}}
-\]
-
-代入上、下限
-\[
-=\left(
-\frac{16}{3\left(\frac{4}{3}\right)^3}
--\frac{12}{\left(\frac{4}{3}\right)^2}
-+\frac{4}{\frac{4}{3}}
--2\ln\frac{4}{3}
-+2\ln\frac{2}{3}
-\right)
--\left(
-\frac{16}{3}-12+4
-\right)
-\]
-
-化简得
-\[
-=11-\frac{16}{3}-\frac{9}{2}-2\ln2
-\]
-
-整理为
-\[
-\frac{7}{6}-2\ln2
-\]
-
-因此
-\[
-\int_{0}^{\frac{1}{3}} \frac{32x^2}{(x^2-1)(x+1)^3}\,dx
-= \frac{7}{6}-2\ln2
-\]
-\end{solution}
-
-\question
-24) 计算不定积分:\[ \int \frac{1}{\sqrt[4]{1+x^4}} dx \]
-
-\begin{solution}
-使用换元法,设 $t^4 x^4 = 1+x^4$,则 $x^4 = \frac{1}{t^4-1}$。
-两边求导得 $4x^3 dx = -\frac{4t^3}{(t^4-1)^2} dt$,故 $dx = -\frac{t^3}{(t^4-1)^2 x^3} dt$。
-代入积分式:
-\[ I = -\int \frac{1}{t \cdot x} \cdot \frac{t^3}{(t^4-1)^2 x^2} dt = -\int \frac{t^2}{t^4-1} dt \]
-将被积函数进行部分分式拆分:
-\[ -\int \frac{t^2}{t^4-1} dt = -\frac{1}{2} \int \left( \frac{1}{t^2-1} + \frac{1}{t^2+1} \right) dt \]
-进行积分计算:
-\[ I = -\frac{1}{4} \ln\left| \frac{t-1}{t+1} \right| - \frac{1}{2} \tan^{-1} t + C \]
-其中还原变量为 $t = \frac{\sqrt[4]{1+x^4}}{x}$。
-\end{solution}
-
-\question
-20) 计算不定积分:\[ \int \frac{2}{\sqrt{x} - 3\sqrt[4]{x} + 2} dx \]
-
-\begin{solution}
-使用换元法,设 $\sqrt[4]{x} = t$,则 $x = t^4, dx = 4t^3 dt$。
-代入原积分式:
-\[ I = \int \frac{8t^3}{t^2 - 3t + 2} dt \]
-对被积函数进行多项式除法与部分分式拆分:
-\[ \frac{8t^3}{t^2 - 3t + 2} = 8t + 24 + \frac{56t - 48}{t^2 - 3t + 2} = 8t + 24 + \frac{64}{t-2} - \frac{8}{t-1} \]
-进行积分计算:
-\begin{align*}
-I &= \int (8t + 24) dt + \int \frac{64}{t-2} dt - \int \frac{8}{t-1} dt \\
-&= 4t^2 + 24t + 64 \ln|t-2| - 8 \ln|t-1| + C
-\end{align*}
-还原变量 $t = \sqrt[4]{x}$:
-\[ I = 4\sqrt{x} + 24\sqrt[4]{x} + 64 \ln|\sqrt[4]{x}-2| - 8 \ln|\sqrt[4]{x}-1| + C \]
-\end{solution}
-
-\question
-22) 计算不定积分:\[ \int \frac{3x^3}{x^4 + x^3 + x + 1} dx \]
-
-\begin{solution}
-首先对分母进行因式分解:
-\[ x^4 + x^3 + x + 1 = x^3(x+1) + (x+1) = (x^3+1)(x+1) = (x^2-x+1)(x+1)^2 \]
-将被积函数拆分为部分分式:
-\[ \frac{3x^3}{(x^2-x+1)(x+1)^2} = \frac{x-1}{x^2-x+1} + \frac{2}{x+1} - \frac{1}{(x+1)^2} \]
-逐步进行积分:
-\begin{align*}
-I &= \int \frac{x-1}{x^2-x+1} dx + \int \frac{2}{x+1} dx - \int \frac{1}{(x+1)^2} dx \\
-&= \frac{1}{2} \int \frac{2x-1-1}{x^2-x+1} dx + 2 \ln|x+1| + \frac{1}{x+1} \\
-&= \frac{1}{2} \ln(x^2-x+1) - \frac{1}{2} \int \frac{1}{(x-\frac{1}{2})^2 + \frac{3}{4}} dx + 2 \ln|x+1| + \frac{1}{x+1}
-\end{align*}
-计算得到最终结果:
-\[ I = \ln\left|(x+1)^2 \sqrt{x^2-x+1}\right| - \frac{1}{\sqrt{3}} \tan^{-1}\left(\frac{2x-1}{\sqrt{3}}\right) + \frac{1}{x+1} + C \]
-\end{solution}
     \question
-\[
-\int \frac{x^2(x^4+1)}{\sqrt{x^4+2}} \, dx
-\]
+    \[
+    \int \frac{2}{\sqrt{x} - 3\sqrt[4]{x} + 2} \, dx
+    \]
+    \begin{solution}
+        设 $t = \sqrt[4]{x}$，则 $x = t^4, \, dx = 4t^3 \, dt$。
+        \[
+        I = \int \frac{2}{\sqrt{x} - 3\sqrt[4]{x} + 2} \, dx = \int \frac{8t^3}{t^2 - 3t + 2} \, dt
+        \]
+        进行多项式除法与部分分式分解,可得
+        \[
+        \frac{8t^3}{(t-1)(t-2)} = 8t + 24 + \frac{64}{t-2} - \frac{8}{t-1}
+        \]
+        逐项积分得：
+        \begin{align*}
+        I &= 4t^2 + 24t + 64 \ln|t-2| - 8 \ln|t-1| + C \\
+        &= 4\sqrt{x} + 24\sqrt[4]{x} + 64 \ln|\sqrt[4]{x}-2| - 8 \ln|\sqrt[4]{x}-1| + C
+        \end{align*}
+    \end{solution}
 
-\begin{solution}
-先作代数变形
-\[
-\int \frac{x^2(x^4+1)}{\sqrt{x^4+2}} \, dx
-= \int x^2(x^4+1)(x^4+2)^{-\frac12} \, dx
-\]
+    \question
+    \[
+    \int \frac{3x^3}{x^4 + x^3 + x + 1} \, dx
+    \]
+    \begin{solution}
+        观察到
+        \[
+        x^4+x^3+x+1 = (x^3+1)(x+1) = (x+1)^2(x^2-x+1)
+        \]
+        设待定系数：
+        \[
+        \frac{3x^3}{(x+1)^2(x^2-x+1)} = \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{Cx+D}{x^2-x+1}
+        \]
+        求得 $A=2, B=-1, C=1, D=-1$,
+        \begin{align*}
+        I &= \int \frac{2}{x+1} \, dx - \int \frac{1}{(x+1)^2} \, dx + \int \frac{x-1}{x^2-x+1} \, dx \\
+        &= 2\ln|x+1| + \frac{1}{x+1} + \frac{1}{2}\ln(x^2-x+1) - \frac{1}{\sqrt{3}}\tan^{-1}\left(\frac{2x-1}{\sqrt{3}}\right) + C \\
+        &= \ln\left|(x+1)^2 \sqrt{x^2-x+1}\right| - \frac{\sqrt{3}}{3} \tan^{-1}\left(\frac{2x-1}{\sqrt{3}}\right) + \frac{1}{x+1} + C
+        \end{align*}
+    \end{solution}
 
-将分子整理
-\[
-= \int (x^7+x^3)(x^4)^{-\frac12}(x^4+2)^{-\frac12} \, dx
-\]
+    \question
+    \[
+    \int \frac{x^2(x^4+1)}{\sqrt{x^4+2}} \, dx
+    \]
+    \begin{solution}
+        注意到
+        \[
+        I =\int \frac{x^2(x^4+1)}{\sqrt{x^4+2}} \, dx = \int \frac{x^6+x^2}{\sqrt{x^4+2}} \, dx = \int \frac{x^7+x^3}{\sqrt{x^8+2x^4}} \, dx
+        \]
+        此时有 $\dfrac{d}{dx}(x^8+2x^4) = 8x^7+8x^3 = 8(x^7+x^3)$,于是
+        \[
+        I = \frac{1}{8} \int \frac{d(x^8+2x^4)}{\sqrt{x^8+2x^4}} = \frac{1}{4}\sqrt{x^8+2x^4} + C = \frac{x^2}{4}\sqrt{x^4+2} + C
+        \]
+    \end{solution}
 
-合并为一个整体
-\[
-= \int (x^7+x^3)[x^4(x^4+2)]^{-\frac12} \, dx
-\]
+    \question
+    \[
+    \int \frac{x^2+1}{(x^2-2x+2)^3} \, dx
+    \]
+    \begin{solution}
+        设 $x-1 = \tan \theta$，则 $dx = \sec^2 \theta \, d\theta,x^2-2x+2 = \sec^2 \theta$,代入得：
+        \begin{align*}
+        I &= \int \frac{\tan^2\theta + 2\tan\theta + 2}{\sec^6\theta} \sec^2\theta \, d\theta = \int (\sin^2\theta\cos^2\theta + 2\sin\theta\cos^3\theta + 2\cos^4\theta) \, d\theta \\
+        &= \int \left[ \frac{1}{4}\sin^2 2\theta + 2\sin\theta\cos^3\theta + 2\left(\frac{1+\cos 2\theta}{2}\right)^2 \right] \, \\
+        &= \int \left[ \frac{1}{8} - \frac{1}{8}\cos 4\theta + 2\sin\theta\cos^3\theta + \frac{1}{2} + \cos 2\theta + \frac{1}{4}(1+\cos 4\theta) \right] \, d\theta \\
+        &= \int \left[ \frac{7}{8} + \cos 2\theta + \frac{1}{8}\cos 4\theta + 2\sin\theta\cos^3\theta \right] \, d\theta \\
+        &= \frac{7}{8}\theta + \frac{1}{2}\sin 2\theta + \frac{1}{32}\sin 4\theta - \frac{1}{2}\cos^4\theta + C
+        \end{align*}
+        还原变量：由 $\tan \theta = x-1$，知 
+        \[
+        \cos^2 \theta = \frac{1}{1+\tan^2 \theta} = \frac{1}{x^2-2x+2}
+        \]
+        利用倍角公式：
+        \begin{itemize}
+        \item $\sin 2\theta = 2\sin\theta\cos\theta = 2\tan\theta\cos^2\theta = \dfrac{2(x-1)}{x^2-2x+2}$
+        \item $\sin 4\theta = 2\sin 2\theta(2\cos^2\theta-1) = \dfrac{4(x-1)(2x-x^2)}{(x^2-2x+2)^2}$
+        \item $\cos^4 \theta = \left(\dfrac{1}{x^2-2x+2}\right)^2$
+        \end{itemize}
+        代入整理得
+        \begin{align*}
+        I &= \frac{7}{8} \tan^{-1}(x-1) + \frac{x-1}{x^2-2x+2} + \frac{(x-1)(2x-x^2)}{8(x^2-2x+2)^2} - \frac{4}{8(x^2-2x+2)^2} + C \\
+        &= \frac{7}{8} \tan^{-1}(x-1) + \frac{7x^3-21x^2+30x-20}{8(x^2-2x+2)^2} + C
+        \end{align*}
+    \end{solution}
 
-即
-\[
-= \int (x^7+x^3)(x^8+2x^4)^{-\frac12} \, dx
-\]
+    \question 
+    \[
+    \int \frac{dx}{\sqrt{x+1} + \sqrt[4]{x+1}}
+    \]
+    \begin{solution}
+        设 $x+1 = u^4$，则 $dx = 4u^3 \, du$。原积分变为：
+        \[
+        I = \int \frac{4u^3}{u^2+u} \, du = 4 \int \frac{u^2}{u+1} \, du
+        \]
+        进行多项式除法：$\frac{u^2}{u+1} = u - 1 + \frac{1}{u+1}$。
+        \begin{align*}
+        I &= 4 \int (u - 1 + \frac{1}{u+1}) \, du = 4 \left( \frac{1}{2}u^2 - u + \ln|u+1| \right) + C \\
+        &= 2u^2 - 4u + 4\ln(u+1) + C
+        \end{align*}
+        还原变量 $u = \sqrt[4]{x+1}$：
+        \[
+        I = 2\sqrt{x+1} - 4\sqrt[4]{x+1} + 4\ln(\sqrt[4]{x+1}+1) + C
+        \]
+    \end{solution}
 
-注意到
-\[
-\frac{d}{dx}(x^8+2x^4)=8x^7+8x^3=8(x^7+x^3)
-\]
+    \question
+    \[
+    \int \frac{1+x^2}{x\sqrt{x^4-x^2+1}} \, dx
+    \]
+    \begin{solution}
+        分子分母同时除以 $x^2$：
+        \[
+        I = \int \frac{1 + \frac{1}{x^2}}{x \cdot \frac{1}{x} \sqrt{x^2 - 1 + \frac{1}{x^2}}} \, dx = \int \frac{1 + \frac{1}{x^2}}{\sqrt{(x - \frac{1}{x})^2 + 1}} \, dx
+        \]
+        设 $t = x - \frac{1}{x}$，则 $dt = (1 + \frac{1}{x^2}) \, dx$。
+        \[
+        I = \int \frac{dt}{\sqrt{t^2+1}} = \ln|t + \sqrt{t^2+1}| + C
+        \]
+        还原变量 $t = \frac{x^2-1}{x}$：
+        \[
+        I = \ln\left| \frac{x^2-1}{x} + \sqrt{\frac{x^4-x^2+1}{x^2}} \right| + C = \ln\left| \frac{x^2-1 + \sqrt{x^4-x^2+1}}{x} \right| + C
+        \]
+    \end{solution}
 
-于是
-\[
-= \frac18 \int 8(x^7+x^3)(x^8+2x^4)^{-\frac12} \, dx
-\]
+    \question
+    \[
+    \int \frac{1}{(2x^2+3)\sqrt{5x^2+4}} \, dx
+    \]
+    \begin{solution}
+        设 $x = \frac{1}{u}$，则 $dx = -\frac{1}{u^2} \, du$。
+        \[
+        I = \int \frac{-\frac{1}{u^2} \, du}{(\frac{2}{u^2}+3)\sqrt{\frac{5}{u^2}+4}} = \int \frac{-u \, du}{(2+3u^2)\sqrt{5+4u^2}}
+        \]
+        设 $t = \sqrt{5+4u^2}$，则 $t^2 = 5+4u^2 \Rightarrow u^2 = \frac{t^2-5}{4}$，且 $t \, dt = 4u \, du$。
+        代入 $2+3u^2 = 2 + 3(\frac{t^2-5}{4}) = \frac{3t^2-7}{4}$：
+        \[
+        I = \int \frac{-\frac{1}{4}t \, dt}{\frac{3t^2-7}{4} \cdot t} = -\int \frac{dt}{3t^2-7} = \frac{1}{3} \int \frac{dt}{\frac{7}{3}-t^2}
+        \]
+        利用公式 $\int \frac{dx}{a^2-x^2} = \frac{1}{2a}\ln|\frac{a+x}{a-x}|$：
+        \[
+        I = \frac{1}{3} \cdot \frac{1}{2\sqrt{7/3}} \ln\left| \frac{\sqrt{7/3}+t}{\sqrt{7/3}-t} \right| + C = \frac{\sqrt{21}}{42} \ln\left| \frac{\sqrt{7}+\sqrt{3}t}{\sqrt{7}-\sqrt{3}t} \right| + C
+        \]
+        其中 $t = \sqrt{5+\frac{4}{x^2}}$。
+    \end{solution}
 
-积分得
-\[
-= \frac18 \cdot \frac{1}{\frac12}(x^8+2x^4)^{\frac12}+C
-\]
+    \question
+    \[
+    \int \frac{x+x^{\frac{2}{3}}+x^{\frac{1}{6}}}{x(1+x^{\frac{1}{3}})} \, dx
+    \]
+    \begin{solution}
+        设 $x = u^6$，则 $dx = 6u^5 \, du$。
+        \[
+        I = \int \frac{u^6+u^4+u}{u^6(1+u^2)} \cdot 6u^5 \, du = 6 \int \frac{u^6+u^4+u}{1+u^2} \, du
+        \]
+        由于 $u^6+u^4 = u^4(u^2+1)$，故：
+        \[
+        I = 6 \int \left( u^4 + \frac{u}{1+u^2} \right) \, du = \frac{6}{5}u^5 + 3\ln(1+u^2) + C
+        \]
+        还原变量 $u = x^{\frac{1}{6}}$：
+        \[
+        I = \frac{6}{5}x^{\frac{5}{6}} + 3\ln(1+x^{\frac{1}{3}}) + C
+        \]
+    \end{solution}
 
-化简
-\[
-= \frac14 (x^8+2x^4)^{\frac12}+C
-\]
-\end{solution}
-\question
-14) 计算不定积分:\[ \int \frac{x^2+1}{(x^2-2x+2)^3} dx \]
+    \question
+    \[
+    \int \frac{\sqrt[3]{1+\sqrt[4]{x}}}{\sqrt{x}} \, dx
+    \]
+    \begin{solution}
+        设 $1+x^{\frac{1}{4}} = t^3$，则 $x^{\frac{1}{4}} = t^3-1 \Rightarrow x = (t^3-1)^4$。
+        $dx = 4(t^3-1)^3 \cdot 3t^2 \, dt = 12t^2(t^3-1)^3 \, dt$。
+        \[
+        I = \int \frac{t}{(t^3-1)^2} \cdot 12t^2(t^3-1)^3 \, dt = 12 \int (t^3-1)t^3 \, dt = 12 \int (t^6-t^3) \, dt
+        \]
+        积分得：
+        \[
+        I = 12 \left( \frac{1}{7}t^7 - \frac{1}{4}t^4 \right) + C = \frac{12}{7}t^7 - 3t^4 + C
+        \]
+        还原变量 $t = \sqrt[3]{1+\sqrt[4]{x}}$。
+    \end{solution}
 
-\begin{solution}
-首先对分子进行拆分,凑出分母的导数项与基本项:
-\[ \int \frac{(x^2-2x+2)+(2x-2)+1}{(x^2-2x+2)^3} dx \]
-将其拆分为三个部分进行积分:
-\[ = \int \frac{dx}{(x^2-2x+2)^2} + \int \frac{(2x-2)dx}{(x^2-2x+2)^3} + \int \frac{dx}{(x^2-2x+2)^3} \]
+    \question
+    \[
+    \int \frac{x-1}{(x+1)\sqrt{x^3+x^2+x}} \, dx
+    \]
+    \begin{solution}
+        分子分母同时除以 $x^{\frac{3}{2}}$ 并进行配凑：
+        \[
+        I = \int \frac{1 - \frac{1}{x}}{(x+1) \sqrt{x+1+\frac{1}{x}}} \cdot \frac{1}{\sqrt{x}} \, dx
+        \]
+        此题最简路径为分子分母同乘 $(x+1)$ 构造：
+        \[
+        I = \int \frac{x^2-1}{(x+1)^2 \sqrt{x^3+x^2+x}} \, dx = \int \frac{1-\frac{1}{x^2}}{(x+2+\frac{1}{x})\sqrt{x+1+\frac{1}{x}}} \, dx
+        \]
+        设 $u = \sqrt{x+1+\frac{1}{x}}$，则 $u^2 = x+1+\frac{1}{x} \Rightarrow 2u \, du = (1-\frac{1}{x^2}) \, dx$。
+        代入得（注意 $x+2+\frac{1}{x} = u^2+1$）：
+        \[
+        I = \int \frac{2u \, du}{(u^2+1) \cdot u} = 2 \int \frac{du}{u^2+1} = 2\tan^{-1} u + C
+        \]
+        还原变量：$I = 2\tan^{-1} \sqrt{x+1+\frac{1}{x}} + C$。
+    \end{solution}
 
-对第一项和第三项进行配方:
-\[ x^2-2x+2 = (x-1)^2+1 \]
-设 $x-1 = \tan t$,则 $dx = \sec^2 t dt$。
-代入后积分式变为:
-\[ \int \cos^2 t dt + \int \cos^4 t dt - \frac{1}{2(x^2-2x+2)^2} \]
-
-利用降幂公式计算三角积分:
-\[ \int \cos^2 t dt = \frac{1}{2} \int (1+\cos 2t) dt = \frac{t}{2} + \frac{\sin 2t}{4} \]
-\[ \int \cos^4 t dt = \frac{1}{4} \int (1+\cos 2t)^2 dt = \dots = \frac{3t}{8} + \frac{\sin 2t}{4} + \frac{\sin 4t}{32} \]
-
-将各部分结果合并:
-\[ I = \frac{7t}{8} + \frac{\sin 2t}{2} + \frac{\sin 4t}{32} - \frac{1}{2(x^2-2x+2)^2} + C \]
-
-利用三角恒等式将 $t$ 还原为 $x$:
-\[ \sin 2t = \frac{2(x-1)}{x^2-2x+2}, \quad \sin 4t = \frac{4(x-1)(1-2\sin^2 t)}{(x^2-2x+2)^2} \]
-最终整理得到原文结果:
-\[ I = \frac{7}{8} \tan^{-1}(x-1) + \frac{x-1}{x^2-2x+2} + \frac{(x-1)(1-2\sin^2 t)}{8(x^2-2x+2)^2} - \dots + C \]
-\[ I = \frac{7}{8} \tan^{-1}(x-1) + \frac{7x^3-21x^2+30x-20}{8(x^2-2x+2)^2} + C \]
-\end{solution}
-\question
-40) 计算不定积分:\[ \int \sqrt[3]{\frac{2x+1}{x+3}} dx \]
-
-\begin{solution}
-使用换元法,设 $t^3 = \frac{2x+1}{x+3}$,则可求得 $x = \frac{3t^3-1}{2-t^3}$。
-对 $x$ 求导得 $dx = \frac{15t^2}{(2-t^3)^2} dt$。
-代入原积分式:
-\[ I = 15 \int \frac{t^3}{(2-t^3)^2} dt \]
-根据原文推导过程,利用分部积分或拆分项处理:
-\[ = 5 \int \left( -\frac{1}{2-t^3} + \frac{2(t^3+1)}{(2-t^3)^2} \right) dt = -5 \int \frac{1}{2-t^3} dt + \frac{5t}{2-t^3} \]
-进一步整理为:
-\[ = 5 \int \frac{1}{t^3-2} dt - \frac{5t}{t^3-2} \]
-利用部分分式进行拆分:
-\[ = 5 \int \left( \frac{-\frac{\sqrt[3]{2}}{6}t - \frac{\sqrt[3]{4}}{3}}{t^2 + \sqrt[3]{2}t + \sqrt[3]{4}} + \frac{\frac{\sqrt[3]{2}}{6}}{t-\sqrt[3]{2}} \right) dt - \frac{5t}{t^3-2} \]
-进行积分计算并还原变量 $t = \sqrt[3]{\frac{2x+1}{x+3}}$:
-\[ I = \frac{5\sqrt[3]{108}}{6} \tan^{-1} \frac{\sqrt{3}(\sqrt[3]{4}t+1)}{3} - \frac{5\sqrt[3]{2}}{12} \ln(t^2+\sqrt[3]{2}t+\sqrt[3]{4}) + \frac{5\sqrt[3]{2}}{6} \ln|t-\sqrt[3]{2}| - \frac{5t}{t^3-2} + C \]
-\end{solution}
-
-\question
-42) 计算不定积分:\[ \int \frac{dx}{\sqrt{x+1} + \sqrt[4]{x+1}} \]
-
-\begin{solution}
-设 $t = x+1$,则 $dt = dx$。
-积分变为:
-\[ \int \frac{dt}{\sqrt{t} + \sqrt[4]{t}} = \int \frac{dt}{\sqrt{t}(\sqrt[4]{t}+1)} \]
-再设 $u = \sqrt[4]{t}$,则 $t = u^4, dt = 4u^3 du$。
-代入积分式:
-\[ \int \frac{4u^3}{u^2+u} du = \int \frac{4u^2}{u+1} du \]
-对被积函数进行多项式除法:
-\[ \int \left( 4u - 4 + \frac{4}{u+1} \right) du = 2u^2 - 4u + 4 \ln|u+1| + C \]
-还原变量 $u = \sqrt[4]{x+1}$,得到最终结果:
-\[ I = 2\sqrt{x+1} - 4\sqrt[4]{x+1} + 4 \ln(\sqrt[4]{x+1}+1) + C \]
-\end{solution}
-
-\question
-43) 计算不定积分:\[ \int \frac{1+x^2}{x\sqrt{x^4-x^2+1}} dx \]
-
-\begin{solution}
-分子分母同时除以 $x^2$:
-\[ I = \int \frac{1 + \frac{1}{x^2}}{\sqrt{x^2 - 1 + \frac{1}{x^2}}} dx \]
-设 $t = x - \frac{1}{x}$,则 $dt = (1 + \frac{1}{x^2}) dx$,且 $x^2 - 1 + \frac{1}{x^2} = t^2 + 1$。
-代入积分式:
-\[ I = \int \frac{dt}{\sqrt{t^2+1}} = \ln|t + \sqrt{t^2+1}| + C \]
-还原变量:
-\[ I = \ln\left| x - \frac{1}{x} + \sqrt{x^2 - 1 + \frac{1}{x^2}} \right| + C \]
-\end{solution}
-
-\question
-44) 计算不定积分:\[ \int \frac{1}{(2x^2+3)\sqrt{5x^2+4}} dx \]
-
-\begin{solution}
-将被积函数改写,提取 $x^3$:
-\[ I = \int \frac{dx}{x^3(2 + \frac{3}{x^2})\sqrt{5 + \frac{4}{x^2}}} \]
-设 $t^2 = 5 + \frac{4}{x^2}$,则 $2t dt = -\frac{8}{x^3} dx$,即 $\frac{1}{x^3} dx = -\frac{1}{4} t dt$。
-同时 $\frac{1}{x^2} = \frac{t^2-5}{4}$,代入分母项 $2 + \frac{3}{x^2} = \frac{3t^2-7}{4}$。
-代入积分式:
-\[ I = -\int \frac{\frac{1}{4} t dt}{\frac{3t^2-7}{4} \cdot t} = -\int \frac{dt}{3t^2-7} = -\frac{1}{3} \int \frac{dt}{t^2 - \frac{7}{3}} \]
-进行积分计算:
-\[ I = -\frac{\sqrt{21}}{42} \ln\left| \frac{\sqrt{3}t - \sqrt{7}}{\sqrt{3}t + \sqrt{7}} \right| + C \]
-还原变量 $t = \sqrt{5 + \frac{4}{x^2}}$。
-\end{solution}
-
-\question
-45) 计算不定积分:\[ \int \frac{x+x^{\frac{2}{3}}+x^{\frac{1}{6}}}{x(1+x^{\frac{1}{3}})} dx \]
-
-\begin{solution}
-使用换元法,设 $x = u^6$,则 $dx = 6u^5 du$。
-代入后简化:
-\[ I = 6 \int \frac{u^6+u^4+u}{u^6(1+u^2)} \cdot u^5 du = 6 \int \frac{u^6+u^4+u}{1+u^2} du \]
-利用多项式除法拆分:
-\[ I = 6 \int \left( u^4 + \frac{u}{1+u^2} \right) du = \frac{6}{5} u^5 + 3 \ln(1+u^2) + C \]
-还原变量 $u = x^{\frac{1}{6}}$:
-\[ I = \frac{6}{5} x^{\frac{5}{6}} + 3 \ln(1+x^{\frac{1}{3}}) + C \]
-\end{solution}
-
-\question
-47) 计算不定积分:\[ \int \frac{\sqrt[3]{1+\sqrt[4]{x}}}{\sqrt{x}} dx \]
-
-\begin{solution}
-设 $1 + x^{\frac{1}{4}} = t^3$,则 $x = (t^3-1)^4,dx = 12t^2(t^3-1)^3 dt$。
-代入积分式:
-\[ I = \int \frac{t}{(t^3-1)^2} \cdot 12t^2(t^3-1)^3 dt = 12 \int (t^6 - t^3) dt \]
-进行积分计算:
-\[ I = 12 \left( \frac{t^7}{7} - \frac{t^4}{4} \right) + C = \frac{12}{7} t^7 - 3t^4 + C \]
-还原变量 $t = (1+x^{\frac{1}{4}})^{\frac{1}{3}}$。
-\end{solution}
-
-\question
-48) 计算不定积分:\[ \int \frac{x-1}{(x+1)\sqrt{x^3+x^2+x}} dx \]
-
-\begin{solution}
-利用恒等变形:
-\[ I = \int \frac{x^2-1}{(x+1)^2 \sqrt{x^3+x^2+x}} dx = \int \frac{1 - \frac{1}{x^2}}{(x + \frac{1}{x} + 2)\sqrt{x + 1 + \frac{1}{x}}} dx \]
-设 $u = \sqrt{x + 1 + \frac{1}{x}}$,则 $2u du = (1 - \frac{1}{x^2}) dx$。
-代入积分式:
-\[ I = \int \frac{2u du}{(u^2+1) \cdot u} = \int \frac{2}{u^2+1} du = 2 \tan^{-1} u + C \]
-还原变量:
-\[ I = 2 \tan^{-1} \sqrt{x + 1 + \frac{1}{x}} + C \]
-\end{solution}
-
-\question
-49) 计算不定积分:\[ \int \frac{x}{(x-1)\sqrt{x^2-2x}} dx \]
-
-\begin{solution}
-设 $t = x-1$,则 $x = t+1,x^2-2x = t^2-1$。
-代入积分式:
-\[ I = \int \frac{t+1}{t\sqrt{t^2-1}} dt = \int \frac{1}{\sqrt{t^2-1}} dt + \int \frac{1}{t\sqrt{t^2-1}} dt \]
-进行积分计算:
-\[ I = \ln|t + \sqrt{t^2-1}| + \sec^{-1} t + C \]
-还原变量 $t = x-1$:
-\[ I = \ln|x - 1 + \sqrt{x^2-2x}| + \sec^{-1}(x-1) + C \]
-\end{solution}
+    \question
+    \[
+    \int \frac{x}{(x-1)\sqrt{x^2-2x}} \, dx
+    \]
+    \begin{solution}
+        设 $x-1 = t$，则 $dx = dt$，$x = t+1$，$x^2-2x = (x-1)^2-1 = t^2-1$。
+        \[
+        I = \int \frac{t+1}{t\sqrt{t^2-1}} \, dt = \int \frac{dt}{\sqrt{t^2-1}} + \int \frac{dt}{t\sqrt{t^2-1}}
+        \]
+        第一项为 $\ln|t+\sqrt{t^2-1}|$；第二项令 $t = \sec \theta$ 或直接得 $\sec^{-1} |t|$。
+        \[
+        I = \ln|t+\sqrt{t^2-1}| + \sec^{-1}|t| + C
+        \]
+        还原变量 $t = x-1$：
+        \[
+        I = \ln|x-1+\sqrt{x^2-2x}| + \sec^{-1}|x-1| + C
+        \]
+    \end{solution}
 
 \question
 51) 计算不定积分:\[ \int \frac{1}{\sqrt{1-x} + \sqrt{1+x^2}} dx \]
@@ -5429,6 +4835,7 @@ I &= \int \frac{x-1}{x^2-x+1} dx + \int \frac{2}{x+1} dx - \int \frac{1}{(x+1)^2
 对于第二部分,设 $u^2 = 1-x$。
 根据笔记底部的最终整理结果:
 \[ I = -\sqrt{2} \left( \ln\left|\sqrt{2x^2+2} + x - 1\right| - \ln|x+1| \right) + C \]
+very bash
 \end{solution}
 \question
 计算 $[\int \frac{3\sin 2x + 4\cos x e^{\sin x} + 8\cos x}{3\sin x + e^{\sin x} + 1} dx]$。
@@ -7288,7 +6695,7 @@ du=-\csc^2 x\,dx
 dx=-\frac{du}{1+u^2}
 \]
 
-当 $x=0$ 时,$u=+\infty$；当 $x=\pi$ 时,$u=-\infty$
+当 $x=0$ 时,$u=+\infty$;当 $x=\pi$ 时,$u=-\infty$
 
 积分化为
 \[
@@ -8241,7 +7648,7 @@ I &= \int e^y \cos y \, dy \\
 \question Evaluate $\displaystyle \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx$.
 
 \begin{solution}
-使用代换 $y = 1-x$,则 $dy = -dx$。当 $x=0, y=1$；当 $x=1, y=0$。
+使用代换 $y = 1-x$,则 $dy = -dx$。当 $x=0, y=1$;当 $x=1, y=0$。
 
 \begin{align*}
 I &= \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx \\
@@ -8499,6 +7906,73 @@ du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
 \frac{1}{2}
 \]
 \end{solution}
+
+    \question
+    \[
+    \int \sqrt{(2x+5)(2x-3)} \, dx
+    \]
+    \begin{solution}
+        先对根号内进行配方:
+        \[
+        (2x+5)(2x-3) = 4x^2+4x-15 = (2x+1)^2-16
+        \]
+        令 $2x+1 = 4\sec\theta$，则 $2\,dx = 4\sec\theta\tan\theta \, d\theta$，即 $dx = 2\sec\theta\tan\theta \, d\theta$。
+        同时，根式部分化为:
+        \[
+        \sqrt{(2x+1)^2-16} = \sqrt{16(\sec^2\theta-1)} = 4\tan\theta
+        \]
+        代入积分式:
+        \[
+        I = \int 4\tan\theta \cdot (2\sec\theta\tan\theta) \, d\theta = 8 \int \sec\theta\tan^2\theta \, d\theta
+        \]
+        利用恒等式 $\tan^2\theta = \sec^2\theta - 1$:
+        \[
+        I = 8 \int (\sec^3\theta - \sec\theta) \, d\theta
+        \]
+        应用 $\sec^3\theta$ 的分部积分知
+        \begin{align*}
+        I &= 8 \left[ \frac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta+\tan\theta|) - \ln|\sec\theta+\tan\theta| \right] + C \\
+        &= 4\sec\theta\tan\theta - 4\ln|\sec\theta+\tan\theta| + C
+        \end{align*}
+        由代换知 $\sec\theta = \frac{2x+1}{4}$，构造直角三角形可得 $\tan\theta = \frac{\sqrt{(2x+1)^2-16}}{4}$。
+        代回原变量:
+        \begin{align*}
+        I &= 4 \cdot \frac{2x+1}{4} \cdot \frac{\sqrt{(2x+5)(2x-3)}}{4} - 4\ln\left| \frac{2x+1}{4} + \frac{\sqrt{(2x+5)(2x-3)}}{4} \right| + C \\
+        &= \frac{1}{4}(2x+1)\sqrt{(2x+5)(2x-3)} - 4\ln\left| 2x+1 + \sqrt{(2x+5)(2x-3)} \right| + C'
+        \end{align*}
+        （其中 $\ln 4$ 已并入常数 $C'$ 中）。
+    \end{solution}
+
+\question 
+    \[
+    \int \frac{\sqrt{x+1} - \sqrt{x-1}}{\sqrt{x+1} + \sqrt{x-1}} \, dx
+    \]
+    \begin{solution}
+        有理化得
+        \begin{align*}
+        I &= \int \frac{(\sqrt{x+1} - \sqrt{x-1})^2}{(x+1) - (x-1)} \, dx \\
+        &= \int \frac{x+1 + x-1 - 2\sqrt{x^2-1}}{2} \, dx \\
+        &= \int (x - \sqrt{x^2-1}) \, dx
+        \end{align*}
+        对于积分 $I_1 = \int \sqrt{x^2-1} \, dx$，设 $x = \sec\theta$，则 $dx = \sec\theta\tan\theta \, d\theta$:
+        \begin{align*}
+        I_1 &= \int \sqrt{\sec^2\theta - 1} \cdot \sec\theta\tan\theta \, d\theta \\
+        &= \int \sec\theta \tan^2\theta \, d\theta = \int (\sec^3\theta - \sec\theta) \, d\theta
+        \end{align*}
+        应用分部积分或公式可得 $\int \sec^3\theta \, d\theta = \frac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta + \tan\theta|)$，故:
+        \begin{align*}
+        I_1 &= \frac{1}{2}\sec\theta\tan\theta + \frac{1}{2}\ln|\sec\theta + \tan\theta| - \ln|\sec\theta + \tan\theta| \\
+        &= \frac{1}{2}\sec\theta\tan\theta - \frac{1}{2}\ln|\sec\theta + \tan\theta|
+        \end{align*}
+        将 $\sec\theta = x, \tan\theta = \sqrt{x^2-1}$ 代回:
+        \[
+        I_1 = \frac{x}{2}\sqrt{x^2-1} - \frac{1}{2}\ln|x + \sqrt{x^2-1}|
+        \]
+        最后代回原式得结果:
+        \[
+        I = \frac{1}{2}x^2 - \frac{x}{2}\sqrt{x^2-1} + \frac{1}{2} \ln|x + \sqrt{x^2-1}| + C
+        \]
+    \end{solution}
 
 \question
 
@@ -8763,6 +8237,38 @@ u = \frac{1}{\ln x}, \quad dv = dx \implies du = -\frac{1}{x (\ln x)^2} dx, \qua
 \[ = \frac{2}{3}\sqrt{x+2\sqrt{x}}(x-\sqrt{x}) - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C \]
 \[ = \frac{2}{3}\sqrt{x}(\sqrt{x}-1)\sqrt{x+2\sqrt{x}} - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C \]
 \end{solution}
+
+    \question
+    \[
+    \int \sqrt[3]{\frac{2x+1}{x+3}} \, dx
+    \]
+    \begin{solution}
+        设 $t = \sqrt[3]{\dfrac{2x+1}{x+3}}$，则 
+        \[
+        x = \frac{3t^3-1}{2-t^3},\quad dx = \frac{15t^2}{(2-t^3)^2} \, dt
+        \]
+        于是
+        \[
+        I = \int \sqrt[3]{\frac{2x+1}{x+3}} \, dx = 15 \int \frac{t^3}{(2-t^3)^2} \, dt
+        \]
+        利用分部积分，设 
+        \[
+        u=t, dv = \frac{3t^2}{(2-t^3)^2}dt \Rightarrow v = \frac{1}{2-t^3}
+        \]
+        有
+        \[
+        I = \frac{5t}{2-t^3} - 5 \int \frac{1}{2-t^3} \, dt
+        \]
+        对 $\dfrac{1}{t^3-2}$ 进行部分分式分解。注意到 $t^3-2 = (t-\sqrt[3]{2})(t^2+\sqrt[3]{2}t+\sqrt[3]{4})$：
+        \[
+        \frac{1}{t^3-2} = \frac{1}{3\sqrt[3]{4}} \left( \frac{1}{t-\sqrt[3]{2}} - \frac{t+\sqrt[3]{4}}{t^2+\sqrt[3]{2}t+\sqrt[3]{4}} \right)
+        \]
+        逐步积分后有
+        \[
+        I = \frac{5t}{2-t^3} + \frac{5\sqrt[3]{2}}{12} \ln(t^2+\sqrt[3]{2}t+\sqrt[3]{4}) - \frac{5\sqrt[3]{2}}{6} \ln|t-\sqrt[3]{2}| - \frac{5\sqrt[3]{108}}{6} \tan^{-1}\left( \frac{2t+\sqrt[3]{2}}{\sqrt[3]{108}} \right) + C
+        \]
+        其中$t = \sqrt[3]{\dfrac{2x+1}{x+3}}$。
+    \end{solution}
     \question 证明
 \[
 \int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^{-x}\sin x \, dx = \frac{1}{2}.
@@ -10230,7 +9736,7 @@ u = \ln y \implies du = \frac{1}{y} \, dy, \quad dv = 2y \, dy \implies v = y^2
 22) 计算广义积分 $I = \int_{0}^{\infty} \frac{\ln x}{x^2+2x+4} \, dx$
 
 \begin{solution}
-设 $x = \frac{4}{u}, dx = -\frac{4}{u^2}du$。当 $x \to 0, u \to \infty$；当 $x \to \infty, u \to 0$。
+设 $x = \frac{4}{u}, dx = -\frac{4}{u^2}du$。当 $x \to 0, u \to \infty$;当 $x \to \infty, u \to 0$。
 \begin{align*}
 I &= \int_{\infty}^{0} \frac{\ln(4/u)}{\frac{16}{u^2} + \frac{8}{u} + 4} \left(-\frac{4}{u^2}\right) du = \int_{0}^{\infty} \frac{\ln 4 - \ln u}{u^2+2u+4} du \\
 &= \ln 4 \int_{0}^{\infty} \frac{1}{u^2+2u+4} du - \int_{0}^{\infty} \frac{\ln u}{u^2+2u+4} du \\
@@ -10737,7 +10243,7 @@ I = \int_{0}^{\frac{\pi}{2}} \ln(\sin x) \, dx = \int_{0}^{\frac{\pi}{2}} \ln(\c
 
 设 $I = \int_{0}^{\pi} x f(\sin x) dx$。
 使用换元法,设 $x = \pi - t$,则 $dx = -dt$。
-当 $x = 0$ 时,$t = \pi$；当 $x = \pi$ 时,$t = 0$。
+当 $x = 0$ 时,$t = \pi$;当 $x = \pi$ 时,$t = 0$。
 
 代入原积分:
 \begin{align*}
@@ -10758,7 +10264,7 @@ $2I = \pi \int_{0}^{\pi} f(\sin x) dx \implies I = \frac{\pi}{2} \int_{0}^{\pi} 
 利用 $\sin^2 x = 1 - \cos^2 x$ 变形:
 \[ I = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{4 - \cos^2 x} dx \]
 
-设 $u = \cos x, du = -\sin x dx$。当 $x=0, u=1$；当 $x=\pi, u=-1$:
+设 $u = \cos x, du = -\sin x dx$。当 $x=0, u=1$;当 $x=\pi, u=-1$:
 \begin{align*}
 I &= \frac{\pi}{2} \int_{1}^{-1} \frac{-du}{4 - u^2} \\
 &= \frac{\pi}{2} \int_{-1}^{1} \frac{1}{4 - u^2} du \\
@@ -10899,7 +10405,7 @@ x=\frac{\pi}{2}-y
 dx=-dy
 \]
 
-当 $x=\frac{\pi}{2}$ 时,$y=0$；  
+当 $x=\frac{\pi}{2}$ 时,$y=0$;  
 当 $x=0$ 时,$y=\frac{\pi}{2}$。
 
 于是
