@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.2.5)  6 FEB 2026 23:58
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.2.5)  8 FEB 2026 01:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -5414,6 +5414,12 @@ LaTeX Warning: Label `question@79' multiply defined.
 LaTeX Warning: Label `question@80' multiply defined.
 
 
+LaTeX Warning: Label `part@80@1' multiply defined.
+
+
+LaTeX Warning: Label `part@80@2' multiply defined.
+
+
 LaTeX Warning: Label `question@81' multiply defined.
 
 
@@ -6799,10 +6805,6 @@ Underfull \vbox (badness 10000) detected at line 4324
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1032]
-Underfull \vbox (badness 10000) detected at line 5247
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6810,26 +6812,11 @@ Underfull \vbox (badness 10000) detected at line 5247
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1033]
 
-LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 5267.
-
-
-
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1034]
-Overfull \hbox (2.29321pt too wide) detected at line 5298
-\OT1/cmr/m/n/12 ([] 7\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 x
-\OT1/cmr/m/n/12 )[] + ([] 7\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] \OML/cmm/m/i
-t/12 x\OT1/cmr/m/n/12 )[] = [][] 7\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + 2 [] 7\O
-ML/cmm/m/it/12 x [] x \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12
- + [][] 7\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + 2 [] 7\OML/cmm/m/it/12 x [] x \OT
-1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 x
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6848,6 +6835,10 @@ ML/cmm/m/it/12 x [] x \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1037]
+Underfull \vbox (badness 2717) detected at line 5391
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6890,10 +6881,6 @@ ML/cmm/m/it/12 x [] x \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1044]
-Underfull \vbox (badness 1803) detected at line 5792
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6912,6 +6899,9 @@ Underfull \vbox (badness 1803) detected at line 5792
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1047]
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6924,31 +6914,12 @@ Underfull \vbox (badness 1803) detected at line 5792
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1049]
-Overfull \hbox (86.09065pt too wide) detected at line 6040
-\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 = 1  [][]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12
- 6 = 6\OML/cmm/m/it/12 A  [][]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 A \OT1/cmr/m
-/n/12 = 1\OML/cmm/m/it/12 ;  u \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m
-/n/12 1  [][]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 6 = \OMS/cmsy/m/n/12 ^^@\OT1/c
-mr/m/n/12 2\OML/cmm/m/it/12 B  [][]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 B \OT1/
-cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ;  u \OT1/cm
-r/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]  [][])  \OT1/cmr/m/n/12 6 = []\OML/cmm/m/it/1
-2 C  [][]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 C \OT1/cmr/m/n/12 = 8
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1050]
-Overfull \hbox (16.8107pt too wide) detected at line 6092
-\OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ^^A [] \OML/cmm/m/it/12 du \OT1/cmr/m/
-n/12 = [] [] \OMS/cmsy/m/n/12 ^^A [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = [] [
-] \OMS/cmsy/m/n/12 ^^A [] \OML/cmm/m/it/12 du
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -6985,8 +6956,9 @@ n/12 = [] [] \OMS/cmsy/m/n/12 ^^A [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = [] [
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1056]
-Overfull \vbox (1.43602pt too high) detected at line 6511
- []
+
+LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 6113.
 
 
 
@@ -7007,6 +6979,41 @@ Overfull \vbox (1.43602pt too high) detected at line 6511
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1059]
+Overfull \hbox (46.4853pt too wide) detected at line 6235
+[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 )([] [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/c
+mr/m/n/12 2) \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][]([] 2\OML/cmm/m/it/12 x 
+\OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/
+12 x dx \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 2 [][]([] 2\OML/cmm/m/it/12 x \
+OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dx
+ []
+
+
+Overfull \hbox (43.39458pt too wide) detected at line 6266
+[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][] \OMS
+/cmsy/m/n/12 ^^@ [] [][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/1
+2 ^^@ [] \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] \OML/cmm/m/it/1
+2 dx
+ []
+
+
+Overfull \hbox (15.4526pt too wide) detected at line 6271
+\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12
+ 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] = 2 [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/
+n/12 ^^@ \OT1/cmr/m/n/12 2[] = 2 [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \O
+T1/cmr/m/n/12 2[] = 2([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/i
+t/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/
+12 )
+ []
+
+
+Overfull \hbox (35.68893pt too wide) detected at line 6276
+[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][]
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7019,22 +7026,17 @@ Overfull \vbox (1.43602pt too high) detected at line 6511
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1061]
+Underfull \hbox (badness 10000) in paragraph at lines 6374--6375
+
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1062]
-Overfull \hbox (68.14905pt too wide) detected at line 6812
-[] [] \OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ^^A [] \OM
-L/cmm/m/it/12 dt \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 dt \OT1/cmr/m/n/12 = 
-[] [] + [] \OML/cmm/m/it/12 dt \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 j\OT1/cmr/
-m/n/12 1 + \OML/cmm/m/it/12 t\OMS/cmsy/m/n/12 j ^^@ [] j\OT1/cmr/m/n/12 1 \OMS/
-cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + \OML/cmm
-/m/it/12 C \OT1/cmr/m/n/12 = [] [] + \OML/cmm/m/it/12 C
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7101,6 +7103,12 @@ cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + \OML/cmm
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1073]
+Overfull \hbox (6.52919pt too wide) detected at line 6938
+[] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [] [] [] \OML/cmm/m/it/12 dx \OT
+1/cmr/m/n/12 = [] [] [] [] \OML/cmm/m/it/12 dx
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7113,6 +7121,12 @@ cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + \OML/cmm
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1075]
+Overfull \hbox (37.88434pt too wide) detected at line 7055
+[][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] + [] = [] [] 2 \OMS/cmsy/m/n/1
+2 ^^@ \OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 2[]\OML/cmm/m/it/12 :
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7131,41 +7145,6 @@ cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + \OML/cmm
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1078]
-Overfull \hbox (46.4853pt too wide) detected at line 7402
-[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
-/12 x\OT1/cmr/m/n/12 )([] [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/c
-mr/m/n/12 2) \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][]([] 2\OML/cmm/m/it/12 x 
-\OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/
-12 x dx \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 2 [][]([] 2\OML/cmm/m/it/12 x \
-OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dx
- []
-
-
-Overfull \hbox (43.39458pt too wide) detected at line 7433
-[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
-/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][] \OMS
-/cmsy/m/n/12 ^^@ [] [][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/1
-2 ^^@ [] \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] \OML/cmm/m/it/1
-2 dx
- []
-
-
-Overfull \hbox (15.4526pt too wide) detected at line 7438
-\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12
- 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] = 2 [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/
-n/12 ^^@ \OT1/cmr/m/n/12 2[] = 2 [] 2\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \O
-T1/cmr/m/n/12 2[] = 2([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/i
-t/12 x \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x\OT1/cmr/m/n/
-12 )
- []
-
-
-Overfull \hbox (35.68893pt too wide) detected at line 7443
-[][]\OT1/cmr/m/n/12 ([] 2\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it
-/12 x\OT1/cmr/m/n/12 ) [] [] 2\OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][]
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7178,11 +7157,6 @@ Overfull \hbox (35.68893pt too wide) detected at line 7443
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1080]
-Underfull \hbox (badness 10000) in paragraph at lines 7541--7542
-
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7231,6 +7205,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 7541--7542
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1088]
+Overfull \hbox (13.23099pt too wide) detected at line 7713
+\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 +
+ []\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x
+[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;  I[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/
+12 I[] \OT1/cmr/m/n/12 + []\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/1
+2 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;  I[] \OT1/cmr/m
+/n/12 = [](1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] \OML/
+cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [
+]\OML/cmm/m/it/12 x[]:
+ []
+
+
+Underfull \vbox (badness 1552) detected at line 7723
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7249,24 +7239,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 7541--7542
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1091]
-Overfull \hbox (6.52919pt too wide) detected at line 8030
-[] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [] [] [] \OML/cmm/m/it/12 dx \OT
-1/cmr/m/n/12 = [] [] [] [] \OML/cmm/m/it/12 dx
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1092]
-Overfull \hbox (37.88434pt too wide) detected at line 8147
-[][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] + [] = [] [] 2 \OMS/cmsy/m/n/1
-2 ^^@ \OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 2[]\OML/cmm/m/it/12 :
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7279,6 +7257,9 @@ Overfull \hbox (37.88434pt too wide) detected at line 8147
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1094]
+Overfull \vbox (302.50957pt too high) has occurred while \output is active []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7291,10 +7272,6 @@ Overfull \hbox (37.88434pt too wide) detected at line 8147
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1096]
-Overfull \vbox (5.51843pt too high) detected at line 8271
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7343,18 +7320,6 @@ Overfull \vbox (5.51843pt too high) detected at line 8271
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1104]
-Overfull \hbox (13.23099pt too wide) detected at line 8749
-\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 +
- []\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x
-[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;  I[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/
-12 I[] \OT1/cmr/m/n/12 + []\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/1
-2 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;  I[] \OT1/cmr/m
-/n/12 = [](1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] \OML/
-cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [
-]\OML/cmm/m/it/12 x[]:
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7367,6 +7332,10 @@ cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1106]
+Overfull \vbox (5.60562pt too high) detected at line 8604
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7379,21 +7348,55 @@ cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + [
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1108]
+Overfull \hbox (0.39717pt too wide) detected at line 8665
+[] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] 2 [] \OML/cmm/m/it/12 x \OMS/cms
+y/m/n/12 ^^A [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] 2 [] [] \OMS/cmsy/m/n/
+12 ^^A \OML/cmm/m/it/12 y[] \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 = [] \OMS/c
+msy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 y [] []  dy \OT1/cmr/m/n/12 = [
+] 2\OML/cmm/m/it/12 y [] y dy
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1109]
+Overfull \hbox (105.75471pt too wide) detected at line 8732
+\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 J \OT1/
+cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 + [][] [] \OML/cmm/m/i
+t/12 dx \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] 1 
+\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = []
+ []
+
+
+Overfull \hbox (274.36119pt too wide) detected at line 8743
+\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 I \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3\OML/
+cmm/m/it/12 J \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^
+@ [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT
+1/cmr/m/n/12 = [[] \OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 13 + 3 [] \OML/cmm/m/it/12
+ x \OT1/cmr/m/n/12 + 2 [] \OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 ]
+[] = [] 10 \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 15 = [] []
+ []
+
+
+Overfull \hbox (18.43578pt too wide) detected at line 8773
+\OT1/cmr/m/n/12 6\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 + 4\OML/cmm/m/it/12 J \OT1/
+cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y;  \OT1/cmr/m/n/12 6\OML/cmm/m/it/12 I \OMS/cm
+sy/m/n/12 ^^@ \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = 3 [] []  []
+[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 13\OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = \O
+ML/cmm/m/it/12 ^^Y \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3 [] []  [][]\OMS/cmsy/
+m/n/12 )  \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = [] [] = [] []
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1110]
-Overfull \vbox (302.50957pt too high) has occurred while \output is active []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7466,10 +7469,6 @@ Overfull \vbox (302.50957pt too high) has occurred while \output is active []
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1122]
-Overfull \vbox (5.60562pt too high) detected at line 9640
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7482,12 +7481,15 @@ Overfull \vbox (5.60562pt too high) detected at line 9640
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1124]
-Overfull \hbox (0.39717pt too wide) detected at line 9701
-[] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] 2 [] \OML/cmm/m/it/12 x \OMS/cms
-y/m/n/12 ^^A [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] 2 [] [] \OMS/cmsy/m/n/
-12 ^^A \OML/cmm/m/it/12 y[] \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 = [] \OMS/c
-msy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 y [] []  dy \OT1/cmr/m/n/12 = [
-] 2\OML/cmm/m/it/12 y [] y dy
+Overfull \hbox (36.49617pt too wide) detected at line 9506
+\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y [][]
+\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/n/12 ^^@ [][] \OML/
+cmm/m/it/12 ^^R\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 d^^R \OT1/cmr/m/n/12 = \OML/c
+mm/m/it/12 ^^Y [][]\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/
+n/12 ^^@ \OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 ^^R \OMS/cmsy/m/n/12 ^^@ \OT1/c
+mr/m/n/12 1)) \OML/cmm/m/it/12 d^^R \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y [][]
+\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/n/12 ^^@ [][] \OML/
+cmm/m/it/12 ^^R \OT1/cmr/m/n/12 + 1) \OML/cmm/m/it/12 d^^R
  []
 
 
@@ -7497,34 +7499,6 @@ msy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 y [] []  dy \OT1/cmr/m/n/12 = [
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1125]
-Overfull \hbox (105.75471pt too wide) detected at line 9768
-\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 J \OT1/
-cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 + [][] [] \OML/cmm/m/i
-t/12 dx \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] 1 
-\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = []
- []
-
-
-Overfull \hbox (274.36119pt too wide) detected at line 9779
-\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 I \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3\OML/
-cmm/m/it/12 J \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^
-@ [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT
-1/cmr/m/n/12 = [[] \OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 13 + 3 [] \OML/cmm/m/it/12
- x \OT1/cmr/m/n/12 + 2 [] \OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 ]
-[] = [] 10 \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 15 = [] []
- []
-
-
-Overfull \hbox (18.43578pt too wide) detected at line 9809
-\OT1/cmr/m/n/12 6\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 + 4\OML/cmm/m/it/12 J \OT1/
-cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y;  \OT1/cmr/m/n/12 6\OML/cmm/m/it/12 I \OMS/cm
-sy/m/n/12 ^^@ \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = 3 [] []  []
-[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 13\OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = \O
-ML/cmm/m/it/12 ^^Y \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3 [] []  [][]\OMS/cmsy/
-m/n/12 )  \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = [] [] = [] []
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7543,6 +7517,14 @@ m/n/12 )  \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = [] [] = [] []
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1128]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7591,6 +7573,13 @@ m/n/12 )  \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = [] [] = [] []
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1136]
+Overfull \hbox (5.85304pt too wide) detected at line 10084
+[][] []\OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^@ [][] []\OML/cmm/m/it/12 dx \OT1
+/cmr/m/n/12 = [] [][] []\OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^@ [] [][] []\OML
+/cmm/m/it/12 dx
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7609,24 +7598,16 @@ m/n/12 )  \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = [] [] = [] []
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1139]
+Underfull \vbox (badness 5696) detected at line 10207
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1140]
-Overfull \hbox (36.49617pt too wide) detected at line 10542
-\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y [][]
-\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/n/12 ^^@ [][] \OML/
-cmm/m/it/12 ^^R\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 d^^R \OT1/cmr/m/n/12 = \OML/c
-mm/m/it/12 ^^Y [][]\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/
-n/12 ^^@ \OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 ^^R \OMS/cmsy/m/n/12 ^^@ \OT1/c
-mr/m/n/12 1)) \OML/cmm/m/it/12 d^^R \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y [][]
-\OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 ^^R [] ^^R \OMS/cmsy/m/n/12 ^^@ [][] \OML/
-cmm/m/it/12 ^^R \OT1/cmr/m/n/12 + 1) \OML/cmm/m/it/12 d^^R
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7639,6 +7620,10 @@ cmm/m/it/12 ^^R \OT1/cmr/m/n/12 + 1) \OML/cmm/m/it/12 d^^R
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1142]
+Overfull \vbox (3.58307pt too high) detected at line 10297
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7651,20 +7636,14 @@ cmm/m/it/12 ^^R \OT1/cmr/m/n/12 + 1) \OML/cmm/m/it/12 d^^R
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1144]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1145]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7707,13 +7686,6 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1152]
-Overfull \hbox (5.85304pt too wide) detected at line 11120
-[][] []\OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^@ [][] []\OML/cmm/m/it/12 dx \OT1
-/cmr/m/n/12 = [] [][] []\OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^@ [] [][] []\OML
-/cmm/m/it/12 dx
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7732,10 +7704,6 @@ Overfull \hbox (5.85304pt too wide) detected at line 11120
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1155]
-Underfull \vbox (badness 5696) detected at line 11243
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7754,10 +7722,6 @@ Underfull \vbox (badness 5696) detected at line 11243
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1158]
-Overfull \vbox (3.58307pt too high) detected at line 11333
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7776,8 +7740,6 @@ Overfull \vbox (3.58307pt too high) detected at line 11333
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1161]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7820,6 +7782,26 @@ Overfull \vbox (3.58307pt too high) detected at line 11333
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1168]
+Overfull \hbox (4.79562pt too wide) detected at line 11479
+\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 
+= \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/
+cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 du \OMS/cmsy/m/n/12 ^^
+@ [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 
+)
+ []
+
+
+Overfull \hbox (29.88837pt too wide) detected at line 11484
+\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/1
+2 = [] [] = [] [] [] = [] [] [] = [] [] []
+ []
+
+
+Overfull \vbox (3.92003pt too high) detected at line 11499
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7838,6 +7820,13 @@ Overfull \vbox (3.58307pt too high) detected at line 11333
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1171]
+Overfull \hbox (14.39612pt too wide) detected at line 11643
+\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y[] [] [] [] [] dx \OT1
+/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] e[] [] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it
+/12 e[] [] x[] dx \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 x[]e[]
+ []
+
+
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7916,26 +7905,6 @@ Overfull \vbox (3.58307pt too high) detected at line 11333
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1184]
-Overfull \hbox (4.79562pt too wide) detected at line 12515
-\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 
-= \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/
-cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 du \OMS/cmsy/m/n/12 ^^
-@ [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/
-12 (\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 
-)
- []
-
-
-Overfull \hbox (29.88837pt too wide) detected at line 12520
-\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/1
-2 = [] [] = [] [] [] = [] [] [] = [] [] []
- []
-
-
-Overfull \vbox (3.92003pt too high) detected at line 12535
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7954,13 +7923,6 @@ Overfull \vbox (3.92003pt too high) detected at line 12535
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1187]
-Overfull \hbox (14.39612pt too wide) detected at line 12679
-\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y[] [] [] [] [] dx \OT1
-/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] e[] [] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it
-/12 e[] [] x[] dx \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 x[]e[]
- []
-
-
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
@@ -7990,109 +7952,13 @@ Overfull \hbox (14.39612pt too wide) detected at line 12679
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1192]
+\vectorian14.pgf) [1192])
 
 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian14.pgf) [1193]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1194]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1195]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1196]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1197]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1198]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1199]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1200]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1201]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1202]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1203]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1204]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1205]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1206]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1207]
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1208])
-
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian11.pgf)
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1209]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 \flagwidth=\dimen342
@@ -8171,11 +8037,11 @@ Overfull \vbox (9.12129pt too high) has occurred while \output is active []
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian11.pgf)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian14.pgf) [1210
+\vectorian14.pgf) [1194
 
 
 ]
-This exam contains 1666 questions with 285 parts, 8 subparts, and 0 subsubparts
+This exam contains 1656 questions with 296 parts, 8 subparts, and 0 subsubparts
 .
 (main.aux (代数.aux) (数论.aux) (组合数学.aux) (几何.aux) (微积分.aux))
  ***********
@@ -8193,12 +8059,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35684 strings out of 403250
- 805864 string characters out of 5460889
- 1701530 words of memory out of 5000000
- 62273 multiletter control sequences out of 15000+600000
- 643427 words of font info for 124 fonts, out of 8000000 for 9000
+ 35457 strings out of 403250
+ 795388 string characters out of 5460889
+ 1701437 words of memory out of 5000000
+ 62114 multiletter control sequences out of 15000+600000
+ 642377 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,16n,93p,589b,1287s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,93p,589b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (306 pages).
+Output written on main.pdf (290 pages).
