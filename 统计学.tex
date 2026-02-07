@@ -1,0 +1,1292 @@
+\pagecolor{PageColor}
+\
+\vfil
+\hfil  {\fontsize{50pt}{36pt}\selectfont{组合数学}} \hfil
+\vfil
+\input{pageborder}
+\thispagestyle{empty}
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{概率}{概率} \label{概率}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\nopagecolor
+\begin{questions}
+    \question 正八面体有 $8$ 个全等的正三角形面。任取 $3$ 个面,其面心组成的三角形是正三角形的概率是多少？
+    \begin{solution}
+        正八面体的对偶多面体是正方体,其面心对应正方体的 $8$ 个顶点。  
+        等边三角形对应正方体中形如正四面体侧面的三角形,共 $8$ 个,因此概率为
+        \[
+        \frac{8}{\comb83} = \frac{1}{7}
+        \]
+    \end{solution}
+
+    \question 给定正八边形 $PQRSTUVW$。从中随机选择 $4$ 条边并将其延长为直线,问：这 $4$ 条直线相交所形成的四边形恰好包含原八边形的概率是多少？
+    \begin{solution}
+        选择的四条边相邻,或未选的三条相邻边及一条不相邻的边,皆不能形成包含原八边形的四边形,这样的组合数有
+        \[
+        8 + 8 \cdot 3 = 32
+        \]
+        所求概率为
+        \[
+        \frac{\comb{8}{4}-32}{\comb{8}{4}}=\frac{19}{35}
+        \]
+    \end{solution}
+    
+    \question $X$是从$\{1,2,\dots,9\}$中随机抽取$3$个不同的数排列出的最大的三位数,
+        $Y$是从$\{1,2,\dots,8\}$中随机抽取$3$个不同的数排列出的最大的三位数,求$X>Y$的概率。
+    \begin{solution}
+        若 $X$ 的三个数字中包含 $9$,则由其组成的最大三位数一定大于由 $1$ 到 $8$ 中任意三个数字组成的最大三位数,此时 $X > Y$ 恒成立,这样的$X$排列数有$\comb82$,因此
+        \[
+        P(X > Y) = \frac{\comb82 \cdot \comb83}{\comb93 \cdot \comb83} = \frac{1}{3}
+        \]
+    \end{solution}
+    
+    \question 在数字 $1,2,3,4,5,6,7$ 的所有排列中,求至少有两个相邻数字不互质的概率。
+    \begin{solution}
+        先对奇数 $1,3,5,7$ 排列,有 $\perm44$ 种排法。
+        
+        数字 $6$ 不能与 $3$ 相邻,$4$ 个奇数间有 $5$ 个空位,去除 $3$ 的左右两个空位,剩 $3$ 个空位可放 $6$,有 $3$ 种放法。
+        
+        数字 $2$ 和 $4$ 放在剩余 $4$ 个空位,共有 $\perm42 $ 种排法。
+        
+        故至少有两个相邻数字不互质的概率为
+        \[
+        1 - \frac{\perm{4}{4} \cdot 3 \cdot \perm{4}{2}}{7!} = \frac{29}{35}
+        \]
+    \end{solution}
+
+    \question 设 $A$ 和 $B$ 是从集合 $\{1,2,3,4,5,6\}$ 中随机选出的子集,允许 $A=B$。求事件“$A$ 包含于 $B$ 或 $B$ 包含于 $A$”的概率。
+    \begin{solution}
+        $A \subseteq B$ 当且仅当不存在元素 $x$ 满足 $x\in A$ 且 $x\notin B$,即概率为
+        \[
+        P(A\subseteq B) = \left(1-\left(\frac{1}{2}\right)^2\right)^6 = \left(\dfrac{3}{4}\right)^6
+        \]
+        同理 $P(B\subseteq A) = \left(\dfrac{3}{4}\right)^6$,且
+        \[
+        P(A=B) = \left(\frac{1}{2}\right)^6
+        \]
+        根据容斥原理,所求概率为
+        \[
+        2\left(\frac{3}{4}\right)^6 - \left(\frac{1}{2}\right)^6 = \frac{697}{2048}
+        \]
+    \end{solution}
+
+\question Alice 和 Bob 各自有一副相同的牌,包含 3 张红牌、3 张白牌和 3 张蓝牌。他们轮流从自己的牌中随机抽取一张牌,且不放回。Alice 先抽。求 Alice 在 Bob 抽到任何红牌之前抽完她的所有红牌的概率。
+
+\begin{solution}
+每个人都将 9 张牌随机排列,考虑每个人的 3 张红牌的位置。共有
+\[
+\comb{9}{3}^2
+\]
+种可能。
+
+考虑一条长度为 10 的序列,由 Alice 抽牌直到她抽到第 3 张红牌为止,再加上 Bob 在 Alice 抽到第 3 张红牌后接下来抽的牌。为了满足条件,这条序列中必须有 6 张红牌,我们在枚举这些情况。
+
+因此概率为
+\[
+\frac{\comb{10}{6}}{\comb{9}{3}^2} = \frac{5}{168}.
+\]
+        \textcolor{red}{(待验证, lehigh 2025 q15)}
+\end{solution}
+
+    \question 掷一个公平的六面骰子连续十次。求出现恰好三个 6 连在一起的概率。（四个或更多连续的 6 不计。）
+    \begin{solution}
+        情况一:三个 6 在序列的一端,且相邻数字不是 6:有 2 种方式,对应概率为
+        \[
+        2 \cdot \left(\frac{1}{6}\right)^3 \cdot \frac{5}{6}
+        \]
+        情况二:三个 6 在序列中间,两边相邻数字都不是 6:有 6 种方式,对应概率为
+        \[
+        6 \cdot \left(\frac{1}{6}\right)^3 \cdot \left(\frac{5}{6}\right)^2
+        \]
+        总概率为
+        \[
+        \left(\frac{1}{6}\right)^3 \left(2 \cdot \frac{5}{6} + 6 \cdot \frac{25}{36}\right) = \frac{35}{1296}
+        \]
+    \end{solution}
+
+    \question 投掷一枚均匀硬币 8 次。已知在前 3 次投掷中至少出现一次正面,求 8 次投掷中恰好出现 4 次正面的概率。
+    \begin{solution} 
+        前 3 次投掷中至少出现一次正面且8次投掷中恰好有4次正面的情形,即前3次及后5次有1正3正、2正2正、3正1正,方法数为
+        \[
+        \comb{3}{1}\comb{5}{3},\comb{3}{2}\comb{5}{2},\comb{3}{3}\comb{5}{1}
+        \]
+        8 次投掷中前3次都是反面的方法数为$2^5$,前3次至少1次正面的方法数为$2^8 - 2^5$,因此所求概率为
+        \[
+        \frac{\comb{3}{1}\comb{5}{3} + \comb{3}{2}\comb{5}{2} + \comb{3}{3}\comb{5}{1}}{2^8 - 2^5}
+        = \frac{65}{224}
+        \]
+    \end{solution}
+
+    \question 有三个碗,每个碗里各有 6 个球。现随机选择一个碗,再选择一个不同的碗,把第一个碗中的一个球移动到第二个碗。经过 5 次这样的移动后,三个碗再次各有 6 个球的概率是多少？
+    \begin{solution}
+        设碗标为 $A, B, C$。为了最终三个碗各有 6 个球,必须有两个碗各被拿走 2 个球,第三个碗只被拿走 1 个球。选择只拿走 1 个球的碗有 3 种方法,假设为碗 $A$。
+
+        这个移球的回合有 5 种选择,并且球要移到的碗有 2 种选择。
+
+        若从 $A$ 移到 $B$,则必须从 $C$ 移回 $A$,否则无法使 $B$ 和 $C$ 最终数量相等。这个移动的回合有 4 种选择。
+
+        剩下 3 次移动必须是 2 次从 $B$ 到 $C$,1 次从 $C$ 到 $B$,这三次的顺序有 3 种。
+
+        综上,有 $3 \cdot 5 \cdot 2 \cdot 4 \cdot 3$ 种序列使三碗最终各有 6 个球,每次移动有 $3 \cdot 2 = 6$ 种可能,因此总共有 $6^5$ 种可能的移动序列,因此所求概率为
+        \[
+        \frac{3 \cdot 5 \cdot 2 \cdot 4 \cdot 3}{6^5} = \frac{5}{108}
+        \]
+    \end{solution}
+
+    \question 一个正立方体骰子六个面上分别有 $2,3,4,5,6,7$ 个点。随机移除一个点(每个点被移除的概率相等)后投掷这个骰子,求朝上的面的点数为奇数的概率。
+    \begin{solution}
+        移除一个点后,如果从偶数点的面移除一个点,该面变为奇数点。如果从奇数点的面移除一个点,该面变为偶数点。
+
+        情况 1:从偶数点的面移除。则有 4 个奇数点面和 2 个偶数点面,掷出奇数点的概率为 $\dfrac{4}{6}$。
+
+        情况 2:从奇数点的面移除。则有 2 个奇数点面和 4 个偶数点面,掷出奇数点的概率为 $\dfrac{2}{6}$。
+
+        移除某个面的点的概率为该面点数除以 $2+3+4+5+6+7=27$,所求概率为
+        \[
+        \frac{2}{27}\cdot \frac{4}{6} + \frac{3}{27}\cdot \frac{2}{6} + \frac{4}{27}\cdot \frac{4}{6} + \frac{5}{27}\cdot \frac{2}{6} + \frac{6}{27}\cdot \frac{4}{6} + \frac{7}{27}\cdot \frac{2}{6} = \frac{13}{27}
+        \]
+    \end{solution}
+
+    \question $A$ 和 $B$ 玩一场卡牌游戏。$A$ 有 6 张牌：2 张红色、2 张黄色、2 张绿色。$B$ 有 4 张牌：2 张紫色、2 张白色。两人轮流出牌,$A$ 先出。每回合,玩家随机选择一张自己手中的牌放到桌上。若某玩家在桌上放出两张同色牌,则该玩家获胜。求 $A$ 获胜的概率。
+    \begin{solution}
+        游戏一定在 $B$ 的第三回合之前结束,故$A$ 只能在自己的第二回合或第三回合获胜,且不能在第一回合直接获胜。
+
+        情况 1:$A$ 第二回合获胜。$A$ 第二张牌必须和第一张同色。此时 $A$ 还剩 5 张牌,其中 1 张与第一张同色,所以概率为$\dfrac{1}{5}$。$A$ 和 $B$ 的第一张牌没有限制。
+
+        情况 2:$A$ 第三回合获胜。需满足$A$ 第二张牌颜色与第一张不同,$B$ 第二张牌颜色与她的第一张不同且$A$ 第三张牌与他前两张牌之一同色,概率为
+        \[
+        \frac{4}{5} \cdot \frac{2}{3} \cdot \frac{1}{2} = \frac{4}{15}
+        \]
+        综上,$A$ 获胜的概率为
+        \[
+        \frac{1}{5} + \frac{4}{15} = \frac{7}{15}
+        \]
+    \end{solution}
+
+    \question $C$参加一个比赛,比赛中没有平局,她会一直比赛直到输掉 2 场比赛为止,此时她将被淘汰,不再继续比赛。已知:
+    \begin{itemize}
+        \item 第一场比赛获胜的概率为 $\dfrac{1}{2}$
+        \item 若上一场获胜,则下一场获胜的概率为 $\dfrac{3}{4}$
+        \item 若上一场失败,则下一场获胜的概率为 $\dfrac{1}{3}$
+    \end{itemize}
+    求 $C$ 在被淘汰之前(即输掉第 2 场之前)恰好赢得 3 场比赛的概率。
+    \begin{solution}
+        $C$ 赢 3 场比赛且输少于 2 场比赛的概率,可能的情况有赢 3场,输 0场或赢 3场,输 1场。以 $W$ 表示胜利,$L$ 表示失败,比赛结果可能的序列为
+        \[
+        WWW, \quad LWWW, \quad WLWW, \quad WWLW.
+        \]
+        故所求概率为
+        \[
+        \frac{1}{2}\cdot\frac{3}{4}\cdot\frac{3}{4} + \frac{1}{2}\cdot\frac{1}{3}\cdot\frac{3}{4}\cdot\frac{3}{4} + \frac{1}{2}\cdot\frac{1}{4}\cdot\frac{1}{3}\cdot\frac{3}{4} + \frac{1}{2}\cdot\frac{3}{4}\cdot\frac{1}{4}\cdot\frac{1}{3} = \frac{7}{16}
+        \]
+    \end{solution}
+
+    \question $A$ 有 12 个桶:3 个绿色、3 个红色、3 个蓝色和 3 个黄色。他将球随机放入桶中:
+    \begin{itemize}
+        \item 将 4 个球随机放入 3 个绿色桶(每个球独立地等概率选择一个绿色桶)
+        \item 将 3 个球随机放入 3 个红色桶
+        \item 将 2 个球随机放入 3 个蓝色桶
+        \item 将 1 个球随机放入 3 个黄色桶
+    \end{itemize}
+    求存在一个绿色桶,其中的球数皆多于其他 11 个桶中任何一个桶的球数的概率。
+    \begin{solution}
+        以$(a,b,c)$ 表示 3 个桶中球的无序分布。黄色桶分布只能是 $(1,0,0)$。
+
+        蓝色桶:将 2 个球放入 3 个桶,总共有 $3^2=9$ 种方法。
+        \begin{itemize}
+            \item $(2,0,0)$: 2 个球在同一个桶,有 3 种方式,
+            \item $(1,1,0)$: 2 个球分在不同桶,有 $9-3=6$ 种方式。
+        \end{itemize}
+        红色桶:将 3 个球放入 3 个桶,总共有 $3^3=27$ 种方法。
+        \begin{itemize}
+            \item $(3,0,0)$: 3 个球在同一个桶,有 3 种方式,
+            \item $(1,1,1)$: 每个桶 1 个球,有 $\comb{3}{2}=6$ 种方式,
+            \item $(2,1,0)$: 其余 18 种方式。
+        \end{itemize}
+        绿色桶:将 4 个球放入 3 个桶,总共有 $3^4=81$ 种方法。
+        \begin{itemize}
+            \item $(4,0,0)$: 3 种方式,
+            \item $(3,1,0)$: $4\cdot 3!=24$ 种方式,
+            \item $(2,1,1)$: $4\cdot 3 \cdot \dfrac{3!}{2!}=36$ 种方式,
+            \item $(2,2,0)$: 其余 18 种方式。
+        \end{itemize}
+        要使绿色桶中的球比其他 11 个桶都多,可能的情况及概率如下:
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \text{绿色} & \text{红色} & \text{蓝色} & \text{黄色} & \text{概率} \\
+        \hline
+        $(4,0,0)$ & 任意 & 任意 & 任意 & $\frac{3}{81}$ \\
+        \hline
+        $(3,1,0)$ & 不是 $(3,0,0)$ & 任意 & 任意 & $\frac{24}{81} \cdot \frac{24}{27}$ \\
+        \hline
+        $(2,1,1)$ & $(1,1,1)$ & $(1,1,0)$ & 任意 & $\frac{36}{81} \cdot \frac{6}{27} \cdot \frac{6}{9}$ \\
+        \hline
+        \end{tabular}
+        \end{center}
+        其中分布 $2/2/0$ 不符合条件,因为没有单个绿色桶的球数比其他桶多,故所求概率为
+        \[
+        \frac{3}{81} + \frac{24}{81} \cdot \frac{24}{27} + \frac{36}{81} \cdot \frac{6}{27} \cdot \frac{6}{9} = \frac{89}{243}
+        \]
+    \end{solution}
+
+    \question 有三个盒子:
+    \begin{itemize}
+        \item 盒子 1 里有 1 个金球和 1 个黑球；
+        \item 盒子 2 里有 1 个金球和 2 个黑球；
+        \item 盒子 3 里有 1 个金球和 3 个黑球。
+    \end{itemize}
+    每次从一个盒子里随机抽取一个球,盒子里每个球被选中的概率相等。过程如下:
+    \begin{enumerate}
+        \item 从盒子 1 中随机抽一个球,放入盒子 2；
+        \item 然后从盒子 2 中随机抽一个球,放入盒子 3；
+        \item 最后从盒子 3 中随机抽一个球。
+    \end{enumerate}
+    求从盒子 3 中抽到金球的概率。
+        \ifprintanswers
+        \begin{figure}[H]
+            \centering        
+            \includegraphics[width=0.5\textwidth]{images/image171.png}
+        \end{figure}
+        \fi
+    \begin{solution}
+        从盒子 1 抽到金球及黑球的概率皆为$\dfrac{1}{2}$。
+        
+        若从盒子 1 抽到金球,盒子 2 将有 2 个金球和 2 个黑球；若从盒子 1 抽到黑球,盒子 2 将有 1 个金球和 3 个黑球。
+
+        若盒子 2 中有 2 金 2 黑,抽到金球的概率为 $\dfrac{1}{2}$。若盒子 2 中有 1 金 3 黑,抽到金球的概率为 $\dfrac{1}{4}$。
+        
+        放入盒子 3后,盒子 3 有 2 金 3 黑的概率为
+        \[
+        \frac{1}{2}\cdot \frac{1}{2} + \frac{1}{2}\cdot \frac{1}{4} = \frac{3}{8}, 
+        \]
+        此时从盒子 3 抽到金球的概率为
+        \[
+        \frac{3}{8} \cdot \frac{2}{5} + \frac{5}{8} \cdot \frac{1}{5} =\frac{11}{40}
+        \]
+    \end{solution}
+
+    \question 八个人分属三个家庭,围坐在圆桌旁。其中两个家庭各有 3 人,另一个家庭有 2 人。求每个人都有至少一个来自不同家庭的邻座的概率。
+    \begin{solution}
+        对座位编号,并将同一家庭的成员视为不可区分。8 个人的座位排列总数为:
+        \[
+        \frac{8!}{3! 3!  2!} = 560
+        \]
+        现探讨至少有一人使得其邻座都来自自己家庭,即3 人家庭坐在一起的排列数。设家庭 $A$ 和 $B$ 各有 3 人,家庭 $C$ 有 2 人。要求家庭 $A$ 的 3 人坐在一起,视他们为一个整体,有 8 种方式选择这个整体的起始位置,剩余 5 个人的排列数为 $\dfrac{5!}{3! 2!}$。因此家庭 $A$ 坐在一起的排列数为
+        \[
+        8 \cdot \frac{5!}{3! 2!} = 80
+        \]
+        同理,家庭 $B$ 坐在一起的排列数也是 80。若家庭 $A$ 和 $B$ 都坐在一起,则将两个家庭各看作一个整体,排列数有
+        \[
+        8 \cdot \frac{3!}{2!} = 24
+        \]
+        由容斥原理,至少有一人使得其邻座都来自自己家庭的排列数为
+        \[
+        80 + 80 - 24 = 136
+        \]
+        所求概率为
+        \[
+        \frac{560 - 136}{560} = \frac{53}{70}
+        \]
+    \end{solution}
+
+    \question 八支队伍参加一项比赛,采用单循环赛制(即任意两支队伍之间恰好进行一场比赛)。每场比赛没有平局,两支队伍各有 $\dfrac{1}{2}$ 的获胜概率。求每支队伍都至少输一场且至少赢一场的概率。
+    \begin{solution}
+        共有 $\comb{8}{2}= 28$场比赛,因此总共有$2^{28}$种可能的比赛结果。
+
+        当一支队伍全胜,同时另一支队伍全败时,选择全胜队有 8 种,全败队有 7 种,它们之间的比赛及与其他队伍的比赛结果已经确定,剩下的 $28-7-6=15$ 场比赛未确定,因此至少有一支队伍全胜或全败的结果数为
+        \[
+        8 \cdot 2^{21} + 8 \cdot 2^{21} - 8 \cdot 7 \cdot 2^{15}=2^{15}\cdot 968
+        \]
+        则每支队伍都至少输一场且至少赢一场的概率为
+        \[
+        1 - \frac{2^{15}\cdot 968}{2^{28}}  = \frac{903}{1024}
+        \]
+    \end{solution}
+
+    \question 盒子中有大小,形状完全相同的3个红球,3个白球,现抛掷一枚质地均匀的骰子, 掷出几点就从盒子中取出几个球,求取出的球中红球个数大于白球个数的概率。
+    \begin{solution}
+        记从盒子中取出 $i$ 个球,取出的球中红球个数大于白球个数的概率为 $P_i$ ($i=1, 2, ..., 6$),则 
+        \[
+        \begin{aligned}
+        P_1 &= \frac{\comb{3}{1}\comb{3}{0}}{\comb{6}{1}} = \frac{1}{2}, \quad
+        P_2 = \frac{\comb{3}{2} \comb{3}{0}}{\comb{6}{2}} = \frac{1}{5}, \quad
+        P_3 = \frac{\comb{3}{2}\comb{3}{1} + \comb{3}{3}\comb{3}{0}}{\comb{6}{3}}  = \frac{1}{2}, \\
+        P_4 &= \frac{\comb{3}{3} \comb{3}{1}}{\comb{6}{4}} = \frac{1}{5}, \quad
+        P_5 = \frac{\comb{3}{3} \comb{3}{2}}{\comb{6}{5}} = \frac{1}{2}, \quad
+        P_6 = 0.
+        \end{aligned}
+        \]
+        所以取出的球中红球个数大于白球个数的概率为 $$\frac{1}{6}\left(\frac{1}{2}+\frac{1}{5}+\frac{1}{2}+\frac{1}{5}+\frac{1}{2}+0\right)=\frac{19}{60}$$
+    \end{solution}
+
+    \question $A,B,C$ 独立参加考试。已知:
+    \begin{itemize}
+        \item $A$ 及格且 $B$ 不及格的概率为 $\dfrac{3}{20}$；
+        \item $B$ 及格且 $B$ 不及格的概率为 $\dfrac{1}{4}$；
+        \item $A$ 和 $C$ 都及格的概率为 $\dfrac{2}{5}$。
+    \end{itemize}
+    求至少有一人不及格的概率。
+    \begin{solution}
+        设$A,B,C$及格的概率为$a,b,c$,由于及格与否为独立事件,据题意有
+        \[
+        a(1-b) = \frac{3}{20}, \quad b(1-c) = \frac{1}{4}, \quad ac = \frac{2}{5}
+        \]
+        解得
+        \[
+        (8b+1)(4b-3) = 0 \Rightarrow b = \frac{3}{4} >0
+        \]
+        因此至少有一人不及格的概率为
+        \[
+        1 - abc  = 1 - \frac{3}{5} \cdot \frac{3}{4} \cdot \frac{2}{3}= \frac{7}{10}
+        \]
+    \end{solution}
+
+    \question 将一块正方形厚纸板划分成 $5 \times 5 = 25$ 个面积相等的小正方格。现将三枚不同颜色的棋子随机放置在小正方格的中心,每个小正方格最多放一枚棋子。求这三枚棋子的位置不共线(即构成三角形)的概率。
+    \begin{solution}
+        三点共线的方法数有
+        \[
+        16 \cdot \comb{3}{3} + 4 \cdot \comb{4}{3} + 12 \cdot \comb{5}{3} =152
+        \]
+        因此三点不共线（即能构成三角形）的概率为
+        \[
+        \frac{\comb{25}{3} - 152}{\comb{25}{3}} = \frac{537}{575}
+        \]
+    \end{solution}
+
+\question 从圆内随机选择四个不同的点,这四个点确定四个三角形(包括可能出现的退化三角形)。随机选择其中两个三角形,求圆心位于所选两个三角形的并集内的概率。
+\begin{solution}
+首先计算圆心位于四个三角形并集内的概率。圆心不在四个三角形的并集内,当且仅当四点位于某条直径的同一侧,即它们在圆上的径向投影也在直径同侧。此时恰好存在一个点,其余三个点位于该点顺时针方向 180 度的弧内。对于给定点,其余三个点落在该弧内的概率为
+\[
+\left(\frac{1}{2}\right)^3 = \frac{1}{8},
+\]
+因此四个点中任一点作为该点的概率为 $4 \cdot \frac{1}{8} = \frac{1}{2}$。因此圆心不在凸包内的概率为 $\frac{1}{2}$,所以圆心在凸包内的概率也为 $\frac{1}{2}$。
+
+接下来考虑随机选择两三角形。四点确定四个三角形,它们的交集互不重叠。共有 $\comb{4}{2} = 6$ 对三角形。圆心在随机选择的一对三角形交集内的概率为 $\frac{1}{6} = \frac{2}{12}$。因此圆心在所选两三角形并集内的概率为
+\[
+\frac{1}{2} - \frac{1}{12} = \frac{5}{12}.
+\]
+We first calculate the probability that the center is in the union of the four triangles. The center does not lie in the union of the four triangles iff the four points lie on the same side of some diameter of the circle iff this is true of their radial projections onto the circle iff for one of these, the other three are within 180 degrees clockwise of the point, and such a point is essentially unique. Given a point, the probability that the other three lie in this arc is $\left(\frac{1}{2}\right)^3=\frac{1}{8}$, so the probability that the center does not lie in the convex hull is $4 \cdot \frac{1}{8}=\frac{1}{2}$.Ignoring possibilities with probability 0, the center lies in the union of the four triangles iff it lies in the intersection of two of the triangles, and these possibilities are disjoint. Since there are six pairs, the probability of the center lying in a randomly selected intersection is $\frac{1}{6} = \frac{2}{12}$. The center is in the union of the two selected triangles iff it is in the union of the four but not in the intersection of the two which we did not select. This probability is $\frac{1}{2} - \frac{1}{12}$.
+\end{solution}
+
+    \question $A$ 和 $B$ 轮流进行游戏,$A$ 先开始。每轮中:
+    \begin{itemize}
+        \item $A$ 投掷一枚公平硬币,若出现正面则 $A$ 获胜,游戏结束
+        \item 若 $A$ 未获胜,则 $B$ 投掷一枚公平骰子,若出现 3 则 $B$ 获胜,游戏结束
+        \item 若 $B$ 也未获胜,则进入下一轮,$A$ 再次投掷
+    \end{itemize}
+    游戏持续进行直到某人获胜。求 $B$ 获胜的概率。
+    \begin{solution}
+        设事件 $N$ 表示 $B$ 掷出的数不是 3,则$B$ 获胜的可能顺序为
+        \[
+        T3, \quad TNT3, \quad TNTNT3, \;\ldots
+        \]
+        每种顺序的概率分别为:
+        \[
+        \frac{1}{2}\cdot \frac{1}{6} = \frac{1}{12},\quad
+        \frac{1}{2}\cdot\frac{5}{6}\cdot\frac{1}{2}\cdot \frac{1}{6} = \frac{5}{144}, \;\ldots
+        \]
+        这是一个等比数列,公比为 $\displaystyle \frac{1}{2}\cdot \frac{5}{6}=\frac{5}{12}$,因此 $B$ 获胜的概率为
+        \[
+        \frac{\frac{1}{12}}{1 - \frac{5}{12}} = \frac{1}{7}
+        \]
+    \end{solution}
+
+    \question 圆圈中有 25 人,随机选出 3 人,求所选三人互不相邻的概率。
+    \begin{solution}
+        先固定被选中的一人 $A$,其余两人必须从不与 $A$ 相邻的 $22$ 人中选出,且这 $22$ 人在圆上形成一条线段,因此其中相邻的成对共有 $21$ 对,于是可行对数为
+        \[
+        \comb{22}{2}-21
+        \]
+        由于三人中谁充当 $A$ 都可以,上式被重复计数 $3$ 次,故满足条件的三人组数为
+        \[
+        \frac{25}{3}(\comb{22}{2}-21)
+        \]
+        所选三人互不相邻的概率为
+        \[
+        \frac{\frac{25}{3}(\comb{22}{2}-21)}{\comb{25}{3}}=\frac{35}{46}
+        \]
+    \end{solution}
+
+    \question 三对已婚夫妇随机围坐在一张圆桌旁,求没有夫妻相邻的概率。
+    \begin{solution}
+        先固定 $A$ 先生的座位,其他五人的排列共有 $5!$ 种。
+
+        情况 1:$A$ 女士坐在 $A$ 先生对面。此时$B$ 先生 有 4 种选择,$B$ 女士不坐他旁边有 2 种选择,剩下两人顺序 2 种选择,共 $4\cdot2\cdot2$ 种。
+
+        情况 2:$A$ 女士与 $A$ 先生之间间隔一人。这个人有 4 种选择,其配偶必须坐在其他三个座位的中间位置,$C$夫妇有 2 种选择,且$A$ 女士与 $A$ 先生可互换位置,共 $4\cdot2\cdot2$ 种。
+
+        因此概率为
+        \[
+        \frac{4\cdot2\cdot2+4\cdot2\cdot2}{5!} = \frac{4}{15}
+        \]
+    \end{solution}
+
+    \question 伯克利市每天的天气要么是雨天,要么是雾天,其中天气与前一天相同的概率为 \(\dfrac{3}{4}\)。如果我们只知道今天是雨天,求 7 天后仍是雨天的概率。
+    \begin{solution}
+        7 天后仍是雨天的概率为
+        \begin{align*}
+        &P(\text{天气完全没变}) + P(\text{天气变恰好2次})+ P(\text{天气变恰好4次})+ P(\text{天气变恰好6次}) \\
+        &= \comb 70 \left(\frac14\right)^0\left(\frac34\right)^7
+        + \comb 72 \left(\frac14\right)^2\left(\frac34\right)^5
+        + \comb 74 \left(\frac14\right)^4\left(\frac34\right)^3 
+        + \comb 76 \left(\frac14\right)^6\left(\frac34\right)^1 \\
+        &= \frac{129}{256}
+        \end{align*}
+    \end{solution}
+
+\question 袋中有红球 5 个、白球 3 个、黑球 4 个,若每球被选取的机会均等,每次由袋中取一球,取后不放回,取完为止,则黑球最先取完的概率为？
+
+\begin{solution}
+\[
+{5\over 5+4}+{3\over 3+4}-{5+3\over 5+3+4}= \frac{20}{63}
+\]
+%https://math.ntnu.edu.tw/~horng/letter/hpm17010.pdf
+\end{solution}
+
+    \question 一对实数 $(a,b)$ 在闭单位圆盘内均匀随机选取,即满足
+    \[
+    a^{2} + b^{2} \leq \frac{1}{4}.
+    \]
+    求二次函数
+    \[
+    y = ax^{2} + 2bx - a
+    \]
+    与曲线
+    \[
+    y = x^{2}
+    \]
+    相交的概率。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.6\textwidth]{images/image174.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        曲线相交当且仅当方程
+        \[
+        (a-1)x^2 + 2bx - a = 0
+        \]
+        有实根,此时判别式为非负:
+        \[
+        (2b)^2 - 4(a-1)(-a) \ge 0 \Rightarrow \left(a - \frac{1}{2}\right)^2 + b^2 \ge \left(\frac{1}{2}\right)^2
+        \]
+        实数 $(a,b)$满足在圆 $a^2+b^2 = \left(\dfrac{1}{2}\right)^2$ 内但在圆$\left(a - \dfrac{1}{2}\right)^2 + b^2 = \left(\dfrac{1}{2}\right)^2$外,以阴影部分表示,面积为
+        \[
+        \pi\left(\frac{1}{2}\right)^2-2\left(2\cdot \frac{1}{2}\left(\frac{1}{2}\right)^2\left(\frac{\pi}{3}\right)-\frac{\sqrt{3}}{4}\left(\frac{1}{2}\right)^2\right) = \frac{\pi}{12}+\frac{\sqrt{3}}{8}
+        \]
+        所求概率为
+        \[
+        \frac{\frac{\pi}{12}+\frac{\sqrt{3}}{8}}{\frac{\pi}{4}}
+        = \frac{1}{3} + \frac{\sqrt{3}}{2\pi} \approx 0.609
+        \]
+    \end{solution}
+
+    \question 一只蚂蚁从立方体的一个顶点出发,每次可以走到与当前位置相邻的三个顶点中的任意一个。求四步后,蚂蚁回到出发点的概率。
+        \begin{solution}
+        设蚂蚁起点为 $(0,0,0)$,三步后,蚂蚁抵达顶点 $(1,1,1)$的概率为
+        \[
+        \frac{3!}{3^3} = \frac{2}{9},
+        \]
+        否则,蚂蚁会停在 $(1,0,0),(0,1,0)$ 或 $(0,0,1)$。
+
+        若三步后位于 $(1,1,1)$,蚂蚁下一步无法回到 $(0,0,0)$；但如果三步后在 $(1,0,0),(0,1,0)$ 或 $(0,0,1)$,则第四步回到 $(0,0,0)$ 的概率均为 $\dfrac{1}{3}$。
+
+        故四步后回到出发点的概率为
+        \[
+        \frac{7}{9} \cdot \frac{1}{3} = \frac{7}{27}
+        \]
+    \end{solution}
+
+    \question 一只蚂蚁在正方体 $ABCD-EFGH$ 的顶点 $A$ 处, 每次等概率地爬行到相邻三个顶点中的一个, 那么六次爬行之后回到顶点 $A$ 处的概率为
+\begin{solution}
+将立方体顶点坐标设为 $(0,0,0)$ 或 $1$,蚂蚁从 $(0,0,0)$ 出发。每步蚂蚁改变一个坐标的值（0 $\leftrightarrow$ 1）。要在六步后回到原点,每个坐标必须被改变偶数次。设三个坐标变化次数分别为 $x,y,z\ge 0$,且 $x+y+z=6$,且 $x,y,z$ 都是偶数。可行的组合为
+\[
+(0,0,6),\ (0,6,0),\ (6,0,0),\ (0,2,4),\ (0,4,2),\ (2,0,4),\ (2,4,0),\ (4,0,2),\ (4,2,0),\ (2,2,2)。
+\]
+
+每个组合对应的步序列数由多项式系数计算:
+\[
+(2,2,2) \rightarrow \frac{6!}{2!2!2!}=90,\quad
+(0,2,4)\ \text{及类似组合} \rightarrow \frac{6!}{0!2!4!}=15。
+\]
+
+前六种 $(0,2,4)$ 类型组合共有 6 种,贡献步序列总数 $6\cdot 15=90$。加上 $(2,2,2)$ 的 90,总共有 $180$ 种有效序列。总步数序列数为 $3^6=729$。因此概率为
+\[
+\frac{180}{729}=\frac{20}{81}.
+\]
+\textcolor{red}{(chatgpt,待解)}
+\end{solution}
+
+    \question 一只蚂蚁从正八面体的一个顶点出发,每一步随机走到相邻顶点。求 10 步后它回到出发点的概率。  
+    \begin{solution}
+        设 $a_n,b_n,c_n$ 分别为走 $n$ 步后蚂蚁在 (a) 出发点、(b) 与出发点相邻的四个顶点、(c) 对面顶点 的概率。有递推关系
+        \[
+        a_n=\frac{1}{4}b_{n-1}, \quad c_n=\frac{1}{4}b_{n-1}, \quad b_n=a_{n-1}+\frac{1}{2}b_{n-1}+c_{n-1}
+        \]
+        消去 $a_n,c_n$ 得
+        \[
+        b_n=\frac{1}{2}b_{n-1}+\frac{1}{2}b_{n-2}
+        \]
+        特征方程为 $x^2=\frac{1}{2}x+\frac{1}{2}$,解得 $x=1,-\dfrac{1}{2}$,故
+        \[
+        b_n=\alpha\cdot 1^n+\beta\left(-\frac{1}{2}\right)^n
+        \]
+        初值$a_0=1,b_0=c_0=0$,所以 $b_1=1$,可得 $\alpha=\dfrac{2}{3}, \beta=-\dfrac{2}{3}$,即
+        \[
+        b_n=\frac{2}{3}\left(1-\left(-\frac{1}{2}\right)^n\right)
+        \]
+        于是
+        \[
+        a_{10}=\frac{1}{4}b_{9}=\frac{1}{4}\cdot \frac{2}{3}\left(1-\left(-\frac{1}{2}\right)^9\right)
+        =\frac{513}{3072}
+        \]
+    \end{solution}
+
+    \question 一只蜜蜂在三维空间中移动。掷一个公平的六面骰子,骰子的六个面分别标记为 \( \pm x, \pm y, \pm z \)。假设蜜蜂当前所在点为 \( (x,y,z) \)。若骰子显示 \( +x \),则蜜蜂移动到点 \( (x+1, y, z) \)；若骰子显示 \( -x \),则蜜蜂移动到点 \( (x-1, y, z) \)。其他四个面以此类推。已知蜜蜂从点 \( (0,0,0) \) 出发,掷骰子四次。求蜜蜂经过的四条边恰好是某单位立方体上的四条不同边的概率。 
+    \begin{solution}
+        由乘法原理及想象力,概率为
+        \[
+        1\cdot \dfrac{4}{6}\cdot \left(\dfrac{1}{6}\cdot \dfrac{3}{6}+\dfrac{2}{6}\cdot \dfrac{2}{6}\right)=\frac{7}{54}
+        \]
+    \end{solution}
+
+    \question 两支队伍正在进行“三局两胜”的系列赛:最多进行 3 场比赛,率先赢下 2 场的队伍获胜。第一场比赛在 A 队的主场进行,后两场在 B 队的主场进行。A 队在主场赢的概率是 $\dfrac{2}{3}$,在客场赢的概率是 $p$。各场比赛的结果是独立的。若 A 队赢得整个系列赛的概率是 $\dfrac{1}{2}$,求 $p$ 的值。
+    \begin{solution}
+        已知 A 队主场胜率为 $\dfrac23$,客场胜率为 $p$。三局两胜赛制下,A 队赢下系列赛的情形只有  
+        \[
+        \text{AA},\; \text{ABA},\; \text{BAA}
+        \]
+        于是有
+        \[
+        \frac23 p+\frac23(1-p)p+\frac13p^{2}=\frac12
+        \]
+        解得  
+        \[
+        p=\dfrac12\bigl(4-\sqrt{10}\bigr)\le1
+        \]
+    \end{solution}
+    
+    \question  一个不均匀的骰子,掷出 $1,2,3,4,5,6$ 点的概率依次成等差数列. 独立地先后掷该骰子两次,所得的点数分别记为 $a,b$. 若事件 “$a+b=7$” 发生的概率为 $\dfrac{1}{7}$,求事件 “$a=b$” 发生的概率。 
+    \begin{solution}     
+        设掷出$1,2,\dots,6$点的概率分别为$p_1,p_2,\dots,p_6$。由于$p_1,p_2,\dots,p_6$成等差数列,且$p_1+p_2+\dots+p_6=1$,故
+        \[
+        p_1+p_6=p_2+p_5=p_3+p_4=\frac{1}{3}
+        \]
+        事件“$a+b=7$”发生的概率为
+        \[
+        P_1=p_1p_6+p_2p_5+\dots+p_6p_1
+        \]
+        事件“$a=b$”发生的概率为
+        \[
+        P_2=p_1^2+p_2^2+\dots+p_6^2
+        \]
+        于是
+        \[
+        P_1+P_2=(p_1+p_6)^2+(p_2+p_5)^2+(p_3+p_4)^2=3\cdot\left(\frac{1}{3}\right)^2=\frac{1}{3}
+        \]
+        由于$P_1=\dfrac{1}{7}$,所以
+        \[
+        P_2=\frac{1}{3}-\frac{1}{7}=\frac{4}{21}
+        \]
+    \end{solution}
+    \begin{solution}
+        设掷出点数$1,2,3,4,5,6$的概率依次为$p-5d,p-3d,p-d,p+d,p+3d,p+5d$,据题意有
+        \begin{align}
+        (p-5d)+(p-3d)+(p-d)+(p+d)+(p+3d)+(p+5d)&=1 \tag{1}\\
+        2[(p-5d)(p+5d)+(p-3d)(p+3d)+(p-d)(p+d)]&=\dfrac{1}{7} \tag{2} 
+        \end{align} 
+        由$(1)$得$p=\dfrac{1}{6}$,由$(2)$化简得
+        \[
+        6p^2 - 70 d^2 = \frac{1}{7} \Rightarrow 70d^2=\frac{1}{42}
+        \] 
+        于是
+        \begin{align*}
+            P(a=b)&=(p-5d)^2+(p-3d)^2+(p-d)^2+(p+d)^2+(p+3d)^2+(p+5d)^2 \\
+            &=6p^2+70d^2 =\frac{1}{6}+\frac{1}{42}=\frac{4}{21}
+        \end{align*}
+    \end{solution}
+
+    \question 设甲、乙、丙三位射手之命中率依次为 $p,q,r$，其中 $p\ge q\ge r$。今三人同打一靶且互不影响，各发一弹时，此靶不中弹之概率为 $\dfrac{1}{4}$，恰中一弹之概率为 $\dfrac{11}{24}$，恰中二弹之概率为 $\dfrac{1}{4}$，求序组 $(p,q,r)$。
+    \begin{solution} 
+        据题意,
+        \[
+        \begin{cases}
+        pqr=1-\left(\dfrac{1}{4}+\dfrac{11}{24}+\dfrac{1}{4}\right)=\dfrac{1}{24}, \\[2pt]
+        p(1-q)(1-r)+q(1-r)(1-p)+r(1-p)(1-q)=\dfrac{11}{24}, \\[2pt]
+        pq(1-r)+qr(1-p)+rp(1-q)=\dfrac{1}{4},
+        \end{cases}
+        \]
+        其中 $p\ge q\ge r$,解得
+        \[
+        pqr=\frac{1}{24},\quad pq+qr+rp=\frac{3}{8},\quad p+q+r=\frac{13}{12},
+        \]
+        因此 $p,q,r$ 为三次方程
+        \[
+        t^3-\frac{13}{12}t^2+\frac{3}{8}t-\frac{1}{24}=0 \Rightarrow (2t-1)(3t-1)(4t-1)=0
+        \]
+        的三个根,解得
+        \[
+        (p,q,r)=\left(\frac{1}{2},\frac{1}{3},\frac{1}{4}\right)
+        \]
+    \end{solution}
+
+    \question 在区间 $[0,10]$ 上等概率地随机选取一个数 $y$。以点 $(0,y)$ 为斜边一端点,斜边另一端点位于非负 $x$ 轴上,并与原点 $(0,0)$ 共同构成一个斜边长度为 10 的直角三角形。求该三角形面积大于 15 的概率。
+    \begin{solution}
+        由斜边长度 10 可得面积条件为
+        \[
+        \frac{1}{2} xy = \frac{1}{2} y\sqrt{100-y^2} > 15 
+        \]
+        解得
+        \[
+        y < \sqrt{10} \quad \text{或} \quad y> \sqrt{90}
+        \]
+        所求概率为
+        \[
+        \frac{\sqrt{90}-\sqrt{10}}{10} = \frac{\sqrt{10}}{5}
+        \]
+    \end{solution}
+
+    \question 设甲袋中有 5 颗白球、2 颗黑球,乙袋中有 3 颗白球。先自甲袋中任取 4 颗球放入乙袋,再从乙袋中任取 5 颗球放入甲袋,完成一次操作称为一局。已知每颗球被抽到的机会均等,若第一局结束时甲袋中有黑球,求过程中过甲袋取得 2 颗白球、2 颗黑球放入乙袋的概率。
+    \begin{solution}
+        情况一:甲取 4 白球入乙,再从乙任取 5 球入甲。  
+        \[
+        P_1 = \frac{\comb{5}{4}}{\comb{7}{4}} = \frac{1}{7}
+        \]
+        情况二:甲取 3 白 1 黑入乙,再从乙任取 5 球入甲。  
+        \[
+        P_2 = \frac{\comb{5}{3}\comb{2}{1}}{\comb{7}{4}} = \frac{4}{7}
+        \]
+        情况三:甲取 2 白 2 黑入乙,再从乙任取 4 白 1 黑球入甲。  
+        \[
+        P_3 = \frac{\comb{5}{2}\comb{2}{2}}{\comb{7}{4}} \cdot \frac{\comb{5}{4}\comb{2}{1}}{\comb{7}{5}} = \frac{20}{147}
+        \]
+        情况四:甲取 2 白 2 黑入乙,再从乙任取 3 白 2 黑球入甲。  
+        \[
+        P_4 = \frac{\comb{5}{2}\comb{2}{2}}{\comb{7}{4}} \cdot \frac{\comb{5}{3}\comb{2}{2}}{\comb{7}{5}} = \frac{20}{147}
+        \]
+        已知第一局结束时甲袋中有黑球,因此条件概率为
+        \[
+        \frac{P_3+P_4}{P_1+P_2+P_3+P_4} = \frac{8}{29}
+        \]
+    \end{solution}
+
+    \question 三个人玩一个游戏,轮流掷一枚公平的六面骰子。若掷出 5 或 6 则该玩家立即获胜,游戏结束；若掷出 1 或 2 则该玩家被淘汰。游戏继续进行,直到有人获胜,或者只剩下一人,则该人获胜。问第一个掷骰子的人获胜的概率是多少？
+    \begin{solution}
+        设第一个掷骰子的人为 $A$,任意一次掷出 1,2,5,6 的概率是 $\dfrac{2}{3}$,故$A$ 第一个掷出 1,2,5,6 的概率为
+        \[
+        \frac{2}{3}\left(1+\frac{1}{3}+\frac{1}{3^2}+\cdots\right)=\frac{\frac{2}{3}}{1-\frac{1}{9}}=\frac{9}{13}
+        \]
+        而此时$A$有$\dfrac{1}{2}$的概率掷出 5 或 6 从而立即获胜。
+
+        若 $A$ 不是第一个掷出 1,2,5,6 的人(概率为 $\dfrac{4}{13}$),那么第一个掷出 1,2,5,6 的人有$\dfrac{1}{2}$的概率掷出 1 或 2 被淘汰。此时只剩下两人,$A$ 与另一人各有 $\dfrac{1}{2}$ 的获胜机会。
+
+        综上,第一个掷骰子的人获胜的概率为
+        \[
+        \frac{9}{13}\cdot \frac{1}{2}+\frac{4}{13}\cdot \frac{1}{2}\cdot \frac{1}{2}=\frac{11}{26}
+        \]
+    \end{solution}
+
+    \question 反复抛掷一枚公平硬币,直到第一次出现序列 $HTH$ 为止。求在此过程中,序列 $THTH$ 从未出现过的概率。(例如,事件包含 $HHTH$,但不包含 $TTHTH$。)
+    \begin{solution}
+        设事件 $E$ 表示在序列 $THTH$ 出现之前先出现 $HTH$。若当前已出现的前缀为 $s$,则记 $P(E\mid s)$ 为在以 $s$ 开始的条件下事件 $E$ 发生的概率。定义
+        \[
+        x = P(E\mid H), \quad y = P(E\mid T)
+        \]
+        根据一步分析法,有
+        \[
+        x = \frac{1}{2} P(E\mid HH) + \frac{1}{4} P(E\mid HTT) + \frac{1}{4} P(E\mid HTH) = \frac{1}{2}x + \frac{1}{4}y + \frac{1}{4},
+        \]
+        \[
+        y = \frac{1}{2} P(E\mid TT) + \frac{1}{4} P(E\mid THH) + \frac{1}{8} P(E\mid THTT) + \frac{1}{8} P(E\mid THTH) = \frac{1}{2}y + \frac{1}{4}x + \frac{1}{8}y
+        \]
+        解得
+        \[
+        x = \frac{3}{4}, \quad y = \frac{1}{2}
+        \]
+        因此所求概率为
+        \[
+        \frac{1}{2}x + \frac{1}{2}y = \frac{5}{8}
+        \]
+    \end{solution}
+
+    \question 反复抛掷一枚公平硬币,直到出现连续四个正面 $HHHH$ 或连续六个反面 $TTTTTT$ 为止。求事件“$HHHH$ 先于 $TTTTTT$ 出现”的概率。
+    \begin{solution}
+        设事件 $E$ 表示在序列 $TTTTTT$ 出现之前先出现 $HHHH$。对任意当前末尾已出现的序列 $s$,记 $P(E\mid s)$ 为在条件 $s$ 下事件 $E$ 发生的概率。定义
+        \[
+        x = P(E\mid H),\quad y = P(E\mid T).
+        \]
+        根据后续可能的状态转移,可得到方程组（按下一次或若干次投掷展开）：
+        \[
+        x = \frac{7}{8}y + \frac{1}{8}, \quad
+        y = \frac{31}{32}x
+        \]
+        因此
+        \[
+        x = \frac{32}{39}, \quad y = \frac{31}{39}
+        \]
+        由于初始时无既定前缀（在第一次投掷前）,所求概率为 
+        \[
+        \frac12(x+y)= \frac{21}{26}
+        \]
+    \end{solution}
+
+    \question 四位玩家各自掷一个标准六面骰子,点数最大者获胜。如果出现平手,则平手者继续掷骰,直到一人胜出。$H$ 是其中之一。已知他最终获胜,求他第一轮掷出点数为 $5$ 的条件概率。
+    \begin{solution}
+        设事件 $A$ 为“$H$ 首掷为 $5$”,事件 $B$ 为“$H$ 获胜”,根据贝叶斯公式,
+        \[
+        P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}.
+        \]
+        已知 $P(A) = \dfrac{1}{6}, P(B) = \dfrac{1}{4}$, 而$P(B \mid A)$ 如下分情况:
+        \begin{itemize}
+            \item 其他人都掷出 $\le 4$,概率为 $\left( \dfrac{2}{3} \right)^3 = \dfrac{8}{27}$
+            \item 恰一人也掷 $5$,概率 $3 \cdot \dfrac{1}{6} \cdot \left( \dfrac{2}{3} \right)^2 \cdot \dfrac{1}{2} = \dfrac{1}{9}$
+            \item 恰两人也掷 $5$,概率 $3 \cdot \left( \dfrac{1}{6} \right)^2 \cdot \dfrac{2}{3} \cdot \dfrac{1}{3} = \dfrac{1}{54}$
+            \item 三人都掷 $5$,概率 $\left( \dfrac{1}{6} \right)^3 \cdot \dfrac{1}{4} = \dfrac{1}{864}$
+        \end{itemize}
+        故
+        \[
+        P(B \mid A) = \frac{8}{27} + \frac{1}{9} + \frac{1}{54} + \frac{1}{864} = \frac{41}{96} ,\quad
+        P(A \mid B) = \frac{\frac{41}{96} \cdot \frac{1}{6}}{\frac{1}{4}} = \frac{41}{144}
+        \]
+    \end{solution}
+
+    \question 某种生物不会与其他个体产生互动,但能够自行繁殖。若单独放置一小时,它会以相等的概率变成 $0,1,2,3$ 个个体,分别对应死亡或不同的繁殖结果。其后新产生的个体在每个后续小时中也以同样的方式独立行动。若初始时只有一个个体,设 $p$ 为这一族群能够持续存在（即永不灭绝）的概率,求$p$。
+    \begin{solution}
+        设 $q$ 为族群最终灭绝的概率。若当前有 $n$ 个个体,则最终灭绝的概率为 $q^n$。题意给出
+        \[
+        q = \frac14 \left(1 + q + q^2 + q^3\right)
+        \]
+        化简得
+        \[
+        (q-1)(q^2 + 2q - 1) = 0
+        \]
+        在 $[0,1]$ 区间内唯一满足要求的解为
+        \[
+        q = \sqrt{2} - 1
+        \]
+        因此
+        \[
+        p = 1 - q = 2 - \sqrt{2} \approx 0.586
+        \]
+    \end{solution}
+
+    \question 设 $P(n)$ 表示在 $n$ 次抛掷一枚公平硬币时,出现至少连续三个正面的概率。求满足 $P(n)\ge \dfrac12$ 的最小整数 $n$。
+    \begin{solution}
+        设事件 $E_i$ 表示首次出现连续三个正面恰好发生在第 $i$ 次抛掷时,则
+        \[
+        P(n) = \sum_{i=1}^{n-2} \Pr(E_i),
+        \]
+        其中
+        \[
+        \Pr(E_i) = 
+        \begin{cases}
+        \dfrac{1}{8}, & i=1,\\[2mm]
+        \dfrac{1}{16}(1-P(i-2)), & i\ge 2.
+        \end{cases}
+        \]
+        当 $i\ge 2$ 时,$E_i$ 发生的条件是第 $i$ 次抛出 H 前必须是 T,并且之前没有出现过三个连续 H。注意 $P(i-2)=0$ 当 $i<5$,逐步计算:
+        \[
+        P(3)=\frac{1}{8},\quad P(4)=\frac{3}{16},\quad P(5)=\frac{4}{16},\quad P(6)=\frac{5}{16},
+        \]
+        \[
+        P(7)=\frac{6}{16}-\frac{1}{16}\cdot\frac{1}{8},\quad P(8)=\frac{7}{16}-\frac{1}{16}\left(\frac{1}{8}+\frac{3}{16}\right),
+        \]
+        \[
+        P(9)=\frac{8}{16}-\frac{1}{16}\left(\frac{1}{8}+\frac{3}{16}+\frac{4}{16}\right),\quad 
+        P(10)=\frac{9}{16}-\frac{1}{16}\left(\frac{1}{8}+\frac{3}{16}+\frac{4}{16}+\frac{5}{16}\right)=\frac{65}{128} > \frac{1}{2}
+        \]
+        因此最小的 $n$ 满足 $P(n)\ge \dfrac{1}{2}$ 为 10。
+    \end{solution}
+
+    \question 设甲、乙两箱中,甲箱内有 1 白球 1 红球,乙箱内有 1 白球 2 红球。现在每次先从甲箱中随机取一球,放入乙箱内,再从乙箱随机取一球放入甲箱,这样视为一局。试求  
+    \begin{parts}
+    \part 在第二局结束后,有 2 红球在甲箱内的概率。
+    \begin{solution}
+        设三状态如下表所示：
+        \[
+        \begin{array}{c|c|c}
+        \hline
+        \text{状态} & \text{甲箱} & \text{乙箱} \\ \hline
+        S_1 & 1\text{白},\ 1\text{红} & 1\text{白},\ 2\text{红} \\ \hline
+        S_2 & 2\text{红} & 2\text{白},\ 1\text{红} \\ \hline
+        S_3 & 2\text{白} & 3\text{红} \\ \hline
+        \end{array}
+        \]
+        因此转移矩阵为
+        \begin{align*}
+        A&=\begin{bmatrix}
+        P(S_1\to S_1) & P(S_2\to S_1) & P(S_3\to S_1) \\
+        P(S_1\to S_2) & P(S_2\to S_2) & P(S_3\to S_2) \\
+        P(S_1\to S_3) & P(S_2\to S_3) & P(S_3\to S_3)
+        \end{bmatrix} \\
+        &=\begin{bmatrix}
+        \frac{1}{2}\cdot \frac{1}{2}+ \frac{1}{2}\cdot \frac{3}{4} & 1\cdot\frac{1}{2} & 1\cdot\frac{3}{4} \\
+        \frac{1}{2}\cdot\frac{1}{2} & 1\cdot\frac{1}{2} & 0 \\
+        \frac{1}{2}\cdot\frac{1}{4} & 0 & 1\cdot\frac{1}{4}
+        \end{bmatrix}
+        =\begin{bmatrix}
+        \frac{5}{8} & \frac{1}{2} & \frac{3}{4} \\
+        \frac{1}{4} & \frac{1}{2} & 0 \\
+        \frac{1}{8} & 0 & \frac{1}{4}
+        \end{bmatrix}
+        \end{align*}
+        于是
+        \[
+        A^2
+        \begin{bmatrix} 1\\ 0 \\0 \end{bmatrix}
+        =
+        \left[\begin{matrix}
+        \frac{39}{64} & \frac{9}{16} & \frac{21}{32} \\
+        \frac{9}{32} & \frac{3}{8} & \frac{3}{16} \\
+        \frac{7}{64} & \frac{1}{16} & \frac{5}{32}
+        \end{matrix}\right]
+        \begin{bmatrix} 1\\ 0 \\0 \end{bmatrix}
+        =
+        \begin{bmatrix}
+        \frac{39}{64} \\
+        \frac{9}{32} \\
+        \frac{7}{64}
+        \end{bmatrix}
+        \]
+        即第二局结束后,有 2 红球在甲箱内的概率为$\dfrac{9}{32}$。
+    \end{solution}
+    \part 经过长时间交换后,有 2 红球在甲箱内的概率。
+    \begin{solution}
+        对角化转移矩阵得
+        \[
+        A=
+        \left[\begin{matrix}
+        -2 & 1 & 6 \\
+        1 & -2 & 3 \\
+        1 & 1 & 1
+        \end{matrix}\right]
+        \left[\begin{matrix}
+        0 & 0 & 0 \\
+        0 & \frac{3}{8} & 0 \\
+        0 & 0 & 1
+        \end{matrix}\right]
+        \left[\begin{matrix}
+        -\frac{1}{6} & \frac{1}{6} & \frac{1}{2} \\
+        \frac{1}{15} & -\frac{4}{15} & \frac{2}{5} \\
+        \frac{1}{10} & \frac{1}{10} & \frac{1}{10}
+        \end{matrix}\right]
+        \]
+        于是
+        \[
+        A^\infty
+        =
+        \left[\begin{matrix}
+        -2 & 1 & 6 \\
+        1 & -2 & 3 \\
+        1 & 1 & 1
+        \end{matrix}\right]
+        \left[\begin{matrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+        \end{matrix}\right]
+        \left[\begin{matrix}
+        -\frac{1}{6} & \frac{1}{6} & \frac{1}{2} \\
+        \frac{1}{15} & -\frac{4}{15} & \frac{2}{5} \\
+        \frac{1}{10} & \frac{1}{10} & \frac{1}{10}
+        \end{matrix}\right]
+        =
+        \left[\begin{matrix}
+        \frac{3}{5} & \frac{3}{5} & \frac{3}{5} \\
+        \frac{3}{10} & \frac{3}{10} & \frac{3}{10} \\
+        \frac{1}{10} & \frac{1}{10} & \frac{1}{10}
+        \end{matrix}\right]
+        \]
+        且
+        \[
+        A^\infty
+        \begin{bmatrix} 1\\ 0\\ 0\end{bmatrix}
+        =\begin{bmatrix}
+        \frac{3}{5} \\
+        \frac{3}{10} \\
+        \frac{1}{10}
+        \end{bmatrix}
+        \]
+        经过长时间交换后,有 2 红球在甲箱内的概率为
+        \[
+        P(S_2)=\frac{3}{10}
+        \]
+    \end{solution}
+    \end{parts}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{随机变量、概率分布}{随机变量、概率分布} \label{随机变量、概率分布}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
+    \begin{solution}
+    将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
+    根据已知条件：
+    \[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
+    我们需要计算：
+    \[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
+    利用标准正态分布的对称性：
+    \[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
+    根据全概率性质：
+    \[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
+    \[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
+    因此，$P(X < 0) = 0.2$。
+    \end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{期望值}{期望值} \label{期望值}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+        \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
+
+    设随机变量 $X$ 代表阿花吃完巧克力的天数,求期望值 $E(X)$。
+    \begin{solution}
+        考虑将 7 颗巧克力在 $X$ 天内吃完,且每天至少吃一颗。这等价于将 7 个相同的球放入 $X$ 个不同的盒子,每个盒子至少一个球。由间隔法,
+        \[
+        P(X=k)=\frac{\comb{6}{k-1}}{2^6}
+        \]
+        故
+        \begin{align*}
+        E(X)&=\sum_{k=1}^{7}k\cdot P(X=k) \\
+        &=\frac{1}{64}\left(1\cdot \comb{6}{0}+2\cdot \comb{6}{1}+3\cdot \comb{6}{2}+4\cdot \comb{6}{3}+5\cdot \comb{6}{4}+6\cdot \comb{6}{5}+7\cdot \comb{6}{6}\right)
+        =4
+        \end{align*}
+    \end{solution}
+
+    \question 在下图所示的大正方形中随机选择一个点。图中嵌套的小正方形无限向内延续。求该随机点所处正方形数量的期望值。例如,图中所示的样例点位于其中的 2 个正方形内。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image154.png}
+    \end{figure} 
+    \begin{solution}
+        由于四个三角形面积和皆占正方形的一半,所求为
+        \[
+        1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{2^2} + 3 \cdot \frac{1}{2^3} + \cdots
+        \]
+        即
+        \[
+        \left(\frac{1}{2} + \frac{1}{4} + \cdots \right)\left(1 + \frac{1}{2} + \frac{1}{4} + \cdots \right)
+        = 1 \cdot 2 = 2
+        \]
+    \end{solution}
+
+    \question 一个人出生在一周七天中的任意一天且概率相同。一大群人依次报出自己的出生星期,直到七个星期几都至少出现一次为止。试求第一次凑齐全部七个星期几时,对应的那个人的期望序号。
+    \begin{solution}
+        这是经典的“优惠券收集（Coupon Collector）”问题。设当前已经出现了 $i-1$ 个不同的星期,则下一位出现一个新星期的概率为
+        \[
+        p=\frac{7-(i-1)}{7},
+        \]
+        因此获得一个新星期所需的期望人数为
+        \[
+        \frac{1}{p}=\frac{7}{7-(i-1)}.
+        \]
+        于是凑齐全部七天所需的期望总人数为
+        \[
+        1+\frac{7}{6}+\frac{7}{5}+\frac{7}{4}+\frac{7}{3}+\frac{7}{2}+\frac{7}{1}=\frac{363}{20}
+        \]
+        其中,第 $i$ 项表示在已有 $i-1$ 种不同星期之后,等到第 $i$ 个新星期出现的期望等待人数。
+    \end{solution}
+
+    \question 假设投掷某金币一枚出现正面与反面的概率皆为 $\dfrac{1}{2}$,试问平均要连续掷几次金币,才会出现连续三次正面？
+    \begin{solution}
+        设 $E(n)$ 为出现连续 $n$ 次正面的掷币次数。由一步分析法,
+        \[
+        E(n) = p(E(n-1) + 1) + (1-p)(E(n-1) + 1 + E(n))
+        \]
+        代入 $p = \dfrac{1}{2}$,
+        \[
+        E(1) = 1 + \frac{1}{2} E(1), \quad E(2) = E(1) + 1 + \frac{1}{2} E(2), \quad E(3) = E(2) + 1 + \frac{1}{2} E(3)
+        \]
+        得
+        \[
+        E(1) = 2, \quad E(2) = 6, \quad E(3) = 14
+        \]
+    \end{solution}
+
+    \question 已知一个非公正硬币掷出正面机率为 $\dfrac{1}{3}$,反面机率为 $\dfrac{2}{3}$,今连续掷此硬币,记录每次掷出的结果,每次结果互不影响,令随机变量 $X$表示第一次看到正面、反面、正面依序出现所需的投掷次数,求 $X$的期望值。
+    \begin{solution}
+        假设期望值为 $E(X)$。若
+        \begin{itemize}
+        \item 出现反面,期望值变为$E(X)+1$
+        \item 出现正面、正面,期望值变为$E(X)+1$
+        \item 出现正面、反面、反面,期望值变为$E(X)+3$
+        \end{itemize}
+        由一步分析法,
+        \[
+        E(X)=\frac{2}{3}(E(X)+1)+\left(\frac{1}{3}\right)^2(E(X)+1)+\left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^2(E(X)+3)
+        \]
+        解得
+        \[
+        E(X)=\frac{33}{2}
+        \]
+    \end{solution}
+
+    \question 袋子里有 $n+3$ 颗球，其中红球有 3 颗，黑球有 $n$ 颗。每次取一球，取后不放回，直到取到两颗红球为止。设随机变量 $X$ 表示取到两颗红球停止时的次数，求：
+    \begin{parts}
+    \part 概率 $P(X=k)$，其中 $k=2,3,4,\dots,n+2$。
+    \begin{solution}
+        三颗红球、$n$ 颗黑球任意排列，共有
+        \[
+        \comb{n+3}{3}=\frac{(n+3)(n+2)(n+1)}{6}
+        \]
+        种排列方法。第 $k$ 次取到第 2 颗红球：第 $k$ 次为红球，前 $k-1$ 次中有 1 红球和 $k-2$ 黑球，共 $k-1$ 种排列；后 $n+3-k$ 颗球中有 1 红球和 $n+2-k$ 黑球，共 $n+3-k$ 种排列。因此
+        \[
+        P(X=k)=\frac{(k-1)(n+3-k)}{(n+3)(n+2)(n+1)/6}
+        = \frac{6(k-1)(n-k+3)}{(n+3)(n+2)(n+1)}, \; k=2,3,4,\dots,n+2
+        \]
+    \end{solution}
+    \part 随机变量 $X$ 的期望值 $E(X)$。
+    \begin{solution}
+        期望值为
+        \begin{align*}
+        E(X)
+        &=\sum_{k=2}^{n+2} k P(X=k) \\
+        &= \frac{6}{(n+3)(n+2)(n+1)} \sum_{k=2}^{n+2} k(k-1)(n-k+3)\\
+        &= \frac{6}{(n+3)(n+2)(n+1)} \sum_{k=2}^{n+2} \left[-k^3 + (n+4)k^2 - (n+3)k \right] \\
+        &= \frac{6}{(n+3)(n+2) (n+1)}\left[(n+3)(n+4) \left(\frac{1}{6}(n+4)(2n+7)-\frac{1}{4}(n+3)(n+6) \right) \right] \\
+        &=\frac{n+4}{2}
+        \end{align*}
+    \end{solution}
+    \end{parts}
+
+    \question 在一个由 0 和 1 组成的序列中,"段"指的是由连续相同数字组成的一串,包括长度为 1 的段。例如序列 00100011 中共有四段。对于一个包含 15 个 0 和 9 个 1 的随机排列,求其段数的期望值。
+    \begin{solution}
+        令随机变量 $X_i$ 表示第 $i$ 个位置是否为某一段的起点。若是,则 $X_i=1$;否则 $X_i=0$。
+
+        第一个位置一定是一段的起点,因此 $E(X_1)=1$。当 $i>1$ 时,第 $i$ 个位置成为段起点当且仅当前一位与当前位不同。其概率为
+        \[
+        \frac{15}{24}\cdot \frac{9}{23} + \frac{9}{24}\cdot \frac{15}{23}= \frac{45}{92}
+        \]
+        因此段数的期望值为
+        \[
+        E(X_1)+E(X_2)+\cdots+E(X_{24})= 1 + 23 \cdot \frac{45}{92}= \frac{49}{4}
+        \]
+    \end{solution}
+
+    \question $A$ 从帕斯卡三角形的顶端开始。每次移动,她都会向下一层走,并且以相等概率选择向左或向右。完成 6 次移动后,$A$ 经过的数字（包括起点和终点）的期望和是多少？
+    
+    例如,在下图所示的路径中,$\;A$ 访问的数值之和为 $1 + 1 + 1 + 3 + 6 + 10 + 20 = 42$。 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image8.png}
+    \end{figure} 
+    \begin{solution}
+        设走到第 $n$ 层向右走了 $k$ 步,则 $k\sim\mathrm{Binom}\left(n,\dfrac12\right)$,该层数值为 $\dbinom{n}{k}$,则第 $n$ 层的期望值
+        \[
+        \mathbb E_n
+        =\sum_{k=0}^{n}\binom{n}{k}^2\left(\frac12\right)^n
+        \]
+        由性质
+        \[
+        \sum_{k=0}^{n}\binom{n}{k}^2=\binom{2n}{n}
+        \]
+        总期望值为
+        \[
+        \sum_{n=0}^{6}\left(\frac12\right)^n\binom{2n}{n}
+        =1 + 1 + \frac{3}{2} + \frac{5}{2} + \frac{35}{8} + \frac{63}{8} + \frac{231}{16}
+        =\frac{523}{16}
+        \]
+    \end{solution}
+    
+    \question 连续投掷一枚公平硬币,直到首次出现连续两个反面为止。设随机变量 $X$ 为所需的投掷次数,求 $X$ 的期望与方差。
+    \begin{solution}
+        令 $p(n)$ 表示投掷 $n$ 次铜板才出现连续两次反面的概率。若第一次出现正面,后 $n-1$ 次才出现连续两次反面。若第一次出现反面,第二次出现正面,后 $n-2$ 次才出现连续两次反面。有递推式:
+        \[
+        p(n) = \frac{1}{2} p(n-1) + \frac{1}{4} p(n-2),\quad n\ge 3,\quad p(1)=0,\quad p(2)=\frac{1}{4}
+        \]
+        于是
+        \begin{align*}
+        E(X) &= \sum_{k=1}^\infty k p(k) = 1\cdot 0 + 2\cdot \frac{1}{4} + \sum_{k=3}^\infty k\, p(k) \\
+        &= \frac{1}{2} + \sum_{k=3}^\infty \left(\frac{1}{2} k p(k-1) + \frac{1}{4} k p(k-2)\right) \\
+        &= \frac{1}{2} + \frac{1}{2} (1+E(X)) + \frac{1}{4} (2+E(X)) \Rightarrow E(X) = 6
+        \end{align*}
+        且
+        \begin{align*}
+        E(X^2) &= \sum_{k=1}^\infty k^2 p(k) 
+        = 1^2 \cdot 0 + 2^2 \cdot \frac{1}{4} + \sum_{k=3}^\infty k^2 p(k) \\
+        &= 1 + \sum_{k=3}^\infty \left(\frac{1}{2} k^2 p(k-1) + \frac{1}{4} k^2 p(k-2)\right) \\
+        &= 1 + \frac{1}{2} (E(X^2) + 2 E(X) + 1) + \frac{1}{4} (E(X^2) + 4 E(X) + 4) \Rightarrow E(X^2) = 58
+        \end{align*}
+        故方差为
+        \[
+        Var(X) = E(X^2) - (E(X))^2 = 22
+        \]
+    \end{solution}
+
+    \question 一有 $n$ 项的等差数列 $\{a_n\}$,公差为 $d=\dfrac{\sqrt{13}}{2}$,此数列的方差为 $260$,求 $n$。
+    \begin{solution}
+        设该等差数列为 $a,a+d,\dots,a+(n-1)d$。平均数为
+        \[
+        \overline{X}=a+\frac{n-1}{2}d
+        \]
+        且
+        \[
+        E(X^2)=\frac{1}{n}\sum_{k=0}^{n-1}(a+kd)^2
+        =a^2+ad(n-1)+d^2\frac{(n-1)(2n-1)}{6}
+        \]
+        因此方差为
+        \[
+        \operatorname{Var}(X)=E(X^2)-\overline{X}^2
+        =d^2\left(\frac{(n-1)(2n-1)}{6}-\frac{(n-1)^2}{4}\right)
+        =\frac{d^2(n^2-1)}{12}
+        \]
+        代入 $d^2=\dfrac{13}{4}$ 且 $\operatorname{Var}(X)=260$得
+        \[
+        \frac{13}{4}\cdot\frac{n^2-1}{12}=260 \Rightarrow n=31
+        \]
+    \end{solution}
+
+    \question 重复操作一个成功概率为 $p$ 的伯努利试验,且 $$S_n = \sum_{k=1}^{n} k^2 (1-p)^k,$$若 $\displaystyle\lim_{n \to \infty} S_n = 180$,试求第三次才出现第一次成功的概率。
+    \begin{solution}
+        令 $X \sim \text{Geometric}(p)$表示第一次成功出现所需的试验次数,则有
+        \[
+        E(X^2) = \text{Var}(X) + (E(X))^2 = \dfrac{1-p}{p^2} + \left(\dfrac{1}{p}\right)^2 = \dfrac{2 - p}{p^2}
+        \]
+        且据题意有
+        \[
+        E(X^2) = \dfrac{p}{1 - p} \cdot S_\infty
+        \Rightarrow \dfrac{2 - p}{p^2} = \dfrac{p}{1 - p} \cdot 180
+        \]
+        解得
+        \[
+        180p^3 - p^2 + 3p - 2 =(5p - 1)(36p^2 + 7p + 2) = 0
+        \Rightarrow p = \dfrac{1}{5} \quad (\text{舍去虚根})
+        \]
+        因此
+        \[
+        P(X = 3) = (1 - p)^2p  = \dfrac{16}{125}
+        \]
+    \end{solution}
+
+    \question 有一笔资料包含 $n$ 个数 $x_1, x_2, x_3, \dots, x_n$,其平均数为 $\overline{x}$,试证
+    \[
+    \sqrt{\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\overline{x}^{2}}\ge\frac{1}{n}\sum_{i=1}^{n}|x_{i}-\overline{x}|
+    \]
+    \begin{solution}
+        由柯西不等式,
+        \[
+        \left(\sum_{i=1}^n(x_i-\bar x)^2 \right) \left(\sum_{i=1}^n 1^2\right) \ge \left(\sum_{i=1}^n |x_i-\bar x| \right)^2
+        \]
+        得
+        \[
+        \frac{1}{n} \sum_{i=1}^n (x_i - \bar x)^2 \ge \left( \frac{1}{n} \sum_{i=1}^n |x_i - \bar x| \right)^2
+        \]
+        又
+        \begin{align*}
+        \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2 &= \frac{1}{n} \left( \sum_{i=1}^n x_i^2 - 2\bar{x} \sum_{i=1}^n x_i + \sum_{i=1}^n \bar{x}^2 \right)\\
+        &= \frac{1}{n} \left( \sum_{i=1}^n x_i^2 - 2n\bar{x}^2 + n\bar{x}^2 \right)\\
+        &= \frac{1}{n} \sum_{i=1}^n x_i^2 - \bar{x}^2
+        \end{align*}
+        即得证
+        \[
+        \sqrt{\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\overline{x}^{2}}\ge\frac{1}{n}\sum_{i=1}^{n}|x_{i}-\overline{x}|
+        \]
+    \end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{假设检验}{假设检验} \label{假设检验}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{线性回归}{线性回归} \label{线性回归}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 某实验测得20组样本点 $(x_1,y_1), (x_2,y_2), \dots, (x_{20},y_{20})$,已知
+    \[
+    \sum_{i=1}^{20} x_i = 400, \quad \sum_{i=1}^{20} y_i = 900.
+    \]
+    利用最小平方法求得 $y$ 对 $x$ 的回归直线方程为 $y = a x + b$。若
+    \[
+    \sum_{i=1}^{20} (y_i - a x_i - b)^2 = 0,
+    \]
+    且 $(x_1,y_1) = (30,40)$,设
+    \[
+    x' = 2x - 4, \quad y' = -3y + 5, \quad i=1,2,\dots,20,
+    \]
+    求数据 $(x', y')$ 的回归直线方程。
+    \begin{solution}
+        有
+        \[
+        E(X) = \frac{400}{20} = 20, \quad E(Y) = \frac{900}{20} = 45,
+        \]
+        \[
+        E(X') = E(2X - 4) = 2 \cdot 20 - 4 = 36, \quad E(Y') = E(-3Y + 5) = -3 \cdot 45 + 5 = -130.
+        \]
+        原回归直线经过 $(30,40)$ 与 $(20,45)$,斜率与截距为
+        \[
+        y = -\frac{1}{2} x + 55
+        \]
+        故
+        \[
+        m = \frac{\mathrm{Cov}(2X - 4, -3Y + 5)}{\mathrm{Var}(2X - 4)} = \frac{-6\,\mathrm{Cov}(X,Y)}{4\,\mathrm{Var}(X)} = -\frac{6}{4} \cdot \left(-\frac{1}{2}\right) = \frac{3}{4}.
+        \]
+        回归直线过点 $(E(X'), E(Y')) = (36, -130)$,故方程为
+        \[
+        y' - (-130) = \frac{3}{4}(x' - 36) \Rightarrow y' = \frac{3}{4} x' - 157.
+        \]
+    \end{solution}
+    
+    \question 已知5组数据如下,
+    \[
+    \begin{tabular}{c|ccccc}
+    \hline
+    $X$ & 1 & 2 & 5 & 3 & 4 \\
+    \hline
+    $Y$ & 3 & $a$ & 5 & $b$ & 6 \\
+    \hline
+    \end{tabular}
+    \]
+    且 $Y$ 对 $X$ 的回归直线为 
+    \[
+    Y = \frac{3}{5}X + \frac{11}{5},
+    \]
+    求数对 $(a,b)$。
+    \begin{solution}
+        有
+        \[
+        \bar x = \frac{1+2+5+3+4}{5} = 3.
+        \]
+        由于$\bar x,\bar y$在回归直线上,
+        \[
+        \bar y = \frac{3}{5} \bar x + \frac{11}{5} =\frac{3 + a + 5 + b + 6}{5} \Rightarrow a + b = 6 \tag{1}
+        \]
+        由回归直线斜率公式,
+        \[
+        \frac{3}{5} = \frac{\sum x_i y_i - n \bar x \bar y}{\sum x_i^2 - n \bar x ^2} = \frac{3+2a+25+3b+24-5 \cdot 3 \cdot 4}{55-5 \cdot 3^2} \tag{2}
+        \]
+        由$(1),(2)$解得
+        \[
+        (a,b)=(4,2)
+        \]
+    \end{solution}
+\end{questions}

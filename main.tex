@@ -19,8 +19,9 @@
 \setCJKmainfont{KaiTi}
 
 %\includeonly{数论}
-\includeonly{微积分}
-%\includeonly{代数,组合数学,微积分}
+%\includeonly{微积分}
+%\includeonly{离散数学}
+%\includeonly{代数,微积分}
 %\includeonly{几何}
 %\includeonly{代数}
 %\setCJKmainfont[BoldFont=Noto Sans CJK SC Bold]{AR PL KaitiM GB} 
@@ -45,6 +46,7 @@
 %write into begin align*
 
 %unexplored/to expand later areas: 
+%madas maths advanced topics - diff under the integral sign,diagonalization_of_conics_and_quadrics, intrinsic_coordinates
 %USSR 101,
 %反证法in龙文老师
 %日本大学入学考试
@@ -76,6 +78,13 @@
 %不等式要等号成立条件
 %极限、微分move to 积分
 %不定积分要加C
+%离散数学-数理逻辑、计数原理、排列与组合
+
+%统计学-
+%概率
+%随机变量(discrete: binomial,poisson,geometric, hypergeometric, continuous random variables, probability density function, cumulative distribution function, expectation and variance of uniform, normal, N(0,1),exponential, gamma,联合分布(joint distribution)
+%期望值(covariance,correlation、moment generating functions)
+%假设检验
 
 %fixed issues:
 %余弦定理求边时打横写
@@ -193,12 +202,18 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \hyperlink{同余}{同余} \dotfill \pageref{同余} \\
 \hyperlink{不定方程}{不定方程} \dotfill \pageref{不定方程} 
 \begin{center}
-    {\Large 组合数学}
+    {\Large 离散数学}
 \end{center}
-\hyperlink{排列与组合}{排列与组合} \dotfill \pageref{排列与组合} \\
-\hyperlink{概率、期望值}{概率、期望值} \dotfill \pageref{概率、期望值} \\
-\hyperlink{统计}{统计} \dotfill \pageref{统计}
-\columnbreak
+\hyperlink{数理逻辑}{数理逻辑} \dotfill \pageref{数理逻辑} \\
+\hyperlink{排列与组合}{排列与组合} \dotfill \pageref{排列与组合} 
+\begin{center}
+    {\Large 统计学}
+\end{center}
+\hyperlink{概率}{概率} \dotfill \pageref{概率} \\
+\hyperlink{随机变量、概率分布}{随机变量、概率分布} \dotfill \pageref{随机变量、概率分布} \\
+\hyperlink{期望值}{期望值} \dotfill \pageref{期望值} \\
+\hyperlink{假设检验}{假设检验} \dotfill \pageref{假设检验} \\
+\hyperlink{线性回归}{线性回归} \dotfill \pageref{线性回归} 
 \begin{center}
     {\Large 几何}
 \end{center}
@@ -219,13 +234,14 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \hyperlink{微分}{微分} \dotfill \pageref{微分} \\
 \hyperlink{积分}{积分} \dotfill \pageref{积分} \\
 \hyperlink{积分技巧}{积分技巧} \dotfill \pageref{积分技巧} \\
-\hyperlink{微分方程}{微分方程} \dotfill \pageref{微分方程} 
+\hyperlink{常微分方程}{常微分方程} \dotfill \pageref{常微分方程} 
 \end{multicols}
 \vfill
 \noindent 总题数: \numquestions{}
 \include{代数}
 \include{数论}
-\include{组合数学}
+\include{离散数学}
+\include{统计学}
 \include{几何}
 \include{微积分}
 

@@ -5955,19 +5955,17 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \end{parts}
 
 %分部积分by parts
-\question
-2) 计算不定积分:\[ \int \frac{x^2}{(1+x^2)^2} dx \]
-
-\begin{solution}
-使用分部积分法,令 $u=x, dv = \frac{x}{(1+x^2)^2} dx$:
-则 $du = dx, v = -\frac{1}{2(1+x^2)}$。
-
-根据分部积分公式:
-\begin{align*}
-\int \frac{x^2}{(1+x^2)^2} dx &= -\frac{x}{2(1+x^2)} + \int \frac{1}{2(1+x^2)} dx \\
-&= -\frac{x}{2(1+x^2)} + \frac{1}{2} \tan^{-1} x + C
-\end{align*}
-\end{solution}
+    \question 使用分部积分法,求
+    \[ 
+    \int \frac{x^2}{(1+x^2)^2} dx 
+    \]
+    \begin{solution}
+        由分部积分法,令 $u=x, dv = \dfrac{x}{(1+x^2)^2} dx$,则 $du = dx, v = -\dfrac{1}{2(1+x^2)}$:
+        \begin{align*}
+        \int \frac{x^2}{(1+x^2)^2} dx &= -\frac{x}{2(1+x^2)} + \int \frac{1}{2(1+x^2)} dx \\
+        &= -\frac{x}{2(1+x^2)} + \frac{1}{2} \tan^{-1} x + C
+        \end{align*}
+    \end{solution}
 
     \question  
     \[
@@ -5984,9 +5982,10 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \end{align*}
     \end{solution}
 
-\question
-3) 计算不定积分:\[ \int x e^x \cos x dx \]
-
+\question 
+\[ 
+\int x e^x \cos x dx 
+\]
 \begin{solution}
 首先利用分部积分法处理 $e^x \cos x$。已知:
 \[ \int e^x \cos x dx = \frac{1}{2} e^x (\sin x + \cos x) \]
@@ -10338,7 +10337,7 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{微分方程}{微分方程} \label{微分方程}
+    \hypertarget{常微分方程}{常微分方程} \label{常微分方程}
   }
 \end{center}
 \separator
