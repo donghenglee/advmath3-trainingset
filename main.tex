@@ -126,11 +126,7 @@
 \flagsdefault[width=0.5cm]
 \setlength{\footskip}{0.5cm} 
 \setlength{\columnsep}{1cm}
-\newcommand{\figureornament}[2][1]{%
-  \raisebox{.5\fontcharht\font`0}{%
-    \pgfornament[scale=#1,color=brown]{#2}%
-  }%
-}
+\newcommand{\figureornament}[2][1]{\raisebox{.5\fontcharht\font`0}{\pgfornament[scale=#1,color=brown]{#2}}}
 \runningfooter{}{\figureornament[0.2]{11}\;\; \thepage \;\; \figureornament[0.2]{14}}{}
 
 \begin{document}
