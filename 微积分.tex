@@ -1236,7 +1236,7 @@
     \[
     y = 2^{3e^{2x}}, \quad x \in \mathbb{R}.
     \]
-    以$y$ 表示 $\frac{dy}{dx}$。
+    以$y$ 表示 $\dfrac{dy}{dx}$。
     \begin{solution}
         由链导法,
         \[
@@ -1262,7 +1262,7 @@
         \]
         同样代入 $\ln y = 3 e^{2x} \ln 2$ 得
         \[
-        \frac{dy}{dx} = = y \cdot (\ln 2) \cdot 6 e^{2x} = 2 y \ln y
+        \frac{dy}{dx} = y \cdot (\ln 2) \cdot 6 e^{2x} = 2 y \ln y
         \]
     \end{solution}
 
@@ -4928,7 +4928,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \sqrt{x + \sqrt{x^2+2}} \, dx
     \]
     \begin{solution}
-        设 $x = \sqrt{2} \sinh t$，则 $dx = \sqrt{2} \cosh t \, dt$,由 
+        设 $x = \sqrt{2} \sinh t$,则 $dx = \sqrt{2} \cosh t \, dt$,由 
         \[
         \sqrt{x^2+2} = \sqrt{2} \cosh t, \quad \cosh t + \sinh t = e^t
         \]
@@ -4940,7 +4940,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I = 2^{-\frac{1}{4}} \left( \frac{2}{3}e^{\frac{3t}{2}} - 2e^{-\frac{t}{2}} \right) + C
         \]
-        由 $e^t = \dfrac{x + \sqrt{x^2+2}}{\sqrt{2}}$，得 $e^{\frac{t}{2}} = \dfrac{\sqrt{x + \sqrt{x^2+2}}}{2^{\frac{1}{4}}}$,代入各项,
+        由 $e^t = \dfrac{x + \sqrt{x^2+2}}{\sqrt{2}}$,得 $e^{\frac{t}{2}} = \dfrac{\sqrt{x + \sqrt{x^2+2}}}{2^{\frac{1}{4}}}$,代入各项,
         \begin{align*}
         I &= 2^{-\frac{1}{4}} \cdot \frac{2}{3} \cdot \left( \frac{\sqrt{x + \sqrt{x^2+2}}}{2^{\frac{1}{4}}} \right)^3 + -2 \cdot 2^{-\frac{1}{4}} \cdot \left( \frac{\sqrt{x + \sqrt{x^2+2}}}{2^{\frac{1}{4}}} \right)^{-1} \\
         &= \frac{1}{3}(x + \sqrt{x^2+2})^{\frac{3}{2}} - \frac{2}{\sqrt{x + \sqrt{x^2+2}}} + C
@@ -4967,7 +4967,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int \frac{4\cot x}{1+\cos^2 x} \, dx
     \]
     \begin{solution}
-        作代换 $u = 1 + \cos^2 x$,则 $du = -2 \sin x \cos x \, dx$，注意到
+        作代换 $u = 1 + \cos^2 x$,则 $du = -2 \sin x \cos x \, dx$,注意到
         \[
         \frac{4\cos x}{\sin x (1+\cos^2 x)} = \frac{2 \cdot (2\sin x \cos x)}{(1-\cos^2 x)(1+\cos^2 x)}
         \]
@@ -5017,7 +5017,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         \frac{du}{dx} = 2x \csc x - x^2 \csc x \cot x = x \csc x (2 - x \cot x)
         \]
-        代入积分式：
+        代入积分式:
         \begin{align*}
         \int \frac{2x - x^2 \cot x}{x^2 + \sin x} \, dx &= \int \frac{x (2 - x \cot x)}{x^2 + \sin x} \cdot \frac{du}{x \csc x (2 - x \cot x)} \\
         &= \int \frac{1}{x^2 \csc x + 1} \, du \\
@@ -5033,7 +5033,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \[
     \frac{d}{d\theta}(\tan^3 \theta) = 3\tan^4 \theta + 3\sec^2 \theta - 3,
     \]
-    据此，求 
+    据此,求 
     \[
     \int_{0}^{\frac{\pi}{4}} \tan^4 \theta \,d\theta
     \]
@@ -5046,7 +5046,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         &= 3\tan^4 \theta + 3(\sec^2 \theta - 1) \\
         &= 3\tan^4 \theta + 3\sec^2 \theta - 3
         \end{align*}
-        故得证，于是
+        故得证,于是
         \begin{align*}
         \int_{0}^{\frac{\pi}{4}} \tan^4 \theta d\theta &= \frac{1}{3} \int_{0}^{\frac{\pi}{4}} (3\tan^4 \theta) \,d\theta \\
         &= \frac{1}{3} \int_{0}^{\frac{\pi}{4}} \left( \frac{d}{d\theta} \tan^3 \theta - 3\sec^2 \theta + 3 \right) \,d\theta \\
@@ -5067,7 +5067,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \begin{align*}
         \frac{d}{d\theta} \tan^3 \theta = 3\tan^2 \theta \sec^2 \theta = 3(\sec^2 \theta - 1)(\sec^2 \theta) = 3\sec^4 \theta - 3\sec^2 \theta
         \end{align*}
-        故得证，于是
+        故得证,于是
         \begin{align*}
         \int_{0}^{\frac{\pi}{4}} \sec^4 \theta d\theta &= \frac{1}{3} \int_{0}^{\frac{\pi}{4}} (3\sec^4 \theta) \,d\theta \\
         &= \frac{1}{3} \int_{0}^{\frac{\pi}{4}} \left( \frac{d}{d\theta} \tan^3 \theta + 3\sec^2 \theta \right) \,d\theta \\
@@ -5184,7 +5184,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I = \int_{\frac{1}{2}}^{\frac{\sqrt{3}}{2}} \frac{1-u^2}{u^2} \, du = \int_{\frac{1}{2}}^{\frac{\sqrt{3}}{2}} (u^{-2} - 1) \, du
         \]
-        积分得：
+        积分得:
         \[
         I = \left[ -\frac{1}{u} - u \right]_{\frac{1}{2}}^{\frac{\sqrt{3}}{2}} = \frac{15 - 7\sqrt{3}}{6}
         \]
@@ -5851,6 +5851,27 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \]
     \end{solution}
 
+    \question
+    \[
+    \int \frac{e^x(1+\sin x)}{1+\cos x} \,dx
+    \]
+    \begin{solution}
+        将分母化为半角形式:
+        \[
+        \int \frac{e^x(1+\sin x)}{1+\cos x} \,dx 
+        = \int \frac{e^x (1 + 2\sin\frac{x}{2}\cos\frac{x}{2})}{2\cos^2\frac{x}{2}} \,dx
+        = \int e^x \left( \frac{1}{2}\sec^2\frac{x}{2} + \tan\frac{x}{2} \right) \,dx
+        \]
+        注意到 
+        \[
+        \frac{d}{dx}\tan\frac{x}{2} = \frac{1}{2}\sec^2\frac{x}{2}
+        \]
+        于是由 $\displaystyle \int e^x (f(x)+f'(x)) \,dx = e^x f(x) + C$ 得:
+        \[
+        \int \frac{e^x(1+\sin x)}{1+\cos x} \,dx = e^x \tan\frac{x}{2} + C
+        \]
+    \end{solution}
+
     \question 
     \begin{parts}
     \part 证明 
@@ -5886,14 +5907,14 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         &= \int \frac{16 \sin 2x(3 - 4 \sin^2 2x)^2}{\cos 2x \sqrt{4 - \cos^4 2x}} \,dx \\
         &= \int \frac{16 \sin 2x(4 \cos^2 2x - 1)^2}{\cos 2x \sqrt{4 - \cos^4 2x}} \,dx
         \end{align*}
-        设 $u = \cos^2 2x$，则 $du = -4 \sin 2x \cos 2x \,dx$。代入原式:
+        设 $u = \cos^2 2x$,则 $du = -4 \sin 2x \cos 2x \,dx$。代入原式:
         \begin{align*}
         I &= \int \frac{-4(4\cos^2 2x - 1)^2}{\cos^2 2x \sqrt{4 - \cos^4 2x}} \cdot (-4 \sin 2x \cos 2x) \,dx \\
         &= \int \frac{-4(4u - 1)^2}{u\sqrt{4 - u^2}} \,du \\
         &= \int \frac{32u - 64u^2 - 4}{u\sqrt{4 - u^2}} \,du \\
         &= \int \left( \frac{32u - 4}{u\sqrt{4 - u^2}} - \frac{64u}{\sqrt{4 - u^2}} \right) \,du
         \end{align*}
-        对于第一个积分,设 $u = 2\sin \theta$，则 $du = 2\cos \theta \,d\theta$,
+        对于第一个积分,设 $u = 2\sin \theta$,则 $du = 2\cos \theta \,d\theta$,
         \begin{align*}
         \int \frac{32u - 4}{u\sqrt{4 - u^2}} \,du &= \int \frac{64 \sin \theta - 4}{2\sin \theta \sqrt{4 - 4\sin^2 \theta}} \cdot 2\cos \theta \,d\theta \\
         &= \int \frac{64 \sin \theta - 4}{2\sin \theta} \,d\theta \\
@@ -5957,12 +5978,12 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
 %分部积分by parts
     \question 使用分部积分法,求
     \[ 
-    \int \frac{x^2}{(1+x^2)^2} dx 
+    \int \frac{x^2}{(1+x^2)^2}\, dx 
     \]
     \begin{solution}
-        由分部积分法,令 $u=x, dv = \dfrac{x}{(1+x^2)^2} dx$,则 $du = dx, v = -\dfrac{1}{2(1+x^2)}$:
+        由分部积分法,令 $u=x, dv = \dfrac{x}{(1+x^2)^2} \,dx$,则 $du = dx, v = -\dfrac{1}{2(1+x^2)}$:
         \begin{align*}
-        \int \frac{x^2}{(1+x^2)^2} dx &= -\frac{x}{2(1+x^2)} + \int \frac{1}{2(1+x^2)} dx \\
+        \int \frac{x^2}{(1+x^2)^2} \,dx &= -\frac{x}{2(1+x^2)} + \int \frac{1}{2(1+x^2)} \,dx \\
         &= -\frac{x}{2(1+x^2)} + \frac{1}{2} \tan^{-1} x + C
         \end{align*}
     \end{solution}
@@ -5982,36 +6003,46 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \end{align*}
     \end{solution}
 
-\question 
-\[ 
-\int x e^x \cos x dx 
-\]
-\begin{solution}
-首先利用分部积分法处理 $e^x \cos x$。已知:
-\[ \int e^x \cos x dx = \frac{1}{2} e^x (\sin x + \cos x) \]
-\[ \int e^x \sin x dx = \frac{1}{2} e^x (\sin x - \cos x) \]
+    \question 
+    \[ 
+    \int x e^x \cos x \,dx 
+    \]
+    \begin{solution}
+        考虑
+        \[
+        I = \int e^x \cos x \,dx, \quad J =\int e^x \sin x \,dx
+        \]
+        由分部积分,
+        \begin{align*}
+        I &= e^x \sin x - \int e^x \sin x \,dx \\
+        &= e^x \sin x - \left( -e^x \cos x - \int (-\cos x) e^x \,dx \right) \\
+        &= e^x \sin x + e^x \cos x - \int e^x \cos x \,dx \\
+        &= e^x (\sin x + \cos x) - I
+        \end{align*}
+        合并 $I$得
+        \[
+        2I = e^x (\sin x + \cos x) \Rightarrow I = \frac{1}{2} e^x (\sin x + \cos x) + C
+        \]
+        由 $I = e^x \sin x - J$ 可知
+        \[
+        J = e^x \sin x - I 
+        = e^x \sin x - \frac{1}{2} e^x (\sin x + \cos x) +C 
+        = \frac{1}{2} e^x (\sin x - \cos x) + C
+        \]
+        据此,由分部积分,令 $u=x, dv = e^x \cos x\, dx$,
+        \begin{align*}
+        \int x e^x \cos x \,dx &= \frac{1}{2} x e^x (\sin x + \cos x) - \int \frac{1}{2} e^x (\sin x + \cos x) \,dx \\
+        &= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} \left[ \int e^x \sin x \,dx + \int e^x \cos x \,dx \right] \\
+        &= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} \left[ \frac{1}{2} e^x (\sin x - \cos x) + \frac{1}{2} e^x (\sin x + \cos x) \right] \\
+        &= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} e^x \sin x + C \\
+        &= \frac{1}{2} e^x (x \sin x + x \cos x - \sin x) + C
+        \end{align*}
+    \end{solution}
 
-对原式使用分部积分,令 $u=x, dv = e^x \cos x dx$:
-\begin{align*}
-\int x e^x \cos x dx &= \frac{1}{2} x e^x (\sin x + \cos x) - \int \frac{1}{2} e^x (\sin x + \cos x) dx \\
-&= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} \left[ \int e^x \sin x dx + \int e^x \cos x dx \right] \\
-&= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} \left[ \frac{1}{2} e^x (\sin x - \cos x) + \frac{1}{2} e^x (\sin x + \cos x) \right] \\
-&= \frac{1}{2} x e^x (\sin x + \cos x) - \frac{1}{2} e^x \sin x + C \\
-&= \frac{1}{2} e^x (x \sin x + x \cos x - \sin x) + C
-\end{align*}
-\end{solution}
-
-\question 计算 $[\int_0^1 \frac{\sin^{-1}x}{x} dx]$。
-\begin{solution}
-令 $x = \sin \theta$,则 $dx = \cos \theta d\theta$。
-积分式转化为:
-\[I = [\int_0^{\pi/2} \frac{\theta \cos \theta}{\sin \theta} d\theta] = [\int_0^{\pi/2} \theta \cot \theta d\theta]\]
-使用分部积分法,令 $u = \theta,dv = \cot \theta d\theta$:
-\[I = [\theta \ln(\sin \theta)]_0^{\pi/2} - [\int_0^{\pi/2} \ln(\sin \theta) d\theta]\]
-第一项代入上下限后为 $0$。利用标准积分公式 $[\int_0^{\pi/2} \ln(\sin \theta) d\theta] = -\frac{\pi}{2} \ln 2$:
-\[I = -(-\frac{\pi}{2} \ln 2) = \frac{\pi}{2} \ln 2\]
-\end{solution}
-    \question $$\int_0^{\infty} e^{-x} \sin x \, dx$$by parts
+    \question 
+    \[
+    \int_0^{\infty} e^{-x} \sin x \, dx
+    \]
     \begin{solution}
         设
         \[
@@ -6020,14 +6051,14 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         分部积分两次得
         \[
         I = -e^{-x} \sin x + \int e^{-x} \cos x \, dx
-           = -e^{-x} (\sin x + \cos x) - I.
+        = -e^{-x} (\sin x + \cos x) - I.
         \]
         移项得
         \[
         2I = -e^{-x} (\sin x + \cos x)
         \Rightarrow I = -\frac{1}{2} e^{-x} (\sin x + \cos x).
         \]
-        取定积分,注意 $\lim_{x \to \infty} e^{-x} (\sin x + \cos x) = 0$,代入得:
+        取定积分,注意 $\displaystyle \lim_{x \to \infty} e^{-x} (\sin x + \cos x) = 0$,代入得:
         \[
         I = \left[ -\frac{1}{2} e^{-x} (\sin x + \cos x) \right]_0^{\infty}
         = 0 - \left(-\frac{1}{2} \cdot 1\right) = \frac{1}{2}.
@@ -6051,145 +6082,95 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \end{align*}
     \end{solution}
 
-\question
-23) 计算不定积分:\[ \int \sin^{-1} \sqrt{\frac{x}{1+x}} dx \]
-
-\begin{solution}
-使用分部积分法,令 $u = \sin^{-1} \sqrt{\frac{x}{1+x}}, dv = dx$:
-\begin{align*}
-I &= x \sin^{-1} \sqrt{\frac{x}{1+x}} - \int x \cdot \frac{1}{\sqrt{1 - \frac{x}{1+x}}} \cdot \frac{1}{2\sqrt{\frac{x}{1+x}}} \cdot \frac{1}{(1+x)^2} dx \\
-&= x \sin^{-1} \sqrt{\frac{x}{1+x}} - \frac{1}{2} \int x \cdot \sqrt{1+x} \cdot \frac{\sqrt{1+x}}{\sqrt{x}} \cdot \frac{1}{(1+x)^2} dx \\
-&= x \sin^{-1} \sqrt{\frac{x}{1+x}} - \frac{1}{2} \int \frac{\sqrt{x}}{1+x} dx
-\end{align*}
-
-对剩余积分项进行凑项处理:
-\[ \frac{1}{2} \int \frac{x+1-1}{\sqrt{x}(1+x)} dx = \int \frac{1}{2\sqrt{x}} dx - \int \frac{1}{2\sqrt{x}(1+x)} dx \]
-
-进行积分计算:
-\begin{itemize}
-    \item 第一项:$\int \frac{1}{2\sqrt{x}} dx = \sqrt{x}$。
-    \item 第二项:设 $\sqrt{x} = t$,则 $\int \frac{1}{1+t^2} dt = \tan^{-1} t = \tan^{-1}\sqrt{x}$。
-\end{itemize}
-
-合并最终结果:
-\[ I = x \sin^{-1} \sqrt{\frac{x}{1+x}} - \sqrt{x} + \tan^{-1}\sqrt{x} + C \]
-\end{solution}
-
-\question
-5) 计算不定积分 $\int x \tan^{-1}x^2 dx$
-
-\begin{solution}
-设 $u = x^2, du = 2x dx$:
-\begin{align*}
-\int x \tan^{-1}x^2 dx &= \frac{1}{2} \int \tan^{-1}u du \\
-\intertext{使用分部积分法:}
-&= \frac{1}{2} \left( u \tan^{-1}u - \int \frac{u}{1+u^2} du \right) \\
-&= \frac{1}{2} u \tan^{-1}u - \frac{1}{4} \ln(1+u^2) + C \\
-&= \frac{1}{2} x^2 \tan^{-1}x^2 - \frac{1}{4} \ln(1+x^4) + C
-\end{align*}
-\end{solution}
-\question
-15) 计算不定积分:\[ \int \frac{x \sin x}{\cos^5 x} dx \]
-
-\begin{solution}
-使用分部积分法,令 $u = x, dv = \frac{\sin x}{\cos^5 x} dx$。
-对于 $v = \int \tan x \sec^4 x dx$,设 $\tan x = t$:
-\[ v = \int t(1+t^2) dt = \frac{1}{2} \tan^2 x + \frac{1}{4} \tan^4 x = \frac{1}{4} \sec^4 x - \frac{1}{4} \]
-代入分部积分公式:
-\[ I = \frac{x}{4} \sec^4 x - \int \frac{1}{4} \sec^4 x dx \]
-利用 $\int \sec^4 x dx = \tan x + \frac{1}{3} \tan^3 x$:
-\[ I = \frac{x \sec^4 x}{4} - \frac{1}{4} \tan x - \frac{1}{12} \tan^3 x + C \]
-\end{solution}
-\question
-9) 计算不定积分:\[ I = \int \cos(3 \ln x) dx \]
-
-\begin{solution}
-使用换元法,设 $x = e^y$,则 $dx = e^y dy$。
-代入原积分:
-\[ I = \int e^y \cos 3y dy \]
-
-对上述积分使用两次分部积分法:
-\textbf{第一次分部积分}:
-令 $u = \cos 3y, dv = e^y dy$,则 $du = -3 \sin 3y dy, v = e^y$。
-\[ I = e^y \cos 3y + 3 \int e^y \sin 3y dy \]
-
-\textbf{第二次分部积分}:
-对 $\int e^y \sin 3y dy$ 再次令 $u = \sin 3y, dv = e^y dy$,则 $du = 3 \cos 3y dy, v = e^y$。
-\[ \int e^y \sin 3y dy = e^y \sin 3y - 3 \int e^y \cos 3y dy \]
-
-将结果代回 $I$ 的表达式:
-\[ I = e^y \cos 3y + 3 \left( e^y \sin 3y - 3I \right) \]
-\[ I = e^y \cos 3y + 3 e^y \sin 3y - 9I \]
-
-解关于 $I$ 的方程:
-\[ 10I = e^y (\cos 3y + 3 \sin 3y) \]
-\[ I = \frac{e^y}{10} (\cos 3y + 3 \sin 3y) + C \]
-
-还原变量 $y = \ln x$:
-\[ I = \frac{x}{10} [\cos(3 \ln x) + 3 \sin(3 \ln x)] + C \]
-
-\textbf{结果:}
-\[ \int \cos(3 \ln x) dx = \frac{x}{10} [\cos(3 \ln x) + 3 \sin(3 \ln x)] + C \]
-\end{solution}
+    \question
+    \[ 
+    \int \arcsin \sqrt{\frac{x}{1+x}} \,dx 
+    \]
+    \begin{solution}
+        使用分部积分法, 令 $u = \arcsin \sqrt{\frac{x}{1+x}}, dv = dx$:
+        \begin{align*}
+        I &= x \arcsin \sqrt{\frac{x}{1+x}} - \int x \cdot \frac{1}{\sqrt{1 - \frac{x}{1+x}}} \cdot \frac{1}{2\sqrt{\frac{x}{1+x}}} \cdot \frac{1}{(1+x)^2} \,dx \\
+        &= x \arcsin \sqrt{\frac{x}{1+x}} - \frac{1}{2} \int x \cdot \sqrt{1+x} \cdot \frac{\sqrt{1+x}}{\sqrt{x}} \cdot \frac{1}{(1+x)^2} \,dx \\
+        &= x \arcsin \sqrt{\frac{x}{1+x}} - \frac{1}{2} \int \frac{\sqrt{x}}{1+x} \,dx \\
+        &= x \arcsin \sqrt{\frac{x}{1+x}} - \frac{1}{2} \int \frac{x+1-1}{\sqrt{x}(1+x)} \,dx \\
+        &= x \arcsin \sqrt{\frac{x}{1+x}} - \int \frac{1}{2\sqrt{x}} \,dx + \int \frac{1}{2\sqrt{x}(1+x)} \,dx  
+        \end{align*}
+        对于$\displaystyle \int \frac{1}{2\sqrt{x}(1+x)} \,dx$,设$t=\sqrt{x}$,则$dt=-\dfrac{1}{2\sqrt{x}}\, dx$,变为
+        \[
+        \int \frac{1}{1+t^2} \,dt = \arctan t = \arctan\sqrt{x}
+        \]
+        故积分得
+        \[ 
+        I = x \arcsin \sqrt{\frac{x}{1+x}} - \sqrt{x} + \arctan\sqrt{x} + C 
+        \]
+    \end{solution}
 
     \question
-求下列积分的精确值
-\[
-\int_{\frac{3}{2}}^{\frac{5}{2}} (4x^2-16x+15)^4\,dx
-\]
+    \[
+    \int x \arctan x^2 \,dx
+    \]
+    \begin{solution}
+        设 $u = x^2, du = 2x \,dx$,分部积分得
+        \begin{align*}
+        \int x \arctan x^2 \,dx &= \frac{1}{2} \int \arctan u \,du \\
+        &= \frac{1}{2} \left( u \arctan u - \int \frac{u}{1+u^2} \,du \right) \\
+        &= \frac{1}{2} u \arctan u - \frac{1}{4} \ln(1+u^2) + C \\
+        &= \frac{1}{2} x^2 \arctan (x^2) - \frac{1}{4} \ln(1+x^4) + C
+        \end{align*}
+    \end{solution}
 
-\begin{solution}
-先进行因式分解
-\[
-4x^2-16x+15=(2x-3)(2x-5)
-\]
-因此
-\begin{align*}
-\int_{\frac{3}{2}}^{\frac{5}{2}} (4x^2-16x+15)^4\,dx
-&=\int_{\frac{3}{2}}^{\frac{5}{2}}[(2x-3)(2x-5)]^4\,dx \\
-&=\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^4(2x-5)^4\,dx
-\end{align*}
+    \question
+    \[ 
+    \int \frac{x \sin x}{\cos^5 x} \,dx 
+    \]
+    \begin{solution}
+    使用分部积分法, 令 $u = x, dv = \dfrac{\sin x}{\cos^5 x} \,dx$,对于 $\displaystyle v = \int \frac{\sin x}{\cos^5 x} \,dx$, 设 $t = \cos x$,
+    \[ 
+    v = \int -t^{-5} \,dt = \frac{1}{4} t^{-4} = \frac{1}{4} \sec^4 x 
+    \]
+    代入分部积分公式:
+    \[ 
+    I = \frac{1}{4}x \sec^4 x - \frac{1}{4} \int \sec^4 x \,dx 
+    \]
+    由 
+    \[
+    \int \sec^4 x \,dx = \int (1 + \tan^2 x) \sec^2 x \,dx = \tan x + \frac{1}{3} \tan^3 x
+    \]
+    得
+    \[ 
+    I = \frac{1}{4}x \sec^4 x - \frac{1}{4} \tan x - \frac{1}{12} \tan^3 x + C 
+    \]
+    \end{solution}
 
-第一次分部积分
-\begin{align*}
-&=\left[\frac{1}{10}(2x-3)^5(2x-5)^4\right]_{\frac{3}{2}}^{\frac{5}{2}}
--\int_{\frac{3}{2}}^{\frac{5}{2}}\frac{4}{5}(2x-3)^5(2x-5)^3\,dx
-\end{align*}
-
-第二次分部积分
-\begin{align*}
-&=\left[\frac{4}{55}(2x-3)^5(2x-5)^4\right]_{\frac{3}{2}}^{\frac{5}{2}}
--\left[\frac{2}{5}(2x-3)^6(2x-5)^3\right]_{\frac{3}{2}}^{\frac{5}{2}} \\
-&\quad+\frac{6}{5}\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^6(2x-5)^2\,dx
-\end{align*}
-
-第三次分部积分
-\begin{align*}
-&=\frac{2}{5}\left\{
-\left[\frac{1}{14}(2x-3)^7(2x-5)^2\right]_{\frac{3}{2}}^{\frac{5}{2}}
--\frac{2}{7}\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^7(2x-5)\,dx
-\right\} \\
-&=-\frac{4}{35}\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^7(2x-5)\,dx
-\end{align*}
-
-最后一次分部积分
-\begin{align*}
-&=-\frac{4}{35}\left\{
-\left[\frac{1}{16}(2x-3)^8(2x-5)\right]_{\frac{3}{2}}^{\frac{5}{2}}
--\frac{1}{8}\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^8\,dx
-\right\} \\
-&=\frac{1}{70}\int_{\frac{3}{2}}^{\frac{5}{2}}(2x-3)^8\,dx
-\end{align*}
-
-直接积分
-\begin{align*}
-&=\frac{1}{70}\left[\frac{(2x-3)^9}{18}\right]_{\frac{3}{2}}^{\frac{5}{2}} \\
-&=\frac{1}{1260}\left[(2x-3)^9\right]_{\frac{3}{2}}^{\frac{5}{2}} \\
-&=\frac{1}{1260}\left[(5-3)^9-(3-3)^9\right] \\
-&=\frac{512}{1260} \\
-&=\frac{128}{315}
-\end{align*}
-\end{solution}
+    \question
+    \[
+    \int_{\frac{3}{2}}^{\frac{5}{2}} (4x^2-16x+15)^4 \,dx
+    \]
+    \begin{solution}
+        原积分可写为
+        \[
+        I = \int_{\frac{3}{2}}^{\frac{5}{2}} (2x-3)^4(2x-5)^4 \,dx
+        \]
+        利用分部积分法, 令 $u = (2x-5)^4, dv = (2x-3)^4 \,dx$, 则 
+        \[
+        du = 8(2x-5)^3 \,dx, v = \frac{1}{10}(2x-3)^5
+        \]
+        由于 $(2x-5)$ 在上限为 $0$, $(2x-3)$ 在下限为 $0$, 所有的边界值项 $[uv]_a^b$ 均为 $0$。连续进行分部积分:
+        \begin{align*}
+        I &= \left[ \frac{1}{10}(2x-3)^5(2x-5)^4 \right]_{\frac{3}{2}}^{\frac{5}{2}} - \int_{\frac{3}{2}}^{\frac{5}{2}} \frac{4}{5}(2x-3)^5(2x-5)^3 \,dx \\
+        &= -\frac{4}{5} \int_{\frac{3}{2}}^{\frac{5}{2}} (2x-3)^5(2x-5)^3 \,dx \\
+        &= -\frac{4}{5} \left( \left[ \frac{1}{12}(2x-3)^6(2x-5)^3 \right]_{\frac{3}{2}}^{\frac{5}{2}} - \int_{\frac{3}{2}}^{\frac{5}{2}} \frac{1}{2}(2x-3)^6(2x-5)^2 \,dx \right) \\
+        &= \frac{2}{5} \int_{\frac{3}{2}}^{\frac{5}{2}} (2x-3)^6(2x-5)^2 \,dx \\
+        &= \frac{2}{5} \left( \left[ \frac{1}{14}(2x-3)^7(2x-5)^2 \right]_{\frac{3}{2}}^{\frac{5}{2}} - \int_{\frac{3}{2}}^{\frac{5}{2}} \frac{2}{7}(2x-3)^7(2x-5) \,dx \right) \\
+        &= -\frac{4}{35} \int_{\frac{3}{2}}^{\frac{5}{2}} (2x-3)^7(2x-5) \,dx \\
+        &= -\frac{4}{35} \left( \left[ \frac{1}{16}(2x-3)^8(2x-5) \right]_{\frac{3}{2}}^{\frac{5}{2}} - \int_{\frac{3}{2}}^{\frac{5}{2}} \frac{2}{16}(2x-3)^8 \,dx \right) \\
+        &= \frac{1}{70} \int_{\frac{3}{2}}^{\frac{5}{2}} (2x-3)^8 \,dx
+        \end{align*}
+        见到曙光了:
+        \[
+        I = \frac{1}{70} \left[ \frac{(2x-3)^9}{18} \right]_{\frac{3}{2}}^{\frac{5}{2}} = \frac{128}{315}
+        \]
+    \end{solution}
 
     \question
     \[
@@ -6208,416 +6189,288 @@ I &= x \sin^{-1} \sqrt{\frac{x}{1+x}} - \int x \cdot \frac{1}{\sqrt{1 - \frac{x}
         \[
         I = \int_{0}^{\frac{\pi}{4}} \frac{4}{\sqrt{2}} \tan^2 \theta \sec \theta \,d\theta = 2\sqrt{2} \int_{0}^{\frac{\pi}{4}} (\sec^3 \theta - \sec \theta) \,d\theta
         \]
-        利用 $\sec \theta,\sec^3 \theta$ 的积分公式,得
+        其中
+        \[
+        \int \sec \theta \,d\theta = \ln |\sec \theta + \tan \theta| + C
+        \]
+        且
+        \begin{align*}
+        \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta - \int \sec \theta \tan^2 \theta \,d\theta \\
+        &= \sec \theta \tan \theta - \int (\sec^3 \theta - \sec \theta) \,d\theta \\
+        2 \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta + \ln |\sec \theta + \tan \theta| \\
+        \int \sec^3 \theta \,d\theta &= \frac{1}{2} (\sec \theta \tan \theta + \ln |\sec \theta + \tan \theta|) + C
+        \end{align*}
+        于是
         \begin{align*}
         I &= 2\sqrt{2} \left[ \frac{1}{2}(\sec \theta \tan \theta + \ln|\sec \theta + \tan \theta|) - \ln|\sec \theta + \tan \theta| \right]_{0}^{\frac{\pi}{4}} \\
         &= 2 - \sqrt{2}\ln(\sqrt{2} + 1)
         \end{align*}
     \end{solution}
 
-\question
+    \question
+    \[
+    \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x)(\ln \cos x + \ln \sin x) \,dx
+    \]
+    \begin{solution}
+        首先利用对数性质:
+        \[
+        \ln \cos x + \ln \sin x = \ln (\cos x \sin x) = \ln \frac{\sin 2x}{2} = \ln (\sin 2x) - \ln 2
+        \]
+        因此积分可以写为:
+        \begin{align*}
+        I&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x)(\ln \sin 2x - \ln 2) \,dx \\
+        &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x)\ln \sin 2x \,dx - \ln 2 \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x) \,dx
+        \end{align*}
+        其中
+        \[
+        \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x) \,dx = \left[ \frac{1}{2}\sin 2x - \frac{1}{2}\cos 2x \right]_{\frac{\pi}{4}}^{\frac{\pi}{2}} = \frac{1}{2} - \left(\frac{1}{2} - 0\right) = 0
+        \]
+        对于
+        \[
+        I_1=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos 2x + \sin 2x) \ln \sin 2x \,dx
+        \]
+        使用分部积分,设
+        \[
+        u = \ln \sin 2x, \quad dv = (\cos 2x + \sin 2x) \,dx
+        \]
+        得到
+        \[
+        du = \frac{2\cos 2x}{\sin 2x} \,dx, \quad v = \frac{1}{2}(\sin 2x - \cos 2x)
+        \]
+        代入分部积分公式:
+        \[
+        I_1= \left[\frac{1}{2} (\sin 2x - \cos 2x) \ln \sin 2x\right]_{\frac{\pi}{4}}^{\frac{\pi}{2}} - \frac{1}{2} \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\sin 2x - \cos 2x) \frac{2\cos 2x}{\sin 2x} \,dx 
+        \]
+        其中
+        \[
+        (\sin 2x - \cos 2x) \frac{2\cos 2x}{\sin 2x} = 2 \cos 2x - 2 \cdot \frac{1-\sin^2 2x}{\sin 2x} = 2 (\cos 2x + \sin 2x - \csc 2x)
+        \]
+        于是
+        \[
+        I_1 = \left[ \frac{1}{2}(\sin 2x - \cos 2x) \ln \sin 2x - \frac{1}{2}\sin 2x + \frac{1}{2}\cos 2x + \frac{1}{2} \ln (\tan x) \right]_{\frac{\pi}{4}}^{\frac{\pi}{2}} = \frac{1}{2} \ln 2
+        \]
+        因此
+        \[
+        I = I_1 + 0 = \frac{1}{2} \ln 2
+        \]
+    \end{solution}
 
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x)(\ln \cos x + \ln \sin x) \, dx
-\]
+    \question
+    \[
+    \int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \,dx
+    \]
+    \begin{solution}
+        考虑
+        \[
+        \frac{d}{dx}\left(e^{x+\frac{1}{x}}\right) = \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}}
+        \]
+        将积分重写为
+        \[
+        I=\int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \,dx = \int e^{x+\frac{1}{x}} \,dx + \int x \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}} \,dx
+        \]
+        对第二项使用分部积分得到
+        \[
+        \int x \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}} \,dx = x e^{x+\frac{1}{x}} - \int e^{x+\frac{1}{x}} \,dx
+        \]
+        因此原积分为
+        \[
+        I = \int e^{x+\frac{1}{x}} \,dx + x e^{x+\frac{1}{x}} - \int e^{x+\frac{1}{x}} \,dx = x e^{x+\frac{1}{x}} + C
+        \]
+    \end{solution}
 
-\begin{solution}
-首先利用对数性质:
-\[
-\ln \cos x + \ln \sin x = \ln (\cos x \sin x) = \ln \frac{\sin 2x}{2} = \ln (\sin 2x) - \ln 2
-\]
+    \question
+    \[
+    \int_{0}^{1} 12x^2 \arctan x \,dx
+    \]
+    \begin{solution}
+        分部积分得,
+        \[
+        I=\int_{0}^{1} 12x^2 \arctan x \,dx = \Bigl[ 4x^3 \arctan x \Bigr]_{0}^{1} - \int_{0}^{1} \frac{4x^3}{1+x^2} \,dx
+        \]
+        对于$\displaystyle \int_{0}^{1} \frac{4x^3}{1+x^2} \,dx$,令$w = 1+x^2$,则$dw = 2x \,dx$,于是
+        \[
+        \int_{0}^{1} \frac{4x^3}{1+x^2} \,dx = 2 \int_{1}^{2} \frac{w-1}{w} \,dw = 2 \int_{1}^{2} \left( 1 - \frac{1}{w} \right) \,dw = 2 \Bigl[ w - \ln|w|\Bigr]_{1}^{2}=2 - \ln 4
+        \]
+        故
+        \[
+        I = \pi - (2 - \ln 4) = \pi - 2 + \ln 4
+        \]
+    \end{solution}
 
-因此积分可以写为:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x)(\ln \sin 2x - \ln 2) \, dx
-= \int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x)\ln \sin 2x \, dx - \ln 2 \int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x) \, dx
-\]
+    \question 
+    \[
+    \int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx
+    \]
+    \begin{solution}
+        设$\theta = \arctan(e^{3x}) \Rightarrow \tan\theta = e^{3x}$,则$\sec^2\theta \, d\theta = 3 e^{3x} \, dx$,代入积分:
+        \[
+        I=\int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} 2 \theta \csc^2 \theta \, d\theta
+        \]
+        分部积分得
+        \[
+        \int 2 \theta \csc^2 \theta \, d\theta = -2 \theta \cot \theta + \int 2 \cot \theta \, d\theta = -2 \theta \cot \theta + 2 \ln|\sin\theta|
+        \]
+        代入上下限:
+        \[
+        I=\left[ -2\theta\cot\theta + 2\ln|\sin\theta| \right]_{\frac{\pi}{6}}^{\frac{\pi}{3}} = \ln 3 + \frac{\pi \sqrt{3}}{9}
+        \]
+    \end{solution}
 
-第二个积分简单计算:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x) \, dx = \left[ \frac{1}{2}\sin 2x - \frac{1}{2}\cos 2x \right]_{\pi/4}^{\pi/2} = \frac{1}{2} - \left(\frac{1}{2} - 0\right) = 0
-\]
+    \question 
+    \[
+    \int e^{\arcsin x} \, dx
+    \]
+    \begin{solution}
+        令 $y = \arcsin x,-\dfrac{\pi}{2} \le y \le \dfrac{\pi}{2}$,于是 $\sin y = x,dx = \cos y \, dy=\sqrt{1-x^2} \,dy$,积分变为
+        \[
+        I=\int e^{\arcsin x} \, dx = \int e^y \cos y \, dy
+        \]
+        对 $\int e^y \cos y \, dy$ 使用分部积分两次:
+        \begin{align*}
+        I&= e^y \sin y - \int e^y \sin y \, dy \\
+        &= e^y \sin y - \left(-e^y \cos y + \int e^y \cos y \, dy \right) \\
+        &= e^y \sin y + e^y \cos y - I
+        \end{align*}
+        解得
+        \[
+        I = \frac{1}{2} e^y (\sin y + \cos y) + C = \frac{1}{2} e^{\arcsin x} (x + \sqrt{1-x^2}) + C
+        \]
+    \end{solution}
 
-所以问题简化为:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x) \ln \sin 2x \, dx
-\]
+    \question 
+    \[
+    \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) \, dx
+    \]
+    \begin{solution}
+        首先将被积函数展开
+        \[
+        I=\int_0^1 (x^2 - x + 1)e^{2x-1} \, dx + \int_0^1 (x^2 - x + 1) \, dx
+        \]
+        其中
+        \[
+        \int_0^1 (x^2 - x + 1) \, dx = \left[ \frac{1}{3}x^3 - \frac{1}{2}x^2 + x \right]_0^1 = \frac{5}{6}
+        \]
+        而对于$I_1=\displaystyle \int_0^1 (x^2 - x + 1)e^{2x-1} \, dx$,由分部积分,
+        \[
+        \int (x^2 - x + 1)e^{2x-1} \, dx = \frac{1}{2}(x^2 - x + 1)e^{2x-1} - \int \frac{1}{2}(2x - 1)e^{2x-1} \, dx
+        \]
+        且
+        \[
+        \int \frac{1}{2}(2x - 1)e^{2x-1} \, dx = \frac{1}{4}(2x - 1)e^{2x-1} - \int \frac{1}{4}e^{2x-1} \, dx = \frac{1}{4}(2x - 1)e^{2x-1} - \frac{1}{8}e^{2x-1}
+        \]
+        整理合并,第一个积分的原函数为:
+        \[
+        I_1=\left[\left( \frac{x^2 - x + 1}{2} - \frac{2x - 1}{4} + \frac{1}{8} \right) e^{2x-1}\right]_0^1 = \left[\frac{4x^2 - 8x + 7}{8} e^{2x-1}\right]_0^1 = \frac{3}{8}e - \frac{7}{8e}
+        \]
+        故
+        \[
+        I= \frac{3e}{8} - \frac{7}{8e} + \frac{5}{6}
+        \]
+    \end{solution}
 
-使用分部积分,设
-\[
-u = \ln \sin 2x, \quad dv = (\cos 2x + \sin 2x) dx
-\]
-
-得到
-\[
-du = \frac{2\cos 2x}{\sin 2x} dx, \quad v = \frac{1}{2}(\sin 2x - \cos 2x)
-\]
-
-分部积分公式:
-\[
-\int u\, dv = uv - \int v\, du
-\]
-
-代入得:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x) \ln \sin 2x \, dx
-= \left[ \frac{1}{2} (\sin 2x - \cos 2x) \ln \sin 2x \right]_{\pi/4}^{\pi/2} - \frac{1}{2} \int_{\pi/4}^{\pi/2} (\sin 2x - \cos 2x) \frac{2\cos 2x}{\sin 2x} \, dx
-\]
-
-化简被积函数:
-\[
-(\sin 2x - \cos 2x) \frac{2\cos 2x}{\sin 2x} = 2 \cos 2x - 2 \frac{\cos^2 2x}{\sin 2x} = 2 \cos 2x - 2 \frac{1-\sin^2 2x}{\sin 2x} = 2 (\cos 2x + \sin 2x - \csc 2x)
-\]
-
-于是积分化为:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x) \ln \sin 2x \, dx = \left[ \frac{1}{2}(\sin 2x - \cos 2x) \ln \sin 2x - \frac{1}{2}\sin 2x + \frac{1}{2}\cos 2x + \frac{1}{2} \ln \tan x \right]_{\pi/4}^{\pi/2}
-\]
-
-在端点代入:
-\[
-x = \pi/2: \quad \sin 2x = 0, \quad \cos 2x = -1 \implies \text{对数项消失}
-\]
-\[
-x = \pi/4: \quad \sin 2x = 1, \quad \cos 2x = 0 \implies \text{得到 } \frac{1}{2} \ln 2
-\]
-
-因此最终结果为:
-\[
-\int_{\pi/4}^{\pi/2} (\cos 2x + \sin 2x)(\ln \cos x + \ln \sin x) \, dx = \frac{1}{2} \ln 2
-\]
-\end{solution}
-
-    \question Evaluate $\int \frac{e^x(1+\sin x)}{1+\cos x}\,dx$.
-
-\begin{solution}
-将分母化为半角形式:
-\begin{align*}
-\int \frac{e^x(1+\sin x)}{1+\cos x}\,dx 
-&= \int \frac{e^x \bigl(1 + 2\sin\frac{x}{2}\cos\frac{x}{2}\bigr)}{2\cos^2\frac{x}{2}} \, dx \\
-&= \int e^x \left( \frac{1}{2\cos^2\frac{x}{2}} + \frac{2\sin\frac{x}{2}\cos\frac{x}{2}}{2\cos^2\frac{x}{2}} \right) \, dx \\
-&= \int e^x \left( \frac{1}{2}\sec^2\frac{x}{2} + \tan\frac{x}{2} \right) \, dx.
-\end{align*}
-
-注意 $\frac{d}{dx}\tan\frac{x}{2} = \frac{1}{2}\sec^2\frac{x}{2}$,于是利用公式 $\int e^x (f(x)+f'(x))\,dx = e^x f(x) + C$ 得:
-\[
-\int \frac{e^x(1+\sin x)}{1+\cos x}\,dx = e^x \tan\frac{x}{2} + C.
-\]
-\end{solution}
-
-\question
-
-\[
-\int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \, dx
-\]
-
-\begin{solution}
-观察被积函数,猜测含指数的项需要积分,尝试寻找一个全微分。
-
-注意
-\[
-\frac{d}{dx}\left[e^{x+\frac{1}{x}}\right] = \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}}
-\]
-
-将积分重写为:
-\[
-\int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \, dx
-= \int \left[ e^{x+\frac{1}{x}} + x \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}} \right] \, dx
-\]
-
-拆分积分:
-\[
-= \int e^{x+\frac{1}{x}} \, dx + \int x \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}} \, dx
-\]
-
-对第二项使用分部积分得到:
-\[
-\int x \left(1 - \frac{1}{x^2}\right) e^{x+\frac{1}{x}} \, dx
-= x e^{x+\frac{1}{x}} - \int e^{x+\frac{1}{x}} \, dx
-\]
-
-因此原积分为:
-\[
-\int \left(1 + x - \frac{1}{x}\right) e^{x+\frac{1}{x}} \, dx
-= \int e^{x+\frac{1}{x}} \, dx + \left[x e^{x+\frac{1}{x}} - \int e^{x+\frac{1}{x}} \, dx\right]
-= x e^{x+\frac{1}{x}} + C
-\]
-\end{solution}
-
-\question
-证明
-\[
-\int_{0}^{1} 12x^2 \arctan x \, dx = \pi - 2 + \ln 4
-\]
-
-\begin{solution}
-\text{步骤 1:分部积分} \\
-令 
-\[
-u = \arctan x, \quad dv = 12x^2 \, dx \implies du = \frac{1}{1+x^2} \, dx, \quad v = 4x^3
-\]
-利用分部积分公式:
-\[
-\int u\,dv = uv - \int v\,du
-\]
-得到:
-\[
-\int_{0}^{1} 12x^2 \arctan x \, dx = \big[ 4x^3 \arctan x \big]_{0}^{1} - \int_{0}^{1} 4x^3 \cdot \frac{1}{1+x^2} \, dx
-\]
-
-\text{步骤 2:计算第一项} 
-\[
-\big[ 4x^3 \arctan x \big]_{0}^{1} = 4 \cdot \arctan 1 - 0 = 4 \cdot \frac{\pi}{4} = \pi
-\]
-
-\text{步骤 3:化简剩余积分} \\
-\[
-\int_{0}^{1} \frac{4x^3}{1+x^2} \, dx
-\] 
-令
-\[
-w = 1+x^2 \implies dw = 2x\,dx, \quad x^2 = w-1
-\] 
-积分上下限:
-\[
-x=0 \to w=1, \quad x=1 \to w=2
-\]
-于是:
-\begin{align*}
-\int_{0}^{1} \frac{4x^3}{1+x^2} \, dx &= \int_{1}^{2} \frac{4(w-1) \cdot x}{w} \frac{dw}{2x} = 2 \int_{1}^{2} \frac{w-1}{w} \, dw \\
-&= 2 \int_{1}^{2} \left( 1 - \frac{1}{w} \right) \, dw = 2 \big[ w - \ln|w| \big]_{1}^{2}
-\end{align*}
-
-\text{步骤 4:代入上下限} 
-\begin{align*}
-2 \big[ w - \ln|w| \big]_{1}^{2} &= 2 \big( (2 - \ln 2) - (1 - \ln 1) \big) \\
-&= 2 (1 - \ln 2) = 2 - 2\ln 2 = 2 - \ln 4
-\end{align*}
-
-\text{步骤 5:组合结果} 
-\[
-\int_{0}^{1} 12x^2 \arctan x \, dx = \pi - (2 - \ln 4) = \pi - 2 + \ln 4
-\]
-\end{solution}
-
-\question 
-\[
-\int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx
-\]
-\begin{solution}
-作代换
-\[
-\theta = \arctan(e^{3x}) \implies \tan\theta = e^{3x}, \quad \sec^2\theta \, d\theta = 3 e^{3x} \, dx \implies dx = \frac{\sec^2\theta}{3 e^{3x}} \, d\theta
-\]
-
-积分上下限:
-\[
-x = -\frac{1}{6}\ln 3 \implies \theta = \arctan\frac{1}{\sqrt{3}} = \frac{\pi}{6}, \quad
-x = \frac{1}{6}\ln 3 \implies \theta = \arctan(\sqrt{3}) = \frac{\pi}{3}
-\]
-
-代入积分:
-\[
-\int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx
-= \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} 2 \theta \csc^2 \theta \, d\theta
-\]
-
-使用分部积分:
-\[
-\int 2 \theta \csc^2 \theta \, d\theta = -2 \theta \cot \theta + \int 2 \cot \theta \, d\theta = -2 \theta \cot \theta + 2 \ln|\sin\theta|
-\]
-
-代入上下限:
-\[
-\left[-2\theta\cot\theta + 2\ln|\sin\theta|\right]_{\frac{\pi}{6}}^{\frac{\pi}{3}}
-= \left(2\ln\sin\frac{\pi}{3} - \frac{2\pi}{3}\cot\frac{\pi}{3}\right) - \left(2\ln\sin\frac{\pi}{6} - \frac{\pi}{3}\cot\frac{\pi}{6}\right)
-\]
-
-计算各项:
-\[
-2\ln\frac{\sqrt{3}}{2} - \frac{2\pi}{3}\cdot \frac{1}{\sqrt{3}} - 2\ln\frac{1}{2} + \frac{\pi}{3}\cdot \sqrt{3}
-= \ln\frac{3}{4} - \frac{2\pi\sqrt{3}}{9} + \ln 4 + \frac{\pi\sqrt{3}}{3}
-\]
-
-化简:
-\[
-\ln\frac{3}{4}\cdot 4 + \left(-\frac{2}{9} + \frac{1}{3}\right)\pi\sqrt{3} = \ln 3 + \frac{\pi \sqrt{3}}{9}
-\]
-
-因此积分结果为:
-\[
-\int_{-\frac{1}{6}\ln 3}^{\frac{1}{6}\ln 3} 6 e^{-3x} \arctan(e^{3x}) \, dx = \ln 3 + \frac{\pi \sqrt{3}}{9}
-\]
-\end{solution}
-
-    \question Evaluate $\int e^{\arcsin x} \, dx$.
-
-\begin{solution}
-令 $y = \arcsin x$,则 $-\frac{\pi}{2} \le y \le \frac{\pi}{2}$。于是 $\sin y = x$,且 $dx = \cos y \, dy$,又 $\cos y = \sqrt{1-x^2}$。积分变为
-\[
-\int e^{\arcsin x} \, dx = \int e^y \cos y \, dy.
-\]
-
-对 $\int e^y \cos y \, dy$ 使用分部积分两次:
-\begin{align*}
-I &= \int e^y \cos y \, dy \\
-&= e^y \sin y - \int e^y \sin y \, dy \\
-&= e^y \sin y - \left[-e^y \cos y + \int e^y \cos y \, dy \right] \\
-&= e^y \sin y + e^y \cos y - I
-\end{align*}
-
-解得
-\[
-2I = e^y (\sin y + \cos y) \implies I = \frac{1}{2} e^y (\sin y + \cos y) + C.
-\]
-
-代回 $y = \arcsin x,\sin y = x,\cos y = \sqrt{1-x^2}$:
-\[
-\int e^{\arcsin x} \, dx = \frac{1}{2} e^{\arcsin x} \bigl(x + \sqrt{1-x^2}\bigr) + C.
-\]
-\end{solution}
-
-\question Evaluate $\displaystyle \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx$.
-
-\begin{solution}
-使用代换 $y = 1-x$,则 $dy = -dx$。当 $x=0, y=1$;当 $x=1, y=0$。
-
-\begin{align*}
-I &= \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx \\
-&= -\int_1^0 [(-y+1)^2 - (-y+1) + 1][e^{2(-y+1)-1} + 1]\,dy \\
-&= \int_0^1 (y^2 - y + 1)(e^{-2y+1} + 1)\,dy
-\end{align*}
-
-将积分变量改回 $x$:
-\[
-I = \int_0^1 (x^2 - x + 1)(e^{-2x+1} + 1)\,dx
-\]
-
-原积分 $I$ 的两种形式为:
-\[
-I = \int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx, \quad
-I = \int_0^1 (x^2 - x + 1)(e^{-2x+1} + 1) dx
-\]
-
-两式相加:
-\begin{align*}
-2I &= \int_0^1 (x^2 - x + 1)\left[(e^{2x-1}+1) + (e^{-2x+1}+1)\right] dx \\
-&= \int_0^1 (x^2 - x + 1)\left[e^{2x-1} + e^{-(2x-1)} + 2\right] dx \\
-&= \int_0^1 (x^2 - x + 1)\left[2\cosh(2x-1) + 2\right] dx
-\end{align*}
-
-注意到积分对称性,可以使用标准方法化简,结果为:
-\[
-\int_0^1 (x^2 - x + 1)(e^{2x-1} + 1) dx = \frac{2\pi\sqrt{3}}{9}.
-\]
-\textcolor{red}{(待验证)}
-
-\end{solution}
-
-\question 求
+    \question 求
     \[ 
     \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sec x - \cos x}{(\sec x + 3\cos x)^2} \,dx 
     \]
     \begin{solution}
-    化简被积函数:
-    \[ 
-    \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\frac{1}{\cos x} - \cos x}{(\frac{1}{\cos x} + 3\cos x)^2} \,dx = \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin^2 x \cos x}{(1+3\cos^2 x)^2} \,dx 
+        化简被积函数:
+        \[ 
+        I=\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\frac{1}{\cos x} - \cos x}{(\frac{1}{\cos x} + 3\cos x)^2} \,dx = \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin^2 x \cos x}{(1+3\cos^2 x)^2} \,dx 
+        \]
+        令 $t = \sin x$, 则 $dt = \cos x \,dx$,由于被积函数是偶函数, 积分可写为:
+        \[ 
+        I=\int_{-\frac{\sqrt{2}}{2}}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(1+3(1-t^2))^2} \,dt = 2 \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt 
+        \]
+        对不定积分使用换元 $t = \dfrac{2}{\sqrt{3}}\sin\theta$, 则 $dt = \dfrac{2}{\sqrt{3}}\cos\theta \,d\theta$:
+        \begin{align*}
+        \int \frac{t^2}{(4-3t^2)^2} \,dt 
+        &= \int \frac{\frac{4}{3}\sin^2\theta}{16\cos^4\theta} \cdot \frac{2}{\sqrt{3}}\cos\theta \,d\theta \\
+        &= \frac{1}{6\sqrt{3}} \int \tan^2\theta \sec\theta \,d\theta \\
+        &= \frac{1}{6\sqrt{3}} \left( \int \sec^3\theta \,d\theta - \int \sec\theta \,d\theta \right) \\
+        &= \frac{1}{12\sqrt{3}} (\sec\theta \tan\theta - \ln |\sec\theta + \tan\theta|) + C 
+        \end{align*}
+        其中
+        \[
+        \int \sec \theta \,d\theta = \ln |\sec \theta + \tan \theta| + C
+        \]
+        且
+        \begin{align*}
+        \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta - \int \sec \theta \tan^2 \theta \,d\theta \\
+        &= \sec \theta \tan \theta - \int (\sec^3 \theta - \sec \theta) \,d\theta \\
+        2 \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta + \ln |\sec \theta + \tan \theta| \\
+        \int \sec^3 \theta \,d\theta &= \frac{1}{2} (\sec \theta \tan \theta + \ln |\sec \theta + \tan \theta|) + C
+        \end{align*}
+        回代 $t$ 并代入上下限:
+        \begin{align*}
+        \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt 
+        &= \frac{1}{6\sqrt{3}} \left[ \frac{\sqrt{3}t}{4-3t^2} - \frac{1}{2} \ln \left| \frac{2+\sqrt{3}t}{\sqrt{4-3t^2}} \right| \right]_{0}^{\frac{\sqrt{2}}{2}} \\
+        &= \frac{1}{15\sqrt{2}} - \frac{1}{12\sqrt{3}} \ln \left( \frac{2\sqrt{2}+\sqrt{3}}{\sqrt{5}} \right) 
+        \end{align*}
+        于是
+        \[ 
+        I=2 \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt = \frac{\sqrt{2}}{15} - \frac{\sqrt{3}}{18} \ln \left( \frac{2\sqrt{2}+\sqrt{3}}{\sqrt{5}} \right) 
+        \]
+    \end{solution}
+    
+    \question
+    \[
+    \int_{0}^{\frac{1}{2}} \frac{\arcsin\sqrt{x}-\arccos\sqrt{x}}{\arcsin\sqrt{x}+\arccos\sqrt{x}} \,dx 
     \]
-    令 $t = \sin x$, 则 $dt = \cos x \,dx$。
-    当 $x = \pm\frac{\pi}{4}$ 时, $t = \pm\frac{\sqrt{2}}{2}$。
-    由于被积函数是偶函数, 积分可写为:
-    \[ 
-    \int_{-\frac{\sqrt{2}}{2}}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(1+3(1-t^2))^2} \,dt = 2 \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt 
-    \]
-    对不定积分使用换元 $t = \frac{2}{\sqrt{3}}\sin\theta$, 则 $dt = \frac{2}{\sqrt{3}}\cos\theta \,d\theta$:
-    \[ 
-    \int \frac{t^2}{(4-3t^2)^2} \,dt = \int \frac{\frac{4}{3}\sin^2\theta}{16\cos^4\theta} \cdot \frac{2}{\sqrt{3}}\cos\theta \,d\theta = \frac{1}{6\sqrt{3}} \int \tan^2\theta \sec\theta \,d\theta 
-    \]
-    \[ 
-    = \frac{1}{6\sqrt{3}} \left( \int \sec^3\theta \,d\theta - \int \sec\theta \,d\theta \right) = \frac{1}{12\sqrt{3}} (\sec\theta \tan\theta - \ln |\sec\theta + \tan\theta|) + C 
-    \]
-    回代 $t$ 并代入上下限:
-    \[ 
-    \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt = \frac{1}{6\sqrt{3}} \left[ \frac{\sqrt{3}t}{4-3t^2} - \frac{1}{2} \ln \left| \frac{2+\sqrt{3}t}{\sqrt{4-3t^2}} \right| \right] \bigg|_{0}^{\frac{\sqrt{2}}{2}} 
-    \]
-    \[ 
-    = \frac{1}{6\sqrt{3}} \left[ \frac{\frac{\sqrt{6}}{2}}{4-\frac{3}{2}} - \frac{1}{2} \ln \left( \frac{2+\frac{\sqrt{6}}{2}}{\sqrt{4-\frac{3}{2}}} \right) \right] = \frac{1}{15\sqrt{2}} - \frac{1}{12\sqrt{3}} \ln \left( \frac{2\sqrt{2}+\sqrt{3}}{\sqrt{5}} \right) 
-    \]
-    乘以系数 2, 得到最终结果:
-    \[ 
-    2 \int_{0}^{\frac{\sqrt{2}}{2}} \frac{t^2}{(4-3t^2)^2} \,dt = \frac{\sqrt{2}}{15} - \frac{\sqrt{3}}{18} \ln \left( \frac{2\sqrt{2}+\sqrt{3}}{\sqrt{5}} \right) 
-    \]
+    \begin{solution}
+        首先利用恒等式 $\arcsin\sqrt{x} + \arccos\sqrt{x} = \dfrac{\pi}{2}$,分子可写成
+        \[
+        \arcsin\sqrt{x} - \arccos\sqrt{x} = 2\arcsin\sqrt{x} - \frac{\pi}{2}
+        \]
+        原积分化为
+        \[
+        I = \int_{0}^{\frac{1}{2}} \frac{2\arcsin\sqrt{x} - \frac{\pi}{2}}{\frac{\pi}{2}} \,dx = \int_{0}^{\frac{1}{2}} \left( \frac{4}{\pi}\arcsin\sqrt{x} - 1 \right) \,dx
+        \]
+        设 $\sqrt{x} = \sin \theta$,则 $x = \sin^2 \theta,dx = 2\sin \theta \cos \theta \,d\theta = \sin 2\theta \,d\theta$,
+        \[
+        I = \int_{0}^{\frac{\pi}{4}} \left( \frac{4}{\pi}\theta - 1 \right) \sin 2\theta \,d\theta = \frac{4}{\pi} \int_{0}^{\frac{\pi}{4}} \theta \sin 2\theta \,d\theta - \int_{0}^{\frac{\pi}{4}} \sin 2\theta \,d\theta
+        \]
+        使用分部积分法处理第一项,
+        \[
+        \int \theta \sin 2\theta \,d\theta = -\frac{1}{2}\theta \cos 2\theta + \frac{1}{2} \int \cos 2\theta \, d\theta
+        = -\frac{1}{2}\theta \cos 2\theta + \frac{1}{4}\sin 2\theta
+        \]
+        代入上下限,
+        \[
+        \int_{0}^{\frac{\pi}{4}} \theta \sin 2\theta \,d\theta = \left[ -\frac{1}{2} \theta \cos 2\theta + \frac{1}{4}\sin 2\theta \right]_{0}^{\frac{\pi}{4}}  = \frac{1}{4}
+        \]
+        而
+        \[
+        \int_{0}^{\frac{\pi}{4}} \sin 2\theta \,d\theta = \left[ -\frac{1}{2} \cos 2\theta \right]_{0}^{\frac{\pi}{4}} = \frac{1}{2}
+        \]
+        于是
+        \[
+        I = \frac{4}{\pi} \cdot \frac{1}{4} - \frac{1}{2} = \frac{1}{\pi} - \frac{1}{2}
+        \]
     \end{solution}
 
-\question
-利用适当的积分方法证明:
-\[
-\int_{0}^{\frac{1}{2}} \frac{\arcsin\sqrt{x}-\arccos\sqrt{x}}{\arcsin\sqrt{x}+\arccos\sqrt{x}} \,dx = \frac{1}{\pi} - \frac{1}{2}
-\]
-
-\begin{solution}
-首先利用恒等式 $\arcsin\sqrt{x} + \arccos\sqrt{x} = \frac{\pi}{2}$。
-分子可以写为:
-\[
-\arcsin\sqrt{x} - \arccos\sqrt{x} = \arcsin\sqrt{x} - \left( \frac{\pi}{2} - \arcsin\sqrt{x} \right) = 2\arcsin\sqrt{x} - \frac{\pi}{2}
-\]
-原积分化为:
-\[
-I = \int_{0}^{\frac{1}{2}} \frac{2\arcsin\sqrt{x} - \frac{\pi}{2}}{\frac{\pi}{2}} \,dx = \int_{0}^{\frac{1}{2}} \left( \frac{4}{\pi}\arcsin\sqrt{x} - 1 \right) \,dx
-\]
-设 $\sqrt{x} = \sin \theta$, 则 $x = \sin^2 \theta$, $dx = 2\sin \theta \cos \theta \,d\theta = \sin 2\theta \,d\theta$。
-当 $x=0$ 时 $\theta=0$; 当 $x=\frac{1}{2}$ 时 $\theta=\frac{\pi}{4}$。
-\[
-I = \int_{0}^{\frac{\pi}{4}} \left( \frac{4}{\pi}\theta - 1 \right) \sin 2\theta \,d\theta = \frac{4}{\pi} \int_{0}^{\frac{\pi}{4}} \theta \sin 2\theta \,d\theta - \int_{0}^{\frac{\pi}{4}} \sin 2\theta \,d\theta
-\]
-使用分部积分法处理第一项, 令 $u = \theta, dv = \sin 2\theta \,d\theta$:
-\[
-\int \theta \sin 2\theta \,d\theta = -\frac{1}{2}\theta \cos 2\theta + \frac{1}{4}\sin 2\theta
-\]
-代入上下限:
-\[
-\int_{0}^{\frac{\pi}{4}} \theta \sin 2\theta \,d\theta = \left( -\frac{1}{2} \cdot \frac{\pi}{4} \cdot 0 + \frac{1}{4} \cdot 1 \right) - 0 = \frac{1}{4}
-\]
-计算第二项:
-\[
-\int_{0}^{\frac{\pi}{4}} \sin 2\theta \,d\theta = -\frac{1}{2} \cos 2\theta \Big|_{0}^{\frac{\pi}{4}} = -\frac{1}{2}(0 - 1) = \frac{1}{2}
-\]
-合并结果:
-\[
-I = \frac{4}{\pi} \cdot \frac{1}{4} - \frac{1}{2} = \frac{1}{\pi} - \frac{1}{2}
-\]
-证毕。
-\end{solution}
-
-    \question Evaluate $\int \cos 3x (\log(\sin 3x))^2\,dx$.
-
-\begin{solution}
-令 $y = \sin 3x$,则 $dy = 3\cos 3x\,dx$,所以 $\cos 3x\,dx = \frac{1}{3}\,dy$。积分变为:
-\[
-I = \frac{1}{3} \int (\ln y)^2\,dy.
-\]
-
-分部积分,取 $u=(\ln y)^2,dv=dy$,则 $du = \frac{2\ln y}{y}\,dy,v=y$:
-\begin{align*}
-I &= \frac{1}{3} \left[ y(\ln y)^2 - \int y \frac{2\ln y}{y}\,dy \right] \\
-&= \frac{1}{3} \left[ y(\ln y)^2 - 2 \int \ln y\,dy \right].
-\end{align*}
-
-再次分部积分 $\int \ln y\,dy$:
-\[
-\int \ln y\,dy = y\ln y - \int 1\,dy = y\ln y - y + C.
-\]
-
-代回主积分:
-\[
-I = \frac{1}{3}\left[ y(\ln y)^2 - 2(y\ln y - y) \right] = \frac{y(\ln y)^2}{3} - \frac{2y\ln y}{3} + \frac{2y}{3} + C.
-\]
-
-代回 $y = \sin 3x$:
-\[
-\int \cos 3x (\log(\sin 3x))^2\,dx = \frac{\sin 3x (\ln(\sin 3x))^2}{3} - \frac{2\sin 3x \ln(\sin 3x)}{3} + \frac{2\sin 3x}{3} + C.
-\]
-\end{solution}
+    \question
+    \[
+    \int \cos 3x (\ln(\sin 3x))^2 \,dx
+    \]
+    \begin{solution}
+        令 $y = \sin 3x$,则 $dy = 3\cos 3x \,dx$,所以 $\cos 3x \,dx = \frac{1}{3} \,dy$,积分变为
+        \[
+        I = \frac{1}{3} \int (\ln y)^2 \,dy
+        \]
+        分部积分,取 $u=(\ln y)^2, dv=dy$,则 $du = \dfrac{2\ln y}{y} \,dy, v=y$,
+        \[
+        I = \frac{1}{3} \left( y(\ln y)^2 - 2 \int \ln y \,dy \right)
+        \]
+        再次分部积分 $\int \ln y \,dy$:
+        \[
+        \int \ln y \,dy = y\ln y - \int 1 \,dy = y\ln y - y + C
+        \]
+        于是
+        \begin{align*}
+        I &= \frac{1}{3} \left( y(\ln y)^2 - 2(y\ln y - y) \right) +C \\
+        &= \frac{1}{3} \left( \sin 3x(\ln (\sin 3x))^2 - 2\sin 3x\ln (\sin 3x) +2\sin 3x\right)+C
+        \end{align*}
+    \end{solution}
 
     \question 已知
     \[
@@ -6625,17 +6478,17 @@ I = \frac{1}{3}\left[ y(\ln y)^2 - 2(y\ln y - y) \right] = \frac{y(\ln y)^2}{3} 
     \]
     求 \( f(0) \)。
     \begin{solution}
-    分部积分得
-    \begin{align*}
-    \int_0^\pi f''(x)\sin x\, dx 
-    &= \left[ f'(x)\sin x \right]_0^\pi - \int_0^\pi f'(x)\cos x\, dx \\
-    &= 0-\left[ f(x)\cos x \right]_0^\pi - \int_0^\pi f(x)\sin x\, dx \\
-    &= f(\pi) + f(0) - \int_0^\pi f(x)\sin x\, dx.
-    \end{align*}
-    则
-    \[
-    f(0)=  \int_0^\pi \left[f(x) + f''(x)\right]\sin x \, dx-f(\pi) = 3-2=1
-    \]
+        分部积分得
+        \begin{align*}
+        \int_0^\pi f''(x)\sin x\, dx 
+        &= \left[ f'(x)\sin x \right]_0^\pi - \int_0^\pi f'(x)\cos x\, dx \\
+        &= 0-\left[ f(x)\cos x \right]_0^\pi - \int_0^\pi f(x)\sin x\, dx \\
+        &= f(\pi) + f(0) - \int_0^\pi f(x)\sin x\, dx.
+        \end{align*}
+        则
+        \[
+        f(0)=  \int_0^\pi \left[f(x) + f''(x)\right]\sin x \, dx-f(\pi) = 3-2=1
+        \]
     \end{solution}
 
     \question
@@ -6654,16 +6507,18 @@ I = \frac{1}{3}\left[ y(\ln y)^2 - 2(y\ln y - y) \right] = \frac{y(\ln y)^2}{3} 
         \[
         \int \frac{1}{1 + \sin x} dx = \int \left( \sec^2 x - \sec x \tan x \right) dx = \tan x - \sec x + C
         \]
-        由分部积分,设 \( u = x,\ dv = \frac{1}{1+\sin x} dx, \)
+        由分部积分,设 \( u = x,\ dv = \dfrac{1}{1+\sin x} dx, \)
         \begin{align*}
-            \int \frac{x}{1+\sin x} dx 
-            &= x(\tan x - \sec x) - \int (\tan x - \sec x) dx \\
-            &= x(\tan x - \sec x) + \ln|\cos x| - \ln|\sec x + \tan x| + C
+        \int \frac{x}{1+\sin x} dx 
+        &= x(\tan x - \sec x) - \int (\tan x - \sec x) dx \\
+        &= x(\tan x - \sec x) + \ln|\cos x| - \ln|\sec x + \tan x| + C
         \end{align*}
-
     \end{solution}
 
-    \question 设函数 $$f(x) = \int_1^x e^{-t^2} \, dt$$
+    \question 设函数 
+    \[
+    f(x) = \int_1^x e^{-t^2} \, dt
+    \]
     求
     \[
     \int_0^1 x f(x^2) \, dx
@@ -6698,121 +6553,69 @@ I = \frac{1}{3}\left[ y(\ln y)^2 - 2(y\ln y - y) \right] = \frac{y(\ln y)^2}{3} 
     \end{solution}
 
     \question
-求
-\[
-I = \int_{\alpha}^{\beta} \left(x^2 + \frac{1}{x^4}\right)^{-2} \, dx, \quad \alpha = 3^{-t}, \ \beta = 3^t
-\]
+    \[
+    \int_{3^{-\frac{1}{6}}}^{3^{\frac{1}{6}}} \left(x^2 + \frac{1}{x^4}\right)^{-2} \, dx
+    \]
+    \begin{solution}
+        注意到
+        \[
+        \left(x^2 + \frac{1}{x^4}\right)^{-2} = \frac{x^8}{(x^6 + 1)^2}
+        \]
+        利用分部积分法,设
+        \[
+        u = x^3, \quad dv = \frac{x^5}{(x^6+1)^2} \, dx \implies du = 3x^2 \, dx, \quad v = -\frac{1}{6(x^6+1)}
+        \]
+        得到
+        \[
+        \int \frac{x^8}{(x^6 + 1)^2} \, dx = -\frac{x^3}{6(x^6+1)} + \frac{1}{2} \int \frac{x^2}{x^6+1} \, dx = -\frac{x^3}{6(x^6+1)} + \frac{1}{6} \arctan(x^3) + C
+        \]
+        因此:
+        \[
+        \int_{3^{-\frac{1}{6}}}^{3^{\frac{1}{6}}} \left(x^2 + \frac{1}{x^4}\right)^{-2} \, dx = \left[ -\frac{x^3}{6(x^6+1)} + \frac{1}{6} \arctan(x^3) \right]_{3^{-\frac{1}{6}}}^{3^{\frac{1}{6}}} = \frac{\pi}{36}
+        \]
+    \end{solution}
 
-\begin{solution}
-首先化简被积式:
-\[
-\left(x^2 + \frac{1}{x^4}\right)^{-2} = \left(\frac{x^6 + 1}{x^4}\right)^{-2} = \left(\frac{x^4}{x^6 + 1}\right)^2 = \frac{x^8}{(x^6 + 1)^2}
-\]
-
-分部积分处理:
-\[
-\int \frac{x^8}{(x^6 + 1)^2} \, dx = \int x^3 \cdot \frac{x^5}{(x^6+1)^2} \, dx
-\]
-
-通过分部积分得到:
-\[
-\int_{\alpha}^{\beta} \frac{x^8}{(x^6 + 1)^2} \, dx = \left[-\frac{x^3}{6(x^6+1)}\right]_{\alpha}^{\beta} + \frac{1}{2} \int_{\alpha}^{\beta} \frac{x^2}{x^6+1} \, dx
-\]
-
-注意到
-\[
-\frac{d}{dx} \arctan(x^3) = \frac{3x^2}{1+x^6} \quad \Rightarrow \quad \frac{x^2}{1+x^6} = \frac{1}{3} \frac{d}{dx} \arctan(x^3)
-\]
-
-因此:
-\[
-\frac{1}{2} \int_{\alpha}^{\beta} \frac{x^2}{x^6+1} \, dx = \frac{1}{6} \left[ \arctan(x^3) \right]_{\alpha}^{\beta}
-\]
-
-最终积分结果为:
-\[
-I = \left[-\frac{x^3}{6(x^6+1)} + \frac{1}{6} \arctan(x^3) \right]_{\alpha}^{\beta}
-\]
-
-代入上下限 \(\alpha = 3^{-t}, \ \beta = 3^t\) 并计算得到:
-\[
-I = \frac{\pi}{36}
-\]
-\end{solution}
-
-\question
-求
-\[
-\int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^x \sin x \, dx
-\]
-
-\begin{solution}
-Step 1: 部分分式分解
-
-\[
-\frac{x^2+3x+3}{(x+1)^3} = \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{(x+1)^3}
-\]
-
-\[
-x^2 + 3x + 3 = A(x+1)^2 + B(x+1) + C
-\]
-
-\[
-x^2 + 3x + 3 = A(x^2 + 2x + 1) + Bx + B + C = Ax^2 + (2A+B)x + (A+B+C)
-\]
-
-比较系数得到 \(A=1, B=1, C=1\),所以
-
-\[
-\frac{x^2+3x+3}{(x+1)^3} = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{(x+1)^3}
-\]
-
-Step 2: 积分 \(\int e^x \sin x \, dx\)
-
-分部积分两次:
-
-\[
-\int e^x \sin x \, dx = e^x \sin x - \int e^x \cos x \, dx = e^x \sin x - (e^x \cos x - \int e^x \sin x \, dx)
-\]
-
-\[
-2 \int e^x \sin x \, dx = e^x (\sin x - \cos x) \implies \int e^x \sin x \, dx = \frac{1}{2} e^x (\sin x - \cos x)
-\]
-
-Step 3: 利用部分分式拆分积分
-
-\[
-\int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^x \sin x \, dx = \int_{0}^{\infty} \frac{e^x \sin x}{x+1} \, dx + \int_{0}^{\infty} \frac{e^x \sin x}{(x+1)^2} \, dx + \int_{0}^{\infty} \frac{e^x \sin x}{(x+1)^3} \, dx
-\]
-
-对第一项使用分部积分:
-
-\[
-u = \frac{1}{x+1}, \quad dv = e^x \sin x \, dx
-\]
-
-\[
-du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
-\]
-
-\[
-\int_{0}^{\infty} \frac{e^x \sin x}{x+1} dx = \left[ \frac{1}{x+1} \cdot \frac{1}{2} e^x (\sin x - \cos x) \right]_{0}^{\infty} - \int_{0}^{\infty} \left(-\frac{1}{(x+1)^2}\right) \cdot \frac{1}{2} e^x (\sin x - \cos x) \, dx
-\]
-
-\[
-= 0 + \int_{0}^{\infty} \frac{e^x (\sin x - \cos x)}{2(x+1)^2} \, dx
-\]
-
-剩余项相互抵消,得到最终结果:
-
-\[
-\int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^x \sin x \, dx = \frac{1}{2}
-\]
-
-\[
-\frac{1}{2}
-\]
-\end{solution}
+    \question
+    求
+    \[
+    \int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^{-x} \sin x \, dx
+    \]
+    \begin{solution}
+        考虑
+        \[
+        I=\int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^{-x} \sin x \, dx
+        \]
+        对于
+        \[
+        J = \int e^{-x} \sin x \, dx 
+        \]
+        使用分部积分法,
+        \begin{align*}
+        J &= -e^{-x} \sin x + \int e^{-x} \cos x \, dx \\
+        &= -e^{-x} \sin x + \left( -e^{-x} \cos x - \int (-e^{-x}) (-\sin x) \, dx \right) \\
+        &= -e^{-x} \sin x - e^{-x} \cos x - \int e^{-x} \sin x \, dx \\
+        &= -e^{-x} (\sin x + \cos x) - J 
+        \end{align*}
+        给出
+        \[
+        J=-\frac{1}{2} e^{-x} (\sin x + \cos x) + C
+        \]
+        利用部分分式分解,
+        \[
+        \frac{x^2+3x+3}{(x+1)^3} = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{(x+1)^3}
+        \]
+        故
+        \[
+        I=\int\frac{e^{-x} \sin x}{x+1}\, dx  + \int\frac{e^{-x} \sin x}{(x+1)^2}\, dx  + \int\frac{e^{-x} \sin x}{(x+1)^3}\, dx 
+        \]
+        对第一、三个积分进行分部积分,得
+        \begin{align*}
+        I &= \left[ -\frac{1}{2} \frac{e^{-x}(\sin x + \cos x)}{x+1} \right]_{0}^{\infty} - \int_{0}^{\infty} \frac{e^{-x}(\sin x + \cos x)}{2(x+1)^2} \, dx + \int_{0}^{\infty} \frac{e^{-x} \sin x}{(x+1)^2} \, dx \\
+        &\quad + \left[ -\frac{1}{2} \frac{e^{-x} \sin x}{(x+1)^2} \right]_{0}^{\infty} + \int_{0}^{\infty} \frac{e^{-x}(\cos x - \sin x)}{2(x+1)^2} \, dx \\
+        &=  0 - \left( -\frac{1}{2} \right) +  0 - 0  \\
+        &= \frac{1}{2}
+        \end{align*}
+    \end{solution}
 
     \question
     \[
@@ -6823,34 +6626,24 @@ du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
         \[
         (2x+5)(2x-3) = 4x^2+4x-15 = (2x+1)^2-16
         \]
-        令 $2x+1 = 4\sec\theta$,则 $2\,dx = 4\sec\theta\tan\theta \, d\theta$,即 $dx = 2\sec\theta\tan\theta \, d\theta$。
-        同时,根式部分化为:
+        令 $2x+1 = 4\sec\theta$,则 $dx = 2\sec\theta\tan\theta \, d\theta$,代入积分式:
         \[
-        \sqrt{(2x+1)^2-16} = \sqrt{16(\sec^2\theta-1)} = 4\tan\theta
+        I = \int \sqrt{16(\sec^2\theta-1)} \cdot 2\sec\theta\tan\theta \, d\theta = 8 \int \sec\theta\tan^2\theta \, d\theta = 8 \int (\sec^3\theta - \sec\theta) \, d\theta
         \]
-        代入积分式:
-        \[
-        I = \int 4\tan\theta \cdot (2\sec\theta\tan\theta) \, d\theta = 8 \int \sec\theta\tan^2\theta \, d\theta
-        \]
-        利用恒等式 $\tan^2\theta = \sec^2\theta - 1$:
-        \[
-        I = 8 \int (\sec^3\theta - \sec\theta) \, d\theta
-        \]
-        应用 $\sec^3\theta$ 的分部积分知
+        应用 $\sec^3\theta,\sec\theta$ 的积分公式得
         \begin{align*}
         I &= 8 \left[ \frac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta+\tan\theta|) - \ln|\sec\theta+\tan\theta| \right] + C \\
         &= 4\sec\theta\tan\theta - 4\ln|\sec\theta+\tan\theta| + C
         \end{align*}
-        由代换知 $\sec\theta = \frac{2x+1}{4}$,构造直角三角形可得 $\tan\theta = \frac{\sqrt{(2x+1)^2-16}}{4}$。
-        代回原变量:
+        由代换知 $\sec\theta = \dfrac{2x+1}{4}$,于是可得 $\tan\theta = \dfrac{\sqrt{(2x+1)^2-16}}{4}$,代回原变量
         \begin{align*}
         I &= 4 \cdot \frac{2x+1}{4} \cdot \frac{\sqrt{(2x+5)(2x-3)}}{4} - 4\ln\left| \frac{2x+1}{4} + \frac{\sqrt{(2x+5)(2x-3)}}{4} \right| + C \\
         &= \frac{1}{4}(2x+1)\sqrt{(2x+5)(2x-3)} - 4\ln\left| 2x+1 + \sqrt{(2x+5)(2x-3)} \right| + C'
         \end{align*}
-        （其中 $\ln 4$ 已并入常数 $C'$ 中）。
+        其中 $\ln 4$ 已并入常数 $C'$ 中。
     \end{solution}
 
-\question 
+    \question 
     \[
     \int \frac{\sqrt{x+1} - \sqrt{x-1}}{\sqrt{x+1} + \sqrt{x-1}} \, dx
     \]
@@ -6866,14 +6659,14 @@ du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
         I_1 &= \int \sqrt{\sec^2\theta - 1} \cdot \sec\theta\tan\theta \, d\theta \\
         &= \int \sec\theta \tan^2\theta \, d\theta = \int (\sec^3\theta - \sec\theta) \, d\theta
         \end{align*}
-        应用分部积分或公式可得 $\int \sec^3\theta \, d\theta = \frac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta + \tan\theta|)$,故:
+        应用 $\sec^3\theta,\sec\theta$ 的积分公式得
         \begin{align*}
         I_1 &= \frac{1}{2}\sec\theta\tan\theta + \frac{1}{2}\ln|\sec\theta + \tan\theta| - \ln|\sec\theta + \tan\theta| \\
         &= \frac{1}{2}\sec\theta\tan\theta - \frac{1}{2}\ln|\sec\theta + \tan\theta|
         \end{align*}
         将 $\sec\theta = x, \tan\theta = \sqrt{x^2-1}$ 代回:
         \[
-        I_1 = \frac{x}{2}\sqrt{x^2-1} - \frac{1}{2}\ln|x + \sqrt{x^2-1}|
+        I_1 = \frac{x}{2}\sqrt{x^2-1} - \frac{1}{2}\ln|x + \sqrt{x^2-1}| + C_1
         \]
         最后代回原式得结果:
         \[
@@ -6881,325 +6674,281 @@ du = -\frac{1}{(x+1)^2} dx, \quad v = \frac{1}{2} e^x (\sin x - \cos x)
         \]
     \end{solution}
 
-\question
+    \question
+    \[
+    \int_{0}^{1} \frac{x^2+1}{(x+1)^2} e^x \, dx
+    \]
+    \begin{solution}
+        对于有理函数部分,作部分分式分解,
+        \[
+        \frac{x^2+1}{(x+1)^2} = 1 - \frac{2}{x+1} + \frac{2}{(x+1)^2}
+        \]
+        因此积分可写为
+        \[
+        I=\int_{0}^{1} e^x \, dx - \int_{0}^{1} \frac{2 e^x}{x+1} \, dx + \int_{0}^{1} \frac{2 e^x}{(x+1)^2} \, dx
+        \]
+        对中间一项使用分部积分,设 $u = \frac{2}{x+1}, dv = e^x \, dx$:
+        \[
+        \int_{0}^{1} \frac{2 e^x}{x+1} \, dx = \left[ \frac{2 e^x}{x+1} \right]_{0}^{1} + \int_{0}^{1} \frac{2 e^x}{(x+1)^2} \, dx
+        \]
+        代回发现到积分项相互抵消,得到
+        \[
+        I= \left[(e^x) - \frac{2 e^x}{x+1} \right]_{0}^{1} = (e - 1) - (e - 2) = 1
+        \]
+    \end{solution}
 
-\[
-J = \int_{0}^{1} \frac{x^2+1}{(x+1)^2} e^x \, dx.
-\]
+    \question
+    \[
+    \int \frac{(\ln(x^2+1)-2\ln x)\sqrt{x^2+1}}{x^4} \, dx
+    \]
+    \begin{solution}
+        积分即
+        \[
+        I = \int \ln\left(1+\frac{1}{x^2}\right) \sqrt{1+\frac{1}{x^2}} \cdot \frac{1}{x^3} \, dx
+        \]
+        令 $u = \sqrt{1+\dfrac{1}{x^2}}$,则 $u^2 = 1+\dfrac{1}{x^2}$,且 $u \, du = -\dfrac{1}{x^3} \, dx$,
+        \[
+        I = \int \ln(u^2) \cdot u \cdot (-u) \, du = \int -2 u^2 \ln u \, du
+        \]
+        使用分部积分法,
+        \[
+        I = \int -2 u^2 \ln u \, du = -\frac{2}{3} u^3 \ln u + \int \frac{2}{3} u^2 \, du = -\frac{2}{3} u^3 \ln u + \frac{2}{9} u^3 + C
+        \]
+        代回变量得到
+        \[
+        I =\frac{2}{9} \left(1+\frac{1}{x^2}\right)^{\frac{3}{2}} \left[ 1 - 3 \ln \sqrt{1+\frac{1}{x^2}} \right] + C
+        \]
+    \end{solution}
 
-\begin{solution}
-首先对有理函数部分作部分分式分解:
-\[
-\frac{x^2+1}{(x+1)^2} = A + \frac{B}{x+1} + \frac{C}{(x+1)^2}.
-\]
+    \question
+    \[
+    \int \cot^{-1}(x^2 + x + 1) \, dx
+    \]
+    \begin{solution}
+        对于反余切函数,有如下恒等式:
+        \[
+        \cot^{-1} \alpha - \cot^{-1} \beta = \cot^{-1} \left( \frac{\alpha\beta + 1}{\beta - \alpha} \right)
+        \]
+        故原积分即
+        \[
+        I = \int \cot^{-1} x \, dx - \int \cot^{-1}(x+1) \, dx
+        \]
+        由分部积分法,有
+        \begin{align*}
+        \int \cot^{-1} x \, dx &= x \cot^{-1} x + \int \frac{x}{1+x^2} \, dx \\
+        &= x \cot^{-1} x + \frac{1}{2} \ln(1+x^2) + C
+        \end{align*}
+        同理可得
+        \[
+        \int \cot^{-1}(x+1) \, dx = (x+1) \cot^{-1}(x+1) + \frac{1}{2} \ln(1+(x+1)^2)
+        \]
+        整理得
+        \[
+        I = x \cot^{-1}(x^2+x+1) + \frac{1}{2} \ln\left| \frac{x^2+1}{x^2+2x+2} \right| + \tan^{-1}(x+1) + C
+        \]
+    \end{solution}
 
-比较分子:
-\[
-x^2+1 = A(x+1)^2 + B(x+1) + C = Ax^2 + (2A+B)x + (A+B+C).
-\]
+    \question
+    \[
+    \int_{\sqrt{e}}^{e} \left[ \ln(\ln x) + \frac{1}{(\ln x)^2} \right] \, dx
+    \]
+    \begin{solution}
+        使用分部积分法处理第一部分,
+        \[
+        \int \ln(\ln x) \, dx = x \ln(\ln x) - \int \frac{1}{\ln x} \, dx
+        \]
+        再分部积分,
+        \[
+        \int \frac{1}{\ln x} \, dx = \frac{x}{\ln x} + \int \frac{1}{(\ln x)^2} \, dx \implies \int \frac{1}{(\ln x)^2} \, dx = \int \frac{1}{\ln x} \, dx - \frac{x}{\ln x}
+        \]
+        移项得
+        \[
+        \int \left[ \ln(\ln x) + \frac{1}{(\ln x)^2} \right] \, dx = \left[ x \ln(\ln x) - \frac{x}{\ln x} \right]_{\sqrt{e}}^{e} = \sqrt{e} \ln 2 - e + 2\sqrt{e}
+        \]
+    \end{solution}
 
-对比系数得到:
-\[
-A = 1, \quad 2A + B = 0 \implies B = -2, \quad A+B+C = 1 \implies C = 2.
-\]
-
-因此积分可写为:
-\[
-J = \int_{0}^{1} \left( e^x - \frac{2 e^x}{x+1} + \frac{2 e^x}{(x+1)^2} \right) \, dx
-= \int_{0}^{1} e^x \, dx - \int_{0}^{1} \frac{2 e^x}{x+1} \, dx + \int_{0}^{1} \frac{2 e^x}{(x+1)^2} \, dx.
-\]
-
-对 $\int \frac{2 e^x}{x+1} \, dx$ 使用分部积分:
-\[
-\int \frac{2 e^x}{x+1} \, dx = \frac{2 e^x}{x+1} - \int \frac{2 e^x}{(x+1)^2} \, dx.
-\]
-
-代回原积分:
-\[
-J = \left[ e^x \right]_0^1 - \left( \left[ \frac{2 e^x}{x+1} \right]_0^1 - \int_{0}^{1} \frac{2 e^x}{(x+1)^2} dx \right) + \int_{0}^{1} \frac{2 e^x}{(x+1)^2} dx.
-\]
-
-两项 $\int_{0}^{1} \frac{2 e^x}{(x+1)^2} dx$ 相互抵消,得到:
-\[
-J = (e-1) - \left( \frac{2e}{2} - \frac{2}{1} \right) = (e-1) - (e-2) = 1.
-\]
-\end{solution}
-
-\question
-\[
-\int \frac{[\ln(x^2+1)-2\ln x]\sqrt{x^2+1}}{x^4} \, dx
-\]
-\begin{solution}
-\[
-\int \frac{[\ln(x^2+1)-2\ln x]\sqrt{x^2+1}}{x^4} \, dx
-= \int \ln\left(\frac{x^2+1}{x^2}\right) \frac{\sqrt{x^2+1}}{x^4} \, dx
-= \int \ln\left(1+\frac{1}{x^2}\right) \frac{\sqrt{x^2+1}}{x^4} \, dx
-\]
-
-\[
-= \int \sqrt{1+\frac{1}{x^2}} \ln\left(1+\frac{1}{x^2}\right) \frac{1}{x^3} \, dx
-\]
-
-令
-\[
-u = \sqrt{1+\frac{1}{x^2}}, \quad 2u \, du = -\frac{2}{x^3}\, dx \implies \frac{dx}{x^3} = -u \, du
-\]
-
-代入积分:
-\[
-\int -u^2 \ln(u^2) \, du = \int -2 u^2 \ln u \, du
-\]
-
-分部积分,取
-\[
-f = \ln u, \quad dg = -2 u^2 du \implies df = \frac{1}{u} du, \quad g = -\frac{2}{3} u^3
-\]
-
-\[
-\int -2 u^2 \ln u \, du = -\frac{2}{3} u^3 \ln u + \frac{2}{9} u^3 + C
-= \frac{2}{9} u^3 \left[ 1 - 3 \ln u \right]
-= \frac{2}{9} u^3 \left[ 1 - 3 \ln(u^2) \right]
-\]
-
-代回 \(u = \sqrt{1+\frac{1}{x^2}}\):
-\[
-= \frac{2}{9} \left(1+\frac{1}{x^2}\right)^{3/2} \left[ 1 - 3 \ln \left(1+\frac{1}{x^2}\right) \right]
-= \frac{2}{9 x^3} (x^2+1)^{3/2} \left[ 1 - 3 \ln \left(\frac{x^2+1}{x^2}\right) \right] + C
-\]
-\end{solution}
-
-\question
-6) 计算不定积分:\[ \int \cot^{-1}(x^2 + x + 1) dx \]
-
-\begin{solution}
-利用反余切恒等式:$\cot^{-1} \alpha - \cot^{-1} \beta = \cot^{-1} \frac{\alpha\beta+1}{\beta-\alpha}$。
-令 $\alpha = x, \beta = x+1$,则有:
-\[ \cot^{-1} x - \cot^{-1}(x+1) = \cot^{-1} \frac{x(x+1)+1}{(x+1)-x} = \cot^{-1}(x^2 + x + 1) \]
-
-原积分拆分为两部分:
-\[ I = \int \cot^{-1} x dx - \int \cot^{-1}(x+1) dx \]
-
-对 $\int \cot^{-1} x dx$ 使用分部积分法:
-\[ \int \cot^{-1} x dx = x \cot^{-1} x - \int x d(\cot^{-1} x) = x \cot^{-1} x + \int \frac{x}{1+x^2} dx \]
-\[ = x \cot^{-1} x + \frac{1}{2} \ln(1+x^2) \]
-
-同理,对 $\int \cot^{-1}(x+1) dx$ 有:
-\[ \int \cot^{-1}(x+1) dx = (x+1) \cot^{-1}(x+1) + \frac{1}{2} \ln(1+(x+1)^2) \]
-
-合并结果:
-\[ I = x \cot^{-1} x - (x+1) \cot^{-1}(x+1) + \frac{1}{2} \ln\left| \frac{x^2+1}{x^2+2x+2} \right| + C \]
-
-利用 $\cot^{-1} x = \tan^{-1} \frac{1}{x}$ 或笔记中的形式化简:
-\[ I = x [\cot^{-1} x - \cot^{-1}(x+1)] + \frac{1}{2} \ln\left| \frac{x^2+1}{x^2+2x+2} \right| + \tan^{-1}(x+1) + C \]
-最终结果为:
-\[ I = x \cot^{-1}(x^2+x+1) + \frac{1}{2} \ln\left| \frac{x^2+1}{x^2+2x+2} \right| + \tan^{-1}(x+1) + C \]
-\end{solution}
-
-\question
-
-\[
-\int_{\sqrt{e}}^{e} \left[ \ln(\ln x) + \frac{1}{(\ln x)^2} \right] \, dx.
-\]
-
-\begin{solution}
-将积分拆开:
-\[
-\int_{\sqrt{e}}^{e} \ln(\ln x) + \frac{1}{(\ln x)^2} \, dx
-= \int_{\sqrt{e}}^{e} \ln(\ln x) \, dx + \int_{\sqrt{e}}^{e} \frac{1}{(\ln x)^2} \, dx.
-\]
-
-\textbf{第一部分积分:} 使用分部积分法,令
-\[
-u = \ln(\ln x), \quad dv = dx \implies du = \frac{1}{x \ln x} dx, \quad v = x.
-\]
-于是:
-\[
-\int_{\sqrt{e}}^{e} \ln(\ln x) \, dx = \Big[ x \ln(\ln x) \Big]_{\sqrt{e}}^{e} - \int_{\sqrt{e}}^{e} \frac{x}{x \ln x} dx = \Big[ x \ln(\ln x) \Big]_{\sqrt{e}}^{e} - \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx.
-\]
-
-计算边界值:
-\[
-\Big[ x \ln(\ln x) \Big]_{\sqrt{e}}^{e} = e \ln(\ln e) - \sqrt{e} \ln(\ln \sqrt{e}) = e \ln 1 - \sqrt{e} \ln \frac{1}{2} = 0 - (-\sqrt{e} \ln 2) = \sqrt{e} \ln 2.
-\]
-
-因此:
-\[
-\int_{\sqrt{e}}^{e} \ln(\ln x) \, dx = \sqrt{e} \ln 2 - \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx.
-\]
-
-\textbf{第二部分积分:} 对 $\int \frac{1}{(\ln x)^2} dx$ 使用“反向分部积分”法,令
-\[
-u = \frac{1}{\ln x}, \quad dv = dx \implies du = -\frac{1}{x (\ln x)^2} dx, \quad v = x.
-\]
-于是:
-\[
-\int_{\sqrt{e}}^{e} \frac{1}{(\ln x)^2} \, dx = \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx - \Big[ \frac{x}{\ln x} \Big]_{\sqrt{e}}^{e}.
-\]
-
-计算边界值:
-\[
-\Big[ \frac{x}{\ln x} \Big]_{\sqrt{e}}^{e} = \frac{e}{\ln e} - \frac{\sqrt{e}}{\ln \sqrt{e}} = e - 2\sqrt{e}.
-\]
-
-因此:
-\[
-\int_{\sqrt{e}}^{e} \frac{1}{(\ln x)^2} \, dx = \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx - e + 2\sqrt{e}.
-\]
-
-\textbf{合并两部分积分:}
-\[
-\int_{\sqrt{e}}^{e} \left[ \ln(\ln x) + \frac{1}{(\ln x)^2} \right] dx
-= \left( \sqrt{e} \ln 2 - \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx \right) + \left( \int_{\sqrt{e}}^{e} \frac{1}{\ln x} \, dx - e + 2\sqrt{e} \right)
-= \sqrt{e} \ln 2 - e + 2\sqrt{e}.
-\]
-\end{solution}
-
-\question
-\[
-\int x^2 e^{\sin^{-1} x} \,dx
-\]
-\begin{solution}
-设 $x = \sin t$, 则 $dx = \cos t \,dt, t = \sin^{-1} x$,代入得
-\[
-I = \int \sin^2 t e^t \cos t \,dt
-\]
-利用三角恒等式 $\sin^2 t \cos t = \frac{1}{4} (\cos t - \cos 3t)$:
-\[
-I = \frac{1}{4} \left( \int e^t \cos t \,dt - \int e^t \cos 3t \,dt \right)
-\]
-利用公式 $\int e^{at} \cos bt \,dt = \frac{e^{at}}{a^2+b^2} (a \cos bt + b \sin bt)$:
-\[
-I = \frac{1}{4} \left( \frac{e^t}{2} (\cos t + \sin t) - \frac{e^t}{10} (\cos 3t + 3 \sin 3t) \right) + C
-\]
-还原变量 $\sin t = x, \cos t = \sqrt{1-x^2}$:
-利用 $\cos 3t = \sqrt{1-x^2}(1-4x^2)$ 和 $\sin 3t = 3x-4x^3$ 进行替换, 得到最终结果。
-\end{solution}
-
+    \question
+    \[
+    \int x^2 e^{\sin^{-1} x} \, dx
+    \]
+    \begin{solution}
+        首先令 $t = \sin^{-1} x$,则 $x = \sin t, dx = \cos t \, dt$。积分变为：
+        \[
+        I = \int e^t \sin^2 t \cos t \, dt
+        \]
+        注意到
+        \[
+        \sin^2 t \cos t = \frac{1}{2} \cos t - \frac{1}{2} \cos 2t \cos t = \frac{1}{2} \cos t - \frac{1}{4} (\cos 3t + \cos t) = \frac{1}{4} \cos t - \frac{1}{4} \cos 3t
+        \]
+        于是原积分变为
+        \[
+        I = \frac{1}{4} \int e^t \cos t \, dt - \frac{1}{4} \int e^t \cos 3t \, dt
+        \]
+        使用分部积分法,设 $\displaystyle J = \int e^t \cos kt \, dt$,则
+        \[
+        J = e^t \cos kt + k \int e^t \sin kt \, dt = e^t \cos kt + k \left( e^t \sin kt - k \int e^t \cos kt \, dt \right)
+        \]
+        整理得
+        \[
+        J = e^t \cos kt + k e^t \sin kt - k^2 J \implies J = \frac{e^t ( \cos kt + k \sin kt )}{1+k^2}
+        \]
+        分别代入 $k=1$ 和 $k=3$,
+        \[
+        \int e^t \cos t \, dt = \frac{e^t (\cos t + \sin t)}{2},\quad \int e^t \cos 3t \, dt = \frac{e^t (\cos 3t + 3 \sin 3t)}{10}
+        \]
+        代回原式：
+        \[
+        I = \frac{1}{4} \left( \frac{e^t (\cos t + \sin t)}{2} - \frac{e^t (\cos 3t + 3 \sin 3t)}{10} \right) + C
+        \]
+        \[
+        = \frac{e^t}{40} \left[ 5(\cos t + \sin t) - (\cos 3t + 3 \sin 3t) \right] + C
+        \]
+        最后利用 $\sin t = x, \cos t = \sqrt{1-x^2}$,以及三倍角公式
+        \[
+        \sin 3t = 3x - 4x^3, \; \cos 3t = (4 \cos^2 t - 3) \cos t = (4(1-x^2) - 3) \sqrt{1-x^2} = (1-4x^2) \sqrt{1-x^2}
+        \]
+        代入整理得
+        \[
+        I = \frac{e^{\sin^{-1} x}}{40} \left[ (4+4x^2)\sqrt{1-x^2} + (12x^3 - 4x) \right] + C
+        \]
+    \end{solution}
 
     \question 
     \[
-    \int \frac{\arctan x}{(1-x^2)^{\frac32}} \, dx
+    \int \frac{\arctan x}{(1-x^2)^{\frac{3}{2}}} \, dx
     \]
     \begin{solution}
-        我们先回顾一个基本积分:
+        先考虑
         \[
         \int \frac{1}{(1 - x^2)^{\frac{3}{2}}}\, dx
         \]
         令 \( x = \sin t \),则 \( dx = \cos t\, dt \),代入后有:
         \[
-        \int \frac{dx}{(1 - x^2)^{\frac{3}{2}}} = \int \frac{\cos t\, dt}{(\cos^2 t)^{\frac{3}{2}}} = \int \frac{1}{\cos^2 t} dt = \tan t + C = \frac{x}{\sqrt{1 - x^2}} + C.
+        \int \frac{dx}{(1 - x^2)^{\frac{3}{2}}} = \int \frac{\cos t\, dt}{(\cos^2 t)^{\frac{3}{2}}} = \int \frac{1}{\cos^2 t} dt = \tan t + C = \frac{x}{\sqrt{1 - x^2}} + C
         \]
-        回到原式,考虑分部积分,令:
+        回到原式,考虑分部积分,令
         \[
-        u = \arctan x, \quad dv = \frac{1}{(1 - x^2)^{\frac{3}{2}}} dx,
+        u = \arctan x, \quad dv = \frac{1}{(1 - x^2)^{\frac{3}{2}}} dx
         \]
         则
         \[
-        du = \frac{1}{1 + x^2} dx, \quad v = \frac{x}{\sqrt{1 - x^2}}.
+        du = \frac{1}{1 + x^2} dx, \quad v = \frac{x}{\sqrt{1 - x^2}}
         \]
-        因此,原积分为:
+        因此,原积分为
         \[
-        \int \frac{\arctan x}{(1 - x^2)^{\frac{3}{2}}}\, dx = \arctan x \cdot \frac{x}{\sqrt{1 - x^2}} - \int \frac{x}{(1 + x^2) \sqrt{1 - x^2}}\, dx.
+        \int \frac{\arctan x}{(1 - x^2)^{\frac{3}{2}}}\, dx = \arctan x \cdot \frac{x}{\sqrt{1 - x^2}} - \int \frac{x}{(1 + x^2) \sqrt{1 - x^2}}\, dx
         \]
-        设最后一项为:
+        设最后一项为
         \[
-        I = \int \frac{x}{(1 + x^2) \sqrt{1 - x^2}}\, dx.
+        I = \int \frac{x}{(1 + x^2) \sqrt{1 - x^2}}\, dx
         \]
-        令 \( x = \sin \theta \),则 \( dx = \cos \theta\, d\theta \),有:
+        令 \( x = \sin \theta \),则 \( dx = \cos \theta\, d\theta \),有
         \[
-        I = \int \frac{\sin \theta \cos \theta}{(1 + \sin^2 \theta)\cos \theta}\, d\theta = \int \frac{\sin \theta}{1 + \sin^2 \theta}\, d\theta.
+        I = \int \frac{\sin \theta \cos \theta}{(1 + \sin^2 \theta)\cos \theta}\, d\theta = \int \frac{\sin \theta}{1 + \sin^2 \theta}\, d\theta
         \]
-        再设 \( u = \cos \theta \),则 \( d\theta = -\dfrac{du}{\sin \theta} \),代入得:
+        再设 \( u = \cos \theta \),则 \( d\theta = -\dfrac{du}{\sin \theta} \),代入得
         \[
-        I = -\int \frac{1}{2 - u^2}\, du.
+        I = -\int \frac{1}{2 - u^2}\, du= -\frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2} + u}{\sqrt{2} - u} \right| + C
         \]
-        这是一个标准积分:
+        回代 \( u = \cos \theta = \sqrt{1 - x^2} \),最终结果为
         \[
-        \int \frac{1}{2 - u^2}\, du = \frac{1}{\sqrt{2}} \tanh^{-1} \left( \frac{u}{\sqrt{2}} \right) + C = \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2} + u}{\sqrt{2} - u} \right| + C.
-        \]
-        回代 \( u = \cos \theta = \sqrt{1 - x^2} \),最终结果为:
-        \[
-        \int \frac{\arctan x}{(1 - x^2)^{\frac{3}{2}}}\, dx = \frac{x \arctan x}{\sqrt{1 - x^2}} + \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2} + \sqrt{1 - x^2}}{\sqrt{2} - \sqrt{1 - x^2}} \right| + C.
+        \int \frac{\arctan x}{(1 - x^2)^{\frac{3}{2}}}\, dx = \frac{x \arctan x}{\sqrt{1 - x^2}} + \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2} + \sqrt{1 - x^2}}{\sqrt{2} - \sqrt{1 - x^2}} \right| + C
         \]
     \end{solution}
-    \question
-计算 $[\int x^5 \sin^3 x^3 \cos x^3 dx]$。
-
-\begin{solution}
-令 $u = x^3$,则 $du = 3x^2 dx$。
-\[ [\int x^5 \sin^3 x^3 \cos x^3 dx] = \frac{1}{3} [\int x^3 \sin^3 x^3 \cos x^3 (3x^2) dx] \]
-\[ = \frac{1}{3} [\int u \sin^3 u \cos u du] = \frac{1}{3} [\int u \sin^3 u d(\sin u)] \]
-令 $v = \sin u$,则 $dv = \cos u du$。
-\[ = \frac{1}{3} [\int u v^3 dv] = \frac{1}{3} \cdot \frac{1}{4} [\int u d(v^4)] \]
-使用分部积分法:
-\[ = \frac{1}{12} (uv^4 - [\int v^4 du]) = \frac{1}{12} (u \sin^4 u - [\int \sin^4 u du]) \]
-利用降幂公式 $\sin^2 A = \frac{1}{2}(1 - \cos 2A)$:
-\[ = \frac{1}{12} (u \sin^4 u - [\int (\frac{1}{2}(1 - \cos 2u))^2 du]) \]
-\[ = \frac{1}{12} (u \sin^4 u - \frac{1}{4} [\int (1 - 2\cos 2u + \cos^2 2u) du]) \]
-继续利用 $\cos^2 2u = \frac{1 + \cos 4u}{2}$:
-\[ = \frac{1}{12} u \sin^4 u - \frac{1}{48} ([\int 1 du] - 2 [\int \cos 2u du] + [\int \frac{1 + \cos 4u}{2} du]) \]
-\[ = \frac{1}{12} u \sin^4 u - \frac{1}{48} u + \frac{1}{48} \sin 2u - \frac{1}{96} u - \frac{1}{384} \sin 4u + C \]
-\[ = \frac{1}{12} u \sin^4 u - \frac{3}{96} u + \frac{1}{48} \sin 2u - \frac{1}{384} \sin 4u + C \]
-最后回代 $u = x^3$:
-\[ = \frac{1}{12} x^3 \sin^4 x^3 - \frac{1}{32} x^3 + \frac{1}{48} \sin 2x^3 - \frac{1}{384} \sin 4x^3 + C \]
-\end{solution}
-
-\question
-计算 $[\int \frac{(\sqrt{x}+1)(x-1)}{\sqrt{x^2+2\sqrt{x^3}}} dx]$。
-
-\begin{solution}
-令 $u = \sqrt{x}$,则 $du = \frac{1}{2\sqrt{x}} dx \implies dx = 2u du$。
-\[ [\int \frac{(u+1)(u^2-1)}{\sqrt{u^4+2u^3}} 2u du] = [\int \frac{2u(u+1)^2(u-1)}{u\sqrt{u^2+2u}} du] \]
-\[ = [\int \frac{2(u+1)^2(u-1)}{\sqrt{u^2+2u}} du] = [\int \frac{2(u+1)^2(u-1)}{\sqrt{(u+1)^2-1}} du] \]
-令 $u+1 = \sec\theta$,则 $du = \sec\theta \tan\theta d\theta$。
-\[ [\int \frac{2\sec^2\theta(\sec\theta-2)}{\sqrt{\sec^2\theta-1}} \sec\theta \tan\theta d\theta] = [\int \frac{2\sec^3\theta(\sec\theta-2)}{\tan\theta} \tan\theta d\theta] \]
-\[ = 2 [\int \sec^4\theta d\theta] - 4 [\int \sec^3\theta d\theta] \]
-计算第一个积分:
-\[ 2 [\int (1+\tan^2\theta) d(\tan\theta)] = 2\tan\theta + \frac{2}{3}\tan^3\theta + C \]
-计算第二个积分（分部积分）:
-\[ 4 [\int \sec^3\theta d\theta] = 2\tan\theta\sec\theta + 2\ln|\sec\theta + \tan\theta| + C \]
-合并结果并回代 $\theta$:
-\[ = 2\tan\theta + \frac{2}{3}\tan^3\theta - 2\tan\theta\sec\theta - 2\ln|\sec\theta + \tan\theta| + C \]
-利用 $\sec\theta = u+1$ 且 $\tan\theta = \sqrt{(u+1)^2-1} = \sqrt{u^2+2u}$:
-\[ = 2\sqrt{u^2+2u} + \frac{2}{3}(u^2+2u)^{\frac{3}{2}} - 2\sqrt{u^2+2u}(u+1) - 2\ln|u+1+\sqrt{u^2+2u}| + C \]
-回代 $u = \sqrt{x}$ 并进一步化简:
-\[ = \frac{2}{3}\sqrt{x+2\sqrt{x}}(x-\sqrt{x}) - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C \]
-\[ = \frac{2}{3}\sqrt{x}(\sqrt{x}-1)\sqrt{x+2\sqrt{x}} - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C \]
-\end{solution}
-\question 
-\[
-I = \int \frac{\sqrt{x+2}}{\sqrt{x+1}} \, dx
-\]
-\begin{solution}
-    设 $t = \sqrt{\frac{x+2}{x+1}}$,由前述推导可知 $dx = \frac{-2t}{(t^2-1)^2} \, dt$,代入得:
-    \[
-    I = -2 \int \frac{t^2}{(t^2-1)^2} \, dt
-    \]
-    令 $t = \sec \theta$,则 $dt = \sec \theta \tan \theta \, d\theta$,且 $t^2-1 = \tan^2 \theta$。
-    代入积分式:
-    \[
-    I = -2 \int \frac{\sec^2 \theta}{(\tan^2 \theta)^2} \cdot \sec \theta \tan \theta \, d\theta = -2 \int \frac{\sec^3 \theta}{\tan^3 \theta} \, d\theta
-    \]
-    利用三角函数关系化简:$\frac{\sec^3 \theta}{\tan^3 \theta} = \frac{1/\cos^3 \theta}{\sin^3 \theta / \cos^3 \theta} = \frac{1}{\sin^3 \theta} = \csc^3 \theta$。
-    \[
-    I = -2 \int \csc^3 \theta \, d\theta
-    \]
-    利用 $\csc^3 \theta$ 的积分公式（或通过分部积分得到）:
-    \[
-    I = -2 \left( -\frac{1}{2} \csc \theta \cot \theta + \frac{1}{2} \ln |\csc \theta + \cot \theta| \right) + C = \csc \theta \cot \theta - \ln |\csc \theta + \cot \theta| + C
-    \]
-    还原变量:由 $\sec \theta = t$ 知 $\cos \theta = \frac{1}{t}$。
     
-    可得 $\csc \theta = \frac{t}{\sqrt{t^2-1}}$,$\cot \theta = \frac{1}{\sqrt{t^2-1}}$。
-    \begin{itemize}
-        \item 第一项:$\csc \theta \cot \theta = \frac{t}{t^2-1}$。
-        \item 第二项:$\ln |\csc \theta + \cot \theta| = \ln \left| \frac{t+1}{\sqrt{t^2-1}} \right| = \ln \sqrt{\frac{(t+1)^2}{(t-1)(t+1)}} = \frac{1}{2} \ln \left| \frac{t+1}{t-1} \right|$。
-    \end{itemize}
-    代回 $t$ 的表达式及 $x+1 = \frac{1}{t^2-1}$,还原为 $x$:
+    \question
     \[
-    I = \sqrt{(x+1)(x+2)} - \ln(\sqrt{x+2} + \sqrt{x+1}) + C
+    \int x^5 \sin^3 (x^3) \cos (x^3) \, dx
     \]
-\end{solution}
+    \begin{solution}
+        令 $u = x^3$,则 $du = 3x^2 \, dx$,
+        \[
+        I = \int x^5 \sin^3 (x^3) \cos (x^3) \, dx = \frac{1}{3} \int u \sin^3 u \cos u \, du 
+        \]
+        分部积分得
+        \begin{align*}
+        I &= \frac{1}{12} \left( u \sin^4 u - \int \sin^4 u \, du \right) \\
+        &= \frac{1}{12} u \sin^4 u - \frac{1}{12} \int (1 - \cos 2u)^2 \, du \\
+        &= \frac{1}{12} u \sin^4 u - \frac{1}{12} \cdot \frac{1}{4} \int (1 - 2\cos 2u + \cos^2 2u) \, du  \\
+        &= \frac{1}{12} u \sin^4 u - \frac{1}{48} \cdot \frac{1}{2} \int (2 - 4\cos 2u + 1+\cos 4u) \, du  \\
+        &= \frac{1}{12} u \sin^4 u - \frac{3}{96} u + \frac{1}{48} \sin 2u - \frac{1}{384} \sin 4u + C \\
+        &= \frac{1}{12} x^3 \sin^4 (x^3) - \frac{1}{32} x^3 + \frac{1}{48} \sin (2x^3) - \frac{1}{384} \sin (4x^3) + C 
+        \end{align*}
+    \end{solution}
+
+    \question
+    \[
+    \int \frac{(\sqrt{x}+1)(x-1)}{\sqrt{x^2+2\sqrt{x^3}}} \, dx
+    \]
+    \begin{solution}
+        令 $u = \sqrt{x}$,则 $du = \frac{1}{2\sqrt{x}} \, dx$,即$dx = 2u \, du$,
+        \[
+        I = \int \frac{(u+1)(u^2-1)}{\sqrt{u^4+2u^3}} 2u \, du = \int \frac{2(u+1)^2(u-1)}{\sqrt{u^2+2u}} \, du = \int \frac{2(u+1)^2(u-1)}{\sqrt{(u+1)^2-1}} \, du
+        \]
+        令 $u+1 = \sec\theta$,则 $du = \sec\theta \tan\theta \, d\theta$。
+        \[
+        I=\int \frac{2\sec^2\theta(\sec\theta-2)}{\sqrt{\sec^2\theta-1}} \sec\theta \tan\theta \, d\theta 
+        = 2 \int \sec^4\theta \, d\theta - 4 \int \sec^3\theta \, d\theta
+        \]
+        其中
+        \[
+        \int (1+\tan^2\theta) \, d(\tan\theta) = \tan\theta + \frac{1}{3}\tan^3\theta + C
+        \]
+        且
+        \begin{align*}
+        \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta - \int \sec \theta \tan^2 \theta \,d\theta \\
+        &= \sec \theta \tan \theta - \int (\sec^3 \theta - \sec \theta) \,d\theta \\
+        2 \int \sec^3 \theta \,d\theta &= \sec \theta \tan \theta + \ln |\sec \theta + \tan \theta| \\
+        \int \sec^3 \theta \,d\theta &= \frac{1}{2} (\sec \theta \tan \theta + \ln |\sec \theta + \tan \theta|) + C
+        \end{align*}
+        回代得
+        \[
+        I= 2\tan\theta + \frac{2}{3}\tan^3\theta - 2\tan\theta\sec\theta - 2\ln|\sec\theta + \tan\theta| + C
+        \]
+        利用 $\sec\theta = u+1$ 且 $\tan\theta = \sqrt{(u+1)^2-1} = \sqrt{u^2+2u}$：
+        \begin{align*}
+        I &= 2\sqrt{u^2+2u} + \frac{2}{3}(u^2+2u)^{\frac{3}{2}} - 2\sqrt{u^2+2u}(u+1) - 2\ln|u+1+\sqrt{u^2+2u}| + C \\
+        &= \frac{2}{3}\sqrt{x+2\sqrt{x}}(x-\sqrt{x}) - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C
+        \end{align*}
+    \end{solution}
+
+    \question 
+    \[
+    I = \int \sqrt{\frac{x+2}{x+1}} \, dx
+    \]
+    \begin{solution}
+        设 $t = \sqrt{\dfrac{x+2}{x+1}}$,更换主项得$x = \dfrac{2 - t^2}{t^2 - 1}$,于是 $dx = \dfrac{-2t}{(t^2-1)^2} \, dt$,代入得
+        \[
+        I = -2 \int \frac{t^2}{(t^2-1)^2} \, dt
+        \]
+        令 $t = \sec \theta$,则 $dt = \sec \theta \tan \theta \, d\theta$,变为
+        \[
+        I = -2 \int \frac{\sec^2 \theta}{(\tan^2 \theta)^2} \cdot \sec \theta \tan \theta \, d\theta = -2 \int \csc^3 \theta \, d\theta
+        \]
+        使用分部积分法,
+        \begin{align*}
+        \int \csc^3 \theta \, d\theta 
+        &= -\csc \theta \cot \theta - \int (-\cot \theta)(-\csc \theta \cot \theta) \, d\theta \\
+        &= -\csc \theta \cot \theta - \int \csc \theta (\csc^2 \theta - 1) \, d\theta \\
+        &= -\csc \theta \cot \theta - \int \csc^3 \theta \, d\theta + \int \csc \theta \, d\theta
+        \end{align*}
+        移项合并得
+        \[
+        2 \int \csc^3 \theta \, d\theta = -\csc \theta \cot \theta + \ln |\csc \theta - \cot \theta|
+        \]
+        于是
+        \[
+        I = \csc \theta \cot \theta - \ln |\csc \theta + \cot \theta| + C
+        \]
+        由 $\sec \theta = t$ 知 $\cos \theta = \dfrac{1}{t}$,可得 
+        \[
+        \csc \theta = \frac{t}{\sqrt{t^2-1}},\quad \cot \theta = \frac{1}{\sqrt{t^2-1}}
+        \]
+        再回代$t = \sqrt{\dfrac{x+2}{x+1}}$得
+        \[
+        I = \sqrt{(x+1)(x+2)} - \ln(\sqrt{x+2} + \sqrt{x+1}) + C 
+        \]
+    \end{solution}
 
     \question
     \[
@@ -7232,198 +6981,134 @@ I = \int \frac{\sqrt{x+2}}{\sqrt{x+1}} \, dx
         \]
         其中$t = \sqrt[3]{\dfrac{2x+1}{x+3}}$。
     \end{solution}
-    \question 证明
-\[
-\int_{0}^{\infty} \frac{x^2+3x+3}{(x+1)^3} e^{-x}\sin x \, dx = \frac{1}{2}.
-\]
 
-\begin{solution}
-先作部分分式分解:
-\[
-\frac{x^2+3x+3}{(x+1)^3}
-= \frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{C}{(x+1)^3}.
-\]
-即
-\[
-x^2+3x+3=A(x+1)^2+B(x+1)+C
-=Ax^2+(2A+B)x+(A+B+C).
-\]
-比较系数得
-\[
-A=1,\quad B=1,\quad C=1.
-\]
+    \question
+    \[
+    I = \int e^{3u} \sqrt{1 + e^{2u}} \, du
+    \]
+    \begin{solution}
+        设 $e^u = \tan x$,则 $e^u \, du = \sec^2 x \, dx$,代入得：
+        \[
+        I = \int (e^u)^2 \sqrt{1 + (e^u)^2} (e^u \, du) = \int \tan^2 x \sec^3 x \, dx
+        \]
+        利用恒等式 $\tan^2 x = \sec^2 x - 1$,
+        \[
+        I = \int (\sec^2 x - 1) \sec^3 x \, dx = \int \sec^5 x \, dx - \int \sec^3 x \, dx
+        \]
+        利用分部积分,可得
+        \[
+        \int \sec^3 x \, dx = \frac{1}{2} (\sec x \tan x + \ln|\sec x + \tan x|) + C
+        \]
+        \[
+        \int \sec^5 x \, dx = \frac{1}{4} \sec^3 x \tan x + \frac{3}{4} \int \sec^3 x \, dx
+        \]
+        于是
+        \begin{align*}
+        I &= \frac{1}{4} \sec^3 x \tan x - \frac{1}{4} \int \sec^3 x \, dx \\
+        &= \frac{1}{4} \tan x \sec^3 x - \frac{1}{8} \sec x \tan x - \frac{1}{8} \ln|\sec x + \tan x| + C
+        \end{align*}
+        还原变量 $\tan x = e^u$ 且 $\sec x = \sqrt{1 + e^{2u}}$：
+        \begin{align*}
+        I &= \frac{1}{4} e^u (1+e^{2u})^{\frac{3}{2}} - \frac{1}{8} e^u \sqrt{1+e^{2u}} - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
+        &= \frac{1}{8} e^u \sqrt{1+e^{2u}} (2(1+e^{2u}) - 1) - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
+        &= \frac{1}{8} e^u (2e^{2u} + 1) \sqrt{1+e^{2u}} - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C
+        \end{align*}
+    \end{solution}
 
-因此
-\[
-\frac{x^2+3x+3}{(x+1)^3}
-=\frac{1}{x+1}+\frac{1}{(x+1)^2}+\frac{1}{(x+1)^3}.
-\]
-
-先计算基本积分。分部积分两次得
-\[
-\int e^{-x}\sin x\,dx
-=-\frac12 e^{-x}(\cos x+\sin x)+C.
-\]
-
-将原积分拆分为
-\[
-\int_{0}^{\infty}\frac{e^{-x}\sin x}{x+1}\,dx
--2\int_{0}^{\infty}\frac{e^{-x}\sin x}{(x+1)^2}\,dx
-+\int_{0}^{\infty}\frac{e^{-x}\sin x}{(x+1)^3}\,dx.
-\]
-
-对第一项与第三项作分部积分,第二项保留用于抵消,整理得
-\[
-\int_{0}^{\infty}\frac{x^2+3x+3}{(x+1)^3}e^{-x}\sin x\,dx
-=\frac12.
-\]
-
-\end{solution}
-
-\question
-11) 计算不定积分:\[ I = \int e^{3u} \sqrt{1 + e^{2u}} du \]
-
-\begin{solution}
-\textbf{第一步:变量代换}
-设 $e^u = \tan x$,则 $e^u du = \sec^2 x dx$。
-同时有 $e^{2u} = \tan^2 x$,从而根式部分为 $\sqrt{1 + \tan^2 x} = \sec x$。
-代入原积分式:
-\begin{align*}
-I &= \int (e^u)^2 \sqrt{1 + (e^u)^2} (e^u du) \\
-&= \int \tan^2 x \cdot \sec x \cdot \sec^2 x dx \\
-&= \int \tan^2 x \sec^3 x dx
-\end{align*}
-
-\textbf{第二步:利用恒等式转化}
-利用 $\tan^2 x = \sec^2 x - 1$:
-\[ I = \int (\sec^2 x - 1) \sec^3 x dx = \int \sec^5 x dx - \int \sec^3 x dx \]
-
-\textbf{第三步:分部积分计算}
-根据笔记中的推导结果（或利用 $\sec^n x$ 的递推公式）:
-\[ \int \sec^3 x dx = \frac{1}{2} (\sec x \tan x + \ln|\sec x + \tan x|) + C \]
-\[ \int \sec^5 x dx = \frac{1}{4} \sec^3 x \tan x + \frac{3}{8} \sec x \tan x + \frac{3}{8} \ln|\sec x + \tan x| + C \]
-
-合并后得到关于 $x$ 的结果:
-\[ I = \frac{1}{4} \tan x \sec^3 x - \frac{1}{8} \sec x \tan x - \frac{1}{8} \ln|\sec x + \tan x| + C \]
-
-\textbf{第四步:还原变量}
-回代 $\tan x = e^u$ 且 $\sec x = \sqrt{1 + e^{2u}}$:
-\begin{align*}
-I &= \frac{1}{4} e^u (1+e^{2u})^{\frac{3}{2}} - \frac{1}{8} e^u \sqrt{1+e^{2u}} - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
-&= \frac{1}{8} e^u \sqrt{1+e^{2u}} (2(1+e^{2u}) - 1) - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
-&= \frac{1}{8} e^u (2e^{2u} + 1) \sqrt{1+e^{2u}} - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C
-\end{align*}
-\end{solution}
-
-\question
-25) 计算不定积分:\[ \int \csc^2 x \ln(\cos x + \sqrt{\cos 2x}) dx \]
-
-\begin{solution}
-使用分部积分法,令 $u = \ln(\cos x + \sqrt{\cos 2x}), dv = \csc^2 x dx$。
-则 $du = \frac{-\sin x - \frac{\sin 2x}{\sqrt{\cos 2x}}}{\cos x + \sqrt{\cos 2x}} dx, v = -\cot x$。
-代入分部积分公式:
-\[ I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \int \cot x \cdot \frac{\sin x + \frac{\sin 2x}{\sqrt{\cos 2x}}}{\cos x + \sqrt{\cos 2x}} dx \]
-简化积分项中的分母与分子:
-\[ \dots = -\cot x \ln(\cos x + \sqrt{\cos 2x}) - \int \frac{\cos x}{\sin^2 x \sqrt{\cos 2x}} dx + \int \frac{\cos^2 x}{\sin^2 x} dx \]
-最终通过三角换元计算得到:
-\[ I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \frac{\sqrt{\cos 2x}}{\sin x} - x + C \]
-\end{solution}
+    \question
+    \[
+    \int \csc^2 x \ln(\cos x + \sqrt{\cos 2x}) \, dx
+    \]
+    \begin{solution}
+        使用分部积分法,令
+        \[
+        u = \ln(\cos x + \sqrt{\cos 2x}), \quad dv = \csc^2 x \, dx
+        \]
+        则
+        \[
+        v = -\cot x,\quad du = \frac{1}{\cos x + \sqrt{\cos 2x}} \left( -\sin x + \frac{-2\sin 2x}{2\sqrt{\cos 2x}} \right) \, dx = \frac{-\sin x \sqrt{\cos 2x} - \sin 2x}{(\cos x + \sqrt{\cos 2x})\sqrt{\cos 2x}} \, dx
+        \]
+        于是有
+        \[
+        I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \int \frac{\cos x (\sqrt{\cos 2x} + 2\cos x)}{(\cos x + \sqrt{\cos 2x})\sqrt{\cos 2x}} \, dx
+        \]
+        有理化积分,化简得
+        \[
+        \int \frac{\cos x (\sqrt{\cos 2x} + 2\cos x)(\cos x - \sqrt{\cos 2x})}{(\cos^2 x - \cos 2x)\sqrt{\cos 2x}} \, dx
+        = \int \frac{\cos x (1 - \cos x \sqrt{\cos 2x})}{\sin^2 x \sqrt{\cos 2x}} \, dx
+        \]
+        将积分拆分为两项：
+        \[
+        I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \int \frac{\cos x}{\sin^2 x \sqrt{\cos 2x}} \, dx - \int \frac{\cos^2 x}{\sin^2 x} \, dx
+        \]
+        计算第一项积分,令 $t = \sin x$,变为
+        \[
+        \int \frac{1}{t^2 \sqrt{1-2t^2}} \, dt = -\frac{\sqrt{1-2t^2}}{t} + C = -\frac{\sqrt{\cos 2x}}{\sin x} + C_1
+        \]
+        而
+        \[
+        \int \cot^2 x \, dx = \int (\csc^2 x - 1) \, dx = -\cot x - x + C_2
+        \]
+        故所求不定积分为
+        \[
+        I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \frac{\sqrt{\cos 2x}}{\sin x} - x + C
+        \]
+    \end{solution}
 % reduction formula
 \question
 已知
 \[
-I_n=\int_0^1 \frac{x^{2n+1}}{\sqrt{1-x^2}}\,dx
+I_n=\int_0^1 \frac{x^{2n+1}}{\sqrt{1-x^2}} \, dx
 \]
-
 证明
 \[
 I_n=\frac{2^{2n}(n!)^2}{(2n+1)!}
 \]
-reduction formula
+
 \begin{solution}
-先对积分作代换
+作代换 $u=1-x^2, du=-2x \, dx$，当 $x=0$ 时 $u=1$，当 $x=1$ 时 $u=0$，于是
 \[
-u=1-x^2,\quad du=-2x\,dx
+I_n = \int_0^1 x^{2n} \cdot x(1-x^2)^{-\frac{1}{2}} \, dx = \frac{1}{2} \int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du
 \]
-
-当 $x=0$ 时 $u=1$,当 $x=1$ 时 $u=0$,于是
+对积分 $\int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du$ 作分部积分，取
 \[
-I_n=\int_0^1 x^{2n+1}(1-x^2)^{-\frac12}dx
-=\frac12\int_0^1 (1-u)^n u^{-\frac12}du
-\]
-
-对积分
-\[
-\int_0^1 (1-u)^n u^{-\frac12}du
-\]
-作分部积分,取
-\[
-f=(1-u)^n,\quad dg=u^{-\frac12}du
+f = (1-u)^n, \quad dg = u^{-\frac{1}{2}} \, du
 \]
 则
 \[
-df=-n(1-u)^{n-1}du,\quad g=2u^{\frac12}
+df = -n(1-u)^{n-1} \, du, \quad g = 2u^{\frac{1}{2}}
 \]
-
 于是
 \[
-\int_0^1 (1-u)^n u^{-\frac12}du
-=2n\int_0^1 (1-u)^{n-1}u^{\frac12}du
+\int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du = \left( 2u^{\frac{1}{2}}(1-u)^n \right) \bigg|_0^1 + 2n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du = 2n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du
 \]
-
-从而
+从而有
 \[
-I_n=n\int_0^1 (1-u)^{n-1}u^{\frac12}du
+I_n = n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du = n \int_0^1 (1-u)^{n-1} \frac{u}{\sqrt{u}} \, du = n \int_0^1 \frac{(1-u)^{n-1} - (1-u)^n}{\sqrt{u}} \, du
 \]
-
-再注意到
+由此得到递推关系
 \[
-I_{n-1}=\frac12\int_0^1 (1-u)^{n-1}u^{-\frac12}du
+I_n = 2n I_{n-1} - 2n I_n \implies I_n = \frac{2n}{2n+1} I_{n-1}
 \]
-
-而
-\[
-\int_0^1 (1-u)^{n-1}u^{\frac12}du
-=\frac{1}{2n+1}\int_0^1 (1-u)^{n-1}u^{-\frac12}du
-\]
-
-因此得到递推关系
-\[
-I_n=\frac{2n}{2n+1}I_{n-1}
-\]
-
 不断递推可得
 \[
-I_n=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdots\frac{2}{3}I_0
+I_n = \frac{2n}{2n+1} \cdot \frac{2n-2}{2n-1} \cdots \frac{2}{3} I_0
 \]
-
-又
+又因为
 \[
-I_0=\int_0^1\frac{x}{\sqrt{1-x^2}}dx=1
+I_0 = \int_0^1 \frac{x}{\sqrt{1-x^2}} \, dx = 1
 \]
-
 于是
 \[
-I_n=\frac{2n\cdot(2n-2)\cdots2}{(2n+1)(2n-1)\cdots3}
-=\frac{(2n)!!}{(2n+1)!!}
+I_n = \frac{(2n)!!}{(2n+1)!!} = \frac{2^n n!}{\frac{(2n+1)!}{2^n n!}} = \frac{2^{2n}(n!)^2}{(2n+1)!}
 \]
-
-利用
-\[
-(2n)!!=2^n n!,\quad (2n+1)!!=\frac{(2n+1)!}{2^n n!}
-\]
-
-得到
-\[
-I_n=\frac{2^{2n}(n!)^2}{(2n+1)!}
-\]
-
-证毕
+证毕。
 \end{solution}
 
- \question 设
+\question
+设
 \[
-I(m,n)= \int_{a}^{b} (b-x)^{m}(x-a)^{n} \,dx, \quad m\in\mathbb{N},\ n\in\mathbb{N},\ b>a
+I(m,n) = \int_{a}^{b} (b-x)^{m}(x-a)^{n} \, dx, \quad m \in \mathbb{N}, \ n \in \mathbb{N}, \ b > a
 \]
 证明
 \[
@@ -7431,78 +7116,42 @@ I(m,n) = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
 \]
 并据此计算
 \[
-\int_{0}^{1} (1-x^2)^n \,dx
+\int_{0}^{1} (1-x^2)^n \, dx
 \]
-
 \begin{solution}
-先对 $I(m,n)$ 作分部积分。取
+对 $I(m,n)$ 作分部积分，取 $u=(b-x)^m, dv=(x-a)^n \, dx$，则
 \[
-u=(b-x)^m,\quad dv=(x-a)^n dx
-\]
-则
-\[
-du=-m(b-x)^{m-1}dx,\quad v=\frac{(x-a)^{n+1}}{n+1}
-\]
-
-于是
-\[
-I(m,n)=\left[\frac{(b-x)^m(x-a)^{n+1}}{n+1}\right]_a^b
--\int_a^b \frac{-m(b-x)^{m-1}(x-a)^{n+1}}{n+1}\,dx
-\]
-注意到端点项为零,得到
-\[
-I(m,n)=\frac{m}{n+1}I(m-1,n+1)
-\]
-
-重复使用该递推关系,
-\[
-I(m,n)=\frac{m}{n+1}\cdot\frac{m-1}{n+2}\cdots\frac{1}{n+m}I(0,n+m)
-\]
-即
-\[
-I(m,n)=\frac{m!}{(n+1)(n+2)\cdots(n+m)}I(0,n+m)
-\]
-又
-\[
-I(0,n+m)=\int_a^b (x-a)^{n+m}\,dx
-=\left[\frac{(x-a)^{n+m+1}}{n+m+1}\right]_a^b
-=\frac{(b-a)^{n+m+1}}{n+m+1}
-\]
-因此
-\[
-I(m,n)=\frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
-\]
-
-接下来计算
-\[
-\int_{0}^{1}(1-x^2)^n\,dx
-\]
-利用偶函数对称性,
-\[
-\int_{0}^{1}(1-x^2)^n\,dx=\frac{1}{2}\int_{-1}^{1}(1-x^2)^n\,dx
-\]
-而
-\[
-1-x^2=(1-x)(x+1)
+du = -m(b-x)^{m-1} \, dx, \quad v = \frac{(x-a)^{n+1}}{n+1}
 \]
 于是
 \[
-\int_{-1}^{1}(1-x^2)^n\,dx=\int_{-1}^{1}(1-x)^n(x-(-1))^n\,dx
+I(m,n) = \left( \frac{(b-x)^m (x-a)^{n+1}}{n+1} \right) \bigg|_a^b + \frac{m}{n+1} \int_a^b (b-x)^{m-1} (x-a)^{n+1} \, dx
 \]
-这正是 $I(n,n)$ 的形式,其中 $a=-1,\ b=1$。由已证公式,
+注意到端点项为零，得到递推式
 \[
-I(n,n)=\frac{n!n!}{(2n+1)!}(1-(-1))^{2n+1}
-=\frac{n!^2}{(2n+1)!}2^{2n+1}
+I(m,n) = \frac{m}{n+1} I(m-1, n+1)
+\]
+重复使用该递推关系
+\[
+I(m,n) = \frac{m}{n+1} \cdot \frac{m-1}{n+2} \cdots \frac{1}{n+m} I(0, n+m)
+\]
+其中
+\[
+I(0, n+m) = \int_a^b (x-a)^{n+m} \, dx = \left( \frac{(x-a)^{n+m+1}}{n+m+1} \right) \bigg|_a^b = \frac{(b-a)^{n+m+1}}{n+m+1}
 \]
 因此
 \[
-\int_{0}^{1}(1-x^2)^n\,dx
-=\frac{1}{2}I(n,n)
-=\frac{2^{2n}(n!)^2}{(2n+1)!}
+I(m,n) = \frac{m! n!}{(m+n)!} \cdot \frac{(b-a)^{m+n+1}}{m+n+1} = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
+\]
+接下来计算 $\int_0^1 (1-x^2)^n \, dx$。利用偶函数对称性
+\[
+\int_0^1 (1-x^2)^n \, dx = \frac{1}{2} \int_{-1}^1 (1-x)^n (1+x)^n \, dx
+\]
+这正是 $I(n,n)$ 的形式，其中 $a=-1, b=1$。由已证公式
+\[
+\frac{1}{2} I(n,n) = \frac{1}{2} \cdot \frac{n! n!}{(2n+1)!} (1 - (-1))^{2n+1} = \frac{1}{2} \cdot \frac{(n!)^2}{(2n+1)!} 2^{2n+1} = \frac{2^{2n}(n!)^2}{(2n+1)!}
 \]
 \end{solution}
-
-
 
     \question 设数列 $\{a_n\}$ 满足
     \[
@@ -9644,6 +9293,62 @@ I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du = \int_{
         因此
         \[
         = \frac{1}{2} \int_0^{\frac{\pi}{4}} \ln(2) \, dt = \frac{1}{2} \cdot \frac{\pi}{4} \ln 2 = \frac{\pi}{8} \ln 2
+        \]
+    \end{solution}
+    
+    \question 
+    \[
+    \int_0^1 \frac{\arcsin x}{x} \,dx
+    \]
+    \begin{solution}
+        令 $x = \sin \theta$, 则 $dx = \cos \theta \,d\theta$,积分式转化为:
+        \[
+        I = \int_0^{\frac{\pi}{2}} \frac{\theta \cos \theta}{\sin \theta} \,d\theta = \int_0^{\frac{\pi}{2}} \theta \cot \theta \,d\theta
+        \]
+        使用分部积分法, 令 $u = \theta, dv = \cot \theta \,d\theta$, 则 $du = d\theta, v = \ln(\sin \theta)$:
+        \[
+        I = \Bigl[ \theta \ln(\sin \theta) \Bigr]_0^{\frac{\pi}{2}} - \int_0^{\frac{\pi}{2}} \ln(\sin \theta) \,d\theta
+        \]
+        在 $\theta = \dfrac{\pi}{2}$处,$\dfrac{\pi}{2} \ln\left(\sin \dfrac{\pi}{2}\right) = 0$;在下限 $\theta \to 0^+$ 处,利用极限计算:
+        \[
+        \lim_{\theta \to 0^+} \theta \ln(\sin \theta) = \lim_{\theta \to 0^+} \theta \ln \left( \frac{\sin \theta}{\theta} \cdot \theta \right) = \lim_{\theta \to 0^+} \theta \left( \ln \frac{\sin \theta}{\theta} + \ln \theta \right)
+        \]
+        因为 $\displaystyle \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$, 则 $\ln \dfrac{\sin \theta}{\theta} \to 0$。对于剩余项 $\displaystyle \lim_{\theta \to 0^+} \theta \ln \theta$, 应用洛必达法则,
+        \[
+        \lim_{\theta \to 0^+} \frac{\ln \theta}{\frac{1}{\theta}} = \lim_{\theta \to 0^+} \frac{\frac{1}{\theta}}{-\frac{1}{\theta^2}} = \lim_{\theta \to 0^+} (-\theta) = 0
+        \]
+        因此
+        \[
+        \Bigl[ \theta \ln(\sin \theta) \Bigr]_0^{\frac{\pi}{2}}=0
+        \]
+        现考虑 
+        \[
+        J = \int_0^{\frac{\pi}{2}} \ln(\sin \theta) \,d\theta
+        \]
+        根据对称性, 令 $\theta = \dfrac{\pi}{2} - \phi$,则
+        \[
+        J = \int_0^{\frac{\pi}{2}} \ln(\cos \phi) \,d\phi
+        \]
+        相加得
+        \[
+        2J = \int_0^{\frac{\pi}{2}} \ln(\sin \theta \cos \theta) \,d\theta 
+        = \int_0^{\frac{\pi}{2}} \ln\left(\frac{\sin 2\theta}{2}\right) \,d\theta
+        = \int_0^{\frac{\pi}{2}} \ln(\sin 2\theta) \,d\theta - \int_0^{\frac{\pi}{2}} \ln 2 \,d\theta \tag{1}
+        \]
+        令 $t = 2\theta$,则 $dt = 2 \, d\theta$,由于 $\sin t$ 在 $[0, \pi]$ 关于 $t = \dfrac{\pi}{2}$ 对称,
+        \[
+        \int_0^{\frac{\pi}{2}} \ln(\sin 2\theta) \, d\theta 
+        = \frac{1}{2} \int_0^{\pi} \ln(\sin t) \, dt
+        = \frac{1}{2} \cdot 2 \int_0^{\frac{\pi}{2}} \ln(\sin t) \, dt
+        = \int_0^{\frac{\pi}{2}} \ln(\sin t) \, dt = J
+        \]
+        代入(1)得
+        \[
+        2J = J - \frac{\pi}{2} \ln 2 \implies J = -\frac{\pi}{2} \ln 2
+        \]
+        因此
+        \[
+        I = 0 - \left( -\frac{\pi}{2} \ln 2 \right) = \frac{\pi}{2} \ln 2
         \]
     \end{solution}
     

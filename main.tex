@@ -1,5 +1,5 @@
 \documentclass[12pt]{exam}
-\usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{yhmath} % \wideparen
@@ -19,9 +19,8 @@
 \setCJKmainfont{KaiTi}
 
 %\includeonly{数论}
-%\includeonly{微积分}
+\includeonly{微积分}
 %\includeonly{离散数学}
-%\includeonly{代数,微积分}
 %\includeonly{几何}
 %\includeonly{代数}
 %\setCJKmainfont[BoldFont=Noto Sans CJK SC Bold]{AR PL KaitiM GB} 
@@ -37,7 +36,7 @@
 %\end{figure}[]
 %\fi
 
-%简体字版本latex code的code snippet,注意一定要简体字,以\question开始然后才\begin{solution},尽量按照原文,用\[\]或\begin{align*}或$...$但不要用$$...$$,一行\[然后content然后一行\],用\frac不要a/b,结果不要使用 [...],中文字不可以在\[\]里面,不要用\text{中文字},把\over换成\frac{}{},不要用\textbf{} ,\boxed及\ans,去掉\overline{},句号不要在\[...\]
+%简体字版本latex code的code snippet,注意一定要简体字,以\question开始然后才\begin{solution},尽量按照原文,用\[\]或\begin{align*}或$...$但不要用$$...$$,一行\[然后content然后一行\],用\frac{}{}不要a/b,结果不要使用 [...],中文字不可以在\[\]里面,不要用\text{中文字},把\over换成\frac{}{},不要用\textbf{} ,\boxed及\ans,去掉\overline{},句号不要在\[...\],dx之前要\,
 %when i give ss, only provide the code for the new ss, do not output for all the previous one
 %give copyable latex code for every screenshot i provide
 %give copyable latex code in a chunk&
@@ -140,15 +139,13 @@
 
 \begin{tikzpicture}[every node/.style={inner sep=0pt}]
 \node[text width=11.5cm](Text){%
-\qquad 此训练集的雏形要追溯到 2019 年,依稀记得为当时的备赛爬了大量的AMC历届考题,创了“AMC 10 精选”的文档,其中我认为是属于统考范围的难题,便收录于另一个文档。\\[10pt]
+\qquad 追溯到 2019 年，为了当年的备赛，我疯狂爬取 AMC 历届考题，整出了《AMC 10 精选》和一份“统考超纲难题集”。直到2025 年5月，我看着当年的内容不禁感叹：读了数学系之后，总觉得这里的发展空间实属不少。这些日子，我开启了采集模式，在网上搜刮各种有趣（恶心）、深奥（烧脑）的题目。\\[10pt]
 
-\qquad 尘封已久,直到今年5月,我在整理电脑资料时偶然翻出,看着当年的内容,心想:读了一个数学系,难免觉得发展空间实属不少。在这几个月内,我随性地在网络上寻找、采集、整理更有趣(恶心)、更值得深思(烧脑)的题目,于是诞生了——高级数学(III)训练集。\\[10pt]
+\qquad 本来没打算写解析，但发现很多老题只有答案。我的大脑停工了一年，有些题连现在的我读起来都觉得难以下咽，是不是百尺竿头，更蠢一步。为了不让未来的自己看到题目时再次怀疑人生，我决定用 \LaTeX{} 重新排版，并含泪补全了解法，最终整出了这份——《高级数学 (III) 训练集》。\\[10pt]
 
-\qquad 起初,我并没想过要为每一题整理出解析,但发现到不少当年的题目只附答案没附解法。可惜的是,我的脑袋算是停止运作了一年,发现有一些题目对于现在的我实在是难以下咽。好吧,此乃下下策,但我决定用LaTeX开始动手为每一题补上解法、重写排版、增加新的内容。也好,既是备忘录,也是为了防止未来的我看到这些题目时会再次怀疑人生:「咦？是不是百尺竿头,更蠢一步？」\\[10pt]
+\qquad 为此，我广泛参考了美、加两国的数学竞赛，以及日、印两国的大学入学考，甚至涵盖了台湾的教师甄选题，等等。尽管整理过程艰辛，但也领略了全球不同地区的数学教纲，宛如经历了一场“数学环游世界”。\\[10pt]
 
-\qquad 依据统考范围,我把训练集大致分为代数、组合数学、几何及微积分。若你想自行动手尝试,可以在 \texttt{preamble} 中将 \verb|\printanswers| 这行注释掉。\\[10pt]
-
-\qquad 绝大部分解法都由官方或我提供,只有某些是\texttt{ChatGpt}生成后由我再校对,之中一定会有纰漏,欢迎批评指正,也希望这份训练集能助你一路披荆斩棘、越战越勇！\\[10pt]
+\qquad 建议想自己动手的朋友，可在 \texttt{preamble} 中注释掉 \verb|\printanswers|。解析皆来自官方或亲笔，但绝大部分也经 \texttt{ChatGPT,Gemini}修改，若有纰漏欢迎指正。祝大家阅读愉快！\\[10pt]
 \hfill —— 冬恒} ;
 \color{brown}
 \node[shift={(-1.5cm,1.5cm)},anchor=north west](CNW)
