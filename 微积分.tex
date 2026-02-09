@@ -6772,7 +6772,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int x^2 e^{\sin^{-1} x} \, dx
     \]
     \begin{solution}
-        首先令 $t = \sin^{-1} x$,则 $x = \sin t, dx = \cos t \, dt$。积分变为：
+        首先令 $t = \sin^{-1} x$,则 $x = \sin t, dx = \cos t \, dt$。积分变为:
         \[
         I = \int e^t \sin^2 t \cos t \, dt
         \]
@@ -6796,7 +6796,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         \int e^t \cos t \, dt = \frac{e^t (\cos t + \sin t)}{2},\quad \int e^t \cos 3t \, dt = \frac{e^t (\cos 3t + 3 \sin 3t)}{10}
         \]
-        代回原式：
+        代回原式:
         \[
         I = \frac{1}{4} \left( \frac{e^t (\cos t + \sin t)}{2} - \frac{e^t (\cos 3t + 3 \sin 3t)}{10} \right) + C
         \]
@@ -6905,7 +6905,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I= 2\tan\theta + \frac{2}{3}\tan^3\theta - 2\tan\theta\sec\theta - 2\ln|\sec\theta + \tan\theta| + C
         \]
-        利用 $\sec\theta = u+1$ 且 $\tan\theta = \sqrt{(u+1)^2-1} = \sqrt{u^2+2u}$：
+        利用 $\sec\theta = u+1$ 且 $\tan\theta = \sqrt{(u+1)^2-1} = \sqrt{u^2+2u}$:
         \begin{align*}
         I &= 2\sqrt{u^2+2u} + \frac{2}{3}(u^2+2u)^{\frac{3}{2}} - 2\sqrt{u^2+2u}(u+1) - 2\ln|u+1+\sqrt{u^2+2u}| + C \\
         &= \frac{2}{3}\sqrt{x+2\sqrt{x}}(x-\sqrt{x}) - 2\ln|\sqrt{x}+1+\sqrt{x+2\sqrt{x}}| + C
@@ -6987,7 +6987,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     I = \int e^{3u} \sqrt{1 + e^{2u}} \, du
     \]
     \begin{solution}
-        设 $e^u = \tan x$,则 $e^u \, du = \sec^2 x \, dx$,代入得：
+        设 $e^u = \tan x$,则 $e^u \, du = \sec^2 x \, dx$,代入得:
         \[
         I = \int (e^u)^2 \sqrt{1 + (e^u)^2} (e^u \, du) = \int \tan^2 x \sec^3 x \, dx
         \]
@@ -7007,7 +7007,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         I &= \frac{1}{4} \sec^3 x \tan x - \frac{1}{4} \int \sec^3 x \, dx \\
         &= \frac{1}{4} \tan x \sec^3 x - \frac{1}{8} \sec x \tan x - \frac{1}{8} \ln|\sec x + \tan x| + C
         \end{align*}
-        还原变量 $\tan x = e^u$ 且 $\sec x = \sqrt{1 + e^{2u}}$：
+        还原变量 $\tan x = e^u$ 且 $\sec x = \sqrt{1 + e^{2u}}$:
         \begin{align*}
         I &= \frac{1}{4} e^u (1+e^{2u})^{\frac{3}{2}} - \frac{1}{8} e^u \sqrt{1+e^{2u}} - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
         &= \frac{1}{8} e^u \sqrt{1+e^{2u}} (2(1+e^{2u}) - 1) - \frac{1}{8} \ln(e^u + \sqrt{1+e^{2u}}) + C \\
@@ -7037,7 +7037,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \int \frac{\cos x (\sqrt{\cos 2x} + 2\cos x)(\cos x - \sqrt{\cos 2x})}{(\cos^2 x - \cos 2x)\sqrt{\cos 2x}} \, dx
         = \int \frac{\cos x (1 - \cos x \sqrt{\cos 2x})}{\sin^2 x \sqrt{\cos 2x}} \, dx
         \]
-        将积分拆分为两项：
+        将积分拆分为两项:
         \[
         I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \int \frac{\cos x}{\sin^2 x \sqrt{\cos 2x}} \, dx - \int \frac{\cos^2 x}{\sin^2 x} \, dx
         \]
@@ -7055,110 +7055,98 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \]
     \end{solution}
 % reduction formula
-\question
-已知
-\[
-I_n=\int_0^1 \frac{x^{2n+1}}{\sqrt{1-x^2}} \, dx
-\]
-证明
-\[
-I_n=\frac{2^{2n}(n!)^2}{(2n+1)!}
-\]
+    \question
+    证明
+    \[
+    \int_0^1 \frac{x^{2n+1}}{\sqrt{1-x^2}} \, dx = \frac{2^{2n}(n!)^2}{(2n+1)!}, \quad \forall n \in \mathbb{N}\cup\{0\}
+    \]
+    \begin{solution}
+        作代换 $u=1-x^2, du=-2x \, dx$，当 $x=0$ 时 $u=1$，当 $x=1$ 时 $u=0$，于是
+        \[
+        I_n = \int_0^1 x^{2n} \cdot x(1-x^2)^{-\frac{1}{2}} \, dx = \frac{1}{2} \int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du
+        \]
+        由分部积分,
+        \begin{align*}
+        I_n &= \left[ u^{\frac{1}{2}}(1-u)^n \right]_0^1 + n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du \\
+        &= n \int_0^1 (1-u)^{n-1} \frac{u}{\sqrt{u}} \, du \\
+        &= n \int_0^1 \frac{(1-u)^{n-1} - (1-u)^n}{\sqrt{u}} \, du
+        \end{align*}
+        由此得到递推关系
+        \[
+        I_n = 2n I_{n-1} - 2n I_n \implies I_n = \frac{2n}{2n+1} I_{n-1}
+        \]
+        递推可得
+        \[
+        I_n = \frac{2n}{2n+1} \cdot \frac{2n-2}{2n-1} \cdots \frac{2}{3} I_0
+        \]
+        又
+        \[
+        I_0 = \int_0^1 \frac{x}{\sqrt{1-x^2}} \, dx = 1
+        \]
+        于是
+        \[
+        I_n = \frac{(2n)!!}{(2n+1)!!} = \frac{2^n n!}{\frac{(2n+1)!}{2^n n!}} = \frac{2^{2n}(n!)^2}{(2n+1)!}
+        \]
+        证毕。
+    \end{solution}
 
-\begin{solution}
-作代换 $u=1-x^2, du=-2x \, dx$，当 $x=0$ 时 $u=1$，当 $x=1$ 时 $u=0$，于是
-\[
-I_n = \int_0^1 x^{2n} \cdot x(1-x^2)^{-\frac{1}{2}} \, dx = \frac{1}{2} \int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du
-\]
-对积分 $\int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du$ 作分部积分，取
-\[
-f = (1-u)^n, \quad dg = u^{-\frac{1}{2}} \, du
-\]
-则
-\[
-df = -n(1-u)^{n-1} \, du, \quad g = 2u^{\frac{1}{2}}
-\]
-于是
-\[
-\int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du = \left( 2u^{\frac{1}{2}}(1-u)^n \right) \bigg|_0^1 + 2n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du = 2n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du
-\]
-从而有
-\[
-I_n = n \int_0^1 (1-u)^{n-1} u^{\frac{1}{2}} \, du = n \int_0^1 (1-u)^{n-1} \frac{u}{\sqrt{u}} \, du = n \int_0^1 \frac{(1-u)^{n-1} - (1-u)^n}{\sqrt{u}} \, du
-\]
-由此得到递推关系
-\[
-I_n = 2n I_{n-1} - 2n I_n \implies I_n = \frac{2n}{2n+1} I_{n-1}
-\]
-不断递推可得
-\[
-I_n = \frac{2n}{2n+1} \cdot \frac{2n-2}{2n-1} \cdots \frac{2}{3} I_0
-\]
-又因为
-\[
-I_0 = \int_0^1 \frac{x}{\sqrt{1-x^2}} \, dx = 1
-\]
-于是
-\[
-I_n = \frac{(2n)!!}{(2n+1)!!} = \frac{2^n n!}{\frac{(2n+1)!}{2^n n!}} = \frac{2^{2n}(n!)^2}{(2n+1)!}
-\]
-证毕。
-\end{solution}
-
-\question
-设
-\[
-I(m,n) = \int_{a}^{b} (b-x)^{m}(x-a)^{n} \, dx, \quad m \in \mathbb{N}, \ n \in \mathbb{N}, \ b > a
-\]
-证明
-\[
-I(m,n) = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
-\]
-并据此计算
-\[
-\int_{0}^{1} (1-x^2)^n \, dx
-\]
-\begin{solution}
-对 $I(m,n)$ 作分部积分，取 $u=(b-x)^m, dv=(x-a)^n \, dx$，则
-\[
-du = -m(b-x)^{m-1} \, dx, \quad v = \frac{(x-a)^{n+1}}{n+1}
-\]
-于是
-\[
-I(m,n) = \left( \frac{(b-x)^m (x-a)^{n+1}}{n+1} \right) \bigg|_a^b + \frac{m}{n+1} \int_a^b (b-x)^{m-1} (x-a)^{n+1} \, dx
-\]
-注意到端点项为零，得到递推式
-\[
-I(m,n) = \frac{m}{n+1} I(m-1, n+1)
-\]
-重复使用该递推关系
-\[
-I(m,n) = \frac{m}{n+1} \cdot \frac{m-1}{n+2} \cdots \frac{1}{n+m} I(0, n+m)
-\]
-其中
-\[
-I(0, n+m) = \int_a^b (x-a)^{n+m} \, dx = \left( \frac{(x-a)^{n+m+1}}{n+m+1} \right) \bigg|_a^b = \frac{(b-a)^{n+m+1}}{n+m+1}
-\]
-因此
-\[
-I(m,n) = \frac{m! n!}{(m+n)!} \cdot \frac{(b-a)^{m+n+1}}{m+n+1} = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
-\]
-接下来计算 $\int_0^1 (1-x^2)^n \, dx$。利用偶函数对称性
-\[
-\int_0^1 (1-x^2)^n \, dx = \frac{1}{2} \int_{-1}^1 (1-x)^n (1+x)^n \, dx
-\]
-这正是 $I(n,n)$ 的形式，其中 $a=-1, b=1$。由已证公式
-\[
-\frac{1}{2} I(n,n) = \frac{1}{2} \cdot \frac{n! n!}{(2n+1)!} (1 - (-1))^{2n+1} = \frac{1}{2} \cdot \frac{(n!)^2}{(2n+1)!} 2^{2n+1} = \frac{2^{2n}(n!)^2}{(2n+1)!}
-\]
-\end{solution}
+    \question
+    设
+    \[
+    I(m,n) = \int_{a}^{b} (b-x)^{m}(x-a)^{n} \, dx, \quad m \in \mathbb{N}, \ n \in \mathbb{N}, \ b > a
+    \]
+    证明
+    \[
+    I(m,n) = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
+    \]
+    并据此求
+    \[
+    \int_{0}^{1} (1-x^2)^n \, dx
+    \]
+    \begin{solution}
+        对 $I(m,n)$ 作分部积分，取 $u=(b-x)^m, dv=(x-a)^n \, dx$，则
+        \[
+        du = -m(b-x)^{m-1} \, dx, \quad v = \frac{(x-a)^{n+1}}{n+1}
+        \]
+        于是
+        \[
+        I(m,n) = \left[ \frac{(b-x)^m (x-a)^{n+1}}{n+1} \right]_a^b + \frac{m}{n+1} \int_a^b (b-x)^{m-1} (x-a)^{n+1} \, dx
+        \]
+        注意到端点项为零，得到递推式
+        \[
+        I(m,n) = \frac{m}{n+1} I(m-1, n+1)
+        \]
+        重复使用该递推关系得
+        \[
+        I(m,n) = \frac{m}{n+1} \cdot \frac{m-1}{n+2} \cdots \frac{1}{n+m} I(0, n+m)
+        \]
+        其中
+        \[
+        I(0, n+m) = \int_a^b (x-a)^{n+m} \, dx = \left[ \frac{(x-a)^{n+m+1}}{n+m+1} \right]_a^b = \frac{(b-a)^{n+m+1}}{n+m+1}
+        \]
+        因此得证
+        \[
+        I(m,n) = \frac{m! n!}{(m+n)!} \cdot \frac{(b-a)^{m+n+1}}{m+n+1} = \frac{m!n!}{(m+n+1)!}(b-a)^{m+n+1}
+        \]
+        接下来计算 $\int_0^1 (1-x^2)^n \, dx$。利用偶函数对称性
+        \[
+        \int_0^1 (1-x^2)^n \, dx = \frac{1}{2} \int_{-1}^1 (1-x)^n (1+x)^n \, dx
+        \]
+        这正是 $I(n,n)$ 的形式，其中 $a=-1, b=1$。由已证公式,所求即
+        \[
+        \frac{1}{2} I(n,n) = \frac{1}{2} \cdot \frac{n! n!}{(2n+1)!} (1 - (-1))^{2n+1} = \frac{2^{2n}(n!)^2}{(2n+1)!}
+        \]
+    \end{solution}
 
     \question 设数列 $\{a_n\}$ 满足
     \[
     a_n = \int_{0}^{1}(1-x^2)^{\frac{n}{2}}\,dx, \quad n=0, 1, 2, 3, \dots
     \]
     \begin{parts}
-    \part 证明:$a_n = \dfrac{n}{n+1}a_{n-2}, \quad n \ge 2$。
+    \part 证明对所有大于1的正整数$n \ge 2$,有
+    \[
+    a_n = \dfrac{n}{n+1}a_{n-2}
+    \]
     \begin{solution}
         令 $x=\sin\theta$,则 $dx = \cos \theta \, d\theta$,有
         \[
@@ -7203,532 +7191,461 @@ I(m,n) = \frac{m! n!}{(m+n)!} \cdot \frac{(b-a)^{m+n+1}}{m+n+1} = \frac{m!n!}{(m
     \end{solution}
     \end{parts}
 
+    \question 已知
+    \[
+    I_{n}=\int_{0}^{a}x^{n+\frac{1}{2}}\sqrt{a-x}\,dx,\quad n\in\mathbb{Z},\ n\ge 0
+    \]
+    其中 $a$ 为某正实数。
+    \begin{parts}
+    \part 证明
+    \[
+    I_n=\left(\frac{a}{4}\right)^n\binom{2n+2}{n}\frac{I_0}{n+1}
+    \]
+    \begin{solution}
+        由分部积分法,取
+        \[
+        u=x^{n+\frac{1}{2}},\quad dv=\sqrt{a-x}\,dx
+        \]
+        则
+        \[
+        du=\left(n+\frac{1}{2}\right)x^{n-\frac{1}{2}}\,dx,\quad v=-\frac{2}{3}(a-x)^{\frac{3}{2}}
+        \]
+        于是
+        \[
+        I_n=\left[-\frac{2}{3}x^{n+\frac{1}{2}}(a-x)^{\frac{3}{2}}\right]_0^a
+        +\frac{2}{3}\left(n+\frac{1}{2}\right)\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{3}{2}}\,dx
+        \]
+        边界项为零,因此
+        \[
+        I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{1}{2}}(a-x)\,dx
+        \]
+        展开得
+        \[
+        I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)
+        \left[
+        a\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{1}{2}}\,dx
+        -\int_0^a x^{n+\frac{1}{2}}(a-x)^{\frac{1}{2}}\,dx
+        \right]
+        \]
+        即
+        \[
+        I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)\left(aI_{n-1}-I_n\right)
+        \]
+        整理得
+        \[
+        I_n=\frac{(2n+1)a}{2n+4}I_{n-1}
+        \]
+        反复递推,
+        \[
+        I_n=a^n\frac{(2n+1)(2n-1)\cdots3}{2^n(n+2)(n+1)\cdots3}I_0
+        \]
+        利用组合数恒等式,化简得
+        \[
+        I_n= \frac{a^n}{2^{2n}} \cdot \frac{(2n+1)!}{n! \cdot \frac{(n+2)!}{2}} I_0
+        =\left(\frac{a}{4}\right)^n\frac{(2n+2)!}{n!(n+2)!}\frac{I_0}{n+1}
+        =\left(\frac{a}{4}\right)^n\binom{2n+2}{n}\frac{I_0}{n+1}
+        \]
+    \end{solution}
+    \part 计算
+    \[
+    \int_0^2 x^{10}\sqrt{4-x^2}\,dx
+    \]
+    \begin{solution}
+        令 $u=x^2$,则$dx=\dfrac{1}{2}u^{-\frac{1}{2}}\,du$,原积分化为
+        \[
+        \int_0^2 x^{10}\sqrt{4-x^2}\,dx
+        =\frac{1}{2}\int_0^4 u^{4+\frac{1}{2}}\sqrt{4-u}\,du
+        =\frac{1}{2}I_4
+        \]
+        由(a),取 $a=4$,
+        \[
+        I_4=\left(\frac{4}{4}\right)^4\binom{10}{4}\frac{I_0}{5} \tag{1}
+        \]
+        对于
+        \[
+        I_0=\int_0^4\sqrt{x}\sqrt{4-x}\,dx
+        \]
+        设 $x = 4\sin^2 \theta$，则$dx = 8\sin \theta \cos \theta \, d\theta$,
+        \begin{align*}
+        I_0 &= \int_0^{\frac{\pi}{2}} \sqrt{4\sin^2 \theta} \sqrt{4 - 4\sin^2 \theta} \cdot (8\sin \theta \cos \theta) \, d\theta \\
+        &= 64 \int_0^{\frac{\pi}{2}} \sin^2 \theta \cos^2 \theta \, d\theta \\
+        &= 8 \int_0^{\frac{\pi}{2}} \sin^2 2\theta \, d\theta \\
+        &= 4 \int_0^{\frac{\pi}{2}} (1 - \cos 4\theta) \, d\theta \\
+        &= 4 \left[ \theta - \frac{1}{4}\sin 4\theta \right]_0^{\frac{\pi}{2}} \\
+        &= 2\pi
+        \end{align*}
+        代入(1)得$I_4=84\pi$,因此
+        \[
+        \int_0^2 x^{10}\sqrt{4-x^2}\,dx=\frac{1}{2}I_4=42\pi
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 
+    \begin{parts}
+    \part 试证
+    \[
+    \int \sqrt{1-x^2}\,dx = \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2} + C.
+    \]
+    \begin{solution}
+        令 $x = \sin\theta,\theta \in \left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$,则 $dx = \cos\theta\,d\theta$:
+        \[
+        \int \sqrt{1-\sin^2\theta}\,\cos\theta\,d\theta = \int \cos^2\theta\,d\theta.
+        \]
+        使用恒等式 $\cos^2\theta = \frac{1+\cos 2\theta}{2}$:
+        \begin{align*}
+        \int \cos^2\theta\,d\theta &= \frac{1}{2}\int (1+\cos 2\theta)\,d\theta \\
+        &= \frac{1}{2}\left(\theta + \frac{1}{2}\sin 2\theta\right) + C \\
+        &= \frac{1}{2}\theta + \frac{1}{2}\sin\theta\cos\theta + C \\
+        &= \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2} + C.
+        \end{align*}
+    \end{solution}
+    \part 证明对任意正整数$n$,
+    \[
+    \frac{d}{dx}\big[x(1-x^2)^{\frac{n}{2}}\big] = (n+1)(1-x^2)^{\frac{n}{2}} - n(1-x^2)^{\frac{n-2}{2}}.
+    \]
+    \begin{solution}
+        由乘法法则,
+        \begin{align*}
+        \frac{d}{dx}[x(1-x^2)^{\frac{n}{2}}] &= (1-x^2)^{\frac{n}{2}} + x \cdot \frac{n}{2}(1-x^2)^{\frac{n}{2}-1}(-2x) \\
+        &= (1-x^2)^{\frac{n}{2}} - nx^2 (1-x^2)^{\frac{n-2}{2}} \\
+        &= (1-x^2)^{\frac{n-2}{2}}\left((1-x^2) - nx^2\right) \\
+        &= (1-x^2)^{\frac{n-2}{2}}\left(1-(n+1)x^2\right) \\
+        &= (n+1)(1-x^2)^{\frac{n}{2}} - n(1-x^2)^{\frac{n-2}{2}}.
+        \end{align*}
+    \end{solution}
+    \part 若
+    \[
+    I_n = \int (1-x^2)^{\frac{n}{2}}\,dx
+    \]
+    证明递推公式
+    \[
+    I_n = \frac{n}{n+1} I_{n-2} + \frac{1}{n+1}x(1-x^2)^{\frac{n}{2}}.
+    \]
+    \begin{solution}
+        由(b),两边积分得
+        \[
+        x(1-x^2)^{\frac{n}{2}} = (n+1) I_n - n I_{n-2} 
+        \]
+        故得证
+        \[
+        I_n = \frac{n}{n+1} I_{n-2} + \frac{1}{n+1}x(1-x^2)^{\frac{n}{2}}
+        \]
+    \end{solution}
+    \part 求
+    \[
+    \int (1-x^2)^{\frac{5}{2}}\,dx
+    \]
+    \begin{solution}
+        由(c),利用递推公式:
+        \[
+        I_5 = \frac{5}{6} I_3 + \frac{1}{6} x(1-x^2)^{\frac{5}{2}}, \quad
+        I_3 = \frac{3}{4} I_1 + \frac{1}{4} x(1-x^2)^{\frac{3}{2}},
+        \]
+        且由(a),
+        \[
+        I_1 = \int (1-x^2)^{\frac{1}{2}}\,dx = \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2}.
+        \]
+        代入得
+        \begin{align*}
+        I_5 &= \frac{5}{6}\left(\frac{3}{4}I_1 + \frac{1}{4} x(1-x^2)^{\frac{3}{2}}\right) + \frac{1}{6} x(1-x^2)^{\frac{5}{2}} \\
+        &= \frac{5}{8} I_1 + \frac{5}{24} x(1-x^2)^{\frac{3}{2}} + \frac{1}{6} x(1-x^2)^{\frac{5}{2}} \\
+        &= \frac{5}{16}\sin^{-1}x + \frac{5}{16} x\sqrt{1-x^2} + \frac{5}{24} x(1-x^2)^{\frac{3}{2}} + \frac{1}{6} x(1-x^2)^{\frac{5}{2}} + C.
+        \end{align*}
+    \end{solution}
+    \end{parts}
+
     \question
-已知
-\[
-I_{n}=\int_{0}^{a}x^{n+\frac{1}{2}}\sqrt{a-x}\,dx,\quad n\in\mathbb{Z},\ n\ge 0
-\]
-其中 $a$ 为正常数。
-
-\begin{solution}
-(a) 由分部积分法,
-取
-\[
-u=x^{n+\frac{1}{2}},\quad dv=\sqrt{a-x}\,dx
-\]
-则
-\[
-du=\left(n+\frac{1}{2}\right)x^{n-\frac{1}{2}}dx,\quad v=-\frac{2}{3}(a-x)^{\frac{3}{2}}
-\]
-
-于是
-\[
-I_n=\left[-\frac{2}{3}x^{n+\frac{1}{2}}(a-x)^{\frac{3}{2}}\right]_0^a
-+\frac{2}{3}\left(n+\frac{1}{2}\right)\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{3}{2}}dx
-\]
-
-边界项为零,因此
-\[
-I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{1}{2}}(a-x)\,dx
-\]
-
-展开得
-\[
-I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)
-\left[
-a\int_0^a x^{n-\frac{1}{2}}(a-x)^{\frac{1}{2}}dx
--\int_0^a x^{n+\frac{1}{2}}(a-x)^{\frac{1}{2}}dx
-\right]
-\]
-
-即
-\[
-I_n=\frac{2}{3}\left(n+\frac{1}{2}\right)\left(aI_{n-1}-I_n\right)
-\]
-
-整理得
-\[
-(2n+4)I_n=(2n+1)aI_{n-1}
-\]
-
-从而
-\[
-I_n=\frac{(2n+1)a}{2n+4}I_{n-1}
-\]
-
-反复递推,
-\[
-I_n=a^n\frac{(2n+1)(2n-1)\cdots3}{2^n(n+2)(n+1)\cdots3}I_0
-\]
-
-利用组合数恒等式,化简得
-\[
-I_n=\left(\frac{a}{4}\right)^n\binom{2n+2}{n}\frac{I_0}{n+1}
-\]
-
-(b) 计算
-\[
-\int_0^2 x^{10}\sqrt{4-x^2}\,dx
-\]
-
-令 $u=x^2$,则
-\[
-dx=\frac{1}{2}u^{-\frac{1}{2}}du
-\]
-
-原积分化为
-\[
-\int_0^2 x^{10}\sqrt{4-x^2}\,dx
-=\frac{1}{2}\int_0^4 u^{4+\frac{1}{2}}\sqrt{4-u}\,du
-=\frac{1}{2}I_4
-\]
-
-由(a)式,取 $a=4$,
-\[
-I_4=\left(\frac{4}{4}\right)^4\binom{10}{4}\frac{I_0}{5}
-\]
-
-又
-\[
-I_0=\int_0^4\sqrt{x}\sqrt{4-x}\,dx=2\pi
-\]
-
-代入得
-\[
-I_4=84\pi
-\]
-
-因此
-\[
-\int_0^2 x^{10}\sqrt{4-x^2}\,dx=\frac{1}{2}I_4=42\pi
-\]
-\end{solution}
-
-
-    \question Evaluate the integral $\int (1-x^2)^{\frac{n}{2}}\,dx$ using reduction formulae.
-
-\begin{solution}
-(a) Show that 
-\[
-\int \sqrt{1-x^2}\,dx = \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2} + C.
-\]
-
-令 $x = \sin\theta,\theta \in [-\pi/2, \pi/2]$,则 $dx = \cos\theta\,d\theta$:
-\[
-\int \sqrt{1-\sin^2\theta}\,\cos\theta\,d\theta = \int \cos^2\theta\,d\theta.
-\]
-
-使用恒等式 $\cos^2\theta = \frac{1+\cos 2\theta}{2}$:
-\begin{align*}
-\int \cos^2\theta\,d\theta &= \int \frac{1+\cos 2\theta}{2}\,d\theta 
-= \frac{1}{2}\int (1+\cos 2\theta)\,d\theta \\
-&= \frac{1}{2}\left(\theta + \frac{\sin 2\theta}{2}\right) + C 
-= \frac{1}{2}\theta + \frac{1}{4}(2\sin\theta\cos\theta) + C \\
-&= \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2} + C.
-\end{align*}
-
-(b) Show that for any positive integer $n$,
-\[
-\frac{d}{dx}\big[x(1-x^2)^{\frac{n}{2}}\big] = (n+1)(1-x^2)^{\frac{n}{2}} - n(1-x^2)^{\frac{n-2}{2}}.
-\]
-
-使用乘法法则:
-\begin{align*}
-\frac{d}{dx}[x(1-x^2)^{\frac{n}{2}}] &= (1-x^2)^{\frac{n}{2}} + x \cdot \frac{n}{2}(1-x^2)^{\frac{n}{2}-1}(-2x) \\
-&= (1-x^2)^{\frac{n}{2}} - nx^2 (1-x^2)^{\frac{n-2}{2}} \\
-&= (1-x^2)^{\frac{n-2}{2}}\left((1-x^2) - nx^2\right) \\
-&= (1-x^2)^{\frac{n-2}{2}}\left(1-(n+1)x^2\right) \\
-&= (n+1)(1-x^2)^{\frac{n}{2}} - n(1-x^2)^{\frac{n-2}{2}}.
-\end{align*}
-
-(c) Reduction formula. Let $I_n = \int (1-x^2)^{\frac{n}{2}}\,dx$. Then
-\[
-\frac{d}{dx}[x(1-x^2)^{\frac{n}{2}}] = (n+1)(1-x^2)^{\frac{n}{2}} - n(1-x^2)^{\frac{n-2}{2}}.
-\]
-
-积分两边得:
-\[
-x(1-x^2)^{\frac{n}{2}} = (n+1) I_n - n I_{n-2} \implies I_n = \frac{n}{n+1} I_{n-2} + \frac{1}{n+1}x(1-x^2)^{\frac{n}{2}}.
-\]
-
-(d) Compute $\displaystyle \int (1-x^2)^{\frac{5}{2}}\,dx$.
-
-利用归纳公式:
-\[
-I_5 = \frac{5}{6} I_3 + \frac{1}{6} x(1-x^2)^{\frac{5}{2}}, \quad
-I_3 = \frac{3}{4} I_1 + \frac{1}{4} x(1-x^2)^{\frac{3}{2}}, \quad
-I_1 = \int (1-x^2)^{1/2}\,dx = \frac{1}{2}\sin^{-1}x + \frac{1}{2}x\sqrt{1-x^2}.
-\]
-
-代回得:
-\begin{align*}
-I_5 &= \frac{5}{6}\left(\frac{3}{4}I_1 + \frac{1}{4} x(1-x^2)^{3/2}\right) + \frac{1}{6} x(1-x^2)^{5/2} \\
-&= \frac{15}{24} I_1 + \frac{5}{24} x(1-x^2)^{3/2} + \frac{1}{6} x(1-x^2)^{5/2} \\
-&= \frac{5}{8} \left( \frac{1}{2}\sin^{-1}x + \frac{1}{2} x\sqrt{1-x^2} \right) 
-+ \frac{5}{24} x(1-x^2)^{3/2} + \frac{1}{6} x(1-x^2)^{5/2} + C \\
-&= \frac{5}{16}\sin^{-1}x + \frac{5}{16} x\sqrt{1-x^2} + \frac{5}{24} x(1-x^2)^{3/2} + \frac{1}{6} x(1-x^2)^{5/2} + C.
-\end{align*}
-\end{solution}
-
-\question  $\displaystyle \int \frac{x^4}{\sqrt{x^2+1}}\,dx$,使用降次公式。
-
-\begin{solution}
-(a) 证明对任意整数 $n\ge 2$ 有
-\[
-\frac{d}{dx}\left[\frac{x^{n-1}}{\sqrt{x^2+1}}\right] = \frac{(2-n)x^{n-2} + (1-n)x^n}{(x^2+1)^{3/2}}.
-\]
-
-\begin{align*}
-\frac{d}{dx}\left[\frac{x^{n-1}}{\sqrt{x^2+1}}\right] 
-&= \frac{d}{dx}\left[x^{n-1}(x^2+1)^{-1/2}\right] \\
-&= (n-1)x^{n-2}(x^2+1)^{-1/2} + x^{n-1}\left(-\frac{1}{2}(x^2+1)^{-3/2}(2x)\right) \\
-&= \frac{(n-1)x^{n-2}}{\sqrt{x^2+1}} - \frac{x^n}{(x^2+1)^{3/2}} \\
-&= \frac{(2-n)x^{n-2} + (1-n)x^n}{(x^2+1)^{3/2}}.
-\end{align*}
-
-(b) 设 $I_n = \int \frac{x^n}{\sqrt{x^2+1}}\,dx$。利用(a)得:
-\[
-(2-n) I_{n-2} + (1-n) I_n = \frac{x^{n-1}}{\sqrt{x^2+1}} \quad \Rightarrow \quad I_n = \frac{x^{n-1}\sqrt{x^2+1}}{1-n} + \frac{n-2}{1-n} I_{n-2}.
-\]
-
-(c) 使用降次公式计算 $I_4 = \int \frac{x^4}{\sqrt{x^2+1}}\,dx$:
-
-\[
-I_4 = \frac{x^3\sqrt{x^2+1}}{1-4} + \frac{4-2}{1-4} I_2 = -\frac{x^3\sqrt{x^2+1}}{3} - \frac{2}{3} I_2.
-\]
-
-类似地计算 $I_2$:
-\[
-I_2 = \frac{x\sqrt{x^2+1}}{1-2} + \frac{2-2}{1-2} I_0 = -x\sqrt{x^2+1}.
-\]
-
-将 $I_2$ 代回 $I_4$:
-\begin{align*}
-I_4 &= -\frac{x^3\sqrt{x^2+1}}{3} - \frac{2}{3}(-x\sqrt{x^2+1}) \\
-&= -\frac{x^3\sqrt{x^2+1}}{3} + \frac{2x\sqrt{x^2+1}}{3} + C.
-\end{align*}
-
-\end{solution}
-\question 
-\[
-I_n = \int_{0}^{a} \frac{x^n}{\sqrt{a^2-x^2}} \, dx, \quad n\in \mathbb{N}, \quad a>0
-\]
-
-\begin{solution}
-\textbf{a) 推导递推公式}
-
-使用分部积分,设
-\[
-u = x^{n-1}, \quad dv = \frac{x}{\sqrt{a^2-x^2}} \, dx \implies v = -\sqrt{a^2-x^2}, \quad du = (n-1)x^{n-2} \, dx
-\]
-
-\begin{align*}
-I_n &= \int_0^a \frac{x^n}{\sqrt{a^2-x^2}} \, dx
-= \int_0^a x^{n-1} \cdot \frac{x}{\sqrt{a^2-x^2}} \, dx \\
-&= \left[-x^{n-1} \sqrt{a^2-x^2}\right]_0^a + (n-1) \int_0^a x^{n-2} \sqrt{a^2-x^2} \, dx \\
-&= (n-1) \int_0^a \frac{x^{n-2}(a^2-x^2)}{\sqrt{a^2-x^2}} \, dx \\
-&= (n-1) \left[a^2 \int_0^a \frac{x^{n-2}}{\sqrt{a^2-x^2}} \, dx - \int_0^a \frac{x^n}{\sqrt{a^2-x^2}} \, dx \right] \\
-&= (n-1)a^2 I_{n-2} - (n-1) I_n \\
-&\implies n I_n = a^2 (n-1) I_{n-2}, \quad n\ge 2
-\end{align*}
-
-\textbf{b) 计算具体积分}
-
-\[
-\int_2^4 \frac{3x^3-18x^2+36x-18}{\sqrt{4x-x^2}} \, dx
-\]
-
-首先配方:
-\[
-4x - x^2 = -(x^2-4x) = 4 - (x-2)^2
-\]
-令 \(u = x-2 \implies du=dx\),积分上下限:
-\[
-x=2 \implies u=0, \quad x=4 \implies u=2
-\]
-
-分解被积函数:
-\begin{align*}
-3x^3-18x^2+36x-18 &= 3[(x-2)^3 + 2] \\
-\implies \int_2^4 \frac{3x^3-18x^2+36x-18}{\sqrt{4x-x^2}} \, dx 
-&= \int_0^2 \frac{3u^3 + 6}{\sqrt{4-u^2}} \, du \\
-&= 3 \int_0^2 \frac{u^3}{\sqrt{4-u^2}} \, du + \int_0^2 \frac{6}{\sqrt{4-u^2}} \, du \\
-&= 3 I_3 + 6 \arcsin\left(\frac{u}{2}\right)\Big|_0^2 \\
-&= 3 I_3 + 6 \cdot \frac{\pi}{2} = 3 I_3 + 3\pi
-\end{align*}
-
-使用递推公式 \(I_n = \frac{4(n-1)}{n} I_{n-2}\):
-\[
-I_3 = \frac{4(3-1)}{3} I_1 = \frac{8}{3} I_1
-\]
-
-计算 \(I_1\):
-\[
-I_1 = \int_0^2 \frac{u}{\sqrt{4-u^2}} \, du = \left[-\sqrt{4-u^2}\right]_0^2 = 0 - (-2) = 2
-\]
-
-\(\implies I_3 = \frac{8}{3} \cdot 2 = \frac{16}{3}\)
-
-最终结果:
-\[
-\int_2^4 \frac{3x^3-18x^2+36x-18}{\sqrt{4x-x^2}} \, dx = 3 \cdot \frac{16}{3} + 3\pi = 16 + 3\pi
-\]
-\end{solution}
-
-\question
-已知
-\[
-I_n = \int_0^{\pi} \frac{\sin(n\theta)}{\sin\theta}\,d\theta
-\]
-其中 \( n \) 为正整数。
-
-(a) 利用三角恒等式证明
-\[
-\frac{\sin(n\theta)-\sin[(n-2)\theta]}{\sin\theta} = 2\cos[(n-1)\theta]
-\]
-
-(b) 推导
-\[
-I_n = I_{n-2},\quad n\ge2
-\]
-
-(c) 求 \( I_n \) 的值,分别讨论 \( n \) 为奇数或偶数的情况
-
-\begin{solution}
-(a) 使用公式 \(\sin A - \sin B = 2\cos\frac{A+B}{2}\sin\frac{A-B}{2}\):
-\begin{align*}
-\frac{\sin(n\theta)-\sin[(n-2)\theta]}{\sin\theta} &= \frac{2\cos\frac{n\theta+(n-2)\theta}{2}\sin\frac{n\theta-(n-2)\theta}{2}}{\sin\theta} \\
-&= \frac{2\cos[(n-1)\theta]\sin\theta}{\sin\theta} \\
-&= 2\cos[(n-1)\theta]
-\end{align*}
-
-(b) 利用(a)结果:
-\begin{align*}
-I_n - I_{n-2} &= \int_0^{\pi} \frac{\sin(n\theta)-\sin[(n-2)\theta]}{\sin\theta}\,d\theta \\
-&= \int_0^{\pi} 2\cos[(n-1)\theta]\,d\theta \\
-&= \left[\frac{2}{n-1}\sin((n-1)\theta)\right]_0^{\pi} = 0 \\
-\therefore I_n &= I_{n-2},\quad n\ge2
-\end{align*}
-
-(c) 由(b)得递推关系:
-\[
-I_n = I_{n-2} = \dots
-\]
-
-若 \( n \) 为偶数,则递推到 \( I_0 \):
-\[
-I_0 = \int_0^{\pi} \frac{\sin 0}{\sin\theta}\,d\theta = 0
-\]
-
-若 \( n \) 为奇数,则递推到 \( I_1 \):
-\[
-I_1 = \int_0^{\pi} \frac{\sin\theta}{\sin\theta}\,d\theta = \int_0^{\pi} 1\,d\theta = \pi
-\]
-
-因此
-\[
-I_n = 
-\begin{cases} 
-0 & n \text{ 为偶数} \\[2mm]
-\pi & n \text{ 为奇数}
-\end{cases}
-\]
-\end{solution}
-
-\question
-已知
-\[
-I_n = \int \frac{\sin(nx)}{\sin x}\,dx, \quad n\in\mathbb{N}.
-\]
-
-(a) 证明对 \( n\ge0 \) 有
-\[
-I_{n+2} = I_n + \frac{2}{n+1}\sin[(n+1)x] + C
-\]
-
-(b) 利用(a)的递推关系,求
-\[
-\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sin 6x}{\sin x}\,dx
-\]
-
-\begin{solution}
-(a) 考虑
-\begin{align*}
-I_{n+2} - I_n &= \int \frac{\sin[(n+2)x]}{\sin x}\,dx - \int \frac{\sin(nx)}{\sin x}\,dx \\
-&= \int \frac{\sin[(n+2)x]-\sin(nx]}{\sin x}\,dx
-\end{align*}
-
-利用恒等式 \(\sin P - \sin Q = 2\cos\frac{P+Q}{2}\sin\frac{P-Q}{2}\):
-\begin{align*}
-I_{n+2}-I_n &= \int \frac{2\cos\frac{(n+2)x+nx}{2} \sin\frac{(n+2)x-nx}{2}}{\sin x}\,dx \\
-&= \int \frac{2\cos[(n+1)x]\sin x}{\sin x}\,dx \\
-&= \int 2\cos[(n+1)x]\,dx \\
-&= \frac{2}{n+1}\sin[(n+1)x] + C
-\end{align*}
-
-因此
-\[
-I_{n+2} = I_n + \frac{2}{n+1}\sin[(n+1)x] + C
-\]
-
-(b) 对定积分,递推关系不需考虑常数 \(C\):
-\begin{align*}
-\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sin 6x}{\sin x}\,dx &= I_6\bigg|_{\frac{\pi}{4}}^{\frac{\pi}{3}} \\
-&= I_4\bigg|_{\frac{\pi}{4}}^{\frac{\pi}{3}} + \left[\frac{2}{5}\sin 5x\right]_{\frac{\pi}{4}}^{\frac{\pi}{3}} \\
-&= I_4 + \frac{2}{5}\left(\sin\frac{5\pi}{3} - \sin\frac{5\pi}{4}\right) \\
-&= I_4 + \frac{2}{5}\left(-\frac{\sqrt{3}}{2} - \left(-\frac{\sqrt{2}}{2}\right)\right) \\
-&= I_4 - \frac{\sqrt{3}}{5} + \frac{\sqrt{2}}{5}
-\end{align*}
-
-同理,
-\begin{align*}
-I_4 &= I_2 + \left[\frac{2}{3}\sin 3x\right]_{\frac{\pi}{4}}^{\frac{\pi}{3}} \\
-&= I_2 + \frac{2}{3}\left(\sin\pi - \sin\frac{3\pi}{4}\right) \\
-&= I_2 - \frac{\sqrt{2}}{3}
-\end{align*}
-
-再有
-\begin{align*}
-I_2 &= I_0 + \left[2\sin x\right]_{\frac{\pi}{4}}^{\frac{\pi}{3}} \\
-&= 0 + 2\left(\frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2}\right) \\
-&= \sqrt{3} - \sqrt{2}
-\end{align*}
-
-最终得到
-\begin{align*}
-\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sin 6x}{\sin x}\,dx &= (\sqrt{3}-\sqrt{2} - \frac{\sqrt{2}}{3}) - \frac{\sqrt{3}}{5} + \frac{\sqrt{2}}{5} \\
-&= \frac{12\sqrt{3}}{15} - \frac{17\sqrt{2}}{15} \\
-&= \frac{1}{15}\left(12\sqrt{3} - 17\sqrt{2}\right)
-\end{align*}
-\end{solution}
-
-\question
-求
-\[
-I_{n} = \int_{0}^{\pi} \theta^{n} \sin\theta \,d\theta, \ n\geq 2
-\]
-
-\begin{solution}
-(a) 使用分部积分:
-\[
-u = \theta^n, \quad dv = \sin\theta \,d\theta \implies du = n \theta^{n-1} d\theta, \quad v = -\cos\theta
-\]
-
-\begin{align*}
-I_n &= \left[-\theta^n \cos\theta\right]_{0}^{\pi} + n \int_{0}^{\pi} \theta^{n-1} \cos\theta \,d\theta \\
-&= -\pi^n \cos\pi + 0 + n \int_{0}^{\pi} \theta^{n-1} \cos\theta \,d\theta \\
-&= \pi^n + n \int_{0}^{\pi} \theta^{n-1} \cos\theta \,d\theta
-\end{align*}
-
-对第二个积分再次分部积分:
-\[
-u = \theta^{n-1}, \quad dv = \cos\theta \,d\theta \implies du = (n-1)\theta^{n-2} d\theta, \quad v = \sin\theta
-\]
-
-\begin{align*}
-I_n &= \pi^n + n \left[ \theta^{n-1}\sin\theta \right]_{0}^{\pi} - n(n-1) \int_{0}^{\pi} \theta^{n-2} \sin\theta \,d\theta \\
-&= \pi^n - n(n-1) \int_{0}^{\pi} \theta^{n-2} \sin\theta \,d\theta \\
-&= \pi^n - n(n-1) I_{n-2}
-\end{align*}
-
-(b) 计算
-\[
-\int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx
-\]
-
-使用代换 \(\theta = 2x, d\theta = 2dx\):
-\[
-x = \frac{\pi}{2} \implies \theta = \pi, \quad x=0 \implies \theta = 0
-\]
-
-\begin{align*}
-\int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx &= \int_{0}^{\pi} \left(\frac{\theta}{2}\right)^4 \sin\theta \frac{d\theta}{2} \\
-&= \frac{1}{32} \int_{0}^{\pi} \theta^4 \sin\theta \,d\theta \\
-&= \frac{1}{32} I_4
-\end{align*}
-
-利用递推公式:
-\[
-I_4 = \pi^4 - 4\cdot 3 I_2 = \pi^4 - 12 I_2, \quad I_2 = \pi^2 - 2 I_0, \quad I_0 = \int_{0}^{\pi} \sin\theta \,d\theta = 2
-\]
-
-\begin{align*}
-I_4 &= \pi^4 - 12 (\pi^2 - 4) = \pi^4 - 12\pi^2 + 48 \\
-\int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx &= \frac{1}{32} (\pi^4 - 12\pi^2 + 48)
-\end{align*}
-如所需。
-\end{solution}
-
-
-\question
-Evaluate
-\[
-I_n = \int \csc^n x \, dx, \quad n \in \mathbb{N}.
-\]
-
-\textbf{a) Reduction formula}
-
-\begin{solution}
-将 $\csc^n x = \csc^{n-2} x \, \csc^2 x$,并用分部积分:
-\[
-u = -\cot x, \quad dv = \csc^{n-2} x \csc^2 x \, dx \implies du = \csc^2 x \, dx, \quad v = \csc^{n-2} x
-\]
-
-\[
-I_n = -\cot x \csc^{n-2} x - \int (-\cot x) \, d(\csc^{n-2} x)
-\]
-
-\noindent 计算 $d(\csc^{n-2} x) = (n-2)\csc^{n-1} x (-\cot x) dx = -(n-2) \csc^{n-1} x \cot x \, dx$:
-\[
-I_n = -\cot x \csc^{n-2} x - (-(n-2)) \int \csc^{n-1} x \cot^2 x \, dx
-\]
-
-使用 $\cot^2 x = \csc^2 x - 1$:
-\[
-I_n = -\cot x \csc^{n-2} x - (n-2) \int \csc^n x \, dx + (n-2) \int \csc^{n-2} x \, dx
-\]
-
-\[
-I_n + (n-2) I_n = (n-2) I_{n-2} - \cot x \csc^{n-2} x
-\]
-
-\[
-\boxed{I_n = \frac{n-2}{n-1} I_{n-2} - \frac{1}{n-1} \cot x \csc^{n-2} x}, \quad n \ge 2
-\]
-\end{solution}
-
-\question
-\textbf{b) Evaluate} 
-\[
-\int_{\pi/4}^{\pi/2} \csc^6 x \, dx
-\]
-
-\begin{solution}
-利用公式:
-\[
-I_6 = \frac{6-2}{6-1} I_4 - \frac{1}{5} [\cot x \csc^4 x]_{\pi/4}^{\pi/2} = \frac{4}{5} I_4 - \frac{1}{5} [0 - 1 \cdot 2^2] = \frac{4}{5} I_4 + \frac{4}{5}
-\]
-
-对 $I_4$ 应用同样公式:
-\[
-I_4 = \frac{2}{3} I_2 - \frac{1}{3} [\cot x \csc^2 x]_{\pi/4}^{\pi/2} = \frac{2}{3} I_2 - \frac{1}{3} [0 - 1 \cdot 2] = \frac{2}{3} I_2 + \frac{2}{3}
-\]
-
-代回 $I_6$:
-\[
-I_6 = \frac{4}{5} \left( \frac{2}{3} I_2 + \frac{2}{3} \right) + \frac{4}{5} = \frac{8}{15} I_2 + \frac{8}{15} + \frac{4}{5} = \frac{8}{15} I_2 + \frac{20}{15} = \frac{8}{15} I_2 + \frac{4}{3}
-\]
-
-计算 $I_2$:
-\[
-I_2 = \int_{\pi/4}^{\pi/2} \csc^2 x \, dx = [-\cot x]_{\pi/4}^{\pi/2} = 0 - (-1) = 1
-\]
-
-最终:
-\[
-I_6 = \frac{8}{15} (1) + \frac{4}{3} = \frac{8}{15} + \frac{20}{15} = \frac{28}{15}
-\]
-\end{solution}
+    \begin{parts}
+    \part 证明对任意整数 $n\ge 2$ 有
+    \[
+    \frac{d}{dx}\left[\frac{x^{n-1}}{\sqrt{x^2+1}}\right] = \frac{(2-n)x^{n-2} + (1-n)x^n}{(x^2+1)^{\frac{3}{2}}}.
+    \]
+    \begin{solution}
+        求导得
+        \begin{align*}
+        \frac{d}{dx}\left[\frac{x^{n-1}}{\sqrt{x^2+1}}\right] 
+        &= \frac{d}{dx}\left[x^{n-1}(x^2+1)^{-\frac{1}{2}}\right] \\
+        &= (n-1)x^{n-2}(x^2+1)^{-\frac{1}{2}} + x^{n-1}\left(-\frac{1}{2}(x^2+1)^{-\frac{3}{2}}(2x)\right) \\
+        &= \frac{(n-1)x^{n-2}}{\sqrt{x^2+1}} - \frac{x^n}{(x^2+1)^{\frac{3}{2}}} \\
+        &= \frac{(2-n)x^{n-2} + (1-n)x^n}{(x^2+1)^{\frac{3}{2}}}.
+        \end{align*}
+    \end{solution}
+    \part 设 
+    \[
+    I_n = \int \frac{x^n}{\sqrt{x^2+1}}\,dx,
+    \]
+    证明
+    \[
+    I_n = \frac{x^{n-1}\sqrt{x^2+1}}{1-n} + \frac{n-2}{1-n} I_{n-2}
+    \]
+    \begin{solution}
+        由(a),两边积分得
+        \[
+        (2-n) I_{n-2} + (1-n) I_n = \frac{x^{n-1}}{\sqrt{x^2+1}} 
+        \]
+        即得证
+        \[
+        I_n = \frac{x^{n-1}\sqrt{x^2+1}}{1-n} + \frac{n-2}{1-n} I_{n-2}
+        \]
+    \end{solution}
+    \part 据此,求
+    \[
+    \int \frac{x^4}{\sqrt{x^2+1}}\,dx
+    \]
+    \begin{solution}
+        使用降次公式计算:
+        \[
+        I_4 = \frac{x^3\sqrt{x^2+1}}{1-4} + \frac{4-2}{1-4} I_2 = -\frac{x^3\sqrt{x^2+1}}{3} - \frac{2}{3} I_2
+        \]
+        且
+        \[
+        I_2 = \frac{x\sqrt{x^2+1}}{1-2} + \frac{2-2}{1-2} I_0 = -x\sqrt{x^2+1} + C_1
+        \]
+        将 $I_2$ 代回 $I_4$:
+        \[
+        I_4 = -\frac{x^3\sqrt{x^2+1}}{3} - \frac{2}{3}(-x\sqrt{x^2+1}) + C = \frac{1}{3}x(2-x^2)\sqrt{x^2+1}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 
+    \begin{parts}
+    \part 设
+    \[
+    I_n = \int_{0}^{a} \frac{x^n}{\sqrt{a^2-x^2}} \, dx, \quad n\in \mathbb{N}, \quad a>0
+    \]
+    证明
+    \[
+    n I_n = a^2 (n-1) I_{n-2}, \quad n\ge 2
+    \]
+    \begin{solution}
+        由分部积分,
+        \begin{align*}
+        I_n &= \int_0^a \frac{x^n}{\sqrt{a^2-x^2}} \, dx
+        = \int_0^a x^{n-1} \cdot \frac{x}{\sqrt{a^2-x^2}} \, dx \\
+        &= \left[-x^{n-1} \sqrt{a^2-x^2}\right]_0^a + (n-1) \int_0^a x^{n-2} \sqrt{a^2-x^2} \, dx \\
+        &= (n-1) \int_0^a \frac{x^{n-2}(a^2-x^2)}{\sqrt{a^2-x^2}} \, dx \\
+        &= (n-1) \left[a^2 \int_0^a \frac{x^{n-2}}{\sqrt{a^2-x^2}} \, dx - \int_0^a \frac{x^n}{\sqrt{a^2-x^2}} \, dx \right] \\
+        &= (n-1)a^2 I_{n-2} - (n-1) I_n 
+        \end{align*}
+        于是有
+        \[
+        n I_n = a^2 (n-1) I_{n-2}, \quad n\ge 2
+        \]
+    \end{solution}
+    \part 求 
+    \[
+    \int_2^4 \frac{3x^3-18x^2+36x-18}{\sqrt{4x-x^2}} \, dx
+    \]
+    \begin{solution}
+        注意到
+        \[
+        I=\int_2^4 \frac{3x^3-18x^2+36x-18}{\sqrt{4x-x^2}} \, dx = \int_2^4 \frac{3[(x-2)^3 + 2]}{\sqrt{4 - (x-2)^2}} \, dx
+        \]
+        令 $u = x-2, du=dx$,则
+        \begin{align*}
+        I &= \int_0^2 \frac{3u^3 + 6}{\sqrt{4-u^2}} \, du \\
+        &= 3 \int_0^2 \frac{u^3}{\sqrt{4-u^2}} \, du + \int_0^2 \frac{6}{\sqrt{4-u^2}} \, du \\
+        &= 3 I_3 + 6 \left[\arcsin\left(\frac{u}{2}\right)\right]|_0^2 \\
+        &= 3 I_3 + 3\pi
+        \end{align*}
+        由(a)知$I_n = \dfrac{4(n-1)}{n} I_{n-2}$,于是
+        \[
+        I_3 = \frac{4(3-1)}{3} I_1 = \frac{8}{3} I_1
+        \]
+        其中
+        \[
+        I_1 = \int_0^2 \frac{u}{\sqrt{4-u^2}} \, du = \left[-\sqrt{4-u^2}\right]_0^2 = 2
+        \]
+        故所求积分为
+        \[
+        I = 3 \cdot \frac{8}{3} \cdot 2 + 3\pi = 16 + 3\pi
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知
+    \[
+    I_n = \int_0^{\pi} \frac{\sin(n\theta)}{\sin\theta}\,d\theta
+    \]
+    其中 \( n \) 为正整数。
+    \begin{parts}
+    \part 证明
+    \[
+    I_n = I_{n-2},\quad n\ge2
+    \]
+    \begin{solution}
+        和差化积得
+        \begin{align*}
+        I_n - I_{n-2} &= \int_0^{\pi} \frac{\sin(n\theta)-\sin[(n-2)\theta]}{\sin\theta}\,d\theta \\
+        &= \int_0^{\pi} \frac{2\cos[(n-1)\theta]\sin\theta}{\sin\theta}\,d\theta \\
+        &= \int_0^{\pi} 2\cos[(n-1)\theta]\,d\theta \\
+        &= \left[\frac{2}{n-1}\sin((n-1)\theta)\right]_0^{\pi} = 0 
+        \end{align*}
+        故得证
+        \[
+        I_n = I_{n-2},\quad n\ge2
+        \]
+    \end{solution}
+    \part 据此,求 $I_n$ 的值。
+    \begin{solution}
+        由(a)得递推关系:
+        \[
+        I_n = I_{n-2} = \dots
+        \]
+        若 \( n \) 为偶数,则递推到 \( I_0 \):
+        \[
+        I_0 = \int_0^{\pi} \frac{\sin 0}{\sin\theta}\,d\theta = 0
+        \]
+        若 \( n \) 为奇数,则递推到 \( I_1 \):
+        \[
+        I_1 = \int_0^{\pi} \frac{\sin\theta}{\sin\theta}\,d\theta = \int_0^{\pi} 1\,d\theta = \pi
+        \]
+        因此
+        \[
+        I_n = 
+        \begin{cases} 
+        0 & ,n \text{ 为偶数} \\
+        \pi & ,n \text{ 为奇数}
+        \end{cases}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question
+    已知
+    \[
+    I_n = \int \frac{\sin(nx)}{\sin x}\,dx, \quad n\in\mathbb{N}.
+    \]
+    \begin{parts}
+    \part 证明对所有整数 $n\ge0$ 有
+    \[
+    I_{n+2} = I_n + \frac{2}{n+1}\sin[(n+1)x] + C
+    \]
+    \begin{solution}
+        考虑
+        \begin{align*}
+        I_{n+2} - I_n 
+        &= \int \frac{\sin[(n+2)x]-\sin(nx)}{\sin x}\,dx \\
+        &= \int \frac{2\cos[(n+1)x]\sin x}{\sin x}\,dx \\
+        &= \int 2\cos[(n+1)x]\,dx \\
+        &= \frac{2}{n+1}\sin[(n+1)x] + C
+        \end{align*}
+        故得证
+        \[
+        I_{n+2} = I_n + \frac{2}{n+1}\sin[(n+1)x] + C
+        \]
+    \end{solution}
+    \part 据此,求
+    \[
+    \int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sin 6x}{\sin x}\,dx
+    \]
+    \begin{solution}
+        由(a)的递推公式,
+        \begin{align*}
+        \int \frac{\sin 6x}{\sin x}\,dx = I_6 
+        &= I_4 + \frac{2}{5}\sin 5x \\
+        &= I_2 + \frac{2}{3}\sin 3x + \frac{2}{5}\sin 5x \\
+        &= I_0 + 2\sin x + \frac{2}{3}\sin 3x + \frac{2}{5}\sin 5x \\
+        &= 2\sin x + \frac{2}{3}\sin 3x + \frac{2}{5}\sin 5x + C
+        \end{align*}        
+        于是
+        \[
+        \int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sin 6x}{\sin x}\,dx = \left[2\sin x + \frac{2}{3}\sin 3x + \frac{2}{5}\sin 5x \right]_{\frac{\pi}{4}}^{\frac{\pi}{3}} = \frac{12\sqrt{3}-17\sqrt{2}}{15}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question
+    设
+    \[
+    I_{n} = \int_{0}^{\pi} \theta^{n} \sin\theta \,d\theta, \ n\geq 2
+    \]
+    \begin{parts}
+    \part 求证
+    \[
+    I_n = \pi^n - n(n-1) I_{n-2}
+    \]
+    \begin{solution}
+        分部积分两次,得
+        \begin{align*}
+        I_n &= \left[-\theta^n \cos\theta\right]_{0}^{\pi} + n \int_{0}^{\pi} \theta^{n-1} \cos\theta \,d\theta \\
+        &= \pi^n + n \left[ \theta^{n-1}\sin\theta \right]_{0}^{\pi} - n(n-1) \int_{0}^{\pi} \theta^{n-2} \sin\theta \,d\theta \\
+        &= \pi^n - n(n-1) I_{n-2}
+        \end{align*}
+    \end{solution}
+    \part 据此,求
+    \[
+    \int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx
+    \]
+    \begin{solution}
+        使用代换 $\theta = 2x, d\theta = 2dx$,
+        \[
+        \int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx = \frac{1}{32} \int_{0}^{\pi} \theta^4 \sin\theta \,d\theta = \frac{1}{32} I_4
+        \]
+        由(a),递推得
+        \[
+        I_4 = \pi^4 - 4\cdot 3 I_2 = \pi^4 - 12 I_2, \quad I_2 = \pi^2 - 2 I_0, \quad I_0 = \int_{0}^{\pi} \sin\theta \,d\theta = 2
+        \]
+        于是
+        \[
+        I_4 = \pi^4 - 12 (\pi^2 - 4) = \pi^4 - 12\pi^2 + 48 
+        \]
+        故
+        \[
+        \int_{0}^{\frac{\pi}{2}} x^4 \sin 2x \,dx = \frac{1}{32} (\pi^4 - 12\pi^2 + 48)
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 已知
+    \[
+    I_n = \int \csc^n x \, dx, \quad n \in \mathbb{N}.
+    \]
+    \begin{parts}
+    \part 证明
+    \[
+    I_n = \frac{n-2}{n-1} I_{n-2} - \frac{1}{n-1} \cot x \csc^{n-2} x, \quad n \ge 2
+    \]
+    \begin{solution}
+        由分部积分,
+        \begin{align*}
+        I_n &= \int \csc^{n-2} x \, \csc^2 x \, dx \\
+        &= -\cot x \csc^{n-2} x - \int (n-2) \csc^{n-2} x \cot^2 x \, dx \\
+        &= -\cot x \csc^{n-2} x - (n-2) \int \csc^{n-2} x (\csc^2 x - 1) \, dx \\
+        &= -\cot x \csc^{n-2} x - (n-2) I_n + (n-2) I_{n-2} 
+        \end{align*}   
+        移项整理得
+        \[
+        I_n = \frac{n-2}{n-1} I_{n-2} - \frac{1}{n-1} \cot x \csc^{n-2} x, \quad n \ge 2
+        \]
+    \end{solution}
+    \part 据此,求
+    \[
+    \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \csc^6 x \, dx
+    \]
+    \begin{solution}
+        由(a)的递推公式,
+        \[
+        I_6 = \frac{4}{5} I_4 - \frac{1}{5} \cot x \csc^4 x, \quad I_4 = \frac{2}{3} I_2 - \frac{1}{3} \cot x \csc^2 x
+        \]
+        且
+        \[
+        I_2 = \int \csc^2 x \, dx = -\cot x + C
+        \]
+        于是
+        \begin{align*}
+        I_6 &= \frac{4}{5} I_4 - \frac{1}{5} \cot x \csc^4 x \\
+        &= \frac{8}{15} I_2 - \frac{4}{15} \cot x \csc^2 x - \frac{1}{5} \cot x \csc^4 x \\
+        &= - \frac{8}{15}\cot x - \frac{4}{15} \cot x \csc^2 x - \frac{1}{5} \cot x \csc^4 x + C
+        \end{align*}
+        且
+        \[
+        \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \csc^6 x \, dx = \left[- \frac{8}{15}\cot x - \frac{4}{15} \cot x \csc^2 x - \frac{1}{5} \cot x \csc^4 x\right]_{\frac{\pi}{4}}^{\frac{\pi}{2}}= \frac{28}{15}
+        \]
+    \end{solution}
+    \end{parts}
 
     \question 令 
     \[
@@ -7795,421 +7712,343 @@ I_6 = \frac{8}{15} (1) + \frac{4}{3} = \frac{8}{15} + \frac{20}{15} = \frac{28}{
     \end{solution}
     \end{parts}
 
-\question 设 $I_{m,n} = \int_{0}^{\frac{\pi}{2}} \cos^m\theta \sin^n\theta \, d\theta$,其中 $m,n$ 为非负整数且 $m>1$。求 $I_{m,n}$ 与 $I_{m-2,n+2}$ 的关系,并求 $\int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta$。
+    \question 设 
+    \[
+    I_{m,n} = \int_{0}^{\frac{\pi}{2}} \cos^m\theta \sin^n\theta \, d\theta
+    \]
+    其中 $m,n$ 为非负整数且 $m>1$，
+    \begin{parts}
+    \part 求证
+    \[
+    I_{m,n} = \frac{m-1}{n+1} I_{m-2,n+2}
+    \]
+    \begin{solution}
+        由分部积分,
+        \begin{align*}
+        I_{m,n} &= \int_{0}^{\frac{\pi}{2}} \cos^{m-1}\theta \cdot \cos\theta \sin^n\theta \, d\theta \\
+        &= \left[ \frac{\cos^{m-1}\theta \sin^{n+1}\theta}{n+1} \right]_0^{\frac{\pi}{2}} - \int_0^{\frac{\pi}{2}} \frac{\sin^{n+1}\theta}{n+1} \cdot \left( -(m-1)\cos^{m-2}\theta \sin\theta \right) \, d\theta
+        \end{align*}
+        端点项为 $0$,于是
+        \[
+        I_{m,n} = \frac{m-1}{n+1} \int_0^{\frac{\pi}{2}} \cos^{m-2}\theta \sin^{n+2}\theta \, d\theta = \frac{m-1}{n+1} I_{m-2,n+2}
+        \]
+        故得证。
+    \end{solution}
+    \part 据此，求
+    \[
+    \int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta
+    \]
+    \begin{solution}
+        据(a),有
+        \[
+        \int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta 
+        = \frac{6}{7} I_{5,8} 
+        = \frac{6}{7} \cdot \frac{4}{9} I_{3,10} 
+        = \frac{6}{7} \cdot \frac{4}{9} \cdot \frac{2}{11} I_{1,12}
+        \]
+        而对于
+        \[
+        I_{1,12} = \int_{0}^{\frac{\pi}{2}} \cos\theta \sin^{12}\theta \, d\theta.
+        \]
+        令 $y = \sin\theta$,则 $dy = \cos\theta\, d\theta$:
+        \[
+        I_{1,12} = \int_{0}^{1} y^{12} \, dy = \frac{1}{13}
+        \]
+        故
+        \[
+        \int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta = \frac{6}{7} \cdot \frac{4}{9} \cdot \frac{2}{11} \cdot \frac{1}{13} = \frac{16}{1001}.
+        \]
+    \end{solution}
+    \end{parts}
 
-\begin{solution}
-使用降次公式:
-\[
-I_{m,n} = \int_{0}^{\frac{\pi}{2}} \cos^m\theta \sin^n\theta \, d\theta = \frac{m-1}{n+1} I_{m-2,n+2}.
-\]
+    \question
+    \[
+    \int_{0}^{1} x^5 e^{-x^2} \,dx
+    \]
+    \begin{solution}
+        考虑
+        \[
+        I_n = \int_{0}^{1} x^n e^{-x^2} \,dx = \int_{0}^{1} x^{n-1} \cdot x e^{-x^2} \,dx
+        \]
+        其中$n \in \mathbb{N}$,所求积分即$I_5$,分部积分得
+        \begin{align*}
+        I_n &= \left[-\frac{1}{2} x^{n-1} e^{-x^2} \right]_{0}^{1} - \int_{0}^{1} -\frac{1}{2} (n-1) x^{n-2} e^{-x^2} dx \\
+        &= -\frac{1}{2} e^{-1} + \frac{1}{2}(n-1) I_{n-2}
+        \end{align*}
+        于是
+        \[
+        I_5 = -\frac{1}{2} e^{-1} + 2 I_3 = -\frac{1}{2} e^{-1} + 2\left(-\frac{1}{2} e^{-1} + I_1\right)
+        \]
+        其中
+        \[
+        I_1 = \int_{0}^{1} x e^{-x^2} dx = \left[-\frac{1}{2} e^{-x^2} \right]_0^1 = -\frac{1}{2} e^{-1} + \frac{1}{2}
+        \]
+        故
+        \[
+        I_5 = -\frac{1}{2} e^{-1} + 2 \left(- e^{-1} + \frac{1}{2} \right) = \frac{2e - 5}{2e}
+        \]
+    \end{solution}
 
-对具体积分:
-\begin{align*}
-\int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta 
-&= \frac{7-1}{6+1} I_{5,8} = \frac{6}{7} I_{5,8}, \\
-I_{5,8} &= \frac{5-1}{8+1} I_{3,10} = \frac{4}{9} I_{3,10}, \\
-I_{3,10} &= \frac{3-1}{10+1} I_{1,12} = \frac{2}{11} I_{1,12}.
-\end{align*}
+    \question
+    \begin{parts}
+    \part 证明对于 \(p\in (0,\infty)\),
+    \[
+    \lim_{x\to 0^+} x^p \ln x = 0
+    \]
+    \begin{solution}
+        改写为
+        \[
+        \lim_{x\to 0^+} x^p \ln x = \lim_{x\to 0^+} \frac{\ln x}{x^{-p}}
+        \]
+        由洛必达法则,
+        \[
+        \lim_{x\to 0^+} \frac{\ln x}{x^{-p}} \overset{H}{=} \lim_{x\to 0^+} \frac{\frac{1}{x}}{-p x^{-p-1}} = \lim_{x\to 0^+} -\frac{1}{p} x^p = 0.
+        \]
+    \end{solution}
+    \part 据此,求
+    \[
+    \int_{0}^{1} x^n \ln x \,dx, \quad n\in \mathbb{N}.
+    \]
+    \begin{solution}
+        由分部积分,
+        \[
+        \int_{0}^{1} x^n \ln x \,dx = \left[ \frac{x^{n+1}}{n+1} \ln x \right]_0^1 - \int_{0}^{1} \frac{x^{n+1}}{n+1} \cdot \frac{1}{x} dx
+        \]
+        由 (a) 可知 \(\displaystyle \lim_{x\to 0^+} x^{n+1}\ln x = 0\),且在 \(x=1\) 时 \(\ln 1=0\),所以端点项为 0:
+        \[
+        \int_{0}^{1} x^n \ln x \,dx = -\frac{1}{n+1} \int_{0}^{1} x^n dx = -\frac{1}{n+1} \left[ \frac{x^{n+1}}{n+1} \right]_0^1 = -\frac{1}{(n+1)^2}.
+        \]
+    \end{solution}
+    \part 求
+    \[
+    \int_{0}^{1} [\ln(1-x)]\ln x \, dx
+    \]
+    \begin{solution}
+        考虑$\ln(1-x)$的幂级数,
+        \[
+        \ln(1-x)=-\sum_{n=1}^{\infty}\frac{x^n}{n},\quad -1\le x<1
+        \]
+        于是
+        \begin{align*}
+        I=\int_{0}^{1}\ln(1-x)\ln x\,dx=\int_{0}^{1}(\ln x)\left[-\sum_{n=1}^{\infty}\frac{x^n}{n}\right]dx =-\sum_{n=1}^{\infty}\int_{0}^{1}\frac{x^n\ln x}{n}\,dx
+        \end{align*}
+        由(b),
+        \[
+        I=\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}
+        \]
+        作部分分式分解,得
+        \[
+        \frac{1}{n(n+1)^2}
+        =\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}
+        \]
+        于是
+        \[
+        I=\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}
+        \]
+        注意到
+        \[
+        \sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)=1
+        \]
+        且
+        \[
+        \sum_{n=1}^{\infty}\frac{1}{(n+1)^2}
+        =\sum_{k=2}^{\infty}\frac{1}{k^2}
+        =\frac{\pi^2}{6}-1
+        \]
+        因此
+        \[
+        I=1-\left(\frac{\pi^2}{6}-1\right) =2-\frac{\pi^2}{6}
+        \]
+    \end{solution}
+    \end{parts}
 
-积分 $I_{1,12}$ 可直接计算:
-\[
-I_{1,12} = \int_{0}^{\frac{\pi}{2}} \cos\theta \sin^{12}\theta \, d\theta.
-\]
-令 $y = \sin\theta$,则 $dy = \cos\theta\, d\theta$,积分上下限变为 $0$ 到 $1$:
-\[
-I_{1,12} = \int_{0}^{1} y^{12} \, dy = \frac{1}{13}.
-\]
+    \question
+    \[
+    \int_{0}^{1} x (\ln x)^{10} \,dx
+    \]
+    \begin{solution}
+        考虑
+        \[
+        I_n = \int_{0}^{1} x (\ln x)^n \,dx = \int_{0}^{1} (\ln x)^n \cdot x \,dx
+        \]
+        分部积分得
+        \begin{align*}
+        I_n &= \left[ \frac{1}{2}x^2 (\ln x)^n \right]_0^1 - \int_0^1 \frac{1}{2} x^2 \cdot n (\ln x)^{n-1} \frac{1}{x} \, dx \\
+        &= 0 - \frac{n}{2} \int_0^1 x (\ln x)^{n-1} dx \\
+        &= -\frac{n}{2} I_{n-1}
+        \end{align*}
+        据此,递推得
+        \[
+        I_{10} = (-1)^{10} \frac{10!}{2^{10}} I_0
+        \]
+        其中
+        \[
+        I_0 = \int_0^1 x\,dx = \frac{1}{2}
+        \]
+        因此
+        \[
+        I_{10} = \frac{10!}{2^{11}} 
+        \]
+    \end{solution}
 
-最终结果:
-\[
-\int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta = \frac{6}{7} \cdot \frac{4}{9} \cdot \frac{2}{11} \cdot \frac{1}{13} = \frac{48}{3003} = \frac{16}{1001}.
-\]
-\end{solution}
-\question
-求
-\[
-\int_{0}^{1} x^5 e^{-x^2} \,dx
-\]
+    \question
+    \begin{parts}
+    \part 设$m,n$为非负整数,证明:
+    \[
+    \int_0^1 x^m (-\ln x)^n \, dx = \frac{n!}{(m+1)^{n+1}}
+    \]
+    \begin{solution}
+        设 
+        \[
+        I(m, n) = \int_0^1 x^m (-\ln x)^n \, dx = \int_0^1 (-\ln x)^n \cdot x^m\, dx
+        \]
+        使用分部积分法，得
+        \[
+        I(m, n) = \left[ \frac{x^{m+1}}{m+1} (-\ln x)^n \right]_0^1 - \int_0^1 \frac{x^{m+1}}{m+1} \cdot n(-\ln x)^{n-1} \left( -\frac{1}{x} \right) \, dx
+        \]
+        当 $x=1$ 时，$\ln 1 = 0$,当 $x \to 0^+$ 时，考虑 
+        \[
+        L=x^{m+1} (-\ln x)^n 
+        \]
+        设 $k = m+1$，由于 $m > -1$，则 $k > 0$。
+        \[
+        L=\lim_{x \to 0^+} x^k (-\ln x)^n = \lim_{x \to 0^+} \frac{(-\ln x)^n}{x^{-k}}
+        \]
+        此时该极限属于 $\dfrac{\infty}{\infty}$ 型，由洛必达法则,
+        \[
+        L\overset{H}{=}\frac{n(-\ln x)^{n-1} \cdot (-\frac{1}{x})}{-k x^{-k-1}} = \frac{n}{k} \cdot \frac{(-\ln x)^{n-1}}{x^{-k}}
+        \]
+        至此,由洛必达法则, 对上下求导$n-1$次，极限变为
+        \[
+        L\overset{H}{=}\lim_{x \to 0^+} \frac{n!}{k^n} \cdot \frac{1}{x^{-k}} = \lim_{x \to 0^+} \frac{n!}{k^n} x^k = 0
+        \]
+        因此端点项为 $0$，于是
+        \[
+        I(m, n) = \frac{n}{m+1} \int_0^1 x^m (-\ln x)^{n-1} \, dx = \frac{n}{m+1} I(m, n-1)
+        \]
+        重复迭代 $n$ 次,
+        \[
+        I(m, n) = \frac{n}{m+1} \cdot \frac{n-1}{m+1} \cdots \frac{1}{m+1} I(m, 0)
+        \]
+        其中基础项 $I(m, 0)$ 为
+        \[
+        I(m, 0) = \int_0^1 x^m \, dx = \left[ \frac{x^{m+1}}{m+1} \right]_0^1 = \frac{1}{m+1}
+        \]
+        代回递推式:
+        \[
+        I(m, n) = \frac{n \cdot (n-1) \cdots 1}{(m+1)^n} \cdot \frac{1}{m+1} = \frac{n!}{(m+1)^{n+1}}
+        \]
+        证毕。
+    \end{solution}
+    \part 据此，求
+    \[
+    \int_0^1 (x \ln x)^4 \, dx
+    \]
+    \begin{solution}
+        所求即$I(4,4)$:
+        \[
+        \int_0^1 x^4 (-\ln x)^4 \, dx = I(4,4) = \frac{4!}{(4+1)^{4+1}} = \frac{24}{3125}
+        \]
+    \end{solution}
+    \end{parts}
 
-\begin{solution}
-设
-\[
-I_n = \int_{0}^{1} x^n e^{-x^2} \,dx, \quad n \in \mathbb{N}.
-\]
+    \question
+    \begin{parts}
+    \part 若
+    \[
+    I_{n} = \int e^{2x} \sin^n x \,dx, \quad n \in \mathbb{N}, n \geq 2
+    \]
+    试证
+    \[
+    (n^2 + 4) I_n = n(n-1) I_{n-2} + e^{2x} \sin^{n-1} x (2 \sin x - n \cos x)
+    \]
+    \begin{solution}
+        由分部积分,
+        \begin{align*}
+        I_n &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{2} \int e^{2x} \sin^{n-1} x \cos x \,dx \\
+        &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{2} \left[ \frac{1}{2} e^{2x} \sin^{n-1} x \cos x - \frac{1}{2} \int e^{2x} ((n-1)\sin^{n-2} x - n \sin^n x)\,dx \right] \\
+        &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{4} e^{2x} \sin^{n-1} x \cos x + \frac{n(n-1)}{4} \int e^{2x} \sin^{n-2} x \,dx - \frac{n^2}{4} \int e^{2x} \sin^n x \,dx \\
+        &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{4} e^{2x} \sin^{n-1} x \cos x + \frac{n(n-1)}{4} I_{n-2} - \frac{n^2}{4} I_n
+        \end{align*}
+        整理得到
+        \[
+        (n^2 + 4) I_n = n(n-1) I_{n-2} + e^{2x} \sin^{n-1} x (2 \sin x - n \cos x)
+        \]
+    \end{solution}
+    \part 据此,求不定积分
+    \[
+    \int e^{2x} \sin^4 x \,dx
+    \]
+    \begin{solution}
+        根据递推公式,当 $n=4$ 时，整理得
+        \[
+        I_4 = \frac{3}{5} I_2 + \frac{1}{10} e^{2x} \sin^3 x (\sin x - 2 \cos x)
+        \]
+        当 $n=2$ 时，有
+        \[
+        I_2 = \frac{1}{4} I_0 + \frac{1}{4} e^{2x} \sin x (\sin x - \cos x)
+        \]
+        其中
+        \[
+        I_0 = \int e^{2x} \,dx = \frac{1}{2} e^{2x} + C
+        \]
+        故
+        \begin{align*}
+        I_4 &= \frac{3}{5} \left( \frac{1}{8} e^{2x} + \frac{1}{4} e^{2x} \sin x (\sin x - \cos x) \right) + \frac{1}{10} e^{2x} \sin^3 x (\sin x - 2 \cos x) + C \\
+        &= \frac{e^{2x}}{40} (4 \sin^4 x - 8 \sin^3 x \cos x + 6 \sin^2 x - 6 \sin x \cos x + 3) + C
+        \end{align*}
+    \end{solution}
+    \end{parts}
 
-将 \(x^n = x^{n-1} \cdot x\) 并分部积分:
-\[
-u = x^{n-1}, \quad dv = x e^{-x^2} dx \implies du = (n-1)x^{n-2} dx, \quad v = -\frac{1}{2} e^{-x^2}
-\]
-
-\begin{align*}
-I_n &= \left[-\frac{1}{2} x^{n-1} e^{-x^2} \right]_{0}^{1} - \int_{0}^{1} -\frac{1}{2} (n-1) x^{n-2} e^{-x^2} dx \\
-&= -\frac{1}{2} e^{-1} + \frac{1}{2}(n-1) I_{n-2}
-\end{align*}
-
-这是所需的递推公式:
-\[
-\boxed{I_n = -\frac{1}{2} e^{-1} + \frac{1}{2} (n-1) I_{n-2}}
-\]
-
-使用该公式求 \(I_5\):
-\begin{align*}
-I_5 &= -\frac{1}{2} e^{-1} + 2 I_3 \\
-I_3 &= -\frac{1}{2} e^{-1} + I_1 \\
-I_1 &= \int_{0}^{1} x e^{-x^2} dx = \left[-\frac{1}{2} e^{-x^2} \right]_0^1 = -\frac{1}{2} e^{-1} + \frac{1}{2}
-\end{align*}
-
-代回得:
-\begin{align*}
-I_3 &= -\frac{1}{2} e^{-1} + \left(-\frac{1}{2} e^{-1} + \frac{1}{2}\right) = -e^{-1} + \frac{1}{2} \\
-I_5 &= -\frac{1}{2} e^{-1} + 2 \left(- e^{-1} + \frac{1}{2} \right) = -\frac{1}{2} e^{-1} - 2 e^{-1} + 1 = 1 - \frac{5}{2} e^{-1} \\
-I_5 &= \frac{2e - 5}{2e}
-\end{align*}
-
-如所需。
-\end{solution}
-\question
-\textbf{a) Show that for \(p\in (0,\infty)\)}
-\[
-\lim_{x\to 0^+} [x^p \ln x] = 0
-\]
-Hence evaluate
-\[
-\int_{0}^{1} x^n \ln x \,dx, \quad n\in \mathbb{N}.
-\]
-\[
-\int_{0}^{1} [\ln(1-x)]\ln x \, dx
-\]
-\begin{solution}
-注意 \(\lim_{x\to 0^+} x^p \ln x\) 是 "0 \(\times\) \(-\infty\)" 型,可以改写为
-\[
-\lim_{x\to 0^+} x^p \ln x = \lim_{x\to 0^+} \frac{\ln x}{x^{-p}}
-\]
-这是 \(-\infty/\infty\) 型,应用洛必达法则:
-\[
-\lim_{x\to 0^+} \frac{\ln x}{x^{-p}} = \lim_{x\to 0^+} \frac{1/x}{-p x^{-p-1}} = \lim_{x\to 0^+} -\frac{1}{p} x^p = 0.
-\]
-\end{solution}
-
-\begin{solution}
-使用分部积分:
-\[
-u = \ln x, \quad dv = x^n dx \implies du = \frac{1}{x} dx, \quad v = \frac{x^{n+1}}{n+1}
-\]
-
-\[
-\int_{0}^{1} x^n \ln x \,dx = \left[ \frac{x^{n+1}}{n+1} \ln x \right]_0^1 - \int_{0}^{1} \frac{x^{n+1}}{n+1} \cdot \frac{1}{x} dx
-\]
-
-\noindent 由 a) 可知 \(\lim_{x\to 0^+} x^{n+1}\ln x = 0\),且在 \(x=1\) 时 \(\ln 1=0\),所以第一项为 0:
-\[
-\int_{0}^{1} x^n \ln x \,dx = -\frac{1}{n+1} \int_{0}^{1} x^n dx = -\frac{1}{n+1} \left[ \frac{x^{n+1}}{n+1} \right]_0^1 = -\frac{1}{(n+1)^2}.
-\]
-\end{solution}
-
-\begin{solution}
-由于
-\[
-\ln(1-x)=-\sum_{n=1}^{\infty}\frac{x^n}{n},\quad -1\le x<1
-\]
-故
-\begin{align*}
-\int_{0}^{1}\ln(1-x)\ln x\,dx
-&=\int_{0}^{1}(\ln x)\left[-\sum_{n=1}^{\infty}\frac{x^n}{n}\right]dx \\
-&=-\sum_{n=1}^{\infty}\int_{0}^{1}\frac{x^n\ln x}{n}\,dx
-\end{align*}
-
-又有
-\[
-\int_{0}^{1}x^n\ln x\,dx=-\frac{1}{(n+1)^2}
-\]
-因此
-\begin{align*}
-\int_{0}^{1}\ln(1-x)\ln x\,dx
-&=-\sum_{n=1}^{\infty}\frac{1}{n}\left(-\frac{1}{(n+1)^2}\right) \\
-&=\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}
-\end{align*}
-
-接下来对
-\[
-\frac{1}{n(n+1)^2}
-\]
-作部分分式分解,设
-\[
-\frac{1}{n(n+1)^2}=\frac{A}{n}+\frac{B}{n+1}+\frac{C}{(n+1)^2}
-\]
-则
-\[
-1\equiv A(n+1)^2+Bn(n+1)+Cn
-\]
-
-令
-\[
-n=0\Rightarrow A=1
-\]
-\[
-n=-1\Rightarrow C=-1
-\]
-\[
-n=1\Rightarrow 1=4A+2B+C=4+2B-1
-\]
-从而
-\[
-B=-1
-\]
-
-于是
-\[
-\frac{1}{n(n+1)^2}
-=\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}
-\]
-
-代回求和得
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}
-&=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)
--\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}
-\end{align*}
-
-第一项为望远镜级数,
-\[
-\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)=1
-\]
-
-第二项
-\[
-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}
-=\sum_{k=2}^{\infty}\frac{1}{k^2}
-=\frac{\pi^2}{6}-1
-\]
-
-因此
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}
-&=1-\left(\frac{\pi^2}{6}-1\right) \\
-&=2-\frac{\pi^2}{6}
-\end{align*}
-
-故
-\[
-\int_{0}^{1}\ln(1-x)\ln x\,dx
-=2-\frac{\pi^2}{6}
-=\frac{1}{6}(12-\pi^2)
-\]
-
-\end{solution}
-
-\question
-求
-\[
-\int_{0}^{1} x (\ln x)^{10} \,dx
-\]
-
-\begin{solution}
-令
-\[
-I_n = \int_{0}^{1} x (\ln x)^n \,dx
-\]
-
-对 \(I_n\) 使用分部积分:
-\[
-u = (\ln x)^n, \quad dv = x\,dx \implies du = n (\ln x)^{n-1} \frac{1}{x} dx, \quad v = \frac{1}{2}x^2
-\]
-
-\begin{align*}
-I_n &= \left[ \frac{1}{2}x^2 (\ln x)^n \right]_0^1 - \int_0^1 \frac{1}{2} x^2 \cdot n (\ln x)^{n-1} \frac{1}{x} \, dx \\
-&= 0 - \frac{n}{2} \int_0^1 x (\ln x)^{n-1} dx \\
-&= -\frac{n}{2} I_{n-1}
-\end{align*}
-
-得到归纳公式:
-\[
-I_n = -\frac{n}{2} I_{n-1}
-\]
-
-继续展开:
-\[
-I_{10} = (-1)^{10} \frac{10!}{2^{10}} I_0
-\]
-
-而
-\[
-I_0 = \int_0^1 x\,dx = \frac{1}{2}
-\]
-
-因此
-\[
-I_{10} = \frac{10!}{2^{11}}
-\]
-
-拆解为质数幂:
-\[
-10! = 2^8 \cdot 3^4 \cdot 5^2 \cdot 7, \quad 2^{11} = 2^{11} \implies I_{10} = \frac{3^4 \cdot 5^2 \cdot 7}{2^3}
-\]
-
-\end{solution}
-
-\question
-求
-\[
-I_{n} = \int e^{2x} \sin^n x \,dx, \ n \in \mathbb{N}, n \geq 2
-\]
-
-\begin{solution}
-先使用分部积分:
-\[
-u = \sin^n x, \quad dv = e^{2x} dx \implies du = n \sin^{n-1} x \cos x \,dx, \quad v = \frac{1}{2} e^{2x}
-\]
-
-\begin{align*}
-I_n &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{2} \int e^{2x} \sin^{n-1} x \cos x \,dx
-\end{align*}
-
-对第二个积分再次使用分部积分:
-\[
-u = \sin^{n-1} x \cos x, \quad dv = \frac{1}{2} e^{2x} dx \implies du = (n-1)\sin^{n-2} x \cos^2 x - \sin^{n} x \,dx
-\]
-
-于是
-\begin{align*}
-I_n &= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{2} \left[ \frac{1}{2} e^{2x} \sin^{n-1} x \cos x - \frac{1}{2} \int e^{2x} ((n-1)\sin^{n-2} x - n \sin^n x)\,dx \right] \\
-&= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{4} e^{2x} \sin^{n-1} x \cos x + \frac{n(n-1)}{4} \int e^{2x} \sin^{n-2} x \,dx - \frac{n^2}{4} \int e^{2x} \sin^n x \,dx \\
-&= \frac{1}{2} e^{2x} \sin^n x - \frac{n}{4} e^{2x} \sin^{n-1} x \cos x + \frac{n(n-1)}{4} I_{n-2} - \frac{n^2}{4} I_n
-\end{align*}
-
-整理得到:
-\begin{align*}
-4 I_n &= 2 e^{2x} \sin^n x - n e^{2x} \sin^{n-1} x \cos x + n(n-1) I_{n-2} - n^2 I_n \\
-(n^2 + 4) I_n &= n(n-1) I_{n-2} + e^{2x} \sin^{n-1} x (2 \sin x - n \cos x)
-\end{align*}
-
-\noindent 如所需。
-\end{solution}
-
-\question 计算 $[\int_0^1 (x \ln x)^4 dx]$。
-\begin{solution}
-使用特殊积分公式 $[\int_0^1 x^m (-\ln x)^n dx = \frac{n!}{(m+1)^{n+1}}]$。
-在本题中,$m=4$ 且 $n=4$。由于 $n$ 是偶数,$( \ln x)^4 = (-\ln x)^4$。
-代入公式得:
-\[I = \frac{4!}{(4+1)^{4+1}} = \frac{24}{5^5} = \frac{24}{3125}\]
-结果为 $0.00768$。
-\end{solution}
-
-\question
-已知
-\[
-I_n=\int_0^{\frac{\pi}{3}} e^{3x}\tan^n x\,dx,\quad n\in\mathbb{N}
-\]
-
-(a) 证明  
-i.
-\[
-nI_{n+1}=e^{\pi}(\sqrt3)^n-3I_n-nI_{n-1},\quad n\ge1
-\]
-ii.
-\[
-I_0=I_4+I_3-3I_1
-\]
-
-(b) 求
-\[
-\int_0^{\frac{\pi}{3}} e^{3x}\tan x(\tan^3 x+\sec^2 x-4)\,dx
-\]
-
-\begin{solution}
-(a)  
-由
-\[
-I_n=\int_0^{\frac{\pi}{3}} e^{3x}\tan^n x\,dx
-\]
-写成
-\[
-I_n=\int_0^{\frac{\pi}{3}} e^{3x}\tan^{\,n-2}x(\sec^2 x-1)\,dx
-\]
-即
-\[
-I_n=\int_0^{\frac{\pi}{3}} e^{3x}\sec^2 x\tan^{\,n-2}x\,dx-I_{n-2}
-\]
-
-对
-\[
-\int_0^{\frac{\pi}{3}} e^{3x}\sec^2 x\tan^{\,n-2}x\,dx
-\]
-作分部积分,取
-\[
-u=e^{3x},\quad dv=\sec^2 x\tan^{\,n-2}x\,dx
-\]
-则
-\[
-du=3e^{3x}dx,\quad v=\frac{1}{n-1}\tan^{\,n-1}x
-\]
-
-于是
-\[
-I_n=\left[\frac{1}{n-1}e^{3x}\tan^{\,n-1}x\right]_0^{\frac{\pi}{3}}
--\frac{3}{n-1}I_{n-1}-I_{n-2}
-\]
-
-又
-\[
-\tan\frac{\pi}{3}=\sqrt3
-\]
-从而
-\[
-I_n=\frac{1}{n-1}e^{\pi}(\sqrt3)^{\,n-1}-\frac{3}{n-1}I_{n-1}-I_{n-2}
-\]
-
-将 $n$ 换成 $n+1$ 得
-\[
-I_{n+1}=\frac{1}{n}e^{\pi}(\sqrt3)^n-\frac{3}{n}I_n-I_{n-1}
-\]
-即
-\[
-nI_{n+1}=e^{\pi}(\sqrt3)^n-3I_n-nI_{n-1}
-\]
-
-(a)(ii)  
-当 $n=1$,
-\[
-I_2=e^{\pi}\sqrt3-3I_1-I_0
-\]
-当 $n=3$,
-\[
-3I_4=3e^{\pi}\sqrt3-3I_3-3I_2
-\]
-
-代入 $I_2$,
-\[
-3I_4=9I_1+3I_0-3I_3
-\]
-化简得
-\[
-I_0=I_4+I_3-3I_1
-\]
-
-(b)  
-原积分为
-\[
-\int_0^{\frac{\pi}{3}} e^{3x}(\tan^4 x+\tan^3 x-3\tan x)\,dx
-\]
-即
-\[
-I_4+I_3-3I_1
-\]
-
-由(a)(ii)知其等于 $I_0$,而
-\[
-I_0=\int_0^{\frac{\pi}{3}} e^{3x}\,dx
-=\left[\frac13 e^{3x}\right]_0^{\frac{\pi}{3}}
-=\frac13(e^{\pi}-1)
-\]
-
-故所求积分的精确值为
-\[
-\frac13(e^{\pi}-1)
-\]
-\end{solution}
-
+    \question 已知
+    \[
+    I_n=\int_0^{\frac{\pi}{3}} e^{3x}\tan^n x\,dx,\quad n\in\mathbb{N}
+    \]
+    \begin{parts}
+    \part 证明  
+    \[
+    I_{n+1}=\frac{1}{n}e^{\pi}(\sqrt3)^n-\frac{3}{n}I_n-I_{n-1}
+    \]
+    \begin{solution}
+        考虑
+        \[
+        I_n= \int_0^{\frac{\pi}{3}} e^{3x}\tan^{\,n-2}x(\sec^2 x-1)\,dx=\int_0^{\frac{\pi}{3}} e^{3x}\sec^2 x\tan^{\,n-2}x\,dx-I_{n-2}
+        \]
+        由分部积分,
+        \begin{align*}
+        I_n &= \left[\frac{1}{n-1}e^{3x}\tan^{\,n-1}x\right]_0^{\frac{\pi}{3}} -\int_0^{\frac{\pi}{3}} \frac{3e^{3x}}{n-1}\tan^{\,n-1}x \,dx -I_{n-2} \\
+        &=\frac{1}{n-1}e^{\pi}(\sqrt3)^{\,n-1}-\frac{3}{n-1}I_{n-1}-I_{n-2}
+        \end{align*}
+        将 $n+1$ 代替 $n$ 得
+        \[
+        I_{n+1}=\frac{1}{n}e^{\pi}(\sqrt3)^n-\frac{3}{n}I_n-I_{n-1}
+        \]
+    \end{solution}
+    \part 据此,求
+    \[
+    \int_0^{\frac{\pi}{3}} e^{3x}\tan x(\tan^3 x+\sec^2 x-4)\,dx
+    \]
+    \begin{solution}
+        原积分为
+        \[
+        \int_0^{\frac{\pi}{3}} e^{3x}(\tan^4 x+\tan^3 x-3\tan x)\,dx
+        \]
+        即$I_4+I_3-3I_1$,根据递推公式,令 $n=1,3$得
+        \[
+        I_2=e^{\pi}\sqrt3-3I_1-I_0, \quad 3I_4=3e^{\pi}\sqrt3-3I_3-3I_2
+        \]
+        消去$I_2$,由
+        \[
+        I_0=I_4+I_3-3I_1
+        \]
+        知其等于 $I_0$,故所求积分为
+        \[
+        I_0=\int_0^{\frac{\pi}{3}} e^{3x}\,dx
+        =\left[\frac13 e^{3x}\right]_0^{\frac{\pi}{3}}
+        =\frac13(e^{\pi}-1)
+        \]
+    \end{solution}
+    \end{parts}
 %improper integrals
     \question 求下列广义积分的精确值:
 \[
