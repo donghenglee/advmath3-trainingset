@@ -3302,7 +3302,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \begin{solution}
         令 $f(x) = \sqrt{\sin x},g(x)=1$,则
         \[
-        \left[ \int_{0}^{\frac{\pi}{2}} \sqrt{\sin x} \, dx \right]^2 \leq \left[ \int_{0}^{\frac{\pi}{2}} \sin x \, dx \right]\left[ \int_{0}^{\frac{\pi}{2}} 1 \, dx \right] = [-\cos x]_{0}^{\frac{\pi}{2}} \cdot [x]_{0}^{\frac{\pi}{2}} = 1 \cdot \frac{\pi}{2}
+        \left[ \int_{0}^{\frac{\pi}{2}} \sqrt{\sin x} \, dx \right]^2 \leq \left[ \int_{0}^{\frac{\pi}{2}} \sin x \, dx \right]\left[ \int_{0}^{\frac{\pi}{2}} 1 \, dx \right] = [-\cos x]_{0}^{\frac{\pi}{2}} \cdot \floor{x}_{0}^{\frac{\pi}{2}} = 1 \cdot \frac{\pi}{2}
         \]
         故
         \[
@@ -3347,7 +3347,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
 \end{center}
 \separator
 \begin{center}
-    考点: 换元积分法、部分分式积分法、三角函数的积分法、三角代换法、分部积分法、降阶公式、广义积分、对称性、国王法、函数的奇偶性、积分符号内取微分、其他
+    考点: 换元积分法、部分分式积分法、三角函数的积分法、三角代换法、分部积分法、降阶公式、广义积分、对称性、区间再现公式、函数的奇偶性、积分符号内取微分、其他
 \end{center}
 \vspace{0.5pt}
 
@@ -7061,7 +7061,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int_0^1 \frac{x^{2n+1}}{\sqrt{1-x^2}} \, dx = \frac{2^{2n}(n!)^2}{(2n+1)!}, \quad \forall n \in \mathbb{N}\cup\{0\}
     \]
     \begin{solution}
-        作代换 $u=1-x^2, du=-2x \, dx$，当 $x=0$ 时 $u=1$，当 $x=1$ 时 $u=0$，于是
+        作代换 $u=1-x^2, du=-2x \, dx$,当 $x=0$ 时 $u=1$,当 $x=1$ 时 $u=0$,于是
         \[
         I_n = \int_0^1 x^{2n} \cdot x(1-x^2)^{-\frac{1}{2}} \, dx = \frac{1}{2} \int_0^1 (1-u)^n u^{-\frac{1}{2}} \, du
         \]
@@ -7104,7 +7104,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int_{0}^{1} (1-x^2)^n \, dx
     \]
     \begin{solution}
-        对 $I(m,n)$ 作分部积分，取 $u=(b-x)^m, dv=(x-a)^n \, dx$，则
+        对 $I(m,n)$ 作分部积分,取 $u=(b-x)^m, dv=(x-a)^n \, dx$,则
         \[
         du = -m(b-x)^{m-1} \, dx, \quad v = \frac{(x-a)^{n+1}}{n+1}
         \]
@@ -7112,7 +7112,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I(m,n) = \left[ \frac{(b-x)^m (x-a)^{n+1}}{n+1} \right]_a^b + \frac{m}{n+1} \int_a^b (b-x)^{m-1} (x-a)^{n+1} \, dx
         \]
-        注意到端点项为零，得到递推式
+        注意到端点项为零,得到递推式
         \[
         I(m,n) = \frac{m}{n+1} I(m-1, n+1)
         \]
@@ -7132,7 +7132,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         \int_0^1 (1-x^2)^n \, dx = \frac{1}{2} \int_{-1}^1 (1-x)^n (1+x)^n \, dx
         \]
-        这正是 $I(n,n)$ 的形式，其中 $a=-1, b=1$。由已证公式,所求即
+        这正是 $I(n,n)$ 的形式,其中 $a=-1, b=1$。由已证公式,所求即
         \[
         \frac{1}{2} I(n,n) = \frac{1}{2} \cdot \frac{n! n!}{(2n+1)!} (1 - (-1))^{2n+1} = \frac{2^{2n}(n!)^2}{(2n+1)!}
         \]
@@ -7265,7 +7265,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I_0=\int_0^4\sqrt{x}\sqrt{4-x}\,dx
         \]
-        设 $x = 4\sin^2 \theta$，则$dx = 8\sin \theta \cos \theta \, d\theta$,
+        设 $x = 4\sin^2 \theta$,则$dx = 8\sin \theta \cos \theta \, d\theta$,
         \begin{align*}
         I_0 &= \int_0^{\frac{\pi}{2}} \sqrt{4\sin^2 \theta} \sqrt{4 - 4\sin^2 \theta} \cdot (8\sin \theta \cos \theta) \, d\theta \\
         &= 64 \int_0^{\frac{\pi}{2}} \sin^2 \theta \cos^2 \theta \, d\theta \\
@@ -7716,7 +7716,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \[
     I_{m,n} = \int_{0}^{\frac{\pi}{2}} \cos^m\theta \sin^n\theta \, d\theta
     \]
-    其中 $m,n$ 为非负整数且 $m>1$，
+    其中 $m,n$ 为非负整数且 $m>1$,
     \begin{parts}
     \part 求证
     \[
@@ -7734,7 +7734,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \]
         故得证。
     \end{solution}
-    \part 据此，求
+    \part 据此,求
     \[
     \int_{0}^{\frac{\pi}{2}} \cos^7\theta \sin^6\theta \, d\theta
     \]
@@ -7902,27 +7902,27 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \[
         I(m, n) = \int_0^1 x^m (-\ln x)^n \, dx = \int_0^1 (-\ln x)^n \cdot x^m\, dx
         \]
-        使用分部积分法，得
+        使用分部积分法,得
         \[
         I(m, n) = \left[ \frac{x^{m+1}}{m+1} (-\ln x)^n \right]_0^1 - \int_0^1 \frac{x^{m+1}}{m+1} \cdot n(-\ln x)^{n-1} \left( -\frac{1}{x} \right) \, dx
         \]
-        当 $x=1$ 时，$\ln 1 = 0$,当 $x \to 0^+$ 时，考虑 
+        当 $x=1$ 时,$\ln 1 = 0$,当 $x \to 0^+$ 时,考虑 
         \[
         L=x^{m+1} (-\ln x)^n 
         \]
-        设 $k = m+1$，由于 $m > -1$，则 $k > 0$。
+        设 $k = m+1$,由于 $m > -1$,则 $k > 0$。
         \[
         L=\lim_{x \to 0^+} x^k (-\ln x)^n = \lim_{x \to 0^+} \frac{(-\ln x)^n}{x^{-k}}
         \]
-        此时该极限属于 $\dfrac{\infty}{\infty}$ 型，由洛必达法则,
+        此时该极限属于 $\dfrac{\infty}{\infty}$ 型,由洛必达法则,
         \[
         L\overset{H}{=}\frac{n(-\ln x)^{n-1} \cdot (-\frac{1}{x})}{-k x^{-k-1}} = \frac{n}{k} \cdot \frac{(-\ln x)^{n-1}}{x^{-k}}
         \]
-        至此,由洛必达法则, 对上下求导$n-1$次，极限变为
+        至此,由洛必达法则, 对上下求导$n-1$次,极限变为
         \[
         L\overset{H}{=}\lim_{x \to 0^+} \frac{n!}{k^n} \cdot \frac{1}{x^{-k}} = \lim_{x \to 0^+} \frac{n!}{k^n} x^k = 0
         \]
-        因此端点项为 $0$，于是
+        因此端点项为 $0$,于是
         \[
         I(m, n) = \frac{n}{m+1} \int_0^1 x^m (-\ln x)^{n-1} \, dx = \frac{n}{m+1} I(m, n-1)
         \]
@@ -7940,7 +7940,7 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \]
         证毕。
     \end{solution}
-    \part 据此，求
+    \part 据此,求
     \[
     \int_0^1 (x \ln x)^4 \, dx
     \]
@@ -7980,11 +7980,11 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \int e^{2x} \sin^4 x \,dx
     \]
     \begin{solution}
-        根据递推公式,当 $n=4$ 时，整理得
+        根据递推公式,当 $n=4$ 时,整理得
         \[
         I_4 = \frac{3}{5} I_2 + \frac{1}{10} e^{2x} \sin^3 x (\sin x - 2 \cos x)
         \]
-        当 $n=2$ 时，有
+        当 $n=2$ 时,有
         \[
         I_2 = \frac{1}{4} I_0 + \frac{1}{4} e^{2x} \sin x (\sin x - \cos x)
         \]
@@ -8050,215 +8050,166 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \end{solution}
     \end{parts}
 %improper integrals
-    \question 求下列广义积分的精确值:
-\[
-\int_{0}^{\infty} \sqrt{x} e^{-x} \, dx
-\]
-你可以假设
-\[
-\int_{0}^{\infty} e^{-x^2} \, dx = \frac{1}{2}\sqrt{\pi}.
-\]
+    \question 已知广义积分
+    \[
+    \int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
+    \]
+    求
+    \[
+    \int_{0}^{\infty} \sqrt{x} e^{-x} \, dx
+    \]
+    \begin{solution}
+        设$x = u^2, \quad dx = 2u \, du$,
+        \[
+        \int \sqrt{x} e^{-x} \, dx = \int u \cdot e^{-u^2} \cdot 2u \, du = \int 2u^2 e^{-u^2} \, du
+        \]
+        由分部积分,
+        \[
+        \int u \cdot 2u e^{-u^2} \, du = - u e^{-u^2} + \int e^{-u^2} \, du
+        \]
+        故
+        \[
+        \int_{0}^{\infty} \sqrt{x} e^{-x} \, dx 
+        = \left[-u e^{-u^2}\right]_{0}^{\infty} + \int_{0}^{\infty} e^{-u^2} \, du = \lim_{k\to\infty} -k e^{-k^2} + \frac{\sqrt{\pi}}{2} =\frac{\sqrt{\pi}}{2} 
+        \]
+        其中极限可由洛必达法则推出:
+        \[
+        \lim_{k \to \infty} \frac{-k}{e^{k^2}} \overset{H}{=} \lim_{k \to \infty} \frac{-1}{2k e^{k^2}} = 0
+        \]
+    \end{solution}
 
-\begin{solution}
-首先作代换:
-\[
-u = \sqrt{x} \implies x = u^2, \quad dx = 2u \, du
-\]
-\[
-\int \sqrt{x} e^{-x} \, dx = \int u \cdot e^{-u^2} \cdot 2u \, du = \int 2u^2 e^{-u^2} \, du
-\]
+    \question 
+    \[
+    \int_{0}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) \, dx
+    \]
+    \begin{solution}
+        为处理下限的零点,令 $0$ 替换为 $k>0$:
+        \[
+        \int_{k}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) \, dx
+        = \left[\ln x - \frac{1}{2} \ln(1-\cos 2x)\right]_k^{\frac{\pi}{4}}
+        = \frac{1}{2} \left[ \ln \frac{x^2}{1-\cos 2x} \right]_k^{\frac{\pi}{4}}
+        \]
+        考虑极限 
+        \[
+        L=\lim_{k \to 0} \frac{k^2}{1-\cos 2k},
+        \]
+        由洛必达法则,
+        \[
+        L \overset{H}{=}  \lim_{k \to 0} \frac{2k}{2\sin 2k} = \lim_{k \to 0} \frac{k}{\sin 2k} \overset{H}{=} \lim_{k \to 0} \frac{1}{2\cos 2k} = \frac{1}{2}
+        \]
+        取极限 $k \to 0$,得
+        \[
+        \int_{0}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) dx
+        = \frac{1}{2} \ln \frac{\pi^2}{16} - \frac{1}{2} \ln \frac{1}{2} 
+        = \ln \frac{\pi \sqrt{2}}{4}
+        \]
+    \end{solution}
 
-对 $\int 2u^2 e^{-u^2} \, du$ 使用分部积分,设 $U = u,dV = 2u e^{-u^2} du$:
-\[
-\int u \cdot 2u e^{-u^2} \, du = - u e^{-u^2} + \int e^{-u^2} \, du
-\]
+    \question
+    \[
+    \int_{1}^{\infty} \frac{(\ln x)^3}{x^3} \, dx
+    \]
+    \begin{solution}
+        设不定积分 
+        \[
+        I_{m,n} = \int \frac{(\ln x)^m}{x^n} \, dx = \int (\ln x)^m\cdot x^{-n} \, dx
+        \]
+        使用分部积分法,
+        \begin{align*}
+        I_{m,n} &= (\ln x)^m \cdot \frac{1}{(1-n)x^{n-1}} - \int \frac{1}{(1-n)x^{n-1}} \cdot m(\ln x)^{m-1} \cdot \frac{1}{x} \, dx \\
+        &= \frac{(\ln x)^m}{(1-n)x^{n-1}} - \frac{m}{1-n} \int \frac{(\ln x)^{m-1}}{x^n} \, dx \\
+        &= \frac{(\ln x)^m}{(1-n)x^{n-1}} + \frac{m}{n-1} I_{m-1,n} 
+        \end{align*}
+        据此,可推得
+        \[
+        I_{3,3} = -\frac{(\ln x)^3}{2x^2} + \frac{3}{2} I_{2,3},\quad
+        I_{2,3} = -\frac{(\ln x)^2}{2x^2} + I_{1,3}, \quad
+        I_{1,3} = -\frac{\ln x}{2x^2} + \frac{1}{2} I_{0,3}
+        \]
+        基础项为
+        \[
+        I_{0,3} = \int x^{-3} \, dx = -\frac{1}{2x^2} + C
+        \]
+        将结果依次代入:
+        \begin{align*}
+        I_{3,3} &= -\frac{(\ln x)^3}{2x^2} + \frac{3}{2} \left( -\frac{(\ln x)^2}{2x^2} + \left( -\frac{\ln x}{2x^2} - \frac{1}{4x^2} \right) \right) + C \\
+        &= -\frac{1}{x^2} \left( \frac{(\ln x)^3}{2} + \frac{3(\ln x)^2}{4} + \frac{3\ln x}{4} + \frac{3}{8} \right) + C
+        \end{align*}
+        故
+        \[
+        \int_{1}^{\infty} \frac{(\ln x)^3}{x^3} \, dx = \left[-\frac{1}{x^2} \left( \frac{(\ln x)^3}{2} + \frac{3(\ln x)^2}{4} + \frac{3\ln x}{4} + \frac{3}{8} \right) + C\right]_{1}^{\infty} =0 - \left( -\frac{3}{8} \right) = \frac{3}{8}
+        \]
+        其中极限由洛必达法则可知:
+        \[
+        \lim_{x \to \infty} \frac{(\ln x)^k}{x^2} \overset{H}{=} \cdots \overset{H}{=}\lim_{x \to \infty} \frac{k!}{2^k x^2} = 0 , k>0
+        \]
+    \end{solution}
 
-将积分上下限转回 $x$,得到
-\[
-\int_{0}^{\infty} \sqrt{x} e^{-x} \, dx = \left[-u e^{-u^2}\right]_{0}^{\infty} + \int_{0}^{\infty} e^{-u^2} \, du
-\]
-
-取极限 $k \to \infty$:
-\[
-\int_{0}^{\infty} \sqrt{x} e^{-x} \, dx = \lim_{k\to\infty} \left[-k e^{-k^2} + 0\right] + \frac{1}{2}\sqrt{\pi} 
-= 0 + \frac{1}{2}\sqrt{\pi} = \frac{1}{2}\sqrt{\pi}
-\]
-
-因此,广义积分的精确值为
-\[
-\int_{0}^{\infty} \sqrt{x} e^{-x} \, dx = \frac{1}{2}\sqrt{\pi}.
-\]
-\end{solution}
-
-\question 计算下列积分的精确值,并给出正式的极限过程:
-\[
-\int_{0}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) \, dx
-\]
-结果应写成
-\[
-\ln\left[\frac{\pi\sqrt{2}}{n}\right],
-\]
-其中 $n$ 为正整数。
-
-\begin{solution}
-为处理下限的零点,令 $0$ 替换为 $k>0$:
-\[
-\int_{k}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) \, dx
-= \left[\ln x - \frac{1}{2} \ln(1-\cos 2x)\right]_k^{\frac{\pi}{4}}
-= \frac{1}{2} \left[ \ln \frac{x^2}{1-\cos 2x} \right]_k^{\frac{\pi}{4}}
-\]
-
-代入上限:
-\[
-\frac{1}{2} \ln \frac{(\frac{\pi}{4})^2}{1-\cos(\frac{\pi}{2})} = \frac{1}{2} \ln \frac{\pi^2}{16}
-\]
-
-下限展开 $\cos 2k$ 的幂级数:
-\[
-1-\cos 2k = 1 - \left(1 - \frac{(2k)^2}{2} + \frac{(2k)^4}{24} - \dots \right) = 2k^2 - \frac{2}{3}k^4 + O(k^6)
-\]
-
-因此
-\[
-\frac{k^2}{1-\cos 2k} = \frac{k^2}{2k^2 - \frac{2}{3}k^4 + O(k^6)} = \frac{1}{2 - \frac{2}{3}k^2 + O(k^4)} \xrightarrow{k \to 0} \frac{1}{2}
-\]
-
-取极限 $k \to 0$:
-\[
-\int_{0}^{\frac{\pi}{4}} \left(\frac{1}{x} - \frac{\sin 2x}{1-\cos 2x}\right) dx
-= \frac{1}{2} \ln \frac{\pi^2}{16} - \frac{1}{2} \ln \frac{1}{2} 
-= \ln \frac{\pi}{4} + \ln \sqrt{2} 
-= \ln \frac{\pi \sqrt{2}}{4}
-\]
-
-因此,所求的 $n = 4$。
-\end{solution}
-
-\question 计算以下积分,首先使用代换 \(y=\frac{1}{x}\):
-\[
-\int \frac{\ln x^2}{x^3} \, dx, \quad x \neq 0
-\]
-
-\begin{solution}
-\textbf{a) 使用代换}
-
-设 \(y = \frac{1}{x} \implies \frac{dy}{dx} = -\frac{1}{x^2} \implies dx = -x^2 \, dy = -\frac{1}{y^2} \, dy\)
-
-\[
-\int \frac{\ln x^2}{x^3} \, dx = \int 2\ln x \cdot \frac{1}{x^3} \, dx
-= \int 2\ln\left(\frac{1}{y}\right) \cdot y^3 \cdot \left(-\frac{1}{y^2} \, dy\right)
-= \int -2y \ln\left(\frac{1}{y}\right) \, dy
-= \int 2y \ln y \, dy
-\]
-
-\textbf{b) 计算定积分}
-
-积分上下限变换:
-\[
-x=1 \implies y=1, \quad x\to\infty \implies y\to 0
-\]
-\[
-\int_{1}^{\infty} \frac{\ln x^2}{x^3} \, dx = \int_{1}^{0} 2y \ln y \, dy = -\int_{0}^{1} 2y \ln y \, dy
-\]
-
-使用分部积分:
-\[
-u = \ln y \implies du = \frac{1}{y} \, dy, \quad dv = 2y \, dy \implies v = y^2
-\]
-\[
--\int_{0}^{1} 2y \ln y \, dy = -\left[ y^2 \ln y \right]_0^1 + \int_0^1 y^2 \cdot \frac{1}{y} \, dy
-= -\left[ y^2 \ln y \right]_0^1 + \int_0^1 y \, dy
-= -\left[ y^2 \ln y \right]_0^1 + \left[ \frac{1}{2} y^2 \right]_0^1
-\]
-
-取极限:
-\[
--\lim_{h \to 0} \left[1^2 \ln 1 - h^2 \ln h \right] + \left[\frac{1}{2} - 0 \right]
-= -\lim_{h\to 0} (-h^2 \ln h) + \frac{1}{2} = 0 + \frac{1}{2} = \frac{1}{2}
-\]
-
-\noindent 因此
-\[
-\int_{1}^{\infty} \frac{\ln x^2}{x^3} \, dx = \frac{1}{2}
-\]
-\end{solution}
-
-\question
-22) 计算广义积分 $I = \int_{0}^{\infty} \frac{\ln x}{x^2+2x+4} \, dx$
-
-\begin{solution}
-设 $x = \frac{4}{u}, dx = -\frac{4}{u^2}du$。当 $x \to 0, u \to \infty$;当 $x \to \infty, u \to 0$。
-\begin{align*}
-I &= \int_{\infty}^{0} \frac{\ln(4/u)}{\frac{16}{u^2} + \frac{8}{u} + 4} \left(-\frac{4}{u^2}\right) du = \int_{0}^{\infty} \frac{\ln 4 - \ln u}{u^2+2u+4} du \\
-&= \ln 4 \int_{0}^{\infty} \frac{1}{u^2+2u+4} du - \int_{0}^{\infty} \frac{\ln u}{u^2+2u+4} du \\
-\intertext{观察发现右边第二项即为 $I$,故:}
-2I &= \ln 4 \int_{0}^{\infty} \frac{1}{(x+1)^2+3} dx \\
-2I &= \ln 4 \left[ \frac{1}{\sqrt{3}} \tan^{-1}\left(\frac{x+1}{\sqrt{3}}\right) \right]_{0}^{\infty} \\
-2I &= \frac{\ln 4}{\sqrt{3}} \left( \frac{\pi}{2} - \frac{\pi}{6} \right) = \frac{\ln 4}{\sqrt{3}} \cdot \frac{\pi}{3} \\
-I &= \frac{\pi \ln 4}{6\sqrt{3}}
-\end{align*}
-\end{solution}
+    \question
+    \[
+    \int_{0}^{\infty} \frac{\ln x}{x^2+2x+4} \, dx
+    \]
+    \begin{solution}
+        设 
+        \[
+        x = \frac{4}{u}, dx = -\frac{4}{u^2}du,
+        \]
+        当 $x \to 0, u \to \infty$;当 $x \to \infty, u \to 0$,则
+        \begin{align*}
+        I &= \int_{\infty}^{0} \frac{\ln(4/u)}{\frac{16}{u^2} + \frac{8}{u} + 4} \left(-\frac{4}{u^2}\right) du 、、
+        &= \int_{0}^{\infty} \frac{\ln 4 - \ln u}{u^2+2u+4} du \\
+        &= \ln 4 \int_{0}^{\infty} \frac{1}{u^2+2u+4} du - \int_{0}^{\infty} \frac{\ln u}{u^2+2u+4} du \\
+        &= \ln 4 \int_{0}^{\infty} \frac{1}{u^2+2u+4} du - I
+        \end{align*}
+        于是
+        \[
+        2I = \ln 4 \int_{0}^{\infty} \frac{1}{(x+1)^2+3} dx 
+        = \ln 4 \left[ \frac{1}{\sqrt{3}} \tan^{-1}\left(\frac{x+1}{\sqrt{3}}\right) \right]_{0}^{\infty} 
+        = \frac{\ln 4}{\sqrt{3}} \left( \frac{\pi}{2} - \frac{\pi}{6} \right) 
+        \]
+        即
+        \[
+        I = \frac{\pi \ln 4}{6\sqrt{3}}
+        \]
+    \end{solution}
 %构造线性组合
-
-\question
-已知
-\[
-I = \int_{\frac{\pi}{2}}^{\pi} \frac{3+\cos x}{13+3\cos x+2\sin x} \, dx, \quad
-J = \int_{\frac{\pi}{2}}^{\pi} \frac{2+\sin x}{13+3\cos x+2\sin x} \, dx
-\]
-
-\begin{solution}
-构造线性组合:
-
-\[
-3I + 2J = \int_{\frac{\pi}{2}}^{\pi} \frac{9+3\cos x}{13+3\cos x+2\sin x} \, dx
-+ \int_{\frac{\pi}{2}}^{\pi} \frac{4+2\sin x}{13+3\cos x+2\sin x} \, dx
-= \int_{\frac{\pi}{2}}^{\pi} \frac{13+3\cos x+2\sin x}{13+3\cos x+2\sin x} \, dx
-= \int_{\frac{\pi}{2}}^{\pi} 1 \, dx
-= \frac{\pi}{2}
-\]
-
-再构造另一组合:
-
-\[
-2I - 3J = \int_{\frac{\pi}{2}}^{\pi} \frac{6+2\cos x}{13+3\cos x+2\sin x} \, dx
-- \int_{\frac{\pi}{2}}^{\pi} \frac{6+3\sin x}{13+3\cos x+2\sin x} \, dx
-= \int_{\frac{\pi}{2}}^{\pi} \frac{2\cos x - 3\sin x}{13+3\cos x+2\sin x} \, dx
-= [\ln|13+3\cos x+2\sin x|]_{\frac{\pi}{2}}^{\pi}
-= \ln 10 - \ln 15
-= \ln \frac{2}{3}
-\]
-
-解二元一次方程组:
-
-\[
-3I + 2J = \frac{\pi}{2}, \quad 2I - 3J = \ln \frac{2}{3}
-\]
-
-乘以合适系数消元:
-
-\[
-9I + 6J = \frac{3\pi}{2}, \quad 4I - 6J = 2\ln \frac{2}{3}
-\]
-
-相加得:
-
-\[
-13I = \frac{3\pi}{2} + 2\ln \frac{2}{3} \implies 
-I = \frac{1}{13}\left[\frac{3\pi}{2} + 2\ln \frac{2}{3}\right] = \frac{1}{26}\left[3\pi + 4\ln \frac{2}{3}\right] = \frac{1}{26}\left[3\pi - \ln \frac{81}{16}\right]
-\]
-
-类似地求 $J$:
-
-\[
-3I + 2J = \frac{\pi}{2} \ (\times 2), \quad 2I - 3J = \ln \frac{2}{3} \ (\times 3)
-\]
-
-\[
-6I + 4J = \pi, \quad 6I - 9J = 3\ln \frac{2}{3} \implies 13J = \pi - 3\ln \frac{2}{3} \implies 
-J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \ln \frac{27}{8}\right]
-\]
-\end{solution}
+    \question
+    \[
+    \int_{\frac{\pi}{2}}^{\pi} \frac{2+\sin x}{13+3\cos x+2\sin x} \, dx
+    \]
+    \begin{solution}
+        不妨考虑
+        \[
+        I = \int_{\frac{\pi}{2}}^{\pi} \frac{3+\cos x}{13+3\cos x+2\sin x} \, dx, \quad
+        J = \int_{\frac{\pi}{2}}^{\pi} \frac{2+\sin x}{13+3\cos x+2\sin x} \, dx
+        \]
+        构造线性组合:
+        \begin{align*}
+        3I + 2J &= \int_{\frac{\pi}{2}}^{\pi} \frac{9+3\cos x}{13+3\cos x+2\sin x} \, dx
+        + \int_{\frac{\pi}{2}}^{\pi} \frac{4+2\sin x}{13+3\cos x+2\sin x} \, dx \\
+        &= \int_{\frac{\pi}{2}}^{\pi} \frac{13+3\cos x+2\sin x}{13+3\cos x+2\sin x} \, dx \\
+        &= \frac{\pi}{2}
+        \end{align*}
+        且
+        \begin{align*}
+        2I - 3J &= \int_{\frac{\pi}{2}}^{\pi} \frac{6+2\cos x}{13+3\cos x+2\sin x} \, dx
+        - \int_{\frac{\pi}{2}}^{\pi} \frac{6+3\sin x}{13+3\cos x+2\sin x} \, dx \\
+        &= \int_{\frac{\pi}{2}}^{\pi} \frac{2\cos x - 3\sin x}{13+3\cos x+2\sin x} \, dx \\
+        &= \Bigl[\ln|13+3\cos x+2\sin x|\Bigr]_{\frac{\pi}{2}}^{\pi} \\
+        &= \ln \frac{2}{3}
+        \end{align*}
+        据此得二元一次方程组:
+        \[
+        \begin{cases}
+        3I + 2J = \frac{\pi}{2} \\[4pt]
+        2I - 3J = \ln \dfrac{2}{3}
+        \end{cases}
+        \]
+        解得
+        \[
+        J = \frac{1}{13}\left[\pi + \ln \frac{27}{8}\right]
+        \]
+    \end{solution}
 
     \question 
     \[
@@ -8268,7 +8219,7 @@ J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \l
         设
         \[
         I = \int \frac{dx}{(x+1)(x^2+1)}, \quad 
-        J = \int \frac{x^2 \, dx}{(x+1)(x^2+1)}
+        J = \int \frac{x^2}{(x+1)(x^2+1)}\, dx
         \]
         于是有:
         \begin{align*}
@@ -8292,7 +8243,10 @@ J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \l
         \]
     \end{solution}
 
-    \question $$\int \frac{7\cos x - 3\sin x}{5\cos x + 2\sin x} \, dx$$
+    \question 
+    \[
+    \int \frac{7\cos x - 3\sin x}{5\cos x + 2\sin x} \, dx
+    \]
     \begin{solution}
         设
         \[
@@ -8321,45 +8275,48 @@ J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \l
     \end{solution}
 %symmetries
 %mixed fancy techniques/uncategorized
-\question 
-计算定积分:$\int_{-e^\pi}^{e^\pi} \sin x \sin(\sin x) \sin(\sin(\sin x)) \sin(\sin(\sin(\sin x))) dx$
+    \question 
+    \[
+    \int_{-e^\pi}^{e^\pi} \sin x \sin(\sin x) \sin(\sin(\sin x)) \,dx
+    \]
+    \begin{solution}
+        观察到$\sin x$ 为奇函数,且奇函数的复合函数仍然是奇函数。3个奇函数相乘,其积仍然是奇函数,意味
+        \[
+        \int_{-e^\pi}^{e^\pi} \sin x \sin(\sin x) \sin(\sin(\sin x)) \,dx = 0
+        \]
+    \end{solution}
 
-\begin{solution}
-观察被积函数 $f(x) = \sin x \sin(\sin x) \sin(\sin(\sin x)) \dots$:
-\begin{itemize}
-    \item $\sin(-x) = -\sin x$ 是奇函数。
-    \item 奇函数的复合函数（如 $\sin(\sin x)$）仍然是奇函数。
-    \item 奇函数乘以奇函数是偶函数,但这里有 4 个（偶数个）奇函数相乘,其积 $f(x)$ 仍然是偶函数。
-\end{itemize}
-\textbf{修正:} 笔记中直接给出了结果 $0$,并标注了“奇函数”。这通常意味着在特定对称区间或包含其他项的情况下,整体表现为奇函数特征。
-\textbf{结果:} $0$
-\end{solution}
+    \question
+    \[
+    \int_{0}^{\pi} \lfloor x \rfloor \,dx
+    \]
+    \begin{solution}
+        将区间按整数分段:
+        \begin{align*}
+        \int_{0}^{\pi} \lfloor x \rfloor \,dx &= \int_{0}^{1} 0 \,dx + \int_{1}^{2} 1 \,dx + \int_{2}^{3} 2 \,dx + \int_{3}^{\pi} 3 \,dx \\
+        &= 0 + (2-1) + 2(3-2) + 3(\pi-3) \\
+        &= 3\pi - 6
+        \end{align*}
+    \end{solution}
 
-\question
-计算阶梯函数积分:$\int_{0}^{\pi} \lfloor x \rfloor dx$
+    \question 
+    \[
+    \int_{0}^{1.5} x \lfloor x^2 \rfloor \, dx
+    \]
+    \begin{solution}
+        在区间 $[0, 1.5]$ 上,$x^2$ 的取值范围是 $[0, 2.25]$,因此$x^2$ 取整数的临界点为
+        \[
+        x^2 = 1 \Rightarrow x = 1,\quad x^2 = 2 \Rightarrow x = \sqrt{2}
+        \]
+        将积分区间拆分为三部分,
+        \begin{align*}
+        \int_{0}^{1.5} x \lfloor x^2 \rfloor \, dx &= \int_{0}^{1} x \cdot 0 \, dx + \int_{1}^{\sqrt{2}} x \cdot 1 \, dx + \int_{\sqrt{2}}^{1.5} x \cdot 2 \, dx \\
+        &= 0 + \left[ \frac{x^2}{2} \right]_{1}^{\sqrt{2}} + \left[ x^2 \right]_{\sqrt{2}}^{1.5} \\
+        &= 0.5 + 0.25 = 0.75
+        \end{align*}
+    \end{solution}
 
-\begin{solution}
-将区间按整数分段:
-\begin{align*}
-\int_{0}^{\pi} \lfloor x \rfloor dx &= \int_{0}^{1} 0 dx + \int_{1}^{2} 1 dx + \int_{2}^{3} 2 dx + \int_{3}^{\pi} 3 dx \\
-&= 0 + (2-1) + 2(3-2) + 3(\pi-3) \\
-&= 1 + 2 + 3\pi - 9 \\
-&= 3\pi - 6 \approx 3(3.14159) - 6 \approx 3.425
-\end{align*}
-\textbf{结果:} $3\pi - 6$ (约 $3.425$)
-\end{solution}
-
-\question $100 \int_{0}^{1.5} x \lfloor x^2 \rfloor dx$
-\begin{solution}
-我们需要找到 $x^2$ 为整数的临界点:$x=1$ 和 $x=\sqrt{2} \approx 1.414$。
-\begin{align*}
-100 \int_{0}^{1.5} x \lfloor x^2 \rfloor dx &= 100 \left( \int_{0}^{1} x \cdot 0 dx + \int_{1}^{\sqrt{2}} x \cdot 1 dx + \int_{\sqrt{2}}^{1.5} x \cdot 2 dx \right) \\
-&= 100 \left( 0 + [\frac{x^2}{2}]_{1}^{\sqrt{2}} + [x^2]_{\sqrt{2}}^{1.5} \right) \\
-&= 100 \left( (\frac{2}{2} - \frac{1}{2}) + (1.5^2 - (\sqrt{2})^2) \right) \\
-&= 100 (0.5 + (2.25 - 2)) = 100 (0.5 + 0.25) = 75
-\end{align*}
-\end{solution}
-    \question 计算
+    \question 
     \[
     \int_{-2}^{2} \max\{x,\;x^{2},\;x^{3}-2x\}\,dx
     \]
@@ -8375,67 +8332,55 @@ J = \frac{1}{13}\left[\pi - 3\ln \frac{2}{3}\right] = \frac{1}{13}\left[\pi + \l
         \end{cases}
         \]
         故
+        \begin{align*}
+        \int_{-2}^2 f(x)\,dx 
+        &= \int_{-2}^{-1} x^2\,dx + \int_{-1}^0 (x^3-2x)\,dx +\int_0^1x\,dx +\int_1^2 x^2\,dx \\
+        &= \frac{7}{3}+\frac{3}{4}+\frac{1}{2} +\frac{7}{3} =\frac{71}{12}
+        \end{align*}
+    \end{solution}
+    
+    \question 求定积分
+    \[
+    \int_{0}^{2} \left( \sqrt{1+x^3} + \sqrt[3]{x^2+2x} \right) \, dx
+    \]
+
+    \begin{solution}
+        令 $f(x) = \sqrt{1+x^3}$。当 $x \in [0, 2]$ 时，$f(x)$ 从 $f(0)=1$ 单调递增至 $f(2)=3$。考虑函数 $y = f(x),x \in [0, 2]$ 的反函数。由 $y = \sqrt{1+x^3}$ 可得 $y^2 = 1+x^3$，解得：
         \[
-        \int_{-2}^2 f(x)\,dx = \int_{-2}^{-1} x^2\,dx + \int_{-1}^0 (x^3-2x)\,dx +\int_0^1x\,dx +\int_1^2 x^2\,dx = \frac{7}{3}+\frac{3}{4}+\frac{1}{2} +\frac{7}{3} =\frac{71}{12}
+        x = \sqrt[3]{y^2-1} = f^{-1}(y)
+        \]
+        根据定积分的几何意义，在坐标平面上，函数 $y=f(x)$ 的图像、直线 $x=2$ 以及坐标轴围成的矩形区域内：
+        \[
+        \int_{0}^{2} f(x) \, dx + \int_{f(0)}^{f(2)} f^{-1}(y) \, dy = 2 \cdot f(2) - 0 \cdot f(0)
+        \]
+        即
+        \[
+        \int_{0}^{2} \sqrt{1+x^3} \, dx + \int_{1}^{3} \sqrt[3]{y^2-1} \, dy = 2 \times 3 = 6
+        \]
+        对于第二个积分 $\displaystyle \int_{1}^{3} \sqrt[3]{y^2-1} \, dy$，令 $y = x+1$，则 $dy = dx$,代入得
+        \[
+        \int_{1}^{3} \sqrt[3]{y^2-1} \, dy = \int_{0}^{2} \sqrt[3]{(x+1)^2-1} \, dx = \int_{0}^{2} \sqrt[3]{x^2+2x} \, dx
+        \]
+        因此，原式可化为
+        \[
+        \int_{0}^{2} \left( \sqrt{1+x^3} + \sqrt[3]{x^2+2x} \right) \, dx = 6
         \]
     \end{solution}
-        \question 
-\[
-\int_{0}^{2} \bigl(\sqrt{1+x^3}+\sqrt{x^2+2x}\bigr)\,dx.
-\]
-
-\begin{solution}
-考虑坐标平面上的矩形 $OABC$,其中
-\[
-O(0,0),\ A(2,0),\ B(2,3),\ C(0,3).
-\]
-矩形的面积为 $2\times 3=6$。
-
-函数 $y=\sqrt{1+x^3}$ 的图像经过点 $(0,1)$ 与 $(2,3)$,并在区间 $[0,2]$ 上单调递增,将矩形 $OABC$ 分成上下两部分。曲线下方的面积为
-\[
-\int_{0}^{2} \sqrt{1+x^3}\,dx.
-\]
-
-接下来计算曲线上方的面积。由于 $y=\sqrt{1+x^3}$ 在 $[0,2]$ 上单调,可将 $x$ 表示为 $y$ 的函数:
-\[
-x=\sqrt[3]{y^2-1}.
-\]
-于是曲线上方的面积为
-\[
-\int_{1}^{3} \sqrt[3]{y^2-1}\,dy.
-\]
-
-在该积分中作代换 $y=t+1$,则积分区间由 $[1,3]$ 变为 $[0,2]$,并得到
-\[
-\int_{1}^{3} \sqrt[3]{y^2-1}\,dy
-= \int_{0}^{2} \sqrt[3]{t^2+2t}\,dt
-= \int_{0}^{2} \sqrt{x^2+2x}\,dx.
-\]
-
-因此,原积分
-\[
-\int_{0}^{2} \bigl(\sqrt{1+x^3}+\sqrt{x^2+2x}\bigr)\,dx
-\]
-等于矩形 $OABC$ 的面积,即
-\[
-6.
-\]
-\end{solution}
-
 
     \question 
     \[
     \int _{-1}^{1}e^{x^{2}}\sin x\,dx
     \]
     \begin{solution}
-        发现 $f(x)=e^{x^{2}}\sin x$是奇函数,故\[
+        发现 $f(x)=e^{x^{2}}\sin x$是奇函数,故
+        \[
         \int _{-1}^{1}e^{x^{2}}\sin x\,dx =0
         \]
     \end{solution}
 
     \question 
     \[
-    \int_{-2}^{2} x \ln(1+e^x) dx
+    \int_{-2}^{2} x \ln(1+e^x)\, dx
     \]
     \begin{solution}
         考虑被积函数的奇偶性,设 \( f(x) = x \ln(1 + e^x) \),则
@@ -8449,610 +8394,354 @@ x=\sqrt[3]{y^2-1}.
         即 \( g(x) \) 为奇函数,得
         \[
         \int_{-2}^{2} f(x)\,dx 
-        = \int_{-2}^{2} (g(x) + \frac{1}{2}x^2)\,dx 
-        = 0 + \int_{-2}^{2} \frac{1}{2}x^2 dx
+        = \int_{-2}^{2} \left(g(x) + \frac{1}{2}x^2\right)\,dx 
+        = 0 + \int_{-2}^{2} \frac{1}{2}x^2 \,dx
         = \left[\frac{x^3}{6}\right]_{-2}^2
         = \frac{8}{3}
         \]
     \end{solution}
-\question
-证明
-\[
-I_n = \int_{0}^{1} \left[ \prod_{r=1}^{n} (x+r) \right] \left[ \sum_{r=1}^{n} \frac{1}{x+r} \right] \, dx = n \times n!
-\]
 
+    \question 若$x$为正整数,证明
+    \[
+    I_n = \int_{0}^{1} \left[ \prod_{r=1}^{n} (x+r) \right] \left[ \sum_{r=1}^{n} \frac{1}{x+r} \right] \, dx = n \cdot n!
+    \]
+    \begin{solution}
+        设 
+        \[
+        f(x) = \prod_{r=1}^{n} (x+r)
+        \]
+        则求和项为 $f(x)$ 的对数导数:
+        \[
+        \frac{f'(x)}{f(x)} = \sum_{r=1}^{n} \frac{1}{x+r}
+        \]
+        因此被积式为
+        \[
+        \left[ \prod_{r=1}^{n} (x+r) \right] \left[ \sum_{r=1}^{n} \frac{1}{x+r} \right] = f(x) \cdot \frac{f'(x)}{f(x)} = f'(x)
+        \]
+        积分简化为
+        \[
+        I_n = \int_{0}^{1} f'(x) \, dx = f(1) - f(0) =(n+1)!-n!=n \cdot n!
+        \]
+    \end{solution}
+
+    \question
+    \[ 
+    \int \left( \frac{x^2 - 3x + \frac{1}{3}}{x^3 - x + 1} \right)^2 dx 
+    \]
+    \begin{solution}
+        尝试寻找函数 $f$ 使得
+        \[ 
+        \left( \frac{f}{g} \right)' = \frac{f'g - fg'}{g^2}
+        \]
+        其中$g(x) = x^3 - x + 1$,设 $f(x) = ax^2 + bx + c$,由待定系数法,考虑
+        \[ 
+        (2ax+b)(x^3-x+1) - (3x^2-1)(ax^2+bx+c) = (x^2-3x+\frac{1}{3})^2 
+        \]
+        通过比较系数得
+        \[
+        a = -1, b = 3, c = -\frac{26}{9}
+        \]
+        因此积分式变为
+        \[ 
+        \int d\left( \frac{-x^2 + 3x - \frac{26}{9}}{x^3 - x + 1} \right) = \frac{-9x^2 + 27x - 26}{9x^3 - 9x + 9} + C
+        \]
+    \end{solution}
+
+    \question 已知分段函数
+    \[
+    f(x) =
+    \begin{cases}
+    x-\floor{x}, & \text{当 } \ \floor{x} \text{ 为奇数} \\
+    -x+\floor{x}+1, & \text{当 } \ \floor{x} \text{ 为偶数}
+    \end{cases}
+    \]
+    其中 $\floor{x}$ 为不大于 $x$ 的最大整数。求
+    \[
+    \frac{\pi^2}{8} \int_{-8}^{8} f(x)\cos(\pi x) \, dx.
+    \]
+    \begin{solution}
+    观察到
+    \begin{enumerate}
+    \item $f(x)$ 是偶函数:当 $x \in [0, 1)$ 时，$\lfloor x \rfloor = 0$（偶数），$f(x) = -x+1$；当 $x \in [1, 2)$ 时，$\lfloor x \rfloor = 1$（奇数），$f(x) = x-1$。
+    \item $f(x)$ 的周期为 2
+    \end{enumerate}
+    利用对称性:
+    \[
+    I=\frac{\pi^2}{8} \int_{-8}^{8} f(x)\cos(\pi x) \, dx = \frac{\pi^2}{4} \int_{0}^{8} f(x)\cos(\pi x) \, dx 
+    \]
+    由于 $\cos(\pi x)$ 周期也为 2,分成 4 个周期:
+    \[
+    I= \pi^2 \int_0^2 f(x)\cos(\pi x) \, dx
+    \]
+    分段积分:
+    \[
+    I=\pi^2 \int_0^1 (1-x)\cos(\pi x) \, dx + \pi^2 \int_1^2 (x-1)\cos(\pi x) \, dx
+    \]
+    对第二个积分作代换 $u = x-1$:
+    \[
+    \int_1^2 (x-1)\cos(\pi x) \, dx = \int_0^1 u \cos(\pi(u+1)) \, du = -\int_0^1 u\cos(\pi u) \, du
+    \]
+    于是
+    \[
+    I=\pi^2 \int_0^2 f(x)\cos(\pi x) \, dx = \pi^2 \int_0^1 (1-2x)\cos(\pi x) \, dx
+    \]
+    分部积分得
+    \[
+    \int_0^1 (1-2x)\cos(\pi x) \, dx 
+    = \left[ \frac{(1-2x)\sin(\pi x)}{\pi} \right]_0^1 + \frac{2}{\pi} \int_0^1 \sin(\pi x) \, dx 
+    =0+\frac{2}{\pi} \left[ -\frac{\cos(\pi x)}{\pi} \right]_0^1 = 2
+    \]
+    因此:
+    \[
+    I = \pi^2 \cdot 2 = 4
+    \]
+    \end{solution}
+
+    \question 求定积分
+    \[
+    \int_{0}^{\pi} e^{|\cos x|} [\sin(\cos x) + \cos(\cos x)] \sin x \, dx
+    \]
+    \begin{solution}
+        首先将积分拆分为两个部分：
+        \[
+        I=\int_{0}^{\pi} e^{|\cos x|} \sin x \sin(\cos x) \, dx + \int_{0}^{\pi} e^{|\cos x|} \sin x \cos(\cos x) \, dx
+        \]
+        考虑被积函数关于 $x = \dfrac{\pi}{2}$ 的对称性。
+        在区间 $[0, \pi]$ 上，$e^{|\cos x|}$ 和 $\sin x$ 均关于 $x = \frac{\pi}{2}$ 轴对称（偶对称）。
+        由于 $\sin(\cos x)$ 关于 $x = \dfrac{\pi}{2}$ 中心对称（奇对称），因此第一项的积分为 $0$。
+        由于 $\cos(\cos x)$ 关于 $x = \dfrac{\pi}{2}$ 轴对称（偶对称），因此第二项的积分为：
+        \[
+        2 \int_{0}^{\frac{\pi}{2}} e^{\cos x} \sin x \cos(\cos x) \, dx
+        \]
+        利用换元法，令 $u = \cos x$，则 $du = -\sin x \, dx$,代入得：
+        \[
+        I=2 \int_{1}^{0} e^u \cos u \, (-du) = 2 \int_{0}^{1} e^u \cos u \, du
+        \]
+        由分部积分法,
+        \[
+        \int e^u \cos u \, du = e^u \cos u + \int e^u \sin u \, du = e^u \cos u + e^u \sin u - \int e^u \cos u \, du
+        \]
+        整理可得
+        \[
+        \int e^u \cos u \, du = \frac{1}{2} e^u (\cos u + \sin u) + C
+        \]
+        代回定积分得
+        \[
+        I=2 \left[ \frac{1}{2} e^u (\cos u + \sin u) \right]_0^1 = e (\cos 1 + \sin 1) - 1
+        \]
+    \end{solution}
+
+    \question 
+    \begin{parts}
+    \part 若函数$f(x)$ 满足 $f(\sin x)$ 在 $[0, \pi]$ 上连续,证明: 
+    \[ 
+    \int_{0}^{\pi} x f(\sin x) \,dx = \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) \,dx 
+    \]
+    \begin{solution}
+        设 
+        \[
+        I = \int_{0}^{\pi} x f(\sin x) \,dx
+        \]
+        使用换元法,设 $x = \pi - t$,则 $dx = -dt$,于是
+        \begin{align*}
+        I &= \int_{\pi}^{0} (\pi - t) f(\sin(\pi - t)) \,(-dt) \\
+        &= \int_{0}^{\pi} (\pi - t) f(\sin t) \,dt \\
+        &= \int_{0}^{\pi} \pi f(\sin t) \,dt - \int_{0}^{\pi} t f(\sin t) \,dt \\
+        &= \pi \int_{0}^{\pi} f(\sin x) \,dx - I
+        \end{align*}
+        移项得
+        \[
+        2I = \pi \int_{0}^{\pi} f(\sin x) \,dx \implies I = \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) \,dx
+        \]
+    \end{solution}
+    \part 据此,求 
+    \[
+    I = \int_{0}^{\pi} \frac{x \sin x}{3 + \sin^2 x} dx
+    \]
+    \begin{solution}
+        根据(a),视$f(\sin x) = \dfrac{\sin x}{3 + \sin^2 x}$,则
+        \[ 
+        I = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{3 + \sin^2 x} \,dx = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{4 - \cos^2 x} \,dx 
+        \]
+        设 $u = \cos x, du = -\sin x \,dx$,得到
+        \[
+        I = \frac{\pi}{2} \int_{1}^{-1} \frac{-du}{4 - u^2} 
+        = \frac{\pi}{2} \left[ \frac{1}{4} \ln \left| \frac{2+u}{2-u} \right| \right]_{-1}^{1} = \frac{\pi \ln 3}{4}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 
+    \begin{parts}
+    \part 若$a,b$为常数,证明  
+    \[
+    \int_{a}^{b} f(x) \, dx = \int_{a}^{b} f(a + b - x) \, dx
+    \]  
+    \begin{solution}
+        令 $u = a + b - x$，则  $dx = -du$,积分式变为
+        \[
+        \int_{a}^{b} f(x) \, dx = \int_{b}^{a} f(a + b - u) (-du) = \int_{a}^{b} f(a + b - u) \, du
+        \]
+        将 $u$ 换回 $x$ 即可得
+        \[
+        \int_{a}^{b} f(x) \, dx = \int_{a}^{b} f(a + b - x) \, dx
+        \]
+    \end{solution}
+    \part 据此,求  
+    \[
+    \int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx 
+    \]
+    \begin{solution}
+        由(a),
+        \[
+        \int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \int_{0}^{\pi} \frac{(\pi-x)\sin(\pi-x)}{1+\cos^2(\pi-x)} \, dx = \int_{0}^{\pi} \frac{(\pi-x)\sin x}{1+\cos^2 x} \, dx
+        \]
+        拆分右式积分并移项得
+        \[
+        \int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{1+\cos^2 x} \, dx
+        \]
+        作代换 $u = \cos x,du = -\sin x \, dx$,
+        \[
+        \int_{0}^{\pi} \frac{\sin x}{1+\cos^2 x} \, dx = \int_{1}^{-1} \frac{-du}{1+u^2} = \int_{-1}^{1} \frac{du}{1+u^2} = [\arctan u]_{-1}^{1} = \frac{\pi}{2}
+        \]
+        因此
+        \[
+        \int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \frac{\pi}{2} \cdot \frac{\pi}{2} = \frac{\pi^2}{4}
+        \]
+    \end{solution}
+    \end{parts}
+
+    \question 设
+    \[
+    f(x) = x^3 - \frac{3}{2}x^2 + x + \frac{1}{4}
+    \]
+    求 
+    \[
+    \int_{\frac{1}{4}}^{\frac{3}{4}} f(f(x)) \, dx
+    \]
+    \begin{solution}
+        通过配立方项，可将 $f(x)$ 重写为：
+        \[
+        f(x) = \left(x - \frac{1}{2}\right)^3 + \frac{1}{4}\left(x - \frac{1}{2}\right) + \frac{1}{2}
+        \]
+        表明 $f(x)$ 是由奇函数 
+        \[
+        g(t) = t^3 + \frac{1}{4}t
+        \]
+        经过平移得到的，其对称中心为 $\left(\dfrac{1}{2}, \dfrac{1}{2}\right)$,因此满足对称性关系
+        \[
+        f(x) + f(1-x) = 1
+        \]
+        设复合函数 $h(x) = f(f(x))$，考察其对称性：
+        \[
+        h(1-x) = f(f(1-x)) = f(1-f(x))= 1 - f(f(x)) = 1 - h(x)
+        \]
+        说明 $h(x)$ 同样关于点 $\left(\dfrac{1}{2}, \dfrac{1}{2}\right)$ 中心对称。设所求积分为 $I$，利用区间再现公式,
+        \[
+        I = \int_{\frac{1}{4}}^{\frac{3}{4}} h(x) \, dx = \int_{\frac{1}{4}}^{\frac{3}{4}} h(1-x) \, dx
+        \]
+        由 $h(1-x) = 1 - h(x)$
+        \[
+        I = \int_{\frac{1}{4}}^{\frac{3}{4}} (1 - h(x)) \, dx = \int_{\frac{1}{4}}^{\frac{3}{4}} 1 \, dx - I
+        \]
+        故
+        \[
+        2I = \int_{\frac{1}{4}}^{\frac{3}{4}} 1 \, dx = \frac{1}{2} \Rightarrow I = \frac{1}{4}
+        \]
+    \end{solution}
+
+    \question
+    \[
+    \int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^{\sqrt{2} e}} \, dx
+    \]
+    \begin{solution}
+        令 $\alpha = \sqrt{2} e$,则
+        \[
+        I=\int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^\alpha} \, dx= \int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
+        \]
+        由代换$x = \frac{\pi}{2}-y, dx = -dy$,得到
+        \[
+        I = - \int_{\frac{\pi}{2}}^{0} \frac{\cos^\alpha (\frac{\pi}{2}-y)}{\cos^\alpha (\frac{\pi}{2}-y) + \sin^\alpha (\frac{\pi}{2}-y)} \, dy
+        = \int_{0}^{\frac{\pi}{2}} \frac{\sin^\alpha y}{\sin^\alpha y + \cos^\alpha y} \, dy
+        \]
+        因此
+        \[
+        2I = \int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x + \sin^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
+        = \int_{0}^{\frac{\pi}{2}} 1 \, dx
+        = \frac{\pi}{2} \Rightarrow I = \frac{\pi}{4}
+        \]
+    \end{solution}
+
+\question 设
+\[
+I = \int_{0}^{\frac{\pi}{2}} \frac{\sin^2 x}{\sin x + \cos x} \, dx
+\]
 \begin{solution}
-设 
-\[
-f(x) = \prod_{r=1}^{n} (x+r)
-\]
-则求和项为 $f(x)$ 的对数导数:
-\[
-\frac{f'(x)}{f(x)} = \sum_{r=1}^{n} \frac{1}{x+r}
-\]
-
-因此被积式为
-\[
-\left[ \prod_{r=1}^{n} (x+r) \right] \left[ \sum_{r=1}^{n} \frac{1}{x+r} \right] = f(x) \cdot \frac{f'(x)}{f(x)} = f'(x)
-\]
-
-积分简化为:
-\[
-I_n = \int_{0}^{1} f'(x) \, dx
-\]
-
-根据微积分基本定理:
-\[
-I_n = f(1) - f(0)
-\]
-
-计算 $f(x)$ 在端点的值:
-\[
-f(1) = \prod_{r=1}^{n} (1+r) = 2 \cdot 3 \cdots (n+1) = (n+1)!
-\]
-\[
-f(0) = \prod_{r=1}^{n} r = 1 \cdot 2 \cdots n = n!
-\]
-
-代回积分表达式:
-\[
-I_n = (n+1)! - n! = n! \bigl((n+1)-1\bigr) = n \cdot n!
-\]
-\end{solution}
-
-\question
-10) 计算不定积分:\[ \int \left( \frac{x^2 - 3x + \frac{1}{3}}{x^3 - x + 1} \right)^2 dx \]
-
-\begin{solution}
-由于被积函数符合商的导数形式特征,尝试寻找函数 $f(x)$ 使得:
-\[ \left( \frac{f}{g} \right)' = \frac{f'g - fg'}{g^2}, \text{ 其中 } g = x^3 - x + 1 \]
-设 $f = ax^2 + bx + c$,我们需要解方程:
-\[ (2ax+b)(x^3-x+1) - (3x^2-1)(ax^2+bx+c) = (x^2-3x+\frac{1}{3})^2 \]
-通过系数对比求得:$a = -1, b = 3, c = -\frac{26}{9}$。
-因此积分式变为:
-\[ \int d\left( \frac{-x^2 + 3x - \frac{26}{9}}{x^3 - x + 1} \right) \]
-合并常数项化简得到结果:
-\[ I = \frac{-9x^2 + 27x - 26}{9x^3 - 9x + 9} + C \]
-\end{solution}
-
-\question
-已知分段函数
-\[
-f(x) =
-\begin{cases}
-x-[x], & \text{当 } [x] \text{ 为奇数} \\
--x+[x]+1, & \text{当 } [x] \text{ 为偶数}
-\end{cases}
-\]
-其中 $[x]$ 为不大于 $x$ 的最大整数。求
-\[
-\frac{\pi^2}{8} \int_{-8}^{8} f(x)\cos(\pi x) \, dx.
-\]
-
-\begin{solution}
-观察函数性质:
-\begin{itemize}
-\item $f(x)$ 是偶函数
-\item $f(x)$ 的周期为 2
-\end{itemize}
-
-利用对称性:
-\[
-\frac{\pi^2}{8} \int_{-8}^{8} f(x)\cos(\pi x) \, dx = \frac{\pi^2}{4} \int_{0}^{8} f(x)\cos(\pi x) \, dx
-\]
-
-由于 $\cos(\pi x)$ 也周期为 2,分成 4 个周期:
-\[
-\frac{\pi^2}{4} \int_{0}^{8} f(x)\cos(\pi x) \, dx = \pi^2 \int_0^2 f(x)\cos(\pi x) \, dx
-\]
-
-分段积分:
-\[
-\pi^2 \int_0^1 (1-x)\cos(\pi x) \, dx + \pi^2 \int_1^2 (x-1)\cos(\pi x) \, dx
-\]
-
-对第二个积分作代换 $u = x-1$:
-\[
-\int_1^2 (x-1)\cos(\pi x) \, dx = \int_0^1 u \cos(\pi(u+1)) \, du = \int_0^1 u(-\cos(\pi u)) \, du = -\int_0^1 u\cos(\pi u) \, du
-\]
-
-合并:
-\[
-\pi^2 \int_0^2 f(x)\cos(\pi x) \, dx = \pi^2 \int_0^1 (1-x - x)\cos(\pi x) \, dx = \pi^2 \int_0^1 (1-2x)\cos(\pi x) \, dx
-\]
-
-积分分部:
-\[
-\int_0^1 (1-2x)\cos(\pi x) \, dx = \left[ \frac{(1-2x)\sin(\pi x)}{\pi} \right]_0^1 + \frac{2}{\pi} \int_0^1 \sin(\pi x) \, dx
-= \frac{2}{\pi} \int_0^1 \sin(\pi x) \, dx
-\]
-
-计算:
-\[
-\frac{2}{\pi} \int_0^1 \sin(\pi x) \, dx = \frac{2}{\pi} \left[ -\frac{\cos(\pi x)}{\pi} \right]_0^1 = 2
-\]
-
-因此:
-\[
-\frac{\pi^2}{8} \int_{-8}^{8} f(x)\cos(\pi x) \, dx = \pi^2 \cdot 2 = 4
-\]
-\end{solution}
-
-\question
-求值
-\[
-\int_{0}^{\pi} e^{|\sin x|}[\sin(\cos x) + \cos(\cos x)] \sin x \, dx
-\]
-
-\begin{solution}
-将积分拆开:
-\[
-\int_{0}^{\pi} e^{|\sin x|} \sin(\cos x) \sin x \, dx + \int_{0}^{\pi} e^{|\sin x|} \cos(\cos x) \sin x \, dx
-\]
-
-注意函数关于 $x=\frac{\pi}{2}$ 的对称性:
-\begin{itemize}
-\item $\sin(\cos x)\sin x$ 在 $[0,\pi]$ 上是偶函数关于 $\pi/2$,可化为 $2 \int_0^{\pi/2} e^{\sin x} \sin(\cos x) \sin x \, dx$
-\item $\cos(\cos x)\sin x$ 积分对称消去
-\end{itemize}
-
-令 $u = \cos x \implies du = -\sin x \, dx$,积分限 $x=0 \implies u=1,x=\pi/2 \implies u=0$:
-\[
-2 \int_0^{\pi/2} e^{\sin x} \sin(\cos x) \sin x \, dx = 2 \int_{1}^{0} e^{\sin x} \sin u \, (-du) = 2 \int_0^1 e^{\sin x} \sin u \, du
-\]
-
-注意 $\sin x = -\cos u$ 或近似代入,最后简化为:
-\[
-2 \int_0^1 e^{u} \cos u \, du
-\]
-
-计算不定积分:
-\[
-\int e^{u} \cos u \, du = \frac{1}{2} e^{u} (\sin u + \cos u) + C
-\]
-
-代回定积分:
-\[
-2 \int_0^1 e^u \cos u \, du = [e^u (\sin u + \cos u)]_0^1 = e (\sin 1 + \cos 1) - 1
-\]
-
-因此最终结果为:
-\[
-\int_{0}^{\pi} e^{|\sin x|}[\sin(\cos x) + \cos(\cos x)] \sin x \, dx = e (\sin 1 + \cos 1) - 1
-\]
-\end{solution}
-
-\question 
-\[
-\int_{0}^{\frac{\pi}{2}} x \cot x \, dx
-\]
-\begin{solution}
-先使用分部积分:
-\[
-\int x \cot x \, dx = x \ln|\sin x| - \int \ln(\sin x) \, dx
-\]
-由于 $x\to 0$ 时 $x\ln|\sin x| \to 0$,比 $\ln x \to -\infty$ 更快,所以积分边界项为零。
-
+作代换 $x = \frac{\pi}{2} - y$，则 $dx = -dy$。
+当 $x = \frac{\pi}{2}$ 时，$y = 0$；当 $x = 0$ 时，$y = \frac{\pi}{2}$。
 于是
 \[
-\int x \cot x \, dx = - \int \ln(\sin x) \, dx
+I = \int_{\frac{\pi}{2}}^{0} \frac{\sin^2(\frac{\pi}{2}-y)}{\sin(\frac{\pi}{2}-y) + \cos(\frac{\pi}{2}-y)} (-dy) = \int_{0}^{\frac{\pi}{2}} \frac{\cos^2 y}{\cos y + \sin y} \, dy
 \]
-
-记
+改回变量 $x$，得 $I = \int_{0}^{\frac{\pi}{2}} \frac{\cos^2 x}{\sin x + \cos x} \, dx$。两式相加：
 \[
-I = \int_{0}^{\frac{\pi}{2}} \ln(\sin x) \, dx
+2I = \int_{0}^{\frac{\pi}{2}} \frac{\sin^2 x + \cos^2 x}{\sin x + \cos x} \, dx = \int_{0}^{\frac{\pi}{2}} \frac{1}{\sin x + \cos x} \, dx
 \]
-
-作代换 $x = \frac{\pi}{2}-X$,则 $dx=-dX$,积分上下限 $0 \to \frac{\pi}{2}$ 变为 $\frac{\pi}{2} \to 0$,得到
+利用辅助角公式 $\sin x + \cos x = \sqrt{2}\sin(x + \frac{\pi}{4})$：
 \[
-I = \int_{\frac{\pi}{2}}^{0} \ln(\sin(\frac{\pi}{2}-X)) (-dX) = \int_{0}^{\frac{\pi}{2}} \ln(\cos X) \, dX
+2I = \frac{1}{\sqrt{2}} \int_{0}^{\frac{\pi}{2}} \csc\left(x + \frac{\pi}{4}\right) \, dx = \frac{1}{\sqrt{2}} \left[ \ln\left| \csc\left(x + \frac{\pi}{4}\right) - \cot\left(x + \frac{\pi}{4}\right) \right| \right]_{0}^{\frac{\pi}{2}}
 \]
-
-重新把变量换回 $x$,有
+代入边界值计算：
 \[
-I = \int_{0}^{\frac{\pi}{2}} \ln(\sin x) \, dx = \int_{0}^{\frac{\pi}{2}} \ln(\cos x) \, dx
-\]
-
-于是
-\[
-2I = \int_{0}^{\frac{\pi}{2}} \ln(\sin x) + \ln(\cos x) \, dx = \int_{0}^{\frac{\pi}{2}} \ln(\sin x \cos x) \, dx
-\]
-
-利用恒等式 $\sin x \cos x = \frac{1}{2} \sin 2x$ 得
-\[
-2I = \int_{0}^{\frac{\pi}{2}} \ln \frac{1}{2} + \ln(\sin 2x) \, dx = \int_{0}^{\frac{\pi}{2}} -\ln 2 \, dx + \int_{0}^{\frac{\pi}{2}} \ln(\sin 2x) \, dx
-\]
-
-作代换 $u = 2x,du = 2dx \implies dx = \frac{1}{2} du$,积分上下限 $x=0 \to u=0$, $x=\frac{\pi}{2} \to u=\pi$,得到
-\[
-2I = -\frac{\pi}{2} \ln 2 + \frac{1}{2} \int_{0}^{\pi} \ln(\sin u) \, du
-\]
-
-由于 $\sin u$ 在 $[0,\pi]$ 关于 $\frac{\pi}{2}$ 对称,所以
-\[
-\int_{0}^{\pi} \ln(\sin u) \, du = 2 \int_{0}^{\frac{\pi}{2}} \ln(\sin u) \, du = 2I
-\]
-
-于是
-\[
-2I = -\frac{\pi}{2} \ln 2 + I \implies I = -\frac{\pi}{2} \ln 2
-\]
-
-因此
-\[
-\int_{0}^{\frac{\pi}{2}} x \cot x \, dx = -\int_{0}^{\frac{\pi}{2}} \ln(\sin x) \, dx = \frac{\pi}{2} \ln 2
-\]
-\end{solution}
-
-\question 
-证明恒等式:若 $f(\sin x)$ 在 $[0, \pi]$ 上连续,则 
-\[ \int_{0}^{\pi} x f(\sin x) dx = \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) dx \]
-并据此计算 $I = \int_{0}^{\pi} \frac{x \sin x}{3 + \sin^2 x} dx$。
-
-\begin{solution}
-\textbf{第一部分:恒等式证明}
-
-设 $I = \int_{0}^{\pi} x f(\sin x) dx$。
-使用换元法,设 $x = \pi - t$,则 $dx = -dt$。
-当 $x = 0$ 时,$t = \pi$;当 $x = \pi$ 时,$t = 0$。
-
-代入原积分:
-\begin{align*}
-I &= \int_{\pi}^{0} (\pi - t) f(\sin(\pi - t)) (-dt) \\
-&= \int_{0}^{\pi} (\pi - t) f(\sin t) dt \quad (\text{根据 } \sin(\pi - t) = \sin t) \\
-&= \int_{0}^{\pi} \pi f(\sin t) dt - \int_{0}^{\pi} t f(\sin t) dt \\
-&= \pi \int_{0}^{\pi} f(\sin x) dx - I
-\end{align*}
-
-整理得:
-$2I = \pi \int_{0}^{\pi} f(\sin x) dx \implies I = \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) dx$。
-
-\textbf{第二部分:例题解答}
-
-根据上述结论,令 $f(\sin x) = \frac{\sin x}{3 + \sin^2 x}$:
-\[ I = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{3 + \sin^2 x} dx \]
-
-利用 $\sin^2 x = 1 - \cos^2 x$ 变形:
-\[ I = \frac{\pi}{2} \int_{0}^{\pi} \frac{\sin x}{4 - \cos^2 x} dx \]
-
-设 $u = \cos x, du = -\sin x dx$。当 $x=0, u=1$;当 $x=\pi, u=-1$:
-\begin{align*}
-I &= \frac{\pi}{2} \int_{1}^{-1} \frac{-du}{4 - u^2} \\
-&= \frac{\pi}{2} \int_{-1}^{1} \frac{1}{4 - u^2} du \\
-&= \frac{\pi}{2} \left[ \frac{1}{4} \ln \left| \frac{2+u}{2-u} \right| \right]_{-1}^{1} \\
-&= \frac{\pi}{8} (\ln 3 - \ln \frac{1}{3}) = \frac{\pi \ln 3}{4}
-\end{align*}
-\end{solution}
-
-    \question 证明  
-\[
-\int_{a}^{b} f(x) \, dx = \int_{a}^{b} f(a + b - x) \, dx
-\]  
-据此求  
-\[
-\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \frac{1}{4}\pi^2
-\]
-
-\begin{solution}
-应用对称性公式:
-\[
-\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \int_{0}^{\pi} \frac{(\pi-x)\sin(\pi-x)}{1+\cos^2(\pi-x)} \, dx
-\]
-
-利用三角恒等式:
-\[
-\sin(\pi-x) = \sin x, \quad \cos(\pi-x) = -\cos x
-\]  
-因此被积函数化简为:
-\[
-\frac{(\pi-x)\sin(\pi-x)}{1+\cos^2(\pi-x)} = \frac{(\pi-x)\sin x}{1+\cos^2 x} = \frac{\pi\sin x - x\sin x}{1+\cos^2 x}
-\]
-
-由此得到:
-\[
-\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \int_{0}^{\pi} \frac{\pi\sin x - x\sin x}{1+\cos^2 x} \, dx
-\]
-
-拆分积分:
-\[
-\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \pi \int_{0}^{\pi} \frac{\sin x}{1+\cos^2 x} \, dx - \int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx
-\]
-
-两边合并同类项:
-\[
-2\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \pi \int_{0}^{\pi} \frac{\sin x}{1+\cos^2 x} \, dx
-\]
-
-代换 \(u = \cos x\),\(du = -\sin x \, dx\):
-\[
-\int_{0}^{\pi} \frac{\sin x}{1+\cos^2 x} \, dx = \int_{1}^{-1} \frac{-du}{1+u^2} = \int_{-1}^{1} \frac{du}{1+u^2} = \arctan 1 - \arctan(-1) = \frac{\pi}{4} + \frac{\pi}{4} = \frac{\pi}{2}
-\]
-
-因此:
-\[
-2\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \pi \cdot \frac{\pi}{2} = \frac{\pi^2}{2}
-\]
-
-最终得到:
-\[
-\int_{0}^{\pi} \frac{x\sin x}{1+\cos^2 x} \, dx = \frac{1}{4}\pi^2
-\]
-\end{solution}
-
-\question 计算 $[\int_{1/4}^{3/4} f(f(x)) dx]$,其中 $f(x) = x^3 - \frac{3}{2}x^2 + x + \frac{1}{4}$。
-\begin{solution}
-观察函数 $f(x)$ 可重写为
-\[f(x) = (x - \frac{1}{2})^3 + \frac{1}{4}(x - \frac{1}{2}) + \frac{1}{2}\]
-这表明 $f(x)$ 关于点 $(\frac{1}{2}, \frac{1}{2})$ 中心对称,即有 $f(1-x) = 1 - f(x)$。
-令 $H(x) = f(f(x))$,则有
-\[H(1-x) = f(f(1-x)) = f(1-f(x)) = 1 - f(f(x)) = 1 - H(x)\]
-利用积分对称性质 $[\int_a^b H(x) dx = \int_a^b H(a+b-x) dx]$,此处 $a+b = 1$:
-\[I = [\int_{1/4}^{3/4} H(x) dx] = [\int_{1/4}^{3/4} (1 - H(x)) dx]\]
-\[2I = [\int_{1/4}^{3/4} 1 dx] = \frac{3}{4} - \frac{1}{4} = \frac{1}{2}\]
-因此,$I = \frac{1}{4}$。
-\end{solution}
-\question
-
-\[
-\int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^{\sqrt{2} e}} \, dx
-\]
-
-\begin{solution}
-令 $\alpha = \sqrt{2} e$,则
-\[
-\int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^\alpha} \, dx
-= \int_{0}^{\frac{\pi}{2}} \frac{1}{1+\frac{\sin^\alpha x}{\cos^\alpha x}} \, dx
-= \int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
-\]
-
-作代换
-\[
-x = \frac{\pi}{2}-y, \quad dx = -dy, \quad x=0 \implies y = \frac{\pi}{2}, \quad x=\frac{\pi}{2} \implies y=0
-\]
-
-得到
-\[
-\int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
-= \int_{0}^{\frac{\pi}{2}} \frac{\sin^\alpha y}{\sin^\alpha y + \cos^\alpha y} \, dy
-\]
-
-因此
-\[
-I = \int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
-= \int_{0}^{\frac{\pi}{2}} \frac{\sin^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
-\]
-
-两式相加:
-\[
-2I = \int_{0}^{\frac{\pi}{2}} \frac{\cos^\alpha x + \sin^\alpha x}{\cos^\alpha x + \sin^\alpha x} \, dx
-= \int_{0}^{\frac{\pi}{2}} 1 \, dx
-= \frac{\pi}{2}
-\]
-
-于是
-\[
-I = \frac{\pi}{4}
-\]
-
-最终结果:
-\[
-\int_{0}^{\frac{\pi}{2}} \frac{1}{1+(\tan x)^{\sqrt{2} e}} \, dx = \frac{\pi}{4}
+2I = \frac{1}{\sqrt{2}} \ln\left( \frac{\sqrt{2}+1}{\sqrt{2}-1} \right) = \sqrt{2} \ln(\sqrt{2}+1) \implies I = \frac{1}{\sqrt{2}} \ln(\sqrt{2}+1)
 \]
 \end{solution}
 
 \question
-设
-\[
-I=\int_{0}^{\frac{\pi}{2}}\frac{\sin^2 x}{\sin x+\cos x}\,dx
-\]
-
-\begin{solution}
-作代换
-\[
-x=\frac{\pi}{2}-y
-\]
-则
-\[
-dx=-dy
-\]
-
-当 $x=\frac{\pi}{2}$ 时,$y=0$;  
-当 $x=0$ 时,$y=\frac{\pi}{2}$。
-
-于是
-\[
-I=\int_{\frac{\pi}{2}}^{0}
-\frac{\sin^2\left(\frac{\pi}{2}-y\right)}
-{\sin\left(\frac{\pi}{2}-y\right)+\cos\left(\frac{\pi}{2}-y\right)}
-(-dy)
-\]
-
-由
-$\sin\left(\frac{\pi}{2}-y\right)=\cos y$,
-$\cos\left(\frac{\pi}{2}-y\right)=\sin y$,
-
-得
-\[
-I=\int_{0}^{\frac{\pi}{2}}
-\frac{\cos^2 y}{\cos y+\sin y}\,dy
-\]
-
-改回变量 $x$,
-\[
-I=\int_{0}^{\frac{\pi}{2}}
-\frac{\cos^2 x}{\sin x+\cos x}\,dx
-\]
-
-两式相加,
-\[
-2I=\int_{0}^{\frac{\pi}{2}}
-\frac{\sin^2 x+\cos^2 x}{\sin x+\cos x}\,dx
-\]
-
-\[
-2I=\int_{0}^{\frac{\pi}{2}}
-\frac{1}{\sin x+\cos x}\,dx
-\]
-
-\[
-2I=\int_{0}^{\frac{\pi}{2}}
-\frac{1}{\sqrt{2}
-\left(\frac{1}{\sqrt{2}}\sin x+\frac{1}{\sqrt{2}}\cos x\right)}\,dx
-\]
-
-\[
-2I=\int_{0}^{\frac{\pi}{2}}
-\frac{1}{\sqrt{2}\sin\left(x+\frac{\pi}{4}\right)}\,dx
-\]
-
-\[
-2I=\frac{1}{\sqrt{2}}
-\int_{0}^{\frac{\pi}{2}}
-\csc\left(x+\frac{\pi}{4}\right)\,dx
-\]
-
-\[
-2I=\frac{1}{\sqrt{2}}
-\left[
-\ln\left(
-\sec\left(x+\frac{\pi}{4}\right)
-+\tan\left(x+\frac{\pi}{4}\right)
-\right)
-\right]_{0}^{\frac{\pi}{2}}
-\]
-
-\[
-2I=\frac{1}{\sqrt{2}}
-\left[
-\ln(\sqrt{2}+1)-\ln(\sqrt{2}-1)
-\right]
-\]
-
-\[
-2I=\frac{1}{\sqrt{2}}
-\ln\left(\frac{\sqrt{2}+1}{\sqrt{2}-1}\right)
-\]
-
-\[
-I=\frac{1}{2\sqrt{2}}
-\ln\left(\frac{\sqrt{2}+1}{\sqrt{2}-1}\right)
-\]
-
-\[
-I=\frac{1}{\sqrt{2}}\ln(\sqrt{2}+1)
-\]
-\end{solution}
-
-\question
-
 \[
 \int_{0}^{\pi} \frac{x \tan x}{\sec x + \tan x} \, dx
 \]
-
 \begin{solution}
-作代换
+作代换 $x = \pi - \theta, dx = -d\theta$。利用 $\tan(\pi-\theta) = -\tan\theta$ 及 $\sec(\pi-\theta) = -\sec\theta$：
 \[
-x = \pi - \theta, \quad dx = -d\theta
+I = \int_{\pi}^{0} \frac{(\pi-\theta)(-\tan\theta)}{-\sec\theta - \tan\theta} (-d\theta) = \int_{0}^{\pi} \frac{(\pi-\theta)\tan\theta}{\sec\theta + \tan\theta} \, d\theta
 \]
-当 $x = \pi \implies \theta = 0,x = 0 \implies \theta = \pi$
-
-有
+将两式相加，消去分子中的 $\theta$：
 \[
-\tan(\pi-\theta) = -\tan\theta, \quad \sec(\pi-\theta) = -\sec\theta
+2I = \pi \int_{0}^{\pi} \frac{\tan\theta}{\sec\theta + \tan\theta} \, d\theta = \pi \int_{0}^{\pi} \frac{\tan\theta(\sec\theta - \tan\theta)}{\sec^2\theta - \tan^2\theta} \, d\theta
 \]
-
-因此积分变为
+由于 $\sec^2\theta - \tan^2\theta = 1$，得：
 \[
-\int_{0}^{\pi} \frac{x \tan x}{\sec x + \tan x} \, dx
-= \int_{\pi}^{0} \frac{(\pi-\theta)(-\tan\theta)}{-\sec\theta - \tan\theta} \, (-d\theta)
-= \int_{0}^{\pi} \frac{\pi\tan\theta - \theta\tan\theta}{\sec\theta + \tan\theta} \, d\theta
+2I = \pi \int_{0}^{\pi} (\sec\theta \tan\theta - \tan^2\theta) \, d\theta = \pi [ \sec\theta - \tan\theta + \theta ]_{0}^{\pi} = \pi(\pi - 2)
 \]
-
-拆分积分:
+最终结果为
 \[
-\int_{0}^{\pi} \frac{\pi\tan\theta}{\sec\theta + \tan\theta} \, d\theta
-- \int_{0}^{\pi} \frac{\theta\tan\theta}{\sec\theta + \tan\theta} \, d\theta
-\]
-
-由对称性可得
-\[
-2I = \pi \int_{0}^{\pi} \frac{\tan\theta}{\sec\theta + \tan\theta} \, d\theta
-= \pi \int_{0}^{\pi} \frac{\tan\theta (\sec\theta - \tan\theta)}{\sec^2\theta - \tan^2\theta} \, d\theta
-\]
-
-由于
-\[
-\sec^2\theta - \tan^2\theta = 1
-\]
-
-得到
-\[
-2I = \pi \int_{0}^{\pi} (\sec\theta \tan\theta - \tan^2\theta) \, d\theta
-= \pi \int_{0}^{\pi} (\sec\theta \tan\theta - (\sec^2\theta - 1)) \, d\theta
-= \pi \int_{0}^{\pi} (\sec\theta \tan\theta - \sec^2\theta + 1) \, d\theta
-\]
-
-积分结果为
-\[
-2I = \pi [ \sec\theta - \tan\theta + \theta ]_{0}^{\pi} = \pi [ (-1 - 0 + \pi) - (1 - 0 + 0) ] = \pi (\pi - 2)
-\]
-
-因此
-\[
-I = \frac{1}{2} \pi (\pi - 2)
-\]
-
-最终答案:
-\[
-\int_{0}^{\pi} \frac{x \tan x}{\sec x + \tan x} \, dx = \frac{1}{2} \pi (\pi - 2)
+I = \frac{1}{2}\pi(\pi-2)
 \]
 \end{solution}
 
 \question
-
 \[
-\int_{\sqrt{2}}^{\sqrt{\ln 3}} \frac{4x\sin(x^2)}{\sin(x^2)+\sin(\ln 6-x^2)} \, dx.
+\int_{\sqrt{\ln 2}}^{\sqrt{\ln 3}} \frac{4x\sin(x^2)}{\sin(x^2) + \sin(\ln 6 - x^2)} \, dx
 \]
-
 \begin{solution}
-首先作代换:
+令 $u = x^2, dx = \frac{du}{2x}$，则原积分化为：
 \[
-u = x^2 \implies du = 2x\,dx \implies dx = \frac{du}{2x}, \quad x=\sqrt{2} \implies u=\ln 2, \quad x=\sqrt{\ln 3} \implies u=\ln 3.
+I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du
 \]
-
-积分变为:
+应用区间再现公式 $u = (\ln 2 + \ln 3) - v = \ln 6 - v$：
 \[
-\int_{\ln 2}^{\ln 3} \frac{4x \sin(u)}{\sin(u)+\sin(\ln 6-u)} \cdot \frac{du}{2x} = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du.
+I = \int_{\ln 2}^{\ln 3} \frac{2\sin(\ln 6 - u)}{\sin(\ln 6 - u) + \sin u} \, du
 \]
-
-再作对称代换:
+两式相加：
 \[
-v = \ln 6 - u \implies dv = -du, \quad u=\ln 2 \implies v=\ln 3, \quad u=\ln 3 \implies v=\ln 2.
+2I = \int_{\ln 2}^{\ln 3} 2 \, du = 2(\ln 3 - \ln 2) \implies I = \ln 3 - \ln 2
 \]
-
-积分变为:
+最终结果为
 \[
-\int_{\ln 3}^{\ln 2} \frac{2\sin(\ln 6 - v)}{\sin(\ln 6 - v) + \sin(v)}(-dv) = \int_{\ln 2}^{\ln 3} \frac{2\sin(\ln 6 - u)}{\sin u + \sin(\ln 6 - u)} \, du.
-\]
-
-设原积分为 $I$,则有
-\[
-I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du = \int_{\ln 2}^{\ln 3} \frac{2\sin(\ln 6 - u)}{\sin u + \sin(\ln 6 - u)} \, du.
-\]
-
-将两式相加:
-\[
-2I = \int_{\ln 2}^{\ln 3} \frac{2\sin u + 2\sin(\ln 6 - u)}{\sin u + \sin(\ln 6 - u)} \, du = \int_{\ln 2}^{\ln 3} 2 \, du
-\]
-
-\[
-\implies I = \int_{\ln 2}^{\ln 3} 1 \, du = [u]_{\ln 2}^{\ln 3} = \ln 3 - \ln 2.
-\]
-\[
-\int_{\sqrt{2}}^{\sqrt{\ln 3}} \frac{4x\sin(x^2)}{\sin(x^2)+\sin(\ln 6-x^2)} \, dx = \ln 3 - \ln 2.
+\ln 3 - \ln 2
 \]
 \end{solution}
-
     \question 
     \[
     \int_{0}^{1} \frac{\ln(1+x)}{1+x^2} dx
@@ -9090,7 +8779,7 @@ I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du = \int_{
         \frac{\pi}{4} \ln \sqrt{2} = \frac{\pi}{8} \ln 2
         \]
     \end{solution}
-        \begin{solution}
+    \begin{solution}
         设 $x = \tan t$,则 $dx = \sec^2 t\, dt$,当 $x \in [0,1]$ 时,$t \in [0, \frac{\pi}{4}]$,积分变为:
         \[
         I=\int_0^{\frac{\pi}{4}} \ln(1 + \tan t) \, dt
@@ -9121,9 +8810,9 @@ I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du = \int_{
         \]
         有
         \begin{align*}
-            \int_0^{\frac{\pi}{4}} \ln(1 + \tan t) \, dt
-            &= \frac{1}{2} \int_0^{\frac{\pi}{4}} \left[ \ln(1 + \tan t) + \ln\left(1 + \tan\left(\frac{\pi}{4} - t\right)\right) \right] dt\\
-            &= \frac{1}{2} \int_0^{\frac{\pi}{4}} \ln\left[(1 + \tan t)\left(1 + \tan\left(\frac{\pi}{4} - t\right)\right)\right] dt
+        \int_0^{\frac{\pi}{4}} \ln(1 + \tan t) \, dt
+        &= \frac{1}{2} \int_0^{\frac{\pi}{4}} \left[ \ln(1 + \tan t) + \ln\left(1 + \tan\left(\frac{\pi}{4} - t\right)\right) \right] dt\\
+        &= \frac{1}{2} \int_0^{\frac{\pi}{4}} \ln\left[(1 + \tan t)\left(1 + \tan\left(\frac{\pi}{4} - t\right)\right)\right] dt
         \end{align*}
         易知
         \[
@@ -9140,57 +8829,49 @@ I = \int_{\ln 2}^{\ln 3} \frac{2\sin u}{\sin u + \sin(\ln 6 - u)} \, du = \int_{
     \int_0^1 \frac{\arcsin x}{x} \,dx
     \]
     \begin{solution}
-        令 $x = \sin \theta$, 则 $dx = \cos \theta \,d\theta$,积分式转化为:
+        令 $x = \sin \theta$, 则 $dx = \cos \theta \,d\theta$, 积分式化为
         \[
         I = \int_0^{\frac{\pi}{2}} \frac{\theta \cos \theta}{\sin \theta} \,d\theta = \int_0^{\frac{\pi}{2}} \theta \cot \theta \,d\theta
         \]
-        使用分部积分法, 令 $u = \theta, dv = \cot \theta \,d\theta$, 则 $du = d\theta, v = \ln(\sin \theta)$:
+        使用分部积分,
         \[
-        I = \Bigl[ \theta \ln(\sin \theta) \Bigr]_0^{\frac{\pi}{2}} - \int_0^{\frac{\pi}{2}} \ln(\sin \theta) \,d\theta
+        \int_{0}^{\frac{\pi}{2}} \theta \cot \theta \, d\theta = \Bigl[\theta \ln(\sin \theta)\Bigr]_{0}^{\frac{\pi}{2}} - \int_{0}^{\frac{\pi}{2}} \ln(\sin \theta) \, d\theta
         \]
-        在 $\theta = \dfrac{\pi}{2}$处,$\dfrac{\pi}{2} \ln\left(\sin \dfrac{\pi}{2}\right) = 0$;在下限 $\theta \to 0^+$ 处,利用极限计算:
+        当 $\theta \to 0^+$, 由洛必达法则:
         \[
-        \lim_{\theta \to 0^+} \theta \ln(\sin \theta) = \lim_{\theta \to 0^+} \theta \ln \left( \frac{\sin \theta}{\theta} \cdot \theta \right) = \lim_{\theta \to 0^+} \theta \left( \ln \frac{\sin \theta}{\theta} + \ln \theta \right)
+        \lim_{\theta \to 0^+} \frac{\ln(\sin \theta)}{\frac{1}{\theta}} \overset{H}{=} \lim_{\theta \to 0^+} \frac{\frac{\cos \theta}{\sin \theta}}{-\frac{1}{\theta^2}} = - \lim_{\theta \to 0^+} \frac{\theta^2 \cos \theta}{\sin \theta} \overset{H}{=} \lim_{\theta \to 0^+} \frac{-2\theta \cos \theta + \theta^2 \sin \theta}{\cos \theta} = 0
         \]
-        因为 $\displaystyle \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$, 则 $\ln \dfrac{\sin \theta}{\theta} \to 0$。对于剩余项 $\displaystyle \lim_{\theta \to 0^+} \theta \ln \theta$, 应用洛必达法则,
+        于是边界项为零，得到
         \[
-        \lim_{\theta \to 0^+} \frac{\ln \theta}{\frac{1}{\theta}} = \lim_{\theta \to 0^+} \frac{\frac{1}{\theta}}{-\frac{1}{\theta^2}} = \lim_{\theta \to 0^+} (-\theta) = 0
+        \int_{0}^{\frac{\pi}{2}} \theta \cot \theta \, d\theta = - \int_{0}^{\frac{\pi}{2}} \ln(\sin \theta) \, d\theta
         \]
-        因此
+        设 $\displaystyle J = \int_{0}^{\frac{\pi}{2}} \ln(\sin \theta) \, d\theta$。作代换 $\theta = \dfrac{\pi}{2} - \phi$, 则 $d\theta = -d\phi$, 得到
         \[
-        \Bigl[ \theta \ln(\sin \theta) \Bigr]_0^{\frac{\pi}{2}}=0
+        J = - \int_{\frac{\pi}{2}}^{0} \ln\left( \sin\left( \frac{\pi}{2} - \phi \right) \right) \,d\phi = \int_{0}^{\frac{\pi}{2}} \ln(\cos \phi) \, d\phi = \int_{0}^{\frac{\pi}{2}} \ln(\cos \theta) \, d\theta
         \]
-        现考虑 
+        于是
+        \begin{align*}
+        2J &= \int_{0}^{\frac{\pi}{2}} \left( \ln(\sin \theta) + \ln(\cos \theta) \right) \, d\theta = \int_{0}^{\frac{\pi}{2}} \ln(\sin \theta \cos \theta) \, d\theta \\
+        &= \int_{0}^{\frac{\pi}{2}} \ln\left( \frac{1}{2} \sin 2\theta \right) \, d\theta = \int_{0}^{\frac{\pi}{2}} (-\ln 2) \, d\theta + \int_{0}^{\frac{\pi}{2}} \ln(\sin 2\theta) \, d\theta
+        \end{align*}
+        第一部分得 $-\dfrac{\pi}{2} \ln 2$, 对第二部分作代换 $u = 2\theta, d\theta = \dfrac{1}{2} du$:
         \[
-        J = \int_0^{\frac{\pi}{2}} \ln(\sin \theta) \,d\theta
+        \int_{0}^{\frac{\pi}{2}} \ln(\sin 2\theta) \, d\theta = \frac{1}{2} \int_{0}^{\pi} \ln(\sin u) \, du
         \]
-        根据对称性, 令 $\theta = \dfrac{\pi}{2} - \phi$,则
+        由于 $\sin u$ 在 $[0, \pi]$ 上关于 $u = \dfrac{\pi}{2}$ 对称，有
         \[
-        J = \int_0^{\frac{\pi}{2}} \ln(\cos \phi) \,d\phi
+        \frac{1}{2} \int_{0}^{\pi} \ln(\sin u) \, du = \frac{1}{2} \cdot 2 \int_{0}^{\frac{\pi}{2}} \ln(\sin u) \, du = J
         \]
-        相加得
+        代回方程得：
         \[
-        2J = \int_0^{\frac{\pi}{2}} \ln(\sin \theta \cos \theta) \,d\theta 
-        = \int_0^{\frac{\pi}{2}} \ln\left(\frac{\sin 2\theta}{2}\right) \,d\theta
-        = \int_0^{\frac{\pi}{2}} \ln(\sin 2\theta) \,d\theta - \int_0^{\frac{\pi}{2}} \ln 2 \,d\theta \tag{1}
+        2J = -\frac{\pi}{2} \ln 2 + J \Rightarrow J = -\frac{\pi}{2} \ln 2
         \]
-        令 $t = 2\theta$,则 $dt = 2 \, d\theta$,由于 $\sin t$ 在 $[0, \pi]$ 关于 $t = \dfrac{\pi}{2}$ 对称,
+        因此：
         \[
-        \int_0^{\frac{\pi}{2}} \ln(\sin 2\theta) \, d\theta 
-        = \frac{1}{2} \int_0^{\pi} \ln(\sin t) \, dt
-        = \frac{1}{2} \cdot 2 \int_0^{\frac{\pi}{2}} \ln(\sin t) \, dt
-        = \int_0^{\frac{\pi}{2}} \ln(\sin t) \, dt = J
-        \]
-        代入(1)得
-        \[
-        2J = J - \frac{\pi}{2} \ln 2 \implies J = -\frac{\pi}{2} \ln 2
-        \]
-        因此
-        \[
-        I = 0 - \left( -\frac{\pi}{2} \ln 2 \right) = \frac{\pi}{2} \ln 2
+        \int_{0}^{\frac{\pi}{2}} \theta \cot \theta \, d\theta = -J = \frac{\pi}{2} \ln 2
         \]
     \end{solution}
-    
+
 \question
 求
 \[
@@ -9838,12 +9519,6 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
 该级数的和为 $\frac{\pi^2}{12}$。
 所以,$[\int_0^1 \frac{\ln(x+1)}{x} dx] = \frac{\pi^2}{12}$。
 \end{solution}
-    \question 计算定积分（用到幂级数）:
-    \[
-    \int_0^1 (\ln x) \ln(1 - x) \, dx
-    \]
-    已知 $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$  
-    %https://www.youtube.com/watch?v=XD2gz_CHbaw
 
     \question 
     \[
