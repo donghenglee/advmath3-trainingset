@@ -3993,8 +3993,7 @@ x^2 + y = 441 + 405 = 846
         \]
     \end{solution}
 
-    \question
-    已知三角方程
+    \question 已知三角方程
     \[
     \frac{\sin(x-\alpha)}{\cos(x-\alpha)-2\tan\alpha\sin(x-\alpha)}=\tan\alpha
     \]
@@ -4096,6 +4095,22 @@ x^2 + y = 441 + 405 = 846
         \tan^2 (x+y)=25\cdot \frac{3}{5}=15
         \]
     \end{solution}
+
+    \question 设 $n$ 是一正整数，且对于所有在区间 $(0, \pi)$ 的 $\theta$，
+\[
+\frac{\sin n\theta}{\sin \theta} = 1 + 2\cos(2\theta) + 2\cos(4\theta) + \cdots + 2\cos(500\theta)。
+\]
+求 $n$ 的值。
+
+\begin{solution}
+\begin{align*}
+&\sin \theta (1 + 2\cos(2\theta) + 2\cos(4\theta) + \cdots + 2\cos(500\theta)) \\
+&= \sin \theta + 2\cos(2\theta)\sin \theta + 2\cos(4\theta)\sin \theta + \cdots + 2\cos(500\theta)\sin \theta \\
+&= \sin \theta + \sin(3\theta) - \sin \theta + \sin(5\theta) - \sin(3\theta) + \cdots + \sin(501\theta) - \sin(499\theta) \\
+&= \sin(501\theta)
+\end{align*}
+因此，$n = 501$。
+\end{solution}
 
     \question 设 $\beta \in \left[\dfrac{3\pi}{4}, \pi\right]$ 且满足
     \[

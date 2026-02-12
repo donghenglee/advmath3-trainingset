@@ -3759,6 +3759,31 @@ K = 48(-9) - 33(-15) = -432 + 495 = 63
 \]
 因此，$K = 63$。
 \end{solution}
+
+\question 已知 $a_1, a_2, \dots, a_{226}$ 是 226 个相异的非零实数，满足
+\[ a_1 + \frac{8}{a_2} = a_2 + \frac{8}{a_3} = a_3 + \frac{8}{a_4} = \dots = a_{225} + \frac{8}{a_{226}} = a_{226} + \frac{8}{a_1} \text{。} \]
+设 $A = a_1 a_2 \dots a_{225} a_{226}$ 是这 226 个数的乘积，求 $\log_2 A$ 的值。
+
+\begin{solution}
+根据前 225 个等式以及 $a_1 + \frac{8}{a_2} = a_{226} + \frac{8}{a_1}$，我们得到以下 226 个等式：
+\begin{align*}
+a_1 - a_2 &= \frac{8(a_2 - a_3)}{a_2 a_3} \\
+a_2 - a_3 &= \frac{8(a_3 - a_4)}{a_3 a_4} \\
+&\vdots \\
+a_{225} - a_{226} &= \frac{8(a_{226} - a_1)}{a_{226} a_1} \\
+a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
+\end{align*}
+将这 226 个等式相乘，可得：
+\[ (a_1 - a_2)(a_2 - a_3) \dots (a_{225} - a_{226})(a_{226} - a_1) = \frac{8^{226}}{A^2} (a_1 - a_2)(a_2 - a_3) \dots (a_{225} - a_{226})(a_{226} - a_1) \]
+由于这 226 个数 $a_1, a_2, \dots, a_{226}$ 是互不相同的，因此：
+\[ (a_1 - a_2)(a_2 - a_3) \dots (a_{225} - a_{226})(a_{226} - a_1) \neq 0 \]
+这推导出：
+\[ A^2 = 8^{226} \]
+从而有：
+\[ A = 2^{3 \times 113} \]
+因此：
+\[ \log_2 A = 339 \]
+\end{solution}
     \question 求联立方程
     \[
     \begin{cases}
@@ -8723,6 +8748,70 @@ x'y'z' = x'+y'+z'
         S \le \frac{4}{3} \left(6 - \frac{3}{4}\sum_{i=1}^5 x_i\right) \left(\frac{3}{4}\sum_{i=1}^5 x_i\right) \le \frac{4}{3} \cdot 3^2 = 12
         \]
     \end{solution}
+\question 已知 $x, y$ 及 $z$ 是正数且 $xyz = 972$，求
+\[
+\frac{x^2}{2y + 3z} + \frac{4y^2}{x + 3z} + \frac{9z^2}{x + 2y}
+\]
+的最小可能值。
+
+\begin{solution}
+注意对于任意正数 $\alpha$，
+\begin{align*}
+\frac{x^2}{2y + 3z} + \alpha^2(2y + 3z) &\ge 2\alpha x, \\
+\frac{4y^2}{x + 3z} + \alpha^2(x + 3z) &\ge 4\alpha y, \\
+\frac{9z^2}{x + 2y} + \alpha^2(x + 2y) &\ge 6\alpha z.
+\end{align*}
+因此，
+\[
+\frac{x^2}{2y + 3z} + \frac{4y^2}{x + 3z} + \frac{9z^2}{x + 2y} \ge 2(\alpha - \alpha^2)(x + 2y + 3z).
+\]
+由于 $f(\alpha) = \alpha - \alpha^2$ 当 $\alpha = \frac{1}{2}$ 时有最大值 $\frac{1}{4}$，我们发现
+\[
+\frac{x^2}{2y + 3z} + \frac{4y^2}{x + 3z} + \frac{9z^2}{x + 2y} \ge \frac{1}{2}(x + 2y + 3z).
+\]
+根据算术平均数-几何平均数不等式，
+\[
+x + 2y + 3z \ge 3 \sqrt[3]{6xyz},
+\]
+等号成立当且仅当 $x = 2y = 3z$。因此，
+\[
+\frac{x^2}{2y + 3z} + \frac{4y^2}{x + 3z} + \frac{9z^2}{x + 2y} \ge \frac{3}{2} \times \sqrt[3]{6 \times 972} = 27,
+\]
+等号成立当
+\[
+x = 18, \quad y = 9, \quad z = 6.
+\]
+因此，$\frac{x^2}{2y + 3z} + \frac{4y^2}{x + 3z} + \frac{9z^2}{x + 2y}$ 的最小可能值是 27。
+\end{solution}
+    \question 已知 $x_1, x_2, \dots, x_{996}$ 是实数。对于所有的 $i$，$-1 \le x_i \le 1$，且
+\[ x_1 + x_2 + \dots + x_{996} = 0 \]
+求 $\sum_{i=1}^{996} x_i^3$ 的最大值。
+
+\begin{solution}
+假设 $x_i$ 中有 $k$ 个是正数，$l$ 个是负数，其中 $k + l = N \le 996$。其余的 $x_i$ 为零。
+令 $u_1, \dots, u_k$ 为那些正的 $x_i$，且令 $v_1, \dots, v_l$ 为那些负的 $x_i$ 的绝对值，使得 $v_1, \dots, v_l$ 均为正数。
+则我们有：
+\[ u_1 + \dots + u_k = v_1 + \dots + v_l \]
+且
+\[ \sum_{i=1}^{996} x_i^3 = (u_1^3 + \dots + u_k^3) - (v_1^3 + \dots + v_l^3) \]
+设 $m = u_1 + \dots + u_k = v_1 + \dots + v_l$。由题意知 $m \le \min\{k, l\}$。
+根据赫尔德不等式 (Holder's inequality)：
+\[ (v_1^3 + \dots + v_l^3)^{\frac{1}{3}} (1 + \dots + 1)^{\frac{2}{3}} \ge v_1 + \dots + v_l \]
+当且仅当 $v_1 = \dots = v_l$ 时等号成立。因此，
+\[ v_1^3 + \dots + v_l^3 \ge \frac{m^3}{l^2} \]
+另一方面，由于 $u_i \le 1$，可得 $u_i^3 \le u_i$。因此，
+\[ (u_1^3 + \dots + u_k^3) - (v_1^3 + \dots + v_l^3) \le u_1 + \dots + u_k - \frac{m^3}{l^2} = m - \frac{m^3}{l^2} \]
+固定 $l$，设 $f(m) = m - \frac{m^3}{l^2}$，其中 $0 < m \le \min\{l, N-l\}$。
+通过求导 $f'(m) = 1 - \frac{3m^2}{l^2}$ 可知：
+\begin{itemize}
+    \item 若 $k \ge \frac{l}{\sqrt{3}}$，则 $f(m)$ 在 $m = \frac{l}{\sqrt{3}}$ 处取得最大值 $M_1 = \frac{2}{3\sqrt{3}}l$。经过分析，$M_1 < \frac{N}{4}$。
+    \item 若 $k \le \frac{l}{\sqrt{3}}$，则 $f(m)$ 在 $m = k$ 处取得最大值 $M_2 = k - \frac{k^3}{(N-k)^2}$。
+\end{itemize}
+考察函数 $g(k) = k - \frac{k^3}{(N-k)^2}$，可知当 $k = \frac{N}{3}$ 时 $g(k)$ 取得最大值 $\frac{N}{4}$。
+代入 $N = 996$，最大值为 $\frac{996}{4} = 249$。
+当 $x_1 = \dots = x_{332} = 1$ 且 $x_{333} = \dots = x_{996} = -\frac{1}{2}$ 时，等号成立。
+因此，$\sum_{i=1}^{996} x_i^3$ 的最大值是 249。
+\end{solution}
 \end{questions}
 
 \pagebreak
