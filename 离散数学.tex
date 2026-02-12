@@ -5,6 +5,3313 @@
 \vfil
 \input{pageborder}
 \thispagestyle{empty}
+
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{整除}{整除} \label{整除}
+  }
+\end{center}
+\separator
+\begin{center}
+    考点: 整除基本性质、质因数分解、最小公倍数、最大公因数、因数函数、勒让德定理、贝祖等式
+\end{center}
+\vspace{0.5pt}
+\nopagecolor
+\begin{questions}
+    \question 已知 $n | 10a - b,n | 10c - d$。证明 $n | ad - bc$。
+    \begin{solution}
+        由于 
+        \[
+        n | (10a - b)c + (10c - d)a 
+        \]
+        于是
+        \[ 
+        n | ad - bc
+        \]
+    \end{solution}
+
+    \question 例 5、已知 $1987 | \underbrace{11\dots1}_{n \text{个}}$，证明 $1987 | \underbrace{11\dots1}_{n \text{个}}\underbrace{99\dots9}_{n \text{个}}\underbrace{88\dots8}_{n \text{个}}\underbrace{77\dots7}_{n \text{个}}$。
+
+    \begin{solution}
+    证：$\underbrace{11\dots1}_{n \text{个}}\underbrace{99\dots9}_{n \text{个}}\underbrace{88\dots8}_{n \text{个}}\underbrace{77\dots7}_{n \text{个}} = \underbrace{11\dots1}_{n \text{个}} \times 10^{3n} + 9 \times \underbrace{11\dots1}_{n \text{个}} \times 10^{2n} + 8 \times \underbrace{11\dots1}_{n \text{个}} \times 10^n + 7 \times \underbrace{11\dots1}_{n \text{个}}$
+
+    为 $\underbrace{11\dots1}_{n \text{个}}$ 的倍数，由于 $1987 | \underbrace{11\dots1}_{n \text{个}}$ 且 $\underbrace{11\dots1}_{n \text{个}} | \underbrace{11\dots1}_{n \text{个}}\underbrace{99\dots9}_{n \text{个}}\underbrace{88\dots8}_{n \text{个}}\underbrace{77\dots7}_{n \text{个}}$，
+
+    因此 $1987 | \underbrace{11\dots1}_{n \text{个}}\underbrace{99\dots9}_{n \text{个}}\underbrace{88\dots8}_{n \text{个}}\underbrace{77\dots7}_{n \text{个}}$。
+    \end{solution}
+
+    \question 例 6、正整数 $n$ 使得 $n^2 + 2005$ 是完全平方数，则 $(n^2 + 2005)^2$ 的个位数字是 \underline{\hspace{1cm}}。
+
+\begin{solution}
+解：设 $n^2 + 2005 = m^2 (m > 0)$，则 $(m - n)(m + n) = 2005 = 1 \times 2005 = 5 \times 401$，得
+\[ \begin{cases} m - n = 1 \\ m + n = 2005 \end{cases} \text{或} \begin{cases} m - n = 5 \\ m + n = 401 \end{cases} \]
+解得 $\begin{cases} m = 1003 \\ n = 1002 \end{cases}$ 或 $\begin{cases} m = 203 \\ n = 198 \end{cases}$。
+由 $1003^2$ 个位数字是 $9$，由 $203^2$ 个位数字也是 $9$，知它的个位数字也是 $9$。
+\end{solution}
+
+\question 例 9、求 $2004!$ 末尾零的个数。
+
+\begin{solution}
+解：因为 $10 = 2 \times 5$，而 $2$ 比 $5$ 多，所以只要考虑 $2004!$ 中 $5$ 的幂指数，即
+\[ \lfloor \frac{2004}{5} \rfloor + \lfloor \frac{2004}{25} \rfloor + \lfloor \frac{2004}{125} \rfloor + \lfloor \frac{2004}{625} \rfloor = 400 + 80 + 16 + 3 = 499 \]
+（注：原文中使用了分式形式表示取整逻辑）。
+\end{solution}
+
+\question 例 10、设 $72 | \overline{a679b}$，求 $a$，$b$ 的值。
+
+\begin{solution}
+解：$72 = 8 \times 9$，且 $(8, 9) = 1$，所以只需讨论 $8$、$9$ 都整除 $\overline{a679b}$ 时 $a$，$b$ 的值。
+若 $8 | \overline{a679b}$，则 $8 | \overline{79b}$，由除法可得 $b = 2$。
+若 $9 | \overline{a679b}$，则 $9 | (a + 6 + 7 + 9 + 2)$，得 $a = 3$。
+（一个整数被 $9$ 整除的充要条件是它的各位数字之和能被 $9$ 整除。）
+\end{solution}
+
+\question 4、若 $(p, 6) = 1$，证明 $p^2 - 1$ 能被 $24$ 整除。
+
+\begin{solution}
+证：因为 $(p, 6) = 1$，所以 $p$ 不是 $2$ 的倍数，也不是 $3$ 的倍数。
+由于 $p$ 是奇数，可设 $p = 2k + 1$，则 $p^2 - 1 = (p - 1)(p + 1) = (2k)(2k + 2) = 4k(k + 1)$。
+因为 $k(k + 1)$ 是两个连续整数之积，必能被 $2$ 整除，故 $8 | (p^2 - 1)$。
+又因为 $p$ 不被 $3$ 整除，由费马小定理或余数分类可知 $p \equiv 1$ 或 $2 \pmod 3$，则 $p^2 \equiv 1 \pmod 3$，即 $3 | (p^2 - 1)$。
+由于 $(3, 8) = 1$，所以 $3 \times 8 = 24 | (p^2 - 1)$。
+\end{solution}
+
+\question 7、证明 $5^{2n} + 4 \cdot 3^{2n}$（$n$ 是自然数）不是质数。
+
+\begin{solution}
+证：$5^{2n} + 4 \cdot 3^{2n} = (5^n)^2 + (2 \cdot 3^n)^2$。
+利用恒等式 $a^4 + 4b^4$（苏菲·热尔曼恒等式）的思想进行配方：
+原式 $= (5^n)^2 + 2 \cdot 5^n \cdot (2 \cdot 3^n) + (2 \cdot 3^n)^2 - 2 \cdot 5^n \cdot (2 \cdot 3^n)$
+$= (5^n + 2 \cdot 3^n)^2 - 4 \cdot 15^n$。
+当 $n$ 为偶数时（设 $n=2k$），原式可化为平方差：
+$= (5^n + 2 \cdot 3^n)^2 - (2 \cdot 15^k)^2 = (5^n + 2 \cdot 3^n - 2 \cdot 15^k)(5^n + 2 \cdot 3^n + 2 \cdot 15^k)$。
+由于该数可以分解为两个大于 1 的整数之积，故不是质数。
+\end{solution}
+
+\question 8、证明 $p^{k+2} + p^{k+1} + q^{k+2} + q^{k+1}$ 是合数。
+
+\begin{solution}
+证：原式可进行因式分解：
+$p^{k+2} + p^{k+1} + q^{k+2} + q^{k+1} = p^{k+1}(p + 1) + q^{k+1}(q + 1)$。
+若 $p, q$ 同为奇数，则 $p+1$ 和 $q+1$ 均为偶数，原式必为偶数且大于 2，是合数。
+若 $p, q$ 一奇一偶（如 $p=2$），则需根据 $k$ 的取值进一步讨论。
+\end{solution}
+
+\question 9、使 $n^3 + 100$ 能被 $n + 10$ 整除的正整数 $n$ 的最大值是多少？
+
+\begin{solution}
+解：利用多项式除法或凑项法：
+$n^3 + 100 = (n^3 + 1000) - 900 = (n + 10)(n^2 - 10n + 100) - 900$。
+若 $(n + 10) | (n^3 + 100)$，则必有 $(n + 10) | 900$。
+为了使 $n$ 最大，$n + 10$ 应取 $900$ 的最大约数，即 $n + 10 = 900$。
+解得 $n = 890$。
+\end{solution}
+
+\question 14、证明：三个连续奇数的平方和加 $1$，能被 $12$ 整除，但不能被 $24$ 整除。
+
+\begin{solution}
+证：设三个连续奇数为 $2k-2, 2k+1, 2k+3$（此处原图中手写建议为 $2k-1, 2k+1, 2k+3$）。
+设三个连续奇数为 $n-2, n, n+2$（其中 $n$ 为奇数）。
+$(n-2)^2 + n^2 + (n+2)^2 + 1 = n^2 - 4n + 4 + n^2 + n^2 + 4n + 4 + 1 = 3n^2 + 9 = 3(n^2 + 3)$。
+因为 $n$ 是奇数，设 $n = 2m + 1$，则 $n^2 + 3 = (2m + 1)^2 + 3 = 4m^2 + 4m + 4 = 4(m^2 + m + 1)$。
+所以原式 $= 3 \times 4(m^2 + m + 1) = 12(m^2 + m + 1)$，显见能被 $12$ 整除。
+又因为 $m^2 + m = m(m+1)$ 必为偶数，故 $m^2 + m + 1$ 必为奇数。
+因此 $12 \times \text{奇数}$ 不能被 $24$ 整除。
+\end{solution}
+
+\question 18、将自然数 $N$ 接写在任意一个自然数的右面，如果得到的新数都能被 $N$ 整除，那么 $N$ 称为魔术数。问小于 $2000$ 的自然数中有多少个魔术数？
+
+\begin{solution}
+解：设任意自然数为 $M$，$N$ 是一个 $k$ 位数。接写后的新数为 $10^k M + N$。
+由题意，$N | (10^k M + N)$ 对任意 $M$ 成立，这意味着 $N | 10^k M$ 对任意 $M$ 成立。
+取 $M=1$，则必须满足 $N | 10^k$。
+若 $k=1$，$N | 10^1$，则 $N \in \{1, 2, 5\}$。
+若 $k=2$，$N | 10^2$ 且 $N \ge 10$，则 $N \in \{10, 20, 25, 50\}$。
+若 $k=3$，$N | 10^3$ 且 $N \ge 100$，则 $N \in \{100, 125, 200, 250, 500\}$。
+若 $k=4$，$N | 10^4$ 且 $1000 \le N < 2000$，则 $N \in \{1000, 1250\}$。
+综上所述，魔术数共有 $3 + 4 + 5 + 2 = 14$ 个。
+\end{solution}
+
+\question 23、某正整数之平方，其末三位是相等的非零数字，求具有该性质的最小正整数。
+
+\begin{solution}
+解：设该正整数为 $x$，则 $x^2 \equiv \overline{aaa} \pmod{1000}$，其中 $a \in \{1, 2, \dots, 9\}$。
+即 $x^2 \equiv 111a \pmod{1000}$。
+由于完全平方数的末位只能是 $0, 1, 4, 5, 6, 9$，故 $a$ 只能取 $1, 4, 5, 6, 9$。
+经检验：
+若 $a=4$，$x^2 \equiv 444 \pmod{1000}$。此时 $x$ 必为偶数，设 $x=2y$，则 $4y^2 \equiv 444 \pmod{1000} \Rightarrow y^2 \equiv 111 \pmod{250}$。
+由 $y^2 \equiv 1 \pmod{10}$ 知 $y$ 末位为 $1$ 或 $9$。
+通过计算发现 $y = 38$ 时，$38^2 = 1444$，满足末三位为 $444$。
+因此最小正整数 $x = 38$。
+\end{solution}
+
+\question 有多少组正整数 $(a, b, c)$ 满足以下的条件：$a$ 是 $b$ 与 $c$ 的因数且 $a + b + c = 45$。
+
+\begin{solution}
+由于 $a$ 是 $b$ 与 $c$ 的因数，存在正整数 $k$ 及 $l$ 使得 $b = ka$，$c = la$。
+因此，
+\[
+45 = a(1 + k + l)
+\]
+即，$a$ 是 $45$ 的因数。
+\[
+45 = 3^2 \times 5
+\]
+$45$ 的因数有 $1, 3, 5, 9, 15, 45$ 六个。
+
+\begin{tabular}{|c|c|c|}
+\hline
+$a$ & $k + l$ & 不同的 $(k, l)$ 组合数 \\
+\hline
+1 & 44 & 43 \\
+\hline
+3 & 14 & 13 \\
+\hline
+5 & 8 & 7 \\
+\hline
+9 & 4 & 3 \\
+\hline
+15 & 2 & 1 \\
+\hline
+45 & 0 & 没有 \\
+\hline
+\end{tabular}
+
+因此，共有 $43 + 13 + 7 + 3 + 1 = 67$ 组 $(a, b, c)$ 满足条件。
+\end{solution}
+
+\question 有多少个整数 $n$ 使得 $\frac{2n^4 + 6n^3 - 3n^2 - 108n + 3}{n+3}$ 也是整数？
+
+\begin{solution}
+\begin{align*}
+\frac{2n^4 + 6n^3 - 3n^2 - 108n + 3}{n+3} &= 2n^3 - \frac{3n^2 + 9n}{n+3} - \frac{99n + 297}{n+3} + \frac{300}{n+3} \\
+&= 2n^3 - 3n - 99 + \frac{300}{n+3}
+\end{align*}
+这个数是整数若且唯若 $n+3$ 可以整除 $300$。
+\[
+300 = 2^2 \times 3 \times 5^2
+\]
+有 $2 \times 3 \times 2 \times 3 = 36$ 个因数：
+$\pm 1$，$\pm 2$，$\pm 3$，$\pm 4$，$\pm 5$，$\pm 6$，$\pm 10$，$\pm 12$，$\pm 15$，$\pm 20$，$\pm 25$，$\pm 30$，$\pm 50$，$\pm 60$，$\pm 75$，$\pm 100$，$\pm 150$，$\pm 300$。
+$n+3$ 等于这些 $300$ 的因数的任何一个，都会使得 $\frac{2n^4 + 6n^3 - 3n^2 - 108n + 3}{n+3}$ 是整数。因此，有 $36$ 个整数 $n$ 使得该式为整数。
+答：36。
+\end{solution}
+
+\question $360! = 1 \times 2 \times 3 \times \dots \times 359 \times 360$，这个数后面有几个 $0$？
+
+\begin{solution}
+一个数后面有 $k$ 个 $0$ 若且唯若它能被 $10^k$ 整除，但不能被 $10^{k+1}$ 整除。
+$360!$ 能被 $5^b$ 整除，$b$ 的最大值是
+\[
+\lfloor \frac{360}{5} \rfloor + \lfloor \frac{360}{5^2} \rfloor + \lfloor \frac{360}{5^3} \rfloor
+\]
+\[
+= 72 + 14 + 2
+\]
+\[
+= 88
+\]
+若 $360!$ 能被 $5^b$ 整除，则它也能被 $2^b$ 整除。
+因此，$360!$ 能被 $10^{88}$ 整除，不能被 $10^{89}$ 整除。它的后面有 $88$ 个 $0$。
+答：88。
+\end{solution}
+
+\question 有多少个小于 132 的正整数与 132 互质？
+
+\begin{solution}
+\[
+132 = 2^2 \times 3 \times 11
+\]
+一个数与 132 互质，则它不能被 2, 3 或 11 整除。
+不大于 132 的正整数中，可以被 2 整除的有 $\frac{132}{2} = 66$ 个；
+可以被 3 整除的有 $\frac{132}{3} = 44$ 个；
+可以被 11 整除的有 $\frac{132}{11} = 12$ 个；
+可以被 2 及 3 整除的有 $\frac{132}{2 \times 3} = 22$ 个；
+可以被 2 及 11 整除的有 $\frac{132}{2 \times 11} = 6$ 个；
+可以被 3 及 11 整除的有 $\frac{132}{3 \times 11} = 4$ 个；
+可以被 2, 3 及 11 整除的有 $\frac{132}{2 \times 3 \times 11} = 2$ 个。
+因此，与 132 互质的有
+\begin{align*}
+&132 - \frac{132}{2} - \frac{132}{3} - \frac{132}{11} + \frac{132}{2 \times 3} + \frac{132}{2 \times 11} + \frac{132}{3 \times 11} - \frac{132}{2 \times 3 \times 11} \\
+&= 132 \times \left( 1 - \frac{1}{2} \right) \times \left( 1 - \frac{1}{3} \right) \times \left( 1 - \frac{1}{11} \right) \\
+&= 2 \times 2 \times 10 \\
+&= 40
+\end{align*}
+答：40。
+\end{solution}
+
+\question 有多少对整数 $(a, b)$ 满足以下三个条件？
+(a) $1 \le a \le 9$；
+(b) $0 \le b \le 9$；
+(c) 五位数 $\overline{a789b}$ 可以被 12 整除。
+
+\begin{solution}
+五位数 $\overline{a789b}$ 可以被 12 整除，则它必须能被 3 及 4 整除。
+因此二位数 $\overline{9b}$ 能被 4 整除，且
+\[
+a + b + 7 + 8 + 9 = a + b + 24
+\]
+能被 3 整除，即 $a + b$ 能被 3 整除。
+二位数 $\overline{9b}$ 能被 4 整除，则 $b$ 只能是 2 或 6。
+当 $b = 2$，$a + b$ 能被 3 整除表示 $a$ 只能是 1, 4, 7。
+当 $b = 6$，$a + b$ 能被 3 整除表示 $a$ 只能是 3, 6, 9。
+因此，只有 6 对 $(a, b)$ 满足条件。
+答：6。
+\end{solution}
+
+\question 已知 $a$，$b$ 及 $c$ 是两两互质的正整数，且
+\[
+\frac{8a}{b + 2c} = \frac{4b}{c + 3a} = \frac{3c}{5a + 3b}
+\]
+求 $b$ 的值。
+
+\begin{solution}
+\[
+\frac{8a}{b + 2c} = \frac{4b}{c + 3a} = \frac{3c}{5a + 3b} = \frac{8a + 4b + 3c}{b + 2c + c + 3a + 5a + 3b} = 1
+\]
+\[
+\begin{cases}
+b + 2c = 8a \\
+c + 3a = 4b \\
+5a + 3b = 3c
+\end{cases}
+\]
+\[
+b + 2(4b - 3a) = 8a \implies 9b = 14a
+\]
+\[
+c = 4b - 3 \times \frac{9}{14} b = \frac{29}{14} b
+\]
+因此，$a = 9k$，$b = 14k$，$c = 29k$，$k$ 是整数。
+由于 $a$，$b$ 及 $c$ 是两两互质的正整数，$k = 1$，$b = 14$。
+答：14。
+\end{solution}
+
+\question 已知
+\[
+\frac{1}{19^{50}} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots + \frac{a_n}{n!}
+\]
+其中 $a_1, a_2, \dots, a_n$ 为非负整数且对于所有 $2 \le k \le n$，$a_k \le k-1$。求 $n$ 的值。
+
+\begin{solution}
+令 $x = \frac{1}{19^{50}}$。
+则
+\[
+(n-1)! \times x = a_1(n-1)! + a_2 \frac{(n-1)!}{2!} + a_3 \frac{(n-1)!}{3!} + \dots + a_{n-1} \frac{(n-1)!}{(n-1)!} + \frac{a_n}{n}
+\]
+\[
+n! \times x = a_1 n! + a_2 \frac{n!}{2!} + a_3 \frac{n!}{3!} + \dots + a_{n-1} \frac{n!}{(n-1)!} + a_n
+\]
+这说明 $(n-1)! \times x$ 可能不是整数，但 $n! \times x$ 是整数。因此，$n$ 是满足 $19^{50} \mid n!$ 的最小整数。
+确定 $n$ 后，$a_n$ 必须是 $n! \times x$ 除以 $n$ 的余数，$a_{n-1}$ 必须是 $(n-1)! \times x - \frac{a_n}{n}$ 除以 $n-1$ 的余数，依此类推。整数 $a_1, a_2, \dots, a_n$ 是按相反顺序逐一确定的。
+现在让我们确定 $n$ 的值。由于 19 是质数，根据勒让德定理，我们必须有：
+\[
+\lfloor \frac{n}{19} \rfloor + \lfloor \frac{n}{19^2} \rfloor + \lfloor \frac{n}{19^3} \rfloor + \dots = 50
+\]
+由于 $\lfloor \frac{50}{19} \rfloor = 2$，我们发现满足该条件的最小 $n$ 为：
+\[
+n = (50 - 2) \times 19 = 912
+\]
+答：912。
+\end{solution}
+
+\question 已知 $m$ 是正整数且方程式 $x^2 + 2(m + 14)x + (120m + 99) = 0$ 的两个根都是整数，求 $m$ 的最小可能值。
+
+\begin{solution}
+两个根必须都是负整数。设它们为 $-a$ 和 $-b$，其中 $a > b > 0$。
+则
+\begin{align*}
+a + b &= 2(m + 14) \\
+ab &= 120m + 99
+\end{align*}
+由于 $120m + 99$ 是奇数，故 $a$ 和 $b$ 必须都是奇数。这意味着
+\[
+c = \frac{a - b}{2} \text{ 必须是一个正整数。}
+\]
+\begin{align*}
+c^2 &= \left( \frac{a - b}{2} \right)^2 \\
+&= \left( \frac{a + b}{2} \right)^2 - ab \\
+&= m^2 + 28m + 196 - 120m - 99 \\
+&= m^2 - 92m + 97 \\
+&= (m - 46)^2 - 2019 \text{}
+\end{align*}
+因此，
+\[
+(m - 46 + c)(m - 46 - c) = 2019 \text{}
+\]
+由于 2019 的质因数分解为 $3 \times 673$，且 $m - 46 + c > m - 46 - c$，我们只能有以下情形：
+\[
+\begin{cases} m - 46 + c = 2019 \\ m - 46 - c = 1 \end{cases}
+\]
+\[
+\begin{cases} m - 46 + c = -1 \\ m - 46 - c = -2019 \end{cases}
+\]
+\[
+\begin{cases} m - 46 + c = 673 \\ m - 46 - c = 3 \end{cases}
+\]
+\[
+\begin{cases} m - 46 + c = -3 \\ m - 46 - c = -673 \end{cases}
+\]
+由于 $m$ 是正整数，$m$ 只能是 1056 或 384。
+因此，$m$ 的最小可能值为 384。
+\end{solution}
+
+\question
+已知 $n$ 是一正整数，$N = 2040 + n$。若 $N$ 恰好有 10 个正的因数，求 $n$ 的最小可能值。
+
+\begin{solution}
+如果 $N$ 的素因子分解为 $N = p_1^{a_1} p_2^{a_2} \dots p_k^{a_k}$，其中 $p_1, p_2, \dots, p_k$ 是不同的素数，且 $a_1, a_2, \dots, a_k$ 为正整数，那么 $N$ 有 $(a_1 + 1)(a_2 + 1) \dots (a_k + 1)$ 个正因数。
+
+已知 $N$ 恰好有 $10 = 2 \times 5$ 个正因数，则 $N$ 必须具有 $p^9$ 或 $p_1 p_2^4$ 的形式。
+
+* 形如 $p^9$ 的整数按 $p$ 的升序排列为 $2^9 = 512, 3^9 = 19683, \dots$。
+* 形如 $p_1 p_2^4$ 的整数有：
+    * $2^4 p_1 = 16p_1$，其中 $p_1$ 是不等于 2 的素数。大于 2040 的最小此类数是当 $p_1 = 131$ 时，$16 \times 131 = 2096$。
+    * $3^4 p_1 = 81p_1$，其中 $p_1$ 是不等于 3 的素数。大于 2040 的最小此类数是当 $p_1 = 29$ 时，$81 \times 29 = 2349$。
+    * $5^4 p_1 = 625p_1$，其中 $p_1$ 是不等于 5 的素数。大于 2040 的最小此类数是当 $p_1 = 7$ 时，$625 \times 7 = 4375$。
+    * 当 $p_2 \ge 7$ 时，$7^4 = 2401$，因此 $N$ 也会大于 2040。
+
+
+在上述所有情况中，大于 2040 且具有 10 个因数的最小整数 $N$ 是 2096。
+因此，$2040 + n = 2096$，解得 $n = 56$
+最小的正整数 $n$ 是 56。
+\end{solution}
+
+
+\question
+将与 2020 互质的正整数按由小到大的顺序排列成一个数列，求第 356 项。
+
+\begin{solution}
+由于 $2020 = 2^2 \times 5 \times 101$，一个正整数与 2020 互质当且仅当它与 2、5 和 101 互质。
+在不大于 $N$ 的正整数中，与 2020 互质的数的个数由包含排斥原理给出：
+\[
+f(N) = N - \left\lfloor \frac{N}{2} \right\rfloor - \left\lfloor \frac{N}{5} \right\rfloor - \left\lfloor \frac{N}{101} \right\rfloor + \left\lfloor \frac{N}{10} \right\rfloor + \left\lfloor \frac{N}{202} \right\rfloor + \left\lfloor \frac{N}{505} \right\rfloor - \left\lfloor \frac{N}{1010} \right\rfloor
+\]
+数列中的第 356 项是使得 $f(N) = 356$ 的最小 $N$。
+我们注意到 $f(800) = 317$，$f(900) = 357$。
+进一步计算可得：
+\begin{align*}
+f(899) &= 357 \\
+f(898) &= 356 \\
+f(897) &= 356 \\
+f(896) &= 355
+\end{align*}
+这表明数列中的第 356 项是 897。
+\end{solution}
+\question
+设 $S = \{1, 3, 5, \dots, 35\}$ 为小于 36 的正奇数集合。对于 $S$ 的子集合 $A$，定义 $f(A)$ 为 $A$ 中所有元素的和。若 $f(A) = 36$，$A$ 就被称为完美的集合。$S$ 的子集中，有几个是完美的？
+
+\begin{solution}
+设 $A$ 是 $S$ 的一个完美子集。注意到如果 $A$ 有 $m$ 个元素，那么其最小可能的和为前 $m$ 个奇数的和：
+\[
+f(A) \ge 1 + 3 + \dots + (2m - 1) = m^2
+\]
+对于 $f(A) = 36$，可得 $m^2 \le 36$，即 $m \le 6$。由于 36 是偶数，且集合 $S$ 中的元素均为奇数，因此 $A$ 必须包含偶数个元素才能使其总和为偶数。
+因此，$m$ 只能是 2, 4 或 6 个元素。
+
+* **若 $m = 6$：**
+    $A$ 必须由最小的 6 个奇数组成，即 $A = \{1, 3, 5, 7, 9, 11\}$。只有 1 种可能性。
+
+* **若 $m = 2$：**
+    设 $A = \{2k_1 - 1, 2k_2 - 1\}$，其中 $1 \le k_1 < k_2 \le 18$。
+    则 $(2k_1 - 1) + (2k_2 - 1) = 36$，整理得 $k_1 + k_2 = 19$。
+    满足条件的 $(k_1, k_2)$ 有 $(1, 18), (2, 17), \dots, (9, 10)$，共有 9 种可能性。
+
+* **若 $m = 4$：**
+    设 $A = \{2k_1 - 1, 2k_2 - 1, 2k_3 - 1, 2k_4 - 1\}$，其中 $1 \le k_1 < k_2 < k_3 < k_4 \le 18$。
+    则其总和为 $2(k_1 + k_2 + k_3 + k_4) - 4 = 36$，即 $k_1 + k_2 + k_3 + k_4 = 20$。
+    令：
+    \begin{align*}
+    k_1 &= a + 1 \\
+    k_2 &= a + 1 + b + 1 \\
+    k_3 &= a + 1 + b + 1 + c + 1 \\
+    k_4 &= a + 1 + b + 1 + c + 1 + d + 1
+    \end{align*}
+   
+    其中 $a, b, c, d$ 为非负整数。代入 $k_1 + k_2 + k_3 + k_4 = 20$ 得到：
+    \[
+    4a + 3b + 2c + d = 10
+    \]
+   
+    我们根据 $a$ 的取值进行讨论：
+    1.  若 $a = 2$，则 $3b + 2c + d = 2$，解得 $(b, c, d)$ 有 $(0, 1, 0)$ 或 $(0, 0, 2)$，共 2 种。
+    2.  若 $a = 1$，则 $3b + 2c + d = 6$。
+        - 若 $b = 2$，则 $2c + d = 0$，有 1 种解。
+        - 若 $b = 1$，则 $2c + d = 3$，有 2 种解。
+        - 若 $b = 0$，则 $2c + d = 6$，有 4 种解。
+        此部分共 $1 + 2 + 4 = 7$ 种。
+    3.  若 $a = 0$，则 $3b + 2c + d = 10$。
+        - 若 $b = 3$，则 $2c + d = 1$，有 1 种解。
+        - 若 $b = 2$，则 $2c + d = 4$，有 3 种解。
+        - 若 $b = 1$，则 $2c + d = 7$，有 4 种解。
+        - 若 $b = 0$，则 $2c + d = 10$，有 6 种解。
+        此部分共 $1 + 3 + 4 + 6 = 14$ 种。
+    因此 $m = 4$ 时共有 $2 + 7 + 14 = 23$ 种情况。
+
+综上所述，完美的集合共有 $1 + 9 + 23 = 33$ 个。
+\end{solution}
+\question
+设 $S = \{47x + 54y \mid x, y \text{ 是非负整数}\}$。在小于 10000 的正整数中，有多少个不在 $S$ 中？
+
+\begin{solution}
+注意到如果 $k$ 是一个整数，方程 $47x + 54y = k$ 的整数解 $(x, y)$ 可以写为
+\[
+x = 23k - 54n, \quad y = 47n - 20k
+\]
+对于某个整数 $n$。
+为了使 $x$ 和 $y$ 是非负整数，对于某些非负整数 $n$，我们必须有
+\[
+\frac{54}{23}n \le k \le \frac{47}{20}n
+\]
+等价地，必须存在一个非负整数 $n$ 使得
+\[
+\frac{20}{47}k \le n \le \frac{23}{54}k
+\]
+注意到如果 $k > 2538$，则
+\[
+\frac{23}{54}k - \frac{20}{47}k = \frac{k}{2538} > 1
+\]
+因此，总会存在一个整数 $n$ 满足条件。这意味着所有大于 2538 的正整数都在 $S$ 中。
+因此，我们只需要计算不大于 2538 且在 $S$ 中的正整数的个数。
+这等同于对每个 $1 \le n \le 1080$，计算有多少个整数 $k$ 满足
+\[
+\frac{54}{23}n \le k \le \frac{47}{20}n
+\]
+注意到当 $n \le 1080$ 时，$\frac{47}{20}(n - 1) < \frac{54}{23}n$，所以没有 $k$ 会被重复计算。
+设 $\lfloor x \rfloor$ 是不大于 $x$ 的最大整数，$\lceil x \rceil$ 是不小于 $x$ 的最小整数。
+我们发现不大于 2538 且在 $S$ 中的正整数 $k$ 的个数是
+\[
+\sum_{n=1}^{1080} \left( \lfloor \frac{47}{20}n \rfloor - \lceil \frac{54}{23}n \rceil + 1 \right) = \sum_{n=1}^{1080} \left( \lfloor \frac{7}{20}n \rfloor - \lceil \frac{8}{23}n \rceil \right) + 1080
+\]
+其中
+\begin{align*}
+\sum_{n=1}^{1080} \lfloor \frac{7}{20}n \rfloor &= \sum_{k=1}^{54} \sum_{r=1}^{20} \lfloor \frac{7}{20}(20(k - 1) + r) \rfloor \\
+&= \sum_{k=1}^{54} \sum_{r=1}^{20} \left( 7k - 7 + \lfloor \frac{7}{20}r \rfloor \right) \\
+&= \sum_{k=1}^{54} (140k - 76)
+\end{align*}
+并且
+\begin{align*}
+\sum_{n=1}^{1080} \lceil \frac{8}{23}n \rceil &= \sum_{k=1}^{47} \sum_{r=1}^{23} \lceil \frac{8}{23}(23(k - 1) + r) \rceil - 376 \\
+&= \sum_{k=1}^{47} \sum_{r=1}^{23} \left( 8k - 8 + \lceil \frac{8}{23}r \rceil \right) - 376 \\
+&= \sum_{k=1}^{47} (184k - 77) - 376
+\end{align*}
+不大于 2538 且在 $S$ 中的正整数 $k$ 的个数是
+\[
+140 \times \frac{54 \times 55}{2} - 76 \times 54 - 184 \times \frac{47 \times 48}{2} + 77 \times 47 + 376 + 1080 = 1319
+\]
+因此，不在 $S$ 中的正整数个数为 $2538 - 1319 = 1219$。
+\end{solution}
+
+\question
+设 $P = 1 \times 3 \times \dots \times 9999$ 是小于 10000 的正奇数的乘积。求最大的整数 $k$ 使得 $15^k$ 可以整除 $P$。
+
+\begin{solution}
+$P$ 能被 $15^k$ 整除，当且仅当它能被 $3^k$ 和 $5^k$ 同时整除。
+小于 10000 的所有奇数中 5 的倍数有：
+\[
+5, 15, 25, \dots, 9995
+\]
+共有 1000 个。
+小于 10000 的所有奇数中 25 的倍数有：
+\[
+25, 75, 125, \dots, 9975
+\]
+共有 200 个。
+小于 10000 的所有奇数中 125 的倍数有：
+\[
+125, 375, 625, \dots, 9875
+\]
+共有 40 个。
+小于 10000 的所有奇数中 625 的倍数有：
+\[
+625, 1875, 3125, \dots, 9375
+\]
+共有 8 个。
+小于 10000 的所有奇数中 3125 的倍数有：
+\[
+3125, 9375
+\]
+共有 2 个。
+使得 $5^k$ 整除 $P$ 的最大 $k$ 值为：
+\[
+1000 + 200 + 40 + 8 + 2 = 1250
+\]
+由于 $3^{1250}$ 也能整除 $P$，
+因此，使得 $15^k$ 整除 $P$ 的最大 $k$ 是 1250。
+\end{solution}
+
+\question
+设 $S = \{2, 5, 8, \dots, 83\}$ 为小于 84，且除以 3 余 2 的正整数集合。对于 $S$ 的子集合 $A$，定义 $f(A)$ 为 $A$ 中所有元素的和。若 $f(A) = 83$，$A$ 就被称为尴尬的集合。$S$ 的子集中，有几个是尴尬的？
+
+\begin{solution}
+设 $A$ 是 $S$ 的一个尴尬子集。注意到如果 $A$ 有 $m$ 个元素，那么
+\[
+f(A) \ge 2 + 5 + \dots + 3m - 1 = \frac{m(3m + 1)}{2}
+\]
+对于 $f(A) = 83$，可得 $m \le 7$。
+若 $A$ 的 $m$ 个元素为 $3k_1 - 1, 3k_2 - 1, \dots, 3k_m - 1$，其中 $1 \le k_1 < k_2 < \dots < k_m \le 28$，则
+\[
+3(k_1 + k_2 + \dots + k_m) = 83 + m
+\]
+这表明 $m$ 除以 3 的余数应为 1。
+因此，$m$ 只能是 1, 4 或 7 个元素。
+若 $m = 1$，则 $A = \{83\}$。只有 1 个这样的 $A$。
+若 $m = 4$，
+\[
+k_1 + k_2 + k_3 + k_4 = 29
+\]
+设
+\begin{align*}
+k_1 &= a + 1 \\
+k_2 &= a + 1 + b + 1 \\
+k_3 &= a + 1 + b + 1 + c + 1 \\
+k_4 &= a + 1 + b + 1 + c + 1 + d + 1
+\end{align*}
+$(k_1, k_2, k_3, k_4)$ 的解与以下方程的非负整数解一一对应：
+\[
+4a + 3b + 2c + d = 19
+\]
+解的个数为
+\begin{align*}
+\sum_{a=0}^{4} \sum_{b=0}^{\lfloor \frac{19-4a}{3} \rfloor} \sum_{c=0}^{\lfloor \frac{19-4a-3b}{2} \rfloor} 1 &= \sum_{a=0}^{4} \sum_{b=0}^{\lfloor \frac{19-4a}{3} \rfloor} \left( \lfloor \frac{19 - 4a - 3b}{2} \rfloor + 1 \right) \\
+&= \sum_{b=0}^{\lfloor \frac{19}{3} \rfloor} \left( \lfloor \frac{19 - 3b}{2} \rfloor + 1 \right) + \sum_{b=0}^{\lfloor \frac{15}{3} \rfloor} \left( \lfloor \frac{15 - 3b}{2} \rfloor + 1 \right) + \sum_{b=0}^{\lfloor \frac{11}{3} \rfloor} \left( \lfloor \frac{11 - 3b}{2} \rfloor + 1 \right) \\
+&+ \sum_{b=0}^{\lfloor \frac{7}{3} \rfloor} \left( \lfloor \frac{7 - 3b}{2} \rfloor + 1 \right) + \sum_{b=0}^{\lfloor \frac{3}{3} \rfloor} \left( \lfloor \frac{3 - 3b}{2} \rfloor + 1 \right) \\
+&= 94
+\end{align*}
+若 $m = 7$，
+\[
+k_1 + k_2 + k_3 + k_4 + k_5 + k_6 + k_7 = 30
+\]
+设
+\begin{align*}
+k_1 &= a + 1 \\
+k_2 &= a + 1 + b + 1 \\
+k_3 &= a + 1 + b + 1 + c + 1 \\
+k_4 &= a + 1 + b + 1 + c + 1 + d + 1 \\
+k_5 &= a + 1 + b + 1 + c + 1 + d + 1 + e + 1 \\
+k_6 &= a + 1 + b + 1 + c + 1 + d + 1 + e + 1 + f + 1 \\
+k_7 &= a + 1 + b + 1 + c + 1 + d + 1 + e + 1 + f + 1 + g + 1
+\end{align*}
+$(k_1, k_2, k_3, k_4, k_5, k_6, k_7)$ 的解与以下方程的非负整数解一一对应：
+\[
+7a + 6b + 5c + 4d + 3e + 2f + g = 2
+\]
+则必须有 $a = b = c = d = e = 0$，且 $2f + g = 2$。此时只能有 $(f, g) = (0, 2)$ 或 $(1, 0)$。共 2 种情况。
+综上所述，共有 97 个尴尬的集合。
+\end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{同余}{同余} \label{同余}
+  }
+\end{center}
+\separator
+\begin{center}
+    考点: 同余基本性质、模逆元、费马小定理、欧拉定理、中国剩余定理、威尔逊定理、阶与原根
+\end{center}
+\vspace{0.5pt}
+\nopagecolor
+\begin{questions}
+    \question 例 4、试证 $2^{3n+3} + 41$ ($n \in N$) 恒为 $7$ 的倍数。
+
+\begin{solution}
+证：因为 $2^{3n+3} = 8 \times 8^n \equiv 1 \pmod 7$，$41 \equiv 6 \pmod 7$，
+相加即可得 $1 + 6 = 7 \equiv 0 \pmod 7$。由此得证。
+\end{solution}
+
+\question 例 6、求 $3^{406}$ 的末二位数。
+
+\begin{solution}
+解法 1：$3^{406} = (3^4)^{101} \cdot 3^2 \equiv (81)^{101} \cdot 9 \equiv -19^{101} \times 9 \equiv -361^{50} \times 19 \times 9 \equiv -39^{50} \times 171$
+$\equiv 1521^{25} \times 29 \equiv 21^{25} \times 29 \equiv 441^{12} \times 21 \times 29 \equiv 41^{12} \times 9 = 1681^6 \times 9$
+$= 81^6 \times 9 \equiv 19^6 \times 9 = 361^3 \times 9 \equiv 61^3 \times 9 \equiv -39^3 \times 9 \equiv -1521 \times 39 \times 9$
+$\equiv -21 \times 351 \equiv -21 \times 51 \equiv -1071 \equiv -71 \equiv 29 \pmod{100}$
+$\therefore$ 末二位数为 $29$。
+
+解法 2：$100 = 4 \times 25$
+(一) $3^{406} \equiv (-1)^{406} \equiv 1 \equiv 29 \pmod 4$
+(二) $3^{406} = 27^{135} \times 3 \equiv 2^{135} \times 3 = 32^{27} \times 3 \equiv 7^{27} \times 3 = 49^{13} \times 7 \times 3 \equiv -1 \times 21 = -21 \equiv 4 \pmod{25}$
+由 (一)(二) $3^{406} \equiv 1 \equiv 29 \pmod 4$，$3^{406} \equiv 4 \equiv 29 \pmod{25}$
+所以 $3^{406} \equiv 29 \pmod{100}$，末两位为 $29$。
+
+解法 3：利用二项式定理展开，$9^{203} = (10-1)^{203} \equiv \binom{203}{202}(10)(-1)^{202} + (-1)^{203} = 2030 - 1 = 2029$
+$\equiv 29 \pmod{100} \therefore$ 末二位数为 $29$。
+\end{solution}
+
+\question 例 7、求 $243^{402}$ 的末两位数。
+
+\begin{solution}
+解：$243^{402} \equiv 3^{402} \equiv 9^{201} \equiv 1^{201} = 1 \equiv 49 \pmod 4$，
+$243^{402} \equiv 7^{402} \equiv 49^{201} \equiv -1^{201} = -1 \equiv 49 \pmod{25}$
+因此 $243^{402} \equiv 49 \pmod{[4, 25]=100}$，末两位为 $49$。
+\end{solution}
+
+\question 例 9、已知 $7^x \equiv 1 \pmod{500}$，求最小的正整数 $x$。
+
+\begin{solution}
+解：$7^x - 1 \equiv 0 \pmod{500}$，已知 $500$ 的倍数末位数字一定是 $0$，因此若 $7^x - 1$ 要被 $500$ 整除，其末位也必须是 $0$。由此可推出 $7^x$ 的末位必须是 $1$。我们知道 $7^4 = 2401 \Rightarrow 7^4$ 末位必也是 $1$，设 $x = 4n$ 代回同余式得到
+\[ 7^{4n} \equiv 1 \pmod{500} \]
+\[ 2401^n \equiv 1 \pmod{500} \]
+\[ 401^n \equiv 1 \pmod{500} \]
+\[ (1 + 400)^n \equiv 1 \pmod{500} \]
+\[ 1 + \binom{n}{1}400 + \binom{n}{2}400^2 + \dots + 400^n \equiv 1 \pmod{500} \]
+\[ 400n \equiv 0 \pmod{500} \]
+$n$ 最小为 $5$，因此 $x = 20$。
+\end{solution}
+
+\question 例 10、证明 $5y^2 + 3 = x^2$ 无解，$x, y \in \mathbb{Z}$。
+
+\begin{solution}
+证：若 $5y^2 + 3 = x^2$ 有解，则两边关于模 $5$ 同余，有 $5y^2 + 3 \equiv x^2 \pmod 5$
+即 $3 \equiv x^2 \pmod 5$，而任一个平方数 $x^2 \equiv 0, 1, 4 \pmod 5$
+$\therefore 3 \not\equiv 0, 1, 4 \pmod 5$ $\therefore$ 即得矛盾，即 $5y^2 + 3 = x^2$ 无解。
+\end{solution}
+
+\question 例 11、证明 $x^2 - 2y^2 = 77$ 无解，$x, y \in \mathbb{Z}$。
+
+\begin{solution}
+证 1：$11$ 和 $y$ 必互质，即 $(11, y) = 1$，否则的话设 $y = 11k$，必导致 $x = 11j$，但右式只有一个 $11$ 的因数，矛盾，因此 $(11, y) = 1$。假设存在解 $(x_0, y_0)$，则有同余式
+$x_0^2 - 2y_0^2 \equiv 0 \pmod{11}$，存在 $(y_0^{-1})^2$ 使得 $(y_0^{-1}x_0)^2 - 2 \equiv 0 \pmod{11}$，因此
+$(y_0^{-1}x_0)^2 \equiv 2 \pmod{11}$，但 $X^2 \equiv 1, 4, 3, 5, 9 \pmod{11}$ 矛盾，命题得证。
+
+证 2：假设方程有解，则 $(x_0, y_0)$ 只有两种情况
+一) $(x_0, y_0) = (\text{奇数, 偶数})$，则 $x_0^2 - 2y_0^2 \equiv 77 \Rightarrow 1 - 0 \equiv 5 \pmod 8$，矛盾。
+二) $(x_0, y_0) = (\text{奇数, 奇数})$，则 $x_0^2 - 2y_0^2 \equiv 77 \Rightarrow 1 - 2(1) \equiv 5 \pmod 8$，矛盾。
+命题得证。
+\end{solution}
+
+\question 例 12、证明 $x^2 - 3y^2 + 5z^2 = 0$ 无解。
+
+\begin{solution}
+证：设 $(x_0, y_0, z_0)$ 是解，则 $x_0^2 - 3y_0^2 + 5z_0^2 = 0 \Rightarrow x_0^2 - 3y_0^2 \equiv 0 \pmod 5$
+有两种情况，一) $(x_0, 5) = (y_0, 5) = 1$，则存在 $(y_0^{-1})^2$ 使得 $(y_0^{-1}x_0)^2 - 3 \equiv 0 \pmod 5$
+$\Rightarrow (y_0^{-1}x_0)^2 \equiv 3 \pmod 5$，但 $X^2 \equiv 1, 2, 4 \pmod 5$，矛盾。
+二) 若 $x_0 = 5^a k$，必有 $y_0 = 5^a j$，其中 $(k, j) = 1$。约去 $5^a$ 后，得到
+$k^2 - 3j^2 \equiv 0 \pmod 5$，同理可证无解。
+\end{solution}
+
+\question 例 13、已知 $n$ 是正整数，且 $2n + 1$，$3n + 1$ 都是平方数，证明 $40 | n$。
+
+\begin{solution}
+证：设 $2n + 1 = x^2$，$3n + 1 = y^2$。由于奇数的平方被 $8$ 除余 $1$，因此
+\[ \begin{cases} 2n + 1 \equiv 1 \\ 3n + 1 \equiv 1 \end{cases} \Rightarrow \begin{cases} 2n \equiv 0 \pmod 8 \Rightarrow n \equiv 0 \pmod 4 \\ 3n \equiv 0 \pmod 8 \Rightarrow n \equiv 0 \pmod 8 \end{cases} \]
+因此 $n$ 至少是 $8$ 的倍数。
+又，对任意整数 $z$ 有 $z^2 \equiv 0, 1, 4 \pmod 5$
+$x^2 + y^2 = (2n + 1) + (3n + 1) = 5n + 2$
+可能值 $x^2 + y^2 \equiv 1 + 1, 1 + 0, 0 + 1, 1 + 4, 4 + 1, 0 + 0, 4 + 4, 0 + 4, 4 + 0$
+只有 $x^2 + y^2 \equiv 1 \text{ 满足 } x^2 + y^2 \equiv 2$，因此 $x^2 + y^2 = 2n + 1 + 3n + 1 \equiv 2 \pmod 5$
+得到 $n \equiv 0$，因此 $5 | n$。综上所述，$n$ 为 $40$ 的倍数。
+\end{solution}
+
+\question 例 14、求最小的整数 $n$，使得 $\sum_{i=1}^{n} x_i^4 = 1599$，$x_i$ 为整数。据此，求出其中一组解。
+
+\begin{solution}
+解：由于 $a^4 \equiv 0 \pmod{16}$（偶数），$a^4 \equiv 1 \pmod{16}$（奇数），因此 $a^4 \equiv 0, 1 \pmod{16}$。
+$\sum_{i=1}^n x_i^4 = 1599 \equiv -1 \equiv 15 \pmod{16}$，因此 $n$ 最小是 $15$。
+现在求 $x_i$。由于有 $15$ 个数，且 $x_i^4 \equiv 1 \pmod{16}$，它们都是奇数。$x_i$ 最小是 $1, 3, 5$ 这些数。（$7^4 = 2401 > 1599$）
+$5^4 \times 3 = 1875 > 1599$，因此不能超过两个解是 $5$，考虑只有一个解是 $5$ 的情况。此时 $\sum_{i=1}^{14} x_i^4 = 1599 - 5^4 = 974$。由于 $974 = 81 \times 12 + 2$，可得出 $12$ 个 $3^4$ 和两个 $1$。猜测有 $12$ 个 $x_i$ 是 $3$，两个 $x_i$ 是 $1$。
+得到一组解是 $1, 1, 3, 3, \dots, 3, 5$。即 $2 \times 1^4 + 12 \times 3^4 + 5^4 = 1599$。
+\end{solution}
+
+\question 9、Prove that the number $\underbrace{11\dots1}_{n}$ (in the decimal notation) is not a perfect square.
+
+\begin{solution}
+证：$\underbrace{11\dots1}_{n}$ 的末两位数是 $11$。由于一个完全平方数被 $4$ 除的余数只能是 $0$ 或 $1$，而 $11 \equiv 3 \pmod 4$。因此该数不可能是完全平方数。
+\end{solution}
+
+\question 10、已知 $n! = 1 \times 2 \times \dots \times (n-1) \times n$。若 $A = \frac{2}{3!} + \frac{3}{4!} + \frac{4}{5!} + \dots + \frac{11}{12!}$，试求 $A$ 除以 $10$ 的余数。
+
+\begin{solution}
+解：观察通项 $\frac{k}{(k+1)!} = \frac{(k+1)-1}{(k+1)!} = \frac{1}{k!} - \frac{1}{(k+1)!}$。
+则 $A = (\frac{1}{2!} - \frac{1}{3!}) + (\frac{1}{3!} - \frac{1}{4!}) + \dots + (\frac{1}{11!} - \frac{1}{12!}) = \frac{1}{2} - \frac{1}{12!}$。
+若求 $12! A \pmod{10}$，则 $12! A = \frac{12!}{2} - 1 \equiv -1 \equiv 9 \pmod{10}$。
+\end{solution}
+
+\question 12、求证 $8888^{8888} + 7777^{7777}$ 能被 $37$ 整除。
+
+\begin{solution}
+证：因为 $111 = 3 \times 37 \equiv 0 \pmod{37}$，所以 $1111 \equiv 1 \pmod{37}$。
+$8888^{8888} + 7777^{7777} \equiv (8 \times 1)^{8888} + (7 \times 1)^{7777} \equiv 8^{8888} + 7^{7777} \pmod{37}$。
+利用费马小定理 $a^{36} \equiv 1 \pmod{37}$ 可化简指数进一步证明其余数为 $0$。
+\end{solution}
+
+\question 13、证明 $504$ 整除 $n^9 - n^3$。
+
+\begin{solution}
+证：$n^9 - n^3 = n^3(n^6 - 1) = n^3(n^3 - 1)(n^3 + 1)$。
+由于 $504 = 7 \times 8 \times 9$：
+1) 由费马小定理可知 $n^7 - n$ 被 $7$ 整除，可推导原式被 $7$ 整除。
+2) 任意整数立方模 $9$ 的余数为 $0, 1, 8$，可知原式被 $9$ 整除。
+3) 讨论 $n$ 的奇偶性，可知原式被 $8$ 整除。
+\end{solution}
+
+\question 17、证明 $x^2 + 2y^2 = 203$ 无整数解。
+
+\begin{solution}
+证：考虑模 $7$。$x^2 + 2y^2 \equiv 203 \equiv 0 \pmod 7$。
+由于 $2$ 不是模 $7$ 的二次剩余，同余式 $x^2 + 2y^2 \equiv 0 \pmod 7$ 仅当 $x, y$ 均为 $7$ 的倍数时成立。
+设 $x=7k, y=7m$，则 $49k^2 + 98m^2 = 203$。
+方程左边能被 $49$ 整除，但右边 $203$ 不能被 $49$ 整除，矛盾，故无解。
+\end{solution}
+
+\question 18、求 $3^{1998}$ 的末两位数。
+
+\begin{solution}
+解：$3^{1998} = (3^4)^{499} \cdot 3^2 = 81^{499} \cdot 9$。
+$81^{499} = (80 + 1)^{499} \equiv \binom{499}{1} \cdot 80 + 1 \equiv 499 \cdot 80 + 1 \equiv 21 \pmod{100}$。
+$21 \times 9 = 189 \equiv 89 \pmod{100}$，所以末两位数是 $89$。
+\end{solution}
+
+\question 19、证明当 $p$ 不少于 $5$ 的质数时，$p^2 + 2$ 为一合数。
+
+\begin{solution}
+证：因 $p \ge 5$ 且为质数，则 $p$ 不被 $3$ 整除。
+故 $p \equiv 1, 2 \pmod 3 \Rightarrow p^2 \equiv 1 \pmod 3$。
+$p^2 + 2 \equiv 1 + 2 = 3 \equiv 0 \pmod 3$。
+由于 $p^2 + 2 > 3$ 且能被 $3$ 整除，所以 $p^2 + 2$ 是合数。
+\end{solution}
+
+\question 20、证明 $701$ 以及 $61$ 被 $71$ 除时，它们的余数相等。
+
+\begin{solution}
+证：计算两数之差：$701 - 61 = 640$。
+若余数相等，差值应能被 $71$ 整除。
+计算 $640 \div 71 = 9 \dots 1$。
+注：若原题中 $61$ 为 $62$，则 $701-62=639=71 \times 9$，余数才相等。
+\end{solution}
+
+\question 21、若 $a$ 为自然数，证明 $10 | (a^{1993} - a^{1949})$。
+
+\begin{solution}
+证：$a^{1993} - a^{1949} = a^{1949}(a^{44} - 1)$。
+1) 易证其为偶数，即被 $2$ 整除。
+2) 由费马小定理 $a^5 \equiv a \pmod 5$，当 $(a, 5)=1$ 时 $a^4 \equiv 1 \pmod 5$，故 $a^{44} \equiv 1 \pmod 5$。
+因为能同时被 $2$ 和 $5$ 整除，所以能被 $10$ 整除。
+\end{solution}
+
+\question 23、求被 $3$ 除余 $2$，被 $5$ 除余 $3$，被 $7$ 除余 $5$ 的最小三位数。
+
+\begin{solution}
+解：设该数为 $x$。由题意 $x \equiv -1 \pmod 3$，$x \equiv -2 \pmod 5$，$x \equiv -2 \pmod 7$。
+由后两项得 $x \equiv -2 \equiv 33 \pmod{35}$。
+经检验，当 $x = 35 \times 4 + 33 = 173$ 时，满足 $173 \equiv 2 \pmod 3$。
+故最小三位数为 $173$。
+\end{solution}
+
+\question 24、已知 $7^n$ 有 $k$ 个重数 $7 \dots 7$，i) 证明它被 $4$ 除余 $3$；ii) 求它的末两位数。
+
+\begin{solution}
+解：i) $\underbrace{77\dots7}_{k} = \underbrace{77\dots7}_{k-1}0 + 7 \equiv 0 + 7 \equiv 3 \pmod 4$。
+ii) $7^1=07, 7^2=49, 7^3=43, 7^4=01 \dots$ 模 $100$ 的周期为 $4$。
+根据 $n$ 的具体取值可确定末两位。
+\end{solution}
+
+\question 25、设 $m > n \ge 1$，求最小的 $m+n$ 使得 $1000 | 1978^m - 1978^n$。
+
+\begin{solution}
+解：$1978^m - 1978^n = 1978^n(1978^{m-n} - 1)$ 需被 $8$ 和 $125$ 整除。
+1) 为被 $8$ 整除，因 $1978$ 仅含一个因数 $2$，故 $n \ge 3$。
+2) 为被 $125$ 整除，$1978^{m-n} \equiv 3^{m-n} \equiv 1 \pmod{125}$。
+由欧拉函数可知最小 $m-n = 100$。
+故 $n=3, m=103$，最小 $m+n = 106$。
+\end{solution}
+
+\question 30. 考虑以下的两个条件：
+(a) $n$ 是小于 1000 的正整数；
+(b) $n^n + 1$ 是 66 的倍数。
+满足这两个条件的正整数 $n$ 有几个？
+
+\begin{solution}
+因为 $66 = 2 \times 3 \times 11$，所以 $n^n + 1$ 是 66 的倍数若且唯若：
+(i) $n^n \equiv -1 \pmod 2$
+(ii) $n^n \equiv -1 \pmod 3$
+(iii) $n^n \equiv -1 \pmod{11}$
+
+由 (i) 知 $n$ 必须是奇数；由 (ii) 知 $n$ 不能被 3 整除且 $n$ 必须是奇数次幂（若 $n \equiv 1 \pmod 3$，则 $1^n \equiv 1 \not\equiv -1$；若 $n \equiv 2 \equiv -1 \pmod 3$，则 $(-1)^n \equiv -1$ 要求 $n$ 为奇数）。
+因此，$n \equiv -1 \pmod 2$ 且 $n \equiv -1 \pmod 3$，即 $n \equiv -1 \pmod 6$。
+
+对于 (iii) $n^n \equiv -1 \pmod{11}$，分析 $k^k \pmod{11}$ 的情况：
+若 $k \equiv \pm 2 \pmod{11}$，则 $k^2 \equiv 4, k^3 \equiv \pm 8, k^4 \equiv 5, k^5 \equiv \mp 1 \pmod{11}$。
+若 $k \equiv \pm 3 \pmod{11}$，则 $k^2 \equiv 9, k^3 \equiv \pm 5, k^4 \equiv 4, k^5 \equiv \pm 1 \pmod{11}$。
+若 $k \equiv \pm 4 \pmod{11}$，则 $k^2 \equiv 5, k^3 \equiv \pm 9, k^4 \equiv 3, k^5 \equiv \mp 1 \pmod{11}$。
+若 $k \equiv \pm 5 \pmod{11}$，则 $k^2 \equiv 3, k^3 \equiv \pm 4, k^4 \equiv 9, k^5 \equiv \pm 1 \pmod{11}$。
+
+满足 (iii) 的整数 $n$ 结合 $n \equiv -1 \pmod 6$ 可得以下 5 种情况：
+\begin{itemize}
+    \item $n \equiv -1 \pmod{11}, n \equiv 1 \pmod 2, n \equiv -1 \pmod 3 \implies n \equiv 65 \pmod{66}$
+    \item $n \equiv 2 \pmod{11}, n \equiv 5 \pmod{10}, n \equiv -1 \pmod 3 \implies n \equiv 35 \pmod{330}$
+    \item $n \equiv -3 \pmod{11}, n \equiv 5 \pmod{10}, n \equiv -1 \pmod 3 \implies n \equiv 305 \pmod{330}$
+    \item $n \equiv -4 \pmod{11}, n \equiv 5 \pmod{10}, n \equiv -1 \pmod 3 \implies n \equiv 95 \pmod{330}$
+    \item $n \equiv -5 \pmod{11}, n \equiv 5 \pmod{10}, n \equiv -1 \pmod 3 \implies n \equiv 215 \pmod{330}$
+\end{itemize}
+
+在 $n < 1000$ 的范围内：
+\begin{itemize}
+    \item $n = 66k + 65, k = 0, 1, \dots, 14$ （共 15 个）
+    \item $n = 330k + 35, k = 0, 1, 2$ （共 3 个）
+    \item $n = 330k + 305, k = 0, 1, 2$ （共 3 个）
+    \item $n = 330k + 95, k = 0, 1, 2$ （共 3 个）
+    \item $n = 330k + 215, k = 0, 1, 2$ （共 3 个）
+\end{itemize}
+一共有 $15 + 3 + 3 + 3 + 3 = 27$ 个。
+\end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{不定方程}{不定方程} \label{不定方程}
+  }
+\end{center}
+\separator
+\begin{center}
+    考点: 线性不定方程、常数配方法、佩尔方程
+\end{center}
+\vspace{0.5pt}
+\nopagecolor
+\begin{questions}
+    \question 例 2、求方程 $5x + 3y = 22$ 的所有正整数解。
+
+\begin{solution}
+解：方程 $5x + 3y = 1$ 有一组解 $\begin{cases} x = -1 \\ y = 2 \end{cases}$，所以方程 $5x + 3y = 22$ 有一组解 $\begin{cases} x = -22 \\ y = 44 \end{cases}$。
+又因为 $5x + 3y = 0$ 的所有整数解为 $\begin{cases} x = 3k \\ y = -5k \end{cases}$，$k$ 为整数，
+所以方程 $5x + 3y = 22$ 的所有整数解为 $\begin{cases} x = 3k - 22 \\ y = -5k + 44 \end{cases}$，$k$ 为整数。
+由 $\begin{cases} 3k - 22 > 0 \\ -5k + 44 > 0 \end{cases}$ 解得 $\begin{cases} k > \frac{22}{3} \\ k < \frac{44}{5} \end{cases}$，所以 $k = 8$，原方程的正整数解为 $\begin{cases} x = 2 \\ y = 4 \end{cases}$。
+\end{solution}
+
+\question 例 5、求不定方程 $3x + 2y + 8z = 40$ 的正整数解。
+
+\begin{solution}
+解：显然此方程有整数解。先确定系数最大的未知数 $z$ 的取值范围，因为 $x, y, z$ 的最小值位 1，所以 $1 \le z \le \lfloor \frac{40 - 3 - 2}{8} \rfloor = 4$。
+
+当 $z = 1$ 时，原方程变形为 $3x + 2y = 32$，即 $y = \frac{32 - 3x}{2}$，由上式知 $x$ 是偶数且 $2 \le x \le 10$ 故方程组有 5 组正整数解，分别为 $\begin{cases} x = 2 \\ y = 13 \end{cases}, \begin{cases} x = 4 \\ y = 10 \end{cases}, \begin{cases} x = 6 \\ y = 7 \end{cases}, \begin{cases} x = 8 \\ y = 4 \end{cases}, \begin{cases} x = 10 \\ y = 1 \end{cases}$；
+
+当 $z = 2$ 时，原方程变形为 $3x + 2y = 24$，即 $y = \frac{24 - 3x}{2}$，故方程只有 3 组正整数解，分别为 $\begin{cases} x = 2 \\ y = 9 \end{cases}, \begin{cases} x = 4 \\ y = 6 \end{cases}, \begin{cases} x = 6 \\ y = 3 \end{cases}$；
+
+当 $z = 3$ 时，原方程变形为 $3x + 2y = 16$，即 $y = \frac{16 - 3x}{2}$，故方程只有 2 组正整数解，分别为 $\begin{cases} x = 2 \\ y = 5 \end{cases}, \begin{cases} x = 4 \\ y = 2 \end{cases}$；
+
+当 $z = 4$ 时，原方程变形为 $3x + 2y = 8$，即 $y = \frac{8 - 3x}{2}$，故方程只有一组正整数解，为 $\begin{cases} x = 2 \\ y = 1 \end{cases}$。
+
+故原方程有 11 组正整数解（如下表）：
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+x & 2 & 4 & 6 & 8 & 10 & 2 & 4 & 6 & 2 & 4 & 2 \\ \hline
+y & 13 & 10 & 7 & 4 & 1 & 9 & 6 & 3 & 5 & 2 & 1 \\ \hline
+z & 1 & 1 & 1 & 1 & 1 & 2 & 2 & 2 & 3 & 3 & 4 \\ \hline
+\end{tabular}
+\end{solution}
+
+\question 例 6、求 $x^2 + xy - 6 = 0$ 的正整数解。
+
+\begin{solution}
+解：原方程等价于 $x(x + y) = 6$，故有
+\[ \begin{cases} x = 2 \\ x + y = 3 \end{cases} \begin{cases} x = 3 \\ x + y = 2 \end{cases} \begin{cases} x = 1 \\ x + y = 6 \end{cases} \begin{cases} x = 6 \\ x + y = 1 \end{cases} \]
+即有 $x = 2, y = 1$ 或 $x = 1, y = 5$。
+\end{solution}
+
+\question 例 7、求 $x^2 + y^2 = 328$ 的正整数解。
+
+\begin{solution}
+解：$\because 328$ 为偶数，$\therefore x, y$ 奇偶性相同，即 $x \pm y$ 为偶数。
+设 $x + y = 2u, x - y = 2v$，代入原方程即为 $u^2 + v^2 = 164$。
+同理令 $u + v = 2u_1, u - v = 2v_1$ 有 $u_1^2 + v_1^2 = 82, u_1 + v_1 = 2u_2, u_1 - v_1 = 2v_2$。
+$u_2^2 + v_2^2 = 41$，$u_2, v_2$ 为一偶一奇，且 $0 < u_2 < 6$。
+$u_2 = 1, 2, 3, 4, 5$ 代入方程，有解 $(4, 5), (5, 4)$。
+$\therefore$ 原方程解 $x = 18, y = 2$ 或 $x = 2, y = 18$。
+\end{solution}
+
+\question 例 8、证明：$x^2 + y^2 + z^2 = 8a + 7$ 无整数解。
+
+\begin{solution}
+证：若原方程有解，则有 $x^2 + y^2 + z^2 \equiv 8a + 7 \pmod 8$。
+注意到对于模 8，有 $0^2 = 0, 1^2 = 1, 2^2 = 4, 3^2 = 1, 4^2 = 0, 5^2 = 1, 6^2 = 4, 7^2 = 1$。
+因而每一个整数对于模 8，必同余于 0, 1, 4 这三个数。
+不管 $x^2, y^2, z^2$ 如何变化，只能有 $x^2 + y^2 + z^2 \equiv 0, 1, 2, 3, 4, 5, 6 \pmod 8$。
+而 $8a + 7 \equiv 7 \pmod 8$，故 $8a + 7$ 不同余于 $x^2 + y^2 + z^2$ 关于模 8，所以假设错误。
+从而证明了原方程无解。
+\end{solution}
+
+\question 例 9、正整数 $x, y$ 满足 $3x^2 - 8y^2 + 3x^2y^2 = 2008$，求 $xy$。
+
+\begin{solution}
+解：$3x^2 - 8y^2 + 3x^2y^2 = 2000 + 8$
+$\Rightarrow 3x^2y^2 + 3x^2 - 8y^2 - 8 = 2000 \Rightarrow (3x^2 - 8)(y^2 + 1) = 2000$
+$2000 = 1 \times 2000, 2 \times 1000, 4 \times 500, 5 \times 400, 8 \times 250, 10 \times 200, 20 \times 100, 40 \times 50, 80 \times 25$
+$y^2 + 1 = 1, 4, 8, 20, 40, 80$，它只能等于 2, 10, 5, 50。
+得出 $y = 1, 3, 2, 7$，但是对 1, 3, 2 来说，另外一个式子 $3x^2 - 8$ 无整数解。
+因此得出唯一的答案 $y = 7, x = 4$，对 $2000 = 40 \times 50$ 的分解成立，$\therefore xy = 28$。
+\end{solution}
+
+\question 有一根长 5.8 米的木料，现在要把它分割成每根长 0.9 米和 0.4 米的两种规格，求恰好没有剩余的所有有分割法。
+\begin{solution}
+设分割成 0.9 米的木料 $x$ 根，0.4 米的木料 $y$ 根，其中 $x, y$ 为非负整数。
+根据题意得：
+\[0.9x + 0.4y = 5.8\]
+等式两边同乘以 10 得：
+\[9x + 4y = 58\]
+由于 $4y$ 和 58 都是偶数，则 $9x$ 必须是偶数，所以 $x$ 是偶数。
+当 $x = 0$ 时，$4y = 58$，$y = 14.5$（不合题意）。
+当 $x = 2$ 时，$18 + 4y = 58$，$4y = 40$，$y = 10$。
+当 $x = 4$ 时，$36 + 4y = 58$，$4y = 22$，$y = 5.5$（不合题意）。
+当 $x = 6$ 时，$54 + 4y = 58$，$4y = 4$，$y = 1$。
+当 $x \ge 8$ 时，$9x \ge 72 > 58$（无自然数解）。
+所以分割法有两种：
+1. 0.9 米的 2 根，0.4 米的 10 根；
+2. 0.9 米的 6 根，0.4 米的 1 根。
+\end{solution}
+
+\question 一次数学竞赛准备了 22 支铅笔作为奖品发给一、二、三等奖的学生，原计划发给一等奖每人 6 支，二等奖每人 3 支，三等奖每人 2 支，后来改为一等奖每人 9 支，二等奖每人 4 支，三等奖每人 1 支，问获一、二、三等奖的学生各几人？
+\begin{solution}
+设获一、二、三等奖的学生人数分别为 $x, y, z$，其中 $x, y, z$ 为正整数。
+根据题意列方程组：
+\[
+\begin{cases}
+6x + 3y + 2z = 22 \\
+9x + 4y + z = 22
+\end{cases}
+\]
+由第二个方程得 $z = 22 - 9x - 4y$，代入第一个方程：
+\[6x + 3y + 2(22 - 9x - 4y) = 22\]
+\[6x + 3y + 44 - 18x - 8y = 22\]
+\[-12x - 5y = -22\]
+\[12x + 5y = 22\]
+因为 $x, y$ 是正整数：
+若 $x = 1$，则 $12 + 5y = 22$，$5y = 10$，$y = 2$。
+将 $x = 1, y = 2$ 代入 $z = 22 - 9(1) - 4(2) = 22 - 9 - 8 = 5$。
+若 $x \ge 2$，则 $12x \ge 24 > 22$（无正整数解）。
+所以一、二、三等奖的学生人数分别为 1 人，2 人，5 人。
+\end{solution}
+
+\question 求方程 $6x + 22y = 90$ 的非负整数解。
+\begin{solution}
+方程两边约去 2 得：
+\[3x + 11y = 45\]
+由此得 $3x = 45 - 11y$。
+因为 $x \ge 0$，所以 $45 - 11y \ge 0$，$y \le 4.09$。
+又因为 $3x$ 是 3 的倍数，且 45 是 3 的倍数，所以 $11y$ 必须是 3 的倍数，即 $y$ 是 3 的倍数。
+在 $0 \le y \le 4$ 范围内的 3 的倍数有 $y = 0$ 和 $y = 3$。
+当 $y = 0$ 时，$3x = 45$，$x = 15$。
+当 $y = 3$ 时，$3x = 45 - 33 = 12$，$x = 4$。
+所以非负整数解为：
+\[
+\begin{cases}
+x = 15 \\
+y = 0
+\end{cases}, 
+\begin{cases}
+x = 4 \\
+y = 3
+\end{cases}
+\]
+\end{solution}
+
+\question 求不定方程 $2(x+y) = xy + 7$ 的整数解。
+\begin{solution}
+方程整理为：
+\[xy - 2x - 2y + 7 = 0\]
+\[x(y - 2) - 2(y - 2) - 4 + 7 = 0\]
+\[(x - 2)(y - 2) = -3\]
+由于 $x, y$ 是整数，则 $x-2$ 和 $y-2$ 是 -3 的约数。
+1. $x - 2 = 1, y - 2 = -3 \implies x = 3, y = -1$
+2. $x - 2 = -1, y - 2 = 3 \implies x = 1, y = 5$
+3. $x - 2 = 3, y - 2 = -1 \implies x = 5, y = 1$
+4. $x - 2 = -3, y - 2 = 1 \implies x = -1, y = 3$
+所以整数解为 $(3, -1), (1, 5), (5, 1), (-1, 3)$。
+\end{solution}
+
+\question 求满足方程 $\frac{1}{x} - \frac{1}{y} = \frac{1}{12}$ 且使 $y$ 是最大的正整数解 $x, y$。
+\begin{solution}
+方程变形为：
+\[\frac{1}{x} = \frac{1}{12} + \frac{1}{y} = \frac{y + 12}{12y}\]
+\[x = \frac{12y}{y + 12} = \frac{12(y + 12) - 144}{y + 12} = 12 - \frac{144}{y + 12}\]
+要使 $x$ 为正整数，则 $y + 12$ 必须是 144 的约数，且 $12 - \frac{144}{y + 12} > 0$。
+即 $\frac{144}{y + 12} < 12$，所以 $y + 12 > 12$，得 $y > 0$。
+为了使 $y$ 最大，我们需要 $y + 12$ 是 144 的最大约数。
+但题目要求 $x$ 也是正整数。若 $y + 12 = 144$，则 $y = 132$。
+此时 $x = 12 - \frac{144}{144} = 12 - 1 = 11$。
+所以使 $y$ 最大的正整数解为 $x = 11, y = 132$。
+\end{solution}
+
+\question 满足 $0 < x < y$ 及 $\sqrt{1984} = \sqrt{x} + \sqrt{y}$ 的不同的整数解 $(x, y)$ 个数是多少？
+\begin{solution}
+首先化简 $\sqrt{1984}$：
+\[\sqrt{1984} = \sqrt{64 \times 31} = 8\sqrt{31}\]
+方程变为 $\sqrt{x} + \sqrt{y} = 8\sqrt{31}$。
+由此可知 $x$ 和 $y$ 必须具有 $k^2 \cdot 31$ 的形式。
+设 $\sqrt{x} = a\sqrt{31}, \sqrt{y} = b\sqrt{31}$，其中 $a, b$ 为非负整数。
+则 $a + b = 8$。
+又因为 $0 < x < y$，所以 $0 < a < b$。
+可能的 $(a, b)$ 组合有：
+1. $a = 1, b = 7 \implies x = 31, y = 49 \times 31 = 1519$
+2. $a = 2, b = 6 \implies x = 4 \times 31 = 124, y = 36 \times 31 = 1116$
+3. $a = 3, b = 5 \implies x = 9 \times 31 = 279, y = 25 \times 31 = 775$
+共有 3 组不同的整数解。
+\end{solution}
+
+\question 求出任何一组满足方程 $x^2 - 51y^2 = 1$ 的自然数解 $x, y$。
+\begin{solution}
+这是一个佩尔方程 (Pell Equation)。观察 $\sqrt{51}$ 的渐近值。
+因为 $7^2 = 49$，尝试 $y$ 的小值。
+若 $y = 1, x^2 = 52$（不是平方数）。
+若 $y = 2, x^2 = 1 + 51(4) = 205$（不是平方数）。
+尝试通过连分数展开或观察法。
+发现 $50^2 = 2500$ 且 $51 \times 7^2 = 51 \times 49 = (50+1)(50-1) = 2500 - 1 = 2499$。
+所以 $50^2 - 51 \times 7^2 = 2500 - 2499 = 1$。
+一组自然数解为 $x = 50, y = 7$。
+\end{solution}
+
+\question 求满足条件 $\frac{x+y}{x^2-xy+y^2} = \frac{3}{7}$ 的整数 $x, y$ 的所有可能的值。
+\begin{solution}
+方程交叉相乘得：
+\[7(x + y) = 3(x^2 - xy + y^2)\]
+\[3x^2 - (3y + 7)x + (3y^2 - 7y) = 0\]
+将其看作关于 $x$ 的一元二次方程，其判别式 $\Delta$ 必须是非负平方数：
+\[\Delta = (3y + 7)^2 - 4(3)(3y^2 - 7y) = 9y^2 + 42y + 49 - 36y^2 + 84y = -27y^2 + 126y + 49\]
+令 $-27y^2 + 126y + 49 \ge 0$。
+解得 $y$ 大约在 $[-0.35, 5.02]$ 之间。
+检查整数 $y \in \{0, 1, 2, 3, 4, 5\}$：
+1. $y = 0 \implies \Delta = 49 = 7^2$。$x = \frac{7 \pm 7}{6} \implies x = 0, \frac{7}{3}$（舍去），解 $(0, 0)$ 代入原方程分母为 0 舍去。
+2. $y = 1 \implies \Delta = -27 + 126 + 49 = 148$（不是平方数）。
+3. $y = 2 \implies \Delta = -108 + 252 + 49 = 193$（不是平方数）。
+4. $y = 3 \implies \Delta = -243 + 378 + 49 = 184$（不是平方数）。
+5. $y = 4 \implies \Delta = -432 + 504 + 49 = 121 = 11^2$。$x = \frac{19 \pm 11}{6} \implies x = 5, \frac{4}{3}$（舍去）。
+6. $y = 5 \implies \Delta = -675 + 630 + 49 = 4$。$x = \frac{22 \pm 2}{6} \implies x = 4, \frac{10}{3}$（舍去）。
+由对称性，当 $x = 4, y = 5$ 或 $x = 5, y = 4$ 时均成立。
+故所有可能的整数对为 $(4, 5)$ 和 $(5, 4)$。
+\end{solution}
+
+\question 求方程 $x^2 - y^2 = 105$ 的正整数解。
+\begin{solution}
+原方程可化为：
+\[(x - y)(x + y) = 105\]
+因为 $x, y$ 是正整数，所以 $x + y > x - y > 0$，且 $x + y$ 与 $x - y$ 的奇偶性相同。
+由于 105 是奇数，故 $x + y$ 与 $x - y$ 均为奇数。
+将 105 分解为两个奇因数之积：
+1. $x - y = 1, x + y = 105 \implies x = 53, y = 52$
+2. $x - y = 3, x + y = 35 \implies x = 19, y = 16$
+3. $x - y = 5, x + y = 21 \implies x = 13, y = 8$
+4. $x - y = 7, x + y = 15 \implies x = 11, y = 4$
+所以正整数解为 $(53, 52), (19, 16), (13, 8), (11, 4)$。
+\end{solution}
+
+\question 求证方程 $x^3 + 11^3 = y^3$ 没有正整数解。
+\begin{solution}
+根据费马大定理，当 $n > 2$ 时，方程 $x^n + y^n = z^n$ 没有正整数解。
+在本题中，$n = 3$。
+方程 $x^3 + 11^3 = y^3$ 等价于 $y^3 - x^3 = 11^3$。
+根据费马大定理可知，不存在正整数 $x, 11, y$ 使得该等式成立。
+（或者：利用因式分解 $(y-x)(y^2+yx+x^2) = 1331$ 逐一讨论 $y-x$ 的因数，均可证明无正整数解。）
+\end{solution}
+
+\question 求方程 $x + y = x^2 - xy + y^2$ 的全部整数解。
+\begin{solution}
+整理方程得：
+\[x^2 - (y + 1)x + (y^2 - y) = 0\]
+将其看作关于 $x$ 的一元二次方程，其判别式 $\Delta$ 必须是非负平方数：
+\[\Delta = (y + 1)^2 - 4(y^2 - y) = y^2 + 2y + 1 - 4y^2 + 4y = -3y^2 + 6y + 1\]
+由 $-3y^2 + 6y + 1 \ge 0$ 得：
+\[3y^2 - 6y - 1 \le 0\]
+解得 $1 - \frac{2}{\sqrt{3}} \le y \le 1 + \frac{2}{\sqrt{3}}$，即大约 $-0.15 \le y \le 2.15$。
+整数 $y$ 可取 0, 1, 2。
+1. $y = 0 \implies \Delta = 1$，$x = \frac{1 \pm 1}{2} \implies x = 1, 0$。
+2. $y = 1 \implies \Delta = 4$，$x = \frac{2 \pm 2}{2} \implies x = 2, 0$。
+3. $y = 2 \implies \Delta = 1$，$x = \frac{3 \pm 1}{2} \implies x = 2, 1$。
+整数解为 $(1, 0), (0, 0), (2, 1), (0, 1), (2, 2), (1, 2)$。
+\end{solution}
+
+\question 求方程 $x^2 + y^2 = 2x + 2y + xy$ 的所有正整数解。
+\begin{solution}
+整理方程：
+\[x^2 - (y + 2)x + (y^2 - 2y) = 0\]
+判别式 $\Delta = (y + 2)^2 - 4(y^2 - 2y) = y^2 + 4y + 4 - 4y^2 + 8y = -3y^2 + 12y + 4$。
+由 $-3y^2 + 12y + 4 \ge 0$ 得：
+\[3y^2 - 12y - 4 \le 0\]
+解得 $2 - \frac{4}{\sqrt{3}} \le y \le 2 + \frac{4}{\sqrt{3}}$，即大约 $-0.3 \le y \le 4.3$。
+因要求正整数解，故 $y$ 可取 1, 2, 3, 4。
+1. $y = 1 \implies \Delta = 13$（非平方数）。
+2. $y = 2 \implies \Delta = 16 = 4^2$，$x = \frac{4 \pm 4}{2} \implies x = 4, 0$（0 舍去）。
+3. $y = 3 \implies \Delta = 13$（非平方数）。
+4. $y = 4 \implies \Delta = 4 = 2^2$，$x = \frac{6 \pm 2}{2} \implies x = 4, 2$。
+正整数解为 $(4, 2), (2, 4), (4, 4)$。
+\end{solution}
+
+\question 找出全部符合 $a^2 + b = b^{2001}$ 的整数 $(a, b)$。
+\begin{solution}
+原方程化为 $a^2 = b^{2001} - b = b(b^{2000} - 1)$。
+1. 若 $b = 0$，则 $a^2 = 0 \implies a = 0$。解为 $(0, 0)$。
+2. 若 $b = 1$，则 $a^2 = 0 \implies a = 0$。解为 $(0, 1)$。
+3. 若 $b = -1$，则 $a^2 = (-1)^{2001} - (-1) = -1 + 1 = 0 \implies a = 0$。解为 $(0, -1)$。
+4. 若 $b > 1$ 或 $b < -1$，则 $b^{2001} - b$ 不可能是一个完全平方数（除了 $b=0, \pm 1$ 之外，$b^{2001}-b$ 介于两个连续平方数之间，此处省略具体不等式证明）。
+全部整数解为 $(0, 0), (0, 1), (0, -1)$。
+\end{solution}
+
+\question 求方程 $y^2 + 3x^2y^2 = 30x^2 + 517$ 的所有正整数解。
+\begin{solution}
+整理方程得：
+\[y^2(3x^2 + 1) = 30x^2 + 517\]
+\[y^2 = \frac{30x^2 + 517}{3x^2 + 1} = \frac{10(3x^2 + 1) + 507}{3x^2 + 1} = 10 + \frac{507}{3x^2 + 1}\]
+因为 $y$ 是正整数，所以 $3x^2 + 1$ 必须是 507 的约数。
+507 的约数有 1, 3, 13, 39, 169, 507。
+由于 $x$ 是正整数，$3x^2 + 1 \ge 4$。
+1. $3x^2 + 1 = 13 \implies 3x^2 = 12 \implies x^2 = 4 \implies x = 2$。
+   此时 $y^2 = 10 + \frac{507}{13} = 10 + 39 = 49 \implies y = 7$。
+2. $3x^2 + 1 = 39 \implies 3x^2 = 38$（无整数解）。
+3. $3x^2 + 1 = 169 \implies 3x^2 = 168 \implies x^2 = 56$（无整数解）。
+4. $3x^2 + 1 = 507 \implies 3x^2 = 506$（无整数解）。
+故正整数解为 $(2, 7)$。
+\end{solution}
+
+\question 求方程 $x^6 + 3x^3 + 1 = y^4$ 的整数解。
+\begin{solution}
+当 $x = 0$ 时，$1 = y^4 \implies y = \pm 1$。
+当 $x > 0$ 时：
+$(x^3 + 1)^2 = x^6 + 2x^3 + 1 < x^6 + 3x^3 + 1$
+$(x^3 + 2)^2 = x^6 + 4x^3 + 4 > x^6 + 3x^3 + 1$
+可见 $y^4$ 处于两个连续整数的平方之间，故无解。
+当 $x = -1$ 时，$1 - 3 + 1 = -1 = y^4$（无实数解）。
+当 $x \le -2$ 时，同理可证无解。
+整数解为 $(0, 1), (0, -1)$。
+\end{solution}
+
+\question 求方程 $3^x - 5^y = z^2$ 的正整数解。
+\begin{solution}
+考虑模 3 情况：$-(-1)^y \equiv z^2 \pmod 3$。
+若 $y$ 为偶数，则 $-1 \equiv z^2 \pmod 3$，即 $2 \equiv z^2 \pmod 3$，不可能。
+故 $y$ 必须为奇数。
+考虑模 4 情况：$(-1)^x - 1^y \equiv z^2 \pmod 4 \implies (-1)^x - 1 \equiv z^2 \pmod 4$。
+若 $x$ 为奇数，则 $-2 \equiv z^2 \pmod 4 \implies 2 \equiv z^2 \pmod 4$，不可能。
+故 $x$ 必须为偶数，设 $x = 2k$。
+$3^{2k} - z^2 = 5^y \implies (3^k - z)(3^k + z) = 5^y$。
+设 $3^k - z = 5^m, 3^k + z = 5^n$，其中 $m + n = y, n > m$。
+两式相减：$2z = 5^n - 5^m = 5^m(5^{n-m} - 1)$。
+由于 $2z$ 不被 5 整除，故 $m = 0$。
+则 $3^k - z = 1$ 且 $3^k + z = 5^y$。
+相加得 $2 \cdot 3^k = 5^y + 1$。
+当 $k = 1$ 时，$2 \cdot 3 = 6 = 5^1 + 1 \implies y = 1$。
+此时 $x = 2k = 2$，$3^2 - 5^1 = 4 = 2^2 \implies z = 2$。
+当 $k > 1$ 时，通过模 9 分析可知无其他解。
+正整数解为 $(2, 1, 2)$。
+\end{solution}
+
+\question 有多少对整数 $(x, y)$ 满足 $x^2 + y^2 \le 300$？
+[注：整数包括正、负整数及 0]
+
+\begin{solution}
+$(0, 0)$ 是 $x^2 + y^2 \le 300$ 的一个解。
+由于 $\lfloor \sqrt{300} \rfloor = 17$，当 $x = 0$ 或 $y = 0$（但不同时为 0）时，共有 $4 \times 17 = 68$ 个解。
+现在考虑 $x > 0, y > 0$ 的情况。解的个数为
+\[
+\sum_{x=1}^{17} \lfloor \sqrt{300 - x^2} \rfloor
+\]
+计算各子项：
+\begin{align*}
+\sum_{x=1}^{17} \lfloor \sqrt{300 - x^2} \rfloor &= \lfloor \sqrt{299} \rfloor + \lfloor \sqrt{296} \rfloor + \dots + \lfloor \sqrt{11} \rfloor \\
+&= 3 \times 17 + 3 \times 16 + 2 \times 15 + 2 \times 14 + 13 + 12 + 11 + 10 + 8 + 6 + 3 \\
+&= 220
+\end{align*}
+对于 (a) $x > 0, y < 0$；(b) $x < 0, y > 0$；(c) $x < 0, y < 0$ 这三种情况，也各有 220 个解。
+因此，总解数为
+\[
+880 + 68 + 1 = 949
+\]
+答：949。
+\end{solution}
+
+\question 30. 有多少组正整数 $(a, b, c, d)$ 满足 $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d} = 1$？
+
+\begin{solution}
+显然的，$a \ge 2, b \ge 2, c \ge 2, d \ge 2$。
+我们先设 $a \le b \le c \le d$。
+则 $1 = \frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d} \le \frac{4}{a}$，即 $a \le 4$。
+因此，$a = 2, 3$ 或 $4$。
+
+当 $a=2$，则 $\frac{1}{b} + \frac{1}{c} + \frac{1}{d} = \frac{1}{2}$。
+$\frac{1}{b} < \frac{1}{2}$ 且 $\frac{3}{b} \ge \frac{1}{2}$，即 $2 < b \le 6$。
+$b = 3, 4, 5$ 或 $6$。
+\begin{itemize}
+    \item 当 $b=3$，$\frac{1}{c} + \frac{1}{d} = \frac{1}{6}$，得 $(c, d) = (7, 42), (8, 24), (9, 18), (10, 15), (12, 12)$。
+    \item 当 $b=4$，$\frac{1}{c} + \frac{1}{d} = \frac{1}{4}$，得 $(c, d) = (5, 20), (6, 12), (8, 8)$。
+    \item 当 $b=5$，$\frac{1}{c} + \frac{1}{d} = \frac{3}{10}$，得 $(c, d) = (5, 10)$。
+    \item 当 $b=6$，$\frac{1}{c} + \frac{1}{d} = \frac{1}{3}$，得 $(c, d) = (6, 6)$。
+\end{itemize}
+
+当 $a=3$，则 $\frac{1}{b} + \frac{1}{c} + \frac{1}{d} = \frac{2}{3}$。
+$3 \le b \le 4$。
+\begin{itemize}
+    \item 当 $b=3$，$\frac{1}{c} + \frac{1}{d} = \frac{1}{3}$，得 $(c, d) = (4, 12), (6, 6)$。
+    \item 当 $b=4$，$\frac{1}{c} + \frac{1}{d} = \frac{5}{12}$，得 $(c, d) = (4, 6)$。
+\end{itemize}
+
+当 $a=4$，则 $b=c=d=4$。
+
+因此，满足 $a \le b \le c \le d$ 的正整数解有：
+\begin{itemize}
+    \item $(2, 3, 7, 42), (2, 3, 8, 24), (2, 3, 9, 18), (2, 3, 10, 15), (2, 4, 5, 20), (2, 4, 6, 12)$
+    \item $(2, 3, 12, 12), (2, 4, 8, 8), (2, 5, 5, 10), (3, 3, 4, 12), (3, 4, 4, 6)$
+    \item $(3, 3, 6, 6)$
+    \item $(2, 6, 6, 6)$
+    \item $(4, 4, 4, 4)$
+\end{itemize}
+考虑排列组合，满足条件的解共有：
+$6 \times 4! + 5 \times \frac{4!}{2!} + 1 \times \frac{4!}{2! \times 2!} + 1 \times \frac{4!}{3!} + 1 \times 1 = 215$ 组。
+
+答：【215】
+\end{solution}
+
+\question 有多少对整数 $(x, y)$ 满足不等式 $23|x| + 7|y| \le 217$？
+
+\begin{solution}
+可以分为 7 种情况讨论：
+\begin{itemize}
+    \item \textbf{情况 1：} $x = y = 0$。共 1 个点。
+    \item \textbf{情况 2：} $y = 0, x \neq 0$。则 $|x| \le \frac{217}{23} \approx 9.4$。共有 18 个这样的点。
+    \item \textbf{情况 3：} $x = 0, y \neq 0$。则 $|y| \le \frac{217}{7} = 31$。共有 62 个这样的点。
+    \item \textbf{情况 4：} $x > 0, y > 0$。则 $23x + 7y \le 217$。
+    $x$ 的取值范围是 1 到 9。对于固定的 $x$，使得 $23x + 7y \le 217$ 成立的正整数 $y$ 的个数为 $\lfloor \frac{217 - 23x}{7} \rfloor$。
+    总数为：
+    \[
+    \sum_{x=1}^{9} \left\lfloor \frac{217 - 23x}{7} \right\rfloor = 127
+    \]
+    此情况共有 127 对 $(x, y)$。
+    \item \textbf{情况 5：} $x < 0, y > 0$。此情况与情况 4 一一对应，因此也有 127 对。
+    \item \textbf{情况 6：} $x > 0, y < 0$。此情况与情况 4 一一对应，因此也有 127 对。
+    \item \textbf{情况 7：} $x < 0, y < 0$。此情况与情况 4 一一对应，因此也有 127 对。
+\end{itemize}
+因此，满足 $23|x| + 7|y| \le 217$ 的整数对 $(x, y)$ 的总数为：
+\[
+1 + 18 + 62 + 127 \times 4 = 589
+\]
+\end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{取整}{取整} \label{取整}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 求满足
+    \[
+    \floor{0.5+\floor{x}} = 20
+    \]
+    的所有$x$的取值范围。
+    \begin{solution}
+        由下取整定义,原方程即
+        \[
+        20 \le 0.5+\floor{x}< 21 \Rightarrow 19.5 \le \floor{x} < 20.5
+        \]
+        由于$\floor{x} \in \mathbb{Z}$,
+        \[
+        \floor{x}=20 \Rightarrow 20 \le x < 21
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \ceil{\ceil{x}-1.3} = 16
+    \]
+    的所有$x$。
+    \begin{solution}
+        由上取整定义,原方程即
+        \[
+        15 \le \ceil{x} -1.3 < 16 \Rightarrow 16.3 \le \ceil{x} < 17.3
+        \]
+        由于$\ceil{x} \in \mathbb{Z}$,
+        \[
+        \ceil{x}=17 \Rightarrow 16 < x \le 17
+        \]
+    \end{solution}
+
+    \question 解方程 
+    \[
+    2x = \floor{x} + \frac{16}{5}
+    \]
+    \begin{solution}
+        发现$x\neq \floor{x}$,由于 
+        \[
+        \floor{x} < x < \floor{x} + 1 \Rightarrow 2\floor{x} < 2x < 2\floor{x} + 2,
+        \]
+        观察右式的取值范围可知
+        \[ 
+        2\floor{x} < \floor{x} + \frac{16}{5} < 2\floor{x} + 2 \Rightarrow \frac{6}{5} < \floor{x} < \frac{16}{5} 
+        \]
+        因此 
+        \[
+        \floor{x} = 2, 3 \Rightarrow x = \frac{13}{5}, \frac{31}{10}
+        \]
+    \end{solution}
+
+    \question 解方程
+    \[
+    2\lfloor x \rfloor + 3x = 4 - 5\{x\}
+    \]
+    \begin{solution}
+        设 $x = n+r$, 其中 $n = \lfloor x \rfloor,r = \{x\}$,代入方程得
+        \[
+        2n + 3(n+r) = 4 - 5r \Rightarrow 5x=4-3r
+        \]
+        由 $0 \le r < 1$, 有
+        \[
+        1 < 4-3r \le 4 \Rightarrow \frac{1}{5} < x \le \frac{4}{5}
+        \]
+        由此可得$x=\{x\}$,即$\floor{x}=0$,此时
+        \[
+        2\cdot 0 +3x=4-5x \Rightarrow x=\frac{1}{2}
+        \]
+    \end{solution}
+
+    \question 令 
+    \[
+    f(x) = \left\lfloor x + \frac{1}{2} \right\rfloor + \left\lfloor x - \frac{1}{2} \right\rfloor - \lfloor 2x \rfloor,
+    \]
+    证明只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,满足方程 $f(x) = 0$ 。
+    \begin{solution}
+        设 $x = n + \{x\}$ ,其中 $n$ 为整数,且$0 \le \{x\} < 1$,将$n$从取整符号中提出,
+        \[ 
+        f(x) = \left\lfloor \{x\} + \frac{1}{2} \right\rfloor + \left\lfloor \{x\} - \frac{1}{2} \right\rfloor - \lfloor 2\{x\} \rfloor 
+        \]
+        当 $0 \le \{x\} < \dfrac{1}{2}$ 时,
+        \[ 
+        f(x) = 0 + (-1) - 0 = -1 \neq 0
+        \]
+        而当 $\dfrac{1}{2} \le \{x\} < 1$ 时,
+        \[
+        f(x) = 1 + 0 - 1 = 0
+        \]
+        得证只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,$f(x) = 0$。
+    \end{solution}
+
+    \question 解 
+    \[
+    8\lfloor 3x \rfloor - 5\lfloor 2x \rfloor = 3
+    \]
+    \begin{solution}
+        令 $x = n + r$ ,其中 $n \in \mathbb{Z}, 0 \le r < 1$,原方程变为 
+        \[ 
+        3n + 8\lfloor 3r \rfloor - 5\lfloor 2r \rfloor = 3 
+        \]
+        当 $0 \le r < \dfrac{1}{3}$ 时,$\lfloor 3r \rfloor = 0, \lfloor 2r \rfloor = 0$,有
+        \[
+        3n = 3 \Rightarrow n = 1
+        \]
+        当 $\dfrac{1}{3} \le r < \dfrac{1}{2}$ 时,$\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 0$,有
+        \[
+        3n + 8 = 3 \Rightarrow n = -\frac{5}{3} \notin \mathbb{Z}
+        \]
+        当 $\dfrac{1}{2} \le r < \dfrac{2}{3}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 1$,有
+        \[
+        3n + 8 - 5 = 3 \Rightarrow n = 0
+        \]
+        当 $\dfrac{2}{3} \le r < 1$ 时,$\lfloor 3r \rfloor = 2, \lfloor 2r \rfloor = 1$,有
+        \[
+        3n + 16 - 5 = 3 \Rightarrow n = -\frac{8}{3} \notin \mathbb{Z}
+        \]
+        综上,解为
+        \[
+        n = 1, 0 \le r < \frac{1}{3} \Rightarrow 1 \le x < \frac{4}{3}
+        \]
+        或
+        \[
+        n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}{3}
+        \]
+    \end{solution}
+
+    \question 已知
+    \[
+    \begin{cases}
+    \lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
+    \lfloor c \rfloor + \lceil b \rceil + \{a\} = 11.3 \\
+    \lfloor a \rfloor + \lceil c \rceil + \{b\} = 9.7
+    \end{cases}
+    \]
+    求$a+b+c$的值。
+    \begin{solution}
+        由题意可知,小数部分分别为
+        \[
+        \{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
+        \]
+        原方程组变为
+        \[
+        \begin{cases}
+        \lfloor b \rfloor + \lfloor a \rfloor + 1 = 16 \\
+        \lfloor c \rfloor + \lfloor b \rfloor + 1 = 11 \\
+        \lfloor a \rfloor + \lfloor c \rfloor = 9
+        \end{cases}
+        \]
+        由第二式与第三式可得
+        \[
+        \lfloor a \rfloor =7, \quad \lfloor b \rfloor = 9-1=8, \quad \lfloor c \rfloor = 2
+        \]
+        因此
+        \[
+        a=7.3,\quad b=8.7,\quad c=2 \Rightarrow a+b+c=18
+        \]
+    \end{solution}
+
+    \question 已知 $\dfrac{1}{3-\sqrt{7}}$ 的整数部分为 $a$ ,小数部分为 $b$ ,求 $a^2 + (1+\sqrt{7})ab$ 。
+    \begin{solution}
+        有理化得
+        \[ 
+        \frac{1}{3-\sqrt{7}} = \frac{3+\sqrt{7}}{2} 
+        \]
+        由 
+        \[
+        2 < \sqrt{7} < 3 \Rightarrow \frac{5}{2} < \frac{3+\sqrt{7}}{2} < 3,
+        \]
+        得 
+        \[
+        a = 2 ,\quad b = \frac{3+\sqrt{7}}{2} - a = \frac{\sqrt{7}-1}{2}
+        \]
+        故
+        \begin{align*}
+        a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \cdot 2 \cdot \frac{\sqrt{7}-1}{2} \\
+        &= 4 + (\sqrt{7}+1)(\sqrt{7}-1) \\
+        &= 10
+        \end{align*}
+    \end{solution}
+
+    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
+    \begin{solution}
+        令
+        \[
+        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
+        \]
+        则
+        \[
+        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
+        \]
+        所以
+        \[
+        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
+        \]
+        由于 $0 < b^2 < 1$,所以
+        \[
+        969 < a^6 < 970 \quad \Rightarrow \quad \ceil{a^6} = 970
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor
+    \]
+    的最小整数$x$。
+    \begin{solution}
+        设$y,y+1$为连续正整数,使得他们的平方根的差不小于34,则
+        \[
+        (y+1)^2-y^2>34 \Rightarrow y>16.5
+        \]
+        由于$y \in \mathbb{Z}$,最小的$x$为
+        \[
+        x=y^2=17^2=289
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lceil x\rceil \lceil 2x\rceil = 15
+    \]
+    \begin{solution}
+        设
+        \[
+        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \]
+        当 $r < \dfrac{1}{2}$,原方程即
+        \[
+        n(2n) = 15 \Rightarrow n = \sqrt{\frac{15}{2}} \not \in \mathbb{Z}
+        \]
+        当  $r \ge \dfrac{1}{2}$,原方程即
+        \[
+        n(2n-1) = 15 \Rightarrow (n-3)(2n+5) = 0 \Rightarrow n = 3 \in \mathbb{Z}
+        \]
+        故$x$的取值范围为
+        \[
+        2 < x \le 2.5
+        \]
+    \end{solution}
+
+    \question 求正实数$x$满足
+    \[
+    x^2+\{x\}^2=27
+    \]
+    \begin{solution}
+        设
+        \[
+        x=n+r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
+        \]
+        且注意到
+        \[
+        x^2 \le x^2+\{x\}^2 < x^2+1
+        \]
+        因此
+        \[
+        26<x^2\le27 \Rightarrow n=5
+        \]
+        代入原方程得
+        \[
+        (5+r)^2+r^2=27 \Rightarrow r=\frac{-5+\sqrt{29}}{2}
+        \]
+        于是
+        \[
+        x=5+r=\frac{5+\sqrt{29}}{2}
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    x^2 - 6\lfloor x \rfloor + 5 = 0
+    \]
+    \begin{solution}
+        原方程化为
+        \[
+        x^2 - 6\lfloor x \rfloor + 5 = 0 \Rightarrow x^2 - 6x + 5 = -6 \{x\}
+        \]
+        $-6 \{x\}$的值域为$(-6,0]$,且对于$x \in [1,5]$,有
+        \[
+        x^2 - 6x + 5 \in (-6,0]
+        \]
+        当$x \in [1,2)$,有$\floor{x}=1$,则
+        \[
+        x^2=6\cdot1-5 \Rightarrow x=1
+        \]
+        类似地,
+        \begin{align*}
+        \floor{x}&=2 \Rightarrow x^2 = 7 \Rightarrow x = \sqrt{7} \\
+        \floor{x}&=3 \Rightarrow x^2 = 13 \Rightarrow x = \sqrt{13} \\
+        \floor{x}&=4 \Rightarrow x^2 = 19 \Rightarrow x = \sqrt{19} \\
+        \floor{x}&=5 \Rightarrow x^2 = 25 \Rightarrow x = 5 
+        \end{align*}
+        因此,方程的解为
+        \[
+        x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
+        \]
+    \end{solution}
+
+    \question 解
+    \[
+    \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
+    \]
+    \begin{solution}
+        设 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$,则
+        \[
+        \lfloor x^2 \rfloor - n^2 = \floor{(n+r)^2-n^2} =\lfloor 2 n r + r^2 \rfloor
+        \]
+        故
+        \[
+        \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999 \Rightarrow 2 n r + r^2 \ge 1999
+        \]
+        最小的 $n$ 滿足
+        \[
+        2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
+        \]
+        此时有
+        \[
+        r^2 + 2000 r - 1999 = 0 \Rightarrow r = -1000 + \sqrt{1001999}
+        \]
+        所以
+        \[
+        x = n + r = \sqrt{1001999}
+        \]
+    \end{solution}
+
+    \question 解 
+    \[
+    \left \lfloor \frac{4x+3}{5} \right \rfloor = \frac{3(2x+1)}{4}
+    \]    
+    \begin{solution}
+        令 
+        \[
+        m = \frac{3(2x+1)}{4} \Rightarrow x = \frac{4m-3}{6},
+        \]
+        代回原方程化简得到 
+        \[ 
+        \left \lfloor \frac{8m+3}{15} \right \rfloor= m 
+        \]
+        有 
+        \[
+        0 \le \frac{8m+3}{15} - m < 1  \Rightarrow -\frac{12}{7} < m \le \frac{3}{7} 
+        \]
+        由于$m \in \mathbb{Z}$于是
+        \[ 
+        m = 0, -1 \Rightarrow x = -\frac{1}{2}, -\frac{7}{6}
+        \]
+    \end{solution}
+
+    \question 求满足以下条件的正整数 $x$ 的个数:
+    \[
+    \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor.
+    \]
+    \begin{solution}
+        设
+        \[
+        \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
+        \]
+        由定义有
+        \[
+        m \le \frac{x}{99} < m+1 \Rightarrow 99m \le x < 99(m+1)
+        \]
+        \[
+        m \le \frac{x}{101} < m+1 \Rightarrow 101m \le x < 101(m+1)
+        \]
+        因此
+        \[
+        101m \le x < 99(m+1)
+        \]
+        当 $m>49$ 时, $101m > 99(m+1)$, 无解。对于 $0 \le m \le 49$, 由于 $x=0$ 不是正整数,可行整数个数为
+        \[
+        \sum_{m=0}^{49} (99(m+1)-101m) =\sum_{m=0}^{49} (99-2m) -1 = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} -1 = 2499
+        \]
+    \end{solution}
+
+    \question 求解 $x\in \mathbb{Z}$ 满足
+    \[
+    \left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
+    \]
+    \begin{solution}
+        原方程给出
+        \[
+        \frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
+        \]
+        化简得
+        \[
+        134.4 \le x < 136.2
+        \]
+        由于 $x \in \mathbb{Z}$,且 $x=136$ 不满足原方程,故原方程式的解只有
+        \[
+        x = 135
+        \]
+    \end{solution}
+
+    \question 求满足
+    \[
+    \frac{\lfloor x \rfloor}{x} = \frac{9}{10}
+    \]
+    的最大实数 $x$。
+    \begin{solution}
+        由 $x = \lfloor x \rfloor + \{x\}$, 交叉相乘得
+        \[
+        10 \lfloor x \rfloor = 9 (\lfloor x \rfloor + \{x\}) \Rightarrow \lfloor x \rfloor = 9 \{x\}
+        \]
+        由于 $0 \le \{x\} < 1,\{x\}$的可能值为
+        \[
+        \frac{1}{9}, \frac{2}{9}, \dots, \frac{8}{9}, 
+        \]
+        取最大值 $\{x\} = \dfrac{8}{9}$, 于是
+        \[
+        x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
+        \]
+    \end{solution}
+    
+    \question 18. 如 $x > 0$ 且满足 $\lfloor x \rfloor^2 = x(x - \lfloor x \rfloor)$ ,求 $x - \frac{1}{x}$ 。
+    \begin{solution}
+        设 $n = \lfloor x \rfloor$。由于 $x > 0$,故 $n \ge 0$。
+        方程变为
+        \[ 
+        n^2 = x(x - n) \Rightarrow x^2 - nx - n^2 = 0
+        \]
+        由于 $x > 0$,取正根
+        \[ 
+        x = \frac{(1 + \sqrt{5})n}{2} 
+        \]
+        根据 $\lfloor x \rfloor = n$ 的定义,必须满足
+        \[ 
+        n \le \frac{(1 + \sqrt{5})n}{2} < n + 1 \tag{1}
+        \]
+        对于 $n=0$,(1) 成立但 $x=0$,与 $x>0$ 矛盾。对于 $n \ge 1$,(1)左侧 
+        \[
+        \frac{1+\sqrt{5}}{2} \approx 1.618 \ge 1
+        \]
+        恒成立,而右侧
+        \[
+        \frac{(1 + \sqrt{5})n}{2} < n + 1 \implies 0.618n < 1 \implies n < \frac{1 + \sqrt{5}}{2}
+        \]
+        故只能$n = 1$,此时
+        \[
+        x - \frac{1}{x} = \frac{1 + \sqrt{5}}{2} - \frac{2}{1 + \sqrt{5}} = \frac{1 + \sqrt{5}}{2} - \frac{\sqrt{5} - 1}{2} = 1
+        \]
+    \end{solution}
+
+\question 证明方程 $\lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor = 147$ 无实数解。
+\begin{solution}
+    设 $x = n + \alpha$,其中 $n = \lfloor x \rfloor$ 为整数部分,$\alpha \in [0, 1)$ 为小数部分。
+    将 $\alpha$ 表示为二进制形式:
+    \[ \alpha = (0.b_1 b_2 b_3 b_4 \dots)_2 = \frac{b_1}{2} + \frac{b_2}{4} + \frac{b_3}{8} + \frac{b_4}{16} + \dots \]
+    其中 $b_i \in \{0, 1\}$。
+
+    利用性质 $\lfloor m + y \rfloor = m + \lfloor y \rfloor$（$m$ 为整数）以及二进制移位性质:
+    \begin{align*}
+    \lfloor x \rfloor &= n \\
+    \lfloor 2x \rfloor &= 2n + \lfloor 2\alpha \rfloor = 2n + b_1 \\
+    \lfloor 4x \rfloor &= 4n + \lfloor 4\alpha \rfloor = 4n + 2b_1 + b_2 \\
+    \lfloor 8x \rfloor &= 8n + \lfloor 8\alpha \rfloor = 8n + 4b_1 + 2b_2 + b_3
+    \end{align*}
+   
+    将上述结果代入原方程左式（LHS）:
+    \begin{align*}
+    \text{LHS} &= (n + 2n + 4n + 8n) + (b_1 + 2b_1 + 4b_1) + (b_2 + 2b_2) + b_3 \\
+    &= 15n + 7b_1 + 3b_2 + b_3
+    \end{align*}
+
+    已知方程为 $15n + 7b_1 + 3b_2 + b_3 = 147$。
+    由于 $b_1, b_2, b_3 \in \{0, 1\}$,系数部分 $7b_1 + 3b_2 + b_3$ 的最大取值为:
+    \[ 7(1) + 3(1) + 1(1) = 11 \]
+    
+    这意味着对于特定的 $n$,函数值的波动范围仅为 $[15n, 15n + 11]$。
+
+    若 $n = 9$,最大值为 $15(9) + 11 = 135 + 11 = 146$。
+    若 $n = 10$,最小值为 $15(10) + 0 = 150$。
+    
+    数值 147 恰好落在两个区间之间（$146 < 147 < 150$）,因此该方程在实数范围内无解。
+    \textcolor{red}{(待验证)}
+\end{solution}
+
+    \question 解
+    \[
+    \lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
+    \]
+    \begin{solution}
+        令 $x = n + r$,其中 $n\in \mathbb{Z}, 0 \le r < 1$,则
+        \[
+        \lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
+        \]
+        展开得
+        \[
+        2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
+        \]
+        解不等式组
+        \[
+        \begin{cases}
+        2n^2+n+1 \le 111 \\
+        2n^2+3n \ge 111
+        \end{cases}
+        \]
+        得$n=7$,因此解
+        \[
+        \lceil 7r \rceil + \lfloor 8r \rfloor =6
+        \]
+        得
+        \[
+        \frac{3}{8} \le r \le \frac{3}{7} \Rightarrow \frac{59}{8} \le x \le \frac{52}{7}
+        \]
+    \end{solution}
+
+    \question 
+    \begin{parts}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        原方程化为
+        \[
+        \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{6}
+        \]
+        明示了
+        \[
+        \frac{n}{2},\frac{n}{3},\frac{n}{6}
+        \]
+        皆为整数, 于是$n$ 必须为 6 的倍数,因此正整数解共有 $\left\lfloor\dfrac{100}{6}\right\rfloor=16$ 个。
+    \end{solution}
+    \part 求方程
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
+    \]
+    的正整数解个数,其中$1 \le n \le 100$。
+    \begin{solution}
+        设 
+        \[
+        f(n) = \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor, 
+        \]
+        则
+        \[
+        f(n+6) = f(n) + 6
+        \]
+        定义 $g(n) = f(n) - (n-1)$, 则
+        \[
+        g(n+6) = g(n).
+        \]
+        且有
+        \[
+        g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
+        \]
+        因此正整数解共有 
+        \[
+        17+17+17+17=68
+        \]
+        个。
+    \end{solution}
+    \end{parts}
+
+    \question 求数列
+    \[
+    \left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
+    \]
+    中相异整数的个数。
+    \begin{solution}
+        考虑连续两项的差
+        \[
+        \frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
+        \]
+        由于
+        \[
+        \frac{1007^2}{2016} \approx 503.0005 > 503
+        \]  
+        前 1007 项即整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。对于第 1008 项到 2016 项,
+        每项至少比前一项大 1,因此产生 
+        \[
+        2016-1008+1 = 1009
+        \]
+        个不同整数,因此数列中相异整数的个数为
+        \[
+        504 + 1009 = 1513
+        \]
+    \end{solution}
+
+    \question 求 
+    \[
+    \sum_{k=1}^{512} \lfloor \log_2 k \rfloor
+    \]
+    \begin{solution}
+        一般地,对所有整数$n\ge 0,k \ge 1$,
+        \[
+        2^n \le k \le 2^{n+1} \lfloor \log_2 k \rfloor = n
+        \]
+        因此
+        \begin{align*}
+        \sum_{k=1}^{512} \lfloor \log_2 k \rfloor &= 0 + (4-2) \cdot 1 + (8-4) \cdot 2 + \dots + (512-256) \cdot 8 + 9 \\
+        &= 2 \cdot 1 + 2^2 \cdot 2 + \dots + 2^8 \cdot 8 + 9 \\
+        &= 3595
+        \end{align*}
+    \end{solution}
+
+    \question 计算
+    \[
+    \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+    \]
+    \begin{solution}
+        将整数部分与小数部分分开,
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+        =\sum_{r=1}^{34}\frac{18r}{35}
+        -\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
+        \]
+        其中
+        \[
+        \sum_{r=1}^{34}\frac{18r}{35}
+        =\frac{18}{35}\cdot\frac{34\cdot35}{2}
+        =306
+        \]
+        注意到对任意正整数$1 \le r \le 34$,
+        \[
+        \left\{\frac{18r}{35}\right\}+\left\{\frac{18(35-r)}{35}\right\}=1
+        \]
+        当$r$从$1$到$34$时,可以配成$17$对,因此
+        \[
+        \sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
+        \]
+        于是
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
+        =289
+        \]
+    \end{solution}
+    \begin{solution}
+        对任意正整数$1 \le r \le 34$,有
+        \[
+        \frac{18r}{35}+\frac{18(35-r)}{35}=18
+        \]
+        因此
+        \[
+        \left\lfloor \frac{18r}{35}\right\rfloor
+        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
+        +\left\{\frac{18r}{35}\right\}
+        +\left\{\frac{18(35-r)}{35}\right\}=18
+        \]
+        又因为
+        \[
+        \left\{\frac{18r}{35}\right\}
+        +\left\{\frac{18(35-r)}{35}\right\}=1
+        \]
+        所以
+        \[
+        \left\lfloor \frac{18r}{35}\right\rfloor
+        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
+        =17
+        \]
+        因此
+        \[
+        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor=17\cdot 17=289
+        \]
+    \end{solution}
+
+    \question 设$r$为实数,且满足
+    \[
+    \left\lfloor r+\frac{19}{100}\right\rfloor
+    +\left\lfloor r+\frac{20}{100}\right\rfloor
+    +\cdots
+    +\left\lfloor r+\frac{91}{100}\right\rfloor
+    =546
+    \]
+    求$\lfloor100r\rfloor$的值。
+    \begin{solution}
+        从$\dfrac{19}{100}$到$\dfrac{91}{100}$,共有
+        \[
+        91-19+1=73
+        \]
+        项,这些取整值只可能为$7$或$8$。
+
+        若全部等于$7$,则和为$73\cdot 7=521$;若全部等于$8$,则和为$73\cdot 8=581$,
+
+        设前$k$项等于$7$,其余$79-k$项等于$8$,则
+        \[
+        7k+8(73-k)=546 \Rightarrow k=38
+        \]
+        这表示
+        \[
+        \left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
+        \left\lfloor r+\frac{57}{100}\right\rfloor=8
+        \]
+        于是
+        \[
+        \floor{100r}=\floor{r}+\cdots + \left\lfloor r+\frac{56}{100}\right\rfloor+\left\lfloor r+\frac{57}{100}\right\rfloor+\cdots +\left\lfloor r+\frac{99}{100}\right\rfloor=57\cdot7+43\cdot8=743
+        \]
+    \end{solution}
+
+    \question 证明 
+    \[
+    \lfloor \sqrt{1} \rfloor + \lfloor \sqrt{2} \rfloor + \dots + \lfloor \sqrt{n^2 - 1} \rfloor = \frac{n(n-1)(4n+1)}{6}
+    \]
+    \begin{solution}
+        考虑满足 
+        \[
+        \lfloor \sqrt{k} \rfloor = m \tag{1}
+        \]
+        的正整数 $k$ 的个数。(1)等价于
+        \[
+        m \le \sqrt{k} < m+1 \Longleftrightarrow m^2 \le k < (m+1)^2 
+        \]
+        因此,对于每一个确定的 $m$ ,满足条件的 $k$ 有 
+        \[
+        (m+1)^2 - m^2 = 2m+1
+        \]
+        个,于是
+        \begin{align*}
+        \sum_{k=1}^{n^2-1} \lfloor \sqrt{k} \rfloor &= \sum_{m=1}^{n-1} m(2m+1) \\
+        &= 2 \sum_{m=1}^{n-1} m^2 + \sum_{m=1}^{n-1} m \\
+        &= 2 \cdot \frac{(n-1)n(2n-1)}{6} + \frac{(n-1)n}{2} \\
+        &= \frac{n(n-1)(4n+1)}{6}
+        \end{align*}
+        得证。
+    \end{solution}
+
+    \question 求 $\lfloor \frac{3^2}{1} \rfloor + \lfloor \frac{4^2}{2} \rfloor + \lfloor \frac{5^2}{3} \rfloor + \lfloor \frac{6^2}{4} \rfloor + \dots + \lfloor \frac{42^2}{40} \rfloor$。
+
+\begin{solution}
+因为
+\[
+\lfloor \frac{(n+2)^2}{n} \rfloor = \lfloor \frac{n^2 + 4n + 4}{n} \rfloor = n + 4 + \lfloor \frac{4}{n} \rfloor
+\]
+因此，
+\begin{align*}
+&\lfloor \frac{3^2}{1} \rfloor + \lfloor \frac{4^2}{2} \rfloor + \lfloor \frac{5^2}{3} \rfloor + \lfloor \frac{6^2}{4} \rfloor + \dots + \lfloor \frac{42^2}{40} \rfloor \\
+&= (1 + 2 + \dots + 40) + 4 \times 40 + \left( \lfloor \frac{4}{1} \rfloor + \lfloor \frac{4}{2} \rfloor + \lfloor \frac{4}{3} \rfloor + \lfloor \frac{4}{4} \rfloor \right) \\
+&= \frac{40 \times 41}{2} + 160 + 4 + 2 + 1 + 1 \\
+&= 988
+\end{align*}
+答：988。
+\end{solution}
+
+    \question 计算
+    \[
+    \ceil{\sqrt{1}} + \ceil{\sqrt{2}} + \ceil{\sqrt{3}} + \dots + \ceil{\sqrt{2025}}
+    \]
+    \begin{solution}
+        注意到$\sqrt{2025}=45$,当$(m-1)^2<k\le m^2$时有
+        \[
+        \lceil \sqrt{k}\rceil=m
+        \]
+        因此可按 $m=1,2,\dots,45$ 分组求和,
+        \[
+        \sum_{k=1}^{2025}\lceil \sqrt{k}\rceil
+        =\sum_{m=1}^{45}\sum_{k=(m-1)^2+1}^{m^2} m
+        \]
+        对固定的 $m$, 求和的项数为$m^2-(m-1)^2=2m-1$,于是
+        \[
+        \sum_{k=1}^{2025}\lceil \sqrt{k}\rceil
+        =\sum_{m=1}^{45} m(2m-1)
+        =2\sum_{m=1}^{45}m^2-\sum_{m=1}^{45}m
+        =2\cdot\frac{45\cdot46\cdot91}{6}-\frac{45\cdot46}{2}
+        =61755
+        \]
+    \end{solution}
+
+    \question 求
+    \[
+    \lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
+    \]
+    \begin{solution}
+        首先发现
+        \[
+        \lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
+        =\frac{143}{2}(1+995)
+        \]
+        \[
+        \lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
+        =\frac{143}{2}(2+996)
+        \]
+        以此类推,原式即
+        \begin{align*}
+        &\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil+\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil \\
+        &+\cdots + \lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil \\
+        &=\frac{143}{2}(1+995+2+996+3+997+4+998+4+998+5+999+6+1000+6+1000)\\
+        &\quad+\frac{142}{2}(7+994+8+995)\\
+        &=715285
+        \end{align*}
+    \end{solution}
+
+    \question 求
+    \[
+    \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
+    \]
+    \begin{solution}
+        利用二项式展开,
+        \begin{align*}
+        a_n &= \left\lfloor \frac{(3-1)^n}{3} \right\rfloor \\
+        &= \left\lfloor 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} + \frac{(-1)^n}{3} \right\rfloor \\
+        &= 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} 
+        \end{align*}
+        且注意到 
+        \[
+        a_n 
+        = \begin{cases}
+        \dfrac{2^n-1}{3}, \quad n\text{为偶数} \\[8pt]
+        \dfrac{2^n-2}{3}, \quad n\text{为奇数}
+        \end{cases}
+        = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}
+        \]
+        因此
+        \begin{align*}
+        \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
+        &= \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
+        &= \frac{1}{3} \cdot \frac{2^{1001}-1}{2-1} - \frac{1001}{2} + \frac{1}{6} \\
+        &= \frac{2^{1001}-1502}{3}
+        \end{align*}
+    \end{solution}
+
+    \question 设 $m, n$ 是整数,$n \ge 1$ ,证明 
+    \[
+    \left\lfloor \dfrac{m+1}{n} \right\rfloor = 
+    \begin{cases} 
+    \left\lfloor \dfrac{m}{n} \right\rfloor &,n \nmid m+1 \\[8pt]
+    \left\lfloor \dfrac{m}{n} \right\rfloor + 1 &,n \mid m+1
+    \end{cases}
+    \]
+    \begin{solution}
+        当 $n$ 不整除 $m+1$,有$m+1 = kn+r$ ,其中 $k \in \mathbb{Z},1 \le r \le n-1$,此时欲证 
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor \tag{1}
+        \]
+        观察左式为
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn+r}{n} \right\rfloor = \left\lfloor k + \frac{r}{n} \right\rfloor = k 
+        \]
+        右式为
+        \[
+        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn+r-1}{n} \right\rfloor = \left\lfloor k + \frac{r-1}{n} \right\rfloor = k
+        \]
+        故(1)得证。当 $n$ 整除 $m+1$ 时,即 $m+1 = kn$,欲证
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor + 1 \tag{2}
+        \]
+        此时左式为
+        \[
+        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn}{n} \right\rfloor = \left\lfloor k \right\rfloor = k
+        \]
+        右式为
+        \[
+        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn-1}{n} \right\rfloor = \left\lfloor k - \frac{1}{n} \right\rfloor = k-1 
+        \]
+        故(2)得证。
+    \end{solution}
+
+    \question 证明对任意实数 $\alpha, \beta$ 有 
+    \[
+    \lfloor 2\alpha \rfloor + \lfloor 2\beta \rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor
+    \]
+    \begin{solution}
+        令 
+        \[
+        \alpha = n_1 + r_1,\beta = n_2 + r_2, \quad n_1, n_2 \in \mathbb{Z},\quad 0 \le r_1, r_2 < 1
+        \]
+        则原不等式等价于
+        \[ 
+        \lfloor 2r_1 \rfloor + \lfloor 2r_2 \rfloor \ge \lfloor r_1 + r_2 \rfloor \tag{1}
+        \]
+        若 $0 \le r_1 < \dfrac{1}{2}$ 且 $0 \le r_2 < \frac{1}{2}$ ,则左式 $= 0 + 0 = 0$ 。由于 $r_1 + r_2 < 1$ ,右式 $= 0$,(1)成立；
+
+        若 $r_1, r_2$ 中有一个大于等于 $\frac{1}{2}$ ,不妨设 $r_1 \ge \dfrac{1}{2}$ ,则左式 $\ge 1 + 0 = 1$ 。而 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)成立；
+
+        若 $r_1 \ge \dfrac{1}{2}$ 且 $r_2 \ge \frac{1}{2}$ ,则左式 $= 1 + 1 = 2$ 。由于 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)也成立。
+
+        综上,原不等式成立。
+    \end{solution}
+
+    \question 证明对任意实数 $x, y$ 有 
+    \[
+    \lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1
+    \]
+    \begin{solution}
+        由取整函数的性质可知 
+        \[
+        x - 1 < \lfloor x \rfloor \le x,\quad -(y - 1) > -\lfloor y \rfloor \ge -y
+        \]
+        由 $x = (x - y) + y$ 得 
+        \[
+        \lfloor x \rfloor = \lfloor (x - y) + y \rfloor \ge \lfloor x - y \rfloor + \lfloor y \rfloor
+        \]
+        移项得 
+        \[
+        \lfloor x \rfloor - \lfloor y \rfloor \ge \lfloor x - y \rfloor
+        \]
+        得证左边不等式,又因 $x - y = x + (-y)$ 得 
+        \[
+        \lfloor x - y \rfloor = \lfloor x + (-y) \rfloor \ge \lfloor x \rfloor + \lfloor -y \rfloor
+        \]
+        由于 
+        \[
+        \lfloor -y \rfloor = 
+        \begin{cases}
+        -\lfloor y \rfloor &,y \in \mathbb{Z} \\ 
+        -\lfloor y \rfloor - 1 &,y \not\in \mathbb{Z}
+        \end{cases}
+        \]
+        即 
+        \[
+        \lfloor -y \rfloor \ge -\lfloor y \rfloor - 1
+        \]
+        代入得 
+        \[
+        \lfloor x - y \rfloor \ge \lfloor x \rfloor - \lfloor y \rfloor - 1
+        \]
+        得证右边不等式,综上原不等式成立。
+    \end{solution}
+
+    \question 证明埃尔米特恒等式:对所有实数 $x$ 及所有正整数 $n$ ,以下恒等式成立:
+    \[ 
+    \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = \lfloor nx \rfloor 
+    \]
+    \begin{solution}
+        将 $x$ 分解为整数部分和小数部分,即 
+        \[
+        x = \lfloor x \rfloor + \{x\}
+        \]
+        在 $\{1, \dots, n\}$ 中,恰好存在一个 $k'$ 使得:
+        \[ 
+        \lfloor x \rfloor = \left\lfloor x + \frac{k'-1}{n} \right\rfloor \le x < \left\lfloor x + \frac{k'}{n} \right\rfloor = \lfloor x \rfloor + 1 
+        \]
+        通过在不等式左右两边的取整符号内减去同一个整数 $\lfloor x \rfloor$ ,可以重写为:
+        \[ 
+        0 = \left\lfloor \{x\} + \frac{k'-1}{n} \right\rfloor \le \{x\} < \left\lfloor \{x\} + \frac{k'}{n} \right\rfloor = 1  
+        \]
+        因此有
+        \[ 
+        1 - \frac{k'}{n} \le \{x\} < 1 - \frac{k'-1}{n}  
+        \]
+        即求点
+        \[ 
+        n - k' \le n\{x\} < n - k' + 1 
+        \]
+        这意味着 $\lfloor n\{x\} \rfloor = n - k'$,于是
+        \begin{align*}
+        \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor &= \sum_{k=0}^{k'-1} \lfloor x \rfloor + \sum_{k=k'}^{n-1} (\lfloor x \rfloor + 1) \\
+        &= k' \lfloor x \rfloor + (n - k')(\lfloor x \rfloor + 1) \\
+        &= n \lfloor x \rfloor + n - k' \\
+        &= n \lfloor x \rfloor + \lfloor n\{x\} \rfloor \\
+        &= \lfloor n \lfloor x \rfloor + n\{x\} \rfloor \\
+        &= \lfloor nx \rfloor
+        \end{align*}
+        得证。
+    \end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{计数、排列、组合}{计数、排列、组合} \label{计数、排列、组合}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+
+    \question 一间学校有 2020 位学生。如果将这些学生分成 7 组来进行运动会，没有两组有相同的人数，那么人数最多的组至少有几个人？
+
+\begin{solution}
+设各组的学生人数分别为 $m_1, m_2, m_3, m_4, m_5, m_6, m_7$，且满足
+\[ m_1 > m_2 > \dots > m_7 \]
+这隐含了 $m_2 \le m_1 - 1, m_3 \le m_2 - 1 \le m_1 - 2, \dots, m_7 \le m_1 - 6$。
+由于 $m_1 + m_2 + m_3 + m_4 + m_5 + m_6 + m_7 = 2020$，我们有：
+\[ 7m_1 - 21 \ge 2020 \]
+因此，$m_1$ 至少为 292。
+实际上，我们可以让这 7 组的人数分别为 292, 291, 290, 289, 288, 287, 283。
+\end{solution}
+    \question 已知集合 $S = \{1, 2, 3, \dots, 1000\}$ 包含由 1 到 1000 的整数。$S$ 的任何一个包含 $N$ 个元素的子集一定包含两个相异的元素 $a$ 与 $b$，其和 $a + b$ 等于 1000。求 $N$ 的最小可能值。
+
+\begin{solution}
+我们断言 $N$ 的最小可能值是 502。
+考虑集合 $A = \{1, 2, 3, \dots, 499, 500, 1000\}$。它包含 501 个元素，且其中没有任何两个相异元素的和等于 1000。
+因此，若 $N$ 小于 502，我们可以找到一个包含 $N$ 个元素的 $S$ 的子集，其中不包含两个相异元素之和为 1000。只需取 $A$ 的任何一个包含 $N$ 个元素的子集即可。
+现在考虑集合 $S$ 的如下划分：
+\[
+E_1 = \{1, 999\}, E_2 = \{2, 998\}, E_3 = \{3, 997\}, \dots, E_{499} = \{499, 501\}, E_{500} = \{500\}, E_{501} = \{1000\}
+\]
+根据鸽巢原理，任何包含 502 个元素的 $S$ 的子集必须包含上述集合 $E_1, E_2, \dots, E_{499}$ 中至少一个集合的全部 2 个元素，而这些元素的和为 1000。
+因此，$N$ 的最小可能值是 502。
+答：502。
+\end{solution}
+
+\question 设 $S = \{n \mid n \text{ 是小于 100000 的正整数且 } n \text{ 的各位数字的乘积是 120}\}$，求 $S$ 中元素的个数。
+
+\begin{solution}
+已知 $120 = 2^3 \times 3 \times 5$。
+
+若 $n$ 是一个三位数，有两种情况：
+\begin{itemize}
+    \item 三位数字可以是 8, 3 和 5。共有 6 个这样的整数。
+    \item 三位数字可以是 4, 6, 5。共有 6 个这样的整数。
+\end{itemize}
+
+若 $n$ 是一个四位数，有四种情况：
+\begin{itemize}
+    \item 四位数字可以是 1, 8, 3 和 5。共有 24 个这样的整数。
+    \item 四位数字可以是 1, 4, 6 和 5。共有 24 个这样的整数。
+    \item 四位数字可以是 2, 4, 3, 5。共有 24 个这样的整数。
+    \item 四位数字可以是 2, 2, 6, 5。共有 12 个这样的整数。
+\end{itemize}
+
+若 $n$ 是一个五位数，有五种情况：
+\begin{itemize}
+    \item 五位数字可以是 1, 1, 8, 3 和 5。共有 60 个这样的整数。
+    \item 五位数字可以是 1, 1, 4, 6 和 5。共有 60 个这样的整数。
+    \item 五位数字可以是 1, 2, 4, 3, 5。共有 120 个这样的整数。
+    \item 五位数字可以是 1, 2, 2, 6, 5。共有 60 个这样的整数。
+    \item 五位数字可以是 2, 2, 2, 3, 5。共有 20 个这样的整数。
+\end{itemize}
+
+$S$ 共有 416 个元素。
+\end{solution}
+    \question 求满足以下条件的三位数的个数:  
+    \begin{itemize}
+        \item 三个数字各不相同
+        \item 数字按递减顺序排列
+        \item 其中一个数字是5
+    \end{itemize}  
+    \begin{solution}
+        即先选数字$5$,再从$9$个数字中任选$2$个,所以有 
+        \[
+        \comb{9}{2}=36
+        \]
+        个这样的三位数。注意到每组都能唯一地按递减顺序排成一个三位数,而且首位不会是 $0$。
+    \end{solution}
+
+    \question 已知 $a,b,c$ 为相异正整数且满足 $abc=2310$,求所有可能相异集合 $\{a,b,c\}$的个数。
+    \begin{solution}
+        发现$2310 = 2\times 3\times 5\times 7\times 11$,从 $5$ 个因数中,
+        \begin{itemize}
+            \item 挑 3 个连乘积作为 $a$,剩下 2 个作为 $b,c$,有
+            $\comb{5}{3} = 10$种可能。
+            \item 挑 2 个连乘积作为 $a$,剩下 3 个再挑 2 个乘积作为 $b$,有 $\comb{5}{2} \cdot \comb{3}{2} = 30$
+            种可能。
+        \end{itemize}
+        故共有$10 + 30 = 40$种可能。
+    \end{solution}
+
+    \question $A$ 有一本共有 $2017$ 页的书，页码从 $1$ 到 $2017$。问有多少个页码同时包含至少一个数字 $1$ 和至少一个数字 $9$？例如 $91,1921,191$ 都符合条件。
+    \begin{solution}
+        情况一:页码为二位数。只有$19,91$满足要求,共2个页码符合要求。
+
+        情况二:页码为三位数。页码中必有数字$1,9$,排列数为$3\cdot 2\cdot 10$,但此时多算了页码$119,191,199,911,919,991,019,091$,故符合要求的页码共有$3\cdot 2\cdot 10-6=52$。
+
+        情况二:页码为三位数。千位必为数字1,而数字9可位于百位、十位或各位,排列数为$3\cdot 10\cdot 10$,但此时多考虑了含两个数字9的页码，共$3\cdot 10$。减去其之后,发现又少算了页码1999。故符合要求的页码共有$3\cdot 10\cdot 10-3\cdot 10+1=271$。
+
+        故共有
+        \[
+        2+52+271=325
+        \]
+        个页码符合条件。
+    \end{solution}
+
+    \question 设 $N$ 为满足 $x < y < z$ 且
+    \[
+    xyz = 2^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 11^2 \cdot 13^2 \cdot 17^2 \cdot 19^2
+    \]
+    的正整数三元组 $(x, y, z)$ 的个数。求 $N$。
+    \begin{solution}
+        忽略$x < y < z$,先计算无序三元组 $(a,b,c)$的个数,使得
+        \[
+        abc = 2^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 11^2 \cdot 13^2 \cdot 17^2 \cdot 19^2
+        \]
+        每个平方的质因数可以分配给 $a,b,c$ 的方式有 6 种:两个都给 $a$,两个都给 $b$,两个都给 $c$,或者每个数各取一个。共有 8 个平方质因数,因此共有 $6^8$ 种分配方式。
+
+        现考虑$a,b,c$中两个数相等的情况。观察到积$abc$不是完全立方数,所以$a=b=c$不成立。计算恰有一对相等的三元组:以 $a=b$ 为例,每个平方质因数分配给 $c$,亦或分配给 $a$ 和 $b$ 各一个,共 $2^8$ 种三元组需要排除,同理$a=c,b=c$ 也各有 $2^8$ 种,所以相异的三元组数为:
+        \[
+        6^8 - 3\cdot 2^8
+        \]
+        将无序三元组 $(a,b,c)$ 转换为有序三元组 $(x,y,z)$,其中$x<y<z$,每个三元组对应 6 个无序三元组,因此
+        \[
+        N = \frac{1}{6}(6^8 - 3\cdot 2^8) = 279808
+        \]
+    \end{solution}
+
+    \question 已知 $a_0, a_1, a_2, a_3, a_4$ 的值正好都是 $-1, 0, 1$ 中的数, 则 $a_0 + 3a_1 + 3^2a_2 + 3^3a_3 + 3^4a_4$ 的值是正整数共有多少个？
+    \begin{solution}
+        形如
+        \[
+        1\triangle \triangle \triangle \triangle,01\triangle \triangle \triangle,
+        001\triangle \triangle,
+        0001\triangle,
+        00001
+        \]
+        的数共有
+        \[
+        3^4,3^3,3^2,3^1,1
+        \]
+        个,总计
+        \[
+        81 + 27 + 9 + 3 + 1 = 121
+        \]
+    \end{solution}
+
+    \question 求正整数有序三元组 $(x,y,z)$ 的个数,使得
+    \[
+    xyz = 4000.
+    \]
+    \begin{solution}
+        质因数分解得$4000 = 2^5 \cdot 5^3$,设
+        \[
+        x = 2^a 5^d, \quad y = 2^b 5^e, \quad z = 2^c 5^f,
+        \]
+        其中 $a,b,c,d,e,f$ 为非负整数,则需满足
+        \[
+        a+b+c = 5, \quad d+e+f = 3
+        \]
+        非负整数解的个数为
+        \[
+        \#(a,b,c) = \comb{5+3-1}{3-1} = 21, \quad \#(d,e,f) = \comb{3+3-1}{3-1} = 10
+        \]
+        因此有序三元组 $(x,y,z)$ 的个数为
+        \[
+        21 \cdot 10 = 210
+        \]
+    \end{solution}
+
+    \question 将 $1,2,3,4,5,6,7$ 排成一列,若规定排列后不得出现 $12,23,34,45,56,67$(如：1273546 不合题意,7362154 符合题意),则有多少种排法？
+    \begin{solution}
+    7 个相异数字任意排列共有 $7!$ 种。
+
+    从$12,23,34,45,56,67$选$12$后有6个板块,出现$12$的排列数为$\comb{6}{1}6!$。
+
+    依此类推,由容斥原理,总排列数为
+    \[
+    7!-\comb{6}{1}6!+\comb{6}{2}5!-\comb{6}{3}4!+\comb{6}{4}3!-\comb{6}{5}2!+1=2119
+    \]
+    \end{solution}
+
+    \question 如果一个数的每一位都大于前一位,则称它为上升数。例如 457 是上升数,但 447 不是。问 400 到 5000 之间共有多少上升数？
+    \begin{solution}
+        情况一:上升数为三位数。三位数必须在 400 到 999 之间,百位可以是 4,5,6,7,8,9。4 到 9 的 6 个数字中任选 3 个,按升序排列即可得到上升数。排列数为$\comb{6}{3}$。
+
+        情况二:上升数为四位数。四位数小于 5000,千位必须为 1,2,3,4。1 到 9 的数字中任选 4 个,再扣除首位 $\ge 5$ 的数。排列数为$\comb{9}{4} - \comb{5}{4}$。
+
+        因此共有 
+        \[
+        \comb{6}{3} + (\comb{9}{4} - \comb{5}{4}) = 141
+        \]
+        个这样的上升数。
+    \end{solution}
+
+    \question Ricardo 想要将三个 1、三个 2、两个 3 和一个 4 排成一个九位正整数,且满足以下条件:
+    \begin{itemize}
+        \item 从左到右,至少有一个 1 在第一个 2 之前,至少有一个 2 在第一个 3 之前,至少有一个 3 在 4 之前;
+        \item 任意两个数字 2 不能相邻。
+    \end{itemize}
+    求总共有多少种符合条件的九位数。
+    \begin{solution}
+        设 $N$ 为满足条件的整数。$N$ 的首位必须是 1,因此 $N$ 可以以 1、11 或 111 开头。又因为第一个非 1 的数字必须是 2,所以 $N$ 只能以 12、112 或 1112 开头。
+        
+        情况 1:$N$ 以 12 开头。剩余两个 2 不能相邻,可放在下列位置组合(从左数第几位):
+        \[
+        (4,6),(4,7),(4,8),(4,9),(5,7),(5,8),(5,9),(6,8),(6,9),(7,9)
+        \]
+        共有 10 种可能。剩余两个 1 可以放在剩下的 5 个空位中的任意两位,有 $\comb{5}{2}=10$ 种方法。剩余的两个 3 和一个 4 需放在最后 3 个位置中。为保证至少有一个 3 在 4 之前,第一个空位必须放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。因此本情况共有:
+        \[
+        10 \cdot 10 \cdot 2 = 200.
+        \]
+        情况 2:$N$ 以 112 开头。剩余两个 2 不能相邻,可放在:
+        \[
+        (5,7),(5,8),(5,9),(6,8),(6,9),(7,9)
+        \]
+        共有 6 种可能。剩余一个 1 可放在 4 个空位中的任意一位,有 4 种方法。剩余两个 3 和一个 4 需放在最后 3 个位置中。第一个空位放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。本情况共有:
+        \[
+        6 \cdot 4 \cdot 2 = 48.
+        \]
+        情况 3:$N$ 以 1112 开头。剩余两个 2 不能相邻,可放在
+        \[
+        (6,8),(6,9),(7,9)
+        \]
+        共有 3 种可能。剩余的两个 3 和一个 4 需放在最后 3 个位置中。第一个空位放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。本情况共有:
+        \[
+        3 \cdot 2 = 6.
+        \]
+        综上,共有 $200 + 48 + 6 = 254$ 种符合条件的九位数。
+    \end{solution}
+
+    \question
+3) 从数字1至9中选出7位数，要求每个数字不重复，并且5和6不能连续出现，求共有多少种排列方式。
+
+\begin{solution}
+考虑不同情况：
+
+(a) 5和6都出现：
+
+- 情况一：第1位是5，第2位不是6：
+\[
+5 \times \perm{7}{5} = 12600
+\]
+
+- 情况二：第7位是5，第6位不是6：
+\[
+5 \times \perm{7}{5} = 12600
+\]
+
+- 情况三：5出现在首尾之外的其他位置：
+\[
+5 \times 4 \times \perm{7}{5} = 50400
+\]
+
+因此，5和6都出现的排列数：
+\[
+12600 + 12600 + 50400 = 75600
+\]
+
+(b) 5和6都不出现：
+\[
+\perm{7}{7} = 7! = 5040
+\]
+
+(c) 5出现但6不出现：
+\[
+7 \times \perm{7}{6} = 7 \times 7! = 35280
+\]
+
+(d) 5不出现但6可以出现：
+\[
+7 \times \perm{7}{6} = 7 \times 7! = 35280
+\]
+
+根据加法原理，总排列数为：
+\[
+75600 + 5040 + 2 \times 35280 = 151200
+\]
+\end{solution}
+
+
+    \question 令 $a_n$ 为第 $n$ 小的各位数字之和为 $3$ 的正整数。例如 $a_1=3, a_2=12, a_3=21, a_4=30$。求 $a_{2012}$ 有多少位数。  
+    \begin{solution}
+        若一个数最多有 $d$ 位,那么其各位和为 $3$ 的这样的数的个数为
+        \[
+        \comb{d+2}{3}
+        \]
+        这是因为我们可以用隔板法来理解:将 $3$ 个相同的球(代表数字和为 3)分配到 $d$ 个位置(代表 $d$ 位数),等价于在 $d+2$ 个位置中选择 $3$ 个位置放置隔板。具体地,我们在一排 $d+2$ 个位置中放置恰好 $3$ 个 O(其余为 X),则第 $i$ 位的数字等于第 $i-1$ 个 X 与第 $i$ 个 X 之间的 O 的个数。因此需找最小的 $d$ 使得
+        \[
+        \comb{d+2}{3}\ge 2012.
+        \]
+        计算得
+        \[
+        \comb{23}{3}=1771,\quad \comb{24}{3}=2024.
+        \]
+        因此当 $d=22$ 时,$\comb{24}{3}=2024\ge2012$,且 $d=21$ 时不足。故 $a_{2012}$ 恰有 $22$ 位。
+    \end{solution}
+
+    \question 将$A,B,C,D,E,F,G,H$八个字母排成一列,使得$B$在$A$之右方,$E$在$C$与$D$之间,且$F,G$不相邻,试问符合条件的排法有多少种？
+    \begin{solution}
+        在所有的排列中,$B$ 在 $A$ 的右方与 $A$ 在 $B$ 的右方各占一半,因此满足"$B$ 在 $A$ 的右方"的排列占全部排列的 $\dfrac{1}{2}$。
+        
+        同理,在 $C,D,E$ 三个字母的相对位置中,$E$ 在 $C$ 与 $D$ 之间、$C$ 在 $E$ 与 $D$ 之间、$D$ 在 $E$ 与 $C$ 之间各占三分之一,因此满足"$E$ 在 $C$ 与 $D$ 之间"的排列占全部排列的 $\dfrac{1}{3}$。
+        
+        现计算满足"$F,G$ 不相邻"的排列数:
+        
+        八个字母的全排列有 $8!$ 种。若 $F,G$ 相邻,可将它们视为一个整体,有 $7!$ 种排法,而 $F,G$ 内部有 $2$ 种排列,因此 $F,G$ 相邻的排法有 $7! \cdot 2$ 种。
+        
+        所以 $F,G$ 不相邻的排法有 $8! - 7! \cdot 2$ 种。
+        
+        由于这三个条件相互独立,符合所有条件的排法数为:
+        \[
+        \frac{8! - 7! \cdot 2}{2 \cdot 3} = 5040
+        \]
+    \end{solution}
+
+    \question 有 6 个人有网络账号，已知每个人都恰好与自己以外的 2 个人互为好友，则共有种不同的组成方法?
+    \begin{solution}
+        用六个顶点表示六个人，两顶点有连线表示两人互为好友。
+
+        情况一:一个六边形。共有$\dfrac{5!}{2}$种。
+
+        情况二:两个三角形。共有$\dfrac{\comb{6}{3}}{2}$种。
+
+        因此共有
+        \[
+        \frac{5!}{2}+\frac{\comb{6}{3}}{2}=70
+        \]
+        种组合方式。
+    \end{solution}
+
+\question 求不大于 $2018$ 的正整数中,二进制中 1 出现比 0 多的个数。
+\begin{solution}
+    考虑不大于 $2047=2^{11}-1$且满足条件的正整数个数,再减去 2019 至 2047 的 29 个数,因为这29 个数的二进制中至少有6个1。
+
+    对于偶数位数（去掉开头的 1 后有偶数位）,一半的数满足 1 的个数多于 0。具体公式为:
+    \[
+    \frac{1}{2}\left(2^{2k} + \comb{2k}{k}\right)
+    \]
+    因为恰好 $k$ 个 1 的情况算一半,其余一半满足条件,计算:
+    \[
+    \frac{1}{2}\Big(2047 + \comb{0}{0} + \comb{2}{1} + \comb{4}{2} + \comb{6}{3} + \comb{8}{4} + \comb{10}{5}\Big) = 1199
+    \]
+    故答案为$1199-29=1170$。
+    \textcolor{red}{Half of the numbers with an even number of bits have this property, since they have an odd number of bits after their initial 1. Of the $2^{2k}$ numbers with $2k$ bits following the initial 1, the number with this property is $\frac{1}{2}(2^{2k} + \binom{2k}{k})$ since those with $k$ 1's will be included, and half of the others will.}
+\end{solution}
+
+    \question 小王有八个编号为 1 到 8 的盒子和八个编号为 1 到 8 的球。问他把球放入盒子,使每个盒子恰好有一个球,且球 1 不在盒子 1,球 2 不在盒子 2,球 3 不在盒子 3,有多少种方法？
+    \begin{solution}
+        设
+        \[
+        A_1 = \{\text{球 1 在盒子 1}\}, \quad
+        A_2 = \{\text{球 2 在盒子 2}\}, \quad
+        A_3 = \{\text{球 3 在盒子 3}\}.
+        \]
+        根据容斥原理,不允许的排列数为
+        \begin{align*}
+        &|A_1 \cup A_2 \cup A_3| \\
+        &= |A_1| + |A_2| + |A_3| - |A_1 \cap A_2| - |A_1 \cap A_3| - |A_2 \cap A_3| + |A_1 \cap A_2 \cap A_3| \\
+        &=3\cdot 7! - 3\cdot 6! + 5! = 13080           
+        \end{align*}
+        因此满足条件的排列数为
+        \[
+        S = 8! - |A_1 \cup A_2 \cup A_3| = 27240
+        \]
+    \end{solution}
+
+    \question 在一排有 20 张椅子的座位区中, 要安排甲、乙、丙、丁、戊 5 人入坐, 一人坐一张椅子, 要求第一张与最后一张椅子不能安排人入坐, 且每相邻的 5 张椅子至少要有一人入坐, 任两人不能坐在相邻的椅子上。试问 5 人入坐的方法有多少种可能?
+    \begin{solution}
+    20 张椅子 5 人先入坐, 有 $5!$ 排法, 剩下 15 张椅子。依规定头尾各放一张, 剩下 13 张; 两人中间各摆一张, 剩下 9 张。
+
+    9 张椅子可以在 5 人的六个间隔中摆放, 有 $\comb{9+6-1}{6-1}$ 摆法。
+
+    为符合「相邻 5 张椅子至少要有一人坐」, 需扣除某个间隔塞入四张或以上的情形,因此实际摆法有
+    \[
+    5!(\comb{9+6-1}{6-1} - \comb{6}{1} \cdot \comb{6+5-1}{5-1} + \comb{6}{2} \cdot \comb{6+1-1}{1-1})= 69600
+    \]
+    \end{solution}
+
+    \question 由字母 $A$ 和 $B$ 组成的 9 个字母的字母串中,有多少个不包含连续字母串 $ABBA$？
+    \begin{solution}
+        总字母串数为 $2^9 = 512$,我们先计算至少包含一个 $ABBA$ 的字符串数量,再用总数减去它。
+
+        $ABBA$ 可以出现在前 6 个位置中的任意一个位置,剩余 5 个位置可以随意填充 $A$ 或 $B$,因此每个起始位置有 $2^5 = 32$ 种方法,共 $6 \cdot 32 = 192$ 种字母串。  
+
+        这 192 种字母串中有些被重复计算,因为 $ABBA$ 可以重叠如下:
+        \[
+        xyABBABBA, \quad xABBABBAy, \quad ABBABBAxy
+        \]
+        其中 $x, y$ 可以是 $A$ 或 $B$,共有 $12$ 种。还有 6 种形为
+        \[
+        xABBAABBA, \quad ABBAxABBA, \quad ABBAABBAx
+        \]
+        这些被重复计算了 2 次。  
+
+        根据容斥原理,因此至少包含一个 $ABBA$ 的字母串数为 $192-12-6 = 174$。故不包含 $ABBA$ 的字母串数为:
+        \[
+        512 - 174 = 338
+        \]
+    \end{solution}
+
+    \question 设 Bauman 字串满足以下条件:
+    \begin{itemize}
+        \item 每个字母只能是 $A, B, C, D, E$ 之一；
+        \item 相邻两个字母不能相同。
+    \end{itemize}
+    例如 $AECD, BDCEC$ 是 Bauman 字串,而 $ABBC, DAEEE$ 不是。
+    \begin{parts}
+    \part 长度为 5 的 Bauman 字串中,首尾字母都是 $A$ 的有多少个？
+    \begin{solution}
+        若首尾均为 $A$,则第二位和第四位不能是 $A$。按第三位分类讨论:
+
+        情形 1:第三位是 $A$。字串形如 $A\_A\_A$,第二位有 4 种选择($B,C,D,E$),第四位有 4 种选择,共 $4 \cdot 4 = 16$ 种。
+
+        情形 2:第三位不是 $A$。第三位有 4 种选择($B,C,D,E$),第二位需与第三位不同且不能为 $A$,共 3 种选择;第四位同理有 3 种选择,共 $4 \cdot 3 \cdot 3 = 36$ 种。
+
+        总数为 $16 + 36 = 52$。
+    \end{solution}
+    \begin{solution}
+        按第二位和第四位是否相同分类:
+
+        情形 1:第二位和第四位相同。字串形如 $Ax\_xA$(其中 $x$ 表示第二位和第四位的字母),第二位有 4 种选择,第三位需与第二位不同,有 4 种选择,共 $4 \cdot 4 = 16$ 种。
+
+        情形 2:第二位和第四位不同。字串形如 $Axy\_A$(其中 $x$, $y$ 分别表示第二位和第四位的字母),第二位有 4 种选择,第四位需与第二位不同,有 3 种选择,第三位需与第二位和第四位都不同,有 3 种选择,共 $4 \cdot 3 \cdot 3 = 36$ 种。
+
+        总数为 $16 + 36 = 52$。
+    \end{solution}
+    \part 长度为 6 的 Bauman 字串中,包含超过一个 B 的有多少个？
+    \begin{solution}
+        总字串数为 $5 \cdot 4^5 = 5120$(首位 5 种选择,其余每位 4 种选择)。
+
+        无 $B$ 的字串:首位 4 种选择($A,C,D,E$),其余每位 3 种选择(需与前一位不同且不能是 $B$),共 $4 \cdot 3^5 = 972$ 种。
+
+        恰有 1 个 $B$ 的字串:
+        \begin{itemize}
+            \item 若 $B$ 在首位或末位:
+            \begin{itemize}
+                \item $B$ 在首位:第二位 4 种,其余每位 3 种,共 $1 \cdot 4 \cdot 3^4 = 324$ 种
+                \item $B$ 在末位:首位 4 种,第二到第五位中第二位 3 种,其余每位 3 种,共 $4 \cdot 3^4 = 324$ 种
+            \end{itemize}
+            \item 若 $B$ 在第 2 到第 5 位(共 4 个位置):每个位置,$B$ 前一位 4 种,$B$ 后一位 4 种,其余 3 个位置各 3 种,每个位置贡献 $4 \cdot 1 \cdot 4 \cdot 3^3 = 432$ 种,共 $4 \cdot 432 = 1728$ 种
+        \end{itemize}
+        恰有 1 个 $B$ 的总数为 $324+ 324 + 1728 = 2376$。
+
+        超过 1 个 $B$ 的数目为:
+        \[
+        5120 - 972 - 2376 = 1772.
+        \]
+    \end{solution}
+    \begin{solution}
+       长度为 6 的 Bauman 字串中,由于相邻字母不能相同,$B$ 最多出现 3 次。故只需计算恰有 2 个 $B$ 或恰有 3 个 $B$ 的字串数。
+
+        情形 1:恰有 3 个 $B$。三个 $B$ 必须间隔放置。可能的位置模式有:
+        \begin{itemize}
+            \item $B\_B\_B\_$(第 1, 3, 5 位):第 2, 4, 6 位各 4 种选择,共 $4^3 = 64$ 种
+            \item $\_B\_B\_B$(第 2, 4, 6 位):第 1, 3, 5 位各 4 种选择,共 $4^3 = 64$ 种
+            \item $B\_B\_B$(第 1, 3, 5 位):第 2 位 4 种,第 4 位 4 种,第 6 位 3 种,共 $4 \cdot 4 \cdot 3 = 48$ 种
+            \item $\_B\_B\_$(第 2, 4, 6 位):第 1 位 4 种,第 3 位 4 种,第 5 位 3 种,共 $4 \cdot 4 \cdot 3 = 48$ 种
+        \end{itemize}
+        合计 $64 + 64 + 48 + 48 = 224$ 种。
+
+        情形 2:恰有 2 个 $B$。从 6 个位置中选 2 个放 $B$,有 $\comb{6}{2} = 15$ 种选择,但需排除相邻的 5 种,剩余 10 种位置模式。
+
+        逐一计数(用下划线表示非 $B$ 位置):
+        \begin{itemize}
+            \item $B\_\_\_B\_$:第 2 位 4 种,第 4 位 4 种,第 5, 6 位各 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
+            \item $\_\_B\_\_B$:对称,同样 $144$ 种
+            \item $B\_\_B\_\_$:第 2, 4 位各 4 种,第 5 位需与第 4 位不同有 3 种,第 6 位 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
+            \item $\_\_B\_B\_$:对称,同样 $144$ 种
+            \item $B\_B\_\_\_$:第 2 位 4 种,第 4, 5, 6 位各 3 种,共 $4 \cdot 3 \cdot 3 \cdot 3 = 108$ 种
+            \item $\_\_\_B\_B$:对称,第 1 位 4 种,第 2, 3 位各 3 种,第 5 位 3 种,共 $4 \cdot 3 \cdot 3 \cdot 3 = 108$ 种
+            \item $B\_B\_\_\_$:第 2 位 4 种,第 4 位需与第 3 位不同有 4 种,第 5, 6 位各 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
+            \item $\_\_B\_B$:对称,同样 $144$ 种
+            \item $B\_\_\_\_B$:第 2 位 4 种,第 3, 4, 5 位各 3 种,共 $4 \cdot 3^3 = 108$ 种
+            \item $\_B\_B\_\_$:第 1, 3, 5 位各 4 种,第 6 位 3 种,共 $4^3 \cdot 3 = 192$ 种
+        \end{itemize}
+        合计 $4 \cdot 144 + 2 \cdot 108 + 2 \cdot 144 + 108 + 192 = 1548$ 种。
+
+        恰 2 个 $B$ 的有 1548 种,恰 3 个 $B$ 的有 224 种,总和为 $1548 + 224 = 1772$。
+    \end{solution}
+    \end{parts}
+
+
+    \question 将字母串 $AAAABBBCCC$ 排成一列,且相同字母不相邻的排法有多少种？
+    \begin{solution}
+        按 $B,C$ 的排列分类,再插入 $A$。先排列 3 个 $B$ 和 3 个 $C$ 的相对次序,记为「$BC$ 串」。共有
+        \[
+        \comb{6}{3}=\frac{6!}{3!3!}=20
+        \]
+        种 $BC$ 串。按 $BC$ 串中出现相邻同字母的"块数"分类,列举如下:
+        \begin{center}
+        \begin{tabular}{c|l}
+        编号 & 字串 \\ \hline 
+        1 & $BCBCBC$ \\ 
+        2 & $CBCBCB$ \\ \hline 
+        3 & $BCCBCB$ \\ 
+        4 & $CBCBBC$ \\ 
+        5 & $BCBCCB$ \\ 
+        6 & $CBBCBC$ \\ \hline 
+        7 & $BCCBBC$ \\ 
+        8 & $CCBBCB$ \\ 
+        9 & $BCBBCC$ \\ 
+        10 & $CCBCBB$ \\ 
+        11 & $BBCCBC$ \\ 
+        12 & $CBBCCB$ \\ 
+        13 & $BBCBCC$ \\ 
+        14 & $CBCCBB$ \\ \hline 
+        15 & $CBBBCC$ \\ 
+        16 & $CCBBBC$ \\ 
+        17 & $BBCCCB$ \\ 
+        18 & $BCCCBB$ \\ \hline 
+        19 & $CCCBBB$ \\ 
+        20 & $BBBCCC$ \\ \hline
+        \end{tabular}
+        \end{center}
+        现在将 4 个 $A$ 插入 $BC$ 串的空位中,使得任何相同字母都不相邻:
+        \begin{enumerate}
+            \item $BC$ 串中没有相邻同字母（编号 1--2）:有 7 个空位插入 4 个 A,方式数 $\comb{7}{4}=35$,对应 2 种 $BC$ 串,共 $2\cdot 35=70$。
+            \item 有 1 处相邻同字母（编号 3--6）:此时剩 6 个空位插入 4 个 A（等价插入 3 个 A 以避免产生相邻相同字母）,方式数 $\comb{6}{3}=20$,对应 4 种 $BC$ 串,共 $4\cdot20=80$。
+            \item 有 2 处相邻同字母（编号 7--14）:剩 5 个空位插入 2 个 A,方式数 $\comb{5}{2}=10$,对应 8 种 $BC$ 串,共 $8\cdot10=80$。
+            \item 有 3 处相邻同字母（编号 15--18）:剩 4 个空位插入 1 个 A,方式数 $\comb{4}{1}=4$,对应 4 种 $BC$ 串,共 $4\cdot4=16$。
+            \item 有 4 处相邻同字母（编号 19--20）:A 恰好插满一组,计 $2$ 种。
+        \end{enumerate}
+        合计:
+        \[
+        70+80+80+16+2=248
+        \]
+    \end{solution}
+    \begin{solution}
+        根据容斥原理,相同字母不相邻的排法数
+        \[
+        = \text{4个A不相邻} - (\text{至少2个B相邻} \cup \text{至少2个C相邻})
+        \]
+        4个A不相邻:先排 3 个 $B$ 和 3 个 $C$,有 $\comb{6}{3}=20$ 种方式,产生 7 个空位,在其中插入 4 个 $A$,有 $\comb{7}{4}=35$ 种方式,共 $20 \cdot 35=700$ 种。
+
+        至少2个B相邻:将 2 个 $B$ 看作一个整体 $BB$,与剩余 1 个 $B$ 和 3 个 $C$ 排列,有 $\frac{5!}{3!}=20$ 种方式,产生 6 个空位插入 4 个 $A$,有 $\comb{6}{4}=15$ 种方式,共 $20 \cdot 15=300$ 种。
+
+        但这样会重复计算 3 个 $B$ 都相邻的情况。当 3 个 $B$ 都相邻时,将它们看作 $BBB$,与 3 个 $C$ 排列有 4 种方式,产生 5 个空位插入 4 个 $A$,有 $\comb{5}{4}=5$ 种方式,共 $4 \cdot 5=20$ 种。
+
+        因此至少 2 个 $B$ 相邻为 $300-20=280$ 种。
+
+        由对称性,至少 2 个 $C$ 相邻也是 $280$ 种。
+
+        至少2个B相邻且至少2个C相邻:将 2 个 $B$ 看作 $BB$,2 个 $C$ 看作 $CC$,与剩余 1 个 $B$ 和 1 个 $C$ 排列,有 $4!=24$ 种方式,产生 5 个空位插入 4 个 $A$,有 $\comb{5}{4}=5$ 种方式,共 $24 \cdot 5=120$ 种。
+
+        需扣除 3 个 $B$ 都相邻的情况:$BBB,CC,C$ 排列有 $3!=6$ 种,产生 4 个空位插入 4 个 $A$,有 $\comb{4}{4}=1$ 种,共 $6 \cdot 1=6$ 种。
+
+        同样扣除 3 个 $C$ 都相邻的情况:$6$ 种。
+
+        因此至少 2 个 $B$ 相邻且至少 2 个 $C$ 相邻为 $120-6-6=108$ 种。
+
+        最终答案为 
+        \[
+        \comb{6}{3}\comb{7}{4} - \left[2 \times \left(\frac{5!}{3!}\comb{6}{4}-4\comb{5}{4}\right) - \left(4!\comb{5}{4}-2 \times 3!\comb{4}{4}\right)\right]=248
+        \]
+    \end{solution}
+
+    \question 要爬 12 级台阶,但每步只能上 1 级或 2 级。第 8 级有一条蛇,所以不能踩。问共有多少种爬法？
+    \begin{solution}
+        由于第 8 级不能踩,必须从第 7 级迈 2 级直接到第 9 级。于是问题可以拆成两段:
+        \begin{itemize}
+            \item 爬前 7 级的方式数
+            \item 从第 9 级到第 12 级的方式数
+        \end{itemize}
+        总数为
+        \[
+        (\comb{7}{0}+\comb{6}{1}+\comb{5}{2}+\comb{4}{3})\cdot 3=63
+        \]
+    \end{solution}
+
+    \question 在集合 $\{1,2,3,4,5,6,7\}$ 的所有非空子集 S 中,有多少个子集不包含数 $|S|$($|S|$ 表示子集元素个数)？例如 $\{3,4\}$ 是这样的子集,因为它不包含数字 2。
+    \begin{solution}
+        非空子集总数为 $2^7-1=127$。若子集大小为 $k$ 且包含数字 $k$,则剩下的 $k-1$ 个元素必须从另外的 6 个数中选取,共有
+        \[
+        \comb{6}{k-1}
+        \]
+        种。对 $k=1,2,\dots,7$ 求和得包含其大小的子集总数为
+        \[
+        \sum_{k=1}^7 \comb{6}{k-1} = \sum_{j=0}^6 \comb{6}{j} = 2^6 = 64.
+        \]
+        因此不包含其大小的子集个数为
+        \[
+        127-64=63.
+        \]
+    \end{solution}
+
+    \question 有多少个非负整数有序四元组 $(a,b,c,d)$ 满足 $a+b+c+d\le15$?
+    \begin{solution}
+        将不等式转化为等式
+        \[
+        a+b+c+d+e=15,
+        \]
+        其中 $e\ge0$,则原题等价于求此方程的非负整数解个数。根据隔板法,有
+        \[
+        \comb{15+5-1}{5-1}=\comb{19}{4}=3876
+        \]
+        个非负整数有序四元组。
+    \end{solution}
+
+    \question 以一个正方体的顶点为顶点的四面体共有多少个？
+    \begin{solution}
+        从正方体的 8 个顶点中任取 4 点:
+        \[
+        \comb{8}{4} = 70
+        \]
+        需扣除 4 点共平面的情形,包括正方体的六个面,共 6 种;斜平面,共 6 种。所以四面体个数为
+        \[
+        70 - 12 = 58
+        \]
+    \end{solution}
+
+    \question 在 5 只蜗牛进行的比赛中,最多只会出现一次打平,但可以接受任意数量的蜗牛打平。例如,比赛结果可能是 Dazzler 获得第一名;Abby、Cyrus 和 Elroy 并列第二名,而 Bruna 获得第五名。问这种比赛共有多少种不同的结果? 
+    \begin{solution}
+        考虑没有、两只、三只、四只、五只蜗牛打平,总共有
+        \[
+        5! + \comb{5}{2} \cdot 4! + \comb{5}{3} \cdot 3! + \comb{5}{4} \cdot 2! + 1 = 431
+        \]
+        个不同的结果。
+    \end{solution}
+
+    \question 在一个 $3 \times 3$ 的网格中,放置 $3$ 个红色棋子、$3$ 个蓝色棋子和 $3$ 个绿色棋子,所有棋子同色不可相邻（横或竖方向）,且棋子同色不可区分。请问满足条件的放置方法有多少种？
+        \ifprintanswers
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image13.png}
+        \end{figure}
+        \fi
+    \begin{solution}
+        观察发现,只存在两种基本的放置方法（如上图所示）,其他放置方法只能通过这两种结构旋转或颜色变化得到,所以总合法方案数为
+        \[
+        (4 + 2) \cdot 3! = 36
+        \]
+    \end{solution}
+
+    \question 小明在注册账号时可以使用字符$1,2,3,a,b,c,A,B,C$来组成五位密码,但要求必须包含数字、小写字母和大写字母,且不可以出现两个相同的字符相邻,例如密码可以设置为$123aA$或$laA12$,但不能设置为$123ab$或$112aA$,试求可以设置不同的密码的个数。
+    \begin{solution}
+        先考虑相邻字符不同的密码,共有$9 \cdot 8^4 = 36864$种,这里面不满足密码要求的有两类:
+        \begin{itemize}
+            \item 仅包含单一字符类型(如全数字),这类共有$3 \cdot (3 \cdot 2^4) = 144$种
+            \item 仅包含两种字符类型(如数字和小写字母),只满足相邻不同的密码有$6 \cdot 5^4 = 3750$种,但此时我们多算了$2 \cdot (3 \cdot 2^4) = 96$种单一字符类型, 故第二类共有$3 \cdot (3750 - 96) = 10962$种
+        \end{itemize}
+        不同密码的总个数为$36864 - 144 - 10962 = 25758$.
+    \end{solution}
+
+    \question 阿绿想在她的表演服装上缝 6 颗相同的红色钮扣、3 颗相同的绿色钮扣和 3 颗相同的黄色钮扣。若所有钮扣需竖直地排成一直线,且相邻钮扣不同色,则阿绿有多少种排列方法?
+    \begin{solution}
+        假设红、绿、黄钮扣为$R,G,Y$,先将 $6R$ 排成一列,共 $7$ 个间隔。由于同色不相邻,必须将中间 $5$ 个间隔放入 $3G$ 与 $3Y$ 中的五个。
+
+        情况一: 5 个间隔放 $3G2Y$ 且剩下 $1Y$ 放头或尾端。排列数有$\comb{5}{3}\cdot 2$。
+
+        情况二: 5 个间隔放 $2G3Y$ 且剩下 $1G$ 放头或尾端。排列数有$\comb{5}{3}\cdot 2$。
+
+        情况三: 5 个间隔放 $3G2Y$ 且剩下 $1Y$ 不放头尾。可能情况有$G\cdot G\cdot Y\cdot Y\cdot \boxed{GY},G\cdot G\cdot Y\cdot Y\cdot \boxed{YG}$,排列数各有 $\dfrac{5!}{2!2!}$。
+
+        故排列方法共有
+        \[
+        \comb{5}{3}\cdot 2+\comb{5}{3}\cdot 2+\frac{5!}{2!2!}+\frac{5!}{2!2!}=100
+        \]
+    \end{solution}
+
+    
+    \question 在一个 $3\times3$ 的方格中,每个小方格被涂成红、白、蓝、绿四种颜色中的一种,要求任何 $2\times2$ 的小方格块都恰好包含四种不同的颜色。共有多少种不同的涂色方案？
+    \begin{solution}
+        先固定中心格:中心格有 $4$ 种颜色可选。再考虑中心行的左右两格:
+        \begin{itemize}
+        \item 两格同色。共有 $3$ 种颜色可供选择,此时上下行个别有$2$种填色方法,共 $2^2=4$ 种合法填法。  
+        \item 两格异色。左格 $3$ 种选,右格再 $2$ 种选,共 $3\cdot2=6$ 种。在此情况下,其余 4 个角格的颜色被唯一地确定。
+        \end{itemize}
+        故方法数共有 
+        \[
+        4 \cdot (3 \cdot 4 + 6) =72
+        \]
+    \end{solution}
+
+    \question Rita 正在给一朵花涂色。她已经涂好了花心和花茎。接下来,她将用红色、橙色、黄色和蓝色给六片花瓣涂色,每片花瓣只用一种颜色。规则如下:
+    \begin{itemize}
+        \item 相邻的花瓣不能涂相同的颜色；
+        \item 不一定要用到所有四种颜色。
+    \end{itemize}
+    求共有多少种不同的涂法数?
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/image170.png}
+    \end{figure}
+    \begin{solution}
+        不失一般性,假设顶端花瓣为红色。
+
+        情况 1:红色出现三次。由于相邻花瓣不能同色,红色只能出现在特定的三片花瓣上,其余三片花瓣可以任意用其他3种颜色涂色,因此这种情况下共有
+        \[
+        3^3 = 27 \text{ 种涂法。}
+        \]
+        情况 2:红色出现两次。分情况讨论,
+        \begin{itemize}
+            \item 两红色花瓣之间相隔两个花瓣。与顶端红色花瓣相邻的两片花瓣可以各自用3种颜色涂色,剩余两片花瓣可以各自用2种颜色涂色,总共有
+            \[
+            3 \cdot 3 \cdot 2 \cdot 2 = 36 \text{ 种方式。}
+            \]
+            \item 两红色花瓣之间相隔一个花瓣。两红色花瓣可能在顶端及左侧或右侧,红色花瓣之间的花瓣可以用3种颜色,其他三片花瓣根据两种或三种颜色组合有 $6+6=12$ 种方式,因此该配置共有
+            \[
+            2 \cdot 3 \cdot 12 = 36 \text{ 种方式。}
+            \]
+        \end{itemize}
+        情况 3:红色出现一次。按顺时针给花瓣涂色（从红色顶端开始）:第一片花瓣有 3 种选择,接下来的四片花瓣每片有 2 种选择（不能和相邻花瓣相同,也不能用红色）,因此共有
+        \[
+        3 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 48 \text{ 种方式。}
+        \]
+        顶端花瓣可以选择 4 种颜色,故
+        \[
+        N = 4 \cdot (27 + (36+36) + 48) = 732
+        \]
+    \end{solution}
+
+    \question 一位农夫拥有一个矩形农田,它被划分成 $2\times2$ 的四块矩形区域。在每块区域中,农夫将种植一种作物:玉米、小麦、大豆或土豆。农夫不希望玉米和小麦出现在相邻的两块地中,也不希望大豆和土豆出现在相邻的两块地中。在这些限制下,农夫有多少种不同的方法为这四块地选择作物？
+    \begin{solution}
+        注意到:对于每种作物,有恰好一种作物是不能与其相邻的。不失一般性,设左上角种的是小麦。
+
+        情况一:左上角右边和下边两个相邻地块种的是相同的作物。这两块地不能种玉米（因为玉米不能与小麦相邻）,因此它们可以是小麦、大豆或土豆中的一种,共有 $3$ 种选择,对于右下角地块,只要与周围的两块地都不冲突即可,有 $3$ 种选择。
+        
+        情况二:右边和下边两块地种的是不同的作物。可从 $3$ 种合法作物中选择两个不同的,并安排在右和下两个位置,共有 $3 \cdot 2 = 6$ 种方式,此时右下角地块的选择只有 $2$ 种。
+        
+        综合两种情况相加并乘以左上角作物的 $4$ 种选择,总方法数为
+        \[
+        4 \cdot (3 \cdot 3 + 6 \cdot 2) = 84 
+        \]
+    \end{solution}
+            
+\question 三双不同的鞋子被排成一列,要求不能有一只左脚鞋与另一双的右脚鞋相邻。问共有多少种排法？
+\begin{solution}
+    设鞋子编号如下:右脚鞋:$1,\ 2,\ 3$,左脚鞋:$4,\ 5,\ 6$,其中 $n$ 与 $n+3$ 配对（例如 $1$ 和 $4$ 是一对）。
+
+    不妨设右脚鞋 $1$ 出现在排列中的第二个位置。此时我们枚举前三个位置可能的情况:
+    \begin{itemize}
+        \item 剩下的三个鞋子只能是
+            \[
+            654 \quad \text{或} \quad 645
+            \]
+            因为 $5$ 或 $4$ 不可以和 $3$（另一双的右脚鞋）相邻。
+        \item 剩下的三个鞋子只能是
+            \[
+            563
+            \]
+            （不能选 $365$,因为 $6$ 和 $5$ 是不同双鞋的左、右脚,会相邻）
+        \item 剩下的三个鞋子可以是
+            \[
+            256 \quad \text{或} \quad 652
+            \]
+    \end{itemize}
+    所以总方法数为
+    \[
+    (2 + 1 + 2) \times 12 = \boxed{60}
+    \]
+    其中乘上 $12$ 是因为我们一开始假设了鞋子 $1$ 出现在第二位,实际有 $2$ 种选哪个右脚鞋先出现,$6$ 种选配对顺序,所以总共乘 $12$。
+    \textcolor{red}{实际有 $2$ 种选哪个右脚鞋先出现?}
+\end{solution}
+
+    \question 竹东高中的多元选修课程共开设了六门选修课:$A,B,C $为第一类选修课,$D,E,F$ 为第二类选修课,要求每名同学须从中选修三门课,第一类选修课至少要选两门。现有甲、乙、丙三位同学选课,则任意一位同学与其他两位同学均至少有两门相同选修课的选法共有几种？
+    \begin{solution}
+        每个同学可能的选法有$$ABC, ABD, ABE, ABF, ACD, ACE, ACF, BCD, BCE, BCF,$$共 10 种；甲、乙、丙三人共有 $10^3=1000$ 种选法。
+
+        不符规定的选法分析如下:
+        \begin{itemize}
+            \item 第一人选了 $ABC$:第二人在第一类有 $\comb{3}{2}=3$ 种选法,第三人在第一类只能与第二人重复一门课,因此有 2 种选法；第二人在第二类的课程有 3 种选择,第三人有 2 种选择,共有 $3\cdot2 \cdot 3\cdot2 =108$ 种。
+            \item 第一人、第二人在第一类完全相同:第三人在第一类只有 2 种选择,在第二类课程中三人任选再扣除三人完全相同,即 $3^3-3$；共有 $\comb{3}{2} \cdot 3 \cdot 2 \cdot (3^3-3) =432$ 种。
+            \item 三人在第一类彼此最多重复一门课:第一类的选择有 $3!=6$,第二类与情况(2)相同,即 $3^3-3$；共有 $6 \cdot (3^3-3) =144$ 种。
+        \end{itemize}
+        因此符合要求的选法共有
+        \[
+        1000-108-432-144 = 316
+        \]
+    \end{solution}
+
+    \question 下图显示了一个宽为3格、高为3格的点阵,共包含9个小正方形。Carl 在这些正方形的边上放置长为 \(\dfrac{1}{2}\) 英寸的牙签,要求形成一个不相交的闭合环。图中某些格子内标注了一个数字,表示该格子被牙签覆盖的边数。若无数字,则该格子可以被任意数量的牙签覆盖。求 Carl 放置牙签的可能方法数。  
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image7.png}
+    \end{figure}
+    \begin{solution}
+        由于牙签回路不能穿过中间的五列,所以整个回路只有两种大致布局:
+
+        情况一:不穿过第二行。只剩下 $2$ 种回路（对称）。
+        
+        情况一:必须穿过第二行（左、右各穿一次）。则
+        \begin{itemize}
+          \item 中间四个标 $1$ 的小方格,各有两种放牙签方式,共 $2^4$;
+          \item 回路在左右两侧穿过第二行,各有 $3$ 种走法,共 $3^2$。
+        \end{itemize}
+        因此所有合法回路总数为
+        \[
+        2^4 \cdot 3^2 + 2 = 146
+        \]
+    \end{solution}
+
+    \question 有一张由 $5\times6$ 个正方形组成的格线纸,如右图。小强想沿着实线以向左、向右及向下的方向将格线纸剪成两张面积相等的纸张,并且先由 $A$ 点向下剪一格,最后从 $B,C,D,E,F$ 中某一点剪断纸张。问有多少种不同的剪法?
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{images/image95.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image96.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        格线纸共有 $5 \times 6 = 30$ 个方格。设剪线左侧从上往下第 $1,2,3,4,5$ 行的方格数分别为 $2,x,y,z,w$,需满足
+        \[
+        2 + x + y + z + w = 15,\quad 1 \le x,y,z,w \le 5, \quad x,y,z,w \in \mathbb{N}
+        \]
+        令 $x' = x - 1, y' = y - 1, z' = z - 1, w' = w - 1$,则
+        \[
+        x' + y' + z' + w' = 9, \quad 0 \le x',y',z',w' \le 4
+        \]
+        总方法数即不考虑$0 \le x',y',z',w' \le 4$的情况扣除 $x',y',z',w'$ 中至少有一个大于 $4$ 的情况:
+        \[
+        \comb{9+4-1}{4-1} - 4 \cdot \comb{4+4-1}{4-1} = 80
+        \]
+    \end{solution}
+
+    \question 考虑集合 $\{1,2,3,\dots,2024\}$ 的所有恰有 1000 个元素的子集。对于每个这样的子集 $S$,记 $m(S)$ 为 $S$ 中的最小元素。求所有 $m(S)$ 的算术平均数。
+    \begin{solution}
+        设最小元素为 $a$,则有选择余下 $999$ 个元素的方法数为
+        \[
+        \comb{2024 - a}{999}, \quad a=1,2,\dots,1025 \quad (1025=2024-999).
+        \]
+        算术平均数为
+        \[
+        \frac{\displaystyle \sum_{a=1}^{1025} a \cdot \comb{2024 - a}{999}}{\displaystyle\sum_{a=1}^{1025} \comb{2024 - a}{999}}=\frac{\comb{2025}{1001}}{\comb{2024}{1000}} = \frac{2025}{1001}
+        \]
+        利用组合恒等式 $\sum_{k=r}^{n} \comb{k}{r} = \comb{n+1}{r+1}$,令 $k = 2024-a$,当 $a$ 从 1 到 1025 时,$k$ 从 2023 到 999:
+        \[
+        \sum_{a=1}^{1025} \comb{2024 - a}{999} = \sum_{k=999}^{2023} \comb{k}{999} = \comb{2024}{1000}
+        \]
+        利用恒等式:
+\[
+\sum_{i=r}^{n} \comb{i}{r} = \comb{n+1}{r+1}
+\]
+
+以及权重求和恒等式:
+\[
+\sum_{k=0}^{n} (k+1) \cdot \comb{n-k}{r} = \comb{n+1}{r+2}
+\]
+
+令 $k = a-1$,则 $a = k+1$,当 $a$ 从 1 到 1025 时,$k$ 从 0 到 1024:
+\[
+\sum_{a=1}^{1025} a \cdot \comb{2024-a}{999} = \sum_{k=0}^{1024} (k+1) \cdot \comb{2024-(k+1)}{999} = \sum_{k=0}^{1024} (k+1) \cdot \comb{2023-k}{999}
+\]
+
+利用恒等式 $\sum_{k=0}^{n-r} (k+1) \cdot \comb{n-k}{r} = \comb{n+2}{r+2}$:
+
+令 $n = 2023$, $r = 999$:
+\[
+\sum_{k=0}^{1024} (k+1) \cdot \comb{2023-k}{999} = \comb{2025}{1001}
+\]
+        \textcolor{red}{(待解)}
+    \end{solution}
+
+    \question 用数字 1、2、3 组成 10 位数,要求其中数字 1 出现次数为偶数。求这样的 10 位数的个数。
+    \begin{solution}
+        设 \(a_n\) 表示长度为 \(n\) 的、由 1、2、3 组成且数字 1 出现偶数次的序列个数。
+        \begin{itemize}
+            \item 若首位为 2 或 3（共 2 种选择）,则余下 \(n-1\) 位仍需 1 出现偶数次,方案数为 \(2a_{n-1}\)。
+            \item 若首位为 1（1 种选择）,则已有一个 1,余下 \(n-1\) 位中 1 需出现奇数次。余下 \(n-1\) 位的总序列数为 \(3^{n-1}\),其中 1 出现偶数次的为 \(a_{n-1}\),故出现奇数次的为 \(3^{n-1} - a_{n-1}\)。
+        \end{itemize}
+        因此,当 \(n > 1\) 时,有递推关系：
+        \[
+        a_n = 2a_{n-1} + (3^{n-1} - a_{n-1}) = a_{n-1} + 3^{n-1}, \quad a_1 = 2
+        \]
+        求通项
+        \[
+        a_n = a_1 + \sum_{k=1}^{n-1} 3^k =2 + \frac{3(3^{n-1} - 1)}{2}=\frac{3^n + 1}{2}
+        \]
+        代入 \(n=10\)得
+        \[
+        a_{10} = \frac{3^{10} + 1}{2} = 29525
+        \]
+    \end{solution}
+
+    \question 某语言只使用字母 $A, B, C, D, E$,其中 $A$ 和 $E$ 为元音,$B, C, D$ 为辅音。一个字母序列称为单词,当且仅当它不含有相邻两个相同字母,且不含有相邻两个元音。问该语言中长度为 10 且以元音开头的单词有多少个？
+    \begin{solution}
+        设 $v_n$ 为长度为 $n$ 且以元音开头的单词数,$c_n$ 为长度为 $n$ 且以辅音开头的单词数。据题意,
+        \[
+        v_1=2,\ c_1=3
+        \]
+        若 $n\ge2$,则  
+        \[
+        v_n=2c_{n-1},
+        \]
+        因为在辅音开头的 $(n-1)$ 字母单词前可加 $A$ 或 $E$。且有  
+        \[
+        c_n=3v_{n-1}+2c_{n-1},
+        \]
+        其中 $3v_{n-1}$ 意味可在元音开头的 $(n-1)$ 字母单词前加 $B, C, D,2c_{n-1}$ 意味可在辅音开头的 $(n-1)$ 字母单词前加不同于首字母的两个辅音。递推如下表:
+        \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $n$ & $v_n$ & $c_n$ \\
+        \hline
+        1 & 2 & 3 \\
+        2 & 6 & 12 \\
+        3 & 24 & 42 \\
+        4 & 84 & 156 \\
+        5 & 312 & 564 \\
+        6 & 1128 & 2064 \\
+        7 & 4128 & 7512 \\
+        8 & 15024 & 27408 \\
+        9 & 54816 & 99888 \\
+        10 & 199776 & 364224 \\
+        \hline
+        \end{tabular}
+        \end{center}
+        因此,长度为 10 且以元音开头的单词共有 $199776$ 个。
+    \end{solution}
+
+    \question 有六个格子,初始时三个硬币从左到右依次占据前三个格子（记为 $X,Y,Z$）。一次移动是将某一枚硬币向右移动一格,前提是目标格子为空,且硬币之间不能相互跳跃（因此三枚硬币的相对顺序始终保持 $X$ 在 $Y$ 左边,$Y$ 在 $Z$ 左边）。问：有多少种不同的移动序列,能使三枚硬币最终全部移动到最右边的三个格子？
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/image162.png}
+    \end{figure}
+    \begin{solution}
+        我们将每个允许的移动序列看作由 $X,Y,Z$ 组成的字符串。例如,字符串 $ZZYXZ$ 表示先移动 $Z$ 一格,再移动 $Z,Y,X,Z$。  
+
+        对于每个整数三元组 $(x,y,z)$,其中 $0 \le x,y,z \le 3$,定义 $S(x,y,z)$ 为使 X 移动 $x$ 格,Y 移动 $y$ 格,Z 移动 $z$ 格的移动序列数。欲求 $S(3,3,3)$。  
+
+        由于硬币不能交叉且只能向右移动,当 $x > y$ 或 $y > z$ 或 $x > z$,有$S(x, y, z) = 0$。因此仅需考虑 $0 \le x \le y \le z \le 3$ 的情况。此时有
+        \[
+        S(x,y,z) = S(x-1,y,z) + S(x,y-1,z) + S(x,y,z-1)
+        \]
+        其中当 $x=0$ 时 $S(x-1,y,z)=0,y=0$ 时 $S(x,y-1,z)=0,z=0$ 时 $S(x,y,z-1)=0$,且  
+        \[
+        S(0,0,0) = 1, \quad S(1,0,0) = 0, \quad S(0,1,0) = 0, \quad S(0,0,1) = 1
+        \]
+        接下来通过表格逐步填入 $S(x, y, z)$,其中 $z = 1,2,3$,纵轴为 $y$,横轴为 $x$。
+        \[  
+        \begin{tabular}{c c c}
+            \begin{tabular}{|c|cccc|}
+            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
+            \cline{2-5}
+            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
+            \cline{1-5}
+            0 & 1 & 0 & 0 & 0 \\
+            1 & 1 & 1 & 0 & 0 \\
+            2 & 0 & 0 & 0 & 0 \\
+            3 & 0 & 0 & 0 & 0 \\
+            \cline{1-5}
+            \end{tabular} &
+            \begin{tabular}{|c|cccc|}
+            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
+            \cline{2-5}
+            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
+            \cline{1-5}
+            0 & 1 & 0 & 0 & 0 \\
+            1 & 2 & 3 & 0 & 0 \\
+            2 & 2 & 5 & 5 & 0 \\
+            3 & 0 & 0 & 0 & 0 \\
+            \cline{1-5}
+            \end{tabular} &
+            \begin{tabular}{|c|cccc|}
+            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
+            \cline{2-5}
+            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
+            \cline{1-5}
+            0 & 1 & 0 & 0 & 0 \\
+            1 & 3 & 6 & 0 & 0 \\
+            2 & 5 & 16 & 21 & 0 \\
+            3 & 5 & 21 & 42 & 42 \\
+            \cline{1-5}
+            \end{tabular} \\
+            $z=1$ & $z=2$ & $z=3$
+        \end{tabular}
+        \]
+        由表得 
+        \[
+        S(0,0,1)=1(Z),\quad S(0,1,1)=1(ZY),\quad S(1,1,1)=1
+        (ZYX)
+        \]
+        因此序列的数量为$S(3,3,3)=42$。
+    \end{solution}
+
+    \question 给定数字集合 $\{1, 2, 4, 8, 16, 32, 64, 128\}$,每个数字最多可使用 $3$ 次,问：用这些数字之和恰好等于 $530$ 的方案数有多少种？
+    \begin{solution}
+        每个数字 $2^k$ 可以出现 $0,1,2,3$ 次,对应多项式
+        \[
+        1 + x^{2^k} + x^{2\cdot 2^k} + x^{3\cdot 2^k}.
+        \]
+        考虑生成函数
+        \[
+        (1+x+x^2+x^3)(1+x^2+x^4+x^6)(1+x^4+x^8+x^{12}) \cdots (1+x^{128}+x^{256}+x^{384}).
+        \]
+        因式分解得
+        \[
+        \frac{x^4-1}{x-1}\cdot\frac{x^8-1}{x^2-1}\cdots \frac{x^{512}-1}{x^{128}-1}
+        = (1+x+x^2+\cdots+x^{255})(1+x^2+x^4+\cdots+x^{510}).
+        \]
+        要得到 $x^{530}$,记作 $x^{2i}\cdot x^{530-2i}$,其中 $10 \le i \le 127$,共有 118 个 $i$ 的取值,因此方法数为 $118$。
+    \end{solution}
+
+    \question 求正整数有序三元组 $(a_1, a_2, a_3)$ 的个数,使得
+    \[
+    a_1 + a_2 + a_3 = 2020, \quad a_1 \not\equiv 0 \pmod 2, \quad a_2 \not\equiv 0 \pmod 3, \quad a_3 \not\equiv 0 \pmod 4。
+    \]
+    \begin{solution}
+        $a_1$ 为奇数,生成函数为
+        \[
+        x + x^3 + x^5 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^2} = \frac{x}{1-x^2}
+        \]
+        $a_2$ 不可被 3 整除,生成函数为
+        \[
+        x + x^2 + x^4 + x^5 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^3} = \frac{x(1-x^2)}{(1-x)(1-x^3)}
+        \]
+        $a_3$ 不可被 4 整除,生成函数为
+        \[
+        x + x^2 + x^3 + x^5 + x^6 + x^7 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^4} = \frac{x(1-x^3)}{(1-x)(1-x^4)}
+        \]
+        三式相乘得总生成函数
+        \[
+        \frac{x}{1-x^2} \cdot \frac{x(1-x^2)}{(1-x)(1-x^3)} \cdot \frac{x(1-x^3)}{(1-x)(1-x^4)} = \frac{x^3}{(1-x)^2(1-x^4)}
+        \]
+        因此所求为 $x^{2020}$ 的系数,即 $x^{2017}$ 在
+        \[
+        (1 + 2x + 3x^2 + \cdots)(1 + x^4 + x^8 + \cdots)
+        \]
+        中的系数,即
+        \[
+        2 + 6 + 10 + \cdots + 2018 = 505 \cdot 1010 = 510050
+        \]
+    \end{solution}
+
+    \question 给定正立方体 $ABCD-EFGH$,其中 $ABCD$ 为底面,$EFGH$ 为顶面,$A$ 与 $E$ 对应,$B$ 与 $F$ 对应,$C$ 与 $G$ 对应,$D$ 与 $H$ 对应。一只小虫从顶点 $A$ 出发,每分钟沿一条棱移动到相邻顶点（每次移动一条棱）。问：经过恰好 $9$ 分钟后,小虫到达顶点 $G$ 的不同路径数为多少？
+    \begin{solution}
+        转换矩阵为
+        \[
+        A=
+        \begin{bmatrix}
+        0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 0 & 1 & 0
+        \end{bmatrix}
+        \]
+        发现
+        \[
+        A^9=
+        \begin{bmatrix}
+        0 & 4921 & 0 & 4921 & 4921 & 0 & 4920 & 0 \\
+        4921 & 0 & 4921 & 0 & 0 & 4921 & 0 & 4920 \\
+        0 & 4921 & 0 & 4921 & 4920 & 0 & 4921 & 0 \\
+        4921 & 0 & 4921 & 0 & 0 & 4920 & 0 & 4921 \\
+        4921 & 0 & 4920 & 0 & 0 & 4921 & 0 & 4921 \\
+        0 & 4921 & 0 & 4920 & 4921 & 0 & 4921 & 0 \\
+        4920 & 0 & 4921 & 0 & 0 & 4921 & 0 & 4921 \\
+        0 & 4920 & 0 & 4921 & 4921 & 0 & 4921 & 0
+        \end{bmatrix}
+        \]
+        故由
+        \[
+        A^9
+        \begin{bmatrix}
+        1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+        0 \\ 4921 \\ 0 \\ 4921 \\ 4921 \\ 0 \\ 4920 \\ 0
+        \end{bmatrix}
+        \]
+        可知$A \to G$ 有 $4920$ 种路线。
+        \textcolor{red}{(待递推解)}
+    \end{solution}
+
+\end{questions}
+
 \pagebreak
 
 \begin{center}
@@ -1518,1021 +4825,3 @@ a_0 &\le a_0 a_{n+2} - a_0 a_{n+1} \\
         由数学归纳法,对任意正整数 $n,P^{(n)}(x)$ 至少有一个实数根。
     \end{solution}
 \end{questions}
-
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{排列与组合}{排列与组合} \label{排列与组合}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
-    \question 求满足以下条件的三位数的个数:  
-    \begin{itemize}
-        \item 三个数字各不相同
-        \item 数字按递减顺序排列
-        \item 其中一个数字是5
-    \end{itemize}  
-    \begin{solution}
-        即先选数字$5$,再从$9$个数字中任选$2$个,所以有 
-        \[
-        \comb{9}{2}=36
-        \]
-        个这样的三位数。注意到每组都能唯一地按递减顺序排成一个三位数,而且首位不会是 $0$。
-    \end{solution}
-
-    \question 已知 $a,b,c$ 为相异正整数且满足 $abc=2310$,求所有可能相异集合 $\{a,b,c\}$的个数。
-    \begin{solution}
-        发现$2310 = 2\times 3\times 5\times 7\times 11$,从 $5$ 个因数中,
-        \begin{itemize}
-            \item 挑 3 个连乘积作为 $a$,剩下 2 个作为 $b,c$,有
-            $\comb{5}{3} = 10$种可能。
-            \item 挑 2 个连乘积作为 $a$,剩下 3 个再挑 2 个乘积作为 $b$,有 $\comb{5}{2} \cdot \comb{3}{2} = 30$
-            种可能。
-        \end{itemize}
-        故共有$10 + 30 = 40$种可能。
-    \end{solution}
-
-    \question $A$ 有一本共有 $2017$ 页的书，页码从 $1$ 到 $2017$。问有多少个页码同时包含至少一个数字 $1$ 和至少一个数字 $9$？例如 $91,1921,191$ 都符合条件。
-    \begin{solution}
-        情况一:页码为二位数。只有$19,91$满足要求,共2个页码符合要求。
-
-        情况二:页码为三位数。页码中必有数字$1,9$,排列数为$3\cdot 2\cdot 10$,但此时多算了页码$119,191,199,911,919,991,019,091$,故符合要求的页码共有$3\cdot 2\cdot 10-6=52$。
-
-        情况二:页码为三位数。千位必为数字1,而数字9可位于百位、十位或各位,排列数为$3\cdot 10\cdot 10$,但此时多考虑了含两个数字9的页码，共$3\cdot 10$。减去其之后,发现又少算了页码1999。故符合要求的页码共有$3\cdot 10\cdot 10-3\cdot 10+1=271$。
-
-        故共有
-        \[
-        2+52+271=325
-        \]
-        个页码符合条件。
-    \end{solution}
-
-    \question 设 $N$ 为满足 $x < y < z$ 且
-    \[
-    xyz = 2^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 11^2 \cdot 13^2 \cdot 17^2 \cdot 19^2
-    \]
-    的正整数三元组 $(x, y, z)$ 的个数。求 $N$。
-    \begin{solution}
-        忽略$x < y < z$,先计算无序三元组 $(a,b,c)$的个数,使得
-        \[
-        abc = 2^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 11^2 \cdot 13^2 \cdot 17^2 \cdot 19^2
-        \]
-        每个平方的质因数可以分配给 $a,b,c$ 的方式有 6 种:两个都给 $a$,两个都给 $b$,两个都给 $c$,或者每个数各取一个。共有 8 个平方质因数,因此共有 $6^8$ 种分配方式。
-
-        现考虑$a,b,c$中两个数相等的情况。观察到积$abc$不是完全立方数,所以$a=b=c$不成立。计算恰有一对相等的三元组:以 $a=b$ 为例,每个平方质因数分配给 $c$,亦或分配给 $a$ 和 $b$ 各一个,共 $2^8$ 种三元组需要排除,同理$a=c,b=c$ 也各有 $2^8$ 种,所以相异的三元组数为:
-        \[
-        6^8 - 3\cdot 2^8
-        \]
-        将无序三元组 $(a,b,c)$ 转换为有序三元组 $(x,y,z)$,其中$x<y<z$,每个三元组对应 6 个无序三元组,因此
-        \[
-        N = \frac{1}{6}(6^8 - 3\cdot 2^8) = 279808
-        \]
-    \end{solution}
-
-    \question 已知 $a_0, a_1, a_2, a_3, a_4$ 的值正好都是 $-1, 0, 1$ 中的数, 则 $a_0 + 3a_1 + 3^2a_2 + 3^3a_3 + 3^4a_4$ 的值是正整数共有多少个？
-    \begin{solution}
-        形如
-        \[
-        1\triangle \triangle \triangle \triangle,01\triangle \triangle \triangle,
-        001\triangle \triangle,
-        0001\triangle,
-        00001
-        \]
-        的数共有
-        \[
-        3^4,3^3,3^2,3^1,1
-        \]
-        个,总计
-        \[
-        81 + 27 + 9 + 3 + 1 = 121
-        \]
-    \end{solution}
-
-    \question 求正整数有序三元组 $(x,y,z)$ 的个数,使得
-    \[
-    xyz = 4000.
-    \]
-    \begin{solution}
-        质因数分解得$4000 = 2^5 \cdot 5^3$,设
-        \[
-        x = 2^a 5^d, \quad y = 2^b 5^e, \quad z = 2^c 5^f,
-        \]
-        其中 $a,b,c,d,e,f$ 为非负整数,则需满足
-        \[
-        a+b+c = 5, \quad d+e+f = 3
-        \]
-        非负整数解的个数为
-        \[
-        \#(a,b,c) = \comb{5+3-1}{3-1} = 21, \quad \#(d,e,f) = \comb{3+3-1}{3-1} = 10
-        \]
-        因此有序三元组 $(x,y,z)$ 的个数为
-        \[
-        21 \cdot 10 = 210
-        \]
-    \end{solution}
-
-    \question 将 $1,2,3,4,5,6,7$ 排成一列,若规定排列后不得出现 $12,23,34,45,56,67$(如：1273546 不合题意,7362154 符合题意),则有多少种排法？
-    \begin{solution}
-    7 个相异数字任意排列共有 $7!$ 种。
-
-    从$12,23,34,45,56,67$选$12$后有6个板块,出现$12$的排列数为$\comb{6}{1}6!$。
-
-    依此类推,由容斥原理,总排列数为
-    \[
-    7!-\comb{6}{1}6!+\comb{6}{2}5!-\comb{6}{3}4!+\comb{6}{4}3!-\comb{6}{5}2!+1=2119
-    \]
-    \end{solution}
-
-    \question 如果一个数的每一位都大于前一位,则称它为上升数。例如 457 是上升数,但 447 不是。问 400 到 5000 之间共有多少上升数？
-    \begin{solution}
-        情况一:上升数为三位数。三位数必须在 400 到 999 之间,百位可以是 4,5,6,7,8,9。4 到 9 的 6 个数字中任选 3 个,按升序排列即可得到上升数。排列数为$\comb{6}{3}$。
-
-        情况二:上升数为四位数。四位数小于 5000,千位必须为 1,2,3,4。1 到 9 的数字中任选 4 个,再扣除首位 $\ge 5$ 的数。排列数为$\comb{9}{4} - \comb{5}{4}$。
-
-        因此共有 
-        \[
-        \comb{6}{3} + (\comb{9}{4} - \comb{5}{4}) = 141
-        \]
-        个这样的上升数。
-    \end{solution}
-
-    \question Ricardo 想要将三个 1、三个 2、两个 3 和一个 4 排成一个九位正整数,且满足以下条件:
-    \begin{itemize}
-        \item 从左到右,至少有一个 1 在第一个 2 之前,至少有一个 2 在第一个 3 之前,至少有一个 3 在 4 之前;
-        \item 任意两个数字 2 不能相邻。
-    \end{itemize}
-    求总共有多少种符合条件的九位数。
-    \begin{solution}
-        设 $N$ 为满足条件的整数。$N$ 的首位必须是 1,因此 $N$ 可以以 1、11 或 111 开头。又因为第一个非 1 的数字必须是 2,所以 $N$ 只能以 12、112 或 1112 开头。
-        
-        情况 1:$N$ 以 12 开头。剩余两个 2 不能相邻,可放在下列位置组合(从左数第几位):
-        \[
-        (4,6),(4,7),(4,8),(4,9),(5,7),(5,8),(5,9),(6,8),(6,9),(7,9)
-        \]
-        共有 10 种可能。剩余两个 1 可以放在剩下的 5 个空位中的任意两位,有 $\comb{5}{2}=10$ 种方法。剩余的两个 3 和一个 4 需放在最后 3 个位置中。为保证至少有一个 3 在 4 之前,第一个空位必须放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。因此本情况共有:
-        \[
-        10 \cdot 10 \cdot 2 = 200.
-        \]
-        情况 2:$N$ 以 112 开头。剩余两个 2 不能相邻,可放在:
-        \[
-        (5,7),(5,8),(5,9),(6,8),(6,9),(7,9)
-        \]
-        共有 6 种可能。剩余一个 1 可放在 4 个空位中的任意一位,有 4 种方法。剩余两个 3 和一个 4 需放在最后 3 个位置中。第一个空位放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。本情况共有:
-        \[
-        6 \cdot 4 \cdot 2 = 48.
-        \]
-        情况 3:$N$ 以 1112 开头。剩余两个 2 不能相邻,可放在
-        \[
-        (6,8),(6,9),(7,9)
-        \]
-        共有 3 种可能。剩余的两个 3 和一个 4 需放在最后 3 个位置中。第一个空位放 3,剩下两个位置放另一个 3 和一个 4,有 2 种排列。本情况共有:
-        \[
-        3 \cdot 2 = 6.
-        \]
-        综上,共有 $200 + 48 + 6 = 254$ 种符合条件的九位数。
-    \end{solution}
-
-    \question
-3) 从数字1至9中选出7位数，要求每个数字不重复，并且5和6不能连续出现，求共有多少种排列方式。
-
-\begin{solution}
-考虑不同情况：
-
-(a) 5和6都出现：
-
-- 情况一：第1位是5，第2位不是6：
-\[
-5 \times \perm{7}{5} = 12600
-\]
-
-- 情况二：第7位是5，第6位不是6：
-\[
-5 \times \perm{7}{5} = 12600
-\]
-
-- 情况三：5出现在首尾之外的其他位置：
-\[
-5 \times 4 \times \perm{7}{5} = 50400
-\]
-
-因此，5和6都出现的排列数：
-\[
-12600 + 12600 + 50400 = 75600
-\]
-
-(b) 5和6都不出现：
-\[
-\perm{7}{7} = 7! = 5040
-\]
-
-(c) 5出现但6不出现：
-\[
-7 \times \perm{7}{6} = 7 \times 7! = 35280
-\]
-
-(d) 5不出现但6可以出现：
-\[
-7 \times \perm{7}{6} = 7 \times 7! = 35280
-\]
-
-根据加法原理，总排列数为：
-\[
-75600 + 5040 + 2 \times 35280 = 151200
-\]
-\end{solution}
-
-
-    \question 令 $a_n$ 为第 $n$ 小的各位数字之和为 $3$ 的正整数。例如 $a_1=3, a_2=12, a_3=21, a_4=30$。求 $a_{2012}$ 有多少位数。  
-    \begin{solution}
-        若一个数最多有 $d$ 位,那么其各位和为 $3$ 的这样的数的个数为
-        \[
-        \comb{d+2}{3}
-        \]
-        这是因为我们可以用隔板法来理解:将 $3$ 个相同的球(代表数字和为 3)分配到 $d$ 个位置(代表 $d$ 位数),等价于在 $d+2$ 个位置中选择 $3$ 个位置放置隔板。具体地,我们在一排 $d+2$ 个位置中放置恰好 $3$ 个 O(其余为 X),则第 $i$ 位的数字等于第 $i-1$ 个 X 与第 $i$ 个 X 之间的 O 的个数。因此需找最小的 $d$ 使得
-        \[
-        \comb{d+2}{3}\ge 2012.
-        \]
-        计算得
-        \[
-        \comb{23}{3}=1771,\quad \comb{24}{3}=2024.
-        \]
-        因此当 $d=22$ 时,$\comb{24}{3}=2024\ge2012$,且 $d=21$ 时不足。故 $a_{2012}$ 恰有 $22$ 位。
-    \end{solution}
-
-    \question 将$A,B,C,D,E,F,G,H$八个字母排成一列,使得$B$在$A$之右方,$E$在$C$与$D$之间,且$F,G$不相邻,试问符合条件的排法有多少种？
-    \begin{solution}
-        在所有的排列中,$B$ 在 $A$ 的右方与 $A$ 在 $B$ 的右方各占一半,因此满足"$B$ 在 $A$ 的右方"的排列占全部排列的 $\dfrac{1}{2}$。
-        
-        同理,在 $C,D,E$ 三个字母的相对位置中,$E$ 在 $C$ 与 $D$ 之间、$C$ 在 $E$ 与 $D$ 之间、$D$ 在 $E$ 与 $C$ 之间各占三分之一,因此满足"$E$ 在 $C$ 与 $D$ 之间"的排列占全部排列的 $\dfrac{1}{3}$。
-        
-        现计算满足"$F,G$ 不相邻"的排列数:
-        
-        八个字母的全排列有 $8!$ 种。若 $F,G$ 相邻,可将它们视为一个整体,有 $7!$ 种排法,而 $F,G$ 内部有 $2$ 种排列,因此 $F,G$ 相邻的排法有 $7! \cdot 2$ 种。
-        
-        所以 $F,G$ 不相邻的排法有 $8! - 7! \cdot 2$ 种。
-        
-        由于这三个条件相互独立,符合所有条件的排法数为:
-        \[
-        \frac{8! - 7! \cdot 2}{2 \cdot 3} = 5040
-        \]
-    \end{solution}
-
-    \question 有 6 个人有网络账号，已知每个人都恰好与自己以外的 2 个人互为好友，则共有种不同的组成方法?
-    \begin{solution}
-        用六个顶点表示六个人，两顶点有连线表示两人互为好友。
-
-        情况一:一个六边形。共有$\dfrac{5!}{2}$种。
-
-        情况二:两个三角形。共有$\dfrac{\comb{6}{3}}{2}$种。
-
-        因此共有
-        \[
-        \frac{5!}{2}+\frac{\comb{6}{3}}{2}=70
-        \]
-        种组合方式。
-    \end{solution}
-
-\question 求不大于 $2018$ 的正整数中,二进制中 1 出现比 0 多的个数。
-\begin{solution}
-    考虑不大于 $2047=2^{11}-1$且满足条件的正整数个数,再减去 2019 至 2047 的 29 个数,因为这29 个数的二进制中至少有6个1。
-
-    对于偶数位数（去掉开头的 1 后有偶数位）,一半的数满足 1 的个数多于 0。具体公式为:
-    \[
-    \frac{1}{2}\left(2^{2k} + \comb{2k}{k}\right)
-    \]
-    因为恰好 $k$ 个 1 的情况算一半,其余一半满足条件,计算:
-    \[
-    \frac{1}{2}\Big(2047 + \comb{0}{0} + \comb{2}{1} + \comb{4}{2} + \comb{6}{3} + \comb{8}{4} + \comb{10}{5}\Big) = 1199
-    \]
-    故答案为$1199-29=1170$。
-    \textcolor{red}{Half of the numbers with an even number of bits have this property, since they have an odd number of bits after their initial 1. Of the $2^{2k}$ numbers with $2k$ bits following the initial 1, the number with this property is $\frac{1}{2}(2^{2k} + \binom{2k}{k})$ since those with $k$ 1's will be included, and half of the others will.}
-\end{solution}
-
-    \question 小王有八个编号为 1 到 8 的盒子和八个编号为 1 到 8 的球。问他把球放入盒子,使每个盒子恰好有一个球,且球 1 不在盒子 1,球 2 不在盒子 2,球 3 不在盒子 3,有多少种方法？
-    \begin{solution}
-        设
-        \[
-        A_1 = \{\text{球 1 在盒子 1}\}, \quad
-        A_2 = \{\text{球 2 在盒子 2}\}, \quad
-        A_3 = \{\text{球 3 在盒子 3}\}.
-        \]
-        根据容斥原理,不允许的排列数为
-        \begin{align*}
-        &|A_1 \cup A_2 \cup A_3| \\
-        &= |A_1| + |A_2| + |A_3| - |A_1 \cap A_2| - |A_1 \cap A_3| - |A_2 \cap A_3| + |A_1 \cap A_2 \cap A_3| \\
-        &=3\cdot 7! - 3\cdot 6! + 5! = 13080           
-        \end{align*}
-        因此满足条件的排列数为
-        \[
-        S = 8! - |A_1 \cup A_2 \cup A_3| = 27240
-        \]
-    \end{solution}
-
-    \question 在一排有 20 张椅子的座位区中, 要安排甲、乙、丙、丁、戊 5 人入坐, 一人坐一张椅子, 要求第一张与最后一张椅子不能安排人入坐, 且每相邻的 5 张椅子至少要有一人入坐, 任两人不能坐在相邻的椅子上。试问 5 人入坐的方法有多少种可能?
-    \begin{solution}
-    20 张椅子 5 人先入坐, 有 $5!$ 排法, 剩下 15 张椅子。依规定头尾各放一张, 剩下 13 张; 两人中间各摆一张, 剩下 9 张。
-
-    9 张椅子可以在 5 人的六个间隔中摆放, 有 $\comb{9+6-1}{6-1}$ 摆法。
-
-    为符合「相邻 5 张椅子至少要有一人坐」, 需扣除某个间隔塞入四张或以上的情形,因此实际摆法有
-    \[
-    5!(\comb{9+6-1}{6-1} - \comb{6}{1} \cdot \comb{6+5-1}{5-1} + \comb{6}{2} \cdot \comb{6+1-1}{1-1})= 69600
-    \]
-    \end{solution}
-
-    \question 由字母 $A$ 和 $B$ 组成的 9 个字母的字母串中,有多少个不包含连续字母串 $ABBA$？
-    \begin{solution}
-        总字母串数为 $2^9 = 512$,我们先计算至少包含一个 $ABBA$ 的字符串数量,再用总数减去它。
-
-        $ABBA$ 可以出现在前 6 个位置中的任意一个位置,剩余 5 个位置可以随意填充 $A$ 或 $B$,因此每个起始位置有 $2^5 = 32$ 种方法,共 $6 \cdot 32 = 192$ 种字母串。  
-
-        这 192 种字母串中有些被重复计算,因为 $ABBA$ 可以重叠如下:
-        \[
-        xyABBABBA, \quad xABBABBAy, \quad ABBABBAxy
-        \]
-        其中 $x, y$ 可以是 $A$ 或 $B$,共有 $12$ 种。还有 6 种形为
-        \[
-        xABBAABBA, \quad ABBAxABBA, \quad ABBAABBAx
-        \]
-        这些被重复计算了 2 次。  
-
-        根据容斥原理,因此至少包含一个 $ABBA$ 的字母串数为 $192-12-6 = 174$。故不包含 $ABBA$ 的字母串数为:
-        \[
-        512 - 174 = 338
-        \]
-    \end{solution}
-
-    \question 设 Bauman 字串满足以下条件:
-    \begin{itemize}
-        \item 每个字母只能是 $A, B, C, D, E$ 之一；
-        \item 相邻两个字母不能相同。
-    \end{itemize}
-    例如 $AECD, BDCEC$ 是 Bauman 字串,而 $ABBC, DAEEE$ 不是。
-    \begin{parts}
-    \part 长度为 5 的 Bauman 字串中,首尾字母都是 $A$ 的有多少个？
-    \begin{solution}
-        若首尾均为 $A$,则第二位和第四位不能是 $A$。按第三位分类讨论:
-
-        情形 1:第三位是 $A$。字串形如 $A\_A\_A$,第二位有 4 种选择($B,C,D,E$),第四位有 4 种选择,共 $4 \cdot 4 = 16$ 种。
-
-        情形 2:第三位不是 $A$。第三位有 4 种选择($B,C,D,E$),第二位需与第三位不同且不能为 $A$,共 3 种选择;第四位同理有 3 种选择,共 $4 \cdot 3 \cdot 3 = 36$ 种。
-
-        总数为 $16 + 36 = 52$。
-    \end{solution}
-    \begin{solution}
-        按第二位和第四位是否相同分类:
-
-        情形 1:第二位和第四位相同。字串形如 $Ax\_xA$(其中 $x$ 表示第二位和第四位的字母),第二位有 4 种选择,第三位需与第二位不同,有 4 种选择,共 $4 \cdot 4 = 16$ 种。
-
-        情形 2:第二位和第四位不同。字串形如 $Axy\_A$(其中 $x$, $y$ 分别表示第二位和第四位的字母),第二位有 4 种选择,第四位需与第二位不同,有 3 种选择,第三位需与第二位和第四位都不同,有 3 种选择,共 $4 \cdot 3 \cdot 3 = 36$ 种。
-
-        总数为 $16 + 36 = 52$。
-    \end{solution}
-    \part 长度为 6 的 Bauman 字串中,包含超过一个 B 的有多少个？
-    \begin{solution}
-        总字串数为 $5 \cdot 4^5 = 5120$(首位 5 种选择,其余每位 4 种选择)。
-
-        无 $B$ 的字串:首位 4 种选择($A,C,D,E$),其余每位 3 种选择(需与前一位不同且不能是 $B$),共 $4 \cdot 3^5 = 972$ 种。
-
-        恰有 1 个 $B$ 的字串:
-        \begin{itemize}
-            \item 若 $B$ 在首位或末位:
-            \begin{itemize}
-                \item $B$ 在首位:第二位 4 种,其余每位 3 种,共 $1 \cdot 4 \cdot 3^4 = 324$ 种
-                \item $B$ 在末位:首位 4 种,第二到第五位中第二位 3 种,其余每位 3 种,共 $4 \cdot 3^4 = 324$ 种
-            \end{itemize}
-            \item 若 $B$ 在第 2 到第 5 位(共 4 个位置):每个位置,$B$ 前一位 4 种,$B$ 后一位 4 种,其余 3 个位置各 3 种,每个位置贡献 $4 \cdot 1 \cdot 4 \cdot 3^3 = 432$ 种,共 $4 \cdot 432 = 1728$ 种
-        \end{itemize}
-        恰有 1 个 $B$ 的总数为 $324+ 324 + 1728 = 2376$。
-
-        超过 1 个 $B$ 的数目为:
-        \[
-        5120 - 972 - 2376 = 1772.
-        \]
-    \end{solution}
-    \begin{solution}
-       长度为 6 的 Bauman 字串中,由于相邻字母不能相同,$B$ 最多出现 3 次。故只需计算恰有 2 个 $B$ 或恰有 3 个 $B$ 的字串数。
-
-        情形 1:恰有 3 个 $B$。三个 $B$ 必须间隔放置。可能的位置模式有:
-        \begin{itemize}
-            \item $B\_B\_B\_$(第 1, 3, 5 位):第 2, 4, 6 位各 4 种选择,共 $4^3 = 64$ 种
-            \item $\_B\_B\_B$(第 2, 4, 6 位):第 1, 3, 5 位各 4 种选择,共 $4^3 = 64$ 种
-            \item $B\_B\_B$(第 1, 3, 5 位):第 2 位 4 种,第 4 位 4 种,第 6 位 3 种,共 $4 \cdot 4 \cdot 3 = 48$ 种
-            \item $\_B\_B\_$(第 2, 4, 6 位):第 1 位 4 种,第 3 位 4 种,第 5 位 3 种,共 $4 \cdot 4 \cdot 3 = 48$ 种
-        \end{itemize}
-        合计 $64 + 64 + 48 + 48 = 224$ 种。
-
-        情形 2:恰有 2 个 $B$。从 6 个位置中选 2 个放 $B$,有 $\comb{6}{2} = 15$ 种选择,但需排除相邻的 5 种,剩余 10 种位置模式。
-
-        逐一计数(用下划线表示非 $B$ 位置):
-        \begin{itemize}
-            \item $B\_\_\_B\_$:第 2 位 4 种,第 4 位 4 种,第 5, 6 位各 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
-            \item $\_\_B\_\_B$:对称,同样 $144$ 种
-            \item $B\_\_B\_\_$:第 2, 4 位各 4 种,第 5 位需与第 4 位不同有 3 种,第 6 位 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
-            \item $\_\_B\_B\_$:对称,同样 $144$ 种
-            \item $B\_B\_\_\_$:第 2 位 4 种,第 4, 5, 6 位各 3 种,共 $4 \cdot 3 \cdot 3 \cdot 3 = 108$ 种
-            \item $\_\_\_B\_B$:对称,第 1 位 4 种,第 2, 3 位各 3 种,第 5 位 3 种,共 $4 \cdot 3 \cdot 3 \cdot 3 = 108$ 种
-            \item $B\_B\_\_\_$:第 2 位 4 种,第 4 位需与第 3 位不同有 4 种,第 5, 6 位各 3 种,共 $4 \cdot 4 \cdot 3 \cdot 3 = 144$ 种
-            \item $\_\_B\_B$:对称,同样 $144$ 种
-            \item $B\_\_\_\_B$:第 2 位 4 种,第 3, 4, 5 位各 3 种,共 $4 \cdot 3^3 = 108$ 种
-            \item $\_B\_B\_\_$:第 1, 3, 5 位各 4 种,第 6 位 3 种,共 $4^3 \cdot 3 = 192$ 种
-        \end{itemize}
-        合计 $4 \cdot 144 + 2 \cdot 108 + 2 \cdot 144 + 108 + 192 = 1548$ 种。
-
-        恰 2 个 $B$ 的有 1548 种,恰 3 个 $B$ 的有 224 种,总和为 $1548 + 224 = 1772$。
-    \end{solution}
-    \end{parts}
-
-
-    \question 将字母串 $AAAABBBCCC$ 排成一列,且相同字母不相邻的排法有多少种？
-    \begin{solution}
-        按 $B,C$ 的排列分类,再插入 $A$。先排列 3 个 $B$ 和 3 个 $C$ 的相对次序,记为「$BC$ 串」。共有
-        \[
-        \comb{6}{3}=\frac{6!}{3!3!}=20
-        \]
-        种 $BC$ 串。按 $BC$ 串中出现相邻同字母的"块数"分类,列举如下:
-        \begin{center}
-        \begin{tabular}{c|l}
-        编号 & 字串 \\ \hline 
-        1 & $BCBCBC$ \\ 
-        2 & $CBCBCB$ \\ \hline 
-        3 & $BCCBCB$ \\ 
-        4 & $CBCBBC$ \\ 
-        5 & $BCBCCB$ \\ 
-        6 & $CBBCBC$ \\ \hline 
-        7 & $BCCBBC$ \\ 
-        8 & $CCBBCB$ \\ 
-        9 & $BCBBCC$ \\ 
-        10 & $CCBCBB$ \\ 
-        11 & $BBCCBC$ \\ 
-        12 & $CBBCCB$ \\ 
-        13 & $BBCBCC$ \\ 
-        14 & $CBCCBB$ \\ \hline 
-        15 & $CBBBCC$ \\ 
-        16 & $CCBBBC$ \\ 
-        17 & $BBCCCB$ \\ 
-        18 & $BCCCBB$ \\ \hline 
-        19 & $CCCBBB$ \\ 
-        20 & $BBBCCC$ \\ \hline
-        \end{tabular}
-        \end{center}
-        现在将 4 个 $A$ 插入 $BC$ 串的空位中,使得任何相同字母都不相邻:
-        \begin{enumerate}
-            \item $BC$ 串中没有相邻同字母（编号 1--2）:有 7 个空位插入 4 个 A,方式数 $\comb{7}{4}=35$,对应 2 种 $BC$ 串,共 $2\cdot 35=70$。
-            \item 有 1 处相邻同字母（编号 3--6）:此时剩 6 个空位插入 4 个 A（等价插入 3 个 A 以避免产生相邻相同字母）,方式数 $\comb{6}{3}=20$,对应 4 种 $BC$ 串,共 $4\cdot20=80$。
-            \item 有 2 处相邻同字母（编号 7--14）:剩 5 个空位插入 2 个 A,方式数 $\comb{5}{2}=10$,对应 8 种 $BC$ 串,共 $8\cdot10=80$。
-            \item 有 3 处相邻同字母（编号 15--18）:剩 4 个空位插入 1 个 A,方式数 $\comb{4}{1}=4$,对应 4 种 $BC$ 串,共 $4\cdot4=16$。
-            \item 有 4 处相邻同字母（编号 19--20）:A 恰好插满一组,计 $2$ 种。
-        \end{enumerate}
-        合计:
-        \[
-        70+80+80+16+2=248
-        \]
-    \end{solution}
-    \begin{solution}
-        根据容斥原理,相同字母不相邻的排法数
-        \[
-        = \text{4个A不相邻} - (\text{至少2个B相邻} \cup \text{至少2个C相邻})
-        \]
-        4个A不相邻:先排 3 个 $B$ 和 3 个 $C$,有 $\comb{6}{3}=20$ 种方式,产生 7 个空位,在其中插入 4 个 $A$,有 $\comb{7}{4}=35$ 种方式,共 $20 \cdot 35=700$ 种。
-
-        至少2个B相邻:将 2 个 $B$ 看作一个整体 $BB$,与剩余 1 个 $B$ 和 3 个 $C$ 排列,有 $\frac{5!}{3!}=20$ 种方式,产生 6 个空位插入 4 个 $A$,有 $\comb{6}{4}=15$ 种方式,共 $20 \cdot 15=300$ 种。
-
-        但这样会重复计算 3 个 $B$ 都相邻的情况。当 3 个 $B$ 都相邻时,将它们看作 $BBB$,与 3 个 $C$ 排列有 4 种方式,产生 5 个空位插入 4 个 $A$,有 $\comb{5}{4}=5$ 种方式,共 $4 \cdot 5=20$ 种。
-
-        因此至少 2 个 $B$ 相邻为 $300-20=280$ 种。
-
-        由对称性,至少 2 个 $C$ 相邻也是 $280$ 种。
-
-        至少2个B相邻且至少2个C相邻:将 2 个 $B$ 看作 $BB$,2 个 $C$ 看作 $CC$,与剩余 1 个 $B$ 和 1 个 $C$ 排列,有 $4!=24$ 种方式,产生 5 个空位插入 4 个 $A$,有 $\comb{5}{4}=5$ 种方式,共 $24 \cdot 5=120$ 种。
-
-        需扣除 3 个 $B$ 都相邻的情况:$BBB,CC,C$ 排列有 $3!=6$ 种,产生 4 个空位插入 4 个 $A$,有 $\comb{4}{4}=1$ 种,共 $6 \cdot 1=6$ 种。
-
-        同样扣除 3 个 $C$ 都相邻的情况:$6$ 种。
-
-        因此至少 2 个 $B$ 相邻且至少 2 个 $C$ 相邻为 $120-6-6=108$ 种。
-
-        最终答案为 
-        \[
-        \comb{6}{3}\comb{7}{4} - \left[2 \times \left(\frac{5!}{3!}\comb{6}{4}-4\comb{5}{4}\right) - \left(4!\comb{5}{4}-2 \times 3!\comb{4}{4}\right)\right]=248
-        \]
-    \end{solution}
-
-    \question 要爬 12 级台阶,但每步只能上 1 级或 2 级。第 8 级有一条蛇,所以不能踩。问共有多少种爬法？
-    \begin{solution}
-        由于第 8 级不能踩,必须从第 7 级迈 2 级直接到第 9 级。于是问题可以拆成两段:
-        \begin{itemize}
-            \item 爬前 7 级的方式数
-            \item 从第 9 级到第 12 级的方式数
-        \end{itemize}
-        总数为
-        \[
-        (\comb{7}{0}+\comb{6}{1}+\comb{5}{2}+\comb{4}{3})\cdot 3=63
-        \]
-    \end{solution}
-
-    \question 在集合 $\{1,2,3,4,5,6,7\}$ 的所有非空子集 S 中,有多少个子集不包含数 $|S|$($|S|$ 表示子集元素个数)？例如 $\{3,4\}$ 是这样的子集,因为它不包含数字 2。
-    \begin{solution}
-        非空子集总数为 $2^7-1=127$。若子集大小为 $k$ 且包含数字 $k$,则剩下的 $k-1$ 个元素必须从另外的 6 个数中选取,共有
-        \[
-        \comb{6}{k-1}
-        \]
-        种。对 $k=1,2,\dots,7$ 求和得包含其大小的子集总数为
-        \[
-        \sum_{k=1}^7 \comb{6}{k-1} = \sum_{j=0}^6 \comb{6}{j} = 2^6 = 64.
-        \]
-        因此不包含其大小的子集个数为
-        \[
-        127-64=63.
-        \]
-    \end{solution}
-
-    \question 有多少个非负整数有序四元组 $(a,b,c,d)$ 满足 $a+b+c+d\le15$?
-    \begin{solution}
-        将不等式转化为等式
-        \[
-        a+b+c+d+e=15,
-        \]
-        其中 $e\ge0$,则原题等价于求此方程的非负整数解个数。根据隔板法,有
-        \[
-        \comb{15+5-1}{5-1}=\comb{19}{4}=3876
-        \]
-        个非负整数有序四元组。
-    \end{solution}
-
-    \question 以一个正方体的顶点为顶点的四面体共有多少个？
-    \begin{solution}
-        从正方体的 8 个顶点中任取 4 点:
-        \[
-        \comb{8}{4} = 70
-        \]
-        需扣除 4 点共平面的情形,包括正方体的六个面,共 6 种;斜平面,共 6 种。所以四面体个数为
-        \[
-        70 - 12 = 58
-        \]
-    \end{solution}
-
-    \question 在 5 只蜗牛进行的比赛中,最多只会出现一次打平,但可以接受任意数量的蜗牛打平。例如,比赛结果可能是 Dazzler 获得第一名;Abby、Cyrus 和 Elroy 并列第二名,而 Bruna 获得第五名。问这种比赛共有多少种不同的结果? 
-    \begin{solution}
-        考虑没有、两只、三只、四只、五只蜗牛打平,总共有
-        \[
-        5! + \comb{5}{2} \cdot 4! + \comb{5}{3} \cdot 3! + \comb{5}{4} \cdot 2! + 1 = 431
-        \]
-        个不同的结果。
-    \end{solution}
-
-    \question 在一个 $3 \times 3$ 的网格中,放置 $3$ 个红色棋子、$3$ 个蓝色棋子和 $3$ 个绿色棋子,所有棋子同色不可相邻（横或竖方向）,且棋子同色不可区分。请问满足条件的放置方法有多少种？
-        \ifprintanswers
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image13.png}
-        \end{figure}
-        \fi
-    \begin{solution}
-        观察发现,只存在两种基本的放置方法（如上图所示）,其他放置方法只能通过这两种结构旋转或颜色变化得到,所以总合法方案数为
-        \[
-        (4 + 2) \cdot 3! = 36
-        \]
-    \end{solution}
-
-    \question 小明在注册账号时可以使用字符$1,2,3,a,b,c,A,B,C$来组成五位密码,但要求必须包含数字、小写字母和大写字母,且不可以出现两个相同的字符相邻,例如密码可以设置为$123aA$或$laA12$,但不能设置为$123ab$或$112aA$,试求可以设置不同的密码的个数。
-    \begin{solution}
-        先考虑相邻字符不同的密码,共有$9 \cdot 8^4 = 36864$种,这里面不满足密码要求的有两类:
-        \begin{itemize}
-            \item 仅包含单一字符类型(如全数字),这类共有$3 \cdot (3 \cdot 2^4) = 144$种
-            \item 仅包含两种字符类型(如数字和小写字母),只满足相邻不同的密码有$6 \cdot 5^4 = 3750$种,但此时我们多算了$2 \cdot (3 \cdot 2^4) = 96$种单一字符类型, 故第二类共有$3 \cdot (3750 - 96) = 10962$种
-        \end{itemize}
-        不同密码的总个数为$36864 - 144 - 10962 = 25758$.
-    \end{solution}
-
-    \question 阿绿想在她的表演服装上缝 6 颗相同的红色钮扣、3 颗相同的绿色钮扣和 3 颗相同的黄色钮扣。若所有钮扣需竖直地排成一直线,且相邻钮扣不同色,则阿绿有多少种排列方法?
-    \begin{solution}
-        假设红、绿、黄钮扣为$R,G,Y$,先将 $6R$ 排成一列,共 $7$ 个间隔。由于同色不相邻,必须将中间 $5$ 个间隔放入 $3G$ 与 $3Y$ 中的五个。
-
-        情况一: 5 个间隔放 $3G2Y$ 且剩下 $1Y$ 放头或尾端。排列数有$\comb{5}{3}\cdot 2$。
-
-        情况二: 5 个间隔放 $2G3Y$ 且剩下 $1G$ 放头或尾端。排列数有$\comb{5}{3}\cdot 2$。
-
-        情况三: 5 个间隔放 $3G2Y$ 且剩下 $1Y$ 不放头尾。可能情况有$G\cdot G\cdot Y\cdot Y\cdot \boxed{GY},G\cdot G\cdot Y\cdot Y\cdot \boxed{YG}$,排列数各有 $\dfrac{5!}{2!2!}$。
-
-        故排列方法共有
-        \[
-        \comb{5}{3}\cdot 2+\comb{5}{3}\cdot 2+\frac{5!}{2!2!}+\frac{5!}{2!2!}=100
-        \]
-    \end{solution}
-
-    
-    \question 在一个 $3\times3$ 的方格中,每个小方格被涂成红、白、蓝、绿四种颜色中的一种,要求任何 $2\times2$ 的小方格块都恰好包含四种不同的颜色。共有多少种不同的涂色方案？
-    \begin{solution}
-        先固定中心格:中心格有 $4$ 种颜色可选。再考虑中心行的左右两格:
-        \begin{itemize}
-        \item 两格同色。共有 $3$ 种颜色可供选择,此时上下行个别有$2$种填色方法,共 $2^2=4$ 种合法填法。  
-        \item 两格异色。左格 $3$ 种选,右格再 $2$ 种选,共 $3\cdot2=6$ 种。在此情况下,其余 4 个角格的颜色被唯一地确定。
-        \end{itemize}
-        故方法数共有 
-        \[
-        4 \cdot (3 \cdot 4 + 6) =72
-        \]
-    \end{solution}
-
-    \question Rita 正在给一朵花涂色。她已经涂好了花心和花茎。接下来,她将用红色、橙色、黄色和蓝色给六片花瓣涂色,每片花瓣只用一种颜色。规则如下:
-    \begin{itemize}
-        \item 相邻的花瓣不能涂相同的颜色；
-        \item 不一定要用到所有四种颜色。
-    \end{itemize}
-    求共有多少种不同的涂法数?
-    \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{images/image170.png}
-    \end{figure}
-    \begin{solution}
-        不失一般性,假设顶端花瓣为红色。
-
-        情况 1:红色出现三次。由于相邻花瓣不能同色,红色只能出现在特定的三片花瓣上,其余三片花瓣可以任意用其他3种颜色涂色,因此这种情况下共有
-        \[
-        3^3 = 27 \text{ 种涂法。}
-        \]
-        情况 2:红色出现两次。分情况讨论,
-        \begin{itemize}
-            \item 两红色花瓣之间相隔两个花瓣。与顶端红色花瓣相邻的两片花瓣可以各自用3种颜色涂色,剩余两片花瓣可以各自用2种颜色涂色,总共有
-            \[
-            3 \cdot 3 \cdot 2 \cdot 2 = 36 \text{ 种方式。}
-            \]
-            \item 两红色花瓣之间相隔一个花瓣。两红色花瓣可能在顶端及左侧或右侧,红色花瓣之间的花瓣可以用3种颜色,其他三片花瓣根据两种或三种颜色组合有 $6+6=12$ 种方式,因此该配置共有
-            \[
-            2 \cdot 3 \cdot 12 = 36 \text{ 种方式。}
-            \]
-        \end{itemize}
-        情况 3:红色出现一次。按顺时针给花瓣涂色（从红色顶端开始）:第一片花瓣有 3 种选择,接下来的四片花瓣每片有 2 种选择（不能和相邻花瓣相同,也不能用红色）,因此共有
-        \[
-        3 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 48 \text{ 种方式。}
-        \]
-        顶端花瓣可以选择 4 种颜色,故
-        \[
-        N = 4 \cdot (27 + (36+36) + 48) = 732
-        \]
-    \end{solution}
-
-    \question 一位农夫拥有一个矩形农田,它被划分成 $2\times2$ 的四块矩形区域。在每块区域中,农夫将种植一种作物:玉米、小麦、大豆或土豆。农夫不希望玉米和小麦出现在相邻的两块地中,也不希望大豆和土豆出现在相邻的两块地中。在这些限制下,农夫有多少种不同的方法为这四块地选择作物？
-    \begin{solution}
-        注意到:对于每种作物,有恰好一种作物是不能与其相邻的。不失一般性,设左上角种的是小麦。
-
-        情况一:左上角右边和下边两个相邻地块种的是相同的作物。这两块地不能种玉米（因为玉米不能与小麦相邻）,因此它们可以是小麦、大豆或土豆中的一种,共有 $3$ 种选择,对于右下角地块,只要与周围的两块地都不冲突即可,有 $3$ 种选择。
-        
-        情况二:右边和下边两块地种的是不同的作物。可从 $3$ 种合法作物中选择两个不同的,并安排在右和下两个位置,共有 $3 \cdot 2 = 6$ 种方式,此时右下角地块的选择只有 $2$ 种。
-        
-        综合两种情况相加并乘以左上角作物的 $4$ 种选择,总方法数为
-        \[
-        4 \cdot (3 \cdot 3 + 6 \cdot 2) = 84 
-        \]
-    \end{solution}
-            
-\question 三双不同的鞋子被排成一列,要求不能有一只左脚鞋与另一双的右脚鞋相邻。问共有多少种排法？
-\begin{solution}
-    设鞋子编号如下:右脚鞋:$1,\ 2,\ 3$,左脚鞋:$4,\ 5,\ 6$,其中 $n$ 与 $n+3$ 配对（例如 $1$ 和 $4$ 是一对）。
-
-    不妨设右脚鞋 $1$ 出现在排列中的第二个位置。此时我们枚举前三个位置可能的情况:
-    \begin{itemize}
-        \item 剩下的三个鞋子只能是
-            \[
-            654 \quad \text{或} \quad 645
-            \]
-            因为 $5$ 或 $4$ 不可以和 $3$（另一双的右脚鞋）相邻。
-        \item 剩下的三个鞋子只能是
-            \[
-            563
-            \]
-            （不能选 $365$,因为 $6$ 和 $5$ 是不同双鞋的左、右脚,会相邻）
-        \item 剩下的三个鞋子可以是
-            \[
-            256 \quad \text{或} \quad 652
-            \]
-    \end{itemize}
-    所以总方法数为
-    \[
-    (2 + 1 + 2) \times 12 = \boxed{60}
-    \]
-    其中乘上 $12$ 是因为我们一开始假设了鞋子 $1$ 出现在第二位,实际有 $2$ 种选哪个右脚鞋先出现,$6$ 种选配对顺序,所以总共乘 $12$。
-    \textcolor{red}{实际有 $2$ 种选哪个右脚鞋先出现?}
-\end{solution}
-
-    \question 竹东高中的多元选修课程共开设了六门选修课:$A,B,C $为第一类选修课,$D,E,F$ 为第二类选修课,要求每名同学须从中选修三门课,第一类选修课至少要选两门。现有甲、乙、丙三位同学选课,则任意一位同学与其他两位同学均至少有两门相同选修课的选法共有几种？
-    \begin{solution}
-        每个同学可能的选法有$$ABC, ABD, ABE, ABF, ACD, ACE, ACF, BCD, BCE, BCF,$$共 10 种；甲、乙、丙三人共有 $10^3=1000$ 种选法。
-
-        不符规定的选法分析如下:
-        \begin{itemize}
-            \item 第一人选了 $ABC$:第二人在第一类有 $\comb{3}{2}=3$ 种选法,第三人在第一类只能与第二人重复一门课,因此有 2 种选法；第二人在第二类的课程有 3 种选择,第三人有 2 种选择,共有 $3\cdot2 \cdot 3\cdot2 =108$ 种。
-            \item 第一人、第二人在第一类完全相同:第三人在第一类只有 2 种选择,在第二类课程中三人任选再扣除三人完全相同,即 $3^3-3$；共有 $\comb{3}{2} \cdot 3 \cdot 2 \cdot (3^3-3) =432$ 种。
-            \item 三人在第一类彼此最多重复一门课:第一类的选择有 $3!=6$,第二类与情况(2)相同,即 $3^3-3$；共有 $6 \cdot (3^3-3) =144$ 种。
-        \end{itemize}
-        因此符合要求的选法共有
-        \[
-        1000-108-432-144 = 316
-        \]
-    \end{solution}
-
-    \question 下图显示了一个宽为3格、高为3格的点阵,共包含9个小正方形。Carl 在这些正方形的边上放置长为 \(\dfrac{1}{2}\) 英寸的牙签,要求形成一个不相交的闭合环。图中某些格子内标注了一个数字,表示该格子被牙签覆盖的边数。若无数字,则该格子可以被任意数量的牙签覆盖。求 Carl 放置牙签的可能方法数。  
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image7.png}
-    \end{figure}
-    \begin{solution}
-        由于牙签回路不能穿过中间的五列,所以整个回路只有两种大致布局:
-
-        情况一:不穿过第二行。只剩下 $2$ 种回路（对称）。
-        
-        情况一:必须穿过第二行（左、右各穿一次）。则
-        \begin{itemize}
-          \item 中间四个标 $1$ 的小方格,各有两种放牙签方式,共 $2^4$;
-          \item 回路在左右两侧穿过第二行,各有 $3$ 种走法,共 $3^2$。
-        \end{itemize}
-        因此所有合法回路总数为
-        \[
-        2^4 \cdot 3^2 + 2 = 146
-        \]
-    \end{solution}
-
-    \question 有一张由 $5\times6$ 个正方形组成的格线纸,如右图。小强想沿着实线以向左、向右及向下的方向将格线纸剪成两张面积相等的纸张,并且先由 $A$ 点向下剪一格,最后从 $B,C,D,E,F$ 中某一点剪断纸张。问有多少种不同的剪法?
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.3\textwidth]{images/image95.png}
-    \end{figure}
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image96.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        格线纸共有 $5 \times 6 = 30$ 个方格。设剪线左侧从上往下第 $1,2,3,4,5$ 行的方格数分别为 $2,x,y,z,w$,需满足
-        \[
-        2 + x + y + z + w = 15,\quad 1 \le x,y,z,w \le 5, \quad x,y,z,w \in \mathbb{N}
-        \]
-        令 $x' = x - 1, y' = y - 1, z' = z - 1, w' = w - 1$,则
-        \[
-        x' + y' + z' + w' = 9, \quad 0 \le x',y',z',w' \le 4
-        \]
-        总方法数即不考虑$0 \le x',y',z',w' \le 4$的情况扣除 $x',y',z',w'$ 中至少有一个大于 $4$ 的情况:
-        \[
-        \comb{9+4-1}{4-1} - 4 \cdot \comb{4+4-1}{4-1} = 80
-        \]
-    \end{solution}
-
-    \question 考虑集合 $\{1,2,3,\dots,2024\}$ 的所有恰有 1000 个元素的子集。对于每个这样的子集 $S$,记 $m(S)$ 为 $S$ 中的最小元素。求所有 $m(S)$ 的算术平均数。
-    \begin{solution}
-        设最小元素为 $a$,则有选择余下 $999$ 个元素的方法数为
-        \[
-        \comb{2024 - a}{999}, \quad a=1,2,\dots,1025 \quad (1025=2024-999).
-        \]
-        算术平均数为
-        \[
-        \frac{\displaystyle \sum_{a=1}^{1025} a \cdot \comb{2024 - a}{999}}{\displaystyle\sum_{a=1}^{1025} \comb{2024 - a}{999}}=\frac{\comb{2025}{1001}}{\comb{2024}{1000}} = \frac{2025}{1001}
-        \]
-        利用组合恒等式 $\sum_{k=r}^{n} \comb{k}{r} = \comb{n+1}{r+1}$,令 $k = 2024-a$,当 $a$ 从 1 到 1025 时,$k$ 从 2023 到 999:
-        \[
-        \sum_{a=1}^{1025} \comb{2024 - a}{999} = \sum_{k=999}^{2023} \comb{k}{999} = \comb{2024}{1000}
-        \]
-        利用恒等式:
-\[
-\sum_{i=r}^{n} \comb{i}{r} = \comb{n+1}{r+1}
-\]
-
-以及权重求和恒等式:
-\[
-\sum_{k=0}^{n} (k+1) \cdot \comb{n-k}{r} = \comb{n+1}{r+2}
-\]
-
-令 $k = a-1$,则 $a = k+1$,当 $a$ 从 1 到 1025 时,$k$ 从 0 到 1024:
-\[
-\sum_{a=1}^{1025} a \cdot \comb{2024-a}{999} = \sum_{k=0}^{1024} (k+1) \cdot \comb{2024-(k+1)}{999} = \sum_{k=0}^{1024} (k+1) \cdot \comb{2023-k}{999}
-\]
-
-利用恒等式 $\sum_{k=0}^{n-r} (k+1) \cdot \comb{n-k}{r} = \comb{n+2}{r+2}$:
-
-令 $n = 2023$, $r = 999$:
-\[
-\sum_{k=0}^{1024} (k+1) \cdot \comb{2023-k}{999} = \comb{2025}{1001}
-\]
-        \textcolor{red}{(待解)}
-    \end{solution}
-
-    \question 用数字 1、2、3 组成 10 位数,要求其中数字 1 出现次数为偶数。求这样的 10 位数的个数。
-    \begin{solution}
-        设 \(a_n\) 表示长度为 \(n\) 的、由 1、2、3 组成且数字 1 出现偶数次的序列个数。
-        \begin{itemize}
-            \item 若首位为 2 或 3（共 2 种选择）,则余下 \(n-1\) 位仍需 1 出现偶数次,方案数为 \(2a_{n-1}\)。
-            \item 若首位为 1（1 种选择）,则已有一个 1,余下 \(n-1\) 位中 1 需出现奇数次。余下 \(n-1\) 位的总序列数为 \(3^{n-1}\),其中 1 出现偶数次的为 \(a_{n-1}\),故出现奇数次的为 \(3^{n-1} - a_{n-1}\)。
-        \end{itemize}
-        因此,当 \(n > 1\) 时,有递推关系：
-        \[
-        a_n = 2a_{n-1} + (3^{n-1} - a_{n-1}) = a_{n-1} + 3^{n-1}, \quad a_1 = 2
-        \]
-        求通项
-        \[
-        a_n = a_1 + \sum_{k=1}^{n-1} 3^k =2 + \frac{3(3^{n-1} - 1)}{2}=\frac{3^n + 1}{2}
-        \]
-        代入 \(n=10\)得
-        \[
-        a_{10} = \frac{3^{10} + 1}{2} = 29525
-        \]
-    \end{solution}
-
-    \question 某语言只使用字母 $A, B, C, D, E$,其中 $A$ 和 $E$ 为元音,$B, C, D$ 为辅音。一个字母序列称为单词,当且仅当它不含有相邻两个相同字母,且不含有相邻两个元音。问该语言中长度为 10 且以元音开头的单词有多少个？
-    \begin{solution}
-        设 $v_n$ 为长度为 $n$ 且以元音开头的单词数,$c_n$ 为长度为 $n$ 且以辅音开头的单词数。据题意,
-        \[
-        v_1=2,\ c_1=3
-        \]
-        若 $n\ge2$,则  
-        \[
-        v_n=2c_{n-1},
-        \]
-        因为在辅音开头的 $(n-1)$ 字母单词前可加 $A$ 或 $E$。且有  
-        \[
-        c_n=3v_{n-1}+2c_{n-1},
-        \]
-        其中 $3v_{n-1}$ 意味可在元音开头的 $(n-1)$ 字母单词前加 $B, C, D,2c_{n-1}$ 意味可在辅音开头的 $(n-1)$ 字母单词前加不同于首字母的两个辅音。递推如下表:
-        \begin{center}
-        \begin{tabular}{|c|c|c|}
-        \hline
-        $n$ & $v_n$ & $c_n$ \\
-        \hline
-        1 & 2 & 3 \\
-        2 & 6 & 12 \\
-        3 & 24 & 42 \\
-        4 & 84 & 156 \\
-        5 & 312 & 564 \\
-        6 & 1128 & 2064 \\
-        7 & 4128 & 7512 \\
-        8 & 15024 & 27408 \\
-        9 & 54816 & 99888 \\
-        10 & 199776 & 364224 \\
-        \hline
-        \end{tabular}
-        \end{center}
-        因此,长度为 10 且以元音开头的单词共有 $199776$ 个。
-    \end{solution}
-
-    \question 有六个格子,初始时三个硬币从左到右依次占据前三个格子（记为 $X,Y,Z$）。一次移动是将某一枚硬币向右移动一格,前提是目标格子为空,且硬币之间不能相互跳跃（因此三枚硬币的相对顺序始终保持 $X$ 在 $Y$ 左边,$Y$ 在 $Z$ 左边）。问：有多少种不同的移动序列,能使三枚硬币最终全部移动到最右边的三个格子？
-    \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{images/image162.png}
-    \end{figure}
-    \begin{solution}
-        我们将每个允许的移动序列看作由 $X,Y,Z$ 组成的字符串。例如,字符串 $ZZYXZ$ 表示先移动 $Z$ 一格,再移动 $Z,Y,X,Z$。  
-
-        对于每个整数三元组 $(x,y,z)$,其中 $0 \le x,y,z \le 3$,定义 $S(x,y,z)$ 为使 X 移动 $x$ 格,Y 移动 $y$ 格,Z 移动 $z$ 格的移动序列数。欲求 $S(3,3,3)$。  
-
-        由于硬币不能交叉且只能向右移动,当 $x > y$ 或 $y > z$ 或 $x > z$,有$S(x, y, z) = 0$。因此仅需考虑 $0 \le x \le y \le z \le 3$ 的情况。此时有
-        \[
-        S(x,y,z) = S(x-1,y,z) + S(x,y-1,z) + S(x,y,z-1)
-        \]
-        其中当 $x=0$ 时 $S(x-1,y,z)=0,y=0$ 时 $S(x,y-1,z)=0,z=0$ 时 $S(x,y,z-1)=0$,且  
-        \[
-        S(0,0,0) = 1, \quad S(1,0,0) = 0, \quad S(0,1,0) = 0, \quad S(0,0,1) = 1
-        \]
-        接下来通过表格逐步填入 $S(x, y, z)$,其中 $z = 1,2,3$,纵轴为 $y$,横轴为 $x$。
-        \[  
-        \begin{tabular}{c c c}
-            \begin{tabular}{|c|cccc|}
-            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
-            \cline{2-5}
-            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
-            \cline{1-5}
-            0 & 1 & 0 & 0 & 0 \\
-            1 & 1 & 1 & 0 & 0 \\
-            2 & 0 & 0 & 0 & 0 \\
-            3 & 0 & 0 & 0 & 0 \\
-            \cline{1-5}
-            \end{tabular} &
-            \begin{tabular}{|c|cccc|}
-            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
-            \cline{2-5}
-            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
-            \cline{1-5}
-            0 & 1 & 0 & 0 & 0 \\
-            1 & 2 & 3 & 0 & 0 \\
-            2 & 2 & 5 & 5 & 0 \\
-            3 & 0 & 0 & 0 & 0 \\
-            \cline{1-5}
-            \end{tabular} &
-            \begin{tabular}{|c|cccc|}
-            \multicolumn{1}{c}{} & \multicolumn{4}{c}{$x$} \\
-            \cline{2-5}
-            \multicolumn{1}{c|}{$y$} & 0 & 1 & 2 & 3 \\
-            \cline{1-5}
-            0 & 1 & 0 & 0 & 0 \\
-            1 & 3 & 6 & 0 & 0 \\
-            2 & 5 & 16 & 21 & 0 \\
-            3 & 5 & 21 & 42 & 42 \\
-            \cline{1-5}
-            \end{tabular} \\
-            $z=1$ & $z=2$ & $z=3$
-        \end{tabular}
-        \]
-        由表得 
-        \[
-        S(0,0,1)=1(Z),\quad S(0,1,1)=1(ZY),\quad S(1,1,1)=1
-        (ZYX)
-        \]
-        因此序列的数量为$S(3,3,3)=42$。
-    \end{solution}
-
-    \question 给定数字集合 $\{1, 2, 4, 8, 16, 32, 64, 128\}$,每个数字最多可使用 $3$ 次,问：用这些数字之和恰好等于 $530$ 的方案数有多少种？
-    \begin{solution}
-        每个数字 $2^k$ 可以出现 $0,1,2,3$ 次,对应多项式
-        \[
-        1 + x^{2^k} + x^{2\cdot 2^k} + x^{3\cdot 2^k}.
-        \]
-        考虑生成函数
-        \[
-        (1+x+x^2+x^3)(1+x^2+x^4+x^6)(1+x^4+x^8+x^{12}) \cdots (1+x^{128}+x^{256}+x^{384}).
-        \]
-        因式分解得
-        \[
-        \frac{x^4-1}{x-1}\cdot\frac{x^8-1}{x^2-1}\cdots \frac{x^{512}-1}{x^{128}-1}
-        = (1+x+x^2+\cdots+x^{255})(1+x^2+x^4+\cdots+x^{510}).
-        \]
-        要得到 $x^{530}$,记作 $x^{2i}\cdot x^{530-2i}$,其中 $10 \le i \le 127$,共有 118 个 $i$ 的取值,因此方法数为 $118$。
-    \end{solution}
-
-    \question 求正整数有序三元组 $(a_1, a_2, a_3)$ 的个数,使得
-    \[
-    a_1 + a_2 + a_3 = 2020, \quad a_1 \not\equiv 0 \pmod 2, \quad a_2 \not\equiv 0 \pmod 3, \quad a_3 \not\equiv 0 \pmod 4。
-    \]
-    \begin{solution}
-        $a_1$ 为奇数,生成函数为
-        \[
-        x + x^3 + x^5 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^2} = \frac{x}{1-x^2}
-        \]
-        $a_2$ 不可被 3 整除,生成函数为
-        \[
-        x + x^2 + x^4 + x^5 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^3} = \frac{x(1-x^2)}{(1-x)(1-x^3)}
-        \]
-        $a_3$ 不可被 4 整除,生成函数为
-        \[
-        x + x^2 + x^3 + x^5 + x^6 + x^7 + \cdots = \frac{1}{1-x} - \frac{1}{1-x^4} = \frac{x(1-x^3)}{(1-x)(1-x^4)}
-        \]
-        三式相乘得总生成函数
-        \[
-        \frac{x}{1-x^2} \cdot \frac{x(1-x^2)}{(1-x)(1-x^3)} \cdot \frac{x(1-x^3)}{(1-x)(1-x^4)} = \frac{x^3}{(1-x)^2(1-x^4)}
-        \]
-        因此所求为 $x^{2020}$ 的系数,即 $x^{2017}$ 在
-        \[
-        (1 + 2x + 3x^2 + \cdots)(1 + x^4 + x^8 + \cdots)
-        \]
-        中的系数,即
-        \[
-        2 + 6 + 10 + \cdots + 2018 = 505 \cdot 1010 = 510050
-        \]
-    \end{solution}
-
-    \question 给定正立方体 $ABCD-EFGH$,其中 $ABCD$ 为底面,$EFGH$ 为顶面,$A$ 与 $E$ 对应,$B$ 与 $F$ 对应,$C$ 与 $G$ 对应,$D$ 与 $H$ 对应。一只小虫从顶点 $A$ 出发,每分钟沿一条棱移动到相邻顶点（每次移动一条棱）。问：经过恰好 $9$ 分钟后,小虫到达顶点 $G$ 的不同路径数为多少？
-    \begin{solution}
-        转换矩阵为
-        \[
-        A=
-        \begin{bmatrix}
-        0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
-        1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
-        0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 \\
-        1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
-        1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
-        0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
-        0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 \\
-        0 & 0 & 0 & 1 & 1 & 0 & 1 & 0
-        \end{bmatrix}
-        \]
-        发现
-        \[
-        A^9=
-        \begin{bmatrix}
-        0 & 4921 & 0 & 4921 & 4921 & 0 & 4920 & 0 \\
-        4921 & 0 & 4921 & 0 & 0 & 4921 & 0 & 4920 \\
-        0 & 4921 & 0 & 4921 & 4920 & 0 & 4921 & 0 \\
-        4921 & 0 & 4921 & 0 & 0 & 4920 & 0 & 4921 \\
-        4921 & 0 & 4920 & 0 & 0 & 4921 & 0 & 4921 \\
-        0 & 4921 & 0 & 4920 & 4921 & 0 & 4921 & 0 \\
-        4920 & 0 & 4921 & 0 & 0 & 4921 & 0 & 4921 \\
-        0 & 4920 & 0 & 4921 & 4921 & 0 & 4921 & 0
-        \end{bmatrix}
-        \]
-        故由
-        \[
-        A^9
-        \begin{bmatrix}
-        1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-        0 \\ 4921 \\ 0 \\ 4921 \\ 4921 \\ 0 \\ 4920 \\ 0
-        \end{bmatrix}
-        \]
-        可知$A \to G$ 有 $4920$ 种路线。
-        \textcolor{red}{(待递推解)}
-    \end{solution}
-
-\end{questions}
-

@@ -3844,6 +3844,42 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         =\frac12\cos36^\circ+\frac{\sqrt3}{2}\sin36^\circ
         \]
     \end{solution}
+
+    \question 如下图所示，$\Delta ABC$ 中，$D$、$E$、$F$ 分别是 $BC$、$CA$ 及 $AB$ 边上的点，线段 $AD$ 与线段 $BE$ 相交于点 $U$，线段 $BE$ 与线段 $CF$ 相交于点 $V$，线段 $CF$ 与线段 $AD$ 相交于点 $W$，$BU = UE$，$CV = VF$，$AW = WD$。若 $\Delta ABC$ 的面积等于 12，$\Delta UVW$ 的面积为 $x - \sqrt{y}$，其中 $x$ 及 $y$ 都是正整数，且 $y$ 不是平方数，求 $x^2 + y$ 的值。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image244.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image245.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $\frac{BD}{CD} = \alpha$，$\frac{CE}{EA} = \beta$，$\frac{AF}{FB} = \gamma$。
+由题意及面积比关系推导可知 $\alpha = \beta = \gamma$。
+根据几何关系，有
+\[
+\alpha = \frac{BD}{CD} = \frac{S_{\Delta ABD}}{S_{\Delta ACD}} = \frac{-1 + \sqrt{5}}{2}
+\]
+由此可得 $\beta = \gamma = \alpha$。
+设 $\Delta UVW$ 的面积为 $z$。利用区域面积总和关系：
+\[
+z = \frac{\alpha}{3} \times \frac{3}{4\alpha + 6} \times 12 = 3 \times \frac{\sqrt{5} - 1}{\sqrt{5} + 2}
+\]
+通过分母有理化：
+\begin{align*}
+z &= 3(7 - 3\sqrt{5}) \\
+&= 21 - 3\sqrt{45} \\
+&= 21 - \sqrt{405}
+\end{align*}
+因此，$x = 21$，$y = 405$。
+\[
+x^2 + y = 441 + 405 = 846
+\]
+答：846。
+\end{solution}
 \end{questions}
 
 \pagebreak

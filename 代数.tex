@@ -1210,6 +1210,29 @@
         \]
     \end{solution}
 
+    \question 24. 设 $x_1, x_2, x_3, x_4, x_5, x_6$ 是实数且满足
+\[
+\begin{cases}
+x_1 + 4x_2 + 9x_3 + 16x_4 + 25x_5 + 36x_6 = 30 \\
+4x_1 + 9x_2 + 16x_3 + 25x_4 + 36x_5 + 49x_6 = 100 \\
+9x_1 + 16x_2 + 25x_3 + 36x_4 + 49x_5 + 64x_6 = 250
+\end{cases}
+\]
+求 $16x_1 + 25x_2 + 36x_3 + 49x_4 + 64x_5 + 81x_6$ 的值。
+
+\begin{solution}
+\[
+\sum_{n=1}^{6} n^2 x_n = 30, \quad \sum_{n=1}^{6} (n+1)^2 x_n = 100, \quad \sum_{n=1}^{6} (n+2)^2 x_n = 250
+\]
+设 $(n+3)^2 = An^2 + B(n+1)^2 + C(n+2)^2$。比较系数可得 $A=1, B=-3, C=3$。
+\begin{align*}
+16x_1 + 25x_2 + 36x_3 + 49x_4 + 64x_5 + 81x_6 &= \sum_{n=1}^{6} (n+3)^2 x_n \\
+&= \sum_{n=1}^{6} n^2 x_n - 3\sum_{n=1}^{6} (n+1)^2 x_n + 3\sum_{n=1}^{6} (n+2)^2 x_n \\
+&= 30 - 3 \times 100 + 3 \times 250 \\
+&= 480
+\end{align*}
+\end{solution}
+
     \question 若$a,b$为正实数,解方程
     \[
     (a+b)(ax+b)(a-bx)=(a^2x-b^2)(a+bx), \quad x\in \mathbb{R}.
@@ -2119,6 +2142,43 @@
         \]
     \end{solution}
 
+    \question
+方程式 $x + \sqrt{x^2 + \sqrt{x^3 + 16}} = 2$ 有几个实数解？
+
+\begin{solution}
+首先将方程变形，孤立外层的根号：
+\[
+\sqrt{x^2 + \sqrt{x^3 + 16}} = 2 - x
+\]
+对两边平方可得：
+\[
+x^2 + \sqrt{x^3 + 16} = 4 - 4x + x^2
+\]
+消去两边的 $x^2$，整理得到：
+\[
+\sqrt{x^3 + 16} = 4 - 4x
+\]
+再次对两边平方：
+\[
+x^3 + 16 = 16 - 32x + 16x^2
+\]
+移项并提取公因式：
+\[
+x(x^2 - 16x + 32) = 0
+\]
+解得 $x = 0$ 或 $x = 8 \pm 4\sqrt{2}$。
+
+注意到对于实数解，必须满足 $2 - x \ge 0$，即 $x \le 2$。
+由于 $8 \pm 4\sqrt{2} > 0$，我们可以进一步检验。
+如果 $x > 0$，则：
+\[
+x + \sqrt{x^2 + \sqrt{x^3 + 16}} > 2
+\]
+因此，$x = 8 \pm 4\sqrt{2}$ 均不是原方程的解（实际上它们是平方过程中产生的增根）。
+经检验，$x = 0$ 是唯一的实数解。
+所以，该方程只有 1 个实数解。
+\end{solution}
+
     \question 设 $a,b$ 为正实数,且
     \[
     \frac{1}{a}+\frac{1}{b}=1,\quad 2022a^2=2023b^2,
@@ -2490,6 +2550,25 @@
         &= \frac{1}{\sqrt{2}} (b+1) + \frac{1}{\sqrt{2}} (1-b) = \sqrt{2}
         \end{align*}
     \end{solution}
+
+    \question 已知 $a > b > 1$ 且 $\frac{1}{\log_a b} + \frac{1}{\log_b a} = \sqrt{10205}$，求 $\frac{1}{\log_{ab} b} - \frac{1}{\log_{ab} a}$ 的值。
+
+\begin{solution}
+设
+\begin{align*}
+x &= \frac{1}{\log_{ab} b} - \frac{1}{\log_{ab} a} \\
+&= \frac{\log ab}{\log b} - \frac{\log ab}{\log a} \\
+&= \frac{\log a + \log b}{\log b} - \frac{\log a + \log b}{\log a} \\
+&= \frac{\log a}{\log b} - \frac{\log b}{\log a} > 0
+\end{align*}
+已知 $\frac{\log a}{\log b} + \frac{\log b}{\log a} = \sqrt{10205}$，则
+\begin{align*}
+x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
+&= 10201 \\
+&= 101^2
+\end{align*}
+解得 $x = 101$。
+\end{solution}
 
     \question 解不等式
     \[
@@ -3637,7 +3716,49 @@
         (x+y)f(2017)=f(2018)+xyf(2016) \Rightarrow a x^{2018} + b y^{2018}=f(2018)=-417
         \]
     \end{solution}
+\question
+已知 $a, b, x$ 及 $y$ 是实数且
+\begin{align*}
+ax - by &= 16 \\
+a^2x^3 - b^2y^3 &= 23 \\
+a^3x^5 - b^3y^5 &= 33 \\
+a^4x^7 - b^4y^7 &= 48 \\
+a^5x^9 - b^5y^9 &= K
+\end{align*}
+求 $K$。
 
+\begin{solution}
+注意到以下等式关系：
+\begin{align*}
+(a^2x^3 - b^2y^3)(ax^2 + by^2) &= a^3x^5 - b^3y^5 + abx^2y^2(ax - by) \\
+(a^3x^5 - b^3y^5)(ax^2 + by^2) &= a^4x^7 - b^4y^7 + abx^2y^2(a^2x^3 - b^2y^3) \\
+(a^4x^7 - b^4y^7)(ax^2 + by^2) &= a^5x^9 - b^5y^9 + abx^2y^2(a^3x^5 - b^3y^5)
+\end{align*}
+设 $u = ax^2 + by^2$，$v = abx^2y^2$。将已知数值代入，可得方程组：
+\begin{align*}
+23u - 16v &= 33 \\
+33u - 23v &= 48 \\
+48u - 33v &= K
+\end{align*}
+解前两个方程：
+由第一个方程得 $16v = 23u - 33$，代入第二个方程：
+\[
+33u - \frac{23(23u - 33)}{16} = 48
+\]
+两边同乘以 16：
+\[
+528u - 529u + 759 = 768
+\]
+\[
+-u = 9 \implies u = -9
+\]
+将 $u = -9$ 代入 $16v = 23(-9) - 33 = -207 - 33 = -240$，解得 $v = -15$。
+最后将 $u = -9, v = -15$ 代入第三个方程：
+\[
+K = 48(-9) - 33(-15) = -432 + 495 = 63
+\]
+因此，$K = 63$。
+\end{solution}
     \question 求联立方程
     \[
     \begin{cases}
@@ -4505,941 +4626,7 @@
         \]
     \end{solution}
 \end{questions}
-\pagebreak
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{取整}{取整} \label{取整}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
-    \question 求满足
-    \[
-    \floor{0.5+\floor{x}} = 20
-    \]
-    的所有$x$的取值范围。
-    \begin{solution}
-        由下取整定义,原方程即
-        \[
-        20 \le 0.5+\floor{x}< 21 \Rightarrow 19.5 \le \floor{x} < 20.5
-        \]
-        由于$\floor{x} \in \mathbb{Z}$,
-        \[
-        \floor{x}=20 \Rightarrow 20 \le x < 21
-        \]
-    \end{solution}
 
-    \question 求满足
-    \[
-    \ceil{\ceil{x}-1.3} = 16
-    \]
-    的所有$x$。
-    \begin{solution}
-        由上取整定义,原方程即
-        \[
-        15 \le \ceil{x} -1.3 < 16 \Rightarrow 16.3 \le \ceil{x} < 17.3
-        \]
-        由于$\ceil{x} \in \mathbb{Z}$,
-        \[
-        \ceil{x}=17 \Rightarrow 16 < x \le 17
-        \]
-    \end{solution}
-
-    \question 解方程 
-    \[
-    2x = \floor{x} + \frac{16}{5}
-    \]
-    \begin{solution}
-        发现$x\neq \floor{x}$,由于 
-        \[
-        \floor{x} < x < \floor{x} + 1 \Rightarrow 2\floor{x} < 2x < 2\floor{x} + 2,
-        \]
-        观察右式的取值范围可知
-        \[ 
-        2\floor{x} < \floor{x} + \frac{16}{5} < 2\floor{x} + 2 \Rightarrow \frac{6}{5} < \floor{x} < \frac{16}{5} 
-        \]
-        因此 
-        \[
-        \floor{x} = 2, 3 \Rightarrow x = \frac{13}{5}, \frac{31}{10}
-        \]
-    \end{solution}
-
-    \question 解方程
-    \[
-    2\lfloor x \rfloor + 3x = 4 - 5\{x\}
-    \]
-    \begin{solution}
-        设 $x = n+r$, 其中 $n = \lfloor x \rfloor,r = \{x\}$,代入方程得
-        \[
-        2n + 3(n+r) = 4 - 5r \Rightarrow 5x=4-3r
-        \]
-        由 $0 \le r < 1$, 有
-        \[
-        1 < 4-3r \le 4 \Rightarrow \frac{1}{5} < x \le \frac{4}{5}
-        \]
-        由此可得$x=\{x\}$,即$\floor{x}=0$,此时
-        \[
-        2\cdot 0 +3x=4-5x \Rightarrow x=\frac{1}{2}
-        \]
-    \end{solution}
-
-    \question 令 
-    \[
-    f(x) = \left\lfloor x + \frac{1}{2} \right\rfloor + \left\lfloor x - \frac{1}{2} \right\rfloor - \lfloor 2x \rfloor,
-    \]
-    证明只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,满足方程 $f(x) = 0$ 。
-    \begin{solution}
-        设 $x = n + \{x\}$ ,其中 $n$ 为整数,且$0 \le \{x\} < 1$,将$n$从取整符号中提出,
-        \[ 
-        f(x) = \left\lfloor \{x\} + \frac{1}{2} \right\rfloor + \left\lfloor \{x\} - \frac{1}{2} \right\rfloor - \lfloor 2\{x\} \rfloor 
-        \]
-        当 $0 \le \{x\} < \dfrac{1}{2}$ 时,
-        \[ 
-        f(x) = 0 + (-1) - 0 = -1 \neq 0
-        \]
-        而当 $\dfrac{1}{2} \le \{x\} < 1$ 时,
-        \[
-        f(x) = 1 + 0 - 1 = 0
-        \]
-        得证只有当 $\dfrac{1}{2} \le \{x\} < 1$ 时,$f(x) = 0$。
-    \end{solution}
-
-    \question 解 
-    \[
-    8\lfloor 3x \rfloor - 5\lfloor 2x \rfloor = 3
-    \]
-    \begin{solution}
-        令 $x = n + r$ ,其中 $n \in \mathbb{Z}, 0 \le r < 1$,原方程变为 
-        \[ 
-        3n + 8\lfloor 3r \rfloor - 5\lfloor 2r \rfloor = 3 
-        \]
-        当 $0 \le r < \dfrac{1}{3}$ 时,$\lfloor 3r \rfloor = 0, \lfloor 2r \rfloor = 0$,有
-        \[
-        3n = 3 \Rightarrow n = 1
-        \]
-        当 $\dfrac{1}{3} \le r < \dfrac{1}{2}$ 时,$\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 0$,有
-        \[
-        3n + 8 = 3 \Rightarrow n = -\frac{5}{3} \notin \mathbb{Z}
-        \]
-        当 $\dfrac{1}{2} \le r < \dfrac{2}{3}$ 时, $\lfloor 3r \rfloor = 1, \lfloor 2r \rfloor = 1$,有
-        \[
-        3n + 8 - 5 = 3 \Rightarrow n = 0
-        \]
-        当 $\dfrac{2}{3} \le r < 1$ 时,$\lfloor 3r \rfloor = 2, \lfloor 2r \rfloor = 1$,有
-        \[
-        3n + 16 - 5 = 3 \Rightarrow n = -\frac{8}{3} \notin \mathbb{Z}
-        \]
-        综上,解为
-        \[
-        n = 1, 0 \le r < \frac{1}{3} \Rightarrow 1 \le x < \frac{4}{3}
-        \]
-        或
-        \[
-        n = 0, \frac{1}{2} \le r < \frac{2}{3} \Rightarrow \frac{1}{2} \le x < \frac{2}{3}
-        \]
-    \end{solution}
-
-    \question 已知
-    \[
-    \begin{cases}
-    \lfloor b \rfloor + \lceil a \rceil + \{c\} = 16 \\
-    \lfloor c \rfloor + \lceil b \rceil + \{a\} = 11.3 \\
-    \lfloor a \rfloor + \lceil c \rceil + \{b\} = 9.7
-    \end{cases}
-    \]
-    求$a+b+c$的值。
-    \begin{solution}
-        由题意可知,小数部分分别为
-        \[
-        \{a\}=0.3,\quad \{b\}=0.7,\quad \{c\}=0
-        \]
-        原方程组变为
-        \[
-        \begin{cases}
-        \lfloor b \rfloor + \lfloor a \rfloor + 1 = 16 \\
-        \lfloor c \rfloor + \lfloor b \rfloor + 1 = 11 \\
-        \lfloor a \rfloor + \lfloor c \rfloor = 9
-        \end{cases}
-        \]
-        由第二式与第三式可得
-        \[
-        \lfloor a \rfloor =7, \quad \lfloor b \rfloor = 9-1=8, \quad \lfloor c \rfloor = 2
-        \]
-        因此
-        \[
-        a=7.3,\quad b=8.7,\quad c=2 \Rightarrow a+b+c=18
-        \]
-    \end{solution}
-
-    \question 已知 $\dfrac{1}{3-\sqrt{7}}$ 的整数部分为 $a$ ,小数部分为 $b$ ,求 $a^2 + (1+\sqrt{7})ab$ 。
-    \begin{solution}
-        有理化得
-        \[ 
-        \frac{1}{3-\sqrt{7}} = \frac{3+\sqrt{7}}{2} 
-        \]
-        由 
-        \[
-        2 < \sqrt{7} < 3 \Rightarrow \frac{5}{2} < \frac{3+\sqrt{7}}{2} < 3,
-        \]
-        得 
-        \[
-        a = 2 ,\quad b = \frac{3+\sqrt{7}}{2} - a = \frac{\sqrt{7}-1}{2}
-        \]
-        故
-        \begin{align*}
-        a^2 + (1+\sqrt{7})ab &= 4 + (1+\sqrt{7}) \cdot 2 \cdot \frac{\sqrt{7}-1}{2} \\
-        &= 4 + (\sqrt{7}+1)(\sqrt{7}-1) \\
-        &= 10
-        \end{align*}
-    \end{solution}
-
-    \question 求大于 $(\sqrt{3}+\sqrt{2})^{6}$ 的最小整数。
-    \begin{solution}
-        令
-        \[
-        a=\sqrt{3}+\sqrt{2},\quad b=\sqrt{3}-\sqrt{2}
-        \]
-        则
-        \[
-        a^2 = 5+2\sqrt{6},\quad b^2 = 5-2\sqrt{6},\quad ab = 1
-        \]
-        所以
-        \[
-        a^6 + b^6 = (a^2 + b^2)(a^4 + b^4 - a^2b^2) = 10(10^2-3) = 970
-        \]
-        由于 $0 < b^2 < 1$,所以
-        \[
-        969 < a^6 < 970 \quad \Rightarrow \quad \ceil{a^6} = 970
-        \]
-    \end{solution}
-
-    \question 求满足
-    \[
-    \lfloor \sqrt{x}\rfloor=\lfloor \sqrt{x+34}\rfloor
-    \]
-    的最小整数$x$。
-    \begin{solution}
-        设$y,y+1$为连续正整数,使得他们的平方根的差不小于34,则
-        \[
-        (y+1)^2-y^2>34 \Rightarrow y>16.5
-        \]
-        由于$y \in \mathbb{Z}$,最小的$x$为
-        \[
-        x=y^2=17^2=289
-        \]
-    \end{solution}
-
-    \question 解
-    \[
-    \lceil x\rceil \lceil 2x\rceil = 15
-    \]
-    \begin{solution}
-        设
-        \[
-        x=n-r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
-        \]
-        当 $r < \dfrac{1}{2}$,原方程即
-        \[
-        n(2n) = 15 \Rightarrow n = \sqrt{\frac{15}{2}} \not \in \mathbb{Z}
-        \]
-        当  $r \ge \dfrac{1}{2}$,原方程即
-        \[
-        n(2n-1) = 15 \Rightarrow (n-3)(2n+5) = 0 \Rightarrow n = 3 \in \mathbb{Z}
-        \]
-        故$x$的取值范围为
-        \[
-        2 < x \le 2.5
-        \]
-    \end{solution}
-
-    \question 求正实数$x$满足
-    \[
-    x^2+\{x\}^2=27
-    \]
-    \begin{solution}
-        设
-        \[
-        x=n+r, \quad n \in \mathbb{Z}, \quad 0<r\le 1
-        \]
-        且注意到
-        \[
-        x^2 \le x^2+\{x\}^2 < x^2+1
-        \]
-        因此
-        \[
-        26<x^2\le27 \Rightarrow n=5
-        \]
-        代入原方程得
-        \[
-        (5+r)^2+r^2=27 \Rightarrow r=\frac{-5+\sqrt{29}}{2}
-        \]
-        于是
-        \[
-        x=5+r=\frac{5+\sqrt{29}}{2}
-        \]
-    \end{solution}
-
-    \question 解
-    \[
-    x^2 - 6\lfloor x \rfloor + 5 = 0
-    \]
-    \begin{solution}
-        原方程化为
-        \[
-        x^2 - 6\lfloor x \rfloor + 5 = 0 \Rightarrow x^2 - 6x + 5 = -6 \{x\}
-        \]
-        $-6 \{x\}$的值域为$(-6,0]$,且对于$x \in [1,5]$,有
-        \[
-        x^2 - 6x + 5 \in (-6,0]
-        \]
-        当$x \in [1,2)$,有$\floor{x}=1$,则
-        \[
-        x^2=6\cdot1-5 \Rightarrow x=1
-        \]
-        类似地,
-        \begin{align*}
-        \floor{x}&=2 \Rightarrow x^2 = 7 \Rightarrow x = \sqrt{7} \\
-        \floor{x}&=3 \Rightarrow x^2 = 13 \Rightarrow x = \sqrt{13} \\
-        \floor{x}&=4 \Rightarrow x^2 = 19 \Rightarrow x = \sqrt{19} \\
-        \floor{x}&=5 \Rightarrow x^2 = 25 \Rightarrow x = 5 
-        \end{align*}
-        因此,方程的解为
-        \[
-        x = 1, \sqrt{7}, \sqrt{13}, \sqrt{19}, 5
-        \]
-    \end{solution}
-
-    \question 解
-    \[
-    \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999
-    \]
-    \begin{solution}
-        设 $x = n + r$, 其中 $n = \lfloor x \rfloor$, $r = \{x\}$,则
-        \[
-        \lfloor x^2 \rfloor - n^2 = \floor{(n+r)^2-n^2} =\lfloor 2 n r + r^2 \rfloor
-        \]
-        故
-        \[
-        \lfloor x^2 \rfloor - \lfloor x \rfloor^2 = 1999 \Rightarrow 2 n r + r^2 \ge 1999
-        \]
-        最小的 $n$ 滿足
-        \[
-        2n r \ge 1999 \implies n \ge \lceil 1999/2 \rceil = 1000.
-        \]
-        此时有
-        \[
-        r^2 + 2000 r - 1999 = 0 \Rightarrow r = -1000 + \sqrt{1001999}
-        \]
-        所以
-        \[
-        x = n + r = \sqrt{1001999}
-        \]
-    \end{solution}
-
-    \question 解 
-    \[
-    \left \lfloor \frac{4x+3}{5} \right \rfloor = \frac{3(2x+1)}{4}
-    \]    
-    \begin{solution}
-        令 
-        \[
-        m = \frac{3(2x+1)}{4} \Rightarrow x = \frac{4m-3}{6},
-        \]
-        代回原方程化简得到 
-        \[ 
-        \left \lfloor \frac{8m+3}{15} \right \rfloor= m 
-        \]
-        有 
-        \[
-        0 \le \frac{8m+3}{15} - m < 1  \Rightarrow -\frac{12}{7} < m \le \frac{3}{7} 
-        \]
-        由于$m \in \mathbb{Z}$于是
-        \[ 
-        m = 0, -1 \Rightarrow x = -\frac{1}{2}, -\frac{7}{6}
-        \]
-    \end{solution}
-
-    \question 求满足以下条件的正整数 $x$ 的个数:
-    \[
-    \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor.
-    \]
-    \begin{solution}
-        设
-        \[
-        \left\lfloor \frac{x}{99} \right\rfloor = \left\lfloor \frac{x}{101} \right\rfloor = m \in \mathbb{Z}
-        \]
-        由定义有
-        \[
-        m \le \frac{x}{99} < m+1 \Rightarrow 99m \le x < 99(m+1)
-        \]
-        \[
-        m \le \frac{x}{101} < m+1 \Rightarrow 101m \le x < 101(m+1)
-        \]
-        因此
-        \[
-        101m \le x < 99(m+1)
-        \]
-        当 $m>49$ 时, $101m > 99(m+1)$, 无解。对于 $0 \le m \le 49$, 由于 $x=0$ 不是正整数,可行整数个数为
-        \[
-        \sum_{m=0}^{49} (99(m+1)-101m) =\sum_{m=0}^{49} (99-2m) -1 = 99 \cdot 50 - 2 \cdot \frac{49 \cdot 50}{2} -1 = 2499
-        \]
-    \end{solution}
-
-    \question 求解 $x\in \mathbb{Z}$ 满足
-    \[
-    \left\lfloor \frac{x}{1!} \right\rfloor + \left\lfloor \frac{x}{2!} \right\rfloor + \left\lfloor \frac{x}{3!} \right\rfloor = 224
-    \]
-    \begin{solution}
-        原方程给出
-        \[
-        \frac{x}{1} + \frac{x}{2} + \frac{x}{6} -3 < 224 < \frac{x}{1} + \frac{x}{2} + \frac{x}{6}
-        \]
-        化简得
-        \[
-        134.4 \le x < 136.2
-        \]
-        由于 $x \in \mathbb{Z}$,且 $x=136$ 不满足原方程,故原方程式的解只有
-        \[
-        x = 135
-        \]
-    \end{solution}
-
-    \question 求满足
-    \[
-    \frac{\lfloor x \rfloor}{x} = \frac{9}{10}
-    \]
-    的最大实数 $x$。
-    \begin{solution}
-        由 $x = \lfloor x \rfloor + \{x\}$, 交叉相乘得
-        \[
-        10 \lfloor x \rfloor = 9 (\lfloor x \rfloor + \{x\}) \Rightarrow \lfloor x \rfloor = 9 \{x\}
-        \]
-        由于 $0 \le \{x\} < 1,\{x\}$的可能值为
-        \[
-        \frac{1}{9}, \frac{2}{9}, \dots, \frac{8}{9}, 
-        \]
-        取最大值 $\{x\} = \dfrac{8}{9}$, 于是
-        \[
-        x = \lfloor x \rfloor + \{x\} = \frac{80}{9}
-        \]
-    \end{solution}
-    
-    \question 18. 如 $x > 0$ 且满足 $\lfloor x \rfloor^2 = x(x - \lfloor x \rfloor)$ ,求 $x - \frac{1}{x}$ 。
-    \begin{solution}
-        设 $n = \lfloor x \rfloor$。由于 $x > 0$,故 $n \ge 0$。
-        方程变为
-        \[ 
-        n^2 = x(x - n) \Rightarrow x^2 - nx - n^2 = 0
-        \]
-        由于 $x > 0$,取正根
-        \[ 
-        x = \frac{(1 + \sqrt{5})n}{2} 
-        \]
-        根据 $\lfloor x \rfloor = n$ 的定义,必须满足
-        \[ 
-        n \le \frac{(1 + \sqrt{5})n}{2} < n + 1 \tag{1}
-        \]
-        对于 $n=0$,(1) 成立但 $x=0$,与 $x>0$ 矛盾。对于 $n \ge 1$,(1)左侧 
-        \[
-        \frac{1+\sqrt{5}}{2} \approx 1.618 \ge 1
-        \]
-        恒成立,而右侧
-        \[
-        \frac{(1 + \sqrt{5})n}{2} < n + 1 \implies 0.618n < 1 \implies n < \frac{1 + \sqrt{5}}{2}
-        \]
-        故只能$n = 1$,此时
-        \[
-        x - \frac{1}{x} = \frac{1 + \sqrt{5}}{2} - \frac{2}{1 + \sqrt{5}} = \frac{1 + \sqrt{5}}{2} - \frac{\sqrt{5} - 1}{2} = 1
-        \]
-    \end{solution}
-
-\question 证明方程 $\lfloor x \rfloor + \lfloor 2x \rfloor + \lfloor 4x \rfloor + \lfloor 8x \rfloor = 147$ 无实数解。
-\begin{solution}
-    设 $x = n + \alpha$,其中 $n = \lfloor x \rfloor$ 为整数部分,$\alpha \in [0, 1)$ 为小数部分。
-    将 $\alpha$ 表示为二进制形式:
-    \[ \alpha = (0.b_1 b_2 b_3 b_4 \dots)_2 = \frac{b_1}{2} + \frac{b_2}{4} + \frac{b_3}{8} + \frac{b_4}{16} + \dots \]
-    其中 $b_i \in \{0, 1\}$。
-
-    利用性质 $\lfloor m + y \rfloor = m + \lfloor y \rfloor$（$m$ 为整数）以及二进制移位性质:
-    \begin{align*}
-    \lfloor x \rfloor &= n \\
-    \lfloor 2x \rfloor &= 2n + \lfloor 2\alpha \rfloor = 2n + b_1 \\
-    \lfloor 4x \rfloor &= 4n + \lfloor 4\alpha \rfloor = 4n + 2b_1 + b_2 \\
-    \lfloor 8x \rfloor &= 8n + \lfloor 8\alpha \rfloor = 8n + 4b_1 + 2b_2 + b_3
-    \end{align*}
-   
-    将上述结果代入原方程左式（LHS）:
-    \begin{align*}
-    \text{LHS} &= (n + 2n + 4n + 8n) + (b_1 + 2b_1 + 4b_1) + (b_2 + 2b_2) + b_3 \\
-    &= 15n + 7b_1 + 3b_2 + b_3
-    \end{align*}
-
-    已知方程为 $15n + 7b_1 + 3b_2 + b_3 = 147$。
-    由于 $b_1, b_2, b_3 \in \{0, 1\}$,系数部分 $7b_1 + 3b_2 + b_3$ 的最大取值为:
-    \[ 7(1) + 3(1) + 1(1) = 11 \]
-    
-    这意味着对于特定的 $n$,函数值的波动范围仅为 $[15n, 15n + 11]$。
-
-    若 $n = 9$,最大值为 $15(9) + 11 = 135 + 11 = 146$。
-    若 $n = 10$,最小值为 $15(10) + 0 = 150$。
-    
-    数值 147 恰好落在两个区间之间（$146 < 147 < 150$）,因此该方程在实数范围内无解。
-    \textcolor{red}{(待验证)}
-\end{solution}
-
-    \question 解
-    \[
-    \lceil x \lfloor x \rfloor \rceil + \lfloor x \lceil x \rceil \rfloor = 111
-    \]
-    \begin{solution}
-        令 $x = n + r$,其中 $n\in \mathbb{Z}, 0 \le r < 1$,则
-        \[
-        \lceil (n+r) \lfloor(n+r) \rfloor\rceil + \lfloor (n+r)\lceil(n+r)\rceil \rfloor = 111
-        \]
-        展开得
-        \[
-        2n^2 +n + \lceil nr \rceil + \lfloor (n+1)r \rfloor = 111
-        \]
-        解不等式组
-        \[
-        \begin{cases}
-        2n^2+n+1 \le 111 \\
-        2n^2+3n \ge 111
-        \end{cases}
-        \]
-        得$n=7$,因此解
-        \[
-        \lceil 7r \rceil + \lfloor 8r \rfloor =6
-        \]
-        得
-        \[
-        \frac{3}{8} \le r \le \frac{3}{7} \Rightarrow \frac{59}{8} \le x \le \frac{52}{7}
-        \]
-    \end{solution}
-
-    \question 
-    \begin{parts}
-    \part 求方程
-    \[
-    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n
-    \]
-    的正整数解个数,其中$1 \le n \le 100$。
-    \begin{solution}
-        原方程化为
-        \[
-        \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = \frac{n}{2} + \frac{n}{3} + \frac{n}{6}
-        \]
-        明示了
-        \[
-        \frac{n}{2},\frac{n}{3},\frac{n}{6}
-        \]
-        皆为整数, 于是$n$ 必须为 6 的倍数,因此正整数解共有 $\left\lfloor\dfrac{100}{6}\right\rfloor=16$ 个。
-    \end{solution}
-    \part 求方程
-    \[
-    \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor = n-1
-    \]
-    的正整数解个数,其中$1 \le n \le 100$。
-    \begin{solution}
-        设 
-        \[
-        f(n) = \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + \left\lfloor \frac{n}{6} \right\rfloor, 
-        \]
-        则
-        \[
-        f(n+6) = f(n) + 6
-        \]
-        定义 $g(n) = f(n) - (n-1)$, 则
-        \[
-        g(n+6) = g(n).
-        \]
-        且有
-        \[
-        g(1) = g(2) = g(3) = g(4) = 0, \quad g(5) \neq 0, \quad g(6) \neq 0.
-        \]
-        因此正整数解共有 
-        \[
-        17+17+17+17=68
-        \]
-        个。
-    \end{solution}
-    \end{parts}
-
-    \question 求数列
-    \[
-    \left\lfloor \frac{1^2}{2016} \right\rfloor, \left\lfloor \frac{2^2}{2016} \right\rfloor, \dots, \left\lfloor \frac{2016^2}{2016} \right\rfloor
-    \]
-    中相异整数的个数。
-    \begin{solution}
-        考虑连续两项的差
-        \[
-        \frac{n^2}{2016} - \frac{(n-1)^2}{2016} = \frac{2n-1}{2016} < 1 \implies n < 1007.5
-        \]
-        由于
-        \[
-        \frac{1007^2}{2016} \approx 503.0005 > 503
-        \]  
-        前 1007 项即整数 $0,1,2,\dots,503$,共有 $504$ 个不同整数。对于第 1008 项到 2016 项,
-        每项至少比前一项大 1,因此产生 
-        \[
-        2016-1008+1 = 1009
-        \]
-        个不同整数,因此数列中相异整数的个数为
-        \[
-        504 + 1009 = 1513
-        \]
-    \end{solution}
-
-    \question 求 
-    \[
-    \sum_{k=1}^{512} \lfloor \log_2 k \rfloor
-    \]
-    \begin{solution}
-        一般地,对所有整数$n\ge 0,k \ge 1$,
-        \[
-        2^n \le k \le 2^{n+1} \lfloor \log_2 k \rfloor = n
-        \]
-        因此
-        \begin{align*}
-        \sum_{k=1}^{512} \lfloor \log_2 k \rfloor &= 0 + (4-2) \cdot 1 + (8-4) \cdot 2 + \dots + (512-256) \cdot 8 + 9 \\
-        &= 2 \cdot 1 + 2^2 \cdot 2 + \dots + 2^8 \cdot 8 + 9 \\
-        &= 3595
-        \end{align*}
-    \end{solution}
-
-    \question 计算
-    \[
-    \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-    \]
-    \begin{solution}
-        将整数部分与小数部分分开,
-        \[
-        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-        =\sum_{r=1}^{34}\frac{18r}{35}
-        -\sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}
-        \]
-        其中
-        \[
-        \sum_{r=1}^{34}\frac{18r}{35}
-        =\frac{18}{35}\cdot\frac{34\cdot35}{2}
-        =306
-        \]
-        注意到对任意正整数$1 \le r \le 34$,
-        \[
-        \left\{\frac{18r}{35}\right\}+\left\{\frac{18(35-r)}{35}\right\}=1
-        \]
-        当$r$从$1$到$34$时,可以配成$17$对,因此
-        \[
-        \sum_{r=1}^{34}\left\{\frac{18r}{35}\right\}=17
-        \]
-        于是
-        \[
-        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor
-        =289
-        \]
-    \end{solution}
-    \begin{solution}
-        对任意正整数$1 \le r \le 34$,有
-        \[
-        \frac{18r}{35}+\frac{18(35-r)}{35}=18
-        \]
-        因此
-        \[
-        \left\lfloor \frac{18r}{35}\right\rfloor
-        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-        +\left\{\frac{18r}{35}\right\}
-        +\left\{\frac{18(35-r)}{35}\right\}=18
-        \]
-        又因为
-        \[
-        \left\{\frac{18r}{35}\right\}
-        +\left\{\frac{18(35-r)}{35}\right\}=1
-        \]
-        所以
-        \[
-        \left\lfloor \frac{18r}{35}\right\rfloor
-        +\left\lfloor \frac{18(35-r)}{35}\right\rfloor
-        =17
-        \]
-        因此
-        \[
-        \sum_{r=1}^{34}\left\lfloor \frac{18r}{35}\right\rfloor=17\cdot 17=289
-        \]
-    \end{solution}
-
-    \question 设$r$为实数,且满足
-    \[
-    \left\lfloor r+\frac{19}{100}\right\rfloor
-    +\left\lfloor r+\frac{20}{100}\right\rfloor
-    +\cdots
-    +\left\lfloor r+\frac{91}{100}\right\rfloor
-    =546
-    \]
-    求$\lfloor100r\rfloor$的值。
-    \begin{solution}
-        从$\dfrac{19}{100}$到$\dfrac{91}{100}$,共有
-        \[
-        91-19+1=73
-        \]
-        项,这些取整值只可能为$7$或$8$。
-
-        若全部等于$7$,则和为$73\cdot 7=521$;若全部等于$8$,则和为$73\cdot 8=581$,
-
-        设前$k$项等于$7$,其余$79-k$项等于$8$,则
-        \[
-        7k+8(73-k)=546 \Rightarrow k=38
-        \]
-        这表示
-        \[
-        \left\lfloor r+\frac{56}{100}\right\rfloor=7,\quad
-        \left\lfloor r+\frac{57}{100}\right\rfloor=8
-        \]
-        于是
-        \[
-        \floor{100r}=\floor{r}+\cdots + \left\lfloor r+\frac{56}{100}\right\rfloor+\left\lfloor r+\frac{57}{100}\right\rfloor+\cdots +\left\lfloor r+\frac{99}{100}\right\rfloor=57\cdot7+43\cdot8=743
-        \]
-    \end{solution}
-
-    \question 证明 
-    \[
-    \lfloor \sqrt{1} \rfloor + \lfloor \sqrt{2} \rfloor + \dots + \lfloor \sqrt{n^2 - 1} \rfloor = \frac{n(n-1)(4n+1)}{6}
-    \]
-    \begin{solution}
-        考虑满足 
-        \[
-        \lfloor \sqrt{k} \rfloor = m \tag{1}
-        \]
-        的正整数 $k$ 的个数。(1)等价于
-        \[
-        m \le \sqrt{k} < m+1 \Longleftrightarrow m^2 \le k < (m+1)^2 
-        \]
-        因此,对于每一个确定的 $m$ ,满足条件的 $k$ 有 
-        \[
-        (m+1)^2 - m^2 = 2m+1
-        \]
-        个,于是
-        \begin{align*}
-        \sum_{k=1}^{n^2-1} \lfloor \sqrt{k} \rfloor &= \sum_{m=1}^{n-1} m(2m+1) \\
-        &= 2 \sum_{m=1}^{n-1} m^2 + \sum_{m=1}^{n-1} m \\
-        &= 2 \cdot \frac{(n-1)n(2n-1)}{6} + \frac{(n-1)n}{2} \\
-        &= \frac{n(n-1)(4n+1)}{6}
-        \end{align*}
-        得证。
-    \end{solution}
-
-    \question 计算
-    \[
-    \ceil{\sqrt{1}} + \ceil{\sqrt{2}} + \ceil{\sqrt{3}} + \dots + \ceil{\sqrt{2025}}
-    \]
-    \begin{solution}
-        注意到$\sqrt{2025}=45$,当$(m-1)^2<k\le m^2$时有
-        \[
-        \lceil \sqrt{k}\rceil=m
-        \]
-        因此可按 $m=1,2,\dots,45$ 分组求和,
-        \[
-        \sum_{k=1}^{2025}\lceil \sqrt{k}\rceil
-        =\sum_{m=1}^{45}\sum_{k=(m-1)^2+1}^{m^2} m
-        \]
-        对固定的 $m$, 求和的项数为$m^2-(m-1)^2=2m-1$,于是
-        \[
-        \sum_{k=1}^{2025}\lceil \sqrt{k}\rceil
-        =\sum_{m=1}^{45} m(2m-1)
-        =2\sum_{m=1}^{45}m^2-\sum_{m=1}^{45}m
-        =2\cdot\frac{45\cdot46\cdot91}{6}-\frac{45\cdot46}{2}
-        =61755
-        \]
-    \end{solution}
-
-    \question 求
-    \[
-    \lceil 1\rceil+\lceil 1.7\rceil+\lceil 2.4\rceil+\lceil 3.1\rceil+\dots+\lceil 999.9\rceil
-    \]
-    \begin{solution}
-        首先发现
-        \[
-        \lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil
-        =\frac{143}{2}(1+995)
-        \]
-        \[
-        \lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil
-        =\frac{143}{2}(2+996)
-        \]
-        以此类推,原式即
-        \begin{align*}
-        &\lceil 1\rceil+\lceil 8\rceil+\dots+\lceil 995\rceil+\lceil 1.7\rceil+\lceil 8.7\rceil+\dots+\lceil 995.7\rceil \\
-        &+\cdots + \lceil 6.6\rceil+\lceil 13.6\rceil+\dots+\lceil 993.6\rceil+\lceil 7.3\rceil+\lceil 14.3\rceil+\dots+\lceil 994.3\rceil \\
-        &=\frac{143}{2}(1+995+2+996+3+997+4+998+4+998+5+999+6+1000+6+1000)\\
-        &\quad+\frac{142}{2}(7+994+8+995)\\
-        &=715285
-        \end{align*}
-    \end{solution}
-
-    \question 求
-    \[
-    \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
-    \]
-    \begin{solution}
-        利用二项式展开,
-        \begin{align*}
-        a_n &= \left\lfloor \frac{(3-1)^n}{3} \right\rfloor \\
-        &= \left\lfloor 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} + \frac{(-1)^n}{3} \right\rfloor \\
-        &= 3^{n-1} - n \cdot 3^{n-2} + n(n-1)3^{n-3} + \dots + (-1)^{n-1} 
-        \end{align*}
-        且注意到 
-        \[
-        a_n 
-        = \begin{cases}
-        \dfrac{2^n-1}{3}, \quad n\text{为偶数} \\[8pt]
-        \dfrac{2^n-2}{3}, \quad n\text{为奇数}
-        \end{cases}
-        = \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6}
-        \]
-        因此
-        \begin{align*}
-        \sum_{n=0}^{1000} \left\lfloor \frac{2^n}{3} \right\rfloor
-        &= \sum_{n=0}^{1000} \left( \frac{2^n}{3} - \frac{1}{2} + \frac{(-1)^n}{6} \right) \\
-        &= \frac{1}{3} \cdot \frac{2^{1001}-1}{2-1} - \frac{1001}{2} + \frac{1}{6} \\
-        &= \frac{2^{1001}-1502}{3}
-        \end{align*}
-    \end{solution}
-
-    \question 设 $m, n$ 是整数,$n \ge 1$ ,证明 
-    \[
-    \left\lfloor \dfrac{m+1}{n} \right\rfloor = 
-    \begin{cases} 
-    \left\lfloor \dfrac{m}{n} \right\rfloor &,n \nmid m+1 \\[8pt]
-    \left\lfloor \dfrac{m}{n} \right\rfloor + 1 &,n \mid m+1
-    \end{cases}
-    \]
-    \begin{solution}
-        当 $n$ 不整除 $m+1$,有$m+1 = kn+r$ ,其中 $k \in \mathbb{Z},1 \le r \le n-1$,此时欲证 
-        \[
-        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor \tag{1}
-        \]
-        观察左式为
-        \[
-        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn+r}{n} \right\rfloor = \left\lfloor k + \frac{r}{n} \right\rfloor = k 
-        \]
-        右式为
-        \[
-        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn+r-1}{n} \right\rfloor = \left\lfloor k + \frac{r-1}{n} \right\rfloor = k
-        \]
-        故(1)得证。当 $n$ 整除 $m+1$ 时,即 $m+1 = kn$,欲证
-        \[
-        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{m}{n} \right\rfloor + 1 \tag{2}
-        \]
-        此时左式为
-        \[
-        \left\lfloor \frac{m+1}{n} \right\rfloor = \left\lfloor \frac{kn}{n} \right\rfloor = \left\lfloor k \right\rfloor = k
-        \]
-        右式为
-        \[
-        \left\lfloor \frac{m}{n} \right\rfloor = \left\lfloor \frac{kn-1}{n} \right\rfloor = \left\lfloor k - \frac{1}{n} \right\rfloor = k-1 
-        \]
-        故(2)得证。
-    \end{solution}
-
-    \question 证明对任意实数 $\alpha, \beta$ 有 
-    \[
-    \lfloor 2\alpha \rfloor + \lfloor 2\beta \rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor
-    \]
-    \begin{solution}
-        令 
-        \[
-        \alpha = n_1 + r_1,\beta = n_2 + r_2, \quad n_1, n_2 \in \mathbb{Z},\quad 0 \le r_1, r_2 < 1
-        \]
-        则原不等式等价于
-        \[ 
-        \lfloor 2r_1 \rfloor + \lfloor 2r_2 \rfloor \ge \lfloor r_1 + r_2 \rfloor \tag{1}
-        \]
-        若 $0 \le r_1 < \dfrac{1}{2}$ 且 $0 \le r_2 < \frac{1}{2}$ ,则左式 $= 0 + 0 = 0$ 。由于 $r_1 + r_2 < 1$ ,右式 $= 0$,(1)成立；
-
-        若 $r_1, r_2$ 中有一个大于等于 $\frac{1}{2}$ ,不妨设 $r_1 \ge \dfrac{1}{2}$ ,则左式 $\ge 1 + 0 = 1$ 。而 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)成立；
-
-        若 $r_1 \ge \dfrac{1}{2}$ 且 $r_2 \ge \frac{1}{2}$ ,则左式 $= 1 + 1 = 2$ 。由于 $r_1 + r_2 < 2$ ,右式最大为 $1$ ,(1)也成立。
-
-        综上,原不等式成立。
-    \end{solution}
-
-    \question 证明对任意实数 $x, y$ 有 
-    \[
-    \lfloor x - y \rfloor \le \lfloor x \rfloor - \lfloor y \rfloor \le \lfloor x - y \rfloor + 1
-    \]
-    \begin{solution}
-        由取整函数的性质可知 
-        \[
-        x - 1 < \lfloor x \rfloor \le x,\quad -(y - 1) > -\lfloor y \rfloor \ge -y
-        \]
-        由 $x = (x - y) + y$ 得 
-        \[
-        \lfloor x \rfloor = \lfloor (x - y) + y \rfloor \ge \lfloor x - y \rfloor + \lfloor y \rfloor
-        \]
-        移项得 
-        \[
-        \lfloor x \rfloor - \lfloor y \rfloor \ge \lfloor x - y \rfloor
-        \]
-        得证左边不等式,又因 $x - y = x + (-y)$ 得 
-        \[
-        \lfloor x - y \rfloor = \lfloor x + (-y) \rfloor \ge \lfloor x \rfloor + \lfloor -y \rfloor
-        \]
-        由于 
-        \[
-        \lfloor -y \rfloor = 
-        \begin{cases}
-        -\lfloor y \rfloor &,y \in \mathbb{Z} \\ 
-        -\lfloor y \rfloor - 1 &,y \not\in \mathbb{Z}
-        \end{cases}
-        \]
-        即 
-        \[
-        \lfloor -y \rfloor \ge -\lfloor y \rfloor - 1
-        \]
-        代入得 
-        \[
-        \lfloor x - y \rfloor \ge \lfloor x \rfloor - \lfloor y \rfloor - 1
-        \]
-        得证右边不等式,综上原不等式成立。
-    \end{solution}
-
-    \question 证明埃尔米特恒等式:对所有实数 $x$ 及所有正整数 $n$ ,以下恒等式成立:
-    \[ 
-    \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = \lfloor nx \rfloor 
-    \]
-    \begin{solution}
-        将 $x$ 分解为整数部分和小数部分,即 
-        \[
-        x = \lfloor x \rfloor + \{x\}
-        \]
-        在 $\{1, \dots, n\}$ 中,恰好存在一个 $k'$ 使得:
-        \[ 
-        \lfloor x \rfloor = \left\lfloor x + \frac{k'-1}{n} \right\rfloor \le x < \left\lfloor x + \frac{k'}{n} \right\rfloor = \lfloor x \rfloor + 1 
-        \]
-        通过在不等式左右两边的取整符号内减去同一个整数 $\lfloor x \rfloor$ ,可以重写为:
-        \[ 
-        0 = \left\lfloor \{x\} + \frac{k'-1}{n} \right\rfloor \le \{x\} < \left\lfloor \{x\} + \frac{k'}{n} \right\rfloor = 1  
-        \]
-        因此有
-        \[ 
-        1 - \frac{k'}{n} \le \{x\} < 1 - \frac{k'-1}{n}  
-        \]
-        即求点
-        \[ 
-        n - k' \le n\{x\} < n - k' + 1 
-        \]
-        这意味着 $\lfloor n\{x\} \rfloor = n - k'$,于是
-        \begin{align*}
-        \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor &= \sum_{k=0}^{k'-1} \lfloor x \rfloor + \sum_{k=k'}^{n-1} (\lfloor x \rfloor + 1) \\
-        &= k' \lfloor x \rfloor + (n - k')(\lfloor x \rfloor + 1) \\
-        &= n \lfloor x \rfloor + n - k' \\
-        &= n \lfloor x \rfloor + \lfloor n\{x\} \rfloor \\
-        &= \lfloor n \lfloor x \rfloor + n\{x\} \rfloor \\
-        &= \lfloor nx \rfloor
-        \end{align*}
-        得证。
-    \end{solution}
-\end{questions}
 \pagebreak
 
 \begin{center}
@@ -6950,6 +6137,22 @@
         \]
     \end{solution}
 
+    \question 如果有 $k$ 个不同的正整数，其和小于 202020，求 $k$ 的最大可能值。
+
+\begin{solution}
+设这 $k$ 个正整数为 $n_1, n_2, \dots, n_k$。则有 $n_k \ge k$。
+\[
+202020 > n_1 + n_2 + \dots + n_k \ge 1 + 2 + \dots + k = \frac{k(k + 1)}{2}
+\]
+\[
+k^2 + k - 404040 < 0
+\]
+\[
+k < \frac{-1 + \sqrt{1 + 4 \times 404040}}{2} \approx 635.14
+\]
+因此，$k$ 的最大可能值为 635。
+\end{solution}
+
     \question 若 $a<b$,已知对任意实数 $x$,均有 $ax^2+bx+c\ge 0$,且 $m<\dfrac{4a+3b+2c}{b-a}$ 恒成立,求实数 $m$ 的范围。
     \begin{solution}
         由 $ax^2+bx+c\ge0\ (\forall x)$,可知二次项系数满足
@@ -7113,6 +6316,18 @@
         当 $\log x = -\dfrac{1}{2}$即 $x=\dfrac{\sqrt{10}}{10}$ 时,$\ f(x)$ 取得最大值 $\dfrac{1}{4}$.
     \end{solution}
 
+    \question 已知 $x, y$ 是实数且 $x^2 + xy + y^2 = 10$，求 $2x^2 + 2xy + y^2 - 4y + 11$ 的最大可能值。
+
+\begin{solution}
+\begin{align*}
+2x^2 + 2xy + y^2 - 4y + 11 &= 2(x^2 + xy + y^2) - (y^2 + 4y + 4) + 4 + 11 \\
+&= 20 + 15 - (y + 2)^2 \\
+&\le 35
+\end{align*}
+当 $y = -2$ 时，$x^2 - 2x - 6 = 0$，此时 $2x^2 + 2xy + y^2 - 4y + 11$ 有最大值 35。
+答：35。
+\end{solution}
+
     \question 求函数 $$f(x,y) = x^2 + 2xy + 2y^2 + 2x + 4y + 5$$ 的最小值。
     \begin{solution}
         配方求最小值:
@@ -7130,15 +6345,38 @@
     \]
     的最小值。 
     \begin{solution}
-        先配$y$项,写成\[
+        先配$y$项,写成
+        \[
         f(x,y)=(x+2y)^2 + x^4 + 4x^3 + 7x^2+ 6x + 10
         \]
-        再用火眼金睛注意到\[
-        x^4 + 4x^3 + 7x^2+ 6x + 2=(x + 1)^2 (x^2 + 2 x + 2)    \]故原式为\[
+        再用火眼金睛注意到
+        \[
+        x^4 + 4x^3 + 7x^2+ 6x + 2=(x + 1)^2 (x^2 + 2 x + 2)    
+        \]
+        故原式为
+        \[
         (x+2y)^2+(x + 1)^2 (x^2 + 2 x + 2)+8 \geq 8
         \]
         当$x=-1,y=\dfrac12$时,$\ f(x,y)$ 取得最小值 $8$.
     \end{solution}
+
+    \question 已知 $a$ 是正的常数。当 $x$ 是正数时，
+\[ x^6 + \frac{a^4}{x^6} + 14x^3 + 14\frac{a^2}{x^3} \]
+的最小可能值是 702，求 $a^2$ 的值。
+
+\begin{solution}
+\begin{align*}
+f(x) &= x^6 + \frac{a^4}{x^6} + 14x^3 + 14\frac{a^2}{x^3} \\
+&= \left( x^3 + \frac{a^2}{x^3} \right)^2 - 2a^2 + 14 \left( x^3 + \frac{a^2}{x^3} \right) \\
+&= \left( x^3 + \frac{a^2}{x^3} + 7 \right)^2 - 2a^2 - 49 \\
+&= \left[ \left( x\sqrt{x} - \frac{a}{x\sqrt{x}} \right)^2 + 2a + 7 \right]^2 - 2a^2 - 49
+\end{align*}
+当 $x = \sqrt[3]{a}$ 时，此表达式有最小值：
+\[ (2a + 7)^2 - 2a^2 - 49 = 702 \]
+整理得：
+\[ (a - 13)(a + 27) = a^2 + 14a - 351 = 0 \]
+因此，$a = 13$ 且 $a^2 = 169$。
+\end{solution}
 
     \question 已知 $x,y>0$, 证明
     \[
@@ -7281,6 +6519,30 @@
         4 \le y^2 \le 8 \Rightarrow 2 \le y \le 2\sqrt{2}
         \]
     \end{solution}
+
+    \question 已知 $x, y, z$ 是正数且 $x + 2y + 3z = 21$。求 $2xy + 3xz + 6yz + 6xyz$ 的最大可能值。
+
+\begin{solution}
+注意
+\[
+(1 + x)(1 + 2y)(1 + 3z) = 1 + (x + 2y + 3z) + (2xy + 3xz + 6yz) + 6xyz
+\]
+根据算术-几何平均值不等式，
+\begin{align*}
+(1 + x)(1 + 2y)(1 + 3z) &\le \left( \frac{1 + x + 1 + 2y + 1 + 3z}{3} \right)^3 \\
+&= \left( \frac{3 + (x + 2y + 3z)}{3} \right)^3 \\
+&= \left( \frac{3 + 21}{3} \right)^3 \\
+&= 8^3 \\
+&= 512
+\end{align*}
+等号成立当且仅当 $1 + x = 1 + 2y = 1 + 3z$，即 $x = 2y = 3z = 7$。
+因此，
+\[
+2xy + 3xz + 6yz + 6xyz \le 512 - 1 - 21 = 490
+\]
+也就是说，$2xy + 3xz + 6yz + 6xyz$ 的最大可能值是 490，且在 $x = 2y = 3z = 7$ 时达到。
+答：490。
+\end{solution}
 
     \question 若 
     \[
@@ -8446,6 +7708,187 @@ PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\s
         0 \le x^n - x^{\,n+1} \le \frac{n^n}{(n+1)^{\,n+1}}.
         \]
     \end{solution}
+\question 求函数 $f(x) = \sum_{n=10}^{20} |x - n| = |x - 10| + |x - 11| + |x - 12| + \dots + |x - 20|$ 的最小可能值。
+
+\begin{solution}
+若 $x \le 10$，则
+\[
+f(x) = (10 + 11 + 12 + \dots + 20) - 11x \ge \frac{11}{2}(10 + 20) - 11 \times 10 = 55
+\]
+若 $x \ge 20$，则
+\[
+f(x) = 11x - (10 + 11 + 12 + \dots + 20) \ge 11 \times 20 - \frac{11}{2}(10 + 20) = 55
+\]
+设 $11 \le n \le 20$。若 $n - 1 < x \le n$，则
+\begin{align*}
+f(x) &= (x - 10) + (x - 11) + \dots + (x - n + 1) + (n - x) + (n + 1 - x) + \dots + (20 - x) \\
+&= (2n - 31)x + (10 + 11 + 12 + \dots + 20) - 2 \times [10 + 11 + \dots + (n - 1)]
+\end{align*}
+因此，函数 $f(x)$ 在 $x \le 15$ 时是递减的，在 $x \ge 15$ 时是递增的。
+因此，当 $x = 15$ 时，$f(x)$ 有最小值。此时
+\[
+f(x) = 5 + 4 + 3 + 2 + 1 + 0 + 1 + 2 + 3 + 4 + 5 = 30
+\]
+\end{solution}
+    \question 25. 设 $S = |n-1| + 2|n-2| + 3|n-3| + \dots + 20|n-20|$，其中 $n$ 是正整数。求 $S$ 的最小可能值。
+
+\begin{solution}
+考虑连续函数 $f(x) = \sum_{i=1}^{20} i|x-i|$。
+当 $k \le x \le k+1$（$k$ 为正整数）时，$f(x)$ 是线性函数。其斜率为：
+\[
+\text{Slope} = \sum_{i=1}^{k} i - \sum_{i=k+1}^{20} i = 2\sum_{i=1}^{k} i - \sum_{i=1}^{20} i = k(k+1) - 210
+\]
+* 当 $k \le 14$ 时，$k(k+1) - 210 \le 14 \times 15 - 210 = 0$。
+    此时斜率为负， $f(x)$ 在区间上递减，$f(k) \ge f(k+1)$。
+* 当 $k \ge 15$ 时，$k(k+1) - 210 \ge 15 \times 16 - 210 = 30 > 0$。
+    此时斜率为正， $f(x)$ 在区间上递增，$f(k) \le f(k+1)$。
+
+因此，$f(1) \ge f(2) \ge \dots \ge f(14) \ge f(15)$ 且 $f(15) \le f(16) \le \dots$。
+当 $n=15$ 时，$S$ 取最小值：
+\begin{align*}
+S_{\min} &= 14 + 2 \times 13 + 3 \times 12 + \dots + 14 \times 1 + 16 \times 1 + 17 \times 2 + \dots + 20 \times 5 \\
+&= 840
+\end{align*}
+所以 $S$ 的最小可能值为 $840$。
+\end{solution}
+
+\question 27. 若 $x, y$ 是实数且 $(x, y) \neq (0, 0)$，求
+\[
+f(x, y) = \frac{12x^2 + 6xy + 6y^2}{x^2 + xy + y^2}
+\]
+的最大可能值。
+
+\begin{solution}
+若 $x=0$，则 $f(0, y) = \frac{6y^2}{y^2} = 6$。
+若 $x \neq 0$，令 $u = \frac{y}{x}$，则：
+\begin{align*}
+f(x, y) &= \frac{12 + 6u + 6u^2}{1 + u + u^2} \\
+&= \frac{6}{1 + u + u^2} + 6 \\
+&= \frac{6}{\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}} + 6
+\end{align*}
+当 $u = -\frac{1}{2}$ 时，分母 $\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}$ 取得最小值 $\frac{3}{4}$。
+此时，$f(x, y)$ 取得最大值：
+\[
+f_{\max} = \frac{6}{\frac{3}{4}} + 6 = 8 + 6 = 14
+\]
+$\therefore$ 当 $x = -2y$ 时，$f(x, y)$ 有最大可能值 $14$。
+\end{solution}
+
+\question 28. 设 $n$ 是正整数。定义 $A_n = \frac{30^n + 15^n}{n!}$，其中 $n! = 1 \times 2 \times 3 \times \dots \times n$。求当 $A_n$ 的值最大时 $n$ 的值。
+
+\begin{solution}
+考虑相邻项的差 $A_{n+1} - A_n$：
+\begin{align*}
+A_{n+1} - A_n &= \frac{30^{n+1} + 15^{n+1}}{(n+1)!} - \frac{30^n + 15^n}{n!} \\
+&= \frac{30^{n+1} + 15^{n+1} - (n+1)(30^n + 15^n)}{(n+1)!} \\
+&= \frac{30^n(30 - n - 1) + 15^n(15 - n - 1)}{(n+1)!} \\
+&= \frac{30^n(29 - n) + 15^n(14 - n)}{(n+1)!}
+\end{align*}
+* 当 $n \ge 29$ 时，$29 - n \le 0$ 且 $14 - n < 0$。因此 $A_{n+1} - A_n < 0$，即 $A_{29} > A_{30} > A_{31} > \dots$。
+* 当 $n \le 14$ 时，$29 - n \ge 0$ 且 $14 - n \ge 0$。因此 $A_{n+1} - A_n > 0$，即 $A_{15} > A_{14} > A_{13} > \dots$。
+* 当 $15 \le n \le 28$ 时，由于：
+\[
+0 < \frac{n-14}{29-n} \le \frac{28-14}{29-28} = 14 \le 2^n
+\]
+（注意：此处 $2^n = \left( \frac{30}{15} \right)^n$）
+可得 $30^n(29-n) + 15^n(14-n) > 0$，即 $A_{n+1} > A_n$。
+因此，在 $15 \le n \le 28$ 范围内，数列也是递增的，即 $A_{29} > A_{28} > \dots > A_{15}$。
+由此可得，当 $n = 29$ 时，$A_n$ 的值最大。
+\end{solution}
+
+\question 已知集合 $S = \{1, 2, 3, \cdots, 2019\}$ 是由 1 至 2019 的所有正整数所组成的集合。若任何一个包含 10 个元素的 $S$ 的子集合都包含两个相异的数 $a$ 与 $b$ 使得 $|a - b| \le k$，求 $k$ 的最小可能值。
+
+\begin{solution}
+设 $A$ 为 $S$ 的一个包含 10 个元素的子集。假设其元素按升序排列为 $a_1, a_2, \cdots, a_{10}$。若对于所有不同的 $i$ 和 $j$，都有 $|a_i - a_j| > m$，则：
+\begin{align*}
+a_{10} - a_9 &\ge m + 1 \\
+a_9 - a_8 &\ge m + 1 \\
+&\vdots \\
+a_2 - a_1 &\ge m + 1
+\end{align*}
+因此，
+\[
+2018 \ge a_{10} - a_1 = 9(m + 1)
+\]
+\[
+m + 1 \le 224
+\]
+\[
+m \le 223
+\]
+所以，$k$ 的最小可能值为 224。
+\end{solution}
+
+\question 已知 $a_1, a_2, \cdots, a_{10}$ 是正整数且
+\[ a_1^2 + (2a_2)^2 + (3a_3)^2 + (4a_4)^2 + (5a_5)^2 + (6a_6)^2 + (7a_7)^2 + (8a_8)^2 + (9a_9)^2 + (10a_{10})^2 = 405 \]
+求 $a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值。
+
+\begin{solution}
+由于 $1^2 + 2^2 + 3^2 + \cdots + 10^2 = 385$，
+因此，
+\[ (a_1^2 - 1) + 2^2(a_2^2 - 1) + \cdots + 10^2(a_{10}^2 - 1) = 20 \]
+由于对于所有 $1 \le k \le 10$，都有 $a_k^2 - 1 \ge 0$，且若 $a_k \ge 2$，则 $a_k^2 - 1 \ge 3$。
+我们发现 $a_3 = a_4 = \cdots = a_{10} = 1$，并且
+\[ a_1^2 + 4a_2^2 = 25 \]
+此方程仅有解 $a_1 = 3$ 且 $a_2 = 2$。
+因此，$a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值为 13。
+\end{solution}
+
+\question 已知 $a, b, c$ 都是非零的数，求 $N = 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|}$ 的最小可能值。
+
+\begin{solution}
+\begin{align*}
+N &= 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|} \\
+&= 127 + \left( 1 - \frac{a}{|a|} \right) \left( 1 + \frac{b}{|b|} \right) \left( 1 - \frac{c}{|c|} \right)
+\end{align*}
+对于任何非零的 $x$，若 $x$ 为正，则 $\frac{x}{|x|}$ 为 1；若 $x$ 为负，则 $\frac{x}{|x|}$ 为 $-1$。
+因此，$1 \pm \frac{x}{|x|}$ 只能是 0 或 2。
+$N$ 的最小可能值为 $127 + 0 = 127$，当 $a$ 和 $c$ 为正且 $b$ 为负时即可取得。
+\end{solution}
+\question 29. 已知一三角形三边的长为 $a, b, c$，其中 $a, b, c$ 都是整数。若三角形的周长是 $P$ 个单位，面积是 $A$ 个平方单位，其中 $P = 2A$，求 $A$ 的最大可能值。
+
+\begin{solution}
+已知 $P = a+b+c$，因此 $A = \frac{a+b+c}{2}$。
+由三角形面积的海伦公式：
+\[
+A = \sqrt{s(s-a)(s-b)(s-c)} \quad \text{其中 } s = \frac{a+b+c}{2} = A
+\]
+因此，
+\begin{align*}
+A &= \sqrt{A(A-a)(A-b)(A-c)} \\
+A^2 &= A(A-a)(A-b)(A-c) \\
+A &= (A-a)(A-b)(A-c)
+\end{align*}
+将 $A = \frac{a+b+c}{2}$ 代入，得：
+\[
+\frac{a+b+c}{2} = \left( \frac{b+c-a}{2} \right) \left( \frac{a+c-b}{2} \right) \left( \frac{a+b-c}{2} \right)
+\]
+\[
+4(a+b+c) = (b+c-a)(a+c-b)(a+b-c)
+\]
+设 $x = b+c-a, y = a+c-b, z = a+b-c$，则 $x, y, z$ 都是正整数且
+\[
+a+b+c = x+y+z, \quad a = \frac{y+z}{2}, \quad b = \frac{x+z}{2}, \quad c = \frac{x+y}{2}
+\]
+方程化为：
+\[
+xyz = 4(x+y+z)
+\]
+由于 $x, y, z$ 的定义可知它们必须同为奇数或同为偶数。
+由 $xyz = 4(x+y+z)$ 可得 $x, y, z$ 必须同为偶数。因此，可设 $x=2x', y=2y', z=2z'$。
+代入得：
+\[
+x'y'z' = x'+y'+z'
+\]
+不失一般性，设 $x' \ge y' \ge z'$。则 $x'y'z' \le 3x'$，即 $y'z' \le 3$。
+因此，$z'^2 \le 3$，得 $z'=1$。
+代入得 $x'y' = x'+y'+1$，即 $(x'-1)(y'-1) = 2$。
+因此，$(y'-1)^2 \le 2$，得 $y'-1=1$，$x'-1=2$。
+即 $x'=3, y'=2, z'=1$。
+此时 $a=3, b=4, c=5$，且 $A = \frac{a+b+c}{2} = \frac{x+y+z}{2} = 6$。
+
+因此，$A$ 的最大可能值是 $6$。
+\end{solution}
 
     \question 已知 $\triangle ABC$ 的面积为 $27,R$ 为其外接圆半径,$r$ 为其内切圆半径。求 $Rr^{3}$ 的最大值。
     \begin{solution}
@@ -11144,6 +10587,43 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
         = \frac{1}{2010}
         \]
     \end{solution}
+\question 29. 若 $n$ 是正整数，令 $f(n)$ 为最靠近 $\sqrt{n}$ 的正整数。例如：$f(1)=1, f(2)=1, f(3)=2, f(4)=2$ 等。求 $\sum_{n=1}^{\infty} \frac{\left( \frac{4}{3} \right)^{f(n)} + 1 + \left( \frac{4}{3} \right)^{-f(n)}}{\left( \frac{4}{3} \right)^{n}}$。
+
+\begin{solution}
+若 $k$ 是正整数，则 $f(n)=k$ 若且唯若 $k-\frac{1}{2} < \sqrt{n} < k+\frac{1}{2}$，即
+\[
+k^2 - k + \frac{1}{4} < n < k^2 + k + \frac{1}{4}
+\]
+\[
+k^2 - k + 1 \le n \le k^2 + k
+\]
+原式可化为：
+\[
+\sum_{n=1}^{\infty} \frac{\left( \frac{4}{3} \right)^{f(n)} + 1 + \left( \frac{4}{3} \right)^{-f(n)}}{\left( \frac{4}{3} \right)^{n}} = \sum_{n=1}^{\infty} \left[ \left( \frac{3}{4} \right)^{n-f(n)} + \left( \frac{3}{4} \right)^{n} + \left( \frac{3}{4} \right)^{n+f(n)} \right]
+\]
+首先计算中间项：
+\[
+\sum_{n=1}^{\infty} \left( \frac{3}{4} \right)^{n} = \frac{\frac{3}{4}}{1 - \frac{3}{4}} = 3
+\]
+接着计算第一项，利用 $f(n)=k$ 的范围：
+\begin{align*}
+\sum_{n=1}^{\infty} \left( \frac{3}{4} \right)^{n-f(n)} &= \sum_{k=1}^{\infty} \sum_{n=k^2-k+1}^{k^2+k} \left( \frac{3}{4} \right)^{n-k} \\
+&= \sum_{k=1}^{\infty} \left[ \left( \frac{3}{4} \right)^{k^2-2k+1} + \left( \frac{3}{4} \right)^{k^2-2k+2} + \dots + \left( \frac{3}{4} \right)^{k^2} \right] \\
+&= \sum_{n=0}^{\infty} \left( \frac{3}{4} \right)^{n} + \sum_{k=1}^{\infty} \left( \frac{3}{4} \right)^{k^2} \\
+&= 4 + \sum_{k=1}^{\infty} \left( \frac{3}{4} \right)^{k^2}
+\end{align*}
+再计算第三项：
+\begin{align*}
+\sum_{n=1}^{\infty} \left( \frac{3}{4} \right)^{n+f(n)} &= \sum_{k=1}^{\infty} \sum_{n=k^2-k+1}^{k^2+k} \left( \frac{3}{4} \right)^{n+k} \\
+&= \sum_{k=1}^{\infty} \left[ \left( \frac{3}{4} \right)^{k^2+1} + \left( \frac{3}{4} \right)^{k^2+2} + \dots + \left( \frac{3}{4} \right)^{k^2+2k} \right] \\
+&= \sum_{n=1}^{\infty} \left( \frac{3}{4} \right)^{n} - \sum_{k=1}^{\infty} \left( \frac{3}{4} \right)^{k^2} \\
+&= 3 - \sum_{k=1}^{\infty} \left( \frac{3}{4} \right)^{k^2}
+\end{align*}
+将三部分结果相加：
+\[
+\therefore \sum_{n=1}^{\infty} \frac{\left( \frac{4}{3} \right)^{f(n)} + 1 + \left( \frac{4}{3} \right)^{-f(n)}}{\left( \frac{4}{3} \right)^{n}} = \left( 4 + \sum \right) + 3 + \left( 3 - \sum \right) = 10
+\]
+\end{solution}
 
     \question 求下列无穷乘积的值
     \[
@@ -11362,6 +10842,42 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
         &= \left[ \tan^{-1} x \right]_0^1 = \frac{\pi}{4}
         \end{align*}
     \end{solution}
+
+    \question 求 $\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5}$。
+
+\begin{solution}
+设
+\[
+S_1 = \sum_{k=1, k \text{ odd}}^{\infty} \frac{1}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5}, \quad S_2 = \sum_{k=1, k \text{ even}}^{\infty} \frac{1}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5}
+\]
+则
+\[
+S = \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5} = S_1 - S_2
+\]
+另一方面，
+\begin{align*}
+S_2 &= \sum_{k=1, k \text{ even}}^{\infty} \frac{1}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5} \\
+&= \sum_{k=1}^{\infty} \frac{1}{2k} \sum_{n=0}^{\infty} \frac{300}{2^n \times 2k + 5} \\
+&= \frac{1}{2} \sum_{k=1}^{\infty} \frac{1}{k} \sum_{n=0}^{\infty} \frac{300}{2^{n+1} \times k + 5} \\
+&= \frac{1}{2} \sum_{k=1}^{\infty} \frac{1}{k} \sum_{n=1}^{\infty} \frac{300}{2^n \times k + 5} \\
+&= \frac{1}{2} \left( \sum_{k=1}^{\infty} \frac{1}{k} \sum_{n=0}^{\infty} \frac{300}{2^n \times k + 5} - \sum_{k=1}^{\infty} \frac{1}{k} \times \frac{300}{k + 5} \right) \\
+&= \frac{1}{2} (S_1 + S_2) - 30 \sum_{k=1}^{\infty} \left( \frac{1}{k} - \frac{1}{k+5} \right)
+\end{align*}
+因此，
+\[
+\frac{1}{2} (S_1 - S_2) = 30 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
+\]
+\[
+S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
+\]
+\[
+= 60 + 30 + 20 + 15 + 12
+\]
+\[
+= 137
+\]
+答：137。
+\end{solution}
 
     \question 求下列级数的值或证明其发散:
     \[

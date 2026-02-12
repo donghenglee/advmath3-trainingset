@@ -1413,6 +1413,29 @@
         \]
     \end{solution}
 
+    \question
+已知 $k$ 是一常数且函数
+\[
+f(x) = \begin{cases} \frac{(x + 1)^{29} - 1}{x}, & x \neq 0 \\ k, & x = 0 \end{cases}
+\]
+可微，求 $f'(0)$。
+
+\begin{solution}
+由于 $f$ 是可微的，它必然是连续的。因此，
+\[
+k = f(0) = \lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{(x + 1)^{29} - 1}{x} = \lim_{x \to 0} 29(x + 1)^{28} = 29 \text{}
+\]
+根据导数的定义，我们有：
+\begin{align*}
+f'(0) &= \lim_{x \to 0} \frac{f(x) - f(0)}{x} \\
+&= \lim_{x \to 0} \frac{\frac{(x + 1)^{29} - 1}{x} - 29}{x} \\
+&= \lim_{x \to 0} \frac{(x + 1)^{29} - 1 - 29x}{x^2} \\
+&= \lim_{x \to 0} \frac{29(x + 1)^{28} - 29}{2x} \\
+&= \lim_{x \to 0} \frac{29 \times 28(x + 1)^{27}}{2} \\
+&= 406 \text{}
+\end{align*}
+\end{solution}
+
 \question
 已知 \( f(x) \) 在 \( x = 0 \) 连续,且
 \[
