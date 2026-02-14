@@ -665,6 +665,144 @@
         \]
     \end{solution}
 
+    \question Let $k \in \mathbb{R}$. If $\lim_{x \to 0^+} \left( \sin(\sin kx) + \cos x + x \right)^{\frac{2}{x}} = e^6$, then the value of $k$ is
+(A) 1 \qquad (B) 2 \qquad (C) 3 \qquad (D) 4
+
+\begin{solution}
+该极限属于 $1^\infty$ 型，利用公式 $\lim_{x \to 0} [f(x)]^{g(x)} = e^{\lim_{x \to 0} g(x)(f(x)-1)}$，由题意知：
+\[
+\lim_{x \to 0^+} \frac{2}{x} (\sin(\sin kx) + \cos x + x - 1) = 6
+\]
+两边除以 2，并将各项分拆：
+\[
+\lim_{x \to 0^+} \left( \frac{\sin(\sin kx)}{x} + \frac{x}{x} - \frac{1 - \cos x}{x} \right) = 3
+\]
+对第一项进行等价无穷小替换或配凑：
+\[
+\lim_{x \to 0^+} \frac{\sin(\sin kx)}{\sin kx} \cdot \frac{\sin kx}{kx} \cdot k = k
+\]
+对于第三项：
+\[
+\lim_{x \to 0^+} \frac{1 - \cos x}{x} = \lim_{x \to 0^+} \frac{2 \sin^2 \frac{x}{2}}{x} = 0
+\]
+代入原式得：
+\[
+k + 1 - 0 = 3
+\]
+\[
+k = 2
+\]
+故正确选项为 (B)。
+\end{solution}
+
+    \question
+设 $\alpha$ 和 $\beta$ 为实数，满足
+\[
+\lim_{x \to 0} \frac{1}{x^3} \left( \frac{\alpha}{2} \int_{0}^{x} \frac{1}{1-t^2} \,dt + \beta x \cos x \right) = 2
+\]
+则 $\alpha + \beta$ 的值是 \underline{\hspace{2cm}}。
+
+\begin{solution}
+    设 $f(x) = \frac{\alpha}{2} \int_{0}^{x} \frac{1}{1-t^2} \,dt + \beta x \cos x$。原式即为 $\lim_{x \to 0} \frac{f(x)}{x^3} = 2$。
+    
+    1. 当 $x \to 0$ 时，分母 $x^3 \to 0$。为了使极限存在，分子必须满足 $\lim_{x \to 0} f(x) = 0$。
+    由于 $f(0) = \frac{\alpha}{2} \cdot 0 + \beta \cdot 0 \cdot 1 = 0$，此条件已满足。
+
+    2. 使用洛必达法则：
+    \[
+    \lim_{x \to 0} \frac{\frac{\alpha}{2} \cdot \frac{1}{1-x^2} + \beta (\cos x - x \sin x)}{3x^2} = 2
+    \]
+    当 $x \to 0$ 时，分母 $3x^2 \to 0$，分子必须趋于 0：
+    \[
+    \frac{\alpha}{2} + \beta = 0 \implies \alpha + 2\beta = 0
+    \]
+
+    3. 再次使用洛必达法则：
+    \[
+    \lim_{x \to 0} \frac{\frac{\alpha}{2} \cdot \frac{2x}{(1-x^2)^2} + \beta (-\sin x - \sin x - x \cos x)}{6x} = 2
+    \]
+    整理分子：
+    \[
+    \lim_{x \to 0} \frac{\frac{\alpha x}{(1-x^2)^2} + \beta (-2\sin x - x \cos x)}{6x} = 2
+    \]
+    拆分极限计算：
+    \[
+    \frac{\alpha}{6} \lim_{x \to 0} \frac{1}{(1-x^2)^2} - \frac{2\beta}{6} \lim_{x \to 0} \frac{\sin x}{x} - \frac{\beta}{6} \lim_{x \to 0} \cos x = 2
+    \]
+    代入基本极限：
+    \[
+    \frac{\alpha}{6} - \frac{\beta}{3} - \frac{\beta}{6} = 2 \implies \frac{\alpha - 2\beta - \beta}{6} = 2 \implies \alpha - 3\beta = 12
+    \]
+
+    4. 联立方程组：
+    根据 $\alpha = -2\beta$ 代入 $\alpha - 3\beta = 12$：
+    $-2\beta - 3\beta = 12 \implies -5\beta = 12 \implies \beta = -\frac{12}{5}$
+    $\alpha = -2 \cdot \left( -\frac{12}{5} \right) = \frac{24}{5}$
+
+    5. 计算结果：
+    \[
+    \alpha + \beta = \frac{24}{5} - \frac{12}{5} = \frac{12}{5} = 2.4
+    \]
+    故 $\alpha + \beta$ 的值为 $2.4$。
+\end{solution}
+
+\question
+设 $f(x)$ 是定义在区间 $(0, \infty)$ 上的连续可导函数，满足 $f(1) = 2$，且对于任意 $x > 0$，有：
+\[
+\lim_{t \to x} \frac{t^{10} f(x) - x^{10} f(t)}{t^9 - x^9} = 1
+\]
+则对于所有的 $x > 0$，$f(x)$ 等于：
+(A) $\frac{31}{11x} - \frac{9}{11} x^{10}$ \quad (B) $\frac{9}{11x} + \frac{13}{11} x^{10}$ \quad (C) $\frac{-9}{11x} + \frac{31}{11} x^{10}$ \quad (D) $\frac{13}{11x} + \frac{9}{11} x^{10}$
+
+\begin{solution}
+第一步：利用洛必达法则（L'Hôpital's Rule）处理极限。
+由于当 $t \to x$ 时，该极限为 $\frac{0}{0}$ 型，对变量 $t$ 求导：
+\[
+\lim_{t \to x} \frac{10t^9 f(x) - x^{10} f'(t)}{9t^8} = 1
+\]
+代入 $t = x$ 得：
+\[
+\frac{10x^9 f(x) - x^{10} f'(x)}{9x^8} = 1
+\]
+化简得微分方程：
+\[
+10x f(x) - x^2 f'(x) = 9x \implies f'(x) - \frac{10}{x} f(x) = -\frac{9}{x}
+\]
+为了方便求解，设 $y = f(x)$，则有线性一阶微分方程：
+\[
+\frac{dy}{dx} - \frac{10}{x} y = -\frac{9}{x^2}
+\]
+
+第二步：求解微分方程。
+计算积分因子 $I.F. = e^{\int -\frac{10}{x} \,dx} = e^{-10 \ln x} = \frac{1}{x^{10}}$。
+方程两边同乘积分因子：
+\[
+\frac{1}{x^{10}} \frac{dy}{dx} - \frac{10}{x^{11}} y = -\frac{9}{x^{12}}
+\]
+\[
+\frac{d}{dx} \left( \frac{y}{x^{10}} \right) = -9x^{-12}
+\]
+对两边积分：
+\[
+\frac{y}{x^{10}} = \int -9x^{-12} \,dx = \frac{-9}{-11} x^{-11} + C = \frac{9}{11x^{11}} + C
+\]
+\[
+y = f(x) = \frac{9}{11x} + C x^{10}
+\]
+
+第三步：利用初始条件求常数 $C$。
+由 $f(1) = 2$ 代入上式：
+\[
+2 = \frac{9}{11} + C \implies C = 2 - \frac{9}{11} = \frac{13}{11}
+\]
+最终得到：
+\[
+f(x) = \frac{9}{11x} + \frac{13}{11} x^{10}
+\]
+对应选项 (B)。
+\end{solution}
+
+
     \question
     \[
     \lim_{n\to\infty}\left(\frac{1}{\sqrt{3n^{2}+1}}+\frac{1}{\sqrt{3n^{2}+2}}+\cdots+\frac{1}{\sqrt{3n^{2}+2n}}\right)
@@ -913,6 +1051,41 @@
         \lim_{n\to\infty} x_{n} = 1
         \]
     \end{solution}
+
+    \question 设 $f : (0, 1) \to \mathbb{R}$ 为定义在 $f(x) = \sqrt{n}$（当 $x \in [\frac{1}{n+1}, \frac{1}{n})$，其中 $n \in \mathbb{N}$）的函数。设 $g : (0, 1) \to \mathbb{R}$ 为一个函数，对所有 $x \in (0, 1)$ 满足 $\int_{x^2}^x \sqrt{\frac{1-t}{t}} \,dt < g(x) < 2\sqrt{x}$。则 $\lim_{x \to 0} f(x)g(x)$
+(A) 不存在 \qquad (B) 等于 1 \qquad (C) 等于 2 \qquad (D) 等于 3
+
+\begin{solution}
+1. **分析 $f(x)$ 的范围**：
+当 $x \to 0$ 时，对于给定的 $x \in [\frac{1}{n+1}, \frac{1}{n})$，有 $n \le \frac{1}{x} < n+1$。
+由此可得 $\sqrt{n} \approx \frac{1}{\sqrt{x}}$。更具体地，有：
+\[
+\sqrt{\frac{1}{x}-1} < f(x) \le \sqrt{\frac{1}{x}}
+\]
+
+2. **利用夹逼定理处理 $g(x)$**：
+对左侧积分进行估计。当 $t$ 趋于 0 时，$\sqrt{1-t} \approx 1$。
+\[
+\int_{x^2}^x \sqrt{\frac{1-t}{t}} \,dt \approx \int_{x^2}^x \frac{1}{\sqrt{t}} \,dt = \left[ 2\sqrt{t} \right]_{x^2}^x = 2\sqrt{x} - 2x
+\]
+结合已知条件 $\int_{x^2}^x \sqrt{\frac{1-t}{t}} \,dt < g(x) < 2\sqrt{x}$，可知当 $x \to 0^+$ 时：
+\[
+\lim_{x \to 0^+} \frac{g(x)}{\sqrt{x}} = 2
+\]
+
+3. **求极限 $f(x)g(x)$**：
+我们将表达式重写为：
+\[
+f(x)g(x) = (f(x)\sqrt{x}) \cdot \frac{g(x)}{\sqrt{x}}
+\]
+由第一步知 $\sqrt{x} \sqrt{n} \approx \sqrt{x} \cdot \frac{1}{\sqrt{x}} = 1$，且当 $n \to \infty$（即 $x \to 0$）时，$\sqrt{x} \cdot f(x)$ 的极限为 1。
+由第二步知 $\frac{g(x)}{\sqrt{x}}$ 的极限为 2。
+因此：
+\[
+\lim_{x \to 0} f(x)g(x) = 1 \cdot 2 = 2
+\]
+故正确选项为 (C)。
+\end{solution}
 
     \question 
     \begin{parts}
@@ -1514,6 +1687,82 @@ f'(0) &= \lim_{x \to 0} \frac{f(x) - f(0)}{x} \\
         \]
         $\therefore (a, b) = (2, -1) \ \text{或} \ (-2, 5)$
     \end{solution}
+\question
+设 $\mathbb{R}$ 表示所有实数的集合。设 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to (0, 4)$ 是由下式定义的函数：
+\[
+f(x) = \log_e(x^2 + 2x + 4), \quad \text{和} \quad g(x) = \frac{4}{1 + e^{-2x}}
+\]
+定义复合函数 $f \circ g^{-1}$ 为 $(f \circ g^{-1})(x) = f(g^{-1}(x))$，其中 $g^{-1}$ 是函数 $g$ 的反函数。
+则复合函数 $f \circ g^{-1}$ 在 $x = 2$ 处的导数值为 \_\_\_\_\_\_。
+
+\begin{solution}
+第一步，求 $g(x)$ 的反函数 $h(x) = g^{-1}(x)$：
+设 $y = \frac{4}{1 + e^{-2x}}$，交换 $x$ 和 $y$ 得：
+\[
+x = \frac{4}{1 + e^{-2y}} \implies 1 + e^{-2y} = \frac{4}{x} \implies e^{-2y} = \frac{4-x}{x}
+\]
+两边取自然对数：
+\[
+-2y = \ln\left(\frac{4-x}{x}\right) \implies y = \frac{1}{2}\ln\left(\frac{x}{4-x}\right)
+\]
+因此，$h(x) = g^{-1}(x) = \frac{1}{2}\ln\left(\frac{x}{4-x}\right)$。
+
+第二步，应用链式法则求导：
+设 $H(x) = f(h(x))$，则 $H'(x) = f'(h(x)) \cdot h'(x)$。
+在 $x=2$ 时：
+\[
+h(2) = \frac{1}{2}\ln\left(\frac{2}{4-2}\right) = \frac{1}{2}\ln(1) = 0
+\]
+计算 $h'(x)$：
+\[
+h'(x) = \frac{1}{2} \cdot \frac{4-x}{x} \cdot \frac{(4-x) - x(-1)}{(4-x)^2} = \frac{1}{2} \cdot \frac{4-x}{x} \cdot \frac{4}{(4-x)^2} = \frac{2}{x(4-x)}
+\]
+则 $h'(2) = \frac{2}{2(4-2)} = \frac{1}{2}$。
+
+第三步，计算 $f'(x)$：
+\[
+f'(x) = \frac{2x + 2}{x^2 + 2x + 4}
+\]
+则 $f'(h(2)) = f'(0) = \frac{2(0) + 2}{0^2 + 2(0) + 4} = \frac{2}{4} = \frac{1}{2}$。
+
+最后，计算复合函数的导数：
+\[
+H'(2) = f'(h(2)) \cdot h'(2) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4} = 0.25
+\]
+\end{solution}
+    \question 
+设 $p(x) = 10x^3 - 45x^2 + 60x + 35$。求使得函数
+\[
+f(x) = \left[ \frac{p(x)}{n} \right]
+\]
+在区间 $[1, 2]$ 上连续的最小正整数 $n$ 的值。其中 $[ \cdot ]$ 表示高斯取整函数。
+
+\begin{solution}
+    1. **分析连续性条件**：
+    取整函数 $f(x) = [g(x)]$ 在一个闭区间上连续，当且仅当该区间内不存在任何点 $x_0$ 使得 $g(x_0)$ 为整数，或者 $g(x)$ 在该区间上为常数。
+    由于 $p(x)$ 是三次多项式而非比例常数，要使 $f(x)$ 连续，必须保证在区间 $x \in [1, 2]$ 上，$\frac{p(x)}{n}$ 的值域不跨越任何整数。
+    即：如果 $k < \frac{p(x)}{n} < k+1$ 对于某个整数 $k$ 恒成立，则函数连续。
+
+    2. **研究 $p(x)$ 在 $[1, 2]$ 上的值域**：
+    对 $p(x)$ 求导以确定其单调性：
+    \[
+    p'(x) = 30x^2 - 90x + 60 = 30(x^2 - 3x + 2) = 30(x-1)(x-2)
+    \]
+    在区间 $(1, 2)$ 内，$p'(x) < 0$，说明 $p(x)$ 在 $[1, 2]$ 上是严格单调递减的。
+    - 端点值计算：
+      $p(1) = 10(1)^3 - 45(1)^2 + 60(1) + 35 = 60$
+      $p(2) = 10(8) - 45(4) + 60(2) + 35 = 80 - 180 + 120 + 35 = 55$
+    因此，$p(x)$ 在 $[1, 2]$ 上的值域为 $[55, 60]$。
+
+    3. **确定最小正整数 $n$**：
+    我们需要找到最小的 $n$，使得区间 $\left[ \frac{55}{n}, \frac{60}{n} \right]$ 中不包含任何整数。
+    注意：如果区间端点本身是整数，则函数在端点处可能不连续（除非它是常数），但在本题中 $p(x)$ 是变动的，所以区间内及端点都不能触发取整跳变。
+    - 若 $n=7$：值域为 $\left[ \frac{55}{7}, \frac{60}{7} \right] \approx [7.85, 8.57]$。中间包含整数 $8$，不连续。
+    - 若 $n=8$：值域为 $\left[ \frac{55}{8}, \frac{60}{8} \right] = [6.875, 7.5]$。中间包含整数 $7$，不连续。
+    - 若 $n=9$：值域为 $\left[ \frac{55}{9}, \frac{60}{9} \right] \approx [6.11, 6.66]$。该范围内没有整数（位于 $6$ 和 $7$ 之间），函数值恒为 $6$，连续。
+
+    综上所述，使得函数连续的最小正整数 $n$ 为 $9$。
+\end{solution}
 
     \question 函数 $f$ 定义为
     \[
@@ -8671,6 +8920,54 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \end{solution}
 
     \question
+若
+\[
+\alpha = \int_{\frac{1}{2}}^{2} \frac{\tan^{-1} x}{2x^2 - 3x + 2} \,dx
+\]
+则 $\sqrt{7} \tan\left(\frac{2\alpha\sqrt{7}}{\pi}\right)$ 的值为 \_\_\_\_\_\_。
+（此处反三角函数 $\tan^{-1} x$ 的取值范围为 $(-\frac{\pi}{2}, \frac{\pi}{2})$。）
+
+\begin{solution}
+第一步，利用积分换元性质。设 $x = \frac{1}{t}$，则 $dx = -\frac{1}{t^2} dt$。
+当 $x = \frac{1}{2}$ 时 $t = 2$，当 $x = 2$ 时 $t = \frac{1}{2}$。代入原式：
+\[
+\alpha = \int_{2}^{\frac{1}{2}} \frac{\tan^{-1}(\frac{1}{t})}{2(\frac{1}{t})^2 - 3(\frac{1}{t}) + 2} \left( -\frac{1}{t^2} \right) \,dt = \int_{\frac{1}{2}}^{2} \frac{\tan^{-1}(\frac{1}{x})}{2 - 3x + 2x^2} \,dx
+\]
+将原式与上述变换后的式子相加：
+\[
+2\alpha = \int_{\frac{1}{2}}^{2} \frac{\tan^{-1} x + \tan^{-1}(\frac{1}{x})}{2x^2 - 3x + 2} \,dx
+\]
+已知当 $x > 0$ 时，$\tan^{-1} x + \tan^{-1}(\frac{1}{x}) = \frac{\pi}{2}$，则：
+\[
+2\alpha = \frac{\pi}{2} \int_{\frac{1}{2}}^{2} \frac{1}{2x^2 - 3x + 2} \,dx = \frac{\pi}{4} \int_{\frac{1}{2}}^{2} \frac{1}{x^2 - \frac{3}{2}x + 1} \,dx
+\]
+
+第二步，配方并积分。
+\[
+x^2 - \frac{3}{2}x + 1 = \left(x - \frac{3}{4}\right)^2 + 1 - \frac{9}{16} = \left(x - \frac{3}{4}\right)^2 + \left(\frac{\sqrt{7}}{4}\right)^2
+\]
+应用积分公式 $\int \frac{1}{u^2 + a^2} \,du = \frac{1}{a} \tan^{-1}(\frac{u}{a})$：
+\[
+2\alpha = \frac{\pi}{4} \cdot \frac{4}{\sqrt{7}} \left[ \tan^{-1}\left( \frac{x - \frac{3}{4}}{\frac{\sqrt{7}}{4}} \right) \right]_{\frac{1}{2}}^{2} = \frac{\pi}{\sqrt{7}} \left[ \tan^{-1}\left( \frac{4x - 3}{\sqrt{7}} \right) \right]{\frac{1}{2}}^{2}
+\]
+代入上下限：
+\[
+2\alpha = \frac{\pi}{\sqrt{7}} \left( \tan^{-1}\left(\frac{5}{\sqrt{7}}\right) - \tan^{-1}\left(-\frac{1}{\sqrt{7}}\right) \right) = \frac{\pi}{\sqrt{7}} \left( \tan^{-1}\left(\frac{5}{\sqrt{7}}\right) + \tan^{-1}\left(\frac{1}{\sqrt{7}}\right) \right)
+\]
+使用和角公式 $\tan^{-1} A + \tan^{-1} B = \tan^{-1}\left(\frac{A+B}{1-AB}\right)$：
+\[
+\frac{5}{\sqrt{7}} + \frac{1}{\sqrt{7}} = \frac{6}{\sqrt{7}}, \quad 1 - \frac{5}{7} = \frac{2}{7} \implies \frac{\frac{6}{\sqrt{7}}}{\frac{2}{7}} = 3\sqrt{7}
+\]
+故 $2\alpha = \frac{\pi}{\sqrt{7}} \tan^{-1}(3\sqrt{7})$。
+
+第三步，计算所求值。
+由上式得 $\frac{2\alpha\sqrt{7}}{\pi} = \tan^{-1}(3\sqrt{7})$。
+代入所求式：
+\[
+\sqrt{7} \tan\left( \tan^{-1}(3\sqrt{7}) \right) = \sqrt{7} \cdot 3\sqrt{7} = 21
+\]
+\end{solution}
+    \question
     \[
     \int_{0}^{\pi} \frac{x \tan x}{\sec x + \tan x} \, dx
     \]
@@ -9229,6 +9526,72 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \]
     \end{solution}
 
+    \question 设 $f : [0, \frac{\pi}{2}] \to [0, 1]$ 为定义在 $f(x) = \sin^2 x$ 的函数；并设 $g : [0, \frac{\pi}{2}] \to [0, \infty)$ 为定义在 $g(x) = \sqrt{\frac{\pi x}{2} - x^2}$ 的函数。则式子
+\[
+2 \int_0^{\frac{\pi}{2}} f(x)g(x) \,dx - \int_0^{\frac{\pi}{2}} g(x) \,dx
+\]
+的值为 \underline{\hspace{2cm}}。
+
+\begin{solution}
+令 $I = \int_0^{\frac{\pi}{2}} f(x)g(x) \,dx = \int_0^{\frac{\pi}{2}} (\sin^2 x) g(x) \,dx$。
+利用区间再现公式 $\int_a^b h(x) \,dx = \int_a^b h(a+b-x) \,dx$，令 $x = \frac{\pi}{2} - t$：
+对于 $g(x)$：
+\[
+g\left( \frac{\pi}{2} - x \right) = \sqrt{\frac{\pi}{2}\left( \frac{\pi}{2} - x \right) - \left( \frac{\pi}{2} - x \right)^2} = \sqrt{\frac{\pi^2}{4} - \frac{\pi x}{2} - \left( \frac{\pi^2}{4} - \pi x + x^2 \right)} = \sqrt{\frac{\pi x}{2} - x^2} = g(x)
+\]
+所以 $g(x)$ 关于 $x = \frac{\pi}{4}$ 对称。
+因此：
+\[
+I = \int_0^{\frac{\pi}{2}} \sin^2 \left( \frac{\pi}{2} - x \right) g\left( \frac{\pi}{2} - x \right) \,dx = \int_0^{\frac{\pi}{2}} \cos^2 x \cdot g(x) \,dx
+\]
+将两个 $I$ 的表达式相加：
+\[
+2I = \int_0^{\frac{\pi}{2}} (\sin^2 x + \cos^2 x) g(x) \,dx = \int_0^{\frac{\pi}{2}} g(x) \,dx
+\]
+题目所求式子为：
+\[
+2I - \int_0^{\frac{\pi}{2}} g(x) \,dx = \int_0^{\frac{\pi}{2}} g(x) \,dx - \int_0^{\frac{\pi}{2}} g(x) \,dx = 0
+\]
+结果为 0。
+\end{solution}
+
+\question 根据段落 “II” 中的定义，求式子 $\frac{16}{\pi^3} \int_0^{\frac{\pi}{2}} f(x)g(x) \,dx$ 的值。
+
+\begin{solution}
+1. **利用前一题的结论**：
+在前一题中我们已经证明了：
+\[
+2 \int_0^{\frac{\pi}{2}} f(x)g(x) \,dx = \int_0^{\frac{\pi}{2}} g(x) \,dx
+\]
+因此，目标式子可以转化为：
+\[
+\frac{16}{\pi^3} \cdot \frac{1}{2} \int_0^{\frac{\pi}{2}} g(x) \,dx = \frac{8}{\pi^3} \int_0^{\frac{\pi}{2}} g(x) \,dx
+\]
+
+2. **计算积分 $\int_0^{\frac{\pi}{2}} g(x) \,dx$ 的几何意义**：
+已知 $g(x) = \sqrt{\frac{\pi x}{2} - x^2}$，设 $y = \sqrt{\frac{\pi x}{2} - x^2}$，则有：
+\[
+y^2 = \frac{\pi x}{2} - x^2 \Rightarrow x^2 - \frac{\pi}{2}x + y^2 = 0
+\]
+配方得：
+\[
+\left( x - \frac{\pi}{4} \right)^2 + y^2 = \left( \frac{\pi}{4} \right)^2
+\]
+这是一个圆心在 $(\frac{\pi}{4}, 0)$，半径为 $R = \frac{\pi}{4}$ 的圆。
+积分区间 $[0, \frac{\pi}{2}]$ 正好覆盖了该圆在 $x$ 轴上方的半圆部分。
+
+3. **求面积**：
+\[
+\int_0^{\frac{\pi}{2}} g(x) \,dx = \frac{1}{2} \cdot \pi R^2 = \frac{1}{2} \cdot \pi \left( \frac{\pi}{4} \right)^2 = \frac{\pi^3}{32}
+\]
+
+4. **代入最终计算**：
+\[
+\frac{8}{\pi^3} \cdot \frac{\pi^3}{32} = \frac{8}{32} = \frac{1}{4} = 0.25
+\]
+结果为 0.25。
+\end{solution}
+
     \question 已知函数
     \[
     f(x) = \arctan\left(\frac{1}{2x^2}\right), \quad x \in (-\infty, \infty)
@@ -9776,6 +10139,120 @@ v^2 &= \frac{B(1+x)}{(1-x)^3}
 u(x) = A \frac{e^{-1/x}}{x^2}, \quad v^2(x) = \frac{B(1+x)}{(1-x)^3}.
 \]
 
+\end{solution}
+
+
+\question
+对于所有 $x > 0$，设 $y_1(x), y_2(x)$ 和 $y_3(x)$ 是分别满足以下条件的函数：
+\[ \frac{dy_1}{dx} - (\sin x)^2 y_1 = 0, y_1(1) = 5 \]
+\[ \frac{dy_2}{dx} - (\cos x)^2 y_2 = 0, y_2(1) = \frac{1}{3} \]
+\[ \frac{dy_3}{dx} - \left( \frac{2 - x^3}{x^3} \right) y_3 = 0, y_3(1) = \frac{3}{5e} \]
+则极限
+\[ \lim_{x \to 0^+} \frac{y_1(x)y_2(x)y_3(x) + 2x}{e^{3x} \sin x} \]
+的值等于 \underline{\hspace{2cm}}。
+
+\begin{solution}
+    首先，利用分离变量法求解各个微分方程。
+    对于每个方程，均可写成 $\frac{dy_i}{y_i} = f_i(x) \,dx$ 的形式。
+    将三个方程对应的微分表达式相加：
+    \[
+    \frac{dy_1}{y_1} + \frac{dy_2}{y_2} + \frac{dy_3}{y_3} = \left[ \sin^2 x + \cos^2 x + \left( \frac{2}{x^3} - 1 \right) \right] \,dx
+    \]
+    利用恒等式 $\sin^2 x + \cos^2 x = 1$，化简得：
+    \[
+    \frac{d(y_1 y_2 y_3)}{y_1 y_2 y_3} = \frac{2}{x^3} \,dx
+    \]
+    两边积分：
+    \[
+    \ln(y_1 y_2 y_3) = -\frac{1}{x^2} + C \implies y_1 y_2 y_3 = e^{-1/x^2 + C} = \lambda e^{-1/x^2}
+    \]
+    代入初始条件 $x=1$：
+    \[
+    y_1(1)y_2(1)y_3(1) = 5 \cdot \frac{1}{3} \cdot \frac{3}{5e} = \frac{1}{e}
+    \]
+    由 $\frac{1}{e} = \lambda e^{-1}$ 知 $\lambda = 1$，故 $y_1 y_2 y_3 = e^{-1/x^2}$。
+
+    接下来计算极限：
+    \[
+    L = \lim_{x \to 0^+} \frac{e^{-1/x^2} + 2x}{e^{3x} \sin x} = \lim_{x \to 0^+} \frac{e^{-1/x^2} + 2x}{e^{3x} \cdot x \cdot \frac{\sin x}{x}}
+    \]
+    由于 $\lim_{x \to 0} \frac{\sin x}{x} = 1$ 且 $\lim_{x \to 0} e^{3x} = 1$，原式简化为：
+    \[
+    L = \lim_{x \to 0^+} \left( \frac{e^{-1/x^2}}{x} + 2 \right)
+    \]
+    对于第一项，令 $t = \frac{1}{x}$，则当 $x \to 0^+$ 时 $t \to \infty$：
+    \[
+    \lim_{x \to 0^+} \frac{e^{-1/x^2}}{x} = \lim_{t \to \infty} \frac{t}{e^{t^2}} = 0
+    \]
+    因此：
+    \[
+    L = 0 + 2 = 2
+    \]
+    故极限的值等于 2。
+\end{solution}
+
+\question
+Q.1 设 $f: [1, \infty) \to \mathbb{R}$ 为可导函数，满足 $f(1) = \frac{1}{3}$ 且对于 $x \in [1, \infty)$ 有：
+\[
+3 \int_{1}^{x} f(t) \,dt = x f(x) - \frac{x^3}{3}
+\]
+令 $e$ 表示自然对数的底。则 $f(e)$ 的值为：
+(A) $\frac{e^2 + 4}{3}$ \quad (B) $\frac{\log_{e} 4 + e}{3}$ \quad (C) $\frac{4e^2}{3}$ \quad (D) $\frac{e^2 - 4}{3}$
+
+\begin{solution}
+对已知等式两边关于 $x$ 求导：
+\[
+\frac{d}{dx} \left( 3 \int_{1}^{x} f(t) \,dt \right) = \frac{d}{dx} \left( x f(x) - \frac{x^3}{3} \right)
+\]
+根据莱布尼茨积分法则，得到：
+\[
+3 f(x) = f(x) + x f'(x) - x^2
+\]
+整理得一阶线性微分方程：
+\[
+x \frac{df}{dx} - 2f = x^2
+\]
+将方程两边除以 $x$：
+\[
+\frac{df}{dx} - \frac{2}{x} f = x
+\]
+计算积分因子 $IF$：
+\[
+IF = e^{\int -\frac{2}{x} \,dx} = e^{-2 \ln x} = \frac{1}{x^2}
+\]
+方程两边同乘以 $\frac{1}{x^2}$：
+\[
+\frac{1}{x^2} \frac{df}{dx} - \frac{2}{x^3} f = \frac{1}{x}
+\]
+\[
+\frac{d}{dx} \left( \frac{f(x)}{x^2} \right) = \frac{1}{x}
+\]
+两边积分得：
+\[
+\frac{f(x)}{x^2} = \ln x + C
+\]
+\[
+f(x) = x^2 \ln x + C x^2
+\]
+代入初始条件 $f(1) = \frac{1}{3}$：
+\[
+\frac{1}{3} = 1^2 \ln 1 + C(1)^2
+\]
+\[
+C = \frac{1}{3}
+\]
+所以函数解析式为：
+\[
+f(x) = x^2 \ln x + \frac{x^2}{3}
+\]
+计算 $f(e)$ 的值：
+\[
+f(e) = e^2 \ln e + \frac{e^2}{3}
+\]
+\[
+f(e) = e^2 + \frac{e^2}{3} = \frac{4e^2}{3}
+\]
+因此，正确选项为 (C)。
 \end{solution}
 
 

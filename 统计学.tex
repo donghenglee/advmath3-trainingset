@@ -375,6 +375,70 @@
 We first calculate the probability that the center is in the union of the four triangles. The center does not lie in the union of the four triangles iff the four points lie on the same side of some diameter of the circle iff this is true of their radial projections onto the circle iff for one of these, the other three are within 180 degrees clockwise of the point, and such a point is essentially unique. Given a point, the probability that the other three lie in this arc is $\left(\frac{1}{2}\right)^3=\frac{1}{8}$, so the probability that the center does not lie in the convex hull is $4 \cdot \frac{1}{8}=\frac{1}{2}$.Ignoring possibilities with probability 0, the center lies in the union of the four triangles iff it lies in the intersection of two of the triangles, and these possibilities are disjoint. Since there are six pairs, the probability of the center lying in a randomly selected intersection is $\frac{1}{6} = \frac{2}{12}$. The center is in the union of the two selected triangles iff it is in the union of the four but not in the intersection of the two which we did not select. This probability is $\frac{1}{2} - \frac{1}{12}$.
 \end{solution}
 
+\question 一个袋子中装有 $N$ 个球，其中 3 个是白球，6 个是绿球，其余的球是蓝球。假设这些球除颜色外完全相同。从袋中随机依次抽取三个球（不放回）。设 $W_i, G_i, B_i$ 分别表示第 $i$ 次抽到白球、绿球和蓝球的事件（$i = 1, 2, 3$）。若概率 $P(W_1 \cap G_2 \cap B_3) = \frac{2}{5N}$，且条件概率 $P(B_3 \mid W_1 \cap G_2) = \frac{2}{9}$，则 $N$ 的值为 \underline{\hspace{2cm}}。
+
+\begin{solution}
+利用条件概率的定义式 $P(B_3 \mid W_1 \cap G_2) = \frac{P(W_1 \cap G_2 \cap B_3)}{P(W_1 \cap G_2)}$。
+将已知数值代入：
+\[
+\frac{2}{9} = \frac{\frac{2}{5N}}{P(W_1 \cap G_2)}
+\]
+解得：
+\[
+P(W_1 \cap G_2) = \frac{2}{5N} \cdot \frac{9}{2} = \frac{9}{5N}
+\]
+根据不放回抽样的乘法规则，直接计算前两次分别抽到白球和绿球的概率：
+\[
+P(W_1 \cap G_2) = P(W_1) P(G_2 \mid W_1) = \frac{3}{N} \cdot \frac{6}{N-1}
+\]
+联立上述两个表达式：
+\[
+\frac{18}{N(N-1)} = \frac{9}{5N}
+\]
+两边约去 $\frac{9}{N}$（其中 $N > 0$）：
+\[
+\frac{2}{N-1} = \frac{1}{5}
+\]
+解得：
+\[
+N - 1 = 10
+\]
+所以 $N = 11$。
+\end{solution}
+
+\question 设 $X = \left\{ (x, y) \in \mathbb{Z} \times \mathbb{Z} : \frac{x^2}{8} + \frac{y^2}{20} < 1 \text{ 且 } y^2 < 5x \right\}$。从集合 $X$ 中随机选取三个不同的点 $P, Q$ 和 $R$。则这三点构成一个面积为正整数的三角形的概率为
+(A) $\frac{71}{220}$ \qquad (B) $\frac{73}{220}$ \qquad (C) $\frac{79}{220}$ \qquad (D) $\frac{83}{220}$
+
+\begin{solution}
+1. **确定集合 $X$ 中的整点**：
+   由 $y^2 < 5x$ 知 $x > 0$。由 $\frac{x^2}{8} + \frac{y^2}{20} < 1$ 限制了 $x$ 的范围：
+   - 若 $x=1$：$\frac{1}{8} + \frac{y^2}{20} < 1 \Rightarrow y^2 < \frac{7}{4} \cdot 10 = 17.5$。同时满足 $y^2 < 5(1) = 5$，故 $y^2 \in \{0, 1, 4\}$，即 $y \in \{0, \pm 1, \pm 2\}$。点数为 5。
+   - 若 $x=2$：$\frac{4}{8} + \frac{y^2}{20} < 1 \Rightarrow y^2 < 10$。同时满足 $y^2 < 5(2) = 10$，故 $y^2 \in \{0, 1, 4, 9\}$，即 $y \in \{0, \pm 1, \pm 2, \pm 3\}$。点数为 7。
+   - 若 $x \ge 3$：$\frac{x^2}{8} \ge \frac{9}{8} > 1$，无解。
+   集合 $X$ 内总点数 $n = 5 + 7 = 12$。
+
+2. **计算总取法**：
+   从 12 个点中选 3 个点的总数为：
+   \[
+   C_{12}^3 = \frac{12 \times 11 \times 10}{3 \times 2 \times 1} = 220
+   \]
+
+3. **计算面积为正整数的情况**：
+   三角形面积公式 $S = \frac{1}{2} |x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)|$。
+   若选取的三个点中，有两个点在同一条铅垂线上（即 $x$ 坐标相同，设其距离为 $d$），第三个点的 $x$ 坐标与它们相差 $h$，则 $S = \frac{1}{2} d \cdot h$。
+   这里 $h = |2 - 1| = 1$，故 $S = \frac{1}{2} d$。要使 $S$ 为整数，$d$ 必须为偶数。
+   - **底在 $x=1$ 上**：共有 5 个点，纵坐标为 $\{0, \pm 1, \pm 2\}$。偶数距离的对数有：$(2,0), (0,-2), (2,-2), (1,-1)$，共 4 对。每对可与 $x=2$ 上的 7 个点构成三角形：$4 \times 7 = 28$ 个。
+   - **底在 $x=2$ 上**：共有 7 个点，纵坐标为 $\{0, \pm 1, \pm 2, \pm 3\}$。偶数距离的对数有：$(3,1), (1,-1), (-1,-3), (3,-1), (1,-3), (2,0), (0,-2), (2,-2), (3,-3)$，共 9 对。每对可与 $x=1$ 上的 5 个点构成三角形：$9 \times 5 = 45$ 个。
+   - **三点共线（面积为 0，需排除）**：在同一条 $x$ 线上选 3 点不会使面积为正整数（此时 $h=0$）。
+
+4. **汇总概率**：
+   符合条件的三角形总数为 $28 + 45 = 73$。
+   \[
+   P = \frac{73}{220}
+   \]
+   故正确选项为 (B)。
+\end{solution}
+
     \question $A$ 和 $B$ 轮流进行游戏,$A$ 先开始。每轮中:
     \begin{itemize}
         \item $A$ 投掷一枚公平硬币,若出现正面则 $A$ 获胜,游戏结束
@@ -955,7 +1019,7 @@ We first calculate the probability that the center is in the union of the four t
 \separator
 \vspace{1pt}
 \begin{questions}
-        \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
+    \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
 
     设随机变量 $X$ 代表阿花吃完巧克力的天数,求期望值 $E(X)$。
     \begin{solution}
@@ -1175,6 +1239,108 @@ We first calculate the probability that the center is in the union of the four t
         P(X = 3) = (1 - p)^2p  = \dfrac{16}{125}
         \]
     \end{solution}
+
+    \question
+设 $X$ 为一个随机变量，$P(X = x)$ 表示 $X$ 取值为 $x$ 的概率。
+假设点 $(x, P(X = x))$（其中 $x = 0, 1, 2, 3, 4$）位于 $xy$ 平面内的一条固定直线上，且对于所有 $x \in \mathbb{R} \setminus \{0, 1, 2, 3, 4\}$，有 $P(X = x) = 0$。
+若 $X$ 的期望（均值）为 $\frac{5}{2}$，方差为 $\alpha$，则 $24\alpha$ 的值为 \_\_\_\_\_\_。
+
+\begin{solution}
+第一步：建立概率分布模型。
+由于点 $(x, P(X = x))$ 位于直线上，设 $P(X = x) = mx + c$。
+根据概率分布的性质，所有概率之和必须为 1：
+\[
+\sum_{x=0}^{4} (mx + c) = m(0+1+2+3+4) + 5c = 10m + 5c = 1
+\]
+化简得：$2m + c = \frac{1}{5}$ \quad —— (1)
+
+第二步：利用期望值求解 $m$ 和 $c$。
+已知期望 $E(X) = \frac{5}{2}$，根据定义：
+\[
+E(X) = \sum_{x=0}^{4} x \cdot P(X = x) = \sum_{x=0}^{4} x(mx + c) = m \sum_{x=0}^{4} x^2 + c \sum_{x=0}^{4} x = \frac{5}{2}
+\]
+计算平方和：$0^2+1^2+2^2+3^2+4^2 = 30$；计算和：$0+1+2+3+4 = 10$。
+代入得：$30m + 10c = \frac{5}{2} \implies 6m + 2c = \frac{1}{2} \implies 3m + c = \frac{1}{4}$ \quad —— (2)
+联立 (1) 和 (2)：
+由 (2) - (1) 得：$m = \frac{1}{4} - \frac{1}{5} = \frac{1}{20}$。
+代入 (1) 得：$2(\frac{1}{20}) + c = \frac{1}{5} \implies c = \frac{1}{5} - \frac{1}{10} = \frac{1}{10}$。
+因此，$P(X = x) = \frac{1}{20}x + \frac{1}{10} = \frac{x+2}{20}$。
+
+第三步：计算方差 $\alpha$。
+首先计算 $E(X^2)$：
+\[
+E(X^2) = \sum_{x=0}^{4} x^2 \cdot \frac{x+2}{20} = \frac{1}{20} \sum_{x=0}^{4} (x^3 + 2x^2)
+\]
+其中 $\sum x^3 = 0^3+1^3+2^3+3^3+4^3 = 100$，$\sum x^2 = 30$。
+\[
+E(X^2) = \frac{1}{20} [100 + 2(30)] = \frac{160}{20} = 8
+\]
+根据方差公式 $Var(X) = E(X^2) - [E(X)]^2$：
+\[
+\alpha = 8 - \left( \frac{5}{2} \right)^2 = 8 - \frac{25}{4} = \frac{32-25}{4} = \frac{7}{4}
+\]
+
+第四步：求最终结果。
+\[
+24\alpha = 24 \times \frac{7}{4} = 6 \times 7 = 42
+\]
+\end{solution}
+
+\question
+考虑一个 $6 \times 6$ 的正方形网格（如图所示）。令 $A_1, A_2, \dots, A_{49}$ 为交点（图中黑点）。若 $A_i$ 与 $A_j$ 在同一行或同一列上相邻，则称它们为“朋友”。假设每个点 $A_i$ 被选中的机会相等。
+
+Q.16：令 $p_i$ 为随机选择的一个点恰好有 $i$ 个朋友的概率，$i = 0, 1, 2, 3, 4$。令 $X$ 为一个随机变量，使得 $P(X=i) = p_i$。求 $7E(X)$ 的值。
+
+\begin{solution}
+网格共有 $(6+1) \times (6+1) = 49$ 个点。根据点所在的位置，其朋友数量（相邻点数）分类如下：
+1. 顶点（4个）：每个点有 2 个朋友。
+2. 边界点（除顶点外，共 $4 \times 5 = 20$ 个）：每个点有 3 个朋友。
+3. 内部点（$5 \times 5 = 25$ 个）：每个点有 4 个朋友。
+
+由此可得概率分布：
+\[
+p_2 = \frac{4}{49}, \quad p_3 = \frac{20}{49}, \quad p_4 = \frac{25}{49}
+\]
+期望值 $E(X)$ 计算如下：
+\[
+E(X) = \sum i \cdot p_i
+\]
+\[
+E(X) = 2 \cdot \frac{4}{49} + 3 \cdot \frac{20}{49} + 4 \cdot \frac{25}{49}
+\]
+\[
+E(X) = \frac{8 + 60 + 100}{49} = \frac{168}{49} = \frac{24}{7}
+\]
+因此：
+\[
+7E(X) = 7 \cdot \frac{24}{7} = 24
+\]
+\end{solution}
+
+\question
+Q.17：从 $A_1, A_2, \dots, A_{49}$ 中随机取出两个不同的点。令 $p$ 为这两个点是朋友的概率。求 $7p$ 的值。
+
+\begin{solution}
+总的选点方式数为从 49 个点中随机选出 2 个：
+\[
+N = \binom{49}{2} = \frac{49 \times 48}{2} = 1176
+\]
+“朋友”关系的对数等于网格中所有相邻线段的总数：
+1. 每行有 7 个点，形成 6 条水平线段。共有 7 行，水平线段数为 $7 \times 6 = 42$。
+2. 每列有 7 个点，形成 6 条垂直线段。共有 7 列，垂直线段数为 $7 \times 6 = 42$。
+总的朋友对数（有利情况）为：
+\[
+M = 42 + 42 = 84
+\]
+因此概率 $p$ 为：
+\[
+p = \frac{84}{1176} = \frac{1}{14}
+\]
+计算 $7p$ 的值：
+\[
+7p = 7 \cdot \frac{1}{14} = \frac{1}{2} = 0.5
+\]
+\end{solution}
 
     \question 有一笔资料包含 $n$ 个数 $x_1, x_2, x_3, \dots, x_n$,其平均数为 $\overline{x}$,试证
     \[

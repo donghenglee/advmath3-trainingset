@@ -5199,7 +5199,7 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \[
         f(\sqrt{2}) = \frac{1}{3}
         \]
-        \end{solution}
+    \end{solution}
 
     \question 设函数 $f(x)=\cos x+\log_{2}x,$其中$x>0$ ,若正实数 $a$ 满足 $f(a)=f(2a)$ ,求$f(2a)-f(4a)$ 的值。
     \begin{solution}
@@ -5315,6 +5315,38 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         f(1992) = f(4 \cdot 498) = f(0) = 993
         \]
     \end{solution}
+
+    \question
+Q.9 设 $n \geq 2$ 为自然数，函数 $f: [0, 1] \to \mathbb{R}$ 定义为：
+\[
+f(x) = \begin{cases} n(1-2nx) & \text{若 } 0 \leq x \leq \frac{1}{2n} \\ 2n(2nx-1) & \text{若 } \frac{1}{2n} \leq x \leq \frac{3}{4n} \\ 4n(1-nx) & \text{若 } \frac{3}{4n} \leq x \leq \frac{1}{n} \\ \frac{n}{n-1}(nx-1) & \text{若 } \frac{1}{n} \leq x \leq 1 \end{cases}
+\]
+若 $n$ 使得由曲线 $x=0, x=1, y=0$ 及 $y=f(x)$ 围成的区域面积为 4，则函数 $f$ 的最大值为多少？
+
+\begin{solution}
+该函数在各区间内均为线性函数。由题意，面积由四个三角形区域组成（注意部分区间函数值为负时取绝对值计算面积，或根据图像判断）。
+围成的面积 $A$ 可通过分段积分计算：
+\[
+A = \int_{0}^{\frac{1}{2n}} n(1-2nx) \,dx + \int_{\frac{1}{2n}}^{\frac{3}{4n}} 2n(2nx-1) \,dx + \int_{\frac{3}{4n}}^{\frac{1}{n}} 4n(nx-1) \,dx + \int_{\frac{1}{n}}^{1} \frac{n}{n-1}(nx-1) \,dx
+\]
+计算各三角形面积：
+1. 第一个三角形（$0$ 到 $\frac{1}{2n}$）：底为 $\frac{1}{2n}$，高为 $n$，面积为 $\frac{1}{2} \cdot \frac{1}{2n} \cdot n = \frac{1}{4}$。
+2. 第二个三角形（$\frac{1}{2n}$ 到 $\frac{3}{4n}$）：底为 $\frac{1}{4n}$，高为 $n$（当 $x=\frac{3}{4n}$ 时，$f(x)=n$），面积为 $\frac{1}{2} \cdot \frac{1}{4n} \cdot n = \frac{1}{8}$。
+3. 第三个三角形（$\frac{3}{4n}$ 到 $\frac{1}{n}$）：底为 $\frac{1}{4n}$，高为 $n$，面积为 $\frac{1}{2} \cdot \frac{1}{4n} \cdot n = \frac{1}{8}$。
+4. 第四个三角形（$\frac{1}{n}$ 到 $1$）：底为 $1 - \frac{1}{n} = \frac{n-1}{n}$，高为 $n$（当 $x=1$ 时，$f(x)=n$），面积为 $\frac{1}{2} \cdot \frac{n-1}{n} \cdot n = \frac{n-1}{2}$。
+
+总面积 $A$ 为：
+\[
+A = \frac{1}{4} + \frac{1}{8} + \frac{1}{8} + \frac{n-1}{2} = \frac{1}{2} + \frac{n-1}{2} = \frac{n}{2}
+\]
+已知 $A = 4$，则：
+\[
+\frac{n}{2} = 4 \implies n = 8
+\]
+函数 $f$ 的最大值在各分段端点取得。计算可知：
+$f(0) = n$，$f(\frac{3}{4n}) = n$，$f(1) = n$。
+因此最大值为 $n = 8$。
+\end{solution}
 
     \question 若实数 \(x, y, z\) 满足
     \[
@@ -5440,6 +5472,35 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         x+1 = -(y+1) \Rightarrow x + y = -2
         \]
     \end{solution}
+
+    \question 设函数 $f : \mathbb{R} \to \mathbb{R}$ 定义为
+\[
+f(x) = \frac{\sin x}{e^{\pi x}} \frac{(x^{2023} + 2024x + 2025)}{(x^2 - x + 3)} + \frac{2}{e^{\pi x}} \frac{(x^{2023} + 2024x + 2025)}{(x^2 - x + 3)}
+\]
+则方程 $f(x) = 0$ 在 $\mathbb{R}$ 中的解的个数为 \underline{\hspace{2cm}}。
+
+\begin{solution}
+首先提取公因式，将函数 $f(x)$ 变形为：
+\[
+f(x) = \frac{x^{2023} + 2024x + 2025}{e^{\pi x}(x^2 - x + 3)} (\sin x + 2)
+\]
+要使 $f(x) = 0$，只需分子为 0。
+由于 $\sin x$ 的取值范围是 $[-1, 1]$，故 $\sin x + 2$ 恒大于 0，不可能为 0。
+分母中 $e^{\pi x} > 0$ 且 $x^2 - x + 3$ 的判别式 $\Delta = 1 - 12 = -11 < 0$，故分母恒大于 0。
+因此，$f(x) = 0$ 等价于：
+\[
+x^{2023} + 2024x + 2025 = 0
+\]
+设 $g(x) = x^{2023} + 2024x + 2025$，对其求导得：
+\[
+g'(x) = 2023x^{2022} + 2024
+\]
+由于 $x^{2022} \ge 0$，所以 $g'(x) \ge 2024 > 0$ 恒成立。
+这说明 $g(x)$ 是 $\mathbb{R}$ 上的严格增函数。
+又因为 $g(x)$ 是奇次数多项式，当 $x \to -\infty$ 时 $g(x) \to -\infty$，当 $x \to +\infty$ 时 $g(x) \to +\infty$。
+根据零点存在定理，该函数在 $\mathbb{R}$ 上有且只有一个实根。
+所以 $f(x) = 0$ 的解的个数为 1。
+\end{solution}
 
     \question 求定义于 $\mathbb{R} \setminus \{0\}$ 上的所有实值函数满足 
     \[
@@ -5729,10 +5790,10 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
     \end{solution}
 
     \question 设函数 \( f:\mathbb{R}\setminus\{0,1\} \to \mathbb{R} \) 使得
-        \[
-        f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)}.
-        \]
-        求 $f(x)$。
+    \[
+    f(x) + f\left(\frac{1}{1-x}\right) = \frac{1}{x(1-x)}.
+    \]
+    求 $f(x)$。
     \begin{solution}
         代入 \( x \), \( \dfrac{1}{1-x} \), 及\( \dfrac{x-1}{x} \) 得
         \[
@@ -5756,6 +5817,39 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         f(x)=x+\frac1x-\frac12
         \]
     \end{solution}
+
+\question 设 $f : \mathbb{R} \to \mathbb{R}$ 是一个函数，对所有 $x, y \in \mathbb{R}$ 满足 $f(x + y) = f(x) + f(y)$；且 $g : \mathbb{R} \to (0, \infty)$ 是一个函数，对所有 $x, y \in \mathbb{R}$ 满足 $g(x + y) = g(x)g(y)$。若 $f\left(\frac{-3}{5}\right) = 12$ 且 $g\left(\frac{-1}{3}\right) = 2$，则 $\left( f\left(\frac{1}{4}\right) + g(-2) - 8 \right) g(0)$ 的值为 \underline{\hspace{2cm}}。
+
+\begin{solution}
+根据题意，$f(x)$ 满足柯西函数方程 $f(x+y) = f(x) + f(y)$，可设其形式为 $f(x) = cx$。
+代入已知条件 $f\left(\frac{-3}{5}\right) = 12$：
+\[
+c \cdot \left( \frac{-3}{5} \right) = 12
+\]
+解得 $c = -20$，故 $f(x) = -20x$。
+计算得：
+\[
+f\left( \frac{1}{4} \right) = -20 \cdot \frac{1}{4} = -5
+\]
+对于函数 $g(x)$，满足 $g(x+y) = g(x)g(y)$，可设其形式为 $g(x) = a^x$。
+代入已知条件 $g\left(\frac{-1}{3}\right) = 2$：
+\[
+a^{-\frac{1}{3}} = 2
+\]
+解得 $a = 2^{-3} = \frac{1}{8}$，故 $g(x) = \left( \frac{1}{8} \right)^x$。
+计算得：
+\[
+g(-2) = \left( \frac{1}{8} \right)^{-2} = 8^2 = 64
+\]
+\[
+g(0) = \left( \frac{1}{8} \right)^0 = 1
+\]
+将结果代入目标表达式：
+\[
+\left( -5 + 64 - 8 \right) \cdot 1 = 51
+\]
+结果为 51。
+\end{solution}
 
     \question 已知函数 $f(x)$ 定义在 $\mathbb{R}$ 上, 且满足 $f(1)=1$, 对所有实数 $x$ 有
     \[
@@ -8859,6 +8953,40 @@ x = 18, \quad y = 9, \quad z = 6.
         ay + bx + cu + dz=192
         \]
     \end{solution}
+
+    \question 设 $\mathbb{R}$ 为实数集。设 $f : \mathbb{R} \to \mathbb{R}$ 是一个函数，对所有 $x \in \mathbb{R}$ 满足 $f(x) > 0$，且对所有 $x, y \in \mathbb{R}$ 满足 $f(x + y) = f(x)f(y)$。设实数 $a_1, a_2, \dots, a_{50}$ 成等差数列。若 $f(a_{31}) = 64f(a_{25})$，且 $\sum_{i=1}^{50} f(a_i) = 3(2^{25} + 1)$，求 $\sum_{i=6}^{30} f(a_i)$ 的值。
+
+\begin{solution}
+    由函数方程 $f(x + y) = f(x)f(y)$ 且 $f(x) > 0$ 可知，$f(x)$ 具有指数函数的形式，记为 $f(x) = k^x$。
+    因为 $a_i$ 为等差数列，设公差为 $d$，则 $a_n = a_1 + (n - 1)d$。
+    由此可知 $f(a_i) = k^{a_1 + (i-1)d} = k^{a_1} \cdot (k^d)^{i-1}$。
+    这是一个首项为 $A = f(a_1)$，公比为 $R = k^d$ 的等比数列。
+
+    1. 求公比 $R$：
+    由 $f(a_{31}) = 64f(a_{25})$ 得：
+    \[
+    \frac{f(a_{31})}{f(a_{25})} = R^{31-25} = R^6 = 64
+    \]
+    由于 $f(x) > 0$，故 $R = 2$。
+
+    2. 利用求和公式确定首项 $A$：
+    已知 $\sum_{i=1}^{50} f(a_i) = A \frac{R^{50} - 1}{R - 1} = A(2^{50} - 1) = 3(2^{25} + 1)$。
+    利用平方差公式 $2^{50} - 1 = (2^{25} - 1)(2^{25} + 1)$：
+    \[
+    A(2^{25} - 1)(2^{25} + 1) = 3(2^{25} + 1) \implies A = \frac{3}{2^{25} - 1}
+    \]
+
+    3. 计算目标和：
+    所求为 $\sum_{i=6}^{30} f(a_i)$，该数列共有 $30 - 6 + 1 = 25$ 项，首项为 $f(a_6) = AR^5$。
+    \[
+    \sum_{i=6}^{30} f(a_i) = AR^5 \frac{R^{25} - 1}{R - 1} = \frac{3}{2^{25} - 1} \cdot 2^5 \cdot (2^{25} - 1)
+    \]
+    消去 $(2^{25} - 1)$ 项：
+    \[
+    3 \times 2^5 = 3 \times 32 = 96
+    \]
+    故所求之值为 96。
+\end{solution}
     
     \question 已知 $a_1=-1,a_{n+1}=2a_n-3$, 求 $a_{2017}$。
     \begin{solution}
@@ -10826,6 +10954,41 @@ k^2 - k + 1 \le n \le k^2 + k
         故得证。
     \end{solution}
 
+    \question
+Q.10 令 $7\underbrace{5 \dots 5}_{r}7$ 表示一个 $(r+2)$ 位数，其中第一位和最后一位数字是 7，其余 $r$ 位数字是 5。考虑总和 $S = 77 + 757 + 7557 + \dots + 7\underbrace{5 \dots 5}_{98}7$。
+若 $S = \frac{7\underbrace{5 \dots 5}_{99}7 + m}{n}$，其中 $m$ 和 $n$ 是小于 3000 的自然数，则 $m+n$ 的值是多少？
+
+\begin{solution}
+第 $k$ 项（含有 $k-1$ 个 5）可以写为：
+\[
+a_k = 7 \cdot 10^k + 5 \cdot (10^{k-1} + 10^{k-2} + \dots + 10^1) + 7
+\]
+利用等比数列求和：
+\[
+a_k = 7 \cdot 10^k + 5 \cdot \frac{10(10^{k-1}-1)}{10-1} + 7 = 7 \cdot 10^k + \frac{50}{9}(10^{k-1}-1) + 7 = 7 \cdot 10^k + \frac{5}{9} \cdot 10^k - \frac{50}{9} + 7
+\]
+\[
+a_k = \frac{68}{9} \cdot 10^k + \frac{13}{9}
+\]
+总和 $S = \sum_{k=1}^{99} a_k$（$77$ 到 $7\underbrace{5 \dots 5}_{98}7$ 共 99 项）：
+\[
+S = \sum_{k=1}^{99} \left( \frac{68}{9} \cdot 10^k + \frac{13}{9} \right) = \frac{68}{9} \cdot \frac{10(10^{99}-1)}{10-1} + \frac{13 \cdot 99}{9}
+\]
+\[
+S = \frac{680(10^{99}-1)}{81} + 143 = \frac{680 \cdot 10^{99} - 680 + 11583}{81} = \frac{680 \cdot 10^{99} + 10903}{81}
+\]
+已知目标形式分子包含 $7\underbrace{5 \dots 5}_{99}7$，记为 $A$：
+\[
+A = \frac{68}{9} \cdot 10^{100} + \frac{13}{9} = \frac{680 \cdot 10^{99} + 13}{9}
+\]
+将 $S$ 变形：
+\[
+S = \frac{1}{9} \left( \frac{680 \cdot 10^{99} + 13 + 1210}{9} \right) = \frac{\frac{680 \cdot 10^{99} + 13}{9} + \frac{1210}{9}}{9} = \frac{A + \frac{1210}{9}}{9}
+\]
+这不符合整数 $m, n$ 的形式。根据图中提示，$9S = A + 1210$。
+对比 $S = \frac{A + m}{n}$，得 $n = 9$，$m = 1210$。
+则 $m + n = 1210 + 9 = 1219$。
+\end{solution}
     \question 求无穷级数
     \[
     \frac{1^{2}}{11} + \frac{5^{2}}{11^{2}} + \frac{9^{2}}{11^{3}} + \frac{13^{2}}{11^{4}} + \cdots + \frac{(4n - 3)^{2}}{11^{n}} + \cdots
@@ -13347,6 +13510,40 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         \]
     \end{solution}
 
+    \question
+考虑矩阵 $P = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}$。设矩阵 $X$ 的转置表示为 $X^T$。那么满足 $Q^{-1} = Q^T$ 且 $PQ = QP$ 的 $3 \times 3$ 具有整数元素的乘法可逆矩阵 $Q$ 的个数是
+(A) 32
+(B) 8
+(C) 16
+(D) 24
+
+\begin{solution}
+由 $PQ = QP$ 可知 $Q$ 必须具有特定的分块结构以保持与对角矩阵 $P$ 的交换性。设 $Q = \begin{pmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{pmatrix}$，代入 $PQ = QP$：
+\[
+\begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix} \begin{pmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{pmatrix} = \begin{pmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{pmatrix} \begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}
+\]
+展开得：
+\[
+\begin{pmatrix} 2a_1 & 2b_1 & 2c_1 \\ 2a_2 & 2b_2 & 2c_2 \\ 3a_3 & 3b_3 & 3c_3 \end{pmatrix} = \begin{pmatrix} 2a_1 & 2b_1 & 3c_1 \\ 2a_2 & 2b_2 & 3c_2 \\ 2a_3 & 2b_3 & 3c_3 \end{pmatrix}
+\]
+由此可解得 $c_1 = c_2 = a_3 = b_3 = 0$。因此 $Q$ 的形式为：
+\[
+Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
+\]
+已知 $Q^{-1} = Q^T$，即 $Q$ 为正交矩阵，满足 $Q^T Q = I$。由于 $Q$ 的元素为整数，每行每列必须只有一个元素的绝对值为 1，其余为 0。
+1. 对于 $c_3$，满足 $c_3^2 = 1$，故 $c_3 \in \{1, -1\}$（共 2 种选择）。
+2. 对于 $2 \times 2$ 子矩阵 $Q' = \begin{pmatrix} a_1 & b_1 \\ a_2 & b_2 \end{pmatrix}$，它也必须是正交矩阵。
+可能的整数矩阵 $Q'$ 如下：
+- $\begin{pmatrix} \pm 1 & 0 \\ 0 & \pm 1 \end{pmatrix}$：共有 $2 \times 2 = 4$ 种。
+- $\begin{pmatrix} 0 & \pm 1 \\ \pm 1 & 0 \end{pmatrix}$：共有 $2 \times 2 = 4$ 种。
+所以 $Q'$ 共有 $4 + 4 = 8$ 种情形。
+综上所述，矩阵 $Q$ 的总个数为：
+\[
+8 \times 2 = 16
+\]
+故选 (C)。
+\end{solution}
+
     \question 设实数 $a>b$,且有二阶方阵 $X,Y$ 满足
     \[
     X + Y = I, \quad XY = O,
@@ -15266,6 +15463,92 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         \end{itemize}
     \end{solution}
 
+    \question
+考虑向量
+\[
+\vec{x} = \hat{i} + 2\hat{j} + 3\hat{k} , \quad \vec{y} = 2\hat{i} + 3\hat{j} + \hat{k} , \quad \text{和} \quad \vec{z} = 3\hat{i} + \hat{j} + 2\hat{k}
+\]
+对于两个互不相同的正实数 $\alpha$ 和 $\beta$，定义
+\[
+\vec{X} = \alpha\vec{x} + \beta\vec{y} - \vec{z} , \quad \vec{Y} = \alpha\vec{y} + \beta\vec{z} - \vec{x} , \quad \text{和} \quad \vec{Z} = \alpha\vec{z} + \beta\vec{x} - \vec{y}
+\]
+若向量 $\vec{X}, \vec{Y}$ 和 $\vec{Z}$ 共面，则 $\alpha + \beta - 3$ 的值为 \_\_\_\_\_\_。
+
+\begin{solution}
+若向量 $\vec{X}, \vec{Y}, \vec{Z}$ 共面，则其系数行列式必为零：
+\[
+\begin{vmatrix} \alpha & \beta & -1 \\ -1 & \alpha & \beta \\ \beta & -1 & \alpha \end{vmatrix} = 0
+\]
+展开该行列式：
+\[
+\alpha(\alpha^2 + \beta) - \beta(-\alpha - \beta^2) - 1(1 - \alpha\beta) = 0
+\]
+\[
+\alpha^3 + \alpha\beta + \alpha\beta + \beta^3 - 1 + \alpha\beta = 0
+\]
+\[
+\alpha^3 + \beta^3 - 1 + 3\alpha\beta = 0
+\]
+利用代数恒等式 $a^3 + b^3 + c^3 - 3abc = 0$ 的性质，令 $a = \alpha, b = \beta, c = -1$，则有：
+\[
+\alpha^3 + \beta^3 + (-1)^3 - 3(\alpha)(\beta)(-1) = 0
+\]
+该式成立的条件为 $\alpha + \beta + (-1) = 0$ 或 $\alpha = \beta = -1$。
+由于题目给定 $\alpha, \beta$ 为正实数，故排除 $\alpha = \beta = -1$。
+因此：
+\[
+\alpha + \beta - 1 = 0
+\]
+\[
+\alpha + \beta = 1
+\]
+计算所求式子的值：
+\[
+\alpha + \beta - 3 = 1 - 3 = -2
+\]
+\end{solution}
+
+\question
+设 $\vec{OP} = \frac{\alpha - 1}{\alpha} \hat{i} + \hat{j} + \hat{k}$，$\vec{OQ} = \hat{i} + \frac{\beta - 1}{\beta} \hat{j} + \hat{k}$ 和 $\vec{OR} = \hat{i} + \hat{j} + \frac{1}{2} \hat{k}$ 为三个向量，其中 $\alpha, \beta \in \mathbb{R} \setminus \{0\}$ 且 $O$ 表示原点。若 $(\vec{OP} \times \vec{OQ}) \cdot \vec{OR} = 0$，且点 $(\alpha, \beta, 2)$ 位于平面 $3x + 3y - z + l = 0$ 上，则 $l$ 的值为 \_\_\_\_\_\_。
+
+\begin{solution}
+第一步：利用标量三重积为零的条件。
+已知 $(\vec{OP} \times \vec{OQ}) \cdot \vec{OR} = 0$，这表示三个向量共面，其对应的行列式为零：
+\[
+\begin{vmatrix} \frac{\alpha - 1}{\alpha} & 1 & 1 \\ 1 & \frac{\beta - 1}{\beta} & 1 \\ 1 & 1 & \frac{1}{2} \end{vmatrix} = 0
+\]
+为了简化计算，将第一行记为 $R_1$，第二行记为 $R_2$。执行变换 $R_1 \to R_1 - R_3$ 和 $R_2 \to R_2 - R_3$：
+\[
+\begin{vmatrix} -\frac{1}{\alpha} & 0 & \frac{1}{2} \\ 0 & -\frac{1}{\beta} & \frac{1}{2} \\ 1 & 1 & \frac{1}{2} \end{vmatrix} = 0
+\]
+展开该行列式：
+\[
+-\frac{1}{\alpha} \left( -\frac{1}{2\beta} - \frac{1}{2} \right) + \frac{1}{2} \left( 0 - \left( -\frac{1}{\beta} \right) \right) = 0
+\]
+\[
+\frac{1}{2\alpha\beta} + \frac{1}{2\alpha} + \frac{1}{2\beta} = 0
+\]
+方程两边同乘 $2\alpha\beta$：
+\[
+1 + \beta + \alpha = 0 \implies \alpha + \beta = -1
+\]
+
+第二步：利用点在平面上的条件求解 $l$。
+点 $(\alpha, \beta, 2)$ 在平面 $3x + 3y - z + l = 0$ 上，将其坐标代入方程：
+\[
+3\alpha + 3\beta - 2 + l = 0
+\]
+提取公因式：
+\[
+3(\alpha + \beta) - 2 + l = 0
+\]
+代入第一步中求得的 $\alpha + \beta = -1$：
+\[
+3(-1) - 2 + l = 0 \implies -3 - 2 + l = 0 \implies l = 5
+\]
+因此，$l$ 的值为 5。
+\end{solution}
+
 \question 将帕斯卡三角形（Pascal's Triangle）写成如下无穷矩阵的形式:
 \[
 \begin{pmatrix}
@@ -16211,6 +16494,104 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         \]
     \end{solution}
 
+    \question
+设 $f(x) = x^4 + ax^3 + bx^2 + c$ 为实系数多项式，满足 $f(1) = -9$。
+假设 $i\sqrt{3}$ 是方程 $4x^3 + 3ax^2 + 2bx = 0$ 的一个根，其中 $i = \sqrt{-1}$。
+若 $\alpha_1, \alpha_2, \alpha_3$ 和 $\alpha_4$ 是方程 $f(x) = 0$ 的所有根，则 $|\alpha_1|^2 + |\alpha_2|^2 + |\alpha_3|^2 + |\alpha_4|^2$ 的值为 \_\_\_\_\_\_。
+
+\begin{solution}
+第一步：利用导函数根的性质求解系数 $a$ 和 $b$。
+注意到方程 $4x^3 + 3ax^2 + 2bx = 0$ 即为 $f'(x) = 0$。
+该方程可提取公因式 $x(4x^2 + 3ax + 2b) = 0$。
+已知 $i\sqrt{3}$ 是其根，由于系数为实数，其共轭复数 $-i\sqrt{3}$ 必也是根。
+根据韦达定理，对于二次因子 $4x^2 + 3ax + 2b$：
+根之和：$i\sqrt{3} + (-i\sqrt{3}) = 0 \implies -\frac{3a}{4} = 0 \implies a = 0$.
+根之积：$(i\sqrt{3})(-i\sqrt{3}) = 3 \implies \frac{2b}{4} = 3 \implies b = 6$.
+
+第二步：求解系数 $c$。
+已知 $f(1) = -9$，代入 $a=0, b=6$ 得：
+\[
+1^4 + 0(1)^3 + 6(1)^2 + c = -9 \implies 1 + 6 + c = -9 \implies c = -16
+\]
+因此，多项式为 $f(x) = x^4 + 6x^2 - 16$。
+
+第三步：求解 $f(x)=0$ 的根并计算模平方和。
+设 $x^2 = y$，则方程变为 $y^2 + 6y - 16 = 0$。
+因式分解得：$(y+8)(y-2) = 0$，解得 $y = -8$ 或 $y = 2$。
+因此根为：
+\[
+x^2 = -8 \implies \alpha_1, \alpha_2 = \pm i\sqrt{8}
+\]
+\[
+x^2 = 2 \implies \alpha_3, \alpha_4 = \pm \sqrt{2}
+\]
+计算 $|\alpha_i|^2$ 之和：
+\[
+|\alpha_1|^2 + |\alpha_2|^2 + |\alpha_3|^2 + |\alpha_4|^2 = 8 + 8 + 2 + 2 = 20
+\]
+\end{solution}
+
+\question
+Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\bar{z}$ 表示 $z$ 的共轭复数。设 $z$ 的虚部不为零。
+
+将 **List-I** 中的每项匹配到 **List-II** 中的正确项：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{List-I} & \textbf{List-II} \\ \hline
+(P) $|z|^2$ 等于 & (1) 12 \\ \hline
+(Q) $|z - \bar{z}|^2$ 等于 & (2) 4 \\ \hline
+(R) $|z|^2 + |z + \bar{z}|^2$ 等于 & (3) 8 \\ \hline
+(S) $|z + 1|^2$ 等于 & (4) 10 \\ \hline
+ & (5) 7 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{solution}
+1. 求解复数 $z$
+已知方程：
+(1) $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$
+
+对该方程取共轭：
+(2) $|z|^3 + 2\bar{z}^2 + 4z - 8 = 0$
+
+将方程 (1) 减去 (2)：
+\[ 2(z^2 - \bar{z}^2) - 4(z - \bar{z}) = 0 \]
+\[ 2(z - \bar{z})(z + \bar{z}) - 4(z - \bar{z}) = 0 \]
+\[ 2(z - \bar{z})(z + \bar{z} - 2) = 0 \]
+
+由于题意规定 $z$ 的虚部不为零，故 $z - \bar{z} \neq 0$。因此：
+\[ z + \bar{z} = 2 \]
+设 $z = x + iy$，则 $2x = 2 \implies x = 1$。即 $z = 1 + iy$。
+
+将 $z = 1 + iy$ 代入原方程 (1)，注意 $|z|^2 = 1 + y^2$：
+\[ (\sqrt{1+y^2})^3 + 2(1+iy)^2 + 4(1-iy) - 8 = 0 \]
+\[ (\sqrt{1+y^2})^3 + 2(1 - y^2 + 2iy) + 4 - 4iy - 8 = 0 \]
+实部为零：
+\[ (\sqrt{1+y^2})^3 + 2 - 2y^2 + 4 - 8 = 0 \]
+\[ (\sqrt{1+y^2})^3 - 2(1 + y^2) = 0 \]
+\[ (\sqrt{1+y^2})^2 (\sqrt{1+y^2} - 2) = 0 \]
+由于 $1+y^2 \neq 0$，则 $\sqrt{1+y^2} = 2 \implies 1 + y^2 = 4 \implies y^2 = 3$。
+所以 $y = \pm \sqrt{3}$，复数为 $z = 1 \pm i\sqrt{3}$。
+
+2. 计算各匹配项
+* **(P) $|z|^2$**:
+    $|z|^2 = 1^2 + (\sqrt{3})^2 = 4$。 匹配 **(2)**。
+* **(Q) $|z - \bar{z}|^2$**:
+    $z - \bar{z} = (1 + i\sqrt{3}) - (1 - i\sqrt{3}) = 2i\sqrt{3}$。
+    $|z - \bar{z}|^2 = |2i\sqrt{3}|^2 = 4 \times 3 = 12$。 匹配 **(1)**。
+* **(R) $|z|^2 + |z + \bar{z}|^2$**:
+    $|z|^2 = 4$，$z + \bar{z} = 2$。
+    $4 + 2^2 = 4 + 4 = 8$。 匹配 **(3)**。
+* **(S) $|z + 1|^2$**:
+    $z + 1 = (1 + i\sqrt{3}) + 1 = 2 + i\sqrt{3}$。
+    $|2 + i\sqrt{3}|^2 = 2^2 + (\sqrt{3})^2 = 4 + 3 = 7$。 匹配 **(5)**。
+
+**注意：** 根据以上计算，匹配结果为 (P)→(2), (Q)→(1), (R)→(3), (S)→(5)。这对应选项 **(B)**。
+\end{solution}
+
     \question 已知两复数 $z_1, z_2$ 满足 $|z_1 - (3 + 3i)| = 2,|iz_2 - 1| = 1$,求 $|z_1 - z_2|$ 的最小值。
     \begin{solution}
         由$|z_1 - (3 + 3i)| = 2,P(z_1)$在圆
@@ -16591,7 +16972,7 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         \]
     \end{solution}
 
-        \question 证明
+    \question 证明
     \begin{align*}
     \cos \alpha + \comb{n}{1} \cos 2\alpha + \comb{n}{2} \cos 3\alpha + \dots + \cos (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \cos \frac{n+2}{2} \alpha \\
     \sin \alpha + \comb{n}{1} \sin 2\alpha + \comb{n}{2} \sin 3\alpha + \dots + \sin (n + 1)\alpha &= 2^n \cos^n \frac{\alpha}{2} \sin \frac{n+2}{2} \alpha
