@@ -12381,6 +12381,43 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         \]
     \end{solution}
 
+    \question 令
+\[
+X = \left( \binom{10}{1} \right)^2 + 2\left( \binom{10}{2} \right)^2 + 3\left( \binom{10}{3} \right)^2 + \dots + 10\left( \binom{10}{10} \right)^2
+\]
+其中 $\binom{10}{r}$ 表示二项式系数。求 $\frac{1}{1430} X$ 的值。
+
+\begin{solution}
+首先利用恒等式 $r \binom{n}{r} = n \binom{n-1}{r-1}$ 对通项进行变形。
+级数的通项为 $a_r = r \binom{10}{r}^2$。我们可以将其改写为：
+\[
+r \binom{10}{r} \binom{10}{r} = 10 \binom{9}{r-1} \binom{10}{r} = 10 \binom{9}{r-1} \binom{10}{10-r}
+\]
+对 $X$ 求和：
+\[
+X = \sum_{r=1}^{10} 10 \binom{9}{r-1} \binom{10}{10-r}
+\]
+根据范德蒙德恒等式（Vandermonde's Identity），$\sum_{k} \binom{r}{k} \binom{s}{n-k} = \binom{r+s}{n}$。
+在本题中，令 $r=9, s=10, n=9$：
+\[
+X = 10 \sum_{r=1}^{10} \binom{9}{r-1} \binom{10}{10-r} = 10 \binom{9+10}{9} = 10 \binom{19}{9}
+\]
+计算组合数 $\binom{19}{9}$：
+\[
+\binom{19}{9} = \frac{19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13 \cdot 12 \cdot 11}{9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 92378
+\]
+或者采用板书中的化简技巧，注意到 $\binom{19}{9} = \frac{19}{10} \binom{18}{9}$。
+目标值为：
+\[
+\frac{1}{1430} X = \frac{10 \binom{19}{9}}{1430} = \frac{\binom{19}{9}}{143}
+\]
+继续拆解 $143 = 11 \cdot 13$：
+\[
+\frac{10 \cdot \frac{19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13 \cdot 12 \cdot 11}{9!}}{143} = \frac{10 \cdot 92378}{1430} = 646
+\]
+经过进一步约分和计算，最终结果为 $646$。
+\end{solution}
+
     \question 若将 $(x+1)^{2000}$ 展开,问有多少个系数是奇数？
     \begin{solution}
         一般地,若 $(x+1)^n$ 展开式中奇数系数的个数为 $2^{a}$,其中 $a$ 是 $n$ 的二进制表示中 1 的个数,将 $2000$ 转换为二进制:
@@ -13437,6 +13474,210 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         =\begin{bmatrix}1&0&0\\ -1&2&0\\ 0&-2&3\end{bmatrix}
         \]
     \end{solution}
+
+    \question
+方阵的迹（trace）定义为其对角线元素之和。若 $A$ 是一个 $2 \times 2$ 矩阵，满足 $A$ 的迹为 3，且 $A^3$ 的迹为 $-18$，则 $A$ 的行列式（determinant）的值为 \underline{\quad\quad}。
+
+\begin{solution}
+设 $2 \times 2$ 矩阵 $A$ 的两个特征值为 $\lambda_1$ 和 $\lambda_2$。
+根据矩阵迹与特征值的关系，我们有：
+\[
+\text{Tr}(A) = \lambda_1 + \lambda_2 = 3 \quad \text{--- (1)}
+\]
+根据矩阵性质，若 $A$ 的特征值为 $\lambda_i$，则 $A^3$ 的特征值为 $\lambda_i^3$。已知 $A^3$ 的迹为 $-18$：
+\[
+\text{Tr}(A^3) = \lambda_1^3 + \lambda_2^3 = -18 \quad \text{--- (2)}
+\]
+利用代数恒等式 $a^3 + b^3 = (a + b)^3 - 3ab(a + b)$，我们可以将式 (2) 重写为：
+\[
+(\lambda_1 + \lambda_2)^3 - 3\lambda_1\lambda_2(\lambda_1 + \lambda_2) = -18
+\]
+将 $\lambda_1 + \lambda_2 = 3$ 代入上式：
+\[
+(3)^3 - 3\lambda_1\lambda_2(3) = -18
+\]
+\[
+27 - 9\lambda_1\lambda_2 = -18
+\]
+移项并化简：
+\[
+-9\lambda_1\lambda_2 = -18 - 27
+\]
+\[
+-9\lambda_1\lambda_2 = -45
+\]
+解得：
+\[
+\lambda_1\lambda_2 = 5
+\]
+由于矩阵的行列式等于其所有特征值的乘积，即 $\text{det}(A) = \lambda_1\lambda_2$：
+\[
+\text{det}(A) = 5
+\]
+因此，$A$ 的行列式的值为 5。
+\end{solution}
+
+\question
+设矩阵
+\[
+M = \begin{bmatrix} \sin^4 \theta & -1 - \sin^2 \theta \\ 1 + \cos^2 \theta & \cos^4 \theta \end{bmatrix} = \alpha I + \beta M^{-1}
+\]
+其中 $\alpha = \alpha(\theta)$ 和 $\beta = \beta(\theta)$ 是实数，$I$ 是 $2 \times 2$ 单位矩阵。
+若 $\alpha^*$ 是集合 $\{\alpha(\theta) : \theta \in [0, 2\pi)\}$ 的最小值，$\beta^*$ 是集合 $\{\beta(\theta) : \theta \in [0, 2\pi)\}$ 的最小值，则 $\alpha^* + \beta^*$ 的值为 \underline{\quad\quad}。
+(A) $-\frac{37}{16}$ \quad (B) $-\frac{31}{16}$ \quad (C) $-\frac{29}{16}$ \quad (D) $-\frac{17}{16}$
+
+\begin{solution}
+根据凯莱-哈密顿定理（Cayley-Hamilton Theorem），对于 $2 \times 2$ 矩阵 $M$，有：
+\[
+M^2 - \text{Tr}(M)M + \text{det}(M)I = O
+\]
+整理得 $M^2 = \text{Tr}(M)M - \text{det}(M)I$。两边同时乘 $M^{-1}$：
+\[
+M = \text{Tr}(M)I - \text{det}(M)M^{-1}
+\]
+对比题目给出的形式 $M = \alpha I + \beta M^{-1}$，可得：
+\[
+\alpha(\theta) = \text{Tr}(M), \quad \beta(\theta) = -\text{det}(M)
+\]
+
+第一步：求 $\alpha(\theta)$ 及其最小值 $\alpha^*$
+\[
+\alpha(\theta) = \sin^4 \theta + \cos^4 \theta = (\sin^2 \theta + \cos^2 \theta)^2 - 2 \sin^2 \theta \cos^2 \theta = 1 - \frac{1}{2} \sin^2(2\theta)
+\]
+当 $\sin^2(2\theta) = 1$ 时，$\alpha$ 取得最小值：
+\[
+\alpha^* = 1 - \frac{1}{2} = \frac{1}{2}
+\]
+
+第二步：求 $\beta(\theta)$ 及其最小值 $\beta^*$
+\[
+\beta(\theta) = -\text{det}(M) = -(\sin^4 \theta \cos^4 \theta + (1 + \sin^2 \theta)(1 + \cos^2 \theta))
+\]
+展开并化简括号内各项：
+\[
+(1 + \sin^2 \theta)(1 + \cos^2 \theta) = 1 + (\sin^2 \theta + \cos^2 \theta) + \sin^2 \theta \cos^2 \theta = 2 + \frac{1}{4} \sin^2(2\theta)
+\]
+令 $t = \sin^2(2\theta)$，其中 $t \in [0, 1]$，则：
+\[
+\beta(t) = -(\frac{t^2}{16} + 2 + \frac{t}{4}) = -\frac{1}{16}(t^2 + 4t + 32)
+\]
+由于 $f(t) = t^2 + 4t + 32$ 在 $[0, 1]$ 上是增函数，当 $t=1$ 时 $f(t)$ 最大，此时 $\beta$ 最小：
+\[
+\beta^* = \beta(1) = -\frac{1 + 4 + 32}{16} = -\frac{37}{16}
+\]
+
+第三步：计算 $\alpha^* + \beta^*$
+\[
+\alpha^* + \beta^* = \frac{1}{2} - \frac{37}{16} = \frac{8 - 37}{16} = -\frac{29}{16}
+\]
+故正确选项为 (C)。
+\end{solution}
+
+    \question
+设 $\beta$ 为实数。考虑矩阵
+\[
+A = \begin{pmatrix} \beta & 0 & 1 \\ 2 & 1 & -2 \\ 3 & 1 & -2 \end{pmatrix}
+\]
+若 $A^7 - (\beta - 1)A^6 - \beta A^5$ 是奇异矩阵，求 $9\beta$ 的值。
+
+\begin{solution}
+由于 $A^7 - (\beta - 1)A^6 - \beta A^5$ 是奇异矩阵，其行列式必为 0：
+\[
+|A^7 - (\beta - 1)A^6 - \beta A^5| = 0
+\]
+提取公因子 $A^5$：
+\[
+|A^5| \cdot |A^2 - (\beta - 1)A - \beta I| = 0
+\]
+对该二次多项式进行因式分解：
+\[
+|A^5| \cdot |A + I| \cdot |A - \beta I| = 0
+\]
+这意味着 $|A|$、 $|A + I|$ 或 $|A - \beta I|$ 其中至少有一个为 0。
+
+1. 计算 $|A|$：
+\[
+|A| = \beta \begin{vmatrix} 1 & -2 \\ 1 & -2 \end{vmatrix} - 0 + 1 \begin{vmatrix} 2 & 1 \\ 3 & 1 \end{vmatrix} = \beta(0) + (2 - 3) = -1
+\]
+由于 $|A| = -1 \neq 0$，则 $|A^5| \neq 0$。
+
+2. 计算 $|A + I|$：
+\[
+A + I = \begin{pmatrix} \beta + 1 & 0 & 1 \\ 2 & 2 & -2 \\ 3 & 1 & -1 \end{pmatrix}
+\]
+\[
+|A + I| = (\beta + 1)(-2 + 2) - 0 + (2 - 6) = -4 \neq 0
+\]
+
+3. 计算 $|A - \beta I|$：
+由于前两项均不为 0，必有 $|A - \beta I| = 0$：
+\[
+A - \beta I = \begin{pmatrix} 0 & 0 & 1 \\ 2 & 1 - \beta & -2 \\ 3 & 1 & -2 - \beta \end{pmatrix}
+\]
+展开第一行：
+\[
+|A - \beta I| = 1 \begin{vmatrix} 2 & 1 - \beta \\ 3 & 1 \end{vmatrix} = 2(1) - 3(1 - \beta) = 2 - 3 + 3\beta = 3\beta - 1
+\]
+令 $3\beta - 1 = 0$，解得 $\beta = \frac{1}{3}$。
+
+因此：
+\[
+9\beta = 9 \cdot \frac{1}{3} = 3
+\]
+\end{solution}
+
+\question
+若矩阵
+\[
+M = \begin{pmatrix} \frac{5}{2} & \frac{3}{2} \\ -\frac{3}{2} & -\frac{1}{2} \end{pmatrix}
+\]
+求矩阵 $M^{2022}$ 的值。
+
+\begin{solution}
+为了计算 $M^{2022}$，我们尝试将 $M$ 分解为单位矩阵 $I$ 与一个特殊矩阵 $A$ 的组合。
+观察 $M$ 的各项，可以将其写为：
+\[
+M = \begin{pmatrix} 1 + \frac{3}{2} & \frac{3}{2} \\ -\frac{3}{2} & 1 - \frac{3}{2} \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \frac{3}{2} \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix}
+\]
+令 $I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 且 $A = \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix}$，则 $M = I + \frac{3}{2}A$。
+
+**1. 计算 $A$ 的性质：**
+\[
+A^2 = \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix} = \begin{pmatrix} 1-1 & 1-1 \\ -1+1 & -1+1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = O
+\]
+由于 $A^2 = O$（零矩阵），则对于所有 $n \ge 2$，$A^n = O$。
+
+**2. 利用二项式定理展开 $M^{2022}$：**
+由于 $I$ 与任何矩阵均可交换（$IA = AI$），我们可以使用二项式展开式：
+\[
+M^{2022} = (I + \frac{3}{2}A)^{2022} = I^{2022} + \binom{2022}{1} I^{2021} (\frac{3}{2}A) + \binom{2022}{2} I^{2020} (\frac{3}{2}A)^2 + \dots
+\]
+因为 $A^n = O$（当 $n \ge 2$），展开式中从第三项起全部为零：
+\[
+M^{2022} = I + 2022 \cdot \frac{3}{2}A = I + 3033A
+\]
+
+**3. 计算最终矩阵：**
+\[
+M^{2022} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + 3033 \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix}
+\]
+\[
+M^{2022} = \begin{pmatrix} 1 + 3033 & 3033 \\ -3033 & 1 - 3033 \end{pmatrix} = \begin{pmatrix} 3034 & 3033 \\ -3033 & -3032 \end{pmatrix}
+\]
+对应选项 (A)。
+\end{solution}
+
+\question 设 $M$ 是一个 $3 \times 3$ 的实数可逆矩阵，$I$ 为单位矩阵。若 $M^{-1} = \text{adj}(\text{adj } M)$，证明 $(\text{adj } M)^2 = I$。
+
+\begin{solution}
+利用性质 $\text{adj}(\text{adj } M) = |M|^{n-2} M$，当 $n=3$ 时：
+\[ M^{-1} = |M| M \]
+两边取行列式：
+\[ \frac{1}{|M|} = |M|^3 \cdot |M| \implies |M|^5 = 1 \implies |M| = 1 \]
+代入原式得 $M^{-1} = M$，即 $M^2 = I$。
+又由 $\text{adj } M = |M| M^{-1} = 1 \cdot M^{-1} = M$。
+因此 $(\text{adj } M)^2 = M^2 = I$。
+\end{solution}
 
     \question 已知
     \[
@@ -16424,6 +16665,51 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         z = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i
         \]
     \end{solution}
+
+    \question
+令 $\bar{z}$ 表示复数 $z$ 的共轭复数，$i = \sqrt{-1}$。在复数集中，求方程
+\[
+\bar{z} - z^2 = i(\bar{z} + z^2)
+\]
+的不同根的个数。
+
+\begin{solution}
+首先整理给定的方程：
+\[
+\bar{z} - z^2 = i\bar{z} + iz^2
+\]
+将含有 $z^2$ 的项移至等号一边，含有 $\bar{z}$ 的项移至另一边：
+\[
+z^2(1 + i) = \bar{z}(1 - i)
+\]
+整理得：
+\[
+z^2 = \bar{z} \frac{1 - i}{1 + i}
+\]
+由于 $\frac{1 - i}{1 + i} = \frac{(1 - i)^2}{1^2 + 1^2} = \frac{-2i}{2} = -i$，方程变为：
+\[
+z^2 = -i\bar{z}
+\]
+设 $z = x + iy$，其中 $x, y \in \mathbb{R}$。则 $z^2 = x^2 - y^2 + i(2xy)$，且 $-i\bar{z} = -i(x - iy) = -y - ix$。
+比较实部与虚部可得方程组：
+1) $x^2 - y^2 = -y$
+2) $2xy = -x$
+
+由方程 (2) 得 $x(2y + 1) = 0$，故有以下两种情况：
+
+情况一：$x = 0$
+代入方程 (1) 得 $-y^2 = -y$，即 $y(y - 1) = 0$。
+解得 $y = 0$ 或 $y = 1$。
+得到两个根：$(0, 0)$ 和 $(0, 1)$。
+
+情况二：$y = -\frac{1}{2}$
+代入方程 (1) 得 $x^2 - (-\frac{1}{2})^2 = -(-\frac{1}{2})$，
+即 $x^2 - \frac{1}{4} = \frac{1}{2} \implies x^2 = \frac{3}{4}$。
+解得 $x = \frac{\sqrt{3}}{2}$ 或 $x = -\frac{\sqrt{3}}{2}$。
+得到两个根：$(\frac{\sqrt{3}}{2}, -\frac{1}{2})$ 和 $(-\frac{\sqrt{3}}{2}, -\frac{1}{2})$。
+
+综上所述，不同根的个数为 4。
+\end{solution}
     
     \question 已知复数 \(z\ne 0\),满足方程 \(z^2=z+i|z|\),求 \(|z|\) 的值。
     \begin{solution}
@@ -16810,6 +17096,32 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
         \]
         证毕。
     \end{solution}
+
+    \question
+设 $S$ 为满足 $|z^2 + z + 1| = 1$ 的所有复数 $z$ 的集合。判断以下命题是否正确：
+(B) 对于所有 $z \in S$，恒有 $|z| \le 2$
+(C) 对于所有 $z \in SInternal$，恒有 $|z + \frac{1}{2}| \ge \frac{1}{2}$
+
+\begin{solution}
+已知 $|z^2 + z + 1| = 1$。我们可以将其变形为 $|(z + \frac{1}{2})^2 + \frac{3}{4}| = 1$。
+
+证明命题 (B)：
+利用三角不等式 $|z_1 + z_2| \ge ||z_1| - |z_2||$：
+\[ 1 = |z^2 + z + 1| \ge |z^2| - |z + 1| \]
+\[ |z|^2 - |z| - 1 \le |z^2| - |z + 1| \le 1 \]
+由此得 $|z|^2 - |z| - 2 \le 0$，即 $(|z| - 2)(|z| + 1) \le 0$。
+由于 $|z| \ge 0$，故 $|z| \le 2$。
+因此，命题 (B) 正确。
+
+证明命题 (C)：
+令 $u = z + \frac{1}{2}$，则原式变为 $|u^2 + \frac{3}{4}| = 1$。
+再次利用三角不等式 $|z_1 + z_2| \le |z_1| + |z_2|$：
+\[ 1 = |u^2 + \frac{3}{4}| \le |u^2| + \frac{3}{4} \]
+\[ |u|^2 \ge 1 - \frac{3}{4} = \frac{1}{4} \]
+\[ |u| \ge \frac{1}{2} \]
+即 $|z + \frac{1}{2}| \ge \frac{1}{2}$。
+因此，命题 (C) 正确。
+\end{solution}
 
     \question 复数 $z_1,z_2,z_3,z_4,z_5$ 满足
     \begin{equation*}

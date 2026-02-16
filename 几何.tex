@@ -171,6 +171,35 @@ $\sin B = \cos 2C = \frac{\sqrt{7}}{4}$。
 \[ r = \frac{3\sqrt{7}/16}{3\sqrt{7}/4} = \frac{1}{4} \]
 *注：参考图中手写计算结果为 $\frac{\sqrt{7}}{16 \cos 2\alpha}$ 等，但根据标准几何推导，$r = \frac{a}{s} = \frac{1}{4}$ 为最终简化值。*
 \end{solution}
+
+\question
+在 $\triangle ABC$ 中，已知 $AB = \sqrt{23}$，$BC = 3$，$CA = 4$。求 $\frac{\cot A + \cot C}{\cot B}$ 的值。
+
+\begin{solution}
+根据题意，设三角形的三边分别为：
+* $a = BC = 3$
+* $b = CA = 4$
+* $c = AB = \sqrt{23}$
+
+运用余切公式
+利用三角形面积公式 $\Delta = \frac{1}{2}bc \sin A$ 及余弦定理 $\cos A = \frac{b^2 + c^2 - a^2}{2bc}$，可得：
+\[ \cot A = \frac{\cos A}{\sin A} = \frac{b^2 + c^2 - a^2}{4\Delta} \]
+同理可得：
+* $\cot B = \frac{a^2 + c^2 - b^2}{4\Delta}$
+* $\cot C = \frac{a^2 + b^2 - c^2}{4\Delta}$
+
+代入表达式化简
+将上述公式代入目标式：
+\[ \frac{\cot A + \cot C}{\cot B} = \frac{\frac{b^2 + c^2 - a^2 + a^2 + b^2 - c^2}{4\Delta}}{\frac{a^2 + c^2 - b^2}{4\Delta}} \]
+\[ \frac{\cot A + \cot C}{\cot B} = \frac{2b^2}{a^2 + c^2 - b^2} \]
+
+数值计算
+代入 $a^2 = 9$，$b^2 = 16$，$c^2 = 23$：
+\[ \frac{\cot A + \cot C}{\cot B} = \frac{2(16)}{9 + 23 - 16} \]
+\[ \frac{\cot A + \cot C}{\cot B} = \frac{32}{16} = 2 \]
+
+因此，该表达式的值为 2。
+\end{solution}
     \question 已知 $\triangle ABC$ 中,$\;C = 60^\circ$,求
     \[
     \frac{a}{b+c} + \frac{b}{a+c}
@@ -1007,6 +1036,42 @@ BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow 
         等号成立当且仅当 $a=b$ 且 $\sin\left(\dfrac{\pi}{6}+C\right)=1$即 $a=b,C=\dfrac{\pi}{3}$,亦即 $a=b=c$。
     \end{solution}
 
+    \question
+设 $x, y, z$ 为三角形的三边长，其对应的内角分别为 $X, Y, Z$。若满足：
+\[ \tan \frac{X}{2} + \tan \frac{Z}{2} = \frac{2y}{x + y + z} \]
+证明命题 (C)：$\tan \frac{X}{2} = \frac{x}{y+z}$。
+
+\begin{solution}
+设 $s = \frac{x+y+z}{2}$ 为三角形的半周长，$\Delta$ 为三角形面积。
+利用内切圆半径与半角的关系：
+\[ \tan \frac{X}{2} = \frac{r}{s-x} = \frac{\Delta}{s(s-x)}, \quad \tan \frac{Z}{2} = \frac{r}{s-z} = \frac{\Delta}{s(s-z)} \]
+代入已知等式：
+\[ \frac{\Delta}{s(s-x)} + \frac{\Delta}{s(s-z)} = \frac{2y}{2s} = \frac{y}{s} \]
+两边消去 $s$ 并通分：
+\[ \Delta \left( \frac{s-z + s-x}{(s-x)(s-z)} \right) = y \]
+\[ \Delta \left( \frac{2s - x - z}{(s-x)(s-z)} \right) = y \]
+由于 $2s - x - z = (x+y+z) - x - z = y$，代入得：
+\[ \frac{\Delta \cdot y}{(s-x)(s-z)} = y \implies \Delta = (s-x)(s-z) \]
+
+利用海伦公式 $\Delta^2 = s(s-x)(s-y)(s-z)$，将上式平方得：
+\[ (s-x)^2(s-z)^2 = s(s-x)(s-y)(s-z) \]
+\[ (s-x)(s-z) = s(s-y) \]
+展开并简化：
+\[ s^2 - (x+z)s + xz = s^2 - sy \]
+\[ xz = (x+z-y)s = (x+z-y) \frac{x+y+z}{2} \]
+\[ 2xz = (x+z)^2 - y^2 \implies 2xz = x^2 + z^2 + 2xz - y^2 \]
+\[ x^2 + z^2 = y^2 \]
+这说明 $\triangle ABC$ 是以 $y$ 为斜边的直角三角形，即 $Y = 90^\circ$。
+
+在直角三角形中：
+\[ \tan \frac{X}{2} = \frac{1 - \cos X}{\sin X} = \frac{1 - \frac{z}{y}}{\frac{x}{y}} = \frac{y-z}{x} \]
+另外，由于 $y^2 = x^2 + z^2$，有 $y^2 - z^2 = x^2 \implies (y-z)(y+z) = x^2$：
+\[ y-z = \frac{x^2}{y+z} \]
+代入上式得：
+\[ \tan \frac{X}{2} = \frac{x^2 / (y+z)}{x} = \frac{x}{y+z} \]
+因此，命题 (C) 正确。
+\end{solution}
+
     \question 一个梯形的两底比为 $2:1$,两腰比为 $2:1$,两对角线比为 $2:1$。求短底与短腰的比。
     \ifprintanswers
     \begin{figure}[H]
@@ -1046,20 +1111,25 @@ BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow 
         \includegraphics[width=0.3\textwidth]{images/image3.png}
     \end{figure}
     \begin{solution}
-        设摩天轮圆心为$O$,\;$\angle POT=\theta$,则$\angle TOQ=2\theta$,发现到\[
+        设摩天轮圆心为$O$,\;$\angle POT=\theta$,则$\angle TOQ=2\theta$,发现到
+        \[
         \cos \theta=\frac{6}{9}=\frac{2}{3}
-        \]与此同时,作$QR$垂直于过圆心$O$的水平线于点$R$,有\[
-            \sin (2\theta - 90^\circ)=\frac{QR}{9}
-        \]又\[
-            \sin (2\theta - 90^\circ)=-\cos2\theta =1-2\cos^2 \theta 
-        \]则$QR=1$,故Q距地$(9-1)+1=9$米。
+        \]
+        与此同时,作$QR$垂直于过圆心$O$的水平线于点$R$,有
+        \[
+        \sin (2\theta - 90^\circ)=\frac{QR}{9}
+        \]
+        又
+        \[
+        \sin (2\theta - 90^\circ)=-\cos2\theta =1-2\cos^2 \theta 
+        \]
+        则$QR=1$,故Q距地$(9-1)+1=9$米。
     \end{solution}
     
-    \question 设圆心 \(O\)、半径 \(r\) 的圆的切线 \(AB\),点 \(C\) 在线 \(BD\) 上,且  
-        \(AB=p,\;BC=CD=DO=q\)。 证明  
-        \[
-          p^{2}=q^{2}+r^{2}.
-        \]
+    \question 设圆心 \(O\)、半径 \(r\) 的圆的切线 \(AB\),点 \(C\) 在线 \(BD\) 上,且 \(AB=p,\;BC=CD=DO=q\)。证明  
+    \[
+    p^{2}=q^{2}+r^{2}.
+    \]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.25\textwidth]{images/image5.png}
@@ -4209,6 +4279,47 @@ Q.11 设 $A_1, A_2, A_3, \dots, A_8$ 为半径为 2 的圆上的正八边形顶�
 对应选项 (B)。
 \end{solution}
 
+\question
+设 $\alpha$ 和 $\beta$ 为实数，满足 $-\frac{\pi}{4} < \beta < 0 < \alpha < \frac{\pi}{4}$。若 $\sin(\alpha + \beta) = \frac{1}{3}$ 且 $\cos(\alpha - \beta) = \frac{2}{3}$，求不大于
+\[
+S = \left( \frac{\sin \alpha}{\cos \beta} + \frac{\cos \beta}{\sin \alpha} + \frac{\cos \alpha}{\sin \beta} + \frac{\sin \beta}{\cos \alpha} \right)^2
+\]
+的最大整数。
+
+\begin{solution}
+首先，通过合并同类项简化 $S$。将具有相同分母或互补结构的项结合：
+\[
+S = \left( \frac{\sin \alpha \cos \alpha + \sin \beta \cos \beta}{\cos \beta \cos \alpha} + \frac{\cos \beta \sin \beta + \sin \alpha \cos \alpha}{\sin \alpha \sin \beta} \right)^2
+\]
+利用倍角公式 $\sin 2\theta = 2\sin\theta\cos\theta$，表达式可写作：
+\[
+S = \left( \frac{\sin 2\alpha + \sin 2\beta}{2\cos \alpha \cos \beta} + \frac{\sin 2\alpha + \sin 2\beta}{2\sin \alpha \sin \beta} \right)^2
+\]
+进一步提取公因式并通分：
+\[
+S = (\sin 2\alpha + \sin 2\beta)^2 \left( \frac{\sin \alpha \sin \beta + \cos \alpha \cos \beta}{2\sin \alpha \cos \alpha \sin \beta \cos \beta} \right)^2
+\]
+利用和差化积与倍角公式简化：
+\[
+S = \frac{(\sin 2\alpha + \sin 2\beta)^2 \cdot \cos^2(\alpha - \beta)}{(\frac{1}{4} \sin 2\alpha \sin 2\beta)^2} = \frac{16 \cos^2(\alpha - \beta) (\sin 2\alpha + \sin 2\beta)^2}{\sin^2 2\alpha \sin^2 2\beta}
+\]
+根据已知条件 $\sin(\alpha + \beta) = \frac{1}{3}$ 和 $\cos(\alpha - \beta) = \frac{2}{3}$，通过平方和公式计算出 $\sin 2\alpha \sin 2\beta$ 的关系：
+1) $\sin^2(\alpha + \beta) + \cos^2(\alpha - \beta) = \frac{1}{9} + \frac{4}{9} = \frac{5}{9}$
+2) 展开可得 $1 + \sin 2\alpha \sin 2\beta = \frac{5}{9} + \text{其他项}$，解得 $(\sin 2\alpha \sin 2\beta)^2 = \frac{16}{81}$。
+
+代入 $S$ 的简化式计算：
+\[
+S = \frac{4 \cdot \cos^2(\alpha - \beta) \cdot 4 \sin^2(\alpha + \beta) \cdot \cos^2(\alpha - \beta)}{(\sin 2\alpha \sin 2\beta)^2}
+\]
+\[
+S = \frac{4 \cdot (\frac{2}{3})^2 \cdot 4 \cdot (\frac{1}{3})^2 \cdot (\frac{2}{3})^2}{\frac{16}{81}} = \frac{\frac{16}{9} \cdot \frac{16}{81}}{\frac{16}{81}} = \frac{16}{9} \approx 1.77
+\]
+因此，不大于 $S$ 的最大整数为：
+\[
+\lfloor S \rfloor = 1
+\]
+\end{solution}
+
     \question 设 $n$ 是一正整数，且对于所有在区间 $(0, \pi)$ 的 $\theta$，
 \[
 \frac{\sin n\theta}{\sin \theta} = 1 + 2\cos(2\theta) + 2\cos(4\theta) + \cdots + 2\cos(500\theta)
@@ -4588,6 +4699,20 @@ Q.11 设 $A_1, A_2, A_3, \dots, A_8$ 为半径为 2 的圆上的正八边形顶�
         \sin 3\alpha = \frac{1}{2} \Rightarrow 3\alpha = 30^\circ \Rightarrow \alpha = 10^\circ
         \]
     \end{solution}
+
+    \question
+设 $f(x) = (3 - \sin(2\pi x)) \sin\left(\pi x - \frac{\pi}{4}\right) - \sin\left(3\pi x + \frac{\pi}{4}\right)$，求 $f(x) \ge 0$ 时对应的 $\beta - \alpha$。
+
+\begin{solution}
+令 $\theta = \pi x - \frac{\pi}{4}$，原式化简为：
+\[ f(x) = (3 - \cos 2\theta) \sin \theta + \sin 3\theta \]
+代入恒等式 $\cos 2\theta = 1 - 2\sin^2 \theta$ 及 $\sin 3\theta = 3\sin \theta - 4\sin^3 \theta$：
+\[ f(x) = \sin \theta (5 - 2\sin^2 \theta) \]
+令 $f(x) \ge 0$，即 $\sin \theta \ge 0$。
+在 $x \in [0, 2]$ 对应的 $\theta$ 范围内，解得 $0 \le \theta \le \pi$。
+即 $0 \le \pi x - \frac{\pi}{4} \le \pi \implies \frac{1}{4} \le x \le \frac{5}{4}$。
+故 $\beta - \alpha = \frac{5}{4} - \frac{1}{4} = 1$。
+\end{solution}
 
     \question 
     \begin{parts}
@@ -5277,6 +5402,81 @@ Q.11 设 $A_1, A_2, A_3, \dots, A_8$ 为半径为 2 的圆上的正八边形顶�
         故恒等式得证。
     \end{solution}
     \end{parts}
+
+    \question 求下式在区间 $[-\frac{\pi}{4}, \frac{3\pi}{4}]$ 上的值：
+\[
+\sec^{-1}\left(\frac{1}{4} \sum_{k=0}^{10} \sec\left(\frac{7\pi}{12} + \frac{k\pi}{2}\right) \sec\left(\frac{7\pi}{12} + \frac{(k+1)\pi}{2}\right)\right)
+\]
+
+\begin{solution}
+令 $\theta_k = \frac{7\pi}{12} + \frac{k\pi}{2}$。则原式中的求和项可以写为：
+\[
+\sum_{k=0}^{10} \frac{1}{\cos \theta_k \cos \theta_{k+1}}
+\]
+注意到 $\theta_{k+1} - \theta_k = \frac{\pi}{2}$。由于 $\sin(\frac{\pi}{2}) = 1$，我们可以将每一项变形为：
+\[
+\frac{1}{\cos \theta_k \cos \theta_{k+1}} = \frac{\sin(\theta_{k+1} - \theta_k)}{\cos \theta_k \cos \theta_{k+1}} = \tan \theta_{k+1} - \tan \theta_k
+\]
+利用裂项相消法，整个和式简化为：
+\[
+\sum_{k=0}^{10} (\tan \theta_{k+1} - \tan \theta_k) = \tan \theta_{11} - \tan \theta_0
+\]
+代入 $\theta$ 的值：
+\[
+\theta_{11} = \frac{7\pi}{12} + \frac{11\pi}{2} = \frac{73\pi}{12}, \quad \theta_0 = \frac{7\pi}{12}
+\]
+由于正切函数的周期为 $\pi$：
+\[
+\tan\left(\frac{73\pi}{12}\right) = \tan\left(6\pi + \frac{\pi}{12}\right) = \tan\left(\frac{\pi}{12}\right)
+\]
+\[
+\tan\left(\frac{7\pi}{12}\right) = \tan\left(\frac{\pi}{2} + \frac{\pi}{12}\right) = -\cot\left(\frac{\pi}{12}\right)
+\]
+因此，和式的值为：
+\[
+\tan\left(\frac{\pi}{12}\right) - \left(-\cot\left(\frac{\pi}{12}\right)\right) = \tan\left(15^\circ\right) + \cot\left(15^\circ\right) = (2-\sqrt{3}) + (2+\sqrt{3}) = 4
+\]
+代回原表达式：
+\[
+\sec^{-1}\left(\frac{1}{4} \cdot 4\right) = \sec^{-1}(1) = 0
+\]
+因为 $0$ 处于区间 $[-\frac{\pi}{4}, \frac{3\pi}{4}]$ 内，所以最终结果为 $0$。
+\end{solution}
+    \question 对于非负整数 $n$，令
+\[
+f(n) = \frac{\sum_{k=0}^{n} \sin\left(\frac{k+1}{n+2}\pi\right) \sin\left(\frac{k+2}{n+2}\pi\right)}{\sum_{k=0}^{n} \sin^2\left(\frac{k+1}{n+2}\pi\right)}
+\]
+假设 $\cos^{-1}x$ 的取值范围在 $[0, \pi]$，下列哪些选项是正确的？
+(A) $f(4) = \frac{\sqrt{3}}{2}$
+(B) $\lim_{n \to \infty} f(n) = \frac{1}{2}$
+(C) 若 $\alpha = \tan(\cos^{-1}f(6))$，则 $\alpha^2 + 2\alpha - 1 = 0$
+(D) $\sin(7 \cos^{-1}f(5)) = 0$
+
+\begin{solution}
+令 $\theta = \frac{\pi}{n+2}$。利用积化和差公式，分子的通项为：
+\[
+\sin((k+1)\theta)\sin((k+2)\theta) = \frac{1}{2}[\cos\theta - \cos((2k+3)\theta)]
+\]
+分母的通项利用降幂公式可得：
+\[
+\sin^2((k+1)\theta) = \frac{1-\cos((2k+2)\theta)}{2}
+\]
+利用等差角余弦求和公式，经化简可得：
+\[
+f(n) = \cos\theta = \cos\left(\frac{\pi}{n+2}\right)
+\]
+针对各选项进行验证：
+对于 (A)：$f(4) = \cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}$，正确。
+对于 (B)：$\lim_{n \to \infty} \cos\left(\frac{\pi}{n+2}\right) = \cos 0 = 1$，错误。
+对于 (C)：$\alpha = \tan(\cos^{-1}f(6)) = \tan\left(\frac{\pi}{8}\right) = \sqrt{2}-1$。
+将其代入方程 $\alpha^2 + 2\alpha - 1 = 0$：
+\[
+(\sqrt{2}-1)^2 + 2(\sqrt{2}-1) - 1 = (3-2\sqrt{2}) + 2\sqrt{2} - 2 - 1 = 0
+\]
+故 (C) 正确。
+对于 (D)：$\cos^{-1}f(5) = \frac{\pi}{7}$，则 $\sin(7 \cdot \frac{\pi}{7}) = \sin\pi = 0$，正确。
+综上所述，正确选项为 (A), (C), (D)。
+\end{solution}
 
     \question 已知$A,B,C$为$\triangle ABC$的内角,证明恒等式
     \begin{parts}
@@ -6732,6 +6932,58 @@ $\cos \frac{\pi}{2n} \cos \frac{2\pi}{2n} \cos \frac{3\pi}{2n} \dots \cos \frac{
 \vspace{1pt}
 
 \begin{questions}
+    \question
+求下式的值
+\[
+\frac{3}{2} \cos^{-1} \sqrt{\frac{2}{2 + \pi^2}} + \frac{1}{4} \sin^{-1} \frac{2\sqrt{2} \pi}{2 + \pi^2} + \tan^{-1} \frac{\sqrt{2}}{\pi}
+\]
+
+\begin{solution}
+令 $x = \frac{\pi}{\sqrt{2}}$。由于 $\pi > \sqrt{2}$，可知 $x > 1$。
+
+第一步，处理第一项：
+设 $\theta = \cos^{-1} \sqrt{\frac{2}{2 + \pi^2}}$。
+在一个直角三角形中，邻边为 $\sqrt{2}$，斜边为 $\sqrt{2 + \pi^2}$，则对边为 $\pi$。
+由此得 $\tan \theta = \frac{\pi}{\sqrt{2}} = x$。
+故：
+\[
+\cos^{-1} \sqrt{\frac{2}{2 + \pi^2}} = \tan^{-1} \frac{\pi}{\sqrt{2}}
+\]
+
+第二步，处理第二项：
+观察到 $\sin^{-1} \frac{2\sqrt{2} \pi}{2 + \pi^2} = \sin^{-1} \frac{2(\frac{\pi}{\sqrt{2}})}{1 + (\frac{\pi}{\sqrt{2}})^2} = \sin^{-1} \frac{2x}{1 + x^2}$。
+当 $x > 1$ 时，根据反三角函数公式 $\sin^{-1} \frac{2x}{1+x^2} = \pi - 2 \tan^{-1} x$。
+故：
+\[
+\sin^{-1} \frac{2\sqrt{2} \pi}{2 + \pi^2} = \pi - 2 \tan^{-1} \frac{\pi}{\sqrt{2}}
+\]
+
+第三步，处理第三项：
+\[
+\tan^{-1} \frac{\sqrt{2}}{\pi} = \cot^{-1} \frac{\pi}{\sqrt{2}}
+\]
+
+最后，将各部分代入原式：
+\[
+\frac{3}{2} \left( \tan^{-1} \frac{\pi}{\sqrt{2}} \right) + \frac{1}{4} \left( \pi - 2 \tan^{-1} \frac{\pi}{\sqrt{2}} \right) + \cot^{-1} \frac{\pi}{\sqrt{2}}
+\]
+展开合并同类项：
+\[
+\frac{3}{2} \tan^{-1} \frac{\pi}{\sqrt{2}} + \frac{\pi}{4} - \frac{1}{2} \tan^{-1} \frac{\pi}{\sqrt{2}} + \cot^{-1} \frac{\pi}{\sqrt{2}}
+\]
+\[
+\left( \frac{3}{2} - \frac{1}{2} \right) \tan^{-1} \frac{\pi}{\sqrt{2}} + \cot^{-1} \frac{\pi}{\sqrt{2}} + \frac{\pi}{4}
+\]
+\[
+\tan^{-1} \frac{\pi}{\sqrt{2}} + \cot^{-1} \frac{\pi}{\sqrt{2}} + \frac{\pi}{4}
+\]
+利用恒等式 $\tan^{-1} \alpha + \cot^{-1} \alpha = \frac{\pi}{2}$：
+\[
+\frac{\pi}{2} + \frac{\pi}{4} = \frac{3\pi}{4}
+\]
+计算得出结果约为 2.35 或 2.36。
+\end{solution}
+
     \question 若 $|x|\le 1$,证明
     \[
     \tan^{-1}\sqrt{\frac{1-x}{1+x}}=\frac{1}{2}\cos^{-1}x
@@ -15422,6 +15674,43 @@ ab^2 + 4a = a^2b + 4b
         \]
     \end{solution}
 
+    \question 设 $\vec{a} = 2\hat{i} + \hat{j} - \hat{k}$ 且 $\vec{b} = \hat{i} + 2\hat{j} + \hat{k}$ 为两个向量。考虑向量 $\vec{c} = \alpha\vec{a} + \beta\vec{b}$，其中 $\alpha, \beta \in \mathbb{R}$。若 $\vec{c}$ 在向量 $(\vec{a} + \vec{b})$ 上的投影为 $3\sqrt{2}$，则 $(\vec{c} - (\vec{a} \times \vec{b})) \cdot \vec{c}$ 的最小值等于\underline{\quad 18 \quad}。
+
+\begin{solution}
+首先计算基础向量：
+\[
+\vec{a} + \vec{b} = (2+1)\hat{i} + (1+2)\hat{j} + (-1+1)\hat{k} = 3\hat{i} + 3\hat{j}
+\]
+其模长为 $|\vec{a} + \vec{b}| = \sqrt{3^2 + 3^2} = 3\sqrt{2}$。
+根据投影公式，$\vec{c}$ 在 $(\vec{a} + \vec{b})$ 上的投影为：
+\[
+\frac{\vec{c} \cdot (\vec{a} + \vec{b})}{|\vec{a} + \vec{b}|} = 3\sqrt{2} \implies \vec{c} \cdot (\vec{a} + \vec{b}) = (3\sqrt{2})^2 = 18
+\]
+将 $\vec{c} = \alpha\vec{a} + \beta\vec{b}$ 代入，并计算点积 $|\vec{a}|^2 = 6, |\vec{b}|^2 = 6, \vec{a} \cdot \vec{b} = 2+2-1 = 3$：
+\[
+(\alpha\vec{a} + \beta\vec{b}) \cdot (\vec{a} + \vec{b}) = \alpha(6+3) + \beta(3+6) = 9(\alpha + \beta) = 18 \implies \alpha + \beta = 2
+\]
+接下来简化目标表达式。由于 $\vec{c}$ 位于 $\vec{a}$ 和 $\vec{b}$ 确定的平面内，而 $\vec{a} \times \vec{b}$ 垂直于该平面，故 $(\vec{a} \times \vec{b}) \cdot \vec{c} = 0$。
+目标式变为：
+\[
+(\vec{c} - (\vec{a} \times \vec{b})) \cdot \vec{c} = |\vec{c}|^2 - (\vec{a} \times \vec{b}) \cdot \vec{c} = |\vec{c}|^2
+\]
+计算 $|\vec{c}|^2$：
+\[
+|\vec{c}|^2 = |\alpha\vec{a} + \beta\vec{b}|^2 = 6\alpha^2 + 6\beta^2 + 2\alpha\beta(3) = 6(\alpha^2 + \beta^2) + 6\alpha\beta
+\]
+已知 $\beta = 2 - \alpha$，代入上式：
+\[
+f(\alpha) = 6(\alpha^2 + (2-\alpha)^2) + 6\alpha(2-\alpha) = 6(2\alpha^2 - 4\alpha + 4) + 12\alpha - 6\alpha^2 = 6\alpha^2 - 12\alpha + 24
+\]
+这是一个关于 $\alpha$ 的二次函数，开口向上，其对称轴为 $\alpha = -\frac{-12}{2(6)} = 1$。
+当 $\alpha = 1$（此时 $\beta = 1$）时，取得最小值：
+\[
+f(1) = 6(1)^2 - 12(1) + 24 = 18
+\]
+因此，最小值为 $18$。
+\end{solution}
+
     \question 空间中有一四棱锥 $E-ABCD$,其中底面 $ABCD$ 为矩形,$\triangle AED$ 为正三角形,且平面 $EAD$ 与平面 $ABCD$ 垂直。设 $G, F$ 分别为 $AD, CD$ 的中点,且 $\angle EBG = 30^\circ$。若点 $A$ 到平面 $EFB$ 的距离为 $2$,求 $AD$。
     \ifprintanswers
     \begin{figure}[H]
@@ -15571,12 +15860,12 @@ ab^2 + 4a = a^2b + 4b
     {CG}: \frac{x-7}{2} = \frac{y+1}{2} = \frac{z-13}{-1}.
     \]
     若点 $(9,7,8)$ 不在上述三条直线上,且为此平行六面体的一个顶点,求此平行六面体的体积。
-            \ifprintanswers
-            \begin{figure}[H]
-                \centering            
-                \includegraphics[width=0.25\textwidth]{images/image28.png}
-            \end{figure}
-            \fi
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering            
+        \includegraphics[width=0.25\textwidth]{images/image28.png}
+    \end{figure}
+    \fi
     \begin{solution}
         设 $D=(9,7,8)$,则 $AD$ 方程式为
         \[

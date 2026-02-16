@@ -1866,6 +1866,123 @@ f(x) = \left[ \frac{p(x)}{n} \right]
         故 $x = g(1)$ 为 $F(x)$ 的最小值。
     \end{solution}
     \end{parts}
+
+    \question
+考虑所有位于区域 $\{(x,y) \in \mathbb{R} \times \mathbb{R} : 0 \le x \le \frac{\pi}{2} \text{ 且 } 0 \le y \le 2 \sin(2x)\}$ 内且有一条边在 $x$ 轴上的矩形。在所有此类矩形中，周长最大的矩形的面积是多少？
+
+\begin{solution}
+由于曲线 $y = 2 \sin(2x)$ 关于 $x = \frac{\pi}{4}$ 对称，设矩形右上角顶点为 $(\alpha, 2 \sin(2\alpha))$，其中 $\frac{\pi}{4} < \alpha < \frac{\pi}{2}$。
+
+矩形的尺寸为：
+* 宽度 $w = 2(\alpha - \frac{\pi}{4})$
+* 高度 $h = 2 \sin(2\alpha)$
+
+周长 $P = 2(w + h) = 4\alpha - \pi + 4 \sin(2\alpha)$。
+求导：
+\[ \frac{dP}{d\alpha} = 4 + 8 \cos(2\alpha) \]
+令导数为 0 可得 $\cos(2\alpha) = -\frac{1}{2}$，即 $2\alpha = \frac{2\pi}{3}$，$\alpha = \frac{\pi}{3}$。
+
+此时矩形的面积 $A$ 为：
+\[ A = w \cdot h = 2\left(\frac{\pi}{3} - \frac{\pi}{4}\right) \cdot 2 \sin\left(\frac{2\pi}{3}\right) \]
+\[ A = \frac{\pi}{6} \cdot \sqrt{3} = \frac{\pi}{2\sqrt{3}} \]
+故正确选项为 (C)。
+\end{solution}
+
+\question
+设 $g(x)$ 为实系数多项式，$m_g$ 表示 $g(x)$ 的相异实根的个数。假设 $S$ 是由实系数多项式组成的集合，定义为
+\[
+S = \{(x^2 - 1)^2(a_0 + a_1x + a_2x^2 + a_3x^3) : a_0, a_1, a_2, a_3 \in \mathbb{R}\}
+\]
+对于多项式 $f$，$f'$ 和 $f''$ 分别表示其一阶和二阶导数。当 $f \in S$ 时，$(m_{f'} + m_{f''})$ 的最小可能值是 \underline{\quad\quad}。
+
+\begin{solution}
+对于 $f(x) \in S$，由于包含因子 $(x^2 - 1)^2 = (x - 1)^2(x + 1)^2$，可知 $x = 1$ 和 $x = -1$ 是 $f(x)$ 的重根。
+因此，我们有：
+\[
+f(1) = 0, \quad f(-1) = 0
+\]
+根据重根的性质，导函数在重根处也为零：
+\[
+f'(1) = 0, \quad f'(-1) = 0
+\]
+根据罗尔定理（Rolle's Theorem），由于 $f(1) = f(-1) = 0$，在区间 $(-1, 1)$ 内至少存在一个点 $c$，使得：
+\[
+f'(c) = 0
+\]
+由此可知，$f'(x)$ 至少有三个相异实根 $\{-1, c, 1\}$，即：
+\[
+m_{f'} \geq 3
+\]
+接下来考虑 $f''(x)$。对 $f'(x)$ 的三个根 $\{-1, c, 1\}$ 再次运用罗尔定理：
+1. 在区间 $(-1, c)$ 内，至少存在一个点 $d_1$ 使得 $f''(d_1) = 0$。
+2. 在区间 $(c, 1)$ 内，至少存在一个点 $d_2$ 使得 $f''(d_2) = 0$。
+因此，$f''(x)$ 至少有两个相异实根 $\{d_1, d_2\}$，即：
+\[
+m_{f''} \geq 2
+\]
+综上所述，相加得到最小可能值：
+\[
+m_{f'} + m_{f''} \geq 3 + 2 = 5
+\]
+当取 $f(x) = (x^2 - 1)^2$ 时，可验证 $m_{f'} = 3$ 且 $m_{f''} = 2$，等号成立。
+故最小值为 5。
+\end{solution}
+
+\question
+设 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$ 是满足下列条件的函数：
+\[
+f(x + y) = f(x) + f(y) + f(x)f(y) \quad \text{且} \quad f(x) = xg(x)
+\]
+对于所有 $x, y \in \mathbb{R}$ 成立。若 $\lim_{x \to 0} g(x) = 1$，则下列哪些选项是正确的？
+(A) $f$ 在每一个 $x \in \mathbb{R}$ 处均可导
+(B) 若 $g(0) = 1$，则 $g$ 在每一个 $x \in \mathbb{R}$ 处均可导
+(C) 导数 $f'(1)$ 等于 1
+(D) 导数 $f'(0)$ 等于 1
+
+\begin{solution}
+首先，通过给定的极限条件求 $f'(0)$：
+\[
+f'(0) = \lim_{h \to 0} \frac{f(0+h) - f(0)}{h}
+\]
+由 $f(x) = xg(x)$ 可知 $f(0) = 0 \cdot g(0) = 0$。因此：
+\[
+f'(0) = \lim_{h \to 0} \frac{hg(h)}{h} = \lim_{h \to 0} g(h) = 1
+\]
+这说明 $f'(0) = 1$，故选项 (D) 正确。
+
+接下来，利用导数的定义求任意点 $x$ 的导数 $f'(x)$：
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+\]
+利用给定的函数方程 $f(x + h) = f(x) + f(h) + f(x)f(h)$：
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x) + f(h) + f(x)f(h) - f(x)}{h} = \lim_{h \to 0} \frac{f(h)(1 + f(x))}{h}
+\]
+\[
+f'(x) = (1 + f(x)) \lim_{h \to 0} \frac{f(h)}{h} = (1 + f(x)) \cdot f'(0) = f(x) + 1
+\]
+由于 $f'(x) = f(x) + 1$ 在实数集上均有意义且存在，说明 $f$ 在处处可导，故选项 (A) 正确。
+
+解微分方程 $\frac{df}{dx} = f + 1$：
+\[
+\int \frac{df}{f + 1} = \int dx \implies \ln|f(x) + 1| = x + C
+\]
+代入 $f(0) = 0$ 得 $C = 0$，故 $f(x) + 1 = e^x$，即 $f(x) = e^x - 1$。
+计算 $f'(1)$：
+\[
+f'(x) = e^x \implies f'(1) = e^1 = e \neq 1
+\]
+故选项 (C) 错误。
+
+最后考虑 $g(x)$。由 $f(x) = xg(x)$ 得当 $x \neq 0$ 时，$g(x) = \frac{e^x - 1}{x}$。
+若 $g(0) = 1$，则 $g(x)$ 在 $x=0$ 处连续。检查 $g(x)$ 在 $x=0$ 处的导数：
+\[
+g'(0) = \lim_{x \to 0} \frac{\frac{e^x - 1}{x} - 1}{x} = \lim_{x \to 0} \frac{e^x - 1 - x}{x^2} = \frac{1}{2}
+\]
+该极限存在，且当 $x \neq 0$ 时 $g(x)$ 显然可导，因此 $g$ 在处处可导，故选项 (B) 正确。
+
+综上所述，正确选项为 (A), (B), (D)。
+\end{solution}
     
     \question 已知对任意正整数 $k$,方程 
     \[
@@ -2399,6 +2516,32 @@ f(x) = \left[ \frac{p(x)}{n} \right]
         \]
     \end{solution}
 
+    \question 设 $f$ 在 $\mathbb{R}$ 上可导，且满足 $f(0)=0$ 以及对于所有 $x \in \mathbb{R}$，均有 $|f'(x)| \le |f(x)|$。证明：对于所有 $x \in [0, \frac{1}{2}]$，恒有 $f(x) = 0$。
+
+\begin{solution}
+因为 $f$ 在 $\mathbb{R}$ 上可导，所以 $f$ 在 $[0, \frac{1}{2}]$ 上连续，在 $(0, \frac{1}{2})$ 上可导。
+根据平均值定理（MVT），对于任意 $0 < x \le \frac{1}{2}$，存在 $c \in (0, x)$ 使得：
+\[
+f'(c) = \frac{f(x) - f(0)}{x - 0}
+\]
+由于 $f(0) = 0$，上式可化简为 $f(x) = x f'(c)$。取绝对值并结合已知条件 $|f'(c)| \le |f(c)|$：
+\[
+|f(x)| = |x| \cdot |f'(c)| \le \frac{1}{2} |f(c)| \quad \dots \textcircled{1}
+\]
+由于 $f$ 在闭区间 $[0, \frac{1}{2}]$ 上连续，根据最值定理（EVT），存在 $M \in \mathbb{R}$ 使得对于所有 $x \in [0, \frac{1}{2}]$，均有 $|f(x)| \le M$。
+且存在 $x_0 \in [0, \frac{1}{2}]$ 使得 $|f(x_0)| = M$。
+根据式 $\textcircled{1}$，对于该最大值点 $x_0$，存在对应的 $c_0 \in (0, x_0)$ 满足：
+\[
+|f(x_0)| \le \frac{1}{2} |f(c_0)|
+\]
+由于 $|f(c_0)| \le M$ 且 $|f(x_0)| = M$，代入上式得：
+\[
+M \le \frac{1}{2} M
+\]
+由于 $M \ge 0$，上述不等式成立的唯一可能为 $M = 0$。
+因为最大值 $M = 0$，故对于所有 $x \in [0, \frac{1}{2}]$，均有 $|f(x)| = 0$，即 $f(x) = 0$。
+\end{solution}
+
     \question 
     \begin{parts}
     \part 已知 $f(x)$ 在 $[0,+\infty)$ 上连续且单调增加,且 $f(0) \ge 0$,证明:
@@ -2687,6 +2830,50 @@ f(x) = \left[ \frac{p(x)}{n} \right]
         \int_0^{\infty}\frac{dx}{1+e^x}=\ln 2
         \]
     \end{solution}
+
+    \question
+对于正整数 $n$，定义
+\[
+f(n) = n + \frac{16n + 5n - 3n^2}{4n + 3n^2} + \frac{32n + n - 3n^2}{8n + 3n^2} + \frac{48n - 3n - 3n^2}{12n + 3n^2} + \dots + \frac{25n - 7n^2}{7n^2}
+\]
+求极限 $\lim_{n \to \infty} f(n)$ 的值。
+
+\begin{solution}
+首先将 $f(n)$ 整理为求和形式。观察通项，分子和分母可以表示为关于 $r$ 的函数。经过简化，该式可以写为：
+\[
+f(n) = n + \sum_{r=1}^{n} \frac{16r + (9-4r)n - 3n^2}{4rn + 3n^2}
+\]
+利用代数变形将常数项 $n$ 合并进求和号中：
+\[
+f(n) = \sum_{r=1}^{n} \left( 1 + \frac{16r + 9n - 4rn - 3n^2}{4rn + 3n^2} \right) = \sum_{r=1}^{n} \frac{4rn + 3n^2 + 16r + 9n - 4rn - 3n^2}{4rn + 3n^2}
+\]
+\[
+f(n) = \sum_{r=1}^{n} \frac{16r + 9n}{4rn + 3n^2}
+\]
+为了转化为黎曼和形式，分子分母同时除以 $n^2$：
+\[
+f(n) = \sum_{r=1}^{n} \frac{16(\frac{r}{n}) + 9}{4(\frac{r}{n}) + 3} \cdot \frac{1}{n}
+\]
+当 $n \to \infty$ 时，令 $x = \frac{r}{n}$，$\Delta x = \frac{1}{n}$，积分限为 $[0, 1]$。原极限转化为定积分：
+\[
+L = \int_{0}^{1} \frac{16x + 9}{4x + 3} \,dx
+\]
+利用多项式除法简化被积函数：
+\[
+\frac{16x + 9}{4x + 3} = \frac{4(4x + 3) - 3}{4x + 3} = 4 - \frac{3}{4x + 3}
+\]
+计算积分：
+\[
+L = \int_{0}^{1} \left( 4 - \frac{3}{4x + 3} \right) \,dx = \left[ 4x - \frac{3}{4} \ln|4x + 3| \right]_{0}^{1}
+\]
+\[
+L = (4 - \frac{3}{4} \ln 7) - (0 - \frac{3}{4} \ln 3)
+\]
+\[
+L = 4 - \frac{3}{4} (\ln 7 - \ln 3) = 4 - \frac{3}{4} \ln\left(\frac{7}{3}\right)
+\]
+对应选项 (B)。
+\end{solution}
 
     \question 对于 $n = 1,2,\dots$,定义
     \[
@@ -3341,6 +3528,88 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         I = -\frac{1}{4} ([t f(t)]_0^2 - \int_0^2 f(t) dt) = -\frac{1}{4} (2 \cdot \frac{1}{2} - 1) =0
         \]
     \end{solution}
+
+    \question
+考虑定义在 $\mathbb{R} \to \mathbb{R}$ 上的函数 $f, g$：
+\[
+f(x) = x^2 + \frac{5}{12} \quad \text{与} \quad g(x) = 
+\begin{cases} 
+2\left(1 - \frac{4|x|}{3}\right), & |x| \le \frac{3}{4} \\
+0, & |x| > \frac{3}{4} 
+\end{cases}
+\]
+若 $\alpha$ 是满足 $|x| \le \frac{3}{4}$ 且 $0 \le y \le \min\{f(x), g(x)\}$ 的区域面积，求 $9\alpha$ 的值。
+
+\begin{solution}
+首先分析区域的对称性。由于 $f(x)$ 和 $g(x)$ 均为偶函数，面积 $\alpha$ 关于 $y$ 轴对称。我们可以计算第一象限（$x \ge 0$）内的面积再乘以 2。
+
+**1. 寻找交点：**
+在 $x \ge 0$ 时，令 $f(x) = g(x)$：
+\[
+x^2 + \frac{5}{12} = 2 - \frac{8x}{3}
+\]
+整理得：
+\[
+x^2 + \frac{8}{3}x - \frac{19}{12} = 0 \implies 12x^2 + 32x - 19 = 0
+\]
+解得 $x = \frac{1}{2}$（舍去负值）。此时 $y = f\left(\frac{1}{2}\right) = \frac{1}{4} + \frac{5}{12} = \frac{8}{12} = \frac{2}{3}$。
+交点坐标为 $(\frac{1}{2}, \frac{2}{3})$。
+
+**2. 确定积分区间：**
+* 在 $[0, \frac{1}{2}]$ 范围内，$\min\{f(x), g(x)\} = f(x) = x^2 + \frac{5}{12}$。
+* 在 $[\frac{1}{2}, \frac{3}{4}]$ 范围内，$\min\{f(x), g(x)\} = g(x) = 2 - \frac{8x}{3}$。该部分是一个直角三角形，底为 $\frac{3}{4} - \frac{1}{2} = \frac{1}{4}$，高为 $\frac{2}{3}$。
+
+**3. 计算面积 $\alpha$：**
+\[
+\alpha = 2 \left( \int_{0}^{\frac{1}{2}} (x^2 + \frac{5}{12}) \,dx + \frac{1}{2} \cdot \frac{1}{4} \cdot \frac{2}{3} \right)
+\]
+计算积分部分：
+\[
+\int_{0}^{\frac{1}{2}} (x^2 + \frac{5}{12}) \,dx = \left[ \frac{x^3}{3} + \frac{5x}{12} \right]_{0}^{\frac{1}{2}} = \frac{1}{24} + \frac{5}{24} = \frac{6}{24} = \frac{1}{4}
+\]
+代入总面积公式：
+\[
+\alpha = 2 \left( \frac{1}{4} + \frac{1}{12} \right) = 2 \left( \frac{3+1}{12} \right) = 2 \cdot \frac{4}{12} = \frac{2}{3}
+\]
+
+**4. 计算最终结果：**
+\[
+9\alpha = 9 \cdot \frac{2}{3} = 6
+\]
+\end{solution}
+
+\question
+设函数 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$ 定义为 $f(x) = e^{x-1} - e^{-|x-1|}$ 且 $g(x) = \frac{1}{2}(e^{x-1} + e^{1-x})$。求在第一象限内，由曲线 $y = f(x)$，$y = g(x)$ 及 $x = 0$ 围成的图形面积。
+
+\begin{solution}
+首先分析函数 $f(x)$ 的分段表达式：
+当 $x \le 1$ 时，$|x-1| = 1-x$，则 $f(x) = e^{x-1} - e^{-(1-x)} = 0$。
+当 $x > 1$ 时，$|x-1| = x-1$，则 $f(x) = e^{x-1} - e^{1-x}$。
+
+确定两曲线在 $x > 1$ 时的交点：
+\[ e^{x-1} - e^{1-x} = \frac{1}{2}(e^{x-1} + e^{1-x}) \]
+\[ 2e^{x-1} - 2e^{1-x} = e^{x-1} + e^{1-x} \]
+\[ e^{x-1} = 3e^{1-x} \implies e^{2x-2} = 3 \implies x = 1 + \frac{\ln 3}{2} \]
+
+计算在第一象限内的面积 $A$，需分两段积分：
+
+第一部分区间 $[0, 1]$：
+在此区间 $f(x) = 0$，面积为：
+\[ A_1 = \int_{0}^{1} \frac{1}{2}(e^{x-1} + e^{1-x}) \,dx = \frac{1}{2} [e^{x-1} - e^{1-x}]_{0}^{1} \]
+\[ A_1 = \frac{1}{2} [ (1 - 1) - (e^{-1} - e) ] = \frac{1}{2}(e - e^{-1}) \]
+
+第二部分区间 $[1, 1 + \frac{\ln 3}{2}]$：
+在此区间 $g(x) > f(x)$，面积为：
+\[ A_2 = \int_{1}^{1+\frac{\ln 3}{2}} [g(x) - f(x)] \,dx = \int_{1}^{1+\frac{\ln 3}{2}} (\frac{3}{2}e^{1-x} - \frac{1}{2}e^{x-1}) \,dx \]
+\[ A_2 = [-\frac{3}{2}e^{1-x} - \frac{1}{2}e^{x-1}]_{1}^{1+\frac{\ln 3}{2}} \]
+代入上限（此时 $e^{x-1} = \sqrt{3}$，$e^{1-x} = \frac{1}{\sqrt{3}}$）：
+\[ A_2 = (-\frac{3}{2\sqrt{3}} - \frac{\sqrt{3}}{2}) - (-\frac{3}{2} - \frac{1}{2}) = -\sqrt{3} + 2 \]
+
+总面积为：
+\[ A = A_1 + A_2 = (2 - \sqrt{3}) + \frac{1}{2}(e - e^{-1}) \]
+
+对照选项，正确答案为 (A)。
+\end{solution}
 
     \question 坐标平面上,$A,B$ 两点分别在直线 
     \[
@@ -6764,6 +7033,52 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \end{solution}
 
     \question
+设 $f: \mathbb{R} \to \mathbb{R}$ 为一个可导函数，其导函数 $f'$ 连续且满足 $f(\pi) = -6$。若函数 $F: [0, \pi] \to \mathbb{R}$ 定义为 $F(x) = \int_0^x f(t) \,dt$，且满足：
+\[
+\int_0^\pi (f'(x) + F(x)) \cos x \,dx = 2
+\]
+则 $f(0)$ 的值为 \underline{\quad\quad}。
+
+\begin{solution}
+我们将积分式拆分为两部分进行计算：
+\[
+I = \int_0^\pi f'(x) \cos x \,dx + \int_0^\pi F(x) \cos x \,dx = 2
+\]
+对第一项 $\int_0^\pi f'(x) \cos x \,dx$ 使用分部积分法，令 $u = \cos x, dv = f'(x) \,dx$：
+\[
+\int_0^\pi \cos x f'(x) \,dx = [\cos x f(x)]_0^\pi - \int_0^\pi f(x) (-\sin x) \,dx
+\]
+\[
+= \cos(\pi)f(\pi) - \cos(0)f(0) + \int_0^\pi f(x) \sin x \,dx
+\]
+代入 $f(\pi) = -6$：
+\[
+= -1(-6) - 1f(0) + \int_0^\pi f(x) \sin x \,dx = 6 - f(0) + \int_0^\pi f(x) \sin x \,dx \quad \text{--- (1)}
+\]
+对第二项 $\int_0^\pi F(x) \cos x \,dx$ 使用分部积分法，令 $u = F(x), dv = \cos x \,dx$，则 $du = F'(x) \,dx = f(x) \,dx, v = \sin x$：
+\[
+\int_0^\pi F(x) \cos x \,dx = [F(x) \sin x]_0^\pi - \int_0^\pi \sin x f(x) \,dx
+\]
+由于 $\sin(\pi) = 0$ 且 $\sin(0) = 0$，第一项为 0：
+\[
+= 0 - \int_0^\pi f(x) \sin x \,dx \quad \text{--- (2)}
+\]
+将式 (1) 和式 (2) 代回原积分等式：
+\[
+(6 - f(0) + \int_0^\pi f(x) \sin x \,dx) + (-\int_0^\pi f(x) \sin x \,dx) = 2
+\]
+消去相互抵消的积分项：
+\[
+6 - f(0) = 2
+\]
+解得：
+\[
+f(0) = 4
+\]
+因此，$f(0)$ 的值为 4。
+\end{solution}
+
+    \question
     \[
     \int \frac{x}{1+\sin x} \, dx
     \]
@@ -8540,6 +8855,35 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \end{align*}
     \end{solution}
 
+    \question
+对于任意实数 $x$，令 $[x]$ 表示不超过 $x$ 的最大整数。若
+\[ I = \int_{0}^{10} \left[ \sqrt{\frac{10x}{x+1}} \right] \,dx \]
+求 $9I$ 的值。
+
+\begin{solution}
+首先分析被积函数 $f(x) = \sqrt{\frac{10x}{x+1}}$ 在区间 $x \in [0, 10]$ 上的取值范围。
+令 $g(x) = \frac{10x}{x+1}$，求导可得：
+\[ g'(x) = \frac{10(x+1) - 10x}{(x+1)^2} = \frac{10}{(x+1)^2} > 0 \]
+因此 $g(x)$ 在 $[0, 10]$ 上单调递增。
+当 $x=0$ 时，$f(0)=0$；当 $x=10$ 时，$f(10)=\sqrt{\frac{100}{11}} \approx \sqrt{9.09} \approx 3.015$。
+故在积分区间内，$[f(x)]$ 的可能取值为 $0, 1, 2, 3$。
+
+我们需要找到分段函数的临界点，即令 $f(x) = k$（$k=1, 2, 3$）：
+1. 当 $\sqrt{\frac{10x}{x+1}} = 1$ 时，$\frac{10x}{x+1} = 1 \implies 10x = x + 1 \implies x = \frac{1}{9}$。
+2. 当 $\sqrt{\frac{10x}{x+1}} = 2$ 时，$\frac{10x}{x+1} = 4 \implies 10x = 4x + 4 \implies x = \frac{4}{6} = \frac{2}{3}$。
+3. 当 $\sqrt{\frac{10x}{x+1}} = 3$ 时，$\frac{10x}{x+1} = 9 \implies 10x = 9x + 9 \implies x = 9$。
+
+分段积分如下：
+\[ I = \int_{0}^{\frac{1}{9}} 0 \,dx + \int_{\frac{1}{9}}^{\frac{2}{3}} 1 \,dx + \int_{\frac{2}{3}}^{9} 2 \,dx + \int_{9}^{10} 3 \,dx \]
+\[ I = 0 + \left( \frac{2}{3} - \frac{1}{9} \right) + 2 \times \left( 9 - \frac{2}{3} \right) + 3 \times (10 - 9) \]
+\[ I = \frac{5}{9} + 2 \times \frac{25}{3} + 3 = \frac{5}{9} + \frac{150}{9} + \frac{27}{9} = \frac{182}{9} \]
+
+计算 $9I$ 的值：
+\[ 9I = 9 \times \frac{182}{9} = 182 \]
+
+因此，$9I$ 的值为 182。
+\end{solution}
+
     \question 
     \[
     \int_{-2}^{2} \max\{x,\;x^{2},\;x^{3}-2x\}\,dx
@@ -8567,7 +8911,6 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \[
     \int_{0}^{2} \left( \sqrt{1+x^3} + \sqrt[3]{x^2+2x} \right) \, dx
     \]
-
     \begin{solution}
         令 $f(x) = \sqrt{1+x^3}$。当 $x \in [0, 2]$ 时,$f(x)$ 从 $f(0)=1$ 单调递增至 $f(2)=3$。考虑函数 $y = f(x),x \in [0, 2]$ 的反函数。由 $y = \sqrt{1+x^3}$ 可得 $y^2 = 1+x^3$,解得:
         \[
@@ -8590,6 +8933,49 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
         \int_{0}^{2} \left( \sqrt{1+x^3} + \sqrt[3]{x^2+2x} \right) \, dx = 6
         \]
     \end{solution}
+
+    \question
+求不大于
+\[
+S = \int_{1}^{2} \log_2(x^3 + 1) \,dx + \int_{1}^{\log_2 9} (2^x - 1)^{\frac{1}{3}} \,dx
+\]
+的最大整数。
+
+\begin{solution}
+本题利用原函数与反函数积分的和公式：
+\[
+\int_{a}^{b} f(x) \,dx + \int_{f(a)}^{f(b)} f^{-1}(x) \,dx = b \cdot f(b) - a \cdot f(a)
+\]
+
+**1. 验证反函数关系：**
+设 $f(x) = \log_2(x^3 + 1)$。
+为了求其反函数 $f^{-1}(x)$，令 $y = \log_2(x^3 + 1)$：
+\[
+2^y = x^3 + 1 \implies x^3 = 2^y - 1 \implies x = (2^y - 1)^{\frac{1}{3}}
+\]
+故 $f^{-1}(x) = (2^x - 1)^{\frac{1}{3}}$。这与原式中的第二个积分函数完全一致。
+
+**2. 验证积分上下限：**
+* 当 $x = 1$ 时，$f(1) = \log_2(1^3 + 1) = \log_2 2 = 1$。
+* 当 $x = 2$ 时，$f(2) = \log_2(2^3 + 1) = \log_2 9$。
+积分限正好对应公式中的 $a=1, b=2$ 以及 $f(a)=1, f(b)=\log_2 9$。
+
+**3. 计算 $S$ 的值：**
+根据公式计算：
+\[
+S = 2 \cdot f(2) - 1 \cdot f(1) = 2 \log_2 9 - 1
+\]
+\[
+S = \log_2(9^2) - 1 = \log_2 81 - 1 = \log_2 81 - \log_2 2 = \log_2\left(\frac{81}{2}\right) = \log_2 40.5
+\]
+
+**4. 取最大整数（高斯取整）：**
+由于 $2^5 = 32$ 且 $2^6 = 64$，可知：
+\[
+5 < \log_2 40.5 < 6
+\]
+因此，$S$ 的最大整数值（即 $\lfloor S \rfloor$）为 **5**。
+\end{solution}
 
     \question 
     \[
