@@ -6623,6 +6623,144 @@ g(0) = \left( \frac{1}{8} \right)^0 = 1
         从而方程 $f(t)=\sqrt{2a}$ 恰有三个实数解 $$t_1=-\frac{5a}{8},\ t_2=0,\ t_3=\frac{5a}{8}$$
         由条件知 $b=x_3=t_3-\frac{a}{2}=\frac{a}{8}$, 结合 $b=\sqrt{2a}$ 得 $a=128$,于是 $a+b=\frac{9a}{8}=144$
     \end{solution}  
+
+    \question
+设 $X$ 和 $Y$ 是集合，设 $A$ 和 $B$ 是 $X$ 的任意子集，设 $C$ 和 $D$ 是 $Y$ 的任意子集。确定以下性质对于所有从 $X$ 到 $Y$ 的函数 $F$ 是否为真，若为假，请举出至少一个函数 $F$ 的反例。
+
+42. $F(A \cap B) \subseteq F(A) \cap F(B)$
+43. $F(A) \cap F(B) \subseteq F(A \cap B)$
+48. 对于所有 $Y$ 的子集 $C$ 和 $D$，$F^{-1}(C - D) = F^{-1}(C) - F^{-1}(D)$
+
+\begin{solution}
+\textbf{42. 该性质为真。}
+\textbf{证明：}
+令 $F : X \to Y$ 为任意函数，假设 $A \subseteq X$ 且 $B \subseteq X$。
+令 $y \in F(A \cap B)$。根据函数像的定义，$y = F(x)$，其中某个 $x \in A \cap B$。
+根据交集的定义，$x \in A$ 且 $x \in B$。
+因此：
+\[
+y = F(x) \quad \text{对于某个 } x \in A \text{（此时 } y \in F(A) \text{）}
+\]
+并且
+\[
+y = F(x) \quad \text{对于同一个 } x \in B \text{（此时 } y \in F(B) \text{）}
+\]
+根据交集的定义，可知 $y \in F(A) \cap F(B)$。
+
+\textbf{43. 该性质为假。}
+\textbf{反例：}
+令 $X = \{0, 1\}$，$Y = \{0\}$，$A = \{0\}$，$B = \{1\}$。
+定义函数 $F : X \to Y$ 为 $F(0) = 0, F(1) = 0$。
+那么 $0 \in \{0\} = F(\{0\}) \cap F(\{1\}) = F(A) \cap F(B)$。
+但是 $A \cap B = \{0\} \cap \{1\} = \varnothing$，因此 $F(A \cap B) = \varnothing$。
+所以 $0 \notin F(A \cap B) = \varnothing$。
+
+\textbf{48. 该陈述为真。}
+\textbf{证明：}
+令 $f : X \to Y$ 为任意函数，并假设 $C \subseteq Y$ 且 $D \subseteq Y$。
+对于任意元素 $x \in X$，根据原像（逆像）和集合差集的定义：
+\begin{align*}
+x \in F^{-1}(C - D) &\iff F(x) \in C - D \\
+&\iff F(x) \in C \text{ 且 } F(x) \notin D \\
+&\iff x \in F^{-1}(C) \text{ 且 } x \notin F^{-1}(D) \\
+&\iff x \in F^{-1}(C) - F^{-1}(D)
+\end{align*}
+因此，$F^{-1}(C - D) = F^{-1}(C) - F^{-1}(D)$。
+\end{solution}
+
+\question
+设 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$ 是函数，则函数 $(f + g): \mathbb{R} \to \mathbb{R}$ 的定义公式为：对于所有实数 $x$，$(f + g)(x) = f(x) + g(x)$。
+
+36. 如果 $f$ 和 $g$ 都是单射，$(f + g)$ 是否也一定是单射？请证明你的结论。
+
+37. 如果 $f$ 和 $g$ 都是满射，$(f + g)$ 是否也一定是满射？请证明你的结论。
+
+\begin{solution}
+36. \textbf{不一定。} $(f + g)$ 不必是单射。
+\textbf{反例：}
+取 $f: \mathbb{R} \to \mathbb{R}, f(x) = x$，以及 $g: \mathbb{R} \to \mathbb{R}, g(x) = -x$。显然 $f$ 和 $g$ 都是单射。
+然而对于任意 $x \in \mathbb{R}$：
+\[
+(f + g)(x) = f(x) + g(x) = x + (-x) = 0
+\]
+取 $x_1 = 1$ 且 $x_2 = 2$。显然 $x_1 \neq x_2$，但 $(f + g)(1) = 0$ 且 $(f + g)(2) = 0$。
+因此 $(f + g)(1) = (f + g)(2)$，说明 $(f + g)$ 不是单射。
+
+37. \textbf{不一定。} $(f + g)$ 不必是满射。
+\textbf{反例：}
+令 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$ 分别定义为 $f(x) = x$ 和 $g(x) = -x$，正如上题中的反例。
+根据上题可知，对于所有 $x \in \mathbb{R}$，$(f + g)(x) = 0$。
+因此 $(f + g)$ 不是满射。例如，值域中的 $y = 1 \in \mathbb{R}$ 在该函数下没有原像（不存在 $x$ 使得 $0 = 1$）。
+\end{solution}
+
+\question
+18. 如果 $f: X \to Y$ 和 $g: Y \to Z$ 是函数，且 $g \circ f$ 是单射，那么 $f$ 是否一定是单射？请证明或举出反例。
+
+19. 如果 $f: X \to Y$ 和 $g: Y \to Z$ 是函数，且 $g \circ f$ 是满射，那么 $g$ 是否一定是满射？请证明或举出反例。
+
+\begin{solution}
+18. \textbf{是，$f$ 必须是单射。}
+\textbf{证明：}
+假设 $f: X \to Y$ 和 $g: Y \to Z$ 是函数，使得 $g \circ f$ 是单射。
+令 $x_1$ 和 $x_2$ 是 $X$ 中的任意两个元素，使得 $f(x_1) = f(x_2)$。
+显然 $f(x_1) = f(x_2) \in Y$，因此：
+\[
+g(f(x_1)) = g(f(x_2))
+\]
+由此可知：
+\[
+g \circ f(x_1) = g \circ f(x_2)
+\]
+由于已知 $g \circ f$ 是单射，我们必须有 $x_1 = x_2$。
+这证明了 $f$ 是单射。
+
+19. \textbf{是，$g$ 必须是满射。}
+\textbf{证明：}
+假设 $f: X \to Y$ 和 $g: Y \to Z$ 是函数，使得 $g \circ f$ 是满射。
+令 $z$ 是 $Z$ 中的任意一个元素。
+由于 $g \circ f$ 是满射，根据定义，存在 $x \in X$ 使得：
+\[
+g \circ f(x) = g(f(x)) = z
+\]
+令 $y = f(x)$。
+显然 $y \in Y$ 且 $g(y) = z$。
+因此，对于 $Z$ 中的任意元素，在 $Y$ 中都存在一个元素 $y$ 使得 $g(y) = z$。
+这证明了 $g$ 是满射。
+\end{solution}
+
+\question
+(a) 给定任意函数 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$，定义新函数如下：
+\begin{itemize}
+    \item $(f \cdot g)(x) = f(x) \cdot g(x)$
+    \item $(f \oplus g)(x) = |f(x)| + |g(x)|$
+\end{itemize}
+对于 $? \in \{\cdot, \oplus\}$，判断以下命题：
+(i) 若 $f, g$ 均单射，$f ? g$ 是否必单射？
+(ii) 若 $f, g$ 均满射，$f ? g$ 是否必满射？
+(iii-iv) 若 $f ? g$ 单射，$f$ 或 $g$ 是否必单射？
+(v-vi) 若 $f ? g$ 满射，$f$ 或 $g$ 是否必满射？
+
+(b) 给定函数 $f: X \to Y, g: Y \to Z, h: Z \to A$：
+(i) 若 $h \circ g \circ f$ 单射，$h$ 是否必单射？
+(ii) 若 $h \circ g \circ f$ 单射，$f$ 是否必满射？
+(iii) 若 $f, h$ 均单射，$h \circ g \circ f$ 是否必单射？
+(iv) 若 $f, h$ 均满射，$h \circ g \circ f$ 是否必满射？
+
+\begin{solution}
+\textbf{(a) 部分结论提示：}
+\begin{itemize}
+    \item \textbf{(i) 均为否。} 反例：令 $f(x)=x, g(x)=x$（均为单射），则 $(f \cdot g)(x)=x^2$ 不是单射（$1$ 和 $-1$ 映射到同一个值）。对于 $\oplus$，同样取 $f(x)=x, g(x)=x$，则 $|x|+|x|=2|x|$ 也不是单射。
+    \item \textbf{(ii) 均为否。} 对于 $\oplus$ 运算，结果永远 $\ge 0$，因此不可能覆盖整个实数集 $\mathbb{R}$，故绝不是满射。
+\end{itemize}
+
+\textbf{(b) 部分证明与反驳：}
+\begin{itemize}
+    \item \textbf{(i) 否。} 若 $h \circ (g \circ f)$ 单射，只能断定第一步（即 $g \circ f$）是单射。最后一步 $h$ 不需要是单射。
+    \item \textbf{(ii) 否。} 单射的复合只能保证起始函数 $f$ 是单射，而不能保证它是满射。
+    \item \textbf{(iii) 否。} 即使两头 $f$ 和 $h$ 是单射，如果中间的 $g$ 将两个不同的元素映射到了同一个值，那么整个复合函数就会失去单射性。
+    \item \textbf{(iv) 否。} 同理，如果中间的 $g$ 漏掉了值域中的某些部分，即使 $h$ 是满射也无法弥补，整个复合函数将不再是满射。
+\end{itemize}
+\end{solution}
 \end{questions}
 \pagebreak
 
