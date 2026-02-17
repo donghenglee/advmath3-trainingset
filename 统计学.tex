@@ -95,6 +95,39 @@ C_3^1 \cdot C_4^2 \cdot 2! = 3 \cdot 6 \cdot 2 = 36
 \]
 故选 A。
 \end{solution}
+
+\question 
+三个随机选择的非负整数 $x, y$ 和 $z$ 满足方程 $x + y + z = 10$。则 $z$ 为偶数的概率是：
+\begin{choices}
+    \item $\frac{36}{55}$
+    \item $\frac{6}{11}$
+    \item $\frac{1}{2}$
+    \item $\frac{5}{11}$
+\end{choices}
+
+\begin{solution}
+方程 $x + y + z = 10$ 的非负整数解的个数可以通过“隔板法”计算。
+公式为 $\binom{n+k-1}{k-1}$，其中 $n=10, k=3$：
+\[ \text{总解数} = \binom{10+3-1}{3-1} = \binom{12}{2} = \frac{12 \times 11}{2} = 66 \]
+
+令 $z = 2k$，其中 $k$ 为非负整数。由于 $z \leq 10$，故 $k \in \{0, 1, 2, 3, 4, 5\}$。
+原方程变为：$x + y + 2k = 10 \Rightarrow x + y = 10 - 2k$。
+对于每一个固定的 $k$，方程 $x + y = 10 - 2k$ 的非负整数解数为 $(10 - 2k) + 1$。
+
+我们将所有可能的 $k$ 值对应的解数相加：
+* 若 $k=0 (z=0)$：$x+y=10 \Rightarrow 11$ 组解
+* 若 $k=1 (z=2)$：$x+y=8 \Rightarrow 9$ 组解
+* 若 $k=2 (z=4)$：$x+y=6 \Rightarrow 7$ 组解
+* 若 $k=3 (z=6)$：$x+y=4 \Rightarrow 5$ 组解
+* 若 $k=4 (z=8)$：$x+y=2 \Rightarrow 3$ 组解
+* 若 $k=5 (z=10)$：$x+y=0 \Rightarrow 1$ 组解
+
+符合条件的解总数为：$11 + 9 + 7 + 5 + 3 + 1 = 36$。
+
+\[ P(z \text{ 为偶数}) = \frac{\text{符合条件的解数}}{\text{总解数}} = \frac{36}{66} = \frac{6}{11} \]
+
+因此，正确选项为 **[B]**。
+\end{solution}
     \question 正八面体有 $8$ 个全等的正三角形面。任取 $3$ 个面,其面心组成的三角形是正三角形的概率是多少？
     \begin{solution}
         正八面体的对偶多面体是正方体,其面心对应正方体的 $8$ 个顶点。  
