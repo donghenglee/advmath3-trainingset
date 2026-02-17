@@ -549,29 +549,22 @@ $\sin B = \cos 2C = \frac{\sqrt{7}}{4}$。
     \end{figure}
     \fi
 \begin{solution}
-连接 $OD$。设圆的半径为 $r = 34$。
-在直角 $\triangle OCD$ 中，由勾股定理得：
-\[ OC^2 + CD^2 = OD^2 = 34^2 \]
-因为 $\angle DCB = 90^\circ$ 且 $CE \perp BD$，
-在直角 $\triangle BCD$ 中，由射影定理可知：
-\[ CD^2 = DE \cdot DB, \quad BC^2 = BE \cdot BD, \quad CE^2 = DE \cdot EB \]
-由 $C, E, B, D$ 四点共圆（均在以 $BD$ 为直径的圆上），设 $BD$ 的中点为 $M$。
-则 $M$ 到 $C, E, B, D$ 的距离相等，即 $MC = ME = MB = MD$。
-由于 $M$ 是弦 $BD$ 的中点，连接 $OM$，则 $OM \perp BD$。
-又因为 $CE \perp BD$，所以 $OM \parallel CE$。
-在 $\triangle BCD$ 中，$M$ 是 $BD$ 中点，作 $MN \perp BC$ 于 $N$，利用坐标系或比例关系可得：
-利用直角三角形中的几何关系，可以得到如下等式：
-\[ OE^2 = OM^2 + ME^2 \]
-已知 $OE = 30$，$OB = 34$。在直角 $\triangle OMB$ 中：
+因为 $CD \perp AB$，所以 $\angle DCB = 90^\circ$。
+又因为 $CE \perp BD$，所以 $\angle CEB = 90^\circ$。
+由此可知，$C, E, B, D$ 四点共圆，且该圆以 $BD$ 为直径。
+设 $BD$ 的中点为 $M$，则 $M$ 是该圆的圆心，且 $MC = ME = MB = MD$。
+连接 $OM$，根据垂径定理，$OM \perp BD$。
+在直角 $\triangle OMB$ 中：
 \[ OM^2 + MB^2 = OB^2 = 34^2 \]
-由于 $M$ 是 $BD$ 的中点，且 $CE \parallel OM$，通过计算 $CE$ 与 $OM$ 的比例关系：
-经推导可知 $CE$ 的长度满足：
-\[ CE = \frac{OB^2 - OE^2}{BC} \text{ (简化关系后)} \]
-代入数值计算：
-设 $CE = x$。通过面积关系与勾股定理联立方程求解：
-\[ 34^2 - 30^2 = 1156 - 900 = 256 \]
-\[ x = \sqrt{256} = 16 \]
-验证：当 $CE = 16$ 时，所有几何位置关系成立。
+在直角 $\triangle OME$ 中：
+\[ OM^2 + ME^2 = OE^2 = 30^2 \]
+由于 $MB = ME$，两式相减可得：
+\[ CE^2 = OB^2 - OE^2 \]
+\[ CE^2 = 34^2 - 30^2 \]
+\[ CE^2 = 1156 - 900 = 256 \]
+\[ CE = 16 \]
+故正确答案为 D。
+\textcolor{red}{(待验证)}
 \end{solution}
 
     \question
