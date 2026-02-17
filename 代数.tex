@@ -580,6 +580,102 @@
         &= 1
         \end{align*}
     \end{solution}
+
+    \question 设 $f(x) = x^3 - 3x^2 - x - 1$ 的根为 $\alpha, \beta$ 及 $\gamma$。求 $(1 - \alpha^2)(1 - \beta^2)(1 - \gamma^2)$ 的值。
+
+\begin{solution}
+根据韦达定理, 对于方程 $x^3 - 3x^2 - x - 1 = 0$, 我们有:
+\[
+\alpha + \beta + \gamma = 3
+\]
+\[
+\alpha\beta + \beta\gamma + \gamma\alpha = -1
+\]
+\[
+\alpha\beta\gamma = 1
+\]
+我们要计算的是 $P = (1 - \alpha^2)(1 - \beta^2)(1 - \gamma^2)$。
+注意到 $1 - x^2 = (1 - x)(1 + x)$, 因此原式可以展开为:
+\[
+P = [(1 - \alpha)(1 - \beta)(1 - \gamma)] \cdot [(1 + \alpha)(1 + \beta)(1 + \gamma)]
+\]
+由于 $\alpha, \beta, \gamma$ 是 $f(x)$ 的根, 我们有恒等式:
+\[
+f(x) = (x - \alpha)(x - \beta)(x - \gamma)
+\]
+对比上述两部分:
+1. 第一部分: $(1 - \alpha)(1 - \beta)(1 - \gamma) = f(1)$。
+计算 $f(1)$:
+\[
+f(1) = 1^3 - 3(1)^2 - 1 - 1 = 1 - 3 - 1 - 1 = -3
+\]
+2. 第二部分: $(1 + \alpha)(1 + \beta)(1 + \gamma)$。
+注意到这等于 $-(-1 - \alpha)(-1 - \beta)(-1 - \gamma)$, 即 $-f(-1)$。
+计算 $f(-1)$:
+\[
+f(-1) = (-1)^3 - 3(-1)^2 - (-1) - 1 = -1 - 3 + 1 - 1 = -4
+\]
+所以 $(1 + \alpha)(1 + \beta)(1 + \gamma) = -f(-1) = -(-4) = 4$。
+
+将两部分结果相乘:
+\[
+P = f(1) \cdot [-f(-1)] = -3 \cdot 4 = -12
+\]
+[注: 根据您的手写笔记, 此处计算为 $1 - 11 - 5 - 1 = -16$。让我们重新核对对称式展开]:
+\[
+(1 - \alpha^2)(1 - \beta^2)(1 - \gamma^2) = 1 - (\alpha^2 + \beta^2 + \gamma^2) + (\alpha^2\beta^2 + \beta^2\gamma^2 + \gamma^2\alpha^2) - \alpha^2\beta^2\gamma^2
+\]
+计算各对称式:
+- $\alpha^2 + \beta^2 + \gamma^2 = (\alpha + \beta + \gamma)^2 - 2(\alpha\beta + \beta\gamma + \gamma\alpha) = 3^2 - 2(-1) = 11$
+- $\alpha^2\beta^2 + \beta^2\gamma^2 + \gamma^2\alpha^2 = (\alpha\beta + \beta\gamma + \gamma\alpha)^2 - 2\alpha\beta\gamma(\alpha + \beta + \gamma) = (-1)^2 - 2(1)(3) = 1 - 6 = -5$
+- $\alpha^2\beta^2\gamma^2 = (1)^2 = 1$
+代入展开式:
+\[
+P = 1 - 11 + (-5) - 1 = -16
+\]
+故选 A。
+\end{solution}
+
+    \question 已知 $a, b, c$ 为三相异的非零实数且满足
+\[
+\frac{1 - a^3}{a} = \frac{1 - b^3}{b} = \frac{1 - c^3}{c}
+\]
+求 $a^3 + b^3 + c^3$ 之值。
+
+\begin{solution}
+设 $\frac{1 - x^3}{x} = k$, 其中 $x$ 可以取 $a, b, c$。
+将方程变形得:
+\[
+1 - x^3 = kx \implies x^3 + kx - 1 = 0
+\]
+由于 $a, b, c$ 是互不相同的实数, 且都满足上述方程, 因此 $a, b, c$ 是三次方程 $x^3 + 0x^2 + kx - 1 = 0$ 的三个根。
+
+根据韦达定理 (Vieta's Formulas), 我们有:
+1. $a + b + c = 0$
+2. $ab + bc + ca = k$
+3. $abc = 1$
+
+我们要计算 $a^3 + b^3 + c^3$。利用三次对称式的性质, 或者直接将根代入原方程:
+因为 $a, b, c$ 是方程的根, 所以满足:
+\[
+a^3 = 1 - ka
+\]
+\[
+b^3 = 1 - kb
+\]
+\[
+c^3 = 1 - kc
+\]
+将这三个等式相加得:
+\[
+a^3 + b^3 + c^3 = (1 + 1 + 1) - k(a + b + c)
+\]
+代入之前求得的 $a + b + c = 0$:
+\[
+a^3 + b^3 + c^3 = 3 - k(0) = 3
+\]
+因此, $a^3 + b^3 + c^3$ 之值为 3。
+\end{solution}
         
     \question 已知 $\alpha,\beta,\gamma,\delta$ 为 $x^{4}+2x^{3}+x^{2}+2x+1=0$ 的四根,试求 $$(\alpha^{2}+\alpha+1)(\beta^{2}+\beta+1)(\gamma^{2}+\gamma+1)(\delta^{2}+\delta+1)$$ 的值。
     \begin{solution}
@@ -981,6 +1077,32 @@
         \end{align*}
     \end{solution}
 
+    \question 已知 $a - b = 1, b - c = 2, c - d = 3$，求 $a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da$ 的值。
+
+\begin{solution}
+首先，计算 $d - a$ 的值：
+\[
+a - d = (a - b) + (b - c) + (c - d) = 1 + 2 + 3 = 6
+\]
+得 $d - a = -6$。
+对原式进行变形：
+\[
+a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da = \frac{1}{2} [2a^2 + 2b^2 + 2c^2 + 2d^2 - 2ab - 2bc - 2cd - 2da]
+\]
+\[
+= \frac{1}{2} [(a - b)^2 + (b - c)^2 + (c - d)^2 + (d - a)^2]
+\]
+代入已知数据：
+\[
+= \frac{1}{2} [1^2 + 2^2 + 3^2 + (-6)^2]
+\]
+\[
+= \frac{1}{2} [1 + 4 + 9 + 36] = 25
+\]
+故原式的值为 25。
+答案为：B
+\end{solution}
+
     \question 已知三实数 $a,b,c$ 满足 $\sqrt{3}(a-b)+3(b-c)+(c-a)=0$,且 $b \neq c$,求 
     \[
     \frac{(a-b)(a-c)}{(b-c)^2}
@@ -1209,6 +1331,70 @@
         \frac{x+1}{x-1} = -1 \Rightarrow x = 0
         \]
     \end{solution}
+
+    \question 已知 $(a-b)(b-c)(c-a) = 3$，设
+\[ S = (a-b)(99-c)(999-2c) + (b-c)(99-a)(999-2a) + (c-a)(99-b)(999-2b) \]
+求 $S$ 的值。
+
+A. 6 \quad B. 3 \quad C. -3 \quad D. -6 \quad E. ***
+
+\begin{solution}
+根据您手写笔记的思路，我们可以通过构造特殊值或简化多项式结构来求解。
+
+1. **观察对称性**：
+   设 $f(x) = (99-x)(999-2x)$。这是一个二次多项式，可以写作 $f(x) = 2x^2 + px + q$ 的形式。
+   原式可写为：
+   \[ S = (a-b)f(c) + (b-c)f(a) + (c-a)f(b) \]
+
+2. **带入多项式展开**：
+   将 $f(x) = 2x^2 + px + q$ 代入 $S$：
+   \[ S = (a-b)(2c^2 + pc + q) + (b-c)(2a^2 + pa + q) + (c-a)(2b^2 + pb + q) \]
+   
+3. **按幂次整理**：
+   - **常数项 $q$**：$q[(a-b) + (b-c) + (c-a)] = q \cdot 0 = 0$。
+   - **一次项 $p$**：$p[c(a-b) + a(b-c) + b(c-a)] = p[ac - bc + ab - ac + bc - ab] = p \cdot 0 = 0$。
+   - **二次项 2**：$2[c^2(a-b) + a^2(b-c) + b^2(c-a)]$。
+
+4. **利用已知条件**：
+   注意到恒等式：$a^2(b-c) + b^2(c-a) + c^2(a-b) = -(a-b)(b-c)(c-a)$。
+   已知 $(a-b)(b-c)(c-a) = 3$，则：
+   \[ a^2(b-c) + b^2(c-a) + c^2(a-b) = -3 \]
+   因此：
+   \[ S = 2 \times (-3) = -6 \]
+
+正确选项为 D。
+\end{solution}
+
+    \question 若 $a, b$ 是实数且分别满足 $3a^3 - 2a^2 + a - 4 = 0$ 及 $4b^3 + 2b^2 + 8b + 24 = 0$。求 $ab$ 的值。
+\begin{solution}
+首先观察第二个方程：
+\[
+4b^3 + 2b^2 + 8b + 24 = 0
+\]
+各项同时除以 2，得：
+\[
+2b^3 + b^2 + 4b + 12 = 0
+\]
+为了寻找与第一个方程 $3a^3 - 2a^2 + a - 4 = 0$ 的结构联系，我们尝试令 $ab = k$，即 $a = \frac{k}{b}$。将此代入第一个方程：
+\[
+3\left(\frac{k}{b}\right)^3 - 2\left(\frac{k}{b}\right)^2 + \frac{k}{b} - 4 = 0
+\]
+两边同时乘以 $b^3$：
+\[
+3k^3 - 2k^2b + kb^2 - 4b^3 = 0
+\]
+整理得：
+\[
+4b^3 - kb^2 + 2k^2b - 3k^3 = 0
+\]
+对比方程 $4b^3 + 2b^2 + 8b + 24 = 0$，通过系数对应：
+- 对于 $b^2$ 项：$-k = 2 \Rightarrow k = -2$
+- 对于 $b$ 项：$2k^2 = 2(-2)^2 = 8$（符合）
+- 对于常数项：$-3k^3 = -3(-2)^3 = 24$（符合）
+
+因此，$k = ab = -2$。
+正确选项为 D。
+\end{solution}
 
     \question 24. 设 $x_1, x_2, x_3, x_4, x_5, x_6$ 是实数且满足
 \[
@@ -1945,6 +2131,37 @@ x_1 + 4x_2 + 9x_3 + 16x_4 + 25x_5 + 36x_6 = 30 \\
         \]
     \end{solution}
 
+    \question 求满足方程式 $\sqrt{8x^2 - 4x + 1} + \sqrt{6x^2 + 1} = \sqrt{2x^2 + x} + \sqrt{5x}$ 的所有实数 $x$ 之和。
+\begin{solution}
+1. **定义域限制**：由 $\sqrt{5x}$ 可知 $x \ge 0$。
+
+2. **方程变形**：
+   观察方程：$\sqrt{8x^2 - 4x + 1} - \sqrt{5x} = \sqrt{2x^2 + x} - \sqrt{6x^2 + 1}$。
+   两边平方并整理，或者利用共轭根式化简。
+   根据手写推导过程，方程可以转化为：
+   \[ 5(8x^2 - 4x + 1) = (2x + 1)(6x^2 + 1) \]
+   展开并整理得：
+   \[ 12x^3 - 34x^2 + 22x - 4 = 0 \]
+   两边除以 2：
+   \[ 6x^3 - 17x^2 + 11x - 2 = 0 \]
+
+3. **因式分解**：
+   通过观察或试根法，发现 $(x-2)$ 是一个因式：
+   \[ (x - 2)(6x^2 - 5x + 1) = 0 \]
+   继续分解：
+   \[ (x - 2)(3x - 1)(2x - 1) = 0 \]
+   解得 $x_1 = 2, x_2 = \frac{1}{3}, x_3 = \frac{1}{2}$。
+
+4. **检验与求和**：
+   代入原方程检验：
+   - 当 $x=2$ 时，左边 $= \sqrt{25} + \sqrt{25} = 10$，右边 $= \sqrt{10} + \sqrt{10} = 2\sqrt{10}$（不成立，手写笔记中此处打了一个叉）。
+   - 当 $x=\frac{1}{3}$ 和 $x=\frac{1}{2}$ 时，经检验符合原方程。
+   所有满足条件的实数之和为：
+   \[ \frac{1}{3} + \frac{1}{2} = \frac{2 + 3}{6} = \frac{5}{6} \]
+
+正确选项为 **B**。
+\end{solution}
+
     \question 解
     \[
     x - \sqrt{\frac{x}{2} + \frac{7}{8} - \sqrt{\frac{x}{8} + \frac{13}{64}}} = 179
@@ -2320,6 +2537,30 @@ x + \sqrt{x^2 + \sqrt{x^3 + 16}} > 2
 
         结论:原方程的解为 $x = -2$ 以及所有满足 $x \ge 2$ 的实数。
     \end{solution}
+
+    \question 方程式 $\left| \frac{2|x-1|+3}{3|x+2|-10} \right| = 1$ 有多少个不同的解？
+\begin{solution}
+根据绝对值的性质，原方程可化为两个等式：
+(1) $\frac{2|x-1|+3}{3|x+2|-10} = 1 \Rightarrow 2|x-1| + 3 = 3|x+2| - 10 \Rightarrow 3|x+2| - 2|x-1| = 13$
+(2) $\frac{2|x-1|+3}{3|x+2|-10} = -1 \Rightarrow 2|x-1| + 3 = 10 - 3|x+2| \Rightarrow 3|x+2| + 2|x-1| = 7$
+
+利用零点分段法（分界点为 $x = -2$ 和 $x = 1$）分别求解：
+
+对于等式 (1)：
+- 当 $x < -2$ 时：$-3(x+2) + 2(x-1) = 13 \Rightarrow -3x-6+2x-2=13 \Rightarrow -x=21 \Rightarrow x=-21$（符合）
+- 当 $-2 \le x < 1$ 时：$3(x+2) + 2(x-1) = 13 \Rightarrow 3x+6+2x-2=13 \Rightarrow 5x=9 \Rightarrow x=1.8$（不符合范围）
+- 当 $x \ge 1$ 时：$3(x+2) - 2(x-1) = 13 \Rightarrow 3x+6-2x+2=13 \Rightarrow x=5$（符合）
+
+对于等式 (2)：
+- 当 $x < -2$ 时：$-3(x+2) - 2(x-1) = 7 \Rightarrow -3x-6-2x+2=7 \Rightarrow -5x=11 \Rightarrow x=-2.2$（符合）
+- 当 $-2 \le x < 1$ 时：$3(x+2) - 2(x-1) = 7 \Rightarrow 3x+6-2x+2=7 \Rightarrow x=-1$（符合）
+- 当 $x \ge 1$ 时：$3(x+2) + 2(x-1) = 7 \Rightarrow 3x+6+2x-2=7 \Rightarrow 5x=3 \Rightarrow x=0.6$（不符合范围）
+
+同时需满足分母 $3|x+2|-10 \neq 0$。经检验，上述四个解 $x \in \{-21, 5, -2.2, -1\}$ 均使分母不为零。
+
+综上所述，共有 4 个不同的解。
+正确选项为 C。
+\end{solution}
 
 \end{questions}
 \pagebreak
@@ -3126,6 +3367,39 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
         \]
     \end{solution}
 
+    \begin{solution}
+方法一（消元寻找比例）：
+由已知方程组：
+(1) $2x^2 + 2y\sqrt{xy} = 1$
+(2) $4y^2 + 4x\sqrt{xy} = 1$
+令 (1) = (2) 得：
+\[
+2x^2 + 2y\sqrt{xy} = 4y^2 + 4x\sqrt{xy}
+\]
+整理得：
+\[
+2x^2 - 4y^2 + 2y\sqrt{xy} - 4x\sqrt{xy} = 0
+\]
+\[
+2(x^2 - 2y^2) - 2\sqrt{xy}(2x - y) = 0
+\]
+观察方程形式，注意到 $x\sqrt{x} + y\sqrt{y}$ 类结构。
+由原方程组变形：
+\[
+x\sqrt{x} + y\sqrt{y} = \frac{1}{2\sqrt{x}}, \quad y\sqrt{y} + x\sqrt{x} = \frac{1}{4\sqrt{y}}
+\]
+由此推得 $\frac{1}{2\sqrt{x}} = \frac{1}{4\sqrt{y}}$，即 $4\sqrt{y} = 2\sqrt{x}$，平方得 $16y = 4x \implies x = 4y$。
+代入方程 (2)：
+\[
+4y^2 + 4(4y)\sqrt{(4y)y} = 1 \implies 4y^2 + 16y(2y) = 1
+\]
+\[
+4y^2 + 32y^2 = 1 \implies 36y^2 = 1 \implies y^2 = \frac{1}{36}
+\]
+因为 $y > 0$，所以 $y = \frac{1}{6}$。
+答案为：A
+\end{solution}
+
     \question 求正实数对 $(x,y)$ 满足
     \[
     \begin{cases}
@@ -3386,6 +3660,41 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
         \]
     \end{solution}
 
+    \question
+已知 $x$、$y$ 是实数且 $x^2 - y^2 = 32$，$(x+y)^4 + (x-y)^4 = 4352$，求 $x^2 + y^2$ 的值。
+
+\begin{solution}
+首先展开已知方程式：
+\[ (x+y)^4 + (x-y)^4 = (x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4) + (x^4 - 4x^3y + 6x^2y^2 - 4xy^3 + y^4) = 4352 \]
+化简得：
+\[ 2x^4 + 12x^2y^2 + 2y^4 = 4352 \]
+\[ x^4 + 6x^2y^2 + y^4 = 2176 \]
+设 $u = x^2 + y^2$，$v = x^2 - y^2 = 32$。利用关系式：
+\[ x^4 + y^4 = \frac{(x^2+y^2)^2 + (x^2-y^2)^2}{2} = \frac{u^2 + v^2}{2} \]
+\[ x^2y^2 = \frac{(x^2+y^2)^2 - (x^2-y^2)^2}{4} = \frac{u^2 - v^2}{4} \]
+代入化简后的方程：
+\[ \frac{u^2 + 32^2}{2} + 6 \left( \frac{u^2 - 32^2}{4} \right) = 2176 \]
+\[ \frac{u^2 + 1024}{2} + \frac{3(u^2 - 1024)}{2} = 2176 \]
+\[ \frac{4u^2 - 2048}{2} = 2176 \]
+\[ 2u^2 - 1024 = 2176 \]
+\[ 2u^2 = 3200 \]
+\[ u^2 = 1600 \]
+解得 $u = 40$（负值舍去）。
+故 $x^2 + y^2 = 40$。
+正确答案为 A。
+\end{solution}
+\question 已知 $x + 32 = (2 - x)^{\frac{1}{5}}$ 和 $y + 27 = (3 - y)^{\frac{1}{3}}$，求 $xy$ 的值。
+
+\begin{solution}
+对于第一个方程，令 $a = (2 - x)^{\frac{1}{5}}$，则 $x = 2 - a^{5}$。
+代入得 $(2 - a^{5}) + 32 = a$，即 $a^{5} + a - 34 = 0$。
+经检验 $a = 2$ 是方程的实根，此时 $x = 2 - 2^{5} = -30$。
+对于第二个方程，令 $b = (3 - y)^{\frac{1}{3}}$，则 $y = 3 - b^{3}$。
+代入得 $(3 - b^{3}) + 27 = b$，即 $b^{3} + b - 30 = 0$。
+经检验 $b = 3$ 是方程的实根，此时 $y = 3 - 3^{3} = -24$。
+所以 $xy = (-30) \times (-24) = 720$。
+答案为：B
+\end{solution}
     \question 解方程组
     \[
     \begin{cases}
@@ -3783,6 +4092,46 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
 \[ A = 2^{3 \times 113} \]
 因此：
 \[ \log_2 A = 339 \]
+\end{solution}
+
+\question 设 $x_1, x_2, \dots, x_{101}$ 为非零的实数。已知对于所有 $1 \le k \le 101$，
+\[
+\frac{x_1 + \dots + x_{k-1} + x_{k+1} + \dots + x_{101}}{x_k}
+\]
+都等于 $r$，求 $r$ 的最小可能值。
+
+\begin{solution}
+设 $S = x_1 + x_2 + \dots + x_{101}$。根据题意，对于每一个 $k$，都有：
+\[
+\frac{S - x_k}{x_k} = r
+\]
+整理得：
+\[
+\frac{S}{x_k} - 1 = r \implies \frac{S}{x_k} = r + 1 \quad \text{--- (1)}
+\]
+对该方程组的解法进行分类讨论：
+
+\begin{enumerate}
+    \item **若 $S \neq 0$：**
+    从方程 (1) 可以看出，由于 $S$ 和 $r+1$ 都是常数，所有的 $x_k$ 必须相等。
+    即 $x_1 = x_2 = \dots = x_{101}$。
+    代入总和式 $S = 101x_k$，将其放入方程 (1)：
+    \[
+    \frac{101x_k}{x_k} = r + 1 \implies 101 = r + 1 \implies r = 100
+    \]
+
+    \item **若 $S = 0$：**
+    由于 $x_k \neq 0$，方程 (1) 变为：
+    \[
+    0 = r + 1 \implies r = -1
+    \]
+    在这种情况下，只要满足 $101$ 个非零实数之和为 $0$（例如 $x_1 = -100, x_2 = x_3 = \dots = x_{101} = 1$），$r = -1$ 即可成立。
+\end{enumerate}
+
+比较上述两种情况得到的 $r$ 值：$100$ 和 $-1$。
+因此，$r$ 的最小可能值为 $-1$。
+
+故正确选项为 C。
 \end{solution}
     \question 求联立方程
     \[
@@ -5473,6 +5822,117 @@ $f(0) = n$，$f(\frac{3}{4n}) = n$，$f(1) = n$。
         \]
     \end{solution}
 
+    \question 方程式 $x^{303} + 2024x^{101} - 100 = 0$ 有几个实根?
+
+\begin{solution}
+设 $f(x) = x^{303} + 2024x^{101} - 100$。
+我们对 $f(x)$ 求导:
+\[
+f'(x) = 303x^{302} + 2024 \cdot 101x^{100}
+\]
+由于 $x^{302}$ 和 $x^{100}$ 均为偶次方项, 对于任何实数 $x$, 都有 $x^{302} \geq 0$ 且 $x^{100} \geq 0$。
+注意到 $f'(x) = 0$ 仅在 $x = 0$ 时成立, 而在 $x \neq 0$ 时 $f'(x) > 0$。
+这说明 $f(x)$ 在 $\mathbb{R}$ 上是严格单调递增的。
+
+接下来观察函数在无穷远处的表现:
+当 $x \to -\infty$ 时, $f(x) \to -\infty$;
+当 $x \to +\infty$ 时, $f(x) \to +\infty$。
+根据连续函数的零点存在定理 (Intermediate Value Theorem), $f(x)$ 在 $\mathbb{R}$ 上必有零点。
+又因为 $f(x)$ 是严格单调递增的, 该零点是唯一的。
+
+因此, 方程式 $x^{303} + 2024x^{101} - 100 = 0$ 有且仅有一个实根。
+故选 A。
+\end{solution}
+\question 设 $f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots + \frac{x^{2n}}{(2n)!}$。则方程式 $f(x) = 0$ 有几个重根?
+
+\begin{solution}
+首先, 我们对 $f(x)$ 求导。观察 $f(x)$ 的各项:
+\[
+f'(x) = 0 + 1 + \frac{2x}{2!} + \frac{3x^2}{3!} + \dots + \frac{2nx^{2n-1}}{(2n)!}
+\]
+简化后得:
+\[
+f'(x) = 1 + x + \frac{x^2}{2!} + \dots + \frac{x^{2n-1}}{(2n-1)!}
+\]
+比较 $f(x)$ 与 $f'(x)$ 的关系, 可以发现:
+\[
+f(x) = f'(x) + \frac{x^{2n}}{(2n)!}
+\]
+若 $k$ 是 $f(x) = 0$ 的一个重根, 则根据重根的性质, $k$ 必须同时满足 $f(k) = 0$ 且 $f'(k) = 0$。
+将 $x = k$ 代入上述关系式:
+\[
+0 = 0 + \frac{k^{2n}}{(2n)!}
+\]
+这意味着 $k^{2n} = 0$, 即 $k = 0$。
+然而, 我们将 $x = 0$ 代入原函数 $f(x)$:
+\[
+f(0) = 1 + 0 + \dots + 0 = 1 \neq 0
+\]
+这说明 $x = 0$ 并不是 $f(x) = 0$ 的根, 从而导出了矛盾。
+因此, 方程式 $f(x) = 0$ 没有重根, 即重根的个数为 0。
+故选 D。
+\end{solution}
+
+\question 有多少个实数 $x$ 满足方程式 $e^{x} = 2025x$？
+
+\begin{solution}
+设 $f(x) = e^{x} - 2025x$，其导函数为：
+\[
+f'(x) = e^{x} - 2025
+\]
+解 $f'(x) = 0$ 得：
+\[
+x = \ln 2025
+\]
+当 $x < \ln 2025$ 时，$f'(x) < 0$；当 $x > \ln 2025$ 时，$f'(x) > 0$。
+观察极小值：
+\[
+f(\ln 2025) = 2025(1 - \ln 2025) < 0
+\]
+由于极小值小于 $0$，且：
+当 $x \to -\infty$ 时，$f(x) \to \infty$；
+当 $x \to \infty$ 时，$f(x) \to \infty$。
+函数从正无穷减到负值，再增回到正无穷，必然与 $x$ 轴恰好有 $2$ 个交点。
+故满足方程的实数 $x$ 共有 $2$ 个。
+答案为：C
+\end{solution}
+
+\question 设 $a$ 是一实数。若对于所有的实数 $\theta$，$\cos 2\theta + 8 \cos \theta + a \ge 0$，求 $a$ 的最小可能值。
+
+\begin{solution}
+首先利用倍角公式 $\cos 2\theta = 2\cos^2 \theta - 1$ 将原不等式转化为关于 $\cos \theta$ 的形式：
+\[
+2\cos^2 \theta - 1 + 8 \cos \theta + a \ge 0
+\]
+令 $t = \cos \theta$。由于 $\theta \in \mathbb{R}$，则 $t$ 的取值范围为 $t \in [-1, 1]$。
+原问题转化为：对于任意 $t \in [-1, 1]$，不等式 $f(t) = 2t^2 + 8t + a - 1 \ge 0$ 恒成立。
+
+分析二次函数 $f(t) = 2t^2 + 8t + a - 1$ 的图像特征：
+\begin{itemize}
+    \item 开口方向：二次项系数为 $2 > 0$，故抛物线开口向上。
+    \item 对称轴：$t = - \frac{8}{2 \cdot 2} = -2$。
+\end{itemize}
+由于对称轴 $t = -2$ 位于区间 $[-1, 1]$ 的左侧，函数 $f(t)$ 在区间 $[-1, 1]$ 上单调递增。
+因此，$f(t)$ 在该区间上的最小值在 $t = -1$ 处取得。
+
+若要使 $f(t) \ge 0$ 在整个区间上恒成立，只需满足最小值大于等于 0：
+\[
+f(-1) \ge 0
+\]
+将 $t = -1$ 代入函数式：
+\[
+2(-1)^2 + 8(-1) + a - 1 \ge 0
+\]
+\[
+2 - 8 + a - 1 \ge 0
+\]
+\[
+a - 7 \ge 0 \implies a \ge 7
+\]
+因此，$a$ 的最小可能值为 $7$。
+
+故正确选项为 B。
+\end{solution}
     \question 设函数 $f : \mathbb{R} \to \mathbb{R}$ 定义为
 \[
 f(x) = \frac{\sin x}{e^{\pi x}} \frac{(x^{2023} + 2024x + 2025)}{(x^2 - x + 3)} + \frac{2}{e^{\pi x}} \frac{(x^{2023} + 2024x + 2025)}{(x^2 - x + 3)}
@@ -5851,6 +6311,35 @@ g(0) = \left( \frac{1}{8} \right)^0 = 1
 结果为 51。
 \end{solution}
 
+\question
+已知函数 $f$ 的定义域为正整数集合，且对于所有的正整数 $x, y$：
+\[ f(x + y) = \left( 1 + \frac{2y}{2x + 1} \right) f(x) + \left( 1 + \frac{2x}{2y + 1} \right) f(y) + 2x^2 y + xy + 2y^2 x \]
+若 $f(1) = 1$，求 $\frac{f(99)}{199}$ 的值。
+
+\begin{solution}
+首先简化原方程的系数：
+\[ 1 + \frac{2y}{2x + 1} = \frac{2x + 2y + 1}{2x + 1}, \quad 1 + \frac{2x}{2y + 1} = \frac{2x + 2y + 1}{2y + 1} \]
+同时，将最后一项提取公因式：
+\[ 2x^2 y + xy + 2y^2 x = xy(2x + 1 + 2y) = xy(2x + 2y + 1) \]
+将上述等式代入原方程，两边同时除以 $2(x + y) + 1$：
+\[ \frac{f(x + y)}{2(x + y) + 1} = \frac{f(x)}{2x + 1} + \frac{f(y)}{2y + 1} + xy \]
+
+令辅助函数 $g(n) = \frac{f(n)}{2n + 1}$，则上述关系式可记为：
+\[ g(x + y) = g(x) + g(y) + xy \]
+已知 $g(1) = \frac{f(1)}{2(1) + 1} = \frac{1}{3}$。
+利用递推关系，令 $y = 1$：
+\[ g(x + 1) = g(x) + g(1) + x \]
+由此可得 $g(99)$ 的表达式：
+\[ g(99) = g(98) + g(1) + 98 \]
+\[ g(99) = g(97) + 2g(1) + 98 + 97 \]
+通过累加法，可得：
+\[ g(99) = 99g(1) + (98 + 97 + \dots + 1) \]
+\[ g(99) = 99 \times \frac{1}{3} + \frac{98 \times 99}{2} \]
+\[ g(99) = 33 + 4851 = 4884 \]
+由于 $g(99) = \frac{f(99)}{2(99) + 1} = \frac{f(99)}{199}$，所以：
+\[ \frac{f(99)}{199} = 4884 \]
+答案：C
+\end{solution}
     \question 已知函数 $f(x)$ 定义在 $\mathbb{R}$ 上, 且满足 $f(1)=1$, 对所有实数 $x$ 有
     \[
     f(x+5) \geq x+5, \quad f(x+1) \leq f(x)+1.
@@ -6187,6 +6676,25 @@ g(0) = \left( \frac{1}{8} \right)^0 = 1
         x = 1, 3, 4, 5, 6
         \]
     \end{solution}
+
+    \question 找出满足不等式 $\left| 2 - \sqrt{10 - |x|} \right| > 1$ 的所有 $x$ 的区间的长度之和。
+
+\begin{solution}
+首先，根号下的式子需满足 $10 - |x| \ge 0$，得定义域为 $|x| \le 10$。
+解不等式 $\left| 2 - \sqrt{10 - |x|} \right| > 1$：
+(1) 当 $2 - \sqrt{10 - |x|} > 1$ 时：
+\[
+\sqrt{10 - |x|} < 1 \implies 10 - |x| < 1 \implies |x| > 9
+\]
+结合定义域得 $9 < |x| \le 10$，对应区间为 $(-10, -9)$ 和 $(9, 10)$，长度之和为 $1 + 1 = 2$。
+(2) 当 $2 - \sqrt{10 - |x|} < -1$ 时：
+\[
+\sqrt{10 - |x|} > 3 \implies 10 - |x| > 9 \implies |x| < 1
+\]
+对应区间为 $(-1, 1)$，长度为 $1 - (-1) = 2$。
+总长度之和为 $2 + 2 = 4$。
+答案为：D
+\end{solution}
 
     \question 若实数 $a$ 可使得对任意实数 $x$,不等式 
     \[
@@ -8906,6 +9414,39 @@ x = 18, \quad y = 9, \quad z = 6.
 当 $x_1 = \dots = x_{332} = 1$ 且 $x_{333} = \dots = x_{996} = -\frac{1}{2}$ 时，等号成立。
 因此，$\sum_{i=1}^{996} x_i^3$ 的最大值是 249。
 \end{solution}
+
+\question
+已知 $x$、$y$、$z$ 是实数使得 $x+y+z=0$ 及 $xyz=-432$。若 $a = \frac{1}{x} + \frac{1}{y} + \frac{1}{z}$，求 $a$ 的最小可能值。
+\begin{solution}
+由 $x+y+z=0$ 可知 $z = -(x+y)$。
+将 $a$ 进行通分并代入 $z$ 和 $xyz = -432$：
+\[ a = \frac{xy + yz + zx}{xyz} = \frac{xy + z(x+y)}{-432} \]
+\[ a = \frac{xy - (x+y)^2}{-432} = \frac{xy - (x^2 + 2xy + y^2)}{-432} \]
+\[ a = \frac{-(x^2 + xy + y^2)}{-432} = \frac{x^2 + xy + y^2}{432} \]
+对分子进行配方处理：
+\[ a = \frac{1}{432} \left[ \frac{1}{4}(x-y)^2 + \frac{3}{4}(x+y)^2 \right] \quad (\text{注：此处亦可写为 } \frac{(x-y)^2 + 3xy}{432} \text{ 见手写稿}) \]
+根据表达式，当 $x=y$ 时 $a$ 取得最小值。
+此时，由 $z = -(x+y) = -2x$ 代入 $xyz = -432$ 得：
+\[ x \cdot x \cdot (-2x) = -432 \implies -2x^3 = -432 \implies x^3 = 216 \implies x = 6 \]
+当 $x=y=6$ 时，$z=-12$，此时 $a$ 的最小值为：
+\[ a = \frac{6^2 + 6 \times 6 + 6^2}{432} = \frac{108}{432} = \frac{1}{4} \]
+故正确答案为 B。
+\end{solution}
+\begin{solution}
+首先，对 $a$ 进行通分变形：
+\[ a = \frac{xy + yz + zx}{xyz} = \frac{xy + yz + zx}{-432} \]
+设 $q = xy + yz + zx$。根据韦达定理，$x, y, z$ 是关于 $t$ 的三次方程 $t^3 + qt + 432 = 0$ 的三个实根。
+为了使该方程有三个实根，其判别式必须满足：
+\[ \Delta = \left(\frac{432}{2}\right)^2 + \left(\frac{q}{3}\right)^3 \le 0 \]
+\[ 216^2 + \frac{q^3}{27} \le 0 \]
+\[ \frac{q^3}{27} \le -46656 \]
+\[ q^3 \le -1259712 \]
+\[ q \le -108 \]
+当 $q$ 取得最大值 $-108$ 时，$a$ 取得最小值：
+\[ a = \frac{-108}{-432} = \frac{1}{4} \]
+此时方程为 $t^3 - 108t + 432 = 0$，因式分解为 $(t-6)^2(t+12)=0$，根为 $6, 6, -12$，均为实数。
+故正确答案为 B。
+\end{solution}
 \end{questions}
 
 \pagebreak
@@ -9161,6 +9702,64 @@ x = 18, \quad y = 9, \quad z = 6.
         =\frac{5^n+6(-2)^n}{2\big((-2)^n-5^n\big)}.
         \]
     \end{solution}
+
+    \question 已知一数列 $\{a_n\}$ 的首项为 $a_1 = 5$，且对于所有的 $n \ge 1$，$a_{n+1} = \frac{1 + \sqrt{3}a_n}{\sqrt{3} - a_n}$。求 $a_{100}$ 的值。
+
+\begin{solution}
+根据您的手写笔记，本题有两种典型的解法：
+
+解法一：周期性迭代法
+1. 定义函数 $f(x) = \frac{1 + \sqrt{3}x}{\sqrt{3} - x}$。
+2. 计算前几次迭代：
+   - $f^2(x) = f(f(x)) = \frac{1 + \sqrt{3}(\frac{1 + \sqrt{3}x}{\sqrt{3} - x})}{\sqrt{3} - (\frac{1 + \sqrt{3}x}{\sqrt{3} - x})} = \frac{\sqrt{3} - x + \sqrt{3} + 3x}{3 - \sqrt{3}x - 1 - \sqrt{3}x} = \frac{2\sqrt{3} + 2x}{2 - 2\sqrt{3}x} = \frac{\sqrt{3} + x}{1 - \sqrt{3}x}$
+   - $f^3(x) = f(f^2(x)) = \frac{1 + \sqrt{3}(\frac{\sqrt{3} + x}{1 - \sqrt{3}x})}{\sqrt{3} - (\frac{\sqrt{3} + x}{1 - \sqrt{3}x})} = \frac{1 - \sqrt{3}x + 3 + \sqrt{3}x}{\sqrt{3} - 3x - \sqrt{3} - x} = \frac{4}{-4x} = -\frac{1}{x}$
+   - $f^6(x) = f^3(f^3(x)) = -\frac{1}{-(1/x)} = x$
+3. 发现数列的周期为 6。
+4. 计算 $a_{100}$：
+   \[ a_{100} = f^{99}(a_1) = f^3(a_1) = -\frac{1}{a_1} = -\frac{1}{5} \]
+
+ 解法二：三角函数换元法
+1. 观察递推式结构与正切和角公式 $\tan(\alpha + \beta) = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}$ 相似。
+2. 令 $a_n = \tan x_n$，由于 $\frac{1}{\sqrt{3}} = \tan \frac{\pi}{6}$，原式可变形为：
+   \[ a_{n+1} = \frac{\frac{1}{\sqrt{3}} + a_n}{1 - \frac{1}{\sqrt{3}}a_n} \cdot \frac{\sqrt{3}}{\sqrt{3}} \quad \text{（此路经您的笔记优化）} \]
+   实际上，由笔记中的另解设 $a_n = \tan x_n$，得：
+   \[ \tan x_{n+1} = \frac{\tan \frac{\pi}{6} + \tan x_n}{1 - \tan \frac{\pi}{6} \tan x_n} = \tan(x_n + \frac{\pi}{6}) \]
+3. 得到等差关系：$x_{n+1} = x_n + \frac{\pi}{6}$。
+4. 则 $x_{100} = x_1 + 99 \cdot \frac{\pi}{6} = x_1 + \frac{33\pi}{2}$。
+5. 计算 $a_{100}$：
+   \[ a_{100} = \tan(x_1 + \frac{33\pi}{2}) = \tan(x_1 + 16\pi + \frac{\pi}{2}) = -\cot x_1 = -\frac{1}{\tan x_1} = -\frac{1}{a_1} = -\frac{1}{5} \]
+
+因此，$a_{100}$ 的值为 $-\frac{1}{5}$。
+\end{solution}
+
+\question 已知 $x_0, x_1, x_2, \dots$ 是一数列，$x_0 = 1$ 且对于所有 $n \ge 1$,
+\[ x_n = -\frac{225}{n}(x_0 + x_1 + x_2 + \dots + x_{n-1}) \]
+求 $x_0 + 2x_1 + 2^2x_2 + \dots + 2^{224}x_{224} + 2^{225}x_{225}$ 的值。
+
+\begin{solution}
+根据您的手写笔记思路，我们首先寻找 $x_n$ 的通项公式，然后进行求和。
+
+1. **观察与归纳**：
+   - $x_0 = 1$
+   - $x_1 = -\frac{225}{1}(x_0) = -225 = (-1)^1 \binom{225}{1}$
+   - $x_2 = -\frac{225}{2}(x_0 + x_1) = -\frac{225}{2}(1 - 225) = \frac{225 \times 224}{2} = (-1)^2 \binom{225}{2}$
+   - $x_3 = -\frac{225}{3}(x_0 + x_1 + x_2) = -\frac{225}{3}(1 - 225 + \frac{225 \times 224}{2}) = -\frac{225 \times 224 \times 223}{3 \times 2 \times 1} = (-1)^3 \binom{225}{3}$
+   
+   由此归纳（或通过笔记中的数学归纳法证明）可得通项公式：
+   \[ x_n = (-1)^n \binom{225}{n} \]
+
+2. **目标求和式转化**：
+   我们需要计算的式子为：
+   \[ S = \sum_{k=0}^{225} 2^k x_k \]
+   将通项公式代入：
+   \[ S = \sum_{k=0}^{225} 2^k \cdot (-1)^k \binom{225}{k} = \sum_{k=0}^{225} \binom{225}{k} (-2)^k \]
+
+3. **利用二项式定理**：
+   根据二项式展开式 $(1 + y)^m = \sum_{k=0}^{m} \binom{m}{k} y^k$，令 $y = -2$，$m = 225$：
+   \[ S = (1 - 2)^{225} = (-1)^{225} = -1 \]
+
+因此，$x_0 + 2x_1 + 2^2x_2 + \dots + 2^{225}x_{225}$ 的值为 $-1$。
+\end{solution}
 
     \question 设实数数列 \(\{a_n\}\) 满足
     \[
@@ -10704,6 +11303,45 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
         \end{align*}
     \end{solution}
 
+    \question 求 $\frac{3}{1!+2!+3!} + \frac{4}{2!+3!+4!} + \dots + \frac{50}{48!+49!+50!}$ 的值。
+\begin{solution}
+首先分析通项公式，设第 $n$ 项为 $a_n$：
+\[
+a_n = \frac{n+2}{n! + (n+1)! + (n+2)!}
+\]
+对分母进行因式分解：
+\[
+n! + (n+1)! + (n+2)! = n! [1 + (n+1) + (n+1)(n+2)]
+\]
+\[
+= n! [1 + n + 1 + n^2 + 3n + 2]
+\]
+\[
+= n! [n^2 + 4n + 4] = n! (n+2)^2
+\]
+代入通项公式可得：
+\[
+a_n = \frac{n+2}{n! (n+2)^2} = \frac{1}{n! (n+2)}
+\]
+为了使用裂项相消法，我们将分子凑成 $(n+1)$：
+\[
+a_n = \frac{n+1}{(n+2)!} = \frac{(n+2) - 1}{(n+2)!} = \frac{1}{(n+1)!} - \frac{1}{(n+2)!}
+\]
+原式即为从 $n=1$ 到 $n=48$ 的级数求和：
+\[
+S = \sum_{n=1}^{48} \left( \frac{1}{(n+1)!} - \frac{1}{(n+2)!} \right)
+\]
+展开各项：
+\[
+S = \left( \frac{1}{2!} - \frac{1}{3!} \right) + \left( \frac{1}{3!} - \frac{1}{4!} \right) + \dots + \left( \frac{1}{49!} - \frac{1}{50!} \right)
+\]
+消去中间项得：
+\[
+S = \frac{1}{2!} - \frac{1}{50!}
+\]
+正确选项为 B。
+\end{solution}
+
     \question 求
     \[
     \sum_{r=1}^{n}\left[\frac{r^2+9r+19}{(r+5)!}\right]
@@ -11742,6 +12380,50 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         \comb{12}{2} \cdot 2^2 = 264
         \]
     \end{solution}
+
+    \question 求 $(x^2 - x + 1)^{11}(x^2 + x + 1)^{11}$ 的展开式中 $x^4$ 项的系数。
+
+\begin{solution}
+首先，利用平方差公式简化待展开的表达式：
+\[
+(x^2 - x + 1)^{11}(x^2 + x + 1)^{11} = [(x^2 + 1 - x)(x^2 + 1 + x)]^{11}
+\]
+\[
+= [(x^2 + 1)^2 - x^2]^{11}
+\]
+\[
+= [x^4 + 2x^2 + 1 - x^2]^{11}
+\]
+\[
+= (x^4 + x^2 + 1)^{11}
+\]
+我们要找的是 $(1 + x^2 + x^4)^{11}$ 展开式中 $x^4$ 的系数。
+根据多项式定理，通项公式为：
+\[
+\frac{11!}{n_1! n_2! n_3!} (1)^{n_1} (x^2)^{n_2} (x^4)^{n_3}
+\]
+其中 $n_1 + n_2 + n_3 = 11$，且指数需满足 $2n_2 + 4n_3 = 4$。
+由此可得 $n_2 + 2n_3 = 2$。可能的非负整数解组合 $(n_2, n_3)$ 有：
+\begin{enumerate}
+    \item 若 $n_3 = 1$，则 $n_2 = 0$。此时 $n_1 = 11 - 1 - 0 = 10$。
+    对应系数为：
+    \[
+    \frac{11!}{10! 0! 1!} = 11
+    \]
+    \item 若 $n_3 = 0$，则 $n_2 = 2$。此时 $n_1 = 11 - 0 - 2 = 9$。
+    对应系数为：
+    \[
+    \frac{11!}{9! 2! 0!} = \frac{11 \times 10}{2} = 55
+    \]
+\end{enumerate}
+将上述两种情况的系数相加：
+\[
+11 + 55 = 66
+\]
+因此，$x^4$ 项的系数为 $66$。
+
+故正确选项为 A。
+\end{solution}
 
     \question 求 \( (1 + x^2) + (1 + x^2)^2 + \cdots + (1 + x^2)^{10} \) 展开式中 \( x^6 \) 的系数。  
     \begin{solution}

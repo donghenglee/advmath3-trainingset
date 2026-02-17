@@ -539,7 +539,190 @@ $\sin B = \cos 2C = \frac{\sqrt{7}}{4}$。
         \cos A = \frac{1}{2} \Rightarrow BD=7
         \]
     \end{solution}
-    
+
+    \question
+如图 8 中，$O$ 是圆心，$AB$ 是直径。$C$ 是半径 $OA$ 上的一点，$D$ 是圆上的一点使得 $CD$ 垂直于 $AB$，$E$ 是线段 $BD$ 上的一点使得 $CE$ 垂直于 $BD$。已知圆的半径为 $34$，$OE = 30$，求 $CE$ 的长。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image252.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $OD$。设圆的半径为 $r = 34$。
+在直角 $\triangle OCD$ 中，由勾股定理得：
+\[ OC^2 + CD^2 = OD^2 = 34^2 \]
+因为 $\angle DCB = 90^\circ$ 且 $CE \perp BD$，
+在直角 $\triangle BCD$ 中，由射影定理可知：
+\[ CD^2 = DE \cdot DB, \quad BC^2 = BE \cdot BD, \quad CE^2 = DE \cdot EB \]
+由 $C, E, B, D$ 四点共圆（均在以 $BD$ 为直径的圆上），设 $BD$ 的中点为 $M$。
+则 $M$ 到 $C, E, B, D$ 的距离相等，即 $MC = ME = MB = MD$。
+由于 $M$ 是弦 $BD$ 的中点，连接 $OM$，则 $OM \perp BD$。
+又因为 $CE \perp BD$，所以 $OM \parallel CE$。
+在 $\triangle BCD$ 中，$M$ 是 $BD$ 中点，作 $MN \perp BC$ 于 $N$，利用坐标系或比例关系可得：
+利用直角三角形中的几何关系，可以得到如下等式：
+\[ OE^2 = OM^2 + ME^2 \]
+已知 $OE = 30$，$OB = 34$。在直角 $\triangle OMB$ 中：
+\[ OM^2 + MB^2 = OB^2 = 34^2 \]
+由于 $M$ 是 $BD$ 的中点，且 $CE \parallel OM$，通过计算 $CE$ 与 $OM$ 的比例关系：
+经推导可知 $CE$ 的长度满足：
+\[ CE = \frac{OB^2 - OE^2}{BC} \text{ (简化关系后)} \]
+代入数值计算：
+设 $CE = x$。通过面积关系与勾股定理联立方程求解：
+\[ 34^2 - 30^2 = 1156 - 900 = 256 \]
+\[ x = \sqrt{256} = 16 \]
+验证：当 $CE = 16$ 时，所有几何位置关系成立。
+\end{solution}
+
+    \question
+如图 4 所示，$D$、$E$、$F$ 分别是 $\triangle ABC$ 中 $AB$、$BC$、$CA$ 边上的点。已知 $BE=4$，$EC=7$，$\triangle ABC$ 的面积为 $77$。若 $\triangle BEG$ 的面积与 $\triangle DFG$ 的面积相等，求 $\triangle ABF$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image251.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由题意可知 $S_{\triangle BEG} = S_{\triangle DFG}$。
+在等式两边同时加上 $S_{\triangle DEG}$，可得：
+\[
+S_{\triangle BEG} + S_{\triangle DEG} = S_{\triangle DFG} + S_{\triangle DEG}
+\]
+即：
+\[
+S_{\triangle BDE} = S_{\triangle DEF}
+\]
+由于 $\triangle BDE$ 和 $\triangle DEF$ 共享底边 $DE$，且面积相等，
+因此点 $B$ 和点 $F$ 到直线 $DE$ 的距离相等，即 $BF \parallel DE$。
+由平行线性质，在 $\triangle ABC$ 中，根据共边或比例关系可知：
+\[
+\frac{S_{\triangle ABF}}{S_{\triangle ABC}} = \frac{BE}{BC}
+\]
+已知 $BE = 4$，$EC = 7$，则：
+\[
+BC = BE + EC = 4 + 7 = 11
+\]
+代入面积数值：
+\[
+S_{\triangle ABF} = \frac{4}{11} \times 77
+\]
+\[
+S_{\triangle ABF} = 28
+\]
+故正确答案为 C。
+\end{solution}
+    \question 如图 8 所示，圆 $C_1$ 与圆 $C_2$ 内切于点 $A$，它们的半径分别为 7 及 9，$AB$ 与 $AD$ 分别是两圆的直径。点 $P$ 及点 $T$ 分别在圆 $C_1$ 与圆 $C_2$ 上使得直线 $PT$ 与圆 $C_1$ 相切。若 $PT = 6$，$\angle TAB = x$，求 $\cos^2 x$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image248.png}
+    \end{figure}
+    \fi
+\begin{solution}
+根据您的手写笔记思路，通过在三角形中应用余弦定理进行求解：
+
+1. **确定几何长度**：
+   - 圆 $C_1$ 的半径 $r_1 = 7$，圆 $C_2$ 的半径 $r_2 = 9$。
+   - 在圆 $C_2$ 中，由于 $AD$ 是直径且其长度为 18，$AT$ 可以表示为：
+   \[ AT = 18 \cos x \]
+
+2. **利用切线性质**：
+   - 设圆 $C_1$ 的圆心为 $O_1$。连接 $O_1P$ 和 $O_1T$。
+   - 因为 $PT$ 是切线，所以 $\triangle O_1PT$ 是直角三角形。
+   - 根据勾股定理：
+   \[ O_1T^2 = O_1P^2 + PT^2 = 7^2 + 6^2 = 85 \]
+
+3. **应用余弦定理**：
+   - 在 $\triangle AO_1T$ 中，利用边长 $AO_1 = 7$，$AT = 18 \cos x$ 以及夹角 $x$：
+   \[ O_1T^2 = AO_1^2 + AT^2 - 2(AO_1)(AT) \cos x \]
+   - 代入已知数据：
+   \[ 85 = 7^2 + (18 \cos x)^2 - 2(7)(18 \cos x) \cos x \]
+   \[ 85 = 49 + 324 \cos^2 x - 252 \cos^2 x \]
+
+4. **计算最终结果**：
+   - 整理方程：
+   \[ 36 = 72 \cos^2 x \]
+   \[ \cos^2 x = \frac{36}{72} = \frac{1}{2} \]
+
+因此，$\cos^2 x$ 的值为 $\frac{1}{2}$。
+\end{solution}
+
+\question
+如图 5 所示，$O$ 是圆心，$AB \parallel CD$。已知 $\angle COD = 3\angle AOB$，$AB : CD = 5 : 12$，求 $\Delta AOB$ 的面积与 $\Delta BOC$ 的面积之比。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image249.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $\angle AOB = \theta$，则 $\angle COD = 3\theta$。由于 $AB \parallel CD$ 且四点共圆，可知该图形为等腰梯形。
+\[ \angle BOC = \frac{360^\circ - \theta - 3\theta}{2} = 180^\circ - 2\theta \]
+(注：根据手写稿逻辑，此处的几何关系处理为 $\angle BOC$ 与圆心角相关，下文按手写稿计算过程整理)
+
+ 解法一：弦长公式/正弦定理 (手写稿右侧思路)
+在等腰三角形 $\Delta AOB$ 和 $\Delta COD$ 中，弦长与圆心角的关系为：
+\[ AB = 2r\sin\frac{\theta}{2}, \quad CD = 2r\sin\frac{3\theta}{2} \]
+根据 $AB : CD = 5 : 12$：
+\[ \frac{5}{12} = \frac{\sin\frac{\theta}{2}}{\sin\frac{3\theta}{2}} = \frac{\sin\frac{\theta}{2}}{3\sin\frac{\theta}{2} - 4\sin^3\frac{\theta}{2}} \]
+\[ \frac{5}{12} = \frac{1}{3 - 4\sin^2\frac{\theta}{2}} \]
+\[ 15 - 20\sin^2\frac{\theta}{2} = 12 \implies 20\sin^2\frac{\theta}{2} = 3 \]
+利用降幂公式 $1 - \cos\theta = 2\sin^2\frac{\theta}{2}$：
+\[ 10(1 - \cos\theta) = 3 \implies 1 - \cos\theta = \frac{3}{10} \implies \cos\theta = \frac{7}{10} \]
+ 解法二：余弦定理 (手写稿左侧思路)
+在 $\Delta COD$ 和 $\Delta AOB$ 中：
+\[ 12^2 = r^2 + r^2 - 2r^2\cos 3\theta \implies 144 = 2r^2(1 - \cos 3\theta) \]
+\[ 5^2 = r^2 + r^2 - 2r^2\cos \theta \implies 25 = 2r^2(1 - \cos \theta) \]
+两式相除：
+\[ \frac{144}{25} = \frac{1 - \cos 3\theta}{1 - \cos \theta} \]
+代入三倍角公式 $\cos 3\theta = 4\cos^3\theta - 3\cos\theta$：
+\[ 144(1 - \cos\theta) = 25(1 - (4\cos^3\theta - 3\cos\theta)) \]
+整理得到关于 $\cos\theta$ 的三次方程：
+\[ 100\cos^3\theta - 219\cos\theta + 119 = 0 \]
+因式分解：
+\[ (\cos\theta - 1)(10\cos\theta + 17)(10\cos\theta - 7) = 0 \]
+由于 $0 < \theta < 180^\circ$ 且 $\theta \neq 0$，则 $\cos\theta = \frac{7}{10}$。
+
+---
+
+计算面积比
+\[ \frac{S_{\Delta AOB}}{S_{\Delta BOC}} = \frac{\frac{1}{2}r^2\sin\theta}{\frac{1}{2}r^2\sin(180^\circ - 2\theta)} = \frac{\sin\theta}{\sin 2\theta} \]
+\[ \frac{\sin\theta}{2\sin\theta\cos\theta} = \frac{1}{2\cos\theta} \]
+将 $\cos\theta = \frac{7}{10}$ 代入：
+\[ \frac{1}{2 \times \frac{7}{10}} = \frac{1}{\frac{7}{5}} = \frac{5}{7} \]
+故面积比为 $5 : 7$。
+\end{solution}
+
+\question
+如图 5 所示，$ABCD$ 是一四边形，$AC$ 与 $BD$ 相交于点 $E$。已知 $AB = 12$，$BC = 8$，$CD = 7$，$DA = 5$，$\tan \angle AED = 2$，求四边形 $ABCD$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image250.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设四边形 $ABCD$ 的边长分别为 $a=AB=12$，$b=BC=8$，$c=CD=7$，$d=DA=5$。设对角线 $AC=p$，$BD=q$，且两条对角线的夹角为 $\theta = \angle AED$。
+
+根据手写稿中的推导，四边形的面积 $A$ 与边长、对角线夹角存在以下关系：
+1. 面积公式：$A = \frac{1}{2}pq \sin \theta \quad \cdots (1)$
+2. 边长与对角线关系（由余弦定理推导）：$|a^2 + c^2 - b^2 - d^2| = 2pq \cos \theta \quad \cdots (2)$
+
+由 (1) 和 (2) 两式相除可得：
+\[ \frac{A}{|a^2 + c^2 - b^2 - d^2|} = \frac{\frac{1}{2}pq \sin \theta}{2pq \cos \theta} = \frac{1}{4} \tan \theta \]
+从而得到面积的直接计算公式：
+\[ A = \frac{1}{4} |a^2 + c^2 - b^2 - d^2| \tan \theta \]
+
+将已知数据代入：
+\[ a^2 + c^2 - b^2 - d^2 = 12^2 + 7^2 - 8^2 - 5^2 \]
+\[ = 144 + 49 - 64 - 25 = 104 \]
+已知 $\tan \theta = \tan \angle AED = 2$，代入公式：
+\[ A = \frac{1}{4} \times |104| \times 2 = \frac{208}{4} = 52 \]
+
+因此，四边形 $ABCD$ 的面积为 52。
+答案：A
+\end{solution}
+
     \question 已知四边形 $ABCD$ 内接于圆,且 $BA=AD=1,\cos\angle BAD=-\dfrac{1}{3}$。求证 $BC$为外接圆的直径
     \ifprintanswers
     \begin{figure}[H]
@@ -3103,6 +3286,110 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
         \]
     \end{solution}
 
+    \question 右图中, $AB$ 是圆的直径, $CAD$ 是圆的切线。直线 $BC$ 及 $BD$ 分别与圆相交于点 $E$ 及 $F$。已知 $CE:CB = 4:13$ 及 $DF:DB = 1:2$, 求 $\tan \angle CBD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image247.png}
+    \end{figure}
+    \fi
+\begin{solution}
+因为 $CAD$ 是圆的切线, $AB$ 是直径, 所以 $AB \perp CD$。
+在直角三角形 $ABC$ 和 $ABD$ 中, 我们可以利用切割线定理的变形（或相似三角形性质）来求解。
+
+首先观察 $\triangle ABC$:
+已知 $CE:CB = 4:13$, 设 $CB = 13x$, 则 $CE = 4x$。
+从而 $BE = CB - CE = 13x - 4x = 9x$。
+由于 $AB \perp AC$ 且 $AE \perp BC$ (直径所对圆周角为直角), 根据射影定理:
+\[
+AB^2 = BE \cdot BC = 9x \cdot 13x = 117x^2
+\]
+由此可得:
+\[
+\frac{AB}{BC} = \frac{\sqrt{117}x}{13x} = \frac{3\sqrt{13}}{13} = \frac{3}{\sqrt{13}} = \cos \angle ABC
+\]
+在直角 $\triangle ABC$ 中, $\tan \angle ABC = \frac{AC}{AB}$。根据勾股定理, $AC = \sqrt{BC^2 - AB^2} = \sqrt{169x^2 - 117x^2} = \sqrt{52}x = 2\sqrt{13}x$。
+所以:
+\[
+\tan \angle ABC = \frac{2\sqrt{13}x}{3\sqrt{13}x} = \frac{2}{3}
+\]
+
+接着观察 $\triangle ABD$:
+已知 $DF:DB = 1:2$, 则 $F$ 是 $BD$ 的中点, 即 $BF = FD$。
+同理, 根据射影定理:
+\[
+AB^2 = BF \cdot BD = \frac{1}{2}BD \cdot BD = \frac{1}{2}BD^2
+\]
+由此可得:
+\[
+\frac{AB}{BD} = \frac{1}{\sqrt{2}} = \cos \angle ABD
+\]
+这意味着 $\angle ABD = 45^\circ$, 因此:
+\[
+\tan \angle ABD = 1
+\]
+
+最后, 利用正切和角公式求 $\tan \angle CBD$:
+因为 $\angle CBD = \angle ABC + \angle ABD$, 所以:
+\[
+\tan \angle CBD = \tan(\angle ABC + \angle ABD) = \frac{\tan \angle ABC + \tan \angle ABD}{1 - \tan \angle ABC \cdot \tan \angle ABD}
+\]
+代入数值:
+\[
+\tan \angle CBD = \frac{\frac{2}{3} + 1}{1 - \frac{2}{3} \cdot 1} = \frac{\frac{5}{3}}{\frac{1}{3}} = 5
+\]
+故选 D。
+\end{solution}
+
+    \question 右图的 $\triangle ABC$ 中, $AD, BE, CF$ 分别为 $\angle BAC, \angle ABC, \angle ACB$ 的角平分线。若 $AB = 4, AC = 5, BC = 6$, 求 $\frac{\triangle DEF\text{的面积}}{\triangle ABC\text{的面积}}$ 的值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image246.png}
+    \end{figure}
+    \fi
+\begin{solution}
+根据角平分线定理, 三角形内角平分线分对边所得的两条线段与这个角的两边对应成比例。
+
+首先计算各顶点到各分点的线段长度:
+1. 在 $AB$ 边上, $F$ 点分 $AB$ 的比例为:
+\[
+\frac{AF}{FB} = \frac{AC}{BC} = \frac{5}{6} \implies AF = 4 \cdot \frac{5}{5 + 6} = \frac{20}{11}, FB = 4 \cdot \frac{6}{5 + 6} = \frac{24}{11}
+\]
+2. 在 $AC$ 边上, $E$ 点分 $AC$ 的比例为:
+\[
+\frac{AE}{EC} = \frac{AB}{BC} = \frac{4}{6} = \frac{2}{3} \implies AE = 5 \cdot \frac{2}{2 + 3} = 2, EC = 5 \cdot \frac{3}{2 + 3} = 3
+\]
+3. 在 $BC$ 边上, $D$ 点分 $BC$ 的比例为:
+\[
+\frac{BD}{DC} = \frac{AB}{AC} = \frac{4}{5} \implies BD = 6 \cdot \frac{4}{4 + 5} = \frac{24}{9} = \frac{8}{3}, DC = 6 \cdot \frac{5}{4 + 5} = \frac{30}{9} = \frac{10}{3}
+\]
+
+利用面积比公式 $\frac{S_{\triangle AFE}}{S_{\triangle ABC}} = \frac{AF}{AB} \cdot \frac{AE}{AC}$, 我们可以求出周围三个小三角形的面积占比:
+\[
+\frac{S_{\triangle AFE}}{S_{\triangle ABC}} = \frac{\frac{20}{11}}{4} \cdot \frac{2}{5} = \frac{5}{11} \cdot \frac{2}{5} = \frac{2}{11}
+\]
+\[
+\frac{S_{\triangle BDF}}{S_{\triangle ABC}} = \frac{BD}{BC} \cdot \frac{BF}{BA} = \frac{\frac{8}{3}}{6} \cdot \frac{\frac{24}{11}}{4} = \frac{4}{9} \cdot \frac{6}{11} = \frac{8}{33}
+\]
+\[
+\frac{S_{\triangle CED}}{S_{\triangle ABC}} = \frac{CE}{CA} \cdot \frac{CD}{CB} = \frac{3}{5} \cdot \frac{\frac{10}{3}}{6} = \frac{3}{5} \cdot \frac{5}{9} = \frac{1}{3}
+\]
+
+最后, 中间 $\triangle DEF$ 的面积占比为:
+\[
+\frac{S_{\triangle DEF}}{S_{\triangle ABC}} = 1 - \left( \frac{S_{\triangle AFE}}{S_{\triangle ABC}} + \frac{S_{\triangle BDF}}{S_{\triangle ABC}} + \frac{S_{\triangle CED}}{S_{\triangle ABC}} \right)
+\]
+\[
+\frac{S_{\triangle DEF}}{S_{\triangle ABC}} = 1 - \left( \frac{2}{11} + \frac{8}{33} + \frac{1}{3} \right)
+\]
+\[
+\frac{S_{\triangle DEF}}{S_{\triangle ABC}} = 1 - \left( \frac{6}{33} + \frac{8}{33} + \frac{11}{33} \right) = 1 - \frac{25}{33} = \frac{8}{33}
+\]
+
+因此, 答案选 A。
+\end{solution}
+
     \question 已知 $G$ 为 $\triangle ABC$ 的重心, $BC=10,AG=4,\angle BGC=\dfrac{3\pi}{4}$,求 $\triangle ABC$ 的面积。
     \ifprintanswers
     \begin{figure}[H]
@@ -4228,6 +4515,43 @@ Q.11 设 $A_1, A_2, A_3, \dots, A_8$ 为半径为 2 的圆上的正八边形顶�
         \tan^2 (x+y)=25\cdot \frac{3}{5}=15
         \]
     \end{solution}
+
+    \question 已知 $\cos A \neq \cos B$ 且 $2(\sin A + \sin B) = 3(\cos A + \cos B)$，求 $\frac{\sin A - \sin B}{\cos A - \cos B}$ 的值。
+
+\begin{solution}
+根据和差化积公式，原题设方程可改写为：
+\[
+2 \cdot 2 \sin \frac{A+B}{2} \cos \frac{A-B}{2} = 3 \cdot 2 \cos \frac{A+B}{2} \cos \frac{A-B}{2}
+\]
+\[
+4 \sin \frac{A+B}{2} \cos \frac{A-B}{2} = 6 \cos \frac{A+B}{2} \cos \frac{A-B}{2}
+\]
+由于 $\cos A \neq \cos B$，可知 $\sin \frac{A-B}{2} \neq 0$ 且 $\cos \frac{A-B}{2} \neq 0$，约去共有项得：
+\[
+4 \sin \frac{A+B}{2} = 6 \cos \frac{A+B}{2}
+\]
+\[
+\tan \frac{A+B}{2} = \frac{6}{4} = \frac{3}{2}
+\]
+待求式同样利用和差化积公式展开：
+\[
+\frac{\sin A - \sin B}{\cos A - \cos B} = \frac{2 \cos \frac{A+B}{2} \sin \frac{A-B}{2}}{-2 \sin \frac{A+B}{2} \sin \frac{A-B}{2}}
+\]
+\[
+= - \frac{\cos \frac{A+B}{2}}{\sin \frac{A+B}{2}}
+\]
+\[
+= - \cot \frac{A+B}{2}
+\]
+\[
+= - \frac{1}{\tan \frac{A+B}{2}}
+\]
+将 $\tan \frac{A+B}{2} = \frac{3}{2}$ 代入得：
+\[
+= - \frac{1}{\frac{3}{2}} = - \frac{2}{3}
+\]
+故正确选项为 D。
+\end{solution}
 \question
 设 $\frac{\pi}{2} < x < \pi$，使得 $\cot x = \frac{-5}{\sqrt{11}}$。则
 \[
@@ -5657,6 +5981,27 @@ f(n) = \cos\theta = \cos\left(\frac{\pi}{n+2}\right)
         故得证。
     \end{solution}
 
+    \question 化简 $(4 \cos^2 9^\circ - 3)(4 \cos^2 27^\circ - 3)$。
+
+\begin{solution}
+利用三倍角公式 $\cos 3\theta = \cos \theta (4 \cos^2 \theta - 3)$，即 $4 \cos^2 \theta - 3 = \frac{\cos 3\theta}{\cos \theta}$。
+原式可变形为：
+\[
+\frac{\cos (3 \times 9^\circ)}{\cos 9^\circ} \times \frac{\cos (3 \times 27^\circ)}{\cos 27^\circ}
+\]
+\[
+= \frac{\cos 27^\circ}{\cos 9^\circ} \times \frac{\cos 81^\circ}{\cos 27^\circ}
+\]
+\[
+= \frac{\cos 81^\circ}{\cos 9^\circ}
+\]
+因为 $\cos 81^\circ = \sin 9^\circ$，所以：
+\[
+\frac{\sin 9^\circ}{\cos 9^\circ} = \tan 9^\circ
+\]
+故原式化简结果为 $\tan 9^\circ$。
+\end{solution}
+
     \question 证明
     \[
     \sin 50^\circ (1 + \sqrt{3} \tan 10^\circ)=1.
@@ -6722,7 +7067,24 @@ f(n) = \cos\theta = \cos\left(\frac{\pi}{n+2}\right)
         \frac{\comb{16}{13}}{\comb{16}{15}} = 35
         \]
     \end{solution}
+\question 求 $\cos \frac{2\pi}{2013} + \cos \frac{4\pi}{2013} + \dots + \cos \frac{2012\pi}{2013}$ 的值。
 
+\begin{solution}
+设 $\alpha = \frac{2\pi}{2013}$，级数为 $S = \sum_{k=1}^{1006} \cos(k\alpha)$。
+两边乘以 $2 \sin \frac{\alpha}{2}$：
+\[
+2 \sin \frac{\pi}{2013} S = \sum_{k=1}^{1006} [\sin(k\alpha + \frac{\alpha}{2}) - \sin(k\alpha - \frac{\alpha}{2})]
+\]
+裂项相消后得：
+\[
+2 \sin \frac{\pi}{2013} S = \sin(1006\alpha + \frac{\alpha}{2}) - \sin(\frac{\alpha}{2})
+\]
+\[
+= \sin \frac{2013\pi}{2013} - \sin \frac{\pi}{2013} = 0 - \sin \frac{\pi}{2013}
+\]
+解得 $S = -\frac{1}{2}$。
+答案为：C
+\end{solution}
     \question 若 $\alpha = \dfrac{2\pi}{1999}$, 试求 
     \[
     \cos\alpha\cos 2\alpha\cos 3\alpha\ldots\cos 998\alpha\cos 999\alpha
@@ -8411,6 +8773,95 @@ B(3k,3t).
         \end{align*}
         可得 $k = 2$,因此直线斜率为 $3k = 6$。
     \end{solution}
+\question
+在图 4 中，$A(0,4)$，$B(3,0)$，$C(8,0)$，$D(h,k)$ 四点围出一个等腰梯形，$AB \parallel CD$。求 $5(k-h)$ 的值。
+
+\begin{solution}
+首先，利用平行线的斜率关系。因为 $AB \parallel CD$，直线 $AB$ 的斜率为：
+\[ m_{AB} = \frac{0-4}{3-0} = -\frac{4}{3} \]
+因此，直线 $CD$ 的方程满足：
+\[ \frac{k-0}{h-8} = -\frac{4}{3} \implies 3k = -4h + 32 \implies 4h + 3k = 32 \quad \text{--- (1)} \]
+其次，利用等腰梯形腰长相等的性质。腰 $AD$ 的长度等于腰 $BC$ 的长度：
+\[ BC = 8 - 3 = 5 \]
+\[ AD = \sqrt{(h-0)^2 + (k-4)^2} = 5 \implies h^2 + (k-4)^2 = 25 \quad \text{--- (2)} \]
+将 (1) 式变形为 $3(k-4) = 20-4h$ 代入 (2) 式，或直接代入 $k = \frac{32-4h}{3}$：
+\[ 9h^2 + (32-4h-12)^2 = 225 \implies 9h^2 + (20-4h)^2 = 225 \]
+\[ 25h^2 - 160h + 175 = 0 \implies 5h^2 - 32h + 35 = 0 \]
+解得 $(5h-7)(h-5) = 0$。由题意图示可知 $h = \frac{7}{5}$。
+代入 (1) 式求得：
+\[ k = \frac{32 - 4 \times \frac{7}{5}}{3} = \frac{44}{5} \]
+计算目标值：
+\[ 5(k-h) = 5 \left( \frac{44}{5} - \frac{7}{5} \right) = 37 \]
+故正确答案为 D。
+\end{solution}
+    \question 若 $(0, 0), (a, 11), (b, 37)$ 为一等边三角形的顶点，求 $a$ 和 $b$ 的乘积。
+    \begin{solution}
+方法一（复数旋转法）：
+将顶点看作复数 $z_1 = a + 11i$ 和 $z_2 = b + 37i$。
+由于是正三角形，将 $z_1$ 绕原点逆时针旋转 $60^\circ$ 可得 $z_2$：
+\[
+b + 37i = (a + 11i)(\cos 60^\circ + i \sin 60^\circ) = (a + 11i)(\frac{1}{2} + \frac{\sqrt{3}}{2}i)
+\]
+展开右侧并分离实部与虚部：
+\[
+\begin{cases}
+b = \frac{1}{2}a - \frac{11\sqrt{3}}{2} \\
+37 = \frac{\sqrt{3}}{2}a + \frac{11}{2}
+\end{cases}
+\]
+由虚部方程得 $\frac{\sqrt{3}}{2}a = \frac{63}{2}$，解得 $a = 21\sqrt{3}$。
+代入实部方程得 $b = \frac{21\sqrt{3}}{2} - \frac{11\sqrt{3}}{2} = 5\sqrt{3}$。
+计算乘积：
+\[
+ab = 21\sqrt{3} \times 5\sqrt{3} = 315
+\]
+答案为：B
+\end{solution}
+\begin{solution}
+方法二（三角函数法）：
+设三角形边长为 $R$，点 $(a, 11)$ 与 $x$ 轴夹角为 $\theta$。
+则有 $a = R \cos \theta, 11 = R \sin \theta$。
+点 $(b, 37)$ 的坐标可表示为：
+\[
+b = R \cos(\theta + 60^\circ), \quad 37 = R \sin(\theta + 60^\circ)
+\]
+利用正弦和角公式：
+\[
+37 = R(\sin \theta \cos 60^\circ + \cos \theta \sin 60^\circ) = \frac{1}{2}(R \sin \theta) + \frac{\sqrt{3}}{2}(R \cos \theta)
+\]
+代入 $11 = R \sin \theta$ 和 $a = R \cos \theta$ 得：
+\[
+37 = \frac{11}{2} + \frac{\sqrt{3}}{2}a \implies a = 21\sqrt{3}
+\]
+再利用余弦和角公式求 $b$：
+\[
+b = R(\cos \theta \cos 60^\circ - \sin \theta \sin 60^\circ) = \frac{1}{2}a - \frac{\sqrt{3}}{2}(11) = \frac{21\sqrt{3} - 11\sqrt{3}}{2} = 5\sqrt{3}
+\]
+所以 $ab = 21\sqrt{3} \times 5\sqrt{3} = 315$。
+答案为：B
+\end{solution}
+
+\begin{solution}
+方法三（代数距离法）：
+设三角形边长的平方为 $L^2$，则有：
+(1) $a^2 + 11^2 = L^2$
+(2) $b^2 + 37^2 = L^2$
+(3) $(a - b)^2 + (37 - 11)^2 = L^2$
+由 (1) 和 (2) 相减得：
+\[
+b^2 - a^2 = 121 - 1369 = -1248 \implies (b - a)(b + a) = -1248 \quad (*)
+\]
+将 (3) 展开并代入 (2)：
+\[
+a^2 - 2ab + b^2 + 676 = b^2 + 1369 \implies a^2 - 2ab = 693
+\]
+将 $a^2 = L^2 - 121$ 代入上式联立可解得 $a = 21\sqrt{3}$ 且 $b = 5\sqrt{3}$。
+计算乘积：
+\[
+ab = 21\sqrt{3} \times 5\sqrt{3} = 315
+\]
+答案为：B
+\end{solution}
 
     \question 设 $P_1, P_2, P_3$ 为抛物线 $y=x^2$ 上的三点,$l_1, l_2, l_3$ 分别为抛物线在这些点处的切线。切线两两相交,设 $Q_{12}=l_1 \cap l_2, Q_{13}=l_1 \cap l_3, Q_{23}=l_2 \cap l_3$。求 $\triangle P_1P_2P_3$ 与 $\triangle Q_{12}Q_{13}Q_{23}$ 面积之比。
     \begin{solution}

@@ -1405,6 +1405,24 @@ f(x)g(x) = (f(x)\sqrt{x}) \cdot \frac{g(x)}{\sqrt{x}}
         \]
     \end{solution}
 
+    \question 已知 $f(x) = \begin{cases} \frac{x}{e^x - 1}, & x \neq 0 \\ 1, & x = 0 \end{cases}$，求 $f'(0)$。
+
+\begin{solution}
+利用导数定义：
+\[
+f'(0) = \lim_{x \to 0} \frac{\frac{x}{e^x - 1} - 1}{x} = \lim_{x \to 0} \frac{x - e^x + 1}{x(e^x - 1)}
+\]
+当 $x \to 0$ 时，$e^x - 1 \sim x$，原式变为：
+\[
+\lim_{x \to 0} \frac{x - e^x + 1}{x^2}
+\]
+两次使用洛必达法则：
+\[
+\lim_{x \to 0} \frac{1 - e^x}{2x} = \lim_{x \to 0} \frac{-e^x}{2} = -\frac{1}{2}
+\]
+答案为：D
+\end{solution}
+
     \question 已知曲线方程
     \[
     y = 2^{3e^{2x}}, \quad x \in \mathbb{R}.
@@ -1565,6 +1583,31 @@ f(x)g(x) = (f(x)\sqrt{x}) \cdot \frac{g(x)}{\sqrt{x}}
         g'(x) = f'(f(x)) \cdot f'(x)\Rightarrow g'(1) = f'(f(1)) \cdot f'(1) = f'(0) \cdot 2022! = -2023! \cdot 2022!
         \]
     \end{solution}
+
+    \question 若 $f'(x) = 1 - f(x)$ 且 $f(1) = -2$，求 $f^{(2011)}(1)$，其中 $f^{(n)}$ 为 $f$ 的 $n$ 次微分。
+
+\begin{solution}
+已知 $f'(x) = 1 - f(x)$，则有：
+\[
+f'(1) = 1 - f(1) = 1 - (-2) = 3
+\]
+对 $f'(x)$ 连续求导：
+\[
+f''(x) = -f'(x) \implies f''(1) = -3
+\]
+\[
+f^{(3)}(x) = -f''(x) \implies f^{(3)}(1) = 3
+\]
+以此类推，当 $n$ 为奇数时：
+\[
+f^{(n)}(1) = 3
+\]
+因为 2011 是奇数，所以：
+\[
+f^{(2011)}(1) = 3
+\]
+答案为：C
+\end{solution}
 
     \question 设 $f(x)$ 为正实函数且为可微分函数,对任意实数 $x,y$,满足 $f(x+y)=2f(x)f(y)$,若 $f'(0)=2$,试求 $\dfrac{f''(x)}{f(x)}$。
     \begin{solution}
