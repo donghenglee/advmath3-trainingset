@@ -92,6 +92,40 @@
     \end{solution}
     \end{parts}
 
+    \question JEE Main 2025 (23 Jan Shift 1)  
+若方程 \( a(b - c)x^2 + b(c - a)x + c(a - b) = 0 \) 有相等的根，且已知 \( a + c = 15 \)，\( b = \frac{36}{5} \)，则 \( a^2 + c^2 \) 等于多少？
+
+\begin{solution}
+判别式为：
+\[
+\Delta = [b(c-a)]^2 - 4[a(b-c)][c(a-b)]
+\]
+化简：
+\[
+\Delta = b^2(c-a)^2 - 4ac(b-c)(a-b)
+\]
+由于根相等，\(\Delta = 0\)。
+
+代入 \( b = \frac{36}{5} \)，得：
+\[
+\left(\frac{36}{5}\right)^2(c-a)^2 - 4ac\left(\frac{36}{5}-c\right)(a-\frac{36}{5}) = 0
+\]
+
+又已知：
+\[
+a + c = 15
+\]
+所以：
+\[
+a^2 + c^2 = (a+c)^2 - 2ac = 225 - 2ac
+\]
+
+通过判别式条件可解出 \( ac = 54 \)，因此：
+\[
+a^2 + c^2 = 225 - 108 = 117
+\]
+\end{solution}
+
     \question 已知$y = x^3 - x^2 + 3x - 4$与$y = a x^2 - x - 4$恰好相交于两点, 求 $a$ 的可能值。 
     \begin{solution}
         联立方程得 \[ 
@@ -258,6 +292,61 @@
         k=0 \text{ 或 } \;4
         \]
     \end{solution}
+
+    \question Q16. JEE Main 2021 (20 Jul Shift 1)
+已知 $\alpha$ 和 $\beta$ 是方程 $x^2 + (3)^{\frac{1}{4}}x + 3^{\frac{1}{2}} = 0$ 的两个不相等的实根，则 $\alpha^{96}(\alpha^{12} - 1) + \beta^{96}(\beta^{12} - 1)$ 的值为：
+(1) $56 \times 3^{25}$ \quad (2) $56 \times 3^{24}$ \quad (3) $52 \times 3^{24}$ \quad (4) $28 \times 3^{25}$
+
+\begin{solution}
+解：
+给定方程为 $x^2 + 3^{\frac{1}{4}}x + 3^{\frac{1}{2}} = 0$。
+由于 $\alpha$ 是方程的根，满足：
+\[
+\alpha^2 + 3^{\frac{1}{4}}\alpha + \sqrt{3} = 0
+\]
+\[
+\alpha^2 + \sqrt{3} = -3^{\frac{1}{4}}\alpha
+\]
+两边平方得：
+\[
+\alpha^4 + 3 + 2\sqrt{3}\alpha^2 = \sqrt{3}\alpha^2
+\]
+\[
+\alpha^4 + \sqrt{3}\alpha^2 + 3 = 0
+\]
+注意到这具有 $y^2 + \sqrt{3}y + 3 = 0$ 的形式。再次移项并平方：
+\[
+\alpha^4 + 3 = -\sqrt{3}\alpha^2
+\]
+\[
+\alpha^8 + 6\alpha^4 + 9 = 3\alpha^4
+\]
+\[
+\alpha^8 + 3\alpha^4 + 9 = 0
+\]
+将上式乘以 $(\alpha^4 - 3)$：
+\[
+(\alpha^4 - 3)(\alpha^8 + 3\alpha^4 + 9) = 0 \implies \alpha^{12} - 27 = 0
+\]
+因此有 $\alpha^{12} = 27 = 3^3$。同理可得 $\beta^{12} = 3^3$。
+代入所求式子：
+\[
+\alpha^{96}(\alpha^{12} - 1) + \beta^{96}(\beta^{12} - 1)
+\]
+\[
+= (\alpha^{12})^8 (3^3 - 1) + (\beta^{12})^8 (3^3 - 1)
+\]
+\[
+= (3^3)^8 \cdot 26 + (3^3)^8 \cdot 26
+\]
+\[
+= 3^{24} \cdot 26 + 3^{24} \cdot 26
+\]
+\[
+= 52 \times 3^{24}
+\]
+故正确选项为 (3)。
+\end{solution}
 
     \question 解方程
     \[ 
@@ -2560,6 +2649,61 @@ x + \sqrt{x^2 + \sqrt{x^3 + 16}} > 2
 
 综上所述，共有 4 个不同的解。
 正确选项为 C。
+\end{solution}
+
+\question JEE Main 2025 (7 April Shift 2)  
+方程 \( x|x - 2| + 3|x - 3| + 1 = 0 \) 的实根个数是：
+\begin{solution}
+当 \(x \geq 3\) 时：
+\[
+x(x-2) + 3(x-3) + 1 = x^2 - 2x + 3x - 9 + 1 = x^2 + x - 8
+\]
+解方程：
+\[
+x^2 + x - 8 = 0
+\]
+判别式：
+\[
+\Delta = 1^2 - 4(1)(-8) = 1 + 32 = 33
+\]
+解为：
+\[
+x = \frac{-1 \pm \sqrt{33}}{2}
+\]
+只有 \(\frac{-1 + \sqrt{33}}{2} \geq 3\)，所以在此区间有一个解。
+
+当 \(2 \leq x < 3\) 时：
+\[
+x(x-2) + 3(3-x) + 1 = x^2 - 2x + 9 - 3x + 1 = x^2 - 5x + 10
+\]
+判别式：
+\[
+\Delta = (-5)^2 - 4(1)(10) = 25 - 40 = -15 < 0
+\]
+无解。
+
+当 \(x < 2\) 时：
+\[
+x(2-x) + 3(3-x) + 1 = -x^2 + 2x + 9 - 3x + 1 = -x^2 - x + 10
+\]
+解方程：
+\[
+-x^2 - x + 10 = 0 \quad \Rightarrow \quad x^2 + x - 10 = 0
+\]
+判别式：
+\[
+\Delta = 1^2 - 4(1)(-10) = 1 + 40 = 41
+\]
+解为：
+\[
+x = \frac{-1 \pm \sqrt{41}}{2}
+\]
+其中 \(\frac{-1 - \sqrt{41}}{2} < 2\)，所以在此区间有一个解。
+
+综上，实根个数为：
+\[
+2
+\]
 \end{solution}
 
 \end{questions}
@@ -11099,6 +11243,40 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
         才成立,意味 $a_0,\, a_1,\, \ldots,\, a_n$ 是一个公比为$r_0$ 的等比数列。
     \end{solution}
 
+    \question Q46. JEE Main 2025 (4 April Shift 2)
+已知级数
+\[ \frac{4 \cdot 1}{4 + 3 \cdot 1^2 + 1^4} + \frac{4 \cdot 2}{4 + 3 \cdot 2^2 + 2^4} + \frac{4 \cdot 3}{4 + 3 \cdot 3^2 + 3^4} + \frac{4 \cdot 4}{4 + 3 \cdot 4^2 + 4^4} + \dots \]
+前 20 项的和为 $\frac{m}{n}$，其中 $m$ 和 $n$ 互质，则 $m + n$ 的值等于：
+(1) 423 \quad (2) 420 \quad (3) 421 \quad (4) 422
+
+\begin{solution}
+解：
+1. **分析通项公式：**
+设第 $k$ 项为 $T_k$，则：
+\[ T_k = \frac{4k}{k^4 + 3k^2 + 4} \]
+对分母进行配方：
+\[ k^4 + 3k^2 + 4 = (k^4 + 4k^2 + 4) - k^2 = (k^2 + 2)^2 - k^2 \]
+利用平方差公式分解：
+\[ k^4 + 3k^2 + 4 = (k^2 + k + 2)(k^2 - k + 2) \]
+
+2. **利用裂项相消法：**
+观察分子 $4k$，可以将其拆分为：
+\[ 4k = 2[(k^2 + k + 2) - (k^2 - k + 2)] \]
+因此通项 $T_k$ 可以表示为：
+\[ T_k = \frac{2[(k^2 + k + 2) - (k^2 - k + 2)]}{(k^2 + k + 2)(k^2 - k + 2)} = 2 \left( \frac{1}{k^2 - k + 2} - \frac{1}{k^2 + k + 2} \right) \]
+
+3. **求前 20 项和 $S_{20}$：**
+\[ S_{20} = \sum_{k=1}^{20} 2 \left( \frac{1}{k^2 - k + 2} - \frac{1}{k^2 + k + 2} \right) \]
+展开级数：
+\[ S_{20} = 2 \left[ \left( \frac{1}{2} - \frac{1}{4} \right) + \left( \frac{1}{4} - \frac{1}{8} \right) + \left( \frac{1}{8} - \frac{1}{14} \right) + \dots + \left( \frac{1}{20^2 - 20 + 2} - \frac{1}{20^2 + 20 + 2} \right) \right] \]
+中间项全部消去，剩下首尾项：
+\[ S_{20} = 2 \left( \frac{1}{2} - \frac{1}{422} \right) = 1 - \frac{1}{211} = \frac{210}{211} \]
+
+4. **计算 $m+n$：**
+这里 $m = 210, n = 211$。由于 211 是质数，两者显然互质。
+\[ m + n = 210 + 211 = 421 \]
+故正确选项为 (3)。
+\end{solution}
     \question 求和
     \[
     \sum_{n=2}^{20} \frac{n^3-n^2+1}{n^2-n}
@@ -13100,6 +13278,73 @@ X = 10 \sum_{r=1}^{10} \binom{9}{r-1} \binom{10}{10-r} = 10 \binom{9+10}{9} = 10
 经过进一步约分和计算，最终结果为 $646$。
 \end{solution}
 
+\question Q91. JEE Main 2025 (4 April Shift 2)
+已知 $1^2 \cdot \binom{15}{1} + 2^2 \cdot \binom{15}{2} + 3^2 \cdot \binom{15}{3} + \dots + 15^2 \cdot \binom{15}{15} = 2^m \cdot 3^n \cdot 5^k$，其中 $m, n, k \in \mathbb{N}$，则 $m + n + k$ 的值等于：
+(1) 19 \quad (2) 21 \quad (3) 18 \quad (4) 20
+
+\begin{solution}
+解：
+1. **利用二项式求和性质：**
+我们需要计算级数 $S = \sum_{r=1}^{n} r^2 \binom{n}{r}$，其中 $n = 15$。
+利用恒等式 $r \binom{n}{r} = n \binom{n-1}{r-1}$：
+\[ r^2 \binom{n}{r} = r \cdot \left[ n \binom{n-1}{r-1} \right] = n \cdot r \binom{n-1}{r-1} \]
+进一步拆分 $r = (r-1) + 1$：
+\[ n [ (r-1) + 1 ] \binom{n-1}{r-1} = n(r-1)\binom{n-1}{r-1} + n\binom{n-1}{r-1} \]
+再次应用性质 $(r-1)\binom{n-1}{r-1} = (n-1)\binom{n-2}{r-2}$：
+\[ r^2 \binom{n}{r} = n(n-1)\binom{n-2}{r-2} + n\binom{n-1}{r-1} \]
+
+2. **对整个级数求和：**
+\[ S = \sum_{r=2}^{n} n(n-1)\binom{n-2}{r-2} + \sum_{r=1}^{n} n\binom{n-1}{r-1} \]
+\[ S = n(n-1) \cdot 2^{n-2} + n \cdot 2^{n-1} \]
+\[ S = n \cdot 2^{n-2} [ (n-1) + 2 ] = n(n+1) \cdot 2^{n-2} \]
+
+3. **代入 $n = 15$：**
+\[ S = 15 \cdot (15+1) \cdot 2^{15-2} = 15 \cdot 16 \cdot 2^{13} \]
+\[ S = (3 \cdot 5) \cdot 2^4 \cdot 2^{13} = 2^{17} \cdot 3^1 \cdot 5^1 \]
+
+4. **确定 $m, n, k$ 并求和：**
+对照题干 $2^m \cdot 3^n \cdot 5^k$，得：
+$m = 17, n = 1, k = 1$。
+\[ m + n + k = 17 + 1 + 1 = 19 \]
+故正确选项为 (1)。
+\end{solution}
+
+\question Q96. JEE Main 2025 (29 Jan Shift 1)
+在 $(\sqrt[3]{7} + \sqrt[12]{11})^n$ 的二项展开式中，若整数项的个数为 183，则 $n$ 的最小值为：
+(1) 2184 \quad (2) 2196 \quad (3) 2148 \quad (4) 2172
+
+\begin{solution}
+解：
+1. **写出展开式的通项公式：**
+$(\sqrt[3]{7} + \sqrt[12]{11})^n = (7^{\frac{1}{3}} + 11^{\frac{1}{12}})^n$
+其通项为：
+\[ T_{r+1} = \binom{n}{r} (7^{\frac{1}{3}})^{n-r} (11^{\frac{1}{12}})^r = \binom{n}{r} 7^{\frac{n-r}{3}} 11^{\frac{r}{12}} \]
+其中 $r \in \{0, 1, 2, \dots, n\}$。
+
+2. **分析整数项的条件：**
+要使 $T_{r+1}$ 为整数（注意 7 和 11 均为质数），指数必须为非负整数：
+* $\frac{r}{12}$ 必须是整数 $\implies r$ 是 12 的倍数。
+* $\frac{n-r}{3}$ 必须是整数。由于 $r$ 是 12 的倍数，则 $r$ 已经是 3 的倍数，因此只需 $n$ 是 3 的倍数。
+
+3. **确定整数项的个数：**
+设 $r = 12k$（$k$ 为非负整数）。由于 $0 \leq r \leq n$，则 $0 \leq 12k \leq n$，即 $0 \leq k \leq \lfloor \frac{n}{12} \rfloor$。
+整数项的个数等于满足条件的 $k$ 的个数，即 $\lfloor \frac{n}{12} \rfloor + 1$。
+已知整数项个数为 183：
+\[ \lfloor \frac{n}{12} \rfloor + 1 = 183 \implies \lfloor \frac{n}{12} \rfloor = 182 \]
+
+4. **求解 $n$ 的范围与最小值：**
+由高斯函数的定义：
+\[ 182 \leq \frac{n}{12} < 183 \]
+\[ 182 \times 12 \leq n < 183 \times 12 \]
+计算下界：$182 \times 12 = 2184$。
+计算上界：$183 \times 12 = 2196$。
+所以 $2184 \leq n < 2196$。
+同时，我们在第 2 步中提到 $n$ 必须是 3 的倍数。由于 2184 的各位数字之和 $2+1+8+4 = 15$ 是 3 的倍数，所以 $n=2184$ 满足所有条件。
+
+因此，$n$ 的最小值为 2184。
+故正确选项为 (1)。
+\end{solution}
+
     \question 若将 $(x+1)^{2000}$ 展开,问有多少个系数是奇数？
     \begin{solution}
         一般地,若 $(x+1)^n$ 展开式中奇数系数的个数为 $2^{a}$,其中 $a$ 是 $n$ 的二进制表示中 1 的个数,将 $2000$ 转换为二进制:
@@ -14134,6 +14379,247 @@ X = 10 \sum_{r=1}^{10} \binom{9}{r-1} \binom{10}{10-r} = 10 \binom{9+10}{9} = 10
 \separator
 \vspace{1pt}
 \begin{questions}
+    \question
+设 $A = \begin{bmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\ \sin \theta & 0 & \cos \theta \end{bmatrix}$。若对于某个 $\theta \in (0, \pi)$，有 $A^2 = A^T$，则矩阵 $(A + I)^3 + (A - I)^3 - 6A$ 的对角元素之和等于 \_\_\_\_\_\_。
+
+\begin{solution}
+首先，根据已知条件计算 $A^2$：
+\[
+A^2 = \begin{bmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\ \sin \theta & 0 & \cos \theta \end{bmatrix} \begin{bmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\ \sin \theta & 0 & \cos \theta \end{bmatrix} = \begin{bmatrix} \cos^2 \theta - \sin^2 \theta & 0 & -2\sin \theta \cos \theta \\ 0 & 1 & 0 \\ 2\sin \theta \cos \theta & 0 & \cos^2 \theta - \sin^2 \theta \end{bmatrix}
+\]
+即
+\[
+A^2 = \begin{bmatrix} \cos 2\theta & 0 & -\sin 2\theta \\ 0 & 1 & 0 \\ \sin 2\theta & 0 & \cos 2\theta \end{bmatrix}
+\]
+已知 $A^2 = A^T$，而
+\[
+A^T = \begin{bmatrix} \cos \theta & 0 & \sin \theta \\ 0 & 1 & 0 \\ -\sin \theta & 0 & \cos \theta \end{bmatrix}
+\]
+对应元素相等可得：
+\[
+\cos 2\theta = \cos \theta \quad \text{且} \quad -\sin 2\theta = \sin \theta
+\]
+由 $-\sin 2\theta = \sin \theta$ 得 $-2\sin \theta \cos \theta = \sin \theta$。
+因为 $\theta \in (0, \pi)$，所以 $\sin \theta \neq 0$，从而：
+\[
+-2\cos \theta = 1 \implies \cos \theta = -\frac{1}{2}
+\]
+此时 $\theta = \frac{2\pi}{3}$，代入 $\cos 2\theta = \cos \theta$ 满足 $\cos \frac{4\pi}{3} = -\frac{1}{2}$。
+
+接下来化简矩阵表达式：
+\[
+(A + I)^3 + (A - I)^3 - 6A
+\]
+利用立方展开式 $(X+Y)^3 = X^3 + 3X^2Y + 3XY^2 + Y^3$（当 $XY=YX$ 时成立，此处 $AI=IA$）：
+\[
+(A^3 + 3A^2 + 3A + I) + (A^3 - 3A^2 + 3A - I) - 6A
+\]
+\[
+= 2A^3 + 6A - 6A = 2A^3
+\]
+因为 $A^2 = A^T$ 且 $A$ 是正交矩阵（$AA^T = I$），所以 $A^3 = A \cdot A^2 = A \cdot A^T = I$。
+因此，该表达式简化为 $2I$。
+矩阵 $2I$ 为：
+\[
+2I = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bmatrix}
+\]
+其对角元素之和（迹）为：
+\[
+2 + 2 + 2 = 6
+\]
+\end{solution}
+
+\question
+Q127. JEE Main 2025 (7 April Shift 1)
+设 $A$ 是一个 $3 \times 3$ 矩阵，满足 $|\text{adj}(\text{adj}(\text{adj } A))| = 81$。若
+\[
+S = \left\{ n \in \mathbb{Z} : (|\text{adj}(\text{adj } A)|)^{\frac{(n-1)^2}{2}} = |A|^{(3n^2 - 5n - 4)} \right\}
+\]
+则 $\sum_{n \in S} |A^{(n^2 + n)}|$ 等于 \_\_\_\_\_\_。
+(1) 866 \quad (2) 750 \quad (3) 820 \quad (4) 732
+
+\begin{solution}
+对于 $3 \times 3$ 矩阵，已知 $|\text{adj } A| = |A|^2$，则：
+\[
+|\text{adj}(\text{adj}(\text{adj } A))| = |A|^{(3-1)^3} = |A|^8
+\]
+由题意 $|A|^8 = 81 = 3^4$，得 $|A|^2 = 3$。
+
+方程左侧：
+\[
+|\text{adj}(\text{adj } A)| = |A|^{(3-1)^2} = |A|^4
+\]
+代入方程得：
+\[
+(|A|^4)^{\frac{(n-1)^2}{2}} = |A|^{3n^2 - 5n - 4} \implies |A|^{2(n^2 - 2n + 1)} = |A|^{3n^2 - 5n - 4}
+\]
+比较指数：
+\[
+2n^2 - 4n + 2 = 3n^2 - 5n - 4 \implies n^2 - n - 6 = 0
+\]
+解得 $n = 3$ 或 $n = -2$，故 $S = \{3, -2\}$。
+
+计算求和：
+\[
+\sum_{n \in S} |A|^{n^2+n} = |A|^{3^2+3} + |A|^{(-2)^2-2} = |A|^{12} + |A|^2
+\]
+利用 $|A|^2 = 3$：
+\[
+|A|^{12} + |A|^2 = (3)^6 + 3 = 729 + 3 = 732
+\]
+因此，答案为 (4)。
+\end{solution}
+
+\question
+Q130. JEE Main 2025 (3 April Shift 1)
+设 $A$ 为 $3 \times 3$ 矩阵且 $|A| = 5$。若 $|2 \text{ adj}(3 A \text{ adj}(2 A))| = 2^{\alpha} \cdot 3^{\beta} \cdot 5^{\gamma}$，则 $\alpha + \beta + \gamma$ 等于 \_\_\_\_\_\_。
+
+\begin{solution}
+令 $B = 3A \text{ adj}(2A)$。
+原式 $= 2^3 |\text{adj } B| = 8 |B|^2$。
+$|B| = |3A| \cdot |\text{adj}(2A)| = 3^3 |A| \cdot |2A|^2 = 27 |A| \cdot (2^3 |A|)^2 = 27 \cdot 2^6 \cdot |A|^3$。
+代入 $|A|=5$：$|B| = 3^3 \cdot 2^6 \cdot 5^3$。
+原式 $= 2^3 \cdot (3^3 \cdot 2^6 \cdot 5^3)^2 = 2^3 \cdot 3^6 \cdot 2^{12} \cdot 5^6 = 2^{15} \cdot 3^6 \cdot 5^6$。
+$\alpha+\beta+\gamma = 15+6+6 = 27$。
+\end{solution}
+
+\question
+Q141. JEE Main 2023 (29 Jan Shift 2)
+求所有 $t \in \mathbb{R}$ 的集合，使得矩阵
+\[
+\begin{bmatrix} 
+e^t & e^{-t}(\sin t - 2 \cos t) & e^{-t}(-2 \sin t - \cos t) \\ 
+e^t & e^{-t}(2 \sin t + \cos t) & e^{-t}(\sin t - 2 \cos t) \\ 
+e^t & e^{-t} \cos t & e^{-t} \sin t 
+\end{bmatrix}
+\]
+是可逆的。
+(1) $\{(2k + 1)\frac{\pi}{2}, k \in \mathbb{Z}\}$ \quad (2) $\{k\pi + \frac{\pi}{4}, k \in \mathbb{Z}\}$ \\
+(3) $\{k\pi, k \in \mathbb{Z}\}$ \quad (4) $\mathbb{R}$
+
+\begin{solution}
+矩阵可逆的充分必要条件是其行列式不等于 $0$。
+设该矩阵为 $M$，提取第一列的 $e^t$，第二列和第三列的 $e^{-t}$：
+\[
+|M| = e^t \cdot e^{-t} \cdot e^{-t} \begin{vmatrix} 
+1 & \sin t - 2 \cos t & -2 \sin t - \cos t \\ 
+1 & 2 \sin t + \cos t & \sin t - 2 \cos t \\ 
+1 & \cos t & \sin t 
+\end{vmatrix}
+\]
+\[
+|M| = e^{-t} \begin{vmatrix} 
+1 & \sin t - 2 \cos t & -2 \sin t - \cos t \\ 
+1 & 2 \sin t + \cos t & \sin t - 2 \cos t \\ 
+1 & \cos t & \sin t 
+\end{vmatrix}
+\]
+进行行变换 $R_2 \to R_2 - R_1$ 和 $R_3 \to R_3 - R_1$：
+\[
+|M| = e^{-t} \begin{vmatrix} 
+1 & \sin t - 2 \cos t & -2 \sin t - \cos t \\ 
+0 & \sin t + 3 \cos t & 3 \sin t - \cos t \\ 
+0 & -\sin t + 3 \cos t & 3 \sin t + \cos t 
+\end{vmatrix}
+\]
+按第一列展开：
+\[
+|M| = e^{-t} [(\sin t + 3 \cos t)(3 \sin t + \cos t) - (3 \sin t - \cos t)(-\sin t + 3 \cos t)]
+\]
+展开括号内的各项：
+\[
+(\sin t + 3 \cos t)(3 \sin t + \cos t) = 3 \sin^2 t + \sin t \cos t + 9 \sin t \cos t + 3 \cos^2 t = 3 + 10 \sin t \cos t
+\]
+\[
+(3 \sin t - \cos t)(-\sin t + 3 \cos t) = -3 \sin^2 t + 9 \sin t \cos t + \sin t \cos t - 3 \cos^2 t = -3 + 10 \sin t \cos t
+\]
+相减得：
+\[
+|M| = e^{-t} [(3 + 10 \sin t \cos t) - (-3 + 10 \sin t \cos t)] = 6e^{-t}
+\]
+由于对于所有 $t \in \mathbb{R}$，$e^{-t} > 0$，因此 $|M| = 6e^{-t} \neq 0$ 始终成立。
+这意味着该矩阵对所有实数 $t$ 都是可逆的。
+答案为 (4)。
+\end{solution}
+
+\question
+Q146. JEE Main 2022 (28 Jul Shift 1)
+设矩阵 $A = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}$，矩阵 $B_0 = A^{49} + 2A^{98}$。若对于所有 $n \ge 1$，有 $B_n = \text{Adj}(B_{n-1})$，则 $\det(B_4)$ 等于
+(1) $3^{28}$ \quad (2) $3^{30}$ \quad (3) $3^{32}$ \quad (4) $3^{36}$
+
+\begin{solution}
+首先观察 $A$ 的性质：
+$A^2 = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = I$。
+因此 $A^{49} = A$，$A^{98} = (A^2)^{49} = I$。
+$B_0 = A + 2I = \begin{bmatrix} 2 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}$。
+计算 $\det(B_0)$：
+\[ \det(B_0) = 3 \times (2 \times 2 - 1 \times 1) = 3 \times 3 = 9 = 3^2 \]
+已知 $B_n = \text{Adj}(B_{n-1})$，对于 $3 \times 3$ 矩阵：
+$\det(B_n) = \det(\text{Adj}(B_{n-1})) = (\det(B_{n-1}))^{3-1} = (\det(B_{n-1}))^2$。
+这是一个等比数列关系（指数层面的）：
+$\det(B_1) = (\det(B_0))^2$
+$\det(B_2) = (\det(B_1))^2 = (\det(B_0))^4$
+$\det(B_n) = (\det(B_0))^{2^n}$
+对于 $n=4$：
+\[ \det(B_4) = (\det(B_0))^{2^4} = (3^2)^{16} = 3^{32} \]
+答案为 (3)。
+\end{solution}
+
+\question
+Q148. JEE Main 2022 (25 Jul Shift 2)
+设 $A = \begin{bmatrix} 1 & a & a \\ 0 & 1 & b \\ 0 & 0 & 1 \end{bmatrix}$，$a, b \in \mathbb{R}$。若对于某个 $n \in \mathbb{N}$，$A^n = \begin{bmatrix} 1 & 48 & 2160 \\ 0 & 1 & 96 \\ 0 & 0 & 1 \end{bmatrix}$，则 $n + a + b$ 等于 \_\_\_\_\_\_。
+
+\begin{solution}
+首先利用归纳法计算 $A^n$。设 $A = I + B$，其中 $B = \begin{bmatrix} 0 & a & a \\ 0 & 0 & b \\ 0 & 0 & 0 \end{bmatrix}$。
+计算 $B^2$：
+\[ B^2 = \begin{bmatrix} 0 & a & a \\ 0 & 0 & b \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & a & a \\ 0 & 0 & b \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & ab \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \]
+计算 $B^3$：
+\[ B^3 = B^2 \cdot B = \begin{bmatrix} 0 & 0 & ab \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & a & a \\ 0 & 0 & b \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} = O \]
+由于 $I$ 与 $B$ 可交换，利用二项式定理：
+\[ A^n = (I + B)^n = I + nB + \frac{n(n-1)}{2}B^2 \]
+\[ A^n = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} + \begin{bmatrix} 0 & na & na \\ 0 & 0 & nb \\ 0 & 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 0 & \frac{n(n-1)}{2}ab \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & na & na + \frac{n(n-1)}{2}ab \\ 0 & 1 & nb \\ 0 & 0 & 1 \end{bmatrix} \]
+对比已知矩阵：
+1) $na = 48$
+2) $nb = 96 \implies b = 2a$
+3) $na + \frac{n(n-1)}{2}ab = 2160$
+
+将 $nb=96$ 和 $b=2a$ 代入 (3)：
+\[ 48 + \frac{(n-1)}{2} \cdot n \cdot a \cdot b = 2160 \]
+\[ 48 + \frac{(n-1)}{2} \cdot 48 \cdot b = 2160 \]
+\[ 1 + (n-1)b = \frac{2160}{48} = 45 \]
+\[ (n-1)b = 44 \]
+联立 $nb = 96$ 和 $(n-1)b = 44$：
+\[ nb - b = 44 \implies 96 - b = 44 \implies b = 52 \]
+代入 $nb = 96 \implies n \cdot 52 = 96$（此处计算结果非整数，重新审视题目参数）。
+*注：若题目中 $A^n_{13}$ 为 $2160$ 且 $A^n_{23}$ 为 $96$，通常 $n, a, b$ 应为整数。重新核对：*
+由 $na=48, nb=96 \implies b=2a$。
+$na + \frac{n-1}{2} n a b = 48 + \frac{n-1}{2} \cdot 48 \cdot b = 2160 \implies 1 + (n-1) \frac{b}{2} = 45 \implies (n-1)b = 88$。
+联立 $nb=96$ 与 $nb-b=88 \implies 96-b=88 \implies b=8$。
+则 $n = \frac{96}{8} = 12$。
+由 $na = 48 \implies 12a = 48 \implies a = 4$。
+最终结果：$n + a + b = 12 + 4 + 8 = 24$。
+\end{solution}
+
+\question
+Q149. JEE Main 2021 (20 Jul Shift 2)
+设 $A = \{a_{ij}\}$ 是一个 $3 \times 3$ 矩阵，其中
+\[ a_{ij} = \begin{cases} (-1)^{j-i} & \text{若 } i < j \\ 2 & \text{若 } i = j \\ (-1)^{i+j} & \text{若 } i > j \end{cases} \]
+则 $\det(3 \text{ Adj} (2A^{-1}))$ 等于 \_\_\_\_\_\_。
+
+\begin{solution}
+首先写出矩阵 $A$：
+\[ A = \begin{bmatrix} 2 & (-1)^1 & (-1)^2 \\ (-1)^3 & 2 & (-1)^1 \\ (-1)^4 & (-1)^5 & 2 \end{bmatrix} = \begin{bmatrix} 2 & -1 & 1 \\ -1 & 2 & -1 \\ 1 & -1 & 2 \end{bmatrix} \]
+计算 $\det(A)$：
+\[ \det(A) = 2(4-1) - (-1)(-2+1) + 1(1-2) = 2(3) - 1 - 1 = 4 \]
+设 $B = 2A^{-1}$。我们需要计算 $\det(3 \text{ Adj } B)$。
+对于 $3 \times 3$ 矩阵：
+\[ \det(3 \text{ Adj } B) = 3^3 \det(\text{ Adj } B) = 27 (\det B)^{3-1} = 27 (\det B)^2 \]
+计算 $\det B$：
+\[ \det B = \det(2A^{-1}) = 2^3 \det(A^{-1}) = \frac{8}{\det A} = \frac{8}{4} = 2 \]
+因此：
+\[ \det(3 \text{ Adj } B) = 27 \cdot (2)^2 = 27 \cdot 4 = 108 \]
+最终结果：$108$。
+\end{solution}
     \question 已知
     \[
     A=\begin{bmatrix}1&0&0\\ -2&3&0\\ 0&-4&5\end{bmatrix},\quad
@@ -16186,6 +16672,36 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
         \]  
     \end{solution}
 
+    \question
+Q158. JEE Main 2024 (30 Jan Shift 1)
+若 $f(x) = \begin{vmatrix} 2 \cos^4 x & 2 \sin^4 x & 3 + \sin^2 2x \\ 3 + 2 \cos^4 x & 2 \sin^4 x & \sin^2 2x \\ 2 \cos^4 x & 3 + 2 \sin^4 x & \sin^2 2x \end{vmatrix}$，则 $\frac{1}{5} f'(0)$ 等于 \_\_\_\_\_\_。
+(1) 0 \quad (2) 1 \quad (3) 2 \quad (4) 6
+
+\begin{solution}
+**1. 化简行列式 $f(x)$：**
+利用行列式的行变换：
+执行 $R_2 \to R_2 - R_1$ 和 $R_3 \to R_3 - R_1$：
+\[ f(x) = \begin{vmatrix} 2 \cos^4 x & 2 \sin^4 x & 3 + \sin^2 2x \\ 3 & 0 & -3 \\ 0 & 3 & -3 \end{vmatrix} \]
+提取常数项并将 $R_2, R_3$ 除以 3：
+\[ f(x) = 9 \begin{vmatrix} 2 \cos^4 x & 2 \sin^4 x & 3 + \sin^2 2x \\ 1 & 0 & -1 \\ 0 & 1 & -1 \end{vmatrix} \]
+按第二行展开：
+\[ f(x) = 9 [ (-1) \cdot (-2 \sin^4 x - (3 + \sin^2 2x)) + (-1) \cdot (2 \cos^4 x) ] \]
+\[ f(x) = 9 [ 2 \sin^4 x + 3 + \sin^2 2x - 2 \cos^4 x ] \]
+\[ f(x) = 9 [ 2 (\sin^4 x - \cos^4 x) + 3 + \sin^2 2x ] \]
+利用平方差公式 $\sin^4 x - \cos^4 x = (\sin^2 x - \cos^2 x)(\sin^2 x + \cos^2 x) = -\cos 2x$：
+\[ f(x) = 9 [ -2 \cos 2x + 3 + \sin^2 2x ] \]
+
+**2. 求导 $f'(x)$：**
+\[ f'(x) = 9 [ 4 \sin 2x + 2 \sin 2x \cdot 2 \cos 2x ] \]
+\[ f'(x) = 9 [ 4 \sin 2x + 2 \sin 4x ] \]
+
+**3. 计算 $f'(0)$：**
+代入 $x = 0$：
+\[ f'(0) = 9 [ 4 \sin 0 + 2 \sin 0 ] = 0 \]
+因此，$\frac{1}{5} f'(0) = 0$。
+答案为 **(1)**。
+\end{solution}
+
     \question 证明
         \[
         \begin{vmatrix}
@@ -16385,6 +16901,101 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
         与第三式 $x_2 + 2x_3 = 2$ 矛盾,因此方程组无解。
         \end{itemize}
     \end{solution}
+
+    \question
+Q157. JEE Main 2024 (31 Jan Shift 2)
+设 $A$ 为 $3 \times 3$ 实矩阵，满足：
+\[ A \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} = 2 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \quad A \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} = 4 \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}, \quad A \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} = 2 \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \]
+则线性方程组 $(A - 3I) \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ 有：
+(1) 唯一解 \quad (2) 恰有两个解 \quad (3) 无解 \quad (4) 无数个解
+
+\begin{solution}
+**1. 确定特征值与特征向量：**
+从已知条件可以看出，矩阵 $A$ 有特征值 $\lambda_1 = 2, \lambda_2 = 4, \lambda_3 = 2$，对应的特征向量分别为：
+\[ v_1 = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \quad v_2 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}, \quad v_3 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \]
+这三个特征向量是线性无关的，构成 $\mathbb{R}^3$ 的一组基。
+
+**2. 分析矩阵 $(A - 3I)$：**
+矩阵 $(A - 3I)$ 的特征值为 $(\lambda_i - 3)$，即：
+\[ 2-3 = -1, \quad 4-3 = 1, \quad 2-3 = -1 \]
+由于所有特征值均不为 0，因此 $\det(A - 3I) = (-1) \times 1 \times (-1) = 1 \neq 0$。
+
+**3. 结论：**
+因为系数矩阵 $(A - 3I)$ 是可逆的（非奇异），所以对于任何常数向量 $b = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$，非齐次线性方程组均有且仅有**唯一解**。
+答案为 **(1)**。
+\end{solution}
+
+\question
+Q163. JEE Main 2021 (27 Aug Shift 2)
+设 $A = \begin{bmatrix} [x + 1] & [x + 2] & [x + 3] \\ [x] & [x + 3] & [x + 3] \\ [x] & [x + 2] & [x + 4] \end{bmatrix}$，其中 $[x]$ 表示不超过 $x$ 的最大整数。若 $\det(A) = 192$，则 $x$ 的取值集合所在的区间为：
+(1) $[62, 63)$ \quad (2) $[65, 66)$ \quad (3) $[60, 61)$ \quad (4) $[68, 69)$
+
+\begin{solution}
+令 $[x] = k$，则 $[x + n] = k + n$。矩阵 $A$ 可写为：
+\[
+A = \begin{bmatrix} k + 1 & k + 2 & k + 3 \\ k & k + 3 & k + 3 \\ k & k + 2 & k + 4 \end{bmatrix}
+\]
+进行行变换 $R_2 \to R_2 - R_1$ 和 $R_3 \to R_3 - R_1$：
+\[
+\det(A) = \begin{vmatrix} k + 1 & k + 2 & k + 3 \\ -1 & 1 & 0 \\ -1 & 0 & 1 \end{vmatrix}
+\]
+进行列变换 $C_1 \to C_1 + C_2 + C_3$：
+\[
+\det(A) = \begin{vmatrix} 3k + 6 & k + 2 & k + 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}
+\]
+按第一列展开：
+\[
+\det(A) = 3k + 6
+\]
+已知 $\det(A) = 192$，则：
+\[
+3k + 6 = 192 \implies 3k = 186 \implies k = 62
+\]
+因为 $k = [x] = 62$，根据高斯函数的定义：
+\[
+62 \le x < 63
+\]
+因此 $x$ 在区间 $[62, 63)$ 内。
+答案为 (1)。
+\end{solution}
+
+\question
+Q162. JEE Main 2021 (31 Aug Shift 2)
+若 $\alpha + \beta + \gamma = 2\pi$，则线性方程组
+\[
+\begin{cases}
+x + (\cos \gamma)y + (\cos \beta)z = 0 \\
+(\cos \gamma)x + y + (\cos \alpha)z = 0 \\
+(\cos \beta)x + (\cos \alpha)y + z = 0
+\end{cases}
+\]
+有：
+(1) 无数个解 \quad (2) 唯一解 \quad (3) 无解 \quad (4) 恰有两个解
+
+\begin{solution}
+该齐次线性方程组的系数矩阵行列式为：
+\[
+\Delta = \begin{vmatrix} 1 & \cos \gamma & \cos \beta \\ \cos \gamma & 1 & \cos \alpha \\ \cos \beta & \cos \alpha & 1 \end{vmatrix}
+\]
+展开行列式：
+\[
+\Delta = 1(1 - \cos^2 \alpha) - \cos \gamma(\cos \gamma - \cos \alpha \cos \beta) + \cos \beta(\cos \alpha \cos \gamma - \cos \beta)
+\]
+\[
+\Delta = \sin^2 \alpha - \cos^2 \gamma + \cos \alpha \cos \beta \cos \gamma + \cos \alpha \cos \beta \cos \gamma - \cos^2 \beta
+\]
+\[
+\Delta = \sin^2 \alpha - \cos^2 \gamma - \cos^2 \beta + 2 \cos \alpha \cos \beta \cos \gamma
+\]
+已知 $\alpha = 2\pi - (\beta + \gamma)$，则 $\cos \alpha = \cos(2\pi - (\beta + \gamma)) = \cos(\beta + \gamma)$。
+利用恒等式 $\cos^2 \beta + \cos^2 \gamma - 2 \cos \beta \cos \gamma \cos(\beta + \gamma) = \sin^2(\beta + \gamma)$：
+由于 $\sin^2 \alpha = \sin^2(2\pi - (\beta + \gamma)) = \sin^2(\beta + \gamma)$，代入上式可得：
+\[
+\Delta = \sin^2(\beta + \gamma) - (\cos^2 \beta + \cos^2 \gamma - 2 \cos \beta \cos \gamma \cos(\beta + \gamma)) = 0
+\]
+因为 $\Delta = 0$ 且为齐次方程组，所以该方程组有**无数个解**。
+答案为 (1)。
+\end{solution}
 
     \question
 考虑向量
@@ -16857,6 +17468,65 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         \]
     \end{solution}
 
+    \question Q23. JEE Main 2025 (28 Jan Shift 2)
+已知 $\alpha + i\beta$ 和 $\gamma + i\delta$ 是方程 $x^2 - (3 - 2i)x - (2i - 2) = 0$ 的两个根，其中 $i = \sqrt{-1}$，则 $\alpha\gamma + \beta\delta$ 的值为：
+(1) $-2$ \quad (2) $6$ \quad (3) $-6$ \quad (4) $2$
+
+\begin{solution}
+解：
+设方程的两个根为 $z_1 = \alpha + i\beta$ 和 $z_2 = \gamma + i\delta$。
+根据韦达定理，两根之积为：
+\[
+z_1 z_2 = \frac{c}{a} = -(2i - 2) = 2 - 2i
+\]
+将根的代数形式代入：
+\[
+(\alpha + i\beta)(\gamma + i\delta) = 2 - 2i
+\]
+展开左侧：
+\[
+(\alpha\gamma - \beta\delta) + i(\alpha\delta + \beta\gamma) = 2 - 2i
+\]
+通过比较实部和虚部，可得：
+\[
+\begin{cases} \alpha\gamma - \beta\delta = 2 \\ \alpha\delta + \beta\gamma = -2 \end{cases}
+\]
+我们需要求的是 $\alpha\gamma + \beta\delta$。注意到仅凭乘积无法直接求出该值，我们需要利用两根之和：
+\[
+z_1 + z_2 = \frac{-b}{a} = 3 - 2i
+\]
+即：
+\[
+(\alpha + \gamma) + i(\beta + \delta) = 3 - 2i
+\]
+由此得：
+\[
+\begin{cases} \alpha + \gamma = 3 \\ \beta + \delta = -2 \end{cases}
+\]
+考虑到题目可能要求直接计算 $\alpha\gamma + \beta\delta$ 的特定组合，通常此类复数系数题目的根并不是共轭的。
+观察 $z_1 z_2 = 2 - 2i$ 且 $z_1 + z_2 = 3 - 2i$，可以通过观察法或求根公式解出：
+由 $z^2 - (3-2i)z + (2-2i) = 0$ 得：
+\[
+z = \frac{(3-2i) \pm \sqrt{(3-2i)^2 - 4(2-2i)}}{2}
+\]
+\[
+(3-2i)^2 - 4(2-2i) = (9 - 12i - 4) - 8 + 8i = -3 - 4i
+\]
+由于 $-3 - 4i = (1 - 2i)^2$，所以：
+\[
+z = \frac{(3-2i) \pm (1-2i)}{2}
+\]
+解得 $z_1 = \frac{4-4i}{2} = 2-2i$， $z_2 = \frac{2}{2} = 1$。
+对应实部和虚部：
+对于 $z_1 = 2-2i$：$\alpha = 2, \beta = -2$
+对于 $z_2 = 1+0i$：$\gamma = 1, \delta = 0$
+计算所求值：
+\[
+\alpha\gamma + \beta\delta = (2)(1) + (-2)(0) = 2
+\]
+故正确选项为 (4)。
+\end{solution}
+
     \question 已知 $a,b,c \in \mathbb{C}$, 且 $a+b+c=a^2+b^2+c^2=3, a^3+b^3+c^3=6$, 试求 
     \[
     (a-1)^{2023}+(b-1)^{2023}+(c-1)^{2023}
@@ -16914,6 +17584,94 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         \]
     \end{solution}
 
+    \question Q32. JEE Main 2024 (04 Apr Shift 2)
+在复平面上，区域 $S = \{z \in \mathbb{C} : |z - 1| \leq 2; (z + \bar{z}) + i(z - \bar{z}) \leq 2, \text{Im}(z) \geq 0\}$ 的面积（以平方单位计）为：
+(1) $\frac{7\pi}{3}$ \quad (2) $\frac{7\pi}{4}$ \quad (3) $\frac{17\pi}{8}$ \quad (4) $\frac{3\pi}{2}$
+
+\begin{solution}
+解：
+设 $z = x + iy$，其中 $x, y \in \mathbb{R}$。根据题意，我们将复数不等式转化为直角坐标系下的不等式：
+
+1. 由 $|z - 1| \leq 2$ 得：
+\[
+(x - 1)^2 + y^2 \leq 2^2 = 4
+\]
+这是一个以 $(1, 0)$ 为圆心，半径 $R = 2$ 的圆盘。
+
+2. 由 $(z + \bar{z}) + i(z - \bar{z}) \leq 2$ 得：
+注意到 $z + \bar{z} = 2x$ 且 $z - \bar{z} = 2iy$，代入得：
+\[
+2x + i(2iy) \leq 2 \implies 2x - 2y \leq 2 \implies x - y \leq 1
+\]
+即 $y \geq x - 1$。这是一条经过 $(1, 0)$ 和 $(0, -1)$ 的直线及其上方的区域。
+
+3. 由 $\text{Im}(z) \geq 0$ 得：
+\[
+y \geq 0
+\]
+即 $x$ 轴及上方的半平面。
+
+**综合分析图形：**
+* 圆 $(x - 1)^2 + y^2 = 4$ 与 $x$ 轴交于 $(3, 0)$ 和 $(-1, 0)$。
+* 直线 $y = x - 1$ 恰好经过圆心 $(1, 0)$。
+* 在 $y \geq 0$ 的区域内，直线 $y = x - 1$ 将上半圆（面积为 $\frac{1}{2} \pi \cdot 2^2 = 2\pi$）分成了两部分。
+* 由于直线经过圆心且斜率为 1，它与 $x$ 轴正方向的夹角为 $45^\circ$（即 $\frac{\pi}{4}$）。
+* 在第一象限，直线右侧的扇形角为 $\frac{\pi}{4}$，左侧剩余的扇形角为 $\pi - \frac{\pi}{4} = \frac{3\pi}{4}$。
+* 区域 $S$ 是圆心角为 $\frac{3\pi}{4}$ 的扇形面积加上一个直角三角形的面积，或者直接看作上半圆面积减去圆心角为 $\frac{\pi}{4}$ 的扇形面积。
+
+计算面积 $Area$：
+\[
+Area = \frac{3\pi}{4} \cdot \frac{1}{2} R^2 + \text{三角形面积（圆心、(1,0)、(3,0)等构成的部分）}
+\]
+更简单的理解：直线 $y = x - 1$ 与 $x$ 轴夹角为 $45^\circ$，在 $y \geq 0$ 且在圆内的区域，直线左侧部分的圆心角为 $180^\circ - 45^\circ = 135^\circ$（即 $\frac{3\pi}{4}$）。
+扇形面积：
+\[
+S_{sector} = \frac{135}{360} \cdot \pi (2)^2 = \frac{3}{8} \cdot 4\pi = \frac{3\pi}{2}
+\]
+或者从选项观察，直线 $y = x - 1$ 在上半平面与圆围成的部分是半圆面积 $2\pi$ 减去一个弓形。
+当 $y \geq x - 1$ 且 $y \geq 0$ 时，满足条件的区域是圆心角为 $\frac{3\pi}{4}$ 的扇形加上另一个由对称性决定的部分。
+实际上，该区域由一个半径为 2、圆心角为 $\frac{3\pi}{4}$ 的扇形构成：
+\[
+Area = \frac{3}{8} \cdot \pi \cdot 2^2 = \frac{3\pi}{2}
+\]
+
+故正确选项为 (4)。
+\end{solution}
+
+\question Q41. JEE Main 2021 (16 Mar Shift 1)
+设 $z$ 和 $w$ 是两个复数，满足 $w = z\bar{z} - 2z + 2$，$\left| \frac{z+i}{z-3i} \right| = 1$ 且 $\text{Re}(w)$ 具有最小值。那么使得 $w^n$ 为实数的最小正整数 $n \in \mathbb{N}$ 等于 \underline{\hspace{1cm}}。
+
+\begin{solution}
+解：
+1. **分析 $z$ 的轨迹：**
+由 $\left| \frac{z+i}{z-3i} \right| = 1$ 可知 $|z - (-i)| = |z - 3i|$。
+这表示复平面上点 $z$ 到点 $(0, -1)$ 和点 $(0, 3)$ 的距离相等。
+因此，$z$ 的轨迹是连接这两点线段的垂直平分线，即直线：
+\[ \text{Im}(z) = \frac{-1 + 3}{2} = 1 \]
+设 $z = x + i$，其中 $x \in \mathbb{R}$。
+
+2. **分析 $w$ 并找到实部的最小值：**
+将 $z = x + i$ 代入 $w = z\bar{z} - 2z + 2$：
+\[ w = (x+i)(x-i) - 2(x+i) + 2 \]
+\[ w = (x^2 + 1) - 2x - 2i + 2 \]
+\[ w = (x^2 - 2x + 3) - 2i \]
+其部 $\text{Re}(w) = x^2 - 2x + 3 = (x-1)^2 + 2$。
+显然，当 $x = 1$ 时，$\text{Re}(w)$ 取得最小值 2。
+此时 $w$ 的值为：
+\[ w = 2 - 2i \]
+
+3. **求解最小的正整数 $n$：**
+我们将 $w = 2 - 2i$ 写成极坐标形式：
+\[ w = 2\sqrt{2} \left( \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}} \right) = 2\sqrt{2} \left( \cos\frac{\pi}{4} - i\sin\frac{\pi}{4} \right) = 2\sqrt{2} e^{-i\frac{\pi}{4}} \]
+根据棣莫弗定理：
+\[ w^n = (2\sqrt{2})^n e^{-i\frac{n\pi}{4}} \]
+要使 $w^n$ 为实数，其辐角必须是 $\pi$ 的整数倍：
+\[ \frac{n\pi}{4} = k\pi, \quad k \in \mathbb{Z} \]
+\[ n = 4k \]
+最小的正整数 $n$（当 $k=1$ 时）为 4。
+
+因此，填入结果为 4。
+\end{solution}
     \question 考虑复平面作图 \(z=\sqrt{2}(1+i),\,w=\sqrt{3}-i\),证
     \[
     \tan\frac{\pi}{24}=\sqrt{6}-\sqrt{3}+\sqrt{2}-2
@@ -18384,6 +19142,44 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
         \]
     \end{solution}
     \end{parts}
+
+    \question Q20. JEE Main 2025 (4 April Shift 2)
+已知 $\alpha$ 是方程 $x^2 + x + 1 = 0$ 的一个根，且满足 $\sum_{k=1}^n \left( \alpha^k + \frac{1}{\alpha^k} \right)^2 = 20$，则 $n$ 的值为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+解：
+由方程 $x^2 + x + 1 = 0$ 可知，其根为单位的三次复根。
+设 $\alpha = \omega$，则满足 $\omega^3 = 1$ 且 $1 + \omega + \omega^2 = 0$。
+注意到 $\frac{1}{\omega} = \omega^2$，因此：
+\[
+\alpha^k + \frac{1}{\alpha^k} = \omega^k + \omega^{2k}
+\]
+由于 $\omega^k + \omega^{2k}$ 的取值取决于 $k$ 对 3 取模的结果：
+1. 若 $k$ 是 3 的倍数（$k=3m$）：
+\[
+\omega^{3m} + \omega^{6m} = 1 + 1 = 2
+\]
+此时 $\left( \alpha^k + \frac{1}{\alpha^k} \right)^2 = 2^2 = 4$。
+2. 若 $k$ 不是 3 的倍数（$k=3m+1$ 或 $k=3m+2$）：
+\[
+\omega^k + \omega^{2k} = \omega + \omega^2 = -1
+\]
+此时 $\left( \alpha^k + \frac{1}{\alpha^k} \right)^2 = (-1)^2 = 1$。
+
+设该级数前三项为一组，每组的和为：
+\[
+(k=1) \to 1, \quad (k=2) \to 1, \quad (k=3) \to 4
+\]
+每一组（三项）的和为 $1 + 1 + 4 = 6$。
+已知总和为 20，我们尝试累加各组：
+- 前 3 项（$n=3$）：总和 $= 6$
+- 前 6 项（$n=6$）：总和 $= 6 + 6 = 12$
+- 前 9 项（$n=9$）：总和 $= 6 + 6 + 6 = 18$
+- 第 10 项（$k=10$，非 3 倍数）：增加 1，总和 $= 18 + 1 = 19$
+- 第 11 项（$k=11$，非 3 倍数）：增加 1，总和 $= 19 + 1 = 20$
+
+因此，满足条件的 $n = 11$。
+\end{solution}
 
     \question 设 \(S_n=a^n+b^n\),其中 \(a,b\) 是方程 \(x^2+x+1=0\) 的根,求
     \[
