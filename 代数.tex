@@ -8829,6 +8829,27 @@ x'y'z' = x'+y'+z'
         \]
     \end{solution}
 
+    \question 已知
+    \[
+    \frac{(x+1)^{2}}{25}+\frac{(y-1)^{2}}{9}=1
+    \]
+    求
+    \[
+    \sqrt{(x+5)^{2}+(y-1)^{2}}+\sqrt{(x-3)^{2}+(y-1)^{2}}
+    \]
+    的最小值。
+    \begin{solution}
+        考虑焦点为$F_1(-5,1),F_2(3,1)$的椭圆方程
+        \[
+        \frac{(x+1)^{2}}{25}+\frac{(y-1)^{2}}{9}=1
+        \]
+        由椭圆定义,椭圆上一点$P(x,y)$满足
+        \[
+        \sqrt{(x+5)^2 + (y-1)^2} + \sqrt{(x-3)^2 + (y-1)^2} = PF_1 + PF_2 = 2\cdot 5= 10
+        \]
+        即$\sqrt{(x+5)^2 + (y-1)^2} + \sqrt{(x-3)^2 + (y-1)^2}$恒为10。
+    \end{solution}
+
     \question 求$\dfrac{3-\sin x}{2+\cos x}$ 的最大值及最小值。
     \begin{solution}
         设 $y = \dfrac{3-\sin x}{2+\cos x}$,则 
@@ -8861,6 +8882,56 @@ x'y'z' = x'+y'+z'
         \sqrt{(6 - (-2))^2 + (-2 - 4)^2} = 10
         \]
         因此,原式的最小值为 10。
+    \end{solution}
+
+    \question 动点 $P(x,y,z)$ 在平面
+    \[
+    2x+y-2z-5=0
+    \]
+    上移动,求
+    \[
+    \sqrt{(x-3)^2+(y+1)^2+(z+2)^2}
+    \]
+    的最小值。  
+    \begin{solution}
+        设定点 $A(3, -1, -2)$,原式即动点 $P(x,y,z)$ 到 $A$ 的距离,最小距离即点 $A$ 到平面的距离。
+        
+        平面法向量为 $\vec{n} = (2, 1, -2)$,于是
+        \[
+        d = \frac{|2\cdot3 + (-1) + (-2)\cdot(-2) - 5|}{\sqrt{2^2 + 1^2 + (-2)^2}} = \frac{4}{3}
+        \]
+    \end{solution}
+
+    \question 已知 $\alpha,\beta,\gamma,\delta\in\mathbb{R}$,且
+    \[
+    \alpha^2+\beta^2+\gamma^2-2\alpha-4\beta-6\gamma+13=0,
+    \]
+    求
+    \[
+    (\alpha-\delta-8)^2+(\beta-2\delta-9)^2+(\gamma-3\delta-10)^2
+    \]
+    的最小值。
+    \begin{solution}
+        写成
+        \[
+        (\alpha-1)^2+(\beta-2)^2+(\gamma-3)^2=1,
+        \]
+        即点 $P(\alpha,\beta,\gamma)$ 在以 $C(1,2,3)$ 为球心、半径 $r=1$ 的球面上。记点 $Q$ 为参数 $t$ 下的直线
+        \[
+        L:\ \frac{x-8}{1}=\frac{y-9}{2}=\frac{z-10}{3}=t,
+        \]
+        则 $Q=(t+8,\;2t+9,\;3t+10)$,且
+        \[
+        (\alpha-(\delta+8))^2 +(\beta-(2\delta+9))^2 +(\gamma-(3\delta+10))^2 = PQ^2,
+        \]
+        其中
+        \[
+        PQ = d(C,L) - r = \sqrt{(t+7)^2+ (2t+7)^2+ (3t+7)^2} -1 =\sqrt{14(t+3)^2+21}-1
+        \]
+        在$t=-3$时取最小值$\sqrt{21}-1$,此时$PQ^2$为
+        \[
+        (\sqrt{21}-1)^2=22-2\sqrt{21}
+        \]
     \end{solution}
 
     \question 已知 $a, b$ 为正实数,求 $\sqrt{49+a^2-7\sqrt{2}a} + \sqrt{a^2+b^2-\sqrt{2}ab} + \sqrt{50+b^2-10b}$ 的最小值。
