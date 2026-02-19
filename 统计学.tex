@@ -1467,6 +1467,177 @@ A, B, C 三支队伍参加棒球比赛。比赛方式如下：
     \[ P_m = \frac{5}{14} - \frac{6}{7}\left(\frac{1}{8}\right)^m = \frac{5}{14} - \frac{6}{7}\left(\frac{1}{2}\right)^{3m} \]
     \end{solution}
 \end{parts}
+
+\question
+有一个硬币，其正面朝上的概率为 $p$，背面朝上的概率为 $1-p$ ($0 < p < 1$)。如图所示，考虑在正三角形的三个顶点 $A, B, C$ 上移动的动点 $R$。
+规则：投掷硬币，若正面朝上，$R$ 沿逆时针方向移动到相邻顶点；若背面朝上，则沿顺时针方向移动到相邻顶点。
+$R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记动点 $R$ 在第 $k$ 次移动时**首次**回到 $A$ 点的概率为 $P_k$ ($k=2, 3, \cdots, 2N+3$)。回答以下问题。
+
+\begin{parts}
+    \part 求 $P_2, P_3$。
+    \begin{solution}
+    (1) $R$ 在第 $2$ 次移动时首次回到 $A$，路径只能是 $A \to B \to A$ 或 $A \to C \to A$。
+    其概率 $P_2$ 为：
+    \[ P_2 = p(1-p) + (1-p)p = 2p(1-p) \]
+    
+    (2) $R$ 在第 $3$ 次移动时首次回到 $A$，路径只能是 $A \to B \to C \to A$ 或 $A \to C \to B \to A$。
+    其概率 $P_3$ 为：
+    \[ P_3 = p^3 + (1-p)^3 = (p+1-p)(p^2 - p(1-p) + (1-p)^2) = 1 - 3p + 3p^2 \]
+    \end{solution}
+
+    \part 求 $P_{2m}, P_{2m+1}$ ($2 \leqq m \leqq N+1$)。
+    \begin{solution}
+    $R$ 要在第 $k$ 次移动时“首次”回到 $A$，意味着在前 $k-1$ 次移动中都不能经过 $A$。由于是三角形，这要求 $R$ 必须在 $B, C$ 两个顶点之间往返移动。
+    
+    (i) 当 $k = 2m$ 时，路径必须是 $A \to (B \leftrightarrow C \text{ 往返 } m-1 \text{ 次}) \to A$。
+    由于中间步骤每步都必须切换顶点（$B \to C$ 或 $C \to B$），概率为 $2p(1-p)$。
+    \[ P_{2m} = p\{p(1-p)\}^{m-1}(1-p) + (1-p)\{(1-p)p\}^{m-1}p = 2p^m(1-p)^m \]
+    
+    (ii) 当 $k = 2m+1$ 时，路径必须是 $A \to (B, C \text{ 之间移动}) \to A$，且最后一步方向须与第一步相同以合围。
+    \[ P_{2m+1} = p\{p(1-p)\}^{m-1}p^2 + (1-p)\{(1-p)p\}^{m-1}(1-p)^2 \]
+    \[ = p^3\{p(1-p)\}^{m-1} + (1-p)^3\{(1-p)p\}^{m-1} \]
+    \[ = (p^3 + (1-p)^3)\{p(1-p)\}^{m-1} = (1-3p+3p^2)p^{m-1}(1-p)^{m-1} \]
+    \end{solution}
+
+    \part 设 $p = \frac{1}{2}$。求当移动次数达到 $2N+3$ 次时，$R$ **第二次**回到 $A$ 点的概率 $Q$。
+    \begin{solution}
+    当 $p = \frac{1}{2}$ 时，根据 (2) 的结果：
+    \[ P_{2m} = 2 \left(\frac{1}{2}\right)^m \left(\frac{1}{2}\right)^m = \left(\frac{1}{2}\right)^{2m-1} \]
+    \[ P_{2m+1} = \left(1 - \frac{3}{2} + \frac{3}{4}\right) \left(\frac{1}{4}\right)^{m-1} = \frac{1}{4} \left(\frac{1}{2}\right)^{2m-2} = \left(\frac{1}{2}\right)^{2m} \]
+    
+    $R$ 在第 $2N+3$ 次移动时第二次回到 $A$，意味着在第 $k$ 次 ($k < 2N+3$) 首次回到 $A$，然后在剩下的 $(2N+3)-k$ 次中再次首次回到 $A$。
+    (i) 若首次回 $A$ 在第 $2m$ 次 ($m=1, \dots, N$)：
+    概率为 $P_{2m} \cdot P_{(2N+3)-2m} = \left(\frac{1}{2}\right)^{2m-1} \cdot \left(\frac{1}{2}\right)^{2N+2-2m} = \left(\frac{1}{2}\right)^{2N+1}$。
+    (ii) 若首次回 $A$ 在第 $2m+1$ 次 ($m=1, \dots, N$)：
+    概率为 $P_{2m+1} \cdot P_{(2N+3)-(2m+1)} = \left(\frac{1}{2}\right)^{2m} \cdot \left(\frac{1}{2}\right)^{2N+1-2m} = \left(\frac{1}{2}\right)^{2N+1}$。
+    
+    由 (i)(ii) 可知，每种 $k$ 对应的概率都是相等的。$k$ 的取值范围是从 $2$ 到 $2N+1$（因为第二次回 $A$ 至少需要再走 $2$ 步），共有 $(2N+1)-2+1 = 2N$ 种情况。
+    \[ Q = \sum_{m=1}^{N} \left(\frac{1}{2}\right)^{2N+1} + \sum_{m=1}^{N} \left(\frac{1}{2}\right)^{2N+1} = 2N \cdot \left(\frac{1}{2}\right)^{2N+1} = \frac{N}{2^{2N}} \]
+    因此，概率 $Q = \frac{N}{4^N}$。
+    \end{solution}
+\end{parts}
+
+\question
+箱子中装有 $n$ 张卡片，其中 $n \ge 3$。这些卡片中，$1$ 张是金色的，$1$ 张是银色的，剩余的 $(n-2)$ 张是白色的。从箱子中随机抽取 $1$ 张卡片，记录颜色后放回。如果是金卡得 $50$ 分，银卡得 $10$ 分，白卡得 $0$ 分。重复此操作，记第 $k$ 次操作后总得分首次达到（或超过）$100$ 分的概率为 $P(k)$。
+\begin{parts}
+    \part 求概率 $P(4)$。
+    \begin{solution}
+        单次抽取金卡、银卡、白卡的概率分别为 $\frac{1}{n}, \frac{1}{n}, \frac{n-2}{n}$。
+        要在第 $4$ 次恰好首次达到 $100$ 分，意味着前 $3$ 次的总分为 $50$ 分，且第 $4$ 次抽到金卡。
+        前 $3$ 次总分为 $50$ 分的情况只有一种：抽到金卡 $1$ 次，白卡 $2$ 次。
+        其概率为：
+        \[ P(4) = {}_3\mathrm{C}_1 \left( \frac{1}{n} \right)^1 \left( \frac{n-2}{n} \right)^2 \times \frac{1}{n} = \frac{3(n-2)^2}{n^4} \]
+    \end{solution}
+
+    \part 求概率 $P(6)$。
+    \begin{solution}
+        要在第 $6$ 次恰好首次达到 $100$ 分，前 $5$ 次的总分必须为 $50$ 分或 $90$ 分：
+        \begin{enumerate}
+            \item[(i)] 前 $5$ 次总分为 $50$ 分时：
+            必须在第 $6$ 次抽到金卡。前 $5$ 次的情况为：金卡 $1$ 次、白卡 $4$ 次，或者银卡 $5$ 次。
+            概率为：$\left\{ {}_5\mathrm{C}_1 \frac{1}{n} \left( \frac{n-2}{n} \right)^4 + \left( \frac{1}{n} \right)^5 \right\} \times \frac{1}{n} = \frac{5(n-2)^4 + 1}{n^6}$。
+            \item[(ii)] 前 $5$ 次总分为 $90$ 分时：
+            必须在第 $6$ 次抽到银卡（或金卡，但若第 $6$ 次是金卡，前 $5$ 次总分若为 $90$ 则在之前就已经达到 $100$ 了，故此处只需考虑第 $6$ 次为银卡使得总分恰好达到 $100$）。
+            前 $5$ 次的情况为：金卡 $1$ 次、银卡 $4$ 次。
+            概率为：${}_5\mathrm{C}_1 \frac{1}{n} \left( \frac{1}{n} \right)^4 \times \frac{1}{n} = \frac{5}{n^6}$。
+        \end{enumerate}
+        综上所述：
+        \[ P(6) = \frac{5(n-2)^4 + 1}{n^6} + \frac{5}{n^6} = \frac{5(n-2)^4 + 6}{n^6} \]
+    \end{solution}
+
+    \part 求概率 $P(11)$。
+    \begin{solution}
+        第 $11$ 次首次达到 $100$ 分的情况分为前 $10$ 次总分为 $50$ 分或 $90$ 分：
+        \begin{enumerate}
+            \item[(i)] 前 $10$ 次总分为 $50$ 分：
+            第 $11$ 次必为金卡。前 $10$ 次组合为：(金1, 白9) 或 (银5, 白5)。
+            概率：$\left\{ {}_{10}\mathrm{C}_1 \frac{1}{n} \left( \frac{n-2}{n} \right)^9 + {}_{10}\mathrm{C}_5 \left( \frac{1}{n} \right)^5 \left( \frac{n-2}{n} \right)^5 \right\} \times \frac{1}{n} = \frac{10(n-2)^9 + 252(n-2)^5}{n^{11}}$。
+            \item[(ii)] 前 $10$ 次总分为 $90$ 分：
+            第 $11$ 次必为银卡。前 $10$ 次组合为：(金1, 银4, 白5) 或 (银9, 白1)。
+            概率：$\left\{ \frac{10!}{1!4!5!} \frac{1}{n} \left( \frac{1}{n} \right)^4 \left( \frac{n-2}{n} \right)^5 + {}_{10}\mathrm{C}_9 \left( \frac{1}{n} \right)^9 \frac{n-2}{n} \right\} \times \frac{1}{n} = \frac{1260(n-2)^5 + 10(n-2)}{n^{11}}$。
+        \end{enumerate}
+        将 (i) 和 (ii) 相加得：
+        \[ P(11) = \frac{10(n-2)^9 + 1512(n-2)^5 + 10(n-2)}{n^{11}} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $n \ge 2, a \ge 1$ 为整数。箱子中装有编号为 $1$ 到 $n$ 的卡片各一张，总计 $n$ 张。从箱子中随机抽取一张卡片，记录编号后放回，重复此操作 $a$ 次。记恰好在第 $a$ 次操作时，此前所有取出卡片的编号之和首次大于或等于 $n$ 的概率为 $p(a)$。
+\begin{parts}
+    \part 求 $p(1)$ 和 $p(n)$。
+    \begin{solution}
+        设第 $k$ 次取出的卡片编号为 $X_k$。
+        \begin{itemize}
+            \item 对于 $p(1)$，满足 $X_1 \ge n$ 的情况仅有 $X_1 = n$，故其概率为 $p(1) = \frac{1}{n}$。
+            \item 对于 $p(n)$，要满足 $X_1 + X_2 + \dots + X_{n-1} \le n-1$ 且 $X_1 + X_2 + \dots + X_n \ge n$。
+            由于 $X_k \ge 1$，前 $n-1$ 次之和最小即为 $n-1$，此时必须满足 $X_1 = X_2 = \dots = X_{n-1} = 1$。
+            在这种情况下，第 $n$ 次取出任意卡片（$X_n \ge 1$）都能使总和 $\ge n$。
+            因此其概率为 $p(n) = \left( \frac{1}{n} \right)^{n-1} \times 1 = \frac{1}{n^{n-1}}$。
+        \end{itemize}
+    \end{solution}
+
+    \part 求 $p(2)$。
+    \begin{solution}
+        需要满足 $X_1 \le n-1$ 且 $X_1 + X_2 \ge n$。
+        当 $X_1 = k \ (1 \le k \le n-1)$ 时，$X_2$ 必须满足 $X_2 \ge n-k$。
+        此时 $X_2$ 的可选编号为 $n-k, n-k+1, \dots, n$，共有 $k+1$ 种可能。
+        因此概率为：
+        \[ p(2) = \sum_{k=1}^{n-1} \frac{1}{n} \cdot \frac{k+1}{n} = \frac{1}{n^2} \sum_{k=1}^{n-1} (k+1) = \frac{1}{n^2} \left\{ \frac{1}{2}(n-1)n + (n-1) \right\} \]
+        整理得：
+        \[ p(2) = \frac{(n-1)(n+2)}{2n^2} \text{} \]
+    \end{solution}
+
+    \part 当 $n \ge 3$ 时，求 $p(3)$。
+    \begin{solution}
+        需要满足 $X_1 + X_2 \le n-1$ 且 $X_1 + X_2 + X_3 \ge n$。
+        设 $X_1 + X_2 = k \ (2 \le k \le n-1)$。对于固定的 $k$，$(X_1, X_2)$ 的组合有 $(1, k-1), (2, k-2), \dots, (k-1, 1)$，共 $k-1$ 种。
+        此时 $X_3$ 必须满足 $X_3 \ge n-k$，可选编号为 $n-k, n-k+1, \dots, n$，共 $k+1$ 种。
+        因此概率为：
+        \[ p(3) = \sum_{k=2}^{n-1} \frac{k-1}{n^2} \cdot \frac{k+1}{n} = \frac{1}{n^3} \sum_{k=2}^{n-1} (k^2 - 1) = \frac{1}{n^3} \sum_{k=1}^{n-1} (k^2 - 1) \text{} \]
+        利用求和公式 $\sum k^2 = \frac{1}{6}n(n+1)(2n+1)$：
+        \[ p(3) = \frac{1}{n^3} \left\{ \frac{1}{6}(n-1)n(2n-1) - (n-1) \right\} \]
+        整理得：
+        \[ p(3) = \frac{(n-1)(n-2)(2n+3)}{6n^3} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $p, q$ 为满足 $0 < p < 1, 0 < q < 1$ 的实数，并设 $n$ 为 $2$ 以上的整数。两支队伍 A、B 进行 $n$ 场棒球比赛。第 $1$ 场比赛中 A 获胜的概率为 $p$。此外，若 A 在某场比赛中获胜，则在下一场比赛中 A 获胜的概率为 $p$；若 B 在某场比赛中获胜，则在下一场比赛中 A 获胜的概率为 $q$。假设比赛结果没有平局，必有胜负。
+\begin{parts}
+    \part 求第 $n$ 场比赛中 A 获胜的概率 $a_n$。
+    \begin{solution}
+        设第 $n$ 场比赛 A 获胜的概率为 $a_n$，由于没有平局，B 获胜的概率为 $1 - a_n$。
+        根据题意，第 $n+1$ 场 A 获胜的情况分为：第 $n$ 场 A 胜且第 $n+1$ 场 A 胜，或者第 $n$ 场 B 胜且第 $n+1$ 场 A 胜。
+        由此可得递推式：
+        \[ a_{n+1} = p a_n + q(1 - a_n) = (p - q)a_n + q \quad \cdots (1) \]
+        变形为：
+        \[ a_{n+1} - \frac{q}{1 - p + q} = (p - q)\left( a_n - \frac{q}{1 - p + q} \right) \]
+        由于 $a_1 = p$，数列 $\{ a_n - \frac{q}{1 - p + q} \}$ 是首项为 $p - \frac{q}{1 - p + q}$、公比为 $p - q$ 的等比数列：
+        \[ a_n - \frac{q}{1 - p + q} = \left( p - \frac{q}{1 - p + q} \right)(p - q)^{n-1} = \frac{(1 - p)(p - q)}{1 - p + q}(p - q)^{n-1} = \frac{1 - p}{1 - p + q}(p - q)^n \]
+        因此：
+        \[ a_n = \frac{1}{1 - p + q} \{ (1 - p)(p - q)^n + q \} \text{。} \]
+    \end{solution}
+
+    \part 设 $n \ge 3$。求 B 不连胜且恰好获胜 $2$ 场比赛的概率 $b_n$。
+    \begin{solution}
+        设 B 在第 $k$ 场和第 $l$ 场（$k < l$）获胜，其余各场 A 获胜。B 不连胜意味着 $l - k \ge 2$。
+        按获胜场次顺序排列 A、B 的情况如下：
+        \begin{enumerate}
+            \item[(i)] 当 $k=1, l=n$ 时：B$\to$A$\to$A$\dots$A$\to$B。
+            概率为 $ (1-p) \times (1-p) \cdot q \cdot p^{n-3} = p^{n-3}(1-p)^2 q $。
+            \item[(ii)] 当 $2 \le k \le n-2, l=n$ 时：共有 $n-3$ 种组合。
+            概率为 $ p \times \dots \times (1-p) \cdot q \cdot p \times \dots \times (1-p) = (n-3)p^{n-3}(1-p)^2 q $。
+            \item[(iii)] 当 $k=1, 3 \le l \le n-1$ 时：共有 $n-3$ 种组合。
+            概率为 $ (n-3)p^{n-4}(1-p)^2 q^2 $。
+            \item[(iv)] 当 $2 \le k < k+1 < l \le n-1$ 时：组合数为 ${}_{n-3}\mathrm{C}_2$。
+            概率为 $ \frac{1}{2}(n-3)(n-4)p^{n-5}(1-p)^2 q^2 $。
+        \end{enumerate}
+        综合 (i) $\sim$ (iv)，整理得：
+        \[ b_n = (n-2)p^{n-3}(1-p)^2 q + \frac{1}{2}(n-2)(n-3)p^{n-4}(1-p)^2 q^2 \]
+        \[ b_n = \frac{1}{2}(n-2)p^{n-4}(1-p)^2 q \{ 2p + (n-3)q \} \text{。} \]
+        （注：该公式在 $n=3, 4$ 时同样成立。）
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}

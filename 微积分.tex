@@ -3245,6 +3245,55 @@ M = 1 - 3 \times \frac{1}{4} = \frac{1}{4}
     \end{solution}
 \end{parts}
 
+\question
+设 $a, b, c$ 为实数，$\beta, m$ 分别满足 $0 < \beta < 1, m > 0$ 的实数。此外，函数 $f(x) = x^3 + ax^2 + bx + c$ 在 $x = \beta, -\beta$ 处取得极值，且满足 $f(-1) = f(\beta) = -m$，$f(1) = f(-\beta) = m$。
+
+\begin{parts}
+    \part 求 $a, b, c$ 以及 $\beta, m$ 的值。
+    \begin{solution}
+    由于函数 $f(x) = x^3 + ax^2 + bx + c$ 在 $x = \beta, -\beta$ ($0 < \beta < 1$) 处取得极值：
+    \[ f'(\beta) = f'(-\beta) = 0 \]
+    由 $f'(x) = 3x^2 + 2ax + b$ 可得：
+    \[ f'(x) = 3(x + \beta)(x - \beta) = 3x^2 - 3\beta^2 \]
+    由此可知 $a = 0$，$b = -3\beta^2$。此时 $f(x) = x^3 - 3\beta^2x + c$。
+    根据条件 $f(-1) = f(\beta) = -m$ 以及 $f(1) = f(-\beta) = m$：
+    (1) $-1 + 3\beta^2 + c = -m$
+    (2) $\beta^3 - 3\beta^3 + c = -m \implies -2\beta^3 + c = -m$
+    (3) $1 - 3\beta^2 + c = m$
+    (4) $-\beta^3 + 3\beta^3 + c = m \implies 2\beta^3 + c = m$
+    由 (2) 和 (4) 相加得 $2c = 0$，即 $c = 0$。
+    此时由 (4) 可知 $m = 2\beta^3$。
+    将 $m = 2\beta^3$ 和 $c = 0$ 代入 (3) 得：
+    \[ 1 - 3\beta^2 = 2\beta^3 \implies 2\beta^3 + 3\beta^2 - 1 = 0 \]
+    因式分解得 $(\beta + 1)^2 (2\beta - 1) = 0$。
+    由于 $0 < \beta < 1$，故 $\beta = \frac{1}{2}$。
+    由此求得 $m = 2 \left( \frac{1}{2} \right)^3 = \frac{1}{4}$，$b = -3 \left( \frac{1}{2} \right)^2 = -\frac{3}{4}$。
+    所以，$a = 0, b = -\frac{3}{4}, c = 0, \beta = \frac{1}{2}, m = \frac{1}{4}$。
+    \end{solution}
+
+    \part 函数 $g(x) = x^3 + px^2 + qx + r$ 对所有 $-1 \leqq x \leqq 1$ 均满足 $-m \leqq g(x) \leqq m$。令 $h(x) = f(x) - g(x)$，通过比较 $h(-1), h(-\beta), h(\beta), h(1)$ 分别与 $0$ 的大小关系，求 $h(x)$。
+    \begin{solution}
+    设 $h(x) = f(x) - g(x)$。
+    由 $f(x)$ 的首项系数和 $g(x)$ 的首项系数均为 $1$ 可知，$h(x)$ 是一个最高次数不超过二次的多项式。
+    根据条件 $-m \leqq g(x) \leqq m$ 以及 (1) 中 $f(x)$ 的各点函数值：
+    $h(-1) = f(-1) - g(-1) = -m - g(-1) \leqq 0$
+    $h(-\beta) = f(-\beta) - g(-\beta) = m - g(-\beta) \geqq 0$
+    $h(\beta) = f(\beta) - g(\beta) = -m - g(\beta) \leqq 0$
+    $h(1) = f(1) - g(1) = m - g(1) \geqq 0$
+    设 $h(x) = sx^2 + tx + u$。
+    由 $\beta = \frac{1}{2}$ 可得：
+    \[ s - t + u \leqq 0 \quad \dots (5) \]
+    \[ \frac{1}{4}s - \frac{1}{2}t + u \geqq 0 \quad \dots (6) \]
+    \[ \frac{1}{4}s + \frac{1}{2}t + u \leqq 0 \quad \dots (7) \]
+    \[ s + t + u \geqq 0 \quad \dots (8) \]
+    由 (8) $-$ (7) 得 $t \geqq 0$，由 (6) $-$ (5) 得 $t \leqq 0$，故 $t = 0$。
+    此时 (5)、(6) 变为 $s + u \leqq 0$ 和 $\frac{1}{4}s + u \geqq 0$。
+    再由 (7)、(8) 变为 $\frac{1}{4}s + u \leqq 0$ 和 $s + u \geqq 0$。
+    由此可得 $s + u = 0$ 且 $\frac{1}{4}s + u = 0$，解得 $s = 0, u = 0$。
+    综上所述，恒有 $h(x) = 0$。
+    \end{solution}
+\end{parts}
+
 %日微分
     \question 已知对任意正整数 $k$,方程 
     \[
@@ -5370,6 +5419,171 @@ $x$ 轴与 $C_2$ 围成的总面积为
     \[ S = \int_{-2}^{0} \{ (-\frac{1}{2}x^2 - 2x + 6) - (-x + 6) \} \, dx \]
     \[ S = \int_{-2}^{0} (-\frac{1}{2}x^2 - x) \, dx = \left[ -\frac{1}{6}x^3 - \frac{1}{2}x^2 \right]_{-2}^{0} \]
     \[ S = 0 - \left( \frac{8}{6} - \frac{4}{2} \right) = \frac{2}{3} \]
+    \end{solution}
+\end{parts}
+
+\question
+已知函数 $f(x)$ 满足等式 $f(x) = |x-1| + \int_{0}^{2} x f(t) \,dt$。令 $\int_{0}^{2} f(t) \,dt = a$。回答以下问题。
+\begin{parts}
+    \part 用 $a$ 表示 $f(2)$。
+    \begin{solution}
+    根据已知条件，可以将 $f(x)$ 变形为：
+    \[
+    f(x) = |x-1| + x \int_{0}^{2} f(t) \,dt = |x-1| + ax \quad \dots (1)
+    \]
+    将 $x=2$ 代入 (1) 式：
+    \[
+    f(2) = |2-1| + 2a = 1 + 2a
+    \]
+    \end{solution}
+
+    \part 求 $a$ 的值。
+    \begin{solution}
+    根据 $a = \int_{0}^{2} f(t) \,dt$，将 (1) 式中的函数代入积分式中：
+    \[
+    a = \int_{0}^{2} (|t-1| + at) \,dt
+    \]
+    由于 $|t-1|$ 在 $1$ 处符号改变，分段计算积分：
+    \[
+    a = \int_{0}^{1} \{-(t-1) + at\} \,dt + \int_{1}^{2} \{(t-1) + at\} \,dt
+    \]
+    \[
+    a = \left[ \frac{1}{2}(a-1)t^2 + t \right]_{0}^{1} + \left[ \frac{1}{2}(a+1)t^2 - t \right]_{1}^{2}
+    \]
+    \[
+    a = \left( \frac{1}{2}a - \frac{1}{2} + 1 \right) + \left( 2(a+1) - 2 - \left( \frac{1}{2}(a+1) - 1 \right) \right)
+    \]
+    整理得：
+    \[
+    a = 2a + 1 \implies a = -1
+    \]
+    \end{solution}
+
+    \part 设 $k$ 为常数。求函数 $y = xf(x) - k$ 的图象与 $y = -x^2$ 的图象共有点的个数。
+    \begin{solution}
+    由 (2) 知 $a = -1$，代入 (1) 得：
+    \[
+    f(x) = |x-1| - x = \begin{cases} -1 & (x \geqq 1) \\ -2x+1 & (x < 1) \end{cases}
+    \]
+    联立两函数方程 $xf(x) - k = -x^2$，变形为求 $xf(x) + x^2 = k$ 的解的个数。
+    设 $g(x) = xf(x) + x^2$：
+    (i) 当 $x \geqq 1$ 时，$g(x) = x(-1) + x^2 = x^2 - x = \left(x - \frac{1}{2}\right)^2 - \frac{1}{4}$。
+    此时 $g(1) = 0$。
+    (ii) 当 $x < 1$ 时，$g(x) = x(-2x+1) + x^2 = -x^2 + x = -\left(x - \frac{1}{2}\right)^2 + \frac{1}{4}$。
+    此时 $g(1) = 0$，且顶点为 $(\frac{1}{2}, \frac{1}{4})$。
+    
+    观察 $y = g(x)$ 的图象与直线 $y = k$ 的交点：
+    \begin{itemize}
+        \item 当 $k < 0$ 时，共 1 个。
+        \item 当 $k = 0$ 时，共 2 个。
+        \item 当 $0 < k < \frac{1}{4}$ 时，共 3 个。
+        \item 当 $k = \frac{1}{4}$ 时，共 2 个。
+        \item 当 $k > \frac{1}{4}$ 时，共 1 个。
+    \end{itemize}
+    \end{solution}
+\end{parts}
+
+\question
+设 $a$ 为正数，$t$ 是满足 $0 \leqq t < a$ 的实数。点 $(t, (t-a)^2)$ 处曲线 $y = (x-a)^2$ 的切线与 $x$ 轴及 $y$ 轴围成的区域记为 $D(t)$。
+\begin{parts}
+    \part 用 $a$ 和 $t$ 表示区域 $D(t)$ 的面积 $S(t)$。
+    \begin{solution}
+    曲线 $y = (x-a)^2$ 对 $x$ 求导得 $y' = 2(x-a)$。
+    在点 $(t, (t-a)^2)$ 处的切线方程为：
+    \[
+    y - (t-a)^2 = 2(t-a)(x-t)
+    \]
+    \[
+    y = 2(t-a)x - t^2 + a^2 \quad \dots (1)
+    \]
+    切线与 $y$ 轴的交点为 $(0, a^2-t^2)$，与 $x$ 轴的交点为 $(\frac{t+a}{2}, 0)$。
+    区域 $D(t)$ 为直角三角形，其面积为：
+    \[
+    S(t) = \frac{1}{2} \cdot \frac{t+a}{2} \cdot (a^2-t^2) = \frac{1}{4}(a+t)^2(a-t)
+    \]
+    \[
+    S(t) = \frac{1}{4}(-t^3 - at^2 + a^2t + a^3) \quad \dots (2)
+    \]
+    \end{solution}
+
+    \part 求区域 $D(t)$ 的面积的最大值，以及此时 $t$ 的值（用 $a$ 表示）。
+    \begin{solution}
+    对 (2) 式中的 $S(t)$ 求导：
+    \[
+    S'(t) = \frac{1}{4}(-3t^2 - 2at + a^2) = -\frac{1}{4}(3t-a)(t+a)
+    \]
+    在 $0 \leqq t < a$ 的范围内，令 $S'(t) = 0$ 得 $t = \frac{a}{3}$。
+    通过增减表可知，当 $t = \frac{a}{3}$ 时，$S(t)$ 取得最大值：
+    \[
+    S\left(\frac{a}{3}\right) = \frac{1}{4}\left(-\frac{a^3}{27} - \frac{a^3}{9} + \frac{a^3}{3} + a^3\right) = \frac{8}{27}a^3
+    \]
+    \end{solution}
+
+    \part 设 $s$ 为满足 $0 \leqq s \leqq t$ 的实数。记区域 $D(t)$ 与 $D(s)$ 的并集区域为 $D(t) \cup D(s)$。求该区域面积的最大值，以及此时 $s$ 和 $t$ 的值（用 $a$ 表示）。
+    \begin{solution}
+    记区域 $D(t) \cup D(s)$ 的面积为 $T(t, s)$。
+    (i) 当 $0 \leqq s = t < a$ 时，$T(t, s) = S(t)$，最大值为 $\frac{8}{27}a^3$。
+    (ii) 当 $0 \leqq s < t < a$ 时，两条切线的交点横坐标为 $x = \frac{t+s}{2}$。
+    此时并集面积为 $S(t)$ 加上另一块三角形面积，整理得：
+    \[
+    T(t, s) = \frac{1}{4}(-t^3 - at^2 + a^2t + a^3) + \frac{1}{4}(t^3 + st^2 - s^2t - s^3) \quad \dots (4)
+    \]
+    固定 $t$ 为常数 $t_0$，对 $s$ 求导得 $T'(t_0, s) = -\frac{1}{4}(3s-t_0)(s+t_0)$。
+    当 $s = \frac{t_0}{3}$ 时面积取极大值。代入后得到关于 $t$ 的函数 $U(t) = \frac{1}{4}(\frac{5}{27}t^3 - at^2 + a^2t + a^3)$。
+    对 $U(t)$ 求导：
+    \[
+    U'(t) = \frac{1}{36}(5t-3a)(t-3a)
+    \]
+    令 $U'(t) = 0$，在定义域内得 $t = \frac{3}{5}a$。
+    此时 $s = \frac{1}{3} \cdot \frac{3}{5}a = \frac{a}{5}$。
+    最大面积为：
+    \[
+    U\left(\frac{3}{5}a\right) = \frac{8}{25}a^3
+    \]
+    比较 (i) 和 (ii) 的结果，由于 $\frac{8}{25} > \frac{8}{27}$，故最大值为 $\frac{8}{25}a^3$。
+    此时 $t = \frac{3}{5}a, s = \frac{a}{5}$。
+    \end{solution}
+\end{parts}
+
+\question
+设抛物线 $y = x^2$ 中满足 $-1 \leqq x \leqq 1$ 的部分为 $C$。考虑坐标平面上的原点 $O$ 和点 $A(1, 0)$。
+\begin{parts}
+    \part 当点 $P$ 在 $C$ 上运动时，求满足 $\vec{OQ} = 2\vec{OP}$ 的点 $Q$ 的轨迹。
+    \begin{solution}
+    对于 $C: y = x^2 \ (-1 \leqq x \leqq 1)$ 上的点 $P(p, p^2) \ (-1 \leqq p \leqq 1)$，有：
+    \[
+    \vec{OQ} = 2\vec{OP} = (2p, 2p^2)
+    \]
+    设 $Q(x, y)$，则 $x = 2p, y = 2p^2$。由此得 $p = \frac{x}{2}$，代入 $y$ 的表达式得：
+    \[
+    y = 2\left(\frac{x}{2}\right)^2 = \frac{1}{2}x^2 \quad (-2 \leqq x \leqq 2)
+    \]
+    因此，点 $Q$ 的轨迹是抛物线 $y = \frac{1}{2}x^2$ 在 $-2 \leqq x \leqq 2$ 之间的部分。
+    \end{solution}
+
+    \part 当点 $P$ 在 $C$ 上运动，点 $R$ 在线段 $OA$ 上运动时，求满足 $\vec{OS} = 2\vec{OP} + \vec{OR}$ 的点 $S$ 所运动区域的面积，并在坐标平面上画出该区域。
+    \begin{solution}
+    对于线段 $OA$ 上的点 $R(r, 0) \ (0 \leqq r \leqq 1)$，有：
+    \[
+    \vec{OS} = 2\vec{OP} + \vec{OR}
+    \]
+    固定点 $R$ 时，由 (1) 可知点 $S$ 的轨迹是将点 $Q$ 的轨迹以 $R$ 为顶点进行平移得到的抛物线弧，其方程为：
+    \[
+    y = \frac{1}{2}(x-r)^2 \quad (r-2 \leqq x \leqq r+2) \quad \dots (*)
+    \]
+    当点 $R$ 在 $0 \leqq r \leqq 1$ 范围内运动时，由 $(*)$ 表示的抛物线部分在 $x$ 轴方向上进行平行移动。
+    点 $S$ 运动的区域为这些抛物线扫过的阴影部分。
+        利用直线 $x = \frac{1}{2}$ 的对称性，设该区域面积为 $S$：
+    \[
+    S = 2 \left\{ \int_{\frac{1}{2}}^{2} \frac{1}{2}x^2 \,dx + 1 \cdot 2 - \int_{1}^{3} \frac{1}{2}(x-1)^2 \,dx \right\}
+    \]
+    \[
+    S = \int_{\frac{1}{2}}^{2} x^2 \,dx + 4 - \int_{1}^{3} (x-1)^2 \,dx
+    \]
+    计算积分：
+    \[
+    S = \left[ \frac{x^3}{3} \right]_{\frac{1}{2}}^{2} + 4 - \left[ \frac{(x-1)^3}{3} \right]_{1}^{3} = \frac{1}{3} \cdot \frac{63}{8} + 4 - \frac{1}{3} \cdot 8 = \frac{95}{24}
+    \]
     \end{solution}
 \end{parts}
 \end{questions}

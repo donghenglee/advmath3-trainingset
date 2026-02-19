@@ -4145,6 +4145,128 @@ S \equiv 7 \pmod 9
     此时 $a=5, b=1, c=1$，故 $n = 2^5 \cdot 3^1 \cdot 7^1 = 672$。
     \end{solution}
 \end{parts}
+
+\question
+自然数的平方称为平方数。
+\begin{parts}
+    \part 证明：对于自然数 $a, n, k$，若等式 $n(n+1) + a = (n+k)^2$ 成立，则必有 $a \geqq k^2 + 2k - 1$。
+    \begin{solution}
+    对于自然数 $a, n, k$，当 $n(n+1) + a = (n+k)^2 \quad \dots (1)$ 成立时：
+    \[
+    a = (n+k)^2 - n(n+1) = n^2 + 2kn + k^2 - n^2 - n = (2k-1)n + k^2
+    \]
+    由于 $n \geqq 1$ 且 $2k - 1 \geqq 1$（因为 $k$ 是自然数），则有：
+    \[
+    (2k-1)n \geqq 2k - 1
+    \]
+    因此：
+    \[
+    a = (2k-1)n + k^2 \geqq 2k - 1 + k^2 = k^2 + 2k - 1 \quad \dots (2)
+    \]
+    即 $a \geqq k^2 + 2k - 1$ 成立。
+    \end{solution}
+
+    \part 求出所有使得 $n(n+1) + 14$ 为平方数的自然数 $n$。
+    \begin{solution}
+    设 $n(n+1) + 14 = (n+k)^2$，其中 $k$ 为自然数（因为 $n(n+1) + 14 > n^2$）。
+    根据 (1) 中的结论，令 $a = 14$，则有：
+    \[
+    14 \geqq k^2 + 2k - 1 \implies k^2 + 2k - 15 \leqq 0
+    \]
+    因式分解得：
+    \[
+    (k+5)(k-3) \leqq 0 \implies -5 \leqq k \leqq 3
+    \]
+    由于 $k$ 是自然数，故 $k$ 的可能取值为 $1, 2, 3$。
+
+    接下来分类讨论：
+    (i) 当 $k = 1$ 时，由等式 (1) 得 $n(n+1) + 14 = (n+1)^2$。
+    解得 $n^2 + n + 14 = n^2 + 2n + 1$，即 $n = 13$。
+    (ii) 当 $k = 2$ 时，由等式 (1) 得 $n(n+1) + 14 = (n+2)^2$。
+    解得 $n^2 + n + 14 = n^2 + 4n + 4 \implies 3n = 10$，即 $n = \frac{10}{3}$，不是自然数，舍去。
+    (iii) 当 $k = 3$ 时，由等式 (1) 得 $n(n+1) + 14 = (n+3)^2$。
+    解得 $n^2 + n + 14 = n^2 + 6n + 9 \implies 5n = 5$，即 $n = 1$。
+
+    综上所述，满足条件的自然数为 $n = 1, 13$。
+    \end{solution}
+\end{parts}
+
+\question
+求所有满足 $n^3 - 7n + 9$ 为素数的整数 $n$。
+
+\begin{solution}
+令 $f(n) = n^3 - 7n + 9$。我们通过模 3 进行讨论（注意到 $9 \equiv 0 \pmod 3$）：
+\begin{enumerate}
+    \item 当 $n \equiv 0 \pmod 3$ 时：
+    \[ n^3 - 7n + 9 \equiv 0 - 0 + 0 = 0 \pmod 3 \]
+    \item 当 $n \equiv 1 \pmod 3$ 时：
+    \[ n^3 - 7n + 9 \equiv 1 - 7 + 0 = -6 \equiv 0 \pmod 3 \]
+    \item 当 $n \equiv 2 \pmod 3$ 时：
+    \[ n^3 - 7n + 9 \equiv 8 - 14 + 0 = -6 \equiv 0 \pmod 3 \]
+\end{enumerate}
+由此可知，对于任意整数 $n$，$n^3 - 7n + 9$ 始终是 3 的倍数。
+
+由于一个正整数要是素数且又是 3 的倍数，那么它必须等于 3 本身。
+因此，我们令：
+\[ n^3 - 7n + 9 = 3 \]
+整理得：
+\[ n^3 - 7n + 6 = 0 \]
+对左侧进行因式分解：
+\[ (n-1)(n-2)(n+3) = 0 \]
+解得：
+\[ n = 1, \ 2, \ -3 \]
+
+**验证：**
+* 当 $n=1$ 时，$f(1) = 3$（素数）
+* 当 $n=2$ 时，$f(2) = 3$（素数）
+* 当 $n=-3$ 时，$f(-3) = -27 + 21 + 9 = 3$（素数）
+
+综上所述，满足条件的整数 $n$ 为 $1, 2, -3$。
+\end{solution}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 证明：当整数 $\alpha, \beta$ 中至少有一个是奇数时，$\alpha^2 + \alpha\beta + \beta^2$ 是奇数。
+    \begin{solution}
+        当整数 $\alpha, \beta$ 中至少有一个为奇数时，分以下三种情况讨论：
+        \begin{enumerate}
+            \item[(i)] 当 $\alpha, \beta$ 均为奇数时
+            \[ \alpha^2, \alpha\beta, \beta^2 \text{ 均为奇数，故 } \alpha^2 + \alpha\beta + \beta^2 \text{ 为奇数。} \]
+            \item[(ii)] 当 $\alpha$ 为偶数，$\beta$ 为奇数时
+            \[ \alpha^2, \alpha\beta \text{ 为偶数，} \beta^2 \text{ 为奇数，故 } \alpha^2 + \alpha\beta + \beta^2 \text{ 为奇数。} \]
+            \item[(iii)] 当 $\alpha$ 为奇数，$\beta$ 为偶数时
+            \[ \alpha^2 \text{ 为奇数，} \alpha\beta, \beta^2 \text{ 为偶数，故 } \alpha^2 + \alpha\beta + \beta^2 \text{ 为奇数。} \]
+        \end{enumerate}
+        由 (i) 至 (iii) 可知，在任何情况下 $\alpha^2 + \alpha\beta + \beta^2$ 均为奇数。
+    \end{solution}
+
+    \part 设 $n$ 为奇数。证明：不存在满足 $\alpha^2 + \alpha\beta + \beta^2 = 2n$ 的整数 $\alpha, \beta$。
+    \begin{solution}
+        根据条件，对于奇数 $n$，有
+        \[ \alpha^2 + \alpha\beta + \beta^2 = 2n \quad \cdots (1) \]
+        首先，由 (1) 可知，当整数 $\alpha, \beta$ 中至少有一个为奇数时，$\alpha^2 + \alpha\beta + \beta^2$ 为奇数。
+        因为 $2n$ 是偶数，所以方程 (1) 不成立。
+        由此可知，满足 (1) 的整数 $\alpha, \beta$ 必须均为偶数。
+        然而，当 $\alpha, \beta$ 均为偶数时，$\alpha^2, \alpha\beta, \beta^2$ 均为 $4$ 的倍数。
+        因此 $\alpha^2 + \alpha\beta + \beta^2$ 也是 $4$ 的倍数。
+        由于 $n$ 是奇数，所以 $2n$ 只能被 $2$ 整除而不能被 $4$ 整除。
+        故方程 (1) 不成立。
+        综上所述，不存在满足 (1) 的整数 $\alpha, \beta$。
+    \end{solution}
+
+    \part 设 $c$ 为实数。证明：三次方程 $x^3 - 2018x + c = 0$ 的解中，整数解的个数在 $1$ 个以下。
+    \begin{solution}
+        设三次方程 $x^3 - 2018x + c = 0$ ($c$ 为实数) 的解为 $x = \alpha, \beta, \gamma$。根据根与系数的关系：
+        \[ \alpha + \beta + \gamma = 0 \quad \cdots (2) \]
+        \[ \alpha\beta + \beta\gamma + \gamma\alpha = -2018 \quad \cdots (3) \]
+        从 (2) 得 $\gamma = -(\alpha + \beta)$，代入 (3) 得：
+        \[ \alpha\beta - (\alpha + \beta)^2 = -2018 \]
+        \[ \alpha^2 + \alpha\beta + \beta^2 = 2018 \quad \cdots (4) \]
+        这里 $2018 = 2 \times 1009$。由于 $1009$ 是奇数，由 (2) 的结论可知，不存在满足 (4) 的整数 $\alpha, \beta$。
+        也就是说，$\alpha, \beta, \gamma$ 中作为整数的个数在 $1$ 个以下。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 
@@ -4545,6 +4667,56 @@ ii) $7^1=07, 7^2=49, 7^3=43, 7^4=01 \dots$ 模 $100$ 的周期为 $4$。
 
 综上所述，满足条件的素数对（考虑对称性）为 $(p, q) = (2, 3), (3, 2)$。
 \end{solution}
+
+\question
+已知首项 $a_1 = 1$，公差为 $4$ 的等差数列 $\{a_n\}$。回答以下问题。
+\begin{parts}
+    \part 求在 $\{a_n\}$ 的前 $600$ 项中，有多少项是 $7$ 的倍数。
+    \begin{solution}
+    等差数列的通项公式为 $a_n = 1 + 4(n-1) = 4n - 3$。
+    若 $a_n$ 是 $7$ 的倍数，设 $k$ 为自然数，则有 $4n - 3 = 7k \quad \dots (1)$。
+    通过观察或利用不定方程特解：$4 \times (-1) - 3 = 7 \times (-1)$，可将 (1) 变形为：
+    \[
+    4(n + 1) = 7(k + 1)
+    \]
+    由于 $4$ 与 $7$ 互质，必有 $n+1 = 7l$（$l$ 为整数），即 $n = 7l - 1$。
+    由 $1 \leqq n \leqq 600$ 得 $1 \leqq 7l - 1 \leqq 600 \implies \frac{2}{7} \leqq l \leqq 85 + \frac{6}{7}$。
+    故 $l$ 可取 $1, 2, \cdots, 85$，共有 $85$ 项。
+    \end{solution}
+
+    \part 求在 $\{a_n\}$ 的前 $600$ 项中，有多少项是 $7^2$ 的倍数。
+    \begin{solution}
+    将 (1) 中满足 $7$ 的倍数的项提取出来，设为数列 $\{b_l\}$：
+    \[
+    b_l = a_{7l-1} = 4(7l-1) - 3 = 28l - 7 = 7(4l - 1)
+    \]
+    若 $a_n$ 是 $7^2$ 的倍数，则 $b_l$ 必须是 $49$ 的倍数，即 $4l - 1$ 必须是 $7$ 的倍数。
+    设 $4l - 1 = 7m$，利用特解 $4 \times 2 - 1 = 7 \times 1$ 变形得：
+    \[
+    4(l - 2) = 7(m - 1)
+    \]
+    同理，$l - 2 = 7p \implies l = 7p + 2$。
+    由 $1 \leqq l \leqq 85$ 得 $1 \leqq 7p + 2 \leqq 85 \implies -\frac{1}{7} \leqq p \leqq 11 + \frac{6}{7}$。
+    故 $p$ 可取 $0, 1, \cdots, 11$，共有 $12$ 项。
+    \end{solution}
+
+    \part 求使得积 $a_1 a_2 \cdots a_n$ 是 $7^{45}$ 的倍数的最小自然数 $n$。
+    \begin{solution}
+    我们需要计算连乘积中质因数 $7$ 的总个数。
+    将 $a_n$ 中是 $7$ 的倍数的项按每 $7$ 个一组进行划分（即 $l$ 每增加 $7$ 产生一个 $7^2$ 的倍数）。
+    在每一个“群”中（如 $l=1$ 到 $l=7$），前 $6$ 个是 $7$ 的倍数（含 $1$ 个因子 $7$），第 $7$ 个是 $7^2$ 的倍数（至少含 $2$ 个因子 $7$）。
+    前 $5$ 个完整的群（即 $l=1$ 到 $l=35$）中，每个群提供的因子 $7$ 总数为 $6 \times 1 + 1 \times 2 = 8$ 个。
+    （注：此处需检查是否有 $7^3$ 的倍数。若 $l=7p+2$ 且 $4l-1$ 是 $49$ 的倍数，则 $4(7p+2)-1 = 28p+7 = 7(4p+1)$，需 $4p+1$ 是 $7$ 的倍数。当 $p=5$ 时，$4 \times 5 + 1 = 21$ 是 $7$ 的倍数，故 $p=5$ 对应的 $l=37$ 项是 $7^3$ 的倍数）。
+    
+    计算因子 $7$ 的累计个数：
+    - 前 $5$ 个群（$l=1 \sim 35$）：共 $8 \times 5 = 40$ 个因子。
+    - 进入第 $6$ 群（$l=36 \sim 42$）：
+        - $l=36$：$a_{251}$ 是 $7$ 的倍数（累计 $41$ 个）。
+        - $l=37$：$a_{258}$ 是 $7^3$ 的倍数（因为 $p=5$），贡献 $3$ 个因子（累计 $44$ 个）。
+        - $l=38$：$a_{265}$ 是 $7$ 的倍数，贡献 $1$ 个因子（累计 $45$ 个）。
+    因此，使得因子总数达到 $45$ 的最小 $n$ 为 $265$。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}
@@ -5374,6 +5546,141 @@ x_1^2 + y_1^2 + z_1^2 = 4x_1y_1z_1
     - 若 $p=5$，$5^2 = 25, 2^5 + 7 = 39$，不成立。
     
     综上所述，满足条件的素数对只有 $(p, q) = (2, 5)$。
+    \end{solution}
+\end{parts}
+
+\question
+求满足联立方程组 $x^2 = yz + 7$, $y^2 = zx + 7$, $z^2 = xy + 7$ 的所有整数数组 $(x, y, z)$，且满足 $x \leqq y \leqq z$。
+
+\begin{solution}
+对于联立方程组：
+(1) $x^2 = yz + 7$
+(2) $y^2 = zx + 7$
+(3) $z^2 = xy + 7$
+
+由 (1) $-$ (2) 得 $x^2 - y^2 = z(y - x)$，即 $(x - y)(x + y + z) = 0 \quad \dots (4)$。
+由 (2) $-$ (3) 得 $y^2 - z^2 = x(z - y)$，即 $(y - z)(x + y + z) = 0 \quad \dots (5)$。
+
+接下来分情况讨论：
+(i) 若 $x + y + z \neq 0$：
+由 (4) 和 (5) 可知 $x = y$ 且 $y = z$，即 $x = y = z$。
+代入 (1) 得 $x^2 = x^2 + 7$，即 $0 = 7$，矛盾。故此情况无解。
+
+(ii) 若 $x + y + z = 0$：
+此时 (4) 和 (5) 恒成立。由 $y = -(x + z)$ 代入 (1) 得：
+\[
+x^2 = -(x + z)z + 7 \implies x^2 + xz + z^2 - 7 = 0 \quad \dots (6)
+\]
+由于 $x$ 是实数，方程 (6) 关于 $x$ 的判别式 $D$ 必须满足 $D \geqq 0$：
+\[
+D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad \dots (7)
+\]
+由于 $x \leqq y \leqq z$ 且 $x + y + z = 0$，可知 $x \leqq 0$ 且 $z \geqq 0$。
+由 (7) 可知整数 $z$ 的可能取值为 $z = 0, 1, 2, 3$。
+
+按 $z$ 的取值分别检验：
+- 当 $z = 0$ 时：由 (6) 得 $x^2 = 7$，无整数解。
+- 当 $z = 1$ 时：由 (6) 得 $x^2 + x - 6 = 0 \implies (x + 3)(x - 2) = 0$。
+  由于 $x \leqq y \leqq z$，当 $x = -3$ 时，$y = -(-3 + 1) = 2$，不满足 $y \leqq z=1$；当 $x = 2$ 时，不满足 $x \leqq z=1$。
+- 当 $z = 2$ 时：由 (6) 得 $x^2 + 2x - 3 = 0 \implies (x + 3)(x - 1) = 0$。
+  若 $x = -3$，则 $y = -(-3 + 2) = 1$。数组 $(-3, 1, 2)$ 满足 $x \leqq y \leqq z$。
+- 当 $z = 3$ 时：由 (6) 得 $x^2 + 3x + 2 = 0 \implies (x + 2)(x + 1) = 0$。
+  若 $x = -2$，则 $y = -(-2 + 3) = -1$。数组 $(-2, -1, 3)$ 满足 $x \leqq y \leqq z$。
+  若 $x = -1$，则 $y = -(-1 + 3) = -2$，不满足 $x \leqq y$。
+
+综上所述，满足条件的整数数组为 $(x, y, z) = (-3, 1, 2), (-2, -1, 3)$。
+\end{solution}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 求满足下列条件 $(*)$ 的所有三元自然数数组 $(a, b, c)$。
+    \[
+    (*) \quad a < b < c \quad \text{且} \quad \frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{2}
+    \]
+    \begin{solution}
+    由 $a < b < c$ 可得 $\frac{1}{a} > \frac{1}{b} > \frac{1}{c} > 0$。
+    根据方程可得 $\frac{3}{a} > \frac{1}{2}$，即 $a < 6$。
+    又因为 $\frac{1}{a} < \frac{1}{2}$，即 $a > 2$，所以 $a$ 的可能取值为 $3, 4, 5$。
+
+    接下来分类讨论：
+    (i) 当 $a = 3$ 时，$\frac{1}{b} + \frac{1}{c} = \frac{1}{6}$，整理得 $(b-6)(c-6) = 36$。
+    由于 $3 < b < c$，则 $-3 < b-6 < c-6$。满足积为 $36$ 的正整数对有 $(b-6, c-6) = (1, 36), (2, 18), (3, 12), (4, 9)$。
+    解得 $(b, c) = (7, 42), (8, 24), (9, 18), (10, 15)$。
+
+    (ii) 当 $a = 4$ 时，$\frac{1}{b} + \frac{1}{c} = \frac{1}{4}$，整理得 $(b-4)(c-4) = 16$。
+    由于 $4 < b < c$，满足条件的有 $(b-4, c-4) = (1, 16), (2, 8)$。
+    解得 $(b, c) = (5, 20), (6, 12)$。
+
+    (iii) 当 $a = 5$ 时，$\frac{1}{b} + \frac{1}{c} = \frac{3}{10}$，即 $3bc - 10b - 10c = 0$，整理得 $(3b-10)(3c-10) = 100$。
+    由于 $5 < b < c$，且 $3b-10$ 必须是 $100$ 的约数且大于 $5$，经检验无符合条件的自然数解。
+
+    综上所述，符合条件的数组共有 $6$ 组：
+    $(3, 7, 42), (3, 8, 24), (3, 9, 18), (3, 10, 15), (4, 5, 20), (4, 6, 12)$。
+    \end{solution}
+
+    \part 对于偶数 $2n$ ($n \geqq 1$)，设其三个正约数为 $p, q, r$，满足 $p > q > r$ 且 $p + q + r = n$。记满足条件的数组 $(p, q, r)$ 的个数为 $f(n)$。求 $f(n)$ 的最大值 $M$，以及使得 $f(n) = M$ 成立的最小自然数 $n$。
+    \begin{solution}
+    由 $p + q + r = n$ 两边同时除以 $2n$ 得：
+    \[
+    \frac{p}{2n} + \frac{q}{2n} + \frac{r}{2n} = \frac{1}{2}
+    \]
+    令 $a = \frac{2n}{p}, b = \frac{2n}{q}, c = \frac{2n}{r}$。由于 $p, q, r$ 是 $2n$ 的约数，故 $a, b, c$ 均为自然数。
+    由于 $p > q > r$，则 $a < b < c$。此时方程变为 $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{2}$。
+    这说明每一个满足条件的 $(p, q, r)$ 都对应第 (1) 问中的一组解 $(a, b, c)$。
+    因为第 (1) 问共有 $6$ 组解，所以 $f(n)$ 的最大值 $M = 6$。
+
+    若要 $f(n) = 6$，则 $n$ 必须同时满足第 (1) 问中所有 $6$ 组解对应的整除条件：
+    (i) $(3, 7, 42) \implies \frac{2n}{3}, \frac{2n}{7}, \frac{2n}{42}$ 为整数 $\implies 2n$ 是 $42$ 的倍数 $\implies n$ 是 $21$ 的倍数。
+    (ii) $(3, 8, 24) \implies 2n$ 是 $24$ 的倍数 $\implies n$ 是 $12$ 的倍数。
+    (iii) $(3, 9, 18) \implies 2n$ 是 $18$ 的倍数 $\implies n$ 是 $9$ 的倍数。
+    (iv) $(3, 10, 15) \implies 2n$ 是 $30$ 的倍数 $\implies n$ 是 $15$ 的倍数。
+    (v) $(4, 5, 20) \implies 2n$ 是 $20$ 的倍数 $\implies n$ 是 $10$ 的倍数。
+    (vi) $(4, 6, 12) \implies 2n$ 是 $12$ 的倍数 $\implies n$ 是 $6$ 的倍数。
+
+    故 $n$ 必须是 $\{21, 12, 9, 15, 10, 6\}$ 的公倍数。
+    计算最小公倍数：$LCM(21, 12, 9, 15, 10, 6) = LCM(3 \cdot 7, 2^2 \cdot 3, 3^2, 3 \cdot 5, 2 \cdot 5, 2 \cdot 3)$。
+    得到 $n = 2^2 \cdot 3^2 \cdot 5 \cdot 7 = 1260$。
+    因此，$M = 6$，最小的 $n$ 为 $1260$。
+    \end{solution}
+\end{parts}
+
+\question
+假设整数 $a, b$ 满足等式 $3^a - 2^b = 1 \quad \cdots (1)$。
+\begin{parts}
+    \part 证明：$a, b$ 均为正数。
+    \begin{solution}
+        对于整数 $a, b$，由 $3^a - 2^b = 1 \quad \cdots (1)$ 可得 $3^a = 2^b + 1 \quad \cdots (2)$。
+        由此可知 $3^a = 2^b + 1 > 1$，故 $a \ge 1$。此时由 (1) 可得：
+        \[ 2^b = 3^a - 1 \ge 3^1 - 1 = 2 \]
+        因此 $b \ge 1$。所以 $a, b$ 均为正数。
+    \end{solution}
+
+    \part 证明：若 $b > 1$，则 $a$ 是偶数。
+    \begin{solution}
+        当 $b > 1$ 即 $b \ge 2$ 时，$2^b$ 是 $4$ 的倍数。以下在 $\pmod 4$ 条件下进行讨论：
+        (2) 的右边为 $2^b + 1 \equiv 1 \pmod 4$。
+        设 $k$ 为自然数，将 $a$ 分为奇偶情况讨论，并注意 $9 \equiv 1 \pmod 4$：
+        \begin{enumerate}
+            \item[(i)] 当 $a = 2k$ 时，$3^a = 3^{2k} = 9^k \equiv 1^k = 1 \pmod 4$
+            \item[(ii)] 当 $a = 2k - 1$ 时，$3^a = 3^{2(k-1)+1} = 9^{k-1} \cdot 3 \equiv 1^{k-1} \cdot 3 \equiv 3 \pmod 4$
+        \end{enumerate}
+        由 (i) (ii) 可知，(2) 成立的条件是 $a$ 为偶数。
+    \end{solution}
+
+    \part 列出所有满足 (1) 的整数对 $(a, b)$。
+    \begin{solution}
+        由 (1) 可知 $a, b$ 均为自然数：
+        \begin{enumerate}
+            \item[(i)] 当 $b = 1$ 时，由 (2) 可得 $3^a = 2^1 + 1 = 3$，故 $a = 1$。
+            \item[(ii)] 当 $b \ge 2$ 时，由 (2) 可知 $a = 2k$。代入 (2) 得：
+            \[ 3^{2k} = 2^b + 1, \quad (3^k - 1)(3^k + 1) = 2^b \quad \cdots (3) \]
+            注意到 $(3^k + 1) - (3^k - 1) = 2$。
+            由于 $2^b$ 的因数仅为 $1, 2, 2^2, \dots, 2^b$，根据 (3) 可得：
+            \[ 3^k - 1 = 2, \quad 3^k + 1 = 2^2 \]
+            由此解得 $k = 1$，从而 $a = 2$。此外，由 $2 \cdot 2^2 = 2^b$ 可得 $b = 3$。
+        \end{enumerate}
+        由 (i) (ii) 可知，$(a, b) = (1, 1), (2, 3)$。
     \end{solution}
 \end{parts}
 \end{questions}

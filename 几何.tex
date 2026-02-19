@@ -4382,6 +4382,105 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
     \[ = 1 - \frac{1}{6} - \frac{2-2t}{3-t} - \frac{3t}{3+t} = \frac{(5t-3)^2}{6(3-t)(3+t)} \]
     \end{solution}
 \end{parts}
+
+\question
+设 $s$ 为正实数。在锐角三角形 $ABC$ 中，边 $AB$ 按 $s:1$ 内分的点为 $D$，边 $BC$ 按 $s:3$ 内分的点为 $E$。线段 $CD$ 与线段 $AE$ 的交点为 $F$。回答以下问题。
+\begin{parts}
+    \part 若 $\overrightarrow{AF} = \alpha \overrightarrow{AB} + \beta \overrightarrow{AC}$，求 $\alpha$ 与 $\beta$。
+    \begin{solution}
+    对 $\triangle ABE$ 和直线 $CD$ 应用梅涅劳斯定理：
+    \[ \frac{AD}{DB} \cdot \frac{BC}{CE} \cdot \frac{EF}{FA} = 1 \]
+    由条件知 $AD:DB = s:1$，$BE:EC = s:3$，则 $BC:CE = (s+3):3$。
+    代入得：
+    \[ \frac{s}{1} \cdot \frac{s+3}{3} \cdot \frac{EF}{FA} = 1 \implies \frac{FA}{EF} = \frac{s(s+3)}{3} \]
+    因此：
+    \[ \overrightarrow{AF} = \frac{FA}{FA+EF} \overrightarrow{AE} = \frac{s(s+3)}{s(s+3)+3} \overrightarrow{AE} \]
+    又因为 $\overrightarrow{AE} = \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3}$，代入上式得：
+    \[ \overrightarrow{AF} = \frac{s(s+3)}{s^2+3s+3} \cdot \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3} = \frac{3s}{s^2+3s+3} \overrightarrow{AB} + \frac{s^2}{s^2+3s+3} \overrightarrow{AC} \]
+    由于 $\overrightarrow{AB}$ 与 $\overrightarrow{AC}$ 线性无关，得：
+    \[ \alpha = \frac{3s}{s^2+3s+3}, \quad \beta = \frac{s^2}{s^2+3s+3} \]
+    \end{solution}
+
+    \part 从 $F$ 向边 $AC$ 作垂线 $FG$。求使得 $FG$ 长度最大时的 $s$ 值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image253.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    设 $\overrightarrow{AH} = \alpha \overrightarrow{AB}, \overrightarrow{AI} = \beta \overrightarrow{AC}$，由 $\overrightarrow{AF} = \overrightarrow{AH} + \overrightarrow{AI}$ 可知：
+    \[ \triangle AFC = \alpha \cdot \triangle ABC \quad \dots (1) \]
+    又因为 $\triangle AFC = \frac{1}{2} AC \cdot FG \quad \dots (2)$。
+    由 (1), (2) 可得 $FG = \frac{2\alpha}{AC} \triangle ABC$。
+    因此，$FG$ 最大等价于 $\alpha$ 最大。将 $\alpha$ 变形为：
+    \[ \alpha = \frac{3s}{s^2+3s+3} = \frac{3}{s + 3 + \frac{3}{s}} \]
+    根据均值不等式，由于 $s > 0$：
+    \[ s + \frac{3}{s} \geqq 2\sqrt{s \cdot \frac{3}{s}} = 2\sqrt{3} \]
+    当且仅当 $s = \frac{3}{s}$ 即 $s = \sqrt{3}$ 时，等号成立。
+    此时分母最小，$\alpha$ 取得最大值：
+    \[ \alpha = \frac{3}{2\sqrt{3}+3} = 2\sqrt{3}-3 \]
+    因此，$FG$ 长度最大时，$s = \sqrt{3}$。
+    \end{solution}
+\end{parts}
+
+\question
+设三角形 $ABC$ 的内切圆半径为 $r$，外切圆半径为 $R$，令 $h = \frac{r}{R}$。此外，记 $\angle A = 2\alpha, \angle B = 2\beta, \angle C = 2\gamma$。
+\begin{parts}
+    \part 证明 $h = 4\sin \alpha \sin \beta \sin \gamma$。
+    \begin{solution}
+    在 $\triangle ABC$ 中，由 $\angle A + \angle B + \angle C = \pi$ 得：
+    \[
+    \alpha + \beta + \gamma = \frac{\pi}{2} \quad \dots (1)
+    \]
+    设内切圆半径为 $r$，则边 $BC$ 的长度可表示为：
+    \[
+    BC = \frac{r}{\tan \beta} + \frac{r}{\tan \gamma} = r \left( \frac{\cos \beta}{\sin \beta} + \frac{\cos \gamma}{\sin \gamma} \right) = r \cdot \frac{\sin(\beta + \gamma)}{\sin \beta \sin \gamma}
+    \]
+    由 (1) 知 $\sin(\beta + \gamma) = \sin(\frac{\pi}{2} - \alpha) = \cos \alpha$，故：
+    \[
+    BC = r \cdot \frac{\cos \alpha}{\sin \beta \sin \gamma} \quad \dots (2)
+    \]
+    又根据正弦定理，外切圆半径 $R$ 与边长满足：
+    \[
+    BC = 2R \sin 2\alpha = 4R \sin \alpha \cos \alpha \quad \dots (3)
+    \]
+    联立 (2) 和 (3) 得 $r \cdot \frac{\cos \alpha}{\sin \beta \sin \gamma} = 4R \sin \alpha \cos \alpha$，化简得：
+    \[
+    h = \frac{r}{R} = 4\sin \alpha \sin \beta \sin \gamma \quad \dots (4)
+    \]
+    \end{solution}
+
+    \part 证明当 $\triangle ABC$ 为直角三角形时，$h \leqq \sqrt{2}-1$。此外，说明等号在何时成立。
+    \begin{solution}
+    不妨设 $\angle A = \frac{\pi}{2}$，即 $\alpha = \frac{\pi}{4}$。
+    此时由 (1) 得 $\beta + \gamma = \frac{\pi}{4}$，代入 (4) 得：
+    \[
+    h = 4\sin \frac{\pi}{4} \sin \beta \sin \gamma = 2\sqrt{2} \cdot \frac{1}{2} \{ \cos(\beta - \gamma) - \cos(\beta + \gamma) \}
+    \]
+    \[
+    h = \sqrt{2} \{ \cos(\beta - \gamma) - \cos \frac{\pi}{4} \} = \sqrt{2} \cos(\beta - \gamma) - 1
+    \]
+    由于 $-\frac{\pi}{4} < \beta - \gamma < \frac{\pi}{4}$，故 $\frac{\sqrt{2}}{2} < \cos(\beta - \gamma) \leqq 1$。
+    因此 $h \leqq \sqrt{2} \cdot 1 - 1 = \sqrt{2}-1$ 成立。
+    等号在 $\cos(\beta - \gamma) = 1$ 即 $\beta = \gamma$ 时成立，此时 $\triangle ABC$ 为 **等腰直角三角形**。
+    \end{solution}
+
+    \part 证明对任意三角形 $ABC$，$h \leqq \frac{1}{2}$。此外，说明等号在何时成立。
+    \begin{solution}
+    首先固定 $\alpha$（其中 $0 < \alpha < \frac{\pi}{2}$），由 (1) 知 $\beta + \gamma = \frac{\pi}{2} - \alpha$。同 (2) 的讨论：
+    \[
+    h = 4\sin \alpha \cdot \frac{1}{2} \{ \cos(\beta - \gamma) - \cos(\beta + \gamma) \} = 2\sin \alpha \{ \cos(\beta - \gamma) - \sin \alpha \}
+    \]
+    由于 $\cos(\beta - \gamma) \leqq 1$，故有：
+    \[
+    h \leqq 2\sin \alpha(1 - \sin \alpha) = -2\sin^2 \alpha + 2\sin \alpha = -2\left( \sin \alpha - \frac{1}{2} \right)^2 + \frac{1}{2} \quad \dots (5)
+    \]
+    令 $f(\sin \alpha) = -2(\sin \alpha - \frac{1}{2})^2 + \frac{1}{2}$。由于 $0 < \sin \alpha < 1$，当 $\sin \alpha = \frac{1}{2}$ 时，$h$ 取得最大值 $\frac{1}{2}$。
+    等号成立的条件是 $\cos(\beta - \gamma) = 1$ 且 $\sin \alpha = \frac{1}{2}$，即 $\beta = \gamma$ 且 $\alpha = \frac{\pi}{6}$。
+    此时 $\alpha = \beta = \gamma = \frac{\pi}{6}$，对应的角度为 $\angle A = \angle B = \angle C = \frac{\pi}{3}$，即 $\triangle ABC$ 为 **正三角形**。
+    \end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -17894,6 +17993,87 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
 因此，最小值为 $18$。
 \end{solution}
 
+\question
+设 $n$ 为不小于 $4$ 的整数。在坐标平面上，正 $n$ 边形 $A_1A_2\cdots A_n$ 内接于以点 $O$ 为中心、半径为 $1$ 的圆。令 $\vec{a} = \overrightarrow{OA_1}, \vec{b} = \overrightarrow{OA_2}, \vec{c} = \overrightarrow{OA_3}, \vec{d} = \overrightarrow{OA_4}$，并设 $k = 2\cos \frac{2\pi}{n}$。线段 $A_1A_3$ 与线段 $A_2A_4$ 的交点为 $P$，且 $P$ 按 $t:1-t$ 内分线段 $A_1A_3$。
+\begin{parts}
+    \part 用 $\vec{b}, \vec{c}, k$ 表示 $\vec{a}$ 和 $\vec{d}$。
+    \begin{solution}
+    在半径为 $1$ 的圆内接正 $n$ 边形中，直线 $OA_2$ 是线段 $A_1A_3$ 的垂直平分线。
+    设 $OA_2$ 与 $A_1A_3$ 的交点为 $B_2$，则：
+    \[ \overrightarrow{OB_2} = \left(\cos \frac{2\pi}{n}\right) \vec{b} = \frac{k}{2}\vec{b} \]
+    根据中点公式，$\frac{\vec{a} + \vec{c}}{2} = \overrightarrow{OB_2} = \frac{k}{2}\vec{b}$，解得 $\vec{a} = k\vec{b} - \vec{c}$。
+    同理，直线 $OA_3$ 是线段 $A_2A_4$ 的垂直平分线，可得 $\frac{\vec{b} + \vec{d}}{2} = \left(\cos \frac{2\pi}{n}\right) \vec{c} = \frac{k}{2}\vec{c}$。
+    解得 $\vec{d} = k\vec{c} - \vec{b}$。
+    \end{solution}
+
+    \part 用 $k$ 表示 $t$，并证明 $\frac{1}{2} \leqq t < \frac{3}{4}$。
+    \begin{solution}
+    因为 $P$ 在 $A_1A_3$ 上且分比为 $t:1-t$，故：
+    \[ \overrightarrow{OP} = (1-t)\vec{a} + t\vec{c} = (1-t)(k\vec{b} - \vec{c}) + t\vec{c} = (1-t)k\vec{b} + (2t-1)\vec{c} \quad \dots (1) \]
+    根据对称性，$P$ 也在 $A_2A_4$ 上且分比相同（由 $A_4$ 至 $A_2$ 为 $t:1-t$），故：
+    \[ \overrightarrow{OP} = (1-t)\vec{d} + t\vec{b} = (1-t)(k\vec{c} - \vec{b}) + t\vec{b} = (2t-1)\vec{b} + (1-t)k\vec{c} \quad \dots (2) \]
+    由于 $\vec{b}, \vec{c}$ 线性无关，比较 (1) (2) 系数得：
+    \[ (1-t)k = 2t-1 \implies (k+2)t = k+1 \implies t = \frac{k+1}{k+2} \]
+    由于 $n \geqq 4$，故 $0 < \frac{2\pi}{n} \leqq \frac{\pi}{2}$，从而 $0 \leqq k < 2$。
+    $t - \frac{1}{2} = \frac{k+1}{k+2} - \frac{1}{2} = \frac{k}{2(k+2)} \geqq 0$，故 $t \geqq \frac{1}{2}$。
+    $t - \frac{3}{4} = \frac{k+1}{k+2} - \frac{3}{4} = \frac{k-2}{4(k+2)} < 0$，故 $t < \frac{3}{4}$。
+    因此 $\frac{1}{2} \leqq t < \frac{3}{4}$ 成立。
+    \end{solution}
+
+    \part 证明不等式 $\frac{\triangle PA_2A_3}{\triangle A_1A_2A_4} > \frac{1}{12}$。
+    \begin{solution}
+    由 $A_1P:PA_3 = t:1-t$ 可知 $\triangle PA_2A_3 = \frac{1-t}{t} \triangle PA_1A_2 \quad \dots (3)$。
+    同理可知 $\triangle PA_1A_2 = (1-t) \triangle A_1A_2A_4 \quad \dots (4)$。
+    联立得 $\frac{\triangle PA_2A_3}{\triangle A_1A_2A_4} = \frac{(1-t)^2}{t}$。
+    设 $f(t) = \frac{(1-t)^2}{t} - \frac{1}{12} = \frac{12t^2-25t+12}{12t} = \frac{(3t-4)(4t-3)}{12t}$。
+    由于 $\frac{1}{2} \leqq t < \frac{3}{4}$，此时 $3t-4 < 0$ 且 $4t-3 < 0$，故 $f(t) > 0$。
+    所以 $\frac{\triangle PA_2A_3}{\triangle A_1A_2A_4} > \frac{1}{12}$ 成立。
+    \end{solution}
+\end{parts}
+
+\question
+已知边长为 $1$ 的正六边形 $ABCDEF$。点 $P$ 在边 $AB$ 上运动，点 $Q$ 在边 $CD$ 上独立运动。求线段 $PQ$ 按 $2:1$ 内分的点 $R$ 可能通过的所有范围的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/image254.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设正六边形的中心为 $O$，则 $AD$ 的中点即为 $O$。
+设 $\overrightarrow{AP} = p \overrightarrow{AB}$ ($0 \leqq p \leqq 1$)，$\overrightarrow{DQ} = q \overrightarrow{DC}$ ($0 \leqq q \leqq 1$)。
+由于 $R$ 分线段 $PQ$ 为 $2:1$，则有 $\overrightarrow{PR} : \overrightarrow{RQ} = 2 : 1$，即：
+\[
+\overrightarrow{OR} = \frac{1}{3} \overrightarrow{OP} + \frac{2}{3} \overrightarrow{OQ}
+\]
+代入向量表达式：
+\[
+\overrightarrow{OR} = \frac{1}{3} (\overrightarrow{OA} + p \overrightarrow{AB}) + \frac{2}{3} (\overrightarrow{OD} + q \overrightarrow{DC})
+\]
+\[
+\overrightarrow{OR} = \frac{1}{3} \overrightarrow{OA} + \frac{2}{3} \overrightarrow{OD} + \frac{1}{3} p \overrightarrow{AB} + \frac{2}{3} q \overrightarrow{DC}
+\]
+设点 $G$ 满足 $\overrightarrow{OG} = \frac{1}{3} \overrightarrow{OA} + \frac{2}{3} \overrightarrow{OD}$，则 $G$ 是线段 $AD$ 按 $2:1$ 内分的定点。
+于是有：
+\[
+\overrightarrow{GR} = \frac{1}{3} p \overrightarrow{AB} + \frac{2}{3} q \overrightarrow{DC}
+\]
+令 $\overrightarrow{GH} = \frac{1}{3} \overrightarrow{AB}$，$\overrightarrow{GI} = \frac{2}{3} \overrightarrow{DC}$。
+由于 $0 \leqq p \leqq 1$ 且 $0 \leqq q \leqq 1$，点 $R$ 的轨迹是以 $G$ 为顶点，以 $\overrightarrow{GH}$ 和 $\overrightarrow{GI}$ 为邻边的平行四边形 $GIJH$ 的内部及边界。
+在正六边形中，$\angle HGI$ 等于 $\overrightarrow{AB}$ 与 $\overrightarrow{DC}$ 的夹角，即 $\frac{\pi}{3}$。
+已知各向量长度：
+\[
+|\overrightarrow{GH}| = \frac{1}{3} |\overrightarrow{AB}| = \frac{1}{3}
+\]
+\[
+|\overrightarrow{GI}| = \frac{2}{3} |\overrightarrow{DC}| = \frac{2}{3}
+\]
+该平行四边形的面积为：
+\[
+|\overrightarrow{GH}| \cdot |\overrightarrow{GI}| \cdot \sin \frac{\pi}{3} = \frac{1}{3} \cdot \frac{2}{3} \cdot \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{9}
+\]
+因此，点 $R$ 通过的范围面积为 $\frac{\sqrt{3}}{9}$。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -20374,5 +20554,142 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
 结果如图所示，为右侧阴影部分，且边界线包含在区域内。
 
 \end{solution}
+
+\question
+在坐标空间中，记经过原点 $O$ 和点 $A(0, -1, 1)$ 的直线为 $l$，记经过点 $B(0, 2, 1)$ 和点 $C(-2, 2, -3)$ 的直线为 $m$。在 $l$ 上取两点 $P, Q$，在 $m$ 上取一点 $R$，使得 $\triangle PQR$ 成为正三角形。求当 $\triangle PQR$ 的面积最小时，点 $P, Q, R$ 的坐标。
+
+\begin{solution}
+设线段 $PQ$ 的中点为 $M$。由于 $\triangle PQR$ 是正三角形，其面积可以表示为：
+\[
+\triangle PQR = \frac{1}{2} MR \cdot \frac{2}{\sqrt{3}} MR = \frac{1}{\sqrt{3}} MR^2
+\]
+因此，$\triangle PQR$ 面积最小等价于 $MR$ 的长度最小。这发生在 $MR$ 同时垂直于直线 $l$ 和直线 $m$ 时（即 $MR$ 为公垂线段）。
+已知 $\overrightarrow{OA} = (0, -1, 1)$，$\overrightarrow{BC} = (-2, 0, -4) = -2(1, 0, 2)$。设 $t, s$ 为实数，直线 $l$ 和 $m$ 的参数方程为：
+\[
+l : (x, y, z) = t(0, -1, 1), \quad m : (x, y, z) = (0, 2, 1) + s(1, 0, 2)
+\]
+设 $M(0, -t, t)$，$R(s, 2, 1 + 2s)$，则向量 $\overrightarrow{MR}$ 为：
+\[
+\overrightarrow{MR} = (s, 2 + t, 1 + 2s - t)
+\]
+利用垂直条件：
+1. $\overrightarrow{MR} \perp l \implies \overrightarrow{MR} \cdot \overrightarrow{OA} = 0$：
+\[
+-1(2 + t) + 1(1 + 2s - t) = 0 \implies -2t + 2s = 1 \quad \dots (1)
+\]
+2. $\overrightarrow{MR} \perp m \implies \overrightarrow{MR} \cdot (1, 0, 2) = 0$：
+\[
+1(s) + 2(1 + 2s - t) = 0 \implies -2t + 5s = -2 \quad \dots (2)
+\]
+联立 (1) 和 (2)，解得 $s = -1, t = -\frac{3}{2}$。
+此时各点坐标为 $M(0, \frac{3}{2}, -\frac{3}{2})$，$R(-1, 2, -1)$。
+计算公垂线段长度 $|\overrightarrow{MR}|$：
+\[
+\overrightarrow{MR} = (-1, \frac{1}{2}, \frac{1}{2}) \implies |\overrightarrow{MR}| = \sqrt{1 + \frac{1}{4} + \frac{1}{4}} = \frac{\sqrt{6}}{2}
+\]
+在正三角形中，$PQ = \frac{2}{\sqrt{3}} MR = \frac{2}{\sqrt{3}} \cdot \frac{\sqrt{6}}{2} = \sqrt{2}$。
+由于 $M$ 是 $PQ$ 的中点，且 $P, Q$ 在直线 $l$ 上，方向向量 $\vec{u} = \frac{\overrightarrow{OA}}{|\overrightarrow{OA}|} = \frac{1}{\sqrt{2}}(0, -1, 1)$。
+点 $P, Q$ 的坐标为 $M \pm \frac{1}{2} PQ \cdot \vec{u}$：
+\[
+(0, \frac{3}{2}, -\frac{3}{2}) \pm \frac{\sqrt{2}}{2} \cdot \frac{1}{\sqrt{2}}(0, -1, 1) = (0, \frac{3}{2}, -\frac{3}{2}) \pm (0, -\frac{1}{2}, \frac{1}{2})
+\]
+计算得坐标为 $(0, 1, -1)$ 和 $(0, 2, -2)$。
+综上所述，点的坐标为 $R(-1, 2, -1)$，$\{P, Q\} = \{(0, 1, -1), (0, 2, -2)\}$。
+\end{solution}
+
+\question
+在 $xyz$ 空间中，记以连接点 $O(0, 0, 0)$ 和点 $A(0, 0, 1)$ 的线段 $OA$ 为直径的球面为 $\sigma$。回答以下问题。
+\begin{parts}
+    \part 求球面 $\sigma$ 的方程。
+    \begin{solution}
+    由于线段 $OA$ 是直径，球心为 $OA$ 的中点 $(0, 0, \frac{1}{2})$，半径为 $\frac{1}{2}$。
+    因此，球面的方程为：
+    \[
+    x^2 + y^2 + (z - \frac{1}{2})^2 = \frac{1}{4}
+    \]
+    \end{solution}
+
+    \part 在 $xy$ 平面上，对于与 $O$ 不同的点 $P$，设线段 $AP$ 与球面 $\sigma$ 的交点为 $Q$。证明 $\overrightarrow{OQ} \perp \overrightarrow{AP}$。
+    \begin{solution}
+    对于 $xy$ 平面上的点 $P(P \neq O)$，考虑包含 $O, A, P$ 三点的平面。
+    该平面与球面 $\sigma$ 的交线是以 $OA$ 为直径的圆。
+    由于 $Q$ 是该圆周上的点且不同于 $A$，根据直径所对的圆周角是直角可知，$\angle OQA = 90^\circ$。
+    因此，$\overrightarrow{OQ} \perp \overrightarrow{QA}$，即 $\overrightarrow{OQ} \perp \overrightarrow{AP}$。
+    \end{solution}
+
+    \part 设点 $S(p, q, r)$ 是不在 $xy$ 平面上的定点，满足 $\overrightarrow{OS} \cdot \overrightarrow{AS} = -|\overrightarrow{OS}|^2$。当点 $Q$ 在 $\sigma$ 上运动且满足 $\overrightarrow{OS} \perp \overrightarrow{SQ}$ 时，直线 $AQ$ 与 $xy$ 平面的交点 $P$ 轨迹为何种图形？用 $p, q, r$ 表示。
+    \begin{solution}
+    设 $P(x, y, 0)$，并设 $Q$ 分线段 $AP$ 的比为 $AQ:QP = t:1-t$ ($0 < t < 1$)。
+    则 $\overrightarrow{OQ} = (1-t)\overrightarrow{OA} + t\overrightarrow{OP} = (tx, ty, 1-t) \quad \dots (1)$。
+    由 (2) 知 $\overrightarrow{OQ} \perp \overrightarrow{AP}$，而 $\overrightarrow{AP} = (x, y, -1)$，得：
+    \[
+    tx^2 + ty^2 - (1-t) = 0 \implies t = \frac{1}{x^2 + y^2 + 1} \quad \dots (2)
+    \]
+    由 $\overrightarrow{OS} \cdot \overrightarrow{AS} = -|\overrightarrow{OS}|^2$ 且 $S(p, q, r)$，$A(0, 0, 1)$ 得：
+    \[
+    p^2 + q^2 + r(r-1) = -(p^2 + q^2 + r^2) \implies 2(p^2 + q^2 + r^2) = r \quad \dots (3)
+    \]
+    又因为 $\overrightarrow{OS} \perp \overrightarrow{SQ}$，由 (1) 知 $\overrightarrow{SQ} = (tx-p, ty-q, 1-t-r)$，得：
+    \[
+    p(tx-p) + q(ty-q) + r(1-t-r) = 0 \implies ptx + qty + r(1-t) = p^2 + q^2 + r^2 \quad \dots (4)
+    \]
+    联立 (3) 和 (4) 得 $2ptx + 2qty + 2r(1-t) = r$。
+    将 (2) 代入上式并整理：
+    \[
+    \frac{2px}{x^2 + y^2 + 1} + \frac{2qy}{x^2 + y^2 + 1} + \frac{2r(x^2 + y^2)}{x^2 + y^2 + 1} = r
+    \]
+    \[
+    2px + 2qy + 2r(x^2 + y^2) = r(x^2 + y^2 + 1) \implies x^2 + y^2 + \frac{2p}{r}x + \frac{2q}{r}y - 1 = 0
+    \]
+    配方得 $(x + \frac{p}{r})^2 + (y + \frac{q}{r})^2 = \frac{p^2 + q^2 + r^2}{r^2}$。
+    由 (3) 知 $p^2 + q^2 + r^2 = \frac{r}{2}$，代入上式：
+    \[
+    (x + \frac{p}{r})^2 + (y + \frac{q}{r})^2 = \frac{1}{2r}
+    \]
+    因此，点 $P$ 在 $xy$ 平面上描绘出一个圆，圆心为 $(-\frac{p}{r}, -\frac{q}{r}, 0)$，半径为 $\frac{1}{\sqrt{2r}}$。
+    \end{solution}
+\end{parts}
+
+\question
+设四面体 $ABCD$ 满足 $AC = BD$ 且 $AD = BC$。记边 $AB$ 的中点为 $P$，边 $CD$ 的中点为 $Q$。
+\begin{parts}
+    \part 证明边 $AB$ 与线段 $PQ$ 垂直。
+    \begin{solution}
+    设 $\vec{AB} = \vec{b}, \vec{AC} = \vec{c}, \vec{AD} = \vec{d}$。
+    由 $AC = BD$ 得 $|\vec{c}|^2 = |\vec{d} - \vec{b}|^2$，展开得：
+    \[
+    |\vec{c}|^2 = |\vec{d}|^2 - 2\vec{b} \cdot \vec{d} + |\vec{b}|^2 \quad \dots (1)
+    \]
+    由 $AD = BC$ 得 $|\vec{d}|^2 = |\vec{c} - \vec{b}|^2$，展开得：
+    \[
+    |\vec{d}|^2 = |\vec{c}|^2 - 2\vec{b} \cdot \vec{c} + |\vec{b}|^2 \quad \dots (2)
+    \]
+    联立 (1) 和 (2) 消去 $|\vec{c}|^2$ 和 $|\vec{d}|^2$ 得：
+    \[
+    |\vec{b}|^2 = \vec{b} \cdot \vec{c} + \vec{b} \cdot \vec{d} \quad \dots (3)
+    \]
+    由于 $P, Q$ 分别为 $AB, CD$ 的中点，其位置向量满足：
+    \[
+    \vec{PQ} = \vec{AQ} - \vec{AP} = \frac{1}{2}(\vec{c} + \vec{d}) - \frac{1}{2}\vec{b} = \frac{1}{2}(-\vec{b} + \vec{c} + \vec{d})
+    \]
+    计算点积 $\vec{PQ} \cdot \vec{AB}$：
+    \[
+    \vec{PQ} \cdot \vec{AB} = \frac{1}{2}(-\vec{b} + \vec{c} + \vec{d}) \cdot \vec{b} = \frac{1}{2}(-|\vec{b}|^2 + \vec{b} \cdot \vec{c} + \vec{b} \cdot \vec{d})
+    \]
+    根据 (3) 式可知上式分子为 $0$，故 $\vec{PQ} \cdot \vec{AB} = 0$，即 $PQ \perp AB$ 成立。
+    \end{solution}
+
+    \part 设包含线段 $PQ$ 的平面 $\alpha$ 将四面体 $ABCD$ 切割为两部分。证明这两部分的体积相等。
+    \begin{solution}
+    同理于第 (1) 问的推导，可证明 $PQ \perp CD$。
+    这意味着线段 $PQ$ 是异面直线 $AB$ 与 $CD$ 的公垂线段。
+    将四面体 $ABCD$ 以直线 $PQ$ 为轴旋转 $180^\circ$：
+    * 由于 $PQ \perp AB$ 且 $P$ 是 $AB$ 的中点，旋转后顶点 $A$ 与 $B$ 互换。
+    * 由于 $PQ \perp CD$ 且 $Q$ 是 $CD$ 的中点，旋转后顶点 $C$ 与 $D$ 互换。
+    因此，四面体 $ABCD$ 绕直线 $PQ$ 具有旋转对称性。
+    由于平面 $\alpha$ 包含旋转轴 $PQ$，旋转 $180^\circ$ 后，平面 $\alpha$ 保持不变（或旋转至自身），而切割出的两个部分会互相重合。
+    由此可知，这两部分的形状完全一致（全等），故其体积必然相等。
+    \end{solution}
+\end{parts}
 
 \end{questions}
