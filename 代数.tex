@@ -11379,6 +11379,180 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
     \end{solution}
     \end{parts}
 
+    \question
+设 $n$ 为自然数，$p_n, q_n$ 为实数。已知 $p_1, q_1$ 满足 $p_1^2 - 4q_1 = 4$。二次方程 $x^2 - p_nx + q_n = 0$ 有两个不同的实数解 $\alpha_n, \beta_n$，且满足 $\alpha_n < \beta_n$。令 $c_n = \beta_n - \alpha_n$，数列 $\{c_n\}$ 满足以下递推关系：
+\[
+\frac{c_{n+1}}{c_n} = \frac{n+2}{\sqrt{n(n+1)}} \quad (n=1, 2, 3, \cdots)
+\]
+回答以下问题。
+
+\begin{parts}
+\part 当 $r_n = \log_2(n\sqrt{n} + \sqrt{n})$ 时，请用 $r_n, r_{n+1}$ 表示 $\frac{n+2}{\sqrt{n(n+1)}}$。
+\begin{solution}
+由于 $r_n = \log_2(n\sqrt{n} + \sqrt{n}) = \log_2 \sqrt{n}(n+1)$，
+则有 $r_{n+1} = \log_2 \sqrt{n+1}(n+2)$。
+计算差值：
+\[
+r_{n+1} - r_n = \log_2 \frac{\sqrt{n+1}(n+2)}{\sqrt{n}(n+1)} = \log_2 \frac{n+2}{\sqrt{n(n+1)}} \text{}
+\]
+由此可得：
+\[
+\frac{n+2}{\sqrt{n(n+1)}} = 2^{r_{n+1}-r_n} \cdots \cdots ① \text{}
+\]
+\end{solution}
+
+\part 请用关于 $n$ 的式子表示 $c_n$。
+\begin{solution}
+由 ① 及已知递推式得 $\frac{c_{n+1}}{c_n} = 2^{r_{n+1}-r_n}$，即 $c_{n+1} = 2^{r_{n+1}-r_n} c_n$。
+设 $f(n) = 2^{r_{n+1}-r_n}$，则对于 $n \ge 2$：
+\[
+c_n = c_1 \cdot f(1)f(2)\cdots f(n-1) = c_1 \cdot 2^{r_2-r_1} \cdot 2^{r_3-r_2} \cdots 2^{r_n-r_{n-1}} = c_1 \cdot 2^{r_n-r_1} \text{}
+\]
+代入 $r_n$ 的定义：
+\[
+c_n = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - \log_2 2} = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} \cdots \cdots ② \text{}
+\]
+根据求根公式，$\alpha_n, \beta_n = \frac{p_n \pm \sqrt{p_n^2 - 4q_n}}{2}$，
+所以 $c_n = \beta_n - \alpha_n = \sqrt{p_n^2 - 4q_n}$。
+已知 $p_1^2 - 4q_1 = 4$，故 $c_1 = \sqrt{4} = 2$。
+代入 ② 式：
+\[
+c_n = 2 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} = 2^{\log_2 \sqrt{n}(n+1)} = \sqrt{n}(n+1) \cdots \cdots ③ \text{}
+\]
+经检验，$n=1$ 时该式也成立。
+\end{solution}
+
+\part 当 $p_n = n\sqrt{n}$ 时，请用关于 $n$ 的式子表示 $q_n$。
+\begin{solution}
+由 ③ 可知 $\sqrt{p_n^2 - 4q_n} = \sqrt{n}(n+1)$，平方得 $p_n^2 - 4q_n = n(n+1)^2 \cdots \cdots ④$。
+当 $p_n = n\sqrt{n}$ 时，$p_n^2 = n^3$。代入 ④ 式：
+\[
+4q_n = n^3 - n(n+1)^2 \text{}
+\]
+\[
+q_n = \frac{1}{4} \{n^3 - n(n+1)^2\} = \frac{1}{4} \{n^3 - (n^3 + 2n^2 + n)\} = -\frac{1}{4} n(2n+1) \text{}
+\]
+\end{solution}
+\end{parts}
+
+\question
+设 $b, c$ 为满足 $b^2 + 4c > 0$ 的实数，关于 $x$ 的二次方程 $x^2 - bx - c = 0$ 有两个不同的实数解 $\alpha, \beta$。数列 $\{a_n\}$ 定义为 $a_n = \alpha^{n-1} + \beta^{n-1} \ (n = 1, 2, 3, \cdots)$。回答以下问题。
+
+\begin{parts}
+\part 证明数列 $\{a_n\}$ 满足递推式 $a_{n+2} = b a_{n+1} + c a_n \ (n = 1, 2, 3, \cdots)$。
+\begin{solution}
+由于 $\alpha, \beta$ 是 $x^2 - bx - c = 0$ 的实数解，由韦达定理（根与系数的关系）得：
+\[
+\alpha + \beta = b, \quad \alpha\beta = -c \cdots \cdots ①
+\]
+由条件 $a_n = \alpha^{n-1} + \beta^{n-1} \cdots \cdots ②$ 可知：
+\begin{align*}
+b a_{n+1} + c a_n &= (\alpha + \beta)(\alpha^n + \beta^n) - \alpha\beta(\alpha^{n-1} + \beta^{n-1}) \\
+&= \alpha^{n+1} + \alpha\beta^n + \alpha^n\beta + \beta^{n+1} - (\alpha^n\beta + \alpha\beta^n) \\
+&= \alpha^{n+1} + \beta^{n+1}
+\end{align*}
+由于 $a_{n+2} = \alpha^{(n+2)-1} + \beta^{(n+2)-1} = \alpha^{n+1} + \beta^{n+1}$，
+故 $a_{n+2} = b a_{n+1} + c a_n \cdots \cdots ③$ 成立。
+\end{solution}
+
+\part 证明：数列 $\{a_n\}$ 的所有项 $a_n$ 均为整数的充分必要条件是 $b, c$ 均为整数。
+\begin{solution}
+\textbf{必要性：} 假设对于所有 $n$， $a_n$ 均为整数。
+由 ① 和 ② 可得：
+\[ a_1 = \alpha^0 + \beta^0 = 2, \quad a_2 = \alpha^1 + \beta^1 = b \]
+因为 $a_2$ 是整数，所以 \textbf{$b$ 必须是整数}。
+由 ③ 可得 $a_3 = b a_2 + c a_1$，$a_4 = b a_3 + c a_2$，则：
+\[ 2c = a_3 - b a_2 \cdots \cdots ④, \quad bc = a_4 - b a_3 \cdots \cdots ⑤ \]
+另外，由 ① 和 ② 可得 $a_3 = \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = b^2 + 2c$。
+由 ③ 可得 $a_5 = b a_4 + c a_3$，则 $(b^2 + 2c)c = a_5 - b a_4 \cdots \cdots ⑥$。
+由 ④, ⑤, ⑥ 可知，$2c, bc, (b^2 + 2c)c$ 均为整数。
+设 $2c = k$（$k$ 为整数），则 $c = \frac{k}{2}$。
+若假设 $k$ 为奇数，由 $bc = \frac{bk}{2}$ 为整数可知 $b$ 必须为偶数。
+然而，此时 $(b^2 + 2c)c = \frac{(b^2 + k)k}{2}$，由于分子 $(b^2 + k)k$ 为（偶+奇）$\times$ 奇 = 奇数，故其结果不是整数，与已知矛盾。
+因此，$k$ 必须是偶数，从而 \textbf{$c$ 也是整数}。
+
+\textbf{充分性：} 假设 $b, c$ 均为整数。
+已知 $a_1 = 2, a_2 = b$ 均为整数。
+若 $a_n, a_{n+1}$ 均为整数，则根据递推式 $a_{n+2} = b a_{n+1} + c a_n$ 可知，$a_{n+2}$ 也是整数。
+通过数学归纳法，数列 $\{a_n\}$ 的所有项均为整数。
+
+综上所述，数列 $\{a_n\}$ 的项 $a_n$ 全部为整数的充分必要条件是 $b, c$ 均为整数。
+\end{solution}
+\end{parts}
+
+\question
+数列 $\{p_n\}$ 定义如下：
+\[
+p_1 = 1, \quad p_2 = 2, \quad p_{n+2} = \frac{p_{n+1}^2 + 1}{p_n} \quad (n = 1, 2, 3, \cdots)
+\]
+
+\begin{parts}
+\part 证明 $\frac{p_{n+1}^2 + p_n^2 + 1}{p_{n+1} p_n}$ 的值与 $n$ 无关。
+\begin{solution}
+令 $a_n = \frac{p_{n+1}^2 + p_n^2 + 1}{p_{n+1} p_n}$。对于 $a_{n+1}$ 有：
+\begin{align*}
+a_{n+1} &= \frac{p_{n+2}^2 + p_{n+1}^2 + 1}{p_{n+2} p_{n+1}} = \frac{p_{n+2}}{p_{n+1}} + \frac{p_{n+1}}{p_{n+2}} + \frac{1}{p_{n+2} p_{n+1}} \\
+&= \frac{p_{n+1}^2 + 1}{p_n p_{n+1}} + \frac{p_{n+1} p_n}{p_{n+1}^2 + 1} + \frac{p_n}{p_{n+1}(p_{n+1}^2 + 1)} \\
+&= \frac{(p_{n+1}^2 + 1)^2 + p_{n+1}^2 p_n^2 + p_n^2}{p_n p_{n+1} (p_{n+1}^2 + 1)} = \frac{(p_{n+1}^2 + 1)^2 + p_n^2 (p_{n+1}^2 + 1)}{p_n p_{n+1} (p_{n+1}^2 + 1)} \\
+&= \frac{(p_{n+1}^2 + 1) + p_n^2}{p_n p_{n+1}} = a_n
+\end{align*}
+由此可知 $a_n = a_1$。计算首项得：
+\[
+a_n = a_1 = \frac{2^2 + 1^2 + 1}{2 \cdot 1} = 3 \cdots \cdots ①
+\]
+故该式的值始终为 $3$，与 $n$ 无关。
+\end{solution}
+
+\part 对于所有 $n = 2, 3, 4, \cdots$，请仅用 $p_n$ 表示 $p_{n+1} + p_{n-1}$。
+\begin{solution}
+首先，通过数学归纳法易证对于所有自然数 $n$，均有 $0 < p_n < p_{n+1}$。
+由 ① 式可知：
+\[
+p_{n+1}^2 + p_n^2 + 1 = 3 p_{n+1} p_n \cdots \cdots ②
+\]
+同理，将 $n$ 替换为 $n-1$ 得：
+\[
+p_n^2 + p_{n-1}^2 + 1 = 3 p_n p_{n-1} \cdots \cdots ③
+\]
+② $-$ ③ 得：
+\[
+p_{n+1}^2 - p_{n-1}^2 = 3 p_n (p_{n+1} - p_{n-1})
+\]
+\[
+(p_{n+1} + p_{n-1})(p_{n+1} - p_{n-1}) = 3 p_n (p_{n+1} - p_{n-1})
+\]
+由于 $p_{n+1} - p_{n-1} > 0$，等两边约去该项得：
+\[
+p_{n+1} + p_{n-1} = 3 p_n \quad (n = 2, 3, 4, \cdots)
+\]
+\end{solution}
+
+\part 数列 $\{q_n\}$ 定义如下：
+\[
+q_1 = 1, \quad q_2 = 1, \quad q_{n+2} = q_{n+1} + q_n \quad (n = 1, 2, 3, \cdots)
+\]
+证明对于所有 $n = 1, 2, 3, \cdots$，均有 $p_n = q_{2n-1}$。
+\begin{solution}
+使用数学归纳法证明 $p_n = q_{2n-1}$：
+\begin{itemize}
+    \item (i) 当 $n=1, 2$ 时：
+    $p_1 = 1, q_1 = 1$；$p_2 = 2, q_3 = q_2 + q_1 = 2$。结论成立。
+    \item (ii) 假设 $n = k$ 及 $n = k+1$ 时成立，即 $p_k = q_{2k-1}, p_{k+1} = q_{2k+1}$。
+    根据 (2) 的结果：
+    \[
+    p_{k+2} = 3 p_{k+1} - p_k = 3 q_{2k+1} - q_{2k-1}
+    \]
+    根据 $q_n$ 的递推关系：
+    \begin{align*}
+    q_{2k+3} &= q_{2k+2} + q_{2k+1} = (q_{2k+1} + q_{2k}) + q_{2k+1} = 2 q_{2k+1} + q_{2k} \\
+    &= 2 q_{2k+1} + (q_{2k+1} - q_{2k-1}) = 3 q_{2k+1} - q_{2k-1}
+    \end{align*}
+    由此可得 $p_{k+2} = q_{2k+3} = q_{2(k+2)-1}$，结论对 $n = k+2$ 也成立。
+\end{itemize}
+由 (i)(ii) 可知，对于所有自然数 $n$，均有 $p_n = q_{2n-1}$。
+\end{solution}
+\end{parts}
+
     \question 证明由正实数组成的数列\(a_0, a_1, a_2, \ldots, a_n\) 是等比数列当且仅当
     \[
     \left(a_0 a_1 + a_1 a_2 + a_2 a_3 + \cdots + a_{n-1} a_n\right)^2 = \left(a_0^2 + a_1^2 + \cdots + a_{n-1}^2\right)\left(a_1^2 + a_2^2 + \cdots + a_n^2\right).

@@ -4297,6 +4297,91 @@ Q.11 设 $A_1, A_2, A_3, \dots, A_8$ 为半径为 2 的圆上的正八边形顶�
 当 $|\sin(4\theta)| = 1$ 时（即 $P$ 位于两个顶点的弧中点时），乘积取得最大值。
 最大值为 $512$。
 \end{solution}
+
+    \question
+平面上有一个以长度为 $2$ 的线段 $AB$ 为直径的圆 $C$。对于圆 $C$ 上除 $A, B$ 外的一点 $P$，在线段 $AB$ 上取一点 $Q$ 使得 $AP = AQ$。设直线 $PQ$ 与圆 $C$ 的交点中，除 $P$ 以外的点为 $R$。请回答下列问题。
+
+\begin{parts}
+\part 用 $\theta = \angle PAB$ 表示 $\triangle AQR$ 的面积。
+\begin{solution}
+当 $0 < \theta < \frac{\pi}{2}$ 时，由于 $AB$ 是直径，故 $\angle APB = \frac{\pi}{2}$。由此得
+\[ AP = AB\cos \theta = 2\cos \theta \]
+根据题意，$AQ = 2\cos \theta$，则 $BQ = 2 - 2\cos \theta$。
+又因为 $\triangle APQ$ 是等腰三角形，且 $\angle PAQ = \theta$，故 $\angle AQP = \frac{1}{2}(\pi - \theta) = \frac{\pi}{2} - \frac{\theta}{2}$。
+在 $\triangle APQ$ 中，由正弦定理或几何关系得
+\[ PQ = 2AQ\cos \left( \frac{\pi}{2} - \frac{\theta}{2} \right) = 4\cos \theta \sin \frac{\theta}{2} \]
+根据相交弦定理（方幂定理），$PQ \cdot RQ = AQ \cdot BQ$，故
+\[ 4\cos \theta \sin \frac{\theta}{2} \cdot RQ = 2\cos \theta (2 - 2\cos \theta) \]
+\[ RQ = \frac{1 - \cos \theta}{\sin \frac{\theta}{2}} = \frac{2\sin^2 \frac{\theta}{2}}{\sin \frac{\theta}{2}} = 2\sin \frac{\theta}{2} \]
+设 $\triangle AQR$ 的面积为 $S$。由于 $\angle AQR = \pi - \angle AQP = \frac{\pi}{2} + \frac{\theta}{2}$，则
+\begin{align*}
+S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
+&= \frac{1}{2} \cdot 2\cos \theta \cdot 2\sin \frac{\theta}{2} \cdot \sin \left( \frac{\pi}{2} + \frac{\theta}{2} \right) \\
+&= 2\cos \theta \sin \frac{\theta}{2} \cos \frac{\theta}{2} \\
+&= \cos \theta \sin \theta = \frac{1}{2}\sin 2\theta
+\end{align*}
+\end{solution}
+
+\part 当点 $P$ 运动使得 $\triangle AQR$ 的面积最大时，用 $\overrightarrow{AB}$ 和 $\overrightarrow{AP}$ 表示 $\overrightarrow{AR}$。
+\begin{solution}
+由 (1) 知，当 $\sin 2\theta = 1$，即 $\theta = \frac{\pi}{4}$ 时，$S$ 取得最大值。
+此时，
+\[ PQ : QR = 4\cos \frac{\pi}{4} \sin \frac{\pi}{8} : 2\sin \frac{\pi}{8} = \sqrt{2} : 1 \]
+由于点 $R$ 在线段 $PQ$ 的延长线上，即点 $R$ 是线段 $PQ$ 按比 $(\sqrt{2} + 1) : 1$ 的外分点，故
+\[ \overrightarrow{AR} = \frac{-\overrightarrow{AP} + (\sqrt{2} + 1)\overrightarrow{AQ}}{(\sqrt{2} + 1) - 1} = -\frac{1}{\sqrt{2}}\overrightarrow{AP} + \frac{\sqrt{2} + 1}{\sqrt{2}}\overrightarrow{AQ} \]
+又因为 $AQ = 2\cos \frac{\pi}{4} = \sqrt{2}$，且 $Q$ 在 $AB$ 上，故 $\overrightarrow{AQ} = \frac{\sqrt{2}}{2}\overrightarrow{AB}$。
+代入上式得
+\[ \overrightarrow{AR} = -\frac{1}{\sqrt{2}}\overrightarrow{AP} + \frac{\sqrt{2} + 1}{\sqrt{2}} \cdot \frac{\sqrt{2}}{2}\overrightarrow{AB} \]
+整理得
+\[ \overrightarrow{AR} = -\frac{\sqrt{2}}{2}\overrightarrow{AP} + \frac{\sqrt{2} + 1}{2}\overrightarrow{AB} \]
+\end{solution}
+\end{parts}
+
+\question
+设 $t$ 是满足 $0 < t < 1$ 的实数。在面积为 $1$ 的三角形 $ABC$ 中，点 $D, E, F$ 分别是边 $AB, BC, CA$ 上的点，满足 $AD:DB = 2:1$，$BE:EC = t:1-t$，$CF:FA = 1:3$。设 $AE$ 与 $BF$，$BF$ 与 $CD$，$CD$ 与 $AE$ 的交点分别为 $P, Q, R$。回答以下问题。
+
+\begin{parts}
+    \part 求使三条直线 $AE, BF, CD$ 交于一点时 $t$ 的值 $t_0$。以下设 $t$ 满足 $0 < t < t_0$。
+    \begin{solution}
+    在 $\triangle ABC$ 中，根据塞瓦定理，三线共点的条件为：
+    \[ \frac{AD}{DB} \cdot \frac{BE}{EC} \cdot \frac{CF}{FA} = 1 \]
+    代入已知比例：
+    \[ \frac{2}{1} \cdot \frac{t_0}{1-t_0} \cdot \frac{1}{3} = 1 \]
+    整理得 $2t_0 = 3(1-t_0)$，解得 $t_0 = \frac{3}{5}$。
+    \end{solution}
+
+    \part 若满足 $AP = kAE$ 和 $CR = lCD$，求实数 $k, l$ 的表达式（用 $t$ 表示）。
+    \begin{solution}
+    由条件可知 $AP:PE = k:1-k$ 且 $CR:RD = l:1-l$。
+    对于 $\triangle AEC$ 和直线 $BF$，应用梅涅劳斯定理：
+    \[ \frac{AP}{PE} \cdot \frac{EB}{BC} \cdot \frac{CF}{FA} = 1 \implies \frac{k}{1-k} \cdot \frac{t}{1} \cdot \frac{1}{3} = 1 \]
+    解得 $kt = 3(1-k)$，故 $k = \frac{3}{3+t}$。
+    
+    对于 $\triangle CDB$ 和直线 $AE$，应用梅涅劳斯定理：
+    \[ \frac{CR}{RD} \cdot \frac{DA}{AB} \cdot \frac{BE}{EC} = 1 \implies \frac{l}{1-l} \cdot \frac{2}{3} \cdot \frac{t}{1-t} = 1 \]
+    整理得 $2lt = 3(1-l)(1-t)$，解得 $l = \frac{3-3t}{3-t}$。
+    \end{solution}
+
+    \part 求三角形 $BCQ$ 的面积。
+    \begin{solution}
+    设 $BQ:QF = m:1-m$。对于 $\triangle BFA$ 和直线 $CD$，应用梅涅劳斯定理：
+    \[ \frac{BQ}{QF} \cdot \frac{FC}{CA} \cdot \frac{AD}{DB} = 1 \implies \frac{m}{1-m} \cdot \frac{1}{4} \cdot \frac{2}{1} = 1 \]
+    解得 $2m = 4(1-m)$，即 $m = \frac{2}{3}$。
+    由于 $\triangle ABC$ 的面积为 $1$：
+    \[ S_{\triangle BCQ} = \frac{2}{3} S_{\triangle BCF} = \frac{2}{3} \cdot \frac{1}{4} S_{\triangle ABC} = \frac{1}{6} \]
+    \end{solution}
+
+    \part 求三角形 $PQR$ 的面积。
+    \begin{solution}
+    由 (2) 可得 $AP:PE = \frac{3}{3+t} : (1-\frac{3}{3+t}) = 3:t$，则：
+    \[ S_{\triangle ABP} = \frac{3}{3+t} S_{\triangle ABE} = \frac{3}{3+t} \cdot t S_{\triangle ABC} = \frac{3t}{3+t} \]
+    同理，由 $CR:RD = \frac{3-3t}{3-t} : (1-\frac{3-3t}{3-t}) = 3-3t:2t$，可得：
+    \[ S_{\triangle CAR} = \frac{3-3t}{3-3t+2t} S_{\triangle CAD} = \frac{3-3t}{3-t} \cdot \frac{2}{3} S_{\triangle ABC} = \frac{2-2t}{3-t} \]
+    三角形 $PQR$ 的面积为：
+    \[ S_{\triangle PQR} = S_{\triangle ABC} - S_{\triangle BCQ} - S_{\triangle CAR} - S_{\triangle ABP} \]
+    \[ = 1 - \frac{1}{6} - \frac{2-2t}{3-t} - \frac{3t}{3+t} = \frac{(5t-3)^2}{6(3-t)(3+t)} \]
+    \end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -10160,6 +10245,41 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
         \]
     \end{solution}
 
+    \question
+设 $t > 0$ 为实数。在坐标平面上，考虑以 $A(-2, 0), B(2, 0), P(t, \sqrt{3}t)$ 为顶点的三角形 $ABP$。
+
+\begin{parts}
+\part 求 $t$ 的取值范围，使 $\triangle ABP$ 成为锐角三角形。
+\begin{solution}
+当 $t > 0$ 时，$\angle PAB < \frac{\pi}{2}$ 恒成立，因此 $\triangle APB$ 为锐角三角形的条件是 $\angle PBA < \frac{\pi}{2}$ 且 $\angle APB < \frac{\pi}{2}$。
+由此可得 $t < 2$ 且 $OP > 2$（即 $2t > 2$）。
+因此，所求 $t$ 的范围是 $1 < t < 2$。
+\end{solution}
+
+\part 求 $\triangle ABP$ 的垂心坐标。
+\begin{solution}
+从 $P$ 向边 $AB$ 引出的垂线方程为 $x = t \quad \cdots \cdots \text{①}$。
+又因为 $\overrightarrow{BP} = (t - 2, \sqrt{3}t)$，所以从 $A$ 向边 $BP$ 引出的垂线方程为
+\[ (t - 2)(x + 2) + \sqrt{3}ty = 0 \quad \cdots \cdots \text{②} \]
+联立 ① 和 ②，得 $(t - 2)(t + 2) + \sqrt{3}ty = 0$，解得 $y = \frac{4 - t^2}{\sqrt{3}t}$。
+因此，$\triangle APB$ 的垂心 $H$ 的坐标为 $\left( t, \frac{4 - t^2}{\sqrt{3}t} \right)$。
+\end{solution}
+
+\part 设边 $AB, BP, PA$ 的中点分别为 $M, Q, R$。当 $t$ 在 (1) 中求得的范围内运动时，求将 $\triangle ABP$ 沿线段 $MQ, QR, RM$ 折叠而成的四面体体积的最大值，以及此时的 $t$ 值。
+\begin{solution}
+由于 $M, Q, R$ 分别是各边的中点，故有 $RQ \parallel AB, QM \parallel PA, RM \parallel PB$。
+由 $H$ 是 $\triangle APB$ 的垂心得：
+\[ PH \perp RQ, \quad BH \perp QM, \quad AH \perp RM \quad \cdots \cdots \text{③} \]
+在折叠成的四面体中，设顶点 $P, A, B$ 重合于点 $C$。
+由 ③ 知，取 $s$ 为正实数，点 $C$ 的坐标可表示为 $\left( t, \frac{4 - t^2}{\sqrt{3}t}, s \right)$。
+由 $CM = 2$ 可得 $t^2 + \left( \frac{4 - t^2}{\sqrt{3}t} \right)^2 + s^2 = 4$，即
+\[ s^2 = 4 - t^2 - \frac{(4 - t^2)^2}{3t^2} = \frac{-4t^4 + 20t^2 - 16}{3t^2} \]
+解得 $s = \frac{2\sqrt{-t^4 + 5t^2 - 4}}{\sqrt{3}t}$。设四面体 $CMQR$ 的体积为 $V$，则
+\[ V = \frac{1}{3} \cdot \left( \frac{1}{4} \triangle ABP \right) s = \frac{1}{3} \cdot \frac{\sqrt{3}}{2}t \cdot \frac{2\sqrt{-t^4 + 5t^2 - 4}}{\sqrt{3}t} = \frac{1}{3}\sqrt{-(t^2 - \frac{5}{2})^2 + \frac{9}{4}} \]
+当 $1 < t < 2$ 时，在 $t^2 = \frac{5}{2}$（即 $t = \frac{\sqrt{10}}{2}$）时，$V$ 取得最大值 $\frac{1}{3}\sqrt{\frac{9}{4}} = \frac{1}{2}$。
+\end{solution}
+\end{parts}
+
 
 \end{questions}
 \pagebreak
@@ -10986,6 +11106,53 @@ x^2 + y^2 + 5x + 5y + 12 = 0
         若 $a=0$, 则 $A(0,0)$；若 $b=0$, 则 $B(0,0)$。所以当面积最大时,原点必为 $A$ 或 $B$。
     \end{solution}
     \end{parts}
+
+    \question
+在坐标平面上，考虑圆 $C : x^2 + (y - 1)^2 = 1$ 和 $x$ 轴上的两点 $P(-a, 0)$, $Q(b, 0)$。
+这里假设 $a > 0, b > 0, ab \neq 1$。从点 $P, Q$ 分别向圆 $C$ 引不同于 $x$ 轴的切线，设这两条切线的交点为 $R$。请回答下列问题。
+
+\begin{parts}
+\part 求直线 $QR$ 的方程。
+\begin{solution}
+由于直线 $QR$ 不与 $x$ 轴平行，设其法向量的分量为 $(1, m)$，则方程可表示为
+\[ (x - b) + my = 0, \quad x + my - b = 0 \quad \cdots \cdots \text{①} \]
+因为 ① 与圆 $C : x^2 + (y - 1)^2 = 1$ 相切，点 $(0, 1)$ 到直线的距离等于半径 $1$：
+\[ \frac{|m - b|}{\sqrt{1 + m^2}} = 1, \quad (m - b)^2 = 1 + m^2 \]
+解得 $2bm = b^2 - 1$，即 $m = \frac{b^2 - 1}{2b}$。代入 ① 得
+\[ x + \frac{b^2 - 1}{2b} y - b = 0, \quad 2bx + (b^2 - 1)y - 2b^2 = 0 \quad \cdots \cdots \text{②} \]
+\end{solution}
+
+\part 用 $a, b$ 表示点 $R$ 的坐标。
+\begin{solution}
+根据 (1) 的结果，将 $b$ 替换为 $-a$ 可得直线 $PR$ 的方程：
+\[ -2ax + (a^2 - 1)y - 2a^2 = 0 \quad \cdots \cdots \text{③} \]
+联立 ② 和 ③，消去 $x$ 得
+\[ \{a(b^2 - 1) + b(a^2 - 1)\}y = 2ab^2 + 2a^2 b \]
+\[ \{ab(a + b) - (a + b)\}y = 2ab(a + b), \quad y = \frac{2ab}{ab - 1} \quad (ab \neq 1, a + b > 0) \]
+将 $y$ 代入 ② 得
+\[ 2bx + \frac{2ab}{ab - 1}(b^2 - 1) - 2b^2 = 0 \]
+\[ x + \frac{a}{ab - 1}(b^2 - 1) - b = 0, \quad x = -\frac{a}{ab - 1}(b^2 - 1) + b = \frac{a - b}{ab - 1} \]
+由此得 $R \left( \frac{a - b}{ab - 1}, \frac{2ab}{ab - 1} \right)$。
+\end{solution}
+
+\part 当 $R$ 的 $y$ 坐标为正时，设 $\triangle PQR$ 的周长为 $T$。用 $a, b$ 表示 $T$。
+\begin{solution}
+由 $R$ 的 $y$ 坐标为正知 $\frac{2ab}{ab - 1} > 0$，即 $ab > 1$。此时
+\[ QR^2 = \left( \frac{a - b}{ab - 1} - b \right)^2 + \left( \frac{2ab}{ab - 1} \right)^2 = \frac{a^2(1 - b^2)^2 + 4a^2 b^2}{(ab - 1)^2} = \frac{a^2(1 + b^2)^2}{(ab - 1)^2} \]
+故 $QR = \frac{a(1 + b^2)}{ab - 1}$。同理可得 $PR = \frac{b(1 + a^2)}{ab - 1}$。
+由于 $PQ = a + b$，则周长 $T$ 为
+\[ T = a + b + \frac{a(1 + b^2)}{ab - 1} + \frac{b(1 + a^2)}{ab - 1} = \frac{2ab(a + b)}{ab - 1} \quad \cdots \cdots \text{④} \]
+\end{solution}
+
+\part 当点 $P, Q$ 在满足条件「$PQ = 4$ 且 $R$ 的 $y$ 坐标为正」的情况下运动时，求使 $T$ 最小的 $a$ 值及此时 $T$ 的值。
+\begin{solution}
+由条件知 $a + b = 4$ 且 $ab > 1$。
+根据均值不等式，$\sqrt{ab} \leqq \frac{a + b}{2} = 2$，即 $ab \leqq 4$，所以 $1 < ab \leqq 4$。
+由 ④ 式得
+\[ T = \frac{8ab}{ab - 1} = \frac{8}{1 - \frac{1}{ab}} \geqq \frac{8}{1 - \frac{1}{4}} = \frac{32}{3} \]
+当 $ab = 4$ 且 $a + b = 4$ 时（即 $a = b = 2$），$T$ 取得最小值 $\frac{32}{3}$。
+\end{solution}
+\end{parts}
 %parabola
     \question 求抛物线 \(y^{2}=16x\) 上距直线 \(4x-3y+24=0\) 最近的点坐标。  
     \begin{solution}
@@ -11799,6 +11966,36 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
         因此存在实数 $k=\pm2$,使 $\overrightarrow{NA}\cdot\overrightarrow{NB}=0$。
     \end{solution}
     \end{parts}
+
+    \question
+在曲线 $y=x^2$ 上取两点 $A(-1, 1), B(b, b^2)$。其中 $b > -1$。求满足以下条件的 $b$ 的取值范围。
+条件：在 $y=x^2$ 上存在点 $T(t, t^2) (-1 < t < b)$，使得 $\angle ATB$ 为直角。
+
+\begin{solution}
+对于点 $A(-1, 1), B(b, b^2), T(t, t^2) (-1 < t < b)$，其向量表示为：
+\[ \vec{AT} = (t+1, t^2-1) = (t+1)(1, t-1) \]
+\[ \vec{BT} = (t-b, t^2-b^2) = (t-b)(1, t+b) \]
+由于 $\angle ATB$ 为直角，则 $\vec{AT} \perp \vec{BT}$，即其内积为 0：
+\[ \vec{AT} \cdot \vec{BT} = 0 \implies 1 + (t-1)(t+b) = 0 \]
+整理得关于 $t$ 的二次方程：
+\[ t^2 + (b-1)t - b + 1 = 0 \quad \dots (*) \]
+我们需要求使得 $(*)$ 在区间 $-1 < t < b$ 内至少有一个实根的 $b$ 的取值范围。
+令 $f(t) = t^2 + (b-1)t - b + 1$。其对称轴为 $t = -\frac{b-1}{2}$。
+计算端点值：
+\[ f(-1) = 1 - (b-1) - b + 1 = -2b + 3 \]
+\[ f(b) = b^2 + (b-1)b - b + 1 = 2b^2 - 2b + 1 = 2(b-\frac{1}{2})^2 + \frac{1}{2} > 0 \]
+
+(i) 当 $-2b + 3 \geqq 0$（即 $-1 < b \leqq \frac{3}{2}$）时：
+由于 $f(b) > 0$，若要 $(*)$ 在 $(-1, b)$ 内有根，需满足对称轴在范围内且判别式 $\Delta \geqq 0$：
+1. $-1 < -\frac{b-1}{2} < b \implies \frac{1}{3} < b < 3$
+2. $\Delta = (b-1)^2 - 4(-b+1) = (b+1)(b-3) \leqq 0 \implies 1 \leqq b \leqq 3$（此处原解答中判别式计算有误，修正为 $b^2+2b-3 \geqq 0 \implies b \leqq -3, 1 \leqq b$）
+结合条件得 $1 \leqq b \leqq \frac{3}{2}$。
+
+(ii) 当 $-2b + 3 < 0$（即 $b > \frac{3}{2}$）时：
+此时 $f(-1) < 0$ 且 $f(b) > 0$。根据零点存在定理，方程 $(*)$ 在 $(-1, b)$ 内必有一个实根。
+
+综上所述，(i)(ii) 合并得 $b \geqq 1$。
+\end{solution}
 %ellipse
     \question 设\(A,B\)为椭圆 \(\dfrac{x^{2}}{25}+\dfrac{y^{2}}{16}=1\) 两焦点 ,若$P$为椭圆上任意点,求 \(\triangle PAB\) 面积最大值。  
     \begin{solution}
@@ -16885,6 +17082,68 @@ B(3k,3t).
         \]
     \end{solution}
 
+    \question
+在平面内，有不共线的三点 $O, A, B$。取一点 $P$，点 $P$ 不同于 $O$ 且在过 $O$ 点并与直线 $OA$ 垂直的直线上。取一点 $Q$，点 $Q$ 不同于 $O$ 且在过 $O$ 点并与直线 $OB$ 垂直的直线上。设向量 $\vec{OP} + \vec{OQ}$ 与 $\vec{AB}$ 垂直。
+
+\begin{parts}
+\part 证明 $\vec{OP} \cdot \vec{OB} = \vec{OQ} \cdot \vec{OA}$。
+\begin{solution}
+首先，设 $a > 0, r > 0, 0 < \alpha < \pi$，在 $xy$ 平面上，令 $\vec{OA} = (a, 0)$，$\vec{OB} = r(\cos \alpha, \sin \alpha)$。
+根据题意，设 $p \neq 0, q \neq 0$，则有
+\[
+\vec{OP} = (0, p), \quad \vec{OQ} = q(\sin \alpha, -\cos \alpha)
+\]
+此外，由于 $\vec{OP} + \vec{OQ}$ 与 $\vec{AB}$ 垂直，所以 $(\vec{OP} + \vec{OQ}) \cdot \vec{AB} = 0$。
+这里，$\vec{OP} + \vec{OQ} = (q \sin \alpha, p - q \cos \alpha)$，$\vec{AB} = (r \cos \alpha - a, r \sin \alpha)$。
+展开内积得：
+\[
+q \sin \alpha (r \cos \alpha - a) + (p - q \cos \alpha) r \sin \alpha = 0
+\]
+因为 $\sin \alpha > 0$，所以有
+\[
+q(r \cos \alpha - a) + r(p - q \cos \alpha) = 0
+\]
+整理得 $pr - aq = 0$，即
+\[
+pr = aq \cdots \cdots (*)
+\]
+又因为 $\vec{OP} \cdot \vec{OB} = pr \sin \alpha$，$\vec{OQ} \cdot \vec{OA} = aq \sin \alpha$。
+由 $(*)$ 式可知
+\[
+\vec{OP} \cdot \vec{OB} = \vec{OQ} \cdot \vec{OA}
+\]
+\end{solution}
+
+\part 设向量 $\vec{OA}, \vec{OB}$ 的夹角为 $\alpha$，且 $0 < \alpha < \frac{\pi}{2}$。证明向量 $\vec{OP}, \vec{OQ}$ 的夹角为 $\pi - \alpha$。
+\begin{solution}
+设 $\vec{OP}, \vec{OQ}$ 的夹角为 $\beta \, (0 < \beta < \pi)$，则有
+\[
+\cos \beta = \frac{\vec{OP} \cdot \vec{OQ}}{|\vec{OP}| |\vec{OQ}|} = \frac{-pq \cos \alpha}{|p| |q|}
+\]
+由 $(*)$ 式可知 $p$ 与 $q$ 同号，因此 $|p| |q| = |pq| = pq$。
+从而有
+\[
+\cos \beta = \frac{-pq \cos \alpha}{pq} = -\cos \alpha = \cos (\pi - \alpha)
+\]
+因为 $0 < \alpha < \frac{\pi}{2}$，得 $\frac{\pi}{2} < \pi - \alpha < \pi$。
+故 $\beta = \pi - \alpha$。
+\end{solution}
+
+\part 证明 $\frac{|\vec{OP}|}{|\vec{OA}|} = \frac{|\vec{OQ}|}{|\vec{OB}|}$。
+\begin{solution}
+由 $(*)$ 式可知 $pr = aq$，即 $r |p| = a |q|$。
+由于 $|\vec{OB}| = r$，$|\vec{OA}| = a$，$|\vec{OP}| = |p|$，$|\vec{OQ}| = |q|$，
+故有
+\[
+|\vec{OB}| |\vec{OP}| = |\vec{OA}| |\vec{OQ}|
+\]
+变形得
+\[
+\frac{|\vec{OP}|}{|\vec{OA}|} = \frac{|\vec{OQ}|}{|\vec{OB}|}
+\]
+\end{solution}
+\end{parts}
+
     \question 已知 $\textbf{a}$, $\textbf{b}$, $\textbf{c}$ 为三个非零向量,其中 $|\textbf{a}|=4$, $|\textbf{b}|=6$, $\textbf{a}$ 在 $\textbf{b}$ 上的正射影长为 1,若 $(\textbf{c}-\textbf{a})\cdot(\textbf{c}-\textbf{b})=0$,试求 $|\textbf{c}|$ 的最大可能值。
     \begin{solution}
         设
@@ -16978,7 +17237,7 @@ B(3k,3t).
         = 1 - \frac{1}{2} + \frac{1}{3} = \frac{5}{6}
         \]
     \end{solution}
-
+%3d vector
     \question
 Q.12 设 $P$ 为平面 $\sqrt{3}x + 2y + 3z = 16$，并设
 \[ S = \left\{ \alpha \hat{i} + \beta \hat{j} + \gamma \hat{k} : \alpha^2 + \beta^2 + \gamma^2 = 1 \text{ 且 } (\alpha, \beta, \gamma) \text{ 到平面 } P \text{ 的距离为 } \frac{7}{2} \right\} \]
@@ -20081,5 +20340,39 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
         \left(-\sqrt 6 + 18 \sqrt{\frac{2}{7}},\,0,\,30 - 36 \sqrt{\frac{3}{7}}\right)
         \]
     \end{solution}
+
+    \question
+在 $xyz$ 空间中，考虑一个以 $(0, 0, 1)$ 为中心、半径为 $1$ 的球面 $S$。当点 $Q$ 在 $S$ 上运动且不等于 $(0, 0, 2)$ 时，设通过点 $Q$ 与点 $P(1, 0, 2)$ 的直线 $l$ 与平面 $z = 0$ 的交点为 $R$。求点 $R$ 的运动范围，并画图表示。
+
+\begin{solution}
+设球面 $S$ 的中心为 $A(0, 0, 1)$。对于在 $S$ 上运动且不为 $(0, 0, 2)$ 的点 $Q$，连接 $P(1, 0, 2)$ 与 $Q$ 的直线 $l$ 与平面 $z = 0$ 相交于点 $R(x, y, 0)$。
+
+设向量 $\vec{PA}$ 与 $\vec{PR}$ 的夹角为 $\theta$。注意到当直线 $l$ 与球面 $S$ 相切时，$\theta = 45^\circ$。由此可得：
+\[
+\vec{PA} \cdot \vec{PR} = |\vec{PA}| |\vec{PR}| \cos \theta = \frac{1}{\sqrt{2}} |\vec{PA}| |\vec{PR}| \cdots \cdots ①
+\]
+根据坐标设定，$\vec{PA} = (-1, 0, -1)$，$\vec{PR} = (x - 1, y, -2)$。计算内积与长度：
+\[
+\vec{PA} \cdot \vec{PR} = -(x - 1) + 2 = -x + 3
+\]
+\[
+|\vec{PA}| = \sqrt{(-1)^2 + 0 + (-1)^2} = \sqrt{2}
+\]
+\[
+|\vec{PR}| = \sqrt{(x - 1)^2 + y^2 + (-2)^2} = \sqrt{x^2 + y^2 - 2x + 5}
+\]
+代入公式 ① 得：
+\[
+-x + 3 = \frac{1}{\sqrt{2}} \cdot \sqrt{2} \cdot \sqrt{x^2 + y^2 - 2x + 5}
+\]
+在 $x \le 3$ 的条件下，两边平方：
+\[
+(-x + 3)^2 = x^2 + y^2 - 2x + 5 \implies x = -\frac{1}{4} y^2 + 1 \cdots \cdots ②
+\]
+条件 $②$ 满足 $x \le 3$。当点 $Q$ 在球面 $S$ 上运动时，点 $R$ 的运动范围是以 $②$ 为边界线且包含原点的一侧。
+
+结果如图所示，为右侧阴影部分，且边界线包含在区域内。
+
+\end{solution}
 
 \end{questions}
