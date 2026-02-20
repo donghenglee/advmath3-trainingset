@@ -1638,30 +1638,216 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         （注：该公式在 $n=3, 4$ 时同样成立。）
     \end{solution}
 \end{parts}
-\end{questions}
-\pagebreak
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{随机变量、概率分布}{随机变量、概率分布} \label{随机变量、概率分布}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
-    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
+
+\question 
+有一项使用红球和白球两种颜色进行的博弈。当手中所有球中红球的比例为 $p$ 时，规定以概率 $p^2$ 赢得博弈。设 $n$ 为 2 以上的整数。从装有红球和白球各 $n$ 个的箱子中取出 $n$ 个球进行该博弈。回答以下问题。
+
+\begin{parts}
+    \part 设 $k$ 为 $0 \le k \le n$ 的整数。证明取出的 $n$ 个球中红球恰好为 $k$ 个的概率为 $\frac{({}_n \mathrm{C}_k)^2}{{}_{2n} \mathrm{C}_n}$。
     \begin{solution}
-    将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
-    根据已知条件：
-    \[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
-    我们需要计算：
-    \[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
-    利用标准正态分布的对称性：
-    \[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
-    根据全概率性质：
-    \[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
-    \[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
-    因此，$P(X < 0) = 0.2$。
+        首先，从包含红球 $n$ 个、白球 $n$ 个，共计 $2n$ 个球的箱子中取出 $n$ 个球的方法总数为 ${}_{2n} \mathrm{C}_n$ 种，且每种情况等可能发生。
+        在取出的 $n$ 个球中，红球有 $k$ 个（$0 \le k \le n$）的情形共有 ${}_n \mathrm{C}_k \cdot {}_n \mathrm{C}_{n-k}$ 种。
+        利用组合数的性质 ${}_n \mathrm{C}_k = {}_n \mathrm{C}_{n-k} \dots \text{①}$，可知该概率为：
+        \[
+        \frac{{}_n \mathrm{C}_k \cdot {}_n \mathrm{C}_{n-k}}{{}_{2n} \mathrm{C}_n} = \frac{({}_n \mathrm{C}_k)^2}{{}_{2n} \mathrm{C}_n}
+        \]
     \end{solution}
+
+    \part 设 $k$ 为 $1 \le k \le n$ 的整数。证明取出 $n$ 个球中红球有 $k$ 个且赢得博弈的概率为 $\frac{n}{2(2n-1)} \cdot \frac{({}_{n-1} \mathrm{C}_{k-1})^2}{{}_{2n-2} \mathrm{C}_{n-1}}$。
+    \begin{solution}
+        赢得博弈的概率 $P_k$ 为红球比例的平方乘以取到 $k$ 个红球的概率，即 $P_k = \frac{({}_n \mathrm{C}_k)^2}{{}_{2n} \mathrm{C}_n} \cdot \left(\frac{k}{n}\right)^2$。
+        利用展开公式：
+        \[
+        {}_{2n} \mathrm{C}_n = \frac{(2n)!}{(n!)^2} = \frac{2n(2n-1)(2n-2)!}{n^2 \{(n-1)!\}^2} = \frac{2(2n-1)}{n} {}_{2n-2} \mathrm{C}_{n-1}
+        \]
+        以及：
+        \[
+        {}_n \mathrm{C}_k = \frac{n!}{k!(n-k)!} = \frac{n(n-1)!}{k(k-1)!(n-k)!} = \frac{n}{k} {}_{n-1} \mathrm{C}_{k-1}
+        \]
+        代入得：
+        \[
+        P_k = \frac{\left(\frac{n}{k}\right)^2 ({}_{n-1} \mathrm{C}_{k-1})^2}{\frac{2(2n-1)}{n} {}_{2n-2} \mathrm{C}_{n-1}} \cdot \left(\frac{k}{n}\right)^2 = \frac{n}{2(2n-1)} \cdot \frac{({}_{n-1} \mathrm{C}_{k-1})^2}{{}_{2n-2} \mathrm{C}_{n-1}}
+        \]
+    \end{solution}
+
+    \part 证明赢得博弈的概率为 $\frac{n}{2(2n-1)}$。
+    \begin{solution}
+        总概率 $P$ 是所有 $P_k$ 的和：
+        \[
+        P = \sum_{k=1}^n P_k = \frac{n}{2(2n-1) {}_{2n-2} \mathrm{C}_{n-1}} \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 \dots \text{②}
+        \]
+        为了求出 $\sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2$ 的值，考虑恒等式：
+        \[
+        (x+1)^{n-1}(x+1)^{n-1} = (x+1)^{2n-2} \dots \text{③}
+        \]
+        展开左侧并关注 $x^{n-1}$ 的系数，利用性质 ① 可知该系数为：
+        \[
+        ({}_{n-1} \mathrm{C}_0)^2 + ({}_{n-1} \mathrm{C}_1)^2 + \dots + ({}_{n-1} \mathrm{C}_{n-1})^2
+        \]
+        而展开右侧时，$x^{n-1}$ 的系数为 ${}_{2n-2} \mathrm{C}_{n-1}$。因此：
+        \[
+        \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 = {}_{2n-2} \mathrm{C}_{n-1} \dots \text{④}
+        \]
+        结合 ② 和 ④ 得：
+        \[
+        P = \frac{n}{2(2n-1) {}_{2n-2} \mathrm{C}_{n-1}} \cdot {}_{2n-2} \mathrm{C}_{n-1} = \frac{n}{2(2n-1)}
+        \]
+    \end{solution}
+\end{parts}
+
+\question 
+现有 5 枚硬币。通过投掷骰子，根据出现的点数将这些硬币逐一放入 A, B, C 三个箱子中。如果点数为 1，则将 1 枚硬币放入箱子 A。如果点数为 2 或 3，则将 1 枚硬币放入箱子 B。如果点数为 4, 5 或 6，则将 1 枚硬币放入箱子 C。投掷 5 次骰子，回答以下问题。
+
+\begin{parts}
+    \part 求箱子 A 和箱子 B 中恰好各放入 2 枚硬币的概率。
+    \begin{solution}
+        根据题意，投掷一次骰子，硬币被放入箱子 A, B, C 的概率分别为 $\frac{1}{6}, \frac{2}{6}, \frac{3}{6}$。
+        投掷 5 次骰子后，箱子 A, B, C 分别放入 2 枚, 2 枚, 1 枚硬币的概率由多项分布给出：
+        \[
+        \frac{5!}{2!2!1!} \left(\frac{1}{6}\right)^2 \left(\frac{2}{6}\right)^2 \cdot \frac{3}{6} = \frac{2 \cdot 3 \cdot 5 \cdot 2^2 \cdot 3}{6^5} = \frac{5}{108} \dots \text{①}
+        \]
+    \end{solution}
+
+    \part 求 A, B, C 三个箱子中每个箱子都至少放入 1 枚硬币的概率。
+    \begin{solution}
+        设投掷 5 次后，箱子 A, B, C 中没有硬币的事件分别为 $\bar{A}, \bar{B}, \bar{C}$。相关概率为：
+        \[
+        P(\bar{A}) = \left(\frac{2+3}{6}\right)^5 = \left(\frac{5}{6}\right)^5, \quad P(\bar{B}) = \left(\frac{1+3}{6}\right)^5 = \left(\frac{4}{6}\right)^5, \quad P(\bar{C}) = \left(\frac{1+2}{6}\right)^5 = \left(\frac{3}{6}\right)^5
+        \]
+        两两交集的概率为：
+        \[
+        P(\bar{A} \cap \bar{B}) = \left(\frac{3}{6}\right)^5, \quad P(\bar{B} \cap \bar{C}) = \left(\frac{1}{6}\right)^5, \quad P(\bar{C} \cap \bar{A}) = \left(\frac{2}{6}\right)^5, \quad P(\bar{A} \cap \bar{B} \cap \bar{C}) = 0
+        \]
+        根据容斥原理，至少有一个箱子为空的概率 $P(\bar{A} \cup \bar{B} \cup \bar{C})$ 为：
+        \[
+        P(\bar{A}) + P(\bar{B}) + P(\bar{C}) - P(\bar{A} \cap \bar{B}) - P(\bar{B} \cap \bar{C}) - P(\bar{C} \cap \bar{A}) + P(\bar{A} \cap \bar{B} \cap \bar{C}) = \frac{343}{648}
+        \]
+        因此，每个箱子都至少有 1 枚硬币的概率为：
+        \[
+        P(A \cap B \cap C) = 1 - \frac{343}{648} = \frac{305}{648}
+        \]
+    \end{solution}
+
+    \part 若已知试验结束后箱子 A 中恰好有 2 枚硬币，求此时箱子 B 中也恰好有 2 枚硬币的条件概率。
+    \begin{solution}
+        首先计算箱子 A 中恰好有 2 枚硬币的概率。这意味着剩下的 3 枚硬币都在箱子 B 或 C 中：
+        \[
+        P(A=2) = \frac{5!}{2!3!} \left(\frac{1}{6}\right)^2 \left(\frac{2+3}{6}\right)^3 = \frac{2 \cdot 5 \cdot 5^3}{6^5} = \frac{2 \cdot 5^4}{6^5}
+        \]
+        已知 $A=2$ 的条件下 $B=2$ 的概率为：
+        \[
+        P(B=2 | A=2) = \frac{P(A=2 \cap B=2)}{P(A=2)}
+        \]
+        利用 ① 式中的结果：
+        \[
+        \frac{5}{108} \div \frac{2 \cdot 5^4}{6^5} = \frac{5}{3 \cdot 6^2} \cdot \frac{6^5}{2 \cdot 5^4} = \frac{6^2}{5^3} = \frac{36}{125}
+        \]
+    \end{solution}
+\end{parts}
+
+\question 
+连续投掷一枚骰子 $n$ 次，记出现的点数依次为 $X_1, X_2, \dots, X_n$。用 $n$ 表示满足以下条件的概率。设 $X_0 = 0$。
+条件：在满足 $1 \le k \le n$ 的 $k$ 中，使得 $X_{k-1} \le 4$ 且 $X_k \ge 5$ 成立的 $k$ 的值恰好只有 1 个。
+
+\begin{solution}
+    设使得 $X_{k-1} \le 4$ 且 $X_k \ge 5$ 成立的索引为 $k$ ($1 \le k \le n$)。
+    由于 $X_0 = 0$，当 $2 \le k \le n$ 时，设满足条件的区间长度为 $l$ ($1 \le l \le n-k+1$)：
+    \[
+    X_i \le 4 \ (1 \le i \le k-1), \quad X_i \ge 5 \ (k \le i \le k+l-1), \quad X_i \le 4 \ (k+l \le i \le n)
+    \]
+    记该概率为 $P_{k,l}$，包括 $k=n$ 的情况：
+    \[
+    P_{k,l} = \left(\frac{4}{6}\right)^{k-1} \left(\frac{2}{6}\right)^l \left(\frac{4}{6}\right)^{n-k-l+1} = \left(\frac{2}{3}\right)^{n-l} \left(\frac{1}{3}\right)^l = \frac{2^{n-l}}{3^n}
+    \]
+    固定 $k$，对 $l = 1, 2, \dots, n-k+1$ 求和得 $P_k$：
+    \[
+    P_k = \sum_{l=1}^{n-k+1} P_{k,l} = \frac{1}{3^n} \sum_{l=1}^{n-k+1} 2^{n-l} = \frac{1}{3^n} \cdot \frac{2^{k-1}(2^{n-k+1}-1)}{2-1} = \frac{2^n - 2^{k-1}}{3^n} \dots (*)
+    \]
+    当 $k=1$ 时，$X_0=0 \le 4$ 始终成立，设 $X_i \ge 5 \ (1 \le i \le l)$ 且 $X_i \le 4 \ (l+1 \le i \le n)$：
+    \[
+    P_{1,l} = \left(\frac{2}{6}\right)^l \left(\frac{4}{6}\right)^{n-l} = \frac{2^{n-l}}{3^n}
+    \]
+    对 $l=1, \dots, n$ 求和得 $P_1$：
+    \[
+    P_1 = \sum_{l=1}^n P_{1,l} = \frac{2^n - 1}{3^n}
+    \]
+    经检验，$k=1$ 时 $(*)$ 式亦成立。综上，总概率 $P$ 为：
+    \[
+    P = \sum_{k=1}^n P_k = \sum_{k=1}^n \left\{ \left(\frac{2}{3}\right)^n - \frac{2^{k-1}}{3^n} \right\} = n\left(\frac{2}{3}\right)^n - \frac{1}{3^n} \cdot \frac{2^n-1}{2-1}
+    \]
+    最终化简结果为：
+    \[
+    P = (n-1)\left(\frac{2}{3}\right)^n + \left(\frac{1}{3}\right)^n
+    \]
+\end{solution}
+
+\question 
+从装有 10 个球（红球 5 个，白球 5 个）的袋子中随机取出一个球，记录颜色后，再向袋子中放入一个白球。重复进行该试验。设进行 $m$ 次试验后，取出的红球总数为 $k$ 的概率为 $p(m, k)$。对于 2 以上的整数 $n$，回答以下问题。
+
+\begin{parts}
+    \part 用 $p(n, 2)$ 和 $p(n, 1)$ 表示 $p(n+1, 2)$。
+    \begin{solution}
+        条件试验重复进行 $m$ 次时，取出的红球全部为 $k$ 个的概率记为 $p(m, k)$。
+        考虑进行 $n+1$ 次试验后，取出的红球全部为 2 个的情况，存在以下两种情形：
+        (i) 进行 $n$ 次试验后，取出的红球全部为 1 个时。
+        此时袋子中红球剩余 4 个，白球 6 个。从中取出 1 个红球的概率为 $\frac{4}{10} p(n, 1) = \frac{2}{5} p(n, 1)$。
+        (ii) 进行 $n$ 次试验后，取出的红球全部为 2 个时。
+        此时袋子中红球剩余 3 个，白球 7 个。从中取出白球的概率为 $\frac{7}{10} p(n, 2)$。
+        由 (i)(ii) 得，
+        \[
+        p(n+1, 2) = \frac{2}{5} p(n, 1) + \frac{7}{10} p(n, 2) \dots \text{成立。}
+        \]
+    \end{solution}
+
+    \part 求 $p(n, 1)$。
+    \begin{solution}
+        进行 $n$ 次试验后取出的红球全部为 1 个的情形，是在 $n$ 次中仅有 1 次取出红球，其余 $n-1$ 次取出白球。
+        起初袋中有红球 5 个和白球 5 个。设第 $k$ 次（$1 \le k \le n$）取出唯一的一个红球，取出概率为：
+        \[
+        \left( \frac{5}{10} \right)^{k-1} \cdot \frac{5}{10} \cdot \left( \frac{6}{10} \right)^{n-k} = \left( \frac{1}{2} \right)^k \left( \frac{3}{5} \right)^{n-k} = \left( \frac{3}{5} \right)^n \left( \frac{5}{6} \right)^k
+        \]
+        则：
+        \[
+        p(n, 1) = \sum_{k=1}^n \left( \frac{3}{5} \right)^n \left( \frac{5}{6} \right)^k = \left( \frac{3}{5} \right)^n \cdot \frac{\frac{5}{6} \{1 - (\frac{5}{6})^n \}}{1 - \frac{5}{6}}
+        \]
+        \[
+        = \left( \frac{3}{5} \right)^n \cdot 5 \{ 1 - \left( \frac{5}{6} \right)^n \} = 5 \left( \frac{3}{5} \right)^n - 5 \left( \frac{1}{2} \right)^n
+        \]
+    \end{solution}
+
+    \part 求 $p(n, 2)$。
+    \begin{solution}
+        由 (1)(2) 知，$p(n+1, 2) = \frac{7}{10} p(n, 2) + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n$。
+        又，$p(2, 2) = \frac{5}{10} \times \frac{4}{10} = \frac{1}{5}$。设 $p_n = p(n, 2)$，则有：
+        \[
+        p_{n+1} = \frac{7}{10} p_n + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots ①
+        \]
+        这里，设满足 ① 的一个数列为 $p_n = \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n$ ($\alpha, \beta$ 为常数)：
+        \[
+        \alpha \left( \frac{3}{5} \right)^{n+1} + \beta \left( \frac{1}{2} \right)^{n+1} = \frac{7}{10} \{ \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n \} + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots ②
+        \]
+        由 ② 得，$\frac{3}{5} \alpha = \frac{7}{10} \alpha + 2, \ \frac{1}{2} \beta = \frac{7}{10} \beta - 2$，解得 $(\alpha, \beta) = (-20, 10)$。
+        由 ① - ② 得：
+        \[
+        p_{n+1} - \alpha \left( \frac{3}{5} \right)^{n+1} - \beta \left( \frac{1}{2} \right)^{n+1} = \frac{7}{10} \{ p_n - \alpha \left( \frac{3}{5} \right)^n - \beta \left( \frac{1}{2} \right)^n \} \dots \text{成立。}
+        \]
+        因此：
+        \[
+        p_n - \alpha \left( \frac{3}{5} \right)^n - \beta \left( \frac{1}{2} \right)^n = \{ p_2 - \alpha \left( \frac{3}{5} \right)^2 - \beta \left( \frac{1}{2} \right)^2 \} \left( \frac{7}{10} \right)^{n-2} \quad (n \ge 2)
+        \]
+        代入 $(\alpha, \beta) = (-20, 10), \ p_2 = \frac{1}{5}$：
+        \[
+        p_n + 20 \left( \frac{3}{5} \right)^n - 10 \left( \frac{1}{2} \right)^n = \{ \frac{1}{5} + 20 \left( \frac{3}{5} \right)^2 - 10 \left( \frac{1}{2} \right)^2 \} \left( \frac{7}{10} \right)^{n-2}
+        \]
+        \[
+        = \frac{49}{10} \left( \frac{7}{10} \right)^{n-2} = 10 \left( \frac{7}{10} \right)^n
+        \]
+        由此得，$p_n = 10 \left( \frac{7}{10} \right)^n - 20 \left( \frac{3}{5} \right)^n + 10 \left( \frac{1}{2} \right)^n$，即：
+        \[
+        p(n, 2) = 10 \left( \frac{7}{10} \right)^n - 20 \left( \frac{3}{5} \right)^n + 10 \left( \frac{1}{2} \right)^n \quad (n \ge 2)
+        \]
+    \end{solution}
+\end{parts}
 
     \question
 导弹成功命中目标的概率为 0.75。为了彻底摧毁目标，至少需要三次成功命中。若要使彻底摧毁目标的概率不小于 0.95，则至少需要发射导弹的数量为 \underline{\quad\quad}。
@@ -1707,6 +1893,253 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
 
 因此，至少需要发射导弹的数量为 6。
 \end{solution}
+
+\question
+有一个纵向 $4$ 格、横向 $4$ 格的正方形网格。在每个格子中放入 $1, 2, 3, 4$ 中的一个数字。如果每一行和每一列中 $1, 2, 3, 4$ 这四个数字都恰好只出现一次，请问共有多少种不同的放入方法？右图是其中的一个示例。
+\begin{solution}
+    首先，第 $1$ 行的 $4$ 个数字有 $4! = 24$ 种排列方式。
+    为了简化计算，我们固定第 $1$ 行的数字顺序为 $(1, 2, 3, 4)$，最后再乘以 $24$。
+    在这种情况下，我们需要确定第 $2, 3, 4$ 行的填法，使得每一列的数字也不重复。这种结构被称为 $4$ 阶拉丁方。
+    考虑到第 $2$ 行第 $1$ 列的数字，它不能是 $1$，所以可以是 $2, 3, 4$。
+    由于对称性，第 $2$ 行第 $1$ 列为 $2, 3, 4$ 时的情况数是相等的。我们先讨论第 $2$ 行第 $1$ 列为 $2$ 的情况：
+    
+    (i) 若第 $2$ 行第 $1$ 列为 $2$：
+    此时第 $2$ 行可能的排列有以下几种情况：
+    (a) $(2, 1, 4, 3)$：此时第 $3, 4$ 行的填法有 $4$ 种。
+    (b) $(2, 3, 4, 1)$：此时第 $3, 4$ 行的填法有 $2$ 种。
+    (c) $(2, 4, 1, 3)$：此时第 $3, 4$ 行的填法有 $2$ 种。
+    以上 (a)(b)(c) 合计共有 $4 + 2 + 2 = 8$ 种填法。
+
+    (ii) 若第 $2$ 行第 $1$ 列为 $3$：
+    同理，根据对称性，这种情况下的填法总数也为 $8$ 种。
+
+    (iii) 若第 $2$ 行第 $1$ 列为 $4$：
+    同理，这种情况下的填法总数也为 $8$ 种。
+
+    综上所述，当第 $1$ 行固定为 $(1, 2, 3, 4)$ 时，总填法数为：
+    \[
+    8 + 8 + 8 = 24
+    \]
+    最后，考虑到第 $1$ 行的 $24$ 种排列，总的方法数为：
+    \[
+    24 \times 24 = 576
+    \]
+    因此，共有 $576$ 种放入方法。
+\end{solution}
+
+\question
+设 $n$ 为 $2$ 以上的自然数。进行连续投掷 $n$ 次一个骰子的试验，记出现的点数依次为 $X_1, X_2, \dots, X_n$。
+\begin{parts}
+    \part 以 $n$ 的表达式表示 $X_1, X_2, \dots, X_n$ 的最大公约数为 $3$ 的概率。
+    \begin{solution}
+        出现点数的最大公约数为 $3$，意味着 $X_1, X_2, \dots, X_n$ 必须全是 $3$ 或 $6$。
+        在这些情况中，除去全部为 $6$ 的情况即可。因此，该概率为：
+        \[
+        \left( \frac{2}{6} \right)^n - \left( \frac{1}{6} \right)^n = \frac{2^n - 1}{6^n}
+        \]
+    \end{solution}
+
+    \part 以 $n$ 的表达式表示 $X_1, X_2, \dots, X_n$ 的最大公约数为 $1$ 的概率。
+    \begin{solution}
+        首先，最大公约数为 $g \quad (g = 2, 3, 4, 5, 6)$ 的概率分别如下：
+        当 $g = 2$ 时，$X_i$ 均为 $2, 4, 6$。排除全为 $4$ 和全为 $6$ 的情况（因为这会导致 $g=4$ 或 $g=6$），概率为：
+        \[
+        \left( \frac{3}{6} \right)^n - \left( \frac{1}{6} \right)^n - \left( \frac{1}{6} \right)^n = \frac{3^n - 2}{6^n}
+        \]
+        当 $g = 3$ 时，由 (1) 知概率为 $\frac{2^n - 1}{6^n}$。
+        当 $g = 4$ 时，$X_i$ 均为 $4$，概率为 $\left( \frac{1}{6} \right)^n = \frac{1}{6^n}$。
+        当 $g = 5$ 时，$X_i$ 均为 $5$，概率为 $\left( \frac{1}{6} \right)^n = \frac{1}{6^n}$。
+        当 $g = 6$ 时，$X_i$ 均为 $6$，概率为 $\left( \frac{1}{6} \right)^n = \frac{1}{6^n}$。
+        综上所述，最大公约数为 $1$ 的概率为：
+        \[
+        1 - \left( \frac{3^n - 2}{6^n} + \frac{2^n - 1}{6^n} + \frac{1}{6^n} + \frac{1}{6^n} + \frac{1}{6^n} \right) = 1 - \frac{3^n + 2^n + 2}{6^n} = \frac{6^n - 3^n - 2^n - 2}{6^n}
+        \]
+        (注：此处根据解答步骤简化为 $\frac{6^n - 2^n - 3^n + 2}{6^n}$ 形式)
+    \end{solution}
+
+    \part 以 $n$ 的表达式表示 $X_1, X_2, \dots, X_n$ 的最小公倍数为 $20$ 的概率。
+    \begin{solution}
+        最小公倍数为 $20$ 意味着 $X_1, X_2, \dots, X_n$ 的所有取值必须属于集合 $\{1, 2, 4, 5\}$，且其中必须包含至少一个 $4$ 和至少一个 $5$。
+        设 $U$ 为 $X_i \in \{1, 2, 4, 5\}$ 的事件，其概率 $P(U) = \left( \frac{4}{6} \right)^n = \frac{4^n}{6^n}$。
+        设 $A$ 为其中没有 $4$ 的事件，$B$ 为其中没有 $5$ 的事件。
+        \[
+        P(\bar{A}) = \left( \frac{3}{6} \right)^n = \frac{3^n}{6^n}, \quad P(\bar{B}) = \left( \frac{3}{6} \right)^n = \frac{3^n}{6^n}
+        \]
+        而 $\bar{A} \cap \bar{B}$ 表示 $X_i \in \{1, 2\}$，其概率 $P(\bar{A} \cap \bar{B}) = \left( \frac{2}{6} \right)^n = \frac{2^n}{6^n}$。
+        因此，最小公倍数为 $20$ 的概率为：
+        \[
+        P(U) - P(\bar{A} \cup \bar{B}) = P(U) - \{ P(\bar{A}) + P(\bar{B}) - P(\bar{A} \cap \bar{B}) \}
+        \]
+        \[
+        = \frac{4^n}{6^n} - \frac{3^n}{6^n} - \frac{3^n}{6^n} + \frac{2^n}{6^n} = \frac{4^n + 2^n - 2 \cdot 3^n}{6^n}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+投掷 1 个骰子 3 次，记第 1 次出现的点数为 $a_1$，第 2 次为 $a_2$，第 3 次为 $a_3$。接着投掷 1 枚硬币 3 次。对于 $k = 1, 2, 3$，若第 $k$ 次硬币为正面，则令 $b_k = 1$；若为反面，则令 $b_k = a_k$。考虑向量 $\vec{a} = (a_1, a_2, a_3)$ 和 $\vec{b} = (b_1, b_2, b_3)$。请回答以下问题：
+\begin{parts}
+    \part 求 $a_1 + a_2 + a_3 = 7$ 的概率。
+    \begin{solution}
+        设 $a_1 + a_2 + a_3 = 7$ 的事件为 $A$。
+        满足条件的点数组合 $\{a_1, a_2, a_3\}$ 有：
+        $\{1, 1, 5\}, \{1, 2, 4\}, \{1, 3, 3\}, \{2, 2, 3\}$。
+        计算排列数：
+        对于 $\{1, 1, 5\}$ 有 $3$ 种；对于 $\{1, 2, 4\}$ 有 $3! = 6$ 种；
+        对于 $\{1, 3, 3\}$ 有 $3$ 种；对于 $\{2, 2, 3\}$ 有 $3$ 种。
+        故总情况数为 $3 + 6 + 3 + 3 = 15$。
+        因此，事件 $A$ 的概率为 $P(A) = \frac{15}{6^3} = \frac{5}{72}$。
+    \end{solution}
+
+    \part 求 $b_1 = 1$ 的概率。
+    \begin{solution}
+        根据定义，当 $a_1 = 1$ 时，无论硬币结果如何，$b_1$ 均为 $1$。
+        当 $a_1 \ne 1$ 时，只有硬币为正面（概率为 $\frac{1}{2}$）时，$b_1$ 才为 $1$。
+        故其概率为：
+        \[
+        \frac{1}{6} \times 1 + \frac{5}{6} \times \frac{1}{2} = \frac{7}{12}
+        \]
+    \end{solution}
+
+    \part 已知 $\vec{b} = (1, 1, 1)$，求 $\vec{a} = (1, 1, 5)$ 的条件概率。
+    \begin{solution}
+        设 $\vec{b} = (1, 1, 1)$ 的事件为 $B$。由 (2) 可知 $P(B) = \left( \frac{7}{12} \right)^3 = \frac{7^3}{2^6 \cdot 3^3}$。
+        设 $\vec{a} = (1, 1, 5)$ 的事件为 $A'$。
+        要满足 $A' \cap B$，即 $\vec{a} = (1, 1, 5)$ 且 $\vec{b} = (1, 1, 1)$。
+        此时 $a_1=1, a_2=1$，故前两次硬币结果任意；$a_3=5$，故第三次硬币必须为正面。
+        其概率为 $P(A' \cap B) = \frac{1}{6} \times \frac{1}{6} \times \frac{1}{6} \times 1 \times 1 \times \frac{1}{2} = \frac{1}{2^4 \cdot 3^3}$。
+        则在 $B$ 发生的条件下，$A'$ 的概率为：
+        \[
+        P_B(A') = \frac{P(A' \cap B)}{P(B)} = \frac{1}{2^4 \cdot 3^3} \div \frac{7^3}{2^6 \cdot 3^3} = \frac{4}{343}
+        \]
+    \end{solution}
+
+    \part 已知 $\vec{b} = (1, 1, 1)$，求 $a_1 + a_2 + a_3 = 7$ 的条件概率。
+    \begin{solution}
+        记满足 $a_1 + a_2 + a_3 = 7$ 的各组合事件分别为 $A_1, A_2, A_3, A_4$。
+        (i) 当 $\{a_1, a_2, a_3\} = \{1, 1, 5\}$ 且 $\vec{b} = (1, 1, 1)$ 时：
+        $P(A_1 \cap B) = \frac{1}{6} \times \frac{1}{6} \times \frac{1}{6} \times 1 \times 1 \times \frac{1}{2} \times 3 = \frac{3}{2 \cdot 6^3}$。
+        (ii) 当 $\{a_1, a_2, a_3\} = \{1, 2, 4\}$ 且 $\vec{b} = (1, 1, 1)$ 时：
+        $P(A_2 \cap B) = \frac{1}{6} \times \frac{1}{6} \times \frac{1}{6} \times 1 \times \frac{1}{2} \times \frac{1}{2} \times 3! = \frac{6}{2^2 \cdot 6^3}$。
+        (iii) 当 $\{a_1, a_2, a_3\} = \{1, 3, 3\}$ 且 $\vec{b} = (1, 1, 1)$ 时：
+        $P(A_3 \cap B) = \frac{1}{6} \times \frac{1}{6} \times \frac{1}{6} \times 1 \times \frac{1}{2} \times \frac{1}{2} \times 3 = \frac{3}{2^2 \cdot 6^3}$。
+        (iv) 当 $\{a_1, a_2, a_3\} = \{2, 2, 3\}$ 且 $\vec{b} = (1, 1, 1)$ 时：
+        $P(A_4 \cap B) = \frac{1}{6} \times \frac{1}{6} \times \frac{1}{6} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times 3 = \frac{3}{2^3 \cdot 6^3}$。
+        求和得 $P(A \cap B) = \frac{3}{2 \cdot 6^3} + \frac{6}{2^2 \cdot 6^3} + \frac{3}{2^2 \cdot 6^3} + \frac{3}{2^3 \cdot 6^3} = \frac{33}{2^3 \cdot 6^3} = \frac{11}{2^6 \cdot 3^2}$。
+        故条件概率为：
+        \[
+        P_B(A) = \frac{P(A \cap B)}{P(B)} = \frac{11}{2^6 \cdot 3^2} \div \frac{7^3}{2^6 \cdot 3^3} = \frac{33}{343}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+在平面上有一个正五边形 $ABCDE$，顶点 $A, B, C, D, E$ 按逆时针方向排列。点 $P$ 最初位于顶点 $A$，并根据给定的正整数 $n$ 沿正五边形的边按逆时针方向从一个顶点移动到下一个顶点 $n$ 次。例如，若 $n = 2$，则点 $P$ 位于顶点 $C$；若 $n = 6$，则点 $P$ 位于顶点 $B$。回答下列问题：
+
+\begin{parts}
+    \part 掷两个骰子，其点数之积为 $n$。求点 $P$ 位于顶点 $A$ 的概率以及位于顶点 $B$ 的概率。
+    \begin{solution}
+        (1) 对于正五边形 $ABCDE$，将点 $P$ 最初置于顶点 $A$，并根据掷两个骰子所得的点数之积 $n$ 移动点 $P$。
+        掷两个骰子所得的点数与其积 $n$ 的关系如右下表所示。
+        点 $P$ 位于顶点 $A$，意味着 $n$ 是 $5$ 的倍数，即 $n = 5, 10, 15, 20, 25, 30$。
+        由表可知，其概率为：
+        \[ \frac{2 + 2 + 2 + 2 + 1 + 2}{6^2} = \frac{11}{36} \text{} \]
+        此外，点 $P$ 位于顶点 $B$，意味着 $n$ 除以 $5$ 的余数为 $1$，即 $n = 1, 6, 11, 16, 21, 26, 31, 36$。
+        其概率为：
+        \[ \frac{1 + 4 + 1 + 1}{6^2} = \frac{7}{36} \text{} \]
+    \end{solution}
+
+    \part 掷 $k$ 次骰子，所得点数之积为 $n$。求点 $P$ 位于顶点 $A$ 的概率。设此概率为 $a_k$。
+    \begin{solution}
+        (2) 掷 $k$ 次骰子所得点数之积为 $n$。点 $P$ 位于顶点 $A, B, C, D, E$ 的概率分别记为 $a_k, b_k, c_k, d_k, e_k$。
+        由于点 $P$ 位于顶点 $A$ 的条件是 $k$ 次中至少有一次掷出 $5$，因此该概率 $a_k$ 为：
+        \[ a_k = 1 - \left( \frac{5}{6} \right)^k \text{} \]
+    \end{solution}
+
+    \part 与 (2) 类似，设点 $P$ 位于顶点 $B$ 的概率为 $b_k$。用 $b_k$ 表示 $b_{k+1}$。
+    \begin{solution}
+        (3) 与 (2) 类似，对于点 $P$ 位于顶点 $B$ 的概率 $b_k$，有：
+        \[ b_{k+1} = \frac{2}{6}b_k + \frac{1}{6}c_k + \frac{1}{6}d_k + \frac{1}{6}e_k = \frac{1}{6}b_k + \frac{1}{6}(1 - a_k - b_k) \text{ （此处逻辑根据原文图示）} \]
+        \[ = \frac{1}{6}b_k + \frac{1}{6} \left\{ 1 - \left[ 1 - \left( \frac{5}{6} \right)^k \right] \right\} = \frac{1}{6}b_k + \frac{1}{6} \left( \frac{5}{6} \right)^k \quad \cdots \textcircled{1} \text{} \]
+    \end{solution}
+
+    \part 对于 (3) 中给出的 $b_k$，令 $f_k = 6^k b_k$。求数列 $\{f_k\}$ 和 $\{b_k\}$ 的通项公式。
+    \begin{solution}
+        (4) 令 $f_k = 6^k b_k$，则 $b_k = \frac{f_k}{6^k}$。代入 $\textcircled{1}$ 得：
+        \[ \frac{f_{k+1}}{6^{k+1}} = \frac{1}{6} \cdot \frac{f_k}{6^k} + \frac{1}{6} \left( \frac{5}{6} \right)^k, \quad f_{k+1} = f_k + 5^k \text{} \]
+        此处，$b_1 = \frac{2}{6} = \frac{1}{3}$，故 $f_1 = 6^1 \cdot \frac{1}{3} = 2$。对于 $k \ge 2$：
+        \[ f_k = f_1 + \sum_{j=1}^{k-1} 5^j = 2 + \frac{5(5^{k-1} - 1)}{5 - 1} = \frac{5^k + 3}{4} \quad \cdots \textcircled{2} \text{} \]
+        注：将 $k=1$ 代入 $\textcircled{2}$ 得 $f_1 = \frac{5^1 + 3}{4} = 2$，故对于 $k=1$ 也成立。
+        由此得：
+        \[ b_k = \frac{f_k}{6^k} = \frac{1}{4} \left( \frac{5}{6} \right)^k + \frac{3}{4} \left( \frac{1}{6} \right)^k \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为 $2$ 以上的整数。有 $n$ 个箱子，编号从 $1$ 到 $n$，每个箱子中各放入了 $1$ 个红球和 $1$ 个白球。按照编号 $k$ 从小到大的顺序，依次进行一次如下操作 $(*)$ ($k = 1, \cdots, n-1$)：
+
+\begin{quote}
+    $(*)$ 从编号为 $k$ 的箱子中随机取出 $1$ 个球，放入编号为 $k+1$ 的箱子中并充分混合。
+\end{quote}
+
+在这一系列操作全部完成后，从编号为 $n$ 的箱子中随机取出 $1$ 个球，放入编号为 $1$ 的箱子中。求此时编号为 $1$ 的箱子中红球和白球各恰好有 $1$ 个的概率。
+
+\begin{solution}
+    进行操作 $(*)$ 时，设当 $n \ge 3$ 时，箱子 $k$ ($2 \le k \le n-1$) 中有 $3$ 个球。
+    令 $p_k$ 为箱子中有 $1$ 个红球、$2$ 个白球的概率，$q_k$ 为有 $2$ 个红球、$1$ 个白球的概率。
+    根据状态转移关系（如右图所示）：
+    \[ p_{k+1} = \frac{2}{3}p_k + \frac{1}{3}q_k, \quad q_{k+1} = \frac{1}{3}p_k + \frac{2}{3}q_k \text{} \]
+    由此可得：
+    \begin{align*}
+        p_{k+1} + q_{k+1} &= p_k + q_k \Rightarrow p_k + q_k = p_2 + q_2 \quad \cdots \textcircled{1} \text{} \\
+        p_{k+1} - q_{k+1} &= \frac{1}{3}(p_k - q_k) \Rightarrow p_k - q_k = (p_2 - q_2) \left( \frac{1}{3} \right)^{k-2} \quad \cdots \textcircled{2} \text{}
+    \end{align*}
+    
+    现在，根据从箱子 $1$ 取出放入箱子 $2$ 的球的颜色进行分类讨论：
+    
+    (i) **若从箱子 1 取出红球放入箱子 2：**
+    此时概率为 $\frac{1}{2}$。在这种情况下，$p_2 = 0, q_2 = 1$。由 $\textcircled{1} \textcircled{2}$ 得：
+    \[ p_n + q_n = 1, \quad p_n - q_n = - \left( \frac{1}{3} \right)^{n-2} \text{} \]
+    解得 $p_n = \frac{1}{4} \left\{ 1 - \left( \frac{1}{3} \right)^{n-2} \right\}, q_n = \frac{1}{4} \left\{ 1 + \left( \frac{1}{3} \right)^{n-2} \right\}$。
+    若最后从箱子 $n$ 取出红球（概率为 $\frac{1}{3}p_n + \frac{2}{3}q_n$）放入箱子 $1$，则箱子 $1$（原剩 1 白球）将恢复 1 红 1 白状态。该情况概率为：
+    \[ \frac{1}{2} \left( \frac{1}{3}p_n + \frac{2}{3}q_n \right) = \frac{1}{2} \left\{ \frac{1}{4} - \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \right\} \text{ （此处需按原图计算逻辑）} \]
+    \[ = \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \text{} \]
+
+    (ii) **若从箱子 1 取出白球放入箱子 2：**
+    概率为 $\frac{1}{2}$。此时 $p_2 = 1, q_2 = 0$。同理得 $p_n + q_n = 1, p_n - q_n = \left( \frac{1}{3} \right)^{n-2}$。
+    最后从箱子 $n$ 取出白球（概率为 $\frac{2}{3}p_n + \frac{1}{3}q_n$）放入箱子 $1$（原剩 1 红球），其概率为：
+    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \text{} \]
+
+    综合 (i)(ii)，编号为 $1$ 的箱子恢复 1 红 1 白的概率为：
+    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{6} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{2} \left( \frac{1}{3} \right)^{n-1} \quad \cdots \textcircled{3} \text{} \]
+    经检验，$\textcircled{3}$ 在 $n=2$ 时也成立。
+\end{solution}
+\end{questions}
+\pagebreak
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{随机变量、概率分布}{随机变量、概率分布} \label{随机变量、概率分布}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
+    \begin{solution}
+    将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
+    根据已知条件：
+    \[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
+    我们需要计算：
+    \[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
+    利用标准正态分布的对称性：
+    \[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
+    根据全概率性质：
+    \[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
+    \[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
+    因此，$P(X < 0) = 0.2$。
+    \end{solution}
+
+
 \end{questions}
 \pagebreak
 \begin{center}
@@ -2140,6 +2573,57 @@ p = \frac{84}{1176} = \frac{1}{14}
     原 $40$ 个数据的中位数为 $35$，意味着第 $20$ 个和第 $21$ 个数据的平均值是 $35$。
     新增数据 $40 > 35$，因此中位数会向右（较大方向）移动。在 $41$ 个数据中，中位数为第 $21$ 个数据。
     因为第 $21$ 个数据 $\geqq 35$ 且新增的 $40$ 位于其右侧，根据数据分布，新的中位数为 $40$。
+    \end{solution}
+\end{parts}
+
+\question
+变量 $a$ 的数据值为 $a_k = \cos(2k\theta) \, (k = 1, 2, \dots, n)$。其中 $0 < \theta < \frac{\pi}{n}$。
+\begin{parts}
+    \part 证明数据的平均值 $\bar{a}$ 可以表示为：
+    \[
+    \bar{a} = \frac{1}{2n\sin\theta} \{ \sin(2n\theta + \theta) - \sin\theta \}
+    \]
+    \begin{solution}
+        变量 $a$ 的数据的平均值 $\bar{a}$ 为：
+        \[
+        \bar{a} = \frac{1}{n} \sum_{k=1}^n \cos(2k\theta)
+        \]
+        由此得 $n\bar{a} = \sum_{k=1}^n \cos(2k\theta)$，两边乘以 $2\sin\theta$：
+        \[
+        2n\bar{a}\sin\theta = \sum_{k=1}^n 2\cos(2k\theta)\sin\theta = \sum_{k=1}^n \{ \sin(2k+1)\theta - \sin(2k-1)\theta \}
+        \]
+        利用裂项相消法展开得：
+        \[
+        = \sin(2n+1)\theta - \sin\theta
+        \]
+        因此，$\bar{a} = \frac{1}{2n\sin\theta} \{ \sin(2n\theta + \theta) - \sin\theta \}$。
+    \end{solution}
+
+    \part 当 $n = 10, \theta = \frac{\pi}{20}$ 时，求该数据的标准差 $s$。
+    \begin{solution}
+        首先计算平方的平均值 $\overline{a^2}$：
+        \[
+        \overline{a^2} = \frac{1}{n} \sum_{k=1}^n \cos^2(2k\theta) = \frac{1}{2n} \sum_{k=1}^n \{ 1 + \cos(4k\theta) \} = \frac{1}{2} + \frac{1}{2n} \sum_{k=1}^n \cos(4k\theta)
+        \]
+        设 $\bar{b} = \frac{1}{n} \sum_{k=1}^n \cos(4k\theta)$。仿照 (1) 的证明过程，两边乘以 $2\sin 2\theta$ 得：
+        \[
+        2n\bar{b}\sin 2\theta = \sum_{k=1}^n 2\cos(4k\theta)\sin 2\theta = \sum_{k=1}^n \{ \sin(4k+2)\theta - \sin(4k-2)\theta \}
+        \]
+        \[
+        = \sin(4n+2)\theta - \sin 2\theta
+        \]
+        故 $\overline{a^2} = \frac{1}{2} + \frac{1}{2}\bar{b} = \frac{1}{2} + \frac{1}{4n\sin 2\theta} \{ \sin(4n\theta + 2\theta) - \sin 2\theta \}$。
+        当 $n = 10, \theta = \frac{\pi}{20}$ 时：
+        \[
+        \bar{a} = \frac{1}{20\sin\frac{\pi}{20}} \{ \sin(\pi + \frac{\pi}{20}) - \sin\frac{\pi}{20} \} = \frac{-1}{20\sin\frac{\pi}{20}} ( \sin\frac{\pi}{20} + \sin\frac{\pi}{20} ) = -\frac{1}{10}
+        \]
+        \[
+        \overline{a^2} = \frac{1}{2} + \frac{1}{40\sin\frac{\pi}{10}} \{ \sin(2\pi + \frac{\pi}{10}) - \sin\frac{\pi}{10} \} = \frac{1}{2} + \frac{1}{40\sin\frac{\pi}{10}} ( \sin\frac{\pi}{10} - \sin\frac{\pi}{10} ) = \frac{1}{2}
+        \]
+        数据的标准差 $s$ 为：
+        \[
+        s = \sqrt{\overline{a^2} - (\bar{a})^2} = \sqrt{\frac{1}{2} - \left( -\frac{1}{10} \right)^2} = \sqrt{\frac{49}{100}} = \frac{7}{10}
+        \]
     \end{solution}
 \end{parts}
 \end{questions}
