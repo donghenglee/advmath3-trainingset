@@ -2391,6 +2391,162 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \[ 1 - \frac{23}{140} = \frac{117}{140} \text{} \]
     \end{solution}
 \end{parts}
+
+\question
+五个学生 A, B, C, D, E 分别参加了游戏 $\alpha$ 和游戏 $\beta$ 两种测试。游戏 $\alpha$ 的得分为 $x$，游戏 $\beta$ 的得分为 $y$，得分如下表所示：
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+学生 & A & B & C & D & E \\ \hline
+得分 $x$ & 7 & 6 & 8 & $a$ & 4 \\ \hline
+得分 $y$ & 0 & -4 & -1 & 2 & $b$ \\ \hline
+\end{tabular}
+\end{table}
+
+已知 $a, b$ 为整数，得分 $x$ 的平均值为 $7$，得分 $y$ 的平均值为 $m$。请回答下列问题：
+
+\begin{parts}
+    \part 求 $a$ 的值。
+    \begin{solution}
+        由于 $x$ 的平均值 $\bar{x} = 7$，则：
+        \[ \frac{7+6+8+a+4}{5} = 7 \quad \Rightarrow \quad 25+a = 35 \quad \Rightarrow \quad a = 10 \text{} \]
+    \end{solution}
+
+    \part 设 $p, q$ 为实数且 $p \neq 0$。通过变换 $z = py + q$ 将 $y$ 转换为新变量 $z$。设 $z$ 的方差为 $s_z^2$，$x$ 与 $z$ 的协方差为 $s_{xz}$。请用 $p, q, m$ 中的必要项表示 $s_z^2$ 和 $s_{xz}$。
+    \begin{solution}
+        首先计算 $y$ 的平均值 $m = \frac{0-4-1+2+b}{5} = \frac{b-3}{5}$，得 $b = 5m+3$。
+        $y$ 的方差 $s_y^2 = \overline{y^2} - (\bar{y})^2 = \frac{0+16+1+4+(5m+3)^2}{5} - m^2 = 4m^2 + 6m + 6$。
+        $x$ 与 $y$ 的协方差 $s_{xy} = \overline{xy} - \bar{x}\bar{y} = \frac{0-24-8+20+4(5m+3)}{5} - 7m = -3m$。
+        根据线性变换性质 $z = py + q$：
+        \begin{itemize}
+            \item $s_z^2 = p^2 s_y^2 = p^2(4m^2 + 6m + 6)$
+            \item $s_{xz} = p s_{xy} = -3pm$
+        \end{itemize}
+    \end{solution}
+
+    \part 当 $x$ 与 $z$ 的相关系数为 $\frac{3}{4}$ 时，求 $m$ 和 $b$ 的值。并判断 $p$ 是正数还是负数。
+    \begin{solution}
+        首先计算 $x$ 的方差 $s_x^2 = \frac{49+36+64+100+16}{5} - 49 = 4$。
+        由相关系数公式 $r_{xz} = \frac{s_{xz}}{s_x s_z} = \frac{3}{4}$ 得：
+        \[ \frac{-3pm}{2 \cdot |p| \sqrt{s_y^2}} = \frac{3}{4} \quad \Rightarrow \quad -2pm = |p| \sqrt{2(2m^2+3m+3)} \text{} \]
+        由于等式右边 $|p|\sqrt{\dots} \ge 0$，必须满足 $-2pm \ge 0$。
+        两边平方得：$4p^2 m^2 = p^2(4m^2+6m+6) \Rightarrow 3m+3=0 \Rightarrow m=-1$。
+        代入 $b = 5(-1)+3 = -2$。
+        由于 $-2pm \ge 0$ 且 $m = -1$，得 $2p \ge 0$，故 $p > 0$（$p$ 为正数）。
+    \end{solution}
+\end{parts}
+
+\question
+现有 $n$ 种不同的颜色。给一个立方体的 6 个面涂色，每个面涂一种颜色。所有涂法出现的概率均等。若要求相邻的两个面涂不同的颜色（即“涂色区分”），设涂色成功的概率为 $p_n$。请回答下列问题：
+
+\begin{parts}
+    \part 求 $p_3$。
+    \begin{solution}
+        首先，如右图所示，将立方体的相对面分别标记为 (1, 6), (2, 5) 和 (3, 4)。
+                当只有 3 种颜色 A, B, C 时，要满足相邻面颜色不同，唯一的涂色模式是：**三组相对面分别涂上相同的颜色**。
+        \begin{itemize}
+            \item 这种涂色模式只有 1 种。
+            \item 对于该模式，3 种颜色与 3 组相对面的对应关系有 $3!$ 种。
+        \end{itemize}
+        总涂色方案数为 $3^6$ 种。
+        故 $p_3 = \frac{1 \times 3!}{3^6} = \frac{6}{729} = \frac{2}{243}$。
+    \end{solution}
+
+    \part 求 $p_4$。
+    \begin{solution}
+        使用 4 种颜色 A, B, C, D 进行涂色时，满足条件的涂法分为以下两类：
+        \begin{enumerate}
+            \item **恰好使用 3 种颜色时**：
+            从 4 种颜色中选出 3 种的方法有 ${}_4\mathrm{C}_3 = 4$ 种。
+            根据 (1) 的结论，每种选法的涂色方式有 $1 \times 3!$ 种。
+            此情况概率为 $\frac{4 \times 1 \times 3!}{4^6} = \frac{24}{4^6} = \frac{3}{2^9}$。
+
+            \item **恰好使用 4 种颜色时**：
+            这种模式下，必然有 **两组相对面颜色相同，一组相对面颜色不同**。
+            \begin{itemize}
+                \item 选出两组涂相同颜色的相对面：${}_3\mathrm{C}_2 = 3$ 种方式。
+                \item 4 种颜色与这些面的对应关系（排列）有 $4!$ 种。
+            \end{itemize}
+            此情况概率为 $\frac{3 \times 4!}{4^6} = \frac{72}{4^6} = \frac{9}{2^9}$。
+        \end{enumerate}
+        综合 (i) 和 (ii)，$p_4 = \frac{3}{2^9} + \frac{9}{2^9} = \frac{12}{512} = \frac{3}{128}$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为不小于 $3$ 的奇数。从圆内接正 $n$ 边形的顶点中随机选择不相同的 $3$ 个点。求以这 $3$ 个点为顶点的三角形内部包含圆心的概率 $p_n$。
+
+\begin{solution}
+    设圆心为 $O$，正 $n$ 边形顶点为 $A_1, A_2, \dots, A_n$。
+    从 $n$ 个顶点中任选 $3$ 个点的总数为：
+    \[ {}_n\mathrm{C}_3 = \frac{1}{6}n(n-1)(n-2) \text{ （种）} \]
+    设选出的三角形 **不包含** 圆心 $O$ 的概率为 $q_n$。
+    
+        
+    当 $n$ 为 $5$ 以上的奇数时，固定一个顶点 $A_n$，若选出的三角形不包含 $O$，则其余两个顶点 $A_i, A_j$ 必须落在圆的同一个半圆弧内。
+    设 $1 \le i < j \le \frac{n-1}{2}$。对于固定的 $i$，满足条件的 $j$ 的取值数如下：
+    \begin{itemize}
+        \item 当 $i=1$ 时，$j \in \{2, 3, \dots, \frac{n-1}{2}\}$，共 $\frac{n-3}{2}$ 种。
+        \item 以此类推，当 $i = \frac{n-3}{2}$ 时，$j$ 仅有 $1$ 种。
+    \end{itemize}
+    以 $A_n$ 为其中一个顶点且不包含 $O$ 的三角形个数 $N$ 为：
+    \[ N = {}_1\mathrm{C}_1 + {}_2\mathrm{C}_1 + \dots + {}_{\frac{n-3}{2}}\mathrm{C}_1 = \frac{1}{2} \cdot \frac{n-3}{2} \cdot \frac{n-1}{2} = \frac{1}{8}(n-3)(n-1) \text{ （种）} \]
+    考虑到对称性，将这些三角形绕圆心旋转，总的不包含圆心的三角形个数为：
+    \[ nN = \frac{n}{8}(n-3)(n-1) \text{} \]
+    因此，不包含圆心的概率 $q_n$ 为：
+    \[ q_n = \frac{nN}{{}_n\mathrm{C}_3} = \frac{\frac{n}{8}(n-3)(n-1)}{\frac{1}{6}n(n-1)(n-2)} = \frac{6(n-3)}{8(n-2)} = \frac{3(n-3)}{4(n-2)} \text{} \]
+    注：当 $n=3$ 时，$q_n=0$，公式依然成立。
+    由于 $n$ 是奇数，圆心不可能落在三角形的边上，故 $p_n + q_n = 1$。
+    \[ p_n = 1 - q_n = 1 - \frac{3(n-3)}{4(n-2)} = \frac{4n-8-3n+9}{4(n-2)} = \frac{n+1}{4(n-2)} \text{} \]
+    答：$p_n = \frac{n+1}{4(n-2)}$。
+\end{solution}
+
+\question
+设 $n$ 为 $2$ 以上的整数。连续抛掷一枚硬币 $n$ 次。若第 $k$ 次（$1 \le k \le n$）出现正面，记 $X_k = 1$；若出现反面，则记 $X_k = 0$。定义 $Y_n = \sum_{k=2}^{n} X_{k-1}X_k$。求 $Y_n$ 为奇数的概率 $p_n$。
+
+\begin{solution}
+    连续抛掷硬币 $n$ 次，记 $k$ 次正面时 $X_k=1$，反面时 $X_k=0$。$Y_n = \sum_{k=2}^{n} X_{k-1}X_k$。
+    
+    为了建立递推关系，按“$X_n$ 的值”与“$Y_n$ 的奇偶性”将状态分为四种，分别记其概率为 $a_n, b_n, c_n, d_n$：
+    \begin{itemize}
+        \item $a_n$: $X_n=1$ 且 $Y_n$ 为奇数
+        \item $b_n$: $X_n=0$ 且 $Y_n$ 为奇数
+        \item $c_n$: $X_n=1$ 且 $Y_n$ 为偶数
+        \item $d_n$: $X_n=0$ 且 $Y_n$ 为偶数
+    \end{itemize}
+
+    \textbf{1. 状态转移关系}：
+    根据 $X_{n+1}$ 的结果（正反概率各 $1/2$），转移方程如下：
+    \[ \begin{cases} 
+    a_{n+1} = \frac{1}{2}b_n + \frac{1}{2}c_n & \dots \text{\textcircled{1}} \\
+    b_{n+1} = \frac{1}{2}a_n + \frac{1}{2}b_n & \dots \text{\textcircled{2}} \\
+    c_{n+1} = \frac{1}{2}a_n + \frac{1}{2}d_n & \dots \text{\textcircled{3}} \\
+    d_{n+1} = \frac{1}{2}c_n + \frac{1}{2}d_n & \dots \text{\textcircled{4}}
+    \end{cases} \text{} \]
+    
+    
+    \textbf{2. 初始条件}：当 $n=2$ 时，$Y_2 = X_1 X_2$。
+    只有 $X_1=1, X_2=1$ 时 $Y_2=1$（奇数），故 $a_2 = 1/4$。
+    其余为 $b_2 = 0, c_2 = 1/4, d_2 = 1/2$。
+
+    \textbf{3. 求解数列}：
+    令 $p_n = a_n + b_n$（即 $Y_n$ 为奇数的总概率）。由 \textcircled{1}\textcircled{2} 得：
+    \[ a_{n+1} + b_{n+1} = \frac{1}{2}a_n + b_n + \frac{1}{2}c_n \quad \Rightarrow \quad p_{n+1} = b_n + \frac{1}{2}(a_n + c_n) \text{} \]
+    由于 $a_n + c_n = P(X_n=1) = 1/2$，代入上式得 $p_{n+1} = b_n + 1/4 \dots \text{\textcircled{6}}$。
+    进一步推导二阶递推式得：$p_{n+2} - \frac{1}{2} = \frac{1}{2}(p_n - \frac{1}{2}) \dots \text{\textcircled{7}}$。
+
+    \textbf{4. 最终结果}：
+    分类讨论 $n$ 的奇偶性：
+    \begin{enumerate}[label=(\roman*)]
+        \item 当 $n=2k$ 时：$p_{2k} = \frac{1}{2} - \left(\frac{1}{2}\right)^{k+1}$。
+        \item 当 $n=2k+1$ 时：$p_{2k+1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{k+1}$。
+    \end{enumerate}
+    统一形式为：
+    \[ p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\lfloor \frac{n}{2} \rfloor + 1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2} \text{ 或 } \frac{n+2}{2}} \text{} \]
+    答：$n$ 为偶数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n}{2}+1}$；$n$ 为奇数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2}}$。
+\end{solution}
 \end{questions}
 \pagebreak
 \begin{center}
@@ -2901,6 +3057,57 @@ p = \frac{84}{1176} = \frac{1}{14}
         \[
         s = \sqrt{\overline{a^2} - (\bar{a})^2} = \sqrt{\frac{1}{2} - \left( -\frac{1}{10} \right)^2} = \sqrt{\frac{49}{100}} = \frac{7}{10}
         \]
+    \end{solution}
+\end{parts}
+
+\question
+同时掷三个均匀的骰子，记三个骰子点数的乘积为 $X$。将 $X$ 进行素因数分解，记其中 $3$ 的指数为 $Y$。
+注意：若 $X$ 不能被 $3$ 整除，则 $Y=0$。例如，若 $X=45=3^2 \cdot 5$，则 $Y=2$；若 $X=50=2 \cdot 5^2$，则 $Y=0$。
+请回答下列问题：
+
+\begin{parts}
+    \part 求 $X=216$ 的概率。
+    \begin{solution}
+        由于 $X = 216 = 6^3$，而骰子最大点数为 $6$。
+        要使乘积为 $216$，唯一的可能情况是三个骰子同时掷出 $\{6, 6, 6\}$。
+        其概率为 $P(X=216) = \frac{1}{6^3} = \frac{1}{216}$。
+    \end{solution}
+
+    \part 求 $X=36$ 的概率。
+    \begin{solution}
+        $X = 36 = 2^2 \cdot 3^2$。列举三个骰子点数乘积为 $36$ 的组合：
+        \begin{itemize}
+            \item $\{1, 6, 6\}$：排列数为 $\frac{3!}{2!} = 3$ 种。
+            \item $\{2, 3, 6\}$：排列数为 $3! = 6$ 种。
+            \item $\{3, 3, 4\}$：排列数为 $\frac{3!}{2!} = 3$ 种。
+        \end{itemize}
+        符合条件的样本总数为 $3 + 6 + 3 = 12$。
+        概率为 $P(X=36) = \frac{12}{216} = \frac{1}{18}$。
+    \end{solution}
+
+    \part 求 $Y \ge 1$ 的概率。
+    \begin{solution}
+        考虑余事件 $Y=0$，即乘积 $X$ 中不含质因子 $3$。
+        这要求三个骰子的点数都不能是 $3$ 的倍数（即只能从 $\{1, 2, 4, 5\}$ 中取值）。
+        \begin{itemize}
+            \item 单个骰子出现 $Y=0$ 的情况有 $4$ 种。
+            \item 三个骰子均为 $Y=0$ 的总数为 $4^3 = 64$。
+        \end{itemize}
+        $P(Y=0) = \frac{4^3}{6^3} = \frac{64}{216} = \frac{8}{27}$。
+        故 $P(Y \ge 1) = 1 - P(Y=0) = 1 - \frac{8}{27} = \frac{19}{27}$。
+    \end{solution}
+
+    \part 求 $Y$ 的数学期望 $E(Y)$。
+    \begin{solution}
+        设第 $i$ 个骰子的点数为 $X_i$，其包含质因子 $3$ 的指数为 $Y_i$。
+        则总指数 $Y = Y_1 + Y_2 + Y_3$。根据期望的可加性 $E(Y) = E(Y_1) + E(Y_2) + E(Y_3)$。
+        对于单个骰子 $Y_i$ 的分布：
+        \begin{itemize}
+            \item 点数为 $3, 6$ 时，$Y_i = 1$（出现的概率为 $\frac{2}{6} = \frac{1}{3}$）。
+            \item 点数为 $1, 2, 4, 5$ 时，$Y_i = 0$（出现的概率为 $\frac{4}{6} = \frac{2}{3}$）。
+        \end{itemize}
+        $E(Y_i) = 1 \cdot \frac{1}{3} + 0 \cdot \frac{2}{3} = \frac{1}{3}$。
+        因此，$E(Y) = 3 \cdot E(Y_i) = 3 \cdot \frac{1}{3} = 1$。
     \end{solution}
 \end{parts}
 \end{questions}

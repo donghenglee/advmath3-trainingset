@@ -4653,6 +4653,210 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
 
     综上所述，由 (i) $\sim$ (iii) 可知，使得 $p, p+10, p+20$ 全部为素数的自然数 $p$ 仅有 $p=3$ 一个。
 \end{solution}
+
+\question
+求满足以下条件的最大的自然数：将其分别以八进制、九进制、十进制表示时，其位数均相同。
+已知：$0.3010 < \log_{10} 2 < 0.3011$，$0.4771 < \log_{10} 3 < 0.4772$。
+
+\begin{solution}
+    设该自然数为 $N$，若其在八进制、九进制、十进制下均为 $k$ 位数，则满足以下不等式组：
+    \[ \begin{cases} 8^{k-1} \le N < 8^k \quad \dots \text{\textcircled{1}} \\ 9^{k-1} \le N < 9^k \quad \dots \text{\textcircled{2}} \\ 10^{k-1} \le N < 10^k \quad \dots \text{\textcircled{3}} \end{cases} \text{} \]
+    由于当 $k \ge 2$ 时，$8^{k-1} < 9^{k-1} < 10^{k-1}$ 且 $8^k < 9^k < 10^k$，
+    若要使满足 \textcircled{1}\textcircled{2}\textcircled{3} 的 $N$ 存在，必须满足条件：
+    \[ 10^{k-1} < 8^k \quad \dots \text{\textcircled{4}} \text{} \]
+    对 \textcircled{4} 两边取以 $10$ 为底的对数：
+    \begin{align*}
+        \log_{10} 10^{k-1} &< \log_{10} 8^k \\
+        k-1 &< 3k \log_{10} 2 \\
+        (1 - 3\log_{10} 2)k &< 1 \text{}
+    \end{align*}
+    已知 $0.3010 < \log_{10} 2 < 0.3011$，则：
+    \[ 0.0967 < 1 - 3\log_{10} 2 < 0.097 \text{} \]
+    由此可得：
+    \[ k < \frac{1}{1 - 3\log_{10} 2} \text{} \]
+    计算范围可知 $10.3 < \frac{1}{1 - 3\log_{10} 2} < 10.4$，故满足 \textcircled{4} 的最大整数为 $k = 10$。
+    
+    当 $k = 10$ 时，\textcircled{1}\textcircled{2}\textcircled{3} 变为：
+    \[ 8^9 \le N < 8^{10}, \quad 9^9 \le N < 9^{10}, \quad 10^9 \le N < 10^{10} \text{} \]
+    由于由 \textcircled{4} 已知 $10^9 < 8^{10}$，故 $N$ 满足的范围是：
+    \[ 10^9 \le N < 8^{10} \text{} \]
+    在该范围内，最大的自然数 $N$ 为：
+    \[ N = 8^{10} - 1 \text{} \]
+\end{solution}
+
+\question
+我们将 $x$ 坐标和 $y$ 坐标均为整数的坐标平面上的点称为格子点。以坐标平面上 $3$ 点为顶点的三角形上的格子点，是指包含在顶点、边或内部的格子点。对于四角形，其上的格子点定义相同。设 $O(0, 0)$ 为坐标原点，$a$ 与 $b$ 为互质的自然数，$n$ 为自然数。考虑坐标平面上的点 $P_n(an, 0), Q_n(0, bn)$。
+\begin{parts}
+    \part 证明：满足 $x \ge 0, y \ge 0$ 的直线 $P_nQ_n$ 上的格子点 $(x, y)$ 仅为 $(ak, b(n-k))$ ($k = 0, 1, \dots, n$)。
+    \begin{solution}
+        直线 $P_nQ_n$ 的方程为 $\frac{x}{an} + \frac{y}{bn} = 1$，即 $y = bn(1 - \frac{x}{an}) = -\frac{b}{a}x + bn$。
+        由于 $a, b$ 互质，若要使 $y$ 为整数，则 $x$ 必须是 $a$ 的倍数。
+        结合 $0 \le x \le an$，设 $x = ak$ ($k = 0, 1, \dots, n$)。
+        代入得 $y = -\frac{b}{a}(ak) + bn = b(n-k)$。
+        因此，格子点 $(x, y) = (ak, b(n-k))$ ($k = 0, 1, \dots, n$) 命题得证。
+    \end{solution}
+
+    \part 将 $P_1, Q_1$ 分别记作 $P, Q$。对于点 $R(a, b)$，用 $a, b$ 表示长方形 $OPRQ$ 上的格子点个数。此外，用 $a, b$ 表示三角形 $OPQ$ 上的格子点个数。
+    \begin{solution}
+        长方形 $OPRQ$ 上的格子点满足 $0 \le x \le a, 0 \le y \le b$，其个数为 $(a+1)(b+1)$。
+        由 (1) 知，线段 $PQ$ 上的格子点 $(ak, b(1-k))$ ($k=0, 1$) 共有 $2$ 个。
+        利用长方形的对称性，三角形 $OPQ$ 上的格子点个数为：
+        \[ \frac{(a+1)(b+1) - 2}{2} + 2 = \frac{ab + a + b + 3}{2} \text{} \]
+    \end{solution}
+
+    \part 用 $a, b, n$ 表示三角形 $OP_nQ_n$ 上的格子点个数。
+    \begin{solution}
+        同理考虑长方形 $OP_nR_nQ_n$（其中 $R_n(an, bn)$），其格子点总数为 $(an+1)(bn+1)$。
+        由 (1) 知线段 $P_nQ_n$ 上的格子点个数为 $n+1$。
+        因此，三角形 $OP_nQ_n$ 上的格子点个数为：
+        \[ \frac{(an+1)(bn+1) - (n+1)}{2} + (n+1) = \frac{abn^2 + (a+b+1)n + 2}{2} \text{} \]
+    \end{solution}
+
+    \part 取坐标空间内的原点 $O(0, 0, 0)$ 与 $3$ 点 $X(an, 0, 0), Y(0, bn, 0), Z(0, 0, n)$。用 $a, b, n$ 表示四面体 $OXYZ$ 上的格子点个数。
+    \begin{solution}
+        平面 $XYZ$ 的方程为 $\frac{x}{an} + \frac{y}{bn} + \frac{z}{n} = 1$。
+        考虑平面 $z = l$ ($l = 0, 1, \dots, n$) 截四面体所得的三角形 $Z_l X_l Y_l$。
+        在 $z=l$ 层，方程变为 $\frac{x}{an} + \frac{y}{bn} = 1 - \frac{l}{n}$，即 $\frac{x}{a(n-l)} + \frac{y}{b(n-l)} = 1$。
+        该层三角形上的格子点数 $N_l$ 由 (3) 的结论（将 $n$ 替换为 $n-l$）得：
+        \[ N_l = \frac{ab(n-l)^2 + (a+b+1)(n-l) + 2}{2} \text{} \]
+        设 $m = n-l$，则四面体总格子点数 $N = \sum_{l=0}^{n} N_l = \sum_{m=0}^{n} \frac{abm^2 + (a+b+1)m + 2}{2}$。
+        利用求和公式 $\sum m^2 = \frac{n(n+1)(2n+1)}{6}$ 及 $\sum m = \frac{n(n+1)}{2}$ 整理得：
+        \[ N = \frac{n+1}{12} \{ 2abn^2 + (ab+3a+3b+3)n + 12 \} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+求满足 $N = 9z^2 = x^6 + y^4$ 的正整数 $x, y, z$ 中，正整数 $N$ 的最小值。
+
+\begin{solution}
+    对于正整数 $x, y, z$，方程为 $N = 9z^2 = x^6 + y^4 \cdots \text{\textcircled{1}}$。
+    首先，考查 $x$ 与 $x^6$，$y$ 与 $y^4$ 除以 $3$ 的余数。如下表所示：
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $x$ & $0$ & $1$ & $2$ \\ \hline
+    $x^6$ & $0$ & $1$ & $1$ \\ \hline
+    \end{tabular}
+    \quad
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $y$ & $0$ & $1$ & $2$ \\ \hline
+    $y^4$ & $0$ & $1$ & $1$ \\ \hline
+    \end{tabular}
+    \end{center}
+    
+    由此可知，$x^6, y^4$ 除以 $3$ 的余数只能是 $0$ 或 $1$。
+    接着，考察 $x^6 + y^4$ 除以 $3$ 的余数关系：
+    
+    % \begin{center}
+    % \begin{tabular}{|c|c|c|}
+    % \hline
+    % \diagbox{$x^6$}{$y^4$} & $0$ & $1$ \\ \hline
+    % $0$ & $0$ & $1$ \\ \hline
+    % $1$ & $1$ & $2$ \\ \hline
+    % \end{tabular}
+    % \end{center}
+    
+    根据 \textcircled{1} 式，$9z^2$ 显然是 $3$ 的倍数（余数为 $0$），因此 $x^6 + y^4$ 除以 $3$ 的余数必须为 $0$。
+    这意味着 $x^6$ 和 $y^4$ 除以 $3$ 的余数必须同时为 $0$，即 $x$ 和 $y$ 都是 $3$ 的倍数。
+    
+    设 $x = 3k, y = 3l$ ($k, l$ 为正整数)，代入 \textcircled{1} 式：
+    \[ 9z^2 = 3^6 k^6 + 3^4 l^4 \quad \Rightarrow \quad z^2 = 3^4 k^6 + 3^2 l^4 = 3^2(3^2 k^6 + l^4) \cdots \text{\textcircled{2}} \text{} \]
+    由 \textcircled{2} 可知 $z^2$ 是 $3^2$ 的倍数，故 $z$ 是 $3$ 的倍数。设 $z = 3m$ ($m$ 为正整数)，代入 \textcircled{2} 得：
+    \[ 3^2 m^2 = 3^2(9k^6 + l^4) \quad \Rightarrow \quad m^2 = 9k^6 + l^4 \cdots \text{\textcircled{3}} \text{} \]
+    
+    为了使 $N$ 最小，需找到满足 \textcircled{3} 的最小正整数 $m$：
+    \begin{itemize}
+        \item 当 $k=1, l=1$ 时：$m^2 = 9+1 = 10$，不存在整数 $m$。
+        \item 当 $k=1, l=2$ 时：$m^2 = 9+16 = 25$，解得 $m=5$。
+        \item 经检查，当 $k \ge 2, l=1$ 时，$m^2 \ge 9(2^6) + 1 = 577$，对应的 $m$ 远大于 $5$。
+    \end{itemize}
+    因此，最小的 $m$ 为 $5$。
+    此时 $z = 3m = 15$。由于 $N = 9z^2 = 81m^2$，代入 $m=5$ 得：
+    \[ N = 81 \times 25 = 2025 \text{} \]
+    答：$N$ 的最小值为 $2025$。
+\end{solution}
+
+\question
+对于正整数 $n$，记 $n$ 的正约数个数为 $d(n)$。例如，$6$ 的正约数有 $1, 2, 3, 6$ 共 $4$ 个，故 $d(6) = 4$。定义函数 $f(n) = \frac{d(n)}{\sqrt{n}}$。请回答下列问题：
+
+\begin{parts}
+    \part 求 $f(2025)$ 的值。
+    \begin{solution}
+        由于 $2025 = 3^4 \cdot 5^2$，根据约数个数公式：
+        \[ d(2025) = (4+1)(2+1) = 15 \text{} \]
+        因此：
+        \[ f(2025) = \frac{15}{\sqrt{3^4 \cdot 5^2}} = \frac{15}{3^2 \cdot 5} = \frac{15}{45} = \frac{1}{3} \text{} \]
+    \end{solution}
+
+    \part 求所有满足 $f(p^k) \le f(p^{k+1})$ 的素数 $p$ 与正整数 $k$ 的解对 $(p, k)$。
+    \begin{solution}
+        已知 $d(p^k) = k+1$ 且 $d(p^{k+1}) = k+2$。不等式 $f(p^k) \le f(p^{k+1})$ 展开为：
+        \[ \frac{k+1}{\sqrt{p^k}} \le \frac{k+2}{\sqrt{p^{k+1}}} \quad \Rightarrow \quad \sqrt{p} \le \frac{k+2}{k+1} = 1 + \frac{1}{k+1} \text{} \]
+        两边平方得 $p \le \left( 1 + \frac{1}{k+1} \right)^2 \cdots (*)$。
+        \begin{itemize}
+            \item 当 $k=1$ 时：$(*)$ 式为 $p \le (1 + \frac{1}{2})^2 = \frac{9}{4} = 2.25$。唯一的素数解为 $p=2$。
+            \item 当 $k \ge 2$ 时：$(*)$ 式右侧 $\le (1 + \frac{1}{3})^2 = \frac{16}{9} \approx 1.77$。由于最小素数为 $2$，此范围内无解。
+        \end{itemize}
+        答：唯一的解对为 $(p, k) = (2, 1)$。
+    \end{solution}
+
+    \part 求 $f(n)$ 的最大值，并求出此时的 $n$。
+    \begin{solution}
+        设 $n$ 的素因数分解为 $n = p_1^{k_1} \cdot p_2^{k_2} \cdots p_m^{k_m}$，则有：
+        \[ f(n) = f(p_1^{k_1}) \cdot f(p_2^{k_2}) \cdots f(p_m^{k_m}) \text{} \]
+        根据 (2) 的分析：
+        \begin{itemize}
+            \item 对于 $p=2$，$f(2^1) < f(2^2)$ 且 $f(2^2) > f(2^3) > \cdots$。计算得 $f(2^1)=\sqrt{2}, f(2^2)=\frac{3}{2}$。
+            \item 对于 $p=3$，$f(3^1) > f(3^2) > \cdots$。计算得 $f(3^1)=\frac{2}{\sqrt{3}}$。
+            \item 对于 $p \ge 5$，$f(p^1) = \frac{2}{\sqrt{p}} < 1$，会使乘积变小。
+        \end{itemize}
+        
+        
+        综合比较，$f(n)$ 在 $n = 2^2 \cdot 3^1 = 12$ 时取得最大值：
+        \[ f(12) = f(2^2) \cdot f(3^1) = \frac{3}{2} \cdot \frac{2}{\sqrt{3}} = \sqrt{3} \text{} \]
+        答：$f(n)$ 的最大值为 $\sqrt{3}$，此时 $n = 12$。
+    \end{solution}
+\end{parts}
+
+\question
+对于整数 $a, b, c$，考虑以下条件：
+\[ (*) \quad a \ge b \ge 0 \quad \text{且} \quad a^2 - b^2 = c \]
+请回答下列问题：
+
+\begin{parts}
+    \part 分别求出当 $c = 24, 25, 26$ 时，满足条件 $(*)$ 的所有整数组 $(a, b)$。
+    \begin{solution}
+        条件 $(*)$ 可变形为 $(a+b)(a-b) = c$。由于 $a \ge b \ge 0$，故有 $a+b \ge a-b \ge 0$。
+        此外，$(a+b) - (a-b) = 2b$ 为偶数，这意味着 $a+b$ 与 $a-b$ 的奇偶性必须一致。
+
+        \begin{itemize}
+            \item \textbf{当 $c = 24$ 时}：$c = 2^3 \cdot 3$。由于积为偶数，两因数必同为偶数。
+            可能的分解对 $(a+b, a-b)$ 为 $(12, 2)$ 和 $(6, 4)$。
+            解得 $(a, b) = (7, 5), (5, 1)$。
+            
+            \item \textbf{当 $c = 25$ 时}：$c = 5^2$。积为奇数，两因数必同为奇数。
+            可能的分解对 $(a+b, a-b)$ 为 $(25, 1)$ 和 $(5, 5)$。
+            解得 $(a, b) = (13, 12), (5, 0)$。
+            
+            \item \textbf{当 $c = 26$ 时}：$c = 2 \cdot 13$。积为偶数，要求两因数同为偶数，但其积只能分解为一个奇数和一个偶数（如 $26 \times 1$ 或 $13 \times 2$）。
+            因此，不存在满足条件的整数 $a, b$。
+        \end{itemize}
+    \end{solution}
+
+    \part 设 $p$ 为 $3$ 以上的素数，$n$ 为正整数，令 $c = 4p^{2n}$。求出所有满足条件 $(*)$ 的整数组 $(a, b)$。
+    \begin{solution}
+        方程为 $(a+b)(a-b) = 2^2 \cdot p^{2n}$。由于 $p$ 是大于 $3$ 的奇素数，$p^{2n}$ 为奇数。
+        为了使两因数奇偶性相同且积为偶数，两者必须均为偶数。
+        设 $a+b = 2p^{2n-i}$，$a-b = 2p^i$，其中为了满足 $a+b \ge a-b$，需满足 $2n-i \ge i \Rightarrow i \le n$。
+        
+        对于 $i = 0, 1, \dots, n$，解得：
+        \[ a = \frac{(a+b)+(a-b)}{2} = \frac{2p^{2n-i} + 2p^i}{2} = p^{2n-i} + p^i \text{} \]
+        \[ b = \frac{(a+b)-(a-b)}{2} = \frac{2p^{2n-i} - 2p^i}{2} = p^{2n-i} - p^i \text{} \]
+        答：$(a, b) = (p^{2n-i} + p^i, p^{2n-i} - p^i) \quad (i = 0, 1, \dots, n)$。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 
@@ -6597,6 +6801,173 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
     综上所述，满足方程的整数对 $(x, y)$ 为：
     \[ (x, y) = (\pm 4, 3), (\pm 5, 2) \text{} \]
 \end{solution}
+
+\question
+请回答下列问题。
+\begin{parts}
+    \part 证明：当自然数 $a, b$ 满足 $1 \le a < b$ 时，$\frac{b!}{a!} \ge b$ 成立。
+    \begin{solution}
+        当自然数 $a, b$ 满足 $1 \le a < b$ 时：
+        \begin{enumerate}[label=(\roman*)]
+            \item 若 $b = a + 1$ (即 $a = b - 1$)，则 $a! = (b-1)!$，故 $\frac{b!}{a!} = \frac{b!}{(b-1)!} = b$。
+            \item 若 $b > a + 1$ (即 $a < b - 1$)，则 $a! < (b-1)!$，故 $\frac{b!}{a!} > \frac{b!}{(b-1)!} = b$。
+        \end{enumerate}
+        综合 (i)(ii) 可知，$\frac{b!}{a!} \ge b$ \dots \textcircled{1} 成立。
+    \end{solution}
+
+    \part 求满足 $2 \cdot a! = b!$ 的所有自然数对 $(a, b)$。
+    \begin{solution}
+        设自然数 $a, b$ 满足 $2 \cdot a! = b!$ \dots \textcircled{2}。显然由 $a! < b!$ 可知 $a < b$。
+        由 \textcircled{2} 式得 $\frac{b!}{a!} = 2$，结合 (1) 中的结论 $\frac{b!}{a!} \ge b$，得 $2 \ge b$。
+        由于 $1 \le a < b$，唯一可能的整数解为 $b = 2, a = 1$。
+        验证：$2 \cdot 1! = 2!$ 成立。故满足条件的自然数对为 $(a, b) = (1, 2)$。
+    \end{solution}
+
+    \part 求满足 $a! + b! = 2 \cdot c!$ 的所有自然数三元组 $(a, b, c)$。
+    \begin{solution}
+        设自然数 $a, b, c$ 满足 $a! + b! = 2 \cdot c!$ \dots \textcircled{3}。
+        \begin{enumerate}[label=(\roman*)]
+            \item 当 $a = b$ 时：
+            原式变为 $a! + a! = 2 \cdot a! = 2 \cdot c!$，即 $a! = c!$，得 $a = c$。
+            故 $(a, b, c) = (k, k, k)$ ($k$ 为任意自然数) 是该方程的解。
+            
+            \item 当 $a < b$ 时：
+            由 $a! < b!$ 知 $2 \cdot a! < a! + b! = 2 \cdot c! < 2 \cdot b!$，即 $a! < c! < b!$，推得 $a < c < b$。
+            原式两边同除以 $c!$ 得 $2 = \frac{a!}{c!} + \frac{b!}{c!}$。
+            由于 $a < c$，则 $\frac{a!}{c!} < 1$。又根据 (1) 知 $\frac{b!}{c!} \ge b$。
+            故 $2 = \frac{a!}{c!} + \frac{b!}{c!} > \frac{a!}{c!} + b > b$。
+            由此得 $b < 2$，这与 $1 \le a < c < b$ 矛盾，此时无解。
+            
+            \item 当 $a > b$ 时：
+            同 (ii) 的讨论过程，交换 $a, b$ 位置，同样得到 $a < 2$，与 $1 \le b < c < a$ 矛盾，无解。
+        \end{enumerate}
+        综上所述，满足条件的解为 $(a, b, c) = (k, k, k)$ ($k$ 为自然数)。
+    \end{solution}
+\end{parts}
+
+\question 
+对于给定的自然数 $a_0$，定义由自然数组成的数列 $a_0, a_1, a_2, \dots$ 如下：
+\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases} \text{} \]
+请回答下列问题：
+
+\begin{parts}
+    \part 求最小的自然数 $a_0$，使得 $a_0, a_1, a_2, a_3$ 均为奇数。
+    \begin{solution}
+        若 $a_0, a_1, a_2, a_3$ 均为奇数，则根据递推公式：
+        \begin{align*}
+            a_1 &= \frac{3a_0 + 1}{2} \\
+            a_2 &= \frac{3a_1 + 1}{2} = \frac{3 \cdot \frac{3a_0+1}{2} + 1}{2} = \frac{9a_0 + 5}{4} \\
+            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} \text{}
+        \end{align*}
+        $a_3$ 必须为奇数，这意味着 $27a_0 + 19$ 必须是 $8$ 的倍数，且该倍数必须是奇数（即 $27a_0 + 19 = 8 \times \text{odd}$）。
+        设 $27a_0 + 19 = 16k - 8$ ($k$ 为正整数)，整理得 $27a_0 + 27 = 16k$。
+        即 $27(a_0 + 1) = 16k$。
+        由于 $27$ 与 $16$ 互质，故 $a_0 + 1$ 必须是 $16$ 的倍数。
+        最小的自然数 $a_0$ 满足 $a_0 + 1 = 16$，即 $a_0 = 15$。
+        验证：当 $a_0 = 15$ 时，$a_1 = 23, a_2 = 35, a_3 = 53$，均为奇数。
+        因此，最小的 $a_0 = 15$。
+    \end{solution}
+
+    \part 求最小的自然数 $a_0$，使得 $a_0, a_1, \dots, a_{10}$ 均为奇数。
+    \begin{solution}
+        设 $a_n$ 为奇数，则 $a_{n+1} = \frac{3a_n+1}{2}$。变形得 $a_{n+1} + 1 = \frac{3}{2}(a_n + 1)$。
+        这是一个以 $a_0+1$ 为首项，$\frac{3}{2}$ 为公比的等比数列：
+        \[ a_n + 1 = (a_0 + 1)\left(\frac{3}{2}\right)^n \quad \Rightarrow \quad a_n = (a_0 + 1)\frac{3^n}{2^n} - 1 \text{} \]
+        若 $a_0, a_1, \dots, a_{10}$ 均为奇数，则对于 $n = 10$，需满足 $a_{10} = (a_0 + 1)\frac{3^{10}}{2^{10}} - 1$ 为整数且为奇数。
+        这要求 $(a_0 + 1)\frac{3^{10}}{2^{10}}$ 为偶数。
+        设 $(a_0 + 1)\frac{3^{10}}{2^{10}} = 2l$ ($l$ 为正整数)，则 $(a_0 + 1) \cdot 3^{10} = 2^{11}l$。
+        由于 $3^{10}$ 与 $2^{11}$ 互质，故 $a_0 + 1$ 必须是 $2^{11}$ 的倍数。
+        最小的自然数 $a_0$ 满足 $a_0 + 1 = 2^{11} = 2048$，即 $a_0 = 2047$。
+        验证：当 $a_0 = 2047$ 时，$a_n = 2^{11-n} \cdot 3^n - 1$。对于 $0 \le n \le 10$，$11-n \ge 1$，故 $2^{11-n} \cdot 3^n$ 为偶数，减去 $1$ 后必为奇数。
+        因此，最小的 $a_0 = 2047$。
+    \end{solution}
+\end{parts}
+
+\question
+请回答下列问题：
+
+\begin{parts}
+    \part 证明：当 $n$ 为整数时，$n^2$ 除以 $8$ 的余数必为 $0, 1, 4$ 之一。
+    \begin{solution}
+        根据整数 $n$ 除以 $4$ 的余数进行分类讨论，设 $k$ 为整数：
+        \begin{enumerate}[label=(\roman*)]
+            \item 当 $n = 4k$ 时，$n^2 = 16k^2 = 8 \cdot 2k^2$。余数为 $0$。
+            \item 当 $n = 4k+1$ 时，$n^2 = 16k^2 + 8k + 1 = 8(2k^2 + k) + 1$。余数为 $1$。
+            \item 当 $n = 4k+2$ 时，$n^2 = 16k^2 + 16k + 4 = 8(2k^2 + 2k) + 4$。余数为 $4$。
+            \item 当 $n = 4k+3$ 时，$n^2 = 16k^2 + 24k + 9 = 8(2k^2 + 3k + 1) + 1$。余数为 $1$。
+        \end{enumerate}
+        由 (i) 至 (iv) 可知，$n^2$ 除以 $8$ 的余数必定是 $0, 1, 4$ 中的一个。
+    \end{solution}
+
+    \part 求满足 $2^m = n^2 + 3$ 的所有非负整数对 $(m, n)$。
+    \begin{solution}
+        对于非负整数 $m, n$，方程为 $2^m = n^2 + 3 \cdots (*)$。
+        首先，考查 $(*)$ 右侧 $n^2+3$ 除以 $8$ 的可能余数。根据 (1) 的结论：
+        \begin{itemize}
+            \item 若 $n^2 \equiv 0 \pmod 8$，则 $n^2 + 3 \equiv 3 \pmod 8$。
+            \item 若 $n^2 \equiv 1 \pmod 8$，则 $n^2 + 3 \equiv 4 \pmod 8$。
+            \item 若 $n^2 \equiv 4 \pmod 8$，则 $n^2 + 3 \equiv 7 \pmod 8$。
+        \end{itemize}
+        因此，$n^2+3$ 除以 $8$ 的余数集合为 $\{3, 4, 7\}$。
+        
+        接着，考查 $(*)$ 左侧 $2^m$ 除以 $8$ 的余数：
+        \begin{itemize}
+            \item 当 $m=0$ 时，$2^0 = 1 \equiv 1 \pmod 8$。
+            \item 当 $m=1$ 时，$2^1 = 2 \equiv 2 \pmod 8$。
+            \item 当 $m=2$ 时，$2^2 = 4 \equiv 4 \pmod 8$。
+            \item 当 $m \ge 3$ 时，$2^m \equiv 0 \pmod 8$。
+        \end{itemize}
+        
+        为了使方程 $(*)$ 成立，左右两边除以 $8$ 的余数必须相等。对比上述结果，唯一的重合余数是 $4$。
+        这要求 $m=2$ 且 $n^2+3 \equiv 4 \pmod 8$。
+        当 $m=2$ 时，代入方程：
+        \[ 2^2 = n^2 + 3 \quad \Rightarrow \quad 4 = n^2 + 3 \quad \Rightarrow \quad n^2 = 1 \text{} \]
+        由于 $n$ 是非负整数，解得 $n=1$。
+        答：$(m, n) = (2, 1)$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $a, b, c, d$ 为整数，满足条件 $a < b < c < d$ 且 $(b-a)(c-a)(d+a) = (2a)^3$。请回答下列问题：
+
+\begin{parts}
+    \part 当 $a = 2$ 时，求所有满足上述条件的整数组 $(b, c, d)$。
+    \begin{solution}
+        当 $a = 2$ 时，方程 \textcircled{1} 变为：
+        \[ (b-2)(c-2)(d+2) = 2^6 \quad (2 < b < c < d) \cdots \text{\textcircled{2}} \]
+        设 $b-2=2^p, c-2=2^q, d+2=2^r$，其中 $p, q, r$ 为非负整数。
+        由 \textcircled{2} 得 $b = 2^p+2, c = 2^q+2, d = 2^r-2$。
+        代入方程得 $2^p \cdot 2^q \cdot 2^r = 2^6$，故 $p+q+r = 6 \cdots \text{\textcircled{3}}$。
+        根据大小关系 $2 < b < c < d$：
+        \[ 2 < 2^p+2 < 2^q+2 < 2^r-2 \quad \Rightarrow \quad 0 \le p < q < r \cdots \text{\textcircled{4}} \text{ 且需满足 } 2^q+2 < 2^r-2 \]
+        
+        由 \textcircled{3} 和 \textcircled{4}，可能的 $(p, q, r)$ 组合有：
+        \begin{enumerate}[label=(\roman*)]
+            \item $(p, q, r) = (0, 1, 5)$：此时 $(b, c, d) = (3, 4, 30)$。满足条件。
+            \item $(p, q, r) = (0, 2, 4)$：此时 $(b, c, d) = (3, 6, 14)$。满足条件。
+            \item $(p, q, r) = (1, 2, 3)$：此时 $(b, c, d) = (4, 6, 6)$。不满足 $c < d$，舍去。
+        \end{enumerate}
+        答：$(b, c, d) = (3, 4, 30), (3, 6, 14)$。
+    \end{solution}
+
+    \part 当 $a = 3$ 且 $b, c, d$ 均为奇数时，求所有满足条件的整数组 $(b, c, d)$。
+    \begin{solution}
+        当 $a = 3$ 时，方程变为 $(b-3)(c-3)(d+3) = 2^3 \cdot 3^3 \quad (3 < b < c < d) \cdots \text{\textcircled{5}}$。
+        由于 $b, c, d$ 均为奇数，则 $b-3, c-3, d+3$ 均为偶数。
+        设 $b-3 = 2 \cdot 3^k, c-3 = 2 \cdot 3^l, d+3 = 2 \cdot 3^m$，其中 $k, l, m$ 为非负整数。
+        代入 \textcircled{5} 式得：
+        \[ (2 \cdot 3^k)(2 \cdot 3^l)(2 \cdot 3^m) = 2^3 \cdot 3^3 \quad \Rightarrow \quad 3^{k+l+m} = 3^3 \quad \Rightarrow \quad k+l+m = 3 \cdots \text{\textcircled{6}} \text{} \]
+        根据大小关系 $3 < b < c < d$：
+        \[ 3 < 2 \cdot 3^k + 3 < 2 \cdot 3^l + 3 < 2 \cdot 3^m - 3 \quad \Rightarrow \quad 0 \le k < l < m \cdots \text{\textcircled{7}} \]
+        由 \textcircled{6} 和 \textcircled{7}，唯一的可能组合为 $(k, l, m) = (0, 1, 2)$。
+        计算坐标：
+        $b = 2 \cdot 3^0 + 3 = 5$；
+        $c = 2 \cdot 3^1 + 3 = 9$；
+        $d = 2 \cdot 3^2 - 3 = 15$。
+        检查：$5 < 9 < 15$，且均为奇数，符合题意。
+        答：$(b, c, d) = (5, 9, 15)$。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}

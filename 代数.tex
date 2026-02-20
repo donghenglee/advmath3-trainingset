@@ -11842,6 +11842,76 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
         因此 $q \Rightarrow p$ 得证。
     \end{solution}
 \end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 设 $\alpha$ 为实数。求按如下方式定义的数列 $\{a_n\}$ 的通项公式。
+    \[ a_1 = \alpha, \quad a_{n+1} = \frac{1}{2}a_n + 1 \quad (n = 1, 2, 3, \dots) \text{} \]
+    \begin{solution}
+        对 $a_{n+1} = \frac{1}{2}a_n + 1$ 进行变形，得 $a_{n+1} - 2 = \frac{1}{2}(a_n - 2)$。
+        由此可知：
+        \[ a_n - 2 = (a_1 - 2)\left(\frac{1}{2}\right)^{n-1} = (\alpha - 2)\left(\frac{1}{2}\right)^{n-1} \text{} \]
+        因此，
+        \[ a_n = 2 + (\alpha - 2)\left(\frac{1}{2}\right)^{n-1} \quad \dots (1) \text{} \]
+    \end{solution}
+
+    \part 函数 $f_1(x), f_2(x), f_3(x), \dots$ 按如下关系式定义：
+    \[ f_1(x) = 3x, \quad f_{n+1}(x) = (n+2)x^{n+1} + \left( \int_0^1 f_n(t) \, dt \right)x \quad (n = 1, 2, 3, \dots) \text{} \]
+    请用 $x$ 和 $n$ 的式子表示函数 $f_n(x)$。
+    \begin{solution}
+        对于 $f_{n+1}(x) = (n+2)x^{n+1} + \left( \int_0^1 f_n(t) \, dt \right)x$，令 $c_n = \int_0^1 f_n(t) \, dt$。
+        则有：
+        \[ f_{n+1}(x) = (n+2)x^{n+1} + c_n x \text{} \]
+        由此可知，当 $n \ge 2$ 时，$f_n(x) = (n+1)x^n + c_{n-1}x$。将其代入 $c_n$ 的定义式中：
+        \[ c_n = \int_0^1 \{ (n+1)t^n + c_{n-1}t \} \, dt = \left[ t^{n+1} + \frac{c_{n-1}}{2}t^2 \right]_0^1 = 1 + \frac{1}{2}c_{n-1} \text{} \]
+        已知 $f_1(x) = 3x$，故：
+        \[ c_1 = \int_0^1 3t \, dt = \left[ \frac{3}{2}t^2 \right]_0^1 = \frac{3}{2} \text{} \]
+        由第 (1) 小题的结果，取 $\alpha = \frac{3}{2}$ 代入公式 (1) 可得：
+        \[ c_n = 2 + \left( \frac{3}{2} - 2 \right)\left(\frac{1}{2}\right)^{n-1} = 2 - \left(\frac{1}{2}\right)^n \text{} \]
+        因此，当 $n \ge 2$ 时：
+        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x \quad \dots (2) \text{} \]
+        若在 (2) 中令 $n=1$，得 $f_1(x) = 2x + \{ 2 - (1/2)^0 \}x = 3x$，与题设相符。
+        故：
+        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+对于给定的自然数 $a_0$，定义由自然数组成的数列 $a_0, a_1, a_2, \dots$ 如下：
+\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases} \text{} \]
+请回答下列问题：
+\begin{parts}
+    \part 求最小的自然数 $a_0$，使得 $a_0, a_1, a_2, a_3$ 均为奇数。
+    \begin{solution}
+        若 $a_0, a_1, a_2, a_3$ 均为奇数，则根据递推公式：
+        \begin{align*}
+            a_1 &= \frac{3a_0 + 1}{2} \\
+            a_2 &= \frac{3a_1 + 1}{2} = \frac{3 \cdot \frac{3a_0+1}{2} + 1}{2} = \frac{9a_0 + 5}{4} \\
+            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} \text{}
+        \end{align*}
+        $a_3$ 为奇数意味着 $27a_0 + 19$ 必须是 $8$ 的倍数，但不能是 $16$ 的倍数。
+        设 $k$ 为自然数，使 $27a_0 + 19 = 16k - 8$（即 $8$ 的奇数倍）。
+        整理得 $27a_0 + 27 = 16k$，即 $27(a_0 + 1) = 16k$。
+        由于 $27$ 与 $16$ 互质，故 $a_0 + 1$ 必须是 $16$ 的倍数。
+        最小的自然数 $a_0$ 满足 $a_0 + 1 = 16$，即 $a_0 = 15$。
+        验证：当 $a_0 = 15$ 时，$a_1 = 23, a_2 = 35, a_3 = 53$，均为奇数。故最小的 $a_0 = 15$。
+    \end{solution}
+
+    \part 求最小的自然数 $a_0$，使得 $a_0, a_1, \dots, a_{10}$ 均为奇数。
+    \begin{solution}
+        设 $a_0, a_1, \dots, a_n$ 均为奇数。对于 $n = 0, 1, \dots, 10$：
+        \[ a_{n+1} = \frac{3a_n+1}{2} \Rightarrow a_{n+1} + 1 = \frac{3}{2}(a_n + 1) \text{} \]
+        由此得等比数列关系：$a_n + 1 = (a_0 + 1)\left(\frac{3}{2}\right)^n$，即 $a_n = (a_0 + 1)\frac{3^n}{2^n} - 1$。
+        要使 $a_{10}$ 为奇数，则 $a_{10} = (a_0 + 1)\frac{3^{10}}{2^{10}} - 1$ 必须为奇数，即 $(a_0 + 1)\frac{3^{10}}{2^{10}}$ 必须为偶数。
+        设 $l$ 为自然数，令 $(a_0 + 1)\frac{3^{10}}{2^{10}} = 2l$，则 $(a_0 + 1) \cdot 3^{10} = 2^{11}l$。
+        由于 $3^{10}$ 与 $2^{11}$ 互质，故 $a_0 + 1$ 必须是 $2^{11}$ 的倍数。
+        最小的自然数 $a_0$ 满足 $a_0 + 1 = 2^{11}$，即 $a_0 = 2^{11} - 1 = 2047$。
+        反向验证：当 $a_0 = 2047$ 时，$a_n = (2047+1)\left(\frac{3}{2}\right)^n - 1 = 2^{11-n} \cdot 3^n - 1$。
+        对于 $1 \le n \le 10$，由于 $11-n \ge 1$，故 $2^{11-n} \cdot 3^n$ 恒为偶数，则 $a_n$ 恒为奇数。
+        故最小的 $a_0 = 2047$。
+    \end{solution}
+\end{parts}
 %数列
     \question 证明由正实数组成的数列\(a_0, a_1, a_2, \ldots, a_n\) 是等比数列当且仅当
     \[

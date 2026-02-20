@@ -3376,6 +3376,53 @@ f(x) = |x^2 - x| - s - \int_{-\frac{1}{2}}^{\frac{1}{2}} x \{ f(t) - |t| \} dt
         因此，当 $s = 3 - 2\sqrt{2}$ 时，$A(s)$ 取得最小值 \dots。
     \end{solution}
 \end{parts}
+
+\question
+设 $a$ 为实数，函数 $f(x)$ 定义如下：
+\[ f(x) = x^4 + \frac{4a}{3}x^3 + (a+2)x^2 \text{} \]
+请回答下列问题：
+
+\begin{parts}
+    \part 求使函数 $f(x)$ 具有极大值时 $a$ 的取值范围。
+    \begin{solution}
+        对 $f(x)$ 求导得：
+        \[ f'(x) = 4x^3 + 4ax^2 + 2(a+2)x = 2x(2x^2 + 2ax + a+2) \text{} \]
+        设 $g(x) = 2x^2 + 2ax + a+2$，则 $f'(x) = 2xg(x)$。
+        
+        \begin{enumerate}[label=(\roman*)]
+            \item 当 $g(x)=0$ 以 $x=0$ 为解时：
+            由 $g(0)=0$ 得 $a=-2$。此时 $f'(x) = 2x(2x^2-4x) = 4x^2(x-2)$。
+            由于 $f'(x)$ 的符号在 $x=2$ 前后由负变正，而在 $x=0$ 前后不改变，故 $f(x)$ 不具有极大值。
+            
+            \item 当 $g(x)=0$ 不以 $x=0$ 为解时：
+            由 $g(0) \neq 0$ 得 $a \neq -2$。此时 $g(x)=0$ 的判别式 $D/4 = a^2 - 2(a+2) = a^2 - 2a - 4$。
+            
+            \begin{itemize}
+                \item 若 $a^2 - 2a - 4 > 0$（即 $a < 1-\sqrt{5}, 1+\sqrt{5} < a$）：
+                $g(x)=0$ 有两个不为 $0$ 的相异实根 $\alpha, \beta \quad (\alpha < \beta)$。此时 $f'(x)=0$ 有三个相异实数解。
+                
+                
+                
+                根据增减表可知，$f(x)$ 在 $x=\beta$（或相应点）处具有极大值。
+                
+                \item 若 $a^2 - 2a - 4 \le 0$：
+                $g(x)=0$ 只有重根或无实根。此时 $f'(x)$ 仅在 $x=0$ 前后改变符号，故 $f(x)$ 无极大值。
+            \end{itemize}
+        \end{enumerate}
+        综上所述，使得 $f(x)$ 具有极大值的条件为 $a \neq -2$ 且 $a^2 - 2a - 4 > 0$：
+        \[ a < -2, \quad -2 < a < 1-\sqrt{5}, \quad 1+\sqrt{5} < a \text{} \]
+    \end{solution}
+
+    \part 求使函数 $f(x)$ 在 $x=0$ 处取得极大值时 $a$ 的取值范围。
+    \begin{solution}
+        根据 (1) 的结论，在满足极值存在的条件下，若要在 $x=0$ 处取得极大值，$0$ 必须是 $f'(x)=0$ 的三个根中的中间根。
+        设 $g(x)=0$ 的两根为 $\alpha, \beta \quad (\alpha < \beta)$，则需满足 $\alpha < 0 < \beta$。
+        这意味着二次方程 $g(x) = 2x^2 + 2ax + a+2 = 0$ 的两根异号。
+        根据根与系数的关系（或开口向上的抛物线截距）：
+        \[ g(0) = a+2 < 0 \quad \Rightarrow \quad a < -2 \text{} \]
+        答：$a < -2$。
+    \end{solution}
+\end{parts}
 %日微分
     \question 已知对任意正整数 $k$,方程 
     \[
@@ -5704,6 +5751,37 @@ $x$ 轴与 $C_2$ 围成的总面积为
     代入 $a = \alpha^2 - 9$ 得：
     \[ a = (3\sqrt[3]{2})^2 - 9 = 9\sqrt[3]{4} - 9 \text{} \]
     故所求 $a$ 的值为 $9\sqrt[3]{4} - 9$。
+\end{solution}
+
+\question
+设 $k$ 为正实数。求使得由曲线 $y = x(x-2)^2$ 与抛物线 $y = kx^2$ 所围成的两个部分的面积相等时 $k$ 的值。
+
+\begin{solution}
+    联立 $y = x(x-2)^2 \cdots \text{\textcircled{1}}$ 与 $y = kx^2 \quad (k>0) \cdots \text{\textcircled{2}}$：
+    \[ x(x-2)^2 = kx^2 \quad \Rightarrow \quad x\{x^2 - (k+4)x + 4\} = 0 \cdots \text{\textcircled{3}} \]
+    对于 $x^2 - (k+4)x + 4 = 0$，其判别式 $D = (k+4)^2 - 16 = k^2 + 8k > 0$。
+    设其两个解为 $x = \alpha, \beta \quad (\alpha < \beta)$。
+    根据根与系数的关系，$\alpha + \beta = k+4 > 0$ 且 $\alpha\beta = 4 > 0$，故 $0 < \alpha < \beta$。
+    因此，方程 \textcircled{3} 的解为 $x = 0, \alpha, \beta$。
+
+    
+    设曲线 \textcircled{1} 与抛物线 \textcircled{2} 围成的两个部分中，$0 \le x \le \alpha$ 部分的面积为 $S_1$，$\alpha \le x \le \beta$ 部分的面积为 $S_2$：
+    \[ S_1 = \int_{0}^{\alpha} \{x(x-2)^2 - kx^2\} dx, \quad S_2 = \int_{\alpha}^{\beta} -\{x(x-2)^2 - kx^2\} dx \]
+    根据条件 $S_1 = S_2$，即 $S_1 - S_2 = 0$，可得：
+    \[ \int_{0}^{\alpha} \{x(x-2)^2 - kx^2\} dx + \int_{\alpha}^{\beta} \{x(x-2)^2 - kx^2\} dx = 0 \]
+    由此推导：
+    \[ \int_{0}^{\beta} \{x(x-2)^2 - kx^2\} dx = \int_{0}^{\beta} \{x^3 - (k+4)x^2 + 4x\} dx = 0 \]
+    计算定积分：
+    \[ \left[ \frac{x^4}{4} - \frac{k+4}{3}x^3 + 2x^2 \right]_0^{\beta} = 0 \quad \Rightarrow \quad \frac{\beta^4}{4} - \frac{k+4}{3}\beta^3 + 2\beta^2 = 0 \]
+    由于 $\beta > 0$，两边同除以 $\beta^2$：
+    \[ \frac{\beta^2}{4} - \frac{k+4}{3}\beta + 2 = 0 \quad \Rightarrow \quad 3\beta^2 - 4(k+4)\beta + 24 = 0 \cdots \text{\textcircled{4}} \]
+    又因为 $\beta$ 是 $x^2 - (k+4)x + 4 = 0$ 的解，故 $\beta^2 = (k+4)\beta - 4 \cdots \text{\textcircled{5}}$。
+    将 \textcircled{5} 代入 \textcircled{4}：
+    \[ 3\{(k+4)\beta - 4\} - 4(k+4)\beta + 24 = 0 \quad \Rightarrow \quad (k+4)\beta = 12 \cdots \text{\textcircled{6}} \]
+    由 \textcircled{5} 可得 $\beta^2 = 12 - 4 = 8$，故 $\beta = 2\sqrt{2}$。
+    代入 \textcircled{6} 得：
+    \[ k = \frac{12}{\beta} - 4 = \frac{12}{2\sqrt{2}} - 4 = 3\sqrt{2} - 4 \]
+    答：$k = 3\sqrt{2} - 4$。
 \end{solution}
 \end{questions}
 
