@@ -11754,6 +11754,94 @@ x_1 = \frac{1}{2^p + 1}, \quad x_{n+1} = |2x_n - 1| \quad (n = 1, 2, 3, \dots)
         由此可知 $b_n \neq 0$，故对于任意正整数 $n$，$(2+i)^n$ 始终是虚数。
     \end{solution}
 \end{parts}
+
+\question
+设自然数 $n$ 的正约数全体形成的集合为 $A_n$，令 $A_n$ 中所有元素的倒数之平方和为 $s_n$。例如：
+$A_3 = \{1, 3\}, \quad s_3 = 1 + \frac{1}{3^2}$；
+$A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
+已知 $p, q$ 为互异的素数，$k, l$ 为自然数，回答下列问题：
+
+\begin{parts}
+    \part 求 $s_8$ 和 $s_{12}$ 的值。
+    \begin{solution}
+        根据定义进行计算：
+        \begin{itemize}
+            \item $A_8 = \{1, 2, 4, 8\}$，故 $s_8 = 1 + \frac{1}{2^2} + \frac{1}{4^2} + \frac{1}{8^2} = 1 + \frac{1}{4} + \frac{1}{16} + \frac{1}{64} = \frac{85}{64}$。
+            \item $A_{12} = \{1, 2, 3, 4, 6, 12\}$，故 $s_{12} = 1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{6^2} + \frac{1}{12^2}$。
+            \[ s_{12} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{36} + \frac{1}{144} = \frac{144+36+16+9+4+1}{144} = \frac{210}{144} = \frac{35}{24} \text{} \]
+        \end{itemize}
+    \end{solution}
+    \part 当 $n = p^k$ 时，求 $A_n$ 的元素个数。
+    \begin{solution}
+        当 $p$ 为素数时，$n = p^k$ 的所有正约数为 $\{1, p, p^2, \cdots, p^k\}$。
+        因此，集合 $A_n$ 的元素个数为 $k+1$ 个。
+    \end{solution}
+
+    \part 当 $n = p^k q^l$ 时，证明 $s_n < \frac{3}{2}$。
+    \begin{solution}
+        当 $p, q$ 为素数时，$n = p^k q^l$ 的约数集合 $A_{p^k q^l}$ 的元素为 $p^i q^j$ ($0 \le i \le k, 0 \le j \le l$)。
+        其倒数平方和为：
+        \[ s_n = \sum_{j=0}^{l} \sum_{i=0}^{k} \frac{1}{p^{2i} q^{2j}} = \left( \sum_{i=0}^{k} \frac{1}{p^{2i}} \right) \left( \sum_{j=0}^{l} \frac{1}{q^{2j}} \right) \text{} \]
+        利用等比数列求和公式：
+        \[ \sum_{i=0}^{k} \left( \frac{1}{p^2} \right)^i = \frac{1 - (\frac{1}{p^2})^{k+1}}{1 - \frac{1}{p^2}} = \frac{p^2}{p^2 - 1} \left\{ 1 - \left( \frac{1}{p^2} \right)^{k+1} \right\} < \frac{p^2}{p^2 - 1} \text{} \]
+        同理，$\sum_{j=0}^{l} \frac{1}{q^{2j}} < \frac{q^2}{q^2 - 1}$，由此可得 $s_n < \frac{p^2}{p^2 - 1} \cdot \frac{q^2}{q^2 - 1}$。
+        由于 $p, q$ 是不同的素数，不妨设 $p \ge 2, q \ge 3$，则 $p^2 \ge 4, q^2 \ge 9$。
+        考虑函数 $f(x) = \frac{x}{x-1} = 1 + \frac{1}{x-1}$ 在 $x > 1$ 时为减函数：
+        \[ \frac{p^2}{p^2 - 1} \le \frac{4}{3}, \quad \frac{q^2}{q^2 - 1} \le \frac{9}{8} \text{} \]
+        从而：
+        \[ s_n < \frac{4}{3} \cdot \frac{9}{8} = \frac{36}{24} = \frac{3}{2} \text{} \]
+        故得证 $s_n < \frac{3}{2}$。
+    \end{solution}
+\end{parts}
+
+\question
+对于满足 $a_1 = a_2 = 1$ 的数列 $\{a_n\}$，证明下列两个条件 $p$ 和 $q$ 是等价的：
+\begin{itemize}
+    \item $p$：对于所有自然数 $n$，$a_{n+2} = a_{n+1} + a_n$ 成立。
+    \item $q$：对于所有自然数 $n$，$a_{n+1}^2 - a_{n+2} a_n = (-1)^n$ 成立。
+\end{itemize}
+
+\begin{parts}
+    \part 证明 $p \Rightarrow q$。
+    \begin{solution}
+        当条件 $p$ 成立时，$a_3 = a_2 + a_1 = 1 + 1 = 2$。
+        考虑表达式 $a_{n+2}^2 - a_{n+3} a_{n+1}$：
+        \begin{align*}
+            a_{n+2}^2 - a_{n+3} a_{n+1} &= a_{n+2}^2 - (a_{n+2} + a_{n+1}) a_{n+1} \\
+            &= a_{n+2}^2 - a_{n+2} a_{n+1} - a_{n+1}^2 \\
+            &= a_{n+2}(a_{n+2} - a_{n+1}) - a_{n+1}^2 \\
+            &= a_{n+2} a_n - a_{n+1}^2 \\
+            &= -(a_{n+1}^2 - a_{n+2} a_n) \text{}
+        \end{align*}
+        由此可知，$a_{n+1}^2 - a_{n+2} a_n = (a_2^2 - a_3 a_1)(-1)^{n-1} = (1^2 - 2 \cdot 1)(-1)^{n-1} = (-1)^n$。
+        故 $p \Rightarrow q$ 得证。
+    \end{solution}
+
+    \part 证明 $q \Rightarrow p$。
+    \begin{solution}
+        使用数学归纳法证明 $a_{n+2} = a_{n+1} + a_n$ 且 $a_n > 0$。
+        (i) 当 $n=1$ 时，由条件 $q$ 知 $a_2^2 - a_3 a_1 = -1$。
+        代入 $a_1=1, a_2=1$ 得 $1 - a_3 = -1$，故 $a_3 = 2$。
+        显然 $a_3 = a_2 + a_1$ 成立，且 $a_3, a_2, a_1 > 0$。
+        (ii) 假设当 $n=k$ 时，$a_{k+2} = a_{k+1} + a_k$ 且 $a_{k+1}, a_k > 0$ 成立。
+        根据条件 $q$，对于 $n=k$ 和 $n=k+1$ 分别有：
+        \begin{align*}
+            a_{k+1}^2 - a_{k+2} a_k &= (-1)^k \\
+            a_{k+2}^2 - a_{k+3} a_{k+1} &= (-1)^{k+1} \text{}
+        \end{align*}
+        两式相加得：
+        \begin{align*}
+            a_{k+1}^2 - a_{k+2} a_k + a_{k+2}^2 - a_{k+3} a_{k+1} &= 0 \\
+            a_{k+2}(a_{k+2} - a_k) + a_{k+1}(a_{k+1} - a_{k+3}) &= 0 \text{}
+        \end{align*}
+        利用归纳假设 $a_{k+2} - a_k = a_{k+1}$，代入上式得：
+        \[ a_{k+2} a_{k+1} + a_{k+1}(a_{k+1} - a_{k+3}) = 0 \text{} \]
+        由于 $a_{k+1} > 0$，消去 $a_{k+1}$ 得 $a_{k+2} + a_{k+1} - a_{k+3} = 0$，即 $a_{k+3} = a_{k+2} + a_{k+1}$。
+        同时显然 $a_{k+3} > 0$。
+        由 (i)(ii) 知，对于所有 $n$，$a_{n+2} = a_{n+1} + a_n$ 均成立。
+        因此 $q \Rightarrow p$ 得证。
+    \end{solution}
+\end{parts}
 %数列
     \question 证明由正实数组成的数列\(a_0, a_1, a_2, \ldots, a_n\) 是等比数列当且仅当
     \[
@@ -18830,7 +18918,7 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
 
 将 **List-I** 中的每项匹配到 **List-II** 中的正确项：
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|l|}
 \hline

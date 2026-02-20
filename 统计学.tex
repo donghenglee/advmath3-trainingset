@@ -2114,6 +2114,283 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{6} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{2} \left( \frac{1}{3} \right)^{n-1} \quad \cdots \textcircled{3} \text{} \]
     经检验，$\textcircled{3}$ 在 $n=2$ 时也成立。
 \end{solution}
+
+\question
+设 $K$ 为大于 $3$ 的奇数。考虑满足 $l + m + n = K$ 的正奇数组 $(l, m, n)$ 的个数 $N$。例如，当 $K=5$ 时，$(1, 3, 1)$ 与 $(1, 1, 3)$ 视为不同的组合。
+
+\begin{parts}
+    \part 当 $K = 99$ 时，求 $N$ 的值。
+    \begin{solution}
+        设 $l = 2a-1, m = 2b-1, n = 2c-1$，其中 $a, b, c$ 为自然数。
+        代入方程得：
+        \[ (2a-1) + (2b-1) + (2c-1) = 99 \Rightarrow a+b+c = 51 \quad \cdots \textcircled{1} \text{} \]
+        由隔板法可知，方程 $\textcircled{1}$ 的自然数解个数为：
+        \[ N = {}_{51-1}C_{3-1} = {}_{50}C_2 = \frac{50 \times 49}{2} = 1225 \text{} \]
+    \end{solution}
+
+    \part 当 $K = 99$ 时，包含至少两个相同奇数的数组 $(l, m, n)$ 的个数是多少？
+    \begin{solution}
+        分类讨论：
+        \begin{itemize}
+            \item (i) $l = m = n$：由 $3a = 51$ 得 $a=b=c=17$，共 $1$ 组。
+            \item (ii) $l = m \neq n$：对应 $2a + c = 51$ 且 $a \neq c$。$a$ 可取 $1, 2, \cdots, 25$（共 $25$ 个值），排除 $a=17$，剩 $24$ 组。
+            \item (iii) $l = n \neq m$：同理有 $24$ 组。
+            \item (iv) $m = n \neq l$：同理有 $24$ 组。
+        \end{itemize}
+        总计：$1 + 24 \times 3 = 73$ 组。
+    \end{solution}
+
+    \part 求满足 $N > K$ 的最小奇数 $K$。
+    \begin{solution}
+        一般地，对于奇数 $K$，$a+b+c = \frac{K+3}{2}$。
+        此时 $N = {}_{\frac{K+3}{2}-1}C_2 = \frac{1}{2} \cdot \frac{K+1}{2} \cdot \frac{K-1}{2} = \frac{K^2 - 1}{8}$。
+        解不等式 $\frac{K^2 - 1}{8} > K \Rightarrow K^2 - 8K - 1 > 0$。
+        对应方程根为 $K = 4 \pm \sqrt{17}$。由于 $K$ 为正奇数且 $K > 4 + \sqrt{17} \approx 8.12$。
+        最小的奇数 $K$ 为 $9$。
+    \end{solution}
+\end{parts}
+
+\question
+箱子里有编号为 $1$ 到 $n$ 的 $n$ 枚卡片。假设 $n \ge 5$，且没有编号相同的卡片。从箱子中同时取出 $3$ 枚卡片，设其编号从小到大依次为 $X, Y, Z$。求满足 $Y - X \ge 2$ 且 $Z - Y \ge 2$ 的概率。
+
+\begin{parts}
+    \part 求解概率 $P$。
+    \begin{solution}
+        首先，从 $n$ 枚卡片中取出 $3$ 枚的总组合数为 ${}_nC_3$。
+        满足条件的约束为 $Y - X \ge 2$ 且 $Z - Y \ge 2$，即：
+        \[ 1 \le X, \quad X+2 \le Y, \quad Y+2 \le Z \le n \text{} \]
+        由上述不等式链可导出 $Y$ 的取值范围为 $3 \le Y \le n-2$。
+        
+        当固定 $Y=k$ ($k=3, 4, \cdots, n-2$) 时：
+        \begin{itemize}
+            \item $X$ 的取值范围是 $1 \le X \le k-2$，共有 $k-2$ 种选法。
+            \item $Z$ 的取值范围是 $k+2 \le Z \le n$，共有 $n-(k+2)+1 = n-k-1$ 种选法。
+        \end{itemize}
+        因此，当 $Y=k$ 时的组合数 $p_k$ 的概率分子项为 $(k-2)(n-k-1)$。
+        
+        设所求概率为 $P$，则：
+        \[ P = \frac{\sum_{k=3}^{n-2} (k-2)(n-k-1)}{{}_nC_3} = \frac{6}{n(n-1)(n-2)} \sum_{k=3}^{n-2} (k-2)(n-k-1) \text{} \]
+        令 $k-2 = l$，则当 $k=3$ 时 $l=1$，当 $k=n-2$ 时 $l=n-4$。
+        原求和式变为：
+        \begin{align*}
+            \sum_{l=1}^{n-4} l(n-(l+2)-1) &= \sum_{l=1}^{n-4} l(n-l-3) = \sum_{l=1}^{n-4} \{ (n-3)l - l^2 \} \\
+            &= (n-3) \cdot \frac{1}{2}(n-4)(n-3) - \frac{1}{6}(n-4)(n-3)(2n-7) \\
+            &= \frac{(n-3)(n-4)}{6} \{ 3(n-3) - (2n-7) \} \\
+            &= \frac{(n-3)(n-4)(n-2)}{6} \text{}
+        \end{align*}
+        代入 $P$ 的表达式：
+        \[ P = \frac{6}{n(n-1)(n-2)} \cdot \frac{(n-3)(n-4)(n-2)}{6} = \frac{(n-3)(n-4)}{n(n-1)} \text{} \]
+        故所求概率为 $\frac{(n-3)(n-4)}{n(n-1)}$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为自然数。同时投掷 $n$ 枚骰子，设其点数之积为 $M$。
+回答下列问题：
+
+\begin{parts}
+    \part 求 $M$ 既不能被 $2$ 整除也不能被 $3$ 整除的概率。
+    \begin{solution}
+        设 $M$ 能被 $2$ 整除的事件为 $A$，能被 $3$ 整除的事件为 $B$。
+        $M$ 不能被 $2$ 且不能被 $3$ 整除，意味着每枚骰子的点数只能是 $\{1, 5\}$。
+        因此概率为：
+        \[ P(\bar{A} \cap \bar{B}) = \left( \frac{2}{6} \right)^n = \left( \frac{1}{3} \right)^n \quad \cdots \textcircled{1} \text{} \]
+    \end{solution}
+
+    \part 求 $M$ 能被 $2$ 整除，但既不能被 $3$ 整除也不能被 $4$ 整除的概率。
+    \begin{solution}
+        设 $M$ 能被 $4$ 整除的事件为 $C$（显然 $C \subset A$）。
+        $M$ 能被 $2$ 整除但不能被 $4$ 整除，意味着 $n$ 枚骰子中恰好有一个点数为 $2$ 或 $6$，其余为奇数。
+        由于题目要求也不能被 $3$ 整除，故该唯一偶数点必须是 $2$，其余 $n-1$ 个点数必须在 $\{1, 5\}$ 中。
+        因此概率为：
+        \[ P(A \cap \bar{B} \cap \bar{C}) = {}_nC_1 \cdot \frac{1}{6} \cdot \left( \frac{2}{6} \right)^{n-1} = \frac{n}{6} \left( \frac{1}{3} \right)^{n-1} = \frac{n}{2} \left( \frac{1}{3} \right)^n \quad \cdots \textcircled{2} \text{} \]
+    \end{solution}
+
+    \part 求 $M$ 能被 $4$ 整除但不能被 $3$ 整除的概率。
+    \begin{solution}
+        所求概率为 $P(\bar{B} \cap C)$。根据集合包含关系：
+        \[ P(\bar{B} \cap C) = P(A \cap \bar{B}) - P(A \cap \bar{B} \cap \bar{C}) \text{} \]
+        其中 $P(A \cap \bar{B}) = P(\bar{B}) - P(\bar{A} \cap \bar{B})$。
+        已知 $P(\bar{B}) = \left( \frac{4}{6} \right)^n = \left( \frac{2}{3} \right)^n$。
+        代入 $\textcircled{1}$ 和 $\textcircled{2}$：
+        \[ P(\bar{B} \cap C) = \left\{ \left( \frac{2}{3} \right)^n - \left( \frac{1}{3} \right)^n \right\} - \frac{n}{2} \left( \frac{1}{3} \right)^n = \left( \frac{2}{3} \right)^n - \left( 1 + \frac{n}{2} \right) \left( \frac{1}{3} \right)^n \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为 $2$ 以上的自然数。将一个骰子掷 $n$ 次，记出现的点数依次为 $X_1, X_2, \cdots, X_n$。设这 $n$ 个点数的最小公倍数为 $L_n$，最大公约数为 $G_n$。回答下列问题：
+
+\begin{parts}
+    \part 求 $L_2 = 5$ 的概率以及 $G_2 = 5$ 的概率。
+    \begin{solution}
+        当 $n=2$ 时，通过列举 $(X_1, X_2)$ 的情况进行计算：
+        \begin{itemize}
+            \item 满足 $L_2 = 5$ 的组合为 $(1, 5), (5, 1), (5, 5)$，共 $3$ 组。
+            因此其概率为 $\frac{3}{6^2} = \frac{1}{12}$。
+            \item 满足 $G_2 = 5$ 的组合仅有 $(5, 5)$，共 $1$ 组。
+            因此其概率为 $\frac{1}{6^2} = \frac{1}{36}$。
+        \end{itemize}
+    \end{solution}
+
+    \part 求 $L_n$ 不为素数的概率。
+    \begin{solution}
+        骰子点数 $\{1, 2, 3, 4, 5, 6\}$ 的最小公倍数 $L_n$ 只有可能在 $2, 3, 5$ 时为素数。
+        \begin{itemize}
+            \item (i) $L_n = 2$：点数全为 $1$ 或 $2$，且不全为 $1$。概率为 $(\frac{2}{6})^n - (\frac{1}{6})^n = (\frac{1}{3})^n - (\frac{1}{6})^n$。
+            \item (ii) $L_n = 3$：点数全为 $1$ 或 $3$，且不全为 $1$。概率为 $(\frac{2}{6})^n - (\frac{1}{6})^n = (\frac{1}{3})^n - (\frac{1}{6})^n$。
+            \item (iii) $L_n = 5$：点数全为 $1$ 或 $5$，且不全为 $1$。概率为 $(\frac{2}{6})^n - (\frac{1}{6})^n = (\frac{1}{3})^n - (\frac{1}{6})^n$。
+        \end{itemize}
+        $L_n$ 为素数的概率为上述三者之和：$3 \{ (\frac{1}{3})^n - (\frac{1}{6})^n \}$。
+        故 $L_n$ 不为素数的概率为：
+        \[ 1 - 3 \left\{ \left( \frac{1}{3} \right)^n - \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{3} \right)^{n-1} + \frac{1}{2} \left( \frac{1}{6} \right)^{n-1} \text{} \]
+    \end{solution}
+
+    \part 求 $G_n$ 不为素数的概率。
+    \begin{solution}
+        最大公约数 $G_n$ 可能为素数的情况有 $G_n = 2, 3, 5$。
+        \begin{itemize}
+            \item (i) $G_n = 2$：点数均为 $\{2, 4, 6\}$，且排除均为 $\{4\}$ 或 $\{6\}$ 等导致 $G_n > 2$ 的情况。
+            点数为 $2, 4, 6$ 的概率为 $(\frac{3}{6})^n$。需排除 $G_n$ 为 $4$ 或 $6$ 的倍数的情况。但 $6$ 的倍数只有 $6$，$4$ 的倍数只有 $4$。
+            故概率为 $(\frac{3}{6})^n - (\frac{1}{6})^n - (\frac{1}{6})^n = (\frac{1}{2})^n - 2(\frac{1}{6})^n$。
+            \item (ii) $G_n = 3$：点数均为 $\{3, 6\}$，排除全为 $\{6\}$。
+            概率为 $(\frac{2}{6})^n - (\frac{1}{6})^n = (\frac{1}{3})^n - (\frac{1}{6})^n$。
+            \item (iii) $G_n = 5$：点数均为 $\{5\}$。概率为 $(\frac{1}{6})^n$。
+        \end{itemize}
+        $G_n$ 为素数的总概率为：$(\frac{1}{2})^n - 2(\frac{1}{6})^n + (\frac{1}{3})^n - (\frac{1}{6})^n + (\frac{1}{6})^n = (\frac{1}{2})^n + (\frac{1}{3})^n - 2(\frac{1}{6})^n$。
+        故 $G_n$ 不为素数的概率为：
+        \[ 1 - \left\{ \left( \frac{1}{2} \right)^n + \left( \frac{1}{3} \right)^n - 2 \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{2} \right)^n - \left( \frac{1}{3} \right)^n + 2 \left( \frac{1}{6} \right)^n \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为 $3$ 以上的自然数。投掷一个骰子 $n$ 次，记所得点数的乘积为 $M$。记 $M=60$ 的概率为 $p_n$。回答下列问题：
+
+\begin{parts}
+    \part 求 $p_3$。
+    \begin{solution}
+        投掷 $1$ 个骰子 $3$ 次，所得点数的积 $M = 60 = 2^2 \times 3 \times 5$ 的情况有点数集合 $\{2, 5, 6\}$ 或 $\{3, 4, 5\}$。其概率 $p_3$ 为：
+        \[ p_3 = 3! \times \left( \frac{1}{6} \right)^3 + 3! \times \left( \frac{1}{6} \right)^3 = \frac{1}{18} \text{} \]
+    \end{solution}
+
+    \part 当 $n \ge 4$ 时，求 $p_n$。
+    \begin{solution}
+        当 $n \ge 4$ 时，投掷 $n$ 次且所得点数的积为 $60$ 的情况有：
+        \begin{itemize}
+            \item (i) $\{2, 5, 6, 1, \dots, 1\}$ (1 为 $n-3$ 次)
+            \item (ii) $\{3, 4, 5, 1, \dots, 1\}$ (1 为 $n-3$ 次)
+            \item (iii) $\{2, 2, 3, 5, 1, \dots, 1\}$ (1 为 $n-4$ 次)
+        \end{itemize}
+        由 (i) $\sim$ (iii) 可得，该概率 $p_n$ 为：
+        \[ p_n = \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{2!(n-4)!} \left( \frac{1}{6} \right)^n \text{} \]
+        \[ = \{2n(n-1)(n-2) + \frac{1}{2}n(n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n \text{} \]
+        \[ = \frac{1}{2}n(n-1)(n-2)(4+n-3) \left( \frac{1}{6} \right)^n = \frac{1}{2}(n+1)n(n-1)(n-2) \left( \frac{1}{6} \right)^n \text{} \]
+    \end{solution}
+
+    \part 当 $n \ge 4$ 时，求所得点数的积在第 $n$ 次投掷时首次为 $60$ 的概率。
+    \begin{solution}
+        当 $n \ge 4$ 时，所得点数的积在第 $n$ 次首次变为 $60$ 的概率 $q_n$ 为：
+        \begin{enumerate}
+            \item \textbf{$n$ 回目为 2 时}：由 (2) 的 (i) 和 (iii) 的情况可知，概率为：
+            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = \{(n-1)(n-2) + (n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n \text{} \]
+            \[ = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n \text{} \]
+            \item \textbf{$n$ 回目为 3 时}：由 (2) 的 (ii) 和 (iii) 的情况可知：
+            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{2!(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n \text{} \]
+            \item \textbf{$n$ 回目为 4 时}：由 (2) 的 (ii) 可知：$(n-1)(n-2) \left( \frac{1}{6} \right)^n$。
+            \item \textbf{$n$ 回目为 5 时}：同理，概率为 $\frac{1}{2}(n-1)(n-2)(n+1) \left( \frac{1}{6} \right)^n$。
+            \item \textbf{$n$ 回目为 6 时}：同理，概率为 $(n-1)(n-2) \left( \frac{1}{6} \right)^n$。
+        \end{enumerate}
+        由 (a) $\sim$ (e) 可知，乘积在第 $n$ 回首次达到 $60$ 的概率为：
+        \[ q_n = \frac{1}{2}(n-1)(n-2) \{ 2(n-2) + (n-1) + 2 + (n+1) + 2 \} \left( \frac{1}{6} \right)^n \text{} \]
+        \[ = \frac{1}{2}(n-1)(n-2) \cdot 4n \left( \frac{1}{6} \right)^n = 2n(n-1)(n-2) \left( \frac{1}{6} \right)^n \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为 $2$ 以上的整数。袋中装有写有从 $1$ 到 $2n$ 的整数的 $2n$ 张卡片。回答下列问题：
+
+\begin{parts}
+    \part 从袋中同时取出 $2$ 张卡片时，这两张卡片上数字之和为偶数的概率。
+    \begin{solution}
+        从 $2n$ 张卡片中取 $2$ 张的总数是 ${}_{2n}\mathrm{C}_2$。和为偶数的情况有两种：
+        \begin{enumerate}
+            \item \textbf{2 张均为偶数}：从 $n$ 张偶数卡片中选 $2$ 张，概率为 $\frac{{}_n\mathrm{C}_2}{{}_{2n}\mathrm{C}_2} = \frac{n(n-1)}{2n(2n-1)} = \frac{n-1}{2(2n-1)}$。
+            \item \textbf{2 张均为奇数}：从 $n$ 张奇数卡片中选 $2$ 张，概率为 $\frac{{}_n\mathrm{C}_2}{{}_{2n}\mathrm{C}_2} = \frac{n-1}{2(2n-1)}$。
+        \end{enumerate}
+        由此，所求概率为：
+        \[ \frac{n-1}{2(2n-1)} + \frac{n-1}{2(2n-1)} = \frac{n-1}{2n-1} \text{} \]
+    \end{solution}
+
+    \part 从袋中同时取出 $3$ 张卡片时，这 $3$ 张卡片上数字之和为偶数的概率。
+    \begin{solution}
+        取 $3$ 张的总数是 ${}_{2n}\mathrm{C}_3$。和为偶数的情况有：
+        \begin{enumerate}
+            \item \textbf{3 张均为偶数}：概率为 $\frac{{}_n\mathrm{C}_3}{{}_{2n}\mathrm{C}_3} = \frac{n(n-1)(n-2)}{2n(2n-1)(2n-2)} = \frac{n-2}{4(2n-1)}$。
+            \item \textbf{1 张偶数，2 张奇数}：概率为 $\frac{{}_n\mathrm{C}_1 \times {}_n\mathrm{C}_2}{{}_{2n}\mathrm{C}_3} = \frac{n \cdot \frac{n(n-1)}{2}}{\frac{2n(2n-1)(2n-2)}{6}} = \frac{3n}{4(2n-1)}$。
+        \end{enumerate}
+        由此，所求概率为：
+        \[ \frac{n-2}{4(2n-1)} + \frac{3n}{4(2n-1)} = \frac{4n-2}{4(2n-1)} = \frac{2(2n-1)}{4(2n-1)} = \frac{1}{2} \text{} \]
+        注：当 $n=2$ 时，结果为 $\frac{2-2}{4(3)} + \frac{6}{12} = \frac{1}{2}$，公式依然成立。
+    \end{solution}
+
+    \part 从袋中同时取出 $2$ 张卡片时，这两张卡片上数字之和在 $2n+1$ 以上的概率。
+    \begin{solution}
+        设两张卡片的数字为 $x, y$（满足 $1 \le x < y \le 2n$）。
+        满足 $x + y \ge 2n+1$ 的区域如图所示。
+                我们可以统计格子点数 $N$：
+        \begin{itemize}
+            \item 当 $1 \le k \le n$ 时，固定 $x=k$，满足 $2n+1-k \le y \le 2n$ 且 $k < y$ 的 $y$ 的个数 $N_k$ 为：
+            $N_k = 2n - (2n+1-k) + 1 = k$。
+            \item 当 $n+1 \le k \le 2n$ 时，$N_k = 2n-k$。
+        \end{itemize}
+        总数 $N = \sum_{k=1}^{n} k + \sum_{k=n+1}^{2n-1} (2n-k) = \frac{1}{2}n(n+1) + \frac{1}{2}n(n-1) = n^2$。
+        故所求概率为：
+        \[ \frac{N}{{}_{2n}\mathrm{C}_2} = \frac{n^2}{\frac{2n(2n-1)}{2}} = \frac{n}{2n-1} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+箱子中装有写着数字 1, 2, 3 的卡片各 3 张，共计 9 张。现由 A, B, C 三人依次从箱中无放回地抽取卡片，A 和 B 各取 2 张，C 取 3 张。回答下列问题：
+
+\begin{parts}
+    \part 求 A 拿到的两张卡片数字相同的概率。
+    \begin{solution}
+        从装有 1, 2, 3 各 3 张的箱子中，A 抽取 2 张的所有情况为 ${}_9\mathrm{C}_2$ 种。
+        若 A 抽到的 2 张数字相同，则只能是 (1, 1), (2, 2) 或 (3, 3)。
+        对于每种数字，从 3 张中选 2 张的情况有 ${}_3\mathrm{C}_2$ 种。
+        因此，所求概率为：
+        \[ \frac{3 \times {}_3\mathrm{C}_2}{{}_9\mathrm{C}_2} = \frac{3 \times 3}{36} = \frac{1}{4} \text{} \]
+    \end{solution}
+
+    \part 求 A 的两张卡片数字不同，B 的两张卡片数字也不同，且 C 的三张卡片数字均互不相同的概率。
+    \begin{solution}
+        为了计算方便，我们改变抽取顺序：先让 C 抽取 3 张，再让 A 抽取，最后 B 抽取。
+        首先，C 抽到的 3 张数字互不相同（即 1, 2, 3 各一张）的概率为：
+        \[ P(C) = \frac{{}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1}{{}_9\mathrm{C}_3} = \frac{3 \times 3 \times 3}{84} = \frac{9}{28} \text{} \]
+        此时箱中还剩 1, 2, 3 各 2 张。接着 A 从剩下的 6 张中抽取 2 张数字不同的概率为：
+        \[ P(A|C) = 1 - \frac{3 \times {}_2\mathrm{C}_2}{{}_6\mathrm{C}_2} = 1 - \frac{3}{15} = \frac{4}{5} \text{} \]
+        最后，假设 A 抽走了例如 1 和 2，箱中还剩 1 张数字 1，1 张数字 2，2 张数字 3。B 从这 4 张中抽取 2 张数字不同的概率为：
+        \[ P(B|A \cap C) = 1 - \frac{{}_2\mathrm{C}_2}{{}_4\mathrm{C}_2} = 1 - \frac{1}{6} = \frac{5}{6} \text{} \]
+        因此，所求概率为：
+        \[ \frac{9}{28} \times \frac{4}{5} \times \frac{5}{6} = \frac{3}{14} \text{} \]
+    \end{solution}
+
+    \part 求 A 的两张卡片数字中至少有一个与 C 的三张卡片数字中的某一个相同的概率。
+    \begin{solution}
+        先考虑其对立事件：A 抽取的数字与 C 抽取的数字完全不同。
+        让 A 先取 2 张，C 再取 3 张。
+        \begin{enumerate}
+            \item \textbf{当 A 的两张数字相同时}（概率为 $\frac{1}{4}$，见第 1 问）：
+            假设 A 取了 (1, 1)，则 C 必须从剩下的 7 张卡片（1 张数字 1，以及 2, 3 各 3 张）中避开数字 1，即从剩下的 6 张里取 3 张。
+            概率为 $\frac{1}{4} \times \frac{{}_6\mathrm{C}_3}{{}_7\mathrm{C}_3} = \frac{1}{4} \times \frac{20}{35} = \frac{20}{140}$。
+            \item \textbf{当 A 的两张数字不同时}（概率为 $1 - \frac{1}{4} = \frac{3}{4}$）：
+            假设 A 取了 (1, 2)，则 C 必须从剩下的 7 张卡片中避开数字 1 和 2，即只能取数字 3。
+            概率为 $\frac{3}{4} \times \frac{{}_3\mathrm{C}_3}{{}_7\mathrm{C}_3} = \frac{3}{4} \times \frac{1}{35} = \frac{3}{140}$。
+        \end{enumerate}
+        数字完全不同的总概率为 $\frac{20}{140} + \frac{3}{140} = \frac{23}{140}$。
+        故所求概率为：
+        \[ 1 - \frac{23}{140} = \frac{117}{140} \text{} \]
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}

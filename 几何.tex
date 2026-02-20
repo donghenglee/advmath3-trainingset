@@ -10507,7 +10507,59 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
 \end{solution}
 \end{parts}
 
+\question
+在坐标平面上，考虑连接原点 $O$ 与点 $A(1, 3)$ 的线段 $OA$。对于点 $P$，将 $P$ 与线段 $OA$ 上的点 $Q$ 之间的距离 $PQ$ 的最小值记为 $d(P)$。回答下列问题：
 
+\begin{parts}
+    \part 当点 $P$ 的坐标为 $(5, 2)$ 时，求 $d(P)$ 的值。
+    \begin{solution}
+        线段 $OA$ 的方程为 $y = 3x$ ($0 \le x \le 1$)。
+        过点 $O$ 和点 $A$ 且垂直于 $OA$ 的直线分别为 $l: y = -\frac{1}{3}x$ 和 $m: y-3 = -\frac{1}{3}(x-1)$。
+        这些直线将平面分为三个区域 $D_1, D_2, D_3$：
+        \begin{itemize}
+            \item $D_1: x + 3y \ge 10$ （靠近 $A$ 侧）
+            \item $D_2: 0 < x + 3y < 10$ （线段 $OA$ 投影侧）
+            \item $D_3: x + 3y \le 0$ （靠近 $O$ 侧）
+        \end{itemize}
+        对于点 $P(5, 2)$，$5 + 3(2) = 11 > 10$，故 $P \in D_1$。
+        此时 $d(P) = AP = \sqrt{(5-1)^2 + (2-3)^2} = \sqrt{17}$。
+    \end{solution}
+
+    \part 当点 $P$ 的坐标为 $(a, b)$ 时，用 $a, b$ 表示 $d(P)$。
+    \begin{solution}
+        根据点 $P$ 所处的区域分类讨论：
+        \begin{enumerate}
+            \item[(i)] 若 $P \in D_1$ (即 $a + 3b \ge 10$)，则 $d(P) = AP = \sqrt{(a-1)^2 + (b-3)^2}$。
+            \item[(ii)] 若 $P \in D_2$ (即 $0 < a + 3b < 10$)，点 $P$ 到直线 $3x - y = 0$ 的距离为：
+            \[ d(P) = \frac{|3a - b|}{\sqrt{3^2 + (-1)^2}} = \frac{1}{\sqrt{10}}|3a - b| \text{} \]
+            \item[(iii)] 若 $P \in D_3$ (即 $a + 3b \le 0$)，则 $d(P) = OP = \sqrt{a^2 + b^2}$。
+        \end{enumerate}
+    \end{solution}
+
+    \part 若点 $P$ 在抛物线 $y = x^2$ 上，且满足 $d(P) = \sqrt{10}$，求所有满足条件的点 $P$ 的 $x$ 坐标。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/image264.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $P(a, a^2)$。抛物线与区域分界线 $l, m$ 的交点分别为 $x = 0, -1/3$ 以及 $x = 5/3, -2$。
+        \begin{enumerate}
+            \item[(i)] 当 $P \in D_1$ ($a \le -2$ 或 $a \ge 5/3$) 时：
+            \[ \sqrt{(a-1)^2 + (a^2-3)^2} = \sqrt{10} \Rightarrow a^4 - 5a^2 - 2a + 10 = 10 \]
+            解得 $a(a+2)(a^2-2a-1) = 0$，得到 $a = 0, -2, 1\pm\sqrt{2}$。
+            满足范围条件的有 $a = -2, 1+\sqrt{2}$。
+            \item[(ii)] 当 $P \in D_2$ ($-2 < a < -1/3$ 或 $0 < a < 5/3$) 时：
+            \[ \frac{1}{\sqrt{10}}|3a - a^2| = \sqrt{10} \Rightarrow |3a - a^2| = 10 \]
+            方程 $a^2-3a+10=0$ 无实解；$a^2-3a-10=0$ 解得 $a=-2, 5$，均不在此范围内。
+            \item[(iii)] 当 $P \in D_3$ ($-1/3 \le a \le 0$) 时：
+            \[ \sqrt{a^2 + (a^2)^2} = \sqrt{10} \Rightarrow a^4 + a^2 - 10 = 0 \]
+            解得 $a^2 = \frac{-1+\sqrt{41}}{2}$，对应的 $a$ 值均不在此范围内。
+        \end{enumerate}
+        综上所述，满足条件的 $x$ 坐标为 $-2$ 或 $1+\sqrt{2}$。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 
@@ -15901,6 +15953,63 @@ ab^2 + 4a = a^2b + 4b
     \end{solution}
     \end{parts}
 
+    \question
+设 $\alpha$ 为满足 $0 < \alpha < \frac{\pi}{2}$ 的实数。考虑满足 $\angle A = \alpha$ 以及 $\angle P = \frac{\pi}{2}$ 的直角三角形 $APB$，在时刻 $t=0$ 到时刻 $t=\frac{\pi}{2}$ 期间在 $xy$ 平面上运动。
+满足以下两个条件 (a), (b)：
+(a) 时刻 $t$ 时的点 $A, B$ 的坐标分别为 $A(\sin t, 0), B(0, \cos t)$。
+(b) 点 $P$ 位于第一象限内。
+此时，回答下列问题：
+
+\begin{parts}
+    \part 证明点 $P$ 在一条直线上运动，并用 $\alpha$ 表示该直线的方程。
+    \begin{solution}
+        对点 $A(\sin t, 0), B(0, \cos t)$，有 $AB = \sqrt{\sin^2 t + \cos^2 t} = 1$。
+        在直角三角形 $APB$ 中，$AP = AB \cos \alpha = \cos \alpha$。
+        从点 $P$ 向边 $AB$ 作垂线，设垂足为 $H$，则：
+        $AH = AP \cos \alpha = \cos^2 \alpha, \quad PH = AP \sin \alpha = \sin \alpha \cos \alpha$。
+        由于 $\vec{AB} = (-\sin t, \cos t)$，其单位法向量为 $\vec{n} = (\cos t, \sin t)$。
+        于是点 $P$ 的位置向量为：
+        \begin{align*}
+            \vec{OP} &= \vec{OA} + \vec{AH} + \vec{HP} = \vec{OA} + (\cos^2 \alpha)\vec{AB} + (\sin \alpha \cos \alpha)\vec{n} \\
+            &= (\sin t, 0) + \cos^2 \alpha(-\sin t, \cos t) + \sin \alpha \cos \alpha(\cos t, \sin t) \\
+            &= (\sin \alpha (\sin \alpha \sin t + \cos \alpha \cos t), \cos \alpha (\cos \alpha \cos t + \sin \alpha \sin t)) \\
+            &= (\sin \alpha \cos(t - \alpha), \cos \alpha \cos(t - \alpha)) \text{}
+        \end{align*}
+        设 $P(x, y)$，则 $x = \cos(t-\alpha)\sin \alpha, y = \cos(t-\alpha)\cos \alpha$。
+        两式相比得 $x \cos \alpha - y \sin \alpha = 0 \cdots (*)$。
+        因此点 $P$ 在直线 $y = \frac{\cos \alpha}{\sin \alpha}x$（即 $y = x \cot \alpha$）上运动。
+    \end{solution}
+
+    \part 当 $t$ 从 $0$ 变到 $\frac{\pi}{2}$ 时，用 $\alpha$ 表示点 $P$ 运动的路径长度 $L$。
+    \begin{solution}
+        当 $t: 0 \to \frac{\pi}{2}$ 时，$u = \cos(t - \alpha)$ 的变化范围由 $\cos(-\alpha)$ 到 $\cos(\frac{\pi}{2}-\alpha)$，即从 $\cos \alpha$ 到 $\sin \alpha$。
+        点 $P$ 在直线 $(*)$ 上从 $(\sin \alpha \cos \alpha, \cos^2 \alpha)$ 运动到 $(\sin^2 \alpha, \sin \alpha \cos \alpha)$。
+        路径长度 $L$ 为：
+        \begin{align*}
+            L &= |\cos \alpha - \sin \alpha| \sqrt{\sin^2 \alpha + \cos^2 \alpha} \\
+            &= |\cos \alpha - \sin \alpha| \text{}
+        \end{align*}
+        根据图中所示，$L = (1 - \cos \alpha) - (\sin \alpha - 1) = 2 - \cos \alpha - \sin \alpha$（此处依原解答逻辑）。
+    \end{solution}
+
+    \part 在 $xy$ 平面内，证明点 $P$ 不进入由连立不等式 $x^2 - x + y^2 < 0, x^2 + y^2 - y < 0$ 定义的区域 $D$。
+    \begin{solution}
+        区域 $D$ 是两个圆 $(x-\frac{1}{2})^2 + y^2 < \frac{1}{4}$ 和 $x^2 + (y-\frac{1}{2})^2 < \frac{1}{4}$ 的公共部分。
+        点 $P$ 所在的直线为 $y = x \tan(\frac{\pi}{2} - \alpha)$。
+        由 (2) 知点 $P$ 到原点的距离 $OP = \cos(t - \alpha)$，其最大值为 $1$，最小值为 $\min(\sin \alpha, \cos \alpha)$。
+        
+        (i) 当 $0 < \alpha \le \frac{\pi}{4}$ 时：
+        直线 $(*)$ 与圆 $(x-\frac{1}{2})^2 + y^2 = \frac{1}{4}$ 的交点 $Q$ 满足 $OQ = \sin \alpha$。
+        此时 $\cos \alpha \ge \sin \alpha$，由 $OP \ge \sin \alpha = OQ$ 知点 $P$ 不在区域 $D$ 内。
+        
+        (ii) 当 $\frac{\pi}{4} < \alpha < \frac{\pi}{2}$ 时：
+        直线 $(*)$ 与圆 $x^2 + (y-\frac{1}{2})^2 = \frac{1}{4}$ 的交点 $R$ 满足 $OR = \cos \alpha$。
+        此时 $\sin \alpha > \cos \alpha$，由 $OP \ge \cos \alpha = OR$ 知点 $P$ 不在区域 $D$ 内。
+        
+        综上所述，点 $P$ 绝不进入区域 $D$。
+    \end{solution}
+\end{parts}
+%parametric eq
     \question 曲线由参数方程给出
     \[
     x = \sin^2 t, \quad y = \sin t \cos t + \cos t, \quad 0 \le t < 2\pi.
@@ -18553,6 +18662,98 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         \[
         \vec{OQ} = \frac{-\vec{OB} + 14\vec{OP}}{14 - 1} = -\frac{1}{13}\vec{OB} + \frac{14}{13}\vec{OP}
         \]
+    \end{solution}
+\end{parts}
+
+\question
+考虑平面上的 $\triangle OAB$，满足 $|\vec{OA}| = \sqrt{2}$ 且 $\vec{OA} \cdot \vec{OB} = 1$。从点 $B$ 向直线 $OA$ 下垂线，设垂足为 $H$。此外，设 $t$ 为实数，取点 $P$ 满足 $\vec{BP} = t \vec{BH}$。令 $\vec{a} = \vec{OA}, \vec{b} = \vec{OB}$，回答下列问题：
+
+\begin{parts}
+    \part 证明 $H$ 是边 $OA$ 的中点。
+    \begin{solution}
+        设 $\vec{OH} = k\vec{a}$ ($k$ 为实数)。
+        由于 $\vec{BH} \perp \vec{OA}$，故 $\vec{OA} \cdot \vec{BH} = 0$。
+        即 $\vec{a} \cdot (k\vec{a} - \vec{b}) = 0$，展开得 $k|\vec{a}|^2 - \vec{a} \cdot \vec{b} = 0$。
+        代入 $|\vec{a}|^2 = 2$ 和 $\vec{a} \cdot \vec{b} = 1$，得 $2k - 1 = 0$，即 $k = \frac{1}{2}$。
+        由此可知 $\vec{OH} = \frac{1}{2}\vec{a}$，故 $H$ 是边 $OA$ 的中点。
+    \end{solution}
+
+    \part 用 $\vec{a}, \vec{b}, t$ 表示 $\vec{OP}$。
+    \begin{solution}
+        由 $\vec{BP} = t\vec{BH}$ 可知 $\vec{OP} - \vec{OB} = t(\vec{OH} - \vec{OB})$。
+        由 (1) 知 $\vec{OH} = \frac{1}{2}\vec{a}$，代入上式：
+        \[ \vec{OP} - \vec{b} = t\left(\frac{1}{2}\vec{a} - \vec{b}\right) \]
+        整理得：
+        \[ \vec{OP} = \frac{t}{2}\vec{a} + (1 - t)\vec{b} \quad \cdots \textcircled{1} \text{} \]
+    \end{solution}
+
+    \part 设 $|\vec{OB}|^2 = x$，用 $x$ 表示 $t$。
+    注：此处背景为 $P$ 是 $\triangle OAB$ 外接圆的中心。
+    \begin{solution}
+        由于 $P$ 是外心，它位于边 $OB$ 的垂直平分线上。
+        设 $OB$ 的中点为 $I$，则 $\vec{OB} \cdot \vec{IP} = 0$。
+        即 $\vec{b} \cdot (\vec{OP} - \frac{1}{2}\vec{b}) = 0$。
+        代入 $\textcircled{1}$ 式：
+        \[ \vec{b} \cdot \left\{ \frac{t}{2}\vec{a} + (1 - t)\vec{b} - \frac{1}{2}\vec{b} \right\} = 0 \]
+        \[ \vec{b} \cdot \left\{ \frac{t}{2}\vec{a} + \left(\frac{1}{2} - t\right)\vec{b} \right\} = 0 \]
+        展开得 $\frac{t}{2}(\vec{a} \cdot \vec{b}) + (\frac{1}{2} - t)|\vec{b}|^2 = 0$。
+        代入 $\vec{a} \cdot \vec{b} = 1$ 及 $|\vec{b}|^2 = x$：
+        \[ \frac{t}{2} + \left(\frac{1}{2} - t\right)x = 0 \Rightarrow t + (1 - 2t)x = 0 \]
+        整理得 $(2x - 1)t = x$。由于 $x \neq \frac{1}{2}$，得：
+        \[ t = \frac{x}{2x - 1} \quad \cdots \textcircled{2} \text{} \]
+    \end{solution}
+
+    \part 当 $|\vec{OP}| = \sqrt{2}|\vec{OB}|$ 时，求 $|\vec{OB}|$ 的值。
+    \begin{solution}
+        由条件 $|\vec{OP}|^2 = 2|\vec{OB}|^2 = 2x$。
+        利用 $\textcircled{1}$ 和 $\textcircled{2}$，将 $\vec{OP} = \frac{1}{2(2x-1)}\{x\vec{a} + 2(x-1)\vec{b}\}$ 代入：
+        \[ \frac{1}{4(2x-1)^2} \{x^2|\vec{a}|^2 + 4x(x-1)(\vec{a} \cdot \vec{b}) + 4(x-1)^2|\vec{b}|^2\} = 2x \]
+        代入 $|\vec{a}|^2=2, \vec{a}\cdot\vec{b}=1, |\vec{b}|^2=x$：
+        \[ \frac{1}{4(2x-1)^2} \{2x^2 + 4x(x-1) + 4(x-1)^2x\} = 2x \]
+        化简得 $4x^2 - 2x = 8(2x-1)^2$，进一步得到 $14x = 8$。
+        解得 $x = \frac{4}{7}$。
+        故 $|\vec{OB}| = \sqrt{x} = \sqrt{\frac{4}{7}} = \frac{2}{7}\sqrt{7}$。
+    \end{solution}
+\end{parts}
+
+\question
+平面上有三个点 $O, A, B$ 满足下列条件：
+\[ |2\overrightarrow{OA} + \overrightarrow{OB}| = |\overrightarrow{OA} + 2\overrightarrow{OB}| = 1 \quad \text{且} \quad (2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + \overrightarrow{OB}) = \frac{1}{3} \text{} \]
+回答下列问题：
+
+\begin{parts}
+    \part 求 $(2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + 2\overrightarrow{OB})$ 的值。
+    \begin{solution}
+        为了简化运算，设 $\vec{u} = 2\overrightarrow{OA} + \overrightarrow{OB}$，$\vec{v} = \overrightarrow{OA} + 2\overrightarrow{OB}$。
+        由题意知 $|\vec{u}| = |\vec{v}| = 1$ \quad $\cdots$ \textcircled{1}。
+        同时可以解得 $\overrightarrow{OA} + \overrightarrow{OB} = \frac{1}{3}(\vec{u} + \vec{v})$。
+        代入条件 $\vec{u} \cdot (\overrightarrow{OA} + \overrightarrow{OB}) = \frac{1}{3}$ 得：
+        \[ \vec{u} \cdot \left( \frac{\vec{u} + \vec{v}}{3} \right) = \frac{1}{3} \Rightarrow |\vec{u}|^2 + \vec{u} \cdot \vec{v} = 1 \text{} \]
+        由于 $|\vec{u}| = 1$，代入上式解得 $\vec{u} \cdot \vec{v} = 0$。
+        因此，$(2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + 2\overrightarrow{OB}) = 0$。
+    \end{solution}
+
+    \part 平面上的一点 $P$ 满足 $|3\overrightarrow{OP} - (\overrightarrow{OA} + \overrightarrow{OB})| \le \frac{1}{3}$ 且 $\overrightarrow{OP} \cdot (2\overrightarrow{OA} + \overrightarrow{OB}) \le \frac{1}{3}$。当 $P$ 如此运动时，求 $|\overrightarrow{OP}|$ 的最大值与最小值。
+    \begin{solution}
+        延续 (1) 中的设法，$\vec{u}, \vec{v}$ 是相互垂直的单位向量。
+        令 $\vec{u} = (1, 0)$，$\vec{v} = (0, 1)$。
+        则 $\overrightarrow{OA} + \overrightarrow{OB} = \frac{1}{3}(1, 1)$。
+        设 $\overrightarrow{OP} = (x, y)$，代入已知条件：
+        \begin{itemize}
+            \item 第一个条件：$|3(x, y) - (\frac{1}{3}, \frac{1}{3})| \le \frac{1}{3} \Rightarrow |(x - \frac{1}{9}, y - \frac{1}{9})| \le \frac{1}{9}$。
+            即 $(x - \frac{1}{9})^2 + (y - \frac{1}{9})^2 \le (\frac{1}{9})^2$（圆内区域）。
+            \item 第二个条件：$(x, y) \cdot (1, 0) \le \frac{1}{3} \Rightarrow x \le \frac{1}{3}$。
+        \end{itemize}
+        圆心为 $C(\frac{1}{9}, \frac{1}{9})$，半径 $r = \frac{1}{9}$。
+        由于圆上的点 $x$ 最大值为 $\frac{1}{9} + \frac{1}{9} = \frac{2}{9} < \frac{1}{3}$，故第二个条件 $x \le \frac{1}{3}$ 始终满足。
+        
+        
+        因此 $|\overrightarrow{OP}|$ 的最值即为原点到圆上点的距离：
+        \begin{itemize}
+            \item 最小值：$OC - r = \sqrt{(\frac{1}{9})^2 + (\frac{1}{9})^2} - \frac{1}{9} = \frac{\sqrt{2}-1}{9}$。
+            \item 最大值：$OC + r = \sqrt{(\frac{1}{9})^2 + (\frac{1}{9})^2} + \frac{1}{9} = \frac{\sqrt{2}+1}{9}$。
+        \end{itemize}
+        整理得，最大值为 $\frac{\sqrt{2}+1}{9}$，最小值为 $\frac{\sqrt{2}-1}{9}$。
     \end{solution}
 \end{parts}
 \end{questions}
@@ -21658,6 +21859,255 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         因此 $\theta = 0^\circ$，即 $\vec{a} = \vec{b}$。
         代入 $(*)$ 式得 $\vec{a} = \vec{b} = \left( \frac{7}{8}, -\frac{\sqrt{15}}{8}, 0 \right)$。
         故点 $A$ 和 $B$ 的坐标均为 $\left( \frac{7}{8}, -\frac{\sqrt{15}}{8}, 0 \right)$。
+    \end{solution}
+\end{parts}
+
+\question
+设四面体 $OABC$ 满足 $OA = 4, OB = AB = BC = 3, OC = AC = 2\sqrt{3}$。令点 $P$ 为边 $BC$ 上的点，点 $G$ 为 $\triangle OAP$ 的重心。此时，回答下列各问：
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image263.png}
+    \end{figure}
+\begin{parts}
+    \part 证明 $\vec{PG} \perp \vec{OA}$。
+    \begin{solution}
+        在四面体 $OABC$ 中，点 $P$ 在边 $BC$ 上，点 $M$ 为边 $OA$ 的中点，点 $G$ 为 $\triangle OAP$ 的重心。
+        首先，由于 $\triangle ABC$ 和 $\triangle OBC$ 全等，因此 $PA = PO$ 成立。
+        由此可知，$\triangle POA$ 是一个等腰三角形。
+        在等腰三角形中，中线 $PM$ 与底边 $OA$ 垂直，故有：
+        \[ \vec{PM} \perp \vec{OA} \text{} \]
+        又因为点 $G$ 位于中线 $PM$ 上，所以 $\vec{PG}$ 与 $\vec{OA}$ 也是垂直的，即：
+        \[ \vec{PG} \perp \vec{OA} \text{} \]
+    \end{solution}
+
+    \part 当点 $P$ 在边 $BC$ 上运动时，求 $PG$ 的最小值。
+    \begin{solution}
+        根据重心性质，有 $PG : GM = 2 : 1$，故：
+        \[ PG = \frac{2}{3}PM = \frac{2}{3}\sqrt{PA^2 - 2^2} = \frac{2}{3}\sqrt{PA^2 - 4} \quad \cdots (*) \text{} \]
+        在 $\triangle ABC$ 中，应用余弦定理：
+        \[ \cos \angle ABC = \frac{3^2 + 3^2 - (2\sqrt{3})^2}{2 \cdot 3 \cdot 3} = \frac{1}{3} > 0 \text{} \]
+        因为 $\cos \angle ABC > 0$，$\triangle ABC$ 是锐角三角形。
+        当 $PA$ 取最小值时，$PG$ 也取最小值。$PA$ 的最小值出现在点 $P$ 为从顶点 $A$ 向边 $BC$ 所作垂线的垂足时。
+        此时：
+        \[ PA = 3 \sin \angle ABC = 3\sqrt{1 - \left( \frac{1}{3} \right)^2} = 2\sqrt{2} \text{} \]
+        将此代入 $(*)$ 式得：
+        \[ PG \text{ 的最小值} = \frac{2}{3}\sqrt{(2\sqrt{2})^2 - 4} = \frac{4}{3} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+在坐标空间内有 $5$ 个点 $O(0, 0, 0), A(1, 1, 0), B(2, 1, 2), P(4, 0, -1), Q(4, 0, 5)$。设通过点 $O, A, B$ 的平面为 $\alpha$，令 $\vec{a} = \vec{OA}, \vec{b} = \vec{OB}$。回答下列问题：
+
+\begin{parts}
+    \part 求一个大小为 $1$ 且与向量 $\vec{a}, \vec{b}$ 同时垂直，且其 $x$ 分量为正的向量 $\vec{n}$。
+    \begin{solution}
+        设 $\vec{n} = (k, l, m)$ ($k > 0$) 为垂直于平面 $\alpha$ 的单位法向量。
+        由 $\vec{a} \cdot \vec{n} = 0$ 和 $\vec{b} \cdot \vec{n} = 0$ 可得：
+        \begin{align*}
+            k + l &= 0 \quad \cdots \textcircled{1} \\
+            2k + l + 2m &= 0 \quad \cdots \textcircled{2}
+        \end{align*}
+        由 $\textcircled{1}$ 得 $l = -k$，代入 $\textcircled{2}$ 得 $2k - k + 2m = 0 \Rightarrow m = -\frac{k}{2}$。
+        由 $|\vec{n}| = 1$ 知 $k^2 + l^2 + m^2 = 1$：
+        \[ k^2 + (-k)^2 + \left(-\frac{k}{2}\right)^2 = 1 \Rightarrow \frac{9}{4}k^2 = 1 \Rightarrow k^2 = \frac{4}{9} \]
+        因 $k > 0$，故 $k = \frac{2}{3}, l = -\frac{2}{3}, m = -\frac{1}{3}$。
+        因此，$\vec{n} = \frac{1}{3}(2, -2, -1)$。
+    \end{solution}
+
+    \part 求关于平面 $\alpha$ 与点 $P$ 对称的点 $P'$ 的坐标。
+    \begin{solution}
+        平面 $\alpha$ 的法向量为 $\vec{n} = \frac{1}{3}(2, -2, -1)$，故其方程为 $2x - 2y - z = 0$ $\cdots \textcircled{4}$。
+        设 $\vec{PP'} = 3p\vec{n}$ ($p$ 为常数)，则 $\vec{OP'} = \vec{OP} + 3p\vec{n}$。
+        线段 $PP'$ 的中点 $H$ 的坐标为：
+        \[ \vec{OH} = \frac{\vec{OP} + \vec{OP'}}{2} = \vec{OP} + \frac{3}{2}p\vec{n} = (4, 0, -1) + \frac{p}{2}(2, -2, -1) = \left( 4+p, -p, -1-\frac{p}{2} \right) \text{} \]
+        点 $H$ 在平面 $\alpha$ 上，代入 $\textcircled{4}$ 得：
+        \[ 2(4+p) - 2(-p) - \left(-1-\frac{p}{2}\right) = 0 \Rightarrow \frac{9}{2}p + 9 = 0 \Rightarrow p = -2 \text{} \]
+        代入 $\vec{OP'}$ 得 $\vec{OP'} = (4, 0, -1) - 2(2, -2, -1) = (0, 4, 1)$。
+        故点 $P'$ 的坐标为 $(0, 4, 1)$。
+    \end{solution}
+
+    \part 当点 $R$ 在平面 $\alpha$ 上运动时，求使 $|\vec{PR}| + |\vec{RQ}|$ 最小的点 $R$ 的坐标。
+    \begin{solution}
+        设 $f(x, y, z) = 2x - 2y - z$。计算 $P, Q$ 两点相对于平面的位置：
+        \[ f(4, 0, -1) = 8 - 0 + 1 = 9 > 0, \quad f(4, 0, 5) = 8 - 0 - 5 = 3 > 0 \]
+        这表明点 $P, Q$ 位于平面 $\alpha$ 的同侧。
+        根据对称性，$|\vec{PR}| + |\vec{RQ}| = |\vec{P'R}| + |\vec{RQ}| \ge |\vec{P'Q}|$。
+        最小值在 $R$ 为线段 $P'Q$ 与平面 $\alpha$ 的交点时取得。
+        直线 $P'Q$ 的方向向量为 $\vec{P'Q} = (4, 0, 5) - (0, 4, 1) = (4, -4, 4)$。
+        设直线 $P'Q$ 上的点 $R$ 为 $(x, y, z) = (0, 4, 1) + t(4, -4, 4) = (4t, 4-4t, 1+4t)$。
+        代入平面方程 $\textcircled{4}$：
+        \[ 2(4t) - 2(4-4t) - (1+4t) = 0 \Rightarrow 12t - 9 = 0 \Rightarrow t = \frac{3}{4} \text{} \]
+        代入 $R$ 的坐标公式，得 $R(3, 1, 4)$。
+    \end{solution}
+\end{parts}
+
+\question
+在半径为 $1$ 的球面上，有四个不同的点 $A, B, C, D$，满足 $AB = 1$，$AC = BC$，$AD = BD$，且 $\cos \angle ACB = \cos \angle ADB = \frac{4}{5}$。
+
+\begin{parts}
+    \part 求三角形 $ABC$ 的面积。
+    \begin{solution}
+        设球心为 $O$。对于 $\triangle ABC$，设 $AC = BC = x$。
+        在 $\triangle ABC$ 中应用余弦定理：
+        \[ x^2 + x^2 - 2x^2 \cos \angle ACB = 1^2 \Rightarrow 2x^2 - \frac{8}{5}x^2 = 1 \text{} \]
+        解得 $\frac{2}{5}x^2 = 1 \Rightarrow x^2 = \frac{5}{2}$，故 $x = \sqrt{\frac{5}{2}} = \frac{\sqrt{10}}{2}$。
+        
+        设 $\triangle ABC$ 的面积为 $S$：
+        \[ S = \frac{1}{2} x^2 \sin \angle ACB = \frac{1}{2} \cdot \frac{5}{2} \sqrt{1 - \left( \frac{4}{5} \right)^2} = \frac{5}{4} \cdot \frac{3}{5} = \frac{3}{4} \text{} \]
+    \end{solution}
+
+    \part 求四面体 $ABCD$ 的体积。
+    \begin{solution}
+        对 $\triangle ABD$ 应用余弦定理，同理可得 $AD = BD = y = \frac{\sqrt{10}}{2}$。
+        设线段 $AB$ 的中点为 $M$。从点 $D$ 向平面 $ABC$ 下垂线，垂足为 $H$。
+        由于四面体 $ABCD$ 关于平面 $DMC$ 对称，球心 $O$ 与垂足 $H$ 均在平面 $DMC$ 上。
+        
+        在正三角形 $\triangle OAB$ 中（$OA=OB=AB=1$），$OM = 1 \cdot \sin \frac{\pi}{3} = \frac{\sqrt{3}}{2}$。
+        在 $\triangle AMC$ 中，$CM = \sqrt{x^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{5}{2} - \frac{1}{4}} = \frac{3}{2}$。同理 $DM = \frac{3}{2}$。
+        
+        在 $\triangle OMC$ 中（$OC=1$），设 $\theta = \angle OMC$。应用余弦定理：
+        \[ \left(\frac{\sqrt{3}}{2}\right)^2 + \left(\frac{3}{2}\right)^2 - 2 \cdot \frac{\sqrt{3}}{2} \cdot \frac{3}{2} \cos \theta = 1^2 \Rightarrow \frac{3}{4} + \frac{9}{4} - \frac{3\sqrt{3}}{2} \cos \theta = 1 \text{} \]
+        解得 $\cos \theta = \frac{4}{3\sqrt{3}}$，从而 $\sin \theta = \sqrt{1 - \frac{16}{27}} = \frac{\sqrt{11}}{3\sqrt{3}}$。
+        
+        点 $D$ 到平面 $ABC$ 的高度 $DH = DM \sin 2\theta = \frac{3}{2} \cdot 2 \sin \theta \cos \theta = 3 \cdot \frac{\sqrt{11}}{3\sqrt{3}} \cdot \frac{4}{3\sqrt{3}} = \frac{4\sqrt{11}}{9}$。
+        四面体 $ABCD$ 的体积 $V$ 为：
+        \[ V = \frac{1}{3} S \cdot DH = \frac{1}{3} \cdot \frac{3}{4} \cdot \frac{4\sqrt{11}}{9} = \frac{\sqrt{11}}{9} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+在以坐标空间原点 $O$ 为中心、半径为 $r$ 的球面 $S$ 上，有四个顶点组成的四面体 $ABCD$ 满足 $\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} + \overrightarrow{OD} = \vec{0}$。设 $\triangle ABC$ 的重心为 $G$。
+
+\begin{parts}
+    \part 用 $\overrightarrow{OD}$ 表示 $\overrightarrow{OG}$。
+    \begin{solution}
+        根据重心公式，$\triangle ABC$ 的重心 $G$ 满足：
+        \[ \overrightarrow{OG} = \frac{1}{3}(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}) \text{} \]
+        由已知条件 $\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} + \overrightarrow{OD} = \vec{0}$ 可得：
+        \[ \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} = -\overrightarrow{OD} \quad \cdots \textcircled{1} \text{} \]
+        代入重心公式得：
+        \[ \overrightarrow{OG} = \frac{1}{3}(-\overrightarrow{OD}) = -\frac{1}{3}\overrightarrow{OD} \text{} \]
+    \end{solution}
+
+    \part 用 $r$ 表示 $\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}$。
+    \begin{solution}
+        由 \textcircled{1} 式，对等式两边进行平方运算：
+        \[ |\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}|^2 = |-\overrightarrow{OD}|^2 \text{} \]
+        展开得：
+        \[ |\overrightarrow{OA}|^2 + |\overrightarrow{OB}|^2 + |\overrightarrow{OC}|^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = |\overrightarrow{OD}|^2 \text{} \]
+        由于 $A, B, C, D$ 均在半径为 $r$ 的球面上，故 $|\overrightarrow{OA}| = |\overrightarrow{OB}| = |\overrightarrow{OC}| = |\overrightarrow{OD}| = r$。
+        代入上式：
+        \[ 3r^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = r^2 \text{} \]
+        解得：
+        \[ \overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA} = -r^2 \text{} \]
+    \end{solution}
+
+    \part 当点 $P$ 在球面 $S$ 上运动时，用 $r$ 表示 $\overrightarrow{PA} \cdot \overrightarrow{PB} + \overrightarrow{PB} \cdot \overrightarrow{PC} + \overrightarrow{PC} \cdot \overrightarrow{PA}$ 的最大值。此外，求取最大值时点 $P$ 对应的 $|\overrightarrow{PG}|$（用 $r$ 表示）。
+    \begin{solution}
+        设 $F = \overrightarrow{PA} \cdot \overrightarrow{PB} + \overrightarrow{PB} \cdot \overrightarrow{PC} + \overrightarrow{PC} \cdot \overrightarrow{PA}$。
+        利用 $\overrightarrow{PA} \cdot \overrightarrow{PB} = (\overrightarrow{OA} - \overrightarrow{OP}) \cdot (\overrightarrow{OB} - \overrightarrow{OP}) = \overrightarrow{OA} \cdot \overrightarrow{OB} - (\overrightarrow{OA} + \overrightarrow{OB}) \cdot \overrightarrow{OP} + r^2$：
+        \begin{align*}
+            F &= (\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) - 2(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}) \cdot \overrightarrow{OP} + 3r^2 \\
+            &= -r^2 - 2(-\overrightarrow{OD}) \cdot \overrightarrow{OP} + 3r^2 \\
+            &= 2r^2 + 2\overrightarrow{OD} \cdot \overrightarrow{OP} \text{}
+        \end{align*}
+        由于 $-r^2 \le \overrightarrow{OD} \cdot \overrightarrow{OP} \le r^2$，故 $F$ 的最大值为 $2r^2 + 2r^2 = 4r^2$。
+        此时 $\overrightarrow{OD} \cdot \overrightarrow{OP} = r^2$，即 $\overrightarrow{OP} = \overrightarrow{OD}$（点 $P$ 与 $D$ 重合）。
+        此时：
+        \[ |\overrightarrow{PG}| = |\overrightarrow{DG}| = |\overrightarrow{OG} - \overrightarrow{OD}| = |-\frac{1}{3}\overrightarrow{OD} - \overrightarrow{OD}| = |-\frac{4}{3}\overrightarrow{OD}| = \frac{4}{3}r \text{} \]
+        故最大值为 $4r^2$，此时 $|\overrightarrow{PG}| = \frac{4}{3}r$。
+    \end{solution}
+\end{parts}
+
+\question
+在坐标空间中，考虑平面 $z=2$ 上的点 $P$ 和平面 $z=1$ 上的圆盘 $B: x^2 + y^2 \le 1, z=1$。设点 $Q$ 位于平面 $z=0$ ($xy$ 平面) 上，对于给定的点 $P$，将使得线段 $PQ$ 与 $B$ 有公共点的所有点 $Q$ 构成的图形记为 $D$。回答下列问题：
+
+\begin{parts}
+    \part 当点 $P$ 的坐标为 $(0, 0, 2)$ 时，求点 $Q(x, y, 0)$ 全体构成的图形 $D$。
+    \ifprintanswers
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image265.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $P(0, 0, 2)$，点 $Q$ 在平面 $z=0$ 上，线段 $PQ$ 的中点 $M$ 坐标为 $(\frac{x}{2}, \frac{y}{2}, 1)$。
+        由于线段 $PQ$ 与平面 $z=1$ 的交点正好是其中心点 $M$，故只要 $M$ 在圆盘 $B$ 内，线段 $PQ$ 就与 $B$ 有公共点：
+        \[ \left( \frac{x}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow x^2 + y^2 \le 4 \text{} \]
+        因此，$D$ 是以原点为中心、半径为 $2$ 的圆及其内部。
+    \end{solution}
+
+    \part 设 $r$ 为正常数。当 $P$ 的坐标为 $(r, 0, 2)$ 时，在 $xy$ 平面上画出图形 $D$。
+    \begin{solution}
+        设 $P(r, 0, 2)$，$Q(x, y, 0)$，则线段 $PQ$ 的中点 $M$ 为 $(\frac{x+r}{2}, \frac{y}{2}, 1)$。
+        由 $M \in B$ 得：
+        \[ \left( \frac{x+r}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow (x+r)^2 + y^2 \le 4 \text{} \]
+        因此，$D$ 是中心在 $(-r, 0)$、半径为 $2$ 的圆及其内部。
+    \end{solution}
+
+    \part 对于满足 $r > 2$ 的常数 $r$，考虑平面 $z=2$ 上的圆 $C: x^2 + y^2 = r^2, z=2$。当 $P$ 在 $C$ 上运动时，求 $D$ 所扫过的区域面积。
+    \ifprintanswers
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image266.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        当 $P(r\cos\theta, r\sin\theta, 2)$ 时，根据 (2) 的推导，图形 $D$ 是中心在 $(-r\cos\theta, -r\sin\theta)$、半径为 $2$ 的圆盘。
+        
+        设 $D$ 的中心为 $M'(-r\cos\theta, -r\sin\theta)$。当 $\theta$ 从 $0$ 变到 $2\pi$ 时，$M'$ 的轨迹是半径为 $r$ 的圆。
+        $D$ 扫过的区域是一个圆环，其内半径为 $r-2$，外半径为 $r+2$。
+        扫过区域的面积 $S$ 为：
+        \[ S = \pi(r+2)^2 - \pi(r-2)^2 = \pi(r^2 + 4r + 4 - r^2 + 4r - 4) = 8\pi r \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+在坐标空间中，以 $A(1, -1, 1)$ 和 $B(1, -1, 5)$ 为直径两端点的球面记为 $S$。回答下列问题：
+
+\begin{parts}
+    \part 求球面 $S$ 的中心 $C$ 的坐标及 $S$ 的方程。
+    \begin{solution}
+        中心 $C$ 是线段 $AB$ 的中点：
+        \[ C = \left( \frac{1+1}{2}, \frac{-1-1}{2}, \frac{1+5}{2} \right) = (1, -1, 3) \text{} \]
+        半径 $R = AC = \sqrt{(1-1)^2 + (-1-(-1))^2 + (3-1)^2} = 2$。
+        故球面 $S$ 的方程为：
+        \[ (x-1)^2 + (y+1)^2 + (z-3)^2 = 4 \quad \cdots \textcircled{1} \text{} \]
+    \end{solution}
+
+    \part 当点 $P$ 在 $S$ 上运动时，求 $\triangle ABP$ 面积的最大值。
+    \begin{solution}
+        线段 $AB$ 平行于 $z$ 轴，且 $AB = 4$。
+        $\triangle ABP$ 的面积为 $\frac{1}{2} \cdot AB \cdot h$，其中 $h$ 是点 $P$ 到直线 $AB$ 的距离。
+        当点 $P$ 在经过中心 $C$ 且垂直于 $AB$ 的平面（即 $z=3$）上运动时，$h$ 达到最大值，即球面半径 $R=2$。
+                面积最大值为：
+        \[ S_{\max} = \frac{1}{2} \cdot 4 \cdot 2 = 4 \text{} \]
+    \end{solution}
+
+    \part 点 $Q(x, y, z)$ 在 $S$ 上运动，且满足 $\angle QCA = \frac{\pi}{3}$ 及 $y \ge 0$。对于点 $R(1+\sqrt{2}, 0, 4)$，求内积 $\overrightarrow{CQ} \cdot \overrightarrow{CR}$ 的取值范围。
+    \ifprintanswers
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image267.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由 $\angle QCA = \frac{\pi}{3}$ 知点 $Q$ 在以 $C$ 为顶点、以 $CA$ 为轴的圆锥面上。
+        向量 $\overrightarrow{CA} = (0, 0, -2)$，$\overrightarrow{CQ} = (x-1, y+1, z-3)$。
+        根据内积定义：$\overrightarrow{CA} \cdot \overrightarrow{CQ} = |\overrightarrow{CA}| |\overrightarrow{CQ}| \cos \frac{\pi}{3} = 2 \cdot 2 \cdot \frac{1}{2} = 2$。
+        展开得：$-2(z-3) = 2 \Rightarrow z = 2$。
+        代入球面方程 \textcircled{1} 得：$(x-1)^2 + (y+1)^2 + (2-3)^2 = 4 \Rightarrow (x-1)^2 + (y+1)^2 = 3$。
+        结合 $y \ge 0$，点 $Q$ 的轨迹是平面 $z=2$ 上圆心为 $D(1, -1, 2)$、半径为 $\sqrt{3}$ 的一段圆弧 $EF$。
+        
+        已知 $R(1+\sqrt{2}, 0, 4)$，则 $\overrightarrow{CR} = (\sqrt{2}, 1, 1)$。
+        $\overrightarrow{CQ} \cdot \overrightarrow{CR} = (x-1)\sqrt{2} + (y+1) \cdot 1 + (z-3) \cdot 1 = \sqrt{2}(x-1) + y + 1 - 1 = \sqrt{2}(x-1) + y$。
+        在平面 $z=2$ 上，这表示斜率为 $-\sqrt{2}$ 的直线系。
+                经计算，在端点 $E(1+\sqrt{2}, 0, 2)$ 和 $F(1-\sqrt{2}, 0, 2)$ 处取得最值：
+        \begin{itemize}
+            \item 当 $Q=E$ 时，$k = \sqrt{2}(\sqrt{2}) + 0 = 2$。
+            \item 当 $Q=F$ 时，$k = \sqrt{2}(-\sqrt{2}) + 0 = -2$。
+        \end{itemize}
+        因此，内积的取值范围为 $-2 \le \overrightarrow{CQ} \cdot \overrightarrow{CR} \le 2$。
     \end{solution}
 \end{parts}
 \end{questions}

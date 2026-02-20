@@ -4576,6 +4576,83 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         综合 (i) 到 (iv)，满足条件的所有整数组 $(n, k)$ 为 $(p, 1)$ 和 $(p, p-1)$。
     \end{solution}
 \end{parts}
+
+\question
+设 $n$ 为自然数。求三个整数 $n^2 + 2, n^4 + 2, n^6 + 2$ 的最大公约数 $A_n$。
+
+\begin{parts}
+    \part 求解 $A_n$。
+    \begin{solution}
+        设这三个整数 $n^2 + 2, n^4 + 2, n^6 + 2$ 的公约数为 $p$。设 $a, b, c$ 为自然数，满足：
+        \begin{align*}
+            n^2 + 2 &= pa \quad \cdots \textcircled{1} \\
+            n^4 + 2 &= pb \quad \cdots \textcircled{2} \\
+            n^6 + 2 &= pc \quad \cdots \textcircled{3} \text{}
+        \end{align*}
+        由 $\textcircled{1}$ 知 $n^2 = pa - 2$。将其代入 $\textcircled{2}$：
+        \[ (pa - 2)^2 + 2 = pb \Rightarrow p^2 a^2 - 4pa + 4 + 2 = pb \]
+        整理得 $p(b + 4a - pa^2) = 6 \quad \cdots \textcircled{4}$。
+        类似地，将 $n^2 = pa - 2$ 代入 $\textcircled{3}$：
+        \[ (pa - 2)^3 + 2 = pc \Rightarrow p^3 a^3 - 6p^2 a^2 + 12pa - 8 + 2 = pc \]
+        整理得 $p(p^2 a^3 - 6pa^2 + 12a - c) = 6 \quad \cdots \textcircled{5}$。
+        由 $\textcircled{4}$ 和 $\textcircled{5}$ 可知，$p$ 必须是 $6$ 的正约数，即 $p \in \{1, 2, 3, 6\}$。
+        
+        接下来通过 $n \pmod{6}$ 的余数来确定最大公约数 $A_n$：
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $n \pmod{6}$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+        $n^2 \pmod{6}$ & 0 & 1 & 4 & 3 & 4 & 1 \\ \hline
+        $n^4 \pmod{6}$ & 0 & 1 & 4 & 3 & 4 & 1 \\ \hline
+        $n^6 \pmod{6}$ & 0 & 1 & 4 & 3 & 4 & 1 \\ \hline
+        \end{tabular}
+        \end{table}
+        
+        (i) 当 $n \equiv 2$ 或 $n \equiv 4 \pmod{6}$ 时：
+        $n^2+2 \equiv 0, n^4+2 \equiv 0, n^6+2 \equiv 0 \pmod{6}$。因此 $A_n = 6$。
+        
+        (ii) 当 $n \equiv 1$ 或 $n \equiv 5 \pmod{6}$ 时：
+        $n^2+2 \equiv 3, n^4+2 \equiv 3, n^6+2 \equiv 3 \pmod{6}$。这三个数都是 $3$ 的倍数，但不是 $2$ 的倍数。因此 $A_n = 3$。
+        
+        (iii) 当 $n \equiv 0 \pmod{6}$ 时：
+        $n^2+2 \equiv 2, n^4+2 \equiv 2, n^6+2 \equiv 2 \pmod{6}$。这三个数都是 $2$ 的倍数，但不是 $3$ 的倍数。因此 $A_n = 2$。
+        
+        (iv) 当 $n \equiv 3 \pmod{6}$ 时：
+        $n^2+2 \equiv 5, n^4+2 \equiv 5, n^6+2 \equiv 5 \pmod{6}$。这三个数既不是 $2$ 的倍数，也不是 $3$ 的倍数。因此 $A_n = 1$。
+        
+        综上所述：
+        \[ A_n = \begin{cases} 6 & (n \equiv 2, 4 \pmod{6}) \\ 3 & (n \equiv 1, 5 \pmod{6}) \\ 2 & (n \equiv 0 \pmod{6}) \\ 1 & (n \equiv 3 \pmod{6}) \end{cases} \text{} \]
+    \end{solution}
+\end{parts}
+
+\question
+证明：存在且仅有一个自然数 $p$，使得 $p, p+10, p+20$ 这三个数均为素数。
+
+\begin{solution}
+    对自然数 $p$（作为素数）的取值进行分类讨论：
+
+    \begin{enumerate}
+        \item 当 $p = 2$ 时：
+        $p+10 = 12$。由于 $12$ 不是素数，故 $p=2$ 不符合条件。
+
+        \item 当 $p = 3$ 时：
+        $p+10 = 13$，$p+20 = 23$。
+        因为 $3, 13, 23$ 均为素数，所以 $p=3$ 是一个符合条件的解。
+
+        \item 当 $p \ge 5$ 且为素数时，由于 $p$ 不能被 $3$ 整除，可将 $p$ 表示为 $3l-1$ 或 $3l+1$（其中 $l$ 为 $\ge 2$ 的自然数）：
+        \begin{itemize}
+            \item 若 $p = 3l-1$：
+            $p+10 = (3l-1) + 10 = 3l+9 = 3(l+3)$。
+            因为 $l \ge 2$，所以 $3(l+3) > 3$ 且为 $3$ 的倍数，故 $p+10$ 不是素数。
+            \item 若 $p = 3l+1$：
+            $p+20 = (3l+1) + 20 = 3l+21 = 3(l+7)$。
+            因为 $l \ge 2$，所以 $3(l+7) > 3$ 且为 $3$ 的倍数，故 $p+20$ 不是素数。
+        \end{itemize}
+    \end{enumerate}
+
+    综上所述，由 (i) $\sim$ (iii) 可知，使得 $p, p+10, p+20$ 全部为素数的自然数 $p$ 仅有 $p=3$ 一个。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -5249,6 +5326,50 @@ ii) $7^1=07, 7^2=49, 7^3=43, 7^4=01 \dots$ 模 $100$ 的周期为 $4$。
 
     综上所述，由 (i)(ii) 可知，若 $p$ 为素数，则 $p^4 + 14$ 不是素数。
 \end{solution}
+
+\question
+数列 $\{a_n\}$ 定义如下：
+$a_1 = 4, \quad a_{n+1} = a_n^2 + n(n+2) \quad (n=1, 2, 3, \cdots)$
+回答下列问题：
+
+\begin{parts}
+    \part 求 $a_{2022}$ 除以 $3$ 的余数。
+    \begin{solution}
+        对数列 $\{a_n\}$ 在 $\pmod{3}$ 意义下进行观察：
+        \begin{itemize}
+            \item $a_1 = 4 \equiv 1 \pmod{3}$
+            \item $a_2 = a_1^2 + 1 \cdot 3 \equiv 1^2 + 0 \equiv 1 \pmod{3}$
+            \item $a_3 = a_2^2 + 2 \cdot 4 \equiv 1^2 + 2 \cdot 1 = 3 \equiv 0 \pmod{3}$
+            \item $a_4 = a_3^2 + 3 \cdot 5 \equiv 0^2 + 0 \equiv 0 \pmod{3}$
+            \item $a_5 = a_4^2 + 4 \cdot 6 \equiv 0^2 + 1 \cdot 0 \equiv 0 \pmod{3}$
+            \item $a_6 = a_5^2 + 5 \cdot 7 \equiv 0^2 + 2 \cdot 1 = 2 \equiv 2 \pmod{3}$
+            \item $a_7 = a_6^2 + 6 \cdot 8 \equiv 2^2 + 0 \equiv 4 \equiv 1 \pmod{3}$
+            \item $a_8 = a_7^2 + 7 \cdot 9 \equiv 1^2 + 0 \equiv 1 \pmod{3}$
+        \end{itemize}
+        由此预测数列在 $\pmod{3}$ 下以 $6$ 为周期循环：$1, 1, 0, 0, 0, 2, \cdots$。
+        通过数学归纳法证明对于任何 $k \ge 0$：
+        \[ a_{6k+1} \equiv 1, \ a_{6k+2} \equiv 1, \ a_{6k+3} \equiv 0, \ a_{6k+4} \equiv 0, \ a_{6k+5} \equiv 0, \ a_{6k+6} \equiv 2 \pmod{3} \]
+        计算 $2022$ 的位置：$2022 = 6 \times 337 = 6 \times 336 + 6$。
+        因此，$a_{2022} \equiv a_6 \equiv 2 \pmod{3}$。
+        故 $a_{2022}$ 除以 $3$ 的余数为 $2$。
+    \end{solution}
+
+    \part 求 $a_{2022}, a_{2023}, a_{2024}$ 的最大公约数。
+    \begin{solution}
+        设 $a_{2022}, a_{2023}, a_{2024}$ 的最大公约数为 $G$。
+        根据递推式：
+        \[ a_{2023} = a_{2022}^2 + 2022 \cdot 2024 \]
+        \[ a_{2024} = a_{2023}^2 + 2023 \cdot 2025 \]
+        由于 $G$ 整除 $a_{2022}$ 和 $a_{2023}$，由第一式可知 $G$ 必整除 $2022 \cdot 2024$。
+        由于 $G$ 整除 $a_{2023}$ 和 $a_{2024}$，由第二式可知 $G$ 必整除 $2023 \cdot 2025$。
+        因此 $G$ 是 $2022 \cdot 2024$ 与 $2023 \cdot 2025$ 公约数的约数。
+        计算其最大公约数：$\gcd(2022 \cdot 2024, 2023 \cdot 2025) = 3$。
+        由此可知 $G$ 只能是 $3$ 的约数（即 $1$ 或 $3$）。
+        然而，由 (1) 知 $a_{2022} \equiv 2 \pmod{3}$，这意味着 $a_{2022}$ 不能被 $3$ 整除。
+        因此 $G \neq 3$，故 $G = 1$。
+        三个数的最大公约数为 $1$。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}
@@ -6397,6 +6518,85 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
         综合 (i) 到 (iii)，所有 $8$ 以上的整数 $n$ 都可以表示为 $n = 3x + 5y$。
     \end{solution}
 \end{parts}
+
+\question
+设 $n$ 为 $2 \le n \le 20$ 的整数，$k$ 为 $1 \le k \le n-1$ 的整数。求满足下列等式的所有整数对 $(n, k)$：
+\[ {}_{n+2}\mathrm{C}_{k+1} = 2({}_n\mathrm{C}_{k-1} + {}_n\mathrm{C}_{k+1}) \text{} \]
+
+\begin{solution}
+    利用二项式系数的阶乘定义展开等式：
+    \[ \frac{(n+2)!}{(k+1)!(n-k+1)!} = 2 \left( \frac{n!}{(k-1)!(n-k+1)!} + \frac{n!}{(k+1)!(n-k-1)!} \right) \text{} \]
+    等式两边同时除以 $n!$，并简化分母：
+    \[ \frac{(n+1)(n+2)}{k(k+1)(n-k)(n-k+1)} = \frac{2}{(n-k)(n-k+1)} + \frac{2}{k(k+1)} \text{} \]
+    两边同时乘以 $k(k+1)(n-k)(n-k+1)$ 得：
+    \[ (n+1)(n+2) = 2k(k+1) + 2(n-k)(n-k+1) \text{} \]
+    展开并整理为关于 $n, k$ 的二次方程：
+    \[ n^2 + 3n + 2 = 2k^2 + 2k + 2(n^2 - 2nk + n + k^2 - k) \text{} \]
+    \[ n^2 - (4k+1)n + (4k^2 - 2) = 0 \quad \cdots \textcircled{1} \text{} \]
+    
+    为了求解该方程，利用配方法将其变形为：
+    \[ n^2 - 4kn + 4k^2 = n + 2 \Rightarrow (n-2k)^2 = n+2 \quad \cdots (*) \text{} \]
+    由于 $2 \le n \le 20$，可知 $4 \le n+2 \le 22$。
+    因为 $(n-2k)^2$ 必须是平方数，故 $n+2$ 只能取 $4, 9, 16$。
+
+    \begin{enumerate}
+        \item 当 $n+2 = 4$ 时，$n=2$。
+        由 $(*)$ 得 $(2-2k)^2 = 4$，即 $2-2k = \pm 2$。
+        解得 $k=0$ 或 $k=2$，但这与 $1 \le k \le n-1$ ($1 \le k \le 1$) 矛盾，故不适。
+
+        \item 当 $n+2 = 9$ 时，$n=7$。
+        由 $(*)$ 得 $(7-2k)^2 = 9$，即 $7-2k = \pm 3$。
+        解得 $k=2$ 或 $k=5$。两者均满足 $1 \le k \le 6$。
+
+        \item 当 $n+2 = 16$ 时，$n=14$。
+        由 $(*)$ 得 $(14-2k)^2 = 16$，即 $14-2k = \pm 4$。
+        解得 $k=5$ 或 $k=9$。两者均满足 $1 \le k \le 13$。
+    \end{enumerate}
+
+    综上所述，满足条件的整数对 $(n, k)$ 为：
+    \[ (7, 2), (7, 5), (14, 5), (14, 9) \text{} \]
+\end{solution}
+
+\question
+求满足方程 $(x^3 - x)^2 (y^3 - y) = 86400$ 的所有整数对 $(x, y)$。
+
+\begin{solution}
+    首先，利用因式分解将左式变形为连续整数的乘积：
+    \[ \{(x-1)x(x+1)\}^2 (y-1)y(y+1) = 86400 \text{} \]
+    对常数 86400 进行素因数分解：
+    \[ 86400 = 864 \times 100 = 2^5 \cdot 3^3 \times 2^2 \cdot 5^2 = 2^7 \cdot 3^3 \cdot 5^2 \quad \cdots \textcircled{1} \text{} \]
+    
+    注意到对于任何整数 $n$，连续三个整数之积 $(n-1)n(n+1)$ 必定是 $6$ 的倍数。
+    设 $(x-1)x(x+1) = 6k$，$(y-1)y(y+1) = 6l$（其中 $k$ 为整数，$l$ 为正整数）。
+    代入 \textcircled{1} 式得：
+    \[ (6k)^2 \cdot 6l = 216 k^2 l = 86400 \Rightarrow k^2 l = 400 = 2^4 \cdot 5^2 \quad \cdots \textcircled{2} \text{} \]
+    
+    由 \textcircled{2} 可知，$k^2$ 是 $2^4 \cdot 5^2$ 的平方数约数，因此 $k^2$ 可能的值为 $\{1, 2^2, 2^4, 5^2, 2^2 \cdot 5^2, 2^4 \cdot 5^2\}$。
+    对 $k^2$ 进行分类讨论，寻找是否存在符合条件的整数 $x$ 和 $y$：
+
+    \begin{enumerate}
+        \item 当 $k^2 = 1, 2^2, 2^4, 5^2$ 时：
+        经计算所得的 $6l$ 值（如 2400, 600, 150, 96）均无法写成连续三个整数之积 $(y-1)y(y+1)$ 的形式。
+        例如 $l = 2^2 \cdot 5^2 = 100 \Rightarrow (y-1)y(y+1) = 600$。由于 $8 \cdot 9 \cdot 10 = 720$ 且 $7 \cdot 8 \cdot 9 = 504$，故无自然数解。
+
+        \item 当 $k^2 = 2^2 \cdot 5^2 = 100$ 时：
+        由 \textcircled{2} 得 $l = 2^2 = 4$，则 $(y-1)y(y+1) = 6 \cdot 4 = 24$。
+        由此解得 $y = 3$（此时 $2 \cdot 3 \cdot 4 = 24$）。
+        同时，$k = \pm 10 \Rightarrow (x-1)x(x+1) = \pm 60$。
+        解得 $x = \pm 4$（此时 $3 \cdot 4 \cdot 5 = 60$ 或 $(-5) \cdot (-4) \cdot (-3) = -60$）。
+        得到整数对：$(\pm 4, 3)$。
+
+        \item 当 $k^2 = 2^4 \cdot 5^2 = 400$ 时：
+        由 \textcircled{2} 得 $l = 1$，则 $(y-1)y(y+1) = 6 \cdot 1 = 6$。
+        由此解得 $y = 2$。
+        同时，$k = \pm 20 \Rightarrow (x-1)x(x+1) = \pm 120$。
+        解得 $x = \pm 5$（此时 $4 \cdot 5 \cdot 6 = 120$）。
+        得到整数对：$(\pm 5, 2)$。
+    \end{enumerate}
+
+    综上所述，满足方程的整数对 $(x, y)$ 为：
+    \[ (x, y) = (\pm 4, 3), (\pm 5, 2) \text{} \]
+\end{solution}
 \end{questions}
 \pagebreak
 \begin{center}
@@ -7896,6 +8096,42 @@ A. 252 \quad B. 132 \quad C. 126 \quad D. 51 \quad E.
 \]
 对应选项 (A)。
 \end{solution}
+
+\question
+现有 9 张卡片，其中写有数字 1 的卡片 2 张，写有数字 2 的卡片 3 张，写有数字 3 的卡片 4 张。将这 9 张卡片排成一列，回答下列问题：
+
+\begin{parts}
+    \part 共有多少种不同的排列方式？
+    \begin{solution}
+        这是相同元素排列问题，总数为：
+        \[ \frac{9!}{2! \cdot 3! \cdot 4!} = \frac{362880}{2 \cdot 6 \cdot 24} = 1260 \text{（种）} \]
+    \end{solution}
+
+    \part 数字 3 的卡片互不相邻的排列方式有多少种？
+    \begin{solution}
+        首先排列数字 1 和 2 的共 5 张卡片，排列数为：
+        \[ \frac{5!}{2! \cdot 3!} = 10 \text{（种）} \]
+        这 5 张卡片形成 6 个空位（包含两端）。从中选择 4 个位置插入数字 3 的卡片：
+        \[ 10 \times {}_6\mathrm{C}_4 = 10 \times 15 = 150 \text{（种）} \]
+    \end{solution}
+
+    \part 相同数字的卡片均互不相邻的排列方式有多少种？
+    \begin{solution}
+        先安排数字 3 的 4 张卡片，它们之间产生 5 个位置（a, b, c, d, e）：
+        \[ \land \, 3 \, \land \, 3 \, \land \, 3 \, \land \, 3 \, \land \]
+        为了使数字 3 不相邻，必须在中间的三个空位（b, c, d）中至少各放入一张卡片。
+        
+        
+
+        根据两端是否放置数字 3 进行分类讨论：
+        \begin{itemize}
+            \item \textbf{(i) 两端均为 3}：即位置 b, c, d 必须填充。若用 $\{1, 1, 2, 2, 2\}$ 填充，需保证 1 不相邻且 2 不相邻。经穷举（如 12122 等形态）共有 21 种。
+            \item \textbf{(ii) 仅一端为 3}：同理讨论，共有 $24 + 24 = 48$ 种。
+            \item \textbf{(iii) 两端均不为 3}：此时 5 张卡片分布在 b, c, d 中，共有 10 种。
+        \end{itemize}
+        总计：$21 + 24 + 24 + 10 = 79$ 种。
+    \end{solution}
+\end{parts}
     \question 令 $a_n$ 为第 $n$ 小的各位数字之和为 $3$ 的正整数。例如 $a_1=3, a_2=12, a_3=21, a_4=30$。求 $a_{2012}$ 有多少位数。  
     \begin{solution}
         若一个数最多有 $d$ 位,那么其各位和为 $3$ 的这样的数的个数为

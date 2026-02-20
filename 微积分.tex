@@ -5668,6 +5668,43 @@ $x$ 轴与 $C_2$ 围成的总面积为
     \]
     \end{solution}
 \end{parts}
+
+\question
+设 $a$ 为满足 $0 < a < 9$ 的实数。在 $xy$ 平面上，定义曲线 $C$ 与直线 $l$ 如下：
+\[ C: y = |(x-3)(x+3)|, \quad l: y = a \text{} \]
+在由曲线 $C$ 与直线 $l$ 围成的图形中，设 $y \ge a$ 区域部分的面积为 $S_1$，$y \le a$ 区域部分的面积为 $S_2$。求使得 $S_1 = S_2$ 成立的 $a$ 的值。
+
+\begin{solution}
+    首先分析曲线 $C: y = |x^2 - 9|$：
+    \begin{itemize}
+        \item 当 $x \le -3$ 或 $3 \le x$ 时，$y = x^2 - 9$ \quad $\cdots$ \textcircled{1}
+        \item 当 $-3 < x < 3$ 时，$y = -x^2 + 9$ \quad $\cdots$ \textcircled{2}
+    \end{itemize}
+    求曲线 $C$ 与直线 $l: y = a$ ($0 < a < 9$) 的交点：
+    \begin{itemize}
+        \item 由 \textcircled{1} \textcircled{3} 得 $x^2 - 9 = a \Rightarrow x = \pm\sqrt{a+9}$。
+        \item 由 \textcircled{2} \textcircled{3} 得 $-x^2 + 9 = a \Rightarrow x = \pm\sqrt{9-a}$。
+    \end{itemize}
+    设 $\alpha = \sqrt{a+9}, \beta = \sqrt{9-a}$。
+        
+    设曲线 \textcircled{2} 与 $x$ 轴围成的面积为 $S_3$。由 $S_1 = S_2$ 可推导得 $S_1 + S_3 = S_2 + S_3$。
+    其中，$S_1 + S_3$ 为曲线 \textcircled{2} 与 $x$ 轴围成的总面积：
+    \[ S_1 + S_3 = \int_{-3}^{3} (-x^2 + 9)dx = -\int_{-3}^{3} (x-3)(x+3)dx = \frac{1}{6}(3+3)^3 = 36 \text{} \]
+    
+    而 $S_2 + S_3$ 对应图中由 $l$ 与 $x$ 轴围成的长方形减去曲线 \textcircled{1} 对应部分面积的两倍：
+    由 $\alpha^2 = a+9$ 得 $a = \alpha^2 - 9$。
+    \begin{align*}
+        S_2 + S_3 &= 2\alpha \cdot a - 2\int_{3}^{\alpha} (x^2 - 9)dx \\
+        &= 2\alpha(\alpha^2 - 9) - 2\left[ \frac{x^3}{3} - 9x \right]_{3}^{\alpha} \\
+        &= 2\alpha^3 - 18\alpha - \frac{2}{3}(\alpha^3 - 27) + 18(\alpha - 3) = \frac{4}{3}\alpha^3 - 36 \text{}
+    \end{align*}
+    根据 $S_1 + S_3 = S_2 + S_3$：
+    \[ 36 = \frac{4}{3}\alpha^3 - 36 \Rightarrow \frac{4}{3}\alpha^3 = 72 \Rightarrow \alpha^3 = 54 \text{} \]
+    解得 $\alpha = 3\sqrt[3]{2}$。
+    代入 $a = \alpha^2 - 9$ 得：
+    \[ a = (3\sqrt[3]{2})^2 - 9 = 9\sqrt[3]{4} - 9 \text{} \]
+    故所求 $a$ 的值为 $9\sqrt[3]{4} - 9$。
+\end{solution}
 \end{questions}
 
 \pagebreak
