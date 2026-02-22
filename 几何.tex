@@ -4829,6 +4829,75 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
         $y = \frac{\pi}{3} - \frac{\pi}{6} = \frac{\pi}{6}$。
     \end{solution}
 \end{parts}
+
+\question
+在三边长度之和为 2 的三角形 $ABC$ 中，设边 $BC$ 的长度为 $a$，边 $CA$ 的长度为 $b$。将三角形 $ABC$ 绕边 $BC$ 旋转一周所得旋转体的体积记为 $V$。回答以下问题。
+\begin{parts}
+    \part 固定 $a$ 的值并使 $b$ 的值变化时，$V$ 最大的情况是三角形 $ABC$ 是以边 $BC$ 为底边的等腰三角形。试证明之。
+    \begin{solution}
+    在 $\triangle ABC$ 中，设 $BC = a, CA = b, AB = c$。由 $a + b + c = 2$ 可知 $c = 2 - a - b$。
+    三角形形成条件为 $|b - c| < a < b + c$，代入得 $|a + 2b - 2| < a < 2 - a$。
+    由此可得 $0 < a < 1$ 且 $1 - a < b < 1 \cdots (*)$。
+    固定 $a$ ($0 < a < 1$)，当 $b$ 变化时，$b + c = 2 - a$ 为定值，故点 $A$ 的轨迹是以 $B, C$ 为焦点的椭圆。
+    设椭圆长轴长度为 $2p$，则 $2p = 2 - a$，即 $p = 1 - \frac{a}{2}$。
+    短轴长度为 $2q$，则 $q = \sqrt{\left(1 - \frac{a}{2}\right)^2 - \left(\frac{a}{2}\right)^2} = \sqrt{1 - a}$。
+    设点 $A$ 到直线 $BC$ 的距离为 $h$。旋转体体积 $V = \frac{1}{3}\pi h^2 a$。
+    $V$ 最大即 $h$ 最大。当点 $A$ 位于椭圆短轴顶点时，$h = q$ 最大，此时 $AB = AC$，即 $\triangle ABC$ 是以 $BC$ 为底的等腰三角形。
+    此时 $b = 1 - \frac{a}{2}$，满足条件 $(*)$。
+    \end{solution}
+
+    \part 当 $a, b$ 同时变化时，求 $V$ 的最大值以及给出该最大值的 $a, b$ 的值。
+    \begin{solution}
+    由 (1) 知，对于固定的 $a$，$V$ 的最大值为：
+    \[
+    V = \frac{1}{3}\pi q^2 a = \frac{1}{3}\pi (1 - a)a = \frac{1}{3}\pi (-a^2 + a) = \frac{1}{3}\pi \left\{ -\left( a - \frac{1}{2} \right)^2 + \frac{1}{4} \right\}
+    \]
+    当 $a = \frac{1}{2}$ 时，$V$ 取得最大值。
+    此时 $b = 1 - \frac{a}{2} = 1 - \frac{1}{4} = \frac{3}{4}$。
+    最大值为：
+    \[
+    V = \frac{1}{3}\pi \cdot \frac{1}{4} = \frac{\pi}{12}
+    \]
+    因此，当 $a = \frac{1}{2}, b = \frac{3}{4}$ 时，$V$ 的最大值为 $\frac{\pi}{12}$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $0 < r < 1$，半径为 $1$ 的圆 $C_1$ 和半径为 $r$ 的圆 $C_2$ 的中心重合。在 $C_1$ 内部且 $C_2$ 外部尽可能多地画圆。但是，任意两个圆共有的点个数为 $1$ 或以下。设所画圆的周长总和为 $f(r)$。求极限 $\lim_{r \to 1-0} f(r)$。
+\begin{solution}
+设圆 $C$ 同时与半径为 $1$ 的圆 $C_1$ 内切，且与半径为 $r$ ($0 < r < 1$) 的圆 $C_2$ 外切。
+则圆 $C$ 的直径为 $1 - r$，半径为 $\frac{1 - r}{2}$。
+圆 $C$ 的圆心到重合圆心的距离为 $r + \frac{1 - r}{2} = \frac{1 + r}{2}$。
+设相邻两个圆 $C$ 的圆心分别为 $A, B$，且 $\angle AOB = \theta$。
+为了能画出 $n$ 个圆，必须满足 $n\theta \le 2\pi$ 且 $(n+1)\theta > 2\pi$，即：
+\[
+\frac{2\pi}{\theta} - 1 < n \le \frac{2\pi}{\theta} \cdots (1)
+\]
+在 $\triangle OAB$ 中，由 $OA = OB = \frac{1+r}{2}$ 及圆 $C$ 的半径为 $\frac{1-r}{2}$ 可知：
+\[
+\sin \frac{\theta}{2} = \frac{\frac{1-r}{2}}{\frac{1+r}{2}} = \frac{1-r}{1+r} \cdots (2)
+\]
+所画圆的周长总和 $f(r)$ 为：
+\[
+f(r) = 2\pi \cdot \frac{1-r}{2} \cdot n = n\pi(1-r) \cdots (3)
+\]
+由 (2) 可得 $r = \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}$。代入 (3) 得：
+\[
+f(r) = n\pi \left( 1 - \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \right) = 2n\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}
+\]
+由 (1) 可得：
+\[
+2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \left( \frac{2\pi}{\theta} - 1 \right) < f(r) \le 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} \cdots (4)
+\]
+当 $r \to 1-0$ 时，由 (2) 知 $\theta \to 0$。利用极限 $\lim_{x \to 0} \frac{\sin x}{x} = 1$：
+\[
+\lim_{\theta \to 0} 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} = \lim_{\theta \to 0} 2\pi \cdot \frac{\frac{\sin \frac{\theta}{2}}{\frac{\theta}{2}} \cdot \frac{1}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{1} = 2\pi \cdot \frac{1 \cdot \frac{1}{2}}{1} \cdot 2\pi = 2\pi^2
+\]
+同理，左侧极限亦为 $2\pi^2$。由夹逼定理得：
+\[
+\lim_{r \to 1-0} f(r) = 2\pi^2
+\]
+\end{solution}
 \end{questions}
 
 \pagebreak
@@ -15042,6 +15111,105 @@ P_n Q_n &= \sqrt{\left( a_n + \frac{1}{4a_n} - a_n \right)^2 + \left( a_n - \fra
 \]
 。
 \end{solution}
+\end{parts}
+
+\question
+双曲线 $x^2 - y^2 = 1$ 的 $x > 0$ 部分为 $C_1$，$x < 0$ 部分为 $C_2$。回答以下问题。
+\begin{parts}
+    \part 直线 $ax - by = 1$ 与 $C_1$、$C_2$ 两者各有一个交点，求 $a, b$ 满足的条件。
+    \begin{solution}
+    双曲线方程为 $x^2 - y^2 = 1 \cdots (1)$。直线方程为 $ax - by = 1 \cdots (2)$。
+    若 $b = 0$，则 (2) 变为 $x = \frac{1}{a}$。此时直线与 $C_1, C_2$ 两者不会同时相交，故 $b \neq 0$。
+    由 (2) 得 $y = \frac{1}{b}(ax - 1) \cdots (3)$。联立 (1) 与 (3)：
+    \[
+    x^2 - \frac{1}{b^2}(ax - 1)^2 = 1
+    \]
+    整理得：
+    \[
+    (b^2 - a^2)x^2 + 2ax - 1 - b^2 = 0 \cdots (4)
+    \]
+    设 $f(x) = (b^2 - a^2)x^2 + 2ax - 1 - b^2$。方程 (4) 在 $x \le -1$ 和 $1 \le x$ 各有一个解。
+    注意到 $f(0) = -1 - b^2 < 0$，条件为 $b^2 - a^2 > 0$ 且满足 $f(-1) \le 0, f(1) \le 0$。
+    \[
+    f(-1) = -(a + 1)^2 \le 0, \quad f(1) = -(a - 1)^2 \le 0
+    \]
+    上述不等式恒成立。因此，$a, b$ 满足的条件为 $b^2 - a^2 > 0$。
+    \end{solution}
+
+    \part 设 $a, b$ 满足 (1) 中的条件。取点 $A(a, b)$，直线 $ax - by = 1$ 与 $C_1, C_2$ 的交点分别为 $P, Q$。用 $a, b$ 表示 $\triangle APQ$ 的面积 $S$。
+    \begin{solution}
+    方程 (4) 的解为：
+    \[
+    x = \frac{-a \pm \sqrt{a^2 + (b^2 - a^2)(1 + b^2)}}{b^2 - a^2} = \frac{-a \pm |b|\sqrt{b^2 - a^2 + 1}}{b^2 - a^2}
+    \]
+    设交点坐标为 $P(\beta, \frac{a\beta-1}{b})$，$Q(\alpha, \frac{a\alpha-1}{b})$，则：
+    \[
+    PQ = \sqrt{(\beta - \alpha)^2 + \frac{a^2}{b^2}(\beta - \alpha)^2} = \frac{\beta - \alpha}{|b|}\sqrt{a^2 + b^2} = \frac{2\sqrt{b^2 - a^2 + 1}}{b^2 - a^2}\sqrt{a^2 + b^2}
+    \]
+    点 $A(a, b)$ 到直线 $ax - by - 1 = 0$ 的距离 $h$ 为：
+    \[
+    h = \frac{|a^2 - b^2 - 1|}{\sqrt{a^2 + b^2}} = \frac{b^2 - a^2 + 1}{\sqrt{a^2 + b^2}}
+    \]
+    因此，面积 $S$ 为：
+    \[
+    S = \frac{1}{2} PQ \cdot h = \frac{\sqrt{b^2 - a^2 + 1}}{b^2 - a^2} \cdot (b^2 - a^2 + 1) = \frac{\left(b^2 - a^2 + 1\right)^{\frac{3}{2}}}{b^2 - a^2}
+    \]
+    \end{solution}
+
+    \part 求面积 $S$ 的最小值。并求出取得最小值时 $a, b$ 满足的条件。
+    \begin{solution}
+    设 $t = b^2 - a^2 > 0$，则 $S = \frac{(t + 1)^{\frac{3}{2}}}{t}$。
+    \[
+    S' = \frac{\frac{3}{2}(t + 1)^{\frac{1}{2}} \cdot t - (t + 1)^{\frac{3}{2}}}{t^2} = \frac{(t + 1)^{\frac{1}{2}}(t - 2)}{2t^2}
+    \]
+    由增减表可知，当 $t = 2$ 时 $S$ 取得最小值。
+    最小值：
+    \[
+    S = \frac{(2 + 1)^{\frac{3}{2}}}{2} = \frac{3\sqrt{3}}{2}
+    \]
+    此时条件为 $b^2 - a^2 = 2$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $a$ 为正数。在 $xy$ 平面上，取点 $A(a, 0)$，设 $C_1$ 为双曲线 $x^2 - 4y^2 = -4$，$C_2$ 为双曲线 $x^2 - 4y^2 = 4$。回答以下问题。
+\begin{parts}
+    \part 设点 $P$ 在 $C_1$ 上。求使 $AP$ 最小的点 $P$ 及该最小值。
+    \begin{solution}
+    对于 $A(a, 0) (a > 0)$，$C_1: x^2 - 4y^2 = -4$。设 $P\left(t, \pm \sqrt{\frac{t^2}{4} + 1}\right)$，则：
+    \[
+    AP^2 = (t - a)^2 + \frac{t^2}{4} + 1 = \frac{5}{4}t^2 - 2at + a^2 + 1 = \frac{5}{4}\left(t - \frac{4}{5}a\right)^2 + \frac{1}{5}a^2 + 1
+    \]
+    当 $t = \frac{4}{5}a$ 时，$AP$ 取得最小值 $\sqrt{\frac{1}{5}a^2 + 1}$。
+    此时点 $P$ 为 $\left(\frac{4}{5}a, \pm \sqrt{\frac{4}{25}a^2 + 1}\right)$。
+    \end{solution}
+
+    \part 设点 $P$ 在 $C_2$ 上。求使 $AP$ 最小的点 $P$ 及该最小值。
+    \begin{solution}
+    $C_2: x^2 - 4y^2 = 4$。设 $P\left(t, \pm \sqrt{\frac{t^2}{4} - 1}\right)$，其中 $|t| \ge 2$。
+    \[
+    AP^2 = (t - a)^2 + \frac{t^2}{4} - 1 = \frac{5}{4}\left(t - \frac{4}{5}a\right)^2 + \frac{1}{5}a^2 - 1
+    \]
+    (i) 当 $\frac{4}{5}a \ge 2$（即 $a \ge \frac{5}{2}$）时：
+    当 $t = \frac{4}{5}a$ 时，$AP^2$ 最小，最小值 $AP = \sqrt{\frac{1}{5}a^2 - 1}$。此时 $P\left(\frac{4}{5}a, \pm \sqrt{\frac{4}{25}a^2 - 1}\right)$。
+    (ii) 当 $\frac{4}{5}a < 2$（即 $0 < a < \frac{5}{2}$）时：
+    当 $t = 2$ 时，$AP^2$ 最小，最小值 $AP = \sqrt{(2 - a)^2} = |2 - a|$。此时 $P(2, 0)$。
+    \end{solution}
+
+    \part 设点 $P$ 在 $C_1$ 或 $C_2$ 上。求使点 $(2, 0)$ 为给出 $AP$ 最小值的点 $P$ 的 $a$ 的值范围。
+    \begin{solution}
+    设 $A$ 到 $C_1$ 距离最小值为 $m_1(a) = \sqrt{\frac{1}{5}a^2 + 1}$。
+    设 $A$ 到 $C_2$ 距离最小值为 $m_2(a)$，由 (2) 知：
+    $m_2(a) = \sqrt{\frac{1}{5}a^2 - 1}$（$a \ge \frac{5}{2}$），$m_2(a) = |2 - a|$（$0 < a < \frac{5}{2}$）。
+    点 $P(2, 0)$ 给出最小值的条件是 $m_2(a) \le m_1(a)$ 且 $P(2, 0)$ 是 $m_2(a)$ 的取值点。
+    由 (2) 知 $P(2, 0)$ 成为最小点的条件是 $0 < a < \frac{5}{2}$。在此范围内解 $m_2(a) \le m_1(a)$：
+    \[
+    |2 - a| \le \sqrt{\frac{1}{5}a^2 + 1}
+    \]
+    平方得 $4 - 4a + a^2 \le \frac{1}{5}a^2 + 1$，整理得 $4a^2 - 20a + 15 \le 0$。
+    解得 $\frac{5 - \sqrt{10}}{2} \le a \le \frac{5 + \sqrt{10}}{2}$。
+    结合 $0 < a < \frac{5}{2}$，得 $\frac{5 - \sqrt{10}}{2} \le a \le \frac{5}{2}$。
+    \end{solution}
 \end{parts}
 
 \end{questions}

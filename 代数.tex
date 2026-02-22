@@ -12000,6 +12000,57 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
         \]
     \end{solution}
 \end{parts}
+
+\question
+设 $a$ 为实数，数列 $\{x_n\}$ 由以下递推式定义：
+\[
+x_1 = a, \quad x_{n+1} = x_n + x_n^2 \quad (n = 1, 2, 3, \cdots)
+\]
+\begin{parts}
+\part 当 $a > 0$ 时，证明数列 $\{x_n\}$ 发散。
+\begin{solution}
+对于由 $x_1 = a, x_{n+1} = x_n + x_n^2 \cdots (1)$ 定义的数列 $\{x_n\}$，当 $a > 0$ 时，
+\[
+x_{n+1} - x_n = x_n^2 \ge 0
+\]
+由此可知 $\{x_n\}$ 单调递增，且 $x_n \ge x_1 = a > 0$。由 (1) 得，
+\[
+x_{n+1} \ge x_n + a^2
+\]
+因此，$x_n \ge x_1 + (n - 1) \cdot a^2 = a^2 n + a - a^2$。由于当 $n \to \infty$ 时该式趋于无穷，故 $\lim_{n \to \infty} x_n = \infty$。
+\end{solution}
+
+\part 当 $-1 < a < 0$ 时，证明对于所有正整数 $n$，$-1 < x_n < 0$ 均成立。
+\begin{solution}
+使用数学归纳法证明当 $-1 < a < 0$ 时，$-1 < x_n < 0$ 成立。
+(i) 当 $n = 1$ 时，$x_1 = a$，由 $-1 < a < 0$ 知结论成立。
+(ii) 假设 $n = k$ 时 $-1 < x_k < 0$ 成立。由 (1) 得，
+\[
+x_{k+1} = x_k + x_k^2 = \left( x_k + \frac{1}{2} \right)^2 - \frac{1}{4}
+\]
+由 $-1 < x_k < 0$ 可知 $-\frac{1}{4} \le x_{k+1} < 0$，故 $-1 < x_{k+1} < 0$。
+因此，$n = k + 1$ 时也成立。
+由 (i)(ii) 可知，对于所有正整数 $n$，$-1 < x_n < 0$ 均成立。
+\end{solution}
+
+\part 当 $-1 < a < 0$ 时，求数列 $\{x_n\}$ 的极限。
+\begin{solution}
+当 $-1 < a < 0$ 时，由 (2) 知 $-1 < x_n < 0$。由 (1) 得，
+\[
+\frac{1}{x_{n+1}} = \frac{1}{x_n + x_n^2} = \frac{1}{x_n(x_n + 1)} = \frac{1}{x_n} - \frac{1}{x_n + 1}
+\]
+由此得 $-\frac{1}{x_{n+1}} = -\frac{1}{x_n} + \frac{1}{x_n + 1}$。令 $y_n = -\frac{1}{x_n}$，则
+\[
+y_{n+1} = y_n + \frac{1}{x_n + 1} \cdots (2)
+\]
+由于 $0 < x_n + 1 < 1$，故 $\frac{1}{x_n + 1} > 1$。由 (2) 得，
+\[
+y_{n+1} > y_n + 1
+\]
+由于 $y_1 = -\frac{1}{a}$，当 $n \ge 2$ 时，$y_n > y_1 + (n - 1) \cdot 1 = n - \frac{1}{a} - 1$。
+因此 $\lim_{n \to \infty} y_n = \infty$，故 $\lim_{n \to \infty} x_n = \lim_{n \to \infty} \left( -\frac{1}{y_n} \right) = 0$。
+\end{solution}
+\end{parts}
 %数列
     \question 证明由正实数组成的数列\(a_0, a_1, a_2, \ldots, a_n\) 是等比数列当且仅当
     \[
@@ -20858,6 +20909,209 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
         这意味着 $PS \perp PQ$ 且 $PS = PQ$。
         由于已知其为平行四边形且相邻两边垂直相等，故 $PQRS$ 是正方形。
     \end{solution}
+\end{parts}
+
+\question
+$k$ 是正实数。关于 $z$ 的二次方程 $z^2 - 2kz + 1 = 0$ 有虚数解，设虚部为正的虚数解为 $\alpha$。回答下列问题。
+\begin{parts}
+\part 求 $k$ 的取值范围。此外，求 $|\alpha|$ 的值。
+\begin{solution}
+二次方程 $z^2 - 2kz + 1 = 0 \ (k > 0) \cdots (1)$ 有虚数解 $\alpha, \bar{\alpha}$，判别式为
+\[
+D/4 = k^2 - 1 = (k + 1)(k - 1) < 0
+\]
+由于 $k > 0$，所以 $0 < k < 1$。
+又根据根与系数的关系，$\alpha \bar{\alpha} = 1$，即 $|\alpha|^2 = 1$，得 $|\alpha| = 1$。
+\end{solution}
+
+\part 求 $\cos \frac{5}{12}\pi$ 的值。
+\begin{solution}
+\[
+\cos \frac{5}{12}\pi = \cos \left( \frac{\pi}{4} + \frac{\pi}{6} \right) = \cos \frac{\pi}{4} \cos \frac{\pi}{6} - \sin \frac{\pi}{4} \sin \frac{\pi}{6} = \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} - \sqrt{2}}{4}
+\]
+\end{solution}
+
+\part 在复数平面上，当 $\alpha^3$ 位于第 3 象限，且 $\alpha^6$ 位于第 1 象限时，求 $\alpha$ 的辐角 $\theta \ (0 \le \theta < 2\pi)$ 和 $k$ 的取值范围。注意，坐标轴上的点不属于任何象限。
+\begin{solution}
+设 $\arg \alpha = \theta \ (0 \le \theta < 2\pi)$。由 (1) 知 $\alpha = \cos \theta + i \sin \theta$。
+首先，因为 $\alpha$ 的虚部为正，所以 $0 < \theta < \pi \cdots (2)$。
+此外，$\arg \alpha^3 = 3\theta$。由 (2) 得 $0 < 3\theta < 3\pi$。由于 $\alpha^3$ 在第 3 象限，
+\[
+\pi < 3\theta < \frac{3}{2}\pi, \quad \frac{\pi}{3} < \theta < \frac{\pi}{2} \cdots (3)
+\]
+再者，$\arg \alpha^6 = 6\theta$。由 (3) 得 $2\pi < 6\theta < 3\pi$。由于 $\alpha^6$ 在第 1 象限，
+\[
+2\pi < 6\theta < \frac{5}{2}\pi, \quad \frac{\pi}{3} < \theta < \frac{5}{12}\pi \cdots (4)
+\]
+其次，根据根与系数的关系，$\alpha + \bar{\alpha} = 2k$，即 $k = \frac{\alpha + \bar{\alpha}}{2}$。由于 $k$ 是 $\alpha$ 的实部，所以 $k = \cos \theta$。
+由 (4) 和 (2) 的结果得
+\[
+\cos \frac{5}{12}\pi < k < \cos \frac{\pi}{3}, \quad \frac{\sqrt{6} - \sqrt{2}}{4} < k < \frac{1}{2}
+\]
+\end{solution}
+
+\part 当 $\alpha$ 在 (3) 中求得的范围内时，求 $|1 - \alpha^5|$ 的取值范围。
+\begin{solution}
+由于 $1 - \alpha^5 = 1 - (\cos 5\theta + i \sin 5\theta) = (1 - \cos 5\theta) - i \sin 5\theta$，所以
+\[
+|1 - \alpha^5|^2 = (1 - \cos 5\theta)^2 + (-\sin 5\theta)^2 = 2 - 2\cos 5\theta = 2(1 - \cos 5\theta)
+\]
+由 (4) 知 $\frac{5}{3}\pi < 5\theta < \frac{25}{12}\pi$。
+由于 $\cos \frac{5}{3}\pi = \cos \frac{\pi}{3} < \cos \frac{\pi}{12} = \cos \frac{25}{12}\pi$，所以
+\[
+\cos \frac{5}{3}\pi < \cos 5\theta \le \cos 2\pi, \quad \frac{1}{2} < \cos 5\theta \le 1
+\]
+因此，$0 \le |1 - \alpha^5|^2 < 1$，得 $0 \le |1 - \alpha^5| < 1$。
+\end{solution}
+\end{parts}
+
+\question
+设 $a, b$ 为复数，$c$ 为非纯虚数的复数，$i$ 为虚数单位。在复数平面上，点 $z$ 在整个虚轴上移动时，由 $w = \frac{az + b}{cz + 1}$ 定义的点 $w$ 的轨迹为 $C$。假设满足以下三个条件：
+(ア) 当 $z = i$ 时 $w = i$，当 $z = -i$ 时 $w = -i$。
+(イ) $C$ 包含在单位圆周上。
+(ウ) 点 $-1$ 不属于 $C$。
+求 $a, b, c$ 的值。并求出 $C$，在复数平面上画出图形。
+\begin{solution}
+$w = \frac{az + b}{cz + 1} \cdots (1)$。
+由条件 (ア)，$z = i$ 时 $w = i$ 得到 $i = \frac{ai + b}{ci + 1}$，即 $-c + i = ai + b \cdots (2)$。
+此外，$z = -i$ 时 $w = -i$ 得到 $-i = \frac{-ai + b}{-ci + 1}$，即 $-c - i = -ai + b \cdots (3)$。
+由 $(2) + (3)$ 得 $b = -c$，由 $(2) - (3)$ 得 $a = 1$。因此 (1) 变为
+\[
+w = \frac{z - c}{cz + 1} \cdots (4)
+\]
+其次，由条件 (イ) 知 $|w| = 1$，所以由 (4) 得 $\left| \frac{z - c}{cz + 1} \right| = 1$，即 $|z - c| = |cz + 1| \cdots (5)$。
+设 $k$ 为任意实数，令 $z = ki$，则 (5) 为 $|ki - c| = |kci + 1|$。
+\[
+(ki - c)(-ki - \bar{c}) = (kci + 1)(-k\bar{c}i + 1)
+\]
+\[
+k^2 - k\bar{c}i + kci + |c|^2 = k^2|c|^2 + kci - k\bar{c}i + 1, \quad (|c|^2 - 1)k^2 - (|c|^2 - 1) = 0
+\]
+上式对任意实数 $k$ 成立，故 $|c|^2 - 1 = 0$，即 $c\bar{c} = 1 \cdots (6)$。
+又条件 (ウ) 是“不存在虚轴上的 $z$ 使得 $w = -1$”。若 $w = -1$，由 (4) 得 $\frac{z - c}{cz + 1} = -1$，即 $z - c = -cz - 1$。
+\[
+(c + 1)z = c - 1 \cdots (7)
+\]
+(i) 当 $c = -1$ 时，(7) 不成立，$w = -1$ 的虚轴上的 $z$ 不存在。
+(ii) 当 $c \neq -1$ 时，由 (7) 得 $z = \frac{c - 1}{c + 1}$。由 (6) 知 $\bar{c} = \frac{1}{c}$，则
+\[
+\bar{z} = \frac{\bar{c} - 1}{\bar{c} + 1} = \frac{\frac{1}{c} - 1}{\frac{1}{c} + 1} = \frac{1 - c}{1 + c} = -z
+\]
+因此，满足 (7) 且 $w = -1$ 的纯虚数 $z$ 是存在的。
+由 (i)(ii) 知，满足条件 (ウ) 的 $c$ 为 $c = -1$。
+因此 $a = 1, b = 1, c = -1$，(1) 为 $w = \frac{z + 1}{-z + 1}$。
+此时，令 $k$ 为任意实数，$z = ki$，则
+\[
+w = \frac{ki + 1}{-ki + 1} = \frac{(1 + ki)^2}{1 + k^2} = \frac{1 - k^2}{1 + k^2} + \frac{2k}{1 + k^2}i
+\]
+设 $w = x + yi \ (x, y \text{ 为实数})$，则
+\[
+x = \frac{1 - k^2}{1 + k^2} \cdots (8), \quad y = \frac{2k}{1 + k^2} \cdots (9)
+\]
+由于 $k$ 为任意实数，可令 $k = \tan \theta \ \left( -\frac{\pi}{2} < \theta < \frac{\pi}{2} \right)$。由 (8)(9) 得
+\[
+x = \frac{1 - \tan^2 \theta}{1 + \tan^2 \theta} = \frac{\cos^2 \theta - \sin^2 \theta}{\cos^2 \theta + \sin^2 \theta} = \cos 2\theta
+\]
+\[
+y = \frac{2 \tan \theta}{1 + \tan^2 \theta} = \frac{2 \cos \theta \sin \theta}{\cos^2 \theta + \sin^2 \theta} = \sin 2\theta
+\]
+因此 $w = \cos 2\theta + i \sin 2\theta$，点 $w$ 的轨迹 $C$ 是以原点 $O$ 为中心、半径为 1 的圆。但由于 $-\pi < 2\theta < \pi$，需排除点 $-1$。
+\end{solution}
+
+\question
+设 $i$ 为虚数单位。对于复数 $z$，其共轭复数记为 $\bar{z}$。在复数平面上，将满足以下等式的点 $z$ 的集合构成的图形记为 $C$。
+\[ z\bar{z} + (1+3i)z + (1-3i)\bar{z} + 9 = 0 \]
+回答下列问题。
+\begin{parts}
+\part 在复数平面上画出图形 $C$。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image315.png}
+    \end{figure}
+    \fi
+\begin{solution}
+令 $\gamma = 1-3i$，则 $\bar{\gamma} = 1+3i$ 且 $\gamma\bar{\gamma} = 1^2 + (-3)^2 = 10$。
+原式可变形为：
+\[ z\bar{z} + \bar{\gamma}z + \gamma\bar{z} + \gamma\bar{\gamma} - 1 = 0 \implies (z+\gamma)(\bar{z}+\bar{\gamma}) = 1 \implies |z+\gamma|^2 = 1 \]
+由此得 $|z - (-1+3i)| = 1$。
+因此，点 $z$ 的轨迹是以 $-1+3i$ 为中心、半径为 1 的圆。
+\end{solution}
+
+\part 对于复数 $w$，令 $\alpha = w+\bar{w}-1, \beta = w+\bar{w}+1$。将复数平面上对应 $w, \alpha, \beta$ 的点分别记为 $P, A, B$。当点 $P$ 在 $C$ 上运动时，求 $\triangle PAB$ 面积最大时的复数 $w$，以及此时 $\triangle PAB$ 外接圆的中心和半径。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image316.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $w = x+yi$，则 $\alpha = (x+yi)+(x-yi)-1 = 2x-1, \beta = 2x+1$。
+由此可知，点 $A(\alpha)$ 和 $B(\beta)$ 都在实轴上，且线段 $AB$ 的长度为 $AB = |\beta - \alpha| = 2$。
+$\triangle PAB$ 的面积最大时，点 $P$ 到实轴的距离（即 $|y|$）应最大。
+由 (1) 知 $z$（即 $w$）在以 $-1+3i$ 为中心、半径为 1 的圆上，故当 $w = -1+4i$ 时，其到实轴的距离最大。
+此时 $\alpha = 2(-1)-1 = -3, \beta = 2(-1)+1 = -1$，$\triangle PAB$ 是以 $\angle B = 90^\circ$ 的直角三角形。
+外接圆中心为 $PA$ 的中点：$\frac{1}{2}\{(-1+4i) + (-3)\} = -2+2i$。
+半径为 $|(-2+2i) - (-3)| = |1+2i| = \sqrt{1^2+2^2} = \sqrt{5}$。
+\end{solution}
+\end{parts}
+
+\question
+设 $k$ 为实数，$z$ 为复数（且 $z \neq -1$），令 $w = \frac{z+k}{z+1}$。设 $i$ 为虚数单位。回答下列问题。
+\begin{parts}
+\part 设 $k=0$。对应 $z=0$ 的 $w$ 值为 $\alpha$，对应 $z=1$ 的 $w$ 值为 $\beta$，对应 $z=\sqrt{3}i$ 的 $w$ 值为 $\gamma$。求复数平面上以 $A(\alpha), B(\beta), C(\gamma)$ 为顶点的 $\triangle ABC$ 中 $\angle BAC$ 的大小。
+\begin{solution}
+当 $k=0$ 时，$w = \frac{z}{z+1}$。
+$\alpha = \frac{0}{0+1} = 0, \beta = \frac{1}{1+1} = \frac{1}{2}, \gamma = \frac{\sqrt{3}i}{\sqrt{3}i+1} = \frac{\sqrt{3}i(1-\sqrt{3}i)}{4} = \frac{3+\sqrt{3}i}{4}$。
+在复数平面上描点可知，$\angle BAC = \arg \gamma = \frac{\pi}{6}$。
+\end{solution}
+
+\part 设 $k=-1$。当点 $z$ 在复数平面上以原点 $O$ 为中心、半径为 $\sqrt{2}$ 的圆周上运动时，求点 $w$ 所描绘的图形。
+\begin{solution}
+当 $k=-1$ 时，$w = \frac{z-1}{z+1}$，由此解得 $z = \frac{w+1}{-w+1}$。
+由 $|z| = \sqrt{2}$ 得 $\left| \frac{w+1}{w-1} \right| = \sqrt{2} \implies |w+1|^2 = 2|w-1|^2$。
+展开并整理：$(w+1)(\bar{w}+1) = 2(w-1)(\bar{w}-1) \implies w\bar{w} - 3w - 3\bar{w} + 1 = 0$。
+即 $|w-3|^2 = 8$，故 $|w-3| = 2\sqrt{2}$。
+因此，点 $w$ 描绘的是以 3 为中心、半径为 $2\sqrt{2}$ 的圆。
+\end{solution}
+
+\part 设 $k \neq 1$。当点 $z$ 在复数平面上的虚轴上运动时，将点 $w$ 所描绘的图形记为 $F$。求使得 $F$ 包含在半径为 $\frac{1}{2}$ 的圆周上的所有 $k$ 值。
+\begin{solution}
+由 $w = \frac{z+k}{z+1}$ 得 $z = \frac{-w+k}{w-1}$。
+由于 $z$ 在虚轴上，故 $z+\bar{z} = 0$，代入得：
+$\frac{-w+k}{w-1} + \frac{-\bar{w}+k}{\bar{w}-1} = 0 \implies 2w\bar{w} - (k+1)w - (k+1)\bar{w} + 2k = 0$。
+整理得 $\left| w - \frac{k+1}{2} \right|^2 = \frac{(k-1)^2}{4}$，即点 $w$ 的轨迹是以 $\frac{k+1}{2}$ 为中心、半径为 $\frac{|k-1|}{2}$ 的圆。
+根据题目要求半径为 $\frac{1}{2}$，则 $\frac{|k-1|}{2} = \frac{1}{2} \implies |k-1| = 1$。
+解得 $k=0$ 或 $k=2$。
+\end{solution}
+\end{parts}
+
+\question
+用复数 $\alpha, \beta, \gamma$ 表示复数平面上不共线的三个点 $A, B, C$。回答下列问题。
+\begin{parts}
+\part 证明 $\triangle ABC$ 为正三角形的充分必要条件是 $\alpha^2 + \beta^2 + \gamma^2 = \alpha\beta + \beta\gamma + \gamma\alpha$。
+\begin{solution}
+$\triangle ABC$ 为正三角形的条件是 $\frac{\gamma-\alpha}{\beta-\alpha} = \cos(\pm 60^\circ) + i\sin(\pm 60^\circ) = \frac{1 \pm \sqrt{3}i}{2}$。
+变形得 $\frac{\gamma-\alpha}{\beta-\alpha} - \frac{1}{2} = \pm \frac{\sqrt{3}}{2}i$，两边平方：
+$\left( \frac{\gamma-\alpha}{\beta-\alpha} \right)^2 - \frac{\gamma-\alpha}{\beta-\alpha} + \frac{1}{4} = -\frac{3}{4} \implies \frac{(\gamma-\alpha)^2}{(\beta-\alpha)^2} - \frac{\gamma-\alpha}{\beta-\alpha} + 1 = 0$。
+展开并整理得 $\alpha^2 + \beta^2 + \gamma^2 - \alpha\beta - \beta\gamma - \gamma\alpha = 0$，即结论成立。
+\end{solution}
+
+\part 当 $\triangle ABC$ 为正三角形时，在 $\triangle ABC$ 的外接圆上任取一点 $P$。请用外接圆半径 $R$ 表示 $AP^2 + BP^2 + CP^2$ 以及 $AP^4 + BP^4 + CP^4$。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image317.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设外心为原点，则 $|\alpha|=|\beta|=|\gamma|=|z|=R$ 且 $\alpha+\beta+\gamma=0$。
+由 (1) 知 $\alpha^2+\beta^2+\gamma^2 = 0$。
+$AP^2 = |z-\alpha|^2 = 2R^2 - (\bar{\alpha}z + \alpha\bar{z})$。
+故 $AP^2+BP^2+CP^2 = 6R^2 - (\bar{\alpha}+\bar{\beta}+\bar{\gamma})z - (\alpha+\beta+\gamma)\bar{z} = 6R^2$。
+同理计算四次方项，利用 $(\sum AP^2)^2$ 及对称性展开：
+$AP^4+BP^4+CP^4 = 18R^4$。
+\end{solution}
 \end{parts}
 \end{questions}
 
