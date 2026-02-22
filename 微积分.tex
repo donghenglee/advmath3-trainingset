@@ -1816,6 +1816,57 @@ J_n = - n \int_{-1}^1 g(nx) F(x) \,dx
     故极限值为 $-\pi$。
     \end{solution}
 \end{parts}
+
+\question
+设 $a \ge 0$，$n$ 为正整数。回答下列问题。
+\begin{parts}
+    \part 证明：当 $x > 0$ 时，$\frac{x}{1+a} \left( 1 - \frac{x}{2(1+a)} \right) < \log \frac{1+a+x}{1+a} < \frac{x}{1+a}$。
+    \begin{solution}
+    首先，证明当 $t > 0$ 时，$t\left( 1 - \frac{t}{2} \right) < \log(1+t) < t \cdots\cdots \textcircled{1}$。
+    设 $f(t) = t - \log(1+t)$，则 $f'(t) = 1 - \frac{1}{1+t} = \frac{t}{1+t} > 0$，
+    故 $f(t) > f(0) = 0$，即 $t > \log(1+t) \cdots\cdots \textcircled{2}$。
+    设 $g(t) = \log(1+t) - t\left( 1 - \frac{t}{2} \right)$，则 $g'(t) = \frac{1}{1+t} - 1 + t = \frac{t^2}{1+t} > 0$，
+    故 $g(t) > g(0) = 0$，即 $\log(1+t) > t\left( 1 - \frac{t}{2} \right) \cdots\cdots \textcircled{3}$。
+    由 $\textcircled{2}\textcircled{3}$ 知 $\textcircled{1}$ 成立。令 $a \ge 0, x > 0, t = \frac{x}{1+a} > 0$，代入得：
+    \[
+    \frac{x}{1+a} \left( 1 - \frac{x}{2(1+a)} \right) < \log \frac{1+a+x}{1+a} < \frac{x}{1+a} \cdots\cdots \textcircled{4}
+    \]
+    \end{solution}
+
+    \part 设 $I_n(a) = \left( 1 + \frac{1}{n^2(1+a)} \right) \left( 1 + \frac{2}{n^2(1+a)} \right) \cdots \left( 1 + \frac{n}{n^2(1+a)} \right)$。求 $\lim_{n \to \infty} \log I_n(a)$。
+    \begin{solution}
+    对于 $I_n(a) = \prod_{k=1}^{n} \left( 1 + \frac{k}{n^2(1+a)} \right)$，有：
+    \[
+    \log I_n(a) = \sum_{k=1}^{n} \log \left( 1 + \frac{k}{n^2(1+a)} \right)
+    \]
+    应用 $\textcircled{4}$，取 $x = \frac{k}{n^2} > 0$ 得：
+    \[
+    \frac{k}{n^2(1+a)} \left( 1 - \frac{k}{2n^2(1+a)} \right) < \log \left( 1 + \frac{k}{n^2(1+a)} \right) < \frac{k}{n^2(1+a)}
+    \]
+    对 $k=1$ 到 $n$ 求和：
+    \[
+    \sum_{k=1}^{n} \frac{k}{n^2(1+a)} \left( 1 - \frac{k}{2n^2(1+a)} \right) < \log I_n(a) < \sum_{k=1}^{n} \frac{k}{n^2(1+a)}
+    \]
+    当 $n \to \infty$ 时：
+    \[
+    \sum_{k=1}^{n} \frac{k}{n^2(1+a)} = \frac{1}{n^2(1+a)} \cdot \frac{n(n+1)}{2} = \frac{1+n^{-1}}{2(1+a)} \to \frac{1}{2(1+a)}
+    \]
+    \[
+    \sum_{k=1}^{n} \frac{k}{n^2(1+a)} \left( 1 - \frac{k}{2n^2(1+a)} \right) = \frac{n+1}{2n(1+a)} - \frac{(n+1)(2n+1)}{12n^3(1+a)^2} \to \frac{1}{2(1+a)}
+    \]
+    根据夹逼定理，$\lim_{n \to \infty} \log I_n(a) = \frac{1}{2(1+a)}$。
+    \end{solution}
+
+    \part 求 $\lim_{n \to \infty} \frac{{3n^2+n}C_n}{{2n^2+n}C_n} \left( \frac{2}{3} \right)^n$。
+    \begin{solution}
+    设 $J(n) = \frac{{3n^2+n}C_n}{{2n^2+n}C_n} \left( \frac{2}{3} \right)^n$，则 $\log J(n) = \log \frac{{3n^2+n}C_n}{(3n^2)^n} - \log \frac{{2n^2+n}C_n}{(2n^2)^n} \cdots\cdots \textcircled{5}$。
+    其中 $\frac{{3n^2+n}C_n}{(3n^2)^n} \approx \prod_{k=1}^{n} \left( 1 + \frac{k}{3n^2} \right)$。
+    由 (2) 的结论，当 $n^2(1+a) = 3n^2$ 即 $1+a=3$ 时，其对数极限为 $\frac{1}{2 \cdot 3} = \frac{1}{6}$。
+    同理，当 $1+a=2$ 时，其对数极限为 $\frac{1}{2 \cdot 2} = \frac{1}{4}$。
+    由 $\textcircled{5}$ 得，$\lim_{n \to \infty} \log J(n) = \frac{1}{6} - \frac{1}{4} = -\frac{1}{12}$。
+    由于对数函数连续，$\lim_{n \to \infty} J(n) = e^{-\frac{1}{12}}$。
+    \end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -5078,6 +5129,359 @@ c = \lim_{n \to \infty} \frac{a_n^n - b}{a_n - a} = \lim_{a_n \to 1} \frac{g(a_n
     \[
     \lim_{n \to \infty} b_n = \frac{\pi}{2} \cos \frac{\pi}{2} = 0
     \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $a$ 为大于 1 的定数。证明：当可导函数 $f(x)$ 满足 $f(a) = a f(1)$ 时，曲线 $y = f(x)$ 上存在一条经过原点 $(0, 0)$ 的切线。
+\begin{solution}
+当 $a > 1$ 时，对于可导函数 $f(x)$，已知 $f(a) = a f(1) \cdots\cdots \textcircled{1}$。
+此时，在 $x > 0$ 范围内定义 $g(x) = \frac{f(x)}{x}$，则：
+\[
+g'(x) = \frac{x f'(x) - f(x)}{x^2} \cdots\cdots \textcircled{2}
+\]
+在闭区间 $[1, a]$ 上应用平均值定理，存在 $c \ (1 < c < a)$ 使得：
+\[
+\frac{g(a) - g(1)}{a - 1} = g'(c) \cdots\cdots \textcircled{3}
+\]
+由 $\textcircled{1}\textcircled{2}\textcircled{3}$ 得：
+\[
+\frac{c f'(c) - f(c)}{c^2} = \frac{1}{a - 1} \left\{ \frac{f(a)}{a} - \frac{f(1)}{1} \right\} = \frac{f(a) - a f(1)}{(a - 1)a} = 0
+\]
+由此得 $c f'(c) - f(c) = 0 \cdots\cdots \textcircled{4}$。
+曲线 $y = f(x)$ 在点 $(c, f(c))$ 处的切线方程为：
+\[
+y - f(c) = f'(c)(x - c), \quad y = f'(c)x - c f'(c) + f(c) \cdots\cdots \textcircled{5}
+\]
+根据 $\textcircled{4}$，切线 $\textcircled{5}$ 简化为 $y = f'(c)x$，该直线显然经过原点。
+\end{solution}
+
+\question
+设 $\alpha$ 为正实数。对于 $0 \le \theta \le \pi$ 范围内的 $\theta$，定义函数 $f(\theta)$ 为坐标平面上两点 $A(-\alpha, -3)$ 与 $P(\theta + \sin \theta, \cos \theta)$ 之间距离 $AP$ 的平方。
+\begin{parts}
+    \part 证明：在 $0 < \theta < \pi$ 范围内，满足 $f'(\theta) = 0$ 的 $\theta$ 恰有一个。
+    \begin{solution}
+    对于 $\alpha > 0$ 以及 $0 \le \theta \le \pi$ 范围内的两点 $A(-\alpha, -3)$，$P(\theta + \sin \theta, \cos \theta)$：
+    \[
+    f(\theta) = AP^2 = (\theta + \sin \theta + \alpha)^2 + (\cos \theta + 3)^2
+    \]
+    对其求导得：
+    \[
+    f'(\theta) = 2(\theta + \sin \theta + \alpha)(1 + \cos \theta) + 2(\cos \theta + 3)(-\sin \theta)
+    \]
+    \[
+    = 2(\theta + \sin \theta + \alpha) + 2(\theta + \sin \theta + \alpha)\cos \theta - 2\cos \theta \sin \theta - 6\sin \theta
+    \]
+    \[
+    = 2\theta + 2(\theta + \alpha)\cos \theta - 4\sin \theta + 2\alpha
+    \]
+    继续求导：
+    \[
+    f''(\theta) = 2 + 2\cos \theta - 2(\theta + \alpha)\sin \theta - 4\cos \theta = 2 - 2\cos \theta - 2(\theta + \alpha)\sin \theta
+    \]
+    \[
+    f'''(\theta) = 2\sin \theta - 2\sin \theta - 2(\theta + \alpha)\cos \theta = -2(\theta + \alpha)\cos \theta
+    \]
+    在 $0 \le \theta \le \pi$ 范围内，$f''(\theta)$ 的增减性如下表所示。由于 $f''(\frac{\pi}{2}) < f''(0) = 0$，且 $f''(\pi) = 4 > 0$，故满足 $f''(\theta) = 0$ 的 $\theta$ 仅有一个，设为 $\beta$，且 $\frac{\pi}{2} < \beta < \pi$。
+    由此可知 $f'(\theta)$ 在 $0 \le \theta \le \pi$ 上的增减性如下表。因为 $f'(\beta) < f'(\pi) = 0$ 且 $f'(0) = 4\alpha > 0$，根据零点存在定理，满足 $f'(\theta) = 0$ 的 $\theta$ 恰有一个。
+    \end{solution}
+
+    \part 求使以下条件成立的 $\alpha$ 的取值范围：
+    函数 $f(\theta) \ (0 \le \theta \le \pi)$ 在区间 $0 < \theta < \frac{\pi}{2}$ 的某点处取得最大值。
+    \begin{solution}
+    由 (1) 知，设满足 $f'(\theta) = 0$ 的 $\theta$ 为 $\gamma$，则 $0 < \gamma < \beta$。
+    由 $f'(\theta)$ 的增减性可知，$f(\theta)$ 在 $\theta = \gamma$ 时取得最大值。
+    因此，条件“$f(\theta)$ 在 $0 < \theta < \frac{\pi}{2}$ 处取得最大值”等价于 $\gamma < \frac{\pi}{2}$。
+    由于在 $0 < \theta < \beta$ 范围内 $f'(\theta)$ 单调递减，故上述条件等价于 $f'(\frac{\pi}{2}) < 0$：
+    \[
+    2 \cdot \frac{\pi}{2} - 4 + 2\alpha < 0 \implies 2\alpha < 4 - \pi
+    \]
+    由于 $\alpha > 0$，故所求 $\alpha$ 的范围是 $0 < \alpha < 2 - \frac{\pi}{2}$。
+    \end{solution}
+\end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 设 $a$ 为实数。证明：关于 $x$ 的方程 $x - \tan x = a$ 在 $|x| < \frac{\pi}{2}$ 范围内恰有一个实数解。
+    \begin{solution}
+    对于方程 $x - \tan x = a$，设 $f(x) = x - \tan x$，则：
+    \[
+    f'(x) = 1 - \frac{1}{\cos^2 x} = -\tan^2 x
+    \]
+    在 $|x| < \frac{\pi}{2}$ 范围内，$f'(x) \le 0$（仅在 $x = 0$ 时为 0），故 $f(x)$ 单调递减。
+    由于 $\lim_{x \to \frac{\pi}{2}-0} f(x) = -\infty$ 且 $\lim_{x \to -\frac{\pi}{2}+0} f(x) = \infty$，
+    根据连续函数的性质，对于任意实数 $a$，在该范围内 $f(x) = a$ 恰有一个实数解。
+    \end{solution}
+
+    \part 对于自然数 $n$，设满足 $x - \tan x = n\pi$ 且 $|x| < \frac{\pi}{2}$ 的实数 $x$ 为 $x_n$。设 $t$ 为满足 $|t| < \frac{\pi}{2}$ 的实数。证明：曲线 $C: y = \sin x$ 上点 $P(t, \sin t)$ 处的切线，与曲线 $C$ 在满足 $x \ge \frac{\pi}{2}$ 的区域内的某点相切的充分必要条件是，$t$ 与 $x_1, x_2, x_3, \cdots$ 中的某一个相等。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image339.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    在点 $P(t, \sin t)$ 处的切线方程为 $y - \sin t = (\cos t)(x - t)$，即：
+    \[
+    y = x \cos t - t \cos t + \sin t \cdots\cdots \textcircled{1}
+    \]
+    若该直线与曲线 $C$ 在点 $(s, \sin s) \ (s \ge \frac{\pi}{2})$ 处相切，则切线方程也满足：
+    \[
+    y = x \cos s - s \cos s + \sin s \cdots\cdots \textcircled{2}
+    \]
+    比较 $\textcircled{1}$ 和 $\textcircled{2}$ 的斜率与截距得：
+    $\cos t = \cos s \cdots\cdots \textcircled{3}$ 且 $-t \cos t + \sin t = -s \cos s + \sin s \cdots\cdots \textcircled{4}$。
+    由 $\textcircled{3}$ 及 $s \ge \frac{\pi}{2}, |t| < \frac{\pi}{2}$ 知，存在自然数 $n$ 使得 $s = 2n\pi \pm t$。
+    (i) 当 $s = 2n\pi + t$ 时：代入 $\textcircled{4}$ 得 $-t \cos t + \sin t = -(2n\pi + t)\cos t + \sin t$，
+    从而 $2n\pi \cos t = 0$。由于 $|t| < \frac{\pi}{2}$，$\cos t \ne 0$，故此情况不成立。
+    (ii) 当 $s = 2n\pi - t$ 时：代入 $\textcircled{4}$ 得 $-t \cos t + \sin t = -(2n\pi - t)\cos t - \sin t$，
+    整理得 $2(n\pi - t)\cos t + 2\sin t = 0$，即 $n\pi - t + \tan t = 0$。
+    由此可得 $t - \tan t = n\pi$。根据 (1) 的结论，此方程在 $|t| < \frac{\pi}{2}$ 范围内的解恰为 $x_n$。
+    因此，必要充分条件是 $t$ 为 $x_n$ 之一。
+    \end{solution}
+\end{parts}
+
+\question
+回答以下问题。
+\begin{parts}
+    \part 比较 $\sqrt{2}^{(\sqrt{2}^{\sqrt{2}})}$ 和 $\left( \sqrt{2}^{\sqrt{2}} \right)^{\sqrt{2}}$ 的大小。
+    \begin{solution}
+        由于 $\sqrt{2} > 1$，且 $\sqrt{2}^{\sqrt{2}} < \sqrt{2}^2 = 2$，故 $\sqrt{2}^{(\sqrt{2}^{\sqrt{2}})} < \sqrt{2}^2 = 2$。
+        又 $\left( \sqrt{2}^{\sqrt{2}} \right)^{\sqrt{2}} = \sqrt{2}^{\sqrt{2} \times \sqrt{2}} = \sqrt{2}^2 = 2$。
+        因此 $\sqrt{2}^{(\sqrt{2}^{\sqrt{2}})} < \left( \sqrt{2}^{\sqrt{2}} \right)^{\sqrt{2}}$。
+    \end{solution}
+
+    \part 定义函数 $f(x) = \sqrt{2}^x$，设坐标平面上的曲线 $y=f(x)$ 为 $C$。若曲线 $C$ 上点 $(2, f(2))$ 处的切线方程用实数 $m, k$ 表示为 $y=mx+k$，求 $m$ 和 $k$ 的值。
+    \begin{solution}
+        当 $f(x) = \sqrt{2}^x$ 时，$f'(x) = \sqrt{2}^x \log \sqrt{2} = \frac{1}{2} \sqrt{2}^x \log 2$。
+        $f(2) = \sqrt{2}^2 = 2, f'(2) = \frac{1}{2} \sqrt{2}^2 \log 2 = \log 2$。
+        于是，在点 $(2, f(2))$ 处的切线方程为
+        \[
+        y - 2 = (\log 2)(x - 2)
+        \]
+        \[
+        y = (\log 2)x - 2\log 2 + 2
+        \]
+        该方程与 $y=mx+k$ 一致，故
+        \[
+        m = \log 2, k = -2\log 2 + 2
+        \]
+    \end{solution}
+
+    \part 设 $f(x)$ 以及 $m, k$ 为 (2) 中所定。证明对于所有实数 $x$，$f(x) \ge mx+k$ 成立。
+    \begin{solution}
+        令 $g(x) = f(x) - (mx+k) = \sqrt{2}^x - (\log 2)x + 2\log 2 - 2$。
+        \[
+        g'(x) = \frac{1}{2} \sqrt{2}^x \log 2 - \log 2 = \frac{1}{2} (\sqrt{2}^x - 2) \log 2
+        \]
+        $g(x)$ 的增减性如下表所示，由于 $g(x) \ge 0$，所以 $f(x) \ge mx+k \dots (1)$ 成立。
+    \end{solution}
+
+    \part 数列 $\{a_n\}$ 由 $a_1 = \sqrt{2}$ 及递推式 $a_{n+1} = \sqrt{2}^{a_n} (n=1, 2, 3, \dots)$ 定义。证明对于自然数 $n$，$2 - a_{n+1} \le (\log 2)(2 - a_n)$ 成立，并求极限值 $\lim_{n \to \infty} a_n$。如有必要，可以使用自然对数的底 $e=2.718 \dots$。
+    \begin{solution}
+        由 $a_1 = \sqrt{2}, a_{n+1} = f(a_n)$ 定义的数列 $\{a_n\}$，由 (1) 得
+        \[
+        f(a_n) \ge m a_n + k
+        \]
+        \[
+        a_{n+1} \ge (\log 2) a_n - 2\log 2 + 2
+        \]
+        于是 $2 - a_{n+1} \le (\log 2)(2 - a_n) \dots (2)$。
+        这里，用数学归纳法证明 $a_n \le 2$。
+        (i) 当 $n=1$ 时，$a_1 = \sqrt{2} < 2$ 成立。
+        (ii) 假设 $n=k$ 时 $a_k \le 2$，则 $a_{k+1} = \sqrt{2}^{a_k} \le \sqrt{2}^2 = 2$。
+        由 (i)(ii) 知 $a_n \le 2$。
+        因此，结合 (2) 得 $0 \le 2 - a_{n+1} \le (\log 2)(2 - a_n)$。
+        \[
+        0 \le 2 - a_n \le (2 - a_1)(\log 2)^{n-1} = (2 - \sqrt{2})(\log 2)^{n-1} \dots (3)
+        \]
+        由于 $0 < \log 2 < \log e = 1$，当 $n \to \infty$ 时 $(\log 2)^{n-1} \to 0$。
+        由 (3) 知 $\lim_{n \to \infty} (2 - a_n) = 0$，故 $\lim_{n \to \infty} a_n = 2$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $f(x) = \log(x+1)+1$。回答以下问题。
+\begin{parts}
+    \part 证明方程 $f(x)=x$ 在 $x>0$ 的范围内恰有一个解。
+    \begin{solution}
+        对于 $f(x) = \log(x+1)+1$，令 $g(x) = f(x) - x = \log(x+1) + 1 - x$。
+        \[
+        g'(x) = \frac{1}{x+1} - 1 = -\frac{x}{x+1}
+        \]
+        在 $x>0$ 时，$g'(x) < 0$，故 $g(x)$ 单调递减。
+        且 $g(0) = 1, g(3) = \log 4 - 2 = \log 4 - \log e^2 < 0$。
+        故 $g(x) = 0$ 即 $f(x) = x$ 在 $x>0$ 的范围内恰有一个解。
+    \end{solution}
+
+    \part 设 (1) 的解为 $a$。证明若实数 $x$ 满足 $0 < x < a$，则以下不等式成立。
+    \[
+    0 < \frac{a - f(x)}{a - x} < f'(x)
+    \]
+    \begin{solution}
+        令 $f(a) = a$，当 $0 < x < a$ 时，由中值定理得
+        \[
+        \frac{a - f(x)}{a - x} = \frac{f(a) - f(x)}{a - x} = f'(c) \quad (x < c < a) \dots (1)
+        \]
+        又 $f'(x) = \frac{1}{x+1}, f''(x) = -\frac{1}{(x+1)^2} < 0$，故 $f'(x)$ 单调递减。
+        在 $x < c < a$ 中
+        \[
+        f'(a) < f'(c) < f'(x) \dots (2)
+        \]
+        因为 $f'(a) = \frac{1}{a+1} > 0$，所以由 (1) 和 (2) 得
+        \[
+        0 < \frac{a - f(x)}{a - x} < f'(x) \dots (3)
+        \]
+    \end{solution}
+
+    \part 定义数列 $\{x_n\}$ 为 $x_1 = 1, x_{n+1} = f(x_n) (n=1, 2, 3, \dots)$。证明此时对于所有的自然数 $n$，$a - x_{n+1} < \frac{1}{2}(a - x_n)$ 成立。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image354.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由 $g(2) = \log 3 - 1 = \log 3 - \log e > 0$ 及 $g(3) < 0$ 知 $2 < a < 3$。
+        首先用数学归纳法证明 $1 \le x_n < a$。
+        (i) 当 $n=1$ 时，$x_1 = 1$，故 $1 \le x_1 < a$ 成立。
+        (ii) 假设 $1 \le x_k < a$。由于 $f(x)$ 单调递增
+        $f(1) \le f(x_k) < f(a)$，即 $f(1) - 1 = g(1) = \log 2 > 0$ 故 $1 < f(x_k) < a$。
+        $x_{k+1} = f(x_k)$，故 $1 < x_{k+1} < a$ 成立。
+        由 (i)(ii) 知对于所有自然数 $n$，$1 \le x_n < a$。
+        于是由 (3) 得 $0 < \frac{a - f(x_n)}{a - x_n} < f'(x_n)$。
+        因为 $a - x_n > 0$
+        \[
+        0 < a - f(x_n) < f'(x_n)(a - x_n)
+        \]
+        \[
+        0 < a - x_{n+1} < f'(x_n)(a - x_n) \dots (4)
+        \]
+        这里 $f'(x_n) = \frac{1}{x_n + 1}$，由于 $x_n \ge 1$
+        \[
+        0 < \frac{1}{x_n + 1} \le \frac{1}{1 + 1} = \frac{1}{2}
+        \]
+        即 $f'(x_n) \le \frac{1}{2} \dots (5)$。
+        由 (4) 和 (5) 得 $a - x_{n+1} < \frac{1}{2}(a - x_n) \dots (6)$。
+    \end{solution}
+
+    \part 对于 (3) 中的数列 $\{x_n\}$，证明 $\lim_{n \to \infty} x_n = a$。
+    \begin{solution}
+        结合 $x_n < a$ 和 (6) 得
+        \[
+        0 < a - x_n \le (a - x_1) \left( \frac{1}{2} \right)^{n-1}
+        \]
+        当 $n \to \infty$ 时，$(a - x_1) \left( \frac{1}{2} \right)^{n-1} \to 0$，故 $a - x_n \to 0$。
+        $\lim_{n \to \infty} x_n = a$。
+    \end{solution}
+\end{parts}
+
+\question
+设曲线 $C: y = \cos^3 x \left( 0 \le x \le \frac{\pi}{2} \right)$，与 $x$ 轴及 $y$ 轴围成的图形面积为 $S$。
+取 $0 < t < \frac{\pi}{2}$，设以 $C$ 上的点 $Q(t, \cos^3 t)$、原点 $O$、点 $P(t, 0)$ 和 $R(0, \cos^3 t)$ 为顶点的矩形 $OPQR$ 的面积为 $f(t)$。回答以下问题。
+\begin{parts}
+    \part 求 $S$。
+    \begin{solution}
+        曲线 $C: y = \cos^3 x \left( 0 \le x \le \frac{\pi}{2} \right)$ 与 $x$ 轴、$y$ 轴围成的图形面积 $S$ 为
+        \[
+        S = \int_0^{\frac{\pi}{2}} \cos^3 x \, dx = \int_0^{\frac{\pi}{2}} (1 - \sin^2 x) \cos x \, dx
+        \]
+        \[
+        = \left[ \sin x - \frac{1}{3} \sin^3 x \right]_0^{\frac{\pi}{2}} = \frac{2}{3} \dots (1)
+        \]
+    \end{solution}
+
+    \part 证明 $f(t)$ 仅在唯一的一个 $t$ 处取得最大值。设该 $t$ 为 $a$，证明 $f(a) = \frac{\cos^4 a}{3 \sin a}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image355.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        在 $0 < t < \frac{\pi}{2}$ 中，矩形 $OPQR$ 的面积 $f(t)$ 为 $f(t) = t \cos^3 t$。
+        \[
+        f'(t) = \cos^3 t - 3t \cos^2 t \sin t = \cos^2 t (\cos t - 3t \sin t)
+        \]
+        \[
+        = 3t \cos^3 t \left( \frac{1}{3t} - \tan t \right)
+        \]
+        在此，绘制 $y = \frac{1}{3t}$ 和 $y = \tan t$ 的图像可知，在 $0 < t < \frac{\pi}{2}$ 范围内恰有一个交点。
+        设该交点为 $t = a$，则 $f(t)$ 的增减表如下。$f(t)$ 在唯一的 $t = a$ 处取得最大值。
+        由 $f'(a) = 0$ 得 $\cos a = 3a \sin a$，即 $a = \frac{\cos a}{3 \sin a}$。
+        因此，最大值为
+        \[
+        f(a) = a \cos^3 a = \frac{\cos^4 a}{3 \sin a} \dots (2)
+        \]
+    \end{solution}
+
+    \part 证明 $\frac{f(a)}{S} < \frac{9}{16}$。
+    \begin{solution}
+        由 (1) 和 (2) 得
+        \[
+        \frac{f(a)}{S} = \frac{\cos^4 a}{3 \sin a} \cdot \frac{3}{2} = \frac{(1 - \sin^2 a)^2}{2 \sin a}
+        \]
+        令 $g(u) = \frac{(1 - u^2)^2}{2u}$，则 $\frac{f(a)}{S} = g(\sin a)$。其中 $0 < u < 1$。
+        由于 $g(u) = \frac{1}{2} \left( \frac{1}{u} - 2u + u^3 \right)$，得
+        \[
+        g'(u) = \frac{1}{2} \left( -\frac{1}{u^2} - 2 + 3u^2 \right) = \frac{-1 - 2u^2 + 3u^4}{2u^2} = \frac{(3u^2 + 1)(u + 1)(u - 1)}{2u^2}
+        \]
+        由此可知 $g'(u) < 0$，故 $g(u)$ 单调递减。
+        已知 $3.1 < \pi < 3.2$，得 $3\pi > 3 \times 3.1 = 9.3 > 4$，故 $1 = \tan \frac{\pi}{4} > \frac{4}{3\pi}$。
+        又由 $1.7 < \sqrt{3} < 1.8$ 得 $\sqrt{3}\pi < 1.8 \times 3.2 = 5.76 < 6$，故 $\frac{\sqrt{3}}{3} = \tan \frac{\pi}{6} < \frac{6}{3\pi}$。
+        因此 $\frac{\pi}{6} < a < \frac{\pi}{4}$，得 $\frac{1}{2} < \sin a < \frac{\sqrt{2}}{2}$，即 $\frac{1}{2} < u < \frac{\sqrt{2}}{2}$。
+        \[
+        \frac{f(a)}{S} < g\left( \frac{1}{2} \right) = \left( \frac{3}{4} \right)^2 = \frac{9}{16}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+对于 $-1 < x < 1$，设 $f(x) = \log(1+x) + \log(1-x) - x\log(1-x)$。对数均为自然对数。回答以下问题。
+\begin{parts}
+    \part 证明当 $-1 < x < 1$ 时，$f'(x) \ge 0$。
+    \begin{solution}
+        对于 $-1 < x < 1$ 时的 $f(x) = \log(1+x) + (1-x)\log(1-x)$，有
+        \[
+        f'(x) = \frac{1}{1+x} - \log(1-x) - 1
+        \]
+        \[
+        f''(x) = -\frac{1}{(1+x)^2} + \frac{1}{1-x} = \frac{-1+x+1+2x+x^2}{(1+x)^2(1-x)} = \frac{x(x+3)}{(1+x)^2(1-x)}
+        \]
+        由此可得 $-1 < x < 1$ 范围内 $f'(x)$ 的增减性。
+        当 $x=0$ 时 $f'(0)=0$，由增减表可知 $f'(x) \ge 0$。
+    \end{solution}
+
+    \part 证明当 $-1 < x < 1, x \ne 0$ 时，$\frac{f(x)}{x} > 0$。
+    \begin{solution}
+        由 (1) 知，在 $-1 < x < 1$ 中 $f(x)$ 单调递增。
+        此处注意 $f(0) = 0$，则有
+        $f(x) < 0 \ (-1 < x < 0)$，$f(x) > 0 \ (0 < x < 1)$。
+        因此，当 $-1 < x < 1, x \ne 0$ 时，$\frac{f(x)}{x} > 0$。
+    \end{solution}
+
+    \part 证明当 $n$ 为 2 以上的整数时，不等式 $\left( \frac{n^2-1}{n^2} \right)^{n+1} < \frac{n-1}{n} < \left( \frac{n^2-1}{n^2} \right)^n$ 成立。
+    \begin{solution}
+        由于 $\frac{f(x)}{x} = \frac{\log(1+x) + \log(1-x)}{x} - \log(1-x) = \frac{\log(1-x^2)}{x} - \log(1-x) > 0$，得
+        \[
+        \frac{\log(1-x^2)}{x} > \log(1-x) \quad (-1 < x < 1, x \ne 0) \dots (1)
+        \]
+        首先，对于 2 以上的整数 $n$，令 $x = \frac{1}{n}$，则 $0 < x \le \frac{1}{2} < 1$。由 (1) 得
+        \[
+        n \log \left( 1 - \frac{1}{n^2} \right) > \log \left( 1 - \frac{1}{n} \right), \quad \log \left( \frac{n^2-1}{n^2} \right)^n > \log \left( \frac{n-1}{n} \right)
+        \]
+        由此得 $\frac{n-1}{n} < \left( \frac{n^2-1}{n^2} \right)^n \dots (2)$。
+        其次，对于 2 以上的整数 $n$，令 $x = -\frac{1}{n}$，则 $-1 < -\frac{1}{2} \le x < 0$。由 (1) 得
+        \[
+        -n \log \left( 1 - \frac{1}{n^2} \right) > \log \left( 1 + \frac{1}{n} \right), \quad \log \left( \frac{n^2-1}{n^2} \right)^n < -\log \left( \frac{n+1}{n} \right)
+        \]
+        由此得 $\left( \frac{n^2-1}{n^2} \right)^n < \left( \frac{n+1}{n} \right)^{-1} = \frac{n}{n+1}$。
+        由于 $\left( \frac{n^2-1}{n^2} \right)^{n+1} < \frac{n}{n+1} \cdot \frac{n^2-1}{n^2} = \frac{n-1}{n}$，得
+        \[
+        \left( \frac{n^2-1}{n^2} \right)^{n+1} < \frac{n-1}{n} \dots (3)
+        \]
+        由 (2) 和 (3) 得，$\left( \frac{n^2-1}{n^2} \right)^{n+1} < \frac{n-1}{n} < \left( \frac{n^2-1}{n^2} \right)^n$ 成立。
     \end{solution}
 \end{parts}
 \end{questions}
@@ -8482,6 +8886,618 @@ $T(t) = (1-t)^2 \theta - \frac{1}{2}(1-t) \sin \theta$ (此处根据源文件修
     \]
     \end{solution}
 \end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 求定积分 $I = \int_{0}^{1} x^4 (1-x)^4 \,dx$。
+    \begin{solution}
+    因为 $x^4(1-x)^4 = x^4(1 - 4x + 6x^2 - 4x^3 + x^4) = x^4 - 4x^5 + 6x^6 - 4x^7 + x^8$，所以：
+    \[
+    I = \int_{0}^{1} (x^4 - 4x^5 + 6x^6 - 4x^7 + x^8) \,dx
+    \]
+    \[
+    = \left[ \frac{1}{5}x^5 - \frac{2}{3}x^6 + \frac{6}{7}x^7 - \frac{1}{2}x^8 + \frac{1}{9}x^9 \right]_{0}^{1} = \frac{1}{5} - \frac{2}{3} + \frac{6}{7} - \frac{1}{2} + \frac{1}{9} = \frac{1}{630}
+    \]
+    因此，$I = \frac{1}{630}$。
+    \end{solution}
+
+    \part 求定积分 $J = \int_{0}^{1} \frac{x^4(1-x)^4}{1+x^2} \,dx$。
+    \begin{solution}
+    利用多项式除法，$\frac{x^4(1-x)^4}{1+x^2} = x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1}$。
+    \[
+    J = \int_{0}^{1} \left( x^6 - 4x^5 + 5x^4 - 4x^2 + 4 - \frac{4}{x^2+1} \right) \,dx
+    \]
+    \[
+    = \left[ \frac{1}{7}x^7 - \frac{2}{3}x^6 + x^5 - \frac{4}{3}x^3 + 4x \right]_{0}^{1} - 4\int_{0}^{1} \frac{1}{x^2+1} \,dx
+    \]
+    \[
+    = \frac{1}{7} - \frac{2}{3} + 1 - \frac{4}{3} + 4 - 4\int_{0}^{1} \frac{1}{x^2+1} \,dx = \frac{22}{7} - 4\int_{0}^{1} \frac{1}{x^2+1} \,dx
+    \]
+    设 $x = \tan \theta \left( -\frac{\pi}{2} < \theta < \frac{\pi}{2} \right)$，则 $dx = \frac{1}{\cos^2 \theta} \,d\theta$。
+    \[
+    \int_{0}^{1} \frac{1}{x^2+1} \,dx = \int_{0}^{\frac{\pi}{4}} \frac{1}{\tan^2 \theta + 1} \cdot \frac{1}{\cos^2 \theta} \,d\theta = \int_{0}^{\frac{\pi}{4}} \,d\theta = \left[ \theta \right]_{0}^{\frac{\pi}{4}} = \frac{\pi}{4}
+    \]
+    因此，$J = \frac{22}{7} - 4 \cdot \frac{\pi}{4} = \frac{22}{7} - \pi$。
+    \end{solution}
+
+    \part 证明不等式 $\frac{1}{1260} < \frac{22}{7} - \pi < \frac{1}{630}$。
+    \begin{solution}
+    当 $0 \le x \le 1$ 时，$\frac{1}{2} \le \frac{1}{1+x^2} \le 1$ 成立。
+    由于 $x^4(1-x)^4 \ge 0$，可得：
+    \[
+    \frac{1}{2}x^4(1-x)^4 \le \frac{x^4(1-x)^4}{1+x^2} \le x^4(1-x)^4
+    \]
+    其中等号仅在 $x=0$ 或 $x=1$ 时成立。对各边在 $0$ 到 $1$ 上积分：
+    \[
+    \int_{0}^{1} \frac{1}{2}x^4(1-x)^4 \,dx < \int_{0}^{1} \frac{x^4(1-x)^4}{1+x^2} \,dx < \int_{0}^{1} x^4(1-x)^4 \,dx
+    \]
+    即 $\frac{1}{2}I < J < I$。由 (1) 和 (2) 的结果，得 $\frac{1}{1260} < \frac{22}{7} - \pi < \frac{1}{630}$。
+    \end{solution}
+\end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 证明：对于正实数 $a$ 和正整数 $n$，等式 $e^a = 1 + a + \frac{a^2}{2!} + \cdots + \frac{a^n}{n!} + \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx$ 成立。其中 $e$ 是自然对数的底。
+    \begin{solution}
+    设 $I_n = \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx$。利用分部积分法：
+    \[
+    I_{n+1} = \int_{0}^{a} \frac{(a-x)^{n+1}}{(n+1)!} e^x \,dx = \left[ \frac{(a-x)^{n+1}}{(n+1)!} e^x \right]_{0}^{a} + \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx = -\frac{a^{n+1}}{(n+1)!} + I_n
+    \]
+    由此得 $I_n - I_{n+1} = \frac{a^{n+1}}{(n+1)!}$。对于 $n \ge 2$：
+    \[
+    I_n = I_1 + \sum_{k=1}^{n-1} (I_{k+1} - I_k) = I_1 - \left( \frac{a^2}{2!} + \frac{a^3}{3!} + \cdots + \frac{a^n}{n!} \right)
+    \]
+    由于 $I_1 = \int_{0}^{a} (a-x)e^x \,dx = \left[ (a-x)e^x \right]_{0}^{a} + \int_{0}^{a} e^x \,dx = -a + e^a - 1$。
+    代入整理得 $e^a = 1 + a + \frac{a^2}{2!} + \cdots + \frac{a^n}{n!} + I_n$，命题成立。
+    \end{solution}
+
+    \part 对于正实数 $a$ 和正整数 $n$，证明以下不等式：
+    \[
+    \frac{a^{n+1}}{(n+1)!} \le \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx \le \frac{e^a a^{n+1}}{(n+1)!}
+    \]
+    \begin{solution}
+    在 $0 \le x \le a$ 范围内，$1 \le e^x \le e^a$ 成立。由于 $\frac{(a-x)^n}{n!} \ge 0$，故有：
+    \[
+    \int_{0}^{a} \frac{(a-x)^n}{n!} \,dx \le \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx \le \int_{0}^{a} \frac{(a-x)^n}{n!} e^a \,dx
+    \]
+    计算得 $\int_{0}^{a} \frac{(a-x)^n}{n!} \,dx = \left[ -\frac{(a-x)^{n+1}}{(n+1)!} \right]_{0}^{a} = \frac{a^{n+1}}{(n+1)!}$。
+    因此，$\frac{a^{n+1}}{(n+1)!} \le \int_{0}^{a} \frac{(a-x)^n}{n!} e^x \,dx \le \frac{e^a a^{n+1}}{(n+1)!}$ 成立。
+    \end{solution}
+
+    \part 求满足不等式 $\left| e - \left( 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \right) \right| < 10^{-3}$ 的最小正整数 $n$。你可以直接使用 $2 < e < 3$。
+    \begin{solution}
+    在 (1) 中令 $a=1$，得 $\left| e - \left( 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \right) \right| = \int_{0}^{1} \frac{(1-x)^n}{n!} e^x \,dx$。
+    由 (2) 当 $a=1$ 时，$\frac{1}{(n+1)!} \le \int_{0}^{1} \frac{(1-x)^n}{n!} e^x \,dx \le \frac{e}{(n+1)!}$。
+    要使误差小于 $10^{-3}$，必须满足 $\frac{1}{(n+1)!} < 10^{-3}$，即 $(n+1)! > 1000$。
+    已知 $6! = 720, 7! = 5040$，故 $n+1 \ge 7$，即 $n \ge 6$。
+    当 $n=6$ 时，误差上限为 $\frac{e}{7!} < \frac{3}{5040} < 10^{-3}$。
+    因此，最小的正整数 $n$ 为 $6$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $n$ 为自然数，$t$ 为满足 $t \ge 1$ 的实数。
+\begin{parts}
+    \part 证明：当 $x \ge t$ 时，不等式 $-\frac{(x-t)^2}{2} \le \log x - \log t - \frac{1}{t}(x-t) \le 0$ 成立。
+    \begin{solution}
+    设 $f(x) = \log x - \log t - \frac{1}{t}(x-t)$，则 $f'(x) = \frac{1}{x} - \frac{1}{t} = \frac{t-x}{tx} \le 0$。
+    故 $f(x)$ 单调递减，当 $x \ge t$ 时 $f(x) \le f(t) = 0$，即 $\log x - \log t - \frac{1}{t}(x-t) \le 0$ (1)。
+    设 $g(x) = \log x - \log t - \frac{1}{t}(x-t) + \frac{(x-t)^2}{2t^2}$（注意此处图中为使系数简化，设 $g(x) = \log x - \log t - \frac{1}{t}(x-t) + \frac{(x-t)^2}{2}$，但在 $x \ge t$ 且 $t \ge 1$ 时 $\frac{(x-t)^2}{2} \ge \frac{(x-t)^2}{2t^2}$ 亦成立）。
+    $g'(x) = \frac{1}{x} - \frac{1}{t} + (x-t) = \frac{t-x}{tx} + (x-t) = \frac{(x-t)(tx-1)}{tx} \ge 0$。
+    故 $g(x)$ 单调递增，当 $x \ge t$ 时 $g(x) \ge g(t) = 0$，故 $-\frac{(x-t)^2}{2} \le \log x - \log t - \frac{1}{t}(x-t)$ (2)。
+    由 (1)(2) 得证。
+    \end{solution}
+
+    \part 证明不等式 $-\frac{1}{6n^3} \le \int_{t}^{t+\frac{1}{n}} \log x \,dx - \frac{1}{n} \log t - \frac{1}{2tn^2} \le 0$ 成立。
+    \begin{solution}
+    对 (1) 中的各边在 $t$ 到 $t+\frac{1}{n}$ 上积分：
+    \[
+    \int_{t}^{t+\frac{1}{n}} -\frac{(x-t)^2}{2} \,dx \le \int_{t}^{t+\frac{1}{n}} \left\{ \log x - \log t - \frac{1}{t}(x-t) \right\} \,dx \le 0
+    \]
+    左边积分值为 $\left[ -\frac{1}{6}(x-t)^3 \right]_{t}^{t+\frac{1}{n}} = -\frac{1}{6n^3}$。
+    中间积分值为 $\int_{t}^{t+\frac{1}{n}} \log x \,dx - \frac{1}{n} \log t - \frac{1}{2tn^2}$。
+    由此得 $-\frac{1}{6n^3} \le \int_{t}^{t+\frac{1}{n}} \log x \,dx - \frac{1}{n} \log t - \frac{1}{2tn^2} \le 0$。
+    \end{solution}
+
+    \part 设 $a_n = \sum_{k=0}^{n-1} \log \left( 1 + \frac{k}{n} \right)$。求满足 $\lim_{n \to \infty} (a_n - pn) = q$ 的实数 $p, q$ 的值。
+    \begin{solution}
+    由 $a_n - pn = q$ 的形式知 $\lim_{n \to \infty} \frac{a_n}{n} = p$。利用区分求积法：
+    \[
+    p = \lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} \log \left( 1 + \frac{k}{n} \right) = \int_{1}^{2} \log x \,dx = \left[ x \log x - x \right]_{1}^{2} = 2 \log 2 - 1
+    \]
+    由 (2) 令 $t = 1 + \frac{k}{n}$，并对 $k=0$ 到 $n-1$ 求和：
+    \[
+    \int_{1}^{2} \log x \,dx - \frac{1}{n} \sum_{k=0}^{n-1} \log \left( 1 + \frac{k}{n} \right) - \sum_{k=0}^{n-1} \frac{1}{2n^2 \left( 1 + \frac{k}{n} \right)} \to 0
+    \]
+    \[
+    q = \lim_{n \to \infty} (a_n - pn) = \lim_{n \to \infty} \left\{ \sum_{k=0}^{n-1} \log \left( 1 + \frac{k}{n} \right) - n(2\log 2 - 1) \right\}
+    \]
+    通过级数求和与积分的逼近（利用 (7) 所示的极限）：
+    \[
+    \lim_{n \to \infty} \left\{ -\frac{1}{2} \sum_{k=0}^{n-1} \frac{1}{n \left( 1 + \frac{k}{n} \right)} \right\} = -\frac{1}{2} \int_{1}^{2} \frac{1}{x} \,dx = -\frac{1}{2} \left[ \log x \right]_{1}^{2} = -\frac{1}{2} \log 2
+    \]
+    因此，$p = 2 \log 2 - 1$，$q = -\frac{1}{2} \log 2$。
+    \end{solution}
+\end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 当 $n$ 为正整数时，求定积分 \[ \int_{0}^{2\pi} |\sin nx - \sin 2nx| \,dx \]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image340.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        当 $n$ 为正整数时，对于 $I_n = \int_{0}^{2\pi} |\sin nx - \sin 2nx| \,dx$，令 $nx = t$，则 $n \,dx = dt$，
+        \[
+        I_n = \int_{0}^{2n\pi} |\sin t - \sin 2t| \cdot \frac{1}{n} \,dt = \frac{1}{n} \int_{0}^{2n\pi} |\sin t - \sin 2t| \,dt \dots (1)
+        \]
+        这里，分割积分区间得，
+        \[
+        I_n = \frac{1}{n} \sum_{k=1}^{n} \int_{2(k-1)\pi}^{2k\pi} |\sin t - \sin 2t| \,dt
+        \]
+        令 $J_k = \int_{2(k-1)\pi}^{2k\pi} |\sin t - \sin 2t| \,dt$，并进行变量变换 $s = t - 2(k-1)\pi$，则 $ds = dt$，
+        \begin{align*}
+        J_k &= \int_{0}^{2\pi} |\sin(s + 2(k-1)\pi) - \sin(2s + 4(k-1)\pi)| \,ds \\
+        &= \int_{0}^{2\pi} |\sin s - \sin 2s| \,ds \\
+        &= \int_{0}^{\frac{\pi}{3}} -(\sin s - \sin 2s) \,ds + \int_{\frac{\pi}{3}}^{\pi} (\sin s - \sin 2s) \,ds + \int_{\pi}^{\frac{5}{3}\pi} -(\sin s - \sin 2s) \,ds + \int_{\frac{5}{3}\pi}^{2\pi} (\sin s - \sin 2s) \,ds
+        \end{align*}
+        进一步，令 $u = 2\pi - s$，则 $du = -ds$，
+        \begin{align*}
+        \int_{\pi}^{\frac{5}{3}\pi} -(\sin s - \sin 2s) \,ds &= \int_{\pi}^{\frac{\pi}{3}} -\{\sin(2\pi - u) - \sin(4\pi - 2u)\} (-du) \\
+        &= \int_{\pi}^{\frac{\pi}{3}} -(-\sin u + \sin 2u) \,du = \int_{\frac{\pi}{3}}^{\pi} (\sin u - \sin 2u) \,du \\
+        \int_{\frac{5}{3}\pi}^{2\pi} (\sin s - \sin 2s) \,ds &= \int_{\frac{\pi}{3}}^{0} \{\sin(2\pi - u) - \sin(4\pi - 2u)\} (-du) \\
+        &= \int_{0}^{\frac{\pi}{3}} (-\sin u + \sin 2u) \,du = \int_{0}^{\frac{\pi}{3}} -(\sin u - \sin 2u) \,du
+        \end{align*}
+        因此，$J_k = 2\int_{0}^{\frac{\pi}{3}} -(\sin s - \sin 2s) \,ds + 2\int_{\frac{\pi}{3}}^{\pi} (\sin s - \sin 2s) \,ds$，
+        \begin{align*}
+        J_k &= 2\left[ \cos s - \frac{1}{2} \cos 2s \right]_{0}^{\frac{\pi}{3}} - 2\left[ \cos s - \frac{1}{2} \cos 2s \right]_{\frac{\pi}{3}}^{\pi} \\
+        &= 2\left( \frac{1}{2} - \frac{1}{4} - 1 + \frac{1}{2} \right) - 2\left( -1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{4} \right) = -1 + \frac{3}{2} + 3 + \frac{3}{2} = 5
+        \end{align*}
+        所以，$I_n = \frac{1}{n} \sum_{k=1}^{n} J_k = \frac{1}{n} \sum_{k=1}^{n} 5 = \frac{1}{n} \cdot 5n = 5$。
+    \end{solution}
+
+    \part 当 $c$ 为正数时，求 $\lim_{n \to \infty} \int_{0}^{c} |\sin nx - \sin 2nx| \,dx$。
+    \begin{solution}
+        当 $c > 0$ 时，对于 $K_n = \int_{0}^{c} |\sin nx - \sin 2nx| \,dx$，与 (1) 同样令 $nx = t$，
+        \[
+        K_n = \frac{1}{n} \int_{0}^{cn} |\sin t - \sin 2t| \,dt \dots (2)
+        \]
+        对于足够大的 $n$，存在正整数 $m$ 满足 $2m\pi \le cn < 2(m+1)\pi \dots (3)$，
+        \[
+        \int_{0}^{2m\pi} |\sin t - \sin 2t| \,dt \le \int_{0}^{cn} |\sin t - \sin 2t| \,dt < \int_{0}^{2(m+1)\pi} |\sin t - \sin 2t| \,dt
+        \]
+        由 (1)(2) 得，$m I_m \le n K_n < (m+1) I_{m+1}$。由于 $I_m = I_{m+1} = 5$，
+        \[
+        5m \le n K_n < 5(m+1), \quad \frac{5m}{n} \le K_n < \frac{5(m+1)}{n} = \frac{5m}{n} + \frac{5}{n} \dots (4)
+        \]
+        由 (3) 知 $\frac{m}{n} \le \frac{c}{2\pi}$ 且 $\frac{c}{2\pi} < \frac{m+1}{n} = \frac{m}{n} + \frac{1}{n}$，
+        \[
+        \frac{c}{2\pi} - \frac{1}{n} < \frac{m}{n} \le \frac{c}{2\pi}, \quad \frac{5c}{2\pi} - \frac{5}{n} < \frac{5m}{n} \le \frac{5c}{2\pi}
+        \]
+        由 (4) 可得，$\frac{5c}{2\pi} - \frac{5}{n} < K_n < \frac{5c}{2\pi} + \frac{5}{n}$，
+        \[
+        \lim_{n \to \infty} \int_{0}^{c} |\sin nx - \sin 2nx| \,dx = \lim_{n \to \infty} K_n = \frac{5c}{2\pi}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+在 $xyz$ 空间中，由方程 $y = \frac{1}{2}(x^2 + z^2)$ 表示的图形是将抛物线绕 $y$ 轴旋转得到的曲面。将其记为 $S$。此外，方程 $y = x + \frac{1}{2}$ 表示的图形是与 $xz$ 平面成 $45$ 度角相交的平面。将其记为 $H$。记 $S$ 与 $H$ 围成的部分为 $K$，则 $K$ 是满足不等式 $\frac{1}{2}(x^2 + z^2) \le y \le x + \frac{1}{2}$ 的所有点 $(x, y, z)$ 的集合。此时，回答下列问题。
+\begin{parts}
+    \part 求实数 $t$ 的范围，使得平面 $z = t$ 截 $K$ 所得的截面不是空集。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image341.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        立体 $K: \frac{1}{2}(x^2 + z^2) \le y \le x + \frac{1}{2}$ 被平面 $z = t$ 截得的截面为
+        \[
+        \frac{1}{2}(x^2 + t^2) \le y \le x + \frac{1}{2} \dots (1)
+        \]
+        该截面存在的条件是存在满足 $\frac{1}{2}(x^2 + t^2) \le x + \frac{1}{2}$ 的 $x$，
+        \[
+        x^2 + t^2 \le 2x + 1, \quad x^2 - 2x + t^2 - 1 \le 0 \dots (2)
+        \]
+        (2) 的解存在的条件对应于 $x^2 - 2x + t^2 - 1 = 0 \dots (3)$ 具有实根，
+        \[
+        D/4 = 1 - (t^2 - 1) = 2 - t^2 \ge 0
+        \]
+        因此，$t^2 - 2 \le 0$，即 $-\sqrt{2} \le t \le \sqrt{2}$。
+    \end{solution}
+
+    \part 用 $t$ 表示 (1) 中截面的面积 $S(t)$。
+    \begin{solution}
+        当 $-\sqrt{2} \le t \le \sqrt{2}$ 时，记 (3) 的解为 $x = \alpha, \beta$ ($\alpha \le \beta$)，
+        \[
+        \alpha = 1 - \sqrt{2 - t^2}, \quad \beta = 1 + \sqrt{2 - t^2}
+        \]
+        设由 (1) 表示的截面面积为 $S(t)$，
+        \begin{align*}
+        S(t) &= \int_{\alpha}^{\beta} \left\{ x + \frac{1}{2} - \frac{1}{2}(x^2 + t^2) \right\} \,dx = -\frac{1}{2} \int_{\alpha}^{\beta} (x^2 - 2x + t^2 - 1) \,dx \\
+        &= -\frac{1}{2} \int_{\alpha}^{\beta} (x - \alpha)(x - \beta) \,dx = -\frac{1}{2} \left( -\frac{1}{6} \right) (\beta - \alpha)^3 = \frac{1}{12} \left( 2\sqrt{2 - t^2} \right)^3 \\
+        &= \frac{2}{3} (\sqrt{2 - t^2})^3 = \frac{2}{3} (2 - t^2)^{\frac{3}{2}}
+        \end{align*}
+    \end{solution}
+
+    \part 求 $K$ 的体积。
+    \begin{solution}
+        记 $K$ 的体积为 $V$，注意 $S(-t) = S(t)$，
+        \[
+        V = \int_{-\sqrt{2}}^{\sqrt{2}} S(t) \,dt = 2 \int_{0}^{\sqrt{2}} S(t) \,dt = \frac{4}{3} \int_{0}^{\sqrt{2}} (\sqrt{2 - t^2})^3 \,dt
+        \]
+        令 $t = \sqrt{2} \sin \theta$ ($-\frac{\pi}{2} \le \theta \le \frac{\pi}{2}$)，则 $dt = \sqrt{2} \cos \theta \,d\theta$，
+        \begin{align*}
+        V &= \frac{4}{3} \int_{0}^{\frac{\pi}{2}} (\sqrt{2 - 2\sin^2 \theta})^3 \cdot \sqrt{2} \cos \theta \,d\theta = \frac{16}{3} \int_{0}^{\frac{\pi}{2}} \cos^4 \theta \,d\theta \\
+        &= \frac{16}{3} \int_{0}^{\frac{\pi}{2}} \left( \frac{1 + \cos 2\theta}{2} \right)^2 \,d\theta = \frac{4}{3} \int_{0}^{\frac{\pi}{2}} (1 + 2\cos 2\theta + \cos^2 2\theta) \,d\theta \\
+        &= \frac{4}{3} \int_{0}^{\frac{\pi}{2}} \left( 1 + 2\cos 2\theta + \frac{1 + \cos 4\theta}{2} \right) \,d\theta = \frac{4}{3} \left[ \frac{3}{2}\theta + \sin 2\theta + \frac{1}{8}\sin 4\theta \right]_{0}^{\frac{\pi}{2}} \\
+        &= \frac{4}{3} \cdot \frac{3}{2} \cdot \frac{\pi}{2} = \pi
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question
+设 $p$ 为正实数。函数 $f(x)$ 对于所有实数 $x$ 满足 $f(x+p) = f(x)$，且在 $0 \le x \le p$ 中，$f(x) = \frac{p}{2} - \left| x - \frac{p}{2} \right|$。又设
+\[
+I_k = \int_{p(k-1)}^{pk} e^{-x} f(x) \, dx \quad (k = 1, 2, 3, \dots)
+\]
+回答以下问题。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image356.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 求 $I_1$。
+    \begin{solution}
+        当 $p > 0$ 时，在 $0 \le x \le p$ 中，由 $f(x) = \frac{p}{2} - \left| x - \frac{p}{2} \right|$ 得：
+        (i) $0 \le x \le \frac{p}{2}$ 时，$f(x) = \frac{p}{2} + \left( x - \frac{p}{2} \right) = x$；
+        (ii) $\frac{p}{2} \le x \le p$ 时，$f(x) = \frac{p}{2} - \left( x - \frac{p}{2} \right) = -x + p$。
+        因此
+        \[
+        I_1 = \int_0^p e^{-x} f(x) \, dx = \int_0^{\frac{p}{2}} x e^{-x} \, dx + \int_{\frac{p}{2}}^p (-x + p) e^{-x} \, dx
+        \]
+        \[
+        = \left[ -x e^{-x} \right]_0^{\frac{p}{2}} + \int_0^{\frac{p}{2}} e^{-x} \, dx - \left[ (-x + p) e^{-x} \right]_{\frac{p}{2}}^p - \int_{\frac{p}{2}}^p e^{-x} \, dx
+        \]
+        \[
+        = -\frac{p}{2} e^{-\frac{p}{2}} - \left[ e^{-x} \right]_0^{\frac{p}{2}} + \frac{p}{2} e^{-\frac{p}{2}} + \left[ e^{-x} \right]_{\frac{p}{2}}^p = -e^{-\frac{p}{2}} + 1 + e^{-p} - e^{-\frac{p}{2}} = \left( 1 - e^{-\frac{p}{2}} \right)^2 \dots (1)
+        \]
+    \end{solution}
+
+    \part 求 $\frac{I_k}{I_1}$。
+    \begin{solution}
+        令 $t = x - p(k-1)$，则 $dt = dx$。当 $x: p(k-1) \to pk$ 时，$t: 0 \to p$。
+        由于 $f(x+p) = f(x)$，通过归纳可得 $f(t + p(k-1)) = f(t)$，故
+        \[
+        I_k = \int_0^p e^{-(t + p(k-1))} f(t + p(k-1)) \, dt = e^{-p(k-1)} \int_0^p e^{-t} f(t) \, dt = e^{-p(k-1)} I_1
+        \]
+        因此
+        \[
+        \frac{I_k}{I_1} = e^{-p(k-1)} \dots (2)
+        \]
+    \end{solution}
+
+    \part $n$ 为自然数。求 $\lim_{n \to \infty} \int_0^{pn} e^{-x} f(x) \, dx$。
+    \begin{solution}
+        设 $J_n = \int_0^{pn} e^{-x} f(x) \, dx$，由 (1) 和 (2) 得
+        \[
+        J_n = \sum_{k=1}^n \int_{p(k-1)}^{pk} e^{-x} f(x) \, dx = \sum_{k=1}^n I_k = I_1 \sum_{k=1}^n e^{-p(k-1)} = \left( 1 - e^{-\frac{p}{2}} \right)^2 \cdot \frac{1 - e^{-pn}}{1 - e^{-p}}
+        \]
+        当 $n \to \infty$ 时，$e^{-pn} \to 0$，故
+        \[
+        \lim_{n \to \infty} J_n = \left( 1 - e^{-\frac{p}{2}} \right)^2 \cdot \frac{1}{1 - e^{-p}} = \frac{\left( 1 - e^{-\frac{p}{2}} \right)^2}{\left( 1 + e^{-\frac{p}{2}} \right) \left( 1 - e^{-\frac{p}{2}} \right)} = \frac{1 - e^{-\frac{p}{2}}}{1 + e^{-\frac{p}{2}}}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+函数 $f(x)$ 在区间 $x \ge 0$ 上是连续递增函数且满足 $f(0) = 1$。这里，$f(x)$ 在区间 $x \ge 0$ 上是递增函数是指对于该区间内任意实数 $x_1, x_2$，若 $x_1 < x_2$ 则 $f(x_1) < f(x_2)$。以下 $n$ 为正整数。
+\begin{parts}
+    \part 证明 $\lim_{n \to \infty} \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx = \infty$。
+    \begin{solution}
+        当 $x \ge 0$ 时，由于 $f(x)$ 是连续递增函数且 $f(0) = 1$，所以在 $0 \le x \le 2 - \frac{1}{n}$ 中有
+        $f(x) \ge 1$，故 $\frac{f(x)}{2-x} \ge \frac{1}{2-x}$。于是
+        \[
+        \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx \ge \int_0^{2 - \frac{1}{n}} \frac{1}{2-x} \, dx = \left[ -\log |2-x| \right]_0^{2 - \frac{1}{n}} = \log n + \log 2 \dots (1)
+        \]
+        当 $n \to \infty$ 时，$\log n + \log 2 \to \infty$，由 (1) 得
+        \[
+        \lim_{n \to \infty} \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx = \infty
+        \]
+    \end{solution}
+
+    \part 在区间 $y > 2$ 中定义函数 $F_n(y)$ 为 $F_n(y) = \int_{2 + \frac{1}{n}}^y \frac{f(x)}{x-2} \, dx$。
+    证明 $\lim_{y \to \infty} F_n(y) = \infty$。此外，证明在比 $2 + \frac{1}{n}$ 大的实数 $a_n$ 中，恰好存在一个满足
+    \[
+    \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx + \int_{2 + \frac{1}{n}}^{a_n} \frac{f(x)}{2-x} \, dx = 0
+    \]
+    的 $a_n$。
+    \begin{solution}
+        当 $y > 2$ 时，在 $2 + \frac{1}{n} \le x \le y$ 中，$f(x) \ge 1$，故 $\frac{f(x)}{x-2} \ge \frac{1}{x-2}$。
+        \[
+        F_n(y) \ge \int_{2 + \frac{1}{n}}^y \frac{1}{x-2} \, dx = \left[ \log |x-2| \right]_{2 + \frac{1}{n}}^y = \log(y-2) + \log n \dots (2)
+        \]
+        当 $y \to \infty$ 时，$\log(y-2) + \log n \to \infty$，由 (2) 得
+        \[
+        \lim_{y \to \infty} F_n(y) = \infty \dots (3)
+        \]
+        现在，令 $G_n(y) = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx + \int_{2 + \frac{1}{n}}^y \frac{f(x)}{2-x} \, dx = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx - F_n(y)$。
+        则当 $y \ge 2 + \frac{1}{n}$ 时，$G_n'(y) = -F_n'(y) = -\frac{f(y)}{y-2} < 0$，故 $G_n(y)$ 单调递减。由 (1) 得
+        \[
+        G_n \left( 2 + \frac{1}{n} \right) = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx \ge \log n + \log 2 > 0 \dots (4)
+        \]
+        又由 (3) 知，$\lim_{y \to \infty} G_n(y) = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx - \lim_{y \to \infty} F_n(y) = -\infty$。
+        因此，在比 $2 + \frac{1}{n}$ 大的实数 $a_n$ 中，使 $G_n(a_n) = 0$ 成立的 $a_n$ 恰好存在一个。
+    \end{solution}
+
+    \part 对于 (2) 中的 $a_n$，证明不等式 $a_n < 4$ 对所有 $n$ 成立。
+    \begin{solution}
+        $G_n(4) = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx + \int_{2 + \frac{1}{n}}^4 \frac{f(x)}{2-x} \, dx \dots (5)$。在此令 $t = 4-x$，则 $dt = -dx$。
+        当 $x: 2 + \frac{1}{n} \to 4$ 时，$t: 2 - \frac{1}{n} \to 0$，故
+        \[
+        \int_{2 + \frac{1}{n}}^4 \frac{f(x)}{2-x} \, dx = \int_{2 - \frac{1}{n}}^0 \frac{f(4-t)}{2 - (4-t)} \cdot (-dt) = -\int_0^{2 - \frac{1}{n}} \frac{f(4-t)}{t-2} \, dt = -\int_0^{2 - \frac{1}{n}} \frac{f(4-x)}{x-2} \, dx \dots (6)
+        \]
+        将 (6) 代入 (5) 得
+        \[
+        G_n(4) = \int_0^{2 - \frac{1}{n}} \frac{f(x)}{2-x} \, dx - \int_0^{2 - \frac{1}{n}} \frac{f(4-x)}{2-x} \, dx = \int_0^{2 - \frac{1}{n}} \frac{f(x) - f(4-x)}{2-x} \, dx
+        \]
+        在 $0 \le x \le 2 - \frac{1}{n}$ 中，由于 $f(x)$ 是递增函数，且 $x < 4-x$，故 $f(x) < f(4-x)$，从而 $G_n(4) < 0$。
+        于是，结合 (4) 可知，满足 $G_n(y) = 0$ 的 $y = a_n$ 存在于 $2 + \frac{1}{n} < y < 4$ 之间。即对于所有 $n$，$a_n < 4$ 成立。
+    \end{solution}
+\end{parts}
+
+% 第 16 题 [东京医科齿科大学]
+\question
+设曲线 $C: y = f(x) \ (0 \le x < 1)$ 满足以下条件。
+\begin{itemize}
+    \item $f(0) = 0$
+    \item 当 $0 < x < 1$ 时，$f'(x) > 0$
+    \item 对于满足 $0 < a < 1$ 的所有实数 $a$，曲线 $C$ 上的点 $P(a, f(a))$ 处的切线与直线 $x=1$ 的交点为 $Q$，则 $PQ = 1$。
+\end{itemize}
+回答以下问题。
+\begin{parts}
+    \part 求 $f'(x)$。
+    \begin{solution}
+        对于满足 $f(0) = 0$ 且在 $0 < x < 1$ 上 $f'(x) > 0$ 的曲线 $C: y = f(x)$，根据题意，点 $P(a, f(a))$ 处的切线与直线 $x=1$ 的交点为 $Q$。由于 $PQ = 1$ 成立。
+        切线在 $Q$ 点的横坐标与 $P$ 点的横坐标之差为 $1-a$，切线的斜率为 $f'(a)$，故有
+        \[
+        (1-a) \sqrt{1 + \{f'(a)\}^2} = 1
+        \]
+        \[
+        1 + \{f'(a)\}^2 = \frac{1}{(1-a)^2}, \quad \{f'(a)\}^2 = \frac{1 - (1-a)^2}{(1-a)^2} = \frac{2a - a^2}{(1-a)^2}
+        \]
+        由于 $f'(a) > 0$，故 $f'(a) = \frac{\sqrt{2a-a^2}}{1-a}$。因为 $a$ 是满足 $0 < a < 1$ 的任意实数，所以
+        \[
+        f'(x) = \frac{\sqrt{2x-x^2}}{1-x}
+        \]
+    \end{solution}
+
+    \part 求 $\int_0^{\frac{1}{2}} (1-x) f'(x) \, dx$ 的值。
+    \begin{solution}
+        设 $I = \int_0^{\frac{1}{2}} (1-x) f'(x) \, dx$。代入 (1) 的结果得
+        \[
+        I = \int_0^{\frac{1}{2}} \sqrt{2x-x^2} \, dx = \int_0^{\frac{1}{2}} \sqrt{-(x-1)^2 + 1} \, dx
+        \]
+        令 $x-1 = t$，则 $dx = dt$。当 $x$ 从 $0$ 变到 $\frac{1}{2}$ 时，$t$ 从 $-1$ 变到 $-\frac{1}{2}$。
+        \[
+        I = \int_{-1}^{-\frac{1}{2}} \sqrt{1-t^2} \, dt
+        \]
+        此积分为半径为 1 的圆在相应区间的面积，计算得
+        \[
+        I = \frac{1}{2} \cdot 1^2 \cdot \frac{\pi}{3} - \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{\sqrt{3}}{2} = \frac{\pi}{6} - \frac{\sqrt{3}}{8}
+        \]
+    \end{solution}
+
+    \part 求由曲线 $C$、$x$ 轴、直线 $x=1$ 以及直线 $y = f\left(\frac{1}{2}\right)$ 所围成图形的面积。
+    \begin{solution}
+        所求面积 $S$ 为
+        \[
+        S = \int_0^{\frac{1}{2}} f(x) \, dx + \left( 1 - \frac{1}{2} \right) f\left( \frac{1}{2} \right) = \int_0^{\frac{1}{2}} f(x) \, dx + \frac{1}{2} f\left( \frac{1}{2} \right)
+        \]
+        利用分部积分法处理 (2) 中的 $I$：
+        \[
+        I = \left[ (x-1) f(x) \right]_0^{\frac{1}{2}} - \int_0^{\frac{1}{2}} (-1) f(x) \, dx = -\frac{1}{2} f\left( \frac{1}{2} \right) + \int_0^{\frac{1}{2}} f(x) \, dx
+        \]
+        此处注意 $f(0)=0$。比较可知 $S$ 与 $I$ 的关系，得
+        \[
+        S = I = \frac{\pi}{6} - \frac{\sqrt{3}}{8}
+        \]
+    \end{solution}
+\end{parts}
+
+% 第 17 题 [信州大学]
+\question
+对于二次项系数均为正的二次函数 $f(x), g(x)$，设其在坐标平面上的抛物线分别为 $C_1, C_2$。又设直线 $l: y = \frac{1}{2}x$。已知 $C_1$ 与 $l$ 在点 $(0, 0)$ 处相切，$C_2$ 与 $l$ 在点 $(4, 2)$ 处相切，$C_1$ 与 $C_2$ 在点 $\left( \frac{4}{3}, \frac{22}{9} \right)$ 处相交。
+回答以下问题。
+\begin{parts}
+    \part 求 $f(x)$ 和 $g(x)$。
+    \begin{solution}
+        设 $f(x) = ax^2 + bx + c \ (a > 0)$，$g(x) = px^2 + qx + r \ (p > 0)$。
+        对于 $C_1$ 与 $l$ 在 $(0, 0)$ 处相切：
+        $f(0) = c = 0$，$f'(0) = b = \frac{1}{2}$。
+        故 $f(x) = ax^2 + \frac{1}{2}x \dots (1)$。
+        对于 $C_2$ 与 $l$ 在 $(4, 2)$ 处相切：
+        $g'(4) = 8p + q = \frac{1}{2} \implies q = -8p + \frac{1}{2}$。
+        $g(4) = 16p + 4q + r = 2 \implies r = 2 - 16p - 4\left(-8p + \frac{1}{2}\right) = 16p$。
+        故 $g(x) = px^2 - \left(8p - \frac{1}{2}\right)x + 16p \dots (2)$。
+        已知 $C_1$ 与 $C_2$ 在点 $\left( \frac{4}{3}, \frac{22}{9} \right)$ 处相交，代入 (1) 和 (2)：
+        $f\left(\frac{4}{3}\right) = \frac{16}{9}a + \frac{2}{3} = \frac{22}{9} \implies a = 1$。
+        $g\left(\frac{4}{3}\right) = \frac{16}{9}p - \frac{4}{3}\left(8p - \frac{1}{2}\right) + 16p = \frac{22}{9} \implies p = \frac{1}{4}$。
+        因此，$f(x) = x^2 + \frac{1}{2}x$，$g(x) = \frac{1}{4}x^2 - \frac{3}{2}x + 4$。
+    \end{solution}
+
+    \part 求由抛物线 $C_1$ 的 $x \ge 0$ 部分、抛物线 $C_2$ 以及直线 $l$ 所围成的图形绕 $y$ 轴旋转一周所得旋转体的体积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image357.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        利用柱壳法求绕 $y$ 轴旋转的体积 $V$：
+        \[
+        V = 2\pi \int_0^{\frac{4}{3}} x \left\{ f(x) - \frac{1}{2}x \right\} \, dx + 2\pi \int_{\frac{4}{3}}^4 x \left\{ g(x) - \frac{1}{2}x \right\} \, dx
+        \]
+        代入函数表达式：
+        \[
+        V = 2\pi \int_0^{\frac{4}{3}} x^3 \, dx + 2\pi \int_{\frac{4}{3}}^4 x \left( \frac{1}{4}x^2 - 2x + 4 \right) \, dx
+        \]
+        \[
+        = 2\pi \left[ \frac{x^4}{4} \right]_0^{\frac{4}{3}} + 2\pi \int_{\frac{4}{3}}^4 \frac{1}{4}x(x-4)^2 \, dx = \frac{2^7}{3^4}\pi + \frac{1}{2}\pi \int_{\frac{4}{3}}^4 x(x-4)^2 \, dx
+        \]
+        令 $t = x-4$，则 $dx = dt$。当 $x: \frac{4}{3} \to 4$ 时，$t: -\frac{8}{3} \to 0$。
+        \[
+        \int_{\frac{4}{3}}^4 x(x-4)^2 \, dx = \int_{-\frac{8}{3}}^0 (t+4)t^2 \, dt = \int_{-\frac{8}{3}}^0 (t^3 + 4t^2) \, dt = \left[ \frac{t^4}{4} + \frac{4}{3}t^3 \right]_{-\frac{8}{3}}^0
+        \]
+        \[
+        = -\frac{1}{4} \cdot \frac{8^4}{3^4} - \frac{4}{3} \left( -\frac{8^3}{3^3} \right) = -\frac{2^{10}}{3^4} + \frac{2^{11}}{3^4} = \frac{2^{10}}{3^4}
+        \]
+        代入 $V$ 的表达式：
+        \[
+        V = \frac{2^7}{3^4}\pi + \frac{2^9}{3^4}\pi = \frac{2^7}{3^4}(1+4)\pi = \frac{640}{81}\pi
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+半径为 1 的圆为底面、高度为 $\sqrt{3}$ 的直圆柱，与半径为 $r$ 的球。当直圆柱底面圆的中心与球心重合时，求直圆柱内部与球内部公共部分的体积 $V(r)$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image358.png}
+        \includegraphics[width=0.5\textwidth]{images/image359.png}
+        \includegraphics[width=0.5\textwidth]{images/image360.png}
+    \end{figure}
+    \fi
+\begin{solution}
+底面半径为 1、高度为 $\sqrt{3}$ 的直圆柱方程为：
+$x^2 + y^2 \le 1$ 且 $0 \le z \le \sqrt{3}$ ……(1)
+半径为 $r$ 的球方程为：
+$x^2 + y^2 + z^2 \le r^2$ ……(2)
+直圆柱与球的公共部分是 (1) 与 (2) 的公共部分，将其在 $yz$ 平面切开，其截面绕 $z$ 轴旋转即可得到该立体。
+在 $yz$ 平面 ($x=0$) 的截面范围为：
+$-1 \le y \le 1$ 且 $0 \le z \le \sqrt{3}$ 且 $y^2 + z^2 \le r^2$
+根据 $r$ 的取值范围，体积 $V(r)$ 分情况讨论如下：
+
+(i) 当 $0 < r \le 1$ 时：
+公共部分为半球，故
+\[
+V(r) = \frac{1}{2} \cdot \frac{4}{3}\pi r^3 = \frac{2}{3}\pi r^3
+\]
+
+(ii) 当 $1 \le r \le \sqrt{3}$ 时：
+截面在 $z$ 轴方向的高度从 0 到 $\sqrt{r^2 - 1}$ 时是半径为 1 的圆，从 $\sqrt{r^2 - 1}$ 到 $r$ 时是球的一部分。
+\[
+V(r) = \pi \cdot 1^2 \cdot \sqrt{r^2 - 1} + \pi \int_{\sqrt{r^2 - 1}}^{r} y^2 \,dz
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \int_{\sqrt{r^2 - 1}}^{r} \left( r^2 - z^2 \right) \,dz
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \left[ r^2 z - \frac{z^3}{3} \right]_{\sqrt{r^2 - 1}}^{r}
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi r^2 \left( r - \sqrt{r^2 - 1} \right) - \frac{\pi}{3} \left\{ r^3 - \left( r^2 - 1 \right) \sqrt{r^2 - 1} \right\}
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \left( \frac{2}{3}r^3 - \frac{2r^2 + 1}{3} \sqrt{r^2 - 1} \right) = \pi \left( \frac{2}{3}r^3 - \frac{2r^2 - 2}{3} \sqrt{r^2 - 1} \right)
+\]
+
+(iii) 当 $\sqrt{3} \le r \le 2$ 时：
+此时球体超出了圆柱的高度上限 $\sqrt{3}$。
+\[
+V(r) = \pi \cdot 1^2 \cdot \sqrt{r^2 - 1} + \pi \int_{\sqrt{r^2 - 1}}^{\sqrt{3}} y^2 \,dz
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \int_{\sqrt{r^2 - 1}}^{\sqrt{3}} \left( r^2 - z^2 \right) \,dz
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \left[ r^2 z - \frac{z^3}{3} \right]_{\sqrt{r^2 - 1}}^{\sqrt{3}}
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi r^2 \left( \sqrt{3} - \sqrt{r^2 - 1} \right) - \frac{\pi}{3} \left\{ 3\sqrt{3} - \left( r^2 - 1 \right) \sqrt{r^2 - 1} \right\}
+\]
+\[
+= \pi \sqrt{r^2 - 1} + \pi \left( \sqrt{3}r^2 - \frac{2r^2 + 1}{3} \sqrt{r^2 - 1} - \sqrt{3} \right)
+\]
+\[
+= \pi \left( \sqrt{3}r^2 - \frac{2r^2 - 2}{3} \sqrt{r^2 - 1} - \sqrt{3} \right)
+\]
+
+(iv) 当 $r \ge 2$ 时：
+公共部分即为整个直圆柱，故
+\[
+V(r) = \pi \cdot 1^2 \cdot \sqrt{3} = \sqrt{3}\pi
+\]
+\end{solution}
+
+\question
+坐标空间内的点 $A(0, 0, 2)$ 与点 $B(1, 0, 1)$ 连成的线段 $AB$ 绕 $z$ 轴旋转一周所得曲面为 $S$。设 $S$ 上的点 $P$ 与 $xy$ 平面上的点 $Q$ 满足 $PQ=2$，当点 $P$ 移动时，线段 $PQ$ 的中点 $M$ 可能通过的范围为 $K$。求 $K$ 的体积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image361.png}
+    \end{figure}
+    \fi
+\begin{solution}
+    设线段 $AB$ 绕 $z$ 轴旋转一周所得圆锥侧面 $S$ 上的点为 $P(s, t, u) \ (1 \le u \le 2)$。由于 $\angle BAO = \frac{\pi}{4}$，
+    \[
+    \vec{AP} \cdot \vec{AO} = |\vec{AP}| |\vec{AO}| \cos \frac{\pi}{4}
+    \]
+    由 $\vec{AP} = (s, t, u-2)$，$\vec{AO} = (0, 0, -2)$ 得
+    \[
+    -2(u-2) = \sqrt{s^2+t^2+(u-2)^2} \cdot 2 \cdot \frac{1}{\sqrt{2}}
+    \]
+    因 $1 \le u \le 2$，两边平方得 $2(2-u)^2 = s^2+t^2+(u-2)^2$，即
+    \[
+    s^2 + t^2 = (2-u)^2 \dots (1)
+    \]
+    固定点 $P$，在 $xy$ 平面上的点 $Q$ 满足 $PQ=2$ 运动，则点 $Q$ 以 $P$ 为顶点，母线长为 2 的圆锥底面圆轨迹。
+    此外，线段 $PQ$ 的中点 $M(x, y, z)$，由 $PM=1$ 知，在平面 $z = \frac{u}{2}$ 上，以 $(s, t, \frac{u}{2})$ 为中心，半径为 $\sqrt{1^2 - \left(\frac{u}{2}\right)^2} = \frac{1}{2} \sqrt{4-u^2}$ 画圆，即
+    \[
+    (x-s)^2 + (y-t)^2 = \frac{1}{4}(4-u^2) \dots (2)
+    \]
+    在平面 $z = \frac{u}{2}$ 上满足 (1) 和 (2) 的 $s, t$ 存在的条件是 $st$ 平面上两个圆 (1) 和 (2) 有公共点。
+    圆 (1) 是中心 $(0, 0)$ 半径 $2-u$，圆 (2) 是中心 $(x, y)$ 半径 $\frac{1}{2}\sqrt{4-u^2}$。
+    中心距离为 $\sqrt{x^2+y^2}$，故
+    \[
+    \left| (2-u) - \frac{1}{2}\sqrt{4-u^2} \right| \le \sqrt{x^2+y^2} \le (2-u) + \frac{1}{2}\sqrt{4-u^2}
+    \]
+    \[
+    \left\{ (2-u) - \frac{1}{2}\sqrt{4-u^2} \right\}^2 \le x^2+y^2 \le \left\{ (2-u) + \frac{1}{2}\sqrt{4-u^2} \right\}^2 \dots (3)
+    \]
+    由此，中点 $M$ 通过的范围 $K$ 在平面 $z = \frac{u}{2}$ 的截面为由 (3) 定义的圆环，其面积 $S(z)$ 为
+    \[
+    S(z) = \pi \left\{ (2-u) + \frac{1}{2}\sqrt{4-u^2} \right\}^2 - \pi \left\{ (2-u) - \frac{1}{2}\sqrt{4-u^2} \right\}^2
+    \]
+    \[
+    = 2\pi(2-u)\sqrt{4-u^2}
+    \]
+    由于 $z = \frac{u}{2}$，体积 $V$ 为
+    \[
+    V = \int_{\frac{1}{2}}^1 S(z) \, dz = 2\pi \int_1^2 (2-u)\sqrt{4-u^2} \cdot \frac{1}{2} \, du = \pi \int_1^2 (2-u)\sqrt{4-u^2} \, du
+    \]
+    \[
+    = 2\pi \int_1^2 \sqrt{4-u^2} \, du - \pi \int_1^2 u\sqrt{4-u^2} \, du
+    \]
+    计算得：
+    \[
+    \int_1^2 \sqrt{4-u^2} \, du = \frac{1}{2} \cdot 2^2 \cdot \frac{\pi}{3} - \frac{1}{2} \cdot 1 \cdot \sqrt{3} = \frac{2}{3}\pi - \frac{\sqrt{3}}{2}
+    \]
+    \[
+    \int_1^2 u\sqrt{4-u^2} \, du = \left[ -\frac{1}{3}(4-u^2)^{\frac{3}{2}} \right]_1^2 = -\frac{1}{3} \cdot (-3\sqrt{3}) = \sqrt{3}
+    \]
+    因此，$V = 2\left( \frac{2}{3}\pi - \frac{\sqrt{3}}{2} \right)\pi - \sqrt{3}\pi = \frac{4}{3}\pi^2 - 2\sqrt{3}\pi$。
+\end{solution}
 \end{questions}
 
 \pagebreak

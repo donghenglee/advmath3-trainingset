@@ -2061,6 +2061,83 @@ x_1 + 4x_2 + 9x_3 + 16x_4 + 25x_5 + 36x_6 = 30 \\
         f(1) = \frac{1}{48}(3)(5)(7) =\frac{35}{16}
         \]
     \end{solution}
+
+\question
+$n$ 是 3 以上的自然数，$a, \beta$ 是互不相同的实数。回答以下问题。
+\begin{parts}
+    \part 证明存在满足以下条件的实数 $A, B, C$ 和多项式 $Q(x)$。
+    \[
+    x^n = (x-a)(x-\beta)^2 Q(x) + A(x-a)(x-\beta) + B(x-a) + C
+    \]
+    \begin{solution}
+        对于 3 以上的自然数 $n$ 以及互不相同的实数 $a, \beta$，设 $x^n$ 除以 $(x-a)(x-\beta)^2$ 的商为 $Q(x)$，余数为 $R(x)$。则 $Q(x)$ 是 $n-3$ 次多项式，$R(x)$ 是次数在 2 以下的多项式。
+        \[
+        x^n = (x-a)(x-\beta)^2 Q(x) + R(x) \dots (1)
+        \]
+        接下来，设 $R(x)$ 除以 $(x-a)(x-\beta)$ 的商为常数 $A$，余数为 1 次以下的多项式 $B(x-a) + C$，则
+        \[
+        R(x) = A(x-a)(x-\beta) + B(x-a) + C \dots (2)
+        \]
+        由 (1) 和 (2) 得
+        \[
+        x^n = (x-a)(x-\beta)^2 Q(x) + A(x-a)(x-\beta) + B(x-a) + C \dots (3)
+        \]
+    \end{solution}
+
+    \part 用 $n, a, \beta$ 表示 (1) 中的 $A, B, C$。
+    \begin{solution}
+        在 (3) 中代入 $x=a, x=\beta$，得 $a^n = C, \beta^n = B(\beta-a) + C$。
+        \[
+        C = a^n, B = \frac{\beta^n - C}{\beta - a} = \frac{\beta^n - a^n}{\beta - a}
+        \]
+        接下来，对 (3) 的两边关于 $x$ 求导，得
+        \[
+        nx^{n-1} = (x-\beta)^2 Q(x) + 2(x-a)(x-\beta) Q(x) + (x-a)(x-\beta)^2 Q'(x) + A(x-\beta) + A(x-a) + B \dots (4)
+        \]
+        在 (4) 中代入 $x=\beta$，得 $n\beta^{n-1} = A(\beta-a) + B$。
+        \[
+        A = \frac{n\beta^{n-1} - B}{\beta - a} = \frac{n\beta^{n-1}}{\beta - a} - \frac{\beta^n - a^n}{(\beta - a)^2} \dots (5)
+        \]
+    \end{solution}
+
+    \part 对于 (2) 中的 $A$，固定 $n$ 和 $a$，求 $\beta$ 趋于 $a$ 时的极限 $\lim_{\beta \to a} A$。
+    \begin{solution}
+        由 (5) 知，固定 $n$ 和 $a$
+        \[
+        A = \frac{n\beta^{n-1} - \left( \beta^{n-1} + a\beta^{n-2} + a^2\beta^{n-3} + \dots + a^{n-2}\beta + a^{n-1} \right)}{\beta - a}
+        \]
+        \[
+        = \frac{(n-1)\beta^{n-1} - a\beta^{n-2} - a^2\beta^{n-3} - \dots - a^{n-2}\beta - a^{n-1}}{\beta - a}
+        \]
+        这里，令 $f(\beta) = (n-1)\beta^{n-1} - a\beta^{n-2} - a^2\beta^{n-3} - \dots - a^{n-2}\beta - a^{n-1}$。
+        $f(a) = (n-1)a^{n-1} - a^{n-1} - a^{n-1} - \dots - a^{n-1} - a^{n-1} = 0$。
+        于是
+        \[
+        A = \frac{f(\beta) - f(a)}{\beta - a}
+        \]
+        从而
+        \[
+        \lim_{\beta \to a} A = \lim_{\beta \to a} \frac{f(\beta) - f(a)}{\beta - a} = f'(a) \dots (6)
+        \]
+        又因为 $f'(\beta) = (n-1)^2 \beta^{n-2} - (n-2)a\beta^{n-3} - (n-3)a^2\beta^{n-4} - \dots - a^{n-2}$，所以
+        \[
+        f'(a) = (n-1)^2 a^{n-2} - (n-2)a^{n-2} - (n-3)a^{n-2} - \dots - a^{n-2}
+        \]
+        \[
+        = \left\{ (n-1)^2 - \left\{ (n-2) + (n-3) + \dots + 1 \right\} \right\} a^{n-2}
+        \]
+        \[
+        = \left\{ (n-1)^2 - \frac{1}{2}(n-2)(n-1) \right\} a^{n-2}
+        \]
+        \[
+        = \frac{1}{2}(n-1) \left\{ (2n-2) - (n-2) \right\} a^{n-2} = \frac{1}{2}n(n-1)a^{n-2} \dots (7)
+        \]
+        由 (6) 和 (7) 得
+        \[
+        \lim_{\beta \to a} A = \frac{1}{2}n(n-1)a^{n-2}
+        \]
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 
@@ -21105,13 +21182,608 @@ $\left( \frac{\gamma-\alpha}{\beta-\alpha} \right)^2 - \frac{\gamma-\alpha}{\bet
     \end{figure}
     \fi
 \begin{solution}
-设外心为原点，则 $|\alpha|=|\beta|=|\gamma|=|z|=R$ 且 $\alpha+\beta+\gamma=0$。
-由 (1) 知 $\alpha^2+\beta^2+\gamma^2 = 0$。
-$AP^2 = |z-\alpha|^2 = 2R^2 - (\bar{\alpha}z + \alpha\bar{z})$。
-故 $AP^2+BP^2+CP^2 = 6R^2 - (\bar{\alpha}+\bar{\beta}+\bar{\gamma})z - (\alpha+\beta+\gamma)\bar{z} = 6R^2$。
-同理计算四次方项，利用 $(\sum AP^2)^2$ 及对称性展开：
-$AP^4+BP^4+CP^4 = 18R^4$。
+    (2) 首先，将正三角形 $ABC$ 的外心设为原点 $O$ 也不失一般性。设外接圆上的任意点为 $P(z)$。
+    由于外接圆半径为 $R$，故
+    \[
+    |\alpha| = |\beta| = |\gamma| = |z| = R \cdots\cdots (3)
+    \]
+    且由 $\frac{\alpha + \beta + \gamma}{3} = 0$ 得 $\alpha + \beta + \gamma = 0 \cdots\cdots (4)$。
+    进一步，由 $(\alpha + \beta + \gamma)^2 = \alpha^2 + \beta^2 + \gamma^2 + 2(\alpha\beta + \beta\gamma + \gamma\alpha)$ 及 (2), (4) 可得：
+    $0 = \alpha^2 + \beta^2 + \gamma^2 + 2(\alpha^2 + \beta^2 + \gamma^2)$，故 $\alpha^2 + \beta^2 + \gamma^2 = 0 \cdots\cdots (5)$。
+    此时，$AP^2 = |z - \alpha|^2 = (z - \alpha)(\bar{z} - \bar{\alpha}) = z\bar{z} - \alpha\bar{z} - \bar{\alpha}z + \alpha\bar{\alpha}$。由 (3) 得，
+    \[
+    AP^2 = |z|^2 - \bar{\alpha}z - \alpha\bar{z} + |\alpha|^2 = 2R^2 - \bar{\alpha}z - \alpha\bar{z}
+    \]
+    同理，$BP^2 = 2R^2 - \bar{\beta}z - \beta\bar{z}$，$CP^2 = 2R^2 - \bar{\gamma}z - \gamma\bar{z}$。由 (4) 可得：
+    \begin{align*}
+    AP^2 + BP^2 + CP^2 &= 6R^2 - (\bar{\alpha} + \bar{\beta} + \bar{\gamma})z - (\alpha + \beta + \gamma)\bar{z} \\
+    &= 6R^2 - (\overline{\alpha + \beta + \gamma})z - (\alpha + \beta + \gamma)\bar{z} = 6R^2
+    \end{align*}
+    又 $AP^4 = (AP^2)^2 = \{2R^2 - (\bar{\alpha}z + \alpha\bar{z})\}^2$，故
+    \begin{align*}
+    AP^4 &= 4R^4 - 4R^2(\bar{\alpha}z + \alpha\bar{z}) + (\bar{\alpha}z)^2 + 2\alpha\bar{\alpha}z\bar{z} + (\alpha\bar{z})^2 \\
+    &= 4R^4 - 4R^2(\bar{\alpha}z + \alpha\bar{z}) + (\bar{\alpha})^2 z^2 + 2|\alpha|^2 |z|^2 + \alpha^2 (\bar{z})^2 \\
+    &= 4R^4 - 4R^2(\bar{\alpha}z + \alpha\bar{z}) + (\bar{\alpha})^2 z^2 + 2R^4 + \alpha^2 (\bar{z})^2 \\
+    &= 6R^4 - 4R^2 \bar{\alpha}z - 4R^2 \alpha\bar{z} + (\bar{\alpha})^2 z^2 + \alpha^2 (\bar{z})^2
+    \end{align*}
+    同理，
+    $BP^4 = 6R^4 - 4R^2 \bar{\beta}z - 4R^2 \beta\bar{z} + (\bar{\beta})^2 z^2 + \beta^2 (\bar{z})^2$
+    $CP^4 = 6R^4 - 4R^2 \bar{\gamma}z - 4R^2 \gamma\bar{z} + (\bar{\gamma})^2 z^2 + \gamma^2 (\bar{z})^2$
+    综上所述，应用 (4), (5) 可得：
+    \begin{align*}
+    AP^4 + BP^4 + CP^4 &= 18R^4 - 4R^2(\overline{\alpha + \beta + \gamma})z - 4R^2(\alpha + \beta + \gamma)\bar{z} + \{(\bar{\alpha})^2 + (\bar{\beta})^2 + (\bar{\gamma})^2\}z^2 + (\alpha^2 + \beta^2 + \gamma^2)(\bar{z})^2 \\
+    &= 18R^4 - 4R^2(0)z - 4R^2(0)\bar{z} + (\overline{\alpha^2 + \beta^2 + \gamma^2})z^2 + (0)(\bar{z})^2 \\
+    &= 18R^4
+    \end{align*}
+    \end{solution}
+\end{parts}
+
+\question
+$i$ 是虚数单位。在复数平面上，复数 $z$ 表示的点 $P$ 记作 $P(z)$ 或点 $z$。设 $\omega = -\frac{1}{2} + \frac{\sqrt{3}}{2}i$，考虑以 3 点 $A(1)$，$B(\omega)$，$C(\omega^2)$ 为顶点的 $\triangle ABC$。
+\begin{parts}
+    \part 证明 $\triangle ABC$ 是正三角形。
+    \begin{solution}
+    当 $\omega = -\frac{1}{2} + \frac{\sqrt{3}}{2}i$ 时，对于以 $A(1)$，$B(\omega)$，$C(\omega^2)$ 为顶点的 $\triangle ABC$，
+    \[
+    \omega^2 - 1 = (\omega + 1)(\omega - 1) = \left( \frac{1}{2} + \frac{\sqrt{3}}{2}i \right)(\omega - 1) = \left( \cos \frac{\pi}{3} + i \sin \frac{\pi}{3} \right)(\omega - 1)
+    \]
+    由此可知，将边 $AB$ 绕顶点 $A$ 旋转 $\frac{\pi}{3}$ 后与边 $AC$ 重合。
+    因为 $AB = AC$ 且 $\angle BAC = \frac{\pi}{3}$，所以 $\triangle ABC$ 是正三角形。
+    \end{solution}
+
+    \part 当点 $z$ 在边 $AC$ 上运动时，画出点 $-z$ 在复数平面上所描绘的图形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image329.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    设在边 $AC$ 上运动的点 $z$ 为 $z = t\omega^2 + (1-t) \quad (0 \le t \le 1)$，则
+    \[
+    -z = -t\omega^2 - (1-t) = t(-\omega^2) + (1-t)(-1)
+    \]
+    由此可知，点 $-z$ 所描绘的图形是以点 $-1$ 和点 $-\omega^2$ 为两端的线段，即与边 $AC$ 关于原点对称的线段。
+    \end{solution}
+
+    \part 当点 $z$ 在边 $AB$ 上运动时，点 $z^2$ 所描绘的图形记为 $E_1$。又当点 $z$ 在边 $AC$ 上运动时，点 $z^2$ 所描绘的图形记为 $E_2$。求 $E_1$ 与 $E_2$ 的所有公共点。
+    \begin{solution}
+    设在边 $AB$ 上运动的点 $z$ 为 $z_1 = s\omega + (1-s) \quad (0 \le s \le 1)$，点 $z_1^2$ 所描绘的图形为 $E_1$。又设在边 $AC$ 上运动的点 $z$ 为 $z_2 = t\omega^2 + (1-t) \quad (0 \le t \le 1)$，点 $z_2^2$ 所描绘的图形为 $E_2$。
+    $E_1$ 与 $E_2$ 的公共点由 $z_1^2 = z_2^2$ 得 $z_1 = \pm z_2$。
+    (1) $z_1 = z_2$ 时：
+    由 $s\omega + (1-s) = t\omega^2 + (1-t)$ 得 $s(\omega - 1) = t(\omega^2 - 1)$。由于 $\omega \ne 1$，
+    \[
+    s = t(\omega + 1), \quad t\omega + t - s = 0
+    \]
+    因为 $\omega$ 是虚数，所以 $t = t - s = 0$，由 $s = t = 0$ 得 $z_1 = z_2 = 1$，故 $z_1^2 = z_2^2 = 1$。
+    (2) $z_1 = -z_2$ 时：
+    由 $s\omega + (1-s) = -t\omega^2 - (1-t)$ 得 $s(\omega - 1) + 2 = -t(\omega^2 - 1)$。
+    由于 $\omega^3 = 1$ 且 $\omega \ne 1$，故 $\omega^2 + \omega + 1 = 0$，即 $\omega^2 = -\omega - 1$。
+    \[
+    s(\omega - 1) + 2 = -t(-\omega - 2), \quad (s - t)\omega - 2t - s + 2 = 0
+    \]
+    因为 $\omega$ 是虚数，所以 $s - t = -2t - s + 2 = 0$。由 $s = t = \frac{2}{3}$ 得，
+    \[
+    z_1 = \frac{2}{3}\omega + \frac{1}{3} = \frac{2}{3}\left( -\frac{1}{2} + \frac{\sqrt{3}}{2}i \right) + \frac{1}{3} = \frac{\sqrt{3}}{3}i, \quad z_1^2 = z_2^2 = -\frac{1}{3}
+    \]
+    由 (1)(2) 可知，$E_1$ 与 $E_2$ 的公共点为点 $1$ 和点 $-\frac{1}{3}$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $z$ 为复数。关于复数平面上的 3 点 $O(0)$，$A(z)$，$B(z^2)$，回答下列问题。
+\begin{parts}
+    \part 求使 3 点 $O$，$A$，$B$ 在同一直线上的 $z$ 的充分必要条件。
+    \begin{solution}
+    3 点 $O(0)$，$A(z)$，$B(z^2)$ 在同一直线上的条件是 $z = 0$ 或（$z \ne 0$ 且存在实数 $k$ 使得 $z^2 = kz$）。
+    (1) $z = 0$ 时，点 $O(0)$，$A(0)$，$B(0)$ 全部重合。
+    (2) $z = k$ 时，点 $O(0)$，$A(k)$，$B(k^2)$ 全部在实轴上。
+    由 (1)(2) 可知，使 $O$，$A$，$B$ 在同一直线上的条件是“$z$ 为实数”。
+    \end{solution}
+
+    \part 在复数平面上画出使 3 点 $O$，$A$，$B$ 构成等腰三角形顶点的所有 $z$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image330.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    3 点 $O$，$A$，$B$ 构成等腰三角形的条件，在 $z$ 不是实数的条件下：
+    (1) $OA = OB$ 时，由 $|z| = |z^2|$ 得 $|z| = |z|^2$。
+    因为 $z \ne 0$，所以 $|z| = 1$，点 $z$ 在以原点为中心、半径为 1 的圆周上。
+    (2) $OA = AB$ 时，由 $|z| = |z^2 - z|$ 得 $|z| = |z||z - 1|$。
+    因为 $z \ne 0$，所以 $|z - 1| = 1$，点 $z$ 在以点 1 为中心、半径为 1 的圆周上。
+    (3) $OB = AB$ 时，由 $|z^2| = |z^2 - z|$ 得
+    \[
+    |z|^2 = |z||z - 1|
+    \]
+    因为 $z \ne 0$，所以 $|z| = |z - 1|$，点 $z$ 在连接原点与点 1 的线段的垂直平分线上。
+    根据 (1)~(3)，点 $z$ 的存在范围如右图所示（不包括白圈部分）。
+    \end{solution}
+
+    \part 当 3 点 $O$，$A$，$B$ 构成等腰三角形顶点，且 $z$ 的辐角 $\theta$ 满足 $0 \le \theta \le \frac{\pi}{3}$ 时，求 $\triangle OAB$ 面积的最大值及此时的 $z$ 值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image331.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    当 3 点 $O$，$A$，$B$ 构成等腰三角形顶点，且 $z$ 的辐角 $\theta$ 满足 $0 \le \theta \le \frac{\pi}{3}$ 时，
+    $\angle AOB = \left| \arg \frac{z^2}{z} \right| = |\arg z| = \theta$。设 $\triangle OAB$ 的面积为 $S$，则
+    \[
+    S = \frac{1}{2}|z||z^2|\sin \theta = \frac{1}{2}|z|^3\sin \theta
+    \]
+    由此可知，当 $\theta$ 固定在 $0 < \theta \le \frac{\pi}{3}$ 时，$S$ 最大是在点 $z$ 处于以点 1 为中心、半径为 1 的圆弧上时。此时 $|z| = 2\cos \theta$，
+    \[
+    S = \frac{1}{2}(2\cos \theta)^3\sin \theta = 4\cos^3 \theta \sin \theta
+    \]
+    \[
+    S' = -12\cos^2 \theta \sin^2 \theta + 4\cos^4 \theta = 4\cos^2 \theta (-3\sin^2 \theta + \cos^2 \theta) = 4\cos^2 \theta (4\cos^2 \theta - 3) = 4\cos^2 \theta (2\cos \theta - \sqrt{3})(2\cos \theta + \sqrt{3})
+    \]
+    由此，在 $0 < \theta \le \frac{\pi}{3}$ 范围内 $S$ 的增减情况如右表所示，在 $\theta = \frac{\pi}{6}$ 时取最大值 $\frac{3\sqrt{3}}{4}$。
+    此时 $|z| = 2\cos \frac{\pi}{6} = \sqrt{3}$，故
+    \[
+    z = \sqrt{3}\left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right) = \frac{3}{2} + \frac{\sqrt{3}}{2}i
+    \]
+    \end{solution}
+\end{parts}
+
+\question
+对于复数 $a, b, c$，考虑多项式 $f(z) = az^2 + bz + c$。设 $i$ 为虚数单位。
+\begin{parts}
+    \part 设 $\alpha, \beta, \gamma$ 为复数。当 $f(0) = \alpha$，$f(1) = \beta$，$f(i) = \gamma$ 成立时，请分别用 $\alpha, \beta, \gamma$ 表示 $a, b, c$。
+    \begin{solution}
+    对于 $f(z) = az^2 + bz + c$，根据 $f(0) = \alpha$，$f(1) = \beta$，$f(i) = \gamma$，得：
+    \[
+    c = \alpha \cdots\cdots (1), \quad a + b + c = \beta \cdots\cdots (2), \quad -a + bi + c = \gamma \cdots\cdots (3)
+    \]
+    由 (1)(2) 得 $a + b = \beta - \alpha$，由 (1)(3) 得 $-a + bi = \gamma - \alpha$，联立得：
+    \[
+    b = \frac{-2\alpha + \beta + \gamma}{1 + i} = \frac{(-2\alpha + \beta + \gamma)(1 - i)}{2} = (-1 + i)\alpha + \frac{1 - i}{2}\beta + \frac{1 - i}{2}\gamma
+    \]
+    \[
+    a = \beta - \alpha - \{(-1 + i)\alpha + \frac{1 - i}{2}\beta + \frac{1 - i}{2}\gamma\} = -i\alpha + \frac{1 + i}{2}\beta - \frac{1 - i}{2}\gamma
+    \]
+    \end{solution}
+
+    \part 当 $f(0), f(1), f(i)$ 均为 1 以上 2 以下的实数时，在复数平面上画出 $f(2)$ 可能取值的范围。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image332.png}
+        \includegraphics[width=0.5\textwidth]{images/image333.png}
+        \includegraphics[width=0.5\textwidth]{images/image334.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    在 $1 \le \alpha \le 2$，$1 \le \beta \le 2$，$1 \le \gamma \le 2$ 的条件下，对于 $f(2) = 4a + 2b + c$，应用 (1) 的结果：
+    \begin{align*}
+    f(2) &= -4i\alpha + 2(1 + i)\beta - 2(1 - i)\gamma + 2(-1 + i)\alpha + (1 - i)\beta + (1 - i)\gamma + \alpha \\
+    &= (-1 - 2i)\alpha + (3 + i)\beta + (-1 + i)\gamma = (-\alpha + 3\beta - \gamma) + (-2\alpha + \beta + \gamma)i
+    \end{align*}
+    设 $f(2) = x + yi$，则 $x = -\alpha + 3\beta - \gamma$，$y = -2\alpha + \beta + \gamma$，于是：
+    \[
+    (x, y) = \alpha(-1, -2) + \beta(3, 1) + \gamma(-1, 1)
+    \]
+    这里，设 $\vec{x} = (x, y)$，$\vec{a} = (-1, -2)$，$\vec{b} = (3, 1)$，$\vec{c} = (-1, 1)$，则：
+    \[
+    \vec{x} = \alpha\vec{a} + \beta\vec{b} + \gamma\vec{c}
+    \]
+    首先，设 $\vec{x}' = \alpha\vec{a} + \beta\vec{b}$。当 $\alpha$ 和 $\beta$ 独立地在 $1 \le \alpha \le 2$，$1 \le \beta \le 2$ 范围内变动时，$\vec{x}'$ 的取值范围是平行四边形的内部及边界。
+    接着，由于 $\vec{x} = \vec{x}' + \gamma\vec{c}$，当 $\gamma$ 在 $1 \le \gamma \le 2$ 范围内变动时，$\vec{x}$ 的范围是将上述平行四边形沿 $\vec{c}$ 方向从平移 $\vec{c}$ 的位置到平移 $2\vec{c}$ 的位置所经过的区域。
+    其图形为右图中的阴影部分（包含边界）。
+    \end{solution}
+\end{parts}
+
+\question
+对于自然数 $n$ 和实数 $a_0, a_1, a_2, \cdots, a_n \ (a_n \ne 0)$，考虑以下两个多项式：
+\[
+f(x) = \sum_{k=0}^{n} a_k x^k = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0
+\]
+\[
+f'(x) = \sum_{k=1}^{n} k a_k x^{k-1} = n a_n x^{n-1} + (n-1) a_{n-1} x^{n-2} + \cdots + a_1
+\]
+设 $\alpha, \beta$ 为不同的复数。当在连接复数平面上两点 $\alpha, \beta$ 的线段上存在点 $\gamma$，满足 $\frac{f(\beta) - f(\alpha)}{\beta - \alpha} = f'(\gamma)$ 时，称 $\alpha, \beta, f(x)$ 具有平均值性质。
+回答下列问题。
+\begin{parts}
+    \part 证明：当 $n = 2$ 时，对于任何 $\alpha, \beta$，具有平均值性质。
+    \begin{solution}
+    对于实系数多项式 $f(x) = a_2 x^2 + a_1 x + a_0 \ (a_2 \ne 0)$，$f'(x) = 2a_2 x + a_1$。
+    取复数 $\alpha, \beta \ (\alpha \ne \beta)$，则：
+    \[
+    \frac{f(\beta) - f(\alpha)}{\beta - \alpha} = \frac{(a_2 \beta^2 + a_1 \beta + a_0) - (a_2 \alpha^2 + a_1 \alpha + a_0)}{\beta - \alpha} = a_2(\beta + \alpha) + a_1 \cdots\cdots (1)
+    \]
+    设连接两点 $\alpha, \beta$ 的线段中点为 $\gamma$，则 $\gamma = \frac{\beta + \alpha}{2}$，于是：
+    \[
+    f'(\gamma) = 2a_2 \gamma + a_1 = a_2(\beta + \alpha) + a_1 \cdots\cdots (2)
+    \]
+    由 (1)(2) 知 $\frac{f(\beta) - f(\alpha)}{\beta - \alpha} = f'(\gamma)$，故对于任何 $\alpha, \beta$ 均具有该性质。
+    \end{solution}
+
+    \part 设 $\alpha = 1 - i$，$\beta = 1 + i$。求使 $f(x) = x^3 + ax^2 + bx + c$ 具有平均值性质的实数 $a, b, c$ 的必要充分条件。
+    \begin{solution}
+    对于 $f(x) = x^3 + ax^2 + bx + c$，$f'(x) = 3x^2 + 2ax + b$。
+    当 $\alpha = 1 - i, \beta = 1 + i$ 时，$\alpha + \beta = 2, \alpha\beta = 1 - i^2 = 2$。
+    \[
+    \frac{f(\beta) - f(\alpha)}{\beta - \alpha} = \frac{(\beta^3 + a\beta^2 + b\beta + c) - (\alpha^3 + a\alpha^2 + b\alpha + c)}{\beta - \alpha} = (\alpha + \beta)^2 - \alpha\beta + a(\alpha + \beta) + b = 2\alpha + b + 2
+    \]
+    设 $\gamma = 1 + ti \ (-1 \le t \le 1)$，代入 $f'(\gamma) = \frac{f(\beta) - f(\alpha)}{\beta - \alpha}$：
+    \[
+    3(1 + ti)^2 + 2a(1 + ti) + b = 2a + b + 2 \implies (1 - 3t^2) + 2t(3 + a)i = 0
+    \]
+    由于 $a, t$ 为实数，得 $1 - 3t^2 = 0$ 且 $2t(3 + a) = 0$。由此得 $t = \pm \frac{1}{\sqrt{3}}$，$a = -3$。
+    因为 $t = \pm \frac{1}{\sqrt{3}}$ 满足 $-1 \le t \le 1$，故条件为 $a = -3$，且 $b, c$ 为任意实数。
+    \end{solution}
+
+    \part 证明：当 $\alpha = \frac{1 - i}{\sqrt{2}}$，$\beta = \frac{1 + i}{\sqrt{2}}$ 时，$f(x) = x^7$ 不具有平均值性质。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image335.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    对于 $f(x) = x^7$，$f'(x) = 7x^6$。
+    当 $\alpha = \cos(-\frac{\pi}{4}) + i \sin(-\frac{\pi}{4}), \beta = \cos \frac{\pi}{4} + i \sin \frac{\pi}{4}$ 时，
+    $\alpha^7 = \cos(-\frac{7\pi}{4}) + i \sin(-\frac{7\pi}{4}) = \beta, \beta^7 = \alpha$。
+    于是 $\frac{f(\beta) - f(\alpha)}{\beta - \alpha} = \frac{\alpha - \beta}{\beta - \alpha} = -1$。
+    若具有平均值性质，则线段 $\alpha\beta$ 上存在 $\gamma$ 使 $7\gamma^6 = -1$。
+    设 $\gamma = r(\cos \theta + i \sin \theta) \ (\frac{1}{\sqrt{2}} \le r \le 1, -\frac{\pi}{4} \le \theta \le \frac{\pi}{4})$，由 $r^6(\cos 6\theta + i \sin 6\theta) = -\frac{1}{7}$ 得：
+    $r^6 = \frac{1}{7} \implies r = \frac{1}{\sqrt[6]{7}}$，且 $6\theta = \pm \pi \implies \theta = \pm \frac{\pi}{6}$。
+    此时 $\gamma$ 的实部为 $\frac{1}{\sqrt[6]{7}} \cdot \frac{\sqrt{3}}{2} \ne \frac{1}{\sqrt{2}}$，故点 $\gamma$ 不在连接 $\alpha, \beta$ 的线段上。
+    \end{solution}
+\end{parts}
+
+\question
+在坐标平面上，设有 $O(0, 0)$，$A(4, 0)$，$P(3, 0)$。考虑以内切圆 $C$ 切线段 $OA$ 于点 $P$ 的 $\triangle OAB$。假设圆 $C$ 的中心位于第一象限。回答下列问题。
+\begin{parts}
+    \part 证明 $OB$ 与 $AB$ 之差为定值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image336.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    设点 $O(0, 0)$，$A(4, 0)$ 以及第一象限内的点 $B$ 为顶点的 $\triangle OAB$ 的内切圆为 $C$。设圆 $C$ 与边 $OA, AB, OB$ 的切点分别为 $P(3, 0), Q, R$。
+    根据切线长定理：
+    \[
+    OB = OR + BR = OP + BQ = 3 + BQ
+    \]
+    \[
+    AB = AQ + BQ = AP + BQ = 1 + BQ
+    \]
+    由此可得：
+    \[
+    OB - AB = (3 + BQ) - (1 + BQ) = 2 \cdots\cdots (*)
+    \]
+    因此，$OB$ 与 $AB$ 之差为定值 2。
+    \end{solution}
+
+    \part 设圆 $C$ 的半径为 $r$，求 $r$ 的取值范围。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image337.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    设线段 $OB, AB$ 与 $x$ 轴正方向所成的角分别为 $2\theta, 2\varphi$。内切圆 $C$ 的半径 $r$ 满足：
+    \[
+    r = OP \tan \theta = 3 \tan \theta
+    \]
+    \[
+    r = AP \tan \frac{\pi - 2\varphi}{2} = \tan \left( \frac{\pi}{2} - \varphi \right) = \frac{1}{\tan \varphi}
+    \]
+    由此得 $\tan \theta = \frac{r}{3}$，$\tan \varphi = \frac{1}{r}$。
+    由于点 $B$ 在第一象限，需满足 $0 < 2\theta < 2\varphi < \pi$，即 $0 < \theta < \varphi < \frac{\pi}{2}$。
+    因此有 $0 < \tan \theta < \tan \varphi$，即：
+    \[
+    0 < \frac{r}{3} < \frac{1}{r}
+    \]
+    由此解得 $0 < r^2 < 3$，故 $r$ 的取值范围为 $0 < r < \sqrt{3}$。
+    \end{solution}
+
+    \part 当 $r$ 在 (2) 的范围内变化时，求点 $B$ 的轨迹方程，并画出其概形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image338.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    由 (*) 可知，点 $B$ 到两定点 $O(0, 0)$ 和 $A(4, 0)$ 的距离之差为定值 2。因此，点 $B$ 的轨迹是以 $O, A$ 为焦点的双曲线右支在第一象限的部分。
+    线段 $OA$ 的中点为 $(2, 0)$，设双曲线方程为：
+    \[
+    \frac{(x - 2)^2}{a^2} - \frac{y^2}{b^2} = 1
+    \]
+    由 (*) 得 $2a = 2$，故 $a = 1$。焦距 $2c = 4$，故 $c = 2$。
+    根据 $a^2 + b^2 = c^2$，得 $b^2 = 2^2 - 1^2 = 3$。
+    因此，双曲线方程为：
+    \[
+    (x - 2)^2 - \frac{y^2}{3} = 1
+    \]
+    其渐近线为 $y = \pm \sqrt{3}(x - 2)$。点 $B$ 的轨迹是该双曲线在第一象限的分支（不含端点）。
+    \end{solution}
+\end{parts}
+
+\question
+设 $r$ 为正实数。在复数平面上，点 $z$ 在以点 $\frac{3}{2}$ 为中心、半径为 $r$ 的圆周上运动时，求满足 $z + w = zw$ 的点 $w$ 所描绘的图形。
+\begin{solution}
+在复数平面上，点 $z$ 在以点 $\frac{3}{2}$ 为中心、半径为 $r$ ($r > 0$) 的圆周上运动，故有
+\[
+\left| z - \frac{3}{2} \right| = r \dots (1)
+\]
+对于满足 $z + w = zw$ 的点 $w$，有 $(w - 1)z = w \dots (2)$。
+若 $w = 1$，则 (2) 不成立，故在 $w \neq 1$ 的条件下，
+\[
+z = \frac{w}{w - 1} \dots (3)
+\]
+将 (3) 代入 (1) 得，$\left| \frac{w}{w - 1} - \frac{3}{2} \right| = r$。由 $\left| \frac{-w + 3}{2(w - 1)} \right| = r$ 得，
+\[
+|-w + 3| = r |2(w - 1)|, \quad |w - 3| = 2r |w - 1| \dots (4)
+\]
+此时 (4) 满足 $w \neq 1$。以下分 $2r = 1$ 和 $2r \neq 1$ 两种情况讨论点 $w$ 所描绘的图形。
+(i) 当 $2r = 1$ ($r = \frac{1}{2}$) 时
+由 (4) 得 $|w - 3| = |w - 1|$，故点 $w$ 所描绘的图形是连接点 $3$ 和点 $1$ 的线段的垂直平分线。
+(ii) 当 $2r \neq 1$ ($r \neq \frac{1}{2}$) 时
+由 (4) 得 $|w - 3|^2 = 4r^2 |w - 1|^2$，由 $(w - 3)(\bar{w} - 3) = 4r^2(w - 1)(\bar{w} - 1)$ 得，
+\[
+(4r^2 - 1)w\bar{w} - (4r^2 - 3)w - (4r^2 - 3)\bar{w} = 9 - 4r^2
+\]
+由于 $4r^2 - 1 \neq 0$，
+\[
+w\bar{w} - \frac{4r^2 - 3}{4r^2 - 1}w - \frac{4r^2 - 3}{4r^2 - 1}\bar{w} = \frac{9 - 4r^2}{4r^2 - 1}
+\]
+\[
+\left( w - \frac{4r^2 - 3}{4r^2 - 1} \right)\left( \bar{w} - \frac{4r^2 - 3}{4r^2 - 1} \right) = \left( \frac{4r^2 - 3}{4r^2 - 1} \right)^2 + \frac{9 - 4r^2}{4r^2 - 1}
+\]
+\[
+\left| w - \frac{4r^2 - 3}{4r^2 - 1} \right|^2 = \frac{16r^2}{(4r^2 - 1)^2}, \quad \left| w - \frac{4r^2 - 3}{4r^2 - 1} \right| = \frac{4r}{|4r^2 - 1|}
+\]
+由此，点 $w$ 所描绘的图形是中心为点 $\frac{4r^2 - 3}{4r^2 - 1}$、半径为 $\frac{4r}{|4r^2 - 1|}$ 的圆。
 \end{solution}
+
+\question
+$i$ 是虚数单位。设满足下列条件 (I)、(II) 的复数 $z$ 的全体集合为 $S$。
+(I) $z$ 的虚部为正。
+(II) 复数平面上的点 A(1)，B($1 - iz$)，C($z^2$) 在一直线上。
+此时，回答下列问题。
+\begin{parts}
+    \part 对于不为 $1$ 的复数 $\alpha$，证明：$\alpha$ 的虚部为正是 $\frac{1}{\alpha - 1}$ 的虚部为负的充分必要条件。
+    \begin{solution}
+    对于 $\alpha = a + bi$ ($\alpha \neq 1$)，
+    \[
+    \frac{1}{\alpha - 1} = \frac{1}{(a - 1) + bi} = \frac{(a - 1) - bi}{(a - 1)^2 + b^2}
+    \]
+    由此可知，$\alpha$ 的虚部 $b$ 为正，与 $\frac{1}{\alpha - 1}$ 的虚部 $\frac{-b}{(a - 1)^2 + b^2}$ 为负是等价的。
+    \end{solution}
+    \part 在复数平面上表示集合 $S$。
+    \begin{solution}
+    集合 $S$ 是指虚部为正的复数 $z$，使得三点 A(1)，B($1 - iz$)，C($z^2$) 在一直线上的 $z$ 的全体。首先设 $k$ 为实数，
+    \[
+    z^2 - 1 = k(1 - iz - 1), \quad \frac{z^2 - 1}{-iz} = k
+    \]
+    即 $\frac{z^2 - 1}{-iz}$ 是实数，由 $\frac{z^2 - 1}{-iz} = \overline{\left( \frac{z^2 - 1}{-iz} \right)}$ 得 $\frac{z^2 - 1}{-iz} = \frac{\bar{z}^2 - 1}{i\bar{z}}$，
+    \[
+    \bar{z}(z^2 - 1) + z(\bar{z}^2 - 1) = 0, \quad z\bar{z}(z + \bar{z}) - (z + \bar{z}) = 0, \quad (z\bar{z} - 1)(z + \bar{z}) = 0
+    \]
+    (i) 当 $z + \bar{z} = 0$ 时，$z$ 为纯虚数，即虚部为正的虚轴上的点。
+    (ii) 当 $z\bar{z} - 1 = 0$ 时，$|z|^2 = 1$ 即 $|z| = 1$。此时，$z$ 是以原点为中心的单位圆周上虚部为正的点。
+    由 (i)(ii) 可知，集合 $S$ 的图形如右图的粗线部分所示。
+    \end{solution}
+    \part 设 $w = \frac{1}{z - 1}$。当 $z$ 在 $S$ 上运动时，求 $\left| w + \frac{i}{\sqrt{2}} \right|$ 的最小值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image342.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    由 $w = \frac{1}{z - 1}$ 及 (1) 可知，$w$ 的虚部为负。
+    此外，由 $w(z - 1) = 1$ 得 $z \neq 1$，且 $z - 1 = \frac{1}{w}$，故 $z = 1 + \frac{1}{w} \dots (*)$。
+    (i) 当 $z + \bar{z} = 0$ 时，
+    由 $(*)$ 得 $1 + \frac{1}{w} + 1 + \frac{1}{\bar{w}} = 0$，即 $2w\bar{w} + w + \bar{w} = 0$，故 $w\bar{w} + \frac{1}{2}w + \frac{1}{2}\bar{w} = 0$。
+    \[
+    \left( w + \frac{1}{2} \right)\left( \bar{w} + \frac{1}{2} \right) = \frac{1}{4}, \quad \left| w + \frac{1}{2} \right|^2 = \frac{1}{4}, \quad \left| w + \frac{1}{2} \right| = \frac{1}{2}
+    \]
+    此时 $w$ 在中心为点 $-\frac{1}{2}$、半径为 $\frac{1}{2}$ 的圆周上虚部为负的部分。
+    (ii) 当 $z\bar{z} - 1 = 0$ 时，
+    由 $|z| = 1$ 及 $(*)$ 得 $\left| 1 + \frac{1}{w} \right| = 1$，即 $\left| \frac{w + 1}{w} \right| = 1$。
+    \[
+    \frac{|w + 1|}{|w|} = 1, \quad |w + 1| = |w|
+    \]
+    此时 $w$ 在连接原点和点 $-1$ 的线段的垂直平分线上虚部为负的部分。
+    由 (i)(ii) 可知，点 $w$ 的集合如右图粗线部分。
+    而 $\left| w + \frac{i}{\sqrt{2}} \right|$ 表示点 $w$ 与点 $-\frac{i}{\sqrt{2}}$ 之间的距离。该值最小出现在点 $w$ 与右上图的点 P 或点 Q 重合时。
+    点 $-\frac{i}{\sqrt{2}}$ 与点 P 的距离为 $\sqrt{\left( -\frac{1}{2} \right)^2 + \left( -\frac{1}{\sqrt{2}} \right)^2} - \frac{1}{2} = \frac{\sqrt{3} - 1}{2}$。与点 Q 的距离为 $\frac{1}{2}$。
+    由于 $\frac{\sqrt{3} - 1}{2} < \frac{1}{2}$，故所求最小值为 $\frac{\sqrt{3} - 1}{2}$。
+    \end{solution}
+\end{parts}
+
+\question
+对于复数 $z$，设其共轭复数为 $\bar{z}$，$i$ 为虚数单位。回答下列问题。
+\begin{parts}
+    \part 将下式因式分解：$z\bar{z} + \bar{\alpha}z + \alpha\bar{z} + \alpha\bar{\alpha}$。其中 $\alpha$ 为复数。
+    \begin{solution}
+    $z\bar{z} + \bar{\alpha}z + \alpha\bar{z} + \alpha\bar{\alpha} = (z + \alpha)(\bar{z} + \bar{\alpha}) = (z + \alpha)\overline{(z + \alpha)} = |z + \alpha|^2$
+    \end{solution}
+    \part 在复数平面上表示满足下列条件的复数 $\beta$ 的范围。
+    存在复数 $z$ 满足：$z\bar{z} + (1 - i + \bar{\beta})z + (1 + i + \beta)\bar{z} = \beta$
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image343.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    对于 $z\bar{z} + (1 - i + \bar{\beta})z + (1 + i + \beta)\bar{z} = \beta \dots (1)$，设 $\alpha = 1 + i + \beta$，则
+    \[
+    z\bar{z} + \bar{\alpha}z + \alpha\bar{z} = \alpha - 1 - i, \quad (z + \alpha)(\bar{z} + \bar{\alpha}) = \alpha\bar{\alpha} + \alpha - 1 - i
+    \]
+    故 $|z + \alpha|^2 = \alpha\bar{\alpha} + \alpha - 1 - i \dots (2)$。满足 (1) 的 $z$ 存在的条件是
+    \[
+    \alpha\bar{\alpha} + \alpha - 1 - i \ge 0 \dots (3)
+    \]
+    设 $\alpha = x + yi$，由 (3) 得 $x^2 + y^2 + x + yi - 1 - i \ge 0$，即
+    \[
+    x^2 + y^2 + x - 1 + (y - 1)i \ge 0
+    \]
+    由此，$x^2 + y^2 + x - 1 \ge 0$ 且 $y - 1 = 0$。即
+    \[
+    x^2 + x \ge 0 \quad \text{且} \quad y = 1
+    \]
+    综上，$y = 1$ ($x \le -1, 0 \le x$)。复数 $\alpha$ 的范围是右图的两条射线（细线）。
+    由于 $\beta = \alpha - 1 - i$，复数 $\beta$ 的范围是实轴上的两条射线（粗线）。
+    \end{solution}
+    \part 设 $|\beta| \le 2$。当复数 $z$ 满足 (1) 时，由 (2) 的结果，$\beta = -2$ 或 $\beta = t$ ($-1 \le t \le 2$)。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image344.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    (i) 当 $\beta = -2$ 时，$\alpha = 1 + i - 2 = -1 + i$，由 (2) 得
+    \[
+    |z + \alpha|^2 = \{(-1)^2 + 1^2\} + (-1 + i) - 1 - i = 0
+    \]
+    故 $z = -\alpha = 1 - i$，此时 $|z| = \sqrt{1^2 + (-1)^2} = \sqrt{2}$。
+    (ii) 当 $\beta = t$ ($-1 \le t \le 2$) 时，$\alpha = 1 + i + t = (t + 1) + i$，由 (2) 得
+    \[
+    |z + \alpha|^2 = \{(t + 1)^2 + 1^2\} + (t + 1 + i) - 1 - i = (t + 1)(t + 2)
+    \]
+    由此，$z$ 在以 $-\alpha = -(t + 1) - i$ 为中心、半径 $r = \sqrt{(t + 1)(t + 2)}$ 的圆周上。
+    当 $|z|$ 最大时，原点 O、中心 $-\alpha$、点 $z$ 依次排列在一条直线上，最大值为 $|-\alpha| + r$。
+    而 $|-\alpha| = \sqrt{(t + 1)^2 + 1}$，$r = \sqrt{t^2 + 3t + 2} = \sqrt{(t + \frac{3}{2})^2 - \frac{1}{4}}$。
+    在 $-1 \le t \le 2$ 范围内，$|-\alpha|$ 和 $r$ 都是单调递增的，故在 $t = 2$ 时取最大值。
+    $|-\alpha| = \sqrt{(2 + 1)^2 + 1} = \sqrt{10}$
+    $r = \sqrt{2^2 + 3 \cdot 2 + 2} = 2\sqrt{3}$
+    故 $|z|$ 的最大值为 $\sqrt{10} + 2\sqrt{3}$。
+    由 (i)(ii) 可知，$|z|$ 的最大值是 $\sqrt{10} + 2\sqrt{3}$，此时 $\beta = 2$。
+    当 $\beta = 2, -\alpha = -3 - i$ 时，
+    \[
+    z = \frac{\sqrt{10} + 2\sqrt{3}}{\sqrt{10}} \cdot (-3 - i) = -(1 + \frac{\sqrt{30}}{5})(3 + i)
+    \]
+    \end{solution}
+\end{parts}
+
+\question
+设实数 $a, b$ 满足 $|a| \le 1, |b| \le 1$。对于 $f(z) = z^2 + az + b$，求满足 $f(z) = 0$ 的复数 $z$ 可能取值的范围，并在复数平面上图示。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image345.png}
+        \includegraphics[width=0.5\textwidth]{images/image346.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设实数 $a, b$ 满足 $|a| \le 1, |b| \le 1$。对于 $f(z) = z^2 + az + b$，令 $f(z) = 0$ 的解为 $z = x + yi$。由 $(x + yi)^2 + a(x + yi) + b = 0$ 得，
+\[
+(x^2 - y^2 + ax + b) + (2x + a)yi = 0
+\]
+于是有 $x^2 - y^2 + ax + b = 0 \dots (1)$ 和 $(2x + a)y = 0 \dots (2)$ 成立。由 (2) 分两种情况讨论：
+(i) 当 $y = 0$ 时
+由 (1) 得 $x^2 + ax + b = 0$，故 $b = -ax - x^2 \dots (3)$。
+此处 $|a| \le 1, |b| \le 1$，直线 (3) 在 $ab$ 平面上与矩形区域 $|a| \le 1, |b| \le 1$ 有公共点的条件如下：
+(i-i) 当 $-1 \le -x^2$ (即 $-1 \le x \le 1$) 时，
+直线 (3) 始终与矩形区域有公共点。
+(i-ii) 当 $-x^2 < -1$ (即 $x < -1, 1 < x$) 时，
+直线 (3) 通过 $(a, b) = (1, -x - x^2)$ 和 $(a, b) = (-1, x - x^2)$。与矩形区域有公共点的条件是 $-x - x^2 \ge -1 \dots (4)$ 或 $x - x^2 \ge -1 \dots (5)$。
+由 (4) 得 $x^2 + x - 1 \le 0$，即 $\frac{-1 - \sqrt{5}}{2} \le x \le \frac{-1 + \sqrt{5}}{2}$。
+由 (5) 得 $x^2 - x - 1 \le 0$，即 $\frac{1 - \sqrt{5}}{2} \le x \le \frac{1 + \sqrt{5}}{2}$。
+结合 $x < -1, 1 < x$，得 $\frac{-1 - \sqrt{5}}{2} \le x < -1$ 和 $1 < x \le \frac{1 + \sqrt{5}}{2}$。
+由 (i-i)(i-ii) 知，满足条件的 $x$ 范围是 $\frac{-1 - \sqrt{5}}{2} \le x \le \frac{1 + \sqrt{5}}{2}$。
+
+(ii) 当 $y \neq 0$ 时
+由 (2) 得 $2x + a = 0$，即 $a = -2x \dots (6)$。
+将 (6) 代入 (1) 得 $x^2 - y^2 - 2x^2 + b = 0$，故 $b = x^2 + y^2 \dots (7)$。
+此处 $|a| \le 1, |b| \le 1$ 意味着 $|-2x| \le 1$ 且 $|x^2 + y^2| \le 1$，
+即 $-\frac{1}{2} \le x \le \frac{1}{2}$ 且 $x^2 + y^2 \le 1$。
+
+综合 (i)(ii)，$z = x + yi$ 的值域范围为：
+\[
+\frac{-1 - \sqrt{5}}{2} \le x \le \frac{1 + \sqrt{5}}{2}, \quad y = 0
+\]
+\[
+-\frac{1}{2} \le x \le \frac{1}{2}, \quad x^2 + y^2 \le 1, \quad y \neq 0
+\]
+将其在复数平面上图示，如右图的粗线部分及阴影部分所示。边界包含在内。
+\end{solution}
+
+\question
+复数平面上，给定一个以原点 $O$ 为顶点之一的正六边形 $OABCDE$。其顶点按逆时针方向依次为 $O, A, B, C, D, E$。互不相同的非零复数 $\alpha, \beta, \gamma$ 满足：
+\[
+0 \le \arg \left( \frac{\beta}{\alpha} \right) \le \pi, \quad 4\alpha^2 - 2\alpha\beta + \beta^2 = 0
+\]
+\[
+2\gamma^2 - (3\alpha + \beta + 2)\gamma + (\alpha + 1)(\alpha + \beta) = 0
+\]
+且 $\alpha, \beta, \gamma$ 分别是正六边形 $OABCDE$ 顶点中的某一个。
+\begin{parts}
+    \part 求 $\frac{\beta}{\alpha}$ 的值，并说明 $\alpha, \beta$ 分别对应正六边形的哪个顶点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image347.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由条件 $4\alpha^2 - 2\alpha\beta + \beta^2 = 0$ ($\alpha \neq 0$)，两边同除以 $\alpha^2$ 得，
+        \[
+        4 - 2 \cdot \frac{\beta}{\alpha} + \left( \frac{\beta}{\alpha} \right)^2 = 0
+        \]
+        解得 $\frac{\beta}{\alpha} = 1 \pm \sqrt{3}i$。
+        根据 $0 \le \arg \left( \frac{\beta}{\alpha} \right) \le \pi$，我们取
+        \[
+        \frac{\beta}{\alpha} = 1 + \sqrt{3}i = 2 \left( \cos \frac{\pi}{3} + i \sin \frac{\pi}{3} \right)
+        \]
+        这表示点 $\beta$ 是点 $\alpha$ 绕原点 $O$ 逆时针旋转 $\frac{\pi}{3}$ 且距离变为 $2$ 倍得到的点。
+        
+        在正六边形 $OABCDE$ 中，若设 $OA = l$，则根据几何性质有 $OB = \sqrt{3}l, OC = 2l$。
+        因此，要满足距离为 $2$ 倍且旋转 $\frac{\pi}{3}$（即 $60^{\circ}$），$\alpha$ 必须对应顶点 $A$，而 $\beta$ 对应顶点 $C$。
+    \end{solution}
+
+    \part 求出所有满足条件的数组 $(\alpha, \beta, \gamma)$，并将每组情况在复数平面上图示。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image348.png}
+        \includegraphics[width=0.5\textwidth]{images/image349.png}
+        \includegraphics[width=0.5\textwidth]{images/image350.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        根据 (1)，已知 $\alpha$ 对应 $A$，$\beta$ 对应 $C$。
+        将 $\gamma$ 的二次方程因式分解得，
+        \[
+        (2\gamma - \alpha - \beta)(\gamma - \alpha - 1) = 0
+        \]
+        由此得 $\gamma = \frac{\alpha + \beta}{2}$ 或 $\gamma = \alpha + 1$。
+        若 $\gamma = \frac{\alpha + \beta}{2}$，则 $\gamma$ 为线段 $AC$ 的中点，该点不在正六边形的顶点上，故舍去。
+        因此必有 $\gamma = \alpha + 1$。
+        接下来根据 $\gamma$ 可能对应的顶点（$B, D, E$）进行分类讨论：
+        (i) 当 $\gamma$ 对应顶点 $B$ 时：
+        点 $B$ 是点 $A$ 绕原点旋转 $\frac{\pi}{6}$ 且距离变为 $\sqrt{3}$ 倍的点，即 $\gamma = \sqrt{3} \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right) \alpha$。
+        代入 $\gamma = \alpha + 1$ 解得，
+        \[
+        \alpha = \frac{1}{2} - \frac{\sqrt{3}}{2}i, \quad \beta = 2, \quad \gamma = \frac{3}{2} - \frac{\sqrt{3}}{2}i
+        \]
+        (ii) 当 $\gamma$ 对应顶点 $D$ 时：
+        点 $D$ 是点 $A$ 绕原点旋转 $\frac{\pi}{2}$ 且距离变为 $\sqrt{3}$ 倍的点。
+        代入 $\gamma = \alpha + 1$ 得 $\alpha + 1 = \sqrt{3}i \alpha$，解得，
+        \[
+        \alpha = -\frac{1}{4} - \frac{\sqrt{3}}{4}i, \quad \beta = \frac{1}{2} - \frac{\sqrt{3}}{2}i, \quad \gamma = \frac{3}{4} - \frac{\sqrt{3}}{4}i
+        \]
+        (iii) 当 $\gamma$ 对应顶点 $E$ 时：
+        点 $E$ 是点 $A$ 绕原点旋转 $\frac{2\pi}{3}$ 且距离相等的点。
+        代入 $\gamma = \alpha + 1$ 得 $\alpha + 1 = \left( -\frac{1}{2} + \frac{\sqrt{3}}{2}i \right) \alpha$，解得，
+        \[
+        \alpha = -\frac{1}{6} - \frac{\sqrt{3}}{6}i, \quad \beta = \frac{1}{3} - \frac{\sqrt{3}}{3}i, \quad \gamma = \frac{5}{6} - \frac{\sqrt{3}}{6}i
+        \]
+    \end{solution}
 \end{parts}
 \end{questions}
 

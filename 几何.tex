@@ -12867,6 +12867,83 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
         由于 $r + s > 1$（根据 (7) 和 (9)），故 $r - s + 1 = 0$，即 $s = r + 1$。
     \end{solution}
 \end{parts}
+
+\question
+在 $xy$ 平面上的抛物线 $P: y^2 = 4x$ 上取两相异点 $A, B$。设在 $A, B$ 处与 $P$ 的切线垂直相交的直线分别为 $n_A, n_B$。设 $a$ 为正数，当 $A$ 的坐标为 $(a, 2\sqrt{a})$ 时，回答下列问题。
+\begin{parts}
+    \part 用 $a$ 表示 $n_A$ 的方程。
+    \begin{solution}
+    对 $y^2 = 4x$ 关于 $x$ 求导得 $2y \frac{dy}{dx} = 4$，故 $\frac{dy}{dx} = \frac{2}{y}$。
+    在点 $A(a, 2\sqrt{a})$ 处的切线斜率为 $\frac{2}{2\sqrt{a}} = \frac{1}{\sqrt{a}}$。
+    由于 $n_A$ 是在该点与切线垂直的直线，其斜率为 $-\sqrt{a}$。
+    故 $n_A$ 的方程为 $y - 2\sqrt{a} = -\sqrt{a}(x - a)$，整理得
+    \[
+    \sqrt{a}x + y - (a + 2)\sqrt{a} = 0
+    \]
+   。
+    \end{solution}
+
+    \part 若直线 $AB$ 与直线 $y = 2\sqrt{a}$ 所成角的二等分线之一与 $n_A$ 一致，用 $a$ 表示直线 $AB$ 的方程。
+    \begin{solution}
+    设直线 $AB$ 的单位方向向量为 $(p, q)$，其中 $p^2 + q^2 = 1, q < 0$。
+    $n_A$ 的方向向量可取为 $(1, -\sqrt{a})$，直线 $y = 2\sqrt{a}$ 的方向向量为 $(1, 0)$。
+    由于 $n_A$ 是角二等分线，其方向向量与另两条直线的单位方向向量之和成比例，即有 $(p, q) + (1, 0) = k(1, -\sqrt{a})$，其中 $k > 0$。
+    由此得 $p + 1 = k, q = -\sqrt{a}k$，代入 $p^2 + q^2 = 1$ 得
+    \[
+    (k - 1)^2 + a k^2 = 1, \quad (a + 1)k^2 - 2k = 0
+    \]
+    由于 $k > 0$，得 $k = \frac{2}{a + 1}$。
+    从而 $p = \frac{2}{a + 1} - 1 = -\frac{a - 1}{a + 1}, q = -\frac{2\sqrt{a}}{a + 1}$。
+    直线 $AB$ 的斜率为 $\frac{q}{p} = \frac{2\sqrt{a}}{a - 1}$，其方程为 $y - 2\sqrt{a} = \frac{2\sqrt{a}}{a - 1}(x - a)$，整理得
+    \[
+    2\sqrt{a}x - (a - 1)y - 2\sqrt{a} = 0 \dots (2)
+    \]
+   。
+    \end{solution}
+
+    \part 在 (2) 的条件下，求点 $B$ 的坐标及 $n_B$ 的方程。
+    \begin{solution}
+    联立方程 (2) 与 $y^2 = 4x$。将 $x = \frac{y^2}{4}$ 代入 (2) 得
+    \[
+    \sqrt{a} \frac{y^2}{2} - (a - 1)y - 2\sqrt{a} = 0, \quad \sqrt{a}y^2 - 2(a - 1)y - 4\sqrt{a} = 0
+    \]
+    因式分解得 $(y - 2\sqrt{a})(\sqrt{a}y + 2) = 0$。
+    点 $A$ 的纵坐标为 $y = 2\sqrt{a}$，故点 $B$ 的纵坐标为 $y = -\frac{2}{\sqrt{a}}$。
+    代入 $x = \frac{y^2}{4}$ 得 $B$ 的坐标为 $\left( \frac{1}{a}, -\frac{2}{\sqrt{a}} \right)$。
+    在点 $B$ 处的切线斜率为 $\frac{2}{-2/\sqrt{a}} = -\sqrt{a}$，故 $n_B$ 的斜率为 $\frac{1}{\sqrt{a}}$。
+    $n_B$ 的方程为 $y - \left( -\frac{2}{\sqrt{a}} \right) = \frac{1}{\sqrt{a}} \left( x - \frac{1}{a} \right)$，整理得
+    \[
+    y = \frac{1}{\sqrt{a}}x - \frac{2a + 1}{a\sqrt{a}} \dots (3)
+    \]
+    \end{solution}
+
+    \part 设直线 $AB$ 与抛物线 $P$ 围成的图形面积为 $S_1$。设抛物线 $P$ 与直线 $y = 2\sqrt{a}$、直线 $x = -1$ 及 $n_B$ 围成的图形面积为 $S_2$。当 $a$ 变化时，求 $\frac{S_1}{S_2}$ 的最大值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image353.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    根据抛物线面积公式，$S_1$ 为
+    \[
+    S_1 = \frac{1}{6} \cdot \frac{1}{4} \left( 2\sqrt{a} - \left( -\frac{2}{\sqrt{a}} \right) \right)^3 = \frac{1}{3} \left( \sqrt{a} + \frac{1}{\sqrt{a}} \right)^3
+    \]
+    由题意，$S_2$ 的积分表达式为
+    \[
+    S_1 + S_2 = \frac{1}{2} \left( a + 1 + \frac{1}{a} + 1 \right) \left( 2\sqrt{a} + \frac{2}{\sqrt{a}} \right) = \left( a + \frac{1}{a} + 2 \right) \left( \sqrt{a} + \frac{1}{\sqrt{a}} \right) = \left( \sqrt{a} + \frac{1}{\sqrt{a}} \right)^3
+    \]
+    从而得
+    \[
+    S_1 = \frac{1}{3} (S_1 + S_2), \quad S_2 = \frac{2}{3} (S_1 + S_2)
+    \]
+    故得
+    \[
+    \frac{S_1}{S_2} = \frac{1/3}{2/3} = \frac{1}{2}
+    \]
+    由于 $\frac{S_1}{S_2}$ 为定值 $\frac{1}{2}$，其最大值为 $\frac{1}{2}$。
+    \end{solution}
+\end{parts}
 %ellipse
     \question 设\(A,B\)为椭圆 \(\dfrac{x^{2}}{25}+\dfrac{y^{2}}{16}=1\) 两焦点 ,若$P$为椭圆上任意点,求 \(\triangle PAB\) 面积最大值。  
     \begin{solution}
@@ -15212,6 +15289,59 @@ P_n Q_n &= \sqrt{\left( a_n + \frac{1}{4a_n} - a_n \right)^2 + \left( a_n - \fra
     \end{solution}
 \end{parts}
 
+\question
+设 $a$ 为正实数，双曲线 $\frac{x^2}{4} - \frac{y^2}{4} = 1$ 与直线 $y = \sqrt{a}x + \sqrt{a}$ 相交于不同的两点 $P, Q$。设线段 $PQ$ 的中点为 $R(s, t)$。回答下列问题。
+\begin{parts}
+    \part 求 $a$ 的取值范围。
+    \begin{solution}
+        双曲线 $\frac{x^2}{4} - \frac{y^2}{4} = 1 \dots (1)$ 与直线 $y = \sqrt{a}x + \sqrt{a} \dots (2)$ 相交于不同的两点 $P, Q$ 的条件是，联立 (1) 和 (2) 得：
+        \[
+        \frac{x^2}{4} - \frac{(\sqrt{a}x + \sqrt{a})^2}{4} = 1, \quad x^2 - a(x + 1)^2 = 4
+        \]
+        整理得 $(a - 1)x^2 + 2ax + a + 4 = 0 \dots (3)$。
+        在 $a > 0$ 的条件下，(3) 具有两个不同实根的条件是：
+        \[
+        a - 1 \neq 0, \quad D/4 = a^2 - (a - 1)(a + 4) > 0
+        \]
+        即 $a \neq 1$ 且 $-3a + 4 > 0$，由此得 $a < \frac{4}{3}$。
+        结合 $a > 0$，求得 $a$ 的范围为 $0 < a < 1, 1 < a < \frac{4}{3}$。
+    \end{solution}
+
+    \part 用 $a$ 表示 $s, t$ 的值。
+    \begin{solution}
+        设 $P(p, \sqrt{a}p + \sqrt{a}), Q(q, \sqrt{a}q + \sqrt{a})$，线段 $PQ$ 的中点为 $R(s, t)$，则：
+        \[
+        s = \frac{p + q}{2} = -\frac{1}{2} \cdot \frac{2a}{a - 1} = -\frac{a}{a - 1}, \quad t = \sqrt{a}s + \sqrt{a} = -\frac{a\sqrt{a}}{a - 1} + \sqrt{a} = -\frac{\sqrt{a}}{a - 1}
+        \]
+    \end{solution}
+
+    \part 求当 $a$ 在 (1) 中求得的范围内运动时，$s$ 的取值范围。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image351.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由 (2) 知 $s = -1 - \frac{1}{a - 1}$。将其图示在 $as$ 平面上。
+        由于 $0 < a < 1, 1 < a < \frac{4}{3}$，可得：
+        \[
+        s < -4, \quad 0 < s
+        \]
+    \end{solution}
+
+    \part 用 $s$ 表示 $t$ 的值。
+    \begin{solution}
+        由 (2) 知 $s = \sqrt{a}t$，故 $\sqrt{a} = \frac{s}{t}$。代入 $a = \frac{s^2}{t^2}$ 到 (4) 式：
+        由于 $(a - 1)s = -a$，故 $(s + 1)a = s$。代入得：
+        \[
+        (s + 1)\frac{s^2}{t^2} = s, \quad t^2 = s(s + 1) = s^2 + s
+        \]
+        (i) 当 $0 < a < 1$ ($s > 0$) 时，$t > 0$，故 $t = \sqrt{s^2 + s}$。
+        (ii) 当 $1 < a < \frac{4}{3}$ ($s < -4$) 时，$t < 0$，故 $t = -\sqrt{s^2 + s}$。
+    \end{solution}
+\end{parts}
+
 \end{questions}
 \pagebreak
 
@@ -17245,6 +17375,109 @@ C: x = f(t), \quad y = g(t) \quad \left( 0 \le t \le \frac{\pi}{2} \right)
         &= \left[ t + \sin 2t + \frac{1}{3} \cos 3t + \cos t + \frac{1}{4} \sin 4t \right]_0^{\frac{\pi}{2}} \\
         &= \frac{\pi}{2} + \frac{1}{3}(-1) + (-1) = \frac{\pi}{2} - \frac{4}{3}
         \end{align*}
+    \end{solution}
+\end{parts}
+
+\question
+平面坐标系上运动的点 $P(x, y)$ 在时刻 $t$ 的坐标为
+\[
+x = \frac{4 + 5\cos t}{5 + 4\cos t}, \quad y = \frac{3\sin t}{5 + 4\cos t}
+\]
+此时，回答下列问题。
+\begin{parts}
+    \part 求点 $P$ 到原点 $O$ 的距离。
+    \begin{solution}
+        时刻 $t$ 时，点 $P(x, y)$ 满足，
+        \begin{align*}
+        x^2 + y^2 &= \frac{1}{(5 + 4\cos t)^2} \{ (4 + 5\cos t)^2 + 9\sin^2 t \} \\
+        &= \frac{1}{(5 + 4\cos t)^2} \{ 16 + 40\cos t + 25\cos^2 t + 9(1 - \cos^2 t) \} \\
+        &= \frac{1}{(5 + 4\cos t)^2} (16\cos^2 t + 40\cos t + 25) = \frac{(4\cos t + 5)^2}{(5 + 4\cos t)^2} = 1
+        \end{align*}
+        因此，$OP = 1$。
+    \end{solution}
+
+    \part 求点 $P$ 在时刻 $t$ 的速度 $\vec{v} = (\frac{dx}{dt}, \frac{dy}{dt})$ 及其大小 $|\vec{v}|$。
+    \begin{solution}
+        \begin{align*}
+        \frac{dx}{dt} &= \frac{-5\sin t(5 + 4\cos t) - (4 + 5\cos t)(-4\sin t)}{(5 + 4\cos t)^2} = \frac{-9\sin t}{(5 + 4\cos t)^2} \\
+        \frac{dy}{dt} &= \frac{3\cos t(5 + 4\cos t) - 3\sin t(-4\sin t)}{(5 + 4\cos t)^2} = \frac{3(4 + 5\cos t)}{(5 + 4\cos t)^2}
+        \end{align*}
+        由此，$\vec{v} = \left( \frac{-9\sin t}{(5 + 4\cos t)^2}, \frac{3(4 + 5\cos t)}{(5 + 4\cos t)^2} \right)$，
+        \begin{align*}
+        |\vec{v}|^2 &= \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 = \frac{9}{(5 + 4\cos t)^4} \{ 9\sin^2 t + (4 + 5\cos t)^2 \} \\
+        &= \frac{9}{(5 + 4\cos t)^4} (4\cos t + 5)^2 = \frac{9}{(5 + 4\cos t)^2}
+        \end{align*}
+        因此，$|\vec{v}| = \frac{3}{5 + 4\cos t}$。
+    \end{solution}
+
+    \part 求定积分 $\int_{0}^{\pi} \frac{dt}{5 + 4\cos t}$。
+    \begin{solution}
+        令 $I = \int_{0}^{\pi} \frac{dt}{5 + 4\cos t}$，由 (2) 知，$I = \frac{1}{3} \int_{0}^{\pi} |\vec{v}| \,dt$。
+        这里，在 $0 \le t \le \pi$ 范围内点 $P$ 的轨迹是：
+        由 (1) 知，是以原点为中心、半径为 $1$ 的圆弧。
+        由 (2) 知，$x, y$ 的增减情况如右表所示（其中使用满足 $4 + 5\cos \alpha = 0$ 的 $\alpha$）。
+        由此，点 $P$ 的轨迹是半圆 $x^2 + y^2 = 1$ ($y \ge 0$)，其弧长为 $\int_{0}^{\pi} |\vec{v}| \,dt = \frac{1}{2} \cdot 2\pi \cdot 1 = \pi$，
+        \[
+        I = \frac{1}{3} \cdot \pi = \frac{\pi}{3}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+对于实数 $t$，设 $f(t) = 2\cos t + \cos 2t, g(t) = 2\sin t - \sin 2t$。将 $t$ 作为参数，把 $xy$ 平面上的曲线中 $0 < t < \frac{2}{3}\pi, \frac{2}{3}\pi < t < \frac{4}{3}\pi, \frac{4}{3}\pi < t < 2\pi$ 的部分分别记为 $C_0, C_1, C_2$。对于满足 $0 < \alpha < \frac{2}{3}\pi$ 的常数 $\alpha$，设点 $(f(\alpha), g(\alpha))$ 处的 $C_0$ 切线为 $L_\alpha$。回答下列问题。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image352.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 证明下列等式：
+    \[
+    f(t)\sin \frac{\alpha}{2} + g(t)\cos \frac{\alpha}{2} = 2\sin \left( t + \frac{\alpha}{2} \right) - \sin \left( 2t - \frac{\alpha}{2} \right)
+    \]
+    \begin{solution}
+        根据定义：
+        \begin{align*}
+        f(t)\sin \frac{\alpha}{2} + g(t)\cos \frac{\alpha}{2} &= (2\cos t + \cos 2t)\sin \frac{\alpha}{2} + (2\sin t - \sin 2t)\cos \frac{\alpha}{2} \\
+        &= 2\left( \sin t \cos \frac{\alpha}{2} + \cos t \sin \frac{\alpha}{2} \right) - \left( \sin 2t \cos \frac{\alpha}{2} - \cos 2t \sin \frac{\alpha}{2} \right) \\
+        &= 2\sin \left( t + \frac{\alpha}{2} \right) - \sin \left( 2t - \frac{\alpha}{2} \right) \dots (1)
+        \end{align*}
+    \end{solution}
+
+    \part 证明下列等式：
+    \[
+    \{ f(t) - f(\alpha) \}\sin \frac{\alpha}{2} + \{ g(t) - g(\alpha) \}\cos \frac{\alpha}{2} = 4 \left( \sin \frac{t - \alpha}{2} \right)^2 \sin \left( t + \frac{\alpha}{2} \right)
+    \]
+    \begin{solution}
+        由 (1) 知，$f(\alpha)\sin \frac{\alpha}{2} + g(\alpha)\cos \frac{\alpha}{2} = 2\sin \frac{3\alpha}{2} - \sin \frac{3\alpha}{2} = \sin \frac{3\alpha}{2}$。
+        左式 $= 2\sin \left( t + \frac{\alpha}{2} \right) - \sin \left( 2t - \frac{\alpha}{2} \right) - \sin \frac{3\alpha}{2}$
+        \[
+        = 2\sin \left( t + \frac{\alpha}{2} \right) - 2\sin \frac{2t + \alpha}{2} \cos \frac{2t - 2\alpha}{2} = 2\sin \left( t + \frac{\alpha}{2} \right) \{ 1 - \cos(t - \alpha) \}
+        \]
+        利用半角公式得 $2\sin \left( t + \frac{\alpha}{2} \right) \cdot 2\sin^2 \frac{t - \alpha}{2} = 4 \left( \sin \frac{t - \alpha}{2} \right)^2 \sin \left( t + \frac{\alpha}{2} \right) \dots (2)$。
+    \end{solution}
+
+    \part 设 $L_\alpha$ 的斜率为 $\tan \theta$。其中 $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$。用 $\alpha$ 表示 $\theta$。
+    \begin{solution}
+        由 $\frac{dy}{dx} = \frac{g'(t)}{f'(t)} = \frac{2\cos t - 2\cos 2t}{-2\sin t - 2\sin 2t} = -\frac{\cos t - \cos 2t}{\sin t + \sin 2t}$。
+        在点 $(f(\alpha), g(\alpha))$ 处，
+        \[
+        \tan \theta = -\frac{2\sin \frac{3\alpha}{2} \sin \frac{\alpha}{2}}{2\sin \frac{3\alpha}{2} \cos \frac{\alpha}{2}} = -\tan \frac{\alpha}{2} = \tan \left( -\frac{\alpha}{2} \right)
+        \]
+        由于 $0 < \alpha < \frac{2}{3}\pi$，故 $-\frac{\pi}{3} < -\frac{\alpha}{2} < 0$，满足范围要求，故 $\theta = -\frac{\alpha}{2}$。
+    \end{solution}
+
+    \part 设 $L_\alpha$ 与 $C_1$ 的交点为 $P_1$，$L_\alpha$ 与 $C_2$ 的交点为 $P_2$。证明线段 $P_1P_2$ 的长度与 $\alpha$ 无关，是一个定值。
+    \begin{solution}
+        切线 $L_\alpha$ 方程为 $y - g(\alpha) = -\left( \tan \frac{\alpha}{2} \right)(x - f(\alpha))$。
+        整理得 $\{ f(t) - f(\alpha) \}\sin \frac{\alpha}{2} + \{ g(t) - g(\alpha) \}\cos \frac{\alpha}{2} = 0$。
+        由 (2) 知，$4 \left( \sin \frac{t - \alpha}{2} \right)^2 \sin \left( t + \frac{\alpha}{2} \right) = 0$。
+        故 $\sin \frac{t - \alpha}{2} = 0$ 或 $\sin \left( t + \frac{\alpha}{2} \right) = 0 \dots (3)$。
+        (i) 当 $\frac{2}{3}\pi < t < \frac{4}{3}\pi$ 时，$t + \frac{\alpha}{2} = \pi$，故 $t = \pi - \frac{\alpha}{2}$。此时 $P_1$ 坐标为 $(-2\cos \frac{\alpha}{2} + \cos \alpha, 2\sin \frac{\alpha}{2} + \sin \alpha)$。
+        (ii) 当 $\frac{4}{3}\pi < t < 2\pi$ 时，$t + \frac{\alpha}{2} = 2\pi$，故 $t = 2\pi - \frac{\alpha}{2}$。此时 $P_2$ 坐标为 $(2\cos \frac{\alpha}{2} + \cos \alpha, -2\sin \frac{\alpha}{2} + \sin \alpha)$。
+        计算距离得 $P_1P_2^2 = (4\cos \frac{\alpha}{2})^2 + (-4\sin \frac{\alpha}{2})^2 = 16(\cos^2 \frac{\alpha}{2} + \sin^2 \frac{\alpha}{2}) = 16$。
+        故 $P_1P_2 = 4$，长度与 $\alpha$ 无关。
     \end{solution}
 \end{parts}
 \end{questions}
