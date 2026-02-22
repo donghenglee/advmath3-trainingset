@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.2.5)  22 FEB 2026 13:35
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.2.5)  22 FEB 2026 16:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2167,6 +2167,9 @@ LaTeX Warning: Label `question@104' multiply defined.
 LaTeX Warning: Label `question@105' multiply defined.
 
 
+LaTeX Warning: Label `question@106' multiply defined.
+
+
 LaTeX Warning: Label `question@1' multiply defined.
 
 
@@ -2741,6 +2744,72 @@ LaTeX Warning: Label `part@61@1' multiply defined.
 
 
 LaTeX Warning: Label `part@61@2' multiply defined.
+
+
+LaTeX Warning: Label `question@62' multiply defined.
+
+
+LaTeX Warning: Label `part@62@1' multiply defined.
+
+
+LaTeX Warning: Label `part@62@2' multiply defined.
+
+
+LaTeX Warning: Label `part@62@3' multiply defined.
+
+
+LaTeX Warning: Label `question@63' multiply defined.
+
+
+LaTeX Warning: Label `part@63@1' multiply defined.
+
+
+LaTeX Warning: Label `part@63@2' multiply defined.
+
+
+LaTeX Warning: Label `question@64' multiply defined.
+
+
+LaTeX Warning: Label `part@64@1' multiply defined.
+
+
+LaTeX Warning: Label `part@64@2' multiply defined.
+
+
+LaTeX Warning: Label `question@65' multiply defined.
+
+
+LaTeX Warning: Label `part@65@1' multiply defined.
+
+
+LaTeX Warning: Label `part@65@2' multiply defined.
+
+
+LaTeX Warning: Label `question@66' multiply defined.
+
+
+LaTeX Warning: Label `part@66@1' multiply defined.
+
+
+LaTeX Warning: Label `part@66@2' multiply defined.
+
+
+LaTeX Warning: Label `part@66@3' multiply defined.
+
+
+LaTeX Warning: Label `question@67' multiply defined.
+
+
+LaTeX Warning: Label `question@68' multiply defined.
+
+
+LaTeX Warning: Label `question@69' multiply defined.
+
+
+LaTeX Warning: Label `question@70' multiply defined.
+
+
+LaTeX Warning: Label `question@71' multiply defined.
 
 ) (离散数学.aux
 
@@ -4263,7 +4332,22 @@ LaTeX Warning: Label `question@68' multiply defined.
 LaTeX Warning: Label `question@69' multiply defined.
 
 
+LaTeX Warning: Label `part@69@1' multiply defined.
+
+
+LaTeX Warning: Label `part@69@2' multiply defined.
+
+
 LaTeX Warning: Label `question@70' multiply defined.
+
+
+LaTeX Warning: Label `part@70@1' multiply defined.
+
+
+LaTeX Warning: Label `part@70@2' multiply defined.
+
+
+LaTeX Warning: Label `part@70@3' multiply defined.
 
 
 LaTeX Warning: Label `question@71' multiply defined.
@@ -5995,6 +6079,9 @@ LaTeX Warning: Label `question@118' multiply defined.
 LaTeX Warning: Label `question@119' multiply defined.
 
 
+LaTeX Warning: Label `question@120' multiply defined.
+
+
 LaTeX Warning: Label `question@1' multiply defined.
 
 
@@ -6197,6 +6284,9 @@ LaTeX Warning: Label `part@34@1' multiply defined.
 
 
 LaTeX Warning: Label `part@34@2' multiply defined.
+
+
+LaTeX Warning: Label `question@35' multiply defined.
 
 
 LaTeX Warning: Label `question@1' multiply defined.
@@ -6901,6 +6991,9 @@ LaTeX Warning: Label `part@102@1' multiply defined.
 LaTeX Warning: Label `part@102@2' multiply defined.
 
 
+LaTeX Warning: Label `part@102@3' multiply defined.
+
+
 LaTeX Warning: Label `question@103' multiply defined.
 
 
@@ -6913,7 +7006,16 @@ LaTeX Warning: Label `part@104@1' multiply defined.
 LaTeX Warning: Label `part@104@2' multiply defined.
 
 
+LaTeX Warning: Label `part@104@3' multiply defined.
+
+
 LaTeX Warning: Label `question@105' multiply defined.
+
+
+LaTeX Warning: Label `part@105@1' multiply defined.
+
+
+LaTeX Warning: Label `part@105@2' multiply defined.
 
 ) (微积分.aux
 
@@ -7143,6 +7245,18 @@ LaTeX Warning: Label `part@61@1' multiply defined.
 
 
 LaTeX Warning: Label `part@61@2' multiply defined.
+
+
+LaTeX Warning: Label `question@62' multiply defined.
+
+
+LaTeX Warning: Label `part@62@1' multiply defined.
+
+
+LaTeX Warning: Label `part@62@2' multiply defined.
+
+
+LaTeX Warning: Label `part@62@3' multiply defined.
 
 
 LaTeX Warning: Label `question@1' multiply defined.
@@ -7457,6 +7571,75 @@ LaTeX Warning: Label `part@79@2' multiply defined.
 LaTeX Warning: Label `part@79@3' multiply defined.
 
 
+LaTeX Warning: Label `question@80' multiply defined.
+
+
+LaTeX Warning: Label `part@80@1' multiply defined.
+
+
+LaTeX Warning: Label `part@80@2' multiply defined.
+
+
+LaTeX Warning: Label `question@81' multiply defined.
+
+
+LaTeX Warning: Label `part@81@1' multiply defined.
+
+
+LaTeX Warning: Label `part@81@2' multiply defined.
+
+
+LaTeX Warning: Label `part@81@3' multiply defined.
+
+
+LaTeX Warning: Label `question@82' multiply defined.
+
+
+LaTeX Warning: Label `part@82@1' multiply defined.
+
+
+LaTeX Warning: Label `part@82@2' multiply defined.
+
+
+LaTeX Warning: Label `question@83' multiply defined.
+
+
+LaTeX Warning: Label `part@83@1' multiply defined.
+
+
+LaTeX Warning: Label `part@83@2' multiply defined.
+
+
+LaTeX Warning: Label `part@83@3' multiply defined.
+
+
+LaTeX Warning: Label `question@84' multiply defined.
+
+
+LaTeX Warning: Label `part@84@1' multiply defined.
+
+
+LaTeX Warning: Label `part@84@2' multiply defined.
+
+
+LaTeX Warning: Label `question@85' multiply defined.
+
+
+LaTeX Warning: Label `part@85@1' multiply defined.
+
+
+LaTeX Warning: Label `part@85@2' multiply defined.
+
+
+LaTeX Warning: Label `question@86' multiply defined.
+
+
+LaTeX Warning: Label `part@86@1' multiply defined.
+
+
+LaTeX Warning: Label `part@86@2' multiply defined.
+
+
 LaTeX Warning: Label `question@1' multiply defined.
 
 
@@ -7746,6 +7929,111 @@ LaTeX Warning: Label `part@60@3' multiply defined.
 
 
 LaTeX Warning: Label `question@61' multiply defined.
+
+
+LaTeX Warning: Label `question@62' multiply defined.
+
+
+LaTeX Warning: Label `part@62@1' multiply defined.
+
+
+LaTeX Warning: Label `part@62@2' multiply defined.
+
+
+LaTeX Warning: Label `question@63' multiply defined.
+
+
+LaTeX Warning: Label `part@63@1' multiply defined.
+
+
+LaTeX Warning: Label `part@63@2' multiply defined.
+
+
+LaTeX Warning: Label `part@63@3' multiply defined.
+
+
+LaTeX Warning: Label `question@64' multiply defined.
+
+
+LaTeX Warning: Label `part@64@1' multiply defined.
+
+
+LaTeX Warning: Label `part@64@2' multiply defined.
+
+
+LaTeX Warning: Label `question@65' multiply defined.
+
+
+LaTeX Warning: Label `part@65@1' multiply defined.
+
+
+LaTeX Warning: Label `part@65@2' multiply defined.
+
+
+LaTeX Warning: Label `question@66' multiply defined.
+
+
+LaTeX Warning: Label `part@66@1' multiply defined.
+
+
+LaTeX Warning: Label `part@66@2' multiply defined.
+
+
+LaTeX Warning: Label `question@67' multiply defined.
+
+
+LaTeX Warning: Label `part@67@1' multiply defined.
+
+
+LaTeX Warning: Label `part@67@2' multiply defined.
+
+
+LaTeX Warning: Label `question@68' multiply defined.
+
+
+LaTeX Warning: Label `part@68@1' multiply defined.
+
+
+LaTeX Warning: Label `part@68@2' multiply defined.
+
+
+LaTeX Warning: Label `part@68@3' multiply defined.
+
+
+LaTeX Warning: Label `question@69' multiply defined.
+
+
+LaTeX Warning: Label `part@69@1' multiply defined.
+
+
+LaTeX Warning: Label `part@69@2' multiply defined.
+
+
+LaTeX Warning: Label `part@69@3' multiply defined.
+
+
+LaTeX Warning: Label `question@70' multiply defined.
+
+
+LaTeX Warning: Label `part@70@1' multiply defined.
+
+
+LaTeX Warning: Label `part@70@2' multiply defined.
+
+
+LaTeX Warning: Label `part@70@3' multiply defined.
+
+
+LaTeX Warning: Label `part@70@4' multiply defined.
+
+
+LaTeX Warning: Label `question@71' multiply defined.
+
+
+LaTeX Warning: Label `part@71@1' multiply defined.
+
+
+LaTeX Warning: Label `part@71@2' multiply defined.
 
 
 LaTeX Warning: Label `question@1' multiply defined.
@@ -8120,6 +8408,15 @@ LaTeX Warning: Label `question@119' multiply defined.
 LaTeX Warning: Label `question@120' multiply defined.
 
 
+LaTeX Warning: Label `part@120@1' multiply defined.
+
+
+LaTeX Warning: Label `part@120@2' multiply defined.
+
+
+LaTeX Warning: Label `part@120@3' multiply defined.
+
+
 LaTeX Warning: Label `question@121' multiply defined.
 
 
@@ -8211,6 +8508,9 @@ LaTeX Warning: Label `question@150' multiply defined.
 
 
 LaTeX Warning: Label `question@151' multiply defined.
+
+
+LaTeX Warning: Label `question@152' multiply defined.
 
 
 LaTeX Warning: Label `question@1' multiply defined.
@@ -9306,14 +9606,18 @@ Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;
 [266]
 
 [267]
+Overfull \hbox (8.402pt too wide) in paragraph at lines 11976--11979
+$\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1 = []$\TU/KaiTi(0)/
+m/n/12 ，|  即 $[] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12 ^^@ [][] []  [] \OT1/cmr/
+m/n/12 (1)$ \TU/KaiTi(0)/m/n/12 同 样 地，| $[] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/1
+2 ^^@ [][] []  [] \OT1/cmr/m/n/12 (2)$
+ []
+
+
 
 [268]
 
 [269]
-Underfull \vbox (badness 3930) detected at line 12051
- []
-
-
 
 [270]
 
@@ -9322,6 +9626,10 @@ Underfull \vbox (badness 3930) detected at line 12051
 [272]
 
 [273]
+Overfull \vbox (4.91484pt too high) detected at line 12222
+ []
+
+
 
 [274]
 
@@ -9346,10 +9654,6 @@ Underfull \vbox (badness 3930) detected at line 12051
 [284]
 
 [285]
-Underfull \vbox (badness 3229) detected at line 12723
- []
-
-
 
 [286]
 
@@ -9358,20 +9662,12 @@ Underfull \vbox (badness 3229) detected at line 12723
 [288]
 
 [289]
-Underfull \vbox (badness 2189) detected at line 12901
- []
-
-
 
 [290]
 
 [291]
 
 [292]
-Underfull \vbox (badness 10000) detected at line 13011
- []
-
-
 
 [293]
 
@@ -9391,7 +9687,7 @@ File: images/image199.png Graphic file (type bmp)
 
 
 [298]
-Underfull \vbox (badness 2277) detected at line 13244
+Underfull \vbox (badness 2277) detected at line 13286
  []
 
 
@@ -9470,7 +9766,7 @@ File: images/image90.png Graphic file (type bmp)
 [331]
 
 [332]
-Overfull \vbox (1.76965pt too high) detected at line 14700
+Overfull \vbox (1.76965pt too high) detected at line 14742
  []
 
 
@@ -9518,7 +9814,7 @@ Overfull \vbox (1.76965pt too high) detected at line 14700
 [352]
 
 [353]
-Overfull \vbox (9.1046pt too high) detected at line 15686
+Overfull \vbox (9.1046pt too high) detected at line 15728
  []
 
 
@@ -9570,7 +9866,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 [374]
 
 [375]
-Overfull \vbox (23.47043pt too high) detected at line 16823
+Overfull \vbox (23.47043pt too high) detected at line 16865
  []
 
 
@@ -9582,7 +9878,7 @@ Overfull \vbox (23.47043pt too high) detected at line 16823
 [378]
 
 [379]
-Underfull \vbox (badness 4886) detected at line 17096
+Underfull \vbox (badness 4886) detected at line 17138
  []
 
 
@@ -9598,19 +9894,19 @@ Underfull \vbox (badness 4886) detected at line 17096
 [384]
 
 [385]
-Overfull \vbox (15.07509pt too high) detected at line 17472
+Overfull \vbox (15.07509pt too high) detected at line 17514
  []
 
 
 
 [386]
-Overfull \vbox (13.11377pt too high) detected at line 17522
+Overfull \vbox (13.11377pt too high) detected at line 17564
  []
 
 
 
 [387]
-Overfull \vbox (47.39594pt too high) detected at line 17604
+Overfull \vbox (47.39594pt too high) detected at line 17646
  []
 
 
@@ -9638,7 +9934,7 @@ Overfull \vbox (47.39594pt too high) detected at line 17604
 [398]
 
 [399]
-Overfull \hbox (40.17088pt too wide) detected at line 18152
+Overfull \hbox (40.17088pt too wide) detected at line 18194
 []
  []
 
@@ -9647,7 +9943,7 @@ Overfull \hbox (40.17088pt too wide) detected at line 18152
 [400]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
-Overfull \hbox (13.91858pt too wide) detected at line 18190
+Overfull \hbox (13.91858pt too wide) detected at line 18232
 []
  []
 
@@ -9681,7 +9977,7 @@ File: images/image77.png Graphic file (type bmp)
 
 
 [409]
-Overfull \vbox (8.88135pt too high) detected at line 18608
+Overfull \vbox (8.88135pt too high) detected at line 18650
  []
 
 
@@ -9736,7 +10032,7 @@ File: images/image75.png Graphic file (type bmp)
 [432]
 
 [433]
-Underfull \vbox (badness 10000) detected at line 19789
+Underfull \vbox (badness 10000) detected at line 19831
  []
 
 
@@ -9766,7 +10062,7 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 [444]
 
 [445]
-Overfull \vbox (4.36195pt too high) detected at line 20314
+Overfull \vbox (4.36195pt too high) detected at line 20356
  []
 
 
@@ -9780,9 +10076,223 @@ File: images/image288.png Graphic file (type bmp)
 
 [448]
 
-[449])
+[449]
 
 [450]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[451]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[452]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ⑤ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ⑥ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ⑥ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ⑤ in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[453]
+File: images/image294.png Graphic file (type bmp)
+<images/image294.png>
+
+
+[454]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20682.
+
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
+0682.
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
+File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+20682.
+
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 20682
+.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20682.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20683.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20683.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20685.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20685.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20687.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20687.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20692.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20692.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20697.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20697.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20697.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20697.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20701.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20701.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20701.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20701.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20716.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20716.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20718.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20718.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20718.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20718.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20719.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20719.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20719.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20719.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20723.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20723.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20724.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20724.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20725.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20725.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20729.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20729.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20733.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20733.
+
+
+
+[455]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20754.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20754.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20757.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20757.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20761.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20761.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20761.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20761.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20762.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 20762.
+
+
+
+[456]
+
+[457]
+File: images/image303.png Graphic file (type bmp)
+<images/image303.png>
+
+Overfull \hbox (21.46404pt too wide) in paragraph at lines 20815--20820
+\OML/cmm/m/it/12 ABCD$ \TU/KaiTi(0)/m/n/12 的 外 部，|  分 别 以 \TU/lmr/m/n/12 4 \TU/
+KaiTi(0)/m/n/12 边 $\OML/cmm/m/it/12 AB; BC; CD; DA$ \TU/KaiTi(0)/m/n/12 为 斜 边 作
+ 等 腰 直 角 三 角 形 $\OML/cmm/m/it/12 APB; BQC; CRD; DSA$\TU/KaiTi(0)/m/n/12 。|
+ []
+
+
+
+[458])
+
+[459]
 \openout2 = `离散数学.aux'.
 
  (离散数学.tex (pageborder.tex
@@ -9815,31 +10325,13 @@ File: images/image288.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian87.pgf))
 
-[451
+[460
 
 
 
 ]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
-
-[452]
-
-[453]
-
-[454]
-
-[455]
-
-[456]
-
-[457]
-
-[458]
-
-[459]
-
-[460]
 
 [461]
 
@@ -9866,23 +10358,10 @@ File: images/image288.png Graphic file (type bmp)
 [472]
 
 [473]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [474]
 
 [475]
-Overfull \hbox (16.91931pt too wide) detected at line 1262
-\OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 [(\OMS/cmsy/m/n/12 ^^@\OT
-1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 m[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 m[]
-\OT1/cmr/m/n/12 ] + (\OML/cmm/m/it/12 m[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 m[
-]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 m[] \
-OT1/cmr/m/n/12 + \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 ) + (\OMS/cmsy/m/n/12 ^^@\
-OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (1 + \OML/cmm/m/it/12 m[
-]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g
- []
-
-
 
 [476]
 
@@ -9897,14 +10376,23 @@ OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (1 + \OML/cmm/m/it/12 m[
 [481]
 
 [482]
-Underfull \vbox (badness 10000) detected at line 1586
- []
-
-
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [483]
 
 [484]
+Overfull \hbox (16.91931pt too wide) detected at line 1262
+\OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 [(\OMS/cmsy/m/n/12 ^^@\OT
+1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 m[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 m[]
+\OT1/cmr/m/n/12 ] + (\OML/cmm/m/it/12 m[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 m[
+]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 m[] \
+OT1/cmr/m/n/12 + \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 ) + (\OMS/cmsy/m/n/12 ^^@\
+OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (1 + \OML/cmm/m/it/12 m[
+]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g
+ []
+
+
 
 [485]
 
@@ -9919,7 +10407,7 @@ Underfull \vbox (badness 10000) detected at line 1586
 [490]
 
 [491]
-Underfull \vbox (badness 4726) detected at line 1983
+Underfull \vbox (badness 10000) detected at line 1586
  []
 
 
@@ -9933,10 +10421,6 @@ Underfull \vbox (badness 4726) detected at line 1983
 [495]
 
 [496]
-Underfull \vbox (badness 5231) detected at line 2162
- []
-
-
 
 [497]
 
@@ -9945,6 +10429,10 @@ Underfull \vbox (badness 5231) detected at line 2162
 [499]
 
 [500]
+Underfull \vbox (badness 4726) detected at line 1983
+ []
+
+
 
 [501]
 
@@ -9955,24 +10443,22 @@ Underfull \vbox (badness 5231) detected at line 2162
 [504]
 
 [505]
+Underfull \vbox (badness 5231) detected at line 2162
+ []
+
+
 
 [506]
 
 [507]
 
 [508]
-Underfull \vbox (badness 10000) detected at line 2635
- []
-
-
 
 [509]
 
 [510]
 
 [511]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [512]
 
@@ -9985,12 +10471,18 @@ Underfull \vbox (badness 10000) detected at line 2635
 [516]
 
 [517]
+Underfull \vbox (badness 10000) detected at line 2635
+ []
+
+
 
 [518]
 
 [519]
 
 [520]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [521]
 
@@ -10023,38 +10515,14 @@ Underfull \vbox (badness 10000) detected at line 2635
 [535]
 
 [536]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [537]
 
 [538]
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [539]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [540]
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [541]
 
@@ -10065,42 +10533,69 @@ Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;
 [544]
 
 [545]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [546]
 
 [547]
-File: images/image255.png Graphic file (type bmp)
-<images/image255.png>
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 
 
 [548]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [549]
-Underfull \vbox (badness 7704) detected at line 4542
- []
-
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 
 
 [550]
 
 [551]
 
+[552]
+
+[553]
+
+[554]
+
+[555]
+
+[556]
+File: images/image255.png Graphic file (type bmp)
+<images/image255.png>
+
+
+[557]
+
+[558]
+Underfull \vbox (badness 7704) detected at line 4542
+ []
+
+
+
+[559]
+
+[560]
+
 LaTeX Warning: Command \textcircled invalid in math mode on input line 4591.
-
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
-591.
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4591.
-
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 4591.
-
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 4591.
@@ -10183,57 +10678,30 @@ Underfull \vbox (badness 10000) detected at line 4626
 
 
 
-[552]
+[561]
 Overfull \vbox (28.65244pt too high) has occurred while \output is active []
 
 
 
-[553]
+[562]
 
-[554]
+[563]
 Underfull \vbox (badness 1675) detected at line 4705
  []
 
 
-
-[555]
-
-[556]
-
-[557]
-
-[558]
-
-[559]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[560]
-
-[561]
-
-[562]
-
-[563]
 
 [564]
 
 [565]
 
 [566]
-Overfull \hbox (16.73172pt too wide) in paragraph at lines 5226--5228
-[]\TU/KaiTi(0)/m/n/12 综 上 所 述，|  满 足 条 件 的 自 然 数 $\OML/cmm/m/it/12 N$ \TU/KaiTi
-(0)/m/n/12 为：| $\OT1/cmr/m/n/12 220168\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 320164
-\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 420160\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 520
-169\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 620165\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 
-720161\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 920166$\TU/KaiTi(0)/m/n/12 。| 
- []
-
-
 
 [567]
 
 [568]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [569]
 
@@ -10246,10 +10714,17 @@ Overfull \hbox (16.73172pt too wide) in paragraph at lines 5226--5228
 [573]
 
 [574]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [575]
+Overfull \hbox (16.73172pt too wide) in paragraph at lines 5226--5228
+[]\TU/KaiTi(0)/m/n/12 综 上 所 述，|  满 足 条 件 的 自 然 数 $\OML/cmm/m/it/12 N$ \TU/KaiTi
+(0)/m/n/12 为：| $\OT1/cmr/m/n/12 220168\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 320164
+\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 420160\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 520
+169\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 620165\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 
+720161\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 920166$\TU/KaiTi(0)/m/n/12 。| 
+ []
+
+
 
 [576]
 
@@ -10266,6 +10741,8 @@ Overfull \hbox (16.73172pt too wide) in paragraph at lines 5226--5228
 [582]
 
 [583]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [584]
 
@@ -10284,17 +10761,35 @@ Overfull \hbox (16.73172pt too wide) in paragraph at lines 5226--5228
 [591]
 
 [592]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [593]
 
 [594]
+
+[595]
+
+[596]
+
+[597]
+
+[598]
+
+[599]
+
+[600]
+
+[601]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[602]
+
+[603]
 Overfull \hbox (36.80508pt too wide) in paragraph at lines 6475--6477
 []\TU/KaiTi(0)/m/n/12 综 上 所 述，|  符 合 条 件 的 数 组 共 有 $\OT1/cmr/m/n/12 6$ \TU/KaiT
 i(0)/m/n/12 组：| $\OT1/cmr/m/n/12 (3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7\OML/cmm
@@ -10310,49 +10805,9 @@ cmm/m/it/12 ; \OT1/cmr/m/n/12 12)$\TU/KaiTi(0)/m/n/12 。|
 
 
 
-[595]
-
-[596]
-
-[597]
-
-[598]
-
-[599]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6739.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6739.
-
-
-
-[600]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6771.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6771.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
-
-
-
-[601]
-
-[602]
-
-[603]
-
 [604]
 
 [605]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [606]
 
@@ -10360,7 +10815,27 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
 
 [608]
 
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6739.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6739.
+
+
+
 [609]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6771.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6771.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
+
+
 
 [610]
 
@@ -10371,6 +10846,8 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
 [613]
 
 [614]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [615]
 
@@ -10399,8 +10876,6 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
 [627]
 
 [628]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [629]
 
@@ -10419,6 +10894,8 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
 [636]
 
 [637]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [638]
 
@@ -10439,29 +10916,16 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 6776.
 [646]
 
 [647]
-File: images/image13.png Graphic file (type bmp)
-<images/image13.png>
-
 
 [648]
 
 [649]
-File: images/image170.png Graphic file (type bmp)
-<images/image170.png>
-
 
 [650]
 
 [651]
 
 [652]
-File: images/image7.png Graphic file (type bmp)
-<images/image7.png>
-File: images/image95.png Graphic file (type bmp)
-<images/image95.png>
-File: images/image96.jpg Graphic file (type bmp)
-<images/image96.jpg>
-
 
 [653]
 
@@ -10470,18 +10934,15 @@ File: images/image96.jpg Graphic file (type bmp)
 [655]
 
 [656]
-File: images/image162.png Graphic file (type bmp)
-<images/image162.png>
+File: images/image13.png Graphic file (type bmp)
+<images/image13.png>
 
 
 [657]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [658]
-Underfull \vbox (badness 10000) detected at line 9295
- []
-
+File: images/image170.png Graphic file (type bmp)
+<images/image170.png>
 
 
 [659]
@@ -10489,12 +10950,46 @@ Underfull \vbox (badness 10000) detected at line 9295
 [660]
 
 [661]
+File: images/image7.png Graphic file (type bmp)
+<images/image7.png>
+File: images/image95.png Graphic file (type bmp)
+<images/image95.png>
+File: images/image96.jpg Graphic file (type bmp)
+<images/image96.jpg>
+
 
 [662]
 
 [663]
 
 [664]
+
+[665]
+File: images/image162.png Graphic file (type bmp)
+<images/image162.png>
+
+
+[666]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[667]
+Underfull \vbox (badness 10000) detected at line 9295
+ []
+
+
+
+[668]
+
+[669]
+
+[670]
+
+[671]
+
+[672]
+
+[673]
 Overfull \hbox (14.86325pt too wide) detected at line 9443
 \OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/
 cmm/m/it/12 ; \OT1/cmr/m/n/12 999\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; E[] \OT1/
@@ -10510,45 +11005,45 @@ S/cmsy/m/n/12 g
 
 
 
-[665]
-
-[666]
-
-[667]
-
-[668]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
-
-[669]
-
-[670]
-
-[671]
-
-[672]
-
-[673]
-
 [674]
 
 [675]
 
 [676]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [677]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [678]
 
 [679]
 
 [680]
+
+[681]
+
+[682]
+
+[683]
+
+[684]
+
+[685]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
+
+[686]
+
+[687]
+
+[688]
+
+[689]
 Overfull \hbox (7.73753pt too wide) in paragraph at lines 10212--10215
 \TU/lmr/m/n/12 1. $\OML/cmm/m/it/12 P$ \TU/KaiTi(0)/m/n/12 是 否 具 有 自 反 性？|  即 证
  明\TU/lmr/m/n/12 /\TU/KaiTi(0)/m/n/12 推 翻：| $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12
@@ -10571,15 +11066,15 @@ ML/cmm/m/it/12 x[]p\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 y$\TU/KaiTi(0)/m/n/12 ） 
 
 
 
-[681]
+[690]
 
-[682]
+[691]
 
-[683]
+[692]
 
-[684])
+[693])
 
-[685]
+[694]
 \openout2 = `统计学.aux'.
 
  (统计学.tex (pageborder.tex
@@ -10612,38 +11107,13 @@ ML/cmm/m/it/12 x[]p\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 y$\TU/KaiTi(0)/m/n/12 ） 
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian87.pgf))
 
-[686
+[695
 
 
 
 ]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
-
-[687]
-
-[688]
-
-[689]
-
-[690]
-
-[691]
-Overfull \vbox (3.39053pt too high) detected at line 250
- []
-
-
-
-[692]
-
-[693]
-
-[694]
-File: images/image171.png Graphic file (type bmp)
-<images/image171.png>
-
-
-[695]
 
 [696]
 
@@ -10654,25 +11124,21 @@ File: images/image171.png Graphic file (type bmp)
 [699]
 
 [700]
+Overfull \vbox (3.39053pt too high) detected at line 250
+ []
+
+
 
 [701]
 
 [702]
 
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 656.
-
-File: images/image174.png Graphic file (type bmp)
-<images/image174.png>
-
-
 [703]
+File: images/image171.png Graphic file (type bmp)
+<images/image171.png>
+
 
 [704]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [705]
 
@@ -10688,15 +11154,44 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 
 [711]
 
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 656.
+
+File: images/image174.png Graphic file (type bmp)
+<images/image174.png>
+
+
 [712]
+
+[713]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[714]
+
+[715]
+
+[716]
+
+[717]
+
+[718]
+
+[719]
+
+[720]
+
+[721]
 Overfull \vbox (11.08841pt too high) detected at line 1098
  []
 
 
 
-[713]
+[722]
 
-[714]
+[723]
 Overfull \hbox (207.79498pt too wide) in paragraph at lines 1193--1198
 \TU/KaiTi(0)/m/n/12 等 可 能 的。|  例 如，| $\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 = 3$ \
 TU/KaiTi(0)/m/n/12 时，|  将 \TU/lmr/m/n/12 A, B, C \TU/KaiTi(0)/m/n/12 三 个 人 分 组 
@@ -10716,33 +11211,33 @@ r/m/n/12 )\OMS/cmsy/m/n/12 g$
 
 
 
-[715]
+[724]
 
-[716]
+[725]
 
-[717]
+[726]
 
-[718]
+[727]
 Underfull \vbox (badness 10000) detected at line 1393
  []
 
 
 
-[719]
+[728]
 
-[720]
+[729]
 
-[721]
+[730]
 Overfull \vbox (12.6018pt too high) detected at line 1501
  []
 
 
 
-[722]
+[731]
 
-[723]
+[732]
 
-[724]
+[733]
 Overfull \hbox (9.17828pt too wide) detected at line 1600
 \OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 = [] (\OML/cmm/m/i
 t/12 p \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 q\OT1/cmr/m/n/12 )[] = [](\OML/cmm
@@ -10752,14 +11247,14 @@ t/12 p \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 q\OT1/cmr/m/n/12 )[] = [](\OML/cmm
 
 
 
-[725]
+[734]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman8-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman6-regular]:mapping=tex-text;!
 
 
-[726]
+[735]
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ② in font [lmroman8-regular]:mapping=tex-text;!
@@ -10777,7 +11272,7 @@ Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[727]
+[736]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman8-regular]:mapping=tex-text;!
@@ -10792,9 +11287,9 @@ cmr/m/n/12 ([]) = [][] = [][] \OML/cmm/m/it/12 ;  P\OT1/cmr/m/n/12 ([]) = [][]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[728]
+[737]
 
-[729]
+[738]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
@@ -10807,13 +11302,13 @@ Overfull \vbox (7.73724pt too high) detected at line 1833
 
 
 
-[730]
+[739]
 
-[731]
+[740]
 
-[732]
+[741]
 
-[733]
+[742]
 Overfull \hbox (74.03206pt too wide) in paragraph at lines 1968--1976
 \TU/KaiTi(0)/m/n/12 设 $\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 
 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = 7$ \TU/KaiTi(0)/m/
@@ -10831,7 +11326,7 @@ S/cmsy/m/n/12 g$\TU/KaiTi(0)/m/n/12 。|
 
 
 
-[734]
+[743]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 2047.
 
@@ -10862,7 +11357,7 @@ Underfull \vbox (badness 1521) detected at line 2059
 
 
 
-[735]
+[744]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 2080.
 
@@ -10913,7 +11408,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 2099.
 
 
 
-[736]
+[745]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 2110.
 
@@ -10928,9 +11423,9 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 2111.
 
 
 
-[737]
+[746]
 
-[738]
+[747]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 2181.
 
@@ -10957,13 +11452,13 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 2199.
 
 
 
-[739]
+[748]
 Underfull \vbox (badness 3088) detected at line 2257
  []
 
 
 
-[740]
+[749]
 Overfull \hbox (16.81592pt too wide) detected at line 2278
 [] [][] \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 + [] [][] \OMS/cmsy/m/n/12 ^^A 
 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n \OMS
@@ -10975,39 +11470,11 @@ MS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3)\OMS/cmsy/m/n/12 g [][] []
 
 
 
-[741]
-
-[742]
-
-[743]
-
-[744]
-
-[745]
-
-[746]
-
-[747]
-
-[748]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[749]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-File: images/image154.png Graphic file (type bmp)
-<images/image154.png>
-
-
 [750]
 
 [751]
 
 [752]
-File: images/image8.png Graphic file (type bmp)
-<images/image8.png>
-
 
 [753]
 
@@ -11018,28 +11485,56 @@ File: images/image8.png Graphic file (type bmp)
 [756]
 
 [757]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [758]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
+File: images/image154.png Graphic file (type bmp)
+<images/image154.png>
+
 
 [759]
 
 [760]
 
 [761]
+File: images/image8.png Graphic file (type bmp)
+<images/image8.png>
+
 
 [762]
 
 [763]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [764]
+
+[765]
+
+[766]
+
+[767]
+
+[768]
+
+[769]
+
+[770]
+
+[771]
+
+[772]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 
-[765])
+[773]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
-[766]
+[774])
+
+[775]
 \openout2 = `几何.aux'.
 
  (几何.tex (pageborder.tex
@@ -11072,7 +11567,7 @@ File: images/image8.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian87.pgf))
 
-[767
+[776
 
 
 
@@ -11080,234 +11575,234 @@ File: images/image8.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 
-[768]
+[777]
 
-[769]
+[778]
 
-[770]
+[779]
 
-[771]
+[780]
 
-[772]
+[781]
 
-[773]
+[782]
 
-[774]
+[783]
 File: images/image1.png Graphic file (type bmp)
 <images/image1.png>
 File: images/image2.png Graphic file (type bmp)
 <images/image2.png>
 
 
-[775]
+[784]
 File: images/image146.png Graphic file (type bmp)
 <images/image146.png>
 File: images/image35.png Graphic file (type bmp)
 <images/image35.png>
 
 
-[776]
+[785]
 File: images/image44.png Graphic file (type bmp)
 <images/image44.png>
 
 
-[777]
+[786]
 File: images/image226.png Graphic file (type bmp)
 <images/image226.png>
 
 
-[778]
+[787]
 File: images/image121.jpg Graphic file (type bmp)
 <images/image121.jpg>
 
 
-[779]
+[788]
 File: images/image277.png Graphic file (type bmp)
 <images/image277.png>
 
 
-[780]
+[789]
 File: images/image278.png Graphic file (type bmp)
 <images/image278.png>
 
 
-[781]
+[790]
 
-[782]
+[791]
 File: images/image252.png Graphic file (type bmp)
 <images/image252.png>
 
 
-[783]
+[792]
 File: images/image251.png Graphic file (type bmp)
 <images/image251.png>
 
 
-[784]
+[793]
 File: images/image248.png Graphic file (type bmp)
 <images/image248.png>
 
 
-[785]
+[794]
 File: images/image249.png Graphic file (type bmp)
 <images/image249.png>
 
 
-[786]
+[795]
 
-[787]
+[796]
 File: images/image250.png Graphic file (type bmp)
 <images/image250.png>
 
 
-[788]
+[797]
 File: images/image196.png Graphic file (type bmp)
 <images/image196.png>
 
 
-[789]
+[798]
 File: images/image25.png Graphic file (type bmp)
 <images/image25.png>
 
 
-[790]
+[799]
 File: images/image86.jpg Graphic file (type bmp)
 <images/image86.jpg>
-
-
-[791]
-
-[792]
-
-[793]
-
-[794]
-
-[795]
-
-[796]
-
-[797]
-
-[798]
-
-[799]
-File: images/image43.png Graphic file (type bmp)
-<images/image43.png>
 
 
 [800]
 
 [801]
+
+[802]
+
+[803]
+
+[804]
+
+[805]
+
+[806]
+
+[807]
+
+[808]
+File: images/image43.png Graphic file (type bmp)
+<images/image43.png>
+
+
+[809]
+
+[810]
 File: images/image147.png Graphic file (type bmp)
 <images/image147.png>
 
 
-[802]
+[811]
 File: images/image3.png Graphic file (type bmp)
 <images/image3.png>
 
 
-[803]
+[812]
 File: images/image5.png Graphic file (type bmp)
 <images/image5.png>
 
 
-[804]
+[813]
 File: images/image151.png Graphic file (type bmp)
 <images/image151.png>
 File: images/image91.jpg Graphic file (type bmp)
 <images/image91.jpg>
 
 
-[805]
+[814]
 File: images/image123.jpg Graphic file (type bmp)
 <images/image123.jpg>
 
 
-[806]
+[815]
 File: images/image85.jpg Graphic file (type bmp)
 <images/image85.jpg>
 
 
-[807]
+[816]
 File: images/image127.jpg Graphic file (type bmp)
 <images/image127.jpg>
 
 
-[808]
+[817]
 File: images/image4.png Graphic file (type bmp)
 <images/image4.png>
 
 
-[809]
+[818]
 File: images/image93.jpg Graphic file (type bmp)
 <images/image93.jpg>
 
 
-[810]
+[819]
 File: images/image79.jpg Graphic file (type bmp)
 <images/image79.jpg>
 
 
-[811]
+[820]
 File: images/image157.png Graphic file (type bmp)
 <images/image157.png>
 
 
-[812]
+[821]
 File: images/image153.png Graphic file (type bmp)
 <images/image153.png>
 
 
-[813]
+[822]
 File: images/image143.png Graphic file (type bmp)
 <images/image143.png>
 
 
-[814]
+[823]
 File: images/image155.png Graphic file (type bmp)
 <images/image155.png>
 
 
-[815]
+[824]
 
-[816]
+[825]
 File: images/image173.png Graphic file (type bmp)
 <images/image173.png>
 
 
-[817]
+[826]
 File: images/image165.png Graphic file (type bmp)
 <images/image165.png>
 File: images/image166.png Graphic file (type bmp)
 <images/image166.png>
 
 
-[818]
+[827]
 File: images/image201.png Graphic file (type bmp)
 <images/image201.png>
 File: images/image202.png Graphic file (type bmp)
 <images/image202.png>
 
 
-[819]
+[828]
 
-[820]
+[829]
 File: images/image124.jpg Graphic file (type bmp)
 <images/image124.jpg>
 
 
-[821]
+[830]
 File: images/image110.jpg Graphic file (type bmp)
 <images/image110.jpg>
 File: images/image200.png Graphic file (type bmp)
 <images/image200.png>
 
 
-[822]
+[831]
 
-[823]
+[832]
 File: images/image175.png Graphic file (type bmp)
 <images/image175.png>
 File: images/image134.png Graphic file (type bmp)
@@ -11316,206 +11811,206 @@ File: images/image135.jpg Graphic file (type bmp)
 <images/image135.jpg>
 
 
-[824]
+[833]
 
-[825]
+[834]
 File: images/image158.png Graphic file (type bmp)
 <images/image158.png>
 
 
-[826]
+[835]
 File: images/image159.png Graphic file (type bmp)
 <images/image159.png>
 
 
-[827]
+[836]
 File: images/image128.jpg Graphic file (type bmp)
 <images/image128.jpg>
 
 
-[828]
+[837]
 File: images/image82.png Graphic file (type bmp)
 <images/image82.png>
 
 
-[829]
+[838]
 File: images/image142.png Graphic file (type bmp)
 <images/image142.png>
 
 
-[830]
+[839]
 File: images/image89.jpg Graphic file (type bmp)
 <images/image89.jpg>
 
 
-[831]
+[840]
 File: images/image150.png Graphic file (type bmp)
 <images/image150.png>
 
 
-[832]
+[841]
 File: images/image88.jpg Graphic file (type bmp)
 <images/image88.jpg>
 
 
-[833]
+[842]
 File: images/image137.png Graphic file (type bmp)
 <images/image137.png>
 File: images/image138.jpg Graphic file (type bmp)
 <images/image138.jpg>
 
 
-[834]
+[843]
 File: images/image74.png Graphic file (type bmp)
 <images/image74.png>
 
 
-[835]
+[844]
 File: images/image122.jpg Graphic file (type bmp)
 <images/image122.jpg>
 
 
-[836]
+[845]
 
-[837]
+[846]
 File: images/image98.jpg Graphic file (type bmp)
 <images/image98.jpg>
 
 
-[838]
+[847]
 File: images/image133.jpg Graphic file (type bmp)
 <images/image133.jpg>
 
 
-[839]
+[848]
 File: images/image108.png Graphic file (type bmp)
 <images/image108.png>
 File: images/image109.jpg Graphic file (type bmp)
 <images/image109.jpg>
 
 
-[840]
+[849]
 File: images/image129.jpg Graphic file (type bmp)
 <images/image129.jpg>
 
 
-[841]
+[850]
 File: images/image116.jpg Graphic file (type bmp)
 <images/image116.jpg>
 
 
-[842]
+[851]
 File: images/image126.jpg Graphic file (type bmp)
 <images/image126.jpg>
 
 
-[843]
+[852]
 File: images/image92.jpg Graphic file (type bmp)
 <images/image92.jpg>
 
 
-[844]
+[853]
 File: images/image145.png Graphic file (type bmp)
 <images/image145.png>
 
 
-[845]
+[854]
 File: images/image67.png Graphic file (type bmp)
 <images/image67.png>
 File: images/image69.png Graphic file (type bmp)
 <images/image69.png>
 
 
-[846]
+[855]
 File: images/image72.png Graphic file (type bmp)
 <images/image72.png>
 
 
-[847]
+[856]
 File: images/image66.png Graphic file (type bmp)
 <images/image66.png>
 
 
-[848]
+[857]
 File: images/image68.png Graphic file (type bmp)
 <images/image68.png>
 File: images/image60.png Graphic file (type bmp)
 <images/image60.png>
 
 
-[849]
+[858]
 File: images/image76.png Graphic file (type bmp)
 <images/image76.png>
 
 
-[850]
+[859]
 File: images/image56.png Graphic file (type bmp)
 <images/image56.png>
 
 
-[851]
+[860]
 File: images/image94.jpg Graphic file (type bmp)
 <images/image94.jpg>
 
 
-[852]
+[861]
 File: images/image148.png Graphic file (type bmp)
 <images/image148.png>
 
 
-[853]
+[862]
 File: images/image178.png Graphic file (type bmp)
 <images/image178.png>
 
 
-[854]
+[863]
 File: images/image179.png Graphic file (type bmp)
 <images/image179.png>
 
 
-[855]
+[864]
 File: images/image51.png Graphic file (type bmp)
 <images/image51.png>
 
 
-[856]
+[865]
 File: images/image61.png Graphic file (type bmp)
 <images/image61.png>
 File: images/image224.png Graphic file (type bmp)
 <images/image224.png>
 
 
-[857]
+[866]
 File: images/image140.png Graphic file (type bmp)
 <images/image140.png>
 
 
-[858]
+[867]
 File: images/image152.png Graphic file (type bmp)
 <images/image152.png>
 
 
-[859]
+[868]
 File: images/image160.png Graphic file (type bmp)
 <images/image160.png>
 
 
-[860]
+[869]
 File: images/image54.png Graphic file (type bmp)
 <images/image54.png>
 
 
-[861]
+[870]
 File: images/image57.png Graphic file (type bmp)
 <images/image57.png>
 
 
-[862]
+[871]
 File: images/image247.png Graphic file (type bmp)
 <images/image247.png>
 
 
-[863]
+[872]
 Overfull \hbox (11.1661pt too wide) in paragraph at lines 3427--3430
 \TU/KaiTi(0)/m/n/12 在 直 角 $\OMS/cmsy/m/n/12 4\OML/cmm/m/it/12 ABC$ \TU/KaiTi(0)
 /m/n/12 中\TU/lmr/m/n/12 , $[] \U/msa/m/n/12 \\OML/cmm/m/it/12 ABC \OT1/cmr/m/n/
@@ -11525,114 +12020,114 @@ C \OT1/cmr/m/n/12 = [] = [] =
 
 
 
-[864]
+[873]
 File: images/image246.png Graphic file (type bmp)
 <images/image246.png>
 
 
-[865]
+[874]
 File: images/image225.png Graphic file (type bmp)
 <images/image225.png>
 
 
-[866]
+[875]
 File: images/image47.png Graphic file (type bmp)
 <images/image47.png>
 
 
-[867]
+[876]
 File: images/image33.png Graphic file (type bmp)
 <images/image33.png>
 
 
-[868]
+[877]
 
-[869]
+[878]
 File: images/image26.png Graphic file (type bmp)
 <images/image26.png>
 
 
-[870]
+[879]
 File: images/image80.jpg Graphic file (type bmp)
 <images/image80.jpg>
 
 
-[871]
+[880]
 File: images/image104.png Graphic file (type bmp)
 <images/image104.png>
 File: images/image105.jpg Graphic file (type bmp)
 <images/image105.jpg>
 
 
-[872]
+[881]
 File: images/image48.png Graphic file (type bmp)
 <images/image48.png>
 File: images/image139.png Graphic file (type bmp)
 <images/image139.png>
 
 
-[873]
+[882]
 
-[874]
+[883]
 File: images/image29.png Graphic file (type bmp)
 <images/image29.png>
 File: images/image186.png Graphic file (type bmp)
 <images/image186.png>
 
 
-[875]
+[884]
 File: images/image214.png Graphic file (type bmp)
 <images/image214.png>
 
 
-[876]
+[885]
 File: images/image99.png Graphic file (type bmp)
 <images/image99.png>
 File: images/image100.jpg Graphic file (type bmp)
 <images/image100.jpg>
 
 
-[877]
+[886]
 File: images/image87.jpg Graphic file (type bmp)
 <images/image87.jpg>
 
 
-[878]
+[887]
 File: images/image78.png Graphic file (type bmp)
 <images/image78.png>
 
 
-[879]
+[888]
 File: images/image70.png Graphic file (type bmp)
 <images/image70.png>
 
 
-[880]
+[889]
 File: images/image59.png Graphic file (type bmp)
 <images/image59.png>
 
 
-[881]
+[890]
 File: images/image23.png Graphic file (type bmp)
 <images/image23.png>
 
 
-[882]
+[891]
 File: images/image83.png Graphic file (type bmp)
 <images/image83.png>
 
 
-[883]
+[892]
 File: images/image156.png Graphic file (type bmp)
 <images/image156.png>
 
 
-[884]
+[893]
 File: images/image39.png Graphic file (type bmp)
 <images/image39.png>
 
 
-[885]
+[894]
 File: images/image40.png Graphic file (type bmp)
 <images/image40.png>
 File: images/image190.png Graphic file (type bmp)
@@ -11641,72 +12136,72 @@ File: images/image191.png Graphic file (type bmp)
 <images/image191.png>
 
 
-[886]
+[895]
 File: images/image192.png Graphic file (type bmp)
 <images/image192.png>
 
 
-[887]
+[896]
 File: images/image193.png Graphic file (type bmp)
 <images/image193.png>
 
 
-[888]
+[897]
 File: images/image194.png Graphic file (type bmp)
 <images/image194.png>
 
 
-[889]
+[898]
 File: images/image36.png Graphic file (type bmp)
 <images/image36.png>
 File: images/image37.png Graphic file (type bmp)
 <images/image37.png>
 
 
-[890]
+[899]
 File: images/image125.png Graphic file (type bmp)
 <images/image125.png>
 
 
-[891]
+[900]
 File: images/image136.jpg Graphic file (type bmp)
 <images/image136.jpg>
 
 
-[892]
+[901]
 File: images/image132.jpg Graphic file (type bmp)
 <images/image132.jpg>
 
 
-[893]
+[902]
 File: images/image244.png Graphic file (type bmp)
 <images/image244.png>
 File: images/image245.png Graphic file (type bmp)
 <images/image245.png>
 
 
-[894]
+[903]
 
-[895]
+[904]
 
-[896]
+[905]
 
-[897]
+[906]
 
-[898]
+[907]
 File: images/image253.png Graphic file (type bmp)
 <images/image253.png>
 
 
-[899]
+[908]
 
-[900]
+[909]
 Overfull \vbox (7.19724pt too high) detected at line 4602
  []
 
 
 
-[901]
+[910]
 File: images/image256.png Graphic file (type bmp)
 <images/image256.png>
 File: images/image231.png Graphic file (type bmp)
@@ -11719,9 +12214,9 @@ File: images/image141.png Graphic file (type bmp)
 <images/image141.png>
 
 
-[902]
+[911]
 
-[903]
+[912]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
@@ -11731,55 +12226,36 @@ Missing character: There is no ⑤ in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ⑦ in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[904]
+[913]
 File: images/image273.png Graphic file (type bmp)
 <images/image273.png>
 
 
-[905]
+[914]
 Overfull \vbox (8.1611pt too high) detected at line 4699
  []
 
 
 
-[906]
+[915]
 File: images/image289.png Graphic file (type bmp)
 <images/image289.png>
-
-
-[907]
-
-[908]
-
-[909]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[910]
-
-[911]
-
-[912]
-
-[913]
-
-[914]
-
-[915]
-Overfull \vbox (6.2909pt too high) detected at line 5137
- []
-
 
 
 [916]
 
 [917]
+File: images/image295.png Graphic file (type bmp)
+<images/image295.png>
+
 
 [918]
 
 [919]
 
 [920]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [921]
 
@@ -11792,21 +12268,18 @@ Overfull \vbox (6.2909pt too high) detected at line 5137
 [925]
 
 [926]
+Overfull \vbox (6.2909pt too high) detected at line 5191
+ []
+
+
 
 [927]
 
 [928]
 
 [929]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [930]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [931]
 
@@ -11819,33 +12292,22 @@ Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;
 [935]
 
 [936]
-Overfull \hbox (67.64165pt too wide) detected at line 6084
-\OT1/cmr/m/n/12 = []
- []
-
-
 
 [937]
 
 [938]
 
 [939]
-Underfull \vbox (badness 2753) detected at line 6179
- []
-
-
 
 [940]
-Underfull \vbox (badness 10000) detected at line 6215
- []
-
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 [941]
-Overfull \hbox (6.13583pt too wide) detected at line 6231
-[]
- []
-
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 [942]
@@ -11853,21 +12315,14 @@ Overfull \hbox (6.13583pt too wide) detected at line 6231
 [943]
 
 [944]
-Underfull \vbox (badness 10000) detected at line 6374
- []
-
-
 
 [945]
 
 [946]
-Underfull \vbox (badness 10000) detected at line 6451
- []
-
-
 
 [947]
-Underfull \vbox (badness 10000) detected at line 6470
+Overfull \hbox (67.64165pt too wide) detected at line 6138
+\OT1/cmr/m/n/12 = []
  []
 
 
@@ -11877,19 +12332,30 @@ Underfull \vbox (badness 10000) detected at line 6470
 [949]
 
 [950]
+Underfull \vbox (badness 2753) detected at line 6233
+ []
+
+
 
 [951]
+Underfull \vbox (badness 10000) detected at line 6269
+ []
+
+
 
 [952]
+Overfull \hbox (6.13583pt too wide) detected at line 6285
+[]
+ []
+
+
 
 [953]
 
 [954]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [955]
-Underfull \vbox (badness 3746) detected at line 6764
+Underfull \vbox (badness 10000) detected at line 6428
  []
 
 
@@ -11897,8 +12363,16 @@ Underfull \vbox (badness 3746) detected at line 6764
 [956]
 
 [957]
+Underfull \vbox (badness 10000) detected at line 6505
+ []
+
+
 
 [958]
+Underfull \vbox (badness 10000) detected at line 6524
+ []
+
+
 
 [959]
 
@@ -11913,10 +12387,11 @@ Underfull \vbox (badness 3746) detected at line 6764
 [964]
 
 [965]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [966]
-Overfull \hbox (6.15742pt too wide) detected at line 7204
-[]
+Underfull \vbox (badness 3746) detected at line 6818
  []
 
 
@@ -11934,10 +12409,6 @@ Overfull \hbox (6.15742pt too wide) detected at line 7204
 [972]
 
 [973]
-Underfull \vbox (badness 3942) detected at line 7548
- []
-
-
 
 [974]
 
@@ -11946,6 +12417,11 @@ Underfull \vbox (badness 3942) detected at line 7548
 [976]
 
 [977]
+Overfull \hbox (6.15742pt too wide) detected at line 7258
+[]
+ []
+
+
 
 [978]
 
@@ -11956,12 +12432,14 @@ Underfull \vbox (badness 3942) detected at line 7548
 [981]
 
 [982]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [983]
 
 [984]
+Underfull \vbox (badness 3942) detected at line 7602
+ []
+
+
 
 [985]
 
@@ -11980,6 +12458,8 @@ Underfull \vbox (badness 3942) detected at line 7548
 [992]
 
 [993]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [994]
 
@@ -11988,24 +12468,14 @@ Underfull \vbox (badness 3942) detected at line 7548
 [996]
 
 [997]
-Underfull \vbox (badness 2941) detected at line 8590
- []
-
-
 
 [998]
 
 [999]
 
 [1000]
-Overfull \vbox (1.25803pt too high) detected at line 8709
- []
-
-
 
 [1001]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [1002]
 
@@ -12014,39 +12484,71 @@ Overfull \vbox (1.25803pt too high) detected at line 8709
 [1004]
 
 [1005]
-File: images/image172.png Graphic file (type bmp)
-<images/image172.png>
-
 
 [1006]
 
 [1007]
 
 [1008]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Underfull \vbox (badness 2941) detected at line 8644
+ []
+
 
 
 [1009]
+
+[1010]
+
+[1011]
+Overfull \vbox (1.25803pt too high) detected at line 8763
+ []
+
+
+
+[1012]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
+
+[1013]
+
+[1014]
+
+[1015]
+
+[1016]
+File: images/image172.png Graphic file (type bmp)
+<images/image172.png>
+
+
+[1017]
+
+[1018]
+
+[1019]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[1020]
 Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
 File: images/image187.png Graphic file (type bmp)
 <images/image187.png>
 
 
-[1010]
+[1021]
 
-[1011]
+[1022]
 File: images/image184.png Graphic file (type bmp)
 <images/image184.png>
 File: images/image185.png Graphic file (type bmp)
 <images/image185.png>
 
 
-[1012]
+[1023]
 File: images/image161.png Graphic file (type bmp)
 <images/image161.png>
 
-Overfull \hbox (15.83253pt too wide) in paragraph at lines 9204--9209
+Overfull \hbox (15.83253pt too wide) in paragraph at lines 9258--9263
 []\TU/KaiTi(0)/m/n/12 矩 形 $\OML/cmm/m/it/12 ABCD$ \TU/KaiTi(0)/m/n/12 的 顶 点 为 $
 \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/c
 mm/m/it/12 ; B\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 12)\OML/cmm/
@@ -12060,94 +12562,44 @@ m/n/12 )$\TU/lmr/m/n/12 ,
 
 
 
-[1013]
+[1024]
 File: images/image169.png Graphic file (type bmp)
 <images/image169.png>
 
-
-[1014]
-
-[1015]
-
-[1016]
-File: images/image62.png Graphic file (type bmp)
-<images/image62.png>
-
-
-[1017]
-
-[1018]
-File: images/image38.png Graphic file (type bmp)
-<images/image38.png>
-
-
-[1019]
-
-[1020]
-
-[1021]
-
-[1022]
-
-[1023]
-
-[1024]
 
 [1025]
 
 [1026]
 
 [1027]
+File: images/image62.png Graphic file (type bmp)
+<images/image62.png>
+
 
 [1028]
 
 [1029]
+File: images/image38.png Graphic file (type bmp)
+<images/image38.png>
+
 
 [1030]
 
 [1031]
 
 [1032]
-Overfull \hbox (17.69661pt too wide) in paragraph at lines 10102--10108
-[] \OT1/cmr/m/n/12 = [] = 9[] \OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 12\OML/cmm/m
-/it/12 :\OT1/cmr/m/n/12 7$ $\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 = \OML/cmm/m/it/
-12 BC \OT1/cmr/m/n/12 = [] =
- []
-
-
 
 [1033]
-Overfull \hbox (32.03008pt too wide) detected at line 10186
-\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = [] = [] = [] = []
- []
-
-
-Overfull \hbox (57.80597pt too wide) detected at line 10194
-\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = [] = [] = [] = [] = [] = 10 + [][]
- []
-
-
-Overfull \hbox (51.17766pt too wide) detected at line 10197
-\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = [] = [] = [] = [] = [] = 5 + [][]
- []
-
-
 
 [1034]
 
 [1035]
-File: images/image24.png Graphic file (type bmp)
-<images/image24.png>
-
 
 [1036]
 
 [1037]
 
 [1038]
-File: images/image21.png Graphic file (type bmp)
-<images/image21.png>
-
 
 [1039]
 
@@ -12158,13 +12610,63 @@ File: images/image21.png Graphic file (type bmp)
 [1042]
 
 [1043]
+Overfull \hbox (17.69661pt too wide) in paragraph at lines 10156--10162
+[] \OT1/cmr/m/n/12 = [] = 9[] \OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 12\OML/cmm/m
+/it/12 :\OT1/cmr/m/n/12 7$ $\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 = \OML/cmm/m/it/
+12 BC \OT1/cmr/m/n/12 = [] =
+ []
+
+
+
+[1044]
+Overfull \hbox (32.03008pt too wide) detected at line 10240
+\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = [] = [] = [] = []
+ []
+
+
+Overfull \hbox (57.80597pt too wide) detected at line 10248
+\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = [] = [] = [] = [] = [] = 10 + [][]
+ []
+
+
+Overfull \hbox (51.17766pt too wide) detected at line 10251
+\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = [] = [] = [] = [] = [] = 5 + [][]
+ []
+
+
+
+[1045]
+
+[1046]
+File: images/image24.png Graphic file (type bmp)
+<images/image24.png>
+
+
+[1047]
+
+[1048]
+
+[1049]
+File: images/image21.png Graphic file (type bmp)
+<images/image21.png>
+
+
+[1050]
+
+[1051]
+
+[1052]
+
+[1053]
+
+[1054]
 File: images/image55.png Graphic file (type bmp)
 <images/image55.png>
 
 
-[1044]
+[1055]
 
-[1045]
+[1056]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
@@ -12197,7 +12699,7 @@ Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ⑤ in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[1046]
+[1057]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman8-regular]:mapping=tex-text;!
@@ -12215,8 +12717,8 @@ Missing character: There is no ③ in font [lmroman6-regular]:mapping=tex-text;!
 Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[1047]
-Overfull \hbox (5.14659pt too wide) in paragraph at lines 10755--10757
+[1058]
+Overfull \hbox (5.14659pt too wide) in paragraph at lines 10809--10811
 \TU/KaiTi(0)/m/n/12 对 于 点 $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (5\OML/cmm/m/it/12
  ; \OT1/cmr/m/n/12 2)$\TU/KaiTi(0)/m/n/12 ，| $\OT1/cmr/m/n/12 5 + 3(2) = 11 \OM
 L/cmm/m/it/12 > \OT1/cmr/m/n/12 10$\TU/KaiTi(0)/m/n/12 ，|  故 $\OML/cmm/m/it/12 
@@ -12229,65 +12731,65 @@ File: images/image264.png Graphic file (type bmp)
 <images/image264.png>
 
 
-[1048]
-
-[1049]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[1050]
-
-[1051]
-
-[1052]
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-
-
-[1053]
-File: images/image227.png Graphic file (type bmp)
-<images/image227.png>
-
-
-[1054]
-
-[1055]
-
-[1056]
-
-[1057]
-
-[1058]
-
 [1059]
 
 [1060]
-Underfull \vbox (badness 2005) detected at line 11360
- []
-
-
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1061]
-File: images/image46.png Graphic file (type bmp)
-<images/image46.png>
-
 
 [1062]
-File: images/image52.png Graphic file (type bmp)
-<images/image52.png>
-
 
 [1063]
-File: images/image106.jpg Graphic file (type bmp)
-<images/image106.jpg>
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
 
 
 [1064]
+File: images/image227.png Graphic file (type bmp)
+<images/image227.png>
+
 
 [1065]
 
 [1066]
 
 [1067]
+
+[1068]
+
+[1069]
+
+[1070]
+
+[1071]
+Underfull \vbox (badness 2005) detected at line 11414
+ []
+
+
+
+[1072]
+File: images/image46.png Graphic file (type bmp)
+<images/image46.png>
+
+
+[1073]
+File: images/image52.png Graphic file (type bmp)
+<images/image52.png>
+
+
+[1074]
+File: images/image106.jpg Graphic file (type bmp)
+<images/image106.jpg>
+
+
+[1075]
+
+[1076]
+
+[1077]
+
+[1078]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman8-regular]:mapping=tex-text;!
@@ -12300,7 +12802,7 @@ Missing character: There is no ② in font [lmroman8-regular]:mapping=tex-text;!
 Missing character: There is no ② in font [lmroman6-regular]:mapping=tex-text;!
 
 
-[1068]
+[1079]
 Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ③ in font [lmroman8-regular]:mapping=tex-text;!
@@ -12314,44 +12816,22 @@ Missing character: There is no ④ in font [lmroman8-regular]:mapping=tex-text;!
 Missing character: There is no ④ in font [lmroman6-regular]:mapping=tex-text;!
 Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \vbox (badness 1436) detected at line 11664
+Underfull \vbox (badness 1436) detected at line 11718
  []
 
 
 
-[1069]
+[1080]
 File: images/image290.png Graphic file (type bmp)
 <images/image290.png>
 
 
-[1070]
-
-[1071]
-File: images/image15.png Graphic file (type bmp)
-<images/image15.png>
-
-
-[1072]
-
-[1073]
-
-[1074]
-
-[1075]
-
-[1076]
-
-[1077]
-
-[1078]
-
-[1079]
-
-[1080]
-
 [1081]
 
 [1082]
+File: images/image15.png Graphic file (type bmp)
+<images/image15.png>
+
 
 [1083]
 
@@ -12371,99 +12851,7 @@ File: images/image15.png Graphic file (type bmp)
 
 [1091]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12606.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12606.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12608.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12608.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12610.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12610.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12612.
-
-
-
 [1092]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12629.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12629.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12635.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12635.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12639.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12639.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12641.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12641.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12641.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12641.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12650.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12650.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12653.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 12653.
-
-
 
 [1093]
 
@@ -12485,7 +12873,99 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 12653.
 
 [1102]
 
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12658.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12658.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12658.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12658.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12660.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12660.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12662.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12662.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12664.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12664.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12666.
+
+
+
 [1103]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12683.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12683.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12689.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12689.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12693.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12693.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12695.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12704.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12704.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12707.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 12707.
+
+
 
 [1104]
 
@@ -12500,11 +12980,6 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 12653.
 [1109]
 
 [1110]
-File: images/image16.png Graphic file (type bmp)
-<images/image16.png>
-File: images/image17.png Graphic file (type bmp)
-<images/image17.png>
-
 
 [1111]
 
@@ -12527,17 +13002,13 @@ File: images/image17.png Graphic file (type bmp)
 [1120]
 
 [1121]
-File: images/image107.jpg Graphic file (type bmp)
-<images/image107.jpg>
+File: images/image16.png Graphic file (type bmp)
+<images/image16.png>
+File: images/image17.png Graphic file (type bmp)
+<images/image17.png>
 
 
 [1122]
-Overfull \hbox (4.34778pt too wide) detected at line 13975
-[] \U/msa/m/n/12 \\OML/cmm/m/it/12 B[]PB[] \OT1/cmr/m/n/12 = [] = [] = [] = [] 
-= []
- []
-
-
 
 [1123]
 
@@ -12546,72 +13017,99 @@ Overfull \hbox (4.34778pt too wide) detected at line 13975
 [1125]
 
 [1126]
-Overfull \vbox (3.23439pt too high) detected at line 14128
- []
-
-
 
 [1127]
-File: images/image117.jpg Graphic file (type bmp)
-<images/image117.jpg>
-
 
 [1128]
 
 [1129]
-File: images/image50.png Graphic file (type bmp)
-<images/image50.png>
-
 
 [1130]
 
 [1131]
 
 [1132]
+File: images/image107.jpg Graphic file (type bmp)
+<images/image107.jpg>
+
 
 [1133]
+Overfull \hbox (4.34778pt too wide) detected at line 14029
+[] \U/msa/m/n/12 \\OML/cmm/m/it/12 B[]PB[] \OT1/cmr/m/n/12 = [] = [] = [] = [] 
+= []
+ []
+
+
 
 [1134]
 
 [1135]
+File: images/image304.png Graphic file (type bmp)
+<images/image304.png>
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14087.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14087.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14088.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14088.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14092.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 14092.
+
+
+Overfull \vbox (1.56306pt too high) detected at line 14093
+ []
+
+
 
 [1136]
 
 [1137]
 
 [1138]
+Overfull \vbox (3.23439pt too high) detected at line 14205
+ []
+
+
 
 [1139]
+File: images/image117.jpg Graphic file (type bmp)
+<images/image117.jpg>
+
 
 [1140]
 
 [1141]
+File: images/image50.png Graphic file (type bmp)
+<images/image50.png>
+
 
 [1142]
 
 [1143]
 
 [1144]
-File: images/image279.png Graphic file (type bmp)
-<images/image279.png>
-
 
 [1145]
 
 [1146]
 
 [1147]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [1148]
 
 [1149]
 
 [1150]
-File: images/image103.jpg Graphic file (type bmp)
-<images/image103.jpg>
-
 
 [1151]
 
@@ -12620,18 +13118,12 @@ File: images/image103.jpg Graphic file (type bmp)
 [1153]
 
 [1154]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-File: images/image65.png Graphic file (type bmp)
-<images/image65.png>
-
 
 [1155]
 
 [1156]
-Overfull \vbox (3.95241pt too high) detected at line 15479
- []
-
+File: images/image279.png Graphic file (type bmp)
+<images/image279.png>
 
 
 [1157]
@@ -12639,43 +13131,37 @@ Overfull \vbox (3.95241pt too high) detected at line 15479
 [1158]
 
 [1159]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1160]
 
 [1161]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-File: images/image27.png Graphic file (type bmp)
-<images/image27.png>
-
 
 [1162]
-Overfull \vbox (8.48102pt too high) detected at line 15728
- []
-
+File: images/image103.jpg Graphic file (type bmp)
+<images/image103.jpg>
 
 
 [1163]
 
 [1164]
-File: images/image41.png Graphic file (type bmp)
-<images/image41.png>
-
 
 [1165]
 
 [1166]
-File: images/image188.png Graphic file (type bmp)
-<images/image188.png>
-File: images/image189.png Graphic file (type bmp)
-<images/image189.png>
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
+File: images/image65.png Graphic file (type bmp)
+<images/image65.png>
 
 
 [1167]
 
 [1168]
-File: images/image235.png Graphic file (type bmp)
-<images/image235.png>
+Overfull \vbox (3.95241pt too high) detected at line 15556
+ []
+
 
 
 [1169]
@@ -12687,113 +13173,164 @@ File: images/image235.png Graphic file (type bmp)
 [1172]
 
 [1173]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+File: images/image27.png Graphic file (type bmp)
+<images/image27.png>
+
 
 [1174]
+Overfull \vbox (8.48102pt too high) detected at line 15805
+ []
+
+
 
 [1175]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1176]
+File: images/image41.png Graphic file (type bmp)
+<images/image41.png>
+
 
 [1177]
 
 [1178]
+File: images/image188.png Graphic file (type bmp)
+<images/image188.png>
+File: images/image189.png Graphic file (type bmp)
+<images/image189.png>
+
 
 [1179]
 
 [1180]
+File: images/image235.png Graphic file (type bmp)
+<images/image235.png>
+
 
 [1181]
 
 [1182]
 
 [1183]
-File: images/image237.png Graphic file (type bmp)
-<images/image237.png>
-
 
 [1184]
-File: images/image238.png Graphic file (type bmp)
-<images/image238.png>
-File: images/image239.png Graphic file (type bmp)
-<images/image239.png>
-
 
 [1185]
-Overfull \vbox (0.73549pt too high) detected at line 16761
- []
-
-
 
 [1186]
-File: images/image236.png Graphic file (type bmp)
-<images/image236.png>
-
-Underfull \vbox (badness 10000) detected at line 16796
- []
-
-
 
 [1187]
+Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [1188]
-File: images/image280.png Graphic file (type bmp)
-<images/image280.png>
-File: images/image281.png Graphic file (type bmp)
-<images/image281.png>
-
 
 [1189]
 
 [1190]
 
 [1191]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [1192]
 
 [1193]
 
 [1194]
-File: images/image240.png Graphic file (type bmp)
-<images/image240.png>
-
 
 [1195]
+File: images/image237.png Graphic file (type bmp)
+<images/image237.png>
+
 
 [1196]
+File: images/image238.png Graphic file (type bmp)
+<images/image238.png>
+File: images/image239.png Graphic file (type bmp)
+<images/image239.png>
+
 
 [1197]
-File: images/image243.png Graphic file (type bmp)
-<images/image243.png>
+Overfull \vbox (0.73549pt too high) detected at line 16838
+ []
+
 
 
 [1198]
-File: images/image230.png Graphic file (type bmp)
-<images/image230.png>
+File: images/image236.png Graphic file (type bmp)
+<images/image236.png>
+
+Underfull \vbox (badness 10000) detected at line 16873
+ []
+
 
 
 [1199]
 
 [1200]
+File: images/image280.png Graphic file (type bmp)
+<images/image280.png>
+File: images/image281.png Graphic file (type bmp)
+<images/image281.png>
+
+
+[1201]
+
+[1202]
+
+[1203]
+File: images/image308.png Graphic file (type bmp)
+<images/image308.png>
+
+
+[1204]
+
+[1205]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
+
+[1206]
+
+[1207]
+
+[1208]
+File: images/image240.png Graphic file (type bmp)
+<images/image240.png>
+
+
+[1209]
+
+[1210]
+
+[1211]
+File: images/image243.png Graphic file (type bmp)
+<images/image243.png>
+
+
+[1212]
+File: images/image230.png Graphic file (type bmp)
+<images/image230.png>
+
+
+[1213]
+
+[1214]
 File: images/image233.png Graphic file (type bmp)
 <images/image233.png>
 
 
-[1201]
+[1215]
 File: images/image234.png Graphic file (type bmp)
 <images/image234.png>
 
 
-[1202]
+[1216]
 File: images/image242.png Graphic file (type bmp)
 <images/image242.png>
 
 
-[1203]
-Overfull \hbox (4.62827pt too wide) detected at line 17448
+[1217]
+Overfull \hbox (4.62827pt too wide) detected at line 17623
 [] [][] []  \OML/cmm/m/it/12 d^^R \OT1/cmr/m/n/12 = [] [][] = [] [] \OMS/cmsy/m
 /n/12 ^^@ []\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 ^^@ [] [
 ]
@@ -12803,107 +13340,107 @@ File: images/image241.png Graphic file (type bmp)
 <images/image241.png>
 
 
-[1204]
-
-[1205]
-
-[1206]
-
-[1207]
-
-[1208]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[1209]
-
-[1210]
-
-[1211]
-File: images/image32.png Graphic file (type bmp)
-<images/image32.png>
-
-
-[1212]
-File: images/image53.png Graphic file (type bmp)
-<images/image53.png>
-
-
-[1213]
-
-[1214]
-
-[1215]
-File: images/image45.png Graphic file (type bmp)
-<images/image45.png>
-
-
-[1216]
-
-[1217]
-File: images/image228.png Graphic file (type bmp)
-<images/image228.png>
-
-
 [1218]
 
 [1219]
-Overfull \vbox (6.27454pt too high) detected at line 18174
- []
-
-
 
 [1220]
 
 [1221]
 
 [1222]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1223]
 
 [1224]
 
 [1225]
+File: images/image32.png Graphic file (type bmp)
+<images/image32.png>
+
 
 [1226]
+File: images/image53.png Graphic file (type bmp)
+<images/image53.png>
+
 
 [1227]
 
 [1228]
 
 [1229]
-Overfull \vbox (4.54692pt too high) detected at line 18664
- []
-
+File: images/image45.png Graphic file (type bmp)
+<images/image45.png>
 
 
 [1230]
 
 [1231]
+File: images/image228.png Graphic file (type bmp)
+<images/image228.png>
+
 
 [1232]
 
 [1233]
+Overfull \vbox (6.27454pt too high) detected at line 18349
+ []
+
+
 
 [1234]
 
 [1235]
 
 [1236]
-File: images/image254.png Graphic file (type bmp)
-<images/image254.png>
-
 
 [1237]
 
 [1238]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1239]
+
+[1240]
+
+[1241]
+
+[1242]
+
+[1243]
+Overfull \vbox (4.54692pt too high) detected at line 18839
+ []
+
+
+
+[1244]
+
+[1245]
+
+[1246]
+
+[1247]
+
+[1248]
+
+[1249]
+
+[1250]
+File: images/image254.png Graphic file (type bmp)
+<images/image254.png>
+
+
+[1251]
+
+[1252]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[1253]
 Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ⑤ in font [lmroman12-regular]:mapping=tex-text;!
@@ -12914,104 +13451,104 @@ Missing character: There is no ⑦ in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ⑥ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ⑦ in font [lmroman12-regular]:mapping=tex-text;!
 
-Overfull \vbox (0.8647pt too high) detected at line 19158
+Overfull \vbox (0.8647pt too high) detected at line 19333
  []
 
 
 
-[1240]
+[1254]
 
-[1241]
+[1255]
 File: images/image261.png Graphic file (type bmp)
 <images/image261.png>
 
 
-[1242]
+[1256]
 File: images/image262.png Graphic file (type bmp)
 <images/image262.png>
 
 
-[1243]
+[1257]
 
-[1244]
+[1258]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19318.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19318.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19493.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19327.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19493.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19327.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19502.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19334.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19502.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19334.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19509.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19340.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19509.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19340.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19515.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19340.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19515.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 19340.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19515.
 
 
-Underfull \vbox (badness 2310) detected at line 19347
+LaTeX Warning: Command \textcircled invalid in math mode on input line 19515.
+
+
+Underfull \vbox (badness 2310) detected at line 19522
  []
 
 
 
-[1245]
+[1259]
 
-[1246]
+[1260]
 
-[1247]
+[1261]
 
-[1248]
+[1262]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 File: images/image176.png Graphic file (type bmp)
 <images/image176.png>
 
 
-[1249]
+[1263]
 File: images/image195.png Graphic file (type bmp)
 <images/image195.png>
 
 
-[1250]
+[1264]
 File: images/image144.png Graphic file (type bmp)
 <images/image144.png>
 
 
-[1251]
+[1265]
 File: images/image212.png Graphic file (type bmp)
 <images/image212.png>
 File: images/image213.png Graphic file (type bmp)
 <images/image213.png>
 
 
-[1252]
+[1266]
 File: images/image203.png Graphic file (type bmp)
 <images/image203.png>
 File: images/image204.png Graphic file (type bmp)
 <images/image204.png>
 
 
-[1253]
+[1267]
 
-[1254]
+[1268]
 
-[1255]
+[1269]
 File: images/image205.png Graphic file (type bmp)
 <images/image205.png>
 File: images/image206.png Graphic file (type bmp)
@@ -13022,7 +13559,7 @@ File: images/image208.png Graphic file (type bmp)
 <images/image208.png>
 
 
-[1256]
+[1270]
 File: images/image180.png Graphic file (type bmp)
 <images/image180.png>
 File: images/image181.png Graphic file (type bmp)
@@ -13031,14 +13568,14 @@ File: images/image182.png Graphic file (type bmp)
 <images/image182.png>
 
 
-[1257]
+[1271]
 File: images/image182.png Graphic file (type bmp)
 <images/image182.png>
 File: images/image183.png Graphic file (type bmp)
 <images/image183.png>
 
 
-[1258]
+[1272]
 File: images/image209.png Graphic file (type bmp)
 <images/image209.png>
 File: images/image210.png Graphic file (type bmp)
@@ -13047,14 +13584,14 @@ File: images/image211.png Graphic file (type bmp)
 <images/image211.png>
 
 
-[1259]
+[1273]
 
-[1260]
+[1274]
 File: images/image220.png Graphic file (type bmp)
 <images/image220.png>
 
 
-[1261]
+[1275]
 File: images/image221.png Graphic file (type bmp)
 <images/image221.png>
 File: images/image222.png Graphic file (type bmp)
@@ -13063,7 +13600,7 @@ File: images/image223.png Graphic file (type bmp)
 <images/image223.png>
 
 
-[1262]
+[1276]
 File: images/image215.png Graphic file (type bmp)
 <images/image215.png>
 File: images/image216.png Graphic file (type bmp)
@@ -13076,81 +13613,81 @@ File: images/image219.png Graphic file (type bmp)
 <images/image219.png>
 
 
-[1263]
+[1277]
 
-[1264]
+[1278]
 File: images/image177.png Graphic file (type bmp)
 <images/image177.png>
 
 
-[1265]
+[1279]
 File: images/image163.png Graphic file (type bmp)
 <images/image163.png>
 File: images/image164.png Graphic file (type bmp)
 <images/image164.png>
 
 
-[1266]
+[1280]
 File: images/image168.png Graphic file (type bmp)
 <images/image168.png>
 
 
-[1267]
+[1281]
 File: images/image167.png Graphic file (type bmp)
 <images/image167.png>
 
 
-[1268]
+[1282]
 File: images/image111.png Graphic file (type bmp)
 <images/image111.png>
 File: images/image112.jpg Graphic file (type bmp)
 <images/image112.jpg>
 
 
-[1269]
+[1283]
 File: images/image113.jpg Graphic file (type bmp)
 <images/image113.jpg>
 
 
-[1270]
+[1284]
 
-[1271]
+[1285]
 
-[1272]
+[1286]
 
-[1273]
+[1287]
 File: images/image58.png Graphic file (type bmp)
 <images/image58.png>
 
 
-[1274]
+[1288]
 
-[1275]
+[1289]
 File: images/image20.png Graphic file (type bmp)
 <images/image20.png>
 
 
-[1276]
+[1290]
 File: images/image22.png Graphic file (type bmp)
 <images/image22.png>
 
 
-[1277]
+[1291]
 
-[1278]
+[1292]
 File: images/image28.png Graphic file (type bmp)
 <images/image28.png>
 
 
-[1279]
+[1293]
 
-[1280]
+[1294]
 File: images/image18.png Graphic file (type bmp)
 <images/image18.png>
 
 
-[1281]
-Overfull \hbox (31.75859pt too wide) in paragraph at lines 20609--20610
+[1295]
+Overfull \hbox (31.75859pt too wide) in paragraph at lines 20784--20785
 \TU/KaiTi(0)/m/n/12 设 正 方 体 $\OML/cmm/m/it/12 ABCD \OMS/cmsy/m/n/12 ^^@ \OML/cm
 m/m/it/12 A[]B[]C[]D[]$ \TU/KaiTi(0)/m/n/12 的 边 长 为 $\OML/cmm/m/it/12 a$\TU/lmr
 /m/n/12 , \TU/KaiTi(0)/m/n/12 建 立 坐 标 系\TU/lmr/m/n/12 , \TU/KaiTi(0)/m/n/12 使 $
@@ -13165,106 +13702,50 @@ m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; a\OT1/cmr/m/n/12 )$\TU/KaiTi(0)/m
 
 
 
-[1282]
+[1296]
 
-[1283]
+[1297]
 File: images/image101.jpg Graphic file (type bmp)
 <images/image101.jpg>
 
 
-[1284]
+[1298]
 File: images/image6.png Graphic file (type bmp)
 <images/image6.png>
 
 
-[1285]
+[1299]
 File: images/image11.png Graphic file (type bmp)
 <images/image11.png>
 File: images/image12.png Graphic file (type bmp)
 <images/image12.png>
 
 
-[1286]
-
-[1287]
-
-[1288]
-
-[1289]
-
-[1290]
-
-[1291]
-
-[1292]
-
-[1293]
-
-[1294]
-
-[1295]
-
-[1296]
-
-[1297]
-
-[1298]
-
-[1299]
-
 [1300]
 
 [1301]
 
 [1302]
-File: images/image49.png Graphic file (type bmp)
-<images/image49.png>
-
 
 [1303]
-File: images/image84.png Graphic file (type bmp)
-<images/image84.png>
-
 
 [1304]
-File: images/image64.png Graphic file (type bmp)
-<images/image64.png>
-
 
 [1305]
 
 [1306]
 
 [1307]
-File: images/image10.png Graphic file (type bmp)
-<images/image10.png>
-
 
 [1308]
-File: images/image81.png Graphic file (type bmp)
-<images/image81.png>
-
 
 [1309]
-Overfull \vbox (26.36594pt too high) detected at line 21911
- []
-
-
 
 [1310]
-File: images/image229.png Graphic file (type bmp)
-<images/image229.png>
-
 
 [1311]
 
 [1312]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1313]
 
@@ -13273,9 +13754,65 @@ Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;
 [1315]
 
 [1316]
+File: images/image49.png Graphic file (type bmp)
+<images/image49.png>
+
 
 [1317]
-Overfull \hbox (27.18736pt too wide) in paragraph at lines 22214--22217
+File: images/image84.png Graphic file (type bmp)
+<images/image84.png>
+
+
+[1318]
+File: images/image64.png Graphic file (type bmp)
+<images/image64.png>
+
+
+[1319]
+
+[1320]
+
+[1321]
+File: images/image10.png Graphic file (type bmp)
+<images/image10.png>
+
+
+[1322]
+File: images/image81.png Graphic file (type bmp)
+<images/image81.png>
+
+
+[1323]
+Overfull \vbox (26.36594pt too high) detected at line 22086
+ []
+
+
+
+[1324]
+File: images/image229.png Graphic file (type bmp)
+<images/image229.png>
+
+
+[1325]
+
+[1326]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[1327]
+
+[1328]
+
+[1329]
+
+[1330]
+
+[1331]
+Overfull \hbox (27.18736pt too wide) in paragraph at lines 22389--22392
 \TU/KaiTi(0)/m/n/12 设 包 含 圆 $\OML/cmm/m/it/12 C$ \TU/KaiTi(0)/m/n/12 且 半 径 为 $[
 ]$ 的 球 面 中 心 为 $\OML/cmm/m/it/12 D$\TU/KaiTi(0)/m/n/12 。| $\OML/cmm/m/it/12 D$ 
 \TU/KaiTi(0)/m/n/12 到 圆 心 $\OML/cmm/m/it/12 H$ \TU/KaiTi(0)/m/n/12 的 距 离 为 $\OM
@@ -13284,185 +13821,185 @@ L/cmm/m/it/12 DH \OT1/cmr/m/n/12 = [] =
 
 
 
-[1318]
+[1332]
 
-[1319]
+[1333]
 File: images/image257.png Graphic file (type bmp)
 <images/image257.png>
 
 
-[1320]
+[1334]
 File: images/image258.png Graphic file (type bmp)
 <images/image258.png>
 
-Overfull \vbox (5.25641pt too high) detected at line 22360
+Overfull \vbox (5.25641pt too high) detected at line 22535
  []
 
-
-
-[1321]
-
-[1322]
-File: images/image259.png Graphic file (type bmp)
-<images/image259.png>
-
-
-[1323]
-
-[1324]
-File: images/image260.png Graphic file (type bmp)
-<images/image260.png>
-
-
-[1325]
-
-[1326]
-
-[1327]
-File: images/image263.png Graphic file (type bmp)
-<images/image263.png>
-
-
-[1328]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22594.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22595.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22595.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22595.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22595.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22608.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22608.
-
-
-
-[1329]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22623.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22623.
-
-
-
-[1330]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22672.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22672.
-
-
-
-[1331]
-File: images/image265.png Graphic file (type bmp)
-<images/image265.png>
-
-
-[1332]
-File: images/image266.png Graphic file (type bmp)
-<images/image266.png>
-
-
-[1333]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22760.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 22760.
-
-
-Overfull \vbox (6.1509pt too high) detected at line 22770
- []
-
-File: images/image267.png Graphic file (type bmp)
-<images/image267.png>
-
-
-[1334]
-File: images/image268.png Graphic file (type bmp)
-<images/image268.png>
-File: images/image269.png Graphic file (type bmp)
-<images/image269.png>
 
 
 [1335]
 
 [1336]
+File: images/image259.png Graphic file (type bmp)
+<images/image259.png>
+
 
 [1337]
-File: images/image270.png Graphic file (type bmp)
-<images/image270.png>
-
 
 [1338]
+File: images/image260.png Graphic file (type bmp)
+<images/image260.png>
+
 
 [1339]
 
 [1340]
 
 [1341]
+File: images/image263.png Graphic file (type bmp)
+<images/image263.png>
+
 
 [1342]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22770.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22770.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22770.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22770.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22779.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22779.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22783.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22783.
+
+
+
+[1343]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22798.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22798.
+
+
+
+[1344]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22847.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22847.
+
+
+
+[1345]
+File: images/image265.png Graphic file (type bmp)
+<images/image265.png>
+
+
+[1346]
+File: images/image266.png Graphic file (type bmp)
+<images/image266.png>
+
+
+[1347]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22935.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 22935.
+
+
+Overfull \vbox (6.1509pt too high) detected at line 22945
+ []
+
+File: images/image267.png Graphic file (type bmp)
+<images/image267.png>
+
+
+[1348]
+File: images/image268.png Graphic file (type bmp)
+<images/image268.png>
+File: images/image269.png Graphic file (type bmp)
+<images/image269.png>
+
+
+[1349]
+
+[1350]
+
+[1351]
+File: images/image270.png Graphic file (type bmp)
+<images/image270.png>
+
+
+[1352]
+
+[1353]
+
+[1354]
+
+[1355]
+
+[1356]
 File: images/image271.png Graphic file (type bmp)
 <images/image271.png>
 File: images/image274.png Graphic file (type bmp)
 <images/image274.png>
 
 
-[1343]
+[1357]
 File: images/image275.png Graphic file (type bmp)
 <images/image275.png>
 
 
-[1344]
+[1358]
 
-[1345]
+[1359]
 File: images/image276.png Graphic file (type bmp)
 <images/image276.png>
 
 
-[1346])
+[1360])
 
-[1347]
+[1361]
 \openout2 = `微积分.aux'.
 
  (微积分.tex (pageborder.tex
@@ -13495,7 +14032,7 @@ File: images/image276.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian87.pgf))
 
-[1348
+[1362
 
 
 
@@ -13503,41 +14040,13 @@ File: images/image276.png Graphic file (type bmp)
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 
-[1349]
+[1363]
 
-[1350]
+[1364]
 Underfull \vbox (badness 1910) detected at line 146
  []
 
 
-
-[1351]
-
-[1352]
-
-[1353]
-
-[1354]
-
-[1355]
-
-[1356]
-
-[1357]
-
-[1358]
-
-[1359]
-
-[1360]
-
-[1361]
-
-[1362]
-
-[1363]
-
-[1364]
 
 [1365]
 
@@ -13550,11 +14059,6 @@ Underfull \vbox (badness 1910) detected at line 146
 [1369]
 
 [1370]
-Overfull \hbox (15.5443pt too wide) detected at line 1062
-[]
- []
-
-
 
 [1371]
 
@@ -13573,10 +14077,6 @@ Overfull \hbox (15.5443pt too wide) detected at line 1062
 [1378]
 
 [1379]
-Overfull \vbox (0.27345pt too high) detected at line 1480
- []
-
-
 
 [1380]
 
@@ -13587,16 +14087,15 @@ Overfull \vbox (0.27345pt too high) detected at line 1480
 [1383]
 
 [1384]
-
-[1385]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[1386]
-Underfull \vbox (badness 10000) detected at line 1807
+Overfull \hbox (15.5443pt too wide) detected at line 1062
+[]
  []
 
 
+
+[1385]
+
+[1386]
 
 [1387]
 
@@ -13611,6 +14110,10 @@ Underfull \vbox (badness 10000) detected at line 1807
 [1392]
 
 [1393]
+Overfull \vbox (0.27345pt too high) detected at line 1480
+ []
+
+
 
 [1394]
 
@@ -13623,27 +14126,31 @@ Underfull \vbox (badness 10000) detected at line 1807
 [1398]
 
 [1399]
+Overfull \hbox (27.21495pt too wide) in paragraph at lines 1721--1723
+\TU/KaiTi(0)/m/n/12 设 点 $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n; \OT1/cmr/m/n/12 0
+)$ \TU/KaiTi(0)/m/n/12 点 与 $[]$ 连 线 上 的 格 子 点 坐 标 为 $\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 n; l\OT1/cmr/m/n/12 )$\TU/KaiTi(0)/m/n/12 。|  由 $\OML/cmm/m/it/12 l \OT
+1/cmr/m/n/12 = 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr
+/m/n/12 2\OML/cmm/m/it/12 ; []  ; []$\TU/KaiTi(0)/m/n/12 ，|
+ []
+
+
 
 [1400]
 
 [1401]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1402]
+Underfull \vbox (badness 10000) detected at line 1873
+ []
+
+
 
 [1403]
 
 [1404]
-Overfull \hbox (15.99518pt too wide) in paragraph at lines 2679--2686
-\TU/lmr/m/n/12 1. \TU/KaiTi(0)/m/n/12 求 导 寻 找 临 界 点：| $\OML/cmm/m/it/12 f[]\OT1
-/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = 12 [][] \OML/cmm/m/it/12 x\O
-T1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + 6[
-] [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/1
-2 x\OT1/cmr/m/n/12 )$ $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\
-OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 6 [] \OML/cmm/m/it/12 x 
-[] x\OT1/cmr/m/n/12 (2 [] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 +
- []
-
-
 
 [1405]
 
@@ -13676,31 +14183,21 @@ OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 6 [] \OML/cmm/m/it/12 x
 [1419]
 
 [1420]
-
-[1421]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
-
-
-[1422]
-Overfull \hbox (24.23412pt too wide) detected at line 3554
-\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 ) = [][] \
-OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT
-1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 s\OT1/cmr
-/m/n/12 )\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 + 2 [][] \OMS/cmsy/m/n/12 ^^@\OT1/
-cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm
-/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/i
-t/12 dx \OMS/cmsy/m/n/12 ^^@ [][]f^^@\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/c
-msy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/
-cmm/m/it/12 s\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m
-/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OT1/cmr/m/
-n/12 + \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 dx
- [] []
+Overfull \hbox (15.99518pt too wide) in paragraph at lines 2745--2752
+\TU/lmr/m/n/12 1. \TU/KaiTi(0)/m/n/12 求 导 寻 找 临 界 点：| $\OML/cmm/m/it/12 f[]\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = 12 [][] \OML/cmm/m/it/12 x\O
+T1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + 6[
+] [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )$ $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\
+OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 6 [] \OML/cmm/m/it/12 x 
+[] x\OT1/cmr/m/n/12 (2 [] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 +
  []
 
 
+
+[1421]
+
+[1422]
 
 [1423]
 
@@ -13728,24 +14225,32 @@ n/12 + \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 dx
 
 [1435]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 4171.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 4171.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 4175.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 4175.
-
-
-
 [1436]
 
 [1437]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [1438]
+Overfull \hbox (24.23412pt too wide) detected at line 3620
+\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 ) = [][] \
+OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT
+1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 s\OT1/cmr
+/m/n/12 )\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 + 2 [][] \OMS/cmsy/m/n/12 ^^@\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm
+/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/i
+t/12 dx \OMS/cmsy/m/n/12 ^^@ [][]f^^@\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/c
+msy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/
+cmm/m/it/12 s\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m
+/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)(\OML/cmm/m/it/12 x \OT1/cmr/m/
+n/12 + \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 dx
+ [] []
+ []
+
+
 
 [1439]
 
@@ -13754,8 +14259,6 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 4175.
 [1441]
 
 [1442]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
 
 [1443]
 
@@ -13770,14 +14273,23 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 4175.
 [1448]
 
 [1449]
-Underfull \vbox (badness 1810) detected at line 4841
- []
-
-
 
 [1450]
 
 [1451]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 4237.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 4237.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 4241.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 4241.
+
+
 
 [1452]
 
@@ -13794,15 +14306,11 @@ Underfull \vbox (badness 1810) detected at line 4841
 [1458]
 
 [1459]
-Overfull \hbox (44.93689pt too wide) detected at line 5303
-[] [][]\OT1/cmr/m/n/12 (3\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n
-/12 2\OML/cmm/m/it/12 ax \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 
-)\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] = [] [] \OML/cmm/m/it/12 :
- []
-
-
 
 [1460]
+File: images/image305.png Graphic file (type bmp)
+<images/image305.png>
+
 
 [1461]
 
@@ -13811,42 +14319,118 @@ Overfull \hbox (44.93689pt too wide) detected at line 5303
 [1463]
 
 [1464]
+Overfull \hbox (38.7563pt too wide) in paragraph at lines 4842--4849
+$[][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = 
+[][]\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12
+ (1 + \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = \
+OMS/cmsy/m/n/12 1$ $[][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\
+OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 x [] \OT1/cmr/m/n/12 =
+ []
+
+File: images/image306.png Graphic file (type bmp)
+<images/image306.png>
+File: images/image307.png Graphic file (type bmp)
+<images/image307.png>
+
 
 [1465]
 
 [1466]
-File: images/image31.png Graphic file (type bmp)
-<images/image31.png>
-
 
 [1467]
-File: images/image34.png Graphic file (type bmp)
-<images/image34.png>
-
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1468]
-File: images/image130.jpg Graphic file (type bmp)
-<images/image130.jpg>
-
 
 [1469]
 
 [1470]
-File: images/image120.jpg Graphic file (type bmp)
-<images/image120.jpg>
-
 
 [1471]
 
 [1472]
 
 [1473]
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1474]
+Underfull \vbox (badness 1810) detected at line 5273
+ []
+
+
+
+[1475]
+
+[1476]
+
+[1477]
+
+[1478]
+
+[1479]
+
+[1480]
+
+[1481]
+
+[1482]
+
+[1483]
+
+[1484]
+Overfull \hbox (44.93689pt too wide) detected at line 5735
+[] [][]\OT1/cmr/m/n/12 (3\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n
+/12 2\OML/cmm/m/it/12 ax \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 
+)\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [][] = [] [] \OML/cmm/m/it/12 :
+ []
+
+
+
+[1485]
+
+[1486]
+
+[1487]
+
+[1488]
+
+[1489]
+
+[1490]
+
+[1491]
+File: images/image31.png Graphic file (type bmp)
+<images/image31.png>
+
+
+[1492]
+File: images/image34.png Graphic file (type bmp)
+<images/image34.png>
+
+
+[1493]
+File: images/image130.jpg Graphic file (type bmp)
+<images/image130.jpg>
+
+
+[1494]
+
+[1495]
+File: images/image120.jpg Graphic file (type bmp)
+<images/image120.jpg>
+
+
+[1496]
+
+[1497]
+
+[1498]
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
+
+
+[1499]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ① in font [lmroman8-regular]:mapping=tex-text;!
@@ -13861,7 +14445,7 @@ Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[1475]
+[1500]
 Missing character: There is no ① in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ③ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ④ in font [lmroman12-regular]:mapping=tex-text;!
@@ -13874,119 +14458,6 @@ Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ② in font [lmroman12-regular]:mapping=tex-text;!
 
 
-[1476]
-
-[1477]
-
-[1478]
-
-[1479]
-
-[1480]
-
-[1481]
-Overfull \hbox (1.31004pt too wide) in paragraph at lines 6195--6199
-\TU/KaiTi(0)/m/n/12 利 用 积 分 公 式 $[][] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OM
-L/cmm/m/it/12 re[] [] x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] [] x$ \TU/lmr/m/
-n/12 (1) \TU/KaiTi(0)/m/n/12 和 $[][] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OML
-/cmm/m/it/12 re[] [] x \OMS/cmsy/m/n/12 ^^@
- []
-
-
-Underfull \vbox (badness 3396) detected at line 6216
- []
-
-
-
-[1482]
-
-[1483]
-Overfull \hbox (76.25151pt too wide) detected at line 6304
-\OML/cmm/m/it/12 ^^Y [][] [] dx \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y\OT1/cmr/
-m/n/12 (1 + [])[] [][] = \OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (1 + [])[] [] = \O
-ML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (1 + [])[] = (2 + [])\OML/cmm/m/it/12 ^^Y
- []
-
-
-
-[1484]
-File: images/image282.png Graphic file (type bmp)
-<images/image282.png>
-File: images/image283.png Graphic file (type bmp)
-<images/image283.png>
-
-
-[1485]
-File: images/image284.png Graphic file (type bmp)
-<images/image284.png>
-
-
-[1486]
-File: images/image285.png Graphic file (type bmp)
-<images/image285.png>
-
-
-[1487]
-
-[1488]
-File: images/image286.png Graphic file (type bmp)
-<images/image286.png>
-File: images/image287.png Graphic file (type bmp)
-<images/image287.png>
-
-
-[1489]
-Underfull \vbox (badness 10000) detected at line 6525
- []
-
-
-
-[1490]
-Overfull \hbox (2.8896pt too wide) in paragraph at lines 6539--6543
-\OML/cmm/m/it/12 e[] [] t\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n
-/12 2\OML/cmm/m/it/12 e[] [] t$\TU/KaiTi(0)/m/n/12 ，|  故 $\OML/cmm/m/it/12 e[] 
-[] t \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
-e[] [] t \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] [] t\OT1/cmr/m/n/12 )[]$\TU/Kai
-Ti(0)/m/n/12 。|  由 \TU/lmr/m/n/12 (2) \TU/KaiTi(0)/m/n/12 得，| $\OML/cmm/m/it/12
- C \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 e[
-] [] t \OT1/cmr/m/n/12 +
- []
-
-
-Underfull \vbox (badness 1448) detected at line 6548
- []
-
-
-
-[1491]
-File: images/image291.png Graphic file (type bmp)
-<images/image291.png>
-
-
-[1492]
-Underfull \vbox (badness 10000) detected at line 6624
- []
-
-
-
-[1493]
-
-[1494]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
-
-[1495]
-
-[1496]
-
-[1497]
-
-[1498]
-
-[1499]
-
-[1500]
-
 [1501]
 
 [1502]
@@ -13998,7 +14469,15 @@ Underfull \vbox (badness 10000) detected at line 6624
 [1505]
 
 [1506]
-Underfull \vbox (badness 10000) detected at line 7183
+Overfull \hbox (1.31004pt too wide) in paragraph at lines 6627--6631
+\TU/KaiTi(0)/m/n/12 利 用 积 分 公 式 $[][] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OM
+L/cmm/m/it/12 re[] [] x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] [] x$ \TU/lmr/m/
+n/12 (1) \TU/KaiTi(0)/m/n/12 和 $[][] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OML
+/cmm/m/it/12 re[] [] x \OMS/cmsy/m/n/12 ^^@
+ []
+
+
+Underfull \vbox (badness 3396) detected at line 6648
  []
 
 
@@ -14006,80 +14485,173 @@ Underfull \vbox (badness 10000) detected at line 7183
 [1507]
 
 [1508]
-
-[1509]
-Underfull \vbox (badness 10000) detected at line 7278
+Overfull \hbox (76.25151pt too wide) detected at line 6736
+\OML/cmm/m/it/12 ^^Y [][] [] dx \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y\OT1/cmr/
+m/n/12 (1 + [])[] [][] = \OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (1 + [])[] [] = \O
+ML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (1 + [])[] = (2 + [])\OML/cmm/m/it/12 ^^Y
  []
 
+
+
+[1509]
+File: images/image282.png Graphic file (type bmp)
+<images/image282.png>
+File: images/image283.png Graphic file (type bmp)
+<images/image283.png>
 
 
 [1510]
+File: images/image284.png Graphic file (type bmp)
+<images/image284.png>
+
 
 [1511]
-Underfull \vbox (badness 10000) detected at line 7340
- []
-
+File: images/image285.png Graphic file (type bmp)
+<images/image285.png>
 
 
 [1512]
 
 [1513]
+File: images/image286.png Graphic file (type bmp)
+<images/image286.png>
+File: images/image287.png Graphic file (type bmp)
+<images/image287.png>
+
 
 [1514]
+Underfull \vbox (badness 10000) detected at line 6957
+ []
+
+
 
 [1515]
-Underfull \vbox (badness 3343) detected at line 7475
+Overfull \hbox (2.8896pt too wide) in paragraph at lines 6971--6975
+\OML/cmm/m/it/12 e[] [] t\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n
+/12 2\OML/cmm/m/it/12 e[] [] t$\TU/KaiTi(0)/m/n/12 ，|  故 $\OML/cmm/m/it/12 e[] 
+[] t \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+e[] [] t \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] [] t\OT1/cmr/m/n/12 )[]$\TU/Kai
+Ti(0)/m/n/12 。|  由 \TU/lmr/m/n/12 (2) \TU/KaiTi(0)/m/n/12 得，| $\OML/cmm/m/it/12
+ C \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 e[
+] [] t \OT1/cmr/m/n/12 +
+ []
+
+
+Underfull \vbox (badness 1448) detected at line 6980
  []
 
 
 
 [1516]
+File: images/image291.png Graphic file (type bmp)
+<images/image291.png>
+
 
 [1517]
-
-[1518]
-Underfull \vbox (badness 2158) detected at line 7593
+Underfull \vbox (badness 10000) detected at line 7056
  []
 
+
+
+[1518]
+File: images/image292.png Graphic file (type bmp)
+<images/image292.png>
 
 
 [1519]
 
 [1520]
-Underfull \vbox (badness 10000) detected at line 7664
- []
-
-
 
 [1521]
+File: images/image296.png Graphic file (type bmp)
+<images/image296.png>
+
 
 [1522]
+File: images/image297.png Graphic file (type bmp)
+<images/image297.png>
+
 
 [1523]
+File: images/image298.png Graphic file (type bmp)
+<images/image298.png>
+
 
 [1524]
 
 [1525]
+File: images/image299.png Graphic file (type bmp)
+<images/image299.png>
+File: images/image300.png Graphic file (type bmp)
+<images/image300.png>
+
 
 [1526]
+File: images/image301.png Graphic file (type bmp)
+<images/image301.png>
+
 
 [1527]
+File: images/image302.png Graphic file (type bmp)
+<images/image302.png>
+
 
 [1528]
 
 [1529]
 
 [1530]
+Overfull \hbox (35.19164pt too wide) in paragraph at lines 7493--7495
+\TU/KaiTi(0)/m/n/12 由 \TU/lmr/m/n/12 (1) \TU/KaiTi(0)/m/n/12 得，| $[][] \OML/cmm
+/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/
+12 dx \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^@ [][] [
+][]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[](1
+ + \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dx$ \TU/lmr/m/n/12 ....
+..(7) \TU/KaiTi(0)/m/n/12 此 处，| $[][] [][]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@
+\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[](1 +
+ []
+
+
+Overfull \hbox (4.62193pt too wide) detected at line 7508
+[][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] [] \OMS/cmsy/m/n/12 ^^A []\O
+T1/cmr/m/n/12 (1 + [][] \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 
+d^^R \OT1/cmr/m/n/12 = 2 \OMS/cmsy/m/n/12 ^^A [] [][]  \OML/cmm/m/it/12 d^^R \O
+T1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12
+ ^^Y
+ []
+
+
+Overfull \hbox (32.37021pt too wide) in paragraph at lines 7513--7518
+\TU/lmr/m/n/12 ......(10) \TU/KaiTi(0)/m/n/12 进 一 步，|  由 \TU/lmr/m/n/12 (6) \TU
+/KaiTi(0)/m/n/12 知，|  当 $\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ! 1$ \TU/KaiTi(0)/
+m/n/12 时，| $[] \U/msa/m/n/12 6 [] \OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 0$\TU/KaiT
+i(0)/m/n/12 ，|  故 $[][] [] \OT1/cmr/m/n/12 =
+ []
+
+
+Underfull \vbox (badness 6575) detected at line 7521
+ []
+
+
 
 [1531]
 
 [1532]
+Overfull \vbox (4.02184pt too high) detected at line 7598
+ []
+
+
 
 [1533]
+File: images/image309.png Graphic file (type bmp)
+<images/image309.png>
+
 
 [1534]
 
 [1535]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1536]
 
@@ -14096,10 +14668,6 @@ Underfull \vbox (badness 10000) detected at line 7664
 [1542]
 
 [1543]
-Underfull \vbox (badness 1320) detected at line 8574
- []
-
-
 
 [1544]
 
@@ -14108,7 +14676,7 @@ Underfull \vbox (badness 1320) detected at line 8574
 [1546]
 
 [1547]
-Overfull \vbox (7.70718pt too high) detected at line 8722
+Underfull \vbox (badness 10000) detected at line 8196
  []
 
 
@@ -14118,41 +14686,54 @@ Overfull \vbox (7.70718pt too high) detected at line 8722
 [1549]
 
 [1550]
+Underfull \vbox (badness 10000) detected at line 8291
+ []
+
+
 
 [1551]
 
 [1552]
-
-[1553]
-Underfull \vbox (badness 2717) detected at line 8962
+Underfull \vbox (badness 10000) detected at line 8353
  []
 
 
+
+[1553]
 
 [1554]
 
 [1555]
 
 [1556]
+Underfull \vbox (badness 3343) detected at line 8488
+ []
+
+
 
 [1557]
 
 [1558]
 
 [1559]
+Underfull \vbox (badness 2158) detected at line 8606
+ []
+
+
 
 [1560]
 
 [1561]
+Underfull \vbox (badness 10000) detected at line 8677
+ []
+
+
 
 [1562]
 
 [1563]
 
 [1564]
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1565]
 
@@ -14161,10 +14742,6 @@ Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;
 [1567]
 
 [1568]
-Overfull \vbox (10.9786pt too high) detected at line 9586
- []
-
-
 
 [1569]
 
@@ -14179,10 +14756,6 @@ Overfull \vbox (10.9786pt too high) detected at line 9586
 [1574]
 
 [1575]
-Overfull \vbox (8.7506pt too high) detected at line 9863
- []
-
-
 
 [1576]
 
@@ -14201,6 +14774,10 @@ Overfull \vbox (8.7506pt too high) detected at line 9863
 [1583]
 
 [1584]
+Underfull \vbox (badness 1320) detected at line 9587
+ []
+
+
 
 [1585]
 
@@ -14209,6 +14786,10 @@ Overfull \vbox (8.7506pt too high) detected at line 9863
 [1587]
 
 [1588]
+Overfull \vbox (7.70718pt too high) detected at line 9735
+ []
+
+
 
 [1589]
 
@@ -14221,19 +14802,16 @@ Overfull \vbox (8.7506pt too high) detected at line 9863
 [1593]
 
 [1594]
+Underfull \vbox (badness 2717) detected at line 9975
+ []
+
+
 
 [1595]
 
 [1596]
 
 [1597]
-Overfull \hbox (7.08134pt too wide) detected at line 10731
-\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x
-;  du \OT1/cmr/m/n/12 = [] []  \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] \OML/cm
-m/m/it/12 dx
- []
-
-
 
 [1598]
 
@@ -14250,18 +14828,21 @@ m/m/it/12 dx
 [1604]
 
 [1605]
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [1606]
 
 [1607]
 
 [1608]
-Underfull \vbox (badness 1052) detected at line 11276
+
+[1609]
+Overfull \vbox (10.9786pt too high) detected at line 10599
  []
 
 
-
-[1609]
 
 [1610]
 
@@ -14276,6 +14857,10 @@ Underfull \vbox (badness 1052) detected at line 11276
 [1615]
 
 [1616]
+Overfull \vbox (8.7506pt too high) detected at line 10876
+ []
+
+
 
 [1617]
 
@@ -14286,11 +14871,6 @@ Underfull \vbox (badness 1052) detected at line 11276
 [1620]
 
 [1621]
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
-
 
 [1622]
 
@@ -14319,16 +14899,19 @@ Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;
 [1634]
 
 [1635]
-Overfull \vbox (4.90881pt too high) detected at line 12511
- []
-
-
 
 [1636]
 
 [1637]
 
 [1638]
+Overfull \hbox (7.08134pt too wide) detected at line 11744
+\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x
+;  du \OT1/cmr/m/n/12 = [] []  \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] \OML/cm
+m/m/it/12 dx
+ []
+
+
 
 [1639]
 
@@ -14347,14 +14930,14 @@ Overfull \vbox (4.90881pt too high) detected at line 12511
 [1646]
 
 [1647]
+Underfull \vbox (badness 10000) detected at line 12202
+ []
+
+
 
 [1648]
 
 [1649]
-Underfull \vbox (badness 2181) detected at line 13125
- []
-
-
 
 [1650]
 
@@ -14365,20 +14948,10 @@ Underfull \vbox (badness 2181) detected at line 13125
 [1653]
 
 [1654]
-Overfull \hbox (10.3914pt too wide) detected at line 13335
-\OML/cmm/m/it/12 g [] \OT1/cmr/m/n/12 = [] = [] = [] = \OML/cmm/m/it/12 g\OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )
- []
-
-
 
 [1655]
 
 [1656]
-Underfull \vbox (badness 1137) detected at line 13452
- []
-
-
 
 [1657]
 
@@ -14395,8 +14968,11 @@ Underfull \vbox (badness 1137) detected at line 13452
 [1663]
 
 [1664]
-(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
-\vectorian88.pgf)
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 、 in font [lmroman12-regular]:mapping=tex-text;!
+
 
 [1665]
 
@@ -14421,14 +14997,14 @@ Underfull \vbox (badness 1137) detected at line 13452
 [1675]
 
 [1676]
-Overfull \vbox (6.0378pt too high) detected at line 14331
- []
-
-
 
 [1677]
 
 [1678]
+Overfull \vbox (4.90881pt too high) detected at line 13637
+ []
+
+
 
 [1679]
 
@@ -14453,39 +15029,16 @@ Overfull \vbox (6.0378pt too high) detected at line 14331
 [1689]
 
 [1690]
-Overfull \hbox (4.79562pt too wide) detected at line 14967
-\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 
-= \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/
-cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 du \OMS/cmsy/m/n/12 ^^
-@ [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/
-12 (\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 
-)
- []
-
-
-Overfull \hbox (29.88837pt too wide) detected at line 14972
-\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/1
-2 = [] [] = [] [] [] = [] [] [] = [] [] []
- []
-
-
-Overfull \vbox (3.92003pt too high) detected at line 14987
- []
-
-
 
 [1691]
 
 [1692]
-
-[1693]
-Overfull \hbox (14.39612pt too wide) detected at line 15131
-\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y[] [] [] [] [] dx \OT1
-/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] e[] [] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it
-/12 e[] [] x[] dx \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 x[]e[]
+Underfull \vbox (badness 2181) detected at line 14251
  []
 
 
+
+[1693]
 
 [1694]
 
@@ -14494,10 +15047,20 @@ Overfull \hbox (14.39612pt too wide) detected at line 15131
 [1696]
 
 [1697]
+Overfull \hbox (10.3914pt too wide) detected at line 14461
+\OML/cmm/m/it/12 g [] \OT1/cmr/m/n/12 = [] = [] = [] = \OML/cmm/m/it/12 g\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )
+ []
+
+
 
 [1698]
 
 [1699]
+Underfull \vbox (badness 1137) detected at line 14578
+ []
+
+
 
 [1700]
 
@@ -14514,6 +15077,8 @@ Overfull \hbox (14.39612pt too wide) detected at line 15131
 [1706]
 
 [1707]
+(C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
+\vectorian88.pgf)
 
 [1708]
 
@@ -14527,9 +15092,126 @@ Overfull \hbox (14.39612pt too wide) detected at line 15131
 
 [1713]
 
-[1714])
+[1714]
 
 [1715]
+
+[1716]
+
+[1717]
+
+[1718]
+
+[1719]
+Overfull \vbox (6.0378pt too high) detected at line 15457
+ []
+
+
+
+[1720]
+
+[1721]
+
+[1722]
+
+[1723]
+
+[1724]
+
+[1725]
+
+[1726]
+
+[1727]
+
+[1728]
+
+[1729]
+
+[1730]
+
+[1731]
+
+[1732]
+
+[1733]
+Overfull \hbox (4.79562pt too wide) detected at line 16093
+\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 
+= \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/
+cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 du \OMS/cmsy/m/n/12 ^^
+@ [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 
+)
+ []
+
+
+Overfull \hbox (29.88837pt too wide) detected at line 16098
+\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 du \OT1/cmr/m/n/1
+2 = [] [] = [] [] [] = [] [] [] = [] [] []
+ []
+
+
+Overfull \vbox (3.92003pt too high) detected at line 16113
+ []
+
+
+
+[1734]
+
+[1735]
+
+[1736]
+Overfull \hbox (14.39612pt too wide) detected at line 16257
+\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y[] [] [] [] [] dx \OT1
+/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] e[] [] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it
+/12 e[] [] x[] dx \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 x[]e[]
+ []
+
+
+
+[1737]
+
+[1738]
+
+[1739]
+
+[1740]
+
+[1741]
+
+[1742]
+
+[1743]
+
+[1744]
+
+[1745]
+
+[1746]
+
+[1747]
+
+[1748]
+
+[1749]
+
+[1750]
+
+[1751]
+
+[1752]
+
+[1753]
+
+[1754]
+
+[1755]
+
+[1756]
+
+[1757])
+
+[1758]
 (C:\Users\DHLee\AppData\Local\Programs\MiKTeX\tex/generic/pgfornament/vectorian
 \vectorian88.pgf)
 \flagwidth=\dimen342
@@ -14602,7 +15284,7 @@ Overfull \hbox (14.39612pt too wide) detected at line 15131
 
 
 
-[1716
+[1759
 
 
 ]
@@ -14613,8 +15295,8 @@ Overfull \hbox (14.39612pt too wide) detected at line 15131
 
 
 
-[1717]
-This exam contains 2300 questions with 756 parts, 13 subparts, and 0 subsubpart
+[1760]
+This exam contains 2334 questions with 842 parts, 13 subparts, and 0 subsubpart
 s.
 (main.aux (代数.aux) (离散数学.aux) (统计学.aux) (几何.aux) (微积分.aux))
  ***********
@@ -14632,12 +15314,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38473 strings out of 403250
- 841612 string characters out of 5460889
- 1740854 words of memory out of 5000000
- 65774 multiletter control sequences out of 15000+600000
+ 38702 strings out of 403250
+ 846318 string characters out of 5460889
+ 1741983 words of memory out of 5000000
+ 65986 multiletter control sequences out of 15000+600000
  644381 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,22n,93p,1251b,1438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,22n,93p,1251b,1478s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (1718 pages).
+Output written on main.pdf (1761 pages).
