@@ -1510,6 +1510,208 @@ f(x)g(x) = (f(x)\sqrt{x}) \cdot \frac{g(x)}{\sqrt{x}}
         \lim_{n\to\infty} \frac{N(n)}{n^{\frac{3}{2}}} = \frac{2}{3}
         \]
     \end{solution}
+
+    \question
+数列 $\{a_n\}$ 由 $a_1 = 5, a_{n+1} = \frac{4a_n - 9}{a_n - 2}$ ($n = 1, 2, 3, \dots$) 定义。此外，数列 $\{b_n\}$ 定义为 $b_n = \frac{a_1 + 2a_2 + \dots + na_n}{1 + 2 + \dots + n}$ ($n = 1, 2, 3, \dots$)。
+\begin{parts}
+\part 求数列 $\{a_n\}$ 的通项公式。
+\begin{solution}
+对于 $a_{n+1} = \frac{4a_n - 9}{a_n - 2} = 4 - \frac{1}{a_n - 2}$，由于 $a_1 = 5$，可得
+\[
+a_2 = 4 - \frac{1}{5 - 2} = \frac{11}{3}
+\]
+\[
+a_3 = 4 - \frac{1}{\frac{11}{3} - 2} = \frac{17}{5}, a_4 = 4 - \frac{1}{\frac{17}{5} - 2} = \frac{23}{7}
+\]
+由此，推测 $a_n = \frac{6n - 1}{2n - 1}$，以下使用数学归纳法证明。
+(i) 当 $n = 1$ 时，$a_1 = \frac{6 \cdot 1 - 1}{2 \cdot 1 - 1} = 5$，成立。
+(ii) 假设当 $n = k$ 时 $a_k = \frac{6k - 1}{2k - 1}$，则
+\[
+a_{k+1} = 4 - \frac{1}{a_k - 2} = 4 - \frac{1}{\frac{6k - 1}{2k - 1} - 2} = 4 - \frac{2k - 1}{2k + 1} = \frac{6k + 5}{2k + 1} = \frac{6(k+1) - 1}{2(k+1) - 1}
+\]
+由 (i)(ii) 可知，$a_n = \frac{6n - 1}{2n - 1}$ ($n = 1, 2, 3, \dots$)。
+\end{solution}
+
+\part 证明对于所有的 $n$，不等式 $b_n \le 3 + \frac{4}{n+1}$ 成立。
+\begin{solution}
+令 $s_n = \sum_{k=1}^n ka_k = \sum_{k=1}^n \frac{k(6k - 1)}{2k - 1} = \sum_{k=1}^n \left( 3k + 1 + \frac{1}{2k - 1} \right)$。
+由于 $k \ge 1$ 时 $\frac{1}{2k - 1} \le 1$，可得 $s_n \le \sum_{k=1}^n (3k + 2)$。
+进一步地，令 $t_n = \sum_{k=1}^n k = \frac{1}{2}n(n + 1)$，则有 $s_n \le 3t_n + 2n$。
+\[
+b_n = \frac{a_1 + 2a_2 + \dots + na_n}{1 + 2 + \dots + n} = \frac{s_n}{t_n} \le \frac{3t_n + 2n}{t_n} = 3 + \frac{2n}{t_n} = 3 + \frac{4}{n + 1}
+\]
+。
+\end{solution}
+
+\part 求极限值 $\lim_{n \to \infty} b_n$。
+\begin{solution}
+由于 $s_n = \sum_{k=1}^n \left( 3k + 1 + \frac{1}{2k - 1} \right) > \sum_{k=1}^n 3k = 3t_n$，
+因此 $b_n = \frac{s_n}{t_n} > \frac{3t_n}{t_n} = 3$。
+结合 (2) 的结论，得
+\[
+3 < b_n \le 3 + \frac{4}{n + 1}
+\]
+由于当 $n \to \infty$ 时 $\frac{4}{n + 1} \to 0$，由夹逼定理可知，$\lim_{n \to \infty} b_n = 3$。
+\end{solution}
+\end{parts}
+
+\question
+对于自然数 $n$，定义函数 $f_n(x)$ 如下：
+当 $n = 1$ 时，
+\[
+f_1(x) = 1 - \frac{x^2}{2}
+\]
+当 $n$ 为偶数时，
+\[
+f_n(x) = \int_0^x f_{n-1}(t) \,dt
+\]
+当 $n$ 为 3 以上的奇数时，
+\[
+f_n(x) = 1 - \int_0^x f_{n-1}(t) \,dt
+\]
+回答下列问题。此外，必要时可以使用以下结论：当 $0 < x \le 1$ 时，$x - \frac{x^3}{3!} < \sin x < x$ 成立。
+\begin{parts}
+\part 求函数 $f_2(x), f_3(x)$。
+\begin{solution}
+根据定义：
+\[
+f_2(x) = \int_0^x f_1(t) \,dt = \int_0^x \left( 1 - \frac{t^2}{2} \right) \,dt = x - \frac{x^3}{6}
+\]
+\[
+f_3(x) = 1 - \int_0^x f_2(t) \,dt = 1 - \int_0^x \left( t - \frac{t^3}{6} \right) \,dt = 1 - \frac{x^2}{2} + \frac{x^4}{24}
+\]
+。
+\end{solution}
+
+\part 当 $0 \le x \le 1$ 时，证明不等式 $-\frac{x^4}{4!} \le f_1(x) - \cos x \le \frac{x^4}{4!}$ 成立。
+\begin{solution}
+当 $0 \le x \le 1$ 时，设 $g(x) = f_1(x) - \cos x + \frac{x^4}{4!} = 1 - \frac{x^2}{2} - \cos x + \frac{x^4}{24}$。
+\[
+g'(x) = -x + \sin x + \frac{x^3}{3!}
+\]
+由已知条件 $x - \frac{x^3}{3!} < \sin x$ 可知 $g'(x) \ge 0$，故 $g(x) \ge g(0) = 0$。
+又设 $h(x) = \frac{x^4}{4!} - f_1(x) + \cos x = \frac{x^4}{24} - 1 + \frac{x^2}{2} + \cos x$。
+\[
+h'(x) = \frac{x^3}{3!} + x - \sin x
+\]
+由 $\sin x < x$ 可知 $h'(x) \ge 0$，故 $h(x) \ge h(0) = 0$。
+综上所述，当 $0 \le x \le 1$ 时，$-\frac{x^4}{4!} \le f_1(x) - \cos x \le \frac{x^4}{4!}$ 成立。
+\end{solution}
+
+\part 证明对于所有的自然数 $m$，当 $0 \le x \le 1$ 时，不等式 $-\frac{x^{2m+2}}{(2m+2)!} \le f_{2m-1}(x) - \cos x \le \frac{x^{2m+2}}{(2m+2)!}$ 成立。
+\begin{solution}
+设不等式为 $(*)$，利用数学归纳法证明如下：
+(i) 当 $m = 1$ 时，由 (2) 可知不等式成立。
+(ii) 假设当 $m = l$ 时成立，即
+\[
+-\frac{t^{2l+2}}{(2l+2)!} \le f_{2l-1}(t) - \cos t \le \frac{t^{2l+2}}{(2l+2)!}
+\]
+在区间 $[0, x]$ 上对 $t$ 进行积分：
+\[
+-\int_0^x \frac{t^{2l+2}}{(2l+2)!} \,dt \le \int_0^x \left\{ f_{2l-1}(t) - \cos t \right\} \,dt \le \int_0^x \frac{t^{2l+2}}{(2l+2)!} \,dt
+\]
+\[
+-\frac{x^{2l+3}}{(2l+3)!} \le f_{2l}(x) - \sin x \le \frac{x^{2l+3}}{(2l+3)!}
+\]
+再次在区间 $[0, x]$ 上积分：
+\[
+-\int_0^x \frac{t^{2l+3}}{(2l+3)!} \,dt \le \int_0^x \left\{ f_{2l}(t) - \sin t \right\} \,dt \le \int_0^x \frac{t^{2l+3}}{(2l+3)!} \,dt
+\]
+\[
+-\frac{x^{2l+4}}{(2l+4)!} \le \left( 1 - f_{2l+1}(x) \right) - \left( 1 - \cos x \right) \le \frac{x^{2l+4}}{(2l+4)!}
+\]
+整理得
+\[
+-\frac{x^{2(l+1)+2}}{(2(l+1)+2)!} \le f_{2(l+1)-1}(x) - \cos x \le \frac{x^{2(l+1)+2}}{(2(l+1)+2)!}
+\]
+故当 $m = l+1$ 时也成立。
+由 (i) 和 (ii) 可知，对所有自然数 $m$，$(*)$ 均成立。
+\end{solution}
+
+\part 求极限值 $\lim_{m \to \infty} f_{2m-1} \left( \frac{\pi}{6} \right)$。
+\begin{solution}
+在 $(*)$ 中代入 $x = \frac{\pi}{6}$：
+\[
+-\frac{1}{(2m+2)!} \left( \frac{\pi}{6} \right)^{2m+2} \le f_{2m-1} \left( \frac{\pi}{6} \right) - \cos \frac{\pi}{6} \le \frac{1}{(2m+2)!} \left( \frac{\pi}{6} \right)^{2m+2}
+\]
+由于 $0 < \frac{\pi}{6} < 1$，当 $m \to \infty$ 时：
+\[
+\frac{1}{(2m+2)!} \left( \frac{\pi}{6} \right)^{2m+2} \to 0
+\]
+由夹逼定理可知：
+\[
+\lim_{m \to \infty} f_{2m-1} \left( \frac{\pi}{6} \right) = \cos \frac{\pi}{6} = \frac{\sqrt{3}}{2}
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+设 $n$ 为正整数。回答下列问题。
+\begin{parts}
+\part 函数 $g(x)$ 定义如下：
+\[
+g(x) = \frac{\cos(\pi x) + 1}{2} \quad (|x| \le 1 \text{时}), \quad g(x) = 0 \quad (|x| > 1 \text{时})
+\]
+设 $f(x)$ 为连续函数，$p, q$ 为实数。证明：当对于满足 $|x| \le \frac{1}{n}$ 的 $x$ 都有 $p \le f(x) \le q$ 成立时，下式成立：
+\[
+p \le n \int_{-1}^1 g(nx) f(x) \,dx \le q
+\]
+\begin{solution}
+根据 $g(x)$ 的定义，当 $|nx| > 1$ 即 $|x| > \frac{1}{n}$ 时，$g(nx) = 0$。
+因此，积分区间可以缩小：
+\[
+n \int_{-1}^1 g(nx) f(x) \,dx = n \int_{-\frac{1}{n}}^{\frac{1}{n}} g(nx) f(x) \,dx
+\]
+由于在区间 $\left[ -\frac{1}{n}, \frac{1}{n} \right]$ 上，$g(nx) \ge 0$ 且 $p \le f(x) \le q$ 成立，故有
+\[
+p \cdot g(nx) \le g(nx) f(x) \le q \cdot g(nx)
+\]
+对上式在 $\left[ -\frac{1}{n}, \frac{1}{n} \right]$ 上积分并乘以 $n$：
+\[
+n p \int_{-\frac{1}{n}}^{\frac{1}{n}} g(nx) \,dx \le n \int_{-\frac{1}{n}}^{\frac{1}{n}} g(nx) f(x) \,dx \le n q \int_{-\frac{1}{n}}^{\frac{1}{n}} g(nx) \,dx
+\]
+计算积分 $I = n \int_{-\frac{1}{n}}^{\frac{1}{n}} \frac{\cos(n\pi x) + 1}{2} \,dx$：
+\[
+I = \frac{n}{2} \left[ \frac{\sin(n\pi x)}{n\pi} + x \right]_{-\frac{1}{n}}^{\frac{1}{n}} = \frac{n}{2} \left( \frac{1}{n} + \frac{1}{n} \right) = 1
+\]
+所以 $p \le n \int_{-1}^1 g(nx) f(x) \,dx \le q$ 成立。
+\end{solution}
+
+\part 函数 $h(x)$ 定义如下：
+\[
+h(x) = -\frac{\pi}{2} \sin(\pi x) \quad (|x| \le 1 \text{时}), \quad h(x) = 0 \quad (|x| > 1 \text{时})
+\]
+求下列极限值：
+\[
+\lim_{n \to \infty} n^2 \int_{-1}^1 h(nx) \log(1 + e^{x+1}) \,dx
+\]
+\begin{solution}
+注意到当 $|x| \le \frac{1}{n}$ 时，$h(nx) = \frac{1}{n} \frac{d}{dx} \{ g(nx) \}$。
+设 $J_n = n^2 \int_{-1}^1 h(nx) \log(1 + e^{x+1}) \,dx$。
+利用分部积分法：
+\[
+J_n = n^2 \int_{-\frac{1}{n}}^{\frac{1}{n}} \frac{1}{n} g'(nx) \log(1 + e^{x+1}) \,dx = n \int_{-\frac{1}{n}}^{\frac{1}{n}} g'(nx) \log(1 + e^{x+1}) \,dx
+\]
+\[
+J_n = n \left[ g(nx) \log(1 + e^{x+1}) \right]_{-\frac{1}{n}}^{\frac{1}{n}} - n \int_{-\frac{1}{n}}^{\frac{1}{n}} g(nx) \frac{e^{x+1}}{1 + e^{x+1}} \,dx
+\]
+由于 $g(1) = g(-1) = 0$，第一项为 $0$。令 $F(x) = \frac{e^{x+1}}{1 + e^{x+1}}$，则
+\[
+J_n = - n \int_{-1}^1 g(nx) F(x) \,dx
+\]
+当 $n \to \infty$ 时，区间 $\left[ -\frac{1}{n}, \frac{1}{n} \right]$ 趋于点 $0$。
+由于 $F(x)$ 在 $x=0$ 附近连续，根据 (1) 的结论（即利用积分中值定理的类似形式）：
+\[
+\lim_{n \to \infty} n \int_{-1}^1 g(nx) F(x) \,dx = F(0) = \frac{e^{0+1}}{1 + e^{0+1}} = \frac{e}{1+e}
+\]
+因此
+\[
+\lim_{n \to \infty} J_n = - \frac{e}{1+e}
+\]
+。
+\end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -4079,6 +4281,200 @@ M \le \frac{1}{2} M
         \]
     \end{solution}
 
+    \question
+\begin{parts}
+\part 当 $a$ 为实数时，证明通过点 $(a, 0)$ 且与 $y = e^x + 1$ 相切的直线恰好只有一条。
+\begin{solution}
+对于 $y = e^x + 1$，有 $y' = e^x$。设切点为 $(t, e^t + 1)$，则切线方程为
+\[
+y - \left( e^t + 1 \right) = e^t(x - t)
+\]
+整理得
+\[
+y = e^t x - (t - 1)e^t + 1 \dots (1)
+\]
+由于直线 (1) 通过点 $(a, 0)$，代入得 $0 = e^t a - (t - 1)e^t + 1$，即
+\[
+e^t a = (t - 1)e^t - 1
+\]
+两边同除以 $e^t$，得
+\[
+a = t - 1 - e^{-t} \dots (2)
+\]
+令 $f(t) = t - 1 - e^{-t}$，求导得
+\[
+f'(t) = 1 + e^{-t}
+\]
+因为对于所有实数 $t$ 都有 $f'(t) > 0$，所以 $f(t)$ 在实数范围内单调递增。
+又因为
+\[
+\lim_{t \to \infty} f(t) = \infty, \lim_{t \to -\infty} f(t) = -\infty
+\]
+可知对于任意实数 $a$，方程 (2) 都有且仅有一个实数解 $t$。
+因此，通过点 $(a, 0)$ 的切线 (1) 恰好只有一条。
+\end{solution}
+
+\part 设 $a_1 = 1$，对于 $n = 1, 2, \dots$，通过点 $(a_n, 0)$ 且与 $y = e^x + 1$ 相切的直线的切点 $x$ 坐标为 $a_{n+1}$。此时，求 $\lim_{n \to \infty} (a_{n+1} - a_n)$。
+\begin{solution}
+根据 (1) 的结论，将 $a = a_n$ 和 $t = a_{n+1}$ 代入方程 (2) 可得
+\[
+a_n = a_{n+1} - 1 - e^{-a_{n+1}}
+\]
+移项整理得
+\[
+a_{n+1} - a_n = 1 + e^{-a_{n+1}} \dots (3)
+\]
+因为对于所有实数 $x$ 都有 $e^x > 0$，所以由 (3) 可知 $a_{n+1} - a_n > 1$。
+结合 $a_1 = 1$，利用累加法可知
+\[
+a_n = a_1 + \sum_{k=1}^{n-1} (a_{k+1} - a_k) > 1 + (n - 1) \cdot 1 = n
+\]
+由此可知，当 $n \to \infty$ 时，$a_n \to \infty$，从而 $a_{n+1} \to \infty$。
+对 (3) 两边取极限得
+\[
+\lim_{n \to \infty} (a_{n+1} - a_n) = \lim_{a_{n+1} \to \infty} \left( 1 + e^{-a_{n+1}} \right) = 1
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+回答下列问题。
+\begin{parts}
+\part 对于函数 $f(x) = x^{-2} 2^x$ ($x \neq 0$)，求使 $f'(x) > 0$ 成立的关于 $x$ 的条件。
+\begin{solution}
+对于 $f(x) = x^{-2} 2^x = \frac{2^x}{x^2}$，其导数为
+\[
+f'(x) = \frac{2^x \log 2 \cdot x^2 - 2^x \cdot 2x}{x^4} = \frac{2^x (x \log 2 - 2)}{x^3} = \frac{2^x}{x^2} \cdot \frac{x \log 2 - 2}{x}
+\]
+由此可知，$f'(x) > 0$ 的条件是 $\frac{x \log 2 - 2}{x} > 0$，即 $x(x \log 2 - 2) > 0$。
+解得 $x < 0$ 或 $\frac{2}{\log 2} < x$。
+\end{solution}
+
+\part 证明方程 $2^x = x^2$ 恰有 3 个不同的实数解。
+\begin{solution}
+由于 $x = 0$ 不是方程 $2^x = x^2$ 的解，故该方程等价于 $x^{-2} 2^x = 1$，即 $f(x) = 1$。
+根据 (1) 的结论，$f(x)$ 的增减性如下表所示：
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & $\dots$ & $0$ & $\dots$ & $\frac{2}{\log 2}$ & $\dots$ \\ \hline
+$f'(x)$ & $+$ & $\times$ & $-$ & $0$ & $+$ \\ \hline
+$f(x)$ & $\nearrow$ & $\times$ & $\searrow$ & 极小 & $\nearrow$ \\ \hline
+\end{tabular}
+\end{center}
+考察极限情况：
+\[
+\lim_{x \to -\infty} f(x) = 0, \lim_{x \to 0} f(x) = \infty, \lim_{x \to \infty} f(x) = \infty
+\]
+注意到 $f(2) = f(4) = 1$。
+结合图表可知，$y = f(x)$ 的图象与直线 $y = 1$ 在 $x < 0$ 范围内有一个交点 $x = \alpha$，在 $x > 0$ 范围内有两个交点 $x = 2$ 和 $x = 4$。
+因此，方程 $2^x = x^2$ 共有 3 个不同的实数解 $x = \alpha, 2, 4$。
+\end{solution}
+
+\part 求出方程 $2^x = x^2$ 的所有有理数解。
+\begin{solution}
+已知 $x = 2, 4$ 是有理数解，下面讨论负数解 $x = \alpha$ 是否为有理数。
+假设 $\alpha$ 是有理数，令 $\alpha = -\frac{n}{m}$ ($m, n$ 为互质的正整数)，代入原方程得
+\[
+2^{-\frac{n}{m}} = \left( -\frac{n}{m} \right)^2, 2^{-n} = \left( \frac{n^2}{m^2} \right)^m, \frac{1}{2^n} = \frac{n^{2m}}{m^{2m}}
+\]
+由此得 $m^{2m} = 2^n n^{2m}$。
+由于 $m, n$ 互质，从上式可知 $m^{2m}$ 必须是 $n^{2m}$ 的倍数，这仅当 $m = 1$ 时成立。
+此时方程简化为 $n^2 = 2^n$。对于自然数 $n$，该方程的解为 $n = 2$ 或 $n = 4$。
+若 $n = 2$，则 $\alpha = -2$，但 $f(-2) = \frac{1}{16} \neq 1$。
+若 $n = 4$，则 $\alpha = -4$，但 $f(-4) = \frac{1}{256} \neq 1$。
+因此 $\alpha$ 不是有理数。
+综上所述，有理数解为 $x = 2, 4$。
+\end{solution}
+\end{parts}
+
+\question
+设 $e$ 为自然对数的底，即 $e = \lim_{t \to \infty} \left(1 + \frac{1}{t}\right)^t$。证明对于所有正实数 $x$，下列不等式成立。
+\[
+\left(1 + \frac{1}{x}\right)^x < e < \left(1 + \frac{1}{x}\right)^{x + \frac{1}{2}}
+\]
+\begin{solution}
+    首先，设 $f(x) = \log\left(1 + \frac{1}{x}\right)^x - 1 = x\{\log(x+1) - \log x\} - 1$。
+    \begin{align*}
+    f'(x) &= \log(x+1) - \log x + x\left(\frac{1}{x+1} - \frac{1}{x}\right) = \log(x+1) - \log x - \frac{1}{x+1} \\
+    f''(x) &= \frac{1}{x+1} - \frac{1}{x} + \frac{1}{(x+1)^2} = -\frac{1}{x(x+1)^2}
+    \end{align*}
+    由于 $x > 0$ 时 $f''(x) < 0$，故 $f'(x)$ 单调递减。
+    \[
+    f'(x) > \lim_{x \to \infty} f'(x) = \lim_{x \to \infty} \left\{ \log\left(1 + \frac{1}{x}\right) - \frac{1}{x+1} \right\} = 0
+    \]
+    因此，$x > 0$ 时 $f(x)$ 单调递增。
+    \[
+    f(x) < \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \left\{ \log\left(1 + \frac{1}{x}\right)^x - 1 \right\} = \log e - 1 = 0
+    \]
+    即 $\log\left(1 + \frac{1}{x}\right)^x < 1$，故 $\left(1 + \frac{1}{x}\right)^x < e \cdots (1)$。
+
+    再者，设 $g(x) = \log\left(1 + \frac{1}{x}\right)^{x + \frac{1}{2}} - 1 = \left(x + \frac{1}{2}\right)\{\log(x+1) - \log x\} - 1$。
+    \begin{align*}
+    g'(x) &= \log(x+1) - \log x + \left(x + \frac{1}{2}\right)\left(\frac{1}{x+1} - \frac{1}{x}\right) \\
+    &= \log(x+1) - \log x - \frac{2x+1}{2x(x+1)} \\
+    g''(x) &= \frac{1}{x+1} - \frac{1}{x} + \frac{2x^2+2x+1}{2x^2(x+1)^2} = \frac{1}{2x^2(x+1)^2}
+    \end{align*}
+    由于 $x > 0$ 时 $g''(x) > 0$，故 $g'(x)$ 单调递增。
+    \[
+    g'(x) < \lim_{x \to \infty} g'(x) = \lim_{x \to \infty} \left\{ \log\left(1 + \frac{1}{x}\right) - \frac{2 + \frac{1}{x}}{2(x+1)} \right\} = 0
+    \]
+    因此，$x > 0$ 时 $g(x)$ 单调递减。
+    \[
+    g(x) > \lim_{x \to \infty} g(x) = \lim_{x \to \infty} \left\{ \log\left(1 + \frac{1}{x}\right)^x \left(1 + \frac{1}{x}\right)^{\frac{1}{2}} - 1 \right\} = \log(e \cdot 1) - 1 = 0
+    \]
+    即 $\log\left(1 + \frac{1}{x}\right)^{x + \frac{1}{2}} > 1$，故 $\left(1 + \frac{1}{x}\right)^{x + \frac{1}{2}} > e \cdots (2)$。
+    由 (1)(2) 得 $\left(1 + \frac{1}{x}\right)^x < e < \left(1 + \frac{1}{x}\right)^{x + \frac{1}{2}}$。
+\end{solution}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 证明 $x > 0$ 时，不等式 $\log x < x$ 成立。
+    \begin{solution}
+        $x > 0$ 时，令 $f(x) = x - \log x$，则 $f'(x) = 1 - \frac{1}{x} = \frac{x-1}{x}$。
+        $f(x)$ 的增减表如下：
+        \begin{center}
+        \begin{tabular}{|c||c|c|c|c|}
+        \hline
+        $x$ & 0 & $\cdots$ & 1 & $\cdots$ \\ \hline
+        $f'(x)$ & $\times$ & $-$ & 0 & $+$ \\ \hline
+        $f(x)$ & $\times$ & $\searrow$ & 1 & $\nearrow$ \\ \hline
+        \end{tabular}
+        \end{center}
+        因此 $f(x) \ge 1 > 0$，故 $x > 0$ 时 $\log x < x$。
+    \end{solution}
+
+    \part 证明 $1 < a < b$ 时，不等式 $\frac{1}{\log a} - \frac{1}{\log b} < \frac{b-a}{a(\log a)^2}$ 成立。
+    \begin{solution}
+        令 $g(x) = \frac{1}{\log x}$，则 $g'(x) = -\frac{1}{x(\log x)^2}$。
+        根据中值定理，存在 $c$ 满足 $1 < a < c < b$，使得 $\frac{g(b) - g(a)}{b-a} = g'(c)$。
+        \[
+        g(b) - g(a) = (b-a)g'(c), \quad \frac{1}{\log b} - \frac{1}{\log a} = -\frac{b-a}{c(\log c)^2}
+        \]
+        由此得 $\frac{1}{\log a} - \frac{1}{\log b} = \frac{b-a}{c(\log c)^2} \cdots (2)$。
+        又由 $0 < a(\log a)^2 < c(\log c)^2$ 得 $0 < \frac{1}{c(\log c)^2} < \frac{1}{a(\log a)^2} \cdots (3)$。
+        由 (2)(3) 得 $\frac{1}{\log a} - \frac{1}{\log b} < \frac{b-a}{a(\log a)^2}$。
+    \end{solution}
+
+    \part 证明 $x \ge e$ 时，不等式 $\int_{e}^{x} \frac{dt}{t \log(t+1)} \ge \log(\log x) + \frac{1}{2(\log x)^2} - \frac{1}{2}$ 成立。
+    \begin{solution}
+        $x \ge e$ 时，令 $F(x) = \int_{e}^{x} \frac{dt}{t \log(t+1)} - \log(\log x) - \frac{1}{2(\log x)^2} + \frac{1}{2}$。
+        \begin{align*}
+        F'(x) &= \frac{1}{x \log(x+1)} - \frac{1}{x \log x} + \frac{1}{x (\log x)^3} \\
+        &= -\frac{1}{x} \left\{ \frac{1}{\log x} - \frac{1}{\log(x+1)} - \frac{1}{(\log x)^3} \right\}
+        \end{align*}
+        由 (2) 知 $\frac{1}{\log x} - \frac{1}{\log(x+1)} < \frac{1}{x(\log x)^2}$，且由 (1) 知 $\log x < x$，故
+        \[
+        F'(x) > -\frac{1}{x} \left\{ \frac{1}{x(\log x)^2} - \frac{1}{(\log x)^3} \right\} = -\frac{\log x - x}{x^2 (\log x)^3} > 0
+        \]
+        因此在 $x \ge e$ 时，$F(x) \ge F(e) = 0 - \log 1 - \frac{1}{2} + \frac{1}{2} = 0$。
+        \[
+        \int_{e}^{x} \frac{dt}{t \log(t+1)} \ge \log(\log x) + \frac{1}{2(\log x)^2} - \frac{1}{2}
+        \]
+    \end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -5782,6 +6178,475 @@ $x$ 轴与 $C_2$ 围成的总面积为
     代入 \textcircled{6} 得：
     \[ k = \frac{12}{\beta} - 4 = \frac{12}{2\sqrt{2}} - 4 = 3\sqrt{2} - 4 \]
     答：$k = 3\sqrt{2} - 4$。
+\end{solution}
+
+\question
+设 $r$ 为正实数。数列 $\{a_n\}$ 定义为 $a_n = \int_0^{n\pi} e^{-rx} |\sin x| \,dx$ ($n = 1, 2, 3, \dots$)，请回答下列问题。
+\begin{parts}
+\part 求 $a_{n+1} - a_n$。
+\begin{solution}
+对于 $a_n = \int_0^{n\pi} e^{-rx} |\sin x| \,dx$，有
+\[
+a_{n+1} - a_n = \int_0^{(n+1)\pi} e^{-rx} |\sin x| \,dx - \int_0^{n\pi} e^{-rx} |\sin x| \,dx = \int_{n\pi}^{(n+1)\pi} e^{-rx} |\sin x| \,dx
+\]
+在区间 $n\pi \le x \le (n+1)\pi$ 上，$\sin x$ 的符号保持不变，故
+\[
+\int_{n\pi}^{(n+1)\pi} e^{-rx} |\sin x| \,dx = \left| \int_{n\pi}^{(n+1)\pi} e^{-rx} \sin x \,dx \right|
+\]
+利用积分公式 $\left( e^{-rx} \sin x \right)' = -re^{-rx} \sin x + e^{-rx} \cos x$ (1) 和 $\left( e^{-rx} \cos x \right)' = -re^{-rx} \cos x - e^{-rx} \sin x$ (2)。
+由 (1) $\times r +$ (2) 得 $-(r^2 + 1) e^{-rx} \sin x = \left\{ e^{-rx} (r \sin x + \cos x) \right\}'$。
+因此
+\begin{align*}
+a_{n+1} - a_n &= \left| - \left[ \frac{1}{r^2 + 1} e^{-rx} (r \sin x + \cos x) \right]_{n\pi}^{(n+1)\pi} \right| \\
+&= \frac{1}{r^2 + 1} \left| e^{-(n+1)\pi r} \cos(n+1)\pi - e^{-n\pi r} \cos n\pi \right| \\
+&= \frac{1}{r^2 + 1} \left| e^{-(n+1)\pi r} (-1)^{n+1} - e^{-n\pi r} (-1)^n \right| \\
+&= \frac{e^{-n\pi r} + e^{-(n+1)\pi r}}{r^2 + 1} = \frac{e^{r\pi} + 1}{r^2 + 1} e^{-(n+1)\pi r}
+\end{align*}
+。
+\end{solution}
+
+\part 求 $\{a_n\}$ 的通项公式。
+\begin{solution}
+由 (1) 可知 $a_1 = \int_0^\pi e^{-rx} \sin x \,dx = \frac{e^{-\pi r} + 1}{r^2 + 1}$。对于 $n \ge 2$，有
+\begin{align*}
+a_n &= a_1 + \frac{e^{r\pi} + 1}{r^2 + 1} \sum_{k=1}^{n-1} e^{-(k+1)\pi r} = \frac{e^{-\pi r} + 1}{r^2 + 1} \left\{ 1 + \frac{e^{-\pi r} (1 - e^{-(n-1)\pi r})}{1 - e^{-\pi r}} \right\} \\
+&= \frac{(1 + e^{-\pi r})(1 - e^{-n\pi r})}{(r^2 + 1)(1 - e^{-\pi r})}
+\end{align*}
+经检验，该公式对 $n = 1$ 也成立。
+\end{solution}
+
+\part 用 $r$ 表示 $\lim_{n \to \infty} a_n$。
+\begin{solution}
+由于 $r > 0$，当 $n \to \infty$ 时 $e^{-n\pi r} \to 0$。由 (2) 得
+\[
+\lim_{n \to \infty} a_n = \frac{1 + e^{-\pi r}}{(r^2 + 1)(1 - e^{-\pi r})}
+\]
+。
+\end{solution}
+
+\part 设 (3) 中求得的关于 $r$ 的表达式为 $f(r)$，求 $\lim_{r \to +0} r f(r)$。
+\begin{solution}
+已知 $f(r) = \frac{1 + e^{-\pi r}}{(r^2 + 1)(1 - e^{-\pi r})}$，则 $r f(r) = \frac{1 + e^{-\pi r}}{r^2 + 1} \cdot \frac{r}{1 - e^{-\pi r}}$。
+令 $g(r) = e^{-\pi r}$，则 $g'(r) = -\pi e^{-\pi r}$。
+\[
+\lim_{r \to +0} \frac{1 - e^{-\pi r}}{r} = - \lim_{r \to +0} \frac{g(r) - g(0)}{r - 0} = -g'(0) = \pi
+\]
+因此
+\[
+\lim_{r \to +0} r f(r) = \frac{1 + 1}{1} \cdot \frac{1}{\pi} = \frac{2}{\pi}
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+坐标平面上的点 $P(1, 1)$ 为中心，且通过原点 $O$ 的圆为 $C_1$。设 $k$ 为正常数，曲线 $y = \frac{k}{x}$ ($x > 0$) 为 $C_2$。已知 $C_1$ 与 $C_2$ 在两点处相交，设这两个交点为 $Q, R$。直线 $PQ$ 与 $x$ 轴平行。设点 $Q$ 的 $x$ 坐标为 $q$，点 $R$ 的 $x$ 坐标为 $r$。回答下列问题。
+\begin{parts}
+\part 求 $k, q, r$ 的值。
+\begin{solution}
+圆 $C_1$ 的中心为 $P(1, 1)$，半径为 $\sqrt{(1-0)^2 + (1-0)^2} = \sqrt{2}$。
+因此，$C_1$ 的方程为 $(x-1)^2 + (y-1)^2 = 2$。
+由于直线 $PQ$ 平行于 $x$ 轴，且通过点 $P(1, 1)$，故直线 $PQ$ 的方程为 $y = 1$。
+点 $Q$ 在圆 $C_1$ 上，代入 $y=1$ 得 $(x-1)^2 + (1-1)^2 = 2$，解得 $x = 1 \pm \sqrt{2}$。
+因为 $Q$ 是 $C_1$ 与 $C_2$ ($x > 0$) 的交点，由图可知 $q = 1 + \sqrt{2}$。
+点 $Q(1+\sqrt{2}, 1)$ 在曲线 $C_2: y = \frac{k}{x}$ 上，故 $1 = \frac{k}{1+\sqrt{2}}$，得 $k = 1 + \sqrt{2}$。
+由于 $C_1$ 和 $C_2$ 都关于直线 $y = x$ 对称，且 $Q(1+\sqrt{2}, 1)$ 为交点，则另一个交点 $R$ 的坐标必为 $(1, 1+\sqrt{2})$。
+因此 $r = 1$。
+综上所述，$k = 1 + \sqrt{2}, q = 1 + \sqrt{2}, r = 1$。
+\end{solution}
+
+\part 求由曲线 $C_2$ 以及线段 $OQ, OR$ 所围成图形的面积 $S$。
+\begin{solution}
+根据 (1) 的结论，面积 $S$ 可以通过对 $C_2$ 积分并减去两个直角三角形面积（或利用对称性）求得。
+\[
+S = \frac{1}{2} \cdot 1 \cdot (1+\sqrt{2}) + \int_1^{1+\sqrt{2}} \frac{1+\sqrt{2}}{x} \,dx - \frac{1}{2} \cdot (1+\sqrt{2}) \cdot 1
+\]
+\[
+S = (1+\sqrt{2}) \left[ \log x \right]_1^{1+\sqrt{2}} = (1+\sqrt{2}) \log(1+\sqrt{2})
+\]
+。
+\end{solution}
+
+\part 设 $x = 1 + \sqrt{2} \sin \theta$，利用此换元法求定积分 $I = \int_r^q \sqrt{2 - (x-1)^2} \,dx$ 的值。
+\begin{solution}
+代入 $r = 1, q = 1 + \sqrt{2}$，得 $I = \int_1^{1+\sqrt{2}} \sqrt{2 - (x-1)^2} \,dx$。
+令 $x - 1 = \sqrt{2} \sin \theta$，则 $dx = \sqrt{2} \cos \theta \,d\theta$。
+当 $x = 1$ 时 $\theta = 0$，当 $x = 1+\sqrt{2}$ 时 $\theta = \frac{\pi}{2}$。
+\[
+I = \int_0^{\frac{\pi}{2}} \sqrt{2 - 2 \sin^2 \theta} \cdot \sqrt{2} \cos \theta \,d\theta = 2 \int_0^{\frac{\pi}{2}} \cos^2 \theta \,d\theta
+\]
+\[
+I = \int_0^{\frac{\pi}{2}} (1 + \cos 2\theta) \,d\theta = \left[ \theta + \frac{1}{2} \sin 2\theta \right]_0^{\frac{\pi}{2}} = \frac{\pi}{2}
+\]
+。
+\end{solution}
+
+\part 求由圆 $C_1$ 的不包含原点 $O$ 的弧 $QR$ 与曲线 $C_2$ 所围成的图形绕 $x$ 轴旋转一周所得旋转体的体积 $V$。
+\begin{solution}
+圆 $C_1$ 在 $y \ge 1$ 部分的方程为 $y = 1 + \sqrt{2 - (x-1)^2}$。
+旋转体体积 $V$ 为圆弧旋转体积减去曲线 $C_2$ 旋转体积：
+\[
+V = \pi \int_1^{1+\sqrt{2}} \left( 1 + \sqrt{2 - (x-1)^2} \right)^2 \,dx - \pi \int_1^{1+\sqrt{2}} \left( \frac{1+\sqrt{2}}{x} \right)^2 \,dx
+\]
+展开第一项：
+\[
+\pi \int_1^{1+\sqrt{2}} \left\{ 1 + (2 - (x-1)^2) + 2\sqrt{2 - (x-1)^2} \right\} \,dx = \pi \int_1^{1+\sqrt{2}} \left\{ 3 - (x-1)^2 \right\} \,dx + 2\pi I
+\]
+计算各部分：
+\[
+\pi \left[ 3x - \frac{1}{3}(x-1)^3 \right]_1^{1+\sqrt{2}} = \pi \left( 3\sqrt{2} - \frac{2\sqrt{2}}{3} \right) = \frac{7\sqrt{2}}{3}\pi
+\]
+\[
+2\pi I = 2\pi \cdot \frac{\pi}{2} = \pi^2
+\]
+\[
+\pi \int_1^{1+\sqrt{2}} \frac{(1+\sqrt{2})^2}{x^2} \,dx = \pi (1+\sqrt{2})^2 \left[ -\frac{1}{x} \right]_1^{1+\sqrt{2}} = \pi (1+\sqrt{2})^2 \left( 1 - \frac{1}{1+\sqrt{2}} \right) = \pi (1+\sqrt{2}) \sqrt{2} = (2+\sqrt{2})\pi
+\]
+最后汇总：
+\[
+V = \frac{7\sqrt{2}}{3}\pi + \pi^2 - (2+\sqrt{2})\pi = \left( \frac{4\sqrt{2}}{3} - 2 \right)\pi + \pi^2
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+在坐标空间内，有一个以原点 $O(0, 0, 0)$ 为中心、半径为 $1$ 的球。如右图所示，太阳光从 $y$ 轴负方向以仰角 $\frac{\pi}{6}$ 照射过来。该太阳光线平行于向量 $(0, \sqrt{3}, -1)$。假设球体不透光。回答下列问题。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image282.png}
+    \end{figure}
+\begin{parts}
+\part 考虑球在 $z \ge 0$ 部分在 $xy$ 平面上产生的影子。设 $k$ 为满足 $-1 < k < 1$ 的实数，求在 $xy$ 平面上的直线 $x = k$ 中，球体外部阳光照射不到部分的 $y$ 坐标范围（用 $k$ 表示）。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image283.png}
+    \end{figure}
+    \fi
+\begin{solution}
+通过 $xy$ 平面上的点 $(x_0, y_0, 0)$ 且方向向量为 $(0, \sqrt{3}, -1)$ 的直线方程为：
+\[
+(x, y, z) = (x_0, y_0, 0) + t(0, \sqrt{3}, -1) \quad (t \text{ 为实数})
+\]
+球的方程为 $x^2 + y^2 + z^2 = 1$。联立直线与球的方程：
+\[
+x_0^2 + (y_0 + \sqrt{3}t)^2 + (-t)^2 = 1 \implies 4t^2 + 2\sqrt{3}y_0t + x_0^2 + y_0^2 - 1 = 0
+\]
+影子边缘对应直线与球相切的情况。判别式 $D/4 = 0$：
+\[
+3y_0^2 - 4(x_0^2 + y_0^2 - 1) = 0 \implies 4x_0^2 + y_0^2 = 4
+\]
+且由于阳光从上方照射，相切点需满足 $z \ge 0$，即 $-t \ge 0 \implies t \le 0$。根据求根公式，这要求 $y_0 \ge 0$。
+因此，影子在 $xy$ 平面上的边界线为椭圆 $4x^2 + y^2 = 4$ 且 $y \ge 0$ 的部分。
+当 $x = k$ 时，影子边界点的 $y$ 坐标为 $y = \sqrt{4 - 4k^2} = 2\sqrt{1 - k^2}$。
+球体在 $xy$ 平面上的投影（圆）在 $x = k$ 处的 $y$ 坐标范围是 $y = \sqrt{1 - k^2}$。
+因此，球体外部阳光照射不到部分的 $y$ 坐标范围是：
+\[
+\sqrt{1 - k^2} \le y \le 2\sqrt{1 - k^2}
+\]
+。
+\end{solution}
+
+\part 求 $xy$ 平面上，球体外部阳光照射不到部分的面积。
+\begin{solution}
+影子区域由半个椭圆（长轴 $2$，短轴 $1$）减去半个圆（半径 $1$）组成。
+椭圆 $4x^2 + y^2 = 4$ 的面积为 $\pi \cdot 1 \cdot 2 = 2\pi$。
+所求面积为：
+\[
+\frac{1}{2} (\pi \cdot 1 \cdot 2) - \frac{1}{2} (\pi \cdot 1^2) = \pi - \frac{1}{2}\pi = \frac{1}{2}\pi
+\]
+。
+\end{solution}
+
+\part 在 $z \ge 0$ 的区域内，求球体外部阳光照射不到部分的体积。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image284.png}
+    \end{figure}
+    \fi
+\begin{solution}
+用平面 $x = k$ 切割该阴影区域，截面面积 $S(k)$ 为：
+\[
+S(k) = \frac{1}{2} \cdot 2\left( \sqrt{1-k^2} \right)^2 \sin \frac{\pi}{3} - \frac{1}{2} \left( \sqrt{1-k^2} \right)^2 \cdot \frac{\pi}{3} = \left( \frac{\sqrt{3}}{2} - \frac{\pi}{6} \right) (1 - k^2)
+\]
+体积 $V$ 为对 $S(k)$ 在 $[-1, 1]$ 上的积分：
+\[
+V = \int_{-1}^1 S(k) \,dk = 2 \left( \frac{\sqrt{3}}{2} - \frac{\pi}{6} \right) \int_0^1 (1 - k^2) \,dk
+\]
+\[
+V = 2 \left( \frac{\sqrt{3}}{2} - \frac{\pi}{6} \right) \left[ k - \frac{k^3}{3} \right]_0^1 = 2 \left( \frac{\sqrt{3}}{2} - \frac{\pi}{6} \right) \cdot \frac{2}{3} = \frac{2\sqrt{3}}{3} - \frac{2\pi}{9}
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+坐标空间的 $x$ 轴上有动点 $P, Q$。$P, Q$ 在时刻 $0$ 时从原点出发。$P$ 向 $x$ 轴正方向，$Q$ 向 $x$ 轴负方向，均以速度 $1$ 运动。之后，两者均在时刻 $1$ 停止。设以点 $P, Q$ 为中心、半径为 $1$ 的球分别为 $A, B$，设空间中 $x \ge -1$ 的部分为 $C$。回答下列问题。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image285.png}
+    \end{figure}
+\begin{parts}
+\part 求时刻 $t$ ($0 \le t \le 1$) 时立体 $(A \cup B) \cap C$ 的体积 $V(t)$。
+\begin{solution}
+在时刻 $t$，球 $A$ 的中心坐标为 $(t, 0, 0)$，球 $B$ 的中心坐标为 $(-t, 0, 0)$。
+由于球 $A, B$ 的交线在 $yz$ 平面上，对于 $x \ge -1$ 的区域 $A \cup B$ 的体积 $V(t)$ 为：
+\[
+V(t) = \pi \int_{-1}^0 \left\{ 1 - (x + t)^2 \right\} \,dx + \pi \int_0^{t+1} \left\{ 1 - (x - t)^2 \right\} \,dx
+\]
+设 $I_1 = \int_{-1}^0 \left\{ 1 - (x + t)^2 \right\} \,dx$，$I_2 = \int_0^{t+1} \left\{ 1 - (x - t)^2 \right\} \,dx$。
+计算得：
+\[
+I_1 = \left[ x - \frac{1}{3}(x + t)^3 \right]_{-1}^0 = 1 - \frac{1}{3} \left\{ t^3 - (-1 + t)^3 \right\} = -t^2 + t + \frac{2}{3}
+\]
+\[
+I_2 = \left[ x - \frac{1}{3}(x - t)^3 \right]_0^{t+1} = t + 1 - \frac{1}{3}(1 + t^3) = -\frac{1}{3}t^3 + t + \frac{2}{3}
+\]
+因此：
+\[
+V(t) = \pi(I_1 + I_2) = \pi \left( -\frac{1}{3}t^3 - t^2 + 2t + \frac{4}{3} \right)
+\]
+。
+\end{solution}
+
+\part 求 $V(t)$ 的最大值。
+\begin{solution}
+设 $f(t) = -\frac{1}{3}t^3 - t^2 + 2t + \frac{4}{3}$，则 $V(t) = \pi f(t)$。
+对 $f(t)$ 求导：
+\[
+f'(t) = -t^2 - 2t + 2
+\]
+在 $0 \le t \le 1$ 范围内，$f'(t) = 0$ 的解为 $t = -1 + \sqrt{3}$。
+通过增减表可知，当 $t = -1 + \sqrt{3}$ 时，$f(t)$ 取得最大值。
+将 $f(t)$ 除以 $-f'(t)$ 可得：
+\[
+f(t) = -f'(t) \left( -\frac{1}{3}t - \frac{1}{3} \right) + 2t + \frac{2}{3}
+\]
+因此：
+\[
+f(-1 + \sqrt{3}) = 2(-1 + \sqrt{3}) + \frac{2}{3} = -\frac{4}{3} + 2\sqrt{3}
+\]
+故 $V(t)$ 的最大值为 $\left( -\frac{4}{3} + 2\sqrt{3} \right)\pi$。
+\end{solution}
+\end{parts}
+
+\question
+设 $a > 0$。由曲线 $y = e^{-x^2}$、$x$ 轴、$y$ 轴以及直线 $x = a$ 所围成的图形绕 $y$ 轴旋转一周所得的旋转体设为 $A$。
+\begin{parts}
+\part 求 $A$ 的体积 $V$。
+\begin{solution}
+利用柱壳法求体积：
+\[
+V = \int_0^a 2\pi x \cdot e^{-x^2} \,dx = 2\pi \left[ -\frac{1}{2}e^{-x^2} \right]_0^a = \pi(1 - e^{-a^2})
+\]
+。
+\end{solution}
+
+\part 通过点 $(t, 0)$ ($-a \le t \le a$) 且垂直于 $x$ 轴的平面切割 $A$，所得截面的面积为 $S(t)$。证明不等式 $S(t) \le \int_{-a}^a e^{-(s^2 + t^2)} \,ds$。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image286.png}
+        \includegraphics[width=0.4\textwidth]{images/image287.png}
+    \end{figure}
+    \fi
+\begin{solution}
+在垂直于 $xy$ 平面的方向取 $z$ 轴，考虑平面 $y = k$ 切割 $A$ 的截口：
+(i) 当 $0 \le k \le e^{-a^2}$ 时，截口为 $x^2 + z^2 \le a^2$，即 $z = \pm \sqrt{a^2 - x^2}$。
+(ii) 当 $e^{-a^2} \le k \le 1$ 时，截口为 $x^2 + z^2 \le -\log k$，即 $z = \pm \sqrt{-\log k}$。
+对于平面 $x = t$，由上述可知其截面面积为：
+\[
+S(t) = \int_{-\sqrt{a^2 - t^2}}^{\sqrt{a^2 - t^2}} e^{-(z^2 + t^2)} \,dz \le \int_{-a}^a e^{-(z^2 + t^2)} \,dz = \int_{-a}^a e^{-(s^2 + t^2)} \,ds
+\]
+。
+\end{solution}
+
+\part 证明不等式 $\sqrt{\pi(1 - e^{-a^2})} \le \int_{-a}^a e^{-x^2} \,dx$。
+\begin{solution}
+由 (2) 可知，$V = \int_{-a}^a S(t) \,dt \le \int_{-a}^a \left( \int_{-a}^a e^{-(s^2 + t^2)} \,ds \right) \,dt$。
+\[
+\int_{-a}^a e^{-t^2} \left( \int_{-a}^a e^{-s^2} \,ds \right) \,dt = \left( \int_{-a}^a e^{-x^2} \,dx \right)^2
+\]
+由于 $V = \pi(1 - e^{-a^2})$，则有：
+\[
+\pi(1 - e^{-a^2}) \le \left( \int_{-a}^a e^{-x^2} \,dx \right)^2
+\]
+两边开平方得：
+\[
+\sqrt{\pi(1 - e^{-a^2})} \le \int_{-a}^a e^{-x^2} \,dx
+\]
+。
+\end{solution}
+\end{parts}
+
+\question
+一般项为 $a_n = \frac{n!}{n^n}$ 的数列 $\{a_n\}$，回答下列问题。
+\begin{parts}
+    \part 证明 $\lim_{n \to \infty} a_n = 0$。
+    \begin{solution}
+        当 $n \ge 2$ 时， $n! = 1 \cdot 2 \cdot 3 \cdot \cdots \cdot (n-1)n \le 1 \cdot n \cdot n \cdot \cdots \cdot n = n^{n-1}$，
+        \[
+        0 < \frac{n!}{n^n} \le \frac{n^{n-1}}{n^n} = \frac{1}{n}
+        \]
+        因此，$\lim_{n \to \infty} a_n = \lim_{n \to \infty} \frac{n!}{n^n} = 0$。
+    \end{solution}
+
+    \part 求 $\lim_{n \to \infty} \frac{a_n}{a_{n+1}}$。
+    \begin{solution}
+        $\frac{a_n}{a_{n+1}} = \frac{n!}{n^n} \cdot \frac{(n+1)^{n+1}}{(n+1)!} = \frac{(n+1)^{n+1}}{n^n(n+1)} = \frac{(n+1)^n}{n^n} = \left(1 + \frac{1}{n}\right)^n$。
+        \[
+        \lim_{n \to \infty} \frac{a_n}{a_{n+1}} = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e
+        \]
+    \end{solution}
+
+    \part 对于 2 以上的整数 $k$，用 $k$ 表示 $\lim_{n \to \infty} \left(\frac{a_{kn}}{a_n}\right)^{\frac{1}{n}}$。
+    \begin{solution}
+        对于 2 以上的整数 $k$，令 $b_n = \log \left(\frac{a_{kn}}{a_n}\right)^{\frac{1}{n}} = \frac{1}{n} \log \frac{a_{kn}}{a_n}$。
+        \begin{align*}
+        b_n &= \frac{1}{n} \log \frac{(kn)!}{(kn)^{kn}} \cdot \frac{n^n}{n!} = \frac{1}{n} \log \frac{(kn)!}{n!} \left(\frac{1}{k^k n^{k-1}}\right)^n = \frac{1}{n} \log \frac{(kn)!}{n!} - \log k^k n^{k-1} \\
+        &= \frac{1}{n} \{ \log(n+1) + \log(n+2) + \cdots + \log(kn) \} - k \log k - (k-1) \log n \\
+        &= \frac{1}{n} \{ \log(n+1) + \log(n+2) + \cdots + \log(kn) \} - (k-1) \log n - k \log k \\
+        &= \frac{1}{n} \{ \log(n+1) + \log(n+2) + \cdots + \log(kn) - (kn-n) \log n \} - k \log k \\
+        &= \frac{1}{n} \left\{ \log \frac{n+1}{n} + \log \frac{n+2}{n} + \cdots + \log \frac{n+(k-1)n}{n} \right\} - k \log k \\
+        &= \frac{1}{n} \left\{ \log \left(1 + \frac{1}{n}\right) + \log \left(1 + \frac{2}{n}\right) + \cdots + \log \left(1 + \frac{(k-1)n}{n}\right) \right\} - k \log k
+        \end{align*}
+        \[
+        \lim_{n \to \infty} b_n = \int_{0}^{k-1} \log(1+x) \,dx - k \log k
+        \]
+        \[
+        = [(1+x) \log(1+x)]_{0}^{k-1} - \int_{0}^{k-1} \,dx - k \log k
+        \]
+        \[
+        = k \log k - (k-1) - k \log k = 1-k
+        \]
+        因为 $\left(\frac{a_{kn}}{a_n}\right)^{\frac{1}{n}} = e^{b_n}$，所以 $\lim_{n \to \infty} \left(\frac{a_{kn}}{a_n}\right)^{\frac{1}{n}} = e^{1-k}$。
+    \end{solution}
+\end{parts}
+
+\question
+对于 $a > 0$，函数 $f(x)$ 满足 $f(x) = \int_{-a}^{a} \left\{ \frac{e^{-x}}{2a} + f(t) \sin t \right\} \,dt$。
+\begin{parts}
+    \part 求 $f(x)$。
+    \begin{solution}
+        $f(x) = \int_{-a}^{a} \frac{e^{-x}}{2a} \,dt + \int_{-a}^{a} f(t) \sin t \,dt = \frac{e^{-x}}{2a}(a+a) + \int_{-a}^{a} f(t) \sin t \,dt = e^{-x} + \int_{-a}^{a} f(t) \sin t \,dt$。
+        此处，令 $C = \int_{-a}^{a} f(t) \sin t \,dt$，则 $f(x) = e^{-x} + C \cdots (1)$。
+        \begin{align*}
+        C &= \int_{-a}^{a} (e^{-t} + C) \sin t \,dt = \int_{-a}^{a} e^{-t} \sin t \,dt + C \int_{-a}^{a} \sin t \,dt \\
+        &= \int_{-a}^{a} e^{-t} \sin t \,dt - C [\cos t]_{-a}^{a} = \int_{-a}^{a} e^{-t} \sin t \,dt - C(\cos a - \cos(-a)) \\
+        &= \int_{-a}^{a} e^{-t} \sin t \,dt \cdots (2)
+        \end{align*}
+        由于 $(e^{-t} \sin t)' = e^{-t}(-\sin t + \cos t)$，$(e^{-t} \cos t)' = e^{-t}(-\cos t - \sin t)$，
+        则 $(e^{-t} \sin t + e^{-t} \cos t)' = -2e^{-t} \sin t$，故 $e^{-t} \sin t = -\frac{1}{2}(e^{-t} \sin t + e^{-t} \cos t)'$。
+        由 (2) 得，$C = -\frac{1}{2} [e^{-t} \sin t + e^{-t} \cos t]_{-a}^{a}$，
+        \begin{align*}
+        C &= -\frac{1}{2} \{e^{-a} \sin a - e^a \sin(-a)\} - \frac{1}{2} \{e^{-a} \cos a - e^a \cos(-a)\} \\
+        &= -\frac{1}{2} (e^a + e^{-a}) \sin a + \frac{1}{2} (e^a - e^{-a}) \cos a
+        \end{align*}
+        故由 (1) 得，$f(x) = e^{-x} - \frac{1}{2}(e^a + e^{-a}) \sin a + \frac{1}{2}(e^a - e^{-a}) \cos a$。
+    \end{solution}
+
+    \part 在 $0 < a \le 2\pi$ 范围内，求 $g(a) = \int_{-a}^{a} f(t) \sin t \,dt$ 的最小值及对应的 $a$ 值。
+    \begin{solution}
+        由于 $g(a) = C = \int_{-a}^{a} e^{-t} \sin t \,dt$，
+        \[
+        g'(a) = e^{-a} \sin a - e^a \sin(-a) \cdot (-1) = (e^{-a} - e^a) \sin a
+        \]
+        在 $0 < a \le 2\pi$ 时，$g(a)$ 的增减表如下：
+        \begin{center}
+        \begin{tabular}{|c||c|c|c|c|c|}
+        \hline
+        $a$ & 0 & $\cdots$ & $\pi$ & $\cdots$ & $2\pi$ \\ \hline
+        $g'(a)$ & 0 & $-$ & 0 & $+$ & 0 \\ \hline
+        $g(a)$ & & $\searrow$ & & $\nearrow$ & \\ \hline
+        \end{tabular}
+        \end{center}
+        因此，$g(a)$ 在 $a = \pi$ 时取得最小值。
+        \[
+        g(\pi) = -\frac{1}{2}(e^\pi + e^{-\pi}) \sin \pi + \frac{1}{2}(e^\pi - e^{-\pi}) \cos \pi = -\frac{1}{2}(e^\pi - e^{-\pi})
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+考虑射线 $l: y = x \ (x \ge 0)$ 和抛物线 $C: y = \frac{\sqrt{2}}{4}x^2 + \frac{\sqrt{2}}{2}$。回答下列问题。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image291.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 求抛物线 $C$ 与射线 $l$ 切点的坐标。
+    \begin{solution}
+        联立 $l: y = x \ (x \ge 0) \cdots (1)$ 与 $C: y = \frac{\sqrt{2}}{4}x^2 + \frac{\sqrt{2}}{2} \cdots (2)$：
+        \[
+        \frac{\sqrt{2}}{4}x^2 + \frac{\sqrt{2}}{2} = x, \quad \sqrt{2}x^2 - 4x + 2\sqrt{2} = 0
+        \]
+        由此得 $\sqrt{2}(x-\sqrt{2})^2 = 0$，故 $x = \sqrt{2}$。接点 $T$ 的坐标为 $(\sqrt{2}, \sqrt{2})$。
+    \end{solution}
+
+    \part 设 $t \ge 0$。点 $A(t)$ 在 $l$ 上且到原点的距离为 $t$。求通过 $A(t)$ 且与 $l$ 垂直的直线与抛物线 $C$ 的公共点的坐标（用 $t$ 表示）。
+    \begin{solution}
+        射线 $l$ 上的点 $A(t)$ 的坐标满足 $OA(t) = t$，故 $A(t) = \left(\frac{\sqrt{2}}{2}t, \frac{\sqrt{2}}{2}t\right)$。
+        通过 $A(t)$ 且垂直于 $l$ 的直线方程为：
+        \[
+        y - \frac{\sqrt{2}}{2}t = -\left(x - \frac{\sqrt{2}}{2}t\right), \quad y = -x + \sqrt{2}t \cdots (3)
+        \]
+        联立 (2)(3) 得 $\frac{\sqrt{2}}{4}x^2 + \frac{\sqrt{2}}{2} = -x + \sqrt{2}t$，即 $\sqrt{2}x^2 + 4x + 2\sqrt{2} - 4\sqrt{2}t = 0$。
+        \[
+        x^2 + 2\sqrt{2}x + 2 - 4t = 0, \quad x = -\sqrt{2} \pm 2\sqrt{t}
+        \]
+        由 (3) 得 $y = \sqrt{2} \mp 2\sqrt{t} + \sqrt{2}t$。所求公共点的坐标为：
+        \[
+        (-\sqrt{2} + 2\sqrt{t}, \sqrt{2} - 2\sqrt{t} + \sqrt{2}t), \quad (-\sqrt{2} - 2\sqrt{t}, \sqrt{2} + 2\sqrt{t} + \sqrt{2}t)
+        \]
+    \end{solution}
+
+    \part 求由抛物线 $C$、射线 $l$ 及 $y$ 轴所围成的图形绕射线 $l$ 旋转一周所得旋转体的体积。
+    \begin{solution}
+        设 $P(t)$ 的坐标为 $(-\sqrt{2} + 2\sqrt{t}, \sqrt{2} - 2\sqrt{t} + \sqrt{2}t)$。点 $P(t)$ 到 $A(t)$ 的距离为 $d(t)$：
+        \[
+        d(t) = \sqrt{2} \left( \frac{\sqrt{2}}{2}t + \sqrt{2} - 2\sqrt{t} \right) = t - 2\sqrt{2t} + 2 = (\sqrt{t} - \sqrt{2})^2
+        \]
+        设点 $(0, \frac{\sqrt{2}}{2})$ 到 $l$ 的垂足为 $B$，则 $OB = \frac{1}{2}$。由 (1) 知 $OT = 2$。
+        所求旋转体体积 $V$ 为：
+        \[
+        V = \frac{1}{3} \pi \left(\frac{1}{2}\right)^2 \cdot \frac{1}{2} + \pi \int_{\frac{1}{2}}^{2} \{d(t)\}^2 \,dt = \frac{\pi}{24} + \pi \int_{\frac{1}{2}}^{2} (\sqrt{t}-\sqrt{2})^4 \,dt
+        \]
+        令 $u = \sqrt{t} - \sqrt{2}$，则 $du = \frac{1}{2\sqrt{t}} \,dt = \frac{1}{2(u+\sqrt{2})} \,dt$：
+        \begin{align*}
+        V &= \frac{\pi}{24} + \pi \int_{-\frac{\sqrt{2}}{2}}^{0} u^4 \cdot 2(u+\sqrt{2}) \,du = \frac{\pi}{24} + 2\pi \int_{-\frac{\sqrt{2}}{2}}^{0} (u^5 + \sqrt{2}u^4) \,du \\
+        &= \frac{\pi}{24} + 2\pi \left[ \frac{u^6}{6} + \frac{\sqrt{2}}{5}u^5 \right]_{-\frac{\sqrt{2}}{2}}^{0} = \frac{\pi}{24} + \pi \left( -\frac{1}{24} \right) + \frac{2\sqrt{2}}{5}\pi \cdot \frac{1}{4\sqrt{2}} \\
+        &= \frac{\pi}{24} - \frac{\pi}{24} + \frac{\pi}{10} = \frac{\pi}{10}
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question
+在 $xyz$ 空间中，考虑由平面 $y = z$ 中满足 $|x| \le \frac{e^y + e^{-y}}{2} - 1$，$0 \le y \le \log a$ 的点构成的图形 $D$。其中 $a$ 是大于 1 的定数。求该图形 $D$ 绕 $y$ 轴旋转一周所得立体的体积。
+\begin{solution}
+    图形 $D: z = y$，$|x| \le \frac{e^y + e^{-y}}{2} - 1$，$0 \le y \le \log a$ ($a > 1$) 被垂直于 $y$ 轴的平面 $y = k$ 截断时的截面为：
+    \[
+    z = k, \quad |x| \le \frac{e^k + e^{-k}}{2} - 1, \quad 0 \le k \le \log a
+    \]
+    在平面 $y = k$ 上，该截面为线段 $AB$。将此线段绕 $y$ 轴旋转一周所得的图形是一个圆环，其外径为 $R$，内径为 $r$。
+    \[
+    R = \sqrt{k^2 + \left( \frac{e^k + e^{-k}}{2} - 1 \right)^2}, \quad r = k
+    \]
+    该圆环的面积 $S(k)$ 为：
+    \begin{align*}
+    S(k) &= \pi R^2 - \pi r^2 = \pi \left\{ k^2 + \left( \frac{e^k + e^{-k}}{2} - 1 \right)^2 \right\} - \pi k^2 = \pi \left( \frac{e^k + e^{-k}}{2} - 1 \right)^2 \\
+    &= \frac{\pi}{4} (e^{2k} + e^{-2k} - 4e^k - 4e^{-k} + 6)
+    \end{align*}
+    因此，图形 $D$ 绕 $y$ 轴旋转一周所得立体的体积 $V$ 为：
+    \begin{align*}
+    V &= \int_{0}^{\log a} S(k) \,dk = \frac{\pi}{4} \int_{0}^{\log a} (e^{2k} + e^{-2k} - 4e^k - 4e^{-k} + 6) \,dk \\
+    &= \frac{\pi}{4} \left[ \frac{1}{2}e^{2k} - \frac{1}{2}e^{-2k} - 4e^k + 4e^{-k} + 6k \right]_{0}^{\log a} \\
+    &= \frac{\pi}{4} \left\{ \frac{1}{2}(a^2 - 1) - \frac{1}{2} \left( \frac{1}{a^2} - 1 \right) - 4(a - 1) + 4 \left( \frac{1}{a} - 1 \right) + 6 \log a \right\} \\
+    &= \pi \left( \frac{a^2}{8} - \frac{1}{8a^2} - a + \frac{1}{a} + \frac{3}{2} \log a \right)
+    \end{align*}
 \end{solution}
 \end{questions}
 
@@ -10837,6 +11702,45 @@ f(0) = 4
         \]
     \end{solution}
     \end{parts}
+
+    \question
+设 $n$ 为自然数，回答下列问题。
+\begin{parts}
+    \part 证明 $\int_{0}^{1} (1-x^2)^n \,dx = \frac{4^n (n!)^2}{(2n+1)!}$。
+    \begin{solution}
+        令 $I_n = \int_{0}^{1} (1-x^2)^n \,dx$，则 $I_{n+1} = \int_{0}^{1} (1-x^2)^{n+1} \,dx$。
+        \begin{align*}
+        I_{n+1} &= [x(1-x^2)^{n+1}]_{0}^{1} - (n+1) \int_{0}^{1} x(1-x^2)^n (-2x) \,dx \\
+        &= -2(n+1) \int_{0}^{1} -x^2 (1-x^2)^n \,dx \\
+        &= (-2n-2) \int_{0}^{1} \{(1-x^2)-1\} (1-x^2)^n \,dx = (-2n-2)(I_{n+1} - I_n)
+        \end{align*}
+        由此可得 $(2n+3)I_{n+1} = (2n+2)I_n$，故 $I_{n+1} = \frac{2n+2}{2n+3}I_n$。对于 $n \ge 2$，
+        \[
+        I_n = I_1 \cdot \frac{4}{5} \cdot \frac{6}{7} \cdot \frac{8}{9} \cdot \cdots \cdot \frac{2n-2}{2n-1} \cdot \frac{2n}{2n+1}
+        \]
+        由于 $I_1 = \int_{0}^{1} (1-x^2) \,dx = 1 - \frac{1}{3} = \frac{2}{3}$，所以
+        \[
+        I_n = \frac{2}{3} \cdot \frac{4}{5} \cdot \frac{6}{7} \cdot \frac{8}{9} \cdot \cdots \cdot \frac{2n-2}{2n-1} \cdot \frac{2n}{2n+1} = 2^n n! \cdot \frac{2^n n!}{(2n+1)!} = \frac{4^n (n!)^2}{(2n+1)!}
+        \]
+        当 $n=1$ 时，$I_1 = \frac{4 \cdot (1!)^2}{3!} = \frac{2}{3}$ 成立。因此
+        \[
+        \int_{0}^{1} (1-x^2)^n \,dx = \frac{4^n (n!)^2}{(2n+1)!} \cdots (*)
+        \]
+    \end{solution}
+
+    \part 证明 $\sum_{k=0}^{n} \frac{n!}{k!(n-k)!} \frac{(-1)^k}{2k+1} = \frac{4^n (n!)^2}{(2n+1)!}$。
+    \begin{solution}
+        根据二项式定理，$(1-x^2)^n = \sum_{k=0}^{n} {}_n C_k (-x^2)^k = \sum_{k=0}^{n} {}_n C_k (-1)^k x^{2k}$。
+        \begin{align*}
+        \int_{0}^{1} (1-x^2)^n \,dx &= \int_{0}^{1} \left( \sum_{k=0}^{n} {}_n C_k (-1)^k x^{2k} \right) \,dx = \sum_{k=0}^{n} {}_n C_k (-1)^k \int_{0}^{1} x^{2k} \,dx \\
+        &= \sum_{k=0}^{n} {}_n C_k (-1)^k \frac{1}{2k+1} = \sum_{k=0}^{n} \frac{n!}{k!(n-k)!} \frac{(-1)^k}{2k+1}
+        \end{align*}
+        由此，根据 (*) 式得：
+        \[
+        \sum_{k=0}^{n} \frac{n!}{k!(n-k)!} \frac{(-1)^k}{2k+1} = \frac{4^n (n!)^2}{(2n+1)!}
+        \]
+    \end{solution}
+\end{parts}
 %improper integrals
     \question 已知广义积分
     \[
@@ -12770,6 +13674,7 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
     \begin{solution}
     \textcolor{red}{(待解)}
     \end{solution}
+
 \end{questions}
 \pagebreak
 

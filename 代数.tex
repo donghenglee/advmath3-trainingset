@@ -9726,6 +9726,52 @@ x = 18, \quad y = 9, \quad z = 6.
 此时方程为 $t^3 - 108t + 432 = 0$，因式分解为 $(t-6)^2(t+12)=0$，根为 $6, 6, -12$，均为实数。
 故正确答案为 B。
 \end{solution}
+
+\question
+回答下列问题。
+\begin{parts}
+    \part 设 $c$ 为正常数。当正实数 $x, y$ 满足 $x+y=c$ 时，用 $c$ 表示 $\left(1+\frac{1}{x}\right)\left(1+\frac{1}{y}\right)$ 的最小值。
+    \begin{solution}
+        $c$ 是正常数，当 $x+y=c$ ($x>0, y>0$) 时，设 $P = \left(1+\frac{1}{x}\right)\left(1+\frac{1}{y}\right)$，
+        \[
+        P = 1 + \frac{1}{x} + \frac{1}{y} + \frac{1}{xy} = 1 + \frac{x+y}{xy} + \frac{1}{xy} = 1 + \frac{c+1}{xy}
+        \]
+        此处，根据算术平均数与几何平均数的关系， $c = x+y \ge 2\sqrt{xy}$，故
+        \[
+        \frac{1}{xy} \ge \frac{4}{c^2}
+        \]
+        等号在 $x = y = \frac{c}{2}$ 时成立。
+        因此， $P \ge 1 + \frac{4(c+1)}{c^2} = \frac{(c+2)^2}{c^2} = \left(\frac{c+2}{c}\right)^2$，且 $P$ 在 $x = y = \frac{c}{2}$ 时取得最小值 $\left(\frac{c+2}{c}\right)^2$。
+    \end{solution}
+
+    \part 当正实数 $x, y, z$ 满足 $x+y+z=1$ 时，求 $\left(1+\frac{1}{x}\right)\left(1+\frac{1}{y}\right)\left(1-\frac{4}{3z}\right)$ 的最大值。
+    \begin{solution}
+        当 $x+y+z=1$ ($x>0, y>0, z>0$) 时，设 $Q = \left(1+\frac{1}{x}\right)\left(1+\frac{1}{y}\right)\left(1-\frac{4}{3z}\right)$。
+        此处，从 $x+y = 1-z$ 可知 $0 < z < 1$，且 $1 - \frac{4}{3z} = \frac{3z-4}{3z} < 0$。
+        于是，根据 (1) 的结果，
+        \[
+        Q = P \left(1 - \frac{4}{3z}\right) \le \left(\frac{1-z+2}{1-z}\right)^2 \left(1 - \frac{4}{3z}\right) = \left(\frac{3-z}{1-z}\right)^2 \cdot \frac{3z-4}{3z}
+        \]
+        此外，等号在 $x = y = \frac{1-z}{2}$ 时成立。
+        此处，设 $f(z) = \left(\frac{3-z}{1-z}\right)^2 \cdot \frac{3z-4}{3z} = \left(\frac{z-3}{z-1}\right)^2 \cdot \frac{3z-4}{3z}$，则
+        \begin{align*}
+        f'(z) &= 2 \cdot \frac{z-3}{z-1} \cdot \frac{2}{(z-1)^2} \cdot \frac{3z-4}{3z} + \left(\frac{z-3}{z-1}\right)^2 \cdot \frac{4}{3z^2} \\
+        &= \frac{4(z-3)}{3z(z-1)^2} \left( \frac{3z-4}{z-1} + \frac{z-3}{z} \right) = \frac{4(z-3)(4z^2-8z+3)}{3z^2(z-1)^3} \\
+        &= \frac{4(z-3)(2z-1)(2z-3)}{3z^2(z-1)^3}
+        \end{align*}
+        由此可知， $f(z)$ 的增减如下表所示：
+        \begin{center}
+        \begin{tabular}{|c||c|c|c|c|c|}
+        \hline
+        $z$ & 0 & $\cdots$ & $\frac{1}{2}$ & $\cdots$ & 1 \\ \hline
+        $f'(z)$ & & + & 0 & - & \\ \hline
+        $f(z)$ & & $\nearrow$ & $-\frac{125}{3}$ & $\searrow$ & \\ \hline
+        \end{tabular}
+        \end{center}
+        在 $z = \frac{1}{2}$ 时取得最大值 $-\frac{125}{3}$。
+        因此， $Q$ 在 $x = y = \frac{1}{4}$，$z = \frac{1}{2}$ 时取得最大值 $-\frac{125}{3}$。
+    \end{solution}
+\end{parts}
 \end{questions}
 
 \pagebreak
@@ -20218,6 +20264,187 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
         \]
     \end{solution}
     \end{parts}
+
+    \question
+定义多项式 $P(x)$ 为 $P(x) = \frac{(x+i)^7 - (x-i)^7}{2i}$。其中 $i$ 为虚数单位。回答下列问题。
+\begin{parts}
+\part 设 $P(x) = a_0 x^7 + a_1 x^6 + a_2 x^5 + a_3 x^4 + a_4 x^3 + a_5 x^2 + a_6 x + a_7$，求系数 $a_0, \dots, a_7$ 的所有值。
+\begin{solution}
+利用二项式定理展开 $(x+i)^7$ 和 $(x-i)^7$：
+\[
+P(x) = \frac{1}{2i} \left\{ \sum_{k=0}^7 \binom{7}{k} x^{7-k} i^k - \sum_{k=0}^7 \binom{7}{k} x^{7-k} (-i)^k \right\}
+\]
+当 $k$ 为偶数时，$i^k - (-i)^k = 0$；当 $k$ 为奇数时，$i^k - (-i)^k = 2i^k$。
+因此，只有 $k = 1, 3, 5, 7$ 的项被保留：
+\[
+P(x) = \frac{1}{2i} \left\{ 2 \binom{7}{1} x^6 i^1 + 2 \binom{7}{3} x^4 i^3 + 2 \binom{7}{5} x^2 i^5 + 2 \binom{7}{7} i^7 \right\}
+\]
+\[
+P(x) = 7x^6 - 35x^4 + 21x^2 - 1
+\]
+对照系数得：
+$a_0 = 0, a_1 = 7, a_2 = 0, a_3 = -35, a_4 = 0, a_5 = 21, a_6 = 0, a_7 = -1$。
+\end{solution}
+
+\part 证明：对于 $0 < \theta < \pi$，等式 $P\left( \frac{\cos\theta}{\sin\theta} \right) = \frac{\sin 7\theta}{\sin^7\theta}$ 成立。
+\begin{solution}
+设 $x = \frac{\cos\theta}{\sin\theta}$，则 $x+i = \frac{\cos\theta + i\sin\theta}{\sin\theta} = \frac{e^{i\theta}}{\sin\theta}$，$x-i = \frac{e^{-i\theta}}{\sin\theta}$。
+代入 $P(x)$ 的定义式：
+\[
+P(x) = \frac{1}{2i} \left\{ \left( \frac{e^{i\theta}}{\sin\theta} \right)^7 - \left( \frac{e^{-i\theta}}{\sin\theta} \right)^7 \right\} = \frac{1}{2i \sin^7\theta} (e^{i7\theta} - e^{-i7\theta})
+\]
+利用欧拉公式 $\sin 7\theta = \frac{e^{i7\theta} - e^{-i7\theta}}{2i}$，得：
+\[
+P\left( \frac{\cos\theta}{\sin\theta} \right) = \frac{\sin 7\theta}{\sin^7\theta}
+\]
+。
+\end{solution}
+
+\part 利用 (1) 中求得的 $a_1, a_3, a_5, a_7$，考虑多项式 $Q(x) = a_1 x^3 + a_3 x^2 + a_5 x + a_7$。设 $\theta = \frac{\pi}{7}$，对于 $k=1, 2, 3$，令 $x_k = \frac{\cos^2 k\theta}{\sin^2 k\theta}$。证明 $Q(x_k) = 0$ 成立，并求 $x_1 + x_2 + x_3$ 的值。
+\begin{solution}
+由 (1) 知 $P(x) = 7x^6 - 35x^4 + 21x^2 - 1$。注意到 $Q(x^2) = P(x)$。
+根据 (2)，若 $P(x) = 0$，则 $\sin 7\theta = 0$，即 $7\theta = m\pi$ ($m$ 为整数)。
+当 $\theta = \frac{k\pi}{7}$ ($k=1, 2, 3$) 时，$P\left( \frac{\cos k\theta}{\sin k\theta} \right) = \frac{\sin k\pi}{\sin^7 k\theta} = 0$。
+因为 $Q(x_k) = Q\left( \frac{\cos^2 k\theta}{\sin^2 k\theta} \right) = P\left( \frac{\cos k\theta}{\sin k\theta} \right)$，所以 $Q(x_k) = 0$。
+由于 $x_1, x_2, x_3$ 是三次方程 $7x^3 - 35x^2 + 21x - 1 = 0$ 的三个根，根据韦达定理：
+\[
+x_1 + x_2 + x_3 = -\frac{a_3}{a_1} = -\frac{-35}{7} = 5
+\]
+。
+\end{solution}
+\end{parts}
+
+---
+
+\question
+设 $z$ 为复数。求使复数平面上的三点 $A(1), B(z), C(z^2)$ 构成锐角三角形的 $z$ 的范围，并将其绘于图中。
+\begin{parts}
+\part 求解过程。
+\begin{solution}
+三点构成的三角形为锐角三角形，等价于三个内角均小于 $\frac{\pi}{2}$。设三点不共线，即 $z \neq 0, \pm 1$。
+(i) $\angle CAB < \frac{\pi}{2}$：对应 $\text{Re}\left( \frac{z^2 - 1}{z - 1} \right) > 0 \implies \text{Re}(z + 1) > 0 \implies \text{Re}(z) > -1$。
+(ii) $\angle ABC < \frac{\pi}{2}$：对应 $\text{Re}\left( \frac{1 - z}{z^2 - z} \right) > 0 \implies \text{Re}\left( -\frac{1}{z} \right) > 0 \implies \text{Re}(z) < 0$。
+(iii) $\angle BCA < \frac{\pi}{2}$：对应 $\text{Re}\left( \frac{z - z^2}{1 - z^2} \right) > 0 \implies \text{Re}\left( \frac{z}{1 + z} \right) > 0$。
+设 $z = x + iy$，则 $\text{Re}\left( \frac{x+iy}{x+1+iy} \right) = \frac{x(x+1) + y^2}{(x+1)^2 + y^2} > 0$。
+这表示点 $z$ 在圆 $\left( x + \frac{1}{2} \right)^2 + y^2 = \left( \frac{1}{2} \right)^2$ 的外部。
+综上所述，$z$ 的范围为：
+\[
+-1 < \text{Re}(z) < 0 \quad \text{且} \quad \left| z + \frac{1}{2} \right| > \frac{1}{2}
+\]
+。
+\end{solution}
+
+\part 轨迹图形描述。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image288.png}
+    \end{figure}
+    \fi
+\begin{solution}
+该区域在复平面上表示为：位于两条垂直直线 $x = -1$ 和 $x = 0$ 之间，且在以 $\left( -\frac{1}{2}, 0 \right)$ 为中心、半径为 $\frac{1}{2}$ 的圆之外的阴影部分（不含边界）。
+\end{solution}
+\end{parts}
+
+\question
+复数平面上的点 $P$ 按以下方式移动。
+1. 时刻 $0$ 时，$P$ 位于原点。到时刻 $1$ 为止，$P$ 沿实轴正方向以速度 $1$ 运动。移动后 $P$ 的位置记为 $Q_1(z_1)$，则 $z_1 = 1$。
+2. 时刻 $1$ 时，$P$ 在 $Q_1(z_1)$ 处将其行进方向逆时针旋转 $\frac{\pi}{4}$，到时刻 $2$ 为止沿该方向以速度 $\frac{1}{\sqrt{2}}$ 运动。移动后 $P$ 的位置记为 $Q_2(z_2)$，则 $z_2 = \frac{3+i}{2}$。
+3. 依此类推，时刻 $n$ 时，$P$ 在 $Q_n(z_n)$ 处将其行进方向逆时针旋转 $\frac{\pi}{4}$，到时刻 $n+1$ 为止沿该方向以速度 $\left( \frac{1}{\sqrt{2}} \right)^n$ 运动。移动后 $P$ 的位置记为 $Q_{n+1}(z_{n+1})$。
+其中 $n$ 为自然数。设 $\alpha = \frac{1+i}{2}$，回答下列问题。
+
+\begin{parts}
+\part 求 $z_3, z_4$。
+\begin{solution}
+由于 $\alpha = \frac{1+i}{2} = \frac{1}{\sqrt{2}} \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right)$，乘法运算 $\alpha z$ 表示将 $z$ 绕原点旋转 $\frac{\pi}{4}$ 并缩放 $\frac{1}{\sqrt{2}}$ 倍。
+根据题意，有递推关系 $z_{n+2} - z_{n+1} = \alpha(z_{n+1} - z_n)$。
+对于 $z_3$：
+\[
+z_3 = z_2 + \alpha(z_2 - z_1) = \frac{3+i}{2} + \frac{1+i}{2} \cdot \frac{1+i}{2} = \frac{3+i}{2} + \frac{i}{2} = \frac{3+2i}{2}
+\]
+。
+对于 $z_4$：
+\[
+z_4 = z_3 + \alpha(z_3 - z_2) = \frac{3+2i}{2} + \frac{1+i}{2} \cdot \frac{i}{2} = \frac{3+2i}{2} + \frac{-1+i}{4} = \frac{5+5i}{4}
+\]
+。
+\end{solution}
+
+\part 用 $\alpha, n$ 表示 $z_n$。
+\begin{solution}
+由递推关系得 $z_{n+1} - z_n = (z_2 - z_1)\alpha^{n-1} = \frac{1+i}{2}\alpha^{n-1} = \alpha^n$。
+因此，对于 $n \ge 2$：
+\[
+z_n = z_1 + \sum_{k=1}^{n-1} \alpha^k = 1 + \sum_{k=1}^{n-1} \alpha^k = \sum_{k=0}^{n-1} \alpha^k = \frac{1-\alpha^n}{1-\alpha}
+\]
+。该式对 $n=1$ 同样成立。
+\end{solution}
+
+\part 当 $P$ 沿 $Q_1(z_1), Q_2(z_2), \dots$ 移动时，$P$ 会无限接近某一点 $Q(w)$。求 $w$。
+\begin{solution}
+由于 $|\alpha| = \frac{1}{\sqrt{2}} < 1$，当 $n \to \infty$ 时，$\alpha^n \to 0$。
+因此：
+\[
+w = \lim_{n \to \infty} z_n = \frac{1}{1-\alpha} = \frac{1}{1 - \frac{1+i}{2}} = \frac{2}{1-i} = 1+i
+\]
+。
+\end{solution}
+
+\part 求所有使得 $z_n$ 的实部大于 (3) 中求得的 $w$ 的实部的 $n$。
+\begin{solution}
+$w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
+实部条件为：
+\[
+\text{Re}\left\{ (1+i) \left( 1 - \left( \frac{1}{\sqrt{2}} \right)^n \left( \cos \frac{n\pi}{4} + i \sin \frac{n\pi}{4} \right) \right) \right\} > 1
+\]
+化简得 $1 - \left( \frac{1}{\sqrt{2}} \right)^n \cos \frac{n\pi}{4} + \left( \frac{1}{\sqrt{2}} \right)^n \sin \frac{n\pi}{4} > 1$，即 $\sin \frac{n\pi}{4} - \cos \frac{n\pi}{4} > 0$。
+利用辅助角公式：$\sqrt{2} \sin \left( \frac{n}{4} - \frac{1}{4} \right) \pi > 0$。
+设 $k$ 为非负整数，则 $2k\pi < \left( \frac{n-1}{4} \right) \pi < (2k+1)\pi$，解得 $8k+1 < n < 8k+5$。
+故 $n = 8k+2, 8k+3, 8k+4$。
+\end{solution}
+\end{parts}
+
+\question
+考虑复数平面上运动的点 $z$。回答下列问题。
+\begin{parts}
+\part 证明满足等式 $|z-1| = |z+1|$ 的点 $z$ 的轨迹是虚轴。
+\begin{solution}
+等式 $|z-1| = |z+1|$ 表示点 $z$ 到点 $1$ 的距离等于点 $z$ 到点 $-1$ 的距离。
+满足该条件的点 $z$ 的集合是连接点 $1$ 和点 $-1$ 的线段的垂直平分线，即虚轴。
+\end{solution}
+
+\part 当点 $z$ 在除原点外的虚轴上运动时，求 $w = \frac{z+1}{z}$ 所描绘的图形。
+\begin{solution}
+由 $w = \frac{z+1}{z}$ 得 $wz = z+1$，即 $(w-1)z = 1$。
+显然 $w \neq 1$，故 $z = \frac{1}{w-1}$。
+将此代入 (1) 的条件 $|z-1| = |z+1|$ 中：
+\[
+\left| \frac{1}{w-1} - 1 \right| = \left| \frac{1}{w-1} + 1 \right| \implies \left| \frac{2-w}{w-1} \right| = \left| \frac{w}{w-1} \right| \implies |w-2| = |w|
+\]
+。这表示点 $w$ 到点 $2$ 的距离等于到点 $0$ 的距离，即连接 $0$ 和 $2$ 的线段的垂直平分线。
+因此，$w$ 描绘的图形是通过点 $1$ 且垂直于实轴的直线（即 $\text{Re}(w)=1$），但需排除 $w=1$（对应 $z$ 为无穷远点的情况）。
+\end{solution}
+
+\part 设 $a$ 为正实数。当点 $z$ 在虚轴上运动时，$w = \frac{z+1}{z-a}$ 所描绘的图形是一个圆。求该圆的中心和半径（需排除圆上的一点）。
+\begin{solution}
+由 $w = \frac{z+1}{z-a}$ 得 $w(z-a) = z+1$，解得 $z = \frac{aw+1}{w-1}$。
+代入条件 $|z-1| = |z+1|$：
+\[
+\left| \frac{aw+1}{w-1} - 1 \right| = \left| \frac{aw+1}{w-1} + 1 \right| \implies \left| \frac{(a-1)w+2}{w-1} \right| = \left| \frac{(a+1)w}{w-1} \right|
+\]
+两边平方得 $|(a-1)w+2|^2 = (a+1)^2 |w|^2$。
+展开并整理得：
+\[
+4aw\bar{w} - 2(a-1)w - 2(a-1)\bar{w} = 4 \implies w\bar{w} - \frac{a-1}{2a}w - \frac{a-1}{2a}\bar{w} = \frac{1}{a}
+\]
+。配方得：
+\[
+\left| w - \frac{a-1}{2a} \right|^2 = \frac{1}{a} + \frac{(a-1)^2}{4a^2} = \frac{(a+1)^2}{4a^2}
+\]
+。
+因此，圆的中心为 $\frac{a-1}{2a}$，半径为 $\frac{a+1}{2a}$（需排除 $w=1$）。
+\end{solution}
+\end{parts}
 
 \end{questions}
 

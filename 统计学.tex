@@ -34,43 +34,27 @@
 故正确答案为 B。
 \end{solution}
     \question A 和 B 两人各掷 $n + 1$ 及 $n$ 个硬币。若所有的硬币都没有偏差, 问 A 比 B 掷得较多正面的机率是多少?
-
-\begin{solution}
-设 A 掷出的正面次数为 $H_A$, 反面次数为 $T_A$; B 掷出的正面次数为 $H_B$, 反面次数为 $T_B$。
-已知 A 总共掷了 $n + 1$ 个硬币, B 总共掷了 $n$ 个硬币。
-因此有以下等式:
-\[
-H_A + T_A = n + 1
-\]
-\[
-H_B + T_B = n
-\]
-我们要计算 A 比 B 掷得较多正面的概率 $P(H_A > H_B)$。
-考虑其对立事件 $H_A \leq H_B$。将上述等式代入该不等式可得:
-\[
-(n + 1) - T_A \leq n - T_B
-\]
-整理不等式得:
-\[
-T_B + 1 \leq T_A \implies T_A > T_B
-\]
-这说明「A 的正面比 B 多」的事件等价于「A 的反面比 B 多」。
-由于硬币是均匀的, 正面和反面的出现概率具有完全的对称性, 因此有:
-\[
-P(H_A > H_B) = P(T_A > T_B)
-\]
-因为 A 比 B 多掷了一个硬币, 所以 $H_A > H_B$ 与 $T_A > T_B$ 必然有一个发生, 且这两个事件互斥。
-根据概率公理:
-\[
-P(H_A > H_B) + P(T_A > T_B) = 1
-\]
-由于两者概率相等, 设 $P(H_A > H_B) = x$, 则有:
-\[
-x + x = 1 \implies 2x = 1 \implies x = \frac{1}{2}
-\]
-所以 A 比 B 掷得较多正面的机率是 $\frac{1}{2}$。
-故选 C。
-\end{solution}
+    \begin{solution}
+        设 $A,B$ 掷出的正面次数为 $H_A,H_B$, 反面次数为 $T_A,T_B$,则有
+        \[
+        H_A + T_A = n + 1, \quad H_B + T_B = n
+        \]
+        于是由对称性,
+        \begin{align*}
+        P(H_A > H_B)&=P(T_A > T_B) \\
+        &= P(n+1-H_A>n-H_B) \\
+        &= P(H_A-H_B<1) \\
+        &= P(H_A \le H_B)
+        \end{align*}
+        且因为事件$H_A > H_B$与$H_A \le H_B$互斥,有
+        \[
+        P(H_A > H_B) + P(H_A \le H_B) = 1
+        \]
+        故
+        \[
+        P(H_A > H_B) = \frac{1}{2}
+        \]
+    \end{solution}
 
 \question 将四粒不同的球放入三个不同的箱子中, 问每个箱子都至少有一粒球的机率是多少?
 
