@@ -4628,39 +4628,39 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
 \begin{solution}
     设 $\triangle ABC$ 的三边长分别为 $BC = a, CA = b, AB = c$，并设点 $X$ 到直线 $BC, CA, AB$ 的垂线段长度分别为 $h_1, h_2, h_3$。则有：
     \[
-    \triangle BCX = \frac{1}{2}ah_1, \quad \triangle CAX = \frac{1}{2}bh_2, \quad \triangle ABX = \frac{1}{2}ch_3 \dots \text{}
+    \triangle BCX = \frac{1}{2}ah_1, \quad \triangle CAX = \frac{1}{2}bh_2, \quad \triangle ABX = \frac{1}{2}ch_3 \dots 
     \]
-    已知条件为 $2 \le \triangle ABX + \triangle BCX + \triangle CAX \le 3 \dots ①$。
+    已知条件为 $2 \le \triangle ABX + \triangle BCX + \triangle CAX \le 3 \dots (1)$。
     
     首先，若点 $X$ 在 $\triangle ABC$ 的内部或边上，则：
     \[
     \triangle ABX + \triangle BCX + \triangle CAX = \triangle ABC = 1
     \]
-    这与条件 ① 不符，因此点 $X$ 必然在 $\triangle ABC$ 的外部。
+    这与条件 (1) 不符，因此点 $X$ 必然在 $\triangle ABC$ 的外部。
     
     将 $\triangle ABC$ 的外部以直线 $AB, BC, CA$ 为边界划分为 6 个区域。
     以点 $X$ 位于直线 $BC$ 的 $A$ 点异侧、且在直线 $CA$ 的 $B$ 点同侧及直线 $AB$ 的 $C$ 点同侧的区域为例（如图所示）：
     此时 $\triangle ABX + \triangle CAX - \triangle BCX = \triangle ABC = 1$。
-    由此得 $\triangle ABX + \triangle CAX = 1 + \triangle BCX$，代入 ① 得：
+    由此得 $\triangle ABX + \triangle CAX = 1 + \triangle BCX$，代入 (1) 得：
     \[
-    2 \le 1 + 2\triangle BCX \le 3 \implies 1 \le 2ah_1 \le 2 \dots ②
+    2 \le 1 + 2\triangle BCX \le 3 \implies 1 \le 2ah_1 \le 2 \dots (2)
     \]
     设从 $A$ 到直线 $BC$ 的垂线长为 $h$，由 $\triangle ABC = \frac{1}{2}ah = 1$ 得 $h = \frac{2}{a}$。
-    由 ② 可知 $\frac{1}{a} \le h_1 \le \frac{2}{a}$，即 $\frac{1}{2}h \le h_1 \le h$。
+    由 (2) 可知 $\frac{1}{a} \le h_1 \le \frac{2}{a}$，即 $\frac{1}{2}h \le h_1 \le h$。
     在此区域内，点 $X$ 的存在范围面积为：
     \[
-    \left\{ \left( \frac{4}{2} \right)^2 - \left( \frac{3}{2} \right)^2 \right\} \times \triangle ABC = \frac{7}{4} \dots ⑤ \text{}
+    \left\{ \left( \frac{4}{2} \right)^2 - \left( \frac{3}{2} \right)^2 \right\} \times \triangle ABC = \frac{7}{4} \dots (5) 
     \]
 
     同理，考察点 $X$ 在 $A$ 的同侧、但相对于直线 $BC$ 与 $B, C$ 异侧的其他区域：
     其面积计算为：
     \[
-    \left\{ 1^2 - \left( \frac{1}{2} \right)^2 \right\} \times \triangle ABC = \frac{3}{4} \dots ⑦ \text{}
+    \left\{ 1^2 - \left( \frac{1}{2} \right)^2 \right\} \times \triangle ABC = \frac{3}{4} \dots (7) 
     \]
 
     由于 $\triangle ABC$ 外部共有 3 组对称的类似区域，点 $X$ 运动范围的总面积为：
     \[
-    \left( \frac{7}{4} + \frac{3}{4} \right) \times 3 = \frac{15}{2} \dots \text{}
+    \left( \frac{7}{4} + \frac{3}{4} \right) \times 3 = \frac{15}{2} \dots 
     \]
     因此，点 $X$ 运动范围的面积为 $\frac{15}{2}$。
 \end{solution}
@@ -4682,7 +4682,7 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
         又由于 $\angle AOB$ 是圆心角，$\angle ADB = \frac{1}{2} \angle AOB$。
         在图中，由于 $AC=CD$ 且 $AB=BC$，可推导得 $\angle AOB = \frac{\pi}{4}$。
         因此：
-        \[ \angle ACB = \angle ADB = \frac{1}{2} \cdot \frac{\pi}{4} = \frac{\pi}{8} \text{} \]
+        \[ \angle ACB = \angle ADB = \frac{1}{2} \cdot \frac{\pi}{4} = \frac{\pi}{8}  \]
     \end{solution}
 
     \part 求 $BC$ 的长度。
@@ -4692,23 +4692,23 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
         由圆内接四边形性质，$\angle ABC = \pi - \angle ADC = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$。
         在 $\triangle ABC$ 中应用余弦定理：
         \[ AC^2 = x^2 + x^2 - 2x^2 \cos \frac{3\pi}{4} \]
-        \[ (\sqrt{2})^2 = 2x^2 - 2x^2 \left( -\frac{\sqrt{2}}{2} \right) \quad \Rightarrow \quad 2 = (2 + \sqrt{2})x^2 \text{} \]
+        \[ (\sqrt{2})^2 = 2x^2 - 2x^2 \left( -\frac{\sqrt{2}}{2} \right) \quad \Rightarrow \quad 2 = (2 + \sqrt{2})x^2  \]
         解得：
-        \[ x^2 = \frac{2}{2 + \sqrt{2}} = \frac{2(2 - \sqrt{2})}{4 - 2} = 2 - \sqrt{2} \text{} \]
+        \[ x^2 = \frac{2}{2 + \sqrt{2}} = \frac{2(2 - \sqrt{2})}{4 - 2} = 2 - \sqrt{2}  \]
         故 $BC = \sqrt{2 - \sqrt{2}}$。
     \end{solution}
 
     \part 设线段 $AC$ 与线段 $BD$ 的交点为 $E$，求三角形 $BCE$ 的面积。
     \begin{solution}
         首先计算 $\triangle ABC$ 的面积：
-        \[ S_{\triangle ABC} = \frac{1}{2} x^2 \sin \frac{3\pi}{4} = \frac{1}{2} (2 - \sqrt{2}) \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2} - 1}{2} \text{} \]
+        \[ S_{\triangle ABC} = \frac{1}{2} x^2 \sin \frac{3\pi}{4} = \frac{1}{2} (2 - \sqrt{2}) \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2} - 1}{2}  \]
         由于 $AB = BC$，在圆中可得 $\angle ADB = \angle BDC$，因此 $DE$ 是 $\angle ADC$ 的角平分线。
         根据角平分线定理，在 $\triangle ADC$ 中：
-        \[ AE : EC = DA : DC = 2 : \sqrt{2} = \sqrt{2} : 1 \text{} \]
+        \[ AE : EC = DA : DC = 2 : \sqrt{2} = \sqrt{2} : 1  \]
         因此，$\triangle BCE$ 的面积与 $\triangle ABC$ 的面积之比为：
-        \[ S_{\triangle BCE} = \frac{EC}{AE + EC} S_{\triangle ABC} = \frac{1}{\sqrt{2} + 1} S_{\triangle ABC} = (\sqrt{2} - 1) S_{\triangle ABC} \text{} \]
+        \[ S_{\triangle BCE} = \frac{EC}{AE + EC} S_{\triangle ABC} = \frac{1}{\sqrt{2} + 1} S_{\triangle ABC} = (\sqrt{2} - 1) S_{\triangle ABC}  \]
         代入 $S_{\triangle ABC}$ 的值：
-        \[ S_{\triangle BCE} = (\sqrt{2} - 1) \cdot \frac{\sqrt{2} - 1}{2} = \frac{(\sqrt{2} - 1)^2}{2} = \frac{3 - 2\sqrt{2}}{2} \text{} \]
+        \[ S_{\triangle BCE} = (\sqrt{2} - 1) \cdot \frac{\sqrt{2} - 1}{2} = \frac{(\sqrt{2} - 1)^2}{2} = \frac{3 - 2\sqrt{2}}{2}  \]
         答：$S_{\triangle BCE} = \frac{3 - 2\sqrt{2}}{2}$。
     \end{solution}
 \end{parts}
@@ -10766,63 +10766,63 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
 注：两个函数的图像在某点直交，是指该点为两图像的共有点，且在该点处的切线互相垂直。
 
 \begin{solution}
-    设二次函数为 $y = ax^2 + bx + c \ (a \ne 0)$ \dots ①。
-    若它与 $y = x^2$ \dots ② 的图像在 2 个交点处直交，设这两个交点的横坐标为 $x = \alpha, \beta \ (\alpha < \beta)$。
-    联立 ① ② 可得：
+    设二次函数为 $y = ax^2 + bx + c \ (a \ne 0)$ \dots (1)。
+    若它与 $y = x^2$ \dots (2) 的图像在 2 个交点处直交，设这两个交点的横坐标为 $x = \alpha, \beta \ (\alpha < \beta)$。
+    联立 (1) (2) 可得：
     \[
-    (a - 1)x^2 + bx + c = 0 \dots ③ \text{}
+    (a - 1)x^2 + bx + c = 0 \dots (3) 
     \]
     由于有 2 个不同实根，需满足：
     \[
-    a \ne 1 \dots ④, \quad D = b^2 - 4c(a - 1) > 0 \dots ⑤ \text{}
+    a \ne 1 \dots (4), \quad D = b^2 - 4c(a - 1) > 0 \dots (5) 
     \]
-    根据韦达定理，由 ③ 可得：
+    根据韦达定理，由 (3) 可得：
     \[
-    \alpha + \beta = -\frac{b}{a - 1} \dots ⑥, \quad \alpha\beta = \frac{c}{a - 1} \dots ⑦ \text{}
+    \alpha + \beta = -\frac{b}{a - 1} \dots (6), \quad \alpha\beta = \frac{c}{a - 1} \dots (7) 
     \]
-    由 ① 得 $y' = 2ax + b$，由 ② 得 $y' = 2x$。
+    由 (1) 得 $y' = 2ax + b$，由 (2) 得 $y' = 2x$。
     在两个交点处切线直交的条件为：
     \[
-    2\alpha(2a\alpha + b) = -1 \dots ⑧, \quad 2\beta(2a\beta + b) = -1 \dots ⑨ \text{}
+    2\alpha(2a\alpha + b) = -1 \dots (8), \quad 2\beta(2a\beta + b) = -1 \dots (9) 
     \]
-    由 ⑧ - ⑨ 得，$4a(\alpha^2 - \beta^2) + 2b(\alpha - \beta) = 0$。
+    由 (8) - (9) 得，$4a(\alpha^2 - \beta^2) + 2b(\alpha - \beta) = 0$。
     因为 $\alpha < \beta$，约去 $\alpha - \beta$ 得 $2a(\alpha + \beta) + b = 0$。
-    代入 ⑥ 得：
+    代入 (6) 得：
     \[
-    -2a \cdot \frac{b}{a - 1} + b = 0 \implies -ab - b = 0 \implies b(a + 1) = 0 \dots ⑩ \text{}
+    -2a \cdot \frac{b}{a - 1} + b = 0 \implies -ab - b = 0 \implies b(a + 1) = 0 \dots (10) 
     \]
-    由 ⑧ + ⑨ 得，$4a(\alpha^2 + \beta^2) + 2b(\alpha + \beta) = -2$。
-    利用 $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$ 并代入 ⑥ ⑦ 得：
+    由 (8) + (9) 得，$4a(\alpha^2 + \beta^2) + 2b(\alpha + \beta) = -2$。
+    利用 $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$ 并代入 (6) (7) 得：
     \[
     2a \left\{ \left( -\frac{b}{a-1} \right)^2 - 2 \cdot \frac{c}{a-1} \right\} + b \left( -\frac{b}{a-1} \right) = -1
     \]
     \[
-    \frac{2ab^2}{(a-1)^2} - \frac{4ac + b^2}{a-1} = -1 \dots ⑪ \text{}
+    \frac{2ab^2}{(a-1)^2} - \frac{4ac + b^2}{a-1} = -1 \dots (11) 
     \]
-    根据 ⑩，分以下两种情况讨论：
+    根据 (10)，分以下两种情况讨论：
 
     \textbf{(i) 当 $b = 0$ 时：}
-    由 ⑪ 得 $-\frac{4ac}{a - 1} = -1$，解得 $c = \frac{a - 1}{4a}$。
-    代入 ⑤ 检验条件：
+    由 (11) 得 $-\frac{4ac}{a - 1} = -1$，解得 $c = \frac{a - 1}{4a}$。
+    代入 (5) 检验条件：
     \[
     \frac{-4(a-1)^2}{4a} > 0 \implies \frac{(a-1)^2}{a} < 0
     \]
-    由于 $(a-1)^2 > 0$，故需 $a < 0$。此时满足 ④。
+    由于 $(a-1)^2 > 0$，故需 $a < 0$。此时满足 (4)。
 
     \textbf{(ii) 当 $a = -1$ 时：}
-    将 $a = -1$ 代入 ⑪：
+    将 $a = -1$ 代入 (11)：
     \[
-    -\frac{2b^2}{4} + \frac{-4c + b^2}{2} = -1 \implies -4c = -2 \implies c = \frac{1}{2} \text{}
+    -\frac{2b^2}{4} + \frac{-4c + b^2}{2} = -1 \implies -4c = -2 \implies c = \frac{1}{2} 
     \]
-    此时 $a = -1$ 满足 ④。代入 ⑤ 检验：
+    此时 $a = -1$ 满足 (4)。代入 (5) 检验：
     \[
-    b^2 - 4 \cdot \frac{1}{2}(-2) = b^2 + 4 > 0 \text{}
+    b^2 - 4 \cdot \frac{1}{2}(-2) = b^2 + 4 > 0 
     \]
     此条件对任意实数 $b$ 均成立。
 
     综上所述，所求的二次函数为：
     \[
-    y = ax^2 + \frac{a - 1}{4a} \ (a < 0), \quad y = -x^2 + bx + \frac{1}{2} \ (b \text{ 为任意实数}) \text{}
+    y = ax^2 + \frac{a - 1}{4a} \ (a < 0), \quad y = -x^2 + bx + \frac{1}{2} \ (b \text{ 为任意实数}) 
     \]
 \end{solution}
 
@@ -10839,10 +10839,10 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
 
 \part 求 $\triangle ABP$ 的垂心坐标。
 \begin{solution}
-从 $P$ 向边 $AB$ 引出的垂线方程为 $x = t \quad \cdots \cdots \text{①}$。
+从 $P$ 向边 $AB$ 引出的垂线方程为 $x = t \quad \cdots \cdots (1)$。
 又因为 $\overrightarrow{BP} = (t - 2, \sqrt{3}t)$，所以从 $A$ 向边 $BP$ 引出的垂线方程为
-\[ (t - 2)(x + 2) + \sqrt{3}ty = 0 \quad \cdots \cdots \text{②} \]
-联立 ① 和 ②，得 $(t - 2)(t + 2) + \sqrt{3}ty = 0$，解得 $y = \frac{4 - t^2}{\sqrt{3}t}$。
+\[ (t - 2)(x + 2) + \sqrt{3}ty = 0 \quad \cdots \cdots (2) \]
+联立 (1) 和 (2)，得 $(t - 2)(t + 2) + \sqrt{3}ty = 0$，解得 $y = \frac{4 - t^2}{\sqrt{3}t}$。
 因此，$\triangle APB$ 的垂心 $H$ 的坐标为 $\left( t, \frac{4 - t^2}{\sqrt{3}t} \right)$。
 \end{solution}
 
@@ -10850,9 +10850,9 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
 \begin{solution}
 由于 $M, Q, R$ 分别是各边的中点，故有 $RQ \parallel AB, QM \parallel PA, RM \parallel PB$。
 由 $H$ 是 $\triangle APB$ 的垂心得：
-\[ PH \perp RQ, \quad BH \perp QM, \quad AH \perp RM \quad \cdots \cdots \text{③} \]
+\[ PH \perp RQ, \quad BH \perp QM, \quad AH \perp RM \quad \cdots \cdots (3) \]
 在折叠成的四面体中，设顶点 $P, A, B$ 重合于点 $C$。
-由 ③ 知，取 $s$ 为正实数，点 $C$ 的坐标可表示为 $\left( t, \frac{4 - t^2}{\sqrt{3}t}, s \right)$。
+由 (3) 知，取 $s$ 为正实数，点 $C$ 的坐标可表示为 $\left( t, \frac{4 - t^2}{\sqrt{3}t}, s \right)$。
 由 $CM = 2$ 可得 $t^2 + \left( \frac{4 - t^2}{\sqrt{3}t} \right)^2 + s^2 = 4$，即
 \[ s^2 = 4 - t^2 - \frac{(4 - t^2)^2}{3t^2} = \frac{-4t^4 + 20t^2 - 16}{3t^2} \]
 解得 $s = \frac{2\sqrt{-t^4 + 5t^2 - 4}}{\sqrt{3}t}$。设四面体 $CMQR$ 的体积为 $V$，则
@@ -10885,7 +10885,7 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
         \begin{enumerate}
             \item[(i)] 若 $P \in D_1$ (即 $a + 3b \ge 10$)，则 $d(P) = AP = \sqrt{(a-1)^2 + (b-3)^2}$。
             \item[(ii)] 若 $P \in D_2$ (即 $0 < a + 3b < 10$)，点 $P$ 到直线 $3x - y = 0$ 的距离为：
-            \[ d(P) = \frac{|3a - b|}{\sqrt{3^2 + (-1)^2}} = \frac{1}{\sqrt{10}}|3a - b| \text{} \]
+            \[ d(P) = \frac{|3a - b|}{\sqrt{3^2 + (-1)^2}} = \frac{1}{\sqrt{10}}|3a - b|  \]
             \item[(iii)] 若 $P \in D_3$ (即 $a + 3b \le 0$)，则 $d(P) = OP = \sqrt{a^2 + b^2}$。
         \end{enumerate}
     \end{solution}
@@ -11748,21 +11748,21 @@ x^2 + y^2 + 5x + 5y + 12 = 0
 \part 求直线 $QR$ 的方程。
 \begin{solution}
 由于直线 $QR$ 不与 $x$ 轴平行，设其法向量的分量为 $(1, m)$，则方程可表示为
-\[ (x - b) + my = 0, \quad x + my - b = 0 \quad \cdots \cdots \text{①} \]
-因为 ① 与圆 $C : x^2 + (y - 1)^2 = 1$ 相切，点 $(0, 1)$ 到直线的距离等于半径 $1$：
+\[ (x - b) + my = 0, \quad x + my - b = 0 \quad \cdots \cdots (1) \]
+因为 (1) 与圆 $C : x^2 + (y - 1)^2 = 1$ 相切，点 $(0, 1)$ 到直线的距离等于半径 $1$：
 \[ \frac{|m - b|}{\sqrt{1 + m^2}} = 1, \quad (m - b)^2 = 1 + m^2 \]
-解得 $2bm = b^2 - 1$，即 $m = \frac{b^2 - 1}{2b}$。代入 ① 得
-\[ x + \frac{b^2 - 1}{2b} y - b = 0, \quad 2bx + (b^2 - 1)y - 2b^2 = 0 \quad \cdots \cdots \text{②} \]
+解得 $2bm = b^2 - 1$，即 $m = \frac{b^2 - 1}{2b}$。代入 (1) 得
+\[ x + \frac{b^2 - 1}{2b} y - b = 0, \quad 2bx + (b^2 - 1)y - 2b^2 = 0 \quad \cdots \cdots (2) \]
 \end{solution}
 
 \part 用 $a, b$ 表示点 $R$ 的坐标。
 \begin{solution}
 根据 (1) 的结果，将 $b$ 替换为 $-a$ 可得直线 $PR$ 的方程：
-\[ -2ax + (a^2 - 1)y - 2a^2 = 0 \quad \cdots \cdots \text{③} \]
-联立 ② 和 ③，消去 $x$ 得
+\[ -2ax + (a^2 - 1)y - 2a^2 = 0 \quad \cdots \cdots (3) \]
+联立 (2) 和 (3)，消去 $x$ 得
 \[ \{a(b^2 - 1) + b(a^2 - 1)\}y = 2ab^2 + 2a^2 b \]
 \[ \{ab(a + b) - (a + b)\}y = 2ab(a + b), \quad y = \frac{2ab}{ab - 1} \quad (ab \neq 1, a + b > 0) \]
-将 $y$ 代入 ② 得
+将 $y$ 代入 (2) 得
 \[ 2bx + \frac{2ab}{ab - 1}(b^2 - 1) - 2b^2 = 0 \]
 \[ x + \frac{a}{ab - 1}(b^2 - 1) - b = 0, \quad x = -\frac{a}{ab - 1}(b^2 - 1) + b = \frac{a - b}{ab - 1} \]
 由此得 $R \left( \frac{a - b}{ab - 1}, \frac{2ab}{ab - 1} \right)$。
@@ -11774,14 +11774,14 @@ x^2 + y^2 + 5x + 5y + 12 = 0
 \[ QR^2 = \left( \frac{a - b}{ab - 1} - b \right)^2 + \left( \frac{2ab}{ab - 1} \right)^2 = \frac{a^2(1 - b^2)^2 + 4a^2 b^2}{(ab - 1)^2} = \frac{a^2(1 + b^2)^2}{(ab - 1)^2} \]
 故 $QR = \frac{a(1 + b^2)}{ab - 1}$。同理可得 $PR = \frac{b(1 + a^2)}{ab - 1}$。
 由于 $PQ = a + b$，则周长 $T$ 为
-\[ T = a + b + \frac{a(1 + b^2)}{ab - 1} + \frac{b(1 + a^2)}{ab - 1} = \frac{2ab(a + b)}{ab - 1} \quad \cdots \cdots \text{④} \]
+\[ T = a + b + \frac{a(1 + b^2)}{ab - 1} + \frac{b(1 + a^2)}{ab - 1} = \frac{2ab(a + b)}{ab - 1} \quad \cdots \cdots (4) \]
 \end{solution}
 
 \part 当点 $P, Q$ 在满足条件「$PQ = 4$ 且 $R$ 的 $y$ 坐标为正」的情况下运动时，求使 $T$ 最小的 $a$ 值及此时 $T$ 的值。
 \begin{solution}
 由条件知 $a + b = 4$ 且 $ab > 1$。
 根据均值不等式，$\sqrt{ab} \leqq \frac{a + b}{2} = 2$，即 $ab \leqq 4$，所以 $1 < ab \leqq 4$。
-由 ④ 式得
+由 (4) 式得
 \[ T = \frac{8ab}{ab - 1} = \frac{8}{1 - \frac{1}{ab}} \geqq \frac{8}{1 - \frac{1}{4}} = \frac{32}{3} \]
 当 $ab = 4$ 且 $a + b = 4$ 时（即 $a = b = 2$），$T$ 取得最小值 $\frac{32}{3}$。
 \end{solution}
@@ -11793,26 +11793,26 @@ x^2 + y^2 + 5x + 5y + 12 = 0
 \begin{parts}
     \part 求使 $C_1$ 与 $C_2$ 恰有两个公共点时，点 $P$ 的 $y$ 坐标的取值范围。
     \begin{solution}
-        $C_1: x^2 + y^2 = 9 \cdots \text{\textcircled{1}}$。设点 $P$ 的坐标为 $(2, t)$，则 $C_2: (x-2)^2 + (y-t)^2 = 1 \cdots \text{\textcircled{2}}$。
+        $C_1: x^2 + y^2 = 9 \cdots (1)$。设点 $P$ 的坐标为 $(2, t)$，则 $C_2: (x-2)^2 + (y-t)^2 = 1 \cdots (2)$。
         $C_1$ 与 $C_2$ 有两个公共点的条件是：两圆中心距离 $d = \sqrt{4+t^2}$ 满足两圆半径之差与半径之和之间：
-        \[ 3-1 < \sqrt{4+t^2} < 3+1 \quad \Rightarrow \quad 4 < 4+t^2 < 16 \text{} \]
+        \[ 3-1 < \sqrt{4+t^2} < 3+1 \quad \Rightarrow \quad 4 < 4+t^2 < 16  \]
         由 $4 < 4+t^2$ 得 $t \neq 0$；由 $4+t^2 < 16$ 得 $t^2 < 12$，即 $-2\sqrt{3} < t < 2\sqrt{3}$。
         故 $P$ 的 $y$ 坐标 $t$ 的取值范围为：
-        \[ -2\sqrt{3} < t < 0, \quad 0 < t < 2\sqrt{3} \cdots \text{\textcircled{3}} \text{} \]
+        \[ -2\sqrt{3} < t < 0, \quad 0 < t < 2\sqrt{3} \cdots (3)  \]
     \end{solution}
 
     \part 当 $C_1$ 与 $C_2$ 有两个公共点时，记通过这两个公共点的直线为 $l$。设关于 $l$ 与点 $P$ 对称的点为 $Q$。当 $P$ 的 $y$ 坐标在 (1) 求得的范围内变化时，求点 $Q$ 的轨迹并作图。
     \begin{solution}
-        由 \textcircled{1} - \textcircled{2} 得直线 $l$ 的方程：
-        \[ 4x - 4 + 2ty - t^2 = 8 \quad \Rightarrow \quad 4x + 2ty = t^2 + 12 \cdots \text{\textcircled{4}} \text{} \]
+        由 (1) - (2) 得直线 $l$ 的方程：
+        \[ 4x - 4 + 2ty - t^2 = 8 \quad \Rightarrow \quad 4x + 2ty = t^2 + 12 \cdots (4)  \]
         设 $Q$ 的坐标为 $(X, Y)$。由于 $PQ \perp l$，向量 $\vec{PQ} = (X-2, Y-t)$ 与 $l$ 的法向量 $(4, 2t)$ 平行：
-        \[ (X-2) \cdot 2t - 4 \cdot (Y-t) = 0 \quad \Rightarrow \quad tX - 2Y = 0 \cdots \text{\textcircled{5}} \text{} \]
-        又线段 $PQ$ 的中点 $(\frac{2+X}{2}, \frac{t+Y}{2})$ 在直线 $l$ 上，代入 \textcircled{4} 得：
-        \[ 2(2+X) + t(t+Y) = t^2 + 12 \quad \Rightarrow \quad 2X + tY = 8 \cdots \text{\textcircled{6}} \text{} \]
-        联立 \textcircled{5} \textcircled{6} 消去 $t$（当 $X \neq 0$ 时，$t = \frac{2Y}{X}$）：
-        \[ 2X + \frac{2Y}{X} \cdot Y = 8 \quad \Rightarrow \quad X^2 + Y^2 = 4X \quad \Rightarrow \quad (X-2)^2 + Y^2 = 4 \cdots \text{\textcircled{7}} \text{} \]
-        结合 $t = \frac{2Y}{X}$ 与 \textcircled{3} 的范围：$-\sqrt{3} < \frac{Y}{X} < 0$ 或 $0 < \frac{Y}{X} < \sqrt{3}$。
-        在圆 \textcircled{7} 上，$Y = \pm \sqrt{3}X$ 的交点为 $(1, \pm \sqrt{3})$。
+        \[ (X-2) \cdot 2t - 4 \cdot (Y-t) = 0 \quad \Rightarrow \quad tX - 2Y = 0 \cdots (5)  \]
+        又线段 $PQ$ 的中点 $(\frac{2+X}{2}, \frac{t+Y}{2})$ 在直线 $l$ 上，代入 (4) 得：
+        \[ 2(2+X) + t(t+Y) = t^2 + 12 \quad \Rightarrow \quad 2X + tY = 8 \cdots (6)  \]
+        联立 (5) (6) 消去 $t$（当 $X \neq 0$ 时，$t = \frac{2Y}{X}$）：
+        \[ 2X + \frac{2Y}{X} \cdot Y = 8 \quad \Rightarrow \quad X^2 + Y^2 = 4X \quad \Rightarrow \quad (X-2)^2 + Y^2 = 4 \cdots (7)  \]
+        结合 $t = \frac{2Y}{X}$ 与 (3) 的范围：$-\sqrt{3} < \frac{Y}{X} < 0$ 或 $0 < \frac{Y}{X} < \sqrt{3}$。
+        在圆 (7) 上，$Y = \pm \sqrt{3}X$ 的交点为 $(1, \pm \sqrt{3})$。
         故 $Q$ 的轨迹为圆弧：$(x-2)^2 + y^2 = 4$，范围为 $-\sqrt{3} < y < 0$ 和 $0 < y < \sqrt{3}$。
     \end{solution}
 \end{parts}
@@ -12724,15 +12724,15 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
 \begin{parts}
     \part 证明 $\angle AOB = \frac{\pi}{2}$ 成立。
     \begin{solution}
-        联立抛物线 $y = x^2 \dots \textcircled{1}$ 与直线 $y = mx + 1 \dots \textcircled{2}$ 得：
+        联立抛物线 $y = x^2 \dots (1)$ 与直线 $y = mx + 1 \dots (2)$ 得：
         \[
-        x^2 = mx + 1, \quad x^2 - mx - 1 = 0 \dots \textcircled{3}
+        x^2 = mx + 1, \quad x^2 - mx - 1 = 0 \dots (3)
         \]
-        $\textcircled{3}$ 的判别式 $D = m^2 + 4 > 0$ 恒成立，设其实数解为 $x = \alpha, \beta \quad (\alpha < \beta)$，则有：
+        $(3)$ 的判别式 $D = m^2 + 4 > 0$ 恒成立，设其实数解为 $x = \alpha, \beta \quad (\alpha < \beta)$，则有：
         \[
-        \alpha + \beta = m, \quad \alpha\beta = -1 \dots \textcircled{4}
+        \alpha + \beta = m, \quad \alpha\beta = -1 \dots (4)
         \]
-        由此可知，$\textcircled{1}$ 与 $\textcircled{2}$ 的交点为 $A(\alpha, \alpha^2), B(\beta, \beta^2)$。根据 $\textcircled{4}$ 可得：
+        由此可知，$(1)$ 与 $(2)$ 的交点为 $A(\alpha, \alpha^2), B(\beta, \beta^2)$。根据 $(4)$ 可得：
         \[
         \vec{OA} \cdot \vec{OB} = \alpha\beta + \alpha^2\beta^2 = -1 + 1 = 0
         \]
@@ -12749,19 +12749,19 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
         \[
         x^2 - (\alpha + \beta)x + \alpha\beta + y^2 - (\alpha^2 + \beta^2)y + \alpha^2\beta^2 = 0
         \]
-        利用 $\textcircled{4}$，代入 $\alpha\beta = -1$ 且 $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = m^2 + 2$：
+        利用 $(4)$，代入 $\alpha\beta = -1$ 且 $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = m^2 + 2$：
         \[
         x^2 - mx - 1 + y^2 - (m^2 + 2)y + 1 = 0
         \]
         整理得圆的方程为：
         \[
-        x^2 + y^2 - mx - (m^2 + 2)y = 0 \dots \textcircled{5}
+        x^2 + y^2 - mx - (m^2 + 2)y = 0 \dots (5)
         \]
     \end{solution}
 
-    \part 求 $m$ 的所有值，使得抛物线 $y = x^2$ 与圆 $\textcircled{5}$ 除了 $A, B, O$ 以外没有其他的公共点。
+    \part 求 $m$ 的所有值，使得抛物线 $y = x^2$ 与圆 $(5)$ 除了 $A, B, O$ 以外没有其他的公共点。
     \begin{solution}
-        联立抛物线 $\textcircled{1}$ 与圆 $\textcircled{5}$ 得：
+        联立抛物线 $(1)$ 与圆 $(5)$ 得：
         \[
         x^2 + x^4 - mx - (m^2 + 2)x^2 = 0
         \]
@@ -12770,10 +12770,10 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
         \]
         已知该方程以 $x = 0, \alpha, \beta$ 为实数解，由因式分解可知：
         \[
-        x(x - \alpha)(x - \beta)(x + m) = 0 \dots \textcircled{6}
+        x(x - \alpha)(x - \beta)(x + m) = 0 \dots (6)
         \]
         要使解集仅为 $\{0, \alpha, \beta\}$，则 $x = -m$ 必须与 $0, \alpha$ 或 $\beta$ 之一重合：
-        (i) 当 $-m = 0$ 时，$m = 0$，此时 $\textcircled{6}$ 的解为 $x = 0, \pm 1$，符合题意。
+        (i) 当 $-m = 0$ 时，$m = 0$，此时 $(6)$ 的解为 $x = 0, \pm 1$，符合题意。
         (ii) 当 $-m = \alpha$ 或 $-m = \beta$ 时，$x = -m$ 是 $x^2 - mx - 1 = 0$ 的根：
         \[
         (-m)^2 - m(-m) - 1 = 0, \quad 2m^2 - 1 = 0, \quad m = \pm\frac{1}{\sqrt{2}}
@@ -12788,34 +12788,34 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \part 求 $C$ 上 $y$ 坐标最大的点 $P$ 的坐标。
     \begin{solution}
         对 $C: y = -x^2 + tx + t \quad (t \neq 0)$ 变形为顶点式：
-        \[ y = -\left( x - \frac{t}{2} \right)^2 + \frac{t^2}{4} + t \text{} \]
+        \[ y = -\left( x - \frac{t}{2} \right)^2 + \frac{t^2}{4} + t  \]
         由此可知，$C$ 上 $y$ 坐标最大的点 $P$ 的坐标为 $P\left( \frac{t}{2}, \frac{t^2}{4} + t \right)$。
     \end{solution}
 
     \part 求直线 $l$ 通过原点 $O(0, 0)$ 和点 $P$ 时的方程。为了使 $l$ 与 $C$ 除了点 $P$ 以外还有共有点 $Q$，求 $t$ 必须满足的条件。此外，求此时点 $Q$ 的坐标。
     \begin{solution}
         直线 $OP$ 即 $l$ 的斜率为 $\left( \frac{t^2}{4} + t \right) \div \frac{t}{2} = \frac{t}{2} + 2$。故：
-        \[ l: y = \left( \frac{t}{2} + 2 \right)x \quad \dots (2) \text{} \]
+        \[ l: y = \left( \frac{t}{2} + 2 \right)x \quad \dots (2)  \]
         联立 $C$ 与 $l$ 的方程：
-        \[ -x^2 + tx + t = \left( \frac{t}{2} + 2 \right)x \Rightarrow x^2 + \left( -\frac{t}{2} + 2 \right)x - t = 0 \text{} \]
+        \[ -x^2 + tx + t = \left( \frac{t}{2} + 2 \right)x \Rightarrow x^2 + \left( -\frac{t}{2} + 2 \right)x - t = 0  \]
         即 $\left( x - \frac{t}{2} \right)(x + 2) = 0$。由此得 $x = \frac{t}{2}, -2$。
         $l$ 与 $C$ 在 $P$ 以外有共有点 $Q$ 的条件是 $\frac{t}{2} \neq -2 \quad (t \neq -4)$。结合 $t \neq 0$，得：
-        \[ t < -4, \quad -4 < t < 0, \quad 0 < t \quad \dots (*) \text{} \]
+        \[ t < -4, \quad -4 < t < 0, \quad 0 < t \quad \dots (*)  \]
         此时点 $Q$ 的 $x$ 坐标为 $-2$，$y$ 坐标为 $\left( \frac{t}{2} + 2 \right) \cdot (-2) = -t - 4$，故 $Q(-2, -t - 4)$。
     \end{solution}
 
     \part 设 $t$ 满足 (2) 的条件。令 $A(-1, -2)$，并设 $X = \frac{1}{4}t^2 + t$。请用 $X$ 表示 $AP^2 - AQ^2$。此外，求使 $AP < AQ$ 成立时 $t$ 必须满足的条件。
     \begin{solution}
         对于 $A(-1, -2)$，已知 $X = \frac{1}{4}t^2 + t$：
-        \[ AP^2 = \left( \frac{t}{2} + 1 \right)^2 + \left( \frac{t^2}{4} + t + 2 \right)^2 = \frac{t^2}{4} + t + 1 + (X + 2)^2 = X + 1 + (X + 2)^2 = X^2 + 5X + 5 \text{} \]
-        \[ AQ^2 = (-2 + 1)^2 + (-t - 4 + 2)^2 = 1 + t^2 + 4t + 4 = 4X + 5 \text{} \]
+        \[ AP^2 = \left( \frac{t}{2} + 1 \right)^2 + \left( \frac{t^2}{4} + t + 2 \right)^2 = \frac{t^2}{4} + t + 1 + (X + 2)^2 = X + 1 + (X + 2)^2 = X^2 + 5X + 5  \]
+        \[ AQ^2 = (-2 + 1)^2 + (-t - 4 + 2)^2 = 1 + t^2 + 4t + 4 = 4X + 5  \]
         因此，$AP^2 - AQ^2 = (X^2 + 5X + 5) - (4X + 5) = X^2 + X$。
         当 $AP < AQ$ 时，$AP^2 - AQ^2 < 0$，即 $X^2 + X < 0$，解得 $-1 < X < 0$。
-        \[ -1 < \frac{1}{4}t^2 + t < 0 \quad \dots (3) \text{} \]
+        \[ -1 < \frac{1}{4}t^2 + t < 0 \quad \dots (3)  \]
         由 $\frac{1}{4}t^2 + t > -1 \Rightarrow t^2 + 4t + 4 > 0 \Rightarrow (t + 2)^2 > 0$ 得 $t \neq -2$。
         由 $\frac{1}{4}t^2 + t < 0 \Rightarrow t(t + 4) < 0$ 得 $-4 < t < 0$。
         结合 $(*)$，最终 $t$ 满足的条件为：
-        \[ -4 < t < -2, \quad -2 < t < 0 \text{} \]
+        \[ -4 < t < -2, \quad -2 < t < 0  \]
     \end{solution}
 \end{parts}
 
@@ -12827,7 +12827,7 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \begin{solution}
         针对抛物线 $y = x^2 \dots (1)$ 与圆 $C: x^2 + (y - a)^2 = r^2 \quad (a > 0, r > 0) \dots (2)$。
         当 $a = r$ 时，方程 (2) 变为 $x^2 + (y - r)^2 = r^2 \dots (2')$。联立 (1) 和 (2') 得：
-        \[ y + (y - r)^2 = r^2 \Rightarrow y^2 - (2r - 1)y = 0 \Rightarrow y\{y - (2r - 1)\} = 0 \dots (3) \text{} \]
+        \[ y + (y - r)^2 = r^2 \Rightarrow y^2 - (2r - 1)y = 0 \Rightarrow y\{y - (2r - 1)\} = 0 \dots (3)  \]
         根据 (3) 可知，$y = 0$ 或 $y = 2r - 1$。关于共有点的情况：
         \begin{itemize}
             \item (i) 当 $2r - 1 = 0 \quad (r = 1/2)$ 时，(1)(3) 的解为 $(x, y) = (0, 0)$。
@@ -12846,11 +12846,11 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \part 设 $a$ 和 $r$ 满足 (2) 中求得的条件。此时，在 $ra$ 平面上画出使抛物线 $y = x^2$ 与圆 $C$ 恰有 $2$ 个共有点的 $(r, a)$ 的取值范围。
     \begin{solution}
         当 $0 < r < a$ 时，联立 (1) 和 (2) 得 $y + (y - a)^2 = r^2$，即：
-        \[ y^2 - (2a - 1)y + a^2 - r^2 = 0 \dots (4) \text{} \]
+        \[ y^2 - (2a - 1)y + a^2 - r^2 = 0 \dots (4)  \]
         方程 (1) 和 (2) 具有 $2$ 个共有点的情况对应于方程 (4) 具有且仅有 $1$ 个正解。
         设 $f(y) = y^2 - (2a - 1)y + a^2 - r^2$，其顶点横坐标为 $\frac{2a-1}{2}$。
         注意到 $f(0) = a^2 - r^2 > 0$。求得条件为：
-        \[ \frac{2a-1}{2} > 0, \quad (2a-1)^2 - 4(a^2 - r^2) = 0 \text{} \]
+        \[ \frac{2a-1}{2} > 0, \quad (2a-1)^2 - 4(a^2 - r^2) = 0  \]
         整理得 $a > 1/2$ 且 $a = r^2 + 1/4$。结合 $0 < r < a$，并在 $ra$ 平面上绘图，该范围为曲线 $a = r^2 + 1/4$ 的一部分（图中虚线部分不包含端点）。
             \end{solution}
 
@@ -12861,9 +12861,9 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \begin{solution}
         由条件 (i) 可知 $a = r^2 + 1/4 \dots (6)$ 且 $r > 1/2 \dots (7)$。
         同理，对于圆 $C': x^2 + \{y - (a + r + s)\}^2 = s^2 \quad (s > 0) \dots (5)$，由条件 (ii) 及 (3) 的结论可知：
-        \[ a + r + s = s^2 + 1/4 \dots (8), \quad s > 1/2 \dots (9) \text{} \]
+        \[ a + r + s = s^2 + 1/4 \dots (8), \quad s > 1/2 \dots (9)  \]
         将 (6) 代入 (8) 得 $r^2 + 1/4 + r + s = s^2 + 1/4$。整理得：
-        \[ (r + s)(r - s) + r + s = 0 \Rightarrow (r + s)(r - s + 1) = 0 \text{} \]
+        \[ (r + s)(r - s) + r + s = 0 \Rightarrow (r + s)(r - s + 1) = 0  \]
         由于 $r + s > 1$（根据 (7) 和 (9)），故 $r - s + 1 = 0$，即 $s = r + 1$。
     \end{solution}
 \end{parts}
@@ -14230,12 +14230,12 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \[ \frac{a \cos \theta}{a^2}x + \frac{b \sin \theta}{b^2}y = 1 \implies \frac{\cos \theta}{a}x + \frac{\sin \theta}{b}y = 1 \]
     由于该切线通过点 $(c, 0)$ 和 $(0, c)$，代入得：
     \[ \frac{c \cos \theta}{a} = 1 \implies \cos \theta = \frac{a}{c}, \quad \frac{c \sin \theta}{b} = 1 \implies \sin \theta = \frac{b}{c} \]
-    利用 $\cos^2 \theta + \sin^2 \theta = 1$，可得 $\left(\frac{a}{c}\right)^2 + \left(\frac{b}{c}\right)^2 = 1$，即 $a^2 + b^2 = c^2 \cdots\cdots \textcircled{1}$。
-    切点 $P$ 的坐标为 $\left(\frac{a^2}{c}, \frac{b^2}{c}\right)$。由对称性可知，4 个切点构成的四边形是一个长方形，利用 $\textcircled{1}$ 其面积 $S$ 为：
+    利用 $\cos^2 \theta + \sin^2 \theta = 1$，可得 $\left(\frac{a}{c}\right)^2 + \left(\frac{b}{c}\right)^2 = 1$，即 $a^2 + b^2 = c^2 \cdots\cdots (1)$。
+    切点 $P$ 的坐标为 $\left(\frac{a^2}{c}, \frac{b^2}{c}\right)$。由对称性可知，4 个切点构成的四边形是一个长方形，利用 $(1)$ 其面积 $S$ 为：
     \[ S = 4 \cdot \frac{a^2}{c} \cdot \frac{b^2}{c} = \frac{4a^2b^2}{c^2} = \frac{4a^2b^2}{a^2+b^2} \]
     椭圆面积 $T = \pi ab$。则有：
     \[ \frac{2}{\pi} - \frac{S}{T} = \frac{2}{\pi} - \frac{4a^2b^2}{\pi ab(a^2+b^2)} = \frac{2}{\pi} \left( 1 - \frac{2ab}{a^2+b^2} \right) = \frac{2}{\pi} \cdot \frac{a^2+b^2-2ab}{a^2+b^2} = \frac{2(a-b)^2}{\pi(a^2+b^2)} \ge 0 \]
-    因此 $\frac{S}{T} \le \frac{2}{\pi}$ 成立。当 $a=b$ 时等号成立。结合 $\textcircled{1}$，此时 $a = b = \frac{c}{\sqrt{2}}$。
+    因此 $\frac{S}{T} \le \frac{2}{\pi}$ 成立。当 $a=b$ 时等号成立。结合 $(1)$，此时 $a = b = \frac{c}{\sqrt{2}}$。
 \end{solution}
 %hyperbola
     \question 双曲线 
@@ -16213,6 +16213,55 @@ ab^2 + 4a = a^2b + 4b
 \end{solution}
 \end{parts}
 
+\question
+在 $xy$ 平面上，有点 $O(0, 0), A(4, 0)$，以及在圆 $C: x^2 + y^2 = 4$ 上运动的点 $P(a, b)$。对于每一个点 $P$，设线段 $AP$ 的垂直平分线为 $l_p$。回答下列问题。
+\begin{parts}
+    \part 求直线 $l_p$ 的方程。
+    \begin{solution}
+        对于点 $A(4, 0)$ 和圆 $C$ 上的点 $P(a, b)$，线段 $AP$ 的中点坐标为 $\left( \frac{a+4}{2}, \frac{b}{2} \right)$。
+        直线 $l_p$ 过该中点且以向量 $\vec{AP} = (a-4, b)$ 为法向量，其方程为：
+        \[
+        (a-4)\left( x - \frac{a+4}{2} \right) + b\left( y - \frac{b}{2} \right) = 0
+        \]
+        整理得 $(a-4)x + by - \frac{a^2-16+b^2}{2} = 0$。
+        由于 $a^2 + b^2 = 4 \dots (1)$，代入上式得 $l_p: (a-4)x + by + 6 = 0 \dots (2)$。
+    \end{solution}
+
+    \part 当直线 $OP$ 与 $l_p$ 平行时，求点 $P$ 的坐标。
+    \begin{solution}
+        直线 $OP$ 与 $l_p$ 平行等价于 $\vec{OP} \perp \vec{AP}$，故 $\vec{OP} \cdot \vec{AP} = 0$。
+        \[
+        a(a-4) + b^2 = 0 \implies a^2 - 4a + b^2 = 0
+        \]
+        由 (1) 知 $a^2+b^2=4$，代入得 $4-4a=0$，即 $a=1$。
+        此时 $b = \pm\sqrt{4-1} = \pm\sqrt{3}$。
+        因此，点 $P$ 的坐标为 $(1, \sqrt{3})$ 或 $(1, -\sqrt{3})$。
+    \end{solution}
+
+    \part 当直线 $OP$ 与 $l_p$ 相交时，求交点 $Q$ 的轨迹方程，并画出其轨迹。
+    \begin{solution}
+        直线 $OP$ 的法向量可取为 $\vec{n} = (b, -a)$，故其方程为 $bx - ay = 0 \dots (3)$。
+        设交点 $Q$ 的坐标为 $(x, y)$，由 (2) 和 (3) 得：
+        \[
+        xa + yb = 4x-6 \dots (2)',\, -ya + xb = 0 \dots (3)'
+        \]
+        联立方程组，由 $(2)' \times x - (3)' \times y$ 得 $(x^2+y^2)a = x(4x-6)$。
+        由于 $(x, y) = (0, 0)$ 不满足 $(2)'$，故 $a = \frac{2x(2x-3)}{x^2+y^2} \dots (4)$。
+        由 $(2)' \times y + (3)' \times x$ 得 $(y^2+x^2)b = y(4x-6)$，故 $b = \frac{2y(2x-3)}{x^2+y^2} \dots (5)$。
+        将 (4) 和 (5) 代入 (1)：
+        \[
+        \frac{4x^2(2x-3)^2}{(x^2+y^2)^2} + \frac{4y^2(2x-3)^2}{(x^2+y^2)^2} = 4 \implies \frac{4(x^2+y^2)(2x-3)^2}{(x^2+y^2)^2} = 4
+        \]
+        化简得 $(2x-3)^2 = x^2+y^2 \dots (6)$。
+        整理得 $3x^2 - 12x - y^2 = -9$，即 $3(x-2)^2 - y^2 = 3$。
+        因此，点 $Q$ 的轨迹方程为双曲线：
+        \[
+        (x-2)^2 - \frac{y^2}{3} = 1
+        \]
+        渐近线为 $y = \pm\sqrt{3}(x-2)$。轨迹图形为该双曲线的实线部分。
+    \end{solution}
+\end{parts}
+
     \question 在曲线
     \[
     \left(\frac{x}{a}\right)^{\frac{2}{3}} + \left(\frac{y}{b}\right)^{\frac{2}{3}} = 1,
@@ -16821,7 +16870,7 @@ ab^2 + 4a = a^2b + 4b
             \vec{OP} &= \vec{OA} + \vec{AH} + \vec{HP} = \vec{OA} + (\cos^2 \alpha)\vec{AB} + (\sin \alpha \cos \alpha)\vec{n} \\
             &= (\sin t, 0) + \cos^2 \alpha(-\sin t, \cos t) + \sin \alpha \cos \alpha(\cos t, \sin t) \\
             &= (\sin \alpha (\sin \alpha \sin t + \cos \alpha \cos t), \cos \alpha (\cos \alpha \cos t + \sin \alpha \sin t)) \\
-            &= (\sin \alpha \cos(t - \alpha), \cos \alpha \cos(t - \alpha)) \text{}
+            &= (\sin \alpha \cos(t - \alpha), \cos \alpha \cos(t - \alpha)) 
         \end{align*}
         设 $P(x, y)$，则 $x = \cos(t-\alpha)\sin \alpha, y = \cos(t-\alpha)\cos \alpha$。
         两式相比得 $x \cos \alpha - y \sin \alpha = 0 \cdots (*)$。
@@ -16835,7 +16884,7 @@ ab^2 + 4a = a^2b + 4b
         路径长度 $L$ 为：
         \begin{align*}
             L &= |\cos \alpha - \sin \alpha| \sqrt{\sin^2 \alpha + \cos^2 \alpha} \\
-            &= |\cos \alpha - \sin \alpha| \text{}
+            &= |\cos \alpha - \sin \alpha| 
         \end{align*}
         根据图中所示，$L = (1 - \cos \alpha) - (\sin \alpha - 1) = 2 - \cos \alpha - \sin \alpha$（此处依原解答逻辑）。
     \end{solution}
@@ -16855,6 +16904,62 @@ ab^2 + 4a = a^2b + 4b
         此时 $\sin \alpha > \cos \alpha$，由 $OP \ge \cos \alpha = OR$ 知点 $P$ 不在区域 $D$ 内。
         
         综上所述，点 $P$ 绝不进入区域 $D$。
+    \end{solution}
+\end{parts}
+
+\question
+在以原点 $O$ 为中心的坐标平面上，直线 $y = \frac{1}{\sqrt{3}}x$ 的 $x > 0$ 部分记为 $l$，直线 $y = -\frac{1}{\sqrt{3}}x$ 的 $x > 0$ 部分记为 $m$。点 $P$ 在 $l$ 上运动，点 $Q$ 在 $m$ 上运动，且满足 $PQ = 2$。回答下列问题。
+\begin{parts}
+    \part 设 $\angle OPQ = t$，用 $t$ 表示 $P, Q$ 的坐标。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image371.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        直线 $l: y = \frac{1}{\sqrt{3}}x \ (x > 0)$ 上的点 $P$，直线 $m: y = -\frac{1}{\sqrt{3}}x \ (x > 0)$ 上的点 $Q$。
+        已知 $PQ = 2, \angle OPQ = t$。
+        $\angle POQ = \frac{\pi}{6} + \frac{\pi}{6} = \frac{\pi}{3}$，$\angle OQP = \frac{2}{3}\pi - t$。
+        对 $\triangle OPQ$ 应用正弦定理：
+        \[
+        \frac{OQ}{\sin t} = \frac{OP}{\sin \left( \frac{2}{3}\pi - t \right)} = \frac{2}{\sin \frac{\pi}{3}}
+        \]
+        于是，$\sin \frac{\pi}{3} = \frac{\sqrt{3}}{2}$，故 $OQ = \frac{4}{\sqrt{3}} \sin t$。
+        \[
+        OP = \frac{4}{\sqrt{3}} \sin \left( \frac{2}{3}\pi - t \right) = \frac{4}{\sqrt{3}} \left( \frac{\sqrt{3}}{2}\cos t + \frac{1}{2}\sin t \right) = 2\cos t + \frac{2}{\sqrt{3}}\sin t
+        \]
+        设点 $P(p_1, p_2), Q(q_1, q_2)$，则：
+        \[
+        (p_1, p_2) = OP \left( \cos \frac{\pi}{6}, \sin \frac{\pi}{6} \right) = \left( 2\cos t + \frac{2}{\sqrt{3}}\sin t \right) \left( \frac{\sqrt{3}}{2}, \frac{1}{2} \right)
+        \]
+        \[
+        = \left( \sqrt{3}\cos t + \sin t, \cos t + \frac{1}{\sqrt{3}}\sin t \right)
+        \]
+        \[
+        (q_1, q_2) = OQ \left( \cos \frac{\pi}{6}, -\sin \frac{\pi}{6} \right) = \frac{4}{\sqrt{3}}\sin t \left( \frac{\sqrt{3}}{2}, -\frac{1}{2} \right) = \left( 2\sin t, -\frac{2}{\sqrt{3}}\sin t \right)
+        \]
+        因此，$P\left( \sqrt{3}\cos t + \sin t, \cos t + \frac{1}{\sqrt{3}}\sin t \right), Q\left( 2\sin t, -\frac{2}{\sqrt{3}}\sin t \right)$。
+    \end{solution}
+
+    \part 求线段 $PQ$ 的中点 $M$ 的轨迹，并在坐标平面上画出图形。
+    \begin{solution}
+        设线段 $PQ$ 的中点 $M$ 为 $M(x, y)$，则：
+        \[
+        x = \frac{1}{2}(\sqrt{3}\cos t + \sin t + 2\sin t) = \frac{\sqrt{3}}{2}(\cos t + \sqrt{3}\sin t) = \sqrt{3}\cos \left( t - \frac{\pi}{3} \right)
+        \]
+        \[
+        y = \frac{1}{2}\left( \cos t + \frac{1}{\sqrt{3}}\sin t - \frac{2}{\sqrt{3}}\sin t \right) = \frac{1}{2\sqrt{3}}(\sqrt{3}\cos t - \sin t) = \frac{1}{\sqrt{3}}\sin \left( \frac{\pi}{3} - t \right) = -\frac{1}{\sqrt{3}}\sin \left( t - \frac{\pi}{3} \right)
+        \]
+        由此得 $\left( \frac{x}{\sqrt{3}} \right)^2 + (-\sqrt{3}y)^2 = 1$，即 $\frac{x^2}{3} + 3y^2 = 1$。
+        又由 $0 < t < \frac{2}{3}\pi$ 得 $-\frac{\pi}{3} < t - \frac{\pi}{3} < \frac{\pi}{3}$，所以：
+        \[
+        \frac{1}{2} < \cos \left( t - \frac{\pi}{3} \right) \le 1, \quad -\frac{\sqrt{3}}{2} < \sin \left( t - \frac{\pi}{3} \right) < \frac{\sqrt{3}}{2}
+        \]
+        故 $\frac{\sqrt{3}}{2} < x \le \sqrt{3}$，$-\frac{1}{2} < y < \frac{1}{2}$。
+        综上，中点 $M$ 的轨迹为：
+        椭圆 $\frac{x^2}{3} + 3y^2 = 1 \ \left( \frac{\sqrt{3}}{2} < x \le \sqrt{3}, -\frac{1}{2} < y < \frac{1}{2} \right)$。
+        图形为右图所示的曲线，但不包含端点。
     \end{solution}
 \end{parts}
 %parametric eq
@@ -17479,6 +17584,63 @@ x = \frac{4 + 5\cos t}{5 + 4\cos t}, \quad y = \frac{3\sin t}{5 + 4\cos t}
         计算距离得 $P_1P_2^2 = (4\cos \frac{\alpha}{2})^2 + (-4\sin \frac{\alpha}{2})^2 = 16(\cos^2 \frac{\alpha}{2} + \sin^2 \frac{\alpha}{2}) = 16$。
         故 $P_1P_2 = 4$，长度与 $\alpha$ 无关。
     \end{solution}
+\end{parts}
+
+\question
+在 $xy$ 平面上考虑 3 点 $O(0, 0)$, $P(1, 0)$, $Q(\cos \alpha, \sin \alpha)$。其中 $\alpha$ 是满足 $0 < \alpha < \pi$ 的实数。令 $f(\theta) = 2 \cos \theta - 1$。回答下列问题。
+\begin{parts}
+\part 用关于 $\alpha$ 的式子表示点 $O$ 到直线 $PQ$ 的距离。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image384.png}
+    \end{figure}
+    \fi
+\begin{solution}
+对于 3 点 $O(0, 0)$, $P(1, 0)$, $Q(\cos \alpha, \sin \alpha)$ ($0 < \alpha < \pi$)，
+设线段 $PQ$ 的中点为 $M$，则线段 $OM$ 是 $\angle POQ$ 的二等分线。
+由此，点 $O$ 到直线 $PQ$ 的距离 $d$ 为
+\[
+d = OM = OP \cos \frac{\alpha}{2} = \cos \frac{\alpha}{2}
+\]
+\end{solution}
+
+\part 证明下列等式：$f(\theta) \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2} - 2 \sin \frac{\theta}{2} \sin \frac{3\theta - \alpha}{2}$。
+\begin{solution}
+对于 $f(\theta) = 2 \cos \theta - 1$，有
+\begin{align*}
+f(\theta) \cos \left( \theta - \frac{\alpha}{2} \right) &= (2 \cos \theta - 1) \cos \left( \theta - \frac{\alpha}{2} \right) \\
+&= 2 \cos \theta \cos \left( \theta - \frac{\alpha}{2} \right) - \cos \left( \theta - \frac{\alpha}{2} \right)
+\end{align*}
+由于 $2 \cos \theta \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \left( \theta + \theta - \frac{\alpha}{2} \right) + \cos \left( \theta - \theta + \frac{\alpha}{2} \right) = \cos \left( 2\theta - \frac{\alpha}{2} \right) + \cos \frac{\alpha}{2}$，则
+\begin{align*}
+\cos \left( 2\theta - \frac{\alpha}{2} \right) - \cos \left( \theta - \frac{\alpha}{2} \right) &= -2 \sin \frac{2\theta - \frac{\alpha}{2} + \theta - \frac{\alpha}{2}}{2} \sin \frac{2\theta - \frac{\alpha}{2} - \theta + \frac{\alpha}{2}}{2} \\
+&= -2 \sin \frac{3\theta - \alpha}{2} \sin \frac{\theta}{2} = -2 \sin \frac{\theta}{2} \sin \frac{3\theta - \alpha}{2}
+\end{align*}
+因此，$f(\theta) \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2} - 2 \sin \frac{\theta}{2} \sin \frac{3\theta - \alpha}{2}$。
+\end{solution}
+
+\part 使用参数 $t$，由 $x = f(t) \cos t$, $y = f(t) \sin t$ ($0 < t < \frac{\pi}{3}$) 表示的曲线记为 $C$。证明曲线 $C$ 与直线 $PQ$ 仅有一个公共点。此外，设该公共点为 $R$，用关于 $\alpha$ 的式子表示 $\angle POR$。
+\begin{solution}
+将曲线 $C: x = f(t) \cos t, y = f(t) \sin t$ ($0 < t < \frac{\pi}{3}$) 用极坐标方程表示为
+\[
+r = f(\theta) = 2 \cos \theta - 1 \quad \left( 0 < \theta < \frac{\pi}{3} \right) \cdots \cdots (1)
+\]
+将直线 $PQ$ 用极坐标方程表示，设为 $r \cos \left( \theta - \frac{\alpha}{2} \right) = d$，利用 (1) 的结果得
+\[
+r \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2} \cdots \cdots (2)
+\]
+联立 (1) (2) 得 $f(\theta) \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2}$，由 (2) 的等式得
+\[
+\cos \frac{\alpha}{2} - 2 \sin \frac{\theta}{2} \sin \frac{3\theta - \alpha}{2} = \cos \frac{\alpha}{2}, \quad \sin \frac{\theta}{2} \sin \frac{3\theta - \alpha}{2} = 0 \cdots \cdots (3)
+\]
+在此，由 $0 < \theta < \frac{\pi}{3}$ 得 $0 < \frac{\theta}{2} < \frac{\pi}{6}$，所以 $\sin \frac{\theta}{2} > 0$。
+又因为 $-\frac{\alpha}{2} < \frac{3\theta - \alpha}{2} < \frac{\pi - \alpha}{2}$ ($0 < \alpha < \pi$)，
+得 $-\frac{\pi}{2} < -\frac{\alpha}{2} < 0$, $0 < \frac{\pi - \alpha}{2} < \frac{\pi}{2}$，
+满足 (3) 的 $\theta$ 由 $\frac{3\theta - \alpha}{2} = 0$ 得 $\theta = \frac{\alpha}{3}$。
+由此，$\theta$ 仅有一个值，曲线 $C$ 与直线 $PQ$ 仅有一个公共点。
+设该公共点为 $R$，则 $\angle POR = \frac{\alpha}{3}$。
+\end{solution}
 \end{parts}
 \end{questions}
 \pagebreak
@@ -19642,30 +19804,30 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
     = \cos \theta \cos \phi + \sin \theta \sin \phi - \cos \theta - \cos \phi + 1
     \]
     \[
-    = \cos(\phi - \theta) - \cos \phi - \cos \theta + 1 \dots \text{}
+    = \cos(\phi - \theta) - \cos \phi - \cos \theta + 1 \dots 
     \]
     利用积化和差公式的逆运算：
     \[
     \vec{AB} \cdot \vec{AC} = -2 \sin \frac{2\phi - \theta}{2} \sin \left( -\frac{\theta}{2} \right) - \cos \theta + 1
     \]
     \[
-    = 2 \sin \frac{2\phi - \theta}{2} \sin \frac{\theta}{2} - \cos \theta + 1 \dots \text{}
+    = 2 \sin \frac{2\phi - \theta}{2} \sin \frac{\theta}{2} - \cos \theta + 1 \dots 
     \]
     固定 $\theta \ (0 < \theta < 2\pi)$，注意到 $\sin \frac{\theta}{2} > 0$。
     当 $\frac{2\phi - \theta}{2} = \frac{\pi}{2}$（即 $\phi = \frac{\theta + \pi}{2}$）时，取得最大值 $M$：
     \[
-    M = 2 \sin \frac{\theta}{2} - \cos \theta + 1 \dots ① \text{}
+    M = 2 \sin \frac{\theta}{2} - \cos \theta + 1 \dots (1) 
     \]
     当 $\frac{2\phi - \theta}{2} = \frac{3\pi}{2}$（即 $\phi = \frac{\theta + 3\pi}{2}$）时，取得最小值 $m$：
     \[
-    m = -2 \sin \frac{\theta}{2} - \cos \theta + 1 \dots ② \text{}
+    m = -2 \sin \frac{\theta}{2} - \cos \theta + 1 \dots (2) 
     \]
-    现在令 $\theta$ 在 $0 < \theta < 2\pi$ 范围内变动，利用 $\cos \theta = 1 - 2 \sin^2 \frac{\theta}{2}$ 对 ① ② 进行配方：
+    现在令 $\theta$ 在 $0 < \theta < 2\pi$ 范围内变动，利用 $\cos \theta = 1 - 2 \sin^2 \frac{\theta}{2}$ 对 (1) (2) 进行配方：
     \[
     M = 2 \sin \frac{\theta}{2} - (1 - 2 \sin^2 \frac{\theta}{2}) + 1 = 2 \sin^2 \frac{\theta}{2} + 2 \sin \frac{\theta}{2} = 2 \left( \sin \frac{\theta}{2} + \frac{1}{2} \right)^2 - \frac{1}{2}
     \]
     \[
-    m = -2 \sin \frac{\theta}{2} - (1 - 2 \sin^2 \frac{\theta}{2}) + 1 = 2 \sin^2 \frac{\theta}{2} - 2 \sin \frac{\theta}{2} = 2 \left( \sin \frac{\theta}{2} - \frac{1}{2} \right)^2 - \frac{1}{2} \dots \text{}
+    m = -2 \sin \frac{\theta}{2} - (1 - 2 \sin^2 \frac{\theta}{2}) + 1 = 2 \sin^2 \frac{\theta}{2} - 2 \sin \frac{\theta}{2} = 2 \left( \sin \frac{\theta}{2} - \frac{1}{2} \right)^2 - \frac{1}{2} \dots 
     \]
     由于 $0 < \sin \frac{\theta}{2} \le 1$：
     \begin{itemize}
@@ -19686,33 +19848,33 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
     \textbf{(1) 求内积}
     在 $\triangle ABC$ 中利用余弦定理：
     \[
-    |\vec{BC}|^2 = |\vec{AB}|^2 + |\vec{AC}|^2 - 2\vec{AB} \cdot \vec{AC} \dots \text{}
+    |\vec{BC}|^2 = |\vec{AB}|^2 + |\vec{AC}|^2 - 2\vec{AB} \cdot \vec{AC} \dots 
     \]
     代入已知数据：
     \[
-    6 = 1 + 4 - 2\vec{AB} \cdot \vec{AC} \implies 2\vec{AB} \cdot \vec{AC} = -1 \implies \vec{AB} \cdot \vec{AC} = -\frac{1}{2} \dots ③ \text{}
+    6 = 1 + 4 - 2\vec{AB} \cdot \vec{AC} \implies 2\vec{AB} \cdot \vec{AC} = -1 \implies \vec{AB} \cdot \vec{AC} = -\frac{1}{2} \dots (3) 
     \]
 
     \textbf{(2) 求 $s, t$}
     因为线段 $AP$ 是外接圆的直径，根据圆周角的性质，$\angle ABP = \angle ACP = \frac{\pi}{2}$。
     因此有：
     \[
-    \vec{AB} \cdot \vec{BP} = 0 \dots ④, \quad \vec{AC} \cdot \vec{CP} = 0 \dots ⑤ \text{}
+    \vec{AB} \cdot \vec{BP} = 0 \dots (4), \quad \vec{AC} \cdot \vec{CP} = 0 \dots (5) 
     \]
-    由于 $\vec{BP} = \vec{AP} - \vec{AB} = (s-1)\vec{AB} + t\vec{AC}$，代入 ④ 得：
+    由于 $\vec{BP} = \vec{AP} - \vec{AB} = (s-1)\vec{AB} + t\vec{AC}$，代入 (4) 得：
     \[
     \vec{AB} \cdot \{(s-1)\vec{AB} + t\vec{AC}\} = (s-1)|\vec{AB}|^2 + t(\vec{AB} \cdot \vec{AC}) = 0
     \]
-    代入已知值：$(s-1) \cdot 1^2 + t \cdot (-\frac{1}{2}) = 0 \implies 2s - t = 2 \dots ⑥$。
+    代入已知值：$(s-1) \cdot 1^2 + t \cdot (-\frac{1}{2}) = 0 \implies 2s - t = 2 \dots (6)$。
     
-    同理，由于 $\vec{CP} = \vec{AP} - \vec{AC} = s\vec{AB} + (t-1)\vec{AC}$，代入 ⑤ 得：
+    同理，由于 $\vec{CP} = \vec{AP} - \vec{AC} = s\vec{AB} + (t-1)\vec{AC}$，代入 (5) 得：
     \[
     \vec{AC} \cdot \{s\vec{AB} + (t-1)\vec{AC}\} = s(\vec{AB} \cdot \vec{AC}) + (t-1)|\vec{AC}|^2 = 0
     \]
-    代入已知值：$s \cdot (-\frac{1}{2}) + (t-1) \cdot 2^2 = 0 \implies -s + 8t = 8 \dots ⑦$。
-    联立 ⑥ ⑦ 解得：
+    代入已知值：$s \cdot (-\frac{1}{2}) + (t-1) \cdot 2^2 = 0 \implies -s + 8t = 8 \dots (7)$。
+    联立 (6) (7) 解得：
     \[
-    s = \frac{8}{5}, \quad t = \frac{6}{5} \dots \text{}
+    s = \frac{8}{5}, \quad t = \frac{6}{5} \dots 
     \]
 
     \textbf{(3) 求 $AD$ 长度}
@@ -19720,7 +19882,7 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
     设 $\vec{AD} = k\vec{AP} = \frac{8}{5}k\vec{AB} + \frac{6}{5}k\vec{AC}$。
     由于 $D$ 在直线 $BC$ 上，其系数之和必为 1：
     \[
-    \frac{8}{5}k + \frac{6}{5}k = 1 \implies \frac{14}{5}k = 1 \implies k = \frac{5}{14} \text{}
+    \frac{8}{5}k + \frac{6}{5}k = 1 \implies \frac{14}{5}k = 1 \implies k = \frac{5}{14} 
     \]
     因此 $\vec{AD} = \frac{8}{14}\vec{AB} + \frac{6}{14}\vec{AC} = \frac{4}{7}\vec{AB} + \frac{3}{7}\vec{AC}$。
     计算其模长的平方：
@@ -19728,7 +19890,7 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
     |\vec{AD}|^2 = \frac{16}{49}|\vec{AB}|^2 + 2 \cdot \frac{4}{7} \cdot \frac{3}{7}(\vec{AB} \cdot \vec{AC}) + \frac{9}{49}|\vec{AC}|^2
     \]
     \[
-    |\vec{AD}|^2 = \frac{16}{49}(1) + \frac{24}{49}(-\frac{1}{2}) + \frac{9}{49}(4) = \frac{16 - 12 + 36}{49} = \frac{40}{49} \text{}
+    |\vec{AD}|^2 = \frac{16}{49}(1) + \frac{24}{49}(-\frac{1}{2}) + \frac{9}{49}(4) = \frac{16 - 12 + 36}{49} = \frac{40}{49} 
     \]
     故 $AD = \sqrt{\frac{40}{49}} = \frac{2\sqrt{10}}{7}$。
 \end{solution}
@@ -19891,7 +20053,7 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         由 (1) 知 $\vec{OH} = \frac{1}{2}\vec{a}$，代入上式：
         \[ \vec{OP} - \vec{b} = t\left(\frac{1}{2}\vec{a} - \vec{b}\right) \]
         整理得：
-        \[ \vec{OP} = \frac{t}{2}\vec{a} + (1 - t)\vec{b} \quad \cdots \textcircled{1} \text{} \]
+        \[ \vec{OP} = \frac{t}{2}\vec{a} + (1 - t)\vec{b} \quad \cdots (1)  \]
     \end{solution}
 
     \part 设 $|\vec{OB}|^2 = x$，用 $x$ 表示 $t$。
@@ -19900,20 +20062,20 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         由于 $P$ 是外心，它位于边 $OB$ 的垂直平分线上。
         设 $OB$ 的中点为 $I$，则 $\vec{OB} \cdot \vec{IP} = 0$。
         即 $\vec{b} \cdot (\vec{OP} - \frac{1}{2}\vec{b}) = 0$。
-        代入 $\textcircled{1}$ 式：
+        代入 $(1)$ 式：
         \[ \vec{b} \cdot \left\{ \frac{t}{2}\vec{a} + (1 - t)\vec{b} - \frac{1}{2}\vec{b} \right\} = 0 \]
         \[ \vec{b} \cdot \left\{ \frac{t}{2}\vec{a} + \left(\frac{1}{2} - t\right)\vec{b} \right\} = 0 \]
         展开得 $\frac{t}{2}(\vec{a} \cdot \vec{b}) + (\frac{1}{2} - t)|\vec{b}|^2 = 0$。
         代入 $\vec{a} \cdot \vec{b} = 1$ 及 $|\vec{b}|^2 = x$：
         \[ \frac{t}{2} + \left(\frac{1}{2} - t\right)x = 0 \Rightarrow t + (1 - 2t)x = 0 \]
         整理得 $(2x - 1)t = x$。由于 $x \neq \frac{1}{2}$，得：
-        \[ t = \frac{x}{2x - 1} \quad \cdots \textcircled{2} \text{} \]
+        \[ t = \frac{x}{2x - 1} \quad \cdots (2)  \]
     \end{solution}
 
     \part 当 $|\vec{OP}| = \sqrt{2}|\vec{OB}|$ 时，求 $|\vec{OB}|$ 的值。
     \begin{solution}
         由条件 $|\vec{OP}|^2 = 2|\vec{OB}|^2 = 2x$。
-        利用 $\textcircled{1}$ 和 $\textcircled{2}$，将 $\vec{OP} = \frac{1}{2(2x-1)}\{x\vec{a} + 2(x-1)\vec{b}\}$ 代入：
+        利用 $(1)$ 和 $(2)$，将 $\vec{OP} = \frac{1}{2(2x-1)}\{x\vec{a} + 2(x-1)\vec{b}\}$ 代入：
         \[ \frac{1}{4(2x-1)^2} \{x^2|\vec{a}|^2 + 4x(x-1)(\vec{a} \cdot \vec{b}) + 4(x-1)^2|\vec{b}|^2\} = 2x \]
         代入 $|\vec{a}|^2=2, \vec{a}\cdot\vec{b}=1, |\vec{b}|^2=x$：
         \[ \frac{1}{4(2x-1)^2} \{2x^2 + 4x(x-1) + 4(x-1)^2x\} = 2x \]
@@ -19925,17 +20087,17 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
 
 \question
 平面上有三个点 $O, A, B$ 满足下列条件：
-\[ |2\overrightarrow{OA} + \overrightarrow{OB}| = |\overrightarrow{OA} + 2\overrightarrow{OB}| = 1 \quad \text{且} \quad (2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + \overrightarrow{OB}) = \frac{1}{3} \text{} \]
+\[ |2\overrightarrow{OA} + \overrightarrow{OB}| = |\overrightarrow{OA} + 2\overrightarrow{OB}| = 1 \quad \text{且} \quad (2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + \overrightarrow{OB}) = \frac{1}{3}  \]
 回答下列问题：
 
 \begin{parts}
     \part 求 $(2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + 2\overrightarrow{OB})$ 的值。
     \begin{solution}
         为了简化运算，设 $\vec{u} = 2\overrightarrow{OA} + \overrightarrow{OB}$，$\vec{v} = \overrightarrow{OA} + 2\overrightarrow{OB}$。
-        由题意知 $|\vec{u}| = |\vec{v}| = 1$ \quad $\cdots$ \textcircled{1}。
+        由题意知 $|\vec{u}| = |\vec{v}| = 1$ \quad $\cdots$ (1)。
         同时可以解得 $\overrightarrow{OA} + \overrightarrow{OB} = \frac{1}{3}(\vec{u} + \vec{v})$。
         代入条件 $\vec{u} \cdot (\overrightarrow{OA} + \overrightarrow{OB}) = \frac{1}{3}$ 得：
-        \[ \vec{u} \cdot \left( \frac{\vec{u} + \vec{v}}{3} \right) = \frac{1}{3} \Rightarrow |\vec{u}|^2 + \vec{u} \cdot \vec{v} = 1 \text{} \]
+        \[ \vec{u} \cdot \left( \frac{\vec{u} + \vec{v}}{3} \right) = \frac{1}{3} \Rightarrow |\vec{u}|^2 + \vec{u} \cdot \vec{v} = 1  \]
         由于 $|\vec{u}| = 1$，代入上式解得 $\vec{u} \cdot \vec{v} = 0$。
         因此，$(2\overrightarrow{OA} + \overrightarrow{OB}) \cdot (\overrightarrow{OA} + 2\overrightarrow{OB}) = 0$。
     \end{solution}
@@ -19972,7 +20134,7 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
     \begin{solution}
         当 $\triangle\mathrm{ABC}$ 的重心为 $\mathrm{G}$ 时，由重心的向量表示可知 $\vec{\mathrm{AG}} = \frac{1}{3}(\vec{\mathrm{AB}} + \vec{\mathrm{AC}})$。
         变形得：
-        \[ -3\vec{\mathrm{GA}} = (\vec{\mathrm{GB}} - \vec{\mathrm{GA}}) + (\vec{\mathrm{GC}} - \vec{\mathrm{GA}}) \text{} \]
+        \[ -3\vec{\mathrm{GA}} = (\vec{\mathrm{GB}} - \vec{\mathrm{GA}}) + (\vec{\mathrm{GC}} - \vec{\mathrm{GA}})  \]
         整理后可得 $\vec{\mathrm{GA}} + \vec{\mathrm{GB}} + \vec{\mathrm{GC}} = \vec{0} \quad \dots (1)$。
     \end{solution}
 
@@ -20001,7 +20163,7 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         \end{align*}
         将各边相加，得 $2(|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2) = 6(|\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2)$。
         整理得：
-        \[ |\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2 = \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{3} \quad \dots (3) \text{} \]
+        \[ |\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2 = \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{3} \quad \dots (3)  \]
     \end{solution}
 
     \part 设 $\triangle\mathrm{ABC}$ 的外接圆半径为 $R$，证明下式成立：
@@ -20010,11 +20172,11 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         设 $\triangle\mathrm{ABC}$ 的外心为 $\mathrm{O}$，则 $|\vec{\mathrm{OA}}| = |\vec{\mathrm{OB}}| = |\vec{\mathrm{OC}}| = R$。
         在 (2) 中令 $\mathrm{P} = \mathrm{O}$：
         \[ |\vec{\mathrm{OA}}|^2 + |\vec{\mathrm{OB}}|^2 + |\vec{\mathrm{OC}}|^2 = 3|\vec{\mathrm{OG}}|^2 + |\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2 \]
-        \[ 3R^2 = 3|\vec{\mathrm{OG}}|^2 + |\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2 \text{} \]
+        \[ 3R^2 = 3|\vec{\mathrm{OG}}|^2 + |\vec{\mathrm{GA}}|^2 + |\vec{\mathrm{GB}}|^2 + |\vec{\mathrm{GC}}|^2  \]
         代入 (3) 得：
-        \[ 3R^2 = 3|\vec{\mathrm{OG}}|^2 + \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{3} \text{} \]
+        \[ 3R^2 = 3|\vec{\mathrm{OG}}|^2 + \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{3}  \]
         由于 $|\vec{\mathrm{OG}}|^2 \ge 0$，故有：
-        \[ R^2 = |\vec{\mathrm{OG}}|^2 + \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9} \ge \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9} \text{} \]
+        \[ R^2 = |\vec{\mathrm{OG}}|^2 + \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9} \ge \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9}  \]
     \end{solution}
 \end{parts}
 \end{questions}
@@ -22545,7 +22707,7 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
 
 设向量 $\vec{PA}$ 与 $\vec{PR}$ 的夹角为 $\theta$。注意到当直线 $l$ 与球面 $S$ 相切时，$\theta = 45^\circ$。由此可得：
 \[
-\vec{PA} \cdot \vec{PR} = |\vec{PA}| |\vec{PR}| \cos \theta = \frac{1}{\sqrt{2}} |\vec{PA}| |\vec{PR}| \cdots \cdots ①
+\vec{PA} \cdot \vec{PR} = |\vec{PA}| |\vec{PR}| \cos \theta = \frac{1}{\sqrt{2}} |\vec{PA}| |\vec{PR}| \cdots \cdots (1)
 \]
 根据坐标设定，$\vec{PA} = (-1, 0, -1)$，$\vec{PR} = (x - 1, y, -2)$。计算内积与长度：
 \[
@@ -22557,15 +22719,15 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
 \[
 |\vec{PR}| = \sqrt{(x - 1)^2 + y^2 + (-2)^2} = \sqrt{x^2 + y^2 - 2x + 5}
 \]
-代入公式 ① 得：
+代入公式 (1) 得：
 \[
 -x + 3 = \frac{1}{\sqrt{2}} \cdot \sqrt{2} \cdot \sqrt{x^2 + y^2 - 2x + 5}
 \]
 在 $x \le 3$ 的条件下，两边平方：
 \[
-(-x + 3)^2 = x^2 + y^2 - 2x + 5 \implies x = -\frac{1}{4} y^2 + 1 \cdots \cdots ②
+(-x + 3)^2 = x^2 + y^2 - 2x + 5 \implies x = -\frac{1}{4} y^2 + 1 \cdots \cdots (2)
 \]
-条件 $②$ 满足 $x \le 3$。当点 $Q$ 在球面 $S$ 上运动时，点 $R$ 的运动范围是以 $②$ 为边界线且包含原点的一侧。
+条件 $(2)$ 满足 $x \le 3$。当点 $Q$ 在球面 $S$ 上运动时，点 $R$ 的运动范围是以 $(2)$ 为边界线且包含原点的一侧。
 
 结果如图所示，为右侧阴影部分，且边界线包含在区域内。
 
@@ -22816,19 +22978,19 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         在四面体 $ABCD$ 中，由于 $\angle ADB = 90^\circ$，由勾股定理得：
         \[
-        AB^2 = AD^2 + BD^2 \dots (*) \text{}
+        AB^2 = AD^2 + BD^2 \dots (*) 
         \]
         根据已知条件，$AB^2 + CD^2 = BC^2 + AD^2 = AC^2 + BD^2$，将 $(*)$ 代入得：
         \[
-        AD^2 + BD^2 + CD^2 = BC^2 + AD^2 = AC^2 + BD^2 \text{}
+        AD^2 + BD^2 + CD^2 = BC^2 + AD^2 = AC^2 + BD^2 
         \]
         由此可导出两个等式：
         \[
-        BD^2 + CD^2 = BC^2, \quad AD^2 + CD^2 = AC^2 \text{}
+        BD^2 + CD^2 = BC^2, \quad AD^2 + CD^2 = AC^2 
         \]
         根据勾股定理的逆定理，上述等式分别意味着：
         \[
-        \angle BDC = 90^\circ, \quad \angle ADC = 90^\circ \text{}
+        \angle BDC = 90^\circ, \quad \angle ADC = 90^\circ 
         \]
         因此，$\angle BDC = 90^\circ$。
     \end{solution}
@@ -22838,23 +23000,23 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         设 $DA = a, DB = b, DC = c$。根据 (1) 的结论，三条侧棱 $DA, DB, DC$ 两两垂直。
         我们可以建立空间直角坐标系，设 $D$ 为原点 $(0, 0, 0)$，则：
         \[
-        A(a, 0, 0), \quad B(0, b, 0), \quad C(0, 0, c) \text{}
+        A(a, 0, 0), \quad B(0, b, 0), \quad C(0, 0, c) 
         \]
         由此可得 $\triangle ABC$ 的重心 $G$ 的坐标为：
         \[
-        G \left( \frac{a}{3}, \frac{b}{3}, \frac{c}{3} \right) \text{}
+        G \left( \frac{a}{3}, \frac{b}{3}, \frac{c}{3} \right) 
         \]
         计算分子的各项：
         \[
-        AB^2 = a^2 + b^2, \quad CD^2 = c^2 \implies \sqrt{AB^2 + CD^2} = \sqrt{a^2 + b^2 + c^2} \text{}
+        AB^2 = a^2 + b^2, \quad CD^2 = c^2 \implies \sqrt{AB^2 + CD^2} = \sqrt{a^2 + b^2 + c^2} 
         \]
         计算分母 $DG$ 的距离：
         \[
-        DG = \sqrt{ \left( \frac{a}{3} \right)^2 + \left( \frac{b}{3} \right)^2 + \left( \frac{c}{3} \right)^2 } = \frac{1}{3} \sqrt{a^2 + b^2 + c^2} \text{}
+        DG = \sqrt{ \left( \frac{a}{3} \right)^2 + \left( \frac{b}{3} \right)^2 + \left( \frac{c}{3} \right)^2 } = \frac{1}{3} \sqrt{a^2 + b^2 + c^2} 
         \]
         最后求比值：
         \[
-        \frac{\sqrt{AB^2 + CD^2}}{DG} = \frac{\sqrt{a^2 + b^2 + c^2}}{\frac{1}{3} \sqrt{a^2 + b^2 + c^2}} = 3 \text{}
+        \frac{\sqrt{AB^2 + CD^2}}{DG} = \frac{\sqrt{a^2 + b^2 + c^2}}{\frac{1}{3} \sqrt{a^2 + b^2 + c^2}} = 3 
         \]
     \end{solution}
 \end{parts}
@@ -23136,23 +23298,23 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         首先，由于 $\triangle ABC$ 和 $\triangle OBC$ 全等，因此 $PA = PO$ 成立。
         由此可知，$\triangle POA$ 是一个等腰三角形。
         在等腰三角形中，中线 $PM$ 与底边 $OA$ 垂直，故有：
-        \[ \vec{PM} \perp \vec{OA} \text{} \]
+        \[ \vec{PM} \perp \vec{OA}  \]
         又因为点 $G$ 位于中线 $PM$ 上，所以 $\vec{PG}$ 与 $\vec{OA}$ 也是垂直的，即：
-        \[ \vec{PG} \perp \vec{OA} \text{} \]
+        \[ \vec{PG} \perp \vec{OA}  \]
     \end{solution}
 
     \part 当点 $P$ 在边 $BC$ 上运动时，求 $PG$ 的最小值。
     \begin{solution}
         根据重心性质，有 $PG : GM = 2 : 1$，故：
-        \[ PG = \frac{2}{3}PM = \frac{2}{3}\sqrt{PA^2 - 2^2} = \frac{2}{3}\sqrt{PA^2 - 4} \quad \cdots (*) \text{} \]
+        \[ PG = \frac{2}{3}PM = \frac{2}{3}\sqrt{PA^2 - 2^2} = \frac{2}{3}\sqrt{PA^2 - 4} \quad \cdots (*)  \]
         在 $\triangle ABC$ 中，应用余弦定理：
-        \[ \cos \angle ABC = \frac{3^2 + 3^2 - (2\sqrt{3})^2}{2 \cdot 3 \cdot 3} = \frac{1}{3} > 0 \text{} \]
+        \[ \cos \angle ABC = \frac{3^2 + 3^2 - (2\sqrt{3})^2}{2 \cdot 3 \cdot 3} = \frac{1}{3} > 0  \]
         因为 $\cos \angle ABC > 0$，$\triangle ABC$ 是锐角三角形。
         当 $PA$ 取最小值时，$PG$ 也取最小值。$PA$ 的最小值出现在点 $P$ 为从顶点 $A$ 向边 $BC$ 所作垂线的垂足时。
         此时：
-        \[ PA = 3 \sin \angle ABC = 3\sqrt{1 - \left( \frac{1}{3} \right)^2} = 2\sqrt{2} \text{} \]
+        \[ PA = 3 \sin \angle ABC = 3\sqrt{1 - \left( \frac{1}{3} \right)^2} = 2\sqrt{2}  \]
         将此代入 $(*)$ 式得：
-        \[ PG \text{ 的最小值} = \frac{2}{3}\sqrt{(2\sqrt{2})^2 - 4} = \frac{4}{3} \text{} \]
+        \[ PG \text{ 的最小值} = \frac{2}{3}\sqrt{(2\sqrt{2})^2 - 4} = \frac{4}{3}  \]
     \end{solution}
 \end{parts}
 
@@ -23165,10 +23327,10 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         设 $\vec{n} = (k, l, m)$ ($k > 0$) 为垂直于平面 $\alpha$ 的单位法向量。
         由 $\vec{a} \cdot \vec{n} = 0$ 和 $\vec{b} \cdot \vec{n} = 0$ 可得：
         \begin{align*}
-            k + l &= 0 \quad \cdots \textcircled{1} \\
-            2k + l + 2m &= 0 \quad \cdots \textcircled{2}
+            k + l &= 0 \quad \cdots (1) \\
+            2k + l + 2m &= 0 \quad \cdots (2)
         \end{align*}
-        由 $\textcircled{1}$ 得 $l = -k$，代入 $\textcircled{2}$ 得 $2k - k + 2m = 0 \Rightarrow m = -\frac{k}{2}$。
+        由 $(1)$ 得 $l = -k$，代入 $(2)$ 得 $2k - k + 2m = 0 \Rightarrow m = -\frac{k}{2}$。
         由 $|\vec{n}| = 1$ 知 $k^2 + l^2 + m^2 = 1$：
         \[ k^2 + (-k)^2 + \left(-\frac{k}{2}\right)^2 = 1 \Rightarrow \frac{9}{4}k^2 = 1 \Rightarrow k^2 = \frac{4}{9} \]
         因 $k > 0$，故 $k = \frac{2}{3}, l = -\frac{2}{3}, m = -\frac{1}{3}$。
@@ -23177,12 +23339,12 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
 
     \part 求关于平面 $\alpha$ 与点 $P$ 对称的点 $P'$ 的坐标。
     \begin{solution}
-        平面 $\alpha$ 的法向量为 $\vec{n} = \frac{1}{3}(2, -2, -1)$，故其方程为 $2x - 2y - z = 0$ $\cdots \textcircled{4}$。
+        平面 $\alpha$ 的法向量为 $\vec{n} = \frac{1}{3}(2, -2, -1)$，故其方程为 $2x - 2y - z = 0$ $\cdots (4)$。
         设 $\vec{PP'} = 3p\vec{n}$ ($p$ 为常数)，则 $\vec{OP'} = \vec{OP} + 3p\vec{n}$。
         线段 $PP'$ 的中点 $H$ 的坐标为：
-        \[ \vec{OH} = \frac{\vec{OP} + \vec{OP'}}{2} = \vec{OP} + \frac{3}{2}p\vec{n} = (4, 0, -1) + \frac{p}{2}(2, -2, -1) = \left( 4+p, -p, -1-\frac{p}{2} \right) \text{} \]
-        点 $H$ 在平面 $\alpha$ 上，代入 $\textcircled{4}$ 得：
-        \[ 2(4+p) - 2(-p) - \left(-1-\frac{p}{2}\right) = 0 \Rightarrow \frac{9}{2}p + 9 = 0 \Rightarrow p = -2 \text{} \]
+        \[ \vec{OH} = \frac{\vec{OP} + \vec{OP'}}{2} = \vec{OP} + \frac{3}{2}p\vec{n} = (4, 0, -1) + \frac{p}{2}(2, -2, -1) = \left( 4+p, -p, -1-\frac{p}{2} \right)  \]
+        点 $H$ 在平面 $\alpha$ 上，代入 $(4)$ 得：
+        \[ 2(4+p) - 2(-p) - \left(-1-\frac{p}{2}\right) = 0 \Rightarrow \frac{9}{2}p + 9 = 0 \Rightarrow p = -2  \]
         代入 $\vec{OP'}$ 得 $\vec{OP'} = (4, 0, -1) - 2(2, -2, -1) = (0, 4, 1)$。
         故点 $P'$ 的坐标为 $(0, 4, 1)$。
     \end{solution}
@@ -23196,8 +23358,8 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         最小值在 $R$ 为线段 $P'Q$ 与平面 $\alpha$ 的交点时取得。
         直线 $P'Q$ 的方向向量为 $\vec{P'Q} = (4, 0, 5) - (0, 4, 1) = (4, -4, 4)$。
         设直线 $P'Q$ 上的点 $R$ 为 $(x, y, z) = (0, 4, 1) + t(4, -4, 4) = (4t, 4-4t, 1+4t)$。
-        代入平面方程 $\textcircled{4}$：
-        \[ 2(4t) - 2(4-4t) - (1+4t) = 0 \Rightarrow 12t - 9 = 0 \Rightarrow t = \frac{3}{4} \text{} \]
+        代入平面方程 $(4)$：
+        \[ 2(4t) - 2(4-4t) - (1+4t) = 0 \Rightarrow 12t - 9 = 0 \Rightarrow t = \frac{3}{4}  \]
         代入 $R$ 的坐标公式，得 $R(3, 1, 4)$。
     \end{solution}
 \end{parts}
@@ -23210,11 +23372,11 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         设球心为 $O$。对于 $\triangle ABC$，设 $AC = BC = x$。
         在 $\triangle ABC$ 中应用余弦定理：
-        \[ x^2 + x^2 - 2x^2 \cos \angle ACB = 1^2 \Rightarrow 2x^2 - \frac{8}{5}x^2 = 1 \text{} \]
+        \[ x^2 + x^2 - 2x^2 \cos \angle ACB = 1^2 \Rightarrow 2x^2 - \frac{8}{5}x^2 = 1  \]
         解得 $\frac{2}{5}x^2 = 1 \Rightarrow x^2 = \frac{5}{2}$，故 $x = \sqrt{\frac{5}{2}} = \frac{\sqrt{10}}{2}$。
         
         设 $\triangle ABC$ 的面积为 $S$：
-        \[ S = \frac{1}{2} x^2 \sin \angle ACB = \frac{1}{2} \cdot \frac{5}{2} \sqrt{1 - \left( \frac{4}{5} \right)^2} = \frac{5}{4} \cdot \frac{3}{5} = \frac{3}{4} \text{} \]
+        \[ S = \frac{1}{2} x^2 \sin \angle ACB = \frac{1}{2} \cdot \frac{5}{2} \sqrt{1 - \left( \frac{4}{5} \right)^2} = \frac{5}{4} \cdot \frac{3}{5} = \frac{3}{4}  \]
     \end{solution}
 
     \part 求四面体 $ABCD$ 的体积。
@@ -23227,12 +23389,12 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         在 $\triangle AMC$ 中，$CM = \sqrt{x^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{5}{2} - \frac{1}{4}} = \frac{3}{2}$。同理 $DM = \frac{3}{2}$。
         
         在 $\triangle OMC$ 中（$OC=1$），设 $\theta = \angle OMC$。应用余弦定理：
-        \[ \left(\frac{\sqrt{3}}{2}\right)^2 + \left(\frac{3}{2}\right)^2 - 2 \cdot \frac{\sqrt{3}}{2} \cdot \frac{3}{2} \cos \theta = 1^2 \Rightarrow \frac{3}{4} + \frac{9}{4} - \frac{3\sqrt{3}}{2} \cos \theta = 1 \text{} \]
+        \[ \left(\frac{\sqrt{3}}{2}\right)^2 + \left(\frac{3}{2}\right)^2 - 2 \cdot \frac{\sqrt{3}}{2} \cdot \frac{3}{2} \cos \theta = 1^2 \Rightarrow \frac{3}{4} + \frac{9}{4} - \frac{3\sqrt{3}}{2} \cos \theta = 1  \]
         解得 $\cos \theta = \frac{4}{3\sqrt{3}}$，从而 $\sin \theta = \sqrt{1 - \frac{16}{27}} = \frac{\sqrt{11}}{3\sqrt{3}}$。
         
         点 $D$ 到平面 $ABC$ 的高度 $DH = DM \sin 2\theta = \frac{3}{2} \cdot 2 \sin \theta \cos \theta = 3 \cdot \frac{\sqrt{11}}{3\sqrt{3}} \cdot \frac{4}{3\sqrt{3}} = \frac{4\sqrt{11}}{9}$。
         四面体 $ABCD$ 的体积 $V$ 为：
-        \[ V = \frac{1}{3} S \cdot DH = \frac{1}{3} \cdot \frac{3}{4} \cdot \frac{4\sqrt{11}}{9} = \frac{\sqrt{11}}{9} \text{} \]
+        \[ V = \frac{1}{3} S \cdot DH = \frac{1}{3} \cdot \frac{3}{4} \cdot \frac{4\sqrt{11}}{9} = \frac{\sqrt{11}}{9}  \]
     \end{solution}
 \end{parts}
 
@@ -23243,24 +23405,24 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 用 $\overrightarrow{OD}$ 表示 $\overrightarrow{OG}$。
     \begin{solution}
         根据重心公式，$\triangle ABC$ 的重心 $G$ 满足：
-        \[ \overrightarrow{OG} = \frac{1}{3}(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}) \text{} \]
+        \[ \overrightarrow{OG} = \frac{1}{3}(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC})  \]
         由已知条件 $\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} + \overrightarrow{OD} = \vec{0}$ 可得：
-        \[ \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} = -\overrightarrow{OD} \quad \cdots \textcircled{1} \text{} \]
+        \[ \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} = -\overrightarrow{OD} \quad \cdots (1)  \]
         代入重心公式得：
-        \[ \overrightarrow{OG} = \frac{1}{3}(-\overrightarrow{OD}) = -\frac{1}{3}\overrightarrow{OD} \text{} \]
+        \[ \overrightarrow{OG} = \frac{1}{3}(-\overrightarrow{OD}) = -\frac{1}{3}\overrightarrow{OD}  \]
     \end{solution}
 
     \part 用 $r$ 表示 $\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}$。
     \begin{solution}
-        由 \textcircled{1} 式，对等式两边进行平方运算：
-        \[ |\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}|^2 = |-\overrightarrow{OD}|^2 \text{} \]
+        由 (1) 式，对等式两边进行平方运算：
+        \[ |\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}|^2 = |-\overrightarrow{OD}|^2  \]
         展开得：
-        \[ |\overrightarrow{OA}|^2 + |\overrightarrow{OB}|^2 + |\overrightarrow{OC}|^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = |\overrightarrow{OD}|^2 \text{} \]
+        \[ |\overrightarrow{OA}|^2 + |\overrightarrow{OB}|^2 + |\overrightarrow{OC}|^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = |\overrightarrow{OD}|^2  \]
         由于 $A, B, C, D$ 均在半径为 $r$ 的球面上，故 $|\overrightarrow{OA}| = |\overrightarrow{OB}| = |\overrightarrow{OC}| = |\overrightarrow{OD}| = r$。
         代入上式：
-        \[ 3r^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = r^2 \text{} \]
+        \[ 3r^2 + 2(\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) = r^2  \]
         解得：
-        \[ \overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA} = -r^2 \text{} \]
+        \[ \overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA} = -r^2  \]
     \end{solution}
 
     \part 当点 $P$ 在球面 $S$ 上运动时，用 $r$ 表示 $\overrightarrow{PA} \cdot \overrightarrow{PB} + \overrightarrow{PB} \cdot \overrightarrow{PC} + \overrightarrow{PC} \cdot \overrightarrow{PA}$ 的最大值。此外，求取最大值时点 $P$ 对应的 $|\overrightarrow{PG}|$（用 $r$ 表示）。
@@ -23270,12 +23432,12 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         \begin{align*}
             F &= (\overrightarrow{OA} \cdot \overrightarrow{OB} + \overrightarrow{OB} \cdot \overrightarrow{OC} + \overrightarrow{OC} \cdot \overrightarrow{OA}) - 2(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC}) \cdot \overrightarrow{OP} + 3r^2 \\
             &= -r^2 - 2(-\overrightarrow{OD}) \cdot \overrightarrow{OP} + 3r^2 \\
-            &= 2r^2 + 2\overrightarrow{OD} \cdot \overrightarrow{OP} \text{}
+            &= 2r^2 + 2\overrightarrow{OD} \cdot \overrightarrow{OP} 
         \end{align*}
         由于 $-r^2 \le \overrightarrow{OD} \cdot \overrightarrow{OP} \le r^2$，故 $F$ 的最大值为 $2r^2 + 2r^2 = 4r^2$。
         此时 $\overrightarrow{OD} \cdot \overrightarrow{OP} = r^2$，即 $\overrightarrow{OP} = \overrightarrow{OD}$（点 $P$ 与 $D$ 重合）。
         此时：
-        \[ |\overrightarrow{PG}| = |\overrightarrow{DG}| = |\overrightarrow{OG} - \overrightarrow{OD}| = |-\frac{1}{3}\overrightarrow{OD} - \overrightarrow{OD}| = |-\frac{4}{3}\overrightarrow{OD}| = \frac{4}{3}r \text{} \]
+        \[ |\overrightarrow{PG}| = |\overrightarrow{DG}| = |\overrightarrow{OG} - \overrightarrow{OD}| = |-\frac{1}{3}\overrightarrow{OD} - \overrightarrow{OD}| = |-\frac{4}{3}\overrightarrow{OD}| = \frac{4}{3}r  \]
         故最大值为 $4r^2$，此时 $|\overrightarrow{PG}| = \frac{4}{3}r$。
     \end{solution}
 \end{parts}
@@ -23294,7 +23456,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         设 $P(0, 0, 2)$，点 $Q$ 在平面 $z=0$ 上，线段 $PQ$ 的中点 $M$ 坐标为 $(\frac{x}{2}, \frac{y}{2}, 1)$。
         由于线段 $PQ$ 与平面 $z=1$ 的交点正好是其中心点 $M$，故只要 $M$ 在圆盘 $B$ 内，线段 $PQ$ 就与 $B$ 有公共点：
-        \[ \left( \frac{x}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow x^2 + y^2 \le 4 \text{} \]
+        \[ \left( \frac{x}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow x^2 + y^2 \le 4  \]
         因此，$D$ 是以原点为中心、半径为 $2$ 的圆及其内部。
     \end{solution}
 
@@ -23302,7 +23464,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         设 $P(r, 0, 2)$，$Q(x, y, 0)$，则线段 $PQ$ 的中点 $M$ 为 $(\frac{x+r}{2}, \frac{y}{2}, 1)$。
         由 $M \in B$ 得：
-        \[ \left( \frac{x+r}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow (x+r)^2 + y^2 \le 4 \text{} \]
+        \[ \left( \frac{x+r}{2} \right)^2 + \left( \frac{y}{2} \right)^2 \le 1 \Rightarrow (x+r)^2 + y^2 \le 4  \]
         因此，$D$ 是中心在 $(-r, 0)$、半径为 $2$ 的圆及其内部。
     \end{solution}
 
@@ -23319,7 +23481,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         设 $D$ 的中心为 $M'(-r\cos\theta, -r\sin\theta)$。当 $\theta$ 从 $0$ 变到 $2\pi$ 时，$M'$ 的轨迹是半径为 $r$ 的圆。
         $D$ 扫过的区域是一个圆环，其内半径为 $r-2$，外半径为 $r+2$。
         扫过区域的面积 $S$ 为：
-        \[ S = \pi(r+2)^2 - \pi(r-2)^2 = \pi(r^2 + 4r + 4 - r^2 + 4r - 4) = 8\pi r \text{} \]
+        \[ S = \pi(r+2)^2 - \pi(r-2)^2 = \pi(r^2 + 4r + 4 - r^2 + 4r - 4) = 8\pi r  \]
     \end{solution}
 \end{parts}
 
@@ -23330,10 +23492,10 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 求球面 $S$ 的中心 $C$ 的坐标及 $S$ 的方程。
     \begin{solution}
         中心 $C$ 是线段 $AB$ 的中点：
-        \[ C = \left( \frac{1+1}{2}, \frac{-1-1}{2}, \frac{1+5}{2} \right) = (1, -1, 3) \text{} \]
+        \[ C = \left( \frac{1+1}{2}, \frac{-1-1}{2}, \frac{1+5}{2} \right) = (1, -1, 3)  \]
         半径 $R = AC = \sqrt{(1-1)^2 + (-1-(-1))^2 + (3-1)^2} = 2$。
         故球面 $S$ 的方程为：
-        \[ (x-1)^2 + (y+1)^2 + (z-3)^2 = 4 \quad \cdots \textcircled{1} \text{} \]
+        \[ (x-1)^2 + (y+1)^2 + (z-3)^2 = 4 \quad \cdots (1)  \]
     \end{solution}
 
     \part 当点 $P$ 在 $S$ 上运动时，求 $\triangle ABP$ 面积的最大值。
@@ -23342,7 +23504,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         $\triangle ABP$ 的面积为 $\frac{1}{2} \cdot AB \cdot h$，其中 $h$ 是点 $P$ 到直线 $AB$ 的距离。
         当点 $P$ 在经过中心 $C$ 且垂直于 $AB$ 的平面（即 $z=3$）上运动时，$h$ 达到最大值，即球面半径 $R=2$。
                 面积最大值为：
-        \[ S_{\max} = \frac{1}{2} \cdot 4 \cdot 2 = 4 \text{} \]
+        \[ S_{\max} = \frac{1}{2} \cdot 4 \cdot 2 = 4  \]
     \end{solution}
 
     \part 点 $Q(x, y, z)$ 在 $S$ 上运动，且满足 $\angle QCA = \frac{\pi}{3}$ 及 $y \ge 0$。对于点 $R(1+\sqrt{2}, 0, 4)$，求内积 $\overrightarrow{CQ} \cdot \overrightarrow{CR}$ 的取值范围。
@@ -23357,7 +23519,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         向量 $\overrightarrow{CA} = (0, 0, -2)$，$\overrightarrow{CQ} = (x-1, y+1, z-3)$。
         根据内积定义：$\overrightarrow{CA} \cdot \overrightarrow{CQ} = |\overrightarrow{CA}| |\overrightarrow{CQ}| \cos \frac{\pi}{3} = 2 \cdot 2 \cdot \frac{1}{2} = 2$。
         展开得：$-2(z-3) = 2 \Rightarrow z = 2$。
-        代入球面方程 \textcircled{1} 得：$(x-1)^2 + (y+1)^2 + (2-3)^2 = 4 \Rightarrow (x-1)^2 + (y+1)^2 = 3$。
+        代入球面方程 (1) 得：$(x-1)^2 + (y+1)^2 + (2-3)^2 = 4 \Rightarrow (x-1)^2 + (y+1)^2 = 3$。
         结合 $y \ge 0$，点 $Q$ 的轨迹是平面 $z=2$ 上圆心为 $D(1, -1, 2)$、半径为 $\sqrt{3}$ 的一段圆弧 $EF$。
         
         已知 $R(1+\sqrt{2}, 0, 4)$，则 $\overrightarrow{CR} = (\sqrt{2}, 1, 1)$。
@@ -23387,22 +23549,22 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
 \begin{solution}
     在右侧四面体 $T$ 的展开图中，$\mathrm{AB}=\sqrt{10}$，$\mathrm{AC}=\sqrt{13}$，$\mathrm{BF}=\sqrt{5}$，$\mathrm{AF}=\sqrt{7}$。
     由 $\vec{\mathrm{AB}} \cdot \vec{\mathrm{AC}} = 7$，$\triangle\mathrm{ABC}$ 的面积 $S$ 为：
-    \[ S = \frac{1}{2} \sqrt{|\vec{\mathrm{AB}}|^2 |\vec{\mathrm{AC}}|^2 - (\vec{\mathrm{AB}} \cdot \vec{\mathrm{AC}})^2} = \frac{1}{2} \sqrt{10 \cdot 13 - 7^2} = \frac{9}{2} \quad \dots (1) \text{} \]
+    \[ S = \frac{1}{2} \sqrt{|\vec{\mathrm{AB}}|^2 |\vec{\mathrm{AC}}|^2 - (\vec{\mathrm{AB}} \cdot \vec{\mathrm{AC}})^2} = \frac{1}{2} \sqrt{10 \cdot 13 - 7^2} = \frac{9}{2} \quad \dots (1)  \]
     此外，对 $\triangle\mathrm{ABC}$ 使用余弦定理：
-    \[ \mathrm{BC}^2 = 10 + 13 - 2 \cdot 7 = 9 \Rightarrow \mathrm{BC} = 3 \text{} \]
+    \[ \mathrm{BC}^2 = 10 + 13 - 2 \cdot 7 = 9 \Rightarrow \mathrm{BC} = 3  \]
     因为 $\vec{\mathrm{AD}} \cdot \vec{\mathrm{BC}} = 0$，所以 $\mathrm{AD} \perp \mathrm{BC}$。设线段 $\mathrm{AD}$ 与 $\mathrm{BC}$ 的交点为 $\mathrm{G}$：
-    \[ S = \frac{1}{2} \mathrm{BC} \cdot \mathrm{AG} = \frac{3}{2} \mathrm{AG} \quad \dots (2) \text{} \]
+    \[ S = \frac{1}{2} \mathrm{BC} \cdot \mathrm{AG} = \frac{3}{2} \mathrm{AG} \quad \dots (2)  \]
     由 (1) 和 (2) 得 $\frac{3}{2} \mathrm{AG} = \frac{9}{2}$，故 $\mathrm{AG} = 3$。
     利用勾股定理：
-    \[ \mathrm{BG} = \sqrt{\mathrm{AB}^2 - \mathrm{AG}^2} = \sqrt{10 - 9} = 1, \quad \mathrm{DG} = \sqrt{\mathrm{DB}^2 - \mathrm{BG}^2} = \sqrt{5 - 1} = 2 \text{} \]
+    \[ \mathrm{BG} = \sqrt{\mathrm{AB}^2 - \mathrm{AG}^2} = \sqrt{10 - 9} = 1, \quad \mathrm{DG} = \sqrt{\mathrm{DB}^2 - \mathrm{BG}^2} = \sqrt{5 - 1} = 2  \]
     在四面体 $T$ 中，从点 $\mathrm{D}$ 向 $\mathrm{AG}$ 下垂线，垂足记为 $\mathrm{H}$，即 $\mathrm{DH} \perp \mathrm{AG} \dots (3)$。又由于 $\mathrm{DG} \perp \mathrm{BC}$ 且 $\mathrm{AG} \perp \mathrm{BC}$，平面 $\mathrm{DAG}$ 与边 $\mathrm{BC}$ 垂直，故 $\mathrm{DH} \perp \mathrm{BC} \dots (4)$。
     
     由 (3) 和 (4) 可知，$\mathrm{DH}$ 垂直于平面 $\mathrm{ABC}$。
     在 $\triangle\mathrm{DGA}$ 中，设 $\angle\mathrm{DGA} = \theta$，根据余弦定理：
-    \[ \cos\theta = \frac{\mathrm{AG}^2 + \mathrm{DG}^2 - \mathrm{DA}^2}{2 \mathrm{AG} \cdot \mathrm{DG}} = \frac{9 + 4 - 7}{2 \cdot 3 \cdot 2} = \frac{1}{2} \text{} \]
+    \[ \cos\theta = \frac{\mathrm{AG}^2 + \mathrm{DG}^2 - \mathrm{DA}^2}{2 \mathrm{AG} \cdot \mathrm{DG}} = \frac{9 + 4 - 7}{2 \cdot 3 \cdot 2} = \frac{1}{2}  \]
     则四面体的高 $\mathrm{DH} = \mathrm{DG} \sin\theta = 2 \sqrt{1 - \cos^2\theta} = 2 \cdot \frac{\sqrt{3}}{2} = \sqrt{3}$。
     因此，四面体 $T$ 的体积 $V$ 为：
-    \[ V = \frac{1}{3} S \cdot \mathrm{DH} = \frac{1}{3} \cdot \frac{9}{2} \cdot \sqrt{3} = \frac{3}{2}\sqrt{3} \text{} \]
+    \[ V = \frac{1}{3} S \cdot \mathrm{DH} = \frac{1}{3} \cdot \frac{9}{2} \cdot \sqrt{3} = \frac{3}{2}\sqrt{3}  \]
 \end{solution}
 
 \question
@@ -23411,26 +23573,26 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 当 $A, B, C, D$ 为菱形的顶点时，求表示 $a$ 与 $b$ 关系的等式。
     \begin{solution}
         对于 $4$ 点 $A(a, -1, -1)$，$B(-1, b, -1)$，$C(-a, 1, 1)$，$D(1, -b, 1)$：
-        \[ \vec{AD} = (1-a, -b+1, 2), \quad \vec{BC} = (-a+1, 1-b, 2) \text{} \]
+        \[ \vec{AD} = (1-a, -b+1, 2), \quad \vec{BC} = (-a+1, 1-b, 2)  \]
         由于 $\vec{AD} = \vec{BC}$，故四边形 $ABCD$ 为平行四边形。
         要使平行四边形 $ABCD$ 成为菱形，其对角线必须互相垂直，即 $AC \perp BD$。
         计算对角线向量：
-        \[ \vec{AC} = (-2a, 2, 2) = 2(-a, 1, 1), \quad \vec{BD} = (2, -2b, 2) = 2(1, -b, 1) \text{} \]
+        \[ \vec{AC} = (-2a, 2, 2) = 2(-a, 1, 1), \quad \vec{BD} = (2, -2b, 2) = 2(1, -b, 1)  \]
         由 $\vec{AC} \cdot \vec{BD} = 0$ 得：
-        \[ -a - b + 1 = 0 \Rightarrow a + b = 1 \text{} \]
+        \[ -a - b + 1 = 0 \Rightarrow a + b = 1  \]
     \end{solution}
 
     \part 当 $a, b$ 满足 (1) 的等式时，求以 $A, B, C, D$ 为顶点的四边形面积的最小值。
     \begin{solution}
         由 (1) 知 $b = 1 - a$。结合 $-1 < a < 1$ 和 $-1 < b < 1$，可得 $0 < a < 1$。
         计算对角线长度：
-        \[ |\vec{AC}| = 2\sqrt{a^2 + 1 + 1} = 2\sqrt{a^2 + 2} \text{} \]
-        \[ |\vec{BD}| = 2\sqrt{1 + b^2 + 1} = 2\sqrt{(1-a)^2 + 2} = 2\sqrt{a^2 - 2a + 3} \text{} \]
+        \[ |\vec{AC}| = 2\sqrt{a^2 + 1 + 1} = 2\sqrt{a^2 + 2}  \]
+        \[ |\vec{BD}| = 2\sqrt{1 + b^2 + 1} = 2\sqrt{(1-a)^2 + 2} = 2\sqrt{a^2 - 2a + 3}  \]
         设菱形 $ABCD$ 的面积为 $S$：
-        \[ S = \frac{1}{2} |\vec{AC}| |\vec{BD}| = \frac{1}{2} \cdot 2\sqrt{a^2 + 2} \cdot 2\sqrt{a^2 - 2a + 3} = 2\sqrt{(a^2 + 2)(a^2 - 2a + 3)} \text{} \]
+        \[ S = \frac{1}{2} |\vec{AC}| |\vec{BD}| = \frac{1}{2} \cdot 2\sqrt{a^2 + 2} \cdot 2\sqrt{a^2 - 2a + 3} = 2\sqrt{(a^2 + 2)(a^2 - 2a + 3)}  \]
         令 $f(a) = (a^2 + 2)(a^2 - 2a + 3) = a^4 - 2a^3 + 5a^2 - 4a + 6$。
         求导得：
-        \[ f'(a) = 4a^3 - 6a^2 + 10a - 4 = 2(2a - 1)(a^2 - a + 2) \text{} \]
+        \[ f'(a) = 4a^3 - 6a^2 + 10a - 4 = 2(2a - 1)(a^2 - a + 2)  \]
         由于 $a^2 - a + 2 = (a - 1/2)^2 + 7/4 > 0$，故 $f(a)$ 在 $0 < a < 1$ 范围内的增减情况如下表所示：
 
         \begin{tabular}{|c|c|c|c|c|c|}
@@ -23444,7 +23606,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         \end{tabular}
         由表可知，$f(a)$ 在 $a = 1/2$ 时取得最小值 $81/16$。
         因此，$S$ 的最小值为：
-        \[ S = 2\sqrt{\frac{81}{16}} = 2 \cdot \frac{9}{4} = \frac{9}{2} \text{} \]
+        \[ S = 2\sqrt{\frac{81}{16}} = 2 \cdot \frac{9}{4} = \frac{9}{2}  \]
     \end{solution}
 \end{parts}
 
@@ -23458,9 +23620,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         设 $k$ 为实数，令 $\vec{\mathrm{OD}} = k\vec{a}$，则 $\vec{\mathrm{CD}} = k\vec{a} - \vec{c}$。
         由 $\vec{\mathrm{OC}} \perp \vec{\mathrm{CD}}$ 得 $\vec{c} \cdot (k\vec{a} - \vec{c}) = 0$，即 $k\cos\alpha - 1 = 0$。
         因 $\cos\alpha > 0$，故 $k = \frac{1}{\cos\alpha}$，得：
-        \[ \vec{\mathrm{CD}} = \frac{1}{\cos\alpha}\vec{a} - \vec{c} \quad \dots (1) \text{} \]
+        \[ \vec{\mathrm{CD}} = \frac{1}{\cos\alpha}\vec{a} - \vec{c} \quad \dots (1)  \]
         同理，令 $\vec{\mathrm{OE}} = l\vec{b}$，由 $\vec{\mathrm{OC}} \perp \vec{\mathrm{CE}}$ 可得 $l = \frac{1}{\cos\beta}$，故：
-        \[ \vec{\mathrm{CE}} = \frac{1}{\cos\beta}\vec{b} - \vec{c} \quad \dots (2) \text{} \]
+        \[ \vec{\mathrm{CE}} = \frac{1}{\cos\beta}\vec{b} - \vec{c} \quad \dots (2)  \]
     \end{solution}
 
     \part 请用 $\sin\alpha, \cos\alpha, \sin\beta, \cos\beta, \cos\gamma$ 表示 $\cos\theta$。
@@ -23473,9 +23635,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         由 (1) 可得 $|\vec{\mathrm{CD}}|^2 = \frac{1}{\cos^2\alpha} - 1 = \frac{\sin^2\alpha}{\cos^2\alpha}$，由 (2) 得 $|\vec{\mathrm{CE}}|^2 = \frac{\sin^2\beta}{\cos^2\beta}$。
         计算内积 $\vec{\mathrm{CD}} \cdot \vec{\mathrm{CE}}$：
-        \[ \vec{\mathrm{CD}} \cdot \vec{\mathrm{CE}} = \left( \frac{1}{\cos\alpha}\vec{a} - \vec{c} \right) \cdot \left( \frac{1}{\cos\beta}\vec{b} - \vec{c} \right) = \frac{\cos\gamma}{\cos\alpha\cos\beta} - 1 = \frac{\cos\gamma - \cos\alpha\cos\beta}{\cos\alpha\cos\beta} \text{} \]
+        \[ \vec{\mathrm{CD}} \cdot \vec{\mathrm{CE}} = \left( \frac{1}{\cos\alpha}\vec{a} - \vec{c} \right) \cdot \left( \frac{1}{\cos\beta}\vec{b} - \vec{c} \right) = \frac{\cos\gamma}{\cos\alpha\cos\beta} - 1 = \frac{\cos\gamma - \cos\alpha\cos\beta}{\cos\alpha\cos\beta}  \]
         由 $\cos\theta = \frac{\vec{\mathrm{CD}} \cdot \vec{\mathrm{CE}}}{|\vec{\mathrm{CD}}| |\vec{\mathrm{CE}}|}$ 得：
-        \[ \cos\theta = \frac{\cos\gamma - \cos\alpha\cos\beta}{\cos\alpha\cos\beta} \cdot \frac{\cos\alpha}{\sin\alpha} \cdot \frac{\cos\beta}{\sin\beta} = \frac{\cos\gamma - \cos\alpha\cos\beta}{\sin\alpha\sin\beta} \text{} \]
+        \[ \cos\theta = \frac{\cos\gamma - \cos\alpha\cos\beta}{\cos\alpha\cos\beta} \cdot \frac{\cos\alpha}{\sin\alpha} \cdot \frac{\cos\beta}{\sin\beta} = \frac{\cos\gamma - \cos\alpha\cos\beta}{\sin\alpha\sin\beta}  \]
     \end{solution}
 
     \part 设 $\cos\gamma = \cos\alpha\cos\beta$ 且 $\beta = \frac{\pi}{2} - \alpha$。若点 $\mathrm{C}$ 到平面 $\mathrm{DOE}$ 的垂线段长为 $\mathrm{CP}$，证明 $\mathrm{CP} = \frac{1}{\tan\gamma}$。
@@ -23489,7 +23651,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         另一方面，$\triangle\mathrm{ODE}$ 面积为 $\frac{1}{2} |\vec{\mathrm{OD}}| |\vec{\mathrm{OE}}| \sin\gamma = \frac{\sin\gamma}{2\cos\alpha\cos\beta} = \frac{\sin\gamma}{2\cos\gamma} = \frac{1}{2} \tan\gamma$。
         体积亦可表示为 $V = \frac{1}{3} (\triangle\mathrm{ODE}) \cdot \mathrm{CP} = \frac{1}{6} \mathrm{CP} \tan\gamma \quad \dots (4)$。
         由 (3) 和 (4) 得 $\frac{1}{6} \mathrm{CP} \tan\gamma = \frac{1}{6}$，故：
-        \[ \mathrm{CP} = \frac{1}{\tan\gamma} \text{} \]
+        \[ \mathrm{CP} = \frac{1}{\tan\gamma}  \]
     \end{solution}
 \end{parts}
 
@@ -23499,7 +23661,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 求内积 $\vec{AB} \cdot \vec{AB}$，$\vec{AC} \cdot \vec{AC}$ 以及 $\vec{AB} \cdot \vec{AC}$。
     \begin{solution}
         根据各点坐标可得：
-        \[ \vec{AB} = (1, 1, -1), \quad \vec{AC} = (1, -1, -2) \text{} \]
+        \[ \vec{AB} = (1, 1, -1), \quad \vec{AC} = (1, -1, -2)  \]
         计算内积如下：
         \begin{itemize}
             \item $\vec{AB} \cdot \vec{AB} = 1^2 + 1^2 + (-1)^2 = 3$
@@ -23517,15 +23679,15 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
             \item $\vec{OA} \cdot \vec{AC} = 3(1) + 1(-1) + 3(-2) = -4$
         \end{itemize}
         带入内积关系得方程组：
-        \[ \begin{cases} 1 + 3k + 2l = 0 \\ -4 + 2k + 6l = 0 \end{cases} \Rightarrow \begin{cases} 3k + 2l = -1 \\ k + 3l = 2 \end{cases} \text{} \]
+        \[ \begin{cases} 1 + 3k + 2l = 0 \\ -4 + 2k + 6l = 0 \end{cases} \Rightarrow \begin{cases} 3k + 2l = -1 \\ k + 3l = 2 \end{cases}  \]
         解得 $k = -1, l = 1$。故：
-        \[ \vec{AQ} = -\vec{AB} + \vec{AC} \quad \dots \text{\textcircled{3}} \text{} \]
+        \[ \vec{AQ} = -\vec{AB} + \vec{AC} \quad \dots (3)  \]
     \end{solution}
 
     \part 对于区域 $K$ 上的点 $P$，证明在边 $QP$ 上存在满足 $\vec{AR} = r\vec{AC}$（$r$ 为非负实数）的点 $R$。
     \begin{solution}
         由 $\vec{AP} = s\vec{AB} + t\vec{AC}$ ($s, t \ge 0$) 知区域 $K$ 是由射线 $AB$ 和 $AC$ 张成的网格区域。
-        从 \textcircled{3} 式可知点 $Q$ 相对于区域 $K$ 位于射线 $AC$ 的反侧。
+        从 (3) 式可知点 $Q$ 相对于区域 $K$ 位于射线 $AC$ 的反侧。
         因此，连接点 $Q$ 与区域 $K$ 内任意点 $P$ 的线段 $QP$ 必然会穿过射线 $AC$（即满足 $\vec{AR} = r\vec{AC}, r \ge 0$ 的点集）。
     \end{solution}
 
@@ -23536,11 +23698,11 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         由于 $\vec{OQ} \perp H$，对于区域 $K$ 上的任意点 $P$，根据勾股定理有 $OP = \sqrt{OQ^2 + QP^2}$。
         因此，使 $OP$ 最小的点 $S$ 即为区域 $K$ 中距离 $Q$ 最近的点。
         从点 $Q$ 向射线 $AC$ 引垂线，垂足记为 $S$。设 $\vec{AS} = s\vec{AC}$，由 $\vec{QS} \cdot \vec{AC} = 0$ 得：
-        \[ (\vec{AS} - \vec{AQ}) \cdot \vec{AC} = 0 \Rightarrow (s\vec{AC} + \vec{AB} - \vec{AC}) \cdot \vec{AC} = 0 \text{} \]
-        \[ (s-1)|\vec{AC}|^2 + \vec{AB} \cdot \vec{AC} = 0 \Rightarrow 6(s-1) + 2 = 0 \Rightarrow s = \frac{2}{3} \text{} \]
+        \[ (\vec{AS} - \vec{AQ}) \cdot \vec{AC} = 0 \Rightarrow (s\vec{AC} + \vec{AB} - \vec{AC}) \cdot \vec{AC} = 0  \]
+        \[ (s-1)|\vec{AC}|^2 + \vec{AB} \cdot \vec{AC} = 0 \Rightarrow 6(s-1) + 2 = 0 \Rightarrow s = \frac{2}{3}  \]
         由于 $s = 2/3 \ge 0$，点 $S$ 落在射线 $AC$ 上，属于区域 $K$。
         计算 $S$ 的坐标：
-        \[ \vec{OS} = \vec{OA} + \frac{2}{3}\vec{AC} = (3, 1, 3) + \frac{2}{3}(1, -1, -2) = \left( \frac{11}{3}, \frac{1}{3}, \frac{5}{3} \right) \text{} \]
+        \[ \vec{OS} = \vec{OA} + \frac{2}{3}\vec{AC} = (3, 1, 3) + \frac{2}{3}(1, -1, -2) = \left( \frac{11}{3}, \frac{1}{3}, \frac{5}{3} \right)  \]
         故点 $S$ 的坐标为 $\left( \frac{11}{3}, \frac{1}{3}, \frac{5}{3} \right)$。
     \end{solution}
 \end{parts}
@@ -23553,23 +23715,23 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     设 $\vec{OA} = \vec{a}, \vec{OB} = \vec{b}, \vec{OC} = \vec{c}$。由于 $O, A, B, C$ 不共面，故 $\vec{a}, \vec{b}, \vec{c}$ 线性独立。
     根据中点及给定比例关系，各点向量表示如下：
     \begin{align*}
-        \vec{OP} &= \frac{1}{2}\vec{a} \quad \dots \text{\textcircled{1}} \\
-        \vec{OQ} &= \frac{1}{2}\vec{a} + \frac{1}{2}\vec{b} \quad \dots \text{\textcircled{2}} \\
-        \vec{OX} &= x\vec{c} \quad \dots \text{\textcircled{3}} \\
-        \vec{OY} &= \vec{OB} + y(\vec{OC} - \vec{OB}) = (1-y)\vec{b} + y\vec{c} \quad \dots \text{\textcircled{4}}
+        \vec{OP} &= \frac{1}{2}\vec{a} \quad \dots (1) \\
+        \vec{OQ} &= \frac{1}{2}\vec{a} + \frac{1}{2}\vec{b} \quad \dots (2) \\
+        \vec{OX} &= x\vec{c} \quad \dots (3) \\
+        \vec{OY} &= \vec{OB} + y(\vec{OC} - \vec{OB}) = (1-y)\vec{b} + y\vec{c} \quad \dots (4)
     \end{align*}
     
     
     直线 $QY$ 与直线 $PX$ 处于同一平面的充要条件是存在实数 $k, l$ 使得 $\vec{PY} = k\vec{PQ} + l\vec{PX}$。
     即 $\vec{OY} - \vec{OP} = k(\vec{OQ} - \vec{OP}) + l(\vec{OX} - \vec{OP})$。
-    将 \textcircled{1} $\sim$ \textcircled{4} 代入上式：
+    将 (1) $\sim$ (4) 代入上式：
     \[ 
     (1-y)\vec{b} + y\vec{c} - \frac{1}{2}\vec{a} = k\left( \frac{1}{2}\vec{b} \right) + l\left( x\vec{c} - \frac{1}{2}\vec{a} \right) 
     \]
     整理得：
     \[ -\frac{1}{2}\vec{a} + (1-y)\vec{b} + y\vec{c} = -\frac{1}{2}l\vec{a} + \frac{1}{2}k\vec{b} + lx\vec{c} \]
     由于 $\vec{a}, \vec{b}, \vec{c}$ 线性独立，对应系数必须相等：
-    \[ \begin{cases} -\frac{1}{2} = -\frac{1}{2}l \\ 1-y = \frac{1}{2}k \\ y = lx \end{cases} \Rightarrow \begin{cases} l = 1 \\ k = 2(1-y) \\ y = x \end{cases} \text{} \]
+    \[ \begin{cases} -\frac{1}{2} = -\frac{1}{2}l \\ 1-y = \frac{1}{2}k \\ y = lx \end{cases} \Rightarrow \begin{cases} l = 1 \\ k = 2(1-y) \\ y = x \end{cases}  \]
     由此可知，两直线在同一平面内的充要条件是 $x = y$。
     
     因此，直线 $QY$ 与直线 $PX$ 处于异面位置的充要条件为：
@@ -23584,7 +23746,7 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 求线段 $P_1P_2$ 的长度。
     \begin{solution}
         由 $P_1(3, -1, 1)$，$P_2(5, 0, -1)$ 得：
-        \[ P_1P_2 = \sqrt{(5-3)^2 + (0-(-1))^2 + (-1-1)^2} = \sqrt{2^2 + 1^2 + (-2)^2} = 3 \text{} \]
+        \[ P_1P_2 = \sqrt{(5-3)^2 + (0-(-1))^2 + (-1-1)^2} = \sqrt{2^2 + 1^2 + (-2)^2} = 3  \]
     \end{solution}
 
     \part 证明 $S_1$ 与 $S_2$ 相交。设其交线为圆 $C$，圆心为 $P_3$，求圆 $C$ 的半径及 $P_3$ 的坐标。
@@ -23592,11 +23754,11 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         由 (1) 知 $P_1P_2 = 3$。
         由于 $\sqrt{5}-\sqrt{2} < 3 < \sqrt{5}+\sqrt{2}$，故球面 $S_1$ 与 $S_2$ 相交。
         设圆 $C$ 上的点为 $Q$，在 $\triangle QP_1P_2$ 中，设 $\angle QP_1P_2 = \theta$，由余弦定理得：
-        \[ \cos\theta = \frac{5 + 3^2 - 2}{2 \cdot \sqrt{5} \cdot 3} = \frac{12}{6\sqrt{5}} = \frac{2}{\sqrt{5}} \text{} \]
+        \[ \cos\theta = \frac{5 + 3^2 - 2}{2 \cdot \sqrt{5} \cdot 3} = \frac{12}{6\sqrt{5}} = \frac{2}{\sqrt{5}}  \]
         $C$ 的半径为 $\sqrt{5}\sin\theta = \sqrt{5} \cdot \sqrt{1 - \left(\frac{2}{\sqrt{5}}\right)^2} = 1$。
         又 $P_1P_3 = \sqrt{5}\cos\theta = 2$，且 $P_3$ 在线段 $P_1P_2$ 上，
         故 $P_3$ 是将线段 $P_1P_2$ 按 $2:1$ 内分的点：
-        \[ x = \frac{3 \cdot 1 + 5 \cdot 2}{3} = \frac{13}{3}, \quad y = \frac{-1 \cdot 1 + 0 \cdot 2}{3} = -\frac{1}{3}, \quad z = \frac{1 \cdot 1 - 1 \cdot 2}{3} = -\frac{1}{3} \text{} \]
+        \[ x = \frac{3 \cdot 1 + 5 \cdot 2}{3} = \frac{13}{3}, \quad y = \frac{-1 \cdot 1 + 0 \cdot 2}{3} = -\frac{1}{3}, \quad z = \frac{1 \cdot 1 - 1 \cdot 2}{3} = -\frac{1}{3}  \]
         得 $P_3\left( \frac{13}{3}, -\frac{1}{3}, -\frac{1}{3} \right)$。
     \end{solution}
 
@@ -23604,9 +23766,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         平面 $H$ 与直线 $P_1P_2$ 垂直，其法向量为 $\vec{P_1P_2} = (2, 1, -2)$。
         设 $\vec{u} = (a, b, c)$，由条件可知：
-        $a^2 + b^2 + c^2 = 1$ \dots \textcircled{1}，且平行于 $xy$ 平面 $\Rightarrow c = 0$ \dots \textcircled{2}。
-        同时 $\vec{u}$ 平行于 $H \Rightarrow \vec{u} \cdot \vec{P_1P_2} = 2a + b - 2c = 0$ \dots \textcircled{3}。
-        由 \textcircled{2}\textcircled{3} 得 $b = -2a$，代入 \textcircled{1} 得 $a^2 + 4a^2 = 1 \Rightarrow a = \pm \frac{1}{\sqrt{5}}$。
+        $a^2 + b^2 + c^2 = 1$ \dots (1)，且平行于 $xy$ 平面 $\Rightarrow c = 0$ \dots (2)。
+        同时 $\vec{u}$ 平行于 $H \Rightarrow \vec{u} \cdot \vec{P_1P_2} = 2a + b - 2c = 0$ \dots (3)。
+        由 (2)(3) 得 $b = -2a$，代入 (1) 得 $a^2 + 4a^2 = 1 \Rightarrow a = \pm \frac{1}{\sqrt{5}}$。
         故 $\vec{u} = \left( \frac{\sqrt{5}}{5}, -\frac{2\sqrt{5}}{5}, 0 \right), \left( -\frac{\sqrt{5}}{5}, \frac{2\sqrt{5}}{5}, 0 \right)$。
     \end{solution}
 
@@ -23619,9 +23781,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \fi
     \begin{solution}
         取 $\vec{u_1} = \left( \frac{\sqrt{5}}{5}, -\frac{2\sqrt{5}}{5}, 0 \right)$，并设在 $H$ 内且与 $\vec{u_1}$ 垂直的单位向量为 $\vec{v_1} = (p, q, r)$。
-        则 $p^2 + q^2 + r^2 = 1$ \dots \textcircled{4}，$\vec{v_1} \cdot \vec{u_1} = \frac{\sqrt{5}}{5}p - \frac{2\sqrt{5}}{5}q = 0 \Rightarrow p = 2q$ \dots \textcircled{5}。
-        $\vec{v_1} \cdot \vec{P_1P_2} = 2p + q - 2r = 0 \Rightarrow 5q = 2r \Rightarrow q = \frac{2}{5}r$ \dots \textcircled{6}。
-        代入 \textcircled{4} 得 $\left(\frac{4}{5}r\right)^2 + \left(\frac{2}{5}r\right)^2 + r^2 = 1 \Rightarrow \frac{45}{25}r^2 = 1 \Rightarrow r = \pm \frac{\sqrt{5}}{3}$。
+        则 $p^2 + q^2 + r^2 = 1$ \dots (4)，$\vec{v_1} \cdot \vec{u_1} = \frac{\sqrt{5}}{5}p - \frac{2\sqrt{5}}{5}q = 0 \Rightarrow p = 2q$ \dots (5)。
+        $\vec{v_1} \cdot \vec{P_1P_2} = 2p + q - 2r = 0 \Rightarrow 5q = 2r \Rightarrow q = \frac{2}{5}r$ \dots (6)。
+        代入 (4) 得 $\left(\frac{4}{5}r\right)^2 + \left(\frac{2}{5}r\right)^2 + r^2 = 1 \Rightarrow \frac{45}{25}r^2 = 1 \Rightarrow r = \pm \frac{\sqrt{5}}{3}$。
         取 $r = \frac{\sqrt{5}}{3}$，则 $\vec{v_1} = \left( \frac{4\sqrt{5}}{15}, \frac{2\sqrt{5}}{15}, \frac{\sqrt{5}}{3} \right)$。
     
         圆 $C$ 上的任意点 $Q$ 满足 $\vec{OQ} = \vec{OP_3} + (\cos\theta)\vec{u_1} + (\sin\theta)\vec{v_1}$。
@@ -23630,13 +23792,13 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         距离 $d = |z| = \frac{1}{3}|\sqrt{5}\sin\theta - 1|$。
         当 $\sin\theta = -1$ 时，$d$ 取得最大值 $\frac{1+\sqrt{5}}{3}$。
         此时 $\cos\theta = 0$，$\vec{OQ} = \vec{OP_3} - \vec{v_1}$，坐标为：
-        \[ Q\left( \frac{65-4\sqrt{5}}{15}, -\frac{5+2\sqrt{5}}{15}, -\frac{1+\sqrt{5}}{3} \right) \text{} \]
+        \[ Q\left( \frac{65-4\sqrt{5}}{15}, -\frac{5+2\sqrt{5}}{15}, -\frac{1+\sqrt{5}}{3} \right)  \]
     \end{solution}
 \end{parts}
 
 \question
 在坐标空间内，对于原点 $O$ 以及两点 $A(0, 3, -5)$，$B(5, -2, 10)$，点 $P$ 所在的范围 $D$ 由下式定义：
-\[ \overrightarrow{OP} = s \{ (1-t)\overrightarrow{OA} + t\overrightarrow{OB} \}, \quad s \ge 0, \quad \frac{1}{5} \le t \le \frac{3}{5} \text{} \]
+\[ \overrightarrow{OP} = s \{ (1-t)\overrightarrow{OA} + t\overrightarrow{OB} \}, \quad s \ge 0, \quad \frac{1}{5} \le t \le \frac{3}{5}  \]
 在包含于 $D$ 且半径为 $10\sqrt{2}$ 的圆中，将其中心与原点距离最小的圆记为 $C$。求圆 $C$ 的中心坐标。
     \ifprintanswers
     \begin{figure}[H]
@@ -23646,8 +23808,8 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \fi
 \begin{solution}
     对于点 $A(0, 3, -5)$，$B(5, -2, 10)$，设定点 $Q_1, Q_2$ 如下：
-    \[ \overrightarrow{OQ_1} = \frac{4}{5}\overrightarrow{OA} + \frac{1}{5}\overrightarrow{OB} = \frac{4}{5}(0, 3, -5) + \frac{1}{5}(5, -2, 10) = (1, 2, -2) \text{} \]
-    \[ \overrightarrow{OQ_2} = \frac{2}{5}\overrightarrow{OA} + \frac{3}{5}\overrightarrow{OB} = \frac{2}{5}(0, 3, -5) + \frac{3}{5}(5, -2, 10) = (3, 0, 4) \text{} \]
+    \[ \overrightarrow{OQ_1} = \frac{4}{5}\overrightarrow{OA} + \frac{1}{5}\overrightarrow{OB} = \frac{4}{5}(0, 3, -5) + \frac{1}{5}(5, -2, 10) = (1, 2, -2)  \]
+    \[ \overrightarrow{OQ_2} = \frac{2}{5}\overrightarrow{OA} + \frac{3}{5}\overrightarrow{OB} = \frac{2}{5}(0, 3, -5) + \frac{3}{5}(5, -2, 10) = (3, 0, 4)  \]
     设 $\overrightarrow{OQ} = (1-t)\overrightarrow{OA} + t\overrightarrow{OB} \quad (\frac{1}{5} \le t \le \frac{3}{5})$，则点 $Q$ 位于线段 $Q_1Q_2$ 上。
     由于 $\overrightarrow{OP} = s\overrightarrow{OQ} \quad (s \ge 0)$，点 $P$ 位于由射线 $OQ_1$ 和 $OQ_2$ 所围成的锥形区域 $D$ 内。
     
@@ -23656,19 +23818,19 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     
     计算长度：$|\overrightarrow{OQ_1}| = \sqrt{1+4+4} = 3$，$|\overrightarrow{OQ_2}| = \sqrt{9+0+16} = 5$。
     设 $k$ 为正实数，角平分线方向的向量可表示为：
-    \[ \overrightarrow{OP_0} = k \left( \frac{\overrightarrow{OQ_1}}{3} + \frac{\overrightarrow{OQ_2}}{5} \right) = \frac{k}{3}(1, 2, -2) + \frac{k}{5}(3, 0, 4) = \frac{2k}{15}(7, 5, 1) \text{} \]
-    由此得：$|\overrightarrow{OP_0}| = \frac{2k}{15}\sqrt{49+25+1} = \frac{2k}{15}\sqrt{75} = \frac{2\sqrt{3}}{3}k \cdots \text{\textcircled{1}}$。
+    \[ \overrightarrow{OP_0} = k \left( \frac{\overrightarrow{OQ_1}}{3} + \frac{\overrightarrow{OQ_2}}{5} \right) = \frac{k}{3}(1, 2, -2) + \frac{k}{5}(3, 0, 4) = \frac{2k}{15}(7, 5, 1)  \]
+    由此得：$|\overrightarrow{OP_0}| = \frac{2k}{15}\sqrt{49+25+1} = \frac{2k}{15}\sqrt{75} = \frac{2\sqrt{3}}{3}k \cdots (1)$。
     
     计算夹角 $\theta = \angle Q_1OQ_2$：
     $\overrightarrow{OQ_1} \cdot \overrightarrow{OQ_2} = 3+0-8 = -5$。
     $\cos \theta = \frac{-5}{3 \cdot 5} = -\frac{1}{3}$。
-    利用半角公式：$\sin \frac{\theta}{2} = \sqrt{\frac{1 - \cos \theta}{2}} = \sqrt{\frac{1 + 1/3}{2}} = \sqrt{\frac{2}{3}} \cdots \text{\textcircled{2}}$。
+    利用半角公式：$\sin \frac{\theta}{2} = \sqrt{\frac{1 - \cos \theta}{2}} = \sqrt{\frac{1 + 1/3}{2}} = \sqrt{\frac{2}{3}} \cdots (2)$。
     
     中心 $P_0$ 到射线的距离等于圆的半径 $10\sqrt{2}$，即 $|\overrightarrow{OP_0}|\sin\frac{\theta}{2} = 10\sqrt{2}$。
-    代入 \textcircled{1} \textcircled{2}：
-    \[ \frac{2\sqrt{3}}{3}k \cdot \sqrt{\frac{2}{3}} = 10\sqrt{2} \quad \Rightarrow \quad \frac{2\sqrt{2}}{3}k = 10\sqrt{2} \quad \Rightarrow \quad k = 15 \text{} \]
+    代入 (1) (2)：
+    \[ \frac{2\sqrt{3}}{3}k \cdot \sqrt{\frac{2}{3}} = 10\sqrt{2} \quad \Rightarrow \quad \frac{2\sqrt{2}}{3}k = 10\sqrt{2} \quad \Rightarrow \quad k = 15  \]
     代入 $\overrightarrow{OP_0}$ 的表达式：
-    \[ \overrightarrow{OP_0} = \frac{2 \cdot 15}{15}(7, 5, 1) = (14, 10, 2) \text{} \]
+    \[ \overrightarrow{OP_0} = \frac{2 \cdot 15}{15}(7, 5, 1) = (14, 10, 2)  \]
     答：圆 $C$ 的中心坐标为 $(14, 10, 2)$。
 \end{solution}
 
@@ -23684,9 +23846,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \part 用 $a, b, c$ 表示点 $Q$ 的坐标。
     \begin{solution}
         由于直线 $l$ 通过 $N(0, 0, 1)$ 和 $P(a, b, c)$，设 $t$ 为实数，则直线上的点可表示为：
-        \[ \overrightarrow{OQ} = \overrightarrow{ON} + t\overrightarrow{NP} = (0, 0, 1) + t(a, b, c-1) = (ta, tb, 1 + t(c-1)) \text{} \]
+        \[ \overrightarrow{OQ} = \overrightarrow{ON} + t\overrightarrow{NP} = (0, 0, 1) + t(a, b, c-1) = (ta, tb, 1 + t(c-1))  \]
         点 $Q$ 在 $xy$ 平面上，故其 $z$ 分量为 $0$：
-        \[ 1 + t(c-1) = 0 \quad \Rightarrow \quad t = \frac{1}{1-c} \quad (\text{因为 } P \neq N, \text{故 } c \neq 1) \text{} \]
+        \[ 1 + t(c-1) = 0 \quad \Rightarrow \quad t = \frac{1}{1-c} \quad (\text{因为 } P \neq N, \text{故 } c \neq 1)  \]
         代入坐标得：$x = \frac{a}{1-c}, y = \frac{b}{1-c}$。
         答：$Q\left( \frac{a}{1-c}, \frac{b}{1-c}, 0 \right)$。
     \end{solution}
@@ -23696,10 +23858,10 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         由 (1) 的结论可知，若设交点为 $(a, b, c)$，则有 $p = \frac{a}{1-c}$ 且 $q = \frac{b}{1-c}$。
         由此可得：$a = (1-c)p, b = (1-c)q \cdots (*)$。
         代入球面方程 $a^2 + b^2 + c^2 = 1$：
-        \[ (1-c)^2 p^2 + (1-c)^2 q^2 + c^2 = 1 \text{} \]
-        \[ (1-c)^2 (p^2 + q^2) = 1 - c^2 = (1-c)(1+c) \text{} \]
+        \[ (1-c)^2 p^2 + (1-c)^2 q^2 + c^2 = 1  \]
+        \[ (1-c)^2 (p^2 + q^2) = 1 - c^2 = (1-c)(1+c)  \]
         由于 $c \neq 1$，等式两边除以 $(1-c)$：
-        \[ (1-c)(p^2 + q^2) = 1 + c \quad \Rightarrow \quad c(p^2 + q^2 + 1) = p^2 + q^2 - 1 \text{} \]
+        \[ (1-c)(p^2 + q^2) = 1 + c \quad \Rightarrow \quad c(p^2 + q^2 + 1) = p^2 + q^2 - 1  \]
         解得 $c = \frac{p^2 + q^2 - 1}{p^2 + q^2 + 1}$。进一步计算得 $1-c = \frac{2}{p^2 + q^2 + 1}$。
         由 $(*)$ 式得 $a = \frac{2p}{p^2 + q^2 + 1}, b = \frac{2q}{p^2 + q^2 + 1}$。
         答：$\left( \frac{2p}{p^2 + q^2 + 1}, \frac{2q}{p^2 + q^2 + 1}, \frac{p^2 + q^2 - 1}{p^2 + q^2 + 1} \right)$。
@@ -23709,11 +23871,11 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         平面 $\alpha$ 的方程为 $3x + 4y + 5(z - \frac{1}{2}) = 0$，整理得 $6x + 8y + 10z = 5$。
         将 (2) 中点 $P$ 的坐标 $(a, b, c)$ 代入此平面方程：
-        \[ 6 \cdot \frac{2p}{p^2+q^2+1} + 8 \cdot \frac{2q}{p^2+q^2+1} + 10 \cdot \frac{p^2+q^2-1}{p^2+q^2+1} = 5 \text{} \]
-        \[ 12p + 16q + 10(p^2 + q^2 - 1) = 5(p^2 + q^2 + 1) \text{} \]
-        \[ 5p^2 + 5q^2 + 12p + 16q - 15 = 0 \text{} \]
+        \[ 6 \cdot \frac{2p}{p^2+q^2+1} + 8 \cdot \frac{2q}{p^2+q^2+1} + 10 \cdot \frac{p^2+q^2-1}{p^2+q^2+1} = 5  \]
+        \[ 12p + 16q + 10(p^2 + q^2 - 1) = 5(p^2 + q^2 + 1)  \]
+        \[ 5p^2 + 5q^2 + 12p + 16q - 15 = 0  \]
         整理成标准圆方程：
-        \[ p^2 + \frac{12}{5}p + q^2 + \frac{16}{5}q = 3 \quad \Rightarrow \quad \left( p + \frac{6}{5} \right)^2 + \left( q + \frac{8}{5} \right)^2 = 3 + \frac{36}{25} + \frac{64}{25} = 7 \text{} \]
+        \[ p^2 + \frac{12}{5}p + q^2 + \frac{16}{5}q = 3 \quad \Rightarrow \quad \left( p + \frac{6}{5} \right)^2 + \left( q + \frac{8}{5} \right)^2 = 3 + \frac{36}{25} + \frac{64}{25} = 7  \]
         由此证明点 $Q(p, q, 0)$ 在 $xy$ 平面上位于中心为 $(-\frac{6}{5}, -\frac{8}{5}, 0)$、半径为 $\sqrt{7}$ 的圆周上。
     \end{solution}
 \end{parts}
@@ -23731,9 +23893,9 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
     \begin{solution}
         设 $p, q$ 为实数。点 $P$ 在 $l$ 上，可表示为 $(p, -p, 1)$；点 $Q$ 在 $m$ 上，可表示为 $(1, q, 3-2q)$。
         向量 $\vec{PQ} = (1-p, q+p, 2-2q)$。
-        由 $\vec{PQ} \perp \vec{u}$ 得：$(1-p) - (q+p) = 0 \Rightarrow 2p + q = 1 \cdots \text{\textcircled{1}}$。
-        由 $\vec{PQ} \perp \vec{v}$ 得：$(q+p) - 2(2-2q) = 0 \Rightarrow p + 5q = 4 \cdots \text{\textcircled{2}}$。
-        联立 \textcircled{1} \textcircled{2} 解得 $p = \frac{1}{9}, q = \frac{7}{9}$。
+        由 $\vec{PQ} \perp \vec{u}$ 得：$(1-p) - (q+p) = 0 \Rightarrow 2p + q = 1 \cdots (1)$。
+        由 $\vec{PQ} \perp \vec{v}$ 得：$(q+p) - 2(2-2q) = 0 \Rightarrow p + 5q = 4 \cdots (2)$。
+        联立 (1) (2) 解得 $p = \frac{1}{9}, q = \frac{7}{9}$。
         坐标为：$P(\frac{1}{9}, -\frac{1}{9}, 1)$，$Q(1, \frac{7}{9}, \frac{13}{9})$。
         长度 $PQ = \sqrt{(\frac{8}{9})^2 + (\frac{8}{9})^2 + (\frac{4}{9})^2} = \frac{\sqrt{64+64+16}}{9} = \frac{12}{9} = \frac{4}{3}$。
     \end{solution}
@@ -23744,14 +23906,14 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         向量 $\vec{CD} = (0, 2+\cos t, -2(2+\cos t))$，其长度 $CD = \sqrt{5}|2+\cos t| = \sqrt{5}(2+\cos t)$。
         四面体 $ABCD$ 的体积可由公式 $V = \frac{1}{6} AB \cdot CD \cdot d \cdot \sin \theta$ 计算，其中 $d$ 为公垂线段 $PQ$ 的长度，$ \theta $ 为两直线夹角。
         由 (1) 知 $d = \frac{4}{3}$。计算夹角余弦值 $\cos \theta = \frac{|\vec{u} \cdot \vec{v}|}{|\vec{u}||\vec{v}|} = \frac{|-1|}{\sqrt{2}\sqrt{5}} = \frac{1}{\sqrt{10}}$，则 $\sin \theta = \frac{3}{\sqrt{10}}$。
-        \[ V(t) = \frac{1}{6} \cdot \sqrt{2}(2+\sin t) \cdot \sqrt{5}(2+\cos t) \cdot \frac{4}{3} \cdot \frac{3}{\sqrt{10}} = \frac{2}{3}(4 + 2\sin t + 2\cos t + \sin t \cos t) \text{} \]
+        \[ V(t) = \frac{1}{6} \cdot \sqrt{2}(2+\sin t) \cdot \sqrt{5}(2+\cos t) \cdot \frac{4}{3} \cdot \frac{3}{\sqrt{10}} = \frac{2}{3}(4 + 2\sin t + 2\cos t + \sin t \cos t)  \]
     \end{solution}
 
     \part 当 $t$ 在 $t \ge 0$ 范围内运动时，求 $V(t)$ 的最大值和最小值。
     \begin{solution}
         设 $s = \sin t + \cos t = \sqrt{2}\sin(t + \frac{\pi}{4})$，则 $\sin t \cos t = \frac{s^2-1}{2}$。
         代入 $V(t)$ 表达式：
-        \[ f(s) = \frac{2}{3}\left( 4 + 2s + \frac{s^2-1}{2} \right) = \frac{1}{3}(s^2 + 4s + 7) = \frac{1}{3}((s+2)^2 + 3) \text{} \]
+        \[ f(s) = \frac{2}{3}\left( 4 + 2s + \frac{s^2-1}{2} \right) = \frac{1}{3}(s^2 + 4s + 7) = \frac{1}{3}((s+2)^2 + 3)  \]
         由于 $s$ 的取值范围为 $[-\sqrt{2}, \sqrt{2}]$：
         \begin{itemize}
             \item 当 $s = \sqrt{2}$ 时，$V_{max} = \frac{1}{3}(2 + 4\sqrt{2} + 7) = 3 + \frac{4\sqrt{2}}{3}$。
@@ -23759,4 +23921,63 @@ S_1: (x-1)^2 + (y-1)^2 + (z-1)^2 = 7 \text{ 和 } S_2: (x-2)^2 + (y-3)^2 + (z-3)
         \end{itemize}
     \end{solution}
 \end{parts}
+
+\question
+坐标空间内有 3 点 $O(0, 0, 0)$, $A(0, 1, 1)$, $P(x, y, 0)$。当点 $P$ 在满足 $\angle OAP = 30^\circ$ 且 $y \ge 0$ 的条件下运动时，求 $(x+1)(y+1)$ 的最大值和最小值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image383.png}
+    \end{figure}
+    \fi
+\begin{solution}
+对于 3 点 $O(0, 0, 0)$, $A(0, 1, 1)$, $P(x, y, 0)$，有
+\[
+\vec{AO} = (0, -1, -1), \quad \vec{AP} = (x, y-1, -1)
+\]
+则 $|\vec{AO}| = \sqrt{2}$, $|\vec{AP}| = \sqrt{x^2 + (y-1)^2 + 1}$, $\vec{AO} \cdot \vec{AP} = -(y-1) + 1 = -y + 2$。
+因为 $\angle OAP = 30^\circ$，由 $\vec{AO} \cdot \vec{AP} = |\vec{AO}| |\vec{AP}| \cos 30^\circ$ 得
+\[
+-y + 2 = \sqrt{2} \sqrt{x^2 + (y-1)^2 + 1} \cdot \frac{\sqrt{3}}{2}
+\]
+在 $-y + 2 \ge 0$ (即 $y \le 2$) 的条件下，两边平方得 $(-y + 2)^2 = \frac{3}{2} \{x^2 + (y-1)^2 + 1\}$，即
+\[
+2(y^2 - 4y + 4) = 3(x^2 + y^2 - 2y + 2), \quad 3x^2 + y^2 + 2y = 2
+\]
+由此得 $3x^2 + (y+1)^2 = 3$，即
+\[
+x^2 + \frac{(y+1)^2}{3} = 1 \cdots \cdots (*)
+\]
+因此，$xy$ 平面上的点 $P$ 的轨迹是椭圆 $(*)$ 的 $y \ge 0$ 且 $y \le 2$ 的部分。
+如图所示，该轨迹为右图中的实线部分。
+在此，以中心 $(0, -1)$，半径为 $\sqrt{3}$ 的圆周上 $y \ge 0$ 的部分点 $Q(\sqrt{3} \cos \theta, \sqrt{3} \sin \theta - 1)$ ($\alpha \le \theta \le \pi - \alpha$) 为准。
+其中 $\cos \alpha = \frac{\sqrt{2}}{\sqrt{3}}$, $\sin \alpha = \frac{1}{\sqrt{3}}$。
+此时，将点 $Q$ 与 $y$ 轴的距离乘以 $\frac{1}{\sqrt{3}}$ 倍的点即为椭圆 $(*)$ 上的点 $P$，可表示为 $P(\cos \theta, \sqrt{3} \sin \theta - 1)$。
+设 $x = \cos \theta$, $y = \sqrt{3} \sin \theta - 1$ ($\alpha \le \theta \le \pi - \alpha$)，令 $f(\theta) = (x+1)(y+1)$，则
+\[
+f(\theta) = \sqrt{3} (\cos \theta + 1) \sin \theta
+\]
+\begin{align*}
+f'(\theta) &= \sqrt{3} \{ (-\sin \theta) \sin \theta + (\cos \theta + 1) \cos \theta \} \\
+&= \sqrt{3} (-\sin^2 \theta + \cos^2 \theta + \cos \theta) \\
+&= \sqrt{3} (2 \cos^2 \theta + \cos \theta - 1) \\
+&= \sqrt{3} (2 \cos \theta - 1)(\cos \theta + 1)
+\end{align*}
+在 $\alpha \le \theta \le \pi - \alpha$ 中 $f(\theta)$ 的增减情况如右表所示。
+由于 $\alpha < \frac{\pi}{3} < \pi - \alpha$，
+\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\theta & \alpha & \cdots & \frac{\pi}{3} & \cdots & \pi - \alpha \\
+\hline
+f'(\theta) & & + & 0 & - & \\
+\hline
+f(\theta) & & \nearrow & \frac{9}{4} & \searrow & \\
+\hline
+\end{array}
+\]
+且 $f(\alpha) = \sqrt{3} (\cos \alpha + 1) \sin \alpha = \sqrt{3} \left( \frac{\sqrt{2}}{\sqrt{3}} + 1 \right) \cdot \frac{1}{\sqrt{3}} = \frac{\sqrt{6}}{3} + 1$。
+$f(\pi - \alpha) = \sqrt{3} (-\cos \alpha + 1) \sin \alpha = \sqrt{3} \left( -\frac{\sqrt{2}}{\sqrt{3}} + 1 \right) \cdot \frac{1}{\sqrt{3}} = -\frac{\sqrt{6}}{3} + 1$。
+综上所述，$(x+1)(y+1)$ 的最大值为 $\frac{9}{4}$，最小值为 $-\frac{\sqrt{6}}{3} + 1$。
+\end{solution}
 \end{questions}

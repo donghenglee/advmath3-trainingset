@@ -3159,11 +3159,11 @@ c^2 &= \left( \frac{a - b}{2} \right)^2 \\
 &= \left( \frac{a + b}{2} \right)^2 - ab \\
 &= m^2 + 28m + 196 - 120m - 99 \\
 &= m^2 - 92m + 97 \\
-&= (m - 46)^2 - 2019 \text{}
+&= (m - 46)^2 - 2019 
 \end{align}
 因此，
 \[
-(m - 46 + c)(m - 46 - c) = 2019 \text{}
+(m - 46 + c)(m - 46 - c) = 2019 
 \]
 由于 2019 的质因数分解为 $3 \times 673$，且 $m - 46 + c > m - 46 - c$，我们只能有以下情形：
 \[
@@ -3877,37 +3877,37 @@ S \equiv 7 \pmod 9
 设 $2^n + 1$ 与 $2^n - 1$ 的最大公约数为 $g$。
 则有：
 \[
-2^n + 1 = ga \cdots \cdots ①, \quad 2^n - 1 = gb \cdots \cdots ② \quad (\text{其中 } a, b \text{ 互质})
+2^n + 1 = ga \cdots \cdots (1), \quad 2^n - 1 = gb \cdots \cdots (2) \quad (\text{其中 } a, b \text{ 互质})
 \]
-由 ① $-$ ② 得：
+由 (1) $-$ (2) 得：
 \[
 2 = g(a - b)
 \]
 因此 $g$ 只能是 $2$ 或 $1$。
-若 $g = 2$，则由 ① 式可知 $2^n + 1 = 2a$，左边是奇数，右边是偶数，不成立。
+若 $g = 2$，则由 (1) 式可知 $2^n + 1 = 2a$，左边是奇数，右边是偶数，不成立。
 故 $g = 1$，即 $2^n + 1$ 与 $2^n - 1$ 互质。
 \end{solution}
 
 \part 设 $p, q$ 为不同的素数。求所有满足 $2^{p-1} - 1 = pq^2$ 的数对 $(p, q)$。
 \begin{solution}
-对于不同的素数 $p, q$，有 $2^{p-1} - 1 = pq^2 \cdots \cdots ③$。
+对于不同的素数 $p, q$，有 $2^{p-1} - 1 = pq^2 \cdots \cdots (3)$。
 \begin{itemize}
     \item (i) 当 $p$ 为偶数时：
-    因为 $p$ 是素数，所以 $p = 2$。代入 ③ 式得 $2^1 - 1 = 2q^2$，即 $1 = 2q^2$，不存在满足条件的素数 $q$。
+    因为 $p$ 是素数，所以 $p = 2$。代入 (3) 式得 $2^1 - 1 = 2q^2$，即 $1 = 2q^2$，不存在满足条件的素数 $q$。
     \item (ii) 当 $p$ 为奇数时：
     $p - 1$ 为偶数。由 (1) 的结论可知 $2^{p-1} - 1$ 是 $3$ 的倍数。
-    根据 ③ 式，$pq^2$ 必须是 $3$ 的倍数，故 $p = 3$ 或 $q = 3$。
+    根据 (3) 式，$pq^2$ 必须是 $3$ 的倍数，故 $p = 3$ 或 $q = 3$。
     \begin{itemize}
         \item (ii-i) 当 $p = 3$ 时：
-        ③ 式变为 $2^2 - 1 = 3q^2$，即 $3 = 3q^2$，得 $q = 1$，因为 $q$ 是素数，故不存在。
+        (3) 式变为 $2^2 - 1 = 3q^2$，即 $3 = 3q^2$，得 $q = 1$，因为 $q$ 是素数，故不存在。
         \item (ii-ii) 当 $q = 3$ 时：
-        ③ 式变为 $2^{p-1} - 1 = 9p \cdots \cdots ④$。
+        (3) 式变为 $2^{p-1} - 1 = 9p \cdots \cdots (4)$。
         设 $k$ 为自然数，令 $p = 2k + 1$，则
         \[
         2^{p-1} - 1 = 2^{2k} - 1 = (2^k + 1)(2^k - 1)
         \]
         由 (2) 可知 $2^k + 1$ 与 $2^k - 1$ 互质。
-        ④ 式可写为 $(2^k + 1)(2^k - 1) = 9(2k + 1)$。
+        (4) 式可写为 $(2^k + 1)(2^k - 1) = 9(2k + 1)$。
         由于两项互质，分解情况为：
         $(2^k + 1, 2^k - 1) = (9, 2k + 1)$ 或 $(2k + 1, 9)$。
         \begin{itemize}
@@ -3919,7 +3919,7 @@ S \equiv 7 \pmod 9
         \end{itemize}
     \end{itemize}
 \end{itemize}
-综上所述，满足 ③ 的数对为 $(p, q) = (7, 3)$。
+综上所述，满足 (3) 的数对为 $(p, q) = (7, 3)$。
 \end{solution}
 \end{parts}
 
@@ -3986,10 +3986,10 @@ S \equiv 7 \pmod 9
     由于 $n^2 + a$ 能被 $an + 1$ 整除，且 $n, a$ 为正整数，必存在正整数 $k$ 使得：
     \[ n^2 + a = k(an + 1) \]
     整理得关于 $n$ 的二次方程：
-    \[ n^2 - kan + a - k = 0 \quad \dots ② \]
+    \[ n^2 - kan + a - k = 0 \quad \dots (2) \]
     由题意知 $n \geqq 2, a \geqq 3$，则 $an+1 \geqq 3(2)+1 = 7$。
     因为 $n^2+a > 0$ 且被 $an+1$ 整除，故 $k = \frac{n^2+a}{an+1}$ 必须是正整数（$k \geqq 1$）。
-    方程 ② 与第 (1) 问中的方程形式相同。由 (1) 可知，该方程有两个实根，其中一个根 $s$ 满足 $-\frac{1}{a} < s \leqq 1$。
+    方程 (2) 与第 (1) 问中的方程形式相同。由 (1) 可知，该方程有两个实根，其中一个根 $s$ 满足 $-\frac{1}{a} < s \leqq 1$。
     由于 $n$ 是方程的一个实根，根据根与系数的关系，设另一根为 $s$，则：
     \[ s + n = ka \implies s = ka - n \]
     因为 $k, a, n$ 均为整数，所以 $s$ 也必须是整数。
@@ -4033,10 +4033,10 @@ S \equiv 7 \pmod 9
 
         \subpart 设 $a$ 和 $b$ 的最大公约数为 $M$，$b$ 和 $c$ 的最大公约数为 $N$。证明 $M = N$。
         \begin{solution}
-        由于 $a, b, c, p$ 均为非零整数且满足 $a = pb + c \dots ①$。
-        首先，由于 $N$ 是 $b$ 和 $c$ 的公约数，根据 ① 可知 $N$ 也是 $a$ 的约数。
+        由于 $a, b, c, p$ 均为非零整数且满足 $a = pb + c \dots (1)$。
+        首先，由于 $N$ 是 $b$ 和 $c$ 的公约数，根据 (1) 可知 $N$ 也是 $a$ 的约数。
         因此 $N$ 是 $a$ 和 $b$ 的公约数，由最大公约数的定义得 $N \leqq M$。
-        同理，由于 $M$ 是 $a$ 和 $b$ 的公约数，由 ① 得 $c = a - pb$，可知 $M$ 也是 $c$ 的约数。
+        同理，由于 $M$ 是 $a$ 和 $b$ 的公约数，由 (1) 得 $c = a - pb$，可知 $M$ 也是 $c$ 的约数。
         因此 $M$ 是 $b$ 和 $c$ 的公约数，得 $M \leqq N$。
         综上所述，$N \leqq M$ 且 $M \leqq N$，故 $M = N$。
         \end{solution}
@@ -4057,12 +4057,12 @@ S \equiv 7 \pmod 9
         根据递推式：
         \[ a_{n+4} = 6a_{n+3} + a_{n+2} = 6(6a_{n+2} + a_{n+1}) + a_{n+2} = 37a_{n+2} + 6a_{n+1} \]
         又因为 $6a_{n+1} = a_{n+2} - a_n$，代入上式得：
-        \[ a_{n+4} = 37a_{n+2} + (a_{n+2} - a_n) = 38a_{n+2} - a_n \dots ② \]
+        \[ a_{n+4} = 37a_{n+2} + (a_{n+2} - a_n) = 38a_{n+2} - a_n \dots (2) \]
         \end{solution}
 
         \subpart 求 $a_{n+2}$ 和 $a_n$ 的最大公约数。
         \begin{solution}
-        利用 ② 式和 (1) 的结论，$G(a_{n+4}, a_{n+2}) = G(a_{n+2}, -a_n) = G(a_{n+2}, a_n)$。
+        利用 (2) 式和 (1) 的结论，$G(a_{n+4}, a_{n+2}) = G(a_{n+2}, -a_n) = G(a_{n+2}, a_n)$。
         分类讨论：
         (a) 当 $n$ 为奇数时：
         \[ G(a_{n+2}, a_n) = G(a_3, a_1) = G(6a_2 + a_1, a_1) = G(27, 3) = 3 \]
@@ -4585,17 +4585,17 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
     \begin{solution}
         设这三个整数 $n^2 + 2, n^4 + 2, n^6 + 2$ 的公约数为 $p$。设 $a, b, c$ 为自然数，满足：
         \begin{align*}
-            n^2 + 2 &= pa \quad \cdots \textcircled{1} \\
-            n^4 + 2 &= pb \quad \cdots \textcircled{2} \\
-            n^6 + 2 &= pc \quad \cdots \textcircled{3} \text{}
+            n^2 + 2 &= pa \quad \cdots (1) \\
+            n^4 + 2 &= pb \quad \cdots (2) \\
+            n^6 + 2 &= pc \quad \cdots (3) 
         \end{align*}
-        由 $\textcircled{1}$ 知 $n^2 = pa - 2$。将其代入 $\textcircled{2}$：
+        由 $(1)$ 知 $n^2 = pa - 2$。将其代入 $(2)$：
         \[ (pa - 2)^2 + 2 = pb \Rightarrow p^2 a^2 - 4pa + 4 + 2 = pb \]
-        整理得 $p(b + 4a - pa^2) = 6 \quad \cdots \textcircled{4}$。
-        类似地，将 $n^2 = pa - 2$ 代入 $\textcircled{3}$：
+        整理得 $p(b + 4a - pa^2) = 6 \quad \cdots (4)$。
+        类似地，将 $n^2 = pa - 2$ 代入 $(3)$：
         \[ (pa - 2)^3 + 2 = pc \Rightarrow p^3 a^3 - 6p^2 a^2 + 12pa - 8 + 2 = pc \]
-        整理得 $p(p^2 a^3 - 6pa^2 + 12a - c) = 6 \quad \cdots \textcircled{5}$。
-        由 $\textcircled{4}$ 和 $\textcircled{5}$ 可知，$p$ 必须是 $6$ 的正约数，即 $p \in \{1, 2, 3, 6\}$。
+        整理得 $p(p^2 a^3 - 6pa^2 + 12a - c) = 6 \quad \cdots (5)$。
+        由 $(4)$ 和 $(5)$ 可知，$p$ 必须是 $6$ 的正约数，即 $p \in \{1, 2, 3, 6\}$。
         
         接下来通过 $n \pmod{6}$ 的余数来确定最大公约数 $A_n$：
         \begin{table}[H]
@@ -4622,7 +4622,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         $n^2+2 \equiv 5, n^4+2 \equiv 5, n^6+2 \equiv 5 \pmod{6}$。这三个数既不是 $2$ 的倍数，也不是 $3$ 的倍数。因此 $A_n = 1$。
         
         综上所述：
-        \[ A_n = \begin{cases} 6 & (n \equiv 2, 4 \pmod{6}) \\ 3 & (n \equiv 1, 5 \pmod{6}) \\ 2 & (n \equiv 0 \pmod{6}) \\ 1 & (n \equiv 3 \pmod{6}) \end{cases} \text{} \]
+        \[ A_n = \begin{cases} 6 & (n \equiv 2, 4 \pmod{6}) \\ 3 & (n \equiv 1, 5 \pmod{6}) \\ 2 & (n \equiv 0 \pmod{6}) \\ 1 & (n \equiv 3 \pmod{6}) \end{cases}  \]
     \end{solution}
 \end{parts}
 
@@ -4660,28 +4660,28 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
 
 \begin{solution}
     设该自然数为 $N$，若其在八进制、九进制、十进制下均为 $k$ 位数，则满足以下不等式组：
-    \[ \begin{cases} 8^{k-1} \le N < 8^k \quad \dots \text{\textcircled{1}} \\ 9^{k-1} \le N < 9^k \quad \dots \text{\textcircled{2}} \\ 10^{k-1} \le N < 10^k \quad \dots \text{\textcircled{3}} \end{cases} \text{} \]
+    \[ \begin{cases} 8^{k-1} \le N < 8^k \quad \dots (1) \\ 9^{k-1} \le N < 9^k \quad \dots (2) \\ 10^{k-1} \le N < 10^k \quad \dots (3) \end{cases}  \]
     由于当 $k \ge 2$ 时，$8^{k-1} < 9^{k-1} < 10^{k-1}$ 且 $8^k < 9^k < 10^k$，
-    若要使满足 \textcircled{1}\textcircled{2}\textcircled{3} 的 $N$ 存在，必须满足条件：
-    \[ 10^{k-1} < 8^k \quad \dots \text{\textcircled{4}} \text{} \]
-    对 \textcircled{4} 两边取以 $10$ 为底的对数：
+    若要使满足 (1)(2)(3) 的 $N$ 存在，必须满足条件：
+    \[ 10^{k-1} < 8^k \quad \dots (4)  \]
+    对 (4) 两边取以 $10$ 为底的对数：
     \begin{align*}
         \log_{10} 10^{k-1} &< \log_{10} 8^k \\
         k-1 &< 3k \log_{10} 2 \\
-        (1 - 3\log_{10} 2)k &< 1 \text{}
+        (1 - 3\log_{10} 2)k &< 1 
     \end{align*}
     已知 $0.3010 < \log_{10} 2 < 0.3011$，则：
-    \[ 0.0967 < 1 - 3\log_{10} 2 < 0.097 \text{} \]
+    \[ 0.0967 < 1 - 3\log_{10} 2 < 0.097  \]
     由此可得：
-    \[ k < \frac{1}{1 - 3\log_{10} 2} \text{} \]
-    计算范围可知 $10.3 < \frac{1}{1 - 3\log_{10} 2} < 10.4$，故满足 \textcircled{4} 的最大整数为 $k = 10$。
+    \[ k < \frac{1}{1 - 3\log_{10} 2}  \]
+    计算范围可知 $10.3 < \frac{1}{1 - 3\log_{10} 2} < 10.4$，故满足 (4) 的最大整数为 $k = 10$。
     
-    当 $k = 10$ 时，\textcircled{1}\textcircled{2}\textcircled{3} 变为：
-    \[ 8^9 \le N < 8^{10}, \quad 9^9 \le N < 9^{10}, \quad 10^9 \le N < 10^{10} \text{} \]
-    由于由 \textcircled{4} 已知 $10^9 < 8^{10}$，故 $N$ 满足的范围是：
-    \[ 10^9 \le N < 8^{10} \text{} \]
+    当 $k = 10$ 时，(1)(2)(3) 变为：
+    \[ 8^9 \le N < 8^{10}, \quad 9^9 \le N < 9^{10}, \quad 10^9 \le N < 10^{10}  \]
+    由于由 (4) 已知 $10^9 < 8^{10}$，故 $N$ 满足的范围是：
+    \[ 10^9 \le N < 8^{10}  \]
     在该范围内，最大的自然数 $N$ 为：
-    \[ N = 8^{10} - 1 \text{} \]
+    \[ N = 8^{10} - 1  \]
 \end{solution}
 
 \question
@@ -4701,7 +4701,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         长方形 $OPRQ$ 上的格子点满足 $0 \le x \le a, 0 \le y \le b$，其个数为 $(a+1)(b+1)$。
         由 (1) 知，线段 $PQ$ 上的格子点 $(ak, b(1-k))$ ($k=0, 1$) 共有 $2$ 个。
         利用长方形的对称性，三角形 $OPQ$ 上的格子点个数为：
-        \[ \frac{(a+1)(b+1) - 2}{2} + 2 = \frac{ab + a + b + 3}{2} \text{} \]
+        \[ \frac{(a+1)(b+1) - 2}{2} + 2 = \frac{ab + a + b + 3}{2}  \]
     \end{solution}
 
     \part 用 $a, b, n$ 表示三角形 $OP_nQ_n$ 上的格子点个数。
@@ -4709,7 +4709,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         同理考虑长方形 $OP_nR_nQ_n$（其中 $R_n(an, bn)$），其格子点总数为 $(an+1)(bn+1)$。
         由 (1) 知线段 $P_nQ_n$ 上的格子点个数为 $n+1$。
         因此，三角形 $OP_nQ_n$ 上的格子点个数为：
-        \[ \frac{(an+1)(bn+1) - (n+1)}{2} + (n+1) = \frac{abn^2 + (a+b+1)n + 2}{2} \text{} \]
+        \[ \frac{(an+1)(bn+1) - (n+1)}{2} + (n+1) = \frac{abn^2 + (a+b+1)n + 2}{2}  \]
     \end{solution}
 
     \part 取坐标空间内的原点 $O(0, 0, 0)$ 与 $3$ 点 $X(an, 0, 0), Y(0, bn, 0), Z(0, 0, n)$。用 $a, b, n$ 表示四面体 $OXYZ$ 上的格子点个数。
@@ -4718,10 +4718,10 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         考虑平面 $z = l$ ($l = 0, 1, \dots, n$) 截四面体所得的三角形 $Z_l X_l Y_l$。
         在 $z=l$ 层，方程变为 $\frac{x}{an} + \frac{y}{bn} = 1 - \frac{l}{n}$，即 $\frac{x}{a(n-l)} + \frac{y}{b(n-l)} = 1$。
         该层三角形上的格子点数 $N_l$ 由 (3) 的结论（将 $n$ 替换为 $n-l$）得：
-        \[ N_l = \frac{ab(n-l)^2 + (a+b+1)(n-l) + 2}{2} \text{} \]
+        \[ N_l = \frac{ab(n-l)^2 + (a+b+1)(n-l) + 2}{2}  \]
         设 $m = n-l$，则四面体总格子点数 $N = \sum_{l=0}^{n} N_l = \sum_{m=0}^{n} \frac{abm^2 + (a+b+1)m + 2}{2}$。
         利用求和公式 $\sum m^2 = \frac{n(n+1)(2n+1)}{6}$ 及 $\sum m = \frac{n(n+1)}{2}$ 整理得：
-        \[ N = \frac{n+1}{12} \{ 2abn^2 + (ab+3a+3b+3)n + 12 \} \text{} \]
+        \[ N = \frac{n+1}{12} \{ 2abn^2 + (ab+3a+3b+3)n + 12 \}  \]
     \end{solution}
 \end{parts}
 
@@ -4729,7 +4729,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
 求满足 $N = 9z^2 = x^6 + y^4$ 的正整数 $x, y, z$ 中，正整数 $N$ 的最小值。
 
 \begin{solution}
-    对于正整数 $x, y, z$，方程为 $N = 9z^2 = x^6 + y^4 \cdots \text{\textcircled{1}}$。
+    对于正整数 $x, y, z$，方程为 $N = 9z^2 = x^6 + y^4 \cdots (1)$。
     首先，考查 $x$ 与 $x^6$，$y$ 与 $y^4$ 除以 $3$ 的余数。如下表所示：
     
     \begin{center}
@@ -4758,15 +4758,15 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
     % \end{tabular}
     % \end{center}
     
-    根据 \textcircled{1} 式，$9z^2$ 显然是 $3$ 的倍数（余数为 $0$），因此 $x^6 + y^4$ 除以 $3$ 的余数必须为 $0$。
+    根据 (1) 式，$9z^2$ 显然是 $3$ 的倍数（余数为 $0$），因此 $x^6 + y^4$ 除以 $3$ 的余数必须为 $0$。
     这意味着 $x^6$ 和 $y^4$ 除以 $3$ 的余数必须同时为 $0$，即 $x$ 和 $y$ 都是 $3$ 的倍数。
     
-    设 $x = 3k, y = 3l$ ($k, l$ 为正整数)，代入 \textcircled{1} 式：
-    \[ 9z^2 = 3^6 k^6 + 3^4 l^4 \quad \Rightarrow \quad z^2 = 3^4 k^6 + 3^2 l^4 = 3^2(3^2 k^6 + l^4) \cdots \text{\textcircled{2}} \text{} \]
-    由 \textcircled{2} 可知 $z^2$ 是 $3^2$ 的倍数，故 $z$ 是 $3$ 的倍数。设 $z = 3m$ ($m$ 为正整数)，代入 \textcircled{2} 得：
-    \[ 3^2 m^2 = 3^2(9k^6 + l^4) \quad \Rightarrow \quad m^2 = 9k^6 + l^4 \cdots \text{\textcircled{3}} \text{} \]
+    设 $x = 3k, y = 3l$ ($k, l$ 为正整数)，代入 (1) 式：
+    \[ 9z^2 = 3^6 k^6 + 3^4 l^4 \quad \Rightarrow \quad z^2 = 3^4 k^6 + 3^2 l^4 = 3^2(3^2 k^6 + l^4) \cdots (2)  \]
+    由 (2) 可知 $z^2$ 是 $3^2$ 的倍数，故 $z$ 是 $3$ 的倍数。设 $z = 3m$ ($m$ 为正整数)，代入 (2) 得：
+    \[ 3^2 m^2 = 3^2(9k^6 + l^4) \quad \Rightarrow \quad m^2 = 9k^6 + l^4 \cdots (3)  \]
     
-    为了使 $N$ 最小，需找到满足 \textcircled{3} 的最小正整数 $m$：
+    为了使 $N$ 最小，需找到满足 (3) 的最小正整数 $m$：
     \begin{itemize}
         \item 当 $k=1, l=1$ 时：$m^2 = 9+1 = 10$，不存在整数 $m$。
         \item 当 $k=1, l=2$ 时：$m^2 = 9+16 = 25$，解得 $m=5$。
@@ -4774,7 +4774,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
     \end{itemize}
     因此，最小的 $m$ 为 $5$。
     此时 $z = 3m = 15$。由于 $N = 9z^2 = 81m^2$，代入 $m=5$ 得：
-    \[ N = 81 \times 25 = 2025 \text{} \]
+    \[ N = 81 \times 25 = 2025  \]
     答：$N$ 的最小值为 $2025$。
 \end{solution}
 
@@ -4785,15 +4785,15 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
     \part 求 $f(2025)$ 的值。
     \begin{solution}
         由于 $2025 = 3^4 \cdot 5^2$，根据约数个数公式：
-        \[ d(2025) = (4+1)(2+1) = 15 \text{} \]
+        \[ d(2025) = (4+1)(2+1) = 15  \]
         因此：
-        \[ f(2025) = \frac{15}{\sqrt{3^4 \cdot 5^2}} = \frac{15}{3^2 \cdot 5} = \frac{15}{45} = \frac{1}{3} \text{} \]
+        \[ f(2025) = \frac{15}{\sqrt{3^4 \cdot 5^2}} = \frac{15}{3^2 \cdot 5} = \frac{15}{45} = \frac{1}{3}  \]
     \end{solution}
 
     \part 求所有满足 $f(p^k) \le f(p^{k+1})$ 的素数 $p$ 与正整数 $k$ 的解对 $(p, k)$。
     \begin{solution}
         已知 $d(p^k) = k+1$ 且 $d(p^{k+1}) = k+2$。不等式 $f(p^k) \le f(p^{k+1})$ 展开为：
-        \[ \frac{k+1}{\sqrt{p^k}} \le \frac{k+2}{\sqrt{p^{k+1}}} \quad \Rightarrow \quad \sqrt{p} \le \frac{k+2}{k+1} = 1 + \frac{1}{k+1} \text{} \]
+        \[ \frac{k+1}{\sqrt{p^k}} \le \frac{k+2}{\sqrt{p^{k+1}}} \quad \Rightarrow \quad \sqrt{p} \le \frac{k+2}{k+1} = 1 + \frac{1}{k+1}  \]
         两边平方得 $p \le \left( 1 + \frac{1}{k+1} \right)^2 \cdots (*)$。
         \begin{itemize}
             \item 当 $k=1$ 时：$(*)$ 式为 $p \le (1 + \frac{1}{2})^2 = \frac{9}{4} = 2.25$。唯一的素数解为 $p=2$。
@@ -4805,7 +4805,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
     \part 求 $f(n)$ 的最大值，并求出此时的 $n$。
     \begin{solution}
         设 $n$ 的素因数分解为 $n = p_1^{k_1} \cdot p_2^{k_2} \cdots p_m^{k_m}$，则有：
-        \[ f(n) = f(p_1^{k_1}) \cdot f(p_2^{k_2}) \cdots f(p_m^{k_m}) \text{} \]
+        \[ f(n) = f(p_1^{k_1}) \cdot f(p_2^{k_2}) \cdots f(p_m^{k_m})  \]
         根据 (2) 的分析：
         \begin{itemize}
             \item 对于 $p=2$，$f(2^1) < f(2^2)$ 且 $f(2^2) > f(2^3) > \cdots$。计算得 $f(2^1)=\sqrt{2}, f(2^2)=\frac{3}{2}$。
@@ -4815,7 +4815,7 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         
         
         综合比较，$f(n)$ 在 $n = 2^2 \cdot 3^1 = 12$ 时取得最大值：
-        \[ f(12) = f(2^2) \cdot f(3^1) = \frac{3}{2} \cdot \frac{2}{\sqrt{3}} = \sqrt{3} \text{} \]
+        \[ f(12) = f(2^2) \cdot f(3^1) = \frac{3}{2} \cdot \frac{2}{\sqrt{3}} = \sqrt{3}  \]
         答：$f(n)$ 的最大值为 $\sqrt{3}$，此时 $n = 12$。
     \end{solution}
 \end{parts}
@@ -4852,11 +4852,57 @@ a_1 = 1, \quad a_2 = p^2, \quad a_{n+2} = a_{n+1} - a_n + 13 \quad (n = 1, 2, 3,
         设 $a+b = 2p^{2n-i}$，$a-b = 2p^i$，其中为了满足 $a+b \ge a-b$，需满足 $2n-i \ge i \Rightarrow i \le n$。
         
         对于 $i = 0, 1, \dots, n$，解得：
-        \[ a = \frac{(a+b)+(a-b)}{2} = \frac{2p^{2n-i} + 2p^i}{2} = p^{2n-i} + p^i \text{} \]
-        \[ b = \frac{(a+b)-(a-b)}{2} = \frac{2p^{2n-i} - 2p^i}{2} = p^{2n-i} - p^i \text{} \]
+        \[ a = \frac{(a+b)+(a-b)}{2} = \frac{2p^{2n-i} + 2p^i}{2} = p^{2n-i} + p^i  \]
+        \[ b = \frac{(a+b)-(a-b)}{2} = \frac{2p^{2n-i} - 2p^i}{2} = p^{2n-i} - p^i  \]
         答：$(a, b) = (p^{2n-i} + p^i, p^{2n-i} - p^i) \quad (i = 0, 1, \dots, n)$。
     \end{solution}
 \end{parts}
+
+\question
+对于自然数 $k$，令 $a_k = 2^{\sqrt{k}}$。设 $n$ 为自然数，$a_k$ 的整数部分为 $n$ 位数的 $k$ 的个数记为 $N_n$。此外，$a_k$ 的整数部分为 $n$ 位数且其最高位数字为 $1$ 的 $k$ 的个数记为 $L_n$。求 $\lim_{n \to \infty} \frac{L_n}{N_n}$。
+注：例如实数 $2345.678$ 的整数部分 $2345$ 是 $4$ 位数，最高位数字是 $2$。
+\begin{solution}
+    对于 $a_k = 2^{\sqrt{k}}$，若 $a_k$ 的整数部分为 $n$ 位数，由 $10^{n-1} \le 2^{\sqrt{k}} < 10^n$ 得：
+    \[
+    \log_2 10^{n-1} \le \log_2 2^{\sqrt{k}} < \log_2 10^n, \quad (n-1)\log_2 10 \le \sqrt{k} < n\log_2 10
+    \]
+    由此得 $(n-1)^2 (\log_2 10)^2 \le k < n^2 (\log_2 10)^2 \quad \dots (1)$
+    满足 (1) 的 $k$ 的个数 $N_n$ 为（注意 $(\log_2 10)^2$ 不是有理数）：
+    \[
+    N_n = \lfloor n^2(\log_2 10)^2 \rfloor - \lfloor (n-1)^2(\log_2 10)^2 \rfloor \quad \dots (2)
+    \]
+    则 $n^2(\log_2 10)^2 - 1 < \lfloor n^2(\log_2 10)^2 \rfloor \le n^2(\log_2 10)^2$
+    以及 $(n-1)^2(\log_2 10)^2 - 1 < \lfloor (n-1)^2(\log_2 10)^2 \rfloor \le (n-1)^2(\log_2 10)^2$。
+    由 (2) 得 $\{n^2 - (n-1)^2\}(\log_2 10)^2 - 1 < N_n < \{n^2 - (n-1)^2\}(\log_2 10)^2 + 1$，即：
+    \[
+    (2n-1)(\log_2 10)^2 - 1 < N_n < (2n-1)(\log_2 10)^2 + 1 \quad \dots (3)
+    \]
+    此外，若 $a_k$ 的整数部分为 $n$ 位数且最高位数字为 $1$，则 $10^{n-1} \le 2^{\sqrt{k}} < 2 \cdot 10^{n-1}$。
+    同理可得 $(n-1)\log_2 10 \le \sqrt{k} < 1 + (n-1)\log_2 10$，
+    \[
+    (n-1)^2(\log_2 10)^2 \le k < 1 + 2(n-1)\log_2 10 + (n-1)^2(\log_2 10)^2 \quad \dots (4)
+    \]
+    满足 (4) 的 $k$ 的个数 $L_n$ 为：
+    \[
+    L_n = \lfloor 1 + 2(n-1)\log_2 10 + (n-1)^2(\log_2 10)^2 \rfloor - \lfloor (n-1)^2(\log_2 10)^2 \rfloor \quad \dots (5)
+    \]
+    由 (5) 得 $1 + 2(n-1)\log_2 10 - 1 < L_n < 1 + 2(n-1)\log_2 10 + 1$，即：
+    \[
+    2(n-1)\log_2 10 < L_n < 2(n-1)\log_2 10 + 2 \quad \dots (6)
+    \]
+    由 (3) 和 (6) 得：
+    \[
+    \frac{2(n-1)\log_2 10}{(2n-1)(\log_2 10)^2 + 1} < \frac{L_n}{N_n} < \frac{2(n-1)\log_2 10 + 2}{(2n-1)(\log_2 10)^2 - 1}
+    \]
+    计算极限：
+    \[
+    \lim_{n \to \infty} \frac{2(n-1)\log_2 10}{(2n-1)(\log_2 10)^2 + 1} = \frac{2\log_2 10}{2(\log_2 10)^2} = \frac{1}{\log_2 10} = \log_{10} 2
+    \]
+    \[
+    \lim_{n \to \infty} \frac{2(n-1)\log_2 10 + 2}{(2n-1)(\log_2 10)^2 - 1} = \frac{2\log_2 10}{2(\log_2 10)^2} = \frac{1}{\log_2 10} = \log_{10} 2
+    \]
+    因此，$\lim_{n \to \infty} \frac{L_n}{N_n} = \log_{10} 2$。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -6079,16 +6125,16 @@ $6 \times 4! + 5 \times \frac{4!}{2!} + 1 \times \frac{4!}{2! \times 2!} + 1 \ti
 
 \begin{solution}
 $x$ 只能取 1 到 28 之间的值。对于每个固定的 $x$，满足 $7y \le 120 - 4x$ 的 $y$ 的个数是
-\[ \lfloor \frac{120 - 4x}{7} \rfloor \text{} \]
+\[ \lfloor \frac{120 - 4x}{7} \rfloor  \]
 因此，满足不等式的数对 $(x, y)$ 的总数是
-\[ N = \sum_{n=1}^{28} \lfloor \frac{120 - 4n}{7} \rfloor \text{} \]
+\[ N = \sum_{n=1}^{28} \lfloor \frac{120 - 4n}{7} \rfloor  \]
 将每个 $n$ 写成 $n = 7k + r$，其中 $r = 1, 2, \dots, 7$ 且 $k = 0, 1, 2, 3$，我们得到
 \begin{align}
 N &= \sum_{k=0}^{3} \sum_{r=1}^{7} \lfloor \frac{120 - 4(7k + r)}{7} \rfloor \\
 &= \sum_{k=0}^{3} \sum_{r=1}^{7} (\lfloor \frac{120 - 4r}{7} \rfloor - 4k) \\
 &= \sum_{k=0}^{3} (16 + 16 + 15 + 14 + 14 + 13 + 13 - 28k) \\
 &= 4 \times 101 - 28 \times 6 \\
-&= 236 \text{}
+&= 236 
 \end{align}
 \end{solution}
 
@@ -6116,31 +6162,31 @@ N &= \sum_{k=0}^{3} \sum_{r=1}^{7} \lfloor \frac{120 - 4(7k + r)}{7} \rfloor \\
     其中 $k$ 是非负整数。要使 $x$ 和 $y$ 均为正数，$k$ 可以取 $0, 1, 2, 3, 4, 5, 6$。此情况下共有 7 组解。
 \end{itemize}
 因此，满足 $4x + 6y + 9z = 101$ 的正整数三元组 $(x, y, z)$ 的总数是
-\[ 1 + 3 + 4 + 6 + 7 = 21 \text{} \]
+\[ 1 + 3 + 4 + 6 + 7 = 21  \]
 \end{solution}
 
 \question 已知 $m$ 是一小于 1000 的正整数，且 $2m^2 + 5m + 3$ 是一个平方数。求 $m$ 的最大可能值。
 
 \begin{solution}
 注意
-\[ 2m^2 + 5m + 3 = (2m + 3)(m + 1) \text{} \]
+\[ 2m^2 + 5m + 3 = (2m + 3)(m + 1)  \]
 由于
-\[ 2m + 3 = 2(m + 1) + 1 \text{} \]
+\[ 2m + 3 = 2(m + 1) + 1  \]
 $2m + 3$ 和 $m + 1$ 互质。因此，若要使 $2m^2 + 5m + 3$ 为一平方数，$2m + 3$ 和 $m + 1$ 必须都是平方数。即存在正整数 $a$ 和 $b$ 使得
-\[ 2m + 3 = a^2, \quad m + 1 = b^2 \text{} \]
+\[ 2m + 3 = a^2, \quad m + 1 = b^2  \]
 由此可得
-\[ a^2 - 2b^2 = 1 \text{} \]
+\[ a^2 - 2b^2 = 1  \]
 注意到 $(a_1, b_1) = (3, 2)$ 是此方程的一组解。
-\[ (3 - 2\sqrt{2})(3 + 2\sqrt{2}) = 3^2 - 2 \times 2^2 = 1 \text{} \]
+\[ (3 - 2\sqrt{2})(3 + 2\sqrt{2}) = 3^2 - 2 \times 2^2 = 1  \]
 $(a_1, b_1) = (3, 2)$ 是 $b$ 为最小正整数时的解。对于任何正整数 $n$，令 $a_n$ 和 $b_n$ 为满足下式的正整数
-\[ a_n + b_n\sqrt{2} = (3 + 2\sqrt{2})^n \text{} \]
+\[ a_n + b_n\sqrt{2} = (3 + 2\sqrt{2})^n  \]
 则
-\[ a_n - b_n\sqrt{2} = (3 - 2\sqrt{2})^n \text{} \]
+\[ a_n - b_n\sqrt{2} = (3 - 2\sqrt{2})^n  \]
 这暗示了
-\[ (a_n + b_n\sqrt{2})(a_n - b_n\sqrt{2}) = (3 + 2\sqrt{2})^n (3 - 2\sqrt{2})^n = 1 \text{} \]
+\[ (a_n + b_n\sqrt{2})(a_n - b_n\sqrt{2}) = (3 + 2\sqrt{2})^n (3 - 2\sqrt{2})^n = 1  \]
 换句话说，$(a_n, b_n)$ 也满足方程 $a_n^2 - 2b_n^2 = 1$。
 通过递推关系 $a_{n+1} + b_{n+1}\sqrt{2} = (a_n + b_n\sqrt{2})(3 + 2\sqrt{2})$，我们得到
-\[ a_{n+1} = 3a_n + 4b_n, \quad b_{n+1} = 3b_n + 2a_n \text{} \]
+\[ a_{n+1} = 3a_n + 4b_n, \quad b_{n+1} = 3b_n + 2a_n  \]
 现在我们要找到最大的 $n$ 使得 $m + 1 = b_n^2 < 1001$。直接计算得：
 \begin{itemize}
     \item $a_2 = 17, b_2 = 12$
@@ -6148,7 +6194,7 @@ $(a_1, b_1) = (3, 2)$ 是 $b$ 为最小正整数时的解。对于任何正整�
 \end{itemize}
 若取 $b_3 = 70$，则 $b_3^2 = 4900 > 1001$。
 因此，我们应取 $n = 2$，此时满足条件且小于 1000 的最大 $m$ 为
-\[ m = 12^2 - 1 = 143 \text{} \]
+\[ m = 12^2 - 1 = 143  \]
 \end{solution}
 
 \question 对于任意的正整数 $k$，$k! = 1 \times 2 \times \cdots \times k$ 是前 $k$ 个正整数的乘积。设 $x_1, x_2, \ldots, x_{20}$ 为 20 个正整数。若存在一个正整数 $n$ 使得
@@ -6381,10 +6427,10 @@ x_1^2 + y_1^2 + z_1^2 = 4x_1y_1z_1
 
     \part 求出所有满足等式 $p^q = q^p + 7$ 的素数对 $(p, q)$。
     \begin{solution}
-    已知等式 $p^q = q^p + 7 \quad \dots ①$。
+    已知等式 $p^q = q^p + 7 \quad \dots (1)$。
     (i) 当 $p=2$ 时：
-    方程变为 $2^q = q^2 + 7 \quad \dots ②$。
-    由 (1) 可知，当 $q \geqq 6$（且 $q$ 为素数即 $q \geqq 7$）时，$2^q > q^2 + 7$，故 ② 无解。
+    方程变为 $2^q = q^2 + 7 \quad \dots (2)$。
+    由 (1) 可知，当 $q \geqq 6$（且 $q$ 为素数即 $q \geqq 7$）时，$2^q > q^2 + 7$，故 (2) 无解。
     检查 $q=2, 3, 5$：
     - 若 $q=2$，$2^2 = 4, 2^2 + 7 = 11$，不成立。
     - 若 $q=3$，$2^3 = 8, 3^2 + 7 = 16$，不成立。
@@ -6396,8 +6442,8 @@ x_1^2 + y_1^2 + z_1^2 = 4x_1y_1z_1
     此时 $p^q$ 为奇数，$q^p$ 为奇数，则 $q^p + 7$ 为偶数。
     奇数不可能等于偶数，故此种情况无解。
     因此 $q$ 必须为偶数素数，即 $q=2$。
-    代入 ① 得 $p^2 = 2^p + 7 \quad \dots ③$。
-    由 (1) 可知，当 $p \geqq 6$（即 $p \geqq 7$）时，$2^p > p^2 + 7$，故 ③ 无解。
+    代入 (1) 得 $p^2 = 2^p + 7 \quad \dots (3)$。
+    由 (1) 可知，当 $p \geqq 6$（即 $p \geqq 7$）时，$2^p > p^2 + 7$，故 (3) 无解。
     检查 $p=3, 5$：
     - 若 $p=3$，$3^2 = 9, 2^3 + 7 = 15$，不成立。
     - 若 $p=5$，$5^2 = 25, 2^5 + 7 = 39$，不成立。
@@ -6725,21 +6771,21 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
 
 \question
 设 $n$ 为 $2 \le n \le 20$ 的整数，$k$ 为 $1 \le k \le n-1$ 的整数。求满足下列等式的所有整数对 $(n, k)$：
-\[ {}_{n+2}\mathrm{C}_{k+1} = 2({}_n\mathrm{C}_{k-1} + {}_n\mathrm{C}_{k+1}) \text{} \]
+\[ {}_{n+2}\mathrm{C}_{k+1} = 2({}_n\mathrm{C}_{k-1} + {}_n\mathrm{C}_{k+1})  \]
 
 \begin{solution}
     利用二项式系数的阶乘定义展开等式：
-    \[ \frac{(n+2)!}{(k+1)!(n-k+1)!} = 2 \left( \frac{n!}{(k-1)!(n-k+1)!} + \frac{n!}{(k+1)!(n-k-1)!} \right) \text{} \]
+    \[ \frac{(n+2)!}{(k+1)!(n-k+1)!} = 2 \left( \frac{n!}{(k-1)!(n-k+1)!} + \frac{n!}{(k+1)!(n-k-1)!} \right)  \]
     等式两边同时除以 $n!$，并简化分母：
-    \[ \frac{(n+1)(n+2)}{k(k+1)(n-k)(n-k+1)} = \frac{2}{(n-k)(n-k+1)} + \frac{2}{k(k+1)} \text{} \]
+    \[ \frac{(n+1)(n+2)}{k(k+1)(n-k)(n-k+1)} = \frac{2}{(n-k)(n-k+1)} + \frac{2}{k(k+1)}  \]
     两边同时乘以 $k(k+1)(n-k)(n-k+1)$ 得：
-    \[ (n+1)(n+2) = 2k(k+1) + 2(n-k)(n-k+1) \text{} \]
+    \[ (n+1)(n+2) = 2k(k+1) + 2(n-k)(n-k+1)  \]
     展开并整理为关于 $n, k$ 的二次方程：
-    \[ n^2 + 3n + 2 = 2k^2 + 2k + 2(n^2 - 2nk + n + k^2 - k) \text{} \]
-    \[ n^2 - (4k+1)n + (4k^2 - 2) = 0 \quad \cdots \textcircled{1} \text{} \]
+    \[ n^2 + 3n + 2 = 2k^2 + 2k + 2(n^2 - 2nk + n + k^2 - k)  \]
+    \[ n^2 - (4k+1)n + (4k^2 - 2) = 0 \quad \cdots (1)  \]
     
     为了求解该方程，利用配方法将其变形为：
-    \[ n^2 - 4kn + 4k^2 = n + 2 \Rightarrow (n-2k)^2 = n+2 \quad \cdots (*) \text{} \]
+    \[ n^2 - 4kn + 4k^2 = n + 2 \Rightarrow (n-2k)^2 = n+2 \quad \cdots (*)  \]
     由于 $2 \le n \le 20$，可知 $4 \le n+2 \le 22$。
     因为 $(n-2k)^2$ 必须是平方数，故 $n+2$ 只能取 $4, 9, 16$。
 
@@ -6758,7 +6804,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
     \end{enumerate}
 
     综上所述，满足条件的整数对 $(n, k)$ 为：
-    \[ (7, 2), (7, 5), (14, 5), (14, 9) \text{} \]
+    \[ (7, 2), (7, 5), (14, 5), (14, 9)  \]
 \end{solution}
 
 \question
@@ -6766,16 +6812,16 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
 
 \begin{solution}
     首先，利用因式分解将左式变形为连续整数的乘积：
-    \[ \{(x-1)x(x+1)\}^2 (y-1)y(y+1) = 86400 \text{} \]
+    \[ \{(x-1)x(x+1)\}^2 (y-1)y(y+1) = 86400  \]
     对常数 86400 进行素因数分解：
-    \[ 86400 = 864 \times 100 = 2^5 \cdot 3^3 \times 2^2 \cdot 5^2 = 2^7 \cdot 3^3 \cdot 5^2 \quad \cdots \textcircled{1} \text{} \]
+    \[ 86400 = 864 \times 100 = 2^5 \cdot 3^3 \times 2^2 \cdot 5^2 = 2^7 \cdot 3^3 \cdot 5^2 \quad \cdots (1)  \]
     
     注意到对于任何整数 $n$，连续三个整数之积 $(n-1)n(n+1)$ 必定是 $6$ 的倍数。
     设 $(x-1)x(x+1) = 6k$，$(y-1)y(y+1) = 6l$（其中 $k$ 为整数，$l$ 为正整数）。
-    代入 \textcircled{1} 式得：
-    \[ (6k)^2 \cdot 6l = 216 k^2 l = 86400 \Rightarrow k^2 l = 400 = 2^4 \cdot 5^2 \quad \cdots \textcircled{2} \text{} \]
+    代入 (1) 式得：
+    \[ (6k)^2 \cdot 6l = 216 k^2 l = 86400 \Rightarrow k^2 l = 400 = 2^4 \cdot 5^2 \quad \cdots (2)  \]
     
-    由 \textcircled{2} 可知，$k^2$ 是 $2^4 \cdot 5^2$ 的平方数约数，因此 $k^2$ 可能的值为 $\{1, 2^2, 2^4, 5^2, 2^2 \cdot 5^2, 2^4 \cdot 5^2\}$。
+    由 (2) 可知，$k^2$ 是 $2^4 \cdot 5^2$ 的平方数约数，因此 $k^2$ 可能的值为 $\{1, 2^2, 2^4, 5^2, 2^2 \cdot 5^2, 2^4 \cdot 5^2\}$。
     对 $k^2$ 进行分类讨论，寻找是否存在符合条件的整数 $x$ 和 $y$：
 
     \begin{enumerate}
@@ -6784,14 +6830,14 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
         例如 $l = 2^2 \cdot 5^2 = 100 \Rightarrow (y-1)y(y+1) = 600$。由于 $8 \cdot 9 \cdot 10 = 720$ 且 $7 \cdot 8 \cdot 9 = 504$，故无自然数解。
 
         \item 当 $k^2 = 2^2 \cdot 5^2 = 100$ 时：
-        由 \textcircled{2} 得 $l = 2^2 = 4$，则 $(y-1)y(y+1) = 6 \cdot 4 = 24$。
+        由 (2) 得 $l = 2^2 = 4$，则 $(y-1)y(y+1) = 6 \cdot 4 = 24$。
         由此解得 $y = 3$（此时 $2 \cdot 3 \cdot 4 = 24$）。
         同时，$k = \pm 10 \Rightarrow (x-1)x(x+1) = \pm 60$。
         解得 $x = \pm 4$（此时 $3 \cdot 4 \cdot 5 = 60$ 或 $(-5) \cdot (-4) \cdot (-3) = -60$）。
         得到整数对：$(\pm 4, 3)$。
 
         \item 当 $k^2 = 2^4 \cdot 5^2 = 400$ 时：
-        由 \textcircled{2} 得 $l = 1$，则 $(y-1)y(y+1) = 6 \cdot 1 = 6$。
+        由 (2) 得 $l = 1$，则 $(y-1)y(y+1) = 6 \cdot 1 = 6$。
         由此解得 $y = 2$。
         同时，$k = \pm 20 \Rightarrow (x-1)x(x+1) = \pm 120$。
         解得 $x = \pm 5$（此时 $4 \cdot 5 \cdot 6 = 120$）。
@@ -6799,7 +6845,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
     \end{enumerate}
 
     综上所述，满足方程的整数对 $(x, y)$ 为：
-    \[ (x, y) = (\pm 4, 3), (\pm 5, 2) \text{} \]
+    \[ (x, y) = (\pm 4, 3), (\pm 5, 2)  \]
 \end{solution}
 
 \question
@@ -6812,20 +6858,20 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
             \item 若 $b = a + 1$ (即 $a = b - 1$)，则 $a! = (b-1)!$，故 $\frac{b!}{a!} = \frac{b!}{(b-1)!} = b$。
             \item 若 $b > a + 1$ (即 $a < b - 1$)，则 $a! < (b-1)!$，故 $\frac{b!}{a!} > \frac{b!}{(b-1)!} = b$。
         \end{enumerate}
-        综合 (i)(ii) 可知，$\frac{b!}{a!} \ge b$ \dots \textcircled{1} 成立。
+        综合 (i)(ii) 可知，$\frac{b!}{a!} \ge b$ \dots (1) 成立。
     \end{solution}
 
     \part 求满足 $2 \cdot a! = b!$ 的所有自然数对 $(a, b)$。
     \begin{solution}
-        设自然数 $a, b$ 满足 $2 \cdot a! = b!$ \dots \textcircled{2}。显然由 $a! < b!$ 可知 $a < b$。
-        由 \textcircled{2} 式得 $\frac{b!}{a!} = 2$，结合 (1) 中的结论 $\frac{b!}{a!} \ge b$，得 $2 \ge b$。
+        设自然数 $a, b$ 满足 $2 \cdot a! = b!$ \dots (2)。显然由 $a! < b!$ 可知 $a < b$。
+        由 (2) 式得 $\frac{b!}{a!} = 2$，结合 (1) 中的结论 $\frac{b!}{a!} \ge b$，得 $2 \ge b$。
         由于 $1 \le a < b$，唯一可能的整数解为 $b = 2, a = 1$。
         验证：$2 \cdot 1! = 2!$ 成立。故满足条件的自然数对为 $(a, b) = (1, 2)$。
     \end{solution}
 
     \part 求满足 $a! + b! = 2 \cdot c!$ 的所有自然数三元组 $(a, b, c)$。
     \begin{solution}
-        设自然数 $a, b, c$ 满足 $a! + b! = 2 \cdot c!$ \dots \textcircled{3}。
+        设自然数 $a, b, c$ 满足 $a! + b! = 2 \cdot c!$ \dots (3)。
         \begin{enumerate}[label=(\roman*)]
             \item 当 $a = b$ 时：
             原式变为 $a! + a! = 2 \cdot a! = 2 \cdot c!$，即 $a! = c!$，得 $a = c$。
@@ -6847,7 +6893,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
 
 \question 
 对于给定的自然数 $a_0$，定义由自然数组成的数列 $a_0, a_1, a_2, \dots$ 如下：
-\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases} \text{} \]
+\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases}  \]
 请回答下列问题：
 
 \begin{parts}
@@ -6857,7 +6903,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
         \begin{align*}
             a_1 &= \frac{3a_0 + 1}{2} \\
             a_2 &= \frac{3a_1 + 1}{2} = \frac{3 \cdot \frac{3a_0+1}{2} + 1}{2} = \frac{9a_0 + 5}{4} \\
-            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} \text{}
+            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} 
         \end{align*}
         $a_3$ 必须为奇数，这意味着 $27a_0 + 19$ 必须是 $8$ 的倍数，且该倍数必须是奇数（即 $27a_0 + 19 = 8 \times \text{odd}$）。
         设 $27a_0 + 19 = 16k - 8$ ($k$ 为正整数)，整理得 $27a_0 + 27 = 16k$。
@@ -6872,7 +6918,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
     \begin{solution}
         设 $a_n$ 为奇数，则 $a_{n+1} = \frac{3a_n+1}{2}$。变形得 $a_{n+1} + 1 = \frac{3}{2}(a_n + 1)$。
         这是一个以 $a_0+1$ 为首项，$\frac{3}{2}$ 为公比的等比数列：
-        \[ a_n + 1 = (a_0 + 1)\left(\frac{3}{2}\right)^n \quad \Rightarrow \quad a_n = (a_0 + 1)\frac{3^n}{2^n} - 1 \text{} \]
+        \[ a_n + 1 = (a_0 + 1)\left(\frac{3}{2}\right)^n \quad \Rightarrow \quad a_n = (a_0 + 1)\frac{3^n}{2^n} - 1  \]
         若 $a_0, a_1, \dots, a_{10}$ 均为奇数，则对于 $n = 10$，需满足 $a_{10} = (a_0 + 1)\frac{3^{10}}{2^{10}} - 1$ 为整数且为奇数。
         这要求 $(a_0 + 1)\frac{3^{10}}{2^{10}}$ 为偶数。
         设 $(a_0 + 1)\frac{3^{10}}{2^{10}} = 2l$ ($l$ 为正整数)，则 $(a_0 + 1) \cdot 3^{10} = 2^{11}l$。
@@ -6921,7 +6967,7 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
         为了使方程 $(*)$ 成立，左右两边除以 $8$ 的余数必须相等。对比上述结果，唯一的重合余数是 $4$。
         这要求 $m=2$ 且 $n^2+3 \equiv 4 \pmod 8$。
         当 $m=2$ 时，代入方程：
-        \[ 2^2 = n^2 + 3 \quad \Rightarrow \quad 4 = n^2 + 3 \quad \Rightarrow \quad n^2 = 1 \text{} \]
+        \[ 2^2 = n^2 + 3 \quad \Rightarrow \quad 4 = n^2 + 3 \quad \Rightarrow \quad n^2 = 1  \]
         由于 $n$ 是非负整数，解得 $n=1$。
         答：$(m, n) = (2, 1)$。
     \end{solution}
@@ -6933,15 +6979,15 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
 \begin{parts}
     \part 当 $a = 2$ 时，求所有满足上述条件的整数组 $(b, c, d)$。
     \begin{solution}
-        当 $a = 2$ 时，方程 \textcircled{1} 变为：
-        \[ (b-2)(c-2)(d+2) = 2^6 \quad (2 < b < c < d) \cdots \text{\textcircled{2}} \]
+        当 $a = 2$ 时，方程 (1) 变为：
+        \[ (b-2)(c-2)(d+2) = 2^6 \quad (2 < b < c < d) \cdots (2) \]
         设 $b-2=2^p, c-2=2^q, d+2=2^r$，其中 $p, q, r$ 为非负整数。
-        由 \textcircled{2} 得 $b = 2^p+2, c = 2^q+2, d = 2^r-2$。
-        代入方程得 $2^p \cdot 2^q \cdot 2^r = 2^6$，故 $p+q+r = 6 \cdots \text{\textcircled{3}}$。
+        由 (2) 得 $b = 2^p+2, c = 2^q+2, d = 2^r-2$。
+        代入方程得 $2^p \cdot 2^q \cdot 2^r = 2^6$，故 $p+q+r = 6 \cdots (3)$。
         根据大小关系 $2 < b < c < d$：
-        \[ 2 < 2^p+2 < 2^q+2 < 2^r-2 \quad \Rightarrow \quad 0 \le p < q < r \cdots \text{\textcircled{4}} \text{ 且需满足 } 2^q+2 < 2^r-2 \]
+        \[ 2 < 2^p+2 < 2^q+2 < 2^r-2 \quad \Rightarrow \quad 0 \le p < q < r \cdots (4) \text{ 且需满足 } 2^q+2 < 2^r-2 \]
         
-        由 \textcircled{3} 和 \textcircled{4}，可能的 $(p, q, r)$ 组合有：
+        由 (3) 和 (4)，可能的 $(p, q, r)$ 组合有：
         \begin{enumerate}[label=(\roman*)]
             \item $(p, q, r) = (0, 1, 5)$：此时 $(b, c, d) = (3, 4, 30)$。满足条件。
             \item $(p, q, r) = (0, 2, 4)$：此时 $(b, c, d) = (3, 6, 14)$。满足条件。
@@ -6952,14 +6998,14 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
 
     \part 当 $a = 3$ 且 $b, c, d$ 均为奇数时，求所有满足条件的整数组 $(b, c, d)$。
     \begin{solution}
-        当 $a = 3$ 时，方程变为 $(b-3)(c-3)(d+3) = 2^3 \cdot 3^3 \quad (3 < b < c < d) \cdots \text{\textcircled{5}}$。
+        当 $a = 3$ 时，方程变为 $(b-3)(c-3)(d+3) = 2^3 \cdot 3^3 \quad (3 < b < c < d) \cdots (5)$。
         由于 $b, c, d$ 均为奇数，则 $b-3, c-3, d+3$ 均为偶数。
         设 $b-3 = 2 \cdot 3^k, c-3 = 2 \cdot 3^l, d+3 = 2 \cdot 3^m$，其中 $k, l, m$ 为非负整数。
-        代入 \textcircled{5} 式得：
-        \[ (2 \cdot 3^k)(2 \cdot 3^l)(2 \cdot 3^m) = 2^3 \cdot 3^3 \quad \Rightarrow \quad 3^{k+l+m} = 3^3 \quad \Rightarrow \quad k+l+m = 3 \cdots \text{\textcircled{6}} \text{} \]
+        代入 (5) 式得：
+        \[ (2 \cdot 3^k)(2 \cdot 3^l)(2 \cdot 3^m) = 2^3 \cdot 3^3 \quad \Rightarrow \quad 3^{k+l+m} = 3^3 \quad \Rightarrow \quad k+l+m = 3 \cdots (6)  \]
         根据大小关系 $3 < b < c < d$：
-        \[ 3 < 2 \cdot 3^k + 3 < 2 \cdot 3^l + 3 < 2 \cdot 3^m - 3 \quad \Rightarrow \quad 0 \le k < l < m \cdots \text{\textcircled{7}} \]
-        由 \textcircled{6} 和 \textcircled{7}，唯一的可能组合为 $(k, l, m) = (0, 1, 2)$。
+        \[ 3 < 2 \cdot 3^k + 3 < 2 \cdot 3^l + 3 < 2 \cdot 3^m - 3 \quad \Rightarrow \quad 0 \le k < l < m \cdots (7) \]
+        由 (6) 和 (7)，唯一的可能组合为 $(k, l, m) = (0, 1, 2)$。
         计算坐标：
         $b = 2 \cdot 3^0 + 3 = 5$；
         $c = 2 \cdot 3^1 + 3 = 9$；
@@ -9451,17 +9497,17 @@ E_1 = \{1, 999\}, E_2 = \{2, 998\}, E_3 = \{3, 997\}, \dots, E_{499} = \{499, 50
 令 $U$ 为所有小于 100 的质数集合。$U$ 有 25 个元素，即
 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97。
 对于每个 $p \in U$，定义集合
-\[ S_p = \{n \in S \mid p \text{ 整除 } n\} \text{} \]
+\[ S_p = \{n \in S \mid p \text{ 整除 } n\}  \]
 令 $U_1 = \{2, 3, 5, 7\}$，$U_2 = \{11, 13, 17, 19\}$ 且 $U_3 = \{p \in U \mid p \ge 21\}$。
 注意
-\[ U_3 = U \cap S \text{} \]
+\[ U_3 = U \cap S  \]
 是 $S$ 中所有质数的集合。
 若 $n \in S$ 不是质数，则它必须有一个小于 $\sqrt{100} = 10$ 的质因数。换句话说，$n$ 必须在 $S_2, S_3, S_5$ 或 $S_7$ 中。因此，
-\[ S = \bigcup_{p \in U_1 \cup U_3} S_p \text{} \]
+\[ S = \bigcup_{p \in U_1 \cup U_3} S_p  \]
 $U_1 \cup U_3$ 有 21 个元素。若集合 $A$ 包含多于 21 个元素，则根据抽屉原理，必存在一个 $p \in U_1 \cup U_3$ 使得 $A$ 至少包含 $S_p$ 中的 2 个元素。这两个元素因为有公共质因数而不互质。
 因此，$A$ 最多可以有 21 个元素。
 若
-\[ A = \{32, 27, 25, 49, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97\} \text{} \]
+\[ A = \{32, 27, 25, 49, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97\}  \]
 则 $A$ 恰好有 21 个元素，且其中任意两个元素都互质。
 \end{solution}
 
@@ -9484,7 +9530,7 @@ N &= \sum_{c=3}^{9} \sum_{b=2}^{c-1} \sum_{a=1}^{b-1} 1 \\
 
 \begin{solution}
 我们首先考虑所有有序三元组 $(a_1, a_2, a_3)$，使得 $a_1, a_2, a_3$ 属于
-\[ \tilde{S} = \{1, 2, \dots, 53\} \text{} \]
+\[ \tilde{S} = \{1, 2, \dots, 53\}  \]
 且 $a_1 + a_2 + a_3$ 能被 53 整除。
 注意对于任何一对 $(a_1, a_2)$，在 $\tilde{S}$ 中恰好存在一个 $a_3$ 使得 $a_1 + a_2 + a_3$ 能被 53 整除。
 因此，共有 $53 \times 53$ 个有序三元组 $(a_1, a_2, a_3)$ 满足条件。
@@ -9499,12 +9545,12 @@ N &= \sum_{c=3}^{9} \sum_{b=2}^{c-1} \sum_{a=1}^{b-1} 1 \\
 因此，共有 $3 \times 53 - 2$ 个三元组 $(a_1, a_2, a_3)$ 满足其中的元素不完全相同。
 这意味着共有 $53 \times 53 - 3 \times 53 + 2$ 个三元组 $(a_1, a_2, a_3)$，其中的 $a_1, a_2, a_3$ 是 $\tilde{S}$ 中相异的元素且其和能被 53 整除。
 因此，$\tilde{S}$ 的子集 $A$ 包含三个元素且 $s(A)$ 能被 53 整除的个数为
-\[ \frac{53 \times 53 - 3 \times 53 + 2}{3!} = 442 \text{} \]
+\[ \frac{53 \times 53 - 3 \times 53 + 2}{3!} = 442  \]
 
 在这些子集中，包含 53 的子集必然包含另外两个相异元素 $a_1$ 和 $a_2$，满足 $a_1 + a_2$ 能被 53 整除。
 这样的数对 $(a_1, a_2)$ 共有 52 个。因此，包含元素 53 且 $s(A)$ 能被 53 整除的三个元素的子集 $A$ 的个数为 $\frac{52}{2} = 26$。
 由此可知，$S$ 的特棒子集的个数为
-\[ 442 - 26 = 416 \text{} \]
+\[ 442 - 26 = 416  \]
 
 \end{solution}
 

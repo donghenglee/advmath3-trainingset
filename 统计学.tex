@@ -1246,17 +1246,17 @@ $f(6) = 243 - 192 + 7 = 58 > 0$。
 设抛掷硬币产生的文字序列中，左数第 $n$ 个文字分别为 $A_1, A_2, B$ 的概率为 $p_n, q_n, r_n$。
 由题意可得初始状态：$p_1 = r_1 = 1/2, q_1 = 0$。
 建立递推关系：
-\[ p_{n+1} = \frac{1}{2} q_n + \frac{1}{2} r_n \cdots \cdots (1), \quad q_{n+1} = p_n \cdots \cdots (2) \text{} \]
+\[ p_{n+1} = \frac{1}{2} q_n + \frac{1}{2} r_n \cdots \cdots (1), \quad q_{n+1} = p_n \cdots \cdots (2)  \]
 由 $p_n + q_n + r_n = 1$ 及 (1) 得：
-\[ p_{n+1} = \frac{1}{2}(q_n + r_n) = \frac{1}{2}(1 - p_n) = -\frac{1}{2} p_n + \frac{1}{2} \text{} \]
+\[ p_{n+1} = \frac{1}{2}(q_n + r_n) = \frac{1}{2}(1 - p_n) = -\frac{1}{2} p_n + \frac{1}{2}  \]
 变形为特征方程形式：$p_{n+1} - \frac{1}{3} = -\frac{1}{2} (p_n - \frac{1}{3})$。
 解得：$p_n - \frac{1}{3} = (p_1 - \frac{1}{3})(-\frac{1}{2})^{n-1} = \frac{1}{6}(-\frac{1}{2})^{n-1}$。
 故 $p_n = \frac{1}{3} + \frac{1}{6}(-\frac{1}{2})^{n-1}$。
 对于 $n \ge 2$，由 (2) 可得：
-\[ q_n = p_{n-1} = \frac{1}{3} + \frac{1}{6}(-\frac{1}{2})^{n-2} = \frac{1}{3} - \frac{1}{3}(-\frac{1}{2})^{n-1} \text{} \]
+\[ q_n = p_{n-1} = \frac{1}{3} + \frac{1}{6}(-\frac{1}{2})^{n-2} = \frac{1}{3} - \frac{1}{3}(-\frac{1}{2})^{n-1}  \]
 （此式在 $n=1$ 时也成立）。
 因此，第 $n$ 个文字为 A 的概率为 $p_n + q_n$：
-\[ p_n + q_n = \frac{1}{3} + \frac{1}{6}(-\frac{1}{2})^{n-1} + \frac{1}{3} - \frac{1}{3}(-\frac{1}{2})^{n-1} = \frac{2}{3} - \frac{1}{6}(-\frac{1}{2})^{n-1} = \frac{2}{3} + \frac{1}{3}(-\frac{1}{2})^n \text{} \]
+\[ p_n + q_n = \frac{1}{3} + \frac{1}{6}(-\frac{1}{2})^{n-1} + \frac{1}{3} - \frac{1}{3}(-\frac{1}{2})^{n-1} = \frac{2}{3} - \frac{1}{6}(-\frac{1}{2})^{n-1} = \frac{2}{3} + \frac{1}{3}(-\frac{1}{2})^n  \]
 \end{solution}
 
 \part 设 $n$ 为不小于 2 的整数。求生成的字符串中，左数第 $n-1$ 个文字为 A 且第 $n$ 个文字为 B 的概率。
@@ -1264,7 +1264,7 @@ $f(6) = 243 - 192 + 7 = 58 > 0$。
 左数第 $n-1$ 个文字为 A 且第 $n$ 个文字为 B，等价于第 $n-1$ 个文字是 “AA” 中的第二个 A（即 $A_2$），且下一次抛硬币结果为反面（生成 B）。
 由 (1) 的分析可知，第 $n-1$ 个文字为 $A_2$ 的概率为 $q_{n-1}$。
 因此，所求概率为：
-\[ q_{n-1} \times \frac{1}{2} = \frac{1}{2} \left\{ \frac{1}{3} - \frac{1}{3} \left( -\frac{1}{2} \right)^{n-2} \right\} = \frac{1}{6} + \frac{1}{3} \left( -\frac{1}{2} \right)^{n-1} \text{} \]
+\[ q_{n-1} \times \frac{1}{2} = \frac{1}{2} \left\{ \frac{1}{3} - \frac{1}{3} \left( -\frac{1}{2} \right)^{n-2} \right\} = \frac{1}{6} + \frac{1}{3} \left( -\frac{1}{2} \right)^{n-1}  \]
 \end{solution}
 \end{parts}
 
@@ -1369,7 +1369,7 @@ $f(6) = 243 - 192 + 7 = 58 > 0$。
     \part 求以 $a, b, c$ 为三边长度的三角形是直角三角形的概率。
     \begin{solution}
     设 $a, b, c$ 为三边长的三角形是直角三角形。若斜边长度为 $c$，则满足：
-    \[ a^2 + b^2 = c^2 \quad \dots \text{(1)} \]
+    \[ a^2 + b^2 = c^2 \quad \dots (1) \]
     计算 $a^2$ 与 $b^2$ 及其和的取值情况如下表：
     \begin{table}[H]
     \centering
@@ -1395,7 +1395,7 @@ $f(6) = 243 - 192 + 7 = 58 > 0$。
     \part 求以 $a, b, c$ 为三边长度的三角形是钝角三角形的概率。
     \begin{solution}
     设 $c$ 为最大边，则 $a, b, c$ 构成钝角三角形需满足：
-    \[ a + b > c \quad \dots \text{(2)} \quad \text{且} \quad a^2 + b^2 < c^2 \quad \dots \text{(3)} \]
+    \[ a + b > c \quad \dots (2) \quad \text{且} \quad a^2 + b^2 < c^2 \quad \dots (3) \]
     显然 $c=1, 2$ 时无解，故 $c \geqq 3$。根据 (1) 中的表格进行分类讨论：
     (i) 当 $c=3$ 时：
     由 (2) 得 $a+b > 3$，由 (3) 得 $a^2 + b^2 < 9$，解得 $(a, b) = (2, 2)$。
@@ -1568,7 +1568,7 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         因此概率为：
         \[ p(2) = \sum_{k=1}^{n-1} \frac{1}{n} \cdot \frac{k+1}{n} = \frac{1}{n^2} \sum_{k=1}^{n-1} (k+1) = \frac{1}{n^2} \left\{ \frac{1}{2}(n-1)n + (n-1) \right\} \]
         整理得：
-        \[ p(2) = \frac{(n-1)(n+2)}{2n^2} \text{} \]
+        \[ p(2) = \frac{(n-1)(n+2)}{2n^2}  \]
     \end{solution}
 
     \part 当 $n \ge 3$ 时，求 $p(3)$。
@@ -1577,11 +1577,11 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         设 $X_1 + X_2 = k \ (2 \le k \le n-1)$。对于固定的 $k$，$(X_1, X_2)$ 的组合有 $(1, k-1), (2, k-2), \dots, (k-1, 1)$，共 $k-1$ 种。
         此时 $X_3$ 必须满足 $X_3 \ge n-k$，可选编号为 $n-k, n-k+1, \dots, n$，共 $k+1$ 种。
         因此概率为：
-        \[ p(3) = \sum_{k=2}^{n-1} \frac{k-1}{n^2} \cdot \frac{k+1}{n} = \frac{1}{n^3} \sum_{k=2}^{n-1} (k^2 - 1) = \frac{1}{n^3} \sum_{k=1}^{n-1} (k^2 - 1) \text{} \]
+        \[ p(3) = \sum_{k=2}^{n-1} \frac{k-1}{n^2} \cdot \frac{k+1}{n} = \frac{1}{n^3} \sum_{k=2}^{n-1} (k^2 - 1) = \frac{1}{n^3} \sum_{k=1}^{n-1} (k^2 - 1)  \]
         利用求和公式 $\sum k^2 = \frac{1}{6}n(n+1)(2n+1)$：
         \[ p(3) = \frac{1}{n^3} \left\{ \frac{1}{6}(n-1)n(2n-1) - (n-1) \right\} \]
         整理得：
-        \[ p(3) = \frac{(n-1)(n-2)(2n+3)}{6n^3} \text{} \]
+        \[ p(3) = \frac{(n-1)(n-2)(2n+3)}{6n^3}  \]
     \end{solution}
 \end{parts}
 
@@ -1631,7 +1631,7 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
     \begin{solution}
         首先，从包含红球 $n$ 个、白球 $n$ 个，共计 $2n$ 个球的箱子中取出 $n$ 个球的方法总数为 ${}_{2n} \mathrm{C}_n$ 种，且每种情况等可能发生。
         在取出的 $n$ 个球中，红球有 $k$ 个（$0 \le k \le n$）的情形共有 ${}_n \mathrm{C}_k \cdot {}_n \mathrm{C}_{n-k}$ 种。
-        利用组合数的性质 ${}_n \mathrm{C}_k = {}_n \mathrm{C}_{n-k} \dots \text{①}$，可知该概率为：
+        利用组合数的性质 ${}_n \mathrm{C}_k = {}_n \mathrm{C}_{n-k} \dots (1)$，可知该概率为：
         \[
         \frac{{}_n \mathrm{C}_k \cdot {}_n \mathrm{C}_{n-k}}{{}_{2n} \mathrm{C}_n} = \frac{({}_n \mathrm{C}_k)^2}{{}_{2n} \mathrm{C}_n}
         \]
@@ -1658,21 +1658,21 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
     \begin{solution}
         总概率 $P$ 是所有 $P_k$ 的和：
         \[
-        P = \sum_{k=1}^n P_k = \frac{n}{2(2n-1) {}_{2n-2} \mathrm{C}_{n-1}} \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 \dots \text{②}
+        P = \sum_{k=1}^n P_k = \frac{n}{2(2n-1) {}_{2n-2} \mathrm{C}_{n-1}} \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 \dots (2)
         \]
         为了求出 $\sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2$ 的值，考虑恒等式：
         \[
-        (x+1)^{n-1}(x+1)^{n-1} = (x+1)^{2n-2} \dots \text{③}
+        (x+1)^{n-1}(x+1)^{n-1} = (x+1)^{2n-2} \dots (3)
         \]
-        展开左侧并关注 $x^{n-1}$ 的系数，利用性质 ① 可知该系数为：
+        展开左侧并关注 $x^{n-1}$ 的系数，利用性质 (1) 可知该系数为：
         \[
         ({}_{n-1} \mathrm{C}_0)^2 + ({}_{n-1} \mathrm{C}_1)^2 + \dots + ({}_{n-1} \mathrm{C}_{n-1})^2
         \]
         而展开右侧时，$x^{n-1}$ 的系数为 ${}_{2n-2} \mathrm{C}_{n-1}$。因此：
         \[
-        \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 = {}_{2n-2} \mathrm{C}_{n-1} \dots \text{④}
+        \sum_{k=1}^n ({}_{n-1} \mathrm{C}_{k-1})^2 = {}_{2n-2} \mathrm{C}_{n-1} \dots (4)
         \]
-        结合 ② 和 ④ 得：
+        结合 (2) 和 (4) 得：
         \[
         P = \frac{n}{2(2n-1) {}_{2n-2} \mathrm{C}_{n-1}} \cdot {}_{2n-2} \mathrm{C}_{n-1} = \frac{n}{2(2n-1)}
         \]
@@ -1688,7 +1688,7 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         根据题意，投掷一次骰子，硬币被放入箱子 A, B, C 的概率分别为 $\frac{1}{6}, \frac{2}{6}, \frac{3}{6}$。
         投掷 5 次骰子后，箱子 A, B, C 分别放入 2 枚, 2 枚, 1 枚硬币的概率由多项分布给出：
         \[
-        \frac{5!}{2!2!1!} \left(\frac{1}{6}\right)^2 \left(\frac{2}{6}\right)^2 \cdot \frac{3}{6} = \frac{2 \cdot 3 \cdot 5 \cdot 2^2 \cdot 3}{6^5} = \frac{5}{108} \dots \text{①}
+        \frac{5!}{2!2!1!} \left(\frac{1}{6}\right)^2 \left(\frac{2}{6}\right)^2 \cdot \frac{3}{6} = \frac{2 \cdot 3 \cdot 5 \cdot 2^2 \cdot 3}{6^5} = \frac{5}{108} \dots (1)
         \]
     \end{solution}
 
@@ -1722,7 +1722,7 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         \[
         P(B=2 | A=2) = \frac{P(A=2 \cap B=2)}{P(A=2)}
         \]
-        利用 ① 式中的结果：
+        利用 (1) 式中的结果：
         \[
         \frac{5}{108} \div \frac{2 \cdot 5^4}{6^5} = \frac{5}{3 \cdot 6^2} \cdot \frac{6^5}{2 \cdot 5^4} = \frac{6^2}{5^3} = \frac{36}{125}
         \]
@@ -1804,14 +1804,14 @@ $R$ 最初位于 $A$ 点，总共移动 $2N+3$ 次（$N$ 为自然数）。记�
         由 (1)(2) 知，$p(n+1, 2) = \frac{7}{10} p(n, 2) + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n$。
         又，$p(2, 2) = \frac{5}{10} \times \frac{4}{10} = \frac{1}{5}$。设 $p_n = p(n, 2)$，则有：
         \[
-        p_{n+1} = \frac{7}{10} p_n + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots ①
+        p_{n+1} = \frac{7}{10} p_n + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots (1)
         \]
-        这里，设满足 ① 的一个数列为 $p_n = \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n$ ($\alpha, \beta$ 为常数)：
+        这里，设满足 (1) 的一个数列为 $p_n = \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n$ ($\alpha, \beta$ 为常数)：
         \[
-        \alpha \left( \frac{3}{5} \right)^{n+1} + \beta \left( \frac{1}{2} \right)^{n+1} = \frac{7}{10} \{ \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n \} + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots ②
+        \alpha \left( \frac{3}{5} \right)^{n+1} + \beta \left( \frac{1}{2} \right)^{n+1} = \frac{7}{10} \{ \alpha \left( \frac{3}{5} \right)^n + \beta \left( \frac{1}{2} \right)^n \} + 2 \left( \frac{3}{5} \right)^n - 2 \left( \frac{1}{2} \right)^n \dots (2)
         \]
-        由 ② 得，$\frac{3}{5} \alpha = \frac{7}{10} \alpha + 2, \ \frac{1}{2} \beta = \frac{7}{10} \beta - 2$，解得 $(\alpha, \beta) = (-20, 10)$。
-        由 ① - ② 得：
+        由 (2) 得，$\frac{3}{5} \alpha = \frac{7}{10} \alpha + 2, \ \frac{1}{2} \beta = \frac{7}{10} \beta - 2$，解得 $(\alpha, \beta) = (-20, 10)$。
+        由 (1) - (2) 得：
         \[
         p_{n+1} - \alpha \left( \frac{3}{5} \right)^{n+1} - \beta \left( \frac{1}{2} \right)^{n+1} = \frac{7}{10} \{ p_n - \alpha \left( \frac{3}{5} \right)^n - \beta \left( \frac{1}{2} \right)^n \} \dots \text{成立。}
         \]
@@ -2027,35 +2027,35 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         掷两个骰子所得的点数与其积 $n$ 的关系如右下表所示。
         点 $P$ 位于顶点 $A$，意味着 $n$ 是 $5$ 的倍数，即 $n = 5, 10, 15, 20, 25, 30$。
         由表可知，其概率为：
-        \[ \frac{2 + 2 + 2 + 2 + 1 + 2}{6^2} = \frac{11}{36} \text{} \]
+        \[ \frac{2 + 2 + 2 + 2 + 1 + 2}{6^2} = \frac{11}{36}  \]
         此外，点 $P$ 位于顶点 $B$，意味着 $n$ 除以 $5$ 的余数为 $1$，即 $n = 1, 6, 11, 16, 21, 26, 31, 36$。
         其概率为：
-        \[ \frac{1 + 4 + 1 + 1}{6^2} = \frac{7}{36} \text{} \]
+        \[ \frac{1 + 4 + 1 + 1}{6^2} = \frac{7}{36}  \]
     \end{solution}
 
     \part 掷 $k$ 次骰子，所得点数之积为 $n$。求点 $P$ 位于顶点 $A$ 的概率。设此概率为 $a_k$。
     \begin{solution}
         (2) 掷 $k$ 次骰子所得点数之积为 $n$。点 $P$ 位于顶点 $A, B, C, D, E$ 的概率分别记为 $a_k, b_k, c_k, d_k, e_k$。
         由于点 $P$ 位于顶点 $A$ 的条件是 $k$ 次中至少有一次掷出 $5$，因此该概率 $a_k$ 为：
-        \[ a_k = 1 - \left( \frac{5}{6} \right)^k \text{} \]
+        \[ a_k = 1 - \left( \frac{5}{6} \right)^k  \]
     \end{solution}
 
     \part 与 (2) 类似，设点 $P$ 位于顶点 $B$ 的概率为 $b_k$。用 $b_k$ 表示 $b_{k+1}$。
     \begin{solution}
         (3) 与 (2) 类似，对于点 $P$ 位于顶点 $B$ 的概率 $b_k$，有：
         \[ b_{k+1} = \frac{2}{6}b_k + \frac{1}{6}c_k + \frac{1}{6}d_k + \frac{1}{6}e_k = \frac{1}{6}b_k + \frac{1}{6}(1 - a_k - b_k) \text{ （此处逻辑根据原文图示）} \]
-        \[ = \frac{1}{6}b_k + \frac{1}{6} \left\{ 1 - \left[ 1 - \left( \frac{5}{6} \right)^k \right] \right\} = \frac{1}{6}b_k + \frac{1}{6} \left( \frac{5}{6} \right)^k \quad \cdots \textcircled{1} \text{} \]
+        \[ = \frac{1}{6}b_k + \frac{1}{6} \left\{ 1 - \left[ 1 - \left( \frac{5}{6} \right)^k \right] \right\} = \frac{1}{6}b_k + \frac{1}{6} \left( \frac{5}{6} \right)^k \quad \cdots (1)  \]
     \end{solution}
 
     \part 对于 (3) 中给出的 $b_k$，令 $f_k = 6^k b_k$。求数列 $\{f_k\}$ 和 $\{b_k\}$ 的通项公式。
     \begin{solution}
-        (4) 令 $f_k = 6^k b_k$，则 $b_k = \frac{f_k}{6^k}$。代入 $\textcircled{1}$ 得：
-        \[ \frac{f_{k+1}}{6^{k+1}} = \frac{1}{6} \cdot \frac{f_k}{6^k} + \frac{1}{6} \left( \frac{5}{6} \right)^k, \quad f_{k+1} = f_k + 5^k \text{} \]
+        (4) 令 $f_k = 6^k b_k$，则 $b_k = \frac{f_k}{6^k}$。代入 $(1)$ 得：
+        \[ \frac{f_{k+1}}{6^{k+1}} = \frac{1}{6} \cdot \frac{f_k}{6^k} + \frac{1}{6} \left( \frac{5}{6} \right)^k, \quad f_{k+1} = f_k + 5^k  \]
         此处，$b_1 = \frac{2}{6} = \frac{1}{3}$，故 $f_1 = 6^1 \cdot \frac{1}{3} = 2$。对于 $k \ge 2$：
-        \[ f_k = f_1 + \sum_{j=1}^{k-1} 5^j = 2 + \frac{5(5^{k-1} - 1)}{5 - 1} = \frac{5^k + 3}{4} \quad \cdots \textcircled{2} \text{} \]
-        注：将 $k=1$ 代入 $\textcircled{2}$ 得 $f_1 = \frac{5^1 + 3}{4} = 2$，故对于 $k=1$ 也成立。
+        \[ f_k = f_1 + \sum_{j=1}^{k-1} 5^j = 2 + \frac{5(5^{k-1} - 1)}{5 - 1} = \frac{5^k + 3}{4} \quad \cdots (2)  \]
+        注：将 $k=1$ 代入 $(2)$ 得 $f_1 = \frac{5^1 + 3}{4} = 2$，故对于 $k=1$ 也成立。
         由此得：
-        \[ b_k = \frac{f_k}{6^k} = \frac{1}{4} \left( \frac{5}{6} \right)^k + \frac{3}{4} \left( \frac{1}{6} \right)^k \text{} \]
+        \[ b_k = \frac{f_k}{6^k} = \frac{1}{4} \left( \frac{5}{6} \right)^k + \frac{3}{4} \left( \frac{1}{6} \right)^k  \]
     \end{solution}
 \end{parts}
 
@@ -2072,31 +2072,31 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     进行操作 $(*)$ 时，设当 $n \ge 3$ 时，箱子 $k$ ($2 \le k \le n-1$) 中有 $3$ 个球。
     令 $p_k$ 为箱子中有 $1$ 个红球、$2$ 个白球的概率，$q_k$ 为有 $2$ 个红球、$1$ 个白球的概率。
     根据状态转移关系（如右图所示）：
-    \[ p_{k+1} = \frac{2}{3}p_k + \frac{1}{3}q_k, \quad q_{k+1} = \frac{1}{3}p_k + \frac{2}{3}q_k \text{} \]
+    \[ p_{k+1} = \frac{2}{3}p_k + \frac{1}{3}q_k, \quad q_{k+1} = \frac{1}{3}p_k + \frac{2}{3}q_k  \]
     由此可得：
     \begin{align*}
-        p_{k+1} + q_{k+1} &= p_k + q_k \Rightarrow p_k + q_k = p_2 + q_2 \quad \cdots \textcircled{1} \text{} \\
-        p_{k+1} - q_{k+1} &= \frac{1}{3}(p_k - q_k) \Rightarrow p_k - q_k = (p_2 - q_2) \left( \frac{1}{3} \right)^{k-2} \quad \cdots \textcircled{2} \text{}
+        p_{k+1} + q_{k+1} &= p_k + q_k \Rightarrow p_k + q_k = p_2 + q_2 \quad \cdots (1)  \\
+        p_{k+1} - q_{k+1} &= \frac{1}{3}(p_k - q_k) \Rightarrow p_k - q_k = (p_2 - q_2) \left( \frac{1}{3} \right)^{k-2} \quad \cdots (2) 
     \end{align*}
     
     现在，根据从箱子 $1$ 取出放入箱子 $2$ 的球的颜色进行分类讨论：
     
     (i) **若从箱子 1 取出红球放入箱子 2：**
-    此时概率为 $\frac{1}{2}$。在这种情况下，$p_2 = 0, q_2 = 1$。由 $\textcircled{1} \textcircled{2}$ 得：
-    \[ p_n + q_n = 1, \quad p_n - q_n = - \left( \frac{1}{3} \right)^{n-2} \text{} \]
+    此时概率为 $\frac{1}{2}$。在这种情况下，$p_2 = 0, q_2 = 1$。由 $(1) (2)$ 得：
+    \[ p_n + q_n = 1, \quad p_n - q_n = - \left( \frac{1}{3} \right)^{n-2}  \]
     解得 $p_n = \frac{1}{4} \left\{ 1 - \left( \frac{1}{3} \right)^{n-2} \right\}, q_n = \frac{1}{4} \left\{ 1 + \left( \frac{1}{3} \right)^{n-2} \right\}$。
     若最后从箱子 $n$ 取出红球（概率为 $\frac{1}{3}p_n + \frac{2}{3}q_n$）放入箱子 $1$，则箱子 $1$（原剩 1 白球）将恢复 1 红 1 白状态。该情况概率为：
     \[ \frac{1}{2} \left( \frac{1}{3}p_n + \frac{2}{3}q_n \right) = \frac{1}{2} \left\{ \frac{1}{4} - \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \right\} \text{ （此处需按原图计算逻辑）} \]
-    \[ = \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \text{} \]
+    \[ = \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2}  \]
 
     (ii) **若从箱子 1 取出白球放入箱子 2：**
     概率为 $\frac{1}{2}$。此时 $p_2 = 1, q_2 = 0$。同理得 $p_n + q_n = 1, p_n - q_n = \left( \frac{1}{3} \right)^{n-2}$。
     最后从箱子 $n$ 取出白球（概率为 $\frac{2}{3}p_n + \frac{1}{3}q_n$）放入箱子 $1$（原剩 1 红球），其概率为：
-    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} \text{} \]
+    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2}  \]
 
     综合 (i)(ii)，编号为 $1$ 的箱子恢复 1 红 1 白的概率为：
-    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{6} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{2} \left( \frac{1}{3} \right)^{n-1} \quad \cdots \textcircled{3} \text{} \]
-    经检验，$\textcircled{3}$ 在 $n=2$ 时也成立。
+    \[ \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} + \frac{1}{4} + \frac{1}{12} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{6} \left( \frac{1}{3} \right)^{n-2} = \frac{1}{2} + \frac{1}{2} \left( \frac{1}{3} \right)^{n-1} \quad \cdots (3)  \]
+    经检验，$(3)$ 在 $n=2$ 时也成立。
 \end{solution}
 
 \question
@@ -2107,9 +2107,9 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \begin{solution}
         设 $l = 2a-1, m = 2b-1, n = 2c-1$，其中 $a, b, c$ 为自然数。
         代入方程得：
-        \[ (2a-1) + (2b-1) + (2c-1) = 99 \Rightarrow a+b+c = 51 \quad \cdots \textcircled{1} \text{} \]
-        由隔板法可知，方程 $\textcircled{1}$ 的自然数解个数为：
-        \[ N = {}_{51-1}C_{3-1} = {}_{50}C_2 = \frac{50 \times 49}{2} = 1225 \text{} \]
+        \[ (2a-1) + (2b-1) + (2c-1) = 99 \Rightarrow a+b+c = 51 \quad \cdots (1)  \]
+        由隔板法可知，方程 $(1)$ 的自然数解个数为：
+        \[ N = {}_{51-1}C_{3-1} = {}_{50}C_2 = \frac{50 \times 49}{2} = 1225  \]
     \end{solution}
 
     \part 当 $K = 99$ 时，包含至少两个相同奇数的数组 $(l, m, n)$ 的个数是多少？
@@ -2142,7 +2142,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \begin{solution}
         首先，从 $n$ 枚卡片中取出 $3$ 枚的总组合数为 ${}_nC_3$。
         满足条件的约束为 $Y - X \ge 2$ 且 $Z - Y \ge 2$，即：
-        \[ 1 \le X, \quad X+2 \le Y, \quad Y+2 \le Z \le n \text{} \]
+        \[ 1 \le X, \quad X+2 \le Y, \quad Y+2 \le Z \le n  \]
         由上述不等式链可导出 $Y$ 的取值范围为 $3 \le Y \le n-2$。
         
         当固定 $Y=k$ ($k=3, 4, \cdots, n-2$) 时：
@@ -2153,17 +2153,17 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         因此，当 $Y=k$ 时的组合数 $p_k$ 的概率分子项为 $(k-2)(n-k-1)$。
         
         设所求概率为 $P$，则：
-        \[ P = \frac{\sum_{k=3}^{n-2} (k-2)(n-k-1)}{{}_nC_3} = \frac{6}{n(n-1)(n-2)} \sum_{k=3}^{n-2} (k-2)(n-k-1) \text{} \]
+        \[ P = \frac{\sum_{k=3}^{n-2} (k-2)(n-k-1)}{{}_nC_3} = \frac{6}{n(n-1)(n-2)} \sum_{k=3}^{n-2} (k-2)(n-k-1)  \]
         令 $k-2 = l$，则当 $k=3$ 时 $l=1$，当 $k=n-2$ 时 $l=n-4$。
         原求和式变为：
         \begin{align*}
             \sum_{l=1}^{n-4} l(n-(l+2)-1) &= \sum_{l=1}^{n-4} l(n-l-3) = \sum_{l=1}^{n-4} \{ (n-3)l - l^2 \} \\
             &= (n-3) \cdot \frac{1}{2}(n-4)(n-3) - \frac{1}{6}(n-4)(n-3)(2n-7) \\
             &= \frac{(n-3)(n-4)}{6} \{ 3(n-3) - (2n-7) \} \\
-            &= \frac{(n-3)(n-4)(n-2)}{6} \text{}
+            &= \frac{(n-3)(n-4)(n-2)}{6} 
         \end{align*}
         代入 $P$ 的表达式：
-        \[ P = \frac{6}{n(n-1)(n-2)} \cdot \frac{(n-3)(n-4)(n-2)}{6} = \frac{(n-3)(n-4)}{n(n-1)} \text{} \]
+        \[ P = \frac{6}{n(n-1)(n-2)} \cdot \frac{(n-3)(n-4)(n-2)}{6} = \frac{(n-3)(n-4)}{n(n-1)}  \]
         故所求概率为 $\frac{(n-3)(n-4)}{n(n-1)}$。
     \end{solution}
 \end{parts}
@@ -2178,7 +2178,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         设 $M$ 能被 $2$ 整除的事件为 $A$，能被 $3$ 整除的事件为 $B$。
         $M$ 不能被 $2$ 且不能被 $3$ 整除，意味着每枚骰子的点数只能是 $\{1, 5\}$。
         因此概率为：
-        \[ P(\bar{A} \cap \bar{B}) = \left( \frac{2}{6} \right)^n = \left( \frac{1}{3} \right)^n \quad \cdots \textcircled{1} \text{} \]
+        \[ P(\bar{A} \cap \bar{B}) = \left( \frac{2}{6} \right)^n = \left( \frac{1}{3} \right)^n \quad \cdots (1)  \]
     \end{solution}
 
     \part 求 $M$ 能被 $2$ 整除，但既不能被 $3$ 整除也不能被 $4$ 整除的概率。
@@ -2187,17 +2187,17 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         $M$ 能被 $2$ 整除但不能被 $4$ 整除，意味着 $n$ 枚骰子中恰好有一个点数为 $2$ 或 $6$，其余为奇数。
         由于题目要求也不能被 $3$ 整除，故该唯一偶数点必须是 $2$，其余 $n-1$ 个点数必须在 $\{1, 5\}$ 中。
         因此概率为：
-        \[ P(A \cap \bar{B} \cap \bar{C}) = {}_nC_1 \cdot \frac{1}{6} \cdot \left( \frac{2}{6} \right)^{n-1} = \frac{n}{6} \left( \frac{1}{3} \right)^{n-1} = \frac{n}{2} \left( \frac{1}{3} \right)^n \quad \cdots \textcircled{2} \text{} \]
+        \[ P(A \cap \bar{B} \cap \bar{C}) = {}_nC_1 \cdot \frac{1}{6} \cdot \left( \frac{2}{6} \right)^{n-1} = \frac{n}{6} \left( \frac{1}{3} \right)^{n-1} = \frac{n}{2} \left( \frac{1}{3} \right)^n \quad \cdots (2)  \]
     \end{solution}
 
     \part 求 $M$ 能被 $4$ 整除但不能被 $3$ 整除的概率。
     \begin{solution}
         所求概率为 $P(\bar{B} \cap C)$。根据集合包含关系：
-        \[ P(\bar{B} \cap C) = P(A \cap \bar{B}) - P(A \cap \bar{B} \cap \bar{C}) \text{} \]
+        \[ P(\bar{B} \cap C) = P(A \cap \bar{B}) - P(A \cap \bar{B} \cap \bar{C})  \]
         其中 $P(A \cap \bar{B}) = P(\bar{B}) - P(\bar{A} \cap \bar{B})$。
         已知 $P(\bar{B}) = \left( \frac{4}{6} \right)^n = \left( \frac{2}{3} \right)^n$。
-        代入 $\textcircled{1}$ 和 $\textcircled{2}$：
-        \[ P(\bar{B} \cap C) = \left\{ \left( \frac{2}{3} \right)^n - \left( \frac{1}{3} \right)^n \right\} - \frac{n}{2} \left( \frac{1}{3} \right)^n = \left( \frac{2}{3} \right)^n - \left( 1 + \frac{n}{2} \right) \left( \frac{1}{3} \right)^n \text{} \]
+        代入 $(1)$ 和 $(2)$：
+        \[ P(\bar{B} \cap C) = \left\{ \left( \frac{2}{3} \right)^n - \left( \frac{1}{3} \right)^n \right\} - \frac{n}{2} \left( \frac{1}{3} \right)^n = \left( \frac{2}{3} \right)^n - \left( 1 + \frac{n}{2} \right) \left( \frac{1}{3} \right)^n  \]
     \end{solution}
 \end{parts}
 
@@ -2226,7 +2226,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \end{itemize}
         $L_n$ 为素数的概率为上述三者之和：$3 \{ (\frac{1}{3})^n - (\frac{1}{6})^n \}$。
         故 $L_n$ 不为素数的概率为：
-        \[ 1 - 3 \left\{ \left( \frac{1}{3} \right)^n - \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{3} \right)^{n-1} + \frac{1}{2} \left( \frac{1}{6} \right)^{n-1} \text{} \]
+        \[ 1 - 3 \left\{ \left( \frac{1}{3} \right)^n - \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{3} \right)^{n-1} + \frac{1}{2} \left( \frac{1}{6} \right)^{n-1}  \]
     \end{solution}
 
     \part 求 $G_n$ 不为素数的概率。
@@ -2242,7 +2242,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \end{itemize}
         $G_n$ 为素数的总概率为：$(\frac{1}{2})^n - 2(\frac{1}{6})^n + (\frac{1}{3})^n - (\frac{1}{6})^n + (\frac{1}{6})^n = (\frac{1}{2})^n + (\frac{1}{3})^n - 2(\frac{1}{6})^n$。
         故 $G_n$ 不为素数的概率为：
-        \[ 1 - \left\{ \left( \frac{1}{2} \right)^n + \left( \frac{1}{3} \right)^n - 2 \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{2} \right)^n - \left( \frac{1}{3} \right)^n + 2 \left( \frac{1}{6} \right)^n \text{} \]
+        \[ 1 - \left\{ \left( \frac{1}{2} \right)^n + \left( \frac{1}{3} \right)^n - 2 \left( \frac{1}{6} \right)^n \right\} = 1 - \left( \frac{1}{2} \right)^n - \left( \frac{1}{3} \right)^n + 2 \left( \frac{1}{6} \right)^n  \]
     \end{solution}
 \end{parts}
 
@@ -2253,7 +2253,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \part 求 $p_3$。
     \begin{solution}
         投掷 $1$ 个骰子 $3$ 次，所得点数的积 $M = 60 = 2^2 \times 3 \times 5$ 的情况有点数集合 $\{2, 5, 6\}$ 或 $\{3, 4, 5\}$。其概率 $p_3$ 为：
-        \[ p_3 = 3! \times \left( \frac{1}{6} \right)^3 + 3! \times \left( \frac{1}{6} \right)^3 = \frac{1}{18} \text{} \]
+        \[ p_3 = 3! \times \left( \frac{1}{6} \right)^3 + 3! \times \left( \frac{1}{6} \right)^3 = \frac{1}{18}  \]
     \end{solution}
 
     \part 当 $n \ge 4$ 时，求 $p_n$。
@@ -2265,9 +2265,9 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
             \item (iii) $\{2, 2, 3, 5, 1, \dots, 1\}$ (1 为 $n-4$ 次)
         \end{itemize}
         由 (i) $\sim$ (iii) 可得，该概率 $p_n$ 为：
-        \[ p_n = \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{2!(n-4)!} \left( \frac{1}{6} \right)^n \text{} \]
-        \[ = \{2n(n-1)(n-2) + \frac{1}{2}n(n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n \text{} \]
-        \[ = \frac{1}{2}n(n-1)(n-2)(4+n-3) \left( \frac{1}{6} \right)^n = \frac{1}{2}(n+1)n(n-1)(n-2) \left( \frac{1}{6} \right)^n \text{} \]
+        \[ p_n = \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{(n-3)!} \left( \frac{1}{6} \right)^n + \frac{n!}{2!(n-4)!} \left( \frac{1}{6} \right)^n  \]
+        \[ = \{2n(n-1)(n-2) + \frac{1}{2}n(n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n  \]
+        \[ = \frac{1}{2}n(n-1)(n-2)(4+n-3) \left( \frac{1}{6} \right)^n = \frac{1}{2}(n+1)n(n-1)(n-2) \left( \frac{1}{6} \right)^n  \]
     \end{solution}
 
     \part 当 $n \ge 4$ 时，求所得点数的积在第 $n$ 次投掷时首次为 $60$ 的概率。
@@ -2275,17 +2275,17 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         当 $n \ge 4$ 时，所得点数的积在第 $n$ 次首次变为 $60$ 的概率 $q_n$ 为：
         \begin{enumerate}
             \item \textbf{$n$ 回目为 2 时}：由 (2) 的 (i) 和 (iii) 的情况可知，概率为：
-            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = \{(n-1)(n-2) + (n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n \text{} \]
-            \[ = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n \text{} \]
+            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = \{(n-1)(n-2) + (n-1)(n-2)(n-3)\} \left( \frac{1}{6} \right)^n  \]
+            \[ = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n  \]
             \item \textbf{$n$ 回目为 3 时}：由 (2) 的 (ii) 和 (iii) 的情况可知：
-            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{2!(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n \text{} \]
+            \[ \frac{(n-1)!}{(n-3)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} + \frac{(n-1)!}{2!(n-4)!} \left( \frac{1}{6} \right)^{n-1} \cdot \frac{1}{6} = (n-1)(n-2)^2 \left( \frac{1}{6} \right)^n  \]
             \item \textbf{$n$ 回目为 4 时}：由 (2) 的 (ii) 可知：$(n-1)(n-2) \left( \frac{1}{6} \right)^n$。
             \item \textbf{$n$ 回目为 5 时}：同理，概率为 $\frac{1}{2}(n-1)(n-2)(n+1) \left( \frac{1}{6} \right)^n$。
             \item \textbf{$n$ 回目为 6 时}：同理，概率为 $(n-1)(n-2) \left( \frac{1}{6} \right)^n$。
         \end{enumerate}
         由 (a) $\sim$ (e) 可知，乘积在第 $n$ 回首次达到 $60$ 的概率为：
-        \[ q_n = \frac{1}{2}(n-1)(n-2) \{ 2(n-2) + (n-1) + 2 + (n+1) + 2 \} \left( \frac{1}{6} \right)^n \text{} \]
-        \[ = \frac{1}{2}(n-1)(n-2) \cdot 4n \left( \frac{1}{6} \right)^n = 2n(n-1)(n-2) \left( \frac{1}{6} \right)^n \text{} \]
+        \[ q_n = \frac{1}{2}(n-1)(n-2) \{ 2(n-2) + (n-1) + 2 + (n+1) + 2 \} \left( \frac{1}{6} \right)^n  \]
+        \[ = \frac{1}{2}(n-1)(n-2) \cdot 4n \left( \frac{1}{6} \right)^n = 2n(n-1)(n-2) \left( \frac{1}{6} \right)^n  \]
     \end{solution}
 \end{parts}
 
@@ -2301,7 +2301,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
             \item \textbf{2 张均为奇数}：从 $n$ 张奇数卡片中选 $2$ 张，概率为 $\frac{{}_n\mathrm{C}_2}{{}_{2n}\mathrm{C}_2} = \frac{n-1}{2(2n-1)}$。
         \end{enumerate}
         由此，所求概率为：
-        \[ \frac{n-1}{2(2n-1)} + \frac{n-1}{2(2n-1)} = \frac{n-1}{2n-1} \text{} \]
+        \[ \frac{n-1}{2(2n-1)} + \frac{n-1}{2(2n-1)} = \frac{n-1}{2n-1}  \]
     \end{solution}
 
     \part 从袋中同时取出 $3$ 张卡片时，这 $3$ 张卡片上数字之和为偶数的概率。
@@ -2312,7 +2312,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
             \item \textbf{1 张偶数，2 张奇数}：概率为 $\frac{{}_n\mathrm{C}_1 \times {}_n\mathrm{C}_2}{{}_{2n}\mathrm{C}_3} = \frac{n \cdot \frac{n(n-1)}{2}}{\frac{2n(2n-1)(2n-2)}{6}} = \frac{3n}{4(2n-1)}$。
         \end{enumerate}
         由此，所求概率为：
-        \[ \frac{n-2}{4(2n-1)} + \frac{3n}{4(2n-1)} = \frac{4n-2}{4(2n-1)} = \frac{2(2n-1)}{4(2n-1)} = \frac{1}{2} \text{} \]
+        \[ \frac{n-2}{4(2n-1)} + \frac{3n}{4(2n-1)} = \frac{4n-2}{4(2n-1)} = \frac{2(2n-1)}{4(2n-1)} = \frac{1}{2}  \]
         注：当 $n=2$ 时，结果为 $\frac{2-2}{4(3)} + \frac{6}{12} = \frac{1}{2}$，公式依然成立。
     \end{solution}
 
@@ -2328,7 +2328,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \end{itemize}
         总数 $N = \sum_{k=1}^{n} k + \sum_{k=n+1}^{2n-1} (2n-k) = \frac{1}{2}n(n+1) + \frac{1}{2}n(n-1) = n^2$。
         故所求概率为：
-        \[ \frac{N}{{}_{2n}\mathrm{C}_2} = \frac{n^2}{\frac{2n(2n-1)}{2}} = \frac{n}{2n-1} \text{} \]
+        \[ \frac{N}{{}_{2n}\mathrm{C}_2} = \frac{n^2}{\frac{2n(2n-1)}{2}} = \frac{n}{2n-1}  \]
     \end{solution}
 \end{parts}
 
@@ -2342,20 +2342,20 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         若 A 抽到的 2 张数字相同，则只能是 (1, 1), (2, 2) 或 (3, 3)。
         对于每种数字，从 3 张中选 2 张的情况有 ${}_3\mathrm{C}_2$ 种。
         因此，所求概率为：
-        \[ \frac{3 \times {}_3\mathrm{C}_2}{{}_9\mathrm{C}_2} = \frac{3 \times 3}{36} = \frac{1}{4} \text{} \]
+        \[ \frac{3 \times {}_3\mathrm{C}_2}{{}_9\mathrm{C}_2} = \frac{3 \times 3}{36} = \frac{1}{4}  \]
     \end{solution}
 
     \part 求 A 的两张卡片数字不同，B 的两张卡片数字也不同，且 C 的三张卡片数字均互不相同的概率。
     \begin{solution}
         为了计算方便，我们改变抽取顺序：先让 C 抽取 3 张，再让 A 抽取，最后 B 抽取。
         首先，C 抽到的 3 张数字互不相同（即 1, 2, 3 各一张）的概率为：
-        \[ P(C) = \frac{{}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1}{{}_9\mathrm{C}_3} = \frac{3 \times 3 \times 3}{84} = \frac{9}{28} \text{} \]
+        \[ P(C) = \frac{{}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1 \times {}_3\mathrm{C}_1}{{}_9\mathrm{C}_3} = \frac{3 \times 3 \times 3}{84} = \frac{9}{28}  \]
         此时箱中还剩 1, 2, 3 各 2 张。接着 A 从剩下的 6 张中抽取 2 张数字不同的概率为：
-        \[ P(A|C) = 1 - \frac{3 \times {}_2\mathrm{C}_2}{{}_6\mathrm{C}_2} = 1 - \frac{3}{15} = \frac{4}{5} \text{} \]
+        \[ P(A|C) = 1 - \frac{3 \times {}_2\mathrm{C}_2}{{}_6\mathrm{C}_2} = 1 - \frac{3}{15} = \frac{4}{5}  \]
         最后，假设 A 抽走了例如 1 和 2，箱中还剩 1 张数字 1，1 张数字 2，2 张数字 3。B 从这 4 张中抽取 2 张数字不同的概率为：
-        \[ P(B|A \cap C) = 1 - \frac{{}_2\mathrm{C}_2}{{}_4\mathrm{C}_2} = 1 - \frac{1}{6} = \frac{5}{6} \text{} \]
+        \[ P(B|A \cap C) = 1 - \frac{{}_2\mathrm{C}_2}{{}_4\mathrm{C}_2} = 1 - \frac{1}{6} = \frac{5}{6}  \]
         因此，所求概率为：
-        \[ \frac{9}{28} \times \frac{4}{5} \times \frac{5}{6} = \frac{3}{14} \text{} \]
+        \[ \frac{9}{28} \times \frac{4}{5} \times \frac{5}{6} = \frac{3}{14}  \]
     \end{solution}
 
     \part 求 A 的两张卡片数字中至少有一个与 C 的三张卡片数字中的某一个相同的概率。
@@ -2372,7 +2372,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \end{enumerate}
         数字完全不同的总概率为 $\frac{20}{140} + \frac{3}{140} = \frac{23}{140}$。
         故所求概率为：
-        \[ 1 - \frac{23}{140} = \frac{117}{140} \text{} \]
+        \[ 1 - \frac{23}{140} = \frac{117}{140}  \]
     \end{solution}
 \end{parts}
 
@@ -2395,7 +2395,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \part 求 $a$ 的值。
     \begin{solution}
         由于 $x$ 的平均值 $\bar{x} = 7$，则：
-        \[ \frac{7+6+8+a+4}{5} = 7 \quad \Rightarrow \quad 25+a = 35 \quad \Rightarrow \quad a = 10 \text{} \]
+        \[ \frac{7+6+8+a+4}{5} = 7 \quad \Rightarrow \quad 25+a = 35 \quad \Rightarrow \quad a = 10  \]
     \end{solution}
 
     \part 设 $p, q$ 为实数且 $p \neq 0$。通过变换 $z = py + q$ 将 $y$ 转换为新变量 $z$。设 $z$ 的方差为 $s_z^2$，$x$ 与 $z$ 的协方差为 $s_{xz}$。请用 $p, q, m$ 中的必要项表示 $s_z^2$ 和 $s_{xz}$。
@@ -2414,7 +2414,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \begin{solution}
         首先计算 $x$ 的方差 $s_x^2 = \frac{49+36+64+100+16}{5} - 49 = 4$。
         由相关系数公式 $r_{xz} = \frac{s_{xz}}{s_x s_z} = \frac{3}{4}$ 得：
-        \[ \frac{-3pm}{2 \cdot |p| \sqrt{s_y^2}} = \frac{3}{4} \quad \Rightarrow \quad -2pm = |p| \sqrt{2(2m^2+3m+3)} \text{} \]
+        \[ \frac{-3pm}{2 \cdot |p| \sqrt{s_y^2}} = \frac{3}{4} \quad \Rightarrow \quad -2pm = |p| \sqrt{2(2m^2+3m+3)}  \]
         由于等式右边 $|p|\sqrt{\dots} \ge 0$，必须满足 $-2pm \ge 0$。
         两边平方得：$4p^2 m^2 = p^2(4m^2+6m+6) \Rightarrow 3m+3=0 \Rightarrow m=-1$。
         代入 $b = 5(-1)+3 = -2$。
@@ -2478,12 +2478,12 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     以 $A_n$ 为其中一个顶点且不包含 $O$ 的三角形个数 $N$ 为：
     \[ N = {}_1\mathrm{C}_1 + {}_2\mathrm{C}_1 + \dots + {}_{\frac{n-3}{2}}\mathrm{C}_1 = \frac{1}{2} \cdot \frac{n-3}{2} \cdot \frac{n-1}{2} = \frac{1}{8}(n-3)(n-1) \text{ （种）} \]
     考虑到对称性，将这些三角形绕圆心旋转，总的不包含圆心的三角形个数为：
-    \[ nN = \frac{n}{8}(n-3)(n-1) \text{} \]
+    \[ nN = \frac{n}{8}(n-3)(n-1)  \]
     因此，不包含圆心的概率 $q_n$ 为：
-    \[ q_n = \frac{nN}{{}_n\mathrm{C}_3} = \frac{\frac{n}{8}(n-3)(n-1)}{\frac{1}{6}n(n-1)(n-2)} = \frac{6(n-3)}{8(n-2)} = \frac{3(n-3)}{4(n-2)} \text{} \]
+    \[ q_n = \frac{nN}{{}_n\mathrm{C}_3} = \frac{\frac{n}{8}(n-3)(n-1)}{\frac{1}{6}n(n-1)(n-2)} = \frac{6(n-3)}{8(n-2)} = \frac{3(n-3)}{4(n-2)}  \]
     注：当 $n=3$ 时，$q_n=0$，公式依然成立。
     由于 $n$ 是奇数，圆心不可能落在三角形的边上，故 $p_n + q_n = 1$。
-    \[ p_n = 1 - q_n = 1 - \frac{3(n-3)}{4(n-2)} = \frac{4n-8-3n+9}{4(n-2)} = \frac{n+1}{4(n-2)} \text{} \]
+    \[ p_n = 1 - q_n = 1 - \frac{3(n-3)}{4(n-2)} = \frac{4n-8-3n+9}{4(n-2)} = \frac{n+1}{4(n-2)}  \]
     答：$p_n = \frac{n+1}{4(n-2)}$。
 \end{solution}
 
@@ -2504,11 +2504,11 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \textbf{1. 状态转移关系}：
     根据 $X_{n+1}$ 的结果（正反概率各 $1/2$），转移方程如下：
     \[ \begin{cases} 
-    a_{n+1} = \frac{1}{2}b_n + \frac{1}{2}c_n & \dots \text{\textcircled{1}} \\
-    b_{n+1} = \frac{1}{2}a_n + \frac{1}{2}b_n & \dots \text{\textcircled{2}} \\
-    c_{n+1} = \frac{1}{2}a_n + \frac{1}{2}d_n & \dots \text{\textcircled{3}} \\
-    d_{n+1} = \frac{1}{2}c_n + \frac{1}{2}d_n & \dots \text{\textcircled{4}}
-    \end{cases} \text{} \]
+    a_{n+1} = \frac{1}{2}b_n + \frac{1}{2}c_n & \dots (1) \\
+    b_{n+1} = \frac{1}{2}a_n + \frac{1}{2}b_n & \dots (2) \\
+    c_{n+1} = \frac{1}{2}a_n + \frac{1}{2}d_n & \dots (3) \\
+    d_{n+1} = \frac{1}{2}c_n + \frac{1}{2}d_n & \dots (4)
+    \end{cases}  \]
     
     
     \textbf{2. 初始条件}：当 $n=2$ 时，$Y_2 = X_1 X_2$。
@@ -2516,10 +2516,10 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     其余为 $b_2 = 0, c_2 = 1/4, d_2 = 1/2$。
 
     \textbf{3. 求解数列}：
-    令 $p_n = a_n + b_n$（即 $Y_n$ 为奇数的总概率）。由 \textcircled{1}\textcircled{2} 得：
-    \[ a_{n+1} + b_{n+1} = \frac{1}{2}a_n + b_n + \frac{1}{2}c_n \quad \Rightarrow \quad p_{n+1} = b_n + \frac{1}{2}(a_n + c_n) \text{} \]
-    由于 $a_n + c_n = P(X_n=1) = 1/2$，代入上式得 $p_{n+1} = b_n + 1/4 \dots \text{\textcircled{6}}$。
-    进一步推导二阶递推式得：$p_{n+2} - \frac{1}{2} = \frac{1}{2}(p_n - \frac{1}{2}) \dots \text{\textcircled{7}}$。
+    令 $p_n = a_n + b_n$（即 $Y_n$ 为奇数的总概率）。由 (1)(2) 得：
+    \[ a_{n+1} + b_{n+1} = \frac{1}{2}a_n + b_n + \frac{1}{2}c_n \quad \Rightarrow \quad p_{n+1} = b_n + \frac{1}{2}(a_n + c_n)  \]
+    由于 $a_n + c_n = P(X_n=1) = 1/2$，代入上式得 $p_{n+1} = b_n + 1/4 \dots (6)$。
+    进一步推导二阶递推式得：$p_{n+2} - \frac{1}{2} = \frac{1}{2}(p_n - \frac{1}{2}) \dots (7)$。
 
     \textbf{4. 最终结果}：
     分类讨论 $n$ 的奇偶性：
@@ -2528,7 +2528,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \item 当 $n=2k+1$ 时：$p_{2k+1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{k+1}$。
     \end{enumerate}
     统一形式为：
-    \[ p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\lfloor \frac{n}{2} \rfloor + 1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2} \text{ 或 } \frac{n+2}{2}} \text{} \]
+    \[ p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\lfloor \frac{n}{2} \rfloor + 1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2} \text{ 或 } \frac{n+2}{2}}  \]
     答：$n$ 为偶数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n}{2}+1}$；$n$ 为奇数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2}}$。
 \end{solution}
 \end{questions}

@@ -11516,44 +11516,44 @@ a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{
 则有 $r_{n+1} = \log_2 \sqrt{n+1}(n+2)$。
 计算差值：
 \[
-r_{n+1} - r_n = \log_2 \frac{\sqrt{n+1}(n+2)}{\sqrt{n}(n+1)} = \log_2 \frac{n+2}{\sqrt{n(n+1)}} \text{}
+r_{n+1} - r_n = \log_2 \frac{\sqrt{n+1}(n+2)}{\sqrt{n}(n+1)} = \log_2 \frac{n+2}{\sqrt{n(n+1)}} 
 \]
 由此可得：
 \[
-\frac{n+2}{\sqrt{n(n+1)}} = 2^{r_{n+1}-r_n} \cdots \cdots ① \text{}
+\frac{n+2}{\sqrt{n(n+1)}} = 2^{r_{n+1}-r_n} \cdots \cdots (1) 
 \]
 \end{solution}
 
 \part 请用关于 $n$ 的式子表示 $c_n$。
 \begin{solution}
-由 ① 及已知递推式得 $\frac{c_{n+1}}{c_n} = 2^{r_{n+1}-r_n}$，即 $c_{n+1} = 2^{r_{n+1}-r_n} c_n$。
+由 (1) 及已知递推式得 $\frac{c_{n+1}}{c_n} = 2^{r_{n+1}-r_n}$，即 $c_{n+1} = 2^{r_{n+1}-r_n} c_n$。
 设 $f(n) = 2^{r_{n+1}-r_n}$，则对于 $n \ge 2$：
 \[
-c_n = c_1 \cdot f(1)f(2)\cdots f(n-1) = c_1 \cdot 2^{r_2-r_1} \cdot 2^{r_3-r_2} \cdots 2^{r_n-r_{n-1}} = c_1 \cdot 2^{r_n-r_1} \text{}
+c_n = c_1 \cdot f(1)f(2)\cdots f(n-1) = c_1 \cdot 2^{r_2-r_1} \cdot 2^{r_3-r_2} \cdots 2^{r_n-r_{n-1}} = c_1 \cdot 2^{r_n-r_1} 
 \]
 代入 $r_n$ 的定义：
 \[
-c_n = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - \log_2 2} = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} \cdots \cdots ② \text{}
+c_n = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - \log_2 2} = c_1 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} \cdots \cdots (2) 
 \]
 根据求根公式，$\alpha_n, \beta_n = \frac{p_n \pm \sqrt{p_n^2 - 4q_n}}{2}$，
 所以 $c_n = \beta_n - \alpha_n = \sqrt{p_n^2 - 4q_n}$。
 已知 $p_1^2 - 4q_1 = 4$，故 $c_1 = \sqrt{4} = 2$。
-代入 ② 式：
+代入 (2) 式：
 \[
-c_n = 2 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} = 2^{\log_2 \sqrt{n}(n+1)} = \sqrt{n}(n+1) \cdots \cdots ③ \text{}
+c_n = 2 \cdot 2^{\log_2 \sqrt{n}(n+1) - 1} = 2^{\log_2 \sqrt{n}(n+1)} = \sqrt{n}(n+1) \cdots \cdots (3) 
 \]
 经检验，$n=1$ 时该式也成立。
 \end{solution}
 
 \part 当 $p_n = n\sqrt{n}$ 时，请用关于 $n$ 的式子表示 $q_n$。
 \begin{solution}
-由 ③ 可知 $\sqrt{p_n^2 - 4q_n} = \sqrt{n}(n+1)$，平方得 $p_n^2 - 4q_n = n(n+1)^2 \cdots \cdots ④$。
-当 $p_n = n\sqrt{n}$ 时，$p_n^2 = n^3$。代入 ④ 式：
+由 (3) 可知 $\sqrt{p_n^2 - 4q_n} = \sqrt{n}(n+1)$，平方得 $p_n^2 - 4q_n = n(n+1)^2 \cdots \cdots (4)$。
+当 $p_n = n\sqrt{n}$ 时，$p_n^2 = n^3$。代入 (4) 式：
 \[
-4q_n = n^3 - n(n+1)^2 \text{}
+4q_n = n^3 - n(n+1)^2 
 \]
 \[
-q_n = \frac{1}{4} \{n^3 - n(n+1)^2\} = \frac{1}{4} \{n^3 - (n^3 + 2n^2 + n)\} = -\frac{1}{4} n(2n+1) \text{}
+q_n = \frac{1}{4} \{n^3 - n(n+1)^2\} = \frac{1}{4} \{n^3 - (n^3 + 2n^2 + n)\} = -\frac{1}{4} n(2n+1) 
 \]
 \end{solution}
 \end{parts}
@@ -11566,29 +11566,29 @@ q_n = \frac{1}{4} \{n^3 - n(n+1)^2\} = \frac{1}{4} \{n^3 - (n^3 + 2n^2 + n)\} = 
 \begin{solution}
 由于 $\alpha, \beta$ 是 $x^2 - bx - c = 0$ 的实数解，由韦达定理（根与系数的关系）得：
 \[
-\alpha + \beta = b, \quad \alpha\beta = -c \cdots \cdots ①
+\alpha + \beta = b, \quad \alpha\beta = -c \cdots \cdots (1)
 \]
-由条件 $a_n = \alpha^{n-1} + \beta^{n-1} \cdots \cdots ②$ 可知：
+由条件 $a_n = \alpha^{n-1} + \beta^{n-1} \cdots \cdots (2)$ 可知：
 \begin{align*}
 b a_{n+1} + c a_n &= (\alpha + \beta)(\alpha^n + \beta^n) - \alpha\beta(\alpha^{n-1} + \beta^{n-1}) \\
 &= \alpha^{n+1} + \alpha\beta^n + \alpha^n\beta + \beta^{n+1} - (\alpha^n\beta + \alpha\beta^n) \\
 &= \alpha^{n+1} + \beta^{n+1}
 \end{align*}
 由于 $a_{n+2} = \alpha^{(n+2)-1} + \beta^{(n+2)-1} = \alpha^{n+1} + \beta^{n+1}$，
-故 $a_{n+2} = b a_{n+1} + c a_n \cdots \cdots ③$ 成立。
+故 $a_{n+2} = b a_{n+1} + c a_n \cdots \cdots (3)$ 成立。
 \end{solution}
 
 \part 证明：数列 $\{a_n\}$ 的所有项 $a_n$ 均为整数的充分必要条件是 $b, c$ 均为整数。
 \begin{solution}
 \textbf{必要性：} 假设对于所有 $n$， $a_n$ 均为整数。
-由 ① 和 ② 可得：
+由 (1) 和 (2) 可得：
 \[ a_1 = \alpha^0 + \beta^0 = 2, \quad a_2 = \alpha^1 + \beta^1 = b \]
 因为 $a_2$ 是整数，所以 \textbf{$b$ 必须是整数}。
-由 ③ 可得 $a_3 = b a_2 + c a_1$，$a_4 = b a_3 + c a_2$，则：
-\[ 2c = a_3 - b a_2 \cdots \cdots ④, \quad bc = a_4 - b a_3 \cdots \cdots ⑤ \]
-另外，由 ① 和 ② 可得 $a_3 = \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = b^2 + 2c$。
-由 ③ 可得 $a_5 = b a_4 + c a_3$，则 $(b^2 + 2c)c = a_5 - b a_4 \cdots \cdots ⑥$。
-由 ④, ⑤, ⑥ 可知，$2c, bc, (b^2 + 2c)c$ 均为整数。
+由 (3) 可得 $a_3 = b a_2 + c a_1$，$a_4 = b a_3 + c a_2$，则：
+\[ 2c = a_3 - b a_2 \cdots \cdots (4), \quad bc = a_4 - b a_3 \cdots \cdots (5) \]
+另外，由 (1) 和 (2) 可得 $a_3 = \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = b^2 + 2c$。
+由 (3) 可得 $a_5 = b a_4 + c a_3$，则 $(b^2 + 2c)c = a_5 - b a_4 \cdots \cdots (6)$。
+由 (4), (5), (6) 可知，$2c, bc, (b^2 + 2c)c$ 均为整数。
 设 $2c = k$（$k$ 为整数），则 $c = \frac{k}{2}$。
 若假设 $k$ 为奇数，由 $bc = \frac{bk}{2}$ 为整数可知 $b$ 必须为偶数。
 然而，此时 $(b^2 + 2c)c = \frac{(b^2 + k)k}{2}$，由于分子 $(b^2 + k)k$ 为（偶+奇）$\times$ 奇 = 奇数，故其结果不是整数，与已知矛盾。
@@ -11621,7 +11621,7 @@ a_{n+1} &= \frac{p_{n+2}^2 + p_{n+1}^2 + 1}{p_{n+2} p_{n+1}} = \frac{p_{n+2}}{p_
 \end{align*}
 由此可知 $a_n = a_1$。计算首项得：
 \[
-a_n = a_1 = \frac{2^2 + 1^2 + 1}{2 \cdot 1} = 3 \cdots \cdots ①
+a_n = a_1 = \frac{2^2 + 1^2 + 1}{2 \cdot 1} = 3 \cdots \cdots (1)
 \]
 故该式的值始终为 $3$，与 $n$ 无关。
 \end{solution}
@@ -11629,15 +11629,15 @@ a_n = a_1 = \frac{2^2 + 1^2 + 1}{2 \cdot 1} = 3 \cdots \cdots ①
 \part 对于所有 $n = 2, 3, 4, \cdots$，请仅用 $p_n$ 表示 $p_{n+1} + p_{n-1}$。
 \begin{solution}
 首先，通过数学归纳法易证对于所有自然数 $n$，均有 $0 < p_n < p_{n+1}$。
-由 ① 式可知：
+由 (1) 式可知：
 \[
-p_{n+1}^2 + p_n^2 + 1 = 3 p_{n+1} p_n \cdots \cdots ②
+p_{n+1}^2 + p_n^2 + 1 = 3 p_{n+1} p_n \cdots \cdots (2)
 \]
 同理，将 $n$ 替换为 $n-1$ 得：
 \[
-p_n^2 + p_{n-1}^2 + 1 = 3 p_n p_{n-1} \cdots \cdots ③
+p_n^2 + p_{n-1}^2 + 1 = 3 p_n p_{n-1} \cdots \cdots (3)
 \]
-② $-$ ③ 得：
+(2) $-$ (3) 得：
 \[
 p_{n+1}^2 - p_{n-1}^2 = 3 p_n (p_{n+1} - p_{n-1})
 \]
@@ -11891,7 +11891,7 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
         \begin{itemize}
             \item $A_8 = \{1, 2, 4, 8\}$，故 $s_8 = 1 + \frac{1}{2^2} + \frac{1}{4^2} + \frac{1}{8^2} = 1 + \frac{1}{4} + \frac{1}{16} + \frac{1}{64} = \frac{85}{64}$。
             \item $A_{12} = \{1, 2, 3, 4, 6, 12\}$，故 $s_{12} = 1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{6^2} + \frac{1}{12^2}$。
-            \[ s_{12} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{36} + \frac{1}{144} = \frac{144+36+16+9+4+1}{144} = \frac{210}{144} = \frac{35}{24} \text{} \]
+            \[ s_{12} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{36} + \frac{1}{144} = \frac{144+36+16+9+4+1}{144} = \frac{210}{144} = \frac{35}{24}  \]
         \end{itemize}
     \end{solution}
     \part 当 $n = p^k$ 时，求 $A_n$ 的元素个数。
@@ -11904,15 +11904,15 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
     \begin{solution}
         当 $p, q$ 为素数时，$n = p^k q^l$ 的约数集合 $A_{p^k q^l}$ 的元素为 $p^i q^j$ ($0 \le i \le k, 0 \le j \le l$)。
         其倒数平方和为：
-        \[ s_n = \sum_{j=0}^{l} \sum_{i=0}^{k} \frac{1}{p^{2i} q^{2j}} = \left( \sum_{i=0}^{k} \frac{1}{p^{2i}} \right) \left( \sum_{j=0}^{l} \frac{1}{q^{2j}} \right) \text{} \]
+        \[ s_n = \sum_{j=0}^{l} \sum_{i=0}^{k} \frac{1}{p^{2i} q^{2j}} = \left( \sum_{i=0}^{k} \frac{1}{p^{2i}} \right) \left( \sum_{j=0}^{l} \frac{1}{q^{2j}} \right)  \]
         利用等比数列求和公式：
-        \[ \sum_{i=0}^{k} \left( \frac{1}{p^2} \right)^i = \frac{1 - (\frac{1}{p^2})^{k+1}}{1 - \frac{1}{p^2}} = \frac{p^2}{p^2 - 1} \left\{ 1 - \left( \frac{1}{p^2} \right)^{k+1} \right\} < \frac{p^2}{p^2 - 1} \text{} \]
+        \[ \sum_{i=0}^{k} \left( \frac{1}{p^2} \right)^i = \frac{1 - (\frac{1}{p^2})^{k+1}}{1 - \frac{1}{p^2}} = \frac{p^2}{p^2 - 1} \left\{ 1 - \left( \frac{1}{p^2} \right)^{k+1} \right\} < \frac{p^2}{p^2 - 1}  \]
         同理，$\sum_{j=0}^{l} \frac{1}{q^{2j}} < \frac{q^2}{q^2 - 1}$，由此可得 $s_n < \frac{p^2}{p^2 - 1} \cdot \frac{q^2}{q^2 - 1}$。
         由于 $p, q$ 是不同的素数，不妨设 $p \ge 2, q \ge 3$，则 $p^2 \ge 4, q^2 \ge 9$。
         考虑函数 $f(x) = \frac{x}{x-1} = 1 + \frac{1}{x-1}$ 在 $x > 1$ 时为减函数：
-        \[ \frac{p^2}{p^2 - 1} \le \frac{4}{3}, \quad \frac{q^2}{q^2 - 1} \le \frac{9}{8} \text{} \]
+        \[ \frac{p^2}{p^2 - 1} \le \frac{4}{3}, \quad \frac{q^2}{q^2 - 1} \le \frac{9}{8}  \]
         从而：
-        \[ s_n < \frac{4}{3} \cdot \frac{9}{8} = \frac{36}{24} = \frac{3}{2} \text{} \]
+        \[ s_n < \frac{4}{3} \cdot \frac{9}{8} = \frac{36}{24} = \frac{3}{2}  \]
         故得证 $s_n < \frac{3}{2}$。
     \end{solution}
 \end{parts}
@@ -11934,7 +11934,7 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
             &= a_{n+2}^2 - a_{n+2} a_{n+1} - a_{n+1}^2 \\
             &= a_{n+2}(a_{n+2} - a_{n+1}) - a_{n+1}^2 \\
             &= a_{n+2} a_n - a_{n+1}^2 \\
-            &= -(a_{n+1}^2 - a_{n+2} a_n) \text{}
+            &= -(a_{n+1}^2 - a_{n+2} a_n) 
         \end{align*}
         由此可知，$a_{n+1}^2 - a_{n+2} a_n = (a_2^2 - a_3 a_1)(-1)^{n-1} = (1^2 - 2 \cdot 1)(-1)^{n-1} = (-1)^n$。
         故 $p \Rightarrow q$ 得证。
@@ -11950,15 +11950,15 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
         根据条件 $q$，对于 $n=k$ 和 $n=k+1$ 分别有：
         \begin{align*}
             a_{k+1}^2 - a_{k+2} a_k &= (-1)^k \\
-            a_{k+2}^2 - a_{k+3} a_{k+1} &= (-1)^{k+1} \text{}
+            a_{k+2}^2 - a_{k+3} a_{k+1} &= (-1)^{k+1} 
         \end{align*}
         两式相加得：
         \begin{align*}
             a_{k+1}^2 - a_{k+2} a_k + a_{k+2}^2 - a_{k+3} a_{k+1} &= 0 \\
-            a_{k+2}(a_{k+2} - a_k) + a_{k+1}(a_{k+1} - a_{k+3}) &= 0 \text{}
+            a_{k+2}(a_{k+2} - a_k) + a_{k+1}(a_{k+1} - a_{k+3}) &= 0 
         \end{align*}
         利用归纳假设 $a_{k+2} - a_k = a_{k+1}$，代入上式得：
-        \[ a_{k+2} a_{k+1} + a_{k+1}(a_{k+1} - a_{k+3}) = 0 \text{} \]
+        \[ a_{k+2} a_{k+1} + a_{k+1}(a_{k+1} - a_{k+3}) = 0  \]
         由于 $a_{k+1} > 0$，消去 $a_{k+1}$ 得 $a_{k+2} + a_{k+1} - a_{k+3} = 0$，即 $a_{k+3} = a_{k+2} + a_{k+1}$。
         同时显然 $a_{k+3} > 0$。
         由 (i)(ii) 知，对于所有 $n$，$a_{n+2} = a_{n+1} + a_n$ 均成立。
@@ -11970,39 +11970,39 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
 回答下列问题。
 \begin{parts}
     \part 设 $\alpha$ 为实数。求按如下方式定义的数列 $\{a_n\}$ 的通项公式。
-    \[ a_1 = \alpha, \quad a_{n+1} = \frac{1}{2}a_n + 1 \quad (n = 1, 2, 3, \dots) \text{} \]
+    \[ a_1 = \alpha, \quad a_{n+1} = \frac{1}{2}a_n + 1 \quad (n = 1, 2, 3, \dots)  \]
     \begin{solution}
         对 $a_{n+1} = \frac{1}{2}a_n + 1$ 进行变形，得 $a_{n+1} - 2 = \frac{1}{2}(a_n - 2)$。
         由此可知：
-        \[ a_n - 2 = (a_1 - 2)\left(\frac{1}{2}\right)^{n-1} = (\alpha - 2)\left(\frac{1}{2}\right)^{n-1} \text{} \]
+        \[ a_n - 2 = (a_1 - 2)\left(\frac{1}{2}\right)^{n-1} = (\alpha - 2)\left(\frac{1}{2}\right)^{n-1}  \]
         因此，
-        \[ a_n = 2 + (\alpha - 2)\left(\frac{1}{2}\right)^{n-1} \quad \dots (1) \text{} \]
+        \[ a_n = 2 + (\alpha - 2)\left(\frac{1}{2}\right)^{n-1} \quad \dots (1)  \]
     \end{solution}
 
     \part 函数 $f_1(x), f_2(x), f_3(x), \dots$ 按如下关系式定义：
-    \[ f_1(x) = 3x, \quad f_{n+1}(x) = (n+2)x^{n+1} + \left( \int_0^1 f_n(t) \, dt \right)x \quad (n = 1, 2, 3, \dots) \text{} \]
+    \[ f_1(x) = 3x, \quad f_{n+1}(x) = (n+2)x^{n+1} + \left( \int_0^1 f_n(t) \, dt \right)x \quad (n = 1, 2, 3, \dots)  \]
     请用 $x$ 和 $n$ 的式子表示函数 $f_n(x)$。
     \begin{solution}
         对于 $f_{n+1}(x) = (n+2)x^{n+1} + \left( \int_0^1 f_n(t) \, dt \right)x$，令 $c_n = \int_0^1 f_n(t) \, dt$。
         则有：
-        \[ f_{n+1}(x) = (n+2)x^{n+1} + c_n x \text{} \]
+        \[ f_{n+1}(x) = (n+2)x^{n+1} + c_n x  \]
         由此可知，当 $n \ge 2$ 时，$f_n(x) = (n+1)x^n + c_{n-1}x$。将其代入 $c_n$ 的定义式中：
-        \[ c_n = \int_0^1 \{ (n+1)t^n + c_{n-1}t \} \, dt = \left[ t^{n+1} + \frac{c_{n-1}}{2}t^2 \right]_0^1 = 1 + \frac{1}{2}c_{n-1} \text{} \]
+        \[ c_n = \int_0^1 \{ (n+1)t^n + c_{n-1}t \} \, dt = \left[ t^{n+1} + \frac{c_{n-1}}{2}t^2 \right]_0^1 = 1 + \frac{1}{2}c_{n-1}  \]
         已知 $f_1(x) = 3x$，故：
-        \[ c_1 = \int_0^1 3t \, dt = \left[ \frac{3}{2}t^2 \right]_0^1 = \frac{3}{2} \text{} \]
+        \[ c_1 = \int_0^1 3t \, dt = \left[ \frac{3}{2}t^2 \right]_0^1 = \frac{3}{2}  \]
         由第 (1) 小题的结果，取 $\alpha = \frac{3}{2}$ 代入公式 (1) 可得：
-        \[ c_n = 2 + \left( \frac{3}{2} - 2 \right)\left(\frac{1}{2}\right)^{n-1} = 2 - \left(\frac{1}{2}\right)^n \text{} \]
+        \[ c_n = 2 + \left( \frac{3}{2} - 2 \right)\left(\frac{1}{2}\right)^{n-1} = 2 - \left(\frac{1}{2}\right)^n  \]
         因此，当 $n \ge 2$ 时：
-        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x \quad \dots (2) \text{} \]
+        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x \quad \dots (2)  \]
         若在 (2) 中令 $n=1$，得 $f_1(x) = 2x + \{ 2 - (1/2)^0 \}x = 3x$，与题设相符。
         故：
-        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x \text{} \]
+        \[ f_n(x) = (n+1)x^n + \left\{ 2 - \left(\frac{1}{2}\right)^{n-1} \right\}x  \]
     \end{solution}
 \end{parts}
 
 \question
 对于给定的自然数 $a_0$，定义由自然数组成的数列 $a_0, a_1, a_2, \dots$ 如下：
-\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases} \text{} \]
+\[ a_{n+1} = \begin{cases} \frac{a_n}{2} & (\text{当 } a_n \text{ 为偶数时}) \\ \frac{3a_n + 1}{2} & (\text{当 } a_n \text{ 为奇数时}) \end{cases}  \]
 请回答下列问题：
 \begin{parts}
     \part 求最小的自然数 $a_0$，使得 $a_0, a_1, a_2, a_3$ 均为奇数。
@@ -12011,7 +12011,7 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
         \begin{align*}
             a_1 &= \frac{3a_0 + 1}{2} \\
             a_2 &= \frac{3a_1 + 1}{2} = \frac{3 \cdot \frac{3a_0+1}{2} + 1}{2} = \frac{9a_0 + 5}{4} \\
-            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} \text{}
+            a_3 &= \frac{3a_2 + 1}{2} = \frac{3 \cdot \frac{9a_0+5}{4} + 1}{2} = \frac{27a_0 + 19}{8} 
         \end{align*}
         $a_3$ 为奇数意味着 $27a_0 + 19$ 必须是 $8$ 的倍数，但不能是 $16$ 的倍数。
         设 $k$ 为自然数，使 $27a_0 + 19 = 16k - 8$（即 $8$ 的奇数倍）。
@@ -12024,7 +12024,7 @@ $A_4 = \{1, 2, 4\}, \quad s_4 = 1 + \frac{1}{2^2} + \frac{1}{4^2}$。
     \part 求最小的自然数 $a_0$，使得 $a_0, a_1, \dots, a_{10}$ 均为奇数。
     \begin{solution}
         设 $a_0, a_1, \dots, a_n$ 均为奇数。对于 $n = 0, 1, \dots, 10$：
-        \[ a_{n+1} = \frac{3a_n+1}{2} \Rightarrow a_{n+1} + 1 = \frac{3}{2}(a_n + 1) \text{} \]
+        \[ a_{n+1} = \frac{3a_n+1}{2} \Rightarrow a_{n+1} + 1 = \frac{3}{2}(a_n + 1)  \]
         由此得等比数列关系：$a_n + 1 = (a_0 + 1)\left(\frac{3}{2}\right)^n$，即 $a_n = (a_0 + 1)\frac{3^n}{2^n} - 1$。
         要使 $a_{10}$ 为奇数，则 $a_{10} = (a_0 + 1)\frac{3^{10}}{2^{10}} - 1$ 必须为奇数，即 $(a_0 + 1)\frac{3^{10}}{2^{10}}$ 必须为偶数。
         设 $l$ 为自然数，令 $(a_0 + 1)\frac{3^{10}}{2^{10}} = 2l$，则 $(a_0 + 1) \cdot 3^{10} = 2^{11}l$。
@@ -20675,13 +20675,13 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
         \]
         用 $(*)$ 式减去 $(**)$ 式：
         \[
-        (\alpha - \bar{\beta})z - (\bar{\alpha} - \beta)\bar{z} + \gamma - \bar{\gamma} = 0 \quad \cdots ①
+        (\alpha - \bar{\beta})z - (\bar{\alpha} - \beta)\bar{z} + \gamma - \bar{\gamma} = 0 \quad \cdots (1)
         \]
     \end{solution}
 
     \part 假设 $|\alpha| = |\beta| \neq 0$，且 $\gamma$ 为负实数。求使得满足 $(*)$ 的 $z$ 恰好有 2 个的必要充分条件（用 $\alpha, \beta$ 表示）。
     \begin{solution}
-        由于 $\gamma$ 是实数，$\gamma = \bar{\gamma}$。由 ① 式得：
+        由于 $\gamma$ 是实数，$\gamma = \bar{\gamma}$。由 (1) 式得：
         \[
         (\alpha - \bar{\beta})z - \overline{(\alpha - \bar{\beta})z} = 0
         \]
@@ -20733,14 +20733,14 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
     \part 求复数 $\alpha$ 应满足的条件，并在复数平面上画出点 $A(\alpha)$ 所描绘的图形。
     \begin{solution}
         由于点 $P(z)$ 是 $\triangle OAB$ 的外心，它到三个顶点的距离相等：
-        \[ |z| = |z - \alpha| \quad \cdots ①, \quad |z| = |z - \beta| \quad \cdots ② \]
-        将已知条件 $z = \alpha\beta$ 代入 ① 式：
+        \[ |z| = |z - \alpha| \quad \cdots (1), \quad |z| = |z - \beta| \quad \cdots (2) \]
+        将已知条件 $z = \alpha\beta$ 代入 (1) 式：
         \[ |\alpha\beta| = |\alpha\beta - \alpha| \Rightarrow |\alpha||\beta| = |\alpha||\beta - 1| \]
-        由于 $\alpha \neq 0$（三角形顶点），可得 $|\beta| = |\beta - 1| \quad \cdots ③$。
-        同理，将 $z = \alpha\beta$ 代入 ② 式：
+        由于 $\alpha \neq 0$（三角形顶点），可得 $|\beta| = |\beta - 1| \quad \cdots (3)$。
+        同理，将 $z = \alpha\beta$ 代入 (2) 式：
         \[ |\alpha\beta| = |\alpha\beta - \beta| \Rightarrow |\alpha||\beta| = |\beta||\alpha - 1| \]
-        由于 $\beta \neq 0$，可得 $|\alpha| = |\alpha - 1| \quad \cdots ④$。
-        由 ④ 式可知，点 $A(\alpha)$ 在连接原点 $0$ 与点 $1$ 的线段的垂直平分线上。
+        由于 $\beta \neq 0$，可得 $|\alpha| = |\alpha - 1| \quad \cdots (4)$。
+        由 (4) 式可知，点 $A(\alpha)$ 在连接原点 $0$ 与点 $1$ 的线段的垂直平分线上。
         因此，$\alpha$ 满足的条件是 $\text{Re}(\alpha) = \frac{1}{2}$。图形为直线 $x = \frac{1}{2}$。
     \end{solution}
 
@@ -20749,8 +20749,8 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
         由 (1) 可知，$\alpha = \frac{1}{2} + ai, \beta = \frac{1}{2} + bi \ (a, b \in \mathbb{R}, a \neq b)$。
         则 $z = \alpha\beta = \left(\frac{1}{2} + ai\right)\left(\frac{1}{2} + bi\right) = \left(\frac{1}{4} - ab\right) + \frac{1}{2}(a+b)i$。
         设 $z = x + yi$，则：
-        \[ x = \frac{1}{4} - ab \quad \cdots ⑤, \quad y = \frac{1}{2}(a+b) \Rightarrow a+b = 2y \quad \cdots ⑥ \]
-        从 ⑥ 得 $b = 2y - a$，代入 ⑤：
+        \[ x = \frac{1}{4} - ab \quad \cdots (5), \quad y = \frac{1}{2}(a+b) \Rightarrow a+b = 2y \quad \cdots (6) \]
+        从 (6) 得 $b = 2y - a$，代入 (5)：
         \[ x = \frac{1}{4} - a(2y - a) = a^2 - 2ya + \frac{1}{4} \Rightarrow a^2 - 2ya + \frac{1}{4} - x = 0 \]
         由于 $a, b$ 是互不相等的实数，上述关于 $a$ 的二次方程必须有两个不同的实根。
         判别式 $D/4 = y^2 - (\frac{1}{4} - x) > 0$，即 $y^2 > -x + \frac{1}{4}$。
@@ -20807,26 +20807,26 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
     \begin{solution}
         当 $z = \cos \frac{2\pi}{9} + i \sin \frac{2\pi}{9}$ 时，$z^9 = \cos 2\pi + i \sin 2\pi = 1$。
         故 $z^8 = \frac{1}{z} = \cos\left(-\frac{2\pi}{9}\right) + i \sin\left(-\frac{2\pi}{9}\right) = \cos \frac{2\pi}{9} - i \sin \frac{2\pi}{9}$。
-        于是，$\alpha = z + z^8 = 2 \cos \frac{2\pi}{9}$，即 $\cos \frac{2\pi}{9} = \frac{\alpha}{2} \cdots\cdots \textcircled{1}$。
-        利用三倍角公式 $\cos \frac{2\pi}{3} = 4 \cos^3 \frac{2\pi}{9} - 3 \cos \frac{2\pi}{9}$，由 $\textcircled{1}$ 可得：
+        于是，$\alpha = z + z^8 = 2 \cos \frac{2\pi}{9}$，即 $\cos \frac{2\pi}{9} = \frac{\alpha}{2} \cdots\cdots (1)$。
+        利用三倍角公式 $\cos \frac{2\pi}{3} = 4 \cos^3 \frac{2\pi}{9} - 3 \cos \frac{2\pi}{9}$，由 $(1)$ 可得：
         \[
-        -\frac{1}{2} = 4 \cdot \frac{\alpha^3}{8} - 3 \cdot \frac{\alpha}{2} \implies -1 = \alpha^3 - 3\alpha \implies \alpha^3 - 3\alpha + 1 = 0 \cdots\cdots \textcircled{2}
+        -\frac{1}{2} = 4 \cdot \frac{\alpha^3}{8} - 3 \cdot \frac{\alpha}{2} \implies -1 = \alpha^3 - 3\alpha \implies \alpha^3 - 3\alpha + 1 = 0 \cdots\cdots (2)
         \]
-        由 $\textcircled{2}$ 可知，$\alpha$ 是 $x^3 - 3x + 1 = 0$ 的解，故 $f(x) = x^3 - 3x + 1$。
+        由 $(2)$ 可知，$\alpha$ 是 $x^3 - 3x + 1 = 0$ 的解，故 $f(x) = x^3 - 3x + 1$。
     \end{solution}
 
     \part 除了 $\alpha$ 以外，求方程 $f(x) = 0$ 的另外两个解，并用 $\alpha$ 的二次及以下整系数多项式形式表示。
     \begin{solution}
-        用 $x - \alpha$ 除 $f(x)$，由 $\textcircled{2}$ 可得 $f(x) = (x - \alpha)(x^2 + \alpha x + \alpha^2 - 3)$。
+        用 $x - \alpha$ 除 $f(x)$，由 $(2)$ 可得 $f(x) = (x - \alpha)(x^2 + \alpha x + \alpha^2 - 3)$。
         则 $f(x) = 0$ 除 $\alpha$ 以外的两个解为：
         \[
-        x = \frac{-\alpha \pm \sqrt{\alpha^2 - 4(\alpha^2 - 3)}}{2} = \frac{-\alpha \pm \sqrt{12 - 3\alpha^2}}{2} \cdots\cdots \textcircled{3}
+        x = \frac{-\alpha \pm \sqrt{\alpha^2 - 4(\alpha^2 - 3)}}{2} = \frac{-\alpha \pm \sqrt{12 - 3\alpha^2}}{2} \cdots\cdots (3)
         \]
-        由 $\textcircled{1}$ 可知，$12 - 3\alpha^2 = 12 - 3 \cdot 4 \cos^2 \frac{2\pi}{9} = 12 \sin^2 \frac{2\pi}{9}$。由 $\textcircled{3}$ 得：
+        由 $(1)$ 可知，$12 - 3\alpha^2 = 12 - 3 \cdot 4 \cos^2 \frac{2\pi}{9} = 12 \sin^2 \frac{2\pi}{9}$。由 $(3)$ 得：
         \[
         x = -\cos \frac{2\pi}{9} \pm \sqrt{3} \sin \frac{2\pi}{9} = 2 \left( -\frac{1}{2} \cos \frac{2\pi}{9} \pm \frac{\sqrt{3}}{2} \sin \frac{2\pi}{9} \right) = 2 \cos \left( \frac{2\pi}{9} \mp \frac{2\pi}{3} \right)
         \]
-        故 $x = 2 \cos \frac{4\pi}{9}$ 或 $x = 2 \cos \frac{8\pi}{9}$。由 $\textcircled{1}$ 和 $\textcircled{2}$ 可得：
+        故 $x = 2 \cos \frac{4\pi}{9}$ 或 $x = 2 \cos \frac{8\pi}{9}$。由 $(1)$ 和 $(2)$ 可得：
         \begin{align*}
         2 \cos \frac{4\pi}{9} &= 2(2 \cos^2 \frac{2\pi}{9} - 1) = 4 \cdot \frac{\alpha^2}{4} - 2 = \alpha^2 - 2 \\
         2 \cos \frac{8\pi}{9} &= 2(2 \cos^2 \frac{4\pi}{9} - 1) = (\alpha^2 - 2)^2 - 2 = \alpha^4 - 4\alpha^2 + 2 \\
@@ -20841,24 +20841,24 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
 \begin{solution}
     首先，对于给定的等式 $\alpha(|z|^2 + 2) + i(2|\alpha|^2 + 1)\bar{z} = 0$，有：
     \[
-    -i(2|\alpha|^2 + 1)\bar{z} = \alpha(|z|^2 + 2) \cdots\cdots \textcircled{1}
+    -i(2|\alpha|^2 + 1)\bar{z} = \alpha(|z|^2 + 2) \cdots\cdots (1)
     \]
-    对 $\textcircled{1}$ 两边取共轭复数，得 $i(2|\alpha|^2 + 1)z = \bar{\alpha}(|z|^2 + 2) \cdots\cdots \textcircled{2}$。
-    $\textcircled{1} \times \textcircled{2}$ 得：$(2|\alpha|^2 + 1)^2 z\bar{z} = \alpha\bar{\alpha}(|z|^2 + 2)^2$，即
+    对 $(1)$ 两边取共轭复数，得 $i(2|\alpha|^2 + 1)z = \bar{\alpha}(|z|^2 + 2) \cdots\cdots (2)$。
+    $(1) \times (2)$ 得：$(2|\alpha|^2 + 1)^2 z\bar{z} = \alpha\bar{\alpha}(|z|^2 + 2)^2$，即
     \[
     (2|\alpha|^2 + 1)^2 |z|^2 = |\alpha|^2 (|z|^2 + 2)^2, \quad (2|\alpha|^2 + 1)|z| = |\alpha|(|z|^2 + 2)
     \]
-    整理关于 $|z|$ 的方程：$|\alpha||z|^2 - (2|\alpha|^2 + 1)|z| + 2|\alpha| = 0 \cdots\cdots \textcircled{3}$。
-    (i) 当 $|\alpha| = 0$（即 $\alpha = 0$）时，由 $\textcircled{3}$ 得 $|z| = 0$，故 $z = 0$。
-    (ii) 当 $|\alpha| \neq 0$ 时，$\textcircled{3}$ 可化为 $(|\alpha||z| - 1)(|z| - 2|\alpha|) = 0$，故：
+    整理关于 $|z|$ 的方程：$|\alpha||z|^2 - (2|\alpha|^2 + 1)|z| + 2|\alpha| = 0 \cdots\cdots (3)$。
+    (i) 当 $|\alpha| = 0$（即 $\alpha = 0$）时，由 $(3)$ 得 $|z| = 0$，故 $z = 0$。
+    (ii) 当 $|\alpha| \neq 0$ 时，$(3)$ 可化为 $(|\alpha||z| - 1)(|z| - 2|\alpha|) = 0$，故：
     \[
     |z| = \frac{1}{|\alpha|} \quad \text{或} \quad |z| = 2|\alpha| \quad
     \]
-    (ii-i) 当 $|z| = \frac{1}{|\alpha|}$ 时，$|z|^2 + 2 = \frac{1}{|\alpha|^2} + 2 = \frac{1 + 2|\alpha|^2}{|\alpha|^2}$。代入 $\textcircled{2}$ 得：
+    (ii-i) 当 $|z| = \frac{1}{|\alpha|}$ 时，$|z|^2 + 2 = \frac{1}{|\alpha|^2} + 2 = \frac{1 + 2|\alpha|^2}{|\alpha|^2}$。代入 $(2)$ 得：
     \[
     z = \frac{\bar{\alpha}(|z|^2 + 2)}{i(2|\alpha|^2 + 1)} = \frac{\bar{\alpha}}{i(2|\alpha|^2 + 1)} \cdot \frac{1 + 2|\alpha|^2}{|\alpha|^2} = \frac{1}{i\alpha} = -\frac{i}{\alpha} \quad
     \]
-    (ii-ii) 当 $|z| = 2|\alpha|$ 时，$|z|^2 + 2 = 4|\alpha|^2 + 2 = 2(2|\alpha|^2 + 1)$。代入 $\textcircled{2}$ 得：
+    (ii-ii) 当 $|z| = 2|\alpha|$ 时，$|z|^2 + 2 = 4|\alpha|^2 + 2 = 2(2|\alpha|^2 + 1)$。代入 $(2)$ 得：
     \[
     z = \frac{\bar{\alpha}(|z|^2 + 2)}{i(2|\alpha|^2 + 1)} = \frac{2\bar{\alpha}(2|\alpha|^2 + 1)}{i(2|\alpha|^2 + 1)} = \frac{2\bar{\alpha}}{i} = -2i\bar{\alpha} \quad
     \]
@@ -20879,15 +20879,15 @@ $w$ 的实部为 $1$。由 (2) 知 $z_n = (1+i)(1-\alpha^n)$。
 
     \part 设 $k$ 为实数。求满足方程 $k\left(z + \frac{4}{z} + 8\right) = i\left(z - \frac{4}{z}\right)$ 的 $z \in D$ 存在的 $k$ 的取值范围。这里 $i$ 是虚数单位。
     \begin{solution}
-        设方程为 $\textcircled{1}$。由 (1) 可知：
+        设方程为 $(1)$。由 (1) 可知：
         (i) 当 $z$ 为实数 ($z \neq 0$) 时：
         $k\left(z + \frac{4}{z} + 8\right)$ 为实数，而 $i\left(z - \frac{4}{z}\right)$ 为纯虚数。
-        若 $\textcircled{1}$ 成立，则 $z - \frac{4}{z} = 0 \implies z = \pm 2$。
+        若 $(1)$ 成立，则 $z - \frac{4}{z} = 0 \implies z = \pm 2$。
         此时 $z + \frac{4}{z} + 8$ 分别为 $12$ 或 $4$，不为 $0$，故必须 $k = 0$。
         (ii) 当 $z$ 满足 $|z| = 2$ 且为虚数时：
         设 $z = 2(\cos \theta + i \sin \theta) \, (\sin \theta \neq 0)$，则 $\frac{4}{z} = 2(\cos \theta - i \sin \theta)$。
-        代入 $\textcircled{1}$ 得 $k(4 \cos \theta + 8) = -4 \sin \theta$，即 $k = -\frac{\sin \theta}{\cos \theta + 2} \cdots\cdots \textcircled{2}$。
-        由 $\textcircled{2}$ 可知，$-k$ 是连接单位圆上的点 $(\cos \theta, \sin \theta)$ 与点 $(-2, 0)$ 的直线的斜率。
+        代入 $(1)$ 得 $k(4 \cos \theta + 8) = -4 \sin \theta$，即 $k = -\frac{\sin \theta}{\cos \theta + 2} \cdots\cdots (2)$。
+        由 $(2)$ 可知，$-k$ 是连接单位圆上的点 $(\cos \theta, \sin \theta)$ 与点 $(-2, 0)$ 的直线的斜率。
         由于 $\sin \theta \neq 0$，由圆的切线可知该斜率的范围为 $-\frac{1}{\sqrt{3}} \le -k \le \frac{1}{\sqrt{3}}$（且 $k \neq 0$）。
         即 $-\frac{1}{\sqrt{3}} \le k \le \frac{1}{\sqrt{3}}$ 且 $k \neq 0$。
         综合 (i)(ii)，$k$ 的范围是 $-\frac{1}{\sqrt{3}} \le k \le \frac{1}{\sqrt{3}}$。
@@ -21783,6 +21783,543 @@ $i$ 是虚数单位。设满足下列条件 (I)、(II) 的复数 $z$ 的全体�
         \[
         \alpha = -\frac{1}{6} - \frac{\sqrt{3}}{6}i, \quad \beta = \frac{1}{3} - \frac{\sqrt{3}}{3}i, \quad \gamma = \frac{5}{6} - \frac{\sqrt{3}}{6}i
         \]
+    \end{solution}
+\end{parts}
+
+\question
+实数 $a = \frac{\sqrt{5}-1}{2}$，考虑整式 $f(x) = x^2 - ax + 1$。
+\begin{parts}
+    \part 显示整式 $x^4 + x^3 + x^2 + x + 1$ 能被 $f(x)$ 整除。
+    \begin{solution}
+        设 $g(x) = x^4 + x^3 + x^2 + x + 1$。将 $g(x)$ 除以 $f(x)$ 得：
+        \[
+        g(x) = f(x)\{x^2 + (1+a)x + a(1+a)\} - a(1-a-a^2)x + (1-a-a^2)
+        \]
+        此处，由 $a = \frac{\sqrt{5}-1}{2}$ 得 $2a+1 = \sqrt{5}$，两边平方得 $(2a+1)^2 = 5$。
+        展开整理得 $4a^2 + 4a + 1 = 5$，即 $a^2 + a - 1 = 0$。
+        因此，$1-a-a^2 = 0$。代入余式中，得：
+        \[
+        g(x) = f(x)\{x^2 + (1+a)x + 1\}
+        \]
+        由此可知，$g(x)$ 能被 $f(x)$ 整除。
+    \end{solution}
+
+    \part 方程 $f(x) = 0$ 的虚数解中，虚部为正的记为 $\alpha$。用极形式表示 $\alpha$。此处可以承认并使用：满足 $r^5 = 1$ 的实数 $r$ 仅有 $r=1$。
+    \begin{solution}
+        由于 $(x-1)g(x) = (x-1)(x^4 + x^3 + x^2 + x + 1) = x^5 - 1$，由(1)可知：
+        \[
+        x^5 - 1 = (x-1)f(x)\{x^2 + (1+a)x + 1\}
+        \]
+        当 $x^5 = 1$ 即 $x^5 - 1 = 0$ 时，其解满足：
+        $x-1 = 0$ \dots (2)，$x^2 - ax + 1 = 0$ \dots (3)，$x^2 + (1+a)x + 1 = 0$ \dots (4)。
+        由此，(2) 有实数解 $x=1$。设 (3) 的虚数解为 $\alpha$，$a^*$，(4) 的虚数解为 $\beta$，$b^*$（$\beta$ 的虚部为正）。
+        由根与系数的关系：
+        \[
+        \frac{\alpha + a^*}{2} = \frac{a}{2} > 0, \quad \frac{\beta + b^*}{2} = \frac{-1-a}{2} < 0
+        \]
+        因此，$x^5 = 1$ 的解在复平面上对应的点构成正五边形的顶点。由 $\arg \alpha = \frac{2}{5}\pi$ 得：
+        \[
+        \alpha = \cos \frac{2}{5}\pi + i\sin \frac{2}{5}\pi
+        \]
+    \end{solution}
+
+    \part 对于(2)中的虚数 $\alpha$，求 $\alpha^{2023} + \alpha^{-2023}$ 的值。
+    \begin{solution}
+        首先，由 $|\alpha|=1$ 知 $\alpha a^* = 1$，故 $\alpha^{-1} = a^*$。
+        又由 $\alpha^5 = 1$，且 $2023 = 5 \times 404 + 3$，得：
+        \[
+        \alpha^{2023} + \alpha^{-2023} = \alpha^3 + \alpha^{-3} = \alpha^3 + (a^*)^3 = b^* + \beta = -1-a
+        \]
+        代入 $a$ 的值：
+        \[
+        -1 - \frac{\sqrt{5}-1}{2} = -\frac{\sqrt{5}+1}{2}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+回答以下问题。
+\begin{parts}
+    \part 解四次方程 $x^4 - 2x^3 + 3x^2 - 2x + 1 = 0$。
+    \begin{solution}
+        对于方程 $x^4 - 2x^3 + 3x^2 - 2x + 1 = 0$ \dots (1)，显然 $x \neq 0$，两边除以 $x^2$ 得：
+        \[
+        x^2 - 2x + 3 - \frac{2}{x} + \frac{1}{x^2} = 0, \quad \left(x + \frac{1}{x}\right)^2 - 2 - 2\left(x + \frac{1}{x}\right) + 3 = 0
+        \]
+        整理得 $\left(x + \frac{1}{x} - 1\right)^2 = 0$，即 $x + \frac{1}{x} - 1 = 0$。
+        由此得 $x^2 - x + 1 = 0$。
+        因此，方程 (1) 的解为：
+        \[
+        x = \frac{1 \pm \sqrt{3}i}{2}
+        \]
+    \end{solution}
+
+    \part 设复平面上 $\triangle ABC$ 的顶点对应的复数分别为 $\alpha, \beta, \gamma$。当 $(\alpha-\beta)^4 + (\beta-\gamma)^4 + (\gamma-\alpha)^4 = 0$ 成立时，求 $\triangle ABC$ 是什么样的三角形。
+    \begin{solution}
+        对于 $(\alpha-\beta)^4 + (\beta-\gamma)^4 + (\gamma-\alpha)^4 = 0$ \dots (2)，设 $z = \alpha - \beta, w = \gamma - \beta$。
+        则 $w - z = \gamma - \alpha$。方程 (2) 变为 $z^4 + (-w)^4 + (w-z)^4 = 0$：
+        \[
+        z^4 + w^4 + w^4 - 4w^3z + 6w^2z^2 - 4wz^3 + z^4 = 0
+        \]
+        \[
+        w^4 - 2w^3z + 3w^2z^2 - 2wz^3 + z^4 = 0
+        \]
+        由于 $\alpha - \beta \neq 0$ 即 $z \neq 0$，两边除以 $z^4$ 得：
+        \[
+        \left(\frac{w}{z}\right)^4 - 2\left(\frac{w}{z}\right)^3 + 3\left(\frac{w}{z}\right)^2 - 2\left(\frac{w}{z}\right) + 1 = 0
+        \]
+        设 $x = \frac{w}{z}$，则该方程与 (1) 一致。由 (1) 的结果：
+        \[
+        \frac{w}{z} = \frac{1 \pm \sqrt{3}i}{2} = \cos \left(\pm \frac{\pi}{3}\right) + i\sin \left(\pm \frac{\pi}{3}\right)
+        \]
+        \[
+        \frac{\gamma - \beta}{\alpha - \beta} = \cos \left(\pm \frac{\pi}{3}\right) + i\sin \left(\pm \frac{\pi}{3}\right)
+        \]
+        这表示点 $C(\gamma)$ 是由点 $A(\alpha)$ 绕点 $B(\beta)$ 旋转 $\pm \frac{\pi}{3}$ 得到的。
+        因此，$\triangle ABC$ 是正三角形。
+    \end{solution}
+\end{parts}
+
+\question
+对于整数对 $(a, b)$，考虑二次多项式 $f(x) = x^2 + ax + b$。求满足以下条件的所有整数对 $(a, b)$：对于方程 $f(x) = 0$ 在复数范围内的所有解 $\alpha$，都存在正整数 $n$ 使得 $\alpha^n = 1$。
+\begin{solution}
+    对于 $f(x) = x^2 + ax + b$ ($a, b$ 为整数)，设方程 $f(x) = 0$ 的解为 $\alpha$。
+    若存在正整数 $n$ 使得 $\alpha^n = 1$，则 $|\alpha|^n = 1$，由于 $n > 0$ 且 $|\alpha| \ge 0$，推得 $|\alpha| = 1$。
+    (1) 当方程有两个不相等的实数解 $x = \alpha, \beta$ ($\alpha < \beta$) 时：
+    由 $|\alpha| = |\beta| = 1$ 得 $\alpha = \pm 1, \beta = \pm 1$。
+    因为 $\alpha < \beta$，所以 $\alpha = -1, \beta = 1$。
+    此时 $f(x) = (x+1)(x-1) = x^2 - 1$，得 $(a, b) = (0, -1)$。
+    (2) 当方程有重解 $x = \alpha$ 时：
+    由 $|\alpha| = 1$ 得 $\alpha = \pm 1$。此时 $\alpha^2 = 1$。
+    若 $\alpha = 1$，则 $f(x) = (x-1)^2 = x^2 - 2x + 1$，得 $(a, b) = (-2, 1)$。
+    若 $\alpha = -1$，则 $f(x) = (x+1)^2 = x^2 + 2x + 1$，得 $(a, b) = (2, 1)$。
+    (3) 当方程有两个虚数解 $x = \alpha, \alpha^*$ 时：
+    由 $|\alpha| = |\alpha^*| = 1$，设 $\alpha = \cos \theta + i \sin \theta$ ($0 < \theta < \pi$)。
+    根据根与系数的关系：
+    $a = -(\alpha + \alpha^*) = -2\cos \theta$。
+    $b = \alpha \alpha^* = \cos^2 \theta + \sin^2 \theta = 1$。
+    由于 $a$ 是整数且 $-2 < -2\cos \theta < 2$，故 $a$ 的取值只能是 $-1, 0, 1$。
+    当 $a = -1$ 时，$\cos \theta = \frac{1}{2}$，得 $\theta = \frac{\pi}{3}$，$\alpha = \cos \frac{\pi}{3} + i \sin \frac{\pi}{3}$。此时 $\alpha^6 = 1$。
+    当 $a = 0$ 时，$\cos \theta = 0$，得 $\theta = \frac{\pi}{2}$，$\alpha = \cos \frac{\pi}{2} + i \sin \frac{\pi}{2}$。此时 $\alpha^4 = 1$。
+    当 $a = 1$ 时，$\cos \theta = -\frac{1}{2}$，得 $\theta = \frac{2\pi}{3}$，$\alpha = \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}$。此时 $\alpha^3 = 1$。
+    对应的整数对为 $(a, b) = (-1, 1), (0, 1), (1, 1)$。
+    综合以上所有情况，满足条件的整数对 $(a, b)$ 为：
+    $(-2, 1), (-1, 1), (0, 1), (1, 1), (2, 1), (0, -1)$。
+\end{solution}
+
+\question
+设 $c$ 为大于 $1$ 的实数。此外，以 $i$ 为虚数单位，设 $\alpha = \frac{1-i}{\sqrt{2}}$。对于复数 $z$，定义：
+$P(z) = z^3 - 3z^2 + (c+2)z - c$
+$Q(z) = -\alpha^7 z^3 + 3\alpha^6 z^2 + (c+2)\alpha z - c$
+\begin{parts}
+    \part 求所有满足方程 $P(z) = 0$ 的复数 $z$，并将其在复数平面上表示出来。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image368.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        对于 $P(z) = z^3 - 3z^2 + (c+2)z - c$，观察可知 $P(1) = 1-3+c+2-c = 0$。
+        利用因式分解得 $P(z) = (z-1)(z^2 - 2z + c)$。
+        解方程 $z^2 - 2z + c = 0$，得 $z = \frac{2 \pm \sqrt{4-4c}}{2} = 1 \pm \sqrt{1-c} = 1 \pm i\sqrt{c-1}$。
+        由于 $c > 1$，方程 $P(z) = 0$ 的解为：
+        $z = 1, \quad z = 1 + i\sqrt{c-1}, \quad z = 1 - i\sqrt{c-1}$。
+        在复数平面上，这三个点分布在直线 $Re(z) = 1$ 上。
+    \end{solution}
+
+    \part 求满足方程 $Q(z) = 0$ 的复数 $z$ 中实部最大者。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image369.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由于 $\alpha = \frac{1-i}{\sqrt{2}} = \cos\left(-\frac{\pi}{4}\right) + i \sin\left(-\frac{\pi}{4}\right)$，可得 $\alpha^4 = \cos(-\pi) + i \sin(-\pi) = -1$。
+        于是 $\alpha^7 = \alpha^4 \cdot \alpha^3 = -\alpha^3$，$\alpha^6 = \alpha^4 \cdot \alpha^2 = -\alpha^2$。
+        将这些关系代入 $Q(z)$：
+        $Q(z) = \alpha^3 z^3 - 3\alpha^2 z^2 + (c+2)\alpha z - c = (\alpha z)^3 - 3(\alpha z)^2 + (c+2)(\alpha z) - c = P(\alpha z)$。
+        因此 $Q(z) = 0$ 等价于 $P(\alpha z) = 0$。
+        设 $P(z) = 0$ 的解为 $z_1, z_2, z_3$，则 $Q(z) = 0$ 的解为 $\frac{z_1}{\alpha}, \frac{z_2}{\alpha}, \frac{z_3}{\alpha}$。
+        由于 $\frac{1}{\alpha} = \alpha^* = \frac{1+i}{\sqrt{2}}$，解为：
+        $w_1 = \frac{1+i}{\sqrt{2}}$，其实部为 $\frac{1}{\sqrt{2}}$。
+        $w_2 = \frac{1+i}{\sqrt{2}}(1+i\sqrt{c-1}) = \frac{1-\sqrt{c-1}}{\sqrt{2}} + i\frac{1+\sqrt{c-1}}{\sqrt{2}}$，其实部为 $\frac{1-\sqrt{c-1}}{\sqrt{2}}$。
+        $w_3 = \frac{1+i}{\sqrt{2}}(1-i\sqrt{c-1}) = \frac{1+\sqrt{c-1}}{\sqrt{2}} + i\frac{1-\sqrt{c-1}}{\sqrt{2}}$，其实部为 $\frac{1+\sqrt{c-1}}{\sqrt{2}}$。
+        比较可知，实部最大者为 $\frac{1+\sqrt{c-1}}{\sqrt{2}}$。
+    \end{solution}
+
+    \part 设关于 $z$ 的两个方程 $P(z) = 0$ 和 $Q(z) = 0$ 有公共解 $\beta$。求此时 $c$ 的值及 $\beta$。
+    \begin{solution}
+        由 (2) 可知 $Q(z) = 0$ 的解为 $\alpha^* z_1, \alpha^* z_2, \alpha^* z_3$。
+        由于 $|\alpha^* z_3| = |\alpha^*| \cdot |z_3| = 1 \cdot \sqrt{1 + (c-1)} = \sqrt{c} > 1$，而 $P(z)=0$ 的解中只有 $z_2, z_3$ 的模可能大于 $1$。
+        观察实部和虚部的关系，公共根必满足 $\beta = z_2 = \alpha^* z_3$。
+        即 $1 + i\sqrt{c-1} = \frac{1+i}{\sqrt{2}}(1 - i\sqrt{c-1})$。
+        $1 + i\sqrt{c-1} = \frac{1+\sqrt{c-1}}{\sqrt{2}} + i\frac{1-\sqrt{c-1}}{\sqrt{2}}$。
+        比较实部得 $1 = \frac{1+\sqrt{c-1}}{\sqrt{2}}$，解得 $\sqrt{c-1} = \sqrt{2}-1$。
+        此时 $c-1 = (\sqrt{2}-1)^2 = 3-2\sqrt{2}$，故 $c = 4-2\sqrt{2}$。
+        代入虚部校验：$\frac{1-(\sqrt{2}-1)}{\sqrt{2}} = \frac{2-\sqrt{2}}{\sqrt{2}} = \sqrt{2}-1$，符合。
+        因此 $c = 4-2\sqrt{2}$，公共解 $\beta = 1 + i(\sqrt{2}-1)$。
+    \end{solution}
+\end{parts}
+
+\question
+设 $\alpha, \beta$ 为复数。对于复数 $z$，定义 $f(z) = z^2 + \alpha z + \beta$。$\alpha, \beta$ 在满足 $|f(1) - 3| \le 1$ 且 $|f(i) - 1| \le 3$ 的条件下运动。此处 $i$ 为虚数单位。
+\begin{parts}
+    \part 求 $f(1+i)$ 可能取值的范围，并在复数平面上画出图形。
+    \begin{solution}
+        对于 $f(z) = z^2 + \alpha z + \beta$，有 $f(1) = 1 + \alpha + \beta$，$f(i) = -1 + i\alpha + \beta$。
+        由 $|f(1) - 3| \le 1$ 且 $|f(i) - 1| \le 3$ 得：
+        \[
+        |\alpha + \beta - 2| \le 1 \quad \dots (1)
+        \]
+        \[
+        |i\alpha + \beta - 2| \le 3 \quad \dots (2)
+        \]
+        令 $u = \alpha + \beta - 2$ $\dots (3)$，$v = i\alpha + \beta - 2$ $\dots (4)$。由 (1), (2) 可得：
+        \[
+        |u| \le 1 \quad \dots (1')
+        \]
+        \[
+        |v| \le 3 \quad \dots (2')
+        \]
+        从 (3), (4) 中消去 $\beta$ 得 $\alpha(1-i) = u-v$，故 $\alpha = \frac{u-v}{1-i} = \frac{1+i}{2}u - \frac{1+i}{2}v$。
+        \[
+        f(1+i) = (1+i)^2 + \alpha(1+i) + \beta = 2i + \alpha + (i\alpha + \beta)
+        \]
+        \[
+        = 2i + \frac{1+i}{2}u - \frac{1+i}{2}v + (v+2) = \frac{1+i}{2}u + \frac{1-i}{2}v + 2 + 2i \quad \dots (5)
+        \]
+        于是，$f(1+i) - (2+2i) = \frac{1+i}{2}u + \frac{1-i}{2}v$。由三角不等式：
+        \[
+        |f(1+i) - (2+2i)| = \left| \frac{1+i}{2}u + \frac{1-i}{2}v \right| \le \left| \frac{1+i}{2}u \right| + \left| \frac{1-i}{2}v \right| \quad \dots (6)
+        \]
+        由于 $\left| \frac{1+i}{2} \right| = \left| \frac{1-i}{2} \right| = \frac{\sqrt{2}}{2}$，利用 $(1'), (2')$ 可得：
+        \[
+        \left| \frac{1+i}{2} \right| |u| + \left| \frac{1-i}{2} \right| |v| \le \frac{\sqrt{2}}{2} \cdot 1 + \frac{\sqrt{2}}{2} \cdot 3 = 2\sqrt{2} \quad \dots (7)
+        \]
+        因此，由 (6), (7) 得：
+        \[
+        |f(1+i) - (2+2i)| \le 2\sqrt{2}
+        \]
+        由此可知，在复数平面上，$f(1+i)$ 在以 $2+2i$ 为中心、半径为 $2\sqrt{2}$ 的圆周上及其内部运动。图形为以 $2+2i$ 为圆心，半径 $2\sqrt{2}$ 的圆盘（含边界）。
+    \end{solution}
+
+    \part 当 $f(1+i) = 0$ 时，求 $\alpha, \beta$ 的值。
+    \begin{solution}
+        若 $f(1+i) = 0$，由 (5) 得 $\frac{1+i}{2}u + \frac{1-i}{2}v + 2 + 2i = 0$ $\dots (8)$。
+        由于 $|f(1+i) - (2+2i)| = 2\sqrt{2}$，根据 (6), (7) 的等号成立条件，设 $k > 0$：
+        \[
+        \frac{1-i}{2}v = k \cdot \frac{1+i}{2}u, \quad |u|=1, |v|=3
+        \]
+        则 $\left| \frac{1-i}{2} \right| |v| = k \left| \frac{1+i}{2} \right| |u|$，代入得 $\frac{\sqrt{2}}{2} \cdot 3 = k \cdot \frac{\sqrt{2}}{2} \cdot 1$，故 $k=3$。
+        所以 $\frac{1-i}{2}v = 3 \cdot \frac{1+i}{2}u$。代入 (8) 式：
+        \[
+        \frac{1+i}{2}u + 3 \cdot \frac{1+i}{2}u + 2 + 2i = 0 \implies 2(1+i)u + 2 + 2i = 0
+        \]
+        由此得 $u = -1$。进而 $v = 3 \cdot \frac{1+i}{1-i}u = 3 \cdot i \cdot (-1) = -3i$。
+        由 (3), (4) 得：
+        \[
+        \alpha = \frac{1+i}{2}(-1) - \frac{1+i}{2}(-3i) = -2+i
+        \]
+        \[
+        \beta = -1 - (-2+i) + 2 = 3-i
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+关于整式 $f(z) = z^6 + z^4 + z^2 + 1$，回答下列问题。
+\begin{parts}
+    \part 证明：对于所有满足 $f(z) = 0$ 的复数 $z$，$|z| = 1$ 成立。
+    \begin{solution}
+        对于 $f(z) = z^6 + z^4 + z^2 + 1$，令 $f(z) = 0$ 得：
+        \[
+        z^4(z^2+1) + z^2+1 = 0 \implies (z^2+1)(z^4+1) = 0
+        \]
+        由 $z^2+1=0$ 得 $z^2 = -1$，故 $z = \pm i$。
+        \[
+        z = \cos \frac{\pi}{2} + i \sin \frac{\pi}{2}, \quad z = \cos \frac{3}{2}\pi + i \sin \frac{3}{2}\pi
+        \]
+        由 $z^4+1=0$ 得 $z^4 = -1$。变形为 $(z^2+1)^2 - (\sqrt{2}z)^2 = 0$，即 $(z^2-\sqrt{2}z+1)(z^2+\sqrt{2}z+1) = 0$。
+        由此得 $z = \frac{\sqrt{2} \pm \sqrt{2}i}{2} = \frac{\sqrt{2}}{2}(1 \pm i)$，$z = \frac{-\sqrt{2} \pm \sqrt{2}i}{2} = \frac{\sqrt{2}}{2}(-1 \pm i)$。
+        \[
+        z = \cos \frac{\pi}{4} + i \sin \frac{\pi}{4}, \quad z = \cos \frac{3}{4}\pi + i \sin \frac{3}{4}\pi
+        \]
+        \[
+        z = \cos \frac{5}{4}\pi + i \sin \frac{5}{4}\pi, \quad z = \cos \frac{7}{4}\pi + i \sin \frac{7}{4}\pi
+        \]
+        综上所述，对于所有 $f(z)=0$ 的解 $z$，$|z|=1$ 均成立。
+    \end{solution}
+
+    \part 求满足以下条件的所有复数 $w$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image370.png}
+    \end{figure}
+    \fi
+    条件：对于所有满足 $f(z) = 0$ 的复数 $z$，均有 $f(wz) = 0$ 成立。
+    \begin{solution}
+        若对于所有满足 $f(z)=0$ 的 $z$，均有 $f(wz)=0$，由 (1) 可知：
+        \[
+        |z|=1, \quad |wz|=1
+        \]
+        于是 $|w||z|=1$ 推出 $|w|=1$。令 $w = \cos \theta + i \sin \theta \ (0 \le \theta < 2\pi)$。
+        在复数平面上，点 $wz$ 是将点 $z$ 绕原点旋转 $\theta$ 得到的点。
+        设 $f(z)=0$ 的解为 $z_1, z_2, z_3, z_4, z_5, z_6$。要使点 $wz$ 与集合中的点重合，着眼于 $z_1$：
+        当 $wz_1 = z_1$ 时，$\theta = 0$，此时 $wz$ 与 $z$ 一致。
+        当 $wz_1 = z_2$ 时，$\theta = \frac{\pi}{4}$，但此时 $f(wz_3) \ne 0$。
+        当 $wz_1 = z_3$ 时，$\theta = \frac{\pi}{2}$，但此时 $f(wz_2) \ne 0$。
+        当 $wz_1 = z_4$ 时，$\theta = \pi$，此时为关于原点对称移动，$wz$ 与 $z$ 集合一致。
+        当 $wz_1 = z_5$ 时，$\theta = \frac{5}{4}\pi$，但此时 $f(wz_3) \ne 0$。
+        当 $wz_1 = z_6$ 时，$\theta = \frac{3}{2}\pi$，但此时 $f(wz_2) \ne 0$。
+        因此，符合条件的为 $\theta = 0$ 或 $\theta = \pi$。
+        \[
+        w = \cos 0 + i \sin 0 = 1, \quad w = \cos \pi + i \sin \pi = -1
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $b, c$ 为实数且 $c > 0$。对于四次方程 $x^4 + bx^2 + c^2 = 0$，回答下列问题。
+\begin{parts}
+    \part 求使方程具有 4 个互异虚数解的 $b$ 和 $c$ 的条件。
+    \begin{solution}
+        当 $c > 0$ 时，对于四次方程 $x^4 + bx^2 + c^2 = 0$ $\dots (1)$，令 $x^2 = t$，则 (1) 变为 $t^2 + bt + c^2 = 0$ $\dots (2)$，其解为：
+        \[
+        t = \frac{-b \pm \sqrt{b^2 - 4c^2}}{2} = \frac{-b \pm \sqrt{(b+2c)(b-2c)}}{2}
+        \]
+        若 (1) 有 4 个互异虚数解，则 (2) 必须有两个不相等的解，且 $b^2 - 4c^2 \ne 0$。
+        (i) 当 $b^2 - 4c^2 > 0$（即 $b < -2c$ 或 $2c < b$）时：
+        因为 $c^2 > 0$，所以 (2) 有两个互异的正解或两个互异的负解。
+        若 (1) 有 4 个互异虚数解，则对应 (2) 必须有两个互异的负解，故 $-\frac{b}{2} < 0$，即 $b > 0$。
+        结合 $b < -2c, 2c < b$ 可知，此时条件为 $2c < b$。
+        (ii) 当 $b^2 - 4c^2 < 0$（即 $-2c < b < 2c$）时：
+        (2) 具有两个互异的虚数解 $t = \frac{-b \pm \sqrt{4c^2 - b^2}i}{2}$。由于 $x^2 = t$，(1) 同样会产生 4 个互异的虚数解。
+        综合 (i)(ii)，(1) 具有 4 个互异虚数解的条件为：
+        \[
+        2c < b \quad \text{或} \quad -2c < b < 2c
+        \]
+        即 $b < 2c$ 且 $b \ne -2c$。
+    \end{solution}
+
+    \part 在 (1) 所求的条件下，不用双重根号表示这 4 个解。
+    \begin{solution}
+        设 $p, q$ 为实数，$x = p + qi \ (q \ne 0)$，则 $x^2 = p^2 - q^2 + 2pqi$。
+        (i) 当 $2c < b$ 时：$p^2 - q^2 = \frac{-b \pm \sqrt{b^2 - 4c^2}}{2}$ $\dots (3)$，$2pq = 0$ $\dots (4)$。
+        因为 $q \ne 0$，所以由 (4) 知 $p = 0$。代入 (3) 得：
+        \[
+        q^2 = -\frac{-b \pm \sqrt{b^2 - 4c^2}}{2} = \frac{b \mp \sqrt{(b+2c)(b-2c)}}{2} = \frac{2b \mp 2\sqrt{(b+2c)(b-2c)}}{4}
+        \]
+        \[
+        = \frac{\left( \sqrt{b+2c} \mp \sqrt{b-2c} \right)^2}{4} \quad (\text{复号同顺})
+        \]
+        由此得 $q = \pm \frac{\sqrt{b+2c} \mp \sqrt{b-2c}}{2}$。故 (1) 的解为：
+        \[
+        x = \frac{\sqrt{b+2c} \pm \sqrt{b-2c}}{2}i, \quad \frac{\sqrt{b+2c} \mp \sqrt{b-2c}}{2}i
+        \]
+        (ii) 当 $-2c < b < 2c$ 时：$p^2 - q^2 = -\frac{b}{2}$ $\dots (5)$，$2pq = \pm \frac{\sqrt{4c^2 - b^2}}{2}$ $\dots (6)$。
+        由 (6) 得 $q = \pm \frac{\sqrt{4c^2 - b^2}}{4p}$，代入 (5) 得 $p^2 - \frac{4c^2 - b^2}{16p^2} = -\frac{b}{2}$。
+        \[
+        16p^4 - (4c^2 - b^2) + 8bp^2 = 0 \implies 16p^4 + 8bp^2 - (2c+b)(2c-b) = 0
+        \]
+        整理得 $\{4p^2 + (2c+b)\}\{4p^2 - (2c-b)\} = 0$。由 $2c+b > 0$ 知：
+        \[
+        4p^2 - (2c-b) = 0, \quad p^2 = \frac{2c-b}{4}, \quad p = \pm \frac{\sqrt{2c-b}}{2}
+        \]
+        代入 (5) 得 $q^2 = \frac{2c-b}{4} + \frac{b}{2} = \frac{2c+b}{4}$，故 $q = \pm \frac{\sqrt{2c+b}}{2}$。因此 (1) 的解为：
+        \[
+        x = \frac{\sqrt{2c-b} \pm \sqrt{2c+b}i}{2}, \quad \frac{-\sqrt{2c-b} \pm \sqrt{2c+b}i}{2}
+        \]
+    \end{solution}
+
+    \part 求使 (2) 中求出的 4 个解在复数平面的同一圆周上的 $b$ 和 $c$ 的条件。
+    \begin{solution}
+        (i) 当 $2c < b$ 时，4 个解全部位于虚轴上，不在同一个圆周上。
+        (ii) 当 $-2c < b < 2c$ 时：
+        设 $p_1 = \frac{\sqrt{2c-b}}{2} > 0$，$q_1 = \frac{\sqrt{2c+b}}{2} > 0$。则 4 个解为：
+        \[
+        p_1 + q_1i, \quad p_1 - q_1i, \quad -p_1 + q_1i, \quad -p_1 - q_1i
+        \]
+        在复数平面上，这 4 个点均在以原点为中心、半径为 $\sqrt{p_1^2 + q_1^2}$ 的圆周上。
+        由 (i)(ii) 可知，所求条件为 $-2c < b < 2c$。
+    \end{solution}
+
+    \part 求使 (2) 中求出的 4 个解在复数平面的同一直线上等间隔排列的 $b$ 和 $c$ 的条件。
+    \begin{solution}
+        (i) 当 $2c < b$ 时：
+        设 $s = \frac{\sqrt{b+2c}}{2} > 0$，$t = \frac{\sqrt{b-2c}}{2} > 0$。则 4 个解为：
+        \[
+        (s+t)i, \quad (s-t)i, \quad (-s+t)i, \quad (-s-t)i
+        \]
+        这 4 个解排列在虚轴上。由于 $s+t > s-t > 0$，等间隔排列的条件为：
+        \[
+        (s+t) - (s-t) = (s-t) - (-s+t) \implies 2t = 2s - 2t
+        \]
+        即 $s = 2t$。代入得 $\frac{\sqrt{b+2c}}{2} = 2 \cdot \frac{\sqrt{b-2c}}{2}$。
+        平方得 $b+2c = 4(b-2c)$，即 $3b = 10c$。（此式满足 $2c < b$）
+        (ii) 当 $-2c < b < 2c$ 时，4 个解在同一圆周上，不在同一直线上。
+        由 (i)(ii) 可知，所求条件为 $3b = 10c$。
+    \end{solution}
+\end{parts}
+
+\question
+设复数 $z$ 满足条件 ($\star$)：$iz^2$ 为实数，且 $0 \leqq iz^2 \leqq 2$。其中 $i$ 为虚数单位。
+回答下列问题。
+\begin{parts}
+    \part 求满足 $iz^2 = 2$ 的所有复数 $z$。
+    \begin{solution}
+        设 $z = r(\cos\theta + i\sin\theta)$，则 $i = \cos\frac{\pi}{2} + i\sin\frac{\pi}{2}$，$z^2 = r^2(\cos 2\theta + i\sin 2\theta)$。
+        故 $iz^2 = r^2 \left\{ \cos\left(2\theta + \frac{\pi}{2}\right) + i\sin\left(2\theta + \frac{\pi}{2}\right) \right\} \dots (\ast)$。
+        当 $iz^2 = 2$ 时，由 $r^2 = 2$ 且 $2\theta + \frac{\pi}{2} = 2n\pi$ ($n$ 为整数)，得 $r = \sqrt{2}$。
+        又由 $0 \leqq \theta < 2\pi$，当 $n = 1, 2$ 时，得 $\theta = \frac{3}{4}\pi, \frac{7}{4}\pi$。
+        因此，
+        \[
+        z = \sqrt{2}\left(\cos\frac{3}{4}\pi + i\sin\frac{3}{4}\pi\right) = -1 + i,\, z = \sqrt{2}\left(\cos\frac{7}{4}\pi + i\sin\frac{7}{4}\pi\right) = 1 - i
+        \]
+    \end{solution}
+
+    \part 求满足 $0 < iz^2 \leqq 2$ 的复数 $z$ 的偏角 $\theta$ 的所有值。其中 $0 \leqq \theta < 2\pi$。
+    \begin{solution}
+        当 $0 < iz^2 \leqq 2$ 时，由 $(\ast)$ 知 $2\theta + \frac{\pi}{2} = 2m\pi$ ($m$ 为整数)。
+        由于 $0 \leqq \theta < 2\pi$，得 $\theta = \frac{3}{4}\pi, \frac{7}{4}\pi$。
+    \end{solution}
+
+    \part 设满足条件 ($\star$) 的复数 $z$ 的全体集合为 $S$。在复数平面上画出集合 $S$。
+    \begin{solution}
+        (i) 当 $0 < iz^2 \leqq 2$ 时：
+        由 $(\ast)$ 知 $0 < r^2 \leqq 2$ (即 $0 < r \leqq \sqrt{2}$)，且由 (2) 知 $\theta = \frac{3}{4}\pi, \frac{7}{4}\pi$。
+        (ii) 当 $iz^2 = 0$ 时：
+        由 $(\ast)$ 知 $r = 0$，即 $z = 0$。
+        综合 (i)(ii)，集合 $S$ 在复数平面上的图形为连接 $(-1, 1)$ 和 $(1, -1)$ 的线段：
+        \[
+        y = -x \quad (-1 \leqq x \leqq 1)
+        \]
+    \end{solution}
+
+    \part 当复数 $z$ 在 $S$ 上运动时，求 $\frac{z}{z + 2}$ 实部的最小值。
+    \begin{solution}
+        由 (3) 可知 $z = x - xi$ ($-1 \leqq x \leqq 1$)。设复数 $w$ 为：
+        \[
+        w = \frac{z}{z+2} = 1 - \frac{2}{z+2} = 1 - \frac{2}{x+2-xi} = 1 - \frac{2(x+2+xi)}{(x+2)^2 + x^2}
+        \]
+        设 $w$ 的实部为 $f(x)$，则
+        \[
+        f(x) = 1 - \frac{2(x+2)}{(x+2)^2 + x^2} = 1 - \frac{x+2}{x^2+2x+2}
+        \]
+        对 $f(x)$ 求导：
+        \[
+        f'(x) = -\frac{(x^2+2x+2)-(x+2)(2x+2)}{(x^2+2x+2)^2} = \frac{x^2+4x+2}{(x^2+2x+2)^2}
+        \]
+        在 $-1 \leqq x \leqq 1$ 范围内，$f'(x) = 0$ 的解为 $x = -2+\sqrt{2}$。
+        通过增减表可知，$f(x)$ 的最小值为：
+        \[
+        f(-2+\sqrt{2}) = 1 - \frac{2 \cdot \sqrt{2}}{(\sqrt{2})^2 + (-2+\sqrt{2})^2} = 1 - \frac{\sqrt{2}}{4-2\sqrt{2}} = \frac{1-\sqrt{2}}{2}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $a$ 为正实数。
+\begin{parts}
+    \part 当 $a \neq 1$ 时，考虑关于复数 $z$ 的方程 $a|z-1| = |(a-2)z+a|$。在复数平面上画出满足该方程的 $z$ 的全体集合。
+    \begin{solution}
+        对 $a|z-1| = |(a-2)z+a|$ 两边平方：
+        \[
+        a^2|z-1|^2 = |(a-2)z+a|^2
+        \]
+        利用共轭复数，有 $a^2(z-1)(\bar{z}-1) = \{(a-2)z+a\}\{(a-2)\bar{z}+a\}$，整理得：
+        \[
+        a^2(z\bar{z}-z-\bar{z}+1) = (a-2)^2 z\bar{z} + a(a-2)z + a(a-2)\bar{z} + a^2
+        \]
+        化简得 $4(a-1)z\bar{z} - 2a(a-1)z - 2a(a-1)\bar{z} = 0$。由于 $a \neq 1$，除以 $4(a-1)$ 得：
+        \[
+        z\bar{z} - \frac{a}{2}z - \frac{a}{2}\bar{z} = 0,\, \left(z-\frac{a}{2}\right)\left(\bar{z}-\frac{a}{2}\right) = \frac{a^2}{4}
+        \]
+        即 $\left|z-\frac{a}{2}\right|^2 = \frac{a^2}{4}$，得 $\left|z-\frac{a}{2}\right| = \frac{a}{2}$。
+        故 $z$ 的轨迹是以 $\frac{a}{2}$ 为中心，$\frac{a}{2}$ 为半径的圆。
+    \end{solution}
+
+    \part 求使得方程 $|z|^2 = 6-a$ 和 $a|z-1| = |(a-2)z+a|$ 同时有解的 $a$ 的范围。
+    \begin{solution}
+        首先，当 $a > 0$ 时，满足 $|z|^2 = 6-a \dots (1)$ 的复数 $z$：
+        若 $6-a=0$ ($a=6$)，则 $z=0$。
+        若 $6-a>0$ ($0<a<6$)，则 $z$ 是以原点为中心，半径为 $\sqrt{6-a}$ 的圆。
+        其次，满足 $a|z-1| = |(a-2)z+a| \dots (2)$ 的复数 $z$：
+        若 $a \neq 1$，由 (1) 知 $z$ 是中心为 $\frac{a}{2}$，半径为 $\frac{a}{2}$ 的圆。
+        若 $a = 1$，由 $|z-1| = |-z+1|$ 知 $z$ 为任意点。
+        
+        同时满足 (1) 和 (2) 的情况如下：
+        (i) $a=6$ 时，$z=0$ 同时满足两式。
+        (ii) $a=1$ 时，半径为 $\sqrt{5}$ 的圆上的点均满足。
+        (iii) $0 < a < 1$ 或 $1 < a < 6$ 时：
+        两圆有公共点的条件是，两圆中心距离 $\frac{a}{2}$ 满足：
+        \[
+        \left| \sqrt{6-a} - \frac{a}{2} \right| \leqq \frac{a}{2} \leqq \sqrt{6-a} + \frac{a}{2} \dots (3)
+        \]
+        (3) 的右侧不等式恒成立。左侧不等式为：
+        \[
+        \left( \sqrt{6-a} - \frac{a}{2} \right)^2 \leqq \frac{a^2}{4} \implies 6-a-a\sqrt{6-a} \leqq 0 \implies 6-a \leqq a\sqrt{6-a}
+        \]
+        得 $\sqrt{6-a} \leqq a$，即 $6-a \leqq a^2$，整理得 $a^2+a-6 \geqq 0$，即 $(a+3)(a-2) \geqq 0$。
+        由于 $a+3 > 0$，得 $a \geqq 2$。结合 $1 < a < 6$，得 $2 \leqq a < 6$。
+        综合 (i) 到 (iii)，$a$ 的范围为 $a=1, 2 \leqq a \leqq 6$。
+    \end{solution}
+\end{parts}
+
+\question
+对于正方形，将其两条对角线的交点称为该正方形的中心。此外，所有内角均小于 $180^\circ$ 的四边形称为凸四边形。此时，回答下列问题。
+\begin{parts}
+    \part 复数平面上有一个正方形 $PQRS$，从其中心 $T$ 看去，四个顶点 $P, Q, R, S$ 按逆时针方向排列。设表示顶点 $P, Q$ 坐标的复数分别为 $p, q$，请用 $p, q$ 表示中心 $T$ 的坐标对应的复数 $t$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image381.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由于复数平面上按逆时针方向排列的四个点 $P, Q, R, S$ 是正方形的顶点，且中心为 $T$，则 $\angle QPT = \frac{\pi}{4}$。
+        根据 $PT = \frac{\sqrt{2}}{2}PQ$，中心 $T(t)$ 是将点 $Q(q)$ 绕点 $P(p)$ 旋转 $\frac{\pi}{4}$ 并将距离缩短为 $\frac{\sqrt{2}}{2}$ 倍后的点，故：
+        \[
+        t - p = \frac{\sqrt{2}}{2} \left( \cos\frac{\pi}{4} + i\sin\frac{\pi}{4} \right) (q - p) = \frac{1+i}{2}(q - p)
+        \]
+        整理得，$t = p + \frac{1+i}{2}(q - p) = \frac{1-i}{2}p + \frac{1+i}{2}q$。
+    \end{solution}
+
+    \part 复数平面上有一个凸四边形 $ABCD$。表示顶点 $A, B, C, D$ 坐标的复数分别为 $\alpha, \beta, \gamma, \delta$。在四边形 $ABCD$ 的外部，以线段 $AB$ 为一边作正方形，设其中心为 $X$。同样地，以线段 $BC, CD, DA$ 为一边在外部作正方形，其中心分别为 $Y, Z, W$。证明此时 $XZ = YW$ 且直线 $XZ$ 与直线 $YW$ 垂直。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image382.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设按逆时针方向排列的四个点 $A(\alpha), B(\beta), C(\gamma), D(\delta)$ 为凸四边形的顶点。利用 (1) 的结果，各正方形中心的复数 $x, y, z, w$ 分别为：
+        \[
+        x = \frac{1-i}{2}\beta + \frac{1+i}{2}\alpha,\, y = \frac{1-i}{2}\gamma + \frac{1+i}{2}\beta,\, z = \frac{1-i}{2}\delta + \frac{1+i}{2}\gamma,\, w = \frac{1-i}{2}\alpha + \frac{1+i}{2}\delta
+        \]
+        由此可得：
+        \[
+        z - x = \frac{1-i}{2}(\delta - \beta) + \frac{1+i}{2}(\gamma - \alpha),\, w - y = \frac{1-i}{2}(\alpha - \gamma) + \frac{1+i}{2}(\delta - \beta)
+        \]
+        计算 $i(z - x)$：
+        \[
+        i(z - x) = \frac{i+1}{2}(\delta - \beta) + \frac{i-1}{2}(\gamma - \alpha) = \frac{1-i}{2}(\alpha - \gamma) + \frac{1+i}{2}(\delta - \beta) = w - y
+        \]
+        因此，$\frac{w - y}{z - x} = i$。由于 $\left| \frac{w - y}{z - x} \right| = 1$ 且 $\arg \frac{w - y}{z - x} = \frac{\pi}{2}$，故 $XZ = YW$ 且直线 $XZ$ 与直线 $YW$ 垂直。
+        注：若顶点按顺时针方向排列，只需将 $i$ 替换为 $-i$ 即可得到相同结论。
+    \end{solution}
+
+    \part 在 (2) 中，当线段 $XZ$ 与线段 $YW$ 在它们的中点处相交时，四边形 $ABCD$ 是什么样的四边形？请说明理由。
+    \begin{solution}
+        若线段 $XZ$ 与线段 $YW$ 在中点相交，则由 $\frac{x+z}{2} = \frac{y+w}{2}$ 得：
+        \[
+        \frac{1-i}{2}(\beta + \delta) + \frac{1+i}{2}(\alpha + \gamma) = \frac{1-i}{2}(\gamma + \alpha) + \frac{1+i}{2}(\beta + \delta)
+        \]
+        整理得 $i(\alpha + \gamma) = i(\beta + \delta)$，即 $\alpha + \gamma = \beta + \delta$。
+        由于 $\alpha - \beta = \delta - \gamma$，意味着 $BA = CD$ 且 $BA \parallel CD$。
+        因此，四边形 $ABCD$ 是平行四边形。
     \end{solution}
 \end{parts}
 \end{questions}
