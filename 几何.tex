@@ -12690,6 +12690,100 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \end{parts}
 
     \question
+ Zerr's theorem
+若 $AA'$ 是焦弦，$AB, A'B'$ 分别是过 $A, A'$ 的法线弦，则 $AA' // BB'$，且 $|BB'| = 3|AA'|$。
+\begin{solution}
+设 $y^2 = 4ax$，焦点 $F(a, 0)$。
+设 $A(at_1^2, 2at_1)$，$A'(at_2^2, 2at_2)$。
+因为 $A, A', F$ 三点共线：
+\[
+\left| \begin{array}{ccc} at_1^2 & 2at_1 & 1 \\ at_2^2 & 2at_2 & 1 \\ a & 0 & 1 \end{array} \right| = 0
+\]
+解得 $t_1t_2 = -1$。
+过 $A$ 点切线斜率为 $\frac{1}{t_1}$，则过 $A$ 点法线斜率为 $-t_1$。
+法线 $AB$ 方程为：
+\[
+y - 2at_1 = -t_1(x - at_1^2)
+\]
+联立 $y^2 = 4ax$，解得 $B$ 点坐标：
+\[
+B\left(a\left(t_1 + \frac{2}{t_1}\right)^2, -2a\left(t_1 + \frac{2}{t_1}\right)\right)
+\]
+同理可得 $B'\left(a\left(t_2 + \frac{2}{t_2}\right)^2, -2a\left(t_2 + \frac{2}{t_2}\right)\right)$。
+$AB'$ 方程：$y - 2at_1 = -t_1(x - at_1^2)$。
+$A'B$ 方程：$y - 2at_2 = -t_2(x - at_2^2)$。
+设 $AB'$ 与 $A'B$ 交点为 $R$，解得 $R(a(t_1^2 + t_2^2 + 1), a(t_1 + t_2))$。
+设 $R$ 内分 $AB'$ 比为 $1 : \lambda$：
+\[
+\frac{\lambda(2at_1) - 2a\left(t_1 + \frac{2}{t_1}\right)}{\lambda + 1} = a(t_1 + t_2)
+\]
+代入 $t_1t_2 = -1$，解得 $\lambda = 3$。
+由于 $\triangle AA'R \sim \triangle B'BR$，对应边成比例：
+\[
+3|AA'| = |BB'|
+\]
+\end{solution}
+
+\question
+ Mobius' theorem of the parabola
+分别过抛物线内接三角形 $ABC$ 的顶点作切线，设它们各交于 $A', B', C'$，则：
+\[
+S_{\triangle A'B'C'} = \frac{1}{2} S_{\triangle ABC}
+\]
+\begin{solution}
+设抛物线方程为 $y^2 = 4ax$。
+设 $A(at_1^2, 2at_1), B(at_2^2, 2at_2), C(at_3^2, 2at_3)$。
+则 $S_{\triangle ABC}$ 为如下行列式的绝对值：
+\[
+\begin{aligned}
+S_{\triangle ABC} &= \frac{1}{2} \left| \begin{array}{ccc} at_1^2 & 2at_1 & 1 \\ at_2^2 & 2at_2 & 1 \\ at_3^2 & 2at_3 & 1 \end{array} \right| \\
+&= a^2 \left| \begin{array}{ccc} t_1^2 & t_1 & 1 \\ t_2^2 & t_2 & 1 \\ t_3^2 & t_3 & 1 \end{array} \right| \\
+&= a^2 \left| (t_1-t_2)(t_2-t_3)(t_3-t_1) \right|
+\end{aligned}
+\]
+又过 $A, B, C$ 的抛物线切线方程为 $y = \frac{x}{t_i} + at_i$。
+解切线方程两两相交得：
+$A'(at_2t_3, a(t_2+t_3)), B'(at_1t_3, a(t_1+t_3)), C'(at_1t_2, a(t_1+t_2))$。
+则 $S_{\triangle A'B'C'}$ 为如下行列式的绝对值：
+\[
+\begin{aligned}
+S_{\triangle A'B'C'} &= \frac{1}{2} \left| \begin{array}{ccc} at_2t_3 & a(t_2+t_3) & 1 \\ at_1t_3 & a(t_1+t_3) & 1 \\ at_1t_2 & a(t_1+t_2) & 1 \end{array} \right| \\
+&= \frac{1}{2} a^2 \left| \begin{array}{ccc} t_2t_3 & t_2+t_3 & 1 \\ t_1t_3 & t_1+t_3 & 1 \\ t_1t_2 & t_1+t_2 & 1 \end{array} \right| \\
+&= \frac{1}{2} a^2 \left| (t_1-t_2)(t_2-t_3)(t_3-t_1) \right|
+\end{aligned}
+\]
+$\therefore S_{\triangle A'B'C'} = \frac{1}{2} S_{\triangle ABC}$。
+\end{solution}
+
+\question
+ Gains 定理 (Gains' theorem)
+设 $\triangle PQR$ 三边所在直线切于抛物线 $y^2 = 4ax$，$\alpha, \beta, \gamma$ 分别是这三边与该抛物线对称轴的交角，$d$ 是 $\triangle PQR$ 外接圆的直径，则：
+\[
+d = a \csc \alpha \csc \beta \csc \gamma
+\]
+\begin{solution}
+设 $\triangle PQR$ 三边切抛物线 $y^2 = 4ax$ 于 $P_1(at_1^2, 2at_1), P_2(at_2^2, 2at_2), P_3(at_3^2, 2at_3)$。
+则三边所在直线方程为 $y = \frac{1}{t_i}(x + at_i^2) \quad (i=1, 2, 3)$。
+$\therefore \tan \gamma = \frac{1}{t_1}, \tan \alpha = \frac{1}{t_2}, \tan \beta = \frac{1}{t_3}$。
+切线方程两两相解得：
+$P(at_1t_3, a(t_1+t_3)), Q(at_1t_2, a(t_1+t_2)), R(at_2t_3, a(t_2+t_3))$。
+设 $\angle QPR = \theta$，则 $\frac{|QR|}{\sin \theta} = d$。
+\[
+|QR| = \sqrt{a^2t_2^2(t_1-t_3)^2 + a^2(t_1-t_3)^2} = a |t_1-t_3| \sqrt{t_2^2+1}
+\]
+\[
+\tan \theta = \tan(\gamma - \beta) = \frac{t_3 - t_1}{1 + t_1t_3} \implies \sin \theta = \frac{|t_1 - t_3|}{\sqrt{(t_1^2+1)(t_3^2+1)}}
+\]
+\[
+\begin{aligned}
+\therefore d &= a |t_1-t_3| \sqrt{t_2^2+1} \cdot \frac{\sqrt{(t_1^2+1)(t_3^2+1)}}{|t_1-t_3|} \\
+&= a \sqrt{t_1^2+1} \cdot \sqrt{t_2^2+1} \cdot \sqrt{t_3^2+1} \\
+&= a \csc \alpha \csc \beta \csc \gamma
+\end{aligned}
+\]
+由于 $\csc \gamma = \sqrt{t_1^2+1}$ 等。
+\end{solution}
+    \question
 在曲线 $y=x^2$ 上取两点 $A(-1, 1), B(b, b^2)$。其中 $b > -1$。求满足以下条件的 $b$ 的取值范围。
 条件：在 $y=x^2$ 上存在点 $T(t, t^2) (-1 < t < b)$，使得 $\angle ATB$ 为直角。
 
@@ -14237,6 +14331,31 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \[ \frac{2}{\pi} - \frac{S}{T} = \frac{2}{\pi} - \frac{4a^2b^2}{\pi ab(a^2+b^2)} = \frac{2}{\pi} \left( 1 - \frac{2ab}{a^2+b^2} \right) = \frac{2}{\pi} \cdot \frac{a^2+b^2-2ab}{a^2+b^2} = \frac{2(a-b)^2}{\pi(a^2+b^2)} \ge 0 \]
     因此 $\frac{S}{T} \le \frac{2}{\pi}$ 成立。当 $a=b$ 时等号成立。结合 $(1)$，此时 $a = b = \frac{c}{\sqrt{2}}$。
 \end{solution}
+
+\question
+ 共轭直径的阿波罗尼奥斯定理 (Apollonius' theorem for conjugate diameters)
+设 $P$ 和 $P'$ 各是椭圆 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ 或双曲线 $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ 与其两共轭直径的一个交点，则：
+(1) $OP^2 + OP'^2 = a^2 + b^2$ 或 $OP^2 - OP'^2 = a^2 - b^2$
+
+\begin{solution}
+$OP$ 与 $OP'$ 是椭圆 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ 的共轭半径，设其方程为 $y = mx$ 与 $y = m'x$，其中 $mm' = -\frac{b^2}{a^2}$。
+设 $P(x, y)$，则有：
+\[
+\begin{cases} \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \\ y = mx \end{cases} \implies x^2 = \frac{a^2b^2}{b^2 + a^2m^2}, \quad y^2 = \frac{a^2b^2m^2}{b^2 + a^2m^2}
+\]
+又设 $P'(x', y')$，同理可得：
+\[
+x'^2 = \frac{a^2b^2}{b^2 + a^2m'^2}, \quad y'^2 = \frac{a^2b^2m'^2}{b^2 + a^2m'^2}
+\]
+\[
+\begin{aligned}
+\therefore OP^2 + OP'^2 &= x^2 + y^2 + x'^2 + y'^2 \\
+&= \frac{a^2b^2(1+m^2)}{b^2+a^2m^2} + \frac{a^2b^2(1+m'^2)}{b^2+a^2m'^2} \\
+&= \frac{b^2(a^2+b^2) + a^2m^2(a^2+b^2)}{b^2+a^2m^2} \\
+&= a^2 + b^2
+\end{aligned}
+\]
+\end{solution}
 %hyperbola
     \question 双曲线 
     \[
@@ -15124,6 +15243,68 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
     \end{solution}
     
     \question
+ Brianchon-Poncelet Theorem
+若三角形的三个顶点在等轴双曲线上，则该三角形垂心也在此双曲线上。
+\begin{solution}
+设 $xy=c^2$，$c \neq 0$。
+设 $A\left(ct_1, \frac{c}{t_1}\right)$，$B\left(ct_2, \frac{c}{t_2}\right)$，$C\left(ct_3, \frac{c}{t_3}\right)$。
+$AB$ 斜率：
+\[
+m_{AB} = \frac{\frac{c}{t_1} - \frac{c}{t_2}}{ct_1 - ct_2} = -\frac{1}{t_1t_2}
+\]
+因为 $AB \perp CH_3$，所以 $m_{CH_3} = t_1t_2$。
+则 $CH_3$ 方程为：
+\[
+y - \frac{c}{t_3} = t_1t_2(x - ct_3)
+\]
+\[
+t_3y - c = t_1t_2t_3x - c(t_1t_2t_3)t_3
+\]
+同理，$AH_1$ 方程为：
+\[
+t_1y - c = t_1t_2t_3x - c(t_1t_2t_3)t_1
+\]
+解 $CH_3, AH_1$ 的交点，即得：
+\[
+x = -\frac{c}{t_1t_2t_3} , \quad y = -ct_1t_2t_3
+\]
+垂心坐标为 $\left(-\frac{c}{t_1t_2t_3}, -ct_1t_2t_3\right)$。
+由于垂心满足方程 $xy = c^2$，所以垂心也在 $xy = c^2$ 上。
+\end{solution}
+
+\question
+ Greenstreet 定理
+一个圆与一等轴双曲线交于 $A, B, C, D$ 四点。如果 $AB$ 是该圆的直径，那么 $CD$ 通过该双曲线的中心。
+\begin{solution}
+设 $xy=c^2$，$c \neq 0$。
+设 $A\left(ct_1, \frac{c}{t_1}\right)$，$B\left(ct_2, \frac{c}{t_2}\right)$，$C\left(ct_3, \frac{c}{t_3}\right)$，$D\left(ct_4, \frac{c}{t_4}\right)$。
+$AB$ 中点坐标为 $\left(\frac{c}{2}(t_1+t_2), \frac{c}{2}\left(\frac{1}{t_1}+\frac{1}{t_2}\right)\right)$。
+圆的方程为：
+\[
+\left[x - \frac{c}{2}(t_1+t_2)\right]^2 + \left[y - \frac{c}{2}\left(\frac{1}{t_1}+\frac{1}{t_2}\right)\right]^2 = \left[\frac{\sqrt{(ct_1-ct_2)^2 + \left(\frac{c}{t_1}-\frac{c}{t_2}\right)^2}}{2}\right]^2
+\]
+展开并整理得：
+\[
+x^2 + y^2 - c(t_1+t_2)x - c\left(\frac{1}{t_1} + \frac{1}{t_2}\right)y + c^2t_1t_2 + \frac{c^2}{t_1t_2} = 0 \quad (1)
+\]
+将 $xy=c^2$，即 $y = \frac{c^2}{x}$ 代入 (1) 得：
+\[
+x^2 + \frac{c^4}{x^2} - c(t_1+t_2)x - c\left(\frac{1}{t_1} + \frac{1}{t_2}\right)\frac{c^2}{x} + c^2t_1t_2 + \frac{c^2}{t_1t_2} = 0
+\]
+整理为关于 $x$ 的四次方程：
+\[
+x^4 - c(t_1+t_2)x^3 + c^2\left(t_1t_2 + \frac{1}{t_1t_2}\right)x^2 - c^3\left(\frac{1}{t_1} + \frac{1}{t_2}\right)x + c^4 = 0
+\]
+因为 $ct_1, ct_2, ct_3, ct_4$ 皆为该方程的根，根据根与系数的关系：
+\[
+ct_1 + ct_2 + ct_3 + ct_4 = c(t_1 + t_2)
+\]
+\[
+ct_3 + ct_4 = 0 \implies t_3 = -t_4
+\]
+因此 $C$ 与 $D$ 关于原点 $O$ 对称，即 $CD$ 通过双曲线中心即原点 $O$。
+\end{solution}
+    \question
 双曲线 $x^2 - y^2 = 1$ (1) 的渐近线为 $y = x$ (2)。考虑经过 (2) 上的点 $P_0(a_0, a_0)$ ($a_0 > 0$) 且与双曲线 (1) 相切的直线，设切点为 $Q_1$。过 $Q_1$ 作垂直于渐近线 (2) 的直线，设其与渐近线 (2) 的交点为 $P_1(a_1, a_1)$。接着，考虑经过 $P_1$ 且与双曲线 (1) 相切的直线，设切点为 $Q_2$。过 $Q_2$ 作垂直于渐近线 (2) 的直线，其与渐近线 (2) 的交点为 $P_2(a_2, a_2)$。重复此步骤，定义点 $P_n(a_n, a_n)$ 和 $Q_n$。
     \ifprintanswers
     \begin{figure}[H]
@@ -15924,6 +16105,109 @@ x^2 + 13y^2 - 6xy - 4x + 28y + 20 = \frac{256}{9}
         y^2 = \frac{4}{3}x
         \]
     \end{solution}
+
+    \question
+La Hire 轨迹定理
+圆锥曲线互相垂直的切线的交点的轨迹，在椭圆或双曲线的情形下为圆，称为准圆；在抛物线的情形下为直线，为抛物线的准线。
+
+\begin{solution}
+设椭圆的方程为 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$。
+则具有斜率 $k$ 的该椭圆的切线方程是：
+\[
+y = kx \pm \sqrt{a^2k^2 + b^2}
+\]
+而与它垂直相交的该椭圆的切线方程为：
+\[
+y = -\frac{1}{k}x \pm \sqrt{\frac{a^2}{k^2} + b^2}
+\]
+即：
+\[
+(y - kx)^2 = a^2k^2 + b^2
+\]
+\[
+(ky + x)^2 = a^2 + b^2k^2
+\]
+消去 $k$，得：
+\[
+x^2 + y^2 = a^2 + b^2
+\]
+所以所求的轨迹方程即为 $x^2 + y^2 = a^2 + b^2$。
+它是以原点为圆心，$\sqrt{a^2 + b^2}$ 为半径的一个圆。
+\end{solution}
+
+\question
+Klamkin-Miller 轨迹定理
+内接于椭圆的正三角形重心的轨迹，是一个与其同中心的椭圆。
+
+\begin{solution}
+设正三角形 $ABC$ 内接于椭圆 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$，它的顶点 $A, B, C$ 的离心角分别为 $\alpha, \beta, \gamma$。
+于是重心 $G$ 的坐标为：
+\[
+\left( \frac{a}{3}(\cos \alpha + \cos \beta + \cos \gamma), \frac{b}{3}(\sin \alpha + \sin \beta + \sin \gamma) \right)
+\] (1)
+因为 $\triangle ABC$ 是正三角形，重心 $G$ 与垂心 $H$ 相重合。
+$BC$ 方程：
+\[
+\frac{x}{a}\cos \frac{\beta + \gamma}{2} + \frac{y}{b}\sin \frac{\beta + \gamma}{2} = \cos \frac{\beta - \gamma}{2}
+\]
+于是 $BC$ 边上高线 $AH_1$ 的方程为：
+\[
+y - b\sin \alpha = \frac{a}{b}\tan \frac{\beta + \gamma}{2}(x - a\cos \alpha)
+\] (2)
+同理，$BH_2$ 方程为：
+\[
+y - b\sin \beta = \frac{a}{b}\tan \frac{\alpha + \gamma}{2}(x - a\cos \beta)
+\] (3)
+(2) 和 (3) 联立：
+\[
+x = \frac{a^2 + b^2}{2a}(\cos \alpha + \cos \beta + \cos \gamma) - \frac{a^2 - b^2}{2a}\cos(\alpha + \beta + \gamma)
+\]
+\[
+y = \frac{a^2 + b^2}{2b}(\sin \alpha + \sin \beta + \sin \gamma) - \frac{a^2 - b^2}{2b}\sin(\alpha + \beta + \gamma)
+\]
+将 (1) 代入 (4)，
+\[
+x = \frac{a^2 + b^2}{2a^2} \cdot 3x_G + \frac{a^2 - b^2}{2a}\cos(\alpha + \beta + \gamma)
+\]
+\[
+y = \frac{a^2 + b^2}{2b^2} \cdot 3y_G - \frac{a^2 - b^2}{2b}\sin(\alpha + \beta + \gamma)
+\]
+消去 $(\alpha + \beta + \gamma)$，得：
+\[
+\frac{(a^2 + 3b^2)^2}{a^2(a^2 - b^2)^2}x^2 + \frac{(3a^2 + b^2)^2}{b^2(a^2 - b^2)^2}y^2 = 1
+\]
+故所求轨迹为一个中心在原点的椭圆。
+\end{solution}
+
+\question
+L'Hopital theorem of locus
+相交成定角的两条直线都与一定抛物线相切，则这两条直线交点的轨迹是双曲线。
+
+\begin{solution}
+直线 $y = mx + c$ 与抛物线 $y^2 = 4ax$ 相切的充要条件是方程 $(mx + c)^2 = 4ax$，即 $m^2x^2 + 2(mc - 2a)x + c^2 = 0$ 有等根。
+所以 $a = mc$。
+所以：
+\[
+y = mx + \frac{a}{m}
+\]
+\[
+xm^2 - ym + a = 0
+\] (1)
+现从点 $P(x, y)$ 向抛物线 $y^2 = 4ax$ 引两条切线，设其斜率为 $m_1, m_2$，它们的交角为定角 $\alpha$，则：
+\[
+\tan \alpha = \frac{m_1 - m_2}{1 + m_1m_2}
+\] (2)
+因为 $m_1, m_2$ 是 (1) 的二根，根据根与系数的关系：
+\[
+m_1 + m_2 = \frac{y}{x} , \quad m_1m_2 = \frac{a}{x}
+\]
+把它们代入 (2)，得 $y^2 - 4ax = \tan^2 \alpha \left( x + a \right)^2$。
+化成：
+\[
+\frac{\left[ x + a\left( 1 + 2\cot^2 \alpha \right) \right]^2}{4a^2\cot^2 \alpha \csc^2 \alpha} - \frac{y^2}{4a^2\csc^2 \alpha} = 1
+\]
+所以所求轨迹为一双曲线，其离心率为 $\sec \alpha$。
+\end{solution}
 
     \question 已知抛物线 $\Gamma:y = x^2$ 上三个不同点 $A(1,1),B,C$ 满足 $AB \perp AC$,过 $B,C$ 分别作 $\Gamma$ 的切线交于点 $P$,求点 $P$ 的轨迹方程。
     \begin{solution}
