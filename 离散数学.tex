@@ -1798,14 +1798,14 @@ $\sum_{k=x}^{2x} (-1)^{k-1} m^{4(k-1)} = \frac{m^{4(x-1)} [(-1)^{x-1} - m^{4(x+1
         基础步骤:当 $n=1$ 时,左式为 $\frac{2^1}{1} \cdot \frac{1}{\binom{0}{0}} = 2$,右式为 $\frac{2^1}{1} = 2$。左式等于右式,$P_1$ 成立。
 
         归纳步骤:假设归纳假设 $P_n$ 成立, 则对于 $n+1$:
-        \begin{align}
+        \begin{align*}
         \frac{2^{n+1}}{n+1} \sum_{k=0}^{n} \frac{1}{\binom{n}{k}} 
         &= \frac{2^n}{n+1} \left( 1 + \sum_{k=0}^{n-1} \left( \frac{1}{\binom{n}{k}} + \frac{1}{\binom{n}{k+1}} \right) + 1 \right) \\
         &= \frac{2^n}{n+1} \sum_{k=0}^{n-1} \frac{\frac{n-k}{n}+\frac{k+1}{n}}{\binom{n-1}{k}} + \frac{2^{n+1}}{n+1} \\
         &= \frac{2^n}{n} \sum_{k=0}^{n-1} \frac{1}{ \binom{n-1}{k}} + \frac{2^{n+1}}{n+1} \\
         &= \frac{2^n}{n} \sum_{k=0}^{n-1} \frac{1}{\binom{n-1}{k}} + \frac{2^{n+1}}{n+1} \\
         &= \sum_{k=1}^{n+1} \frac{2^k}{k}
-        \end{align}
+        \end{align*}
         即命题 $P_{n+1}$ 成立, 蕴含 $P_n \implies P_{n+1}$ 成立。
 
         由数学归纳法, 命题 $P_n$ 对所有正整数 $n$ 均成立。
