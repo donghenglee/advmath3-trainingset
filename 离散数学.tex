@@ -7014,6 +7014,36 @@ D = z^2 - 4(z^2 - 7) = -3z^2 + 28 \geqq 0 \implies z^2 \leqq \frac{28}{3} \quad 
         答：$(b, c, d) = (5, 9, 15)$。
     \end{solution}
 \end{parts}
+
+\question (USAMO/TST/2001) 求所有整数对 $(x, y)$，使得
+\[
+x^3 + y^3 = (x + y)^2
+\]
+
+\begin{solution}
+因为 $x^3 + y^3 = (x + y)(x^2 - xy + y^2)$，所有的整数对 $(n, -n)$（其中 $n \in \mathbb{Z}$）都是原方程的解。
+假设 $x + y \neq 0$，则方程变为
+\[
+x^2 - xy + y^2 = x + y
+\]
+即
+\[
+x^2 - (y + 1)x + y^2 - y = 0
+\]
+将其看作关于 $x$ 的一元二次方程，计算判别式
+\[
+\Delta = (y + 1)^2 - 4(y^2 - y) = y^2 + 2y + 1 - 4y^2 + 4y = -3y^2 + 6y + 1
+\]
+由 $\Delta \ge 0$ 解得
+\[
+\frac{3 - 2\sqrt{3}}{3} \le y \le \frac{3 + 2\sqrt{3}}{3}
+\]
+因此 $y$ 可能的取值为 $0, 1, 2$，这些值导出的解为 $(1, 0), (0, 1), (1, 2), (2, 1)$ 和 $(2, 2)$。
+所以，该方程的整数解为
+\[
+(x, y) = (1, 0), (0, 1), (1, 2), (2, 1), (2, 2) \text{ 以及 } (n, -n), \forall n \in \mathbb{Z}
+\]
+\end{solution}
 \end{questions}
 \pagebreak
 \begin{center}

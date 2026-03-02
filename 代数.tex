@@ -296,6 +296,24 @@ a^2 + c^2 = 225 - 108 = 117
         \]
     \end{solution}
 
+    \question 已知方程 $\frac{x}{x + 1} + \frac{x + 1}{x} = \frac{4x + a}{x(x + 1)}$ 只有一个实根，求实数 $a$ 的值。
+
+\begin{solution}
+由原方程可得：
+\[
+x^2 + (x + 1)^2 = 4x + a,
+\]
+\[
+2x^2 - 2x + 1 - a = 0.
+\]
+\begin{itemize}
+    \item 当判别式 $\Delta = 0$ 时，有 $4 - 8(1 - a) = 0$，即 $a = \frac{1}{2}$。
+    \item 当 $\Delta > 0$ 但 $x = 0$ 是方程的一个解时（此解不合题意，从而导致原分式方程只有一个实根），将 $x = 0$ 代入得 $1 - a = 0$，即 $a = 1$。
+    \item 当 $\Delta > 0$ 但 $x = -1$ 是方程的一个解时（此解不合题意，从而导致原分式方程只有一个实根），将 $x = -1$ 代入得 $2(1) - 2(-1) + 1 - a = 0$，即 $a = 5$。
+\end{itemize}
+因此，$a = 1, 5$ 或 $\frac{1}{2}$。
+\end{solution}
+
     \question Q16. JEE Main 2021 (20 Jul Shift 1)
 已知 $\alpha$ 和 $\beta$ 是方程 $x^2 + (3)^{\frac{1}{4}}x + 3^{\frac{1}{2}} = 0$ 的两个不相等的实根，则 $\alpha^{96}(\alpha^{12} - 1) + \beta^{96}(\beta^{12} - 1)$ 的值为：
 (1) $56 \times 3^{25}$ \quad (2) $56 \times 3^{24}$ \quad (3) $52 \times 3^{24}$ \quad (4) $28 \times 3^{25}$
@@ -404,6 +422,51 @@ a^2 + c^2 = 225 - 108 = 117
         \]
     \end{solution}
 
+    \question 解方程：
+\[
+\frac{1}{x^2 + 2x} + \frac{1}{x^2 + 6x + 8} + \frac{1}{x^2 + 10x + 24} = \frac{1}{5} - \frac{1}{x^2 + 14x + 48}。
+\]
+
+\begin{solution}
+将项 $-\frac{1}{x^2 + 14x + 48}$ 移到等号左侧，得
+\[
+\frac{1}{x^2 + 2x} + \frac{1}{x^2 + 6x + 8} + \frac{1}{x^2 + 10x + 24} + \frac{1}{x^2 + 14x + 48} = \frac{1}{5},
+\]
+\[
+\frac{1}{x(x + 2)} + \frac{1}{(x + 2)(x + 4)} + \frac{1}{(x + 4)(x + 6)} + \frac{1}{(x + 6)(x + 8)} = \frac{1}{5},
+\]
+\[
+\frac{1}{2} \left[ \left( \frac{1}{x} - \frac{1}{x + 2} \right) + \left( \frac{1}{x + 2} - \frac{1}{x + 4} \right) + \dots + \left( \frac{1}{x + 6} - \frac{1}{x + 8} \right) \right] = \frac{1}{5},
+\]
+\[
+\frac{1}{x} - \frac{1}{x + 8} = \frac{2}{5},
+\]
+因此 $x^2 + 8x - 20 = 0$。
+于是 $(x - 2)(x + 10) = 0$，即 $x_1 = 2$，$x_2 = -10$。
+\end{solution}
+
+\question 解方程 $\frac{x^2 - x + 1}{x^2 + 2} + \frac{x + 1}{x^2 - x + 1} = 1$。
+
+\begin{solution}
+原方程等价于 $\frac{x^2 - x + 1}{x^2 + 2} + \frac{x^2 + 2}{x^2 - x + 1} = 2$。
+令 $y = \frac{x^2 - x + 1}{x^2 + 2}$，则 $y + \frac{1}{y} = 2$，这导出 $(y - 1)^2 = 0$，所以 $y = 1$。
+于是 $x^2 - x + 1 = x^2 + 2$，解得 $x = -1$。
+\end{solution}
+
+\question 解方程 $\frac{x^3 + 7x^2 + 24x + 30}{x^2 + 5x + 13} = \frac{2x^3 + 11x^2 + 36x + 45}{2x^2 + 7x + 20}$。
+
+\begin{solution}
+通过多项式除法，原方程可以转化为
+\[
+(x + 2) + \frac{x + 4}{x^2 + 5x + 13} = (x + 2) + \frac{2x + 5}{2x^2 + 7x + 20}.
+\]
+约去 $(x + 2)$ 并对两边取倒数，得
+\[
+(x + 1) + \frac{9}{x + 4} = (x + 1) + \frac{15}{2x + 5}.
+\]
+由 $\frac{9}{x + 4} = \frac{15}{2x + 5}$，立即解得 $x = 5$。
+\end{solution}
+
     \question 解
         \[
         \frac{x^2+16x+54}{x^2+11x+35} = \frac{x^2+13x+35}{x^2+14x+54}
@@ -425,6 +488,99 @@ a^2 + c^2 = 225 - 108 = 117
         \]
         经检验,原方程的解为 $x = -\dfrac{19}{3},\dfrac{-27\pm\sqrt{17}}{4}$
     \end{solution}
+
+    \question 解方程 $\frac{4x^2 + x + 4}{x^2 + 1} + \frac{x^2 + 1}{x^2 + x + 1} = \frac{31}{6}$。
+
+\begin{solution}
+将原方程改写为如下形式
+\[
+4 + \frac{x}{x^2 + 1} + 1 - \frac{x}{x^2 + x + 1} = 5 + \frac{1}{6},
+\]
+则
+\[
+\frac{1}{x + \frac{1}{x}} - \frac{1}{x + \frac{1}{x} + 1} = \frac{1}{6}.
+\]
+令 $w = x + \frac{1}{x}$，由此得
+\[
+\frac{1}{w} - \frac{1}{w + 1} = \frac{1}{6},
+\]
+\[
+w(w + 1) = 6 \Rightarrow w^2 + w - 6 = 0,
+\]
+因此 $(w - 2)(w + 3) = 0$，即 $w = 2$ 或 $w = -3$。
+\begin{parts}
+\part $w = 2 \Rightarrow x + \frac{1}{x} = 2$，则 $(x - 1)^2 = 0$，故 $x_1 = x_2 = 1$。
+\part $w = -3 \Rightarrow x + \frac{1}{x} = -3$，则 $x^2 + 3x + 1 = 0$，故
+\[
+x_3 = \frac{-3 - \sqrt{5}}{2}, \quad x_4 = \frac{-3 + \sqrt{5}}{2}.
+\]
+\end{parts}
+\end{solution}
+
+\question 解方程 $\frac{1}{x^2 + 11x - 8} + \frac{1}{x^2 + 2x - 8} + \frac{1}{x^2 - 13x - 8} = 0$。
+
+\begin{solution}
+代换 $y = x^2 - 8$ 得到
+\[
+\frac{1}{y + 11x} + \frac{1}{y + 2x} + \frac{1}{y - 13x} = 0,
+\]
+\[
+(y + 2x)(y - 13x) + (y + 11x)(y - 13x) + (y + 11x)(y + 2x) = 0,
+\]
+\[
+3y^2 - 147x^2 = 0,
+\]
+\[
+y = \pm 7x.
+\]
+当 $y = -7x$ 时，
+\[
+x^2 + 7x - 8 = 0 \Rightarrow (x + 8)(x - 1) = 0, \quad x_1 = -8, x_2 = 1.
+\]
+当 $y = 7x$ 时，
+\[
+x^2 - 7x - 8 = 0 \Rightarrow (x - 8)(x + 1) = 0, \quad x_3 = 8, x_4 = -1.
+\]
+因此，$x = \pm 1$ 或 $\pm 8$。
+\end{solution}
+
+\question 解方程 $\frac{x^2}{15} + \frac{48}{5x^2} = \frac{2x}{3} - \frac{8}{x}$。
+
+\begin{solution}
+当方程两边同乘以 15 时，原方程变为
+\[
+x^2 + \left( \frac{12}{x} \right)^2 = 10 \left( x - \frac{12}{x} \right).
+\]
+令 $y = x - \frac{12}{x}$，通过配方可得
+\[
+y^2 - 10y + 24 = 0,
+\]
+\[
+(y - 4)(y - 6) = 0, \quad \therefore y = 4 \text{ 或 } 6.
+\]
+于是：
+\begin{itemize}
+    \item $y = 4 \Rightarrow x - \frac{12}{x} = 4 \Rightarrow (x - 6)(x + 2) = 0$，即 $x_1 = 6, x_2 = -2$。
+    \item $y = 6 \Rightarrow x - \frac{12}{x} = 6 \Rightarrow x^2 - 6x - 12 = 0$，即 $x_3 = 3 - \sqrt{21}, x_4 = 3 + \sqrt{21}$。
+\end{itemize}
+\end{solution}
+
+\question 解方程 $x^2 + \left( \frac{x}{x + 1} \right)^2 = 3$。
+
+\begin{solution}
+通过对左边进行配方，可得
+\[
+\left( x - \frac{x}{x + 1} \right)^2 + \frac{2x^2}{x + 1} = 3,
+\]
+\[
+\left( \frac{x^2}{x + 1} \right)^2 + 2 \frac{x^2}{x + 1} - 3 = 0.
+\]
+令 $y = \frac{x^2}{x + 1}$，则 $y^2 + 2y - 3 = 0 \Rightarrow (y + 3)(y - 1) = 0$，所以 $y = -3$ 或 $1$。
+\begin{itemize}
+\item $y = -3 \Rightarrow \frac{x^2}{x + 1} = -3 \Rightarrow x^2 + 3x + 3 = 0$，无实数解。
+\item $y = 1 \Rightarrow \frac{x^2}{x + 1} = 1 \Rightarrow x^2 - x - 1 = 0 \Rightarrow x_1 = \frac{1 - \sqrt{5}}{2}, x_2 = \frac{1 + \sqrt{5}}{2}$。
+\end{itemize}
+\end{solution}
 
     \question 解
     \[
@@ -767,6 +923,54 @@ a^3 + b^3 + c^3 = (1 + 1 + 1) - k(a + b + c)
 a^3 + b^3 + c^3 = 3 - k(0) = 3
 \]
 因此, $a^3 + b^3 + c^3$ 之值为 3。
+\end{solution}
+
+\question 如果方程 $x^4 - (k - 1)x^2 + 2 - k = 0$ 有四个不同的实根，求实数 $k$ 的取值范围。
+
+\begin{solution}
+通过使用代换 $y = x^2$，得到二次方程 $y^2 - (k - 1)y + (2 - k) = 0$，且它有两个不同的正实根，因此其判别式为正。
+\[
+(k - 1)^2 - 4(2 - k) > 0
+\]
+且
+\[
+\frac{(k - 1) - \sqrt{(k - 1)^2 - 4(2 - k)}}{2} > 0
+\]
+$k^2 + 2k - 7 > 0$ 得出 $k < -1 - 2\sqrt{2}$ 或 $k > -1 + 2\sqrt{2}$。
+\[
+\frac{(k - 1) - \sqrt{(k - 1)^2 - 4(2 - k)}}{2} > 0
+\]
+意味着 $k - 1 > 0$ 且 $2 - k > 0$。
+即 $1 < k < 2$，因此 $k$ 的取值范围是
+\[
+-1 + 2\sqrt{2} < k < 2
+\]
+\end{solution}
+
+\question (瑞典/2002) 已知实数 $\alpha, \beta$ 分别满足
+\[
+\alpha^3 - 3\alpha^2 + 5\alpha - 17 = 0
+\]
+和
+\[
+\beta^3 - 3\beta^2 + 5\beta + 11 = 0
+\]
+求 $\alpha + \beta$ 的值。
+
+\begin{solution}
+由于
+\[
+\alpha^3 - 3\alpha^2 + 5\alpha - 17 = (\alpha^3 - 3\alpha^2 + 3\alpha - 1) + 2(\alpha - 1) - 14
+\]
+且
+\[
+-(\beta^3 - 3\beta^2 + 5\beta + 11) = (1 - 3\beta + 3\beta^2 - \beta^3) + 2(1 - \beta) - 14
+\]
+$\alpha - 1$ 和 $1 - \beta$ 都是方程 $x^3 + 2x - 14 = 0$ 的实根。由于该三次方程只有一个实根，所以
+\[
+\alpha - 1 = 1 - \beta
+\]
+因此 $\alpha + \beta = 2$。
 \end{solution}
         
     \question 已知 $\alpha,\beta,\gamma,\delta$ 为 $x^{4}+2x^{3}+x^{2}+2x+1=0$ 的四根,试求 $$(\alpha^{2}+\alpha+1)(\beta^{2}+\beta+1)(\gamma^{2}+\gamma+1)(\delta^{2}+\delta+1)$$ 的值。
@@ -1532,6 +1736,117 @@ x_1 + 4x_2 + 9x_3 + 16x_4 + 25x_5 + 36x_6 = 30 \\
         x = 1 \quad \text{或} \quad x = -\frac{a+2b}{2a+b}
         \]
     \end{solution}
+
+        \question (克罗地亚/2005) 求方程的所有实数解 $(x, y, z)$
+\[
+4xyz - x^4 - y^4 - z^4 = 1.
+\]
+
+\begin{solution}
+\[
+4xyz - x^4 - y^4 - z^4 = 1 \Leftrightarrow (x^4 + 1) + (y^4 + z^4) - 4xyz = 0
+\]
+\[
+\Leftrightarrow (x^4 - 2x^2 + 1) + (y^4 - 2y^2z^2 + z^4) + 2(x^2 - 2xyz + y^2z^2) = 0
+\]
+\[
+\Leftrightarrow (x^2 - 1)^2 + (y^2 - z^2)^2 + 2(x - yz)^2 = 0 \Leftrightarrow x = \pm 1, y = \pm z, x = yz
+\]
+\[
+\Leftrightarrow (x, y, z) = (1, 1, 1); (1, -1, -1); (-1, 1, -1); (-1, -1, 1).
+\]
+\end{solution}
+
+\question (AUSTRIA/2005) 求使得方程组
+\[
+\begin{cases} 
+x^3 + y^3 = 2 \\ 
+y = kx + d 
+\end{cases}
+\]
+无实数解 $(x, y)$ 的 $k$ 和 $d$ 的条件。
+
+\begin{solution}
+将 $y = kx + d$ 代入 $x^3 + y^3 = 2$，得
+\[
+(k^3 + 1)x^3 + 3k^2dx^2 + 3kd^2x + d^3 - 2 = 0
+\]
+因为任何三次方程都至少有一个实根，所以为了使方程组无解，必须满足 $k^3 + 1 = 0$，即 $k = -1$。
+此时，该方程变为
+\[
+3dx^2 - 3d^2x + d^3 - 2 = 0
+\]
+当 $d = 0$ 时，方程变为 $-2 = 0$，无解。
+当 $d \neq 0$ 时，该二次方程无实根的充要条件是判别式为负，即
+\[
+9d^4 - 12d(d^3 - 2) < 0 \iff 24d - 3d^4 < 0 \iff 3d(2^3 - d^3) < 0
+\]
+解得 $d < 0$ 或 $d > 2$。
+综上所述，$k$ 和 $d$ 的条件为 $k = -1$ 且 $d \le 0$ 或 $d > 2$。
+\end{solution}
+
+\question (KOREAN MC/2000) 设 $\frac{3}{4} < a < 1$。证明方程
+\[
+x^3(x + 1) = (x + a)(2x + a)
+\]
+有四个互异的实根，并求出这些根的显式表达。
+
+\begin{solution}
+将给定的方程视为关于 $a$ 的二次方程：
+\[
+a^2 + 3xa + 2x^2 - x^3 - x^4 = 0.
+\]
+该方程的判别式为
+\[
+9x^2 - 4(2x^2 - x^3 - x^4) = 9x^2 - 8x^2 + 4x^3 + 4x^4 = (x + 2x^2)^2.
+\]
+因此
+\[
+a = \frac{-3x \pm (x + 2x^2)}{2}
+\]
+得
+\[
+a = -x + x^2 \quad \text{或} \quad a = -2x - x^2.
+\]
+第一种选择 $a = -x + x^2$ 导出二次方程 $x^2 - x - a = 0$，其解为 $x = \frac{1 \pm \sqrt{1 + 4a}}{2}$。
+第二种选择 $a = -2x - x^2$ 导出二次方程 $x^2 + 2x + a = 0$，其解为
+\[
+x = -1 \pm \sqrt{1 - a}.
+\]
+不等式链
+\[
+-1 - \sqrt{1 - a} < -1 + \sqrt{1 - a} < \frac{1 - \sqrt{1 + 4a}}{2} < \frac{1 + \sqrt{1 + 4a}}{2}
+\]
+表明这四个解是互异的。事实上，
+\begin{align*}
+-1 + \sqrt{1 - a} < \frac{1 - \sqrt{1 + 4a}}{2} &\iff 2\sqrt{1 - a} < 3 - \sqrt{1 + 4a} \\
+&\iff 6\sqrt{1 + 4a} < 6 + 8a \\
+&\iff 3a < 4a^2 \\
+&\iff \frac{3}{4} < a.
+\end{align*}
+\end{solution}
+
+\question (IRE/2007) 已知 $r, s, t$ 是多项式 $P(x) = x^3 - 2007x + 2002$ 的所有实根，求
+\[
+\frac{r - 1}{r + 1} + \frac{s - 1}{s + 1} + \frac{t - 1}{t + 1}
+\]
+的值。
+
+\begin{solution}
+令 $S = \frac{r - 1}{r + 1} + \frac{s - 1}{s + 1} + \frac{t - 1}{t + 1}$，且 $R = \frac{1}{r + 1} + \frac{1}{s + 1} + \frac{1}{t + 1}$，则
+\[
+S = 3 - 2R
+\]
+$r, s, t$ 是 $P(x)$ 的根意味着 $r + 1, s + 1, t + 1$ 是 $Q(x)$ 的根，其中 $Q(x)$ 定义为
+\[
+Q(x) = P(x - 1) = x^3 - 3x^2 - 2004x + 4008
+\]
+根据韦达定理，
+\[
+R = \frac{(s + 1)(t + 1) + (r + 1)(t + 1) + (r + 1)(s + 1)}{(r + 1)(s + 1)(t + 1)} = \frac{-2004}{-4008} = \frac{1}{2}
+\]
+因此，$S = 3 - 2 \cdot \frac{1}{2} = 2$。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -3519,6 +3834,32 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
 \vspace{0.5pt}
 
 \begin{questions}
+    \question (CHINA/2000) 解方程组 $(x, y)$：
+\[
+\frac{xy}{3x + 2y} = \frac{1}{8}, \quad \frac{xy}{2x + 3y} = \frac{1}{7}.
+\]
+
+\begin{solution}
+通过对每个方程的两边取倒数，可得
+\[
+\frac{2}{x} + \frac{3}{y} = 8,
+\]
+\[
+\frac{3}{x} + \frac{2}{y} = 7.
+\]
+令 $u = \frac{1}{x}$，$v = \frac{1}{y}$，则关于 $(u, v)$ 的方程组为
+\[
+2u + 3v = 8,
+\]
+\[
+3u + 2v = 7.
+\]
+解得 $u = 1$，$v = 2$。
+然后回归到 $(x, y)$，可得
+\[
+x = 1 \text{ 且 } y = \frac{1}{2}.
+\]
+\end{solution}
     \question 若 $x, y, z$ 都是正数且满足 
     \[
     \begin{cases}
@@ -4080,6 +4421,31 @@ x\sqrt{x} + y\sqrt{y} = \frac{1}{2\sqrt{x}}, \quad y\sqrt{y} + x\sqrt{x} = \frac
         \]
     \end{solution}
 
+    \question (USAMO/TST/2001) 解方程组：
+\[
+\begin{cases}
+x + \frac{3x - y}{x^2 + y^2} = 3 \\
+y - \frac{x + 3y}{x^2 + y^2} = 0
+\end{cases}
+\]
+
+\begin{solution}
+第一个方程乘以 $y$，第二个方程乘以 $x$，然后相加得
+\[
+2xy + \frac{(3x - y)y - (x + 3y)x}{x^2 + y^2} = 3y
+\]
+即 $2xy - 1 = 3y$。由此可知 $y \neq 0$ 且 $x = \frac{3y + 1}{2y}$。
+将此代入原方程组的第二个方程得
+\[
+y\left[ \left( \frac{3y + 1}{2y} \right)^2 + y^2 \right] - \left( \frac{3y + 1}{2y} \right) - 3y = 0
+\]
+或
+\[
+4y^4 - 3y^2 - 1 = 0
+\]
+由此得 $y^2 = 1$，方程组的解为 $(2, 1)$ 和 $(1, -1)$。
+\end{solution}
+
     \question 求方程
     \[
     \begin{cases}
@@ -4586,6 +4952,42 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \]
     \end{solution}
 
+    \question (CROATIA/TST/2007) 在实数范围内解方程组
+\[
+\begin{cases}
+x + y + z = 2 \\
+(x + y)(y + z) + (y + z)(z + x) + (z + x)(x + y) = 1  \\
+x^2(y + z) + y^2(z + x) + z^2(x + y) = -6
+\end{cases}
+\]
+
+\begin{solution}
+令上述方程编号为 (15.15), (15.16) 和 (15.17)。
+(15.16) 意味着 $x^2 + y^2 + z^2 + 3xy + 3yz + 3zx = 1$，即
+\[
+(x + y + z)^2 + xy + yz + zx = 1
+\]
+结合 (15.15)，可得
+\[
+xy + yz + zx = -3 \tag{15.18}
+\]
+将 (15.15), (15.18) 代入 (15.17)，则
+\begin{align*}
+x(xy + xz) + y(yz + xy) + z(xz + yz) &= -6 \\
+\Rightarrow x(-3 - yz) + y(-3 - xz) + z(-3 - xy) &= -6 \\
+\Rightarrow x + y + z + xyz &= 2
+\end{align*}
+因此
+\[
+xyz = 0 \tag{15.19}
+\]
+根据韦达定理，(15.15), (15.18) 和 (15.19) 表明 $x, y, z$ 是方程 $t^3 - 2t^2 - 3t = 0$ 的三个根，该方程有三个根 $0, -1$ 和 $3$。
+因此，原方程组的解 $(x, y, z)$ 为
+\[
+(0, 3, -1), (0, -1, 3), (3, 0, -1), (3, -1, 0), (-1, 0, 3), (-1, 3, 0)
+\]
+\end{solution}
+
     \question 已知方程组
     \[
     \begin{cases}
@@ -4661,6 +5063,55 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \]
     \end{solution}
 
+
+
+\question (GERMANY/2005) 求方程组的所有实数解 $(x, y)$
+\begin{align}
+x^3 + 1 - xy^2 - y^2 &= 0 \tag{2.3} \\
+y^3 + 1 - x^2y - x^2 &= 0 \tag{2.4}
+\end{align}
+
+\begin{solution}
+$(2.3) - (2.4)$ 得
+\[
+(x^3 - y^3) + (x^2y - xy^2) + (x^2 - y^2) = 0
+\]
+\[
+(x - y)(x^2 + xy + y^2 + xy + x + y) = 0 \iff (x - y)(x + y)(x + y + 1) = 0
+\]
+当 $x = y$ 时，代入 $(2.3)$ 得 $x^2 = 1$，即 $(x, y) = (1, 1)$ 或 $(-1, -1)$。
+当 $x + y = 0$ 时，代入 $(2.3)$ 得 $x^2 = 1$，即 $(x, y) = (1, -1)$ 或 $(-1, 1)$。
+当 $x + y + 1 = 0$ 时，即 $y = -(x + 1)$，代入 $(2.3)$ 得 $3x(x + 1) = 0$，即 $x = 0$ 或 $-1$。
+这给出解 $(x, y) = (0, -1)$ 或 $(-1, 0)$。
+综上所述，实数解为 $(1, 1), (-1, -1), (1, -1), (-1, 1), (0, -1), (-1, 0)$。
+\end{solution}
+
+    \question (VIETNAM/2007) 解方程组：
+\[
+1 - \frac{12}{y + 3x} = \frac{2}{\sqrt{x}}, \quad 1 + \frac{12}{y + 3x} = \frac{6}{\sqrt{y}}.
+\]
+
+\begin{solution}
+显然对于任何实数解 $(x, y)$，需满足 $x, y > 0$ 且 $y + 3x \neq 0$。通过将两个方程相加与相减，可得：
+\[
+\frac{1}{\sqrt{x}} + \frac{3}{\sqrt{y}} = 1,
+\]
+\[
+-\frac{1}{\sqrt{x}} + \frac{3}{\sqrt{y}} = \frac{12}{y + 3x}.
+\]
+两式相乘得 $\frac{9}{y} - \frac{1}{x} = \frac{12}{y + 3x}$，从而
+\[
+y^2 + 6xy - 27x^2 = 0,
+\]
+\[
+(y - 3x)(y + 9x) = 0, \quad \text{即 } y = 3x \text{ 或 } y = -9x.
+\]
+由于 $x, y > 0$，故 $y = -9x$ 不合题意。将 $y = 3x$ 代入第一式，得
+\[
+\frac{1}{\sqrt{x}} + \frac{3}{\sqrt{3x}} = 1 \Rightarrow x = \left( 1 + \sqrt{3} \right)^2 = 4 + 2\sqrt{3}, \quad y = 12 + 6\sqrt{3}.
+\]
+\end{solution}
+
     \question 求满足
     \[
     \begin{cases}
@@ -4725,6 +5176,28 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         因此 $a+b+c$ 共有 $3$ 个可能值。
     \end{solution}
 
+    \question (NORTH-EUROPEAN/2006) 已知实数 $x, y, z$ 不全相等，且满足
+\[
+x + \frac{1}{y} = y + \frac{1}{z} = z + \frac{1}{x} = k,
+\]
+其中 $k$ 为实数。求 $k$ 的所有可能值。
+
+\begin{solution}
+由方程 $x + \frac{1}{y} = k$ 可得 $x = \frac{ky - 1}{y}$，即 $\frac{1}{x} = \frac{y}{ky - 1}$。
+由方程 $y + \frac{1}{z} = k$ 可得 $\frac{1}{z} = k - y$，即 $z = \frac{1}{k - y}$。
+将上述结果代入 $z + \frac{1}{x} = k$，得
+\[
+\frac{1}{k - y} + \frac{y}{ky - 1} = k,
+\]
+整理后可得：
+\[
+(k^2 - 1)(ky - 1 - y^2) = 0.
+\]
+$k^2 - 1 = 0$ 给出 $k = \pm 1$；而 $ky - 1 - y^2 = 0$ 意味着 $k = y + \frac{1}{y}$，这会导致 $x = y = z$，与题设“不全相等”矛盾。
+当 $k = 1$ 时，可取 $x = 2, y = -1, z = \frac{1}{2}$；当 $k = -1$ 时，可取 $x = -2, y = 1, z = -\frac{1}{2}$。
+因此，$k$ 的可能值为 $1$ 或 $-1$。
+\end{solution}
+
     \question 求在区间 $[0,2]$ 内满足方程组
     \[
     \begin{cases}
@@ -4757,6 +5230,46 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \] 
         故原方程式无序三元组个数为$4$。
     \end{solution}
+
+    \question (波兰/2006) 求方程组的所有实数解
+\[
+\begin{cases} x^5 = 5y^3 - 4z, \\ y^5 = 5z^3 - 4x, \\ z^5 = 5x^3 - 4y. \end{cases}
+\]
+
+\begin{solution}
+考虑到问题中变量是循环的，不妨设 $z \ge x, y$。
+如果 $x > y$，则 $5z^3 = y^5 + 4x < x^5 + 4z = 5y^3$，矛盾。
+如果 $x \le y$，则 $5z^3 = y^5 + 4x \le z^5 + 4y = 5x^3$，所以 $x = y = z$。
+因此，$x^5 - 5x^3 + 4x = x(x^2 - 1)(x^2 - 4) = 0$，即 $x = 0, \pm 1$ 或 $x = \pm 2$。
+共有 5 组解 $(x, y, z)$。
+\end{solution}
+
+    \question 求方程组的所有实数解 $(x, y, z)$：
+\[
+\frac{9x^2}{1 + 9x^2} = \frac{3}{2}y, \quad \frac{9y^2}{1 + 9y^2} = \frac{3}{2}z, \quad \frac{9z^2}{1 + 9z^2} = \frac{3}{2}x.
+\]
+
+\begin{solution}
+显然 $x = y = z = 0$ 是方程组的一个解。若 $x, y, z$ 中有一个为零，则其余两个也必为零。
+当 $xyz \neq 0$ 时，对第一个方程两边取倒数，可得：
+\[
+\left( \frac{1}{3x} \right)^2 + 1 = \frac{2}{3y}.
+\]
+同理可得
+\[
+\left( \frac{1}{3y} \right)^2 + 1 = \frac{2}{3z} \text{ 且 } \left( \frac{1}{3z} \right)^2 + 1 = \frac{2}{3x}.
+\]
+令 $u = \frac{1}{3x}, v = \frac{1}{3y}, w = \frac{1}{3z}$，则有
+\[
+u^2 - 2v + 1 = 0, \quad v^2 - 2w + 1 = 0, \quad w^2 - 2u + 1 = 0.
+\]
+将上述三式相加，得
+\[
+(u - 1)^2 + (v - 1)^2 + (w - 1)^2 = 0.
+\]
+所以 $u = v = w = 1$，从而 $x = y = z = \frac{1}{3}$。
+因此，方程组的解为 $x = y = z = 0$ 或 $x = y = z = \frac{1}{3}$。
+\end{solution}
 
     \question 若 $x,y,z$ 为相异复数,满足
     \[
@@ -4814,6 +5327,30 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         &= [xyz-(xy+yz+zx)+x+y+z-1][xyz+2(xy+yz+zx)+4(x+y+z)+8]=7
         \end{align*}
     \end{solution}
+
+    \question (RUSMO/1993) 求分式方程组的所有正解：
+\[
+x_1 + \frac{1}{x_2} = 4, \quad x_2 + \frac{1}{x_3} = 1, \quad x_3 + \frac{1}{x_4} = 4, \quad x_4 + \frac{1}{x_5} = 1, \quad \dots, \quad x_{99} + \frac{1}{x_{100}} = 4, \quad x_{100} + \frac{1}{x_1} = 1.
+\]
+
+\begin{solution}
+设 $(x_1, x_2, \dots, x_{100})$ 为正解。由于对任意 $x, y > 0$，有 $x + y \geq 2\sqrt{xy}$，且等号成立当且仅当 $x = y$，可得：
+\[
+x_1 + \frac{1}{x_2} \geq 2\sqrt{\frac{x_1}{x_2}}, \quad x_2 + \frac{1}{x_3} \geq 2\sqrt{\frac{x_2}{x_3}}, \quad \dots, \quad x_{100} + \frac{1}{x_1} \geq 2\sqrt{\frac{x_{100}}{x_1}}.
+\]
+将所有这些不等式相乘，得到：
+\[
+4^{50} \cdot 1^{50} = \left( x_1 + \frac{1}{x_2} \right)\left( x_2 + \frac{1}{x_3} \right) \cdots \left( x_{100} + \frac{1}{x_1} \right) \geq 2^{100} = 4^{50}.
+\]
+因此所有的不等式均为等式，故有
+\[
+x_1 = \frac{1}{x_2}, \quad x_2 = \frac{1}{x_3}, \quad \dots, \quad x_{100} = \frac{1}{x_1}.
+\]
+代入原方程组中，得：
+\[
+x_1 = x_3 = \dots = x_{99} = 2, \quad x_2 = x_4 = \dots = x_{100} = \frac{1}{2}.
+\]
+\end{solution}
 
     \question 已知 $xyz \neq 0,a, b, c$ 不全为零,且满足方程组
     \[
@@ -4927,6 +5464,204 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \left( \frac{159}{87}, \frac{159}{29}, \frac{106}{87}, \frac{318}{29} \right)
         \]
     \end{solution}
+
+    \question (AUSTRALIA/2008) $a$ 是一个给定的正数，$n$ 是一个大于等于 $4$ 的整数。求满足方程组的所有由正数组成的 $n$ 元组 $(x_1, x_2, \dots, x_n)$
+\[
+\begin{cases}
+x_1x_2(3a - 2x_3) = a^3 \\
+x_2x_3(3a - 2x_4) = a^3 \\
+\dots \dots \\
+x_{n-2}x_{n-1}(3a - 2x_n) = a^3 \\
+x_{n-1}x_n(3a - 2x_1) = a^3 \\
+x_nx_1(3a - 2x_2) = a^3
+\end{cases}
+\]
+
+\begin{solution}
+将这 $n$ 个给定的方程相乘，得
+\[
+\prod_{i=1}^n x_i^2(3a - 2x_i) = a^{3n}
+\]
+由于 $a > 0$ 且 $x_i > 0$ ($i = 1, 2, \dots, n$)，由 AM-GM 不等式
+\[
+x_i^2(3a - 2x_i) \le \left( \frac{x_i + x_i + 3a - 2x_i}{3} \right)^3 = a^3
+\]
+对于 $i = 1, 2, \dots, n$ 均成立，所以 $x_i = 3a - 2x_i$，即 $x_i = a$ ($i = 1, 2, \dots, n$)。
+因此，给定方程组的唯一解为 $(a, a, \dots, a)$。
+\end{solution}
+
+\question (CZECH-SLOVAKIA-POLAND/2008) 在实数范围内解方程组
+\[
+\begin{cases}
+x + y^2 = y^3 \\
+y + x^2 = x^3
+\end{cases}
+\]
+
+\begin{solution}
+第二个方程减去第一个方程得
+\[
+(x^3 - y^3) - (x^2 - y^2) + (x - y) = 0
+\]
+即 $(x - y)(x^2 + xy + y^2 - x - y + 1) = 0$。由于
+\[
+x^2 + xy + y^2 - x - y + 1 = \frac{1}{2}\left[ (x + y)^2 + (x - 1)^2 + (y - 1)^2 \right] > 0
+\]
+可以得到 $x = y$。于是原方程变为 $x + x^2 = x^3$，其解为 $0, \frac{1}{2}(1 - \sqrt{5})$ 和 $\frac{1}{2}(1 + \sqrt{5})$。因此，原方程组的解为
+\[
+(0, 0), \left( \frac{1}{2}(1 - \sqrt{5}), \frac{1}{2}(1 - \sqrt{5}) \right), \left( \frac{1}{2}(1 + \sqrt{5}), \frac{1}{2}(1 + \sqrt{5}) \right)
+\]
+\end{solution}
+
+    \question (希腊/TST/2009) 求方程的所有实数解 $(x, y, z)$
+\[
+\frac{(x + 2)^2}{y + z - 2} + \frac{(y + 4)^2}{z + x - 4} + \frac{(z + 6)^2}{x + y - 6} = 36,
+\]
+其中 $x, y, z > 3$。
+
+\begin{solution}
+由 $x, y, z > 3$ 可得 $y + z - 2 > 0, z + x - 4 > 0, x + y - 6 > 0$。根据柯西-施瓦茨不等式得
+\[
+\left[ (y + z - 2) + (z + x - 4) + (x + y - 6) \right] \cdot \left[ \frac{(x + 2)^2}{y + z - 2} + \frac{(y + 4)^2}{z + x - 4} + \frac{(z + 6)^2}{x + y - 6} \right]
+\]
+\[
+\ge (x + y + z + 12)^2
+\]
+\[
+\Leftrightarrow \frac{(x + 2)^2}{y + z - 2} + \frac{(y + 4)^2}{z + x - 4} + \frac{(z + 6)^2}{x + y - 6} \ge \frac{(x + y + z + 12)^2}{2(x + y + z - 6)}
+\]
+因此，给定的等式引出以下不等式
+\[
+\frac{(x + y + z + 12)^2}{x + y + z - 6} \le 72,
+\]
+且等号成立当且仅当 $\frac{x + 2}{y + z - 2} = \frac{y + 4}{z + x - 4} = \frac{z + 6}{x + y - 6} = \lambda$，即
+\[
+\begin{cases} \lambda(y + z) - x = 2(\lambda + 1), \\ \lambda(z + x) - y = 4(\lambda + 1), \\ \lambda(x + y) - z = 6(\lambda + 1). \end{cases}
+\]
+设 $w = x + y + z + 12$，则不等式变为 $\frac{w^2}{w - 18} \le 72$。由于
+\[
+\frac{w^2}{w - 18} \ge 72 \Leftrightarrow w^2 - 72w + 36^2 \ge 0 \Leftrightarrow (w - 36)^2 \ge 0,
+\]
+所以 $\frac{w^2}{w - 18} = 72$，即 $w = 36$，这意味着 $x + y + z = 24$。上述方程组给出
+\[
+(2\lambda - 1)(x + y + z) = 12(\lambda + 1),
+\]
+通过求解 $2(2\lambda - 1) = \lambda + 1$，我们得到 $\lambda = 1$。方程组变为
+\[
+\begin{cases} y + z - x = 4, \\ z + x - y = 8, \\ x + y - z = 12. \end{cases}
+\]
+解该方程组，求得唯一解为 $(x, y, z) = (10, 8, 6)$。
+\end{solution}
+
+\question (捷克-波兰-斯洛伐克/2004) 解方程组
+\[
+\frac{1}{xy} = \frac{x}{z} + 1, \quad \frac{1}{yz} = \frac{y}{x} + 1, \quad \frac{1}{zx} = \frac{z}{y} + 1,
+\]
+其中 $x, y, z$ 为实数。
+
+\begin{solution}
+令 $a = \frac{x}{z}, b = \frac{y}{x}, c = \frac{z}{y}$，则 $abc = 1$ 且
+\[
+a + 1 = \frac{x}{z} + 1 = \frac{1}{zx} \cdot \frac{z}{y} = \left( \frac{z}{y} + 1 \right) \cdot \frac{z}{y} = c(c + 1) = c^2 + c.
+\]
+同理，$b + 1 = a^2 + a$ 且 $c + 1 = b^2 + b$。将这三个等式相加，得 $a^2 + b^2 + c^2 = 3$。因此
+\[
+3 = a^2 + b^2 + c^2 \ge 3(abc)^{\frac{2}{3}} = 3 \Rightarrow a^2 = b^2 = c^2 = 1,
+\]
+故在 $a, b, c$ 中，有两个为 $-1$ 且一个为 $1$，或者三个全部为 $1$。
+\begin{enumerate}
+    \item[(i)] 当 $a = b = -1, c = 1$ 时，则 $y = z = -x$，无解。同理，若 $a = c = -1, b = 1$ 或 $b = c = -1, a = 1$ 时均无解。
+    \item[(ii)] 当 $a = b = c = 1$ 时，则 $x = y = z$，从而我们得到解
+    \[
+    (x, y, z) = \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right) \text{ 或 } \left( -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}} \right).
+    \]
+\end{enumerate}
+因此，该方程组的实数解为
+\[
+(x, y, z) = \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right) \text{ 或 } \left( -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}} \right).
+\]
+\end{solution}
+
+\question (CMO/2003) 求方程组的所有正实数解（如果有的话）
+\[
+\begin{cases} x^3 + y^3 + z^3 = x + y + z, \\ x^2 + y^2 + z^2 = xyz. \end{cases}
+\]
+
+\begin{solution}
+不妨设 $x \ge y \ge z > 0$。
+由 $xyz = x^2 + y^2 + z^2 > 2xy$ 可知 $z > 2$，因此 $x, y, z > 2$。那么
+\[
+(x^3 + y^3 + z^3) - (x + y + z) = x(x^2 - 1) + y(y^2 - 1) + z(z^2 - 1) > 6,
+\]
+因此给定的方程组没有要求的解。
+\end{solution}
+
+\question (奥地利/2005) 求满足以下方程组的所有实数 $a, b, c, d, e, f$
+\[
+\begin{cases} 4a = (b + c + d + e)^4, \\ 4b = (c + d + e + f)^4, \\ 4c = (d + e + f + a)^4, \\ 4d = (e + f + a + b)^4, \\ 4e = (f + a + b + c)^4, \\ 4f = (a + b + c + d)^4. \end{cases}
+\]
+
+\begin{solution}
+各方程右侧均为非负数，这意味着 $a, b, c, d, e, f$ 均为非负数。
+由于这些变量在方程中是循环的，如果其中两个不相等，则必然存在两个相邻的变量不相等，设 $a < b$（$a > b$ 的情况类似）：
+\begin{align*}
+a < b &\Rightarrow b + c + d + e < c + d + e + f \Rightarrow b < f \Rightarrow a < f \\
+&\Rightarrow b + c + d + e < a + b + c + d \Rightarrow e < a \Rightarrow e < f \\
+&\Rightarrow f + a + b + c < a + b + c + d \Rightarrow f < d \Rightarrow e < d \\
+&\Rightarrow f + a + b + c < e + f + a + b \Rightarrow c < e \Rightarrow c < d \\
+&\Rightarrow d + e + f + a < e + f + a + b \Rightarrow d < b \Rightarrow d < b < f < d,
+\end{align*}
+这导致了矛盾。因此 $a = b = c = d = e = f$。由 $4a = (4a)^4$ 可得 $a = 0$ 或 $a = \frac{1}{4}$。
+方程组的解为：
+\[
+(a, b, c, d, e, f) = (0, 0, 0, 0, 0, 0) \text{ 或 } \left( \frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4} \right).
+\]
+\end{solution}
+
+\question (摩尔多瓦/TST/2008) 求以下方程组的所有解 $(x, y) \in \mathbb{R} \times \mathbb{R}$
+\[
+\begin{cases} x^3 + 3xy^2 = 49, \\ x^2 + 8xy + y^2 = 8y + 17x. \end{cases}
+\]
+
+\begin{solution}
+运算 $3x \times (2.2) - (2.1)$ 得到：
+\[
+2x^3 + 24x^2y - 51x^2 - 24xy + 49 = 0,
+\]
+\[
+(x - 1)(2x^2 + 24xy - 49x - 49) = 0.
+\]
+由 (2.1) 知，当 $x = 1$ 时 $\Rightarrow 3y^2 = 48 \Rightarrow y = \pm 4$。
+再次从 (2.1) 出发，由于 $x \neq 0$：
+\begin{align*}
+2x^2 + 24xy - 49x - 49 = 0 &\Rightarrow 2x^2 + 24xy - 49x = x^3 + 3xy^2 \\
+&\Rightarrow 2x + 24y - 49 = x^2 + 3y^2 \Rightarrow (x - 1)^2 + 3(y - 4)^2 = 0 \\
+&\Rightarrow x = 1, y = 4.
+\end{align*}
+因此，原方程组有两个解 $(x, y)$：$(1, 4)$ 和 $(1, -4)$。
+\end{solution}
+
+\question (捷克-波兰-斯洛伐克/2005) 给定正整数 $n$，求所有非负实数 $x_1, x_2, \dots, x_n$ 使得
+\[
+\begin{cases} x_1 + x_2^2 + x_3^3 + \dots + x_n^n = n, \\ x_1 + 2x_2 + 3x_3 + \dots + nx_n = \frac{n(n + 1)}{2}. \end{cases}
+\]
+
+\begin{solution}
+将第一个方程减去第二个方程，并将所有项移至左侧，得到：
+\[
+0 = x_1 + x_2^2 + x_3^3 + \dots + x_n^n - n - \left[ x_1 + 2x_2 + 3x_3 + \dots + nx_n - \frac{n(n + 1)}{2} \right]
+\]
+\[
+= (x_2^2 - 2x_2 + 2 - 1) + (x_3^3 - 3x_3 + 3 - 1) + \dots + (x_n^n - nx_n + n - 1).
+\]
+对于任何正整数 $k \ge 2$ 和 $x \ge 0$，根据 AM-GM 不等式：
+\[
+x^k + k - 1 = x^k + \underbrace{1 + 1 + \dots + 1}_{k-1} \ge k \sqrt[k]{x^k} = kx,
+\]
+等号成立当且仅当 $x = 1$，所以 $x_2 = x_3 = \dots = x_n = 1$。
+代入给定的第一个方程得 $x_1 = 1$。
+因此，$x_1 = x_2 = \dots = x_n = 1$。
+\end{solution}
     
     \question 设正实数 $x$, $y$, $z$ 满足
     \[
