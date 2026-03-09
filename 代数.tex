@@ -2990,6 +2990,338 @@ x + \sqrt{x^2 + \sqrt{x^3 + 16}} > 2
         因此整数解集为 $\{3, 4, 5, 6, 7, 8\}$。
     \end{solution}
 
+    \question
+解方程 $\sqrt[3]{x-1}+\sqrt[3]{x-3}+\sqrt[3]{x-5}=0$。
+\begin{solution}
+考虑到公式：如果 $a+b+c=0$，则 $a^3+b^3+c^3=3abc$，给定的方程得
+\[
+(x-1)+(x-3)+(x-5)=3\sqrt[3]{(x-1)(x-3)(x-5)}
+\]
+\[
+x-3=\sqrt[3]{(x-1)(x-3)(x-5)}
+\]
+\[
+\sqrt[3]{x-3}\left[\sqrt[3]{(x-3)^2}-\sqrt[3]{(x-1)(x-5)}\right]=0
+\]
+$\sqrt[3]{x-3}=0 \Rightarrow x_1=3$。
+$\sqrt[3]{(x-3)^2}-\sqrt[3]{(x-1)(x-5)}=0 \Rightarrow 9=5$，所以无解。
+因此，$x=3$ 是唯一解。
+\end{solution}
+
+\question
+解方程 $2\sqrt{x(x+6)}-\sqrt{x}-\sqrt{x+6}=14-2x$。
+\begin{solution}
+考虑到 $\left(\sqrt{x}+\sqrt{x+6}\right)^2=2x+2\sqrt{x(x+6)}+6$，将原方程写为
+\[
+\left(2x+2\sqrt{x(x+6)}+6\right)-\left(\sqrt{x}+\sqrt{x+6}\right)-20=0
+\]
+令 $y=\sqrt{x}+\sqrt{x+6}$，则 $y \ge 0$ 且 $y^2-y-20=0$。
+\[
+(y-5)(y+4)=0
+\]
+$\therefore y=5$。
+因此，
+\[
+\sqrt{x}+\sqrt{x+6}=5 \Rightarrow x+6=x+25-10\sqrt{x} \Rightarrow x=\left(\frac{19}{10}\right)^2
+\]
+\end{solution}
+
+\question
+解方程 $\sqrt{x+1}+\sqrt{y}+\sqrt{z-4}=\frac{x+y+z}{2}$。
+\begin{solution}
+通过配方，
+\[
+\sqrt{x+1}+\sqrt{y}+\sqrt{z-4}=\frac{x+y+z}{2}
+\]
+\[
+\Rightarrow (x+1-2\sqrt{x+1}+1)+(y-2\sqrt{y}+1)+(z-4-2\sqrt{z-4}+1)=0
+\]
+\[
+\Rightarrow (\sqrt{x+1}-1)^2+(\sqrt{y}-1)^2+(\sqrt{z-4}-1)^2=0
+\]
+因此
+\[
+\sqrt{x+1}=1, \sqrt{y}=1, \sqrt{z-4}=1
+\]
+即 $x=0, y=1, z=5$。
+\end{solution}
+
+\question
+解方程 $x^2-4x-4+x\sqrt{x^2-2x-2}=0$。
+\begin{solution}
+令 $y=\sqrt{x^2-2x-2}$，则 $2y^2+xy-x^2=0$，且
+\[
+2y^2+xy-x^2=0 \Rightarrow (2y-x)(y+x)=0
+\]
+$\therefore y=\frac{x}{2}$ 或 $y=-x$。
+\begin{parts}
+\part
+\begin{solution}
+$y=\frac{x}{2} \Rightarrow \sqrt{x^2-2x-2}=\frac{x}{2} \Rightarrow 3x^2-8x-8=0$ 且 $x \ge 0$
+\[
+\Rightarrow x_1=\frac{4+2\sqrt{10}}{3}
+\]
+$\left(x=\frac{4-2\sqrt{10}}{3} \text{不合题意}\right)$。
+\end{solution}
+\part
+\begin{solution}
+$\sqrt{x^2-2x-2}=-x \Rightarrow -2x-2=0$ 且 $x \le 0 \Rightarrow x_2=-1$。
+\end{solution}
+\end{parts}
+因此，解为 $x_1=\frac{4+2\sqrt{10}}{3}, x_2=-1$。
+\end{solution}
+
+\question
+解方程 $\sqrt{2x+\sqrt{2x-1}}+\sqrt{2x-\sqrt{2x-1}}=2$。
+\begin{solution}
+令 $u=\sqrt{2x+\sqrt{2x-1}}, v=\sqrt{2x-\sqrt{2x-1}}$，则 $u, v \ge 0$ 且
+\[
+u+v=2 \quad \text{和} \quad u-v=\frac{u^2-v^2}{u+v}=\sqrt{2x-1}
+\]
+因此 $2u=2+\sqrt{2x-1}$。回到 $x$，
+\[
+2\sqrt{2x+\sqrt{2x-1}}=2+\sqrt{2x-1}
+\]
+\[
+\Rightarrow 4\left(2x+\sqrt{2x-1}\right)=4+2x-1+4\sqrt{2x-1}
+\]
+\[
+\Rightarrow 6x=3 \Rightarrow x=\frac{1}{2}
+\]
+易见 $x=\frac{1}{2}$ 满足原方程。
+\end{solution}
+
+\question
+解方程 $\sqrt{4x^2+5x-2}-\sqrt{4x^2-3x-2}=2\sqrt{x}$。
+\begin{solution}
+显然 $x \ne 0$，因此方程两边可以除以 $\sqrt{x}$，使原方程变为
+\[
+\sqrt{4x-\frac{2}{x}+5}-\sqrt{4x-\frac{2}{x}-3}=2
+\]
+通过代换 $y=4x-\frac{2}{x}$，得
+\[
+\sqrt{y+5}-\sqrt{y-3}=2
+\]
+然后
+\[
+\sqrt{y+5}-\sqrt{y-3}=2 \Rightarrow \sqrt{y+5}=\sqrt{y-3}+2
+\]
+\[
+\Rightarrow y+5=y+1+4\sqrt{y-3} \Rightarrow \sqrt{y-3}=1
+\]
+\[
+\Rightarrow y=4
+\]
+回到 $x$，则
+\[
+y=4 \Rightarrow 4x-\frac{2}{x}=4 \Rightarrow 2x^2-2x-1=0 \Rightarrow x=\frac{1\pm\sqrt{3}}{2}
+\]
+经检验，这两个值确实是原方程的根。
+\end{solution}
+
+\question
+解方程 $\sqrt[3]{(1+x)^2}+15\sqrt[3]{(1-x)^2}=8\sqrt[3]{1-x^2}$。
+\begin{solution}
+显然 $x^2 \ne 1$。因此，通过将 $\sqrt[3]{1-x^2}$ 移至左手边，原方程可以写为
+\[
+\sqrt[3]{\frac{1+x}{1-x}}+15\sqrt[3]{\frac{1-x}{1+x}}=8
+\]
+代换 $y=\sqrt[3]{\frac{1+x}{1-x}}$ 得到 $y+\frac{15}{y}=8$ 即 $y^2-8y+15=0$，其解为 $y=3$ 或 $5$。
+\begin{parts}
+\part
+\begin{solution}
+$y=3 \Rightarrow \sqrt[3]{\frac{1+x}{1-x}}=3 \Rightarrow 1+x=27(1-x) \Rightarrow x_1=\frac{13}{14}$。
+\end{solution}
+\part
+\begin{solution}
+$y=5 \Rightarrow \sqrt[3]{\frac{1+x}{1-x}}=5 \Rightarrow 1+x=125(1-x) \Rightarrow x_2=\frac{62}{63}$。
+\end{solution}
+\end{parts}
+\end{solution}
+
+\question
+(CHINA/2005) 已知关于 $x$ 的无理方程
+\[
+a\sqrt{x^2}+\frac{1}{2}\sqrt[4]{x^2}-\frac{1}{3}=0
+\]
+恰有两个不同的实根。求实数 $a$ 的取值范围。
+\begin{solution}
+代换 $w=\sqrt[4]{x^2}$ 得到
+\[
+aw^2+\frac{1}{2}w-\frac{1}{3}=0
+\]
+原方程恰有两个不同的实数解当且仅当 (3.1) 恰有一个正解。
+当 $a=0$ 时，$w=\frac{2}{3}$ 是 $w$ 的唯一正解。
+当 $a \ne 0$ 时，由韦达定理，(3.1) 有一正根和一负根当且仅当 $a > 0$。
+当 $a < 0$ 时，(3.1) 可能有两个相等的正根，在这种情况下
+\[
+\Delta=\left(\frac{1}{2}\right)^2-4a\left(-\frac{1}{3}\right)=0
+\]
+所以 $a=-\frac{3}{16}$。因此，$a$ 的范围是 $a \ge 0$ 或 $a=-\frac{3}{16}$。
+\end{solution}
+
+\question
+解方程 $x^2+4x+4x\sqrt{x+3}=13$。
+\begin{solution}
+通过配方，原方程可以写为
+\[
+x^2+(2x)\left(2\sqrt{x+3}\right)+\left(2\sqrt{x+3}\right)^2-12=13
+\]
+\[
+\left(x+2\sqrt{x+3}\right)^2=25
+\]
+$\therefore x+2\sqrt{x+3}=5$ 或 $x+2\sqrt{x+3}=-5$。
+\begin{parts}
+\part
+\begin{solution}
+$x+2\sqrt{x+3}=5 \Rightarrow x^2-14x+13=0 \Rightarrow x_1=1, x_2=13$ (经检验，13不合题意)。
+\end{solution}
+\part
+\begin{solution}
+$x+2\sqrt{x+3}=-5 \Rightarrow x^2+6x+13=0$，无实数解。
+\end{solution}
+\end{parts}
+因此，$x=1$ 是唯一的实数解。
+\end{solution}
+
+\question
+求无理方程 $\sqrt{x^2+1}+\sqrt{y^2-4}+\frac{1}{2}\sqrt{z^2-1}=\frac{1}{4}\left(x^2+y^2+z^2+5\right)$ 的实根个数。
+\begin{solution}
+将原方程变形为
+\[
+(x^2+1-4\sqrt{x^2+1}+4)+(y^2-4-4\sqrt{y^2-4}+4)+(z^2-1-2\sqrt{z^2-1}+1)=0
+\]
+则
+\[
+\left(\sqrt{x^2+1}-2\right)^2+\left(\sqrt{y^2-4}-2\right)^2+\left(\sqrt{z^2-1}-1\right)^2=0
+\]
+所以 $\sqrt{x^2+1}=2, \sqrt{y^2-4}=2, \sqrt{z^2-1}=1$，即
+\[
+x=\pm\sqrt{3}, \quad y=\pm2\sqrt{2}, \quad z=\pm\sqrt{2}
+\]
+实根 $(x, y, z)$ 的个数为 8。
+\end{solution}
+
+\question
+(CROATIA/TST/2007) 求方程 $\sqrt{2x+1}+\sqrt{x+3}=3+\sqrt{x+7}$ 的所有实数解。
+\begin{solution}
+原方程得 $\sqrt{2x+1}-3=\sqrt{x+7}-\sqrt{x+3}$，所以
+\[
+2x+1+9-6\sqrt{2x+1}=2x+10-2\sqrt{x^2+10x+21}
+\]
+\[
+x^2+10x+21=9(2x+1)
+\]
+\[
+x^2-8x+12=0, \quad \therefore x=2 \text{ 或 } 6
+\]
+由于 $\sqrt{2x+1}-3=\sqrt{x+7}-\sqrt{x+3}>0$ 意味着 $x>4$，所以 $x=6$ 是唯一解。
+\end{solution}
+
+\question
+解方程 $\sqrt[3]{x+9}=2-\sqrt{x+1}$。
+\begin{solution}
+令 $y=\sqrt[3]{x+9}$，则 $x+1=y^3-8=(y-2)\left(y^2+4y+4\right)$，原方程变为
+\[
+y-2=-\sqrt{(y-2)\left(y^2+4y+4\right)}
+\]
+\[
+(y-2)^2=(y-2)\left(y^2+4y+4\right)
+\]
+\[
+(y-2)\left(y^2+3y+6\right)=0 \Rightarrow y=2
+\]
+由 $\sqrt[3]{x+9}=2$ 易得 $x=-1$。
+\end{solution}
+
+\question
+(USAMO/TST/2001) 设 $a, b$ 为给定的实数。对实数 $x, y$ 解方程组
+\[
+\begin{cases} \frac{x-y\sqrt{x^2-y^2}}{\sqrt{1-x^2+y^2}}=a \\ \frac{y-x\sqrt{x^2-y^2}}{\sqrt{1-x^2+y^2}}=b \end{cases}
+\]
+\begin{solution}
+令 $u=x+y$ 和 $v=x-y$。则 $0 \le x^2-y^2=uv < 1$，$x=\frac{u+v}{2}$，$y=\frac{u-v}{2}$。
+两式相加和相减得到新方程组
+\[
+u-u\sqrt{uv}=(a+b)\sqrt{1-uv}
+\]
+\[
+v+v\sqrt{uv}=(a-b)\sqrt{1-uv}
+\]
+两式相乘得 $uv(1-uv)=\left(a^2-b^2\right)(1-uv)$，因此 $uv=a^2-b^2$。由此推得
+\[
+u=\frac{(a+b)\sqrt{1-a^2+b^2}}{1-\sqrt{a^2-b^2}} \quad \text{和} \quad v=\frac{(a-b)\sqrt{1-a^2+b^2}}{1+\sqrt{a^2-b^2}}
+\]
+这进一步意味着
+\[
+(x, y)=\left(\frac{a+b\sqrt{a^2-b^2}}{\sqrt{1-a^2+b^2}}, \frac{b+a\sqrt{a^2-b^2}}{\sqrt{1-a^2+b^2}}\right)
+\]
+只要 $0 \le a^2-b^2 < 1$。
+\end{solution}
+
+\question
+(BULGARIA/2007) 解无理方程组
+\[
+\begin{cases} \sqrt{x^2+y^2-16(x+y)-9y+7}=y-2 \\ x+13\sqrt[4]{x-y}=y+42 \end{cases}
+\]
+\begin{solution}
+令 $u=\sqrt[4]{x-y}$，第二个方程变为 $u^4+13u-42=0$，即 $(u-2)\left(u^3+2u^2+4u+21\right)=0$，其有唯一正根 $u=2$。
+因此 $x=y+16$。将其代入第一个方程，得
+\[
+y^2-5y+3=0
+\]
+所以 $y=\frac{5+\sqrt{13}}{2}$（因为 $\frac{5-\sqrt{13}}{2} < 2$ 不合题意）。
+因此，$x=\frac{37+\sqrt{13}}{2}, y=\frac{5+\sqrt{13}}{2}$。
+\end{solution}
+
+\question
+求无理方程 $\sqrt{3x^2+x-1}+\sqrt{x^2-2x-3}=\sqrt{3x^2+3x+5}+\sqrt{x^2+3}$ 的所有实根。
+\begin{solution}
+令 $u=\sqrt{3x^2+x-1}, v=\sqrt{x^2-2x-3}, w=\sqrt{3x^2+3x+5}, z=\sqrt{x^2+3}$，则
+\[
+u+v=w+z \quad \text{且} \quad u^2-v^2=w^2-z^2
+\]
+由此得 $u-v=w-z$。因此 $u=w$。于是
+\[
+\sqrt{3x^2+x-1}=\sqrt{3x^2+3x+5} \Rightarrow x-1=3x+5 \Rightarrow x=-3
+\]
+\end{solution}
+
+\question
+求无理方程 $|x^2-4|x|+5|=\sqrt{16-8x+x^2}-1$ 的实根个数。
+\begin{solution}
+由于 $x^2-4|x|+5=(|x|-2)^2+1 > 0$，原方程的形式为
+\[
+x^2-4|x|+5=|x-4|+1
+\]
+\begin{enumerate}
+    \item $x \le 0 \Rightarrow x^2+5x=0 \Rightarrow x=0$ 或 $-5$。
+    \item $0 < x \le 4 \Rightarrow x^2-3x=0 \Rightarrow x=3$。
+    \item $4 < x \Rightarrow x^2-5x+8=0$，无实数解。
+\end{enumerate}
+因此，实数解的个数为 3。
+\end{solution}
+
+\question
+(CROATIA/TST/2008) 求方程 $\left(16x^{200}+1\right)\left(y^{200}+1\right)=16(xy)^{100}$ 的所有实数解。
+\begin{solution}
+令 $u=4x^{100}, v=y^{100}$，则原方程变为
+\[
+\left(u^2+1\right)\left(v^2+1\right)=4uv
+\]
+由
+\[
+\left(u^2+1\right)\left(v^2+1\right)=4uv \Leftrightarrow \left[(uv)^2-2uv+1\right]+\left(u^2+v^2-2uv\right)=0
+\]
+\[
+\Leftrightarrow uv=1 \text{ 且 } u=v \Rightarrow u=v=1 \quad (\because u, v \ge 0)
+\]
+由此推得 $x=\pm\frac{1}{\sqrt[50]{2}}, y=\pm1$，因此
+\[
+(x, y)=\left(\frac{1}{\sqrt[50]{2}}, 1\right), \left(\frac{1}{\sqrt[50]{2}}, -1\right), \left(-\frac{1}{\sqrt[50]{2}}, 1\right), \left(-\frac{1}{\sqrt[50]{2}}, -1\right)
+\]
+\end{solution}
+
     \question 解
     \[ 
     |x + 1|-|x|+3|x-1|-2|x-2|=x+2 
@@ -3359,6 +3691,149 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
 解得 $x = 101$。
 \end{solution}
 
+\question
+(KOREA MC/2000) 求满足方程 $2^x+3^x-4^x+6^x-9^x=1$ 的所有实数 $x$。
+\begin{solution}
+令 $2^x=a$ 且 $3^x=b$，原方程变为
+\[
+1+a^2+b^2-a-b-ab=0
+\]
+将上式两边同乘以 2 并配方，得
+\[
+(1-a)^2+(a-b)^2+(b-1)^2=0
+\]
+因此 $a=b=1$，即 $2^x=3^x=1$。所以 $x=0$ 是唯一解。
+\end{solution}
+
+\question
+(USAMO/TST/2001) 求所有满足 $10^x+11^x+12^x=13^x+14^x$ 的实数 $x$。
+\begin{solution}
+易证 $x=2$ 是该方程的一个解。我们断言它是唯一的解。事实上，方程两边同除以 $13^x$ 得
+\[
+\left(\frac{10}{13}\right)^x+\left(\frac{11}{13}\right)^x+\left(\frac{12}{13}\right)^x=1+\left(\frac{14}{13}\right)^x
+\]
+左边是关于 $x$ 的严格递减函数，而右边是关于 $x$ 的严格递增函数。因此，两条曲线至多有一个交点。
+\end{solution}
+
+\question
+(SSSMO/2009/Q12) 假设 $a, b, c$ 是大于 1 的实数。求下式的值：
+\[
+\frac{1}{1+\log_{a^2 b}\left(\frac{c}{a}\right)}+\frac{1}{1+\log_{b^2 c}\left(\frac{a}{b}\right)}+\frac{1}{1+\log_{c^2 a}\left(\frac{b}{c}\right)}
+\]
+\begin{solution}
+换底公式 $\log_u v = \frac{1}{\log_v u}$（其中 $u, v > 0$ 且 $u, v \ne 1$），则
+\begin{align*}
+&\frac{1}{1+\log_{a^2 b}\left(\frac{c}{a}\right)}+\frac{1}{1+\log_{b^2 c}\left(\frac{a}{b}\right)}+\frac{1}{1+\log_{c^2 a}\left(\frac{b}{c}\right)} \\
+=& \frac{1}{\log_{a^2 b}(abc)}+\frac{1}{\log_{b^2 c}(abc)}+\frac{1}{\log_{c^2 a}(abc)} \\
+=& \log_{abc}\left(a^2 b\right)\left(b^2 c\right)\left(c^2 a\right) = \log_{abc}(abc)^3 = 3
+\end{align*}
+\end{solution}
+
+\question
+已知 $a, b, c$ ($a \le b \le c$) 为自然数，$x, y, z, w$ 为实数，满足
+\[
+a^x = b^{2y} = c^z = 90^w \quad \text{且} \quad \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = \frac{1}{w}
+\]
+证明 $a + b = c$。
+\begin{solution}
+由于 $x, y, z, w \ne 0$ 且 $a = 90^{\frac{w}{x}}, b^2 = 90^{\frac{w}{y}}, c = 90^{\frac{w}{z}}$，由此可得
+\[
+ab^2c = 90^{\frac{w}{x} + \frac{w}{y} + \frac{w}{z}} = 90^1 = 90 = 2 \cdot 3^2 \cdot 5
+\]
+由于 $a = 1$ 会导出 $w = 0$，故 $a > 1$，因此只能是 $a = 2, b = 3, c = 5$。结论得证。
+\end{solution}
+
+\question
+求所有使下式成立的实数 $x$ 的和：
+\[
+\left(3^x - 9\right)^3 + \left(9^x - 81\right)^3 = \left(9^x + 3^x - 90\right)^3
+\]
+\begin{solution}
+原方程可写为 $\left(3^x - 9\right)^3 + \left(9^x - 81\right)^3 + \left[-(9^x + 3^x - 90)\right]^3 = 0$。
+利用恒等式：若 $u+v+w=0$，则 $u^3+v^3+w^3=3uvw$。
+令 $u = 3^x - 9, v = 9^x - 81, w = -(9^x + 3^x - 90)$，易知 $u+v+w=0$。
+故原方程变为
+\[
+3\left(3^x - 9\right)\left(9^x - 81\right)\left(9^x + 3^x - 90\right) = 0
+\]
+\begin{enumerate}
+    \item 当 $3^x - 9 = 0$ 时，$x = 2$。
+    \item 当 $9^x - 81 = 0$ 时，$x = 2$。
+    \item 当 $9^x + 3^x - 90 = 0$ 时，令 $t = 3^x$，则 $t^2 + t - 90 = 0 \Rightarrow (t-9)(t+10) = 0$。
+    由于 $t > 0$，故 $3^x = 9 \Rightarrow x = 2$。
+\end{enumerate}
+综上所述，所有实数根均为 $x = 2$，故实根之和为 2。
+\end{solution}
+
+\question (USAMO/TST/2001) 求所有使得下式成立的实数 $x$：
+\[
+\frac{8^x + 27^x}{12^x + 18^x} = \frac{7}{6}
+\]
+\begin{solution}
+令 $2^x = a$ 且 $3^x = b$，方程变为
+\[
+\frac{a^3 + b^3}{a^2b + ab^2} = \frac{7}{6} \Leftrightarrow \frac{a^2 - ab + b^2}{ab} = \frac{7}{6}
+\]
+\[
+\Leftrightarrow 6a^2 - 13ab + 6b^2 = 0 \Leftrightarrow (2a - 3b)(3a - 2b) = 0
+\]
+因此 $2^{x+1} = 3^{x+1}$ 或 $2^{x-1} = 3^{x-1}$，这意味着 $x_1 = -1$ 且 $x_2 = 1$。
+容易验证 $x = -1$ 和 $x = 1$ 均满足原方程。
+\end{solution}
+
+\question (CROATIA/2005) 证明对于每个正整数 $n \ge 2$，
+\[
+\sum_{k=2}^{n} \left(\log_{\frac{3}{2}}(k^3 + 1) - \log_{\frac{3}{2}}(k^3 - 1)\right) < 1
+\]
+\begin{solution}
+首先，
+\[
+\sum_{k=2}^{n} \left[\log_{\frac{3}{2}}(k^3 + 1) - \log_{\frac{3}{2}}(k^3 - 1)\right]
+\]
+\[
+= \sum_{k=2}^{n} \log_{\frac{3}{2}} \frac{k^3 + 1}{k^3 - 1} = \log_{\frac{3}{2}} \prod_{k=2}^{n} \frac{k^3 + 1}{k^3 - 1} = \log_{\frac{3}{2}} \prod_{k=2}^{n} \frac{(k + 1)(k^2 - k + 1)}{(k - 1)(k^2 + k + 1)}
+\]
+\[
+= \log_{\frac{3}{2}} \left(\prod_{k=2}^{n} \frac{k + 1}{k - 1} \cdot \prod_{k=2}^{n} \frac{k^2 - k + 1}{k^2 + k + 1}\right)
+\]
+由
+\[
+\prod_{k=2}^{n} \frac{k + 1}{k - 1} = \frac{3}{1} \cdot \frac{4}{2} \cdot \frac{5}{3} \cdots \frac{n - 1}{n - 3} \cdot \frac{n}{n - 2} \cdot \frac{n + 1}{n - 1} = \frac{n(n + 1)}{2}
+\]
+以及
+\[
+\prod_{k=2}^{n} \frac{k^2 - k + 1}{k^2 + k + 1} = \frac{3}{7} \cdot \frac{7}{13} \cdot \frac{13}{19} \cdots \frac{n^2 - n + 1}{n^2 + n + 1} = \frac{3}{n^2 + n + 1}
+\]
+因为 $(k - 1)^2 + (k - 1) + 1 = k^2 - k + 1$，可得
+\[
+\sum_{k=2}^{n} \left[\log_{\frac{3}{2}}(k^3 + 1) - \log_{\frac{3}{2}}(k^3 - 1)\right] = \log_{\frac{3}{2}} \left[\frac{n(n + 1)}{2} \cdot \frac{3}{n^2 + n + 1}\right]
+\]
+\[
+= \log_{\frac{3}{2}} \left(\frac{3}{2} \cdot \frac{n^2 + n}{n^2 + n + 1}\right) < \log_{\frac{3}{2}} \frac{3}{2} = 1
+\]
+\end{solution}
+
+\question (THAILAND/2003) 求所有满足方程组的实数对 $(x, y)$
+\[
+x^{x+y} = y^{x-y}
+\]
+\[
+x^2y = 1
+\]
+\begin{solution}
+(4.4) 产生
+\[
+y = \frac{1}{x^2}
+\]
+且 (4.3) 产生
+\[
+\left(\frac{x}{y}\right)^x = \left(\frac{1}{xy}\right)^y
+\]
+接着将 $y = \frac{1}{x^2}$ 代入上式给出 $x^{3x} = x^y$ 或 $x^{3x-y} = 1$。当 $x = \pm 1$ 时，$y = 1$。通过检查，$(-1, 1)$ 和 $(1, 1)$ 是原方程组的解。
+当 $x \ne -1$ 且 $x \ne 1$ 时，则 $y = 3x$，所以由 $y = \frac{1}{x^2}$ 可得 $x^3 = \frac{1}{3}$ 或 $x = \frac{1}{\sqrt[3]{3}}$，从而 $y = \sqrt[3]{9}$。
+因此，给定方程组的解为 $(-1, 1)$, $(1, 1)$ 和 $\left(\frac{1}{\sqrt[3]{3}}, \sqrt[3]{9}\right)$。
+\end{solution}
+
     \question 解不等式
     \[
     \sqrt{\log_2 x - 1} + \frac{1}{2} \log_{\frac{1}{2}} x^3 + 2 > 0
@@ -3540,8 +4015,7 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
         由 $a^2 - 2ab - 9b^2 = 0 $解得
         $$a = (\sqrt{10} + 1)b$$
         故
-        \[
-        \begin{aligned}
+        \begin{align*}
         &\log(a^2 + ab - 6b^2) - \log(a^2 + 4ab + 15b^2) \\
         &= \log(3ab + 3b^2) - \log(6ab + 24b^2) \\
         &= \log\left(\frac{3b(a + b)}{6b(a + 4b)}\right)\\
@@ -3549,8 +4023,7 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
         &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)b}{(\sqrt{10} + 5)b}\right) \\
         &= \log\left(\frac{1}{2} \cdot \frac{(\sqrt{10} + 2)(5 - \sqrt{10})}{(\sqrt{10} + 5)(5 - \sqrt{10})}\right) \\
         &= \log\left(\frac{1}{2} \cdot \frac{3\sqrt{10}}{15}\right)= \log\left(\frac{\sqrt{10}}{10}\right) = -\frac{1}{2}
-        \end{aligned}
-        \]
+        \end{align*}
     \end{solution}
 
     \question 设正实数 \( x, y \)（\( x \neq 1, y \neq 1 \)）满足
@@ -3819,6 +4292,7 @@ x^2 &= \left( \frac{\log a}{\log b} + \frac{\log b}{\log a} \right)^2 - 4 \\
         (x,y,z) = (10^4, 10^3, 10^{10}) \quad \text{或} \quad (10^2, 10^{-1}, 10^{-2})
         \]
     \end{solution}
+
 \end{questions}
 \pagebreak
 
@@ -4939,8 +5413,7 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         \frac{1}{x}+\frac{1}{y}+\frac{1}{z} = \frac{xy+yz+zx}{xyz} = -\frac{1}{3} \Rightarrow xyz = \frac{3(a-9)}{2}
         \]
         由 $(3)$ 得
-        \[
-        \begin{aligned}
+        \begin{align*}
         &x^2(y+z) + y^2(z+x) + z^2(x+y) \\
         &= x^2(-3-x) + y^2(-3-y) + z^2(-3-z) \\ 
         &= -3(x^2+y^2+z^2) - (x^3+y^3+z^3) \\ 
@@ -4948,8 +5421,7 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         &= -3a - \big[ (-3)\left(a - \frac{9-a}{2}\right) + 3 \cdot \frac{3(a-9)}{2} \big] \\
         &= -3a + \frac{-9a+27}{2} + \frac{9a-81}{2} \\
         &= -3a + 27=-24 \Rightarrow a = 17
-        \end{aligned}
-        \]
+        \end{align*}
     \end{solution}
 
     \question (CROATIA/TST/2007) 在实数范围内解方程组
@@ -7358,7 +7830,48 @@ g(0) = \left( \frac{1}{8} \right)^0 = 1
         从而方程 $f(t)=\sqrt{2a}$ 恰有三个实数解 $$t_1=-\frac{5a}{8},\ t_2=0,\ t_3=\frac{5a}{8}$$
         由条件知 $b=x_3=t_3-\frac{a}{2}=\frac{a}{8}$, 结合 $b=\sqrt{2a}$ 得 $a=128$,于是 $a+b=\frac{9a}{8}=144$
     \end{solution}  
+    \question 7. 设 $f(x) = \sin^4 x - \sin x \cos x + \cos^4 x, x \in \mathbb{R}$。求 $f$ 的值域。
+\begin{solution}
+通过化简，
+\[
+f(x) = \sin^4 x - \sin x \cos x + \cos^4 x
+\]
+\[
+= (\sin^2 x + \cos^2 x)^2 - \frac{1}{2} \sin^2 2x - \frac{1}{2} \sin 2x
+\]
+\[
+= 1 - \frac{1}{2} \sin 2x - \frac{1}{2} \sin^2 2x
+\]
+令 $t = \sin 2x$，则 $-1 \le t \le 1$，且
+\[
+f(x) = g(t) = 1 - \frac{1}{2}t - \frac{1}{2}t^2 = \frac{9}{8} - \frac{1}{2}\left(t + \frac{1}{2}\right)^2
+\]
+因此 $\min_{x \in \mathbb{R}}\{f(x)\} = \min_{-1 \le t \le 1}\{g(t)\} = 0$，且 $\max_{x \in \mathbb{R}}\{f(x)\} = \max_{-1 \le t \le 1}\{g(t)\} = \frac{9}{8}$。
+因此，$f$ 的值域是 $\left[0, \frac{9}{8}\right]$。
+\end{solution}
 
+例 8. (CMC/2008) 已知 $f(x) = \cos 2x - 2a(1 + \cos x)$ 的最小值为 $-\frac{1}{2}$，求 $a$ 的值。
+\begin{solution}
+$f(x) = 2 \cos^2 x - 1 - 2a - 2a \cos x = 2\left(\cos x - \frac{a}{2}\right)^2 - \frac{1}{2}a^2 - 2a - 1$。
+(1) 当 $a > 2$ 时，$f$ 的最小值为 $1 - 4a < -7$，且该值在 $\cos x = 1$ 时取得。
+(2) 当 $a < -2$ 时，$f$ 的最小值为 $1$，且该值在 $\cos x = -1$ 时取得。
+(3) 当 $-2 \le a \le 2$ 时，$f$ 的最小值为 $-\frac{1}{2}a^2 - 2a - 1$，且该值在 $\cos x = \frac{a}{2}$ 时取得。
+通过解 $-\frac{1}{2}a^2 - 2a - 1 = -\frac{1}{2}$，得出 $a^2 + 4a + 1 = 0$，所以
+\[
+a = -2 + \sqrt{3} \quad \text{或} \quad a = -2 - \sqrt{3}
+\]
+由于 $|a| \le 2$，所以 $a = -2 + \sqrt{3}$。
+\end{solution}
+
+    \question 证明函数 $f(x) = -x + \sin x (x \in \mathbb{R})$ 不是周期函数。
+\begin{solution}
+假设 $T > 0$ 是一个周期，则 $f(0) = 0 = f(nT)$ 对于 $n = 0, 1, 2, 3, \dots$ 均成立。
+然而，对于任何 $n > \frac{3}{T}$，
+\[
+|f(nT)| = |-nT + \sin(nT)| \ge |-nT| - |\sin(nT)| > 3 - 1 = 2
+\]
+这产生了矛盾。
+\end{solution}
     \question
 设 $X$ 和 $Y$ 是集合，设 $A$ 和 $B$ 是 $X$ 的任意子集，设 $C$ 和 $D$ 是 $Y$ 的任意子集。确定以下性质对于所有从 $X$ 到 $Y$ 的函数 $F$ 是否为真，若为假，请举出至少一个函数 $F$ 的反例。
 
@@ -7501,7 +8014,7 @@ g \circ f(x) = g(f(x)) = z
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{不等式}{不等式} \label{不等式}
+    \hypertarget{不等式、最值问题}{不等式、最值问题} \label{不等式、最值问题}
   }
 \end{center}
 \separator
@@ -7973,6 +8486,238 @@ k < \frac{-1 + \sqrt{1 + 4 \times 404040}}{2} \approx 635.14
 \end{align*}
 当 $y = -2$ 时，$x^2 - 2x - 6 = 0$，此时 $2x^2 + 2xy + y^2 - 4y + 11$ 有最大值 35。
 答：35。
+\end{solution}
+
+\question Example 1. $f(x) = |x| + 2|x - 1| + |x - 2| + |x - 4| + |x - 6| + 2|x - 10|$, 其中 $x \in \mathbb{R}$。求 $f$ 的最小值。
+
+\begin{solution}
+对于任意实数 $a$ 和 $b$ 且 $a < b$，函数 $g(x) = |x - a| + |x - b|$, $-\infty < x < +\infty$ 可以写成如下形式
+\[
+g(x) = \begin{cases} a + b - 2x & x \le a \\ b - a & a \le x \le b \\ 2x - (a + b) & b \le x \end{cases}
+\]
+。所以 $g(x)$ 在 $(-\infty, a]$ 上递减，在 $[a, b]$ 上为常数 $b - a$，在 $[b, +\infty)$ 上递增。
+因此，$g$ 在 $a \le x \le b$ 时取得最小值 $b - a$。
+由于 $|x| + |x - 10|$, $|x - 1| + |x - 10|$, $|x - 1| + |x - 6|$ 以及 $|x - 2| + |x - 4|$ 分别在 $[0, 10]$, $[1, 10]$, $[1, 6]$ 和 $[2, 4]$ 上取得最小值，因此 $f$ 在 $x \in [2, 4]$ 时取得最小值。通过令 $x = 2$，得到 $f(2) = 2 + 2 + 0 + 2 + 4 + 16 = 26$ 是 $f$ 的最小值。
+\end{solution}
+
+\question Example 3. (CMC/2009) 设 $x, y$ 为实数且满足 $2x + y \ge 1$。求两个变量的函数 $u = x^2 + 4x + y^2 - 2y$ 的最小值。
+
+\begin{solution}
+如果分别对 $x$ 和 $y$ 配方，则条件 $2x + y \ge 1$ 无法被满足。现在令 $z = 2x + y$，则 $z \ge 1$, $y = z - 2x$ 且
+\begin{align*}
+u &= x^2 + 4x + (z - 2x)^2 - 2(z - 2x) = 5x^2 - 4zx + 8x + z^2 - 2z \\
+&= 5\left(x^2 - \frac{4}{5}(z - 2)x + \frac{4}{25}(z - 2)^2\right) + \left(z^2 - 2z - \frac{4}{5}(z - 2)^2\right) \\
+&= 5\left(x - \frac{2}{5}(z - 2)\right)^2 + \frac{z^2 + 6z - 16}{5} \ge \frac{1 + 6 - 16}{5} = -\frac{9}{5}
+\end{align*}
+。等号在 $z = 1, x = \frac{2}{5}(z - 2) = -\frac{2}{5}$ 时成立。因此，$u_{\min} = -\frac{9}{5}$。
+\end{solution}
+
+\question Example 7. (SMO/2003) 当 $x, y$ 和 $z$ 遍历所有正实数集合时，求
+\[
+\frac{xyz}{(1 + 5x)(4x + 3y)(5y + 6z)(z + 18)}
+\]
+的最大值。证明你的结论。
+
+\begin{solution}
+令 $I = \frac{xyz}{(1 + 5x)(4x + 3y)(5y + 6z)(z + 18)}$，则
+\[
+I = \frac{xyz}{(1 + 5x)(4x + 3y)(5y + 6z)(z + 18)} = \frac{1}{20(1 + \alpha)(1 + \beta)(1 + \gamma)(1 + \delta)}
+\]
+，其中
+\[
+\alpha = 5x, \beta = \frac{3y}{4x}, \gamma = \frac{6z}{5y}, \delta = \frac{18}{z}
+\]
+。由此可知 $\alpha, \beta, \gamma, \delta$ 均为正数且 $\alpha \cdot \beta \cdot \gamma \cdot \delta = 81 = 3^4$。根据均值不等式
+\begin{align*}
+(1 + \alpha)(1 + \beta)(1 + \gamma)(1 + \delta) &= 1 + (\alpha + \beta + \gamma + \delta) + (\alpha\beta + \alpha\gamma + \alpha\delta + \beta\gamma + \beta\delta + \gamma\delta) \\
+&\quad + (\alpha\beta\gamma + \alpha\beta\delta + \alpha\gamma\delta + \beta\gamma\delta) + \alpha\beta\gamma\delta \\
+&\ge 1 + 4(\alpha \cdot \beta \cdot \gamma \cdot \delta)^{\frac{1}{4}} + 6(\alpha \cdot \beta \cdot \gamma \cdot \delta)^{\frac{2}{4}} + 4(\alpha \cdot \beta \cdot \gamma \cdot \delta)^{\frac{3}{4}} + \alpha \cdot \beta \cdot \gamma \cdot \delta \\
+&= 256
+\end{align*}
+。因此 $I \le \frac{1}{5120}$。由于当 $\alpha = \beta = \gamma = \delta = 3$ 时 $I = \frac{1}{5120}$，即当 $x = \frac{3}{5}, y = \frac{12}{5}, z = 6$ 时，证明了 $I_{\max} = \frac{1}{5120}$。
+\end{solution}
+
+\question 1. 若 $f(x) = |x + 1| + |ax + 1|, x \in \mathbb{R}$ 的最小值为 $\frac{3}{2}$，求实参数 $a$ 的可能值。
+
+\begin{solution}
+对于任何给定的实数 $a$，$f$ 的图像是一条折线。因此，最小值 $\frac{3}{2}$ 在图像的某个转折点处取得，即 $x + 1 = 0$ 或 $ax + 1 = 0$。
+当 $a = 0$ 时，$f(x) = |x + 1| + 1 \ge 1$ 且 $f(-1) = 1$，即 $f$ 的最小值为 $1$。因此 $a \neq 0$。
+(i) 当 $x = -1$ 时，$f(-1) = |1 - a|$。由 $f(-1) = \frac{3}{2} \Rightarrow a = -\frac{1}{2}$ 或 $a = \frac{5}{2}$。
+当 $a = -\frac{1}{2}$ 时
+\[
+f(x) = |x + 1| + \left|-\frac{1}{2}x + 1\right| = \begin{cases} -\frac{3}{2}x & x \le -1 \\ 2 + \frac{1}{2}x & -1 < x \le 2 \\ \frac{3}{2}x & 2 < x \end{cases}
+\]
+。因此对于 $x \in \mathbb{R}$，$f(x) \ge \frac{3}{2}$。
+对于 $a = \frac{5}{2}$，$f\left(-\frac{1}{2}\right) = \frac{3}{4} < \frac{3}{2}$，所以只有 $a = -\frac{1}{2}$ 符合要求。
+(ii) 当 $ax + 1 = 0$ 即 $x = -\frac{1}{a}$ 时，$\left|-\frac{1}{a} + 1\right| = \frac{3}{2} \Rightarrow a = -2$ 或 $a = \frac{2}{5}$。
+当 $a = -2$ 时
+\[
+f(x) = |x + 1| + |-2x + 1| = \begin{cases} -3x & x \le -1 \\ 2 - x & -1 < x \le \frac{1}{2} \\ 3x & \frac{1}{2} < x \end{cases}
+\]
+。因此对于 $x \in \mathbb{R}$，$f(x) \ge \frac{3}{2}$。
+对于 $a = \frac{2}{5}$，$f\left(-\frac{3}{2}\right) = \frac{9}{10} < \frac{3}{2}$，所以只有 $a = -2$ 符合要求。
+综上所述，$a = -\frac{1}{2}$ 或 $a = -2$。
+\end{solution}
+
+\question 2. 求函数 $y = (x^2 + 4x + 5)(x^2 + 4x + 1) + 3x^2 + 12x + 5, x \in \mathbb{R}$ 的最小值。
+
+\begin{solution}
+令 $u = x^2 + 4x$，则 $u = (x + 2)^2 - 4 \ge -4$ 且
+\[
+y = (u + 5)(u + 1) + 3u + 5 = u^2 + 9u + 10 = \left(u + \frac{9}{2}\right)^2 - \frac{41}{4}
+\]
+。由于 $u \ge -4$，所以 $y$ 的最小值在 $u = -4$（即 $x = -2$）时取得，因此
+\[
+y_{\min} = (-4)^2 + 9(-4) + 10 = -10
+\]
+\end{solution}
+
+\question 4. (CMC/2009) 已知 $A(0, a) (a > 1)$ 在 $y$ 轴上，$M(x, y)$ 是在曲线 $y = \left|\frac{1}{2}x^2 - 1\right|$ 上移动的点。求距离 $|AM|$ 的最小值（用 $a$ 表示）。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image400.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如下图所示，易得曲线上的点为 $E(-\sqrt{2}, 0), F(\sqrt{2}, 0), D(0, 1)$。
+由于
+\[
+y = 1 - \frac{x^2}{2} \text{ 若 } |x| \le \sqrt{2}
+\]
+且
+\[
+y = \frac{x^2}{2} - 1 \text{ 当 } |x| \ge \sqrt{2}
+\]
+。当 $|x| \le \sqrt{2}$ 时，$|AM|_{\min} = AD = a - 1$。
+当 $|x| \ge \sqrt{2}$ 时
+\[
+|AM|^2 = x^2 + \left(\frac{x^2}{2} - 1 - a\right)^2 = \frac{1}{4}(x^2 - 2a)^2 + 2a + 1
+\]
+。当 $x = \sqrt{2a} > \sqrt{2}$ 时取得最小值 $2a + 1$，此时 $|AM|_{\min} = \sqrt{2a + 1}$。
+现在 $|AD|^2 - (2a + 1) = (a - 1)^2 - (2a + 1) = a(a - 4)$，所以在 $1 < a < 4$ 时 $AD < \sqrt{2a + 1}$。
+当 $a > 4$ 时，$\sqrt{2a + 1} < a - 1$。因此：
+若 $1 < a \le 4$，则 $|AM|_{\min} = a - 1$；若 $a > 4$，则 $|AM|_{\min} = \sqrt{2a + 1}$。
+\end{solution}
+
+\question 5. (CMC/2009) $a, b$ 为正系数。求 $f(x) = \frac{a^2}{x} + \frac{b^2}{1 - x}, 0 < x < 1$ 的最小值。
+
+\begin{solution}
+\[
+\frac{a^2}{x} + \frac{b^2}{1 - x} = a^2 + b^2 + a^2\left(\frac{1}{x} - 1\right) + b^2\left(\frac{1}{1 - x} - 1\right)
+\]
+。由均值不等式得
+\[
+\frac{a^2}{x} + \frac{b^2}{1 - x} \ge a^2 + b^2 + 2\sqrt{a^2 b^2 \frac{1 - x}{x} \cdot \frac{x}{1 - x}} = (a + b)^2
+\]
+。$(a + b)^2$ 的值在 $\frac{a^2(1 - x)}{x} = \frac{b^2 x}{1 - x}$，即 $x = \frac{a}{a + b}$ 时可取得。因此，$f$ 的最小值为 $(a + b)^2$。
+\end{solution}
+
+\question 6. (CMC/2008) 求函数 $f(x) = \frac{5 - 4x + x^2}{2 - x}$ 的最小值，其中 $-\infty < x < 2$。
+
+\begin{solution}
+因为 $2 - x > 0$，由均值不等式得
+\[
+f(x) = \frac{1 + (2 - x)^2}{2 - x} = \frac{1}{2 - x} + (2 - x) \ge 2\sqrt{\frac{1}{2 - x} \cdot (2 - x)} = 2
+\]
+。等号在 $\frac{1}{2 - x} = 2 - x$ 即 $x = 1$ 时成立，所以 $2$ 是 $f$ 可达到的值。因此，$f(x)_{\min} = 2$。
+\end{solution}
+
+\question 7. (HUNGARY/2003) 已知非负数 $x, y, z$ 满足 $x^2 + y^2 + z^2 + x + 2y + 3z = \frac{13}{4}$。
+(i) 求 $x + y + z$ 的最大值；
+(ii) 证明 $x + y + z \ge \frac{\sqrt{22} - 3}{2}$。
+
+\begin{solution}
+(i) 通过配方，给定的等式变为
+\[
+\left(x + \frac{1}{2}\right)^2 + (y + 1)^2 + \left(z + \frac{3}{2}\right)^2 = \frac{27}{4}
+\]
+。类似于题目 5，对于任何 $a, b, c \in \mathbb{R}$，以下不等式成立
+\[
+3(a^2 + b^2 + c^2) \ge (a + b + c)^2
+\]
+，等号当且仅当 $a = b = c$ 时成立。因此
+\[
+\left[\left(x + \frac{1}{2}\right) + (y + 1) + \left(z + \frac{3}{2}\right)\right]^2 \le 3\left[\left(x + \frac{1}{2}\right)^2 + (y + 1)^2 + \left(z + \frac{3}{2}\right)^2\right] = \frac{81}{4}
+\]
+。因此 $x + y + z \le \frac{9}{2} - 3 = \frac{3}{2}$，等号当且仅当 $x = 1, y = \frac{1}{2}, z = 0$ 时成立。
+
+(ii) $(x + y + z)^2 \ge x^2 + y^2 + z^2$ 且 $3(x + y + z) \ge x + 2y + 3z$ 意味着
+\[
+\frac{13}{4} = x^2 + y^2 + z^2 + x + 2y + 3z \le (x + y + z)^2 + 3(x + y + z)
+\]
+。因此
+\[
+x + y + z \ge \frac{\sqrt{22} - 3}{2}
+\]
+。等号当且仅当 $x = 0, y = 0, z = \frac{\sqrt{22} - 3}{2}$ 时成立。
+\end{solution}
+
+
+
+\question 9. (JAPAN/2005) 已知 $a, b$ 为实数且满足 $a + b = 17$，求 $2^a + 4^b$ 的最小值。
+
+\begin{solution}
+\[
+2^a + 4^b = 2^{17-b} + 2^{2b} = 2^{16-b} + 2^{16-b} + 2^{2b} \ge 3\sqrt[3]{2^{16-b} \cdot 2^{16-b} \cdot 2^{2b}} = 3 \cdot 2^{\frac{32}{3}} = 3072\sqrt[3]{4}
+\]
+。等号在 $2^{16-b} = 2^{2b}$ 即 $b = \frac{16}{3}$ 时取得。
+\end{solution}
+
+\question 1. (CMC/2009) 若 $f(x) = x^2 - 2x - |x - 1 - a| - |x - 2| + 4$, $x \in \mathbb{R}$ 恒为非负，求实参数 $a$ 的最小值。
+
+\begin{solution}
+给定条件给出
+\[
+f(0) = -|1 + a| + 2 \ge 0 \quad \text{且} \quad f(1) = -|a| + 2 \ge 0
+\]
+，由此可得 $-2 \le a \le 1$。现在取 $a = -2$，则
+\begin{align*}
+f(x) &= x^2 - 2x - |x + 1| - |x - 2| + 4 \\
+&= \begin{cases} x^2 + 3 & x < -1 \\ x^2 - 2x + 1 & -1 \le x \le 2 \\ x^2 - 4x + 5 & x > 2 \end{cases}
+\end{align*}
+。由于对于所有 $x \in \mathbb{R}$，$f(x) \ge 0$，所以 $a_{\min} = -2$。
+\end{solution}
+
+\question 3. (CMC/2009) 已知 $x_1, x_2, \dots, x_{2010} > 0$ 且 $\sum_{i=1}^{2010} x_i^{2009} = 1$。求
+\[
+\min \left\{ \sum_{i=1}^{2010} \frac{x_i^{2008}}{1 - x_i^{2009}} \right\}
+\]
+并证明你的结果。
+
+\begin{solution}
+由于 $\sum_{i=1}^{2010} \frac{x_i^{2008}}{1 - x_i^{2009}} = \sum_{i=1}^{2010} \frac{x_i^{2009}}{x_i \left(1 - x_i^{2009}\right)}$，令 $y_i = x_i \left(1 - x_i^{2009}\right)$，那么对于任何 $1 \le i \le 2010$
+\begin{align*}
+y_i^{2009} &= \frac{1}{2009} \left(2009x_i^{2009}\right) \left(1 - x_i^{2009}\right)^{2009} \\
+&\le \frac{1}{2009} \left(\frac{2009x_i^{2009} + 2009 \left(1 - x_i^{2009}\right)}{2010}\right)^{2010} \\
+&= \frac{1}{2009} \left(\frac{2009}{2010}\right)^{2010} = (2009)^{2009} \left(\frac{1}{2010}\right)^{2010}
+\end{align*}
+。因此
+\[
+y_i \le 2009(2010)^{-\frac{2010}{2009}} \Rightarrow \frac{1}{y_i} \ge \frac{(2010)^{\frac{2010}{2009}}}{2009} = \frac{2010}{2009} \sqrt[2009]{2010}
+\]
+。由此
+\[
+\sum_{i=1}^{2010} \frac{x_i^{2008}}{1 - x_i^{2009}} = \sum_{i=1}^{2010} \frac{x_i^{2009}}{y_i} \ge \frac{2010}{2009} \sqrt[2009]{2010}
+\]
+。等号在 $2009x_i^{2009} = 1 - x_i^{2009}$ 时成立，即 $x_i = \frac{1}{\sqrt[2009]{2010}}$ 对 $i = 1, 2, \dots, 2010$。
+因此，$\min \left\{ \sum_{i=1}^{2010} \frac{x_i^{2008}}{1 - x_i^{2009}} \right\} = \frac{2010}{2009} \sqrt[2009]{2010}$。
+\end{solution}
+
+\question 4. (USAMO/2002) 求下式的最大值
+\[
+S = (1 - x_1)(1 - y_1) + (1 - x_2)(1 - y_2)
+\]
+如果 $x_1^2 + x_2^2 = y_1^2 + y_2^2 = c^2$。
+
+\begin{solution}
+如果我们把 $x_1$ 和 $x_2$ 解释为一个点的坐标，即假设 $P = (x_1, x_2)$，那么 $P$ 位于一个以原点为中心、半径为 $c$ 的圆上。我们可以用参数方程描述圆，即写成 $x_1 = c \cos \theta, x_2 = c \sin \theta$，同理 $y_1 = c \cos \phi, y_2 = c \sin \phi$。那么
+\begin{align*}
+S &= 2 - c(\cos \theta + \sin \theta + \cos \phi + \sin \phi) + c^2(\cos \theta \cos \phi + \sin \theta \sin \phi) \\
+&= 2 - \sqrt{2}c \left[\sin \left(\theta + \frac{\pi}{4}\right) + \sin \left(\phi + \frac{\pi}{4}\right)\right] + c^2 \cos (\theta - \phi) \\
+&\le 2 + 2\sqrt{2}c + c^2 = (\sqrt{2} + c)^2
+\end{align*}
+。等号在 $\theta = \phi = \frac{5\pi}{4}$ 时成立，即 $x_1 = x_2 = y_1 = y_2 = -\frac{\sqrt{2}}{2}c$。
 \end{solution}
 
     \question 求函数 $$f(x,y) = x^2 + 2xy + 2y^2 + 2x + 4y + 5$$ 的最小值。
@@ -9355,143 +10100,7 @@ PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\s
         0 \le x^n - x^{\,n+1} \le \frac{n^n}{(n+1)^{\,n+1}}.
         \]
     \end{solution}
-\question 求函数 $f(x) = \sum_{n=10}^{20} |x - n| = |x - 10| + |x - 11| + |x - 12| + \dots + |x - 20|$ 的最小可能值。
 
-\begin{solution}
-若 $x \le 10$，则
-\[
-f(x) = (10 + 11 + 12 + \dots + 20) - 11x \ge \frac{11}{2}(10 + 20) - 11 \times 10 = 55
-\]
-若 $x \ge 20$，则
-\[
-f(x) = 11x - (10 + 11 + 12 + \dots + 20) \ge 11 \times 20 - \frac{11}{2}(10 + 20) = 55
-\]
-设 $11 \le n \le 20$。若 $n - 1 < x \le n$，则
-\begin{align*}
-f(x) &= (x - 10) + (x - 11) + \dots + (x - n + 1) + (n - x) + (n + 1 - x) + \dots + (20 - x) \\
-&= (2n - 31)x + (10 + 11 + 12 + \dots + 20) - 2 \times [10 + 11 + \dots + (n - 1)]
-\end{align*}
-因此，函数 $f(x)$ 在 $x \le 15$ 时是递减的，在 $x \ge 15$ 时是递增的。
-因此，当 $x = 15$ 时，$f(x)$ 有最小值。此时
-\[
-f(x) = 5 + 4 + 3 + 2 + 1 + 0 + 1 + 2 + 3 + 4 + 5 = 30
-\]
-\end{solution}
-    \question 25. 设 $S = |n-1| + 2|n-2| + 3|n-3| + \dots + 20|n-20|$，其中 $n$ 是正整数。求 $S$ 的最小可能值。
-
-\begin{solution}
-考虑连续函数 $f(x) = \sum_{i=1}^{20} i|x-i|$。
-当 $k \le x \le k+1$（$k$ 为正整数）时，$f(x)$ 是线性函数。其斜率为：
-\[
-\text{Slope} = \sum_{i=1}^{k} i - \sum_{i=k+1}^{20} i = 2\sum_{i=1}^{k} i - \sum_{i=1}^{20} i = k(k+1) - 210
-\]
-* 当 $k \le 14$ 时，$k(k+1) - 210 \le 14 \times 15 - 210 = 0$。
-    此时斜率为负， $f(x)$ 在区间上递减，$f(k) \ge f(k+1)$。
-* 当 $k \ge 15$ 时，$k(k+1) - 210 \ge 15 \times 16 - 210 = 30 > 0$。
-    此时斜率为正， $f(x)$ 在区间上递增，$f(k) \le f(k+1)$。
-
-因此，$f(1) \ge f(2) \ge \dots \ge f(14) \ge f(15)$ 且 $f(15) \le f(16) \le \dots$。
-当 $n=15$ 时，$S$ 取最小值：
-\begin{align*}
-S_{\min} &= 14 + 2 \times 13 + 3 \times 12 + \dots + 14 \times 1 + 16 \times 1 + 17 \times 2 + \dots + 20 \times 5 \\
-&= 840
-\end{align*}
-所以 $S$ 的最小可能值为 $840$。
-\end{solution}
-
-\question 27. 若 $x, y$ 是实数且 $(x, y) \neq (0, 0)$，求
-\[
-f(x, y) = \frac{12x^2 + 6xy + 6y^2}{x^2 + xy + y^2}
-\]
-的最大可能值。
-
-\begin{solution}
-若 $x=0$，则 $f(0, y) = \frac{6y^2}{y^2} = 6$。
-若 $x \neq 0$，令 $u = \frac{y}{x}$，则：
-\begin{align*}
-f(x, y) &= \frac{12 + 6u + 6u^2}{1 + u + u^2} \\
-&= \frac{6}{1 + u + u^2} + 6 \\
-&= \frac{6}{\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}} + 6
-\end{align*}
-当 $u = -\frac{1}{2}$ 时，分母 $\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}$ 取得最小值 $\frac{3}{4}$。
-此时，$f(x, y)$ 取得最大值：
-\[
-f_{\max} = \frac{6}{\frac{3}{4}} + 6 = 8 + 6 = 14
-\]
-$\therefore$ 当 $x = -2y$ 时，$f(x, y)$ 有最大可能值 $14$。
-\end{solution}
-
-\question 28. 设 $n$ 是正整数。定义 $A_n = \frac{30^n + 15^n}{n!}$，其中 $n! = 1 \times 2 \times 3 \times \dots \times n$。求当 $A_n$ 的值最大时 $n$ 的值。
-
-\begin{solution}
-考虑相邻项的差 $A_{n+1} - A_n$：
-\begin{align*}
-A_{n+1} - A_n &= \frac{30^{n+1} + 15^{n+1}}{(n+1)!} - \frac{30^n + 15^n}{n!} \\
-&= \frac{30^{n+1} + 15^{n+1} - (n+1)(30^n + 15^n)}{(n+1)!} \\
-&= \frac{30^n(30 - n - 1) + 15^n(15 - n - 1)}{(n+1)!} \\
-&= \frac{30^n(29 - n) + 15^n(14 - n)}{(n+1)!}
-\end{align*}
-* 当 $n \ge 29$ 时，$29 - n \le 0$ 且 $14 - n < 0$。因此 $A_{n+1} - A_n < 0$，即 $A_{29} > A_{30} > A_{31} > \dots$。
-* 当 $n \le 14$ 时，$29 - n \ge 0$ 且 $14 - n \ge 0$。因此 $A_{n+1} - A_n > 0$，即 $A_{15} > A_{14} > A_{13} > \dots$。
-* 当 $15 \le n \le 28$ 时，由于：
-\[
-0 < \frac{n-14}{29-n} \le \frac{28-14}{29-28} = 14 \le 2^n
-\]
-（注意：此处 $2^n = \left( \frac{30}{15} \right)^n$）
-可得 $30^n(29-n) + 15^n(14-n) > 0$，即 $A_{n+1} > A_n$。
-因此，在 $15 \le n \le 28$ 范围内，数列也是递增的，即 $A_{29} > A_{28} > \dots > A_{15}$。
-由此可得，当 $n = 29$ 时，$A_n$ 的值最大。
-\end{solution}
-
-\question 已知集合 $S = \{1, 2, 3, \cdots, 2019\}$ 是由 1 至 2019 的所有正整数所组成的集合。若任何一个包含 10 个元素的 $S$ 的子集合都包含两个相异的数 $a$ 与 $b$ 使得 $|a - b| \le k$，求 $k$ 的最小可能值。
-
-\begin{solution}
-设 $A$ 为 $S$ 的一个包含 10 个元素的子集。假设其元素按升序排列为 $a_1, a_2, \cdots, a_{10}$。若对于所有不同的 $i$ 和 $j$，都有 $|a_i - a_j| > m$，则：
-\begin{align*}
-a_{10} - a_9 &\ge m + 1 \\
-a_9 - a_8 &\ge m + 1 \\
-&\vdots \\
-a_2 - a_1 &\ge m + 1
-\end{align*}
-因此，
-\[
-2018 \ge a_{10} - a_1 = 9(m + 1)
-\]
-\[
-m + 1 \le 224
-\]
-\[
-m \le 223
-\]
-所以，$k$ 的最小可能值为 224。
-\end{solution}
-
-\question 已知 $a_1, a_2, \cdots, a_{10}$ 是正整数且
-\[ a_1^2 + (2a_2)^2 + (3a_3)^2 + (4a_4)^2 + (5a_5)^2 + (6a_6)^2 + (7a_7)^2 + (8a_8)^2 + (9a_9)^2 + (10a_{10})^2 = 405 \]
-求 $a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值。
-
-\begin{solution}
-由于 $1^2 + 2^2 + 3^2 + \cdots + 10^2 = 385$，
-因此，
-\[ (a_1^2 - 1) + 2^2(a_2^2 - 1) + \cdots + 10^2(a_{10}^2 - 1) = 20 \]
-由于对于所有 $1 \le k \le 10$，都有 $a_k^2 - 1 \ge 0$，且若 $a_k \ge 2$，则 $a_k^2 - 1 \ge 3$。
-我们发现 $a_3 = a_4 = \cdots = a_{10} = 1$，并且
-\[ a_1^2 + 4a_2^2 = 25 \]
-此方程仅有解 $a_1 = 3$ 且 $a_2 = 2$。
-因此，$a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值为 13。
-\end{solution}
-
-\question 已知 $a, b, c$ 都是非零的数，求 $N = 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|}$ 的最小可能值。
-
-\begin{solution}
-\begin{align*}
-N &= 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|} \\
-&= 127 + \left( 1 - \frac{a}{|a|} \right) \left( 1 + \frac{b}{|b|} \right) \left( 1 - \frac{c}{|c|} \right)
-\end{align*}
-对于任何非零的 $x$，若 $x$ 为正，则 $\frac{x}{|x|}$ 为 1；若 $x$ 为负，则 $\frac{x}{|x|}$ 为 $-1$。
-因此，$1 \pm \frac{x}{|x|}$ 只能是 0 或 2。
-$N$ 的最小可能值为 $127 + 0 = 127$，当 $a$ 和 $c$ 为正且 $b$ 为负时即可取得。
-\end{solution}
 \question 29. 已知一三角形三边的长为 $a, b, c$，其中 $a, b, c$ 都是整数。若三角形的周长是 $P$ 个单位，面积是 $A$ 个平方单位，其中 $P = 2A$，求 $A$ 的最大可能值。
 
 \begin{solution}
@@ -9535,6 +10144,109 @@ x'y'z' = x'+y'+z'
 此时 $a=3, b=4, c=5$，且 $A = \frac{a+b+c}{2} = \frac{x+y+z}{2} = 6$。
 
 因此，$A$ 的最大可能值是 $6$。
+\end{solution}
+
+\question (CMC/2008) 已知函数 $f(x) = \frac{\sin(x + 45^\circ)}{\sin(x + 60^\circ)}$，$x \in [0^\circ, 90^\circ]$，求 $f(x)$ 的最大值与最小值的乘积。
+\begin{solution}
+令 $z = x + 45^\circ$，其中 $x \in [0^\circ, 90^\circ]$，则
+\[
+f(x) = f(z - 45^\circ) = g(z) = \frac{\sin z}{\sin(z + 15^\circ)}, \quad z \in [45^\circ, 135^\circ].
+\]
+对于任意 $45^\circ \le z \le 135^\circ$ 及 $0^\circ < \Delta z \le 1^\circ$，
+\begin{align*}
+g(z + \Delta z) - g(z) &= \frac{\sin(z + \Delta z)}{\sin(z + \Delta z + 15^\circ)} - \frac{\sin z}{\sin(z + 15^\circ)} \\
+&= \frac{\sin(z + 15^\circ) \sin(z + \Delta z) - \sin z \sin(z + \Delta z + 15^\circ)}{\sin(z + \Delta z + 15^\circ) \sin(z + 15^\circ)}.
+\end{align*}
+分母恒大于零。对于分子：
+\begin{align*}
+&\sin(z + 15^\circ) \sin(z + \Delta z) - \sin z \sin(z + \Delta z + 15^\circ) \\
+&= \sin(z + 15^\circ) \left[ \sin z \cos \Delta z + \cos z \sin \Delta z \right] \\
+&\quad - \sin z \left[ \sin(z + 15^\circ) \cos \Delta z + \cos(z + 15^\circ) \sin \Delta z \right] \\
+&= \sin \Delta z \left[ \sin(z + 15^\circ) \cos z - \sin z \cos(z + 15^\circ) \right] \\
+&= \sin \Delta z \sin 15^\circ > 0,
+\end{align*}
+因此 $g$ 在其定义域上是严格递增的，$f$ 也是如此。故
+\[
+\max \{f(x)\} = \frac{\sin 135^\circ}{\sin 150^\circ} = \sqrt{2}, \quad \min \{f(x)\} = \frac{\sin 45^\circ}{\sin 60^\circ} = \frac{\sqrt{2}}{\sqrt{3}},
+\]
+它们的乘积为 $\frac{2\sqrt{3}}{3}$。
+\end{solution}
+
+\question (CMC/2008) 求函数 $y = \cos^3 x + \sin^2 x - \cos x, x \in \mathbb{R}$ 的最大值。
+\begin{solution}
+通过使用三角恒等式，然后利用 AM-GM 不等式，
+\begin{align*}
+y &= \sin^2 x - \cos x (1 - \cos^2 x) = \sin^2 x (1 - \cos x) \\
+&= 2 \sin^2 x \sin^2 \frac{x}{2} = 8 \sin^4 \frac{x}{2} \cos^2 \frac{x}{2} \\
+&= 4 \sin^2 \frac{x}{2} \cdot \sin^2 \frac{x}{2} \cdot 2 \cos^2 \frac{x}{2} \\
+&\le 4 \left( \frac{\sin^2 \frac{x}{2} + \sin^2 \frac{x}{2} + 2 \cos^2 \frac{x}{2}}{3} \right)^3 = \frac{32}{27}.
+\end{align*}
+等号成立当且仅当 $\sin^2 \frac{x}{2} = 2 \cos^2 \frac{x}{2}$，即 $\tan \frac{x}{2} = \pm \sqrt{2}$。因此，$y_{\max} = \frac{32}{27}$。
+\end{solution}
+
+\question (CMC/2008) 求函数 $y = \left[ \sin \left( \frac{\pi}{4} + x \right) - \sin \left( \frac{\pi}{4} - x \right) \right] \sin \left( \frac{\pi}{3} + x \right)$ 的最大值，并求出 $f$ 取最大值时对应的 $x$ 集合。
+\begin{solution}
+化简函数，然后使用 $R$ 公式，
+\begin{align*}
+y &= \left[ \sin \left( \frac{\pi}{4} + x \right) - \sin \left( \frac{\pi}{4} - x \right) \right] \sin \left( \frac{\pi}{3} + x \right) \\
+&= \left[ \frac{\sqrt{2}}{2} (\sin x + \cos x) - \frac{\sqrt{2}}{2} (\cos x - \sin x) \right] \left( \frac{\sqrt{3}}{2} \cos x + \frac{1}{2} \sin x \right) \\
+&= \sqrt{2} \sin x \left( \frac{\sqrt{3}}{2} \cos x + \frac{1}{2} \sin x \right) = \frac{\sqrt{6}}{2} \sin x \cos x + \frac{\sqrt{2}}{2} \sin^2 x \\
+&= \frac{\sqrt{6}}{4} \sin 2x + \frac{\sqrt{2}}{4} (1 - \cos 2x) = \frac{\sqrt{2}}{2} \left( \frac{\sqrt{3}}{2} \sin 2x - \frac{1}{2} \cos 2x \right) + \frac{\sqrt{2}}{4} \\
+&= \frac{\sqrt{2}}{2} \sin \left( 2x - \frac{\pi}{6} \right) + \frac{\sqrt{2}}{4},
+\end{align*}
+因此 $y_{\max} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{4} = \frac{3\sqrt{2}}{4}$，对应的 $x$ 集合为
+\[
+\left\{ x : x = k\pi + \frac{\pi}{3}, k \in \mathbb{Z} \right\}.
+\]
+\end{solution}
+
+\question (CWMO/2008) 设 $A, B, C$ 是 $\left( 0, \frac{\pi}{2} \right)$ 中的三个角，满足
+\[
+\sin 2A + \sin 2B + \sin 2C = 4 \cos A \cos B \cos C,
+\]
+求 $\cos A \cos B \cos C$ 的最大值。
+\begin{solution}
+令 $x = \cos^2 A, y = \cos^2 B, z = \cos^2 C$，则 $x, y, z \in (0, 1)$，满足
+\[
+\sqrt{x(1 - x)} + \sqrt{y(1 - y)} + \sqrt{z(1 - z)} = 2 \sqrt{xyz}.
+\]
+由 AM-GM 不等式，
+\begin{align*}
+2\sqrt{xyz} &= \frac{1}{\sqrt{3}} \left[ \sqrt{x(3 - 3x)} + \sqrt{y(3 - 3y)} + \sqrt{z(3 - 3z)} \right] \\
+&\le \frac{1}{\sqrt{3}} \left[ \frac{x + (3 - 3x)}{2} + \frac{y + (3 - 3y)}{2} + \frac{z + (3 - 3z)}{2} \right] \\
+&= \frac{3\sqrt{3}}{2} - \frac{1}{\sqrt{3}} (x + y + z) \le \frac{3\sqrt{3}}{2} - \sqrt{3} \cdot \sqrt[3]{xyz}.
+\end{align*}
+令 $\sqrt[6]{xyz} = p$，则
+\begin{align*}
+2p^3 \le \frac{3\sqrt{3}}{2} - \sqrt{3} p^2 &\Leftrightarrow 4p^3 + 2\sqrt{3} p^2 - 3\sqrt{3} \le 0 \\
+&\Leftrightarrow (2p - \sqrt{3})(2p^2 + 2\sqrt{3} p + 3) \le 0 \Leftrightarrow 2p - \sqrt{3} \le 0 \Leftrightarrow p \le \frac{\sqrt{3}}{2}.
+\end{align*}
+因此 $\cos A \cos B \cos C = \sqrt{xyz} = p^3 \le \frac{3\sqrt{3}}{8}$，等号在 $x = y = z = \frac{3}{4}$ 时成立，所以
+\[
+\max \{ \cos A \cos B \cos C \} = \frac{3\sqrt{3}}{8}.
+\]
+\end{solution}
+
+\question (CMC/2009) 在 $\triangle ABC$ 中，
+\[
+(\sqrt{3} \sin B - \cos B)(\sqrt{3} \sin C - \cos C) = 4 \cos B \cos C
+\]
+且 $AB + AC = 4$。求 $BC$ 的取值范围。
+\begin{solution}
+等式两边同时除以 $\cos B \cos C$ 得
+\begin{align*}
+(\sqrt{3} \tan B - 1)(\sqrt{3} \tan C - 1) = 4, \\
+3 \tan B \tan C - \sqrt{3} \tan B - \sqrt{3} \tan C + 1 = 4, \\
+\sqrt{3}(\tan B + \tan C) = 3(\tan B \tan C - 1), \\
+\tan(B + C) = -\sqrt{3}.
+\end{align*}
+由于 $0 < B + C < \pi$，故 $B + C = \frac{2\pi}{3}$，$A = \frac{\pi}{3}$。$AB + AC = 4$ 给出 $AB = 4 - AC$。根据余弦定理，
+\begin{align*}
+BC^2 &= AB^2 + AC^2 - 2AB \cdot AC \cos A \\
+&= (4 - AC)^2 + AC^2 - (4 - AC) \cdot AC \\
+&= 3AC^2 - 12AC + 16 = 3(AC - 2)^2 + 4 \ge 4.
+\end{align*}
+因此 $2 \le BC < AB + AC = 4$，所以 $BC$ 的范围是 $[2, 4)$。
 \end{solution}
 
     \question 已知 $\triangle ABC$ 的面积为 $27,R$ 为其外接圆半径,$r$ 为其内切圆半径。求 $Rr^{3}$ 的最大值。
@@ -9808,14 +10520,12 @@ x'y'z' = x'+y'+z'
     的最小值。
     \begin{solution}
         由柯西不等式,
-        \[
-        \begin{aligned}
+        \begin{align*}
         &\frac{1}{\sin^2 A \cos^4 B} + \frac{1}{\sin^2 B \cos^4 C} + \frac{1}{\sin^2 C \cos^4 A} \\
         &= \frac{1}{2} \left( \frac{1}{\sin^2 A \cos^4 B} + \frac{1}{\sin^2 B \cos^4 C} + \frac{1}{\sin^2 C \cos^4 A} \right) (\sin^2 A + \sin^2 B + \sin^2 C) \\
         &\ge \frac{1}{2} \left( \frac{1}{\cos^2 B} + \frac{1}{\cos^2 C} + \frac{1}{\cos^2 A} \right)^2 \\
         &= \frac{1}{2} \left[ \left( \frac{1}{\cos^2 A} + \frac{1}{\cos^2 B} + \frac{1}{\cos^2 C} \right) (\cos^2 A + \cos^2 B + \cos^2 C) \right]^2 \ge \frac{81}{2}
-        \end{aligned}
-        \]
+        \end{align*}
         当 $\sin^2 A = \sin^2 B = \sin^2 C = \dfrac{2}{3},\cos^2 A = \cos^2 B = \cos^2 C = \dfrac{1}{3}$ 时等号成立,
         \[
         \frac{1}{\sin^2 A \cos^4 B} + \frac{1}{\sin^2 B \cos^4 C} + \frac{1}{\sin^2 C \cos^4 A} = \frac{27}{2} \cdot 3 = \frac{81}{2}.
@@ -10061,6 +10771,143 @@ x'y'z' = x'+y'+z'
         \]
         解法同上。
     \end{solution}
+\question 求函数 $f(x) = \sum_{n=10}^{20} |x - n| = |x - 10| + |x - 11| + |x - 12| + \dots + |x - 20|$ 的最小可能值。
+
+\begin{solution}
+若 $x \le 10$，则
+\[
+f(x) = (10 + 11 + 12 + \dots + 20) - 11x \ge \frac{11}{2}(10 + 20) - 11 \times 10 = 55
+\]
+若 $x \ge 20$，则
+\[
+f(x) = 11x - (10 + 11 + 12 + \dots + 20) \ge 11 \times 20 - \frac{11}{2}(10 + 20) = 55
+\]
+设 $11 \le n \le 20$。若 $n - 1 < x \le n$，则
+\begin{align*}
+f(x) &= (x - 10) + (x - 11) + \dots + (x - n + 1) + (n - x) + (n + 1 - x) + \dots + (20 - x) \\
+&= (2n - 31)x + (10 + 11 + 12 + \dots + 20) - 2 \times [10 + 11 + \dots + (n - 1)]
+\end{align*}
+因此，函数 $f(x)$ 在 $x \le 15$ 时是递减的，在 $x \ge 15$ 时是递增的。
+因此，当 $x = 15$ 时，$f(x)$ 有最小值。此时
+\[
+f(x) = 5 + 4 + 3 + 2 + 1 + 0 + 1 + 2 + 3 + 4 + 5 = 30
+\]
+\end{solution}
+    \question 25. 设 $S = |n-1| + 2|n-2| + 3|n-3| + \dots + 20|n-20|$，其中 $n$ 是正整数。求 $S$ 的最小可能值。
+
+\begin{solution}
+考虑连续函数 $f(x) = \sum_{i=1}^{20} i|x-i|$。
+当 $k \le x \le k+1$（$k$ 为正整数）时，$f(x)$ 是线性函数。其斜率为：
+\[
+\text{Slope} = \sum_{i=1}^{k} i - \sum_{i=k+1}^{20} i = 2\sum_{i=1}^{k} i - \sum_{i=1}^{20} i = k(k+1) - 210
+\]
+* 当 $k \le 14$ 时，$k(k+1) - 210 \le 14 \times 15 - 210 = 0$。
+    此时斜率为负， $f(x)$ 在区间上递减，$f(k) \ge f(k+1)$。
+* 当 $k \ge 15$ 时，$k(k+1) - 210 \ge 15 \times 16 - 210 = 30 > 0$。
+    此时斜率为正， $f(x)$ 在区间上递增，$f(k) \le f(k+1)$。
+
+因此，$f(1) \ge f(2) \ge \dots \ge f(14) \ge f(15)$ 且 $f(15) \le f(16) \le \dots$。
+当 $n=15$ 时，$S$ 取最小值：
+\begin{align*}
+S_{\min} &= 14 + 2 \times 13 + 3 \times 12 + \dots + 14 \times 1 + 16 \times 1 + 17 \times 2 + \dots + 20 \times 5 \\
+&= 840
+\end{align*}
+所以 $S$ 的最小可能值为 $840$。
+\end{solution}
+
+\question 27. 若 $x, y$ 是实数且 $(x, y) \neq (0, 0)$，求
+\[
+f(x, y) = \frac{12x^2 + 6xy + 6y^2}{x^2 + xy + y^2}
+\]
+的最大可能值。
+
+\begin{solution}
+若 $x=0$，则 $f(0, y) = \frac{6y^2}{y^2} = 6$。
+若 $x \neq 0$，令 $u = \frac{y}{x}$，则：
+\begin{align*}
+f(x, y) &= \frac{12 + 6u + 6u^2}{1 + u + u^2} \\
+&= \frac{6}{1 + u + u^2} + 6 \\
+&= \frac{6}{\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}} + 6
+\end{align*}
+当 $u = -\frac{1}{2}$ 时，分母 $\left( u + \frac{1}{2} \right)^2 + \frac{3}{4}$ 取得最小值 $\frac{3}{4}$。
+此时，$f(x, y)$ 取得最大值：
+\[
+f_{\max} = \frac{6}{\frac{3}{4}} + 6 = 8 + 6 = 14
+\]
+$\therefore$ 当 $x = -2y$ 时，$f(x, y)$ 有最大可能值 $14$。
+\end{solution}
+
+\question 28. 设 $n$ 是正整数。定义 $A_n = \frac{30^n + 15^n}{n!}$，其中 $n! = 1 \times 2 \times 3 \times \dots \times n$。求当 $A_n$ 的值最大时 $n$ 的值。
+
+\begin{solution}
+考虑相邻项的差 $A_{n+1} - A_n$：
+\begin{align*}
+A_{n+1} - A_n &= \frac{30^{n+1} + 15^{n+1}}{(n+1)!} - \frac{30^n + 15^n}{n!} \\
+&= \frac{30^{n+1} + 15^{n+1} - (n+1)(30^n + 15^n)}{(n+1)!} \\
+&= \frac{30^n(30 - n - 1) + 15^n(15 - n - 1)}{(n+1)!} \\
+&= \frac{30^n(29 - n) + 15^n(14 - n)}{(n+1)!}
+\end{align*}
+* 当 $n \ge 29$ 时，$29 - n \le 0$ 且 $14 - n < 0$。因此 $A_{n+1} - A_n < 0$，即 $A_{29} > A_{30} > A_{31} > \dots$。
+* 当 $n \le 14$ 时，$29 - n \ge 0$ 且 $14 - n \ge 0$。因此 $A_{n+1} - A_n > 0$，即 $A_{15} > A_{14} > A_{13} > \dots$。
+* 当 $15 \le n \le 28$ 时，由于：
+\[
+0 < \frac{n-14}{29-n} \le \frac{28-14}{29-28} = 14 \le 2^n
+\]
+（注意：此处 $2^n = \left( \frac{30}{15} \right)^n$）
+可得 $30^n(29-n) + 15^n(14-n) > 0$，即 $A_{n+1} > A_n$。
+因此，在 $15 \le n \le 28$ 范围内，数列也是递增的，即 $A_{29} > A_{28} > \dots > A_{15}$。
+由此可得，当 $n = 29$ 时，$A_n$ 的值最大。
+\end{solution}
+
+\question 已知集合 $S = \{1, 2, 3, \cdots, 2019\}$ 是由 1 至 2019 的所有正整数所组成的集合。若任何一个包含 10 个元素的 $S$ 的子集合都包含两个相异的数 $a$ 与 $b$ 使得 $|a - b| \le k$，求 $k$ 的最小可能值。
+
+\begin{solution}
+设 $A$ 为 $S$ 的一个包含 10 个元素的子集。假设其元素按升序排列为 $a_1, a_2, \cdots, a_{10}$。若对于所有不同的 $i$ 和 $j$，都有 $|a_i - a_j| > m$，则：
+\begin{align*}
+a_{10} - a_9 &\ge m + 1 \\
+a_9 - a_8 &\ge m + 1 \\
+&\vdots \\
+a_2 - a_1 &\ge m + 1
+\end{align*}
+因此，
+\[
+2018 \ge a_{10} - a_1 = 9(m + 1)
+\]
+\[
+m + 1 \le 224
+\]
+\[
+m \le 223
+\]
+所以，$k$ 的最小可能值为 224。
+\end{solution}
+
+\question 已知 $a_1, a_2, \cdots, a_{10}$ 是正整数且
+\[ a_1^2 + (2a_2)^2 + (3a_3)^2 + (4a_4)^2 + (5a_5)^2 + (6a_6)^2 + (7a_7)^2 + (8a_8)^2 + (9a_9)^2 + (10a_{10})^2 = 405 \]
+求 $a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值。
+
+\begin{solution}
+由于 $1^2 + 2^2 + 3^2 + \cdots + 10^2 = 385$，
+因此，
+\[ (a_1^2 - 1) + 2^2(a_2^2 - 1) + \cdots + 10^2(a_{10}^2 - 1) = 20 \]
+由于对于所有 $1 \le k \le 10$，都有 $a_k^2 - 1 \ge 0$，且若 $a_k \ge 2$，则 $a_k^2 - 1 \ge 3$。
+我们发现 $a_3 = a_4 = \cdots = a_{10} = 1$，并且
+\[ a_1^2 + 4a_2^2 = 25 \]
+此方程仅有解 $a_1 = 3$ 且 $a_2 = 2$。
+因此，$a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + a_8 + a_9 + a_{10}$ 的最小可能值为 13。
+\end{solution}
+
+\question 已知 $a, b, c$ 都是非零的数，求 $N = 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|}$ 的最小可能值。
+
+\begin{solution}
+\begin{align*}
+N &= 128 - \frac{a}{|a|} + \frac{b}{|b|} - \frac{c}{|c|} - \frac{ab}{|ab|} + \frac{ac}{|ac|} - \frac{bc}{|bc|} + \frac{abc}{|abc|} \\
+&= 127 + \left( 1 - \frac{a}{|a|} \right) \left( 1 + \frac{b}{|b|} \right) \left( 1 - \frac{c}{|c|} \right)
+\end{align*}
+对于任何非零的 $x$，若 $x$ 为正，则 $\frac{x}{|x|}$ 为 1；若 $x$ 为负，则 $\frac{x}{|x|}$ 为 $-1$。
+因此，$1 \pm \frac{x}{|x|}$ 只能是 0 或 2。
+$N$ 的最小可能值为 $127 + 0 = 127$，当 $a$ 和 $c$ 为正且 $b$ 为负时即可取得。
+\end{solution}
     
     \question 已知非负实数 $a, b, c,d$ 满足 $a \le 1, a+b \le 5, a+b+c \le 14, a+b+c+d \le 30$,试证
     \[
@@ -10590,7 +11437,7 @@ x = 18, \quad y = 9, \quad z = 6.
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{数列与级数}{数列与级数} \label{数列与级数}
+    \hypertarget{数列、级数}{数列、级数} \label{数列、级数}
   }
 \end{center}
 \separator
@@ -18544,12 +19391,10 @@ Q158. JEE Main 2024 (30 Jan Shift 1)
         \end{cases}
         \]
         用第三式解出 $x_2 = 2 - 2x_3$,代入前两式得
-        \[
-        \begin{aligned}
+        \begin{align*}
         x_1 + (2 - 2x_3) + x_3 &= 5 \Rightarrow x_1 = 3 + x_3, \\
         3x_1 + 2x_2 + x_3 &= 13 \Rightarrow 3(3 + x_3) + 2(2 - 2x_3) + x_3 = 13.
-        \end{aligned}
-        \]
+        \end{align*}
         检验等式成立:
         \[
         9 + 3x_3 + 4 - 4x_3 + x_3 = 13 \Rightarrow 13 = 13.
@@ -18841,8 +19686,7 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
     
     于是可得:
     \[
-    \begin{aligned}
-    D_n &= \begin{vmatrix}
+    D_n = \begin{vmatrix}
     n+1 & 0   & 0   & \cdots & 0   & a_1 \\
     0   & n+1 & 0   & \cdots & 0   & a_2 \\
     0   & 0   & n+1 & \cdots & 0   & a_3 \\
@@ -18850,7 +19694,6 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
     0   & 0   & 0   & \cdots & n+1 & a_{n-1} \\
     - n & 1   & 1   & \cdots & 1   & 1
     \end{vmatrix}
-    \end{aligned}
     \]
     
     将该行列式按最后一列展开,只需考虑对角线乘积（因为其余部分为 0）,于是有:
@@ -19404,13 +20247,11 @@ Area = \frac{3}{8} \cdot \pi \cdot 2^2 = \frac{3\pi}{2}
     \fi
     \begin{solution}
         设$O(0, 0),A(\omega),B(\omega^2),C(\lambda \omega)$,则
-        \[
-        \begin{aligned}
+        \begin{align*}
         OA &= |\omega| = 5 \\
         OB &= |\omega^2| = |\omega|^2 = 25 \\
         AB &= AC = |\lambda\omega - \omega| = 5(\lambda - 1) \\
-        \end{aligned}
-        \]
+        \end{align*}
         又由于 $\triangle ABC$ 是正三角形,因此 
         \[
         \angle OAB = 180^\circ - 60^\circ = 120^\circ

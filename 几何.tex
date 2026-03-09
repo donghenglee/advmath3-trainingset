@@ -14,7 +14,7 @@
 \end{center}
 \separator
 \begin{center}
-    关键词: 三角形的面积($\frac{1}{2}ab\sin C$、海伦公式)、等高性质、相似三角形、全等三角形、毕氏定理、正弦定理、余弦定理、三角函数、三角不等式、三角形的五心(重心、中心、内心、垂心、旁心)、中线定理、角平分线定理、斯德瓦特定理、塞瓦定理、梅涅劳斯定理
+    关键词: 三角形的面积($\frac{1}{2}ab\sin C$、海伦公式)、等高性质、相似三角形、全等三角形、毕氏定理、正弦定理、余弦定理、三角函数、三角不等式
 \end{center}
 \vspace{0.5pt}
 
@@ -1059,6 +1059,67 @@ S_{\triangle ABF} = 28
         等号成立当且仅当 $a=b$ 且 $\sin\left(\dfrac{\pi}{6}+C\right)=1$即 $a=b,C=\dfrac{\pi}{3}$,亦即 $a=b=c$。
     \end{solution}
 
+    \question（角平分线公式）在 $\triangle ABC$ 中，当 $AD$ 是 $\angle A$ 的角平分线时，则
+\[
+AD = \frac{2}{b + c} \sqrt{bcs(s - a)}
+\]
+其中 $s$ 是 $\triangle ABC$ 的半周长，即 $s = \frac{1}{2}(a + b + c)$。
+\begin{solution}
+设 $BD = p$，$DC = q$。角平分线定理给出 $\frac{p}{q} = \frac{c}{b}$，所以
+\[
+p = \frac{ac}{b + c} \quad \text{和} \quad q = \frac{ab}{b + c}
+\]
+接着应用斯特瓦尔特定理（Stewart's Theorem）得
+\[
+AD^2 = \frac{b^2ac + c^2ab}{a(b + c)} - \frac{a^2bc}{(b + c)^2} = bc - \frac{a^2bc}{(b + c)^2} = \frac{bc\left[(b + c)^2 - a^2\right]}{(b + c)^2}
+\]
+\[
+= \frac{bc(b + c - a)(b + c + a)}{(b + c)^2} = \frac{4bc(s - a)s}{(b + c)^2}
+\]
+因此 $AD = \frac{2}{b + c} \sqrt{bcs(s - a)}$。
+\end{solution}
+
+\question (BELARUS/2003) 已知 $\frac{\sin a}{\sin b} = \frac{\sin c}{\sin d} = \frac{\sin(a - c)}{\sin(b - d)}$，其中 $a, b, c, d \in (0, \pi)$。证明 $a = b, c = d$。
+\begin{solution}
+由于 $a = c$ 意味着 $a = c = 0$，但这不可能，所以 $a \ne c$。
+假设 $a > c$，那么给定的等式意味着 $b > d$，且
+\[
+\frac{\sin(\pi - a)}{\sin(\pi - b)} = \frac{\sin c}{\sin d} = \frac{\sin(a - c)}{\sin(b - d)}
+\]
+设 $\triangle ABC$ 满足 $\angle A = \pi - a, \angle B = c, \angle C = a - c$，且 $\triangle DEF$ 满足 $\angle D = \pi - b, \angle E = d, \angle F = b - d$。由于 $\frac{\sin A}{\sin D} = \frac{\sin B}{\sin E} = \frac{\sin C}{\sin F}$，由正弦定理可知
+\[
+\frac{BC}{EF} = \frac{AC}{DF} = \frac{AB}{DE}
+\]
+因此 $\triangle ABC \sim \triangle DEF$，$\angle A = \angle D, \angle B = \angle E$，即 $a = b, c = d$。
+\end{solution}
+
+\question 如果 $\triangle ABC$ 的三边长度 $a, b, c$ 满足 $2b = a + c$，求 $5 \cos A - 4 \cos A \cos C + 5 \cos C$ 的值。
+\begin{solution}
+由正弦定理，关系式 $2b = a + c$ 意味着 $2 \sin B = \sin A + \sin C$。那么
+\[
+\sin(A + C) = \frac{\sin A + \sin C}{2}
+\]
+\[
+\Rightarrow 2 \sin \frac{A + C}{2} \cos \frac{A + C}{2} = \sin \frac{A + C}{2} \cos \frac{A - C}{2}
+\]
+\[
+\Rightarrow 2 \cos \frac{A + C}{2} = \cos \frac{A - C}{2}
+\]
+因此
+\[
+5 \cos A - 4 \cos A \cos C + 5 \cos C = 5(\cos A + \cos C) - 4 \cos A \cos C
+\]
+\[
+= 10 \cos \frac{A + C}{2} \cos \frac{A - C}{2} - 2[\cos(A + C) + \cos(A - C)]
+\]
+\[
+= 10 \cos \frac{A + C}{2} \cos \frac{A - C}{2} - 4\left[\cos^2 \frac{A + C}{2} + \cos^2 \frac{A - C}{2} - 1\right]
+\]
+\[
+= 20 \cos^2 \frac{A + C}{2} - 4\left[\cos^2 \frac{A + C}{2} + 4 \cos^2 \frac{A + C}{2} - 1\right] = 4
+\]
+\end{solution}
+
     \question
 设 $x, y, z$ 为三角形的三边长，其对应的内角分别为 $X, Y, Z$。若满足：
 \[ \tan \frac{X}{2} + \tan \frac{Z}{2} = \frac{2y}{x + y + z} \]
@@ -1093,6 +1154,255 @@ S_{\triangle ABF} = 28
 代入上式得：
 \[ \tan \frac{X}{2} = \frac{x^2 / (y+z)}{x} = \frac{x}{y+z} \]
 因此，命题 (C) 正确。
+\end{solution}
+
+\question (CMC/2008) 设 $a, b, c$ 为 $\triangle ABC$ 的三边长，且满足 $b^2 = ac$。已知 $\angle B = x$ 且 $f(x) = \sin\left(4x - \frac{x}{6}\right) - \frac{1}{2}$，求 $f(x)$ 的值域。
+\begin{solution}
+由余弦定理可知
+\[
+\cos x = \frac{a^2 + c^2 - b^2}{2ac} = \frac{a^2 + c^2 - ac}{2ac}
+\]
+由算术-几何平均值不等式（AM-GM），$a^2 + c^2 \ge 2ac$，故
+\[
+\cos x \ge \frac{2ac - ac}{2ac} = \frac{ac}{2ac} = \frac{1}{2}
+\]
+由于 $0 < x < \pi$，由此得 $0 < x \le \frac{\pi}{3}$。
+因此，$4x - \frac{\pi}{6}$ 的范围为
+\[
+-\frac{\pi}{6} < 4x - \frac{\pi}{6} \le \frac{4\pi}{3} - \frac{\pi}{6} = \frac{7\pi}{6}
+\]
+在此区间内，正弦函数 $\sin\left(4x - \frac{\pi}{6}\right)$ 的最小值为 $\sin\left(\frac{7\pi}{6}\right) = -\frac{1}{2}$，最大值为 $1$。
+所以，$f(x) = \sin\left(4x - \frac{\pi}{6}\right) - \frac{1}{2}$ 的最小值是 $-\frac{1}{2} - \frac{1}{2} = -1$，最大值是 $1 - \frac{1}{2} = \frac{1}{2}$。
+因此，$f(x)$ 的值域是 $\left[-1, \frac{1}{2}\right]$。
+\end{solution}
+
+\question 在 $\triangle ABC$ 中，$AB = AC$，$\angle B$ 的角平分线 $BD$ 与 $AC$ 交于点 $D$，且 $BC = BD + AD$。以度为单位求 $\angle A$。
+\begin{solution}
+设 $AB = AC = 1$，$\angle C = 2\alpha$。由于 $\triangle ABC$ 是等腰三角形，故 $\angle ABC = 2\alpha$ 且 $\angle A = 180^\circ - 4\alpha$。
+因为 $BD$ 平分 $\angle B$，所以 $\angle ABD = \alpha$。在 $\triangle BDC$ 中，$\angle BDC = 180^\circ - 3\alpha$，在 $\triangle ABD$ 中，$\angle BDA = 3\alpha$。
+对 $\triangle ABC$ 应用正弦定理：
+\[
+\frac{BC}{\sin(180^\circ - 4\alpha)} = \frac{1}{\sin 2\alpha} \Rightarrow BC = \frac{\sin 4\alpha}{\sin 2\alpha} = 2 \cos 2\alpha
+\]
+对 $\triangle ABD$ 应用正弦定理：
+\[
+\frac{BD}{\sin(180^\circ - 4\alpha)} = \frac{AD}{\sin \alpha} = \frac{1}{\sin 3\alpha}
+\]
+可得 $BD = \frac{\sin 4\alpha}{\sin 3\alpha}$，$AD = \frac{\sin \alpha}{\sin 3\alpha}$。
+由条件 $BC = BD + AD$ 得：
+\[
+2 \cos 2\alpha = \frac{\sin 4\alpha + \sin \alpha}{\sin 3\alpha} \Rightarrow 2 \sin 3\alpha \cos 2\alpha = \sin 4\alpha + \sin \alpha
+\]
+利用积化和差公式：$\sin 5\alpha + \sin \alpha = \sin 4\alpha + \sin \alpha \Rightarrow \sin 5\alpha = \sin 4\alpha$。
+由于 $4\alpha < 180^\circ$ 且 $5\alpha \ne 4\alpha$，必有 $5\alpha = 180^\circ - 4\alpha$，解得 $9\alpha = 180^\circ$，即 $\alpha = 20^\circ$。
+因此，$\angle A = 180^\circ - 4(20^\circ) = 100^\circ$。
+\end{solution}
+
+\question 在 $\triangle ABC$ 中，$AB = 4, BC = 7, AC = 10$。点 $D$ 在 $AC$ 上使得 $BD = 4$。求 $AD : DC$。
+\begin{solution}
+对 $\triangle BDC$ 和 $\triangle ABC$ 分别应用余弦定理：
+\[
+BD^2 = BC^2 + CD^2 - 2BC \cdot CD \cos C \Rightarrow 16 = 49 + CD^2 - 14 CD \cos C
+\]
+\[
+AB^2 = BC^2 + AC^2 - 2BC \cdot AC \cos C \Rightarrow 16 = 49 + 100 - 140 \cos C
+\]
+由第二式得 $140 \cos C = 133$，即 $14 \cos C = 13.3$。
+代入第一式得：$16 = 49 + CD^2 - 1.33 CD \times 10$（此处修正为代入法）。
+令 $CD = x$，由上述方程组可发现 $AC$ 和 $CD$ 是方程 $t^2 - (14 \cos C)t + 33 = 0$ 的两个根。
+已知一个根为 $AC = 10$，根据韦达定理：$AC \cdot CD = 33$，故 $CD = \frac{33}{10}$。
+则 $AD = AC - CD = 10 - \frac{33}{10} = \frac{67}{10}$。
+因此，$AD : DC = 67 : 33$。
+\end{solution}
+
+\question (CROATIA/2007) 对于半周长为 $p$ 的 $\triangle ABC$，证明
+\[
+p^2 = b^2 \cos^2 \frac{C}{2} + c^2 \cos^2 \frac{B}{2} + 2bc \cos \frac{B}{2} \cos \frac{C}{2} \cos \frac{B + C}{2}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image396.png}
+    \end{figure}
+    \fi
+\begin{solution}
+延长 $CB$ 至 $B'$ 且延长 $BC$ 至 $C'$，使得 $BA = BB'$ 且 $CA = CC'$。
+则 $\triangle ABB'$ 和 $\triangle ACC'$ 均为等腰三角形，且 $\angle B' = \frac{1}{2}\angle B, \angle C' = \frac{1}{2}\angle C$。
+$B'C' = BB' + BC + CC' = c + a + b = 2p$。
+设 $B'', C''$ 分别为 $AB', AC'$ 的中点。在 $\triangle AB'C'$ 中利用投影与余弦定理变换：
+$AB'' = c \cos \frac{B}{2}$，$AC'' = b \cos \frac{C}{2}$。
+经过坐标系或余弦定理对 $\triangle AB''C''$ 的边长 $p$（即 $B''C''$ 的某种比例）进行计算：
+利用 $\angle B''AC'' = \angle A + \frac{\angle B}{2} + \frac{\angle C}{2} = \pi - \frac{\angle B + \angle C}{2}$。
+对 $\triangle AB''C''$ 应用余弦定理可得：
+\[
+p^2 = \left(b \cos \frac{C}{2}\right)^2 + \left(c \cos \frac{B}{2}\right)^2 - 2\left(b \cos \frac{C}{2}\right)\left(c \cos \frac{B}{2}\right) \cos \left(\pi - \frac{B + C}{2}\right)
+\]
+由于 $\cos(\pi - \theta) = -\cos \theta$，结论得证。
+\end{solution}
+
+\question 在 $\triangle ABC$ 中，$\angle A = 45^\circ, b = 2$，且 $\triangle ABC$ 的面积 $[ABC] = 2$。求下式的值：
+\[
+\frac{a + b + c}{\sin A + \sin B + \sin C}
+\]
+\begin{solution}
+因为 $2 = [ABC] = \frac{1}{2}bc \sin A = \frac{1}{2} \cdot 2 \cdot c \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2}}{2}c$，得 $c = 2\sqrt{2}$。
+应用余弦定理：
+\[
+a^2 = b^2 + c^2 - 2bc \cos A = 4 + 8 - 8\sqrt{2} \cdot \frac{\sqrt{2}}{2} = 4 \Rightarrow a = 2
+\]
+根据正弦定理的扩展形式 $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$，
+由合比性质可知：
+\[
+\frac{a + b + c}{\sin A + \sin B + \sin C} = \frac{a}{\sin A} = \frac{2}{\sin 45^\circ} = \frac{2}{\frac{\sqrt{2}}{2}} = 2\sqrt{2}
+\]
+\end{solution}
+
+\question (CROATIA/2008) 在 $\triangle ABC$ 中，$\angle B$ 的角平分线 $BK$ 与 $AC$ 交于点 $K$。若 $BC = 2, CK = 1, BK = \frac{3}{\sqrt{2}}$，求 $\triangle ABC$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image397.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $CA = b, AB = c$。对 $\triangle BCK$ 应用余弦定理：
+\[
+\cos C = \frac{BC^2 + CK^2 - BK^2}{2 BC \cdot CK} = \frac{4 + 1 - \frac{9}{2}}{2 \cdot 2 \cdot 1} = \frac{\frac{1}{2}}{4} = \frac{1}{8}
+\]
+对 $\triangle ABC$ 应用余弦定理：
+\[
+\cos C = \frac{a^2 + b^2 - c^2}{2ab} \Rightarrow \frac{1}{8} = \frac{4 + b^2 - c^2}{4b} \Rightarrow 8 + 2b^2 - 2c^2 = b
+\]
+根据角平分线定理：$\frac{AK}{CK} = \frac{c}{a} \Rightarrow AK = \frac{c}{2} \cdot 1$，即 $b - 1 = \frac{c}{2} \Rightarrow c = 2(b - 1)$。
+联立方程：$2b^2 - 2[2(b - 1)]^2 - b + 8 = 0 \Rightarrow 2b^2 - 8(b^2 - 2b + 1) - b + 8 = 0$。
+化简得 $6b^2 - 15b = 0$，因 $b \ne 0$，解得 $b = \frac{5}{2}$，则 $c = 3$。
+半周长 $s = \frac{1}{2}(2 + 2.5 + 3) = \frac{15}{4}$。
+由海伦公式：$[ABC] = \sqrt{\frac{15}{4} \cdot \frac{7}{4} \cdot \frac{5}{4} \cdot \frac{3}{4}} = \frac{15\sqrt{7}}{16}$。
+\end{solution}
+
+\question (CMC/2008) 设 $a, b, c$ 是锐角三角形 $ABC$ 的三边长，且 $\sin A = 2a \sin B$。若 $\triangle ABC$ 的外接圆半径 $R = \frac{\sqrt{3}}{6}$，求 $\triangle ABC$ 周长的范围。
+\begin{solution}
+根据扩展正弦定理 $\sin A = \frac{a}{2R}, \sin B = \frac{b}{2R}$，代入已知条件：
+\[
+\frac{a}{2R} = 2a \cdot \frac{b}{2R} \Rightarrow b = \frac{1}{2}
+\]
+则 $\sin B = \frac{b}{2R} = \frac{1/2}{\sqrt{3}/3} = \frac{\sqrt{3}}{2}$。
+因为是锐角三角形，故 $\angle B = \frac{\pi}{3}$。
+则 $\angle A + \angle C = \frac{2\pi}{3}$。由锐角三角形限制得 $\angle A \in (\frac{\pi}{6}, \frac{\pi}{2})$。
+周长 $l = a + b + c = 2R(\sin A + \sin C) + b = \frac{\sqrt{3}}{3}(\sin A + \sin(\frac{2\pi}{3} - A)) + \frac{1}{2}$。
+利用和差化积或辅助角公式：
+\[
+l = \frac{1}{2} + \sin(A + \frac{\pi}{6})
+\]
+当 $A \in (\frac{\pi}{6}, \frac{\pi}{2})$ 时，$A + \frac{\pi}{6} \in (\frac{\pi}{3}, \frac{2\pi}{3})$。
+在该区间内，$\frac{\sqrt{3}}{2} < \sin(A + \frac{\pi}{6}) \le 1$。
+因此周长 $l$ 的范围是 $\left(\frac{1 + \sqrt{3}}{2}, \frac{3}{2}\right]$。
+\end{solution}
+
+\question (USAMO/TST/2005) 在 $\triangle ABC$ 中，证明：
+(a) $4R = \frac{abc}{[ABC]}$；
+(b) $2R^2 \sin A \sin B \sin C = [ABC]$；
+(c) $2R \sin A \sin B \sin C = r(\sin A + \sin B + \sin C)$。
+\begin{solution}
+(a) 根据面积公式 $[ABC] = \frac{1}{2}ab \sin C$ 及正弦定理 $\sin C = \frac{c}{2R}$：
+\[
+[ABC] = \frac{1}{2}ab \cdot \frac{c}{2R} = \frac{abc}{4R} \Rightarrow 4R = \frac{abc}{[ABC]}
+\]
+(b) 利用 $a = 2R \sin A$，$b = 2R \sin B$ 代入面积公式：
+\[
+[ABC] = \frac{1}{2}(2R \sin A)(2R \sin B) \sin C = 2R^2 \sin A \sin B \sin C
+\]
+(c) 已知 $2[ABC] = (a + b + c)r$ 且由(b)得 $2[ABC] = 4R^2 \sin A \sin B \sin C$。
+联立得 $4R^2 \sin A \sin B \sin C = r(2R \sin A + 2R \sin B + 2R \sin C)$。
+两边除以 $2R$ 即可得证。
+\end{solution}
+
+\question
+1. (CROATIA/2004) 若三角形的三边长 $a, b, c$ 满足
+\[
+\frac{b}{a} = \frac{\left|b^2 + c^2 - a^2\right|}{bc}, \frac{c}{b} = \frac{\left|c^2 + a^2 - b^2\right|}{ca}, \frac{a}{c} = \frac{\left|a^2 + b^2 - c^2\right|}{ab}
+\]
+求这三个角。
+
+\begin{solution}
+由正弦定理和余弦定理，第一个等式可以写成
+\[
+\frac{\sin \beta}{\sin \alpha} = 2 \left|\cos \alpha\right|
+\]
+即 $\sin \beta = \left|\sin 2\alpha\right|$。它等价于
+(i) $\beta = 2\alpha$ 或 $\beta = 180^\circ - 2\alpha$ 或 $\beta = 2\alpha - 180^\circ$。
+类似地，其余两个等式等价于
+(ii) $\gamma = 2\beta$ 或 $\gamma = 180^\circ - 2\beta$ 或 $\gamma = 2\beta - 180^\circ$;
+(iii) $\alpha = 2\gamma$ 或 $\alpha = 180^\circ - 2\gamma$ 或 $\alpha = 2\gamma - 180^\circ$。
+因为 $\alpha + \beta + \gamma = 180^\circ$，若 $\beta = 180^\circ - 2\alpha$，则 $\alpha = \gamma$。在这种情况下，只有 $\alpha = 180^\circ - 2\gamma$ 是可能的，所以 $\alpha = \beta = \gamma = 60^\circ$。如果 $\gamma = 180^\circ - 2\beta$ 或 $\alpha = 180^\circ - 2\gamma$，我们得到相同的结论。
+当上述三个等式不成立时，我们可以假设 $\alpha$ 是三个角中最小的一个，那么 $\beta = 2\alpha - 180^\circ$ 是不可能的，所以 $\beta = 2\alpha$。
+如果 $\gamma = 2\beta$，那么 $\alpha : \beta : \gamma = 1 : 2 : 4$，这是第二个可能的解。
+如果 $\gamma = 2\beta - 180^\circ$，则 $\gamma = 4\alpha - 180^\circ$，由 $\alpha + \beta + \gamma = 180^\circ$ 我们获得
+\[
+\alpha = \frac{360^\circ}{7}, \beta = 2 \times \frac{360^\circ}{7}, \gamma = 4 \times \frac{360^\circ}{7} - 180^\circ = \frac{180^\circ}{7} < \alpha
+\]
+矛盾。因此这是不可能的。
+因此，$\alpha = \beta = \gamma = 60^\circ$，或者这三个角的比例是 $1 : 2 : 4$。
+\end{solution}
+
+\question
+2. (SMO/2009) 设 $ABC$ 为一个三角形，边长 $AB = 7, BC = 8$ 且 $AC = 9$。可以作唯一的圆与边 $AC$ 及直线 $BA$ 的延长线和 $BC$ 的延长线相切。设 $D$ 为该圆的圆心。求 $BD^2$ 的值。
+
+\begin{solution}
+由余弦定理，
+\[
+\cos B = \frac{7^2 + 8^2 - 9^2}{2 \cdot 7 \cdot 8} = \frac{2}{7}
+\]
+\[
+\cos \frac{B}{2} = \left(\frac{1 + \cos B}{2}\right)^{\frac{1}{2}} = \sqrt{\frac{9}{14}}
+\]
+设从 $D$ 到直线 $BC, CA$ 和 $BA$ 的垂线分别交它们于 $E, F$ 和 $G$，则
+\[
+CF + AF = 9, AF - CF = 8 - 7 = 1 \Rightarrow AF = 5, CF = 4
+\]
+因此 $BG = BE = 12$ 且
+\[
+BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 224
+\]
+\end{solution}
+
+\question
+5. (USAMO/TST/2005) 在三角形 $ABC$ 中，证明
+(a) $r = 4R \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2}$;
+(b) $a \cos A + b \cos B + c \cos C = \frac{abc}{2R^2}$。
+
+\begin{solution}
+由余弦定理，$\cos A = \frac{b^2 + c^2 - a^2}{2bc}$。因此，由半角公式我们有
+\begin{align*}
+\sin^2 \frac{A}{2} &= \frac{1 - \cos A}{2} = \frac{1}{2} - \frac{b^2 + c^2 - a^2}{4bc} = \frac{a^2 - \left(b^2 + c^2 - 2bc\right)}{4bc} \\
+&= \frac{a^2 - \left(b - c\right)^2}{4bc} = \frac{\left(a - b + c\right)\left(a + b - c\right)}{4bc} \\
+&= \frac{\left(2s - 2b\right)\left(2s - 2c\right)}{4bc} = \frac{\left(s - b\right)\left(s - c\right)}{bc}
+\end{align*}
+其中 $2s = a + b + c$ 是三角形 $ABC$ 的周长。由之可知
+\[
+\sin \frac{A}{2} = \sqrt{\frac{\left(s - b\right)\left(s - c\right)}{bc}}
+\]
+以及 $\sin \frac{B}{2}$ 和 $\sin \frac{C}{2}$ 的类似公式。因此
+\[
+\sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2} = \frac{\left(s - a\right)\left(s - b\right)\left(s - c\right)}{abc} = \frac{\left[ABC\right]^2}{sabc}
+\]
+由海伦公式。由此可知
+\[
+\sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2} = \frac{\left[ABC\right]}{s} \cdot \frac{\left[ABC\right]}{abc} = r \cdot \frac{1}{4R}
+\]
+由此 (a) 得证。
+现在我们证明 (b)。由扩展的正弦定理，我们有 $a \cos A = 2R \sin A \cos A = R \sin 2A$。同样地，$b \cos B = R \sin 2B$ 且 $c \cos C = R \sin 2C$。由 (a) 和测试题 (A) 的 Q8，我们有
+\[
+4R \sin A \sin B \sin C = \frac{abc}{2R^2}
+\]
+只需证明 $\sin 2A + \sin 2B + \sin 2C = 4 \sin A \sin B \sin C$，其由下式给出
+\begin{align*}
+\sin 2A + \sin 2B + \sin 2C &= 2 \sin\left(A + B\right) \cos\left(A - B\right) + 2 \sin C \cos C \\
+&= 2 \sin\left(A + B\right) \cos\left(A - B\right) - 2 \sin\left(A + B\right) \cos\left(A + B\right) \\
+&= 2 \sin\left(A + B\right) \left[\cos\left(A - B\right) - \cos\left(A + B\right)\right] \\
+&= 4 \sin\left(A + B\right) \sin B \sin A = 4 \sin C \sin B \sin A
+\end{align*}
+得证。
 \end{solution}
 
     \question 一个梯形的两底比为 $2:1$,两腰比为 $2:1$,两对角线比为 $2:1$。求短底与短腰的比。
@@ -3291,1591 +3601,6 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{圆}{圆} \label{圆}
-  }
-\end{center}
-\separator
-\begin{center}
-    关键词: 圆的定义、角度与弧度、弦长与扇形面积、切线、内接多边形的性质、毕氏定理、圆周角定理、弦切角定理、相交弦定理、割线定理、切线长定理、托勒密定理
-\end{center}
-\vspace{0.5pt}
-
-\begin{questions}
-    \question 圆内接四边形 \(ABCD\) 中,\(\;AB=BC=3,\;CD=5,\;DA=8\)。求对角线 \(BD\)。  
-    \begin{solution}
-        圆内接四边形对角互补,有
-        \[
-        BD^2=3^2+8^2-2\cdot3\cdot8\cdot \cos A = 3^2+5^2-2\cdot3\cdot5\cdot \cos (\pi- A)
-        \]
-        解得 
-        \[
-        \cos A = \frac{1}{2} \Rightarrow BD=7
-        \]
-    \end{solution}
-
-    \question 右图中，$AB$ 是圆的直径，$CAD$ 是圆的切线。直线 $BC$ 及 $BD$ 分别与圆相交于点 $E$ 及 $F$。已知 $CE : CB = 4 : 13$ 及 $DF : DB = 1 : 2$，求 $\tan \angle CBD$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.3\textwidth]{images/image278.png}
-    \end{figure}
-    \fi
-\begin{solution}
-因为 $AB$ 是圆的直径且 $CAD$ 是圆的切线，所以 $\angle CAB = \angle DAB = 90^\circ$。
-在直角三角形 $ABC$ 中，根据射影定理：
-\[
-AB^2 = BE \cdot BC
-\]
-已知 $CE : CB = 4 : 13$，则有：
-\[
-BE = BC - CE = BC - \frac{4}{13} BC = \frac{9}{13} BC
-\]
-代入得 $AB^2 = \frac{9}{13} BC^2$，由此可得：
-\[
-\cos^2 \angle ABC = \frac{AB^2}{BC^2} = \frac{9}{13}
-\]
-进一步求得：
-\[
-\tan^2 \angle ABC = \frac{1}{\cos^2 \angle ABC} - 1 = \frac{13}{9} - 1 = \frac{4}{9}
-\]
-即 $\tan \angle ABC = \frac{2}{3}$。
-在直角三角形 $ABD$ 中，同理可得：
-\[
-AB^2 = BF \cdot BD
-\]
-已知 $DF : DB = 1 : 2$，则 $BF = BD - DF = \frac{1}{2} BD$，代入得：
-\[
-AB^2 = \frac{1}{2} BD^2 \implies \cos^2 \angle ABD = \frac{AB^2}{BD^2} = \frac{1}{2}
-\]
-由此可得 $\tan \angle ABD = 1$。
-利用正切和角公式：
-\[
-\tan \angle CBD = \tan \left( \angle ABC + \angle ABD \right) = \frac{\tan \angle ABC + \tan \angle ABD}{1 - \tan \angle ABC \cdot \tan \angle ABD}
-\]
-代入数值：
-\[
-\tan \angle CBD = \frac{\frac{2}{3} + 1}{1 - \frac{2}{3} \cdot 1} = \frac{\frac{5}{3}}{\frac{1}{3}} = 5
-\]
-所以答案为 D。
-\end{solution}
-
-
-    \question
-如图 8 中，$O$ 是圆心，$AB$ 是直径。$C$ 是半径 $OA$ 上的一点，$D$ 是圆上的一点使得 $CD$ 垂直于 $AB$，$E$ 是线段 $BD$ 上的一点使得 $CE$ 垂直于 $BD$。已知圆的半径为 $34$，$OE = 30$，求 $CE$ 的长。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.4\textwidth]{images/image252.png}
-    \end{figure}
-    \fi
-\begin{solution}
-设圆的半径为 $R=34$，点 $O$ 为原点。设 $C$ 点坐标为 $(-c, 0)$，则 $BC = 34+c$。
-在直角 $\Delta OCD$ 中，$CD^2 = 34^2 - c^2$。
-在直角 $\Delta BCD$ 中，根据勾股定理：
-\[
-BD^2 = BC^2 + CD^2 = (34+c)^2 + (34^2 - c^2) = 2 \cdot 34^2 + 68c = 68(34+c)
-\]
-因为 $CE \perp BD$，在直角 $\Delta BCD$ 中，利用面积公式可知：
-\[
-CE = \frac{BC \cdot CD}{BD} \implies CE^2 = \frac{BC^2 \cdot CD^2}{BD^2} = \frac{(34+c)^2 (34^2 - c^2)}{68(34+c)} = \frac{(34+c)(34^2-c^2)}{68}
-\]
-在 $\Delta OBE$ 中，利用余弦定理：
-\[
-OE^2 = OB^2 + BE^2 - 2 \cdot OB \cdot BE \cdot \cos \angle B
-\]
-其中 $BE = \frac{BC^2}{BD}$ 且 $\cos \angle B = \frac{BC}{BD}$。代入得：
-\[
-30^2 = 34^2 + \frac{BC^4}{BD^2} - 2 \cdot 34 \cdot \frac{BC^2}{BD} \cdot \frac{BC}{BD} = 34^2 + \frac{BC^3}{68} - BC^2
-\]
-\[
-256 = BC^2 - \frac{BC^3}{68} = \frac{68BC^2 - BC^3}{68} = \frac{BC^2(68-BC)}{68}
-\]
-注意到 $68 - BC = 68 - (34+c) = 34-c$，且 $34^2 - c^2 = (34+c)(34-c)$，故：
-\[
-CE^2 = \frac{(34+c)(34+c)(34-c)}{68} = \frac{BC^2(34-c)}{68} = \frac{BC^2(68-BC)}{68} = 256
-\]
-因此，$CE = 16$。
-\end{solution}
-\begin{solution}
-设圆的半径为 $R$。令 $OC = c$，则 $BC = R + c$。
-在直角 $\Delta OCD$ 中，根据勾股定理：
-\[
-CD^2 = R^2 - c^2 = (R - c)(R + c)
-\]
-在直角 $\Delta BCD$ 中，斜边 $BD$ 的平方为：
-\[
-BD^2 = BC^2 + CD^2 = (R + c)^2 + (R - c)(R + c)
-\]
-提取公因式 $(R + c)$：
-\[
-BD^2 = (R + c) \left( (R + c) + (R - c) \right) = (R + c) \cdot 2R = 2R \cdot BC
-\]
-由于 $CE \perp BD$，在直角 $\Delta BCE$ 中，根据勾股定理：
-\[
-CE^2 = BC^2 - BE^2
-\]
-在 $\Delta OBE$ 中，利用余弦定理计算 $OE^2$：
-\[
-OE^2 = OB^2 + BE^2 - 2 \cdot OB \cdot BE \cdot \cos \angle OBE
-\]
-注意到在直角 $\Delta BCD$ 中，$\cos \angle OBE = \cos \angle CBD = \frac{BC}{BD}$。同时 $OB = R$。
-代入 $OE^2$ 的表达式：
-\[
-OE^2 = R^2 + BE^2 - 2 \cdot R \cdot BE \cdot \frac{BC}{BD}
-\]
-在直角 $\Delta BCE$ 中，射影定理给出 $BE = \frac{BC^2}{BD}$。代入上式：
-\[
-OE^2 = R^2 + BE^2 - 2 \cdot R \cdot \frac{BC^2}{BD} \cdot \frac{BC}{BD} = R^2 + BE^2 - \frac{2R \cdot BC^3}{BD^2}
-\]
-利用前面得出的 $BD^2 = 2R \cdot BC$ 进行代换：
-\[
-\frac{2R \cdot BC^3}{BD^2} = \frac{2R \cdot BC^3}{2R \cdot BC} = BC^2
-\]
-因此：
-\[
-OE^2 = R^2 + BE^2 - BC^2
-\]
-将 $OE^2$ 与 $CE^2$ 相加：
-\[
-OE^2 + CE^2 = \left( R^2 + BE^2 - BC^2 \right) + \left( BC^2 - BE^2 \right)
-\]
-消去 $BC^2$ 与 $BE^2$ 后得：
-\[
-OE^2 + CE^2 = R^2
-\]
-得证。
-\textcolor{red}{(待验证)}
-\end{solution}
-
-\question 如图 8 所示，圆 $C_1$ 与圆 $C_2$ 内切于点 $A$，它们的半径分别为 7 及 9，$AB$ 与 $AD$ 分别是两圆的直径。点 $P$ 及点 $T$ 分别在圆 $C_1$ 与圆 $C_2$ 上使得直线 $PT$ 与圆 $C_1$ 相切。若 $PT = 6$，$\angle TAB = x$，求 $\cos^2 x$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.4\textwidth]{images/image248.png}
-    \end{figure}
-    \fi
-\begin{solution}
-根据您的手写笔记思路，通过在三角形中应用余弦定理进行求解：
-
-1. **确定几何长度**：
-   - 圆 $C_1$ 的半径 $r_1 = 7$，圆 $C_2$ 的半径 $r_2 = 9$。
-   - 在圆 $C_2$ 中，由于 $AD$ 是直径且其长度为 18，$AT$ 可以表示为：
-   \[ AT = 18 \cos x \]
-
-2. **利用切线性质**：
-   - 设圆 $C_1$ 的圆心为 $O_1$。连接 $O_1P$ 和 $O_1T$。
-   - 因为 $PT$ 是切线，所以 $\triangle O_1PT$ 是直角三角形。
-   - 根据勾股定理：
-   \[ O_1T^2 = O_1P^2 + PT^2 = 7^2 + 6^2 = 85 \]
-
-3. **应用余弦定理**：
-   - 在 $\triangle AO_1T$ 中，利用边长 $AO_1 = 7$，$AT = 18 \cos x$ 以及夹角 $x$：
-   \[ O_1T^2 = AO_1^2 + AT^2 - 2(AO_1)(AT) \cos x \]
-   - 代入已知数据：
-   \[ 85 = 7^2 + (18 \cos x)^2 - 2(7)(18 \cos x) \cos x \]
-   \[ 85 = 49 + 324 \cos^2 x - 252 \cos^2 x \]
-
-4. **计算最终结果**：
-   - 整理方程：
-   \[ 36 = 72 \cos^2 x \]
-   \[ \cos^2 x = \frac{36}{72} = \frac{1}{2} \]
-
-因此，$\cos^2 x$ 的值为 $\frac{1}{2}$。
-\end{solution}
-
-\question
-如图 5 所示，$O$ 是圆心，$AB \parallel CD$。已知 $\angle COD = 3\angle AOB$，$AB : CD = 5 : 12$，求 $\Delta AOB$ 的面积与 $\Delta BOC$ 的面积之比。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.4\textwidth]{images/image249.png}
-    \end{figure}
-    \fi
-\begin{solution}
-设 $\angle AOB = \theta$，则 $\angle COD = 3\theta$。由于 $AB \parallel CD$ 且四点共圆，可知该图形为等腰梯形。
-\[ \angle BOC = \frac{360^\circ - \theta - 3\theta}{2} = 180^\circ - 2\theta \]
-(注：根据手写稿逻辑，此处的几何关系处理为 $\angle BOC$ 与圆心角相关，下文按手写稿计算过程整理)
-
- 解法一：弦长公式/正弦定理 (手写稿右侧思路)
-在等腰三角形 $\Delta AOB$ 和 $\Delta COD$ 中，弦长与圆心角的关系为：
-\[ AB = 2r\sin\frac{\theta}{2}, \quad CD = 2r\sin\frac{3\theta}{2} \]
-根据 $AB : CD = 5 : 12$：
-\[ \frac{5}{12} = \frac{\sin\frac{\theta}{2}}{\sin\frac{3\theta}{2}} = \frac{\sin\frac{\theta}{2}}{3\sin\frac{\theta}{2} - 4\sin^3\frac{\theta}{2}} \]
-\[ \frac{5}{12} = \frac{1}{3 - 4\sin^2\frac{\theta}{2}} \]
-\[ 15 - 20\sin^2\frac{\theta}{2} = 12 \implies 20\sin^2\frac{\theta}{2} = 3 \]
-利用降幂公式 $1 - \cos\theta = 2\sin^2\frac{\theta}{2}$：
-\[ 10(1 - \cos\theta) = 3 \implies 1 - \cos\theta = \frac{3}{10} \implies \cos\theta = \frac{7}{10} \]
- 解法二：余弦定理 (手写稿左侧思路)
-在 $\Delta COD$ 和 $\Delta AOB$ 中：
-\[ 12^2 = r^2 + r^2 - 2r^2\cos 3\theta \implies 144 = 2r^2(1 - \cos 3\theta) \]
-\[ 5^2 = r^2 + r^2 - 2r^2\cos \theta \implies 25 = 2r^2(1 - \cos \theta) \]
-两式相除：
-\[ \frac{144}{25} = \frac{1 - \cos 3\theta}{1 - \cos \theta} \]
-代入三倍角公式 $\cos 3\theta = 4\cos^3\theta - 3\cos\theta$：
-\[ 144(1 - \cos\theta) = 25(1 - (4\cos^3\theta - 3\cos\theta)) \]
-整理得到关于 $\cos\theta$ 的三次方程：
-\[ 100\cos^3\theta - 219\cos\theta + 119 = 0 \]
-因式分解：
-\[ (\cos\theta - 1)(10\cos\theta + 17)(10\cos\theta - 7) = 0 \]
-由于 $0 < \theta < 180^\circ$ 且 $\theta \neq 0$，则 $\cos\theta = \frac{7}{10}$。
-
----
-
-计算面积比
-\[ \frac{S_{\Delta AOB}}{S_{\Delta BOC}} = \frac{\frac{1}{2}r^2\sin\theta}{\frac{1}{2}r^2\sin(180^\circ - 2\theta)} = \frac{\sin\theta}{\sin 2\theta} \]
-\[ \frac{\sin\theta}{2\sin\theta\cos\theta} = \frac{1}{2\cos\theta} \]
-将 $\cos\theta = \frac{7}{10}$ 代入：
-\[ \frac{1}{2 \times \frac{7}{10}} = \frac{1}{\frac{7}{5}} = \frac{5}{7} \]
-故面积比为 $5 : 7$。
-\end{solution}
-
-\question 已知四边形 $ABCD$ 内接于圆,且 $BA=AD=1,\cos\angle BAD=-\dfrac{1}{3}$。求证 $BC$为外接圆的直径
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.4\textwidth]{images/image196.png}
-    \end{figure}
-    \fi
-\begin{solution}
-在$\triangle BAD$中,由余弦定理,
-\[
-BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow BD= \sqrt{\frac{8}{3}}
-\]
-设 \textcolor{red}{$x=\cos\angle ABC$,则 $DC=x$}。由于 $ABCD$ 为圆内接四边形,$\angle ADC=180^\circ-\angle ABC$,故
-\[
-\cos\angle ADC=-\cos\angle ABC=-x.
-\]
-同理,$\cos\angle BCD=-\cos\angle BAD=\dfrac{1}{3}$。
-
-在 $\triangle ADC$ 与 $\triangle ABC$ 中应用余弦定理,因 $AC$ 公共,得:
-\begin{align*}
-1^2+x^2-2(1)(x)\cos\angle ADC &= 1^2+BC^2-2(1)(BC)\cos\angle ABC,\\
-1+x^2-2x(-x) &= 1+BC^2-2BCx,\\
-0 &= BC^2-2BCx-3x^2,\\
-0 &= (BC-3x)(BC+x).
-\end{align*}
-
-因 $x>0$,故 $BC=3x$。
-
-又因 $\cos\angle BCD=\tfrac{1}{3}$,且 $DC:BC=1:3$,由$\angle BDC$ 为直角。于是 $BC$ 为圆的直径。
-\end{solution}
-
-\question 一匀速转动的摩天轮直径 $18$米,底端距地 $1$米。  
-        康康在 \(P\) 处距地 $16$米,用 $4$ 秒到达顶端 \(T\),再用 $8$ 秒到达 \(Q\)。 求他抵达 \(Q\) 时离地面的距离。 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.3\textwidth]{images/image3.png}
-    \end{figure}
-    \begin{solution}
-        设摩天轮圆心为$O$,\;$\angle POT=\theta$,则$\angle TOQ=2\theta$,发现到
-        \[
-        \cos \theta=\frac{6}{9}=\frac{2}{3}
-        \]
-        与此同时,作$QR$垂直于过圆心$O$的水平线于点$R$,有
-        \[
-        \sin (2\theta - 90^\circ)=\frac{QR}{9}
-        \]
-        又
-        \[
-        \sin (2\theta - 90^\circ)=-\cos2\theta =1-2\cos^2 \theta 
-        \]
-        则$QR=1$,故Q距地$(9-1)+1=9$米。
-    \end{solution}
-    
-    \question 设圆心 \(O\)、半径 \(r\) 的圆的切线 \(AB\),点 \(C\) 在线 \(BD\) 上,且 \(AB=p,\;BC=CD=DO=q\)。证明  
-    \[
-    p^{2}=q^{2}+r^{2}.
-    \]
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.25\textwidth]{images/image5.png}
-    \end{figure}
-    \begin{solution}
-        在$\triangle ODC$中,由余弦定理
-        \[
-        r^2=q^2+q^2-2q^2\cos \angle ODC \Rightarrow \cos \angle ODC=\dfrac{2q^2-r^2}{2q^2}
-        \]
-        在$\triangle ODB$中,由余弦定理
-        \[
-        OB^2=q^2+(2q)^2-2 \cdot q \cdot 2q \cdot \dfrac{2q^2-r^2}{2q^2}=q^2+2r^2
-        \]
-        来到尾声,在$\triangle OAB$中,由毕氏定理
-        \[
-        OA^2+AB^2=OB^2 \Rightarrow r^2+p^2=q^2+2r^2
-        \]
-        于是得证 $p^{2}=q^{2}+r^{2}$。
-    \end{solution}
-
-    \question 在 $\triangle ABC$ 中,$AB=6,BC=4,CA=5$,圆 $O_1, O_2, O_3$ 为 $\triangle ABC$ 的三旁切圆,$O_1$ 与 $BC$ 相切于 $D$,$O_2$ 与 $CA$ 相切于 $E$,$O_3$ 与 $AB$ 相切于 $F$。求面积比 
-\[
-\frac{[\triangle DEF]}{[\triangle ABC]}.
-\]
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.35\linewidth]{images/image108.png}
-\end{figure}
-\ifprintanswers
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/image109.jpg}
-\end{figure}
-\fi
-\begin{solution}
-    设$a = BC = 4, b = CA = 5, c = AB = 6, s = \dfrac{a+b+c}{2} = \dfrac{15}{2}$,由旁切圆性质,
-    \[
-    AF = CD = s - b = \frac{5}{2}, \quad
-    BF = CE = s - a = \frac{7}{2}, \quad
-    AE = BD = s - c = \frac{3}{2}
-    \]
-    由$\triangle ABC \backsim \triangle AEF \backsim \triangle BDF \backsim \triangle CDE$,
-    \begin{align*}
-    \frac{S_{\triangle DEF}}{[\triangle ABC]}
-    &= 1- \frac{S_{\triangle AEF}}{[\triangle ABC]} - \frac{S_{\triangle BDF}}{[\triangle ABC]} - \frac{S_{\triangle CDE}}{[\triangle ABC]}\\[2mm]
-    &= 1 - \left(
-    \frac{AE \cdot AF}{AC \cdot AB} +
-    \frac{BD \cdot BF}{BC \cdot AB} +
-    \frac{CD \cdot CE}{AC \cdot BC}
-    \right)\\[2mm]
-    &= 1 - \left(
-    \frac{\frac{3}{2} \cdot \frac{5}{2}}{5 \cdot 6} +
-    \frac{\frac{3}{2} \cdot \frac{7}{2}}{4 \cdot 6} +
-    \frac{\frac{5}{2} \cdot \frac{7}{2}}{5 \cdot 4}
-    \right)= \frac{7}{32}
-    \end{align*}
-    \textcolor{red}{(待验证相似三角形,顺序,旁切圆性质)}
-\end{solution}
-
-    \question 设钝角三角形 $ABC$ 的内切圆半径为 $\sqrt{3}$,已知内切圆圆心 $O$ 到顶点 $A$ 的距离为 $2$,而 $O$ 到顶点 $B$ 的距离为 $2\sqrt{7}$,求 $\triangle ABC$ 的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.3\linewidth]{images/image129.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $D, E, F$ 分别为在$AB,BC,AC$上的内切圆切点,在$\triangle ADO,\triangle OBD$中,由毕氏定理,
-        \[
-        2^2 = (\sqrt{3})^2 + AD^2, (2\sqrt{7})^2 = (\sqrt{3})^2 + BD^2
-        \]
-        则
-        \[
-        AD = AF = 1, \quad BD = BE = 5, \quad CE = CF = a
-        \]
-        $\triangle ABC$半周长为$s=a+6$,则面积为
-        \[
-        [\triangle ABC]= \sqrt{3} (a + 6) =\sqrt{a+6\cdot a\cdot1\cdot5} \Rightarrow a = 9
-        \]
-        故
-        \[
-        [\triangle ABC]= 15 \sqrt{3}
-        \]
-    \end{solution}
-
-    \question 在 $\triangle ABC$ 中,已知 $\cos\angle BAC = \dfrac{4\sqrt{3}}{7},\angle B = 30^\circ,O$ 为 $\triangle ABC$ 的内心,直线 $AO$ 与 $BC$ 相交于 $D$ 点,求 $\dfrac{BD}{CD}$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\linewidth]{images/image116.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$\angle CAD = \angle DAB = \theta, CD = 1, BD = k$,  由 $\cos \angle A = \dfrac{4\sqrt{3}}{7}$,得 
-        \[
-        \sin \angle A = \dfrac{1}{7}
-        \]
-        在 $\triangle ABD$ 及$\triangle ACD$中,由正弦定理,
-        \[
-        \frac{k}{\sin \theta} = \frac{AD}{\sin 30^\circ}, \quad \frac{1}{\sin \theta} = \frac{AD}{\sin \angle C} 
-        \]
-        于是
-        \[
-        AD=\frac{k}{2\sin \theta} = \frac{\sin(150^\circ - \angle A)}{\sin \theta} \Rightarrow k = 2\sin(150^\circ - \angle A)
-        \]
-        即
-        \[
-        \frac{BD}{CD}=k = 2\sin(150^\circ - \angle A) = 2\left( \frac{1}{2} \cdot \frac{4\sqrt{3}}{7} - \left(-\frac{\sqrt{3}}{2}\right) \cdot \frac{1}{7} \right) = \frac{5\sqrt{3}}{7}
-        \]
-    \end{solution}
-
-    \question 若等腰三角形$\triangle ABC$的外接圆半径 $R$ 与内切圆半径 $r$ 之比
-    \[
-    \frac{R}{r} = 1+\sqrt{2},
-    \]
-    且顶角$A$ 不为直角,求 $\sin\dfrac{A}{2}$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image126.jpg}
-        \end{figure}
-    \fi
-    \begin{solution}
-        设 $O$ 为外接圆圆心, $P$ 为内切圆圆心,$D,E$为$P$在$AC,AB$上的垂足,$G$为$AB$中点,则
-        \[
-        AB = 2R \cos \frac{A}{2}, \quad
-        AF = 2R \cos^2 \frac{A}{2}, \quad
-        OP = 2R \cos^2 \frac{A}{2} - R - r
-        \]
-        又由$\triangle AGO\backsim \triangle AEP \ (AAA)$,
-        \[
-        \frac{GO}{EP} = \frac{AO}{AP} \Rightarrow \frac{R \sin \frac{A}{2}}{r} = \frac{R}{2R\cos^2 \frac{A}{2} - r}
-        \]
-        令$x = \sin \dfrac{A}{2}$,将$\dfrac{R}{r} = 1+\sqrt{2}$代入得
-        \[
-        (x+1)\big((2+2\sqrt{2}) x^2 - (2+2\sqrt{2}) x + 1 \big) = 0
-        \]
-        舍去 $x=-1$,得
-        \[
-        \sin \frac{A}{2} = \frac{\sqrt{2}}{2} \quad \text{或} \quad \sin \frac{A}{2} = \frac{2-\sqrt{2}}{2}
-        \]
-    \end{solution}
-
-    \question 一个等边三角形中有 $n$ 排全等的小圆（如下图 $n=4$ 所示）。求当 $n\to\infty$ 时,圆的面积与三角形面积的比值极限。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image143.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设三角形边长为 $1$,小圆半径为 $r$,由 $30$-$60$-$90$ 直角三角形可得
-        \[
-        2(n-1)r + 2 r\sqrt{3} = 1 \Rightarrow r = \frac{1}{2(n+\sqrt{3}-1)}.
-        \]
-        共有 $\frac{n(n+1)}{2}$ 个圆,因此圆的总面积为
-        \[
-        \frac{n(n+1)}{2} \cdot \frac{\pi}{4(n+\sqrt{3}-1)^2}= \frac{\pi}{8} \frac{n(n+1)}{(n+\sqrt{3}-1)^2}.
-        \]
-        当 $n\to\infty$ 时,$\dfrac{n(n+1)}{(n+\sqrt{3}-1)^2}\to 1$,因此面积比极限为
-        \[
-        \frac{\dfrac{\pi}{8}}{\dfrac{\sqrt{3}}{4}} = \frac{\pi\sqrt{3}}{6}
-        \]
-    \end{solution}
-
-    \question 已知 $C_1$ 是半径为 1 的圆,$P_1$ 是 $C_1$ 的外接正方形。对于 $n \ge 2$,令 $C_n$ 为 $P_{n-1}$ 的外接圆,$P_n$ 为 $C_n$ 的外接正 $2^{n+1}$ 边形。设 $r_n$ 为 $C_n$ 的半径。求 $\lim_{n \to \infty} r_n$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image155.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        由图可知,
-        \[
-        r_2 = \frac{r_1}{\cos\frac{\pi}{4}}, \quad r_n = \frac{r_{n-1}}{\cos\frac{\pi}{2^n}}, \quad n\ge 2
-        \]
-        于是
-        \[
-        r_n = \frac{1}{\displaystyle \prod_{k=2}^{n} \cos \frac{\pi}{2^k}}
-        \]
-        且由
-        \[
-        \sin x = 2 \sin \frac{x}{2} \cos \frac{x}{2} = 2^2 \sin \frac{x}{4} \cos \frac{x}{4} \cos \frac{x}{2} = \cdots = 2^n \sin \frac{x}{2^n} \prod_{k=1}^{n} \cos \frac{x}{2^k}
-        \]
-        两边除以 $x$ 并取极限 $n\to\infty$ 得
-        \[
-        \frac{\sin x}{x} = \prod_{k=1}^{\infty} \cos \frac{x}{2^k}
-        \]
-        令 $x = \dfrac{\pi}{2}$,得到
-        \[
-        \prod_{k=1}^{\infty} \cos \frac{\pi}{2^{k+1}} = \frac{2}{\pi}
-        \]
-        因此
-        \[
-        \lim_{n\to\infty} r_n = \frac{\pi}{2}
-        \]
-    \end{solution}
-
-    \question 圆内有两条平行弦,其长分别为 12,16,且它们之间的距离为 7。另一条弦位于两条弦中间且与两线等距,求该弦的长度。
-    \begin{solution}
-        设圆半径为 $r$,两条弦到圆心的距离分别为 $d_1,d_2$,由毕氏定理,
-        \[
-        \left(\frac{12}{2}\right)^2 + d_1^2 = r^2, \quad \left(\frac{16}{2}\right)^2 + d_2^2 = r^2 \implies 36 + d_1^2 = 64 + d_2^2.
-        \]
-        假设两弦在圆心的两侧,则
-        \[
-        d_1 + d_2 = 7, \quad d_1 - d_2 = 4 \implies d_1 = \frac{11}{2}>0, \quad d_2 = \frac{3}{2}>0
-        \]
-        于是
-        \[
-        r^2 = 36 + d_1^2 = \frac{265}{4}
-        \]
-        中间弦到圆心的距离为
-        \[
-        d = \frac{d_1 - d_2}{2} = 2
-        \]
-        设中间弦长度为 $x$,则由毕氏定理,
-        \[
-        \left(\frac{x}{2}\right)^2 + 2^2 = r^2 \Rightarrow x = \sqrt{249}
-        \]
-    \end{solution}
-
-    \question 在图中,两圆在点 $P$ 相切。$QP$ 和 $SU$ 是大圆的垂直直径,交于 $O$。点 $V$ 在 $QP$ 上使得$VP$ 是小圆的直径。小圆与 $SU$ 相交于 $T$。已知 $QV = 9,ST = 5$,求两圆直径之和。
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image173.png}
-    \end{figure}
-    \begin{solution}
-        设大圆直径为 $D$,小圆直径为 $d$,小圆圆心为 $C$,在$\triangle TOC$中,由毕氏定理,
-        \[
-        TO^2 + OC^2 = CT^2 \Rightarrow \left(\frac{D}{2} - 5\right)^2 + \left(\frac{D}{2} - \frac{d}{2}\right)^2 = \left(\frac{d}{2}\right)^2
-        \]
-        由 $QV=D-d = 9$,得
-        \[
-        (D-10)^2 + 9^2 = d^2 
-        \]
-        于是
-        \[
-        81 = (d-(D-10))(d+(D-10)) = 1\cdot(d+D-10)
-        \]
-        所以
-        \[
-        d + D = 91
-        \]
-    \end{solution}
-
-    \question 如图所示,三个圆的圆心分别为 $X,Y,Z$,每个圆都与另外两个圆相切。圆心为 $X$ 的圆与矩形 $PQRS$ 相切于三条边,圆心为 $Z$ 的圆与矩形 $PQRS$ 相切于两条边。如果 $XY=30,YZ=20,XZ=40$,求矩形 $PQRS$ 的面积。  
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image165.png}
-    \end{figure}
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image166.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        圆心之间的距离等于两个相切圆半径之和。设圆心 $X,Y,Z$ 的半径分别为 $x,y,z$,则有:
-        \[
-        XY = x + y = 30, \quad XZ = x + z = 40, \quad YZ = y + z = 20.
-        \]
-        解得
-        \[
-        x=25,\;y=5,\;z=15
-        \]
-        矩形高度为$2x = 50$,宽度为
-        \[
-        SR = SU + UV + VR = 25 + \sqrt{40^2 - 10^2} + 15 = 40 + 10\sqrt{15}
-        \]
-        故矩形面积为
-        \[
-        [PQRS]=50(40 + 10\sqrt{15}) = 2000 + 500\sqrt{15}
-        \]
-    \end{solution}
-
-    \question 两个圆 $C_1$ 和 $C_2$ 外切,直线 $l$ 为它们的公切线。直线 $m$ 平行于 $l$ 并与 $C_1$ 和 $C_3$ 相切。三个圆互相切。已知 $C_2$ 的半径为 $9$,$C_3$ 的半径为 $4$,求 $C_1$ 的半径。
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image201.png}
-    \end{figure}
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image202.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $C_1$ 的半径为 $r$,有
-        \[
-        C_1C_2 = r+9, \quad C_1C_3 = r+4, \quad C_2C_3 = 13.
-        \]
-        如图所示,考虑矩形$ABC_2D$,由毕氏定理,在 $\triangle AC_3C_1$ 中,
-        \[
-        C_3A^2 = (r+4)^2-(r-4)^2 = 16r \Rightarrow C_3A = 4\sqrt{r}.
-        \]
-        在 $\triangle DC_2C_1$ 中,
-        \[
-        DC_2^2 = (r+9)^2-(r-9)^2 = 36r \Rightarrow DC_2 = 6\sqrt{r}
-        \]
-        在 $\triangle BC_3C_2$ 中,
-        \[
-        CB^2 = 13^2-(2r-13)^2 = -4r^2 + 52r \Rightarrow C_3B = \sqrt{-4r^2 + 52r}
-        \]
-        由$DC_2 = C_3A + C_3B$得
-        \[
-        6\sqrt{r} = 4\sqrt{r} + \sqrt{-4r^2+52r} 
-        \]
-        解得
-        \[
-        r=12>0
-        \]
-    \end{solution}
-
-    \question 设 $0 < r < 1$，半径为 $1$ 的圆 $C_1$ 和半径为 $r$ 的圆 $C_2$ 的中心重合。在 $C_1$ 内部且 $C_2$ 外部尽可能多地画圆。但是，任意两个圆共有的点个数为 $1$ 或以下。设所画圆的周长总和为 $f(r)$。求极限 $\lim_{r \to 1-0} f(r)$。
-\begin{solution}
-设圆 $C$ 同时与半径为 $1$ 的圆 $C_1$ 内切，且与半径为 $r$ ($0 < r < 1$) 的圆 $C_2$ 外切。
-则圆 $C$ 的直径为 $1 - r$，半径为 $\frac{1 - r}{2}$。
-圆 $C$ 的圆心到重合圆心的距离为 $r + \frac{1 - r}{2} = \frac{1 + r}{2}$。
-设相邻两个圆 $C$ 的圆心分别为 $A, B$，且 $\angle AOB = \theta$。
-为了能画出 $n$ 个圆，必须满足 $n\theta \le 2\pi$ 且 $(n+1)\theta > 2\pi$，即：
-\[
-\frac{2\pi}{\theta} - 1 < n \le \frac{2\pi}{\theta} \cdots (1)
-\]
-在 $\triangle OAB$ 中，由 $OA = OB = \frac{1+r}{2}$ 及圆 $C$ 的半径为 $\frac{1-r}{2}$ 可知：
-\[
-\sin \frac{\theta}{2} = \frac{\frac{1-r}{2}}{\frac{1+r}{2}} = \frac{1-r}{1+r} \cdots (2)
-\]
-所画圆的周长总和 $f(r)$ 为：
-\[
-f(r) = 2\pi \cdot \frac{1-r}{2} \cdot n = n\pi(1-r) \cdots (3)
-\]
-由 (2) 可得 $r = \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}$。代入 (3) 得：
-\[
-f(r) = n\pi \left( 1 - \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \right) = 2n\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}
-\]
-由 (1) 可得：
-\[
-2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \left( \frac{2\pi}{\theta} - 1 \right) < f(r) \le 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} \cdots (4)
-\]
-当 $r \to 1-0$ 时，由 (2) 知 $\theta \to 0$。利用极限 $\lim_{x \to 0} \frac{\sin x}{x} = 1$：
-\[
-\lim_{\theta \to 0} 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} = \lim_{\theta \to 0} 2\pi \cdot \frac{\frac{\sin \frac{\theta}{2}}{\frac{\theta}{2}} \cdot \frac{1}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{1} = 2\pi \cdot \frac{1 \cdot \frac{1}{2}}{1} \cdot 2\pi = 2\pi^2
-\]
-同理，左侧极限亦为 $2\pi^2$。由夹逼定理得：
-\[
-\lim_{r \to 1-0} f(r) = 2\pi^2
-\]
-\end{solution}
-
-    \question 已知三角形 $ABC$ 内切圆切$BC,CA,AB$于 $D,E,F$,若内切圆半径为 $r$,外接圆半径为 $R$,试证 
-    \[
-    \frac{[\triangle DEF]}{[\triangle ABC]} = \frac{r}{2R}.\]
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image43.png}
-    \end{figure}
-    \begin{solution}
-        设三角形 $ABC$ 的边长为 $a, b, c$,内心 $I$,有 $ID = IE = IF = r,\triangle DEF$ 面积为
-        \begin{align*}
-        [\triangle DEF] 
-        &= [\triangle IDE]+[\triangle IEF]+ [\triangle IFD] \\
-        &= \frac{1}{2} r^2 (\sin (\pi-A) + \sin (\pi-B) + \sin (\pi-C)) \\
-        &= \frac{1}{2} r^2 (\sin A + \sin B + \sin C)
-        \end{align*}
-        由正弦定理,
-        \[
-        \sin A = \frac{a}{2R},\quad \sin B = \frac{b}{2R},\quad \sin C = \frac{c}{2R}
-        \]
-        代入得
-        \[
-        [\triangle DEF] = \frac{1}{2} r^2 \left( \frac{a+b+c}{2R} \right) = \frac{r^2 s}{2R}
-        \]
-        因此:
-        \[
-        \frac{[\triangle DEF]}{[\triangle ABC]} = \frac{\frac{r^2 s}{2R}}{rs} = \frac{r}{2R}
-        \]
-    \end{solution}
-
-    \question 已知 $\triangle ABC$ 满足 $AB=4,BC=5, CA=6,\triangle ABC$ 的外接圆同时是 $\triangle A'B'C'$ 的内切圆,且 $A,B,C$ 分别在 $B'C',A'C',A'B'$ 上,求 $B'C'$ 的长度。
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image159.png}
-    \end{figure}
-    \begin{solution}
-        由弦切角定理,
-        \[
-        \angle C'AB = \angle C, \quad \angle B'AC = \angle B
-        \]
-        由直角三角形关系得
-        \[
-        C'A = \frac{2}{\cos\angle C'AB} = \frac{2}{\cos C}, \quad B'A = \frac{3}{\cos\angle B'AC} = \frac{3}{\cos B}
-        \]
-        由余弦定理,得
-        \[
-        \cos B = \frac{4^2+5^2-6^2}{2\cdot 4\cdot 5}=\frac{1}{8}, \quad \cos C = \frac{5^2+6+2-4^2}{2 \cdot 5 \cdot 6}=\frac{3}{4}
-        \] 
-        因此
-        \[
-        B'C' = C'A + B'A = 2\cdot \frac{4}{3} + 3\cdot 8 = \frac{80}{3}
-        \]
-    \end{solution}
-
-    \question 如图,在直角 $\triangle ABC$ 中,$\angle ACB = 90^\circ, AC=6$,以 $AB$ 为一边向三角形外作正方形 $ABEF$。已知正方形的中心为 $O$,且 $OC = 8\sqrt{2}$,求 $BC$ 的长度。
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.35\textwidth]{images/image134.png}
-    \end{figure}
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image135.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        $\triangle OAB$ 为等腰直角三角形,设$G$ 为 $AB$ 中点,则 $OG$ 为中垂线,设$$GA = GB = OG = a,$$同弧所对的圆周角相等,有$\angle ACO = \angle ABO = 45^\circ$,由余弦定理,
-        \[
-        (\sqrt{2} a)^2=6^2 + (8\sqrt{2})^2-2 \cdot 6 \cdot 8\sqrt{2}\cdot \cos \angle 45^\circ
-        \Rightarrow a^2 = 34
-        \]
-        在直角 $\triangle ABC$ 中,由毕氏定理,
-        \[
-        (2a)^2 = 6^2 + CB^2 \Rightarrow CB = 10
-        \]
-    \end{solution}
-
-    \question 在 $\triangle ABC$ 中,$AB=10$, $M$ 为 $AB$ 中点,$\;\triangle ABC$ 内切圆恰将线段 $CM$ 三等分,求 $\triangle ABC$ 面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\textwidth]{images/image110.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设三切点为 $D,E,F$,中线 $CM$ 与内切圆交于 $P,Q$ 两点,据题意有
-        \[
-        CP = PQ = QA = a.
-        \]
-        由$\triangle MQD \backsim \triangle MDP \ (\text{AAA})$,
-        \[
-        \frac{MQ}{MD} = \frac{MD}{MP} \Rightarrow  MD^2 = MP \cdot MQ = 2a^2,
-        \]
-        同理由$\triangle CPF \backsim \triangle CFQ \ (\text{AAA})$得$CF^2 = 2a^2$,则
-        \[
-        CE = CF = MD = b  \Rightarrow b = \sqrt{2}a.
-        \]
-        由中线定理,
-        \[
-        CA^2 + CB^2 = 2(CM^2 + AM^2) \Rightarrow  (5+2b)^2 + 5^2 = 2(9a^2 + 5^2)
-        \]
-        代入 $b = \sqrt{2}a$ 解得
-        \[
-        a = 2\sqrt{2}, \quad b = 4.
-        \]
-        因此三边长为$AB = 10, BC = 5,  AC = 5 + 2b = 13$,半周长 $s = \dfrac{10+5+13}{2} = 14$,面积为
-        \[
-        \sqrt{14 \cdot 4 \cdot 9 \cdot 1} = 6\sqrt{14}
-        \]
-    \end{solution}
-
-    \question 在 $\triangle ABC$ 中,已知 $AB=9,BC=10,CA=11$,且内切圆切 $BC,AB,AC$ 于 $D,E,F$,求 $AD$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image124.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$AE=AF=a, BD=BE=b, CF=CD=c,$则
-        \[
-        c = s - AB = \frac{9+10+11}{2} - 9 = 6
-        \]
-        在 $\triangle CAD$ 与 $\triangle CAB$中,由余弦定理,
-        \[
-        \cos C 
-        = \frac{11^2 + 6^2 - AD^2}{2\cdot 11 \cdot 6}
-        = \frac{11^2 + 10^2 - 9^2}{2\cdot 11 \cdot 10}
-        \]
-        解得
-        \[
-        AD = \sqrt{73}
-        \]
-    \end{solution}
-
-    \question 已知$\triangle ABC$中,$\;AB=13,BC=14,AC=15$,设 $D,E$ 分别为从 $A,B$ 作的高的垂足,求 $\triangle CDE$ 的外接圆直径。
-    \begin{solution}
-        在$\triangle ABC$中,由余弦定理,
-        \[
-        13^2 = 14^2 + 15^2 - 2\cdot 14 \cdot 15 \cos C \Rightarrow \cos C = \frac{3}{5}
-        \]
-        设 $AD$ 与 $BE$ 交于 $X$,由于 $\angle CDX = \angle CEX = 90^\circ$,有 
-        \[
-        \triangle CDA \backsim \triangle CEB \backsim \triangle XDB \ \text{(AAA)},
-        \]
-        得到
-        \[
-        CD = 9, \quad BD = 5, \quad DX = \frac{15}{4}
-        \]
-        在$\triangle CDX$中,由毕氏定理,
-        \[
-        CX = \sqrt{CD^2+DX^2}=\frac{39}{4}
-        \]
-        发现 $CDXE$ 是一圆内接四边形,因此 $\triangle CDE$ 的外接圆直径即为
-        \[
-        CX=\frac{39}{4}
-        \]
-    \end{solution}
-
-    \question 已知点 $A,B,C,D$共圆, $AC$ 是直径,且 $\angle CBD=\angle DBA$。若 $BC=2, AB=4$,求 $BD$ 的长度。
-    \begin{solution}
-        $AC$ 是直径,所以 $\angle ABC=90^\circ$,因此 
-        \[
-        \angle CBD=\angle DBA=45^\circ
-        \]
-        又 $\angle CAD$ 与 $\angle CBD$ 为同弧所对的角,所以 
-        \[
-        \angle CAD=\angle CBD=45^\circ
-        \]
-        在$\triangle ABC$中,由毕氏定理,
-        \[
-        AC=\sqrt{AB^2+BC^2}=2\sqrt{5}
-        \]
-        故
-        \[
-        \sin \angle BAC=\frac{BC}{AC}=\frac{1}{\sqrt{5}}
-        \]
-        在$\triangle BAD$中,由正弦定理,
-        \begin{align*}
-        BD=AC \sin \angle BAD &= AC \sin \left(\angle BAC+\frac{\pi}{4}\right) \\
-        &= 2\sqrt{5}\cdot \frac{\sqrt{2}}{2}(\sin\angle BAC+\cos\angle BAC)=3\sqrt{2}            
-        \end{align*}
-    \end{solution}
-
-        \question 平面上,$P$为$AB$上一点满足$AP=5,BP=3,Q$为平面上一点满足$AQ=7,BQ=3$。若以$AB$为直径作一圆$C$,自$P$向$Q$作射线$PQ$交圆$C$于点$R$,试求$PR$的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image61.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        在$\triangle ABQ$中,由余弦定理,
-        \[
-        7^2 = 8^2+3^2 -2\cdot 3 \cdot 8 \cdot \cos \angle B
-        \Rightarrow \angle B=60^\circ
-        \]
-        又$BP=BQ=3$,故$\triangle PQB$为等边三角形,于是$PQ=3$;在$\triangle OPR$中,由余弦定理,
-        \[
-        4^2=1^2 + PR^2-2 \cdot 1 \cdot PR \cdot \cos 60^\circ 
-        \]
-        解得
-        \[
-        PR = \frac{-1 + \sqrt{61}}{2}
-        \]
-    \end{solution}
-
-    \question 两圆 $O_1,O_2$ 都经过 $\triangle ABC$ 的顶点 $A$,且分别与 $BC$ 边相切于点 $B,C$ 。已知圆 $O_1,O_2$ 的面积分别为 $m,n$,试以 $m,n$ 表示 $\triangle ABC$ 外接圆的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image224.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$O_1,O_2,\triangle ABC$外接圆的半径为$R_1,R_2,R_3;\angle ABC = \beta, \angle ACB = \gamma$。在 $\wideparen{AB},\wideparen{AC}$ 分别取点 $P,Q$,由弦切角定理,
-        \[
-        \angle APB = \angle ABC = \beta, \quad \angle AQC = \angle ACB = \gamma.
-        \]
-        由正弦定理,
-        \[
-        4 R_3^2 = \frac{\overline{AC}}{\sin \beta} \cdot \frac{\overline{AB}}{\sin \gamma} = \frac{2 R_2 \sin \gamma}{\sin \beta} \cdot \frac{2 R_1 \sin \beta}{\sin \gamma} = 4 R_1 R_2 \Rightarrow R_3^2 = R_1 R_2
-        \]
-        所以 $\triangle ABC$ 外接圆的面积为
-        \[
-        \pi R_3^2 = \pi R_1 R_2 = \sqrt{\frac{m}{\pi}} \cdot \sqrt{\frac{n}{\pi}} \cdot \pi = \sqrt{mn}
-        \]
-    \end{solution}
-
-    \question 一半径为 4 的大圆里面有三个两两外切,且皆与大圆内切的小圆,其中两小圆半径分别为 1 和 3,且它们的圆心在大圆的一条直径上,求第三个小圆的半径。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image140.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$B=(0,0)$为大圆圆心 ,$A=(-1,0)$为半径为 3 的小圆圆心,$C=(3,0)$为半径为 1 的小圆圆心,$D$为所求半径为 $r$ 的小圆圆心,由海伦公式及等高性质,
-        \[
-        3=\frac{[\triangle BDC]}{[\triangle ABD]}=
-        \frac{\sqrt{4(3-r)\cdot r \cdot1}}{\sqrt{4(1-r)\cdot r\cdot3}}
-        \]
-        其中$\triangle ABD,\triangle BDC$半周长为
-        \[
-        [\triangle ABD]=\frac{1}{2}(3+r+(4-r)+1)=4, \quad s_{\triangle BDC}=\frac{1}{2}(1+r+(4-r)+3)=4
-        \]
-        解得第三个小圆的半径为
-        \[
-        r=\frac{12}{13}
-        \]
-    \end{solution}
-
-    \question 圆内接四边形 $ABCD$ 满足 $AB=4,BC=1,CD=2,DA=3$。设 $P,Q$ 分别为 $BC$ 与 $DA$ 的中点,求 $PQ^2$。
-\ifprintanswers
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{images/image157.png}
-\end{figure}
-\fi
-\begin{solution}
-    设对角线交点为 $R$,令 $CR=x$。由$\triangle BCR \backsim \triangle ADR \; \text{(AAA)}$ 及 $\triangle CDR \backsim \triangle BAR \; \text{(AAA)}$可得
-    \[
-    BR=2x,\quad DR=3x,\quad AR=6x,
-    \]
-    因此
-    \[
-    AC=7x,\quad BD=5x
-    \]
-    在四边形 $ABCD$中,由托勒密定理,
-    \[
-    AC\cdot BD=AB\cdot CD+BC\cdot DA 
-    \]
-    得
-    \[
-    x^2=\frac{11}{35}
-    \]
-    在$\triangle ABD$及$\triangle ACD$中,由中线定理,
-    \[
-    AB^2+BD^2=\frac{1}{2}DA^2+2BQ^2, \quad AC^2+CD^2=\frac{1}{2}DA^2 + 2CQ^2
-    \]
-    得
-    \[
-    \textcolor{red}{BQ^2=\frac{271}{28},\;CQ^2=\frac{571}{20}}
-    \]
-    故在$\triangle BCQ$中,由中线定理,
-    \[
-    BQ^2+CQ^2 = \frac{1}{2}BC^2+2PQ^2 \Rightarrow PQ^2=\frac{291}{35}
-    \]
-    \textcolor{red}{(待验证)}
-\end{solution}
-    
-    \question 在边长为 4 的正三角形 $ABC$ 内接圆中,点 $P$ 在弧 $AC$ 上满足 $AP \cdot PC = 5$。求 $BP$ 的长度。
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\linewidth]{images/image152.png}
-    \end{figure}
-    \begin{solution}
-        在四边形 $ABPC$中,由托勒密定理,
-        \[
-        AB \cdot PC + AP \cdot BC = AC \cdot BP 
-        \]
-        由$AB=AC=BC$,得
-        \[
-        BP = AP + PC
-        \]
-        易知$\angle APC = 120^\circ$,在$\triangle APC$中,由余弦定理,
-        \[
-        4^2 = AP^2 + PC^2 - 2 \cdot AP \cdot PC \cos 120^\circ \Rightarrow AP^2 + PC^2 = 11
-        \]
-        于是
-        \[
-        BP^2 = (AP+PC)^2 = AP^2 + PC^2 + 2 \cdot AP \cdot PC = 21 \Rightarrow BP = \sqrt{21}
-        \]
-    \end{solution}
-
-    \question 已知 $AC$ 为半圆的直径,若将弧 $AB$ 沿弦 $AB$ 向下折使其与 $AC$ 相交于 $D$ 点,且 $AD=9,DC=7$,则 $AB$ 的长度为多少？  
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image80.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        作 $D'D'' \parallels BC$ 交圆于 $D',D''$ 及直线 $AB$ 于 $P$ 点,
-        $AB$ 为 $DD'$ 的中垂线,
-        \[
-        AD' = AD = 9,
-        \]
-        在$\triangle AOD'$ 中,由余弦定理,
-        \[
-        \cos \angle AOD' = \frac{8^2 + 8^2 - 9^2}{2 \cdot 8 \cdot 8} = \frac{47}{128}
-        \] 
-        在$\triangle DOD'$ 中,由余弦定理,
-        \[ 
-        \cos \angle D'OD = -\frac{47}{128} = \frac{8^2 + 1^2 - DD'^2}{2 \cdot 8 \cdot 1} \Rightarrow DD' = \frac{9\sqrt{14}}{4}  ,PD = PD' = \frac{9\sqrt{14}}{8} 
-        \]
-        由圆幂定理,
-        \[
-        9 \cdot 7 = \frac{9\sqrt{14}}{4}  \cdot DD'' \Rightarrow DD'' = 2\sqrt{14}
-        \]
-        又 $\triangle APD \backsim \triangle ABC \ (AAA)$,
-        \[
-        \frac{AP}{PB} = \frac{AD}{DC} = \frac{9}{7}
-        \]
-        令 $AP = 9k,PB = 7k,k > 0$,由圆幂定理,
-        \[
-        \frac{9\sqrt{14}}{8}  \cdot \left( \frac{9\sqrt{14}}{8}  + 2\sqrt{14} \right) = 9k \cdot 7k \Rightarrow k = \frac{5\sqrt{2}}{8}
-        \] 
-        故
-        \[
-        AB = 16k = 10\sqrt{2}
-        \]
-    \end{solution}
-
-    \question 正方形 $PQRS$ 的边长为 $4$。点 $U$ 在对角线 $PR$ 上使得$PR=4UR$。以 $U$ 为圆心作圆,使得圆与正方形的两条边相切。$PW$ 是圆的切线,且 $W$ 在 $QR$ 上。求 $PW$ 的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image214.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        由 $PR=4UR=4\sqrt{2}$,得
-        \[
-        PU=\frac{3}{4}PR=3\sqrt{2}, \quad UR=\sqrt{2}.
-        \]
-        设圆分别与 $PW,WR, RS$ 相切于点 $X,Y,Z$,由$\triangle UZR$知圆的半径为 $1$,在$\triangle PXU$中,由毕氏定理,
-        \[
-        PX=\sqrt{(3\sqrt{2})^2-1^2}=\sqrt{17}
-        \]
-        设$x=PW$,在$\triangle PQW$中,由毕氏定理,
-        \[
-        4^2+(3-x)^2=(\sqrt{17}+x)^2 \Rightarrow x=\frac{4}{\sqrt{17}+1}
-        \]
-        故
-        \[
-        PW=\sqrt{17}+\frac{4}{\sqrt{17}+1}=\frac{5\sqrt{17}-1}{4}
-        \]
-    \end{solution}
-
-    \question 如下图所示, $AB=8$, 以 $AB$ 为直径的半圆上有 $C, D$ 两点, 且 $AC=2,BD=7$, 求 $CD$ 的长度。 
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image99.png}
-    \end{figure}
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image100.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        $AB$ 为直径,在 $\triangle ABC$ 及 $\triangle ABD$中,由毕氏定理,
-        \[
-        BC=\sqrt{8^2-2^2}=2\sqrt{15}, AD=\sqrt{8^2-7^2}=\sqrt{15}
-        \]
-        设$\theta_1=\angle ABC,\theta_2=\angle ABD,$则
-        \[
-        \tan \theta_1 =\frac{1}{\sqrt{15}},\quad
-        \tan (\theta_1+\theta_2) = \frac{\frac{1}{\sqrt{15}} + \tan \theta_2}{1 - \frac{1}{\sqrt{15}} \tan \theta_2} = \frac{\sqrt{15}}{7} \Rightarrow \tan \theta_2 = \frac{1}{\sqrt{15}}
-        \]
-        在 $\triangle BCD$中,由余弦定理,
-        \[
-        \cos \theta_2 = {\sqrt{15}\over 4} 
-        = {(2\sqrt{15})^2 + 7^2 - CD^2 \over 2\cdot 7 \cdot 2\sqrt{15}} \Rightarrow CD = 2
-        \]
-    \end{solution}
-
-    \question 三角形 $ABC$ 内接于一直径为 $5\sqrt{13}$ 的圆, $D$ 点在 $AC$ 上, 且 $\angle ABD = 90^\circ$. 已知 $BC = 10,AD = 13$, 求 $CD$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image87.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        由于 $\angle ABD$ 为直角, 延长 $BD$ 交圆周于 $B'$, 则 $AB'$ 为直径,由$\triangle DBC \backsim \triangle DAB' \ (\text{AAA})$,
-        \[
-        \frac{DB}{DA} = \frac{BC}{AB'} \Rightarrow \frac{DB}{13} = \frac{10}{5\sqrt{13}} 
-        \Rightarrow DB = 2\sqrt{13}
-        \]
-        在 $\triangle ABD$ 中,由毕氏定理,
-        \[
-        AB^2 + (2\sqrt{13})^2 = 13^2 \Rightarrow AB = 3\sqrt{13}
-        \]
-        在 $\triangle ABB'$ 中,由毕氏定理,
-        \[
-        BB' = \sqrt{(5\sqrt{13})^2 - (3\sqrt{13})^2} = 4\sqrt{13} \Rightarrow DB' = BB' - BD = 2\sqrt{13}
-        \]
-        再由 $\triangle DBC \backsim \triangle DAB'$,
-        \[
-        \frac{BC}{AB'} = \frac{CD}{DB'} \Rightarrow \frac{10}{5\sqrt{13}} = \frac{CD}{2\sqrt{13}} \Rightarrow CD = 4
-        \]
-    \end{solution}
-
-    \question 已知圆内接六边形 $ABCDEF$ 的边长依次为 $5,5,7,7,5,7$,求该六边形的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image78.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设圆心为 $O$,则
-        \[
-        \angle AOB : \angle BOC : \angle COD : \angle DOE : \angle EOF : \angle FOA = 5:5:7:7:5:7
-        \]
-        即
-        \[
-        \angle AOB = \angle BOC = \angle EOF = 50^\circ,\quad \angle COD = \angle DOE = \angle FOA = 70^\circ \Rightarrow \angle BAF = 120^\circ
-        \]
-        在$\triangle BAF$ 中,由余弦定理,
-        \[
-        BF^2 =5^2 + 7^2 - 2\cdot 5\cdot 7 \cdot \cos 120^\circ= 109
-        \]
-        六边形面积为
-        \[
-        [ABCDEF]= [\triangle BDF] + 3 [\triangle ABF]
-        = \frac{\sqrt{3}}{4} \cdot 109 + \frac{3}{2} \cdot 5 \cdot 7 \cdot \sin 120^\circ
-        = \frac{107\sqrt{3}}{2}
-        \]
-    \end{solution}
-
-    \question 已知$\triangle ABC$中,$AB=25,AC=30,\angle B=2\angle C$, 且$\angle B$的内角平分线交$\triangle ABC$的外接圆于$D$点,且$B,D$为相异点。试求$\triangle BCD$的面积。 
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image70.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$\angle C = \theta$,则$\angle B = 2\theta$,$\angle A = \pi - 3\theta$, 在$\triangle ABC$ 中,由正弦定理,
-        \[
-        \frac{25}{\sin \theta} = \frac{30}{\sin 2\theta} \implies \cos \theta = \frac{3}{5}.
-        \]
-        因同弧所对圆周角相等,$\angle D = \angle A,\angle B = \angle DCB,$故$\triangle ABC \cong \triangle DCB$\ (ASA),因此
-        \[
-        [\triangle BCD] = [\triangle ABC] = \frac{1}{2} \cdot 25 \cdot 30 \cdot \sin(\pi - 3\theta) = 375 \sin 3\theta.
-        \]
-        由$\sin \theta = \dfrac{4}{5}$,
-        \[
-        [\triangle BCD] = 375 \left(3 \cdot \frac{4}{5} - 4 \cdot \left(\frac{4}{5}\right)^3 \right) = 132
-        \]
-    \end{solution}
-
-    \question 半圆 $\Gamma$ 的直径 $AB$ 之长为 $14$, 圆 $\Omega$ 切 $AB$ 于点 $P$ 且交 $\Gamma$ 于点 $Q$ 与点 $R$。若 $QR=3\sqrt{3}$ 且 $\angle QPR=60^{\circ}$, 求 $\triangle PQR$ 的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image59.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设半圆心为 $C$, 小圆心为 $O$, 小圆半径为 $r$。由$\angle QPR=60^\circ$ 得 $\angle QOR=120^\circ$,在$\triangle ABC$ 中,由正弦定理,
-        \[
-        \frac{QR}{\sin\angle QOR}=\frac{3\sqrt3}{\sin 120^\circ}=2r \Rightarrow OQ=OR=r=3
-        \]
-        且发现$\triangle COR \congr \triangle COQ$ \ (SSS),故 $\angle COQ=\angle COR=120^\circ$。在$\triangle COQ$中,由余弦定理,
-        \[
-        7^2 = CO^2+3^2-2\cdot CO\cdot 3 \cdot \cos 120^\circ \Rightarrow CO=5
-        \]
-        在$\triangle COP$中,由毕氏定理,$CP=\sqrt{5^2-3^2}=4$,设 $\angle COP=\theta$, 有
-        \[
-        \sin\theta=\frac{4}{5},\quad \cos\theta=\frac{3}{5}
-        \]
-        因此
-        \begin{align*}  
-        [\triangle PQR]
-        &=[\triangle POQ]+[\triangle POR]+[\triangle OQR]\\
-        &=\frac12\cdot 3^2\bigl(\sin(120^\circ-\theta)+\sin(120^\circ+\theta)\bigr)+\frac12\cdot 3^2\sin 120^\circ
-        =\frac{99\sqrt3}{20}
-        \end{align*}
-    \end{solution}
-
-    \question 已知圆内接四边形 $ABCD$ 中可以作一个内切圆,且 $E,F,G,H$ 分别在$AB,BC,CD,DA$上,且为此四边形 $ABCD$ 与其内切圆相切的四个切点,若 $FG=6,EF=7,EH=8$,求 $GH$ 的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image23.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        由圆内接四边形性质有
-        \[
-        \angle A + \angle C =\angle GOF + \angle C = 180^\circ 
-        \Rightarrow \angle A = \angle GOF
-        \]
-        所以
-        \[
-        \triangle AHE \backsim \triangle OGF \ \text{(AAA)} \Rightarrow {AH} = {AE} = \dfrac{4}{3}r
-        \]
-        在$\triangle AHE$及$\triangle OHE$中,由余弦定理,
-        \[
-        \cos \angle A = -\cos \angle HOE \Rightarrow \frac{2r^2 - 8^2}{2r^2}= -\frac{\left(\frac{4r}{3}\right)^2 + \left(\frac{4r}{3}\right)^2 - 8^2}{2 \cdot \left(\frac{4r}{3}\right)^2}\Rightarrow r = 5
-        \]
-        同理可得$\angle D = \angle EOF$,在$\triangle OEF$中,由余弦定理,
-        \[
-        \cos \angle D = \cos \angle EOF = \frac{2r^2 - 7^2}{2r^2}  = \frac{1}{50}
-        \]
-        又 $\cos \angle GOH = -\cos \angle D = -\dfrac{1}{50}$
-        ,在$\triangle OGH$中,由余弦定理,
-        \[
-        \cos \angle GOH = \frac{2r^2 - {GH}^2}{2r^2}
-        \Rightarrow {GH} =\sqrt{51}
-        \]
-    \end{solution}
-
-    \question 若圆 $O_1$ 与圆 $O_2$ 的半径比为 $2:3$,且圆 $O_1$ 与圆 $O_2$ 交于 $A,B$ 两点。过 $B$ 点作一直线分别交圆 $O_1$ 及圆 $O_2$ 于 $C,D$ 两点,且 $\angle CAD=\dfrac{2\pi}{3}$,求 $\tan \angle ACD$。 
-    \ifprintanswers
-    \begin{figure}[H]
-    \centering        
-    \includegraphics[width=0.7\textwidth]{images/image83.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        调整两圆心距使得  $C$ 在 $O_1O_2$ 上,令 $\angle ACD=\theta$,则
-        \[
-        \angle AO_2O_1 = \frac{1}{2}\angle AO_2B = \angle ADC = 60^\circ-\theta
-        \]
-        又 $\angle ACB=180^\circ-\theta$,所以
-        \[
-        \angle AO_1B = 360^\circ-2(180^\circ-\theta)=2\theta \Rightarrow \angle AO_1O_2=\theta
-        \]
-        在$\triangle APO_1$及$\triangle APO_2$中,设$r_1=2k,r_2=3k,$则
-        \[
-        \sin \angle AO_1O_2 = \sin \theta = \frac{AP}{2k}, \sin \angle AO_2O_1 = \sin (60^\circ-\theta) = \frac{AP}{3k}
-        \]
-        解得
-        \[
-        2\sin \theta = 3\left(\frac{\sqrt{3}}{2}\cos\theta - \frac{1}{2}\sin\theta\right)
-        \Rightarrow \tan \theta = \frac{3\sqrt{3}}{7}
-        \]
-    \end{solution}
-    
-    \question 已知 $\triangle ABC$ 内接于半径为 $1$ 的圆。对于$\triangle ABC$的每一条边,作一圆使得与该边切于其中点,且该圆与大圆相切。已知其中两个小圆的半径分别为 $\dfrac{2}{3},\dfrac{2}{11}$,求第三个小圆的半径。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image156.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设大圆圆心为 $O,BC,AC,AB$中点为 $D,E,F$,对应小圆半径为 \[
-        r_1=\frac{2}{3},r_2=\frac{2}{11},r_3
-        \]  
-        在$\triangle BDO$中,由毕氏定理,
-        \[
-        BC^2=4(OB^2-OD^2)
-        =4\Bigl(1-(1-r_1)^2\Bigr)=\frac{32}{9}
-        \]
-        在$\triangle CEO$中,由毕氏定理,
-        \[
-        AC^2=4(OC^2-OE^2)
-        =4\Bigl(1-(1-r_2)^2\Bigr)=\frac{288}{121}
-        \]
-        设 $\angle BOC=\beta,\ \angle COA=\gamma$,在$\triangle BOC$及$\triangle AOC$中,由余弦定理,
-        \[
-        \cos\beta=\frac{OB^2+OC^2-BC^2}{2OB\cdot OC}=-\frac{7}{9},\quad
-        \cos\gamma=\frac{OC^2+OA^2-AC^2}{2OC\cdot OA}=-\frac{23}{121}.
-        \]
-        由此得
-        \[
-        \sin\beta=\frac{4\sqrt2}{9},\quad \sin\gamma=\frac{84\sqrt2}{121}.
-        \]
-        于是
-        \[
-        \cos\angle AOB=\cos(\beta-\gamma)=\cos\beta\cos\gamma+\sin\beta\sin\gamma
-        =\frac{833}{1089}.
-        \]
-        在$\triangle AOB$中,由余弦定理,
-        \[
-        AB^2=OA^2+OB^2-2OA\cdot OB\cos\angle AOB=\frac{512}{1089}
-        \]
-        因此
-        \[
-        OF=\sqrt{OA^2-\frac14 AB^2}=\frac{31}{33} \Rightarrow r_3=\frac12(1-OF)=\frac{1}{33}
-        \]
-    \end{solution}
-
-    \question 右图为月偏食的示意图,满月被地球的影锥遮蔽一部分。假设满月和地球影锥截面都是正圆,在图中标记圆弧 $\wideparen{AP} = \wideparen{PB}$ 均为满月的圆周一部分,圆弧 $\wideparen{AQ} = \wideparen{QB}$ 均为地球影锥截圆的圆周一部分。若 $AB$ 与 $PQ$ 分别是满月圆半径的 $\sqrt{3}$ 与 $2-\sqrt{3}$ 倍,求 
-    \[
-    \frac{\text{月偏食亮面面积}}{\text{满月圆面积}}.
-    \]
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.35\textwidth]{images/image36.png}
-    \end{figure}
-    \ifprintanswers 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image37.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设小圆(月亮)圆心为 $O_1$,半径$r = 1$ ,大圆(太阳)圆心为$O_2$,半径$R$,$C$为$O_1Q$ 与$AB$的交点,则
-        \[
-        BC = \frac{1}{2} AB = \frac{1}{2} \sqrt{3} \Rightarrow \angle CO_1B = 60^\circ,\angle O_1BC = 30^\circ
-        \]
-        又 $CQ = O_1P - PQ - O_1C = \sqrt{3} - \frac{3}{2}$,
-        \[
-        \tan \angle QBC = \frac{CQ}{BC} = 2 - \sqrt{3} \Rightarrow \angle QBC = 15^\circ,\angle CQB = 75^\circ
-        \]
-        由于 $O_2B = O_2Q = R$,因此
-        \[
-        \angle BO_2C = 180^\circ - 75^\circ \cdot 2 = 30^\circ \Rightarrow R = 2 BC = \sqrt{3}
-        \]
-        故弓形$AQB$面积为
-        \[
-        [\text{弓形}AQB] 
-        = [\text{扇形}AQBO_2]-[\triangle ABO_2] 
-        = \frac{1}{6} (\sqrt{3})^2 \pi - \frac{1}{2} (\sqrt{3})^2\sin 60^\circ
-        =\frac{\pi}{2} - \frac{3\sqrt{3}}{4}
-        \]
-        同理,
-        \[
-        [\text{弓形}APB]
-        = [\text{扇形}APBO_1]-[\triangle ABO_1] 
-        = \frac{1}{3} (1)^2 \pi - \frac{1}{2} (1)^2 \sin 120^\circ
-        =\frac{\pi}{3} - \frac{\sqrt{3}}{4}
-        \]
-        故
-        \[
-        \frac{\text{月偏食亮面面积}}{\text{满月圆面积}} = \frac{\left( \frac{\pi}{3} - \frac{\sqrt{3}}{4} \right) - \left( \frac{\pi}{2} - \frac{3\sqrt{3}}{4} \right)}{\pi(1)^2}=\frac{\sqrt{3}}{2\pi} - \frac{1}{6}
-        \]
-    \end{solution}
-
-    \question 某圆内接六边形 $ABCDEF$,其中 $AB=BC=CD=1,DE=EF=FA=2$,求此六边形的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image136.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设圆心为 $O$,半径为$r$,且
-        \[
-        \angle AOB = \angle BOC = \angle COD = b, \quad \angle DOE = \angle EOF = \angle FOA = a, 
-        \]
-        由圆周角和
-        \[
-        3a + 3b = 360^\circ \Rightarrow \angle EDC = a+b=120^\circ 
-        \]
-        在 $\triangle EDC$ 中,由余弦定理,
-        \[
-        EC^2 = 1^2 + 2^2 - 2\cdot 1 \cdot 2 \cdot \cos 120^\circ \Rightarrow EC = \sqrt{7}
-        \]
-        在 $\triangle EOC$ 中,由正弦定理,
-        \[
-        \frac{\sqrt{7}}{\sin 120^\circ} = 2r \Rightarrow r = \sqrt{\frac{7}{3}}
-        \]
-        在 $\triangle EOD$ 及$\triangle DOC$中,由余弦定理,
-        \[
-        \cos a = \frac{r^2 + r^2 - 1^2}{2 r^2} = \frac{11}{14}, \cos b = \frac{r^2 + r^2 - 2^2}{2 r^2} = \frac{1}{7} \Rightarrow \sin a = \frac{5\sqrt{3}}{14}, \ \sin b = \frac{4\sqrt{3}}{7}.
-        \]
-        故六边形$ABCDEF$面积为
-        \[
-        [ABCDEF] = \frac{3}{2} r^2 \sin a + \frac{3}{2} r^2 \sin b = \frac{7}{2} \left( \frac{5\sqrt{3}}{14} + \frac{4\sqrt{3}}{7} \right) = \frac{13\sqrt{3}}{4}
-        \]
-    \end{solution}
-
-    \question 边长为 $1$ 的正五边形内部,去掉同时与五个顶点距离都小于 $1$ 的点后,求剩余部分的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image132.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        如图,此题相当于求正五边形$ABCDE$扣除青色部分的面积,该部分由一个小正五边形和五个弓形组成,首先求小正五边形边长 $PQ$,易知
-        \[
-        \angle PAQ = \angle QAE + \angle PAB - \angle A = 60^\circ + 60^\circ - 108^\circ = 12^\circ, \angle QAB = 60^\circ - 12^\circ = 48^\circ.
-        \]
-        在 $\triangle APQ$ 中,由余弦定理,
-        \[
-        PQ^2 = 1^2+1^2-2 \cdot 1 \cdot 1 \cdot \cos 12^\circ = 2 - 2\cos 12^\circ
-        \]
-        弓形面积为
-        \[
-        [\text{弓形}]=[\text{扇形}APQ]-[\triangle APQ] = \frac{12}{360} \cdot 1^2 \cdot \pi \cdot-\frac{1}{2} \cdot 1^2 \cdot\sin 12^\circ=\frac{\pi}{30} - \frac{1}{2}\sin 12^\circ.
-        \]
-        小正五边形与五个弓形组成区域 $R$ 面积
-        \[
-        R = \frac{5}{4} (2 - 2\cos 12^\circ) \tan 54^\circ + 5\left(\frac{\pi}{30} - \frac{1}{2}\sin 12^\circ \right) 
-        \]
-        所以剩余部分面积为
-        \begin{align*}
-        [\text{剩余部分}] &= [ABCDE]-R \\
-        &= \frac{5}{4}\tan 54^\circ - \frac{5}{4} (2 - 2\cos 12^\circ) \tan 54^\circ - \frac{\pi}{6} + \frac{5}{2}\sin 12^\circ \\
-        &= \frac{5}{4} \tan 54^\circ (2\cos 12^\circ - 1) + \frac{5}{2}\sin 12^\circ - \frac{\pi}{6} \\
-        &={5\over 4}{\cos 36^\circ \over \sin 36^\circ}(2\cos 12^\circ-1)+{5\over 2}\sin 12^\circ -{\pi \over 6} \\
-        &={5\over 4} \times {2\cos 24^\circ-\cos 36^\circ \over \sin 36^\circ}-{\pi \over 6} \\
-        &= \frac{5\sqrt{3}}{4} - \frac{\pi}{6}
-        \end{align*}
-        其中
-        \[
-        \cos24^\circ=\cos60^\circ\cos36^\circ+\sin60^\circ\sin36^\circ
-        =\frac12\cos36^\circ+\frac{\sqrt3}{2}\sin36^\circ
-        \]
-    \end{solution}
-
-    \question 已知三角形 $ABC$ 的外心为 $O$,且 $\angle B$ 为钝角。延长$BC$与外接圆在点 $A$处的切线交于 $D$使得$AO = AD = 2$。$F$ 在 $BC$ 上满足 $AF \perp OD$且交于点 $E$。过点 $A,D,O$ 的圆与 $BC$ 的交于点$H$。已知 $FH = \dfrac{\sqrt{3}}{3}$,求 $\triangle OEF$ 的面积。
-    % 23. [6 pts] [7] Let $ABC$ be a triangle with circumcenter $O$ and $\angle B$ obtuse. Suppose the tangent to its circumcircle at $A$ intersects ray $CB$ at $D$, and that $AO=AD=2$. Suppose that $F$ lies on $BC$ with $AF \perp OD$, and let $E$ be the point where $AF$ meets $OD$. Let $H$ be the point where the circle passing through $ADO$ meets $BC$. What is the area of triangle $OEF$ if $FH=\frac{\sqrt{3}}{3}$?23. $\frac{1}{2}\sqrt{2}$. Let $J$ be the point where the extension of $AF$ meets circle $ADO$. Let $x = DF$ and $y = EF$. Power of a point using chords $DH$ and $AJ$ yields $x\frac{\sqrt{3}}{3}=(\sqrt{2}+y)(\sqrt{2}-y)$ while Pythagoras on triangle $DEF$ yields $x^{2}=y^{2}+2$. Combining, we get $x\frac{\sqrt{3}}{3}=2-(x^{2}-2)$ so $x^{2}+x\frac{\sqrt{3}}{3}-4=0$. The solution is $x=\sqrt{3}$ and $y=1$, so the area of the right triangle $OEF$ is $\frac{1}{2}\sqrt{2}\cdot1$.
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\linewidth]{images/image160.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-延长 $AF$ 与过点 $A,D,O$ 的圆交于点$J$,设 $x = DF,y = EF$。由幂点定理（$DH$ 与 $AJ$）有
-\[
-x \cdot \frac{\sqrt{3}}{3} = (\sqrt{2}+y)(\sqrt{2}-y) = 2 - y^2.
-\]
-由直角三角形 $DEF$ 得
-\[
-x^2 = y^2 + 2.
-\]
-联立得
-\[
-x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 4 = 0.
-\]
-解得 $x = \sqrt{3}$,$y = 1$。
-
-因此直角三角形 $OEF$ 的面积为
-\[
-\frac{1}{2} \cdot OE \cdot EF = \frac{1}{2} \cdot \sqrt{2} \cdot 1 = \frac{1}{2}\sqrt{2}.
-\]
-\textcolor{red}{$AE=\sqrt{2}$?怎样证明$\angle DAE = 45^\circ$?}
-\end{solution}
-%paste
-    \question
-在半径为 $1$ 的圆周上，按逆时针方向依次取点 $A, B, C, D$。已知线段 $AD$ 是直径，且满足 $AC = CD$，$AB = BC$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image273.png}
-    \end{figure}
-    \fi
-\begin{parts}
-    \part 求 $\angle ACB$。
-    \begin{solution}
-        设圆心为 $O$。由于 $AD$ 是直径，且 $AC = CD$，根据圆的对称性，$\triangle ACD$ 是等腰直角三角形，其中 $\angle ACD = \frac{\pi}{2}$。
-        由弧长与圆周角的关系：
-        \[ \angle ACB = \angle ADB \text{ （同弧 $AB$ 所对圆周角）} \]
-        又由于 $\angle AOB$ 是圆心角，$\angle ADB = \frac{1}{2} \angle AOB$。
-        在图中，由于 $AC=CD$ 且 $AB=BC$，可推导得 $\angle AOB = \frac{\pi}{4}$。
-        因此：
-        \[ \angle ACB = \angle ADB = \frac{1}{2} \cdot \frac{\pi}{4} = \frac{\pi}{8}  \]
-    \end{solution}
-
-    \part 求 $BC$ 的长度。
-    \begin{solution}
-        已知直径 $AD = 2$，在直角 $\triangle ACD$ 中，$AC = \sqrt{2}$。
-        在 $\triangle ABC$ 中，由于 $AB = BC$，设 $BC = AB = x$。
-        由圆内接四边形性质，$\angle ABC = \pi - \angle ADC = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$。
-        在 $\triangle ABC$ 中应用余弦定理：
-        \[ AC^2 = x^2 + x^2 - 2x^2 \cos \frac{3\pi}{4} \]
-        \[ (\sqrt{2})^2 = 2x^2 - 2x^2 \left( -\frac{\sqrt{2}}{2} \right) \quad \Rightarrow \quad 2 = (2 + \sqrt{2})x^2  \]
-        解得：
-        \[ x^2 = \frac{2}{2 + \sqrt{2}} = \frac{2(2 - \sqrt{2})}{4 - 2} = 2 - \sqrt{2}  \]
-        故 $BC = \sqrt{2 - \sqrt{2}}$。
-    \end{solution}
-
-    \part 设线段 $AC$ 与线段 $BD$ 的交点为 $E$，求三角形 $BCE$ 的面积。
-    \begin{solution}
-        首先计算 $\triangle ABC$ 的面积：
-        \[ S_{\triangle ABC} = \frac{1}{2} x^2 \sin \frac{3\pi}{4} = \frac{1}{2} (2 - \sqrt{2}) \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2} - 1}{2}  \]
-        由于 $AB = BC$，在圆中可得 $\angle ADB = \angle BDC$，因此 $DE$ 是 $\angle ADC$ 的角平分线。
-        根据角平分线定理，在 $\triangle ADC$ 中：
-        \[ AE : EC = DA : DC = 2 : \sqrt{2} = \sqrt{2} : 1  \]
-        因此，$\triangle BCE$ 的面积与 $\triangle ABC$ 的面积之比为：
-        \[ S_{\triangle BCE} = \frac{EC}{AE + EC} S_{\triangle ABC} = \frac{1}{\sqrt{2} + 1} S_{\triangle ABC} = (\sqrt{2} - 1) S_{\triangle ABC}  \]
-        代入 $S_{\triangle ABC}$ 的值：
-        \[ S_{\triangle BCE} = (\sqrt{2} - 1) \cdot \frac{\sqrt{2} - 1}{2} = \frac{(\sqrt{2} - 1)^2}{2} = \frac{3 - 2\sqrt{2}}{2}  \]
-        答：$S_{\triangle BCE} = \frac{3 - 2\sqrt{2}}{2}$。
-    \end{solution}
-\end{parts}
-
-\question
-圆上的 5 个点 A, B, C, D, E 依逆时针方向排列，将圆周 5 等分。以这 5 个点为顶点的正五边形为 $R_1$。令 $\vec{AB} = \vec{a}$，$\vec{CD} = \vec{c}$，$\vec{a}$ 的大小为 $x$。
-\ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image289.png}
-    \end{figure}
-    \fi
-\begin{parts}
-    \part 令 $\vec{AC}$ 的大小为 $y$ 时，证明 $x^2 = y(y-x)$。
-    \begin{solution}
-        由于 5 个点 A, B, C, D, E 将圆周 5 等分，
-        $\angle ABE = \angle EBD = \angle DBC = \angle BAC = \angle BCA$。
-        由此，如右图所示，设对角线的交点为 F, G, H, I, J，则 $\triangle ABC$ 与 $\triangle AIB$ 相似，
-        $AB : AI = AC : AB \cdots (1)$
-        此外，由于 $\angle BAC + \angle ABE = \angle EBD + \angle DBC$，
-        $\angle CIB = \angle CBI$，因此 $|\vec{AB}| = x$，$|\vec{AC}| = y$，
-        \[
-        AI = AC - CI = AC - CB = y - x \cdots (2)
-        \]
-        由 (1)(2) 得 $x : (y-x) = y : x$，故 $x^2 = y(y-x) \cdots (3)$。
-    \end{solution}
-
-    \part 用 $\vec{a}$，$\vec{c}$ 表示 $\vec{BC}$。
-    \begin{solution}
-        由 (3) 得 $y^2 - xy - x^2 = 0$，故 $y = \frac{1+\sqrt{5}}{2}x \cdots (4)$。
-        又因为 $AD \parallel BC$，$AD = y$，$BC = x$，所以从 (4) 得 $\vec{AD} = \frac{y}{x} \vec{BC} = \frac{1+\sqrt{5}}{2} \vec{BC}$。
-        根据 $\vec{AD} = \vec{AB} + \vec{BC} + \vec{CD}$，得 $\frac{1+\sqrt{5}}{2} \vec{BC} = \vec{a} + \vec{BC} + \vec{c}$，
-        \[
-        \frac{-1+\sqrt{5}}{2} \vec{BC} = \vec{a} + \vec{c}
-        \]
-        \[
-        \vec{BC} = \frac{2}{-1+\sqrt{5}} (\vec{a} + \vec{c}) = \frac{1+\sqrt{5}}{2} (\vec{a} + \vec{c})
-        \]
-    \end{solution}
-
-    \part 以 $R_1$ 的对角线交点构成的 $R_1$ 内部的 5 个点为顶点的正五边形为 $R_2$。用 $x$ 表示 $R_2$ 的边长。
-    \begin{solution}
-        $R_2$ 的边长 $IJ$ 为 $IJ = AJ - AI = AC - CI - AI = y - x - (y - x)$ 是不对的，由图可知：
-        $IJ = AJ - AI = (AC - CJ) - AI = (y - x) - (y - x)$ 也不对。
-        正确应为：$IJ = AJ - AI = (y-x) - AI$。
-        根据解答：$IJ = AJ - AI = x - (y-x) = 2x - y$。由 (4) 得，
-        \[
-        IJ = 2x - \frac{1+\sqrt{5}}{2}x = \frac{3-\sqrt{5}}{2}x
-        \]
-    \end{solution}
-
-    \part 对于 $n=1, 2, 3, \cdots$，以 $R_n$ 的对角线交点构成的 $R_n$ 内部的 5 个点为顶点的正五边形为 $R_{n+1}$。令 $R_n$ 的面积为 $S_n$，求 $\lim_{n \to \infty} \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k$。
-    \begin{solution}
-        相似图形 $R_{n+1}$ 与 $R_n$ 的面积比由 (3) 得为 $\left(\frac{3-\sqrt{5}}{2}\right)^2 = \frac{7-3\sqrt{5}}{2}$，
-        \[
-        S_{n+1} = \frac{7-3\sqrt{5}}{2} S_n
-        \]
-        此时，
-        \[
-        \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k = \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_1 \left(\frac{7-3\sqrt{5}}{2}\right)^{k-1} = \sum_{k=1}^{n} \left(-\frac{7-3\sqrt{5}}{2}\right)^{k-1}
-        \]
-        \[
-        \lim_{n \to \infty} \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k = \frac{1}{1 + \frac{7-3\sqrt{5}}{2}} = \frac{2}{9-3\sqrt{5}} = \frac{3+\sqrt{5}}{6}
-        \]
-    \end{solution}
-\end{parts}
-
-\question
-对于外切于半径为 1 的圆的 $\triangle ABC$，设 $\angle CAB = 2x, \angle ABC = 2y, \angle BCA = 2z$。设 $\triangle ABC$ 的面积为 $S$，回答下列问题。
-\ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image295.png}
-    \end{figure}
-    \fi
-\begin{parts}
-    \part 证明 $S = \frac{1}{\tan x} + \frac{1}{\tan y} + \frac{1}{\tan z}$ 成立。
-    \begin{solution}
-        设 $\triangle ABC$ 半径为 1 的内切圆与边 $BC, CA, AB$ 的切点分别为 $D, E, F$。
-        由于 $\angle CAB = 2x, \angle ABC = 2y, \angle BCA = 2z$，可得：
-        \[
-        AF = AE = \frac{1}{\tan x}, \quad BD = BF = \frac{1}{\tan y}
-        \]
-        \[
-        CE = CD = \frac{1}{\tan z}
-        \]
-        设 $\triangle ABC$ 的内心为 $I$，其面积 $S$ 为：
-        \begin{align*}
-        S &= \triangle ABI + \triangle BCI + \triangle CAI \\
-        &= \frac{1}{2} \left( \frac{1}{\tan x} + \frac{1}{\tan y} \right) \cdot 1 + \frac{1}{2} \left( \frac{1}{\tan y} + \frac{1}{\tan z} \right) \cdot 1 + \frac{1}{2} \left( \frac{1}{\tan z} + \frac{1}{\tan x} \right) \cdot 1 \\
-        &= \frac{1}{\tan x} + \frac{1}{\tan y} + \frac{1}{\tan z}
-        \end{align*}
-    \end{solution}
-
-    \part 当 $z = \frac{\pi}{6}$ 时，求 $S$ 的最小值以及此时的 $x, y$。
-    \begin{solution}
-        当 $z = \frac{\pi}{6}$ 时，$x + y = \frac{\pi}{2} - \frac{\pi}{6} = \frac{\pi}{3}$。由 (1) 可知：
-        \[
-        S = \frac{1}{\tan x} + \frac{1}{\tan \left( \frac{\pi}{3} - x \right)} + \frac{1}{\tan \frac{\pi}{6}} = \frac{1}{\tan x} + \frac{1 + \sqrt{3} \tan x}{\sqrt{3} - \tan x} + \sqrt{3}
-        \]
-        设 $t = \tan x$，由于 $0 < x < \frac{\pi}{3}$，故 $0 < t < \sqrt{3}$。
-        \[
-        S = \frac{1}{t} + \frac{1 + \sqrt{3}t}{\sqrt{3} - t} + \sqrt{3} = \frac{1}{t} - \sqrt{3} + \frac{4}{\sqrt{3} - t} + \sqrt{3} = \frac{1}{t} + \frac{4}{\sqrt{3} - t}
-        \]
-        \[
-        S' = -\frac{1}{t^2} + \frac{4}{(\sqrt{3} - t)^2} = \frac{3t^2 + 2\sqrt{3}t - 3}{t^2 (\sqrt{3} - t)^2} = \frac{(3t - \sqrt{3})(t + \sqrt{3})}{t^2 (\sqrt{3} - t)^2}
-        \]
-        $S$ 的增减表如下：
-        \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $t$ & 0 & $\cdots$ & $\frac{\sqrt{3}}{3}$ & $\cdots$ & $\sqrt{3}$ \\ \hline
-        $S'$ & & $-$ & 0 & $+$ & \\ \hline
-        $S$ & & $\searrow$ & $3\sqrt{3}$ & $\nearrow$ & \\ \hline
-        \end{tabular}
-        \end{center}
-        当 $t = \frac{\sqrt{3}}{3}$ 时，取最小值 $3\sqrt{3}$。此时由 $\tan x = \frac{\sqrt{3}}{3}$ 得 $x = \frac{\pi}{6}$，
-        $y = \frac{\pi}{3} - \frac{\pi}{6} = \frac{\pi}{6}$。
-    \end{solution}
-\end{parts}
-\end{questions}
-
-\pagebreak
-
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{三角函数}{三角函数} \label{三角函数}
   }
 \end{center}
@@ -6402,6 +5127,204 @@ f(n) = \cos\theta = \cos\left(\frac{\pi}{n+2}\right)
 对于 (D)：$\cos^{-1}f(5) = \frac{\pi}{7}$，则 $\sin(7 \cdot \frac{\pi}{7}) = \sin\pi = 0$，正确。
 综上所述，正确选项为 (A), (C), (D)。
 \end{solution}
+\question
+Example 2. (SLOVENIA/2004) 计算 $\sin^8 75^\circ - \cos^8 75^\circ$。
+
+\begin{solution}
+利用 $a^8 - b^8$ 的因式分解得
+\begin{align*}
+\sin^8 75^\circ - \cos^8 75^\circ &= \left(\sin^4 75^\circ - \cos^4 75^\circ\right)\left(\sin^4 75^\circ + \cos^4 75^\circ\right) \\
+&= \left(\sin^2 75^\circ - \cos^2 75^\circ\right)\left(\sin^2 75^\circ + \cos^2 75^\circ\right) \\
+&\quad \cdot \left[\left(\sin^2 75^\circ + \cos^2 75^\circ\right)^2 - 2 \sin^2 75^\circ \cdot \cos^2 75^\circ\right] \\
+&= -\cos 150^\circ \left(1 - \frac{1}{2} \sin^2 150^\circ\right) \\
+&= \frac{\sqrt{3}}{2} \left(1 - \frac{1}{8}\right) = \frac{7\sqrt{3}}{16}.
+\end{align*}
+\end{solution}
+
+\question
+Example 4. (SMO/2010) 如果 $\cot \alpha + \cot \beta + \cot \gamma = -\frac{4}{5}$，$\tan \alpha + \tan \beta + \tan \gamma = \frac{17}{6}$ 且 $\cot \alpha \cot \beta + \cot \beta \cot \gamma + \cot \gamma \cot \alpha = -\frac{17}{5}$，求 $\tan(\alpha + \beta + \gamma)$ 的值。
+
+\begin{solution}
+令 $x = \tan \alpha, y = \tan \beta$ 及 $z = \tan \gamma$。则
+\begin{align*}
+\frac{xy + yz + zx}{xyz} &= -\frac{4}{5}, \tag{7.1} \\
+x + y + z &= \frac{17}{6}, \tag{7.2} \\
+\frac{x + y + z}{xyz} &= -\frac{17}{5}. \tag{7.3}
+\end{align*}
+(7.2) $\div$ (7.3) 得 $xyz = -\frac{5}{6}$，则 (7.1) 给出 $xy + yz + zx = \frac{2}{3}$。因此
+\begin{align*}
+\tan(\alpha + \beta + \gamma) &= \frac{\tan(\alpha + \beta) + \tan \gamma}{1 - \tan(\alpha + \beta) \tan \gamma} \\
+&= \frac{\left(\tan \alpha + \tan \beta + \tan \gamma - \tan \alpha \tan \beta \tan \gamma\right) / \left(1 - \tan \alpha \tan \beta\right)}{\left(1 - \tan \alpha \tan \beta - \tan \alpha \tan \gamma - \tan \beta \tan \gamma\right) / \left(1 - \tan \alpha \tan \beta\right)} \\
+&= \frac{x + y + z - xyz}{1 - \left(xy + yz + zx\right)} = \frac{\left(17/6\right) + \left(5/6\right)}{1 - \left(2/3\right)} = 11.
+\end{align*}
+\end{solution}
+
+\question
+Example 6. 证明对于任意自然数 $n$ 和实数 $x$，若 $2^k x \neq \left(m + \frac{1}{2}\right)\pi$ 对所有 $k \in \mathbb{N}$ 和 $m \in \mathbb{Z}$ 均成立，则
+\[
+\tan x + 2 \tan 2x + 2^2 \tan 2^2 x + \cdots + 2^n \tan 2^n x = \cot x - 2^{n+1} \cot 2^{n+1} x.
+\]
+
+\begin{solution}
+对于任何实数 $\alpha \neq \left(m + \frac{1}{2}\right)\pi$，
+\[
+\tan 2\alpha = \frac{2 \tan \alpha}{1 - \tan^2 \alpha} \Rightarrow \cot 2\alpha = \frac{1}{2}\left(\cot \alpha - \tan \alpha\right)
+\]
+\[
+\Rightarrow \tan \alpha = \cot \alpha - 2 \cot 2\alpha \Rightarrow 2^k \tan 2^k x = 2^k \cot 2^k x - 2^{k+1} \cot 2^{k+1} x
+\]
+对于 $k = 0, 1, 2, \cdots, n$。因此，
+\begin{align*}
+&\tan x + 2 \tan 2x + 2^2 \tan 2^2 x + \cdots + 2^n \tan 2^n x \\
+&= \left(\cot x - 2 \cot 2x\right) + \left(2 \cot 2x - 2^2 \cot 2^2 x\right) + \cdots + \left(2^n \cot 2^n x - 2^{n+1} \cot 2^{n+1} x\right) \\
+&= \cot x - 2^{n+1} \cot 2^{n+1} x.
+\end{align*}
+\end{solution}
+
+\question
+4. (SSSMO/2009) 求下式的值
+\[
+\left(\cot 25^\circ - 1\right)\left(\cot 24^\circ - 1\right)\left(\cot 23^\circ - 1\right) \cdots \left(\cot 20^\circ - 1\right).
+\]
+
+\begin{solution}
+当 $\alpha + \beta = 45^\circ$ 时，则
+\[
+1 = \tan 45^\circ = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta} \Rightarrow 1 - \tan \alpha \tan \beta = \tan \alpha + \tan \beta,
+\]
+因此
+\[
+\left(\cot \alpha - 1\right)\left(\cot \beta - 1\right) = \frac{\left(1 - \tan \alpha\right)\left(1 - \tan \beta\right)}{\tan \alpha \tan \beta} = \frac{2 \tan \alpha \tan \beta}{\tan \alpha \tan \beta} = 2.
+\]
+由此可知，
+\begin{align*}
+&\left(\cot 25^\circ - 1\right)\left(\cot 24^\circ - 1\right) \cdots \left(\cot 20^\circ - 1\right) \\
+&= \left[\left(\cot 25^\circ - 1\right)\left(\cot 20^\circ - 1\right)\right] \cdots \left[\left(\cot 23^\circ - 1\right)\left(\cot 22^\circ - 1\right)\right] \\
+&= 2^3 = 8.
+\end{align*}
+\end{solution}
+
+\question
+6. 证明对于任何正整数 $n$，
+\[
+\tan \alpha \tan 2\alpha + \tan 2\alpha \tan 3\alpha + \cdots + \tan(n - 1)\alpha \tan n\alpha = \frac{\tan n\alpha}{\tan \alpha} - n,
+\]
+其中 $\tan \alpha \neq 0$ 且对于 $k = 1, 2, \dots, n$，$\tan k\alpha \neq \pm \infty$。
+
+\begin{solution}
+由公式 $\tan(k + 1)\alpha = \frac{\tan k\alpha + \tan \alpha}{1 - \tan \alpha \tan k\alpha}$ 可得
+\[
+\tan k\alpha \tan(k + 1)\alpha = \left(\frac{\tan(k + 1)\alpha - \tan k\alpha}{\tan \alpha}\right) - 1,
+\]
+因此
+\begin{align*}
+\sum_{k=1}^{n-1} \tan k\alpha \tan(k + 1)\alpha &= \sum_{k=1}^{n-1} \left[\frac{\tan(k + 1)\alpha}{\tan \alpha} - \frac{\tan k\alpha}{\tan \alpha}\right] - \left(n - 1\right) \\
+&= \frac{\tan n\alpha}{\tan \alpha} - n.
+\end{align*}
+\end{solution}
+
+\question
+10. (CMC/2009) 已知 $\sin \alpha + \sin \beta = \frac{\sqrt{6}}{3}$，$\cos \alpha + \cos \beta = \frac{\sqrt{3}}{3}$，求 $\cos^2 \frac{\alpha - \beta}{2}$ 的值。
+
+\begin{solution}
+由已知条件得
+\[
+\left(\sin \alpha + \sin \beta\right)^2 = \frac{2}{3}, \quad \left(\cos \alpha + \cos \beta\right)^2 = \frac{1}{3}.
+\]
+将两式相加，得到
+\[
+2 + 2\left(\sin \alpha \cdot \sin \beta + \cos \alpha \cdot \cos \beta\right) = 1,
+\]
+所以 $1 + \cos(\alpha - \beta) = \frac{1}{2}$，由此可得 $\cos^2 \frac{\alpha - \beta}{2} = \frac{1}{4}$。
+\end{solution}
+
+\question
+1. (CROATIA/2004) 若三角形的三边长 $a, b, c$ 满足
+\[
+\frac{b}{a} = \frac{\left|b^2 + c^2 - a^2\right|}{bc}, \quad \frac{c}{b} = \frac{\left|c^2 + a^2 - b^2\right|}{ca}, \quad \frac{a}{c} = \frac{\left|a^2 + b^2 - c^2\right|}{ab}
+\]
+求这三个角。
+
+\begin{solution}
+由正弦定理和余弦定理，第一个等式可以写成
+\[
+\frac{\sin \beta}{\sin \alpha} = 2 \left|\cos \alpha\right|, \text{ 即 } \sin \beta = \left|\sin 2\alpha\right| \text{。}
+\]
+它等价于 (i) $\beta = 2\alpha$ 或 $\beta = 180^\circ - 2\alpha$ 或 $\beta = 2\alpha - 180^\circ$。类似地：
+(ii) $\gamma = 2\beta$ 或 $\gamma = 180^\circ - 2\beta$ 或 $\gamma = 2\beta - 180^\circ$;
+(iii) $\alpha = 2\gamma$ 或 $\alpha = 180^\circ - 2\gamma$ 或 $\alpha = 2\gamma - 180^\circ$。
+由于 $\alpha + \beta + \gamma = 180^\circ$，若 $\beta = 180^\circ - 2\alpha$，则 $\alpha = \gamma$。在这种情况下，只有 $\alpha = 180^\circ - 2\gamma$ 可能成立，故 $\alpha = \beta = \gamma = 60^\circ$。
+若上述等式不成立，假设 $\alpha$ 为最小角，则 $\beta = 2\alpha$。若 $\gamma = 2\beta$，则 $\alpha : \beta : \gamma = 1 : 2 : 4$。
+综上，这三个角为 $60^\circ, 60^\circ, 60^\circ$ 或比例为 $1 : 2 : 4$。
+\end{solution}
+
+\question
+2. (SMO/2009) 设 $ABC$ 为一个三角形，边长 $AB = 7, BC = 8$ 且 $AC = 9$。可以作唯一的圆与边 $AC$ 及直线 $BA$ 和 $BC$ 的延长线相切。设 $D$ 为该圆的圆心，求 $BD^2$ 的值。
+
+\begin{solution}
+由余弦定理得 $\cos B = \frac{7^2 + 8^2 - 9^2}{2 \cdot 7 \cdot 8} = \frac{2}{7}$。
+则 $\cos \frac{B}{2} = \sqrt{\frac{1 + \cos B}{2}} = \sqrt{\frac{9}{14}}$。
+设圆 $D$ 与各边的切点分别为 $E, F, G$，则 $CF + AF = 9$ 且 $AF - CF = 8 - 7 = 1$。
+解得 $AF = 5, CF = 4$。因此 $BG = BE = 12$。
+最后计算得出 $BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 224$。
+\end{solution}
+
+\question
+3. 证明：
+\[
+\cos(\alpha + \beta) + \cos(\alpha + 2\beta) + \cdots + \cos(\alpha + n\beta) = \frac{\sin \frac{n\beta}{2} \cos\left(\alpha + \frac{n+1}{2}\beta\right)}{\sin \frac{1}{2}\beta} \text{。}
+\]
+
+\begin{solution}
+对于任意 $k = 1, 2, \dots$，利用积化和差公式：
+\[
+\sin \frac{1}{2}\beta \cos(\alpha + k\beta) = \frac{1}{2} \left[ \sin\left(\alpha + \frac{2k+1}{2}\beta\right) - \sin\left(\alpha + \frac{2k-1}{2}\beta\right) \right] \text{。}
+\]
+对该式进行求和可得：
+\begin{align*}
+\sum_{k=1}^n \sin \frac{1}{2}\beta \cos(\alpha + k\beta) &= \frac{1}{2} \sum_{k=1}^n \left[ \sin\left(\alpha + \frac{2k+1}{2}\beta\right) - \sin\left(\alpha + \frac{2k-1}{2}\beta\right) \right] \\
+&= \frac{1}{2} \left[ \sin\left(\alpha + \frac{2n+1}{2}\beta\right) - \sin\left(\alpha + \frac{1}{2}\beta\right) \right] \\
+&= \sin \frac{n\beta}{2} \cos\left(\alpha + \frac{n+1}{2}\beta\right) \text{。}
+\end{align*}
+两边同时除以 $\sin \frac{1}{2}\beta$ 即可得证。
+\end{solution}
+
+\question
+Example 8. 已知 $A, B, C$ 是 $\triangle ABC$ 的三个内角。证明下列恒等式
+(i) $\sin A + \sin B + \sin C = 4 \cos \frac{A}{2} \cos \frac{B}{2} \cos \frac{C}{2}$;
+(ii) $\cos A + \cos B + \cos C = 1 + 4 \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2}$;
+(iii) $\tan A + \tan B + \tan C = \tan A \tan B \tan C$;
+(iv) $\tan \frac{A}{2} \tan \frac{B}{2} + \tan \frac{B}{2} \tan \frac{C}{2} + \tan \frac{C}{2} \tan \frac{A}{2} = 1$;
+(v) $\cot \frac{A}{2} + \cot \frac{B}{2} + \cot \frac{C}{2} = \cot \frac{A}{2} \cot \frac{B}{2} \cot \frac{C}{2}$;
+(vi) $\cot A \cot B + \cot B \cot C + \cot C \cot A = 1$.
+
+\begin{solution}
+(i)
+\begin{align*}
+\sin A + \sin B + \sin C &= 2 \sin \frac{A + B}{2} \cos \frac{A - B}{2} + \sin(A + B) \\
+&= 2 \sin \frac{A + B}{2} \left[\cos \frac{A - B}{2} + \cos \frac{A + B}{2}\right] \\
+&= 4 \sin \frac{A + B}{2} \cos \frac{A}{2} \cos \frac{B}{2} = 4 \cos \frac{C}{2} \cos \frac{A}{2} \cos \frac{B}{2}.
+\end{align*}
+(ii)
+\begin{align*}
+\cos A + \cos B + \cos C &= 2 \cos \frac{A + B}{2} \cos \frac{A - B}{2} - \cos(A + B) \\
+&= 2 \cos \frac{A + B}{2} \cos \frac{A - B}{2} - \left(2 \cos^2 \frac{A + B}{2} - 1\right) \\
+&= 1 + 2 \cos \frac{A + B}{2} \left[\cos \frac{A - B}{2} - \cos \frac{A + B}{2}\right] \\
+&= 1 + 4 \sin \frac{C}{2} \sin \frac{B}{2} \sin \frac{A}{2}.
+\end{align*}
+(iii) $\tan A + \tan B + \tan C = \tan(A + B)(1 - \tan A \tan B) + \tan C$
+$= -\tan C(1 - \tan A \tan B) + \tan C = \tan A \tan B \tan C$.
+(iv)
+\begin{align*}
+&\tan \frac{A}{2} \tan \frac{B}{2} + \tan \frac{B}{2} \tan \frac{C}{2} + \tan \frac{C}{2} \tan \frac{A}{2} \\
+&= \tan \frac{A}{2} \left(\tan \frac{B}{2} + \tan \frac{C}{2}\right) + \tan \frac{B}{2} \tan \frac{C}{2} \\
+&= \tan \frac{A}{2} \tan \left(\frac{B}{2} + \frac{C}{2}\right) \left(1 - \tan \frac{B}{2} \tan \frac{C}{2}\right) + \tan \frac{B}{2} \tan \frac{C}{2} \\
+&= \tan \frac{A}{2} \cot \frac{A}{2} \left(1 - \tan \frac{B}{2} \tan \frac{C}{2}\right) + \tan \frac{B}{2} \tan \frac{C}{2} = 1.
+\end{align*}
+(v) 当 (iv) 的两边同时除以 $\tan \frac{A}{2} \tan \frac{B}{2} \tan \frac{C}{2}$ 时，等式 (v) 立即得到。
+(vi) 当 (iii) 的两边同时除以 $\tan A \tan B \tan C$ 时，则 (vi) 立即得到。
+\end{solution}
+
 
     \question 已知$A,B,C$为$\triangle ABC$的内角,证明恒等式
     \begin{parts}
@@ -8804,6 +7727,1848 @@ S_{100} = \tan^{-1}\left(\frac{201 - 1}{1 + 201 \cdot 1}\right) = \tan^{-1}\left
     \end{solution}
     \end{parts}
 \end{questions}
+
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{圆}{圆} \label{圆}
+  }
+\end{center}
+\separator
+\begin{center}
+    关键词: 圆的定义、角度与弧度、弦长与扇形面积、切线、内接多边形的性质、毕氏定理、圆周角定理、弦切角定理、相交弦定理、割线定理、切线长定理、托勒密定理
+\end{center}
+\vspace{0.5pt}
+
+\begin{questions}
+    \question 圆内接四边形 \(ABCD\) 中,\(\;AB=BC=3,\;CD=5,\;DA=8\)。求对角线 \(BD\)。  
+    \begin{solution}
+        圆内接四边形对角互补,有
+        \[
+        BD^2=3^2+8^2-2\cdot3\cdot8\cdot \cos A = 3^2+5^2-2\cdot3\cdot5\cdot \cos (\pi- A)
+        \]
+        解得 
+        \[
+        \cos A = \frac{1}{2} \Rightarrow BD=7
+        \]
+    \end{solution}
+
+    \question 右图中，$AB$ 是圆的直径，$CAD$ 是圆的切线。直线 $BC$ 及 $BD$ 分别与圆相交于点 $E$ 及 $F$。已知 $CE : CB = 4 : 13$ 及 $DF : DB = 1 : 2$，求 $\tan \angle CBD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.3\textwidth]{images/image278.png}
+    \end{figure}
+    \fi
+\begin{solution}
+因为 $AB$ 是圆的直径且 $CAD$ 是圆的切线，所以 $\angle CAB = \angle DAB = 90^\circ$。
+在直角三角形 $ABC$ 中，根据射影定理：
+\[
+AB^2 = BE \cdot BC
+\]
+已知 $CE : CB = 4 : 13$，则有：
+\[
+BE = BC - CE = BC - \frac{4}{13} BC = \frac{9}{13} BC
+\]
+代入得 $AB^2 = \frac{9}{13} BC^2$，由此可得：
+\[
+\cos^2 \angle ABC = \frac{AB^2}{BC^2} = \frac{9}{13}
+\]
+进一步求得：
+\[
+\tan^2 \angle ABC = \frac{1}{\cos^2 \angle ABC} - 1 = \frac{13}{9} - 1 = \frac{4}{9}
+\]
+即 $\tan \angle ABC = \frac{2}{3}$。
+在直角三角形 $ABD$ 中，同理可得：
+\[
+AB^2 = BF \cdot BD
+\]
+已知 $DF : DB = 1 : 2$，则 $BF = BD - DF = \frac{1}{2} BD$，代入得：
+\[
+AB^2 = \frac{1}{2} BD^2 \implies \cos^2 \angle ABD = \frac{AB^2}{BD^2} = \frac{1}{2}
+\]
+由此可得 $\tan \angle ABD = 1$。
+利用正切和角公式：
+\[
+\tan \angle CBD = \tan \left( \angle ABC + \angle ABD \right) = \frac{\tan \angle ABC + \tan \angle ABD}{1 - \tan \angle ABC \cdot \tan \angle ABD}
+\]
+代入数值：
+\[
+\tan \angle CBD = \frac{\frac{2}{3} + 1}{1 - \frac{2}{3} \cdot 1} = \frac{\frac{5}{3}}{\frac{1}{3}} = 5
+\]
+所以答案为 D。
+\end{solution}
+
+
+    \question
+如图 8 中，$O$ 是圆心，$AB$ 是直径。$C$ 是半径 $OA$ 上的一点，$D$ 是圆上的一点使得 $CD$ 垂直于 $AB$，$E$ 是线段 $BD$ 上的一点使得 $CE$ 垂直于 $BD$。已知圆的半径为 $34$，$OE = 30$，求 $CE$ 的长。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image252.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设圆的半径为 $R=34$，点 $O$ 为原点。设 $C$ 点坐标为 $(-c, 0)$，则 $BC = 34+c$。
+在直角 $\Delta OCD$ 中，$CD^2 = 34^2 - c^2$。
+在直角 $\Delta BCD$ 中，根据勾股定理：
+\[
+BD^2 = BC^2 + CD^2 = (34+c)^2 + (34^2 - c^2) = 2 \cdot 34^2 + 68c = 68(34+c)
+\]
+因为 $CE \perp BD$，在直角 $\Delta BCD$ 中，利用面积公式可知：
+\[
+CE = \frac{BC \cdot CD}{BD} \implies CE^2 = \frac{BC^2 \cdot CD^2}{BD^2} = \frac{(34+c)^2 (34^2 - c^2)}{68(34+c)} = \frac{(34+c)(34^2-c^2)}{68}
+\]
+在 $\Delta OBE$ 中，利用余弦定理：
+\[
+OE^2 = OB^2 + BE^2 - 2 \cdot OB \cdot BE \cdot \cos \angle B
+\]
+其中 $BE = \frac{BC^2}{BD}$ 且 $\cos \angle B = \frac{BC}{BD}$。代入得：
+\[
+30^2 = 34^2 + \frac{BC^4}{BD^2} - 2 \cdot 34 \cdot \frac{BC^2}{BD} \cdot \frac{BC}{BD} = 34^2 + \frac{BC^3}{68} - BC^2
+\]
+\[
+256 = BC^2 - \frac{BC^3}{68} = \frac{68BC^2 - BC^3}{68} = \frac{BC^2(68-BC)}{68}
+\]
+注意到 $68 - BC = 68 - (34+c) = 34-c$，且 $34^2 - c^2 = (34+c)(34-c)$，故：
+\[
+CE^2 = \frac{(34+c)(34+c)(34-c)}{68} = \frac{BC^2(34-c)}{68} = \frac{BC^2(68-BC)}{68} = 256
+\]
+因此，$CE = 16$。
+\end{solution}
+\begin{solution}
+设圆的半径为 $R$。令 $OC = c$，则 $BC = R + c$。
+在直角 $\Delta OCD$ 中，根据勾股定理：
+\[
+CD^2 = R^2 - c^2 = (R - c)(R + c)
+\]
+在直角 $\Delta BCD$ 中，斜边 $BD$ 的平方为：
+\[
+BD^2 = BC^2 + CD^2 = (R + c)^2 + (R - c)(R + c)
+\]
+提取公因式 $(R + c)$：
+\[
+BD^2 = (R + c) \left( (R + c) + (R - c) \right) = (R + c) \cdot 2R = 2R \cdot BC
+\]
+由于 $CE \perp BD$，在直角 $\Delta BCE$ 中，根据勾股定理：
+\[
+CE^2 = BC^2 - BE^2
+\]
+在 $\Delta OBE$ 中，利用余弦定理计算 $OE^2$：
+\[
+OE^2 = OB^2 + BE^2 - 2 \cdot OB \cdot BE \cdot \cos \angle OBE
+\]
+注意到在直角 $\Delta BCD$ 中，$\cos \angle OBE = \cos \angle CBD = \frac{BC}{BD}$。同时 $OB = R$。
+代入 $OE^2$ 的表达式：
+\[
+OE^2 = R^2 + BE^2 - 2 \cdot R \cdot BE \cdot \frac{BC}{BD}
+\]
+在直角 $\Delta BCE$ 中，射影定理给出 $BE = \frac{BC^2}{BD}$。代入上式：
+\[
+OE^2 = R^2 + BE^2 - 2 \cdot R \cdot \frac{BC^2}{BD} \cdot \frac{BC}{BD} = R^2 + BE^2 - \frac{2R \cdot BC^3}{BD^2}
+\]
+利用前面得出的 $BD^2 = 2R \cdot BC$ 进行代换：
+\[
+\frac{2R \cdot BC^3}{BD^2} = \frac{2R \cdot BC^3}{2R \cdot BC} = BC^2
+\]
+因此：
+\[
+OE^2 = R^2 + BE^2 - BC^2
+\]
+将 $OE^2$ 与 $CE^2$ 相加：
+\[
+OE^2 + CE^2 = \left( R^2 + BE^2 - BC^2 \right) + \left( BC^2 - BE^2 \right)
+\]
+消去 $BC^2$ 与 $BE^2$ 后得：
+\[
+OE^2 + CE^2 = R^2
+\]
+得证。
+\textcolor{red}{(待验证)}
+\end{solution}
+
+\question 如图 8 所示，圆 $C_1$ 与圆 $C_2$ 内切于点 $A$，它们的半径分别为 7 及 9，$AB$ 与 $AD$ 分别是两圆的直径。点 $P$ 及点 $T$ 分别在圆 $C_1$ 与圆 $C_2$ 上使得直线 $PT$ 与圆 $C_1$ 相切。若 $PT = 6$，$\angle TAB = x$，求 $\cos^2 x$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image248.png}
+    \end{figure}
+    \fi
+\begin{solution}
+根据您的手写笔记思路，通过在三角形中应用余弦定理进行求解：
+
+1. **确定几何长度**：
+   - 圆 $C_1$ 的半径 $r_1 = 7$，圆 $C_2$ 的半径 $r_2 = 9$。
+   - 在圆 $C_2$ 中，由于 $AD$ 是直径且其长度为 18，$AT$ 可以表示为：
+   \[ AT = 18 \cos x \]
+
+2. **利用切线性质**：
+   - 设圆 $C_1$ 的圆心为 $O_1$。连接 $O_1P$ 和 $O_1T$。
+   - 因为 $PT$ 是切线，所以 $\triangle O_1PT$ 是直角三角形。
+   - 根据勾股定理：
+   \[ O_1T^2 = O_1P^2 + PT^2 = 7^2 + 6^2 = 85 \]
+
+3. **应用余弦定理**：
+   - 在 $\triangle AO_1T$ 中，利用边长 $AO_1 = 7$，$AT = 18 \cos x$ 以及夹角 $x$：
+   \[ O_1T^2 = AO_1^2 + AT^2 - 2(AO_1)(AT) \cos x \]
+   - 代入已知数据：
+   \[ 85 = 7^2 + (18 \cos x)^2 - 2(7)(18 \cos x) \cos x \]
+   \[ 85 = 49 + 324 \cos^2 x - 252 \cos^2 x \]
+
+4. **计算最终结果**：
+   - 整理方程：
+   \[ 36 = 72 \cos^2 x \]
+   \[ \cos^2 x = \frac{36}{72} = \frac{1}{2} \]
+
+因此，$\cos^2 x$ 的值为 $\frac{1}{2}$。
+\end{solution}
+
+\question
+如图 5 所示，$O$ 是圆心，$AB \parallel CD$。已知 $\angle COD = 3\angle AOB$，$AB : CD = 5 : 12$，求 $\Delta AOB$ 的面积与 $\Delta BOC$ 的面积之比。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image249.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $\angle AOB = \theta$，则 $\angle COD = 3\theta$。由于 $AB \parallel CD$ 且四点共圆，可知该图形为等腰梯形。
+\[ \angle BOC = \frac{360^\circ - \theta - 3\theta}{2} = 180^\circ - 2\theta \]
+(注：根据手写稿逻辑，此处的几何关系处理为 $\angle BOC$ 与圆心角相关，下文按手写稿计算过程整理)
+
+ 解法一：弦长公式/正弦定理 (手写稿右侧思路)
+在等腰三角形 $\Delta AOB$ 和 $\Delta COD$ 中，弦长与圆心角的关系为：
+\[ AB = 2r\sin\frac{\theta}{2}, \quad CD = 2r\sin\frac{3\theta}{2} \]
+根据 $AB : CD = 5 : 12$：
+\[ \frac{5}{12} = \frac{\sin\frac{\theta}{2}}{\sin\frac{3\theta}{2}} = \frac{\sin\frac{\theta}{2}}{3\sin\frac{\theta}{2} - 4\sin^3\frac{\theta}{2}} \]
+\[ \frac{5}{12} = \frac{1}{3 - 4\sin^2\frac{\theta}{2}} \]
+\[ 15 - 20\sin^2\frac{\theta}{2} = 12 \implies 20\sin^2\frac{\theta}{2} = 3 \]
+利用降幂公式 $1 - \cos\theta = 2\sin^2\frac{\theta}{2}$：
+\[ 10(1 - \cos\theta) = 3 \implies 1 - \cos\theta = \frac{3}{10} \implies \cos\theta = \frac{7}{10} \]
+ 解法二：余弦定理 (手写稿左侧思路)
+在 $\Delta COD$ 和 $\Delta AOB$ 中：
+\[ 12^2 = r^2 + r^2 - 2r^2\cos 3\theta \implies 144 = 2r^2(1 - \cos 3\theta) \]
+\[ 5^2 = r^2 + r^2 - 2r^2\cos \theta \implies 25 = 2r^2(1 - \cos \theta) \]
+两式相除：
+\[ \frac{144}{25} = \frac{1 - \cos 3\theta}{1 - \cos \theta} \]
+代入三倍角公式 $\cos 3\theta = 4\cos^3\theta - 3\cos\theta$：
+\[ 144(1 - \cos\theta) = 25(1 - (4\cos^3\theta - 3\cos\theta)) \]
+整理得到关于 $\cos\theta$ 的三次方程：
+\[ 100\cos^3\theta - 219\cos\theta + 119 = 0 \]
+因式分解：
+\[ (\cos\theta - 1)(10\cos\theta + 17)(10\cos\theta - 7) = 0 \]
+由于 $0 < \theta < 180^\circ$ 且 $\theta \neq 0$，则 $\cos\theta = \frac{7}{10}$。
+
+---
+
+计算面积比
+\[ \frac{S_{\Delta AOB}}{S_{\Delta BOC}} = \frac{\frac{1}{2}r^2\sin\theta}{\frac{1}{2}r^2\sin(180^\circ - 2\theta)} = \frac{\sin\theta}{\sin 2\theta} \]
+\[ \frac{\sin\theta}{2\sin\theta\cos\theta} = \frac{1}{2\cos\theta} \]
+将 $\cos\theta = \frac{7}{10}$ 代入：
+\[ \frac{1}{2 \times \frac{7}{10}} = \frac{1}{\frac{7}{5}} = \frac{5}{7} \]
+故面积比为 $5 : 7$。
+\end{solution}
+
+\question 已知四边形 $ABCD$ 内接于圆,且 $BA=AD=1,\cos\angle BAD=-\dfrac{1}{3}$。求证 $BC$为外接圆的直径
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image196.png}
+    \end{figure}
+    \fi
+\begin{solution}
+在$\triangle BAD$中,由余弦定理,
+\[
+BD^2 = 1^2 + 1^2 - 2\cdot 1 \cdot 1 \cdot \left(-\frac{1}{3}\right) \Rightarrow BD= \sqrt{\frac{8}{3}}
+\]
+设 \textcolor{red}{$x=\cos\angle ABC$,则 $DC=x$}。由于 $ABCD$ 为圆内接四边形,$\angle ADC=180^\circ-\angle ABC$,故
+\[
+\cos\angle ADC=-\cos\angle ABC=-x.
+\]
+同理,$\cos\angle BCD=-\cos\angle BAD=\dfrac{1}{3}$。
+
+在 $\triangle ADC$ 与 $\triangle ABC$ 中应用余弦定理,因 $AC$ 公共,得:
+\begin{align*}
+1^2+x^2-2(1)(x)\cos\angle ADC &= 1^2+BC^2-2(1)(BC)\cos\angle ABC,\\
+1+x^2-2x(-x) &= 1+BC^2-2BCx,\\
+0 &= BC^2-2BCx-3x^2,\\
+0 &= (BC-3x)(BC+x).
+\end{align*}
+
+因 $x>0$,故 $BC=3x$。
+
+又因 $\cos\angle BCD=\tfrac{1}{3}$,且 $DC:BC=1:3$,由$\angle BDC$ 为直角。于是 $BC$ 为圆的直径。
+\end{solution}
+
+\question 一匀速转动的摩天轮直径 $18$米,底端距地 $1$米。  
+        康康在 \(P\) 处距地 $16$米,用 $4$ 秒到达顶端 \(T\),再用 $8$ 秒到达 \(Q\)。 求他抵达 \(Q\) 时离地面的距离。 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{images/image3.png}
+    \end{figure}
+    \begin{solution}
+        设摩天轮圆心为$O$,\;$\angle POT=\theta$,则$\angle TOQ=2\theta$,发现到
+        \[
+        \cos \theta=\frac{6}{9}=\frac{2}{3}
+        \]
+        与此同时,作$QR$垂直于过圆心$O$的水平线于点$R$,有
+        \[
+        \sin (2\theta - 90^\circ)=\frac{QR}{9}
+        \]
+        又
+        \[
+        \sin (2\theta - 90^\circ)=-\cos2\theta =1-2\cos^2 \theta 
+        \]
+        则$QR=1$,故Q距地$(9-1)+1=9$米。
+    \end{solution}
+    
+    \question 设圆心 \(O\)、半径 \(r\) 的圆的切线 \(AB\),点 \(C\) 在线 \(BD\) 上,且 \(AB=p,\;BC=CD=DO=q\)。证明  
+    \[
+    p^{2}=q^{2}+r^{2}.
+    \]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{images/image5.png}
+    \end{figure}
+    \begin{solution}
+        在$\triangle ODC$中,由余弦定理
+        \[
+        r^2=q^2+q^2-2q^2\cos \angle ODC \Rightarrow \cos \angle ODC=\dfrac{2q^2-r^2}{2q^2}
+        \]
+        在$\triangle ODB$中,由余弦定理
+        \[
+        OB^2=q^2+(2q)^2-2 \cdot q \cdot 2q \cdot \dfrac{2q^2-r^2}{2q^2}=q^2+2r^2
+        \]
+        来到尾声,在$\triangle OAB$中,由毕氏定理
+        \[
+        OA^2+AB^2=OB^2 \Rightarrow r^2+p^2=q^2+2r^2
+        \]
+        于是得证 $p^{2}=q^{2}+r^{2}$。
+    \end{solution}
+
+    \question 在 $\triangle ABC$ 中,$AB=6,BC=4,CA=5$,圆 $O_1, O_2, O_3$ 为 $\triangle ABC$ 的三旁切圆,$O_1$ 与 $BC$ 相切于 $D$,$O_2$ 与 $CA$ 相切于 $E$,$O_3$ 与 $AB$ 相切于 $F$。求面积比 
+\[
+\frac{[\triangle DEF]}{[\triangle ABC]}.
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\linewidth]{images/image108.png}
+\end{figure}
+\ifprintanswers
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/image109.jpg}
+\end{figure}
+\fi
+\begin{solution}
+    设$a = BC = 4, b = CA = 5, c = AB = 6, s = \dfrac{a+b+c}{2} = \dfrac{15}{2}$,由旁切圆性质,
+    \[
+    AF = CD = s - b = \frac{5}{2}, \quad
+    BF = CE = s - a = \frac{7}{2}, \quad
+    AE = BD = s - c = \frac{3}{2}
+    \]
+    由$\triangle ABC \backsim \triangle AEF \backsim \triangle BDF \backsim \triangle CDE$,
+    \begin{align*}
+    \frac{S_{\triangle DEF}}{[\triangle ABC]}
+    &= 1- \frac{S_{\triangle AEF}}{[\triangle ABC]} - \frac{S_{\triangle BDF}}{[\triangle ABC]} - \frac{S_{\triangle CDE}}{[\triangle ABC]}\\[2mm]
+    &= 1 - \left(
+    \frac{AE \cdot AF}{AC \cdot AB} +
+    \frac{BD \cdot BF}{BC \cdot AB} +
+    \frac{CD \cdot CE}{AC \cdot BC}
+    \right)\\[2mm]
+    &= 1 - \left(
+    \frac{\frac{3}{2} \cdot \frac{5}{2}}{5 \cdot 6} +
+    \frac{\frac{3}{2} \cdot \frac{7}{2}}{4 \cdot 6} +
+    \frac{\frac{5}{2} \cdot \frac{7}{2}}{5 \cdot 4}
+    \right)= \frac{7}{32}
+    \end{align*}
+    \textcolor{red}{(待验证相似三角形,顺序,旁切圆性质)}
+\end{solution}
+
+    \question 设钝角三角形 $ABC$ 的内切圆半径为 $\sqrt{3}$,已知内切圆圆心 $O$ 到顶点 $A$ 的距离为 $2$,而 $O$ 到顶点 $B$ 的距离为 $2\sqrt{7}$,求 $\triangle ABC$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{images/image129.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $D, E, F$ 分别为在$AB,BC,AC$上的内切圆切点,在$\triangle ADO,\triangle OBD$中,由毕氏定理,
+        \[
+        2^2 = (\sqrt{3})^2 + AD^2, (2\sqrt{7})^2 = (\sqrt{3})^2 + BD^2
+        \]
+        则
+        \[
+        AD = AF = 1, \quad BD = BE = 5, \quad CE = CF = a
+        \]
+        $\triangle ABC$半周长为$s=a+6$,则面积为
+        \[
+        [\triangle ABC]= \sqrt{3} (a + 6) =\sqrt{a+6\cdot a\cdot1\cdot5} \Rightarrow a = 9
+        \]
+        故
+        \[
+        [\triangle ABC]= 15 \sqrt{3}
+        \]
+    \end{solution}
+
+    \question 在 $\triangle ABC$ 中,已知 $\cos\angle BAC = \dfrac{4\sqrt{3}}{7},\angle B = 30^\circ,O$ 为 $\triangle ABC$ 的内心,直线 $AO$ 与 $BC$ 相交于 $D$ 点,求 $\dfrac{BD}{CD}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{images/image116.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$\angle CAD = \angle DAB = \theta, CD = 1, BD = k$,  由 $\cos \angle A = \dfrac{4\sqrt{3}}{7}$,得 
+        \[
+        \sin \angle A = \dfrac{1}{7}
+        \]
+        在 $\triangle ABD$ 及$\triangle ACD$中,由正弦定理,
+        \[
+        \frac{k}{\sin \theta} = \frac{AD}{\sin 30^\circ}, \quad \frac{1}{\sin \theta} = \frac{AD}{\sin \angle C} 
+        \]
+        于是
+        \[
+        AD=\frac{k}{2\sin \theta} = \frac{\sin(150^\circ - \angle A)}{\sin \theta} \Rightarrow k = 2\sin(150^\circ - \angle A)
+        \]
+        即
+        \[
+        \frac{BD}{CD}=k = 2\sin(150^\circ - \angle A) = 2\left( \frac{1}{2} \cdot \frac{4\sqrt{3}}{7} - \left(-\frac{\sqrt{3}}{2}\right) \cdot \frac{1}{7} \right) = \frac{5\sqrt{3}}{7}
+        \]
+    \end{solution}
+
+    \question 若等腰三角形$\triangle ABC$的外接圆半径 $R$ 与内切圆半径 $r$ 之比
+    \[
+    \frac{R}{r} = 1+\sqrt{2},
+    \]
+    且顶角$A$ 不为直角,求 $\sin\dfrac{A}{2}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image126.jpg}
+        \end{figure}
+    \fi
+    \begin{solution}
+        设 $O$ 为外接圆圆心, $P$ 为内切圆圆心,$D,E$为$P$在$AC,AB$上的垂足,$G$为$AB$中点,则
+        \[
+        AB = 2R \cos \frac{A}{2}, \quad
+        AF = 2R \cos^2 \frac{A}{2}, \quad
+        OP = 2R \cos^2 \frac{A}{2} - R - r
+        \]
+        又由$\triangle AGO\backsim \triangle AEP \ (AAA)$,
+        \[
+        \frac{GO}{EP} = \frac{AO}{AP} \Rightarrow \frac{R \sin \frac{A}{2}}{r} = \frac{R}{2R\cos^2 \frac{A}{2} - r}
+        \]
+        令$x = \sin \dfrac{A}{2}$,将$\dfrac{R}{r} = 1+\sqrt{2}$代入得
+        \[
+        (x+1)\big((2+2\sqrt{2}) x^2 - (2+2\sqrt{2}) x + 1 \big) = 0
+        \]
+        舍去 $x=-1$,得
+        \[
+        \sin \frac{A}{2} = \frac{\sqrt{2}}{2} \quad \text{或} \quad \sin \frac{A}{2} = \frac{2-\sqrt{2}}{2}
+        \]
+    \end{solution}
+
+    \question 一个等边三角形中有 $n$ 排全等的小圆（如下图 $n=4$ 所示）。求当 $n\to\infty$ 时,圆的面积与三角形面积的比值极限。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image143.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设三角形边长为 $1$,小圆半径为 $r$,由 $30$-$60$-$90$ 直角三角形可得
+        \[
+        2(n-1)r + 2 r\sqrt{3} = 1 \Rightarrow r = \frac{1}{2(n+\sqrt{3}-1)}.
+        \]
+        共有 $\frac{n(n+1)}{2}$ 个圆,因此圆的总面积为
+        \[
+        \frac{n(n+1)}{2} \cdot \frac{\pi}{4(n+\sqrt{3}-1)^2}= \frac{\pi}{8} \frac{n(n+1)}{(n+\sqrt{3}-1)^2}.
+        \]
+        当 $n\to\infty$ 时,$\dfrac{n(n+1)}{(n+\sqrt{3}-1)^2}\to 1$,因此面积比极限为
+        \[
+        \frac{\dfrac{\pi}{8}}{\dfrac{\sqrt{3}}{4}} = \frac{\pi\sqrt{3}}{6}
+        \]
+    \end{solution}
+
+    \question 已知 $C_1$ 是半径为 1 的圆,$P_1$ 是 $C_1$ 的外接正方形。对于 $n \ge 2$,令 $C_n$ 为 $P_{n-1}$ 的外接圆,$P_n$ 为 $C_n$ 的外接正 $2^{n+1}$ 边形。设 $r_n$ 为 $C_n$ 的半径。求 $\lim_{n \to \infty} r_n$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image155.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由图可知,
+        \[
+        r_2 = \frac{r_1}{\cos\frac{\pi}{4}}, \quad r_n = \frac{r_{n-1}}{\cos\frac{\pi}{2^n}}, \quad n\ge 2
+        \]
+        于是
+        \[
+        r_n = \frac{1}{\displaystyle \prod_{k=2}^{n} \cos \frac{\pi}{2^k}}
+        \]
+        且由
+        \[
+        \sin x = 2 \sin \frac{x}{2} \cos \frac{x}{2} = 2^2 \sin \frac{x}{4} \cos \frac{x}{4} \cos \frac{x}{2} = \cdots = 2^n \sin \frac{x}{2^n} \prod_{k=1}^{n} \cos \frac{x}{2^k}
+        \]
+        两边除以 $x$ 并取极限 $n\to\infty$ 得
+        \[
+        \frac{\sin x}{x} = \prod_{k=1}^{\infty} \cos \frac{x}{2^k}
+        \]
+        令 $x = \dfrac{\pi}{2}$,得到
+        \[
+        \prod_{k=1}^{\infty} \cos \frac{\pi}{2^{k+1}} = \frac{2}{\pi}
+        \]
+        因此
+        \[
+        \lim_{n\to\infty} r_n = \frac{\pi}{2}
+        \]
+    \end{solution}
+
+    \question 圆内有两条平行弦,其长分别为 12,16,且它们之间的距离为 7。另一条弦位于两条弦中间且与两线等距,求该弦的长度。
+    \begin{solution}
+        设圆半径为 $r$,两条弦到圆心的距离分别为 $d_1,d_2$,由毕氏定理,
+        \[
+        \left(\frac{12}{2}\right)^2 + d_1^2 = r^2, \quad \left(\frac{16}{2}\right)^2 + d_2^2 = r^2 \implies 36 + d_1^2 = 64 + d_2^2.
+        \]
+        假设两弦在圆心的两侧,则
+        \[
+        d_1 + d_2 = 7, \quad d_1 - d_2 = 4 \implies d_1 = \frac{11}{2}>0, \quad d_2 = \frac{3}{2}>0
+        \]
+        于是
+        \[
+        r^2 = 36 + d_1^2 = \frac{265}{4}
+        \]
+        中间弦到圆心的距离为
+        \[
+        d = \frac{d_1 - d_2}{2} = 2
+        \]
+        设中间弦长度为 $x$,则由毕氏定理,
+        \[
+        \left(\frac{x}{2}\right)^2 + 2^2 = r^2 \Rightarrow x = \sqrt{249}
+        \]
+    \end{solution}
+
+    \question 在图中,两圆在点 $P$ 相切。$QP$ 和 $SU$ 是大圆的垂直直径,交于 $O$。点 $V$ 在 $QP$ 上使得$VP$ 是小圆的直径。小圆与 $SU$ 相交于 $T$。已知 $QV = 9,ST = 5$,求两圆直径之和。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image173.png}
+    \end{figure}
+    \begin{solution}
+        设大圆直径为 $D$,小圆直径为 $d$,小圆圆心为 $C$,在$\triangle TOC$中,由毕氏定理,
+        \[
+        TO^2 + OC^2 = CT^2 \Rightarrow \left(\frac{D}{2} - 5\right)^2 + \left(\frac{D}{2} - \frac{d}{2}\right)^2 = \left(\frac{d}{2}\right)^2
+        \]
+        由 $QV=D-d = 9$,得
+        \[
+        (D-10)^2 + 9^2 = d^2 
+        \]
+        于是
+        \[
+        81 = (d-(D-10))(d+(D-10)) = 1\cdot(d+D-10)
+        \]
+        所以
+        \[
+        d + D = 91
+        \]
+    \end{solution}
+
+    \question 如图所示,三个圆的圆心分别为 $X,Y,Z$,每个圆都与另外两个圆相切。圆心为 $X$ 的圆与矩形 $PQRS$ 相切于三条边,圆心为 $Z$ 的圆与矩形 $PQRS$ 相切于两条边。如果 $XY=30,YZ=20,XZ=40$,求矩形 $PQRS$ 的面积。  
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image165.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image166.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        圆心之间的距离等于两个相切圆半径之和。设圆心 $X,Y,Z$ 的半径分别为 $x,y,z$,则有:
+        \[
+        XY = x + y = 30, \quad XZ = x + z = 40, \quad YZ = y + z = 20.
+        \]
+        解得
+        \[
+        x=25,\;y=5,\;z=15
+        \]
+        矩形高度为$2x = 50$,宽度为
+        \[
+        SR = SU + UV + VR = 25 + \sqrt{40^2 - 10^2} + 15 = 40 + 10\sqrt{15}
+        \]
+        故矩形面积为
+        \[
+        [PQRS]=50(40 + 10\sqrt{15}) = 2000 + 500\sqrt{15}
+        \]
+    \end{solution}
+
+    \question 两个圆 $C_1$ 和 $C_2$ 外切,直线 $l$ 为它们的公切线。直线 $m$ 平行于 $l$ 并与 $C_1$ 和 $C_3$ 相切。三个圆互相切。已知 $C_2$ 的半径为 $9$,$C_3$ 的半径为 $4$,求 $C_1$ 的半径。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image201.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image202.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $C_1$ 的半径为 $r$,有
+        \[
+        C_1C_2 = r+9, \quad C_1C_3 = r+4, \quad C_2C_3 = 13.
+        \]
+        如图所示,考虑矩形$ABC_2D$,由毕氏定理,在 $\triangle AC_3C_1$ 中,
+        \[
+        C_3A^2 = (r+4)^2-(r-4)^2 = 16r \Rightarrow C_3A = 4\sqrt{r}.
+        \]
+        在 $\triangle DC_2C_1$ 中,
+        \[
+        DC_2^2 = (r+9)^2-(r-9)^2 = 36r \Rightarrow DC_2 = 6\sqrt{r}
+        \]
+        在 $\triangle BC_3C_2$ 中,
+        \[
+        CB^2 = 13^2-(2r-13)^2 = -4r^2 + 52r \Rightarrow C_3B = \sqrt{-4r^2 + 52r}
+        \]
+        由$DC_2 = C_3A + C_3B$得
+        \[
+        6\sqrt{r} = 4\sqrt{r} + \sqrt{-4r^2+52r} 
+        \]
+        解得
+        \[
+        r=12>0
+        \]
+    \end{solution}
+
+    \question 设 $0 < r < 1$，半径为 $1$ 的圆 $C_1$ 和半径为 $r$ 的圆 $C_2$ 的中心重合。在 $C_1$ 内部且 $C_2$ 外部尽可能多地画圆。但是，任意两个圆共有的点个数为 $1$ 或以下。设所画圆的周长总和为 $f(r)$。求极限 $\lim_{r \to 1-0} f(r)$。
+\begin{solution}
+设圆 $C$ 同时与半径为 $1$ 的圆 $C_1$ 内切，且与半径为 $r$ ($0 < r < 1$) 的圆 $C_2$ 外切。
+则圆 $C$ 的直径为 $1 - r$，半径为 $\frac{1 - r}{2}$。
+圆 $C$ 的圆心到重合圆心的距离为 $r + \frac{1 - r}{2} = \frac{1 + r}{2}$。
+设相邻两个圆 $C$ 的圆心分别为 $A, B$，且 $\angle AOB = \theta$。
+为了能画出 $n$ 个圆，必须满足 $n\theta \le 2\pi$ 且 $(n+1)\theta > 2\pi$，即：
+\[
+\frac{2\pi}{\theta} - 1 < n \le \frac{2\pi}{\theta} \cdots (1)
+\]
+在 $\triangle OAB$ 中，由 $OA = OB = \frac{1+r}{2}$ 及圆 $C$ 的半径为 $\frac{1-r}{2}$ 可知：
+\[
+\sin \frac{\theta}{2} = \frac{\frac{1-r}{2}}{\frac{1+r}{2}} = \frac{1-r}{1+r} \cdots (2)
+\]
+所画圆的周长总和 $f(r)$ 为：
+\[
+f(r) = 2\pi \cdot \frac{1-r}{2} \cdot n = n\pi(1-r) \cdots (3)
+\]
+由 (2) 可得 $r = \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}$。代入 (3) 得：
+\[
+f(r) = n\pi \left( 1 - \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \right) = 2n\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}}
+\]
+由 (1) 可得：
+\[
+2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \left( \frac{2\pi}{\theta} - 1 \right) < f(r) \le 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} \cdots (4)
+\]
+当 $r \to 1-0$ 时，由 (2) 知 $\theta \to 0$。利用极限 $\lim_{x \to 0} \frac{\sin x}{x} = 1$：
+\[
+\lim_{\theta \to 0} 2\pi \cdot \frac{\sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{\theta} = \lim_{\theta \to 0} 2\pi \cdot \frac{\frac{\sin \frac{\theta}{2}}{\frac{\theta}{2}} \cdot \frac{1}{2}}{1 + \sin \frac{\theta}{2}} \cdot \frac{2\pi}{1} = 2\pi \cdot \frac{1 \cdot \frac{1}{2}}{1} \cdot 2\pi = 2\pi^2
+\]
+同理，左侧极限亦为 $2\pi^2$。由夹逼定理得：
+\[
+\lim_{r \to 1-0} f(r) = 2\pi^2
+\]
+\end{solution}
+
+    \question 已知三角形 $ABC$ 内切圆切$BC,CA,AB$于 $D,E,F$,若内切圆半径为 $r$,外接圆半径为 $R$,试证 
+    \[
+    \frac{[\triangle DEF]}{[\triangle ABC]} = \frac{r}{2R}.\]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image43.png}
+    \end{figure}
+    \begin{solution}
+        设三角形 $ABC$ 的边长为 $a, b, c$,内心 $I$,有 $ID = IE = IF = r,\triangle DEF$ 面积为
+        \begin{align*}
+        [\triangle DEF] 
+        &= [\triangle IDE]+[\triangle IEF]+ [\triangle IFD] \\
+        &= \frac{1}{2} r^2 (\sin (\pi-A) + \sin (\pi-B) + \sin (\pi-C)) \\
+        &= \frac{1}{2} r^2 (\sin A + \sin B + \sin C)
+        \end{align*}
+        由正弦定理,
+        \[
+        \sin A = \frac{a}{2R},\quad \sin B = \frac{b}{2R},\quad \sin C = \frac{c}{2R}
+        \]
+        代入得
+        \[
+        [\triangle DEF] = \frac{1}{2} r^2 \left( \frac{a+b+c}{2R} \right) = \frac{r^2 s}{2R}
+        \]
+        因此:
+        \[
+        \frac{[\triangle DEF]}{[\triangle ABC]} = \frac{\frac{r^2 s}{2R}}{rs} = \frac{r}{2R}
+        \]
+    \end{solution}
+
+    \question 已知 $\triangle ABC$ 满足 $AB=4,BC=5, CA=6,\triangle ABC$ 的外接圆同时是 $\triangle A'B'C'$ 的内切圆,且 $A,B,C$ 分别在 $B'C',A'C',A'B'$ 上,求 $B'C'$ 的长度。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image159.png}
+    \end{figure}
+    \begin{solution}
+        由弦切角定理,
+        \[
+        \angle C'AB = \angle C, \quad \angle B'AC = \angle B
+        \]
+        由直角三角形关系得
+        \[
+        C'A = \frac{2}{\cos\angle C'AB} = \frac{2}{\cos C}, \quad B'A = \frac{3}{\cos\angle B'AC} = \frac{3}{\cos B}
+        \]
+        由余弦定理,得
+        \[
+        \cos B = \frac{4^2+5^2-6^2}{2\cdot 4\cdot 5}=\frac{1}{8}, \quad \cos C = \frac{5^2+6+2-4^2}{2 \cdot 5 \cdot 6}=\frac{3}{4}
+        \] 
+        因此
+        \[
+        B'C' = C'A + B'A = 2\cdot \frac{4}{3} + 3\cdot 8 = \frac{80}{3}
+        \]
+    \end{solution}
+
+    \question 如图,在直角 $\triangle ABC$ 中,$\angle ACB = 90^\circ, AC=6$,以 $AB$ 为一边向三角形外作正方形 $ABEF$。已知正方形的中心为 $O$,且 $OC = 8\sqrt{2}$,求 $BC$ 的长度。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.35\textwidth]{images/image134.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image135.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        $\triangle OAB$ 为等腰直角三角形,设$G$ 为 $AB$ 中点,则 $OG$ 为中垂线,设$$GA = GB = OG = a,$$同弧所对的圆周角相等,有$\angle ACO = \angle ABO = 45^\circ$,由余弦定理,
+        \[
+        (\sqrt{2} a)^2=6^2 + (8\sqrt{2})^2-2 \cdot 6 \cdot 8\sqrt{2}\cdot \cos \angle 45^\circ
+        \Rightarrow a^2 = 34
+        \]
+        在直角 $\triangle ABC$ 中,由毕氏定理,
+        \[
+        (2a)^2 = 6^2 + CB^2 \Rightarrow CB = 10
+        \]
+    \end{solution}
+
+    \question 在 $\triangle ABC$ 中,$AB=10$, $M$ 为 $AB$ 中点,$\;\triangle ABC$ 内切圆恰将线段 $CM$ 三等分,求 $\triangle ABC$ 面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/image110.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设三切点为 $D,E,F$,中线 $CM$ 与内切圆交于 $P,Q$ 两点,据题意有
+        \[
+        CP = PQ = QA = a.
+        \]
+        由$\triangle MQD \backsim \triangle MDP \ (\text{AAA})$,
+        \[
+        \frac{MQ}{MD} = \frac{MD}{MP} \Rightarrow  MD^2 = MP \cdot MQ = 2a^2,
+        \]
+        同理由$\triangle CPF \backsim \triangle CFQ \ (\text{AAA})$得$CF^2 = 2a^2$,则
+        \[
+        CE = CF = MD = b  \Rightarrow b = \sqrt{2}a.
+        \]
+        由中线定理,
+        \[
+        CA^2 + CB^2 = 2(CM^2 + AM^2) \Rightarrow  (5+2b)^2 + 5^2 = 2(9a^2 + 5^2)
+        \]
+        代入 $b = \sqrt{2}a$ 解得
+        \[
+        a = 2\sqrt{2}, \quad b = 4.
+        \]
+        因此三边长为$AB = 10, BC = 5,  AC = 5 + 2b = 13$,半周长 $s = \dfrac{10+5+13}{2} = 14$,面积为
+        \[
+        \sqrt{14 \cdot 4 \cdot 9 \cdot 1} = 6\sqrt{14}
+        \]
+    \end{solution}
+
+    \question 在 $\triangle ABC$ 中,已知 $AB=9,BC=10,CA=11$,且内切圆切 $BC,AB,AC$ 于 $D,E,F$,求 $AD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image124.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$AE=AF=a, BD=BE=b, CF=CD=c,$则
+        \[
+        c = s - AB = \frac{9+10+11}{2} - 9 = 6
+        \]
+        在 $\triangle CAD$ 与 $\triangle CAB$中,由余弦定理,
+        \[
+        \cos C 
+        = \frac{11^2 + 6^2 - AD^2}{2\cdot 11 \cdot 6}
+        = \frac{11^2 + 10^2 - 9^2}{2\cdot 11 \cdot 10}
+        \]
+        解得
+        \[
+        AD = \sqrt{73}
+        \]
+    \end{solution}
+
+    \question 已知$\triangle ABC$中,$\;AB=13,BC=14,AC=15$,设 $D,E$ 分别为从 $A,B$ 作的高的垂足,求 $\triangle CDE$ 的外接圆直径。
+    \begin{solution}
+        在$\triangle ABC$中,由余弦定理,
+        \[
+        13^2 = 14^2 + 15^2 - 2\cdot 14 \cdot 15 \cos C \Rightarrow \cos C = \frac{3}{5}
+        \]
+        设 $AD$ 与 $BE$ 交于 $X$,由于 $\angle CDX = \angle CEX = 90^\circ$,有 
+        \[
+        \triangle CDA \backsim \triangle CEB \backsim \triangle XDB \ \text{(AAA)},
+        \]
+        得到
+        \[
+        CD = 9, \quad BD = 5, \quad DX = \frac{15}{4}
+        \]
+        在$\triangle CDX$中,由毕氏定理,
+        \[
+        CX = \sqrt{CD^2+DX^2}=\frac{39}{4}
+        \]
+        发现 $CDXE$ 是一圆内接四边形,因此 $\triangle CDE$ 的外接圆直径即为
+        \[
+        CX=\frac{39}{4}
+        \]
+    \end{solution}
+
+    \question 已知点 $A,B,C,D$共圆, $AC$ 是直径,且 $\angle CBD=\angle DBA$。若 $BC=2, AB=4$,求 $BD$ 的长度。
+    \begin{solution}
+        $AC$ 是直径,所以 $\angle ABC=90^\circ$,因此 
+        \[
+        \angle CBD=\angle DBA=45^\circ
+        \]
+        又 $\angle CAD$ 与 $\angle CBD$ 为同弧所对的角,所以 
+        \[
+        \angle CAD=\angle CBD=45^\circ
+        \]
+        在$\triangle ABC$中,由毕氏定理,
+        \[
+        AC=\sqrt{AB^2+BC^2}=2\sqrt{5}
+        \]
+        故
+        \[
+        \sin \angle BAC=\frac{BC}{AC}=\frac{1}{\sqrt{5}}
+        \]
+        在$\triangle BAD$中,由正弦定理,
+        \begin{align*}
+        BD=AC \sin \angle BAD &= AC \sin \left(\angle BAC+\frac{\pi}{4}\right) \\
+        &= 2\sqrt{5}\cdot \frac{\sqrt{2}}{2}(\sin\angle BAC+\cos\angle BAC)=3\sqrt{2}            
+        \end{align*}
+    \end{solution}
+
+        \question 平面上,$P$为$AB$上一点满足$AP=5,BP=3,Q$为平面上一点满足$AQ=7,BQ=3$。若以$AB$为直径作一圆$C$,自$P$向$Q$作射线$PQ$交圆$C$于点$R$,试求$PR$的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image61.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        在$\triangle ABQ$中,由余弦定理,
+        \[
+        7^2 = 8^2+3^2 -2\cdot 3 \cdot 8 \cdot \cos \angle B
+        \Rightarrow \angle B=60^\circ
+        \]
+        又$BP=BQ=3$,故$\triangle PQB$为等边三角形,于是$PQ=3$;在$\triangle OPR$中,由余弦定理,
+        \[
+        4^2=1^2 + PR^2-2 \cdot 1 \cdot PR \cdot \cos 60^\circ 
+        \]
+        解得
+        \[
+        PR = \frac{-1 + \sqrt{61}}{2}
+        \]
+    \end{solution}
+
+    \question 两圆 $O_1,O_2$ 都经过 $\triangle ABC$ 的顶点 $A$,且分别与 $BC$ 边相切于点 $B,C$ 。已知圆 $O_1,O_2$ 的面积分别为 $m,n$,试以 $m,n$ 表示 $\triangle ABC$ 外接圆的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image224.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$O_1,O_2,\triangle ABC$外接圆的半径为$R_1,R_2,R_3;\angle ABC = \beta, \angle ACB = \gamma$。在 $\wideparen{AB},\wideparen{AC}$ 分别取点 $P,Q$,由弦切角定理,
+        \[
+        \angle APB = \angle ABC = \beta, \quad \angle AQC = \angle ACB = \gamma.
+        \]
+        由正弦定理,
+        \[
+        4 R_3^2 = \frac{\overline{AC}}{\sin \beta} \cdot \frac{\overline{AB}}{\sin \gamma} = \frac{2 R_2 \sin \gamma}{\sin \beta} \cdot \frac{2 R_1 \sin \beta}{\sin \gamma} = 4 R_1 R_2 \Rightarrow R_3^2 = R_1 R_2
+        \]
+        所以 $\triangle ABC$ 外接圆的面积为
+        \[
+        \pi R_3^2 = \pi R_1 R_2 = \sqrt{\frac{m}{\pi}} \cdot \sqrt{\frac{n}{\pi}} \cdot \pi = \sqrt{mn}
+        \]
+    \end{solution}
+
+    \question 一半径为 4 的大圆里面有三个两两外切,且皆与大圆内切的小圆,其中两小圆半径分别为 1 和 3,且它们的圆心在大圆的一条直径上,求第三个小圆的半径。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image140.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$B=(0,0)$为大圆圆心 ,$A=(-1,0)$为半径为 3 的小圆圆心,$C=(3,0)$为半径为 1 的小圆圆心,$D$为所求半径为 $r$ 的小圆圆心,由海伦公式及等高性质,
+        \[
+        3=\frac{[\triangle BDC]}{[\triangle ABD]}=
+        \frac{\sqrt{4(3-r)\cdot r \cdot1}}{\sqrt{4(1-r)\cdot r\cdot3}}
+        \]
+        其中$\triangle ABD,\triangle BDC$半周长为
+        \[
+        [\triangle ABD]=\frac{1}{2}(3+r+(4-r)+1)=4, \quad s_{\triangle BDC}=\frac{1}{2}(1+r+(4-r)+3)=4
+        \]
+        解得第三个小圆的半径为
+        \[
+        r=\frac{12}{13}
+        \]
+    \end{solution}
+
+    \question 圆内接四边形 $ABCD$ 满足 $AB=4,BC=1,CD=2,DA=3$。设 $P,Q$ 分别为 $BC$ 与 $DA$ 的中点,求 $PQ^2$。
+\ifprintanswers
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/image157.png}
+\end{figure}
+\fi
+\begin{solution}
+    设对角线交点为 $R$,令 $CR=x$。由$\triangle BCR \backsim \triangle ADR \; \text{(AAA)}$ 及 $\triangle CDR \backsim \triangle BAR \; \text{(AAA)}$可得
+    \[
+    BR=2x,\quad DR=3x,\quad AR=6x,
+    \]
+    因此
+    \[
+    AC=7x,\quad BD=5x
+    \]
+    在四边形 $ABCD$中,由托勒密定理,
+    \[
+    AC\cdot BD=AB\cdot CD+BC\cdot DA 
+    \]
+    得
+    \[
+    x^2=\frac{11}{35}
+    \]
+    在$\triangle ABD$及$\triangle ACD$中,由中线定理,
+    \[
+    AB^2+BD^2=\frac{1}{2}DA^2+2BQ^2, \quad AC^2+CD^2=\frac{1}{2}DA^2 + 2CQ^2
+    \]
+    得
+    \[
+    \textcolor{red}{BQ^2=\frac{271}{28},\;CQ^2=\frac{571}{20}}
+    \]
+    故在$\triangle BCQ$中,由中线定理,
+    \[
+    BQ^2+CQ^2 = \frac{1}{2}BC^2+2PQ^2 \Rightarrow PQ^2=\frac{291}{35}
+    \]
+    \textcolor{red}{(待验证)}
+\end{solution}
+    
+    \question 在边长为 4 的正三角形 $ABC$ 内接圆中,点 $P$ 在弧 $AC$ 上满足 $AP \cdot PC = 5$。求 $BP$ 的长度。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/image152.png}
+    \end{figure}
+    \begin{solution}
+        在四边形 $ABPC$中,由托勒密定理,
+        \[
+        AB \cdot PC + AP \cdot BC = AC \cdot BP 
+        \]
+        由$AB=AC=BC$,得
+        \[
+        BP = AP + PC
+        \]
+        易知$\angle APC = 120^\circ$,在$\triangle APC$中,由余弦定理,
+        \[
+        4^2 = AP^2 + PC^2 - 2 \cdot AP \cdot PC \cos 120^\circ \Rightarrow AP^2 + PC^2 = 11
+        \]
+        于是
+        \[
+        BP^2 = (AP+PC)^2 = AP^2 + PC^2 + 2 \cdot AP \cdot PC = 21 \Rightarrow BP = \sqrt{21}
+        \]
+    \end{solution}
+
+    \question 已知 $AC$ 为半圆的直径,若将弧 $AB$ 沿弦 $AB$ 向下折使其与 $AC$ 相交于 $D$ 点,且 $AD=9,DC=7$,则 $AB$ 的长度为多少？  
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image80.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        作 $D'D'' \parallels BC$ 交圆于 $D',D''$ 及直线 $AB$ 于 $P$ 点,
+        $AB$ 为 $DD'$ 的中垂线,
+        \[
+        AD' = AD = 9,
+        \]
+        在$\triangle AOD'$ 中,由余弦定理,
+        \[
+        \cos \angle AOD' = \frac{8^2 + 8^2 - 9^2}{2 \cdot 8 \cdot 8} = \frac{47}{128}
+        \] 
+        在$\triangle DOD'$ 中,由余弦定理,
+        \[ 
+        \cos \angle D'OD = -\frac{47}{128} = \frac{8^2 + 1^2 - DD'^2}{2 \cdot 8 \cdot 1} \Rightarrow DD' = \frac{9\sqrt{14}}{4}  ,PD = PD' = \frac{9\sqrt{14}}{8} 
+        \]
+        由圆幂定理,
+        \[
+        9 \cdot 7 = \frac{9\sqrt{14}}{4}  \cdot DD'' \Rightarrow DD'' = 2\sqrt{14}
+        \]
+        又 $\triangle APD \backsim \triangle ABC \ (AAA)$,
+        \[
+        \frac{AP}{PB} = \frac{AD}{DC} = \frac{9}{7}
+        \]
+        令 $AP = 9k,PB = 7k,k > 0$,由圆幂定理,
+        \[
+        \frac{9\sqrt{14}}{8}  \cdot \left( \frac{9\sqrt{14}}{8}  + 2\sqrt{14} \right) = 9k \cdot 7k \Rightarrow k = \frac{5\sqrt{2}}{8}
+        \] 
+        故
+        \[
+        AB = 16k = 10\sqrt{2}
+        \]
+    \end{solution}
+
+    \question 正方形 $PQRS$ 的边长为 $4$。点 $U$ 在对角线 $PR$ 上使得$PR=4UR$。以 $U$ 为圆心作圆,使得圆与正方形的两条边相切。$PW$ 是圆的切线,且 $W$ 在 $QR$ 上。求 $PW$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image214.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由 $PR=4UR=4\sqrt{2}$,得
+        \[
+        PU=\frac{3}{4}PR=3\sqrt{2}, \quad UR=\sqrt{2}.
+        \]
+        设圆分别与 $PW,WR, RS$ 相切于点 $X,Y,Z$,由$\triangle UZR$知圆的半径为 $1$,在$\triangle PXU$中,由毕氏定理,
+        \[
+        PX=\sqrt{(3\sqrt{2})^2-1^2}=\sqrt{17}
+        \]
+        设$x=PW$,在$\triangle PQW$中,由毕氏定理,
+        \[
+        4^2+(3-x)^2=(\sqrt{17}+x)^2 \Rightarrow x=\frac{4}{\sqrt{17}+1}
+        \]
+        故
+        \[
+        PW=\sqrt{17}+\frac{4}{\sqrt{17}+1}=\frac{5\sqrt{17}-1}{4}
+        \]
+    \end{solution}
+
+    \question 如下图所示, $AB=8$, 以 $AB$ 为直径的半圆上有 $C, D$ 两点, 且 $AC=2,BD=7$, 求 $CD$ 的长度。 
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image99.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image100.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        $AB$ 为直径,在 $\triangle ABC$ 及 $\triangle ABD$中,由毕氏定理,
+        \[
+        BC=\sqrt{8^2-2^2}=2\sqrt{15}, AD=\sqrt{8^2-7^2}=\sqrt{15}
+        \]
+        设$\theta_1=\angle ABC,\theta_2=\angle ABD,$则
+        \[
+        \tan \theta_1 =\frac{1}{\sqrt{15}},\quad
+        \tan (\theta_1+\theta_2) = \frac{\frac{1}{\sqrt{15}} + \tan \theta_2}{1 - \frac{1}{\sqrt{15}} \tan \theta_2} = \frac{\sqrt{15}}{7} \Rightarrow \tan \theta_2 = \frac{1}{\sqrt{15}}
+        \]
+        在 $\triangle BCD$中,由余弦定理,
+        \[
+        \cos \theta_2 = {\sqrt{15}\over 4} 
+        = {(2\sqrt{15})^2 + 7^2 - CD^2 \over 2\cdot 7 \cdot 2\sqrt{15}} \Rightarrow CD = 2
+        \]
+    \end{solution}
+
+    \question 三角形 $ABC$ 内接于一直径为 $5\sqrt{13}$ 的圆, $D$ 点在 $AC$ 上, 且 $\angle ABD = 90^\circ$. 已知 $BC = 10,AD = 13$, 求 $CD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image87.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由于 $\angle ABD$ 为直角, 延长 $BD$ 交圆周于 $B'$, 则 $AB'$ 为直径,由$\triangle DBC \backsim \triangle DAB' \ (\text{AAA})$,
+        \[
+        \frac{DB}{DA} = \frac{BC}{AB'} \Rightarrow \frac{DB}{13} = \frac{10}{5\sqrt{13}} 
+        \Rightarrow DB = 2\sqrt{13}
+        \]
+        在 $\triangle ABD$ 中,由毕氏定理,
+        \[
+        AB^2 + (2\sqrt{13})^2 = 13^2 \Rightarrow AB = 3\sqrt{13}
+        \]
+        在 $\triangle ABB'$ 中,由毕氏定理,
+        \[
+        BB' = \sqrt{(5\sqrt{13})^2 - (3\sqrt{13})^2} = 4\sqrt{13} \Rightarrow DB' = BB' - BD = 2\sqrt{13}
+        \]
+        再由 $\triangle DBC \backsim \triangle DAB'$,
+        \[
+        \frac{BC}{AB'} = \frac{CD}{DB'} \Rightarrow \frac{10}{5\sqrt{13}} = \frac{CD}{2\sqrt{13}} \Rightarrow CD = 4
+        \]
+    \end{solution}
+
+    \question 已知圆内接六边形 $ABCDEF$ 的边长依次为 $5,5,7,7,5,7$,求该六边形的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image78.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设圆心为 $O$,则
+        \[
+        \angle AOB : \angle BOC : \angle COD : \angle DOE : \angle EOF : \angle FOA = 5:5:7:7:5:7
+        \]
+        即
+        \[
+        \angle AOB = \angle BOC = \angle EOF = 50^\circ,\quad \angle COD = \angle DOE = \angle FOA = 70^\circ \Rightarrow \angle BAF = 120^\circ
+        \]
+        在$\triangle BAF$ 中,由余弦定理,
+        \[
+        BF^2 =5^2 + 7^2 - 2\cdot 5\cdot 7 \cdot \cos 120^\circ= 109
+        \]
+        六边形面积为
+        \[
+        [ABCDEF]= [\triangle BDF] + 3 [\triangle ABF]
+        = \frac{\sqrt{3}}{4} \cdot 109 + \frac{3}{2} \cdot 5 \cdot 7 \cdot \sin 120^\circ
+        = \frac{107\sqrt{3}}{2}
+        \]
+    \end{solution}
+
+    \question 已知$\triangle ABC$中,$AB=25,AC=30,\angle B=2\angle C$, 且$\angle B$的内角平分线交$\triangle ABC$的外接圆于$D$点,且$B,D$为相异点。试求$\triangle BCD$的面积。 
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image70.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$\angle C = \theta$,则$\angle B = 2\theta$,$\angle A = \pi - 3\theta$, 在$\triangle ABC$ 中,由正弦定理,
+        \[
+        \frac{25}{\sin \theta} = \frac{30}{\sin 2\theta} \implies \cos \theta = \frac{3}{5}.
+        \]
+        因同弧所对圆周角相等,$\angle D = \angle A,\angle B = \angle DCB,$故$\triangle ABC \cong \triangle DCB$\ (ASA),因此
+        \[
+        [\triangle BCD] = [\triangle ABC] = \frac{1}{2} \cdot 25 \cdot 30 \cdot \sin(\pi - 3\theta) = 375 \sin 3\theta.
+        \]
+        由$\sin \theta = \dfrac{4}{5}$,
+        \[
+        [\triangle BCD] = 375 \left(3 \cdot \frac{4}{5} - 4 \cdot \left(\frac{4}{5}\right)^3 \right) = 132
+        \]
+    \end{solution}
+
+    \question 半圆 $\Gamma$ 的直径 $AB$ 之长为 $14$, 圆 $\Omega$ 切 $AB$ 于点 $P$ 且交 $\Gamma$ 于点 $Q$ 与点 $R$。若 $QR=3\sqrt{3}$ 且 $\angle QPR=60^{\circ}$, 求 $\triangle PQR$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image59.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设半圆心为 $C$, 小圆心为 $O$, 小圆半径为 $r$。由$\angle QPR=60^\circ$ 得 $\angle QOR=120^\circ$,在$\triangle ABC$ 中,由正弦定理,
+        \[
+        \frac{QR}{\sin\angle QOR}=\frac{3\sqrt3}{\sin 120^\circ}=2r \Rightarrow OQ=OR=r=3
+        \]
+        且发现$\triangle COR \congr \triangle COQ$ \ (SSS),故 $\angle COQ=\angle COR=120^\circ$。在$\triangle COQ$中,由余弦定理,
+        \[
+        7^2 = CO^2+3^2-2\cdot CO\cdot 3 \cdot \cos 120^\circ \Rightarrow CO=5
+        \]
+        在$\triangle COP$中,由毕氏定理,$CP=\sqrt{5^2-3^2}=4$,设 $\angle COP=\theta$, 有
+        \[
+        \sin\theta=\frac{4}{5},\quad \cos\theta=\frac{3}{5}
+        \]
+        因此
+        \begin{align*}  
+        [\triangle PQR]
+        &=[\triangle POQ]+[\triangle POR]+[\triangle OQR]\\
+        &=\frac12\cdot 3^2\bigl(\sin(120^\circ-\theta)+\sin(120^\circ+\theta)\bigr)+\frac12\cdot 3^2\sin 120^\circ
+        =\frac{99\sqrt3}{20}
+        \end{align*}
+    \end{solution}
+
+    \question 已知圆内接四边形 $ABCD$ 中可以作一个内切圆,且 $E,F,G,H$ 分别在$AB,BC,CD,DA$上,且为此四边形 $ABCD$ 与其内切圆相切的四个切点,若 $FG=6,EF=7,EH=8$,求 $GH$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image23.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        由圆内接四边形性质有
+        \[
+        \angle A + \angle C =\angle GOF + \angle C = 180^\circ 
+        \Rightarrow \angle A = \angle GOF
+        \]
+        所以
+        \[
+        \triangle AHE \backsim \triangle OGF \ \text{(AAA)} \Rightarrow {AH} = {AE} = \dfrac{4}{3}r
+        \]
+        在$\triangle AHE$及$\triangle OHE$中,由余弦定理,
+        \[
+        \cos \angle A = -\cos \angle HOE \Rightarrow \frac{2r^2 - 8^2}{2r^2}= -\frac{\left(\frac{4r}{3}\right)^2 + \left(\frac{4r}{3}\right)^2 - 8^2}{2 \cdot \left(\frac{4r}{3}\right)^2}\Rightarrow r = 5
+        \]
+        同理可得$\angle D = \angle EOF$,在$\triangle OEF$中,由余弦定理,
+        \[
+        \cos \angle D = \cos \angle EOF = \frac{2r^2 - 7^2}{2r^2}  = \frac{1}{50}
+        \]
+        又 $\cos \angle GOH = -\cos \angle D = -\dfrac{1}{50}$
+        ,在$\triangle OGH$中,由余弦定理,
+        \[
+        \cos \angle GOH = \frac{2r^2 - {GH}^2}{2r^2}
+        \Rightarrow {GH} =\sqrt{51}
+        \]
+    \end{solution}
+
+    \question 若圆 $O_1$ 与圆 $O_2$ 的半径比为 $2:3$,且圆 $O_1$ 与圆 $O_2$ 交于 $A,B$ 两点。过 $B$ 点作一直线分别交圆 $O_1$ 及圆 $O_2$ 于 $C,D$ 两点,且 $\angle CAD=\dfrac{2\pi}{3}$,求 $\tan \angle ACD$。 
+    \ifprintanswers
+    \begin{figure}[H]
+    \centering        
+    \includegraphics[width=0.7\textwidth]{images/image83.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        调整两圆心距使得  $C$ 在 $O_1O_2$ 上,令 $\angle ACD=\theta$,则
+        \[
+        \angle AO_2O_1 = \frac{1}{2}\angle AO_2B = \angle ADC = 60^\circ-\theta
+        \]
+        又 $\angle ACB=180^\circ-\theta$,所以
+        \[
+        \angle AO_1B = 360^\circ-2(180^\circ-\theta)=2\theta \Rightarrow \angle AO_1O_2=\theta
+        \]
+        在$\triangle APO_1$及$\triangle APO_2$中,设$r_1=2k,r_2=3k,$则
+        \[
+        \sin \angle AO_1O_2 = \sin \theta = \frac{AP}{2k}, \sin \angle AO_2O_1 = \sin (60^\circ-\theta) = \frac{AP}{3k}
+        \]
+        解得
+        \[
+        2\sin \theta = 3\left(\frac{\sqrt{3}}{2}\cos\theta - \frac{1}{2}\sin\theta\right)
+        \Rightarrow \tan \theta = \frac{3\sqrt{3}}{7}
+        \]
+    \end{solution}
+    
+    \question 已知 $\triangle ABC$ 内接于半径为 $1$ 的圆。对于$\triangle ABC$的每一条边,作一圆使得与该边切于其中点,且该圆与大圆相切。已知其中两个小圆的半径分别为 $\dfrac{2}{3},\dfrac{2}{11}$,求第三个小圆的半径。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image156.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设大圆圆心为 $O,BC,AC,AB$中点为 $D,E,F$,对应小圆半径为 \[
+        r_1=\frac{2}{3},r_2=\frac{2}{11},r_3
+        \]  
+        在$\triangle BDO$中,由毕氏定理,
+        \[
+        BC^2=4(OB^2-OD^2)
+        =4\Bigl(1-(1-r_1)^2\Bigr)=\frac{32}{9}
+        \]
+        在$\triangle CEO$中,由毕氏定理,
+        \[
+        AC^2=4(OC^2-OE^2)
+        =4\Bigl(1-(1-r_2)^2\Bigr)=\frac{288}{121}
+        \]
+        设 $\angle BOC=\beta,\ \angle COA=\gamma$,在$\triangle BOC$及$\triangle AOC$中,由余弦定理,
+        \[
+        \cos\beta=\frac{OB^2+OC^2-BC^2}{2OB\cdot OC}=-\frac{7}{9},\quad
+        \cos\gamma=\frac{OC^2+OA^2-AC^2}{2OC\cdot OA}=-\frac{23}{121}.
+        \]
+        由此得
+        \[
+        \sin\beta=\frac{4\sqrt2}{9},\quad \sin\gamma=\frac{84\sqrt2}{121}.
+        \]
+        于是
+        \[
+        \cos\angle AOB=\cos(\beta-\gamma)=\cos\beta\cos\gamma+\sin\beta\sin\gamma
+        =\frac{833}{1089}.
+        \]
+        在$\triangle AOB$中,由余弦定理,
+        \[
+        AB^2=OA^2+OB^2-2OA\cdot OB\cos\angle AOB=\frac{512}{1089}
+        \]
+        因此
+        \[
+        OF=\sqrt{OA^2-\frac14 AB^2}=\frac{31}{33} \Rightarrow r_3=\frac12(1-OF)=\frac{1}{33}
+        \]
+    \end{solution}
+
+    \question 右图为月偏食的示意图,满月被地球的影锥遮蔽一部分。假设满月和地球影锥截面都是正圆,在图中标记圆弧 $\wideparen{AP} = \wideparen{PB}$ 均为满月的圆周一部分,圆弧 $\wideparen{AQ} = \wideparen{QB}$ 均为地球影锥截圆的圆周一部分。若 $AB$ 与 $PQ$ 分别是满月圆半径的 $\sqrt{3}$ 与 $2-\sqrt{3}$ 倍,求 
+    \[
+    \frac{\text{月偏食亮面面积}}{\text{满月圆面积}}.
+    \]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\textwidth]{images/image36.png}
+    \end{figure}
+    \ifprintanswers 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image37.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设小圆(月亮)圆心为 $O_1$,半径$r = 1$ ,大圆(太阳)圆心为$O_2$,半径$R$,$C$为$O_1Q$ 与$AB$的交点,则
+        \[
+        BC = \frac{1}{2} AB = \frac{1}{2} \sqrt{3} \Rightarrow \angle CO_1B = 60^\circ,\angle O_1BC = 30^\circ
+        \]
+        又 $CQ = O_1P - PQ - O_1C = \sqrt{3} - \frac{3}{2}$,
+        \[
+        \tan \angle QBC = \frac{CQ}{BC} = 2 - \sqrt{3} \Rightarrow \angle QBC = 15^\circ,\angle CQB = 75^\circ
+        \]
+        由于 $O_2B = O_2Q = R$,因此
+        \[
+        \angle BO_2C = 180^\circ - 75^\circ \cdot 2 = 30^\circ \Rightarrow R = 2 BC = \sqrt{3}
+        \]
+        故弓形$AQB$面积为
+        \[
+        [\text{弓形}AQB] 
+        = [\text{扇形}AQBO_2]-[\triangle ABO_2] 
+        = \frac{1}{6} (\sqrt{3})^2 \pi - \frac{1}{2} (\sqrt{3})^2\sin 60^\circ
+        =\frac{\pi}{2} - \frac{3\sqrt{3}}{4}
+        \]
+        同理,
+        \[
+        [\text{弓形}APB]
+        = [\text{扇形}APBO_1]-[\triangle ABO_1] 
+        = \frac{1}{3} (1)^2 \pi - \frac{1}{2} (1)^2 \sin 120^\circ
+        =\frac{\pi}{3} - \frac{\sqrt{3}}{4}
+        \]
+        故
+        \[
+        \frac{\text{月偏食亮面面积}}{\text{满月圆面积}} = \frac{\left( \frac{\pi}{3} - \frac{\sqrt{3}}{4} \right) - \left( \frac{\pi}{2} - \frac{3\sqrt{3}}{4} \right)}{\pi(1)^2}=\frac{\sqrt{3}}{2\pi} - \frac{1}{6}
+        \]
+    \end{solution}
+
+    \question 某圆内接六边形 $ABCDEF$,其中 $AB=BC=CD=1,DE=EF=FA=2$,求此六边形的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image136.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设圆心为 $O$,半径为$r$,且
+        \[
+        \angle AOB = \angle BOC = \angle COD = b, \quad \angle DOE = \angle EOF = \angle FOA = a, 
+        \]
+        由圆周角和
+        \[
+        3a + 3b = 360^\circ \Rightarrow \angle EDC = a+b=120^\circ 
+        \]
+        在 $\triangle EDC$ 中,由余弦定理,
+        \[
+        EC^2 = 1^2 + 2^2 - 2\cdot 1 \cdot 2 \cdot \cos 120^\circ \Rightarrow EC = \sqrt{7}
+        \]
+        在 $\triangle EOC$ 中,由正弦定理,
+        \[
+        \frac{\sqrt{7}}{\sin 120^\circ} = 2r \Rightarrow r = \sqrt{\frac{7}{3}}
+        \]
+        在 $\triangle EOD$ 及$\triangle DOC$中,由余弦定理,
+        \[
+        \cos a = \frac{r^2 + r^2 - 1^2}{2 r^2} = \frac{11}{14}, \cos b = \frac{r^2 + r^2 - 2^2}{2 r^2} = \frac{1}{7} \Rightarrow \sin a = \frac{5\sqrt{3}}{14}, \ \sin b = \frac{4\sqrt{3}}{7}.
+        \]
+        故六边形$ABCDEF$面积为
+        \[
+        [ABCDEF] = \frac{3}{2} r^2 \sin a + \frac{3}{2} r^2 \sin b = \frac{7}{2} \left( \frac{5\sqrt{3}}{14} + \frac{4\sqrt{3}}{7} \right) = \frac{13\sqrt{3}}{4}
+        \]
+    \end{solution}
+
+    \question 边长为 $1$ 的正五边形内部,去掉同时与五个顶点距离都小于 $1$ 的点后,求剩余部分的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image132.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        如图,此题相当于求正五边形$ABCDE$扣除青色部分的面积,该部分由一个小正五边形和五个弓形组成,首先求小正五边形边长 $PQ$,易知
+        \[
+        \angle PAQ = \angle QAE + \angle PAB - \angle A = 60^\circ + 60^\circ - 108^\circ = 12^\circ, \angle QAB = 60^\circ - 12^\circ = 48^\circ.
+        \]
+        在 $\triangle APQ$ 中,由余弦定理,
+        \[
+        PQ^2 = 1^2+1^2-2 \cdot 1 \cdot 1 \cdot \cos 12^\circ = 2 - 2\cos 12^\circ
+        \]
+        弓形面积为
+        \[
+        [\text{弓形}]=[\text{扇形}APQ]-[\triangle APQ] = \frac{12}{360} \cdot 1^2 \cdot \pi \cdot-\frac{1}{2} \cdot 1^2 \cdot\sin 12^\circ=\frac{\pi}{30} - \frac{1}{2}\sin 12^\circ.
+        \]
+        小正五边形与五个弓形组成区域 $R$ 面积
+        \[
+        R = \frac{5}{4} (2 - 2\cos 12^\circ) \tan 54^\circ + 5\left(\frac{\pi}{30} - \frac{1}{2}\sin 12^\circ \right) 
+        \]
+        所以剩余部分面积为
+        \begin{align*}
+        [\text{剩余部分}] &= [ABCDE]-R \\
+        &= \frac{5}{4}\tan 54^\circ - \frac{5}{4} (2 - 2\cos 12^\circ) \tan 54^\circ - \frac{\pi}{6} + \frac{5}{2}\sin 12^\circ \\
+        &= \frac{5}{4} \tan 54^\circ (2\cos 12^\circ - 1) + \frac{5}{2}\sin 12^\circ - \frac{\pi}{6} \\
+        &={5\over 4}{\cos 36^\circ \over \sin 36^\circ}(2\cos 12^\circ-1)+{5\over 2}\sin 12^\circ -{\pi \over 6} \\
+        &={5\over 4} \times {2\cos 24^\circ-\cos 36^\circ \over \sin 36^\circ}-{\pi \over 6} \\
+        &= \frac{5\sqrt{3}}{4} - \frac{\pi}{6}
+        \end{align*}
+        其中
+        \[
+        \cos24^\circ=\cos60^\circ\cos36^\circ+\sin60^\circ\sin36^\circ
+        =\frac12\cos36^\circ+\frac{\sqrt3}{2}\sin36^\circ
+        \]
+    \end{solution}
+
+    \question 已知三角形 $ABC$ 的外心为 $O$,且 $\angle B$ 为钝角。延长$BC$与外接圆在点 $A$处的切线交于 $D$使得$AO = AD = 2$。$F$ 在 $BC$ 上满足 $AF \perp OD$且交于点 $E$。过点 $A,D,O$ 的圆与 $BC$ 的交于点$H$。已知 $FH = \dfrac{\sqrt{3}}{3}$,求 $\triangle OEF$ 的面积。
+    % 23. [6 pts] [7] Let $ABC$ be a triangle with circumcenter $O$ and $\angle B$ obtuse. Suppose the tangent to its circumcircle at $A$ intersects ray $CB$ at $D$, and that $AO=AD=2$. Suppose that $F$ lies on $BC$ with $AF \perp OD$, and let $E$ be the point where $AF$ meets $OD$. Let $H$ be the point where the circle passing through $ADO$ meets $BC$. What is the area of triangle $OEF$ if $FH=\frac{\sqrt{3}}{3}$?23. $\frac{1}{2}\sqrt{2}$. Let $J$ be the point where the extension of $AF$ meets circle $ADO$. Let $x = DF$ and $y = EF$. Power of a point using chords $DH$ and $AJ$ yields $x\frac{\sqrt{3}}{3}=(\sqrt{2}+y)(\sqrt{2}-y)$ while Pythagoras on triangle $DEF$ yields $x^{2}=y^{2}+2$. Combining, we get $x\frac{\sqrt{3}}{3}=2-(x^{2}-2)$ so $x^{2}+x\frac{\sqrt{3}}{3}-4=0$. The solution is $x=\sqrt{3}$ and $y=1$, so the area of the right triangle $OEF$ is $\frac{1}{2}\sqrt{2}\cdot1$.
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{images/image160.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+延长 $AF$ 与过点 $A,D,O$ 的圆交于点$J$,设 $x = DF,y = EF$。由幂点定理（$DH$ 与 $AJ$）有
+\[
+x \cdot \frac{\sqrt{3}}{3} = (\sqrt{2}+y)(\sqrt{2}-y) = 2 - y^2.
+\]
+由直角三角形 $DEF$ 得
+\[
+x^2 = y^2 + 2.
+\]
+联立得
+\[
+x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 4 = 0.
+\]
+解得 $x = \sqrt{3}$,$y = 1$。
+
+因此直角三角形 $OEF$ 的面积为
+\[
+\frac{1}{2} \cdot OE \cdot EF = \frac{1}{2} \cdot \sqrt{2} \cdot 1 = \frac{1}{2}\sqrt{2}.
+\]
+\textcolor{red}{$AE=\sqrt{2}$?怎样证明$\angle DAE = 45^\circ$?}
+\end{solution}
+%paste
+    \question
+在半径为 $1$ 的圆周上，按逆时针方向依次取点 $A, B, C, D$。已知线段 $AD$ 是直径，且满足 $AC = CD$，$AB = BC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image273.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 求 $\angle ACB$。
+    \begin{solution}
+        设圆心为 $O$。由于 $AD$ 是直径，且 $AC = CD$，根据圆的对称性，$\triangle ACD$ 是等腰直角三角形，其中 $\angle ACD = \frac{\pi}{2}$。
+        由弧长与圆周角的关系：
+        \[ \angle ACB = \angle ADB \text{ （同弧 $AB$ 所对圆周角）} \]
+        又由于 $\angle AOB$ 是圆心角，$\angle ADB = \frac{1}{2} \angle AOB$。
+        在图中，由于 $AC=CD$ 且 $AB=BC$，可推导得 $\angle AOB = \frac{\pi}{4}$。
+        因此：
+        \[ \angle ACB = \angle ADB = \frac{1}{2} \cdot \frac{\pi}{4} = \frac{\pi}{8}  \]
+    \end{solution}
+
+    \part 求 $BC$ 的长度。
+    \begin{solution}
+        已知直径 $AD = 2$，在直角 $\triangle ACD$ 中，$AC = \sqrt{2}$。
+        在 $\triangle ABC$ 中，由于 $AB = BC$，设 $BC = AB = x$。
+        由圆内接四边形性质，$\angle ABC = \pi - \angle ADC = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$。
+        在 $\triangle ABC$ 中应用余弦定理：
+        \[ AC^2 = x^2 + x^2 - 2x^2 \cos \frac{3\pi}{4} \]
+        \[ (\sqrt{2})^2 = 2x^2 - 2x^2 \left( -\frac{\sqrt{2}}{2} \right) \quad \Rightarrow \quad 2 = (2 + \sqrt{2})x^2  \]
+        解得：
+        \[ x^2 = \frac{2}{2 + \sqrt{2}} = \frac{2(2 - \sqrt{2})}{4 - 2} = 2 - \sqrt{2}  \]
+        故 $BC = \sqrt{2 - \sqrt{2}}$。
+    \end{solution}
+
+    \part 设线段 $AC$ 与线段 $BD$ 的交点为 $E$，求三角形 $BCE$ 的面积。
+    \begin{solution}
+        首先计算 $\triangle ABC$ 的面积：
+        \[ S_{\triangle ABC} = \frac{1}{2} x^2 \sin \frac{3\pi}{4} = \frac{1}{2} (2 - \sqrt{2}) \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{2} - 1}{2}  \]
+        由于 $AB = BC$，在圆中可得 $\angle ADB = \angle BDC$，因此 $DE$ 是 $\angle ADC$ 的角平分线。
+        根据角平分线定理，在 $\triangle ADC$ 中：
+        \[ AE : EC = DA : DC = 2 : \sqrt{2} = \sqrt{2} : 1  \]
+        因此，$\triangle BCE$ 的面积与 $\triangle ABC$ 的面积之比为：
+        \[ S_{\triangle BCE} = \frac{EC}{AE + EC} S_{\triangle ABC} = \frac{1}{\sqrt{2} + 1} S_{\triangle ABC} = (\sqrt{2} - 1) S_{\triangle ABC}  \]
+        代入 $S_{\triangle ABC}$ 的值：
+        \[ S_{\triangle BCE} = (\sqrt{2} - 1) \cdot \frac{\sqrt{2} - 1}{2} = \frac{(\sqrt{2} - 1)^2}{2} = \frac{3 - 2\sqrt{2}}{2}  \]
+        答：$S_{\triangle BCE} = \frac{3 - 2\sqrt{2}}{2}$。
+    \end{solution}
+\end{parts}
+
+\question
+圆上的 5 个点 A, B, C, D, E 依逆时针方向排列，将圆周 5 等分。以这 5 个点为顶点的正五边形为 $R_1$。令 $\vec{AB} = \vec{a}$，$\vec{CD} = \vec{c}$，$\vec{a}$ 的大小为 $x$。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image289.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 令 $\vec{AC}$ 的大小为 $y$ 时，证明 $x^2 = y(y-x)$。
+    \begin{solution}
+        由于 5 个点 A, B, C, D, E 将圆周 5 等分，
+        $\angle ABE = \angle EBD = \angle DBC = \angle BAC = \angle BCA$。
+        由此，如右图所示，设对角线的交点为 F, G, H, I, J，则 $\triangle ABC$ 与 $\triangle AIB$ 相似，
+        $AB : AI = AC : AB \cdots (1)$
+        此外，由于 $\angle BAC + \angle ABE = \angle EBD + \angle DBC$，
+        $\angle CIB = \angle CBI$，因此 $|\vec{AB}| = x$，$|\vec{AC}| = y$，
+        \[
+        AI = AC - CI = AC - CB = y - x \cdots (2)
+        \]
+        由 (1)(2) 得 $x : (y-x) = y : x$，故 $x^2 = y(y-x) \cdots (3)$。
+    \end{solution}
+
+    \part 用 $\vec{a}$，$\vec{c}$ 表示 $\vec{BC}$。
+    \begin{solution}
+        由 (3) 得 $y^2 - xy - x^2 = 0$，故 $y = \frac{1+\sqrt{5}}{2}x \cdots (4)$。
+        又因为 $AD \parallel BC$，$AD = y$，$BC = x$，所以从 (4) 得 $\vec{AD} = \frac{y}{x} \vec{BC} = \frac{1+\sqrt{5}}{2} \vec{BC}$。
+        根据 $\vec{AD} = \vec{AB} + \vec{BC} + \vec{CD}$，得 $\frac{1+\sqrt{5}}{2} \vec{BC} = \vec{a} + \vec{BC} + \vec{c}$，
+        \[
+        \frac{-1+\sqrt{5}}{2} \vec{BC} = \vec{a} + \vec{c}
+        \]
+        \[
+        \vec{BC} = \frac{2}{-1+\sqrt{5}} (\vec{a} + \vec{c}) = \frac{1+\sqrt{5}}{2} (\vec{a} + \vec{c})
+        \]
+    \end{solution}
+
+    \part 以 $R_1$ 的对角线交点构成的 $R_1$ 内部的 5 个点为顶点的正五边形为 $R_2$。用 $x$ 表示 $R_2$ 的边长。
+    \begin{solution}
+        $R_2$ 的边长 $IJ$ 为 $IJ = AJ - AI = AC - CI - AI = y - x - (y - x)$ 是不对的，由图可知：
+        $IJ = AJ - AI = (AC - CJ) - AI = (y - x) - (y - x)$ 也不对。
+        正确应为：$IJ = AJ - AI = (y-x) - AI$。
+        根据解答：$IJ = AJ - AI = x - (y-x) = 2x - y$。由 (4) 得，
+        \[
+        IJ = 2x - \frac{1+\sqrt{5}}{2}x = \frac{3-\sqrt{5}}{2}x
+        \]
+    \end{solution}
+
+    \part 对于 $n=1, 2, 3, \cdots$，以 $R_n$ 的对角线交点构成的 $R_n$ 内部的 5 个点为顶点的正五边形为 $R_{n+1}$。令 $R_n$ 的面积为 $S_n$，求 $\lim_{n \to \infty} \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k$。
+    \begin{solution}
+        相似图形 $R_{n+1}$ 与 $R_n$ 的面积比由 (3) 得为 $\left(\frac{3-\sqrt{5}}{2}\right)^2 = \frac{7-3\sqrt{5}}{2}$，
+        \[
+        S_{n+1} = \frac{7-3\sqrt{5}}{2} S_n
+        \]
+        此时，
+        \[
+        \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k = \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_1 \left(\frac{7-3\sqrt{5}}{2}\right)^{k-1} = \sum_{k=1}^{n} \left(-\frac{7-3\sqrt{5}}{2}\right)^{k-1}
+        \]
+        \[
+        \lim_{n \to \infty} \frac{1}{S_1} \sum_{k=1}^{n} (-1)^{k+1} S_k = \frac{1}{1 + \frac{7-3\sqrt{5}}{2}} = \frac{2}{9-3\sqrt{5}} = \frac{3+\sqrt{5}}{6}
+        \]
+    \end{solution}
+\end{parts}
+
+\question
+对于外切于半径为 1 的圆的 $\triangle ABC$，设 $\angle CAB = 2x, \angle ABC = 2y, \angle BCA = 2z$。设 $\triangle ABC$ 的面积为 $S$，回答下列问题。
+\ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image295.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 证明 $S = \frac{1}{\tan x} + \frac{1}{\tan y} + \frac{1}{\tan z}$ 成立。
+    \begin{solution}
+        设 $\triangle ABC$ 半径为 1 的内切圆与边 $BC, CA, AB$ 的切点分别为 $D, E, F$。
+        由于 $\angle CAB = 2x, \angle ABC = 2y, \angle BCA = 2z$，可得：
+        \[
+        AF = AE = \frac{1}{\tan x}, \quad BD = BF = \frac{1}{\tan y}
+        \]
+        \[
+        CE = CD = \frac{1}{\tan z}
+        \]
+        设 $\triangle ABC$ 的内心为 $I$，其面积 $S$ 为：
+        \begin{align*}
+        S &= \triangle ABI + \triangle BCI + \triangle CAI \\
+        &= \frac{1}{2} \left( \frac{1}{\tan x} + \frac{1}{\tan y} \right) \cdot 1 + \frac{1}{2} \left( \frac{1}{\tan y} + \frac{1}{\tan z} \right) \cdot 1 + \frac{1}{2} \left( \frac{1}{\tan z} + \frac{1}{\tan x} \right) \cdot 1 \\
+        &= \frac{1}{\tan x} + \frac{1}{\tan y} + \frac{1}{\tan z}
+        \end{align*}
+    \end{solution}
+
+    \part 当 $z = \frac{\pi}{6}$ 时，求 $S$ 的最小值以及此时的 $x, y$。
+    \begin{solution}
+        当 $z = \frac{\pi}{6}$ 时，$x + y = \frac{\pi}{2} - \frac{\pi}{6} = \frac{\pi}{3}$。由 (1) 可知：
+        \[
+        S = \frac{1}{\tan x} + \frac{1}{\tan \left( \frac{\pi}{3} - x \right)} + \frac{1}{\tan \frac{\pi}{6}} = \frac{1}{\tan x} + \frac{1 + \sqrt{3} \tan x}{\sqrt{3} - \tan x} + \sqrt{3}
+        \]
+        设 $t = \tan x$，由于 $0 < x < \frac{\pi}{3}$，故 $0 < t < \sqrt{3}$。
+        \[
+        S = \frac{1}{t} + \frac{1 + \sqrt{3}t}{\sqrt{3} - t} + \sqrt{3} = \frac{1}{t} - \sqrt{3} + \frac{4}{\sqrt{3} - t} + \sqrt{3} = \frac{1}{t} + \frac{4}{\sqrt{3} - t}
+        \]
+        \[
+        S' = -\frac{1}{t^2} + \frac{4}{(\sqrt{3} - t)^2} = \frac{3t^2 + 2\sqrt{3}t - 3}{t^2 (\sqrt{3} - t)^2} = \frac{(3t - \sqrt{3})(t + \sqrt{3})}{t^2 (\sqrt{3} - t)^2}
+        \]
+        $S$ 的增减表如下：
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $t$ & 0 & $\cdots$ & $\frac{\sqrt{3}}{3}$ & $\cdots$ & $\sqrt{3}$ \\ \hline
+        $S'$ & & $-$ & 0 & $+$ & \\ \hline
+        $S$ & & $\searrow$ & $3\sqrt{3}$ & $\nearrow$ & \\ \hline
+        \end{tabular}
+        \end{center}
+        当 $t = \frac{\sqrt{3}}{3}$ 时，取最小值 $3\sqrt{3}$。此时由 $\tan x = \frac{\sqrt{3}}{3}$ 得 $x = \frac{\pi}{6}$，
+        $y = \frac{\pi}{3} - \frac{\pi}{6} = \frac{\pi}{6}$。
+    \end{solution}
+\end{parts}
+\end{questions}
+
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{五心、平面几何著名定理}{五心、平面几何著名定理} \label{五心、平面几何著名定理}
+  }
+\end{center}
+\separator
+\begin{center}
+    关键词: 三角形的五心(重心、中心、内心、垂心、旁心)、中线定理、角平分线定理、斯德瓦特定理、塞瓦定理、梅涅劳斯定理、托勒密定理
+\end{center}
+\vspace{0.5pt}
+\begin{questions}
+    \question
+4. (SERBIA/2009) 已知三角形 $ABC$ 的边不相等。$\angle BAC$ 和 $\angle ABC$ 的角平分线分别与它们的对边相交于点 $D$ 和 $E$。设 $\angle BAC = \alpha, \angle ABC = \beta$。证明直线 $DE$ 和 $AB$ 所成角不大于 $\frac{\left|\alpha - \beta\right|}{3}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image399.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $BC = a, CA = b, AB = c$。我们可以假设 $\alpha > \beta$，如所给图所示。
+假设射线 $DE$ 和 $BA$ 相交于 $F$，所成角为 $\varphi$。那么角平分线定理给出
+\[
+\frac{BD}{DC} = \frac{c}{b} \text{ 且 } \frac{CE}{EA} = \frac{a}{c} \Rightarrow BD = \frac{ac}{b + c}
+\]
+\[
+DC = \frac{ab}{b + c}, CE = \frac{ab}{a + c}, AE = \frac{bc}{a + c}
+\]
+对 $\triangle ABC$ 和截线 $FD$ 应用梅涅劳斯定理产生
+\[
+\frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = 1
+\]
+所以
+\[
+\frac{AF}{AF + c} = \frac{b}{a} \Rightarrow AF = \frac{bc}{a - b}, FB = \frac{ac}{a - b}
+\]
+对 $\triangle AEF$ 和 $\triangle FDB$ 应用正弦定理给出
+\[
+\frac{\sin\left(\alpha - \varphi\right)}{\sin \varphi} = \frac{\sin \angle AEF}{\sin \angle AFE} = \frac{AF}{AE} = \frac{bc / \left(a - b\right)}{bc / \left(a + c\right)} = \frac{a + c}{a - b}
+\]
+\[
+\frac{\sin\left(\beta + \varphi\right)}{\sin \varphi} = \frac{\sin \angle FDB}{\sin \angle BFD} = \frac{FB}{BD} = \frac{ac / \left(a - b\right)}{ac / \left(b + c\right)} = \frac{b + c}{a - b}
+\]
+因此
+\[
+\frac{\sin\left(\alpha - \varphi\right) - \sin\left(\beta + \varphi\right)}{\sin \varphi} = \frac{a + c}{a - b} - \frac{b + c}{a - b} = 1
+\]
+所以
+\begin{align*}
+\sin \varphi &= \sin\left(\alpha - \varphi\right) - \sin\left(\beta + \varphi\right) = 2 \sin \frac{\alpha - \beta - 2\varphi}{2} \cdot \cos \frac{\alpha + \beta}{2} \\
+&< 2 \sin \frac{\alpha - \beta - 2\varphi}{2} \cdot \cos \frac{\alpha - \beta - 2\varphi}{2} = \sin\left(\alpha - \beta - 2\varphi\right)
+\end{align*}
+因此 $\varphi < \alpha - \beta - 2\varphi$，即 $\varphi < \frac{\alpha - \beta}{3}$。
+\end{solution}
+\end{questions}
+
+\pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{几何不等式}{几何不等式} \label{几何不等式}
+  }
+\end{center}
+\separator
+\begin{center}
+    关键词: 三角不等式、
+\end{center}
+\vspace{0.5pt}
+\begin{questions}
+    \question 8. (CMC/2009) 在四面体 $PABC$ 中，$\angle APB = \angle BPC = \angle CPA = 90^\circ$，且所有棱长的和为 $S$，求此四面体体积的最大值。
+
+\begin{solution}
+设棱 $PA, PB, PC$ 的长度分别为 $a, b, c$。则四面体的体积为 $V = \frac{1}{6}abc$。由假设得
+\[
+S = a + b + c + \sqrt{a^2 + b^2} + \sqrt{b^2 + c^2} + \sqrt{c^2 + a^2}
+\]
+。由均值不等式得
+\[
+a + b + c \ge 3(abc)^{\frac{1}{3}}
+\]
+且
+\[
+\sqrt{a^2 + b^2} + \sqrt{b^2 + c^2} + \sqrt{c^2 + a^2} \ge \sqrt{2ab} + \sqrt{2bc} + \sqrt{2ca} \ge 3\sqrt{2}(abc)^{\frac{1}{3}}
+\]
+。等号当且仅当 $a = b = c$ 时成立。将上述两式代入 $S$ 的表达式，得到
+\[
+S \ge 3(1 + \sqrt{2})(abc)^{\frac{1}{3}}
+\]
+。因此
+\[
+V = \frac{1}{6}abc \le \frac{S^3}{162(1 + \sqrt{2})^3}
+\]
+。等号当且仅当 $a = b = c$ 时成立。因此
+\[
+V_{\max} = \frac{S^3}{162(1 + \sqrt{2})^3}
+\]
+。
+\end{solution}
+
+\question (RUSMO/2004) 设 $a, b, c$ 为正数，满足 $a + b + c = \frac{\pi}{2}$，证明：
+\[
+\cos a + \cos b + \cos c > \sin a + \sin b + \sin c.
+\]
+\begin{solution}
+因为 $a + b < \frac{\pi}{2} \Rightarrow a < \frac{\pi}{2} - b$，且 $\cos \theta$ 在第一象限是减函数，所以 $\cos a > \cos \left( \frac{\pi}{2} - b \right) = \sin b$。
+同理可得 $\cos b > \sin c$ 和 $\cos c > \sin a$。
+将这三个不等式相加，即可直接得出结论。
+\end{solution}
+
+\question (CMC/2010) 已知 $\triangle ABC$ 的三边长各不相同，$\angle A, \angle B, \angle C$ 的角平分线分别与 $BC, CA, AB$ 的垂直平分线相交于 $D, E, F$。证明 $\triangle ABC$ 的面积小于 $\triangle DEF$ 的面积。
+\begin{solution}
+由题意易证 $A, B, C, D, E, F$ 共圆。我们可以假设 $\triangle ABC$ 的外接圆半径为 $1$。
+因为
+\[
+[ABC] = \frac{abc}{4R} = 2 \sin A \sin B \sin C = \frac{1}{2} (\sin 2A + \sin 2B + \sin 2C)
+\]
+且
+\[
+[DEF] = \frac{1}{2} (\sin(A + B) + \sin(B + C) + \sin(C + A)) = \frac{1}{2} (\sin A + \sin B + \sin C),
+\]
+由
+\begin{align*}
+&\sin 2A + \sin 2B + \sin 2C \\
+&= \frac{1}{2} (\sin 2A + \sin 2B) + \frac{1}{2} (\sin 2B + \sin 2C) + \frac{1}{2} (\sin 2C + \sin 2A) \\
+&= \sin(A + B) \cos(A - B) + \sin(B + C) \cos(B - C) + \sin(C + A) \cos(C - A) \\
+&< \sin(A + B) + \sin(B + C) + \sin(C + A) = \sin A + \sin B + \sin C,
+\end{align*}
+可得 $[ABC] < [DEF]$。
+\end{solution}
+
+
+\question (INDIA/2007) $\triangle ABC$ 的三边长为 $a, b, c$，对应的角平分线长分别为 $w_a, w_b, w_c$。如果 $\triangle ABC$ 的外接圆半径为 $R$，证明：
+\[
+\frac{a^2 + b^2}{w_c} + \frac{b^2 + c^2}{w_a} + \frac{c^2 + a^2}{w_b} > 4R.
+\]
+\begin{solution}
+根据斯特瓦尔特定理（Stewart's theorem），
+\[
+w_a = \sqrt{\frac{bc}{(b + c)^2} [(b + c)^2 - a^2]} = \frac{bc}{b + c} \sqrt{2(1 + \cos A)} = \frac{2bc}{b + c} \cos \frac{A}{2}
+\]
+同理，
+\[
+w_b = \frac{2ca}{c + a} \cos \frac{B}{2}, \quad w_c = \frac{2ab}{a + b} \cos \frac{C}{2}.
+\]
+因此
+\begin{align*}
+&\frac{a^2 + b^2}{w_c} + \frac{b^2 + c^2}{w_a} + \frac{c^2 + a^2}{w_b} > 4R \\
+&\Leftrightarrow \frac{(b^2 + c^2)(b + c)}{4Rbc \cos \frac{A}{2}} + \frac{(c^2 + a^2)(c + a)}{4Rca \cos \frac{B}{2}} + \frac{(a^2 + b^2)(a + b)}{4Rab \cos \frac{C}{2}} > 2 \\
+&\Leftrightarrow \frac{(b^2 + c^2)(b + c) \sin \frac{A}{2}}{2abc} + \frac{(c^2 + a^2)(c + a) \sin \frac{B}{2}}{2abc} + \frac{(a^2 + b^2)(a + b) \sin \frac{C}{2}}{2abc} > 1.
+\end{align*}
+由于 $b^2 + c^2 \ge 2bc$ 且 $b + c > a$ 以及类似的各个不等式，只需证明
+\[
+\sin \frac{A}{2} + \sin \frac{B}{2} + \sin \frac{C}{2} > 1.
+\]
+因为 $\frac{\pi - A}{2} + \frac{\pi - B}{2} + \frac{\pi - C}{2} = \pi$，所以
+\[
+\cos \frac{\pi - A}{2} + \cos \frac{\pi - B}{2} + \cos \frac{\pi - C}{2} = 1 + 4 \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2} > 1,
+\]
+即
+\[
+\sin \frac{A}{2} + \sin \frac{B}{2} + \sin \frac{C}{2} = \cos \frac{\pi - A}{2} + \cos \frac{\pi - B}{2} + \cos \frac{\pi - C}{2} > 1.
+\]
+\end{solution}
+
+\question 10. (IMO/1976) 在一个面积为 $64 \text{ cm}^2$ 的凸四边形中，一条对角线与一对对边长度之和为 $16\sqrt{2} \text{ cm}$。假设另一条对角线的长度为 $x \text{ cm}$。求 $x$ 的值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image401.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如上图 (1) 所示，设 $ABCD$ 为凸四边形，$AB = a, CD = b, BD = c$，其中 $a + b + c = 16\sqrt{2} \text{ cm}$，且 $ABCD$ 的面积为 $64 \text{ cm}^2$。由此
+\[
+64 = \frac{1}{2}ac \sin \angle ABD + \frac{1}{2}bc \sin \angle CDB \le \frac{1}{2}(a + b)c \le \frac{1}{8}(a + b + c)^2 = 64
+\]
+。两个等号均成立，因此 $a + b = c = 8\sqrt{2}$ 且 $AB \perp BD, CD \perp BD$。如上图 (2) 所示，因此
+\[
+AC = \sqrt{(a + b)^2 + c^2} = \sqrt{2(8\sqrt{2})^2} = 16
+\]
+。故 $x = 16$。
+\end{solution}
+    \question Example 8. (CMC/2009) 已知 $\triangle ABC$ 的三边长分别为 $3, 4, 5$。$P$ 是 $\triangle ABC$ 内部的一个动点（不在边界上）。求 $P$ 到三边 $AB, BC, CA$ 的距离之积的最大值。
+
+\begin{solution}
+令 $a = BC = 3, b = CA = 4, c = AB = 5$，则 $\triangle ABC$ 是一个 $\angle C = 90^\circ$ 的直角三角形。用 $h_a, h_b, h_c$ 分别表示 $P$ 到 $BC, CA, AB$ 的距离，则
+\[
+ah_a + bh_b + ch_c = 2[ABC] = 12
+\]
+。由此，由均值不等式得
+\[
+h_a h_b h_c = \frac{(ah_a)(bh_b)(ch_c)}{abc} \le \frac{1}{abc} \left( \frac{ah_a + bh_b + ch_c}{3} \right)^3 = \frac{4^3}{60} = \frac{16}{15}
+\]
+。等号在 $ah_a = bh_b = ch_c = 4$ 时成立，即 $[PAB] = [PBC] = [PCA]$，这意味着 $P$ 是 $\triangle ABC$ 的重心。因此，$h_a h_b h_c$ 的最大值是 $\frac{16}{15}$。
+\end{solution}
+
+    \question (CROATIA/2004) 证明不等式
+\[
+\frac{\cos A}{a^3} + \frac{\cos B}{b^3} + \frac{\cos C}{c^3} \ge \frac{3}{2abc}
+\]
+对于任何三角形 $ABC$ 均成立，其中 $a, b, c$ 是三边长度，$\angle A, \angle B, \angle C$ 分别是它们的对角。
+\begin{solution}
+余弦定理和不等式 $x + \frac{1}{x} \ge 2$ ($x > 0$) 给出
+\[
+\frac{\cos A}{a^3} + \frac{\cos B}{b^3} + \frac{\cos C}{c^3} = \frac{b^2 + c^2 - a^2}{2a^3bc} + \frac{a^2 + c^2 - b^2}{2b^3ca} + \frac{a^2 + b^2 - c^2}{2c^3ab}
+\]
+\[
+= \frac{1}{2abc} \left\{\left[\left(\frac{a}{b}\right)^2 + \left(\frac{b}{a}\right)^2\right] + \left[\left(\frac{b}{c}\right)^2 + \left(\frac{c}{b}\right)^2\right] + \left[\left(\frac{c}{a}\right)^2 + \left(\frac{a}{c}\right)^2\right] - 3\right\}
+\]
+\[
+\ge \frac{1}{2abc} (2 + 2 + 2 - 3) = \frac{3}{2abc}
+\]
+\end{solution}
+
+\question
+3. (CMC/2009) 圆内接四边形 $ABCD$ 的一条对角线 $AC$ 将内角 $A$ 和 $C$ 分成四个角 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$，如图所示。证明
+\[
+\sin\left(\alpha_1 + \alpha_2\right) \sin\left(\alpha_2 + \alpha_3\right) \sin\left(\alpha_3 + \alpha_4\right) \sin\left(\alpha_4 + \alpha_1\right) \ge 4 \sin \alpha_1 \sin \alpha_2 \sin \alpha_3 \sin \alpha_4
+\]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image398.png}
+    \end{figure}
+\begin{solution}
+设 $R$ 为四边形的外接圆半径。正弦定理给出
+\[
+AC = 2R \sin\left(\alpha_4 + \alpha_1\right) = 2R \sin\left(\alpha_2 + \alpha_3\right)
+\]
+\[
+BD = 2R \sin\left(\alpha_1 + \alpha_2\right) = 2R \sin\left(\alpha_3 + \alpha_4\right)
+\]
+\[
+AB = 2R \sin \alpha_3, BC = 2R \sin \alpha_2
+\]
+\[
+CD = 2R \sin \alpha_1, DA = 2R \sin \alpha_4
+\]
+将它们代入待证的不等式，它变为
+\[
+AC^2 \cdot BD^2 \ge 4AB \cdot BC \cdot CD \cdot DA
+\]
+对 $ABCD$ 应用托勒密定理给出
+\[
+AC \cdot BD = AB \cdot CD + BC \cdot AD
+\]
+因此 $AM-GM$ 不等式产生
+\[
+AC^2 \cdot BD^2 = \left(AB \cdot CD + BC \cdot AD\right)^2 \ge 4AB \cdot BC \cdot CD \cdot DA
+\]
+得证。
+\end{solution}
+
+\end{questions}
+
 \pagebreak
 
 \begin{center}
