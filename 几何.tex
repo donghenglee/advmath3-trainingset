@@ -9146,6 +9146,1094 @@ x \cdot \frac{\sqrt{3}}{3} = 2 - (x^2 - 2) \implies x^2 + x\frac{\sqrt{3}}{3} - 
 \]
 \textcolor{red}{$AE=\sqrt{2}$?怎样证明$\angle DAE = 45^\circ$?}
 \end{solution}
+
+\question (SSSMO/2005) 如图所示, $P, Q$ 和 $R$ 是圆心为 $O$ 的圆上的三个点。直线 $PO$ 和 $QR$ 延长后相交于点 $S$。假设 $RS = OP$, 且 $\angle PSQ = 12^\circ$, $\angle POQ = x^\circ$。求 $x$ 的值。
+(A) 36; (B) 42; (C) 48; (D) 54; (E) 60。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image403.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $PR, OR$。由于 $OR = RS$, 意味着 $\angle SOR = \angle PSR = 12^\circ$, 因此
+\[
+\angle SPR = 6^\circ
+\]
+由于 $\frac{x}{2} = \angle PRQ = \angle SPR + \angle PSR = 18^\circ$, 所以 $x = 36$, 答案是 (A)。
+\end{solution}
+
+\question 设 $\triangle ABC$ 为圆内接等边三角形, 且 $M$ 为弧 $BC$ 上的一点。证明 $MA = MB + MC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image404.png}
+    \end{figure}
+    \fi
+
+\begin{solution}
+显然 $MA > CM$。在 $AM$ 上取点 $D$ 使得 $AD = CM$。足以证明 $MB = MD$。
+由于 $AB = BC, AD = CM$ 且 $\angle BAM = \angle BCM$,
+\[
+\therefore \triangle ABD \cong \triangle CBM
+\]
+因此, $BM = BD$ 且 $\angle ABD = \angle CBM$。对于 $\triangle BMD$, $\angle DBM = \angle ABC = 60^\circ$, 因此, $\triangle BMD$ 是等边三角形, 所以 $MB = MD$。
+\end{solution}
+
+\question (SSSMO/2009) 设 $ABCD$ 为圆内接四边形, 直径为 $AC$, 且 $E$ 是从 $D$ 到 $AB$ 的垂足, 如图所示。如果 $AD = DC$ 且四边形 $ABCD$ 的面积为 $24 \text{ cm}^2$, 求 $DE$ 的长度 (以 cm 为单位)。
+(A) $3\sqrt{2}$; (B) $2\sqrt{6}$; (C) $2\sqrt{7}$; (D) $4\sqrt{2}$; (E) 6。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image405.png}
+    \end{figure}
+    \fi
+
+\begin{solution}
+设 $r$ 为圆的半径, $\angle CAB = \theta$。连接 $DB$。那么
+\begin{align*}
+[ABCD] &= [DAB] + [DCB] = \frac{1}{2} AD \cdot AB \sin \angle DAB + \frac{1}{2} CD \cdot CB \sin \angle BCD \\
+24 &= \frac{1}{2} \sqrt{2}r \cdot 2r \sin(90^\circ - \theta) \cdot \sin(45^\circ + \theta) + \frac{1}{2} \sqrt{2}r \cdot 2r \sin \theta \cdot \sin(135^\circ - \theta) \\
+&= r^2 [\cos \theta (\sin \theta + \cos \theta) + \sin \theta (\sin \theta + \cos \theta)] \\
+&= r^2 (\sin \theta + \cos \theta)^2 = [\sqrt{2}r \cdot \sin(45^\circ + \theta)]^2 \\
+&= DE^2
+\end{align*}
+$\therefore DE = \sqrt{24} = 2\sqrt{6}$, 答案是 (B)。
+\end{solution}
+
+\question (CHINA/2002) 在圆 $O$ 中, 半径 $r = 5 \text{ cm}$, $AB$ 和 $CD$ 是两条平行弦, 且 $AB = 8 \text{ cm}, CD = 6 \text{ cm}$。求弦 $AC$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image406.png}
+    \end{figure}
+    \fi
+
+\begin{solution}
+如上图 (1) 和 (2) 所示, 共有四种可能的情况。
+在图 (1) 中, $AC$ 较长的长度为
+\[
+AC = \sqrt{(4 - 3)^2 + (4 + 3)^2} = \sqrt{50} = 5\sqrt{2}
+\]
+较短的长度为
+\[
+AC = \sqrt{(4 - 3)^2 + 1^2} = \sqrt{2}
+\]
+类似地, 如图 (2) 所示, $AC$ 较长的长度为
+\[
+AC = \sqrt{(4 + 3)^2 + (4 + 3)^2} = 7\sqrt{2}
+\]
+较短的长度为
+\[
+AC = \sqrt{(4 + 3)^2 + 1^2} = 5\sqrt{2}
+\]
+因此, 弦 $AC$ 的长度可能是 $\sqrt{2}, 5\sqrt{2}$ 或 $7\sqrt{2}$。
+\end{solution}
+
+\question (CHINA/2005) 已知 $\triangle ABC$ 内接于圆 $O$, 使得直径 $CD$ 垂直于 $AB$ 于 $E$。弦 $BF$ 分别与 $CD$ 和 $AC$ 相交于 $M$ 和 $N$, 且 $BF = AC$。连接 $AD, AM$。证明：
+(i) $\triangle ACM \cong \triangle BCM$;
+(ii) $AD \cdot BE = DE \cdot BC$;
+(iii) $BM^2 = MN \cdot MF$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image407.png}
+    \end{figure}
+    \fi
+
+\begin{solution}
+(i) 由于 $CD$ 是弦 $AB$ 的垂直平分线, 所以 $AM = BM, AC = BC$, 且 $CM$ 是公共边, 因此 $\triangle ACM \cong \triangle BCM$ (S.S.S.)。
+(ii) $AD \cdot BE = DE \cdot BC \iff \frac{BE}{DE} = \frac{BC}{AD}$。
+由 $\angle ADE = \angle ADC = \angle CBA = \angle CBE$ 且 $\angle DAE = \angle DAB = \angle D = \angle BCE$, 可得 $\triangle DAE \sim \triangle BCE$, 所以 $\frac{BE}{DE} = \frac{BC}{AD}$。
+(iii) 连接 $AF$。$BF = AC \Rightarrow \widehat{BAF} = \widehat{AFC}$, 所以 $\widehat{AB} = \widehat{FC}$, 这意味着 $\angle CBF = \angle AFB$。由于 $\triangle ACM \cong \triangle BCM$, $\angle AFM = \angle AFB = \angle CBF = \angle CBM = \angle CAM = \angle NAM$, 因此 $\triangle MAN \sim \triangle MFA$, 所以 $\frac{MN}{MA} = \frac{MA}{MF}$, 即 $MA^2 = MN \cdot MF$, 或 $BM^2 = MN \cdot MF$ (因为 $BM = AM$)。
+\end{solution}
+
+\question (CHNMOL/2004) 四边形 $ABCD$ 的外接圆 $O$ 半径为 2。$AC$ 和 $BD$ 相交于 $E$, 使得 $AE = EC$。已知 $AB = \sqrt{2}AE, BD = 2\sqrt{3}$, 求 $ABCD$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image408.png}
+    \end{figure}
+    \fi
+\begin{solution}
+$AE = EC$ 且 $AB = \sqrt{2}AE$ 给出 $AB^2 = 2AE^2 = AE \cdot AC$, 所以 $\frac{AB}{AC} = \frac{AE}{AB}$。由于 $\angle EAB = \angle BAC$, 可得 $\triangle ABE \sim \triangle ACB$, 从而 $\angle ABE = \angle ACB = \angle ADB$, $\therefore AB = AD$。
+因此 $A$ 平分弧 $BAD$, 所以 $OA \perp BD$。设 $H$ 为 $AO$ 和 $BD$ 的交点, 则 $OH \perp BH$ 且
+\[
+OH = \sqrt{2^2 - (\sqrt{3})^2} = 1, AH = OA - OH = 1 \Rightarrow [ABD] = \frac{1}{2} \cdot 2\sqrt{3} \cdot 1 = \sqrt{3}
+\]
+由于 $AE = CE \Rightarrow [BCE] = [ABE], [CDE] = [ADE] \Rightarrow [CBD] = [ABD]$, 得到
+\[
+[ABCD] = 2[ABD] = 2\sqrt{3}
+\]
+\end{solution}
+
+\question (SSSMO/2010) 如下图所示，$AB$ 和 $CD$ 是圆心为 $O$、半径为 $r$ cm 的圆的两条平行弦。已知 $AB = 46$ cm，$CD = 18$ cm，且 $\angle AOB = 3\angle COD$。求 $r$ 的值。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image409.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image410.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $M$ 和 $N$ 分别为 $AB$ 和 $CD$ 的中点。则 $O, M, N$ 共线，且直线 $ON$ 是 $AB$ 和 $CD$ 的垂直平分线。
+设 $\angle CON = x$，则 $\angle AON = 3x$ 且
+\[
+\frac{23}{9} = \frac{AM}{CN} = \frac{r \sin 3x}{r \sin x} = 3 - 4 \sin^2 x
+\]
+\[
+\Rightarrow \sin^2 x = \frac{1}{4} \left( 3 - \frac{23}{9} \right) = \frac{1}{9}
+\]
+\[
+\Rightarrow \sin x = \frac{1}{3}
+\]
+因此
+\[
+r = \frac{CN}{\sin x} = 27
+\]
+\end{solution}
+
+\question (SMO/2003) 设 $ABC$ 为圆内接正三角形，$P$ 是劣弧 $BC$ 上的一点。假设 $AP$ 与 $BC$ 交于点 $D$，已知 $PB = 21$ 且 $PC = 28$。求 $PD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image411.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如下图所示，$\angle BAP = \angle BCP$ 且 $\angle ABC = \angle APC$ 意味着 $\triangle ABD \sim \triangle CPD$ (A.A.A.)，
+\[
+\therefore \frac{PD}{BD} = \frac{CP}{AB}
+\]
+由于 $AB = AC \Rightarrow \angle BPA = \angle CPA$。
+根据角平分线定理，
+\[
+\frac{BD}{CD} = \frac{BP}{CP} = \frac{21}{28} = \frac{3}{4}
+\]
+因此
+\[
+PD = BD \cdot \frac{CP}{AB} = CP \cdot \frac{BD}{AB} = CP \cdot \frac{BD}{BC} = 28 \cdot \frac{3}{7} = 12
+\]
+\end{solution}
+
+\question (CHINA/2004) $\odot O$ 是半径为 $1$ 的圆，点 $P$ 在圆上。如果 $A$ 和 $B$ 在 $\odot O$ 上使得 $\angle APB = \angle AOB$，求弦 $AB$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image412.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如图所示，已知条件意味着
+\[
+\widehat{APB} = \angle APB = \frac{1}{2} \widehat{ADB}
+\]
+其中 $D$ 和 $P$ 在 $AB$ 的异侧，因此
+\[
+\widehat{APB} = \frac{1}{3} \cdot 360^\circ = 120^\circ
+\]
+\[
+\angle AOB = \widehat{APB} = 120^\circ
+\]
+设 $OC \perp AB$ 于 $C$，则 $AC = CB$，所以
+\[
+AB = 2AC = 2 \sin 60^\circ = \sqrt{3}
+\]
+\end{solution}
+
+\question (GERMANY/2005) 设 $A, B, C$ 是圆 $\odot O$ 上的三个不同点。分别过 $B, C$ 作直线 $h$ 和 $g$，使得 $h \perp BC$ 于 $B$，$g \perp BC$ 于 $C$。已知 $AB$ 的垂直平分线与 $h$ 交于 $F$，$AC$ 的垂直平分线与 $g$ 交于 $G$。证明当固定 $B$ 和 $C$ 时，$BF \cdot CG$ 的值与 $A$ 的选取无关。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image413.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如下图所示，设 $D, E$ 分别为 $AB$ 和 $AC$ 的中点，则 $FD \perp AB$ 于 $D$，$GE \perp AC$ 于 $E$。因此
+\[
+BF = \frac{BD}{\sin \angle BFD} = \frac{BD}{\sin \angle ABC} = \frac{AB}{2 \sin \angle ABC}
+\]
+同理，$CG = \frac{AC}{2 \sin \angle ACB}$。于是，
+\begin{align*}
+BF \cdot CG &= \frac{AB \cdot AC}{4 \sin \angle ABC \cdot \sin \angle ACB} \\
+&= \frac{4R^2 \sin \angle ACB \cdot \sin \angle ABC}{4 \sin \angle ABC \cdot \sin \angle ACB} = R^2
+\end{align*}
+其中 $R$ 是圆的半径。
+\end{solution}
+
+\question (INDIA/2006) 在圆内接四边形 $ABCD$ 中，$AB = a, BC = b, CD = c$，$\angle ABC = 120^\circ, \angle ABD = 30^\circ$。证明：
+(i) $c \ge a + b$；
+(ii) $\left| \sqrt{c + a} - \sqrt{c + b} \right| = \sqrt{c - a - b}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image414.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) $\angle ABC = 120^\circ$ 且 $\angle ABD = 30^\circ$ 给出 $\angle DBC = 90^\circ$，因此 $DC$ 通过圆心 $O$。连接 $OA$。则 $\angle DCA = \angle ABD = 30^\circ$，且 $OA = OC$ 意味着
+\[
+AD = AO = DO = \frac{c}{2}
+\]
+设 $\angle BDC = \theta$，则 $\angle ADB = 60^\circ - \theta$。对 $\triangle ABD$ 应用正弦定理得
+\[
+a = \frac{c}{2} \cdot \frac{\sin(60^\circ - \theta)}{\sin 30^\circ} = c \sin(60^\circ - \theta)
+\]
+在 $\triangle BCD$ 中，$b = c \sin \theta$ 导出
+\begin{align*}
+a + b &= c \sin(60^\circ - \theta) + c \sin \theta = 2c \sin 30^\circ \cos(30^\circ - \theta) \\
+&= c \cos(30^\circ - \theta) \le c
+\end{align*}
+
+(ii) $\left| \sqrt{c + a} - \sqrt{c + b} \right| = \sqrt{c - a - b} \Leftrightarrow 2c + a + b - 2\sqrt{(c + a)(c + b)} = c - a - b$
+$\Leftrightarrow 2a + 2b + c = 2\sqrt{(c + a)(c + b)} \Leftrightarrow a^2 + b^2 + ab = \frac{3}{4}c^2$。
+对 $\triangle ABC$ 应用余弦定理得 $AC^2 = a^2 + b^2 + ab$，对 $\triangle ADC$ 应用勾股定理得
+\[
+AC^2 = c^2 - \left( \frac{c}{2} \right)^2 = \frac{3}{4}c^2
+\]
+因此 $a^2 + b^2 + ab = \frac{3}{4}c^2$。
+\end{solution}
+
+\question (BMO/2005) 设 $ABC$ 为锐角三角形，$D, E$ 分别为从 $A, B$ 向 $BC, CA$ 所作垂线的垂足。设 $P$ 为直线 $AD$ 与在 $BC$ 外侧所作半圆的交点，$Q$ 为直线 $BE$ 与在 $AC$ 外侧所作半圆的交点。证明 $CP = CQ$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image415.png}
+    \end{figure}
+    \fi
+\begin{solution}
+将 $PD$ 视为直角三角形 $PBC$ 斜边 $BC$ 上的高，则射影定理给出
+\[
+PC^2 = CD \cdot CB
+\]
+同理，$QC^2 = CE \cdot CA$。因此只需证明
+\[
+CD \cdot CB = CE \cdot CA
+\]
+由于 $\text{Rt} \triangle BCE \sim \text{Rt} \triangle ACD$ (A, A)，因此
+\[
+\frac{CD}{CE} = \frac{CA}{CB}
+\]
+立即得出 $CD \cdot CB = CE \cdot CA$。故结论成立。
+\end{solution}
+
+\question (CHNMOL/2005) 已知 $\triangle ABC$ 内接于 $\odot O$，$AD$ 是 $\odot O$ 的直径。点 $E$ 和 $F$ 分别在 $AB$ 和 $AC$ 的延长线上，线段 $EF$ 分别与 $\odot O$ 和 $AD$ 交于 $M, N$ 和 $H$，其中 $H$ 是 $OD$ 的中点。
+已知 $MD = DN$，$EH - HF = 2$，$\tan \alpha = \frac{3}{4}$（其中 $\angle ACB = \alpha$），且 $EH, HF$ 是方程 $x^2 - (k + 2)x + 4k = 0$ 的两个实根。
+(i) 求 $EH$ 和 $HF$。 (ii) 求 $BC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image416.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 由于 $EH + HF = k + 2$ 且 $EH - HF = 2$，
+则 $EH = \frac{1}{2}k + 2, HF = \frac{1}{2}k$。由于
+\[
+EH \cdot HF = 4k \Rightarrow k = 12, EH = 8, HF = 6
+\]
+
+(ii) 连接 $BD$。则 $\angle ADB = \alpha$，所以
+\[
+\frac{AB}{BD} = \tan \alpha = \frac{3}{4}
+\]
+记 $AB = 3m, BD = 4m$（其中 $m > 0$），则 $\angle ABD = 90^\circ \Rightarrow AD = 5m$。$MD = ND$ 意味着 $AD \perp EF$ 于 $H$，因此 $\text{Rt} \triangle AHE \sim \text{Rt} \triangle ABD$，所以
+\[
+\frac{AB}{AH} = \frac{BD}{EH} \Leftrightarrow \frac{3m}{\frac{3}{4}AD} = \frac{4m}{8} \Rightarrow AD = 8
+\]
+于是 $m = \frac{8}{5}, AH = 6, AE = \sqrt{8^2 + 6^2} = 10, AF = \sqrt{6^2 + 6^2} = 6\sqrt{2}$
+且 $AB = \frac{24}{5}$。在 $\triangle ABC$ 和 $\triangle AEF$ 中，
+$\angle ACB = \angle ADB = \angle AEF, \angle BAC = \angle FAE \Rightarrow \triangle ABC \sim \triangle AEF$，
+因此
+\[
+BC = EF \cdot \frac{AB}{AF} = (8 + 6) \cdot \frac{24}{5 \cdot 6\sqrt{2}} = \frac{28\sqrt{2}}{5}
+\]
+\end{solution}
+
+\question 如下图所示，设 $Z$ 为 $BC$ 与 $\Gamma_1$ 的交点。连接 $MZ$。证明 $CY = YD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image417.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由于 $\angle MZB = 90^\circ$ 且 $MC = MB$ 意味着 $Z$ 是 $BC$ 的中点，且 $\angle YMZ = \angle BMZ$，所以 $M$ 也是弧 $\widehat{YZB}$ 的中点。
+由于 $BY \perp MC$ 且 $\widehat{XY} = \widehat{YZ} = \widehat{ZB}$，所以 $\angle YBX = \angle YBC$，这意味着 $\text{Rt} \triangle YBX \cong \text{Rt} \triangle YBC$，因此 $CY = YD$。
+\end{solution}
+
+\question (CMC/2009) 已知 $PA, PB$ 是从点 $P$ 向圆 $\odot O$ 所引的两条切线，$PCD$ 是 $\odot O$ 的一条割线，$E$ 是 $AB$ 与 $PD$ 的交点。证明
+\[
+\frac{PC}{PD} = \frac{CE}{DE}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image418.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $AC, AD, BC$ 和 $BD$。则
+\[
+\frac{PC}{PD} = \frac{[PAC]}{[PAD]} = \frac{[PBC]}{[PBD]}
+\]
+根据弦切角定理，
+\[
+\angle PAC = \angle PDA \Rightarrow \triangle PAC \sim \triangle PDA
+\]
+且
+\[
+\angle PBC = \angle PDB \Rightarrow \triangle PBC \sim \triangle PDB
+\]
+因此
+\[
+\frac{[PAC]}{[PAD]} = \frac{AC^2}{AD^2}, \frac{[PBC]}{[PBD]} = \frac{BC^2}{BD^2}
+\]
+由此可知，$\frac{AC}{AD} = \frac{BC}{BD}$。
+由于 $\triangle ACE \sim \triangle DBE$ 且 $\triangle BCE \sim \triangle DAE$，
+\[
+\frac{AC}{DB} = \frac{AE}{DE} \text{ 且 } \frac{BC}{DA} = \frac{CE}{AE}
+\]
+因此，上述结论的结合给出
+\[
+\frac{PC}{PD} = \frac{AC}{AD} \cdot \frac{BC}{BD} = \frac{AC}{DB} \cdot \frac{BC}{DA} = \frac{AE}{DE} \cdot \frac{CE}{AE} = \frac{CE}{DE}
+\]
+结论得证。
+\end{solution}
+
+\question (CMC/2009) 已知 $\triangle ABC$ 的内切圆半径为 $2$，且 $\tan A = \frac{4}{3}$，求 $\triangle ABC$ 面积的最小值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image419.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $BC = a, CA = b, AB = c$，$OD \perp AB$ 于 $D$，则
+\[
+b + c - a = 2AD \Rightarrow AD = \frac{b + c - a}{2}
+\]
+设 $x = \tan \frac{A}{2}$。由于 $\frac{4}{3} = \frac{2x}{1 - x^2} \Rightarrow 2x^2 - 3x - 2 = 0$，则
+\[
+2x^2 - 3x - 2 = 0 \Leftrightarrow (2x + 1)(x - 2) = 0 \Rightarrow x = 2
+\]
+（因为 $x > 0$）。因此 $2 = DO = \tan \frac{A}{2} \cdot AD = 2AD \Rightarrow AD = 1 \Rightarrow b + c - a = 2$。由于
+\[
+\tan A = \frac{4}{3} \Rightarrow \sin A = \frac{4}{5}, \cos A = \frac{3}{5}
+\]
+所以 $a + b + c = \frac{a + b + c}{2} \cdot 2 = [ABC] = \frac{1}{2} bc \sin A = \frac{2}{5} bc$。从
+\[
+a + b + c = 2(b + c) - (b + c - a) = 2(b + c) - 2
+\]
+可以得出 $bc = 5(b + c) - 5 \ge 10\sqrt{bc} - 5$，即 $\left( \sqrt{bc} \right)^2 - 10\sqrt{bc} + 5 \ge 0$。因此
+\[
+\sqrt{bc} \ge \frac{10 + \sqrt{80}}{2} = 5 + 2\sqrt{5}, \text{ 或 } bc \ge 45 + 20\sqrt{5}
+\]
+故 $[ABC] = \frac{2}{5} bc \ge 18 + 8\sqrt{5}$，且当 $b = c = 5 + 2\sqrt{5}$ 时等号成立。
+\end{solution}
+
+\question (CHINA/2005) $AB$ 是 $\odot O$ 的直径，$AB = a$。$C$ 是过 $A$ 点的切线上的一点，且 $AC = AB$。线段 $OC$ 与 $\odot O$ 交于 $D$，且 $BD$ 的延长线与 $AC$ 交于 $E$，如图所示。求 $AE$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image420.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $AD$。则 $AD$ 是 $\text{Rt} \triangle ABE$ 在 $BE$ 上的高。
+由 $\triangle ADE \sim \triangle BDA$，
+\[
+\frac{AE}{DE} = \frac{AB}{AD} = \frac{AC}{AD}
+\]
+根据弦切角定理，$\angle 1 = \angle 2$。$OB = OD$ 意味着 $\angle 2 = \angle 3$，所以 $\angle 1 = \angle 2 = \angle 3 = \angle 4$，因此 $\triangle CDE \sim \triangle CAD$。于是
+\[
+\frac{AC}{AD} = \frac{CD}{DE}
+\]
+因此 $\frac{AE}{DE} = \frac{CD}{DE}$，即 $AE = CD$。
+$\triangle CDE \sim \triangle CAD$ 也意味着 $\frac{CD}{AC} = \frac{CE}{CD}$，即 $CD^2 = CE \cdot AC$，因此
+\[
+AE^2 = CE \cdot AC
+\]
+设 $AE = x$，则 $CE = a - x$，且 $x^2 = a(a - x)$，得到 $x^2 + ax - a^2 = 0$。故
+\[
+AE = x = \frac{-a + \sqrt{a^2 + 4a^2}}{2} = \frac{\sqrt{5} - 1}{2} a
+\]
+（负根舍去）。
+\end{solution}
+
+\question (CMC/2010) $\triangle ABC$ 内接于 $\odot O$，且 $AB = AC$。直线 $MN$ 切圆于点 $C$，$BD \parallel MN$，且 $AC$ 与 $BD$ 交于点 $E$，如图所示。
+(i) 证明 $\triangle ABE \cong \triangle ACD$；
+(ii) 若 $AB = 6, BC = 4$，求 $AE$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image421.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 对于三角形 $ABE$ 和 $ACD$，由于 $AB = AC$，$\angle ABE = \angle ACD$ 且根据弦切角定理及 $BD \parallel MN$，
+\[
+\angle CAD = \angle NCD = \angle BDC = \angle BAC = \angle BAE
+\]
+因此 $\triangle ABE \cong \triangle ACD$ (S.A.A.)。
+(ii) 则
+\[
+\angle BAC = \angle CAD, BE = CD \Rightarrow \angle BDC = \angle CBD, BE = CD \Rightarrow BE = CD = BC = 4
+\]
+设 $AE = x$。则 $\triangle AEB \sim \triangle DEC$ 意味着
+\[
+DE = AE \cdot \frac{CD}{AB} = \frac{4x}{6} = \frac{2x}{3}
+\]
+相交弦定理给出 $x(6 - x) = 4 \cdot \frac{2x}{3}$，解得
+\[
+x = 6 - \frac{8}{3} = \frac{10}{3}
+\]
+因此 $AE = \frac{10}{3}$。
+\end{solution}
+
+\question (CMC/2010) 一个半径为 $2$ 的圆和一个半径为 $3$ 的圆外切于点 $T$。直线 $MN$ 是它们的一条外公切线，$M, N$ 为两个切点。求 $\frac{MT}{NT}$ 的值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image422.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如右图所示，设 $\odot C$ 和 $\odot D$ 的半径分别为 $2$ 和 $3$，并设 $\angle MCT = \theta$，则 $\angle NDT = \pi - \theta$。根据弦切角定理，
+\[
+\angle NMT = \frac{1}{2}\theta, \angle MNT = \frac{1}{2}(\pi - \theta)
+\]
+因此 $\angle MTN = \frac{\pi}{2}$。从 $T$ 引 $TS \perp MN$ 于 $S$，则 $TS$ 是 $\text{Rt} \triangle MTN$ 斜边上的高。根据直角三角形射影定理，
+\[
+\frac{MT^2}{NT^2} = \frac{MS \cdot MN}{NS \cdot NM} = \frac{MS}{NS} = \frac{CT}{DT} = \frac{2}{3} \Rightarrow \frac{MT}{NT} = \sqrt{\frac{2}{3}} = \frac{\sqrt{6}}{3}
+\]
+\end{solution}
+
+\question (MACAO/2001) 一个半径为 $R$ 的大圆 $\odot O$，一个半径为 $2r$ 的圆 $\odot B$，以及两个半径为 $r$ 的圆 $\odot A, \odot A'$ 两两相切，如图所示。求 $\frac{r}{R}$ 的比值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image423.png}
+        \includegraphics[width=0.5\textwidth]{images/image424.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由对称性可知，圆心 $O$ 和 $B$ 在 $\odot A$ 和 $\odot A'$ 的内公切线上，因此只需考虑图形的一半。
+设 $MO = x, MB = y$，则 $MN = x + R = y + 2r$，所以 $x = y + 2r - R$。
+由于 $AO = R - r, AB = 3r$，根据勾股定理，
+\[
+y^2 = MB^2 = AB^2 - AM^2 = 8r^2 \Rightarrow y = \sqrt{8}r, x = (2 + \sqrt{8})r - R
+\]
+\[
+x^2 = MO^2 = AO^2 - AM^2 = (R - r)^2 - r^2 = R^2 - 2Rr
+\]
+所以 $[(2 + \sqrt{8})r - R]^2 = R^2 - 2Rr$，整理得 $(2 + 2\sqrt{8})R = (2 + \sqrt{8})^2 r$，因此
+\begin{align*}
+\frac{r}{R} &= \frac{2 + 2\sqrt{8}}{(2 + \sqrt{8})^2} = \frac{1 + 2\sqrt{2}}{2(\sqrt{2} + 1)^2} \\
+&= \frac{(1 + 2\sqrt{2})(\sqrt{2} - 1)^2}{2} = \frac{4\sqrt{2} - 5}{2}
+\end{align*}
+\end{solution}
+
+\question (CHINA/2005) $ABCD$ 是圆 $\odot O$ 的内接正方形。$P$ 是劣弧 $\stackrel{\frown}{AB}$ 的中点，$PD$ 与 $AB$ 交于点 $E$。求比值 $\frac{PE}{DE}$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image425.png}
+    \end{figure}
+    \fi
+\begin{solution}
+不失一般性，设 $AB = 1$。连接 $BD$。从 $E$ 作 $EF \perp BD$ 于 $F$。$\stackrel{\frown}{AP} = \stackrel{\frown}{PB}$ 意味着
+\[
+\angle ADP = \angle PDB
+\]
+从而 $\text{Rt}\triangle EAD \cong \text{Rt}\triangle EFD$，
+所以 $EF = EA$。考虑 $\text{Rt}\triangle BEF$，
+\[
+\angle EBF = 45^{\circ} \implies BE = \sqrt{2}EF = \sqrt{2}AE
+\]
+设 $AE = x$，则 $BE = 1 - x = \sqrt{2}x$，所以 $x = \frac{1}{\sqrt{2} + 1} = \sqrt{2} - 1$，从而 $BE = 2 - \sqrt{2}$。由勾股定理，
+\[
+DE = \sqrt{AE^{2} + AD^{2}} = \sqrt{\left(\sqrt{2} - 1\right)^{2} + 1^{2}} = \sqrt{4 - 2\sqrt{2}}
+\]
+相交弦定理得
+\[
+PE = \frac{AE \cdot BE}{DE} = \frac{\left(\sqrt{2} - 1\right)\left(2 - \sqrt{2}\right)}{\sqrt{4 - 2\sqrt{2}}} = \frac{3\sqrt{2} - 4}{\sqrt{4 - 2\sqrt{2}}}
+\]
+因此，
+\[
+\frac{PE}{DE} = \frac{3\sqrt{2} - 4}{\sqrt{4 - 2\sqrt{2}}} \div \sqrt{4 - 2\sqrt{2}} = \frac{3\sqrt{2} - 4}{4 - 2\sqrt{2}} = \frac{\sqrt{2} - 1}{2}
+\]
+\end{solution}
+
+\question (SSSMO/2010) 下图中，$ABC$ 是圆内接等腰三角形，圆心为 $O$，直径为 $AD$，且 $AB = AC$。$AD$ 与 $BC$ 交于点 $E$，$F$ 是 $OE$ 的中点。已知 $BD \parallel FC$ 且 $BC = 2\sqrt{5}\text{ cm}$，求 $CD$ 的长度（单位：$\text{cm}$）。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image426.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由于直径 $AD$ 垂直于弦 $BC$，所以它平分 $BC$，即 $BE = EC = \sqrt{5}\text{ cm}$。
+\[
+BD \parallel CF \implies \angle DBE = \angle FCE \implies \text{Rt}\triangle DBE \cong \text{Rt}\triangle FCE
+\]
+从而 $DE = FE$。因此，$OF = FE = DE$，设 $ED = x$，则 $AE = 5x$。由相交弦定理，
+\[
+AE \cdot ED = BE \cdot EC \implies 5x^{2} = 5 \implies x = 1
+\]
+因此，
+\[
+CD = \sqrt{CE^{2} + ED^{2}} = \sqrt{5 + 1} = \sqrt{6}
+\]
+\end{solution}
+
+\question (FINLAND/2004) 两个半径分别为 $r$ 和 $R$ 的圆外切。求内公切线被两条外公切线所截得的线段长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image427.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $R > r$，两圆圆心分别为 $P$ 和 $Q$。设 $C$ 为两圆的切点。一条外公切线分别与两圆切于 $A$ 和 $B$，内公切线被两条外公切线所截的线段为 $DE$。
+假设 $QS \parallel BA$，交 $AP$ 于 $S$，则 $SQBA$ 是一个矩形。
+由对称性可知 $CD = AD = BD$ 且 $CD = CE$，所以
+\begin{align*}
+DE &= 2DC = AB = \sqrt{PQ^{2} - PS^{2}} \\
+&= \sqrt{\left(R + r\right)^{2} - \left(R - r\right)^{2}} \\
+&= \sqrt{4Rr} = 2\sqrt{Rr}
+\end{align*}
+\end{solution}
+
+\question (THAILAND/2004) 已知圆 $\omega$ 是等边 $\triangle ABC$ 的外接圆，圆 $\omega_1$ 在除 $A, B, C$ 以外的一点与 $\omega$ 外切。点 $A_1, B_1, C_1$ 在 $\omega_1$ 上，使得 $AA_1, BB_1$ 和 $CC_1$ 与 $\omega_1$ 相切。证明 $AA_1, BB_1, CC_1$ 中一条的长度等于另外两条长度之和。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image428.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $r$ 和 $r_1$ 分别为 $\omega$ 和 $\omega_1$ 的半径。不失一般性，设两圆切点在弧 $\stackrel{\frown}{AB}$ 上且靠近 $A$。设 $O$ 和 $O_1$ 分别为 $\omega$ 和 $\omega_1$ 的圆心。记 $\angle O_1OA = \alpha$，则
+\[
+\angle O_1OB = 120^{\circ} - \alpha, \angle O_1OC = 120^{\circ} + \alpha
+\]
+余弦定理得
+\begin{align*}
+AA_1^{2} &= AO_1^{2} - r_1^{2} = r^{2} + \left(r + r_1\right)^{2} - 2r\left(r + r_1\right)\cos\alpha - r_1^{2} \\
+&= 2r\left(r + r_1\right)\left(1 - \cos\alpha\right) = 4r\left(r + r_1\right)\sin^{2}\frac{\alpha}{2}
+\end{align*}
+\[
+\therefore AA_1 = 2\sin\frac{\alpha}{2} \cdot \sqrt{r\left(r + r_1\right)}
+\]
+同理，
+\begin{align*}
+BB_1 &= 2\sin\left(60^{\circ} - \frac{\alpha}{2}\right) \sqrt{r\left(r + r_1\right)} \\
+CC_1 &= 2\sin\left(60^{\circ} + \frac{\alpha}{2}\right) \sqrt{r\left(r + r_1\right)}
+\end{align*}
+\[
+\therefore AA_1 + BB_1 = 2\sqrt{r\left(r + r_1\right)} \left[\sin\frac{\alpha}{2} + \sin\left(60^{\circ} - \frac{\alpha}{2}\right)\right]
+\]
+\[
+= 2\sqrt{r\left(r + r_1\right)} \sin\left(60^{\circ} + \frac{\alpha}{2}\right) = CC_1
+\]
+\end{solution}
+
+\question (JAPAN/2008) $ABCD$ 是边长为 $1$ 的正方形，$M$ 是以 $AD$ 为直径的圆的圆心。$E$ 是边 $AB$ 上的一点，使得 $CE$ 与 $\odot M$ 相切。求 $\triangle CBE$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image429.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $CE$ 与 $\odot M$ 切于 $N$。连接 $CM, EM$ 和 $MN$。$\angle MDC = \angle MNC = 90^{\circ}$ 且 $MD = MN$ 意味着
+\[
+\triangle MNC \cong \triangle MDC
+\]
+同理，$\triangle MNE \cong \triangle MAE$。因此
+\[
+\angle CMN = \angle CMD, \angle EMN = \angle EMA
+\]
+从而 $\angle EMC = 90^{\circ}, CN = CD = 1$。由射影定理，
+\[
+MN^{2} = EN \cdot CN \implies EN = \frac{1}{4} \implies AE = EN = \frac{1}{4}, BE = \frac{3}{4}
+\]
+因此
+\[
+[BEC] = \frac{1}{2} \cdot BE \cdot BC = \frac{3}{8}
+\]
+\end{solution}
+
+\question (Newton's Theorem) 已知凸四边形 $ABCD$ 有内切圆，圆与边 $AB, BC, CD, DA$ 分别切于 $E, F, G, H$。证明线段 $AC, BD, EG, FH$ 交于同一点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image430.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $AC, EG$ 交于点 $O$。在 $EB$ 上取点 $K$ 使得 $\angle EOK = \angle GOC$。则
+\[
+\angle OEK = \angle OGC \implies \triangle OEK \sim \triangle OGC
+\]
+\[
+\implies \frac{OK}{KE} = \frac{OC}{CG}
+\]
+\[
+\because \angle AOE = \angle COG = \angle KOE
+\]
+\[
+\therefore \frac{OA}{AE} = \frac{OK}{KE} = \frac{OC}{CG} \implies \frac{AO}{OC} = \frac{AE}{CG}
+\]
+设 $AC$ 和 $HF$ 交于 $O'$，则同理可得 $\frac{AO'}{O'C} = \frac{AH}{CF}$。由于 $AE = AH$ 且 $CG = CF$，所以 $\frac{AO}{OC} = \frac{AO'}{O'C}$，即 $O = O'$。因此，$AC, EG, HF$ 共点于 $O$。
+同理，$BD, EG, HF$ 共点于同一点，即 $EG$ 和 $HF$ 的交点 $O$。结论得证。
+\end{solution}
+
+\question (AIME/2010) 在 $\triangle ABC$ 中，$AB = 12$，$BC = 13$，$AC = 15$。设 $M$ 是 $AC$ 上的一点，使得 $\triangle ABM$ 和 $\triangle BCM$ 的内切圆半径相等。设 $p$ 和 $q$ 为正互质整数，满足 $\frac{AM}{CM} = \frac{p}{q}$。求 $p + q$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image431.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $AM = x$，$CM = 15 - x$，$BM = d$。由于两个三角形的高相同，它们的面积之比等于底边之比，即
+\[
+\frac{[ABM]}{[CBM]} = \frac{x}{15 - x}
+\]
+设 $r$ 为两个内切圆共同的半径，$p_1, p_2$ 分别为 $\triangle ABM$ 和 $\triangle CBM$ 的周长。由面积公式 $S = rs$（其中 $s$ 为半周长）可得
+\[
+\frac{x}{15 - x} = \frac{p_1}{p_2} = \frac{12 + d + x}{28 + d - x}
+\]
+\[
+\implies 25x + 2dx = 15d + 180
+\]
+因此
+\[
+d = \frac{25x - 180}{15 - 2x}
+\]
+由于 $d > 0$，可得 $\frac{36}{5} < x < \frac{15}{2}$。
+另一方面，根据斯特瓦尔特定理（Stewart's Theorem），
+\[
+d^{2} = \frac{12^{2}(15 - x) + 13^{2}x}{15} - x(15 - x)
+\]
+\[
+\implies 15d^{2} + 15x(15 - x) = 144(15 - x) + 169x
+\]
+整理得 $432 = 3d^{2} + 40x - 3x^{2}$。代入 $d$ 的表达式：
+\[
+432 = \frac{3(25x - 180)^{2}}{(15 - 2x)^{2}} + 40x - 3x^{2}
+\]
+化简得 $12x^{4} - 340x^{3} + 2028x^{2} - 7920x = 0$。通过因式分解：
+\[
+4x(x - 15)(3x^{2} - 40x + 132) = 0
+\]
+\[
+4x(x - 15)(x - 6)(3x - 22) = 0
+\]
+结合 $x$ 的范围 $\frac{36}{5} < x < \frac{15}{2}$，解得
+\[
+x = \frac{22}{3}
+\]
+因此，$AM = \frac{22}{3}$，$CM = 15 - \frac{22}{3} = \frac{23}{3}$，且
+\[
+\frac{AM}{CM} = \frac{22}{23}
+\]
+所以 $p = 22, q = 23$，最后得 $p + q = 45$。
+\end{solution}
+
+\question (RUSMO/2008/R4) 在 $\triangle ABC$ 中，$AB > AC$，过点 $B$ 的外接圆切线与直线 $AC$ 交于点 $P$。$D$ 是点 $B$ 关于点 $P$ 的对称点，$E$ 是点 $C$ 关于直线 $BP$ 的对称点。证明四边形 $ABED$ 是圆内接四边形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image432.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由弦切角定理知，$\angle PBC = \angle BAC = \angle PAB$，
+因此 $\triangle PBC \sim \triangle PAB$，所以 $\frac{PA}{PB} = \frac{PB}{PC}$。
+\[
+\therefore PA \cdot PC = PB^{2} = PD^{2}
+\]
+或 $\frac{PA}{PD} = \frac{PD}{PC}$。由于 $\angle APD$ 是公共角，
+\[
+\triangle APD \sim \triangle DPC \text{ (S.A.S.)}
+\]
+\[
+\therefore \angle CAD = \angle PAD = \angle PDC
+\]
+$C$ 和 $E$ 关于直线 $BP$ 对称意味着 $\angle PDC = \angle PDE = \angle BDE$ 且 $\angle PBC = \angle DBE$，于是
+\begin{align*}
+\angle BAD &= \angle PAD + \angle PAB = \angle PDC + \angle PBC = \angle BDE + \angle DBE \\
+&= 180^{\circ} - \angle BED
+\end{align*}
+因此，四边形 $ABED$ 是圆内接四边形。
+\end{solution}
+
+\question (CMC/2010) 如下图所示，$ABCD$ 是凸四边形，$\angle ABC = \angle ADC$。$E, F, G, H$ 分别是 $AC, BD, AD, CD$ 的中点。证明：
+(i) $E, F, G, H$ 四点共圆；
+(ii) $\angle AEF = \angle ACB - \angle ACD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image433.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 连接 $EG, EH, FG, FH, GH$，则 $FG \parallel BA$，$FH \parallel BC$，所以
+\[
+\angle GFH = \angle ABC
+\]
+类似地，$\angle GHF = \angle ACB$。由于 $DGEH$ 是平行四边形，所以
+\[
+\angle GEH = \angle ADC = \angle ABC = \angle GFH
+\]
+因此 $EFGH$ 是圆内接四边形，即 $E, F, G, H$ 四点共圆。
+
+(ii) $EFGH$ 共圆 $\implies \angle GEF = \angle GHF = \angle ACB$，且 $EG \parallel CD$ 意味着 $\angle AEG = \angle ACD$，因此
+\[
+\angle AEF = \angle GEF - \angle AEG = \angle ACB - \angle ACD
+\]
+\end{solution}
+
+\question (CMC/2008) 如图所示，$AB$ 是半圆 $O$ 的直径，$C$ 是弧 $AB$ 的中点，$M$ 是弦 $AC$ 的中点，$CH \perp BM$ 于 $H$。证明：
+\[
+CH^2 = AH \cdot OH
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image434.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $OC, BC$，则 $\angle BOC = \angle BHC = 90^\circ$，所以 $OHCB$ 共圆。
+因此
+\[
+\angle OHB = \angle OCB = 45^\circ
+\]
+由于 $\angle BCM = 90^\circ$，$CH \perp BM$ 且 $M$ 是 $AC$ 的中点，由直角三角形的射影定理得，
+\[
+AM^2 = CM^2 = MH \cdot MB
+\]
+即 $\frac{MH}{MA} = \frac{MA}{MB}$，因此 $\triangle AMH \sim \triangle BMA$。于是
+\[
+\angle MAH = \angle MBA, \quad \angle AHM = \angle BAM = 45^\circ
+\]
+从而 $\angle AHM = \angle BHO$，因此 $\triangle AMH \sim \triangle BOH$，故
+\[
+\frac{AH}{BH} = \frac{MH}{OH}
+\]
+即 $AH \cdot OH = MH \cdot BH$。
+由 $CH^2 = MH \cdot BH$ 可知 $CH^2 = AH \cdot OH$。
+\end{solution}
+
+\question (CMC/2009) 如图所示，在 $\triangle ABC$ 中，$AB > AC$，$AE$ 是 $\triangle ABC$ 外接圆在 $A$ 点的切线，$D$ 在 $AB$ 上使得 $AD = AC = AE$。证明：线段 $DE$ 通过 $\triangle ABC$ 的内心。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image435.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $I$ 是 $DE$ 与 $\angle C$ 的角平分线的交点。连接 $AI, CI, CE$。由于 $AE$ 是 $\triangle ABC$ 外接圆在 $A$ 点的切线，
+\[
+\angle ACB = 180^\circ - \angle DAE
+\]
+则 $AD = AE$ 意味着
+\begin{align*}
+180^\circ - \angle DAE &= \angle ADE + \angle AED \\
+&= 2\angle AED = \angle ACI
+\end{align*}
+所以 $\angle ACI = \angle AEI$，$AECI$ 共圆。那么
+\begin{align*}
+\angle IAC &= \angle IEC = \angle AEC - \angle AED \\
+&= \frac{180^\circ - \angle CAE}{2} - \frac{180^\circ - \angle DAE}{2} = \frac{\angle DAE - \angle CAE}{2} \\
+&= \frac{1}{2}\angle BAC
+\end{align*}
+所以 $AI$ 是 $\angle BAC$ 的角平分线，且 $I$ 是 $\triangle ABC$ 的内心，这表明 $DE$ 通过 $\triangle ABC$ 的内心。
+\end{solution}
+
+\question (SNOVENIA/TST/2008-2009) $ABCD$ 是一个梯形，$CD, AB$ 分别是上底和下底，且 $\angle ADC = 90^\circ, AC \perp BD$。从 $D$ 作 $DE \perp BC$ 于 $E$。证明：
+\[
+\frac{AE}{BE} = \frac{AC \cdot CD}{AC^2 - CD^2}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image436.png}
+    \end{figure}
+    \fi
+\begin{solution}
+$AD^2 = AC^2 - CD^2$，让问题变为证明 $\frac{AE}{BE} = \frac{AC \cdot CD}{AD^2}$。
+设 $T$ 为 $AC$ 和 $BD$ 的交点。则
+\begin{align*}
+\angle TAD = \angle ABT &\Rightarrow \triangle ACD \sim \triangle BDA \\
+&\Rightarrow \frac{AD}{CD} = \frac{BA}{AD} \\
+&\Rightarrow AD^2 = AB \cdot CD
+\end{align*}
+$\angle BAD = \angle BED = 90^\circ$ 意味着 $ABED$ 共圆，$\therefore \angle LEAD = \angle EBD$。
+类似地，$CEDT$ 共圆，所以 $\angle CDE = \angle CTE$，这暗示 $\angle ADE = \angle BTE$，所以 $\triangle AED \sim \triangle BET$。
+因此 $\frac{AE}{BE} = \frac{AD}{BT}$。但 $\triangle ADC \sim \triangle BTA$ 意味着 $\frac{AD}{BT} = \frac{AC}{AB}$，
+因此
+\[
+\frac{AE}{BE} = \frac{AC}{AB} = \frac{AC \cdot CD}{AB \cdot CD} = \frac{AC \cdot CD}{AD^2}
+\]
+\end{solution}
+
+\question (BELARUS/2008) 五边形 $ABCDE$ 内接于圆，对角线 $EC$，$AC$ 分别与 $BD$ 交于点 $L$，$K$。已知 $BC = \sqrt{10}$。若点 $A$，$K$，$L$，$E$ 都在圆 $\Gamma$ 上，求从 $C$ 到 $\Gamma$ 的切线长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image437.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设从 $C$ 到圆 $\Gamma$ 的切线长度为 $a$。则
+\[
+\angle BKA = \frac{1}{2}(\text{弧}AB + \text{弧}CD) \text{ 且 } \angle BKA = \angle CEA = \frac{1}{2}(\text{弧}AB + \text{弧}BC)
+\]
+这说明 $\text{弧}BC = \text{弧}CD$。因此 $\angle CBK = \angle BAC$，所以 $\triangle BCK \sim \triangle ACB$，从而得到
+\[
+\frac{CK}{CB} = \frac{CB}{AC} \Rightarrow CK \cdot CA = CB^2
+\]
+点 $C$ 对 $\Gamma$ 的幂给出 $CK \cdot CA = a^2$，所以
+\[
+a = BC = \sqrt{10}
+\]
+\end{solution}
+
+\question (CMC/2009) 在给定的图中，$PA$，$PB$ 是圆 $O$ 在 $A$ 和 $B$ 点的两条切线。穿过 $P$ 的直线与圆 $O$ 相交于 $C$ 和 $D$，并与弦 $AB$ 相交于 $Q$。证明：
+\[
+PQ^2 = PC \cdot PD - QC \cdot QD
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image438.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $OA, OB, OP$。设 $OP$ 与 $AB$ 的交点为 $H$，$CD$ 的中点为 $M$，连接 $OM$。则 $OM \perp CD$ 且 $OH \perp AB$。因此 $Q, H, O, M$ 共圆，故
+\[
+PQ \cdot PM = PH \cdot PO
+\]
+对直角三角形 $\triangle APO$ 应用射影定理，
+\[
+PA^2 = PH \cdot PO \Rightarrow PA^2 = PQ \cdot PM
+\]
+考虑点 $P$ 对圆 $O$ 的幂，可得
+\[
+PQ \cdot PM = PA^2 = PC \cdot PD
+\]
+因此
+\[
+PQ(PQ + QM) = PC \cdot PD
+\]
+即
+\[
+PQ^2 = PC \cdot PD - PQ \cdot QM
+\]
+因为 $P, A, O, M$ 和 $P, B, M, O$ 均共圆，所以 $P, B, M, O, A$ 共圆。考虑点 $Q$ 对该圆和圆 $O$ 的幂，可得
+\[
+PQ \cdot QM = QA \cdot QB = QC \cdot QD
+\]
+因为 $A, C, B, D$ 共圆。因此，$PQ^2 = PC \cdot PD - QC \cdot QD$。
+\end{solution}
+
+\question (欧拉定理) 当 $\triangle ABC$ 的外接圆半径和内切圆半径分别为 $R$ 和 $r$ 时，$d$ 为外心与内心之间的距离，则
+\[
+d^2 = R(R - 2r) \text{ 或 } d = \sqrt{R(R - 2r)}
+\]
+推论：$R \ge 2r$，且 $R = 2r$ 当且仅当 $\triangle ABC$ 为等边三角形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image439.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如图所示，设 $O$ 和 $I$ 分别为 $\triangle ABC$ 的外心和内心。设 $AI$ 的延长线与圆 $O$ 交于点 $D$。则 $D$ 是弧 $BC$ 的中点。记
+\[
+\alpha = \frac{1}{2}\angle A, \beta = \frac{1}{2}\angle B
+\]
+则 $\angle IBD = \angle IBC + \angle CBD = \beta + \alpha = \angle IBA + \angle BAL = \angle BID$，因此 $\triangle DBI$ 是等腰三角形，且 $DI = DB$。通过考虑点 $I$ 的幂和正弦定理，可得
+\[
+R^2 - d^2 = DI \cdot IA = 2R \sin \alpha \cdot \frac{r}{\sin \alpha} = 2Rr
+\]
+从而 $d^2 = R^2 - 2Rr = R(R - 2r)$。推论是显而易见的。
+\end{solution}
+
+\question (USAMO/2009) 给定圆 $\omega_1$ 和 $\omega_2$ 相交于点 $X$ 和 $Y$。设 $\ell_1$ 是穿过 $\omega_1$ 圆心的直线，与 $\omega_2$ 交于点 $P$ 和 $Q$；设 $\ell_2$ 是穿过 $\omega_2$ 圆心的直线，与 $\omega_1$ 交于点 $R$ 和 $S$。证明：如果 $P, Q, R, S$ 共圆，那么该圆的圆心在直线 $XY$ 上。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image440.png}
+    \end{figure}
+    \fi
+\begin{solution}
+令 $\omega$ 表示 $P, Q, R, S$ 的外接圆，并令 $O$ 表示 $\omega$ 的圆心。直线 $XY$ 是圆 $\omega_1$ 和 $\omega_2$ 的根轴。只需证明 $O$ 对这两个圆具有相等的幂，即证明
+\[
+OO_1^2 - O_1S^2 = OO_2^2 - O_2Q^2 \text{ 或 } OO_1^2 + O_2Q^2 = OO_2^2 + O_1S^2
+\]
+令 $M$ 和 $N$ 分别为直线 $O_2O, \ell_1$ 以及 $O_1O, \ell_2$ 的交点。因为圆 $\omega$ 和 $\omega_2$ 相交于点 $P$ 和 $Q$，我们有 $PQ \perp OO_2$（或 $\ell_1 \perp OO_2$）。因此
+\begin{align*}
+OO_1^2 - OQ^2 &= (OM^2 + MO_1^2) - (OM^2 + MQ^2) \\
+&= (O_2M^2 + MO_1^2) - (O_2M^2 + MQ^2) \\
+&= O_2O_1^2 - O_2Q^2
+\end{align*}
+或
+\[
+O_2O_1^2 + OQ^2 = OO_1^2 + O_2Q^2
+\]
+类似地，我们有 $O_2O_1^2 + OS^2 = OO_2^2 + O_1S^2$。因为 $OS = OQ$，我们得到
+\[
+OO_1^2 + O_2Q^2 = OO_2^2 + O_1S^2
+\]
+即为所证。
+\end{solution}
+
+\question (CMC/2009) 已知圆 $O$ 与线段 $AB$ 切于点 $M$，并与以 $AB$ 为直径的半圆切于点 $E$。$C$ 是半圆上的一点，使得 $CD \perp AB$ 于 $D$，且 $CD$ 与圆 $O$ 切于点 $F$。连接 $CA, CM$。证明：
+(i) $A, F, E$ 三点共线；
+(ii) $AC = AM$；
+(iii) $MC^2 = 2MD \cdot MA$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image441.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 如图所示，设 $AB$ 的中点为 $P$。圆 $P$ 与圆 $O$ 内切于点 $E$，意味着 $P, O, E$ 三点共线。连接 $FO, AE, AF$，则 $OF \perp CD$ 于 $F$，且 $FO \parallel AP$。因为 $OE = OF$ 且 $PE = PA$，所以
+\[
+\angle EOF = \angle EPA \Rightarrow \angle OEF = 90^\circ - \frac{\angle EOF}{2} = 90^\circ - \frac{\angle EPA}{2} = \angle PEA
+\]
+因此 $A, F, E$ 三点共线。
+
+(ii) 考虑点 $A$ 对圆 $O$ 的幂，我们有 $AM^2 = AF \cdot AE$。连接 $EB$。$AE \perp EB$ 意味着 $EFDB$ 四点共圆，所以 $AF \cdot AE = AD \cdot AB$。连接 $BC$。由射影定理应用于直角三角形 $ABC$，得
+\[
+AC^2 = AD \cdot AB = AF \cdot AE = AM^2 \Rightarrow AC = AM
+\]
+
+(iii) 延长 $MA$ 至 $R$ 使得 $MA = AR$。连接 $CR$，则 $\angle RCM = 90^\circ$，由射影定理得
+\[
+MC^2 = MD \cdot MR = 2MD \cdot MA
+\]
+\end{solution}
+
+\question (THAILAND/2007) 已知点 $P$ 在圆 $O$ 外，$PA, PB$ 分别切圆 $O$ 于 $A$ 和 $B$。$M, N$ 分别是线段 $AP$ 和 $AB$ 的中点。$MN$ 的延长线与圆 $O$ 相交于 $C$，其中 $N$ 位于 $M$ 和 $C$ 之间。$PC$ 与圆 $O$ 再次相交于 $D$，$ND$ 的延长线与 $PB$ 相交于 $Q$。证明四边形 $MNQP$ 是菱形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image442.png}
+    \end{figure}
+    \fi
+\begin{solution}
+$M$ 是直角三角形 $ANP$ 斜边的中点，所以它是三角形 $ANP$ 的外心。由中位线定理，$MN \parallel BP$。设 $E$ 为 $MN$ 与圆 $O$ 的第二个交点。由切割线定理，
+\begin{align*}
+PM^2 &= MA^2 = ME \cdot MC \\
+&\Rightarrow \frac{PM}{ME} = \frac{MC}{PM} \\
+&\Rightarrow \triangle PME \sim \triangle CMP \\
+&\Rightarrow \triangle MPE \sim \triangle MCP
+\end{align*}
+由于 $OAPB$ 共圆，$CN \cdot NE = AN \cdot NB = ON \cdot NP$，这意味着 $CPEO$ 共圆，
+\[
+\therefore \angle EPN = \angle NCO
+\]
+将射影定理应用于直角三角形 $OAP$ 并考虑点 $P$ 对圆 $O$ 的幂，可知
+\begin{align*}
+PD \cdot PC &= PA^2 = PN \cdot PO \Rightarrow CDNO \text{ 共圆 } \Rightarrow \angle QNP = \angle PCO \\
+&\Rightarrow \angle QNP = \angle PCM + \angle MCO = \angle MPE + \angle EPN = \angle MPN
+\end{align*}
+因此 $MP \parallel NP$，即 $MNQP$ 是平行四边形。再由 $PQ = PM$ 可知 $MNQP$ 是菱形。
+\end{solution}
+
+\question (ROMANIA/2008) 设 $ABC$ 为一个三角形，$D, E, F$ 分别是线段 $BC, CA, AB$ 内部的点，使得
+\[
+\frac{BD}{DC} = \frac{CE}{EA} = \frac{AF}{FB}
+\]
+证明：如果三角形 $DEF$ 和 $ABC$ 的外心重合，则 $ABC$ 是等边三角形。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image443.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $O$ 为三角形 $DEF$ 和 $ABC$ 的公共外心。设 $D', E', F'$ 分别是较小圆与 $BC, CA, AB$ 的交点。作 $OH \perp BC$ 于 $H$。设
+\[
+\frac{BD}{DC} = \frac{CE}{EA} = \frac{AF}{FB} = k
+\]
+则 $BH = HC$ 且 $DH = HD'$ 意味着
+\[
+BD' = DC = \frac{1}{k + 1} BC
+\]
+类似地，
+\[
+BF = \frac{1}{k + 1} BA, AF' = \frac{k}{k + 1} BA
+\]
+由切割线定理知 $BD' \cdot BD = BF \cdot BF'$，因此我们有
+\[
+\frac{k}{(k + 1)^2} BC^2 = \frac{k}{(k + 1)^2} AB^2
+\]
+即 $BC = AB$。类似地可得 $BC = CA$。因此，三角形 $ABC$ 是等边三角形。
+\end{solution}
+
+\question (COLUMBIA/2009) 在三角形 $ABC$ 中，$P$ 是边 $BC$ 上的一点，$I_1, I_2$ 分别是三角形 $APB$ 和 $APC$ 的内心。$\Gamma_1, \Gamma_2$ 分别是以 $I_1, I_2$ 为圆心并经过点 $P$ 的圆。设 $Q$ 是 $\Gamma_1$ 和 $\Gamma_2$ 的第二个交点。点 $X_1, Y_1$ 分别是 $\Gamma_1$ 与 $AB, BC$ 的交点中较靠近 $B$ 的点，$X_2, Y_2$ 分别是 $\Gamma_2$ 与 $AC, BC$ 的交点中较靠近 $C$ 的点。证明 $X_1Y_1, X_2Y_2$ 和 $PQ$ 三线共点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image444.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $Z_1$ 为 $\Gamma_1$ 与 $AB$ 的第二个交点，$Z_2$ 为 $\Gamma_2$ 与 $AC$ 的第二个交点。令 $\angle CAB = \alpha, \angle ABC = \beta, \angle BCA = \gamma$。由于 $I_1$ 是 $\Gamma_1$ 的圆心，意味着
+\[
+X_1Z_1 = PY_1, BZ_1 = BP
+\]
+假设三角形 $APB$ 的内切圆分别切 $AB, PB$ 于 $M$ 和 $N$，则 $M, N$ 分别是 $X_1Z_1, PY_1$ 的中点。因此
+\begin{align*}
+AX_1 &= AM + \frac{1}{2} X_1Z_1 \\
+&= \frac{1}{2} \left( AP + AB - PB \right) + \frac{1}{2} X_1Z_1 \\
+&= \frac{1}{2} \left( AP + AB - PB \right) + \frac{1}{2} PY_1 \\
+&= \frac{1}{2} \left( AP + AB - PB \right) + \frac{1}{2} \left( AP + PB - AB \right) = AP
+\end{align*}
+类似地 $AX_2 = AP$。因此三角形 $AX_1X_2$ 是等腰三角形，且 $AX_1 = AX_2$。
+此外，三角形 $BX_1Y_1$ 和 $CX_2Y_2$ 也是等腰三角形，所以
+\[
+\angle Y_2X_2X_1 = 180^\circ - \left( 90^\circ - \frac{\alpha}{2} \right) - \left( 90^\circ - \frac{\gamma}{2} \right) = 90^\circ - \frac{\beta}{2}
+\]
+且 $\angle Y_2Y_1X_1 = 90^\circ + \frac{\beta}{2}$。因此 $X_1Y_1Y_2X_2$ 四点共圆。
+假设直线 $X_1Y_1$ 和 $X_2Y_2$ 相交于 $R$。那么 $R$ 对圆 $X_1Y_1Y_2X_2$ 的幂为
+\[
+RX_1 \cdot RY_1 = RX_2 \cdot RY_2
+\]
+所以 $R$ 在 $\Gamma_1$ 和 $\Gamma_2$ 的根轴上。由于根轴正是直线 $PQ$，所以直线 $X_1Y_1, X_2Y_2$ 和 $PQ$ 共点于 $R$。
+\end{solution}
+
+\question (BALTIC WAY/2007) 三角形 $ABC$ 的内切圆切边 $AC$ 于点 $D$。另一个圆经过点 $D$ 且与射线 $BC$ 和 $BA$ 相切，切点分别为 $A$ 和 $M$。求 $\frac{AD}{DC}$ 的比值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image445.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $B_1 = D$，且内切圆分别切边 $BC$ 和 $AB$ 于 $A_1$ 和 $C_1$。
+设 $M$ 为第二个圆与 $BC$ 延长线的切点。
+令 $B_1C = x, AB_1 = y$，则
+\[
+A_1M = C_1A = AB_1 = y \text{ 且 } A_1C = B_1C = x \Rightarrow CM = y - x
+\]
+因此，
+\[
+CM^2 = CB_1 \cdot CA \Rightarrow \left( y - x \right)^2 = x \left( x + y \right) \Rightarrow \frac{y}{x} = 3
+\]
+即 $\frac{AD}{DC} = 3$。
+\end{solution}
 %paste
     \question
 在半径为 $1$ 的圆周上，按逆时针方向依次取点 $A, B, C, D$。已知线段 $AD$ 是直径，且满足 $AC = CD$，$AB = BC$。
@@ -9477,6 +10565,60 @@ w_b = \frac{2ca}{c + a} \cos \frac{B}{2}, \quad w_c = \frac{2ab}{a + b} \cos \fr
 \[
 \sin \frac{A}{2} + \sin \frac{B}{2} + \sin \frac{C}{2} = \cos \frac{\pi - A}{2} + \cos \frac{\pi - B}{2} + \cos \frac{\pi - C}{2} > 1.
 \]
+\end{solution}
+
+\question (CHINA/2005) 证明在锐角三角形 $ABC$ 中, 若 $R$ 和 $r$ 分别是 $\triangle ABC$ 的外接圆半径和内切圆半径, 则
+\[
+\frac{abc}{\sqrt{2(a^2 + b^2)(b^2 + c^2)(c^2 + a^2)}} \ge \frac{r}{2R}
+\]
+
+\begin{solution}
+由于 $\cos A \ge 0 \Rightarrow (b - c)^2 \cos A \ge 0$, 由此推得
+\[
+b^2 + c^2 - 2bc \cos A - (b^2 + c^2)(1 - \cos A) \ge 0
+\]
+余弦定理给出 $a^2 - (b^2 + c^2)(1 - \cos A) \ge 0$, 因此
+\[
+\frac{a^2}{b^2 + c^2} \ge 1 - \cos A = 2 \sin^2 \frac{A}{2}, \text{或} \frac{a}{\sqrt{b^2 + c^2}} \ge \sqrt{2} \sin \frac{A}{2}
+\]
+类似地, 我们有
+\[
+\frac{b}{\sqrt{c^2 + a^2}} \ge \sqrt{2} \sin \frac{B}{2} \text{和} \frac{c}{\sqrt{a^2 + b^2}} \ge \sqrt{2} \sin \frac{C}{2}
+\]
+因此,
+\[
+\frac{abc}{\sqrt{(a^2 + b^2)(b^2 + c^2)(c^2 + a^2)}} \ge 2\sqrt{2} \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2}
+\]
+由于 $2R^2 \sin A \sin B \sin C = \frac{1}{2} (2R \sin A)(2R \sin B) \sin C = [ABC]$, 且 $r(a + b + c) = 2[ABC]$ 或 $2rR = \frac{2[ABC]}{\sin A + \sin B + \sin C}$, 所以
+\begin{align*}
+\frac{r}{R} &= \frac{2 \sin A \sin B \sin C}{\sin A + \sin B + \sin C} = \frac{2 \sin A \sin B \sin C}{4 \cos \frac{A}{2} \cos \frac{B}{2} \cos \frac{C}{2}} \\
+&= 4 \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2}
+\end{align*}
+所以
+\[
+\frac{abc}{\sqrt{2(a^2 + b^2)(b^2 + c^2)(c^2 + a^2)}} \ge 2 \sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2} = \frac{r}{2R}
+\]
+\end{solution}
+
+\question (CROATIA/2007) 在锐角三角形 $ABC$ 中, $A_1, B_1, C_1$ 分别是 $BC, CA, AB$ 的中点。$O$ 是外心且外接圆半径为 $1$。证明
+\[
+\frac{1}{OA_1} + \frac{1}{OB_1} + \frac{1}{OC_1} \ge 6
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image402.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $\angle CAB = \alpha, \angle ABC = \beta, \angle ACB = \gamma$。
+那么 $\angle BOA_1 = \alpha$, 所以 $OA_1 = \cos \alpha$。类似地, $OB_1 = \cos \beta, OC_1 = \cos \gamma$。
+由 HM-AM 不等式,
+\begin{align*}
+\frac{1}{OA_1} + \frac{1}{OB_1} + \frac{1}{OC_1} &= \frac{1}{\cos \alpha} + \frac{1}{\cos \beta} + \frac{1}{\cos \gamma} \\
+&\ge \frac{9}{\cos \alpha + \cos \beta + \cos \gamma}
+\end{align*}
+因此, 结论通过使用基本不等式 $\cos \alpha + \cos \beta + \cos \gamma \le \frac{3}{2}$ 得到证明。
 \end{solution}
 
 \question 10. (IMO/1976) 在一个面积为 $64 \text{ cm}^2$ 的凸四边形中，一条对角线与一对对边长度之和为 $16\sqrt{2} \text{ cm}$。假设另一条对角线的长度为 $x \text{ cm}$。求 $x$ 的值。
