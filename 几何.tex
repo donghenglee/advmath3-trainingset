@@ -11421,6 +11421,522 @@ $PEBC$ 共圆意味着 $\angle PEA = \angle PCF$, 故 $\triangle AEP \sim \trian
 \end{center}
 \vspace{0.5pt}
 \begin{questions}
+    \question (RUSMO/1993) 设 $AB$ 和 $CD$ 是两条长度为 1 的线段。如果它们相交于点 $O$ 且 $\angle AOC = 60^\circ$，证明 $AC + BD \ge 1$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image478.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $AC, BD$，并引入 $CB_1 \parallel AB$，其中 $CB_1 = AB$。则 $ABB_1 C$ 是一个平行四边形，所以 $BB_1 = AC$。连接 $B_1 D$。则 $\triangle CDB_1$ 是等边三角形。对 $\triangle DBB_1$ 应用三角形不等式得
+\[
+AC + BD = BB_1 + BD > DB_1 = CD = 1
+\]
+结论得证。注：当 $A$ 和 $C$ 重合时，$AC + BD = BD = 1$。
+\end{solution}
+
+\question (CHINA/1994) 在凸四边形 $ABCD$ 中，$\angle BAD = \angle BCD = 90^\circ$，且射线 $AK$ 平分 $\angle BAD$。如果 $AK \parallel BC$，$AK \perp CD$，且 $AK$ 与 $BD$ 交于点 $E$，证明 $AE < \frac{1}{2} CD$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image479.png}
+    \end{figure}
+    \fi
+\begin{solution}
+假设 $AK$ 与 $CD$ 交于 $F$，且 $BG \perp AK$ 于 $G$。则 $\triangle ABG$ 和 $\triangle ADF$ 都是等腰直角三角形，所以
+\[
+BG = AG, FD = AF
+\]
+由于 $BCFG$ 是矩形，
+\[
+FD = AF > AG = BG = CF
+\]
+所以
+\[
+FD > \frac{1}{2} \left( CF + FD \right) = \frac{1}{2} CD
+\]
+因此
+\[
+EF = \frac{FD}{CD} \cdot BC > \frac{1}{2} BC
+\]
+由于 $BC + CF = FD$，我们有
+\[
+CD = CF + FD = 2FD - BC > 2\left( FD - EF \right) = 2\left( AF - EF \right) = 2AE
+\]
+即 $AE < \frac{1}{2} CD$。
+\end{solution}
+
+\question (CHINA/1990) 对于 $\triangle ABC$，设 $a = BC, b = CA, c = AB$。如果 $b < \frac{1}{2} \left( a + c \right)$，证明 $\angle B < \frac{1}{2} \left( \angle A + \angle C \right)$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image480.png}
+    \end{figure}
+    \fi
+\begin{solution}
+考虑到 $\angle A + \angle B + \angle C = 180^\circ$，
+\[
+\angle B < \frac{1}{2} \left( \angle A + \angle C \right) \Leftrightarrow \angle B < 60^\circ
+\]
+现在通过延长 $BA$ 到 $D$ 并延长 $BC$ 到 $E$ 来构造一个等腰三角形 $BDE$，使得 $BD = c + a, BE = a + c$。接下来，构造平行四边形 $ACFD$ 使得 $AC \parallel DF, AD \parallel CF$，则
+\[
+\triangle BAC \cong \triangle CFE, \therefore FE = AC = FD = b
+\]
+从 $DE < DF + FE = 2b < a + c$ 可知
+\[
+DE < BE = BD
+\]
+因此 $\angle B < \angle E$，即 $2B < 180^\circ - B$，或 $\angle B < 60^\circ$。结论得证。
+\end{solution}
+
+\question (KIEV/1967) 已知 $\triangle ABC$ 的最长边 $AC$ 满足 $AC > BC$。如果点 $M$ 在 $AC$ 的延长线上且满足 $CM = BC$，证明 $\angle ABM > 90^\circ$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image481.png}
+    \end{figure}
+    \fi
+\begin{solution}
+$AC > BC$ 意味着 $\angle ABC > \angle A$。连接 $BM$。则
+\begin{align*}
+\angle ABM &= \angle ABC + \angle CBM \\
+&= \frac{1}{2} \angle ABC + \frac{1}{2} \angle ABC + \frac{1}{2} \angle ACB \\
+&= \frac{1}{2} \angle ABC - \frac{1}{2} \angle A + 90^\circ > 90^\circ
+\end{align*}
+因此，$\angle ABM$ 是钝角。
+\end{solution}
+
+\question (MOSCOW/1951) 已知两个凸四边形 $ABCD$ 和 $A'B'C'D'$ 具有相等的对应边，即 $AB = A'B', BC = B'C'$ 等。证明如果 $\angle A > \angle A'$，则 $\angle B < \angle B', \angle C > \angle C', \angle D < \angle D'$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image482.png}
+    \end{figure}
+    \fi
+\begin{solution}
+在 $\triangle ABD$ 和 $\triangle A'B'D'$ 中，$AB = A'B', AD = A'D', \angle A > \angle A'$ 给出 $BD > B'D'$。在 $\triangle BCD$ 和 $\triangle B'C'D'$ 中，$BC = B'C', CD = C'D'$ 且 $BD > B'D'$ 意味着 $\angle C > \angle C'$。
+因此 $\angle B + \angle D < \angle B' + \angle D'$。假设 $\angle B \ge \angle B'$，则 $\angle D < \angle D'$，根据类似的推理，$\angle B' > \angle B$，这是一个矛盾。因此，$\angle B < \angle B', \angle D < \angle D'$。
+\end{solution}
+
+\question (USAMO/1996) 设 $ABC$ 是一个三角形。证明存在一条直线 $l$（在三角形 $ABC$ 所在的平面内），使得 $ABC$ 的内部与其在 $l$ 中的反射图像 $A'B'C'$ 的内部的交集面积大于三角形 $ABC$ 面积的 $2/3$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image483.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $BC = a, CA = b, AB = c$。不妨设 $a \le b \le c$。
+设 $AD$ 为 $\angle BAC$ 的角平分线，$B', C'$ 分别是 $B, C$ 关于直线 $AD$ 的对称点，则 $C'$ 在线段 $AB$ 上，$B'$ 在 $AC$ 的延长线上。
+由此得
+\[
+[BDC'] = \frac{BC'}{AB} \cdot \frac{BD}{BC} \cdot [ABC] = \frac{c-b}{c} \cdot \frac{c}{b+c} [ABC] = \frac{c-b}{b+c} [ABC]
+\]
+$2b > a + b > c$ 意味着 $\frac{b}{c+b} > \frac{b}{2b+b} = \frac{1}{3}$，所以
+\[
+[AC'DC] = \left( 1 - \frac{c-b}{c+b} \right) [ABC] = \frac{2b}{c+b} [ABC] > \frac{2}{3} [ABC]
+\]
+因此，直线 $AD$ 满足要求。
+\end{solution}
+
+\question (CHINA/1978) 通过 $\triangle ABC$ 的重心 $G$ 引入一条直线将 $\triangle ABC$ 分成两部分。证明两部分面积之差不大于 $\triangle ABC$ 面积的 $1/9$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image484.png}
+    \end{figure}
+    \fi
+\begin{solution}
+假设穿过 $G$ 的任意直线分别与 $AB$ 和 $AC$ 交于 $D$ 和 $E$。
+当直线 $DE$ 平行于 $BC$ 时，
+\[
+[ADE] = \left( \frac{DE}{BC} \right)^2 [ABC] = \frac{4}{9} [ABC]
+\]
+所以
+\[
+|[ADE] - [DBCE]| = \left( \frac{5}{9} - \frac{4}{9} \right) [ABC] = \frac{1}{9} [ABC]
+\]
+结论成立。
+当 $DE$ 不平行于 $BC$ 时，设 $D$ 在 $P$ 和 $B$ 之间，$E$ 在 $Q$ 和 $N$ 之间，其中 $PQ \parallel BC$ 且 $N$ 是 $AC$ 的中点。我们证明
+\[
+|[DBCE] - [ADE]| < |[PBCQ] - [APQ]| = \frac{1}{9} [ABC]
+\]
+由于 $\angle DPG > \angle PQA$，我们可以引入 $PS \parallel AC$，与 $DE$ 和 $BN$ 分别交于 $R$ 和 $S$。则 $\triangle PRG \cong \triangle QEG$ 且 $\triangle RSG \cong \triangle ENG$，从而
+\[
+[PRG] = [QEG] \text{ 且 } [RSG] = [ENG]
+\]
+因此 $[DBCE] = [PBCQ] - [PDG] + [QEG] < [PBCQ]$ 且 $[ADE] = [APQ] + [PDG] - [QEG] > [APQ]$，所以
+\[
+[DBCE] - [ADE] < [PBCQ] - [APQ] = \frac{1}{9} [ABC]
+\]
+只需证明 $[DBCE] > [ADE]$。注意
+\begin{align*}
+[DBCE] &= [BCN] - [ENG] + [DBG] > [BCN] - [ENG] + [RSG] \\
+&= [BCN] = \frac{1}{2} [ABC]
+\end{align*}
+因此 $[ADE] < \frac{1}{2} [ABC] < [DBCE]$。结论得证。
+\end{solution}
+
+\question (CMO/1969) 设 $\triangle ABC$ 为两条直角边长度均为 1 的等腰直角三角形。$P$ 是斜边上的一点，从 $P$ 到直角边的垂足分别为 $Q$ 和 $R$。考虑三角形 $APQ$ 和 $PBR$ 的面积，以及矩形 $QCRP$ 的面积。证明无论 $P$ 如何选择，这三个面积中最大的一个至少为 $2/9$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image485.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $BR = x$，则 $BR = PR = QC = x$ 且 $RC = PQ = AQ = 1 - x$。
+(i) 当 $x \ge \frac{2}{3}$ 时，
+\[
+[PBR] = \frac{x^2}{2} \ge \frac{2}{9}
+\]
+(ii) 当 $x \le \frac{1}{3}$ 时，则 $1 - x \ge \frac{2}{3}$，所以
+\[
+[APQ] = \frac{\left( 1 - x \right)^2}{2} \ge \frac{2}{9}
+\]
+(iii) 当 $\frac{1}{3} < x < \frac{2}{3}$ 时，则 $-\frac{1}{6} < x - \frac{1}{2} < \frac{1}{6}$，所以
+\[
+[QCRP] = x\left( 1 - x \right) = -x^2 + x = -\left( x - \frac{1}{2} \right)^2 + \frac{1}{4} > -\frac{1}{36} + \frac{1}{4} = \frac{2}{9}
+\]
+结论得证。
+\end{solution}
+
+\question 设 $R$ 是 $\triangle ABC$ 的内部一点。证明：
+\[
+\frac{1}{2}(AB + BC + CA) < RA + RB + RC < AB + BC + CA
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image486.png}
+    \end{figure}
+    \fi
+\begin{solution}
+根据例 1，可得 $AB + AC > RB + RC$，
+\[
+BA + BC > RC + RA, \text{且}
+\]
+\[
+BC + CA > RA + RB
+\]
+将它们相加，得
+\[
+2(AB + BC + CA) > 2(RA + RB + RC)
+\]
+所以
+\[
+RA + RB + RC < AB + BC + CA
+\]
+由三角形不等式，$RA + RB > AB$，$RB + RC > BC$，$RC + RA > CA$。将它们相加，不等式
+\[
+\frac{1}{2}(AB + BC + CA) < RA + RB + RC
+\]
+立即得证。
+\end{solution}
+
+\question (BMO/1967) 在 $\triangle ABC$ 中，如果 $\angle C > \angle B$，且 $BE$，$CF$ 分别是 $CA$ 和 $AB$ 上的高。证明 $AB + CF > AC + BE$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image487.png}
+    \end{figure}
+    \fi
+\begin{solution}
+因为 $\angle C > \angle B$，我们有 $AB > AC$。在 $AB$ 上取 $C'$ 使得 $AC' = AC$，并作 $C'D \perp BE$ 于 $D$ 且 $C'F' \parallel BE$，如图所示交 $AC$ 于 $F'$，则 $DC'F'E$ 是一个矩形且
+\[
+CF = C'F' = DE
+\]
+因此 $AB + CF = AC' + BC' + C'F' = AC + BC' + DE$，所以
+\[
+(AB + CF) - (AC + BE) = BC' - BD > 0
+\]
+因为在直角 $\triangle BC'D$ 中，$BC'$ 是斜边。因此，$AB + CF > AC + BE$。
+\end{solution}
+
+\question 在 $\triangle ABC$ 中，$AB > BC$，$AD \perp BC$ 于 $D$。$P$ 是 $AD$ 上异于 $A$ 和 $D$ 的任意一点，证明 $PB - PC > AB - AC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image488.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由勾股定理，
+\[
+PB^2 - PC^2 = (PD^2 + BD^2) - (PD^2 + DC^2) = BD^2 - DC^2
+\]
+且
+\begin{align*}
+AB^2 - AC^2 &= (AD^2 + BD^2) - (AD^2 + DC^2) \\
+&= BD^2 - DC^2
+\end{align*}
+所以 $PB^2 - PC^2 = AB^2 - AC^2$。因此，
+\[
+(PB - PC)(PB + PC) = (AB - AC)(AB + AC)
+\]
+考虑到 $PB + PC < AB + AC$，我们得到 $PB - PC > AB - AC$。
+\end{solution}
+
+\question 对于锐角三角形 $ABC$，设 $a = BC$，$b = CA$，$c = AB$，且在 $BC$，$CA$，$AB$ 上的高长度分别为 $h_a$，$h_b$，$h_c$，证明
+\[
+\frac{1}{2}(a + b + c) < h_a + h_b + h_c < a + b + c
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image489.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $h_a = AD, h_b = BE, h_c = CF$。那么
+\[
+h_a < b, h_a < c, h_b < a, h_b < c, h_c < b, h_c < a
+\]
+将它们相加，我们得到 $2(h_a + h_b + h_c) < 2(a + b + c)$，即
+\[
+h_a + h_b + h_c < a + b + c
+\]
+另一方面，由 $AD + BD > AB$，$AD + DC > AC$ 我们有
+\[
+2h_a + a > b + c
+\]
+类似地，
+\begin{align*}
+2h_b + b &> c + a \\
+2h_c + c &> a + b
+\end{align*}
+将上述三式相加，得 $2(h_a + h_b + h_c) > a + b + c$，所以
+\[
+\frac{1}{2}(a + b + c) < h_a + h_b + h_c
+\]
+\end{solution}
+
+\question (MOSCOW/1974) 证明：如果长度为 $a, b, c$ 的三条线段可以组成一个三角形，那么长度为 $\frac{1}{a+b}$，$\frac{1}{b+c}$，$\frac{1}{c+a}$ 的三条线段也可以组成一个三角形。
+
+\begin{solution}
+假设意味着 $a + b > c$，$b + c > a$，$c + a > b$。由于
+\[
+\frac{1}{c + a} > \frac{1}{a + b + a + b} = \frac{1}{2(a + b)}
+\]
+且
+\[
+\frac{1}{b + c} > \frac{1}{a + b + a + b} = \frac{1}{2(a + b)}
+\]
+可得
+\[
+\frac{1}{a + b} < \frac{1}{c + a} + \frac{1}{b + c}
+\]
+同理
+\[
+\frac{1}{b + c} < \frac{1}{a + b} + \frac{1}{c + a}, \text{且} \frac{1}{c + a} < \frac{1}{a + b} + \frac{1}{b + c}
+\]
+这三个不等式证明了结论。
+\end{solution}
+
+\question 已知 $BB_1$ 和 $CC_1$ 是 $\triangle ABC$ 的两条中线。证明 $BB_1^2 + CC_1^2 > \frac{9}{8}BC^2$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image490.png}
+    \end{figure}
+    \fi
+\begin{solution}
+因为
+\[
+2(u^2 + v^2) \ge (u + v)^2
+\]
+对于任意实数 $u$ 和 $v$，且
+\[
+BB_1 = \frac{3}{2}BG, CC_1 = \frac{3}{2}CG
+\]
+由此可知
+\begin{align*}
+BB_1^2 + CC_1^2 &= \frac{9}{4}(BG^2 + CG^2) \\
+&\ge \frac{9}{8}(BG + CG)^2 > \frac{9}{8}BC^2
+\end{align*}
+\end{solution}
+
+\question (MOSCOW/1972) 一条直线分别交 $\triangle ABC$ 的边 $AB$ 和 $BC$ 于点 $M$ 和 $K$，使得 $\triangle MBK$ 的面积和四边形 $AMKC$ 的面积相等。证明
+\[
+\frac{MB + BK}{AM + CA + KC} \ge \frac{1}{3}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image491.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $MB = a, BK = b, KC = c, AC = d, AM = e$。那么
+\[
+[MBK] > [MCK] \implies b > c
+\]
+\[
+[MBK] > [MAK] \implies a > e
+\]
+假设 $\frac{a + b}{c + d + e} < \frac{1}{3}$，那么 $3a + 3b < c + d + e < b + d + a$，所以 $2a + 2b < d$。
+由于 $2a + 2b > (a + e) + (b + c) = AB + BC$，所以 $AB + BC < d = AC$，这是一个矛盾。因此，结论得证。
+\end{solution}
+
+\question (RUSMO/1983) 在 $\triangle ABC$ 中，$D$ 是 $AB$ 的中点，$E$ 和 $F$ 分别在 $AC$ 和 $BC$ 上。证明 $\triangle DEF$ 的面积不大于 $\triangle ADE$ 和 $\triangle BDF$ 面积之和。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image492.png}
+    \end{figure}
+    \fi
+\begin{solution}
+延长 $ED$ 到 $E_1$ 使得 $DE_1 = DE$。连接 $E_1B, E_1F$。则
+\[
+\triangle BDE_1 \cong \triangle ADE \text{ (S.A.S.)}
+\]
+对于四边形 $E_1BFD$，我们有
+\[
+[FDE_1] = [DEF]
+\]
+从而
+\[
+[ADE] + [BDF] = [E_1BFD] > [FDE_1] = [DEF]
+\]
+\end{solution}
+
+\question (CHNMOL/1979) 已知 $\triangle ABC$ 是锐角三角形，$a = BC, b = CA, c = AB$ 且 $a > b > c$。在它的 3 个内接正方形中，哪一个面积最大？
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image493.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $h_a, h_b, h_c$ 分别是 $BC, CA, AB$ 上的高。如果 $PQRS$ 是 $\triangle ABC$ 的内接正方形，使得 $RS$ 在 $BC$ 上，设 $PQ = PS = RS = QR = l$，由 $\triangle AQP \sim \triangle ABC$，我们有
+\[
+\frac{h_a - l}{h_a} = \frac{l}{a}
+\]
+我们得到
+\[
+l = \frac{ah_a}{a + h_a}
+\]
+类似地，如果边长在 $AC$ 和 $AB$ 上的正方形边长分别为 $m$ 和 $n$，则
+\[
+m = \frac{bh_b}{b + h_b}, \text{且} n = \frac{ch_c}{c + h_c}
+\]
+由于 $\frac{b}{a} = \frac{h_a}{h_b}$，所以 $\frac{a - h_b}{b - h_a} = \frac{a}{b} > 1$，即 $a - h_b > b - h_a$，因此 $a + h_a > b + h_b$。从而，
+\[
+\frac{ah_a}{a + h_a} < \frac{bh_b}{b + h_b}, \therefore l < m
+\]
+类似地，$m < n$。因此，在最短边 $AB$ 上有一边的正方形面积最大。
+\end{solution}
+
+\question (KIEV/1969) 是否存在一个三角形，其三条高的长度分别为 $1, \sqrt{5}, 1 + \sqrt{5}$？
+
+\begin{solution}
+假设存在这样一个三角形。设其面积为 $S$。那么我们可以假设
+\[
+a = \frac{2S}{1}, \quad b = \frac{2S}{\sqrt{5}}, \quad c = \frac{2S}{1 + \sqrt{5}}
+\]
+由于 $a > b > c$，我们检查该三角形是否满足三角形不等式，只需检查 $b + c > a$。
+\[
+b + c = 2S \left( \frac{1}{\sqrt{5}} + \frac{1}{1 + \sqrt{5}} \right) < 2S \left( \frac{1}{2} + \frac{1}{1 + 2} \right) = 2S \cdot \frac{5}{6} < a
+\]
+这是一个矛盾。因此，这样的三角形不存在。
+\end{solution}
+
+\question (RUSMO/1981) 点 $C_1, A_1, B_1$ 分别属于 $\triangle ABC$ 的边 $AB, BC, CA$。
+\[
+\frac{AC_1}{C_1B} = \frac{BA_1}{A_1C} = \frac{CB_1}{B_1A} = \frac{1}{3}
+\]
+证明 $\triangle ABC$ 的周长 $P$ 和 $\triangle A_1B_1C_1$ 的周长 $p$ 满足不等式 $\frac{P}{2} < p < \frac{3}{4}P$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image494.png}
+    \end{figure}
+    \fi
+\begin{solution}
+首先我们有
+\begin{align*}
+A_1C - CB_1 &< A_1B_1 \\
+B_1A - AC_1 &< B_1C_1 \\
+C_1B - BA_1 &< C_1A_1
+\end{align*}
+即
+\[
+\frac{3}{4}a - \frac{1}{4}b < c_1, \quad \frac{3}{4}b - \frac{1}{4}c < a_1, \quad \frac{3}{4}c - \frac{1}{4}a < b_1
+\]
+其中 $a, b, c$ 分别是 $BC, CA, AB$ 的长度，而 $a_1, b_1, c_1$ 分别是 $B_1C_1, C_1A_1, A_1B_1$ 的长度。将它们相加我们得到
+\[
+\frac{1}{2}(a + b + c) < a_1 + b_1 + c_1, \quad \text{即} \quad \frac{1}{2}P < p
+\]
+在 $\triangle ABC$ 的边上我们取线段 $A_1A_2, B_1B_2, C_1C_2$ 使得 $A_1A_2 = \frac{1}{2}a, B_1B_2 = \frac{1}{2}b, C_1C_2 = \frac{1}{2}c$。很容易看出 $B_2C_1 = \frac{1}{4}a, A_1C_2 = \frac{1}{4}b, A_2B_1 = \frac{1}{4}c$，从而
+\[
+\frac{1}{2}b + \frac{1}{4}a > a_1, \quad \frac{1}{2}c + \frac{1}{4}b > b_1, \quad \frac{1}{2}a + \frac{1}{4}c > c_1
+\]
+将它们相加，我们得到
+\[
+a_1 + b_1 + c_1 < \frac{3}{4}(a + b + c)
+\]
+即 $p < \frac{3}{4}P$。
+\end{solution}
+
+\question (KIEV/1966) 设 $a, b, c$ 为 $\triangle ABC$ 三边的长度，且 $I = a + b + c, S = ab + bc + ca$。证明 $3S \le I^2 \le 4S$。
+
+\begin{solution}
+\begin{align*}
+I^2 - 3S &= (a + b + c)^2 - 3(ab + bc + ca) \\
+&= a^2 + b^2 + c^2 - ab - bc - ca \\
+&= \frac{1}{2} \left[ (a - b)^2 + (b - c)^2 + (c - a)^2 \right] \ge 0
+\end{align*}
+因此 $3S \le I^2$。另一方面，
+\begin{align*}
+I^2 - 4S &= (a + b + c)^2 - 4(ab + bc + ca) \\
+&= a^2 + b^2 + c^2 - 2ab - 2bc - 2ca \\
+&= (a - b)^2 + c^2 - 2c(a + b) \\
+&< c^2 + c^2 - 2c(a + b) = 2c \left[ c - (a + b) \right] < 0
+\end{align*}
+因此 $I^2 < 4S$。
+\end{solution}
+
+\question (RUSMO/1989) 如果 $a, b, c$ 表示一个三角形的边长，满足 $a + b + c = 1$，证明
+\[
+a^2 + b^2 + c^2 + 4abc < \frac{1}{2}
+\]
+
+\begin{solution}
+从 $1 = (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)$，我们有 $4(ab + bc + ca) = 2 - 2(a^2 + b^2 + c^2)$。根据海伦公式，三角形的面积 $S$ 由下式给出
+\[
+S = \sqrt{\frac{1}{2} \left( \frac{1}{2} - a \right) \left( \frac{1}{2} - b \right) \left( \frac{1}{2} - c \right)}
+\]
+从而
+\begin{align*}
+16S^2 &= (1 - 2a)(1 - 2b)(1 - 2c) \\
+&= 1 - 2(a + b + c) + 4(ab + bc + ca) - 8abc \\
+&= -1 + 4(ab + bc + ca) - 8abc \\
+&= 1 - 2(a^2 + b^2 + c^2) - 8abc
+\end{align*}
+因此 $1 - 2(a^2 + b^2 + c^2) - 8abc \ge 0$，即 $a^2 + b^2 + c^2 + 4abc \le \frac{1}{2}$。
+\end{solution}
+
+\question (IREMO/2003) 设 $T$ 为一个周长为 2 的三角形，$a, b, c$ 为其三边长度。证明
+(i) $abc + \frac{28}{27} \ge ab + bc + ca$;
+(ii) $ab + bc + ca \ge abc + 1$。
+
+\begin{solution}
+从 $a + b + c = 2$ 我们有 $0 < a, b, c < 1$，从而
+\[
+0 < (1 - a)(1 - b)(1 - c) \le \left( \frac{1 - a + 1 - b + 1 - c}{3} \right)^3 = \frac{1}{27}
+\]
+由此可知
+\[
+0 < 1 - (a + b + c) + (ab + bc + ca) - abc \le \frac{1}{27}
+\]
+即
+\[
+0 < (ab + bc + ca) - 1 - abc \le \frac{1}{27}
+\]
+结论立即得证。
+\end{solution}
+
     \question 8. (CMC/2009) 在四面体 $PABC$ 中，$\angle APB = \angle BPC = \angle CPA = 90^\circ$，且所有棱长的和为 $S$，求此四面体体积的最大值。
 
 \begin{solution}
