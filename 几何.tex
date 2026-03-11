@@ -10414,6 +10414,533 @@ CM^2 = CB_1 \cdot CA \Rightarrow \left( y - x \right)^2 = x \left( x + y \right)
 \end{center}
 \vspace{0.5pt}
 \begin{questions}
+\question 对于给定的 $\triangle ABC$，其重心为 $G$。对于平面内任意一点 $M$，下列等式恒成立：
+\[
+MA^2 + MB^2 + MC^2 = GA^2 + GB^2 + GC^2 + 3MG^2
+\]
+注：该结论给出了三角形 $ABC$ 重心的另一个定义：点 $G$ 是 $\triangle ABC$ 的重心，当且仅当
+\[
+GA^2 + GB^2 + GC^2 = \min \{MA^2 + MB^2 + MC^2\}
+\]
+其中 $M$ 可以是平面内的任意一点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image460.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如图所示，设 $G$ 为重心，三条中线分别为 $AD, BE, CF$。用 $K$ 表示 $AG$ 的中点，连接 $MK, MD$。则 $AK = KG = GD$，且
+\begin{align*}
+MB^2 + MC^2 &= 2\left(BD^2 + MD^2\right) \\
+MA^2 + MG^2 &= 2\left(MK^2 + GK^2\right) \\
+2\left(MD^2 + MK^2\right) &= 4\left(MG^2 + GK^2\right)
+\end{align*}
+由以上三式相加得
+\[
+MA^2 + MB^2 + MC^2 = 3MG^2 + 2\left(BD^2 + GK^2\right) + 4GK^2
+\]
+因为 $4GK^2 = GA^2$，
+\[
+2\left(BD^2 + GK^2\right) = 2\left(BD^2 + GD^2\right) = GB^2 + GC^2
+\]
+所以
+\[
+MA^2 + MB^2 + MC^2 = GA^2 + GB^2 + GC^2 + 3MG^2
+\]
+\end{solution}
+
+\question (欧拉线) 对于任意三角形 $ABC$，其重心 $G$、外心 $O$ 和垂心 $H$ 共线，且 $G$ 在 $O, H$ 之间，使得 $HG = 2OG$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image461.png}
+    \end{figure}
+    \fi
+\begin{solution}
+若 $A'$ 和 $C'$ 分别是 $BC$ 和 $AB$ 的中点，则 $G$ 在 $AA'$ 上且 $AG = 2GA'$。连接 $OA', OG$。设 $H'$ 在 $OG$ 的延长线上，使得 $H'G = 2GO$，则 $\triangle AGH' \sim \triangle A'GO$，即 $AH' \parallel OA'$。因为 $OA' \perp BC$，所以 $AH' \perp BC$。
+类似地，$CH' \perp AB$。
+因此，$H'$ 就是垂心 $H$。结论得证。
+\end{solution}
+
+\question $H$ 是锐角 $\triangle ABC$ 的垂心，且 $AH = p, BH = q, CH = r$。证明 $aqr + brp + cpq = abc$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image462.png}
+    \end{figure}
+    \fi
+\begin{solution}
+下面我们利用三角法证明该结论。
+设
+\[
+\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R
+\]
+其中 $R$ 是 $\triangle ABC$ 的外接圆半径。则
+\[
+\angle AHE = 90^\circ - \angle DAC = \angle C
+\]
+\[
+\Rightarrow p = \frac{AE}{\sin C} = \frac{AB \cos A}{\sin C} = 2R \cos A
+\]
+类似地，$q = 2R \cos B$，$r = 2R \cos C$。
+因此
+\begin{align*}
+aqr + brp + cpq = abc &\Leftrightarrow 2R \sin A \cdot 2R \cos B \cdot 2R \cos C + 2R \sin B \cdot 2R \cos C \cdot 2R \cos A \\
+&+ 2R \sin C \cdot 2R \cos A \cdot 2R \cos B = 2R \sin A \cdot 2R \sin B \cdot 2R \sin C \\
+&\Leftrightarrow \sin A \cos B \cos C + \sin B \cos C \cos A + \sin C \cos A \cos B = \sin A \sin B \sin C \\
+&\Leftrightarrow \tan A + \tan B + \tan C = \tan A \tan B \tan C
+\end{align*}
+最后一个等式是三角形的一个已知基本性质。
+\end{solution}
+
+\question (CMC/2008) 在锐角三角形 $ABC$ 中，$D, E, F$ 分别是边 $BC, CA, AB$ 的中点。在 $EF, FD, DE$ 的延长线上分别取点 $P, Q, R$，使得 $AP = BQ = CR$。证明 $\triangle PQR$ 的外心是 $\triangle ABC$ 的垂心。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image463.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $AL, BM, CN$ 为 $\triangle ABC$ 的高，$H$ 为垂心。假设 $EF$ 与 $AL$ 交于点 $K$。则
+\begin{align*}
+AP^2 &= PK^2 + AK^2 \\
+&= PH^2 - KH^2 + AK^2 \\
+&= PH^2 + (AK + KH)(AK - KH) \\
+&= PH^2 + AH \cdot HL
+\end{align*}
+类似地，
+\[
+BQ^2 = QH^2 + BH \cdot HM
+\]
+且
+\[
+CR^2 = RH^2 + CH \cdot HN
+\]
+因为 $AP = BQ = CR$，且 $ABLM, BCMN$ 共圆，所以
+\[
+AH \cdot HL = BH \cdot HM = CH \cdot HN
+\]
+从而 $PH = QH = RH$，故 $H$ 是 $\triangle PQR$ 的外心。
+\end{solution}
+
+\question (CMC/2009) 在 $\triangle ABC$ 中，点 $D, E$ 分别在 $AB, AC$ 上，使得 $DE \parallel BC$。$\triangle ADE$ 的内切圆切 $DE$ 于 $M$，$\triangle ABC$ 在 $BC$ 边上的旁切圆切 $BC$ 于 $N$。$BE$ 和 $CD$ 相交于 $P$。证明 $M, N, P$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image464.png}
+    \end{figure}
+    \fi
+\begin{solution}
+假设 $BE$ 和 $MN$ 交于 $P'$。由于 $DE \parallel BC$，
+\[
+\frac{BP}{PE} = \frac{BC}{DE}
+\]
+且
+\[
+\frac{BP'}{P'E} = \frac{BN}{EM}
+\]
+故只需证明
+\[
+\frac{BN}{EM} = \frac{BC}{DE} \text{ 或 } \frac{BN}{BC} = \frac{EM}{DE}
+\]
+设 $O_1, O_2$ 分别为内切圆和旁切圆的圆心，$F, G, H, I$ 为相关的切点，如右图所示。则
+\begin{align*}
+EM &= \frac{1}{2}(AE + DE - AD) \\
+AH &= AB + BH = AB + BN \\
+&= AI = \frac{1}{2}(AB + BC + AC)
+\end{align*}
+所以 $BN = AH - AB = \frac{1}{2}(AC + BC - AB)$。由于 $\triangle ADE \sim \triangle ABC$，可以令
+\[
+\frac{AB}{AD} = \frac{BC}{DE} = \frac{AC}{AE} = k
+\]
+则
+\begin{align*}
+\frac{BN}{BC} &= \frac{\frac{1}{2}(AC + BC - AB)}{BC} \\
+&= \frac{k(AE + DE - AD)}{2k \cdot DE} \\
+&= \frac{AE + DE - AD}{2DE} \\
+&= \frac{EM}{DE}
+\end{align*}
+因此，结论得证。
+\end{solution}
+
+\question (CMC/2010) $\triangle ABC$ 的内切圆圆心为 $I$，切边 $AC, AB$ 分别于点 $E, F$。令 $M$ 为线段 $EF$ 上的一点。证明 $\triangle MAB$ 和 $\triangle MAC$ 的面积相等当且仅当 $MI \perp BC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image465.png}
+    \end{figure}
+    \fi
+\begin{solution}
+作 $MP \perp AC$ 于 $P$，$MQ \perp AB$ 于 $Q$。假设 $\odot I$ 切 $BC$ 于 $D$，则 $ID \perp BC, IF \perp AB, IE \perp AC$。
+$AF = AE$ 意味着 $\angle AFM = \angle AEM$，故 $\triangle QFM \sim \triangle PEM$，从而
+\[
+\frac{MQ}{MP} = \frac{MF}{ME}
+\]
+由于
+\[
+\frac{[MAB]}{[MAC]} = \frac{MQ \cdot AB}{MP \cdot AC} = \frac{MF}{ME} \cdot \frac{AB}{AC}
+\]
+所以 $[MAB] = [MAC]$ 当且仅当
+\[
+\frac{AB}{AC} = \frac{ME}{MF}
+\]
+下面证明当且仅当 $MI \perp BC$ 时，上式成立。
+当 $MI \perp BC$ 时，$M$ 在直线 $ID$ 上。$BDIF$ 和 $CDIE$ 均为四对点共圆，意味着
+\[
+\angle MIF = \angle B, \quad \angle MIE = \angle C
+\]
+对 $\triangle MIF$ 和 $\triangle MIE$ 应用正弦定理得
+\[
+\frac{MF}{\sin \angle MIF} = \frac{FI}{\sin \angle IMF}, \quad \frac{IE}{\sin \angle EMI} = \frac{ME}{\sin \angle MIE}
+\]
+即
+\[
+\frac{ME}{MF} = \frac{\sin \angle C}{\sin \angle B} = \frac{AB}{AC}
+\]
+再次应用了正弦定理。
+反之，当 $\frac{AB}{AC} = \frac{ME}{MF}$ 时，假设直线 $ID$ 与 $EF$ 交于 $M'$，则上述证明表明 $\frac{M'E}{M'F} = \frac{AB}{AC}$，故 $\frac{ME}{MF} = \frac{M'E}{M'F}$，这意味着 $M' = M$。因此，$M$ 在直线 $ID$ 上，即 $IM \perp BC$。
+\end{solution}
+
+\question (APMO/2007) 设 $ABC$ 为锐角三角形，$\angle BAC = 60^\circ$ 且 $AB > AC$。令 $I$ 为内心，$H$ 为垂心。证明
+\[
+2\angle AHI = 3\angle ABC
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image466.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $D$ 为直线 $AH$ 与 $BC$ 的交点。令 $K$ 为三角形 $ABC$ 外接圆 $O$ 与直线 $AH$ 的交点。设过 $I$ 且垂直于 $BC$ 的直线分别交 $BC$ 和外接圆 $O$ 的劣弧 $BC$ 于 $E$ 和 $N$。我们有
+\begin{align*}
+\angle BIC &= 180^\circ - (\angle IBC + \angle ICB) \\
+&= 180^\circ - \frac{1}{2}(\angle ABC + \angle ACB) \\
+&= 90^\circ + \frac{1}{2}\angle BAC = 120^\circ \\
+\angle BNC &= 180^\circ - \angle BAC = 120^\circ = \angle BIC
+\end{align*}
+由于 $IN \perp BC$，我们有 $IE = EN$（否则，若 $IE < EN$，则 $\angle IBC < \angle NBC$ 且 $\angle ICB < \angle NCB$，但 $\angle IBC + \angle ICB = \angle NBC + \angle NCB = 60^\circ$，矛盾）。
+现在，因为 $H$ 是三角形 $ABC$ 的垂心，$HD = DK$。又因为 $ED \perp IN$ 且 $ED \perp HK$，我们得出 $IHKN$ 是等腰梯形，且 $IH = NK$。
+因此
+\[
+\angle AHI = 180^\circ - \angle IHK = 180^\circ - \angle AKN = \angle ABN
+\]
+由于 $IE = EN$ 且 $BE \perp IN$，三角形 $IBE$ 和 $NBE$ 全等。
+因此
+\[
+\angle NBE = \angle IBE = \angle IBC = \angle IBA = \frac{1}{2}\angle ABC
+\]
+从而
+\[
+\angle AHI = \angle ABN = \frac{3}{2}\angle ABC
+\]
+\end{solution}
+
+\question (TURKEY/2008) 给定锐角三角形 $ABC$，$O$ 是外心，$H$ 是垂心。令 $A_1, B_1, C_1$ 分别为边 $BC, CA, AB$ 的中点。射线 $HA_1, HB_1, HC_1$ 分别交 $\triangle ABC$ 的外接圆于 $A_0, B_0, C_0$。证明如果 $H_0$ 是 $\triangle A_0B_0C_0$ 的垂心，则 $O, H, H_0$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image467.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $HB, HC, A_0B, A_0C, A_0A$。$\triangle ABC$ 的垂心为 $H$ 意味着
+\begin{align*}
+\angle BHC &= 180^\circ - (90^\circ - \angle B) - (90^\circ - \angle C) \\
+&= \angle B + \angle C = 180^\circ - \angle A = \angle BA_0C
+\end{align*}
+由于 $HA_0$ 通过 $BC$ 的中点 $A_1$，所以四边形 $BHCA_0$ 是平行四边形，故
+\[
+\angle ACA_0 = 90^\circ
+\]
+因此 $AA_0$ 是外接圆 $O$ 的直径。类似地，$CC_0, BB_0$ 也是外接圆 $O$ 的直径。
+因此，三角形 $ABC$ 和 $A_0B_0C_0$ 关于 $O$ 点对称，故 $H$ 和 $H_0$ 关于 $O$ 对称，即 $O$ 是线段 $HH_0$ 的中点。结论得证。
+\end{solution}
+
+\question 设 $O, H$ 分别为锐角三角形 $ABC$ 的外心和垂心。证明 $[AOH], [BOH], [COH]$ 中的最大值等于其余两个面积之和（其中 $[XYZ]$ 表示 $\triangle XYZ$ 的面积）。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image468.png}
+    \end{figure}
+    \fi
+\begin{solution}
+当直线 $OH$ 经过 $\triangle ABC$ 的一个顶点时，该直线也经过该顶点所对边的中点，结论显然成立。
+当直线 $OH$ 与 $\triangle ABC$ 的两边相交时，不妨设其与 $AB$ 和 $AC$ 相交，如右图所示。设 $G$ 为 $\triangle ABC$ 的重心。
+众所周知，$G$ 在线段 $OH$ 上，且直线 $AG$ 经过 $BC$ 的中点 $M$。连接 $OM, HM$。
+设 $CC' \perp OH$ 于 $C'$，$MM' \perp OH$ 于 $M'$，$BB' \perp OH$ 于 $B'$。则有
+\[
+BB' + CC' = 2MM' \Rightarrow [BOH] + [COH] = 2[MOH] = [AOH]
+\]
+对于直线 $OH$ 的其他可能位置，证明方法类似。
+\end{solution}
+
+\question (CMC/2008) 以 $\triangle ABC$ 的边 $BC$ 为直径的圆分别交直线 $AB, AC$ 于点 $E, F$。在 $E, F$ 点处的切线交于点 $P$。直线 $AP$ 与直线 $BF$ 交于点 $D$。证明 $D, C, E$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image469.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $EF, EC, CD$。则 $\angle PEF = \angle PFE = \angle EBF$。
+由于 $AF \perp BF$，
+\begin{align*}
+\angle BAF &= 90^\circ - \angle EBF = 90^\circ - \angle PEF \\
+&= \frac{1}{2} \angle EPF
+\end{align*}
+假设以 $P$ 为圆心、$PE$ 为半径的圆与直线 $BA$ 交于 $A'$，则
+\[
+\angle EA'F = \frac{1}{2} \angle EPF = \angle BAF
+\]
+所以 $A$ 与 $A'$ 重合，故 $PA = PE$，且
+\[
+\angle PAE + \angle ABC = \angle PEA + \angle PEC = 90^\circ \Rightarrow BC \perp AP
+\]
+因此 $C$ 是 $\triangle ABD$ 的垂心，故 $CD \perp AB$。又因为 $CE \perp AB$，所以 $D, C, E$ 共线。
+\end{solution}
+
+\question (AUSTRIA/2009) 设 $D, E, F$ 分别为 $\triangle ABC$ 的边 $BC, CA, AB$ 的中点，$H_a, H_b, H_c$ 分别为 $\triangle ABC$ 三条边上的垂足，$P, Q, R$ 分别为 $\triangle H_a H_b H_c$ 的边 $H_b H_c, H_c H_a, H_a H_b$ 的中点。证明直线 $PD, QE, RF$ 共点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image470.png}
+    \end{figure}
+    \fi
+\begin{solution}
+由于 $\angle AH_a B = \angle BH_b A = 90^\circ$，这意味着 $H_a, H_b$ 在以 $F$ 为圆心的圆上。
+因为 $R$ 是弦 $H_a H_b$ 的中点，所以 $RF$ 是 $H_a H_b$ 的垂直平分线。
+同理，$QE, PD$ 分别是 $H_c H_a, H_b H_c$ 的垂直平分线。
+因此，$PD, QE, RF$ 共点于 $\triangle H_a H_b H_c$ 的外心。
+注：当垂足三角形不在三角形内部时，结论依然成立。
+\end{solution}
+
+\question (IRAN/TST/2009) 在 $\triangle ABC$ 中，$D, E$ 和 $F$ 分别是内切圆（圆心为 $I$）与 $BC, CA$ 和 $AB$ 的切点。设 $M$ 是从 $D$ 到 $EF$ 的垂足，$P$ 在 $DM$ 上且满足 $DP = MP$。如果 $H$ 是 $\triangle BIC$ 的垂心，证明 $PH$ 平分 $EF$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image471.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $Q$ 为 $EF$ 的中点，则 $QI \perp EF$。设 $H'$ 为 $\triangle DEF$ 的垂心。
+$I$ 是 $\triangle DEF$ 的外心，则有
+\[
+IQ = \frac{1}{2} DH'
+\]
+由于 $DP = \frac{1}{2} DM$，通过比例关系可得
+\[
+\frac{IQ}{DP} = \frac{DH'}{DM}
+\]
+由于 $BH \perp CI$，所以
+\begin{align*}
+\angle HBC &= 90^\circ - \angle ICB = 90^\circ - \frac{1}{2} \angle ACB \\
+&= \frac{1}{2} \angle ABC + \frac{1}{2} \angle BAC = \angle IFD + \angle IFE = \angle EFD
+\end{align*}
+同理，$\angle HCB = \angle FED$。因此 $\triangle HBC \sim \triangle DFE$。由于 $I$ 是 $\triangle HBC$ 的垂心，所以
+\[
+\frac{DH'}{DM} = \frac{HI}{HD} \Rightarrow \frac{IQ}{DP} = \frac{HI}{HD}
+\]
+由于 $IQ \parallel DP$ 且 $H, I, D$ 共线，所以 $\triangle HIQ \sim \triangle HDP$，因此 $\angle IHQ = \angle DHP$，即 $H, Q, P$ 共线，结论得证。
+\end{solution}
+
+\question (BULGARIA/TST/2009) $\triangle ABC$ 的三个旁切圆分别与线段 $AB, BC, CA$ 切于点 $M, N, P$。$I$ 和 $O$ 分别是 $\triangle ABC$ 的内心和外心。证明如果四边形 $AMNP$ 是圆内接四边形，则：
+(i) $M, P, I$ 共线；
+(ii) $I, O, N$ 共线。
+
+\begin{solution}
+设直线 $l_1, l_2, l_3$ 满足 $l_1 \perp AB$ 于 $M$，$l_2 \perp BC$ 于 $N$，$l_3 \perp CA$ 于 $P$。下面证明 $l_1, l_2, l_3$ 共点于 $X$。
+假设 $l_1, l_2$ 交于点 $X$，且 $XP' \perp AC$ 于 $P'$。只需证明 $P'$ 与 $P$ 重合。
+设 $CP' = x$，半周长 $p = \frac{1}{2}(a+b+c)$，则
+\[
+AM = p-b, BN = p-c, CP = p-a, CN = p-b, AP' = b-x, BM = p-a
+\]
+由 $AM^2 + BN^2 + CP'^2 = CN^2 + BM^2 + AP'^2$ 得
+\[
+(p-b)^2 + (p-c)^2 + x^2 = (p-b)^2 + (p-a)^2 + (b-x)^2 \Rightarrow x = p-a = CP
+\]
+因此 $P = P'$。故 $l_3$ 经过 $X$，且 $AMXP$ 共圆。
+由于 $AMNP$ 共圆，所以 $N = X$，因此 $AN$ 是 $AMNP$ 外接圆的直径。
+(i) 设 $I_B, I_C$ 分别是 $B$ 和 $C$ 相对的旁切圆圆心，应用帕普斯定理于两条直线 $I_C A I_B$ 和 $B N C$，可得 $M, P, I$ 共线。
+(ii) 假设内切圆 $\odot I$ 与 $AB, AC$ 分别切于 $R, Q$，则 $AB$ 的垂直平分线与线段 $RM$ 的垂直平分线重合，它们都经过 $IN$ 的中点。同理，$AC$ 的垂直平分线也经过 $IN$ 的中点，因此 $O$ 是 $IN$ 的中点。故 $I, O, N$ 共线。
+\end{solution}
+
+\question (CMC/2008) 已知锐角三角形 $ABC$ 的外接圆半径 $R$ 为 1，$\angle BAC = 60^\circ$，$\triangle ABC$ 的垂心和外心分别为 $H$ 和 $O$。直线 $OH$ 与 $BC$ 的延长线交于点 $P$。
+(i) 求凹四边形 $ABHC$ 的面积；
+(ii) 求 $PO \cdot OH$ 的值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image472.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 连接 $AH$ 并作 $OD \perp BC$ 于 $D$。由于 $O$ 是外心且 $\angle BAC = 60^\circ$，
+\[
+\angle BOC = 2\angle BAC = 120^\circ
+\]
+\[
+OD = OC \cos 60^\circ = \frac{1}{2}
+\]
+欧拉线性质给出 $AH = 2OD = 1$。由正弦定理得
+\[
+BC = 2R \sin \angle BAC = \sqrt{3}
+\]
+所以 $ABHC$ 的面积为
+\[
+\frac{1}{2} AH \cdot BC = \frac{\sqrt{3}}{2}
+\]
+(ii) 由于 $H$ 是 $\triangle ABC$ 的垂心，
+\[
+\angle BHC = 180^\circ - (\angle HBC + \angle HCB) = 180^\circ - \angle BAC = 120^\circ
+\]
+因此 $BCHO$ 四点共圆，$PO \cdot PH = PB \cdot PC$。由于 $O$ 是 $\triangle ABC$ 的外心，考虑 $P$ 对 $\odot O$ 的幂，
+\[
+PB \cdot PC = PO^2 - R^2 \Rightarrow PO \cdot PH = PO^2 - R^2
+\]
+\[
+\Rightarrow PO^2 - PO \cdot PH = R^2 = 1 \Rightarrow PO \cdot OH = 1
+\]
+\end{solution}
+
+\question (GREECE/TST/2009) $\triangle ABC$ 的重心和外心分别记为 $G$ 和 $O$。如果 $GA, GB, GC$ 的垂直平分线两两交于点 $A_1, B_1, C_1$，证明 $O$ 是 $\triangle A_1 B_1 C_1$ 的重心。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image473.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $D, E, F$ 分别为边 $BC, CA, AB$ 的中点。由于 $B_1 C_1, C_1 A_1, A_1 B_1$ 分别是线段 $AG, BG, CG$ 的垂直平分线，则 $A_1, B_1, C_1$ 分别是 $\triangle GBC, \triangle GCA, \triangle GAB$ 的外心。
+因此 $A_1 D, B_1 E, C_1 F$ 分别是 $BC, CA, AB$ 的垂直平分线，故直线 $A_1 D, B_1 E, C_1 F$ 交于 $O$。
+只需证明 $A_1 D, B_1 E, C_1 F$ 是 $\triangle A_1 B_1 C_1$ 的三条中线。
+设 $M$ 是 $AG$ 的中点，且 $A_1 D$ 的延长线与 $B_1 C_1$ 交于 $N$。下面证明 $N$ 是 $B_1 C_1$ 的中点。
+$\angle AMB_1 = \angle AEB_1 = 90^\circ$ 意味着 $AMEB_1$ 共圆，因此 $\angle MAE = \angle MB_1 E$。类似地，$CDOE$ 共圆意味着 $\angle ECD = \angle EON$。因此 $\triangle ADC \sim \triangle B_1 NO$，故
+\[
+\frac{NB_1}{NO} = \frac{AD}{CD}
+\]
+$\angle AMC_1 = \angle AFC_1 = 90^\circ$ 意味着 $AMFC_1$ 共圆，所以 $\angle MAF = \angle MC_1 F$；$\angle ODB = \angle OFB = 90^\circ$ 意味着 $DOFB$ 共圆，所以 $\angle FBD = \angle FON$。因此 $\triangle ADB \sim \triangle C_1 NO$，故
+\[
+\frac{NC_1}{NO} = \frac{AD}{BD}
+\]
+由于 $CD = BD$，由上述两式结合得 $NB_1 = NC_1$，所以 $N$ 是 $B_1 C_1$ 的中点。类似地，直线 $B_1 E$ 和 $C_1 F$ 是 $\triangle A_1 B_1 C_1$ 的另外两条中线。因此，$O$ 是 $\triangle A_1 B_1 C_1$ 的重心。
+\end{solution}
+
+\question (IMO/2009) 设 $ABC$ 是一个三角形，$O$ 为其外心。点 $P$ 和 $Q$ 分别是边 $CA$ 和 $AB$ 上的内点。圆 $k$ 经过线段 $BP, CQ$ 和 $PQ$ 的中点。证明：如果直线 $PQ$ 与圆 $k$ 相切，则 $OP = OQ$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image474.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $K, L, M, B', C'$ 分别为 $BP, CQ, PQ, CA$ 和 $AB$ 的中点。由于 $CA \parallel LM$，我们有 $\angle LMP = \angle QPA$。由于 $k$ 与线段 $PQ$ 切于 $M$，我们发现 $\angle LMP = \angle LKM$。因此 $\angle QPA = \angle LKM$。同理，由 $AB \parallel MK$ 可得 $\angle PQA = \angle KMQ = \angle KLM$。因此，三角形 $APQ$ 和 $MKL$ 相似，于是
+\[
+\frac{AP}{AQ} = \frac{MK}{ML} = \frac{\frac{1}{2} QB}{\frac{1}{2} PC} = \frac{QB}{PC}
+\]
+上式等价于 $AP \cdot PC = AQ \cdot QB$，这意味着点 $P$ 和 $Q$ 关于 $\triangle ABC$ 外接圆的方幂相等，故 $OP = OQ$。
+\end{solution}
+
+\question (CWMO/2009) $D$ 是锐角三角形 $ABC$ 边 $BC$ 的一个内点。以 $BD$ 为直径的圆分别交直线 $AB, AD$ 于 $X, P$（$P$ 既不是 $B$ 也不是 $D$）。以 $CD$ 为直径的圆分别交直线 $AC, AD$ 于 $Y, Q$（$Y$ 不同于 $C$，$Q$ 不同于 $D$）。从 $A$ 引 $AM \perp PX$ 于 $M$，$AN \perp QY$ 于 $N$。证明 $\triangle AMN \sim \triangle ABC$ 的充分必要条件是直线 $AD$ 经过 $\triangle ABC$ 的外心。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image475.png}
+    \end{figure}
+    \fi
+\begin{solution}
+连接 $XY, DX$。$BPDX$ 和 $CYQD$ 均共圆，意味着
+\[
+\angle AXM = \angle BXP = \angle BDP = \angle QDC = \angle AYN
+\]
+由于 $\angle AMX = \angle ANY = 90^\circ$，所以 $\triangle AMX \sim \triangle ANY$。
+于是 $\angle MAX = \angle NAY$ 且 $\frac{AM}{AX} = \frac{AN}{AY}$，
+所以 $\angle MAN = \angle XAY$ 且 $\triangle AMN$ 相似于 $\triangle AXY$。
+因此，$\triangle AMN \sim \triangle ABC \Leftrightarrow \triangle AXY \sim \triangle ABC \Leftrightarrow XY \parallel BC \Leftrightarrow \angle DXY = \angle XDB$。
+$\angle AXD = \angle AYD = 90^\circ$ 意味着 $A X D Y$ 共圆，所以 $\angle DXY = \angle DAY$。另一方面，$\angle XDB = 90^\circ - \angle ABC$，因此
+\[
+\angle DXY = \angle XDB \Leftrightarrow \angle DAC = 90^\circ - \angle B
+\]
+这等价于 $AD$ 经过 $\triangle ABC$ 的外心。
+\end{solution}
+
+\question (RUSMO/2010) 与圆 $\omega$ 相切于点 $A$ 和 $B$ 的直线交于点 $O$。点 $I$ 是 $\omega$ 的圆心。在劣弧 $AB$ 上，选取一个不是弧中点的点 $C$。直线 $AC$ 和 $OB$ 交于点 $D$。直线 $BC$ 和 $OA$ 交于点 $E$。证明三角形 $ACE, BCD$ 和 $OCI$ 的外心共线。
+
+\begin{solution}
+设 $M$ 为 $\triangle ACE$ 和 $\triangle BCD$ 外接圆的第二个交点。只需证明 $\triangle OCI$ 的外接圆也经过 $M$，因为在这种情况下，三个外心都在 $CM$ 的垂直平分线上。
+设 $\angle CAB = \alpha, \angle CBA = \beta$。不妨设 $\beta > \alpha$。则 $\angle OBE = \alpha, \angle DAE = \beta$。
+在四边形 $OBIA$ 中，$\angle OAI = \angle OBI = 90^\circ$，所以它是圆内接四边形，故 $\angle OIA = \angle OBA = \alpha + \beta$，且
+\[
+\angle CIO = \angle CIA - \angle OIA = 2\angle CBA - (\alpha + \beta) = \beta - \alpha
+\]
+由于四边形 $AECM$ 和 $DBMC$ 均共圆，所以
+\begin{align*}
+\angle BME &= \angle BMC + \angle CME = (180^\circ - \angle CDB) + \angle CAE \\
+&= \angle ODA + \angle DAO = 180^\circ - \angle EOB
+\end{align*}
+因此四边形 $EOBM$ 也是圆内接四边形。于是
+\[
+\angle CMO = \angle CME - \angle OME = \angle CAE - \alpha = \beta - \alpha = \angle CIO
+\]
+因此 $O, C, M, I$ 共圆，结论得证。
+\end{solution}
+
+\question (BELARUS/2009) 已知凸四边形 $ABCD$ 的对角线 $AC$ 和 $BD$ 交于点 $T$。$\triangle ABT$ 的垂心与 $\triangle CDT$ 的外心重合。证明：
+(i) 凸四边形 $ABCD$ 是圆内接四边形；
+(ii) $\triangle CDT$ 的外心在四边形 $ABCD$ 的外接圆上。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image476.png}
+    \end{figure}
+    \fi
+\begin{solution}
+(i) 设 $\triangle ABT$ 的垂心为 $H$，且 $BH$ 与 $AC$ 交于 $K$，则 $HK \perp TC$ 于 $K$。由于点 $H$ 是 $\triangle CDT$ 的外心，所以 $KH$ 是 $TC$ 的垂直平分线，因此 $\triangle TBC$ 是等腰三角形，满足 $BT = BC$ 且 $\angle BCT = \angle BTC$。
+同理，$\angle ATD = \angle ADT$，因此
+\[
+\angle ADB = \angle ADT = \angle ATD = \angle BTC = \angle BCT = \angle BCA
+\]
+故 $ABCD$ 共圆。
+(ii) 假设 $HA$ 与 $BD$ 交于 $L$，则 $HL \perp TD$ 于 $L$。由于 $HK \perp TC$ 于 $K$，所以 $LTKH$ 共圆，因此
+\[
+\angle AHB = \angle LHK = 180^\circ - \angle LTK = \angle BTC = \angle BCT = \angle BCA
+\]
+于是 $ABCH$ 共圆，即 $\triangle CDT$ 的外心在 $ABCD$ 的外接圆上。
+\end{solution}
+
+\question (CMO/TST/2008) 已知 $ABC$ 是一个三角形，直线 $l$ 分别截直线 $BC, CA, AB$ 于 $D, E, F$。$O_1, O_2, O_3$ 分别是 $\triangle AEF, \triangle BFD, \triangle CDE$ 的外心。证明 $\triangle O_1 O_2 O_3$ 的垂心 $H$ 在直线 $l$ 上。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image477.png}
+    \end{figure}
+    \fi
+\begin{solution}
+首先我们证明 $\triangle O_1 O_2 O_3 \sim \triangle ABC$。
+设 $\odot O_1, \odot O_3$ 分别是 $\triangle AEF, \triangle CDE$ 的外接圆。除了 $E$ 之外，设 $M$ 为 $\odot O_1$ 和 $\odot O_3$ 的第二个交点。连接 $MD, ME, MF$。则
+\[
+\angle B + \angle FMD = \angle B + (\angle FME + \angle EMD) = \angle B + \angle A + \angle C = 180^\circ
+\]
+这意味着 $BFMD$ 共圆，即 $\odot O_2$ 也经过 $M$。
+但 $MF$ 是 $\odot O_1$ 和 $\odot O_2$ 的根轴，$ME$ 是 $\odot O_1$ 和 $\odot O_3$ 的根轴，所以 $O_1 O_2 \perp MF$ 且 $O_1 O_3 \perp ME$，因此 $\angle O_1 = \angle FME = \angle A$。同理，$\angle O_2 = \angle B$。故 $\triangle O_1 O_2 O_3 \sim \triangle ABC$。
+现在回到原问题：证明 $\triangle O_1 O_2 O_3$ 的垂心在直线 $l$ 上。
+从 $O_2$ 引 $O_1 O_3$ 的垂线，交 $l$ 于 $H'$。连接 $FO_1, FO_2, O_1 H'$。由于 $O_1$ 是 $\triangle AEF$ 的外心，容易看出 $\angle H'FO_1 = \angle O_1 FE = 90^\circ - \angle A$；另一方面，$\angle H'O_2 O_1 = 90^\circ - \angle O_3 O_1 O_2 = 90^\circ - \angle A$。
+因此，$\angle H'FO_1 = \angle H'O_2 O_1$，故 $H'O_2 FO_1$ 共圆，从而
+\[
+\angle H'O_1 O_2 = \angle H'FO_2
+\]
+但 $O_2$ 是 $\triangle BFD$ 的外心，所以
+\[
+\angle H'FO_2 = \angle O_2 FD = 90^\circ - \angle B
+\]
+于是 $\angle H'O_1 O_2 = 90^\circ - \angle B = 90^\circ - \angle O_1 O_2 O_3$，即
+\[
+\angle H'O_1 O_2 + \angle O_1 O_2 O_3 = 90^\circ
+\]
+即 $O_1 H' \perp O_2 O_3$，所以 $H'$ 是 $\triangle O_1 O_2 O_3$ 的垂心，结论得证。
+\end{solution}
+
     \question
 4. (SERBIA/2009) 已知三角形 $ABC$ 的边不相等。$\angle BAC$ 和 $\angle ABC$ 的角平分线分别与它们的对边相交于点 $D$ 和 $E$。设 $\angle BAC = \alpha, \angle ABC = \beta$。证明直线 $DE$ 和 $AB$ 所成角不大于 $\frac{\left|\alpha - \beta\right|}{3}$。
     \ifprintanswers
@@ -10456,6 +10983,428 @@ DC = \frac{ab}{b + c}, CE = \frac{ab}{a + c}, AE = \frac{bc}{a + c}
 &< 2 \sin \frac{\alpha - \beta - 2\varphi}{2} \cdot \cos \frac{\alpha - \beta - 2\varphi}{2} = \sin\left(\alpha - \beta - 2\varphi\right)
 \end{align*}
 因此 $\varphi < \alpha - \beta - 2\varphi$，即 $\varphi < \frac{\alpha - \beta}{3}$。
+\end{solution}
+
+\question (Desargues 定理) 在同一平面内，对于两个三角形 $ABC$ 和 $A_1B_1C_1$，当直线 $AA_1, BB_1, CC_1$ 共点于 $S$ 时，则 $P, Q, R$ 三点共线，其中直线 $BC$ 和 $B_1C_1$ 相交于 $P$，直线 $CA$ 和 $C_1A_1$ 相交于 $Q$，直线 $AB$ 和 $A_1B_1$ 相交于 $R$，如右图所示。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image446.png}
+    \end{figure}
+    \fi
+\begin{solution}
+视直线 $PC_1B_1$ 为 $\triangle SBC$ 的截线，由梅涅劳斯定理得
+\[
+\frac{BP}{PC} \cdot \frac{CC_1}{C_1S} \cdot \frac{SB_1}{B_1B} = 1
+\]
+由于 $QC_1A_1$ 是 $\triangle SCA$ 的一条截线，所以
+\[
+\frac{CQ}{QA} \cdot \frac{AA_1}{A_1S} \cdot \frac{SC_1}{C_1C} = 1
+\]
+类似地，视 $RB_1A_1$ 为 $\triangle SAB$ 的截线，则
+\[
+\frac{AR}{RB} \cdot \frac{BB_1}{B_1S} \cdot \frac{SA_1}{A_1A} = 1
+\]
+将这三个等式相乘得
+\[
+\frac{BP}{PC} \cdot \frac{CQ}{QA} \cdot \frac{AR}{RB} = 1
+\]
+由于 $P, Q, R$ 分别在 $BC, CA, AB$ 的延长线上，由梅涅劳斯定理的逆定理知 $P, Q, R$ 必共线。
+\end{solution}
+
+\question (Carnot 定理) 设 $P$ 是 $\triangle ABC$ 外接圆上的一点。从 $P$ 引三条直线分别交直线 $BC, CA, AB$ 于 $D, E, F$，使得 $\angle PDB = \angle PEC = \angle PFB$。则 $D, E, F$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image447.png}
+    \end{figure}
+    \fi
+\begin{solution}
+只需证明 $\angle PDF + \angle PDE = 180^\circ$。由于 $\angle PDB = \angle PFB$ 意味着 $BPDF$ 是圆内接四边形，所以
+\[
+\angle PDF + \angle PBF = 180^\circ
+\]
+$ABPC$ 共圆意味着
+\[
+\angle PBF = \angle PCE
+\]
+且 $\angle PDE = \angle PCE$ 意味着 $PDCE$ 是圆内接四边形，所以
+\[
+\angle PDE = \angle PCE = \angle PBF
+\]
+因此，$\angle PDF + \angle PDE = \angle PDF + \angle PBF = 180^\circ$，所以 $D, E, F$ 共线。
+\end{solution}
+
+\question (USAMO/2010) 设 $AXYZB$ 是内接于以 $AB$ 为直径的半圆的凸五边形。分别记 $P, Q, R, S$ 为从 $Y$ 到直线 $AX, BX, AZ, BZ$ 的垂足。证明由直线 $PQ$ 和 $RS$ 构成的锐角是 $\angle XOZ$ 的一半，其中 $O$ 是线段 $AB$ 的中点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image448.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如图所示，设 $T$ 为从 $Y$ 到 $AB$ 的垂足，那么由西姆松定理，$P, Q, T$ 共线，且 $S, R, T$ 也是共线的。
+因为
+\[
+\angle YQB = \angle YTB = \angle YSB = 90^\circ
+\]
+$S, Y, Q, T, B$ 五点共圆，使得
+\[
+\angle PTS = \angle QTS = \angle QBS = \angle XBZ = \frac{1}{2}\angle XOZ
+\]
+\end{solution}
+
+\question (Pascal 定理) 如果圆内接六边形 $ABCDEF$ 的直线 $AB$ 和 $ED$ 的延长线相交于 $H$，直线 $BC$ 和 $FE$ 的延长线相交于 $K$，直线 $AF$ 和 $CD$ 的延长线相交于 $I$，证明 $H, K, I$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image449.png}
+    \end{figure}
+    \fi
+\begin{solution}
+假设直线 $AB, CD, EF$ 围成一个 $\triangle XYZ$。视直线 $AFI, BCK, HDE$ 为 $\triangle XYZ$ 的三条截线，那么由梅涅劳斯定理得
+\[
+\frac{XA}{AZ} \cdot \frac{ZF}{FY} \cdot \frac{YI}{IX} = 1
+\]
+\[
+\frac{XB}{BZ} \cdot \frac{ZK}{KY} \cdot \frac{YC}{CX} = 1
+\]
+\[
+\frac{XH}{HZ} \cdot \frac{ZE}{EY} \cdot \frac{YD}{DX} = 1
+\]
+将这三个等式相乘并考虑到
+\[
+XA \cdot XB = XC \cdot XD, \quad YC \cdot YD = YE \cdot YF
+\]
+以及 $ZE \cdot ZF = ZA \cdot ZB$，我们得到
+\[
+\frac{YI}{IX} \cdot \frac{XH}{HZ} \cdot \frac{ZK}{KY} = 1
+\]
+由梅涅劳斯定理的逆定理，$I, K, H$ 共线。
+\end{solution}
+
+\question (Pappus 定理) 给定 $A, B, C$ 是直线 $l_1$ 上的三点，$a, b, c$ 是另一条直线 $l_2$ 上的三点。如果线段 $Ab, Ba$ 相交于 $N$，线段 $Ac, Ca$ 相交于 $L$，线段 $Bc, Cb$ 相交于 $M$，证明 $N, L, M$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image450.png}
+    \end{figure}
+    \fi
+\begin{solution}
+考虑由直线 $Ab, aC, Bc$ 围成的三角形 $UVW$，如图所示。有五条截线：
+$ALc, CMb, aNB, CBA, abc$。
+应用梅涅劳斯定理得：
+\[
+\frac{VL}{LW} \cdot \frac{Wc}{cU} \cdot \frac{UA}{AV} = 1
+\]
+\[
+\frac{VC}{CW} \cdot \frac{WM}{MU} \cdot \frac{Ub}{bV} = 1
+\]
+\[
+\frac{Va}{aW} \cdot \frac{WB}{BU} \cdot \frac{UN}{NV} = 1
+\]
+\[
+\frac{VC}{CW} \cdot \frac{WB}{BU} \cdot \frac{UA}{AV} = 1 \text{ 和 } \frac{Va}{aW} \cdot \frac{Wc}{cU} \cdot \frac{Ub}{bV} = 1
+\]
+将前三个等式相乘，然后除以后两个等式的乘积，得到
+\[
+\frac{VL}{LW} \cdot \frac{WM}{MU} \cdot \frac{UN}{NV} = 1
+\]
+因此，由梅涅劳斯定理的逆定理，$L, N, M$ 共线。
+\end{solution}
+
+\question (Newton 线) $ABCD$ 是一个四边形，使得射线 $BA$ 和 $CD$ 相交于 $E$，射线 $AD$ 和 $BC$ 相交于 $F$。设 $N, L, M$ 分别是 $EF, AC, BD$ 的中点，证明 $N, L, M$ 共线。
+注：通过 $N, L, M$ 的直线被称为四边形 $ABCD$ 的牛顿线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image451.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $EB, EC, BC$ 的中点分别为 $P, Q, R$。那么中点定理指出 $Q, L, R$ 共线，且
+\[
+\frac{QL}{LR} = \frac{EA}{AB}
+\]
+类似地，$P, M, R$ 共线，且
+\[
+\frac{RM}{MP} = \frac{CD}{DE}
+\]
+此外，$N, Q, P$ 共线，且
+\[
+\frac{PN}{NQ} = \frac{BF}{FC}
+\]
+对 $\triangle EBC$ 和截线 $ADF$ 应用梅涅劳斯定理，得
+\[
+\frac{EA}{AB} \cdot \frac{BF}{FC} \cdot \frac{CD}{DE} = 1
+\]
+因此
+\[
+\frac{QL}{LR} \cdot \frac{RM}{MP} \cdot \frac{PN}{NQ} = \frac{EA}{AB} \cdot \frac{CD}{DE} \cdot \frac{BF}{FC} = 1
+\]
+对 $\triangle PQR$ 和三点 $M, L, N$ 应用梅涅劳斯定理的逆定理，结论 $M, L, Q$ 共线得证。
+\end{solution}
+
+\question (CMC/2009) 设线段 $AB, CD, EF$ 是圆的三条不相交的弦。由任取两条弦作为一组对边形成三个四边形, 设 $M, N, P$ 分别是这些四边形的两条对角线的交点, 证明 $M, N, P$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image452.png}
+    \end{figure}
+    \fi
+\begin{solution}
+假设 $AC \cap BD = P, AF \cap BE = M, CE \cap DF = N$。再假设 $BD \cap CE = H$。
+由于三点 $N, P, M$ 分别在直线 $EH, HB, BE$ 上, 故只需证明
+\[
+\frac{HP}{PB} \cdot \frac{BM}{ME} \cdot \frac{EN}{NH} = 1
+\]
+因为
+\[
+\frac{BM}{ME} = \frac{[BAF]}{[EAF]} = \frac{BA \cdot BF}{EA \cdot EF}
+\]
+且
+\[
+\frac{HP}{PB} = \frac{[HAC]}{[BAC]} = \frac{[HAC]}{[EAC]} \cdot \frac{[EAC]}{[BAC]} = \frac{CH}{CE} \cdot \frac{EA \cdot EC}{BA \cdot BC} = \frac{CH \cdot EA}{BA \cdot BC}
+\]
+所以
+\[
+\frac{HP}{PB} \cdot \frac{BM}{ME} = \frac{CH \cdot BF}{BC \cdot EF}
+\]
+即只需证明
+\[
+\frac{EN \cdot BF \cdot CH}{EF \cdot BC \cdot NH} = 1
+\]
+注意到 $\frac{EN}{EF} = \frac{DN}{DC}$ 且 $\angle BFD = \angle BCD$, 故
+\[
+\frac{NH}{CH} = \frac{[NBD]}{[CBD]} = \frac{[FBD] - [FBN]}{[CBD]} = \frac{FB \cdot FD - FB \cdot FN}{CB \cdot CD} = \frac{FB \cdot ND}{CB \cdot CD} = \frac{FB}{CB} \cdot \frac{EN}{EF}
+\]
+所以结论成立。
+\end{solution}
+
+\question (HUNGARY/2007-2008) 已知凸六边形 $A_1A_2A_3A_4A_5A_6$ 的所有角均为钝角, 圆 $\Gamma_i (1 \le i \le 6)$ 以 $A_i$ 为圆心, 且 $\Gamma_i$ 与 $\Gamma_{i-1}$ 和 $\Gamma_{i+1}$ 外切, 其中 $\Gamma_0 = \Gamma_6, \Gamma_1 = \Gamma_7$。
+设过 $\Gamma_1$ 上的两个切点的直线与过 $\Gamma_3$ 上的两个切点的直线交于一点, 联结该点与 $A_2$ 的直线为 $e$。类似地, 设由圆 $\Gamma_3, \Gamma_5$ 与 $A_4$ 确定的直线为 $f$, 由圆 $\Gamma_5, \Gamma_1$ 与 $A_6$ 确定的直线为 $g$。证明三条直线 $e, f, g$ 共点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image453.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设圆上的六个切点分别为 $B_1, B_2, B_3, B_4, B_5, B_6$。
+假设直线 $B_1B_2, B_3B_4, B_5B_6$ 两两交于 $P, Q, R$。连接 $B_1B_6, B_4B_5, B_2B_3$。
+由塞瓦定理的三角形式可知
+\[
+\frac{\sin \angle B_1PA_6}{\sin \angle A_6PB_6} \cdot \frac{\sin \angle PB_6A_6}{\sin \angle A_6B_6B_1} \cdot \frac{\sin \angle B_6B_1A_6}{\sin \angle A_6B_1P} = 1
+\]
+因为 $A_6B_6 = A_6B_1$, 所以 $\angle A_6B_6B_1 = \angle A_6B_1B_6$, 从而
+\[
+\frac{\sin \angle B_1PA_6}{\sin \angle A_6PB_6} \cdot \frac{\angle PB_6A_6}{\sin \angle A_6B_1P} = 1
+\]
+同理可得
+\[
+\frac{\sin \angle B_5RA_4}{\sin \angle A_4RB_4} \cdot \frac{\angle RB_4A_4}{\sin \angle A_4B_5R} = 1, \frac{\sin \angle B_3QA_2}{\sin \angle A_2QB_2} \cdot \frac{\angle QB_2A_2}{\sin \angle A_2B_3Q} = 1
+\]
+将这三个等式相乘, 并考虑到
+\begin{align*}
+\angle PB_6A_6 &= \angle A_5B_6B_5 = \angle A_5B_5B_6 = \angle RB_5A_4 \\
+\angle RB_4A_4 &= \angle A_3B_4B_3 = \angle A_3B_3B_4 = \angle QB_3A_2 \\
+\angle QB_2A_2 &= \angle A_1B_2B_1 = \angle A_1B_1B_2 = \angle PB_1A_6
+\end{align*}
+可得
+\[
+\frac{\sin \angle B_1PA_6}{\sin \angle A_6PB_6} \cdot \frac{\sin \angle B_5RA_4}{\sin \angle A_4RB_4} \cdot \frac{\sin \angle B_3QA_2}{\sin \angle A_2QB_2} = 1
+\]
+根据三角形式塞瓦定理的充分性, 直线 $PA_6, QA_2, RA_4$ 共点, 即直线 $e, f, g$ 共点。
+\end{solution}
+
+\question (INDIA/TST/2008) 设 $\triangle ABC$ 不是等腰三角形, $\Gamma$ 是其内切圆, 分别与三边 $BC, CA, AB$ 切于 $D, E, F$。如果直线 $FD, DE, EF$ 分别与直线 $CA, AB, BC$ 交于点 $U, V, W$, 且 $DW, EU, FV$ 的中点分别为 $L, M, N$, 证明 $L, M, N$ 共线。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image454.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $P, Q, R$ 分别是 $DF, EF, ED$ 的中点, 则 $PQ \parallel DE$ 且直线 $PQ$ 过 $N$; $RQ \parallel DF$ 且直线 $RQ$ 过 $M$; $PR \parallel EF$ 且直线 $PR$ 过 $L$。
+由于 $AE = AF$, 所以 $AQ$ 是 $\angle CAB$ 的角平分线。同理, $BP, CR$ 分别是 $\angle ABC, \angle BCA$ 的角平分线, 且直线 $AQ, BP, CR$ 共点于 $\triangle ABC$ 的内心 $I$。
+对 $\triangle ABC$ 和 $\triangle QPR$ 应用德萨格定理, 可知点 $L$ (作为 $PR$ 与 $BC$ 的交点), 点 $M$ (作为 $RQ$ 与 $CA$ 的交点), 点 $N$ (作为 $QP$ 与 $AB$ 的交点) 共线。
+\end{solution}
+
+\question (CMC/2008) 已知 $\triangle ABC$ 的外接圆直径为 25, $AB, BC, CA$ 的长度均为正整数且 $AB > BC$, 外心 $O$ 到边 $AB, BC$ 的距离也均为正整数, 求 $AB, BC, CA$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image455.png}
+    \end{figure}
+    \fi
+\begin{solution}
+从圆心 $O$ 作 $OD \perp AB$ 于 $D$, $OE \perp BC$ 于 $E$。设 $AB = a, BC = b, OD = d, OE = e$, 则 $a > b$ 且
+\[
+BD = \frac{a}{2}, BE = \frac{b}{2}, a^2 + 4d^2 = 25^2
+\]
+同理, $b^2 + 4e^2 = 25^2$。由于 $a, b, c, e \in \mathbb{N}$。如果方程
+\[
+x^2 + (2y)^2 = 25^2
+\]
+的正整数解 $(x, 2y)$ 满足 $(x, 2y) = 1$, 则存在正整数 $u, v$ 且 $u > v$ 使得
+\[
+x = u^2 - v^2, y = uv, u^2 + v^2 = 25
+\]
+故 $u = 4, v = 3$, 即 $x = 7, y = 12$。如果 $x = 5x_1, y = 5y_1$, 则 $x_1^2 + (2y_1)^2 = 25$, 所以 $x_1 = 3, 2y_1 = 4$, 即 $x = 15, y = 10$。由于 $a > b$, 所以 $AB = 15, BC = 7, OD = 10, OE = 12$。
+由于 $OD \perp AB$ 且 $OE \perp BC$ 意味着 $ODBE$ 四点共圆, 由托勒密定理得
+\[
+DE \cdot OB = OD \cdot BE + OE \cdot DB \Rightarrow DE = \frac{2}{25} \left( 10 \cdot \frac{7}{2} + 12 \cdot \frac{15}{2} \right) = 10
+\]
+由于 $AC$ 是 $\triangle BAC$ 的中位线, 故 $AC = 2DE = 20$。因此, $AB = 15, BC = 7, AC = 20$。
+\end{solution}
+
+\question (ESTONIA/TST/2009) 已知 $A', B', C'$ 分别在 $\triangle ABC$ 的边 $BC, CA, AB$ 上, 满足 $\frac{BA'}{A'C} = \frac{CB'}{B'A} = \frac{AC'}{C'B}$。过 $A'$ 作直线 $l$ 使得 $l \parallel B'C'$。如果 $l$ 与直线 $AC, AB$ 分别交于 $P, Q$, 证明 $\frac{PQ}{B'C'} \ge 2$。
+
+\begin{solution}
+设 $\frac{BA'}{A'C} = \frac{CB'}{B'A} = \frac{AC'}{C'B} = k, \frac{PQ}{B'C'} = t$。只需证明 $t \ge 2$。
+$PQ \parallel B'C'$ 意味着 $\frac{AP}{AB'} = \frac{AQ}{AC'} = t$。不失一般性, 我们可以假设 $AP \ge AC, AQ \le AB$。则
+\[
+\frac{AQ}{QB} = \frac{AQ}{AB - AQ} = \frac{tAC'}{AB - tAC'} = \frac{t}{\frac{AB}{AC'} - t} = \frac{t}{\frac{1+k}{k} - t}
+\]
+\[
+\frac{CP}{PA} = \frac{AP - AC}{AP} = \frac{tAB' - AC}{tAB'} = 1 - \frac{AC}{tAB'} = 1 - \frac{1+k}{t}
+\]
+对 $\triangle ABC$ 和截线 $PA'Q$ 应用梅涅劳斯定理得
+\[
+\frac{AQ}{QB} \cdot \frac{BA'}{A'C} \cdot \frac{CP}{PA} = 1
+\]
+将前两个等式代入得
+\[
+\frac{t}{\frac{1+k}{k} - t} \cdot k \cdot \frac{t - (1 + k)}{t} = 1 \Rightarrow kt - k(1 + k) = \frac{1 + k}{k} - t
+\]
+\[
+\Rightarrow t(1 + k) = \frac{1}{k}(1 + k) + k(1 + k) \Rightarrow t = \frac{1}{k} + k \Rightarrow t \ge 2
+\]
+\end{solution}
+
+\question (CMC/2010) 设 $O$ 是锐角三角形 $ABC$ 的外心, $K$ 是 $BC$ 上的一点 (但不是 $BC$ 的中点), $D$ 是 $AK$ 延长线上的一点。直线 $BD$ 和 $AC$ 交于 $N$, 直线 $AB$ 和 $CD$ 交于 $M$。证明：若 $OK \perp MN$, 则 $A, B, D, C$ 四点共圆。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image456.png}
+    \end{figure}
+    \fi
+\begin{solution}
+我们用反证法证明。假设 $A, B, D, C$ 不共圆, $\triangle ABC$ 的外接圆与直线 $AD$ 交于 $E$。设直线 $BE$ 与直线 $AN$ 交于 $Q$, 直线 $CE$ 与直线 $AM$ 交于 $P$。连接 $PQ$, 如图所示。
+下面我们证明, 对于半径为 $r$ 的圆 $\odot O$,
+\begin{align*}
+PK^2 &= P \text{ 的圆幂} - K \text{ 的圆幂} \\
+&= \left(PO^2 - r^2\right) - \left(r^2 - KO^2\right)
+\end{align*}
+假设射线 $PK$ 与 $\triangle PAE$ 的外接圆交于 $F$, 则
+\[
+PK \cdot KF = AK \cdot KE
+\]
+且 $\angle PFE = \angle PAE = \angle BCE$, 所以 $E, C, F, K$ 共圆, 故
+\[
+PK \cdot PF = PE \cdot PC
+\]
+由以上两式相减得
+\[
+PK^2 = PE \cdot PC - AK \cdot KE = P \text{ 的圆幂} - K \text{ 的圆幂}
+\]
+同理, $QK^2 = \left(QO^2 - r^2\right) - \left(r^2 - KO^2\right)$。因此, $PO^2 - PK^2 = QO^2 - QK^2$, 即 $OK \perp PQ$。由于 $OK \perp MN$, 故 $PQ \parallel MN$, 从而
+\[
+\frac{AQ}{QN} = \frac{AP}{PM}
+\]
+对 $\triangle NDA$ 和截线 $BEQ$ 应用梅涅劳斯定理, 得
+\[
+\frac{NB}{BD} \cdot \frac{DE}{EA} \cdot \frac{AQ}{QN} = 1
+\]
+对 $\triangle MDA$ 和截线 $CEP$ 应用梅涅劳斯定理, 得
+\[
+\frac{MC}{CD} \cdot \frac{DE}{EA} \cdot \frac{AP}{PM} = 1
+\]
+结合以上三式得 $\frac{NB}{BD} = \frac{MC}{CD}$, 所以 $\frac{ND}{BD} = \frac{MD}{DC}$ 且 $\triangle DMN \sim \triangle DCB$, 则 $\angle DMN = \angle DCB$, 即 $BC \parallel MN$, 故 $OK \perp BC$, 即 $K$ 是 $BC$ 的中点, 这与题设矛盾！因此, $A, B, D, C$ 四点共圆。
+\end{solution}
+
+\question (Steiner-Miquel 定理) $ABCD$ 是一个凸四边形, $AB, DC$ 的延长线交于 $E$, $AD, BC$ 的延长线交于 $F$。证明 $\triangle BCE, \triangle CDF, \triangle ADE, \triangle ABF$ 的四个外接圆共点。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image457.png}
+    \end{figure}
+    \fi
+\begin{solution}
+如图所示, 设 $\triangle BCE$ 和 $\triangle CDF$ 的外接圆交于 $C$ 和 $M$。设 $P, Q, R$ 分别是从 $M$ 到直线 $BE, EC, BC$ 的垂足, 则西姆松定理表明 $P, Q, R$ 共线。
+类似地, 设 $Q, R, S$ 分别是从 $M$ 到直线 $DC, CF, DF$ 的垂足, 则 $Q, R, S$ 共线。因此 $P, Q, R, S$ 四点共线。
+在 $\triangle ADE$ 中, 共线的三个点 $P, Q, S$ 分别在边 $AE, DE, AD$ 上, 故由西姆松定理的逆定理可知, $M$ 必在 $\triangle ADE$ 的外接圆上。同理可得 $M$ 在 $\triangle ABF$ 的外接圆上。因此, $\triangle BCE, \triangle CDF, \triangle ADE, \triangle ABF$ 的四个外接圆共点于 $M$。
+注：$M$ 称为密克尔点, 经过 $P, Q, R, S$ 的直线称为四边形 $ABCD$ 的西姆松线。
+\end{solution}
+
+\question (BALKAN MO/2009) 设 $MN$ 是三角形 $ABC$ 中平行于边 $BC$ 的一条直线, $M$ 在边 $AB$ 上, $N$ 在边 $AC$ 上。直线 $BN$ 和 $CM$ 交于点 $P$。$\triangle BMP$ 和 $\triangle CNP$ 的外接圆交于相异两点 $P$ 和 $Q$。证明 $\angle BAQ = \angle CAP$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image458.png}
+    \end{figure}
+    \fi
+\begin{solution}
+设 $\angle BAQ = \alpha, \angle PAN = \beta, \angle PAQ = \gamma$。对 $\triangle ABC$ 和点 $P$ 应用三角形式的塞瓦定理, 得
+\[
+\frac{\sin \angle BAP \cdot \sin \angle ACP \cdot \sin \angle CBP}{\sin \angle PAC \cdot \sin \angle PCB \cdot \sin \angle PBA} = 1
+\]
+类似地, 对 $\triangle MNQ$ 和点 $P$ 得
+\[
+\frac{\sin \angle MNP \cdot \sin \angle NQP \cdot \sin \angle QMP}{\sin \angle PNQ \cdot \sin \angle PQM \cdot \sin \angle PMN} = 1
+\]
+由于 $BMPQ$ 和 $CNPQ$ 均共圆, 故
+\[
+\angle BMQ = \angle BPQ = \angle QCN, \angle QNC = \angle QPC = \angle MBQ
+\]
+于是 $AMQC$ 和 $ABQN$ 也均共圆。因为 $MN \parallel BC$, 所以
+\begin{align*}
+\angle BAP &= \alpha + \gamma, \angle PAC = \beta, \angle PMQ = \angle PBQ = \angle QAN = \beta + \gamma \\
+\angle ACP &= \angle NCP = \angle NQP, \angle CBP = \angle MNP, \angle PCB = \angle PMN \\
+\angle PBA &= \angle PQM, \angle PNQ = \angle PCQ = \angle MAQ = \alpha
+\end{align*}
+两式相除得
+\[
+\frac{\sin (\alpha + \gamma)}{\sin \beta} \cdot \frac{\sin \alpha}{\sin (\beta + \gamma)} = 1
+\]
+$\Leftrightarrow \sin (\alpha + \gamma) \sin \alpha = \sin (\beta + \gamma) \sin \beta$
+$\Leftrightarrow \cos \gamma - \cos (2\alpha + \gamma) = \cos \gamma - \cos (2\beta + \gamma)$
+$\Leftrightarrow \cos (2\alpha + \gamma) = \cos (2\beta + \gamma) \Leftrightarrow -2 \sin (\alpha + \beta + \gamma) \sin (\alpha - \beta) = 0$
+由于 $0 < \alpha + \gamma + \beta = \angle BAC < 180^\circ$, 故 $\alpha = \beta$。
+\end{solution}
+
+\question (CHNMO/TST/2010) $ABCD$ 是一个凸四边形, $AB, DC$ 的延长线交于 $E$, $AD, BC$ 的延长线交于 $F$。$\triangle BEC$ 和 $\triangle CFD$ 的外接圆交于 $C$ 和 $P$。证明 $\angle BAP = \angle CAD$ 当且仅当 $BD \parallel EF$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image459.png}
+    \end{figure}
+    \fi
+\begin{solution}
+点 $P$ 是密克尔点 (见上题 Q2), 故 $AEPD$ 共圆, 且 $ABPF$ 也共圆。
+\[
+\angle EAP = \angle EDP = \angle CFP
+\]
+$PEBC$ 共圆意味着 $\angle PEA = \angle PCF$, 故 $\triangle AEP \sim \triangle FCP$, 类似地 $\triangle EPC \sim \triangle APF$。因此
+\[
+\frac{PF}{CP} = \frac{AF}{EC}
+\]
+充分性：当 $BD \parallel EF$ 时, $\frac{AD}{AF} = \frac{BD}{EF} = \frac{CD}{EC}$, 故
+\[
+\frac{PF}{CP} = \frac{AF}{EC} = \frac{AD}{CD}
+\]
+此外, $\angle ADC = \angle FPC$, 故 $\triangle ACD \sim \triangle FCP \sim \triangle AEP$, 因此 $\angle EAP = \angle CAD$, 即 $\angle BAP = \angle CAD$。
+
+必要性：当 $\angle BAP = \angle CAD$ 时, 即 $\angle EAP = \angle CAD$, 则 $\triangle CPF \sim \triangle CDA$, 因此
+\[
+\frac{PF}{CP} = \frac{AD}{CD}
+\]
+则根据之前的等式得 $\frac{AF}{EC} = \frac{AD}{CD}$, 所以 $\frac{EC}{CD} = \frac{AF}{AD}$。
+另一方面, 对 $\triangle AED$ 和截线 $BCF$ 应用梅涅劳斯定理得
+\[
+\frac{AB}{BE} \cdot \frac{EC}{CD} \cdot \frac{DF}{FA} = 1
+\]
+故 $\frac{AB}{BE} \cdot \frac{AF}{AD} \cdot \frac{DF}{FA} = 1$, 即 $\frac{AB}{BE} = \frac{AD}{DF}$, 所以 $BD \parallel EF$。
 \end{solution}
 \end{questions}
 
