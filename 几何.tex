@@ -1802,98 +1802,6 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
         \]
     \end{solution}
 
-    \question 在直角$\triangle ABC$中,$D,E,F$分别为三边的中点,$G$为重心,且
-    \[
-    GD^2+GE^2+GF^2=\frac{50}{3}
-    \]
-    求斜边$AC$的长度。
-    \begin{solution}
-        由于$G$为重心,
-        \[
-        \frac{50}{3}=GD^2+GE^2+GF^2
-        =\left(\frac13 BD\right)^2+\left(\frac13 CE\right)^2+\left(\frac13 AF\right)^2
-        \]
-        从而
-        \[
-        BD^2+CE^2+AF^2=150
-        \]
-        在直角$\triangle ABC$中,由毕氏定理,
-        \[
-        BD=\frac12 AC, \quad CE^2=BC^2+\left(\frac12 AB\right)^2, \quad AF^2=AB^2+\left(\frac12 BC\right)^2
-        \]
-        于是
-        \[
-        BD^2+CE^2+AF^2
-        =\frac14 AC^2+\frac14 AB^2+BC^2+AB^2+\frac14 BC^2
-        \]
-        又由毕氏定理$AB^2+BC^2=AC^2$,
-        \[
-        150=BD^2+CE^2+AF^2=\frac14 AC^2+\frac14 AC^2+AC^2=\frac32 AC^2 \Rightarrow AC=10
-        \]
-    \end{solution}
-    \begin{solution}
-        由重心的性质可得
-        \[
-        GA^2+GB^2+GC^2=\frac13(AB^2+BC^2+AC^2)
-        \]
-        又$D,E,F$分别为三边的中点,$G$为重心,有
-        \[
-        GD^2+GE^2+GF^2=\frac14(GA^2+GB^2+GC^2)=\frac1{12}(AB^2+BC^2+AC^2)
-        \]
-        且由毕氏定理$AB^2+BC^2=AC^2$,因此
-        \[
-        GD^2+GE^2+GF^2=\frac16 AC^2=\frac{50}{3}
-        \]
-        解得
-        \[
-        AC=10
-        \]
-    \end{solution}
-
-    \question 已知 $\triangle ABC$ 满足 $AB=9,BC=10,CA=17,B'$ 为 $B$ 关于 $AC$ 的对称点,$G,G'$为 $\triangle ABC,\triangle AB'C$的重心,求 $GG'$ 的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image158.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $M$ 为 $AC$ 的中点,由$GMG' \backsim BMB' \ \text{(SAS)}$,可得
-        \[
-        GG' = \frac{1}{3}BB'
-        \]
-        三角形面积为
-        \[
-        [\triangle ABC] = \frac{1}{4} BB' \cdot AC =\sqrt{18(18-9)(18-10)(18-17)} = 36 \Rightarrow BB' = \frac{144}{17}
-        \]
-        于是
-        \[
-        GG' = \frac{48}{17}
-        \]
-    \end{solution}
-
-    \question 在 $\triangle ABC$ 中,点 $D, E$ 分别在 $AB, AC$ 上,且 $AD=3, DB=1, AE=2, EC=4$。$BE$ 和 $CD$ 相交于 $P$ 点,若 $AP \perp BC$,求 $\cos \angle BAC$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.4\textwidth]{images/image128.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $Q$ 为 $BC$ 上的垂足,由梅涅劳斯定理,
-        \[
-        \frac{CE}{EA} \cdot \frac{AD}{DB} \cdot \frac{BQ}{QC}= \frac{4}{2} \cdot \frac{3}{1} \cdot \frac{BQ}{QC} = 1 \Rightarrow \frac{BQ}{QC} = \frac{1}{6}
-        \]
-        设 $BQ = a,QC = 6a$,在直角$\triangle AQB$ 及 $\triangle AQC$中,由毕氏定理,
-        \[
-        QA^2 = 16 - a^2 = 36 - (6a)^2 \Rightarrow a^2 = \frac{4}{7}
-        \]
-        在$\triangle ABC$ 中,由余弦定理,
-        \[
-        \cos \angle BAC = \frac{4^2 + 6^2 - (7a)^2}{2 \cdot 4 \cdot 6} = \frac{1}{2}
-        \]
-    \end{solution}
-
     \question 如下图,三角形 $ABC$ 中,三线段 $AD,BE,CF$ 交于一点 $O$,若 $OD=OE=OF=4$ 且 $OA+OB+OC=37$,求 $OA \cdot OB \cdot OC$ 的值。 
     \begin{figure}[H]
         \centering        
@@ -2082,77 +1990,6 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
         \]
     \end{solution}
 
-    \question 如下图,直角三角形 $ABC$ 中,$\angle BAC=90^\circ$,点 $D, E, F$ 分别为 $BC, CA, AB$ 之中点,$BE$ 与 $CF$ 交于点 $G,BC=18,\angle BGC=150^\circ$,求 $\triangle GBC$ 的面积。
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image74.png}
-    \end{figure}
-    \begin{solution}
-        设$AF = FB = a,AE = EC = b,$则
-        \[
-        a^2 + b^2 = \frac{1}{4}\cdot 18^2=81
-        \]
-        设直线$BE,CF$斜率为
-        \[
-        m_1 = -\frac{b}{2a},\quad
-        m_2 = -\frac{2b}{a}
-        \]
-        由
-        \[
-        \tan 150^\circ = \frac{m_2 - m_1}{1 + m_1 m_2}\Rightarrow
-        -\frac{1}{\sqrt{3}} = \frac{-\frac{2b}{a} + \frac{b}{2a}}{1 + \left(-\frac{b}{2a}\right)\left(-\frac{2b}{a}\right)}
-        = -\frac{3ab}{2(a^2 + b^2)}
-        \]
-        代入 $a^2 + b^2 = 81$, 有
-        \[
-        ab = 18 \sqrt{3}
-        \]
-        故$\triangle ABC$面积为
-        \[
-        \frac{1}{2}\cdot 2a \cdot 2b = 36 \sqrt{3}
-        \]
-        发现点$G$是重心,所以
-        \[
-        [\triangle GBC] = \frac{1}{3} [\triangle ABC]= 12 \sqrt{3}
-        \]
-    \end{solution}
-
-    \question 在 $\triangle ABC$中,$\angle C=90^{\circ},G$为$\triangle ABC$的重心,且$G$到$BC,CA$的距离和为$6$。若 $AB=15$,试求 $\triangle ABC$ 的内切圆面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image122.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$G$在$AC,BC$上的垂足分别为$H,I$,且$GI=a,GH=6-a$,由毕氏定理,
-        \[
-        GC^2 = a^2+(6-a)^2
-        \]
-        又$G$为重心,则 
-        \[
-        GC=\frac{2}{3}CD=\frac{2}{3}\cdot\frac{1}{2}AB=5
-        \]
-        解得
-        \[
-        a= \frac{6+\sqrt{14}}{2} \Rightarrow 6-a= \frac{6- \sqrt{14}}{2}
-        \]
-        又$\triangle AGH \backsim \triangle AFC \ \text{(AAA)}$,
-        \[ 
-        \frac{2}{3}=\frac{6-a}{FC}\Rightarrow FC= \frac{3}{2}(6-a) \Rightarrow BC =3(6-a)=\frac{18- 3\sqrt{14}}{2}
-        \]
-        同理,
-        \[
-        AC= 3a = \frac{18+3\sqrt{14}}{2}
-        \]  
-        所以 $\triangle ABC$面积为
-        \[
-        [\triangle ABC]=\frac{1}{2}\cdot \frac{18- 3\sqrt{14}}{2} \cdot \frac{18+ 3\sqrt{14}}{2}
-        =\frac{1}{2}r\left(15+\frac{18- 3\sqrt{14}}{2} + \frac{18+ 3\sqrt{14}}{2}\right)  
-        \]
-        得$r=\dfrac{3}{2}$,故内切圆面积为$\dfrac{9\pi}{4}$。
-    \end{solution}
-
     \question 已知$\triangle ABC$ 满足 $AB=AC=3,BC=1$,点 $D$ 在 $AB$ 上使得 $\triangle ACD$ 与 $\triangle BCD$ 的内切圆半径相等,求该内切圆半径。
     \begin{solution}
         设 $BD = x,CD = y$,三角形面积为内切圆半径乘半周长,于是
@@ -2182,67 +2019,6 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
         解得
         \[
         r = \frac{\sqrt{35} - \sqrt{5}}{12}
-        \]
-    \end{solution}
-
-    \question $\triangle ABC$ 中, $AB=\sqrt{3},\ AC=3\sqrt{3},\ BC=\sqrt{21}$, 由各边分别向外作正三角形。已知此三个向外所作正三角形的重心会形成另一个新的正三角形, 求此新的三角形的面积。 
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image98.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        在$\triangle ABC$ 中,由余弦定理,
-        \[
-        (\sqrt{21})^2=(\sqrt 3)^2 + (3\sqrt 3)^2-2 \cdot \sqrt 3 \cdot 3\sqrt 3 \cdot \cos \angle CAB
-        \Rightarrow \angle CAB = 60^\circ
-        \]
-        由正三角形$\triangle ACD$及$\triangle ABE$,
-        \[
-        AG_1=1,AG_3=3,\ \angle G_1AB=\angle G_3AC=30^\circ,
-        \]
-        在$\triangle AG_1G_3$ 中,由余弦定理,
-        \[
-        (G_1G_3)^2 = 1^2 + 3^2 - 2 \cdot 1 \cdot 3 \cdot \cos \angle G_1AG_3 \Rightarrow G_1G_3 = \sqrt{13}
-        \]
-        故
-        \[
-        [\triangle G_1G_2G_3]=\frac{13}{4}\sqrt 3
-        \]
-    \end{solution}
-
-    \question 已知等腰三角形 $ABC$ 的腰长为 $AB=AC=13$,底边为 $BC=10$。设三角形的内心为 $I$,外心为 $O$,求 $OI$ 的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\linewidth]{images/image133.jpg}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $D$ 为$BC$ 中点,则 $AD \perp BC$,且 $BD = DC = 5$,在直角 $\triangle ADC$ 中,由毕氏定理,
-        \[
-        AD^2 + 5^2 = 13^2 \Rightarrow AD = 12.
-        \]
-        设 $G$ 为$AC$上的垂足,则
-        \[
-        \frac12 \cdot 12 \cdot 10 = \frac12 \cdot 13 \cdot DG \Rightarrow DG = \frac{60}{13}
-        \]
-        在直角 $\triangle ADG$ 中,由毕氏定理,
-        \[
-        12^2 = AG^2 + \left(\frac{60}{13}\right)^2 \Rightarrow AG = \frac{144}{13}
-        \]
-        由$\triangle AEO \backsim \triangle AGD \ (AAA)$,
-        \[
-        \frac{AO}{12} = \frac{\frac{13}{2}}{\frac{144}{13}} \Rightarrow AO = \frac{169}{24}
-        \]
-        且由$\triangle AFI \backsim \triangle AGD \ \text{(AAA)}$,
-        \[
-        \frac{ID}{\frac{60}{13}} = \frac{12-ID}{12} \Rightarrow ID = \frac{10}{3}
-        \]
-        所以
-        \[
-        OI = AD - AO - ID = 12 - \frac{169}{24} - \frac{10}{3} = \frac{13}{8}
         \]
     \end{solution}
 
@@ -2754,32 +2530,6 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
         \]
     \end{solution}
 
-    \question 已知三角形 $ABC$ 的重心为 $G$,且 $GB=7,GC=3,G$ 到直线 $BC$ 的距离为 $2$, 求 $GA$ 的长度。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/image57.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$GH \perp BC, BC = a,$则半周长为$5+\dfrac{a}{2}$,则
-        \[
-        [\triangle GBC]=\sqrt{\left(5+\frac{a}{2}\right)\left(\frac{a}{2}-2\right)\left(\frac{a}{2}+2\right)\left(5-\frac{a}{2}\right)} = \frac{1}{2} \cdot a \cdot 2
-        \]
-        解得
-        \[
-        a = 4 \sqrt{5} \quad \text{或} \quad a = 2 \sqrt{5}
-        \]
-        设$P$为$BC$中点,由中线定理,
-        \[
-        7^2+3^2=2\left(GP^2+\left(\frac{a}{2}\right)^2\right) \Rightarrow GP = 3\ \text{或} \ 2 \sqrt{6}
-        \]
-        故
-        \[
-        GA=2GP=6 \ \text{或} \ 4 \sqrt{6}
-        \]
-    \end{solution}
-
     \question 右图的 $\triangle ABC$ 中, $AD, BE, CF$ 分别为 $\angle BAC, \angle ABC, \angle ACB$ 的角平分线。若 $AB = 4, AC = 5, BC = 6$, 求 $\frac{\triangle DEF\text{的面积}}{\triangle ABC\text{的面积}}$ 的值。
     \ifprintanswers
     \begin{figure}[H]
@@ -2828,101 +2578,6 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
 
 因此, 答案选 A。
 \end{solution}
-
-    \question 已知 $G$ 为 $\triangle ABC$ 的重心, $BC=10,AG=4,\angle BGC=\dfrac{3\pi}{4}$,求 $\triangle ABC$ 的面积。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering        
-        \includegraphics[width=0.5\textwidth]{images/image225.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设直线 $AG$ 与 $BC$ 相交于 $D$。由于 $G$ 为重心,
-        \[
-        GD=\frac{AG}{2}=2,\quad BD=DC=\frac{10}{2}=5.
-        \]
-        在 $\triangle GBC$ 中,由中线定理,
-        \[
-        GB^2+GC^2=2(2^2+5^2)=58
-        \]
-        又由余弦定理,
-        \[
-        10^2=GB^2+GC^2-2\,GB\cdot GC \cos\frac{3\pi}{4} \Rightarrow GB\cdot GC=21\sqrt{2}
-        \]
-        于是$\triangle GBC$ 面积为
-        \[
-        [\triangle GBC]
-        =\frac12\cdot 21\sqrt{2}\cdot\sin\frac{3\pi}{4}
-        =\frac{21}{2}
-        \]
-        由等高性质,$\ \triangle ABC$ 面积为
-        \[
-        [\triangle ABC]=3[\triangle GBC]
-        =\frac{63}{2}
-        \]
-    \end{solution}
-
-    \question $I$ 为 $\triangle ABC$ 内心,$D$ 在 $AB$ 上,$E$ 在 $AC$ 上,且 $D,I,E$ 三点共线。已知 $AD=DE=5,AE=6$, 求 $AI$。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\linewidth]{images/image47.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设 $\triangle ABC$ 内切圆半径为 $h$,由 $AD=DE$ 可知 
-        \[
-        \angle AED=\angle DAE=2\angle IAE=2\theta
-        \]
-        $\triangle ADE$面积为
-        \[
-        [\triangle ADE]=\sqrt{8\cdot3\cdot3\cdot2}=12=\frac{1}{2}\cdot 5h+\frac{1}{2}\cdot 6h \Rightarrow h=\frac{24}{11}
-        \]
-        在$\triangle ADE$ 中,由余弦定理,
-        \[
-        \cos 2\theta=\frac{6^2+5^2-5^2}{2\cdot 6\cdot 5}=\frac{3}{5} \Rightarrow \sin\theta=\sqrt{\frac{1-\cos 2\theta}{2}}=\sqrt{\frac{1}{5}}
-        \]
-        故
-        \[
-        AI=\frac{h}{\sin\theta}=\frac{24\sqrt{5}}{11}
-        \]
-    \end{solution}
-
-    \question $\triangle ABC$满足$AB:AC:BC=3:5:7$。令$I$为$\triangle ABC$的内心, 直线$AI$交$\triangle ABC$外接圆于另一点$D$, 试求$\dfrac{ID}{AD}$的值。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/image33.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-        设$E$为$AD$与$BC$的交点,因为$AD$为$\angle A$角平分线,由角平分线定理,
-        \[
-        \frac{BE}{EC} = \frac{AB}{AC} = \frac{3}{5} \Rightarrow 
-        BE = \frac{21}{8}, CE= \frac{35}{8}
-        \]
-        在$\triangle ABC$ 中,由余弦定理,
-        \[
-        (7k)^2=(3k)^2 + (5k)^2 - 2 \cdot 3k \cdot 5k \cdot 
-        \cos \angle A, k>0 \Rightarrow \angle A = 120^\circ, \angle BAE = 60^\circ
-        \]
-        在$\triangle ABE$ 中,由余弦定理,
-        \[
-        \left(\frac{21}{8}\right)^2=3^2 + AE^2-2 \cdot 3 \cdot AE \cdot \cos \angle BAE \Rightarrow AE = \frac{15}{8}
-        \]
-        又$\angle ABE = \angle ADC$,于是有$\triangle ABE \backsim \triangle CDE \ (AAA)$,则
-        \[
-        \frac{\frac{15}{8}}{\frac{21}{8}} = \frac{\frac{35}{8}}{DE} \Rightarrow DE = \frac{49}{8}, AD = \frac{15}{8} + \frac{49}{8} = 8
-        \]
-        又由角平分线定理,
-        \[
-        \frac{\frac{21}{8}}{3} = \frac{EI}{AI} \Rightarrow AI = \frac{8}{15} \cdot AE = 1
-        \]
-        故
-        \[
-        \frac{ID}{AD} = \frac{8 - 1}{8} = \frac{7}{8}
-        \]
-    \end{solution}
 
     \question 在 $\triangle ABC$ 的边 $AB$ 与 $AC$ 的外侧分别作正三角形 $\triangle ABE$ 及 $\triangle ACF$。已知 $AC = 1$ 且 $EF = 2$,求 $\triangle ABC$ 面积的最大可能值。
     \begin{solution}
@@ -3352,93 +3007,6 @@ S &= \frac{1}{2} \cdot AQ \cdot RQ \cdot \sin \angle AQR \\
 整理得
 \[ \overrightarrow{AR} = -\frac{\sqrt{2}}{2}\overrightarrow{AP} + \frac{\sqrt{2} + 1}{2}\overrightarrow{AB} \]
 \end{solution}
-\end{parts}
-
-\question
-设 $t$ 是满足 $0 < t < 1$ 的实数。在面积为 $1$ 的三角形 $ABC$ 中，点 $D, E, F$ 分别是边 $AB, BC, CA$ 上的点，满足 $AD:DB = 2:1$，$BE:EC = t:1-t$，$CF:FA = 1:3$。设 $AE$ 与 $BF$，$BF$ 与 $CD$，$CD$ 与 $AE$ 的交点分别为 $P, Q, R$。回答以下问题。
-
-\begin{parts}
-    \part 求使三条直线 $AE, BF, CD$ 交于一点时 $t$ 的值 $t_0$。以下设 $t$ 满足 $0 < t < t_0$。
-    \begin{solution}
-    在 $\triangle ABC$ 中，根据塞瓦定理，三线共点的条件为：
-    \[ \frac{AD}{DB} \cdot \frac{BE}{EC} \cdot \frac{CF}{FA} = 1 \]
-    代入已知比例：
-    \[ \frac{2}{1} \cdot \frac{t_0}{1-t_0} \cdot \frac{1}{3} = 1 \]
-    整理得 $2t_0 = 3(1-t_0)$，解得 $t_0 = \frac{3}{5}$。
-    \end{solution}
-
-    \part 若满足 $AP = kAE$ 和 $CR = lCD$，求实数 $k, l$ 的表达式（用 $t$ 表示）。
-    \begin{solution}
-    由条件可知 $AP:PE = k:1-k$ 且 $CR:RD = l:1-l$。
-    对于 $\triangle AEC$ 和直线 $BF$，应用梅涅劳斯定理：
-    \[ \frac{AP}{PE} \cdot \frac{EB}{BC} \cdot \frac{CF}{FA} = 1 \implies \frac{k}{1-k} \cdot \frac{t}{1} \cdot \frac{1}{3} = 1 \]
-    解得 $kt = 3(1-k)$，故 $k = \frac{3}{3+t}$。
-    
-    对于 $\triangle CDB$ 和直线 $AE$，应用梅涅劳斯定理：
-    \[ \frac{CR}{RD} \cdot \frac{DA}{AB} \cdot \frac{BE}{EC} = 1 \implies \frac{l}{1-l} \cdot \frac{2}{3} \cdot \frac{t}{1-t} = 1 \]
-    整理得 $2lt = 3(1-l)(1-t)$，解得 $l = \frac{3-3t}{3-t}$。
-    \end{solution}
-
-    \part 求三角形 $BCQ$ 的面积。
-    \begin{solution}
-    设 $BQ:QF = m:1-m$。对于 $\triangle BFA$ 和直线 $CD$，应用梅涅劳斯定理：
-    \[ \frac{BQ}{QF} \cdot \frac{FC}{CA} \cdot \frac{AD}{DB} = 1 \implies \frac{m}{1-m} \cdot \frac{1}{4} \cdot \frac{2}{1} = 1 \]
-    解得 $2m = 4(1-m)$，即 $m = \frac{2}{3}$。
-    由于 $\triangle ABC$ 的面积为 $1$：
-    \[ S_{\triangle BCQ} = \frac{2}{3} S_{\triangle BCF} = \frac{2}{3} \cdot \frac{1}{4} S_{\triangle ABC} = \frac{1}{6} \]
-    \end{solution}
-
-    \part 求三角形 $PQR$ 的面积。
-    \begin{solution}
-    由 (2) 可得 $AP:PE = \frac{3}{3+t} : (1-\frac{3}{3+t}) = 3:t$，则：
-    \[ S_{\triangle ABP} = \frac{3}{3+t} S_{\triangle ABE} = \frac{3}{3+t} \cdot t S_{\triangle ABC} = \frac{3t}{3+t} \]
-    同理，由 $CR:RD = \frac{3-3t}{3-t} : (1-\frac{3-3t}{3-t}) = 3-3t:2t$，可得：
-    \[ S_{\triangle CAR} = \frac{3-3t}{3-3t+2t} S_{\triangle CAD} = \frac{3-3t}{3-t} \cdot \frac{2}{3} S_{\triangle ABC} = \frac{2-2t}{3-t} \]
-    三角形 $PQR$ 的面积为：
-    \[ S_{\triangle PQR} = S_{\triangle ABC} - S_{\triangle BCQ} - S_{\triangle CAR} - S_{\triangle ABP} \]
-    \[ = 1 - \frac{1}{6} - \frac{2-2t}{3-t} - \frac{3t}{3+t} = \frac{(5t-3)^2}{6(3-t)(3+t)} \]
-    \end{solution}
-\end{parts}
-
-\question
-设 $s$ 为正实数。在锐角三角形 $ABC$ 中，边 $AB$ 按 $s:1$ 内分的点为 $D$，边 $BC$ 按 $s:3$ 内分的点为 $E$。线段 $CD$ 与线段 $AE$ 的交点为 $F$。回答以下问题。
-\begin{parts}
-    \part 若 $\overrightarrow{AF} = \alpha \overrightarrow{AB} + \beta \overrightarrow{AC}$，求 $\alpha$ 与 $\beta$。
-    \begin{solution}
-    对 $\triangle ABE$ 和直线 $CD$ 应用梅涅劳斯定理：
-    \[ \frac{AD}{DB} \cdot \frac{BC}{CE} \cdot \frac{EF}{FA} = 1 \]
-    由条件知 $AD:DB = s:1$，$BE:EC = s:3$，则 $BC:CE = (s+3):3$。
-    代入得：
-    \[ \frac{s}{1} \cdot \frac{s+3}{3} \cdot \frac{EF}{FA} = 1 \implies \frac{FA}{EF} = \frac{s(s+3)}{3} \]
-    因此：
-    \[ \overrightarrow{AF} = \frac{FA}{FA+EF} \overrightarrow{AE} = \frac{s(s+3)}{s(s+3)+3} \overrightarrow{AE} \]
-    又因为 $\overrightarrow{AE} = \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3}$，代入上式得：
-    \[ \overrightarrow{AF} = \frac{s(s+3)}{s^2+3s+3} \cdot \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3} = \frac{3s}{s^2+3s+3} \overrightarrow{AB} + \frac{s^2}{s^2+3s+3} \overrightarrow{AC} \]
-    由于 $\overrightarrow{AB}$ 与 $\overrightarrow{AC}$ 线性无关，得：
-    \[ \alpha = \frac{3s}{s^2+3s+3}, \quad \beta = \frac{s^2}{s^2+3s+3} \]
-    \end{solution}
-
-    \part 从 $F$ 向边 $AC$ 作垂线 $FG$。求使得 $FG$ 长度最大时的 $s$ 值。
-    \ifprintanswers
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/image253.png}
-    \end{figure}
-    \fi
-    \begin{solution}
-    设 $\overrightarrow{AH} = \alpha \overrightarrow{AB}, \overrightarrow{AI} = \beta \overrightarrow{AC}$，由 $\overrightarrow{AF} = \overrightarrow{AH} + \overrightarrow{AI}$ 可知：
-    \[ \triangle AFC = \alpha \cdot \triangle ABC \quad \dots (1) \]
-    又因为 $\triangle AFC = \frac{1}{2} AC \cdot FG \quad \dots (2)$。
-    由 (1), (2) 可得 $FG = \frac{2\alpha}{AC} \triangle ABC$。
-    因此，$FG$ 最大等价于 $\alpha$ 最大。将 $\alpha$ 变形为：
-    \[ \alpha = \frac{3s}{s^2+3s+3} = \frac{3}{s + 3 + \frac{3}{s}} \]
-    根据均值不等式，由于 $s > 0$：
-    \[ s + \frac{3}{s} \geqq 2\sqrt{s \cdot \frac{3}{s}} = 2\sqrt{3} \]
-    当且仅当 $s = \frac{3}{s}$ 即 $s = \sqrt{3}$ 时，等号成立。
-    此时分母最小，$\alpha$ 取得最大值：
-    \[ \alpha = \frac{3}{2\sqrt{3}+3} = 2\sqrt{3}-3 \]
-    因此，$FG$ 长度最大时，$s = \sqrt{3}$。
-    \end{solution}
 \end{parts}
 
 \question
@@ -10414,6 +9982,438 @@ CM^2 = CB_1 \cdot CA \Rightarrow \left( y - x \right)^2 = x \left( x + y \right)
 \end{center}
 \vspace{0.5pt}
 \begin{questions}
+        \question 在直角$\triangle ABC$中,$D,E,F$分别为三边的中点,$G$为重心,且
+    \[
+    GD^2+GE^2+GF^2=\frac{50}{3}
+    \]
+    求斜边$AC$的长度。
+    \begin{solution}
+        由于$G$为重心,
+        \[
+        \frac{50}{3}=GD^2+GE^2+GF^2
+        =\left(\frac13 BD\right)^2+\left(\frac13 CE\right)^2+\left(\frac13 AF\right)^2
+        \]
+        从而
+        \[
+        BD^2+CE^2+AF^2=150
+        \]
+        在直角$\triangle ABC$中,由毕氏定理,
+        \[
+        BD=\frac12 AC, \quad CE^2=BC^2+\left(\frac12 AB\right)^2, \quad AF^2=AB^2+\left(\frac12 BC\right)^2
+        \]
+        于是
+        \[
+        BD^2+CE^2+AF^2
+        =\frac14 AC^2+\frac14 AB^2+BC^2+AB^2+\frac14 BC^2
+        \]
+        又由毕氏定理$AB^2+BC^2=AC^2$,
+        \[
+        150=BD^2+CE^2+AF^2=\frac14 AC^2+\frac14 AC^2+AC^2=\frac32 AC^2 \Rightarrow AC=10
+        \]
+    \end{solution}
+    \begin{solution}
+        由重心的性质可得
+        \[
+        GA^2+GB^2+GC^2=\frac13(AB^2+BC^2+AC^2)
+        \]
+        又$D,E,F$分别为三边的中点,$G$为重心,有
+        \[
+        GD^2+GE^2+GF^2=\frac14(GA^2+GB^2+GC^2)=\frac1{12}(AB^2+BC^2+AC^2)
+        \]
+        且由毕氏定理$AB^2+BC^2=AC^2$,因此
+        \[
+        GD^2+GE^2+GF^2=\frac16 AC^2=\frac{50}{3}
+        \]
+        解得
+        \[
+        AC=10
+        \]
+    \end{solution}
+
+    \question 已知 $\triangle ABC$ 满足 $AB=9,BC=10,CA=17,B'$ 为 $B$ 关于 $AC$ 的对称点,$G,G'$为 $\triangle ABC,\triangle AB'C$的重心,求 $GG'$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image158.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $M$ 为 $AC$ 的中点,由$GMG' \backsim BMB' \ \text{(SAS)}$,可得
+        \[
+        GG' = \frac{1}{3}BB'
+        \]
+        三角形面积为
+        \[
+        [\triangle ABC] = \frac{1}{4} BB' \cdot AC =\sqrt{18(18-9)(18-10)(18-17)} = 36 \Rightarrow BB' = \frac{144}{17}
+        \]
+        于是
+        \[
+        GG' = \frac{48}{17}
+        \]
+    \end{solution}
+
+    \question 在 $\triangle ABC$ 中,点 $D, E$ 分别在 $AB, AC$ 上,且 $AD=3, DB=1, AE=2, EC=4$。$BE$ 和 $CD$ 相交于 $P$ 点,若 $AP \perp BC$,求 $\cos \angle BAC$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image128.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $Q$ 为 $BC$ 上的垂足,由梅涅劳斯定理,
+        \[
+        \frac{CE}{EA} \cdot \frac{AD}{DB} \cdot \frac{BQ}{QC}= \frac{4}{2} \cdot \frac{3}{1} \cdot \frac{BQ}{QC} = 1 \Rightarrow \frac{BQ}{QC} = \frac{1}{6}
+        \]
+        设 $BQ = a,QC = 6a$,在直角$\triangle AQB$ 及 $\triangle AQC$中,由毕氏定理,
+        \[
+        QA^2 = 16 - a^2 = 36 - (6a)^2 \Rightarrow a^2 = \frac{4}{7}
+        \]
+        在$\triangle ABC$ 中,由余弦定理,
+        \[
+        \cos \angle BAC = \frac{4^2 + 6^2 - (7a)^2}{2 \cdot 4 \cdot 6} = \frac{1}{2}
+        \]
+    \end{solution}
+
+    \question 如下图,直角三角形 $ABC$ 中,$\angle BAC=90^\circ$,点 $D, E, F$ 分别为 $BC, CA, AB$ 之中点,$BE$ 与 $CF$ 交于点 $G,BC=18,\angle BGC=150^\circ$,求 $\triangle GBC$ 的面积。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image74.png}
+    \end{figure}
+    \begin{solution}
+        设$AF = FB = a,AE = EC = b,$则
+        \[
+        a^2 + b^2 = \frac{1}{4}\cdot 18^2=81
+        \]
+        设直线$BE,CF$斜率为
+        \[
+        m_1 = -\frac{b}{2a},\quad
+        m_2 = -\frac{2b}{a}
+        \]
+        由
+        \[
+        \tan 150^\circ = \frac{m_2 - m_1}{1 + m_1 m_2}\Rightarrow
+        -\frac{1}{\sqrt{3}} = \frac{-\frac{2b}{a} + \frac{b}{2a}}{1 + \left(-\frac{b}{2a}\right)\left(-\frac{2b}{a}\right)}
+        = -\frac{3ab}{2(a^2 + b^2)}
+        \]
+        代入 $a^2 + b^2 = 81$, 有
+        \[
+        ab = 18 \sqrt{3}
+        \]
+        故$\triangle ABC$面积为
+        \[
+        \frac{1}{2}\cdot 2a \cdot 2b = 36 \sqrt{3}
+        \]
+        发现点$G$是重心,所以
+        \[
+        [\triangle GBC] = \frac{1}{3} [\triangle ABC]= 12 \sqrt{3}
+        \]
+    \end{solution}
+
+    \question 在 $\triangle ABC$中,$\angle C=90^{\circ},G$为$\triangle ABC$的重心,且$G$到$BC,CA$的距离和为$6$。若 $AB=15$,试求 $\triangle ABC$ 的内切圆面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image122.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$G$在$AC,BC$上的垂足分别为$H,I$,且$GI=a,GH=6-a$,由毕氏定理,
+        \[
+        GC^2 = a^2+(6-a)^2
+        \]
+        又$G$为重心,则 
+        \[
+        GC=\frac{2}{3}CD=\frac{2}{3}\cdot\frac{1}{2}AB=5
+        \]
+        解得
+        \[
+        a= \frac{6+\sqrt{14}}{2} \Rightarrow 6-a= \frac{6- \sqrt{14}}{2}
+        \]
+        又$\triangle AGH \backsim \triangle AFC \ \text{(AAA)}$,
+        \[ 
+        \frac{2}{3}=\frac{6-a}{FC}\Rightarrow FC= \frac{3}{2}(6-a) \Rightarrow BC =3(6-a)=\frac{18- 3\sqrt{14}}{2}
+        \]
+        同理,
+        \[
+        AC= 3a = \frac{18+3\sqrt{14}}{2}
+        \]  
+        所以 $\triangle ABC$面积为
+        \[
+        [\triangle ABC]=\frac{1}{2}\cdot \frac{18- 3\sqrt{14}}{2} \cdot \frac{18+ 3\sqrt{14}}{2}
+        =\frac{1}{2}r\left(15+\frac{18- 3\sqrt{14}}{2} + \frac{18+ 3\sqrt{14}}{2}\right)  
+        \]
+        得$r=\dfrac{3}{2}$,故内切圆面积为$\dfrac{9\pi}{4}$。
+    \end{solution}
+
+    \question $\triangle ABC$ 中, $AB=\sqrt{3},\ AC=3\sqrt{3},\ BC=\sqrt{21}$, 由各边分别向外作正三角形。已知此三个向外所作正三角形的重心会形成另一个新的正三角形, 求此新的三角形的面积。 
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image98.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        在$\triangle ABC$ 中,由余弦定理,
+        \[
+        (\sqrt{21})^2=(\sqrt 3)^2 + (3\sqrt 3)^2-2 \cdot \sqrt 3 \cdot 3\sqrt 3 \cdot \cos \angle CAB
+        \Rightarrow \angle CAB = 60^\circ
+        \]
+        由正三角形$\triangle ACD$及$\triangle ABE$,
+        \[
+        AG_1=1,AG_3=3,\ \angle G_1AB=\angle G_3AC=30^\circ,
+        \]
+        在$\triangle AG_1G_3$ 中,由余弦定理,
+        \[
+        (G_1G_3)^2 = 1^2 + 3^2 - 2 \cdot 1 \cdot 3 \cdot \cos \angle G_1AG_3 \Rightarrow G_1G_3 = \sqrt{13}
+        \]
+        故
+        \[
+        [\triangle G_1G_2G_3]=\frac{13}{4}\sqrt 3
+        \]
+    \end{solution}
+
+    \question 已知等腰三角形 $ABC$ 的腰长为 $AB=AC=13$,底边为 $BC=10$。设三角形的内心为 $I$,外心为 $O$,求 $OI$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/image133.jpg}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $D$ 为$BC$ 中点,则 $AD \perp BC$,且 $BD = DC = 5$,在直角 $\triangle ADC$ 中,由毕氏定理,
+        \[
+        AD^2 + 5^2 = 13^2 \Rightarrow AD = 12.
+        \]
+        设 $G$ 为$AC$上的垂足,则
+        \[
+        \frac12 \cdot 12 \cdot 10 = \frac12 \cdot 13 \cdot DG \Rightarrow DG = \frac{60}{13}
+        \]
+        在直角 $\triangle ADG$ 中,由毕氏定理,
+        \[
+        12^2 = AG^2 + \left(\frac{60}{13}\right)^2 \Rightarrow AG = \frac{144}{13}
+        \]
+        由$\triangle AEO \backsim \triangle AGD \ (AAA)$,
+        \[
+        \frac{AO}{12} = \frac{\frac{13}{2}}{\frac{144}{13}} \Rightarrow AO = \frac{169}{24}
+        \]
+        且由$\triangle AFI \backsim \triangle AGD \ \text{(AAA)}$,
+        \[
+        \frac{ID}{\frac{60}{13}} = \frac{12-ID}{12} \Rightarrow ID = \frac{10}{3}
+        \]
+        所以
+        \[
+        OI = AD - AO - ID = 12 - \frac{169}{24} - \frac{10}{3} = \frac{13}{8}
+        \]
+    \end{solution}
+
+    \question 已知三角形 $ABC$ 的重心为 $G$,且 $GB=7,GC=3,G$ 到直线 $BC$ 的距离为 $2$, 求 $GA$ 的长度。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/image57.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$GH \perp BC, BC = a,$则半周长为$5+\dfrac{a}{2}$,则
+        \[
+        [\triangle GBC]=\sqrt{\left(5+\frac{a}{2}\right)\left(\frac{a}{2}-2\right)\left(\frac{a}{2}+2\right)\left(5-\frac{a}{2}\right)} = \frac{1}{2} \cdot a \cdot 2
+        \]
+        解得
+        \[
+        a = 4 \sqrt{5} \quad \text{或} \quad a = 2 \sqrt{5}
+        \]
+        设$P$为$BC$中点,由中线定理,
+        \[
+        7^2+3^2=2\left(GP^2+\left(\frac{a}{2}\right)^2\right) \Rightarrow GP = 3\ \text{或} \ 2 \sqrt{6}
+        \]
+        故
+        \[
+        GA=2GP=6 \ \text{或} \ 4 \sqrt{6}
+        \]
+    \end{solution}
+
+    \question 已知 $G$ 为 $\triangle ABC$ 的重心, $BC=10,AG=4,\angle BGC=\dfrac{3\pi}{4}$,求 $\triangle ABC$ 的面积。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.5\textwidth]{images/image225.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设直线 $AG$ 与 $BC$ 相交于 $D$。由于 $G$ 为重心,
+        \[
+        GD=\frac{AG}{2}=2,\quad BD=DC=\frac{10}{2}=5.
+        \]
+        在 $\triangle GBC$ 中,由中线定理,
+        \[
+        GB^2+GC^2=2(2^2+5^2)=58
+        \]
+        又由余弦定理,
+        \[
+        10^2=GB^2+GC^2-2\,GB\cdot GC \cos\frac{3\pi}{4} \Rightarrow GB\cdot GC=21\sqrt{2}
+        \]
+        于是$\triangle GBC$ 面积为
+        \[
+        [\triangle GBC]
+        =\frac12\cdot 21\sqrt{2}\cdot\sin\frac{3\pi}{4}
+        =\frac{21}{2}
+        \]
+        由等高性质,$\ \triangle ABC$ 面积为
+        \[
+        [\triangle ABC]=3[\triangle GBC]
+        =\frac{63}{2}
+        \]
+    \end{solution}
+
+    \question $I$ 为 $\triangle ABC$ 内心,$D$ 在 $AB$ 上,$E$ 在 $AC$ 上,且 $D,I,E$ 三点共线。已知 $AD=DE=5,AE=6$, 求 $AI$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/image47.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设 $\triangle ABC$ 内切圆半径为 $h$,由 $AD=DE$ 可知 
+        \[
+        \angle AED=\angle DAE=2\angle IAE=2\theta
+        \]
+        $\triangle ADE$面积为
+        \[
+        [\triangle ADE]=\sqrt{8\cdot3\cdot3\cdot2}=12=\frac{1}{2}\cdot 5h+\frac{1}{2}\cdot 6h \Rightarrow h=\frac{24}{11}
+        \]
+        在$\triangle ADE$ 中,由余弦定理,
+        \[
+        \cos 2\theta=\frac{6^2+5^2-5^2}{2\cdot 6\cdot 5}=\frac{3}{5} \Rightarrow \sin\theta=\sqrt{\frac{1-\cos 2\theta}{2}}=\sqrt{\frac{1}{5}}
+        \]
+        故
+        \[
+        AI=\frac{h}{\sin\theta}=\frac{24\sqrt{5}}{11}
+        \]
+    \end{solution}
+
+    \question $\triangle ABC$满足$AB:AC:BC=3:5:7$。令$I$为$\triangle ABC$的内心, 直线$AI$交$\triangle ABC$外接圆于另一点$D$, 试求$\dfrac{ID}{AD}$的值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image33.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+        设$E$为$AD$与$BC$的交点,因为$AD$为$\angle A$角平分线,由角平分线定理,
+        \[
+        \frac{BE}{EC} = \frac{AB}{AC} = \frac{3}{5} \Rightarrow 
+        BE = \frac{21}{8}, CE= \frac{35}{8}
+        \]
+        在$\triangle ABC$ 中,由余弦定理,
+        \[
+        (7k)^2=(3k)^2 + (5k)^2 - 2 \cdot 3k \cdot 5k \cdot 
+        \cos \angle A, k>0 \Rightarrow \angle A = 120^\circ, \angle BAE = 60^\circ
+        \]
+        在$\triangle ABE$ 中,由余弦定理,
+        \[
+        \left(\frac{21}{8}\right)^2=3^2 + AE^2-2 \cdot 3 \cdot AE \cdot \cos \angle BAE \Rightarrow AE = \frac{15}{8}
+        \]
+        又$\angle ABE = \angle ADC$,于是有$\triangle ABE \backsim \triangle CDE \ (AAA)$,则
+        \[
+        \frac{\frac{15}{8}}{\frac{21}{8}} = \frac{\frac{35}{8}}{DE} \Rightarrow DE = \frac{49}{8}, AD = \frac{15}{8} + \frac{49}{8} = 8
+        \]
+        又由角平分线定理,
+        \[
+        \frac{\frac{21}{8}}{3} = \frac{EI}{AI} \Rightarrow AI = \frac{8}{15} \cdot AE = 1
+        \]
+        故
+        \[
+        \frac{ID}{AD} = \frac{8 - 1}{8} = \frac{7}{8}
+        \]
+    \end{solution}
+
+    \question
+设 $t$ 是满足 $0 < t < 1$ 的实数。在面积为 $1$ 的三角形 $ABC$ 中，点 $D, E, F$ 分别是边 $AB, BC, CA$ 上的点，满足 $AD:DB = 2:1$，$BE:EC = t:1-t$，$CF:FA = 1:3$。设 $AE$ 与 $BF$，$BF$ 与 $CD$，$CD$ 与 $AE$ 的交点分别为 $P, Q, R$。回答以下问题。
+
+\begin{parts}
+    \part 求使三条直线 $AE, BF, CD$ 交于一点时 $t$ 的值 $t_0$。以下设 $t$ 满足 $0 < t < t_0$。
+    \begin{solution}
+    在 $\triangle ABC$ 中，根据塞瓦定理，三线共点的条件为：
+    \[ \frac{AD}{DB} \cdot \frac{BE}{EC} \cdot \frac{CF}{FA} = 1 \]
+    代入已知比例：
+    \[ \frac{2}{1} \cdot \frac{t_0}{1-t_0} \cdot \frac{1}{3} = 1 \]
+    整理得 $2t_0 = 3(1-t_0)$，解得 $t_0 = \frac{3}{5}$。
+    \end{solution}
+
+    \part 若满足 $AP = kAE$ 和 $CR = lCD$，求实数 $k, l$ 的表达式（用 $t$ 表示）。
+    \begin{solution}
+    由条件可知 $AP:PE = k:1-k$ 且 $CR:RD = l:1-l$。
+    对于 $\triangle AEC$ 和直线 $BF$，应用梅涅劳斯定理：
+    \[ \frac{AP}{PE} \cdot \frac{EB}{BC} \cdot \frac{CF}{FA} = 1 \implies \frac{k}{1-k} \cdot \frac{t}{1} \cdot \frac{1}{3} = 1 \]
+    解得 $kt = 3(1-k)$，故 $k = \frac{3}{3+t}$。
+    
+    对于 $\triangle CDB$ 和直线 $AE$，应用梅涅劳斯定理：
+    \[ \frac{CR}{RD} \cdot \frac{DA}{AB} \cdot \frac{BE}{EC} = 1 \implies \frac{l}{1-l} \cdot \frac{2}{3} \cdot \frac{t}{1-t} = 1 \]
+    整理得 $2lt = 3(1-l)(1-t)$，解得 $l = \frac{3-3t}{3-t}$。
+    \end{solution}
+
+    \part 求三角形 $BCQ$ 的面积。
+    \begin{solution}
+    设 $BQ:QF = m:1-m$。对于 $\triangle BFA$ 和直线 $CD$，应用梅涅劳斯定理：
+    \[ \frac{BQ}{QF} \cdot \frac{FC}{CA} \cdot \frac{AD}{DB} = 1 \implies \frac{m}{1-m} \cdot \frac{1}{4} \cdot \frac{2}{1} = 1 \]
+    解得 $2m = 4(1-m)$，即 $m = \frac{2}{3}$。
+    由于 $\triangle ABC$ 的面积为 $1$：
+    \[ S_{\triangle BCQ} = \frac{2}{3} S_{\triangle BCF} = \frac{2}{3} \cdot \frac{1}{4} S_{\triangle ABC} = \frac{1}{6} \]
+    \end{solution}
+
+    \part 求三角形 $PQR$ 的面积。
+    \begin{solution}
+    由 (2) 可得 $AP:PE = \frac{3}{3+t} : (1-\frac{3}{3+t}) = 3:t$，则：
+    \[ S_{\triangle ABP} = \frac{3}{3+t} S_{\triangle ABE} = \frac{3}{3+t} \cdot t S_{\triangle ABC} = \frac{3t}{3+t} \]
+    同理，由 $CR:RD = \frac{3-3t}{3-t} : (1-\frac{3-3t}{3-t}) = 3-3t:2t$，可得：
+    \[ S_{\triangle CAR} = \frac{3-3t}{3-3t+2t} S_{\triangle CAD} = \frac{3-3t}{3-t} \cdot \frac{2}{3} S_{\triangle ABC} = \frac{2-2t}{3-t} \]
+    三角形 $PQR$ 的面积为：
+    \[ S_{\triangle PQR} = S_{\triangle ABC} - S_{\triangle BCQ} - S_{\triangle CAR} - S_{\triangle ABP} \]
+    \[ = 1 - \frac{1}{6} - \frac{2-2t}{3-t} - \frac{3t}{3+t} = \frac{(5t-3)^2}{6(3-t)(3+t)} \]
+    \end{solution}
+\end{parts}
+
+\question
+设 $s$ 为正实数。在锐角三角形 $ABC$ 中，边 $AB$ 按 $s:1$ 内分的点为 $D$，边 $BC$ 按 $s:3$ 内分的点为 $E$。线段 $CD$ 与线段 $AE$ 的交点为 $F$。回答以下问题。
+\begin{parts}
+    \part 若 $\overrightarrow{AF} = \alpha \overrightarrow{AB} + \beta \overrightarrow{AC}$，求 $\alpha$ 与 $\beta$。
+    \begin{solution}
+    对 $\triangle ABE$ 和直线 $CD$ 应用梅涅劳斯定理：
+    \[ \frac{AD}{DB} \cdot \frac{BC}{CE} \cdot \frac{EF}{FA} = 1 \]
+    由条件知 $AD:DB = s:1$，$BE:EC = s:3$，则 $BC:CE = (s+3):3$。
+    代入得：
+    \[ \frac{s}{1} \cdot \frac{s+3}{3} \cdot \frac{EF}{FA} = 1 \implies \frac{FA}{EF} = \frac{s(s+3)}{3} \]
+    因此：
+    \[ \overrightarrow{AF} = \frac{FA}{FA+EF} \overrightarrow{AE} = \frac{s(s+3)}{s(s+3)+3} \overrightarrow{AE} \]
+    又因为 $\overrightarrow{AE} = \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3}$，代入上式得：
+    \[ \overrightarrow{AF} = \frac{s(s+3)}{s^2+3s+3} \cdot \frac{3 \overrightarrow{AB} + s \overrightarrow{AC}}{s+3} = \frac{3s}{s^2+3s+3} \overrightarrow{AB} + \frac{s^2}{s^2+3s+3} \overrightarrow{AC} \]
+    由于 $\overrightarrow{AB}$ 与 $\overrightarrow{AC}$ 线性无关，得：
+    \[ \alpha = \frac{3s}{s^2+3s+3}, \quad \beta = \frac{s^2}{s^2+3s+3} \]
+    \end{solution}
+
+    \part 从 $F$ 向边 $AC$ 作垂线 $FG$。求使得 $FG$ 长度最大时的 $s$ 值。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image253.png}
+    \end{figure}
+    \fi
+    \begin{solution}
+    设 $\overrightarrow{AH} = \alpha \overrightarrow{AB}, \overrightarrow{AI} = \beta \overrightarrow{AC}$，由 $\overrightarrow{AF} = \overrightarrow{AH} + \overrightarrow{AI}$ 可知：
+    \[ \triangle AFC = \alpha \cdot \triangle ABC \quad \dots (1) \]
+    又因为 $\triangle AFC = \frac{1}{2} AC \cdot FG \quad \dots (2)$。
+    由 (1), (2) 可得 $FG = \frac{2\alpha}{AC} \triangle ABC$。
+    因此，$FG$ 最大等价于 $\alpha$ 最大。将 $\alpha$ 变形为：
+    \[ \alpha = \frac{3s}{s^2+3s+3} = \frac{3}{s + 3 + \frac{3}{s}} \]
+    根据均值不等式，由于 $s > 0$：
+    \[ s + \frac{3}{s} \geqq 2\sqrt{s \cdot \frac{3}{s}} = 2\sqrt{3} \]
+    当且仅当 $s = \frac{3}{s}$ 即 $s = \sqrt{3}$ 时，等号成立。
+    此时分母最小，$\alpha$ 取得最大值：
+    \[ \alpha = \frac{3}{2\sqrt{3}+3} = 2\sqrt{3}-3 \]
+    因此，$FG$ 长度最大时，$s = \sqrt{3}$。
+    \end{solution}
+\end{parts}
+
 \question 对于给定的 $\triangle ABC$，其重心为 $G$。对于平面内任意一点 $M$，下列等式恒成立：
 \[
 MA^2 + MB^2 + MC^2 = GA^2 + GB^2 + GC^2 + 3MG^2
