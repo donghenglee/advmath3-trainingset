@@ -18121,6 +18121,56 @@ Q149. JEE Main 2021 (20 Jul Shift 2)
 \[ \det(3 \text{ Adj } B) = 27 \cdot (2)^2 = 27 \cdot 4 = 108 \]
 最终结果：$108$。
 \end{solution}
+
+\question 设 $P = \begin{bmatrix} 3 & -1 & -2 \\ 2 & 0 & \alpha \\ 3 & -5 & 0 \end{bmatrix}$，其中 $\alpha \in \mathbb{R}$。假设 $Q = [q_{ij}]$ 是一个矩阵使得 $PQ = kI$，其中 $k \in \mathbb{R}$，$k \neq 0$ 且 $I$ 是 3 阶单位矩阵。若 $q_{23} = -\frac{k}{8}$ 且 $\det(Q) = \frac{k^2}{2}$，则
+(A) $\alpha = 0, k = 8$
+(B) $4\alpha - k + 8 = 0$
+(C) $\det(P \operatorname{adj}(Q)) = 2^9$
+(D) $\det(Q \operatorname{adj}(P)) = 2^{13}$
+
+\begin{solution}
+根据 $PQ = kI$，取行列式得 $\det(P)\det(Q) = \det(kI) = k^3$。
+代入 $\det(Q) = \frac{k^2}{2}$，可得
+\[
+\det(P) \cdot \frac{k^2}{2} = k^3 \implies \det(P) = 2k
+\]
+计算矩阵 $P$ 的行列式：
+\[
+\det(P) = 3(0 + 5\alpha) - (-1)(0 - 3\alpha) + (-2)(-10 - 0) = 15\alpha - 3\alpha + 20 = 12\alpha + 20
+\]
+由此得到第一个关于 $\alpha$ 和 $k$ 的方程：
+\[
+12\alpha + 20 = 2k \implies 6\alpha + 10 = k
+\]
+又因为 $Q = kP^{-1} = \frac{k}{\det(P)} \operatorname{adj}(P)$，矩阵 $Q$ 的元素 $q_{23}$ 对应 $\operatorname{adj}(P)$ 的第 2 行第 3 列，即 $P$ 的代数余子式 $C_{32}$：
+\[
+q_{23} = \frac{k}{\det(P)} C_{32} = \frac{k}{2k} C_{32} = \frac{1}{2} C_{32}
+\]
+其中 $C_{32}$ 为：
+\[
+C_{32} = - \begin{vmatrix} 3 & -2 \\ 2 & \alpha \end{vmatrix} = -(3\alpha + 4)
+\]
+根据已知条件 $q_{23} = -\frac{k}{8}$，代入得
+\[
+\frac{-(3\alpha + 4)}{2} = -\frac{k}{8} \implies 4(3\alpha + 4) = k \implies 12\alpha + 16 = k
+\]
+联立方程 $k = 6\alpha + 10$ 与 $k = 12\alpha + 16$，解得
+\[
+6\alpha + 10 = 12\alpha + 16 \implies 6\alpha = -6 \implies \alpha = -1
+\]
+代入求得 $k = 6(-1) + 10 = 4$。
+验证选项：
+对于 (B)，$4\alpha - k + 8 = 4(-1) - 4 + 8 = 0$，故 (B) 正确。
+对于 (C)，$\det(P \operatorname{adj}(Q)) = \det(P) \det(\operatorname{adj}(Q)) = \det(P) (\det(Q))^2$。
+代入 $\det(P) = 2k$ 和 $\det(Q) = \frac{k^2}{2}$，得
+\[
+\det(P \operatorname{adj}(Q)) = 2k \cdot \left( \frac{k^2}{2} \right)^2 = \frac{k^5}{2}
+\]
+当 $k = 4$ 时，$\det(P \operatorname{adj}(Q)) = \frac{4^5}{2} = \frac{1024}{2} = 512 = 2^9$，故 (C) 正确。
+对于 (D)，$\det(Q \operatorname{adj}(P)) = \det(Q) (\det(P))^2 = \frac{k^2}{2} (2k)^2 = 2k^4$。
+当 $k = 4$ 时，$2(4^4) = 512 = 2^9 \neq 2^{13}$。
+综上所述，正确选项为 (B) (C)。
+\end{solution}
     \question 已知
     \[
     A=\begin{bmatrix}1&0&0\\ -2&3&0\\ 0&-4&5\end{bmatrix},\quad
@@ -19253,6 +19303,127 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
 \vspace{0.5pt}
 
 \begin{questions}
+    \question 使满足行列式方程
+\[
+\begin{vmatrix} x & x^2 & 1 + x^3 \\ 2x & 4x^2 & 1 + 8x^3 \\ 3x & 9x^2 & 1 + 27x^3 \end{vmatrix} = 10
+\]
+的互异实数 $x \in \mathbb{R}$ 的总个数为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+首先，利用行列式的性质，从第一列提取 $x$，从第二列提取 $x^2$。此时方程左侧变为：
+\[
+x \cdot x^2 \begin{vmatrix} 1 & 1 & 1 + x^3 \\ 2 & 4 & 1 + 8x^3 \\ 3 & 9 & 1 + 27x^3 \end{vmatrix} = x^3 \begin{vmatrix} 1 & 1 & 1 + x^3 \\ 2 & 4 & 1 + 8x^3 \\ 3 & 9 & 1 + 27x^3 \end{vmatrix}
+\]
+根据行列式按列拆分的性质，将第三列拆开：
+\[
+\begin{vmatrix} 1 & 1 & 1 + x^3 \\ 2 & 4 & 1 + 8x^3 \\ 3 & 9 & 1 + 27x^3 \end{vmatrix} = \begin{vmatrix} 1 & 1 & 1 \\ 2 & 4 & 1 \\ 3 & 9 & 1 \end{vmatrix} + \begin{vmatrix} 1 & 1 & x^3 \\ 2 & 4 & 8x^3 \\ 3 & 9 & 27x^3 \end{vmatrix}
+\]
+计算第一个行列式：
+\[
+\begin{vmatrix} 1 & 1 & 1 \\ 2 & 4 & 1 \\ 3 & 9 & 1 \end{vmatrix} = 1(4 - 9) - 1(2 - 3) + 1(18 - 12) = -5 + 1 + 6 = 2
+\]
+计算第二个行列式，并提取第三列的 $x^3$：
+\[
+\begin{vmatrix} 1 & 1 & x^3 \\ 2 & 4 & 8x^3 \\ 3 & 9 & 27x^3 \end{vmatrix} = x^3 \begin{vmatrix} 1 & 1 & 1 \\ 2 & 4 & 8 \\ 3 & 9 & 27 \end{vmatrix}
+\]
+直接展开计算：
+\[
+\begin{vmatrix} 1 & 1 & 1 \\ 2 & 4 & 8 \\ 3 & 9 & 27 \end{vmatrix} = 1(108 - 72) - 1(54 - 24) + 1(18 - 12) = 36 - 30 + 6 = 12
+\]
+代回原方程，得到关于 $x$ 的方程：
+\[
+x^3 (2 + 12x^3) = 10 \implies 12x^6 + 2x^3 - 10 = 0 \implies 6x^6 + x^3 - 5 = 0
+\]
+令 $t = x^3$，则方程变为 $6t^2 + t - 5 = 0$。通过因式分解得：
+\[
+(6t - 5)(t + 1) = 0
+\]
+解得 $t = \frac{5}{6}$ 或 $t = -1$。
+由于 $x \in \mathbb{R}$，对应的实数解为 $x = \sqrt[3]{\frac{5}{6}}$ 或 $x = -1$。
+这两个解是互异的实数。
+因此，互异实数 $x$ 的总个数为 2。
+\end{solution}
+\question Which of the following values of $\alpha$ satisfy the equation
+\[
+\begin{vmatrix}
+(1+\alpha)^2 & (1+2\alpha)^2 & (1+3\alpha)^2 \\
+(2+\alpha)^2 & (2+2\alpha)^2 & (2+3\alpha)^2 \\
+(3+\alpha)^2 & (3+2\alpha)^2 & (3+3\alpha)^2
+\end{vmatrix} = -648\alpha
+\]
+(A) $-4$
+(B) $9$
+(C) $-9$
+(D) $4$
+
+\begin{solution}
+设行列式为 $\Delta$。我们将每一项展开：
+\[
+\Delta = \begin{vmatrix}
+1+2\alpha+\alpha^2 & 1+4\alpha+4\alpha^2 & 1+6\alpha+9\alpha^2 \\
+4+4\alpha+\alpha^2 & 4+8\alpha+4\alpha^2 & 4+12\alpha+9\alpha^2 \\
+9+6\alpha+\alpha^2 & 9+12\alpha+4\alpha^2 & 9+18\alpha+9\alpha^2
+\end{vmatrix}
+\]
+为了简化计算，我们利用列变换。令 $C_3 \to C_3 - C_2$ 且 $C_2 \to C_2 - C_1$：
+\[
+\Delta = \begin{vmatrix}
+1+2\alpha+\alpha^2 & 2\alpha+3\alpha^2 & 2\alpha+5\alpha^2 \\
+4+4\alpha+\alpha^2 & 4\alpha+3\alpha^2 & 4\alpha+5\alpha^2 \\
+9+6\alpha+\alpha^2 & 6\alpha+3\alpha^2 & 6\alpha+5\alpha^2
+\end{vmatrix}
+\]
+接着令 $C_3 \to C_3 - C_2$：
+\[
+\Delta = \begin{vmatrix}
+1+2\alpha+\alpha^2 & 2\alpha+3\alpha^2 & 2\alpha^2 \\
+4+4\alpha+\alpha^2 & 4\alpha+3\alpha^2 & 2\alpha^2 \\
+9+6\alpha+\alpha^2 & 6\alpha+3\alpha^2 & 2\alpha^2
+\end{vmatrix}
+\]
+从第三列提取公因子 $2\alpha^2$：
+\[
+\Delta = 2\alpha^2 \begin{vmatrix}
+1+2\alpha+\alpha^2 & 2\alpha+3\alpha^2 & 1 \\
+4+4\alpha+\alpha^2 & 4\alpha+3\alpha^2 & 1 \\
+9+6\alpha+\alpha^2 & 6\alpha+3\alpha^2 & 1
+\end{vmatrix}
+\]
+接下来进行行变换。令 $R_3 \to R_3 - R_2$ 且 $R_2 \to R_2 - R_1$：
+\[
+\Delta = 2\alpha^2 \begin{vmatrix}
+1+2\alpha+\alpha^2 & 2\alpha+3\alpha^2 & 1 \\
+3+2\alpha & 2\alpha & 0 \\
+5+2\alpha & 2\alpha & 0
+\end{vmatrix}
+\]
+按第三列展开行列式：
+\[
+\Delta = 2\alpha^2 \cdot 1 \cdot \begin{vmatrix}
+3+2\alpha & 2\alpha \\
+5+2\alpha & 2\alpha
+\end{vmatrix}
+\]
+计算二阶行列式：
+\[
+\Delta = 2\alpha^2 \left[ (3+2\alpha)(2\alpha) - (5+2\alpha)(2\alpha) \right]
+\]
+\[
+\Delta = 2\alpha^2 \left( 6\alpha + 4\alpha^2 - 10\alpha - 4\alpha^2 \right)
+\]
+\[
+\Delta = 2\alpha^2 (-4\alpha) = -8\alpha^3
+\]
+根据题意：
+\[
+-8\alpha^3 = -648\alpha
+\]
+若 $\alpha \neq 0$，方程两边同时除以 $-8\alpha$：
+\[
+\alpha^2 = 81
+\]
+解得 $\alpha = \pm 9$。根据选项，(B) 和 (C) 均满足该方程。
+\end{solution}
     \question 若 $a+b+c=x+y+z=0$,求行列式 
     \[
     \begin{vmatrix}
@@ -21721,6 +21892,52 @@ z^2 = -i\bar{z}
         \]
     \end{solution}
 
+    \question 设 $\omega \neq 1$ 是单位复立方根。若满足方程
+\[
+(3-3\omega+2\omega^2)^{4n+3} + (2+3\omega-3\omega^2)^{4n+3} + (-3+2\omega+3\omega^2)^{4n+3} = 0
+\]
+则 $n$ 的可能取值为
+
+\begin{solution}
+设三个底数分别为 $a, b, c$：
+\[
+a = 3-3\omega+2\omega^2, \quad b = 2+3\omega-3\omega^2, \quad c = -3+2\omega+3\omega^2
+\]
+利用 $\omega^2+\omega+1=0$ 以及 $\omega^3=1$ 来简化这些表达式。首先简化 $a$：
+\[
+a = 3-3\omega+2(-1-\omega) = 1-5\omega
+\]
+接着计算 $a\omega$ 和 $a\omega^2$：
+\[
+a\omega = \omega-5\omega^2 = \omega-5(-1-\omega) = 5+6\omega
+\]
+\[
+a\omega^2 = \omega^2-5 = (-1-\omega)-5 = -6-\omega
+\]
+同时简化 $b$ 和 $c$：
+\[
+b = 2+3\omega-3(-1-\omega) = 5+6\omega
+\]
+\[
+c = -3+2\omega+3(-1-\omega) = -6-\omega
+\]
+显然有 $b = a\omega$ 且 $c = a\omega^2$。将这些关系代入原方程：
+\[
+a^{4n+3} + (a\omega)^{4n+3} + (a\omega^2)^{4n+3} = 0
+\]
+由于 $a = 1-5\omega \neq 0$，方程两边同时除以 $a^{4n+3}$：
+\[
+1 + \omega^{4n+3} + \omega^{2(4n+3)} = 0
+\]
+根据单位根的性质，$1+\omega^m+\omega^{2m}=0$ 当且仅当 $m$ 不是 $3$ 的倍数。
+令 $m = 4n+3$，我们需要 $4n+3 \not\equiv 0 \pmod{3}$。
+由于 $4n+3 = 3n + n + 3 \equiv n \pmod{3}$，所以：
+\[
+n \not\equiv 0 \pmod{3}
+\]
+即 $n$ 可以是任何不被 $3$ 整除的整数。
+\end{solution}
+
     \question
 设 $f(x) = x^4 + ax^3 + bx^2 + c$ 为实系数多项式，满足 $f(1) = -9$。
 假设 $i\sqrt{3}$ 是方程 $4x^3 + 3ax^2 + 2bx = 0$ 的一个根，其中 $i = \sqrt{-1}$。
@@ -22993,6 +23210,27 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
         \]
     \end{solution}
     \end{parts}
+
+    \question 设 $z = \frac{-1 + \sqrt{3}i}{2}$，其中 $i = \sqrt{-1}$，且 $r, s \in \{1, 2, 3\}$。设 $P = \begin{bmatrix} (-z)^r & z^{2s} \\ z^{2s} & z^r \end{bmatrix}$，$I$ 为 2 阶单位矩阵。则满足 $P^2 = -I$ 的有序对 $(r, s)$ 的总个数为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+由题意，$z = e^{i \frac{2\pi}{3}} = \omega$ 是三次单位根。
+计算 $P^2$：
+\[
+P^2 = \begin{bmatrix} (-z)^r & z^{2s} \\ z^{2s} & z^r \end{bmatrix} \begin{bmatrix} (-z)^r & z^{2s} \\ z^{2s} & z^r \end{bmatrix} = \begin{bmatrix} (-z)^{2r} + z^{4s} & z^{2s}((-z)^r + z^r) \\ z^{2s}((-z)^r + z^r) & z^{4s} + z^{2r} \end{bmatrix}
+\]
+令 $P^2 = -I$，即
+1) 对角线元素：$(-z)^{2r} + z^{4s} = -1$ 且 $z^{4s} + z^{2r} = -1$。
+2) 非对角线元素：$z^{2s}((-z)^r + z^r) = 0$。
+由于 $z \neq 0$，由 (2) 得 $(-z)^r + z^r = z^r((-1)^r + 1) = 0$，这要求 $r$ 必须为奇数。
+在 $r \in \{1, 2, 3\}$ 中，$r = 1$ 或 $r = 3$。
+当 $r$ 为奇数时，$(-z)^{2r} = z^{2r}$，此时对角线方程化为 $z^{2r} + z^{4s} = -1$。
+若 $r = 1$：$z^2 + z^{4s} = -1 \implies \omega^2 + \omega^s = -1$。
+已知 $1 + \omega + \omega^2 = 0$，即 $\omega^2 + \omega = -1$，故 $\omega^s = \omega \implies s = 1$。得到解 $(1, 1)$。
+若 $r = 3$：$z^6 + z^{4s} = -1 \implies 1 + \omega^s = -1 \implies \omega^s = -2$，无实数解。
+综上所述，只有 $(1, 1)$ 一个有序对。
+总个数为 1。
+\end{solution}
 
     \question
 定义多项式 $P(x)$ 为 $P(x) = \frac{(x+i)^7 - (x-i)^7}{2i}$。其中 $i$ 为虚数单位。回答下列问题。

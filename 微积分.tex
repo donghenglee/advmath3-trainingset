@@ -544,6 +544,19 @@ $\log_e \alpha = \frac{e}{1-e}$。
         \]
     \end{solution}
 
+    \question 令 $f : \mathbb{R} \to \mathbb{R}$ 为连续奇函数，且仅在一点处为零，$f(1) = \frac{1}{2}$。假设对于所有 $x \in [-1, 2]$，有 $F(x) = \int_{-1}^{x} f(t) dt$ 且 $G(x) = \int_{-1}^{x} t|f(f(t))| dt$。若 $\lim_{x \to 1} \frac{F(x)}{G(x)} = \frac{1}{14}$，则 $f\left(\frac{1}{2}\right)$ 的值为
+
+\begin{solution}
+因为 $f(t)$ 是奇函数，所以 $F(1) = \int_{-1}^1 f(t) dt = 0$。
+又因为 $f(f(t))$ 是奇函数，其绝对值 $|f(f(t))|$ 为偶函数，故 $t|f(f(t))|$ 是奇函数，得 $G(1) = 0$。
+利用 L'Hôpital 法则：
+\[
+\lim_{x \to 1} \frac{F(x)}{G(x)} = \lim_{x \to 1} \frac{f(x)}{x|f(f(x))|} = \frac{f(1)}{1 \cdot |f(f(1))|} = \frac{1/2}{|f(1/2)|}
+\]
+由题意 $\frac{1}{2|f(1/2)|} = \frac{1}{14}$，解得 $|f(1/2)| = 7$。
+由于 $f(1) = 1/2 > 0$ 且 $f$ 在 $(0, \infty)$ 无零点，故 $f(1/2) = 7$。
+\end{solution}
+
     \question 设
     \[
     \lim_{x \to 0} \frac{\sin 6x + x f(x)}{x^3} = 0,
@@ -682,6 +695,25 @@ $\log_e \alpha = \frac{e}{1-e}$。
         \]
     \end{solution}
 
+    \question 设 $\alpha, \beta \in \mathbb{R}$ 满足
+\[
+\lim_{x \to 0} \frac{x^2 \sin(\beta x)}{\alpha x - \sin x} = 1
+\]
+则 $6(\alpha + \beta)$ 等于 \underline{\hspace{1cm}}。
+
+\begin{solution}
+对分子和分母在 $x=0$ 附近进行泰勒展开：
+分母：$\alpha x - \sin x = \alpha x - (x - \frac{x^3}{6} + o(x^3)) = (\alpha - 1)x + \frac{x^3}{6} + o(x^3)$。
+分子：$x^2 \sin(\beta x) = x^2 (\beta x + o(x)) = \beta x^3 + o(x^3)$。
+若 $\alpha - 1 \neq 0$，则分母阶数为 1，分子阶数为 3，极限为 0。
+为了使极限为 1，必须有 $\alpha - 1 = 0 \implies \alpha = 1$。
+此时极限变为：
+\[
+\lim_{x \to 0} \frac{\beta x^3 + o(x^3)}{\frac{1}{6}x^3 + o(x^3)} = \frac{\beta}{1/6} = 6\beta
+\]
+已知极限值为 1，故 $6\beta = 1 \implies \beta = \frac{1}{6}$。
+计算所求值：$6(\alpha + \beta) = 6(1 + \frac{1}{6}) = 6 + 1 = 7$。
+\end{solution}
     \question 
 求极限 $\lim_{x \to 0} \frac{e^{2|\sin x|} - 2|\sin x| - 1}{x^2}$：
 \begin{choices}
@@ -3353,6 +3385,32 @@ a - 7 \ge 0 \implies a \ge 7
 因此，$a$ 的最小可能值为 $7$。
 
 故正确选项为 B。
+\end{solution}
+
+\question 满足方程
+\[
+\int_{0}^{x} \frac{t^2}{1+t^4} dt = 2x - 1
+\]
+的互异实数 $x \in [0, 1]$ 的总个数为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+构造函数 $f(x) = \int_{0}^{x} \frac{t^2}{1+t^4} dt - 2x + 1$。
+对 $f(x)$ 求导得：
+\[
+f'(x) = \frac{x^2}{1+x^4} - 2
+\]
+当 $x \in [0, 1]$ 时，根据均值不等式或单调性可知 $0 \le \frac{x^2}{1+x^4} \le \frac{1}{2}$。
+因此 $f'(x) \le \frac{1}{2} - 2 = -\frac{3}{2} < 0$，函数 $f(x)$ 在 $[0, 1]$ 上严格递减。
+计算端点值：
+$f(0) = \int_{0}^{0} \frac{t^2}{1+t^4} dt - 2(0) + 1 = 1 > 0$。
+$f(1) = \int_{0}^{1} \frac{t^2}{1+t^4} dt - 2(1) + 1 = \int_{0}^{1} \frac{t^2}{1+t^4} dt - 1$。
+由于在 $t \in [0, 1]$ 时 $\frac{t^2}{1+t^4} \le \frac{1}{2}$，则
+\[
+\int_{0}^{1} \frac{t^2}{1+t^4} dt \le \int_{0}^{1} \frac{1}{2} dt = \frac{1}{2}
+\]
+故 $f(1) \le \frac{1}{2} - 1 = -0.5 < 0$。
+根据零点存在定理，在 $(0, 1)$ 内恰有一个实根。
+故互异实数的总个数为 1。
 \end{solution}
     \question 设函数 $f : \mathbb{R} \to \mathbb{R}$ 定义为
 \[
@@ -6725,6 +6783,133 @@ f(3)=3+3=6.
 \textcolor{red}{(待验证,为什么设$a,b$？)}
 \end{solution}
 
+\question PARAGRAPH 2
+Let $F: \mathbb{R} \to \mathbb{R}$ be a thrice differentiable function. Suppose that $F(1) = 0$, $F(3) = -4$ and $F'(x) < 0$ for all $x \in (1/2, 3)$. Let $f(x) = xF(x)$ for all $x \in \mathbb{R}$.
+
+Q.59 The correct statement(s) is(are)
+(A) $f'(1) < 0$
+(B) $f(2) < 0$
+(C) $f'(x) \neq 0$ for any $x \in (1, 3)$
+(D) $f'(x) = 0$ for some $x \in (1, 3)$
+
+\begin{solution}
+根据已知条件 $f(x) = xF(x)$，对 $x$ 求导得：
+\[
+f'(x) = F(x) + xF'(x)
+\]
+对于选项 (A)：
+由于 $F(1) = 0$，则 $f'(1) = F(1) + 1 \cdot F'(1) = F'(1)$。
+已知 $F'(x) < 0$ 对 $x \in (1/2, 3)$ 成立，故 $F'(1) < 0$，即 $f'(1) < 0$。(A) 正确。
+
+对于选项 (B)：
+由于 $F(1) = 0$ 且在 $(1, 3)$ 上 $F'(x) < 0$，说明 $F(x)$ 在该区间内严格递减。
+因此当 $x > 1$ 时，$F(x) < F(1) = 0$。
+对于 $x = 2 \in (1, 3)$，有 $F(2) < 0$。
+则 $f(2) = 2 \cdot F(2) < 0$。(B) 正确。
+
+对于选项 (C) 和 (D)：
+在 $x \in (1, 3)$ 时，$F(x) < 0$（由递减性得出）且 $F'(x) < 0$（已知条件）。
+由于 $x > 0$，则 $xF'(x) < 0$。
+因此 $f'(x) = F(x) + xF'(x) < 0$ 对所有 $x \in (1, 3)$ 均成立。
+这意味着 $f'(x)$ 在 $(1, 3)$ 上永远不为 $0$。(C) 正确，(D) 错误。
+\end{solution}
+
+\question Q.60 If $\int_1^3 x^2 F'(x) dx = -12$ and $\int_1^3 x^3 F''(x) dx = 40$, then the correct expression(s) is(are)
+(A) $9f'(3) + f'(1) - 32 = 0$
+(B) $\int_1^3 f(x) dx = 12$
+(C) $9f'(3) - f'(1) + 32 = 0$
+(D) $\int_1^3 f(x) dx = -12$
+
+\begin{solution}
+首先处理第二个积分，利用分部积分法：
+\[
+\int_1^3 x^3 F''(x) dx = \left. x^3 F'(x) \right|_1^3 - \int_1^3 3x^2 F'(x) dx
+\]
+代入已知数值 $40$ 和 $\int_1^3 x^2 F'(x) dx = -12$：
+\[
+40 = [27F'(3) - F'(1)] - 3(-12)
+\]
+\[
+40 = 27F'(3) - F'(1) + 36 \implies 27F'(3) - F'(1) = 4
+\]
+我们需要将其转换为关于 $f'(x)$ 的表达式。已知 $f'(x) = F(x) + xF'(x)$。
+当 $x = 3$ 时，$f'(3) = F(3) + 3F'(3) = -4 + 3F'(3) \implies 3F'(3) = f'(3) + 4$。
+当 $x = 1$ 时，$f'(1) = F(1) + 1F'(1) = 0 + F'(1) \implies F'(1) = f'(1)$。
+代入之前的等式：
+\[
+9(3F'(3)) - F'(1) = 4 \implies 9(f'(3) + 4) - f'(1) = 4
+\]
+\[
+9f'(3) + 36 - f'(1) = 4 \implies 9f'(3) - f'(1) + 32 = 0
+\]
+因此 (C) 正确。
+
+接着计算 $\int_1^3 f(x) dx$：
+\[
+\int_1^3 f(x) dx = \int_1^3 xF(x) dx
+\]
+利用分部积分，令 $u = F(x)$，$dv = x dx$：
+\[
+\int_1^3 xF(x) dx = \left. \frac{x^2}{2} F(x) \right|_1^3 - \int_1^3 \frac{x^2}{2} F'(x) dx
+\]
+代入 $F(3) = -4$，$F(1) = 0$ 和 $\int_1^3 x^2 F'(x) dx = -12$：
+\[
+\int_1^3 f(x) dx = \left( \frac{9}{2}(-4) - \frac{1}{2}(0) \right) - \frac{1}{2}(-12)
+\]
+\[
+= -18 + 6 = -12
+\]
+因此 (D) 正确。
+\end{solution}
+
+\question Let $f'(x) = \frac{192x^3}{2 + \sin^4 \pi x}$ for all $x \in \mathbb{R}$ with $f\left(\frac{1}{2}\right) = 0$. If $m \leq \int_{1/2}^1 f(x) dx \leq M$, then the possible values of $m$ and $M$ are
+(A) $m = 13, M = 24$
+(B) $m = \frac{1}{4}, M = \frac{1}{2}$
+(C) $m = -11, M = 0$
+(D) $m = 1, M = 12$
+
+\begin{solution}
+已知 $f'(x) = \frac{192x^3}{2 + \sin^4 \pi x}$，且 $f\left(\frac{1}{2}\right) = 0$。我们需要估计积分 $I = \int_{1/2}^1 f(x) dx$ 的范围。
+利用分部积分法，令 $u = f(x)$，$dv = dx$，则 $du = f'(x) dx$，$v = x$。但为了利用 $f\left(\frac{1}{2}\right) = 0$，我们令 $v = x - 1$ 或直接使用：
+\[
+\int_{1/2}^1 f(x) dx = \left. (x-1)f(x) \right|_{1/2}^1 - \int_{1/2}^1 (x-1)f'(x) dx
+\]
+由于 $f\left(\frac{1}{2}\right) = 0$，且 $(1-1)f(1) = 0$，上式简化为：
+\[
+I = \int_{1/2}^1 (1-x)f'(x) dx = \int_{1/2}^1 \frac{192x^3(1-x)}{2 + \sin^4 \pi x} dx
+\]
+考虑分母 $2 + \sin^4 \pi x$ 的范围。对于 $x \in [1/2, 1]$，$\sin^4 \pi x$ 在 $[0, 1]$ 之间变化。
+具体地，当 $x \in [1/2, 1]$ 时，$0 \leq \sin^4 \pi x \leq 1$，故：
+\[
+2 \leq 2 + \sin^4 \pi x \leq 3
+\]
+由此可得：
+\[
+\frac{192}{3} \int_{1/2}^1 (x^3 - x^4) dx \leq I \leq \frac{192}{2} \int_{1/2}^1 (x^3 - x^4) dx
+\]
+计算定积分：
+\[
+\int_{1/2}^1 (x^3 - x^4) dx = \left[ \frac{x^4}{4} - \frac{x^5}{5} \right]_{1/2}^1 = \left( \frac{1}{4} - \frac{1}{5} \right) - \left( \frac{1}{64} - \frac{1}{160} \right)
+\]
+\[
+= \frac{1}{20} - \left( \frac{5 - 2}{320} \right) = \frac{1}{20} - \frac{3}{320} = \frac{16 - 3}{320} = \frac{13}{320}
+\]
+代入范围：
+\[
+\frac{192}{3} \cdot \frac{13}{320} \leq I \leq \frac{192}{2} \cdot \frac{13}{320}
+\]
+\[
+64 \cdot \frac{13}{320} \leq I \leq 96 \cdot \frac{13}{320}
+\]
+\[
+\frac{13}{5} \leq I \leq \frac{3 \cdot 13}{10}
+\]
+\[
+2.6 \leq I \leq 3.9
+\]
+检查选项，只有选项 (D) 中的范围 $m=1, M=12$ 包含了此区间 $[2.6, 3.9]$。
+\end{solution}
+
     \question 设 $0 < a < b$,证明
     \[
     \int_a^b (x^2 + 1) e^{-x^2} \, dx > e^{-a^2} - e^{-b^2}.
@@ -7044,6 +7229,46 @@ h(a) = 3 a^2 - 2 a + 2 = 3 \left(a - \frac{1}{3}\right)^2 + \frac{5}{3}.
     \end{solution}
 
     \question
+Let $f(x) = \lim_{n \to \infty} \left( \frac{n^n (x+n)(x+\frac{n}{2}) \cdots (x+\frac{n}{n})}{n! (x^2+n^2)(x^2+\frac{n^2}{4}) \cdots (x^2+\frac{n^2}{n^2})} \right)^{\frac{x}{n}}$, for all $x > 0$. Then
+(A) $f(\frac{1}{2}) \geq f(1)$ \quad (B) $f(\frac{1}{3}) \leq f(\frac{2}{3})$ \quad (C) $f'(2) \leq 0$ \quad (D) $\frac{f'(3)}{f(3)} \geq \frac{f'(2)}{f(2)}$
+
+\begin{solution}
+\textbf{第一步：对数化与黎曼和构造}
+对 $f(x)$ 取自然对数，将连乘积转化为求和形式：
+\[ \ln f(x) = \lim_{n \to \infty} \frac{x}{n} \left[ \sum_{r=1}^{n} \ln\left(n\left(x+\frac{n}{r}\right)\right) - \sum_{r=1}^{n} \ln r - \sum_{r=1}^{n} \ln\left(x^2+\frac{n^2}{r^2}\right) \right] \]
+将常数项与求和项合并，并整理括号内部：
+\[ \ln f(x) = \lim_{n \to \infty} \frac{x}{n} \sum_{r=1}^{n} \ln \left( \frac{n(x + \frac{n}{r})}{r(x^2 + \frac{n^2}{r^2})} \right) = \lim_{n \to \infty} \frac{x}{n} \sum_{r=1}^{n} \ln \left( \frac{\frac{n}{r}x + (\frac{n}{r})^2}{x^2 + (\frac{n}{r})^2} \right) \]
+令 $u = \frac{r}{n}$，当 $n \to \infty$ 时，利用定积分定义：
+\[ \ln f(x) = x \int_{0}^{1} \ln \left( \frac{\frac{x}{u} + \frac{1}{u^2}}{x^2 + \frac{1}{u^2}} \right) du = x \int_{0}^{1} \ln \left( \frac{ux+1}{u^2x^2+1} \right) du \]
+
+\textbf{第二步：积分计算}
+利用分部积分法 $\int \ln(at+1)dt = \frac{at+1}{a}\ln(at+1) - t$：
+1. $\int_{0}^{1} \ln(ux+1) du = \frac{x+1}{x}\ln(x+1) - 1$
+2. $\int_{0}^{1} \ln(u^2x^2+1) du = \ln(x^2+1) - 2 + \frac{2\arctan x}{x}$
+代入整理得：
+\[ \ln f(x) = (x+1)\ln(x+1) - x\ln(x^2+1) + x - 2\arctan x \]
+
+\textbf{第三步：导数与单调性分析}
+对 $x$ 求导，得到对数导数：
+\[ \frac{f'(x)}{f(x)} = \frac{d}{dx} \ln f(x) = \ln(x+1) + 1 - \ln(x^2+1) - \frac{2x^2}{x^2+1} + 1 - \frac{2}{x^2+1} \]
+简化得：
+\[ \frac{f'(x)}{f(x)} = \ln\left(\frac{x+1}{x^2+1}\right) \]
+令 $g(x) = \frac{x+1}{x^2+1}$：
+\begin{itemize}
+    \item 当 $0 < x < 1$ 时，$x+1 > x^2+1 \implies g(x) > 1 \implies f'(x) > 0$，函数单调递增。由此可知 $f(1/3) \leq f(2/3)$，(B)正确；且 $f(1/2) < f(1)$，(A)错误。
+    \item 当 $x > 1$ 时，$x+1 < x^2+1 \implies g(x) < 1 \implies f'(x) < 0$，函数单调递减。由此可知 $f'(2) < 0$，(C)正确。
+\end{itemize}
+
+\textbf{第四步：二阶性态判断}
+考察 $h(x) = \frac{f'(x)}{f(x)} = \ln(g(x))$ 的单调性：
+\[ h'(x) = \frac{g'(x)}{g(x)} = \frac{1-2x-x^2}{(x+1)(x^2+1)} \]
+当 $x \geq 1$ 时，$1-2x-x^2 < 0$，故 $h(x)$ 单调递减。
+因此 $h(3) < h(2) \implies \frac{f'(3)}{f(3)} < \frac{f'(2)}{f(2)}$，(D)错误。
+
+综上所述，正确选项为 (B) 和 (C)。
+\end{solution}
+
+    \question
 设 $f : \mathbb{R} \to \mathbb{R}$ 为二阶可导函数且满足 $f(2) = 1$。若对于所有 $x \in \mathbb{R}$，$F(x) = xf(x)$，且满足：
 \[ \int_{0}^{2} x f'(x) \,dx = 6 \quad \text{以及} \quad \int_{0}^{2} x^2 f''(x) \,dx = 40 \]
 则 $F'(2) + \int_{0}^{2} F(x) \,dx$ 等于：
@@ -7180,6 +7405,40 @@ A = \frac{9}{11} \left( \frac{99 - 27}{11} \right) = \frac{9}{11} \cdot \frac{72
 \]
 对照选项，计算过程中若矩形宽度定义为变量间距，结果通常指向分母为 121 的形式。
 故正确选项为 (4)。
+\end{solution}
+
+\question
+Area of the region $\{(x, y) \in \mathbb{R}^2 : y \geq \sqrt{|x+3|}, 5y \leq x + 9 \leq 15\}$ is equal to
+(A) $\frac{1}{6}$ \quad (B) $\frac{4}{3}$ \quad (C) $\frac{3}{2}$ \quad (D) $\frac{5}{3}$
+
+\begin{solution}
+首先分析边界条件：
+曲线由 $y = \sqrt{|x+3|}$ 给出，这可以分为两部分：
+$y = \sqrt{x+3}$ (当 $x \geq -3$) 和 $y = \sqrt{-(x+3)}$ (当 $x < -3$)。
+直线边界为 $y = \frac{x+9}{5}$ 以及 $x \leq 6$。
+
+求直线与曲线的交点：
+1. 对于 $x \geq -3$：$\frac{x+9}{5} = \sqrt{x+3} \Rightarrow x^2-7x+6=0 \Rightarrow x=1, 6$。
+2. 对于 $x < -3$：$\frac{x+9}{5} = \sqrt{-x-3} \Rightarrow x^2+43x+156=0 \Rightarrow x=-4, -39$。
+根据题意范围，有效积分为从 $x=-4$ 到 $x=1$。
+
+面积计算如下：
+\[
+\text{Area} = \int_{-4}^{-3} \left( \frac{x+9}{5} - \sqrt{-x-3} \right) dx + \int_{-3}^{1} \left( \frac{x+9}{5} - \sqrt{x+3} \right) dx
+\]
+计算第一部分：
+\[
+\left[ \frac{(x+9)^2}{10} + \frac{2}{3}(-x-3)^{3/2} \right]_{-4}^{-3} = \left( \frac{36}{10} + 0 \right) - \left( \frac{25}{10} + \frac{2}{3} \right) = \frac{11}{10} - \frac{2}{3} = \frac{13}{30}
+\]
+计算第二部分：
+\[
+\left[ \frac{(x+9)^2}{10} - \frac{2}{3}(x+3)^{3/2} \right]_{-3}^{1} = \left( \frac{100}{10} - \frac{16}{3} \right) - \left( \frac{36}{10} - 0 \right) = \frac{64}{10} - \frac{16}{3} = \frac{32}{5} - \frac{16}{3} = \frac{16}{15}
+\]
+总面积：
+\[
+\frac{13}{30} + \frac{32}{30} = \frac{45}{30} = \frac{3}{2}
+\]
+因此，正确答案是 (C)。
 \end{solution}
     \question
 考虑定义在 $\mathbb{R} \to \mathbb{R}$ 上的函数 $f, g$：
@@ -18740,6 +18999,62 @@ f(e) = e^2 \ln e + \frac{e^2}{3}
 f(e) = e^2 + \frac{e^2}{3} = \frac{4e^2}{3}
 \]
 因此，正确选项为 (C)。
+\end{solution}
+
+\question 设微分方程
+\[
+(x^2 + xy + 4x + 2y + 4)\frac{dy}{dx} - y^2 = 0, x > 0
+\]
+的一条解曲线通过点 $(1, 3)$。则该解曲线
+(A) 与 $y = x + 2$ 恰有一个交点
+(B) 与 $y = x + 2$ 恰有两个交点
+(C) 与 $y = (x + 2)^2$ 相交
+(D) 与 $y = (x + 3)^2$ 不相交
+
+\begin{solution}
+首先，根据提示对微分方程的系数进行因式分解。注意到：
+\[
+x^2 + xy + 4x + 2y + 4 = (x^2 + 4x + 4) + y(x + 2) = (x + 2)^2 + y(x + 2)
+\]
+原微分方程可以改写为：
+\[
+\left[ (x + 2)^2 + y(x + 2) \right] \frac{dy}{dx} = y^2
+\]
+由于 $x > 0$，令 $X = x + 2$，则 $dX = dx$，方程变为：
+\[
+(X^2 + Xy) \frac{dy}{dX} = y^2 \implies \frac{dX}{dy} = \frac{X^2 + Xy}{y^2} = \left( \frac{X}{y} \right)^2 + \frac{X}{y}
+\]
+这是一个齐次微分方程。令 $X = vy$，则 $\frac{dX}{dy} = v + y\frac{dv}{dy}$。代入方程得：
+\[
+v + y\frac{dv}{dy} = v^2 + v \implies y\frac{dv}{dy} = v^2
+\]
+分离变量并积分：
+\[
+\int \frac{1}{v^2} dv = \int \frac{1}{y} dy \implies -\frac{1}{v} = \ln y + C
+\]
+将 $v = \frac{x + 2}{y}$ 代回，得到通解：
+\[
+-\frac{y}{x + 2} = \ln y + C
+\]
+已知解曲线通过点 $(1, 3)$，代入 $x = 1, y = 3$：
+\[
+-\frac{3}{1 + 2} = \ln 3 + C \implies -1 = \ln 3 + C \implies C = -1 - \ln 3
+\]
+因此，解曲线方程为：
+\[
+\frac{y}{x + 2} = 1 - \ln \left( \frac{y}{3} \right)
+\]
+下面验证各选项：
+对于 (A) 和 (B)，令 $y = x + 2$，则 $\frac{y}{x + 2} = 1$。
+代入方程得 $1 = 1 - \ln \left( \frac{y}{3} \right) \implies y = 3$。
+再由 $y = x + 2$ 得 $x = 1$。因此交点仅有 $(1, 3)$ 一个，故 (A) 正确，(B) 错误。
+对于 (C)，令 $y = (x + 2)^2$，则 $\frac{y}{x + 2} = x + 2$。
+代入方程得 $x + 2 = 1 - \ln \frac{(x + 2)^2}{3}$，即 $x + 1 + 2\ln(x + 2) - \ln 3 = 0$。
+由于 $x > 0$，有 $x + 1 > 1$ 且 $2\ln(x + 2) > 2\ln 2 \approx 1.386$，而 $\ln 3 \approx 1.098$。
+显然 $x + 1 + 2\ln(x + 2) - \ln 3 > 0$ 恒成立，方程无实根，故 (C) 错误。
+对于 (D)，由方程可知需满足 $1 - \ln \left( \frac{y}{3} \right) > 0$，即 $y < 3e \approx 8.15$。
+而当 $x > 0$ 时，$y = (x + 3)^2 > 9$。故解曲线与 $y = (x + 3)^2$ 绝无交点，(D) 正确。
+综上所述，正确选项为 (A) (D)。
 \end{solution}
 
 
