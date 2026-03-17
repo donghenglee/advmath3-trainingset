@@ -16096,6 +16096,52 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
 故正确选项为 A。
 \end{solution}
 
+\question 在 $(1 + x^2)^4 (1 + x^3)^7 (1 + x^4)^{12}$ 的展开式中，$x^{11}$ 的系数是
+
+\begin{itemize}
+    \item[(A)] 1051
+    \item[(B)] 1106
+    \item[(C)] 1113
+    \item[(D)] 1120
+\end{itemize}
+
+\begin{solution}
+我们需要找到所有满足下式的非负整数解 $(a, b, c)$：
+\[
+2a + 3b + 4c = 11
+\]
+其中 $0 \le a \le 4, 0 \le b \le 7, 0 \le c \le 12$。展开式中 $x^{11}$ 的系数为所有满足条件的组合之和：
+\[
+\sum \binom{4}{a} \binom{7}{b} \binom{12}{c}
+\]
+列举所有可能的组合：
+\begin{enumerate}
+    \item 若 $c = 2$：$2a + 3b = 11 - 4(2) = 3$。
+    当 $b = 1$ 时，$2a = 0 \implies a = 0$。
+    组合：$(a, b, c) = (0, 1, 2)$。
+    系数项：$\binom{4}{0} \binom{7}{1} \binom{12}{2} = 1 \cdot 7 \cdot 66 = 462$。
+
+    \item 若 $c = 1$：$2a + 3b = 11 - 4(1) = 7$。
+    当 $b = 1$ 时，$2a = 4 \implies a = 2$。
+    组合：$(a, b, c) = (2, 1, 1)$。
+    系数项：$\binom{4}{2} \binom{7}{1} \binom{12}{1} = 6 \cdot 7 \cdot 12 = 504$。
+
+    \item 若 $c = 0$：$2a + 3b = 11$。
+    当 $b = 1$ 时，$2a = 8 \implies a = 4$。
+    组合：$(a, b, c) = (4, 1, 0)$。
+    系数项：$\binom{4}{4} \binom{7}{1} \binom{12}{0} = 1 \cdot 7 \cdot 1 = 7$。
+    当 $b = 3$ 时，$2a = 2 \implies a = 1$。
+    组合：$(a, b, c) = (1, 3, 0)$。
+    系数项：$\binom{4}{1} \binom{7}{3} \binom{12}{0} = 4 \cdot 35 \cdot 1 = 140$。
+\end{enumerate}
+
+将所有系数相加：
+\[
+462 + 504 + 7 + 140 = 1113
+\]
+因此，(C) 正确。
+\end{solution}
+
     \question 求 \( (1 + x^2) + (1 + x^2)^2 + \cdots + (1 + x^2)^{10} \) 展开式中 \( x^6 \) 的系数。  
     \begin{solution}
         原式为
@@ -21257,6 +21303,64 @@ z = \frac{(3-2i) \pm (1-2i)}{2}
         S = \frac{(1 - (4n+1)i)(1+i)}{(1-i)(1+i)} = (2n+1) - 2n i
         \]
     \end{solution}
+
+    \question 设复数 $\alpha$ 和 $\frac{1}{\overline{\alpha}}$ 分别位于圆 $(x - x_0)^2 + (y - y_0)^2 = r^2$ 和 $(x - x_0)^2 + (y - y_0)^2 = 4r^2$ 上。若 $z_0 = x_0 + iy_0$ 满足方程 $2|z_0|^2 = r^2 + 2$，则 $|\alpha| =$
+
+\begin{itemize}
+    \item[(A)] $\frac{1}{\sqrt{2}}$
+    \item[(B)] $\frac{1}{2}$
+    \item[(C)] $\frac{1}{\sqrt{7}}$
+    \item[(D)] $\frac{1}{3}$
+\end{itemize}
+
+\begin{solution}
+设复数 $\alpha = x_1 + iy_1$，则点 $(x_1, y_1)$ 在第一个圆上，满足：
+\[
+|\alpha - z_0|^2 = r^2 \implies |\alpha|^2 + |z_0|^2 - (\alpha\overline{z_0} + \overline{\alpha}z_0) = r^2 \quad \text{--- (1)}
+\]
+设 $\beta = \frac{1}{\overline{\alpha}}$，其对应的坐标在第二个圆上，满足 $|\beta - z_0|^2 = 4r^2$。代入 $\beta$：
+\[
+\left| \frac{1}{\overline{\alpha}} - z_0 \right|^2 = 4r^2 \implies \left| \frac{1 - \overline{\alpha}z_0}{\overline{\alpha}} \right|^2 = 4r^2
+\]
+展开得：
+\[
+\frac{1 + |\alpha|^2|z_0|^2 - (\alpha\overline{z_0} + \overline{\alpha}z_0)}{|\alpha|^2} = 4r^2 \implies 1 + |\alpha|^2|z_0|^2 - (\alpha\overline{z_0} + \overline{\alpha}z_0) = 4r^2|\alpha|^2 \quad \text{--- (2)}
+\]
+从 (1) 式可得 $\alpha\overline{z_0} + \overline{\alpha}z_0 = |\alpha|^2 + |z_0|^2 - r^2$，将其代入 (2) 式：
+\[
+1 + |\alpha|^2|z_0|^2 - (|\alpha|^2 + |z_0|^2 - r^2) = 4r^2|\alpha|^2
+\]
+整理关于 $|z_0|^2$ 的项：
+\[
+|z_0|^2(|\alpha|^2 - 1) = 4r^2|\alpha|^2 - r^2 + |\alpha|^2 - 1
+\]
+\[
+|z_0|^2(|\alpha|^2 - 1) = r^2(4|\alpha|^2 - 1) + (|\alpha|^2 - 1) \quad \text{--- (3)}
+\]
+根据题意 $r^2 = 2|z_0|^2 - 2$，代入 (3) 式：
+\[
+|z_0|^2(|\alpha|^2 - 1) = (2|z_0|^2 - 2)(4|\alpha|^2 - 1) + |\alpha|^2 - 1
+\]
+令 $X = |z_0|^2$，$Y = |\alpha|^2$：
+\[
+X(Y - 1) = (2X - 2)(4Y - 1) + Y - 1
+\]
+\[
+XY - X = 8XY - 2X - 8Y + 2 + Y - 1
+\]
+\[
+7XY - X - 7Y + 1 = 0 \implies 7Y(X - 1) - (X - 1) = 0
+\]
+\[
+(7Y - 1)(X - 1) = 0
+\]
+由于 $z_0$ 是圆心且 $r > 0$，若 $X = |z_0|^2 = 1$，则 $r^2 = 0$ 不合题意，故：
+\[
+7Y - 1 = 0 \implies Y = \frac{1}{7} \implies |\alpha|^2 = \frac{1}{7}
+\]
+因此 $|\alpha| = \frac{1}{\sqrt{7}}$。
+故 (C) 正确。
+\end{solution}
 
     \question Q32. JEE Main 2024 (04 Apr Shift 2)
 在复平面上，区域 $S = \{z \in \mathbb{C} : |z - 1| \leq 2; (z + \bar{z}) + i(z - \bar{z}) \leq 2, \text{Im}(z) \geq 0\}$ 的面积（以平方单位计）为：

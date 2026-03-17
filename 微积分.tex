@@ -695,6 +695,47 @@ $\log_e \alpha = \frac{e}{1-e}$。
         \]
     \end{solution}
 
+    \question 非负整数 $a$ 的最大值，使得
+\[
+\lim_{x \to 1} \left\{ \frac{-ax + \sin(x-1) + a}{x + \sin(x-1) - 1} \right\}^{\frac{1-x}{1-\sqrt{x}}} = \frac{1}{4}
+\]
+是
+
+\begin{solution}
+令 $x-1 = h$，当 $x \to 1$ 时，$h \to 0$，则 $x = 1+h$。
+原极限式可以写为：
+\[
+\lim_{h \to 0} \left\{ \frac{-a(1+h) + \sin h + a}{(1+h) + \sin h - 1} \right\}^{1+\sqrt{1+h}} = \frac{1}{4}
+\]
+简化底数部分：
+\[
+\lim_{h \to 0} \left( \frac{-ah + \sin h}{h + \sin h} \right)^{1+\sqrt{1+h}} = \frac{1}{4}
+\]
+分子分母同时除以 $h$：
+\[
+\lim_{h \to 0} \left( \frac{-a + \frac{\sin h}{h}}{1 + \frac{\sin h}{h}} \right)^{1+\sqrt{1+h}} = \frac{1}{4}
+\]
+由于 $\lim_{h \to 0} \frac{\sin h}{h} = 1$ 且 $\lim_{h \to 0} (1+\sqrt{1+h}) = 2$，代入极限值得：
+\[
+\left( \frac{-a + 1}{1 + 1} \right)^{2} = \frac{1}{4}
+\]
+即：
+\[
+\left( \frac{1-a}{2} \right)^{2} = \frac{1}{4}
+\]
+解得：
+\[
+\frac{1-a}{2} = \frac{1}{2} \implies a = 0
+\]
+或
+\[
+\frac{1-a}{2} = -\frac{1}{2} \implies a = 2
+\]
+当 $a=2$ 时，底数 $\frac{1-a}{2} = -\frac{1}{2}$。在实数范围内，若底数为负，则幂函数 $f(x)^{g(x)}$ 在指数 $g(x)$ 为非整数时没有定义。由于 $1+\sqrt{1+h}$ 在 $h \to 0$ 过程中取非整数值，因此底数必须大于 $0$。
+故 $1-a > 0$，即 $a < 1$。
+因此，非负整数 $a$ 的最大值为 $0$。
+\end{solution}
+
     \question 设 $\alpha, \beta \in \mathbb{R}$ 满足
 \[
 \lim_{x \to 0} \frac{x^2 \sin(\beta x)}{\alpha x - \sin x} = 1
@@ -6783,6 +6824,47 @@ f(3)=3+3=6.
 \textcolor{red}{(待验证,为什么设$a,b$？)}
 \end{solution}
 
+\question 设 $f: \left[ \frac{1}{2}, 1 \right] \to \mathbb{R}$ 是一个正值、非常值且可导的函数，满足 $f'(x) < 2f(x)$ 以及 $f\left( \frac{1}{2} \right) = 1$。则积分 $\int_{1/2}^{1} f(x) \,dx$ 的值落在区间
+
+\begin{itemize}
+    \item[(A)] $(2e - 1, 2e)$
+    \item[(B)] $(e - 1, 2e - 1)$
+    \item[(C)] $\left( \frac{e - 1}{2}, e - 1 \right)$
+    \item[(D)] $\left( 0, \frac{e - 1}{2} \right)$
+\end{itemize}
+
+\begin{solution}
+我们需要利用微分不等式来确定 $f(x)$ 的上界。
+已知 $f'(x) < 2f(x)$，且由于 $f(x) > 0$，我们可以改写不等式为：
+\[
+\frac{f'(x)}{f(x)} < 2
+\]
+对该不等式在区间 $\left[ \frac{1}{2}, x \right]$ 上关于 $x$ 进行积分（其中 $x \le 1$）：
+\[
+\int_{1/2}^{x} \frac{f'(t)}{f(t)} \,dt < \int_{1/2}^{x} 2 \,dt
+\]
+\[
+\left[ \ln f(t) \right]_{1/2}^{x} < 2 \left( x - \frac{1}{2} \right)
+\]
+\[
+\ln f(x) - \ln f\left( \frac{1}{2} \right) < 2x - 1
+\]
+代入 $f\left( \frac{1}{2} \right) = 1$，得 $\ln f(x) < 2x - 1$，从而：
+\[
+f(x) < e^{2x-1}
+\]
+由于 $f(x)$ 是正值函数，我们有 $0 < f(x) < e^{2x-1}$。对该不等式在 $\left[ \frac{1}{2}, 1 \right]$ 上积分：
+\[
+0 < \int_{1/2}^{1} f(x) \,dx < \int_{1/2}^{1} e^{2x-1} \,dx
+\]
+计算右侧的定积分：
+\[
+\int_{1/2}^{1} e^{2x-1} \,dx = \left[ \frac{1}{2} e^{2x-1} \right]_{1/2}^{1} = \frac{1}{2} (e^1 - e^0) = \frac{e - 1}{2}
+\]
+因此，积分值满足 $0 < \int_{1/2}^{1} f(x) \,dx < \frac{e - 1}{2}$。
+对照选项，(D) 正确。
+\end{solution}
+
 \question PARAGRAPH 2
 Let $F: \mathbb{R} \to \mathbb{R}$ be a thrice differentiable function. Suppose that $F(1) = 0$, $F(3) = -4$ and $F'(x) < 0$ for all $x \in (1/2, 3)$. Let $f(x) = xF(x)$ for all $x \in \mathbb{R}$.
 
@@ -7291,6 +7373,45 @@ Let $f(x) = \lim_{n \to \infty} \left( \frac{n^n (x+n)(x+\frac{n}{2}) \cdots (x+
 代入计算得：$\int_{0}^{2} F(x) \,dx = 2 - 16 = -14$。
 最后结果为：$F'(2) + \int_{0}^{2} F(x) \,dx = 27 - 14 = 13$。
 故正确选项为 (2)。
+\end{solution}
+
+\question 设 $y = \sin x + \cos x$ 和 $y = |\cos x - \sin x|$，则这两条曲线在区间 $\left[ 0, \frac{\pi}{2} \right]$ 上所围成的图形面积是
+
+\begin{itemize}
+    \item[(A)] $4(\sqrt{2} - 1)$
+    \item[(B)] $2\sqrt{2}(\sqrt{2} - 1)$
+    \item[(C)] $2(\sqrt{2} + 1)$
+    \item[(D)] $2\sqrt{2}(\sqrt{2} + 1)$
+\end{itemize}
+
+\begin{solution}
+首先分析两条曲线在 $\left[ 0, \frac{\pi}{2} \right]$ 上的大小关系。
+令 $f(x) = \sin x + \cos x = \sqrt{2}\sin\left(x + \frac{\pi}{4}\right)$。
+令 $g(x) = |\cos x - \sin x|$。
+
+在区间 $\left[ 0, \frac{\pi}{4} \right]$ 上，$\cos x \ge \sin x$，故 $g(x) = \cos x - \sin x$。
+此时 $f(x) - g(x) = (\sin x + \cos x) - (\cos x - \sin x) = 2\sin x \ge 0$。
+
+在区间 $\left[ \frac{\pi}{4}, \frac{\pi}{2} \right]$ 上，$\sin x \ge \cos x$，故 $g(x) = \sin x - \cos x$。
+此时 $f(x) - g(x) = (\sin x + \cos x) - (\sin x - \cos x) = 2\cos x \ge 0$。
+
+因此，所求面积 $S$ 为：
+\[
+S = \int_{0}^{\pi/4} 2\sin x \,dx + \int_{\pi/4}^{\pi/2} 2\cos x \,dx
+\]
+计算第一部分：
+\[
+\int_{0}^{\pi/4} 2\sin x \,dx = [-2\cos x]_{0}^{\pi/4} = -2\left(\frac{\sqrt{2}}{2} - 1\right) = 2 - \sqrt{2}
+\]
+计算第二部分：
+\[
+\int_{\pi/4}^{\pi/2} 2\cos x \,dx = [2\sin x]_{\pi/4}^{\pi/2} = 2\left(1 - \frac{\sqrt{2}}{2}\right) = 2 - \sqrt{2}
+\]
+总面积为：
+\[
+S = (2 - \sqrt{2}) + (2 - \sqrt{2}) = 4 - 2\sqrt{2} = 2\sqrt{2}(\sqrt{2} - 1)
+\]
+故 (B) 正确。
 \end{solution}
 
 \question
@@ -18679,6 +18800,53 @@ $f(t) > 0, \quad |g(t)| < 1, \quad f(0) = 1, \quad g(0) = 0$
         \]
     \end{solution}
 
+    \question 设 $f: [0, 2] \to \mathbb{R}$ 是在 $[0, 2]$ 上连续且在 $(0, 2)$ 上可导的函数，满足 $f(0) = 1$。对于 $x \in [0, 2]$，令
+\[
+F(x) = \int_{0}^{x^2} f(\sqrt{t}) \,dt
+\]
+若对于所有 $x \in (0, 2)$，$F'(x) = f'(x)$ 均成立，则 $F(2)$ 等于
+
+\begin{itemize}
+    \item[(A)] $e^2 - 1$
+    \item[(B)] $e^4 - 1$
+    \item[(C)] $e - 1$
+    \item[(D)] $e^4$
+\end{itemize}
+
+\begin{solution}
+首先利用莱布尼茨积分规则对 $F(x)$ 求导。
+设 $u = x^2$，则根据变限积分求导法则：
+\[
+F'(x) = f(\sqrt{x^2}) \cdot \frac{d}{dx}(x^2) = f(x) \cdot 2x = 2xf(x)
+\]
+已知题目条件 $F'(x) = f'(x)$，由此得到一个一阶线性微分方程：
+\[
+f'(x) = 2xf(x)
+\]
+整理得：
+\[
+\frac{f'(x)}{f(x)} = 2x
+\]
+对两边关于 $x$ 积分：
+\[
+\ln |f(x)| = x^2 + C \implies f(x) = e^{x^2 + C} = A e^{x^2}
+\]
+利用初值条件 $f(0) = 1$：
+\[
+1 = A e^{0^2} \implies A = 1
+\]
+故 $f(x) = e^{x^2}$。
+现在计算 $F(2)$。根据 $F(x)$ 的定义：
+\[
+F(2) = \int_{0}^{2^2} f(\sqrt{t}) \,dt = \int_{0}^{4} e^{(\sqrt{t})^2} \,dt = \int_{0}^{4} e^t \,dt
+\]
+计算定积分：
+\[
+F(2) = \left[ e^t \right]_{0}^{4} = e^4 - e^0 = e^4 - 1
+\]
+因此，(B) 正确。
+\end{solution}
+
     \question 已知非零函数 $f(x)$ 满足
 \[
 \sqrt{\int f(x) \, dx} = \int \sqrt{f(x)} \, dx, \quad f(0)=\frac{1}{4},
@@ -18786,6 +18954,32 @@ y = \frac{A}{2} e^x + \frac{1}{2A} e^{-x},
 \[
 1.
 \]
+\end{solution}
+
+\question 曲线通过点 $\left(1, \frac{\pi}{6}\right)$。设曲线在每一点 $(x, y)$ 处的斜率为 $\frac{y}{x} + \sec\left(\frac{y}{x}\right)$，$x > 0$。则该曲线的方程为
+\begin{itemize}
+    \item[(A)] $\sin\left(\frac{y}{x}\right) = \log x + \frac{1}{2}$
+    \item[(B)] $\csc\left(\frac{y}{x}\right) = \log x + 2$
+    \item[(C)] $\sec\left(\frac{2y}{x}\right) = \log x + 2$
+    \item[(D)] $\cos\left(\frac{2y}{x}\right) = \log x + \frac{1}{2}$
+\end{itemize}
+
+\begin{solution}
+根据题意，给定微分方程为：
+\[ \frac{dy}{dx} = \frac{y}{x} + \sec\left(\frac{y}{x}\right) \]
+这是一个齐次微分方程。令 $y = vx$，则 $\frac{dy}{dx} = v + x\frac{dv}{dx}$。代入原方程：
+\[ v + x\frac{dv}{dx} = v + \sec v \]
+\[ x\frac{dv}{dx} = \sec v \]
+分离变量得：
+\[ \cos v \,dv = \frac{1}{x} \,dx \]
+两边积分：
+\[ \int \cos v \,dv = \int \frac{1}{x} \,dx \implies \sin v = \ln |x| + C \]
+将 $v = \frac{y}{x}$ 代回：
+\[ \sin\left(\frac{y}{x}\right) = \ln x + C \quad (\text{因为 } x > 0) \]
+代入初始条件 $\left(1, \frac{\pi}{6}\right)$：
+\[ \sin\left(\frac{\pi/6}{1}\right) = \ln 1 + C \implies \frac{1}{2} = 0 + C \implies C = \frac{1}{2} \]
+因此，曲线方程为 $\sin\left(\frac{y}{x}\right) = \ln x + \frac{1}{2}$。
+对照选项，(A) 正确。
 \end{solution}
 
 \question 非零函数 $u(x)$ 和 $v(x)$ 满足积分方程

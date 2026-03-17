@@ -14460,6 +14460,49 @@ $r = 6, \frac{6}{25}$。
 根据条件 $6 + 25 = 31$。
 \end{solution}
 
+\question 圆 $S$ 过点 $(0, 1)$，并且与圆 $(x - 1)^2 + y^2 = 16$ 及 $x^2 + y^2 = 1. $ 正交，则
+\begin{itemize}
+    \item[(A)] $S$ 的半径为 8
+    \item[(B)] $S$ 的半径为 7
+    \item[(C)] $S$ 的圆心为 $(-7, 1)$
+    \item[(D)] $S$ 的圆心为 $(-8, 1)$
+\end{itemize}
+
+\begin{solution}
+设圆 $S$ 的一般方程为 $x^2 + y^2 + 2gx + 2fy + c = 0$，其圆心为 $(-g, -f)$，半径平方为 $R^2 = g^2 + f^2 - c$。
+已知圆 $S$ 过点 $(0, 1)$，代入方程得：
+\[
+0^2 + 1^2 + 2g(0) + 2f(1) + c = 0 \implies 2f + c + 1 = 0 \quad \text{--- (1)}
+\]
+给出两个已知圆的方程：
+$C_1: x^2 + y^2 - 2x - 15 = 0$ （由 $(x-1)^2 + y^2 = 16$ 展开得到）
+$C_2: x^2 + y^2 - 1 = 0$
+根据两圆 $x^2 + y^2 + 2g_1x + 2f_1y + c_1 = 0$ 与 $x^2 + y^2 + 2g_2x + 2f_2y + c_2 = 0$ 正交的条件 $2g_1g_2 + 2f_1f_2 = c_1 + c_2$：
+与 $C_1$ 正交：
+\[
+2g(-1) + 2f(0) = c - 15 \implies -2g = c - 15 \quad \text{--- (2)}
+\]
+与 $C_2$ 正交：
+\[
+2g(0) + 2f(0) = c - 1 \implies c = 1 \quad \text{--- (3)}
+\]
+由 (3) 知 $c = 1$，代入 (2) 得：
+\[
+-2g = 1 - 15 = -14 \implies g = 7
+\]
+将 $c = 1$ 代入 (1) 得：
+\[
+2f + 1 + 1 = 0 \implies 2f = -2 \implies f = -1
+\]
+因此，圆 $S$ 的参数为 $g = 7, f = -1, c = 1$。
+圆心为 $(-g, -f) = (-7, 1)$。
+半径 $R$ 为：
+\[
+R = \sqrt{g^2 + f^2 - c} = \sqrt{7^2 + (-1)^2 - 1} = \sqrt{49 + 1 - 1} = \sqrt{49} = 7
+\]
+对照选项，(B) 和 (C) 正确。
+\end{solution}
+
     \question 已知有一圆方程式为 $x^2+y^2=37$, 且圆的内部有一点 $P(1,2)$。
     \begin{parts}
     \part 若 $P$ 点为圆的某弦的中点, 试求此弦所在的直线方程式。
@@ -15402,6 +15445,56 @@ h = \frac{|-3|}{\sqrt{3}} = \sqrt{3}
         \]
         与经过 $Q$ 和 $R$ 的直线方程完全一致,故得证。
     \end{solution}
+
+    \question 设 $PQ$ 为抛物线 $y^2 = 4ax$ 的一条焦点弦。在点 $P$ 和 $Q$ 处的切线相交于直线 $y = 2x + a (a > 0)$ 上的一点。
+55. 弦 $PQ$ 的长度为
+(A) $7a$ \quad (B) $5a$ \quad (C) $2a$ \quad (D) $3a$
+
+56. 若弦 $PQ$ 对抛物线 $y^2 = 4ax$ 的顶点所张的角为 $\theta$，则 $\tan \theta =$
+(A) $\frac{2}{3}\sqrt{7}$ \quad (B) $\frac{-2}{3}\sqrt{7}$ \quad (C) $\frac{2}{3}\sqrt{5}$ \quad (D) $\frac{-2}{3}\sqrt{5}$
+
+\begin{solution}
+设 $P(at_1^2, 2at_1)$ 和 $Q(at_2^2, 2at_2)$ 为抛物线上的两点。由于 $PQ$ 是焦点弦，根据抛物线性质有 $t_1t_2 = -1$。
+
+**第 55 题：**
+抛物线上点 $P$ 和 $Q$ 处的切线交点 $M$ 的坐标为
+\[
+M(at_1t_2, a(t_1 + t_2)) = (-a, a(t_1 + t_2))
+\]
+已知点 $M$ 在直线 $y = 2x + a$ 上，代入坐标：
+\[
+a(t_1 + t_2) = 2(-a) + a = -a
+\]
+从而得到 $t_1 + t_2 = -1$。
+焦点弦 $PQ$ 的长度公式为
+\[
+L = a(t_1 - t_2)^2 = a((t_1 + t_2)^2 - 4t_1t_2)
+\]
+代入 $t_1 + t_2 = -1$ 和 $t_1t_2 = -1$：
+\[
+L = a((-1)^2 - 4(-1)) = a(1 + 4) = 5a
+\]
+故第 55 题正确选项为 (B)。
+
+**第 56 题：**
+抛物线顶点为 $O(0, 0)$。直线 $OP$ 和 $OQ$ 的斜率分别为
+\[
+k_1 = \frac{2at_1}{at_1^2} = \frac{2}{t_1}, \quad k_2 = \frac{2at_2}{at_2^2} = \frac{2}{t_2}
+\]
+两直线夹角的正切值为
+\[
+\tan \theta = \frac{k_1 - k_2}{1 + k_1k_2} = \frac{\frac{2}{t_1} - \frac{2}{t_2}}{1 + \frac{4}{t_1t_2}}
+\]
+代入 $t_1t_2 = -1$：
+\[
+\tan \theta = \frac{2(t_2 - t_1)}{t_1t_2(1 - 4)} = \frac{2(t_2 - t_1)}{-1(-3)} = \frac{2(t_2 - t_1)}{3}
+\]
+由 $(t_2 - t_1)^2 = (t_1 + t_2)^2 - 4t_1t_2 = 1 - 4(-1) = 5$，由于 $\theta$ 通常取钝角（焦点弦张角），此处 $t_2 - t_1 = -\sqrt{5}$：
+\[
+\tan \theta = \frac{-2\sqrt{5}}{3}
+\]
+故第 56 题正确选项为 (D)。
+\end{solution}
 \question
 设 $y^2 = 12x$ 为一抛物线, $S$ 为其焦点。设 $PQ$ 为该抛物线的一条焦弦, 使得 $(SP)(SQ) = \frac{147}{4}$。设 $C$ 为以 $PQ$ 为直径的圆。若圆 $C$ 的方程为 $64x^2 + 64y^2 - \alpha x - 64\sqrt{3}y = \beta$, 求 $\beta - \alpha$ 的值。
 
@@ -15590,6 +15683,46 @@ $P_2$ 是 $P_1$ 关于直线 $M: x + 2y = 6$ 的镜像。
 4. 重心纵坐标 $k = \frac{3 + t^2/3 + y_B}{3} = \frac{9 + t^2 + 3y_B}{9} = \frac{9 + 2t^2 + \frac{36t^2}{t^2 - 9}}{9}$。
 5. 当 $t \to 1$ 时, $k \to \frac{9 + 2 - 36/8}{9} = \frac{11 - 4.5}{9} = \frac{13}{18}$。
 故正确选项为 (4)。
+\end{solution}
+
+\question 圆 $x^2 + y^2 = 2$ 与抛物线 $y^2 = 8x$ 的公切线分别切圆于 $P, Q$ 两点，切抛物线于 $R, S$ 两点。则四边形 $PQRS$ 的面积是
+
+\begin{itemize}
+    \item[(A)] 3
+    \item[(B)] 6
+    \item[(C)] 9
+    \item[(D)] 15
+\end{itemize}
+
+\begin{solution}
+对于抛物线 $y^2 = 8x$，其参数 $4a = 8 \implies a = 2$。
+设公切线的斜率为 $m$，则抛物线的切线方程为：
+\[
+y = mx + \frac{2}{m} \implies m^2x - my + 2 = 0
+\]
+该直线同时也是圆 $x^2 + y^2 = 2$ 的切线，因此圆心 $(0, 0)$ 到直线的距离等于半径 $\sqrt{2}$：
+\[
+\frac{|2|}{\sqrt{m^4 + m^2}} = \sqrt{2} \implies \frac{4}{m^4 + m^2} = 2 \implies m^4 + m^2 - 2 = 0
+\]
+解得 $m^2 = 1$ 或 $m^2 = -2$（舍去），故 $m = \pm 1$。
+两条公切线的方程分别为 $L_1: y = x + 2$ 和 $L_2: y = -x - 2$。
+
+1. **求切点 $R, S$（抛物线上）**：
+抛物线切点坐标公式为 $\left( \frac{a}{m^2}, \frac{2a}{m} \right)$。
+当 $m = 1$ 时，$R = (2, 4)$；当 $m = -1$ 时，$S = (2, -4)$。
+
+2. **求切点 $P, Q$（圆上）**：
+圆的切点 $x_0x + y_0y = r^2$。
+对于 $L_1: x - y + 2 = 0 \implies -x + y = 2$，对应切点 $P = (-1, 1)$。
+对于 $L_2: x + y + 2 = 0 \implies -x - y = 2$，对应切点 $Q = (-1, -1)$。
+
+3. **计算面积**：
+四边形 $PQRS$ 是一个等腰梯形，其顶点分别为 $P(-1, 1), Q(-1, -1), S(2, -4), R(2, 4)$。
+上底 $PQ = |1 - (-1)| = 2$。
+下底 $RS = |4 - (-1)| = 8$。
+高为 $x$ 坐标之差：$h = 2 - (-1) = 3$。
+面积 $S = \frac{1}{2}(2 + 8) \times 3 = 15$。
+因此，(D) 正确。
 \end{solution}
     \question 已知抛物线 $$y^2 = 2px$$ 与双曲线 $$y = -\dfrac{1}{x}$$ 相交于点 $R$,一条同时与抛物线和双曲线相切的公切线分别相切于点$S,T$,求证对于任意正实数 $p,\triangle RST$ 的面积与$p$无关,即为一定值。
     \begin{solution}
@@ -22175,6 +22308,51 @@ r \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2} \cdots \
         |\mathbf{c}|\ge 10\sqrt{10}
         \]
     \end{solution}
+
+    \question 设 $A_1, A_2, \dots, A_n$ ($n > 2$) 为一个中心在原点的 $n$ 边正多边形的顶点。设 $\vec{a}_k$ 为点 $A_k$ 的位置向量，$k = 1, 2, \dots, n$。若 $\left| \sum_{k=1}^{n-1} (\vec{a}_k \times \vec{a}_{k+1}) \right| = \left| \sum_{k=1}^{n-1} (\vec{a}_k \cdot \vec{a}_{k+1}) \right|$，则 $n$ 的最小值是
+
+\begin{solution}
+设正多边形的外接圆半径为 $R$，则所有位置向量的模长 $|\vec{a}_k| = R$。
+正 $n$ 边形相邻两个顶点向量之间的夹角为 $\theta = \frac{2\pi}{n}$。
+根据向量积和数量积的定义：
+\[
+\vec{a}_k \times \vec{a}_{k+1} = |\vec{a}_k| |\vec{a}_{k+1}| \sin \theta \cdot \vec{n} = R^2 \sin \frac{2\pi}{n} \cdot \vec{n}
+\]
+（其中 $\vec{n}$ 为垂直于多边形所在平面的单位向量）
+\[
+\vec{a}_k \cdot \vec{a}_{k+1} = |\vec{a}_k| |\vec{a}_{k+1}| \cos \theta = R^2 \cos \frac{2\pi}{n}
+\]
+代入题目给出的等式：
+\[
+\left| \sum_{k=1}^{n-1} R^2 \sin \frac{2\pi}{n} \cdot \vec{n} \right| = \left| \sum_{k=1}^{n-1} R^2 \cos \frac{2\pi}{n} \right|
+\]
+由于 $\sin \frac{2\pi}{n}$ 和 $\cos \frac{2\pi}{n}$ 对于固定的 $n$ 是常数，求和项共有 $n-1$ 项：
+\[
+(n-1) R^2 \left| \sin \frac{2\pi}{n} \right| = (n-1) R^2 \left| \cos \frac{2\pi}{n} \right|
+\]
+约去非零项 $(n-1)R^2$，得：
+\[
+\left| \sin \frac{2\pi}{n} \right| = \left| \cos \frac{2\pi}{n} \right| \implies \left| \tan \frac{2\pi}{n} \right| = 1
+\]
+因此：
+\[
+\frac{2\pi}{n} = \frac{\pi}{4} + \frac{m\pi}{2}, \quad m \in \mathbb{Z}
+\]
+当 $m=0$ 时：
+\[
+\frac{2\pi}{n} = \frac{\pi}{4} \implies n = 8
+\]
+当 $m=1$ 时：
+\[
+\frac{2\pi}{n} = \frac{3\pi}{4} \implies n = \frac{8}{3} \quad (\text{不符合 } n \in \mathbb{Z})
+\]
+当 $m=-1$ 时（考虑正多边形夹角为正）：
+\[
+\frac{2\pi}{n} = \left| -\frac{\pi}{4} \right| \implies n = 8
+\]
+经检查，当 $n=8$ 时等式成立。
+故 $n$ 的最小值是 8。
+\end{solution}
     
     \question
 对于 $XY$ 平面上的任意两点 $M$ 和 $N$，设 $\overrightarrow{MN}$ 表示从 $M$ 到 $N$ 的向量，$\vec{0}$ 表示零向量。设 $P, Q, R$ 是 $XY$ 平面上的三个不同点。设 $S$ 是 $\triangle PQR$ 内部的一点，使得：
@@ -23243,6 +23421,52 @@ D = 2 [ (2t)(1) - (-t)(1) ] = 2(2t + t) = 6t
    令 $\vec{V} = \vec{b} \times \vec{c}$，则所求为 $|\vec{a} \times \vec{V}|$。
    $|\vec{a} \times \vec{V}| = |\vec{a}| |\vec{V}| \sin\frac{\pi}{2} = \sqrt{3} \cdot 10\sqrt{3} \cdot 1 = 30$。
 结果为 30。
+\end{solution}
+
+\question 设 $\vec{PR} = 3\hat{i} + \hat{j} - 2\hat{k}$ 和 $\vec{SQ} = \hat{i} - 3\hat{j} - 4\hat{k}$ 是平行四边形 $PQRS$ 的对角线，且 $\vec{PT} = \hat{i} + 2\hat{j} + 3\hat{k}$ 是另一个向量。则由向量 $\vec{PT}$，$\vec{PQ}$ 和 $\vec{PS}$ 确定的平行六面体的体积为
+(A) 5 \quad (B) 20 \quad (C) 10 \quad (D) 30
+
+\begin{solution}
+我们需要计算由 $\vec{PT}$，$\vec{PQ}$ 和 $\vec{PS}$ 确定的平行六面体的体积。体积 $V$ 由标量三重积给出：
+\[
+V = \left| \vec{PT} \cdot (\vec{PQ} \times \vec{PS}) \right|
+\]
+
+首先，根据平行四边形的几何性质，边向量与对角线向量的关系为
+\[
+\vec{PR} = \vec{PQ} + \vec{PS}
+\]
+\[
+\vec{SQ} = \vec{PQ} - \vec{PS}
+\]
+通过这两个方程，我们可以求出 $\vec{PQ}$ 和 $\vec{PS}$：
+\[
+\vec{PQ} = \frac{1}{2} \left( \vec{PR} + \vec{SQ} \right) = \frac{1}{2} \left( (3+1)\hat{i} + (1-3)\hat{j} + (-2-4)\hat{k} \right) = 2\hat{i} - \hat{j} - 3\hat{k}
+\]
+\[
+\vec{PS} = \frac{1}{2} \left( \vec{PR} - \vec{SQ} \right) = \frac{1}{2} \left( (3-1)\hat{i} + (1+3)\hat{j} + (-2+4)\hat{k} \right) = \hat{i} + 2\hat{j} + \hat{k}
+\]
+
+接着，计算 $\vec{PQ} \times \vec{PS}$：
+\[
+\vec{PQ} \times \vec{PS} = 
+\begin{vmatrix} 
+\hat{i} & \hat{j} & \hat{k} \\ 
+2 & -1 & -3 \\ 
+1 & 2 & 1 
+\end{vmatrix} = (-1 + 6)\hat{i} - (2 + 3)\hat{j} + (4 + 1)\hat{k} = 5\hat{i} - 5\hat{j} + 5\hat{k}
+\]
+
+最后，计算体积 $V$：
+\[
+V = \left| (1\hat{i} + 2\hat{j} + 3\hat{k}) \cdot (5\hat{i} - 5\hat{j} + 5\hat{k}) \right|
+\]
+\[
+V = \left| 1(5) + 2(-5) + 3(5) \right| = \left| 5 - 10 + 15 \right| = 10
+\]
+因此，平行六面体的体积为 10。
+
+正确选项为 (C)。
 \end{solution}
 
     \question 坐标空间中有三个彼此互相垂直的向量 $\textbf{u}, \textbf{v}, \textbf{w}$。已知 $\textbf{u} - \textbf{v} = (2, -1, 0)$,且 $\textbf{v} - \textbf{w} = (-1, 2, 3)$。求由 $\textbf{u}, \textbf{v}, \textbf{w}$ 所张出的平行六面体之体积。
@@ -25489,6 +25713,132 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         E:2(x-1)+1(y-1)+1(z-2)=0 \Rightarrow 2x-y-z=-1
         \]
     \end{solution}
+
+    \question 自直线 $\frac{x + 2}{2} = \frac{y + 1}{-1} = \frac{z}{3}$ 上的点向平面 $x + y + z = 3$ 作垂线。所有垂足所在的直线为
+(A) $\frac{x}{5} = \frac{y - 1}{8} = \frac{z - 2}{-13}$ \quad (B) $\frac{x}{2} = \frac{y - 1}{3} = \frac{z - 2}{-5}$
+(C) $\frac{x}{4} = \frac{y - 1}{3} = \frac{z - 2}{-7}$ \quad (D) $\frac{x}{2} = \frac{y - 1}{-7} = \frac{z - 2}{5}$
+
+\begin{solution}
+我们需要求已知直线在已知平面上的投影直线。
+
+首先，在已知直线上取一点 $P(-2, -1, 0)$。过点 $P$ 作平面的垂线，其方向向量为平面的法向量 $\vec{n} = (1, 1, 1)$。垂线方程为
+\[
+\frac{x + 2}{1} = \frac{y + 1}{1} = \frac{z}{1} = \lambda
+\]
+将参数形式 $x = \lambda - 2$, $y = \lambda - 1$, $z = \lambda$ 代入平面方程 $x + y + z = 3$：
+\[
+(\lambda - 2) + (\lambda - 1) + \lambda = 3
+\]
+解得 $3\lambda - 3 = 3$，即 $\lambda = 2$。
+因此，垂足 $P'$ 的坐标为 $(0, 1, 2)$。
+
+接着，求投影直线的方向向量 $\vec{v_p}$。
+设已知直线的方向向量为 $\vec{v} = (2, -1, 3)$，平面法向量为 $\vec{n} = (1, 1, 1)$。
+投影直线的方向向量 $\vec{v_p}$ 可以通过两次叉乘得到：
+\[
+\vec{v_p} = \vec{n} \times (\vec{v} \times \vec{n})
+\]
+首先计算 $\vec{v} \times \vec{n}$：
+\[
+\vec{v} \times \vec{n} = 
+\begin{vmatrix} 
+i & j & k \\ 
+2 & -1 & 3 \\ 
+1 & 1 & 1 
+\end{vmatrix} = (-1 - 3)i - (2 - 3)j + (2 + 1)k = (-4, 1, 3)
+\]
+再计算 $\vec{n} \times (-4, 1, 3)$：
+\[
+\vec{v_p} = 
+\begin{vmatrix} 
+i & j & k \\ 
+1 & 1 & 1 \\ 
+-4 & 1 & 3 
+\end{vmatrix} = (3 - 1)i - (3 + 4)j + (1 + 4)k = (2, -7, 5)
+\]
+所以，经过点 $(0, 1, 2)$ 且方向向量为 $(2, -7, 5)$ 的直线方程为
+\[
+\frac{x}{2} = \frac{y - 1}{-7} = \frac{z - 2}{5}
+\]
+正确选项为 (D)。
+\end{solution}
+
+    \question 对于平面上的点 $P$，设 $d_1(P)$ 和 $d_2(P)$ 分别是点 $P$ 到直线 $x - y = 0$ 和 $x + y = 0$ 的距离。由平面第一象限内满足 $2 \le d_1(P) + d_2(P) \le 4$ 的所有点 $P$ 构成的区域 $R$ 的面积是
+
+\begin{solution}
+设点 $P$ 的坐标为 $(x, y)$，且 $x > 0, y > 0$。
+点 $P$ 到直线 $x - y = 0$ 的距离为：
+\[
+d_1(P) = \frac{|x - y|}{\sqrt{1^2 + (-1)^2}} = \frac{|x - y|}{\sqrt{2}}
+\]
+点 $P$ 到直线 $x + y = 0$ 的距离为：
+\[
+d_2(P) = \frac{|x + y|}{\sqrt{1^2 + 1^2}} = \frac{x + y}{\sqrt{2}}
+\]
+根据题意 $2 \le d_1(P) + d_2(P) \le 4$，有：
+\[
+2 \le \frac{|x - y| + x + y}{\sqrt{2}} \le 4
+\]
+即：
+\[
+2\sqrt{2} \le |x - y| + x + y \le 4\sqrt{2}
+\]
+分两种情况讨论：
+1. 当 $x \ge y$ 时，$|x - y| = x - y$，不等式变为：
+\[
+2\sqrt{2} \le (x - y) + x + y \le 4\sqrt{2} \implies 2\sqrt{2} \le 2x \le 4\sqrt{2} \implies \sqrt{2} \le x \le 2\sqrt{2}
+\]
+此时区域为直线 $y = 0$，$y = x$，$x = \sqrt{2}$ 和 $x = 2\sqrt{2}$ 围成的直角梯形。
+2. 当 $x < y$ 时，$|x - y| = y - x$，不等式变为：
+\[
+2\sqrt{2} \le (y - x) + x + y \le 4\sqrt{2} \implies 2\sqrt{2} \le 2y \le 4\sqrt{2} \implies \sqrt{2} \le y \le 2\sqrt{2}
+\]
+此时区域为直线 $x = 0$，$y = x$，$y = \sqrt{2}$ 和 $y = 2\sqrt{2}$ 围成的直角梯形。
+这两个梯形在第一象限拼成一个大的区域。
+我们可以计算整个区域的面积。当 $x, y \ge 0$ 时，条件等价于点落在由 $x = 2\sqrt{2}$ 和 $y = 2\sqrt{2}$ 围成的正方形内，但减去由 $x = \sqrt{2}$ 和 $y = \sqrt{2}$ 围成的正方形。
+该区域的面积为：
+\[
+S = (2\sqrt{2})^2 - (\sqrt{2})^2 = 8 - 2 = 6
+\]
+\end{solution}
+
+---
+
+\question 设 $\vec{a}, \vec{b}, \vec{c}$ 为三个非共面单位向量，使得任意两个向量之间的夹角均为 $\frac{\pi}{3}$。若 $\vec{a} \times \vec{b} + \vec{b} \times \vec{c} = p\vec{a} + q\vec{b} + r\vec{c}$，其中 $p, q, r$ 是标量，则 $\frac{p^2 + 2q^2 + r^2}{q^2}$ 的值是
+
+\begin{solution}
+已知 $|\vec{a}| = |\vec{b}| = |\vec{c}| = 1$，且 $\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{c} = \vec{c} \cdot \vec{a} = \cos \frac{\pi}{3} = \frac{1}{2}$。
+方程两边分别与 $\vec{a}, \vec{b}, \vec{c}$ 作点积。
+与 $\vec{a}$ 点积：
+\[
+\vec{a} \cdot (\vec{a} \times \vec{b} + \vec{b} \times \vec{c}) = p(\vec{a} \cdot \vec{a}) + q(\vec{b} \cdot \vec{a}) + r(\vec{c} \cdot \vec{a})
+\]
+由于 $\vec{a} \cdot (\vec{a} \times \vec{b}) = 0$，得：
+\[
+[\vec{a}, \vec{b}, \vec{c}] = p + \frac{1}{2}q + \frac{1}{2}r
+\]
+与 $\vec{c}$ 点积：
+\[
+\vec{c} \cdot (\vec{a} \times \vec{b} + \vec{b} \times \vec{c}) = p(\vec{a} \cdot \vec{c}) + q(\vec{b} \cdot \vec{c}) + r(\vec{c} \cdot \vec{c})
+\]
+由于 $\vec{c} \cdot (\vec{b} \times \vec{c}) = 0$，得：
+\[
+[\vec{a}, \vec{b}, \vec{c}] = \frac{1}{2}p + \frac{1}{2}q + r
+\]
+比较上述两式，得 $p + \frac{1}{2}q + \frac{1}{2}r = \frac{1}{2}p + \frac{1}{2}q + r$，解得 $p = r$。
+与 $\vec{b}$ 点积：
+\[
+\vec{b} \cdot (\vec{a} \times \vec{b} + \vec{b} \times \vec{c}) = p(\vec{a} \cdot \vec{b}) + q(\vec{b} \cdot \vec{b}) + r(\vec{c} \cdot \vec{b})
+\]
+左边为 $0$，故：
+\[
+\frac{1}{2}p + q + \frac{1}{2}r = 0 \implies p + q = 0 \implies p = -q, r = -q
+\]
+代入待求式：
+\[
+\frac{p^2 + 2q^2 + r^2}{q^2} = \frac{(-q)^2 + 2q^2 + (-q)^2}{q^2} = \frac{q^2 + 2q^2 + q^2}{q^2} = \frac{4q^2}{q^2} = 4
+\]
+\end{solution}
 
     \question 设 $P$ 点为点 $(3, 1, 7)$ 关于平面 $x - y + z = 3$ 的对称点。则通过点 $P$ 且包含直线 $\frac{x}{1} = \frac{y}{2} = \frac{z}{1}$ 的平面方程为 \underline{\hspace{1cm}}。
 \begin{enumerate}

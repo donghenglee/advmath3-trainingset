@@ -15,6 +15,10 @@
 \usepackage{pgfornament}
 \usepackage{multicol}
 \usepackage{worldflags}
+\usepackage{pifont}
+\usepackage{ifthen}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usetikzlibrary{shapes.geometric, positioning}
 \setCJKmainfont{KaiTi}
 
@@ -51,7 +55,7 @@
 %madas maths advanced topics - diff under the integral sign,diagonalization_of_conics_and_quadrics, intrinsic_coordinates
 %不等式-放缩法、数形结合、赫尔德不等式、琴生不等式
 %解三角形-已知五心/两条垂线/两条中线及两点/两线求第三点/线、对称点公式、塞瓦定理
-%圆-两圆正交，两圆公切线
+%圆-两圆正交,两圆公切线
 %矩阵-adjadj, detadjadj
 %平面向量-vector证明whatsapp 29 Jan,u\cdot v^hat=u^hat\cdot v,projection matrices are idempotent and symmetric
 %linear algebra线代启示录
@@ -115,6 +119,13 @@
     \path (C) to[ornament=88,options/.append style={yshift=.52pt,scale=0.8}] (D);
   \end{tikzpicture}}
 }
+\newcommand{\rating}[1]{%
+    \text{\ding{72}}%
+    \ifthenelse{#1 > 1}{\text{\ding{72}}}{\text{\ding{73}}}%
+    \ifthenelse{#1 > 2}{\text{\ding{72}}}{\text{\ding{73}}}%
+    \ifthenelse{#1 > 3}{\text{\ding{72}}}{\text{\ding{73}}}%
+    \ifthenelse{#1 > 4}{\text{\ding{72}}}{\text{\ding{73}}}%
+}
 \printanswers
 \shadedsolutions
 \definecolor{SolutionColor}{rgb}{1.0,0.98,0.8} %https://latexcolor.com/
@@ -141,13 +152,13 @@
 
 \begin{tikzpicture}[every node/.style={inner sep=0pt}]
 \node[text width=11.5cm](Text){%
-\qquad 追溯到 2019 年，为了当年的备赛，我疯狂爬取 AMC 历届考题，整出了《AMC 10 精选》和一份“统考超纲难题集”。直到2025 年5月，我看着当年的内容不禁感叹：读了数学系之后，总觉得这里的发展空间实属不少。这些日子，我开启了采集模式，在网上搜刮各种有趣（恶心）、深奥（烧脑）的题目。\\[10pt]
+\qquad 追溯到 2019 年,为了当年的备赛,我疯狂爬取 AMC 历届考题,整出了《AMC 10 精选》和一份“统考超纲难题集”。直到2025 年5月,我看着当年的内容不禁感叹:读了数学系之后,总觉得这里的发展空间实属不少。这些日子,我开启了采集模式,在网上搜刮各种有趣（恶心）、深奥（烧脑）的题目。\\[10pt]
 
-\qquad 本来没打算写解析，但发现很多老题只有答案。我的大脑停工了一年，有些题连现在的我读起来都觉得难以下咽，是不是百尺竿头，更蠢一步。为了不让未来的自己看到题目时再次怀疑人生，我决定用 \LaTeX{} 重新排版，并含泪补全了解法，最终整出了这份——《高级数学 (III) 训练集》。\\[10pt]
+\qquad 本来没打算写解析,但发现很多老题只有答案。我的大脑停工了一年,有些题连现在的我读起来都觉得难以下咽,是不是百尺竿头,更蠢一步。为了不让未来的自己看到题目时再次怀疑人生,我决定用 \LaTeX{} 重新排版,并含泪补全了解法,最终整出了这份——《高级数学 (III) 训练集》。\\[10pt]
 
-\qquad 为此，我广泛参考了美、加的数学竞赛，日、印的大学入学考，以及台湾的教师甄选题，等等。尽管整理过程艰辛，但也领略了全球不同地区的数学教纲，宛如经历了一场“数学环游世界”。\\[10pt]
+\qquad 为此,我广泛参考了美、加的数学竞赛,日、印的大学入学考,以及台湾的教师甄选题,等等。尽管整理过程艰辛,但也领略了全球不同地区的数学教纲,宛如经历了一场“数学环游世界”。\\[10pt]
 
-\qquad 建议想自己动手的朋友，可在 \texttt{preamble} 中注释掉 \verb|\printanswers|。解析皆来自官方或亲笔，但绝大部分也经 \texttt{ChatGPT,Gemini}修改，若有纰漏欢迎指正。祝大家阅读愉快！\\[10pt]
+\qquad 建议想自己动手的朋友,可在 \texttt{preamble} 中注释掉 \verb|\printanswers|。解析皆来自官方或亲笔,但绝大部分也经 \texttt{ChatGPT,Gemini}修改,若有纰漏欢迎指正。祝大家阅读愉快！\\[10pt]
 \hfill —— 冬恒} ;
 \color{brown}
 \node[shift={(-1.5cm,1.5cm)},anchor=north west](CNW)
@@ -245,6 +256,85 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 
 \pagecolor{PageColor}
 \begin{center}
+  {\fontsize{30pt}{26pt}\selectfont 各地区数学大学入学考试难度对比
+  }
+\end{center}
+\separator
+\begin{enumerate}
+\item 印度 JEE Advanced \worldflag{IN} %add jee main
+\begin{itemize}
+\item 分两场（Paper 1 \& 2）,每场 180 分钟。全客观题,但含单选、多选、数值填空及矩阵匹配。
+\item 特点:不仅是难,更是“阴险”。多选题选错会倒扣分（Negative Marking）,逼着你在考场上做博弈。题目不按常理出牌,常在微积分和复数里埋伏现代数学的影子,是纯粹的智力与心脏抗压测试。
+\end{itemize}
+\item 中国高考 (新课标 I 卷) \worldflag{CN}
+\begin{itemize}
+    \item 120 分钟。8 单选 + 3 多选 + 3 填空 + 5 大题。
+    \item 特点:现在的趋势是“反套路”。虽然大纲没变,但解析几何和导数的计算量大得惊人,压轴题越来越像数学竞赛初赛。这不仅考脑力,更是在压榨考生的极限算力和在繁琐步骤中不出错的稳定性。
+\end{itemize}
+\item 越南高考 (THPT) \worldflag{VN}
+\begin{itemize}
+    \item 90 分钟。50 道单项选择题。
+    \item 特点:暴力计算的巅峰。平均 1.8 分钟处理一题,基本没有喘息机会。题目充斥着大量复杂的函数套函数、立体几何最值,考生必须像人肉计算机一样扫视题目,对套路极其熟练才能做完。
+\end{itemize}
+\item 马来西亚统考 (UEC) \worldflag{MY}
+\begin{itemize}
+    \item 高级数学(I) 120 分钟；高级数学(II) 180 分钟。选择题结合大题。
+    \item 特点:风格非常“老派”且扎实。不玩花哨的,就是硬碰硬的代数和证明。范围极广,连一阶微分方程和棣莫弗定理都敢考,非常看重考生的数学基本功和写完整解题步骤的习惯。
+\end{itemize}
+\item 韩国 CSAT (修能) \worldflag{KR}
+\begin{itemize}
+    \item 100 分钟。30 道填空与选择题。
+    \item 特点:所谓的“杀手题”策略。前面的题都是送分,但最后两三道题（如第 22 题、30 题）的难度陡增,逻辑弯路极多。这种考试容错率低得吓人,名校生基本默认前 27 题全对,生死全看最后那几道逻辑断层题。
+\end{itemize}
+\item 日本 东大/京大二次试验 \worldflag{JP}
+\begin{itemize}
+    \item 150 分钟。6 道长篇证明/叙述题。
+    \item 特点:数学界的“申论”。没有选择题,给你白纸一张让你从头推到尾。它不考反应速度,考的是你能不能把一个深刻的数论或组合问题讲清楚。题目非常优雅,是亚洲最接近“数学研究”状态的考试。
+\end{itemize}
+\item 台湾 分科测验 (数学甲) \worldflag{TW}
+\begin{itemize}
+    \item 80 分钟。单选、多选、选填及混合题（含非选择题）。
+    \item 特点:短小精悍,侧重定义。由于时间只有 80 分钟,它更看重你对微积分、空间向量这些概念的直观理解。题目灵活,喜欢跨章节组合,如果概念理解不透,光靠刷题很难拿高分。
+\end{itemize}
+\item 香港 DSE (M1/M2) \worldflag{HK}
+\begin{itemize}
+    \item 150 分钟。结构化题目（Section A \& B）。
+    \item 特点:职场式的模块化考核。M1 侧重应用,M2 侧重理论,题型极其固定且结构清晰。只要把往年真题（Past Paper）练透,基本能精准预测考点。它考查的是你的熟练度以及对标准化流程的执行力。
+\end{itemize}
+\end{enumerate}
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{全球主要数学大学入学考试:基于选拔压力的深度对比}
+    \vspace{2mm}
+    \begin{tabularx}{\textwidth}{lXXXXXX}
+        \toprule
+        考试项目 & 范围广度 & 逻辑深度 & 计算冗余 & 心理博弈 & 速度 & 选拔苛刻度 \\ 
+        \midrule
+        印度 JEE Advanced & \rating{5} & \rating{5} & \rating{3} & \rating{5} & \rating{4} & \rating{4} \\ 
+        中国高考 (新课标I) & \rating{3} & \rating{4} & \rating{5} & \rating{3} & \rating{4} & \rating{5} \\ 
+        日本 东大/京大二次 & \rating{4} & \rating{5} & \rating{5} & \rating{4} & \rating{2} & \rating{4} \\ 
+        越南 HGE (高中毕业) & \rating{3} & \rating{3} & \rating{5} & \rating{4} & \rating{5} & \rating{5} \\ 
+        韩国 CSAT (修能) & \rating{3} & \rating{3} & \rating{4} & \rating{4} & \rating{5} & \rating{5} \\ 
+        台湾 分科测验 & \rating{4} & \rating{4} & \rating{3} & \rating{3} & \rating{3} & \rating{3} \\ 
+        香港 DSE (M1/M2) & \rating{4} & \rating{4} & \rating{3} & \rating{2} & \rating{3} & \rating{2} \\ 
+        马来西亚统考 (UEC) & \rating{3} & \rating{3} & \rating{4} & \rating{2} & \rating{2} & \rating{2} \\ 
+        \bottomrule
+    \end{tabularx}
+\end{table}
+%add singapore,msia stpm
+\begin{itemize}
+    \item 范围广度:考察知识点的覆盖面,是否涉及高等数学衔接内容（如复数、矩阵、微积分深度等）。
+    \item 逻辑深度:侧重逻辑链条的长度与证明的严密性,考察对数学本质而非套路的理解。
+    \item 计算冗余:指在思路清晰后仍需消耗大量“算力”进行代数变形（如圆锥曲线繁琐运算）。
+    \item 心理博弈:涉及扣分机制、新定义题型的压力感,以及对考场心态的干扰程度。
+    \item 速度:单题分配时间极短带来的压力,考察考生的瞬时反应与熟练度。
+    \item 选拔苛刻度:分值越高代表容错空间越小,顶级名校对失误近乎“零容忍”（5/5 表示必须近乎满分才能进入名校）。
+\end{itemize}
+
+\pagebreak
+\pagecolor{PageColor}
+\begin{center}
   {\fontsize{30pt}{26pt}\selectfont 参考出处
   }
 \end{center}
@@ -253,13 +343,14 @@ at (Text.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
 \worldflag{MY}
 \worldflag{SG}
 \worldflag{TW}
+\worldflag{HK}
 \worldflag{CN}
+\worldflag{KR}
 \worldflag{JP}
 \worldflag{IN}
 \worldflag{US}
 \worldflag{CA}
 \worldflag{GB}
-\worldflag{BG}
 \end{center}
 \begin{multicols}{2}
 \begin{itemize}
