@@ -683,6 +683,47 @@ m = \frac{5 - \sqrt{17}}{2}
 \]
 \end{solution}
 
+%简体字版本latex code
+\question 设 $\alpha$ 和 $\beta$ 为方程 $x^2 - 6x - 2 = 0$ 的两个根，且 $\alpha > \beta$。若对于 $n \ge 1$，令 $a_n = \alpha^n - \beta^n$，则 $\frac{a_{10} - 2a_8}{2a_9}$ 的值为
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+
+\begin{solution}
+由于 $\alpha$ 和 $\beta$ 是方程 $x^2 - 6x - 2 = 0$ 的根，根据根与系数的关系（韦达定理）或直接代入方程可知：
+\[
+\alpha^2 - 6\alpha - 2 = 0 \implies \alpha^2 - 2 = 6\alpha
+\]
+\[
+\beta^2 - 6\beta - 2 = 0 \implies \beta^2 - 2 = 6\beta
+\]
+为了构造出 $a_{10}$ 和 $a_8$ 的形式，我们将第一个等式两边同乘以 $\alpha^8$，第二个等式两边同乘以 $\beta^8$：
+\[
+\alpha^{10} - 2\alpha^8 = 6\alpha^9
+\]
+\[
+\beta^{10} - 2\beta^8 = 6\beta^9
+\]
+两式相减：
+\[
+(\alpha^{10} - \beta^{10}) - 2(\alpha^8 - \beta^8) = 6(\alpha^9 - \beta^9)
+\]
+根据定义 $a_n = \alpha^n - \beta^n$，上式可写为：
+\[
+a_{10} - 2a_8 = 6a_9
+\]
+因此，待求表达式的值为：
+\[
+\frac{a_{10} - 2a_8}{2a_9} = \frac{6a_9}{2a_9} = 3
+\]
+正确选项为 C。
+\begin{align*}
+a_{10} - 2a_8 &= 6a_9 \\
+\frac{a_{10} - 2a_8}{2a_9} &= \frac{6a_9}{2a_9} = 3
+\end{align*}
+\end{solution}
+
     \question 解方程
     \[ 
     (x+1)(x+2)(x+3)^2(x+4)(x+5)=360 
@@ -17926,6 +17967,49 @@ $(\sqrt[3]{7} + \sqrt[12]{11})^n = (7^{\frac{1}{3}} + 11^{\frac{1}{12}})^n$
 \vspace{0.5pt}
 
 \begin{questions}
+\question 设 $M$ 为一个满足下列条件的 $3\times3$ 矩阵：
+\[
+M \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}, \quad M \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \quad \text{以及} \quad M \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 12 \end{bmatrix}
+\]
+则 $M$ 的对角线元素之和为
+
+\begin{solution}
+矩阵的对角线元素之和即为矩阵的迹 $\text{Tr}(M)$。
+设 $M$ 的列向量分别为 $\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3$。
+由第一个条件：$M \mathbf{e}_2 = \mathbf{v}_2 = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}$。由此可知 $M$ 的第二个对角线元素 $m_{22} = 2$。
+由第二个条件：$M(\mathbf{e}_1 - \mathbf{e}_2) = \mathbf{v}_1 - \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$。
+代入 $\mathbf{v}_2$ 得：$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} + \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix} = \begin{bmatrix} 0 \\ 3 \\ 2 \end{bmatrix}$。由此可知 $M$ 的第一个对角线元素 $m_{11} = 0$。
+由第三个条件：$M(\mathbf{e}_1 + \mathbf{e}_2 + \mathbf{e}_3) = \mathbf{v}_1 + \mathbf{v}_2 + \mathbf{v}_3 = \begin{bmatrix} 0 \\ 0 \\ 12 \end{bmatrix}$。
+则 $\mathbf{v}_3 = \begin{bmatrix} 0 \\ 0 \\ 12 \end{bmatrix} - \mathbf{v}_1 - \mathbf{v}_2 = \begin{bmatrix} 0 \\ 0 \\ 12 \end{bmatrix} - \begin{bmatrix} 0 \\ 3 \\ 2 \end{bmatrix} - \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix} = \begin{bmatrix} 1 \\ -5 \\ 7 \end{bmatrix}$。由此可知 $M$ 的第三个对角线元素 $m_{33} = 7$。
+对角线元素之和为 $m_{11} + m_{22} + m_{33} = 0 + 2 + 7 = 9$。
+\end{solution}
+    \question 设 $P = [a_{ij}]$ 是一个 $3 \times 3$ 矩阵，令 $Q = [b_{ij}]$，其中 $b_{ij} = 2^{i+j} a_{ij}$ 对于 $1 \le i, j \le 3$。若 $P$ 的行列式为 $2$，则矩阵 $Q$ 的行列式为
+(A) $2^{10}$
+(B) $2^{11}$
+(C) $2^{12}$
+(D) $2^{13}$
+
+\begin{solution}
+根据题意，$Q$ 的元素可以表示为 $b_{ij} = 2^i \cdot a_{ij} \cdot 2^j$。
+这意味着矩阵 $Q$ 可以通过对矩阵 $P$ 进行行和列的倍乘变换得到。
+设 $D$ 为对角矩阵 $\text{diag}(2^1, 2^2, 2^3)$，则矩阵 $Q$ 可以写成：
+\[
+Q = D P D
+\]
+根据行列式的乘法性质：
+\[
+\det(Q) = \det(D P D) = \det(D) \cdot \det(P) \cdot \det(D)
+\]
+其中对角矩阵 $D$ 的行列式为其对角元素的乘积：
+\[
+\det(D) = 2^1 \cdot 2^2 \cdot 2^3 = 2^{1+2+3} = 2^6
+\]
+已知 $\det(P) = 2$，代入上式得：
+\[
+\det(Q) = 2^6 \cdot 2 \cdot 2^6 = 2^{6+1+6} = 2^{13}
+\]
+正确选项为 D。
+\end{solution}
     \question
 设 $A = \begin{bmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\ \sin \theta & 0 & \cos \theta \end{bmatrix}$。若对于某个 $\theta \in (0, \pi)$，有 $A^2 = A^T$，则矩阵 $(A + I)^3 + (A - I)^3 - 6A$ 的对角元素之和等于 \_\_\_\_\_\_。
 
