@@ -19412,6 +19412,96 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
         \]
     \end{solution}
 
+    \question 在以下问题中，$\mathbb{R}$ 表示所有实数的集合，$a^{\mathsf{T}}$ 表示向量 $a$ 的转置，$A^{-1}$ 是矩阵 $A$ 的逆，而 $I_n$ 表示大小为 $n \times n$ 的单位矩阵。
+
+Q.1 令 $v \in \mathbb{R}^n$ 为非零列向量，并定义矩阵 $T$ 为
+\[
+T = I_n - 2 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v}
+\]
+回答下列问题。
+(1) 证明 $T$ 是对称矩阵。
+(2) 证明 $T$ 是正交矩阵。
+(3) 计算 $T$ 的所有特征值。
+(4) 计算 $T$ 的行列式。
+(5) 定义列向量 $e_1 \in \mathbb{R}^n$ 为
+\[
+e_1 = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
+\]
+给定列向量 $x \in \mathbb{R}^n$，它不是 $e_1$ 乘以任何标量。确定 $v$ 使得 $Tx$ 变为 $e_1$ 乘以某个标量，并使用 $x$ 和 $e_1$ 表示它。
+\begin{solution}
+    Q.1
+(1)
+根据转置的性质，有
+\[
+T^{\mathsf{T}} = \left( I_n - 2 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} \right)^{\mathsf{T}} = I_n^{\mathsf{T}} - \frac{2}{v^{\mathsf{T}} v} (v v^{\mathsf{T}})^{\mathsf{T}} = I_n - \frac{2}{v^{\mathsf{T}} v} v v^{\mathsf{T}} = T
+\]
+因此，$T$ 是对称矩阵。
+
+(2)
+计算 $T^{\mathsf{T}} T = T^2$：
+\[
+T^2 = \left( I_n - 2 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} \right) \left( I_n - 2 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} \right) = I_n - 4 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} + 4 \frac{v (v^{\mathsf{T}} v) v^{\mathsf{T}}}{(v^{\mathsf{T}} v)^2} = I_n - 4 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} + 4 \frac{v v^{\mathsf{T}}}{v^{\mathsf{T}} v} = I_n
+\]
+由于 $T^{\mathsf{T}} T = I_n$，$T$ 是正交矩阵。
+
+(3)
+对于向量 $v$，有
+\[
+Tv = v - 2 \frac{v (v^{\mathsf{T}} v)}{v^{\mathsf{T}} v} = v - 2v = -v
+\]
+故 $-1$ 是一个特征值。对于任何与 $v$ 正交的向量 $u$（即 $v^{\mathsf{T}} u = 0$），有
+\[
+Tu = u - 2 \frac{v (v^{\mathsf{T}} u)}{v^{\mathsf{T}} v} = u
+\]
+在 $n$ 维空间中，与 $v$ 正交的线性无关向量有 $n-1$ 个。因此，特征值为 $-1$（重数为 $1$）和 $1$（重数为 $n-1$）。
+
+(4)
+行列式等于特征值的乘积：
+\[
+\det(T) = (-1)^1 \cdot (1)^{n-1} = -1
+\]
+
+(5)
+矩阵 $T$ 是关于超平面 $v^{\perp}$ 的反射。要使 $Tx$ 落在 $e_1$ 所在的直线上，且 $T$ 保持长度不变，则必有 $Tx = \pm \|x\| e_1$。
+取 $v = x - \|x\| e_1$ 或 $v = x + \|x\| e_1$ 即可。
+\end{solution}
+
+\question Q.2 回答下列问题。
+(1) 令 $P$ 为大小为 $n \times n$ 的任意实矩阵。假设 $I_n + P$ 是非奇异的。证明以下等式成立。
+\[
+(I_n + P)^{-1} P = P (I_n + P)^{-1}
+\]
+(2) 令 $Q$ 和 $R$ 分别为大小为 $n \times m$ 和 $m \times n$ 的任意实矩阵。假设 $I_n + QR$ 是非奇异的。证明 $I_m + RQ$ 是非奇异的，并且以下等式成立。
+\[
+(I_n + QR)^{-1} Q = Q (I_m + RQ)^{-1}
+\]
+
+\begin{solution}
+(1)
+因为
+\[
+P (I_n + P) = P + P^2 = (I_n + P) P
+\]
+在等式两边左乘 $(I_n + P)^{-1}$ 并右乘 $(I_n + P)^{-1}$，得
+\[
+(I_n + P)^{-1} P = P (I_n + P)^{-1}
+\]
+
+(2)
+首先证明 $I_m + RQ$ 的非奇异性。若其奇异，则存在非零向量 $z \in \mathbb{R}^m$ 使得 $(I_m + RQ)z = 0$，即 $RQz = -z$。
+两边左乘 $Q$ 得 $Q(RQz) = (QR)Qz = -Qz$。
+若 $Qz \neq 0$，则 $-1$ 是 $QR$ 的特征值，导致 $I_n + QR$ 奇异，矛盾。
+若 $Qz = 0$，由 $RQz = -z$ 知 $-z = 0$，与 $z \neq 0$ 矛盾。故 $I_m + RQ$ 非奇异。
+再证明等式，注意到
+\[
+Q (I_m + RQ) = Q + QRQ = (I_n + QR) Q
+\]
+两边左乘 $(I_n + QR)^{-1}$ 并右乘 $(I_m + RQ)^{-1}$，得
+\[
+(I_n + QR)^{-1} Q = Q (I_m + RQ)^{-1}
+\]
+\end{solution}
+
     \question 设 $A$ 和 $B$ 是 $n \times n$ 实矩阵,且满足
     \[
     \mathrm{rank}(AB - BA + I) = 1,
@@ -23357,6 +23447,39 @@ z^{2} - (\omega - \omega^{2})^{2} - (1 - \omega - \omega^{2} + \omega^{3}) = 0
         \sum_{k=1}^{110} \frac{\omega^{2k}}{\omega^k - 1} = -1 + 110 - 55 = 54
         \]
     \end{solution}
+
+    \question 令 $\alpha = \cos \frac{2\pi}{7} + i \sin \frac{2\pi}{7}$，计算
+\[
+\frac{\alpha^2}{1-\alpha} + \frac{\alpha^4}{1-\alpha^2} + \frac{\alpha^6}{1-\alpha^3} + \frac{\alpha^8}{1-\alpha^4} + \frac{\alpha^{10}}{1-\alpha^5} + \frac{\alpha^{12}}{1-\alpha^6}
+\]
+
+\begin{solution}
+观察每一项的通项：
+\[
+\frac{\alpha^{2k}}{1 - \alpha^k} = - \frac{(\alpha^k)^2 - 1 + 1}{\alpha^k - 1} = - (\alpha^k + 1) - \frac{1}{\alpha^k - 1}
+\]
+所求之和 $(*)$ 为：
+\[
+(*) = - \sum_{k=1}^{6} (\alpha^k + 1) - \sum_{k=1}^{6} \frac{1}{\alpha^k - 1} = - \left( \sum_{k=1}^{6} \alpha^k + 6 \right) + \sum_{k=1}^{6} \frac{1}{1 - \alpha^k}
+\]
+由于 $\alpha$ 是 $x^7 - 1 = 0$ 的根且 $\alpha \neq 1$，则 $\sum_{k=1}^{6} \alpha^k = -1$。
+因此第一部分为 $-(-1 + 6) = -5$。
+对于第二部分，令 $f(x) = \frac{x^7 - 1}{x - 1} = x^6 + x^5 + x^4 + x^3 + x^2 + x + 1$。
+其根为 $\alpha, \alpha^2, \dots, \alpha^6$。则 $f(x) = \prod_{k=1}^{6} (x - \alpha^k)$。
+取对数求导可得：
+\[
+\frac{f'(x)}{f(x)} = \sum_{k=1}^{6} \frac{1}{x - \alpha^k}
+\]
+代入 $x = 1$：
+\[
+f(1) = 7, \quad f'(1) = 6 + 5 + 4 + 3 + 2 + 1 = 21
+\]
+故 $\sum_{k=1}^{6} \frac{1}{1 - \alpha^k} = \frac{f'(1)}{f(1)} = \frac{21}{7} = 3$。
+最终结果为：
+\[
+(*) = -5 + 3 = -2
+\]
+\end{solution}
 
     \question 设 \(z=\cos\dfrac{\pi}{6}+i\sin\dfrac{\pi}{6}\),求
     \[

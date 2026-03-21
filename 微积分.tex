@@ -2220,6 +2220,32 @@ J_n = - n \int_{-1}^1 g(nx) F(x) \,dx
         \]
     \end{solution}
 
+    \question 计算极限
+\[
+\lim_{x \to 0} \frac{(1 + x)(1 + 2x)(1 + 3x) \dots (1 + 2018x) - 1}{x}
+\]
+
+\begin{solution}
+令 $f(x) = (1 + x)(1 + 2x)(1 + 3x) \dots (1 + 2018x)$。
+则原极限可以表示为 $f(x)$ 在 $x = 0$ 处的导数定义：
+\[
+\lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = f'(0)
+\]
+其中 $f(0) = (1)(1)\dots(1) = 1$。
+利用导数的乘积法则：
+\[
+f'(x) = 1(1 + 2x)\dots(1 + 2018x) + (1 + x) \cdot 2 \cdot (1 + 3x)\dots(1 + 2018x) + \dots
+\]
+代入 $x = 0$：
+\[
+f'(0) = 1 + 2 + 3 + \dots + 2018
+\]
+这是一等差数列求和：
+\[
+f'(0) = \sum_{k=1}^{2018} k = \frac{(1 + 2018) \cdot 2018}{2} = 1009 \cdot 2019 = 2037171
+\]
+\end{solution}
+
     \question 由导数定义,证明 
     \[
     \frac{d}{dx}(\sec x) = \sec x \tan x
@@ -6629,6 +6655,61 @@ L = (4 - \frac{3}{4} \ln 7) - (0 - \frac{3}{4} \ln 3)
 L = 4 - \frac{3}{4} (\ln 7 - \ln 3) = 4 - \frac{3}{4} \ln\left(\frac{7}{3}\right)
 \]
 对应选项 (B)。
+\end{solution}
+
+\question
+计算：
+\[
+\lim_{n \to \infty} \sum_{k=0}^{n} \frac{n^2 + k^2}{n^3 + k^3} =
+\]
+
+A. $\frac{2}{3} \ln 2 + \frac{\sqrt{3}\pi}{9}$
+
+B. $\frac{2}{3} \ln 2 + \frac{\sqrt{3}\pi}{3}$
+
+C. $\frac{2}{3} \ln 3 + \frac{\sqrt{3}\pi}{9}$
+
+D. $\frac{2}{3} \ln 3 + \frac{\sqrt{3}\pi}{3}$
+
+\begin{solution}
+首先，我们将求和式改写为黎曼和的形式。提取分母中的 $n^3$：
+\[
+\frac{n^2 + k^2}{n^3 + k^3} = \frac{n^2 \left( 1 + \left( \frac{k}{n} \right)^2 \right)}{n^3 \left( 1 + \left( \frac{k}{n} \right)^3 \right)} = \frac{1}{n} \cdot \frac{1 + \left( \frac{k}{n} \right)^2}{1 + \left( \frac{k}{n} \right)^3}
+\]
+当 $n \to \infty$ 时，该极限可以转化为定积分：
+\[
+\int_{0}^{1} \frac{1 + x^2}{1 + x^3} dx
+\]
+利用因式分解 $1 + x^3 = (1 + x)(1 - x + x^2)$，使用部分分式展开：
+\[
+\frac{1 + x^2}{(1 + x)(1 - x + x^2)} = \frac{A}{1 + x} + \frac{Bx + C}{1 - x + x^2}
+\]
+解得 $A = \frac{2}{3}$，$B = \frac{1}{3}$，$C = \frac{1}{3}$，故：
+\[
+\int_{0}^{1} \left( \frac{2}{3(1 + x)} + \frac{x + 1}{3(1 - x + x^2)} \right) dx
+\]
+对第二项进行配方并调整分子：
+\[
+\frac{x + 1}{1 - x + x^2} = \frac{-\frac{1}{2}(-2x + 1) + \frac{3}{2}}{1 - x + x^2} = -\frac{1}{2} \cdot \frac{2x - 1}{x^2 - x + 1} + \frac{3}{2} \cdot \frac{1}{\left( x - \frac{1}{2} \right)^2 + \frac{3}{4}}
+\]
+逐项积分：
+\[
+\frac{2}{3} \int_{0}^{1} \frac{1}{1 + x} dx = \frac{2}{3} \left[ \ln|1 + x| \right]_{0}^{1} = \frac{2}{3} \ln 2
+\]
+\[
+\frac{1}{3} \int_{0}^{1} \frac{x + 1}{x^2 - x + 1} dx = \left[ \frac{1}{3} \left( -\frac{1}{2} \ln|x^2 - x + 1| + \frac{3}{2} \cdot \frac{2}{\sqrt{3}} \arctan\left( \frac{2x - 1}{\sqrt{3}} \right) \right) \right]_{0}^{1}
+\]
+\[
+= \frac{1}{3} \left( 0 + \sqrt{3} \arctan\left( \frac{1}{\sqrt{3}} \right) - \left( 0 + \sqrt{3} \arctan\left( -\frac{1}{\sqrt{3}} \right) \right) \right)
+\]
+\[
+= \frac{\sqrt{3}}{3} \left( \frac{\pi}{6} - \left( -\frac{\pi}{6} \right) \right) = \frac{\sqrt{3}}{3} \cdot \frac{\pi}{3} = \frac{\sqrt{3}\pi}{9}
+\]
+合并结果得：
+\[
+\frac{2}{3} \ln 2 + \frac{\sqrt{3}\pi}{9}
+\]
+因此正确答案为 A。
 \end{solution}
 
     \question 对于 $n = 1,2,\dots$,定义
@@ -14475,6 +14556,76 @@ AB = (2 \sec \theta)(2 \csc \theta) = \frac{4}{\sin \theta \cos \theta} = \frac{
         \]
     \end{solution}
     \end{parts}
+
+    \question 12. 
+(a) 计算 
+\[
+\int_{0}^{1} \frac{1}{2x^2 - 2x + 1} dx
+\]
+(b) (i) 令 $0 \le \theta \le \frac{\pi}{2}$。化简 
+\[
+\frac{1 + 4 \tan \frac{\theta}{2} - \tan^2 \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}}
+\]
+(ii) 使用代换 $t = \tan \frac{\theta}{2}$，计算 
+\[
+\int_{0}^{\frac{\pi}{2}} \frac{2 \sin \theta + \cos \theta}{3 - 2 \sin \theta - \cos \theta} d\theta
+\]
+(c) 于是，计算 
+\[
+\int_{0}^{\frac{\pi}{2}} \left( \frac{\sin \theta - 2 \cos \theta}{3 - 2 \sin \theta - \cos \theta} \right)^2 d\theta
+\]
+
+\begin{solution}
+(a) 
+对分母进行配方：
+\[
+2x^2 - 2x + 1 = 2 \left[ \left( x - \frac{1}{2} \right)^2 + \frac{1}{4} \right] = \frac{1}{2} \left[ (2x - 1)^2 + 1 \right]
+\]
+积分计算如下：
+\[
+\int_{0}^{1} \frac{1}{\frac{1}{2} \left[ (2x - 1)^2 + 1 \right]} dx = \left[ \arctan(2x - 1) \right]_{0}^{1} = \arctan(1) - \arctan(-1) = \frac{\pi}{2}
+\]
+
+(b) (i) 
+利用二倍角公式的正切表示 $\cos \theta = \frac{1 - \tan^2 \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}}$ 和 $\sin \theta = \frac{2 \tan \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}}$，原式可化为：
+\[
+\frac{1 - \tan^2 \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}} + 2 \cdot \frac{2 \tan \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}} = \cos \theta + 2 \sin \theta
+\]
+
+(ii) 
+利用 (b)(i) 的结论，分子为 $2 \sin \theta + \cos \theta$。
+设分母为 $f(\theta) = 3 - 2 \sin \theta - \cos \theta$，则 $f'(\theta) = -2 \cos \theta + \sin \theta$。
+观察可知：
+\[
+2 \sin \theta + \cos \theta = - (3 - 2 \sin \theta - \cos \theta) + 3
+\]
+因此积分变为：
+\[
+\int_{0}^{\frac{\pi}{2}} \left( -1 + \frac{3}{3 - 2 \sin \theta - \cos \theta} \right) d\theta = - \frac{\pi}{2} + 3 \int_{0}^{\frac{\pi}{2}} \frac{1}{3 - 2 \sin \theta - \cos \theta} d\theta
+\]
+使用代换 $t = \tan \frac{\theta}{2}$，根据 (a) 的计算过程，后项积分为 $\int_{0}^{1} \frac{1}{2t^2 - 2t + 1} dt = \frac{\pi}{2}$。
+故原式为：
+\[
+- \frac{\pi}{2} + 3 \left( \frac{\pi}{2} \right) = \pi
+\]
+
+(c) 
+设 $D = 3 - 2 \sin \theta - \cos \theta$，则 $D' = \sin \theta - 2 \cos \theta$，且 $D'' = \cos \theta + 2 \sin \theta$。
+所求积分为 $\int_{0}^{\frac{\pi}{2}} \left( \frac{D'}{D} \right)^2 d\theta$。使用分部积分法：
+\[
+\int \frac{D'}{D} \cdot \frac{D'}{D} d\theta = \left[ - \frac{D'}{D} \right]_{0}^{\frac{\pi}{2}} + \int_{0}^{\frac{\pi}{2}} \frac{D''}{D} d\theta
+\]
+计算边界值：
+在 $\theta = \frac{\pi}{2}$ 时，$D' = 1, D = 1$；在 $\theta = 0$ 时，$D' = -2, D = 2$。
+\[
+\left[ - \frac{D'}{D} \right]_{0}^{\frac{\pi}{2}} = -1 - \left( - \frac{-2}{2} \right) = -2
+\]
+利用 (b)(ii) 的结果，$\int_{0}^{\frac{\pi}{2}} \frac{D''}{D} d\theta = \pi$。
+故最终结果为：
+\[
+\pi - 2
+\]
+\end{solution}
 
 %分部积分by parts
     \question 使用分部积分法,求
