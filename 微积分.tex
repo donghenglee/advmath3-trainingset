@@ -2294,6 +2294,45 @@ f'(0) = \lim_{x \to 0} \frac{\frac{x}{e^x - 1} - 1}{x} = \lim_{x \to 0} \frac{x 
 答案为：D
 \end{solution}
 
+\question
+\[
+\frac{d^2x}{dy^2}
+\]
+等于
+(A) $\left( \frac{d^2y}{dx^2} \right)^{-1}$
+(B) $-\left( \frac{d^2y}{dx^2} \right)^{-1} \left( \frac{dy}{dx} \right)^{-3}$
+(C) $\left( \frac{d^2y}{dx^2} \right) \left( \frac{dy}{dx} \right)^{-2}$
+(D) $-\left( \frac{d^2y}{dx^2} \right) \left( \frac{dy}{dx} \right)^{-3}$
+
+\begin{solution}
+我们需要利用反函数的导数法则来求解。
+首先，根据一阶导数的关系：
+\[
+\frac{dx}{dy} = \frac{1}{\frac{dy}{dx}} = \left( \frac{dy}{dx} \right)^{-1}
+\]
+对上式关于 $y$ 再次求导：
+\[
+\frac{d^2x}{dy^2} = \frac{d}{dy} \left( \frac{dx}{dy} \right) = \frac{d}{dy} \left[ \left( \frac{dy}{dx} \right)^{-1} \right]
+\]
+利用链式法则，将关于 $y$ 的求导转换为关于 $x$ 的求导：
+\[
+\frac{d^2x}{dy^2} = \frac{d}{dx} \left[ \left( \frac{dy}{dx} \right)^{-1} \right] \cdot \frac{dx}{dy}
+\]
+计算前半部分对 $x$ 的导数：
+\[
+\frac{d}{dx} \left[ \left( \frac{dy}{dx} \right)^{-1} \right] = -1 \cdot \left( \frac{dy}{dx} \right)^{-2} \cdot \frac{d}{dx} \left( \frac{dy}{dx} \right) = - \left( \frac{dy}{dx} \right)^{-2} \cdot \frac{d^2y}{dx^2}
+\]
+代回原式，并再次使用 $\frac{dx}{dy} = \left( \frac{dy}{dx} \right)^{-1}$：
+\[
+\frac{d^2x}{dy^2} = \left[ - \frac{d^2y}{dx^2} \cdot \left( \frac{dy}{dx} \right)^{-2} \right] \cdot \left( \frac{dy}{dx} \right)^{-1}
+\]
+整理得：
+\[
+\frac{d^2x}{dy^2} = - \left( \frac{d^2y}{dx^2} \right) \left( \frac{dy}{dx} \right)^{-3}
+\]
+因此，正确选项为 (D)。
+\end{solution}
+
     \question 已知曲线方程
     \[
     y = 2^{3e^{2x}}, \quad x \in \mathbb{R}.
@@ -7715,6 +7754,76 @@ x^2 + \frac{8}{3}x - \frac{19}{12} = 0 \implies 12x^2 + 32x - 19 = 0
 \end{solution}
 
 \question
+曲线 $y = \sqrt{\frac{1 + \sin x}{\cos x}}$ 与 $y = \sqrt{\frac{1 - \sin x}{\cos x}}$ 以及直线 $x = 0$ 和 $x = \frac{\pi}{4}$ 所围成图形的面积为
+
+\begin{solution}
+首先，注意到在区间 $\left[0, \frac{\pi}{4}\right]$ 上，$\sin x \ge 0$，因此 $\sqrt{\frac{1 + \sin x}{\cos x}} \ge \sqrt{\frac{1 - \sin x}{\cos x}}$。所求面积 $S$ 为
+\[
+S = \int_{0}^{\frac{\pi}{4}} \left( \sqrt{\frac{1 + \sin x}{\cos x}} - \sqrt{\frac{1 - \sin x}{\cos x}} \right) dx
+\]
+利用三角恒等式 $1 \pm \sin x = \left( \sin \frac{x}{2} \pm \cos \frac{x}{2} \right)^2$ 以及 $\cos x = \cos^2 \frac{x}{2} - \sin^2 \frac{x}{2}$，可以将表达式简化。
+对于第一项：
+\[
+\sqrt{\frac{1 + \sin x}{\cos x}} = \sqrt{\frac{(\cos \frac{x}{2} + \sin \frac{x}{2})^2}{(\cos \frac{x}{2} - \sin \frac{x}{2})(\cos \frac{x}{2} + \sin \frac{x}{2})}} = \sqrt{\frac{\cos \frac{x}{2} + \sin \frac{x}{2}}{\cos \frac{x}{2} - \sin \frac{x}{2}}} = \sqrt{\frac{1 + \tan \frac{x}{2}}{1 - \tan \frac{x}{2}}}
+\]
+同理，第二项为：
+\[
+\sqrt{\frac{1 - \sin x}{\cos x}} = \sqrt{\frac{1 - \tan \frac{x}{2}}{1 + \tan \frac{x}{2}}}
+\]
+设 $t = \tan \frac{x}{2}$，则 $dx = \frac{2}{1 + t^2} dt$。当 $x = 0$ 时，$t = 0$；当 $x = \frac{\pi}{4}$ 时，$t = \tan \frac{\pi}{8} = \sqrt{2} - 1$。
+积分变为：
+\[
+S = \int_{0}^{\sqrt{2}-1} \left( \sqrt{\frac{1 + t}{1 - t}} - \sqrt{\frac{1 - t}{1 + t}} \right) \frac{2}{1 + t^2} dt
+\]
+化简括号内的项：
+\[
+\sqrt{\frac{1 + t}{1 - t}} - \sqrt{\frac{1 - t}{1 + t}} = \frac{(1 + t) - (1 - t)}{\sqrt{(1 - t)(1 + t)}} = \frac{2t}{\sqrt{1 - t^2}}
+\]
+代入积分式：
+\[
+S = \int_{0}^{\sqrt{2}-1} \frac{2t}{\sqrt{1 - t^2}} \cdot \frac{2}{1 + t^2} dt = \int_{0}^{\sqrt{2}-1} \frac{4t}{(1 + t^2)\sqrt{1 - t^2}} dt
+\]
+对比选项，正确答案为 (B)。
+
+为了计算该积分，我们采用变量代换法。令 $u = \sqrt{1 - t^2}$，则有 $u^2 = 1 - t^2$。
+对等式两边求微分得 $2u du = -2t dt$，即 $t dt = -u du$。
+同时，可得 $t^2 = 1 - u^2$，因此 $1 + t^2 = 1 + \left( 1 - u^2 \right) = 2 - u^2$。
+接下来确定积分上下限：
+当 $t = 0$ 时，$u = \sqrt{1 - 0} = 1$。
+当 $t = \sqrt{2} - 1$ 时，
+\[
+u = \sqrt{1 - \left( \sqrt{2} - 1 \right)^2} = \sqrt{1 - \left( 2 + 1 - 2\sqrt{2} \right)} = \sqrt{2\sqrt{2} - 2}
+\]
+将上述变换代入原积分式：
+\[
+I = \int_{1}^{\sqrt{2\sqrt{2}-2}} \frac{4 \cdot \left( -u du \right)}{\left( 2 - u^2 \right) u}
+\]
+\[
+I = \int_{\sqrt{2\sqrt{2}-2}}^{1} \frac{4}{2 - u^2} du
+\]
+利用部分分式分解或积分公式 $\int \frac{1}{a^2 - x^2} dx = \frac{1}{2a} \ln \left| \frac{a + x}{a - x} \right|$，此处 $a = \sqrt{2}$：
+\[
+I = 4 \cdot \left[ \frac{1}{2\sqrt{2}} \ln \left| \frac{\sqrt{2} + u}{\sqrt{2} - u} \right| \right]_{\sqrt{2\sqrt{2}-2}}^{1}
+\]
+\[
+I = \sqrt{2} \left[ \ln \left| \frac{\sqrt{2} + u}{\sqrt{2} - u} \right| \right]_{\sqrt{2\sqrt{2}-2}}^{1}
+\]
+代入上下限得：
+\[
+I = \sqrt{2} \left( \ln \frac{\sqrt{2} + 1}{\sqrt{2} - 1} - \ln \frac{\sqrt{2} + \sqrt{2\sqrt{2}-2}}{\sqrt{2} - \sqrt{2\sqrt{2}-2}} \right)
+\]
+进一步化简第一项：
+\[
+\frac{\sqrt{2} + 1}{\sqrt{2} - 1} = \frac{\left( \sqrt{2} + 1 \right)^2}{2 - 1} = \left( \sqrt{2} + 1 \right)^2
+\]
+因此 $\ln \frac{\sqrt{2} + 1}{\sqrt{2} - 1} = 2 \ln \left( \sqrt{2} + 1 \right)$。最终结果为：
+\[
+I = 2\sqrt{2} \ln \left( \sqrt{2} + 1 \right) - \sqrt{2} \ln \left( \frac{\sqrt{2} + \sqrt{2\sqrt{2}-2}}{\sqrt{2} - \sqrt{2\sqrt{2}-2}} \right)
+\]
+该积分的数值结果约为 $0.3312$。
+\end{solution}
+
+\question
 设函数 $f: \mathbb{R} \to \mathbb{R}$ 和 $g: \mathbb{R} \to \mathbb{R}$ 定义为 $f(x) = e^{x-1} - e^{-|x-1|}$ 且 $g(x) = \frac{1}{2}(e^{x-1} + e^{1-x})$。求在第一象限内，由曲线 $y = f(x)$，$y = g(x)$ 及 $x = 0$ 围成的图形面积。
 
 \begin{solution}
@@ -11514,6 +11623,43 @@ f(1) = \frac{1^7}{1^2 + 1 + 2(1)^7} = \frac{1}{1 + 1 + 2} = \frac{1}{4}
         = \frac{\sqrt{2}}{4} \tan^{-1}\left(\frac{x^2-1}{\sqrt{2}x}\right) - \frac{\sqrt{2}}{8} \ln\left| \frac{x^2-\sqrt{2}x+1}{x^2+\sqrt{2}x+1} \right| + C 
         \]
     \end{solution}
+
+    \question
+设 $f(x) = \frac{x}{\left( 1 + x^n \right)^{1/n}}$，其中 $n \ge 2$，并且 $g(x) = \underbrace{(f \circ f \circ \dots \circ f)}_{f \text{ 出现 } n \text{ 次}} (x)$。那么 $\int x^{n-2} g(x) dx$ 等于
+(A) $\frac{1}{n(n-1)} \left( 1 + nx^n \right)^{1 - \frac{1}{n}} + K$
+(B) $\frac{1}{n-1} \left( 1 + nx^n \right)^{1 - \frac{1}{n}} + K$
+(C) $\frac{1}{n(n+1)} \left( 1 + nx^n \right)^{1 + \frac{1}{n}} + K$
+(D) $\frac{1}{n+1} \left( 1 + nx^n \right)^{1 + \frac{1}{n}} + K$
+
+\begin{solution}
+首先，我们探究函数 $f(x)$ 迭代的规律。
+计算 $f(f(x))$：
+\[
+f(f(x)) = \frac{\frac{x}{(1+x^n)^{1/n}}}{\left( 1 + \left( \frac{x}{(1+x^n)^{1/n}} \right)^n \right)^{1/n}} = \frac{\frac{x}{(1+x^n)^{1/n}}}{\left( 1 + \frac{x^n}{1+x^n} \right)^{1/n}} = \frac{\frac{x}{(1+x^n)^{1/n}}}{\left( \frac{1+2x^n}{1+x^n} \right)^{1/n}} = \frac{x}{(1+2x^n)^{1/n}}
+\]
+以此类推，经过 $n$ 次迭代后的函数 $g(x)$ 为：
+\[
+g(x) = \frac{x}{(1+nx^n)^{1/n}}
+\]
+现在计算积分 $\int x^{n-2} g(x) dx$：
+\[
+\int x^{n-2} \frac{x}{(1+nx^n)^{1/n}} dx = \int \frac{x^{n-1}}{(1+nx^n)^{1/n}} dx
+\]
+令 $u = 1 + nx^n$，则 $du = n^2 x^{n-1} dx$，即 $x^{n-1} dx = \frac{1}{n^2} du$。
+代入积分式：
+\[
+\int \frac{1}{n^2} \frac{1}{u^{1/n}} du = \frac{1}{n^2} \int u^{-1/n} du
+\]
+计算积分：
+\[
+\frac{1}{n^2} \cdot \frac{u^{1 - 1/n}}{1 - 1/n} + K = \frac{1}{n^2} \cdot \frac{u^{\frac{n-1}{n}}}{\frac{n-1}{n}} + K = \frac{1}{n(n-1)} u^{\frac{n-1}{n}} + K
+\]
+将 $u = 1 + nx^n$ 代回：
+\[
+\frac{1}{n(n-1)} \left( 1 + nx^n \right)^{1 - \frac{1}{n}} + K
+\]
+因此，正确选项为 (A)。
+\end{solution}
 %exponential
     \question 
     \[
