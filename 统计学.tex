@@ -986,6 +986,38 @@ N - 1 = 10
         \]
     \end{solution}
 
+    \question 一个信号可能是绿色或红色，概率分别为 $\frac{4}{5}$ 和 $\frac{1}{5}$。该信号由站 A 接收后传输给站 B。每个站正确接收信号的概率均为 $\frac{3}{4}$。如果站 B 接收到的信号是绿色，则原始信号是绿色的概率为
+A) $\frac{3}{5}$ \qquad B) $\frac{6}{7}$ \qquad C) $\frac{20}{23}$ \qquad D) $\frac{9}{20}$
+
+\begin{solution}
+设定事件：
+$G$：原始信号为绿色，$P(G) = \frac{4}{5}$；
+$R$：原始信号为红色，$P(R) = \frac{1}{5}$；
+$B_G$：站 B 接收到的信号为绿色。
+
+我们需要计算条件概率 $P(G | B_G)$。根据贝叶斯定理：
+\[
+P(G | B_G) = \frac{P(B_G | G) P(G)}{P(B_G | G) P(G) + P(B_G | R) P(R)}
+\]
+考虑传输过程中的正确性（$T$）和错误性（$F$），正确概率 $P(T) = \frac{3}{4}$，错误概率 $P(F) = \frac{1}{4}$。
+站 B 接收到绿色信号的情形如下：
+1. 若原始信号为绿色 ($G$)：
+站 B 收到绿色意味着（A对且B对）或（A错且B错）：
+\[
+P(B_G | G) = P(T_A)P(T_B) + P(F_A)P(F_B) = \frac{3}{4} \times \frac{3}{4} + \frac{1}{4} \times \frac{1}{4} = \frac{9}{16} + \frac{1}{16} = \frac{10}{16} = \frac{5}{8}
+\]
+2. 若原始信号为红色 ($R$)：
+站 B 收到绿色意味着（A对且B错）或（A错且B对）：
+\[
+P(B_G | R) = P(T_A)P(F_B) + P(F_A)P(T_B) = \frac{3}{4} \times \frac{1}{4} + \frac{1}{4} \times \frac{3}{4} = \frac{3}{16} + \frac{3}{16} = \frac{6}{16} = \frac{3}{8}
+\]
+代入贝叶斯公式：
+\[
+P(G | B_G) = \frac{\frac{5}{8} \times \frac{4}{5}}{\left(\frac{5}{8} \times \frac{4}{5}\right) + \left(\frac{3}{8} \times \frac{1}{5}\right)} = \frac{\frac{20}{40}}{\frac{20}{40} + \frac{3}{40}} = \frac{20}{23}
+\]
+故正确选项为 C。
+\end{solution}
+
     \question 设 $P(n)$ 表示在 $n$ 次抛掷一枚公平硬币时,出现至少连续三个正面的概率。求满足 $P(n)\ge \dfrac12$ 的最小整数 $n$。
     \begin{solution}
         设事件 $E_i$ 表示首次出现连续三个正面恰好发生在第 $i$ 次抛掷时,则

@@ -11822,7 +11822,7 @@ P = \frac{14}{120} = \frac{7}{60}
 n(U) = n, \quad n(M) = 37, \quad n(E) = 29, \quad n(C) = 9,
 \]
 \[
-n(M \cap E) = 18, \quad n(M \cap C) = 6, \quad n(E \cap C) = 4。
+n(M \cap E) = 18, \quad n(M \cap C) = 6, \quad n(E \cap C) = 4
 \]
 假设 $n(M \cap E \cap C) = x$。
 则 $x \le \min\{n(M \cap E), n(M \cap C), n(E \cap C)\} = 4$。另一方面，
@@ -11831,24 +11831,56 @@ n(M) \ge n(M \cap (E \cup C)) = n(M \cap E) + n(M \cap C) - n(M \cap E \cap C)
 \]
 说明
 \[
-x = n(M \cap E \cap C) \ge 18 + 6 - 37 = -13。
+x = n(M \cap E \cap C) \ge 18 + 6 - 37 = -13
 \]
 同理，
 \[
-x \ge 18 + 4 - 29 = -7,
+x \ge 18 + 4 - 29 = -7
 \]
 且
 \[
-x \ge 6 + 4 - 9 = 1。
+x \ge 6 + 4 - 9 = 1
 \]
 因此，$1 \le x \le 4$。最后，我们有
 \[
-n(M \cup E \cup C) = 37 + 29 + 9 - 18 - 6 - 4 + x = 47 + x \ge 48。
+n(M \cup E \cup C) = 37 + 29 + 9 - 18 - 6 - 4 + x = 47 + x \ge 48
 \]
 所以，
 \[
-n \ge n(M \cup E \cup C) \ge 48。
+n \ge n(M \cup E \cup C) \ge 48
 \]
+\end{solution}
+
+\question 设 $S = \{1, 2, 3, 4\}$。$S$ 的不计顺序的互斥子集对的总数等于
+A) 25 \qquad B) 34 \qquad C) 42 \qquad D) 41
+
+\begin{solution}
+我们需要寻找 $S$ 的互斥子集对 $\{A, B\}$，使得 $A \cap B = \emptyset$。注意题目要求的是“不计顺序的对”（unordered pairs）。
+
+首先，我们考虑有顺序的对 $(A, B)$，使得 $A \cap B = \emptyset$。
+对于 $S$ 中的每一个元素 $x \in \{1, 2, 3, 4\}$，它有且只有三种可能的状态：
+1. $x \in A$（则必有 $x \notin B$）
+2. $x \in B$（则必有 $x \notin A$）
+3. $x \notin A$ 且 $x \notin B$
+
+因为 $|S| = 4$，所以有顺序的互斥子集对 $(A, B)$ 的总数为
+\[
+3^4 = 81
+\]
+在这 $81$ 对中，只有当 $A = B$ 时，顺序的改变不会产生新的对。
+由于 $A \cap B = \emptyset$，若 $A = B$，则必须满足 $A = B = \emptyset$。
+这种情形只有 $1$ 种，即 $(\emptyset, \emptyset)$。
+
+对于其余的 $81 - 1 = 80$ 对，每一对 $\{A, B\}$（其中 $A \neq B$）在有顺序的计数中都被计算了两次（例如 $(A, B)$ 和 $(B, A)$）。
+因此，不计顺序且 $A \neq B$ 的互斥子集对数量为
+\[
+\frac{81 - 1}{2} = 40
+\]
+加上 $A = B = \emptyset$ 这唯一的一种情况，总数为
+\[
+40 + 1 = 41
+\]
+故正确选项为 D。
 \end{solution}
 
 \question

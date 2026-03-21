@@ -10910,6 +10910,31 @@ PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\s
         \]
     \end{solution}
 
+    \question 48. 表达式 \[
+\frac{1}{\sin^{2} \theta + 3 \sin \theta \cos \theta + 5 \cos^{2} \theta}
+\] 的最大值是
+
+\begin{solution}
+设分母为 \[
+f(\theta) = \sin^{2} \theta + 3 \sin \theta \cos \theta + 5 \cos^{2} \theta
+\]
+利用二倍角公式与降幂公式：
+\begin{align*}
+f(\theta) &= \frac{1 - \cos 2\theta}{2} + \frac{3}{2} \sin 2\theta + 5 \left( \frac{1 + \cos 2\theta}{2} \right) \\
+&= \frac{1 + 5}{2} + \frac{3}{2} \sin 2\theta + \frac{5 - 1}{2} \cos 2\theta \\
+&= 3 + \frac{3}{2} \sin 2\theta + 2 \cos 2\theta
+\end{align*}
+根据辅助角公式，\(\frac{3}{2} \sin 2\theta + 2 \cos 2\theta\) 的最小值为 \[
+-\sqrt{\left( \frac{3}{2} \right)^{2} + 2^{2}} = -\sqrt{\frac{9}{4} + 4} = -\frac{5}{2}
+\]
+因此分母 \(f(\theta)\) 的最小值为 \(3 - \frac{5}{2} = \frac{1}{2}\)。
+当分母取最小值时，表达式取最大值：
+\[
+\frac{1}{\frac{1}{2}} = 2
+\]
+答案为 2。
+\end{solution}
+
 \question 29. 已知一三角形三边的长为 $a, b, c$，其中 $a, b, c$ 都是整数。若三角形的周长是 $P$ 个单位，面积是 $A$ 个平方单位，其中 $P = 2A$，求 $A$ 的最大可能值。
 
 \begin{solution}
@@ -12539,6 +12564,41 @@ x = 18, \quad y = 9, \quad z = 6.
     \]
     故所求之值为 96。
 \end{solution}
+
+\question 设 $a_1, a_2, a_3, \dots, a_{11}$ 为实数，满足：
+\[
+a_1 = 15, \quad 27 - 2a_2 > 0 \text{ 且 } a_k = 2a_{k-1} - a_{k-2} \text{ 对于 } k = 3, 4, \dots, 11
+\]
+若 $\frac{a_1^2 + a_2^2 + \dots + a_{11}^2}{11} = 90$，则 $\frac{a_1 + a_2 + \dots + a_{11}}{11}$ 的值等于
+\begin{solution}
+由递推关系 $a_k = 2a_{k-1} - a_{k-2}$ 可知，$a_{k} - a_{k-1} = a_{k-1} - a_{k-2}$，这意味着数列 $\{a_n\}$ 是一个等差数列。
+设公差为 $d$，则 $a_n = a_1 + (n-1)d = 15 + (n-1)d$。
+已知 $27 - 2a_2 > 0$，代入 $a_2 = 15 + d$ 得：
+\[
+27 - 2(15 + d) > 0 \implies 27 - 30 - 2d > 0 \implies -3 - 2d > 0 \implies d < -\frac{3}{2}
+\]
+接下来计算平方平均值。设平均数为 $\mu = \frac{1}{11} \sum_{i=1}^{11} a_i = a_6 = 15 + 5d$。
+利用等差数列平方和公式或平移性质，令 $x_i = a_i - a_6$，则 $x_i$ 分别为 $-5d, -4d, \dots, 0, \dots, 5d$。
+\[
+\frac{1}{11} \sum_{i=1}^{11} a_i^2 = \frac{1}{11} \sum_{i=1}^{11} (a_6 + x_i)^2 = a_6^2 + \frac{2 a_6}{11} \sum x_i + \frac{1}{11} \sum x_i^2
+\]
+由于 $\sum x_i = 0$，且 $\sum_{i=-n}^n i^2 = \frac{n(n+1)(2n+1)}{3}$，此处 $n=5$：
+\[
+\sum x_i^2 = d^2 \cdot 2 \sum_{j=1}^5 j^2 = d^2 \cdot 2 \cdot \frac{5 \cdot 6 \cdot 11}{6} = 110d^2
+\]
+代入已知条件 $90 = a_6^2 + \frac{110d^2}{11} = (15+5d)^2 + 10d^2$。
+展开并化简：
+\[
+90 = 225 + 150d + 25d^2 + 10d^2 \implies 35d^2 + 150d + 135 = 0
+\]
+同时除以 5：
+\[
+7d^2 + 30d + 27 = 0 \implies (7d + 9)(d + 3) = 0
+\]
+解得 $d = -\frac{9}{7}$ 或 $d = -3$。
+根据前文约束 $d < -1.5$，由于 $-\frac{9}{7} \approx -1.28$，故舍去，取 $d = -3$。
+所求值为 $\frac{a_1 + \dots + a_{11}}{11} = a_6 = 15 + 5(-3) = 0$。
+\end{solution}
     
     \question 已知 $a_1=-1,a_{n+1}=2a_n-3$, 求 $a_{2017}$。
     \begin{solution}
@@ -13132,6 +13192,44 @@ $$\frac{a_{n+1}}{a_n}-\frac{a_{n+2}}{a_n}-\frac{a_{n+1}a_{n+2}}{a_n^2}=\frac{na_
         a_4+a_8+\dots+a_{100} = \frac{25}{2}(-92+100)=100.
         \]
     \end{solution}
+
+    \question 若一个等差数列的前 $n$ 项和为 $cn^2$，则这 $n$ 项的平方和为
+A) $\frac{n(4n^2 - 1)c^2}{6}$ \qquad B) $\frac{n(4n^2 + 1)c^2}{3}$ \qquad C) $\frac{n(4n^2 - 1)c^2}{3}$ \qquad D) $\frac{n(4n^2 + 1)c^2}{6}$
+
+\begin{solution}
+已知 $S_n = cn^2$。我们可以求出通项公式 $a_n$。
+当 $n=1$ 时，$a_1 = S_1 = c(1)^2 = c$。
+当 $n \ge 2$ 时：
+\[
+a_n = S_n - S_{n-1} = cn^2 - c(n-1)^2 = c[n^2 - (n^2 - 2n + 1)] = c(2n - 1)
+\]
+经检验，$n=1$ 时 $c(2(1)-1) = c$ 也成立，所以通项公式为 $a_k = c(2k - 1)$。
+我们需要计算前 $n$ 项的平方和 $\sum_{k=1}^n a_k^2$：
+\[
+\sum_{k=1}^n [c(2k - 1)]^2 = c^2 \sum_{k=1}^n (4k^2 - 4k + 1) = c^2 \left( 4 \sum_{k=1}^n k^2 - 4 \sum_{k=1}^n k + \sum_{k=1}^n 1 \right)
+\]
+利用求和公式：
+\[
+\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}, \quad \sum_{k=1}^n k = \frac{n(n+1)}{2}, \quad \sum_{k=1}^n 1 = n
+\]
+代入得：
+\[
+c^2 \left[ 4 \cdot \frac{n(n+1)(2n+1)}{6} - 4 \cdot \frac{n(n+1)}{2} + n \right] = c^2 \left[ \frac{2n(n+1)(2n+1)}{3} - 2n(n+1) + n \right]
+\]
+提取公因子 $\frac{n}{3}$：
+\[
+\frac{nc^2}{3} [2(n+1)(2n+1) - 6(n+1) + 3]
+\]
+展开括号内的各项：
+\[
+2(2n^2 + 3n + 1) - 6n - 6 + 3 = 4n^2 + 6n + 2 - 6n - 3 = 4n^2 - 1
+\]
+因此，总和为：
+\[
+\frac{n(4n^2 - 1)c^2}{3}
+\]
+故正确选项为 C。
+\end{solution}
 
     \question 已知 $F_1 = 0, F_2 = 1$ ,求斐波那契数列 $F_n + F_{n+1} = F_{n+2}$ 的通项 $F_n$ 。
     \begin{solution}
@@ -15086,6 +15184,37 @@ S = \frac{1}{2!} - \frac{1}{50!}
         =\frac{5}{24}
         \]
     \end{solution}
+
+    \question 54. 设 \(S_{k}\)（\(k = 1, 2, \dots, 100\)）表示首项为 \(\frac{k - 1}{k!}\)、公比为 \(\frac{1}{k}\) 的无穷等比级数的和。则 \[\frac{100^{2}}{100!} + \sum_{k=1}^{100} \left| \left( k^{2} - 3k + 1 \right) S_{k} \right|\] 的值是
+
+\begin{solution}
+1. \textbf{求出 \(S_k\) 的表达式}：
+根据无穷等比级数求和公式 \(S = \frac{a}{1 - r}\)，当 \(k > 1\) 时：
+\[
+S_{k} = \frac{\frac{k - 1}{k!}}{1 - \frac{1}{k}} = \frac{\frac{k - 1}{k!}}{\frac{k - 1}{k}} = \frac{k}{k!} = \frac{1}{(k - 1)!}
+\]
+当 \(k = 1\) 时，首项为 0，故 \(S_1 = 0\)。
+
+2. \textbf{裂项分析}：
+设 \(T_k = (k^{2} - 3k + 1)S_{k} = \frac{k^{2} - 3k + 1}{(k - 1)!}\)。
+将分子变形为：\(k^{2} - 3k + 1 = (k-1)(k-2) - 1\)。
+则对于 \(k \ge 3\)：
+\[
+T_k = \frac{(k-1)(k-2)}{(k-1)!} - \frac{1}{(k-1)!} = \frac{1}{(k-3)!} - \frac{1}{(k-1)!}
+\]
+
+3. \textbf{计算求和项}：
+\(T_1 = 0\)，\(T_2 = \frac{4-6+1}{1!} = -1\)，故 \(|T_2| = 1\)。对于 \(k \ge 3\)，\(T_k > 0\)。
+\begin{align*}
+\sum_{k=1}^{100} |T_k| &= 1 + \sum_{k=3}^{100} \left( \frac{1}{(k-3)!} - \frac{1}{(k-1)!} \right) \\
+&= 1 + \left( \frac{1}{0!} + \frac{1}{1!} - \frac{1}{98!} - \frac{1}{99!} \right) \\
+&= 3 - \left( \frac{100}{100!} + \frac{100 \cdot 99}{100!} \right) = 3 - \frac{100^2}{100!}
+\end{align*}
+
+4. \textbf{最终结果}：
+原式 \(= \frac{100^2}{100!} + 3 - \frac{100^2}{100!} = 3\)。
+答案为 3。
+\end{solution}
 
     \question 求极限
     \[
@@ -18009,6 +18138,38 @@ Q = D P D
 \det(Q) = 2^6 \cdot 2 \cdot 2^6 = 2^{6+1+6} = 2^{13}
 \]
 正确选项为 D。
+\end{solution}
+
+\question 设 $k$ 为正实数，且
+\[
+A = \begin{bmatrix} 2k-1 & 2\sqrt{k} & 2\sqrt{k} \\ 2\sqrt{k} & 1 & -2k \\ -2\sqrt{k} & 2k & -1 \end{bmatrix} \text{ 且 } B = \begin{bmatrix} 0 & 2k-1 & \sqrt{k} \\ 1-2k & 0 & 2\sqrt{k} \\ -\sqrt{k} & -2\sqrt{k} & 0 \end{bmatrix}
+\]
+若 $\det(\text{adj } A) + \det(\text{adj } B) = 10^6$，则 $[k]$ 的值等于
+（注：$\text{adj } M$ 表示方阵 $M$ 的伴随矩阵，$[k]$ 表示不超过 $k$ 的最大整数）
+\begin{solution}
+首先计算 $A$ 和 $B$ 的行列式。
+对于矩阵 $B$，观察到 $B^T = -B$，即 $B$ 是一个 $3 \times 3$ 的反对称矩阵。
+奇数阶反对称矩阵的行列式始终为 $0$，故 $\det(B) = 0$。
+根据伴随矩阵行列式性质 $\det(\text{adj } M) = (\det M)^{n-1}$，此处 $n=3$：
+\[
+\det(\text{adj } B) = (\det B)^2 = 0^2 = 0
+\]
+对于矩阵 $A$，计算其行列式：
+\[
+\det A = (2k-1)(-1 + 4k^2) - 2\sqrt{k}(-2\sqrt{k} - 4k\sqrt{k}) + 2\sqrt{k}(4k\sqrt{k} + 2\sqrt{k})
+\]
+\[
+\det A = (2k-1)(2k-1)(2k+1) + 4k(1 + 2k) + 4k(2k + 1)
+\]
+\[
+\det A = (2k+1)[(2k-1)^2 + 8k] = (2k+1)(4k^2 - 4k + 1 + 8k) = (2k+1)(4k^2 + 4k + 1) = (2k+1)^3
+\]
+因此 $\det(\text{adj } A) = (\det A)^2 = (2k+1)^6$。
+由题意得：
+\[
+(2k+1)^6 + 0 = 10^6 \implies 2k+1 = 10 \implies 2k = 9 \implies k = 4.5
+\]
+故 $[k] = [4.5] = 4$。
 \end{solution}
     \question
 设 $A = \begin{bmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\ \sin \theta & 0 & \cos \theta \end{bmatrix}$。若对于某个 $\theta \in (0, \pi)$，有 $A^2 = A^T$，则矩阵 $(A + I)^3 + (A - I)^3 - 6A$ 的对角元素之和等于 \_\_\_\_\_\_。
@@ -22222,6 +22383,33 @@ Q.17 设 $z$ 为满足 $|z|^3 + 2z^2 + 4\bar{z} - 8 = 0$ 的复数，其中 $\ba
     $|2 + i\sqrt{3}|^2 = 2^2 + (\sqrt{3})^2 = 4 + 3 = 7$。 匹配 **(5)**。
 
 **注意：** 根据以上计算，匹配结果为 (P)→(2), (Q)→(1), (R)→(3), (S)→(5)。这对应选项 **(B)**。
+\end{solution}
+
+\question 53. 设 \(\omega = \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}\)。则满足下式的互不相同的复数 \(z\) 的个数为
+\[
+\begin{vmatrix} z + 1 & \omega & \omega^{2} \\ \omega & z + \omega^{2} & 1 \\ \omega^{2} & 1 & z + \omega \end{vmatrix} = 0
+\]
+
+\begin{solution}
+已知 \(1 + \omega + \omega^{2} = 0\) 且 \(\omega^{3} = 1\)。将行列式的所有列加到第一列：
+\[
+\begin{vmatrix} z + 1 + \omega + \omega^{2} & \omega & \omega^{2} \\ z + 1 + \omega + \omega^{2} & z + \omega^{2} & 1 \\ z + 1 + \omega + \omega^{2} & 1 & z + \omega \end{vmatrix} = \begin{vmatrix} z & \omega & \omega^{2} \\ z & z + \omega^{2} & 1 \\ z & 1 & z + \omega \end{vmatrix} = 0
+\]
+提取因子 \(z\)，显然 \(z = 0\) 是一个根。当 \(z \neq 0\) 时：
+\[
+\begin{vmatrix} 1 & \omega & \omega^{2} \\ 1 & z + \omega^{2} & 1 \\ 1 & 1 & z + \omega \end{vmatrix} = 0 \implies \begin{vmatrix} 1 & \omega & \omega^{2} \\ 0 & z + \omega^{2} - \omega & 1 - \omega^{2} \\ 0 & 1 - \omega & z + \omega - \omega^{2} \end{vmatrix} = 0
+\]
+化简为：
+\[
+(z + \omega^{2} - \omega)(z + \omega - \omega^{2}) - (1 - \omega^{2})(1 - \omega) = 0
+\]
+\[
+z^{2} - (\omega - \omega^{2})^{2} - (1 - \omega - \omega^{2} + \omega^{3}) = 0
+\]
+由于 \((\omega - \omega^{2})^{2} = \omega^{2} - 2\omega^{3} + \omega^{4} = \omega^{2} - 2 + \omega = -1 - 2 = -3\)，且 \(1 - (\omega + \omega^{2}) + 1 = 1 - (-1) + 1 = 3\)。
+方程变为 \(z^{2} - (-3) - 3 = 0 \implies z^{2} = 0\)。
+因此所有根均为 \(z = 0\)，互不相同的复数 \(z\) 只有 1 个。
+答案为 1。
 \end{solution}
 
     \question 已知两复数 $z_1, z_2$ 满足 $|z_1 - (3 + 3i)| = 2,|iz_2 - 1| = 1$,求 $|z_1 - z_2|$ 的最小值。
