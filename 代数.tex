@@ -800,6 +800,29 @@ a_{10} - 2a_8 &= 6a_9 \\
 于是 $(x - 2)(x + 10) = 0$，即 $x_1 = 2$，$x_2 = -10$。
 \end{solution}
 
+\question
+解方程：$\frac{2x - 6}{1001} + \frac{2x - 5}{1002} + \frac{2x - 4}{1003} = 3$。
+
+\begin{solution}
+将等式右边的 3 移至左边，拆分为三个 1，得
+\[
+\left( \frac{2x - 6}{1001} - 1 \right) + \left( \frac{2x - 5}{1002} - 1 \right) + \left( \frac{2x - 4}{1003} - 1 \right) = 0
+\]
+通分得
+\[
+\frac{2x - 6 - 1001}{1001} + \frac{2x - 5 - 1002}{1002} + \frac{2x - 4 - 1003}{1003} = 0
+\]
+\[
+\frac{2x - 1007}{1001} + \frac{2x - 1007}{1002} + \frac{2x - 1007}{1003} = 0
+\]
+提取公因式得
+\[
+(2x - 1007) \left( \frac{1}{1001} + \frac{1}{1002} + \frac{1}{1003} \right) = 0
+\]
+因为 $\frac{1}{1001} + \frac{1}{1002} + \frac{1}{1003} \neq 0$，
+所以 $2x - 1007 = 0$，解得 $x = \frac{1007}{2}$。
+\end{solution}
+
 \question 解方程 $\frac{x^2 - x + 1}{x^2 + 2} + \frac{x + 1}{x^2 - x + 1} = 1$。
 
 \begin{solution}
@@ -1750,6 +1773,60 @@ $\alpha - 1$ 和 $1 - \beta$ 都是方程 $x^3 + 2x - 14 = 0$ 的实根。由于
         \end{align*}
     \end{solution}
 
+    \question 已知 $\frac{a^2b^2}{a^4 - 2b^4} = 1$，则 $\frac{a^2 - b^2}{19a^2 + 62b^2} =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+对已知等式 $\frac{a^2b^2}{a^4 - 2b^4} = 1$ 的分子分母同时除以 $b^4$：
+\[
+\frac{\frac{a^2}{b^2}}{\left(\frac{a^2}{b^2}\right)^2 - 2} = 1
+\]
+令 $t = \frac{a^2}{b^2}$，则 $\frac{t}{t^2 - 2} = 1 \Rightarrow t^2 - t - 2 = 0$。
+解得 $t = 2$ 或 $t = -1$（舍去，因为 $t = \frac{a^2}{b^2} \ge 0$）。
+故 $\frac{a^2}{b^2} = 2$，即 $a^2 = 2b^2$。
+代入所求式，同时除以 $b^2$：
+\[
+\frac{\frac{a^2}{b^2} - 1}{19\frac{a^2}{b^2} + 62} = \frac{2 - 1}{19(2) + 62} = \frac{1}{38 + 62} = \frac{1}{100}
+\]
+所以结果为 $\frac{1}{100}$。
+\end{solution}
+
+\question
+若 $x + \frac{5}{\sqrt{x}} = 26$，则 $x^2 - 27x + 100 =$
+
+\begin{solution}
+由原方程得 $\frac{5}{\sqrt{x}} = 26 - x$。
+两边平方得
+\[
+\frac{25}{x} = (26 - x)^2
+\]
+整理得
+\[
+x(x - 26)^2 - 25 = 0
+\]
+\[
+x(x - 26)^2 - x + x - 25 = 0
+\]
+\[
+x\left[ (x - 26)^2 - 1 \right] + (x - 25) = 0
+\]
+\[
+x(x - 25)(x - 27) + (x - 25) = 0
+\]
+\[
+(x - 25)(x^2 - 27x + 1) = 0
+\]
+解得 $x = 25$ 或 $x^2 - 27x = -1$。
+当 $x = 25$ 时，
+\[
+x^2 - 27x + 100 = 25^2 - 27 \times 25 + 100 = 50
+\]
+当 $x^2 - 27x = -1$ 时，
+\[
+x^2 - 27x + 100 = -1 + 100 = 99
+\]
+故原式的值为 50 或 99。
+\end{solution}
+
     \question 已知 $a - b = 1, b - c = 2, c - d = 3$，求 $a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da$ 的值。
 
 \begin{solution}
@@ -1795,6 +1872,21 @@ a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da = \frac{1}{2} [2a^2 + 2b^2 + 2c^2 + 2d
         \frac{(a-b)(a-c)}{(b-c)^2} = \frac{-\alpha \gamma}{\beta^2} = \frac{\alpha(\alpha+\beta)}{\left(\frac{1-\sqrt{3}}{2}\right)^2 \alpha^2} = \frac{\frac{3-\sqrt{3}}{2}\alpha^2}{\frac{4-2\sqrt{3}}{4}\alpha^2} = \frac{3-\sqrt{3}}{2-\sqrt{3}} \cdot \frac{2+\sqrt{3}}{2+\sqrt{3}}= 3+\sqrt{3}
         \]
     \end{solution}
+    \begin{solution}
+        考虑关于$x$的二次方程
+        \[
+        (b-c)x^2+(a-b)x+(c-a)=0
+        \]
+        其两根为$\sqrt{3},1$,且由韦达定理,
+        \[
+        \sqrt{3}+1=\frac{a-b}{b-c},\quad \sqrt{3}\cdot 1=\frac{a-c}{b-c}
+        \]
+        故
+        \[
+        \frac{(a-b)(a-c)}{(b-c)^2}=\sqrt{3}(\sqrt{3}+1)=3+\sqrt{3}
+        \]
+    \end{solution}
+
     \question 已知 $a+b+c=6$,且
     \[
     \frac{1}{a}+\frac{1}{b}+\frac{1}{c}=2,
@@ -2004,6 +2096,88 @@ a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da = \frac{1}{2} [2a^2 + 2b^2 + 2c^2 + 2d
         \frac{x+1}{x-1} = -1 \Rightarrow x = 0
         \]
     \end{solution}
+
+    \question 已知：$x^2 = y + 2, y^2 = x + 2$ ($x \ne y$)，则 $2x^2 + 3x + y + 2xy =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+两式相减得：
+\[
+x^2 - y^2 = (y + 2) - (x + 2) = y - x
+\]
+\[
+(x + y)(x - y) = -(x - y)
+\]
+由于 $x \ne y$，两边约去 $x - y$ 得 $x + y = -1$。
+原式变形：
+\[
+2x^2 + 2xy + 3x + y = 2x(x + y) + 3x + y
+\]
+代入 $x + y = -1$：
+\[
+= 2x(-1) + 3x + y = -2x + 3x + y = x + y = -1
+\]
+所以结果为 $-1$。
+\end{solution}
+
+    \question 已知 $(a^2 - 3a + 1) = 0$，则 $3a^3 - 8a^2 + a + \frac{3}{a^2 + 1} =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+由 $a^2 - 3a + 1 = 0$ 知 $a \ne 0$，等式两边同除以 $a$：
+\[
+a - 3 + \frac{1}{a} = 0 \Rightarrow a + \frac{1}{a} = 3
+\]
+对原式进行降次处理，利用 $a^2 = 3a - 1$：
+\[
+3a^3 - 8a^2 + a + \frac{3}{a^2 + 1} = 3a(3a - 1) - 8a^2 + a + \frac{3}{3a - 1 + 1}
+\]
+\[
+= 9a^2 - 3a - 8a^2 + a + \frac{3}{3a} = a^2 - 2a + \frac{1}{a}
+\]
+再次代入 $a^2 = 3a - 1$：
+\[
+= (3a - 1) - 2a + \frac{1}{a} = a + \frac{1}{a} - 1
+\]
+已知 $a + \frac{1}{a} = 3$，故：
+\[
+3 - 1 = 2
+\]
+所以结果为 $2$。
+\end{solution}
+
+    \question 若 $abc = -1, \frac{a^2}{c} + \frac{b}{c^2} = 1$，则 $ab^5 + bc^5 + ca^5 =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+由 $\frac{a^2}{c} + \frac{b}{c^2} = 1$ 通分得：
+\[
+\frac{a^2c + b}{c^2} = 1 \Rightarrow a^2c + b = c^2
+\]
+由于 $abc = -1$，则 $b = -\frac{1}{ac}$，代入上式：
+\[
+a^2c - \frac{1}{ac} = c^2 \Rightarrow \frac{a^3c^2 - 1}{ac} = c^2
+\]
+\[
+a^3c^2 - 1 = ac^3 \Rightarrow a^3c^2 = ac^3 + 1
+\]
+原式可变形为：
+\[
+ab^5 + bc^5 + ca^5 = a\left(-\frac{1}{ac}\right)^5 + \left(-\frac{1}{ac}\right)c^5 + ca^5
+\]
+\[
+= -\frac{1}{a^4c^5} - \frac{c^4}{a} + ca^5 = \frac{-1 - a^3c^9 + a^9c^6}{a^4c^5}
+\]
+利用 $a^3c^2 = ac^3 + 1$ 进行代换：
+\[
+= \frac{-1 - a^3c^9 + (ac^3 + 1)^3}{a^4c^5} = \frac{-1 - a^3c^9 + a^3c^9 + 3a^2c^6 + 3ac^3 + 1}{a^4c^5}
+\]
+\[
+= \frac{3a^2c^6 + 3ac^3}{a^4c^5} = \frac{3ac^3 + 3}{a^3c^2}
+\]
+再次代入 $ac^3 + 1 = a^3c^2$：
+\[
+= \frac{3(ac^3 + 1)}{a^3c^2} = \frac{3a^3c^2}{a^3c^2} = 3
+\]
+所以结果为 $3$。
+\end{solution}
 
     \question 已知 $(a-b)(b-c)(c-a) = 3$，设
 \[ S = (a-b)(99-c)(999-2c) + (b-c)(99-a)(999-2a) + (c-a)(99-b)(999-2b) \]
@@ -2911,6 +3085,40 @@ a^2=\frac{1}{\left(\sqrt[3]{2}-1\right)^2}=\frac{1}{\sqrt[3]{4}-2\sqrt[3]{2}+1},
 \end{align*}
 \end{solution}
 
+\question 化简：$\frac{\sqrt{15} + \sqrt{35} + \sqrt{21} + 5}{\sqrt{3} + 2\sqrt{5} + \sqrt{7}}$。
+
+\begin{solution}
+观察分子：
+\[
+\sqrt{3 \times 5} + \sqrt{5 \times 7} + \sqrt{3 \times 7} + \sqrt{5 \times 5}
+\]
+\[
+= \sqrt{3}(\sqrt{5} + \sqrt{7}) + \sqrt{5}(\sqrt{7} + \sqrt{5}) = (\sqrt{3} + \sqrt{5})(\sqrt{5} + \sqrt{7})
+\]
+设 $a = \sqrt{3} + \sqrt{5}, b = \sqrt{5} + \sqrt{7}$。
+则原式 $x = \frac{ab}{a + b}$，故 $\frac{1}{x} = \frac{a + b}{ab} = \frac{1}{b} + \frac{1}{a}$。
+\[
+\frac{1}{x} = \frac{1}{\sqrt{7} + \sqrt{5}} + \frac{1}{\sqrt{5} + \sqrt{3}} = \frac{\sqrt{7} - \sqrt{5}}{2} + \frac{\sqrt{5} - \sqrt{3}}{2} = \frac{\sqrt{7} - \sqrt{3}}{2}
+\]
+所以 $x = \frac{2}{\sqrt{7} - \sqrt{3}} = \frac{2(\sqrt{7} + \sqrt{3})}{4} = \frac{\sqrt{7} + \sqrt{3}}{2}$。
+\end{solution}
+
+\question 化简：$\frac{\sqrt[3]{2 + \sqrt{5}}}{1 + \sqrt{5}}$。
+
+\begin{solution}
+设原式为 $x$。为了去掉三次根号，两边同时立方：
+\[
+x^3 = \frac{2 + \sqrt{5}}{(1 + \sqrt{5})^3} = \frac{2 + \sqrt{5}}{(1 + \sqrt{5})^2(1 + \sqrt{5})}
+\]
+\[
+x^3 = \frac{2 + \sqrt{5}}{(6 + 2\sqrt{5})(1 + \sqrt{5})} = \frac{2 + \sqrt{5}}{6 + 6\sqrt{5} + 2\sqrt{5} + 10}
+\]
+\[
+x^3 = \frac{2 + \sqrt{5}}{16 + 8\sqrt{5}} = \frac{2 + \sqrt{5}}{8(2 + \sqrt{5})} = \frac{1}{8}
+\]
+所以 $x = \frac{1}{2}$。
+\end{solution}
+
 \question 例5. 化简 $\sqrt{9+2(1+\sqrt{3})(1+\sqrt{7})}$。
 \begin{solution}
 考虑到 $9+2(1+\sqrt{3})(1+\sqrt{7})=11+2\sqrt{3}+2\sqrt{7}+2\sqrt{21}$，其中 $\sqrt{3}, \sqrt{7}, \sqrt{21}$ 的系数均为 2，自然想到使用待定系数法，设
@@ -2991,6 +3199,65 @@ $\sqrt{x}=\sqrt{a}-\frac{1}{\sqrt{a}}$ 得 $x=a+\frac{1}{a}-2$，所以 $a+\frac
 \frac{x+2+\sqrt{x^2+4x}}{x+2-\sqrt{x^2+4x}}=\frac{\left(a+\frac{1}{a}\right)+\left(a-\frac{1}{a}\right)}{\left(a+\frac{1}{a}\right)-\left(a-\frac{1}{a}\right)}=a^2
 \]
 \end{solution}
+
+\question 已知 $x + y - 2\sqrt{x - 1} - 2\sqrt{y - 5} - 4 = 0$，则 $x + y =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+对原方程进行配方处理：
+\[
+(x - 1) - 2\sqrt{x - 1} + 1 + (y - 5) - 2\sqrt{y - 5} + 1 = 0
+\]
+整理得：
+\[
+\left(\sqrt{x - 1} - 1\right)^2 + \left(\sqrt{y - 5} - 1\right)^2 = 0
+\]
+根据非负性可知：
+\[
+\begin{cases} \sqrt{x - 1} - 1 = 0 \\ \sqrt{y - 5} - 1 = 0 \end{cases} \Rightarrow \begin{cases} x = 2 \\ y = 6 \end{cases}
+\]
+所以 $x + y = 2 + 6 = 8$。
+\end{solution}
+
+\question 已知 $a + \sqrt{3}ab + 1 = \sqrt{3}b - 2\sqrt{3}a$，其中 $a, b$ 为有理数，则 $a + b =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+将含有 $\sqrt{3}$ 的项与有理项分离：
+\[
+(a + 1) = \sqrt{3}b - 2\sqrt{3}a - \sqrt{3}ab
+\]
+\[
+a + 1 = \sqrt{3}(b - 2a - ab)
+\]
+由于 $a, b$ 为有理数，左侧 $a + 1$ 为有理数，右侧若要为有理数，则必有：
+\[
+\begin{cases} a + 1 = 0 \\ b - 2a - ab = 0 \end{cases}
+\]
+由 $a + 1 = 0$ 得 $a = -1$。
+代入第二个方程：$b - 2(-1) - (-1)b = 0 \Rightarrow b + 2 + b = 0 \Rightarrow 2b = -2 \Rightarrow b = -1$。
+故 $a + b = -1 + (-1) = -2$。
+\end{solution}
+
+\question
+已知：$x = \sqrt[3]{4} + \sqrt[3]{2} + 1$，则 $\frac{3}{x} + \frac{3}{x^2} + \frac{1}{x^3} =$
+
+\begin{solution}
+设 $t = \sqrt[3]{2}$，则 $t^3 = 2$，$x = t^2 + t + 1$。
+由于 $(t - 1)x = (t - 1)(t^2 + t + 1) = t^3 - 1 = 2 - 1 = 1$，
+所以 $x = \frac{1}{t - 1}$，即 $\frac{1}{x} = t - 1$。
+代入待求式
+\[
+\frac{3}{x} + \frac{3}{x^2} + \frac{1}{x^3} = \left( \frac{1}{x} \right)^3 + 3\left( \frac{1}{x} \right)^2 \times 1 + 3\left( \frac{1}{x} \right) \times 1^2 + 1^3 - 1
+\]
+\[
+= \left( \frac{1}{x} + 1 \right)^3 - 1
+\]
+将 $\frac{1}{x} = t - 1$ 代入得
+\[
+= (t - 1 + 1)^3 - 1 = t^3 - 1 = 2 - 1 = 1
+\]
+故原式的值为 1。
+\end{solution}
+
     \question 求
     \[
     \frac{\sqrt{10+\sqrt{1}} + \sqrt{10+\sqrt{2}} + \cdots + \sqrt{10+\sqrt{99}}}{\sqrt{10-\sqrt{1}} + \sqrt{10-\sqrt{2}} + \cdots + \sqrt{10-\sqrt{99}}}
@@ -3109,6 +3376,35 @@ $\sqrt{x}=\sqrt{a}-\frac{1}{\sqrt{a}}$ 得 $x=a+\frac{1}{a}-2$，所以 $a+\frac
         x^2 - x - 1 = 0 \Rightarrow x = \frac{1+\sqrt{5}}{2} >0
         \]
     \end{solution}
+
+    \question 解方程：$\frac{x^3}{\sqrt{4 - x^2}} + x^2 = 4$。
+
+\begin{solution}
+首先，由分母知 $4 - x^2 > 0$，即 $-2 < x < 2$。
+原方程变形为：
+\[
+\frac{x^3}{\sqrt{4 - x^2}} = 4 - x^2
+\]
+由于 $4 - x^2 = \left(\sqrt{4 - x^2}\right)^2$，代入上式：
+\[
+\frac{x^3}{\sqrt{4 - x^2}} = \left(\sqrt{4 - x^2}\right)^2
+\]
+\[
+x^3 = \left(\sqrt{4 - x^2}\right)^3
+\]
+由此得：
+\[
+x = \sqrt{4 - x^2}
+\]
+显然需满足 $x > 0$，两边平方：
+\[
+x^2 = 4 - x^2
+\]
+\[
+2x^2 = 4 \Rightarrow x^2 = 2
+\]
+由于 $x > 0$，故 $x = \sqrt{2}$。
+\end{solution}
 
     \question 解方程
     \[
@@ -3408,6 +3704,32 @@ x + \sqrt{x^2 + \sqrt{x^3 + 16}} > 2
 因此，$x = 8 \pm 4\sqrt{2}$ 均不是原方程的解（实际上它们是平方过程中产生的增根）。
 经检验，$x = 0$ 是唯一的实数解。
 所以，该方程只有 1 个实数解。
+\end{solution}
+
+\question 解方程：$2\sqrt[3]{x} - 3\sqrt[4]{x} = 8$。
+
+\begin{solution}
+令 $\sqrt[12]{x} = t \ge 0$，则 $\sqrt[3]{x} = t^4, \sqrt[4]{x} = t^3$。
+代入原方程：
+\[
+2t^4 - 3t^3 - 8 = 0
+\]
+观察系数进行因式分解：
+\[
+2t^4 - 4t^3 + t^3 - 8 = 0
+\]
+\[
+2t^3(t - 2) + (t - 2)(t^2 + 2t + 4) = 0
+\]
+\[
+(t - 2)(2t^3 + t^2 + 2t + 4) = 0
+\]
+由于 $t \ge 0$，则 $2t^3 + t^2 + 2t + 4 > 0$ 恒成立。
+故 $t - 2 = 0 \Rightarrow t = 2$。
+由 $\sqrt[12]{x} = 2$ 得：
+\[
+x = 2^{12} = 4096
+\]
 \end{solution}
 
     \question 设 $a,b$ 为正实数,且
@@ -4029,10 +4351,12 @@ $x^2 - 3x - 4 = 0$ 有两个根 $x = -1$ 和 $x = 4$，且 $x - 2 = 0$ 给出 $x
     2^{x+2}5^{6-x} = 10^{x^{2}},
     \]
     \begin{solution}
-        两边取$\log$得\[
+        两边取$\log$得
+        \[
         (x+2)\log 2+(6-x)\log5=x^2 \Rightarrow x^2-\left(\log \frac{2}{5}\right)x-2\log 250=0
         \]
-        因式分解给出\[
+        因式分解给出
+        \[
         (x-2)(x+\log 250)=0 \Rightarrow x = 2, -\log 250
         \]
     \end{solution}
@@ -4063,6 +4387,21 @@ $x^2 - 3x - 4 = 0$ 有两个根 $x = -1$ 和 $x = 4$，且 $x - 2 = 0$ 给出 $x
         x = \frac{1}{2}, \quad x = -\frac{1}{2}
         \]
     \end{solution}
+
+    \question 解方程：$(8 + 3\sqrt{7})^{x+3} + (8 - 3\sqrt{7})^{x+3} = 16$。
+
+\begin{solution}
+观察底数特点：$(8 + 3\sqrt{7})(8 - 3\sqrt{7}) = 64 - 9 \cdot 7 = 64 - 63 = 1$。
+设 $a = (8 + 3\sqrt{7})^{x+3}$，则 $(8 - 3\sqrt{7})^{x+3} = \frac{1}{a}$。
+原方程变为：
+\[
+a + \frac{1}{a} = 16
+\]
+解得 $a = \frac{16 \pm \sqrt{16^2 - 4}}{2} = \frac{16 \pm \sqrt{252}}{2} = \frac{16 \pm 6\sqrt{7}}{2} = 8 \pm 3\sqrt{7}$。
+1. 当 $a = 8 + 3\sqrt{7}$ 时，$(8 + 3\sqrt{7})^{x+3} = (8 + 3\sqrt{7})^1$，得 $x + 3 = 1 \Rightarrow x = -2$。
+2. 当 $a = 8 - 3\sqrt{7}$ 时，$(8 + 3\sqrt{7})^{x+3} = (8 + 3\sqrt{7})^{-1}$，得 $x + 3 = -1 \Rightarrow x = -4$。
+综上所述，$x_1 = -2, x_2 = -4$。
+\end{solution}
 
     \question 解 
     \[
@@ -4107,6 +4446,25 @@ $x^2 - 3x - 4 = 0$ 有两个根 $x = -1$ 和 $x = 4$，且 $x - 2 = 0$ 给出 $x
         x^5=1 \quad \text{或} \quad x^5 = \left(\frac{11}{6}\right)^{6}
         \]
     \end{solution}
+
+    \question 解方程：$x^{(x-1)^2} = 2x + 1$。
+
+\begin{solution}
+原方程即 $x^{x^2 - 2x + 1} = 2x + 1$。
+变形得：
+\[
+\frac{x^{x^2+1}}{x^{2x}} = 2x + 1 \Rightarrow x^{x^2} \cdot x = (2x + 1) \cdot x^{2x}
+\]
+整理为：
+\[
+\frac{x^{x^2}}{x^{2x+1}} = \frac{2x+1}{x}
+\]
+观察结构，设函数 $f(t) = \frac{x^t}{t}$，上式可看作 $f(x^2) = f(2x+1)$。
+考虑 $x^2 = 2x + 1$：
+\[
+x^2 - 2x - 1 = 0 \Rightarrow x = \frac{2 \pm \sqrt{4 + 4}}{2} = 1 \pm \sqrt{2}
+\]
+\end{solution}
 
     \question 求满足方程 
     \[
@@ -9285,6 +9643,297 @@ k < \frac{-1 + \sqrt{1 + 4 \times 404040}}{2} \approx 635.14
         当 $\log x = -\dfrac{1}{2}$即 $x=\dfrac{\sqrt{10}}{10}$ 时,$\ f(x)$ 取得最大值 $\dfrac{1}{4}$.
     \end{solution}
 
+    \question
+已知：$\frac{\sqrt{6}b - c}{6a} = 1$，则 $\frac{ac}{b^2}$ 的最大值为
+
+\begin{solution}
+由已知得 $\sqrt{6}b - c = 6a$，即 $a = \frac{\sqrt{6}b - c}{6}$。
+设 $\frac{ac}{b^2} = k$，则 $ac = b^2k$，即 $a = \frac{b^2k}{c}$。
+代入已知条件中得
+\[
+\sqrt{6}b - c = 6 \cdot \frac{b^2k}{c}
+\]
+\[
+\sqrt{6}bc - c^2 = 6b^2k
+\]
+整理成关于 $c$ 的一元二次方程
+\[
+c^2 - \sqrt{6}bc + 6b^2k = 0
+\]
+由于 $c$ 为实数，则判别式 $\Delta \ge 0$
+\[
+\Delta = (-\sqrt{6}b)^2 - 4 \times 1 \times 6b^2k \ge 0
+\]
+\[
+6b^2 - 24kb^2 \ge 0
+\]
+因为 $b \neq 0$，两边同时除以 $6b^2$ 得
+\[
+1 - 4k \ge 0
+\]
+\[
+k \le \frac{1}{4}
+\]
+所以 $\frac{ac}{b^2}$ 的最大值为 $\frac{1}{4}$。
+\end{solution}
+
+    \question 已知 $x_1, x_2$ 满足：$x_1^2 - 2x_1x_2 + 2x_2^2 = 2$。当 $x_1^2$ 最大时，$|x_1 + x_2| =$ \underline{\hspace{1cm}}。
+
+\begin{solution}
+将原方程视为关于 $x_2$ 的一元二次方程：
+\[
+2x_2^2 - 2x_1x_2 + (x_1^2 - 2) = 0
+\]
+由于 $x_2$ 为实数，判别式 $\Delta \ge 0$：
+\[
+\Delta = (-2x_1)^2 - 4 \cdot 2 \cdot (x_1^2 - 2) \ge 0
+\]
+\[
+4x_1^2 - 8(x_1^2 - 2) \ge 0
+\]
+\[
+-4x_1^2 + 16 \ge 0 \Rightarrow x_1^2 \le 4
+\]
+当 $x_1^2$ 最大时，$x_1^2 = 4$。
+此时 $\Delta = 0$，方程有唯一解 $x_2 = \frac{2x_1}{2 \cdot 2} = \frac{1}{2}x_1$。
+1. 若 $x_1 = 2$，则 $x_2 = 1$，此时 $|x_1 + x_2| = |2 + 1| = 3$。
+2. 若 $x_1 = -2$，则 $x_2 = -1$，此时 $|x_1 + x_2| = |-2 - 1| = 3$。
+综上所述，$|x_1 + x_2| = 3$。
+\end{solution}
+
+\question 已知 $(|x - 1| + |x + 3|)(|y + 4| + |y - 2|) = 24$，则 $x + 2y$ 的最大值为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+根据绝对值的几何意义：
+$|x - 1| + |x + 3|$ 表示数轴上点 $x$ 到 $1$ 和 $-3$ 的距离之和，其最小值为 $|1 - (-3)| = 4$。
+$|y + 4| + |y - 2|$ 表示数轴上点 $y$ 到 $-4$ 和 $2$ 的距离之和，其最小值为 $|2 - (-4)| = 6$。
+已知两部分之积为 $4 \times 6 = 24$，因此必须同时取到最小值：
+\[
+\begin{cases} |x - 1| + |x + 3| = 4 \\ |y + 4| + |y - 2| = 6 \end{cases}
+\]
+解得：
+\[
+\begin{cases} -3 \le x \le 1 \\ -4 \le y \le 2 \end{cases}
+\]
+为了使 $x + 2y$ 最大，取 $x = 1$，$y = 2$：
+\[
+x + 2y = 1 + 2 \times 2 = 5
+\]
+所以最大值为 $5$。
+\end{solution}
+
+\question 若 $\left| 5 - \frac{1}{6}x \right| + \frac{1}{3}|5 - x| + \left| \frac{1}{2}x - 1 \right|$ 为定值，则 $x$ 的取值范围是 \underline{\hspace{1cm}}，定值为 \underline{\hspace{1cm}}。
+
+\begin{solution}
+整理各绝对值项：
+\[
+\frac{1}{6}|x - 30| + \frac{1}{3}|x - 5| + \frac{1}{2}|x - 2|
+\]
+取公分母 $\frac{1}{6}$：
+\[
+= \frac{1}{6} \left( |x - 30| + 2|x - 5| + 3|x - 2| \right)
+\]
+展开为单个绝对值之和：
+\[
+= \frac{1}{6} \left( |x - 30| + |x - 5| + |x - 5| + |x - 2| + |x - 2| + |x - 2| \right)
+\]
+要使该式在某个区间内为定值，必须使 $x$ 在系数抵消的中间范围内。观察各点：$30, 5, 5, 2, 2, 2$。
+当 $2 \le x \le 5$ 时：
+$|x - 30| = 30 - x$
+$2|x - 5| = 2(5 - x) = 10 - 2x$
+$3|x - 2| = 3(x - 2) = 3x - 6$
+相加得：$(30 - x) + (10 - 2x) + (3x - 6) = 34$。
+此时定值为 $\frac{1}{6} \times 34 = \frac{17}{3}$。
+所以取值范围是 $2 \le x \le 5$，定值为 $\frac{17}{3}$。
+\end{solution}
+
+\question 已知 $a,b,c > 0$, $a^2 + b^2 = c^2$, 则 $\frac{c}{a+b}$ 的最小值为 $\frac{\sqrt{2}}{2}$。
+
+\begin{solution}
+根据题意，$a^2 + b^2 = c^2$ 表示 $a, b, c$ 构成直角三角形的三边，其中 $c$ 为斜边。
+设 $a = c \cos \theta, b = c \sin \theta$，其中 $\theta \in \left( 0, \frac{\pi}{2} \right)$。
+则有
+\[
+\frac{c}{a+b} = \frac{c}{c \cos \theta + c \sin \theta} = \frac{1}{\cos \theta + \sin \theta}
+\]
+利用三角恒等变换：
+\[
+\cos \theta + \sin \theta = \sqrt{2} \sin \left( \theta + \frac{\pi}{4} \right)
+\]
+当 $\theta = \frac{\pi}{4}$ 时，$\sin \left( \theta + \frac{\pi}{4} \right)$ 取得最大值 $1$。
+此时 $\frac{c}{a+b}$ 取得最小值
+\[
+\frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}
+\]
+\end{solution}
+
+\question 若 $a+b+c = 2, abc = 4$, 则 $|a| + |b| + |c|$ 的最小值是 $6$。
+
+\begin{solution}
+由 $abc = 4 > 0$ 可知，$a, b, c$ 三数全为正，或一正两负。
+若 $a, b, c$ 全为正，则由均值不等式得 $abc \le \left( \frac{a+b+c}{3} \right)^3 = \frac{8}{27} < 4$，矛盾。
+故必有一正两负，设 $a > 0, b < 0, c < 0$。
+此时 $|a| + |b| + |c| = a - b - c = a - (b+c)$。
+由于 $b+c = 2-a$ 且 $bc = \frac{4}{a}$，则 $b, c$ 是方程 $x^2 - (2-a)x + \frac{4}{a} = 0$ 的两根。
+由判别式 $\Delta \ge 0$：
+\[
+(2-a)^2 - \frac{16}{a} \ge 0 \Rightarrow \frac{a(a-2)^2 - 16}{a} \ge 0
+\]
+展开得 $a^3 - 4a^2 + 4a - 16 \ge 0$，即 $(a-4)(a^2+4) \ge 0$。
+由于 $a^2+4 > 0$，故 $a \ge 4$。
+目标式为 $a - (2-a) = 2a - 2$。
+当 $a = 4$ 时，最小值为 $2 \times 4 - 2 = 6$。
+\end{solution}
+
+\question 若 $(x+y)^2 + (x-y)^2 = 20$，则 $3x-y$ 的最大值为 $10$。
+
+\begin{solution}
+原式展开简化为 $2x^2 + 2y^2 = 20$，即 $x^2 + y^2 = 10$。
+构造对偶式，利用恒等式：
+\[
+(3x-y)^2 + (x+3y)^2 = (9x^2 - 6xy + y^2) + (x^2 + 6xy + 9y^2) = 10(x^2 + y^2)
+\]
+代入 $x^2 + y^2 = 10$ 得
+\[
+(3x-y)^2 + (x+3y)^2 = 100
+\]
+因此 $(3x-y)^2 \le 100$，即 $-10 \le 3x-y \le 10$。
+所以 $3x-y$ 的最大值为 $10$。
+\end{solution}
+\question 求 $\sqrt{x-1} + 2\sqrt{9-2x}$ 的最大值。
+
+\begin{solution}
+首先确定定义域，由 $\begin{cases} x-1 \ge 0 \\ 9-2x \ge 0 \end{cases}$ 得 $1 \le x \le \frac{9}{2}$。
+设 $a = \sqrt{x-1}, b = \sqrt{\frac{9}{2}-x}$，则 $a, b \ge 0$。
+由此可得 $a^2 + b^2 = (x-1) + \left( \frac{9}{2}-x \right) = \frac{7}{2}$。
+原式可变形为：
+\[
+\sqrt{x-1} + 2\sqrt{2} \cdot \sqrt{\frac{9}{2}-x} = a + 2\sqrt{2}b
+\]
+根据柯西不等式 $(a^2 + b^2)(c^2 + d^2) \ge (ac + bd)^2$，取 $c=1, d=2\sqrt{2}$：
+\[
+\left( a^2 + b^2 \right) \left( 1^2 + (2\sqrt{2})^2 \right) \ge (a + 2\sqrt{2}b)^2
+\]
+代入数值：
+\[
+\frac{7}{2} \cdot (1 + 8) \ge (a + 2\sqrt{2}b)^2 \Rightarrow \frac{7}{2} \cdot 9 \ge (a + 2\sqrt{2}b)^2
+\]
+即 $(a + 2\sqrt{2}b)^2 \le \frac{63}{2}$，解得 $a + 2\sqrt{2}b \le \sqrt{\frac{63}{2}} = \frac{3\sqrt{14}}{2}$。
+当且仅当 $\frac{a}{1} = \frac{b}{2\sqrt{2}}$ 即 $b = 2\sqrt{2}a$ 时取等号。
+故最大值为 $\frac{3\sqrt{14}}{2}$。
+\end{solution}
+
+\question 若 $x,y > 0$，且 $xy - 2x + y = 0$，则 $\frac{2x}{x-1} + \frac{y}{y-2}$ 的最小值是 $3+2\sqrt{2}$。
+
+\begin{solution}
+由 $xy - 2x + y = 0$ 变形得 $y(x+1) = 2x$，故 $y = \frac{2x}{x+1}$。
+由于 $x,y > 0$，为了使分母有意义且符合结构，将原约束变形为：
+\[
+\frac{2}{y} + \frac{1}{x} = 1
+\]
+设 $a = 1 - \frac{1}{x}, b = 1 - \frac{2}{y}$，则根据题意构造乘积形式：
+\[
+\left( \frac{2}{1-\frac{1}{x}} + \frac{1}{1-\frac{2}{y}} \right) \left( 1-\frac{1}{x} + 1-\frac{2}{y} \right)
+\]
+展开得：
+\[
+2 + \frac{2 \left( 1-\frac{2}{y} \right)}{1-\frac{1}{x}} + \frac{1-\frac{1}{x}}{1-\frac{2}{y}} + 1
+\]
+根据均值不等式：
+\[
+3 + 2\sqrt{2 \cdot \frac{1-\frac{2}{y}}{1-\frac{1}{x}} \cdot \frac{1-\frac{1}{x}}{1-\frac{2}{y}}} = 3+2\sqrt{2}
+\]
+故最小值为 $3+2\sqrt{2}$。
+\end{solution}
+
+\question 若 $\triangle ABC$ 三边分别为 $a, b, c$ 满足 $a^2 + b^2 + 3c^2 = 7$，则 $\triangle ABC$ 的面积最大值是 $\frac{\sqrt{7}}{4}$。
+
+\begin{solution}
+利用外森比克不等式的变体（或称带权重的不等式）：
+对于 $\triangle ABC$ 的面积 $S$ 及三边 $a, b, c$，若存在权重 $x, y, z$，则有：
+\[
+xa^2 + yb^2 + zc^2 \ge 4S\sqrt{xy+yz+zx}
+\]
+当且仅当 $a=b=c$ 时等号成立（需满足权重比例）。
+本题中 $x=1, y=1, z=3$，代入得：
+\[
+a^2 + b^2 + 3c^2 \ge 4S\sqrt{1 \times 1 + 1 \times 3 + 1 \times 3}
+\]
+\[
+7 \ge 4\sqrt{7} \cdot S
+\]
+解得：
+\[
+S \le \frac{7}{4\sqrt{7}} = \frac{\sqrt{7}}{4}
+\]
+故面积最大值为 $\frac{\sqrt{7}}{4}$。
+\end{solution}
+\begin{solution}
+由余弦定理可知 $c^2 = a^2 + b^2 - 2ab \cos C$，代入已知条件 $a^2 + b^2 + 3c^2 = 7$ 得：
+\[
+a^2 + b^2 + 3(a^2 + b^2 - 2ab \cos C) = 7
+\]
+整理得：
+\[
+4(a^2 + b^2) - 6ab \cos C = 7
+\]
+由基本不等式 $a^2 + b^2 \ge 2ab$ 可知：
+\[
+4(2ab) - 6ab \cos C \le 7 \Rightarrow ab(8 - 6 \cos C) \le 7
+\]
+即 $ab \le \frac{7}{8 - 6 \cos C}$。
+又由面积公式 $S = \frac{1}{2} ab \sin C$ 可得：
+\[
+S \le \frac{1}{2} \cdot \frac{7}{8 - 6 \cos C} \cdot \sin C = \frac{7 \sin C}{16 - 12 \cos C}
+\]
+设 $f(C) = \frac{\sin C}{16 - 12 \cos C}$，通过求导或辅助角公式处理可知：
+当 $\cos C = \frac{12}{16} = \frac{3}{4}$ 时，$\sin C = \frac{\sqrt{7}}{4}$，此时 $S$ 取得最大值：
+\[
+S_{max} = \frac{7 \cdot \frac{\sqrt{7}}{4}}{16 - 12 \cdot \frac{3}{4}} = \frac{\frac{7\sqrt{7}}{4}}{7} = \frac{\sqrt{7}}{4}
+\]
+\end{solution}
+
+\question 若 $x,y > 0$，则 $\frac{x+y}{2x^2 + y^2 + 6}$ 的最大值是 $\frac{1}{4}$。
+
+\begin{solution}
+对于结构为 $\frac{x+y}{ax^2 + by^2 + c}$ 的分式，其最大值公式可表示为：
+\[
+\max = \sqrt{\frac{a+b}{4abc}}
+\]
+代入本题参数 $a=2, b=1, c=6$：
+\[
+\max = \sqrt{\frac{2+1}{4 \times 2 \times 1 \times 6}}
+\]
+\[
+= \sqrt{\frac{3}{48}} = \sqrt{\frac{1}{16}} = \frac{1}{4}
+\]
+故最大值为 $\frac{1}{4}$。
+\end{solution}
+\begin{solution}
+为了利用基本不等式抵消分子中的 $x$ 和 $y$，对分母进行拆项配凑。
+由 $2x^2 + m \ge 2\sqrt{2mx^2} = 2\sqrt{2m}x$ 以及 $y^2 + n \ge 2\sqrt{ny^2} = 2\sqrt{n}y$。
+令 $2\sqrt{2m} = 2\sqrt{n} = k$ 且 $m+n=6$。
+解得 $n = 2m$，则 $m + 2m = 6 \Rightarrow m=2, n=4$。
+此时 $k = 2\sqrt{4} = 4$。
+根据基本不等式有：
+\[
+2x^2 + 2 \ge 4x
+\]
+\[
+y^2 + 4 \ge 4y
+\]
+两式相加得：
+\[
+2x^2 + y^2 + 6 \ge 4x + 4y = 4(x+y)
+\]
+由于 $x,y > 0$，则 $x+y > 0$，故：
+\[
+\frac{x+y}{2x^2 + y^2 + 6} \le \frac{x+y}{4(x+y)} = \frac{1}{4}
+\]
+当且仅当 $2x^2 = 2$ 且 $y^2 = 4$，即 $x=1, y=2$ 时等号成立。
+所以该式的最大值为 $\frac{1}{4}$。
+\end{solution}
+%inequality paste here
     \question 已知 $x, y$ 是实数且 $x^2 + xy + y^2 = 10$，求 $2x^2 + 2xy + y^2 - 4y + 11$ 的最大可能值。
 
 \begin{solution}
