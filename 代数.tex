@@ -1887,6 +1887,34 @@ a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da = \frac{1}{2} [2a^2 + 2b^2 + 2c^2 + 2d
         \]
     \end{solution}
 
+    Code snippet
+\question
+已知 $a + \frac{1}{b} = b + \frac{1}{c} = c + \frac{1}{a}$ ($a, b, c$ 互不相等)，则 $a^2 b^2 c^2 = \underline{\qquad}$
+
+\begin{solution}
+由已知条件，分步列出等式：
+\[
+a + \frac{1}{b} = b + \frac{1}{c} \implies a - b = \frac{1}{c} - \frac{1}{b} = \frac{b - c}{bc} \implies bc = \frac{b - c}{a - b} \tag{1}
+\]
+\[
+b + \frac{1}{c} = c + \frac{1}{a} \implies b - c = \frac{1}{a} - \frac{1}{c} = \frac{c - a}{ac} \implies ac = \frac{c - a}{b - c} \tag{2}
+\]
+\[
+c + \frac{1}{a} = a + \frac{1}{b} \implies c - a = \frac{1}{b} - \frac{1}{a} = \frac{a - b}{ab} \implies ab = \frac{a - b}{c - a} \tag{3}
+\]
+将(1),(2),(3)三式相乘：
+\[
+(bc) \cdot (ac) \cdot (ab) = \frac{b - c}{a - b} \cdot \frac{c - a}{b - c} \cdot \frac{a - b}{c - a}
+\]
+\[
+a^2 b^2 c^2 = \frac{(b - c)(c - a)(a - b)}{(a - b)(b - c)(c - a)}
+\]
+由于 $a, b, c$ 互不相等，分母不为 $0$，约分得：
+\[
+a^2 b^2 c^2 = 1
+\]
+\end{solution}
+
     \question 已知 $a+b+c=6$,且
     \[
     \frac{1}{a}+\frac{1}{b}+\frac{1}{c}=2,
@@ -2097,6 +2125,118 @@ a^2 + b^2 + c^2 + d^2 - ab - bc - cd - da = \frac{1}{2} [2a^2 + 2b^2 + 2c^2 + 2d
         \]
     \end{solution}
 
+\question 解方程：$(x^2 - x - 2)^2 - x^3 = 10$。
+
+\begin{solution}
+观察方程，可将常数项 $10$ 拆分为 $3^2 + 1^3$，移项得
+\[
+(x^2 - x - 2)^2 - 3^2 = x^3 + 1^3
+\]
+对左边利用平方差公式，对右边利用立方和公式得
+\[
+(x^2 - x - 2 + 3)(x^2 - x - 2 - 3) = (x+1)(x^2 - x + 1)
+\]
+\[
+(x^2 - x + 1)(x^2 - x - 5) = (x+1)(x^2 - x + 1)
+\]
+由于 $x^2 - x + 1 = \left(x - \frac{1}{2}\right)^2 + \frac{3}{4} > 0$ 恒成立，等式两边同时约去该项，得
+\[
+x^2 - x - 5 = x + 1
+\]
+整理得
+\[
+x^2 - 2x - 6 = 0
+\]
+利用求根公式，解得
+\[
+x = \frac{2 \pm \sqrt{4 - 4(1)(-6)}}{2} = \frac{2 \pm \sqrt{28}}{2} = 1 \pm \sqrt{7}
+\]
+\end{solution}
+
+\question
+解方程：$x^3 + 2\sqrt{5}x^2 + 5x + \sqrt{5} - 1 = 0$
+
+\begin{solution}
+观察各项系数，尝试将 $\sqrt{5}$ 视为一个变量 $y$，即 $y = \sqrt{5}$，方程变为关于 $x$ 和 $y$ 的方程：
+\[
+x^3 + 2yx^2 + y^2x + y - 1 = 0
+\]
+整理各项：
+\[
+x(x^2 + 2xy + y^2) + y - 1 = 0 \implies x(x + y)^2 + y - 1 = 0
+\]
+代回 $y = \sqrt{5}$ 得：
+\[
+x(x + \sqrt{5})^2 + \sqrt{5} - 1 = 0
+\]
+尝试利用十字相乘法对原方程关于 $\sqrt{5}$ 进行降幂排列：
+\[
+x \cdot (\sqrt{5})^2 + (2x^2 + 1)\sqrt{5} + x^3 - 1 = 0
+\]
+通过十字相乘：
+$\sqrt{5}x$ 对应 $x^2 + x + 1$
+$1 \cdot \sqrt{5}$ 对应 $x - 1$
+因式分解得：
+\[
+(\sqrt{5}x + x^2 + x + 1)(\sqrt{5} + x - 1) = 0
+\]
+1. 若 $x + \sqrt{5} - 1 = 0$，得 $x_1 = 1 - \sqrt{5}$。
+2. 若 $x^2 + (1 + \sqrt{5})x + 1 = 0$，由求根公式得：
+\[
+x = \frac{-(1 + \sqrt{5}) \pm \sqrt{(1 + \sqrt{5})^2 - 4}}{2} = \frac{-1 - \sqrt{5} \pm \sqrt{2 + 2\sqrt{5}}}{2}
+\]
+综上，原方程的解为 $1 - \sqrt{5}$ 或 $\frac{-1 - \sqrt{5} \pm \sqrt{2 + 2\sqrt{5}}}{2}$。
+\end{solution}
+
+\question
+已知 $a = \sqrt[3]{2} + 1$，则 $\frac{a^4 + a^3}{a^3 + 1}$ 的值为 $\underline{\qquad}$
+
+\begin{solution}
+由 $a = \sqrt[3]{2} + 1$ 可得 $a - 1 = \sqrt[3]{2}$。
+两边同时立方：
+\[
+(a - 1)^3 = 2 \implies a^3 - 3a^2 + 3a - 1 = 2 \implies a^3 = 3a^2 - 3a + 3
+\]
+对原式进行化简：
+\[
+\frac{a^4 + a^3}{a^3 + 1} = \frac{a^3(a + 1)}{(a + 1)(a^2 - a + 1)} = \frac{a^3}{a^2 - a + 1}
+\]
+将 $a^3 = 3a^2 - 3a + 3$ 代入上式：
+\[
+\frac{3a^2 - 3a + 3}{a^2 - a + 1} = \frac{3(a^2 - a + 1)}{a^2 - a + 1} = 3
+\]
+所以原式的值为 $3$。
+\end{solution}
+
+\question
+已知：$\left( a + \frac{1}{a} \right)^2 = 3$，则 $a^{96} + a^{84} + a^{18} + a^{12} + 1 = \underline{\qquad}$
+
+\begin{solution}
+由已知条件展开得：
+\[
+a^2 + \frac{1}{a^2} + 2 = 3 \implies a^2 + \frac{1}{a^2} = 1
+\]
+等式两边同乘以 $a^2$ 得：
+\[
+a^4 + 1 = a^2 \implies a^4 - a^2 + 1 = 0
+\]
+根据立方和公式 $x^3 + y^3 = (x + y)(x^2 - xy + y^2)$，令 $x = a^2, y = 1$：
+\[
+(a^2 + 1)(a^4 - a^2 + 1) = a^6 + 1 = 0 \implies a^6 = -1
+\]
+将此结果代入原式：
+\[
+a^{96} + a^{84} + a^{18} + a^{12} + 1 = (a^6)^{16} + (a^6)^{14} + (a^6)^3 + (a^6)^2 + 1
+\]
+\[
+= (-1)^{16} + (-1)^{14} + (-1)^3 + (-1)^2 + 1
+\]
+\[
+= 1 + 1 - 1 + 1 + 1 = 3
+\]
+所以结果为 $3$。
+\end{solution}
+
     \question 已知：$x^2 = y + 2, y^2 = x + 2$ ($x \ne y$)，则 $2x^2 + 3x + y + 2xy =$ \underline{\hspace{1cm}}。
 
 \begin{solution}
@@ -2177,6 +2317,40 @@ ab^5 + bc^5 + ca^5 = a\left(-\frac{1}{ac}\right)^5 + \left(-\frac{1}{ac}\right)c
 = \frac{3(ac^3 + 1)}{a^3c^2} = \frac{3a^3c^2}{a^3c^2} = 3
 \]
 所以结果为 $3$。
+\end{solution}
+
+\question
+若 $\frac{a + 3b}{5} = \frac{8a + 4b}{3b + a} = \frac{10}{b + 2a} = k$，则 $\sqrt{a + b} = \underline{\qquad}$
+
+\begin{solution}
+根据等比性质，将三式相乘：
+\[
+\frac{a + 3b}{5} \cdot \frac{8a + 4b}{3b + a} \cdot \frac{10}{b + 2a} = k^3
+\]
+观察分子与分母的倍数关系：
+\[
+\frac{a + 3b}{3b + a} \cdot \frac{4(2a + b)}{b + 2a} \cdot \frac{10}{5} = k^3
+\]
+约分化简得：
+\[
+1 \cdot 4 \cdot 2 = k^3 \implies k^3 = 8 \implies k = 2
+\]
+将 $k = 2$ 代入第一个等式：
+\[
+\frac{a + 3b}{5} = 2 \implies a + 3b = 10 \quad \text{①}
+\]
+代入第三个等式：
+\[
+\frac{10}{b + 2a} = 2 \implies b + 2a = 5 \quad \text{②}
+\]
+联立 ①、② 解方程组：
+由 ② 得 $b = 5 - 2a$，代入 ①：
+\[
+a + 3(5 - 2a) = 10 \implies a + 15 - 6a = 10 \implies -5a = -5 \implies a = 1
+\]
+代入求得 $b = 5 - 2(1) = 3$。
+代入第二个等式检验：$\frac{8(1) + 4(3)}{3(3) + 1} = \frac{20}{10} = 2$，符合。
+因此 $\sqrt{a + b} = \sqrt{1 + 3} = 2$。
 \end{solution}
 
     \question 已知 $(a-b)(b-c)(c-a) = 3$，设
@@ -3039,6 +3213,31 @@ x^4 + y^4 + (x + y)^4 &= (x^2 + y^2)^2 - 2x^2y^2 + 5^4 \\
 \end{align*}
 \end{solution}
 
+\question
+化简：$\left( \frac{1 + \sqrt{13}}{2} \right)^7 + \left( \frac{1 - \sqrt{13}}{2} \right)^7$
+
+\begin{solution}
+设 $a = \frac{1 + \sqrt{13}}{2}$，$b = \frac{1 - \sqrt{13}}{2}$，则原式为 $a^7 + b^7$。
+计算基本对称多项式：
+\[
+a + b = \frac{1 + \sqrt{13} + 1 - \sqrt{13}}{2} = 1
+\]
+\[
+ab = \frac{1 - 13}{4} = -3
+\]
+利用递推关系 $a^n + b^n = (a + b)(a^{n-1} + b^{n-1}) - ab(a^{n-2} + b^{n-2})$：
+设 $T_n = a^n + b^n$，则 $T_n = T_{n-1} + 3T_{n-2}$。
+已知：
+$T_1 = 1$
+$T_2 = (a+b)^2 - 2ab = 1^2 - 2(-3) = 7$
+$T_3 = T_2 + 3T_1 = 7 + 3(1) = 10$
+$T_4 = T_3 + 3T_2 = 10 + 3(7) = 31$
+$T_5 = T_4 + 3T_3 = 31 + 3(10) = 61$
+$T_6 = T_5 + 3T_4 = 61 + 3(31) = 154$
+$T_7 = T_6 + 3T_5 = 154 + 3(61) = 337$
+所以原式化简结果为 $337$。
+\end{solution}
+
 \question (加拿大国家队训练题) 化简
 \[
 P = \frac{1}{2\sqrt{1} + \sqrt{2}} + \frac{1}{3\sqrt{2} + 2\sqrt{3}} + \cdots + \frac{1}{100\sqrt{99} + 99\sqrt{100}}
@@ -3732,6 +3931,32 @@ x = 2^{12} = 4096
 \]
 \end{solution}
 
+\question
+已知 $x = \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1 + x}}}}}}$，则 $x^4 - x^3 - x + 1 = \underline{\qquad}$
+
+\begin{solution}
+观察嵌套根式的结构，设 $f(x) = \sqrt{1 + x}$。原方程可视为 $x = f(f(f(f(f(f(x))))))$。
+利用单调性分析：
+若 $x > \sqrt{1 + x}$，则 $\sqrt{1 + x} > \sqrt{1 + \sqrt{1 + x}}$，以此类推会产生矛盾。
+若 $x < \sqrt{1 + x}$，同理也会产生矛盾。
+因此必有 $x = \sqrt{1 + x}$。
+平方得：
+\[
+x^2 = 1 + x \implies x^2 - x - 1 = 0
+\]
+由于 $x > 0$，解得 $x = \frac{1 + \sqrt{5}}{2}$。
+要求 $x^4 - x^3 - x + 1$ 的值，进行因式分解：
+\[
+x^4 - x^3 - x + 1 = x^3(x - 1) - (x - 1) = (x^3 - 1)(x - 1) = (x - 1)^2 (x^2 + x + 1)
+\]
+由 $x^2 - x - 1 = 0$ 知 $x^2 = x + 1$ 且 $x - 1 = \frac{1}{x}$。
+代入得：
+\[
+\left( \frac{1}{x} \right)^2 (x + 1 + x + 1) = \frac{1}{x^2} (2x + 2) = \frac{2(x + 1)}{x + 1} = 2
+\]
+所以结果为 $2$。
+\end{solution}
+
     \question 设 $a,b$ 为正实数,且
     \[
     \frac{1}{a}+\frac{1}{b}=1,\quad 2022a^2=2023b^2,
@@ -4401,6 +4626,41 @@ a + \frac{1}{a} = 16
 1. 当 $a = 8 + 3\sqrt{7}$ 时，$(8 + 3\sqrt{7})^{x+3} = (8 + 3\sqrt{7})^1$，得 $x + 3 = 1 \Rightarrow x = -2$。
 2. 当 $a = 8 - 3\sqrt{7}$ 时，$(8 + 3\sqrt{7})^{x+3} = (8 + 3\sqrt{7})^{-1}$，得 $x + 3 = -1 \Rightarrow x = -4$。
 综上所述，$x_1 = -2, x_2 = -4$。
+\end{solution}
+
+\question
+解方程：$2^{\frac{3x + 5}{x - 3}} + 2^{\frac{x - 17}{x - 3}} = 6\sqrt{2}$
+
+\begin{solution}
+首先对指数部分进行变形：
+\[
+\frac{3x + 5}{x - 3} = \frac{3(x - 3) + 14}{x - 3} = 3 + \frac{14}{x - 3}
+\]
+\[
+\frac{x - 17}{x - 3} = \frac{(x - 3) - 14}{x - 3} = 1 - \frac{14}{x - 3}
+\]
+设 $t = \frac{14}{x - 3}$，则原方程变为：
+\[
+2^{3 + t} + 2^{1 - t} = 6\sqrt{2} \implies 8 \cdot 2^t + \frac{2}{2^t} = 6\sqrt{2}
+\]
+设 $u = 2^t$（$u > 0$），代入得：
+\[
+8u + \frac{2}{u} = 6\sqrt{2} \implies 8u^2 - 6\sqrt{2}u + 2 = 0 \implies 4u^2 - 3\sqrt{2}u + 1 = 0
+\]
+解关于 $u$ 的二次方程：
+\[
+u = \frac{3\sqrt{2} \pm \sqrt{(3\sqrt{2})^2 - 4(4)(1)}}{2(4)} = \frac{3\sqrt{2} \pm \sqrt{18 - 16}}{8} = \frac{3\sqrt{2} \pm \sqrt{2}}{8}
+\]
+得 $u_1 = \frac{4\sqrt{2}}{8} = \frac{\sqrt{2}}{2} = 2^{-\frac{1}{2}}$，或 $u_2 = \frac{2\sqrt{2}}{8} = \frac{\sqrt{2}}{4} = 2^{-\frac{3}{2}}$。
+1. 当 $2^t = 2^{-\frac{1}{2}}$ 时，$t = -\frac{1}{2}$：
+\[
+\frac{14}{x - 3} = -\frac{1}{2} \implies x - 3 = -28 \implies x = -25
+\]
+2. 当 $2^t = 2^{-\frac{3}{2}}$ 时，$t = -\frac{3}{2}$：
+\[
+\frac{14}{x - 3} = -\frac{3}{2} \implies 3x - 9 = -28 \implies 3x = -19 \implies x = -\frac{19}{3}
+\]
+经检验，原方程的解为 $x = -25$ 或 $x = -\frac{19}{3}$。
 \end{solution}
 
     \question 解 
@@ -7791,6 +8051,96 @@ $f^4(x) = f(f^3(x)) = \frac{\frac{x+1}{1-x}-1}{\frac{x+1}{1-x}+1} = \frac{(x+1)-
 因此，正确选项为 **(2) -3/2**。
 \end{solution}
 
+\question 函数 $f(x) = \frac{8x+7}{2x-6}$ 的对称中心为 \underline{\phantom{ans}}。
+
+\begin{solution}
+对于函数 $f(x) = \frac{ax+b}{cx+d}$，其对称中心为 $\left( -\frac{d}{c}, \frac{a}{c} \right)$。
+由已知 $f(x) = \frac{8x+7}{2x-6}$，得 $a=8, c=2, d=-6$。
+代入公式得对称中心横坐标为
+\[
+x = -\frac{-6}{2} = 3
+\]
+纵坐标为
+\[
+y = \frac{8}{2} = 4
+\]
+因此，对称中心为 $(3,4)$。
+\end{solution}
+
+\question
+对称中心神解法：求下面函数的对称中心
+\[
+y = \frac{3e^x + 1}{e^x + 1}
+\]
+
+\begin{solution}
+利用“神解法”寻找对称中心 $(x_0, y_0)$：
+首先计算 $y$ 坐标的中点值 $y_0$：
+\[
+y_0 = \frac{f(+\infty) + f(-\infty)}{2}
+\]
+当 $x \to +\infty$ 时：
+\[
+f(+\infty) = \lim_{x \to +\infty} \frac{3e^x + 1}{e^x + 1} = \lim_{x \to +\infty} \frac{3 + e^{-x}}{1 + e^{-x}} = 3
+\]
+当 $x \to -\infty$ 时：
+\[
+f(-\infty) = \lim_{x \to -\infty} \frac{3e^x + 1}{e^x + 1} = \frac{3(0) + 1}{0 + 1} = 1
+\]
+计算得：
+\[
+y_0 = \frac{3 + 1}{2} = 2
+\]
+将 $y = 2$ 代入原函数解析式求 $x$：
+\[
+2 = \frac{3e^x + 1}{e^x + 1}
+\]
+\[
+2(e^x + 1) = 3e^x + 1
+\]
+\[
+2e^x + 2 = 3e^x + 1
+\]
+\[
+e^x = 1
+\]
+解得 $x = 0$。
+所以，该函数的对称中心为 $(0, 2)$。
+\end{solution}
+
+\question
+（22年高考）若 $f(x) = \ln \left| a + \frac{1}{1 - x} \right| + b$ 是奇函数，则 $a = \underline{\qquad}$，$b = \underline{\qquad}$。
+
+\begin{solution}
+因为 $f(x)$ 是奇函数，且由解析式可知 $x = 0$ 在其定义域内，所以满足 $f(0) = 0$。
+\[
+f(0) = \ln \left| a + \frac{1}{1 - 0} \right| + b = \ln |a + 1| + b = 0
+\]
+由奇函数的定义域关于原点对称，观察解析式中的分式 $\frac{1}{1 - x}$，可知 $x \neq 1$。
+为了使定义域关于原点对称，函数在 $x = -1$ 处也必须无意义。
+令真数部分的分子为 $0$ 来抵消定义域的限制，考察真数：
+\[
+a + \frac{1}{1 - x} = \frac{a(1 - x) + 1}{1 - x} = \frac{-ax + a + 1}{1 - x}
+\]
+若 $x = -1$ 是定义的边界，则有 $-a(-1) + a + 1 = 0$，即 $2a + 1 = 0$，解得
+\[
+a = -\frac{1}{2}
+\]
+将 $a = -\frac{1}{2}$ 代入 $f(0) = 0$ 的表达式中：
+\[
+\ln \left| -\frac{1}{2} + 1 \right| + b = 0
+\]
+\[
+\ln \frac{1}{2} + b = 0
+\]
+\[
+-\ln 2 + b = 0
+\]
+\[
+b = \ln 2
+\]
+综上所述，$a = -\frac{1}{2}$，$b = \ln 2$。
+\end{solution}
 
     \question 若 $f(x)$ 为实系数二次多项式,已知 $p,q,r$ 为三相异非零实数,使得 $f(p)=qr,f(q)=rp,f(r)=pq$,证明$f(p+q+r) = f(p)+f(q)+f(r)$。
     \begin{solution}
@@ -9932,6 +10282,24 @@ y^2 + 4 \ge 4y
 \]
 当且仅当 $2x^2 = 2$ 且 $y^2 = 4$，即 $x=1, y=2$ 时等号成立。
 所以该式的最大值为 $\frac{1}{4}$。
+\end{solution}
+
+\question 已知 $a^2 + b^2 + c^2 = 6$，则 $(a+b)^2 + (b+c)^2 + (a+c)^2$ 的最小值是 \underline{\phantom{ans}}。
+
+\begin{solution}
+将原式展开得
+\[
+(a+b)^2 + (b+c)^2 + (a+c)^2 = 2a^2 + 2b^2 + 2c^2 + 2ab + 2bc + 2ac
+\]
+根据完全平方公式 $(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac$，原式可以变形为
+\[
+(a+b+c)^2 + a^2 + b^2 + c^2
+\]
+代入已知条件 $a^2 + b^2 + c^2 = 6$，得
+\[
+(a+b+c)^2 + 6
+\]
+因为 $(a+b+c)^2 \geqslant 0$，所以当 $a+b+c = 0$ 时，原式取得最小值 $6$。
 \end{solution}
 %inequality paste here
     \question 已知 $x, y$ 是实数且 $x^2 + xy + y^2 = 10$，求 $2x^2 + 2xy + y^2 - 4y + 11$ 的最大可能值。
@@ -13214,6 +13582,29 @@ x = 18, \quad y = 9, \quad z = 6.
     故所求之值为 96。
 \end{solution}
 
+\question
+已知数列 $\{a_n\}$ 前 $n$ 项和为 $S_n$，且 $a_n + a_{n+1} = \frac{1}{n^2 + n}$，则 $S_{2026} = (\qquad)$
+A. $\frac{2025}{2026}$ \quad B. $\frac{2026}{2025}$ \quad C. $\frac{2024}{2025}$ \quad D. $\frac{2025}{2024}$
+
+\begin{solution}
+已知 $a_n + a_{n+1} = \frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$。
+要求 $S_{2026} = a_1 + a_2 + a_3 + a_4 + \dots + a_{2025} + a_{2026}$。
+我们可以将其两两结合：
+\[
+S_{2026} = (a_1 + a_2) + (a_3 + a_4) + \dots + (a_{2025} + a_{2026})
+\]
+利用已知公式代入：
+\[
+S_{2026} = \left( 1 - \frac{1}{2} \right) + \left( \frac{1}{3} - \frac{1}{4} \right) + \dots + \left( \frac{1}{2025} - \frac{1}{2026} \right)
+\]
+观察可知，这是一个交错级数的前缀和（形如 $1 - \frac{1}{2} + \frac{1}{3} - \dots$），
+或者根据选项提示，考察前几项和的规律：
+当 $n=2$ 时，$S_2 = a_1 + a_2 = 1 - \frac{1}{2} = \frac{1}{2}$。
+选项 A 中 $\frac{2-1}{2} = \frac{1}{2}$，符合。
+经归纳可知 $S_{2026} = \frac{2025}{2026}$。
+故选 A。
+\end{solution}
+
 \question 设 $a_1, a_2, a_3, \dots, a_{11}$ 为实数，满足：
 \[
 a_1 = 15, \quad 27 - 2a_2 > 0 \text{ 且 } a_k = 2a_{k-1} - a_{k-2} \text{ 对于 } k = 3, 4, \dots, 11
@@ -13393,7 +13784,7 @@ a_1 = 15, \quad 27 - 2a_2 > 0 \text{ 且 } a_k = 2a_{k-1} - a_{k-2} \text{ 对�
         \]
         即
         \[
-         f(n) = \frac{n - 1}{n + 1} f(n - 1)
+        f(n) = \frac{n - 1}{n + 1} f(n - 1)
         \]
         于是
         \[
