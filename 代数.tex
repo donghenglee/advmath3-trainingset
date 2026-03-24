@@ -2353,6 +2353,60 @@ a + 3(5 - 2a) = 10 \implies a + 15 - 6a = 10 \implies -5a = -5 \implies a = 1
 因此 $\sqrt{a + b} = \sqrt{1 + 3} = 2$。
 \end{solution}
 
+\question 已知：$\frac{y+z-x}{x+y+z} = \frac{z+x-y}{y+z-x} = \frac{x+y-z}{z+x-y} = p$
+则 $p + p^2 + p^3 =$ \underline{\hspace{1cm}}
+
+\begin{solution}
+根据等比性质，若 $x+y+z \neq 0$ 且各分母之和不为 0，则
+\[
+p = \frac{(y+z-x) + (z+x-y) + (x+y-z)}{(x+y+z) + (y+z-x) + (z+x-y)}
+\]
+\[
+p = \frac{x+y+z}{x+y+z} = 1
+\]
+若 $p = 1$，则
+\[
+p + p^2 + p^3 = 1 + 1^2 + 1^3 = 3
+\]
+\end{solution}
+
+\question 已知 $x^2 + 4x + 1 = 0$
+则 $\frac{x^4 + 19x^2 + 1}{2x^3 + 19x^2 + 2x} =$ \underline{\hspace{1cm}}
+
+\begin{solution}
+因为 $x^2 + 4x + 1 = 0$，显然 $x \neq 0$，等式两边同除以 $x$ 得：
+\[
+x + 4 + \frac{1}{x} = 0 \implies x + \frac{1}{x} = -4
+\]
+对分子分母同时除以 $x^2$：
+\[
+\frac{x^2 + 19 + \frac{1}{x^2}}{2x + 19 + \frac{2}{x}} = \frac{\left(x + \frac{1}{x}\right)^2 - 2 + 19}{2\left(x + \frac{1}{x}\right) + 19}
+\]
+将 $x + \frac{1}{x} = -4$ 代入：
+\[
+\frac{(-4)^2 + 17}{2(-4) + 19} = \frac{16 + 17}{-8 + 19} = \frac{33}{11} = 3
+\]
+\end{solution}
+
+\question 已知实数 $a, b, c$ 满足 $\frac{a+b}{c} = \frac{b+c}{a} = \frac{a+c}{b}$
+则 $\frac{(a+b)(b+c)(a+c)}{abc} =$ \underline{\hspace{1cm}}
+
+\begin{solution}
+设 $\frac{a+b}{c} = \frac{b+c}{a} = \frac{a+c}{b} = k$。
+1. 当 $a+b+c \neq 0$ 时，根据等比性质：
+\[
+k = \frac{(a+b)+(b+c)+(a+c)}{c+a+b} = \frac{2(a+b+c)}{a+b+c} = 2
+\]
+此时 $a+b=2c, b+c=2a, a+c=2b$，代入原式得：
+\[
+\frac{2c \cdot 2a \cdot 2b}{abc} = 8
+\]
+2. 当 $a+b+c = 0$ 时，$a+b=-c, b+c=-a, a+c=-b$，代入原式得：
+\[
+\frac{(-c) \cdot (-a) \cdot (-b)}{abc} = \frac{-abc}{abc} = -1
+\]
+\end{solution}
+
     \question 已知 $(a-b)(b-c)(c-a) = 3$，设
 \[ S = (a-b)(99-c)(999-2c) + (b-c)(99-a)(999-2a) + (c-a)(99-b)(999-2b) \]
 求 $S$ 的值。
@@ -3282,6 +3336,25 @@ a^2=\frac{1}{\left(\sqrt[3]{2}-1\right)^2}=\frac{1}{\sqrt[3]{4}-2\sqrt[3]{2}+1},
 &\quad +1-3\sqrt[3]{4}+3\sqrt[3]{2} \\
 &= 1
 \end{align*}
+\end{solution}
+
+\question 化简：$\frac{\left(3+2\sqrt{2}\right)^{2008}}{\left(5\sqrt{2}+7\right)^{1338}} + 3 - 2\sqrt{2}$
+
+\begin{solution}
+注意到 $5\sqrt{2}+7 = \left(\sqrt{2}+1\right)^3$ 且 $3+2\sqrt{2} = \left(\sqrt{2}+1\right)^2$。
+原式可变形为：
+\[
+\frac{\left[\left(\sqrt{2}+1\right)^2\right]^{2008}}{\left[\left(\sqrt{2}+1\right)^3\right]^{1338}} + 3 - 2\sqrt{2}
+\]
+\[
+= \frac{\left(\sqrt{2}+1\right)^{4016}}{\left(\sqrt{2}+1\right)^{4014}} + 3 - 2\sqrt{2}
+\]
+\[
+= \left(\sqrt{2}+1\right)^2 + 3 - 2\sqrt{2}
+\]
+\[
+= 3 + 2\sqrt{2} + 3 - 2\sqrt{2} = 6
+\]
 \end{solution}
 
 \question 化简：$\frac{\sqrt{15} + \sqrt{35} + \sqrt{21} + 5}{\sqrt{3} + 2\sqrt{5} + \sqrt{7}}$。
@@ -8140,6 +8213,41 @@ a = -\frac{1}{2}
 b = \ln 2
 \]
 综上所述，$a = -\frac{1}{2}$，$b = \ln 2$。
+\end{solution}
+
+\question 实数 $x, y$ 满足 $\ln e(2x+3y-6) + 5 - e^{x-y-2} - x - 4y \geq 0$,则 $x-2y =$ \underline{\hspace{1cm}}
+
+\begin{solution}
+首先将原不等式进行变形。由于 $\ln e(2x+3y-6) = \ln(2x+3y-6) + 1$，原式可化为：
+\[
+\ln(2x+3y-6) + 6 - e^{x-y-2} - (x+4y) \geq 0
+\]
+设 $u = 2x+3y-6$，$v = x-y-2$。注意到：
+\[
+u - v = (2x+3y-6) - (x-y-2) = x+4y-4
+\]
+因此 $x+4y = u-v+4$。代入原不等式得：
+\[
+\ln u + 6 - e^v - (u-v+4) \geq 0
+\]
+\[
+(\ln u - u + 1) + (v + 1 - e^v) \geq 0
+\]
+根据基本不等式可知，对于 $u > 0$，恒有 $\ln u \leq u-1$，即 $\ln u - u + 1 \leq 0$。
+同理，对于任意实数 $v$，恒有 $e^v \geq v+1$，即 $v + 1 - e^v \leq 0$。
+要使两个非正数之和大于或等于 0，必须满足两项同时为 0，即：
+\[
+\begin{cases} \ln u - u + 1 = 0 \\ v + 1 - e^v = 0 \end{cases} \implies \begin{cases} u = 1 \\ v = 0 \end{cases}
+\]
+代回原变量得方程组：
+\[
+\begin{cases} 2x+3y-6 = 1 \\ x-y-2 = 0 \end{cases} \implies \begin{cases} 2x+3y = 7 \\ x-y = 2 \end{cases}
+\]
+解得 $x = \frac{13}{5}, y = \frac{3}{5}$。
+最后计算所求表达式的值：
+\[
+x-2y = \frac{13}{5} - 2 \cdot \left(\frac{3}{5}\right) = \frac{7}{5}
+\]
 \end{solution}
 
     \question 若 $f(x)$ 为实系数二次多项式,已知 $p,q,r$ 为三相异非零实数,使得 $f(p)=qr,f(q)=rp,f(r)=pq$,证明$f(p+q+r) = f(p)+f(q)+f(r)$。
