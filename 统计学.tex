@@ -2564,6 +2564,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     答：$n$ 为偶数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n}{2}+1}$；$n$ 为奇数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2}}$。
 \end{solution}
 \end{questions}
+
 \pagebreak
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
@@ -2573,33 +2574,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
 \separator
 \vspace{1pt}
 \begin{questions}
-    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
-    \begin{solution}
-    将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
-    根据已知条件：
-    \[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
-    我们需要计算：
-    \[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
-    利用标准正态分布的对称性：
-    \[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
-    根据全概率性质：
-    \[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
-    \[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
-    因此，$P(X < 0) = 0.2$。
-    \end{solution}
-
-
-\end{questions}
-\pagebreak
-\begin{center}
-  {\fontsize{30pt}{26pt}\selectfont
-    \hypertarget{期望值}{期望值} \label{期望值}
-  }
-\end{center}
-\separator
-\vspace{1pt}
-\begin{questions}
-    \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
+        \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
 
     设随机变量 $X$ 代表阿花吃完巧克力的天数,求期望值 $E(X)$。
     \begin{solution}
@@ -2922,6 +2897,24 @@ p = \frac{84}{1176} = \frac{1}{14}
 \]
 \end{solution}
 
+\question (15 分)
+一个瓮中有 $n$ 个白球和 $m$ 个黑球，它们按随机选择的顺序一次被取出一个。求白球紧随其后是黑球的情况出现的期望次数。
+
+\begin{solution}
+令 $I_j$ 在第 $j$ 次取出的球是白色且第 $(j+1)$ 次取出的球是黑色时等于 1，否则等于 0。如果 $X$ 是白球紧随其后是黑球的情况出现的次数，那么我们可以将 $X$ 表示为
+\[
+X = \sum_{j=1}^{n+m-1} I_j
+\]
+因此，
+\begin{align*}
+\mathbb{E}(X) &= \sum_{j=1}^{n+m-1} \mathbb{E}(I_j) \\
+&= \sum_{j=1}^{n+m-1} P\{第 j 次选择是白色，第 (j+1) 次是黑色\} \\
+&= \sum_{j=1}^{n+m-1} P\{第 j 次选择是白色\} P\{第 (j+1) 次是黑色 | 第 j 次选择是白色\} \\
+&= \sum_{j=1}^{n+m-1} \frac{n}{n+m} \frac{m}{n+m-1} \\
+&= \frac{nm}{n+m}
+\end{align*}。
+\end{solution}
+
     \question 有一笔资料包含 $n$ 个数 $x_1, x_2, x_3, \dots, x_n$,其平均数为 $\overline{x}$,试证
     \[
     \sqrt{\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\overline{x}^{2}}\ge\frac{1}{n}\sum_{i=1}^{n}|x_{i}-\overline{x}|
@@ -3126,8 +3119,2271 @@ p = \frac{84}{1176} = \frac{1}{14}
         因此，$E(Y) = 3 \cdot E(Y_i) = 3 \cdot \frac{1}{3} = 1$。
     \end{solution}
 \end{parts}
+
+\question (5) 一副 52 张的扑克牌经洗牌后，分发出 13 张牌的一手桥牌。令 $X$ 和 $Y$ 分别表示这手牌中 A 的数量和黑桃的数量。
+(a) 证明 $X$ 和 $Y$ 是不相关的。
+(b) 它们是独立的吗？
+
+\begin{solution}
+对于任何 $i, j \in \{1, 2, \dots, 13\}$，如果第 $i$ 张牌是 A，令 $X_i$ 等于 1，否则为 0；如果第 $j$ 张牌是黑桃，令 $Y_j$ 等于 1，否则为 0。
+对于任何 $i, j$，$X_i$ 显然独立于 $Y_j$，因为知道特定某张牌的花色并不能提供关于它是否为 A 的信息，因此也不会影响另一张指定牌是 A 的概率。
+因此，对于任何 $i, j$，$\text{Cov}(X_i, Y_j) = 0$，这给出
+\[
+\text{Cov}(X, Y) = \text{Cov}\left(\sum_{i=1}^{13} X_i, \sum_{j=1}^{13} Y_j\right) = \sum_{i=1}^{13} \sum_{j=1}^{13} \text{Cov}(X_i, Y_j) = 0
+\]。
+
+$X$ 和 $Y$ 不是独立的，因为
+\[
+P\{Y = 13 | X = 4\} = 0 \neq P\{Y = 13\}
+\]
+由此可知
+\[
+P\{Y = 13, X = 4\} \neq P\{Y = 13\}P\{X = 4\}
+\]。
+\end{solution}
+
+\question (5) 在一条长度为 $L$ 的公路上，事故发生点 $X$ 服从均匀分布。事故发生时，救护车位于位置 $Y$，该位置也服从公路上的均匀分布。假设 $X$ 和 $Y$ 相互独立。求救护车与事故发生点之间的期望距离。
+
+\begin{solution}
+$X$ 和 $Y$ 的联合密度函数为
+\[
+f(x,y) = \frac{1}{L^2}, \quad 0 < x < L, \ 0 < y < L
+\]
+我们需要计算 $\mathbb{E}(|X - Y|)$：
+\[
+\mathbb{E}(|X - Y|) = \int_0^L \int_0^L \left(|x - y| \frac{1}{L^2}\right) dy dx = \frac{1}{L^2} \int_0^L \int_0^L |x - y| dy dx
+\]
+其中 $\int_0^L |x - y| dy$ 计算如下：
+\begin{align*}
+\int_0^L |x - y| dy &= \int_0^x (x - y) dy + \int_x^L (y - x) dy \\
+&= \frac{x^2}{2} + \frac{L^2}{2} - \frac{x^2}{2} - x(L - x) \\
+&= \frac{L^2}{2} + x^2 - Lx
+\end{align*}
+因此，
+\[
+\mathbb{E}(|X - Y|) = \frac{1}{L^2} \int_0^L \left(\frac{L^2}{2} + x^2 - Lx\right) dx = \frac{L}{3}
+\]。
+\end{solution}
+
+\question (6) 县医院位于一个边长为 3 英里的正方形中心。如果该正方形内发生事故，医院会派出救护车。路网是矩形的，所以从医院（坐标为 $(0,0)$）到点 $(x,y)$ 的行驶距离为 $|x| + |y|$。如果事故发生点在该正方形内服从均匀分布，求救护车的期望行驶距离。
+
+\begin{solution}
+假设正方形的中心为 $(0,0)$，四个顶点为 $(\pm 3/2, \pm 3/2)$。行驶距离的期望值为
+\begin{align*}
+\int_{-3/2}^{3/2} \int_{-3/2}^{3/2} (|x| + |y|) \frac{1}{9} dx dy &= \frac{1}{9} \int_{-3/2}^{3/2} \left(\frac{9}{4} + 3|y|\right) dy \\
+&= \frac{1}{9} \cdot \frac{27}{2} \\
+&= \frac{3}{2}
+\end{align*}。
+\end{solution}
+
+\question (5) 一个瓮中有 $n$ 个白球和 $m$ 个黑球，随机地一个接一个取出。求白球后紧跟着黑球的情况出现的期望次数。
+
+\begin{solution}
+令 $I_j$ 为指示变量，如果在第 $j$ 次取球中取出白球且在第 $j+1$ 次取球中取出黑球，则 $I_j = 1$，否则为 $0$。设 $X$ 为白球后紧跟着黑球的情况出现的次数，则我们可以将 $X$ 表示为：
+\[
+X = \sum_{j=1}^{n+m-1} I_j \tag{cite: 14}
+\]
+因此，
+\begin{align*}
+\mathbb{E}(X) &= \sum_{j=1}^{n+m-1} \mathbb{E}(I_j) = \sum_{j=1}^{n+m-1} P\{第 j 次选择是白球，第 j+1 次是黑球\} \tag{cite: 14} \\
+&= \sum_{j=1}^{n+m-1} P\{第 j 次选择是白球\} P\{第 j+1 次是黑球 | 第 j 次选择是白球\} \tag{cite: 15} \\
+&= \sum_{j=1}^{n+m-1} \frac{n}{n+m} \frac{m}{n+m-1} = \frac{nm}{n+m} \tag{cite: 15}
+\end{align*}。
+\end{solution}
+
+\question (3) 两个点随机选在长度为 $L$ 的直线上，且位于该直线中点的两侧。[换句话说，$X$ 和 $Y$ 是独立的随机变量，使得 $X$ 在 $(0, L/2)$ 上服从均匀分布，$Y$ 在 $(L/2, L)$ 上服从均匀分布。] 求两点之间距离大于 $L/3$ 的概率。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image498.png}
+    \end{figure}
+    \fi
+\begin{solution}
+$(X, Y)$ 的联合密度函数在区域 $[0, L/2] \times [L/2, L]$ 上为常数 $4/L^2$。因此，$Y - X > L/3$ 的区域对应于下图中的阴影部分。
+
+因此，
+\[
+P\left\{ Y - X > \frac{L}{3} \right\} = \frac{4}{L^2} (\text{阴影区域面积}) = \frac{4}{L^2} \left( \frac{L^2}{4} - \frac{L^2}{18} \right) = \frac{7}{9}
+\]。
+\end{solution}
+
+\question (6) 令 $X$ 为 $n$ 个 1 和 $m$ 个 0 的随机排列中初始连号的长度。也就是说，如果前 $k$ 个值相同（全是 1 或全是 0），则 $X \ge k$。求 $\mathbb{E}(X)$。
+
+\begin{solution}
+令 $L$ 为初始连号的长度。对第一个值进行条件概率分析得
+\[
+\mathbb{E}(L) = \mathbb{E}(L | 第一个值是 1) \frac{n}{n+m} + \mathbb{E}(L | 第一个值是 0) \frac{m}{n+m}
+\]
+\begin{itemize}
+    \item 如果第一个值是 1，那么在考虑剩余的 $n+m-1$ 个值（其中包含 $n-1$ 个 1 和 $m$ 个 0）时，连号的长度将是第一个 0 出现的位置。
+    $\mathbb{E}(L | 第一个值是 1)$ 计算如下：我们可以将剩下的 $n-1$ 个 1 编号为 $1_1, 1_2, \dots, 1_{n-1}$，对于 $i = 1, \dots, n-1$，令 $A_i$ 表示 $1_i$ 出现在第一个 0 之前的事件。那么 $X = 1 + A_1 + \dots + A_{n-1}$（1 代表本次连号中的第一个值），其期望等于 $1 + \sum_{i=1}^{n-1} P\{A_i = 1\}$。现在对于 $i$，我们考虑 $1_i$ 和 $m$ 个 0，$P\{A_i = 1\}$ 是 $1_i$ 出现在所有 $m$ 个 0 之前的概率，等于 $\frac{1}{m+1}$。这给出 $\mathbb{E}(L | 第一个值是 1) =$
+    \[
+    1 + \sum_{i=1}^{n-1} P\{A_i = 1\} = 1 + \frac{n-1}{m+1} = \frac{m+n}{m+1}
+    \]。
+    \item 如果第一个值是 0，那么在考虑剩余的 $n+m-1$ 个值（其中包含 $n$ 个 1 和 $m-1$ 个 0）时，连号的长度将是第一个 1 出现的位置。根据上述同样的论证，我们有 $\mathbb{E}(L | 第一个值是 0) = \frac{m+n}{n+1}$。
+\end{itemize}
+因此，
+\begin{align*}
+\mathbb{E}(L) &= \mathbb{E}(L | 第一个值是 1) \frac{n}{n+m} + \mathbb{E}(L | 第一个值是 0) \frac{m}{n+m} \\
+&= \frac{m+n}{m+1} \times \frac{n}{n+m} + \frac{m+n}{n+1} \times \frac{m}{n+m} \\
+&= \frac{n}{m+1} + \frac{m}{n+1}
+\end{align*}。
+\end{solution}
+
+\question (2) 一个篮球队的九名队员由 2 名中锋、3 名前锋和 4 名后卫组成。如果队员被随机配对成三组，每组 3 人，求由每种类型队员各一名组成的三个小组数量的 (a) 期望值和 (b) 方差。
+
+\begin{solution}
+令 $X_i$ 在第 $i$ 个三人组由每种类型的球员各一名组成时等于 1。那么
+\[
+\mathbb{E}(X_i) = \frac{\binom{2}{1} \binom{3}{1} \binom{4}{1}}{\binom{9}{3}} = \frac{2}{7}
+\]
+因此，对于部分 (a)，我们得到
+\[
+\mathbb{E}\left(\sum_{i=1}^3 X_i\right) = \sum_{i=1}^3 \mathbb{E}(X_i) = \frac{6}{7}
+\]。
+
+我们还有 $\text{Var}(X_i) = \left(\frac{2}{7}\right) \left(1 - \frac{2}{7}\right) = \frac{10}{49}$。为了计算 $\text{Var}\left(\sum_{i=1}^3 X_i\right)$，我们还需要得到当 $i \neq j$ 时的 $\text{Cov}(X_i, X_j)$。我们计算 $\text{Cov}(X_1, X_2)$ 如下：
+\begin{align*}
+\text{Cov}(X_1, X_2) &= \mathbb{E}(X_1 X_2) - \mathbb{E}(X_1) \mathbb{E}(X_2) \\
+&= P\{X_1 = 1, X_2 = 1\} - P\{X_1 = 1\} P\{X_2 = 1\} \\
+&= P\{X_1 = 1\} P\{X_2 = 1 | X_1 = 1\} - \frac{2}{7} \times \frac{2}{7} \\
+&= \frac{2}{7} \times \frac{\binom{1}{1} \binom{2}{1} \binom{3}{1}}{\binom{6}{3}} - \frac{4}{49} \\
+&= \frac{6}{70} - \frac{4}{49} \\
+&= \frac{1}{245}
+\end{align*}。
+
+对于任意 $i, j \in \{1, 2, 3\}$ 且 $i \neq j$，我们都有 $\text{Cov}(X_i, X_j) = \frac{1}{245}$。因此，
+\begin{align*}
+\text{Var}\left(\sum_{i=1}^3 X_i\right) &= \sum_{i=1}^3 \text{Var}(X_i) + \sum_{i \neq j} \text{Cov}(X_i, X_j) \\
+&= \frac{30}{49} + \frac{6}{245} \\
+&= \frac{156}{245}
+\end{align*}。
+\end{solution}
+
+\question (6) 顾客以每小时 4 人的速率随机到达一家商店，该过程由泊松过程建模。在的一小时的时间段内，计算在以下条件下，第二个半小时内没有顾客到达的条件概率：
+(a) 第一个半小时内恰好有 4 名顾客到达；
+(b) 整个一小时的时间段内恰好有 4 名顾客到达。
+
+\begin{solution}
+(a) 令 $X$ 为第二个半小时内到达的顾客人数，则 $X \sim Poisson(2)$。由于与第一个半小时内到达的顾客具有独立性，
+\[
+P\{X = 0\} = e^{-2}
+\]。
+
+(b) 令 $Y$ 为第一个半小时内到达的顾客人数，$N$ 为整个一小时的时间段内到达的顾客人数，则 $Y \sim Poisson(2)$ 且 $N \sim Poisson(4)$。
+\begin{align*}
+P\{X = 0 | N = 4\} &= \frac{P\{X = 0 \text{ 且 } N = 4\}}{P\{N = 4\}} \\
+&= \frac{P\{X = 0\} P\{Y = 4\}}{P\{N = 4\}} \\
+&= \frac{e^{-2} \cdot \frac{2^4}{4!} e^{-2}}{\frac{4^4}{4!} e^{-4}} \\
+&= \frac{1}{16}
+\end{align*}。
+\end{solution}
+
+\question 某种昆虫在树叶上产卵的数量是一个参数为 $\lambda$ 的泊松随机变量。然而，只有当产卵数大于 0 时才能观察到该随机变量，因为如果产卵数为 0，我们就无法知道这种昆虫曾出现在叶子上。如果我们令 $Y$ 表示观察到的产卵数，那么
+\[
+P[Y = i] = P[X = i | X > 0]
+\]
+其中 $X$ 是参数为 $\lambda$ 的泊松分布。求 $E[Y]$。
+
+\begin{solution}
+\begin{align*}
+E[Y] &= \sum_{k=1}^{\infty} k P[Y = k] \tag{38} \\
+&= \sum_{k=1}^{\infty} k P[X = k | X > 0] \tag{39} \\
+&= \sum_{k=1}^{\infty} k \frac{P[(X = k) \cap (X > 0)]}{P[X > 0]} \tag{40} \\
+&= \sum_{k=1}^{\infty} k \frac{P[X = k]}{1 - P[X = 0]} \tag{41} \\
+&= \frac{1}{1 - e^{-\lambda}} \sum_{k=1}^{\infty} k P[X = k] \quad (\text{注意 } P[X = 0] = e^{-\lambda} \frac{\lambda^0}{0!} = e^{-\lambda}) \tag{42} \\
+&= \frac{1}{1 - e^{-\lambda}} \sum_{k=0}^{\infty} k P[X = k] \tag{43} \\
+&= \frac{E[X]}{1 - e^{-\lambda}} \tag{44} \\
+&= \frac{\lambda}{1 - e^{-\lambda}} \tag{45}
+\end{align*}。
+\end{solution}
+
+\question (7) 令 $X$ 为参数为 $\lambda$ 的泊松随机变量。证明
+\[
+\mathbb{E}(X^n) = \lambda \mathbb{E}\left((X + 1)^{n-1}\right)
+\]
+现在利用这一结果证明 $\mathbb{E}[X^3] = \lambda^3 + 3\lambda^2 + \lambda$。
+
+\begin{solution}
+证明：
+\begin{align*}
+\mathbb{E}(X^n) &= \sum_{k=1}^{\infty} k^n e^{-\lambda} \frac{\lambda^k}{k!} \\
+&= \sum_{k=0}^{\infty} (k+1)^n e^{-\lambda} \frac{\lambda^{k+1}}{(k+1)!} \\
+&= \lambda \sum_{k=0}^{\infty} (k+1)^{n-1} e^{-\lambda} \frac{\lambda^k}{k!} \\
+&= \lambda \mathbb{E}\left[(X + 1)^{n-1}\right]
+\end{align*}。
+
+因此，
+\begin{align*}
+\mathbb{E}(X^3) &= \lambda \mathbb{E}\left((X + 1)^2\right) \\
+&= \lambda \mathbb{E}(X^2 + 2X + 1) \\
+&= \lambda \left(\lambda(\lambda + 1) + 2\lambda + 1\right) \\
+&= \lambda^3 + 3\lambda^2 + \lambda
+\end{align*}。
+\end{solution}
+
+\question (5) 令 $X$ 为一枚均匀硬币抛掷 40 次后正面朝上的次数。利用正态近似求 $X = 20$ 的概率。
+
+\begin{solution}
+\begin{align*}
+P\{X = 20\} &= P\{19.5 \le X \le 20.5\} \quad (连续性修正) \\
+&= P\left\{ \frac{19.5 - 20}{\sqrt{10}} \le \frac{X - 20}{\sqrt{10}} \le \frac{20.5 - 20}{\sqrt{10}} \right\} \\
+&\approx P\{-0.16 \le Z \le 0.16\} \\
+&\approx \Phi(0.16) - \Phi(-0.16) \\
+&\approx 0.1272
+\end{align*}。
+\end{solution}
+
+\question (6) 为了确定某种饮食在降低血液中胆固醇含量方面的有效性，100 人参与了该饮食计划。在他们坚持该饮食足够长的时间后，将测量他们的胆固醇含量。负责该实验的营养学家决定，如果至少 65\% 的人的胆固醇含量在饮食后有所降低，就认可这种饮食。如果事实上该饮食对胆固醇水平没有影响，那么营养学家认可这种新饮食的概率是多少？
+
+\begin{solution}
+让我们假设，如果该饮食对胆固醇含量没有影响，那么纯粹靠偶然，每个人的含量低于饮食前的概率为 1/2。因此，如果 $X$ 是含量降低的人数，那么当该饮食实际上对胆固醇含量没有影响时，营养学家认可该饮食的概率为
+\begin{align*}
+\sum_{i=65}^{100} \binom{100}{i} \left(\frac{1}{2}\right)^{100} &\approx P\{X \ge 64.5\} \quad (连续性修正) \\
+&= P\left\{ \frac{X - 100 \times \frac{1}{2}}{\sqrt{100 \times \frac{1}{2} \times \frac{1}{2}}} \ge \frac{64.5 - 100 \times \frac{1}{2}}{\sqrt{100 \times \frac{1}{2} \times \frac{1}{2}}} \right\} \\
+&\approx P\{Z \ge 2.9\} \\
+&= 1 - \Phi(2.9) \\
+&\approx 0.0019
+\end{align*}。
+\end{solution}
+
+\question (2) 证明如果 $X$ 是参数为 $p$ 的几何随机变量，那么
+\[
+\mathbb{E}(1/X) = \frac{-p \log(p)}{1 - p}
+\]
+提示：你需要计算形式为 $\sum_{i=1}^{\infty} a^i/i$ 的表达式。为此，将 $a^i/i$ 写成 $\int_0^a x^{i-1} dx$，然后交换求和与积分的顺序。
+
+\begin{solution}
+我们令 $q = 1 - p$。那么
+\begin{align*}
+\mathbb{E}\left(\frac{1}{X}\right) &= \sum_{n=1}^{\infty} \frac{1}{n} q^{n-1} p \\
+&= \frac{p}{q} \sum_{n=1}^{\infty} \frac{q^n}{n} \\
+&= \frac{p}{q} \sum_{n=1}^{\infty} \int_0^q x^{n-1} dx \\
+&= \frac{p}{q} \int_0^q \left(\sum_{n=1}^{\infty} x^{n-1}\right) dx \\
+&= \frac{p}{q} \int_0^q \frac{1}{1-x} dx \\
+&= \frac{p}{q} \int_p^1 \frac{1}{z} dz \\
+&= -\frac{p}{q} \log p
+\end{align*}。
+\end{solution}
+
+\question (3) 假设
+\[
+P\{X = a\} = p, \quad P\{X = b\} = 1 - p
+\]
+(a) 证明 $\frac{X - b}{a - b}$ 是一个伯努利随机变量。
+(b) 求 $\text{Var}(X)$。
+
+\begin{solution}
+由于 $\frac{X - b}{a - b}$ 以概率 $p$ 等于 1，或以概率 $1 - p$ 等于 0，因此它是一个参数为 $p$ 的伯努利随机变量。因为此类伯努利随机变量的方差为 $p(1 - p)$，我们有
+\begin{align*}
+p(1 - p) &= \text{Var}\left(\frac{X - b}{a - b}\right) \\
+&= \frac{1}{(a - b)^2} \text{Var}(X - b) \\
+&= \frac{1}{(a - b)^2} \text{Var}(X)
+\end{align*}
+且
+\[
+\text{Var}(X) = p(1 - p)(a - b)^2
+\]。
+\end{solution}
+
+    \question 已知随机变量 $X \sim N(2, \sigma^2)$，且 $P(2 < X < 4) = 0.3$，求 $P(X < 0)$。
+    \begin{solution}
+    将 $X$ 标准化为 $Z \sim N(0, 1)$，令 $Z = \frac{X - 2}{\sigma}$。
+    根据已知条件：
+    \[ P(2 < X < 4) = P(\frac{2-2}{\sigma} < Z < \frac{4-2}{\sigma}) = P(0 < Z < \frac{2}{\sigma}) = 0.3 \]
+    我们需要计算：
+    \[ P(X < 0) = P(Z < \frac{0-2}{\sigma}) = P(Z < -\frac{2}{\sigma}) \]
+    利用标准正态分布的对称性：
+    \[ P(Z < -\frac{2}{\sigma}) = P(Z > \frac{2}{\sigma}) \]
+    根据全概率性质：
+    \[ P(Z > \frac{2}{\sigma}) = P(Z > 0) - P(0 < Z < \frac{2}{\sigma}) \]
+    \[ P(Z > \frac{2}{\sigma}) = 0.5 - 0.3 = 0.2 \]
+    因此，$P(X < 0) = 0.2$。
+    \end{solution}
+
+    \question (6) 若 $X$ 在 $(0, 1)$ 上服从均匀分布，求 $Y = e^X$ 的密度函数。
+
+\begin{solution}
+解：显然 $Y \in (1, e)$。$Y$ 的累积分布函数（CDF）为
+\[
+P\{Y \le y\} = P\{e^X \le y\} = P\{X \le \ln y\} = \ln y, \quad y \in (1, e)
+\]
+对上式求导以获得 $Y$ 的密度函数，
+\[
+p_Y(y) = \frac{d}{dy} P\{Y \le y\} = \frac{1}{y}, \quad y \in (1, e)
+\]
+因此，
+\[
+p_Y(y) = \begin{cases} 1/y, & y \in (1, e); \\ 0, & \text{其他}. \end{cases}
+\]
+\end{solution}
+
+\question (6) 令
+\[
+f(x) = \frac{\theta^2}{1 + \theta}(1 + x)e^{-\theta x}, \quad x > 0
+\]
+其中 $\theta > 0$。
+(a) 证明 $f$ 是一个概率密度函数。
+(b) 若 $X$ 的密度函数为 $f$，求 $\mathbb{E}(X)$ 和 $Var(X)$。
+
+\begin{solution}
+解：(a) 显然 $f$ 处处非负。我们通过计算证明
+\[
+\int_{-\infty}^{\infty} f(x) dx = 1
+\]
+计算如下：
+\begin{align*}
+\int_{-\infty}^{\infty} f(x) dx &= \int_{0}^{\infty} \frac{\theta^2}{1 + \theta}(1 + x)e^{-\theta x} dx = \frac{\theta}{1 + \theta} \int_{0}^{\infty} (1 + x)\theta e^{-\theta x} dx \\
+&= \frac{\theta}{1 + \theta} \left[ \left( -(1 + x)e^{-\theta x} \right)_{0}^{\infty} + \int_{0}^{\infty} \theta e^{-\theta x} dx \right] = \frac{\theta}{1 + \theta} \left[ 1 + \frac{1}{\theta} \right] = 1
+\end{align*}
+
+(b) 
+\begin{align*}
+\mathbb{E}(X) &= \int_{-\infty}^{\infty} x f(x) dx = \int_{0}^{\infty} \left( x \frac{\theta^2}{1 + \theta}(1 + x)e^{-\theta x} \right) dx \\
+&= \frac{\theta}{1 + \theta} \int_{0}^{\infty} x\theta(1 + x)e^{-\theta x} dx = \frac{\theta}{1 + \theta} \int_{0}^{\infty} (x + x^2) d(-e^{-\theta x}) \\
+&= \frac{\theta}{1 + \theta} \left[ \left( x(-e^{-\theta x}) \right)_{0}^{\infty} + \int_{0}^{\infty} e^{-\theta x} dx + \left( x^2(-e^{-\theta x}) \right)_{0}^{\infty} + 2 \int_{0}^{\infty} x(e^{-\theta x}) dx \right] \\
+&= \frac{\theta}{1 + \theta} \left[ 0 - \frac{1}{\theta} \left( e^{-\theta x} \right)_{0}^{\infty} + 0 + 2 \frac{1}{\theta} \int_{0}^{\infty} x d(-e^{-\theta x}) \right] \\
+&= \frac{\theta}{1 + \theta} \left[ \frac{1}{\theta} + \frac{2}{\theta} \left( \left( x(-e^{-\theta x}) \right)_{0}^{\infty} + \int_{0}^{\infty} e^{-\theta x} dx \right) \right] = \frac{\theta}{1 + \theta} \left[ \frac{1}{\theta} + \frac{2}{\theta^2} \right] = \frac{\theta + 2}{\theta^2 + \theta}
+\end{align*}
+为了得到 $Var(X)$，我们首先计算 $\mathbb{E}(X^2)$：
+\[
+\mathbb{E}(X^2) = \int_{-\infty}^{\infty} x^2 f(x) dx = \int_{0}^{\infty} \left( x^2 \frac{\theta^2}{1 + \theta}(1 + x)e^{-\theta x} \right) dx,
+\]
+同上，我们可以得到
+\[
+\mathbb{E}(X^2) = \frac{\theta}{1 + \theta} \left( \frac{2}{\theta^2} + \frac{6}{\theta^3} \right)
+\]
+由此可得
+\[
+Var(X) = \mathbb{E}(X^2) - (\mathbb{E}(X))^2 = \frac{\theta}{1 + \theta} \left( \frac{2}{\theta^2} + \frac{6}{\theta^3} \right) - \left( \frac{2 + \theta}{\theta(1 + \theta)} \right)^2
+\]
+\end{solution}
+
+    \question
+设 $X$ 和 $Y$ 为两个相互独立的几何随机变量，参数为 $p$。
+(a) 对于 $n \ge 1$，证明 $P(X \ge n) = (1 - p)^{n-1}$。
+(b) 令 $Z = \min(X, Y)$ 并算出 $P(Z \ge n)$。$Z$ 的分布是什么？
+(c) 求 $P(Y = 2 | X + Y = 4)$。
+
+\begin{solution}
+(a) 
+\[
+P(X \ge n) = \sum_{k=n}^{\infty} P(X = k) = \sum_{k=n}^{\infty} p(1 - p)^{k-1} = \frac{p(1 - p)^{n-1}}{1 - (1 - p)} = (1 - p)^{n-1}.
+\]
+
+(b) 
+\begin{align*}
+P(\min(X, Y) \ge n) &= P(X \ge n \text{ 且 } Y \ge n) = P(X \ge n)P(Y \ge n) \\
+&= (1 - p)^{2(n-1)} \\
+&= [(1 - p)^2]^{n-1}.
+\end{align*}
+因此它服从参数为 $1 - (1 - p)^2$ 的几何分布。
+
+(c) 
+\begin{align*}
+P(X + Y = 4) &= \sum_{k=1}^3 P(X = k)P(Y = 4 - k) \\
+&= p(1 - p)^0 p(1 - p)^2 + p(1 - p)^1 p(1 - p)^1 + p(1 - p)^2 p(1 - p)^0 \\
+&= 3p^2 (1 - p)^2.
+\end{align*}
+因此，
+\[
+P(Y = 2 | X + Y = 4) = \frac{P(X = 2 \text{ 且 } Y = 2)}{P(X + Y = 4)} = \frac{p^2 (1 - p)^2}{3p^2 (1 - p)^2} = \frac{1}{3}.
+\]
+\end{solution}
+
+\question (8) $X$ 和 $Y$ 的联合密度函数由下式给出
+\[
+f(x,y) = C(y - x)e^{-y}, \quad -y < x < y, 0 < y < \infty
+\]
+在该区域外等于 0。
+(a) 求 $C$。
+(b) 求 $X$ 的边缘密度函数。
+(c) 求 $Y$ 的边缘密度函数。
+(d) 求 $\mathbb{E}(X)$ 和 $\mathbb{E}(Y)$。
+
+\begin{solution}
+(a) 根据
+\begin{align*}
+1 &= \int_0^{\infty} \int_{-y}^y (C(y - x)e^{-y}) dx dy \\
+&= C \int_0^{\infty} e^{-y} \left[ \int_{-y}^y (y - x) dx \right] dy \\
+&= C \int_0^{\infty} (e^{-y}(2y^2)) dy = 4C
+\end{align*}
+我们得到 $C = 1/4$。
+我们可以使用 $\int_0^{\infty} (e^{-y} y^n) dy = n!$。请证明它。
+
+(b) 我们需要确保对于 $x > 0$，联合密度仅在 $y > x$ 时不为零；而对于 $x < 0$，联合密度仅在 $y > -x$ 时不为零。因此，对于 $x > 0$，$X$ 的密度函数为
+\begin{align*}
+f_X(x) &= \frac{1}{4} \int_x^{\infty} (y - x)e^{-y} dy \\
+&= \frac{1}{4} \int_0^{\infty} ue^{-(x+u)} du \\
+&= \frac{1}{4} e^{-x}
+\end{align*}
+而对于 $x < 0$，$X$ 的密度函数为
+\begin{align*}
+f_X(x) &= \frac{1}{4} \int_{-x}^{\infty} (y - x)e^{-y} dy \\
+&= \frac{1}{4} \left[ -ye^{-y} - e^{-y} + xe^{-y} \right]_{-x}^{\infty} \\
+&= \frac{1}{4} e^x (-2x + 1)
+\end{align*}。
+
+(c) $Y$ 的密度函数为 $f_Y(y) = \frac{1}{4} e^{-y} \int_{-y}^y (y - x) dx = \frac{1}{2} y^2 e^{-y}$。
+
+(d)
+\begin{align*}
+\mathbb{E}(X) &= \frac{1}{4} \left[ \int_0^{\infty} xe^{-x} dx + \int_{-\infty}^0 xe^x (-2x + 1) dx \right] \\
+&= \frac{1}{4} \left[ 1 - \int_0^{\infty} (2y^2 e^{-y} + ye^{-y}) dy \right] \\
+&= \frac{1}{4} [1 - 4 - 1] = -1
+\end{align*}
+\begin{align*}
+\mathbb{E}(Y) &= \int_0^{\infty} y \left( \frac{1}{2} y^2 e^{-y} \right) dy = 3
+\end{align*}。
+\end{solution}
+
+\question (6) $X$ 和 $Y$ 的联合密度函数为
+\[
+f(x, y) = xe^{-x(y+1)}, \quad x > 0, y > 0
+\]
+(a) 求在 $Y = y$ 条件下 $X$ 的条件密度，以及在 $X = x$ 条件下 $Y$ 的条件密度。
+(b) 求 $Z = XY$ 的密度函数。
+
+\begin{solution}
+(a) $X|Y = y$ 的条件密度为
+\[
+p_{X|Y}(x|y) = \frac{xe^{-x(y+1)}}{\int_{0}^{\infty} xe^{-x(y+1)} dx} = \frac{xe^{-x(y+1)}}{1/(y+1)^2} = (y + 1)^2 xe^{-x(y+1)}, \quad x, y > 0
+\]
+而在 $X = x$ 的条件下 $Y$ 的条件密度为
+\[
+p_{Y|X}(y|x) = \frac{xe^{-x(y+1)}}{\int_{0}^{\infty} xe^{-x(y+1)} dy} = \frac{xe^{-x(y+1)}}{e^{-x}} = xe^{-xy}, \quad x, y > 0
+\]
+(b) 我们首先求 $Z$ 的累积分布函数（CDF）。很明显 $Z > 0$，且对于 $z > 0$，有
+\begin{align*}
+P(Z \le z) = P(XY \le z) &= \int_{0}^{\infty} \int_{0}^{z/x} xe^{-x(y+1)} dy dx \\
+&= \int_{0}^{\infty} e^{-x}(1 - e^{-z}) dx \\
+&= 1 - e^{-z}
+\end{align*}
+对上式求导得到 $Z$ 的密度函数为
+\[
+p_Z(z) = \begin{cases} e^{-z}, & z > 0; \\ 0, & z \le 0. \end{cases}
+\]
+\end{solution}
+
+\question
+假设 $X$ 和 $Y$ 是 $(0, 1]$ 上的独立均匀随机变量。令 $Z = X/Y$。
+(a) 求 $Z$ 的概率密度函数和 $Z$ 的中位数。
+(b) 求 $\sqrt{Z}$ 的期望值和方差。若不存在，请回答“不存在”并说明理由。
+
+\begin{solution}
+(a) 考虑单位正方形内直线 $y = (1/z)x$ 上方的区域，我们有
+\[
+\Pr(Z \le z) = \Pr(X \le zY) = \begin{cases} \frac{z}{2}, & 0 \le z \le 1; \\ 1 - \frac{1}{2z}, & z \ge 1. \end{cases}
+\]
+因此，密度函数为
+\[
+p_Z(z) = \begin{cases} 1/2, & 0 \le z \le 1; \\ 1/(2z^2), & z \ge 1; \\ 0, & \text{其他}. \end{cases}
+\]
+显然 $Z$ 的中位数为 1。
+
+(b) 
+\[
+E\sqrt{Z} = \int_0^1 \sqrt{z} \cdot \frac{1}{2} dz + \int_1^{\infty} \sqrt{z} \cdot \frac{1}{2z^2} dz = \frac{1}{3} + 1 = \frac{4}{3}.
+\]
+显然 $EZ$ 不存在（$\int_a^{\infty} \frac{dz}{z}$ 不收敛），因此 $Var(\sqrt{Z})$ 不存在。
+\end{solution}
+
+\question 问题 2 令 $X$ 为具有如下概率密度函数（PDF）的随机变量：
+\[
+f(x) = \begin{cases} \frac{1}{3} & \text{对于 } -1 < x < 2 \\ 0 & \text{其他} \end{cases}
+\]
+(a) 求该 $X$ 分布的中位数、下四分位数和上四分位数。
+(b) 求 $X^2$ 的累积分布函数（CDF）和概率密度函数（PDF）。
+
+\begin{solution}
+(a) 给定的分布是区间 $[-1, 2]$ 上的均匀分布，其中 $a = -1, b = 2$。其累积分布函数（CDF）为
+\[
+F(x) = \begin{cases} 0 & \text{若 } x \le -1 \\ (x + 1)/3 & \text{若 } -1 < x < 2 \\ 1 & \text{若 } x \ge 2 \end{cases}
+\]
+\begin{itemize}
+    \item 中位数 $m$：$F(m) = 1/2 \Rightarrow (m + 1)/3 = 1/2 \Rightarrow m = 1/2$。
+    \item 下四分位数 $l$：$F(l) = 1/4 \Rightarrow (l + 1)/3 = 1/4 \Rightarrow l = -1/4$。
+    \item 上四分位数 $u$：$F(u) = 3/4 \Rightarrow (u + 1)/3 = 3/4 \Rightarrow u = 5/4$。
+\end{itemize}
+
+(b) 从 (a) 部分可知，$X$ 的 CDF 由下式给出：
+% \[
+% F(x) = \begin{cases} 0 & \text{若 } x \le -1, & (i) \\ \frac{x+1}{3} & \text{若 } -1 < x < 2, & (ii) \\ 1 & \text{若 } x \ge 2. & (iii) \end{cases}
+% \]
+我们使用 CDF 法。令 $F_Y$ 表示 $Y$ 的 CDF。注意 $Y = X^2$ 只取非负值。因此
+\[
+F_Y(y) = P(Y \le y) = 0 \quad \text{对于所有 } y < 0.
+\]
+现在假设 $y \ge 0$（这一假设的重要性在于确保 $\sqrt{y}$ 是实数）。我们计算
+\begin{align*}
+F_Y(y) &= P(X^2 \le y) \\
+&= P(-\sqrt{y} \le X \le \sqrt{y}) \\
+&= P(X \le \sqrt{y}) - P(X < -\sqrt{y}) \\
+&= P(X \le \sqrt{y}) - P(X \le -\sqrt{y}) \\
+&= F(\sqrt{y}) - F(-\sqrt{y})
+\end{align*}
+其中 $F$ 是由 (1) 给出的 $X$ 的 CDF。注意我们利用了 $P(X = -\sqrt{y}) = 0$，这对于每一个连续随机变量 $Z$ 和任何实数 $z$ 都成立（即 $P(Z = z) = 0$）。综上所述，对于所有 $y \ge 0$，有
+\[
+F_Y(y) = F(\sqrt{y}) - F(-\sqrt{y})
+\]
+现在，当我们评估 $F(\sqrt{y})$ 和 $F(-\sqrt{y})$ 时，我们必须确定适用 (i), (ii), (iii) 中的哪一个公式，我们需要对 $F(\sqrt{y})$ 和 $F(-\sqrt{y})$ 都这样做。这就是为什么我们需要仔细进行分类讨论。
+
+让我们分别考虑 $F(\sqrt{y})$ 和 $F(-\sqrt{y})$。由于 $\sqrt{y} \ge 0$，当评估 $F(\sqrt{y})$ 时，情况 (i) 永远不会发生。由于 $\sqrt{y} < 2$ 当且仅当 $y < 4$，因此对于 $F(\sqrt{y})$，若 $0 \le y < 4$ 则发生情况 (ii)，若 $y \ge 4$ 则发生情况 (iii)。我们得出：
+\[
+F(\sqrt{y}) = \begin{cases} \frac{\sqrt{y}+1}{3} & \text{若 } 0 \le y < 4, \\ 1 & \text{若 } y \ge 4. \end{cases}
+\]
+另一方面，$-\sqrt{y} \le -1$ 当且仅当 $y \ge 1$，因此对于 $F(-\sqrt{y})$，若 $0 \le y < 1$ 则发生情况 (ii)，若 $y \ge 1$ 则发生情况 (i)。因此
+\[
+F(-\sqrt{y}) = \begin{cases} \frac{-\sqrt{y}+1}{3} & \text{若 } 0 \le y < 1, \\ 0 & \text{若 } y \ge 1. \end{cases}
+\]
+从上两式中，我们可以看到 $0, 1, 4$ 必须是我们分类讨论中的“分界点”，因为我们需要根据 $y$ 所在的位置应用不同的公式。
+
+现在应该很清楚为什么我们需要将 $F(\sqrt{y}) - F(-\sqrt{y})$ 的评估拆分为 $0 \le y < 1, 1 \le y < 4$ 以及 $y \ge 4$ 三种情况。剩余的 $y < 0$ 情况源自前述。
+
+综合以上各项，我们得到
+\[
+F_Y(y) = \begin{cases} 0 & \text{若 } y < 0, \\ 2\sqrt{y}/3 & \text{若 } 0 \le y < 1, \\ (\sqrt{y} + 1)/3 & \text{若 } 1 \le y < 4, \\ 1 & \text{若 } y \ge 4. \end{cases}
+\]
+注意 $F_Y$ 在 $y = 0, 1, 4$ 处不可微。
+
+为了计算 $Y$ 的 PDF $f_Y$，我们利用 $f_Y$ 是 $F_Y$ 的导数这一事实（除了 $F_Y$ 不可微的点——在这些点上我们可以将 $f_Y$ 设置为任意值）。$Y = X^2$ 的一个 PDF 为
+\[
+f_Y(y) = \begin{cases} 0 & \text{若 } y \le 0, \\ 1/(3\sqrt{y}) & \text{若 } 0 < y \le 1, \\ 1/(6\sqrt{y}) & \text{若 } 1 < y < 4, \\ 0 & \text{若 } y \ge 4. \end{cases}
+\]
+\end{solution}
+
+\question 设 $X_1, X_2, \dots, X_4$ 是四个独立的随机变量，每个变量的密度函数为
+\[
+f(x) = \begin{cases} e^{-x}, & 0 < x < \infty; \\ 0, & x \le 0. \end{cases}
+\]
+对于 $1 \le k \le 4$，令 $X_{(k)}$ 表示第 $k$ 个顺序统计量。
+(a) 求 $X_{(2)}$ 和 $X_{(3)}$ 的联合密度函数。
+(b) 令 $Y = X_{(3)} - X_{(2)}$。求 $Y$ 的分布。
+
+\begin{solution}
+首先，注意到
+\[
+F(x) = \int_0^x e^{-t} dt = \left[ -e^{-t} \right]_0^x = 1 - e^{-x}
+\]
+(a) 令 $U = X_{(3)}$ 且 $V = X_{(2)}$。那么
+\begin{itemize}
+    \item $X_{(1)} \le v$,
+    \item $X_{(2)}$ 落在 $[v, v + dv]$,
+    \item $X_{(3)}$ 落在 $[u, u + du]$,
+    \item 且 $X_{(4)} \ge u$.
+\end{itemize}
+共有 $4! = 24$ 种方式来选择这四个变量。因此
+\begin{align*}
+f(u, v) &= 24 F(v) f(v) f(u) [1 - F(u)], \quad 0 \le v \le u \\
+&= 24 [1 - e^{-v}] e^{-v} e^{-u} e^{-u} \\
+&= 24 [1 - e^{-v}] e^{-v} e^{-2u}
+\end{align*}
+显然，在其他情况下 $f(u, v) = 0$。
+
+(b) 无论是根据课堂回忆，还是根据定义计算，对于 $Y = U - V$，有
+\[
+f_Y(y) = \int_{-\infty}^{\infty} f(v + y, v) dv
+\]
+因此
+\begin{align*}
+f_Y(y) &= \int_0^{\infty} 12 [1 - e^{-v}] e^{-3v - 2y} dv \\
+&= 24 \int_0^{\infty} e^{-3v - 2y} - e^{-4v - 2y} dv \\
+&= 8e^{-2y} - 6e^{-2y} \\
+&= 2e^{-2y}
+\end{align*}
+因此 $Y$ 服从参数为 $\lambda = 2$ 的指数分布。
+\end{solution}
+
+\question
+(a) 令 $X$ 为一个随机变量，满足 $0 \le X \le 1$ 且 $E(X) = \mu$。证明：
+\begin{enumerate}
+    \item $0 \le \mu \le 1$；
+    \item $0 \le Var(X) \le \mu(1 - \mu) \le \frac{1}{4}$。[提示：使用 $X^2 \le X$。]
+\end{enumerate}
+(b) 部分 (a) 的结果可以推广如下。令 $X$ 为一个随机变量，满足 $a \le X \le b$ 且 $E(X) = \mu$。证明：
+\begin{enumerate}
+    \item $a \le \mu \le b$；
+    \item $0 \le Var(X) \le (\mu - a)(b - \mu) \le \frac{1}{4}(b - a)^2$。
+\end{enumerate}
+
+\begin{solution}
+(a) (i) 因为 $0 \le X \le 1$，
+\[
+0 = \int_0^1 0 dx \le \int_0^1 xf(x) dx = E(X) \le \int_0^1 f(x) dx = 1.
+\]
+(ii) 因为 $0 \le X^2 \le X \le 1$，我们看到 $E(X^2) \le E(X) = \mu$。因此
+\[
+Var(X) = E(X^2) - [E(X)]^2 \le \mu - \mu^2 = \mu(1 - \mu).
+\]
+通过使用微积分（或通过配方法），函数 $f(x) = x(1 - x)$ 的最大值出现在 $x = 1/2$ 处。因此 $\mu(1 - \mu) \le \frac{1}{2}(1 - \frac{1}{2}) = \frac{1}{4}$。
+
+(b) (i) 设 $Y = \frac{X - a}{b - a}$。则 $0 \le Y \le 1$ 且
+\[
+\mu_Y = \frac{\mu_X - a}{b - a},
+\]
+这意味着
+\[
+\mu_X = a + (b - a)\mu_Y.
+\]
+因此 $a \le \mu_X \le b$。
+(ii) 
+\[
+Var(Y) = Var\left( \frac{X - a}{b - a} \right) = \frac{Var(X)}{(b - a)^2}.
+\]
+根据部分 (a)(ii)，这意味着
+\[
+0 \le \frac{Var(X)}{(b - a)^2} \le \mu_Y(1 - \mu_Y) \le \frac{1}{4}.
+\]
+因此，
+\[
+0 \le Var(X) \le (b - a)^2 \mu_Y(1 - \mu_Y) \le \frac{1}{4}(b - a)^2.
+\]
+剩下的只需证明
+\[
+(\mu_X - a)(b - \mu_X) = (a + (b - a)\mu_Y - a)(b - a - (b - a)\mu_Y) = (b - a)^2 \mu_Y(1 - \mu_Y)
+\]
+至此完成了部分 (b)(ii) 的证明。
+\end{solution}
+
+\question
+设 $X$ 和 $Y$ 的联合密度为
+\[
+f(x, y) = \begin{cases} Ae^{-x}, & \text{若 } 0 \le y \le x \\ 0, & \text{其他} \end{cases}
+\]
+(a) 求 $A$ 的值；
+(b) 确定 $X$ 和 $Y$ 的边缘密度函数；
+(c) 求 $X$ 和 $Y$ 的协方差；
+(d) 求 $X$ 和 $Y$ 的相关系数。
+
+\begin{solution}
+(a) 根据概率密度的性质，总积分为 1：
+\[
+\int_0^{\infty} \int_0^x Ae^{-x} dy dx = 1 \implies \int_0^{\infty} Axe^{-x} dx = 1
+\]
+利用分部积分法，$\int_0^{\infty} xe^{-x} dx = 1$，因此 $A = 1$。
+
+(b) $X$ 的边缘密度：
+\[
+f_X(x) = \int_0^x e^{-x} dy = xe^{-x}, \quad x \ge 0
+\]
+$Y$ 的边缘密度：
+\[
+f_Y(y) = \int_y^{\infty} e^{-x} dx = e^{-y}, \quad y \ge 0
+\]
+
+(c) 首先计算期望：
+$E[X] = \int_0^{\infty} x(xe^{-x}) dx = \Gamma(3) = 2$。
+$E[Y] = \int_0^{\infty} y e^{-y} dy = 1$。
+$E[XY] = \int_0^{\infty} \int_0^x xy e^{-x} dy dx = \int_0^{\infty} e^{-x} x \left[ \frac{y^2}{2} \right]_0^x dx = \int_0^{\infty} \frac{x^3}{2} e^{-x} dx = \frac{3!}{2} = 3$。
+因此，
+\[
+Cov(X, Y) = E[XY] - E[X]E[Y] = 3 - (2)(1) = 1.
+\]
+
+(d) 计算方差：
+$E[X^2] = \int_0^{\infty} x^2 (xe^{-x}) dx = 3! = 6 \implies Var(X) = 6 - 2^2 = 2$。
+$E[Y^2] = \int_0^{\infty} y^2 e^{-y} dy = 2! = 2 \implies Var(Y) = 2 - 1^2 = 1$。
+相关系数为：
+\[
+\rho_{XY} = \frac{Cov(X, Y)}{\sqrt{Var(X)Var(Y)}} = \frac{1}{\sqrt{2 \cdot 1}} = \frac{1}{\sqrt{2}}.
+\]
+\end{solution}
+
+\question
+参加马拉松比赛的男性跑者比例 $X$ 和女性跑者比例 $Y$ 由联合密度函数描述：
+\[
+f(x, y) = \begin{cases} 8xy, & 0 \leq y \leq x \leq 1; \\ 0, & \text{其他}. \end{cases}
+\]
+
+1. 求 $X$ 和 $Y$ 的协方差。
+2. 求 $X$ 和 $Y$ 的相关系数。
+
+\begin{solution}
+我们首先计算边缘密度函数。它们是
+\[
+g(x) = \begin{cases} 4x^3, & 0 \leq x \leq 1; \\ 0, & \text{其他}. \end{cases}
+\]
+以及
+\[
+h(y) = \begin{cases} 4y - 4y^3, & 0 \leq y \leq 1; \\ 0, & \text{其他}. \end{cases}
+\]
+
+根据这些边缘密度函数，我们计算
+\[
+E(X) = \int_0^1 (x \cdot 4x^3) dx = \frac{4}{5},
+\]
+以及
+\[
+E(Y) = \int_0^1 (y(4y - 4y^3)) dy = 4 \times \frac{1}{3} - 4 \times \frac{1}{5} = \frac{8}{15}.
+\]
+
+根据给定的联合密度函数，我们有
+\begin{align*}
+E(XY) &= \int_0^1 \int_y^1 ((xy)(8xy)) dx dy = \int_0^1 \left( 8y^2 \int_y^1 x^2 dx \right) dy \\
+&= \int_0^1 \left( 8y^2 \times \frac{1}{3}(1 - y^3) \right) dy = \frac{8}{3} \int_0^1 (y^2 - y^5) dy = \frac{8}{3} \left( \frac{1}{3} - \frac{1}{6} \right) = \frac{4}{9}.
+\end{align*}
+
+因此，
+\[
+\sigma_{XY} = E(XY) - E(X)E(Y) = \frac{4}{9} - \frac{4}{5} \times \frac{8}{15} = \frac{4}{225}.
+\]
+\end{solution}
+
+\question
+令 $T$ 表示顶点为 $(0, 0), (0, 1)$ 和 $(1, 0)$ 的直角三角形的内部（见下图）。令 $X$ 和 $Y$ 是在 $T$ 内具有均匀密度的联合连续随机变量。
+
+(a) 求 $X$ 的边缘累积分布函数（cdf）。
+(b) 求 $X + Y$ 的密度函数。
+(c) $X$ 和 $Y$ 是否相互独立？请说明理由。
+
+\begin{solution}
+(a) 首先，注意到 $T$ 的面积是 $\frac{1}{2}$，所以概率密度是 $2$。接下来，我们计算对于 $0 \le x \le 1$，
+\[
+f_X(x) = \int_0^{1-x} f(x, y)dy = \int_0^{1-x} 2dy = [2y]_0^{1-x} = 2 - 2x.
+\]
+因此，对于 $0 \le x \le 1$，
+\[
+F_X(x) = \int_0^x f_X(t)dt = \int_0^x (2 - 2t)dt = [2t - t^2]_0^x = 2x - x^2.
+\]
+
+(b) 令 $Z = X + Y$。那么对于 $0 \le z \le 1$，
+\[
+f_Z(z) = \int_{-\infty}^{\infty} f(x, z - x)dx = \int_0^z 2dx = 2z.
+\]
+
+(c) 不独立。点 $(0.8, 0.8)$ 位于 $T$ 之外，因此 $f_{XY}(0.8, 0.8) = 0$，但 $f_X(0.8) = f_Y(0.8) = 0.4$，所以 $f_X(0.8)f_Y(0.8) \neq 0$。
+\end{solution}
+
+\question
+假设 $(X, Y)$ 在单位圆盘（圆心在原点，半径为 1）上服从均匀分布。
+(a) 分别求 $X$ 和 $Y$ 的边缘密度函数 $f_X$ 和 $f_Y$。
+(b) 证明 $X$ 和 $Y$ 不是相互独立的。
+(c) 证明 $Cov(X, Y) = 0$。
+
+\begin{solution}
+(a) 显然联合密度函数为
+\[
+f_{XY}(x, y) = \begin{cases} \frac{1}{\pi}, & x^2 + y^2 \le 1; \\ 0, & \text{其他.} \end{cases}
+\]
+\[
+f_Y(y) = \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} \frac{1}{\pi} dx = \frac{2\sqrt{1-y^2}}{\pi}, \quad (-1 \le y \le 1).
+\]
+同理，$f_X(x) = \frac{2\sqrt{1-x^2}}{\pi}, \quad (-1 \le x \le 1)$。
+
+(b) 显然
+\[
+f_X(x) \cdot f_Y(y) \neq f_{XY} = \frac{1}{\pi}.
+\]
+因此它们不是相互独立的。
+
+(c) 
+\[
+E[X] = \int_{-1}^1 \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{x}{\pi} dydx = \int_{-1}^1 x \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{1}{\pi} dydx = \int_{-1}^1 \frac{2x\sqrt{1-x^2}}{\pi} dx = 0
+\]
+同理，$E[Y] = 0$。
+
+接下来，
+\[
+E[XY] = \int_{-1}^1 x \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{y}{\pi} dydx = \int_{-1}^1 \frac{x}{\pi} \cdot 0 dx = 0.
+\]
+因此
+\[
+Cov[X, Y] = E[XY] - E[X]E[Y] = 0.
+\]
+\end{solution}
+
+\question
+对于每个 $\theta \in [0, \pi/2)$，我们定义一个平面区域 $A_\theta$ 为
+\[
+A_\theta = \{(x, y) : |x \cos \theta - y \sin \theta| < 1\}, \quad 0 \leq \theta < \frac{\pi}{2}.
+\]
+对于每个 $\theta \in (0, \pi/2)$，我们定义一个平面区域 $D_\theta$ 为
+\[
+D_\theta = A_\theta \cap A_0, \quad 0 < \theta < \frac{\pi}{2}.
+\]
+右侧阴影区域是 $D_{6/5}$ 的草图。
+
+设 $(X, Y)$ 是在某个 $\theta \in (0, \pi/2)$ 的 $D_\theta$ 中均匀分布的一个点。
+(a) 求 $X$ 的边缘分布。
+(b) 求给定 $X = x$ 时 $Y$ 的条件密度函数。
+(c) 求条件期望 $\mathbb{E}(Y|X)$。
+(d) 求 $\mathbb{E}(Y)$。
+(e) 求 $\text{Var}(Y)$。
+(f) $X$ 和 $Y$ 相关吗？如果它们相关，它们是正相关还是负相关？如果它们不相关，它们是否独立？说明你的理由。
+
+\begin{solution}
+(a) 对于 $x \in (-1, 1)$，$D_\theta$ 中的 $y$ 区间是 $\left( \frac{x \cos \theta - 1}{\sin \theta}, \frac{x \cos \theta + 1}{\sin \theta} \right)$，其长度始终为 $\frac{2}{\sin \theta}$，与 $x$ 无关。因此 $X$ 在 $(-1, 1)$ 上服从均匀分布。
+
+(b) 由部分 (a) 可得
+\[
+p_{Y|X}(y|x) = \begin{cases} \frac{\sin \theta}{2}, & y \in \left( \frac{x \cos \theta - 1}{\sin \theta}, \frac{x \cos \theta + 1}{\sin \theta} \right); \\ 0, & \text{其他}. \end{cases}
+\]
+
+(c) 由部分 (b) 可得
+\[
+\mathbb{E}(Y|X) = \frac{X \cos \theta}{\sin \theta}
+\]
+
+(d) 从对称性可以清楚地看出 $\mathbb{E}Y = 0$。或者可以通过以下方式计算
+\[
+\mathbb{E}Y = \mathbb{E}(\mathbb{E}(Y|X)) = \frac{\cos \theta}{\sin \theta} \mathbb{E}X = 0
+\]
+
+(e) 
+\begin{align*}
+\text{Var}(Y) &= \mathbb{E}(\text{Var}(Y|X)) + \text{Var}(\mathbb{E}(Y|X)) \\
+&= \mathbb{E}\left( \frac{1}{12} \cdot \frac{4}{\sin^2 \theta} \right) + \frac{\cos^2 \theta}{\sin^2 \theta} \text{Var} (X) \\
+&= \frac{1}{3 \sin^2 \theta} + \frac{1}{3} \frac{\cos^2 \theta}{\sin^2 \theta} \\
+&= \frac{1 + \cos^2 \theta}{3 \sin^2 \theta}
+\end{align*}
+
+(f) $X$ 和 $Y$ 是相关的：由于 $\mathbb{E}X = \mathbb{E}Y = 0$，只需证明 $\mathbb{E}(XY) \neq 0$。事实上，
+\[
+\mathbb{E}(XY) = \mathbb{E}(X \mathbb{E}(Y|X)) = \mathbb{E}\left( X^2 \frac{\cos \theta}{\sin \theta} \right) = \frac{\cos \theta}{\sin \theta} \mathbb{E}(X^2) > 0
+\]
+因此 $X$ 和 $Y$ 是正相关的。
+\end{solution}
+
+\question
+假设一个公平的骰子独立滚动了 $n$ 次。对于每个 $i = 1, \dots, 6$，设 $X_i$ 表示 $i$ 出现的次数。
+
+(a) 求 $X_2$ 的概率质量函数（pmf）。
+(b) 求 $(X_2, X_4)$ 的联合概率质量函数。
+(c) 求给定 $X_4 = \ell$ 时 $X_2$ 的条件概率质量函数 $(0 \leq \ell \leq n)$。
+(d) 求 $X_2 + X_4$ 的概率质量函数。
+(e) 求 $\text{Cov}(X_2, X_4)$。
+
+\begin{solution}
+(a) $X_2 \sim \text{Bin}(n, \frac{1}{6})$。其概率质量函数为
+\[
+p(k) = \binom{n}{k} \left( \frac{1}{6} \right)^k \left( \frac{5}{6} \right)^{n-k}
+\]
+
+(b) 联合概率质量函数为
+\[
+\text{Pr}\{X_2 = i, X_4 = j\} = \binom{n}{i} \binom{n-i}{j} \left( \frac{1}{6} \right)^i \left( \frac{1}{6} \right)^j \left( \frac{2}{3} \right)^{n-i-j}, \quad i+j \leq n
+\]
+
+(c) $X_2 | \{X_4 = \ell\} \sim \text{Bin}(n - \ell, \frac{1}{5})$。因此条件概率质量函数为
+\[
+p(k) = \binom{n - \ell}{k} \left( \frac{1}{5} \right)^k \left( \frac{4}{5} \right)^{n-\ell-k}
+\]
+
+(d) $X_2 + X_4 \sim \text{Bin}(n, \frac{1}{3})$。其概率质量函数为
+\[
+p(k) = \binom{n}{k} \left( \frac{1}{3} \right)^k \left( \frac{2}{3} \right)^{n-k}
+\]
+
+(e) 回忆恒等式
+\[
+\text{Var}(X_2 + X_4) = \text{Var}(X_2) + \text{Var}(X_4) + 2 \text{Cov}(X_2, X_4)
+\]
+由于 $X_2, X_4 \sim \text{Bin}(n, \frac{1}{6})$，我们有 $\text{Var}(X_2) = \text{Var}(X_4) = \frac{5n}{36}$。由于 $X_2 + X_4 \sim \text{Bin}(n, \frac{1}{3})$，我们有 $\text{Var}(X_2 + X_4) = \frac{2n}{9}$。因此
+\[
+\text{Cov}(X_2, X_4) = \frac{1}{2} \left( \text{Var}(X_2 + X_4) - \text{Var}(X_2) - \text{Var}(X_4) \right) = -\frac{n}{36}
+\]
+
+[备选解法 1]：我们通过对称性观察到 $\text{Cov}(X_2, X_1) = \text{Cov}(X_2, X_3) = \dots = \text{Cov}(X_2, X_6)$。注意 $X_1 + \dots + X_6 = n$ 是固定的，因此 $\text{Cov}(X_2, X_1 + \dots + X_6) = 0$。于是
+\begin{align*}
+0 &= \sum_{i=1}^{6} \text{Cov}(X_2, X_i) = \text{Cov}(X_2, X_2) + \sum_{i \neq 2} \text{Cov}(X_2, X_i) \\
+&= \text{Cov}(X_2, X_2) + 5 \text{Cov}(X_2, X_4)
+\end{align*}
+这意味着
+\[
+\text{Cov}(X_2, X_4) = -\frac{1}{5} \text{Cov}(X_2, X_2) = -\frac{1}{5} \text{Var}(X_2) = -\frac{n}{36}
+\]
+
+[备选解法 2]：我们计算 $\mathbb{E}(X_2 X_4)$。由于 $X_2 | X_4 \sim \text{Bin}(n - X_4, \frac{1}{5})$，我们有
+\begin{align*}
+\mathbb{E}(X_2 X_4) &= \mathbb{E}(X_4 \mathbb{E}(X_2 | X_4)) \\
+&= \frac{1}{5} \mathbb{E}(X_4 (n - X_4)) \\
+&= \frac{1}{5} \left( n \mathbb{E}(X_4) - \mathbb{E}(X_4^2) \right) \\
+&= \frac{1}{5} \left( \frac{n^2}{6} - \left( \text{Var}(X_4) + (\mathbb{E}X_4)^2 \right) \right) \\
+&= \frac{1}{5} \left( \frac{n^2}{6} - \frac{5n}{36} - \frac{n^2}{36} \right) \\
+&= \frac{1}{36} (n^2 - n)
+\end{align*}
+因此
+\[
+\text{Cov}(X_2, X_4) = \mathbb{E}(X_2 X_4) - \mathbb{E}(X_2) \mathbb{E}(X_4) = \frac{n^2 - n}{36} - \left( \frac{n}{6} \right)^2 = -\frac{n}{36}
+\]
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 为 $[0, 1]$ 上的独立均匀随机变量，且 $X_{(1)} \le X_{(2)} \le \dots \le X_{(n)}$ 是它们的顺序统计量。
+(a) 求期望 $E(X_{(1)})$ 和 $E(X_{(n)})$。
+(b) 求协方差 $Cov(X_{(1)}, X_{(n)})$。
+
+\begin{solution}
+(a) 我们在辅导课中已经看到
+\[
+E(X_{(1)}) = \frac{1}{n + 1}, \quad E(X_{(n)}) = \frac{n}{n + 1}.
+\]
+(b) $X_{(1)}$ 和 $X_{(n)}$ 的联合密度为
+\[
+f(u, v) = n(n - 1)(v - u)^{n-2}, \quad 0 \le u \le v \le 1.
+\]
+因此期望为
+\begin{align*}
+E(X_{(1)}X_{(n)}) &= n(n - 1) \int_0^1 \int_0^v uv(v - u)^{n-2} du dv \\
+&= n(n - 1) \int_0^1 v \int_0^v u(v - u)^{n-2} du dv \\
+&= n(n - 1) \int_0^1 v \int_0^1 v^2 w(v - vw)^{n-2} dw dv \quad (\text{令 } u = vw) \\
+&= n(n - 1) \int_0^1 v^{n+1} \int_0^1 w(1 - w)^{n-2} dw dv \\
+&= n(n - 1) \int_0^1 v^{n+1} \frac{1!(n - 2)!}{n!} dv \\
+&= \int_0^1 v^{n+1} dv \\
+&= \frac{1}{n + 2}.
+\end{align*}
+因此协方差为
+\begin{align*}
+Cov(X_{(1)}, X_{(n)}) &= E(X_{(1)}X_{(n)}) - E(X_{(1)})E(X_{(n)}) \\
+&= \frac{1}{n + 2} - \frac{1}{n + 1} \cdot \frac{n}{n + 1} \\
+&= \frac{1}{(n + 1)^2 (n + 2)}.
+\end{align*}
+
+\textbf{部分 (b) 的另一种解法（避免贝塔积分）：}
+在给定 $X_{(n)} = t$ 的条件下：我们断言 $X_{(1)}$ 的分布与 $n-1$ 个在 $[0, t]$ 上的均匀变量的最小顺序统计量相同。事实上，假设 $X_{(n)} = X_{i_0}$，那么 $\{X_i\}_{i \neq i_0}$ 在条件上保持独立，且容易验证 $X_i | X_{i_0} = t$ ($i \neq i_0$) 是 $[0, t]$ 上的均匀随机变量。因此，
+\[
+E(X_{(1)} | X_{(n)} = t) = \frac{t}{n}, \quad t \in [0, 1].
+\]
+由此，回忆起 $X_{(n)}$ 的密度函数为 $p(x) = nx^{n-1}$ ($x \in [0, 1]$)，有
+\begin{align*}
+E(X_{(1)}X_{(n)}) &= E[E(X_{(1)}X_{(n)} | X_{(n)})] = E[E(X_{(1)} | X_{(n)})X_{(n)}] \\
+&= \int_0^1 \frac{t}{n} \cdot t \cdot nt^{n-1} dt \\
+&= \frac{1}{n + 2}.
+\end{align*}
+接下来的步骤与上述解法相同。
+\end{solution}
+
+\question 问题 3 令 $X_1, \dots, X_n$ 为独立的随机变量，且 $X_i \sim N(\mu_i, \sigma_i^2)$，其中 $i = 1, \dots, n$。令 $Y = \sum_{i=1}^n a_i X_i$，其中 $a_i \in \mathbb{R}$ 为常数。
+(a) 利用矩生成函数（MGF）证明 $Y$ 服从正态分布，且 $E[Y] = \sum_{i=1}^n a_i \mu_i$ 以及 $Var[Y] = \sum_{i=1}^n a_i^2 \sigma_i^2$。
+(b) $Y$ 的概率密度函数（PDF）是什么？
+
+\begin{solution}
+(a) 根据讲义中的表格，我们有
+\[
+M_{X_i}(t) = e^{\mu_i t + \sigma_i^2 t^2 / 2}
+\]
+对于所有 $i$ 均成立。在接下来的推导中，我们将使用讲义中提到的 MGF 性质 (c) 和 (d)。由于假设 $X_1, \dots, X_n$ 相互独立，且 $a_1, \dots, a_n$ 为常数，则变量 $a_1 X_1, \dots, a_n X_n$ 也是相互独立的。利用 MGF 的性质 (d)，我们得到
+\[
+M_Y(t) = M_{a_1 X_1 + \dots + a_n X_n}(t) = \prod_{i=1}^n M_{a_i X_i}(t).
+\]
+根据 MGF 的性质 (c)，我们有 $M_{a_i X_i}(t) = M_{X_i}(a_i t)$。代入式 (6)，我们得出
+\begin{align*}
+M_Y(t) &= \prod_{i=1}^n M_{X_i}(a_i t) = \prod_{i=1}^n e^{a_i \mu_i t + \sigma_i^2 a_i^2 t^2 / 2} \\
+&= e^{t \sum_{i=1}^n a_i \mu_i + (\sum_{i=1}^n a_i^2 \sigma_i^2) t^2 / 2}.
+\end{align*}
+最后一步是识别具有式 (7) 所示 MGF 的分布。回想 $N(\mu, \sigma^2)$ 的 MGF 为 $e^{\mu t + \sigma^2 t^2 / 2}$。因此 (7) 是 $N(\mu, \sigma^2)$ 的 MGF，其中 $\mu = \sum_{i=1}^n a_i \mu_i$ 且 $\sigma^2 = \sum_{i=1}^n a_i^2 \sigma_i^2$。
+根据 MGF 的逆转定理（唯一性定理），随机变量的 MGF 唯一确定其分布。由于 $Y$ 的 MGF 为式 (7)，我们得出 $Y \sim N(\mu, \sigma^2)$，其中 $\mu = \sum_{i=1}^n a_i \mu_i$ 且 $\sigma^2 = \sum_{i=1}^n a_i^2 \sigma_i^2$。
+
+(b) $Y$ 的 PDF 为
+\[
+f_Y(y) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(y-\mu)^2}{2\sigma^2}}
+\]
+其中 $\sigma = (\sum_{i=1}^n a_i^2 \sigma_i^2)^{1/2}$，$\mu = \sum_{i=1}^n a_i \mu_i$。
+\end{solution}
+
+\question 问题 4 令 $X_1, \dots, X_n$ 为独立的随机变量，且 $X_i \sim \text{Gamma}(\alpha_i, \beta)$，其中 $\alpha_1, \dots, \alpha_n, \beta > 0$。令 $Y = \sum_{i=1}^n X_i$。利用 MGF 证明
+\[
+Y \sim \text{Gamma}\left( \sum_{i=1}^n \alpha_i, \beta \right).
+\]
+
+\begin{solution}
+回想 $\text{Gamma}(\alpha, \beta)$ 的 MGF 是 $(1 - \beta t)^{-\alpha}$。我们使用与问题 3 相同的方法。计算如下：
+\begin{align*}
+M_Y(t) &= M_{X_1 + \dots + X_n}(t) = \prod_{i=1}^n M_{X_i}(t) \\
+&= \prod_{i=1}^n (1 - \beta t)^{-\alpha_i} \\
+&= (1 - \beta t)^{-(\alpha_1 + \dots + \alpha_n)}.
+\end{align*}
+这是 $\text{Gamma}(\sum_{i=1}^n \alpha_i, \beta)$ 的 MGF。根据逆转定理，我们得出
+\[
+Y \sim \text{Gamma}\left( \sum_{i=1}^n \alpha_i, \beta \right).
+\]
+\end{solution}
+
+\question 问题 1 令 $X$ 为具有累积分布函数（CDF） $F(x) = 1 - e^{-(x/\alpha)^\beta}$（对于 $x > 0$）且其他情况下 $F(x) = 0$ 的随机变量，其中 $\alpha, \beta > 0$ 为常数。$X$ 的分布称为 Weibull 分布。
+(a) 求 $X$ 的概率密度函数（PDF）。
+(b) 令 $Y = (X/\alpha)^\beta$。求 $Y$ 的分布。
+
+\begin{solution}
+(a) 对于 $x > 0$，
+\[
+\frac{d}{dx} F(x) = \frac{\beta}{\alpha} \left( \frac{x}{\alpha} \right)^{\beta-1} e^{-(x/\alpha)^\beta}.
+\]
+$X$ 的 PDF 为
+\[
+f_X(x) = \begin{cases} \frac{\beta}{\alpha} \left( \frac{x}{\alpha} \right)^{\beta-1} e^{-(x/\alpha)^\beta} & \text{若 } x > 0, \\ 0 & \text{其他}. \end{cases}
+\]
+
+(b) 我们使用 CDF 法。$X$ 的 CDF 已在题干中给出。我们计算 $Y$ 的 CDF，然后通过对 CDF 求导来求 $Y$ 的 PDF。根据定义，$F_Y(y) = P(Y \le y) = P((X/\alpha)^\beta \le y)$。
+\begin{itemize}
+    \item 若 $y \le 0$，则 $F_Y(y) = 0$，因为 $X$ 以及随之而来的 $Y$ 只取正值。
+    \item 若 $y > 0$，则
+    \begin{align*}
+    F_Y(y) &= P((X/\alpha)^\beta \le y) \\
+    &= P(X/\alpha \le y^{1/\beta}) \\
+    &= P(X \le \alpha y^{1/\beta}) \\
+    &= F(\alpha y^{1/\beta}) \\
+    &= 1 - e^{-(\alpha y^{1/\beta}/\alpha)^\beta} \\
+    &= 1 - e^{-y}.
+    \end{align*}
+\end{itemize}
+$Y$ 的 PDF 为
+\[
+f_Y(y) = \begin{cases} e^{-y} & \text{若 } y > 0, \\ 0 & \text{其他}. \end{cases}
+\]
+这是 $\text{Exp}(1)$ 的 PDF。因此 $Y \sim \text{Exp}(1)$。
+\end{solution}
+
+\question 问题 2 令 $X \sim \text{Exp}(\lambda)$。确定 $Y_1 = \lambda X$ 和 $Y_2 = 2\lambda X$ 的分布。
+
+\begin{solution}
+$X$ 的 CDF 为
+\[
+F(x) = \begin{cases} 1 - e^{-\lambda x} & \text{若 } x > 0, \\ 0 & \text{其他}. \end{cases}
+\]
+$Y_1 = \lambda X$ 的 CDF 为
+\[
+F_{Y_1}(y) = P(\lambda X \le y) = P(X \le y/\lambda) = F(y/\lambda) = 1 - e^{-y}
+\]
+对于 $y > 0$，且 $F_{Y_1}(y) = 0$（其他情况）。因此，$Y_1 \sim \text{Exp}(1)$。
+
+另一方面，$Y_2 = 2\lambda X$ 的 CDF 为
+\[
+F_{Y_2}(y) = P(2\lambda X \le y) = P(X \le y/(2\lambda)) = F(y/(2\lambda)) = 1 - e^{-y/2}
+\]
+对于 $y > 0$，且 $F_{Y_2}(y) = 0$（其他情况）。因此，$Y_2 \sim \text{Exp}(1/2) = \text{Gamma}(1, 2) = \chi_2^2$。
+\end{solution}
+
+\question 问题 3 令 $X_1, \dots, X_5$ 独立同分布于 $N(0, 1)$，并令 $\bar{X} = \frac{1}{5} \sum_{i=1}^5 X_i$ 为样本均值。令 $Y \sim N(0, 1)$ 为另一个独立于 $X_1, \dots, X_5$ 的随机变量。求下列随机变量的分布并给出理由。
+(a) $W = \sum_{i=1}^5 X_i^2$
+(b) $U = \sum_{i=1}^5 (X_i - \bar{X})^2$
+(c) $2Y/\sqrt{U}$
+(d) $2(5\bar{X}^2 + Y^2)/U$
+
+\begin{solution}
+(a) 根据卡方分布的定义，$W = \sum_{i=1}^5 X_i^2 \sim \chi_5^2$。
+(b) 根据讲义，$(n-1)S^2/\sigma^2 \sim \chi_{n-1}^2$。在本例中，我们有 $n = 5, \sigma^2 = 1$ 且 $S^2 = \frac{1}{4} \sum_{i=1}^5 (X_i - \bar{X})^2$。因此，
+\[
+U = \sum_{i=1}^5 (X_i - \bar{X})^2 = (n-1)S^2/\sigma^2 \sim \chi_{n-1}^2 = \chi_4^2.
+\]
+(c) 注意 $Y \sim N(0, 1)$ 且 $U \sim \chi_4^2$。由于 $Y$ 独立于 $X_1, \dots, X_5$，它也独立于 $U$。因此
+\[
+\frac{2Y}{\sqrt{U}} = \frac{Y}{\sqrt{U/4}} \sim t_4
+\]
+根据 $t$ 分布的定义。
+(d) 根据讲义，我们有 $\sqrt{n}(\bar{X} - \mu)/\sigma \sim N(0, 1)$。这里 $n = 5, \mu = 0$ 且 $\sigma = 1$。因此 $\sqrt{5}\bar{X} \sim N(0, 1)$。
+因为 $5\bar{X}^2 + Y^2 = (\sqrt{5}\bar{X})^2 + Y^2$ 是两个独立标准正态变量的平方和，所以我们有 $5\bar{X}^2 + Y^2 \sim \chi_2^2$。回想由 (c) 部分可知 $U \sim \chi_4^2$。此外，由于 $\bar{X}$ 和 $S^2$ 独立，由此可知 $5\bar{X}^2 + Y^2$ 与 $U = 4S^2$ 独立。我们因此得到
+\[
+\frac{2(5\bar{X}^2 + Y^2)}{U} = \frac{(5\bar{X}^2 + Y^2)/2}{U/4} \sim F(2, 4)
+\]
+根据 $F$ 分布的定义。
+\end{solution}
+
+\question
+令 $X_1, X_2, \dots$ 为一列独立同分布（i.i.d.）的随机变量，其密度函数如下：
+\[
+f(x) = \begin{cases} Cx^{-(1+\alpha)}, & \text{若 } x \ge 1; \\ 0, & \text{其他}, \end{cases}
+\]
+其中 $\alpha > 0$ 是一个常数，$C$ 是归一化常数。令 $Z_n$ 为 $X_1, \dots, X_n$ 的几何平均值，即 $Z_n = (X_1 X_2 \dots X_n)^{1/n}$。
+
+(a) 确定 $C$ 的值。（$C$ 的值可能依赖于 $\alpha$，在这种情况下，你的答案应以 $\alpha$ 表示。）
+(b) 求 $Y_i = \ln X_i$ 的密度函数。
+(c) 确定当 $n \to \infty$ 时，$Z_n$ 是否依概率收敛于某个常数 $L$。如果是，求出常数 $L$。（提示：你可能会发现部分 (b) 很有用。）
+(d) 如果你对部分 (c) 的回答是“是”，证明
+\[
+\Pr\left( Z_n \le e^{\frac{1}{\alpha}} L \right) \ge 1 - \frac{1}{n}.
+\]
+如果你对部分 (c) 的回答是“否”，证明
+\[
+\Pr\left( Z_n \ge e^{\frac{1}{\alpha}} n \right) \ge 1 - \frac{1}{n}.
+\]
+
+\begin{solution}
+(a) 因为
+\[
+\int_1^{\infty} \frac{dx}{x^{\alpha+1}} = \frac{1}{\alpha},
+\]
+必须满足 $C = \alpha$。
+
+(b) 我们首先求 $Y_i$ 的累积分布函数。注意 $Y_i \ge 0$。
+\[
+\Pr(Y_i \le y) = \Pr(X_i \le e^y) = \alpha \int_1^{e^y} \frac{dx}{x^{\alpha+1}} = 1 - e^{-\alpha y}, \quad y \ge 0.
+\]
+求导得出所需的密度函数，
+\[
+p(y) = \alpha e^{-\alpha y}, \quad y \ge 0.
+\]
+
+(c) 观察到
+\[
+\ln Z_n = \frac{Y_1 + \dots + Y_n}{n}.
+\]
+注意到 $Y_i$ 是参数为 $\alpha$ 的指数分布随机变量，其期望 $E(Y_i) = 1/\alpha$ 和方差 $Var(Y_i) = 1/\alpha^2$ 均存在，根据弱大数定律可知 $\ln Z_n$ 依概率收敛于 $1/\alpha$。因此 $Z_n$ 依概率收敛于
+\[
+L = e^{1/\alpha}.
+\]
+
+(d) 注意到
+\[
+Var(\ln Z_n) = \frac{Var(Y_i)}{n} = \frac{1}{n\alpha^2}.
+\]
+根据切比雪夫不等式（Chebyshev's inequality），
+\[
+\Pr(e^{-t} L \le Z_n \le e^t L) = \Pr(|\ln Z_n - \ln L| \le t) \ge 1 - \frac{Var(\ln Z_n)}{t^2} = 1 - \frac{1}{n\alpha^2 t^2}.
+\]
+令 $t = 1/\alpha$ 即可得到所需结果。
+\end{solution}
+
+\question
+令 $n \ge 2$ 且 $X_1, \dots, X_n$ 为独立同分布的随机变量，取值范围为 $\{-2, 1\}$，概率分别为 $\Pr(X_1 = 1) = 2/3$ 且 $\Pr(X_1 = -2) = 1/3$。记 $S_n = \sum_{i=1}^n X_i$。
+
+(a) 求 $E(S_n)$，$Var(S_n)$ 以及 $\lim_{n \to \infty} \Pr(S_n \ge \sqrt{n \ln n})$。
+(b) 求 $\lim_{n \to \infty} \Pr(S_n \ge 0)$。
+(c) 证明存在一个（不依赖于 $n$ 的）常数 $C$，使得
+\[
+\Pr(S_n \ge \sqrt{n \ln n}) \le \frac{C}{(\ln n)^{3/2}}.
+\]
+如果在未证明部分 (c) 的情况下调用其结论，部分 (a) 中的极限计算将不予给分。
+
+\begin{solution}
+(a) 显然 $E X_1 = 1 \cdot \frac{2}{3} + (-2) \cdot \frac{1}{3} = 0$，且 $Var(X_1) = E X_1^2 = 1^2 \cdot \frac{2}{3} + (-2)^2 \cdot \frac{1}{3} = 2$。因此 $E S_n = n E X_1 = 0$ 且 $Var(S_n) = n \cdot Var(X_1) = 2n$。
+根据切比雪夫不等式，
+\[
+\Pr(S_n \ge \sqrt{n \ln n}) \le \Pr(|S_n| \ge \sqrt{n \ln n}) \le \frac{Var(S_n)}{n \ln n} \le \frac{2n}{n \ln n} = \frac{2}{\ln n} \to 0
+\]
+当 $n \to \infty$ 时。
+
+(b) 根据中心极限定理，$S_n/\sqrt{2n} \to N(0, 1)$ 依分布收敛，因此
+\[
+\lim_{n \to \infty} \Pr(S_n \ge 0) = \lim_{n \to \infty} \Pr\left( \frac{S_n}{\sqrt{2n}} \ge 0 \right) = \Pr_{g \sim N(0, 1)}(g \ge 0) = \frac{1}{2}.
+\]
+
+(c) 我们可以计算
+\[
+E S_n^4 = \sum_i E X_i^4 + \sum_{i \neq j} E(X_i^2 X_j^2) = 6n + 4n(n - 1) = 4n^2 + 2n.
+\]
+因此
+\begin{align*}
+\Pr(|S_n| \ge \sqrt{n \ln n}) &= \Pr(S_n^4 \ge n^2 \ln^2 n) \le \frac{E S_n^4}{n^2 \ln^2 n} \\
+&= \frac{4n^2 + 2n}{n^2 \ln^2 n} \le \frac{5n^2}{n^2 \ln^2 n} = \frac{5}{\ln^2 n}.
+\end{align*}
+\end{solution}
+
+\question
+对于每个整数 $m \geq 1$，我们定义 $2m$ 个数 $b_{m,1}, \dots, b_{m,2m}$ 如下：
+\[
+b_{m,i} = \begin{cases} 1, & 1 \leq i \leq m; \\ -1, & m + 1 \leq i \leq 2m. \end{cases}
+\]
+设 $Y_1, Y_2, \dots$ 为独立同分布（i.i.d.）随机变量，使得 $\text{Pr}\{Y_i = 0\} = \text{Pr}\{Y_i = 1\} = 1/2$。
+
+(a) 证明存在一个常数 $c_1 > 0$（不依赖于 $m$），使得对于所有 $m \geq 1$，
+\[
+\text{Pr} \left\{ \left| \sum_{i=1}^{2m} b_{m,i} Y_i \right| > c_1 \sqrt{m} \right\} \leq \frac{1}{10}.
+\]
+
+(b) 证明存在一个常数 $c_2 > 0$，使得
+\[
+\lim_{m \to \infty} \text{Pr} \left\{ \left| \sum_{i=1}^{2m} b_{m,i} Y_i \right| > c_2 \sqrt{m} \right\} > \frac{9}{10}.
+\]
+
+\begin{solution}
+(a) 
+\[
+\mathbb{E}\left( \sum_i b_{m,i} Y_i \right) = \left( \sum_i b_{m,i} \right) \mathbb{E}Y_i = 0.
+\]
+且
+\[
+\text{Var} \left( \sum_i b_{m,i} Y_i \right) = \sum_i \text{Var}(b_{m,i} Y_i) = \sum_i \text{Var}(Y_i) = (2m) \cdot \frac{1}{4} = \frac{m}{2}.
+\]
+由切比雪夫不等式（Chebyshev's inequality）可知
+\[
+\text{Pr} \left\{ \left| \sum_{i=1}^{2m} b_{m,i} Y_i \right| > c \sqrt{m} \right\} \leq \frac{m/2}{c^2 m} = \frac{1}{2c^2}.
+\]
+因此，可以取任意 $c_1 \geq \sqrt{5}$。
+
+(b) 可以将一个正项与一个负项分组为
+\[
+\sum_{i=1}^{2m} b_{m,i} Y_i = \sum_{i=1}^{m} (Y_i - Y_{m+i}),
+\]
+其中 $Y_i - Y_{m+i}$ 是独立同分布的随机变量，均值为 $0$，方差为 $1/2$。
+\[
+\lim_{m \to \infty} \text{Pr} \left\{ \left| \sum_{i=1}^{m} (Y_i - Y_{m+i}) \right| > c \sqrt{m} \right\} = \text{Pr}_{g \sim N(0,1)} \{ |g| > \sqrt{2}c \}.
+\]
+由于
+\[
+1 = \text{Pr} \{ |g| > 0 \} = \lim_{n \to \infty} \text{Pr} \left\{ |g| > \frac{1}{n} \right\},
+\]
+可以选择一个足够大的 $n$，使得 $\text{Pr} \{ |g| > 1/n \} > 9/10$，从而可以取 $c_2 = 1/(\sqrt{2}n)$。
+
+[备选解法]：观察到
+\[
+\sum_{i=1}^{2m} b_{m,i} Y_i = \sum_{i=1}^{m} b_{m,i} \left( Y_i - \frac{1}{2} \right) + \sum_{i=m+1}^{2m} b_{m,i} \left( Y_i - \frac{1}{2} \right).
+\]
+由于 $Y_i - 1/2$ 关于 $0$ 对称分布，因此 $Y_i - 1/2$ 与 $-(Y_i - 1/2)$ 的分布是相同的。所以
+\[
+\sum_{i=1}^{2m} b_{m,i} Y_i \text{ 与 } \sum_{i=1}^{2m} \left( Y_i - \frac{1}{2} \right) \text{ 是同分布的}.
+\]
+然后应用中心极限定理（Central Limit Theorem），得到
+\[
+\lim_{m \to \infty} \text{Pr} \left\{ \left| \sum_{i=1}^{2m} \left( Y_i - \frac{1}{2} \right) \right| > c \sqrt{m} \right\} = \text{Pr}_{g \sim N(0,1)} \{ |g| > \sqrt{2}c \},
+\]
+并按前述步骤继续。
+\end{solution}
+
+\question
+对于本题，你可以使用最后两页的卡方分布和 $t$ 分布的上分位数表。
+
+令 $X_1, \dots, X_{10}$ 为来自 $N(\mu, \sigma^2)$ 的独立同分布样本，其中 $\mu \in \mathbb{R}$ 和 $\sigma^2 \in (0, \infty)$ 为未知参数。已知 $X_1, \dots, X_{10}$ 的观测值如下：
+\[
+12.2, 10.4, 11.2, 11.6, 7.8, 9.6, 8.8, 8.4, 7.0, 13.0
+\]
+
+(i) 根据这些观测值，求 $\mu$ 的精确 $95\%$ 置信区间。
+
+(ii) 根据这些观测值，求 $\sigma^2$ 的精确 $90\%$ 置信区间。
+
+\begin{solution}
+(i) 课堂上已证，$\mu$ 的精确 $100(1 - \alpha)\%$ 置信区间为
+\[
+\left[ \hat{X} - \frac{t_{n-1, \alpha/2} S}{\sqrt{n}}, \hat{X} + \frac{t_{n-1, \alpha/2} S}{\sqrt{n}} \right]
+\]
+根据观测值， $n = 10$，$\bar{x} = 10$，$s^2 = 4$。我们需要选择 $\alpha = 0.05$。查表得 $t_{n-1, \alpha/2} = t_{9, 0.025} \approx 2.262$。
+因此
+\[
+\left[ 10 - \frac{2.262 \cdot 2}{\sqrt{10}}, 10 + \frac{2.262 \cdot 2}{\sqrt{10}} \right] \approx [8.57, 11.43]
+\]
+是 $\mu$ 的精确 $95\%$ 置信区间。
+
+(ii) 课堂上已证，$\sigma^2$ 的精确 $100(1 - \alpha)\%$ 置信区间为
+\[
+\left[ \frac{(n - 1) S^2}{\chi^2_{n-1, \alpha/2}}, \frac{(n - 1) S^2}{\chi^2_{n-1, 1-\alpha/2}} \right]
+\]
+根据观测值，$n = 10$ 且 $s^2 = 4$。我们需要选择 $\alpha = 0.1$。查表得 $\chi^2_{n-1, \alpha/2} = \chi^2_{9, 0.05} \approx 16.919$，且 $\chi^2_{n-1, 1-\alpha/2} = \chi^2_{9, 0.95} \approx 3.325$。
+因此
+\[
+\left[ \frac{9 \cdot 4}{16.919}, \frac{9 \cdot 4}{3.325} \right] \approx [2.13, 10.83]
+\]
+是 $\sigma^2$ 的精确 $90\%$ 置信区间。
+\end{solution}
+
+\question
+对于本题，你可以使用最后一页提供的 $N(0,1)$ 累积分布函数（CDF）表。
+
+(a) 设 $X_1, \dots, X_{100}$ 为独立同分布随机样本，其中 $E[X_1] = \mu$ 且 $Var[X_1] = 10000$，$\mu \in (-\infty, \infty)$ 是未知参数。令 $\bar{X} = \frac{1}{100} \sum_{i=1}^{100} X_i$。
+利用中心极限定理（CLT）近似计算 $P(\bar{X} - 5 \le \mu \le \bar{X} + 5)$。请证明你的答案（仅使用计算器得出概率是不够的）。
+
+(b) 假设 $X_1, \dots, X_{10}$ 是取自 $N(\mu, 9)$ 的独立同分布随机样本，其中 $\mu \in (-\infty, \infty)$ 是未知参数。给定 $X_1, \dots, X_{10}$ 的观测值如下：
+\[
+10.0, \quad 12.2, \quad 7.3, \quad 8.7, \quad 16.7, \quad 4.5, \quad 9.1, \quad 13.3, \quad 5.8, \quad 12.9
+\]
+求 $\mu$ 的一个精确 $95\%$ 置信区间。请证明你的答案。
+
+\begin{solution}
+(a) 记 $\sigma^2 = Var[X_1] = 10000$。根据中心极限定理（CLT），
+\[
+\frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} = \frac{10(\bar{X} - \mu)}{100} = \frac{\bar{X} - \mu}{10}
+\]
+的分布近似为 $N(0,1)$。我们需要将条件 $\bar{X} - 5 \le \mu \le \bar{X} + 5$ 表示为关于 $\frac{\bar{X} - \mu}{10}$ 的条件。以下是等价条件：
+\begin{align*}
+\bar{X} - 5 \le \mu &\le \bar{X} + 5 \\
+-5 \le \mu - \bar{X} &\le 5 \\
+-5 \le \bar{X} - \mu &\le 5 \\
+-0.5 \le \frac{\bar{X} - \mu}{10} &\le 0.5
+\end{align*}
+因此
+\[
+P(\bar{X} - 5 \le \mu \le \bar{X} + 5) = P\left( -0.5 \le \frac{\bar{X} - \mu}{10} \le 0.5 \right) \approx \Phi(0.5) - \Phi(-0.5) = 2\Phi(0.5) - 1,
+\]
+其中 $\Phi$ 是 $N(0,1)$ 的累积分布函数。从表中我们查得 $\Phi(0.5) \approx 0.6915$，所以我们有
+\[
+P(\bar{X} - 5 \le \mu \le \bar{X} + 5) \approx 2 \cdot 0.6915 - 1 = 0.383。
+\]
+
+(b) 根据课程内容，我们有
+\[
+\frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \sim N(0,1)。
+\]
+其中 $\mu = E[X_1]$ 且 $\sigma^2 = Var[X_1]$。由于 $n = 10$ 且 $\sigma = 3$，我们得出
+\[
+\frac{\sqrt{10}(\bar{X} - \mu)}{3} \sim N(0,1)。
+\]
+由于我们需要 $\mu$ 的 $95\%$ 置信区间，我们首先寻找 $a, b$ 使得
+\[
+P\left( a < \frac{\sqrt{10}(\bar{X} - \mu)}{3} < b \right) \approx 0.95。
+\]
+由于 $\frac{\sqrt{10}(\bar{X} - \mu)}{3} \sim N(0,1)$，我们有
+\[
+P\left( a < \frac{\sqrt{10}(\bar{X} - \mu)}{3} < b \right) = \Phi(b) - \Phi(a)。
+\]
+因此我们需要找到 $a, b$ 使得 $\Phi(b) - \Phi(a) \approx 0.95$。从表中可知 $\Phi(1.96) \approx 0.975$，因此 $\Phi(1.96) - \Phi(-1.96) \approx 0.975 - (1 - 0.975) = 0.95$。所以我们可以选择 $a = -1.96$ 且 $b = 1.96$（这只是一个可能的选择，实际上有无数种选择）。注意到
+\[
+a < \frac{\sqrt{10}(\bar{X} - \mu)}{3} < b \iff \bar{X} - \frac{3}{\sqrt{10}}b < \mu < \bar{X} - \frac{3}{\sqrt{10}}a。
+\]
+因此
+\[
+P\left( \bar{X} - \frac{3}{\sqrt{10}}b < \mu < \bar{X} - \frac{3}{\sqrt{10}}a \right) = P\left( a < \frac{\sqrt{10}(\bar{X} - \mu)}{3} < b \right) \approx 0.95
+\]
+从而
+\begin{equation}
+\left[ \bar{X} - \frac{3}{\sqrt{10}}b, \bar{X} - \frac{3}{\sqrt{10}}a \right]
+\end{equation}
+是 $\mu$ 的一个 $95\%$ 精确置信区间。对于给定的观测值，我们有 $\bar{X} = 10.05$。将此结果以及 $a = -1.96, b = 1.96$ 代入 (1) 式，我们发现 $[8.19, 11.91]$ 是基于这些观测值的 $\mu$ 的一个 $95\%$ 精确置信区间。
+\end{solution}
 \end{questions}
 \pagebreak
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{参数估计}{参数估计} \label{参数估计}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+\question 设 $X_1, \dots, X_n$ 是从 $U(a, b)$（区间 $(a, b)$ 上的均匀分布）中提取的 iid 随机样本，其中 $a$ 和 $b$ 是未知参数。
+
+(a) 求 $a$ 和 $b$ 的矩估计量。
+
+(b) 给定 $X_1, \dots, x_{30}$ 的观测值 $x_1, \dots, x_{30}$（$n = 30$）。根据这些数据的矩估计量，得到的 $a$ 和 $b$ 的估计值是多少？（作为对比，观测值是从 $U(10, 100)$ 中提取的）
+15.4, 71.4, 13.8, 16.4, 56.9, 18.7, 83.6, 83.6, 75.0, 23.5, 69.4, 56.7, 97.6, 68.4, 82.0, 50.8, 48.9, 84.3, 17.5, 22.0, 25.6, 45.2, 84.8, 82.3, 15.4, 45.9, 57.4, 47.5, 69.1, 66.5
+
+\begin{solution}
+(a) 回想 $X_1 \sim U(a, b)$ 的 PDF 为
+\[
+f(x) = \begin{cases} \frac{1}{b - a} & \text{若 } x \in (a, b), \\ 0 & \text{其他} \end{cases}
+\]
+我们计算 $X_1 \sim U(a, b)$ 的矩：
+\begin{align*}
+\mu_1 &= E(X_1) = \int_a^b \frac{x}{b - a} dx = \frac{a + b}{2} \\
+\mu_2 &= E(X_1^2) = \int_a^b \frac{x^2}{b - a} dx = \frac{a^2 + ab + b^2}{3}
+\end{align*}
+方程 (1) 和 (2) 足以解出用 $\mu_1, \mu_2$ 表示的 $a, b$。由 (1) 得，$a + b = 2\mu_1$。由 (2) 得，$3\mu_2 = (a + b)^2 - ab = 4\mu_1^2 - ab$，所以 $ab = 4\mu_1^2 - 3\mu_2$。根据韦达定理，$a$ 和 $b$ 是方程 $t^2 - 2\mu_1 t + \left(4\mu_1^2 - 3\mu_2\right) = 0$ 的两个根。由于 $a < b$，我们得到
+\[
+a = \mu_1 - \sqrt{3\left(\mu_2 - \mu_1^2\right)}, \quad b = \mu_1 + \sqrt{3\left(\mu_2 - \mu_1^2\right)}
+\]
+因此，$a$ 和 $b$ 的矩估计量为
+\[
+\hat{a} = S_1 - \sqrt{3\left(S_2 - S_1^2\right)}, \quad \hat{b} = S_1 + \sqrt{3\left(S_2 - S_1^2\right)}
+\]
+其中 $S_1$ 和 $S_2$ 是样本的一阶和二阶矩
+\[
+S_1 = \frac{1}{n} \sum_{i=1}^n X_i, \quad S_2 = \frac{1}{n} \sum_{i=1}^n X_i^2
+\]
+
+(b) 根据给定的样本，我们可以计算出 $s_1 \approx 53.19$ 以及 $s_2 \approx 3504.00$。$a, b$ 值的估计为
+\begin{align*}
+\hat{a} &= s_1 - \sqrt{3\left(s_2 - s_1^2\right)} \approx 8.20 \\
+\hat{b} &= s_1 + \sqrt{3\left(s_2 - s_1^2\right)} \approx 98.18
+\end{align*}
+\end{solution}
+
+\question 设 $X_1, \dots, X_n$ 是从具有如下 PDF 的分布中提取的 iid 随机样本
+\[
+f(x) = \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} x^{\theta-1} (1 - x)^{\theta-1} \text{ 对于 } 0 \le x \le 1
+\]
+且其他情况 $f(x) = 0$。这里 $\theta > 0$ 是未知参数，$\Gamma$ 是伽马函数。求 $\theta$ 的矩估计量。
+提示：你可以使用以下事实（无需证明）：
+\[
+\int_0^1 x^{\alpha-1} (1 - x)^{\beta-1} dx = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}
+\]
+对于所有 $\alpha, \beta > 0$。
+
+\begin{solution}
+首先，我们计算 $\mu_1 = E(X_1)$
+\begin{align*}
+\mu_1 &= \int_0^1 x f(x) dx = \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} \int_0^1 x^{(\theta+1)-1} (1 - x)^{\theta-1} dx \\
+&= \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} \frac{\Gamma(\theta + 1)\Gamma(\theta)}{\Gamma(2\theta + 1)} \\
+&= \frac{\Gamma(2\theta)\Gamma(\theta + 1)}{\Gamma(\theta)\Gamma(2\theta + 1)}
+\end{align*}
+根据关于伽马函数的性质，对于任何 $\alpha > 0$，我们有 $\Gamma(\alpha + 1) = \alpha\Gamma(\alpha)$。因此，$\Gamma(\theta + 1) = \theta\Gamma(\theta)$ 且 $\Gamma(2\theta + 1) = 2\theta\Gamma(2\theta)$。我们得到
+\[
+\mu_1 = \frac{\Gamma(2\theta) \theta \Gamma(\theta)}{\Gamma(\theta) 2\theta \Gamma(2\theta)} = \frac{1}{2}
+\]
+这并不包含 $\theta$。为了用 $\mu_j$ 来表示 $\theta$，我们继续计算 $\mu_2 = E(X_1^2)$：
+\begin{align*}
+\mu_2 &= \int_0^1 x^2 f(x) dx = \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} \int_0^1 x^{(\theta+2)-1} (1 - x)^{\theta-1} dx \\
+&= \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} \frac{\Gamma(\theta + 2)\Gamma(\theta)}{\Gamma(2\theta + 2)} \\
+&= \frac{\Gamma(2\theta)\Gamma(\theta + 2)}{\Gamma(\theta)\Gamma(2\theta + 2)}
+\end{align*}
+利用 $\Gamma(\alpha + 1) = \alpha\Gamma(\alpha)$，我们得到
+\[
+\Gamma(\theta + 2) = (\theta + 1)\Gamma(\theta + 1) = (\theta + 1)\theta\Gamma(\theta)
+\]
+且
+\[
+\Gamma(2\theta + 2) = (2\theta + 1)\Gamma(2\theta + 1) = (2\theta + 1)2\theta\Gamma(2\theta)
+\]
+将这些值代回 $\mu_2$ 的方程，我们有
+\[
+\mu_2 = \frac{(\theta + 1)\theta}{2\theta(2\theta + 1)} = \frac{\theta + 1}{2(2\theta + 1)}
+\]
+解关于 $\theta$ 的方程：
+\begin{align*}
+2\mu_2(2\theta + 1) &= \theta + 1 \\
+4\mu_2 \theta + 2\mu_2 &= \theta + 1 \\
+\theta(4\mu_2 - 1) &= 1 - 2\mu_2 \\
+\theta &= \frac{1 - 2\mu_2}{4\mu_2 - 1}
+\end{align*}
+设 $S_2 = \frac{1}{n} \sum_{i=1}^n X_i^2$。$\theta$ 的矩估计量为
+\[
+\hat{\theta} = \frac{1 - 2S_2}{4S_2 - 1}
+\]
+\end{solution}
+
+    \question
+设 $X_1, \dots, X_n$ 是来自均匀分布 $U[0, \theta]$ 的独立同分布样本，其中 $\theta \in (0, \infty)$ 是未知参数。已知该分布的概率密度函数（PDF）为：当 $0 \le x \le \theta$ 时，$f(x) = 1/\theta$，否则 $f(x) = 0$。此外，$E[X_1] = \theta/2$，$Var[X_1] = \theta^2/12$，且 $E[X_1^2] = \theta^2/3$。考虑以下关于 $\theta$ 的估计量：
+\[
+\hat{\theta}_1 = X_1 + X_2,
+\]
+\[
+\hat{\theta}_2 = 4X_1 - X_2,
+\]
+\[
+\hat{\theta}_3 = \frac{2}{n} \sum_{i=1}^{n} X_i.
+\]
+(a) 计算 $\hat{\theta}_1, \hat{\theta}_2$ 和 $\hat{\theta}_3$ 的偏差、标准误差和均方误差。\\
+(b) 确定估计量 $\hat{\theta}_1, \hat{\theta}_2, \hat{\theta}_3$ 中哪些是相合的。请说明理由。
+
+\begin{solution}
+(a) 我们计算
+\[
+E[\hat{\theta}_1] = E[X_1] + E[X_2] = 2E[X_1] = \theta
+\]
+\[
+Bias(\hat{\theta}_1) = E[\hat{\theta}_1] - \theta = 0
+\]
+\[
+Var[\hat{\theta}_1] = Var[X_1] + Var[X_2] = 2Var[X_1] = \frac{\theta^2}{6}
+\]
+\[
+SE(\hat{\theta}_1) = \frac{\theta}{\sqrt{6}}
+\]
+\[
+MSE(\hat{\theta}_1) = Bias(\hat{\theta}_1)^2 + Var[\hat{\theta}_1] = \frac{\theta^2}{6}
+\]
+\[
+E[\hat{\theta}_2] = 4E[X_1] - E[X_2] = 3E[X_1] = \frac{3\theta}{2}
+\]
+\[
+Bias(\hat{\theta}_2) = E[\hat{\theta}_2] - \theta = \frac{\theta}{2}
+\]
+\[
+Var[\hat{\theta}_2] = 16Var[X_1] + Var[X_2] = 17Var[X_1] = \frac{17\theta^2}{12}
+\]
+\[
+SE(\hat{\theta}_2) = \sqrt{\frac{17}{12}}\theta
+\]
+\[
+MSE(\hat{\theta}_2) = Bias(\hat{\theta}_2)^2 + Var[\hat{\theta}_2] = \frac{\theta^2}{4} + \frac{17\theta^2}{12} = \frac{5\theta^2}{3}
+\]
+\[
+E[\hat{\theta}_3] = \frac{2}{n} \sum_{i=1}^n E[X_i] = \frac{2}{n} (nE[X_1]) = \frac{2}{n} \cdot \frac{n\theta}{2} = \theta
+\]
+\[
+Bias(\hat{\theta}_3) = E[\hat{\theta}_3] - \theta = 0
+\]
+\[
+Var[\hat{\theta}_3] = \frac{4}{n^2} \sum_{i=1}^n Var[X_i] = \frac{4}{n^2} (nVar[X_1]) = \frac{4}{n^2} \cdot \frac{n\theta^2}{12} = \frac{\theta^2}{3n}
+\]
+\[
+SE(\hat{\theta}_3) = \frac{\theta}{\sqrt{3n}}
+\]
+\[
+MSE(\hat{\theta}_3) = Bias(\hat{\theta}_3)^2 + Var[\hat{\theta}_3] = \frac{\theta^2}{3n}
+\]
+
+(b) 回想 $\hat{\theta}_1 = X_1 + X_2$。由于 $X_1$ 和 $X_2$ 是在 $[0, \theta]$ 上服从均匀分布的，我们有 $P(X_1 \le \frac{\theta}{4}) = P(X_2 \le \frac{\theta}{4}) = \frac{1}{4}$。此外，请注意 $X_1 \le \frac{\theta}{4}$ 且 $X_2 \le \frac{\theta}{4}$ 意味着 $\hat{\theta}_1 \le \frac{\theta}{2}$，从而 $|\hat{\theta}_1 - \theta| \ge \frac{\theta}{2}$。因此
+\begin{align*}
+P\left( |\hat{\theta}_1 - \theta| \ge \frac{\theta}{2} \right) &\ge P(X_1 \le \theta/4, X_2 \le \theta/4) \\
+&= P(X_1 \le \theta/4)P(X_2 \le \theta/4) = \frac{1}{16}
+\end{align*}
+设定 $\varepsilon = \frac{\theta}{2}$。由上式可知
+\[
+P\left( |\hat{\theta}_1 - \theta| \ge \varepsilon \right) \ge \frac{1}{16}
+\]
+对于所有 $n$ 均成立。因此 $\lim_{n \to \infty} P\left( |\hat{\theta}_1 - \theta| \ge \varepsilon \right)$ 不趋于零。根据估计量相合性的定义，这表明 $\hat{\theta}_1$ 不是相合的。
+
+类似地，可以得出 $\hat{\theta}_2$ 也不是相合的。
+
+另一方面，由部分 (a) 可知，我们有 $\lim_{n \to \infty} Bias(\hat{\theta}_3) = 0$ 且 $\lim_{n \to \infty} Var(\hat{\theta}_3) = 0$。因此根据结论，$\hat{\theta}_3$ 是相合的。
+\end{solution}
+
+\question
+令 $X_1, X_2$ 为来自 $N(\mu, \sigma^2)$ 的独立同分布随机变量，其中 $\mu$ 和 $\sigma$ 为未知参数。记 $\bar{X} = \frac{X_1 + X_2}{2}$ 以及
+\[
+S = \sqrt{(X_1 - \bar{X})^2 + (X_2 - \bar{X})^2}
+\]
+计算 $S$ 作为 $\sigma$ 估计量的偏差 (bias)。
+
+提示：$\chi^2_1$ 的概率密度函数 (PDF) 为
+\[
+f(x) = \frac{1}{\sqrt{2\pi}} x^{-\frac{1}{2}} e^{-\frac{x}{2}}
+\]
+对于 $x \ge 0$，否则 $f(x) = 0$。
+
+\begin{solution}
+令 $n = 2$。注意到 $S^2 = (X_1 - \bar{X})^2 + (X_2 - \bar{X})^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2$ 是 $X_1, X_2$ 的样本方差。根据课程内容，我们有 $Y := \frac{(n - 1)S^2}{\sigma^2} = \frac{S^2}{\sigma^2} \sim \chi^2_1$。利用雅可比 (Jacobian) 方法，取 $g(y) = \sqrt{y}$ 且 $g^{-1}(z) = z^2$，我们求得 $Z := \sqrt{Y}$ 的概率密度函数为
+\[
+f_Z(z) = f_Y(z^2)(2z) = \frac{2z}{\sqrt{2\pi}} z^{-1} e^{-\frac{z^2}{2}} = \sqrt{\frac{2}{\pi}} e^{-\frac{z^2}{2}}
+\]
+对于 $z \ge 0$，否则 $f_Z(z) = 0$。我们计算
+\begin{align*}
+E[Z] &= \int_0^\infty z f_Z(z) dz\\
+&= \sqrt{\frac{2}{\pi}} \int_0^\infty z e^{-\frac{z^2}{2}} dz\\
+&= \sqrt{\frac{2}{\pi}} \left[ -e^{-\frac{z^2}{2}} \right]_0^\infty = \sqrt{\frac{2}{\pi}}
+\end{align*}
+回想 $Y = \frac{S^2}{\sigma^2}$。因此
+\[
+E[S] = E[\sigma \sqrt{Y}] = \sigma E[Z] = \sigma \sqrt{\frac{2}{\pi}}
+\]
+且
+\[
+Bias(S) = E[S] - \sigma = \sigma \left( \sqrt{\frac{2}{\pi}} - 1 \right)
+\]
+\end{solution}
+
+\question
+令 $X_1, \dots, X_n$ 为来自 $U(0, \theta)$（区间 $(0, \theta)$ 上的均匀分布）的独立同分布随机样本，其中 $\theta > 0$ 是未知参数。求 $\theta$ 的一个无偏估计量 $\theta_n$，并满足 $\lim_{n \to \infty} Var[\theta_n] = 0$。
+
+提示：从 $\theta'_n = \max\{X_1, \dots, X_n\}$ 开始，计算其期望值，然后修改 $\theta'_n$ 使其成为无偏估计量。
+
+\begin{solution}
+令 $\theta'_n = \max\{X_1, \dots, X_n\}$。首先，我们求 $\theta'_n$ 的累积分布函数 (CDF) 和概率密度函数 (PDF)。对于任何 $i$，有 $X_i \sim U(0, \theta)$：
+\[
+P(X_i \le x) = 
+\begin{cases} 
+0 & \text{若 } x \le 0, \\
+x/\theta & \text{若 } 0 < x < \theta, \\
+1 & \text{若 } x \ge \theta.
+\end{cases}
+\]
+由课程内容可知，$\theta'_n$ 的 CDF 为
+\[
+F(x) = P(\theta'_n \le x) = \prod_{i=1}^n P(X_i \le x) = 
+\begin{cases} 
+0 & \text{若 } x \le 0, \\
+(x/\theta)^n & \text{若 } 0 < x < \theta, \\
+1 & \text{若 } x \ge \theta.
+\end{cases}
+\]
+$\theta'_n$ 的 PDF 为
+\[
+f(x) = 
+\begin{cases} 
+0 & \text{若 } x \le 0, \\
+nx^{n-1}/\theta^n & \text{若 } 0 < x < \theta, \\
+0 & \text{若 } x \ge \theta.
+\end{cases}
+\]
+$\theta'_n$ 的期望值为
+\[
+E(\theta'_n) = \int_0^\theta x f(x) dx = \int_0^\theta \frac{nx^n}{\theta^n} dx = \frac{n\theta}{n + 1}.
+\]
+定义
+\[
+\theta_n = \frac{n + 1}{n} \theta'_n.
+\]
+我们有
+\[
+E(\theta_n) = \frac{n + 1}{n} E(\theta'_n) = \theta,
+\]
+这说明 $\theta_n$ 是 $\theta'_n$ 的一个无偏估计量。现在我们计算 $Var(\theta_n)$：
+\begin{align*}
+Var(\theta_n) &= \left(\frac{n + 1}{n}\right)^2 Var(\theta'_n) = \left(\frac{n + 1}{n}\right)^2 \left(E(\theta'^2_n) - E(\theta'_n)^2\right)\\
+&= \left(\frac{n + 1}{n}\right)^2 \left(\int_0^\theta \frac{nx^{n+1}}{\theta^n} dx - \frac{n^2\theta^2}{(n + 1)^2}\right)\\
+&= \frac{(n + 1)^2}{n^2} \left(\frac{n\theta^2}{n + 2} - \frac{n^2\theta^2}{(n + 1)^2}\right)\\
+&= \theta^2 \left(\frac{(n + 1)^2}{n(n + 2)} - 1\right)\\
+&= \frac{\theta^2}{n(n + 2)}.
+\end{align*}
+因此，
+\[
+\lim_{n \to \infty} Var(\theta_n) = 0.
+\]
+$\theta$ 的一个无偏估计量是
+\[
+\theta_n = \frac{n + 1}{n} \max\{X_1, \dots, X_n\}.
+\]
+\end{solution}
+
+    \question
+令 $X_1, \ldots, X_n$ 为取自离散分布的独立同分布样本，其概率质量函数 $f(x|\theta) = P(X = x|\theta)$ 如下表所示：
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+$x$ & $-2$ & $0$ & $2$ \\ \hline
+$f(x|\theta)$ & $\theta$ & $1 - 2\theta$ & $\theta$
+\end{tabular}
+\end{center}
+
+这里 $\theta \in [0, \frac{1}{2}]$ 是未知参数，且对于 $x \notin \{-2, 0, 2\}$，有 $f(x|\theta) = 0$。
+
+(i) 证明 $\hat{\theta}_n = \frac{1}{8n} \sum_{i=1}^n X_i^2$ 是基于样本 $X_1, \ldots, X_n$ 的 $\theta$ 的矩估计量。
+
+(ii) 求 $\hat{\theta}_n$ 的偏差、标准误差和均方误差 (MSE)。
+
+(iii) $\hat{\theta}_n$ 是 $\theta$ 的相合估计量吗？请给出严谨的证明。
+
+(iv) 求基于样本 $X_1, \ldots, X_n$ 的 $\theta$ 的极大似然估计量。请给出严谨的证明。提示：$f(x|\theta) = \theta^{x^2/4}(1 - 2\theta)^{1-x^2/4}$，$x = -2, 0, 2$。
+
+(v) 观测值 $x_1, \ldots, x_8$ 如下表所示 ($n = 8$)：
+
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+$i$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+$x_i$ & 0 & 2 & $-2$ & $-2$ & $-2$ & $-2$ & $-2$ & $-2$
+\end{tabular}
+\end{center}
+
+根据这些观测值计算 $\theta$ 的矩估计量。
+
+\begin{solution}
+(i) 我们有 $\mu_1 = -2\theta + 0(1 - 2\theta) + 2\theta = 0$。因此，一阶矩对于估计 $\theta$ 是没有用的，我们需要计算二阶矩：$\mu_2 = 4\theta + 0(1 - 2\theta) + 4\theta = 8\theta$。由此得 $\theta = \mu_2 / 8$，因此
+\[
+\hat{\theta}_n = S_2 / 8 = \frac{1}{8n} \sum_{i=1}^n X_i^2
+\]
+是 $\theta$ 的矩估计量。
+
+(ii) 我们已经证明了 $E[X_1^2] = \mu_2 = 8\theta$。此外，我们有
+\[
+E[X_1^4] = 16\theta + 0(1 - 2\theta) + 16\theta = 32\theta
+\]
+利用上述结果，我们发现
+\[
+\text{Bias}(\hat{\theta}_n) = E[\hat{\theta}_n] - \theta = \frac{1}{8n} \sum_{i=1}^n E[X_i^2] - \theta = \frac{1}{8n}(8n\theta) - \theta = \theta - \theta = 0
+\]
+计算方差：
+\[
+Var[X_i^2] = E[X_i^4] - E[X_i^2]^2 = 32\theta - (8\theta)^2 = 32(-2\theta^2 + \theta)
+\]
+从而
+\begin{align*}
+Var[\hat{\theta}_n] &= \frac{1}{64n^2} \sum_{i=1}^n Var[X_i^2] \\
+&= \frac{1}{64n^2} (n Var[X_1^2]) \\
+&= \frac{1}{64n^2} (32n(-2\theta^2 + \theta)) \\
+&= \frac{-2\theta^2 + \theta}{2n}
+\end{align*}
+由此得
+\begin{align*}
+SE(\hat{\theta}_n) &= \sqrt{\frac{-2\theta^2 + \theta}{2n}} \\
+MSE(\hat{\theta}_n) &= \text{Bias}(\hat{\theta}_n)^2 + Var[\hat{\theta}_n] = \frac{-2\theta^2 + \theta}{2n}
+\end{align*}
+
+(iii) 根据第 (ii) 部分，有 $\lim_{n \to \infty} \text{Bias}(\hat{\theta}_n) = 0$ 且 $\lim_{n \to \infty} Var[\hat{\theta}_n] = 0$ 对于所有 $\theta \in [0, 1/2]$ 均成立。根据大数定律或 MSE 收敛性，我们得出结论：$\hat{\theta}_n$ 是 $\theta$ 的相合估计量。
+
+(iv) 似然函数为
+\[
+L(\theta) = \prod_{i=1}^n \theta^{X_i^2/4} (1 - 2\theta)^{1 - X_i^2/4} = \theta^{T/4} (1 - 2\theta)^{n - T/4}
+\]
+其中 $T = \sum_{i=1}^n X_i^2$。对数似然函数为
+\[
+\log(L(\theta)) = \frac{T}{4} \log(\theta) + \left( n - \frac{T}{4} \right) \log(1 - 2\theta)
+\]
+求导并令其为 0：
+\[
+\frac{d \log(L(\theta))}{d\theta} = \frac{T}{4\theta} - \frac{2(n - T/4)}{1 - 2\theta} = 0
+\]
+解得 $\hat{\theta} = \frac{T}{8n} = \frac{1}{8n} \sum_{i=1}^n X_i^2$。经检验，此为全局最大值点，因此 MLE 为 $\hat{\theta}_n$。
+
+(v) 给定观测值，计算
+\[
+\sum_{i=1}^8 x_i^2 = 0^2 + 2^2 + 6 \cdot (-2)^2 = 28
+\]
+基于这些观测值的矩估计量为
+\[
+\hat{\theta}_8 = \frac{28}{8 \cdot 8} = \frac{28}{64} = \frac{7}{16}
+\]
+\end{solution}
+
+\question 问题 1 设 $D_{\theta}, 0 \le \theta \le 1$ 为离散分布，其 PMF 为 $f(1|\theta) = \theta$，$f(2|\theta) = 1 - \theta$，且其他情况 $f(x|\theta) = 0$，其中 $\theta \in [0, 1]$ 是未知参数。
+
+(a) 基于 $X_1, \dots, X_n \overset{\text{iid}}{\sim} D_{\theta}$，求 $\theta$ 的最大似然估计量 (MLE)。请按照课堂讲授给出严谨的论证。提示：$f(x|\theta) = \theta^{2-x}(1 - \theta)^{-1+x}, x = 1, 2$。
+
+(b) 对于 $n = 3$，给定观测值 $x_1 = 1, x_2 = 2, x_3 = 2$。基于这些观测值的 $\theta$ 的 MLE 是多少？
+
+\begin{solution}
+(a) 似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i|\theta) = \theta^{\sum_{i=1}^n (2-X_i)}(1 - \theta)^{\sum_{i=1}^n (X_i-1)} = \theta^{2n-n\bar{X}}(1 - \theta)^{n\bar{X}-n}
+\]
+在这里（以及类似情况下），如果其中一个指数（$2n - n\bar{X}$ 或 $n\bar{X} - n$）为零，则似然函数不满足标准条件。因此我们必须分别处理这些情况。
+
+情况 1 $2n - n\bar{X} = 0$。
+在这种情况下，$\bar{X} = 2$，因此 $L(\theta) = (1 - \theta)^n$。该函数关于 $\theta$ 严格递减，因此 MLE 为 $\hat{\theta} = 0 = 2 - \bar{X}$。
+
+情况 2 $n\bar{X} - n = 0$。
+这里我们有 $\bar{X} = 1$ 且 $L(\theta) = \theta^n$。该函数关于 $\theta$ 严格递增，因此 MLE 为 $\hat{\theta} = 1 = 2 - \bar{X}$。
+
+情况 3 $2n - n\bar{X} \neq 0$ 且 $n\bar{X} - n \neq 0$。
+注意 $1 \le \bar{X} \le 2$，因为 $X_i$ 仅取值 1 和 2。因此 $2n - n\bar{X} \ge 0$ 且 $n\bar{X} - n \ge 0$。因此情况 3 的假设意味着 $2n - n\bar{X} > 0$ 且 $n\bar{X} - n > 0$。在这些条件下，函数 $L(\theta)$ 满足标准条件：显然对于所有 $\theta \in (0, 1)$，$L(\theta) > 0$ 且 $\frac{dL(\theta)}{d\theta}$ 存在。我们还有 $\lim_{\theta \to 0^+} L(\theta) = \lim_{\theta \to 1^-} L(\theta) = 0$，因为 $\lim_{\theta \to 0^+} \theta^{2n-n\bar{X}} = 0$ 且 $\lim_{\theta \to 1^-} (1 - \theta)^{n\bar{X}-n} = 0$（这两个极限为零仅因为我们在情况 3 中要求 $2n - n\bar{X} > 0$ 且 $n\bar{X} - n > 0$）。根据课堂上的定理，$L(\theta)$ 在 $(0, 1)$ 上有一个全局最大值点 $\hat{\theta}$，它满足 $\frac{dL}{d\theta}(\hat{\theta}) = 0$。此外，$\hat{\theta}$ 是 $L(\theta)$ 在 $[0, 1]$ 上的全局最大值点，因为 $L(\hat{\theta}) > 0$ 且 $L(0) = L(1) = 0$。
+
+通过“对数技巧”，只需找到 $\frac{d\log(L)}{d\theta}(\hat{\theta}) = 0$ 的解。注意
+\[
+\log(L(\theta)) = (2n - n\bar{X})\log(\theta) + (n\bar{X} - n)\log(1 - \theta)
+\]
+方程 $\frac{d\log(L)}{d\theta}(\hat{\theta}) = 0$ 等价于
+\begin{align*}
+\frac{2n - n\bar{X}}{\hat{\theta}} - \frac{n\bar{X} - n}{1 - \hat{\theta}} &= 0 \\
+(2 - \bar{X})(1 - \hat{\theta}) &= \hat{\theta}(\bar{X} - 1) \\
+\hat{\theta} &= 2 - \bar{X}
+\end{align*}
+$\theta$ 的 MLE 为 $\hat{\theta} = 2 - \bar{X}$。
+总之，我们已经证明了在所有情况下，$\theta$ 的 MLE 均为 $2 - \bar{X}$。
+
+(b) 给定 $n = 3$ 且观测值 $x_1 = 1, x_2 = 2, x_3 = 2$，$\theta$ 的 MLE 为
+\[
+\hat{\theta} = 2 - \bar{x} = \frac{1}{3}
+\]
+\end{solution}
+
+\question 问题 2 回想几何分布 $\text{Geom}(p)$ 的 PMF 为 $f(x|p) = (1 - p)^{x-1}p$，对于 $x = 1, 2, \dots$，否则 $f(x|p) = 0$。设 $X_1, \dots, X_n \overset{\text{iid}}{\sim} \text{Geom}(p)$，其中 $p \in [0, 1]$ 是未知参数。
+
+(a) 基于该随机样本求 $p$ 的矩估计量。
+
+(b) 基于该随机样本求 $p$ 的最大似然估计量。请按照第 12 讲所示给出严谨论证。
+
+\begin{solution}
+(a) 回想 $X_1 \sim \text{Geom}(p)$ 的期望为 $\mu_1 = 1/p$。因此，$p = 1/\mu_1$，矩估计量为 $\hat{p} = 1/S_1$，其中 $S_1 = \frac{1}{n} \sum_{i=1}^n X_i$。
+
+(b) 似然函数为
+\[
+L(p) = \prod_{i=1}^n f(X_i|p) = (1 - p)^{\sum_{i=1}^n (X_i-1)} p^n = (1 - p)^{n\bar{X}-n} p^n
+\]
+同样，我们必须分指数为零的情况讨论。
+
+情况 1 $\bar{X} = 1$。
+在这种情况下，$L(p) = p^n$，它是 $p$ 的严格递增函数。因此 MLE 为 $1 = 1/\bar{X}$。
+
+情况 2 $\bar{X} > 1$。
+与问题 1 类似，我们看到 $L(p)$ 在区间 $(0, 1)$ 上满足标准条件，因此它在 $[0, 1]$ 上有一个全局最大值点 $\hat{p}$，满足
+\begin{align*}
+\frac{d\log(L)}{dp}(\hat{p}) &= 0 \\
+-\frac{n\bar{X} - n}{1 - \hat{p}} + \frac{n}{\hat{p}} &= 0 \\
+(\bar{X} - 1)\hat{p} &= 1 - \hat{p} \\
+\hat{p} &= 1/\bar{X}
+\end{align*}
+$p$ 的 MLE 为 $\hat{p} = 1/\bar{X}$。
+总之，我们证明了在所有情况下 $p$ 的 MLE 均为 $\hat{p} = 1/\bar{X}$。
+\end{solution}
+
+\question 问题 3 设 $X_1, \dots, X_n$ 是从 $\text{Gamma}(2, \theta)$ 分布中提取的 iid 样本。回想该分布的 PDF 为
+\[
+f(x|\theta) = \frac{1}{\theta^2} x e^{-x/\theta} \text{ 对于 } x > 0
+\]
+且其他情况 $f(x|\theta) = 0$，其中 $\theta \in (0, \infty)$ 是未知参数。此类分布可用于建模电子元件的寿命等。
+
+(a) 基于 $X_1, \dots, X_n$ 求 $\theta$ 的 MLE $\hat{\theta}$（附严谨论证）。
+
+(b) 计算 $\hat{\theta}$ 的期望值和方差。
+
+(c) 对于 $n = 3$，给定观测值 $x_1 = 120, x_2 = 130, x_3 = 128$。计算基于这些观测值的 $\theta$ 的 MLE。
+
+\begin{solution}
+(a) $\theta$ 的似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i|\theta) = \frac{1}{\theta^{2n}} \left(\prod_{i=1}^n X_i\right) e^{-(\sum_{i=1}^n X_i)/\theta} = \frac{C}{\theta^{2n}} e^{-D/\theta}
+\]
+其中 $C = \prod_{i=1}^n X_i > 0$ 且 $D = \sum_{i=1}^n X_i > 0$。注意 $\theta$ 的取值范围是 $(0, \infty)$，且 $L(\theta)$ 在区间 $(0, \infty)$ 上满足标准条件：$L(\theta) > 0$ 且 $dL(\theta)/d\theta$ 存在是显然的。剩下的需验证 $\lim_{\theta \to 0^+} L(\theta) = \lim_{\theta \to \infty} L(\theta) = 0$。
+我们使用以下微积分事实：
+\[
+\lim_{x \to \infty} \frac{x^a}{e^{bx}} = 0 \text{ 对于所有 } a, b \in \mathbb{R} \text{ 且 } b > 0
+\]
+我们发现 $\lim_{\theta \to 0^+} L(\theta) = 0$（令 $\tau = 1/\theta$ 并应用上述事实）。另一方面，$\lim_{\theta \to \infty} L(\theta) = 0 \cdot 1 = 0$。
+因此 $L(\theta)$ 在 $(0, \infty)$ 上有一个全局最大值点 $\hat{\theta}$，满足 $\frac{d\log(L)}{d\theta}(\hat{\theta}) = 0$。注意
+\[
+\log(L(\theta)) = \log(C) - 2n\log(\theta) - D/\theta
+\]
+方程 $\frac{d\log(L)}{d\theta}(\hat{\theta}) = 0$ 等价于
+\begin{align*}
+\frac{-2n}{\hat{\theta}} + \frac{D}{\hat{\theta}^2} &= 0 \\
+\hat{\theta} &= \frac{D}{2n}
+\end{align*}
+$\theta$ 的 MLE 为
+\[
+\hat{\theta} = \frac{1}{2n} \sum_{i=1}^n X_i = \frac{1}{2} \bar{X}
+\]
+
+(b) 注意 $X_i \sim \text{Gamma}(2, \theta)$，因此对于所有 $i$，$E(X_i) = 2\theta$ 且 $\text{Var}(X_i) = 2\theta^2$。$\hat{\theta}$ 的期望值和方差为
+\begin{align*}
+E(\hat{\theta}) &= \frac{1}{2n} \sum_{i=1}^n E(X_i) = \frac{1}{2n} n(2\theta) = \theta \\
+\text{Var}(\hat{\theta}) &= \frac{1}{4n^2} \sum_{i=1}^n \text{Var}(X_i) = \frac{1}{4n^2} n(2\theta^2) = \frac{\theta^2}{2n}
+\end{align*}
+
+(c) 基于给定观测值的 $\theta$ 的 MLE 为
+\[
+\hat{\theta} = \frac{1}{6}(x_1 + x_2 + x_3) = 63
+\]
+\end{solution}
+
+\question 问题 4（这是一个具有挑战性的难题）
+设 $X_1, \dots, X_n$ 是从具有如下 PDF 的分布中提取的 iid 样本
+\[
+f(x|\theta) = \frac{\Gamma(2\theta)}{\Gamma(\theta)^2} x^{\theta-1} (1 - x)^{\theta-1} \text{ 对于 } 0 < x < 1
+\]
+且其他情况 $f(x|\theta) = 0$。利用课堂上的定理（关于如何在标准条件下最大化似然函数）找出一个 $\theta$ 的 MLE 必须满足的方程。你不需要解这个方程（通过简单方法无法求解），但你应该严谨地证明为什么该方程成立。
+
+\begin{solution}
+似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i|\theta) = \frac{\Gamma(2\theta)^n}{\Gamma(\theta)^{2n}} \left(\prod_{i=1}^n X_i(1 - X_i)\right)^{\theta-1} = \frac{\Gamma(2\theta)^n}{\Gamma(\theta)^{2n}} C^{n(\theta-1)}
+\]
+其中 $C = (\prod_{i=1}^n X_i(1 - X_i))^{1/n}$。
+注意函数 $g(x) = x(1 - x)$ 在 $x = 1/2$ 处取得最大值。因此 $x(1 - x) \le 1/4$。
+由此我们有 $X_i(1 - X_i) \le 1/4$，从而 $0 < C \le 1/4$。
+由于 $X_i$ 是连续分布，因此 $C = 1/4$ 发生的概率为 0。因此我们假设 $0 < C < 1/4$。
+$\theta$ 的范围是 $(0, \infty)$。证明 $\lim_{\theta \to 0^+} L(\theta) = \lim_{\theta \to \infty} L(\theta) = 0$。
+利用提示中的积分形式及夹逼定理可以证明上述极限。
+总之，我们已经证明了 $L(\theta)$ 满足标准条件。根据课堂定理，我们得出 $L(\theta)$ 在 $(0, \infty)$ 上有一个全局最大值点 $\hat{\theta}$，满足 $\frac{d\log(L)}{d\theta}(\hat{\theta}) = 0$。注意
+\[
+\log(L(\theta)) = n\log(\Gamma(2\theta)) - 2n\log(\Gamma(\theta)) + n(\theta - 1)\log(C)
+\]
+因此
+\[
+\frac{d\log(L)}{d\theta} = n\frac{\frac{d\Gamma(2\theta)}{d\theta}}{\Gamma(2\theta)} - 2n\frac{\frac{d\Gamma(\theta)}{d\theta}}{\Gamma(\theta)} + n\log(C)
+\]
+因此 MLE $\hat{\theta}$ 是方程
+\[
+\frac{\frac{d\Gamma(2\theta)}{d\theta}}{\Gamma(2\theta)} - \frac{2\frac{d\Gamma(\theta)}{d\theta}}{\Gamma(\theta)} + \log(C) = 0
+\]
+的一个解。该方程无法直接求解，但其解可以通过数值数学方法进行逼近。
+\end{solution}
+
+\question 问题 2 设 $D_{\theta}, 0 \le \theta \le 1$ 是具有如下 PMF 的离散分布：
+\[
+\begin{array}{c|c|c|c|c}
+x & 0 & 1 & 2 & 3 \\
+\hline
+f(x) & 2\theta/3 & \theta/3 & 2(1-\theta)/3 & (1-\theta)/3
+\end{array}
+\]
+且其他情况 $f(x) = 0$。设 $X_1, \dots, X_n$ 是从 $D_{\theta}$ 中提取的 iid 随机样本。
+
+(i) 基于 $X_1, \dots, X_n$ 求 $\theta$ 的 MLE。
+
+(ii) 基于 $X_1, \dots, X_n$ 求 $\theta$ 的矩估计量。
+
+\begin{solution}
+(i) 令 $a, b, c, d$ 分别为 $X_i$ 等于 $0, 1, 2, 3$ 的数量。注意 $a + b + c + d = n$。$\theta$ 的似然函数为
+\[
+L(\theta) = \left(\frac{2\theta}{3}\right)^a \left(\frac{\theta}{3}\right)^b \left(\frac{2-2\theta}{3}\right)^c \left(\frac{1-\theta}{3}\right)^d = \frac{2^{a+c}}{3^n} \theta^{a+b} (1-\theta)^{c+d}
+\]
+如果 $a + b = 0$，则 $c + d = n$ 且 $L(\theta) = \frac{2^c}{3^n}(1-\theta)^{c+d}$，这是 $\theta$ 的严格递减函数。因此如果 $a + b = 0$，则 $\theta$ 的 MLE 为 0。
+
+如果 $c + d = 0$，则 $a + b = n$ 且 $\frac{2^a}{3^n}\theta^{a+b}$，这是 $\theta$ 的严格递增函数。因此如果 $c + d = 0$，则 $\theta$ 的 MLE 为 1。
+
+从现在起，我们假设 $a + b > 0$ 且 $c + d > 0$。显然在 $(0, 1)$ 上 $L(\theta) > 0$，且考虑到 $a + b > 0$ 和 $c + d > 0$，我们有 $\lim_{\theta \to 0^+} L(\theta) = \lim_{\theta \to 1^-} L(\theta) = 0$。因此，函数 $L(\theta)$ 在区间 $(0, 1)$ 上满足标准条件，且它有一个全局最大值点 $\hat{\theta} \in (0, 1)$，它是方程 $d \log(L(\theta))/d\theta = 0$ 的解。由于 $L(0) = L(1) = 0$，$\hat{\theta}$ 也是 $[0, 1]$ 上的全局最大值点。由于 $d \log(L)/d\theta = (a+b)/\theta - (c+d)/(1-\theta)$，我们得到
+\begin{align*}
+\frac{a + b}{\hat{\theta}} &= \frac{c + d}{1 - \hat{\theta}} \\
+\hat{\theta} &= \frac{a + b}{a + b + c + d} \\
+\hat{\theta} &= \frac{a + b}{n}
+\end{align*}
+
+(ii) 首先，我们计算 $\mu_1 = E(X_1)$：
+\[
+\mu_1 = 0 \cdot \frac{2\theta}{3} + 1 \cdot \frac{\theta}{3} + 2 \cdot \frac{2(1-\theta)}{3} + 3 \cdot \frac{1-\theta}{3} = \frac{7 - 6\theta}{3}
+\]
+因此，
+\[
+\theta = \frac{7 - 3\mu_1}{6}
+\]
+$\theta$ 的矩估计量为
+\[
+\hat{\theta} = \frac{7 - 3S_1}{6}
+\]
+其中 $S_1 = \frac{1}{n} \sum_{i=1}^n X_i$。
+\end{solution}
+
+\question 问题 3 设 $X_1, \dots, X_n$ 是从均匀分布 $U(0, \theta)$ 中提取的 iid 样本。在讲座中已经证明 $\hat{\theta} = \max(X_1, \dots, X_n)$ 是基于 $X_1, \dots, X_n$ 的 $\theta$ 的 MLE。证明 $\hat{\theta}$ 是相合的。
+
+\begin{solution}
+为了解题方便，记
+\[
+\hat{\theta}_n = \max(X_1, \dots, X_n)
+\]
+回想 $X_1 \sim U(0, \theta)$ 的 CDF 为
+\[
+F_{X_1}(x) = \begin{cases} x/\theta & \text{若 } 0 < x < \theta, \\ 0 & \text{若 } x \le 0, \\ 1 & \text{若 } x \ge \theta \end{cases}
+\]
+我们求 $\hat{\theta}_n$ 的 CDF $F(x)$：
+\[
+F(x) = P(\hat{\theta}_n \le x) = P(X_1 \le x, \dots, X_n \le x) = F_{X_1}(x)^n
+\]
+因此
+\[
+F(x) = \begin{cases} \left(\frac{x}{\theta}\right)^n & \text{若 } 0 < x < \theta, \\ 0 & \text{若 } x \le 0, \\ 1 & \text{若 } x \ge \theta \end{cases}
+\]
+对于 $\epsilon > 0$，我们有
+\begin{align*}
+P(|\hat{\theta}_n - \theta| > \epsilon) &= P(\hat{\theta}_n > \theta + \epsilon) + P(\hat{\theta}_n < \theta - \epsilon) \\
+&= 1 - F(\theta + \epsilon) + F(\theta - \epsilon) \\
+&= 1 - 1 + \left(\frac{\theta - \epsilon}{\theta}\right)^n \\
+&= \left(\frac{\theta - \epsilon}{\theta}\right)^n
+\end{align*}
+由于 $(\theta - \epsilon)/\theta < 1$，我们得到
+\[
+\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0
+\]
+即 $\hat{\theta}_n$ 是相合的。
+\end{solution}
+
+\question 问题 4 设 $X_1, \dots, X_n$ 是从具有如下 PDF 的分布中提取的 iid 样本：
+\[
+f(x|\theta) = \frac{\theta}{\sqrt{2\pi}} e^{-\frac{\theta^2 x^2}{2}} \text{ 对于所有 } x \in \mathbb{R}
+\]
+其中 $\theta \in (0, \infty)$ 是未知参数。
+
+(i) 在假设 $\sum_{i=1}^n X_i^2 > 0$ 下计算 $\theta$ 的 MLE。
+
+(ii) 证明如果 $\sum_{i=1}^n X_i^2 = 0$，则不存在 $\theta$ 的 MLE。
+
+\begin{solution}
+(i) $\theta$ 的似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i|\theta) = \left(\frac{\theta}{\sqrt{2\pi}}\right)^n e^{-\frac{\theta^2 \sum_{i=1}^n X_i^2}{2}}
+\]
+首先，我们证明 $L(\theta)$ 满足标准条件。$L(\theta) > 0$ 和可微性条件是显而易见的。此外，
+\[
+\lim_{\theta \to 0^+} L(\theta) = \left(\frac{1}{\sqrt{2\pi}}\right)^n \left(\lim_{\theta \to 0^+} \theta^n\right) \left(\lim_{\theta \to 0^+} e^{-\frac{\theta^2 \sum_{i=1}^n X_i^2}{2}}\right) = \left(\frac{1}{\sqrt{2\pi}}\right)^n \cdot 0 \cdot 1 = 0
+\]
+剩下的需验证 $\lim_{\theta \to \infty} L(\theta) = 0$。回想以下微积分事实：
+\[
+\lim_{x \to \infty} \frac{x^a}{e^{bx}} = 0 \text{ 对于所有 } a, b \in \mathbb{R} \text{ 且 } b > 0
+\]
+令 $C = (1/\sqrt{2\pi})^n$ 且 $D = 1/2 \sum_{i=1}^n X_i^2$。
+\begin{align*}
+\lim_{\theta \to \infty} L(\theta) &= C \lim_{\theta \to \infty} \frac{\theta^n}{e^{D\theta^2}} \\
+&= C \lim_{\tau \to \infty} \frac{(\sqrt{\tau})^n}{e^{D(\sqrt{\tau})^2}} \\
+&= C \lim_{\tau \to \infty} \frac{\tau^{n/2}}{e^{D\tau}} = 0
+\end{align*}
+因此函数 $L(\theta)$ 有一个满足以下条件的全局最大值点 $\hat{\theta}$：
+\begin{align*}
+\frac{d \log(L)}{d\theta}(\hat{\theta}) &= 0 \\
+\frac{n}{\hat{\theta}} - \hat{\theta} \sum_{i=1}^n X_i^2 &= 0 \\
+\hat{\theta} &= \left(\frac{n}{\sum_{i=1}^n X_i^2}\right)^{1/2}
+\end{align*}
+
+(ii) 如果 $\sum_{i=1}^n X_i^2 = 0$，则
+\[
+L(\theta) = \left(\frac{\theta}{\sqrt{2\pi}}\right)^n
+\]
+该函数在 $(0, \infty)$ 上是严格递增的，且没有全局最大值。因此，在这种情况下不存在 $\theta$ 的 MLE。
+\end{solution}
+
+\question
+令 $X_1, \ldots, X_n$ 为独立同分布样本，其概率密度函数（PDF）为
+\[
+f(x|\mu) = \frac{1}{x\sqrt{2\pi}} e^{\frac{-(\log(x)-\mu)^2}{2}}, \quad x > 0
+\]
+若 $x \le 0$，则 $f(x|\mu) = 0$。这里 $\mu \in (-\infty, \infty)$ 是未知参数。注意 “$\log$” 表示自然对数。
+
+(i) 严谨地证明 $\hat{\mu} = \frac{1}{n} \sum_{i=1}^n \log(X_i)$ 是 $\mu$ 的极大似然估计量（MLE）。
+
+(ii) 使用雅可比（Jacobian）方法证明 $\log(X_1) \sim N(\mu, 1)$。
+
+(iii) 求 $\hat{\mu}$ 的偏差（Bias）、标准误差（SE）和均方误差（MSE）。
+提示：利用第 (ii) 部分的结论。
+
+(iv) 计算费舍尔信息量（Fisher information）$I_{X_1, \ldots, X_n}(\mu)$。
+
+(v) 估计量 $\hat{\mu}$ 是有效估计量（Efficient estimator）吗？请说明理由。
+
+提示：
+1) 对于上述 PDF，所有相关的平滑性条件均满足。你可以直接使用费舍尔信息量的可加性、费舍尔信息量的备选公式以及克拉默-罗（Cramer-Rao）下界。
+2) $N(\mu, 1)$ 的 PDF 为 $\frac{1}{\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2}}$，$x \in \mathbb{R}$。此外，若 $X \sim N(\mu, 1)$，则 $E[X] = \mu$ 且 $Var[X] = 1$。
+
+\begin{solution}
+(i) 似然函数为
+\[
+L(\mu) = \prod_{i=1}^n \left( \frac{1}{X_i\sqrt{2\pi}} e^{\frac{-(\log(X_i)-\mu)^2}{2}} \right) = (2\pi)^{-\frac{n}{2}} \frac{1}{\prod_{i=1}^n X_i} e^{-\frac{1}{2} \sum_{i=1}^n (\log(X_i)-\mu)^2}
+\]
+显然 $L(\mu)$ 在 $\mu \in (-\infty, \infty)$ 上为正且可微。当 $\mu \to \pm \infty$ 时，$(\log(X_i)-\mu)^2 \to \infty$，故 $\lim_{\mu \to \pm \infty} L(\mu) = 0$。因此 $L(\mu)$ 在 $(-\infty, \infty)$ 上存在全局最大值点 $\hat{\mu}$，且满足 $\frac{d \log(L(\mu))}{d\mu} = 0$。计算如下：
+\begin{align*}
+\log(L(\mu)) &= -\frac{n}{2} \log(2\pi) - \sum_{i=1}^n \log(X_i) - \frac{1}{2} \sum_{i=1}^n (\log(X_i)-\mu)^2 \\
+\frac{d \log(L(\mu))}{d\mu} &= \sum_{i=1}^n (\log(X_i) - \mu) = -n\mu + \sum_{i=1}^n \log(X_i)
+\end{align*}
+令导数为 0，解得 $\mu = \frac{1}{n} \sum_{i=1}^n \log(X_i)$。因此
+\[
+\hat{\mu} = \frac{1}{n} \sum_{i=1}^n \log(X_i)
+\]
+是 $\mu$ 的极大似然估计量。
+
+(ii) 设 $Y = g(X_1) = \log(X_1)$，其反函数为 $g^{-1}(y) = e^y$。雅可比行列式为 $\left| \frac{dg^{-1}(y)}{dy} \right| = e^y$。$Y$ 的 PDF 为
+\[
+f_Y(y) = f(g^{-1}(y)|\mu) \left| \frac{dg^{-1}(y)}{dy} \right| = \frac{1}{e^y \sqrt{2\pi}} e^{\frac{-(y-\mu)^2}{2}} e^y = \frac{1}{\sqrt{2\pi}} e^{\frac{-(y-\mu)^2}{2}}, \quad y \in \mathbb{R}
+\]
+此即 $N(\mu, 1)$ 的 PDF，故 $\log(X_1) \sim N(\mu, 1)$。
+
+(iii) 由于 $\log(X_1) \sim N(\mu, 1)$，我们有 $E[\log(X_i)] = \mu$ 和 $Var[\log(X_i)] = 1$。计算得：
+\begin{align*}
+E[\hat{\mu}] &= \frac{1}{n} \sum_{i=1}^n E[\log(X_i)] = \mu \\
+Var[\hat{\mu}] &= \frac{1}{n^2} \sum_{i=1}^n Var[\log(X_i)] = \frac{1}{n} \\
+\text{Bias}(\hat{\mu}) &= E[\hat{\mu}] - \mu = 0 \\
+SE(\hat{\mu}) &= \sqrt{Var[\hat{\mu}]} = \frac{1}{\sqrt{n}} \\
+MSE(\hat{\mu}) &= \text{Bias}(\hat{\mu})^2 + Var[\hat{\mu}] = \frac{1}{n}
+\end{align*}
+
+(iv) 根据第 (i) 部分，$\frac{d \log(L(\mu))}{d\mu} = -n\mu + \sum_{i=1}^n \log(X_i)$。则
+\[
+\frac{d^2}{d\mu^2} \log(L(\mu)) = -n
+\]
+利用费舍尔信息量的备选公式：
+\[
+I_{X_1, \ldots, X_n}(\mu) = -E\left[ \frac{d^2}{d\mu^2} \log(L(\mu)) \right] = -E[-n] = n
+\]
+
+(v) 根据克拉默-罗下界，对于 $\mu$ 的任意无偏估计量 $T$，有 $Var[T] \ge I_{X_1, \ldots, X_n}(\mu)^{-1} = \frac{1}{n}$。由于 $\hat{\mu}$ 是无偏的且其方差恰好等于该下界，因此 $\hat{\mu}$ 是有效估计量。
+\end{solution}
+
+\question
+令 $X_1, \dots, X_n$ 为来自离散分布的独立同分布样本，其概率质量函数 $f(x|\theta) = P(X = x|\theta)$ 如下表所示：
+
+\begin{center}
+\begin{tabular}{c|c|c}
+$x$ & $-1$ & $2$ \\ \hline
+$f(x|\theta)$ & $\theta$ & $1 - \theta$
+\end{tabular}
+\end{center}
+
+其中 $\theta \in (0, 1)$ 是未知参数，且对于 $x \notin \{-1, 2\}$，有 $f(x|\theta) = 0$。
+注意，对于 $x = -1, 2$，有 $f(x|\theta) = \theta^{(2-x)/3}(1 - \theta)^{(x+1)/3}$。令 $\hat{X} = \frac{1}{n} \sum_{i=1}^n X_i$。
+
+(i) 证明 $\hat{\theta}_n = \frac{1}{3}(2 - \hat{X})$ 是 $\theta$ 的矩估计量。
+
+(ii) 求 $\hat{\theta}_n$ 的偏差和方差。
+
+(iii) $\hat{\theta}_n$ 是 $\theta$ 的相合估计量吗？请说明理由。
+
+(iv) 证明 $I_{X_1}(\theta) = \frac{1}{\theta(1 - \theta)}$。
+提示：所有相关的平滑性条件均满足，你可以直接使用 Fisher 信息量的加性、替代公式以及 Cramer-Rao 界，无需证明。
+
+(v) $\hat{\theta}_n$ 是 $\theta$ 的有效估计量吗？请说明理由。
+
+\begin{solution}
+(i) 我们有
+\[
+\mu_1 = E[X_1] = (-1)\theta + 2(1 - \theta) = 2 - 3\theta
+\]
+因此
+\[
+\theta = \frac{2 - \mu_1}{3}
+\]
+且 $\theta$ 的矩估计量为
+\[
+\frac{1}{3}(2 - S_1) = \frac{1}{3}(2 - \hat{X})
+\]
+
+(ii) 我们计算
+\begin{align*}
+E[X_1] &= (-1)\theta + 2(1 - \theta) = 2 - 3\theta\\
+E[X_1^2] &= (-1)^2\theta + 2^2(1 - \theta) = \theta + 4(1 - \theta) = 4 - 3\theta\\
+Var[X_1] &= E[X_1^2] - E[X_1]^2 = (4 - 3\theta) - (2 - 3\theta)^2\\
+&= 4 - 3\theta - (4 + 9\theta^2 - 12\theta) = -9\theta^2 + 9\theta\\
+Var[\hat{X}] &= \frac{1}{n} Var[X_1] = \frac{9}{n}(-\theta^2 + \theta)\\
+Bias(\hat{\theta}_n) &= E[\hat{\theta}_n] - \theta = E\left[\frac{1}{3}(2 - \hat{X})\right] - \theta\\
+&= \frac{2}{3} - \frac{1}{3}(2 - 3\theta) - \theta = 0
+\end{align*}
+\[
+Var[\hat{\theta}_n] = Var\left[\frac{1}{3}(2 - \hat{X})\right] = \frac{1}{9} Var[\hat{X}] = \frac{1}{n}(-\theta^2 + \theta)
+\]
+
+(iii) 由第 (ii) 部分可知，我们有 $\lim_{n \to \infty} Bias(\hat{\theta}_n) = 0$ 且 $\lim_{n \to \infty} Var(\hat{\theta}_n) = 0$。根据课堂定理，这意味着 $\hat{\theta}_n$ 是 $\theta$ 的相合估计量。
+
+(iv) 样本量 $n = 1$ 的似然函数为 $L(\theta) = \theta^{(2-X_1)/3}(1 - \theta)^{(X_1+1)/3}$。使用 Fisher 信息量的替代公式，我们得到
+\begin{align*}
+\frac{d \log L(\theta)}{d\theta} &= \frac{1}{3} \left(\frac{2 - X_1}{\theta} - \frac{X_1 + 1}{1 - \theta}\right)\\
+\frac{d^2 \log L(\theta)}{d\theta^2} &= \frac{1}{3} \left(-\frac{2 - X_1}{\theta^2} - \frac{X_1 + 1}{(1 - \theta)^2}\right)\\
+I_{X_1}(\theta) &= -E\left[\frac{d^2 \log L(\theta)}{d\theta^2}\right] = \frac{1}{3} E\left[\frac{2 - X_1}{\theta^2} + \frac{X_1 + 1}{(1 - \theta)^2}\right]
+\end{align*}
+回想 $E[X_1] = 2 - 3\theta$。我们得出
+\begin{align*}
+I_{X_1}(\theta) &= \frac{1}{3} E\left[\frac{2 - X_1}{\theta^2} + \frac{X_1 + 1}{(1 - \theta)^2}\right]\\
+&= \frac{1}{3} \left(\frac{2 - E[X_1]}{\theta^2} + \frac{E[X_1] + 1}{(1 - \theta)^2}\right)\\
+&= \frac{1}{3} \left(\frac{2 - (2 - 3\theta)}{\theta^2} + \frac{(2 - 3\theta) + 1}{(1 - \theta)^2}\right)\\
+&= \frac{1}{3} \left(\frac{3\theta}{\theta^2} + \frac{3(1 - \theta)}{(1 - \theta)^2}\right) = \frac{1}{\theta} + \frac{1}{1 - \theta}\\
+&= \frac{1}{\theta(1 - \theta)}
+\end{align*}
+
+(v) 我们已经证明 $\hat{\theta}_n$ 是无偏的，并且
+\[
+Var[\hat{\theta}_n] = \frac{1}{n}(-\theta^2 + \theta)
+\]
+回想如果 $\hat{\theta}_n$ 是无偏的且 $Var[\hat{\theta}_n] = \frac{1}{n I_{X_1}(\theta)}$，则它是有效的。使用第 (iv) 部分，我们得到
+\[
+\frac{1}{n I_{X_1}(\theta)} = \frac{1}{n \frac{1}{\theta(1 - \theta)}} = \frac{1}{n}(-\theta^2 + \theta) = Var[\hat{\theta}_n]
+\]
+因此 $\hat{\theta}_n$ 是有效的。
+\end{solution}
+
+\question
+令 $X_1, \dots, X_n$ 为独立同分布样本，其概率密度函数 (PDF) 为
+\[
+f(x|\theta) = (\theta + 1)x^\theta, \quad 0 < x < 1
+\]
+且当 $x$ 为其他值时，$f(x|\theta) = 0$。其中 $\theta \in (-1, \infty)$ 是未知参数。
+
+(i) 求 $\theta$ 的最大似然估计量 (MLE)。请说明理由。
+
+(ii) 证明 $I_{X_1, \dots, X_n}(\theta) = \frac{n}{(1 + \theta)^2}$。
+提示：对于上述 PDF，所有相关的平滑性条件均满足。你可以直接使用 Fisher 信息量的加性以及替代公式，无需证明。
+
+(iii) 已知如下观测值 $x_1, \dots, x_5$：
+\[
+0.8, 0.9, 0.8, 0.8, 0.9
+\]
+利用关于近似置信区间的主要结论，求 $\theta$ 的近似 $90\%$ 置信区间。
+提示：使用倒数第三页的 $N(0, 1)$ 累积分布函数 (CDF) 表。
+
+\begin{solution}
+(i) 似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i|\theta) = \prod_{i=1}^n ((\theta + 1)X_i^\theta) = (1 + \theta)^n P^\theta
+\]
+其中 $P = \prod_{i=1}^n X_i$。我们检查 $L$ 是否满足标准条件：
+(a) 对于所有 $\theta \in (-1, \infty)$，$L(\theta) > 0$，因为当 $\theta \in (-1, \infty)$ 时 $1 + \theta > 0$，且由于 $X_i$ 仅取正值，故 $P > 0$。
+(b) $L(\theta)$ 在 $(-1, \infty)$ 上可微（显而易见）。
+(c) 我们有 $\lim_{\theta \to -1^+} (\theta + 1) = 0$ 且 $\lim_{\theta \to -1^+} P^\theta = \frac{1}{P}$，这意味着 $\lim_{\theta \to -1^+} L(\theta) = 0$。另一方面，由于 $0 < P < 1$，故 $\lim_{\theta \to \infty} P^\theta = 0$，因此当 $\theta \to \infty$ 时，$L(\theta) = 0$，因为 $P^\theta$ 的衰减主导了 $(1 + \theta)^n$。
+
+因此 $L$ 确实满足标准条件。根据讲座中的定理，存在 $\theta$ 的最大似然估计量 $\hat{\theta}_n$，且它满足 $\frac{d \log L(\hat{\theta}_n)}{d\theta} = 0$。我们计算
+\begin{align*}
+\log L(\theta) &= n \log(1 + \theta) + \theta(\log P)\\
+\frac{d \log L(\theta)}{d\theta} &= \frac{n}{1 + \theta} + \log P
+\end{align*}
+因此 $\frac{d \log L(\hat{\theta}_n)}{d\theta} = 0$ 意味着
+\[
+\frac{n}{1 + \hat{\theta}_n} + \log P = 0
+\]
+从而得到
+\[
+\hat{\theta}_n = -1 - \frac{n}{\log P} = -1 - \frac{n}{\sum_{i=1}^n \log X_i}
+\]
+
+(ii) 利用第 (i) 部分中 $n = 1$ 时的 $\frac{d \log L(\theta)}{d\theta}$ 公式、替代公式以及 Fisher 信息量的加性，我们得到
+\begin{align*}
+\frac{d^2 \log L(\theta)}{d\theta^2} &= -\frac{1}{(1 + \theta)^2}\\
+I_{X_1}(\theta) &= -E\left[\frac{d^2 \log L(\theta)}{d\theta^2}\right] = \frac{1}{(1 + \theta)^2}\\
+I_{X_1, \dots, X_n}(\theta) &= \frac{n}{(1 + \theta)^2}
+\end{align*}
+
+(iii) 根据近似置信区间的主要结论，
+\[
+\left[ \hat{\theta}_n - \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\theta}_n)}}, \hat{\theta}_n + \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\theta}_n)}} \right]
+\]
+是 $\theta$ 的一个近似 $100(1 - \alpha)\%$ 置信区间，其中 $z_{\alpha/2}$ 由 $\Phi(z_{\alpha/2}) = 1 - \alpha/2$ 定义，$\Phi$ 是 $N(0, 1)$ 的 CDF。此处我们需要 $\theta$ 的近似 $90\%$ 置信区间，所以取 $\alpha = 0.1$。根据表，$z_{\alpha/2} = z_{0.05} \approx 1.65$。此外，根据观测值，$n = 5$ 且
+\[
+\hat{\theta}_5 = -1 - \frac{5}{\sum_{i=1}^5 \log x_i} = -1 - \frac{5}{3 \log 0.8 + 2 \log 0.9} \approx -1 - (-5.68) = 4.68
+\]
+以及
+\[
+I_{X_1}(\hat{\theta}_n) \approx I_{X_1}(4.68) = \frac{1}{(1 + 4.68)^2} \approx 0.03
+\]
+因此，$\theta$ 的近似 $90\%$ 置信区间为
+\[
+\left[ 4.68 - \frac{1.65}{\sqrt{5 \cdot 0.03}}, 4.68 + \frac{1.65}{\sqrt{5 \cdot 0.03}} \right] \approx [0.42, 8.94]
+\]
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是来自具有以下概率密度函数（PDF）的连续分布的独立同分布样本：
+\[
+f(x) = \frac{\beta^3}{2} x^2 e^{-\beta x}, \quad x \ge 0
+\]
+当 $x < 0$ 时 $f(x) = 0$，其中 $\beta \in (0, \infty)$ 是未知参数。
+注：该 PDF 满足所有相关的正则性条件。你可以直接应用费希尔信息（Fisher information）的加性公式和替换公式，以及关于近似置信区间的主要结论，无需证明。
+
+(i) 求 $\beta$ 的极大似然估计量（MLE） $\hat{\beta}$。请证明你的答案。
+(ii) 计算费希尔信息 $I_{X_1, \dots, X_n}(\beta)$。
+(iii) 确定 $\hat{\beta}$ 的渐近方差。
+(iv) 给出以下观测值 $x_1, \dots, x_9$：
+\[
+1.3, \quad 1.4, \quad 2.4, \quad 0.9, \quad 1.4, \quad 4.0, \quad 1.3, \quad 2.2, \quad 3.1
+\]
+使用关于近似置信区间的主要结论，根据 $x_1, \dots, x_9$ 寻找 $\beta$ 的近似 $90\%$ 置信区间。
+提示：使用第 5 页的 $N(0, 1)$ 累积分布函数（CDF）表。
+
+\begin{solution}
+(i) 我们计算似然函数：
+\begin{align*}
+L(\beta) &= \prod_{i=1}^n \left( \frac{\beta^3}{2} X_i^2 e^{-\beta X_i} \right) \\
+&= \frac{\beta^{3n}}{2^n} \left( \prod_{i=1}^n X_i^2 \right) e^{-\beta \sum_{i=1}^n X_i} \\
+&= C \frac{\beta^{3n}}{2^n} e^{-\beta \sum_{i=1}^n X_i}
+\end{align*}
+其中 $C = \prod_{i=1}^n X_i^2$。此外，对数似然函数为：
+\[
+\log L(\beta) = \log C + 3n \log \beta - 2n \log 2 - \beta \sum_{i=1}^n X_i
+\]
+对 $\beta$ 求导得：
+\[
+\frac{d \log L(\beta)}{d\beta} = \frac{3n}{\beta} - \sum_{i=1}^n X_i
+\]
+令 $\frac{d \log L(\beta)}{d\beta} = 0$，解得唯一解 $\hat{\beta} = 3n / \sum_{i=1}^n X_i = 3/\bar{X}$，其中 $\bar{X}$ 是样本均值。由于 $L(\beta)$ 满足似然函数的标准条件，这表明 $\hat{\beta} = 3/\bar{X}$ 是 $\beta$ 的极大似然估计量。
+
+(ii) 利用 (i) 中的结果，我们得到：
+\[
+\frac{d^2 \log L(\beta)}{d\beta^2} = \frac{-3n}{\beta^2}
+\]
+因此，费希尔信息为：
+\[
+I_{X_1, \dots, X_n}(\beta) = - E\left[ \frac{d^2 \log L(\beta)}{d\beta^2} \right] = E\left[ \frac{3n}{\beta^2} \right] = \frac{3n}{\beta^2}
+\]
+
+(iii) 由 (ii) 可知，$I_{X_1}(\beta) = 3/\beta^2$。极大似然估计量的渐近方差为：
+\[
+\frac{1}{n I_{X_1}(\beta)} = \frac{1}{n \frac{3}{\beta^2}} = \frac{\beta^2}{3n}
+\]
+
+(iv) 根据近似置信区间的主要结论，
+\[
+\left[ \hat{\beta} - \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\beta})}}, \hat{\beta} + \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\beta})}} \right]
+\]
+是 $\beta$ 的一个近似 $100(1-\alpha)\%$ 置信区间，其中 $z_{\alpha/2}$ 由 $\Phi(z_{\alpha/2}) = 1 - \alpha/2$ 定义，$\Phi$ 是 $N(0, 1)$ 的累积分布函数（CDF）。这里我们需要 $\beta$ 的近似 $90\%$ 置信区间，所以取 $\alpha = 0.1$。查表得 $z_{\alpha/2} = z_{0.05} \approx 1.65$。此外，由观测值可知，$n = 9$，$\bar{X} = 18/9 = 2$，
+\[
+\hat{\beta} = \frac{3}{\bar{X}} = \frac{3}{2},
+\]
+且
+\[
+I_{X_1}(\hat{\beta}) \approx I_{X_1} \left( \frac{3}{2} \right) = \frac{3}{(3/2)^2} = \frac{4}{3}.
+\]
+因此，$\beta$ 的近似 $90\%$ 置信区间为
+\[
+\left[ \frac{3}{2} - \frac{1.65}{\sqrt{9 \cdot (4/3)}}, \frac{3}{2} + \frac{1.65}{\sqrt{9 \cdot (4/3)}} \right] \approx [1.02, 1.98].
+\]
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是来自连续分布的独立同分布样本，其 PDF 如第 3 题中的式 (2) 所示。证明
+\[
+Q = \beta \sum_{i=1}^n X_i
+\]
+是一个枢轴量（pivotal quantity）。
+
+\begin{solution}
+令 $f$ 表示 $X_1$ 的 PDF。记 $Y = \beta X_1$，令 $F_Y$ 为 $Y$ 的累积分布函数（CDF）。对于 $y \ge 0$，我们有：
+\[
+F_Y(y) = P(Y \le y) = P(\beta X_1 \le y) = P(X_1 \le y/\beta) = F(y/\beta)
+\]
+其中 $F$ 表示 $X_1$ 的 CDF。因此，$Y$ 的 PDF $f_Y$ 为：
+\[
+f_Y(y) = F_Y'(y) = \frac{1}{\beta} F'(y/\beta) = \frac{1}{\beta} f(y/\beta)
+\]
+由于 $f$ 由第 3 题给出，我们发现对于所有 $y \ge 0$：
+\[
+f_Y(y) = \frac{1}{\beta} \frac{\beta^3}{2} \left( \frac{y}{\beta} \right)^2 e^{-\beta(y/\beta)} = \frac{1}{2} y^2 e^{-y}
+\]
+此外，当 $y < 0$ 时，$f_Y(y) = 0$。
+由此可知 $Y$ 的矩母函数（MGF）为：
+\[
+M_Y(t) = \frac{1}{2} \int_0^\infty y^2 e^{-y} e^{ty} dy = \frac{1}{2} \int_0^\infty y^2 e^{y(t-1)} dy
+\]
+该积分对于所有 $t < 1$ 收敛，因此 $M_Y(t)$ 对于所有 $t \in (-\infty, 1)$ 存在。
+注意到 $Q$ 是 $n$ 个独立随机变量之和，这些变量具有与 $Y$ 相同的分布（以及相同的矩母函数）。因此，根据课堂结论，$Q$ 的矩母函数为：
+\[
+M_Q(t) = \left( \frac{1}{2} \int_0^\infty y^2 e^{y(t-1)} dy \right)^n
+\]
+且对于所有 $t \in (-\infty, 1)$ 存在。注意到 $M_Q(t)$ 不包含 $\beta$。因此，根据课堂结论，$Q$ 是一个枢轴量。
+\end{solution}
+
+
+\end{questions}
+\pagebreak
+
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{假设检验}{假设检验} \label{假设检验}
@@ -3136,9 +5392,227 @@ p = \frac{84}{1176} = \frac{1}{14}
 \separator
 \vspace{1pt}
 \begin{questions}
-    \question 
+    \question
+一名质量控制员被要求查明某工厂生产的某种产品测量值是否如其所称。他随机抽取了 50 个产品样本，测得平均值为 121。假设总体标准差为 3。
+(a) 计算总体均值的 95\% 置信区间。
+(b) 假设工厂声称产品的测量值为 120。使用 0.025 的显著性水平检验该值是否大于 120。
+(c) 如果真实总体均值为 120.3，计算部分 (b) 中检验的第 II 类错误 $\beta$。结果精确到 0.001。
+
+\begin{solution}
+(a) 95\% 置信区间为：
+\[ \left( \bar{x} - z \frac{\sigma}{\sqrt{n}}, \bar{x} + z \frac{\sigma}{\sqrt{n}} \right) \]
+代入数值：
+\[ \left( 121 - 1.96 \frac{3}{\sqrt{50}}, 121 + 1.96 \frac{3}{\sqrt{50}} \right) = (120.168, 121.83). \]
+
+(b) $H_0 : \mu = 120$；$H_1 : \mu > 120$。
+检验统计量 $z$：
+\[ z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} = \frac{121 - 120}{3 / \sqrt{50}} = 2.36. \]
+使用显著性水平 $\alpha = 0.025$，拒绝域为 $z > 1.96$。（或者由于 120 不在 95\% 置信区间内）。
+结论：由于 $z = 2.36 > 1.96$，我们拒绝 $H_0$。因此根据现有证据，该值大于 120。
+
+(c) 拒绝域相同，即 $z > 1.96$。使我们拒绝 $H_0$ 的 $\bar{x}$ 值为：
+\[ \frac{\bar{x} - 120}{3 / \sqrt{50}} > 1.96 \implies \bar{x} > 120.832. \]
+$P(\text{犯第 II 类错误}) = P(\text{当 } H_0 \text{ 不真时未拒绝 } H_0)$
+\[ = P(\bar{x} < 120.832 \text{ 当 } \mu = 120.3) \]
+\[ = P\left( \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} < \frac{120.832 - 120.3}{3 / \sqrt{50}} \right) \]
+\[ = P(z < 1.25) \approx 0.894. \]
+\end{solution}
+
+\question
+设 $X_1$ 是样本量 $n=1$ 的随机样本，其 PDF 由第 3 题中的式 (3) 给出。考虑以下假设：
+\[
+H_0 : \beta = 1 \quad \text{对比} \quad H_1 : \beta = 2.
+\]
+基于测试统计量 $S = X_1$，寻找在显著性水平 $\alpha \approx 0.05$ 下检测 $H_0$ 对比 $H_1$ 的最大功效检验（most powerful test）。请证明你的答案。
+提示：$\int_0^{0.82} x^2 e^{-x} dx \approx 0.1$。
+
+\begin{solution}
+$H_0$ 对比 $H_1$ 的似然比为
+\[
+\Lambda(x_1) = \frac{\frac{1^3}{2} x_1^2 e^{-1x_1}}{\frac{2^3}{2} x_1^2 e^{-2x_1}} = \frac{e^{x_1}}{8}.
+\]
+因此，根据内曼-皮尔逊引理（Neyman-Pearson Lemma），如果 $H_0$ 对比 $H_1$ 的检验具有拒绝域
+\[
+R := \{x_1 \in \mathbb{R} : \frac{e^{x_1}}{8} \le t\} = \{x_1 \in \mathbb{R} : x_1 \le \log 8t\}
+\]
+对于某个常数 $t \in \mathbb{R}$，那么它是在该显著性水平下的最大功效检验。接下来需要确定 $t$ 使得显著性水平为 $\alpha = 0.05$。我们有
+\[
+\alpha = P(X_1 \in R | H_0) = P(X_1 \le \log 8t | H_0).
+\]
+在 $H_0$ 下，$X_1$ 的 PDF 为 $f(x) = \frac{1}{2} x^2 e^{-x}$（对于 $x \in [0, \infty)$），否则为 0。因此
+\[
+P(X_1 \le \log 8t | H_0) = \int_0^{\log 8t} \frac{1}{2} x^2 e^{-x} dx
+\]
+根据提示，我们有
+\[
+\int_0^{0.82} \frac{1}{2} x^2 e^{-x} dx \approx 0.05
+\]
+因此，如果选择 $t$ 使得 $\log 8t = 0.82$，则
+\[
+\alpha = P(X_1 \le \log 8t | H_0) \approx 0.05.
+\]
+解 $\log 8t = 0.82$，我们得到 $t = e^{0.82}/8 \approx 0.28$。因此，当且仅当
+\[
+X_1 \le 0.82
+\]
+时拒绝 $H_0$ 的检验（注：原图红框标注为 $X_1 \le 0.28$ 系误解了 $t$ 与 $x_1$ 的关系，应以拒绝域 $x_1 \le \log 8t$ 为准），是在（近似）显著性水平 0.05 下针对 $H_0$ 对比 $H_1$ 的最大功效检验。
+\end{solution}
+
+\question
+在本题中，你可以使用试卷最后一页的 $N(0, 1)$ 的累积分布函数（CDF）表。
+
+(a) 令 $X_1, \ldots, X_{10}$ 独立同分布于 $N(\mu, 10)$，并考虑以下假设：
+\[
+H_0 : \mu = 0 \quad \text{对} \quad H_1 : \mu > 0.
+\]
+基于检验统计量 $T = \sum_{i=1}^{10} X_i$ 和以下观测值，对于 $H_0$ 对 $H_1$ 的（单侧）检验，其 $p$ 值是多少？
+\[
+2.5, 8.2, 4.0, 1.0, 8.8, 9.2, -3.5, -8.5, -2.0, 5.3
+\]
+
+(b) 令 $X_1, X_2$ 独立同分布于 $\text{Poisson}(\lambda)$，并考虑以下假设：
+\[
+H_0 : \lambda = 1 \quad \text{对} \quad H_1 : \lambda = 10
+\]
+我们考虑以下检验。
+\[
+\mathcal{T} : \text{当且仅当 } X_1 + X_2 > 2 \text{ 时拒绝 } H_0
+\]
+(i) 求检验 $\mathcal{T}$ 的第一类错误和第二类错误的概率。
+(ii) 该检验的显著性水平和功效（Power）是多少？
+(iii) 在所有针对 $H_0$ 对 $H_1$ 的检验中，是否存在一个与 $\mathcal{T}$ 具有相同显著性水平，但功效大于 $\mathcal{T}$ 的检验？请详细说明理由。
+
+提示：$\text{Poisson}(\lambda)$ 的概率质量函数（PMF）对于 $x = 0, 1, 2, \ldots$ 为 $f(x) = \frac{e^{-\lambda}\lambda^x}{x!}$，否则 $f(x) = 0$。
+
+\begin{solution}
+(a) 在 $H_0$ 下，我们有 $E[X_1] = 0$，从而 $E[T] = 0$ 且 $Var[T] = 10 Var[X_1] = 100$。因此 $T \sim N(0, 100)$，故 $T/10 \sim N(0, 1)$。对于给定的观测值，我们有 $T(x_1, \ldots, x_{10}) = \sum_{i=1}^{10} x_i = 25$。由于是单侧检验，这些观测值的 $p$ 值为 $P(T \ge 25)$。利用 $N(0, 1)$ 的表，我们发现
+\[
+P(T \ge 25) = P\left( \frac{T}{10} \ge 2.5 \right) = 1 - \Phi(2.5) \approx 1 - 0.9938 = 0.0062
+\]
+因此 $p$ 值 $\approx 0.0062$。
+
+(b) (i) 我们有
+\begin{align*}
+\text{第一类错误概率} &= P(H_0 \text{ 被拒绝} | H_0) \\
+&= P(X_1 + X_2 > 2 | \lambda = 1) \\
+&= 1 - P(X_1 + X_2 \le 2 | \lambda = 1)
+\end{align*}
+此外，
+\begin{align*}
+P(X_1 + X_2 \le 2 | \lambda = 1) &= \sum_{x=0}^2 \sum_{y=0}^{2-x} P(X_1 = x, X_2 = y | \lambda = 1) \\
+&= \sum_{x=0}^2 \sum_{y=0}^{2-x} P(X_1 = x | \lambda = 1) P(X_2 = y | \lambda = 1) \\
+&= \sum_{x=0}^2 \sum_{y=0}^{2-x} \frac{e^{-1}}{x!} \frac{e^{-1}}{y!} \\
+&= e^{-2} \left( \left( 1 + 1 + \frac{1}{2} \right) + (1 + 1) + \left( \frac{1}{2} \right) \cdot 1 \right) \\
+&\approx 0.68
+\end{align*}
+因此第一类错误的概率 $\approx 1 - 0.68 = 0.32$。我们有
+\begin{align*}
+\text{第二类错误概率} &= P(H_0 \text{ 被接受} | H_0 \text{ 为假}) \\
+&= P(X_1 + X_2 \le 2 | \lambda = 10)
+\end{align*}
+此外，
+\begin{align*}
+P(X_1 + X_2 \le 2 | \lambda = 10) &= \sum_{x=0}^2 \sum_{y=0}^{2-x} \frac{e^{-10} 10^x}{x!} \frac{e^{-10} 10^y}{y!} \\
+&= e^{-20} \left( \left( 1 + 10 + \frac{100}{2} \right) + 10(1 + 10) + \left( \frac{100}{2} \right) \cdot 1 \right) \\
+&= e^{-20} \cdot 221 \\
+&\approx 4.56 \cdot 10^{-7}
+\end{align*}
+因此第二类错误的概率 $\approx 4.56 \cdot 10^{-7}$。
+
+(ii) 显著性水平等于第一类错误的概率，约为 $0.32$。检验的功效为 $1 - \text{第二类错误概率} \approx 1 - 4.56 \cdot 10^{-7} \approx 0.9999995$。
+
+(iii) 似然函数为
+\[
+L(\lambda) = \prod_{i=1}^2 e^{-\lambda} \frac{\lambda^{X_i}}{X_i!} = \frac{1}{\prod_{i=1}^2 X_i!} e^{-2\lambda} \lambda^{\sum_{i=1}^2 X_i}
+\]
+$H_0$ 对 $H_1$ 的似然比为
+\[
+\Lambda(X_1, X_2) = \frac{L(1)}{L(10)} = \frac{e^{-2}}{e^{-20}} \frac{1^{\sum_{i=1}^2 X_i}}{10^{\sum_{i=1}^2 X_i}} = \frac{e^{18}}{10^{\sum_{i=1}^2 X_i}}
+\]
+因此 $\Lambda(X_1, X_2)$ 是 $\sum_{i=1}^2 X_i$ 的严格递减函数。由于 $X_i$ 仅取整数值，$\sum_{i=1}^2 X_i > 2$ 等价于 $\sum_{i=1}^2 X_i \ge 3$。由此可见，检验 $\mathcal{T}$ 在且仅在 $\Lambda(X) \le \frac{e^{18}}{10^3}$ 时拒绝 $H_0$。因此，根据内曼-皮尔逊引理（Neyman-Pearson Lemma），不存在比 $\mathcal{T}$ 具有相同显著性水平但功效更大的检验。
+\end{solution}
+
+\question
+令 $X_1, \dots, X_n \sim N(\mu, \sigma^2)$ 独立同分布，其中 $\mu$ 和 $\sigma$ 均未知。令 $S^2$ 表示样本方差。已知 $X_1, \dots, X_n$ 的观测值如下 ($n = 10$)：
+\[
+4.2, 2.4, 3.2, 3.6, -0.2, 1.6, 0.8, 0.4, -1.0, 5.0
+\]
+
+考虑以下假设：
+\[
+H_0 : \sigma = 1 \quad \text{对} \quad H_1 : \sigma > 1
+\]
+基于检验统计量 $(n - 1) S^2 / \sigma^2$ 对 $H_0$ 进行单侧检验。在显著性水平 $0.01$ 下，是否拒绝 $H_0$？
+提示：使用倒数第二页的卡方分布上分位数表。
+
+\begin{solution}
+注意 $H_0$ 的形式为 $\sigma = \sigma_0$，其中 $\sigma_0 = 1$。课堂上已证，在显著性水平 $\alpha$ 下，基于 $T = (n - 1) S^2 / \sigma_0^2$ 的单侧检验的拒绝域为
+\[
+\{(x_1, \dots, x_n) : t(x_1, \dots, x_n) > \chi^2_{n-1, \alpha}\}
+\]
+根据观测值，我们有 $n = 10$ 且 $s^2 = 4$。因此 $t(x_1, \dots, x_n) = (n - 1) s^2 / \sigma_0^2 = 9 \cdot 4 / 1 = 36$。查表得 $\chi^2_{n-1, \alpha} = \chi^2_{9, 0.01} \approx 21.666$。由于 $t(x_1, \dots, x_n) > \chi^2_{n-1, \alpha}$，我们得出结论：拒绝 $H_0$。
+\end{solution}
+
+---
+
+\question
+令 $X_1, \dots, X_{10}$ 独立同分布于 $\text{Exp}(\lambda)$。回想 $X_1$ 的 PDF 为 $f(x) = \lambda e^{-\lambda x}$ ($x > 0$)，否则 $f(x) = 0$。此外，如课堂所示，我们有 $2\lambda \sum_{i=1}^{10} X_i \sim \chi^2_{20}$。考虑假设
+\[
+H_0 : \lambda = 1 \quad \text{对} \quad H_1 : \lambda = 4
+\]
+我们考虑以下检验：
+\[
+\mathcal{T} : \text{当且仅当 } \sum_{i=1}^n X_i \le 5 \text{ 时，拒绝 } H_0
+\]
+
+(i) 求检验 $\mathcal{T}$ 的第一类错误和第二类错误概率。
+
+(ii) $\mathcal{T}$ 的功效 (power) 是多少？
+
+(iii) 在所有针对 $H_0$ 对 $H_1$ 的检验中，是否存在一个检验具有与 $\mathcal{T}$ 相同的显著性水平，但功效比 $\mathcal{T}$ 更大？请详细说明理由。
+
+提示：$\chi^2_{20}$ 的 CDF $F(x)$ 的取值：
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c}
+$x$ & 10 & 20 & 30 & 40 & 50 \\ \hline
+$F(x)$ & 0.03 & 0.54 & 0.93 & 0.995 & 0.9998
+\end{tabular}
+\end{center}
+
+\begin{solution}
+(i) 我们利用事实 $Z := 2\lambda \sum_{i=1}^{10} X_i \sim \chi^2_{20}$。
+第一类错误概率：
+\begin{align*}
+P(H_0 \text{ 被拒绝} | H_0) &= P\left(\sum_{i=1}^n X_i < 5 \Big| \lambda = 1\right) = P\left(2\lambda \sum_{i=1}^n X_i < 10 \Big| \lambda = 1\right)\\
+&= P(Z < 10) = F(10) \approx 0.03
+\end{align*}
+第二类错误概率：
+\begin{align*}
+P(H_0 \text{ 未被拒绝} | H_1) &= P\left(\sum_{i=1}^n X_i \ge 5 \Big| \lambda = 4\right) = P\left(2\lambda \sum_{i=1}^n X_i \ge 40 \Big| \lambda = 4\right)\\
+&= 1 - P\left(2\lambda \sum_{i=1}^n X_i < 40 \Big| \lambda = 4\right)\\
+&= 1 - P(Z < 40) = 1 - F(40) \approx 1 - 0.995 = 0.005
+\end{align*}
+
+(ii) $\mathcal{T}$ 的功效为 $1 - P(H_0 \text{ 未被拒绝} | H_1) = 1 - 0.005 = 0.995$。
+
+(iii) 似然函数为
+\[
+L(\lambda) = \prod_{i=1}^{10} (\lambda e^{-\lambda X_i}) = \lambda^n e^{-\lambda S}
+\]
+其中 $S = \sum_{i=1}^{10} X_i$。$H_0$ 对 $H_1$ 的似然比为
+\[
+\Lambda(X_1, \dots, X_{10}) = \frac{L(1)}{L(4)} = \frac{1^{10} e^{-S}}{4^{10} e^{-4S}} = \frac{e^{3S}}{4^{10}}
+\]
+因此 $\Lambda(X_1, \dots, X_{10})$ 是 $S$ 的严格增函数，且
+\[
+\Lambda(X_1, \dots, X_{10}) \le \frac{e^{15}}{4^{10}}
+\]
+当且仅当 $S \le 5$。
+因此，检验 $\mathcal{T}$ 拒绝 $H_0$ 当且仅当 $\Lambda(X_1, \dots, X_{10}) \le \frac{e^{15}}{4^{10}}$。由 Neyman-Pearson 引理可知，不存在具有相同显著性水平但功效比 $\mathcal{T}$ 更大的检验。
+\end{solution}
 \end{questions}
 \pagebreak
+
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
     \hypertarget{线性回归}{线性回归} \label{线性回归}
@@ -3216,3 +5690,15 @@ p = \frac{84}{1176} = \frac{1}{14}
         \]
     \end{solution}
 \end{questions}
+
+\begin{center}
+  {\fontsize{30pt}{26pt}\selectfont
+    \hypertarget{随机过程}{随机过程} \label{随机过程}
+  }
+\end{center}
+\separator
+\vspace{1pt}
+\begin{questions}
+    \question 
+\end{questions}
+\pagebreak
