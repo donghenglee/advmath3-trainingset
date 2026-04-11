@@ -2574,7 +2574,7 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
 \separator
 \vspace{1pt}
 \begin{questions}
-        \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
+    \question 小明给阿花 7 颗巧克力当礼物,然后跟阿花说:「你每天至少要吃一颗巧克力,表示你有想念我,当然你要一次吃好多颗也可以喔。」
 
     设随机变量 $X$ 代表阿花吃完巧克力的天数,求期望值 $E(X)$。
     \begin{solution}
@@ -3418,6 +3418,212 @@ p_Y(y) = \begin{cases} 1/y, & y \in (1, e); \\ 0, & \text{其他}. \end{cases}
 \]
 \end{solution}
 
+\question
+Let $X_1, \dots, X_{10} \sim N(0, 1)$ be an iid random sample. Determine the distributions of the following random variables.
+\begin{parts}
+    \part $X_1 + X_2$
+    \begin{solution}
+        $X_1 + X_2 \sim N(0, 2)$。
+    \end{solution}
+
+    \part $X_1 + X_2 - X_3$
+    \begin{solution}
+        $X_1 + X_2 - X_3 \sim N(0, 3)$。
+    \end{solution}
+
+    \part $X_1^2 + X_2^2 + \dots + X_{10}^2$
+    \begin{solution}
+        $X_1^2 + X_2^2 + \dots + X_{10}^2 \sim \chi_{10}^2$。
+    \end{solution}
+
+    \part $\frac{2(X_1^2 + X_2^2 + X_3^2)}{3(X_4^2 + X_5^2)}$
+    \begin{solution}
+        注意到 $Y = X_1^2 + X_2^2 + X_3^2 \sim \chi_3^2$ 且 $Z = X_4^2 + X_5^2 \sim \chi_2^2$，并且由于 $X_i$ 相互独立，所以 $Y$ 和 $Z$ 相互独立。因此
+        \[
+        \frac{2(X_1^2 + X_2^2 + X_3^2)}{3(X_4^2 + X_5^2)} = \frac{2Y}{3Z} = \frac{Y/3}{Z/2} \sim F(3, 2)
+        \]
+        根据 $F$ 分布的定义。
+    \end{solution}
+
+    \part $\frac{X_1}{|X_2|}$
+    \begin{solution}
+        我们有
+        \[
+        \frac{X_1}{|X_2|} = \frac{X_1}{\sqrt{X_2^2}} \sim t_1
+        \]
+        根据 $t$ 分布的定义。
+    \end{solution}
+
+    \part $\frac{X_1 + X_2 - X_3 - X_4}{\sqrt{X_5^2 + X_6^2 + X_7^2 + X_8^2}}$
+    \begin{solution}
+        注意到 $X_1 + X_2 - X_3 - X_4 \sim N(0, 4)$，因此
+        \[
+        Y = \frac{1}{2}(X_1 + X_2 - X_3 - X_4) \sim N(0, 1)
+        \]
+        此外，
+        \[
+        Z = X_5^2 + X_6^2 + X_7^2 + X_8^2 \sim \chi_4^2
+        \]
+        且 $Y$ 和 $Z$ 相互独立，因为根据假设 $X_i$ 是相互独立的。因此
+        \[
+        \frac{X_1 + X_2 - X_3 - X_4}{\sqrt{X_5^2 + X_6^2 + X_7^2 + X_8^2}} = \frac{2Y}{\sqrt{Z}} = \frac{Y}{\sqrt{Z/4}} \sim t_4
+        \]
+        根据 $t$ 分布的定义。
+    \end{solution}
+
+    \part $\frac{(X_1 - X_2)^2}{(X_3 - X_4)^2}$
+    \begin{solution}
+        注意到 $X_1 - X_2 \sim N(0, 2)$ 且 $X_3 - X_4 \sim N(0, 2)$。因此 $Y = \frac{1}{\sqrt{2}}(X_1 - X_2) \sim N(0, 1)$ 且 $Z = \frac{1}{\sqrt{2}}(X_3 - X_4) \sim N(0, 1)$。此外，$Y$ 和 $Z$ 相互独立，因为根据假设 $X_i$ 是相互独立的。因此
+        \[
+        \frac{(X_1 - X_2)^2}{(X_3 - X_4)^2} = \frac{2Y^2}{2Z^2} = \frac{Y^2}{Z^2} \sim F(1, 1)
+        \]
+        根据 $F$ 分布的定义。
+    \end{solution}
+\end{parts}
+
+\question
+Let $M_X(t)$ denote the MGF of a random variable $X$. Recall that $M_{aX}(t) = M_X(at)$ for all constants $a \in \mathbb{R}$ and that the MGF of $\text{Gamma}(\alpha, \beta)$ is $(1 - \beta t)^{-\alpha}$ for $t < 1/\beta$.
+Let $U \sim \text{Gamma}(1, 1)$, $V \sim \text{Gamma}(1, 2)$, $W \sim \text{Gamma}(1, 4)$ be independent. Use the MGF method to determine the distribution of $4U + 2V + W$.
+\begin{solution}
+    利用 $M_{aX}(t) = M_X(at)$ 以及对于独立随机变量 $X, Y$ 有 $M_{X+Y}(t) = M_X(t)M_Y(t)$，我们计算
+    \begin{align*}
+    M_{4U+2V+W}(t) &= M_{4U}(t)M_{2V}(t)M_W(t) \\
+    &= M_U(4t)M_V(2t)M_W(t)
+    \end{align*}
+    由于 $U \sim \text{Gamma}(1, 1)$，我们有 $M_U(s) = (1 - s)^{-1}$ 对于 $s < 1$，类似地 $M_V(s) = (1 - 2s)^{-1}$ 对于 $s < 1/2$，且 $M_W(s) = (1 - 4s)^{-1}$ 对于 $s < 1/4$。我们得出结论
+    \begin{align*}
+    M_{4U+2V+W}(t) &= M_U(4t)M_V(2t)M_W(t) \\
+    &= (1 - 4t)^{-1} (1 - 2(2t))^{-1} (1 - 4t)^{-1} \\
+    &= (1 - 4t)^{-3}
+    \end{align*}
+    对于 $t < 1/4$。由于 $(1 - 4t)^{-3}$ 是 $\text{Gamma}(3, 4)$ 的 MGF，根据 MGF 的逆转定理，我们有 $4U + 2V + W \sim \text{Gamma}(3, 4)$。
+\end{solution}
+
+---
+
+\question
+Let $X_1, \dots, X_{10} \sim N(0, 100)$ be iid, let $\bar{X} = (1/10) \sum_{i=1}^{10} X_i$ denote the sample mean, and $S^2 = (1/9) \sum_{i=1}^{10} (X_i - \bar{X})^2$ the sample variance.
+\begin{parts}
+    \part Find $z \in \mathbb{R}$ such that (approximately)
+    \[
+    P\left( \sum_{i=1}^{10} X_i^2 \geq z \right) = 0.05
+    \]
+    Justify your answer.
+    \begin{solution}
+        我们有 $X_i/10 \sim N(0, 1)$ 对所有 $i$ 成立，因此
+        \[
+        \frac{1}{100} \sum_{i=1}^{10} X_i^2 = \sum_{i=1}^{10} \left( \frac{X_i}{10} \right)^2 \sim \chi_{10}^2
+        \]
+        令 $Y = \frac{1}{100} \sum_{i=1}^{10} X_i^2$。我们已展示 $Y \sim \chi_{10}^2$。现在我们用 $Y$ 来表示 $P(\sum_{i=1}^{10} X_i^2 \geq z)$：
+        \[
+        0.05 \approx P\left( \sum_{i=1}^{10} X_i^2 \geq z \right) = P\left( \frac{1}{100} \sum_{i=1}^{10} X_i^2 \geq \frac{z}{100} \right) = P\left( Y \geq \frac{z}{100} \right)
+        \]
+        根据表格，$\chi_{10}^2$ 的上侧 $5\%$ 分位点是 $18.307$。因此 $P(Y \geq 18.307) \approx 0.05$。回想我们需要找到 $z$ 满足 $P(Y \geq \frac{z}{100}) \approx 0.05$。因此可以取 $z$ 使得 $z/100 = 18.307$，即 $z = 1830.7$。
+    \end{solution}
+
+    \part Find $y \in \mathbb{R}$ such that (approximately)
+    \[
+    P(S^2 \leq y) = 0.9
+    \]
+    Justify your answer.
+    \begin{solution}
+        我们使用课堂上提到的如下结果：如果 $X_1, \dots, X_n$ 是取自 $N(\mu, \sigma^2)$ 的 iid 样本，则 $(n-1)S^2/\sigma^2 \sim \chi_{n-1}^2$。在我们考虑的情况下，我们有 $n = 10, \mu = 0$ 且 $\sigma^2 = 100$。因此
+        \[
+        Z := \frac{9S^2}{100} \sim \chi_9^2
+        \]
+        我们通过关于 $Z$ 的条件来表示 $P(S^2 \leq y)$：
+        \[
+        0.9 \approx P(S^2 \leq y) = P\left( \frac{9S^2}{100} \leq \frac{9y}{100} \right) = P\left( Z \leq \frac{9y}{100} \right)
+        \]
+        根据表格，$\chi_9^2$ 的上侧 $10\%$ 分位点是 $14.684$。因此
+        \[
+        P(Z \geq 14.684) \approx 0.1
+        \]
+        从而
+        \[
+        P(Z \leq 14.684) = 1 - P(Z \geq 14.684) \approx 1 - 0.1 = 0.9
+        \]
+        结合以上两式，我们需要选择 $y$ 使得 $\frac{9y}{100} = 14.684$。因此 $y \approx 163.2$。
+    \end{solution}
+\end{parts}
+
+\question
+Let $X_1, \dots, X_{100} \sim D$ be an iid random sample where $D$ is a discrete distribution with PMF $f$ given by
+\begin{center}
+\begin{tabular}{c|c|c}
+$x$ & $2$ & $4$ \\ \hline
+$f(x)$ & $\frac{1}{4}$ & $\frac{3}{4}$
+\end{tabular}
+\end{center}
+and $f(x) = 0$ otherwise.
+\begin{parts}
+    \part Compute $E[X_1]$ and $Var[X_1]$.
+    \begin{solution}
+        我们计算
+        \begin{align*}
+        E[X_1] &= \frac{1}{4} \cdot 2 + \frac{3}{4} \cdot 4 = \frac{1}{2} + 3 = \frac{7}{2}, \\
+        E[X_1^2] &= \frac{1}{4} \cdot 2^2 + \frac{3}{4} \cdot 4^2 = 1 + 12 = 13, \\
+        Var[X_1] &= E[X_1^2] - E[X_1]^2 = 13 - \left( \frac{7}{2} \right)^2 = \frac{3}{4}。
+        \end{align*}
+    \end{solution}
+
+    \part Use the Central Limit Theorem to approximate $P(340 \leq \sum_{i=1}^{100} X_i \leq 360)$。Values of the CDF of $N(0, 1)$:
+    \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c}
+    $x$ & $-1.25$ & $-1.20$ & $-1.15$ & $-1.10$ & $-1.05$ & $-1.00$ \\ \hline
+    $\Phi(x)$ & $0.11$ & $0.12$ & $0.13$ & $0.14$ & $0.15$ & $0.16$
+    \end{tabular}
+    \end{center}
+    \begin{solution}
+        记 $\mu = E[X_1]$ 且 $\sigma^2 = Var[X_1]$。根据中心极限定理（CLT），对于所有 $x \in \mathbb{R}$，我们有
+        \[
+        P\left( \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \leq x \right) \approx \Phi(x)
+        \]
+        使用 $\mu = 7/2$，$\sigma^2 = 3/4$ 以及 $n = 100$，我们得出结论
+        \begin{align*}
+        P\left( 340 \leq \sum_{i=1}^n X_i \leq 360 \right) &= P(3.4 \leq \bar{X} \leq 3.6) \\
+        &= P\left( \frac{\sqrt{n}(3.4 - \mu)}{\sigma} \leq \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \leq \frac{\sqrt{n}(3.6 - \mu)}{\sigma} \right) \\
+        &= P\left( \frac{\sqrt{100}(3.4 - 3.5)}{\sqrt{3/4}} \leq \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \leq \frac{\sqrt{100}(3.6 - 3.5)}{\sqrt{3/4}} \right) \\
+        &\approx P\left( -1.15 \leq \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \leq 1.15 \right) \\
+        &\approx \Phi(1.15) - \Phi(-1.15) \approx 1 - 2\Phi(-1.15) \approx 1 - 2 \cdot 0.13 = 0.74。
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question Let $X_1, \dots, X_{10}$ be iid $\sim N(0, \sigma^2)$ 其中 $\sigma$ 是未知的，令 $\bar{X}$ 表示 $X_1, \dots, X_{10}$ 的样本均值，$S^2$ 为样本方差。下列哪项是 $P(|\bar{X}| \le 2S)$ 的正确表达式？
+
+\begin{solution}
+根据讲义，我们有 $\frac{\sqrt{n}(\bar{X} - \mu)}{S} \sim t_{n-1}$。这里我们有 $n = 10, \mu = 0$，因此
+\[
+\frac{\sqrt{10} \bar{X}}{S} \sim t_9.
+\]
+我们计算
+\begin{align*}
+P(|\bar{X}| \le 2S) &= P(-2S \le \bar{X} \le 2S) \\
+&= P\left(-2\sqrt{10} \le \frac{\sqrt{10} \bar{X}}{S} \le 2\sqrt{10}\right) \\
+&= F(2\sqrt{10}) - F(-2\sqrt{10}),
+\end{align*}
+其中 $F$ 是 $t_9$ 的 CDF。
+\end{solution}
+
+\question Let $X_1, \dots, X_9$ be iid with $E[X_1] = -10$ and $Var[X_1] = 100$. Let $\Phi$ denote the CDF of $N(0, 1)$. Which of the following expressions is a correct approximation of $P(|\bar{X}| \le 10)$ by the CLT?
+
+\begin{solution}
+这里的标准化样本均值为
+\[
+\frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} = \frac{3(\bar{X} + 10)}{10}.
+\]
+我们求得
+\begin{align*}
+P(|\bar{X}| \le 10) &= P(-10 \le \bar{X} \le 10) \\
+&= P(0 \le \bar{X} + 10 \le 20) \\
+&= P\left(0 \le \frac{3(\bar{X} + 10)}{10} \le \frac{3 \cdot 20}{10}\right) \\
+&= P\left(0 \le \frac{3(\bar{X} + 10)}{10} \le 6\right) \\
+&\approx \Phi(6) - \Phi(0)
+\end{align*}
+根据 CLT。
+\end{solution}
+
 \question (6) 令
 \[
 f(x) = \frac{\theta^2}{1 + \theta}(1 + x)e^{-\theta x}, \quad x > 0
@@ -3588,6 +3794,29 @@ E\sqrt{Z} = \int_0^1 \sqrt{z} \cdot \frac{1}{2} dz + \int_1^{\infty} \sqrt{z} \c
 显然 $EZ$ 不存在（$\int_a^{\infty} \frac{dz}{z}$ 不收敛），因此 $Var(\sqrt{Z})$ 不存在。
 \end{solution}
 
+\question
+设 $X \sim \text{U}(-1, 1)$（区间 $(-1, 1)$ 上的均匀分布）。令 $F_Y$ 为 $Y = X^2$ 的累积分布函数（CDF）。下列哪项等于 $F_Y \left( \frac{1}{4} \right)$？
+
+\begin{solution}
+由于 $g(x) = x^2$ 在 $(-1, 1)$ 上不是严格递增的，因此我们不能（至少在不加修改的情况下）直接应用雅可比（Jacobian）方法。我们使用 CDF 法。与教程 1 第 2 题类似，$X$ 的 CDF 为
+\[
+F(x) = \begin{cases} 0 & \text{for } x \le -1, \\ \frac{x+1}{2} & \text{for } -1 \le x \le 1, \\ 1 & \text{for } x \ge 1. \end{cases}
+\]
+假设 $0 \le y \le 1$。我们计算
+\begin{align*}
+F_Y(y) &= P(X^2 \le y) = P(-\sqrt{y} \le X \le \sqrt{y}) \\
+&= F(\sqrt{y}) - F(-\sqrt{y}) = \frac{\sqrt{y} + 1}{2} - \frac{-\sqrt{y} + 1}{2} = \sqrt{y}.
+\end{align*}
+因此 $F_Y(1/4) = \sqrt{1/4} = 1/2$。
+
+此外，我们也可以直接利用定义计算 $F_Y(1/4)$。注意 $X$ 的概率密度函数（PDF）在 $-1 < x < 1$ 时为 $f(x) = 1/2$，否则 $f(x) = 0$。
+\begin{align*}
+F_Y(1/4) &= P\left( Y \le \frac{1}{4} \right) = P\left( X^2 \le \frac{1}{4} \right) \\
+&= P\left( -\frac{1}{2} \le X \le \frac{1}{2} \right) \\
+&= \int_{-1/2}^{1/2} f(x) \, dx = \int_{-1/2}^{1/2} \frac{1}{2} \, dx = \left[ \frac{x}{2} \right]_{-1/2}^{1/2} = \frac{1}{2}.
+\end{align*}
+\end{solution}
+
 \question 问题 2 令 $X$ 为具有如下概率密度函数（PDF）的随机变量：
 \[
 f(x) = \begin{cases} \frac{1}{3} & \text{对于 } -1 < x < 2 \\ 0 & \text{其他} \end{cases}
@@ -3650,6 +3879,24 @@ F_Y(y) = \begin{cases} 0 & \text{若 } y < 0, \\ 2\sqrt{y}/3 & \text{若 } 0 \le
 \[
 f_Y(y) = \begin{cases} 0 & \text{若 } y \le 0, \\ 1/(3\sqrt{y}) & \text{若 } 0 < y \le 1, \\ 1/(6\sqrt{y}) & \text{若 } 1 < y < 4, \\ 0 & \text{若 } y \ge 4. \end{cases}
 \]
+\end{solution}
+
+\question 8. 设 $X, Y$ 为相互独立的随机变量，其 PDF 为 $f(x) = e^x$ ($0 \le x \le \ln(2)$)，且在其他情况下 $f(x) = 0$。下列哪项是 $Z = \max(X, Y)$ 的 PDF？
+
+\begin{solution}
+回想课上讲过，$Z = \max(X, Y)$ 的 PDF 由下式给出
+\[
+f_Z(x) = 2 \cdot F(x)^{2-1} f(x) = 2F(x)f(x),
+\]
+其中 $F$ 是 $X$ 的 CDF。我们先计算 $F$。假设 $0 \le x \le \ln 2$，我们得到
+\[
+F(x) = P(X \le x) = \int_0^x f(t) \, dt = \int_0^x e^t \, dt = \left[ e^t \right]_0^x = e^x - 1.
+\]
+因此
+\[
+f_Z(x) = 2F(x)f(x) = 2(e^x - 1)e^x
+\]
+对于 $0 \le x \le \ln 2$，且在其他情况下 $f_Z(x) = 0$。
 \end{solution}
 
 \question 设 $X_1, X_2, \dots, X_4$ 是四个独立的随机变量，每个变量的密度函数为
@@ -4153,6 +4400,29 @@ F_{Y_2}(y) = P(2\lambda X \le y) = P(X \le y/(2\lambda)) = F(y/(2\lambda)) = 1 -
 对于 $y > 0$，且 $F_{Y_2}(y) = 0$（其他情况）。因此，$Y_2 \sim \text{Exp}(1/2) = \text{Gamma}(1, 2) = \chi_2^2$。
 \end{solution}
 
+\question
+设 $X_1, \dots, X_n$ 独立同分布于 $N(10, 100)$。$n$ 需要多大才能使得
+\[
+P(|\bar{X} - 10| > 0.001) < 0.01?
+\]
+
+\begin{solution}
+已知 $X_i \sim N(10, 100)$, 则样本均值 $\bar{X} \sim N\left( 10, \frac{100}{n} \right)$。
+设 $Z = \frac{\bar{X} - 10}{10/\sqrt{n}} \sim N(0, 1)$, 则不等式可以重写为：
+\[
+P\left( |Z| > \frac{0.001}{10/\sqrt{n}} \right) < 0.01 \implies P\left( |Z| > 0.0001\sqrt{n} \right) < 0.01.
+\]
+由标准正态分布的双侧分位点可知, $P(|Z| > 2.576) \approx 0.01$。因此我们需要：
+\[
+0.0001\sqrt{n} \ge 2.576.
+\]
+解得：
+\[
+\sqrt{n} \ge 25760 \implies n \ge 663,577,600.
+\]
+因此 $n$ 至少需要约为 $6.64 \times 10^8$。
+\end{solution}
+
 \question 问题 3 令 $X_1, \dots, X_5$ 独立同分布于 $N(0, 1)$，并令 $\bar{X} = \frac{1}{5} \sum_{i=1}^5 X_i$ 为样本均值。令 $Y \sim N(0, 1)$ 为另一个独立于 $X_1, \dots, X_5$ 的随机变量。求下列随机变量的分布并给出理由。
 (a) $W = \sum_{i=1}^5 X_i^2$
 (b) $U = \sum_{i=1}^5 (X_i - \bar{X})^2$
@@ -4439,6 +4709,223 @@ P\left( \bar{X} - \frac{3}{\sqrt{10}}b < \mu < \bar{X} - \frac{3}{\sqrt{10}}a \r
 \separator
 \vspace{1pt}
 \begin{questions}
+    \question
+假设 $X_1, X_2$ 和 $X_3$ 是来自以下总体的独立随机变量：$X_1 \sim N(\mu, 2\mu^2)$, $X_2 \sim Uniform(0, \mu)$, $X_3 \sim Exponential(1/\mu)$。令 $\hat{\mu} = \frac{\delta}{3} X_1 + \frac{2\delta}{3} X_2 + (1 - \frac{2\delta}{3}) X_3$，其中 $\delta$ 和 $\mu$ 是未知参数。
+
+\begin{parts}
+\part 证明 $E[\hat{\mu}] = \mu$。
+\begin{solution}
+已知各随机变量的期望为：
+$E[X_1] = \mu$
+$E[X_2] = \frac{0 + \mu}{2} = \frac{\mu}{2}$
+$E[X_3] = \frac{1}{1/\mu} = \mu$
+计算 $\hat{\mu}$ 的期望：
+\[
+E[\hat{\mu}] = \frac{\delta}{3} E[X_1] + \frac{2\delta}{3} E[X_2] + \left( 1 - \frac{2\delta}{3} \right) E[X_3]
+\]
+\[
+E[\hat{\mu}] = \frac{\delta}{3} (\mu) + \frac{2\delta}{3} \left( \frac{\mu}{2} \right) + \left( 1 - \frac{2\delta}{3} \right) (\mu)
+\]
+\[
+E[\hat{\mu}] = \frac{\delta}{3} \mu + \frac{\delta}{3} \mu + \mu - \frac{2\delta}{3} \mu = \mu
+\]
+因此，$\hat{\mu}$ 是 $\mu$ 的无偏估计量。
+\end{solution}
+
+\part 在所有形式为 $\frac{\delta}{3} X_1 + \frac{2\delta}{3} X_2 + (1 - \frac{2\delta}{3}) X_3$ 的估计量中，求出 $\delta$，使其成为 $\mu$ 的最小方差无偏估计量 (MVUE)。
+\begin{solution}
+首先计算各变量的方差：
+$Var(X_1) = 2\mu^2$
+$Var(X_2) = \frac{(\mu - 0)^2}{12} = \frac{\mu^2}{12}$
+$Var(X_3) = \left( \frac{1}{1/\mu} \right)^2 = \mu^2$
+由于 $X_1, X_2, X_3$ 独立，$\hat{\mu}$ 的方差为：
+\[
+Var(\hat{\mu}) = \left( \frac{\delta}{3} \right)^2 Var(X_1) + \left( \frac{2\delta}{3} \right)^2 Var(X_2) + \left( 1 - \frac{2\delta}{3} \right)^2 Var(X_3)
+\]
+\[
+Var(\hat{\mu}) = \frac{\delta^2}{9} (2\mu^2) + \frac{4\delta^2}{9} \left( \frac{\mu^2}{12} \right) + \left( 1 - \frac{4\delta}{3} + \frac{4\delta^2}{9} \right) \mu^2
+\]
+\[
+Var(\hat{\mu}) = \left( \frac{2\delta^2}{9} + \frac{\delta^2}{27} + 1 - \frac{4\delta}{3} + \frac{4\delta^2}{9} \right) \mu^2 = \left( \frac{19\delta^2}{27} - \frac{4\delta}{3} + 1 \right) \mu^2
+\]
+为了找到使方差最小的 $\delta$，对 $\delta$ 求导并令其为 0：
+\[
+\frac{d}{d\delta} \left( \frac{19\delta^2}{27} - \frac{4\delta}{3} + 1 \right) = \frac{38\delta}{27} - \frac{4}{3} = 0
+\]
+\[
+\frac{38\delta}{27} = \frac{36}{27} \implies 38\delta = 36 \implies \delta = \frac{18}{19}
+\]
+当 $\delta = \frac{18}{19}$ 时，该形式的估计量方差最小。
+\end{solution}
+\end{parts}
+    \question $X_1, \dots, X_n$ iid $\sim U(0, b)$。已知 $E[X_1] = \frac{b}{2}$ 且 $\text{Var}[X_1] = \frac{b^2}{12}$。
+计算以下 $b$ 的估计量的标准误差（standard error）和均方误差（mean squared error）：
+\begin{parts}
+\part $\hat{b}_1 = 2\bar{X}$
+\part $\hat{b}_2 = \frac{1}{3}(X_1 + 2X_2 + 3X_3)$
+\end{parts}
+
+\begin{solution}
+对于 $\hat{b}_1 = 2\bar{X}$：
+首先计算期望：
+\[
+E[\hat{b}_1] = 2E[\bar{X}] = 2 \cdot \frac{b}{2} = b,
+\]
+所以 $\hat{b}_1$ 是无偏估计量。
+计算方差：
+\[
+\text{Var}(\hat{b}_1) = 4\text{Var}\left(\frac{1}{n}\sum_{i=1}^n X_i\right) = \frac{4}{n^2} \cdot n\text{Var}(X_1) = \frac{4}{n} \cdot \frac{b^2}{12} = \frac{b^2}{3n}.
+\]
+标准误差为
+\[
+\text{se}(\hat{b}_1) = \sqrt{\text{Var}(\hat{b}_1)} = \frac{b}{\sqrt{3n}}.
+\]
+均方误差为
+\[
+\text{MSE}(\hat{b}_1) = \text{Var}(\hat{b}_1) + (\text{Bias})^2 = \frac{b^2}{3n} + 0^2 = \frac{b^2}{3n}.
+\]
+
+对于 $\hat{b}_2 = \frac{1}{3}(X_1 + 2X_2 + 3X_3)$：
+计算期望：
+\[
+E[\hat{b}_2] = \frac{1}{3}(E[X_1] + 2E[X_2] + 3E[X_3]) = \frac{1}{3}\left(\frac{b}{2} + b + \frac{3b}{2}\right) = b,
+\]
+所以 $\hat{b}_2$ 也是无偏估计量。
+计算方差：
+\[
+\text{Var}(\hat{b}_2) = \frac{1}{9}(\text{Var}(X_1) + 4\text{Var}(X_2) + 9\text{Var}(X_3)) = \frac{1+4+9}{9} \cdot \frac{b^2}{12} = \frac{14}{9} \cdot \frac{b^2}{12} = \frac{7b^2}{54}.
+\]
+标准误差为
+\[
+\text{se}(\hat{b}_2) = \sqrt{\frac{7b^2}{54}} = \frac{b\sqrt{7}}{3\sqrt{6}}.
+\]
+均方误差为
+\[
+\text{MSE}(\hat{b}_2) = \text{Var}(\hat{b}_2) + 0^2 = \frac{7b^2}{54}.
+\]
+\end{solution}
+
+\question Let $X_1, \dots, X_n$ be iid with $E[X_1] = \mu$, $Var[X_1] = \sigma^2$, and write $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$。考虑 $\sigma^2$ 的估计量 $\hat{\sigma}_n^2 = \frac{1}{n+1} \sum_{i=1}^n (X_i - \bar{X})^2$。$\hat{\sigma}_n^2$ 的偏差 (bias) 是多少？
+
+\begin{solution}
+根据视频 33，样本方差
+\[
+S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2
+\]
+是 $\sigma^2$ 的无偏估计量。因此 $E[S^2] = \sigma^2$。注意到 $\hat{\sigma}_n^2 = \frac{n-1}{n+1} S^2$。我们得到
+\[
+E[\hat{\sigma}_n^2] = E\left[\frac{n-1}{n+1} S^2\right] = \frac{n-1}{n+1} E[S^2] = \frac{n-1}{n+1} \sigma^2
+\]
+且
+\[
+Bias(\hat{\sigma}_n^2) = E[\hat{\sigma}_n^2] - \sigma^2 = \left(\frac{n-1}{n+1} - 1\right) \sigma^2 = \frac{n-1 - (n+1)}{n+1} \sigma^2 = -\frac{2}{n+1} \sigma^2.
+\]
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布（iid）的随机变量，其概率密度函数（PDF）为
+\[
+f(x) = \frac{1 + \theta x}{2} \text{ 当 } -1 \le x \le 1 \text{ 且 } f(x) = 0 \text{ 否则},
+\]
+其中 $\theta \in [-1, 1]$ 是未知参数。考虑参数 $\theta$ 的估计量 $\hat{\theta}_n = 3\bar{X}$，其中 $\bar{X}$ 是样本均值。确定 $\hat{\theta}_n$ 是否为 (a) 无偏的，(b) 一致的。
+
+\begin{solution}
+我们计算
+\begin{align*}
+E[X_1] &= \int_{-1}^{1} \frac{x(1 + \theta x)}{2} \,dx = \frac{1}{2} \int_{-1}^{1} x + \theta x^2 \,dx \\
+&= \frac{1}{2} \left[ \frac{x^2}{2} + \frac{\theta x^3}{3} \right]_{-1}^{1} = \frac{\theta}{3}, \\
+E[X_1^2] &= \int_{-1}^{1} \frac{x^2(1 + \theta x)}{2} \,dx = \frac{1}{3}, \\
+Var[X_1] &= E[X_1^2] - E[X_1]^2 = \frac{1}{3} - \left( \frac{\theta}{3} \right)^2 = \frac{3 - \theta^2}{9}, \\
+E[\hat{\theta}_n] &= E[3\bar{X}] = \frac{3}{n} E\left[ \sum_{i=1}^n X_i \right] = \frac{3}{n} \sum_{i=1}^n E[X_1] \\
+&= \frac{3}{n} n E[X_1] = 3 \cdot \frac{\theta}{3} = \theta.
+\end{align*}
+\[
+Var[\hat{\theta}_n] = Var\left[ \frac{3}{n} \sum_{i=1}^n X_i \right] = \frac{9}{n^2} \sum_{i=1}^n Var[X_i]
+\]
+\[
+= \frac{9}{n^2} n Var[X_1] = \frac{9}{n} \frac{3 - \theta^2}{9} = \frac{3 - \theta^2}{n}.
+\]
+因此 $Bias(\hat{\theta}_n) = \theta - \theta = 0$，且 $\hat{\theta}_n$ 是无偏的。此外，根据定理，$\hat{\theta}_n$ 是一致的，因为 $Bias(\hat{\theta}_n) = 0$ 且 $\lim_{n \to \infty} Var[\hat{\theta}_n] = 0$。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布（iid）的随机变量，其概率质量函数（PMF）为
+\[
+f(5) = \theta, \quad f(10) = \theta, \quad f(20) = 1 - 2\theta \text{ 且 } f(x) = 0 \text{ 否则},
+\]
+其中 $\theta \in [0, \frac{1}{2}]$ 是未知参数。考虑参数 $\theta$ 的估计量 $\hat{\theta}_n = (\bar{X} - 20)/25$，其中 $\bar{X}$ 是样本均值。确定 $\hat{\theta}_n$ 是否为 (a) 无偏的，(b) 一致的。
+
+\begin{solution}
+\begin{align*}
+E[X_1] &= 5\theta + 10\theta + 20(1 - 2\theta) = 20 - 25\theta, \\
+E[X_1^2] &= 25\theta + 100\theta + 400(1 - 2\theta) = 400 - 675\theta, \\
+Var[X_1] &= E[X_1^2] - E[X_1]^2 = 325\theta - 625\theta^2, \\
+E[\bar{X}] &= \frac{1}{n} \sum_{i=1}^n E[X_i] = \frac{1}{n} n E[X_1] = E[X_1] = 20 - 25\theta, \\
+E[\hat{\theta}_n] &= E[(\bar{X} - 20)/25] = \frac{1}{25} (E[\bar{X}] - 20) \\
+&= \frac{1}{25} (20 - 25\theta - 20) = -\theta.
+\end{align*}
+\begin{align*}
+Var[\hat{\theta}_n] &= \frac{1}{25^2} Var[\bar{X}] = \frac{1}{625n} Var[X_1] \\
+&= \frac{1}{625n} (325\theta - 625\theta^2) = \frac{1}{25n} (13\theta - 25\theta^2).
+\end{align*}
+因此 $Bias(\hat{\theta}_n) = E[\hat{\theta}_n] - \theta = -2\theta$，且 $\hat{\theta}_n$ 是有偏的。
+注意到对所有 $i$ 都有 $X_i \le 20$，因此 $\bar{X} \le 20$。这意味着 $\hat{\theta}_n = (\bar{X} - 20)/25 \le 0$。假设 $\theta = 1/2$。那么
+\[
+P\left( \left| \hat{\theta}_n - \theta \right| > \frac{1}{4} \right) = P\left( \left| \hat{\theta}_n - \frac{1}{2} \right| > \frac{1}{4} \right) = 1 \text{ 对所有 } n,
+\]
+因为 $\hat{\theta}_n \le 0$。因此
+\[
+\lim_{n \to \infty} P\left( \left| \hat{\theta}_n - \theta \right| > \frac{1}{4} \right) = 1
+\]
+因此 $\hat{\theta}_n$ 不是一致的。
+\end{solution}
+
+\question 令 $\hat{\theta}_n$ 为 $\theta$ 的估计量，对于所有 $n$ 有 $Bias(\hat{\theta}_n) = 1$ 且 $\lim_{n \to \infty} Var[\hat{\theta}_n] = 0$。$\hat{\theta}_n$ 是相合的 (consistent) 吗？
+
+\begin{solution}
+因为 $Bias(\hat{\theta}_n) = 1$，我们有 $E[\hat{\theta}_n] - \theta = 1$，因此 $E[\hat{\theta}_n] = \theta + 1$。根据切比雪夫不等式，
+\[
+P\left(|\hat{\theta}_n - (\theta + 1)| > \frac{1}{2}\right) \le \frac{Var[\hat{\theta}_n]}{\left(\frac{1}{2}\right)^2} = 4 Var[\hat{\theta}_n]
+\]
+因此
+\[
+P\left(|\hat{\theta}_n - (\theta + 1)| \le \frac{1}{2}\right) = 1 - P\left(|\hat{\theta}_n - (\theta + 1)| > \frac{1}{2}\right) \ge 1 - 4 Var[\hat{\theta}_n].
+\]
+注意到 $|\hat{\theta}_n - (\theta + 1)| \le \frac{1}{2}$ 当且仅当 $-\frac{1}{2} \le \hat{\theta}_n - (\theta + 1) \le \frac{1}{2}$，即当且仅当 $\frac{1}{2} \le \hat{\theta}_n - \theta \le \frac{3}{2}$。因此
+\[
+P\left(\frac{1}{2} \le \hat{\theta}_n - \theta \le \frac{3}{2}\right) \ge 1 - 4 Var[\hat{\theta}_n].
+\]
+注意到 $\frac{1}{2} \le \hat{\theta}_n - \theta \le \frac{3}{2}$ 蕴含 $|\hat{\theta}_n - \theta| > \frac{1}{4}$。因此
+\[
+P\left(|\hat{\theta}_n - \theta| > \frac{1}{4}\right) \ge P\left(\frac{1}{2} \le \hat{\theta}_n - \theta \le \frac{3}{2}\right) \ge 1 - 4 Var[\hat{\theta}_n].
+\]
+由于假设 $\lim_{n \to \infty} Var[\hat{\theta}_n] = 0$，我们得出
+\[
+\lim_{n \to \infty} P\left(|\hat{\theta}_n - \theta| > \frac{1}{4}\right) \ge 1 - 4 \lim_{n \to \infty} Var[\hat{\theta}_n] = 1 - 0 = 1.
+\]
+因此 $\lim_{n \to \infty} P\left(|\hat{\theta}_n - \theta| > \frac{1}{4}\right) \neq 0$，这根据相合性的定义意味着 $\hat{\theta}_n$ 不是相合的。
+\end{solution}
+
+\question 令 $X_1, \dots, X_n$ 为 iid，其 PDF 为
+\[
+f(x) = \frac{1 + \theta x}{2} \text{ 对于 } -1 \le x \le 1 \text{，否则 } f(x) = 0,
+\]
+其中 $\theta \in [-1, 1]$ 是未知参数。考虑估计量 $\hat{\theta}_n = \frac{4}{n} \sum_{i=1}^n X_i^3$。$\hat{\theta}_n$ 的偏差是多少？
+
+\begin{solution}
+我们有
+\begin{align*}
+E[X_1^3] &= \int_{-1}^1 \frac{x^3 (1 + \theta x)}{2} \,dx = \frac{1}{2} \int_{-1}^1 x^3 + \theta x^4 \,dx \\
+&= \frac{1}{2} \left[\frac{x^4}{4} + \frac{\theta x^5}{5}\right]_{-1}^1 = \frac{\theta}{5},
+\end{align*}
+\[
+E[\hat{\theta}_n] = \frac{4}{n} \sum_{i=1}^n E[X_i^3] = \frac{4}{n} n E[X_1^3] = 4 E[X_1^3] = \frac{4\theta}{5},
+\]
+\[
+Bias(\hat{\theta}_n) = E[\hat{\theta}_n] - \theta = \frac{4\theta}{5} - \theta = -\frac{\theta}{5}.
+\]
+\end{solution}
+
 \question 设 $X_1, \dots, X_n$ 是从 $U(a, b)$（区间 $(a, b)$ 上的均匀分布）中提取的 iid 随机样本，其中 $a$ 和 $b$ 是未知参数。
 
 (a) 求 $a$ 和 $b$ 的矩估计量。
@@ -4475,6 +4962,305 @@ S_1 = \frac{1}{n} \sum_{i=1}^n X_i, \quad S_2 = \frac{1}{n} \sum_{i=1}^n X_i^2
 \hat{b} &= s_1 + \sqrt{3\left(s_2 - s_1^2\right)} \approx 98.18
 \end{align*}
 \end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PMF 为 $f(0) = 1 - \theta$, $f(2) = \theta$, 且当 $x$ 取其他值时 $f(x) = 0$, 其中 $\theta \in [0, 1]$ 是未知参数。求 $\theta$ 的最大似然估计（MLE）并给出严格的证明。
+
+\begin{solution}
+注意到
+\[
+f(x) = (1 - \theta)^{(2 - x)/2} \theta^{x/2}, \quad x = 0, 2.
+\]
+因此似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i | \theta) = \prod_{i=1}^n \left( (1 - \theta)^{(2 - X_i)/2} \theta^{X_i/2} \right) = (1 - \theta)^{n - T} \theta^T,
+\]
+其中 $T = \frac{1}{2} \sum_{i=1}^n X_i$。注意到 $0 \le T \le n$, 因为对于所有 $i$, 都有 $0 \le X_i \le 2$。
+
+情形 1. $T = 0$。则 $L(\theta) = (1 - \theta)^n$, 且 $\hat{\theta} = 0$ 是 $\theta$ 的 MLE, 因为 $(1 - \theta)^n$ 是关于 $\theta$ 的严格递减函数。
+
+情形 2. $T = n$。则 $L(\theta) = \theta^n$, 且 $\hat{\theta} = 1$ 是 $\theta$ 的 MLE, 因为 $\theta^n$ 是关于 $\theta$ 的严格递增函数。
+
+情形 3. $0 < T < n$。我们检查 $L$ 是否满足标准条件：
+(a) 对于 $\theta \in (0, 1)$, $L(\theta) > 0$, 因为当 $\theta \in (0, 1)$ 时, $\theta > 0$ 且 $1 - \theta > 0$。
+(b) $L(\theta)$ 在 $(0, 1)$ 上是可导的（显然）。
+(c) $\lim_{\theta \to 0^+} L(\theta) = 0$, 因为 $\lim_{\theta \to 0^+} \theta^T = 0$（由于 $T > 0$）且 $\lim_{\theta \to 0^+} (1 - \theta)^{n - T} = 1$。同理, $\lim_{\theta \to 1^-} L(\theta) = 0$。
+
+因此 $L$ 确实满足标准条件。根据讲义中的定理, 在开区间 $(0, 1)$ 上存在 $L(\theta)$ 的最大值点 $\hat{\theta}$, 且它满足 $d \log L(\theta) / d\theta = 0$。我们计算
+\[
+\log L(\theta) = (n - T) \log(1 - \theta) + T \log \theta,
+\]
+\[
+\frac{d \log L(\theta)}{d\theta} = -\frac{n - T}{1 - \theta} + \frac{T}{\theta}.
+\]
+因此 $d \log L(\hat{\theta}) / d\theta = 0$ 意味着 $(1 - \hat{\theta})T = (n - T)\hat{\theta}$, 从而
+\[
+\hat{\theta} = \frac{T}{n} = \frac{\bar{X}}{2},
+\]
+其中 $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$。
+
+我们已经证明了 $\hat{\theta}$ 是 $L(\theta)$ 在开区间 $(0, 1)$ 上的最大值点。由于 $L(0) = L(1) = 0$ 且 $L(\hat{\theta}) > 0$, 我们得出结论：$\hat{\theta}$ 是 $\theta$ 的 MLE。
+\end{solution}
+
+\question
+设 $\theta \in (0, \infty)$ 为未知参数, 考虑函数
+\[
+L(\theta) = \frac{x^2}{2\theta^3} e^{-x/\theta},
+\]
+其中 $x \in \mathbb{R}$ 是常数。对于哪些 $x$ 的值, $L(\theta)$ 满足 Video 42 中的标准条件?
+
+\begin{solution}
+如果 $x = 0$, 则 $L(\theta) = 0$ 不是正数, 且标准条件不满足。因此假设 $x \neq 0$。那么显然 $L(\theta)$ 是正数且可导。因此我们只需要检查以下条件是否满足
+\[
+\lim_{\theta \to 0^+} L(\theta) = 0,
+\]
+\[
+\lim_{\theta \to \infty} L(\theta) = 0.
+\]
+假设 $x < 0$。那么 $e^{-x/\theta} \ge e^0 = 1$, 且 $\lim_{\theta \to 0^+} \frac{x^2}{2\theta^3} = \infty$。这暗示了 $\lim_{\theta \to 0^+} L(\theta) = \infty$。因此对于 $x < 0$, 标准条件不满足。
+
+现在假设 $x > 0$。那么（令 $t = 1/\theta$）我们有
+\[
+\lim_{\theta \to 0^+} L(\theta) = \lim_{\theta \to 0^+} \frac{x^2}{2\theta^3} e^{-x/\theta} = \frac{x^2}{2} \lim_{t \to \infty} t^3 e^{-xt} = \frac{x^2}{2} \lim_{t \to \infty} \frac{t^3}{e^{xt}} = 0,
+\]
+因为指数函数主导了 $t^3$。另一方面,
+\[
+\lim_{\theta \to \infty} L(\theta) = \frac{x^2}{2} \left( \lim_{\theta \to \infty} \frac{1}{\theta^3} \right) \left( \lim_{\theta \to \infty} e^{-x/\theta} \right) = 0 \cdot e^0 = 0.
+\]
+因此当 $x > 0$ 时, 条件 (1) 和 (2) 得到满足。
+
+综上所述, $L(\theta)$ 满足标准条件当且仅当 $x > 0$。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PDF 为
+\[
+f(x) = \frac{1 + \theta x}{2}, \quad -1 \le x \le 1,
+\]
+且当 $x$ 取其他值时 $f(x) = 0$, 其中 $\theta \in [-1, 1]$ 是未知参数。似然函数 $L(X_1, \dots, X_n | \theta)$ 是否满足 Video 42 中的标准条件?
+
+\begin{solution}
+我们有
+\[
+L(X_1, \dots, X_n | \theta) = \frac{1}{2^n} \prod_{i=1}^n (1 + \theta X_i).
+\]
+同样地, 正性和可导性是显而易见的。因此我们只需要检查以下条件
+\[
+\lim_{\theta \to -1^+} L(\theta) = 0,
+\]
+\[
+\lim_{\theta \to 1^-} L(\theta) = 0.
+\]
+注意到对于所有 $i$, $-1 \le X_i \le 1$, 因为对于 $x \notin [-1, 1]$, $f(x) = 0$。如果 $X_i > -1$, 则
+\[
+\lim_{\theta \to -1^+} (1 + \theta X_i) = 1 - X_i > 0.
+\]
+另一方面, 如果 $X_i = -1$, 则 $\lim_{\theta \to -1^+} (1 + \theta X_i) = 0$。因此, (3) 被满足当且仅当至少有一个 $i$ 使得 $X_i = 1$。同理, (4) 被满足当且仅当至少有一个 $j$ 使得 $X_j = -1$。
+
+综上所述, $L(\theta)$ 满足标准条件当且仅当至少有一个 $i$ 满足 $X_i = -1$ 且至少有一个 $j$ 满足 $X_j = 1$。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PDF 为
+\[
+f(x) = \frac{1 + \theta x}{2}, \quad -1 \le x \le 1,
+\]
+且当 $x$ 取其他值时 $f(x) = 0$, 其中 $\theta \in [-1, 1]$ 是未知参数。基于观测值 $x_1 = 1/2$ 和 $x_2 = -1/2$（此处 $n = 2$）, 求 $\theta$ 的 MLE。
+
+\begin{solution}
+对于这些观测值, 似然函数为
+\[
+L(\theta) = \frac{1}{4} \left( 1 + \frac{\theta}{2} \right) \left( 1 - \frac{\theta}{2} \right) = \frac{1}{16} (4 - \theta^2).
+\]
+因此 $L(\theta)$ 的最大值在 $\theta = 0$ 处取得, 且 $\theta$ 的 MLE 为 0。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PDF 为
+\[
+f(x) = 2\theta e^{-2\theta x},
+\]
+对于 $x > 0$, 且当 $x \le 0$ 时 $f(x) = 0$, 其中 $\theta \in (0, \infty)$ 是未知参数。基于 $X_1, \dots, X_n$ 求最大似然估计量。
+
+\begin{solution}
+我们计算
+\[
+L(\theta) = \prod_{i=1}^n (2\theta e^{-2\theta X_i}) = (2\theta)^n e^{-2\theta \sum_{i=1}^n X_i}.
+\]
+证明 $L(\theta)$ 满足标准过程的内容基本上与 Video 43, 练习 1 (a) 相同。因此, 根据 Video 42 中的定理 1, 只需要找到 $\partial l(\theta) / \partial \theta = 0$ 的解, 其中 $l(\theta)$ 是对数似然函数。我们得到
+\[
+L(\theta) = \prod_{i=1}^n (2\theta e^{-2\theta X_i}) = (2\theta)^n e^{-2\theta \sum_{i=1}^n X_i},
+\]
+\[
+l(\theta) = \log L(\theta) = n \log(2\theta) - 2\theta \sum_{i=1}^n X_i,
+\]
+\[
+\frac{\partial l(\theta)}{\partial \theta} = \frac{2n}{2\theta} - 2\sum_{i=1}^n X_i = \frac{n}{\theta} - 2\sum_{i=1}^n X_i.
+\]
+因此 $\partial l(\theta) / \partial \theta = 0$ 给出
+\[
+\frac{n}{\theta} - 2\sum_{i=1}^n X_i = 0.
+\]
+解得 $\theta$, 我们发现 $\theta = n / \left( 2 \sum_{i=1}^n X_i \right)$。由于这是 $\partial l(\theta) / \partial \theta = 0$ 的唯一解, 我们得出结论：$\theta$ 的 MLE 为 $\hat{\theta} = n / \left( 2 \sum_{i=1}^n X_i \right)$。
+\end{solution}
+
+\question
+（较难）设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PMF 为
+\[
+f(x) = (x + 1)(1 - p)^x p^2, \quad x = 0, 1, 2, \dots
+\]
+且当 $x$ 取其他值时 $f(x) = 0$, 其中 $p \in [0, 1]$ 是未知参数。证明 $p$ 的最大似然估计量是相合的（consistent）。
+
+\begin{solution}
+似然函数为
+\[
+L(p) = \prod_{i=1}^n f(X_i) = \left( \prod_{i=1}^n (X_i + 1) \right) (1 - p)^{\sum_{i=1}^n X_i} p^{2n} = T(1 - p)^{\sum_{i=1}^n X_i} p^{2n},
+\]
+其中 $T = \prod_{i=1}^n (X_i + 1)$。
+
+首先假设 $\sum_{i=1}^n X_i = 0$。则 $L(p) = T p^{2n}$ 在 $p \in [0, 1]$ 上是严格递增的, 因此 $p$ 的 MLE 为 1。
+
+现在假设 $\sum_{i=1}^n X_i > 0$。由于 $\lim_{p \to 0^+} L(p) = 0$ 且 $\lim_{p \to 1^-} L(p) = 0$, 因此满足标准条件。我们计算
+\[
+l(p) = \log L(p) = \log T + \left( \sum_{i=1}^n X_i \right) \log(1 - p) + 2n \log p,
+\]
+\[
+l'(p) = -\frac{\sum_{i=1}^n X_i}{1 - p} + \frac{2n}{p}.
+\]
+解 $l'(p) = 0$, 我们得到 $p \sum_{i=1}^n X_i = 2n(1 - p)$, 这意味着 $p \left( 2n + \sum_{i=1}^n X_i \right) = 2n$, 从而
+\[
+\hat{p} = \frac{2n}{2n + \sum_{i=1}^n X_i} = \frac{2}{2 + \bar{X}}.
+\]
+由于这是 $l'(p) = 0$ 的唯一解, $p$ 的 MLE 为 $\frac{2}{2 + \bar{X}}$。
+
+为了证明相合性, 我们首先计算 $E[X_i]$。注意到这是一个负二项分布 $NB(2, p)$ 的形式（成功的次数为 2）。其期望为
+\[
+E[X] = \sum_{x=0}^{\infty} x(x + 1)(1 - p)^x p^2.
+\]
+利用幂级数求导规律, 对于 $|q| < 1$, 有 $\sum_{x=0}^{\infty} (x + 1)q^x = \frac{1}{(1 - q)^2}$, 进一步求导可得 $\sum_{x=0}^{\infty} x(x + 1)q^{x-1} = \frac{2}{(1 - q)^3}$。
+令 $q = 1 - p$, 则 $E[X] = (1 - p) p^2 \cdot \frac{2}{(1 - (1 - p))^3} = \frac{2(1 - p)p^2}{p^3} = \frac{2(1 - p)}{p}$。
+
+根据大数定律, 当 $n \to \infty$ 时, $\bar{X} \xrightarrow{P} E[X] = \frac{2(1 - p)}{p}$。
+由于 $\hat{p} = g(\bar{X})$, 其中 $g(t) = \frac{2}{2 + t}$ 是连续函数, 根据连续映射定理：
+\[
+\hat{p} \xrightarrow{P} \frac{2}{2 + \frac{2(1 - p)}{p}} = \frac{2}{\frac{2p + 2 - 2p}{p}} = \frac{2}{2/p} = p.
+\]
+因此, 最大似然估计量 $\hat{p}$ 是相合的。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PDF 为
+\[
+f(x) = 2\theta e^{-2\theta x}, \quad x > 0
+\]
+且当 $x \le 0$ 时 $f(x) = 0$, 其中 $\theta \in (0, \infty)$ 是未知参数。求 $\theta$ 的最大似然估计（MLE）。
+\begin{solution}
+首先写出似然函数 $L(\theta)$：
+\[
+L(\theta) = \prod_{i=1}^n f(X_i) = \prod_{i=1}^n (2\theta e^{-2\theta X_i}) = (2\theta)^n e^{-2\theta \sum_{i=1}^n X_i}.
+\]
+令 $S = \sum_{i=1}^n X_i$。由于对于所有的 $i$, $X_i > 0$, 因此 $S > 0$。似然函数可表示为 $L(\theta) = 2^n \theta^n e^{-2S\theta}$。
+
+(a) 检查正性：
+对于任意 $\theta \in (0, \infty)$, $2^n > 0$, $\theta^n > 0$ 且指数函数 $e^{-2S\theta} > 0$。因此 $L(\theta) > 0$ 对于所有 $\theta \in (0, \infty)$ 均成立。
+
+(b) 检查可导性：
+$L(\theta)$ 是关于 $\theta$ 的多项式与指数函数的乘积, 它是初等函数且在其定义域 $(0, \infty)$ 上是无限次可导的。因此 $d L(\theta) / d\theta$ 存在。
+
+(c) 检查极限性质：
+1. 当 $\theta \to 0^+$ 时：
+\[
+\lim_{\theta \to 0^+} L(\theta) = 2^n \left( \lim_{\theta \to 0^+} \theta^n \right) \left( \lim_{\theta \to 0^+} e^{-2S\theta} \right) = 2^n \cdot 0 \cdot e^0 = 0.
+\]
+2. 当 $\theta \to \infty$ 时：
+由于 $S > 0$, 指数项 $e^{-2S\theta}$ 的衰减速度远快于幂函数 $\theta^n$ 的增长速度。我们可以多次使用洛必达法则（L'Hôpital's rule）或者利用指数函数的增长性质：
+\[
+\lim_{\theta \to \infty} L(\theta) = 2^n \lim_{\theta \to \infty} \frac{\theta^n}{e^{2S\theta}} = 0.
+\]
+综上所述, 该 PDF 满足所有给定的标准条件 $(*)$。取对数似然函数
+\[
+l(\theta) = \ln L(\theta) = n \ln(2\theta) - 2\theta \sum_{i=1}^n X_i = n \ln 2 + n \ln \theta - 2\theta \sum_{i=1}^n X_i.
+\]
+对 $\theta$ 求导并令导数为 0
+\[
+\frac{d l(\theta)}{d \theta} = \frac{n}{\theta} - 2 \sum_{i=1}^n X_i = 0.
+\]
+解得
+\[
+\frac{n}{\theta} = 2 \sum_{i=1}^n X_i \implies \hat{\theta} = \frac{n}{2 \sum_{i=1}^n X_i}.
+\]
+由于样本均值 $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$, 我们可以将其改写为
+\[
+\hat{\theta} = \frac{1}{2\bar{X}}.
+\]
+验证二阶导数
+\[
+\frac{d^2 l(\theta)}{d \theta^2} = -\frac{n}{\theta^2} < 0.
+\]
+由于二阶导数在定义域内恒小于 0, 函数是严格凹的, 因此 $\hat{\theta} = \frac{1}{2\bar{X}}$ 是唯一的极大值点, 即为 $\theta$ 的最大似然估计量。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PMF 为
+\[
+f(x) = \frac{1}{k}, \quad x = 1, \dots, k
+\]
+且当 $x$ 取其他值时 $f(x) = 0$, 其中 $k$（正整数）是未知参数。
+\begin{parts}
+\part 求 $k$ 的矩估计量, 并计算其偏差和方差。
+提示: $1 + 2 + \dots + k = \frac{k(k + 1)}{2}$, $1^2 + 2^2 + \dots + k^2 = \frac{k(k + 1)(2k + 1)}{6}$。
+\begin{solution}
+我们计算
+\[
+\mu_1 = E[X_1] = \sum_{x=1}^k x f(x) = \frac{1}{k} \sum_{x=1}^k x = \frac{1}{k} \frac{k(k + 1)}{2} = \frac{k + 1}{2}.
+\]
+因此 $k = 2\mu_1 - 1$, 且 $k$ 的矩估计量（MME）为 $\hat{k}_2 = 2\bar{X} - 1$。我们有
+\[
+E[\hat{k}_2] = 2E[\bar{X}] - 1 = 2E[X_1] - 1 = 2 \cdot \frac{k + 1}{2} - 1 = k + 1 - 1 = k,
+\]
+\[
+Bias(\hat{k}_2) = E[\hat{k}_2] - k = 0,
+\]
+\[
+E[X_1^2] = \sum_{x=1}^k x^2 f(x) = \frac{1}{k} \sum_{x=1}^k x^2 = \frac{1}{k} \frac{k(k + 1)(2k + 1)}{6} = \frac{(k + 1)(2k + 1)}{6},
+\]
+\[
+Var[X_1] = E[X_1^2] - E[X_1]^2 = \frac{(k + 1)(2k + 1)}{6} - \frac{(k + 1)^2}{4} = \frac{k^2 - 1}{12},
+\]
+\[
+Var[\hat{k}_2] = Var[2\bar{X} - 1] = 4Var[\bar{X}] = \frac{4}{n} Var[X_1] = \frac{4(k^2 - 1)}{12n}.
+\]
+\end{solution}
+
+\part 考虑 $k$ 的估计量 $\hat{k} = 2\bar{X}$, 其中 $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$。$\hat{k}$ 是相合的吗? 请证明你的回答。
+\begin{solution}
+假设 $k = 1$。那么对于所有 $i$, $X_i = 1$, 因此 $\bar{X} = 1$ 且 $\hat{k} = 2\bar{X} = 2$。因此
+\[
+P\left( |\hat{k} - k| > \frac{1}{2} \right) = P\left( |2 - 1| > \frac{1}{2} \right) = 1.
+\]
+因此当 $k = 1$ 且 $\epsilon = 1/2$ 时, $\lim_{n \to \infty} P(|\hat{k} - k| > \epsilon) = 0$ 不成立。这表明 $\hat{k}$ 不是相合的。
+\end{solution}
+
+\part 考虑 $k$ 的估计量 $\hat{k}_1 = \max(X_1, \dots, X_n)$。$\hat{k}_1$ 是相合的吗? 请证明你的回答。
+\begin{solution}
+注意到对于所有 $i$, $X_i \le k$, 因此 $\hat{k}_1 = \max(X_1, \dots, X_n) \le k$, 且 $|\hat{k}_1 - k| = k - \hat{k}_1$。设 $\epsilon > 0$。我们有
+\begin{align*}
+P(|\hat{k}_1 - k| > \epsilon) &= P(k - \hat{k}_1 > \epsilon) \\
+&= P(\hat{k}_1 < k - \epsilon) \\
+&= P(\max(X_1, \dots, X_n) < k - \epsilon) \\
+&= P(X_1 < k - \epsilon, \dots, X_n < k - \epsilon) \\
+&= \prod_{i=1}^n P(X_i < k - \epsilon) \\
+&= P(X_1 < k - \epsilon)^n \\
+&\le P(X_1 \le k - 1)^n \\
+&= \left( \frac{k - 1}{k} \right)^n.
+\end{align*}
+因此
+\[
+\lim_{n \to \infty} P(|\hat{k}_1 - k| > \epsilon) = \lim_{n \to \infty} \left( \frac{k - 1}{k} \right)^n = 0.
+\]
+这表明 $\hat{k}_1$ 是相合的。
+\end{solution}
+\end{parts}
 
 \question 设 $X_1, \dots, X_n$ 是从具有如下 PDF 的分布中提取的 iid 随机样本
 \[
@@ -4793,6 +5579,200 @@ L(\theta) = \prod_{i=1}^n \theta^{X_i^2/4} (1 - 2\theta)^{1 - X_i^2/4} = \theta^
 \]
 \end{solution}
 
+\question Let $X_1, \dots, X_n$ be iid with PMF $f(x|\theta) = (1 - \theta)^{-x+4} \theta^{x-3}$ for $x = 3, 4$ and $f(x|\theta) = 0$ otherwise, where $\theta \in (0, 1)$ 是一个未知参数。Fisher 信息 $I_{X_1}(\theta)$ 是多少？
+
+\begin{solution}
+我们有
+\[
+E[X_1] = 3 + \theta,
+\]
+\[
+L(X_1|\theta) = (1 - \theta)^{-X_1+4} \theta^{X_1-3},
+\]
+\[
+l(X_1|\theta) = (-X_1 + 4) \log(1 - \theta) + (X_1 - 3) \log \theta,
+\]
+\[
+l'(X_1|\theta) = \frac{X_1 - 4}{1 - \theta} + \frac{X_1 - 3}{\theta},
+\]
+\[
+l''(X_1|\theta) = \frac{X_1 - 4}{(1 - \theta)^2} - \frac{X_1 - 3}{\theta^2},
+\]
+\[
+I_{X_1}(\theta) = -E[l''(X_1|\theta)] = -\frac{E[X_1] - 4}{(1 - \theta)^2} + \frac{E[X_1] - 3}{\theta^2}
+\]
+\[
+= \frac{1 - \theta}{(1 - \theta)^2} + \frac{\theta}{\theta^2} = \frac{1}{1 - \theta} + \frac{1}{\theta}
+\]
+\[
+= \frac{\theta + (1 - \theta)}{\theta(1 - \theta)} = \frac{1}{\theta(1 - \theta)}.
+\]
+\end{solution}
+
+\question Let $X_1, \dots, X_n$ be iid with PMF $f(x|\theta) = (1 - \theta)^{-x+4} \theta^{x-3}$ for $x = 3, 4$ and $f(x|\theta) = 0$ otherwise, where $\theta \in (0, 1)$ 是一个未知参数。估计量 $\hat{\theta} = -3 + \frac{1}{n} \sum_{i=1}^n X_i$ 对 $\theta$ 是有效的吗？
+
+提示：$E[X_1] = 3 + \theta$，$Var[X_1] = -\theta^2 + \theta$，$I_{X_1}(\theta) = \frac{1}{\theta(1 - \theta)}$。
+
+\begin{solution}
+我们需要检查两件事：估计量是无偏的，并且满足 Cramer-Rao 下界的等式。我们计算
+\[
+E[\hat{\theta}] = -3 + E[\bar{X}] = -3 + E[X_1] = -3 + (3 + \theta) = \theta,
+\]
+\[
+Var[\hat{\theta}] = Var[\bar{X}] = \frac{1}{n} Var[X_1] = \frac{-\theta^2 + \theta}{n} = \frac{\theta(1 - \theta)}{n}.
+\]
+由于 $E[\hat{\theta}] = \theta$，我们得出结论 $\hat{\theta}$ 是无偏的。此外，根据 Cramer-Rao：
+\[
+Var[\hat{\theta}] \ge \frac{1}{n I_{X_1}(\theta)} = \frac{\theta(1 - \theta)}{n}.
+\]
+由于 $Var[\hat{\theta}] = \theta(1 - \theta)/n$，我们在 Cramer-Rao 下界处取得等号。因此 $\hat{\theta}$ 是有效的。
+\end{solution}
+
+\question Let $X_1, \dots, X_n$ be iid $\sim$ Gamma($4, \beta$)，其中 $\beta > 0$ 是一个未知参数。下列哪一个是枢轴量（pivotal quantity）？
+\begin{itemize}
+    \item $Q_1 = \frac{1}{\beta} \sum_{i=1}^n X_i$,
+    \item $Q_2 = \beta \sum_{i=1}^n X_i$,
+    \item $Q_3 = \frac{1}{4} \sum_{i=1}^n X_i$,
+    \item $Q_4 = 4 \sum_{i=1}^n X_i$.
+\end{itemize}
+提示：Gamma($\alpha, \beta$) 的 MGF 为 $(1 - \beta t)^{-\alpha}$。
+
+\begin{solution}
+设 $Y = \sum_{i=1}^n X_i$。在课程中已经证明 $Y \sim$ Gamma($4n, \beta$)。因此 $M_Y(t) = (1 - \beta t)^{-4n}$ 且
+\begin{align*}
+M_{Q_1}(t) &= M_{Y/\beta}(t) = (1 - t)^{-4n}, \\
+M_{Q_2}(t) &= M_{\beta Y}(t) = (1 - \beta^2 t)^{-4n}, \\
+M_{Q_3}(t) &= M_{Y/4}(t) = \left( 1 - \left( \beta / 4 \right) t \right)^{-4n}, \\
+M_{Q_4}(t) &= M_{4Y}(t) = (1 - 4\beta t)^{-4n}.
+\end{align*}
+只有 $Q_1$ 的 MGF 不包含未知参数 $\beta$。因此只有 $Q_1$ 是枢轴量。
+\end{solution}
+
+\question Let $X_1, \dots, X_n$ be iid $\sim$ Bernoulli($p$) 且记 $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$。令 $Z = \frac{\bar{X} - p}{\sqrt{np(1-p)}}$。下列哪项表述是正确的？
+\begin{itemize}
+    \item $Z$ 是一个枢轴量。
+    \item $Z$ 是一个渐近枢轴量。
+    \item 以上都不是。
+\end{itemize}
+
+\begin{solution}
+注意 $nZ$ 是标准化后的样本均值。因此根据中心极限定理（CLT），$nZ$ 依分布收敛于 $N(0, 1)$。从而 $Z$ 依分布收敛于常数 $0$，因此是一个渐近枢轴量。这一事实也源于极大似然估计（MLE）的渐近正态性，因为 $\bar{X}$ 是该分布的 MLE 且 $I_{X_1}(p) = 1/(p(1 - p))$。
+
+此外，$Z$ 不是枢轴量。例如，若 $n = 1$，则 $Z = (X_1 - p)/\sqrt{p(1 - p)}$，且 $Z$ 的可能取值为 $-p/\sqrt{p(1 - p)}$（当 $X_1 = 0$ 时）和 $(1 - p)/\sqrt{p(1 - p)}$（当 $X_1 = 1$ 时）。由于 $Z$ 的可能取值依赖于 $p$，因此 $Z$ 的分布也依赖于 $p$。故 $Z$ 确实不是一个枢轴量。
+\end{solution}
+
+\question Let $X$ 是一个连续随机变量，其 PDF 为 $f(x) = \theta / x^2$ （当 $x \ge \theta$ 时），否则 $f(x) = 0$，其中 $\theta > 0$ 是一个未知参数。下列哪一个是枢轴量？
+\begin{itemize}
+    \item $Q_1 = \theta X$,
+    \item $Q_2 = \theta^2 X$,
+    \item $Q_3 = \frac{1}{\theta} X$,
+    \item $Q_4 = \frac{1}{\theta^2} X$.
+\end{itemize}
+
+\begin{solution}
+根据 Video 58, slide 10，$aX$ 的 PDF 为
+\[
+\frac{1}{a} f\left( \frac{x}{a} \right) = \frac{1}{a} \frac{\theta}{\left( \frac{x}{a} \right)^2} = \frac{a\theta}{x^2}.
+\]
+因此只有当 $a = 1/\theta$ 时，未知参数 $\theta$ 才不会出现在 $aX$ 的 PDF 中。因此只有 $Q_3$ 是枢轴量。
+\end{solution}
+
+\question Let $X_1, \dots, X_n$ be iid $\sim N(0, \sigma^2)$, where $\sigma^2$ is unknown. Which of the following are pivotal quantities?
+\[
+Q_1 = \frac{1}{2}(X_1 + X_2),
+\]
+\[
+Q_2 = \frac{1}{\sigma}(X_1 + X_2),
+\]
+\[
+Q_3 = \frac{1}{\sigma}(X_1^2 + X_2^2),
+\]
+\[
+Q_4 = \frac{1}{\sigma^2}(X_1^2 + X_2^2).
+\]
+
+\begin{solution}
+根据课程和辅导课内容，对于任何常数 $a$，我们有 $\frac{X_1 + X_2}{a} \sim N\left(0, \frac{2\sigma^2}{a^2}\right)$，并且 $\frac{X_1^2 + X_2^2}{\sigma^2} = \left(\frac{X_1}{\sigma}\right)^2 + \left(\frac{X_2}{\sigma}\right)^2 \sim \chi_2^2$。因此：
+\[
+Q_1 \sim N\left(0, \frac{2\sigma^2}{4}\right) = N\left(0, \frac{\sigma^2}{2}\right),
+\]
+\[
+Q_2 \sim N\left(0, \frac{2\sigma^2}{\sigma^2}\right) = N(0, 2),
+\]
+\[
+\frac{Q_3}{\sigma} = \frac{X_1^2 + X_2^2}{\sigma^2} \sim \chi_2^2,
+\]
+\[
+Q_4 = \frac{X_1^2 + X_2^2}{\sigma^2} \sim \chi_2^2.
+\]
+由于 $Q_2$ 和 $Q_4$ 的分布不依赖于 $\sigma$，它们是枢轴量。另一方面，$Q_1$ 的分布方差为 $\frac{\sigma^2}{2}$，因此依赖于 $\sigma$。此外，由于 $\frac{Q_3}{\sigma} \sim \chi_2^2$，我们有 $Var\left[\frac{Q_3}{\sigma}\right] = c$，其中 $c$ 是 $\chi_2^2$ 的方差。于是 $Var[Q_3] = \sigma^2 c$。因此 $Q_3$ 的分布也依赖于 $\sigma$。综上所述，$Q_1$ 和 $Q_3$ 不是枢轴量。
+\end{solution}
+
+\question $X_1, \dots, X_n$ iid，其 PMF 为 $f(0) = f(1) = f(2) = \theta$ 且 $f(3) = 1 - 3\theta$，其中 $\theta \in (0, \frac{1}{3})$ 是未知参数。
+寻找 $\theta$ 的 MME 和 MLE，并计算它们的偏差和方差。
+哪一个是更好的估计量？
+MME 或 MLE 是否有效（efficient）？请证明你的答案。
+
+\begin{solution}
+矩估计（MME）：
+计算总体均值：
+\[
+E[X] = 0(\theta) + 1(\theta) + 2(\theta) + 3(1-3\theta) = 3 - 6\theta.
+\]
+令 $\bar{X} = 3 - 6\hat{\theta}_{MME}$，解得
+\[
+\hat{\theta}_{MME} = \frac{3 - \bar{X}}{6}.
+\]
+最大似然估计（MLE）：
+设样本中 $0, 1, 2$ 出现的次数分别为 $n_0, n_1, n_2$，出现 $3$ 的次数为 $n_3$。似然函数为
+\[
+L(\theta) = \theta^{n_0+n_1+n_2} (1-3\theta)^{n_3}.
+\]
+取对数并求导：
+\[
+l(\theta) = (n_0+n_1+n_2)\log\theta + n_3\log(1-3\theta).
+\]
+\[
+\frac{dl}{d\theta} = \frac{n_0+n_1+n_2}{\theta} - \frac{3n_3}{1-3\theta} = 0.
+\]
+解得
+\[
+\hat{\theta}_{MLE} = \frac{n_0+n_1+n_2}{3(n_0+n_1+n_2+n_3)} = \frac{n-n_3}{3n}.
+\]
+偏差与方差：
+由于 $n-n_3$ 是 $n$ 次试验中结果为 $0, 1, 2$ 的总次数，服从 $B(n, 3\theta)$，故 $E[n-n_3] = 3n\theta$。
+对于 MLE：$E[\hat{\theta}_{MLE}] = \theta$，无偏。其方差为 $\frac{3\theta(1-3\theta)}{9n} = \frac{\theta(1-3\theta)}{3n}$。
+通过计算费舍尔信息量（Fisher Information），可以证明 MLE 达到了 Cramer-Rao 下界，因此是有效的。
+\end{solution}
+
+\question $X_1, \dots, X_n$ iid，其 PDF 为 $f(x) = \frac{1}{\mu} e^{-x/\mu}$，$x > 0$，其中 $\mu \in (0, \infty)$。
+\begin{parts}
+\part 寻找 $\mu$ 的 MLE 并计算其方差。
+\begin{solution}
+    似然函数为
+    \[
+    L(\mu) = \frac{1}{\mu^n} e^{-\sum X_i / \mu}.
+    \]
+    对数似然为 $l(\mu) = -n\log\mu - \frac{\sum X_i}{\mu}$。求导得 $\frac{-n}{\mu} + \frac{\sum X_i}{\mu^2} = 0$，故 $\hat{\mu}_{MLE} = \bar{X}$。
+    由于 $X_i \sim \text{Exp}(1/\mu)$，$\text{Var}(\hat{\mu}) = \frac{\text{Var}(X_1)}{n} = \frac{\mu^2}{n}$。
+\end{solution}
+\part 计算 $I_{X_1, \dots, X_n}(\mu)$。
+\begin{solution}
+    单个样本的 Fisher 信息量：
+    \[
+    \log f(x) = -\log\mu - \frac{x}{\mu}, \quad \frac{\partial^2}{\partial \mu^2} \log f = \frac{1}{\mu^2} - \frac{2x}{\mu^3}.
+    \]
+    \[
+    I_{X_1}(\mu) = -E\left[\frac{1}{\mu^2} - \frac{2X}{\mu^3}\right] = -\frac{1}{\mu^2} + \frac{2\mu}{\mu^3} = \frac{1}{\mu^2}.
+    \]
+    因此 $I_{X_1, \dots, X_n}(\mu) = n I_{X_1}(\mu) = \frac{n}{\mu^2}$。
+\end{solution}
+\part $\mu$ 的 MLE 是否有效？
+\begin{solution}
+比较方差 $\frac{\mu^2}{n}$ 与 Cramer-Rao 下界 $\frac{1}{I_n(\mu)} = \frac{\mu^2}{n}$。两者相等，故 MLE 是有效的。
+\end{solution}
+\end{parts}
+
 \question 问题 1 设 $D_{\theta}, 0 \le \theta \le 1$ 为离散分布，其 PMF 为 $f(1|\theta) = \theta$，$f(2|\theta) = 1 - \theta$，且其他情况 $f(x|\theta) = 0$，其中 $\theta \in [0, 1]$ 是未知参数。
 
 (a) 基于 $X_1, \dots, X_n \overset{\text{iid}}{\sim} D_{\theta}$，求 $\theta$ 的最大似然估计量 (MLE)。请按照课堂讲授给出严谨的论证。提示：$f(x|\theta) = \theta^{2-x}(1 - \theta)^{-1+x}, x = 1, 2$。
@@ -5066,6 +6046,272 @@ L(\theta) = \left(\frac{\theta}{\sqrt{2\pi}}\right)^n
 \]
 该函数在 $(0, \infty)$ 上是严格递增的，且没有全局最大值。因此，在这种情况下不存在 $\theta$ 的 MLE。
 \end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布（iid）的随机样本，其总体分布的概率密度函数（PDF）为
+\[
+f(x) = \frac{1}{2}x^2\theta^3e^{-\theta x}, \quad x > 0
+\]
+当 $x \le 0$ 时，$f(x) = 0$，其中 $\theta \in (0, \infty)$ 是未知参数。计算 $\theta$ 的最大似然估计量，并给出严谨的论证。
+
+\begin{solution}
+该样本的似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i) = 2^{-n}\theta^{3n} \left(\prod_{i=1}^n X_i^2\right) e^{-\theta \sum_{i=1}^n X_i}.
+\]
+显然，$L(\theta)$ 在 $\theta \in (0, \infty)$ 上为正且可导。此外，
+\[
+\lim_{\theta \to 0^+} L(\theta) = 2^{-n} \cdot 0 \cdot \left(\prod_{i=1}^n X_i^2\right) \cdot 1 = 0
+\]
+（根据极限的乘积法则）。
+注意到 $\sum_{i=1}^n X_i > 0$，因为 $X_i$ 仅取正值。因此
+\[
+\lim_{\theta \to \infty} \theta^{3n}e^{-\theta \sum_{i=1}^n X_i} = \lim_{\theta \to \infty} \frac{\theta^{3n}}{e^{\theta \sum_{i=1}^n X_i}} = 0
+\]
+（根据微积分中的结论）。由此可得
+\[
+\lim_{\theta \to \infty} L(\theta) = 2^{-n} \left(\prod_{i=1}^n X_i^2\right) \lim_{\theta \to \infty} \theta^{3n}e^{-\theta \sum_{i=1}^n X_i} = 2^{-n} \left(\prod_{i=1}^n X_i^2\right) \cdot 0 = 0
+\]
+（根据极限的乘积法则）。
+综上所述，$L(\theta)$ 满足标准条件。因此，我们可以通过常规方法求 MLE：
+\[
+l(\theta) = -n \log 2 + 3n \log \theta + \log \left(\prod_{i=1}^n X_i^2\right) - \theta \sum_{i=1}^n X_i,
+\]
+\[
+l'(\theta) = \frac{3n}{\theta} - \sum_{i=1}^n X_i.
+\]
+令 $l'(\theta) = 0$，解得 $\theta$ 的最大似然估计量为 $3n / \sum_{i=1}^n X_i$。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布的随机样本，其总体分布的概率质量函数（PMF）为
+\begin{center}
+\begin{tabular}{c|c|c}
+$x$ & 0 & 2 \\ \hline
+$f(x)$ & $5\theta$ & $1 - 5\theta$
+\end{tabular}
+\end{center}
+当 $x$ 取其他值时 $f(x) = 0$，其中 $\theta \in \left[0, \frac{1}{5}\right]$ 是未知参数。注意对于 $x = 0, 2$，有 $f(x) = (5\theta)^{(2-x)/2}(1 - 5\theta)^{x/2}$。
+\begin{parts}
+\part 计算 $\theta$ 的矩估计量并证明其是一致的。
+\begin{solution}
+一阶原点矩 $\mu_1 = E[X_1] = 0 \cdot (5\theta) + 2 \cdot (1 - 5\theta) = 2 - 10\theta$。这蕴含了 $\theta = (2 - \mu_1)/10$。因此，$\theta$ 的矩估计量为 $(2 - S_1)/10$。注意到 $(2 - \mu_1)/10$ 是 $\mu_1$ 的连续函数。因此，根据课程定理，该矩估计量是一致的。
+\end{solution}
+
+\part 计算 $\theta$ 的最大似然估计量并给出严谨的论证。
+\begin{solution}
+该样本的似然函数为
+\[
+L(\theta) = \prod_{i=1}^n f(X_i) = (5\theta)^{\frac{1}{2}(2n - \sum_{i=1}^n X_i)}(1 - 5\theta)^{\frac{1}{2}\sum_{i=1}^n X_i}.
+\]
+情形 1：$\sum_{i=1}^n X_i = 2n$。此时 $L(\theta) = (1 - 5\theta)^n$ 严格递减，故 $\theta$ 的 MLE 为 0。
+情形 2：$\sum_{i=1}^n X_i = 0$。此时 $L(\theta) = (5\theta)^n$ 严格递增，故 $\theta$ 的 MLE 为 $1/5$。
+情形 3：$0 < \sum_{i=1}^n X_i < 2n$。显然 $L(\theta)$ 在所有 $\theta \in \left(0, \frac{1}{5}\right)$ 上为正且可导。此外，
+\[
+\lim_{\theta \to 0^+} L(\theta) = \left(\lim_{\theta \to 0^+} (5\theta)^{\frac{1}{2}(2n - \sum_{i=1}^n X_i)}\right) \left(\lim_{\theta \to 0^+} (1 - 5\theta)^{\frac{1}{2}\sum_{i=1}^n X_i}\right) = 0 \cdot 1 = 0
+\]
+且
+\[
+\lim_{\theta \to \frac{1}{5}^-} L(\theta) = \left(\lim_{\theta \to \frac{1}{5}^-} (5\theta)^{\frac{1}{2}(2n - \sum_{i=1}^n X_i)}\right) \left(\lim_{\theta \to \frac{1}{5}^-} (1 - 5\theta)^{\frac{1}{2}\sum_{i=1}^n X_i}\right) = 1 \cdot 0 = 0
+\]
+（根据极限的乘积法则）。因此，在 $\theta \in \left(0, \frac{1}{5}\right)$ 上满足 $L(\theta)$ 的标准条件，我们可以通过常规方式寻找 $L(\theta)$ 在 $\left(0, \frac{1}{5}\right)$ 上的极大值点：
+\[
+l(\theta) = \frac{1}{2}\left(2n - \sum_{i=1}^n X_i\right) \log(5\theta) + \frac{1}{2}\left(\sum_{i=1}^n X_i\right) \log(1 - 5\theta),
+\]
+\[
+l'(\theta) = \frac{5(2n - \sum_{i=1}^n X_i)}{10\theta} - \frac{5\sum_{i=1}^n X_i}{2(1 - 5\theta)}.
+\]
+令 $l'(\theta) = 0$，解得 $L(\theta)$ 在 $\left(0, \frac{1}{5}\right)$ 上的极大值点为
+\[
+\hat{\theta} = \frac{2n - \sum_{i=1}^n X_i}{10n} = \frac{2 - \bar{X}}{10}.
+\]
+由于 $L(0) = L(1/5) = 0$，我们得出结论：$\hat{\theta}$ 也是 $L(\theta)$ 在 $\left[0, \frac{1}{5}\right]$ 上的最大值点。因此 $\hat{\theta}$ 是 $\theta$ 的 MLE。
+\end{solution}
+\end{parts}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布的随机样本，其总体分布的概率密度函数（PDF）为
+\[
+f(x) = \frac{2x}{2\theta + 1}, \quad \theta \le x \le \theta + 1
+\]
+当 $x$ 取其他值时 $f(x) = 0$，其中 $\theta \in (0, \infty)$ 是未知参数。
+\begin{parts}
+\part 计算 $\theta$ 的矩估计量。
+\begin{solution}
+我们计算
+\[
+\mu_1 = \int_{\theta}^{\theta+1} \frac{2x^2}{2\theta+1} \,dx = \frac{2}{2\theta+1} \left[\frac{x^3}{3}\right]_{\theta}^{\theta+1} = \frac{2}{2\theta+1} \frac{((\theta+1)^3 - \theta^3)}{3} = \frac{2(3\theta^2 + 3\theta + 1)}{3(2\theta+1)}.
+\]
+解此关于 $\theta$ 的方程得
+\[
+\theta = \frac{1}{6} \left(3\mu_1 - 3 \pm \sqrt{9\mu_1^2 - 3}\right).
+\]
+如果平方根前取负号，则 $\theta < 0$，这是不可能的。因此 $\theta = \frac{1}{6} \left(3\mu_1 - 3 + \sqrt{9\mu_1^2 - 3}\right)$，且 $\theta$ 的矩估计量为
+\[
+\frac{1}{6} \left(3S_1 - 3 + \sqrt{9S_1^2 - 3}\right).
+\]
+\end{solution}
+
+\part 计算 $\theta$ 的最大似然估计量并给出严谨的论证。
+\begin{solution}
+注意到 $f(X_i) > 0$ 当且仅当 $\theta \le X_i \le \theta + 1$，即当且仅当 $X_i - 1 \le \theta \le X_i$。因此 $L(\theta) = \prod_{i=1}^n f(X_i) > 0$ 当且仅当 $\max(X_1, \dots, X_n) - 1 \le \theta \le \min(X_1, \dots, X_n)$。故有
+\[
+L(\theta) = \begin{cases} \left(\frac{2}{2\theta+1}\right)^n \prod_{i=1}^n X_i, & \text{若 } \max(X_1, \dots, X_n) - 1 \le \theta \le \min(X_1, \dots, X_n) \\ 0, & \text{否则} \end{cases}
+\]
+由于 $L(\theta)$ 在区间 $[\max(X_1, \dots, X_n) - 1, \min(X_1, \dots, X_n)]$ 上是严格递减的，故 $\theta$ 的 MLE 为 $\max(X_1, \dots, X_n) - 1$。
+\end{solution}
+\end{parts}
+
+\question
+设 $X_1, \dots, X_n$ 为独立同分布的随机样本，其总体分布的 PDF 由 (1) 给出（与问题 3 中的 PDF 相同）。证明 $\hat{\theta}_n = \min\{X_1, \dots, X_n\}$ 是 $\theta$ 的一致估计量。
+
+\begin{solution}
+我们首先计算 $X_1$ 的 CDF。假设 $\theta < x < \theta + 1$，有
+\begin{align*}
+F_{X_1}(x) &= P(X_1 \le x) \\
+&= \int_{\theta}^x \frac{2t}{2\theta+1} \,dt \\
+&= \frac{2}{2\theta+1} \int_{\theta}^x t \,dt \\
+&= \frac{2}{2\theta+1} \left[\frac{x^2}{2}\right]_{\theta}^x \\
+&= \frac{x^2 - \theta^2}{2\theta+1}.
+\end{align*}
+接下来，我们计算 $\hat{\theta}_n = \min\{X_1, \dots, X_n\}$ 的 CDF。假设 $\theta < x < \theta + 1$。利用 $X_1, \dots, X_n$ 独立同分布的事实，可得
+\begin{align*}
+F_{\hat{\theta}_n}(x) &= P(\min\{X_1, \dots, X_n\} \le x) \\
+&= 1 - P(\min\{X_1, \dots, X_n\} > x) \\
+&= 1 - P(X_1 > x, \dots, X_n > x) \\
+&= 1 - \prod_{i=1}^n P(X_i > x) \\
+&= 1 - \prod_{i=1}^n (1 - P(X_i \le x)) \\
+&= 1 - \prod_{i=1}^n (1 - F_{X_1}(x)) \\
+&= 1 - \left(1 - \frac{x^2 - \theta^2}{2\theta+1}\right)^n.
+\end{align*}
+注意到 $\hat{\theta}_n > \theta$，因为对所有 $i$ 都有 $X_i > \theta$。因此 $|\hat{\theta}_n - \theta| = \hat{\theta}_n - \theta$。任给 $\epsilon > 0$。首先假设 $\epsilon < 1$。则
+\begin{align*}
+P(|\hat{\theta}_n - \theta| > \epsilon) &= P(\hat{\theta}_n - \theta > \epsilon) \\
+&= P(\hat{\theta}_n > \theta + \epsilon) \\
+&= 1 - F_{\hat{\theta}_n}(\theta + \epsilon) \\
+&= 1 - \left(1 - \left(1 - \frac{(\theta + \epsilon)^2 - \theta^2}{2\theta+1}\right)^n\right) \\
+&= \left(1 - \frac{(\theta + \epsilon)^2 - \theta^2}{2\theta+1}\right)^n \\
+&= \left(1 - \frac{2\epsilon\theta + \epsilon^2}{2\theta + 1}\right)^n.
+\end{align*}
+由于假设 $0 < \epsilon < 1$，我们有 $0 < \frac{2\epsilon\theta + \epsilon^2}{2\theta+1} < 1$，从而
+\[
+1 - \frac{2\epsilon\theta + \epsilon^2}{2\theta + 1} \in (0, 1).
+\]
+据此得出结论
+\[
+\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = \lim_{n \to \infty} \left(1 - \frac{2\epsilon\theta + \epsilon^2}{2\theta + 1}\right)^n = 0.
+\]
+综上所述，我们已经证明了当 $0 < \epsilon < 1$ 时
+\[
+\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0.
+\]
+然而，如果 $\epsilon \ge 1$，则 $P(|\hat{\theta}_n - \theta| > \epsilon) \le P(|\hat{\theta}_n - \theta| > 1/2)$，因此
+\[
+\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0,
+\]
+因为根据前面的结论有 $\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > 1/2) = 0$。我们得出结论：对于所有 $\epsilon > 0$，有
+\[
+\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0.
+\]
+因此 $\hat{\theta}_n$ 是 $\theta$ 的一致估计量。
+\end{solution}
+
+\question
+设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PMF 为
+\[
+f(x) = (1 - 2\theta)^{(1 - x)/2} (2\theta)^{(1 + x)/2}
+\]
+对于 $x = -1, 1$, 且当 $x$ 取其他值时 $f(x) = 0$, 其中 $\theta \in (0, 1/2)$ 是未知参数。判定估计量 $\hat{\theta} = (1 + \bar{X})/4$ 对于 $\theta$ 是否有效。
+
+\begin{solution}
+对于取有限个值的 PMF, Fisher 信息的计算可以使用加性公式和替代公式, 因为标准条件 $(*)$ 对于此类 PMF 总是满足的。我们计算：
+\[
+E[X_1] = (-1)(1 - 2\theta) + 1 \cdot (2\theta) = 4\theta - 1,
+\]
+\[
+L(X_1 | \theta) = (1 - 2\theta)^{(1 - X_1)/2} (2\theta)^{(1 + X_1)/2},
+\]
+\[
+l(X_1 | \theta) = \frac{1}{2}(1 - X_1) \log(1 - 2\theta) + \frac{1}{2}(1 + X_1) \log(2\theta),
+\]
+\[
+l'(X_1 | \theta) = \frac{X_1 - 1}{1 - 2\theta} + \frac{1 + X_1}{2\theta},
+\]
+\[
+l''(X_1 | \theta) = \frac{2(X_1 - 1)}{(1 - 2\theta)^2} - \frac{2(1 + X_1)}{4\theta^2},
+\]
+\[
+I_{X_1}(\theta) = -E[l''(X_1 | \theta)] = -\frac{2(E[X_1] - 1)}{(1 - 2\theta)^2} + \frac{2(1 + E[X_1])}{4\theta^2}
+\]
+\[
+= -\frac{2(4\theta - 2)}{(1 - 2\theta)^2} + \frac{2(4\theta)}{4\theta^2},
+\]
+\[
+= \frac{4}{1 - 2\theta} + \frac{2}{\theta}
+\]
+\[
+= \frac{4\theta + (1 - 2\theta) \cdot 2}{(1 - 2\theta)\theta}
+\]
+\[
+= \frac{2}{(1 - 2\theta)\theta}.
+\]
+因此 $E[\hat{\theta}] = (1 + 4\theta - 1)/4 = \theta$。这表明 $\hat{\theta}$ 是无偏的。我们计算：
+\[
+E[X_1^2] = 1,
+\]
+\[
+Var[X_1]^2 = E[X_1^2] - E[X_1]^2 = 1 - (4\theta - 1)^2 = -16\theta^2 + 8\theta,
+\]
+\[
+Var[\bar{X}] = \frac{1}{n} Var[X_1] = \frac{-16\theta^2 + 8\theta}{n},
+\]
+\[
+Var[\hat{\theta}] = \frac{1}{16} Var[\bar{X}] = \frac{-2\theta^2 + \theta}{2n}.
+\]
+由于
+\[
+\frac{1}{n I_{X_1}(\theta)} = \frac{1}{n} \left( \frac{2}{\theta(1 - 2\theta)} \right)^{-1} = \frac{-2\theta^2 + \theta}{2n} = Var[\hat{\theta}],
+\]
+我们得出结论 $\hat{\theta}$ 是有效的。
+\end{solution}
+
+\question
+\begin{parts}
+\part 求 $\theta$ 的最大似然估计 $\hat{\theta}$, 并使用 Video 55 中的定理 1 来近似
+\[
+P(|\hat{\theta} - \theta_0| \le 0.01)
+\]
+在假设真实参数为 $\theta_0 = 1/4$ 且 $n = 100$ 的条件下。
+\begin{solution}
+首先求 MLE。似然函数为
+\[
+L(\theta) = \prod_{i=1}^n (1 - 2\theta)^{(1 - X_i)/2} (2\theta)^{(1 + X_i)/2} = (1 - 2\theta)^{\sum (1 - X_i)/2} (2\theta)^{\sum (1 + X_i)/2}.
+\]
+对数似然函数为
+\[
+l(\theta) = \frac{n - \sum X_i}{2} \log(1 - 2\theta) + \frac{n + \sum X_i}{2} \log(2\theta).
+\]
+求导并令其为 0：
+\[
+l'(\theta) = -\frac{n - \sum X_i}{1 - 2\theta} + \frac{n + \sum X_i}{2\theta} = 0.
+\]
+解得 $2\theta(n - \sum X_i) = (1 - 2\theta)(n + \sum X_i)$,
+即 $2n\theta - 2\theta \sum X_i = n + \sum X_i - 2n\theta - 2\theta \sum X_i$,
+得到 $4n\theta = n + \sum X_i$, 故 $\hat{\theta} = \frac{1 + \bar{X}}{4}$。
+
+根据定理 1, 当 $n$ 较大时, $\sqrt{n}(\hat{\theta} - \theta_0) \xrightarrow{d} N(0, 1/I_{X_1}(\theta_0))$。
+已知 $I_{X_1}(\theta) = \frac{2}{\theta(1 - 2\theta)}$, 当 $\theta_0 = 1/4$ 时, $I_{X_1}(1/4) = \frac{2}{(1/4)(1/2)} = 16$。
+因此 $\hat{\theta} \sim N(\theta_0, \frac{1}{16n})$。当 $n = 100$ 时, $Var[\hat{\theta}] = \frac{1}{1600}$, 标准差 $SD = \frac{1}{40} = 0.025$。
+我们计算：
+\[
+P(|\hat{\theta} - \theta_0| \le 0.01) = P\left( \left| \frac{\hat{\theta} - \theta_0}{0.025} \right| \le \frac{0.01}{0.025} \right) = P(|Z| \le 0.4),
+\]
+其中 $Z \sim N(0, 1)$。查表得 $\Phi(0.4) \approx 0.6554$, 故
+\[
+P(|Z| \le 0.4) = 2\Phi(0.4) - 1 \approx 2(0.6554) - 1 = 0.3108.
+\]
+\end{solution}
+\end{parts}
 
 \question
 令 $X_1, \ldots, X_n$ 为独立同分布样本，其概率密度函数（PDF）为
@@ -5380,7 +6626,586 @@ M_Q(t) = \left( \frac{1}{2} \int_0^\infty y^2 e^{y(t-1)} dy \right)^n
 且对于所有 $t \in (-\infty, 1)$ 存在。注意到 $M_Q(t)$ 不包含 $\beta$。因此，根据课堂结论，$Q$ 是一个枢轴量。
 \end{solution}
 
+\question $X_1, \dots, X_n$ iid，其 PDF 为 $f(x) = \theta x^{\theta-1}$，$0 < x < 1$，其中 $\theta \in (0, \infty)$。
+\begin{parts}
+\part 计算 $\theta$ 的 MME 和 MLE。
+\part 证明 $-2\theta \sum_{i=1}^n \log X_i$ 是一个枢轴量。
+\part 寻找 $\theta$ 的一个精确 $95\%$ 置信区间。
+\end{parts}
 
+\begin{solution}
+\part MME：$E[X] = \int_0^1 \theta x^{\theta} dx = \frac{\theta}{\theta+1}$。令 $\bar{X} = \frac{\hat{\theta}}{\hat{\theta}+1}$，得 $\hat{\theta}_{MME} = \frac{\bar{X}}{1-\bar{X}}$。
+MLE：$L(\theta) = \theta^n (\prod X_i)^{\theta-1}$，$l(\theta) = n\log\theta + (\theta-1)\sum \log X_i$。
+求导得 $\frac{n}{\theta} + \sum \log X_i = 0$，故 $\hat{\theta}_{MLE} = \frac{-n}{\sum \log X_i}$。
+\part 令 $Y_i = -\log X_i$。其 CDF 为 $P(-\log X_i \le y) = P(X_i \ge e^{-y}) = 1 - (e^{-y})^{\theta} = 1 - e^{-\theta y}$。
+故 $Y_i \sim \text{Exp}(\theta)$。则 $2\theta Y_i \sim \chi_2^2$。
+因此 $-2\theta \sum \log X_i = \sum 2\theta Y_i \sim \chi_{2n}^2$，该分布与 $\theta$ 无关，是枢轴量。
+\part 设 $W = -2\theta \sum \log X_i$，则 $P(\chi_{2n, 0.975}^2 \le W \le \chi_{2n, 0.025}^2) = 0.95$。
+解得 $\theta$ 的置信区间为
+\[
+\left[ \frac{\chi_{2n, 0.975}^2}{-2\sum \log X_i}, \frac{\chi_{2n, 0.025}^2}{-2\sum \log X_i} \right].
+\]
+\end{solution}
+
+\question 设 $X_1, \dots, X_n$ 是来自 $N(\mu, \sigma^2)$ 的独立同分布随机样本。
+
+(a) 假设 $\sigma^2$ 是已知常数，且 $\mu$ 是未知参数。
+(i) 使用费舍尔信息量的定义计算 $I_{X_1, \dots, X_n}(\mu)$。
+(ii) 证明总体概率密度函数 $f(x|\mu)$ 满足条件 $(*)$。
+(iii) 使用费舍尔信息量的备用公式和可加性计算 $I_{X_1, \dots, X_n}(\mu)$。
+
+(b) 假设 $\mu$ 是已知常数，且 $\sigma^2$ 是未知参数。
+(i) 使用费舍尔信息量的定义计算 $I_{X_1, \dots, X_n}(\sigma^2)$。
+(ii) 证明总体概率密度函数 $f(x|\sigma^2)$ 满足条件 $(*)$。
+(iii) 使用费舍尔信息量的备用公式和可加性计算 $I_{X_1, \dots, X_n}(\sigma^2)$。
+
+\begin{solution}
+(a) 假设 $\sigma^2$ 已知且 $\mu$ 未知。
+
+(i) 我们有
+\[
+f(x|\mu) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+\[
+L(\mu) = \left(2\pi\sigma^2\right)^{-n/2} e^{-\sum_{i=1}^n \frac{(X_i-\mu)^2}{2\sigma^2}}
+\]
+\[
+l(\mu) = \log(L(\mu)) = \log\left((2\pi\sigma^2)^{-n/2}\right) - \frac{1}{2\sigma^2} \sum_{i=1}^n (X_i-\mu)^2
+\]
+\[
+V(\mu) = \frac{\partial}{\partial \mu} l(\mu) = \frac{1}{\sigma^2} \sum_{i=1}^n (X_i-\mu)
+\]
+由于 $X_i$ 是独立的，对于任何 $i \neq j$，我们有 $E[(X_i-\mu)(X_j-\mu)] = E(X_i-\mu) E(X_j-\mu) = 0$。因此，
+\begin{align*}
+I_{X_1, \dots, X_n}(\mu) &= E[V(\mu)^2] \\
+&= \frac{1}{\sigma^4} \left(\sum_{i=1}^n E[(X_i-\mu)^2] + 2 \sum_{1 \le i < j \le n} E[(X_i-\mu)(X_j-\mu)]\right) \\
+&= \frac{n E[(X_1-\mu)^2]}{\sigma^4} \\
+&= n/\sigma^2
+\end{align*}
+
+(ii) 我们有
+\[
+f(x|\mu) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+\[
+\frac{\partial}{\partial \mu} f(x|\mu) = \frac{x-\mu}{\sqrt{2\pi}\sigma^3} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+\begin{align*}
+\int_{-\infty}^{\infty} \frac{\partial}{\partial \mu} f(x|\mu) dx &= -\frac{1}{\sigma^2} \int_{-\infty}^{\infty} \frac{x}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx + \frac{\mu}{\sigma^2} \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx \\
+&= -\frac{1}{\sigma^2} \int_{-\infty}^{\infty} x f(x|\mu) dx + \frac{\mu}{\sigma^2} \int_{-\infty}^{\infty} f(x) dx \\
+&= \frac{-\mu}{\sigma^2} + \frac{\mu}{\sigma^2} \cdot 1 \\
+&= 0
+\end{align*}
+因此，PDF $f(x|\mu)$ 满足条件 $(*)$。
+
+(iii) 我们有
+\[
+L(X_1|\mu) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(X_1-\mu)^2}{2\sigma^2}}
+\]
+\[
+\log(L(X_1|\mu)) = -\log(\sqrt{2\pi}\sigma) - \frac{(X_1-\mu)^2}{2\sigma^2}
+\]
+\[
+\frac{\partial}{\partial \mu} \log(L(X_1|\mu)) = \frac{X_1-\mu}{\sigma^2}
+\]
+\[
+\frac{\partial^2}{\partial \mu^2} \log(L(X_1|\mu)) = \frac{-1}{\sigma^2}
+\]
+根据备用公式，
+\[
+I_{X_1}(\mu) = -E\left[\frac{\partial^2}{\partial \mu^2} \log(L(X_1|\mu))\right] = \frac{1}{\sigma^2}
+\]
+根据可加性，
+\[
+I_{X_1, \dots, X_n}(\mu) = n I_{X_1}(\mu) = \frac{n}{\sigma^2}
+\]
+
+(b) 假设 $\mu$ 已知且 $\sigma^2$ 未知。
+
+(i) 令 $\lambda = \sigma^2$。$X_1 \sim N(\mu, \lambda)$ 的 PDF 是
+\[
+f(x|\lambda) = \frac{1}{\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}}
+\]
+似然函数是
+\[
+L(\lambda) = \prod_{i=1}^n f(X_i|\lambda) = (2\pi\lambda)^{-n/2} e^{-\sum_{i=1}^n \frac{(X_i-\mu)^2}{2\lambda}}
+\]
+因此，
+\[
+l(\lambda) = \log(L(\lambda)) = \frac{-n}{2} (\log(2\pi) + \log(\lambda)) - \left(\sum_{i=1}^n \frac{(X_i-\mu)^2}{2}\right) \frac{1}{\lambda}
+\]
+\[
+V(\lambda) = \frac{\partial l(\lambda)}{\partial \lambda} = \frac{-n}{2\lambda} + \frac{1}{\lambda^2} \sum_{i=1}^n \frac{(X_i-\mu)^2}{2}
+\]
+根据定义，
+\begin{align*}
+I_{X_1, \dots, X_n}(\lambda) &= E[V(\lambda)^2] \\
+&= \frac{n^2}{4\lambda^2} - \frac{n}{2\lambda^3} \sum_{i=1}^n E[(X_i-\mu)^2] + \frac{1}{4\lambda^4} E\left[\left(\sum_{i=1}^n (X_i-\mu)^2\right)^2\right]
+\end{align*}
+注意 $E[(X_i-\mu)^2] = \sigma^2 = \lambda$ 且
+\begin{align*}
+E\left[\left(\sum_{i=1}^n (X_i-\mu)^2\right)^2\right] &= \sum_{i=1}^n E[(X_i-\mu)^4] + \sum_{i \neq j} E[(X_i-\mu)^2(X_j-\mu)^2] \\
+&= n E[(X_1-\mu)^4] + n(n-1)\lambda^2
+\end{align*}
+其中在最后一个等号中我们使用了 $X_i$ 的独立性：
+\[
+E[(X_i-\mu)^2(X_j-\mu)^2] = E[(X_i-\mu)^2] E[(X_j-\mu)^2] = Var[X_i] Var[X_j] = \sigma^4 = \lambda^2
+\]
+将这些结果代入 $I_{X_1, \dots, X_n}(\lambda)$ 的公式中，我们得到
+\begin{align*}
+I_{X_1, \dots, X_n}(\lambda) &= \frac{n^2}{4\lambda^2} - \frac{n^2\lambda}{2\lambda^3} + \frac{1}{4\lambda^4} \left(n(n-1)\lambda^2 + n E[(X_1-\mu)^4]\right) \\
+&= \frac{n E[(X_1-\mu)^4] - n\lambda^2}{4\lambda^4}
+\end{align*}
+还需要计算 $E[(X_1-\mu)^4]$。定义
+\[
+Z = \left(\frac{X_1-\mu}{\sigma}\right)^2
+\]
+我们有 $Z \sim \chi^2_1$，因此 $E(Z) = 1$ 且 $Var(Z) = 2$。我们有
+\[
+E[Z^2] = E[Z]^2 + Var[Z] = 3
+\]
+\[
+E[(X_1-\mu)^4] = E[\sigma^4 Z^2] = 3\sigma^4 = 3\lambda^2
+\]
+因此，
+\begin{align*}
+I_{X_1, \dots, X_n}(\lambda) &= \frac{n 3\lambda^2 - n\lambda^2}{4\lambda^4} \\
+&= \frac{n}{2\lambda^2} = \frac{n}{2\sigma^4}
+\end{align*}
+
+(ii) 像前一部分一样写出 $\lambda = \sigma^2$，我们有
+\[
+f(x|\lambda) = \frac{1}{\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}}
+\]
+\[
+\frac{\partial}{\partial \lambda} f(x|\lambda) = -\frac{1}{2\lambda\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}} + \frac{(x-\mu)^2}{2\lambda^2\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}}
+\]
+\begin{align*}
+\int_{-\infty}^{\infty} \frac{\partial}{\partial \lambda} f(x|\lambda) dx &= \frac{-1}{2\lambda} \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}} dx + \frac{1}{2\lambda^2} \int_{-\infty}^{\infty} \frac{(x-\mu)^2}{\sqrt{2\pi\lambda}} e^{-\frac{(x-\mu)^2}{2\lambda}} dx \\
+&= \frac{-1}{2\lambda} \int_{-\infty}^{\infty} f(x|\lambda) dx + \frac{1}{2\lambda^2} \int_{-\infty}^{\infty} (x-\mu)^2 f(x|\lambda) dx \\
+&= \frac{-1}{2\lambda} + \frac{Var(X_1)}{2\lambda^2} \\
+&= 0
+\end{align*}
+其中最后一个等式来自 $Var(X_1) = \sigma^2 = \lambda$。因此，条件 $(*)$ 满足。
+
+(iii) 我们有
+\[
+L(X_1|\lambda) = \frac{1}{\sqrt{2\pi\lambda}} e^{-\frac{(X_1-\mu)^2}{2\lambda}}
+\]
+\[
+\log(L(X_1|\lambda)) = -\frac{1}{2} (\log(2\pi) + \log(\lambda)) - \frac{(X_1-\mu)^2}{2\lambda}
+\]
+\[
+\frac{\partial}{\partial \lambda} \log(L(X_1|\lambda)) = \frac{-1}{2\lambda} + \frac{(X_1-\mu)^2}{2\lambda^2}
+\]
+\[
+\frac{\partial^2}{\partial \lambda^2} \log(L(X_1|\lambda)) = \frac{1}{2\lambda^2} - \frac{(X_1-\mu)^2}{\lambda^3}
+\]
+根据备用公式，
+\begin{align*}
+I_{X_1}(\lambda) &= -E\left[\frac{\partial^2}{\partial \lambda^2} \log(L(X_1|\lambda))\right] \\
+&= -\frac{1}{2\lambda^2} + \frac{1}{\lambda^3} E[(X_1-\mu)^2] \\
+&= -\frac{1}{2\lambda^2} + \frac{\lambda}{\lambda^3} \\
+&= \frac{1}{2\lambda^2} = \frac{1}{2\sigma^4}
+\end{align*}
+根据可加性，
+\[
+I_{X_1, \dots, X_n}(\sigma^2) = n I_{X_1}(\sigma^2) = \frac{n}{2\sigma^4}
+\]
+\end{solution}
+
+\question
+Let $X_1, \dots, X_n$ be an iid random sample drawn from $\text{Poisson}(\lambda)$.
+(i) Compute the Fisher information $I_{X_1, \dots, X_n}(\lambda)$ using the definition of Fisher Information.
+(ii) Show that condition $(*)$ from is satisfied for the population PDF $f(x|\lambda)$.
+(iii) Compute $I_{X_1, \dots, X_n}(\lambda)$ using the alternative formula for Fisher information and additivity.
+
+\begin{solution}
+(i) 我们有
+\[
+f(x|\lambda) = \frac{e^{-\lambda}\lambda^x}{x!} \text{ for } x = 0, 1, \dots
+\]
+\[
+L(\lambda) = \frac{\lambda^{\sum_{i=1}^{n} X_i}e^{-n\lambda}}{X_1! \cdots X_n!}
+\]
+\[
+l(\lambda) = \left( \sum_{i=1}^{n} X_i \right) \log(\lambda) - n\lambda - \log\left( \prod_{i=1}^{n} X_i! \right)
+\]
+\[
+V(\lambda) = \frac{\sum_{i=1}^{n} X_i}{\lambda} - n
+\]
+根据定义，
+\begin{align*}
+I_{X_1, \dots, X_n}(\lambda) &= E[V(\lambda)^2] \\
+&= \frac{1}{\lambda^2} E\left[ \left( \sum_{i=1}^{n} X_i \right)^2 \right] - 2\frac{n}{\lambda} \sum_{i=1}^{n} E[X_i] + n^2 \\
+&= \frac{1}{\lambda^2} E[Y^2] - 2\frac{n^2}{\lambda} E[X_1] + n^2
+\end{align*}
+其中 $Y = \sum_{i=1}^{n} X_i \sim \text{Poisson}(n\lambda)$。回想对于 $Z \sim \text{Poisson}(\alpha)$，我们有 $E(Z) = \text{Var}(Z) = \alpha$。我们有
+\begin{align*}
+E(X_1) &= \lambda \\
+E(Y^2) &= E(Y)^2 + \text{Var}(Y) = n^2\lambda^2 + n\lambda
+\end{align*}
+因此，
+\[
+I_{X_1, \dots, X_n}(\lambda) = \frac{n^2\lambda^2 + n\lambda}{\lambda^2} - 2\frac{n^2}{\lambda}\lambda + n^2 = \frac{n}{\lambda}
+\]
+
+(ii) 我们有
+\begin{align*}
+f(x|\lambda) &= \frac{e^{-\lambda}\lambda^x}{x!} \text{ for } x = 0, 1, \dots \\
+\frac{\partial}{\partial \lambda} f(x|\lambda) &= \frac{-e^{-\lambda}\lambda^x + xe^{-\lambda}\lambda^{x-1}}{x!} \\
+&= -f(x|\lambda) + f(x-1|\lambda)
+\end{align*}
+\begin{align*}
+\sum_{x=0}^{\infty} \frac{\partial}{\partial \lambda} f(x|\lambda) &= -\sum_{x=0}^{\infty} f(x|\lambda) + \sum_{x=0}^{\infty} f(x-1|\lambda) \\
+&= -\sum_{x=0}^{\infty} f(x|\lambda) + \sum_{y=0}^{\infty} f(y|\lambda) \text{ (这里 } f(-1|\lambda) = 0 \text{ 且 } y = x - 1) \\
+&= 0
+\end{align*}
+因此，函数 $f(x|\lambda)$ 满足条件 $(*)$。
+
+(iii) 我们有
+\begin{align*}
+L(X_1|\lambda) &= \frac{e^{-\lambda}\lambda^{X_1}}{X_1!} \\
+\log(L(X_1|\lambda)) &= -\lambda + X_1 \log(\lambda) - \log(X_1!) \\
+\frac{\partial}{\partial \lambda} \log(L(X_1|\lambda)) &= -1 + \frac{X_1}{\lambda} \\
+\frac{\partial^2}{\partial \lambda^2} \log(L(X_1|\lambda)) &= -\frac{X_1}{\lambda^2}
+\end{align*}
+根据替代公式，
+\[
+I_{X_1}(\lambda) = -E\left[ -\frac{X_1}{\lambda^2} \right] = \frac{E[X_1]}{\lambda^2} = \frac{1}{\lambda}
+\]
+根据可加性，
+\[
+I_{X_1, \dots, X_n}(\lambda) = n I_{X_1}(\lambda) = \frac{n}{\lambda}
+\]
+\end{solution}
+
+\question 设 $X_1, \dots, X_n$ 是从 PDF 为 $f(x|\alpha) = \frac{\alpha}{x^2}$ ($x \geq \alpha$) 且否则 $f(x|\alpha) = 0$ 的分布中抽取的 iid 随机样本。这里 $\alpha \in (0, \infty)$ 是未知参数。
+
+(i) 使用 Fisher 信息量的定义计算 $I_{X_1, \dots, X_n}(\alpha)$。
+
+(ii) 表明该总体 PDF $f(x|\alpha)$ 不满足条件 $(*)$。
+
+(iii) 表明使用 Fisher 信息量的替代公式和加性性质会得到 $I_{X_1, \dots, X_n}(\alpha)$ 的错误结果。
+
+\begin{solution}
+(i) 我们有
+\begin{align*}
+f(x|\alpha) &= \frac{\alpha}{x^2}, \quad x \geq \alpha, \\
+L(\alpha) &= \frac{\alpha^n}{X_1^2 \cdots X_n^2}, \quad \min(X_1, \dots, X_n) \geq \alpha, \\
+l(\alpha) &= n \log(\alpha) - \log\left( \prod_{i=1}^n X_i^2 \right), \quad \min(X_1, \dots, X_n) \geq \alpha, \\
+V(\alpha) &= \frac{n}{\alpha}, \quad \min(X_1, \dots, X_n) \geq \alpha.
+\end{align*}
+根据定义，
+\[
+I_{X_1, \dots, X_n}(\alpha) = E[V(\alpha)^2] = E\left[ \frac{n^2}{\alpha^2} \right] = \frac{n^2}{\alpha^2}.
+\]
+
+(ii) 我们有
+\begin{align*}
+f(x|\alpha) &= \frac{\alpha}{x^2}, \quad x \geq \alpha, \\
+\frac{\partial}{\partial \alpha} f(x|\alpha) &= \frac{1}{x^2}, \quad x \geq \alpha, \\
+\int_{-\infty}^{\infty} \frac{\partial}{\partial \alpha} f(x|\alpha) \, dx &= \int_{\alpha}^{\infty} \frac{dx}{x^2} \\
+&= \left[ -x^{-1} \right]_{\alpha}^{\infty} \\
+&= \frac{1}{\alpha} \neq 0.
+\end{align*}
+因此，函数 $f(x|\alpha)$ 不满足条件 $(*)$。
+
+(iii) 对于 $X_1 \geq \alpha$，我们有
+\begin{align*}
+L(X_1|\alpha) &= \frac{\alpha}{X_1^2}, \\
+\log(L(X_1|\alpha)) &= \log(\alpha) - \log(X_1^2), \\
+\frac{\partial}{\partial \alpha} \log(L(X_1|\alpha)) &= \frac{1}{\alpha}, \\
+\frac{\partial^2}{\partial \alpha^2} \log(L(X_1|\alpha)) &= -\frac{1}{\alpha^2}.
+\end{align*}
+通过替代公式，我们得到
+\[
+I_{X_1}(\alpha) = -E\left[ \frac{\partial^2}{\partial \alpha^2} \log(L(X_1|\alpha)) \right] = -E\left[ -\frac{1}{\alpha^2} \right] = \frac{1}{\alpha^2}.
+\]
+如果我们使用加性性质（这里是错误的，因为条件 $(*)$ 不成立），我们得到
+\[
+I_{X_1, \dots, X_n}(\alpha) = n I_{X_1}(\alpha) = \frac{n}{\alpha^2}.
+\]
+该值与第 (i) 部分中获得的正确值不同。
+\end{solution}
+
+\question 
+设 $X_1, \dots, X_n$ 是来自具有如下概率密度函数（PDF）分布的独立同分布随机样本
+\[
+f(x|\theta) = \frac{1}{2\theta}e^{-\frac{|x|}{\theta}}
+\]
+对于所有 $x \in \mathbb{R}$，其中 $\theta \in (0, \infty)$ 是未知参数。
+\begin{parts}
+    \part 求 $\theta$ 的矩估计量（MME）。
+    \begin{solution}
+        回顾如果一个函数 $f: \mathbb{R} \to \mathbb{R}$ 满足对于所有 $x \in \mathbb{R}$ 都有 $f(-x) = -f(x)$，则称该函数为奇函数。
+        我们利用如下微积分事实：如果 $f$ 是一个奇函数且广义积分 $\int_{-\infty}^{\infty} f(x) \,dx$ 存在，那么 $\int_{-\infty}^{\infty} f(x) \,dx = 0$。注意到
+        \[
+        \frac{x}{2\theta}e^{-\frac{|x|}{\theta}}
+        \]
+        是一个奇函数。因此
+        \[
+        \mu_1 = E[X_1] = \int_{-\infty}^{\infty} \frac{x}{2\theta} e^{-\frac{|x|}{\theta}} \,dx = 0
+        \]
+        我们继续计算 $\mu_2 = E[X_1^2]$
+        \begin{align*}
+            \mu_2 &= \int_{-\infty}^{\infty} \frac{x^2}{2\theta} e^{-\frac{|x|}{\theta}} \,dx \\
+            &= \int_{-\infty}^{0} \frac{x^2}{2\theta} e^{\frac{x}{\theta}} \,dx + \int_{0}^{\infty} \frac{x^2}{2\theta} e^{-\frac{x}{\theta}} \,dx \\
+            &= \int_{0}^{\infty} \frac{y^2}{2\theta} e^{-\frac{y}{\theta}} \,dy + \int_{0}^{\infty} \frac{x^2}{2\theta} e^{-\frac{x}{\theta}} \,dx \quad (y = -x) \\
+            &= 2 \int_{0}^{\infty} \frac{x^2}{2\theta} e^{-\frac{x}{\theta}} \,dx \\
+            &= -x^2 e^{-\frac{x}{\theta}} \Big|_{0}^{\infty} + 2 \int_{0}^{\infty} x e^{-\frac{x}{\theta}} \,dx \quad (\text{分部积分}) \\
+            &= \left( -2\theta x e^{-\frac{x}{\theta}} \right) \Big|_{0}^{\infty} + 2\theta \int_{0}^{\infty} e^{-\frac{x}{\theta}} \,dx \quad (\text{分部积分且} \lim_{x \to \infty} x^2 e^{-\frac{x}{\theta}} = 0) \\
+            &= -2\theta^2 e^{-\frac{x}{\theta}} \Big|_{0}^{\infty} \quad (\text{注意} \lim_{x \to \infty} x e^{-\frac{x}{\theta}} = 0) \\
+            &= 2\theta^2
+        \end{align*}
+        因此，$\theta = \sqrt{\frac{1}{2}\mu_2}$，且 $\theta$ 的矩估计量为
+        \[
+        \tilde{\theta} = \sqrt{\frac{1}{2}S_2} = \sqrt{\frac{1}{2n} \sum_{i=1}^{n} X_i^2}
+        \]
+    \end{solution}
+
+    \part 求 $\theta$ 的极大似然估计量（MLE）。
+    \begin{solution}
+        我们有
+        \[
+        L(\theta) = \prod_{i=1}^{n} f(X_i|\theta) = \left( \frac{1}{2\theta} \right)^n e^{-\frac{1}{\theta} \sum_{i=1}^{n} |X_i|}
+        \]
+        若 $\sum_{i=1}^{n} |X_i| > 0$，此函数满足标准条件：正定性和可微性是显而易见的。此外，$\lim_{\theta \to 0^+} L(\theta) = 0$，因为 $L(\theta)$ 中的指数函数在 $\theta \to 0^+$ 时趋于零，且其速度快于 $\theta$ 的幂次。我们还有 $\lim_{\theta \to \infty} L(\theta) = 0$，因为 $\lim_{\theta \to \infty} \left( \frac{1}{2\theta} \right)^n = 0$ 且 $e^{-\frac{1}{\theta} \sum_{i=1}^{n} |X_i|} \le 1$。如果 $\sum_{i=1}^{n} |X_i| = 0$，则 $L(\theta) = \left( \frac{1}{2\theta} \right)^n$ 在 $\theta \in (0, \infty)$ 上没有最大值点。但这种情况发生的概率为零，因此我们忽略它。
+        由于满足标准条件，我们应用常规步骤寻找极大似然估计量：
+        \[
+        \log(L(\theta)) = -n(\log(2) + \log(\theta)) - \frac{1}{\theta} \sum_{i=1}^{n} |X_i|
+        \]
+        \[
+        \frac{d \log(L(\theta))}{d \theta} = -\frac{n}{\theta} + \frac{1}{\theta^2} \sum_{i=1}^{n} |X_i|
+        \]
+        \[
+        \frac{n}{\hat{\theta}} = \frac{1}{\hat{\theta}^2} \sum_{i=1}^{n} |X_i| \quad (\hat{\theta} \text{ 是极大似然估计量})
+        \]
+        \[
+        \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} |X_i|
+        \]
+    \end{solution}
+
+    \part 证明 $\theta$ 的极大似然估计量是无偏的且有效的。
+    \begin{solution}
+        首先，我们证明 $\hat{\theta}$ 是无偏的：
+        \begin{align*}
+            E[\hat{\theta}] &= \frac{1}{n} \sum_{i=1}^{n} E[|X_i|] \\
+            &= E[|X_1|] \\
+            &= \int_{-\infty}^{\infty} \frac{|x|}{2\theta} e^{-\frac{|x|}{\theta}} \,dx \\
+            &= \int_{0}^{\infty} \frac{x}{\theta} e^{-\frac{x}{\theta}} \,dx \\
+            &= -x e^{-\frac{x}{\theta}} \Big|_{0}^{\infty} + \int_{0}^{\infty} e^{-\frac{x}{\theta}} \,dx \quad (\text{分部积分}) \\
+            &= \int_{0}^{\infty} e^{-\frac{x}{\theta}} \,dx \\
+            &= -\theta e^{-\frac{x}{\theta}} \Big|_{0}^{\infty} \\
+            &= \theta
+        \end{align*}
+        为了证明 $\hat{\theta}$ 是有效的，只需证明
+        \[
+        \text{Var}(\hat{\theta}) = \frac{1}{n I_{X_1}(\theta)}
+        \]
+        我们计算 $\text{Var}(\hat{\theta})$：
+        \begin{align*}
+            \text{Var}(\hat{\theta}) &= \text{Var}\left( \frac{1}{n} \sum_{i=1}^{n} |X_i| \right) \\
+            &= \frac{1}{n^2} \sum_{i=1}^{n} \text{Var}(|X_i|) \\
+            &= \frac{1}{n} \text{Var}(|X_1|) \\
+            &= \frac{1}{n} \left(E[X_1^2] - E[|X_1|]^2\right) \\
+            &= \frac{1}{n} (\mu_2 - \theta^2) \quad (E[|X_1|] = E[\hat{\theta}] = \theta) \\
+            &= \frac{\theta^2}{n} \quad (\mu_2 = 2\theta^2 \text{ 由第一部分得出})
+        \end{align*}
+        接下来，我们根据定义计算 $I_{X_1}(\theta)$
+        \begin{align*}
+            L(X_1|\theta) &= \frac{1}{2\theta} e^{-\frac{|X_1|}{\theta}} \\
+            \log(L(X_1|\theta)) &= -\log(2) - \log(\theta) - \frac{|X_1|}{\theta} \\
+            \frac{d \log(L(X_1|\theta))}{d \theta} &= -\frac{1}{\theta} + \frac{|X_1|}{\theta^2} \\
+            I_{X_1}(\theta) = E\left[ \left( \frac{d \log(L(X_1|\theta))}{d \theta} \right)^2 \right] &= E\left[ \frac{1}{\theta^2} - \frac{2}{\theta^3}|X_1| + \frac{1}{\theta^4} X_1^2 \right] \\
+            &= \frac{1}{\theta^2} - \frac{2}{\theta^3} E[|X_1|] + \frac{1}{\theta^4} E[X_1^2] \\
+            &= \frac{1}{\theta^2} - \frac{2}{\theta^3} \theta + \frac{1}{\theta^4} 2\theta^2 \\
+            &= \frac{1}{\theta^2}
+        \end{align*}
+        因此，
+        \[
+        \frac{1}{n I_{X_1}(\theta)} = \frac{\theta^2}{n} = \text{Var}(\hat{\theta})
+        \]
+        证明了估计量 $\hat{\theta}$ 的有效性。
+    \end{solution}
+
+    \part 计算 $\theta$ 的极大似然估计量的渐近方差。
+    \begin{solution}
+        $\hat{\theta}$ 的渐近方差为
+        \[
+        \frac{1}{n I_{X_1}(\theta)} = \frac{\theta^2}{n}
+        \]
+    \end{solution}
+\end{parts}
+
+\question 
+设 $X_1, \dots, X_n$ 是来自 $N(\mu, \sigma^2)$ 的独立同分布随机样本，其中 $\mu$ 和 $\sigma^2$ 均为未知参数。
+\begin{parts}
+    \part 证明 $\sigma^2$ 的极大似然估计量（MLE）为
+    \[
+    \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2
+    \]
+    其中 $\bar{X}$ 表示样本均值。
+    \begin{solution}
+        令 $\theta = \sigma^2$。$X_1 \sim N(\mu, \sigma^2)$ 的概率密度函数（PDF）为
+        \[
+        f(x|\mu, \theta) = \frac{1}{\sqrt{2\pi\theta}}e^{-\frac{(x-\mu)^2}{2\theta}}
+        \]
+        我们有
+        \[
+        L(\mu, \theta) = (2\pi\theta)^{-n/2}e^{-\sum_{i=1}^{n} \frac{(X_i-\mu)^2}{2\theta}}
+        \]
+        这里有两个未知参数，需要解决一个二维优化问题。由于我们在讲座中尚未涉及此类问题，我们仅利用如下事实：对于该似然函数，$(\mu, \sigma^2)$ 成为极大值点的充分必要条件是 $\log L(\mu, \theta)$ 对 $\mu$ 和 $\sigma^2$ 的偏导数在 $(\hat{\mu}, \hat{\sigma}^2)$ 处均为零（这一事实源于数学优化理论，此处不予证明，也不作考核要求）。
+        \begin{align*}
+            \log(L(\mu, \theta)) &= \frac{-n}{2} (\log(2\pi) + \log(\theta)) - \sum_{i=1}^{n} \frac{(X_i - \mu)^2}{2\theta} \\
+            \frac{\partial \log(L(\mu, \theta))}{\partial \theta} &= -\frac{n}{2\theta} + \frac{1}{2\theta^2} \sum_{i=1}^{n} (X_i - \mu)^2 \\
+            \frac{\partial \log(L(\mu, \theta))}{\partial \mu} &= \frac{1}{\theta} \sum_{i=1}^{n} (X_i - \mu)
+        \end{align*}
+        $\mu$ 和 $\theta$ 的极大似然估计量 $\hat{\mu}$ 和 $\hat{\theta}$ 满足
+        \[
+        \frac{\partial \log(L(\mu, \theta))}{\partial \mu} (\hat{\mu}, \hat{\theta}) = \frac{\partial \log(L(\mu, \theta))}{\partial \theta} (\hat{\mu}, \hat{\theta}) = 0
+        \]
+        因此，
+        \[
+        \frac{1}{\hat{\theta}} \sum_{i=1}^{n} (X_i - \hat{\mu}) = 0 \quad \text{且} \quad -\frac{n}{2\hat{\theta}} + \frac{1}{2\hat{\theta}^2} \sum_{i=1}^{n} (X_i - \hat{\mu})^2 = 0
+        \]
+        这意味着
+        \[
+        \hat{\mu} = \bar{X} \quad \text{且} \quad \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2
+        \]
+    \end{solution}
+
+    \part 令 $S^2$ 表示样本方差。证明 $\hat{\theta}$ 和 $S^2$ 都不是 $\sigma^2$ 的有效估计量。
+    \begin{solution}
+        根据样本方差的定义，
+        \[
+        S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2 = \frac{n}{n-1}\hat{\theta}
+        \]
+        我们知道 $S^2$ 是 $\sigma^2$ 的无偏估计量，即 $E[S^2] = \sigma^2$。因此，
+        \[
+        E[\hat{\theta}] = E\left[ \frac{n-1}{n} S^2 \right] = \frac{n-1}{n}\sigma^2
+        \]
+        这证明了 $\hat{\theta}$ 不是 $\sigma^2$ 的有效估计量（因为它是有偏的）。
+        为了证明 $S^2$ 是无效的，我们需要证明 $\text{Var}(S^2) \neq 1/(n I_{X_1}(\sigma^2))$。根据讲座内容，
+        \[
+        \frac{(n-1)S^2}{\sigma^2} \sim \chi_{n-1}^2 \sim \text{Gamma}\left( \frac{n-1}{2}, 2 \right)
+        \]
+        我们得到 $\text{Var}((n-1)S^2/\sigma^2) = 2(n-1)$，从而
+        \[
+        \text{Var}(S^2) = \frac{2\sigma^4}{n-1} \tag{1}
+        \]
+        同前文一样令 $\theta = \sigma^2$，我们有
+        \begin{align*}
+            L(X_1|\theta) &= (2\pi\theta)^{-1/2} e^{-\frac{(X_1-\mu)^2}{2\theta}} \\
+            \log(L(X_1|\theta)) &= \frac{-1}{2} (\log(2\pi) + \log(\theta)) - \frac{(X_1 - \mu)^2}{2\theta} \\
+            \frac{d \log(L(X_1|\theta))}{d \theta} &= -\frac{1}{2\theta} + \frac{(X_1 - \mu)^2}{2\theta^2} \\
+            I_{X_1}(\theta) = E\left[ \left( \frac{d \log(L(X_1|\theta))}{d \theta} \right)^2 \right] &= \frac{1}{4\theta^2} - \frac{1}{2\theta^3} E[(X_1 - \mu)^2] + \frac{1}{4\theta^4} E[(X_1 - \mu)^4] \\
+            &= \frac{1}{4\theta^2} - \frac{1}{2\theta^3}\theta + \frac{1}{4\theta^4} 3\theta^2 \\
+            &= \frac{1}{2\theta^2}
+        \end{align*}
+        其中倒数第二步等式中使用的 $E[(X_1 - \mu)^4] = 3\theta^2$ 源自辅导课 8 问题 1.b.i 的解答。我们得到
+        \[
+        \frac{1}{n I_{X_1}(\theta)} = \frac{2\theta^2}{n} = \frac{2\sigma^4}{n} \tag{2}
+        \]
+        等式 (1) 和 (2) 表明
+        \[
+        \text{Var}(S^2) \neq \frac{1}{n I_{X_1}(\sigma^2)}
+        \]
+        证明了 $S^2$ 不是 $\sigma^2$ 的有效估计量。
+    \end{solution}
+
+    \part 关于 $\sigma^2$ 的无偏估计量，我们从 Cramer-Rao 界中能得到什么信息？（你可以不加证明地使用 Cramer-Rao 正则性条件已满足这一事实）
+    \begin{solution}
+        设 $T$ 是 $\sigma^2$ 的无偏估计量。根据 Cramer-Rao 界，
+        \[
+        \text{Var}(T) \ge \frac{1}{n I_{X_1}(\sigma^2)} = \frac{2\sigma^4}{n}
+        \]
+        通过第 (ii) 部分我们知道，$S^2$ 是 $\sigma^2$ 的无偏估计量且 $\text{Var}(S^2) = \frac{2\sigma^4}{n-1}$。当 $n$ 较大时，该值接近 $\frac{2\sigma^4}{n}$。
+    \end{solution}
+\end{parts}
+
+\question 
+设 $X_1, \dots, X_n$ 是来自 $N(\mu, \sigma^2)$ 的独立同分布随机样本。给出如下观测值 ($n = 10$)：
+\[
+8.28, 13.6, 12.1, 9.97, 6.97, 6.65, 11.7, 17.0, 6.36, 19.9
+\]
+\begin{parts}
+    \part 假设 $\mu$ 和 $\sigma^2$ 均未知。根据这些观测值计算 $\mu$ 的 $95\%$ 置信区间。
+    \begin{solution}
+        我们知道
+        \[
+        T = \frac{\sqrt{n}(\bar{X} - \mu)}{S} \sim t_{n-1}
+        \]
+        对于每个 $\alpha \in (0, 1)$，令 $T_\alpha$ 表示满足 $P(T > T_\alpha) = \alpha$ 的实数。
+        我们有
+        \[
+        P(-T_{0.025} \le T \le T_{0.025}) = 1 - 2P(T \ge T_{0.025}) = 0.95
+        \]
+        接下来，我们将 $-T_{0.025} \le \frac{\sqrt{n}(\bar{X} - \mu)}{S} \le T_{0.025}$ 表示为关于 $\mu_0$ 的条件：
+        \begin{align*}
+            -T_{0.025} &\le \frac{\sqrt{n}(\bar{X} - \mu_0)}{S} \le T_{0.025} \\
+            \bar{X} - \frac{T_{0.025}S}{\sqrt{n}} &\le \mu_0 \le \bar{X} + \frac{T_{0.025}S}{\sqrt{n}}
+        \end{align*}
+        对于给定的样本，我们有 $n = 10$，$\bar{X} = 11.253$，$S \approx 4.573$ 且 $T_{0.025} \approx 2.262$。$\mu$ 的 $95\%$ 置信区间为 $[7.982, 14.524]$。
+    \end{solution}
+
+    \part 假设 $\mu$ 和 $\sigma^2$ 均未知。根据这些观测值计算 $\sigma^2$ 的 $95\%$ 置信区间。
+    \begin{solution}
+        我们知道
+        \[
+        Z = \frac{(n-1)S^2}{\sigma^2} \sim \chi_{n-1}^2
+        \]
+        对于每个 $\alpha \in (0, 1)$，令 $\chi_{n-1, \alpha}^2$ 表示满足 $P(Z > \chi_{n-1, \alpha}^2) = \alpha$ 的实数。
+        我们有
+        \begin{align*}
+            P(\chi_{9, 0.975}^2 \le Z \le \chi_{9, 0.025}^2) &= P(Z > \chi_{9, 0.975}^2) - P(Z > \chi_{9, 0.025}^2) \\
+            &= 0.975 - 0.025 \\
+            &= 0.95
+        \end{align*}
+        接下来，我们将 $\chi_{9, 0.975}^2 \le Z \le \chi_{9, 0.025}^2$ 表示为关于 $\sigma_0^2$ 的条件：
+        \begin{align*}
+            \chi_{9, 0.975}^2 &\le \frac{(n-1)S^2}{\sigma_0^2} \le \chi_{9, 0.025}^2 \\
+            \frac{(n-1)S^2}{\chi_{9, 0.025}^2} &\le \sigma_0^2 \le \frac{(n-1)S^2}{\chi_{9, 0.975}^2}
+        \end{align*}
+        对于给定的样本，我们有 $n = 10$，$S^2 \approx 20.909$，$\chi_{9, 0.975}^2 \approx 2.700$ 且 $\chi_{9, 0.025}^2 \approx 19.023$。$\sigma^2$ 的 $95\%$ 置信区间为 $[9.892, 69.697]$。
+    \end{solution}
+
+    \part 现在假设已知 $\sigma^2 = 25$。使用枢轴量 $\sqrt{n}(\bar{X} - \mu)/\sigma$ 根据给定的观测值计算 $\mu$ 的 $95\%$ 置信区间。这与第 (i) 部分相比如何？
+    \begin{solution}
+        我们知道
+        \[
+        Z = \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \sim N(0, 1)
+        \]
+        对于每个 $\alpha \in (0, 1)$，令 $z_\alpha$ 表示具有如下性质的整数
+        \[
+        P(Z > z_\alpha) = \alpha
+        \]
+        我们有
+        \[
+        P(-z_{0.025} \le Z \le z_{0.025}) = 0.95
+        \]
+        接下来，我们将 $-z_{0.025} \le Z \le z_{0.025}$ 表示为关于 $\mu_0$ 的条件：
+        \begin{align*}
+            -z_{0.025} &\le \frac{\sqrt{n}(\bar{X} - \mu_0)}{\sigma} \le z_{0.025} \\
+            \bar{X} - \frac{z_{0.025}\sigma}{\sqrt{n}} &\le \mu_0 \le \bar{X} + \frac{z_{0.025}\sigma}{\sqrt{n}}
+        \end{align*}
+        对于给定的样本，我们有 $n = 10$，$\bar{X} = 11.253$，$z_{0.025} \approx 1.96$ 且 $\sigma = 5$。$\mu$ 的 $95\%$ 置信区间为 $[8.154, 14.352]$。这个区间比第 (i) 部分得到的区间更短。因此，如果方差已知，相比于方差未知的情况，我们能获得更精确的均值估计量。
+    \end{solution}
+
+    \part 假设已知 $\mu = 10$。使用枢轴量 $\sqrt{n}(\bar{X} - \mu)/\sigma$ 根据给定的观测值计算 $\sigma^2$ 的 $95\%$ 置信区间。这与第 (ii) 部分相比如何？
+    \begin{solution}
+        与第 (iii) 部分类似，我们得到条件
+        \[
+        -z_{0.025} \le \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma_0} \le z_{0.025}
+        \]
+        这等价于
+        \begin{align*}
+            \left| \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma_0} \right| &\le z_{0.025} \\
+            \sigma_0^2 &\ge \frac{n(\bar{X} - \mu)^2}{z_{0.025}^2}
+        \end{align*}
+        对于给定的样本，我们有 $n = 10$，$\bar{X} = 11.253$，$\mu = 10$ 且 $z_{0.025} \approx 1.96$。$\sigma^2$ 的 $95\%$ 置信区间为 $[4.087, \infty)$。这个区间比第 (ii) 部分得到的区间大得多，也就是说，我们得到的 $\sigma^2$ 估计精确度远低于第 (ii) 部分。原因在于枢轴量 $\frac{\sqrt{n}(\bar{X} - \mu)}{\sigma}$ 仅基于样本均值，而样本均值包含的关于 $\sigma^2$ 的信息非常少。
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 
@@ -5392,6 +7217,267 @@ M_Q(t) = \left( \frac{1}{2} \int_0^\infty y^2 e^{y(t-1)} dy \right)^n
 \separator
 \vspace{1pt}
 \begin{questions}
+    \question 现拟进行一项假设检验，以调查一座火山两次连续喷发之间的平均时间是等于 100 年还是大于 100 年。已知以下数据 $x_1, \dots, x_{10}$：
+\[
+120, 88, 240, 130, 95, 200, 150, 103, 101, 120
+\]
+（其中 $x_i$ 是第 $i$ 次与第 $i+1$ 次喷发之间的时间，单位为年）。请建立合适的原假设 $H_0$，并进行显著性水平为 0.05 的 Fisher 型检验。
+
+\begin{solution}
+罕见事件发生之前的时间可以用指数分布来建模。因此，我们假设 $X_1, \dots, X_{10}$ 独立同分布于 $\text{Exp}(\lambda)$ 作为统计模型。根据课程内容，我们有 $E[X_1] = 1/\lambda$，即火山两次连续喷发之间的平均时间。因此，原假设为 $H_0 : 1/\lambda = 100$，备择假设为 $H_1 : 1/\lambda > 100$。根据课程（$\text{Exp}(\lambda)$ 的置信区间），我们有 $2\lambda \sum_{i=1}^{10} X_i \sim \chi_{20}^2$。从观测数据中，我们得到 $\bar{x} = 134.7$。因此，该测试的 p 值为
+\begin{align*}
+P(\bar{X} > 134.7 | H_0) &= P\left(\bar{X} > 134.7 \middle| \lambda = \frac{1}{100}\right) \\
+&= P\left(\frac{1}{10} \sum_{i=1}^{10} X_i > 134.7 \middle| \lambda = \frac{1}{100}\right) \\
+&= P\left(\frac{2}{100} \sum_{i=1}^{10} X_i > \frac{2}{10} \cdot 134.7 \middle| \lambda = \frac{1}{100}\right) \\
+&= P\left(2\lambda \sum_{i=1}^{10} X_i > 26.94 \middle| \lambda = \frac{1}{100}\right) \\
+&= 1 - F(26.94),
+\end{align*}
+其中 $F$ 是 $\chi_{20}^2$ 的累积分布函数（CDF）。使用计算器或软件，我们发现
+\[
+P(\bar{X} > 134.7 | H_0) \approx 0.137.
+\]
+由于该 p 值大于显著性水平，因此不拒绝原假设。
+\end{solution}
+
+\question 设 $X_1, \dots, X_4 \sim \text{Bernoulli}(p)$ 为独立同分布随机变量（其概率质量函数 PMF 为 $f(0) = 1 - p, f(1) = p$，其余情况 $f(x) = 0$）。
+\begin{parts}
+\part 检验 $H_0 : p = \frac{1}{2}$ 对抗 $H_1 : p \neq \frac{1}{2}$
+\part 检验 $H_0 : p = \frac{1}{2}$ 对抗 $H_1 : p < \frac{1}{2}$
+\end{parts}
+基于测试统计量 $T = X_1 + X_2 + X_3 + X_4$ 和观测值 $0, 0, 0, 1$，计算测试 (a) 和 (b) 的 p 值。
+
+提示：测试 (a)：$|T - 2|$ 的较大值是反对 $H_0$ 的证据。测试 (b)：$T$ 的较小值是反对 $H_0$ 的证据。
+
+\begin{solution}
+(a) 测试统计量的观测值为 $t = T(x_1, \dots, x_4) = 0 + 0 + 0 + 1 = 1$，因此 $|t - 2| = 1$。由于 $|T - 2|$ 的较大值是反对 $H_0$ 的证据，对于 $T$ 来说，至少与给定观测值一样极端意味着 $|T - 2| \ge 1$。回想一下，p 值是在假设 $H_0$ 为真的情况下计算的。因此，假设 $p = 1/2$，我们得到 p 值为
+\[
+P(|T - 2| \ge 1) = P(T = 0) + P(T = 1) + P(T = 3) + P(T = 4) = \frac{1}{16} + \frac{4}{16} + \frac{4}{16} + \frac{1}{16} = \frac{5}{8}.
+\]
+
+(b) 类似地，我们发现 p 值为
+\[
+P(T \le 1) = P(T = 0) + P(T = 1) = \frac{1}{16} + \frac{4}{16} = \frac{5}{16}.
+\]
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $N(\mu, \sigma^2)$，其中 $\mu$ 和 $\sigma$ 未知。基于以下数据，针对 $H_0 : \mu = 130$ 进行显著性水平为 0.05 的 Fisher 型检验：
+\[
+112.86, 102.13, 155.48, 164.75, 115.48, 114.03, 162.82, 113.75, 155.43, 80.78
+\]
+
+\begin{solution}
+我们利用课程中的事实：$\frac{\sqrt{n}(\bar{X} - \mu)}{S} \sim t_{n-1}$。由于 $n = 10$，我们有 $\frac{\sqrt{10}(\bar{X} - \mu)}{S} \sim t_9$，因此
+\[
+T = \frac{\sqrt{10}(\bar{X} - 130)}{S} \sim t_9
+\]
+在 $H_0$ 条件下。注意在 $H_0$ 下 $E[T] = 0$，因为 $t_9$ 的期望值为 0。因此 $|T|$ 的较大值是反对 $H_0$ 的证据，该测试的 p 值为
+\[
+P(|T| > |t|),
+\]
+其中 $t$ 是 $T$ 的观测值。根据给定数据 $x_1 = 112.86, \dots, x_{10} = 80.78$，我们得到
+\[
+\bar{x} = \frac{1}{10} \sum_{i=1}^{10} x_i = 127.751,
+\]
+\[
+s^2 = \frac{1}{9} \sum_{i=1}^{10} (x_i - \bar{x})^2 \approx 861.457,
+\]
+\[
+s = \sqrt{s^2} \approx 29.351,
+\]
+\[
+t = \frac{\sqrt{10}(127.751 - 130)}{s} \approx -0.242.
+\]
+因此
+\[
+P(|T| > |t|) = P(|T| > 0.242) = 2F(-0.242),
+\]
+其中 $F$ 是 $t_9$ 的累积分布函数。使用计算器或软件，我们发现
+\[
+P(|T| > |t|) \approx 2 \cdot 0.407 = 0.814.
+\]
+不拒绝原假设。
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $N(\mu, 1000)$，其中 $\mu$ 未知。基于第 5 题给出的数据，针对 $H_0 : \mu = 130$ 进行显著性水平为 0.05 的 Fisher 型检验。
+
+\begin{solution}
+注意 $X_1 \sim N(\mu, \sigma^2)$，其中 $\sigma = 10\sqrt{10}$。这里我们使用标准化样本均值
+\[
+Z = \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} = \frac{\sqrt{10}(\bar{X} - \mu)}{\sqrt{1000}} = \frac{\bar{X} - \mu}{10} \sim N(0, 1)
+\]
+作为测试统计量。注意在 $H_0$ 下 $Z = \frac{\bar{X} - 130}{10}$，且 $Z$ 的观测值为
+\[
+z = \frac{127.751 - 130}{10} \approx -0.225
+\]
+因此该测试的 p 值为
+\[
+P(|Z| > |z|) \approx 2\Phi(-0.225) \approx 0.822.
+\]
+不拒绝原假设。
+\end{solution}
+
+\question 求第 5 题和第 6 题中各项检验的临界值。
+
+\begin{solution}
+回想一下测试的显著性水平是 0.05。由于总体分布是连续的，问题 5 中测试的临界值 $t_{0.05}$ 满足
+\[
+0.05 = P(|T| > t_{0.05}) = 2F(-t_{0.05}),
+\]
+其中 $F$ 是 $t_9$ 的累积分布函数。因此 $F(-t_{0.05}) = 0.025$。使用计算器或软件，我们发现 $-t_{0.05} \approx -2.262$，即 $t_{0.05} \approx 2.262$。因此，当且仅当 $T$ 的观测值 $t$ 满足 $|t| > 2.262$ 时，拒绝 $H_0$。
+
+类似地，问题 6 中测试的临界值 $z_{0.05}$ 满足
+\[
+0.05 = P(|Z| > z_{0.05}) = 2\Phi(-z_{0.05}),
+\]
+从而 $\Phi(-z_{0.05}) = 0.025$。因此 $z_{0.05} \approx 1.96$，当且仅当 $Z$ 的观测值 $z$ 满足 $|z| > 1.96$ 时，拒绝 $H_0$。
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $N(\mu, 1)$。基于 $X_1, \dots, X_{10}$，求针对以下假设、显著性水平为 0.05 的最大功效检验（Most Powerful Test）：
+\[
+H_0 : \mu = 10 \quad \text{对抗} \quad H_1 : \mu = 20
+\]
+
+\begin{solution}
+这是内曼-皮尔逊引理（Neyman-Pearson Lemma）的典型应用。回想一下，$N(\mu, \sigma^2)$ 的概率密度函数（PDF）为
+\[
+\frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+\]
+根据假设 $\sigma^2 = 1$，则总体密度函数为
+\[
+f(\mu) = \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2}}
+\]
+似然函数为
+\begin{align*}
+L(X_1, \dots, X_n | \mu) &= \prod_{i=1}^n \left( \frac{1}{\sqrt{2\pi}} e^{-\frac{(X_i-\mu)^2}{2}} \right) \\
+&= (2\pi)^{-n/2} e^{-\frac{1}{2} \sum_{i=1}^n (X_i-\mu)^2}.
+\end{align*}
+因此，似然比为
+\begin{align*}
+\Lambda(x_1, \dots, x_n) &= \frac{L(x_1, \dots, x_n | 10)}{L(x_1, \dots, x_n | 20)} \\
+&= \frac{(2\pi)^{-n/2} e^{-\frac{1}{2} \sum_{i=1}^n (x_i-10)^2}}{(2\pi)^{-n/2} e^{-\frac{1}{2} \sum_{i=1}^n (x_i-20)^2}} \\
+&= e^{\frac{1}{2} \sum_{i=1}^n \left( (x_i-20)^2 - (x_i-10)^2 \right)} \\
+&= e^{\frac{1}{2} \sum_{i=1}^n \left( (x_i^2 - 40x_i + 400) - (x_i^2 - 20x_i + 100) \right)} \\
+&= e^{\frac{1}{2} \sum_{i=1}^n (-20x_i + 300)} \\
+&= e^{150n - 10 \sum_{i=1}^n x_i}.
+\end{align*}
+样本量 $n=10$，故
+\[
+\Lambda(x_1, \dots, x_{10}) = e^{1500 - 10 \sum_{i=1}^{10} x_i}.
+\]
+根据引理，任何拒绝条件为 $\Lambda(x_1, \dots, x_{10}) \le t$（$t$ 为常数）的检验，在相同显著性水平的检验中其功效最大。注意
+\[
+\Lambda(x_1, \dots, x_{10}) \le t \iff e^{1500 - 10 \sum_{i=1}^{10} x_i} \le t \iff \sum_{i=1}^{10} x_i \ge 150 - \frac{1}{10} \log t.
+\]
+由于对于每个 $c \in \mathbb{R}$，都存在对应的 $t$ 使得 $150 - \frac{1}{10} \log t = c$。因此，任何拒绝域为 $\sum_{i=1}^{10} X_i \ge c$ 的检验都是其显著性水平下的最大功效检验。
+最后确定 $c$ 使得显著性水平为 0.05。根据定义：
+\[
+0.05 = P(H_0 \text{ 被拒绝} | H_0) = P\left( \sum_{i=1}^{10} X_i \ge c \middle| H_0 \right) = 1 - F(c),
+\]
+其中 $F$ 是 $N(100, 10)$ 的累积分布函数（注意在 $H_0$ 下 $\sum_{i=1}^{10} X_i \sim N(100, 10)$）。因此 $F(c) = 0.95$。使用计算器或软件，我们发现 $c \approx 105.2$。综上所述，当且仅当 $\sum_{i=1}^{10} X_i \ge 105.2$ 时拒绝 $H_0$ 是显著性水平为 0.05 的最大功效检验。
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $U(0, b)$（区间 $(0, b)$ 上的均匀分布）。考虑
+\[
+H_0 : b = 10 \quad \text{对抗} \quad H_1 : b < 10
+\]
+使用测试统计量 $T = \max\{X_1, \dots, X_n\}$，求观测值 $1.2, 2.4, 8.5, 3.3, 2.8, 6.7, 4.5, 8.2, 7.2, 5.5$ 的 p 值。
+
+\begin{solution}
+我们有
+\[
+T(x_1, \dots, x_{10}) = \max\{1.2, 2.4, 8.5, 3.3, 2.8, 6.7, 4.5, 8.2, 7.2, 5.5\} = 8.5
+\]
+p 值为 $P(T \le 8.5) = \prod_{i=1}^{10} P(X_i \le 8.5) = 0.85^{10}$。
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $U(0, b)$，且
+\[
+H_0 : b = 10 \quad \text{对抗} \quad H_1 : b = 5
+\]
+设 $T = \max\{X_1, \dots, X_n\}$。考虑当且仅当 $T \le 5$ 时拒绝 $H_0$ 的检验。求该检验的显著性水平和功效。
+
+\begin{solution}
+设 $F_b$ 为 $U(0, b)$ 的累积分布函数。注意当 $0 \le x \le b$ 时，$F_b(x) = x/b$。因此（由 $X_i$ 的独立性），$T = \max\{X_1, \dots, X_{10}\}$ 的累积分布函数在 $0 \le x \le b$ 时为 $x^{10}/b^{10}$。我们有：
+\[
+P(H_0 \text{ 被拒绝} | H_0) = P(\max\{X_1, \dots, X_n\} \le 5 | H_0) = \frac{5^{10}}{10^{10}} = \frac{1}{1024}.
+\]
+\[
+P(H_0 \text{ 被拒绝} | H_1) = P(\max\{X_1, \dots, X_n\} \le 5 | H_1) = \frac{5^5}{5^5} = 1.
+\]
+因此该检验的显著性水平（size）为 $1/1024$，功效（power）为 1。
+\end{solution}
+
+\question 设 $X_1, \dots, X_{10}$ 独立同分布于 $\text{Bernoulli}(p)$，并令 $Y = \sum_{i=1}^{10} X_i$。给定以下假设：
+\[
+H_0 : p = 0.5 \quad \text{对抗} \quad H_1 : p = 0.7
+\]
+考虑如下检验：
+\[
+\mathcal{T} : \text{当且仅当 } Y > 8 \text{ 时拒绝 } H_0
+\]
+(a) 确定检验 $\mathcal{T}$ 的下列指标。
+(i) 第一类错误的概率
+(ii) 第二类错误的概率
+(iii) 显著性水平 $\alpha$
+(iv) 功效
+
+(b) 在所有针对 $H_0$ 对抗 $H_1$ 的检验中，是否存在一个与 $\mathcal{T}$ 显著性水平相同但功效更大的检验？请详细说明理由。
+
+\begin{solution}
+(a)(i) 我们有
+\begin{align*}
+P(H_0 \text{ 被拒绝} | H_0) &= P(Y > 8 | p = 0.5) \\
+&= P(Y = 9 | p = 0.5) + P(Y = 10 | p = 0.5) \\
+&= \binom{10}{9}(0.5)^{10} + \binom{10}{10}(0.5)^{10} \approx 0.01.
+\end{align*}
+因此第一类错误的概率 $\approx 0.01$。
+
+(ii) 第二类错误的概率为
+\begin{align*}
+P(H_0 \text{ 被接受} | H_0 \text{ 为假}) &= P(H_0 \text{ 被接受} | H_1) \\
+&= P(Y \le 8 | H_1) = 1 - P(Y > 8 | p = 0.7) \\
+&= 1 - \binom{10}{9}(0.7)^9(0.3) - \binom{10}{10}(0.7)^{10} \approx 0.85.
+\end{align*}
+
+(iii) 检验的功效为 $1 - \text{第二类错误概率} \approx 1 - 0.85 = 0.15$。
+
+(b) $H_0$ 对抗 $H_1$ 的似然比为
+\[
+\Lambda(x_1, \dots, x_{10}) = \frac{L(x_1, \dots, x_{10} | 0.5)}{L(x_1, \dots, x_{10} | 0.7)} = \prod_{i=1}^{10} \frac{0.5^{x_i} 0.5^{1-x_i}}{0.7^{x_i} 0.3^{1-x_i}} = 0.5^{10} 0.3^{-10} 0.7^{-\sum x_i} 0.3^{\sum x_i}.
+\]
+因此
+\[
+\Lambda(x_1, \dots, x_{10}) = C \cdot 0.7^{-y} 0.3^y
+\]
+其中 $C = 0.5^{10} 0.3^{-10}$ 且 $y = \sum_{i=1}^{10} x_i$。由于 $\Lambda(x_1, \dots, x_{10})$ 是 $y$ 的严格单调递减函数，我们有 $\Lambda(x_1, \dots, x_{10}) \le c$ 当且仅当 $y \ge 9$，即当且仅当 $y > 8$ 时拒绝 $H_0$ 等价于 $\Lambda(x_1, \dots, x_{10}) \le c$。因此，根据内曼-皮尔逊引理，不存在针对 $H_0$ 对抗 $H_1$ 且与 $\mathcal{T}$ 显著性水平相同但功效更大的检验。
+\end{solution}
+    \question Let $X_1, \dots, X_4 \sim \text{Bernoulli}(p)$ be iid.
+\[
+H_0 : p = \frac{1}{4} \quad \text{against} \quad H_1 : p = \frac{3}{4}.
+\]
+$H_0$ 被拒绝当且仅当 $X_1 + X_2 + X_3 + X_4 = 4$。该检验的显著性水平（size）是多少？
+
+\begin{solution}
+记 $T = X_1 + X_2 + X_3 + X_4$。检验的显著性水平为
+\begin{align*}
+P(H_0 \text{ rejected} | H_0) &= P\left( T = 4 \middle| p = \frac{1}{4} \right) \\
+&= P\left( X_1 = 1, X_2 = 1, X_3 = 1, X_4 = 1 \middle| p = \frac{1}{4} \right) \\
+&= \left( \frac{1}{4} \right)^4 = \frac{1}{256}.
+\end{align*}
+\end{solution}
+
+\question Let $X_1, \dots, X_4 \sim \text{Bernoulli}(p)$ be iid.
+\[
+H_0 : p = \frac{1}{4} \quad \text{against} \quad H_1 : p = \frac{3}{4}.
+\]
+$H_0$ 被拒绝当且仅当 $X_1 + X_2 + X_3 + X_4 = 4$。该检验的功效（power）是多少？
+
+\begin{solution}
+检验的功效为
+\[
+P(H_0 \text{ rejected} | H_1) = P\left( T = 4 \middle| p = \frac{3}{4} \right) = \left( \frac{3}{4} \right)^4 = \frac{81}{256}.
+\]
+\end{solution}
     \question
 一名质量控制员被要求查明某工厂生产的某种产品测量值是否如其所称。他随机抽取了 50 个产品样本，测得平均值为 121。假设总体标准差为 3。
 (a) 计算总体均值的 95\% 置信区间。
@@ -5416,6 +7502,25 @@ $P(\text{犯第 II 类错误}) = P(\text{当 } H_0 \text{ 不真时未拒绝 } H
 \[ = P(\bar{x} < 120.832 \text{ 当 } \mu = 120.3) \]
 \[ = P\left( \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} < \frac{120.832 - 120.3}{3 / \sqrt{50}} \right) \]
 \[ = P(z < 1.25) \approx 0.894. \]
+\end{solution}
+
+\question $X_1, X_2$ iid $\sim \text{Binomial}(2, p)$。检验 $H_0 : p = 0.5$ 对抗 $H_1 : p = 0.25$。测试规则：当 $X_1 + X_2 = 0$ 时拒绝 $H_0$。
+\begin{parts}
+\part 计算该检验的显著性水平（size）和功效（power）。
+\part 该检验在显著性水平为 $\alpha$ 时，对于 $H_0$ 对抗 $H_1$ 是否是最有效的（most powerful）？
+\end{parts}
+
+\begin{solution}
+\part 显著性水平 $\alpha = P(X_1 + X_2 = 0 \mid p = 0.5)$。
+由于 $X_1+X_2 \sim \text{Binomial}(4, p)$，
+\[
+\alpha = \binom{4}{0} (0.5)^0 (0.5)^4 = \frac{1}{16} = 0.0625.
+\]
+功效 $1-\beta = P(X_1 + X_2 = 0 \mid p = 0.25)$：
+\[
+1-\beta = \binom{4}{0} (0.25)^0 (0.75)^4 = \left(\frac{3}{4}\right)^4 = \frac{81}{256} \approx 0.3164.
+\]
+\part 根据 Neyman-Pearson 引理，似然比检验是最有效的。计算似然比 $\frac{L(0.25)}{L(0.5)}$ 并观察其是否与 $X_1+X_2=0$ 的形式一致。
 \end{solution}
 
 \question
@@ -5610,6 +7715,351 @@ L(\lambda) = \prod_{i=1}^{10} (\lambda e^{-\lambda X_i}) = \lambda^n e^{-\lambda
 当且仅当 $S \le 5$。
 因此，检验 $\mathcal{T}$ 拒绝 $H_0$ 当且仅当 $\Lambda(X_1, \dots, X_{10}) \le \frac{e^{15}}{4^{10}}$。由 Neyman-Pearson 引理可知，不存在具有相同显著性水平但功效比 $\mathcal{T}$ 更大的检验。
 \end{solution}
+
+\question 令 $X_1, \dots, X_n$ 为来自 $N(\mu, \sigma^2)$ 的 iid 样本，其中 $\mu$ 和 $\sigma^2$ 均未知。确定 $c$ 使得 $(-\infty, \bar{X} + c)$ 是 $\mu$ 的 $95\%$ 置信区间。
+
+提示：使用枢轴量 $\frac{\sqrt{n}(\bar{X} - \mu)}{S}$ 来构造置信区间。你的结果应该是包含 $n$、样本方差 $S^2$ 和 $t_{n-1}$ 分布的分位数的 $c$ 的表达式。
+
+\begin{solution}
+定义
+\[
+T = \frac{\sqrt{n}(\bar{X} - \mu)}{S},
+\]
+因此 $T \sim t_{n-1}$。常数 $c$ 满足
+\begin{align*}
+P(\mu \le \bar{X} + c) &= 0.95 \\
+P(\bar{X} - \mu \ge -c) &= 0.95 \\
+P\left(\frac{\sqrt{n}(\bar{X} - \mu)}{S} \ge \frac{-c\sqrt{n}}{S}\right) &= 0.95 \\
+P\left(T \ge \frac{-c\sqrt{n}}{S}\right) &= 0.95 \\
+P\left(T \le \frac{-c\sqrt{n}}{S}\right) &= 0.05 \\
+P\left(T \ge \frac{c\sqrt{n}}{S}\right) &= 0.05.
+\end{align*}
+因此，
+\[
+\frac{c\sqrt{n}}{S} = t_{n-1, 0.05},
+\]
+其中 $t_{n-1, \alpha}$ 是由 $P(T > t_{n-1, \alpha}) = \alpha$ 定义的上侧分位数。我们得到
+\[
+c = \frac{t_{n-1, 0.05}S}{\sqrt{n}}.
+\]
+\end{solution}
+
+\question 令 $X_1, \dots, X_n \sim N(\mu_X, \sigma_X^2)$ 和 $Y_1, \dots, Y_m \sim N(\mu_Y, \sigma_Y^2)$ 为相互独立的 iid 随机样本。构造方差比 $\frac{\sigma_X^2}{\sigma_Y^2}$ 的 $95\%$ 置信区间。
+
+提示：证明 $\frac{S_X^2 \sigma_Y^2}{S_Y^2 \sigma_X^2}$ 服从 $F$ 分布。
+
+\begin{solution}
+由讲义可知，
+\[
+Q_X = \frac{(n-1)S_X^2}{\sigma_X^2} \sim \chi_{n-1}^2 \text{ 且 } Q_Y = \frac{(m-1)S_Y^2}{\sigma_Y^2} \sim \chi_{m-1}^2,
+\]
+其中 $S_X, S_Y$ 是给定样本的样本标准差。根据 $F$ 分布的定义，我们有
+\[
+F = \frac{Q_X / (n-1)}{Q_Y / (m-1)} = \frac{S_X^2 \sigma_Y^2}{S_Y^2 \sigma_X^2} \sim F_{n-1, m-1}.
+\]
+我们使用 $F$ 作为 $\sigma_X^2 / \sigma_Y^2$ 的枢轴量。对于每个 $\alpha > 0$，令 $F_{n-1, m-1, \alpha}$ 表示上侧分位数，即
+\[
+P(F > F_{n-1, m-1, \alpha}) = \alpha.
+\]
+我们有
+\begin{align*}
+P(F_{n-1, m-1, 0.975} \le F \le F_{n-1, m-1, 0.025}) &= P(F \ge F_{n-1, m-1, 0.975}) - P(F \ge F_{n-1, m-1, 0.025}) \\
+&= 0.975 - 0.025 \\
+&= 0.95.
+\end{align*}
+接下来，我们将 $F_{n-1, m-1, 0.975} \le F \le F_{n-1, m-1, 0.025}$ 表示为 $\sigma_X^2 / \sigma_Y^2$ 的条件：
+\begin{align*}
+F_{n-1, m-1, 0.975} \le \frac{S_X^2 \sigma_Y^2}{S_Y^2 \sigma_X^2} \le F_{n-1, m-1, 0.025}, \\
+\frac{S_Y^2 F_{n-1, m-1, 0.975}}{S_X^2} \le \frac{\sigma_Y^2}{\sigma_X^2} \le \frac{F_{n-1, m-1, 0.025} S_Y^2}{S_X^2}, \\
+\frac{S_X^2}{F_{n-1, m-1, 0.025} S_Y^2} \le \frac{\sigma_X^2}{\sigma_Y^2} \le \frac{S_X^2}{F_{n-1, m-1, 0.975} S_Y^2}.
+\end{align*}
+因此，$\sigma_X^2 / \sigma_Y^2$ 的 $95\%$ 置信区间为
+\[
+\left[ \frac{S_X^2}{F_{n-1, m-1, 0.025} S_Y^2}, \frac{S_X^2}{F_{n-1, m-1, 0.975} S_Y^2} \right].
+\]
+\end{solution}
+
+\question 假设某些牛排的脂肪含量服从 $N(\mu, \sigma^2)$ 分布。给定以下 $16$ 个脂肪含量的观测值 $x_1, \dots, x_{16}$：
+\[
+5.33, 4.25, 3.15, 3.70, 1.61, 6.39, 3.12, 6.59, 3.53, 4.74, 0.11, 1.60, 5.49, 1.72, 4.15, 2.28
+\]
+(i) 假设 $\sigma^2 = 3.2$。使用枢轴量 $\frac{\sqrt{n}(\bar{X} - \mu)}{\sigma}$ 为 $\mu$ 寻找基于上述观测值的 $90\%$，$95\%$ 和 $99\%$ 置信区间。
+(ii) 在第 (i) 部分中，如果我们想将置信区间的长度减半，我们需要增加多少样本量？
+对于本问题的其余部分，假设 $\mu$ 和 $\sigma^2$ 均未知。
+(iii) 为 $\mu$ 寻找 $90\%$，$95\%$ 和 $99\%$ 置信区间。
+(iv) 为 $\sigma^2$ 寻找 $90\%$，$95\%$ 和 $99\%$ 置信区间。
+(v) 使用关于近似置信区间的核心结论，为 $\sigma^2$ 构造一个近似 $95\%$ 置信区间。
+提示：为了从区间中移除未知量，在区间端点的表达式中用 $\sigma^2$ 的最大似然估计（MLE）代替 $\sigma^2$。
+
+\begin{solution}
+(i) 我们有
+\[
+Z = \frac{\sqrt{n}(\bar{X} - \mu)}{\sigma} \sim N(0, 1).
+\]
+对于每个 $\alpha \in (0, 1)$，令 $z_{\alpha}$ 表示上侧分位数，即
+\[
+P(Z > z_{\alpha}) = \alpha.
+\]
+我们有
+\[
+P(-z_{\alpha/2} \le Z \le z_{\alpha/2}) = 1 - \alpha.
+\]
+接下来，我们将 $-z_{\alpha/2} \le Z \le z_{\alpha/2}$ 表示为关于 $\mu$ 的真值 $\mu_0$ 的条件：
+\begin{align*}
+-z_{\alpha/2} &\le \frac{\sqrt{n}(\bar{X} - \mu_0)}{\sigma} \le z_{\alpha/2} \\
+\bar{X} - \frac{z_{\alpha/2} \sigma}{\sqrt{n}} &\le \mu_0 \le \bar{X} + \frac{z_{\alpha/2} \sigma}{\sqrt{n}}. \tag{1}
+\end{align*}
+对于给定的样本，我们有 $n = 16$，$\bar{X} = 3.61$，$\sigma = \sqrt{3.2}$。
+\begin{enumerate}
+    \item 对于 $90\%$ 置信区间，$\alpha = 0.1$ 且 $z_{\alpha/2} = z_{0.05} \approx 1.645$。根据 (1)，$\mu$ 的 $90\%$ 置信区间为 $[2.874, 4.346]$。
+    \item 对于 $95\%$ 置信区间，$\alpha = 0.05$ 且 $z_{\alpha/2} = z_{0.025} \approx 1.96$。根据 (1)，$\mu$ 的 $95\%$ 置信区间为 $[2.733, 4.487]$。
+    \item 对于 $99\%$ 置信区间，$\alpha = 0.01$ 且 $z_{\alpha/2} = z_{0.005} \approx 2.576$。根据 (1)，$\mu$ 的 $99\%$ 置信区间为 $[2.458, 4.762]$。
+\end{enumerate}
+\end{solution}
+
+\begin{solution}
+(ii) 在第 (i) 部分中，由 (1) 可知，置信区间的长度为 $\frac{2 z_{\alpha/2} \sigma}{\sqrt{n}}$。因此，如果我们想将此长度减半，我们需要一个 $4$ 倍大的样本。
+\end{solution}
+
+\begin{solution}
+(iii) 我们有
+\[
+T = \frac{\sqrt{n}(\bar{X} - \mu)}{S} \sim t_{n-1}.
+\]
+对于每个 $\alpha \in (0, 1)$，令 $t_{n-1, \alpha}$ 表示上侧分位数，即
+\[
+P(T > t_{n-1, \alpha}) = \alpha.
+\]
+我们有
+\[
+P(-t_{n-1, \alpha/2} \le T \le t_{n-1, \alpha/2}) = 1 - 2P(T \ge t_{n-1, \alpha/2}) = 1 - \alpha.
+\]
+接下来，我们将 $-t_{n-1, \alpha/2} \le T \le t_{n-1, \alpha/2}$ 表示为关于 $\mu$ 的真值 $\mu_0$ 的条件：
+\begin{align*}
+-t_{n-1, \alpha/2} &\le \frac{\sqrt{n}(\bar{X} - \mu_0)}{S} \le t_{n-1, \alpha/2} \\
+\bar{X} - \frac{t_{n-1, \alpha/2} S}{\sqrt{n}} &\le \mu_0 \le \bar{X} + \frac{t_{n-1, \alpha/2} S}{\sqrt{n}}. \tag{2}
+\end{align*}
+注意 $n = 16$，$\bar{X} = 3.61$，$S \approx 1.847$。
+\begin{enumerate}
+    \item 对于 $90\%$ 置信区间，$\alpha = 0.1$ 且 $t_{n-1, \alpha/2} \approx 1.753$。根据 (2)，$\mu$ 的 $90\%$ 置信区间为 $[2.800, 4.419]$。
+    \item 对于 $95\%$ 置信区间，$\alpha = 0.05$ 且 $t_{n-1, \alpha/2} \approx 2.131$。根据 (2)，$\mu$ 的 $95\%$ 置信区间为 $[2.626, 4.594]$。
+    \item 对于 $99\%$ 置信区间，$\alpha = 0.01$ 且 $t_{n-1, \alpha/2} \approx 2.947$。根据 (2)，$\mu$ 的 $99\%$ 置信区间为 $[2.249, 4.971]$。
+\end{enumerate}
+\end{solution}
+
+\begin{solution}
+(iv) 我们有
+\[
+X = \frac{(n-1)S^2}{\sigma^2} \sim \chi_{n-1}^2.
+\]
+对于每个 $\alpha \in (0, 1)$，令 $\chi_{n-1, \alpha}^2$ 表示上侧分位数，即
+\[
+P(X > \chi_{n-1, \alpha}^2) = \alpha.
+\]
+我们有
+\begin{align*}
+P(\chi_{n-1, 1-\alpha/2}^2 \le X \le \chi_{n-1, \alpha/2}^2) &= P(X \ge \chi_{n-1, 1-\alpha/2}^2) - P(X \ge \chi_{n-1, \alpha/2}^2) \\
+&= (1 - \alpha/2) - \alpha/2 \\
+&= 1 - \alpha.
+\end{align*}
+接下来，我们将 $\chi_{n-1, 1-\alpha/2}^2 \le X \le \chi_{n-1, \alpha/2}^2$ 表示为关于 $\sigma^2$ 的真值 $\sigma_0^2$ 的条件：
+\begin{align*}
+\chi_{n-1, 1-\alpha/2}^2 &\le \frac{(n-1)S^2}{\sigma_0^2} \le \chi_{n-1, \alpha/2}^2 \\
+\frac{(n-1)S^2}{\chi_{n-1, \alpha/2}^2} &\le \sigma_0^2 \le \frac{(n-1)S^2}{\chi_{n-1, 1-\alpha/2}^2}. \tag{3}
+\end{align*}
+注意 $n = 16$ 且 $S^2 \approx 3.412$。
+\begin{enumerate}
+    \item 对于 $90\%$ 置信区间，我们有 $\alpha = 0.1$ 且
+    \[
+    \chi_{n-1, 1-\alpha/2}^2 = \chi_{15, 0.95}^2 \approx 7.26 \text{ 且 } \chi_{n-1, \alpha/2}^2 = \chi_{15, 0.05}^2 \approx 25.
+    \]
+    根据 (3)，$\sigma^2$ 的 $90\%$ 置信区间为 $[2.047, 7.050]$。
+    \item 对于 $95\%$ 置信区间，我们有 $\alpha = 0.05$ 且
+    \[
+    \chi_{n-1, 1-\alpha/2}^2 = \chi_{15, 0.975}^2 \approx 6.26 \text{ 且 } \chi_{n-1, \alpha/2}^2 = \chi_{15, 0.025}^2 \approx 27.5.
+    \]
+    根据 (3)，$\sigma^2$ 的 $95\%$ 置信区间为 $[1.861, 8.176]$。
+    \item 对于 $99\%$ 置信区间，我们有 $\alpha = 0.01$ 且
+    \[
+    \chi_{n-1, 1-\alpha/2}^2 = \chi_{15, 0.995}^2 \approx 4.6 \text{ 且 } \chi_{n-1, \alpha/2}^2 = \chi_{15, 0.005}^2 \approx 32.8.
+    \]
+    根据 (3)，$\sigma^2$ 的 $99\%$ 置信区间为 $[1.560, 11.126]$。
+\end{enumerate}
+\end{solution}
+
+\begin{solution}
+(v) 令 $\hat{\sigma}^2$ 表示 $\sigma^2$ 的 MLE。由前序结论可知，
+\[
+\hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2.
+\]
+根据关于近似置信区间的结论，$\sigma^2$ 的一个近似 $100(1-\alpha)\%$ 置信区间为
+\[
+\left[ \hat{\sigma}^2 - \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\sigma}^2)}}, \hat{\sigma}^2 + \frac{z_{\alpha/2}}{\sqrt{n I_{X_1}(\hat{\sigma}^2)}} \right]. \tag{4}
+\]
+对于给定的样本，$n = 16$ 且 $\hat{\sigma}^2 = \frac{(n-1)S^2}{n} \approx 3.199$。对于 $95\%$ 置信区间，$\alpha = 0.05$ 且 $z_{\alpha/2} \approx 1.96$。已知
+\[
+I_{X_1}(\hat{\sigma}^2) = \frac{1}{2\hat{\sigma}^4} \Rightarrow \sqrt{n I_{X_1}(\hat{\sigma}^2)} = \sqrt{\frac{16}{2\hat{\sigma}^4}} \approx 0.884.
+\]
+根据 (4)，我们得到 $\sigma^2$ 的一个近似 $95\%$ 置信区间：
+\[
+[0.982, 5.416].
+\]
+\end{solution}
+
+\question 一个理论模型表明，在特定电压下电极间绝缘液体的击穿时间服从 $\text{Exp}(\lambda)$ 分布。给定以下击穿时间的观测值 $x_1, \dots, x_{10}$：
+\[
+41.53, 18.73, 2.99, 30.34, 12.33, 117.52, 73.02, 223.63, 4.00, 26.78
+\]
+(i) 根据这些观测值，寻找 $\lambda$ 和 $1/\lambda$ 的 $95\%$ 置信区间。
+(ii) 使用关于近似置信区间的核心结论，根据上述观测值构造 $\lambda$ 和 $1/\lambda$ 的近似 $95\%$ 置信区间。
+
+\begin{solution}
+(i) 令 $X_1, \dots, X_n$ 为 iid $\sim \text{Exp}(\lambda) \sim \text{Gamma}(1, 1/\lambda)$。定义 $Y_i = 2\lambda X_i$。注意 $X_i$ 的累积分布函数（CDF）为 $F(x) = 1 - e^{-\lambda x}$；因此，$Y_i$ 的 CDF 为
+\[
+F_{Y_i}(y) = P(Y_i \le y) = P\left(X_i \le \frac{y}{2\lambda}\right) = 1 - e^{-y/2}.
+\]
+这意味着 $Y_i \sim \text{Exp}(1/2) \sim \text{Gamma}(1, 2)$。定义
+\[
+Y = \sum_{i=1}^n Y_i = 2\lambda \sum_{i=1}^n X_i.
+\]
+根据辅导课 1 的问题 4，我们有 $Y \sim \text{Gamma}(n, 2) \sim \chi_{2n}^2$，该分布不依赖于 $\lambda$。因此，$Y$ 可以被用作枢轴量。对于每个 $\alpha \in (0, 1)$，令 $\chi_{2n, \alpha}^2$ 表示上侧分位数，即
+\[
+P(Y \ge \chi_{2n, \alpha}^2) = \alpha.
+\]
+我们有
+\[
+P(\chi_{2n, 1-\alpha/2}^2 \le Y \le \chi_{2n, \alpha/2}^2) = 1 - \alpha.
+\]
+我们将不等式 $\chi_{2n, 1-\alpha/2}^2 \le Y \le \chi_{2n, \alpha/2}^2$ 表示为关于 $\lambda_0$ 和 $1/\lambda_0$ 的条件：
+\[
+\chi_{2n, 1-\alpha/2}^2 \le 2\lambda_0 \sum_{i=1}^n X_i \le \chi_{2n, \alpha/2}^2.
+\]
+我们得到
+\[
+\frac{\chi_{2n, 1-\alpha/2}^2}{2 \sum_{i=1}^n X_i} \le \lambda_0 \le \frac{\chi_{2n, \alpha/2}^2}{2 \sum_{i=1}^n X_i}, \tag{5}
+\]
+以及
+\[
+\frac{2 \sum_{i=1}^n X_i}{\chi_{2n, \alpha/2}^2} \le \frac{1}{\lambda_0} \le \frac{2 \sum_{i=1}^n X_i}{\chi_{2n, 1-\alpha/2}^2}. \tag{6}
+\]
+基于给定的观测值，$n = 10$ 且 $\sum_{i=1}^{10} x_i = 550.87$。对于 $95\%$ 置信区间，$\alpha = 0.05$，且 $\chi_{2n, 1-\alpha/2}^2 \approx 9.59$ 以及 $\chi_{2n, \alpha/2}^2 \approx 34.17$。根据 (5)，$\lambda_0$ 的一个 $95\%$ 置信区间为
+\[
+[0.0087, 0.031].
+\]
+根据 (6)，$1/\lambda$ 的一个 $95\%$ 置信区间为
+\[
+[32.24, 114.88].
+\]
+\end{solution}
+
+\begin{solution}
+(ii) 首先，我们寻找 $\lambda$ 和 $\tau = 1/\lambda$ 的 MLE。根据讲义，$\lambda$ 的 MLE 为 $\hat{\lambda} = 1/\bar{X}$。令 $g : (0, \infty) \to \mathbb{R}$ 定义为 $g(x) = 1/x$。注意函数 $g$ 是一一对应的，且 $g(\lambda) = 1/\lambda$。根据辅导课 7 的问题 1，$1/\lambda$ 的 MLE 为 $\hat{\tau} = g(\hat{\lambda}) = \bar{X}$。
+
+根据关于近似置信区间的核心结论，$\lambda$ 的一个近似 $95\%$ 置信区间为
+\[
+\left[ \hat{\lambda} - \frac{z_{0.025}}{\sqrt{n I_{X_1}(\hat{\lambda})}}, \hat{\lambda} + \frac{z_{0.025}}{\sqrt{n I_{X_1}(\hat{\lambda})}} \right]. \tag{7}
+\]
+对于给定的观测值，$n = 10$ 且 $\hat{\lambda} = 1/\bar{x} = 1/55.087$。注意 $z_{0.025} \approx 1.96$，且根据讲义，
+\[
+I_{X_1}(\lambda) = \frac{1}{\lambda^2} \Rightarrow \sqrt{n I_{X_1}(\hat{\lambda})} = \sqrt{n/\hat{\lambda}^2} \approx 174.2.
+\]
+根据 (7)，$\lambda$ 的一个近似 $95\%$ 置信区间为
+\[
+[0.0069, 0.0294].
+\]
+类似地，我们有 $\hat{\tau} = \bar{x} = 55.087$ 且 $\sqrt{n I_{X_1}(\hat{\tau})} = \sqrt{n/\hat{\tau}^2} \approx 0.0574$。因此，$1/\lambda$ 的一个近似 $95\%$ 置信区间为
+\[
+\left[ \hat{\tau} - \frac{z_{0.025}}{\sqrt{n I_{X_1}(\hat{\tau})}}, \hat{\tau} + \frac{z_{0.025}}{\sqrt{n I_{X_1}(\hat{\tau})}} \right] \approx [20.941, 89.233].
+\]
+\end{solution}
+
+\question 令 $X_1, \dots, X_n$ 为来自 $N(\mu, 1)$ 的 iid 样本，其中 $\mu \in \mathbb{R}$ 是未知参数。给定以下观测值 ($n = 10$)：
+\[
+-1.0, 4.3, 2.3, 1.3, 6.4, -2.3, 5.3, 3.5, 7.1, 3.1
+\]
+(a) 考虑基于检验统计量 $T = \sum_{i=1}^n X_i$ 检验 $H_0 : \mu = 0$ 对抗 $H_1 : \mu \neq 0$。上述观测值的 p-value 是多少？
+(b) 考虑基于检验统计量 $T = \sum_{i=1}^n X_i$ 检验 $H_0 : \mu = 0$ 对抗 $H_1 : \mu > 0$。上述观测值的 p-value 是多少？
+
+\begin{solution}
+对于给定的观测值，
+\[
+t = \sum_{i=1}^{10} x_i = 30.
+\]
+注意 $T = \sum_{i=1}^{10} X_i$ 服从正态分布，其均值为 $E[T] = \sum_{i=1}^{10} E[X_i] = 10\mu$，方差为 $\text{Var}[T] = \sum_{i=1}^{10} \text{Var}[X_i] = 10$，即 $T \sim N(10\mu, 10)$。
+
+(i) 假设 $H_1$ 和 $E[T]$ 的值表明 $T$ 远离 $0$ 的值提供了对抗假设 $H_0$ 的证据。在 $H_0$ 下，我们有 $T \sim N(0, 10)$。观察到 $t = 30$ 或更极端情况的概率（p-value）为
+\[
+P(|T| \ge 30) = 2F(-30) \approx 2.4 \cdot 10^{-21},
+\]
+其中函数 $F$ 表示 $N(0, 10)$ 的 CDF。
+
+(ii) 通过与第一部分类似的推理，给定观测值的 p-value 为
+\[
+P(T \ge 30) \approx 1.2 \cdot 10^{-21}.
+\]
+通常情况下，对于相同的观测值，单侧检验（如 $H_0 : \mu = 0$ 对抗 $H_1 : \mu > 0$）的 p-value 比双侧检验（如 $H_0 : \mu = 0$ 对抗 $H_1 : \mu \neq 0$）更小。因此，单侧检验通常比双侧检验更有效（more powerful）。
+\end{solution}
+
+\question 令 $X_1, \dots, X_n$ 为来自 $\text{Exp}(\lambda)$ 的 iid 样本，其中 $\lambda \in (0, \infty)$ 是未知参数。考虑基于检验统计量 $T = \sum_{i=1}^n X_i$ 检验 $H_0 : \lambda = 1$ 对抗 $H_1 : \lambda > 1$。假设 $n = 10$ 且该检验的显著性水平 $\alpha = 0.05$。
+(a) 寻找基于 $T$ 拒绝 $H_0$ 的临界值。
+(b) 在第 (a) 部分中获得的检验功效（power）是多少？
+(c) 对于以下观测值，是否拒绝 $H_0$？
+\[
+0.1, 0.2, 0.1, 0.3, 0.5, 0.01, 1.2, 0.05, 0.001, 0.1
+\]
+
+\begin{solution}
+(a) 注意 $X_i \sim \text{Gamma}(1, \frac{1}{\lambda})$ 且 $T = \sum_{i=1}^{10} X_i \sim \text{Gamma}(10, \frac{1}{\lambda})$，且 $E[T] = 10/\lambda$。假设 $H_1$ 和 $E[T]$ 的值表明 $T$ 的较小值提供了对抗 $H_0$ 的证据。在 $H_0$ 下，我们有 $T \sim \text{Gamma}(10, 1)$。拒绝域 $H_0$ 的临界值 $c$ 满足
+\begin{align*}
+P(H_0 \text{ is rejected} \mid H_0) &= \alpha \\
+P(T < c \mid H_0) &= 0.05 \\
+P(T \ge c \mid H_0) &= 0.95.
+\end{align*}
+使用 $\text{Gamma}(10, 1)$ 的数表，我们得到 $c \approx 5.425$。
+
+(b) 注意根据辅导课 10 问题 4i 的解答，$T' = 2\lambda T \sim \chi_{20}^2$。首先，我们计算第二类错误
+\begin{align*}
+\beta &= P(H_0 \text{ is not rejected} \mid H_1) \\
+&= P(T \ge 5.4254 \mid \lambda > 1) \\
+&\approx P(T' \ge 10.85\lambda \mid \lambda > 1) \\
+&= 1 - F(10.85\lambda),
+\end{align*}
+其中 $F$ 表示 $\chi_{20}^2$ 的 CDF。在 (a) 部分中获得的检验功效为
+\[
+1 - \beta = F(10.85\lambda).
+\]
+
+(c) 对于给定的观测值，
+\[
+t = \sum_{i=1}^{10} x_i = 2.561 < 5.425.
+\]
+因此，假设 $H_0$ 被拒绝。
+\end{solution}
+
+\question 令 $X_1, \dots, X_5$ 为来自 $\text{Bernoulli}(p)$ 的 iid 样本，其中 $p \in [0, 1]$ 是未知参数。考虑检验 $H_0 : p = 0.2$ 对抗 $H_1 : p = 0.5$，当且仅当 $\sum_{i=1}^5 X_i > 2$ 时拒绝 $H_0$。
+(a) 计算第一类错误和第二类错误的概率。
+(b) 寻找该检验的显著性水平（size）和功效（power）。
+
+\begin{solution}
+设 $Y = \sum_{i=1}^5 X_i$。我们有 $Y \sim \text{Binomial}(5, p)$。
+(a) 首先，我们计算第一类错误的概率：
+\begin{align*}
+\alpha &= P(H_0 \text{ is rejected} \mid H_0) \\
+&= P(Y > 2 \mid p = 0.2) \\
+&= 1 - P(Y = 0 \mid p = 0.2) - P(Y = 1 \mid p = 0.2) - P(Y = 2 \mid p = 0.2) \\
+&= 1 - 0.8^5 - 5 \times 0.2 \times 0.8^4 - \binom{5}{2} \times 0.2^2 \times 0.8^3 \\
+&= 0.05792.
+\end{align*}
+第二类错误的概率是
+\begin{align*}
+\beta &= P(H_0 \text{ is not rejected} \mid H_1) \\
+&= P(Y \le 2 \mid p = 0.5) \\
+&= P(Y = 0 \mid p = 0.5) + P(Y = 1 \mid p = 0.5) + P(Y = 2 \mid p = 0.5) \\
+&= 0.5^5 + 5 \times 0.5 \times 0.5^4 + \binom{5}{2} \times 0.5^2 \times 0.5^3 \\
+&= 0.5.
+\end{align*}
+(b) 该检验的显著性水平（size）为 $\alpha = 0.05792$。检验功效（power）为 $1 - \beta = 0.5$。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -5689,7 +8139,545 @@ L(\lambda) = \prod_{i=1}^{10} (\lambda e^{-\lambda X_i}) = \lambda^n e^{-\lambda
         (a,b)=(4,2)
         \]
     \end{solution}
+
+    \question
+David 想要研究纸箱转移次数 ($X$) 与安瓿瓶破损数量 ($Y$) 之间的关系。他收集了下表中的数据。他首先使用线性回归模型拟合数据，即使用 $y = \beta_0 + \beta_1 x + \epsilon$。
+
+\begin{parts}
+\part 求 $\beta_0$ 和 $\beta_1$ 的最小二乘估计值。
+\begin{solution}
+首先计算基本的统计量：
+样本量 $n = 10$。
+\[
+\sum x_i = 3+8+4+6+5+3+7+5+2+6 = 49 \implies \bar{x} = 4.9
+\]
+\[
+\sum y_i = 20+150+50+80+70+15+120+60+16+85 = 666 \implies \bar{y} = 66.6
+\]
+\[
+\sum x_i^2 = 273, \quad S_{xx} = \sum x_i^2 - n\bar{x}^2 = 273 - 10 \cdot 4.9^2 = 32.9
+\]
+\[
+\sum x_iy_i = 4017, \quad S_{xy} = \sum x_iy_i - n\bar{x}\bar{y} = 4017 - 10 \cdot 4.9 \cdot 66.6 = 753.6
+\]
+最小二乘估计量为：
+\[
+\hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = \frac{753.6}{32.9} \approx 22.9058
+\]
+\[
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 66.6 - 22.9058 \cdot 4.9 \approx -45.6383
+\]
+\end{solution}
+
+\part 建立方差分析 (ANOVA) 表并进行 $F$ 检验，以确定纸箱转移次数与破损安瓿瓶数量之间是否存在线性关联；控制 $\alpha$ 风险为 0.05。陈述假设、决策规则和结论。
+\begin{solution}
+计算平方和：
+\[
+S_{yy} = \sum y_i^2 - n\bar{y}^2 = 62406 - 10 \cdot 66.6^2 = 18050.4
+\]
+\[
+SSR = \hat{\beta}_1 S_{xy} = 22.9058 \cdot 753.6 \approx 17261.8
+\]
+\[
+SSE = S_{yy} - SSR = 18050.4 - 17261.8 = 788.6
+\]
+ANOVA 表如下：
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+误差来源 & 自由度 ($df$) & 平方和 ($SS$) & 均方 ($MS$) & $F$ \\
+\hline
+回归 & 1 & 17261.8 & 17261.8 & 175.11 \\
+残差 & 8 & 788.6 & 98.575 & \\
+\hline
+总计 & 9 & 18050.4 & & \\
+\hline
+\end{tabular}
+\end{center}
+假设：$H_0: \beta_1 = 0$ 对 $H_1: \beta_1 \neq 0$。
+决策规则：在 $\alpha = 0.05$ 时，若计算出的 $F > F_{1,8}^{0.05} = 5.3177$，则拒绝 $H_0$。
+结论：由于 $175.11 > 5.3177$，拒绝 $H_0$，说明 $X$ 与 $Y$ 之间存在显著的线性关系。
+\end{solution}
+
+\part 他想检查二次函数是否能更好地拟合数据。请帮助他进行 $F$ 检验，回答对数据应用二次函数是否显著。
+\begin{solution}
+我们通过比较全模型（二次回归）和简化模型（线性回归）来进行 $F$ 检验。
+
+1. 建立模型：
+   - 简化模型 (Reduced Model)：$y = \beta_0 + \beta_1 x + \epsilon$
+   - 全模型 (Full Model)：$y = \beta_0 + \beta_1 x + \beta_2 x^2 + \epsilon$
+   - 检验假设：$H_0: \beta_2 = 0$ ； $H_1: \beta_2 \neq 0$
+
+2. 简化模型统计量（由第 (2) 小题得出）：
+   - $SSE_{R} = 788.6$
+   - 自由度 $df_R = n - 2 = 8$
+
+3. 全模型矩阵运算：
+   设 $X$ 为设计矩阵，第一列为 1，第二列为 $x$，第三列为 $x^2$。
+   根据数据计算得到：
+   \[
+   X^T X = \begin{bmatrix} n & \sum x_i & \sum x_i^2 \\ \sum x_i & \sum x_i^2 & \sum x_i^3 \\ \sum x_i^2 & \sum x_i^3 & \sum x_i^4 \end{bmatrix} = \begin{bmatrix} 10 & 49 & 273 \\ 49 & 273 & 1663 \\ 273 & 1663 & 10773 \end{bmatrix}
+   \]
+   \[
+   X^T Y = \begin{bmatrix} \sum y_i \\ \sum x_i y_i \\ \sum x_i^2 y_i \end{bmatrix} = \begin{bmatrix} 666 \\ 4017 \\ 25849 \end{bmatrix}
+   \]
+   计算全模型的回归系数 $\hat{\beta} = (X^T X)^{-1} X^T Y \approx \begin{bmatrix} -1.5896 \\ 2.31215 \\ 2.0828 \end{bmatrix}$。
+   全模型的残差平方和 $SSE_{F} = Y^T Y - \hat{\beta}^T (X^T Y)$：
+   \[
+   Y^T Y = \sum y_i^2 = 62406
+   \]
+   \[
+   SSE_{F} = 62406 - 62067.1726 = 338.8274
+   \]
+   全模型自由度 $df_F = n - 3 = 7$。
+
+4. 计算 F 统计量：
+   额外平方和 $SSR(x^2 | x) = SSE_R - SSE_F = 788.6 - 338.8274 = 449.7726$。
+   \[
+   F = \frac{(SSE_R - SSE_F) / (df_R - df_F)}{SSE_F / df_F} = \frac{449.7726 / 1}{338.8274 / 7} = \frac{449.7726}{48.4039} \approx 9.2921
+   \]
+
+5. 决策与结论：
+   查表得临界值 $F_{1, 7}^{0.05} = 5.5914$。
+   由于 $F = 9.2921 > 5.5914$，我们拒绝原假设 $H_0$。
+   结论：在 0.05 的显著性水平下，向模型中引入二次项 $x^2$ 是显著的，即二次函数能更好地拟合该数据。
+\end{solution}
+\part 证明多项式回归的最小二乘估计残差平方和 (SSE) 低于线性回归的残差平方和。
+\begin{solution}
+设全模型（多项式回归）的参数向量为 $\vec{\beta}_{\Omega} = (\beta_0, \beta_1, \dots, \beta_p)^T$，其对应的残差平方和为：
+\[
+SSE_{\Omega} = \min_{\beta_0, \dots, \beta_p} \sum_{i=1}^n \left( y_i - \beta_0 - \beta_1 x_i - \dots - \beta_p x_i^p \right)^2
+\]
+设简化模型（线性回归）的参数向量为 $\vec{\beta}_{\omega} = (\beta_0, \beta_1)^T$，其残差平方和为：
+\[
+SSE_{\omega} = \min_{\beta_0, \beta_1} \sum_{i=1}^n \left( y_i - \beta_0 - \beta_1 x_i \right)^2
+\]
+由于线性回归模型可以看作是多项式回归模型在约束条件 $\beta_2 = \beta_3 = \dots = \beta_p = 0$ 下的特例，即简化模型的参数空间 $\omega$ 是全模型参数空间 $\Omega$ 的子集。
+根据最小化原理，在更大集合上寻找最小值得到的结果必然不大于在其子集上寻找的结果。
+因此，$SSE_{\Omega} \le SSE_{\omega}$ 成立。
+\end{solution}
+\end{parts}
+
+\question
+以下数据表示水溶液中某种物质的浓度与比色计浑浊度读数之间的关系：
+\begin{center}
+\begin{tabular}{c|c}
+浓度 ($X$) & 比色计读数 ($Y$) \\
+\hline
+50 & 175 \\
+40 & 169 \\
+60 & 272 \\
+70 & 335 \\
+80 & 490 \\
+90 & 415 \\
+40 & 72 \\
+60 & 265 \\
+80 & 492 \\
+50 & 180 \\
+\end{tabular}
+\end{center}
+数据汇总如下：
+\[
+\sum x_i = 620, \quad \sum y_i = 2865, \quad \sum x_iy_i = 198970.
+\]
+为此数据拟合模型 $y = \beta_0 + \beta_1 x + \epsilon$。
+
+\begin{parts}
+\part 求 $\beta_0$ 和 $\beta_1$ 的最小二乘估计值。
+\begin{solution}
+首先计算样本均值：
+\[
+\bar{x} = 62, \quad \bar{y} = 286.5
+\]
+计算离差平方和：
+\[
+S_{xx} = \sum x_i^2 - n\bar{x}^2 = 41200 - 10 \cdot 62^2 = 2760
+\]
+\[
+S_{xy} = \sum x_iy_i - n\bar{x}\bar{y} = 198970 - 10 \cdot 62 \cdot 286.5 = 21340
+\]
+斜率和截距的估计值为：
+\[
+\hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = \frac{21340}{2760} \approx 7.731884
+\]
+\[
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 286.5 - 7.731884 \cdot 62 \approx -192.8768
+\]
+\end{solution}
+
+\part 构建 ANOVA 表并检验假设 $H_0: \beta_1 = 0$。使用 $\alpha = 0.05$ 以及 $F_{1,8}^{0.95} = 5.317$, $F_{2,8}^{0.95} = 4.458$ 和 $F_{1,9}^{0.95} = 5.117$。
+\begin{solution}
+计算总平方和与回归平方和：
+\[
+S_{yy} = \sum y_i^2 - n\bar{y}^2 = 1007593 - 10 \cdot 286.5^2 = 186770.5
+\]
+\[
+SSR = \hat{\beta}_1^2 S_{xx} = 7.731884^2 \cdot 2760 \approx 164998.4
+\]
+\[
+SSE = S_{yy} - SSR = 186770.5 - 164998.4 = 21772.1
+\]
+ANOVA 表如下：
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+误差来源 & 自由度 ($df$) & 平方和 ($SS$) & 均方 ($MS$) & $F$ \\
+\hline
+回归 & 1 & 164998.4 & 164998.4 & 60.627 \\
+残差 & 8 & 21772.1 & 2721.512 & \\
+\hline
+总计 & 9 & 186770.5 & & \\
+\hline
+\end{tabular}
+\end{center}
+由于 $F = 60.627 > F_{1,8}^{0.95} = 5.317$，我们拒绝原假设 $H_0: \beta_1 = 0$。
+\end{solution}
+
+\part 评估残差。
+\begin{solution}
+残差定义为 $e_i = y_i - \hat{y}_i$，其中 $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$。计算结果如下：
+\[
+\hat{y}_1 = 193.7174, \hat{y}_2 = 116.3986, \hat{y}_3 = 271.0362, \hat{y}_4 = 348.3551, \hat{y}_5 = 425.6739
+\]
+\[
+\hat{y}_6 = 502.9928, \hat{y}_7 = 116.3986, \hat{y}_8 = 271.0362, \hat{y}_9 = 425.6739, \hat{y}_{10} = 193.7174
+\]
+对应的残差为：
+\[
+e_1 = -18.7174, e_2 = 52.6014, e_3 = 0.9638, e_4 = -13.3551, e_5 = 64.3261
+\]
+\[
+e_6 = -87.9928, e_7 = -44.3986, e_8 = -6.0362, e_9 = 66.3261, e_{10} = -13.7174
+\]
+\end{solution}
+
+\part 绘制残差对预测变量的散点图。评论拟合模型是否合适。
+\begin{solution}
+根据残差分布情况，由于残差随 $X$ 的变化呈现出明显的系统性非随机模式，模型似乎不合适，可能存在二次趋势。
+\end{solution}
+
+\part 根据评估的残差和数据，是否存在离群值？
+\begin{solution}
+计算标准化残差，例如对于第 6 个观测值：
+\[
+e_6^* = \frac{e_6}{\sqrt{SSE/n \left( 1 - x_6' (X'X)^{-1} x_6 \right)}} = \frac{-87.9927536}{52.16811 \cdot 0.384} \approx -4.392488
+\]
+由于 $|e_6^*|$ 较大，该点很可能是一个离群值。
+\end{solution}
+\end{parts}
+
+\question
+考虑多元回归模型 $y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i$。将模型重写为 $y_i = x_i' \beta + \epsilon_i$。令残差 $e_i = y_i - \hat{y}_i$，其中 $\hat{\beta}$ 是 $\beta$ 的最小二乘估计量。定义设计矩阵 $X = (x_1, \dots, x_n)$。求 $e_i$ 的方差。
+
+\begin{solution}
+将残差向量写为：
+\[
+e = (I - H)y
+\]
+其中 $H = X(X'X)^{-1}X'$ 为投影矩阵（杠杆矩阵）。残差 $e_i$ 可以表示为：
+\[
+e_i = y_i - x_i' \hat{\beta} = y_i - x_i' (X'X)^{-1} X' y
+\]
+设 $e_i$ 为第 $i$ 个单位向量，则 $e_i = \ell_i' e$。
+其方差计算如下：
+\[
+Var(e_i) = Var(y_i - x_i' \hat{\beta}) = Var((e_i' - x_i' (X'X)^{-1} X') y)
+\]
+\[
+Var(e_i) = \sigma^2 (e_i' - x_i' (X'X)^{-1} X') (e_i - X (X'X)^{-1} x_i)
+\]
+\[
+Var(e_i) = \sigma^2 (1 - 2x_i' (X'X)^{-1} x_i + x_i' (X'X)^{-1} x_i)
+\]
+\[
+Var(e_i) = \sigma^2 (1 - x_i' (X'X)^{-1} x_i)
+\]
+这里 $x_i' (X'X)^{-1} x_i$ 即为杠杆值 $h_{ii}$。
+\end{solution}
+
+\question
+我们要比较施用于 $n$ 个受试者的两种药物的效果。第一种药物效果的模型为
+\[
+y_{i1} = \beta_0 + \beta_1 x_{i1} + \epsilon_{i1}, \quad i = 1, \dots, n
+\]
+而第二种药物效果的模型为
+\[
+y_{i2} = \beta_0 + \beta_2 x_{i2} + \epsilon_{i2}, \quad i = 1, \dots, n.
+\]
+假设所有观测值都是独立的，且对于每个 $i$，$\epsilon_{i1}$ 和 $\epsilon_{i2}$ 都是独立的正态随机变量，均值为零，方差为 $\sigma^2$。
+
+\begin{parts}
+\part 求 $\beta_0, \beta_1$ 和 $\beta_2$ 的最小二乘估计量，以及 $\beta = (\beta_0, \beta_1, \beta_2)'$ 的协方差矩阵。
+\begin{solution}
+目标函数为：
+\[
+\sum_{i=1}^n (y_{i1} - \beta_0 - \beta_1 x_{i1})^2 + \sum_{i=1}^n (y_{i2} - \beta_0 - \beta_2 x_{i2})^2
+\]
+对 $\beta_0, \beta_1, \beta_2$ 分别求导并令其为 0，得到正规方程组：
+\[
+\sum_{i=1}^n (y_{i1} - \beta_0 - \beta_1 x_{i1}) + \sum_{i=1}^n (y_{i2} - \beta_0 - \beta_2 x_{i2}) = 0
+\]
+\[
+\sum_{i=1}^n (y_{i1} - \beta_0 - \beta_1 x_{i1})x_{i1} = 0, \quad \sum_{i=1}^n (y_{i2} - \beta_0 - \beta_2 x_{i2})x_{i2} = 0
+\]
+解得估计量为：
+\[
+\hat{\beta}_1 = \frac{\sum y_{i1} x_{i1} - \beta_0 \sum x_{i1}}{\sum x_{i1}^2}, \quad \hat{\beta}_2 = \frac{\sum y_{i2} x_{i2} - \beta_0 \sum x_{i2}}{\sum x_{i2}^2}
+\]
+\[
+\hat{\beta}_0 = \frac{\bar{y}_1 + \bar{y}_2 - \hat{\beta}_1 \bar{x}_1 - \hat{\beta}_2 \bar{x}_2}{2}
+\]
+将其代入进一步化简可得具体的 $\beta_0$ 表达式：
+\[
+\left( 2 - \frac{(\sum x_{i1})^2}{n \sum x_{i1}^2} - \frac{(\sum x_{i2})^2}{n \sum x_{i2}^2} \right) \hat{\beta}_0 = \bar{y}_1 + \bar{y}_2 - \frac{(\sum y_{i1} x_{i1})\bar{x}_1}{\sum x_{i1}^2} - \frac{(\sum y_{i2} x_{i2})\bar{x}_2}{\sum x_{i2}^2}
+\]
+\end{solution}
+
+\part 估计 $\sigma^2$。
+\begin{solution}
+$\sigma^2$ 的无偏估计量为：
+\[
+\hat{\sigma}^2 = \frac{\sum_{i=1}^n (y_{i1} - \hat{\beta}_0 - \hat{\beta}_1 x_{i1})^2 + \sum_{i=1}^n (y_{i2} - \hat{\beta}_0 - \hat{\beta}_2 x_{i2})^2}{2n - 3}
+\]
+此处分母为 $2n - 3$，因为总观测数为 $2n$，参数个数为 3。
+\end{solution}
+
+\part 提出一个用于检验 $\beta_1 = \beta_2$ 对应备择假设 $\beta_1 \neq \beta_2$ 的检验统计量。指定其分布。
+\begin{solution}
+原假设 $H_0: \beta_1 = \beta_2$ 意味着两种药物具有相同的斜率效应。
+全模型 ($SSE_{\Omega}$) 自由度为 $2n - 3$。
+简化模型 ($SSE_{\omega}$) 在 $H_0$ 条件下即 $\beta_1 = \beta_2 = \beta_{slope}$，自由度为 $2n - 2$。
+检验统计量为：
+\[
+F = \frac{(SSE_{\omega} - SSE_{\Omega}) / 1}{SSE_{\Omega} / (2n - 3)}
+\]
+该统计量服从自由度为 $(1, 2n - 3)$ 的 $F$ 分布。
+\end{solution}
+\end{parts}
+
+\question
+封板温度和封板间隙会影响肥皂包装机包装出的合格条块百分比。假设 $n = 16$ 个数据点如下表所示：
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+观测编号 & 间隙 ($x_1$) & 温度 ($x_2$) & 合格率 ($y$) \\
+\hline
+1 & -34 & -23 & 35 \\
+2 & 6 & -37 & 81.6 \\
+3 & -30 & -8 & 42.5 \\
+4 & 27 & -3 & 98.3 \\
+5 & 1 & 17 & 52.7 \\
+6 & 30 & -21 & 82 \\
+7 & -21 & 7 & 34.5 \\
+8 & 22 & 22 & 95.4 \\
+9 & -25 & 27 & 56.7 \\
+10 & 24 & 17 & 84.4 \\
+11 & 11 & -13 & 94.3 \\
+12 & -8 & 5 & 44.3 \\
+13 & 26 & 7 & 83.3 \\
+14 & 14 & -3 & 91.4 \\
+15 & -32 & -5 & 43.5 \\
+16 & -16 & 12 & 51.7 \\
+\hline
+\end{tabular}
+\end{center}
+
+此外已知：
+\[
+(X'X)^{-1} = \begin{bmatrix} 6.251288 \times 10^{-2} & 3.836277 \times 10^{-5} & -1.420662 \times 10^{-5} \\ 3.836277 \times 10^{-5} & 1.222308 \times 10^{-4} & -2.650049 \times 10^{-6} \\ -1.420662 \times 10^{-5} & -2.650049 \times 10^{-6} & 2.140556 \times 10^{-4} \end{bmatrix}
+\]
+\[
+\sum y_i = 1071.7, \quad \sum x_{i1} = -5, \quad \sum x_{i2} = 1, \quad \sum x_{i1} y_i = 7083.5, \quad \sum x_{i2} y_i = -275.5
+\]
+
+\begin{parts}
+\part 将这些数据拟合到模型 $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon$，并求出 $\beta_0, \beta_1$ 和 $\beta_2$ 的最小二乘估计量。
+\begin{solution}
+首先构建向量 $X'y$。根据已知条件：
+\[
+X'y = \begin{bmatrix} \sum y_i \\ \sum x_{i1} y_i \\ \sum x_{i2} y_i \end{bmatrix} = \begin{bmatrix} 1071.7 \\ 7083.5 \\ -275.5 \end{bmatrix}
+\]
+利用公式 $\hat{\beta} = (X'X)^{-1} X'y$ 进行计算：
+\[
+\hat{\beta}_0 = (6.251288 \times 10^{-2})(1071.7) + (3.836277 \times 10^{-5})(7083.5) + (-1.420662 \times 10^{-5})(-275.5) \approx 67.271
+\]
+\[
+\hat{\beta}_1 = (3.836277 \times 10^{-5})(1071.7) + (1.222308 \times 10^{-4})(7083.5) + (-2.650049 \times 10^{-6})(-275.5) \approx 0.910
+\]
+\[
+\hat{\beta}_2 = (-1.420662 \times 10^{-5})(1071.7) + (-2.650049 \times 10^{-6})(7083.5) + (2.140556 \times 10^{-4})(-275.5) \approx -0.093
+\]
+因此，拟合方程为 $\hat{y} = 67.271 + 0.910 x_1 - 0.093 x_2$。
+\end{solution}
+
+\part 构建 ANOVA 表以判断总体回归是否显著 ($\alpha = 0.05$)。已知 $F_{2,13}^{0.95} = 3.805$。
+\begin{solution}
+计算各项平方和：
+\[
+\bar{y} = \frac{1071.7}{16} = 66.98125
+\]
+\[
+S_{yy} = \sum y_i^2 - n\bar{y}^2 = 80212.95 - 16 \cdot (66.98125)^2 = 8429.144
+\]
+回归平方和 $SSR$：
+\[
+SSR = \hat{\beta}'(X'Y) - n\bar{y}^2 = [67.271(1071.7) + 0.910(7083.5) - 0.093(-275.5)] - 16(66.98125)^2
+\]
+\[
+SSR = 78549.08 - 71783.806 = 6765.274
+\]
+残差平方和 $SSE = S_{yy} - SSR = 8429.144 - 6765.274 = 1663.87$。
+ANOVA 表：
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+误差来源 & 自由度 & 平方和 & 均方 & $F$ \\
+\hline
+回归 & 2 & 6765.274 & 3382.637 & 26.43 \\
+残差 & 13 & 1663.87 & 127.99 & \\
+\hline
+总计 & 15 & 8429.144 & & \\
+\hline
+\end{tabular}
+\end{center}
+由于 $F = 26.43 > 3.805$，在 $\alpha = 0.05$ 水平下回归效应极其显著。
+\end{solution}
+
+\part 当 $x_1 = 20, x_2 = -15$ 时，求预测值 $\hat{y}$。
+\begin{solution}
+直接代入回归方程：
+\[
+\hat{y} = 67.271 + 0.910(20) - 0.093(-15) = 67.271 + 18.2 + 1.395 = 86.866
+\]
+\end{solution}
+
+\part 这两个变量中，是否其中一个比另一个更有用？使用 $\alpha = 0.05$ 和 $F_{1,13}^{0.95} = 4.667193$。
+\begin{solution}
+我们通过偏 $F$ 检验来判断。根据已知计算，仅包含 $x_1$ 的简化模型的回归平方和为 $SSR(x_1) = 6724.893$。
+计算 $x_2$ 的额外平方和：
+\[
+SSR(x_2 | x_1) = SSR(x_1, x_2) - SSR(x_1) = 6765.274 - 6724.893 = 40.381
+\]
+检验统计量为：
+\[
+F = \frac{SSR(x_2 | x_1) / 1}{MSE_{full}} = \frac{40.381}{127.99} \approx 0.3155
+\]
+由于 $F = 0.3155 < 4.667193$，说明在已有间隙 ($x_1$) 的基础上，温度 ($x_2$) 对模型的贡献不显著。因此间隙变量更为有用。
+\end{solution}
+
+\part 你对该包装机的运行有什么建议？
+\begin{solution}
+由于统计分析显示封板间隙 ($x_1$) 对合格率有显著影响，而封板温度 ($x_2$) 在当前范围内的线性影响并不显著，建议操作员优先精确调整和监控封板的间隙参数，以保证包装质量。
+\end{solution}
+\end{parts}
+
+\question
+Hocking (1985) 描述了一项实验，比较五种旨在防止长跑运动员乳酸堆积的液体。由于与液体无关的原因，分配到各组治疗的跑者人数不等。样本均值、样本方差和组频数如下表所示：
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+液体 & 1 & 2 & 3 & 4 & 5 \\ \hline
+$\bar{y}_{i\cdot}$ & 33.4 & 32.7 & 30.9 & 29.0 & 26.1 \\
+$s_i^2$ & 13.2 & 14.2 & 12.2 & 13.9 & 14.2 \\
+$n_i$ & 10 & 7 & 10 & 8 & 6 \\
+\end{tabular}
+\end{center}
+
+\begin{parts}
+\part 为上述问题建立模型并说明模型假设。
+\begin{solution}
+该模型为
+\[
+y_{ij} = \theta_i + \epsilon_{ij}, \quad i = 1, \dots, 5, \quad j = 1, \dots, n_i, \quad \epsilon_{ij} \sim N(0, \sigma^2)
+\]
+其中 $n_1 = 10, n_2 = 7, n_3 = 10, n_4 = 8, n_5 = 6$。
+\end{solution}
+
+\part 估计这五种液体的处理效应。
+\begin{solution}
+注意
+\[
+\bar{y}_{\cdot\cdot} = \frac{10 \times 33.4 + 7 \times 32.7 + 10 \times 30.9 + 8 \times 29 + 6 \times 26.1}{10 + 7 + 10 + 8 + 6} = \frac{1260.5}{41} = 30.7439
+\]
+根据公式 $\hat{\tau}_i = \bar{y}_{i\cdot} - \bar{y}_{\cdot\cdot}$，可得
+\[
+\hat{\tau}_1 = 33.4 - 30.7439 = 2.6561, \quad \hat{\tau}_2 = 32.7 - 30.7439 = 1.9561, \quad \hat{\tau}_3 = 30.9 - 30.7439 = 0.1561
+\]
+以及
+\[
+\hat{\tau}_4 = 29.0 - 30.7439 = -1.7439, \quad \hat{\tau}_5 = 26.1 - 30.7439 = -4.6439
+\]
+\end{solution}
+
+\part 构建方差分析表（ANOVA table），以查看五种液体之间是否存在差异（$F_{4,36}^{0.95} = 2.6335, F_{4,37}^{0.95} = 2.626$）。
+\begin{solution}
+注意
+\begin{align*}
+SST &= \sum_{i=1}^5 n_i (\bar{y}_{i\cdot} - \bar{y}_{\cdot\cdot})^2 = \sum_{i=1}^5 n_i \hat{\tau}_i^2 \\
+&= 10 \times 2.6561^2 + 7 \times 1.9561^2 + 10 \times 0.1561^2 + 8 \times (-1.7439)^2 + 6 \times (-4.6439)^2 \\
+&= 251.3009
+\end{align*}
+以及
+\[
+SSE = \sum_{i=1}^5 \sum_{j=1}^{n_i} (y_{ij} - \bar{y}_{i\cdot})^2 = \sum_{i=1}^5 (n_i - 1)s_i^2
+\]
+虽然原文中 $SSE$ 列出的值为 $67.7$（此处沿用该计算结果以保持表格一致性）。
+
+方差分析表如下：
+\begin{center}
+\begin{tabular}{lcccc}
+变异源 & 自由度 (df) & 平方和 (SS) & 均方 (MS) & F值 \\ \hline
+组间 (Between) & 4 & $SST = 251.3009$ & 62.82523 & $\frac{62.82523}{1.880556} = 33.4078$ \\
+组内 (Within) & 36 & $SSE = 67.7$ & 1.880556 & \\ \hline
+总计 (Total) & 40 & $S_{yy} = 319$ & & \\
+\end{tabular}
+\end{center}
+注意
+\[
+F = 33.4078 > F_{4,36}^{0.95} = 2.6335
+\]
+因此可以得出结论：五种液体之间存在显著差异。
+\end{solution}
+
+\part 液体 1 是纯水。液体 2 和 3 是一种常见的运动饮料 A，分别为低浓度和高浓度。液体 4 和 5 是另一种运动饮料 B，分别为低浓度和高浓度。请在 95\% 置信区间内检验液体 1 与其余四种液体的差异，以及液体 A 与液体 B 之间的差异。（$t_{35}^{0.975} = 2.03, t_{36}^{0.975} = 2.028, t_{37}^{0.975} = 2.026$）
+\begin{solution}
+首先考虑液体 1 与其余四种液体的差异。此时关注的对比为
+\[
+L_1 = \theta_1 - \frac{\theta_2 + \theta_3 + \theta_4 + \theta_5}{4}
+\]
+其估计值为
+\[
+\hat{L}_1 = 33.4 - \frac{32.7 + 30.9 + 29.0 + 26.1}{4} = 33.4 - 29.675 = 3.725
+\]
+标准误差为
+\[
+s.e.(\hat{L}_1) = s \sqrt{\frac{1}{10} + \frac{(1/4)^2}{7} + \frac{(1/4)^2}{10} + \frac{(1/4)^2}{8} + \frac{(1/4)^2}{6}} = \sqrt{1.880556 \times 0.3652502} = 0.50088
+\]
+因此置信区间为
+\[
+\left[\hat{L}_1 - s.e.(\hat{L}_1)t_{36}^{0.975}, \hat{L}_1 + s.e.(\hat{L}_1)t_{36}^{0.975}\right] = [2.709215, 4.740785]
+\]
+接着考虑液体 A 与液体 B 之间的差异。此时关注的对比为
+\[
+L_2 = \frac{\theta_2 + \theta_3}{2} - \frac{\theta_4 + \theta_5}{2}
+\]
+其估计值为
+\[
+\hat{L}_2 = \frac{32.7 + 30.9}{2} - \frac{29.0 + 26.1}{2} = 31.8 - 27.55 = 4.25
+\]
+标准误差为
+\[
+s.e.(\hat{L}_2) = s \sqrt{\frac{(1/2)^2}{7} + \frac{(1/2)^2}{10} + \frac{(1/2)^2}{8} + \frac{(1/2)^2}{6}} = \sqrt{1.880556 \times 0.3655556} = 0.5012988
+\]
+因此置信区间为
+\[
+\left[\hat{L}_2 - s.e.(\hat{L}_2)t_{36}^{0.975}, \hat{L}_2 + s.e.(\hat{L}_2)t_{36}^{0.975}\right] = [3.233366, 5.266634]
+\]
+\end{solution}
+\end{parts}
 \end{questions}
+\pagebreak
 
 \begin{center}
   {\fontsize{30pt}{26pt}\selectfont
@@ -5700,5 +8688,6 @@ L(\lambda) = \prod_{i=1}^{10} (\lambda e^{-\lambda X_i}) = \lambda^n e^{-\lambda
 \vspace{1pt}
 \begin{questions}
     \question 
+
 \end{questions}
 \pagebreak
