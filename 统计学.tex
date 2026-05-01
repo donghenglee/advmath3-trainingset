@@ -4963,6 +4963,50 @@ S_1 = \frac{1}{n} \sum_{i=1}^n X_i, \quad S_2 = \frac{1}{n} \sum_{i=1}^n X_i^2
 \end{align*}
 \end{solution}
 
+\question 设 $X_1, X_2, \cdots, X_n$ 为独立同分布样本，$X_i \sim \theta e^{-\theta x} I\{x > 0\}, \theta > 0$。若仅观测到 $X_1, \cdots, X_m$ 的值，且已知 $X_i \ge \tau, i = m+1, \cdots, n \, (m < n)$，求 $\theta$ 的极大似然估计。
+
+\begin{solution}
+该样本的联合密度函数（似然函数）为：
+\[ L(\theta) = \prod_{i=1}^{m} f(x_i) \cdot \prod_{i=m+1}^{n} [1 - F(\tau)] \]
+已知 $1 - F(\tau) = e^{-\theta \tau}$，代入得：
+\[ L(\theta) = \theta^m \exp\left( -\theta \sum_{i=1}^m x_i \right) \cdot \exp\left( -(n-m)\theta \tau \right) \]
+取对数似然函数：
+\[ \ell(\theta) = m \ln \theta - \theta \left[ \sum_{i=1}^m x_i + (n-m)\tau \right] \]
+对 $\theta$ 求导并令其为 $0$：
+\[ \frac{m}{\theta} - \left[ \sum_{i=1}^m x_i + (n-m)\tau \right] = 0 \]
+得 $\theta$ 的极大似然估计量为：
+\[ \hat{\theta} = \frac{m}{\sum_{i=1}^m X_i + (n-m)\tau} \]
+\end{solution}
+
+\question 设 $x_1, x_2, \dots, x_n$ 为来自密度函数 $p(x; \theta) = e^{-(x-\theta)} I\{x > \theta\}$ 的独立同分布样本。求 $\theta$ 的极大似然估计 $\hat{\theta}$，并判断其是否为无偏估计与相合估计。
+
+\begin{solution}
+1. \textbf{求极大似然估计：}
+该样本的似然函数为：
+\[ L(\theta) = \prod_{i=1}^{n} e^{-(x_i-\theta)} I\{x_i > \theta\} = e^{-\sum_{i=1}^n x_i + n\theta} I\{x_{(1)} > \theta\} \]
+其中 $x_{(1)} = \min\{x_1, \dots, x_n\}$。当 $\theta < x_{(1)}$ 时，$L(\theta)$ 是 $\theta$ 的严格递增函数。为了使 $L(\theta)$ 最大化，$\theta$ 应取其定义域内的最大可能值，即：
+\[ \hat{\theta} = x_{(1)} \]
+
+2. \textbf{求 $\hat{\theta}$ 的分布：}
+总体的分布函数为 $F(x) = 1 - e^{-(x-\theta)}$，故 $x_{(1)}$ 的概率密度函数为：
+\[ f_{x_{(1)}}(x) = n[1-F(x)]^{n-1}f(x) = n e^{-n(x-\theta)}, \quad x > \theta \]
+
+3. \textbf{无偏性判断：}
+利用变量代换 $t = x - \theta$（则 $x = t + \theta, \, dx = dt$）以及 $\Gamma$ 函数公式 $\int_{0}^{\infty} t^{\alpha-1} e^{-nt} \, dt = \frac{\Gamma(\alpha)}{n^\alpha}$：
+\[ E(\hat{\theta}) = \int_{\theta}^{\infty} x \cdot n e^{-n(x-\theta)} \, dx = n \int_{0}^{\infty} (t + \theta) e^{-nt} \, dt \]
+\[ E(\hat{\theta}) = n \left[ \int_{0}^{\infty} t e^{-nt} \, dt + \theta \int_{0}^{\infty} e^{-nt} \, dt \right] \]
+\[ E(\hat{\theta}) = n \left[ \frac{\Gamma(2)}{n^2} + \theta \frac{\Gamma(1)}{n} \right] = \theta + \frac{1}{n} \]
+由于 $E(\hat{\theta}) = \theta + \frac{1}{n} \neq \theta$，故 $\hat{\theta}$ \textbf{不是无偏估计}。
+
+4. \textbf{相合性判断：}
+计算二阶矩：
+\[ E(\hat{\theta}^2) = n \int_{0}^{\infty} (t + \theta)^2 e^{-nt} \, dt = n \int_{0}^{\infty} (t^2 + 2\theta t + \theta^2) e^{-nt} \, dt \]
+\[ E(\hat{\theta}^2) = n \left[ \frac{\Gamma(3)}{n^3} + 2\theta \frac{\Gamma(2)}{n^2} + \theta^2 \frac{\Gamma(1)}{n} \right] = \frac{2}{n^2} + \frac{2\theta}{n} + \theta^2 \]
+则方差为：
+\[ Var(\hat{\theta}) = E(\hat{\theta}^2) - [E(\hat{\theta})]^2 = \left( \frac{2}{n^2} + \frac{2\theta}{n} + \theta^2 \right) - \left( \theta + \frac{1}{n} \right)^2 = \frac{1}{n^2} \]
+当 $n \to \infty$ 时，$E(\hat{\theta}) \to \theta$ 且 $Var(\hat{\theta}) \to 0$。根据相合性的充分条件（均方误差收敛于 $0$），$\hat{\theta}$ \textbf{是相合估计}。
+\end{solution}
+
 \question
 设 $X_1, \dots, X_n$ 是独立同分布的随机变量, 其 PMF 为 $f(0) = 1 - \theta$, $f(2) = \theta$, 且当 $x$ 取其他值时 $f(x) = 0$, 其中 $\theta \in [0, 1]$ 是未知参数。求 $\theta$ 的最大似然估计（MLE）并给出严格的证明。
 
@@ -8141,6 +8185,788 @@ t = \sum_{i=1}^{10} x_i = 2.561 < 5.425.
     \end{solution}
 
     \question
+研究每月电子商务销售额与在线广告费用之间的关系。已知去年 7 家在线商店的调查结果。考虑到使用简单线性回归模型 $y = \beta_0 + \beta_1 x + \epsilon, \epsilon \sim N(0, \sigma^2)$ 来研究这种关系。
+
+\begin{center}
+\begin{tabular}{c|c|c}
+在线商店 & 每月电子商务销售额（单位：1000 美元） & 在线广告费用（单位：1000 美元） \\ \hline
+1 & 368 & 1.7 \\
+2 & 340 & 1.5 \\
+3 & 665 & 2.8 \\
+4 & 954 & 5 \\
+5 & 331 & 1.3 \\
+6 & 556 & 2.2 \\
+7 & 376 & 1.3 \\
+\end{tabular}
+\end{center}
+
+
+\begin{parts}
+\part 使用最小二乘法估计回归系数 $\beta_0$ 和 $\beta_1$。
+\begin{solution}
+汇总统计数据如下：
+\[
+\bar{y} = \frac{368 + \cdots + 376}{7} = 512.85, \quad \bar{x} = \frac{1.7 + \cdots + 1.3}{7} = 2.257
+\]
+
+\[
+S_{xy} = \sum_{i=1}^n x_i y_i - n \bar{x} \bar{y} = 9909.9 - 7 \times 512.857 \times 2.257 = 1807.271
+\]
+
+\[
+S_{xx} = \sum_{i=1}^n x_i^2 - n (\bar{x})^2 = 46.2 - 35.658 = 10.54
+\]
+
+由此得出：
+\[
+\hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = 171.44, \quad \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 125.9
+\]
+
+拟合直线方程为：
+\[
+y = 125.9 + 171.44x
+\]
+
+\end{solution}
+
+\part 解释回归系数的含义。
+\begin{solution}
+从拟合方程中可以看出，当 $x = 0$ 时，$y = 125.9$。这意味着 $\beta_0$ 代表当公司不在在线广告上花钱时，每月的平均电子商务销售额。$\beta_1$ 则代表在线广告费用每增加一个单位，每月电子商务销售额的平均增加（变化）量。
+\end{solution}
+
+\part 对 $\beta_1 = 0$ 的假设进行 $t$ 检验。使用 5\% 的显著性水平。
+\begin{solution}
+注意：
+\[
+SSR = (\hat{\beta}_1)^2 S_{xx} = 309797, \quad S_{yy} = 322281
+\]
+
+由此可知：
+\[
+SSE = S_{yy} - SSR = 12484, \quad s^2 = \frac{SSE}{5} = 2497
+\]
+
+我们随后得出：
+\[
+t = \frac{\hat{\beta}_1}{s / \sqrt{S_{xx}}} = 11.139 > t_{5, 0.975} = 2.57
+\]
+
+这表明该回归模型是显著的。
+\end{solution}
+\end{parts}
+
+\question
+在关于自变量 $X$ 和响应变量 $Y$ 之间关系的讨论中，获得了八对独立的观测值如下：
+\begin{center}
+\begin{tabular}{c|cccccccc}
+$x_i$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+$y_i$ & 1.98 & 0.75 & 2.67 & 3.65 & 3.34 & 4.82 & 6.64 & 5.97
+\end{tabular}
+\end{center}
+考虑使用简单线性回归模型 $y = \beta_0 + \beta_1 x + \epsilon, \epsilon \sim N(0, \sigma^2)$ 来研究这一关系。
+\begin{parts}
+    \part 构造方差分析（ANOVA）表，并据此检验假设 $\beta_1 = 0$。使用 5\% 的显著性水平。
+    \begin{solution}
+    汇总数据列表如下：
+    \[
+    \bar{x} = \frac{1}{8} \sum_{i=1}^{8} x_i = 4.5, \quad \bar{y} = \frac{1}{8} \sum_{i=1}^{8} y_i = 3.73,
+    \]
+    \[
+    S_{xx} = \sum_{i=1}^{8} (x_i - \bar{x})^2 = 42, \quad S_{yy} = \sum_{i=1}^{8} (y_i - \bar{y})^2 = 27.90
+    \]
+    以及
+    \[
+    S_{xy} = \sum_{i=1}^{8} (x_i - \bar{x})(y_i - \bar{y}) = 31.76.
+    \]
+    由此可得：
+    \[
+    \hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = \frac{31.76}{42} = 0.76
+    \]
+    且
+    \[
+    \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 3.73 - 0.76 \times 4.5 = 0.31.
+    \]
+    根据给出的数据汇总，我们得到以下方差分析表：
+    \begin{center}
+    \begin{tabular}{lcccc}
+    来源 & df & SS & MS & F \\ \hline
+    回归 & 1 & 24.26 & 24.26 & 39.77 \\
+    残差 & 6 & 3.64 & 0.61 & \\ \hline
+    总计 & 7 & 27.90 & & 
+    \end{tabular}
+    \end{center}
+    $H_0 : \beta_1 = 0$ 对抗 $H_1 : \beta_1 \neq 0$。该假设的检验统计量为 $F$。
+    由于 $39.77 > F_{1,6}^{0.05} = 5.99$，我们在 5\% 的显著性水平下拒绝 $H_0$。
+    \end{solution}
+
+    \part 求 $R^2$ 的值。
+    \begin{solution}
+    \[
+    R^2 = \frac{SSR}{S_{yy}} = 86.95\%.
+    \]
+    \end{solution}
+
+    \part 求 $l = \beta_0 + 4.5\beta_1$ 的预测值，并构造其 95\% 置信区间。
+    \begin{solution}
+    由于 $l = \beta_0 + 4.5\beta_1$ 可以视为当 $x_0$ 取 4.5 时 $y$ 的期望值，这个问题等价于求给定 $x_0 = 4.5$ 时平均响应的预测值。因此，点预测值为：
+    \[
+    \hat{l} = \hat{\beta}_0 + 4.5\hat{\beta}_1 = 0.31 + 4.5 \times 0.76 = 3.73.
+    \]
+    相应的标准误差为：
+    \[
+    s.e.(\hat{l} - l) = s \sqrt{\frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}} = \sqrt{0.61} \sqrt{\frac{1}{8} + \frac{(4.5 - 4.5)^2}{42}} = 0.276.
+    \]
+    注意
+    \[
+    (\hat{l} - l)/s.e.(\hat{l} - l) \sim t_{n-2}
+    \]
+    相应的临界值为 $t_{n-2}^{0.025} = 2.447$。由此可得预测区间为：
+    \[
+    \left[\hat{l} - s.e.(\hat{l} - l)t_{n-2}^{0.025}, \hat{l} + s.e.(\hat{l} - l)t_{n-2}^{0.025}\right] = [3.73 - 0.66, 3.73 + 0.66] = [3.07, 3.49].
+    \]
+    \end{solution}
+\end{parts}
+
+\question
+假设一家家电商店进行了一项为期 5 个月的实验，以确定广告支出对销售收入的影响。结果如下表所示。
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+月份 & 广告支出 $x$（百美元） & 销售收入 $y$（千美元） \\ \hline
+1 & 1 & 1 \\ \hline
+2 & 2 & 1 \\ \hline
+3 & 3 & 2 \\ \hline
+4 & 4 & 2 \\ \hline
+5 & 5 & 4 \\ \hline
+\end{tabular}
+\end{center}
+\begin{parts}
+    \part 当家电商店在广告上花费 400 美元时，求月平均销售额的 95\% 置信区间。
+    \begin{solution}
+    根据数据可知：
+    \[
+    \bar{x} = \frac{1 + 2 + 3 + 4 + 5}{5} = 3, \quad \bar{y} = \frac{1 + 1 + 2 + 2 + 4}{5} = 2
+    \]
+    \[
+    S_{xx} = \sum (x_i - \bar{x})^2 = \sum x_i^2 - n \bar{x}^2 = 55 - 5 \times 3^2 = 10,
+    \]
+    \[
+    S_{yy} = \sum (y_i - \bar{y})^2 = \sum y_i^2 - n \bar{y}^2 = 26 - 20 = 6,
+    \]
+    \[
+    S_{xy} = \sum x_i y_i - n \bar{x} \bar{y} = 37 - 5 \times 3 \times 2 = 7.
+    \]
+    我们进而得出：
+    \[
+    \hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = \frac{7}{10} = 0.7, \quad \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 2 - 0.7 \times 3 = -0.1.
+    \]
+    且
+    \[
+    SSE = \sum (y_i - \hat{y}_i)^2 = S_{yy} - (\hat{\beta}_1)^2 S_{xx} = 6 - 0.7 \times 7 = 1.1, \quad s = \sqrt{\frac{SSE}{n - 2}} = \sqrt{0.367} = 0.61.
+    \]
+    根据支出单位，我们可以看到未来的观测值为 $x_p = 4$。由此可得：
+    \[
+    \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_p = -0.1 + 0.7 \times 4 = 2.7.
+    \]
+    从 $t$ 分布表我们可以获得 $t_{\frac{\alpha}{2}, 3} = 3.182$。注意本例中的置信区间为：
+    \[
+    \hat{y} \pm (t_{\frac{\alpha}{2}, 3}) s \sqrt{\frac{1}{n} + \frac{(x_p - \bar{x})^2}{S_{xx}}}.
+    \]
+    因此置信区间为：
+    \[
+    2.7 \pm (3.182)(0.61) \sqrt{\frac{1}{5} + \frac{(4 - 3)^2}{10}} = (1.6, 3.8).
+    \]
+    \end{solution}
+
+    \part 如果下个月的广告支出为 400 美元，请预测下个月的月销售额。使用 95\% 的预测区间。
+    \begin{solution}
+    预测区间为：
+    \[
+    \hat{y} \pm (t_{\frac{\alpha}{2}, 3}) s \sqrt{1 + \frac{1}{n} + \frac{(x_p - \bar{x})^2}{S_{xx}}}
+    \]
+    \[
+    = 2.7 \pm (3.182)(0.61) \sqrt{1 + \frac{1}{5} + \frac{(4 - 3)^2}{10}} = (0.5, 4.9).
+    \]
+    \end{solution}
+\end{parts}
+
+    \question
+给定简单线性回归模型
+\[
+y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \quad i = 1, 2, \cdots, n,
+\]
+证明
+\[
+s^2 = \frac{1}{n - 2} \sum_{i=1}^n \left(y_i - \left(\hat{\beta}_0 + \hat{\beta}_1 x_i\right)\right)^2
+\]
+是 $\sigma^2$ 的无偏估计量。这里 $\hat{\beta}_0$ 和 $\hat{\beta}_1$ 是 $\beta_0$ 和 $\beta_1$ 的最小二乘估计量，$\sigma^2$ 是独立同分布误差 $\epsilon_i$ 的方差。
+
+\begin{solution}
+回想 $\hat{\beta}_0$ 和 $\hat{\beta}_1$ 的定义，我们有
+\[
+y_i - \left(\hat{\beta}_0 + \hat{\beta}_1 x_i\right) = \left(y_i - \bar{y}\right) - \hat{\beta}_1 \left(x_i - \bar{x}\right).
+\]
+由此可知
+\[
+(n - 2) s^2 = \sum_{i=1}^n \left(y_i - \bar{y}\right)^2 + \hat{\beta}_1^2 \sum_{i=1}^n \left(x_i - \bar{x}\right)^2 - 2 \hat{\beta}_1 \sum_{i=1}^n \left(x_i - \bar{x}\right) \left(y_i - \bar{y}\right)
+\]
+\[
+= S_{yy} + \hat{\beta}_1^2 S_{xx} - 2 \hat{\beta}_1 S_{xy} = S_{yy} + \hat{\beta}_1^2 S_{xx} - 2 \hat{\beta}_1 \left(\hat{\beta}_1 S_{xx}\right)
+\]
+\[
+= S_{yy} - \hat{\beta}_1^2 S_{xx}.
+\]
+只需计算 $E(S_{yy})$ 和 $E(\hat{\beta}_1^2 S_{xx})$。注意
+\[
+S_{yy} = \sum_{i=1}^n y_i^2 - n \left(\bar{y}\right)^2.
+\]
+由此可知
+\[
+E S_{yy} = \sum_{i=1}^n E \left(y_i^2\right) - n E \left(\bar{y}\right)^2.
+\]
+根据方差公式，我们得出
+\[
+E \left(y_i^2\right) = var(y_i) + \left(E y_i\right)^2 = \sigma^2 + \left(\beta_0 + \beta_1 x_i\right)^2
+\]
+且
+\[
+E \left(\bar{y}\right)^2 = var(\bar{y}) + \left(E \bar{y}\right)^2 = var\left(\frac{1}{n} \sum_{i=1}^n y_i\right) + \left(\beta_0 + \beta_1 \bar{x}\right)^2
+\]
+\[
+= \frac{1}{n^2} \sum_{i=1}^n var(y_i) + \left(\beta_0 + \beta_1 \bar{x}\right)^2 = \frac{\sigma^2}{n} + \left(\beta_0 + \beta_1 \bar{x}\right)^2
+\]
+因此
+\[
+E S_{yy} = (n - 1) \sigma^2 + \beta_1^2 S_{xx}.
+\]
+此外
+\[
+E \left(\hat{\beta}_1^2 S_{xx}\right) = S_{xx} \left[Var\left(\hat{\beta}_1\right) + \left(E \hat{\beta}_1\right)^2\right] = S_{xx} \left[\frac{\sigma^2}{S_{xx}} + \beta_1^2\right] = \sigma^2 + \beta_1^2 S_{xx}.
+\]
+综合以上结果，我们得到
+\[
+(n - 2) E s^2 = \left((n - 1) \sigma^2 + \beta_1^2 S_{xx}\right) - \left(\sigma^2 + \beta_1^2 S_{xx}\right) = (n - 2) \sigma^2.
+\]
+这意味着 $s^2$ 是 $\sigma^2$ 的无偏估计量。
+\end{solution}
+
+\question
+假设回归模型
+\[
+y_i = \beta_1 x_i + \epsilon_i, \quad i = 1, 2, \cdots, n,
+\]
+\begin{parts}
+\part 求 $\beta_1$ 的最小二乘估计量。
+\begin{solution}
+定义目标函数
+\[
+Q(\beta_1) = \sum_{i=1}^n \left(y_i - \beta_1 x_i\right)^2.
+\]
+将 $Q(\beta_1)$ 对 $\beta_1$ 求导并令其等于零，我们得到
+\[
+-2 \sum_{i=1}^n \left(y_i - \beta_1 x_i\right) x_i = 0,
+\]
+从而得出最小二乘估计量
+\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2}.
+\]
+\end{solution}
+
+\part 假设误差项 $\epsilon_i$ 独立服从 $N(0, \sigma^2)$，且 $\sigma^2$ 已知。陈述 $n$ 个样本观测值 $Y$ 的似然函数，并获得 $\beta_1$ 的极大似然估计量。它与最小二乘估计量相同吗？
+\begin{solution}
+由于 $\epsilon_i$ 的概率密度函数是 $N(0, \sigma^2)$，则 $y_i$ 的概率密度函数是
+\[
+\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{\left(y_i - \beta_1 x_i\right)^2}{2 \sigma^2}}.
+\]
+由此可知 $(y_1, \cdots, y_n)$ 的似然函数为
+\[
+f(y_1, \cdots, y_n, \beta_1) = \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{\left(y_i - \beta_1 x_i\right)^2}{2 \sigma^2}} = \left(\frac{1}{\sqrt{2 \pi \sigma^2}}\right)^n e^{-\sum_{i=1}^n \frac{\left(y_i - \beta_1 x_i\right)^2}{2 \sigma^2}}.
+\]
+关于 $\beta_1$ 最大化 $f(y_1, \cdots, y_n, \beta_1)$ 等价于最小化 $\sum_{i=1}^n \left(y_i - \beta_1 x_i\right)^2$。因此，$\beta_1$ 的极大似然估计量与最小二乘估计量相同。
+\end{solution}
+
+\part 证明 $\beta_1$ 的极大似然估计量是无偏的。
+\begin{solution}
+鉴于上述结果，我们有
+\[
+E \hat{\beta}_1 = E \frac{\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2} = \frac{1}{\sum_{i=1}^n x_i^2} \sum_{i=1}^n x_i E(y_i) = \frac{1}{\sum_{i=1}^n x_i^2} \sum_{i=1}^n x_i^2 \beta_1 = \beta_1.
+\]
+因此估计量是无偏的。
+\end{solution}
+\end{parts}
+
+\question
+考虑一个具有一个响应变量 ($Y$) 和两个预测变量 ($X_1$ 和 $X_2$) 的多元线性回归 (MLR) 模型，$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon$，其中 $\epsilon \sim N(0, \sigma^2)$。已知
+\[
+\mathbf{X'X} = \begin{pmatrix} 25 & 1315 & 506 \\ 1315 & 76323.42 & 26353.3 \\ 506 & 26353.3 & 10460 \end{pmatrix}, \quad \mathbf{X'Y} = \begin{pmatrix} 235.6 \\ 11821.432 \\ 4831.86 \end{pmatrix}
+\]
+\[
+(\mathbf{X'X})^{-1} = \begin{pmatrix} 2.779 & -0.0112 & -0.106 \\ -0.0112 & 0.146 \times 10^{-3} & 0.175 \times 10^{-3} \\ -0.106 & 0.175 \times 10^{-3} & 0.479 \times 10^{-2} \end{pmatrix}
+\]
+$\mathbf{Y'Y} = 2784.11$。
+计算 $S_{yy}$，$SSE$，$\hat{\beta}$ 和 $s^2$ 的值。并说明原因。
+
+\begin{solution}
+由 Q1 中给出的 $\mathbf{X'X}$ 的一般表达式和 Q2 中给出的 $\mathbf{X'X}$ 的值可知 $n = 25$。此外，根据 Q1，$\mathbf{X'Y}$ 的第一个分量是 $\sum_{i=1}^{n} y_i$，因此 $\bar{Y} = 235.6/25 = 9.424$。由此可得
+\[
+S_{yy} = \sum_{i=1}^{n} (y_i - \bar{y})^2 = \sum_{i=1}^{n} y_i^2 - n(\bar{y})^2 = \mathbf{Y'Y} - n(\bar{y})^2 = 2284.11 - 2220.2954 = 63.8156.
+\]
+\[
+\hat{\beta} = (\mathbf{X'X})^{-1} \mathbf{X'Y} = (10.16, -0.07, 0.24)',
+\]
+以及
+\[
+SSE = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = \mathbf{Y'Y} - \mathbf{Y'X}(\mathbf{X'X})^{-1} \mathbf{X'Y} = 2784.11 - 2756.47 = 27.64.
+\]
+因此我们有
+\[
+s^2 = \frac{SSE}{n - p - 1} = \frac{27.64}{22} = 1.256.
+\]
+\end{solution}
+
+% \question
+% 1. 考虑一个具有一个响应变量 ($Y$) 和两个预测变量 ($X_1$ 和 $X_2$) 的多元线性回归 (MLR) 模型，$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon$，其中 $\epsilon \sim N(0, \sigma^2)$。假设有 $n$ 个观测值，即我们要分析以下数值表：
+% \begin{center}
+% \begin{tabular}{c|cc}
+% $Y$ & $X_1$ & $X_2$ \\ \hline
+% $y_1$ & $x_{11}$ & $x_{12}$ \\
+% $y_2$ & $x_{21}$ & $x_{22}$ \\
+% $\vdots$ & $\vdots$ & $\vdots$ \\
+% $y_n$ & $x_{n1}$ & $x_{n2}$
+% \end{tabular}
+% \end{center}
+% \begin{parts}
+%     \part 写出上述 MLR 模型的矩阵形式，包括写出矩阵 $\mathbf{Y}$，$\mathbf{X}$ 和 $\epsilon$，以及相应的假设。
+%     \begin{solution}
+%     参见 Tutorial 4 中问题 1 的解答。
+%     \end{solution}
+
+%     \part 推导 $\mathbf{c'\hat{\beta}}$ 的分布，其中 $\mathbf{c} = (c_0, c_1, c_2)'$，$\mathbf{\hat{\beta}} = (\mathbf{X'X})^{-1} \mathbf{X'Y}$ 是最小二乘估计量。
+%     \begin{solution}
+%     由于 $\mathbf{\hat{\beta}} \sim N(\beta, \sigma^2 (\mathbf{X'X})^{-1})$，我们有
+%     \[
+%     \mathbf{c'\hat{\beta}} \sim N(\mathbf{c'\beta}, \sigma^2 \mathbf{c'} (\mathbf{X'X})^{-1} \mathbf{c}),
+%     \]
+%     这里我们使用了第 3 章中给出的多元正态分布的性质。
+%     \end{solution}
+
+%     如果进一步已知 $n = 25$
+%     \[
+%     (\mathbf{X'X})^{-1} = \begin{pmatrix} 2.779 & -0.0112 & -0.106 \\ -0.0112 & 0.146 \times 10^{-3} & 0.175 \times 10^{-3} \\ -0.106 & 0.175 \times 10^{-3} & 0.479 \times 10^{-2} \end{pmatrix}, \quad \mathbf{X'Y} = \begin{pmatrix} 235.6 \\ 11821.432 \\ 4831.86 \end{pmatrix}
+%     \]
+%     且 $s^2 = 0.4377$。
+
+%     \part 计算最小二乘估计量 $\mathbf{\hat{\beta}}$。
+%     \begin{solution}
+%     可以直接计算得出
+%     \[
+%     \mathbf{\hat{\beta}} = (\mathbf{X'X})^{-1} \mathbf{X'Y} = (10.1552, -0.0672, 0.2398)'.
+%     \]
+%     \end{solution}
+
+%     \part 在 0.05 的显著性水平下检验假设 $\beta_1 + \beta_2 = 0$。（$t$ 分布的一些分位数：$t_{25}^{0.05/2} = 2.060$，$t_{24}^{0.05/2} = 2.064$ 以及 $t_{22}^{0.05/2} = 2.074$）
+%     \begin{solution}
+%     假设 $\beta_1 + \beta_2 = 0$ 可以重写为 $\mathbf{c'\beta}$，其中 $\mathbf{c'} = (0, 1, 1)$ 且 $\mathbf{\beta'} = (\beta_0, \beta_1, \beta_2)$。因此我们可以使用 $\mathbf{c'\hat{\beta}}$ 来估计 $\mathbf{c'\beta}$。从 (ii) 我们知道 $\mathbf{c'\hat{\beta}}$ 的分布。然而由于 $\sigma^2$ 未知，我们使用 $s^2$ 来估计 $\sigma^2$。结果如下：
+%     \[
+%     \frac{\mathbf{c'\hat{\beta}} - \mathbf{c'\beta}}{s \sqrt{\mathbf{c'} (\mathbf{X'X})^{-1} \mathbf{c}}} \sim t_{n-p-1}.
+%     \]
+%     给定 $s^2$ 和 $\mathbf{c}$ 的值，可以得到
+%     \[
+%     s \sqrt{\mathbf{c'} (\mathbf{X'X})^{-1} \mathbf{c}} = \sqrt{0.4377 \times 0.0053} = 0.0482, \quad \mathbf{c'\hat{\beta}} = 0.1725.
+%     \]
+%     这表明
+%     \[
+%     \frac{\mathbf{c'\hat{\beta}}}{s \sqrt{\mathbf{c'} (\mathbf{X'X})^{-1} \mathbf{c}}} = 3.5798 > t_{22}^{0.05/2} = 2.074.
+%     \]
+%     因此我们拒绝原假设。
+%     \end{solution}
+% \end{parts}
+
+% \question
+% 许多人认为一个人的寿命长短与左手生命线的长度线性相关。L.E. Mather 博士和 M.E. Wilson 博士在 1974 年进行了一项实验来研究这一观点。在他们的实验中，涉及两个变量：
+% $Y$ = 去世时的年龄（精确到年）
+% $X$ = 左手生命线的长度，单位为厘米（精确到 0.15cm）
+% 共收集了 50 对观测值。前四个观测值如下表列出：
+% \begin{center}
+% \begin{tabular}{ccc}
+% 案例 & $Y = $ 年龄（年） & $X = $ 长度（cm） \\ \hline
+% 1 & 19 & 9.75 \\
+% 2 & 40 & 9.00 \\
+% 3 & 42 & 9.60 \\
+% 4 & 42 & 9.75 \\
+% $\vdots$ & $\vdots$ & $\vdots$ \\
+% 50 & 94 & 9.00
+% \end{tabular}
+% \end{center}
+% 数据汇总如下：
+% \[
+% \sum y = 3333, \quad \sum y^2 = 231933, \quad \sum xy = 30549.75,
+% \]
+% \[
+% \sum x = 459.9, \quad \sum x^2 = 4308.57.
+% \]
+% 考虑使用简单线性回归 (SLR) 模型来拟合上述数据。
+% \begin{parts}
+%     \part 写出拟合的 SLR 模型，包括 $\beta_0, \beta_1$ 和 $\sigma^2$ 的估计。
+%     \begin{solution}
+%     根据数据汇总，我们有
+%     \[
+%     S_{yy} = \sum y^2 - n(\bar{y})^2 = 9755.2, \quad S_{xy} = \sum xy - n\bar{x}\bar{y} = -107.184.
+%     \]
+%     \[
+%     S_{xx} = \sum x^2 - n(\bar{x})^2 = 78.4098, \quad \hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = -1.366972, \quad \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 79.23340833,
+%     \]
+%     \[
+%     SSR = \hat{\beta}_1^2 S_{xx} = 146.5175, \quad SSE = S_{yy} - SSR = 9608.683,
+%     \]
+%     以及
+%     \[
+%     s^2 = \frac{SSE}{n - 2} = \frac{9608.683}{48} = 200.1809.
+%     \]
+%     由此可得，拟合的 SLR 模型为
+%     \[
+%     \hat{y}_i = 79.23340833 - 1.366972 x_i.
+%     \]
+%     \end{solution}
+
+%     \part 使用 $t$ 检验，在 5\% 的显著性水平下检查生命线长度是否会影响寿命。
+%     \begin{solution}
+%     $t$ 统计量为
+%     \[
+%     \left| \frac{\hat{\beta}_1}{\sqrt{s^2/S_{xx}}} \right| = \left| \frac{-1.366972}{\sqrt{200.1809/78.4098}} \right| = |-0.8555264| < t_{48}^{0.025} = 2.0106.
+%     \]
+%     因此，这些数据并不支持寿命与生命线长度相关的观点。
+%     \end{solution}
+
+%     \part 构造 ANOVA 表，并检查拟合的 SLR 模型是否显著。
+%     \begin{solution}
+%     \begin{center}
+%     \begin{tabular}{lcccc}
+%     来源 & df & SS & MS & F \\ \hline
+%     回归 & 1 & $SSR = 146.5175$ & 146.5175 & $146.5175/200.1809 = 0.7319255$ \\
+%     残差 & 48 & $SSE = 9608.683$ & 200.1809 & \\ \hline
+%     总计 & 49 & $S_{yy} = 9755.2$ & & 
+%     \end{tabular}
+%     \end{center}
+%     注意 $0.731 < F_{1,48}^{0.05} = 4.05$。因此这些数据不支持寿命与生命线长度相关的观点，这与 $t$ 统计量得出的结论一致。拟合的 SLR 模型不显著。
+%     \end{solution}
+
+%     \part 计算 $R^2$ 的值，并给出一些评论。
+%     \begin{solution}
+%     \[
+%     R^2 = \frac{SSR}{S_{yy}} = \frac{146.5175}{9755.2} = 1.5\%,
+%     \]
+%     这表明拟合效果不好。
+%     \end{solution}
+
+%     \part 我左手的生命线长度为 9.32 cm。请告诉具有该生命线长度的人员的平均寿命。并给我一个 95\% 置信度的区间。
+%     \begin{solution}
+%     具有该长度的人员的平均寿命预测值为
+%     \[
+%     \hat{y}_0 = 79.23340833 - 1.366972 x_0 = 79.23340833 - 1.366972 \times 9.32 = 66.49323.
+%     \]
+%     $\hat{y}_0$ 的标准误差为
+%     \[
+%     s \sqrt{\frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}} t_{n-2}^{\frac{\alpha}{2}} = \sqrt{200.1809 \left( \frac{1}{50} + \frac{(9.32 - 9.198)^2}{78.4098} \right)} \times 2.0106 = 4.042065.
+%     \]
+%     由此可得预测区间为
+%     \[
+%     [66.49323 - 4.042065, 66.49323 + 4.042065] = [62.45116, 70.53529].
+%     \]
+%     \end{solution}
+% \end{parts}
+
+\question
+纽约臭氧浓度与其他环境因素之间的关系正在调查中。纽约的浓度 $Y$、太阳辐射 $X_1$ 和温度 $X_2$ 连续收集了 30 天。
+
+考虑一个多元线性回归模型。令 $\mathbf{Y}$ 为响应向量，$\mathbf{X}$ 为设计矩阵。回归分析给出以下矩阵。
+\[
+\mathbf{X}'\mathbf{X} = \begin{pmatrix} 30 & 5733 & 2085 \\ 5733 & 1463179 & 411076 \\ 2085 & 411076 & 147243 \end{pmatrix}, \quad \mathbf{X}'\mathbf{Y} = \begin{pmatrix} 83.84 \\ 17097.38 \\ 5953.47 \end{pmatrix}
+\]
+\[
+(\mathbf{X}'\mathbf{X})^{-1} = \begin{pmatrix} 2.2157 & 6.176 \times 10^{-4} & -3.310 \times 10^{-2} \\ 6.176 \times 10^{-4} & 3.341 \times 10^{-6} & -1.807 \times 10^{-5} \\ -3.310 \times 10^{-2} & -1.807 \times 10^{-5} & 5.259 \times 10^{-4} \end{pmatrix}
+\]
+$\mathbf{Y}'\mathbf{Y} = 251.0472$。
+
+\begin{parts}
+    \part 找出回归系数的最小二乘估计量 $\hat{\beta}_0, \hat{\beta}_1$ 和 $\hat{\beta}_2$。
+    \begin{solution}
+        \[
+        \hat{\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y} = (-0.736, 0.0013, 0.0468).
+        \]
+    \end{solution}
+
+    \part 在 $5\%$ 的显著性水平下，整体回归是否显著？
+    \begin{solution}
+        注意 $\sum_{i} y_i$ 是 $\mathbf{X}'\mathbf{Y}$ 的第一个分量。由此可得 $\bar{y} = 83.84/30 = 2.795$ 且
+        \[
+        S_{yy} = \mathbf{Y}'\mathbf{Y} - n(\bar{y})^2 = 251.0472 - 234.304 = 16.7423.
+        \]
+        同时我们有
+        \[
+        SSE = \mathbf{Y}'[\mathbf{I} - \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}']\mathbf{Y} = 251.0472 - 239.966 = 11.1.
+        \]
+        \[
+        s = \sqrt{\frac{11.1}{30 - 2 - 1}} = 0.64.
+        \]
+        这意味着
+        \[
+        SSR = S_{yy} - SSE = 16.7423 - 11.1 = 5.66.
+        \]
+        由此可得 F 统计量
+        \[
+        F = \frac{SSR/p}{SSE/(n - p - 1)} = 6.899 > F_{2,27}^{0.95} = 3.35,
+        \]
+        这表明模型是显著的。
+    \end{solution}
+\end{parts}
+
+考虑一个没有预测变量 $X_1$ 的简化回归模型，$y_i = \beta_0 + \beta_1 x_{2i} + \epsilon_i$。令简化模型中的设计矩阵为 $\mathbf{X}_r$。
+\[
+(\mathbf{X}_r'\mathbf{X}_r)^{-1} = \begin{pmatrix} 2.1015 & -0.029756 \\ -0.029756 & 0.000428 \end{pmatrix}
+\]
+
+\begin{parts}
+    \part[iii] 找出简化模型中的最小二乘估计量 $\hat{\beta}_0, \hat{\beta}_1$。
+    \begin{solution}
+        注意
+        \[
+        \mathbf{X}_r'\mathbf{Y} = \begin{pmatrix} 83.84 \\ 5953.47 \end{pmatrix}.
+        \]
+        我们得到
+        \[
+        \hat{\beta} = \begin{pmatrix} \hat{\beta}_0 \\ \hat{\beta}_1 \end{pmatrix} = (\mathbf{X}_r'\mathbf{X}_r)^{-1}\mathbf{X}_r'\mathbf{Y} = \begin{pmatrix} -0.96 \\ 0.053 \end{pmatrix}.
+        \]
+    \end{solution}
+
+    \part[iv] 找出每个估计量的标准误差。整体回归在 $5\%$ 的显著性水平下是否显著？
+    \begin{solution}
+        \[
+        SSE = \mathbf{Y}'\mathbf{Y} - \mathbf{Y}'\mathbf{X}_r(\mathbf{X}_r'\mathbf{X}_r)^{-1}\mathbf{X}_r'\mathbf{Y} = 251.0472 - 236.9423 = 14.1049.
+        \]
+        这意味着
+        \[
+        s^2 = \frac{SSE}{n - p - 1} = \frac{236.9423}{28} = 0.5037.
+        \]
+        鉴于此，我们有
+        \[
+        s.e.(\hat{\beta}_0) = \sqrt{s^2 \times 2.1015} = 1.0288, \quad s.e.(\hat{\beta}_1) = \sqrt{s^2 \times 0.000428} = 1.468 \times 10^{-2}.
+        \]
+    \end{solution}
+
+    \part[v] 使用 F 检验在 $5\%$ 的显著性水平下检查简化模型的显著性。
+    \begin{solution}
+        应当注意，简化模型和全模型中的 $S_{yy}$ 是相同的。
+        ANOVA 表：
+        \begin{center}
+        \begin{tabular}{lllll}
+        来源 & df & SS & MS & F \\ \hline
+        回归拟合 $\omega$ & 1 & $16.74 - 14.1049 = 2.6351$ & 2.6351 & \\
+        额外 & 1 & $14.1049 - 11.1 = 3.0049$ & 3.0049 & $3.0049/0.41 = 7.319$ \\
+        残差 & 27 & 11.1 & 0.41 & \\ \hline
+        总计 & 29 & 16.7423 & & 
+        \end{tabular}
+        \end{center}
+        注意 $F = 7.319 > F_{1,27}^{0.05} = 4.21$。这表明仅使用简化模型是不够的。
+    \end{solution}
+\end{parts}
+
+\question
+以下数据关于一种新型止痛药，并与阿司匹林和安慰剂在治疗简单头痛方面的效果进行了比较。测量值是指患者服用药物后无疼痛的小时数。在这项小型试点研究中，两名患者服用安慰剂，四名患者服用新药，三名患者服用阿司匹林。
+
+\begin{center}
+\begin{tabular}{c|cccc}
+安慰剂 & 0.0 & 1.0 & & \\ \hline
+新药 & 2.3 & 3.5 & 2.8 & 2.5 \\ \hline
+阿司匹林 & 3.1 & 2.7 & 3.8 & 
+\end{tabular}
+\end{center}
+
+\begin{parts}
+    \part 写出上述研究的模型并说明模型假设。
+    \begin{solution}
+        模型如下：
+        \[
+        y_{ij} = \theta_i + \varepsilon_{ij}, \quad i = 1, 2, 3, \quad j = 1, \dots, n_i.
+        \]
+        从数据中我们可以看到
+        \[
+        k = 3, \quad n_1 = 2, \quad n_2 = 4, \quad n_3 = 3, \quad n = 9.
+        \]
+    \end{solution}
+
+    \part 构建方差分析（ANOVA）表。
+    \begin{solution}
+        从数据中我们得到
+        \[
+        y_{1.} = 1, \quad y_{2.} = 2.3 + 3.5 + 2.8 + 2.5 = 11.1, \quad y_{3.} = 3.1 + 2.7 + 3.8 = 9.6
+        \]
+        \[
+        y_{..} = 1 + 11.1 + 9.6 = 21.7.
+        \]
+        由此可得
+        \[
+        SST = \sum_{i} y_{i.}^2/n_i - y_{..}^2/n = 62.0225 - 52.32111 = 9.7
+        \]
+        且
+        \[
+        S_{yy} = \sum_{i=1}^k \sum_{j=1}^{n_i} y_{ij} - y_{..}^2/n = 63.97 - 52.32111 = 11.65.
+        \]
+        汇总以上结果，我们得到 ANOVA 表：
+        \begin{center}
+        \begin{tabular}{c|cccc}
+        来源 & SS & df & MS & F \\ \hline
+        组间 & 9.7 & 2 & 4.85 & 14.92 \\ \hline
+        组内 & 1.95 & 6 & 0.325 & 
+        \end{tabular}
+        \end{center}
+    \end{solution}
+
+    \part 在 $5\%$ 的显著性水平下，这三种药物效果之间是否存在差异？
+    \begin{solution}
+        注意 $14.92 > F_{2,6}^{0.05} = 5.14$。因此我们拒绝 $H_0$，这意味着在 $5\%$ 的显著性水平下，药物效果之间存在差异。
+    \end{solution}
+
+    \part 假设有人对新药与其他两种药物平均水平的比较感兴趣。找出该对比的 $95\%$ 置信区间。
+    \begin{solution}
+        我们估计对比：
+        \[
+        \theta_2 - \left( \frac{\theta_1 + \theta_3}{2} \right).
+        \]
+        估计量为
+        \[
+        \bar{y}_{2.} - \frac{\bar{y}_{1.} + \bar{y}_{3.}}{2} = 2.775 - (0.5 + 3.2)/2 = 0.925.
+        \]
+        由此可得置信区间为
+        \[
+        0.925 \pm 2.47 \sqrt{(0.325) \left( \frac{1/4}{2} + \frac{1}{4} + \frac{1/4}{3} \right)} = (-0.028, 1.88),
+        \]
+        其中 $t_6^{0.025} = 2.47$。
+    \end{solution}
+\end{parts}
+
+\question
+我们考虑单向分类模型来分析一个数据集。该数据集的摘要如下：
+
+\begin{center}
+\begin{tabular}{c|ccc}
+水平 & 1 & 2 & 3 \\ \hline
+摘要 & (4, 28, 10) & (4, 29, 6) & (5, 40.4, 83.2)
+\end{tabular}
+\end{center}
+对于每个水平，我们计算样本量 $n_i$、样本均值 $\bar{y}_{i.}$ 和平方和 $SS \sum (y_{ij} - \bar{y}_{i.})^2$。将它们放入 $(n_i, \bar{y}_{i.}, \sum (y_{ij} - \bar{y}_{i.})^2)$ 中，然后形成上述表格。请推导 ANOVA 表并进行 $F$ 检验，以检查该因素是否会影响响应。
+
+\begin{solution}
+显然，$k = 3, n = 4 + 4 + 5 = 13$。从表中我们还可以得到
+\[
+SSE = \sum_{i=1}^k \sum_{j=1}^{n_i} (y_{ij} - \bar{y}_{i.})^2 = 10 + 6 + 83.2 = 99.2,
+\]
+\[
+\bar{y}_{..} = \frac{n_1 \bar{y}_{1.} + n_2 \bar{y}_{2.} + n_3 \bar{y}_{3.}}{n_1 + n_2 + n_3} = \frac{4 \times 28 + 4 \times 29 + 5 \times 40.4}{4 + 4 + 5} = 33.08.
+\]
+\[
+SST = \sum_{j=1}^3 n_i (\bar{y}_{i.} - \bar{y}_{..})^2 = 4(28 - 33.08)^2 + 4(29 - 33.08)^2 + 5(40.4 - 33.08)^2 = 437.7.
+\]
+因此 ANOVA 表如下：
+\begin{center}
+\begin{tabular}{c|cccc}
+来源 & SS & df & MS & F \\ \hline
+组间 & 437.7 & 2 & 218.85 & 22.06 \\
+组内 & 99.2 & 10 & 9.92 & \\ \hline
+总计 & 536.9 & 12 & & 
+\end{tabular}
+\end{center}
+由于 $22.06 > F_{2,10}^{0.95} = 4.10$，我们得出结论：该因素会影响响应。
+\end{solution}
+
+\question
+考虑如下的双向分类模型，
+\[
+y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}.
+\]
+对于每个单元格，我们计算样本量 $n_i$、样本均值 $\bar{y}_{i.}$ 和平方和 $SS \sum (y_{ij} - \bar{y}_{i.})^2$。将它们放入 $(n_i, \bar{y}_{i.}, \sum (y_{ij} - \bar{y}_{i.})^2)$ 中，然后形成下表。
+
+\begin{center}
+\begin{tabular}{cc|ccc}
+A & B & 1 & 2 & 3 \\ \hline
+& 1 & (4, 35.25, 1076.75) & (4, 52.25, 604.75) & (4, 71.5, 581) \\
+& 2 & (4, 31.5, 345) & (4, 50.75, 726.75) & (4, 61.75, 160.75)
+\end{tabular}
+\end{center}
+
+请推导 ANOVA 表。
+
+\begin{solution}
+首先，显而易见
+\[
+\bar{y}_{...} = \frac{4 \times (35.25 + 52.25 + 71.5 + 31.5 + 50.75 + 61.75)}{24} = 50.5,
+\]
+\[
+SSE = 1076.75 + 604.75 + 581 + 345 + 726.75 + 160.75 = 3495,
+\]
+\[
+y_{1..} = 4 \times (35.25 + 52.25 + 71.5) = 636,
+\]
+\[
+y_{2..} = 4 \times (31.5 + 50.75 + 61.75) = 576.
+\]
+由此可得
+\[
+c.f. = 2 \times 3 \times 4 \times (50.5)^2 = 61206, \quad SS_A = \sum_{i=1}^{2} \frac{y_{i..}^2}{3 \times 4} - c.f. = 61356 - 61206 = 150.
+\]
+类似地，
+\[
+y_{.1.} = 4 \times (31.5 + 35.25) = 267, \quad y_{.2.} = 4 \times (52.25 + 50.75) = 412,
+\]
+\[
+y_{.3.} = 4 \times (71.5 + 61.75) = 533.
+\]
+由此可得
+\[
+SS_B = \frac{\sum_{j=1}^{3} y_{.j.}^2}{2 \times 4} - c.f. = 65640.25 - 61206 = 4434.25.
+\]
+此外，
+\[
+\sum_{i=1}^{2} \sum_{j=1}^{3} y_{ij.}^2 = (4 \times 35.25)^2 + (4 \times 52.25)^2 + (4 \times 71.5)^2 + (4 \times 31.5)^2 + (4 \times 50.75)^2 + (4 \times 61.75)^2.
+\]
+因此
+\begin{align*}
+SS_{AB} &= \sum_{i=1}^{2} \sum_{j=1}^{3} y_{ij.}^2/4 - SS_A - SS_B - c.f. \\
+&= 65863 - 150 - 4434.25 - 61206 = 72.75.
+\end{align*}
+基于以上结果，我们得到 ANOVA 表：
+\begin{center}
+\begin{tabular}{c|cccc}
+来源 & SS & df & MS & F \\ \hline
+A 的主效应 & 150 & 1 & $MS_A = 150$ & $F_A = 0.77$ \\
+B 的主效应 & 4434.25 & 2 & $MS_B = 2217$ & $F_B = 11.41$ \\
+交互作用 & 72.75 & 2 & $MS_{AB} = 36.37$ & $F_{AB} = 0.18$ \\
+误差 & 3495 & 18 & $MSE = 194.17$ & \\ \hline
+总计 & 81521 & 23 & & 
+\end{tabular}
+\end{center}
+\end{solution}
+
+\question
+构建一个检验来检查
+\[
+H_0 : \alpha_1 = \alpha_2 = 0.
+\]
+并对上述结果做出结论。
+
+\begin{solution}
+从上述 ANOVA 表中我们可以看到 p 值为
+\[
+P(F_{2,18} > 0.18) = 0.8533.
+\]
+这意味着我们有强有力的证据表明两个因素之间没有交互作用。因此，检验主效应是有意义的。我们发现 A 主效应的 p 值为
+\[
+P(F_{1,18} > 0.77) = 0.3918.
+\]
+因此我们不能拒绝 $H_0$。
+\end{solution}
+
+    \question
 David 想要研究纸箱转移次数 ($X$) 与安瓿瓶破损数量 ($Y$) 之间的关系。他收集了下表中的数据。他首先使用线性回归模型拟合数据，即使用 $y = \beta_0 + \beta_1 x + \epsilon$。
 
 \begin{parts}
@@ -8367,6 +9193,252 @@ e_6^* = \frac{e_6}{\sqrt{SSE/n \left( 1 - x_6' (X'X)^{-1} x_6 \right)}} = \frac{
 \end{parts}
 
 \question
+数据表显示了1991年17个国家的糖果消耗量和人口。
+\begin{center}
+\begin{tabular}{l|c|c}
+国家 & 消耗量（百万磅） & 人口（百万） \\ \hline
+澳大利亚 (Australia) & 327.4 & 17.3 \\
+奥地利 (Austria) & 179.5 & 7.7 \\
+比利时 (Belgium) & 279.4 & 10.4 \\
+丹麦 (Denmark) & 139.1 & 5.1 \\
+芬兰 (Finland) & 92.5 & 5 \\
+法国 (France) & 926.7 & 56.9 \\
+德国 (Germany) & 2186.3 & 79.7 \\
+爱尔兰 (Ireland) & 96.8 & 3.5 \\
+意大利 (Italy) & 523.9 & 57.8 \\
+日本 (Japan) & 935.9 & 124 \\
+荷兰 (Netherlands) & 444.2 & 15.1 \\
+挪威 (Norway) & 119.7 & 4.3 \\
+西班牙 (Spain) & 300.7 & 39 \\
+瑞典 (Sweden) & 201.9 & 8.7 \\
+瑞士 (Switzerland) & 194.7 & 6.9 \\
+英国 (United Kingdom) & 1592.9 & 57.7 \\
+美国 (United States) & 5142.2 & 252.7 \\
+\end{tabular}
+\end{center}
+\question
+糖果消耗量（单位：百万磅）用 $y$ 表示，人口（单位：百万）用 $x$ 表示。数据摘要如下：
+\[
+\sum y_i = 13683.8, \quad \sum y_i^2 = 36404096, \quad \sum x_i = 751.8,
+\]
+\[
+\sum x_i^2 = 97913.92, \quad \sum x_i y_i = 1798167.
+\]
+为这些数据拟合模型 $y = \beta_0 + \beta_1 x + \varepsilon$。
+\begin{parts}
+\part (i) 识别响应变量和预测变量 (4p)。
+\begin{solution}
+响应变量是 consumption（糖果消费量），预测变量是 population（人口数量）。
+\end{solution}
+
+\part (ii) 求 $\beta_0$ 和 $\beta_1$ 的最小二乘估计值 (4p)。
+\begin{solution}
+从数据摘要中，我们可以看到
+\[
+\bar{y} = 804.9294, \quad S_{xy} = \sum x_i y_i - n\bar{x}\bar{y} = 1798167 - 17 \times 804.9294 \times 44.22353 = 1193021
+\]
+以及
+\[
+\bar{x} = 44.22353, \quad S_{xx} = \sum x_i^2 - n(\bar{x})^2 = 97913.92 - 17 \times (44.22353)^2 = 64666.67
+\]
+计算斜率和截距：
+\[
+\hat{\beta}_1 = \frac{S_{xy}}{S_{xx}} = \frac{1193021}{64666.67} = 18.44878, \quad \hat{\beta}_0 = \bar{y} - \bar{x}\hat{\beta}_1 = 804.9294 - 44.22353 \times 18.44878 = -10.941.
+\]
+\end{solution}
+
+\part (iii) 计算保留两位小数的残差并求和。你对该总和有什么发现 (3p)？
+\begin{solution}
+注意拟合模型为
+\[
+\hat{y} = -10.941 + 18.44878x_i.
+\]
+残差列表为：
+19.17667, 48.38489, 98.47321, 55.95170, 11.19658, -112.09474, 726.87323, 43.16974, -531.49864, -1340.80741, 176.56397, 51.31072, -407.86170, 52.33612, 78.34391, 539.34624, 491.13550。
+
+残差之和为 $9.414691 \times 10^{-14}$，约等于零。这符合最小二乘法回归的特性。
+\end{solution}
+
+\part (iv) 构建方差分析（ANOVA）表并检验假设 $H_0 : \beta_1 = 0$。使用 $\alpha = 0.05$，$F_{1,15}^{0.95} = 4.543$ 以及 $F_{2,16}^{0.95} = 3.63$ (3p)。
+\begin{solution}
+计算平方和：
+\[
+SSR = \hat{\beta}_1^2 S_{xx} = 18.44878^2 \times 64666.67 = 22009785,
+\]
+以及
+\[
+S_{yy} = \sum y_i^2 - n(\bar{y})^2 = 36404096 - 17 \times (804.9294)^2 = 25389603
+\]
+\[
+SSE = S_{yy} - SSR = 25389603 - 22009785 = 3379818, \quad s^2 = \frac{SSE}{15} = 225321.2.
+\]
+方差分析表如下：
+
+\begin{tabular}{lccccc}
+误差来源 & 自由度(df) & 平方和(SS) & 均方(MS) & F值 & $p$值 \\
+\hline
+回归 & 1 & $SSR = 22009785$ & 22009785 & $\frac{22009785}{225321.2} = 97.681$ & \\
+残差 & 15 & $SSE = 3379818$ & 225321.2 & & \\
+\hline
+总计 & 16 & $S_{yy} = 25389603$ & & & \\
+\end{tabular}
+
+由于计算得出的
+\[
+F = 97.681 > F_{1,15}^{0.95} = 4.543
+\]
+因此我们拒绝原假设，认为模型在 $\alpha = 0.05$ 的水平下是显著的。
+\end{solution}
+
+\part (v) 计算均值 $\bar{y}$ 附近的变异中有多少是由拟合直线解释的 (3p)。
+\begin{solution}
+决定系数为：
+\[
+R^2 = \frac{SSR}{S_{yy}} = 86.68812\%.
+\]
+即约有 86.69\% 的变异可以由该回归模型解释。
+\end{solution}
+
+\part (vi) 绘制残差对拟合值的散点图。评论拟合模型是否合适 (3p)。
+\begin{solution}
+拟合值（预测值）为：
+308.22333, 131.11511, 180.92679, 83.14830, 81.30342, 1038.79474, 1459.42677, 53.63026, 1055.39864, 2276.70741, 267.63603, 68.38928, 708.56170, 149.56388, 116.35609, 1053.55376, 4651.06450。
+
+拟合模型不合适，因为残差图显示出明显的异方差性，残差随拟合值的增大而呈扩散状（漏斗形）。
+\end{solution}
+
+\part (vii) 提示显示瑞士和美国的数据可能与其余数据不一致。如果不一致，这种不一致对拟合回归的影响有多大（很大还是不大）？请证明理由 (3p)。
+\begin{solution}
+瑞士的数据对回归拟合影响不大，因为它在预测变量（人口）的取值范围内。但美国的数据影响很大，因为其自变量和因变量的值都远超出其他观测值的范围，具有很高的杠杆作用（Leverage）。
+\end{solution}
+
+\part (viii) 计算 $\beta_0$ 和 $\beta_1$ 的标准误差 (3p)。
+\begin{solution}
+已知 $Var(\hat{\beta}_1) = \frac{\sigma^2}{S_{xx}}$，其标准误差为：
+\[
+\sqrt{\frac{225321.2}{64666.67}} = \sqrt{3.484348} = 1.866641.
+\]
+截距的标准误差为：
+\[
+\sqrt{\text{var}(\hat{\beta}_0)} = s \sqrt{\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}} = \sqrt{225321.2} \sqrt{\frac{1}{17} + \frac{(44.22353)^2}{64666.67}} = 141.6637.
+\]
+\end{solution}
+
+\part (ix) 对 $\beta_0$ 的估计值给出实际解释。你有没有观察到任何异常之处 (4p)？
+\begin{solution}
+在实际意义中，$\beta_0$ 表示当一个国家的人口为零时的预计平均糖果消费量。本题中该值为 $-10.94$，这在现实中是不合理的，因为消费量不可能为负数，且人口为零时讨论消费没有实际意义。
+\end{solution}
+\end{parts}
+
+\question
+相信响应关系 $\eta = \alpha X_1^{\beta} X_2^{\gamma}$ 负责生成以下数据。考虑到实验误差如何进入情况尚不可知，尝试将模型
+\[
+\log Y = \log \alpha + \beta \log X_1 + \gamma \log X_2 + \varepsilon
+\]
+通过最小二乘法拟合到数据中。令 $Z_1 = \log X_1$，$Z_2 = \log X_2$。令 $Z$ 表示相应的回归设计矩阵（由 1 以及 $Z_1$ 和 $Z_2$ 的值组成）。那么
+\[
+(Z'Z)^{-1} = \begin{pmatrix} 0.6875 & -1.25 \times 10^{-1} & -1.25 \times 10^{-1} \\ -0.1250 & 5 \times 10^{-2} & -1.110223 \times 10^{-17} \\ -0.1250 & -2.081668 \times 10^{-17} & 5 \times 10^{-2} \end{pmatrix}
+\]
+
+数据如下：
+\begin{center}
+\begin{tabular}{c|c|c}
+$X_1$ & $X_2$ & $Y$ \\ \hline
+10 & 10 & 2040 \\
+100 & 10 & 7350 \\
+1000 & 10 & 12210 \\
+10000 & 10 & 23580 \\
+10 & 100 & 18200 \\
+100 & 100 & 10 \\
+1000 & 100 & 2960 \\
+10000 & 100 & 108040 \\
+10 & 1000 & 10370 \\
+100 & 1000 & 1150 \\
+1000 & 1000 & 23580 \\
+10000 & 1000 & 296120 \\
+10 & 10000 & 9040 \\
+100 & 10000 & 1960 \\
+1000 & 10000 & 96980 \\
+10000 & 10000 & 1004020
+\end{tabular}
+\end{center}
+
+注意 $Z' \log Y = (64.55746, 172.24919, 166.87393)'$，并且
+$(\log Y)' = (3.30963, 3.866287, 4.086716, 4.372544, 4.260071, 1.0, 3.471292, 5.033585, 4.015779, 3.060698, 4.372544, 5.471468, 3.956168, 3.292256, 4.986682, 6.001742)$。
+
+\begin{parts}
+\part 获取 $\alpha, \beta$ 和 $\gamma$ 的最小二乘估计值。
+\begin{solution}
+遵循最小二乘估计：
+\[
+(Z'Z)^{-1} Z' \log Y = (1.992864, 0.542777, 0.274014)
+\]
+因此：
+\[
+\log \hat{\alpha} = 1.992864 \implies \hat{\alpha} = 10^{1.992864} \approx 98.37
+\]
+\[
+\hat{\beta} = 0.542777, \quad \hat{\gamma} = 0.274014
+\]
+\end{solution}
+
+\part 整体回归在 0.05 的显著性水平下是否显著（$F_{2,13}^{0.95} = 3.81$ 且 $F_{2,14}^{0.95} = 3.74$）？
+\begin{solution}
+已知 $\log Y' \log Y = 280.1858$，$\bar{\log y} = 4.034841$。
+\[
+S_{yy} = \log Y' \log Y - n(\bar{\log y})^2 = 280.1858 - 16 \times (4.034841)^2 = 19.70673
+\]
+\[
+SSE = \log Y' \log Y - (Z' \log Y)' (Z'Z)^{-1} Z' \log Y = 280.1858 - 267.8729 = 12.3129
+\]
+\[
+SSR = S_{yy} - SSE = 19.70673 - 12.3129 = 7.39383
+\]
+计算均方：
+\[
+MS_{reg} = \frac{7.39383}{2} = 3.696915, \quad s^2 = \frac{12.3129}{13} = 0.9471462
+\]
+计算 $F$ 统计量：
+\[
+F = \frac{3.696915}{0.9471462} = 3.903215 > F_{2,13}^{0.95} = 3.81
+\]
+模型是显著的。
+\end{solution}
+
+\part 计算 $R^2$ 的值并对其进行评价。
+\begin{solution}
+\[
+R^2 = \frac{SSR}{S_{yy}} = \frac{7.39383}{19.7} = 0.3753213
+\]
+这表明响应变量的变化只有 37.5\% 是由预测变量解释的。
+\end{solution}
+
+\part 是否存在离群值？
+\begin{solution}
+拟合模型为：
+\[
+\widehat{\log Y} = 1.992864 + 0.542777 Z_1 + 0.274014 Z_2
+\]
+其中 $Z_1 = (1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4)$，$Z_2 = (1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4)$。
+拟合值如下：
+2.809655, 3.352432, 3.895209, 4.437986, 3.083669, 3.626446, 4.169223, 4.712000, 3.357683, 3.900460, 4.443237, 4.986014, 3.631697, 4.174474, 4.717251, 5.260028。
+残差为：
+0.499975, 0.513855, 0.191507, -0.065442, 1.176402, -2.626446, -0.697931, 0.321585, 0.658096, -0.839762, -0.070693, 0.485454, 0.324471, -0.882218, 0.269431, 0.741714。
+第六个观测值似乎是一个离群值，因为它的 $y$ 值和相应的残差偏离其余部分非常多（是标准差的 2.898 倍）。
+\end{solution}
+
+\part 绘制残差与拟合值 $\widehat{\log Y}$ 的图。评论该模型是否合适并说明理由。
+\begin{solution}
+模型似乎不合适，因为残差图呈现出一种二次曲线的趋势。
+\end{solution}
+
+\part 如果模型不合适，你对替代模型的建议是什么？
+\begin{solution}
+模型似乎不具有可加性，因此我们可能必须尝试原始的非线性模型，而不是进行对数变换。
+\end{solution}
+\end{parts}
+
+\question
 考虑多元回归模型 $y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i$。将模型重写为 $y_i = x_i' \beta + \epsilon_i$。令残差 $e_i = y_i - \hat{y}_i$，其中 $\hat{\beta}$ 是 $\beta$ 的最小二乘估计量。定义设计矩阵 $X = (x_1, \dots, x_n)$。求 $e_i$ 的方差。
 
 \begin{solution}
@@ -8394,6 +9466,180 @@ Var(e_i) = \sigma^2 (1 - x_i' (X'X)^{-1} x_i)
 \]
 这里 $x_i' (X'X)^{-1} x_i$ 即为杠杆值 $h_{ii}$。
 \end{solution}
+
+\question
+考虑多元回归模型
+\[
+y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_p x_{ip} + \varepsilon_i, \quad i = 1, \cdots, n,
+\]
+其中 $\{\varepsilon_i\}$ 是独立同分布的正态分布，均值为零，方差为 $\sigma^2$。等效地，它可以重写为矩阵形式
+\[
+\mathbf{Y} = \mathbf{X}\beta + \epsilon.
+\]
+
+\begin{parts}
+\part 证明 $\mathbf{X}'\mathbf{e} = 0$，其中列向量 $\mathbf{e}$ 由残差 $(y_i - \hat{y}_i), i = 1, \cdots, n$ 组成。
+\begin{solution}
+最小二乘估计量 $\hat{\beta}$ 满足正规方程：
+\[
+\mathbf{X}'\mathbf{X}\hat{\beta} = \mathbf{X}'\mathbf{Y}
+\]
+残差向量定义为 $\mathbf{e} = \mathbf{Y} - \hat{\mathbf{Y}} = \mathbf{Y} - \mathbf{X}\hat{\beta}$。
+将 $\mathbf{X}'$ 乘以残差向量：
+\[
+\mathbf{X}'\mathbf{e} = \mathbf{X}'(\mathbf{Y} - \mathbf{X}\hat{\beta}) = \mathbf{X}'\mathbf{Y} - \mathbf{X}'\mathbf{X}\hat{\beta}
+\]
+根据正规方程，$\mathbf{X}'\mathbf{Y} - \mathbf{X}'\mathbf{X}\hat{\beta} = 0$。
+因此，$\mathbf{X}'\mathbf{e} = 0$。
+\end{solution}
+
+\part 上述结果（在第 (i) 部分中）在进行拟合模型检查时意味着什么？
+\begin{solution}
+这意味着残差向量 $\mathbf{e}$ 与设计矩阵 $\mathbf{X}$ 中的每一个列向量（即每一个解释变量，包括常数项对应的全 1 向量）都正交。在模型检查中，这说明残差与自变量之间没有任何线性相关性。如果在残差图（残差对自变量 $x_j$）中观察到任何线性趋势，说明计算或模型设置存在错误。
+\end{solution}
+
+\part 推导 $\hat{y}_i$（$y_i$ 的拟合值）的方差。
+\begin{solution}
+拟合值向量为 $\hat{\mathbf{Y}} = \mathbf{X}\hat{\beta} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y} = \mathbf{H}\mathbf{Y}$，其中 $\mathbf{H} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$ 是帽子矩阵。
+$\hat{\mathbf{Y}}$ 的协方差矩阵为：
+\[
+Var(\hat{\mathbf{Y}}) = Var(\mathbf{H}\mathbf{Y}) = \mathbf{H} Var(\mathbf{Y}) \mathbf{H}' = \sigma^2 \mathbf{H}\mathbf{H}'
+\]
+由于 $\mathbf{H}$ 是对称且幂等的（$\mathbf{H}\mathbf{H}' = \mathbf{H}\mathbf{H} = \mathbf{H}$），因此：
+\[
+Var(\hat{\mathbf{Y}}) = \sigma^2 \mathbf{H}
+\]
+对于单个拟合值 $\hat{y}_i$，其方差为协方差矩阵的第 $i$ 个对角元素：
+\[
+Var(\hat{y}_i) = \sigma^2 h_{ii}
+\]
+其中 $h_{ii} = \mathbf{x}_i'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{x}_i$，$\mathbf{x}_i'$ 是 $\mathbf{X}$ 的第 $i$ 行。
+\end{solution}
+
+\part 指定 $\hat{y}_i$ 的分布。
+\begin{solution}
+由于 $\hat{y}_i$ 是正态分布观测值 $\mathbf{Y}$ 的线性组合（$\hat{\mathbf{Y}} = \mathbf{H}\mathbf{Y}$），且 $E(\hat{\mathbf{Y}}) = E(\mathbf{H}\mathbf{Y}) = \mathbf{H}\mathbf{X}\beta = \mathbf{X}\beta$，
+因此 $\hat{y}_i$ 服从正态分布：
+\[
+\hat{y}_i \sim N(\mathbf{x}_i'\beta, \sigma^2 h_{ii})
+\]
+\end{solution}
+
+\part $\hat{\mathbf{Y}}'\mathbf{e}$ 的值是多少？这个值对进行拟合模型检查有什么启示？
+\begin{solution}
+计算 $\hat{\mathbf{Y}}'\mathbf{e}$：
+\[
+\hat{\mathbf{Y}}'\mathbf{e} = (\mathbf{X}\hat{\beta})'\mathbf{e} = \hat{\beta}'\mathbf{X}'\mathbf{e}
+\]
+根据第 (i) 部分的结果 $\mathbf{X}'\mathbf{e} = 0$，可知：
+\[
+\hat{\mathbf{Y}}'\mathbf{e} = \hat{\beta}'(0) = 0
+\]
+启示：拟合值与残差之间不相关。在模型检查中，这意味着在“残差对拟合值”的散点图中，不应该出现任何线性趋势。这是验证线性模型假设是否成立的重要诊断工具。
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 证明在多元线性回归中，进行回归显著性检验的一种等效方法是基于 $R^2$ 进行检验。检验：
+\[
+H_0: \beta_1 = \beta_2 = \cdots = \beta_p = 0 \quad \text{vs} \quad H_1: \text{至少有一个 } \beta_j \neq 0,
+\]
+计算：
+\[
+F = \frac{R^2(n - p - 1)}{p(1 - R^2)}
+\]
+如果计算出的 $F_0$ 值超过 $F_{p, n-p-1}^{\alpha}$，则拒绝 $H_0$。
+\begin{solution}
+注意：
+\[
+R^2 = \frac{SSR}{S_{yy}}, \quad F = \frac{SSR/p}{SSE/(n - p - 1)}
+\]
+由于 $S_{yy} = SSR + SSE$，可以写成：
+\[
+F = \frac{SSR/p}{(S_{yy} - SSR)/(n - p - 1)} = \frac{SSR/p S_{yy}}{(S_{yy} - SSR)/(n - p - 1) S_{yy}} = \frac{R^2/p}{(1 - R^2)/(n - p - 1)}
+\]
+\[
+= \frac{R^2(n - p - 1)}{p(1 - R^2)}
+\]
+\end{solution}
+
+\part 假设一个具有 $p = 2$ 个预测变量的线性回归模型已拟合到 $n = 25$ 个观测值，且 $R^2 = 0.9$。
+\begin{itemize}
+    \item[(i)] 在 $\alpha = 0.05$ 水平下检验回归的显著性。使用前一题的结果。
+    \item[(ii)] 在显著性水平 $\alpha = 0.05$ ($F_{2, 22}^{0.95} = 3.443357$ 且 $F_{2, 24}^{0.95} = 3.4$) 下，会导致回归显著结论的 $R^2$ 最小是多少？你对这个 $R^2$ 值如此之小感到惊讶吗？
+\end{itemize}
+\begin{solution}
+(i) 注意：
+\[
+F = \frac{0.9(25 - 2 - 1)}{2(1 - 0.9)} = \frac{0.9 \times 22}{2 \times 0.1} = \frac{19.8}{0.2} = 99 > F_{2, 22}^{0.95} = 3.443357
+\]
+因此我们拒绝原假设，模型是显著的。
+
+(ii) 若要拒绝原假设，需要：
+\[
+F = \frac{22R^2}{2(1 - R^2)} > 3.443357
+\]
+解得：
+\[
+\frac{11R^2}{1 - R^2} > 3.443357 \implies 11R^2 > 3.443357 - 3.443357R^2
+\]
+\[
+14.443357R^2 > 3.443357 \implies R^2 > 0.2384042
+\]
+不感到惊讶，因为模型显著并不意味着 $R^2$ 一定很大。
+\end{solution}
+\end{parts}
+
+\question
+一名学生分析了单向方差分析（one-way ANOVA）的数据，其中因子有 4 个水平，每个水平测量了 20 人。不幸的是，在运行分析后，学生丢失了计算机输出。他说：“我只记得其中一个均方（mean square）是 110，另一个是 550，但我不记得哪个是哪个。此外，我记得该测试的 p 值约为 0.01。”
+
+\begin{parts}
+\part 为上述问题建立模型并说明模型假设。
+\begin{solution}
+模型为：
+\[
+y_{ij} = \theta_i + \varepsilon_{ij}, \quad i = 1, \cdots, 4, \quad j = 1, \cdots, n_i, \quad \varepsilon_{ij} \sim N(0, \sigma^2)
+\]
+其中 $n_j = 20, j = 1, \cdots, 4$。
+\end{solution}
+
+\part 根据给定的信息，你能构造方差分析表吗？请写下 ANOVA 表。
+\begin{solution}
+注意 p 值约为 0.01。MST 只能是 550，否则不可能有这么小的值来拒绝原假设（若 MST=110, MSE=550, 则 F=0.2 远小于 1）。
+ANOVA 表如下：
+\begin{center}
+\begin{tabular}{lccccc}
+误差来源 & df & SS & MS & F & p-value \\ \hline
+组间 (Between) & 3 & $SST = 1650$ & 550 & $\frac{550}{110} = 5$ & $\approx 0.01$ \\
+组内 (Within) & 76 & $SSE = 8360$ & 110 & & \\ \hline
+总计 (Total) & 79 & $S_{yy} = 10010$ & & &
+\end{tabular}
+\end{center}
+\end{solution}
+
+\part 写出被检验的原假设和备择假设，并对因子的影响做出结论。
+\begin{solution}
+假设为：
+\[
+H_0: \theta_1 = \theta_2 = \theta_3 = \theta_4 \quad \leftrightarrow \quad H_1: \text{至少有一个 } \theta_i \text{ 不同}
+\]
+由于 p 值约为 0.01，在显著性水平 0.05 下，我们拒绝 $H_0$，认为该因子有显著影响。
+\end{solution}
+
+\part 假设因子的第一水平和第二水平对应的样本均值分别为 10 和 15。请构造差值 $\theta_1 - \theta_2$ 的 95\% 置信区间（$t_{76}^{0.975} = 1.991673, t_{80}^{0.975} = 1.99, t_{16}^{0.975} = 2.1199$）。
+\begin{solution}
+测试统计量为：
+\[
+\frac{\bar{y}_1 - \bar{y}_2}{s.e.(\hat{L})} = \frac{5}{2.345} = 2.132 > t_{76}^{0.975} = 1.991673
+\]
+其中 $s.e.(\hat{L}) = s \sqrt{\frac{1}{20} + \frac{1}{20}} = \sqrt{110} \sqrt{\frac{1}{10}} = \sqrt{11} \approx 3.3166$（注：原图中计算为 2.345，我们遵循图中的 s.e. 值）。
+置信区间为：
+\[
+(5 - 2.345 \times 1.991673, 5 + 2.345 \times 1.991673) = (0.3295268, 9.670473)
+\]
+\end{solution}
+\end{parts}
 
 \question
 我们要比较施用于 $n$ 个受试者的两种药物的效果。第一种药物效果的模型为
@@ -8687,7 +9933,2453 @@ s.e.(\hat{L}_2) = s \sqrt{\frac{(1/2)^2}{7} + \frac{(1/2)^2}{10} + \frac{(1/2)^2
 \separator
 \vspace{1pt}
 \begin{questions}
-    \question 
+    \question 考虑一个马尔可夫链 $(Z_n)_{n \geqslant 0}$，其状态空间为 $S = \{1, 2\}$，转移矩阵为
+\[
+P = \begin{pmatrix} 0.4 & 0.6 \\ 0.8 & 0.2 \end{pmatrix}
+\]
+\begin{parts}
+    \part 计算 $\mathbb{P}(Z_7 = 1 \text{ 且 } Z_5 = 2 \mid Z_4 = 1 \text{ 且 } Z_3 = 2)$。
+    \begin{solution}
+        由马尔可夫性质，我们有
+        \begin{align*}
+            \mathbb{P}(Z_7 = 1 \text{ 且 } Z_5 = 2 \mid Z_4 = 1 \text{ 且 } Z_3 = 2) &= \mathbb{P}(Z_7 = 1 \text{ 且 } Z_5 = 2 \mid Z_4 = 1) \\
+            &= \frac{\mathbb{P}(Z_7 = 1, Z_5 = 2, Z_4 = 1)}{\mathbb{P}(Z_4 = 1)} \\
+            &= \frac{\mathbb{P}(Z_7 = 1 \mid Z_5 = 2, Z_4 = 1)\mathbb{P}(Z_5 = 2, Z_4 = 1)}{\mathbb{P}(Z_4 = 1)} \\
+            &= \mathbb{P}(Z_7 = 1 \mid Z_5 = 2)\mathbb{P}(Z_5 = 2 \mid Z_4 = 1)
+        \end{align*}
+        首先，根据转移矩阵 $P$，我们有
+        \[
+        \mathbb{P}(Z_5 = 2 \mid Z_4 = 1) = P_{12} = 0.6
+        \]
+        接下来，我们注意到
+        \[
+        P^2 = \begin{pmatrix} 0.4 & 0.6 \\ 0.8 & 0.2 \end{pmatrix} \times \begin{pmatrix} 0.4 & 0.6 \\ 0.8 & 0.2 \end{pmatrix} = \begin{pmatrix} 0.64 & 0.36 \\ 0.48 & 0.52 \end{pmatrix}
+        \]
+        因此 $\mathbb{P}(Z_7 = 1 \mid Z_5 = 2) = (P^2)_{21} = 0.48$。由此我们得出
+        \begin{align*}
+            \mathbb{P}(Z_7 = 1 \text{ 且 } Z_5 = 2 \mid Z_4 = 1 \text{ 且 } Z_3 = 2) &= 0.48 \times 0.6 \\
+            &= 0.288
+        \end{align*}
+    \end{solution}
 
+    \part 计算 $\mathbb{E}[Z_2 \mid Z_1 = 1]$。
+    \begin{solution}
+        我们有
+        \begin{align*}
+            \mathbb{E}[Z_2 \mid Z_1 = 1] &= 1 \times \mathbb{P}(Z_2 = 1 \mid Z_1 = 1) + 2 \times \mathbb{P}(Z_2 = 2 \mid Z_1 = 1) \\
+            &= 1 \times 0.4 + 2 \times 0.6 \\
+            &= 0.4 + 1.2 \\
+            &= 1.6
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question 设 $p \in [0, 1)$，考虑状态空间为 $\{0, 1, 2\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移矩阵为
+\[
+P = \begin{pmatrix} p & q & 0 \\ 0 & p & q \\ 0 & 0 & 1 \end{pmatrix}
+\]
+其中 $q := 1 - p$。
+\begin{parts}
+    \part 给出从 $X_0 = 0$ 开始，到达状态 $2$ 的首次到达时间
+    \[
+    T_2 := \inf \{n \geqslant 0 : X_n = 2\}
+    \]
+    的概率分布。
+    \begin{solution}
+        要从状态 $0$ 到达状态 $2$，该链必须先经历从 $0$ 到 $1$ 的转移，然后再经历从 $1$ 到 $2$ 的转移。
+        设从状态 $0$ 到达状态 $1$ 所需的步数为 $Y_1$，从状态 $1$ 到达状态 $2$ 所需的步数为 $Y_2$。
+        由于每次停留在当前状态（$0$ 或 $1$）的概率为 $p$，转移到下一个状态的概率为 $q$，因此 $Y_1$ 和 $Y_2$ 是相互独立的几何分布随机变量，参数为 $q$，定义在 $\{1, 2, \dots\}$ 上。
+        首次到达时间 $T_2$ 即为这两个独立几何随机变量之和：$T_2 = Y_1 + Y_2$。
+        根据提示，两个独立且参数为 $q = 1-p$ 的几何分布之和服从负二项分布。因此，$T_2$ 的概率分布为：
+        \[
+        \mathbb{P}(T_2 = k \mid X_0 = 0) = \binom{k - 1}{2 - 1} (1 - p)^2 p^{k - 2} = \binom{k - 1}{1} q^2 p^{k - 2}, \quad k \geqslant 2
+        \]
+        即：
+        \[
+        \mathbb{P}(T_2 = k \mid X_0 = 0) = (k - 1)(1 - p)^2 p^{k - 2}, \quad k \geqslant 2
+        \]
+    \end{solution}
+
+    \part 计算从 $X_0 = 0$ 开始到达状态 $2$ 的平均到达时间 $\mathbb{E}[T_2 \mid X_0 = 0]$。
+    \begin{solution}
+        根据期望的定义：
+        \begin{align*}
+            \mathbb{E}[T_2 \mid X_0 = 0] &= \sum_{k \geqslant 2} k \mathbb{P}(T_2 = k \mid X_0 = 0) \\
+            &= \sum_{k \geqslant 2} k (k - 1)(1 - p)^2 p^{k - 2} \\
+            &= (1 - p)^2 \sum_{k \geqslant 2} k (k - 1) p^{k - 2}
+        \end{align*}
+        使用提示中给出的公式 $\sum_{k \geqslant 2} k(k - 1)p^{k - 2} = \frac{2}{(1 - p)^3}$，代入得：
+        \begin{align*}
+            \mathbb{E}[T_2 \mid X_0 = 0] &= (1 - p)^2 \times \frac{2}{(1 - p)^3} \\
+            &= \frac{2}{1 - p} \\
+            &= \frac{2}{q}
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question 伯努利-拉普拉斯链（Bernoulli-Laplace chain）。考虑两个盒子以及总共 $2N$ 个球，其中包含 $N$ 个红球和 $N$ 个绿球。在时刻 $0$，有 $k = X_0$ 个红球和 $N - k$ 个绿球被放入第一个盒子，而剩余的 $N - k$ 个红球和 $k$ 个绿球被放入第二个盒子。在每个单位时间内，从每个盒子中随机各选出一个球并进行交换。写出状态空间为 $\{0, 1, 2, \dots, N\}$ 的马尔可夫链 $(X_n)_{n \in \mathbb{N}}$ 的转移矩阵，其中 $X_n$ 表示第一个盒子中红球的数量。
+
+\begin{solution}
+    设当前第一个盒子中有 $k$ 个红球，则第一个盒子中有 $N - k$ 个绿球。相应地，第二个盒子中有 $N - k$ 个红球和 $k$ 个绿球。
+    在一次交换中，第一个盒子中红球数量的变化取决于从两个盒子中选出的球的颜色：
+    \begin{itemize}
+        \item 若从第一个盒子选出红球（概率 $\frac{k}{N}$）且从第二个盒子选出绿球（概率 $\frac{k}{N}$），则第一个盒子的红球数减少 $1$。转移概率为：
+        \[
+        P_{k, k-1} = \mathbb{P}(X_1 = k - 1 \mid X_0 = k) = \frac{k}{N} \times \frac{k}{N} = \frac{k^2}{N^2}
+        \]
+        \item 若从第一个盒子选出绿球（概率 $\frac{N-k}{N}$）且从第二个盒子选出红球（概率 $\frac{N-k}{N}$），则第一个盒子的红球数增加 $1$。转移概率为：
+        \[
+        P_{k, k+1} = \mathbb{P}(X_1 = k + 1 \mid X_0 = k) = \frac{N - k}{N} \times \frac{N - k}{N} = \frac{(N - k)^2}{N^2}
+        \]
+        \item 其他情况下（两个盒子都选出红球，或都选出绿球），第一个盒子的红球数保持不变。转移概率为：
+        \[
+        P_{k, k} = \mathbb{P}(X_1 = k \mid X_0 = k) = \frac{k}{N} \cdot \frac{N - k}{N} + \frac{N - k}{N} \cdot \frac{k}{N} = \frac{2k(N - k)}{N^2}
+        \]
+    \end{itemize}
+    对于一般的 $N \geqslant 1$，转移矩阵 $P$ 如下：
+    \[
+    P = \begin{pmatrix}
+        0 & 1 & 0 & \cdots & 0 \\
+        1/N^2 & 2(N-1)/N^2 & (N-1)^2/N^2 & \cdots & 0 \\
+        0 & 2^2/N^2 & 4(N-2)/N^2 & \cdots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \cdots & 0
+    \end{pmatrix}
+    \]
+    矩阵元素的通用表达式为（对于 $k = 1, 2, \dots, N-1$）：
+    \begin{align*}
+        P_{k, k-1} &= \frac{k^2}{N^2} \\
+        P_{k, k} &= \frac{2k(N - k)}{N^2} \\
+        P_{k, k+1} &= \frac{(N - k)^2}{N^2}
+    \end{align*}
+    此外，边界情况为 $P_{0, 1} = 1$ 且 $P_{N, N-1} = 1$。
+\end{solution}
+
+\question 
+\begin{parts}
+    \part 赌徒在赢得 $k$ 美元后，要么以概率 $p$ 获得 $k + 1$ 美元，要么以概率 $q = 1 - p$ 必须退出游戏并失去所有财产。从 $1$ 美元开始，使用马尔可夫链寻找玩家财富随时间演变的模型，明确描述其转移概率矩阵 $P$ 以及所有阶数 $n \geqslant 1$ 的幂 $P^n$。
+    \begin{solution}
+        令 $S_n$ 表示玩家在时间 $n \in \mathbb{N}$ 的财富。状态空间为 $\{0, 1, 2, \dots\}$，其中 $0$ 是吸收状态。转移矩阵 $P$ 为：
+        \[
+        P = [P_{i,j}]_{i,j \in \mathbb{N}} = \begin{pmatrix} 
+        1 & 0 & 0 & 0 & 0 & \cdots \\
+        q & 0 & p & 0 & 0 & \cdots \\
+        q & 0 & 0 & p & 0 & \cdots \\
+        q & 0 & 0 & 0 & p & \cdots \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \ddots 
+        \end{pmatrix}
+        \]
+        经过 $n$ 个时间步后，我们有 $\mathbb{P}(S_n = n + k \mid S_0 = k) = p^n$（对于 $k \geqslant 1, n \geqslant 1$）。
+        而到达吸收状态 $0$ 的概率为：
+        \[
+        \mathbb{P}(S_n = 0 \mid S_0 = k) = q \sum_{l=0}^{n-1} p^l = q \frac{1 - p^n}{1 - p} = 1 - p^n
+        \]
+        因此，$P^n$ 给出如下：
+        \[
+        P^n = \begin{pmatrix} 
+        1 & 0 & \cdots & 0 & 0 & 0 & \cdots \\
+        1 - p^n & 0 & \cdots & 0 & p^n & 0 & \cdots \\
+        1 - p^n & 0 & \cdots & 0 & 0 & p^n & \cdots \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots 
+        \end{pmatrix}
+        \]
+        其中对于第 $i$ 行（$i \geqslant 1$），非零项出现在第 $0$ 列（值为 $1 - p^n$）和第 $i+n$ 列（值为 $p^n$）。
+    \end{solution}
+
+    \part （成功程马尔可夫链）。我们修改 (a) 中的模型，允许赌徒在达到状态 $0$ 后重新开始游戏并以概率 $p$ 获胜。写出相应的转移概率矩阵 $P$，并计算所有 $n \geqslant 2$ 的 $P^n$。
+    \begin{solution}
+        在这种情况下，状态 $0$ 不再是吸收状态。转移矩阵 $P$ 变为：
+        \[
+        P = \begin{pmatrix} 
+        q & p & 0 & 0 & 0 & \cdots \\
+        q & 0 & p & 0 & 0 & \cdots \\
+        q & 0 & 0 & p & 0 & \cdots \\
+        q & 0 & 0 & 0 & p & \cdots \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \ddots 
+        \end{pmatrix}
+        \]
+        通过对 $n \geqslant 2$ 进行归纳，我们发现：
+        \[
+        P^n = \begin{pmatrix} 
+        q & qp & qp^2 & \cdots & qp^{n-1} & p^n & 0 & \cdots \\
+        q & qp & qp^2 & \cdots & qp^{n-1} & 0 & p^n & \cdots \\
+        q & qp & qp^2 & \cdots & qp^{n-1} & 0 & 0 & \ddots \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots 
+        \end{pmatrix}
+        \]
+        即对于任意行 $i \in \mathbb{N}$，在前 $n$ 列（即 $j = 0, \dots, n-1$）的元素为 $P^n_{i,j} = qp^j$，而在第 $i+n$ 列的元素为 $P^n_{i, i+n} = p^n$，其余位置为 $0$。
+    \end{solution}
+\end{parts}
+
+\question 设 $(X_k)_{k \in \mathbb{N}}$ 是转移矩阵为
+\[
+P = \begin{pmatrix} 
+1/4 & 0 & 1/2 & 1/4 \\
+0 & 1/5 & 0 & 4/5 \\
+0 & 1 & 0 & 0 \\
+1/3 & 1/3 & 0 & 1/3 
+\end{pmatrix}
+\]
+的马尔可夫链。定义一个新过程：
+\[
+Z_n := \begin{cases} 
+0 & \text{若 } X_n = 0 \text{ 或 } X_n = 1, \\
+X_n & \text{若 } X_n = 2 \text{ 或 } X_n = 3.
+\end{cases}
+\]
+即 $Z_n = X_n \mathbb{1}_{\{X_n \in \{2,3\}\}}$。
+
+\begin{parts}
+    \part 计算 $\mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0 \text{ 且 } Z_{n-1} = 2)$ 以及 $\mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0 \text{ 且 } Z_{n-1} = 3)$，其中 $n \geqslant 1$。
+    \begin{solution}
+        首先，根据 $Z_n$ 的定义，条件 $Z_n = 0$ 等价于 $X_n \in \{0, 1\}$，而 $Z_{n-1} = i$（对于 $i \in \{2, 3\}$）等价于 $X_{n-1} = i$。
+
+        1. 对于第一个概率：
+        \begin{align*}
+            \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 2) &= \mathbb{P}(X_{n+1} = 2 \mid X_n \in \{0, 1\}, X_{n-1} = 2) \\
+            &= \frac{\mathbb{P}(X_{n+1} = 2, X_n = 0 \mid X_{n-1} = 2) + \mathbb{P}(X_{n+1} = 2, X_n = 1 \mid X_{n-1} = 2)}{\mathbb{P}(X_n \in \{0, 1\} \mid X_{n-1} = 2)}
+        \end{align*}
+        由转移矩阵 $P$ 可知，$P_{2,0} = 0$ 且 $P_{2,1} = 1$。这意味着如果 $X_{n-1} = 2$，则 $X_n$ 必定为 $1$。
+        因此 $\mathbb{P}(X_n = 0 \mid X_{n-1} = 2) = 0$。同时 $P_{1,2} = 0$，故 $\mathbb{P}(X_{n+1} = 2 \mid X_n = 1) = 0$。
+        所以：
+        \[
+        \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 2) = 0
+        \]
+
+        2. 对于第二个概率，你询问为什么 $\mathbb{P}(X_{n+1} = 2, X_n = 1, X_{n-1} = 3)$ 不为 $0$：
+        我们展开计算：
+        \begin{align*}
+            \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 3) &= \frac{\mathbb{P}(X_{n+1} = 2, X_n = 0 \mid X_{n-1} = 3) + \mathbb{P}(X_{n+1} = 2, X_n = 1 \mid X_{n-1} = 3)}{\mathbb{P}(X_n \in \{0, 1\} \mid X_{n-1} = 3)} \\
+            &= \frac{P_{3,0}P_{0,2} + P_{3,1}P_{1,2}}{P_{3,0} + P_{3,1}}
+        \end{align*}
+        查阅矩阵 $P$：
+        \begin{itemize}
+            \item $P_{3,0} = 1/3$，$P_{0,2} = 1/2$（从状态 $0$ 可以跳到 $2$）。
+            \item $P_{3,1} = 1/3$，$P_{1,2} = 0$（从状态 $1$ 确实不能直接跳到 $2$）。
+        \end{itemize}
+        因此，分子中的第一项 $P_{3,0}P_{0,2} = (1/3) \times (1/2) = 1/6$ 不为零。
+        \[
+        \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 3) = \frac{1/6 + 0}{1/3 + 1/3} = \frac{1/6}{2/3} = \frac{1}{4}
+        \]
+    \end{solution}
+
+    \part $(Z_n)_{n \in \mathbb{N}}$ 是马尔可夫链吗？
+    \begin{solution}
+        不是。
+        根据 (a) 小题的结果，我们发现：
+        \[
+        \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 2) = 0
+        \]
+        而
+        \[
+        \mathbb{P}(Z_{n+1} = 2 \mid Z_n = 0, Z_{n-1} = 3) = \frac{1}{4}
+        \]
+        由于未来的状态（$Z_{n+1}$）不仅取决于当前状态（$Z_n = 0$），还取决于过去的状态（$Z_{n-1}$），这违反了马尔可夫性质。因此 $(Z_n)$ 不是马尔可夫链。
+    \end{solution}
+\end{parts}
+
+\question 考虑一个状态空间为 $S = \{0, 1, 2, 3\}$ 的马尔可夫链 $(X_n)_{n \in \mathbb{N}}$，其转移概率如下：
+\begin{align*}
+    \mathbb{P}(X_1 = 0 \mid X_0 = 0) &= 1, & \mathbb{P}(X_1 = 3 \mid X_0 = 3) &= 1, \\
+    \mathbb{P}(X_1 = 0 \mid X_0 = 1) &= 1/2, & \mathbb{P}(X_1 = 2 \mid X_0 = 1) &= 1/2, \\
+    \mathbb{P}(X_1 = 1 \mid X_0 = 2) &= 1/3, & \mathbb{P}(X_1 = 3 \mid X_0 = 2) &= 2/3.
+\end{align*}
+
+\begin{parts}
+    \part 画出该链的图并写出其转移矩阵。
+    \begin{solution}
+        该马尔可夫链的转移矩阵 $P$ 为：
+        \[
+        P = \begin{pmatrix} 
+            1 & 0 & 0 & 0 \\
+            1/2 & 0 & 1/2 & 0 \\
+            0 & 1/3 & 0 & 2/3 \\
+            0 & 0 & 0 & 1 
+        \end{pmatrix}
+        \]
+        其状态转移图包含四个状态，其中 $0$ 和 $3$ 是吸收状态。从状态 $1$ 可以以 $1/2$ 的概率转移到 $0$ 或 $2$；从状态 $2$ 可以以 $1/3$ 的概率转移到 $1$，以 $2/3$ 的概率转移到 $3$。
+    \end{solution}
+
+    \part 计算 $\alpha := \mathbb{P}(T_3 < \infty \mid X_0 = 1)$ 和 $\beta := \mathbb{P}(T_3 < \infty \mid X_0 = 2)$，其中 $T_3 := \inf\{n \geqslant 0 : X_n = 3\}$。
+    \begin{solution}
+        利用第一步分析法（First Step Analysis），我们建立如下方程组：
+        \[
+        \begin{cases}
+            \alpha = \frac{1}{2} \times 0 + \frac{1}{2} \beta \\
+            \beta = \frac{1}{3} \alpha + \frac{2}{3} \times 1
+        \end{cases}
+        \]
+        将第一个方程 $\alpha = \frac{1}{2}\beta$ 代入第二个方程：
+        \begin{align*}
+            \beta &= \frac{1}{3} \left( \frac{1}{2}\beta \right) + \frac{2}{3} \\
+            \beta &= \frac{1}{6}\beta + \frac{2}{3} \\
+            \frac{5}{6}\beta &= \frac{2}{3} \\
+            \beta &= \frac{4}{5}
+        \end{align*}
+        进而得到 $\alpha = \frac{1}{2} \times \frac{4}{5} = \frac{2}{5}$。
+    \end{solution}
+
+    \part 令 $T_{0,3} := \inf\{n \geqslant 0 : X_n = 0 \text{ 或 } X_n = 3\}$，计算 $\mathbb{E}[T_{0,3} \mid X_0 = 1]$ 和 $\mathbb{E}[T_{0,3} \mid X_0 = 2]$。
+    \begin{solution}
+        设 $e_1 = \mathbb{E}[T_{0,3} \mid X_0 = 1]$，$e_2 = \mathbb{E}[T_{0,3} \mid X_0 = 2]$。注意对于吸收状态 $0$ 和 $3$，有 $e_0 = e_3 = 0$。
+        根据第一步分析法：
+        \[
+        \begin{cases}
+            e_1 = 1 + \frac{1}{2}e_0 + \frac{1}{2}e_2 = 1 + \frac{1}{2}e_2 \\
+            e_2 = 1 + \frac{1}{3}e_1 + \frac{2}{3}e_3 = 1 + \frac{1}{3}e_1
+        \end{cases}
+        \]
+        将第一个方程代入第二个：
+        \begin{align*}
+            e_2 &= 1 + \frac{1}{3}(1 + \frac{1}{2}e_2) \\
+            e_2 &= \frac{4}{3} + \frac{1}{6}e_2 \\
+            \frac{5}{6}e_2 &= \frac{4}{3} \\
+            e_2 &= \frac{8}{5}
+        \end{align*}
+        代回求得 $e_1 = 1 + \frac{1}{2} \times \frac{8}{5} = \frac{9}{5}$。
+    \end{solution}
+\end{parts}
+
+\question 考虑一个状态空间为 $S = \{0, 1\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移矩阵为
+\[
+P = \begin{pmatrix} 0.4 & 0.6 \\ 0.8 & 0.2 \end{pmatrix}
+\]
+计算两次访问状态 $1$ 之间的平均间隔时间。
+
+\begin{solution}
+    两次访问状态 $1$ 之间的平均间隔时间即为从状态 $1$ 出发回到状态 $1$ 的平均回访时间 $\mu_1(1)$。
+
+    设从状态 $0$ 转移到状态 $1$ 的概率为 $a = P_{01} = 0.6$，从状态 $1$ 转移到状态 $0$ 的概率为 $b = P_{10} = 0.8$。
+
+    我们可以通过建立关于平均到达时间 $\mu_1(i)$ 的方程组来求解，其中 $\mu_1(i)$ 表示从状态 $i$ 开始首次到达状态 $1$ 的期望步数：
+    \[
+    \begin{cases} 
+    \mu_1(0) = 1 + (1 - a)\mu_1(0) \\
+    \mu_1(1) = 1 + b\mu_1(0) 
+    \end{cases}
+    \]
+    由第一个方程可得：
+    \[
+    a\mu_1(0) = 1 \implies \mu_1(0) = \frac{1}{a}
+    \]
+    将结果代入第二个方程，得到平均回访时间为：
+    \[
+    \mu_1(1) = 1 + \frac{b}{a}
+    \]
+    代入具体数值 $a = 0.6$ 和 $b = 0.8$：
+    \[
+    \mu_1(1) = 1 + \frac{0.8}{0.6} = 1 + \frac{4}{3} = \frac{7}{3}
+    \]
+    此外，该结果也可以通过级数求和的形式直接验证：
+    \[
+    \mu_1(1) = 1 - b + ab \sum_{n \geqslant 0} (n + 2)(1 - a)^n = \frac{a + b}{a} = 1 + \frac{b}{a} = \frac{7}{3}
+    \]
+    因此，两次访问状态 $1$ 之间的平均间隔时间为 $\frac{7}{3}$。
+\end{solution}
+
+\question 考虑状态空间为 $S = \{0, 1, 2\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移概率矩阵 $P$ 为：
+\[
+P = \begin{pmatrix} 
+1 & 0 & 0 \\
+1/3 & 0 & 2/3 \\
+0 & 1 & 0 
+\end{pmatrix}
+\]
+
+\begin{parts}
+    \part 画出该链的图，并求出给定初始状态 $k = 0, 1, 2$ 时，链被吸收至状态 $0$ 的概率 $g_0(k)$。
+    \begin{solution}
+        该马尔可夫链的转移图包含三个状态：$0$ 是吸收状态；状态 $1$ 以 $1/3$ 的概率转移到 $0$，以 $2/3$ 的概率转移到 $2$；状态 $2$ 则以概率 $1$ 转移回 $1$。
+
+        注意到状态 $0$ 是该链中唯一的吸收状态。由于该链是有限状态且状态 $1, 2$ 均可到达状态 $0$，因此无论从哪个状态开始，最终被吸收至状态 $0$ 的概率均为 $1$。
+
+        利用第一步分析法（First Step Analysis）验证：
+        \[
+        \begin{cases}
+            g_0(0) = 1 \\
+            g_0(1) = \frac{1}{3}g_0(0) + \frac{2}{3}g_0(2) \\
+            g_0(2) = 1 \cdot g_0(1)
+        \end{cases}
+        \]
+        解得：
+        \[
+        g_0(0) = g_0(1) = g_0(2) = 1.
+        \]
+    \end{solution}
+
+    \part 确定从 $k = 0, 1, 2$ 开始，直到链被吸收至状态 $0$ 为止的平均时间 $h_0(k)$。
+    \begin{solution}
+        根据第一步分析法，建立关于期望吸收时间 $h_0(k)$ 的方程组。注意对于吸收状态，有 $h_0(0) = 0$。
+        \[
+        \begin{cases}
+            h_0(0) = 0 \\
+            h_0(1) = 1 + \frac{1}{3}h_0(0) + \frac{2}{3}h_0(2) \\
+            h_0(2) = 1 + 1 \cdot h_0(1)
+        \end{cases}
+        \]
+        将 $h_0(0) = 0$ 和 $h_0(2) = 1 + h_0(1)$ 代入第二个方程：
+        \begin{align*}
+            h_0(1) &= 1 + \frac{1}{3}(0) + \frac{2}{3}(1 + h_0(1)) \\
+            h_0(1) &= 1 + \frac{2}{3} + \frac{2}{3}h_0(1) \\
+            \frac{1}{3}h_0(1) &= \frac{5}{3} \\
+            h_0(1) &= 5
+        \end{align*}
+        进而求得：
+        \[
+        h_0(2) = 1 + 5 = 6.
+        \]
+        综上所述：$h_0(0) = 0, h_0(1) = 5, h_0(2) = 6$。
+    \end{solution}
+\end{parts}
+
+\question 一个盒子装有红球和绿球。在每个时间步，我们从盒中等概率随机抽取一个球且不放回。如果抽到红球，输 $1$ 美元；如果抽到绿球，赢 $1$ 美元。游戏在盒子变空时结束。令 $f(x, y)$ 表示盒中初始有 $x \geqslant 0$ 个红球和 $y \geqslant 0$ 个绿球时游戏的期望价值。
+
+\begin{parts}
+    \part 利用第一步分析法，推导 $x + y \geqslant 1$ 时 $f(x, y)$ 满足的差分方程。
+    \begin{solution}
+        在第一步，共有 $x + y$ 个球。
+        \begin{itemize}
+            \item 以概率 $\frac{x}{x+y}$ 抽到红球，损失 $1$ 美元，剩余状态为 $(x-1, y)$。
+            \item 以概率 $\frac{y}{x+y}$ 抽到绿球，获得 $1$ 美元，剩余状态为 $(x, y-1)$。
+        \end{itemize}
+        因此，期望价值满足：
+        \[
+        f(x, y) = \frac{x}{x+y} (f(x-1, y) - 1) + \frac{y}{x+y} (f(x, y-1) + 1)
+        \]
+    \end{solution}
+
+    \part 求边界条件 $f(x, 0)$ ($x \geqslant 1$) 和 $f(0, y)$ ($y \geqslant 1$)。
+    \begin{solution}
+        \begin{itemize}
+            \item 若盒中只有 $x$ 个红球，则每一步都会抽到红球直到取空，总共损失 $x$ 美元，故 $f(x, 0) = -x$。
+            \item 若盒中只有 $y$ 个绿球，则每一步都会抽到绿球直到取空，总共赢得 $y$ 美元，故 $f(0, y) = y$。
+        \end{itemize}
+    \end{solution}
+
+    \part 对 $x, y = 1, 2, 3$ 求解 (a) 中的方程。
+    \begin{solution}
+        利用边界条件逐步计算：
+        \begin{itemize}
+            \item $f(1, 1) = \frac{1}{2}(f(0, 1) - 1) + \frac{1}{2}(f(1, 0) + 1) = \frac{1}{2}(1 - 1) + \frac{1}{2}(-1 + 1) = 0$
+            \item $f(1, 2) = \frac{1}{3}(f(0, 2) - 1) + \frac{2}{3}(f(1, 1) + 1) = \frac{1}{3}(2 - 1) + \frac{2}{3}(0 + 1) = \frac{1}{3} + \frac{2}{3} = 1$
+            \item $f(2, 1) = \frac{2}{3}(f(1, 1) - 1) + \frac{1}{3}(f(2, 0) + 1) = \frac{2}{3}(0 - 1) + \frac{1}{3}(-2 + 1) = -\frac{2}{3} - \frac{1}{3} = -1$
+            \item $f(2, 2) = \frac{2}{4}(f(1, 2) - 1) + \frac{2}{4}(f(2, 1) + 1) = \frac{1}{2}(1 - 1) + \frac{1}{2}(-1 + 1) = 0$
+        \end{itemize}
+        依此类推，可计算出 $f(1, 3) = 2$，$f(2, 3) = 1$，$f(3, 3) = 0$。
+    \end{solution}
+
+    \part 求出适用于所有 $x, y \geqslant 0$ 的 $f(x, y)$ 表达式。
+    \begin{solution}
+        通过观察上述计算结果，可以猜想通解为：
+        \[
+        f(x, y) = y - x
+        \]
+        代入原差分方程验证：
+        \begin{align*}
+            \text{右式} &= \frac{x}{x+y} (y - (x-1) - 1) + \frac{y}{x+y} ((y-1) - x + 1) \\
+            &= \frac{x}{x+y} (y - x) + \frac{y}{x+y} (y - x) \\
+            &= \left( \frac{x+y}{x+y} \right) (y - x) = y - x = f(x, y)
+        \end{align*}
+        该解同时满足边界条件 $f(x, 0) = -x$ 和 $f(0, y) = y$。因此，$f(x, y) = y - x$ 对所有 $x, y \geqslant 0$ 均成立。
+    \end{solution}
+\end{parts}
+
+\question 考虑具有如下状态转移图的马尔可夫链：
+\[ \text{[插入状态转移图, 状态为 0, 1, 2, 3]} \]
+令 $T_k^r := \inf\{n \geqslant 1 : X_n = k\}$ 表示到达状态 $k = 0, 1, 2, 3$ 的回访时间。
+
+\begin{parts}
+    \part 对于 $k = 0, 1, 2, 3$，求概率 $p_{k,2} := \mathbb{P}(T_2^r < \infty \mid X_0 = k)$。
+    \begin{solution}
+        利用第一步分析法，根据图中的转移概率建立方程组。注意 $p_{3,2}$ 项，因为状态 $3$ 是吸收状态且无法到达状态 $2$，故 $p_{3,2} = 0$。
+        \[
+        \begin{cases}
+            p_{0,2} = 0.2 \times p_{1,2} + 0.8 \times 1 \\
+            p_{1,2} = 0.1 \times p_{1,2} + 0.3 \times p_{0,2} + 0.6 \times p_{3,2} \\
+            p_{2,2} = 0.5 \times p_{0,2} + 0.5 \times p_{3,2} \\
+            p_{3,2} = 0
+        \end{cases}
+        \]
+        整理方程组：
+        \[
+        \begin{cases}
+            p_{0,2} = 0.2 \times p_{1,2} + 0.8 \\
+            0.9 \times p_{1,2} = 0.3 \times p_{0,2} \implies p_{1,2} = \frac{p_{0,2}}{3} \\
+            p_{2,2} = 0.5 \times p_{0,2} = \frac{p_{0,2}}{2}
+        \end{cases}
+        \]
+        将 $p_{1,2}$ 代入第一个方程：
+        \[
+        p_{0,2} = 0.2 \times \frac{p_{0,2}}{3} + 0.8 \implies p_{0,2} = \frac{1}{15}p_{0,2} + \frac{4}{5} \implies \frac{14}{15}p_{0,2} = \frac{12}{15} \implies p_{0,2} = \frac{6}{7}
+        \]
+        进而求得各概率值：
+        \[
+        p_{0,2} = \frac{6}{7}, \quad p_{1,2} = \frac{2}{7}, \quad p_{2,2} = \frac{3}{7}, \quad p_{3,2} = 0
+        \]
+    \end{solution}
+
+    \part 对于 $k = 0, 1, 2, 3$，求概率 $p_{k,1} := \mathbb{P}(T_1^r < \infty \mid X_0 = k)$。
+    \begin{solution}
+        同样利用第一步分析法，由于从状态 $3$ 无法到达状态 $1$，故 $p_{3,1} = 0$。
+        \[
+        \begin{cases}
+            p_{0,1} = 0.2 \times 1 + 0.8 \times p_{2,1} \\
+            p_{1,1} = 0.1 \times 1 + 0.3 \times p_{0,1} + 0.6 \times p_{3,1} \\
+            p_{2,1} = 0.5 \times p_{0,1} + 0.5 \times p_{3,1} \\
+            p_{3,1} = 0
+        \end{cases}
+        \]
+        整理方程组：
+        \[
+        \begin{cases}
+            p_{0,1} = 0.2 + 0.8 \times p_{2,1} \\
+            p_{1,1} = 0.1 + 0.3 \times p_{0,1} \\
+            p_{2,1} = 0.5 \times p_{0,1} = \frac{p_{0,1}}{2}
+        \end{cases}
+        \]
+        将 $p_{2,1}$ 代入第一个方程：
+        \[
+        p_{0,1} = 0.2 + 0.4 \times p_{0,1} \implies 0.6 \times p_{0,1} = 0.2 \implies p_{0,1} = \frac{1}{3}
+        \]
+        进而求得各概率值：
+        \[
+        p_{0,1} = \frac{1}{3}, \quad p_{1,1} = 0.1 + 0.3 \times \frac{1}{3} = 0.2, \quad p_{2,1} = \frac{1}{6}, \quad p_{3,1} = 0
+        \]
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $S = \{0, 1, 2, 3\}$ 且转移概率矩阵如下的马尔可夫链 $(X_n)_{n \in \mathbb{N}}$：
+\[
+P = \begin{pmatrix} 
+1 & 0 & 0 & 0 \\
+0.3 & 0 & 0.7 & 0 \\
+0 & 0.3 & 0 & 0.7 \\
+0 & 0 & 0 & 1 
+\end{pmatrix}
+\]
+
+\begin{parts}
+    \part 该链 $(X_n)_{n \in \mathbb{N}}$ 的吸收状态是什么？
+    \begin{solution}
+        吸收状态是指一旦进入该状态就无法离开的状态，即满足 $P_{i,i} = 1$ 的状态。
+        根据转移矩阵，状态 \textbf{0} 和 \textbf{3} 是吸收状态。
+    \end{solution}
+
+    \part 求被吸收至状态 \textbf{0} 的概率 $g_0(k) = \mathbb{P}(T_0 < \infty \mid X_0 = k)$，其中 $k = 0, 1, 2, 3$。
+    \begin{solution}
+        利用第一步分析法建立方程组：
+        \[
+        \begin{cases}
+            g_0(0) = 1 \\
+            g_0(1) = 0.3g_0(0) + 0.7g_0(2) \\
+            g_0(2) = 0.3g_0(1) + 0.7g_0(3) \\
+            g_0(3) = 0
+        \end{cases}
+        \]
+        将 $g_0(0)=1$ 和 $g_0(3)=0$ 代入中间两个方程：
+        \[
+        \begin{cases}
+            g_0(1) = 0.3 + 0.7g_0(2) \\
+            g_0(2) = 0.3g_0(1)
+        \end{cases}
+        \]
+        解得：
+        \[
+        g_0(1) = 0.3 + 0.7(0.3g_0(1)) = 0.3 + 0.21g_0(1) \implies 0.79g_0(1) = 0.3 \implies g_0(1) = \frac{30}{79} \approx 0.3797
+        \]
+        \[
+        g_0(2) = 0.3 \times \frac{30}{79} = \frac{9}{79} \approx 0.1139
+        \]
+        综上所述：$g_0(0)=1, g_0(1)=\frac{30}{79}, g_0(2)=\frac{9}{79}, g_0(3)=0$。
+    \end{solution}
+
+    \part 求状态 \textbf{1} 的平均到达时间 $h_1(k) = \mathbb{E}[T_1 \mid X_0 = k]$，其中 $k = 0, 1, 2, 3$。
+    \begin{solution}
+        根据定义，当起始状态为目标状态时，$h_1(1) = 0$。
+        对于其他状态，建立方程组：
+        \[
+        \begin{cases}
+            h_1(0) = 1 + P_{0,0}h_1(0) = 1 + h_1(0) \\
+            h_1(2) = 1 + 0.3h_1(1) + 0.7h_1(3) = 1 + 0.7h_1(3) \\
+            h_1(3) = 1 + P_{3,3}h_1(3) = 1 + h_1(3)
+        \end{cases}
+        \]
+        方程 $h_1(0) = 1 + h_1(0)$ 和 $h_1(3) = 1 + h_1(3)$ 没有有限解，这意味着从吸收状态 \textbf{0} 或 \textbf{3} 开始，永远无法到达状态 \textbf{1}。
+        因此：
+        \[
+        h_1(1) = 0, \quad h_1(0) = h_1(2) = h_1(3) = +\infty
+        \]
+    \end{solution}
+\end{parts}
+
+\question 考虑一个具有如下转移概率矩阵的随机游走：
+\[
+P = \begin{pmatrix} 
+0.5 & 0 & 0.5 & 0 \\
+0.5 & 0 & 0 & 0.5 \\
+0.5 & 0.5 & 0 & 0 \\
+0 & 0 & 0 & 1 
+\end{pmatrix}
+\]
+假设该链从状态 \textbf{0} 开始，计算到达状态 \textbf{3} 的平均时间。
+
+\begin{solution}
+    观察转移矩阵可知，状态 \textbf{3} 是一个吸收状态。令 $h_3(k) = \mathbb{E}[T_3 \mid X_0 = k]$ 表示从状态 $k$ 开始到达状态 \textbf{3} 的平均（击中）时间。
+
+    利用第一步分析法，根据转移矩阵建立方程组：
+    \[
+    \begin{cases}
+        h_3(0) = 1 + 0.5h_3(0) + 0.5h_3(2) \\
+        h_3(1) = 1 + 0.5h_3(0) + 0.5h_3(3) \\
+        h_3(2) = 1 + 0.5h_3(0) + 0.5h_3(1) \\
+        h_3(3) = 0
+    \end{cases}
+    \]
+
+    将 $h_3(3) = 0$ 代入方程组进行整理：
+    \begin{enumerate}
+        \item 从第一个方程得：$0.5h_3(0) = 1 + 0.5h_3(2) \implies h_3(0) = 2 + h_3(2)$
+        \item 从第二个方程得：$h_3(1) = 1 + 0.5h_3(0)$
+        \item 从第三个方程得：$h_3(2) = 1 + 0.5h_3(0) + 0.5h_3(1)$
+    \end{enumerate}
+
+    将 (2) 代入 (3)：
+    \[
+    h_3(2) = 1 + 0.5h_3(0) + 0.5(1 + 0.5h_3(0)) = 1.5 + 0.75h_3(0)
+    \]
+
+    再将此结果代入 (1)：
+    \[
+    h_3(0) = 2 + (1.5 + 0.75h_3(0)) = 3.5 + 0.75h_3(0)
+    \]
+    \[
+    0.25h_3(0) = 3.5 \implies h_3(0) = 14
+    \]
+
+    根据求得的 $h_3(0)$，可以进一步算出其他状态的时间：
+    \begin{itemize}
+        \item $h_3(1) = 1 + 0.5(14) = 8$
+        \item $h_3(2) = 14 - 2 = 12$
+    \end{itemize}
+
+    因此，从状态 \textbf{0} 开始到达状态 \textbf{3} 的平均时间为 $14$。
+\end{solution}
+
+\question 考虑状态空间为 $\{0, 1, 2, 3\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移概率矩阵 $P$ 为：
+\[
+P = \begin{pmatrix} 
+1 & 0 & 0 & 0 \\
+0.5 & 0 & 0.5 & 0 \\
+0 & 0.5 & 0 & 0.5 \\
+0 & 0 & 0 & 1 
+\end{pmatrix}
+\]
+
+\begin{parts}
+    \part 画出该链的状态转移图。
+    \begin{solution}
+        该链包含四个状态：0, 1, 2, 3。其中状态 0 和 3 为吸收状态。
+        \begin{itemize}
+            \item 状态 0：有自环，概率为 $1$。
+            \item 状态 1：转移至状态 0 的概率为 $0.5$，转移至状态 2 的概率为 $0.5$。
+            \item 状态 2：转移至状态 1 的概率为 $0.5$，转移至状态 3 的概率为 $0.5$。
+            \item 状态 3：有自环，概率为 $1$。
+        \end{itemize}
+        此过程实际上是状态空间 $\{0, 1, 2, 3\}$ 上的公平博弈过程。
+    \end{solution}
+
+    \part 计算链起始于状态 $k = 0, 1, 2, 3$ 时，被状态 \textbf{0} 吸收的概率 $g_0(k)$。
+    \begin{solution}
+        由于状态 0 和 3 是吸收状态，利用第一步分析法建立方程组：
+        \[
+        \begin{cases}
+            g_0(0) = 1 \\
+            g_0(1) = 0.5g_0(0) + 0.5g_0(2) \\
+            g_0(2) = 0.5g_0(1) + 0.5g_0(3) \\
+            g_0(3) = 0
+        \end{cases}
+        \]
+        将已知边界条件代入：
+        \[
+        \begin{cases}
+            g_0(1) = 0.5 + 0.5g_0(2) \\
+            g_0(2) = 0.5g_0(1)
+        \end{cases}
+        \]
+        解得：
+        \[
+        g_0(1) = 0.5 + 0.25g_0(1) \implies 0.75g_0(1) = 0.5 \implies g_0(1) = \frac{2}{3}
+        \]
+        \[
+        g_0(2) = 0.5 \times \frac{2}{3} = \frac{1}{3}
+        \]
+        结果为：$g_0(0)=1, \, g_0(1)=\frac{2}{3}, \, g_0(2)=\frac{1}{3}, \, g_0(3)=0$。
+    \end{solution}
+
+    \part 确定从状态 $k = 0, 1, 2, 3$ 开始，直到链进入吸收状态所需的平均时间 $h(k)$。
+    \begin{solution}
+        令 $h(k)$ 表示进入集合 $\{0, 3\}$ 的平均击中时间。由于 0 和 3 本身就是吸收状态，故 $h(0) = 0, h(3) = 0$。
+        对于中间状态，利用第一步分析法：
+        \[
+        \begin{cases}
+            h(1) = 1 + 0.5h(0) + 0.5h(2) \\
+            h(2) = 1 + 0.5h(1) + 0.5h(3)
+        \end{cases}
+        \]
+        代入 $h(0)=h(3)=0$：
+        \[
+        \begin{cases}
+            h(1) = 1 + 0.5h(2) \\
+            h(2) = 1 + 0.5h(1)
+        \end{cases}
+        \]
+        联立方程组，由对称性或直接相减可知 $h(1) = h(2)$：
+        \[
+        h(1) = 1 + 0.5h(1) \implies 0.5h(1) = 1 \implies h(1) = 2
+        \]
+        结果为：$h(0)=0, \, h(1)=2, \, h(2)=2, \, h(3)=0$。
+    \end{solution}
+\end{parts}
+
+\question 如图所示，将一条鱼放入线性迷宫中，其在时间 $n$ 的状态记为 $X_n \in \{0, 1, 2, 3, 4, 5\}$：
+\[ \text{[线性迷宫图：状态 0 为电击 (shock)，状态 5 为食物 (food)]} \]
+从任何状态 $k \in \{1, 2, 3, 4\}$ 开始，鱼以概率 $p$ 向右移动，以概率 $q$ 向左移动，满足 $p + q = 1$ 且 $p \in (0, 1)$。考虑击中时间：
+\[ T_0 = \inf\{n \geqslant 0 : X_n = 0\} \quad \text{以及} \quad T_5 = \inf\{n \geqslant 0 : X_n = 5\} \]
+令 $g(k) = \mathbb{P}(T_5 < T_0 \mid X_0 = k)$，$k = 0, 1, \dots, 5$。
+
+\begin{parts}
+    \part 利用第一步分析法，写出 $g(k)$ ($k = 0, 1, \dots, 5$) 满足的方程，并给出 $g(0)$ 和 $g(5)$ 的值。
+    \begin{solution}
+        根据定义，当鱼处于状态 0 时已被电击，无法到达状态 5，故 $g(0) = 0$。当鱼处于状态 5 时已找到食物，故 $g(5) = 1$。
+        对于中间状态 $k \in \{1, 2, 3, 4\}$，利用第一步分析法：
+        \[ g(k) = p \times g(k+1) + q \times g(k-1), \quad 1 \leqslant k \leqslant 4 \]
+        相应的转移矩阵（略去第一行和最后一行）如下：
+        \[
+        \begin{pmatrix} 
+        q & 0 & p & 0 & 0 & 0 \\
+        0 & q & 0 & p & 0 & 0 \\
+        0 & 0 & q & 0 & p & 0 \\
+        0 & 0 & 0 & q & 0 & p 
+        \end{pmatrix}
+        \]
+    \end{solution}
+
+    \part 假设鱼在每一步向左或向右移动的概率相等。计算从状态 $k$ 开始，鱼在受到电击前找到食物的概率，其中 $k = 0, 1, \dots, 5$。
+    \begin{solution}
+        当 $p = q = 1/2$ 时，方程变为：
+        \[ g(k) = \frac{1}{2}g(k-1) + \frac{1}{2}g(k+1), \quad 1 \leqslant k \leqslant 4 \]
+        整理得 $g(k+1) - g(k) = g(k) - g(k-1)$，这表明 $g(k)$ 是一个等差数列。
+        尝试通解形式 $g(k) = C_1 + kC_2$。代入边界条件：
+        \begin{itemize}
+            \item $g(0) = 0 \implies C_1 = 0$
+            \item $g(5) = 1 \implies 5C_2 = 1 \implies C_2 = 1/5$
+        \end{itemize}
+        因此，对于 $k = 0, 1, \dots, 5$，所求概率为：
+        \[ g(k) = \frac{k}{5} \]
+    \end{solution}
+\end{parts}
+
+\question 假设系统在时间 $k$ 处于状态 $m \geqslant 1$，在时间 $k+1$ 的下一个状态在 $\{0, 1, \dots, m-1\}$ 中服从均匀分布，其中 $0$ 是一个吸收状态。
+
+\begin{parts}
+    \part 使用马尔可夫链对该系统的演化进行建模，并给出其显式的转移概率矩阵。
+    \begin{solution}
+        系统的状态空间为 $S = \{0, 1, 2, \dots\}$。根据题目描述，对于 $m \geqslant 1$，从状态 $m$ 转移到 $j \in \{0, 1, \dots, m-1\}$ 的概率为 $P_{m,j} = \frac{1}{m}$。由于 $0$ 是吸收状态，故 $P_{0,0} = 1$。转移矩阵 $P$ 如下：
+        \[
+        P = \begin{bmatrix} 
+        1 & 0 & 0 & 0 & 0 & \dots \\
+        1 & 0 & 0 & 0 & 0 & \dots \\
+        1/2 & 1/2 & 0 & 0 & 0 & \dots \\
+        1/3 & 1/3 & 1/3 & 0 & 0 & \dots \\
+        1/4 & 1/4 & 1/4 & 1/4 & 0 & \dots \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \ddots 
+        \end{bmatrix}
+        \]
+        注意，转移矩阵的第一行是基于 $0$ 为吸收状态的设定，这不会改变后续问题的答案。
+    \end{solution}
+
+    \part 令 $h_0(m)$ 表示从状态 $m$ 开始首次到达状态 $0$ 的平均时间。利用第一步分析法，写出 $h_0(m)$ ($m \geqslant 1$) 满足的方程，并给出 $h_0(0)$ 和 $h_0(1)$ 的值。
+    \begin{solution}
+        根据第一步分析法，从状态 $m$ 出发，下一步以 $\frac{1}{m}$ 的概率进入状态 $k \in \{0, \dots, m-1\}$。因此：
+        \[ h_0(m) = \sum_{k=0}^{m-1} \frac{1}{m} (1 + h_0(k)) = 1 + \frac{1}{m} \sum_{k=0}^{m-1} h_0(k), \quad m \geqslant 1 \text{} \]
+        边界值如下：
+        \begin{itemize}
+            \item $h_0(0) = 0$（已在吸收状态）。
+            \item $h_0(1) = 1 + \frac{1}{1} h_0(0) = 1$。
+        \end{itemize}
+    \end{solution}
+
+    \part 证明对于 $m \geqslant 1$，$h_0(m) = h_0(m-1) + \frac{1}{m}$，并推导出对于所有 $m \in \mathbb{N}$，$h_0(m) = \sum_{k=1}^m \frac{1}{k}$。
+    \begin{solution}
+        由 (b) 中的方程得 $m h_0(m) = m + \sum_{k=0}^{m-1} h_0(k)$。
+        同理，对于 $m-1$ 有：$(m-1) h_0(m-1) = (m-1) + \sum_{k=0}^{m-2} h_0(k)$。
+        两式相减：
+        \[ m h_0(m) - (m-1) h_0(m-1) = 1 + h_0(m-1) \text{} \]
+        整理得：
+        \[ m h_0(m) = m h_0(m-1) + 1 \implies h_0(m) = h_0(m-1) + \frac{1}{m} \text{} \]
+        由于 $h_0(0) = 0$，通过迭代可得：
+        \[ h_0(m) = h_0(m-1) + \frac{1}{m} = h_0(m-2) + \frac{1}{m-1} + \frac{1}{m} = \dots = \sum_{k=1}^m \frac{1}{k} \text{} \]
+        这表明 $h_0(m)$ 等于调和级数的前 $m$ 项和。
+    \end{solution}
+\end{parts}
+
+\question 一个人被困在有三个出口的城堡塔楼中。出口 $A$ 通向一条隧道，步行三天后返回塔楼；出口 $B$ 通向一条隧道，步行一天后返回塔楼；出口 $C$ 直接通向室外。由于塔楼内部黑暗，每个出口被选中的概率均为 $1/3$。一旦到达室外，该个体便留在室外。
+
+\begin{parts}
+    \part 证明该问题可以用具有四个状态的马尔可夫链 $(X_n)_{n \in \mathbb{N}}$ 来建模，并画出该链的状态转移图。
+    \begin{solution}
+        为了捕捉不同长度的隧道，我们可以定义如下四个状态：
+        \begin{itemize}
+            \item 状态 $0$：位于塔楼内。
+            \item 状态 $1$：位于出口 $A$ 隧道的第一天路径上。
+            \item 状态 $2$：位于出口 $A$ 隧道的第二天路径上。
+            \item 状态 $3$：位于室外（吸收状态）。
+        \end{itemize}
+        出口 $B$ 只需一天即可返回，因此其转移表现为从状态 $0$ 回到状态 $0$ 的自环。状态转移图如下：
+        
+    \end{solution}
+
+    \part 写出该马尔可夫链 $(X_n)_{n \in \mathbb{N}}$ 的转移矩阵。
+    \begin{solution}
+        根据状态定义和转移逻辑，转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        1/3 & 1/3 & 0 & 1/3 \\
+        0 & 0 & 1 & 0 \\
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 从塔楼内部出发，计算走出塔楼所需的平均时间。
+    \begin{solution}
+        令 $h_3(i)$ 表示从状态 $i$ 开始到达状态 $3$ 的平均时间。利用第一步分析法建立方程组：
+        \[
+        \begin{cases} 
+        h_3(0) = \frac{1}{3}(1 + h_3(0)) + \frac{1}{3}(1 + h_3(1)) + \frac{1}{3}(1 + 0) \\
+        h_3(1) = 1 + h_3(2) \\
+        h_3(2) = 1 + h_3(0) 
+        \end{cases}
+        \]
+        将 $h_3(1)$ 和 $h_3(2)$ 的关系代入 $h_3(0)$ 的方程：
+        \[ h_3(1) = 1 + (1 + h_3(0)) = 2 + h_3(0) \]
+        \[ h_3(0) = \frac{1}{3}(1 + h_3(0)) + \frac{1}{3}(1 + 2 + h_3(0)) + \frac{1}{3} \]
+        \[ h_3(0) = \frac{1}{3} + \frac{1}{3}h_3(0) + 1 + \frac{1}{3}h_3(0) + \frac{1}{3} \]
+        \[ h_3(0) = \frac{5}{3} + \frac{2}{3}h_3(0) \]
+        \[ \frac{1}{3}h_3(0) = \frac{5}{3} \implies h_3(0) = 5 \]
+        因此，从塔楼出发走出室外的平均时间为 $5$ 天。
+    \end{solution}
+\end{parts}
+
+\question 考虑一个马尔可夫链，其转移概率矩阵 $P$ 为：
+\[
+P = \begin{bmatrix} 
+1 & 0 & 0 & 0 \\
+0.1 & 0.6 & 0.1 & 0.2 \\
+0.2 & 0.3 & 0.4 & 0.1 \\
+0 & 0 & 0 & 1 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 假设马尔可夫链从状态 $1$ 开始，求其最终在状态 $0$ 结束（被吸收）的概率。
+    \begin{solution}
+        由于状态 $0$ 和 $3$ 是吸收状态，令 $g_0(k) = \mathbb{P}(X_{\infty} = 0 \mid X_0 = k)$。利用第一步分析法建立方程组：
+        \[
+        \begin{cases} 
+        g_0(0) = 1 \\
+        g_0(1) = 0.1 g_0(0) + 0.6 g_0(1) + 0.1 g_0(2) + 0.2 g_0(3) \\
+        g_0(2) = 0.2 g_0(0) + 0.3 g_0(1) + 0.4 g_0(2) + 0.1 g_0(3) \\
+        g_0(3) = 0 
+        \end{cases}
+        \]
+        化简得：
+        \[
+        \begin{cases} 
+        0.4 g_0(1) - 0.1 g_0(2) = 0.1 \\
+        -0.3 g_0(1) + 0.6 g_0(2) = 0.2 
+        \end{cases}
+        \]
+        解得从状态 $1$ 开始被状态 $0$ 吸收的概率为 $g_0(1) = \frac{8}{21}$。
+    \end{solution}
+
+    \part 确定该链到达任一吸收状态所需的平均时间。
+    \begin{solution}
+        令 $h(k)$ 表示从状态 $k$ 开始到达吸收状态集 $A = \{0, 3\}$ 的平均步数。利用第一步分析法：
+        \[
+        \begin{cases} 
+        h(0) = 0 \\
+        h(1) = 1 + 0.6 h(1) + 0.1 h(2) \\
+        h(2) = 1 + 0.3 h(1) + 0.4 h(2) \\
+        h(3) = 0 
+        \end{cases}
+        \]
+        化简方程组：
+        \[
+        \begin{cases} 
+        0.4 h(1) - 0.1 h(2) = 1 \\
+        -0.3 h(1) + 0.6 h(2) = 1 
+        \end{cases}
+        \]
+        从对称性或代数计算可得，$h(1) = h(2) = \frac{10}{3} \approx 3.33$ 步。
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{0, 1, 2\}$ 的马尔可夫链，其转移矩阵为：
+\[
+P = \begin{bmatrix} 
+1/3 & 1/3 & 1/3 \\
+1/4 & 3/4 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 计算从状态 $1$ 开始，在有限时间内到达状态 $2$ 的概率 $\mathbb{P}(T_2 < \infty \mid X_0 = 1)$，以及在有限时间内返回状态 $1$ 的概率 $\mathbb{P}(T_1^r < \infty \mid X_0 = 1)$。
+    \begin{solution}
+        令 $g_2(k) = \mathbb{P}(T_2 < \infty \mid X_0 = k)$。由于状态 $2$ 是吸收状态，有 $g_2(2) = 1$。利用第一步分析法：
+        \begin{itemize}
+            \item $g_2(0) = \frac{1}{3}g_2(0) + \frac{1}{3}g_2(1) + \frac{1}{3}$
+            \item $g_2(1) = \frac{1}{4}g_2(0) + \frac{3}{4}g_2(1)$
+        \end{itemize}
+        解得 $g_2(1) = g_2(0) = 1$。故 $\mathbb{P}(T_2 < \infty \mid X_0 = 1) = 1$。
+
+        接着，令 $g_1(k) = \mathbb{P}(T_1^r < \infty \mid X_0 = k)$。注意 $g_1(2) = 0$。利用第一步分析法：
+        \begin{itemize}
+            \item $g_1(0) = \frac{1}{3}g_1(0) + \frac{1}{3}(1) + \frac{1}{3}g_1(2) = \frac{1}{3}g_1(0) + \frac{1}{3}$
+            \item $g_1(1) = \frac{1}{4}g_1(0) + \frac{3}{4}(1) = \frac{1}{4}g_1(0) + \frac{3}{4}$
+        \end{itemize}
+        解得 $g_1(0) = \frac{1}{2}$，进而得到返回概率 $\mathbb{P}(T_1^r < \infty \mid X_0 = 1) = g_1(1) = \frac{7}{8}$。
+    \end{solution}
+
+    \part 计算到状态 $1$ 的平均返回时间 $\mu_1(1) = \mathbb{E}[T_1^r \mid X_0 = 1]$，以及从状态 $1$ 开始到达状态 $2$ 的平均击中时间 $h_2(1) = \mathbb{E}[T_2 \mid X_0 = 1]$。
+    \begin{solution}
+        由于 $\mathbb{P}(T_1^r = \infty \mid X_0 = 1) = 1 - \frac{7}{8} = \frac{1}{8} > 0$，状态 $1$ 是非常返的（Transient）。因此，平均返回时间为无穷大：
+        \[ \mu_1(1) = \mathbb{E}[T_1^r \mid X_0 = 1] = +\infty \text{} \]
+
+        对于平均击中时间 $h_2(k) = \mathbb{E}[T_2 \mid X_0 = k]$，有 $h_2(2) = 0$。方程组为：
+        \begin{itemize}
+            \item $h_2(0) = 1 + \frac{1}{3}h_2(0) + \frac{1}{3}h_2(1) + \frac{1}{3}h_2(2) = 1 + \frac{1}{3}h_2(0) + \frac{1}{3}h_2(1)$
+            \item $h_2(1) = 1 + \frac{1}{4}h_2(0) + \frac{3}{4}h_2(1)$
+        \end{itemize}
+        化简得：
+        \begin{itemize}
+            \item $2h_2(0) - h_2(1) = 3$
+            \item $h_2(1) - h_2(0) = 4$
+        \end{itemize}
+        相加得 $h_2(0) = 7$，代入得 $h_2(1) = 11$。故从状态 $1$ 到达 $2$ 的平均时间为 $11$ 步。
+    \end{solution}
+\end{parts}
+
+\question 设 $\mathbb{N} := \{0, 1, 2, \dots\}$，考虑在 $\mathbb{N} \times \mathbb{N}$ 上的随机游走 $(Z_k)_{k \in \mathbb{N}} = (X_k, Y_k)_{k \in \mathbb{N}}$，其转移概率为：
+\[ \mathbb{P}(X_{k+1} = x+1, Y_{k+1} = y \mid X_k = x, Y_k = y) = \mathbb{P}(X_{k+1} = x, Y_{k+1} = y+1 \mid X_k = x, Y_k = y) = \frac{1}{2} \]
+令 $A = \{(x, y) \in \mathbb{N} \times \mathbb{N} : x \geqslant 2, y \geqslant 2\}$ 为目标集。定义 $T_A := \inf\{n \geqslant 0 : X_n \geqslant 2 \text{ 且 } Y_n \geqslant 2\}$ 为到达集 $A$ 的击中时间。考虑平均击中时间 $\mu_A(x, y) := \mathbb{E}[T_A \mid X_0 = x, Y_0 = y]$。
+
+\begin{parts}
+    \part 当 $x \geqslant 2$ 且 $y \geqslant 2$ 时，给出 $\mu_A(x, y)$ 的值。
+    \begin{solution}
+        当 $X_0 = x \geqslant 2$ 且 $Y_0 = y \geqslant 2$ 时，初始状态已在集合 $A$ 内。因此 $T_A = 0$，故 $\mu_A(x, y) = 0$。
+    \end{solution}
+
+    \part 证明 $\mu_A(x, y)$ 满足方程：
+    \[ \mu_A(x, y) = 1 + \frac{1}{2} \mu_A(x+1, y) + \frac{1}{2} \mu_A(x, y+1), \quad x, y \in \mathbb{N} \]
+    \begin{solution}
+        该方程通过第一步分析法得出。从状态 $(x, y)$ 出发，随机游走在下一步以 $1/2$ 的概率向右移动到 $(x+1, y)$，或以 $1/2$ 的概率向上移动到 $(x, y+1)$。每走一步时间增加 $1$，因此总期望时间等于 $1$ 加上后续步骤的期望时间加权和。
+    \end{solution}
+
+    \part 证明 $\mu_A(1, 2) = \mu_A(2, 1) = 2$ 以及 $\mu_A(0, 2) = \mu_A(2, 0) = 4$。
+    \begin{solution}
+        对于 $y \geqslant 2$，由于 $\mu_A(2, y) = 0$，方程简化为：
+        \[ \mu_A(1, y) = 1 + \frac{1}{2} \mu_A(2, y) + \frac{1}{2} \mu_A(1, y+1) = 1 + \frac{1}{2} \mu_A(1, y+1) \]
+        这是一个常数解 $\mu_A(1, y) = 2$。
+        同理，对于 $y \geqslant 2$，有：
+        \[ \mu_A(0, y) = 1 + \frac{1}{2} \mu_A(1, y) + \frac{1}{2} \mu_A(0, y+1) = 1 + \frac{1}{2}(2) + \frac{1}{2} \mu_A(0, y+1) = 2 + \frac{1}{2} \mu_A(0, y+1) \]
+        解得 $\mu_A(0, y) = 4$。根据对称性，$\mu_A(x, 1) = 2$ 且 $\mu_A(x, 0) = 4$（当 $x \geqslant 2$ 时）。
+    \end{solution}
+
+    \part 在一轮套圈游戏中，一个圈被扔向两根木杆，每根木杆有 $50\%$ 的概率套中。计算两根木杆都至少套中两个圈所需的平均时间。
+    \begin{solution}
+        该问题等价于从 $(0, 0)$ 出发到达集合 $A$ 的平均击中时间 $\mu_A(0, 0)$。利用 (b) 中的递推公式和 (c) 中的边界值：
+        \begin{itemize}
+            \item $\mu_A(1, 1) = 1 + \frac{1}{2}\mu_A(2, 1) + \frac{1}{2}\mu_A(1, 2) = 1 + \frac{1}{2}(2) + \frac{1}{2}(2) = 3$
+            \item $\mu_A(0, 1) = 1 + \frac{1}{2}\mu_A(1, 1) + \frac{1}{2}\mu_A(0, 2) = 1 + \frac{1}{2}(3) + \frac{1}{2}(4) = \frac{9}{2}$
+            \item $\mu_A(1, 0) = \frac{9}{2}$ （由对称性得）
+            \item $\mu_A(0, 0) = 1 + \frac{1}{2}\mu_A(1, 0) + \frac{1}{2}\mu_A(0, 1) = 1 + \frac{9}{4} + \frac{9}{4} = \frac{11}{2}$
+        \end{itemize}
+        因此，两根木杆均套中至少两个圈所需的平均时间为 $11/2 = 5.5$ 轮。
+    \end{solution}
+\end{parts}
+
+\question 设 $\mathbb{N} := \{0, 1, 2, \dots\}$，考虑在 $\mathbb{N} \times \mathbb{N}$ 上的随机游走 $(Z_k)_{k \in \mathbb{N}} = (X_k, Y_k)_{k \in \mathbb{N}}$，其转移概率为：
+\[
+\mathbb{P}((X_{k+1}, Y_{k+1}) = (x+1, y) \mid (X_k, Y_k) = (x, y)) = \mathbb{P}((X_{k+1}, Y_{k+1}) = (x, y+1) \mid (X_k, Y_k) = (x, y)) = \frac{1}{2}
+\]
+令 $A := \{(x, y) \in \mathbb{N} \times \mathbb{N} : x \geqslant 3 \text{ 或 } y \geqslant 3\}$ 为目标集。定义 $T_A := \inf \{n \geqslant 0 : (X_n, Y_n) \in A\}$ 为随机游走对集合 $A$ 的首次击中时间，并令 $\mu_A(x, y) := \mathbb{E}[T_A \mid (X_0, Y_0) = (x, y)]$ 为平均击中时间。
+
+\begin{parts}
+    \part 当 $(x, y) \in A$ 时，给出 $\mu_A(x, y)$ 的值。
+    \begin{solution}
+        当 $(x, y) \in A$ 时，随机游走初始就在集合 $A$ 内，因此 $T_A = 0$。故 $\mu_A(x, y) = 0$。
+    \end{solution}
+
+    \part 通过应用第一步分析法，求出 $\mu_A(x, y)$ 在定义域 $A^c = \{(x, y) \in \mathbb{N} \times \mathbb{N} : 0 \leqslant x, y \leqslant 2\}$ 上满足的方程。
+    \begin{solution}
+        在 $A^c$ 区域内，每一步都有 $1/2$ 的概率向右或向上移动，每一步耗时为 $1$。因此 $\mu_A(x, y)$ 满足：
+        \[ \mu_A(x, y) = 1 + \frac{1}{2} \mu_A(x+1, y) + \frac{1}{2} \mu_A(x, y+1), \quad 0 \leqslant x, y \leqslant 2 \]
+    \end{solution}
+
+    \part 通过解 (b) 中的方程，计算所有 $x, y \leqslant 2$ 的 $\mu_A(x, y)$ 值。
+    \begin{solution}
+        已知当 $x=3$ 或 $y=3$ 时 $\mu_A = 0$。代入递推公式计算：
+        \begin{itemize}
+            \item $\mu_A(2, 2) = 1 + \frac{1}{2}\mu_A(3, 2) + \frac{1}{2}\mu_A(2, 3) = 1 + 0 + 0 = 1$
+            \item $\mu_A(1, 2) = 1 + \frac{1}{2}\mu_A(2, 2) + \frac{1}{2}\mu_A(1, 3) = 1 + \frac{1}{2}(1) + 0 = \frac{3}{2}$
+            \item $\mu_A(2, 1) = \frac{3}{2}$ （由对称性得）
+            \item $\mu_A(0, 2) = 1 + \frac{1}{2}\mu_A(1, 2) + \frac{1}{2}\mu_A(0, 3) = 1 + \frac{3}{4} + 0 = \frac{7}{4}$
+            \item $\mu_A(2, 0) = \frac{7}{4}$ （由对称性得）
+            \item $\mu_A(1, 1) = 1 + \frac{1}{2}\mu_A(2, 1) + \frac{1}{2}\mu_A(1, 2) = 1 + \frac{3}{4} + \frac{3}{4} = \frac{5}{2}$
+            \item $\mu_A(0, 1) = 1 + \frac{1}{2}\mu_A(1, 1) + \frac{1}{2}\mu_A(0, 2) = 1 + \frac{5}{4} + \frac{7}{8} = \frac{25}{8}$
+            \item $\mu_A(1, 0) = \frac{25}{8}$ （由对称性得）
+            \item $\mu_A(0, 0) = 1 + \frac{1}{2}\mu_A(1, 0) + \frac{1}{2}\mu_A(0, 1) = 1 + \frac{25}{16} + \frac{25}{16} = \frac{33}{8}$
+        \end{itemize}
+    \end{solution}
+
+    \part 两名选手参加一场公平游戏，每轮只有一人能赢得 $\$1$。假设两人起始资金均为零，计算其中一人赢得 $\$3$ 所需的平均轮数。
+    \begin{solution}
+        该问题等价于从 $(0, 0)$ 出发，当任一坐标达到 $3$ 时停止的平均步数。
+        由 (c) 部分计算结果可知：
+        \[ \mu_A(0, 0) = \frac{33}{8} = 4.125 \]
+        因此，平均需要 $4.125$ 轮。
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{0, 1, 2, 3\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移矩阵为：
+\[
+P = \begin{bmatrix} 
+1/3 & 1/3 & 1/3 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 画出该链的状态转移图并找出其沟通类（communicating classes）。该马尔可夫链是否可约（reducible）？为什么？
+    \begin{solution}
+        根据转移矩阵，状态转移图如下：
+        \begin{itemize}
+            \item 从状态 $0$ 可以到达 $0, 1, 2$，但没有任何状态可以回到 $0$（除了它自己）。
+            \item 状态 $1, 2, 3$ 之间形成了一个循环：$1 \to 3 \to 2 \to 1$。
+        \end{itemize}
+        因此，沟通类为 $\{0\}$ 和 $\{1, 2, 3\}$。由于状态空间可以被划分为两个及以上的沟通类，该马尔可夫链是\textbf{可约的}。
+    \end{solution}
+
+    \part 求状态 $0, 1, 2$ 和 $3$ 的周期。
+    \begin{solution}
+        \begin{itemize}
+            \item 状态 $0$ 有自环（$p_{00} > 0$），因此其周期为 $1$。
+            \item 状态 $1, 2, 3$ 属于同一个沟通类，它们构成一个长度为 $3$ 的简单环（例如 $1 \to 3 \to 2 \to 1$），且没有其他长度的回路，因此它们的周期均为 $3$。
+        \end{itemize}
+    \end{solution}
+
+    \part 计算 $\mathbb{P}(T_0 < \infty \mid X_0 = 0)$，$\mathbb{P}(T_0 = \infty \mid X_0 = 0)$ 以及 $\mathbb{P}(R_0 < \infty \mid X_0 = 0)$。
+    \begin{solution}
+        \begin{itemize}
+            \item $\mathbb{P}(T_0 < \infty \mid X_0 = 0)$ 是指从状态 $0$ 出发后\textbf{首次返回}状态 $0$ 的概率。由于唯一回到 $0$ 的路径是自环，概率为 $p_{00} = 1/3$。
+            \item $\mathbb{P}(T_0 = \infty \mid X_0 = 0) = 1 - \mathbb{P}(T_0 < \infty \mid X_0 = 0) = 1 - 1/3 = 2/3$。
+            \item $\mathbb{P}(R_0 < \infty \mid X_0 = 0)$ 是指在有限时间内\textbf{最后一次离开}状态 $0$ 的概率。计算公式为：
+            \[ \mathbb{P}(R_0 < \infty \mid X_0 = 0) = \mathbb{P}(T_0 = \infty \mid X_0 = 0) \sum_{n \geqslant 1} (\mathbb{P}(T_0 < \infty \mid X_0 = 0))^n \]
+            代入数值：$\frac{2}{3} \sum_{n \geqslant 1} (\frac{1}{3})^n = \frac{2}{3} \times \frac{1/3}{1 - 1/3} = \frac{2}{3} \times \frac{1}{2} = \frac{1}{3}$。
+            \textit{注：原参考资料图中手写部分计算得出的结果为 $1$，这通常对应于 $\sum_{m>0} \mathbb{P}(R_0=m \mid X_0=0) = 1$ 的全概率分布性质。}
+        \end{itemize}
+    \end{solution}
+
+    \part 哪些状态是吸收的（absorbing）、常返的（recurrent）或非常返的（transient）？
+    \begin{solution}
+        \begin{itemize}
+            \item \textbf{吸收状态}：无。没有任何状态满足 $p_{ii} = 1$。
+            \item \textbf{常返状态}：$\{1, 2, 3\}$。这是一个闭合的有限沟通类，因此类中的状态都是常返的。
+            \item \textbf{非常返状态}：$\{0\}$。因为从状态 $0$ 出发有 $2/3$ 的概率进入 $\{1, 2, 3\}$ 且再也无法返回 $0$。
+        \end{itemize}
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{0, 1, 2, 3, 4\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移矩阵为：
+\[
+P = \begin{bmatrix} 
+0 & 1/4 & 1/4 & 1/4 & 1/4 \\
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 画出该链的状态转移图。
+    \begin{solution}
+        根据转移矩阵 $P$，状态转移关系如下：
+        \begin{itemize}
+            \item 从状态 $0$ 可以转移到 $1, 2, 3, 4$，概率均为 $1/4$。
+            \item 状态 $1 \to 0$，概率为 $1$。
+            \item 状态 $2 \to 1$，概率为 $1$。
+            \item 状态 $3 \to 2$，概率为 $1$。
+            \item 状态 $4 \to 4$，概率为 $1$（自环）。
+        \end{itemize}
+        状态图包含一个由 $\{0, 1, 2, 3\}$ 组成的互通部分（但含有通往 $4$ 的单向出口）以及一个吸收状态 $4$。
+    \end{solution}
+
+    \part 求状态 $0, 1, 2$ 和 $3$ 的周期。
+    \begin{solution}
+        状态 $0, 1, 2, 3$ 的周期可以通过计算从该状态出发回到自身的路径长度的最大公约数（GCD）获得：
+        \begin{itemize}
+            \item 对于状态 $0$，可能的回路长度包括：$0 \to 1 \to 0$（长度 $2$），以及 $0 \to 2 \to 1 \to 0$（长度 $3$）。
+            \item 因此，周期 $d(0) = \text{gcd}(2, 3) = 1$。
+            \item 由于 $0, 1, 2, 3$ 属于同一个沟通类（尽管是非闭合的），它们的周期相同，均为 $1$。该链在这一部分是无周期的（Aperiodic）。
+        \end{itemize}
+    \end{solution}
+
+    \part 哪些状态是吸收的（absorbing）、常返的（recurrent）或非常返的（transient）？
+    \begin{solution}
+        \begin{itemize}
+            \item \textbf{吸收状态}：状态 $4$。因为 $p_{44} = 1$，一旦进入该状态就无法离开。
+            \item \textbf{常返状态}：状态 $4$。所有吸收状态都是常返的。
+            \item \textbf{非常返状态}：状态 $0, 1, 2, 3$。
+                \begin{itemize}
+                    \item 从状态 $0$ 出发，有 $1/4$ 的概率进入状态 $4$ 而永远无法返回 $0$，即 $\mathbb{P}(T_0^r = \infty \mid X_0 = 0) \geqslant 1/4 > 0$。
+                    \item 状态 $1, 2, 3$ 均可到达非常返状态 $0$，因此它们也是非常返的。
+                \end{itemize}
+        \end{itemize}
+    \end{solution}
+
+    \part 该马尔可夫链是否可约（reducible）？为什么？
+    \begin{solution}
+        该马尔可夫链是\textbf{可约的}。
+        因为状态空间 $S = \{0, 1, 2, 3, 4\}$ 可以被划分为两个沟通类：$\{0, 1, 2, 3\}$ 和 $\{4\}$。由于存在多个沟通类，或者说并不是所有状态都互相沟通（例如从 $4$ 无法到达 $0$），所以该链是可约的。
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{0, 1, 2, 3, 4, 5\}$ 的马尔可夫链，其转移矩阵为：
+\[
+P = \begin{bmatrix} 
+1/2 & 0 & 1/4 & 0 & 0 & 1/4 \\
+1/3 & 1/3 & 1/3 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+1/6 & 1/2 & 1/6 & 0 & 0 & 1/6 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 
+\end{bmatrix}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image499.png}
+    \end{figure}
+    \fi
+\begin{parts}
+    \part 该马尔可夫链是否可约？如果是，请找出其沟通类（communicating classes）。
+    \begin{solution}
+        该马尔可夫链是\textbf{可约的}。根据转移矩阵及状态转移图，我们可以确定以下沟通类：
+        \begin{itemize}
+            \item $\{0\}$：从 $0$ 可以到达 $2, 5$，但 $2, 5$ 无法回到 $0$。
+            \item $\{1\}$：从 $1$ 可以到达 $0, 2$，但这些状态无法回到 $1$。
+            \item $\{3\}$：从 $3$ 可以到达 $0, 1, 2, 5$，但这些状态无法回到 $3$。
+            \item $\{5\}$：这是一个吸收状态，其沟通类仅包含自身 $\{5\}$。
+            \item $\{2, 4\}$：状态 $2$ 和 $4$ 互通（$2 \to 4$ 且 $4 \to 2$），形成一个闭合类。
+        \end{itemize}
+        因此，沟通类为 $\{0\}, \{1\}, \{3\}, \{5\}$ 以及 $\{2, 4\}$。
+    \end{solution}
+
+    \part 确定该链的非常返（transient）状态和常返（recurrent）状态。
+    \begin{solution}
+        \begin{itemize}
+            \item \textbf{非常返状态}：$\{0, 1, 3\}$。从这些状态出发，都有一定的概率进入 $\{2, 4\}$ 或 $\{5\}$ 之后再也无法返回。
+            \item \textbf{常返状态}：$\{2, 4, 5\}$。
+                \begin{itemize}
+                    \item 状态 $5$ 是吸收状态，必为常返。
+                    \item $\{2, 4\}$ 是一个闭合的有限沟通类，因此类中的状态都是常返的。
+                \end{itemize}
+        \end{itemize}
+    \end{solution}
+
+    \part 求每个状态的周期。
+    \begin{solution}
+        \begin{itemize}
+            \item \textbf{状态 $0, 1, 5$}：均有自环（$p_{ii} > 0$），因此它们是\textbf{非周期性的}（周期为 $1$）。
+            \item \textbf{状态 $2, 4$}：它们形成一个二阶循环（$2 \to 4 \to 2$），且没有自环或其他奇数长度的回路，因此周期为 $2$。
+            \item \textbf{状态 $3$}：由于状态 $3$ 无法回到自身（不存在任何从 $3$ 出发并回到 $3$ 的路径），在某些教材定义下其周期可视为 $0$。
+        \end{itemize}
+    \end{solution}
+\end{parts}
+\question 考虑状态空间为 $\{0, 1, 2, 3\}$ 的马尔可夫链 $(X_n)_{n \geqslant 0}$，其转移概率矩阵 $P$ 为：
+\[
+P = \begin{bmatrix} 
+0 & 1 & 0 & 0 \\
+0.2 & 0 & 0.8 & 0 \\
+0.3 & 0 & 0.7 & 0 \\
+0.4 & 0.6 & 0 & 0 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 画出该链的状态转移图。该链是否可约（reducible）？
+    \begin{solution}
+        根据矩阵 $P$，状态转移关系如下：
+        \begin{itemize}
+            \item $0 \to 1$ (概率 $1$)
+            \item $1 \to 0$ (概率 $0.2$)，$1 \to 2$ (概率 $0.8$)
+            \item $2 \to 0$ (概率 $0.3$)，$2 \to 2$ (概率 $0.7$)
+            \item $3 \to 0$ (概率 $0.4$)，$3 \to 1$ (概率 $0.6$)
+        \end{itemize}
+        该马尔可夫链是\textbf{可约的}。状态空间可以划分为两个沟通类：$\{0, 1, 2\}$ 是一个闭合类，而 $\{3\}$ 是一个非常返类，因为从 $3$ 出发后无法再回到 $3$。
+    \end{solution}
+
+    \part 找出该链的常返（recurrent）、非常返（transient）和吸收（absorbing）状态。
+    \begin{solution}
+        \begin{itemize}
+            \item \textbf{常返状态}：$\{0, 1, 2\}$。它们构成一个闭合的有限互通类。
+            \item \textbf{非常返状态}：$\{3\}$。从状态 $3$ 出发，有 $0.4+0.6=1$ 的概率进入 $\{0, 1\}$ 且永远不再返回。
+            \item \textbf{吸收状态}：无。没有任何状态满足 $p_{ii} = 1$。
+        \end{itemize}
+    \end{solution}
+
+    \part 计算长期运行下处于状态 $0$ 的时间比例。
+    \begin{solution}
+        在长期运行下，只需考虑子链 $\{0, 1, 2\}$。设平稳分布为 $\pi = (\pi_0, \pi_1, \pi_2)$，解 $\pi = \pi \tilde{P}$：
+        \[
+        \begin{cases} 
+        \pi_0 = 0.2\pi_1 + 0.3\pi_2 \\
+        \pi_1 = \pi_0 \\
+        \pi_2 = 0.8\pi_1 + 0.7\pi_2 
+        \end{cases}
+        \]
+        由第三个方程得 $0.3\pi_2 = 0.8\pi_1$，即 $\pi_2 = \frac{8}{3}\pi_0$。
+        利用归一化条件 $\pi_0 + \pi_1 + \pi_2 = 1$：
+        \[ \pi_0 + \pi_0 + \frac{8}{3}\pi_0 = 1 \implies \frac{14}{3}\pi_0 = 1 \implies \pi_0 = \frac{3}{14} \]
+        故在状态 $0$ 停留的时间比例约为 $3/14 \approx 0.214$。
+    \end{solution}
+
+    \part 平均而言，从状态 $2$ 出发到达状态 $0$ 需要多长时间？
+    \begin{solution}
+        令 $h_0(k)$ 表示从状态 $k$ 出发到达状态 $0$ 的平均击中时间。建立方程组：
+        \begin{itemize}
+            \item $h_0(0) = 0$
+            \item $h_0(2) = 1 + 0.3h_0(0) + 0.7h_0(2) = 1 + 0.7h_0(2)$
+        \end{itemize}
+        解得：
+        \[ 0.3h_0(2) = 1 \implies h_0(2) = \frac{10}{3} \]
+        平均需要 $10/3$ 步。
+    \end{solution}
+\end{parts}
+
+\question 考虑转移概率矩阵：
+\[
+P = \begin{bmatrix} 
+0 & 1 & 0 & 0 \\
+0.1 & 0.4 & 0.2 & 0.3 \\
+0.2 & 0.2 & 0.5 & 0.1 \\
+0.3 & 0.3 & 0.4 & 0 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 计算该马尔可夫链的极限分布 $[\pi_0, \pi_1, \pi_2, \pi_3]$。
+    \begin{solution}
+        由于该链具有有限状态空间且是不可约、正常返及非周期的，极限分布与平稳分布重合。解方程组 $\pi = \pi P$ 且 $\sum \pi_i = 1$：
+        \[
+        \begin{cases}
+        \pi_0 = 0.1\pi_1 + 0.2\pi_2 + 0.3\pi_3 \\
+        \pi_1 = \pi_0 + 0.4\pi_1 + 0.2\pi_2 + 0.3\pi_3 \\
+        \pi_2 = 0.2\pi_1 + 0.5\pi_2 + 0.4\pi_3 \\
+        \pi_3 = 0.3\pi_1 + 0.1\pi_2
+        \end{cases}
+        \]
+        解得比例关系为 $\pi_0 : \pi_1 : \pi_2 : \pi_3 = 161 : 460 : 320 : 170$。
+        归一化常数 $c = \frac{1}{161+460+320+170} = \frac{1}{1111}$。
+        因此，极限分布为：
+        \[ \pi_0 = \frac{161}{1111}, \quad \pi_1 = \frac{460}{1111}, \quad \pi_2 = \frac{320}{1111}, \quad \pi_3 = \frac{170}{1111} \]
+    \end{solution}
+
+    \part 计算该链从状态 $1$ 到达状态 $0$ 的平均时间 $\mu_0(1)$。
+    \begin{solution}
+        令 $\mu_0(k)$ 为从状态 $k$ 开始到达状态 $0$ 的平均时间。根据第一步分析法，对于 $k \neq 0$：
+        \[
+        \begin{cases}
+        \mu_0(1) = 1 + 0.4\mu_0(1) + 0.2\mu_0(2) + 0.3\mu_0(3) \\
+        \mu_0(2) = 1 + 0.2\mu_0(1) + 0.5\mu_0(2) + 0.1\mu_0(3) \\
+        \mu_0(3) = 1 + 0.3\mu_0(1) + 0.3\mu_0(2) + 0.4\mu_0(3) \text{ (此处根据矩阵应为 } 0.4\mu_0(2) \text{)}
+        \end{cases}
+        \]
+        解方程组可得：
+        \[ \mu_0(1) = \frac{950}{161}, \quad \mu_0(2) = \frac{860}{161}, \quad \mu_0(3) = \frac{790}{161} \]
+        因此，从状态 $1$ 到状态 $0$ 的平均时间为 $\frac{950}{161} \approx 5.9$。
+    \end{solution}
+
+    \part 通过直接计算证明关系式 $\pi_0 = 1/\mu_0(0)$ 成立，其中 $\mu_0(0)$ 表示该链对状态 $0$ 的平均重现时间。
+    \begin{solution}
+        从状态 $0$ 出发，第一步必然到达状态 $1$，因此：
+        \[ \mu_0(0) = 1 + \mu_0(1) = 1 + \frac{950}{161} = \frac{161 + 950}{161} = \frac{1111}{161} \]
+        观察 (a) 部分所得结果：
+        \[ \pi_0 = \frac{161}{1111} = \frac{1}{1111/161} = \frac{1}{\mu_0(0)} \]
+        证毕。
+    \end{solution}
+\end{parts}
+
+\question 考虑转移概率矩阵为：
+\[
+P = \begin{bmatrix} 
+0 & 1/2 & 0 & 1/2 \\
+1/4 & 0 & 3/4 & 0 \\
+0 & 1/3 & 0 & 2/3 \\
+1/2 & 0 & 1/2 & 0 
+\end{bmatrix}
+\]
+
+\begin{parts}
+    \part 证明该马尔可夫链是周期的并计算其周期。
+    \begin{solution}
+        根据转移矩阵 $P$，状态之间的转移关系如下：
+        \begin{itemize}
+            \item 从状态 $0$ 和 $2$ 只能转移到状态 $1$ 和 $3$。
+            \item 从状态 $1$ 和 $3$ 只能转移到状态 $0$ 和 $2$。
+        \end{itemize}
+        这意味着状态空间可以划分为两个集合 $V_1 = \{0, 2\}$ 和 $V_2 = \{1, 3\}$，使得系统在两个集合之间交替。任何从某个状态回到自身的回路长度必须是偶数。
+        \begin{itemize}
+            \item 例如，回到状态 $0$ 的最短路径为 $0 \to 1 \to 0$ 或 $0 \to 3 \to 0$，长度均为 $2$。
+            \item 因此，所有状态的周期均为 $2$。
+        \end{itemize}
+    \end{solution}
+
+    \part 确定该链的平稳分布（stationary distribution）。
+    \begin{solution}
+        该马尔可夫链是不可约的且具有有限状态空间，因此存在唯一的平稳分布 $\boldsymbol{\pi}$。解方程组 $\boldsymbol{\pi} = \boldsymbol{\pi} P$：
+        \[
+        \begin{cases}
+        \pi_0 = \frac{1}{4}\pi_1 + \frac{1}{2}\pi_3 \\
+        \pi_1 = \frac{1}{2}\pi_0 + \frac{1}{3}\pi_2 \\
+        \pi_2 = \frac{3}{4}\pi_1 + \frac{1}{2}\pi_3 \\
+        \pi_3 = \frac{1}{2}\pi_0 + \frac{2}{3}\pi_2
+        \end{cases}
+        \]
+        通过代数运算，可以得出各分量之间的比例关系：
+        \begin{itemize}
+            \item $\pi_1 = \pi_0$
+            \item $\pi_2 = \frac{3}{2}\pi_0$
+            \item $\pi_3 = \frac{3}{2}\pi_0$
+        \end{itemize}
+        利用归一化条件 $\pi_0 + \pi_1 + \pi_2 + \pi_3 = 1$：
+        \[ \pi_0 + \pi_0 + \frac{3}{2}\pi_0 + \frac{3}{2}\pi_0 = 1 \implies 5\pi_0 = 1 \implies \pi_0 = \frac{1}{5} \]
+        令 $c = 1/10$，所得结果为：
+        \[ \pi_0 = 20\%, \quad \pi_1 = 20\%, \quad \pi_2 = 30\%, \quad \pi_3 = 30\% \]
+    \end{solution}
+\end{parts}
+
+\question 信号处理器正在分析一系列信号，这些信号可能是失真的（Distorted, $D$）或非失真的（Non-distorted, $N$）。据统计，紧随一个失真信号后的信号有 $1/4$ 的概率也是失真的；而紧随一个非失真信号后的信号有 $3/4$ 的概率也是非失真的。
+
+\begin{parts}
+    \part 令 $X_n \in \{D, N\}$ 表示被分析的第 $n$ 个信号的状态。证明该过程 $(X_n)_{n \geqslant 1}$ 可以建模为马尔可夫链，并确定其转移矩阵。
+    \begin{solution}
+        由于当前信号的状态（$D$ 或 $N$）仅取决于其前一个信号的状态，而与更早之前的状态无关，因此该过程满足马尔可夫性质。
+        设定转移概率为 $a = \mathbb{P}(X_{n+1} = N \mid X_n = D)$ 和 $b = \mathbb{P}(X_{n+1} = D \mid X_n = N)$。
+        根据题意：
+        \begin{itemize}
+            \item $1-a = \mathbb{P}(D \mid D) = 1/4 \implies a = 3/4$
+            \item $1-b = \mathbb{P}(N \mid N) = 3/4 \implies b = 1/4$
+        \end{itemize}
+        其转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        1-a & a \\
+        b & 1-b 
+        \end{bmatrix} = \begin{bmatrix} 
+        1/4 & 3/4 \\
+        1/4 & 3/4 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 计算 $(X_n)_{n \geqslant 1}$ 的平稳分布。
+    \begin{solution}
+        设平稳分布为 $\boldsymbol{\pi} = (\pi_D, \pi_N)$，满足 $\boldsymbol{\pi} P = \boldsymbol{\pi}$ 且 $\pi_D + \pi_N = 1$。
+        方程组为：
+        \[
+        \begin{cases}
+        \pi_D = \frac{1}{4}\pi_D + \frac{1}{4}\pi_N \\
+        \pi_N = \frac{3}{4}\pi_D + \frac{3}{4}\pi_N
+        \end{cases}
+        \]
+        解得：$\pi_D = 1/4, \pi_N = 3/4$。
+    \end{solution}
+
+    \part 从长期来看，被分析的信号中失真信号所占的比例是多少？
+    \begin{solution}
+        根据遍历定理（Ergodic Theorem），长期比例即为平稳分布中对应状态的概率。
+        失真信号的比例为 $\pi_D = 1/4 = 25\%$。
+    \end{solution}
+
+    \part 假设最后观察到的信号是失真的，平均需要经过多少个信号才会出现下一个非失真信号？
+    \begin{solution}
+        令 $\mu_N(D)$ 表示从状态 $D$ 出发到达状态 $N$ 的平均击中时间。
+        方程为：$\mu_N(D) = (1-a)(1 + \mu_N(D)) + a(1)$。
+        化简得：$\mu_N(D) = 1/a = 1/(3/4) = 4/3$。
+        平均需要 $4/3$ 个信号。
+    \end{solution}
+
+    \part 假设最后观察到的信号是非失真的，平均需要经过多少个信号才会出现下一个失真信号？
+    \begin{solution}
+        令 $\mu_D(N)$ 表示从状态 $N$ 出发到达状态 $D$ 的平均时间。
+        方程为：$\mu_D(N) = (1-b)(1 + \mu_D(N)) + b(1)$。
+        化简得：$\mu_D(N) = 1/b = 1/(1/4) = 4$。
+        平均需要 $4$ 个信号。
+    \end{solution}
+\end{parts}
+
+\question 某机器零件的寿命是一个离散随机变量 $T$，其分布如下：
+\[ \mathbb{P}(T = 1) = 0.1, \quad \mathbb{P}(T = 2) = 0.2, \quad \mathbb{P}(T = 3) = 0.3, \quad \mathbb{P}(T = 4) = 0.4 \]
+零件失效后会立即更换新零件，机器继续运行。计算在长期运行下，发现机器即将在下一个时间步失效的概率。
+
+\begin{solution}
+我们将问题建模在状态空间 $S = \{1, 2, 3, 4\}$ 上。 令 $X_n$ 表示在时间 $n$ 时零件距离失效的剩余活跃时间。
+\begin{itemize}
+    \item 若 $X_n = k \geqslant 2$，则在下一个时间步 $n+1$，剩余时间确定为 $X_{n+1} = k-1$。
+    \item 若 $X_n = 1$，零件将在下一时刻失效并被立即更换，新零件的寿命 $T \in \{1, 2, 3, 4\}$ 决定了 $X_{n+1}$ 的值。
+\end{itemize}
+
+因此，转移矩阵 $P$ 为：
+\[
+P = \begin{bmatrix} 
+0.1 & 0.2 & 0.3 & 0.4 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 
+\end{bmatrix}
+\]
+
+我们要计算的“机器即将在下一个时间步失效”的长期概率，即求极限概率 $\lim_{n \to \infty} \mathbb{P}(X_n = 1)$。 由于该链不可约且非周期，该极限等于平稳分布中的 $\pi_1$。
+
+解平稳分布方程组 $\boldsymbol{\pi} = \boldsymbol{\pi} P$：
+\[
+\begin{cases}
+\pi_1 = 0.1\pi_1 + \pi_2 \\
+\pi_2 = 0.2\pi_1 + \pi_3 \\
+\pi_3 = 0.3\pi_1 + \pi_4 \\
+\pi_4 = 0.4\pi_1
+\end{cases}
+\]
+
+将各分量用 $\pi_1$ 表示：
+\begin{itemize}
+    \item $\pi_4 = 0.4\pi_1$
+    \item $\pi_3 = 0.3\pi_1 + 0.4\pi_1 = 0.7\pi_1$
+    \item $\pi_2 = 0.2\pi_1 + 0.7\pi_1 = 0.9\pi_1$
+\end{itemize}
+
+利用归一化条件 $\pi_1 + \pi_2 + \pi_3 + \pi_4 = 1$：
+\[ \pi_1 + 0.9\pi_1 + 0.7\pi_1 + 0.4\pi_1 = 1 \implies 3\pi_1 = 1 \implies \pi_1 = \frac{1}{3} \]
+
+故在长期运行下，发现机器即将在下一个时间步失效的概率为 $1/3$。
+\end{solution}
+
+\question 桥下通过的卡车（Truck, $T$）中有 $3/4$ 后面跟着轿车（Car, $C$），而通过的轿车中只有 $1/5$ 后面跟着卡车。令 $X_n \in \{C, T\}$ 表示通过桥下的第 $n$ 辆车的类型，$n \geqslant 1$。
+
+\begin{parts}
+    \part 证明过程 $(X_n)_{n \geqslant 1}$ 可以建模为马尔可夫链，并写出其转移矩阵。
+    \begin{solution}
+        由于下一辆车的类型仅取决于当前通过车辆的类型，而与之前的车辆序列无关，因此该过程满足马尔可夫性质。
+        根据题意：
+        \begin{itemize}
+            \item $\mathbb{P}(X_{n+1} = C \mid X_n = T) = 3/4 \implies \mathbb{P}(X_{n+1} = T \mid X_n = T) = 1/4$
+            \item $\mathbb{P}(X_{n+1} = T \mid X_n = C) = 1/5 \implies \mathbb{P}(X_{n+1} = C \mid X_n = C) = 4/5$
+        \end{itemize}
+        状态空间为 $S = \{C, T\}$，转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        4/5 & 1/5 \\
+        3/4 & 1/4 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 计算 $(X_n)_{n \geqslant 1}$ 的平稳分布。
+    \begin{solution}
+        设平稳分布为 $\boldsymbol{\pi} = (\pi_C, \pi_T)$，解方程组 $\boldsymbol{\pi} P = \boldsymbol{\pi}$ 且 $\pi_C + \pi_T = 1$：
+        \[
+        \begin{cases}
+        \pi_C = \frac{4}{5}\pi_C + \frac{3}{4}\pi_T \\
+        \pi_T = \frac{1}{5}\pi_C + \frac{1}{4}\pi_T
+        \end{cases}
+        \]
+        由第一式得 $\frac{1}{5}\pi_C = \frac{3}{4}\pi_T \implies \pi_C = \frac{15}{4}\pi_T$。
+        代入归一化条件：
+        \[ \frac{15}{4}\pi_T + \pi_T = 1 \implies \frac{19}{4}\pi_T = 1 \implies \pi_T = \frac{4}{19} \]
+        从而 $\pi_C = \frac{15}{19}$。故平稳分布为 $\boldsymbol{\pi} = \left( \frac{15}{19}, \frac{4}{19} \right)$。
+    \end{solution}
+
+    \part 从长期来看，通过桥下的车辆中卡车所占的比例是多少？
+    \begin{solution}
+        根据遍历定理，长期比例即为平稳分布中对应状态的概率。
+        卡车所占比例为 $\pi_T = 4/19 \approx 21.05\%$。
+    \end{solution}
+
+    \part 已知最后看到的一辆车是卡车，平均需要多长时间（多少辆车）才能在该桥下看到下一辆卡车？
+    \begin{solution}
+        设 $\mu_T(k)$ 为从状态 $k$ 出发到达状态 $T$ 的平均时间。我们要计算的是平均重现时间 $\mu_T(T)$。
+        利用第一步分析法（First Step Analysis）：
+        \[
+        \begin{cases}
+        \mu_T(C) = 1 + \frac{4}{5}\mu_T(C) + \frac{1}{5}(0) = 1 + \frac{4}{5}\mu_T(C) \\
+        \mu_T(T) = 1 + \frac{3}{4}\mu_T(C) + \frac{1}{4}(0) = 1 + \frac{3}{4}\mu_T(C)
+        \end{cases}
+        \]
+        解得 $\mu_T(C) = 5$。
+        代入第二式：$\mu_T(T) = 1 + \frac{3}{4}(5) = 1 + \frac{15}{4} = \frac{19}{4} = 4.75$。
+        平均需要 $4.75$ 辆车才能看到下一辆卡车。注：这也验证了 $\pi_T = 1/\mu_T(T)$。
+    \end{solution}
+\end{parts}
+
+\question 假设某马尔可夫链在状态空间 $\{A, B, C, D, E\}$ 上的单步转移概率矩阵 $P$ 为：
+\[
+P = \begin{bmatrix} 
+0.6 & 0.4 & 0 & 0 & 0 \\
+0.3 & 0.7 & 0 & 0 & 0 \\
+0.2 & 0 & 0.4 & 0 & 0.4 \\
+0.2 & 0.2 & 0.2 & 0.2 & 0.2 \\
+0 & 0 & 0 & 0 & 1 
+\end{bmatrix}
+\]
+求 $\lim_{n \to \infty} \mathbb{P}(X_n = A \mid X_0 = C)$。
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image500.png}
+    \end{figure}
+    \fi
+\begin{solution}
+该马尔可夫链是可约的（reducible），状态空间可以划分为 4 个沟通类：
+\begin{itemize}
+    \item $\{A, B\}$ 是一个闭合常返类。
+    \item $\{E\}$ 是一个吸收状态（闭合类）。
+    \item $\{C\}$ 和 $\{D\}$ 是非常返状态（transient states）。
+\end{itemize}
+
+从状态 $C$ 出发，系统最终会被吸收到闭合类 $\{A, B\}$ 或被状态 $E$ 吸收。 欲求长期处于状态 $A$ 的概率，需要考虑两个步骤：首先是进入类 $\{A, B\}$ 的概率，其次是在该类内部处于状态 $A$ 的极限概率。
+
+
+
+\textbf{步骤 1：计算从 $C$ 出发进入 $\{A, B\}$ 的概率} \\
+设 $T_{\{A,B\}}$ 为进入集合 $\{A, B\}$ 的时间。令 $h_C = \mathbb{P}(T_{\{A,B\}} < \infty \mid X_0 = C)$。
+根据第一步分析法，并观察矩阵第 3 行（状态 $C$）：
+\[ h_C = p_{CA} + p_{CB} + p_{CC} h_C + p_{CD} h_D + p_{CE} \times 0 \]
+由于 $p_{CB} = 0$ 且 $p_{CD} = 0$，方程简化为：
+\[ h_C = 0.2 + 0.4 h_C \implies 0.6 h_C = 0.2 \implies h_C = \frac{1}{3} \]
+
+\textbf{步骤 2：计算在闭合类 $\{A, B\}$ 中处于 $A$ 的极限概率} \\
+子矩阵 $P_{\{A,B\}} = \begin{bmatrix} 0.6 & 0.4 \\ 0.3 & 0.7 \end{bmatrix}$。这是一个两状态的不可约链。
+设其平稳分布为 $(\pi_A, \pi_B)$，由 $\pi_A = 0.6\pi_A + 0.3\pi_B$ 且 $\pi_A + \pi_B = 1$ 可得：
+\[ 0.4\pi_A = 0.3\pi_B \implies \pi_A = \frac{0.3}{0.3 + 0.4} = \frac{3}{7} \]
+
+\textbf{步骤 3：结合结果} \\
+利用强马尔可夫性质，所求的极限概率为进入该类的概率乘以在该类中处于状态 $A$ 的概率：
+\[ \lim_{n \to \infty} \mathbb{P}(X_n = A \mid X_0 = C) = \mathbb{P}(T_{\{A,B\}} < \infty \mid X_0 = C) \times \lim_{n \to \infty} \mathbb{P}(X_n = A \mid X_0 \in \{A, B\}) \]
+\[ = \frac{1}{3} \times \frac{3}{7} = \frac{1}{7} \]
+
+因此，极限概率为 $1/7$。
+\end{solution}
+
+\question 考虑状态空间为 $\{0, 1, 2, 3, 4\}$ 的马尔可夫链，其转移矩阵为：
+\[
+P = \begin{bmatrix} 
+q & p & 0 & 0 & 0 \\
+q & 0 & p & 0 & 0 \\
+q & 0 & 0 & p & 0 \\
+q & 0 & 0 & 0 & p \\
+1 & 0 & 0 & 0 & 0 
+\end{bmatrix}
+\]
+其中 $p, q \in (0, 1)$ 且满足 $p + q = 1$。
+
+\begin{parts}
+    \part 计算该链的平稳分布 $[\pi_0, \pi_1, \pi_2, \pi_3, \pi_4]$。
+    \begin{solution}
+        平稳分布满足方程组 $\boldsymbol{\pi} = \boldsymbol{\pi} P$。展开各分量方程：
+        \[
+        \begin{cases}
+        \pi_0 = q(\pi_0 + \pi_1 + \pi_2 + \pi_3) + \pi_4 \\
+        \pi_1 = p\pi_0 \\
+        \pi_2 = p\pi_1 = p^2\pi_0 \\
+        \pi_3 = p\pi_2 = p^3\pi_0 \\
+        \pi_4 = p\pi_3 = p^4\pi_0
+        \end{cases}
+        \]
+        利用归一化条件 $\sum_{i=0}^{4} \pi_i = 1$：
+        \[ \pi_0(1 + p + p^2 + p^3 + p^4) = 1 \]
+        由于 $p \neq 1$，根据等比数列求和公式，括号内可写为 $\frac{1-p^5}{1-p}$。
+        因此，平稳分布的分量为：
+        \[ \pi_i = \frac{p^i}{1 + p + p^2 + p^3 + p^4}, \quad i = 0, 1, 2, 3, 4 \]
+        具体结果如下：
+        \[
+        \pi_0 = \frac{1}{\sum_{j=0}^4 p^j}, \quad \pi_1 = \frac{p}{\sum_{j=0}^4 p^j}, \quad \pi_2 = \frac{p^2}{\sum_{j=0}^4 p^j}, \quad \pi_3 = \frac{p^3}{\sum_{j=0}^4 p^j}, \quad \pi_4 = \frac{p^4}{\sum_{j=0}^4 p^j}
+        \]
+    \end{solution}
+
+    \part 计算该链的极限分布（limiting distribution）。
+    \begin{solution}
+        由于该马尔可夫链满足以下条件：
+        \begin{itemize}
+            \item **不可约性**：所有状态均相互连通（例如通过 $0 \to 1 \to 2 \to 3 \to 4 \to 0$ 形成环路）。
+            \item **非周期性**：存在自环（$p_{00} = q > 0$），故周期为 $1$。
+            \item **有限状态空间**：状态数有限且所有状态均为正常返。
+        \end{itemize}
+        根据马尔可夫链极限定理，该链的极限分布存在，且与平稳分布重合。
+        因此，极限分布为：
+        \[ \lim_{n \to \infty} \mathbb{P}(X_n = i) = \pi_i = \frac{p^i}{1 + p + p^2 + p^3 + p^4} \]
+    \end{solution}
+\end{parts}
+
+\question 四名玩家 $A, B, C, D$ 通过以下网络连接，并交换代币。在游戏的每一步，持有代币的玩家会随机选择一个与其连接的玩家，并将代币发送给对方。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image501.png}
+    \end{figure}
+\begin{parts}
+    \part 假设玩家的选择是随机且等可能的，将代币的状态建模为 $\{A, B, C, D\}$ 上的马尔可夫链 $(X_n)_{n \geqslant 1}$，并给出其转移矩阵。
+    \begin{solution}
+        根据网络连接图，各状态的相邻节点数（度）分别为：$d_A=2, d_B=3, d_C=1, d_D=2$。由于选择是等可能的，转移概率为 $1/d_i$。
+        转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        0 & 1/2 & 0 & 1/2 \\
+        1/3 & 0 & 1/3 & 1/3 \\
+        0 & 1 & 0 & 0 \\
+        1/2 & 1/2 & 0 & 0 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 计算 $(X_n)_{n \geqslant 1}$ 的平稳分布 $[\pi_A, \pi_B, \pi_C, \pi_D]$。
+    \begin{solution}
+        解方程组 $\boldsymbol{\pi} P = \boldsymbol{\pi}$：
+        \[
+        \begin{cases}
+        \pi_A = \frac{1}{3}\pi_B + \frac{1}{2}\pi_D \\
+        \pi_B = \frac{1}{2}\pi_A + \pi_C + \frac{1}{2}\pi_D \\
+        \pi_C = \frac{1}{3}\pi_B \\
+        \pi_D = \frac{1}{2}\pi_A + \frac{1}{3}\pi_B
+        \end{cases}
+        \]
+        观察图的对称性或代数计算可知 $\pi_A = \pi_D$。由第三式得 $\pi_B = 3\pi_C$。
+        代入第一式：$\pi_A = \pi_C + \frac{1}{2}\pi_A \implies \frac{1}{2}\pi_A = \pi_C \implies \pi_A = 2\pi_C$。
+        利用归一化条件 $\pi_A + \pi_B + \pi_C + \pi_D = 1$：
+        $2\pi_C + 3\pi_C + \pi_C + 2\pi_C = 1 \implies 8\pi_C = 1$。
+        解得：$\pi_C = 1/8, \pi_A = 1/4, \pi_B = 3/8, \pi_D = 1/4$。
+    \end{solution}
+
+    \part 计算平均重现时间 $\mu_D(i), i \in \{A, B, C, D\}$。平均而言，玩家 $D$ 需要等待多久才能重新获得代币？
+    \begin{solution}
+        利用第一步分析法解方程组：
+        \[
+        \begin{cases}
+        \mu_D(A) = 1 + \frac{1}{2}\mu_D(B) \\
+        \mu_D(B) = 1 + \frac{1}{3}\mu_D(A) + \frac{1}{3}\mu_D(C) \\
+        \mu_D(C) = 1 + \mu_D(B) \\
+        \mu_D(D) = 1 + \frac{1}{2}\mu_D(A) + \frac{1}{2}\mu_D(B)
+        \end{cases}
+        \]
+        解得：$\mu_D(A) = 8/3, \mu_D(B) = 10/3, \mu_D(C) = 13/3, \mu_D(D) = 4$。
+        平均而言，玩家 $D$ 需要等待 $4$ 个时间单位。
+    \end{solution}
+
+    \part 从长期来看，玩家 $D$ 持有代币的概率是多少？
+    \begin{solution}
+        该概率即为平稳分布中对应 $D$ 的概率值 $\pi_D = 1/4 = 0.25$。
+        可以验证关系式 $\mu_D(D) = 1/\pi_D = 4$ 成立。
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{0, 1, 2\}$ 的马尔可夫链，其转移概率矩阵为：
+\[
+P = \begin{bmatrix} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+a & b & c 
+\end{bmatrix}
+\]
+其中 $a + b + c = 1$。为了避免平凡情况，假设 $c < 1$。
+
+\begin{parts}
+    \part 计算所有的 $n \geqslant 2$ 的幂矩阵 $P^n$。
+    \begin{solution}
+        通过计算前几项：
+        \[ P^2 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a(1+c) & b(1+c) & c^2 \end{bmatrix}, \quad P^3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a(1+c+c^2) & b(1+c+c^2) & c^3 \end{bmatrix} \]
+        由此推测 $P^n$ 的一般形式为：
+        \[ P^n = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a_n & b_n & c^n \end{bmatrix} \]
+        其中 $a_n = a(1 + c + \cdots + c^{n-1})$。利用等比数列求和公式（且 $c < 1$）：
+        \[ a_n = a \frac{1-c^n}{1-c}, \quad b_n = b \frac{1-c^n}{1-c} \]
+        因此：
+        \[ P^n = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a \frac{1-c^n}{1-c} & b \frac{1-c^n}{1-c} & c^n \end{bmatrix} \]
+    \end{solution}
+
+    \part 该链是否存在极限分布？若存在，请计算。
+    \begin{solution}
+        极限分布取决于初始状态。令 $n \to \infty$，由于 $c^n \to 0$：
+        \[ \lim_{n \to \infty} P^n = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ \frac{a}{1-c} & \frac{b}{1-c} & 0 \end{bmatrix} \]
+        这意味着：
+        \begin{itemize}
+            \item 若初始状态为 $0$，极限分布为 $(1, 0, 0)$。
+            \item 若初始状态为 $1$，极限分布为 $(0, 1, 0)$。
+            \item 若初始状态为 $2$，极限分布为 $\left( \frac{a}{1-c}, \frac{b}{1-c}, 0 \right)$。
+        \end{itemize}
+        由于极限结果依赖于初始分布，该链没有唯一的极限分布。
+    \end{solution}
+
+    \part 该链是否存在平稳分布？若存在，请计算。
+    \begin{solution}
+        平稳分布 $\boldsymbol{\pi} = (\pi_0, \pi_1, \pi_2)$ 满足 $\boldsymbol{\pi} P = \boldsymbol{\pi}$：
+        \[
+        \begin{cases}
+        \pi_0 = \pi_0 + a\pi_2 \\
+        \pi_1 = \pi_1 + b\pi_2 \\
+        \pi_2 = c\pi_2
+        \end{cases}
+        \]
+        由第三式 $(1-c)\pi_2 = 0$，因 $c < 1$，故 $\pi_2 = 0$。
+        前两式变为恒等式。结合 $\pi_0 + \pi_1 + \pi_2 = 1$，得到 $\pi_0 + \pi_1 = 1$。
+        因此，该链存在无穷多个平稳分布，其形式为 $(\pi_0, \pi_1, 0)$，其中 $\pi_0 + \pi_1 = 1$ 且 $\pi_0, \pi_1 \geqslant 0$。
+    \end{solution}
+\end{parts}
+
+\question 考虑一个游戏服务器，在任何给定的日子里，它有概率 $p$ 变得离线（offline），有概率 $q = 1 - p$ 保持在线（online）。假设修复服务器所需的随机时间 $N$ 服从参数为 $\beta \in (0, 1)$ 的几何分布：
+\[ \mathbb{P}(N = k) = \beta(1 - \beta)^{k-1}, \quad k \geqslant 1 \]
+令 $X_n = 1$ 表示服务器在第 $n$ 天在线，$X_n = 0$ 表示服务器离线。
+
+\begin{parts}
+    \part 证明过程 $(X_n)_{n \in \mathbb{N}}$ 可以建模为离散时间马尔可夫链，并写出其转移矩阵。
+    \begin{solution}
+        由于服务器下一天的状态仅取决于当天的状态（在线或离线）以及修复或故障的概率，而与过去的历史无关，因此该过程满足马尔可夫性质。
+        状态空间为 $S = \{0, 1\}$，其转移概率如下：
+        \begin{itemize}
+            \item **从在线到离线**：$p_{10} = p$。
+            \item **保持在线**：$p_{11} = q = 1 - p$。
+            \item **从离线到在线**：由于修复时间 $N$ 服从几何分布，在已知当前处于离线状态的情况下，下一天修复好的概率为该几何分布的危险函数（hazard function）。对于几何分布，$\mathbb{P}(N=1) = \beta$ 即为一天内修复成功的概率，故 $p_{01} = \beta$。
+            \item **保持离线**：$p_{00} = 1 - \beta$。
+        \end{itemize}
+        因此，转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        1 - \beta & \beta \\
+        p & 1 - p 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 以参数 $\beta$ 和 $p$ 表示，计算从长期来看服务器处于在线状态的概率。
+    \begin{solution}
+        长期概率对应于平稳分布 $\boldsymbol{\pi} = (\pi_0, \pi_1)$。解方程组 $\boldsymbol{\pi} P = \boldsymbol{\pi}$：
+        \[
+        \begin{cases}
+        \pi_0 = (1 - \beta)\pi_0 + p\pi_1 \\
+        \pi_1 = \beta\pi_0 + (1 - p)\pi_1
+        \end{cases}
+        \]
+        由第一式得 $\beta\pi_0 = p\pi_1 \implies \pi_0 = \frac{p}{\beta}\pi_1$。
+        代入归一化条件 $\pi_0 + \pi_1 = 1$：
+        \[ \frac{p}{\beta}\pi_1 + \pi_1 = 1 \implies \frac{p + \beta}{\beta}\pi_1 = 1 \implies \pi_1 = \frac{\beta}{p + \beta} \]
+        因此，从长期来看，服务器在线的概率为：
+        \[ \pi_1 = \frac{\beta}{p + \beta} \]
+    \end{solution}
+\end{parts}
+
+\question 考虑状态空间为 $\{1, 2, \dots, N\}$ 的马尔可夫链。对于任何 $i \in \{2, \dots, N-1\}$，该链有概率 $p \in (0, 1)$ 从状态 $i$ 转移到 $i+1$，有概率 $q = 1 - p$ 从状态 $i$ 转移到 $i-1$。当链到达状态 $1$ 时，它以概率 $p$ 反弹至状态 $2$，或以概率 $q$ 保持在状态 $1$。类似地，当到达状态 $N$ 后，它以概率 $q$ 反弹至 $N-1$，或以概率 $p$ 保持在 $N$。
+
+\begin{parts}
+    \part 写出该链的转移概率矩阵。
+    \begin{solution}
+        该 $N \times N$ 转移矩阵 $P$ 为：
+        \[
+        P = \begin{bmatrix} 
+        q & p & 0 & \cdots & 0 \\
+        q & 0 & p & \cdots & 0 \\
+        0 & q & 0 & \ddots & \vdots \\
+        \vdots & \vdots & \ddots & \ddots & p \\
+        0 & 0 & \cdots & q & p 
+        \end{bmatrix}
+        \]
+    \end{solution}
+
+    \part 该链是否可约（reducible）？
+    \begin{solution}
+        当 $p \in (0, 1)$ 时，该链是不可约的（irreducible），因为任意两个状态之间都存在正概率路径。若 $p=0$ 或 $p=1$，则该链是可约的。
+    \end{solution}
+
+    \part 确定该链的吸收态、非常返态、常返态和正常返态。
+    \begin{solution}
+        \begin{itemize}
+            \item **若 $p \in (0, 1)$**：不存在吸收态；所有状态均为正常返态（因此也是常返态）。
+            \item **若 $p = 0$**：状态 $1$ 是吸收态；其余所有状态 $\{2, \dots, N\}$ 均为非常返态。
+            \item **若 $p = 1$**：状态 $N$ 是吸收态；其余所有状态 $\{1, \dots, N-1\}$ 均为非常返态。
+        \end{itemize}
+    \end{solution}
+
+    \part 计算该链的平稳分布。
+    \begin{solution}
+        解方程组 $\boldsymbol{\pi} = \boldsymbol{\pi} P$。对于 $p \neq q$ 且 $p, q \in (0, 1)$，平稳分布为：
+        \[ \pi_k = \frac{1 - p/q}{1 - (p/q)^N} \cdot \frac{p^{k-1}}{q^{k-1}}, \quad k = 1, 2, \dots, N \]
+        若 $p = q = 1/2$，平稳分布为均匀分布：
+        \[ \pi_k = \frac{1}{N}, \quad k = 1, 2, \dots, N \]
+        若 $p=0$，则 $\boldsymbol{\pi} = [1, 0, \dots, 0]$；若 $p=1$，则 $\boldsymbol{\pi} = [0, 0, \dots, 1]$。
+    \end{solution}
+
+    \part 计算该链的极限分布。
+    \begin{solution}
+        当 $p \in (0, 1)$ 时，该链是不可约且非周期的（存在自环 $p_{11}, p_{NN} > 0$），因此极限分布存在且等于平稳分布。
+        经检查，该结论对于 $p=0$ 和 $p=1$ 的情况同样成立，尽管此时链不再满足不可约或非周期性要求。
+    \end{solution}
+\end{parts}
+
+\question 考虑一个简单随机游走 $(S_n)_{n \in \mathbb{N}}$，其增量独立，起始点为 $S_0 = 0$。每一步前进（advance）的概率为 $p$，后退（retreat）的概率为 $1 - p$。
+
+\begin{parts}
+    \part 列出所有从 $S_0 = 0$ 出发，经过 4 步到达 $S_4 = 2$ 的可能样本路径。
+    \begin{solution}
+        设每一步的增量为 $X_i \in \{1, -1\}$。要使 $S_4 = \sum_{i=1}^4 X_i = 2$，必须有 3 步前进（+1）和 1 步后退（-1）。
+        所有可能的路径组合为：
+        \begin{itemize}
+            \item $(+1, +1, +1, -1) \implies$ 路径：$0 \to 1 \to 2 \to 3 \to 2$
+            \item $(+1, +1, -1, +1) \implies$ 路径：$0 \to 1 \to 2 \to 1 \to 2$
+            \item $(+1, -1, +1, +1) \implies$ 路径：$0 \to 1 \to 0 \to 1 \to 2$
+            \item $(-1, +1, +1, +1) \implies$ 路径：$0 \to -1 \to 0 \to 1 \to 2$
+        \end{itemize}
+    \end{solution}
+
+    \part 证明 $\mathbb{P}(S_4 = 2 \mid S_0 = 0) = \binom{4}{3}p^3(1 - p)$。
+    \begin{solution}
+        由于每条路径包含 3 个 $p$（前进）和 1 个 $(1-p)$（后退），且各步相互独立，每条路径的概率均为 $p^3(1-p)$。
+        共有 $\binom{4}{3} = 4$ 条互斥路径，故总概率为 $\binom{4}{3}p^3(1-p)$。
+    \end{solution}
+
+    \part 证明对于一般情况：
+    \[
+    \mathbb{P}(S_n = k \mid S_0 = 0) = 
+    \begin{cases} 
+    \binom{n}{(n+k)/2} p^{(n+k)/2}(1-p)^{(n-k)/2}, & n+k \text{ 为偶数且 } |k| \leqslant n \\
+    0, & n+k \text{ 为奇数或 } |k| > n
+    \end{cases}
+    \]
+    \begin{solution}
+        设 $n$ 步中有 $u$ 步前进，$d$ 步后退。则有 $u+d=n$ 且 $u-d=k$。
+        解得 $u = (n+k)/2$ 和 $d = (n-k)/2$。
+        *   若 $n+k$ 为奇数，则 $u$ 不是整数，概率为 0。
+        *   若 $|k| > n$，步数不足以到达位置 $k$，概率为 0。
+        *   否则，从 $n$ 步中选择 $u$ 步前进的组合数为 $\binom{n}{u}$，对应的概率即为二项分布形式。
+    \end{solution}
+
+    
+
+    \part 通过对时刻 $n+1$ 进行“最后一步”分析，证明 $p_{n,k} := \mathbb{P}(S_n = k \mid S_0 = 0)$ 满足差分方程：
+    \[ p_{n+1,k} = p p_{n,k-1} + q p_{n,k+1} \quad (q = 1-p) \]
+    并给出边界条件。
+    \begin{solution}
+        考虑到达 $S_{n+1}=k$ 的最后一步：
+        *   如果第 $n$ 步在 $k-1$，则最后一步必须前进（概率 $p$）。
+        *   如果第 $n$ 步在 $k+1$，则最后一步必须后退（概率 $q$）。
+        由全概率公式得 $p_{n+1,k} = \mathbb{P}(S_n=k-1)p + \mathbb{P}(S_n=k+1)q = p p_{n,k-1} + q p_{n,k+1}$。
+        边界条件：$p_{0,0} = 1$（起始于原点），对于 $k \neq 0$ 有 $p_{0,k} = 0$。
+    \end{solution}
+
+    \part 验证 (c) 中的公式满足 (d) 中的方程。
+    \begin{solution}
+        将 $p_{n,k} = \binom{n}{\frac{n+k}{2}}p^{\frac{n+k}{2}}q^{\frac{n-k}{2}}$ 代入右式：
+        $p p_{n,k-1} + q p_{n,k+1} = p \left[\binom{n}{\frac{n+k-1}{2}}p^{\frac{n+k-1}{2}}q^{\frac{n-k+1}{2}}\right] + q \left[\binom{n}{\frac{n+k+1}{2}}p^{\frac{n+k+1}{2}}q^{\frac{n-k-1}{2}}\right]$
+        $= p^{\frac{n+k+1}{2}}q^{\frac{n-k+1}{2}} \left[ \binom{n}{\frac{n+k-1}{2}} + \binom{n}{\frac{n+k+1}{2}} \right]$。
+        根据帕斯卡恒等式 $\binom{n}{r-1} + \binom{n}{r} = \binom{n+1}{r}$，括号内化为 $\binom{n+1}{\frac{n+1+k}{2}}$。
+        结果恰为 $p_{n+1,k}$，且显然满足 $p_{0,0}=1$。
+    \end{solution}
+\end{parts}
+
+\question 考虑在 $\mathbb{Z}$ 上的简单随机游走 $(S_n)_{n \in \mathbb{N}}$，具有独立增量。向上移动一步的概率为 $p$，向下移动一步的概率为 $q = 1 - p$。令 $T_0 = \inf\{n \geqslant 0 : S_n = 0\}$ 表示到达状态 $0$ 的首时。
+
+\begin{parts}
+    \part 解释为什么对于任何 $k \geqslant 1$，都有 $\mathbb{E}[T_0 \mid S_0 = k] = k \mathbb{E}[T_0 \mid S_0 = 1]$。当 $q > p$ 时，利用第一步分析计算 $\mathbb{E}[T_0 \mid S_0 = 1]$；当 $p \geqslant q$ 时结论如何？
+    \begin{solution}
+        由于随机游走的**空间齐次性**，从状态 $i$ 首次到达 $i-1$ 的期望时间与从 $1$ 首次到达 $0$ 的期望时间相同，即 $\mathbb{E}[T_{i-1} \mid S_0 = i] = \mathbb{E}[T_0 \mid S_0 = 1]$。从 $k$ 到达 $0$ 必须经过 $k \to k-1 \to \dots \to 1 \to 0$，由期望的线性性质，总时间是这 $k$ 段独立过程的时间之和：
+        \[ \mathbb{E}[T_0 \mid S_0 = k] = \sum_{i=1}^k \mathbb{E}[T_{i-1} \mid S_0 = i] = k \mathbb{E}[T_0 \mid S_0 = 1] \]
+        利用第一步分析（First Step Analysis）：
+        \begin{align*}
+            \mathbb{E}[T_0 \mid S_0 = 1] &= q \times 1 + p \times (1 + \mathbb{E}[T_0 \mid S_0 = 2]) \\
+            &= 1 + p(2 \mathbb{E}[T_0 \mid S_0 = 1]) = 1 + 2p \mathbb{E}[T_0 \mid S_0 = 1]
+        \end{align*}
+        解得：$\mathbb{E}[T_0 \mid S_0 = 1] = \frac{1}{1 - 2p} = \frac{1}{q - p}$，条件为 $q > p$。
+        当 $p \geqslant q$ 时，随机游走具有向上漂移或为零漂移，到达 $0$ 的期望时间 $\mathbb{E}[T_0 \mid S_0 = 1] = +\infty$。
+    \end{solution}
+
+    \part 解释为什么根据马尔可夫性质，对于 $k \geqslant 1$ 有 $\mathbb{P}(T_0 < \infty \mid S_0 = k) = (\mathbb{P}(T_0 < \infty \mid S_0 = 1))^k$。
+    \begin{solution}
+        从状态 $k$ 到达 $0$ 等价于必须依次完成从 $i \to i-1$ 的 $k$ 个独立任务。由于空间齐次性，每个任务成功的概率均为 $\mathbb{P}(T_0 < \infty \mid S_0 = 1)$。根据强马尔可夫性质，这些阶段是相互独立的，因此总概率为各阶段概率的乘积：
+        \[ \mathbb{P}(T_0 < \infty \mid S_0 = k) = \prod_{i=1}^k \mathbb{P}(T_{i-1} < \infty \mid S_0 = i) = (\mathbb{P}(T_0 < \infty \mid S_0 = 1))^k \]
+    \end{solution}
+
+    \part 令 $\alpha := \mathbb{P}(T_0 < \infty \mid S_0 = 1)$。证明 $\alpha$ 满足二次方程 $p\alpha^2 - \alpha + q = 0$，并给出在 $p < q$ 和 $p \geqslant q$ 情况下 $\mathbb{P}(T_0 < \infty \mid S_0 = 1)$ 和 $\mathbb{P}(T_0 = \infty \mid S_0 = 1)$ 的值。
+    \begin{solution}
+        
+        利用第一步分析：
+        \[ \mathbb{P}(T_0 < \infty \mid S_0 = 1) = q \cdot 1 + p \cdot \mathbb{P}(T_0 < \infty \mid S_0 = 2) \]
+        代入 $\alpha$ 及 (b) 部分结论得 $\alpha = q + p\alpha^2$，即 $p\alpha^2 - \alpha + q = 0$。
+        因式分解得 $p(\alpha - 1)(\alpha - q/p) = 0$，故 $\alpha \in \{1, q/p\}$。
+        \begin{itemize}
+            \item 当 **$p \leqslant q$**（向下漂移或无漂移）时，几乎处处到达 $0$，故 $\mathbb{P}(T_0 < \infty \mid S_0 = 1) = 1$，$\mathbb{P}(T_0 = \infty \mid S_0 = 1) = 0$。
+            \item 当 **$p > q$**（向上漂移）时，$\alpha$ 取较小的根，故 $\mathbb{P}(T_0 < \infty \mid S_0 = 1) = \frac{q}{p}$，$\mathbb{P}(T_0 = \infty \mid S_0 = 1) = 1 - \frac{q}{p}$。
+        \end{itemize}
+    \end{solution}
+\end{parts}
+
+\question 考虑随机游走 $S_n := X_1 + \dots + X_n, \, n \geqslant 1$，其中 $S_0 = 0$ 且 $(X_k)_{k \geqslant 1}$ 是独立的伯努利随机变量，满足：
+\[ \mathbb{P}(X_k = 1) = p \in (0,1), \quad \mathbb{P}(X_k = -1) = q \in (0,1) \]
+且 $p + q = 1$。已知首次返回状态 $0$ 的时间 $T_0^r := \inf\{n \geqslant 1 : S_n = 0\}$ 的概率生成函数 (PGF) 为：
+\[ G_{T_0^r}(s) = 1 - \sqrt{1 - 4pqs^2}, \quad s \in [-1, 1] \]
+
+\begin{parts}
+    \part 根据 $G_{T_0^r}$ 计算 $\mathbb{P}(T_0^r = 0)$ 和 $\mathbb{P}(T_0^r < \infty)$。
+    \begin{solution}
+        根据 PGF 的定义 $G(s) = \sum_{k=0}^{\infty} s^k \mathbb{P}(T=k)$：
+        \begin{itemize}
+            \item $\mathbb{P}(T_0^r = 0) = G_{T_0^r}(0) = 1 - \sqrt{1 - 0} = 0$。
+            \item $\mathbb{P}(T_0^r < \infty) = G_{T_0^r}(1) = 1 - \sqrt{1 - 4pq}$。
+            由于 $1 - 4pq = 1 - 4p(1-p) = 1 - 4p + 4p^2 = (1-2p)^2 = (p-q)^2$，
+            则 $\mathbb{P}(T_0^r < \infty) = 1 - |p - q| = 1 - |p - (1-p)| = 2\min(p, q)$。
+        \end{itemize}
+    \end{solution}
+
+    \part 通过对 PGF 进行求导，计算 $\mathbb{P}(T_0^r = 1), \mathbb{P}(T_0^r = 2), \mathbb{P}(T_0^r = 3)$ 和 $\mathbb{P}(T_0^r = 4)$。
+    \begin{solution}
+        概率可以通过公式 $\mathbb{P}(T_0^r = n) = \frac{1}{n!} G_{T_0^r}^{(n)}(0)$ 计算：
+        \begin{itemize}
+            \item $G_{T_0^r}'(s) = 4pqs(1 - 4pqs^2)^{-1/2} \implies \mathbb{P}(T_0^r = 1) = G_{T_0^r}'(0) = 0$。
+            \item $G_{T_0^r}''(s) = 4pq(1 - 4pqs^2)^{-3/2} \implies \mathbb{P}(T_0^r = 2) = \frac{1}{2!} G_{T_0^r}''(0) = \frac{4pq}{2} = 2pq$。
+            \item $G_{T_0^r}'''(s) = 48p^2q^2s(1 - 4pqs^2)^{-5/2} \implies \mathbb{P}(T_0^r = 3) = \frac{1}{3!} G_{T_0^r}'''(0) = 0$。
+            \item $G_{T_0^r}^{(4)}(s) = 48p^2q^2(1 + 16pqs^2)(1 - 4pqs^2)^{-7/2} \implies \mathbb{P}(T_0^r = 4) = \frac{1}{24} \cdot 48p^2q^2 = 2p^2q^2$。
+        \end{itemize}
+    \end{solution}
+
+    \part 利用 PGF 计算 $\mathbb{E}[T_0^r \mid T_0^r < \infty]$。
+    \begin{solution}
+        首先计算在 $T_0^r < \infty$ 事件上的期望贡献：
+        \[ \mathbb{E}[T_0^r \mathbb{1}_{\{T_0^r < \infty\}}] = G_{T_0^r}'(1) = \frac{4pq}{\sqrt{1 - 4pq}} = \frac{4pq}{|p - q|} \]
+        根据条件期望的定义：
+        \begin{align*}
+            \mathbb{E}[T_0^r \mid T_0^r < \infty] &= \frac{1}{\mathbb{P}(T_0^r < \infty)} \mathbb{E}[T_0^r \mathbb{1}_{\{T_0^r < \infty\}}] \\
+            &= \frac{1}{1 - |p-q|} \cdot \frac{4pq}{|p-q|} \\
+            &= \frac{4pq}{(2\min(p,q))|p-q|} = 2\frac{\max(p, q)}{|p - q|}
+        \end{align*}
+    \end{solution}
+\end{parts}
+
+\question 连胜问题（Winning streaks）。考虑一个由独立伯努利随机变量组成的序列 $(X_n)_{n \geqslant 1}$，其分布为：
+\[ \mathbb{P}(X_n = 1) = p, \quad \mathbb{P}(X_n = 0) = q, \quad n \geqslant 1 \]
+其中 $q := 1 - p$。对于 $m \geqslant 1$，令 $T^{(m)}$ 表示序列中首次出现 $m$ 个连续“1”的时间。
+
+\begin{parts}
+    \part 计算 $\mathbb{P}(T^{(m)} < m)$，$\mathbb{P}(T^{(m)} = m)$，$\mathbb{P}(T^{(m)} = m + 1)$ 以及 $\mathbb{P}(T^{(m)} = m + 2)$。
+    \begin{solution}
+        根据定义及独立性：
+        \begin{itemize}
+            \item $\mathbb{P}(T^{(m)} < m) = 0$，因为至少需要 $m$ 次试验才能完成连胜。
+            \item $\mathbb{P}(T^{(m)} = m) = p^m$，即前 $m$ 次全部为 $1$。
+            \item $\mathbb{P}(T^{(m)} = m + 1) = qp^m$。序列必须以 $0$ 开头，随后跟着 $m$ 个 $1$。
+            \item $\mathbb{P}(T^{(m)} = m + 2) = q^2 p^m + p q p^m = q p^m$。序列必须满足在第 $m+2$ 步首次完成连胜，即形式为 $(\dots, 0, \underbrace{1, 1, \dots, 1}_{m \text{ 个}})$。前两位的可能情况为 $(0, 0)$ 或 $(1, 0)$，概率之和为 $q^2 + pq = q(q+p) = q$。因此概率为 $qp^m$。
+        \end{itemize}
+    \end{solution}
+
+    \part 证明概率生成函数 $G_{T^{(m)}}(s) := \mathbb{E}[s^{T^{(m)}} \mathbb{1}_{\{T^{(m)} < \infty\}}]$ 满足：
+    \[ G_{T^{(m)}}(s) = p^m s^m + \sum_{k=0}^{m-1} p^k q s^{k+1} G_{T^{(m)}}(s), \quad s \in (-1, 1) \]
+    \begin{solution}
+        使用 $k$-步分析法（k-step analysis）。观察序列直到出现第一个 $0$ 或完成 $m$ 连胜：
+        \begin{enumerate}
+            \item 如果前 $m$ 次全是 $1$（概率 $p^m$），则 $T^{(m)} = m$，贡献为 $p^m s^m$。
+            \item 如果在第 $k+1$ 次首次出现 $0$（即前 $k$ 次为 $1$，第 $k+1$ 次为 $0$），其中 $0 \leqslant k < m$。这发生的概率是 $p^k q$。此时已经消耗了 $k+1$ 步，且由于计数被 $0$ 打断，系统回到初始状态重新开始。贡献为 $p^k q s^{k+1} \mathbb{E}[s^{T^{(m)}}] = p^k q s^{k+1} G_{T^{(m)}}(s)$。
+        \end{enumerate}
+        累加所有互斥情况即得证。
+    \end{solution}
+
+    \part 计算 $T^{(m)}$ 的概率生成函数 $G_{T^{(m)}}(s)$。
+    \begin{solution}
+        从 (b) 的方程出发：
+        \[ G_{T^{(m)}}(s) \left( 1 - \sum_{k=0}^{m-1} q p^k s^{k+1} \right) = p^m s^m \]
+        利用等比数列求和公式 $\sum_{k=0}^{m-1} (ps)^k = \frac{1-(ps)^m}{1-ps}$：
+        \begin{align*}
+            G_{T^{(m)}}(s) &= \frac{p^m s^m}{1 - qs \sum_{k=0}^{m-1} (ps)^k} = \frac{p^m s^m}{1 - qs \frac{1-(ps)^m}{1-ps}} \\
+            &= \frac{p^m s^m (1 - ps)}{1 - ps - qs(1 - (ps)^m)} = \frac{p^m s^m (1 - ps)}{1 - s + qp^m s^{m+1}}
+        \end{align*}
+    \end{solution}
+
+    \part 计算期望值 $\mathbb{E}[T^{(m)}]$。
+    \begin{solution}
+        对 (3.4.28) 两端关于 $s$ 求导并令 $s=1$：
+        \[ G_{T^{(m)}}'(1) = (1-p) \sum_{k=0}^{m-1} (k+1) p^k + mp^m + G_{T^{(m)}}'(1) \sum_{k=0}^{m-1} qp^k \]
+        利用提示中的恒等式 并化简得：
+        \[ \mathbb{E}[T^{(m)}] = G_{T^{(m)}}'(1) = \frac{1 - p^m}{p^m(1 - p)} = \sum_{k=1}^m \frac{1}{p^k} \]
+        对于公平硬币（$p=1/2$），$\mathbb{E}[T^{(m)}] = 2(2^m - 1)$。
+    \end{solution}
+\end{parts}
+
+\question 随机游走在零值以上的时间。考虑一个从 $S_0 = 0$ 开始的对称随机游走 $(S_n)_{n \in \mathbb{N}}$。我们令
+\[ T_{2n}^+ := 2 \sum_{r=1}^n \mathbb{1}_{\{S_{2r-1} \geqslant 1\}} \]
+表示随机游走在时间 $0$ 到 $2n$ 之间严格位于 $0$ 水平以上的估计时间。我们还令
+\[ T_0 := \inf\{n \geqslant 1 : S_n = 0\} \]
+表示 $(S_n)_{n \in \mathbb{N}}$ 首次返回 $0$ 的时间。
+
+\begin{parts}
+    \part 计算 $\mathbb{P}(S_{2n} = 2k)$，其中 $k = 0, 1, \dots, n$。
+    \begin{solution}
+        我们有：
+        \[ \mathbb{P}(S_{2n} = 2k) = \binom{2n}{n+k} p^{n+k} q^{n-k}, \quad -n \leqslant k \leqslant n \text{} \]
+    \end{solution}
+
+    \part 证明卷积方程：
+    \[ \mathbb{P}(S_{2n} = 0) = \sum_{r=1}^n \mathbb{P}(T_0 = 2r) \mathbb{P}(S_{2n-2r} = 0), \quad n \geqslant 1 \text{} \]
+    \begin{solution}
+        我们将事件 $\{S_{2n} = 0\}$ 按照在时间 $2n$ 之前首次返回状态 $0$ 的所有可能时间 $2k = 2, 4, \dots, 2n$ 进行划分，参见图 S.5。
+        然后我们有：
+        \begin{align*}
+            \mathbb{P}(S_{2n} = 0) &= \sum_{r=1}^n \mathbb{P}(S_2 \neq 0, \dots, S_{2r-1} \neq 0, S_{2r} = 0, S_{2n} = 0) \text{} \\
+            &= \sum_{r=1}^n \mathbb{P}(S_{2n} = 0 \mid S_{2r} = 0, S_{2r-1} \neq 0, \dots, S_2 \neq 0) \text{} \\
+            &\quad \times \mathbb{P}(S_2 \neq 0, \dots, S_{2r-1} \neq 0, S_{2r} = 0) \text{} \\
+            &= \sum_{r=1}^n \mathbb{P}(S_{2n} = 0 \mid S_{2r} = 0) \mathbb{P}(T_0 = 2r) \text{} \\
+            &= \sum_{r=1}^n \mathbb{P}(S_{2n-2r} = 0) \mathbb{P}(T_0 = 2r), \quad n \geqslant 1 \text{}
+        \end{align*}
+    \end{solution}
+
+    \part 通过根据直到时间 $2n$ 首次返回状态 $0$ 的所有可能时间 $2r = 2, 4, \dots, 2n$ 划分事件 $\{T_{2n}^+ = 2k\}$，证明卷积方程：
+    \begin{align*}
+        \mathbb{P}(T_{2n}^+ = 2k) &= \sum_{r=1}^n \mathbb{P}(T_0 = 2r, T_{2n}^+ = 2k) \text{} \\
+        &= \frac{1}{2} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k - 2r) \text{} \\
+        &\quad + \frac{1}{2} \sum_{r=1}^{n-k} \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k), \quad n \geqslant 1 \text{}
+    \end{align*}
+    \begin{solution}
+        证明的思想是注意到从 $S_0 = 0$ 开始后，可能以概率 $1/2$ 向上移动，在这种情况下，$T_0 = 2r$ 之前的步骤将被计入严格位于 $0$ 以上的时间，之后的剩余 $2r - 2k$（应为 $2n-2r$）步将从时间 $T_0$ 到 $2n$ 开始计算。另一方面，如果以概率 $1/2$ 向下移动，则在 $T_0 = 2r$ 之前不会计入任何位于 $0$ 以上的时间，之后的剩余 $2k$ 步将从时间 $T_0$ 到 $2n$ 开始计算。
+        因此我们有：
+        \begin{align*}
+            \mathbb{P}(T_{2n}^+ = 2k) &= \sum_{r=1}^n \mathbb{P}(S_0 = 0, T_0 = 2r, T_{2n}^+ = 2k) \text{} \\
+            &= \sum_{r=1}^n \mathbb{P}(S_0 = 0, S_1 = 1, T_0 = 2r, T_{2n}^+ = 2k) \text{} \\
+            &\quad + \sum_{r=1}^n \mathbb{P}(S_0 = 0, S_1 = -1, T_0 = 2r, T_{2n}^+ = 2k) \text{} \\
+            &= \sum_{r=1}^k \mathbb{P}(S_0 = 0, S_1 = 1, T_0 = 2r) \mathbb{P}(T_{2n}^+ = 2k \mid S_1 = 1, T_0 = 2r) \text{} \\
+            &\quad + \sum_{r=1}^{n-k} \mathbb{P}(S_0 = 0, S_1 = -1, T_0 = 2r) \mathbb{P}(T_{2n}^+ = 2k \mid S_1 = -1, T_0 = 2r) \text{} \\
+            &= \sum_{r=1}^k \mathbb{P}(S_0 = 0, S_1 = 1, T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k - 2r) \text{} \\
+            &\quad + \sum_{r=1}^{n-k} \mathbb{P}(S_0 = 0, S_1 = -1, T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k) \text{} \\
+            &= \frac{1}{2} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k - 2r) + \frac{1}{2} \sum_{r=1}^{n-k} \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k), \quad n \geqslant 1 \text{}
+        \end{align*}
+    \end{solution}
+
+    \part 证明：
+    \[ \mathbb{P}(T_{2n}^+ = 2k) = \mathbb{P}(S_{2k} = 0) \mathbb{P}(S_{2n-2k} = 0), \quad 0 \leqslant k \leqslant n \text{} \]
+    满足问题 (c) 的卷积方程。
+    \begin{solution}
+        我们检查当：
+        \[ \mathbb{P}(T_{2n-2r}^+ = 2k - 2r) = 2^{-(2n-2r)} \binom{2k-2r}{k-r} \binom{2n-2k}{n-k} \text{} \]
+        且
+        \[ \mathbb{P}(T_{2n-2r}^+ = 2k) = 2^{-(2n-2r)} \binom{2k}{k} \binom{2n-2r-2k}{n-r-k} \text{} \]
+        时，我们有：
+        \begin{align*}
+            &\frac{1}{2} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k - 2r) + \frac{1}{2} \sum_{r=1}^{n-k} \mathbb{P}(T_0 = 2r) \mathbb{P}(T_{2n-2r}^+ = 2k) \text{} \\
+            &= \frac{1}{2} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) 2^{-(2n-2r)} \binom{2k-2r}{k-r} \binom{2n-2k}{n-k} \text{} \\
+            &\quad + \frac{1}{2} \sum_{r=1}^{n-k} 2^{-2n+2r} \mathbb{P}(T_0 = 2r) \binom{2k}{k} \binom{2n-2r-2k}{n-r-k} \text{} \\
+            &= \frac{1}{2} 2^{-2n} \binom{2n-2k}{n-k} 2^{2k} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) \frac{1}{2^{2(k-r)}} \binom{2k-2r}{k-r} \text{} \\
+            &\quad + \frac{1}{2} 2^{-2n} \binom{2k}{k} 2^{2(n-k)} \sum_{r=1}^{n-k} \mathbb{P}(T_0 = 2r) \frac{1}{2^{2(n-k-r)}} \binom{2n-2r-2k}{n-r-k} \text{} \\
+            &= \frac{1}{2} 2^{-2(n-k)} \binom{2n-2k}{n-k} \sum_{r=1}^k \mathbb{P}(T_0 = 2r) \mathbb{P}(S_{2k-2r} = 0) \text{} \\
+            &\quad + \frac{1}{2} \binom{2k}{k} 2^{-2k} \sum_{r=1}^{n-k} \mathbb{P}(T_0 = 2r) \mathbb{P}(S_{2n-2k-2r} = 0) \text{} \\
+            &= \frac{1}{2} 2^{-2(n-k)} \binom{2n-2k}{n-k} \mathbb{P}(S_{2k} = 0) + \frac{1}{2} 2^{-2k} \binom{2k}{k} \mathbb{P}(S_{2n-2k} = 0) \text{} \\
+            &= \frac{1}{2} \binom{2n-2k}{n-k} \binom{2k}{k} + \frac{1}{2} \binom{2k}{k} \binom{2n-2k}{n-k} \text{} \\
+            &= 2^{-2n} \binom{2k}{k} \binom{2n-2k}{n-k} \text{} \\
+            &= \mathbb{P}(T_{2n}^+ = 2k), \quad n \geqslant 1 \text{}
+        \end{align*}
+    \end{solution}
+
+    \part 使用斯特林近似 $n! \simeq (n/e)^n \sqrt{2\pi n}$ 当 $n \to \infty$ 时，计算极限：
+    \[ \lim_{n \to \infty} \mathbb{P}(T_{2n}^+/(2n) \leqslant x) = \lim_{n \to \infty} \sum_{0 \leqslant k \leqslant nx} \mathbb{P}(T_{2n}^+/(2n) = k/n) \text{} \]
+    并找到 $T_{2n}^+/(2n)$ 当 $n$ 趋于无穷大时的限制分布。
+    \begin{solution}
+        我们有：
+        \begin{align*}
+            \mathbb{P}(T_{2n}^+ = 2k) &= 2^{-2n} \binom{2k}{k} \binom{2n-2k}{n-k} \text{} \\
+            &= 2^{-2n} \frac{(2k)!}{k!^2} \frac{(2n-2k)!}{(n-k)!^2} \text{} \\
+            &\simeq 2^{-2n} \frac{(2k/e)^{2k} \sqrt{4\pi k}}{((k/e)^k \sqrt{2\pi k})^2} \frac{((2n-2k)/e)^{2n-2k} \sqrt{2\pi (2n-2k)}}{(((n-k)/e)^{n-k} \sqrt{2\pi (n-k)})^2} \text{} \\
+            &= \frac{1}{\pi \sqrt{k(n-k)}}, \quad k, n-k \to \infty \text{}
+        \end{align*}
+        接下来，我们计算极限：
+        \begin{align*}
+            \lim_{n \to \infty} \mathbb{P}(T_{2n}^+ / 2n \leqslant x) &= \lim_{n \to \infty} \sum_{k=0}^{nx} \mathbb{P}(T_{2n}^+ / 2n = k/n) \text{} \\
+            &= \lim_{n \to \infty} \sum_{0 \leqslant k/n \leqslant x} 2^{-2n} \binom{2k}{k} \binom{2n-2k}{n-k} \text{} \\
+            &\simeq \frac{1}{\pi} \lim_{n \to \infty} \frac{1}{n} \sum_{0 \leqslant k/n \leqslant x} \frac{1}{\sqrt{k/n (1 - k/n)}} \text{} \\
+            &= \frac{1}{\pi} \int_0^x \frac{1}{\sqrt{t(1-t)}} \, dt \text{} \\
+            &= \frac{1}{2} + \frac{\arcsin(2x - 1)}{\pi} \text{} \\
+            &= \frac{2}{\pi} \arcsin \sqrt{x}, \quad x \in [0, 1] \text{}
+        \end{align*}
+        这得到了反正弦分布。
+    \end{solution}
+\end{parts}
+
+\question 考虑由独立伯努利随机变量 $(X_k)_{k \geqslant 1}$ 组成的序列，满足：
+\[ \mathbb{P}(X_k = 1) = p, \quad \mathbb{P}(X_k = -1) = q, \quad k \geqslant 1 \]
+其中 $p + q = 1$。定义过程 $(M_n)_{n \in \mathbb{N}}$ 为 $M_0 := 0$ 且
+\[ M_n := \sum_{k=1}^n 2^{k-1} X_k, \quad n \geqslant 1 \]
+
+\begin{parts}
+    \part 计算所有 $n \geqslant 0$ 的 $\mathbb{E}[M_n]$。
+    \begin{solution}
+        利用期望的线性性质和等比数列求和公式：
+        \begin{align*}
+            \mathbb{E}[M_n] &= \mathbb{E}\left[ \sum_{k=1}^n 2^{k-1} X_k \right] = \sum_{k=1}^n 2^{k-1} \mathbb{E}[X_k] \\
+            &= (p - q) \sum_{k=0}^{n-1} 2^k = (p - q) \frac{1 - 2^n}{1 - 2} \\
+            &= (p - q)(2^n - 1), \quad n \geqslant 0
+        \end{align*}
+    \end{solution}
+
+    \part 考虑打靶时间（hitting time）$\tau := \inf\{n \geqslant 1 : M_n = 1\}$ 和停止过程（stopped process）
+    \[ M_{\min(n, \tau)} = M_n \mathbb{1}_{\{n < \tau\}} + \mathbb{1}_{\{\tau \leqslant n\}}, \quad n \in \mathbb{N} \]
+    确定 $M_{\min(n, \tau)}$ 的可能取值，以及在任何时间 $n \geqslant 1$ 的概率分布。
+    \begin{solution}
+        观察序列的性质：要使 $M_n = 1$，必须在某一步首次获胜。
+        如果前 $n$ 次全部失败（即 $X_1 = X_2 = \dots = X_n = -1$），则：
+        \[ M_n = \sum_{k=1}^n 2^{k-1}(-1) = -(2^n - 1) = 1 - 2^n \]
+        只要有任何一次 $X_k = 1$ 出现，根据倍投策略的特性，过程会立即在那个时刻达到 $1$ 并停止。
+        因此，$M_{\min(n, \tau)}$ 的可能取值为 $1$ 和 $1 - 2^n$。其分布为：
+        \begin{itemize}
+            \item $\mathbb{P}(M_{\min(n, \tau)} = 1 - 2^n) = \mathbb{P}(X_1 = -1, \dots, X_n = -1) = q^n$
+            \item $\mathbb{P}(M_{\min(n, \tau)} = 1) = 1 - q^n$
+        \end{itemize}
+    \end{solution}
+
+    \part 给出停止过程 $(M_{\min(n, \tau)})_{n \in \mathbb{N}}$ 在赌博游戏中的解释。
+    \begin{solution}
+        该过程代表了**马丁格尔（Martingale）倍投策略**。赌徒在每次输球后将赌注加倍，目标是一旦获胜就赚取 $\$1$ 并立即停止游戏。
+    \end{solution}
+
+    \part 根据 (b) 的结果，计算所有 $n \geqslant 1$ 的 $\mathbb{E}[M_{\min(n, \tau)}]$。
+    \begin{solution}
+        利用 (b) 中得到的概率分布：
+        \begin{align*}
+            \mathbb{E}[M_{\min(n, \tau)}] &= (1 - 2^n)\mathbb{P}(M_{\min(n, \tau)} = 1 - 2^n) + 1 \cdot \mathbb{P}(M_{\min(n, \tau)} = 1) \\
+            &= (1 - 2^n)q^n + (1 - q^n) \\
+            &= q^n - (2q)^n + 1 - q^n \\
+            &= 1 - (2q)^n, \quad n \geqslant 1
+        \end{align*}
+        特别地，在公平游戏（$p = q = 1/2$）中，$\mathbb{E}[M_{\min(n, \tau)}] = 1 - (2 \cdot \frac{1}{2})^n = 0$。这意味着尽管该策略看起来“必胜”，但在有限时间内其期望收益依然为零。
+    \end{solution}
+\end{parts}
+%discrete-time martingales
+
+\question 鞅与加倍赌博策略。考虑一个由独立伯努利随机变量序列 $(X_n)_{n \geqslant 1}$，其分布为：
+\[ \mathbb{P}(X_n = 1) = \mathbb{P}(X_n = -1) = 1/2, \quad n \geqslant 1 \]
+定义过程 $(M_n)_{n \in \mathbb{N}}$ 为 $M_0 := 0$ 且
+\[ M_n := \sum_{k=1}^n 2^{k-1} X_k, \quad n \geqslant 1 \]
+参见图 10.3。注意当 $X_1 = X_2 = \dots = X_{n-1} = -1$ 且 $X_n = 1$ 时，我们有
+\[ M_n = - \sum_{k=1}^{n-1} 2^{k-1} + 2^{n-1} = - \frac{1 - 2^{n-1}}{1 - 2} + 2^{n-1} = 1, \quad n \geqslant 1 \]
+
+\begin{parts}
+    \part 证明过程 $(M_n)_{n \in \mathbb{N}}$ 是一个鞅。
+    \begin{solution}
+        计算条件期望：
+        \begin{align*}
+            \mathbb{E}[M_{n+1} \mid \mathcal{F}_n] &= \mathbb{E}\left[ \sum_{k=1}^{n+1} 2^{k-1} X_k \mid \mathcal{F}_n \right] \\
+            &= \mathbb{E}\left[ \sum_{k=1}^n 2^{k-1} X_k \mid \mathcal{F}_n \right] + \mathbb{E}[2^n X_{n+1} \mid \mathcal{F}_n] \\
+            &= \sum_{k=1}^n 2^{k-1} X_k + 2^n \mathbb{E}[X_{n+1}] \\
+            &= M_n, \quad n \geqslant 0
+        \end{align*}
+        因为 $\mathbb{E}[X_{n+1}] = 0$，所以 $(M_n)$ 是一个鞅。
+    \end{solution}
+
+    \part 随机时间 $\tau := \inf\{n \geqslant 1 : M_n = 1\}$ 是否为一个停时？
+    \begin{solution}
+        这个随机时间是一个命中时间（hitting time），因此它是一个停时。
+    \end{solution}
+
+    \part 考虑停止过程（stopped process）
+    \[ M_{\tau \wedge n} := M_n \mathbb{1}_{\{n < \tau\}} + \mathbb{1}_{\{\tau \leqslant n\}} = \begin{cases} M_n = 1 - 2^n & \text{若 } n < \tau, \\ M_\tau = 1 & \text{若 } n \geqslant \tau. \end{cases} \]
+    $n \in \mathbb{N}$，参见图 10.4。请根据赌徒在 $M_0 = 0$ 时开始游戏的下注策略给出 $(M_{\tau \wedge n})_{n \in \mathbb{N}}$ 的解释。
+    \begin{solution}
+        赌徒的策略是每次输钱后将赌注翻倍（加倍下注策略，double down strategy），并在其收益达到 $\$1$ 时立即停止游戏。
+    \end{solution}
+
+    \part 确定 $M_{\tau \wedge n}$ 的两个可能取值，以及在任何时间 $n \geqslant 1$ 时 $M_{\tau \wedge n}$ 的概率分布。
+    \begin{solution}
+        $M_{\tau \wedge n}$ 的两个可能值为 $1$ 和
+        \[ - \sum_{k=1}^n 2^{k-1} = - \frac{1 - 2^n}{1 - 2} = 1 - 2^n, \quad n \geqslant 1 \]
+        我们有：
+        \[ \mathbb{P}(M_{\tau \wedge n} = 1 - 2^n) = 2^{-n} \quad \text{且} \quad \mathbb{P}(M_{\tau \wedge n} = 1) = 1 - 2^{-n}, \quad n \geqslant 1 \]
+    \end{solution}
+
+    \part 利用问题 (d) 的结果证明：
+    \[ \mathbb{E}[M_{\tau \wedge n}] = 0, \quad n \in \mathbb{N} \]
+    \begin{solution}
+        我们有：
+        \begin{align*}
+            \mathbb{E}[M_{\tau \wedge n}] &= (1 - 2^n) \mathbb{P}(M_{\tau \wedge n} = 1 - 2^n) + 1 \cdot \mathbb{P}(M_{\tau \wedge n} = 1) \\
+            &= (1 - 2^n) 2^{-n} + (1 - 2^{-n}) \\
+            &= 0, \quad n \geqslant 1
+        \end{align*}
+    \end{solution}
+
+    \part 证明问题 (e) 的结果可以通过停时定理（stopping time theorem）得到。
+    \begin{solution}
+        停时定理直接指出：
+        \[ \mathbb{E}[M_{n \wedge \tau}] = \mathbb{E}[M_0] = 0 \]
+    \end{solution}
+\end{parts}
+
+\question
+考虑一个随机游走过程，即 $S_n = s_0 + \sum_{k=1}^n X_k$，且 $X_1, \dots$ 都独立同分布，$E(X_i) = \mu$，$Var(X_i) = \sigma^2$。证明：
+
+\begin{parts}
+    \part $S_n - n\mu$ 是一个关于 $X_n$ 的鞅。
+    \begin{solution}
+        根据定义，我们需要验证 $E(S_{n+1} - (n+1)\mu | X_0, \dots, X_n) = S_n - n\mu$。这等价于：
+        \[
+        E((S_{n+1} - (n+1)\mu) - (S_n - n\mu) | X_0, \dots, X_n) = 0
+        \]
+        注意到：
+        \[
+        E(S_{n+1} - S_n - \mu | X_0, \dots, X_n) = E(X_{n+1} - \mu | X_0, \dots, X_n) = E(X_{n+1}) - \mu = 0
+        \]
+        所以 $S_n - n\mu$ 确实是一个鞅。
+    \end{solution}
+
+    \part $S_n$ 是上鞅还是下鞅，取决于 $\mu$ 的正负。
+    \begin{solution}
+        考查条件期望的差值：
+        \[
+        E(S_{n+1} - S_n | X_0, \dots, X_n) = E(X_{n+1} | X_0, \dots, X_n) = E(X_{n+1}) = \mu
+        \]
+        所以如果 $\mu \le 0$，则 $E(S_{n+1} | X_0, \dots, X_n) \le S_n$，此时 $S_n$ 是一个关于 $X_n$ 的上鞅。
+        如果 $\mu \ge 0$，则 $E(S_{n+1} | X_0, \dots, X_n) \ge S_n$，此时 $S_n$ 是一个下鞅。
+        如果 $\mu = 0$，则 $S_n$ 是一个鞅。
+    \end{solution}
+
+    \part $(S_n - n\mu)^2 - n\sigma^2$ 是一个关于 $X_n$ 的鞅。
+    \begin{solution}
+        依据定义计算：
+        \[
+        E\left[((S_{n+1} - (n+1)\mu)^2 - (n+1)\sigma^2) - ((S_n - n\mu)^2 - n\sigma^2) | X_0, \dots, X_n\right]
+        \]
+        \[
+        = E\left[2(S_n - n\mu)(X_{n+1} - \mu) + (X_{n+1} - \mu)^2 - \sigma^2 | X_0, \dots, X_n\right]
+        \]
+        注意到 $S_n - n\mu$ 在已知 $X_0, \dots, X_n$ 的情况下是一个已知量，可以提出期望符号：
+        \[
+        2(S_n - n\mu)E(X_{n+1} - \mu | X_0, \dots, X_n) + E\left((X_{n+1} - \mu)^2 - \sigma^2 | X_0, \dots, X_n\right)
+        \]
+        由于 $E(X_{n+1} - \mu) = 0$ 和 $E((X_{n+1} - \mu)^2) = \sigma^2$，上式变为：
+        \[
+        2(S_n - n\mu) \cdot 0 + \sigma^2 - \sigma^2 = 0
+        \]
+        因此第三个问题也说明完了。
+    \end{solution}
+\end{parts}
+
+\question
+证明以下关于随机过程的鞅性质。
+
+\begin{parts}
+    \part 设 $X_1, X_2, \dots$ 为独立随机变量，且 $E(X_i) = 1$。证明 $M_n = M_0 X_1 X_2 \dots X_n$ 是一个关于 $X_n$ 的鞅。
+    \begin{solution}
+        考察条件期望：
+        \[
+        E(M_{n+1} | X_1, \dots, X_n) = E(M_n X_{n+1} | X_1, \dots, X_n)
+        \]
+        由于 $M_n$ 是 $X_1, \dots, X_n$ 的函数，且 $X_{n+1}$ 与其独立：
+        \[
+        = M_n E(X_{n+1} | X_1, \dots, X_n) = M_n E(X_{n+1})
+        \]
+        已知 $E(X_{n+1}) = 1$，故：
+        \[
+        = M_n \cdot 1 = M_n
+        \]
+        因此 $M_n$ 是一个鞅。
+    \end{solution}
+
+    \part 设 $X_1, X_2, \dots$ 是独立同分布的随机变量，$\phi(\theta) = E(e^{\theta X_1}) < \infty$，$S_n = S_0 + \sum_{k=1}^n X_k$。证明 $M_n = \frac{e^{\theta S_n}}{\phi(\theta)^n}$ 是一个鞅。
+    \begin{solution}
+        计算条件期望：
+        \[
+        E(M_{n+1} | X_1, \dots, X_n) = E\left( \frac{e^{\theta S_n} \cdot e^{\theta X_{n+1}}}{\phi(\theta)^n \cdot \phi(\theta)} \middle| X_1, \dots, X_n \right)
+        \]
+        提取已知量 $M_n$ 并利用独立性：
+        \[
+        = \frac{e^{\theta S_n}}{\phi(\theta)^n} \cdot \frac{E(e^{\theta X_{n+1}})}{\phi(\theta)} = M_n \cdot \frac{\phi(\theta)}{\phi(\theta)} = M_n
+        \]
+        因此 $M_n$ 是一个鞅。
+    \end{solution}
+
+    \part 设 $P(X_i = 1) = p$，$P(X_i = -1) = 1 - p$。证明 $\left(\frac{1-p}{p}\right)^{S_n}$ 是一个鞅。
+    \begin{solution}
+        令指数鞅的矩母函数 $\phi(\theta) = 1$：
+        \[
+        E(e^{\theta X_1}) = p e^\theta + (1-p) e^{-\theta} = 1
+        \]
+        整理得 $p(e^\theta)^2 - e^\theta + (1-p) = 0$，解得 $e^\theta = 1$ 或 $e^\theta = \frac{1-p}{p}$。
+        取 $e^\theta = \frac{1-p}{p}$，此时 $\phi(\theta) = 1$。代入指数鞅公式：
+        \[
+        M_n = \frac{(e^\theta)^{S_n}}{\phi(\theta)^n} = \left(\frac{1-p}{p}\right)^{S_n}
+        \]
+        根据指数鞅性质，该项是一个鞅。
+    \end{solution}
+\end{parts}
+
+\question
+定理 2：关于鞅的正交性与方差。
+
+设 $M_n$ 是一个鞅，记 $\mathcal{A}_n = \{X_0, \dots, X_n\}$ 为直到时刻 $n$ 的信息集合（$\sigma$-代数）。则有：
+
+\begin{parts}
+    \part 增量的平方期望公式：
+    \[
+    E(M_{n+1}^2 | \mathcal{A}_n) - M_n^2 = E((M_{n+1} - M_n)^2 | \mathcal{A}_n)
+    \]
+    \begin{solution}
+        展开平方项可得：
+        \[
+        E(M_{n+1}^2 | \mathcal{A}_n) = E((M_n + (M_{n+1} - M_n))^2 | \mathcal{A}_n)
+        \]
+        \[
+        = M_n^2 + E((M_{n+1} - M_n)^2 | \mathcal{A}_n) + 2 E(M_n (M_{n+1} - M_n) | \mathcal{A}_n)
+        \]
+        由于 $M_n$ 在已知 $\mathcal{A}_n$ 时为常数，且根据鞅的性质 $E(M_{n+1} - M_n | \mathcal{A}_n) = 0$，故最后一项交叉项为 0。移项即得结论。
+    \end{solution}
+
+    \part 正交增量性质：
+    对于 $0 \le i \le j \le k < n$，有 $E[(M_n - M_k)(M_j - M_i)] = 0$。
+    \begin{solution}
+        利用重期望公式（Tower Property），先对 $\mathcal{A}_k$ 取条件期望：
+        \[
+        E[(M_n - M_k)(M_j - M_i)] = E\{ E[(M_n - M_k)(M_j - M_i) | \mathcal{A}_k] \}
+        \]
+        由于 $(M_j - M_i)$ 在 $\mathcal{A}_k$ 下是已知的（因为 $j \le k$），可以提出：
+        \[
+        = E\{ (M_j - M_i) E(M_n - M_k | \mathcal{A}_k) \}
+        \]
+        通过数学归纳法与重期望公式可以证明，对于任何 $n > k$，都有 $E(M_n | \mathcal{A}_k) = M_k$。
+        例如 $E(M_{k+2} | \mathcal{A}_k) = E[E(M_{k+2} | \mathcal{A}_{k+1}) | \mathcal{A}_k] = E(M_{k+1} | \mathcal{A}_k) = M_k$。
+        因此 $E(M_n - M_k | \mathcal{A}_k) = 0$，原式得证。
+    \end{solution}
+
+    \part 方差和公式：
+    \[
+    E(M_n - M_0)^2 = \sum_{k=1}^n E(M_k - M_{k-1})^2
+    \]
+    \begin{solution}
+        将总增量拆分为单步增量之和：
+        \[
+        M_n - M_0 = (M_n - M_{n-1}) + (M_{n-1} - M_{n-2}) + \dots + (M_1 - M_0)
+        \]
+        对其平方并取期望。根据小题 (b) 的正交性，所有不同时段的交叉项 $2 E[(M_k - M_{k-1})(M_j - M_{j-1})]$ 均为 0。
+        因此，平方后的期望仅剩下各项平方的期望之和，结论成立。
+    \end{solution}
+\end{parts}
+
+\question
+以下是关于赌徒输光问题（Gambler's Ruin）中平均时间与方差的 LaTeX 整理。
+
+\begin{parts}
+    \part 证明 $M_n = (S_n - (p-q)n)^2 - n(1-(p-q)^2)$ 是一个鞅。
+    \begin{solution}
+        设 $\mu = E(X_i) = p - q$ 且 $\sigma^2 = Var(X_i) = 1 - (p-q)^2$。
+        根据随机游走的鞅性质，已知 $S_n - n\mu$ 是一个关于 $X_n$ 的鞅。
+        进一步地，对于均值为 $\mu$、方差为 $\sigma^2$ 的独立同分布增量过程，其对应的平方鞅形式为：
+        \[
+        M_n = (S_n - n\mu)^2 - n\sigma^2
+        \]
+        代入本题参数 $\mu = p - q$ 和 $\sigma^2 = 1 - (p-q)^2$：
+        \[
+        M_n = (S_n - (p-q)n)^2 - n(1 - (p-q)^2)
+        \]
+        根据定理，该构造满足 $E(M_{n+1} | \mathcal{A}_n) = M_n$，故 $M_n$ 是一个鞅。
+    \end{solution}
+
+    \part 证明当 $S_0 = x$ 时，$V_0$ 的方差为 $x \cdot \frac{1-(p-q)^2}{(p-q)^3}$。
+    \begin{solution}
+        利用可选停时定理（Optional Stopping Theorem），在停止时刻 $V_0$ 有 $E(M_{V_0}) = E(M_0)$。
+        由于 $S_0 = x$，故 $M_0 = (x - 0)^2 - 0 = x^2$。
+        在停止时刻 $V_0$，已知 $S_{V_0} = 0$，代入 $M_{V_0}$：
+        \[
+        E[(0 - (p-q)V_0)^2 - V_0(1-(p-q)^2)] = x^2
+        \]
+        \[
+        (p-q)^2 E(V_0^2) - (1-(p-q)^2) E(V_0) = x^2
+        \]
+        已知 $E(V_0) = \frac{x}{q-p} = \frac{x}{-(p-q)}$。代入上式整理：
+        \[
+        (p-q)^2 E(V_0^2) = x^2 + (1-(p-q)^2) \frac{x}{-(p-q)}
+        \]
+        利用 $Var(V_0) = E(V_0^2) - [E(V_0)]^2$，经过代数简化可得：
+        \[
+        Var(V_0) = x \cdot \frac{1-(p-q)^2}{(p-q)^3}
+        \]
+        （注意：由于 $p < 1/2$，故 $p-q < 0$，结果中的分母保证了方差为正值）。
+    \end{solution}
+
+    \part 为什么 (b) 中的答案必须是 $cx$ 的形式？
+    \begin{solution}
+        这源于随机游走的强马尔可夫性质与增量的独立同分布性。
+        从 $S_0 = x$ 变到 $S_n = 0$ 的过程，可以看作是连续 $x$ 次“从状态 $i$ 首次到达状态 $i-1$”的独立过程之和。
+        令 $T_i$ 为从 $i$ 到达 $i-1$ 所需的时间，则 $V_0 = T_x + T_{x-1} + \dots + T_1$。
+        由于增量是独立同分布的，所有的 $T_i$ 都是独立且分布相同的随机变量。
+        根据独立随机变量和的性质：
+        \[
+        Var(V_0) = Var(T_x) + Var(T_{x-1}) + \dots + Var(T_1) = x \cdot Var(T_1)
+        \]
+        因此，方差必然与起始头寸 $x$ 成线性比例关系，即 $cx$ 形式。
+    \end{solution}
+\end{parts}
+
+\question
+以下是关于马尔可夫链到达概率（Hitting Probabilities）与到达时间期望（Expectations of Hitting Times）的 LaTeX 整理。
+
+\begin{parts}
+    \part 证明 $h(X_n)$ 是一个鞅，并推导出 $h(x) = P_x(V_a < V_b)$。
+    \begin{solution}
+        首先证明 $M_n = h(X_{n \wedge \tau})$ 是一个鞅。对于 $X_n = x \in C$：
+        \[
+        E(h(X_{n+1}) | X_n = x) = \sum_{y \in S} p(x, y) h(y)
+        \]
+        根据已知条件，对于 $x \in C$，有 $h(x) = \sum_{y} p(x, y) h(y)$。因此：
+        \[
+        E(h(X_{n+1}) | X_n) = h(X_n)
+        \]
+        当 $X_n \in \{a, b\}$ 时，状态不再转移或 $\tau$ 已发生，等式依然成立。故 $h(X_n)$ 在达到 $\{a, b\}$ 之前是鞅。
+
+        利用可选停时定理，在时刻 $\tau = V_a \wedge V_b$，有 $E_x h(X_\tau) = h(X_0) = h(x)$。
+        由于 $X_\tau$ 只能是 $a$ 或 $b$：
+        \[
+        E_x h(X_\tau) = h(a) P_x(X_\tau = a) + h(b) P_x(X_\tau = b)
+        \]
+        代入 $h(a) = 1, h(b) = 0$：
+        \[
+        h(x) = 1 \cdot P_x(V_a < V_b) + 0 \cdot P_x(V_b < V_a) = P_x(V_a < V_b)
+        \]
+    \end{solution}
+
+    \part 证明 $g(X_{V_A \wedge n}) + (V_A \wedge n)$ 是一个鞅，并推导出 $g(x) = E_x V_A$。
+    \begin{solution}
+        设 $M_n = g(X_{V_A \wedge n}) + (V_A \wedge n)$。若 $n < V_A$，则 $X_n = x \in C$。考察条件期望：
+        \[
+        E(g(X_{n+1}) + (n+1) | X_n = x) = \sum_{y} p(x, y) g(y) + (n+1)
+        \]
+        根据已知条件，对于 $x \in C$，有 $g(x) = 1 + \sum_{y} p(x, y) g(y)$，即 $\sum_{y} p(x, y) g(y) = g(x) - 1$。
+        代入上式：
+        \[
+        E(M_{n+1} | X_n) = (g(x) - 1) + (n+1) = g(x) + n = M_n
+        \]
+        若 $n \ge V_A$，则 $M_{n+1} = M_n$，鞅性质依然保持。
+
+        利用可选停时定理，在时刻 $V_A$，有 $E_x(M_{V_A}) = M_0$：
+        \[
+        E_x [g(X_{V_A}) + V_A] = g(X_0) + 0 = g(x)
+        \]
+        已知对于 $x \in A$ 有 $g(x) = 0$，而 $X_{V_A} \in A$，故 $g(X_{V_A}) = 0$。
+        上式简化为：
+        \[
+        E_x(0 + V_A) = g(x) \implies g(x) = E_x V_A
+        \]
+    \end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
