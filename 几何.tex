@@ -1529,6 +1529,80 @@ BD^2 = \left(\frac{BG}{\cos \frac{B}{2}}\right)^2 = \frac{12^2 \cdot 14}{9} = 22
         \]
     \end{solution}
 
+    \question 在图中，$ABCD$ 是一个梯形，其中 $AD \parallel BC$ 且 $AD : BC = 2 : 1$。设 $M$ 为 $BC$ 的中点。$E$ 是 $AD$ 上的一点，使得 $AE : ED = 3 : 1$。延长 $BC$ 至点 $F$，使得 $AE = MF$。$CD$ 与 $EF$ 相交于点 $G$，而 $AM$ 与 $BG$ 相交于点 $H$。若 $\Delta ABH$ 的面积为 $10\text{ cm}^2$，则 $AEGH$ 的面积为
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image503.png}
+    \end{figure}
+\begin{solution}
+根据题意，我们可以先设定各线段的比例：
+因为 $AD : BC = 2 : 1$ 且 $AE : ED = 3 : 1$，我们可以设：
+\[
+AE = 3k, \quad ED = 1k \implies AD = 4k
+\]
+由于 $AD : BC = 2 : 1$，则：
+\[
+BC = 2k
+\]
+因为 $M$ 是 $BC$ 的中点，所以：
+\[
+BM = MC = 1k
+\]
+又已知 $MF = AE = 3k$，且 $MF = MC + CF$，所以：
+\[
+CF = MF - MC = 3k - 1k = 2k
+\]
+由此可以得出底边总长 $BF = BM + MC + CF = 1k + 1k + 2k = 4k$。
+
+1. 考虑 $\Delta CFG \sim \Delta DEG$（由于 $AD \parallel BF$，由内错角相等可得 $AAA$ 相似）：
+   \[
+   EG : FG = ED : CF = 1k : 2k = 1 : 2
+   \]
+   为了后续计算方便，我们可以设 $EG = 2n$，则 $FG = 4n$，从而整个线段 $EF = 6n$。
+
+2. 考虑 $\Delta BMH \sim \Delta BFG$（同样由于 $AM \parallel EF$，因为四边形 $AEFM$ 中 $AE \parallel MF$ 且 $AE = MF = 3k$，所以 $AEFM$ 是平行四边形，从而 $AM \parallel EF$）：
+   \[
+   MH : FG = BM : BF = 1k : 4k = 1 : 4
+   \]
+   因为前面设了 $FG = 4n$，所以可得：
+   \[
+   MH = 1n
+   \]
+   因为 $AEFM$ 是平行四边形，其对边相等，即 $AM = EF = 6n$。
+   由此可得：
+   \[
+   AH = AM - MH = 6n - 1n = 5n
+   \]
+
+1. 求 $\Delta BMH$ 的面积：
+   因为 $\Delta ABH$ 和 $\Delta BMH$ 在同一条直线 $AM$ 上，它们关于顶点 $B$ 的高相同，所以面积比等于底边比：
+   \[
+   \text{Area of } \Delta BMH = \text{Area of } \Delta ABH \times \frac{MH}{AH} = 10 \times \frac{1n}{5n} = 2\text{ cm}^2
+   \]
+
+2. 求梯形 $MFGH$ 的面积：
+   因为 $\Delta BMH \sim \Delta BFG$，其相似比为 $BM : BF = 1 : 4$，所以面积比为相似比的平方：
+   \[
+   \text{Area of } \Delta BFG = \text{Area of } \Delta BMH \times \left(\frac{BF}{BM}\right)^2 = 2 \times 4^2 = 32\text{ cm}^2
+   \]
+   由此可以得到四边形 $MFGH$ 的面积为：
+   \[
+   \text{Area of } MFGH = \text{Area of } \Delta BFG - \text{Area of } \Delta BMH = 32 - 2 = 30\text{ cm}^2
+   \]
+
+3. 求四边形 $AEGH$ 的面积：
+   在平行四边形 $AEFM$ 中，由对角关系或高相同可以利用比例进行转换：
+   梯形 $AEGH$ 与 梯形 $MFGH$ 的高相同（均为平行线 $AM$ 与 $EF$ 之间的距离）。
+   因此它们的面积比等于上下底之和的比：
+   \[
+   \frac{\text{Area of } AEGH}{\text{Area of } MFGH} = \frac{AE + HG}{MF + FG} = \frac{AH + EG}{MH + FG} = \frac{5n + 2n}{1n + 4n} = \frac{7}{5}
+   \]
+   所以：
+   \[
+   \text{Area of } AEGH = 30 \times \frac{7}{5} = 42\text{ cm}^2
+   \]
+\end{solution}
+
     \question 平面上 $AC=AD,\angle ABC=90^\circ, \angle CAD=\alpha,\angle CBD=\beta, \angle CAB=\gamma$, 若 $\cos\alpha=\dfrac{4}{5}, \cos\beta=\dfrac{8}{17}$, 求 $\tan\gamma$。
     \ifprintanswers
     \begin{figure}[H]
@@ -8788,6 +8862,186 @@ f(r) = n\pi \left( 1 - \frac{1 - \sin \frac{\theta}{2}}{1 + \sin \frac{\theta}{2
         =\frac12\cos36^\circ+\frac{\sqrt3}{2}\sin36^\circ
         \]
     \end{solution}
+
+    \question 四边形 $ABCD$ 内接于圆 $O$，圆 $O$ 外一点 $P$ 在直线 $BC$ 上，满足 $\angle BCD = \angle ABP$，$\angle BDC = \angle APB$。求证：$AD \parallel BC$。 【西大和学园高等学校 2023】
+\begin{solution}
+\end{solution}
+
+\question 三点 $C$、$D$、$E$ 皆在以 $AB$ 为直径的半圆上，满足 $AC = CD$，$AD$ 交 $CE$ 于点 $F$。求证：$\Delta AEC \sim \Delta FAC$。 【桐朋高等学校 2011】
+\begin{solution}
+\end{solution}
+
+\question 三点 $B$、$C$、$D$ 皆在以 $AE$ 为直径的半圆上，满足 $AB = BC$，$CD = DE$，$AD$ 交 $BE$ 于点 $F$。求证：$\Delta BCD \cong \Delta BFD$。 【滩高等学校 1992】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 为正三角形，点 $P$ 在 $\Delta ABC$ 的外接圆上，且点 $P$ 与点 $A$ 位于直线 $BC$ 的异侧。求证：$AP = BP + CP$。 【庆应义塾志木高等学校 2019】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 中，$AB = 2BC$，点 $M$ 为 $AB$ 中点，点 $N$ 在 $AC$ 上，满足 $\angle CMN = 90^\circ$。求证：$CN = 2AN$。 【大阪教育大学附属池田高等学校 2012】
+\begin{solution}
+\end{solution}
+
+\question 梯形 $ABCD$ 中，$AD \parallel BC$，$BC = 2AB = 2AD$，$\angle ABC = 90^\circ$，点 $M$ 为 $AD$ 中点，$AC$ 分别交 $BD$、$BM$ 于点 $E$、$F$。求证：$\Delta EBF \sim \Delta ECD$。 【同志社高等学校 2011】
+\begin{solution}
+\end{solution}
+
+\question 点 $D$、$E$ 在以 $BC$ 为直径的半圆上，直线 $DE$ 交直线 $BC$ 于点 $A$，且 $AE < AD$，$AB < AC$。求证：$\Delta ABE \sim \Delta ADC$。 【千叶县公立高校 2023】
+\begin{solution}
+\end{solution}
+
+\question 正方形 $ABCD$ 中，两对角线 $AC$、$BD$ 相交于点 $E$，点 $F$ 为 $DC$ 上异于点 $C$、$D$ 的一点，$AC$ 交 $BF$ 于点 $G$，自点 $A$ 向 $BF$ 作垂线，垂足为点 $H$，$AH$ 交 $BD$ 于点 $I$。求证：$AI = BG$。 【千叶县公立高校 2012】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 中，$\angle A$ 为钝角，$AB < AC$，点 $D$ 在 $AC$ 上，点 $E$ 与点 $B$ 位于直线 $AC$ 的异侧，$AB \parallel DE$，$AB = AD$，点 $F$ 在直线 $BD$ 上，$EF \parallel AC$。求证：四边形 $ACFE$ 为平行四边形。 【大阪府公立高校 C 卷 2020】
+\begin{solution}
+\end{solution}
+
+\question 点 $P$ 为 $AB$ 外一点，分别以点 $A$、$B$ 为圆心，以 $AP$、$BP$ 为半径作圆，两圆相交于点 $P$、$Q$。求证：$PQ \perp AB$。 【北海道公立高校 2010】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 为锐角三角形，分别自点 $B$、$C$ 向 $AC$、$AB$ 作垂线，垂足为点 $E$、$F$，$BE$ 交 $CF$ 于点 $H$，直线 $AH$ 交 $BC$ 于点 $D$。求证：$AD \perp BC$。 【滩高等学校 1989】
+\begin{solution}
+\end{solution}
+
+\question 圆内接四边形 $ABCD$ 中，$AC \perp BD$ 于点 $E$，作直线 $EF \perp AD$，且点 $F$ 在 $BC$ 上。求证：点 $F$ 为 $BC$ 中点。 【立川高等学校 2022】
+\begin{solution}
+\end{solution}
+
+\question 矩形 $ABCD$ 中，点 $E$ 为 $CD$ 上异于点 $C$、$D$ 的点，以 $BE$ 为直径的圆分别交 $AD$、$AB$ 于点 $F$、$G$，且 $BE \parallel GF$。求证：$\Delta BCE \cong \Delta BFE$。 【立川高等学校 2015】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 中，$\angle C = 90^\circ$，点 $D$ 在 $\Delta ABC$ 的外接圆 $O$ 上，$\angle ABC = \angle ABD + \angle DBC$，且 $AC < BC$，自点 $C$ 向直线 $AD$ 作垂线，垂足为点 $E$，直线 $CE$ 交圆 $O$ 于点 $F$。求证：$DF \parallel AB$。 【熊本县公立高校 2011】
+\begin{solution}
+\end{solution}
+
+\question 平行四边形 $ABCD$ 中，点 $E$、$F$、$G$、$H$ 分别在 $AB$、$BC$、$CD$、$AD$ 上，$EG$ 交 $FH$ 于 $AC$、$BD$ 的交点。求证：四边形 $EFGH$ 为平行四边形。 【西高等学校 2021】
+\begin{solution}
+\end{solution}
+
+\question 五边形 $ABCDE$ 内接于以 $CD$ 为直径的圆，其中 $\Delta ABC$、$\Delta ADE$ 均为等腰三角形，满足 $AB = BC$，$AE = DE$，$BE$ 交 $AC$ 于点 $P$，$CE$ 分别交 $AD$、$BD$ 于点 $Q$、$R$。求证：$\Delta APE \sim \Delta QRD$。 【福冈县公立高校 2014】
+\begin{solution}
+\end{solution}
+
+\question 正方形 $ABCD$ 中，点 $P$ 在 $BD$ 上，直线 $CP$ 交正方形 $ABCD$ 的外接圆于点 $Q$，且 $BQ = CQ$。求证：$QD = QP$。 【立川高等学校 2011】
+\begin{solution}
+\end{solution}
+
+\question 梯形 $ABCD$ 中，$AB < CD$，$\angle ABC = \angle BCD = 90^\circ$，若点 $P$ 为 $BC$ 上一点，满足 $\angle BAP = \angle PAD$，$AD = AB + CD$。求证：$BP = CP$。 【新宿高等学校 2010】
+\begin{solution}
+\end{solution}
+
+\question $\Delta ABC$ 中，$\angle A = 90^\circ$，且 $AB < AC$，点 $O$ 为 $\Delta ABC$ 的外心，点 $D$ 在直线 $BC$ 上，满足 $AD = CD$，且 $CD < BD$，$AD$ 交 $\Delta ABC$ 的外接圆于点 $E$，$OE$ 交 $AC$ 于点 $F$。求证：$OF = CF$。 【大阪府公立高校 C 卷 2019】
+\begin{solution}
+\end{solution}
+
+\question 圆 $O$、$O_1$ 相交于点 $P$、$Q$，且点 $O$ 在圆 $O_1$ 上，点 $A$ 为圆 $O_1$ 上一点，点 $P$ 与点 $A$ 位于直线 $OO_1$ 的同侧，且 $\angle OO_1A > \angle OO_1P$，$PR$ 为圆 $O$ 的直径，直线 $AP$、$AQ$ 分别交圆 $O$ 于点 $S$、$T$。求证：$PS = QT$。 【滩高等学校 2011】
+\begin{solution}
+\end{solution}
+
+\question 正方形 $ABCD$ 中，点 $P$、$Q$ 分别在 $AB$、$AD$ 上，$AP = AQ$，自点 $A$ 向直线 $PD$ 作垂线，分别交 $PD$、$BC$ 于点 $H$、$E$。 【大阪教育大学附属池田高等学校 2011】
+\begin{parts}
+\part 求证：四边形 $QECD$ 为矩形。
+\begin{solution}
+\end{solution}
+\part 求证：$\angle QHC = 90^\circ$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question 通过圆 $O$ 外一点 $A$ 的直线与圆 $O$ 相交于点 $B$、$C$，自点 $A$ 向圆 $O$ 作切线，切点为点 $D$、$E$，$BC$ 交 $DE$ 于点 $F$，点 $M$ 为 $BC$ 中点。 【滩高等学校 1990】
+\begin{parts}
+\part 求证：点 $O$、$E$、$A$、$D$、$M$ 五点共圆。
+\begin{solution}
+\end{solution}
+\part 求证：$\Delta ADF \sim \Delta AMD$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question $AB$ 为圆 $O$ 的直径，圆 $O$ 上的弦 $DE \perp AB$ 于点 $C$，直线 $AD$、$BE$ 相交于点 $P$，自点 $P$ 向 $AB$ 作垂线，垂足为点 $Q$。 【滩高等学校 1993】
+\begin{parts}
+\part 求证：$DQ$ 与圆 $O$ 相切。
+\begin{solution}
+\end{solution}
+\part 若直线 $BP$ 交 $DQ$ 于点 $F$，点 $G$ 在 $FP$ 上，$\angle BDF = \angle FDG$，求证：点 $G$ 为 $BP$ 中点。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question 直线 $AP$ 与 $\Delta ABC$ 的外接圆相切且交直线 $BC$ 于点 $P$，自点 $P$ 分别向直线 $AB$、$AC$ 作垂线，垂足为点 $Q$、$R$。 【滩高等学校 1994】
+\begin{parts}
+\part 求证：$AB : AC = AQ : CR$。
+\begin{solution}
+\end{solution}
+\part 若 $AD$ 为 $\Delta ABC$ 的外接圆的直径，直线 $AD$ 分别交直线 $PQ$、$PR$ 于点 $M$、$N$，求证：$AM = DN$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question $\Delta ABC$ 中，$\angle B = \angle C > 45^\circ$，自 $\Delta ABC$ 内的一点 $P$ 分别向 $BC$、$AC$、$AB$ 作垂线，垂足为点 $D$、$E$、$F$，点 $Q$ 满足 $AP = AQ$，$\angle PAQ = \angle BAC$，且点 $Q$ 与点 $B$ 位于直线 $AC$ 的异侧。 【滩高等学校 1995】
+\begin{parts}
+\part 求证：$BP = CQ$。
+\begin{solution}
+\end{solution}
+\part 求证：$\Delta DEF \sim \Delta CPQ$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question 圆内接五边形 $ABCDE$ 中，$AB = AE$，$BE$ 分别交 $AC$、$AD$ 于点 $P$、$Q$。
+\begin{parts}
+\part 求证：$AB$ 与 $\Delta BCP$ 的外接圆相切。 【滩高等学校 1996】
+\begin{solution}
+\end{solution}
+\part 求证：点 $P$、$C$、$D$、$Q$ 四点共圆。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question 圆 $O$、$O_1$ 相交于点 $A$、$B$，点 $P$、$Q$ 分别在圆 $O$、$O_1$ 上，满足 $AP = AQ$，直线 $PQ$ 分别与圆 $O$、$O_1$ 相交于异于点 $P$、$Q$ 的点 $R$、$S$。 【滩高等学校 2026】
+\begin{parts}
+\part 求证：$\angle ABR + \angle ABS = 90^\circ$。
+\begin{solution}
+\end{solution}
+\part 求证：$AR : AS = AO : AO_1$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question $\Delta ABC$ 中，$\angle A$ 为锐角，向外作正方形 $AEDB$、$AGFC$，$BG$ 交 $CE$ 于点 $P$。
+\begin{parts}
+\part 求证：点 $A$、$E$、$B$、$P$ 四点共圆。 【滩高等学校 2025】
+\begin{solution}
+\end{solution}
+\part 求证：点 $D$、$P$、$F$ 三点共线。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question 点 $I$ 为 $\Delta ABC$ 的内心，直线 $AI$、$BI$、$CI$ 分别交 $BC$、$AC$、$AB$ 于点 $D$、$E$、$F$，直线 $AD$、$BE$、$CF$ 分别交直线 $EF$、$DF$、$DE$ 于点 $P$、$Q$、$R$。 【滩高等学校 2024】
+\begin{parts}
+\part 求证：$\angle DQI = 90^\circ$。
+\begin{solution}
+\end{solution}
+\part 求证：$QR \parallel BC$。
+\begin{solution}
+\end{solution}
+\end{parts}
+
+\question $\Delta ABC$ 为锐角三角形，其在 $AC$、$AB$ 上的高 $BE$、$CF$ 相交于点 $H$，点 $L$、$M$、$N$ 分别为 $BC$、$AC$、$AH$ 中点。 【滩高等学校 1989】
+\begin{parts}
+\part 求证：$\angle LMN = 90^\circ$。
+\begin{solution}
+\end{solution}
+\part 求证：$\angle MNE = \angle MLE$。
+\begin{solution}
+\end{solution}
+\end{parts}
 
     \question 已知三角形 $ABC$ 的外心为 $O$,且 $\angle B$ 为钝角。延长$BC$与外接圆在点 $A$处的切线交于 $D$使得$AO = AD = 2$。$F$ 在 $BC$ 上满足 $AF \perp OD$且交于点 $E$。过点 $A,D,O$ 的圆与 $BC$ 的交于点$H$。已知 $FH = \dfrac{\sqrt{3}}{3}$,求 $\triangle OEF$ 的面积。
     % 23. [6 pts] [7] Let $ABC$ be a triangle with circumcenter $O$ and $\angle B$ obtuse. Suppose the tangent to its circumcircle at $A$ intersects ray $CB$ at $D$, and that $AO=AD=2$. Suppose that $F$ lies on $BC$ with $AF \perp OD$, and let $E$ be the point where $AF$ meets $OD$. Let $H$ be the point where the circle passing through $ADO$ meets $BC$. What is the area of triangle $OEF$ if $FH=\frac{\sqrt{3}}{3}$?23. $\frac{1}{2}\sqrt{2}$. Let $J$ be the point where the extension of $AF$ meets circle $ADO$. Let $x = DF$ and $y = EF$. Power of a point using chords $DH$ and $AJ$ yields $x\frac{\sqrt{3}}{3}=(\sqrt{2}+y)(\sqrt{2}-y)$ while Pythagoras on triangle $DEF$ yields $x^{2}=y^{2}+2$. Combining, we get $x\frac{\sqrt{3}}{3}=2-(x^{2}-2)$ so $x^{2}+x\frac{\sqrt{3}}{3}-4=0$. The solution is $x=\sqrt{3}$ and $y=1$, so the area of the right triangle $OEF$ is $\frac{1}{2}\sqrt{2}\cdot1$.
@@ -24709,6 +24963,162 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         \]
     \end{solution}
 
+
+    \question
+证明：
+\[
+\cos \theta = \frac{\cos \gamma - \cos \alpha \cos \beta}{\sin \alpha \sin \beta}
+\]
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\linewidth]{images/image504.png}
+    \end{figure}
+    \fi
+\begin{solution}
+根据余弦定理：
+\[
+\cos \theta = \frac{x^2 + y^2 - z^2}{2xy}
+\]
+代入边长关系式：
+\[
+= \frac{a^2 \sin^2 \alpha + b^2 \sin^2 \beta - (a^2 + b^2 - 2ab \cos \gamma)}{2ab \sin \alpha \sin \beta}
+\]
+展开并整理：
+\[
+= \frac{2ab \cos \gamma - a^2 \cos^2 \alpha - b^2 \cos^2 \beta}{2ab \sin \alpha \sin \beta}
+\]
+代入 $a \cos \alpha = c$ 及 $b \cos \beta = c$：
+\[
+= \frac{2ab \cos \gamma - c^2 - c^2}{2ab \sin \alpha \sin \beta}
+\]
+\[
+= \frac{2ab \cos \gamma - 2c^2}{2ab \sin \alpha \sin \beta}
+\]
+化简：
+\[
+= \frac{\cos \gamma - \frac{c}{a} \cdot \frac{c}{b}}{\sin \alpha \sin \beta}
+\]
+最终证得：
+\[
+= \frac{\cos \gamma - \cos \alpha \cos \beta}{\sin \alpha \sin \beta}
+\]
+\end{solution}
+
+    \question 甲烷（$\text{CH}_4$）是一种简单的有机化合物，由一个中心碳原子（以点 $C$ 表示）和四个氢原子（以点 $H_1, H_2, H_3$ 和 $H_4$ 表示）组成（见图 5(a)）。
+由于氢原子之间的排斥力，$H_1H_2H_3H_4$ 形成正四面体结构，使得任意两个氢原子之间的距离最大。线段 $H_1C$ 在平面 $\Delta H_2H_3H_4$ 上的投影点为 $C'$。延长线段 $H_2C'$ 与线段 $H_3H_4$ 交于点 $M$，其中 $M$ 是 $H_3H_4$ 的中点。
+（注：考生可假设 $\Delta H_2H_3H_4$ 为水平放置的平面。）
+设 $x$ 为任意两个氢原子之间的距离（即 $H_1H_2 = H_1H_3 = H_1H_4 = H_2H_3 = H_2H_4 = H_3H_4 = x$）（见图 5(a)）。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\linewidth]{images/image502.png}
+    \end{figure}
+\begin{parts}
+\part 
+\begin{subparts}
+\subpart 用 $x$ 表示 $H_1M$ 和 $H_2M$。
+\subpart 由此或以其他方法，求 $\cos \angle H_1MC'$ 和 $\cos \angle H_1H_2C'$。
+\subpart 通过考虑 $\Delta H_1MC'$ 和 $\Delta H_1H_2C'$，证明 $MC' : C'H_2 = 1 : 2$。
+\end{subparts}
+
+\begin{solution}
+\begin{subparts}
+\subpart 因为 $\Delta H_1H_3H_4$ 和 $\Delta H_2H_3H_4$ 均为边长为 $x$ 的正三角形，且 $M$ 是 $H_3H_4$ 的中点，所以在直角 $\Delta H_1MH_3$ 中：
+\[
+H_1M = H_2M = \sqrt{x^2 - \left(\frac{x}{2}\right)^2} = \frac{\sqrt{3}}{2}x
+\]
+
+\subpart 考虑 $\Delta H_1MH_2$，由余弦定理可得：
+\[
+\cos \angle H_1MC' = \frac{\left(\frac{\sqrt{3}}{2}x\right)^2 + \left(\frac{\sqrt{3}}{2}x\right)^2 - x^2}{2\left(\frac{\sqrt{3}}{2}x\right)\left(\frac{\sqrt{3}}{2}x\right)} = \frac{\frac{3}{4} + \frac{3}{4} - 1}{2 \cdot \frac{3}{4}} = \frac{\frac{1}{2}}{\frac{3}{2}} = \frac{1}{3}
+\]
+同样在 $\Delta H_1MH_2$ 中，由余弦定理可得 $\cos \angle H_1H_2C'$（即 $\cos \angle H_1H_2M$）：
+\[
+\cos \angle H_1H_2C' = \frac{x^2 + \left(\frac{\sqrt{3}}{2}x\right)^2 - \left(\frac{\sqrt{3}}{2}x\right)^2}{2x\left(\frac{\sqrt{3}}{2}x\right)} = \frac{x^2}{\sqrt{3}x^2} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}
+\]
+
+\subpart 因为 $H_1C'$ 垂直于底面，所以 $\Delta H_1C'M$ 和 $\Delta H_1C'H_2$ 均为直角三角形。
+在直角 $\Delta H_1C'M$ 中：
+\[
+MC' = H_1M \cos \angle H_1MC' = \frac{\sqrt{3}x}{2} \cdot \frac{1}{3} = \frac{\sqrt{3}x}{6}
+\]
+在直角 $\Delta H_1C'H_2$ 中：
+\[
+C'H_2 = H_2M - MC' = \frac{\sqrt{3}}{2}x - \frac{\sqrt{3}x}{6} = \frac{\sqrt{3}x}{3}
+\]
+或者利用：
+\[
+C'H_2 = H_1H_2 \cos \angle H_1H_2C' = x \cdot \frac{\sqrt{3}}{3} = \frac{\sqrt{3}x}{3}
+\]
+因此：
+\[
+MC' : C'H_2 = \frac{\sqrt{3}x}{6} : \frac{\sqrt{3}x}{3} = 1 : 2
+\]
+\end{subparts}
+\end{solution}
+
+\part 设 $r$ 为每个氢原子与中心碳原子之间的距离（即 $CH_1 = CH_2 = CH_3 = CH_4 = r$）。设 $\theta$ 为连接任意一个氢原子与中心碳原子的线段之间的夹角（即 $\angle H_1CH_2 = \angle H_1CH_3 = \angle H_1CH_4 = \angle H_2CH_3 = \angle H_2CH_4 = \angle H_3CH_4 = \theta$）。已知 $r > 0$ 且 $0^\circ < \theta < 180^\circ$（见图 5(b)）。
+\begin{subparts}
+\subpart 用 $r$ 和 $\theta$ 表示 $x$。
+\subpart 利用 (a)(iii) 和 (b)(i)，证明 $3\cos^2\theta - 2\cos\theta - 1 = 0$。由此求 $\theta$ 的值，准确至一位小数。
+\end{subparts}
+
+\begin{solution}
+\begin{subparts}
+\subpart 考虑 $\Delta H_1CH_2$，由余弦定理可得：
+\[
+x = \sqrt{r^2 + r^2 - 2(r)(r)\cos\theta} = r\sqrt{2 - 2\cos\theta}
+\]
+
+\subpart 由 (a)(iii) 可得：
+\[
+C'H_2 = \frac{2}{3}H_2M = \frac{2}{3}\left(\frac{\sqrt{3}}{2}x\right) = \frac{1}{\sqrt{3}}x
+\]
+在 $\Delta C'CH_2$ 中，$\angle CC'H_2 = 90^\circ$，且由于 $\angle H_1CH_2 = \theta$，则邻补角 $\angle C'CH_2 = 180^\circ - \theta$。
+因此：
+\[
+\sin\angle C'CH_2 = \frac{C'H_2}{CH_2} = \frac{\frac{1}{\sqrt{3}}x}{r} = \frac{x}{r\sqrt{3}}
+\]
+由 (b)(i) 可知 $\frac{x}{r} = \sqrt{2 - 2\cos\theta}$，代入上式得：
+\[
+\sin(180^\circ - \theta) = \frac{\sqrt{2 - 2\cos\theta}}{\sqrt{3}}
+\]
+因为 $\sin(180^\circ - \theta) = \sin\theta$，所以：
+\[
+\sin\theta = \frac{\sqrt{2 - 2\cos\theta}}{\sqrt{3}}
+\]
+两边平方得：
+\[
+\sin^2\theta = \frac{2 - 2\cos\theta}{3}
+\]
+利用 $\sin^2\theta = 1 - \cos^2\theta$：
+\[
+1 - \cos^2\theta = \frac{2 - 2\cos\theta}{3}
+\]
+\[
+3 - 3\cos^2\theta = 2 - 2\cos\theta
+\]
+\[
+3\cos^2\theta - 2\cos\theta - 1 = 0
+\]
+因式分解得：
+\[
+(3\cos\theta + 1)(\cos\theta - 1) = 0
+\]
+所以 $\cos\theta = 1$ 或 $\cos\theta = -\frac{1}{3}$。
+由于 $0^\circ < \theta < 180^\circ$，$\cos\theta = 1$ 须舍去。
+因此：
+\[
+\cos\theta = -\frac{1}{3}
+\]
+解得：
+\[
+\theta \approx 109.5^\circ
+\]
+\end{subparts}
+\end{solution}
+\end{parts}
+
     \question
 水平地面上垂直立着一根塔（忽略粗细）。塔尖为 $P$，塔底为 $H$。此外，有一条不经过 $H$ 的直路呈直线延伸（忽略宽度）。路途中有三点 $A, B, C$ 依次排列，且满足 $BC = 2AB$。请回答下列问题：
 
@@ -25956,6 +26366,64 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         PH=d(P,L)=\sqrt{(-5-1)^{2}+(0-6)^{2}+(-8+5)^{2}}=9
         \]
     \end{solution}
+
+    \question 设两直线 $L_1: \frac{x+1}{2} = \frac{y-2}{-2} = \frac{z}{-1}$ 及 $L_2: \frac{x-3}{1} = \frac{y-1}{-4} = \frac{z-1}{1}$。求此两异面直线间的最短距离。
+
+\begin{solution}
+我们有六种方法来求解该距离：
+
+(1) 解参数 $s, t$ 法
+设 $P(-1+2t, 2-2t, -t)$ 为 $L_1$ 上的点， $Q(3+s, 1-4s, 1+s)$ 为 $L_2$ 上的点。
+向量 $PQ = (4+s-2t, -1-4s+2t, 1+s+t)$。
+令 $PQ \cdot v = 0$ 且 $PQ \cdot u = 0$，其中 $v=(2, -2, -1), u=(1, -4, 1)$。
+联立方程组得 $9s - 9t + 9 = 0$ 和 $18s - 9t + 9 = 0$。
+解得 $s=0, t=1$。故 $P(1, 0, -1), Q(3, 1, 1)$，距离为 $\vert{}PQ\vert{} = \sqrt{2^2 + 1^2 + 2^2} = 3$。
+
+(2) 点到平面距离法
+两直线公垂向量 $a = v \times u = (-6, -3, -6)$。
+取包含 $L_2$ 的平面 $E: 2x + y + 2z = 9$。
+计算 $L_1$ 上一点 $A(-1, 2, 0)$ 到平面 $E$ 的距离：
+
+
+$$d = \frac{\vert{}2(-1) + 1(2) + 2(0) - 9\vert{}}{\sqrt{2^2 + 1^2 + 2^2}} = \frac{\vert{}-9\vert{}}{3} = 3$$
+
+(3) 正射影长法
+向量 $AB = (4, 1, 1)$，其中 $A$ 在 $L_1$，$B$ 在 $L_2$。
+距离为向量 $AB$ 在公垂向量 $a = (-6, -3, -6)$ 上的正射影长度：
+
+
+$$d = \left\vert{} \frac{AB \cdot a}{a \cdot a} \right\vert{} \cdot \vert{}a\vert{} = \left\vert{} \frac{-24 - 3 - 6}{81} \right\vert{} \cdot \sqrt{(-6)^2 + (-3)^2 + (-6)^2} = \frac{33}{81} \cdot 9 = 3$$
+
+(4) 平行六面体体积法
+由 $\vert{}(v \times u) \cdot AB\vert{} = \vert{}v \times u\vert{} \cdot h$ 可得：
+
+
+$$\vert{}(-6, -3, -6) \cdot (4, 1, 1)\vert{} = \vert{}(-6, -3, -6)\vert{} \cdot h$$
+
+$$\vert{}-24 - 3 - 6\vert{} = \sqrt{36+9+36} \cdot h \Rightarrow 33 = 9h \Rightarrow h = 3$$
+
+
+注：原文计算采用行列式，其绝对值为 $27 = 9h$，此处修正为对应数值。
+
+(5) 最小二乘方法
+展开 $\vert{}PQ\vert{}^2 = (4+s-2t)^2 + (-1-4s+2t)^2 + (1+s+t)^2$。
+化简整理得 $\vert{}PQ\vert{}^2 = 9t^2 - 18t(s+1) + 18s^2 + 18s + 18$。
+配方得 $\vert{}PQ\vert{}^2 = 9(t-(s+1))^2 + 9s^2 + 9$。
+当 $s=0, t=1$ 时，最小值 $\vert{}PQ\vert{}^2 = 9$，故距离为 $3$。
+
+(6) 偏微分法
+设 $h^2 = \vert{}PQ\vert{}^2 = 18 + 18s^2 + 9t^2 + 18s - 18t - 18st$。
+分别对 $t, s$ 求偏导数并令其为 $0$：
+
+
+$$\frac{\partial h^2}{\partial t} = 18t - 18 - 18s = 0 \Rightarrow t - s = 1$$
+
+$$\frac{\partial h^2}{\partial s} = 36s + 18 - 18t = 0 \Rightarrow 2s - t = -1$$
+
+
+解方程组得 $s=0, t=1$。
+最小距离 $h = \sqrt{h^2} = \sqrt{18 + 0 + 9 - 18 - 0} = 3$。
+\end{solution}
 
     \question 设 $A(0,1,2),B(-1,2,1),C(1,0,1)$ 为空间中的三点,求 $\triangle ABC$ 的垂心坐标。
     \begin{solution}

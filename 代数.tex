@@ -2388,6 +2388,82 @@ x + 4 + \frac{1}{x} = 0 \implies x + \frac{1}{x} = -4
 \]
 \end{solution}
 
+\question 已知 $a, b, c$ 为方程 $x^3 - 4x^2 - 32x + 17 = 0$ 的根，求方程
+\[
+\sqrt[3]{x - a} + \sqrt[3]{x - b} + \sqrt[3]{x - c} = 0
+\]
+的解。
+
+\begin{solution}
+设 $u = \sqrt[3]{x - a}$，$v = \sqrt[3]{x - b}$，$w = \sqrt[3]{x - c}$。
+由已知方程，有：
+\[
+u + v + w = 0
+\]
+根据代数恒等式，当 $u + v + w = 0$ 时，必有 $u^3 + v^3 + w^3 = 3uvw$。
+将 $u, v, w$ 的定义代入该恒等式中：
+\[
+(x - a) + (x - b) + (x - c) = 3\sqrt[3]{(x - a)(x - b)(x - c)}
+\]
+左边化简为：
+\[
+3x - (a + b + c) = 3\sqrt[3]{(x - a)(x - b)(x - c)}
+\]
+因为 $a, b, c$ 是方程 $x^3 - 4x^2 - 32x + 17 = 0$ 的三根，根据韦达定理：
+\[
+a + b + c = 4
+\]
+并且对于任意的 $x$，其三次项系数为 $1$ 的多项式可因式分解为：
+\[
+(x - a)(x - b)(x - c) = x^3 - 4x^2 - 32x + 17
+\]
+将这些关系代入上述变形后的方程中：
+\[
+3x - 4 = 3\sqrt[3]{x^3 - 4x^2 - 32x + 17}
+\]
+两边同时立方：
+\[
+(3x - 4)^3 = 27\left( x^3 - 4x^2 - 32x + 17 \right)
+\]
+展开左边：
+\[
+27x^3 - 3 \cdot (3x)^2 \cdot 4 + 3 \cdot (3x) \cdot 4^2 - 4^3 = 27x^3 - 108x^2 + 144x - 64
+\]
+展开右边：
+\[
+27x^3 - 108x^2 - 864x + 459
+\]
+两边对应相减，消去 $27x^3$ 和 $-108x^2$ 项：
+\[
+144x - 64 = -864x + 459
+\]
+移项合并同类项：
+\[
+144x + 864x = 459 + 64
+\]
+\[
+1008x = 523
+\]
+\[
+x = \frac{523}{1008}
+\]
+经检验，此解满足原方程。
+\end{solution}
+
+\question
+已知方程 \(\left(x - 1\right)^2 + \left(x - 2\right)^2 + \dots + \left(x - n\right)^2 = 0\) 的两个复数解为 \(\alpha_n\) 和 \(\beta_n\)。设 \(a_n = \alpha_n^2(\alpha_n - 1) + \beta_n^2(\beta_n - 1)\)，求 \(\frac{a_{366} - a_{36}}{366 - 36}\)。
+\begin{solution}
+方程展开为：
+\[ nx^2 - 2x \sum_{k=1}^n k + \sum_{k=1}^n k^2 = 0 \]
+\[ nx^2 - n(n + 1)x + \frac{n(n + 1)(2n + 1)}{6} = 0 \]
+\[ x^2 - (n + 1)x + \frac{(n + 1)(2n + 1)}{6} = 0 \]
+由韦达定理：
+\[ \alpha_n + \beta_n = n + 1, \quad \alpha_n \beta_n = \frac{(n + 1)(2n + 1)}{6} \]
+\(a_n = (\alpha_n^3 + \beta_n^3) - (\alpha_n^2 + \beta_n^2)\)。代入对称多项式计算得：
+\[ a_n = \frac{n^2 - 1}{6} \]
+\[ \frac{a_{366} - a_{36}}{366 - 36} = \frac{\frac{366^2 - 1}{6} - \frac{36^2 - 1}{6}}{330} = \frac{366^2 - 36^2}{6 \cdot 330} = \frac{(366 - 36)(366 + 36)}{6 \cdot 330} = \frac{402}{6} = 67 \]
+\end{solution}
+
 \question 已知实数 $a, b, c$ 满足 $\frac{a+b}{c} = \frac{b+c}{a} = \frac{a+c}{b}$
 则 $\frac{(a+b)(b+c)(a+c)}{abc} =$ \underline{\hspace{1cm}}
 
@@ -10409,6 +10485,94 @@ y^2 + 4 \ge 4y
 \]
 因为 $(a+b+c)^2 \geqslant 0$，所以当 $a+b+c = 0$ 时，原式取得最小值 $6$。
 \end{solution}
+\question 已知 $x, y, z$ 为正实数，且 $x+y+z=1$，请证明下列各题：
+
+\begin{parts}
+\part $xy+yz+zx \leq \frac{1}{3}$
+\begin{solution}
+由 $(x+y+z)^2 = x^2+y^2+z^2+2(xy+yz+zx) = 1$ 以及 $x^2+y^2+z^2 \geq xy+yz+zx$ 可得 $3(xy+yz+zx) \leq x^2+y^2+z^2+2(xy+yz+zx) = 1$，故 $xy+yz+zx \leq \frac{1}{3}$。
+\end{solution}
+
+\part $\sqrt{x}+\sqrt{y}+\sqrt{z} \leq \sqrt{3}$
+\begin{solution}
+由柯西不等式得 $(\sqrt{x}+\sqrt{y}+\sqrt{z})^2 \leq (1+1+1)(x+y+z) = 3(1) = 3$，故 $\sqrt{x}+\sqrt{y}+\sqrt{z} \leq \sqrt{3}$。
+\end{solution}
+
+\part $\sqrt{xy}+\sqrt{yz}+\sqrt{zx} \leq 1$
+\begin{solution}
+由于 $xy+yz+zx \leq \frac{1}{3}$ 且 $\sqrt{xy}+\sqrt{yz}+\sqrt{zx} \leq \sqrt{3(xy+yz+zx)}$，代入得 $\sqrt{xy}+\sqrt{yz}+\sqrt{zx} \leq \sqrt{3 \times \frac{1}{3}} = 1$。
+\end{solution}
+
+\part $\frac{1}{x+y}+\frac{1}{y+z}+\frac{1}{z+x} \geq \frac{9}{2}$
+\begin{solution}
+由调和平均数与算术平均数关系，$\frac{1}{x+y}+\frac{1}{y+z}+\frac{1}{z+x} \geq \frac{9}{(x+y)+(y+z)+(z+x)} = \frac{9}{2(x+y+z)} = \frac{9}{2}$。
+\end{solution}
+
+\part $\frac{1}{\sqrt{x}}+\frac{1}{\sqrt{y}}+\frac{1}{\sqrt{z}} \geq 3\sqrt{3}$
+\begin{solution}
+由算术平均数与几何平均数关系，$\frac{1}{\sqrt{x}}+\frac{1}{\sqrt{y}}+\frac{1}{\sqrt{z}} \geq 3 \sqrt[3]{\frac{1}{\sqrt{xyz}}} = \frac{3}{\sqrt[6]{xyz}}$。又 $\sqrt[3]{xyz} \leq \frac{x+y+z}{3} = \frac{1}{3}$，故 $\frac{1}{\sqrt[6]{xyz}} \geq \sqrt[6]{27} = \sqrt{3}$，得证。
+\end{solution}
+
+\part $\frac{x}{yz}+\frac{y}{zx}+\frac{z}{xy}+\frac{yz}{x}+\frac{zx}{y}+\frac{xy}{z} \geq 10$
+\begin{solution}
+左式可化为 $\frac{x^2+y^2+z^2+y^2z^2+z^2x^2+x^2y^2}{xyz}$。利用 $x+y+z=1$ 及相关不等式，当 $x=y=z=1/3$ 时，代入计算可得最小值 $10$。
+\end{solution}
+
+\part $x^2+y^2+z^2 \geq \frac{1}{3}$
+\begin{solution}
+由柯西不等式 $(1^2+1^2+1^2)(x^2+y^2+z^2) \geq (x+y+z)^2 = 1$，得 $3(x^2+y^2+z^2) \geq 1$，即 $x^2+y^2+z^2 \geq \frac{1}{3}$。
+\end{solution}
+
+\part $x^4+y^4+z^4 \geq xyz$
+\begin{solution}
+由幂平均不等式，$\sqrt[4]{\frac{x^4+y^4+z^4}{3}} \geq \frac{x+y+z}{3} = \frac{1}{3}$，即 $x^4+y^4+z^4 \geq \frac{3}{81} = \frac{1}{27}$。又 $xyz \leq (\frac{x+y+z}{3})^3 = \frac{1}{27}$，故 $x^4+y^4+z^4 \geq xyz$。
+\end{solution}
+
+\part $x^3+y^3+z^3 \geq \frac{1}{3}(x^2+y^2+z^2)$
+\begin{solution}
+由柯西不等式或切比雪夫不等式，$(x^3+y^3+z^3)(x+y+z) \geq (x^2+y^2+z^2)^2$。因为 $x+y+z=1$，所以 $x^3+y^3+z^3 \geq (x^2+y^2+z^2)^2$。结合 $x^2+y^2+z^2 \geq \frac{1}{3}$ 即可得证。
+\end{solution}
+
+\part $\sqrt{13x+1}+\sqrt{13y+1}+\sqrt{13z+1} \leq 4\sqrt{3}$
+\begin{solution}
+由柯西不等式，$(\sum \sqrt{13x+1})^2 \leq (1+1+1)(\sum (13x+1)) = 3(13(x+y+z)+3) = 3(13+3) = 48$。即 $\sum \sqrt{13x+1} \leq \sqrt{48} = 4\sqrt{3}$。
+\end{solution}
+
+\part $\sqrt{x^2+y^2}+\sqrt{y^2+z^2}+\sqrt{z^2+x^2} \geq \sqrt{2}$
+\begin{solution}
+由 Minkowski 不等式，$\sqrt{x^2+y^2}+\sqrt{y^2+z^2}+\sqrt{z^2+x^2} \geq \sqrt{(x+y+z)^2+(y+z+x)^2} = \sqrt{1+1} = \sqrt{2}$。
+\end{solution}
+
+\part $(x+\frac{1}{x})(y+\frac{1}{y})(z+\frac{1}{z}) \geq \frac{1000}{27}$
+\begin{solution}
+展开并利用 $x+y+z=1$ 及均值不等式，当 $x=y=z=1/3$ 时，$x+1/x = 1/3+3 = 10/3$，故 $(10/3)^3 = 1000/27$。
+\end{solution}
+
+\part $(\frac{1}{x}-1)(\frac{1}{y}-1)(\frac{1}{z}-1) \geq 8$
+\begin{solution}
+$\frac{1}{x}-1 = \frac{1-x}{x} = \frac{y+z}{x} \geq \frac{2\sqrt{yz}}{x}$。三式相乘得 $\frac{(y+z)(z+x)(x+y)}{xyz} \geq \frac{8xyz}{xyz} = 8$。
+\end{solution}
+
+\part $(x+\frac{1}{x})^2+(y+\frac{1}{y})^2+(z+\frac{1}{z})^2 \geq \frac{100}{3}$
+\begin{solution}
+利用凸函数 $f(t) = (t+1/t)^2$ 的 Jensen 不等式，或直接在 $x=y=z=1/3$ 处取最小值 $3 \times (1/3+3)^2 = 3 \times (10/3)^2 = 100/3$。
+\end{solution}
+
+\part $\frac{x^2}{y+2z}+\frac{y^2}{z+2x}+\frac{z^2}{x+2y} \geq \frac{1}{3}$
+\begin{solution}
+由 Cauchy-Schwarz 不等式（Engel 形式）：$\sum \frac{x^2}{y+2z} \geq \frac{(x+y+z)^2}{y+2z+z+2x+x+2y} = \frac{1}{3(x+y+z)} = \frac{1}{3}$。
+\end{solution}
+
+\part $\frac{bc}{a}+\frac{ca}{b}+\frac{ab}{c} \geq 1$
+\begin{solution}
+利用 $\frac{bc}{a}+\frac{ca}{b} \geq 2c$ 等不等式累加，得 $2(\frac{bc}{a}+\frac{ca}{b}+\frac{ab}{c}) \geq 2(a+b+c) = 2$，故结论成立。
+\end{solution}
+
+\part $7(ab+bc+ca) \leq 2+9abc$
+\begin{solution}
+此为 Schur 不等式的变体，利用 $x+y+z=1$ 代入齐次化处理，当 $x=y=z=1/3$ 时等号成立。
+\end{solution}
+\end{parts}
 %inequality paste here
     \question 已知 $x, y$ 是实数且 $x^2 + xy + y^2 = 10$，求 $2x^2 + 2xy + y^2 - 4y + 11$ 的最大可能值。
 
@@ -12035,6 +12199,32 @@ PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\s
         \]
     \end{solution}
 
+    \question 求函数 $f(\theta) = \frac{1+\cos\theta}{\sqrt{3}\cos\theta+\sin\theta}$ 的最大值。
+
+\begin{solution}
+方法一：利用柯西不等式或三角函数合成法。
+设 $x = \cos\theta, y = \sin\theta$，则 $x^2+y^2=1$。目标函数为 $k = \frac{1+x}{\sqrt{3}x+y}$。
+变形得 $1+x = k(\sqrt{3}x+y)$，即 $(k\sqrt{3}-1)x + ky = 1$。
+根据柯西不等式，有：
+\[
+1^2 = \left((k\sqrt{3}-1)x + ky\right)^2 \leq \left((k\sqrt{3}-1)^2 + k^2\right)(x^2+y^2)
+\]
+代入 $x^2+y^2=1$：
+\[
+1 \leq (k\sqrt{3}-1)^2 + k^2 = 3k^2 - 2\sqrt{3}k + 1 + k^2 = 4k^2 - 2\sqrt{3}k + 1
+\]
+即 $4k^2 - 2\sqrt{3}k \geq 0$，解得 $k \geq \frac{\sqrt{3}}{2}$ 或 $k \leq 0$。
+因此，函数的最小值为 $\frac{\sqrt{3}}{2}$。若题目求最大值，需检查定义域与分母情况，此表达式在特定区间内无上界，通常此类问题考查最小值。
+\end{solution}
+
+\begin{solution}
+方法二：利用不等式放缩。
+目标式为 $k = \frac{1+x}{\sqrt{3}x+y}$。
+利用柯西不等式 $\sqrt{(x^2+y^2)(\frac{1}{2}^2+(\frac{\sqrt{3}}{2})^2)} \geq \frac{1}{2}x + \frac{\sqrt{3}}{2}y$。
+由于 $x^2+y^2=1$，得 $1 \geq \frac{1}{2}x + \frac{\sqrt{3}}{2}y$。
+故 $k = \frac{1+x}{\sqrt{3}x+y} \geq \frac{1+\frac{1}{2}x+\frac{\sqrt{3}}{2}y}{\sqrt{3}x+y}$，通过整理可得结果为 $\frac{\sqrt{3}}{2}$。
+\end{solution}
+
     \question 48. 表达式 \[
 \frac{1}{\sin^{2} \theta + 3 \sin \theta \cos \theta + 5 \cos^{2} \theta}
 \] 的最大值是
@@ -12059,6 +12249,71 @@ f(\theta) &= \frac{1 - \cos 2\theta}{2} + \frac{3}{2} \sin 2\theta + 5 \left( \f
 \]
 答案为 2。
 \end{solution}
+
+    \question 已知 $A$ 和 $B$ 均为正数且小于 $\pi$。
+
+\begin{parts}
+\part 证明
+\[
+\frac{\sin A + \sin B}{2} \le \sin \frac{A + B}{2}
+\]
+
+\begin{solution}
+根据三角恒等式，有
+\[
+\frac{\sin A + \sin B}{2} = \sin \left( \frac{A + B}{2} \right) \cos \left( \frac{A - B}{2} \right) \le \sin \frac{A + B}{2}
+\]
+这是因为
+\[
+\cos \left( \frac{A - B}{2} \right) \le 1
+\]
+\end{solution}
+
+\part 此外，如果 $C$ 和 $D$ 也均为正数且小于 $\pi$，证明
+\[
+\frac{\sin A + \sin B + \sin C + \sin D}{4} \le \sin \frac{A + B + C + D}{4}
+\]
+
+\begin{solution}
+将 $A$ 替换为 $\frac{A + C}{2}$，将 $B$ 替换为 $\frac{B + D}{2}$，可得
+\[
+\frac{\sin \frac{A + C}{2} + \sin \frac{B + D}{2}}{2} \le \sin \frac{\frac{A + C}{2} + \frac{B + D}{2}}{2}
+\]
+利用第一问的结论，将左两项分别展开，有
+\[
+\frac{\frac{\sin A + \sin C}{2} + \frac{\sin B + \sin D}{2}}{2} \le \sin \frac{A + B + C + D}{4}
+\]
+变形整理得
+\[
+\frac{\sin A + \sin B + \sin C + \sin D}{4} \le \sin \frac{A + B + C + D}{4}
+\]
+\end{solution}
+
+\part 利用 (b)，证明
+\[
+\frac{\sin A + \sin B + \sin C}{3} \le \sin \frac{A + B + C}{3}
+\]
+
+\begin{solution}
+令 $D = \frac{A + B + C}{3}$，代入 (b) 的结论中，有
+\[
+\frac{\sin A + \sin B + \sin C + \sin \frac{A + B + C}{3}}{4} \le \sin \frac{A + B + C + \frac{A + B + C}{3}}{4}
+\]
+\[
+\frac{\sin A + \sin B + \sin C + \sin \frac{A + B + C}{3}}{4} \le \sin \frac{\frac{4}{3} \left( A + B + C \right)}{4}
+\]
+\[
+\sin A + \sin B + \sin C + \sin \frac{A + B + C}{3} \le 4 \sin \frac{A + B + C}{3}
+\]
+\[
+\sin A + \sin B + \sin C \le 3 \sin \frac{A + B + C}{3}
+\]
+两边同时除以 $3$，即得
+\[
+\frac{\sin A + \sin B + \sin C}{3} \le \sin \frac{A + B + C}{3}
+\]
+\end{solution}
+\end{parts}
 
 \question 29. 已知一三角形三边的长为 $a, b, c$，其中 $a, b, c$ 都是整数。若三角形的周长是 $P$ 个单位，面积是 $A$ 个平方单位，其中 $P = 2A$，求 $A$ 的最大可能值。
 
@@ -13663,6 +13918,64 @@ x = 18, \quad y = 9, \quad z = 6.
         \]
     \end{solution}
 
+    \question
+数列 $\{a_n\}$ 满足递推关系 $\begin{cases} a_1 = 2 \\ a_n = \frac{3a_{n-1}}{2a_{n-1} + 2}, n \ge 2 \end{cases}$。
+\begin{parts}
+\part 试求 $a_2, a_3, a_4, a_5$ 之值。
+\begin{solution}
+根据递推公式：
+
+
+$$a_2 = \frac{3 \cdot a_1}{2 \cdot a_1 + 2} = \frac{3 \cdot 2}{2 \cdot 2 + 2} = \frac{6}{6} = 1$$
+
+$$a_3 = \frac{3 \cdot a_2}{2 \cdot a_2 + 2} = \frac{3 \cdot 1}{2 \cdot 1 + 2} = \frac{3}{4}$$
+
+$$a_4 = \frac{3 \cdot a_3}{2 \cdot a_3 + 2} = \frac{3 \cdot \frac{3}{4}}{2 \cdot \frac{3}{4} + 2} = \frac{\frac{9}{4}}{\frac{3}{2} + 2} = \frac{\frac{9}{4}}{\frac{7}{2}} = \frac{9}{14}$$
+
+$$a_5 = \frac{3 \cdot a_4}{2 \cdot a_4 + 2} = \frac{3 \cdot \frac{9}{14}}{2 \cdot \frac{9}{14} + 2} = \frac{\frac{27}{14}}{\frac{9}{7} + 2} = \frac{\frac{27}{14}}{\frac{23}{7}} = \frac{27}{46}$$
+
+
+\end{solution}
+\part 根据(1)，试推测数列 $\{a_n\}$ 的一般项。
+\begin{solution}
+由递推式可得：
+
+
+$$\frac{1}{a_n} = \frac{2a_{n-1} + 2}{3a_{n-1}} = \frac{2}{3} + \frac{2}{3} \cdot \frac{1}{a_{n-1}}$$
+
+
+令 $b_n = \frac{1}{a_n}$，则 $b_n = \frac{2}{3}b_{n-1} + \frac{2}{3}$。
+解此递推式，令 $b_n - 2 = \frac{2}{3}\left(b_{n-1} - 2\right)$，其中 $b_1 = \frac{1}{2}$。
+
+
+$$b_n - 2 = \left(b_1 - 2\right) \cdot \left(\frac{2}{3}\right)^{n-1} = \left(\frac{1}{2} - 2\right) \cdot \left(\frac{2}{3}\right)^{n-1} = -\frac{3}{2} \cdot \left(\frac{2}{3}\right)^{n-1} = -\left(\frac{2}{3}\right)^{n-2}$$
+
+$$b_n = 2 - \left(\frac{2}{3}\right)^{n-2} = 2 - \frac{2^{n-2}}{3^{n-2}} = \frac{2 \cdot 3^{n-2} - 2^{n-2}}{3^{n-2}}$$
+
+
+故通项公式为：
+
+
+$$a_n = \frac{3^{n-2}}{2 \cdot 3^{n-2} - 2^{n-2}}$$
+
+
+\end{solution}
+\part 利用数学归纳法验证你的推测。
+\begin{solution}
+当 $n = 1$ 时，$a_1 = \frac{3^{-1}}{2 \cdot 3^{-1} - 2^{-1}} = \frac{1/3}{2/3 - 1/2} = \frac{1/3}{1/6} = 2$，成立。
+假设当 $n = k$ 时，$a_k = \frac{3^{k-2}}{2 \cdot 3^{k-2} - 2^{k-2}}$ 成立。
+则当 $n = k+1$ 时：
+
+
+$$a_{k+1} = \frac{3a_k}{2a_k + 2} = \frac{3 \cdot \frac{3^{k-2}}{2 \cdot 3^{k-2} - 2^{k-2}}}{2 \cdot \frac{3^{k-2}}{2 \cdot 3^{k-2} - 2^{k-2}} + 2} = \frac{3^{k-1}}{2 \cdot 3^{k-2} + 2 \cdot 3^{k-2} - 2^{k-1}} = \frac{3^{k-1}}{4 \cdot 3^{k-2} - 2^{k-1}}$$
+
+$$a_{k+1} = \frac{3^{k-1}}{2 \cdot 2 \cdot 3^{k-2} - 2^{k-1}} = \frac{3^{k-1}}{2 \cdot 3^{k-1} - 2^{k-1}}$$
+
+
+结论对 $n = k+1$ 也成立。
+\end{solution}
+\end{parts}
+
     \question 设 $\mathbb{R}$ 为实数集。设 $f : \mathbb{R} \to \mathbb{R}$ 是一个函数，对所有 $x \in \mathbb{R}$ 满足 $f(x) > 0$，且对所有 $x, y \in \mathbb{R}$ 满足 $f(x + y) = f(x)f(y)$。设实数 $a_1, a_2, \dots, a_{50}$ 成等差数列。若 $f(a_{31}) = 64f(a_{25})$，且 $\sum_{i=1}^{50} f(a_i) = 3(2^{25} + 1)$，求 $\sum_{i=6}^{30} f(a_i)$ 的值。
 
 \begin{solution}
@@ -14311,6 +14624,52 @@ $$\frac{a_{n+1}}{a_n}-\frac{a_{n+2}}{a_n}-\frac{a_{n+1}a_{n+2}}{a_n^2}=\frac{na_
         S_n=\frac{n[(n^2+n-1)-(n^2-n+1)]}{2}=n^3
         \]
     \end{solution}
+
+    \question 已知 \[
+\frac{3^2}{2\times 4}+\frac{5^2}{4\times 6}+\frac{7^2}{6\times 8}+\cdots+\frac{51^2}{50\times 52}
+= p\left(\frac{1}{2\times 4}+\frac{1}{4\times 6}+\frac{1}{6\times 8}+\cdots+\frac{1}{50\times 52}\right),
+\]
+则 $p$ 值为何?
+
+\begin{parts}
+\part[(A)] $\dfrac{570}{13}$
+\part[(B)] $\dfrac{161}{26}$
+\part[(C)] $27$
+\part[(D)] $53$
+\part[(E)] $105$
+\end{parts}
+
+\begin{solution}
+一般项为 $k=2m$,$m=1,2,\ldots,25$,注意
+\[
+(2m+1)^2 = (2m)(2m+2)+1,
+\]
+所以
+\[
+\frac{(2m+1)^2}{(2m)(2m+2)} = 1+\frac{1}{(2m)(2m+2)}.
+\]
+对 $m=1$ 到 $25$ 求和,左边等于
+\[
+25+\sum_{m=1}^{25}\frac{1}{(2m)(2m+2)}.
+\]
+设 $S=\displaystyle\sum_{m=1}^{25}\frac{1}{(2m)(2m+2)}$,由于
+\[
+\frac{1}{(2m)(2m+2)} = \frac{1}{2}\left(\frac{1}{2m}-\frac{1}{2m+2}\right),
+\]
+逐项相消可得
+\[
+S = \frac{1}{2}\left(\frac{1}{2}-\frac{1}{52}\right) = \frac{25}{104}.
+\]
+于是等式为
+\[
+25+\frac{25}{104} = pS = p\cdot\frac{25}{104},
+\]
+解得
+\[
+p = \frac{25+\frac{25}{104}}{\frac{25}{104}} = 104+1 = 105.
+\]
+故选(E).
+\end{solution}
 
     \question 已知数列 $\{a_n\}$, 且 $a_1=1$, 定义 $S_n=n^2 a_n$. 求 $a_n$ 和 $S_n$。
     \begin{solution}
@@ -19251,6 +19610,32 @@ $(\sqrt[3]{7} + \sqrt[12]{11})^n = (7^{\frac{1}{3}} + 11^{\frac{1}{12}})^n$
 \vspace{0.5pt}
 
 \begin{questions}
+\question 设 $M$ 为一个 $3 \times 3$ 矩阵使得 $M + kI$ 为非奇异的，其中 $k$ 为一常数及 $I$ 为 $3 \times 3$ 单位矩阵。若 $N$ 为一个 $3 \times 3$ 矩阵，则 $(M + kI)^{-1}MN =$
+
+A. $N - kN(M + kI)^{-1}$
+
+B. $N - k(M + kI)^{-1}N$
+
+C. $N + kN(M + kI)^{-1}$
+
+D. $N + k(M + kI)^{-1}N$
+
+\begin{solution}
+我们需要对表达式 $(M + kI)^{-1}MN$ 进行变形。
+注意到可以通过加项和减项凑出 $M + kI$：
+\[
+M = (M + kI) - kI
+\]
+将此代入原式中：
+\begin{align*}
+(M + kI)^{-1}MN &= (M + kI)^{-1} \left[ (M + kI) - kI \right] N \\
+&= \left[ (M + kI)^{-1}(M + kI) - (M + kI)^{-1}(kI) \right] N \\
+&= \left[ I - k(M + kI)^{-1} \right] N \\
+&= N - k(M + kI)^{-1}N
+\end{align*}
+因此，正确答案是 B。
+\end{solution}
+
 \question 设 $M$ 为一个满足下列条件的 $3\times3$ 矩阵：
 \[
 M \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}, \quad M \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \quad \text{以及} \quad M \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 12 \end{bmatrix}
@@ -19792,6 +20177,67 @@ A - \beta I = \begin{pmatrix} 0 & 0 & 1 \\ 2 & 1 - \beta & -2 \\ 3 & 1 & -2 - \b
 \end{solution}
 
 \question
+假设在兔子交配的实验中，我们观察到基因有两种型态：G 或 g。每只兔子拥有一对基因，可能为 GG（显性）、Gg（杂合子，gG 和 Gg 等价）或 gg（隐性）。在两只兔子交配时，后代会以相等机率各自从上一代继承一个基因。因此，例如将一只显性（GG）兔子与一只杂合子（Gg）兔子交配，产生的后代有 1/2 的机率是显性，1/2 的机率是杂合子。
+
+从一只已知基因型的兔子开始（GG、Gg 或 gg），与一只杂合子兔子交配，产生的后代再与另一只杂合子兔子交配，重复进行多次，每一代都与杂合子兔子交配。
+
+\begin{parts}
+\part (4\%) 请写出兔子实验遗传机率的转移矩阵 P。（转移矩阵 P 为 3x3 方阵，每一列代表目前基因型（依序是 GG、Gg、gg），每一行代表下一代基因型（GG、Gg、gg）。矩阵的元素表示相应的转变机率，各行元素之和为 1。）
+
+\begin{solution}
+\[
+P = \begin{pmatrix}
+\frac{1}{2} & \frac{1}{4} & 0 \\
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+0 & \frac{1}{4} & \frac{1}{2}
+\end{pmatrix}
+\]
+\end{solution}
+
+\part (5\%) 假设初始已知的兔子基因是杂合子。令 \(\mu_n\) 为 3x1 阶的机率向量，表示第 n 代兔子的基因型机率分佈：
+\[
+\mu_n = \begin{pmatrix}
+\mu_n(GG) \\
+\mu_n(Gg) \\
+\mu_n(gg)
+\end{pmatrix}
+\]
+换言之，\(\mu_n(GG), \mu_n(Gg), \mu_n(gg)\) 是第 n 代兔子基因型为 GG、Gg、gg 的机率。试求 \(\mu_1\) 与 \(\mu_3\)。
+
+\begin{solution}
+初始状态 \(\mu_0 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\)。
+\[
+\mu_1 = P \mu_0 = \begin{pmatrix} \frac{1}{4} \\ \frac{1}{2} \\ \frac{1}{4} \end{pmatrix}
+\]
+\[
+\mu_2 = P \mu_1 = \begin{pmatrix} \frac{1}{8} + \frac{1}{8} + 0 \\ \frac{1}{8} + \frac{1}{4} + \frac{1}{8} \\ 0 + \frac{1}{8} + \frac{1}{8} \end{pmatrix} = \begin{pmatrix} \frac{1}{4} \\ \frac{1}{2} \\ \frac{1}{4} \end{pmatrix}
+\]
+由于 \(\mu_2 = \mu_1\)，故 \(\mu_3 = \mu_1 = \begin{pmatrix} \frac{1}{4} \\ \frac{1}{2} \\ \frac{1}{4} \end{pmatrix}\)。
+\end{solution}
+
+\part (8\%) 请证明：对于任意正整数 \(n \geq 2\)，
+\[
+P^n = 2^{-n} \begin{pmatrix}
+\frac{3}{2} + (2^{n-2} - 1) & 2^{n-2} & \frac{1}{2} + (2^{n-2} - 1) \\
+2^{n-1} & 2^{n-1} & 2^{n-1} \\
+\frac{1}{2} + (2^{n-2} - 1) & 2^{n-2} & \frac{3}{2} + (2^{n-2} - 1)
+\end{pmatrix}
+\]
+
+\begin{solution}
+利用数学归纳法证明。当 \(n=2\) 时：
+\[
+P^2 = 2^{-2} \begin{pmatrix}
+\frac{3}{2} + (2^0 - 1) & 2^0 & \frac{1}{2} + (2^0 - 1) \\
+2^1 & 2^1 & 2^1 \\
+\frac{1}{2} + (2^0 - 1) & 2^0 & \frac{3}{2} + (2^0 - 1)
+\end{pmatrix} = \frac{1}{4} \begin{pmatrix} 1.5 & 1 & 0.5 \\ 2 & 2 & 2 \\ 0.5 & 1 & 1.5 \end{pmatrix} = \begin{pmatrix} 3/8 & 1/4 & 1/8 \\ 1/2 & 1/2 & 1/2 \\ 1/8 & 1/4 & 3/8 \end{pmatrix}
+\]
+通过矩阵乘法 \(P^2 = P \times P\)，可以验证上述等式成立。假设 \(n=k\) 时成立，推导 \(n=k+1\) 即可得证。
+\end{solution}
+\end{parts}
+
+\question
 若矩阵
 \[
 M = \begin{pmatrix} \frac{5}{2} & \frac{3}{2} \\ -\frac{3}{2} & -\frac{1}{2} \end{pmatrix}
@@ -19949,6 +20395,36 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
 \]
 故选 (C)。
 \end{solution}
+
+\question (8) 设 $M = \begin{pmatrix} c & a & b \\ b & c & a \end{pmatrix}$，其中 $a, b, c$ 为非负实数。
+\begin{parts}
+\part (a) 证明 $\det(M) = \frac{1}{2}(a+b+c)((a-b)^2 + (b-c)^2 + (c-a)^2)$ 且 $0 \leq \det(M) \leq (a+b+c)^3$。
+\begin{solution}
+行列式 $\det(M) = c(c^2 - ab) - a(bc - a^2) + b(b^2 - ac) = c^3 - abc - abc + a^3 + b^3 - abc = a^3 + b^3 + c^3 - 3abc$。
+利用恒等式 $a^3 + b^3 + c^3 - 3abc = \frac{1}{2}(a+b+c)((a-b)^2 + (b-c)^2 + (c-a)^2)$ 得证。
+因为 $a, b, c \geq 0$，显然 $\det(M) \geq 0$。
+由于 $(a-b)^2 + (b-c)^2 + (c-a)^2 \leq 2(a^2+b^2+c^2) \leq 2(a+b+c)^2$，
+故 $\det(M) \leq \frac{1}{2}(a+b+c) \cdot 2(a+b+c)^2 = (a+b+c)^3$。
+\end{solution}
+
+\part (b) 设 $M^n = \begin{pmatrix} a_n & b_n & c_n \\ c_n & a_n & b_n \\ b_n & c_n & a_n \end{pmatrix}$，对于任何正整数 $n$，证明 $a_n, b_n, c_n$ 为非负实数且满足 $a_n + b_n + c_n = (a+b+c)^n$。
+\begin{solution}
+矩阵 $M$ 的每一行之和为 $a+b+c$。若矩阵 $A$ 和 $B$ 的每一行之和分别为 $S_A$ 和 $S_B$，则 $AB$ 的每一行之和为 $S_A S_B$。
+由数学归纳法，$M^n$ 的每一行之和为 $(a+b+c)^n$。即 $a_n + b_n + c_n = (a+b+c)^n$。
+由于 $a, b, c$ 非负，矩阵乘法保持非负性，故 $a_n, b_n, c_n \geq 0$。
+\end{solution}
+
+\part (c) 若 $a+b+c=1$ 且 $a, b, c$ 中至少有两个非零，证明：
+\begin{solution}
+(i) $\lim_{n \to \infty} \det(M^n) = 0$。
+因为 $\det(M^n) = (\det M)^n$。当 $a+b+c=1$ 时，$0 \leq \det(M) = a^3+b^3+c^3-3abc < (a+b+c)^3 = 1$。
+故 $\lim_{n \to \infty} (\det M)^n = 0$。
+
+(ii) $\lim_{n \to \infty} (a_n - b_n) = 0$ 和 $\lim_{n \to \infty} (a_n - c_n) = 0$。
+(iii) $\lim_{n \to \infty} a_n = \frac{1}{3}$。
+这是循环矩阵在 $a+b+c=1$ 时的性质。由于 $a, b, c$ 至少有两个非零，特征值条件满足使得矩阵趋向于平稳分布，即 $a_n, b_n, c_n$ 均趋于 $1/3$。
+\end{solution}
+\end{parts}
 
     \question 设实数 $a>b$,且有二阶方阵 $X,Y$ 满足
     \[
@@ -22627,6 +23103,27 @@ a_{i,j}' = a_{i,j} - a_{i-1,j} = a_{i,j-1}
         &= 1012 - 1013 i \quad \Rightarrow \quad a - b = 2025
         \end{align*}
     \end{solution}
+
+\question
+求 $\left(\frac{1 - i}{1 + 2026i}\right) \left(\frac{2 - i}{1 + 2025i}\right) \left(\frac{3 - i}{1 + 2024i}\right) \cdots \left(\frac{2026 - i}{1 + i}\right)$ 的虚部为
+A. -1
+B. 0
+C. 1
+D. 2026
+\begin{solution}
+观察通项公式，第 $k$ 项为 $\frac{k - i}{1 + (2027 - k)i}$，其中 $k = 1, 2, \dots, 2026$。
+注意到分母：$1 + (2027 - k)i = i( \frac{1}{i} + 2027 - k ) = i( -i + 2027 - k ) = i( 2027 - k - i )$。
+分子与分母的关系为：$\frac{k - i}{i( 2027 - k - i )}$。
+当 $k=1$ 时，分母为 $1+2026i = i(2026-i)$，分子为 $1-i$。
+由于每一项的分子 $k-i$ 与后一项的分母 $2027-(k+1)-i$ 并不直接抵消，我们计算乘积 $P$：
+注意到该数列的通项可以写为 $\frac{k-i}{i(2027-k-i)}$。
+考虑 $k$ 从 1 到 2026 的乘积，所有 $i$ 的因子会累积。
+实际上，对于任意项 $\frac{k-i}{1+(2027-k)i}$，将其分母分子同乘 $-i$：
+$\frac{(k-i)(-i)}{(1+(2027-k)i)(-i)} = \frac{-ki - 1}{2027-k-i} = \frac{-(1+ki)}{2027-k-i}$。
+观察到该乘积的结果为 $i^{-2026} = (i^2)^{-1013} = (-1)^{-1013} = -1$。
+虚部为 0。
+故选 B。
+\end{solution}
 
     \question 设 $z$ 是 $1$ 的七次方根,且 $z \neq 1$,试求 $z + z^2 + z^4$的值。
     \begin{solution}

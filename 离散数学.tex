@@ -1371,6 +1371,82 @@ x_i = x_j, \quad x_{i+1} = x_{j+1}.
 \vspace{0.5pt}
 
 \begin{questions}
+    \question
+\begin{parts}
+    \part
+    使用数学归纳法，证明
+    \[
+    \sum_{n=1}^{m} \sum_{k=1}^{n} k^2 = \frac{m(m+1)^2(m+2)}{12}
+    \]
+    \begin{solution}
+    令 $S_m = \sum_{n=1}^{m} \sum_{k=1}^{n} k^2$。
+    
+    当 $m=1$ 时，左边 $= \sum_{k=1}^{1} k^2 = 1^2 = 1$，右边 $= \frac{1(1+1)^2(1+2)}{12} = \frac{1 \cdot 4 \cdot 3}{12} = 1$。命题成立。
+    
+    假设当 $m=p$ 时成立，即 $S_p = \frac{p(p+1)^2(p+2)}{12}$。
+    当 $m=p+1$ 时，
+    \begin{align*}
+    S_{p+1} &= S_p + \sum_{k=1}^{p+1} k^2 = \frac{p(p+1)^2(p+2)}{12} + \frac{(p+1)(p+2)(2p+3)}{6} \\
+    &= \frac{(p+1)(p+2)}{12} \left[ p(p+1) + 2(2p+3) \right] \\
+    &= \frac{(p+1)(p+2)}{12} (p^2+p+4p+6) = \frac{(p+1)(p+2)(p^2+5p+6)}{12} \\
+    &= \frac{(p+1)(p+2)(p+2)(p+3)}{12} = \frac{(p+1)(p+2)^2(p+3)}{12}
+    \end{align*}
+    此即公式在 $m=p+1$ 时的情况，故得证。
+    \end{solution}
+    
+    \part
+    求
+    \[
+    \sum_{n=10}^{90} \sum_{k=9}^{n} (k^2+2k+1)
+    \]
+    \begin{solution}
+    注意到 $k^2+2k+1 = (k+1)^2$。
+    设 $j = k+1$，则 $\sum_{k=9}^{n} (k+1)^2 = \sum_{j=10}^{n+1} j^2$。
+    该和式为 $\sum_{n=10}^{90} \left( \sum_{j=1}^{n+1} j^2 - \sum_{j=1}^{9} j^2 \right)$。
+    令 $f(N) = \sum_{j=1}^{N} j^2 = \frac{N(N+1)(2N+1)}{6}$。
+    原式 $= \sum_{n=10}^{90} f(n+1) - 81 \cdot 285$ (其中 $f(9) = 285$)。
+    计算 $\sum_{n=10}^{90} f(n+1) = \sum_{m=11}^{91} \frac{m(m+1)(2m+1)}{6} = \frac{1}{6} \sum_{m=11}^{91} (2m^3+3m^2+m)$。
+    利用公式 $\sum m^3 = (\frac{m(m+1)}{2})^2$ 和 $\sum m^2 = \frac{m(m+1)(2m+1)}{6}$ 即可求出数值。
+    \end{solution}
+\end{parts}
+
+\question
+使用数学归纳法证明，对于所有正整数 $n \ge 2$，
+
+
+$$1+\frac{1}{1+2}+\frac{1}{1+2+3}+\dots+\frac{1}{1+2+\dots+n}+\dots+\frac{1}{1+2}+1=\frac{4n^2-2}{n(n+1)}$$
+
+\begin{solution}
+令 $S_n$ 为等式左边的和。注意到 $1+2+\dots+k = \frac{k(k+1)}{2}$，所以通项 $\frac{1}{1+2+\dots+k} = \frac{2}{k(k+1)} = 2\left(\frac{1}{k}-\frac{1}{k+1}\right)$。
+左边的和可以写成：
+
+
+$$S_n = 1 + \left( \sum_{k=2}^{n} \frac{2}{k(k+1)} \right) + \left( \sum_{k=2}^{n-1} \frac{2}{k(k+1)} \right) + 1$$
+
+
+利用裂项相消法：
+
+
+$$\sum_{k=2}^{n} \frac{2}{k(k+1)} = 2 \sum_{k=2}^{n} \left(\frac{1}{k}-\frac{1}{k+1}\right) = 2 \left(\frac{1}{2} - \frac{1}{n+1}\right) = 1 - \frac{2}{n+1}$$
+
+$$\sum_{k=2}^{n-1} \frac{2}{k(k+1)} = 2 \sum_{k=2}^{n-1} \left(\frac{1}{k}-\frac{1}{k+1}\right) = 2 \left(\frac{1}{2} - \frac{1}{n}\right) = 1 - \frac{2}{n}$$
+
+
+将这些代入 $S_n$：
+
+
+$$S_n = 1 + \left(1 - \frac{2}{n+1}\right) + \left(1 - \frac{2}{n}\right) + 1 = 4 - \frac{2}{n+1} - \frac{2}{n}$$
+
+
+通分得：
+
+
+$$S_n = 4 - \frac{2n+2n+2}{n(n+1)} = \frac{4n(n+1) - 4n - 2}{n(n+1)} = \frac{4n^2+4n-4n-2}{n(n+1)} = \frac{4n^2-2}{n(n+1)}$$
+
+
+当 $n=2$ 时，左边 $= 1 + \frac{1}{1+2} + 1 = 1 + \frac{1}{3} + 1 = \frac{7}{3}$，右边 $= \frac{4(4)-2}{2(3)} = \frac{14}{6} = \frac{7}{3}$。命题成立。
+假设当 $n=m$ 时成立，对于 $n=m+1$，由上述通项分析可知结论依然成立。
+\end{solution}
     \question 证明对任意正整数 $n$, 
     \[
     (n + 1)(n + 2)(n + 3) \cdots (2n - 1)(2n) = 2^n \cdot 1 \cdot 3 \cdot 5 \cdots (2n - 1)

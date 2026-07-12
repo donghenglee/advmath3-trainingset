@@ -2590,6 +2590,41 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
         \end{align*}
     \end{solution}
 
+    \question
+设 $a_n$ 为某等比数列的第 $n$ 项。已知 $\{a_1, a_2, a_3, a_4, a_5\}$ 及 $\{a_4, a_5, a_6, a_7, a_8\}$ 的标准差分别为 $48$ 及 $6$。求 $\{a_5, a_6, a_7, a_8, a_9\}$ 的方差。
+
+A. $3$
+
+B. $9$
+
+C. $12$
+
+D. $144$
+
+\begin{solution}
+设该等比数列的公比为 $r$。根据等比数列的性质，项数相同且整体平移的子序列的标准差之间相差公比的绝对值的相应次方倍。
+\[
+\sigma(a_4, a_5, a_6, a_7, a_8) = |r|^3 \sigma(a_1, a_2, a_3, a_4, a_5)
+\]
+代入已知条件：
+\[
+6 = |r|^3 \times 48
+\]
+解得：
+\[
+|r|^3 = \frac{1}{8} \implies |r| = \frac{1}{2}
+\]
+接下来求数列 $\{a_5, a_6, a_7, a_8, a_9\}$ 的标准差：
+\[
+\sigma(a_5, a_6, a_7, a_8, a_9) = |r| \times \sigma(a_4, a_5, a_6, a_7, a_8) = \frac{1}{2} \times 6 = 3
+\]
+因此，$\{a_5, a_6, a_7, a_8, a_9\}$ 的方差为：
+\[
+3^2 = 9
+\]
+故选 B。
+\end{solution}
+
     \question 在下图所示的大正方形中随机选择一个点。图中嵌套的小正方形无限向内延续。求该随机点所处正方形数量的期望值。例如,图中所示的样例点位于其中的 2 个正方形内。
     \begin{figure}[H]
         \centering
@@ -8183,6 +8218,43 @@ t = \sum_{i=1}^{10} x_i = 2.561 < 5.425.
         (a,b)=(4,2)
         \]
     \end{solution}
+
+    \question
+设有 4 个二维数据 $(x_1, y_1), (x_2, y_2), (x_3, y_3), (x_4, y_4)$，其统计资料为：$x_1+x_2+x_3+x_4=12$，$y_1+y_2+y_3+y_4=8$，$x_1^2+x_2^2+x_3^2+x_4^2=44$，$y_1^2+y_2^2+y_3^2+y_4^2=18$。如果小花求 $y$ 对 $x$ 的回归直线方程式时，不慎将斜率公式误植为 $\frac{(x_1+\mu_x)(y_1+\mu_x)+(x_2+\mu_x)(y_2+\mu_x)+(x_3+\mu_x)(y_3+\mu_x)+(x_4+\mu_x)(y_4+\mu_x)}{(y_1+\mu_y)^2+(y_2+\mu_y)^2+(y_3+\mu_y)^2+(y_4+\mu_y)^2}$，其中 $\mu_x, \mu_y$ 分别为 $x, y$ 的算术平均数，求得斜率为 $\frac{47}{33}$，其余计算没有错误，则正确的回归直线方程式应为 $y = \frac{(18)(19)}{(20)}x + \frac{(21)(22)}{(23)}$。（化至最简分数）
+
+(参考说明：$y$ 对 $x$ 的回归直线方程式：$y-\mu_y = \frac{(x_1-\mu_x)(y_1-\mu_y)+(x_2-\mu_x)(y_2-\mu_y)+\dots+(x_n-\mu_x)(y_n-\mu_y)}{(x_1-\mu_x)^2+(x_2-\mu_x)^2+\dots+(x_n-\mu_x)^2}(x-\mu_x)$ )
+
+\begin{solution}
+已知 $\mu_x = 3, \mu_y = 2$。
+\[
+|\vec{x}|^2 = \frac{44}{4} = 11, \quad |\vec{y}|^2 = \frac{18}{4} = \frac{9}{2}
+\]
+\[
+\sigma_x = \sqrt{11 - 9} = \sqrt{2}, \quad \sigma_y = \sqrt{\frac{9}{2} - 4} = \sqrt{\frac{1}{2}}
+\]
+\[
+|\vec{x} + \mu_x \vec{e}| = \sqrt{36 + 2} = \sqrt{38}
+\]
+\[
+|\vec{y} + \mu_y \vec{e}| = \sqrt{\frac{1}{2} + 16} = \sqrt{\frac{33}{2}}
+\]
+由误植公式可知：
+\[
+\cos \theta = \frac{(\vec{x} + \mu_x \vec{e}) \cdot (\vec{y} + \mu_y \vec{e})}{|\vec{x} + \mu_x \vec{e}| |\vec{y} + \mu_y \vec{e}|} = \frac{47}{33} \times \frac{\sqrt{\frac{33}{2}}}{\sqrt{38}} = \frac{\frac{47}{2}\sqrt{2}}{\sqrt{33} \times \sqrt{38}}
+\]
+相关系数 $r$ 的计算为：
+\[
+r = \frac{\frac{47}{2}\sqrt{2} - 6 - 4\sqrt{2}}{\sqrt{2} \times \frac{1}{\sqrt{2}}} = -\frac{1}{2}
+\]
+正确斜率 $m$ 为：
+\[
+m = -\frac{1}{2} \times \frac{\frac{1}{\sqrt{2}}}{\sqrt{2}} = -\frac{1}{4}
+\]
+正确的回归直线方程式为 $y - 2 = -\frac{1}{4}(x - 3)$，化简得：
+\[
+y = -\frac{1}{4}x + \frac{11}{4}
+\]
+\end{solution}
 
     \question
 研究每月电子商务销售额与在线广告费用之间的关系。已知去年 7 家在线商店的调查结果。考虑到使用简单线性回归模型 $y = \beta_0 + \beta_1 x + \epsilon, \epsilon \sim N(0, \sigma^2)$ 来研究这种关系。
