@@ -2105,6 +2105,52 @@ $\sum_{k=x}^{2x} (-1)^{k-1} m^{4(k-1)} = \frac{m^{4(x-1)} [(-1)^{x-1} - m^{4(x+1
         由数学归纳法, 命题 $P_n$ 对所有正整数 $n$ 均成立。
     \end{solution}
 
+    \question
+问题 82.1 （$\star\star\star$ — 线程第82天）。
+使用数学归纳法，证明
+\[
+\sum_{k=1}^n \log\left( \sum_{i=1}^k i \right) = \log\left( \frac{n!(n+1)!}{2^n} \right)
+\]
+对于所有正整数 $n$。
+\begin{solution}
+基本情况：当 $n=1$ 时，左边为
+\[
+\sum_{k=1}^1 \log\left( \sum_{i=1}^k i \right) = \log(1) = 0
+\]
+右边为
+\[
+\log\left( \frac{1!(1+1)!}{2^1} \right) = \log\left( \frac{2}{2} \right) = \log(1) = 0
+\]
+因此，当 $n=1$ 时等式成立。
+
+归纳假设：假设对于某个正整数 $m$，等式成立，即
+\[
+\sum_{k=1}^m \log\left( \sum_{i=1}^k i \right) = \log\left( \frac{m!(m+1)!}{2^m} \right)
+\]
+
+归纳步骤：我们需要证明当 $n=m+1$ 时等式也成立。
+\[
+\sum_{k=1}^{m+1} \log\left( \sum_{i=1}^k i \right) = \sum_{k=1}^m \log\left( \sum_{i=1}^k i \right) + \log\left( \sum_{i=1}^{m+1} i \right)
+\]
+利用归纳假设和等差数列求和公式 $\sum_{i=1}^{m+1} i = \frac{(m+1)(m+2)}{2}$，我们有
+\[
+= \log\left( \frac{m!(m+1)!}{2^m} \right) + \log\left( \frac{(m+1)(m+2)}{2} \right)
+\]
+利用对数的性质 $\log(A) + \log(B) = \log(AB)$，
+\[
+= \log\left( \frac{m!(m+1)!}{2^m} \frac{(m+1)(m+2)}{2} \right)
+\]
+\[
+= \log\left( \frac{m!(m+1)! (m+1)(m+2)}{2^{m+1}} \right)
+\]
+因为 $m!(m+1) = (m+1)!$ 且 $(m+1)!(m+2) = (m+2)!$，
+\[
+= \log\left( \frac{(m+1)!(m+2)!}{2^{m+1}} \right)
+\]
+这正是 $n=m+1$ 时的右边表达式。
+因此，由数学归纳法可知，原等式对于所有正整数 $n$ 都成立。
+\end{solution}
+
     \question 定义数列 $\{x_n\}$ 递推关系为 $x_1 = \sqrt{5}$ 且 $x_{n+1} = x_n^2 - 2$ 对自然数 $n \ge 1$。求
     \[
     \lim_{n \to \infty} \frac{x_1 \cdot x_2 \cdot \cdots \cdot x_n}{x_{n+1}}.

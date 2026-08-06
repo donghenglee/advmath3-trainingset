@@ -11811,8 +11811,168 @@ V &= \int_0^3 S(t) dt = \int_0^1 S(t) dt + \int_1^2 S(t) dt + \int_2^3 S(t) dt \
 \end{align*}
 故 $V = 13\pi$。
 \end{solution}
-\end{questions}
 
+\question
+设 $a$ 和 $b$ 为两个正整数。对于任何正整数 $n$，定义
+\[
+f_n(x) = \frac{x^n\left(a-bx\right)^n}{n!}
+\]
+\begin{parts}
+\part
+(i) 证明如果 $0 < x < \frac{a}{b}$，则
+\[
+0 < f_n(x) \leq \frac{1}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+(ii) 由此证明如果 $\pi \leq \frac{a}{b}$，则
+\[
+0 < \int_0^\pi f_n(x) \sin x \,dx \leq \frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+\begin{solution}
+(i) 对于 $0 < x < \frac{a}{b}$，$x > 0$ 且 $a-bx > 0$。因此
+\[
+f_n(x) = \frac{x^n\left(a-bx\right)^n}{n!} > \frac{0^n}{n!} = 0
+\]
+考虑 $f_n(x) = \frac{\left(x\left(a-bx\right)\right)^n}{n!} = \frac{\left(g(x)\right)^n}{n!}$，其中 $g(x) = x(a-bx)$。则
+\[
+g_{\max} = a\left(\frac{a}{2b}\right) - b\left(\frac{a}{2b}\right)^2 = \frac{a^2}{2b} - \frac{a^2}{4b} = \frac{a^2}{4b}
+\]
+由于 $x^n\left(a-bx\right)^n = \left(g(x)\right)^n \leq \left(\frac{a^2}{4b}\right)^n$，我们有
+\[
+0 < f_n(x) \leq \frac{1}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+(ii) 如果 $\pi \leq \frac{a}{b}$，且 $x \in [0, \pi]$，则 $x \leq \pi \leq \frac{a}{b}$。因此我们可以使用 (a)(i)。则
+\[
+0 < \int_0^\pi f_n(x) \sin x \,dx \leq \frac{1}{n!} \left(\frac{a^2}{4b}\right)^n \int_0^\pi \sin x \,dx \leq \frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+（因为在 $[0, \pi]$ 上 $\sin x \leq 1$）
+\end{solution}
+
+\part
+定义
+\[
+F_n(x) = f_n(x) - f_n^{(2)}(x) + f_n^{(4)}(x) - \dots + (-1)^n f_n^{(2n)}(x)
+\]
+其中 $f_n^{(k)}(x)$ 是 $f_n(x)$ 的第 $k$ 阶导数。已知函数 $F_n(x)$ 具有以下性质
+(A) $F_n(0)$ 和 $F_n\left(\frac{a}{b}\right)$ 是整数；以及
+(B) $\frac{d}{dx} \left( \frac{dF_n(x)}{dx} \sin x - F_n(x) \cos x \right) = f_n(x) \sin x$。
+（不需要证明 (A) 或 (B)！）
+(1) 证明
+\[
+\int_0^\pi f_n(x) \sin x \,dx = F_n(0) + F_n(\pi)
+\]
+(ii) 使用 $f_n(x)$ 和 $F_n(x)$ 的性质，以及对于任何实数 $\alpha$，$\lim_{n \to \infty} \frac{\alpha^n}{n!} = 0$ 的事实，证明
+\[
+\pi \neq \frac{a}{b}
+\]
+\begin{solution}
+(1) 由 (B)，我们有
+\[
+\frac{d}{dx} \left( F_n'(x) \sin x - F_n(x) \cos x \right) = f_n(x) \sin x
+\]
+在 $[0, \pi]$ 上积分得到
+\[
+\int_0^\pi f_n(x) \sin x \,dx = \left[ F_n'(x) \sin x - F_n(x) \cos x \right]_0^\pi = F_n(0) + F_n(\pi)
+\]
+(ii) 假设 $\pi = \frac{a}{b}$ 以得出矛盾。则对于 $0 \leq x \leq \pi = \frac{a}{b}$，
+\[
+0 \leq f_n(x) \leq \frac{1}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+\[
+0 \leq \int_0^\pi f_n(x) \sin x \,dx \leq \frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+但是由 (a)(i)，在 $(0, \pi)$ 上，由于 $f_n(x) > 0$ 且 $\sin x > 0$，所以
+\[
+\int_0^\pi f_n(x) \sin x \,dx > 0
+\]
+因此
+\[
+0 < \int_0^\pi f_n(x) \sin x \,dx \leq \frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n
+\]
+由 (b)(1) 和 (A)，
+\[
+\int_0^\pi f_n(x) \sin x \,dx = F_n(0) + F_n(\pi) = F_n(0) + F_n\left(\frac{a}{b}\right)
+\]
+设 $c = \frac{a^2}{4b}$。已知 $\lim_{n \to \infty} \frac{c^n}{n!} = 0$。因此
+\[
+\lim_{n \to \infty} \frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n = \pi \lim_{n \to \infty} \frac{c^n}{n!} = 0
+\]
+因此对于足够大的 $n$，$\frac{\pi}{n!} \left(\frac{a^2}{4b}\right)^n < 1$。则
+\[
+0 < \int_0^\pi f_n(x) \sin x \,dx < 1
+\]
+但是 $\int_0^\pi f_n(x) \sin x \,dx$ 是一个正整数。而 $(0, 1)$ 不包含任何整数。
+产生矛盾。因此，$\pi \neq \frac{a}{b}$。
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+Let $a \in \mathbb{R}$ and $b > 0, b \neq 1$ be constants.
+Find $\int (x + a)b^x \,dx$ in terms of $a$ and $b$.
+\begin{solution}
+使用分部积分法，令 $u = x + a$，$\,dv = b^x \,dx$。
+则有 $\,du = \,dx$，$v = \frac{b^x}{\ln b}$。
+\[
+\int (x + a)b^x \,dx = (x + a)\frac{b^x}{\ln b} - \int \frac{b^x}{\ln b} \,dx
+\]
+\[
+= (x + a)\frac{b^x}{\ln b} - \frac{b^x}{(\ln b)^2} + C
+\]
+\end{solution}
+
+\part
+Evaluate $\int_0^1 \frac{3(e^3 - 1)x + 4}{e^{3x+3} - e^{3x}} \,dx$.
+\begin{solution}
+将分母化简为 $e^{3x}(e^3 - 1)$。
+原积分可写为：
+\[
+\int_0^1 \frac{3(e^3 - 1)x + 4}{e^3 - 1} e^{-3x} \,dx = \int_0^1 \left(3x + \frac{4}{e^3 - 1}\right) e^{-3x} \,dx
+\]
+使用分部积分法，令 $u = 3x + \frac{4}{e^3 - 1}$，$\,dv = e^{-3x} \,dx$，则 $\,du = 3 \,dx$，$v = -\frac{1}{3}e^{-3x}$。
+\[
+\left[ -\frac{1}{3} \left(3x + \frac{4}{e^3 - 1}\right) e^{-3x} \right]_0^1 - \int_0^1 \left(-\frac{1}{3}e^{-3x}\right)(3) \,dx
+\]
+\[
+= \left[ -\left(x + \frac{4}{3(e^3 - 1)}\right) e^{-3x} \right]_0^1 + \int_0^1 e^{-3x} \,dx
+\]
+计算边界项及剩余积分：
+\[
+= -e^{-3} - \frac{4e^{-3}}{3(e^3 - 1)} + \frac{4}{3(e^3 - 1)} - \frac{1}{3}e^{-3} + \frac{1}{3}
+\]
+整理后得到：
+\[
+\frac{1}{3} - \frac{4}{3}e^{-3} + \frac{4(1 - e^{-3})}{3(e^3 - 1)} = \frac{1}{3} - \frac{4}{3}e^{-3} + \frac{4}{3}e^{-3} = \frac{1}{3}
+\]
+\end{solution}
+
+\part
+Consider the curve $\Gamma : y = \frac{3x^3 + 4x}{\left(e^{\frac{3x^2}{e^3-1}}\right)(e^3 - 1)^2}$.
+\begin{enumerate}
+\item[(i)] Find the $x$-intercept(s) of $\Gamma$.
+\item[(ii)] The following diagram shows a vertical line $L$ and the curve $\Gamma$ on the same graph. It is given that $L$ intersects the $x$-axis when $x = \sqrt{e^3 - 1}$. Find the shaded area.
+\end{enumerate}
+\begin{solution}
+\textbf{(i)} 令 $y = 0$，得到 $3x^3 + 4x = 0$，即 $x(3x^2 + 4) = 0$。
+由于对所有实数 $x$ 均有 $3x^2 + 4 > 0$，因此唯一的 $x$ 截距为 $x = 0$。
+
+\textbf{(ii)} 阴影面积由 $x = 0$ 到 $x = \sqrt{e^3 - 1}$ 的定积分给出：
+\[
+\int_0^{\sqrt{e^3 - 1}} \frac{3x^3 + 4x}{\left(e^{\frac{3x^2}{e^3-1}}\right)(e^3 - 1)^2} \,dx
+\]
+令 $u = \frac{3x^2}{e^3 - 1}$，则 $\,du = \frac{6x}{e^3 - 1} \,dx$，即 $x \,dx = \frac{e^3 - 1}{6} \,du$。
+当 $x = 0$ 时，$u = 0$；当 $x = \sqrt{e^3 - 1}$ 时，$u = 3$。
+代入并换元后化简：
+\[
+\frac{1}{6(e^3 - 1)} \int_0^3 \left( u(e^3 - 1) + 4 \right) e^{-u} \,du
+\]
+再令 $t = \frac{u}{3}$ 转化为区间 $\left[0, 1\right]$，该积分即为 (b) 中的积分乘以 $\frac{1}{2}$：
+\[
+\text{Area} = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}
+\]
+\end{solution}
+\end{parts}
+\end{questions}
 \pagebreak
 
 \begin{center}
@@ -12130,6 +12290,30 @@ I=0
         I = \frac{1}{1+u^2} e^u + C = \frac{x}{1+(\ln x)^2} + C
         \]
     \end{solution}
+
+    \question
+Evaluate the integral:
+\[
+\int_0^{\ln(e-1)} \left[ e^{[\ln(1+e^y)]^2} - (1+e^y)^{\left[ \ln\left(\frac{1}{e} + e^{y-1}\right) \right]} \right] \ln(1+e^y) \,dy
+\]
+\begin{solution}
+化简第二项的指数部分：
+\[
+\ln\left(\frac{1}{e} + e^{y-1}\right) = \ln\left(\frac{1 + e^y}{e}\right) = \ln(1 + e^y) - 1
+\]
+利用恒等式 $a^{\ln a} = e^{[\ln a]^2}$，括号内的表达式可化简为：
+\[
+e^{[\ln(1+e^y)]^2} \left( 1 - \frac{1}{1 + e^y} \right) = e^{[\ln(1+e^y)]^2} \left( \frac{e^y}{1 + e^y} \right)
+\]
+令 $u = \ln(1 + e^y)$，则 $\,du = \frac{e^y}{1 + e^y} \,dy$，积分区间变为从 $\ln 2$ 到 $1$：
+\[
+\int_{\ln 2}^1 e^{u^2} u \,du
+\]
+令 $v = u^2$，则 $\,dv = 2u \,du$，积分变为：
+\[
+\frac{1}{2} \int_{(\ln 2)^2}^1 e^v \,dv = \frac{1}{2} \left( e - e^{(\ln 2)^2} \right)
+\]
+\end{solution}
 %radicals
     \question 
     \[
@@ -13007,6 +13191,37 @@ I=0
         \]
     \end{solution}
 
+    \question
+\[
+\int \frac{dx}{\sqrt{x^4 + x^3 + x^2}}
+\]
+\begin{solution}
+将根号下的表达式提出 $x^2$：
+\[
+\int \frac{dx}{\sqrt{x^2\left(x^2 + x + 1\right)}} = \int \frac{\,dx}{x\sqrt{x^2 + x + 1}}
+\]
+进行代换，设 $t = \frac{1}{x}$，则 $x = \frac{1}{t}$，$\,dx = -\frac{1}{t^2} \,dt$。
+\[
+\int \frac{-\frac{1}{t^2} \,dt}{\frac{1}{t}\sqrt{\frac{1}{t^2} + \frac{1}{t} + 1}} = \int \frac{-\frac{1}{t^2} \,dt}{\frac{1}{t^2}\sqrt{1 + t + t^2}} = -\int \frac{\,dt}{\sqrt{t^2 + t + 1}}
+\]
+对根号下配方：
+\[
+t^2 + t + 1 = \left(t + \frac{1}{2}\right)^2 + \frac{3}{4}
+\]
+使用标准积分公式：
+\[
+-\int \frac{\,dt}{\sqrt{\left(t + \frac{1}{2}\right)^2 + \frac{3}{4}}} = -\ln\left| t + \frac{1}{2} + \sqrt{t^2 + t + 1} \right| + C
+\]
+将 $t = \frac{1}{x}$ 代回：
+\[
+= -\ln\left| \frac{1}{x} + \frac{1}{2} + \frac{\sqrt{x^2 + x + 1}}{x} \right| + C
+\]
+化简得：
+\[
+= -\ln\left| \frac{2 + x + 2\sqrt{x^2 + x + 1}}{2x} \right| + C
+\]
+\end{solution}
+
     \question 设 $x$ 为正实数。
 \begin{parts}
 \part (a) (i) 设 $u = \sqrt{x} + \sqrt{\sqrt{x}}$。以 $u$ 表示 $\sqrt{x}$，进而以 $u$ 表示 $x$。
@@ -13049,6 +13264,55 @@ $f'(\theta) = \sec \theta \tan \theta + \sec^2 \theta = \sec \theta(\tan \theta 
 代入上下界计算得 $\ln 4$。
 \end{solution}
 \end{parts}
+
+\question
+求积分
+\[
+\int \frac{1}{x} \left(1 - \frac{1}{x^2}\right) \sqrt{1 - \frac{1}{x^4 + 1}} \,dx
+\]
+\begin{solution}
+首先化简根号内的表达式：
+\[
+1 - \frac{1}{x^4 + 1} = \frac{x^4 + 1 - 1}{x^4 + 1} = \frac{x^4}{x^4 + 1}
+\]
+因此，根号部分变为：
+\[
+\sqrt{\frac{x^4}{x^4 + 1}} = \frac{x^2}{\sqrt{x^4 + 1}}
+\]
+代回原积分中，得到：
+\[
+\int \frac{1}{x} \left(1 - \frac{1}{x^2}\right) \frac{x^2}{\sqrt{x^4 + 1}} \,dx = \int \frac{x^2 - 1}{x^2} \frac{x}{\sqrt{x^4 + 1}} \,dx = \int \frac{x - \frac{1}{x}}{\sqrt{x^4 + 1}} \,dx
+\]
+将分子和分母同时除以 $x^2$（即根号内除以 $x^4$）：
+\[
+\int \frac{\frac{1}{x} - \frac{1}{x^3}}{\sqrt{1 + \frac{1}{x^4}}} \,dx
+\]
+为了更简便地代换，我们将表达式写为：
+\[
+\int \frac{1 - \frac{1}{x^2}}{x\sqrt{x^2 + \frac{1}{x^2}}} \,dx \quad \dots \quad \text{不，回到上一步：} \int \frac{x - \frac{1}{x}}{\sqrt{x^4 + 1}} \,dx = \int \frac{1 - \frac{1}{x^2}}{\sqrt{x^2 + \frac{1}{x^2}}} \,dx
+\]
+设 $u = x + \frac{1}{x}$，则 $\,du = \left(1 - \frac{1}{x^2}\right) \,dx$。
+同时，将 $u$ 平方得到
+\[
+u^2 = \left(x + \frac{1}{x}\right)^2 = x^2 + 2 + \frac{1}{x^2} \implies x^2 + \frac{1}{x^2} = u^2 - 2
+\]
+将这些代入积分式：
+\[
+\int \frac{\,du}{\sqrt{u^2 - 2}}
+\]
+利用基本的积分公式 $\int \frac{\,du}{\sqrt{u^2 - a^2}} = \ln\left|u + \sqrt{u^2 - a^2}\right| + C$：
+\[
+= \ln\left|u + \sqrt{u^2 - 2}\right| + C
+\]
+将 $u = x + \frac{1}{x}$ 代回式中：
+\[
+= \ln\left|x + \frac{1}{x} + \sqrt{x^2 + \frac{1}{x^2}}\right| + C
+\]
+进一步化简根号：
+\[
+= \ln\left|\frac{x^2 + 1 + \sqrt{x^4 + 1}}{x}\right| + C
+\]
+\end{solution}
 %部分分式
     \question 
     \[
@@ -16875,6 +17139,315 @@ f\left(\frac{1}{x}\right) = \left( x^2 - 1 + \frac{1}{x^2} \right) \cos \ln x = 
 \end{solution}
 \end{parts}
 
+\question
+\begin{parts}
+\part
+设 $0 \leq x \leq \frac{\pi}{4}$。证明
+\[
+\frac{1}{2 + \cos 2x} = \frac{\sec^2 x}{2 + \sec^2 x}
+\]
+\begin{solution}
+已知 $\cos 2x = 2\cos^2 x - 1$ 以及 $\sec^2 x = \frac{1}{\cos^2 x}$。
+左边为
+\[
+\frac{1}{2 + \cos 2x} = \frac{1}{2 + 2\cos^2 x - 1} = \frac{1}{1 + 2\cos^2 x}
+\]
+分子分母同乘 $\sec^2 x$，
+\[
+= \frac{\sec^2 x}{\sec^2 x \left(1 + 2\cos^2 x\right)} = \frac{\sec^2 x}{\sec^2 x + 2}
+\]
+即等于右边。证明完毕。
+\end{solution}
+
+\part
+求积分
+\[
+\int_0^{\frac{\pi}{4}} \frac{1}{2 + \cos 2x} \,dx
+\]
+\begin{solution}
+利用上一小题的结果，
+\[
+\int_0^{\frac{\pi}{4}} \frac{1}{2 + \cos 2x} \,dx = \int_0^{\frac{\pi}{4}} \frac{\sec^2 x}{2 + \sec^2 x} \,dx
+\]
+由于 $\sec^2 x = 1 + \tan^2 x$，
+\[
+= \int_0^{\frac{\pi}{4}} \frac{\sec^2 x}{3 + \tan^2 x} \,dx
+\]
+设 $u = \tan x$，则 $\,du = \sec^2 x \,dx$。
+当 $x=0$ 时，$u=0$；当 $x=\frac{\pi}{4}$ 时，$u=1$。
+\[
+\int_0^1 \frac{1}{3 + u^2} \,du = \left[ \frac{1}{\sqrt{3}} \arctan\left(\frac{u}{\sqrt{3}}\right) \right]_0^1 = \frac{1}{\sqrt{3}} \arctan\left(\frac{1}{\sqrt{3}}\right) = \frac{1}{\sqrt{3}} \left(\frac{\pi}{6}\right) = \frac{\pi}{6\sqrt{3}}
+\]
+\end{solution}
+
+\part
+设 $f(x)$ 为定义在 $\mathbf{R}$ 上的连续函数，使得对于所有 $x \in \mathbf{R}$ 有 $f(-x) = -f(x)$。
+证明对于任何 $a \in \mathbf{R}$，
+\[
+\int_{-a}^a f(x) \ln\left(1 + e^x\right) \,dx = \int_0^a x f(x) \,dx
+\]
+\begin{solution}
+将积分拆分为两部分：
+\[
+\int_{-a}^a f(x) \ln\left(1 + e^x\right) \,dx = \int_{-a}^0 f(x) \ln\left(1 + e^x\right) \,dx + \int_0^a f(x) \ln\left(1 + e^x\right) \,dx
+\]
+在第一个积分中，设 $x = -t$，则 $\,dx = -\,dt$。当 $x=-a$ 时，$t=a$；当 $x=0$ 时，$t=0$。
+\[
+\int_{-a}^0 f(x) \ln\left(1 + e^x\right) \,dx = \int_a^0 f(-t) \ln\left(1 + e^{-t}\right) (-\,dt) = \int_0^a f(-t) \ln\left(1 + e^{-t}\right) \,dt
+\]
+已知 $f(-t) = -f(t)$，且 $\ln\left(1 + e^{-t}\right) = \ln\left(\frac{e^t + 1}{e^t}\right) = \ln\left(1 + e^t\right) - t$。
+因此，
+\[
+\int_0^a -f(t) \left( \ln\left(1 + e^t\right) - t \right) \,dt = -\int_0^a f(t) \ln\left(1 + e^t\right) \,dt + \int_0^a t f(t) \,dt
+\]
+将此代回原式，
+\[
+\int_{-a}^a f(x) \ln\left(1 + e^x\right) \,dx = -\int_0^a f(x) \ln\left(1 + e^x\right) \,dx + \int_0^a x f(x) \,dx + \int_0^a f(x) \ln\left(1 + e^x\right) \,dx
+\]
+消去相同项后，
+\[
+= \int_0^a x f(x) \,dx
+\]
+证明完毕。
+\end{solution}
+
+\part
+求积分
+\[
+\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin 2x}{\left(2 + \cos 2x\right)^2} \ln\left(1 + e^x\right) \,dx
+\]
+\begin{solution}
+令 $f(x) = \frac{\sin 2x}{\left(2 + \cos 2x\right)^2}$。我们需要检验 $f(-x)$：
+\[
+f(-x) = \frac{\sin(-2x)}{\left(2 + \cos(-2x)\right)^2} = \frac{-\sin 2x}{\left(2 + \cos 2x\right)^2} = -f(x)
+\]
+因此 $f(x)$ 是奇函数，满足上一小题的条件。
+利用 (c) 的结果，
+\[
+\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} f(x) \ln\left(1 + e^x\right) \,dx = \int_0^{\frac{\pi}{4}} x f(x) \,dx = \int_0^{\frac{\pi}{4}} x \frac{\sin 2x}{\left(2 + \cos 2x\right)^2} \,dx
+\]
+使用分部积分法。设 $u = x$，$\,dv = \frac{\sin 2x}{\left(2 + \cos 2x\right)^2} \,dx$。
+则 $\,du = \,dx$，$v = \frac{1}{2\left(2 + \cos 2x\right)}$。
+\[
+\int_0^{\frac{\pi}{4}} x \frac{\sin 2x}{\left(2 + \cos 2x\right)^2} \,dx = \left[ \frac{x}{2\left(2 + \cos 2x\right)} \right]_0^{\frac{\pi}{4}} - \int_0^{\frac{\pi}{4}} \frac{1}{2\left(2 + \cos 2x\right)} \,dx
+\]
+\[
+= \left( \frac{\frac{\pi}{4}}{2\left(2 + 0\right)} - 0 \right) - \frac{1}{2} \int_0^{\frac{\pi}{4}} \frac{1}{2 + \cos 2x} \,dx
+\]
+利用 (b) 的结果 $\int_0^{\frac{\pi}{4}} \frac{1}{2 + \cos 2x} \,dx = \frac{\pi}{6\sqrt{3}}$，
+\[
+= \frac{\pi}{16} - \frac{1}{2} \left(\frac{\pi}{6\sqrt{3}}\right) = \frac{\pi}{16} - \frac{\pi}{12\sqrt{3}}
+\]
+\end{solution}
+\end{parts}
+
+\question
+设 
+\[
+A = \begin{pmatrix} \frac{d}{dx}\left(e^{ax}\right) & \frac{d}{dx}(\cos bx) \\ e^{ax} & \cos bx \end{pmatrix}
+\]
+其中 $a$ 和 $b$ 为非零常数。
+\begin{parts}
+\part
+证明
+\[
+\int e^{ax} \cos bx \,dx = \frac{\det A}{a^2 + b^2} + C
+\]
+\begin{solution}
+计算矩阵 $A$：
+\[
+A = \begin{pmatrix} a e^{ax} & -b \sin bx \\ e^{ax} & \cos bx \end{pmatrix}
+\]
+计算行列式 $\det A$：
+\[
+\det A = \left(a e^{ax}\right)(\cos bx) - \left(-b \sin bx\right)\left(e^{ax}\right) = e^{ax}(a \cos bx + b \sin bx)
+\]
+要证明等式，只需对右边求导即可：
+\[
+\frac{d}{dx} \left( \frac{\det A}{a^2 + b^2} + C \right) = \frac{1}{a^2 + b^2} \frac{d}{dx} \left( e^{ax}(a \cos bx + b \sin bx) \right)
+\]
+\[
+= \frac{1}{a^2 + b^2} \left( a e^{ax}(a \cos bx + b \sin bx) + e^{ax}(-ab \sin bx + b^2 \cos bx) \right)
+\]
+\[
+= \frac{e^{ax}}{a^2 + b^2} \left( a^2 \cos bx + ab \sin bx - ab \sin bx + b^2 \cos bx \right)
+\]
+\[
+= \frac{e^{ax}}{a^2 + b^2} \left( \left(a^2 + b^2\right) \cos bx \right) = e^{ax} \cos bx
+\]
+因为右边的导数等于被积函数，所以等式成立。
+\end{solution}
+
+\part
+写出一个矩阵 $B$，使得
+\[
+\int e^{ax} \sin bx \,dx = \frac{\det B}{a^2 + b^2} + C
+\]
+\begin{solution}
+从 (a) 的证明中，我们有
+\[
+\int e^{ax} \sin bx \,dx = \frac{e^{ax}(a \sin bx - b \cos bx)}{a^2 + b^2} + C
+\]
+我们需要 $\det B = e^{ax}(a \sin bx - b \cos bx)$。
+观察矩阵行列式的形式，可以构造：
+\[
+B = \begin{pmatrix} \frac{d}{dx}\left(e^{ax}\right) & \frac{d}{dx}(\sin bx) \\ e^{ax} & \sin bx \end{pmatrix} = \begin{pmatrix} a e^{ax} & b \cos bx \\ e^{ax} & \sin bx \end{pmatrix}
+\]
+检验 $\det B$：
+\[
+\det B = \left(a e^{ax}\right)(\sin bx) - \left(b \cos bx\right)\left(e^{ax}\right) = e^{ax}(a \sin bx - b \cos bx)
+\]
+因此，
+\[
+B = \begin{pmatrix} \frac{d}{dx}\left(e^{ax}\right) & \frac{d}{dx}(\sin bx) \\ e^{ax} & \sin bx \end{pmatrix}
+\]
+\end{solution}
+
+\part
+使用分部积分法，或用其他方法，计算 $\int_{-\pi}^0 x e^x \cos x \,dx$。
+\begin{solution}
+已知由 (a) 和 (b) 的结果，当 $a=1$ 且 $b=1$ 时，
+\[
+\int e^x \cos x \,dx = \frac{e^x\left(\cos x + \sin x\right)}{2} + C
+\]
+\[
+\int e^x \sin x \,dx = \frac{e^x\left(\sin x - \cos x\right)}{2} + C
+\]
+使用分部积分法求解不定积分 $\int x e^x \cos x \,dx$。
+设 $u = x$，$\,dv = e^x \cos x \,dx$。
+则 $\,du = \,dx$，$v = \frac{e^x\left(\cos x + \sin x\right)}{2}$。
+代入分部积分公式，
+\[
+\int x e^x \cos x \,dx = x \left(\frac{e^x\left(\cos x + \sin x\right)}{2}\right) - \int \frac{e^x\left(\cos x + \sin x\right)}{2} \,dx
+\]
+我们计算后面的积分：
+\[
+\int \frac{e^x\left(\cos x + \sin x\right)}{2} \,dx = \frac{1}{2} \int e^x \cos x \,dx + \frac{1}{2} \int e^x \sin x \,dx
+\]
+代入已知的不定积分结果：
+\[
+= \frac{1}{2} \left( \frac{e^x\left(\cos x + \sin x\right)}{2} \right) + \frac{1}{2} \left( \frac{e^x\left(\sin x - \cos x\right)}{2} \right)
+\]
+\[
+= \frac{e^x}{4} \left(\cos x + \sin x + \sin x - \cos x\right) = \frac{e^x \sin x}{2}
+\]
+因此，不定积分为
+\[
+\int x e^x \cos x \,dx = \frac{x e^x\left(\cos x + \sin x\right)}{2} - \frac{e^x \sin x}{2} = \frac{e^x}{2} \left(x \cos x + x \sin x - \sin x\right)
+\]
+代入积分上限 $0$ 和下限 $-\pi$：
+\[
+\int_{-\pi}^0 x e^x \cos x \,dx = \left[ \frac{e^x}{2} \left(x \cos x + x \sin x - \sin x\right) \right]_{-\pi}^0
+\]
+当 $x = 0$ 时，该式的值为
+\[
+\frac{e^0}{2} \left(0 \cdot \cos 0 + 0 \cdot \sin 0 - \sin 0\right) = 0
+\]
+当 $x = -\pi$ 时，该式的值为
+\[
+\frac{e^{-\pi}}{2} \left(-\pi \cos(-\pi) + (-\pi) \sin(-\pi) - \sin(-\pi)\right) = \frac{e^{-\pi}}{2} \left(-\pi(-1) + 0 - 0\right) = \frac{\pi e^{-\pi}}{2}
+\]
+因此，定积分的结果为
+\[
+0 - \frac{\pi e^{-\pi}}{2} = -\frac{\pi e^{-\pi}}{2}
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+设 $f(x)$ 为定义在区间 $\left[0, a\right]$ 上的连续函数，其中 $a$ 是一个正数常数。证明
+\[
+\int_0^a f(x) \,dx = \int_0^a f(a - x) \,dx
+\]
+\begin{solution}
+在右边的积分中，令 $u = a - x$，则 $x = a - u$，且 $\,dx = -\,du$。
+当 $x = 0$ 时，$u = a$；当 $x = a$ 时，$u = 0$。
+进行代换：
+\[
+\int_0^a f(a - x) \,dx = \int_a^0 f(u) (-\,du) = \int_0^a f(u) \,du
+\]
+将积分变量 $u$ 换回 $x$，即得
+\[
+\int_0^a f(a - x) \,dx = \int_0^a f(x) \,dx
+\]
+证明完毕。
+\end{solution}
+
+\part
+证明
+\[
+\int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx = \int_0^{\frac{\pi}{4}} \ln\left(\frac{2}{1 + \tan x}\right) \,dx
+\]
+\begin{solution}
+应用 (a) 中的结果，设 $f(x) = \ln(1 + \tan x)$ 且 $a = \frac{\pi}{4}$。
+\[
+\int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx = \int_0^{\frac{\pi}{4}} \ln\left(1 + \tan\left(\frac{\pi}{4} - x\right)\right) \,dx
+\]
+使用正切的差角公式 $\tan(A - B) = \frac{\tan A - \tan B}{1 + \tan A \tan B}$，
+\[
+\tan\left(\frac{\pi}{4} - x\right) = \frac{\tan\left(\frac{\pi}{4}\right) - \tan x}{1 + \tan\left(\frac{\pi}{4}\right) \tan x} = \frac{1 - \tan x}{1 + \tan x}
+\]
+将其代入被积函数中，
+\[
+1 + \tan\left(\frac{\pi}{4} - x\right) = 1 + \frac{1 - \tan x}{1 + \tan x} = \frac{1 + \tan x + 1 - \tan x}{1 + \tan x} = \frac{2}{1 + \tan x}
+\]
+因此，
+\[
+\int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx = \int_0^{\frac{\pi}{4}} \ln\left(\frac{2}{1 + \tan x}\right) \,dx
+\]
+证明完毕。
+\end{solution}
+
+\part
+使用 (b)，证明
+\[
+\int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx = \frac{\pi \ln 2}{8}
+\]
+\begin{solution}
+设 $I = \int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx$。由 (b) 可知，
+\[
+I = \int_0^{\frac{\pi}{4}} \ln\left(\frac{2}{1 + \tan x}\right) \,dx
+\]
+利用对数的性质 $\ln\left(\frac{a}{b}\right) = \ln a - \ln b$，可以将其拆分为两个积分：
+\[
+I = \int_0^{\frac{\pi}{4}} \left(\ln 2 - \ln(1 + \tan x)\right) \,dx = \int_0^{\frac{\pi}{4}} \ln 2 \,dx - \int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx
+\]
+这可以写为：
+\[
+I = \ln 2 \left[x\right]_0^{\frac{\pi}{4}} - I
+\]
+即 $I = \frac{\pi}{4} \ln 2 - I$。
+\[
+2I = \frac{\pi}{4} \ln 2 \implies I = \frac{\pi \ln 2}{8}
+\]
+证明完毕。
+\end{solution}
+
+\part
+使用分部积分法，计算
+\[
+\int_0^{\frac{\pi}{4}} \frac{x \sec^2 x}{1 + \tan x} \,dx
+\]
+\begin{solution}
+设 $u = x$，$\,dv = \frac{\sec^2 x}{1 + \tan x} \,dx$。
+则 $\,du = \,dx$，$v = \ln(1 + \tan x)$。
+应用分部积分公式 $\int u \,dv = uv - \int v \,du$：
+\[
+\int_0^{\frac{\pi}{4}} \frac{x \sec^2 x}{1 + \tan x} \,dx = \left[x \ln(1 + \tan x)\right]_0^{\frac{\pi}{4}} - \int_0^{\frac{\pi}{4}} \ln(1 + \tan x) \,dx
+\]
+计算第一部分：
+\[
+\left[x \ln(1 + \tan x)\right]_0^{\frac{\pi}{4}} = \frac{\pi}{4} \ln\left(1 + \tan\left(\frac{\pi}{4}\right)\right) - 0 = \frac{\pi}{4} \ln 2
+\]
+对于第二部分，由 (c) 已知积分为 $\frac{\pi \ln 2}{8}$。
+将其代回原式：
+\[
+= \frac{\pi}{4} \ln 2 - \frac{\pi \ln 2}{8} = \frac{\pi \ln 2}{8}
+\]
+\end{solution}
+\end{parts}
 % reduction formula
     \question
     证明
@@ -18198,6 +18771,19 @@ f\left(\frac{1}{x}\right) = \left( x^2 - 1 + \frac{1}{x^2} \right) \cos \ln x = 
         &= x + \ln|5\cos x + 2\sin x| + C
         \end{align*}
     \end{solution}
+
+    \question
+\[
+\int_{1/2}^2 \frac{x^2 - 1}{x^2(x^4 + 6x^2 + 1)} \,dx
+\]
+\begin{solution}
+设 $I = \int_{1/2}^2 \frac{x^2 - 1}{x^2(x^4 + 6x^2 + 1)} \,dx = \int_{1/2}^2 \left(-\frac{1}{x^2} + \frac{x^2 + 7}{x^4 + 6x^2 + 1}\right) \,dx$。
+设 $J = \int_{1/2}^2 \frac{x^2 + 7}{x^4 + 6x^2 + 1} \,dx$。
+将 $x$ 替换为 $\frac{1}{x}$，得到 $J = \int_{1/2}^2 \frac{7x^2 + 1}{x^4 + 6x^2 + 1} \,dx$。
+因此可以通过代换 $u = x - \frac{1}{x}$ 来求解 $2J$。
+计算可得 $J = 2\sqrt{2}\arctan\left(\frac{3\sqrt{2}}{8}\right)$。
+故 $I = -\frac{3}{2} + 2\sqrt{2}\arctan\left(\frac{3\sqrt{2}}{8}\right)$。
+\end{solution}
 %symmetries
 
 \question
@@ -18234,6 +18820,144 @@ I = \int_{0}^{1} f(1 - x) \, dx = \int_{0}^{1} -f(x) \, dx = -I
 由此得 $2I = 0$，即 $I = 0$。
 故正确选项为 (1)。
 \end{solution}
+
+\question
+计算积分
+\[
+I = \frac{2}{\pi} \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\,dx}{\left(1 + e^{\sin x}\right)\left(2 - \cos 2x\right)}
+\]
+\begin{solution}
+设 $x = -t$，则 $\,dx = -\,dt$。积分区间从 $\left[-\frac{\pi}{4}, \frac{\pi}{4}\right]$ 变为 $\left[\frac{\pi}{4}, -\frac{\pi}{4}\right]$。
+代入后得到：
+\[
+I = \frac{2}{\pi} \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\,dt}{\left(1 + e^{-\sin t}\right)\left(2 - \cos 2t\right)}
+\]
+将积分变量 $t$ 换回 $x$，并利用 $e^{-\sin x} = \frac{1}{e^{\sin x}}$，整理得到：
+\[
+I = \frac{2}{\pi} \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{e^{\sin x} \,dx}{\left(e^{\sin x} + 1\right)\left(2 - \cos 2x\right)}
+\]
+将上述两个关于 $I$ 的等式相加：
+\[
+2I = \frac{2}{\pi} \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{1 + e^{\sin x}}{\left(1 + e^{\sin x}\right)\left(2 - \cos 2x\right)} \,dx = \frac{2}{\pi} \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{1}{2 - \cos 2x} \,dx
+\]
+由于被积函数是偶函数，积分区间对称：
+\[
+2I = 2 \left( \frac{2}{\pi} \int_0^{\frac{\pi}{4}} \frac{1}{2 - \cos 2x} \,dx \right) \implies I = \frac{2}{\pi} \int_0^{\frac{\pi}{4}} \frac{1}{2 - \cos 2x} \,dx
+\]
+利用二倍角公式 $\cos 2x = \cos^2 x - \sin^2 x$ 以及 $2 = 2\cos^2 x + 2\sin^2 x$，分母变为：
+\[
+2 - \cos 2x = \cos^2 x + 3\sin^2 x
+\]
+因此，
+\[
+I = \frac{2}{\pi} \int_0^{\frac{\pi}{4}} \frac{1}{\cos^2 x + 3\sin^2 x} \,dx
+\]
+分子分母同除以 $\cos^2 x$：
+\[
+I = \frac{2}{\pi} \int_0^{\frac{\pi}{4}} \frac{\sec^2 x}{1 + 3\tan^2 x} \,dx
+\]
+设 $u = \sqrt{3}\tan x$，则 $\,du = \sqrt{3}\sec^2 x \,dx$。
+当 $x = 0$ 时 $u = 0$；当 $x = \frac{\pi}{4}$ 时 $u = \sqrt{3}$。
+\[
+I = \frac{2}{\pi} \int_0^{\sqrt{3}} \frac{\frac{1}{\sqrt{3}} \,du}{1 + u^2} = \frac{2}{\sqrt{3}\pi} \left[\arctan u\right]_0^{\sqrt{3}} = \frac{2}{\sqrt{3}\pi} \left(\frac{\pi}{3}\right) = \frac{2\sqrt{3}}{9}
+\]
+\end{solution}
+\question
+Section B
+\begin{parts}
+\part
+Using the substitution $u = -x$, show that for any $a > 0$:
+\[
+\int_{-a}^{a} \frac{1}{1 + e^x} \,dx = a
+\]
+\begin{solution}
+令 $I = \int_{-a}^{a} \frac{1}{1 + e^x} \,dx$。
+使用代换 $u = -x$，则有 $\,du = -\,dx$。
+积分区间从 $\left[-a, a\right]$ 变为 $\left[a, -a\right]$。
+\[
+I = \int_{a}^{-a} \frac{1}{1 + e^{-u}} (-\,du) = \int_{-a}^{a} \frac{1}{1 + e^{-u}} \,du
+\]
+将分母和分子同乘以 $e^u$：
+\[
+I = \int_{-a}^{a} \frac{e^u}{e^u + 1} \,du
+\]
+由于定积分与积分变量符号无关，可以改写为：
+\[
+I = \int_{-a}^{a} \frac{e^x}{e^x + 1} \,dx
+\]
+将上述两个 $I$ 的表达式相加：
+\[
+2I = \int_{-a}^{a} \frac{1}{1 + e^x} \,dx + \int_{-a}^{a} \frac{e^x}{1 + e^x} \,dx = \int_{-a}^{a} \frac{1 + e^x}{1 + e^x} \,dx
+\]
+\[
+2I = \int_{-a}^{a} 1 \,dx = \left[x\right]_{-a}^{a} = a - (-a) = 2a
+\]
+因此，$I = a$。
+\end{solution}
+
+\part
+Using (a), evaluate
+\[
+\int_{0}^{\ln 2} \frac{1}{1 + \frac{\sqrt{2}}{2}e^x} \,dx
+\]
+\begin{solution}
+注意到 $\frac{\sqrt{2}}{2} = e^{-\frac{1}{2}\ln 2}$。
+将积分改写为：
+\[
+\int_{0}^{\ln 2} \frac{1}{1 + e^{x - \frac{1}{2}\ln 2}} \,dx
+\]
+令 $t = x - \frac{1}{2}\ln 2$，则 $\,dt = \,dx$。
+当 $x = 0$ 时，$t = -\frac{1}{2}\ln 2$；当 $x = \ln 2$ 时，$t = \frac{1}{2}\ln 2$。
+积分变为：
+\[
+\int_{-\frac{1}{2}\ln 2}^{\frac{1}{2}\ln 2} \frac{1}{1 + e^t} \,dt
+\]
+根据 (a) 中的结果，取 $a = \frac{1}{2}\ln 2$，该积分的值为：
+\[
+\frac{1}{2}\ln 2
+\]
+\end{solution}
+
+\part
+Hence, or otherwise, evaluate
+\[
+\int_{\ln 2}^{\ln 4} \frac{x - \ln 2}{e^x\left(1 + 2\sqrt{2}e^{-x}\right)^2} \,dx
+\]
+\begin{solution}
+令 $J = \int_{\ln 2}^{\ln 4} \frac{x - \ln 2}{e^x\left(1 + 2\sqrt{2}e^{-x}\right)^2} \,dx$。
+令 $t = x - \ln 2$，则 $\,dt = \,dx$ 且 $x = t + \ln 2$。
+积分区间从 $\left[\ln 2, \ln 4\right]$ 变为 $\left[0, \ln 2\right]$。
+分母变为：
+\[
+e^{t + \ln 2}\left(1 + 2\sqrt{2}e^{-(t + \ln 2)}\right)^2 = 2e^t\left(1 + 2\sqrt{2} \cdot \frac{1}{2} e^{-t}\right)^2 = 2e^t\left(1 + \sqrt{2}e^{-t}\right)^2
+\]
+将其化简：
+\[
+2e^t \left(e^{-t}\left(e^t + \sqrt{2}\right)\right)^2 = 2e^t \cdot e^{-2t} \left(e^t + \sqrt{2}\right)^2 = 2e^{-t}\left(e^t + \sqrt{2}\right)^2
+\]
+被积函数化为：
+\[
+J = \frac{1}{2} \int_{0}^{\ln 2} t \cdot \frac{e^t}{\left(e^t + \sqrt{2}\right)^2} \,dt
+\]
+使用分部积分法，令 $u = t$，$\,dv = \frac{e^t}{\left(e^t + \sqrt{2}\right)^2} \,dt$，则 $\,du = \,dt$，$v = -\frac{1}{e^t + \sqrt{2}}$。
+\[
+J = \frac{1}{2} \left[ -\frac{t}{e^t + \sqrt{2}} \right]_{0}^{\ln 2} - \frac{1}{2} \int_{0}^{\ln 2} \left(-\frac{1}{e^t + \sqrt{2}}\right) \,dt
+\]
+\[
+J = \frac{1}{2} \left( -\frac{\ln 2}{2 + \sqrt{2}} \right) + \frac{1}{2} \int_{0}^{\ln 2} \frac{1}{e^t + \sqrt{2}} \,dt
+\]
+第一项分母有理化后为 $\frac{\sqrt{2} - 2}{8} \ln 2$。
+第二项通过提取常数并利用 (b) 的结论：
+\[
+\frac{1}{2\sqrt{2}} \int_{0}^{\ln 2} \frac{1}{1 + \frac{\sqrt{2}}{2}e^t} \,dt = \frac{1}{2\sqrt{2}} \left(\frac{1}{2}\ln 2\right) = \frac{\sqrt{2}}{8} \ln 2
+\]
+将两部分相加：
+\[
+J = \frac{\sqrt{2} - 2}{8} \ln 2 + \frac{\sqrt{2}}{8} \ln 2 = \frac{2\sqrt{2} - 2}{8} \ln 2 = \frac{\sqrt{2} - 1}{4} \ln 2
+\]
+\end{solution}
+\end{parts}
+
 %piecewise/floor func
     \question
     \[
