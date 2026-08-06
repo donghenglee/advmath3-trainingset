@@ -2769,6 +2769,37 @@ R = \frac{(s + 1)(t + 1) + (r + 1)(t + 1) + (r + 1)(s + 1)}{(r + 1)(s + 1)(t + 1
 
         $\therefore$ 以 $(x+1)(x^2 + 2x + 3)$ 除 $f(x)$ 的余式为 $-6(x^2 + 2x + 3)+x+12=-6x^2 - 11x - 6$    
     \end{solution}
+
+    \question 已知关于 $x$ 的多项式 $P(x)$ 除以 $x^2+x+1$ 的余式为 $x+1$，除以 $x^2-x+1$ 的余式为 $x-1$。求 $P(x)$ 除以 $(x^2+x+1)(x^2-x+1)$ 的余式。
+\begin{solution}
+设
+\[
+P(x) = (x^2+x+1)(x^2-x+1)Q(x) + (ax+b)(x^2+x+1) + x + 1
+\]
+因为 $x^2+x+1 = (x^2-x+1) + 2x$，所以
+\begin{align*}
+(ax+b)(x^2+x+1) + x + 1 &= (ax+b)[(x^2-x+1) + 2x] + x + 1 \\
+&= (ax+b)(x^2-x+1) + 2ax^2 + 2bx + x + 1
+\end{align*}
+将 $x^2 = (x^2-x+1) + x - 1$ 代入 $2ax^2 + 2bx + x + 1$，可得其被 $x^2-x+1$ 除的余式为
+\[
+2a(x-1) + 2bx + x + 1 = (2a + 2b + 1)x + (1 - 2a)
+\]
+根据题意，$P(x)$ 除以 $x^2-x+1$ 的余式为 $x-1$，比较系数可得
+\[
+\begin{cases}
+2a + 2b + 1 = 1 \\
+1 - 2a = -1
+\end{cases}
+\]
+解得 $a = 1, b = -1$。
+
+因此，$P(x)$ 除以 $(x^2+x+1)(x^2-x+1)$ 的余式为
+\begin{align*}
+(x - 1)(x^2+x+1) + x + 1 &= x^3 - 1 + x + 1 \\
+&= x^3 + x
+\end{align*}
+\end{solution}
     
     \question $f(x)$ 以 $x(x - 1)$ 除之,余式为 $-x + 3$；以 $x(x+1)$ 除之,余式为 $-3x + 3$,则 $f(x)$ 除以 $x(x^2 - 1)$ 的余式为?
     \begin{solution}
@@ -2786,9 +2817,7 @@ R = \frac{(s + 1)(t + 1) + (r + 1)(t + 1) + (r + 1)(s + 1)}{(r + 1)(s + 1)(t + 1
         $\therefore$ $f(x)$ 除以 $(x+1)^3 (x-2)$ 的余式为 $2(x+1)^3+2x^2 + 8=2x^3 + 8x^2 + 6x + 10$  
     \end{solution}
 
-    
     \question 设 $\deg f(x) \geq 3$, 且 $f(x)$ 以 $(x-1)^2$ 除之余 $3x + 2$,以 $(x+2)^2$ 除之余 $5x - 3$,求:
-        
     \begin{parts}
     \part 以 $x-1$ 除之的余式。
     \begin{solution}
@@ -6221,6 +6250,64 @@ y\left[ \left( \frac{3y + 1}{2y} \right)^2 + y^2 \right] - \left( \frac{3y + 1}{
 4y^4 - 3y^2 - 1 = 0
 \]
 由此得 $y^2 = 1$，方程组的解为 $(2, 1)$ 和 $(1, -1)$。
+\end{solution}
+
+\question
+【ハーバード大】
+求实数解 $x, y \in \mathbb{R}$：
+\[
+\begin{cases}
+(x + y)(x^2 + y^2) = 85 \quad \cdots (1) \\
+(x - y)(x^2 - y^2) = 45 \quad \cdots (2)
+\end{cases}
+\]
+
+\begin{solution}
+将方程 (2) 进行因式分解：
+\[
+(x - y)(x^2 - y^2) = (x - y)^2 (x + y) = 45 \quad \cdots (2')
+\]
+由于 $x, y \in \mathbb{R}$ 且方程右端不为 $0$，故 $x + y \neq 0$。将方程 (1) 与方程 (2') 两边相除：
+\[
+\frac{(x + y)(x^2 + y^2)}{(x - y)^2 (x + y)} = \frac{85}{45}
+\]
+约去公因式 $x + y$ 并化简右侧分式：
+\[
+\frac{x^2 + y^2}{(x - y)^2} = \frac{17}{9}
+\]
+交叉相乘展开：
+\[
+9(x^2 + y^2) = 17(x^2 - 2xy + y^2)
+\]
+整理得二次齐次方程：
+\[
+8x^2 - 34xy + 8y^2 = 0 \implies 4x^2 - 17xy + 4y^2 = 0
+\]
+因式分解得：
+\[
+(4x - y)(x - 4y) = 0
+\]
+由此分为两种情况：
+\[
+\text{i}\ y = 4x \quad \text{或} \quad \text{ii}\ x = 4y
+\]
+
+\textbf{情况 i：} 当 $y = 4x$ 时，代入方程 (1)：
+\[
+(x + 4x)(x^2 + 16x^2) = 85 \implies 5x \cdot 17x^2 = 85 \implies 85x^3 = 85 \implies x^3 = 1
+\]
+因为 $x \in \mathbb{R}$，解得 $x = 1$，进而 $y = 4$。得到实数解 $(x, y) = (1, 4)$。
+
+\textbf{情况 ii：} 当 $x = 4y$ 时，代入方程 (1)：
+\[
+(4y + y)(16y^2 + y^2) = 85 \implies 5y \cdot 17y^2 = 85 \implies 85y^3 = 85 \implies y^3 = 1
+\]
+因为 $y \in \mathbb{R}$，解得 $y = 1$，进而 $x = 4$。得到实数解 $(x, y) = (4, 1)$。
+
+综上所述，原方程组的实数解为：
+\[
+(x, y) = (1, 4) \quad \text{与} \quad (x, y) = (4, 1)
+\]
 \end{solution}
 
     \question 求方程
@@ -12678,6 +12765,220 @@ $\sin^2 x = 0 \Rightarrow \cos^2 x = 1 \Rightarrow \sin^4 z = 1 \Rightarrow \sin
 通过将它们相加, 结论立即得证。
 \end{solution}
 
+\question 已知 $a, b, c$ 为正实数，且满足 $ab + bc + ca = 1$。证明：
+\[
+\frac{a}{\sqrt{a^2+1}} + \frac{b}{\sqrt{b^2+1}} + \frac{c}{\sqrt{c^2+1}} \le \frac{3}{2}
+\]
+
+\begin{solution}
+【解法一：代数解法（均值不等式）】
+
+将条件 $1 = ab + bc + ca$ 代入各项分母中，进行因式分解：
+\[
+a^2 + 1 = a^2 + ab + bc + ca = a(a+b) + c(a+b) = (a+b)(a+c)
+\]
+因此，第一项可变形为：
+\[
+\frac{a}{\sqrt{a^2+1}} = \frac{a}{\sqrt{(a+b)(a+c)}}
+\]
+由基本不等式（算术-几何平均不等式 $\sqrt{xy} \le \frac{x+y}{2} \implies \frac{1}{\sqrt{xy}} \le \frac{1}{2}\left(\frac{1}{x} + \frac{1}{y}\right)$），由于 $a, b, c > 0$，可得：
+\[
+\frac{a}{\sqrt{(a+b)(a+c)}} \le \frac{a}{2}\left( \frac{1}{a+b} + \frac{1}{a+c} \right)
+\]
+同理可得：
+\[
+\frac{b}{\sqrt{b^2+1}} \le \frac{b}{2}\left( \frac{1}{b+c} + \frac{1}{b+a} \right)
+\]
+\[
+\frac{c}{\sqrt{c^2+1}} \le \frac{c}{2}\left( \frac{1}{c+a} + \frac{1}{c+b} \right)
+\]
+将上述三式累加，原式左边：
+\begin{align*}
+\text{左边} &\le \frac{1}{2} \left[ a\left(\frac{1}{a+b} + \frac{1}{a+c}\right) + b\left(\frac{1}{b+c} + \frac{1}{b+a}\right) + c\left(\frac{1}{c+a} + \frac{1}{c+b}\right) \right] \\
+&= \frac{1}{2} \left[ \frac{a+b}{a+b} + \frac{b+c}{b+c} + \frac{c+a}{c+a} \right] \\
+&= \frac{1}{2} (1 + 1 + 1) = \frac{3}{2}
+\end{align*}
+当且仅当 $a = b = c = \frac{1}{\sqrt{3}}$ 时，等号成立。原命题得证。
+
+\vspace{1em}
+
+【解法二：三角代换与琴生不等式】
+
+将已知条件 $ab + bc + ca = 1$ 两边同除以 $abc$，可得：
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{abc}
+\]
+设 $\frac{1}{a} = \tan A, \frac{1}{b} = \tan B, \frac{1}{c} = \tan C$，其中 $A, B, C \in \left(0, \frac{\pi}{2}\right)$。
+代入上式得：
+\[
+\tan A + \tan B + \tan C = \tan A \tan B \tan C
+\]
+由此可推知 $A, B, C$ 为某个锐角三角形的三个内角，满足 $A + B + C = \pi$。
+
+进一步对原式各项进行三角代换：
+\[
+\frac{a}{\sqrt{a^2+1}} = \frac{\frac{1}{\tan A}}{\sqrt{\frac{1}{\tan^2 A} + 1}} = \frac{\cot A}{\csc A} = \cos A
+\]
+因此，原不等式等价于证明：
+\[
+\cos A + \cos B + \cos C \le \frac{3}{2}
+\]
+考虑函数 $f(x) = \cos x$。在 $x \in \left(0, \frac{\pi}{2}\right)$ 上，$f''(x) = -\cos x < 0$，故 $f(x)$ 为严格上凸函数。
+根据琴生不等式（Jensen's Inequality）：
+\[
+f(A) + f(B) + f(C) \le 3 f\left( \frac{A + B + C}{3} \right)
+\]
+即：
+\[
+\cos A + \cos B + \cos C \le 3 \cos\left(\frac{\pi}{3}\right) = 3 \times \frac{1}{2} = \frac{3}{2}
+\]
+当且仅当 $A = B = C = \frac{\pi}{3}$（即 $a = b = c = \frac{1}{\sqrt{3}}$）时，等号成立。原命题得证。
+\end{solution}
+
+\question
+【1991 BWMC】
+设 $a, b, c$ 均为正实数，求证以下不等式：
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \ge \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \ge \frac{9}{a+b+c}
+\]
+
+\begin{solution}
+(1) 证明左半部分不等式 $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \ge \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a}$：
+
+利用轮换对称求和记号 $\sum_{\text{cyc}}$，将左边变形为：
+\[
+\text{左边} = \frac{1}{2} \sum_{\text{cyc}} \left( \frac{1}{a} + \frac{1}{b} \right)
+\]
+由算术-几何平均值不等式（AM-GM 不等式），对正实数 $a, b$ 有：
+\[
+\frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} \right) \ge \sqrt{\frac{1}{a} \cdot \frac{1}{b}} = \frac{1}{\sqrt{ab}}
+\]
+再次应用 AM-GM 不等式：
+\[
+\frac{a+b}{2} \ge \sqrt{ab} \implies \frac{1}{\sqrt{ab}} \ge \frac{2}{a+b}
+\]
+结合上述两式，对任意正实数 $a, b$ 均有：
+\[
+\frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} \right) \ge \frac{2}{a+b}
+\]
+同理对 $(b, c)$ 和 $(c, a)$ 应用该不等式，三式相加可得：
+\[
+\sum_{\text{cyc}} \frac{1}{2} \left( \frac{1}{a} + \frac{1}{b} \right) \ge \sum_{\text{cyc}} \frac{2}{a+b}
+\]
+即：
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \ge \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a}
+\]
+当且仅当 $a = b = c$ 时，等号成立。
+
+\vspace{1em}
+
+(2) 证明右半部分不等式 $\frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \ge \frac{9}{a+b+c}$：
+
+要证该不等式，等价于证明：
+\[
+\left( \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \right) (a+b+c) \ge 9
+\]
+注意到：
+\[
+(a+b) + (b+c) + (c+a) = 2(a+b+c)
+\]
+由柯西-施瓦茨不等式（Cauchy-Schwarz Inequality）：
+\[
+\left( \frac{1}{a+b} + \frac{1}{b+c} + \frac{1}{c+a} \right) \Big( (a+b) + (b+c) + (c+a) \Big) \ge (1 + 1 + 1)^2 = 9
+\]
+将 $(a+b) + (b+c) + (c+a) = 2(a+b+c)$ 代入上式得：
+\[
+\left( \frac{1}{a+b} + \frac{1}{b+c} + \frac{1}{c+a} \right) \cdot 2(a+b+c) \ge 9
+\]
+整理可得：
+\[
+\left( \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \right) (a+b+c) \ge 9
+\]
+由于 $a+b+c > 0$，两边同除以 $(a+b+c)$ 即得：
+\[
+\frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \ge \frac{9}{a+b+c}
+\]
+当且仅当 $a+b = b+c = c+a \iff a = b = c$ 时，等号成立。
+
+\vspace{1em}
+
+综上所述，原不等式得证：
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \ge \frac{2}{a+b} + \frac{2}{b+c} + \frac{2}{c+a} \ge \frac{9}{a+b+c}
+\]
+\end{solution}
+
+\question
+【1990 東京工業大】
+已知 $x_i > 0$ ($i = 1, 2, \dots, n$)，且满足 $\sum_{i=1}^n x_i = k$。求证以下不等式：
+\[
+\sum_{i=1}^n x_i \log x_i \ge k \log \frac{k}{n}
+\]
+
+\begin{solution}
+【解法一：函数凹凸性法（琴生不等式）】
+
+将原不等式两边同除以 $n$，得：
+\[
+\frac{1}{n} \sum_{i=1}^n x_i \log x_i \ge \frac{k}{n} \log \frac{k}{n}
+\]
+设函数 $f(x) = x \log x$（定义域 $x > 0$）。对 $f(x)$ 求一阶与二阶导数：
+\[
+f'(x) = 1 \cdot \log x + x \cdot \frac{1}{x} = \log x + 1
+\]
+\[
+f''(x) = \frac{1}{x}
+\]
+当 $x > 0$ 时，$f''(x) > 0$，故函数 $f(x) = x \log x$ 在 $(0, +\infty)$ 上为严格下凸函数（凹函数）。
+
+取权数 $\lambda_1 = \lambda_2 = \dots = \lambda_n = \frac{1}{n}$（满足 $\sum_{i=1}^n \lambda_i = 1$），由琴生不等式（Jensen's Inequality）：
+\[
+\frac{1}{n} \sum_{i=1}^n f(x_i) \ge f\left( \frac{1}{n} \sum_{i=1}^n x_i \right)
+\]
+由于 $\sum_{i=1}^n x_i = k$，代入 $f(x)$ 的定义式可得：
+\[
+\frac{1}{n} \sum_{i=1}^n x_i \log x_i \ge f\left( \frac{k}{n} \right) = \frac{k}{n} \log \frac{k}{n}
+\]
+两边同乘以 $n$，即得所证不等式：
+\[
+\sum_{i=1}^n x_i \log x_i \ge k \log \frac{k}{n}
+\]
+当且仅当 $x_1 = x_2 = \dots = x_n = \frac{k}{n}$ 时，等号成立。
+
+\vspace{2em}
+
+【解法二：切线放缩法（导数法）】
+
+设 $x_0 = \frac{k}{n}$ 为变量的平均值。考虑曲线 $y = f(x) = x \log x$ 在 $x = x_0$ 处的切线方程：
+\[
+y = f'(x_0)(x - x_0) + f(x_0)
+\]
+其中 $f'(x_0) = \log \frac{k}{n} + 1$，$f(x_0) = \frac{k}{n} \log \frac{k}{n}$。代入得切线方程为：
+\[
+y = \left(\log \frac{k}{n} + 1\right)\left(x - \frac{k}{n}\right) + \frac{k}{n} \log \frac{k}{n} = x \left(\log \frac{k}{n} + 1\right) - \frac{k}{n}
+\]
+构造函数 $g(x) = x \log x - \left[ x \left(\log \frac{k}{n} + 1\right) - \frac{k}{n} \right]$（其中 $x > 0$）。对 $g(x)$ 求导：
+\[
+g'(x) = \log x + 1 - \left(\log \frac{k}{n} + 1\right) = \log x - \log \frac{k}{n} = \log\left( \frac{x}{\frac{k}{n}} \right)
+\]
+* 当 $0 < x < \frac{k}{n}$ 时，$g'(x) < 0$，$g(x)$ 单调递减；
+* 当 $x > \frac{k}{n}$ 时，$g'(x) > 0$，$g(x)$ 单调递增。
+
+因此 $g(x)$ 在 $x = \frac{k}{n}$ 处取得最小值 $g\left(\frac{k}{n}\right) = 0$。故对任意 $x > 0$，均有 $g(x) \ge 0$，即切线放缩不等式：
+\[
+x \log x \ge x \left(\log \frac{k}{n} + 1\right) - \frac{k}{n}
+\]
+将 $x = x_i$ ($i = 1, 2, \dots, n$) 代入上述不等式并求和：
+\begin{align*}
+\sum_{i=1}^n x_i \log x_i &\ge \sum_{i=1}^n \left[ x_i \left(\log \frac{k}{n} + 1\right) - \frac{k}{n} \right] \\
+&= \left(\log \frac{k}{n} + 1\right) \sum_{i=1}^n x_i - n \cdot \frac{k}{n} \\
+&= \left(\log \frac{k}{n} + 1\right) k - k \\
+&= k \log \frac{k}{n}
+\end{align*}
+当且仅当 $x_1 = x_2 = \dots = x_n = \frac{k}{n}$ 时，等号成立。
+\end{solution}
+
     \question 已知 $\triangle ABC$ 的面积为 $27,R$ 为其外接圆半径,$r$ 为其内切圆半径。求 $Rr^{3}$ 的最大值。
     \begin{solution}
         设$\triangle ABC$边长为$a,b,c>0$,面积为
@@ -14943,24 +15244,42 @@ c^2 \left[ 4 \cdot \frac{n(n+1)(2n+1)}{6} - 4 \cdot \frac{n(n+1)}{2} + n \right]
 S_n = \frac{1}{2} \left(a_n + \frac{1}{a_n}\right) ,
 \]
 求 $\{a_n\}$ 的通项公式。
-%曾龙文师-高二数理培训队笔记
 \begin{solution}
-当 $n=1$ 时,
+(1) 求解首项 $a_1$：
+当 $n = 1$ 时，$S_1 = a_1$，代入已知条件得：
 \[
-a_1 = S_1 = \frac{1}{2}\left(a_1 + \frac{1}{a_1}\right) \Rightarrow a_1^2 = 1 \Rightarrow a_1 = 1 >0
+a_1 = \frac{1}{2} \left( a_1 + \frac{1}{a_1} \right) \implies 2a_1 = a_1 + \frac{1}{a_1} \implies a_1^2 = 1
 \]
-当 $n \ge 2$ 时,有
-\[ 
-a_n = S_n - S_{n-1} = \frac{1}{2}\left(a_n + \frac{1}{a_n} - a_{n-1} - \frac{1}{a_{n-1}}\right) 
+因为 $a_n > 0$，所以 $a_1 = 1$。当 $n \ge 2$ 时，利用 $a_n = S_n - S_{n-1}$ 代入原递推式得：
+\[
+S_n = \frac{1}{2} \left( S_n - S_{n-1} + \frac{1}{S_n - S_{n-1}} \right)
 \]
-\[ a_n + a_{n-1} = \frac{1}{a_n} - \frac{1}{a_{n-1}} = \frac{a_{n-1} - a_n}{a_n a_{n-1}} \]
-由于 $a_n + a_{n-1} > 0$ ,等式两边同除以 $(a_n + a_{n-1})$ 得:
-\[ 1 = \frac{a_{n-1} - a_n}{(a_n + a_{n-1}) a_n a_{n-1}} \]
-经观察或递推可得 $S_n = \sqrt{n}$ 满足原式,则 $a_n = \sqrt{n} - \sqrt{n-1}$ 。
-验证:当 $a_n = \sqrt{n} - \sqrt{n-1}$ 时,$\frac{1}{a_n} = \sqrt{n} + \sqrt{n-1}$ ,
-则 $\frac{1}{2}(a_n + \frac{1}{a_n}) = \frac{1}{2}(\sqrt{n} - \sqrt{n-1} + \sqrt{n} + \sqrt{n-1}) = \sqrt{n} = S_n$ ,符合题意。
-故 $a_n = \sqrt{n} - \sqrt{n-1}$ 。
-\textcolor{red}{(待验证)}
+两边同乘以 $2(S_n - S_{n-1})$ 得：
+\[
+2S_n (S_n - S_{n-1}) = (S_n - S_{n-1})^2 + 1
+\]
+展开并整理：
+\[
+2S_n^2 - 2S_n S_{n-1} = S_n^2 - 2S_n S_{n-1} + S_{n-1}^2 + 1 \implies S_n^2 = S_{n-1}^2 + 1 \quad (n \ge 2)
+\]
+因此，数列 $\{S_n^2\}$ 是以 $S_1^2 = a_1^2 = 1$ 为首项，公差为 $1$ 的等差数列。
+对任意 $n \ge 1$，有：
+\[
+S_n^2 = 1 + (n - 1) \cdot 1 = n
+\]
+由于 $a_n > 0$，故 $S_n > 0$，得到：
+\[
+S_n = \sqrt{n} \quad (n \ge 1)
+\]
+当 $n \ge 2$ 时：
+\[
+a_n = S_n - S_{n-1} = \sqrt{n} - \sqrt{n-1}
+\]
+当 $n = 1$ 时，$\sqrt{1} - \sqrt{0} = 1 = a_1$，公式同样适用。
+故数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \sqrt{n} - \sqrt{n-1} \quad (n = 1, 2, \dots)
+\]
 \end{solution}
 
 \question

@@ -1996,6 +1996,24 @@ CF = MF - MC = 3k - 1k = 2k
         \frac{[\triangle GHI]}{[\triangle ABC]} = \frac{\gamma}{\gamma + 3\alpha + 3\beta} = \frac{1}{7}
         \]
     \end{solution}
+    \begin{solution}
+        在$\triangle CBF$中,由梅涅劳斯定理,
+        \[
+        \frac{CD}{DB} \cdot \frac{BA}{AF} \cdot \frac{FG}{GC} = 1
+        \]
+        得
+        \[
+        \frac{2}{1} \cdot \frac{3}{1} \cdot \frac{FG}{GC} = 1 \Rightarrow FG = \frac{1}{6}GC
+        \]
+        故$\triangle BFC$面积为
+        \[
+        [\triangle BFC]=[\triangle ABC]\cdot \frac{1}{3}\cdot \frac{6}{7}= \frac{2}{7}[\triangle ABC]
+        \]
+        进而
+        \[
+        \frac{[\triangle GHI]}{[\triangle ABC]}=1-3\cdot \frac{2}{7}=\frac{1}{7}
+        \]
+    \end{solution}
 
     \question $\triangle ABC$ 中, $AB=6, BC=8, CA=12, D, E$ 在 $CA$ 上, 且 $AD = DE = EC,$ 求 $BD,BE$的长。
     \ifprintanswers
@@ -2252,6 +2270,55 @@ CF = MF - MC = 3k - 1k = 2k
 % (PA,PB,PC)=\left( \tfrac{1}{\sqrt{7}}, \tfrac{2}{\sqrt{7}}, \tfrac{4}{\sqrt{7}} \right).
 % \]
 %\end{solution}
+
+\question
+【数A 平面几何·三角函数】
+设 $H$ 为锐角三角形 $ABC$ 的垂心，自各顶点向对边所作高线的垂足构成的三角形为 $DEF$（垂足三角形）。求 $\Delta ABC$ 与 $\Delta DEF$ 的面积比 $\Delta ABC : \Delta DEF$。
+
+\begin{solution}
+设 $\Delta ABC$ 的面积为 $S$。
+
+首先考虑周边三个小三角形的面积。对于 $\Delta AEF$：
+在 Rt$\Delta ABE$ 与 Rt$\Delta ACF$ 中，分别有 $AE = AB \cos A$，$AF = AC \cos A$。
+因此，$\Delta AEF$ 的面积可表示为：
+\begin{align*}
+\text{Area}(\Delta AEF) &= S \times \frac{AF}{AB} \times \frac{AE}{AC} \\
+&= S \times \frac{AC \cos A}{AB} \times \frac{AB \cos A}{AC} \\
+&= S \cos^2 A
+\end{align*}
+
+同理可得：
+\[
+\text{Area}(\Delta BDF) = S \cos^2 B, \quad \text{Area}(\Delta CDE) = S \cos^2 C
+\]
+
+由此，垂足三角形 $DEF$ 的面积 $\text{Area}(\Delta DEF)$ 为：
+\begin{align*}
+\text{Area}(\Delta DEF) &= S - \text{Area}(\Delta AEF) - \text{Area}(\Delta BDF) - \text{Area}(\Delta CDE) \\
+&= S - S(\cos^2 A + \cos^2 B + \cos^2 C)
+\end{align*}
+
+利用倍角公式 $\cos^2 x = \frac{1 + \cos 2x}{2}$ 进行化简：
+\begin{align*}
+\text{Area}(\Delta DEF) &= S - S \left( \frac{1 + \cos 2A}{2} + \frac{1 + \cos 2B}{2} + \frac{1 + \cos 2C}{2} \right) \\
+&= -\frac{S}{2} - \frac{S}{2} (\cos 2A + \cos 2B + \cos 2C) \\
+&= -\frac{S}{2} (1 + \cos 2A + \cos 2B + \cos 2C)
+\end{align*}
+
+在三角形中（$A + B + C = \pi$），存在恒等式：
+\[
+1 + \cos 2A + \cos 2B + \cos 2C = -4 \cos A \cos B \cos C
+\]
+将该恒等式代入可得：
+\[
+\text{Area}(\Delta DEF) = -\frac{S}{2} (-4 \cos A \cos B \cos C) = 2 S \cos A \cos B \cos C
+\]
+
+因此，$\Delta ABC$ 与 $\Delta DEF$ 的面积比为：
+\[
+\Delta ABC : \Delta DEF = S : 2 S \cos A \cos B \cos C = 1 : 2 \cos A \cos B \cos C
+\]
+\end{solution}
 
     \question 已知四边形 $ABCD$ 中,$\; AB=BC=CD,\angle A=54^\circ,\angle B=108^\circ,\angle C$ 为钝角,求 $\angle C$。
     \ifprintanswers
@@ -17390,6 +17457,45 @@ e = \sqrt{1 - \frac{a^2}{b^2}} = \sqrt{1 - \frac{12}{16}} = \sqrt{1 - \frac{3}{4
         若 $k = 2$,可解得 $$P\left( \dfrac{1 \pm \sqrt{199}}{4},\ \dfrac{1 \mp \sqrt{199}}{5} \right)$$
     \end{solution}
 
+    \question
+从椭圆中心 $O$ 引两条互相垂直的半直线，设它们与椭圆的交点分别为 $P, Q$。证明：$\frac{1}{OP^2} + \frac{1}{OQ^2}$ 为定值。
+
+\begin{solution}
+设椭圆的标准方程为
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \quad (a > b > 0)
+\]
+设点在极坐标下的表示为
+\[
+\begin{cases}
+x = r \cos \theta \\
+y = r \sin \theta
+\end{cases}
+\]
+代入椭圆方程，可得
+\[
+\frac{r^2 \cos^2 \theta}{a^2} + \frac{r^2 \sin^2 \theta}{b^2} = 1
+\]
+两边同除以 $r^2$，得到
+\[
+\frac{1}{r^2} = \frac{\cos^2 \theta}{a^2} + \frac{\sin^2 \theta}{b^2}
+\]
+设点 $P$ 的极坐标为 $(r_1, \alpha)$，点 $Q$ 的极坐标为 $\left(r_2, \alpha + \frac{\pi}{2}\right)$。
+则有
+\[
+\frac{1}{OP^2} = \frac{1}{r_1^2} = \frac{\cos^2 \alpha}{a^2} + \frac{\sin^2 \alpha}{b^2}
+\]
+\[
+\frac{1}{OQ^2} = \frac{1}{r_2^2} = \frac{\cos^2 \left(\alpha + \frac{\pi}{2}\right)}{a^2} + \frac{\sin^2 \left(\alpha + \frac{\pi}{2}\right)}{b^2} = \frac{\sin^2 \alpha}{a^2} + \frac{\cos^2 \alpha}{b^2}
+\]
+两式相加，得
+\begin{align*}
+\frac{1}{OP^2} + \frac{1}{OQ^2} &= \frac{\cos^2 \alpha + \sin^2 \alpha}{a^2} + \frac{\sin^2 \alpha + \cos^2 \alpha}{b^2} \\
+&= \frac{1}{a^2} + \frac{1}{b^2}
+\end{align*}
+其值为与极角 $\alpha$ 无关的常数，因此 $\frac{1}{OP^2} + \frac{1}{OQ^2}$ 为定值。
+\end{solution}
+
     \question 已知圆$\Omega$与$x$轴、$y$轴均相切,圆心在椭圆$$\Gamma: \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $$内,且$\Omega$与$\Gamma$有唯一的公共点$(8,9)$.求$\Gamma$的焦距。
     \begin{solution}
         设圆$\Omega$的圆心为$P(r,r)$,则有$$(8-r)^2+(9-r)^2=r^2\Rightarrow r=5\ \text{或} \ r=29$$
@@ -18407,6 +18513,108 @@ x'^2 = \frac{a^2b^2}{b^2 + a^2m'^2}, \quad y'^2 = \frac{a^2b^2m'^2}{b^2 + a^2m'^
 &= a^2 + b^2
 \end{aligned}
 \]
+\end{solution}
+
+\question
+【1998 庆应义塾大·理系】
+设 $a, b$ 为正实数，考虑与椭圆 $C: \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ 的四条边均相切的长方形。
+\begin{parts}
+\part 证明长方形的对角线长度为定值，并用 $a, b$ 表示该对角线的长度。
+\part 用 $a, b$ 表示该长方形面积的最大值。
+\end{parts}
+
+\begin{solution}
+【解法一：切线斜率与原点距离法（图像解析法）】
+
+(1) 设长方形的一条边所在的切线方程为 $y = mx + n$（其中斜率 $m \ne 0$）。
+将切线方程代入椭圆方程 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ 得：
+\[
+b^2 x^2 + a^2 (mx + n)^2 = a^2 b^2 \implies (a^2 m^2 + b^2) x^2 + 2a^2 m n x + a^2(n^2 - b^2) = 0
+\]
+由于直线与椭圆相切，判别式 $\Delta = 0$：
+\[
+\frac{\Delta}{4} = (a^2 m n)^2 - (a^2 m^2 + b^2) a^2 (n^2 - b^2) = 0
+\]
+化简得相切条件：
+\[
+n^2 = a^2 m^2 + b^2 \quad \cdots \text{①}
+\]
+由于长方形相邻两边互相垂直，设与该切线垂直的另一条切线方程为 $y = -\frac{1}{m} x + e$。
+将 $m$ 替换为 $-\frac{1}{m}$，可得：
+\[
+e^2 = a^2 \left(-\frac{1}{m}\right)^2 + b^2 = \frac{a^2}{m^2} + b^2 \quad \cdots \text{②}
+\]
+原点 $O$ 到这两条垂直切线的距离分别为 $d_1, d_2$：
+\[
+d_1 = \frac{|n|}{\sqrt{m^2 + 1}}, \quad d_2 = \frac{|e|}{\sqrt{\left(-\frac{1}{m}\right)^2 + 1}} = \frac{|em|}{\sqrt{m^2 + 1}}
+\]
+设长方形对角线长为 $L$，则对角线长的一半 $l = \frac{L}{2}$ 满足 $l^2 = d_1^2 + d_2^2$：
+\begin{align*}
+l^2 = d_1^2 + d_2^2 &= \frac{n^2}{m^2 + 1} + \frac{e^2 m^2}{m^2 + 1} \\
+&= \frac{a^2 m^2 + b^2}{m^2 + 1} + \frac{\left(\frac{a^2}{m^2} + b^2\right) m^2}{m^2 + 1} \\
+&= \frac{a^2 m^2 + b^2 + a^2 + m^2 b^2}{m^2 + 1} \\
+&= \frac{(m^2 + 1)(a^2 + b^2)}{m^2 + 1} = a^2 + b^2
+\end{align*}
+因此，$l = \sqrt{a^2 + b^2}$ 为定值，对角线长度为 $2l = 2\sqrt{a^2 + b^2}$。
+
+\vspace{1em}
+
+(2) 设长方形两条对角线的夹角为 $\theta$ ($0 < \theta \le 90^\circ$)。
+长方形的面积 $S$ 可表示为：
+\[
+S = \frac{1}{2} (2l) (2l) \sin\theta = 2 l^2 \sin\theta \le 2 l^2
+\]
+将 $l = \sqrt{a^2 + b^2}$ 代入，得：
+\[
+S \le 2(a^2 + b^2)
+\]
+当且仅当 $\theta = 90^\circ$（即长方形为正方形，$d_1 = d_2$）时取等号。
+验证 $d_1 = d_2$ 的存在性：
+\[
+d_1 = d_2 \iff n^2 = e^2 m^2 \iff a^2 m^2 + b^2 = a^2 + m^2 b^2 \iff (a^2 - b^2)(m^2 - 1) = 0
+\]
+当 $a \ne b$ 时，取斜率 $m = \pm 1$ 即可满足 $d_1 = d_2$。
+故长方形面积的最大值为 $2(a^2 + b^2)$。
+
+\vspace{2em}
+
+【解法二：法向角参数法（蒙日圆法）】
+
+(1) 设长方形的一组平行切线的法线倾角为 $\phi$ ($\phi \in [0, 2\pi)$)，则该组切线方程可表示为：
+\[
+x \cos\phi + y \sin\phi = \pm \sqrt{a^2 \cos^2\phi + b^2 \sin^2\phi}
+\]
+与这组切线垂直的另一组平行切线的法线倾角为 $\phi + \frac{\pi}{2}$，其方程可表示为：
+\[
+-x \sin\phi + y \cos\phi = \pm \sqrt{a^2 \sin^2\phi + b^2 \cos^2\phi}
+\]
+原点 $O$ 到这两组切线的距离分别为 $d_1, d_2$：
+\[
+d_1 = \sqrt{a^2 \cos^2\phi + b^2 \sin^2\phi}, \quad d_2 = \sqrt{a^2 \sin^2\phi + b^2 \cos^2\phi}
+\]
+由长方形几何性质，半对角线长 $l$ 满足：
+\[
+l^2 = d_1^2 + d_2^2 = (a^2 \cos^2\phi + b^2 \sin^2\phi) + (a^2 \sin^2\phi + b^2 \cos^2\phi) = a^2 + b^2
+\]
+由于 $l = \sqrt{a^2 + b^2}$ 与 $\phi$ 无关，故长方形顶点的轨迹为蒙日圆（Monge's circle）$x^2 + y^2 = a^2 + b^2$。
+因此，对角线长度为 $2l = 2\sqrt{a^2 + b^2}$（定值）。
+
+\vspace{1em}
+
+(2) 长方形的边长分别为 $2d_1$ 和 $2d_2$，故长方形的面积 $S$ 为：
+\[
+S = 2d_1 \cdot 2d_2 = 4 d_1 d_2
+\]
+由均值不等式（AM-GM）：
+\[
+S = 4 d_1 d_2 \le 4 \cdot \frac{d_1^2 + d_2^2}{2} = 2 (d_1^2 + d_2^2) = 2(a^2 + b^2)
+\]
+当且仅当 $d_1 = d_2$ 时等号成立，即：
+\[
+a^2 \cos^2\phi + b^2 \sin^2\phi = a^2 \sin^2\phi + b^2 \cos^2\phi \iff (a^2 - b^2)\cos 2\phi = 0
+\]
+当 $a \ne b$ 时，取 $\phi = \frac{\pi}{4}$ 即可满足等号成立条件。
+故长方形面积的最大值为 $2(a^2 + b^2)$。
 \end{solution}
 %hyperbola
     \question 双曲线 
@@ -24780,6 +24988,73 @@ f(1) = 6(1)^2 - 12(1) + 24 = 18
         \[ R^2 = |\vec{\mathrm{OG}}|^2 + \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9} \ge \frac{|\vec{\mathrm{AB}}|^2 + |\vec{\mathrm{BC}}|^2 + |\vec{\mathrm{CA}}|^2}{9}  \]
     \end{solution}
 \end{parts}
+
+\question
+【2019 早稻田大】
+如图所示，存在一个以边长为 $1$ 的正五边形为面的正十二面体。
+正十二面体的各边向量用 $\overrightarrow{\mathrm{AB}}=\vec{a}, \overrightarrow{\mathrm{AE}}=\vec{b}, \overrightarrow{\mathrm{AF}}=\vec{c}$ 表示。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/image505.png}
+        \includegraphics[width=0.5\textwidth]{images/image506.png}
+    \end{figure}
+\begin{parts}
+\part 正五边形 $ABCDE$ 的对角线 $AD$ 的长度为 [ ア ]。
+\begin{solution}
+在圆内接正五边形 $ABCDE$ 中，设对角线长为 $x$，边长为 $1$。
+根据托勒密定理，对四边形 $ABCD$ 有：
+\[
+x \times x = x \times 1 + 1 \times 1
+\]
+即
+\[
+x^2 - x - 1 = 0
+\]
+因为 $x > 0$，解得
+\[
+x = \frac{1+\sqrt{5}}{2}
+\]
+因此，对角线 $AD$ 的长度为 $\frac{1+\sqrt{5}}{2}$。
+\end{solution}
+
+\part 用 $\vec{a}$ 和 $\vec{b}$ 表示 $\overrightarrow{\mathrm{BC}}$ 为 $\overrightarrow{\mathrm{BC}} = [\text{イ}] \vec{a} + [\text{ウ}] \vec{b}$；用 $\vec{a}$ 和 $\vec{c}$ 表示 $\overrightarrow{\mathrm{BG}}$ 为 $\overrightarrow{\mathrm{BG}} = [\text{エ}] \vec{a} + [\text{オ}] \vec{c}$。
+\begin{solution}
+在正五边形 $ABCDE$ 中，对角线 $EC$ 平行于边 $AB$，且长度为 $x = \frac{1+\sqrt{5}}{2}$，所以
+\[
+\overrightarrow{\mathrm{EC}} = \frac{1+\sqrt{5}}{2}\vec{a}
+\]
+又因为 $\overrightarrow{\mathrm{EB}} = \overrightarrow{\mathrm{AB}} - \overrightarrow{\mathrm{AE}} = \vec{a} - \vec{b}$，所以
+\begin{align*}
+\overrightarrow{\mathrm{BC}} &= \overrightarrow{\mathrm{EC}} - \overrightarrow{\mathrm{EB}} \\
+&= \frac{1+\sqrt{5}}{2}\vec{a} - (\vec{a} - \vec{b}) \\
+&= \frac{\sqrt{5}-1}{2}\vec{a} + \vec{b}
+\end{align*}
+故 イ $= \frac{\sqrt{5}-1}{2}$，ウ $= 1$。
+
+同理，在正五边形 $ABGF\dots$ 中，向量 $\overrightarrow{\mathrm{BG}}$ 与 $\overrightarrow{\mathrm{BC}}$ 的结构对称，故有
+\[
+\overrightarrow{\mathrm{BG}} = \frac{\sqrt{5}-1}{2}\vec{a} + \vec{c}
+\]
+故 エ $= \frac{\sqrt{5}-1}{2}$，オ $= 1$。
+\end{solution}
+
+\part 用 $\vec{a}, \vec{b}, \vec{c}$ 表示 $\overrightarrow{\mathrm{GH}}$ 为 $\overrightarrow{\mathrm{GH}} = [\text{カ}] \vec{a} + [\text{キ}] \vec{b} + [\text{ク}] \vec{c}$。
+\begin{solution}
+由于 $\overrightarrow{\mathrm{CH}}$ 平行于 $\overrightarrow{\mathrm{BG}}$，且其长度为 $\overrightarrow{\mathrm{BG}}$ 的 $\frac{1+\sqrt{5}}{2}$ 倍，因此
+\[
+\overrightarrow{\mathrm{CH}} = \left(\frac{1+\sqrt{5}}{2}\right)\overrightarrow{\mathrm{BG}} = \left(\frac{1+\sqrt{5}}{2}\right)\left(\frac{\sqrt{5}-1}{2}\vec{a} + \vec{c}\right)
+\]
+利用向量加法，可得
+\begin{align*}
+\overrightarrow{\mathrm{GH}} &= \overrightarrow{\mathrm{GB}} + \overrightarrow{\mathrm{BC}} + \overrightarrow{\mathrm{CH}} \\
+&= -\left(\frac{\sqrt{5}-1}{2}\vec{a} + \vec{c}\right) + \left(\frac{\sqrt{5}-1}{2}\vec{a} + \vec{b}\right) + \left(\frac{1+\sqrt{5}}{2}\right)\left(\frac{\sqrt{5}-1}{2}\vec{a} + \vec{c}\right) \\
+&= -\vec{c} + \vec{b} + \frac{5-1}{4}\vec{a} + \frac{\sqrt{5}+1}{2}\vec{c} \\
+&= \vec{a} + \vec{b} + \frac{\sqrt{5}-1}{2}\vec{c}
+\end{align*}
+故 カ $= 1$，キ $= 1$，ク $= \frac{\sqrt{5}-1}{2}$。
+\end{solution}
+\end{parts}
+
 \end{questions}
 \pagebreak
 

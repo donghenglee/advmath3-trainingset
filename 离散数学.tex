@@ -1537,6 +1537,54 @@ $$S_n = 4 - \frac{2n+2n+2}{n(n+1)} = \frac{4n(n+1) - 4n - 2}{n(n+1)} = \frac{4n^
     \end{solution}
 
     \question
+【2005 大阪大 理科】
+对于正整数 $n$，已知：
+\[
+S(n) = \sum_{p=1}^{2n} \frac{(-1)^{p-1}}{p}, \quad T(n) = \sum_{q=1}^{n} \frac{1}{n+q}
+\]
+求证：$S(n) = T(n)$。
+
+\begin{solution}
+采用数学归纳法进行证明。
+
+当 $n = 1$ 时：
+\[
+S(1) = \sum_{p=1}^{2} \frac{(-1)^{p-1}}{p} = 1 - \frac{1}{2} = \frac{1}{2}
+\]
+\[
+T(1) = \sum_{q=1}^{1} \frac{1}{1+q} = \frac{1}{1+1} = \frac{1}{2}
+\]
+所以 $S(1) = T(1)$，等式在 $n = 1$ 时成立。
+
+假设当 $n = k$（$k$ 为正整数）时等式成立，即 $S(k) = T(k)$，也就是：
+\[
+S(k) = \sum_{p=1}^{2k} \frac{(-1)^{p-1}}{p} = \sum_{q=1}^{k} \frac{1}{k+q} = \frac{1}{k+1} + \frac{1}{k+2} + \dots + \frac{1}{2k}
+\]
+
+当 $n = k+1$ 时：
+\begin{align*}
+S(k+1) &= \sum_{p=1}^{2(k+1)} \frac{(-1)^{p-1}}{p} \\
+&= \sum_{p=1}^{2k} \frac{(-1)^{p-1}}{p} + \frac{1}{2k+1} - \frac{1}{2k+2} \\
+&= S(k) + \frac{1}{2k+1} - \frac{1}{2k+2} \\
+&= \left( \frac{1}{k+1} + \frac{1}{k+2} + \dots + \frac{1}{2k} \right) + \frac{1}{2k+1} - \frac{1}{2k+2}
+\end{align*}
+
+注意到：
+\[
+\frac{1}{k+1} - \frac{1}{2k+2} = \frac{2}{2(k+1)} - \frac{1}{2(k+1)} = \frac{1}{2(k+1)} = \frac{1}{2k+2}
+\]
+将此项合并代入变形得：
+\begin{align*}
+S(k+1) &= \frac{1}{k+2} + \frac{1}{k+3} + \dots + \frac{1}{2k} + \frac{1}{2k+1} + \frac{1}{2k+2} \\
+&= \sum_{q=1}^{k+1} \frac{1}{(k+1)+q} \\
+&= T(k+1)
+\end{align*}
+
+因此，当 $n = k+1$ 时，等式同样成立。
+
+综上所述，由数学归纳法可知，对任意正整数 $n$，均有 $S(n) = T(n)$。
+\end{solution}
+    \question
 设 $P(n)$ 为命题：对于所有 $n \in \mathbb{Z}^+$，$\sum_{k=n}^{2n} (-1)^{k-1} m^{4(k-1)} = \frac{m^{4(n-1)} [(-1)^{n-1} - m^{4(n+1)}]}{1 + m^4}$。
 
 \begin{solution}
@@ -1911,6 +1959,58 @@ $\sum_{k=x}^{2x} (-1)^{k-1} m^{4(k-1)} = \frac{m^{4(x-1)} [(-1)^{x-1} - m^{4(x+1
 内层乘积 $\prod_{j=1}^{n} d^{ij} = d^{i \cdot N}$ 变成了一个非常小的数。
 在这种情况下，左侧是极小值的求和，而右侧是多个小于 $1$ 的求和项的乘积。
 由于 $d^{ij}$ 极小，右侧的每一项 $\sum_{i=1}^{m} d^{ij}$ 虽然大于左侧的单项，但经过 $n$ 次乘积方幂后，其缩小的速度会超过左侧简单的线性求和。因此，当 $n$ 选取得足够大时，左侧的求和将大于右侧的连乘积。
+\end{solution}
+
+\question
+【2011 京都大】
+整数 $n$ 满足 $n \ge 2$，当 $\frac{1}{2} < a_j < 1 \ (j = 1, 2, \cdots, n)$ 时，
+证明以下不等式成立：
+\[
+(1-a_1)(1-a_2)\cdots(1-a_n) > 1 - \left(a_1 + \frac{a_2}{2} + \cdots + \frac{a_n}{2^{n-1}}\right)
+\]
+记为 (A)。
+
+\begin{solution}
+当 $n = 2$ 时：
+\[
+(1-a_1)(1-a_2) - \left\{ 1 - \left(a_1 + \frac{a_2}{2}\right) \right\} = 1 - a_1 - a_2 + a_1 a_2 - 1 + a_1 + \frac{a_2}{2}
+\]
+\[
+= a_1 a_2 - \frac{a_2}{2} = \left(a_1 - \frac{1}{2}\right) a_2 > 0
+\]
+因为当 $\frac{1}{2} < a_1 < 1, 0 < a_2 < 1$ 时，$a_1 - \frac{1}{2} > 0, a_2 > 0$，所以 $n = 2$ 时成立。
+
+假设当 $n = k \ (k \ge 2)$ 时 (A) 成立，即：
+\[
+(1-a_1)(1-a_2)\cdots(1-a_k) > 1 - \left(a_1 + \frac{a_2}{2} + \cdots + \frac{a_k}{2^{k-1}}\right)
+\]
+记为 (B)。
+
+当 $n = k + 1$ 时：
+将 $a_{k+1} = x$（$\frac{1}{2} < x < 1$）看作一次函数。
+设 左边 $-$ 右边 $= f(x)$：
+\[
+f(x) = (1-a_1)(1-a_2)\cdots(1-a_k)(1-x) - \left\{ 1 - \left(a_1 + \frac{a_2}{2} + \cdots + \frac{x}{2^k}\right) \right\}
+\]
+\[
+= \left( \frac{1}{2^k} - (1-a_1)(1-a_2)\cdots(1-a_k) \right) x + (1-a_1)(1-a_2)\cdots(1-a_k) - \left\{ 1 - \left(a_1 + \frac{a_2}{2} + \cdots + \frac{a_k}{2^{k-1}}\right) \right\}
+\]
+由 (B) 可知，$f(0) > 0$。
+
+$f(x)$ 的斜率为：
+\[
+\frac{1}{2^k} - (1-a_1)(1-a_2)\cdots(1-a_k)
+\]
+因为 $0 < 1 - a_j < \frac{1}{2}$，所以：
+\[
+\frac{1}{2^k} - (1-a_1)(1-a_2)\cdots(1-a_k) > \frac{1}{2^k} - \frac{1}{2} \cdot \frac{1}{2} \cdots \frac{1}{2} = \frac{1}{2^k} - \frac{1}{2^k} = 0
+\]
+即 $f(x)$ 的斜率大于 $0$。
+
+因此，当 $\frac{1}{2} < x < 1$ 时，$f(x) > 0$。
+即当 $n = k + 1$ 时，不等式也成立。
+
+综上所述，由数学归纳法可知，对所有 $n \ge 2$，原不等式均成立。
 \end{solution}
 
     \question 证明对所有整数 $n \ge 1$, 有
@@ -6344,6 +6444,65 @@ M \equiv \underbrace{(-1)^{272} - (-1)^{271} + (-1)^{270} - \dots + 1}_{273 \tex
 \]
 \end{solution}
 
+\question
+【2001 京都大】
+证明对任意整数 $n$，$n^9-n^3$ 都能被 $9$ 整除。
+\begin{solution}
+因式分解得
+\[
+n^9 - n^3 = n^3(n^6 - 1)
+\]
+在模 $9$ 下考虑 $n$ 的取值，对任意整数 $n$，均有
+\[
+n \equiv 0, \pm 1, \pm 2, \pm 3, \pm 4 \pmod 9
+\]
+分以下情况讨论：
+
+1. 当 $n \equiv 0 \pmod 9$ 时，
+\[
+n^3 \equiv 0 \pmod 9
+\]
+
+2. 当 $n \equiv \pm 1 \pmod 9$ 时，
+\[
+n^2 \equiv 1 \pmod 9 \implies n^6 \equiv 1 \pmod 9
+\]
+即
+\[
+n^6 - 1 \equiv 0 \pmod 9
+\]
+
+3. 当 $n \equiv \pm 2 \pmod 9$ 时，
+\[
+n^6 \equiv (\pm 2)^6 = 64 \equiv 1 \pmod 9
+\]
+即
+\[
+n^6 - 1 \equiv 0 \pmod 9
+\]
+
+4. 当 $n \equiv \pm 3 \pmod 9$ 时，
+\[
+n^2 \equiv 0 \pmod 9
+\]
+故 $n^3 \equiv 0 \pmod 9$。
+
+5. 当 $n \equiv \pm 4 \pmod 9$ 时，
+\[
+n^2 = 16 \equiv -2 \pmod 9
+\]
+\[
+n^6 \equiv (-2)^3 = -8 \equiv 1 \pmod 9
+\]
+即
+\[
+n^6 - 1 \equiv 0 \pmod 9
+\]
+
+综上所述，对任意整数 $n$，均有 $n^3(n^6-1) \equiv 0 \pmod 9$。
+因此 $n^9 - n^3$ 都能被 $9$ 整除。原命题得证。
+\end{solution}
+
 \question 6. (CHINA/2004) $n = 3 \times 7 \times 11 \times 15 \times 19 \times \dots \times 2003$。求 $n$ 的最后三位数字。
 \begin{solution}
 显然 $n$ 是奇数，因为它是奇数的乘积。设 $x$ 为最后三位数字，则 $n \equiv x \pmod{1000}$。由于乘积中包含 $15, 35, 55$，所以 $n$ 能被 125 整除，故 $x$ 也能被 125 整除。因此，$x$ 的可能值仅为 125, 375, 625, 875。
@@ -7055,6 +7214,99 @@ $a_1 = 4, \quad a_{n+1} = a_n^2 + n(n+2) \quad (n=1, 2, 3, \cdots)$
         三个数的最大公约数为 $1$。
     \end{solution}
 \end{parts}
+
+\question
+【东大实战模考】
+\begin{parts}
+\part 设 $k, l$ 为整数。证明 $k^2+kl+l^2+1$ 不能被 $3$ 整除。
+\begin{solution}
+在模 $3$ 下考虑。
+分以下三种情况：
+1. $k \equiv l \equiv 0$
+2. $k \equiv 0, l \not\equiv 0$
+3. $k \not\equiv 0, l \not\equiv 0$ （此时 $k^2 \equiv l^2 \equiv 1$, $kl \equiv \pm 1$）
+
+令 $M = k^2+kl+l^2+1$。
+在情况1时，
+\[
+M \equiv 1 \not\equiv 0
+\]
+在情况2时，
+\[
+M \equiv 0+0+1+1 \equiv 2 \not\equiv 0
+\]
+在情况3时，
+\[
+M \equiv 1+(\pm 1)+1+1 \equiv \pm 1 \not\equiv 0
+\]
+无论哪种情况都有 $M \not\equiv 0$。原命题得证。
+\end{solution}
+
+\part 设 $f(x)=x^3+x+1$。证明在 $3^n$（$n$ 为自然数）个整数 $f(1), f(2), \cdots, f(3^n)$ 中，存在且仅存在一个能被 $3^n$ 整除的数。
+\begin{solution}
+已知 $f(x)=x^3+x+1$。设 $k, l \in \mathbb{Z}$ 且 $1 \le l < k \le 3^n$。考虑 $f(k)-f(l)$。
+\begin{align*}
+f(k)-f(l) &= (k^3+k+1) - (l^3+l+1) \\
+&= (k-l)(k^2+kl+l^2+1)
+\end{align*}
+因为 $1 \le k-l \le 3^n-1$，所以 $k-l$ 不能被 $3^n$ 整除。
+又由上一小题可知，$k^2+kl+l^2+1$ 不能被 $3$ 整除。
+因此，$f(k)-f(l)$ 不能被 $3^n$ 整除。
+由此可知，$f(k)$ 和 $f(l)$ 除以 $3^n$ 的余数全不相同。
+因为集合 $\{f(1), f(2), f(3), \cdots, f(3^n)\}$ 包含 $3^n$ 个整数，所以它们除以 $3^n$ 的余数恰好对应集合 $\{0, 1, 2, \cdots, 3^n-1\}$。
+因此，在 $f(1), \cdots, f(3^n)$ 中能被 $3^n$ 整除的数有且只有一个。原命题得证。
+\end{solution}
+\end{parts}
+
+\question
+【2018 首都大学东京  现：东京都立大学】
+关于整系数 $3$ 次多项式 $f(x)=x^3+ax^2+bx+c$，回答下列问题。
+\begin{parts}
+\part 当有理数 $r$ 是方程 $f(x)=0$ 的解时，证明 $r$ 是整数。
+\begin{solution}
+设 $r = \frac{q}{p}$，其中 $p, q$ 为互质的整数，即 $(p, q) = 1$。
+由 $f(r) = 0$ 可得
+\[
+\left(\frac{q}{p}\right)^3 + a\left(\frac{q}{p}\right)^2 + b\left(\frac{q}{p}\right) + c = 0
+\]
+两边同乘以 $p^3$，得
+\[
+q^3 + apq^2 + bp^2q + cp^3 = 0
+\]
+移项得
+\[
+p(aq^2 + bpq + cp^2) = -q^3
+\]
+等式左侧为 $p$ 的倍数，因此右侧 $-q^3$ 也是 $p$ 的倍数。
+因为 $(p, q) = 1$，所以 $p = \pm 1$。
+因此 $r \in \mathbb{Z}$，即 $r$ 是整数。
+\end{solution}
+
+\part 当整数 $f(1), f(2), f(3)$ 都不能被 $3$ 整除时，证明方程 $f(x)=0$ 没有有理数解。
+\begin{solution}
+对任意整数 $x, y$，若 $x \equiv y \pmod 3$，则有
+\begin{align*}
+x^3 &\equiv y^3 \pmod 3 \\
+ax^2 &\equiv ay^2 \pmod 3 \\
+bx &\equiv by \pmod 3 \\
+c &\equiv c \pmod 3
+\end{align*}
+各式相加，可得
+\[
+f(x) \equiv f(y) \pmod 3
+\]
+因为对任意整数 $x$，在模 $3$ 下都有 $x \equiv 1, 2, 3 \pmod 3$，
+所以 $f(x) \equiv f(1), f(2) \text{ 或 } f(3) \pmod 3$。
+又已知 $f(1), f(2), f(3)$ 都不能被 $3$ 整除，即 $f(1), f(2), f(3) \not\equiv 0 \pmod 3$，
+故对任意整数 $x \in \mathbb{Z}$，都有 $f(x) \not\equiv 0 \pmod 3$。
+由此可知，对任意 $x \in \mathbb{Z}$，均有 $f(x) \ne 0$，即方程没有整数解。
+
+由第 (1) 小题结论可知，若 $f(x)=0$ 有有理数解，则该解必为整数。
+因此，方程 $f(x)=0$ 没有有理数解。
+\end{solution}
+\end{parts}
+
+
 \end{questions}
 \pagebreak
 \begin{center}
