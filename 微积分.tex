@@ -13563,6 +13563,16 @@ $f'(\theta) = \sec \theta \tan \theta + \sec^2 \theta = \sec \theta(\tan \theta 
 \end{solution}
 \end{parts}
 
+\question 计算积分 $\int_0^1 \frac{\sqrt{4-x^2}}{(x^2-2)^2} \,dx$。
+\begin{solution}
+\begin{align*}
+\int_0^1 \frac{\sqrt{4-x^2}}{(x^2-2)^2} \,dx &\stackrel{u=\frac{x}{\sqrt{4-x^2}}}{=} \int_0^{\frac{1}{\sqrt{3}}} \frac{1}{(u^2-1)^2} \,du \\
+&= \frac{1}{2} \int_0^{\frac{1}{\sqrt{3}}} \frac{u^2+1-u^2+1}{(u^2-1)^2} \,du \\
+&= \frac{1}{2} \left[ \int_0^{\frac{1}{\sqrt{3}}} \left( -\frac{u}{u^2-1} \right)' \,du - \frac{1}{2} \int_0^{\frac{1}{\sqrt{3}}} \frac{u+1-u+1}{u^2-1} \,du \right] \\
+&= \frac{\sqrt{3}}{4} + \frac{1}{4}\log(2+\sqrt{3})
+\end{align*}
+\end{solution}
+
 \question
 求积分
 \[
@@ -15359,6 +15369,66 @@ AB = (2 \sec \theta)(2 \csc \theta) = \frac{4}{\sin \theta \cos \theta} = \frac{
 故正确选项为 (4)。
 \end{solution}
 
+\question 计算积分
+\[
+\int_0^{\frac{\pi}{6}} \frac{\sin x + \cos x}{\sin 3x + \cos 3x} \,dx
+\]
+
+\begin{solution}
+将被积函数的分母展开并化简：
+\begin{align*}
+\sin 3x + \cos 3x &= (3\sin x - 4\sin^3 x) + (4\cos^3 x - 3\cos x) \\
+&= 3(\sin x - \cos x) + 4(\cos^3 x - \sin^3 x) \\
+&= 3(\sin x - \cos x) + 4(\cos x - \sin x)(\cos^2 x + \cos x \sin x + \sin^2 x) \\
+&= -3(\cos x - \sin x) + 4(\cos x - \sin x)(1 + \sin x \cos x) \\
+&= (\cos x - \sin x) \left[ -3 + 4(1 + \sin x \cos x) \right] \\
+&= (\cos x - \sin x) (1 + 4\sin x \cos x) \\
+&= (\cos x - \sin x) (1 + 2\sin 2x)
+\end{align*}
+
+将原积分的分子分母同乘 $(\cos x - \sin x)$，得到：
+\begin{align*}
+\int_0^{\frac{\pi}{6}} \frac{\sin x + \cos x}{\sin 3x + \cos 3x} \,dx &= \int_0^{\frac{\pi}{6}} \frac{(\sin x + \cos x)(\cos x - \sin x)}{(\cos x - \sin x)^2 (1 + 2\sin 2x)} \,dx \\
+&= \int_0^{\frac{\pi}{6}} \frac{\cos^2 x - \sin^2 x}{(1 - 2\sin x \cos x)(1 + 2\sin 2x)} \,dx \\
+&= \int_0^{\frac{\pi}{6}} \frac{\cos 2x}{(1 - \sin 2x)(1 + 2\sin 2x)} \,dx
+\end{align*}
+
+令 $u = \sin 2x$，则 $du = 2\cos 2x \,dx$。
+当 $x = 0$ 时，$u = 0$；当 $x = \frac{\pi}{6}$ 时，$u = \sin\frac{\pi}{3} = \frac{\sqrt{3}}{2}$。
+积分变为：
+\[
+\frac{1}{2} \int_0^{\frac{\sqrt{3}}{2}} \frac{1}{(1 - u)(1 + 2u)} \,du
+\]
+
+将分式进行部分分式分解：
+\[
+\frac{1}{(1 - u)(1 + 2u)} = \frac{1}{3} \left( \frac{1}{1 - u} + \frac{2}{1 + 2u} \right)
+\]
+
+代入积分计算：
+\begin{align*}
+\frac{1}{2} \int_0^{\frac{\sqrt{3}}{2}} \frac{1}{3} \left( \frac{1}{1 - u} + \frac{2}{1 + 2u} \right) \,du &= \frac{1}{6} \left[ -\ln(1 - u) + \ln(1 + 2u) \right]_0^{\frac{\sqrt{3}}{2}} \\
+&= \frac{1}{6} \left[ \ln \left( \frac{1 + 2u}{1 - u} \right) \right]_0^{\frac{\sqrt{3}}{2}} \\
+&= \frac{1}{6} \ln \left( \frac{1 + \sqrt{3}}{1 - \frac{\sqrt{3}}{2}} \right) - \frac{1}{6} \ln(1) \\
+&= \frac{1}{6} \ln \left( \frac{2 + 2\sqrt{3}}{2 - \sqrt{3}} \right)
+\end{align*}
+
+对真数进行分子分母有理化：
+\[
+\frac{2 + 2\sqrt{3}}{2 - \sqrt{3}} = \frac{(2 + 2\sqrt{3})(2 + \sqrt{3})}{(2 - \sqrt{3})(2 + \sqrt{3})} = \frac{4 + 2\sqrt{3} + 4\sqrt{3} + 6}{4 - 3} = 10 + 6\sqrt{3}
+\]
+
+注意到 $10 + 6\sqrt{3} = (1 + \sqrt{3})^3$，因此：
+\[
+\frac{1}{6} \ln(10 + 6\sqrt{3}) = \frac{1}{6} \ln \left( (1 + \sqrt{3})^3 \right) = \frac{1}{2} \ln(1 + \sqrt{3})
+\]
+
+最终结果为：
+\[
+\frac{1}{2} \ln(1 + \sqrt{3})
+\]
+\end{solution}
+
     \question 设
     \[
     I = \int_{0}^{\pi} \frac{\sin^2 x}{1 + \cos^2 x} \,dx
@@ -15783,6 +15853,54 @@ AB = (2 \sec \theta)(2 \csc \theta) = \frac{4}{\sin \theta \cos \theta} = \frac{
 \end{solution}
 
 \end{parts}
+
+\question 计算不定积分
+\[
+\int \frac{\cos^3 x - \sin^3 x + \cos^5 x - \sin^5 x}{3\sin^2 x + 2\cos^2 x - \sin^4 x} \,dx
+\]
+\begin{solution}
+首先化简被积函数的分子和分母。
+分子可重新分组提取公因式：
+\[
+(\cos^3 x + \cos^5 x) - (\sin^3 x + \sin^5 x) = \cos^3 x(1 + \cos^2 x) - \sin^3 x(1 + \sin^2 x)
+\]
+分母可化简为：
+\begin{align*}
+3\sin^2 x + 2\cos^2 x - \sin^4 x &= 2(\sin^2 x + \cos^2 x) + \sin^2 x - \sin^4 x \\
+&= 2 + \sin^2 x(1 - \sin^2 x) \\
+&= 2 + \sin^2 x \cos^2 x
+\end{align*}
+
+由此，原积分可拆分为两个积分之差 $I_1 - I_2$，其中：
+\[
+I_1 = \int \frac{\cos^3 x(1 + \cos^2 x)}{2 + \sin^2 x \cos^2 x} \,dx, \quad I_2 = \int \frac{\sin^3 x(1 + \sin^2 x)}{2 + \sin^2 x \cos^2 x} \,dx
+\]
+
+对于 $I_1$，令 $u = \sin x$，则 $du = \cos x \,dx$。
+\begin{align*}
+I_1 &= \int \frac{\cos^2 x(1 + \cos^2 x)}{2 + \sin^2 x \cos^2 x} \cos x \,dx \\
+&= \int \frac{(1 - u^2)(2 - u^2)}{2 + u^2(1 - u^2)} \,du \\
+&= \int \frac{(u^2 - 1)(u^2 - 2)}{-u^4 + u^2 + 2} \,du \\
+&= \int \frac{(u^2 - 1)(u^2 - 2)}{-(u^2 - 2)(u^2 + 1)} \,du \\
+&= \int \frac{1 - u^2}{u^2 + 1} \,du = \int \left( \frac{2}{u^2 + 1} - 1 \right) \,du \\
+&= 2\arctan u - u + C_1 = 2\arctan(\sin x) - \sin x + C_1
+\end{align*}
+
+对于 $I_2$，令 $v = \cos x$，则 $dv = -\sin x \,dx$。
+\begin{align*}
+I_2 &= \int \frac{\sin^2 x(1 + \sin^2 x)}{2 + \sin^2 x \cos^2 x} \sin x \,dx \\
+&= \int \frac{(1 - v^2)(2 - v^2)}{2 + v^2(1 - v^2)} (-dv) \\
+&= -\int \frac{(v^2 - 1)(v^2 - 2)}{-(v^2 - 2)(v^2 + 1)} \,dv \\
+&= \int \frac{v^2 - 1}{v^2 + 1} \,dv = \int \left( 1 - \frac{2}{v^2 + 1} \right) \,dv \\
+&= v - 2\arctan v + C_2 = \cos x - 2\arctan(\cos x) + C_2
+\end{align*}
+
+因此，原积分为：
+\begin{align*}
+I_1 - I_2 &= (2\arctan(\sin x) - \sin x) - (\cos x - 2\arctan(\cos x)) + C \\
+&= 2\arctan(\sin x) + 2\arctan(\cos x) - \sin x - \cos x + C
+\end{align*}
+\end{solution}
 
 %分部积分by parts
     \question 使用分部积分法,求
@@ -17805,6 +17923,75 @@ I = \ln 2 \left[x\right]_0^{\frac{\pi}{4}} - I
 \]
 \end{solution}
 \end{parts}
+
+
+\question 计算不定积分
+\[
+\int \frac{e^{3x} \ln\left( 2 \left\{ \ln\left[ 3 \ln(\sin 2e^{3x}) \right] \right\}^2 + 3 \right)}{\ln(\sin 2e^{3x}) \tan 2e^{3x}} \,dx
+\]
+\begin{solution}
+令 $u = \sin(2e^{3x})$，则 $du = 6e^{3x} \cos(2e^{3x}) \,dx$。
+原积分可化为：
+\begin{align*}
+&\int \frac{\ln\left( 2 \left\{ \ln\left[ 3 \ln(\sin 2e^{3x}) \right] \right\}^2 + 3 \right)}{\ln(\sin 2e^{3x})} \cdot \frac{\cos(2e^{3x})}{\sin(2e^{3x})} e^{3x} \,dx \\
+&= \frac{1}{6} \int \frac{\ln(2 \{ \ln [ 3 \ln u ] \}^2 + 3)}{u \ln u} \,du
+\end{align*}
+
+再令 $v = \ln(3\ln u)$，则 $dv = \frac{1}{3\ln u} \cdot \frac{3}{u} \,du = \frac{1}{u\ln u} \,du$。
+此时积分变为：
+\[
+\frac{1}{6} \int \ln(2v^2 + 3) \,dv
+\]
+
+使用分部积分法：
+\begin{align*}
+\int \ln(2v^2 + 3) \,dv &= v \ln(2v^2 + 3) - \int v \cdot \frac{4v}{2v^2 + 3} \,dv \\
+&= v \ln(2v^2 + 3) - 2 \int \frac{2v^2 + 3 - 3}{2v^2 + 3} \,dv \\
+&= v \ln(2v^2 + 3) - 2 \int \left( 1 - \frac{3}{2v^2 + 3} \right) \,dv \\
+&= v \ln(2v^2 + 3) - 2v + \sqrt{6} \arctan\left( \sqrt{\frac{2}{3}}v \right) + C
+\end{align*}
+
+代回 $v = \ln(3\ln(\sin 2e^{3x}))$，得原积分为：
+\[
+\frac{1}{6} \left[ v \ln(2v^2 + 3) - 2v + \sqrt{6} \arctan\left( \sqrt{\frac{2}{3}}v \right) \right] + C
+\]
+其中 $v = \ln(3\ln(\sin 2e^{3x}))$，$C$ 为积分常数。
+\end{solution}
+
+\question 计算不定积分
+\[
+\int \left( \frac{1}{\ln x} - \ln x \right) \left( \frac{1}{x} + \ln x \right) (\ln x - 1) \,dx
+\]
+\begin{solution}
+令 $u = \ln x$，则 $x = e^u$，$dx = e^u \,du$。
+原积分可化为：
+\begin{align*}
+&\int \left( \frac{1}{u} - u \right) \left( e^{-u} + u \right) (u - 1) e^u \,du \\
+&= \int \frac{1 - u^2}{u} \cdot \frac{1 + u e^u}{e^u} \cdot (u - 1) e^u \,du \\
+&= \int \frac{(1 - u^2)(u - 1)}{u} (1 + u e^u) \,du \\
+&= \int \frac{-u^3 + u^2 + u - 1}{u} (1 + u e^u) \,du \\
+&= \int \left( -u^2 + u + 1 - \frac{1}{u} \right) (1 + u e^u) \,du \\
+&= \int \left( -u^2 + u + 1 - \frac{1}{u} \right) \,du + \int \left( -u^3 + u^2 + u - 1 \right) e^u \,du
+\end{align*}
+
+对于第一部分积分：
+\[
+\int \left( -u^2 + u + 1 - \frac{1}{u} \right) \,du = -\frac{1}{3}u^3 + \frac{1}{2}u^2 + u - \ln|u|
+\]
+
+对于第二部分积分，使用待定系数法（或连续分部积分法）：
+\begin{align*}
+&\int \left( -u^3 + u^2 + u - 1 \right) e^u \,du \\
+&= \left[ (-u^3 + u^2 + u - 1) - (-3u^2 + 2u + 1) + (-6u + 2) - (-6) \right] e^u \\
+&= \left( -u^3 + 4u^2 - 7u + 6 \right) e^u
+\end{align*}
+
+将两部分相加并代回 $u = \ln x$（假设在定义域内 $\ln x > 0$），得到：
+\[
+-\frac{1}{3}\ln^3 x + \frac{1}{2}\ln^2 x + \ln x - \ln|\ln x| + x(-\ln^3 x + 4\ln^2 x - 7\ln x + 6) + C
+\]
+其中 $C$ 为积分常数。
+\end{solution}
 % reduction formula
     \question
     证明

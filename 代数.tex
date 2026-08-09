@@ -15539,6 +15539,48 @@ a_n = \begin{cases}
 因此，$x_0 + 2x_1 + 2^2x_2 + \dots + 2^{225}x_{225}$ 的值为 $-1$。
 \end{solution}
 
+\question 数列 $\{a_n\}$ 满足 $a_1 = \frac{1}{6}$，$\frac{1}{a_{n+1}} - \frac{1}{a_n} = 2 \quad (n=1, 2, 3, \dots)$。
+又数列 $\{b_n\}$ 满足 $b_1 = 8a_1a_2$，$b_{n+1} - b_n = 8a_{n+1}a_{n+2} \quad (n=1, 2, 3, \dots)$。
+此时，解答下列问题。
+\begin{parts}
+\part 用 $n$ 表示数列 $\{a_n\}$ 的通项公式 $a_n$。
+\begin{solution}
+已知 $\frac{1}{a_{n+1}} - \frac{1}{a_n} = 2$，说明数列 $\left\{ \frac{1}{a_n} \right\}$ 是一个首项为 $\frac{1}{a_1} = 6$，公差为 $2$ 的等差数列。
+因此其通项公式为：
+\[
+\frac{1}{a_n} = 6 + (n - 1) \times 2 = 2n + 4
+\]
+解得 $a_n$ 为：
+\[
+a_n = \frac{1}{2n + 4}
+\]
+\end{solution}
+\part 用 $n$ 表示数列 $\{b_n\}$ 的通项公式 $b_n$。
+\begin{solution}
+根据(1)的结论有 $a_{n+1} = \frac{1}{2n + 6}$，$a_{n+2} = \frac{1}{2n + 8}$。代入 $\{b_n\}$ 的差分式中：
+\begin{align*}
+b_{n+1} - b_n &= 8a_{n+1}a_{n+2} \\
+&= \frac{8}{(2n + 6)(2n + 8)} \\
+&= \frac{2}{(n + 3)(n + 4)} \\
+&= 2 \left( \frac{1}{n + 3} - \frac{1}{n + 4} \right)
+\end{align*}
+利用累加法求 $b_n$（当 $n \ge 2$ 时）：
+\begin{align*}
+b_n &= b_1 + \sum_{k=1}^{n-1} (b_{k+1} - b_k) \\
+&= 8a_1a_2 + \sum_{k=1}^{n-1} 2 \left( \frac{1}{k + 3} - \frac{1}{k + 4} \right) \\
+&= 8 \left( \frac{1}{6} \right) \left( \frac{1}{8} \right) + 2 \left( \frac{1}{4} - \frac{1}{n + 3} \right) \\
+&= \frac{1}{6} + \frac{1}{2} - \frac{2}{n + 3} \\
+&= \frac{2}{3} - \frac{2}{n + 3} \\
+&= \frac{2n}{3(n + 3)}
+\end{align*}
+验证当 $n=1$ 时，$b_1 = \frac{2(1)}{3(1+3)} = \frac{1}{6}$，式子依然成立。
+故数列 $\{b_n\}$ 的通项公式为：
+\[
+b_n = \frac{2n}{3(n + 3)}
+\]
+\end{solution}
+\end{parts}
+
     \question 设实数数列 \(\{a_n\}\) 满足
     \[
     a_n a_{n+2} - a_{n+1}^2 - (n+1) a_n a_{n+1} = 0。
@@ -21096,7 +21138,146 @@ $(\sqrt[3]{7} + \sqrt[12]{11})^n = (7^{\frac{1}{3}} + 11^{\frac{1}{12}})^n$
 \vspace{0.5pt}
 
 \begin{questions}
+\question 设 $A = \begin{pmatrix} -a & a-1 \\ a+1 & a \end{pmatrix}$ 且 $B = \begin{pmatrix} b+1 & 1-b \\ b-1 & 1+b \end{pmatrix}$。
+\begin{parts}
+\part 求 $AB$ 和 $BA$。
+\begin{solution}
+计算 $AB$：
+\begin{align*}
+AB &= \begin{pmatrix} -a & a-1 \\ a+1 & a \end{pmatrix} \begin{pmatrix} b+1 & 1-b \\ b-1 & 1+b \end{pmatrix} \\
+&= \begin{pmatrix} -a(b+1) + (a-1)(b-1) & -a(1-b) + (a-1)(1+b) \\ (a+1)(b+1) + a(b-1) & (a+1)(1-b) + a(1+b) \end{pmatrix} \\
+&= \begin{pmatrix} -ab - a + ab - a - b + 1 & -a + ab + a + ab - 1 - b \\ ab + a + b + 1 + ab - a & a - ab + 1 - b + a + ab \end{pmatrix} \\
+&= \begin{pmatrix} -2a - b + 1 & 2ab - b - 1 \\ 2ab + b + 1 & 2a - b + 1 \end{pmatrix}
+\end{align*}
 
+计算 $BA$：
+\begin{align*}
+BA &= \begin{pmatrix} b+1 & 1-b \\ b-1 & 1+b \end{pmatrix} \begin{pmatrix} -a & a-1 \\ a+1 & a \end{pmatrix} \\
+&= \begin{pmatrix} (b+1)(-a) + (1-b)(a+1) & (b+1)(a-1) + (1-b)a \\ (b-1)(-a) + (1+b)(a+1) & (b-1)(a-1) + (1+b)a \end{pmatrix} \\
+&= \begin{pmatrix} -ab - a + a + 1 - ab - b & ab - b + a - 1 + a - ab \\ -ab + a + a + 1 + ab + b & ab - b - a + 1 + a + ab \end{pmatrix} \\
+&= \begin{pmatrix} -2ab - b + 1 & 2a - b - 1 \\ 2a + b + 1 & 2ab - b + 1 \end{pmatrix}
+\end{align*}
+\end{solution}
+
+\part 求 $(AB - BA)^{2n}$。
+\begin{solution}
+首先计算 $AB - BA$：
+\begin{align*}
+AB - BA &= \begin{pmatrix} -2a - b + 1 & 2ab - b - 1 \\ 2ab + b + 1 & 2a - b + 1 \end{pmatrix} - \begin{pmatrix} -2ab - b + 1 & 2a - b - 1 \\ 2a + b + 1 & 2ab - b + 1 \end{pmatrix} \\
+&= \begin{pmatrix} -2a + 2ab & 2ab - 2a \\ 2ab - 2a & 2a - 2ab \end{pmatrix} \\
+&= 2a(b - 1) \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+\end{align*}
+
+令 $C = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$，计算 $C^2$：
+\[
+C^2 = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 1+1 & 1-1 \\ 1-1 & 1+1 \end{pmatrix} = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} = 2I
+\]
+
+因此，
+\[
+(AB - BA)^2 = \left[ 2a(b - 1) C \right]^2 = 4a^2(b - 1)^2 C^2 = 8a^2(b - 1)^2 I
+\]
+
+进一步计算 $(AB - BA)^{2n}$：
+\begin{align*}
+(AB - BA)^{2n} &= \left[ (AB - BA)^2 \right]^n \\
+&= \left[ 8a^2(b - 1)^2 I \right]^n \\
+&= 8^n a^{2n} (b - 1)^{2n} I
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question 设 $A = \begin{pmatrix} 1 & -1 \\ 1 & a \end{pmatrix}$ 且 $B = \begin{pmatrix} b & 1 \\ -1 & 1 \end{pmatrix}$，$a > 1$ 且 $b > 1$。已知 $XAY + XBY = XY + I$，其中 $I$ 是 $2 \times 2$ 单位矩阵。求 $\sum_{k=1}^n (YX)^k$。
+\begin{solution}
+由已知等式 $XAY + XBY = XY + I$，提取公因式得到：
+\[
+X(A + B)Y = XY + I
+\]
+移项得：
+\[
+X(A + B - I)Y = I
+\]
+计算 $A + B - I$：
+\[
+A + B - I = \begin{pmatrix} 1 & -1 \\ 1 & a \end{pmatrix} + \begin{pmatrix} b & 1 \\ -1 & 1 \end{pmatrix} - \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} b & 0 \\ 0 & a \end{pmatrix}
+\]
+令 $D = \begin{pmatrix} b & 0 \\ 0 & a \end{pmatrix}$，则有 $XDY = I$。
+因为 $a > 1$ 且 $b > 1$，$D$ 为可逆矩阵，其逆矩阵为：
+\[
+D^{-1} = \begin{pmatrix} \frac{1}{b} & 0 \\ 0 & \frac{1}{a} \end{pmatrix}
+\]
+由 $XDY = I$ 可知，矩阵 $XD$ 与 $Y$ 互为逆矩阵，从而有 $Y(XD) = I$，即 $YXD = I$。
+两边同时右乘 $D^{-1}$ 得到：
+\[
+YX = D^{-1} = \begin{pmatrix} \frac{1}{b} & 0 \\ 0 & \frac{1}{a} \end{pmatrix}
+\]
+由于对角矩阵的幂等于其对角元素的幂，因此：
+\[
+(YX)^k = \begin{pmatrix} \left( \frac{1}{b} \right)^k & 0 \\ 0 & \left( \frac{1}{a} \right)^k \end{pmatrix}
+\]
+对矩阵元素进行等比数列求和：
+\begin{align*}
+\sum_{k=1}^n (YX)^k &= \begin{pmatrix} \sum_{k=1}^n \left( \frac{1}{b} \right)^k & 0 \\ 0 & \sum_{k=1}^n \left( \frac{1}{a} \right)^k \end{pmatrix} \\
+&= \begin{pmatrix} \frac{\frac{1}{b} \left( 1 - \left( \frac{1}{b} \right)^n \right)}{1 - \frac{1}{b}} & 0 \\ 0 & \frac{\frac{1}{a} \left( 1 - \left( \frac{1}{a} \right)^n \right)}{1 - \frac{1}{a}} \end{pmatrix} \\
+&= \begin{pmatrix} \frac{1 - b^{-n}}{b - 1} & 0 \\ 0 & \frac{1 - a^{-n}}{a - 1} \end{pmatrix}
+\end{align*}
+\end{solution}
+
+\question 设 $A = \begin{pmatrix} \sin x & \cos x \\ \tan x & 0 \end{pmatrix}$ 且 $B = \begin{pmatrix} \sin x & \tan x \\ \cos x & 0 \end{pmatrix}$，其中 $\sin x \neq 0$ 且 $\cos x \neq \tan x$。
+\begin{parts}
+\part 证明 $(B - A)^2 = -(\cos x - \tan x)^2 I$
+\begin{solution}
+先计算矩阵差 $B - A$：
+\[
+B - A = \begin{pmatrix} 0 & \tan x - \cos x \\ \cos x - \tan x & 0 \end{pmatrix}
+\]
+计算平方：
+\begin{align*}
+(B - A)^2 &= \begin{pmatrix} 0 & \tan x - \cos x \\ \cos x - \tan x & 0 \end{pmatrix} \begin{pmatrix} 0 & \tan x - \cos x \\ \cos x - \tan x & 0 \end{pmatrix} \\
+&= \begin{pmatrix} -(\tan x - \cos x)^2 & 0 \\ 0 & -(\cos x - \tan x)^2 \end{pmatrix} \\
+&= -(\cos x - \tan x)^2 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\
+&= -(\cos x - \tan x)^2 I
+\end{align*}
+得证。
+\end{solution}
+\part 证明 $(B^2 - A^2)^2 = \sin^2 x(B - A)^2$
+\begin{solution}
+分别计算 $B^2$ 和 $A^2$：
+\begin{align*}
+B^2 &= \begin{pmatrix} \sin x & \tan x \\ \cos x & 0 \end{pmatrix} \begin{pmatrix} \sin x & \tan x \\ \cos x & 0 \end{pmatrix} = \begin{pmatrix} \sin^2 x + \sin x & \sin x \tan x \\ \sin x \cos x & \sin x \end{pmatrix} \\
+A^2 &= \begin{pmatrix} \sin x & \cos x \\ \tan x & 0 \end{pmatrix} \begin{pmatrix} \sin x & \cos x \\ \tan x & 0 \end{pmatrix} = \begin{pmatrix} \sin^2 x + \sin x & \sin x \cos x \\ \sin x \tan x & \sin x \end{pmatrix}
+\end{align*}
+相减得到 $B^2 - A^2$：
+\begin{align*}
+B^2 - A^2 &= \begin{pmatrix} 0 & \sin x(\tan x - \cos x) \\ \sin x(\cos x - \tan x) & 0 \end{pmatrix} \\
+&= \sin x \begin{pmatrix} 0 & \tan x - \cos x \\ \cos x - \tan x & 0 \end{pmatrix} \\
+&= \sin x(B - A)
+\end{align*}
+对此等式两边平方：
+\[
+(B^2 - A^2)^2 = (\sin x(B - A))^2 = \sin^2 x(B - A)^2
+\]
+得证。
+\end{solution}
+\part 求矩阵 $X$ 使得 $(B^2 - A^2)X(B^2 - A^2)^T = -\det(B^2 - A^2)I$
+\begin{solution}
+令 $M = B^2 - A^2$，则 $M = \sin x(B - A) = \begin{pmatrix} 0 & c \\ -c & 0 \end{pmatrix}$，其中 $c = \sin x(\tan x - \cos x)$。
+观察可知 $M^T = -M$，且其行列式 $\det(M) = c^2$。
+由(b)的结论可得：
+\[
+M^2 = \sin^2 x(B - A)^2 = \sin^2 x \left( -(\cos x - \tan x)^2 I \right) = -c^2 I = -\det(M)I
+\]
+原方程可化为：
+\[
+M X M^T = -\det(M)I \implies M X (-M) = M^2 \implies M X M = M (-I) M
+\]
+由于 $\sin x \neq 0$ 且 $\cos x \neq \tan x$，故 $c \neq 0$，$\det(M) \neq 0$，矩阵 $M$ 可逆。
+等式两边同乘 $M^{-1}$ 可得：
+\[
+X = -I = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+\]
+\end{solution}
+\end{parts}
 
 \question 设 $M$ 为一个 $3 \times 3$ 矩阵使得 $M + kI$ 为非奇异的，其中 $k$ 为一常数及 $I$ 为 $3 \times 3$ 单位矩阵。若 $N$ 为一个 $3 \times 3$ 矩阵，则 $(M + kI)^{-1}MN =$
 
