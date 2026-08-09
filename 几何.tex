@@ -1114,6 +1114,67 @@ S_{\triangle ABF} = 28
         \end{align*}
         等号成立当且仅当 $a=b$ 且 $\sin\left(\dfrac{\pi}{6}+C\right)=1$即 $a=b,C=\dfrac{\pi}{3}$,亦即 $a=b=c$。
     \end{solution}
+    \question
+【1986 福井大学 改编题】
+已知直角三角形 $ABC$（$\angle A = 90^\circ$）。在同一平面内，于 $\triangle ABC$ 的外部，分别以边 $BC, CA, AB$ 为底边作顶角为 $120^\circ$ 的等腰三角形 $PBC, QCA, RAB$。
+求证：$\triangle PQR$ 为正三角形。
+
+\begin{solution}
+设 $\triangle ABC$ 的三边长分别为 $BC = a, CA = b, AB = c$，已知 $\angle A = 90^\circ$，则有 $a^2 = b^2 + c^2$。
+设 $\angle ACB = \theta$，则：
+\[
+\cos\theta = \frac{b}{a}
+\]
+\[
+\sin\theta = \frac{c}{a}
+\]
+设等腰三角形 $PBC, QCA, RAB$ 的腰长分别为 $p, q, r$。因为顶角均为 $120^\circ$，底角为 $30^\circ$，所以：
+\[
+p = \frac{a}{\sqrt{3}}
+\]
+\[
+q = \frac{b}{\sqrt{3}}
+\]
+\[
+r = \frac{c}{\sqrt{3}}
+\]
+
+在 $\triangle PCQ$ 中，$\angle PCQ = \theta + 30^\circ + 30^\circ = \theta + 60^\circ$。
+根据余弦定理求 $PQ^2$：
+\begin{align*}
+PQ^2 &= p^2 + q^2 - 2pq \cos(\theta + 60^\circ) \\
+&= p^2 + q^2 - 2pq \left( \frac{b}{a} \times \frac{1}{2} - \frac{c}{a} \times \frac{\sqrt{3}}{2} \right) \\
+&= \frac{a^2}{3} + \frac{b^2}{3} - \frac{2ab}{3} \left( \frac{b - \sqrt{3}c}{2a} \right) \\
+&= \frac{1}{3} \left( a^2 + \sqrt{3}bc \right)
+\end{align*}
+
+在 $\triangle QAR$ 中，由余弦定理求 $QR^2$：
+\begin{align*}
+QR^2 &= q^2 + r^2 - 2qr \cos 150^\circ \\
+&= \frac{b^2}{3} + \frac{c^2}{3} + 2 \times \frac{bc}{3} \left( \frac{\sqrt{3}}{2} \right) \\
+&= \frac{1}{3} \left( b^2 + c^2 + \sqrt{3}bc \right) \\
+&= \frac{1}{3} \left( a^2 + \sqrt{3}bc \right)
+\end{align*}
+
+在 $\triangle RBP$ 中，$\angle RBP = 90^\circ - \theta + 60^\circ = 150^\circ - \theta$。
+由余弦定理求 $RP^2$：
+\begin{align*}
+RP^2 &= r^2 + p^2 - 2rp \cos(90^\circ - \theta + 60^\circ) \\
+&= \frac{c^2}{3} + \frac{a^2}{3} - \frac{2ca}{3} \left( -\frac{\sqrt{3}}{2} \times \frac{b}{a} + \frac{1}{2} \times \frac{c}{a} \right) \\
+&= \frac{1}{3} \left( a^2 + \sqrt{3}bc \right)
+\end{align*}
+
+综上可得：
+\[
+PQ^2 = QR^2 = RP^2
+\]
+因为 $PQ, QR, RP > 0$，所以：
+\[
+PQ = QR = RP
+\]
+即 $\triangle PQR$ 为正三角形。
+\end{solution}
+
 
     \question（角平分线公式）在 $\triangle ABC$ 中，当 $AD$ 是 $\angle A$ 的角平分线时，则
 \[
@@ -4327,6 +4388,152 @@ S = \frac{4 \cdot (\frac{2}{3})^2 \cdot 4 \cdot (\frac{1}{3})^2 \cdot (\frac{2}{
         \]
     \end{solution}
 
+    \question
+【高中数学 三角函数】
+已知 $\triangle ABC$ 是三角形，解方程组：
+\[
+4\sin A + 3\cos B = 1
+\]
+\[
+3\sin B + 4\cos A = 6
+\]
+
+\begin{solution}
+将已知两式分别记作 (1) 式与 (2) 式。
+
+将 (1) 式与 (2) 式两边分别平方：
+\begin{align*}
+16\sin^2 A + 24\sin A \cos B + 9\cos^2 B &= 1 \\
+9\sin^2 B + 24\sin B \cos A + 16\cos^2 A &= 36
+\end{align*}
+
+两式相加，得：
+\[
+16\left(\sin^2 A + \cos^2 A\right) + 9\left(\sin^2 B + \cos^2 B\right) + 24\left(\sin A \cos B + \sin B \cos A\right) = 37
+\]
+\[
+16 + 9 + 24\sin(A + B) = 37
+\]
+\[
+24\sin(A + B) = 12
+\]
+在 $\triangle ABC$ 中，因为 $A + B + C = 180^\circ$，所以 $\sin(A + B) = \sin C$。由此可得：
+\[
+24\sin C = 12
+\]
+\[
+\sin C = \frac{1}{2}
+\]
+
+下面讨论角 $C$ 的取值：
+若 $C = 150^\circ$，则 $A + B = 30^\circ$。
+因为 $A > 0^\circ, B > 0^\circ$，所以 $0^\circ < B < 30^\circ$，进而 $\sin B < \frac{1}{2}$。
+此时：
+\[
+3\sin B + 4\cos A < 3 \times \left( \frac{1}{2} \right) + 4 \times 1 = 5.5 < 6
+\]
+这与 (2) 式矛盾，因此 $C = 150^\circ$ 舍去。
+故 $C = 30^\circ$，且 $A + B = 150^\circ$。
+
+将原方程组变形为：
+\[
+4\sin A = 1 - 3\cos B
+\]
+\[
+4\cos A = 6 - 3\sin B
+\]
+
+两式分别平方：
+\begin{align*}
+16\sin^2 A &= 1 - 6\cos B + 9\cos^2 B \\
+16\cos^2 A &= 36 - 36\sin B + 9\sin^2 B
+\end{align*}
+
+两式相加，得：
+\[
+16 = 37 - 6\cos B - 36\sin B + 9
+\]
+整理得：
+\[
+6\sin B + \cos B = 5
+\]
+即：
+\[
+\cos B = 5 - 6\sin B
+\]
+
+代入 $\sin^2 B + \cos^2 B = 1$ 中：
+\[
+\sin^2 B + \left( 5 - 6\sin B \right)^2 = 1
+\]
+\[
+\sin^2 B + 25 - 60\sin B + 36\sin^2 B = 1
+\]
+\[
+37\sin^2 B - 60\sin B + 24 = 0
+\]
+
+解关于 $\sin B$ 的一元二次方程，得：
+\[
+\sin B = \frac{30 \pm 2\sqrt{3}}{37}
+\]
+
+同理，将原方程组变形为关于 $A$ 的形式：
+\[
+3\cos B = 1 - 4\sin A
+\]
+\[
+3\sin B = 6 - 4\cos A
+\]
+两式平方相加并整理，可得关于 $\sin A$ 的一元二次方程：
+\[
+148\sin^2 A - 44\sin A - 23 = 0
+\]
+解得：
+\[
+\sin A = \frac{11 \pm 18\sqrt{3}}{74}
+\]
+由于 $\sin A > 0$，舍去负根，得：
+\[
+\sin A = \frac{11 + 18\sqrt{3}}{74}
+\]
+进而算出 $\cos A$ 为：
+\[
+\cos A = \frac{66 - 3\sqrt{3}}{74}
+\]
+因为：
+\[
+\cos A = \frac{66 - 3\sqrt{3}}{74} > \frac{66 - 3 \times 2}{74} = \frac{30}{37} \approx 0.8 > \frac{1}{\sqrt{2}} \approx 0.7 = \cos 45^\circ
+\]
+所以 $A < 45^\circ$。
+因为 $A + B = 150^\circ$，所以 $B = 150^\circ - A > 105^\circ$，即角 $B$ 为钝角，故 $\cos B < 0$。
+
+对于 $\sin B = \frac{30 \pm 2\sqrt{3}}{37}$，将其代入 $\cos B = 5 - 6\sin B$：
+若取 $\sin B = \frac{30 + 2\sqrt{3}}{37}$，则：
+\[
+\cos B = 5 - 6 \times \left( \frac{30 + 2\sqrt{3}}{37} \right) = \frac{5 - 12\sqrt{3}}{37} < 0
+\]
+满足 $\cos B < 0$ 的条件；若取减号则 $\cos B > 0$，不合题意舍去。
+
+综上所述，解得：
+\[
+\sin A = \frac{11 + 18\sqrt{3}}{74}
+\]
+\[
+\cos A = \frac{66 - 3\sqrt{3}}{74}
+\]
+\[
+\sin B = \frac{30 + 2\sqrt{3}}{37}
+\]
+\[
+\cos B = \frac{5 - 12\sqrt{3}}{37}
+\]
+\[
+C = 30^\circ \quad \left( \sin C = \frac{1}{2} \right)
+\]
+（估算角度约为 $A \approx 15.25^\circ, B \approx 134.75^\circ$）
+\end{solution}
+
     \question 定义 $f(x) = \sin^6 x + \cos^6 x + k (\sin^4 x + \cos^4 x)$,其中 $k \in \mathbb{R}$。
     \begin{parts}
     \part 求所有$k$使得 $f(x)$ 对任意 $x$ 恒为常数。
@@ -6065,6 +6272,49 @@ $= -\tan C(1 - \tan A \tan B) + \tan C = \tan A \tan B \tan C$.
         2S=44-\frac{3}{4}\cdot 22+\frac{1}{4} \Rightarrow S=\frac{111}{8}
         \]
     \end{solution}
+
+    \question
+【2023顺天堂大学-医 改题】
+已知数列 $a_n = \sin^n\left(\frac{2}{3}n\pi\right)$，求无穷级数求和：
+\[
+S = \sum_{n=1}^{\infty} a_n
+\]
+
+\begin{solution}
+分析通项 $a_n = \sin^n\left(\frac{2}{3}n\pi\right)$ 的取值周期：
+当 $n = 3k+1$ 时，$a_{3k+1} = \left(\frac{\sqrt{3}}{2}\right)^{3k+1}$；
+当 $n = 3k+2$ 时，$a_{3k+2} = \left(-\frac{\sqrt{3}}{2}\right)^{3k+2}$；
+当 $n = 3k$ 时，$a_{3k} = 0$。
+
+因此，原无穷级数 $S$ 可以按 $n \pmod 3$ 分成两部分收敛的几何级数相加：
+\[
+S = \sum_{k=0}^{\infty} \left(a_{3k+1} + a_{3k+2}\right) = \sum_{k=0}^{\infty} a_{3k+1} + \sum_{k=0}^{\infty} a_{3k+2}
+\]
+
+对于第一部分：
+\[
+a_{3k+1} = a_1 \left\{ \left(\frac{\sqrt{3}}{2}\right)^3 \right\}^k = \frac{\sqrt{3}}{2} \left(\frac{3\sqrt{3}}{8}\right)^k
+\]
+其首项为 $\frac{\sqrt{3}}{2}$，公比为 $\frac{3\sqrt{3}}{8}$。
+
+对于第二部分：
+\[
+a_2 = \left(-\frac{\sqrt{3}}{2}\right)^2 = \frac{3}{4}
+\]
+\[
+a_{3k+2} = a_2 \left\{ \left(-\frac{\sqrt{3}}{2}\right)^3 \right\}^k = \frac{3}{4} \left(-\frac{3\sqrt{3}}{8}\right)^k
+\]
+其首项为 $\frac{3}{4}$，公比为 $-\frac{3\sqrt{3}}{8}$。
+
+分别求这两个无穷等比级数的和：
+\begin{align*}
+S &= \frac{\frac{\sqrt{3}}{2}}{1 - \frac{3\sqrt{3}}{8}} + \frac{\frac{3}{4}}{1 - \left(-\frac{3\sqrt{3}}{8}\right)} \\
+&= \frac{4\sqrt{3}}{8 - 3\sqrt{3}} + \frac{6}{8 + 3\sqrt{3}} \\
+&= \frac{4\sqrt{3}\left(8 + 3\sqrt{3}\right) + 6\left(8 - 3\sqrt{3}\right)}{64 - 27} \\
+&= \frac{32\sqrt{3} + 36 + 48 - 18\sqrt{3}}{37} \\
+&= \frac{84 + 14\sqrt{3}}{37}
+\end{align*}
+\end{solution}
         
     \question 求 
     \[
@@ -7519,6 +7769,42 @@ S_{100} = \tan^{-1}\left(\frac{201 - 1}{1 + 201 \cdot 1}\right) = \tan^{-1}\left
         \]
     \end{solution}
 
+\question 【2016 东邦大学 - 医学部】
+在 $\triangle ABC$ 中，$AB = 19$，$BC = 27$，$CA = 24$。与 $AC$ 相切的旁切圆与 $BC$ 的延长线的切点为 $D$，求 $BD$ 的长。
+
+\begin{solution}
+设该旁切圆与 $AC$ 及 $BA$ 延长线的切点分别为 $E$ 和 $F$。
+
+设 $CD = CE = x$，$AE = AF = y$。
+
+因为 $AC = 24$，所以
+\[
+x + y = 24
+\]
+
+又因为从 $B$ 引出的切线长相等，即 $BD = BF$，可得
+\[
+27 + x = 19 + y
+\]
+整理得
+\[
+x - y = -8
+\]
+
+联立两式：
+\begin{align*}
+x + y &= 24 \\
+x - y &= -8
+\end{align*}
+
+两式相加得 $2x = 16$，解得 $x = 8$。
+
+因此，
+\[
+BD = 27 + x = 35
+\]
+\end{solution}
+
     \question 右图中，$AB$ 是圆的直径，$CAD$ 是圆的切线。直线 $BC$ 及 $BD$ 分别与圆相交于点 $E$ 及 $F$。已知 $CE : CB = 4 : 13$ 及 $DF : DB = 1 : 2$，求 $\tan \angle CBD$。
     \ifprintanswers
     \begin{figure}[H]
@@ -7858,6 +8144,150 @@ DE = BE - BD = \sqrt{(BD + BE)^2 - 4 BD \cdot BE}
 DE = \sqrt{20^2 - 4 \cdot 78} = \sqrt{400 - 312} = \sqrt{88} = 2\sqrt{22}
 \]
 故所求长度为 $2\sqrt{22}$。
+\end{solution}
+
+\question
+【高中数学 极线的性质（调和点列）】
+从单位圆 $C$ 外部的一点 $P$ 引两条切线，切点分别为 $A, B$。过点 $P$ 作任意直线与圆 $C$ 交于 $Q, R$ 两点，与切点弦 $AB$ 交于点 $S$。
+求证：
+\[
+\frac{1}{PQ} + \frac{1}{PR} = \frac{2}{PS}
+\]
+
+解法一：几何法（相交弦与切割线定理）
+\begin{solution}
+设单位圆 $C$ 的圆心为 $O$，点 $P$ 到圆心 $O$ 的距离 $OP = p$。
+因为 $PA$ 是圆 $C$ 的切线，半径 $OA = 1$，所以 $\triangle OAP$ 为直角三角形，$PA = \sqrt{p^2 - 1}$。
+
+由切割线定理可得：
+\[
+PQ \times PR = PA^2 = p^2 - 1
+\]
+记作 (1) 式。
+
+设切点弦 $AB$ 与 $OP$ 交于点 $H$。在直角三角形 $OAP$ 中，$AH \perp OP$，由射影定理得：
+\[
+OH \times OP = OA^2 = 1
+\]
+解得：
+\[
+OH = \frac{1}{p}
+\]
+则：
+\[
+HP = OP - OH = p - \frac{1}{p}
+\]
+
+设 $M$ 为弦 $QR$ 的中点，则 $OM \perp QR$，即 $\angle OMS = 90^\circ$。
+又因为 $AH \perp OP$，所以 $\angle OHS = 90^\circ$。
+因此，$O, H, S, M$ 四点共圆。
+
+根据割线定理，由点 $P$ 引割线得：
+\begin{align*}
+PS \times PM &= PH \times PO \\
+&= \left( p - \frac{1}{p} \right) \times p \\
+&= p^2 - 1
+\end{align*}
+结合 (1) 式，可得：
+\[
+PS \times PM = PQ \times PR
+\]
+记作 (2) 式。
+
+因为 $M$ 是 $QR$ 的中点，所以：
+\[
+PM = \frac{PQ + PR}{2}
+\]
+记作 (3) 式。
+
+将 (3) 式代入 (2) 式得：
+\[
+PS \times \left( \frac{PQ + PR}{2} \right) = PQ \times PR
+\]
+两边同除以 $PS \times PQ \times PR$，整理得：
+\[
+\frac{PQ + PR}{PQ \times PR} = \frac{2}{PS}
+\]
+即：
+\[
+\frac{1}{PQ} + \frac{1}{PR} = \frac{2}{PS}
+\]
+\end{solution}
+
+解法二：极坐标与解析几何法
+\begin{solution}
+以点 $P$ 为原点 $(0,0)$，射线 $PO$ 为 $x$ 轴正方向建立平面直角坐标系。
+设 $OP = p$，则圆 $C$ 的圆心坐标为 $(-p, 0)$，半径为 $1$。
+圆 $C$ 的方程为：
+\[
+(x + p)^2 + y^2 = 1
+\]
+记作 (1) 式。
+
+以 $OP$ 为直径作圆 $C'$，其圆心坐标为 $\left( -\frac{p}{2}, 0 \right)$，半径为 $\frac{p}{2}$。
+圆 $C'$ 的方程为：
+\[
+\left( x + \frac{p}{2} \right)^2 + y^2 = \left( \frac{p}{2} \right)^2
+\]
+记作 (2) 式。
+
+将 (1) 式与 (2) 式展开：
+\[
+x^2 + 2px + p^2 + y^2 = 1
+\]
+\[
+x^2 + px + y^2 = 0
+\]
+两式相减可得切点弦 $AB$（即极线）的直线方程：
+\[
+px + p^2 = 1
+\]
+解得：
+\[
+x = \frac{1}{p} - p
+\]
+
+以原点 $P$ 为极点，$x$ 轴正方向为极轴建立极坐标系（$x = r\cos\theta, y = r\sin\theta$）。
+将极坐标代入圆 $C$ 的展开方程 $x^2 + 2px + p^2 + y^2 = 1$，得：
+\[
+r^2 + 2p r\cos\theta + p^2 - 1 = 0
+\]
+
+设直线 $SP$ 的倾角为 $\theta_0$。
+点 $S$ 在切点弦 $x = \frac{1}{p} - p$ 上，故其极坐标满足 $r_S \cos\theta_0 = \frac{1}{p} - p$。
+解得：
+\[
+r_S = \frac{\frac{1}{p} - p}{\cos\theta_0} = \frac{1 - p^2}{p\cos\theta_0}
+\]
+由于点 $S$ 在 $x$ 轴负半轴一侧，线段 $SP$ 的长度为：
+\[
+SP = -r_S = -\frac{1 - p^2}{p\cos\theta_0} = \frac{p^2 - 1}{-p\cos\theta_0}
+\]
+
+直线 $SP$ 与圆 $C$ 交于 $R, Q$ 两点，其极径 $r_1, r_2$（不妨设 $r_1 = PR, r_2 = PQ$）是一元二次方程：
+\[
+r^2 + (2p\cos\theta_0) r + p^2 - 1 = 0
+\]
+的两个实根。由韦达定理得：
+\[
+r_1 + r_2 = -2p\cos\theta_0
+\]
+\[
+r_1 r_2 = p^2 - 1
+\]
+
+因此：
+\begin{align*}
+\frac{1}{PQ} + \frac{1}{PR} &= \frac{PR + PQ}{PQ \cdot PR} \\
+&= \frac{r_1 + r_2}{r_1 r_2} \\
+&= \frac{-2p\cos\theta_0}{p^2 - 1} \\
+&= \frac{2}{\frac{p^2 - 1}{-p\cos\theta_0}} \\
+&= \frac{2}{SP}
+\end{align*}
+即：
+\[
+\frac{1}{PQ} + \frac{1}{PR} = \frac{2}{PS}
+\]
 \end{solution}
 
     \question 在 $\triangle ABC$ 中,$AB=6,BC=4,CA=5$,圆 $O_1, O_2, O_3$ 为 $\triangle ABC$ 的三旁切圆,$O_1$ 与 $BC$ 相切于 $D$,$O_2$ 与 $CA$ 相切于 $E$,$O_3$ 与 $AB$ 相切于 $F$。求面积比 
@@ -12461,6 +12891,58 @@ V_{\max} = \frac{S^3}{162(1 + \sqrt{2})^3}
 可得 $[ABC] < [DEF]$。
 \end{solution}
 
+\question
+【1995年 爱沙尼亚】 不等式的证明
+设 $\triangle ABC$ 的内切圆半径为 $r$，求证：
+\[
+a \sin A + b \sin B + c \sin C \ge 9r
+\]
+
+\begin{solution}
+设 $\triangle ABC$ 的面积为 $S$，外接圆半径为 $R$。
+
+由内切圆半径与面积的关系，得：
+\[
+\frac{r}{2}(a+b+c) = S \implies 2S = r(a+b+c) \tag{1}
+\]
+
+由正弦定理，得：
+\[
+\frac{a}{\sin A} = 2R \implies \sin A = \frac{a}{2R} \tag{2}
+\]
+
+由三角形面积公式 $S = \frac{1}{2}bc \sin A = \frac{abc}{4R}$，得：
+\[
+\frac{2}{4R} = \frac{2S}{abc} \tag{3}
+\]
+
+将式 (2) 代入待证式左边，变形得：
+\begin{align*}
+a \sin A + b \sin B + c \sin C &= \frac{a^2}{2R} + \frac{b^2}{2R} + \frac{c^2}{2R} \\
+&= \frac{1}{2R}\left(a^2 + b^2 + c^2\right) \\
+&= \frac{2}{4R}\left(a^2 + b^2 + c^2\right) \\
+&= \frac{2S}{abc}\left(a^2 + b^2 + c^2\right) \\
+&= \frac{2S}{1}\left(\frac{a}{bc} + \frac{b}{ca} + \frac{c}{ab}\right)
+\end{align*}
+
+将式 (1) 代入上式，得：
+\begin{align*}
+a \sin A + b \sin B + c \sin C &= r(a+b+c)\left(\frac{a}{bc} + \frac{b}{ca} + \frac{c}{ab}\right) \\
+&= r\left( \frac{a^2}{bc} + \frac{b}{c} + \frac{c}{b} + \frac{a}{c} + \frac{b^2}{ca} + \frac{c}{a} + \frac{a}{b} + \frac{b}{a} + \frac{c^2}{ab} \right)
+\end{align*}
+
+对括号内的 9 项分组应用均值不等式（基本不等式）：
+\begin{align*}
+\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} &\ge 3\sqrt[3]{\frac{a^2}{bc} \cdot \frac{b^2}{ca} \cdot \frac{c^2}{ab}} = 3 \\
+\frac{b}{c} + \frac{c}{a} + \frac{a}{b} &\ge 3\sqrt[3]{\frac{b}{c} \cdot \frac{c}{a} \cdot \frac{a}{b}} = 3 \\
+\frac{c}{b} + \frac{a}{c} + \frac{b}{a} &\ge 3\sqrt[3]{\frac{c}{b} \cdot \frac{a}{c} \cdot \frac{b}{a}} = 3
+\end{align*}
+
+因此：
+\[
+a \sin A + b \sin B + c \sin C \ge r\left( 3\sqrt[3]{\frac{a^2}{bc} \cdot \frac{b^2}{ca} \cdot \frac{c^2}{ab}} + 3 + 3 \right) = 9r
+\]
+\end{solution}
 
 \question (INDIA/2007) $\triangle ABC$ 的三边长为 $a, b, c$，对应的角平分线长分别为 $w_a, w_b, w_c$。如果 $\triangle ABC$ 的外接圆半径为 $R$，证明：
 \[
@@ -14779,6 +15261,67 @@ y_{J_c} = \frac{(93 + 18\sqrt{2})(9\sqrt{2} - 8)}{98} = \frac{837\sqrt{2} - 744 
         综上所述，满足条件的 $x$ 坐标为 $-2$ 或 $1+\sqrt{2}$。
     \end{solution}
 \end{parts}
+
+\question
+【2025年 九州大学 文系】
+求与两条曲线 $y = x^3 + x^2 - x - 1$ 和 $y = x^2$ 均相切的所有公切线的方程。
+
+\begin{solution}
+设曲线 (1) 为 $y = x^3 + x^2 - x - 1$，曲线 (2) 为 $y = x^2$。
+
+设公切线与曲线 (1) 相切于点 $(t, t^3 + t^2 - t - 1)$。
+对 $y = x^3 + x^2 - x - 1$ 求导得：
+\[
+y' = 3x^2 + 2x - 1
+\]
+
+故在点 $(t, t^3 + t^2 - t - 1)$ 处的切线方程为：
+\begin{align*}
+y &= \left(3t^2 + 2t - 1\right)(x - t) + \left(t^3 + t^2 - t - 1\right) \\
+&= \left(3t^2 + 2t - 1\right)x + \left(-2t^3 - t^2 - 1\right)
+\end{align*}
+
+该切线同时与曲线 (2) $y = x^2$ 相切。将切线方程代入 $y = x^2$，整理得关于 $x$ 的二次方程：
+\[
+x^2 - \left(3t^2 + 2t - 1\right)x + \left(2t^3 + t^2 + 1\right) = 0
+\]
+
+因为切线与 $y = x^2$ 相切，所以上述二次方程的判别式 $D = 0$：
+\[
+D = \left(3t^2 + 2t - 1\right)^2 - 4\left(2t^3 + t^2 + 1\right) = 0
+\]
+
+对判别式进行因式分解：
+由于 $3t^2 + 2t - 1 = (3t - 1)(t + 1)$ 且 $2t^3 + t^2 + 1 = (t + 1)\left(2t^2 - t + 1\right)$，代入得：
+\begin{align*}
+D &= (3t - 1)^2 (t + 1)^2 - 4(t + 1)\left(2t^2 - t + 1\right) \\
+&= (t + 1) \left[ (3t - 1)^2 (t + 1) - 4\left(2t^2 - t + 1\right) \right] \\
+&= (t + 1) \left[ \left(9t^2 - 6t + 1\right)(t + 1) - 8t^2 + 4t - 4 \right] \\
+&= (t + 1) \left( 9t^3 - 6t^2 + t + 9t^2 - 6t + 1 - 8t^2 + 4t - 4 \right) \\
+&= (t + 1) \left( 9t^3 - 5t^2 - t - 3 \right) = 0
+\end{align*}
+
+对 $9t^3 - 5t^2 - t - 3$ 继续因式分解：
+\[
+9t^3 - 5t^2 - t - 3 = (t - 1)\left(9t^2 + 4t + 3\right)
+\]
+因此判别式方程可化简为：
+\[
+(t + 1)(t - 1)\left(9t^2 + 4t + 3\right) = 0
+\]
+
+对于二次三项式 $9t^2 + 4t + 3$，其判别式 $D' = 4^2 - 4 \times 9 \times 3 = 16 - 108 < 0$，在实数范围内无解。
+故方程的实根为：
+\[
+t = -1 \quad \text{或} \quad t = 1
+\]
+
+将 $t$ 的值分别代入切线方程：
+1. 当 $t = -1$ 时，切线方程为 $y = 0$；
+2. 当 $t = 1$ 时，切线方程为 $y = 4x - 4$。
+
+综上所述，所求公切线方程为 $y = 0$ 和 $y = 4x - 4$。
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -20390,6 +20933,67 @@ x^2 + 13y^2 - 6xy - 4x + 28y + 20 = \frac{256}{9}
         y^2 = \frac{4}{3}x
         \]
     \end{solution}
+    \question
+【1999年 東京都立大学 理系】
+设抛物线 $C: y = x^2$。从满足 $b < a^2$ 的点 $P(a, b)$ 引抛物线 $C$ 的两条切线，切点分别为 $A, B$。若由抛物线 $C$ 及两切线段 $PA, PB$ 所围成图形的面积为 $\frac{2}{3}$，求点 $P$ 的轨迹方程。
+
+\begin{solution}
+设切点坐标为 $(t, t^2)$。
+对 $y = x^2$ 求导得 $y' = 2x$，故切线方程为：
+\[
+y = 2t(x - t) + t^2 = 2tx - t^2
+\]
+由于切线经过点 $P(a, b)$，代入坐标得：
+\[
+b = 2at - t^2 \implies t^2 - 2at + b = 0 \quad (*)
+\]
+因为点 $P(a, b)$ 满足 $b < a^2$，判别式满足：
+\[
+\frac{D}{4} = a^2 - b > 0
+\]
+因此方程 $(*)$ 有两个不相等的实数根，设为 $\alpha, \beta$（不妨设 $\alpha < \beta$）。
+两切点坐标分别为 $A(\alpha, \alpha^2)$ 和 $B(\beta, \beta^2)$。由韦达定理可知：
+\[
+\alpha + \beta = 2a, \quad \alpha \beta = b
+\]
+切线 $PA$ 与 $PB$ 的交点 $P$ 的横坐标为：
+\[
+a = \frac{\alpha + \beta}{2}
+\]
+
+切线 $PA$ 的方程为 $y = 2\alpha x - \alpha^2$，切线 $PB$ 的方程为 $y = 2\beta x - \beta^2$。
+抛物线与两切线段围成的图形面积 $S$ 可分为两部分积分计算：
+\begin{align*}
+S &= \int_{\alpha}^{a} \left[ x^2 - (2\alpha x - \alpha^2) \right] dx + \int_{a}^{\beta} \left[ x^2 - (2\beta x - \beta^2) \right] dx \\
+&= \int_{\alpha}^{a} (x - \alpha)^2 dx + \int_{a}^{\beta} (x - \beta)^2 dx \\
+&= \left[ \frac{1}{3}(x - \alpha)^3 \right]_{\alpha}^{a} + \left[ \frac{1}{3}(x - \beta)^3 \right]_{a}^{\beta} \\
+&= \frac{1}{3}(a - \alpha)^3 - \frac{1}{3}(a - \beta)^3
+\end{align*}
+
+将 $a = \frac{\alpha + \beta}{2}$ 代入，解得 $a - \alpha = \frac{\beta - \alpha}{2}$ 且 $a - \beta = -\frac{\beta - \alpha}{2}$，整理得：
+\[
+S = \frac{1}{3}\left(\frac{\beta - \alpha}{2}\right)^3 - \frac{1}{3}\left(-\frac{\beta - \alpha}{2}\right)^3 = \frac{1}{12}(\beta - \alpha)^3
+\]
+
+结合韦达定理表达 $\beta - \alpha$：
+\[
+\beta - \alpha = \sqrt{(\alpha + \beta)^2 - 4\alpha\beta} = \sqrt{(2a)^2 - 4b} = 2\sqrt{a^2 - b}
+\]
+将其代入面积表达式 $S$：
+\[
+S = \frac{1}{12}\left(2\sqrt{a^2 - b}\right)^3 = \frac{2}{3}(a^2 - b)^{\frac{3}{2}}
+\]
+
+由已知 $S = \frac{2}{3}$，可得：
+\[
+\frac{2}{3}(a^2 - b)^{\frac{3}{2}} = \frac{2}{3} \implies a^2 - b = 1 \implies b = a^2 - 1
+\]
+因为 $b = a^2 - 1 < a^2$ 满足题设条件，故点 $P$ 的轨迹为抛物线：
+\[
+y = x^2 - 1
+\]
+\end{solution}
+
 
     \question
 La Hire 轨迹定理
@@ -26993,8 +27597,6 @@ S = (2\sqrt{2})^2 - (\sqrt{2})^2 = 8 - 2 = 6
 \]
 \end{solution}
 
----
-
 \question 设 $\vec{a}, \vec{b}, \vec{c}$ 为三个非共面单位向量，使得任意两个向量之间的夹角均为 $\frac{\pi}{3}$。若 $\vec{a} \times \vec{b} + \vec{b} \times \vec{c} = p\vec{a} + q\vec{b} + r\vec{c}$，其中 $p, q, r$ 是标量，则 $\frac{p^2 + 2q^2 + r^2}{q^2}$ 的值是
 
 \begin{solution}
@@ -27564,6 +28166,64 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
 5. $|\vec{OA}| = \sqrt{11^2 + (-1)^2 + 7^2} = \sqrt{121+1+49} = \sqrt{171}$。
 正确选项是 (2)。
 \end{solution}
+
+\question
+【高中数学 空间向量 距离之和的最小值】
+已知平面 $\alpha : x + 2y + 3z = 7$，以及在平面 $\alpha$ 同侧的两点 $A(1, 2, 3)$ 和 $B(3, 2, 1)$。
+在平面 $\alpha$ 上取一点 $P$，求使线段 $AP$ 与 $BP$ 的长度之和最小的点 $P$ 的坐标。
+
+\begin{solution}
+如图所示，要使线段 $AP + BP$ 的长度之和最小，点 $P$ 应为点 $A$ 关于平面 $\alpha$ 的对称点 $A'$ 与点 $B$ 的连线 $A'B$ 与平面 $\alpha$ 的交点。
+
+平面 $\alpha$ 的法向量为 $\vec{n} = (1, 2, 3)$。
+在平面 $\alpha$ 上取一点 $C(7, 0, 0)$，则向量 $\vec{AC}$ 为：
+\[
+\vec{AC} = (7, 0, 0) - (1, 2, 3) = (6, -2, -3)
+\]
+
+计算 $\vec{AC} \cdot \vec{n}$ 与 $|\vec{n}|^2$：
+\[
+\vec{AC} \cdot \vec{n} = 6 \times 1 + (-2) \times 2 + (-3) \times 3 = 6 - 4 - 9 = -7
+\]
+\[
+|\vec{n}|^2 = 1^2 + 2^2 + 3^2 = 14
+\]
+
+设点 $A$ 在平面 $\alpha$ 上的垂足为 $H$，则向量 $\vec{AH}$ 为：
+\[
+\vec{AH} = \frac{\vec{AC} \cdot \vec{n}}{|\vec{n}|^2} \vec{n} = \frac{-7}{14} \vec{n} = -\frac{1}{2} \vec{n}
+\]
+
+由此可得点 $A$ 关于平面 $\alpha$ 的对称点 $A'$ 的位置向量 $\vec{OA'}$ 为：
+\[
+\vec{OA'} = \vec{OA} + 2\vec{AH} = \vec{OA} - \vec{n} = (1, 2, 3) - (1, 2, 3) = (0, 0, 0)
+\]
+即对称点为 $A'(0, 0, 0)$。
+
+连结 $A'B$，其方向向量为 $\vec{A'B} = (3, 2, 1) - (0, 0, 0) = (3, 2, 1)$。
+设点 $P$ 满足：
+\[
+\vec{A'P} = t\vec{A'B} = (3t, 2t, t)
+\]
+即点 $P$ 的坐标为 $(3t, 2t, t)$。
+
+因为点 $P$ 在平面 $\alpha : x + 2y + 3z = 7$ 上，将点 $P$ 的坐标代入平面方程，得：
+\[
+3t + 2(2t) + 3t = 7
+\]
+\[
+10t = 7
+\]
+\[
+t = \frac{7}{10}
+\]
+
+解得点 $P$ 的坐标为：
+\[
+P\left( \frac{21}{10}, \frac{7}{5}, \frac{7}{10} \right)
+\]
+\end{solution}
+
     \question 空间中两歪斜线 $$L_1: \frac{x-3}{1} = \frac{y}{2} = \frac{z+2}{-2},\quad L_2: \frac{x}{3} = \frac{y-2}{1} = \frac{z+1}{-2},$$若正 $\triangle PQR$ 中,$P$ 在 $L_1$ 上,且 $Q$、$R$ 都在 $L_2$ 上,求 $\triangle PQR$ 的最小面积。
     \begin{solution}
         $L_1,L_2$ 的方向向量分别为
@@ -27984,6 +28644,74 @@ $\alpha^2 + \beta^2 + \gamma^2 = 1 + 16 + 1 = 18$。
         \left(-\sqrt 6 + 18 \sqrt{\frac{2}{7}},\,0,\,30 - 36 \sqrt{\frac{3}{7}}\right)
         \]
     \end{solution}
+
+    \question
+【高中数学 三角比与空间图形】
+已知棱长为 $2$ 的正四面体 $OABC$。在棱 $OA$ 上取一点 $P$，使得 $AP = t > 0$。
+过点 $P$ 向平面 $ABC$ 作垂线，垂足为 $H$。
+求四面体 $PHBC$ 体积的最大值。
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image507.png}
+    \end{figure}
+\begin{solution}
+设正四面体 $OABC$ 的体积为 $V_1$。
+
+首先计算正四面体 $OABC$ 的体积 $V_1$：
+取 $BC$ 的中点为 $M$，连结 $AM$ 和 $OM$。
+在正三角形 $ABC$ 中，高 $AM = \sqrt{2^2 - 1^2} = \sqrt{3}$。
+设点 $O$ 在平面 $ABC$ 上的投影（即底面正三角形的中心）为 $G$。
+则 $G$ 在 $AM$ 上，且分 $AM$ 为 $AG : GM = 2 : 1$，故：
+\[
+GM = \frac{1}{3} AM = \frac{\sqrt{3}}{3}
+\]
+在 $\text{Rt}\triangle OGM$ 中，高 $OG$ 为：
+\[
+OG = \sqrt{OM^2 - GM^2} = \sqrt{(\sqrt{3})^2 - \left(\frac{\sqrt{3}}{3}\right)^2} = \frac{2\sqrt{6}}{3}
+\]
+底面 $\triangle ABC$ 的面积为：
+\[
+S_{\triangle ABC} = \frac{1}{2} \times 2 \times \sqrt{3} = \sqrt{3}
+\]
+故正四面体 $OABC$ 的体积为：
+\[
+V_1 = \frac{1}{3} \cdot S_{\triangle ABC} \cdot OG = \frac{1}{3} \times \sqrt{3} \times \frac{2\sqrt{6}}{3} = \frac{2\sqrt{2}}{3}
+\]
+
+接下来求解四面体 $PHBC$ 的体积 $V_2$：
+因为 $PH \perp$ 平面 $ABC$ 且 $OG \perp$ 平面 $ABC$，所以 $PH \parallel OG$。
+在 $\triangle AOG$ 中，由 $\triangle APH \sim \triangle AOG$ 可得：
+\[
+\frac{PH}{OG} = \frac{AP}{AO} = \frac{t}{2} \implies PH = OG \times \frac{t}{2}
+\]
+同时，垂足 $H$ 在线段 $AG$ 上，且 $AH = AG \times \frac{t}{2}$。
+若将 $AM$ 的长度看作 $3$ 份，则 $AG = 2$ 份，$GM = 1$ 份，$AH = t$ 份。
+因此 $HM = AM - AH = 3 - t$。
+
+由于 $\triangle HBC$ 与 $\triangle ABC$ 共享底边 $BC$，它们的高之比等于 $HM : AM = (3 - t) : 3$，故面积之比为：
+\[
+\frac{S_{\triangle HBC}}{S_{\triangle ABC}} = \frac{3 - t}{3}
+\]
+
+因此，四面体 $PHBC$ 的体积 $V_2$ 与正四面体 $OABC$ 的体积 $V_1$ 之比为：
+\[
+V_2 = \frac{1}{3} \cdot S_{\triangle HBC} \cdot PH = V_1 \times \left( \frac{3 - t}{3} \right) \times \left( \frac{t}{2} \right)
+\]
+整理得：
+\[
+V_2 = V_1 \times \frac{1}{6} (-t^2 + 3t) = V_1 \times \frac{1}{6} \left[ -\left( t - \frac{3}{2} \right)^2 + \frac{9}{4} \right]
+\]
+
+由于点 $P$ 在棱 $OA$ 上（$OA = 2$），故 $0 < t \le 2$。
+当 $t = \frac{3}{2}$ 时，$V_2$ 取得最大值：
+\[
+V_{2,\text{max}} = V_1 \times \frac{1}{6} \times \frac{9}{4} = \frac{3}{8} V_1
+\]
+代入 $V_1 = \frac{2\sqrt{2}}{3}$，得：
+\[
+V_{2,\text{max}} = \frac{3}{8} \times \frac{2\sqrt{2}}{3} = \frac{\sqrt{2}}{4}
+\]
+\end{solution}
 
     \question
 在 $xyz$ 空间中，考虑一个以 $(0, 0, 1)$ 为中心、半径为 $1$ 的球面 $S$。当点 $Q$ 在 $S$ 上运动且不等于 $(0, 0, 2)$ 时，设通过点 $Q$ 与点 $P(1, 0, 2)$ 的直线 $l$ 与平面 $z = 0$ 的交点为 $R$。求点 $R$ 的运动范围，并画图表示。

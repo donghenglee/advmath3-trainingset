@@ -1609,6 +1609,77 @@ $\sum_{k=x}^{2x} (-1)^{k-1} m^{4(k-1)} = \frac{m^{4(x-1)} [(-1)^{x-1} - m^{4(x+1
 因此 $P(x+1)$ 也成立。根据数学归纳法原理，$P(n)$ 对所有 $n \in \mathbb{Z}^+$ 均成立。
 \end{solution}
 
+\question 【1998 北海道大学 改】
+已知数列 $\{a_n\}$ 满足 $a_1 = 1$，且对于任意正整数 $n$，均有
+\[
+\frac{2^n}{n!} = \sum_{k=1}^{n+1} a_k a_{n+2-k}
+\]
+求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+当 $n=1$ 时：
+\[
+2 = a_1 a_2 + a_2 a_1
+\]
+由 $a_1 = 1$ 解得 $a_2 = 1 = \frac{1}{1!}$。
+
+当 $n=2$ 时：
+\[
+\frac{2^2}{2!} = a_1 a_3 + a_2 a_2 + a_3 a_1
+\]
+即 $2 = 2a_3 + 1$，解得 $a_3 = \frac{1}{2} = \frac{1}{2!}$。
+
+当 $n=3$ 时：
+\[
+\frac{2^3}{3!} = a_1 a_4 + a_2 a_3 + a_3 a_2 + a_4 a_1
+\]
+即 $\frac{4}{3} = 2a_4 + 2 \times 1 \times \frac{1}{2}$，解得 $a_4 = \frac{1}{6} = \frac{1}{3!}$。
+
+由此猜想：
+\[
+a_n = \frac{1}{(n-1)!} \quad (*)
+\]
+
+下面用数学归纳法证明猜想 $(*)$ 对所有正整数 $n$ 均成立。
+
+(I) 当 $n=1$ 时，$a_1 = \frac{1}{0!} = 1$，猜想成立。
+
+(II) 假设当 $n \le k$（$k \ge 1$）时，猜想 $(*)$ 均成立。
+
+当 $n = k$ 时，代入原递推关系可得：
+\begin{align*}
+\frac{2^k}{k!} &= \sum_{m=1}^{k+1} a_m a_{k+2-m} \\
+&= 1 \cdot a_{k+1} + \frac{1}{1!} \cdot \frac{1}{(k-1)!} + \frac{1}{2!} \cdot \frac{1}{(k-2)!} + \dots + \frac{1}{(k-1)!} \cdot \frac{1}{1!} + a_{k+1} \cdot 1 \\
+&= 2a_{k+1} + \frac{1}{k!} \left( \frac{k!}{1!(k-1)!} + \frac{k!}{2!(k-2)!} + \dots + \frac{k!}{(k-1)! 1!} \right) \\
+&= 2a_{k+1} + \frac{1}{k!} \left( \binom{k}{1} + \binom{k}{2} + \dots + \binom{k}{k-1} \right)
+\end{align*}
+
+因为
+\[
+\binom{k}{0} + \binom{k}{1} + \binom{k}{2} + \dots + \binom{k}{k-1} + \binom{k}{k} = 2^k
+\]
+且 $\binom{k}{0} = \binom{k}{k} = 1$，所以
+\[
+\binom{k}{1} + \binom{k}{2} + \dots + \binom{k}{k-1} = 2^k - 2
+\]
+
+代入上式得：
+\[
+\frac{2^k}{k!} = 2a_{k+1} + \frac{1}{k!} \left( 2^k - 2 \right)
+\]
+
+化简得：
+\[
+2a_{k+1} = \frac{2}{k!} \implies a_{k+1} = \frac{1}{k!} = \frac{1}{((k+1)-1)!}
+\]
+即当 $n = k + 1$ 时，猜想也成立。
+
+综合 (I)(II) 可知，对任意 $n \in \mathbb{N}$，数列的通项公式均为
+\[
+a_n = \frac{1}{(n-1)!}
+\]
+\end{solution}
+
     \question 证明:对于任意整数 $n > 1$, 有
     \[ 
     \frac{1}{2} \cdot \frac{3}{4} \cdot \frac{5}{6} \cdots \frac{2n - 1}{2n} < \frac{1}{\sqrt{3n + 1}} 
@@ -7837,6 +7908,56 @@ $k + 1 = 501, 498, 496, \dots, 8, 6, 3, 1$
 11 \times 7 + 2 \times 9 = 95 < 96
 \]
 且 $c < 9$ 得到 $c = 8$，所以 $2d = 8$，即 $d = 4$。因此，这个四位数是 1984。
+\end{solution}
+
+\question
+【高中数学 不定方程与整数解】
+求满足关系式 $x + 2y + 3z = 2xyz$ 且 $x \le y \le z$ 的所有自然数 $(x, y, z)$。
+
+\begin{solution}
+因为 $x, y, z$ 为自然数，且满足 $x \le y \le z$，所以：
+\[
+2xyz = x + 2y + 3z \le z + 2z + 3z = 6z
+\]
+
+由于 $z \ge 1$，两边同除以 $z$，得：
+\[
+2xy \le 6 \implies xy \le 3
+\]
+
+结合 $1 \le x \le y$，实数对 $(x, y)$ 的可能取值仅有：
+\[
+(x, y) = (1, 1), (1, 2), (1, 3)
+\]
+
+分别代入原方程进行检验：
+
+1. 当 $(x, y) = (1, 1)$ 时：
+\[
+1 + 2 + 3z = 2 \times 1 \times 1 \times z
+\]
+化简得 $3 + 3z = 2z$，解得 $z = -3$。因为 $-3 \notin \mathbb{N}$，舍去。
+
+2. 当 $(x, y) = (1, 2)$ 时：
+\[
+1 + 4 + 3z = 2 \times 1 \times 2 \times z
+\]
+化简得 $5 + 3z = 4z$，解得 $z = 5$。因为 $5 \in \mathbb{N}$，且满足 $x \le y \le z$（即 $1 \le 2 \le 5$），符合题意。
+
+3. 当 $(x, y) = (1, 3)$ 时：
+\[
+1 + 6 + 3z = 2 \times 1 \times 3 \times z
+\]
+化简得 $7 + 3z = 6z$，解得：
+\[
+z = \frac{7}{3}
+\]
+因为 $\frac{7}{3} \notin \mathbb{Z}$，舍去。
+
+综上所述，满足条件的所有自然数解为：
+\[
+(x, y, z) = (1, 2, 5)
+\]
 \end{solution}
 
 \question (SSSMO(J)/1997) 假设 $x, y$ 和 $z$ 是正整数，满足 $x > y > z > 663$ 且 $x, y, z$ 满足以下方程：

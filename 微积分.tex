@@ -17289,6 +17289,65 @@ f(0) = 4
         I = -\cot x \ln(\cos x + \sqrt{\cos 2x}) + \frac{\sqrt{\cos 2x}}{\sin x} - x + C
         \]
     \end{solution}
+
+    \question
+已知函数 $f(x) = \int_0^x \frac{1}{1 + t^2} \, dt$。
+\begin{parts}
+\part 求 $f(1)$ 的值。
+\begin{solution}
+根据函数定义，有：
+\[
+f(1) = \int_0^1 \frac{1}{1 + x^2} \, dx
+\]
+设 $x = \tan\theta$，则 $1 + x^2 = \frac{1}{\cos^2\theta}$，且 $dx = \frac{1}{\cos^2\theta} \, d\theta$。
+当 $x = 0$ 时，$\theta = 0$；当 $x = 1$ 时，$\theta = \frac{\pi}{4}$。
+代入换元，得：
+\begin{align*}
+f(1) &= \int_0^{\frac{\pi}{4}} \frac{1}{\frac{1}{\cos^2\theta}} \times \frac{1}{\cos^2\theta} \, d\theta \\
+&= \int_0^{\frac{\pi}{4}} 1 \, d\theta \\
+&= \left[ \theta \right]_0^{\frac{\pi}{4}} \\
+&= \frac{\pi}{4}
+\end{align*}
+\end{solution}
+
+\part 当 $x > 0$ 时，证明 $f(x) + f\left(\frac{1}{x}\right)$ 为定值，并求出该定值。
+\begin{solution}
+对 $f(x)$ 求导，根据变上限积分求导法则可得：
+\[
+f'(x) = \frac{d}{dx} \int_0^x \frac{1}{1 + t^2} \, dt = \frac{1}{1 + x^2}
+\]
+对 $f(x) + f\left(\frac{1}{x}\right)$ 关于 $x$ 求导，利用复合函数求导法则：
+\begin{align*}
+\left\{ f(x) + f\left(\frac{1}{x}\right) \right\}' &= f'(x) + f'\left(\frac{1}{x}\right) \times \left( -\frac{1}{x^2} \right) \\
+&= \frac{1}{1 + x^2} + \frac{1}{1 + \left(\frac{1}{x}\right)^2} \times \left( -\frac{1}{x^2} \right) \\
+&= \frac{1}{1 + x^2} - \frac{1}{x^2 + 1} \\
+&= 0
+\end{align*}
+因此，当 $x > 0$ 时，$f(x) + f\left(\frac{1}{x}\right)$ 是常数函数。
+取 $x = 1$，可得：
+\[
+f(1) + f\left(\frac{1}{1}\right) = 2 f(1) = 2 \times \frac{\pi}{4} = \frac{\pi}{2}
+\]
+故当 $x > 0$ 时，$f(x) + f\left(\frac{1}{x}\right) = \frac{\pi}{2}$。
+\end{solution}
+
+\part 求定积分 $\int_0^1 x f(x) \, dx$ 的值。
+\begin{solution}
+利用分部积分法，注意 $f'(x) = \frac{1}{1 + x^2}$，且 $f(0) = 0$：
+\begin{align*}
+\int_0^1 x f(x) \, dx &= \int_0^1 \left( \frac{x^2}{2} \right)' f(x) \, dx \\
+&= \left[ \frac{x^2}{2} f(x) \right]_0^1 - \int_0^1 \frac{x^2}{2} \times \frac{1}{1 + x^2} \, dx \\
+&= \frac{1}{2} f(1) - \frac{1}{2} f(0) - \frac{1}{2} \int_0^1 \frac{x^2 + 1 - 1}{x^2 + 1} \, dx \\
+&= \frac{1}{2} f(1) - 0 - \frac{1}{2} \left( \int_0^1 1 \, dx - \int_0^1 \frac{1}{x^2 + 1} \, dx \right) \\
+&= \frac{1}{2} f(1) - \frac{1}{2} \left( 1 - f(1) \right) \\
+&= f(1) - \frac{1}{2}
+\end{align*}
+由 (1) 知 $f(1) = \frac{\pi}{4}$，代入得：
+\[
+\int_0^1 x f(x) \, dx = \frac{\pi}{4} - \frac{1}{2}
+\]
+\end{solution}
+\end{parts}
     \question 
 \begin{parts}
 \part 设 $n$ 为非零整数。用 $n$ 表示 $\int_{0}^{\pi} e^{nx} \cos x \, dx$。

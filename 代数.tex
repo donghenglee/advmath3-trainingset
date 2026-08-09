@@ -296,6 +296,81 @@ a^2 + c^2 = 225 - 108 = 117
         \]
     \end{solution}
 
+    \question
+【2025年 东北医科药科大学 第1问】
+已知实数 $a, b$ 满足 $a^2 - 10a + b^2 = 0$。设 $\alpha, \beta$ 是关于 $x$ 的二次方程 $x^2 + ax + 4b = 0$ 的两根。
+
+\begin{parts}
+\part 当 $\alpha, \beta$ 不是实数时，求 $|\alpha|$ 的最大值。
+
+\begin{solution}
+由韦达定理可得：
+\begin{align*}
+\alpha + \beta &= -a \\
+\alpha \beta &= 4b
+\end{align*}
+
+当 $\alpha, \beta$ 不是实数时，因为方程系数均为实数，所以 $\alpha$ 与 $\beta$ 互为共轭复数，即 $\beta = \bar{\alpha}$。
+因此：
+\[
+|\alpha|^2 = \alpha \bar{\alpha} = \alpha \beta = 4b
+\]
+
+$\alpha, \beta$ 不是实数等价于判别式 $D < 0$：
+\[
+D = a^2 - 4(4b) = a^2 - 16b < 0
+\]
+即：
+\[
+b > \frac{1}{16}a^2
+\]
+
+又已知 $a, b$ 满足 $a^2 - 10a + b^2 = 0$，可变形为 $(a - 5)^2 + b^2 = 5^2$，这表示以 $(5, 0)$ 为圆心、半径为 $5$ 的圆。
+联立圆的方程与抛物线 $b = \frac{1}{16}a^2$：
+将 $a^2 = 16b$ 代入 $a^2 - 10a + b^2 = 0$ 得 $16b - 10a + b^2 = 0$，解得两曲线交点坐标为 $(0, 0)$ 与 $(8, 4)$。
+
+满足 $b > \frac{1}{16}a^2$ 的点位于圆上高于抛物线的部分（不含端点）。
+在该圆弧段上，$b$ 在最高点 $(5, 5)$ 处取得最大值，此时 $b = 5$。
+代入计算得：
+\[
+|\alpha|^2 = 4b \le 4 \times 5 = 20
+\]
+故 $|\alpha| \le 2\sqrt{5}$。
+
+所以，$|\alpha|$ 的最大值为 $2\sqrt{5}$。
+\end{solution}
+
+\part 当 $\alpha, \beta$ 是实数时，求 $\alpha^2 + \beta^2 + 10\alpha + 10\beta$ 的最大值。
+
+\begin{solution}
+当 $\alpha, \beta$ 为实数时，判别式满足 $D \ge 0$，即 $b \le \frac{1}{16}a^2$。
+对应圆 $(a - 5)^2 + b^2 = 25$ 上位于抛物线下方及边界上的点，此时 $b$ 的取值范围为：
+\[
+-5 \le b \le 4
+\]
+
+利用韦达定理变形目标代数式：
+\begin{align*}
+\alpha^2 + \beta^2 + 10\alpha + 10\beta &= \left(\alpha + \beta\right)^2 - 2\alpha\beta + 10\left(\alpha + \beta\right) \\
+&= (-a)^2 - 2(4b) + 10(-a) \\
+&= a^2 - 8b - 10a
+\end{align*}
+
+将已知条件 $a^2 - 10a + b^2 = 0$ 变形为 $a^2 - 10a = -b^2$，代入上式得：
+\begin{align*}
+a^2 - 10a - 8b &= -b^2 - 8b \\
+&= -\left(b + 4\right)^2 + 16
+\end{align*}
+
+因为 $-5 \le b \le 4$，当 $b = -4$ 时，该式取得最大值：
+\[
+-\left(-4 + 4\right)^2 + 16 = 16
+\]
+
+所以，$\alpha^2 + \beta^2 + 10\alpha + 10\beta$ 的最大值为 $16$。
+\end{solution}
+\end{parts}
+
     \question 已知方程 $\frac{x}{x + 1} + \frac{x + 1}{x} = \frac{4x + a}{x(x + 1)}$ 只有一个实根，求实数 $a$ 的值。
 
 \begin{solution}
@@ -2702,6 +2777,112 @@ R = \frac{(s + 1)(t + 1) + (r + 1)(t + 1) + (r + 1)(s + 1)}{(r + 1)(s + 1)(t + 1
 \]
 因此，$S = 3 - 2 \cdot \frac{1}{2} = 2$。
 \end{solution}
+
+\question
+【2014年 东邦大学（医学部）第13题】
+求满足对任意实数 $x$，不等式
+\[
+(x^4 + 3)a^2 - (3x^4 - 2x + 9)a + 2(x^4 - x + 3) > 0
+\]
+均成立的实数 $a$ 的取值范围。
+
+\begin{solution}
+解法一：关于 $x$ 的不等式法
+
+将原不等式按 $x$ 的降幂排列，整理得：
+\[
+(a^2 - 3a + 2)x^4 + (2a - 2)x + 3a^2 - 9a + 6 > 0
+\]
+因式分解各项系数，得：
+\[
+(a-1)(a-2)x^4 + 2(a-1)x + 3(a-1)(a-2) > 0
+\]
+
+若不等式对任意实数 $x$ 均成立，最高次项系数必须大于 $0$，即：
+\[
+(a-1)(a-2) > 0
+\]
+解得 $a < 1$ 或 $a > 2$。
+
+当 $a < 1$ 或 $a > 2$ 时，两边同除以 $(a-1)(a-2) > 0$，可将原不等式变形为：
+\[
+x^4 + \frac{2}{a-2}x + 3 > 0
+\]
+即：
+\[
+x^4 + 3 > \frac{2}{2-a}x
+\]
+
+设 $m = \frac{2}{2-a}$，问题转化为对任意实数 $x$，均有 $x^4 + 3 > mx$。
+
+当 $x = 0$ 时，$3 > 0$ 恒成立。
+
+当 $x > 0$ 时，原式等价于 $m < \frac{x^4+3}{x}$。利用均值不等式（基本不等式）：
+\begin{align*}
+\frac{x^4+3}{x} &= x^3 + \frac{3}{x} \\
+&= x^3 + \frac{1}{x} + \frac{1}{x} + \frac{1}{x} \\
+&\ge 4 \sqrt[4]{x^3 \cdot \frac{1}{x} \cdot \frac{1}{x} \cdot \frac{1}{x}} = 4
+\end{align*}
+等号在 $x^3 = \frac{1}{x}$ 即 $x = 1$ 时成立。故当 $x > 0$ 时，$\frac{x^4+3}{x}$ 的最小值为 $4$，因此 $m < 4$。
+
+当 $x < 0$ 时，设 $t = -x > 0$，则 $t^4 + 3 > -mt \implies -m < \frac{t^4+3}{t}$，同理可得 $-m < 4$，即 $m > -4$。
+
+综合得：
+\[
+-4 < m < 4 \iff |m| < 4
+\]
+
+将 $m = \frac{2}{2-a}$ 代入，得：
+\[
+\left| \frac{2}{2-a} \right| < 4 \iff |a-2| > \frac{1}{2}
+\]
+解得 $a < \frac{3}{2}$ 或 $a > \frac{5}{2}$。
+
+结合必要条件 $a < 1$ 或 $a > 2$，取交集得：
+\[
+a < 1 \quad \text{或} \quad a > \frac{5}{2}
+\]
+
+解法二：关于 $a$ 的二次函数法
+
+将原不等式左端看作关于 $a$ 的二次函数，记为 $f(a)$：
+\[
+f(a) = (x^4 + 3)a^2 - (3x^4 - 2x + 9)a + 2(x^4 - x + 3)
+\]
+
+代入 $a = 1$ 验证可知，$f(1) = 0$ 恒成立。
+由于 $a^2$ 的系数 $x^4 + 3 > 0$，函数 $f(a)$ 的图像是开口向上的抛物线。
+设 $f(a) = 0$ 的两个根为 $\alpha = 1$ 与 $\beta$。由韦达定理：
+\begin{align*}
+1 + \beta &= \frac{3x^4 - 2x + 9}{x^4 + 3} \\
+\beta &= \frac{3x^4 - 2x + 9}{x^4 + 3} - 1 \\
+&= \frac{2x^4 - 2x + 6}{x^4 + 3} \\
+&= 2 - \frac{2x}{x^4 + 3}
+\end{align*}
+
+当 $x = 0$ 时，$\beta = 2$；当 $x \neq 0$ 时，分析 $\frac{2x}{x^4+3}$ 的取值范围：
+当 $x > 0$ 时，利用均值不等式：
+\[
+x^3 + \frac{3}{x} = x^3 + \frac{1}{x} + \frac{1}{x} + \frac{1}{x} \ge 4 \implies \frac{2x}{x^4+3} = \frac{2}{x^3 + \frac{3}{x}} \le \frac{1}{2}
+\]
+同理，当 $x < 0$ 时，$\frac{2x}{x^4+3} \ge -\frac{1}{2}$。
+因此：
+\[
+-\frac{1}{2} \le \frac{2x}{x^4+3} \le \frac{1}{2}
+\]
+故根 $\beta$ 的取值范围为：
+\[
+\frac{3}{2} \le \beta \le \frac{5}{2}
+\]
+
+因为二次函数 $f(a)$ 开口向上，要使 $f(a) > 0$ 对任意实数 $x$ 均成立，$a$ 必须位于两根组成的区间之外。
+当 $x$ 变化时，根 $\beta$ 的变动范围为 $\left[ \frac{3}{2}, \frac{5}{2} \right]$，使得 $f(a) \le 0$ 的 $a$ 的并集为 $\left[ 1, \frac{5}{2} \right]$。
+
+因此，$a$ 的取值范围为：
+\[
+a < 1 \quad \text{或} \quad a > \frac{5}{2}
+\]
+\end{solution}
 \end{questions}
 \pagebreak
 
@@ -4570,6 +4751,82 @@ x^2-4|x|+5=|x-4|+1
 (x, y)=\left(\frac{1}{\sqrt[50]{2}}, 1\right), \left(\frac{1}{\sqrt[50]{2}}, -1\right), \left(-\frac{1}{\sqrt[50]{2}}, 1\right), \left(-\frac{1}{\sqrt[50]{2}}, -1\right)
 \]
 \end{solution}
+\question
+【JMO预选对策演习/无理方程】
+求满足下列方程的唯一实数 $x < 3$：
+\[
+\sqrt{(3-x)(4-x)} + \sqrt{(4-x)(6-x)} + \sqrt{(6-x)(3-x)} = x
+\]
+
+\begin{solution}
+设：
+\[
+a = \sqrt{3-x}, \quad b = \sqrt{4-x}, \quad c = \sqrt{6-x}
+\]
+因为 $x < 3$，所以 $a > 0$, $b > 0$, $c > 0$。
+
+对上述三式分别平方，得：
+\[
+a^2 = 3-x, \quad b^2 = 4-x, \quad c^2 = 6-x
+\]
+
+原方程可重写为：
+\[
+ab + bc + ca = x
+\]
+
+利用以上关系，分别计算以下变形：
+\begin{align*}
+(a+b)(a+c) &= a^2 + ab + ac + bc = a^2 + (ab + bc + ca) = (3-x) + x = 3 \\
+(b+a)(b+c) &= b^2 + ab + bc + ca = b^2 + (ab + bc + ca) = (4-x) + x = 4 \\
+(c+a)(c+b) &= c^2 + ac + bc + ab = c^2 + (ab + bc + ca) = (6-x) + x = 6
+\end{align*}
+
+将以上三式相乘，得：
+\[
+\left[ (a+b)(b+c)(c+a) \right]^2 = 3 \times 4 \times 6 = 72
+\]
+由于 $a, b, c > 0$，有 $a+b > 0$, $b+c > 0$, $c+a > 0$，两边开平方得：
+\[
+(a+b)(b+c)(c+a) = \sqrt{72} = 6\sqrt{2}
+\]
+
+用该乘积分别除以各两项之积：
+\begin{align*}
+b+c &= \frac{6\sqrt{2}}{3} = 2\sqrt{2} \\
+c+a &= \frac{6\sqrt{2}}{4} = \frac{3\sqrt{2}}{2} \\
+a+b &= \frac{6\sqrt{2}}{6} = \sqrt{2}
+\end{align*}
+
+将上述三个等式相加，得：
+\[
+2(a+b+c) = 2\sqrt{2} + \frac{3\sqrt{2}}{2} + \sqrt{2} = \frac{9\sqrt{2}}{2}
+\]
+解得：
+\[
+a+b+c = \frac{9\sqrt{2}}{4}
+\]
+
+进而求出 $a$ 的值：
+\[
+a = (a+b+c) - (b+c) = \frac{9\sqrt{2}}{4} - 2\sqrt{2} = \frac{\sqrt{2}}{4}
+\]
+
+代入 $a = \sqrt{3-x}$，得：
+\[
+\sqrt{3-x} = \frac{\sqrt{2}}{4}
+\]
+两边平方：
+\[
+3-x = \left(\frac{\sqrt{2}}{4}\right)^2 = \frac{2}{16} = \frac{1}{8}
+\]
+解得：
+\[
+x = \frac{23}{8}
+\]
+经检验 $x = \frac{23}{8} < 3$，符合题意。
+\end{solution}
+
 
     \question 解
     \[ 
@@ -6813,6 +7070,78 @@ a_{226} - a_1 &= \frac{8(a_1 - a_2)}{a_1 a_2}
         &= -3a + 27=-24 \Rightarrow a = 17
         \end{align*}
     \end{solution}
+
+    \question
+【高中数学 连立方程式的解法】
+求实数 $a, b, c$ 的联立方程组：
+\begin{align*}
+ab + bc + ca &= 1 \\
+a^2b + c &= b^2c + a = c^2a + b
+\end{align*}
+
+\begin{solution}
+解题思路如下：
+
+设：
+\begin{align*}
+ab + bc + ca &= 1 \tag{1} \\
+a^2b + c &= b^2c + a = c^2a + b \tag{2}
+\end{align*}
+
+分类讨论：
+
+(I) 当 $abc = 0$ 时：
+不妨设其中一个变量为 $0$。若 $a = 0$，由式 (1) 得 $bc = 1$。
+由式 (2) 得 $c = b^2c = b$，因此 $b = c$，从而 $b = c = \pm 1$。
+由轮换对称性，可得此时的解为：
+\[
+(a, b, c) = (0, \pm 1, \pm 1), \quad (\pm 1, 0, \pm 1), \quad (\pm 1, \pm 1, 0)
+\]
+
+(II) 当 $abc \neq 0$ 时：
+将式 (1) 两边同乘以 $a$，得：
+\[
+a^2b + abc + ca^2 = a \implies a^2b = a - abc - ca^2
+\]
+将其代入式 (2) 的前两部分 $a^2b + c = b^2c + a$，化简可得：
+\[
+b^2c + ab + a^2 = 1 \tag{3}
+\]
+同理，通过轮换对称性可得：
+\begin{align*}
+c^2 + bc + b^2 &= 1 \tag{4} \\
+a^2 + ca + c^2 &= 1 \tag{5}
+\end{align*}
+
+将式 (3)、(4)、(5) 相加，得：
+\[
+2\left(a^2 + b^2 + c^2\right) + (ab + bc + ca) = 3
+\]
+代入式 (1) 的 $ab + bc + ca = 1$，得：
+\[
+2\left(a^2 + b^2 + c^2\right) + 1 = 3 \implies a^2 + b^2 + c^2 = 1
+\]
+
+与式 (3) $a^2 + ab + b^2 = 1$ 相比，两式相减可得：
+\[
+c^2 - ab = 0 \implies c^2 = ab
+\]
+同理可得 $b^2 = ca$ 且 $a^2 = bc$。因为 $abc \neq 0$，所以 $a^2, b^2, c^2$ 均大于零。
+由 $\frac{b^2}{c^2} = \frac{ca}{ab} = \frac{c}{b}$ 可得 $b^3 = c^3$，即 $b = c$。
+同理可得 $a = b = c$。
+
+代入 $a^2 + b^2 + c^2 = 1$ 得：
+\[
+3a^2 = 1 \implies a = \pm \frac{1}{\sqrt{3}}
+\]
+此时 $a = b = c = \pm \frac{1}{\sqrt{3}}$。
+
+综上所述，原方程组的所有解为：
+\[
+(a, b, c) = \pm\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right), \quad \pm(0, 1, 1), \quad \pm(1, 0, 1), \quad \pm(1, 1, 0)
+\]
+（其中后三组中符号可独立变号，对应坐标全排列及符号组合）
+\end{solution}
 
     \question (CROATIA/TST/2007) 在实数范围内解方程组
 \[
@@ -9176,7 +9505,153 @@ g(0) = \left( \frac{1}{8} \right)^0 = 1
 \]
 结果为 51。
 \end{solution}
+\question
+【高中数学 函数方程】
+已知实数值函数 $f$ 满足：对任意使函数有意义的实数 $x, y$，均有
+\[
+f(x+y) = \frac{f(x)}{1 + yf(x)}
+\]
+求函数 $f(x)$ 的解析式。
 
+\begin{solution}
+分情况讨论如下：
+
+(1) 若存在某个实数 $x_0$，使得 $f(x_0) = 0$。
+在已知递推式中，令 $x = x_0$，对任意实数 $y$，有：
+\[
+f(x_0 + y) = \frac{f(x_0)}{1 + yf(x_0)} = \frac{0}{1 + 0} = 0
+\]
+由于 $y$ 可取任意实数，故 $x_0 + y$ 可以取遍任意实数，因此：
+\[
+f(x) \equiv 0
+\]
+代入原方程检验，左边 $= 0$，右边 $= \frac{0}{1 + 0} = 0$，等式恒成立。
+
+(2) 若对任意实数 $x$，均有 $f(x) \neq 0$。
+由加法的交换律可知 $f(x+y) = f(y+x)$，故有：
+\[
+\frac{f(x)}{1 + yf(x)} = \frac{f(y)}{1 + xf(y)}
+\]
+交叉相乘展开，得：
+\[
+f(x)\left(1 + xf(y)\right) = f(y)\left(1 + yf(x)\right)
+\]
+\[
+f(x) + xf(x)f(y) = f(y) + yf(x)f(y)
+\]
+由于 $f(x) \neq 0$ 且 $f(y) \neq 0$，两边同除以 $f(x)f(y)$，得：
+\[
+\frac{1}{f(y)} + x = \frac{1}{f(x)} + y
+\]
+移项整理得：
+\[
+\frac{1}{f(x)} - x = \frac{1}{f(y)} - y
+\]
+因为该等式对任意实数 $x, y$ 均成立，所以 $\frac{1}{f(x)} - x$ 必为常数，记作 $C$（$C \in \mathbb{R}$）。
+由此解得：
+\[
+\frac{1}{f(x)} = x + C \implies f(x) = \frac{1}{x + C}
+\]
+
+若在已知式中直接令 $x = 0$，设 $f(0) = C$（$C \in \mathbb{R}$），则有：
+\[
+f(y) = \frac{f(0)}{1 + yf(0)} = \frac{C}{1 + Cy}
+\]
+即函数解析式可统一写为：
+\[
+f(x) = \frac{C}{1 + Cx}
+\]
+当 $C = 0$ 时，对应 $f(x) \equiv 0$；
+当 $C \neq 0$ 时，对应 $f(x) = \frac{1}{x + \frac{1}{C}}$。
+
+下面进行检验：
+将 $f(x) = \frac{C}{1 + Cx}$ 代入原方程，
+左边为：
+\[
+f(x+y) = \frac{C}{1 + C(x+y)}
+\]
+右边为：
+\[
+\frac{f(x)}{1 + yf(x)} = \frac{\frac{C}{1 + Cx}}{1 + y \cdot \frac{C}{1 + Cx}} = \frac{C}{1 + Cx + Cy} = \frac{C}{1 + C(x+y)}
+\]
+左边等于右边，等式恒成立。
+
+综上所述，所求函数为 $f(x) \equiv 0$ 或 $f(x) = \frac{C}{1 + Cx}$（其中 $C$ 为任意实数常数）。
+\end{solution}
+
+\question
+【高中数学 函数方程】
+对于任意非零实数 $x$，均满足关系式：
+\[
+f(x) + f(-x) + f\left(\frac{1}{x}\right) = x
+\]
+求函数 $f(x)$ 的解析式。
+
+\begin{solution}
+由原方程得：
+\[
+f(x) + f(-x) + f\left(\frac{1}{x}\right) = x \tag{1}
+\]
+
+将式 (1) 变形为：
+\[
+f(x) + f\left(\frac{1}{x}\right) = x - f(-x)
+\]
+在此式中用 $\frac{1}{x}$ 替换 $x$，得：
+\[
+f\left(\frac{1}{x}\right) + f(x) = \frac{1}{x} - f\left(-\frac{1}{x}\right)
+\]
+对比上述两式，可得：
+\[
+x - f(-x) = \frac{1}{x} - f\left(-\frac{1}{x}\right)
+\]
+移项整理得：
+\[
+f(-x) - f\left(-\frac{1}{x}\right) = x - \frac{1}{x}
+\]
+再用 $-x$ 替换 $x$，得：
+\[
+f(x) - f\left(\frac{1}{x}\right) = -x + \frac{1}{x} \tag{2}
+\]
+
+将式 (1) 与式 (2) 相加，得：
+\begin{align*}
+\left[ f(x) + f(-x) + f\left(\frac{1}{x}\right) \right] + \left[ f(x) - f\left(\frac{1}{x}\right) \right] &= x + \left( -x + \frac{1}{x} \right) \\
+2f(x) + f(-x) &= \frac{1}{x}
+\end{align*}
+
+将 $2f(x) + f(-x)$ 改写为 $f(x) + [f(x) + f(-x)]$，则有：
+\[
+f(x) = -[f(x) + f(-x)] + \frac{1}{x}
+\]
+
+设 $A(x) = f(x) + f(-x)$，显见 $A(x)$ 为偶函数。
+由于任意定义域关于原点对称的函数 $f(x)$ 均可唯一拆分为偶函数部分与奇函数部分之和：
+\[
+f(x) = \frac{1}{2}[f(x) + f(-x)] + \frac{1}{2}[f(x) - f(-x)]
+\]
+其中偶函数部分为 $\frac{1}{2}A(x)$。
+
+而在关系式 $f(x) = -A(x) + \frac{1}{x}$ 中，$\frac{1}{x}$ 是奇函数，$-A(x)$ 为偶函数，故 $f(x)$ 的偶函数部分亦表示为 $-A(x)$。
+由偶函数部分拆分的唯一性，有：
+\[
+-A(x) = \frac{1}{2}A(x)
+\]
+解得 $A(x) = 0$，即：
+\[
+f(x) + f(-x) = 0
+\]
+因此 $f(x)$ 为奇函数，满足 $f(-x) = -f(x)$。
+
+将其代入 $2f(x) + f(-x) = \frac{1}{x}$，得：
+\[
+2f(x) - f(x) = \frac{1}{x}
+\]
+解得：
+\[
+f(x) = \frac{1}{x}
+\]
+\end{solution}
 \question
 已知函数 $f$ 的定义域为正整数集合，且对于所有的正整数 $x, y$：
 \[ f(x + y) = \left( 1 + \frac{2y}{2x + 1} \right) f(x) + \left( 1 + \frac{2x}{2y + 1} \right) f(y) + 2x^2 y + xy + 2y^2 x \]
@@ -10955,6 +11430,65 @@ f(x) &= x^6 + \frac{a^4}{x^6} + 14x^3 + 14\frac{a^2}{x^3} \\
 因此，$a = 13$ 且 $a^2 = 169$。
 \end{solution}
 
+\question
+【高中数学 条件下二元函数的极值/最大值与最小值】
+已知实数 $x, y$ 满足 $x^2 + xy + y^2 = 3$，求 $x^2 - xy + y^2$ 的最大值与最小值。
+
+\begin{solution}
+设 $x^2 - xy + y^2 = k$。
+记已知条件为：
+\[
+x^2 + xy + y^2 = 3 \tag{1}
+\]
+目标式为：
+\[
+x^2 - xy + y^2 = k \tag{2}
+\]
+
+由式 (1) 加式 (2)，得：
+\begin{align*}
+2\left(x^2 + y^2\right) &= 3 + k \\
+x^2 + y^2 &= \frac{k+3}{2}
+\end{align*}
+
+由式 (1) 减式 (2)，得：
+\begin{align*}
+2xy &= 3 - k \\
+xy &= \frac{1}{2}(3-k)
+\end{align*}
+
+利用实数条件，对 $(x-y)^2$ 与 $(x+y)^2$ 的非负性进行讨论：
+
+因为 $(x-y)^2 \ge 0$，变形得：
+\begin{align*}
+(x-y)^2 &= \left(x^2 + xy + y^2\right) - 3xy \\
+&= 3 - 3 \times \frac{1}{2}(3-k) \\
+&= \frac{3k-3}{2} \ge 0
+\end{align*}
+解得：
+\[
+k \ge 1
+\]
+
+同理，因为 $(x+y)^2 \ge 0$，变形得：
+\begin{align*}
+(x+y)^2 &= \left(x^2 + xy + y^2\right) + xy \\
+&= 3 + \frac{1}{2}(3-k) \\
+&= \frac{9-k}{2} \ge 0
+\end{align*}
+解得：
+\[
+k \le 9
+\]
+
+综合得 $k$ 的取值范围为：
+\[
+1 \le k \le 9
+\]
+
+因此，$x^2 - xy + y^2$ 的最大值为 $9$，最小值为 $1$。
+\end{solution}
+
     \question 已知 $x,y>0$, 证明
     \[
     \sqrt{x^2+y^2} > \sqrt[3]{x^3+y^3}
@@ -12285,6 +12819,74 @@ PQ_{min} = \frac{|6 - 2\sqrt{7}|}{\sqrt{2^2 + (-1)^2}} = \frac{6 - 2\sqrt{7}}{\s
         0 \le x^n - x^{\,n+1} \le \frac{n^n}{(n+1)^{\,n+1}}.
         \]
     \end{solution}
+
+    \question
+【2025年 兵库医科大学 大题1第(4)小题】
+当 $0 \le x < \pi$，$0 \le y < \pi$ 且 $x - y = \frac{\pi}{3}$ 时，求 $\sin^2 x + \cos^2 y$ 的最大值、最小值以及此时 $x$ 的值。
+
+\begin{solution}
+设 $I = \sin^2 x + \cos^2 y$。
+
+解法一：利用降幂公式与和差化积
+\begin{align*}
+I &= \frac{1-\cos 2x}{2} + \frac{1+\cos 2y}{2} \\
+&= 1 - \frac{1}{2}(\cos 2x - \cos 2y) \\
+&= 1 + \frac{1}{2} \cdot 2 \sin(x+y)\sin(x-y) \\
+&= 1 + \sin(x+y)\sin(x-y)
+\end{align*}
+已知 $x - y = \frac{\pi}{3}$，则 $\sin(x-y) = \sin \frac{\pi}{3} = \frac{\sqrt{3}}{2}$，代入得：
+\[
+I = 1 + \frac{\sqrt{3}}{2}\sin(x+y)
+\]
+
+解法二：利用平方差公式与和差化积
+\begin{align*}
+I &= \sin^2 x + \left( 1 - \sin^2 y \right) \\
+&= (\sin x + \sin y)(\sin x - \sin y) + 1 \\
+&= 2\sin\left( \frac{x+y}{2} \right)\cos\left( \frac{x-y}{2} \right) \cdot 2\sin\left( \frac{x-y}{2} \right)\cos\left( \frac{x+y}{2} \right) + 1
+\end{align*}
+因为 $x - y = \frac{\pi}{3}$，所以 $\frac{x-y}{2} = \frac{\pi}{6}$，可得 $\cos\left( \frac{x-y}{2} \right) = \frac{\sqrt{3}}{2}$，$\sin\left( \frac{x-y}{2} \right) = \frac{1}{2}$。代入得：
+\begin{align*}
+I &= 2 \cdot \frac{\sqrt{3}}{2} \cdot 2 \cdot \frac{1}{2} \sin\left( \frac{x+y}{2} \right)\cos\left( \frac{x+y}{2} \right) + 1 \\
+&= \sqrt{3}\sin\left( \frac{x+y}{2} \right)\cos\left( \frac{x+y}{2} \right) + 1 \\
+&= 1 + \frac{\sqrt{3}}{2}\sin(x+y)
+\end{align*}
+
+将 $y = x - \frac{\pi}{3}$ 代入 $x+y$，得 $x+y = 2x - \frac{\pi}{3}$，因此：
+\[
+I = 1 + \frac{\sqrt{3}}{2}\sin\left( 2x - \frac{\pi}{3} \right)
+\]
+
+确定 $x$ 的取值范围：
+由 $0 \le x < \pi$ 且 $0 \le y < \pi$，将 $y = x - \frac{\pi}{3}$ 代入：
+\[
+0 \le x - \frac{\pi}{3} < \pi \implies \frac{\pi}{3} \le x < \frac{4\pi}{3}
+\]
+与 $0 \le x < \pi$ 取交集，得：
+\[
+\frac{\pi}{3} \le x < \pi
+\]
+
+由此确定 $2x - \frac{\pi}{3}$ 的范围：
+\[
+\frac{\pi}{3} \le 2x - \frac{\pi}{3} < \frac{5\pi}{3}
+\]
+
+在该区间内讨论正弦函数的极值：
+当 $2x - \frac{\pi}{3} = \frac{\pi}{2}$，即 $x = \frac{5\pi}{12}$ 时，$\sin\left( 2x - \frac{\pi}{3} \right) = 1$，取得最大值：
+\[
+1 + \frac{\sqrt{3}}{2}
+\]
+
+当 $2x - \frac{\pi}{3} = \frac{3\pi}{2}$，即 $x = \frac{11\pi}{12}$ 时，$\sin\left( 2x - \frac{\pi}{3} \right) = -1$，取得最小值：
+\[
+1 - \frac{\sqrt{3}}{2}
+\]
+
+综上所述：
+最大值为 $1 + \frac{\sqrt{3}}{2}$，此时 $x = \frac{5\pi}{12}$；
+最小值为 $1 - \frac{\sqrt{3}}{2}$，此时 $x = \frac{11\pi}{12}$。
+\end{solution}
 
     \question 求函数 $f(\theta) = \frac{1+\cos\theta}{\sqrt{3}\cos\theta+\sin\theta}$ 的最大值。
 
@@ -14580,6 +15182,305 @@ a_1 = 15, \quad 27 - 2a_2 > 0 \text{ 且 } a_k = 2a_{k-1} - a_{k-2} \text{ 对�
         \]
     \end{solution}
 
+    \question
+已知数列 $\{a_n\}$ 满足 $a_1 = 1$，且对任意正整数 $n$，均满足：
+\[
+a_{n+1} = \frac{3}{n}\left(a_1 + a_2 + \dots + a_n\right)
+\]
+求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+计算前几项的值：
+\begin{align*}
+a_2 &= \frac{3}{1} a_1 = 3 \\
+a_3 &= \frac{3}{2}(1 + 3) = 6 \\
+a_4 &= \frac{3}{3}(1 + 3 + 6) = 10 \\
+a_5 &= \frac{3}{4}(1 + 3 + 6 + 10) = 15
+\end{align*}
+
+由此观察数列的前几项为 $1, 3, 6, 10, 15, \dots$。
+注意到 $1 + 2 + 3 + \dots + n = \frac{1}{2}n(n+1)$，故猜想数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \frac{1}{2}n(n+1)
+\]
+
+下面用数学归纳法证明该猜想（记为命题 $(\star)$）：
+
+当 $a_n = \frac{1}{2}n(n+1)$ 时，前 $n$ 项和为：
+\[
+\sum_{k=1}^n a_k = \sum_{k=1}^n \frac{1}{2}k(k+1) = \frac{1}{6}n(n+1)(n+2)
+\]
+（注：$\sum_{k=1}^n k(k+1) = \frac{1}{3}n(n+1)(n+2)$ 可由裂项相消法导出）
+
+(1) 当 $n = 1$ 时，$a_1 = \frac{1}{2} \times 1 \times 2 = 1$，命题成立。
+
+(2) 假设当 $n \le k$ 时，命题 $(\star)$ 均成立，即对所有 $1 \le m \le k$，均有 $a_m = \frac{1}{2}m(m+1)$。
+此时前 $k$ 项和为：
+\[
+a_1 + a_2 + \dots + a_k = \frac{1}{6}k(k+1)(k+2)
+\]
+则当 $n = k + 1$ 时，代入递推关系得：
+\begin{align*}
+a_{k+1} &= \frac{3}{k}\left(a_1 + a_2 + \dots + a_k\right) \\
+&= \frac{3}{k} \cdot \frac{1}{6}k(k+1)(k+2) \\
+&= \frac{1}{2}(k+1)(k+2)
+\end{align*}
+即当 $n = k + 1$ 时，命题也成立。
+
+由 (1)(2) 可知，对任意正整数 $n$，均有：
+\[
+a_n = \frac{1}{2}n(n+1)
+\]
+\end{solution}
+
+
+    \question
+【2016 横滨国立大学】
+已知数列 $\{a_n\}$ 的首项 $a_1 = 5$，且对任意正整数 $n$，均满足：
+\[
+a_1^2 + a_2^2 + \dots + a_n^2 = \frac{2}{3} a_n a_{n+1}
+\]
+求数列 $\{a_n\}$ 的通项公式 $a_n$。
+
+\begin{solution}
+将已知递推关系记作 (1) 式：
+\[
+a_1^2 + a_2^2 + \dots + a_n^2 = \frac{2}{3} a_n a_{n+1}
+\]
+
+当 $n = 1$ 时，代入 (1) 式得：
+\[
+a_1^2 = \frac{2}{3} a_1 a_2
+\]
+因为 $a_1 = 5$，所以：
+\[
+5^2 = \frac{2}{3} \times 5 \times a_2
+\]
+解得：
+\[
+a_2 = \frac{15}{2}
+\]
+
+在 (1) 式中，将 $n$ 替换为 $n+1$，得：
+\[
+a_1^2 + a_2^2 + \dots + a_n^2 + a_{n+1}^2 = \frac{2}{3} a_{n+1} a_{n+2}
+\]
+两式相减，得：
+\begin{align*}
+a_{n+1}^2 &= \frac{2}{3} a_{n+1} a_{n+2} - \frac{2}{3} a_n a_{n+1} \\
+&= \frac{2}{3} a_{n+1} \left( a_{n+2} - a_n \right)
+\end{align*}
+
+若存在某个 $a_{n+1} = 0$，由 (1) 式可知 $a_1^2 + a_2^2 + \dots + a_n^2 = 0$，即 $a_1 = a_2 = \dots = a_n = 0$，这与 $a_1 = 5$ 矛盾。
+因此对任意正整数 $n$，均有 $a_{n+1} \neq 0$。
+
+等式两边同除以 $a_{n+1}$，得：
+\[
+a_{n+1} = \frac{2}{3} \left( a_{n+2} - a_n \right)
+\]
+整理得线性三项递推关系：
+\[
+a_{n+2} = \frac{3}{2} a_{n+1} + a_n
+\]
+
+其特征方程为：
+\[
+x^2 = \frac{3}{2} x + 1
+\]
+即：
+\[
+2x^2 - 3x - 2 = 0
+\]
+因式分解得 $(2x + 1)(x - 2) = 0$，解得特征根为：
+\[
+x = 2, -\frac{1}{2}
+\]
+
+故设数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \alpha \cdot \left( -\frac{1}{2} \right)^{n-1} + \beta \cdot 2^{n-1}
+\]
+
+将 $a_1 = 5$ 和 $a_2 = \frac{15}{2}$ 代入，得方程组：
+\[
+\begin{cases}
+\alpha + \beta = 5 \\
+-\frac{\alpha}{2} + 2\beta = \frac{15}{2}
+\end{cases}
+\]
+解得：
+\[
+\alpha = 1, \quad \beta = 4
+\]
+
+由此可得数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \left( -\frac{1}{2} \right)^{n-1} + 4 \cdot 2^{n-1} = \left( -\frac{1}{2} \right)^{n-1} + 2^{n+1}
+\]
+\end{solution}
+
+\question
+已知数列 $\{a_n\}$ 满足 $a_1 = 0$，且对任意正整数 $n$，均满足 $a_{2n-1} \le 0$ 以及递推关系：
+\[
+a_{2n} + a_{2n-1} = 2
+\]
+\[
+a_{2n} \cdot a_{2n-1} = 1 - a_{2n+1}^2
+\]
+求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+首先，由已知递推关系计算数列的前几项：
+
+当 $n = 1$ 时，由第一个递推关系得：
+\[
+a_2 + a_1 = 2 \implies a_2 = 2 - 0 = 2
+\]
+由第二个递推关系得：
+\[
+a_2 \cdot a_1 = 1 - a_3^2 \implies 2 \times 0 = 1 - a_3^2 \implies a_3^2 = 1
+\]
+因为 $a_3 \le 0$，所以 $a_3 = -1$。
+
+当 $n = 2$ 时，同理可得：
+\[
+a_4 + a_3 = 2 \implies a_4 + (-1) = 2 \implies a_4 = 3
+\]
+\[
+a_4 \cdot a_3 = 1 - a_5^2 \implies 3 \times (-1) = 1 - a_5^2 \implies a_5^2 = 4
+\]
+因为 $a_5 \le 0$，所以 $a_5 = -2$。
+
+观察可得奇数项与偶数项的规律为：
+\begin{align*}
+a_{2n-1} &= 1 - n \\
+a_{2n} &= 1 + n
+\end{align*}
+
+下面进行严密的代数推导：
+
+由第一个递推关系变形得：
+\[
+a_{2n} = 2 - a_{2n-1}
+\]
+将其代入第二个递推关系中，得：
+\[
+(2 - a_{2n-1}) a_{2n-1} = 1 - a_{2n+1}^2
+\]
+展开并整理，得：
+\[
+2a_{2n-1} - a_{2n-1}^2 = 1 - a_{2n+1}^2
+\]
+\[
+a_{2n+1}^2 = a_{2n-1}^2 - 2a_{2n-1} + 1 = (a_{2n-1} - 1)^2
+\]
+两边开平方，得：
+\[
+a_{2n+1} = \pm (a_{2n-1} - 1)
+\]
+
+由于对任意正整数 $n$，均有 $a_{2n-1} \le 0$，则：
+\[
+a_{2n-1} - 1 \le -1 < 0
+\]
+若取正号，即 $a_{2n+1} = 1 - a_{2n-1}$，则 $a_{2n+1} \ge 1 > 0$，这与已知条件 $a_{2n+1} \le 0$ 矛盾。
+
+因此必须取负号，即：
+\[
+a_{2n+1} = a_{2n-1} - 1
+\]
+这说明奇数项数列 $\{a_{2n-1}\}$ 是以 $a_1 = 0$ 为首项、$-1$ 为公差的等差数列。
+
+故奇数项的通项公式为：
+\[
+a_{2n-1} = 0 + (n - 1) \times (-1) = 1 - n
+\]
+
+代回 $a_{2n} = 2 - a_{2n-1}$，可得偶数项的通项公式为：
+\[
+a_{2n} = 2 - (1 - n) = 1 + n
+\]
+
+综上所述，数列 $\{a_n\}$ 的通项公式为：
+\[
+\begin{cases}
+a_{2n-1} = 1 - n \\
+a_{2n} = 1 + n
+\end{cases}
+\]
+\end{solution}
+
+\question
+【2002年 京都大学】
+设数列 $\{a_n\}$ 的前 $n$ 项和为 $S_n$，满足 $a_1 = 1$，$\lim_{n \to \infty} S_n = 1$，且对任意 $n \ge 1$，均有 $n(n-2)a_{n+1} = S_n$。求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+已知递推关系：
+\[
+n(n-2)a_{n+1} = S_n \tag{*}
+\]
+
+当 $n = 1$ 时，代入式 (*) 得：
+\[
+1 \cdot (-1) \cdot a_2 = S_1 = a_1 = 1 \implies a_2 = -1
+\]
+由此可得 $S_2 = a_1 + a_2 = 1 + (-1) = 0$。
+
+当 $n = 2$ 时，代入式 (*) 得 $S_2 = 0$。
+
+当 $n \ge 1$ 时，将 $a_{n+1} = S_{n+1} - S_n$ 代入式 (*)，消去 $a_{n+1}$ 得到关于 $S_n$ 的关系式：
+\[
+n(n-2)(S_{n+1} - S_n) = S_n
+\]
+整理得：
+\[
+n(n-2)S_{n+1} = (n^2 - 2n + 1)S_n = (n-1)^2 S_n
+\]
+
+当 $n \ge 3$ 时，因为 $n-1 \neq 0$ 且 $n-2 \neq 0$，两边同除以 $(n-1)(n-2)$，得：
+\[
+S_{n+1} \cdot \frac{n}{n-1} = S_n \cdot \frac{n-1}{n-2}
+\]
+由此可知，数列 $\left\{ S_n \cdot \frac{n-1}{n-2} \right\}$（$n \ge 3$）为常数列。
+故当 $n \ge 3$ 时，有：
+\[
+S_n \cdot \frac{n-1}{n-2} = S_3 \cdot \frac{3-1}{3-2} = 2 S_3
+\]
+因为 $S_3 = a_3 + S_2 = a_3 + 0 = a_3$，所以：
+\[
+S_n \cdot \frac{n-1}{n-2} = 2 a_3 \implies S_n = \frac{2a_3 (n-2)}{n-1} \quad (n \ge 3)
+\]
+
+利用条件 $\lim_{n \to \infty} S_n = 1$，求 $a_3$ 的值：
+\[
+\lim_{n \to \infty} S_n = \lim_{n \to \infty} \frac{2a_3 (n-2)}{n-1} = 2 a_3 = 1 \implies a_3 = \frac{1}{2}
+\]
+
+因此，当 $n \ge 3$ 时，$S_n$ 的表达式为：
+\[
+S_n = \frac{n-2}{n-1}
+\]
+
+当 $n \ge 4$ 时，计算通项 $a_n$：
+\begin{align*}
+a_n = S_n - S_{n-1} &= \frac{n-2}{n-1} - \frac{n-3}{n-2} \\
+&= \frac{(n-2)^2 - (n-3)(n-1)}{(n-1)(n-2)} \\
+&= \frac{(n^2 - 4n + 4) - (n^2 - 4n + 3)}{(n-1)(n-2)} \\
+&= \frac{1}{(n-1)(n-2)}
+\end{align*}
+
+当 $n = 3$ 时，$\frac{1}{(3-1)(3-2)} = \frac{1}{2} = a_3$，同样符合上式。
+故当 $n \ge 3$ 时，均有 $a_n = \frac{1}{(n-1)(n-2)}$。
+
+综上所述，数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \begin{cases}
+1, & n = 1 \\
+-1, & n = 2 \\
+\frac{1}{(n-1)(n-2)}, & n \ge 3
+\end{cases}
+\]
+\end{solution}
     \question 已知一数列 $\{a_n\}$ 的首项为 $a_1 = 5$，且对于所有的 $n \ge 1$，$a_{n+1} = \frac{1 + \sqrt{3}a_n}{\sqrt{3} - a_n}$。求 $a_{100}$ 的值。
 
 \begin{solution}
@@ -15293,6 +16194,223 @@ a_n = \sqrt{n} - \sqrt{n-1} \quad (n = 1, 2, \dots)
 \[ = \frac{n(n + 1)}{6} \{ (6a^2 n - 6an + 2n) + 1 \} \]
 \[ = \frac{n(n + 1) [(6a^2 - 6a + 2)n + 1]}{6} \]
 \end{solution}
+
+\question
+【高中数学 非线性递推关系的解法】
+已知数列 $\{a_n\}$ 满足 $a_1 = \frac{1}{2}$，且对任意正整数 $n$，均满足：
+\[
+a_{n+1} = 2a_n - a_n^2
+\]
+求数列 $\{a_n\}$ 的通项公式，并证明 $\lim_{n \to \infty} a_n = 1$。
+
+\begin{solution}
+对递推关系式两边同时减去 $1$，得：
+\begin{align*}
+a_{n+1} - 1 &= -a_n^2 + 2a_n - 1 \\
+&= -\left(a_n - 1\right)^2
+\end{align*}
+
+设 $b_n = a_n - 1$，则递推关系可化简为：
+\[
+b_{n+1} = -b_n^2
+\]
+由首项 $a_1 = \frac{1}{2}$，算出 $b_1$ 为：
+\[
+b_1 = a_1 - 1 = -\frac{1}{2}
+\]
+
+对 $b_n$ 进行连续递推：
+\begin{align*}
+b_n &= -b_{n-1}^2 \\
+&= -\left(-b_{n-2}^2\right)^2 = -b_{n-2}^4 \\
+&= -\left(-b_{n-3}^2\right)^4 = -b_{n-3}^{(8)} = -b_{n-3}^{2^3} \\
+&= \dots \\
+&= -b_1^{2^{n-1}}
+\end{align*}
+
+将 $b_1 = -\frac{1}{2}$ 代入，得到：
+\[
+b_n = -\left(-\frac{1}{2}\right)^{2^{n-1}}
+\]
+
+因为 $a_n = 1 + b_n$，所以数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = 1 - \left(-\frac{1}{2}\right)^{2^{n-1}}
+\]
+
+最后求极限：
+因为 $\left|-\frac{1}{2}\right| < 1$，当 $n \to \infty$ 时，$2^{n-1} \to \infty$，故：
+\[
+\lim_{n \to \infty} \left(-\frac{1}{2}\right)^{2^{n-1}} = 0
+\]
+因此：
+\[
+\lim_{n \to \infty} a_n = 1
+\]
+命题得证。
+\end{solution}
+
+\question
+【高中数学 无法求解的递推关系】
+已知数列 $\{a_n\}$ 满足 $a_1 = 2$，且对任意正整数 $n$，均满足：
+\[
+a_{n+1} = \frac{1}{2}a_n + \frac{1}{a_n}
+\]
+求数列 $\{a_n\}$ 的通项公式，并利用通项公式求其极限 $\lim_{n \to \infty} a_n$。
+
+\begin{solution}
+假设数列 $\{a_n\}$ 的极限存在，记为 $C$。对递推公式两边取极限，得 $C = \frac{1}{2}C + \frac{1}{C}$，解得 $C = \sqrt{2}$（因为 $a_n > 0$）。
+
+为此，设 $a_n = \sqrt{2}(1 + b_n)$，将 $a_n$ 和 $a_{n+1} = \sqrt{2}(1 + b_{n+1})$ 代入已知递推关系中，得：
+\[
+\sqrt{2}(1 + b_{n+1}) = \frac{1}{2} \cdot \sqrt{2}(1 + b_n) + \frac{1}{\sqrt{2}(1 + b_n)}
+\]
+两边同除以 $\sqrt{2}$，得：
+\begin{align*}
+1 + b_{n+1} &= \frac{1}{2}(1 + b_n) + \frac{1}{2(1 + b_n)} \\
+&= \frac{1}{2} + \frac{b_n}{2} + \frac{1}{2(1 + b_n)}
+\end{align*}
+两边同时减去 $\frac{1}{2}$，得：
+\begin{align*}
+b_{n+1} + \frac{1}{2} &= \frac{b_n(1 + b_n) + 1}{2(1 + b_n)} \\
+&= \frac{b_n^2 + b_n + 1}{2(1 + b_n)} \\
+&= \frac{b_n^2}{2(b_n + 1)} + \frac{1}{2}
+\end{align*}
+两边消去 $\frac{1}{2}$，得到关于 $b_n$ 的递推关系：
+\[
+b_{n+1} = \frac{b_n^2}{2(b_n + 1)}
+\]
+
+引入新数列 $c_n = \frac{b_n}{b_n + 2}$，将其变形可得 $b_n = \frac{-2c_n}{c_n - 1}$。
+计算 $c_{n+1}$：
+\begin{align*}
+c_{n+1} &= \frac{b_{n+1}}{b_{n+1} + 2} \\
+&= \frac{\frac{b_n^2}{2(1 + b_n)}}{\frac{b_n^2}{2(1 + b_n)} + 2} \\
+&= \frac{b_n^2}{b_n^2 + 4b_n + 4} \\
+&= \left( \frac{b_n}{b_n + 2} \right)^2 \\
+&= c_n^2
+\end{align*}
+
+对于首项 $c_1$：
+由 $a_1 = 2 = \sqrt{2}(1 + b_1)$，解得 $b_1 = \sqrt{2} - 1$。
+代入 $c_1$ 的表达式得：
+\[
+c_1 = \frac{b_1}{b_1 + 2} = \frac{\sqrt{2} - 1}{\sqrt{2} + 1} = \frac{\left(\sqrt{2} - 1\right)^2}{2 - 1} = \left(\sqrt{2} - 1\right)^2
+\]
+
+由 $c_{n+1} = c_n^2$，连续递推可得：
+\[
+c_n = c_{n-1}^2 = \left(c_{n-2}^2\right)^2 = c_{n-2}^{2^2} = \dots = c_1^{2^{n-1}}
+\]
+将 $c_1 = \left(\sqrt{2} - 1\right)^2$ 代入，得：
+\[
+c_n = \left\{ \left(\sqrt{2} - 1\right)^2 \right\}^{2^{n-1}} = \left(\sqrt{2} - 1\right)^{2^n}
+\]
+
+接下来由 $b_n = \frac{-2c_n}{c_n - 1}$ 表示 $a_n$：
+\begin{align*}
+a_n &= \sqrt{2}(1 + b_n) \\
+&= \sqrt{2} \left( 1 + \frac{-2c_n}{c_n - 1} \right) \\
+&= \sqrt{2} \cdot \frac{c_n - 1 - 2c_n}{c_n - 1} \\
+&= \sqrt{2} \cdot \frac{-1 - c_n}{c_n - 1} \\
+&= \sqrt{2} \cdot \frac{1 + c_n}{1 - c_n}
+\end{align*}
+将 $c_n = \left(\sqrt{2} - 1\right)^{2^n}$ 代入，得数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \sqrt{2} \cdot \frac{1 + \left(\sqrt{2} - 1\right)^{2^n}}{1 - \left(\sqrt{2} - 1\right)^{2^n}}
+\]
+
+最后求极限：
+因为 $0 < \sqrt{2} - 1 < 1$，所以当 $n \to \infty$ 时，$\lim_{n \to \infty} \left(\sqrt{2} - 1\right)^{2^n} = 0$。
+故：
+\[
+\lim_{n \to \infty} a_n = \sqrt{2} \cdot \frac{1 + 0}{1 - 0} = \sqrt{2}
+\]
+\end{solution}
+
+\question
+已知数列 $\{a_n\}$ 满足 $0 < a_1 < 1$，且满足递推关系：
+\[
+a_{n+1} = 4a_n(1 - a_n) \quad (n \ge 1)
+\]
+
+\begin{parts}
+\part 求数列 $\{a_n\}$ 的通项公式。
+
+\begin{solution}
+因为 $0 < a_1 < 1$，所以存在唯一的 $\theta_1 \in \left(0, \frac{\pi}{2}\right)$，使得 $a_1 = \sin^2 \theta_1$。
+
+代入递推公式计算前几项：
+\begin{align*}
+a_2 &= 4 \sin^2 \theta_1 \left(1 - \sin^2 \theta_1\right) \\
+&= 4 \sin^2 \theta_1 \cos^2 \theta_1 \\
+&= \left(2 \sin \theta_1 \cos \theta_1\right)^2 \\
+&= \sin^2(2\theta_1)
+\end{align*}
+
+同理可得：
+\[
+a_3 = 4 \sin^2(2\theta_1) \left(1 - \sin^2(2\theta_1)\right) = \sin^2\left(2 \cdot 2\theta_1\right) = \sin^2\left(2^2 \theta_1\right)
+\]
+
+由此归纳可得，对任意正整数 $n$，数列 $\{a_n\}$ 的通项公式为：
+\[
+a_n = \sin^2\left(2^{n-1}\theta_1\right)
+\]
+其中 $\theta_1 = \arcsin\sqrt{a_1} \in \left(0, \frac{\pi}{2}\right)$。
+\end{solution}
+
+\part 讨论极限 $\lim_{n \to \infty} a_n$ 的存在性及结果。
+
+\begin{solution}
+根据 $\frac{\theta_1}{\pi}$ 是否为有理数，分情况讨论极限 $\lim_{n \to \infty} a_n = \lim_{n \to \infty} \sin^2\left(2^{n-1}\theta_1\right)$：
+
+(1) 当 $\frac{\theta_1}{\pi} \in \mathbb{Q}$ 时：
+设 $\theta_1 = \frac{p}{q} \pi$，其中 $p, q$ 为互质的正整数。
+将 $q$ 分解为 $q = 2^m \cdot q'$，其中 $m \ge 0$ 为整数，$q'$ 为奇正整数。
+当 $n \ge m + 1$ 时：
+\[
+2^{n-1} \theta_1 = 2^{n-1-m} \cdot \left(\frac{p}{q'} \pi\right)
+\]
+
+由 $\sin^2 \alpha = \sin^2 \beta \iff \beta \equiv \pm \alpha \pmod \pi$，分析周期性与常数项条件：
+当 $n \ge m + 1$ 时，若 $a_n$ 为常数，则需满足 $2 \cdot \left(\frac{p}{q'} \pi\right) \equiv \pm \left(\frac{p}{q'} \pi\right) \pmod \pi$，即 $2 \equiv \pm 1 \pmod{q'}$，从而 $q' \mid 3$ 或 $q' = 1$。
+
+(1) 当 $q' = 1$ 时：
+$q = 2^m$，即 $\theta_1 = \frac{p}{2^m} \pi$（$p$ 为奇整数）。
+当 $n \ge m + 1$ 时，$2^{n-1-m} p$ 为整数，故：
+\[
+a_n = \sin^2\left(2^{n-1-m} p \pi\right) = 0
+\]
+因此，当 $n \ge m + 1$ 时，$a_n = 0$，极限为：
+\[
+\lim_{n \to \infty} a_n = 0
+\]
+
+(2) 当 $q' = 3$ 时：
+$q = 2^m \cdot 3$，即 $\theta_1 = \frac{p \pi}{2^m \cdot 3}$（$\gcd(p, 6) = 1$）。
+当 $n \ge m + 1$ 时，$2^{n-1-m} p \equiv \pm 1 \pmod 3$，故：
+\[
+a_n = \sin^2\left(\pm \frac{\pi}{3}\right) = \left(\frac{\sqrt{3}}{2}\right)^2 = \frac{3}{4}
+\]
+因此，当 $n \ge m + 1$ 时，$a_n = \frac{3}{4}$，极限为：
+\[
+\lim_{n \to \infty} a_n = \frac{3}{4}
+\]
+
+(3) 当 $q' \ge 5$（$q'$ 为奇数）时：
+序列 $2^{n-1}\theta_1 \pmod \pi$ 产生周期大于 1 的循环，使得 $a_n$ 在多个不同值之间震荡，故极限 $\lim_{n \to \infty} a_n$ 不存在。
+
+(2) 当 $\frac{\theta_1}{\pi} \notin \mathbb{Q}$ 时：
+序列 $\left\{ \frac{2^{n-1}\theta_1}{\pi} \pmod 1 \right\}$ 在区间 $[0, 1)$ 内稠密，因此 $a_n = \sin^2\left(2^{n-1}\theta_1\right)$ 在 $(0, 1)$ 内稠密并持续震荡，故极限 $\lim_{n \to \infty} a_n$ 不存在。
+
+（注：若考虑切萨罗均值/遍历平均，定义映射 $T x = 2x \pmod 1$，则有：
+\[
+\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N a_n = \int_0^1 \sin^2(\pi x) \,dx = \int_0^1 \frac{1}{2}\left(1 - \cos(2\pi x)\right) \,dx = \frac{1}{2}
+\]
+）
+\end{solution}
+\end{parts}
 
     \question 数列$\{a_n\}$中, $a_1=1$ 且 $a_n a_{n+1}=4^n$, 求前$n$项和$S_n$。
     \begin{solution}
@@ -18735,6 +19853,55 @@ S = 60 \left( 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \right)
         \]
     \end{solution}
     \end{parts}
+
+    \question
+【2013年 横滨市立大学】
+设 $n$ 为自然数，求下列和式的值：
+\[
+\sum_{k=0}^{n-1} \frac{\binom{2n}{2k+1}}{2k+2}
+\]
+
+\begin{solution}
+首先利用组合数恒等式：
+\[
+(2n+1) \binom{2n}{2k+1} = (2k+2) \binom{2n+1}{2k+2}
+\]
+变形可得：
+\[
+\frac{\binom{2n}{2k+1}}{2k+2} = \frac{\binom{2n+1}{2k+2}}{2n+1}
+\]
+
+将上式代入原和式中，得：
+\begin{align*}
+\sum_{k=0}^{n-1} \frac{\binom{2n}{2k+1}}{2k+2} &= \sum_{k=0}^{n-1} \frac{\binom{2n+1}{2k+2}}{2n+1} \\
+&= \frac{1}{2n+1} \left( \binom{2n+1}{2} + \binom{2n+1}{4} + \dots + \binom{2n+1}{2n} \right)
+\end{align*}
+
+接下来计算括号内的偶项组合数之和。由二项式定理：
+\begin{align*}
+(1+1)^{2n+1} &= \binom{2n+1}{0} + \binom{2n+1}{1} + \binom{2n+1}{2} + \dots + \binom{2n+1}{2n+1} \\
+(1-1)^{2n+1} &= \binom{2n+1}{0} - \binom{2n+1}{1} + \binom{2n+1}{2} - \dots - \binom{2n+1}{2n+1}
+\end{align*}
+
+两式相加，得：
+\[
+2^{2n+1} = 2 \left( \binom{2n+1}{0} + \binom{2n+1}{2} + \dots + \binom{2n+1}{2n} \right)
+\]
+两边同除以 $2$，得：
+\[
+2^{2n} = 4^n = \binom{2n+1}{0} + \binom{2n+1}{2} + \dots + \binom{2n+1}{2n}
+\]
+
+因为 $\binom{2n+1}{0} = 1$，所以：
+\[
+\binom{2n+1}{2} + \binom{2n+1}{4} + \dots + \binom{2n+1}{2n} = 4^n - 1
+\]
+
+代回原式，解得：
+\[
+\sum_{k=0}^{n-1} \frac{\binom{2n}{2k+1}}{2k+2} = \frac{4^n - 1}{2n+1}
+\]
+\end{solution}
 
     \question 证明范德蒙恒等式
     \[
