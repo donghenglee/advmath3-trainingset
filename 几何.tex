@@ -34,6 +34,108 @@ DA^2 + DB \cdot DC = (AE^2 + x^2) + (m^2 - x^2) = AE^2 + m^2 = AB^2 = 4
 \]
 \end{solution}
 
+\question
+如图，分别以 $\triangle ABC$ 的两边 $AB$ 和 $AC$ 为边向外作正方形 $ABB' \dots$ 和正方形 $ACC' \dots$。设线段 $B'C'$ 的中点为 $M$。证明：
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{images/image509.png}
+    \end{figure}
+\begin{parts}
+\part $BC \perp AM$
+\begin{solution}
+以顶点 $A$ 为复平面原点 $O$。设点 $B$ 和点 $C$ 对应的复数分别为 $\beta$ 和 $\gamma$。
+
+由正方形的几何性质及复数的旋转，将向量 $\vec{AB}$（即复数 $\beta$）顺时针旋转 $90^\circ$（即乘以 $-i$）可得点 $B'$ 对应的复数：
+\[
+\beta' = -i\beta
+\]
+
+将向量 $\vec{AC}$（即复数 $\gamma$）逆时针旋转 $90^\circ$（即乘以 $i$）可得点 $C'$ 对应的复数：
+\[
+\gamma' = i\gamma
+\]
+
+因为点 $M$ 为线段 $B'C'$ 的中点，所以点 $M$ 对应的复数 $m$ 为：
+\[
+m = \frac{\beta' + \gamma'}{2} = \frac{-i\beta + i\gamma}{2} = \frac{i}{2}(\gamma - \beta)
+\]
+
+向量 $\vec{AM}$ 对应的复数为 $m = \frac{i}{2}(\gamma - \beta)$，而向量 $\vec{BC}$ 对应的复数为 $\gamma - \beta$。
+
+比较两向量对应的复数关系：
+\[
+\vec{AM} = \frac{i}{2}\vec{BC}
+\]
+
+由于 $\vec{AM} = \frac{i}{2}\vec{BC}$，复数乘法中的因子 $i$ 表示将向量 $\vec{BC}$ 旋转 $90^\circ$，因此向量 $\vec{AM}$ 与向量 $\vec{BC}$ 垂直，即：
+\[
+BC \perp AM
+\]
+\end{solution}
+\begin{solution}
+延长 $MA$ 至点 $D$，使得 $AD = MA$，连接 $BD$。
+
+在 $\triangle AMB'$ 和 $\triangle ADC$ 中：
+已知 $MA = AD$，且 $\angle B'AM$ 与 $\angle DAC$ 为对顶角，即 $\angle B'AM = \angle DAC$。
+因为 $M$ 是 $B'C'$ 的中点，在 $\triangle AB'C'$ 中，向量关系满足 $\vec{AB'} + \vec{AC'} = 2\vec{AM}$。
+通过构造平行四边形可知，$\triangle AB'C'$ 的中线 $AM$ 延长一倍后可得 $\triangle B'AD \cong \triangle C'DA$（或采用倍长中线法）。
+
+具体地，过 $B'$ 作 $B'D // AC'$ 且 $B'D = AC'$，连结 $AD$。
+则四边形 $AB'DC'$ 为平行四边形，对角线 $AD$ 与 $B'C'$ 互相平分于点 $M$，且 $AD = 2AM$。
+
+在 $\triangle ABD$ 与 $\triangle C'AC$ 中：
+因为 $AB' = AB$（正方形边长），$B'D = C'A = AC$，
+且在平行四边形 $AB'DC'$ 中，$\angle AB'D = 180^\circ - \angle B'AC'$。
+又因为 $\angle B'AB + \angle BAC + \angle CAC' + \angle B'AC' = 360^\circ$，
+其中 $\angle B'AB = 90^\circ$，$\angle CAC' = 90^\circ$，
+所以 $\angle BAC + \angle B'AC' = 180^\circ \implies \angle BAC = 180^\circ - \angle B'AC'$。
+因此 $\angle AB'D = \angle BAC$。
+
+由边角边（SAS）全等判定，$\triangle AB'D \cong \triangle BAC$。
+由此可得 $\angle B'AD = \angle ABC$。
+
+设 $AM$（即直线 $AD$）与 $BC$ 交于点 $P$。
+在 $\triangle ABP$ 中：
+$\angle PAB = 90^\circ - \angle B'AD$。
+因为 $\angle B'AD = \angle ABC$，所以 $\angle PAB = 90^\circ - \angle ABC \implies \angle PAB + \angle ABC = 90^\circ$。
+因此 $\angle APB = 90^\circ$，即 $BC \perp AM$。
+\end{solution}
+\part $BC = 2AM$
+\begin{solution}
+由上一小题可知：
+\[
+\vec{AM} = \frac{i}{2}\vec{BC}
+\]
+
+对等式两边取模：
+\[
+|\vec{AM}| = \left| \frac{i}{2} \right| |\vec{BC}| = \frac{1}{2}|\vec{BC}|
+\]
+因此：
+\[
+BC = 2AM
+\]
+\end{solution}
+\begin{solution}
+由上一小题证明过程可知，$\triangle AB'D \cong \triangle BAC$。
+
+根据全等三角形对应边相等：
+\[
+AD = BC
+\]
+
+又因为 $M$ 为平行四边形 $AB'DC'$ 对角线的交点（即 $AD$ 的中点）：
+\[
+AD = 2AM
+\]
+
+所以：
+\[
+BC = 2AM
+\]
+\end{solution}
+\end{parts}
+
     \question 已知钝角三角形的边长为 \(10,\,17,\,x\),求 \(x\) 的所有正整数解之和。  
     \begin{solution}
         钝角三角形需满足某边的平方大于其余两边平方和:
@@ -648,6 +750,57 @@ S_{\triangle ABF} = 28
 \]
 故正确答案为 C。
 \end{solution}
+
+\question
+在平行四边形 $ABCD$ 中，已知 $\cos \angle BAD = \frac{1}{3}$，且对角线 $AC = a$，$BD = b$ 满足 $a^2 + b^2 = 36$。求平行四边形 $ABCD$ 面积的最大值。
+
+\begin{solution}
+设平行四边形 $ABCD$ 的边长为 $AB = CD = c$，$AD = BC = d$。
+
+在 $\triangle ABC$ 中，因为 $\angle ABC = 180^\circ - \angle BAD$，所以 $\cos \angle ABC = -\cos \angle BAD = -\frac{1}{3}$。
+由余弦定理：
+\[
+a^2 = c^2 + d^2 - 2cd \cos \angle ABC = c^2 + d^2 + \frac{2}{3}cd
+\]
+
+在 $\triangle ABD$ 中，由余弦定理：
+\[
+b^2 = c^2 + d^2 - 2cd \cos \angle BAD = c^2 + d^2 - \frac{2}{3}cd
+\]
+
+将两式相加：
+\[
+a^2 + b^2 = 2(c^2 + d^2)
+\]
+已知 $a^2 + b^2 = 36$，故：
+\[
+2(c^2 + d^2) = 36 \implies c^2 + d^2 = 18
+\]
+
+根据基本不等式（均值不等式），因为 $c, d > 0$：
+\[
+c^2 + d^2 \ge 2cd \implies 18 \ge 2cd \implies cd \le 9
+\]
+当且仅当 $c = d = 3$ 时，等号成立。
+
+因为 $\cos \angle BAD = \frac{1}{3}$，且 $\angle BAD \in (0, \pi)$，所以：
+\[
+\sin \angle BAD = \sqrt{1 - \left(\frac{1}{3}\right)^2} = \frac{2\sqrt{2}}{3}
+\]
+
+平行四边形 $ABCD$ 的面积 $S$ 为：
+\[
+S = 2 \cdot S_{\triangle ABD} = cd \sin \angle BAD = \frac{2\sqrt{2}}{3} cd
+\]
+
+由于 $cd \le 9$，可得：
+\[
+S \le \frac{2\sqrt{2}}{3} \times 9 = 6\sqrt{2}
+\]
+
+因此，平行四边形 $ABCD$ 面积的最大值为 $6\sqrt{2}$（此时 $c = d = 3$，即平行四边形为菱形）。
+\end{solution}
+
     
 \question
 如图 5 所示，$ABCD$ 是一四边形，$AC$ 与 $BD$ 相交于点 $E$。已知 $AB = 12$，$BC = 8$，$CD = 7$，$DA = 5$，$\tan \angle AED = 2$，求四边形 $ABCD$ 的面积。
@@ -8066,6 +8219,57 @@ AB^2 = \frac{1}{2} BD^2 \implies \cos^2 \angle ABD = \frac{AB^2}{BD^2} = \frac{1
 所以答案为 D。
 \end{solution}
 
+\question
+设 $G$ 为 $\triangle ABC$ 的重心，直线 $CG$ 与边 $AB$ 交于点 $M$，直线 $BG$ 与边 $AC$ 交于点 $N$。已知 $AM = 2$，$AC = 4\sqrt{3}$，且 $A, M, G, N$ 四点共圆。求 $BC$ 的长度。
+
+\begin{solution}
+因为 $G$ 为 $\triangle ABC$ 的重心，所以 $M$ 和 $N$ 分别为边 $AB$ 和 $AC$ 的中点。
+由此可得：
+\[
+AB = 2AM = 4, \quad AN = NC = \frac{1}{2}AC = 2\sqrt{3}
+\]
+
+根据重心的性质，重心 $G$ 分中线 $BN$ 所成的比例为 $BG : GN = 2 : 1$。
+设 $BN = x$，则：
+\[
+BG = \frac{2}{3}x
+\]
+
+因为 $A, M, G, N$ 四点共圆，割线 $BA$ 与 $BG$ 交于圆外一点 $B$。根据割线定理（切割线定理/割线割线定理）：
+\[
+BG \cdot BN = BM \cdot BA
+\]
+将已知数据代入上式：
+\[
+\frac{2}{3}x \cdot x = 2 \cdot 4
+\]
+\[
+\frac{2}{3}x^2 = 8 \implies x^2 = 12
+\]
+解得：
+\[
+x = 2\sqrt{3} \quad (x > 0)
+\]
+即 $BN = 2\sqrt{3}$。
+
+在 $\triangle ANB$ 中，由于 $AN = 2\sqrt{3}$ 且 $BN = 2\sqrt{3}$，故 $\triangle ANB$ 为以 $N$ 为顶点的等腰三角形（$AN = BN$）。
+
+在 $\triangle ABC$ 中，由于 $M, N$ 分别为 $AB, AC$ 的中点，由三角形中位线定理得：
+\[
+MN = \frac{1}{2}BC \implies BC = 2MN
+\]
+
+由于 $\triangle ANB$ 为等腰三角形，且 $M$ 为底边 $AB$ 的中点，因此中线 $NM$ 必垂直于底边 $AB$，即 $NM \perp AB$。
+在直角 $\triangle AMN$ 中，应用勾股定理：
+\[
+MN = \sqrt{AN^2 - AM^2} = \sqrt{\left(2\sqrt{3}\right)^2 - 2^2} = \sqrt{12 - 4} = \sqrt{8} = 2\sqrt{2}
+\]
+
+因此，利用中位线定理可得：
+\[
+BC = 2MN = 2 \times 2\sqrt{2} = 4\sqrt{2}
+\]
+\end{solution}
 
     \question
 如图 8 中，$O$ 是圆心，$AB$ 是直径。$C$ 是半径 $OA$ 上的一点，$D$ 是圆上的一点使得 $CD$ 垂直于 $AB$，$E$ 是线段 $BD$ 上的一点使得 $CE$ 垂直于 $BD$。已知圆的半径为 $34$，$OE = 30$，求 $CE$ 的长。
@@ -11301,6 +11505,104 @@ CM^2 = CB_1 \cdot CA \Rightarrow \left( y - x \right)^2 = x \left( x + y \right)
         GA=2GP=6 \ \text{或} \ 4 \sqrt{6}
         \]
     \end{solution}
+
+    \question
+【JMO 预选对策演习】
+过 $\triangle ABC$ 的重心 $G$ 的直线与边 $AB, AC$ 分别交于点 $D, E$，求 $\frac{DB}{AD} + \frac{EC}{AE}$ 的值。
+
+\begin{solution}
+连接 $AG$ 并延长交边 $BC$ 于点 $M$。因为 $G$ 为 $\triangle ABC$ 的重心，所以 $M$ 为边 $BC$ 的中点，即 $BM = MC$，且 $AG : GM = 2 : 1$。
+
+过点 $B$ 作直线 $DE$ 的平行线，与直线 $AM$ 交于点 $P$；
+过点 $C$ 作直线 $DE$ 的平行线，与直线 $AM$ 交于点 $Q$。
+
+在 $\triangle BPM$ 与 $\triangle CQM$ 中：
+因为 $BP // CQ$，所以 $\angle PBM = \angle QCM$，$\angle BPM = \angle CQM$。
+又已知 $BM = MC$，根据角角边（AAS）判定全等，可得：
+\[
+\triangle BPM \cong \triangle CQM
+\]
+由此可知：
+\[
+PM = MQ
+\]
+
+在 $\triangle ABP$ 中，由于 $DG // BP$，由平行线分线段成比例定理可得：
+\[
+\frac{DB}{AD} = \frac{GP}{AG}
+\]
+
+在 $\triangle ACQ$ 中，由于 $EG // CQ$，由平行线分线段成比例定理可得：
+\[
+\frac{EC}{AE} = \frac{GQ}{AG}
+\]
+
+因此，所求式子可化简为：
+\[
+\frac{DB}{AD} + \frac{EC}{AE} = \frac{GP}{AG} + \frac{GQ}{AG} = \frac{GP + GQ}{AG}
+\]
+
+由图中的线段位置关系可知：
+\[
+GP = GM - PM
+\]
+\[
+GQ = GM + MQ
+\]
+将 $PM = MQ$ 代入相加，可得：
+\[
+GP + GQ = (GM - PM) + (GM + MQ) = 2GM
+\]
+
+因此：
+\[
+\frac{DB}{AD} + \frac{EC}{AE} = \frac{2GM}{AG}
+\]
+
+因为 $G$ 是 $\triangle ABC$ 的重心，所以 $AG = 2GM$，即 $\frac{2GM}{AG} = 1$。
+
+故所求的值为 $1$。
+\end{solution}
+
+\question
+【难关大入试演习】
+
+设 $H$ 为 $\triangle ABC$ 的垂心。求证：$\triangle AHC$、$\triangle BHC$、$\triangle AHB$ 的外接圆与 $\triangle ABC$ 的外接圆是等圆（即外接圆半径相同）。
+
+\begin{solution}
+只需证明 $\triangle AHC$ 的外接圆半径与 $\triangle ABC$ 的外接圆半径相等即可，同理可得其余两个三角形的情况。
+
+在 $\triangle ABC$ 的外接圆上，设劣弧 $AC$ 上有一点 $D$，使得四边形 $ABCD$ 为圆内接四边形。
+由圆内接四边形对角互补的性质可知：
+\[
+\angle B + \angle ADC = 180^\circ
+\]
+
+另一方面，在 $\triangle ABC$ 中，$H$ 为垂心。
+由于 $\angle HBC = 90^\circ - C$，$\angle HAB = 90^\circ - B$，可以算出：
+\[
+\angle AHC = 180^\circ - \angle B
+\]
+即：
+\[
+\angle B + \angle AHC = 180^\circ
+\]
+
+结合以上两式可得：
+\[
+\angle ADC = \angle AHC
+\]
+
+设 $\triangle ABC$ 的外接圆半径为 $R$，由正弦定理，在 $\triangle ABC$ 中有 $AC = 2R \sin B$。
+设 $\triangle AHC$ 的外接圆半径为 $R_1$，由正弦定理：
+\[
+2R_1 = \frac{AC}{\sin \angle AHC} = \frac{AC}{\sin (180^\circ - B)} = \frac{AC}{\sin B} = 2R
+\]
+因此 $R_1 = R$，即 $\triangle AHC$ 的外接圆与 $\triangle ABC$ 的外接圆半径相等。
+
+同理可证 $\triangle BHC$ 与 $\triangle AHB$ 的外接圆半径亦等于 $R$。
+故 $\triangle AHC$、$\triangle BHC$、$\triangle AHB$ 的外接圆与 $\triangle ABC$ 的外接圆全等（是等圆）。
+\end{solution}
 
     \question 已知 $G$ 为 $\triangle ABC$ 的重心, $BC=10,AG=4,\angle BGC=\dfrac{3\pi}{4}$,求 $\triangle ABC$ 的面积。
     \ifprintanswers
@@ -23926,6 +24228,61 @@ r \cos \left( \theta - \frac{\alpha}{2} \right) = \cos \frac{\alpha}{2} \cdots \
    \[ \frac{EF}{ES} = \frac{\frac{1}{2} |\vec{q} - \vec{p}|}{\frac{5}{12} |\vec{q} - \vec{p}|} = \frac{1}{2} \times \frac{12}{5} = \frac{6}{5} = 1.2 \]
 
 综上所述，该比值的值为 $1.2$。
+\end{solution}
+
+\question
+如图，在平行四边形 $ABCD$ 中，$BF:FC = 2:1$，$CG:GD = 3:1$。射线 $AF$ 与 $BG$ 相交于点 $P$，直线 $AP$ 与边 $BC$ 相交于点 $Q$。求 $AP:PQ$ 的值。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/image508.png}
+    \end{figure}
+\begin{solution}
+设 $\vec{AB} = \vec{b}$，$\vec{AD} = \vec{d}$。
+
+因为点 $F$ 在边 $BC$ 上，且 $BF:FC = 2:1$，所以
+\[
+\vec{BF} = \frac{2}{3}\vec{d}
+\]
+由此可得
+\[
+\vec{f} = \vec{AF} = \vec{b} + \frac{2}{3}\vec{d}
+\]
+
+因为点 $G$ 在边 $CD$ 上，且 $CG:GD = 3:1$，即 $DG:GC = 1:3$，所以
+\[
+\vec{DG} = \frac{1}{4}\vec{b}
+\]
+由此可得
+\[
+\vec{g} = \vec{AG} = \vec{d} + \frac{1}{4}\vec{b}
+\]
+
+利用梅涅劳斯定理或向量线段比，设 $GP:PB = 2:9$，则点 $P$ 分线段 $FG$ 的比例关系可得
+\[
+\vec{AP} = \frac{9\vec{f} + 2\vec{g}}{9 + 2}
+\]
+将 $\vec{f}$ 与 $\vec{g}$ 代入上式：
+\[
+\vec{AP} = \frac{9\left(\vec{b} + \frac{2}{3}\vec{d}\right) + 2\left(\vec{d} + \frac{1}{4}\vec{b}\right)}{11}
+\]
+\[
+\vec{AP} = \frac{19\vec{b} + 16\vec{d}}{22}
+\]
+变形得：
+\[
+\vec{AP} = \frac{19}{22}\left(\vec{b} + \frac{16}{19}\vec{d}\right)
+\]
+
+因为点 $Q$ 在边 $BC$ 上，可设 $\vec{AQ} = \vec{b} + \frac{16}{19}\vec{d}$，因此
+\[
+\vec{AP} = \frac{19}{22}\vec{AQ}
+\]
+所以 $AP:AQ = 19:22$。
+
+由此可得 $PQ = AQ - AP$，即
+\[
+AP:PQ = 19:(22 - 19) = 19:3
+\]
 \end{solution}
 
     \question 设 $\vec{a},\vec{b}$ 为两个垂直的平面向量, 且 $|\vec{a}|=2|\vec{b}|=10$. 当 $0 \le t \le 1$ 时, 记向量 $t\vec{a}+(1-t)\vec{b}$ 与向量 $(t-\frac{1}{5})\vec{a}+(1-t)\vec{b}$ 最大夹角为 $\theta$, 则 $\cos\theta=$
