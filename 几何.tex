@@ -18137,6 +18137,139 @@ $P(at_1t_3, a(t_1+t_3)), Q(at_1t_2, a(t_1+t_2)), R(at_2t_3, a(t_2+t_3))$。
     由于 $\frac{S_1}{S_2}$ 为定值 $\frac{1}{2}$，其最大值为 $\frac{1}{2}$。
     \end{solution}
 \end{parts}
+
+\question
+考虑两条抛物线 $P_{1}:y^{2}=4x$ 及 $P_{2}:y^{2}=8x$。设 $L$ 为 $P_{1}$ 在点 $S(s^{2},2s)$ 处的切线,其中 $s>0$。
+\begin{parts}
+\part 求 $L$ 的方程。
+
+\begin{solution}
+对 $y^{2}=4x$ 隐函数求导,$2yy'=4$,$y'=\dfrac{2}{y}$。在 $S(s^{2},2s)$ 处,斜率为 $\dfrac{2}{2s}=\dfrac{1}{s}$。
+
+切线方程为
+\[
+y-2s=\frac{1}{s}\left(x-s^{2}\right)
+\]
+化简得
+\[
+x-sy+s^{2}=0
+\]
+\end{solution}
+
+\part $L$ 交 $P_{2}$ 于点 $A(2\alpha^{2},4\alpha)$ 及 $B(2\beta^{2},4\beta)$。设 $L_{1}$ 及 $L_{2}$ 分别为 $P_{2}$ 在 $A$ 及 $B$ 处的切线。
+\begin{subparts}
+\subpart 证明 $\alpha+\beta=2s$ 且 $\alpha\beta=\dfrac{s^{2}}{2}$。
+
+\begin{solution}
+由 (a),$x=sy-s^{2}$。代入 $y^{2}=8x$,
+\[
+y^{2}=8\left(sy-s^{2}\right)=8sy-8s^{2}
+\]
+即
+\[
+y^{2}-8sy+8s^{2}=0
+\]
+此方程的两根为 $A$,$B$ 的纵坐标,即 $4\alpha$ 及 $4\beta$。由韦达定理,
+\[
+4\alpha+4\beta=8s,\qquad(4\alpha)(4\beta)=8s^{2}
+\]
+故
+\[
+\alpha+\beta=2s,\qquad\alpha\beta=\frac{8s^{2}}{16}=\frac{s^{2}}{2}
+\]
+\end{solution}
+
+\subpart 设 $\theta$ 为 $L_{1}$ 与 $L_{2}$ 之间的锐角。
+\begin{subsubparts}
+\subsubpart 证明 $\tan\theta=\dfrac{2\sqrt{2}s}{s^{2}+2}$。
+
+\begin{solution}
+对 $y^{2}=8x$ 求导,$2yy'=8$,$y'=\dfrac{4}{y}$。在 $A(2\alpha^{2},4\alpha)$ 处斜率为 $\dfrac{4}{4\alpha}=\dfrac{1}{\alpha}$,在 $B(2\beta^{2},4\beta)$ 处斜率为 $\dfrac{1}{\beta}$。
+
+故
+\[
+\tan\theta=\left|\frac{\dfrac{1}{\alpha}-\dfrac{1}{\beta}}{1+\dfrac{1}{\alpha}\cdot\dfrac{1}{\beta}}\right|=\left|\frac{\beta-\alpha}{\alpha\beta+1}\right|
+\]
+由 (b)(i),
+\[
+(\alpha-\beta)^{2}=(\alpha+\beta)^{2}-4\alpha\beta=(2s)^{2}-4\cdot\frac{s^{2}}{2}=4s^{2}-2s^{2}=2s^{2}
+\]
+故 $|\alpha-\beta|=s\sqrt{2}$(注意 $s>0$)。又
+\[
+\alpha\beta+1=\frac{s^{2}}{2}+1=\frac{s^{2}+2}{2}
+\]
+因此
+\[
+\tan\theta=\frac{s\sqrt{2}}{\dfrac{s^{2}+2}{2}}=\frac{2\sqrt{2}s}{s^{2}+2}
+\]
+\end{solution}
+
+\subsubpart 求 $\theta$ 的最大值。
+
+\begin{solution}
+由算术平均数大于或等于几何平均数,
+\[
+s^{2}+2\geq2\sqrt{2s^{2}}=2\sqrt{2}\,s
+\]
+当且仅当 $s^{2}=2$,即 $s=\sqrt{2}$ 时取等号。因此
+\[
+\tan\theta=\frac{2\sqrt{2}s}{s^{2}+2}\leq\frac{2\sqrt{2}s}{2\sqrt{2}s}=1
+\]
+当 $s=\sqrt{2}$ 时,$\tan\theta$ 取最大值 $1$。由于 $\theta$ 为锐角,$\theta\in\left(0,\dfrac{\pi}{2}\right)$,故 $\theta$ 的最大值为
+\[
+\theta=\frac{\pi}{4}
+\]
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+
+\part 已知 $L_{1}$ 与 $L_{2}$ 相交于 $C$。
+\begin{subparts}
+\subpart 以 $s$ 表示 $C$ 的坐标。
+
+\begin{solution}
+$L_{1}$ 的方程为
+\[
+y-4\alpha=\frac{1}{\alpha}\left(x-2\alpha^{2}\right)\implies x=\alpha y-2\alpha^{2}
+\]
+同理,$L_{2}$ 的方程为 $x=\beta y-2\beta^{2}$。
+
+联立求交点 $C$,
+\[
+\alpha y-2\alpha^{2}=\beta y-2\beta^{2}
+\]
+\[
+y(\alpha-\beta)=2\alpha^{2}-2\beta^{2}=2(\alpha-\beta)(\alpha+\beta)
+\]
+由于 $\alpha\neq\beta$,两边除以 $\alpha-\beta$,得
+\[
+y=2(\alpha+\beta)=2(2s)=4s
+\]
+代入 $x=\alpha y-2\alpha^{2}$,
+\[
+x=4s\alpha-2\alpha^{2}
+\]
+利用 $s=\dfrac{\alpha+\beta}{2}$,
+\[
+x=2\alpha(\alpha+\beta)-2\alpha^{2}=2\alpha^{2}+2\alpha\beta-2\alpha^{2}=2\alpha\beta=2\cdot\frac{s^{2}}{2}=s^{2}
+\]
+故 $C=\left(s^{2},4s\right)$。
+\end{solution}
+
+\subpart 求当 $s$ 变化时 $C$ 的轨迹方程。
+
+\begin{solution}
+设 $C=(x,y)$,则 $x=s^{2}$,$y=4s$。由后式,$s=\dfrac{y}{4}$,代入前式,
+\[
+x=\left(\frac{y}{4}\right)^{2}=\frac{y^{2}}{16}
+\]
+即 $C$ 的轨迹方程为
+\[
+y^{2}=16x
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
 %ellipse
     \question 设\(A,B\)为椭圆 \(\dfrac{x^{2}}{25}+\dfrac{y^{2}}{16}=1\) 两焦点 ,若$P$为椭圆上任意点,求 \(\triangle PAB\) 面积最大值。  
     \begin{solution}
@@ -19676,6 +19809,117 @@ a^2 \cos^2\phi + b^2 \sin^2\phi = a^2 \sin^2\phi + b^2 \cos^2\phi \iff (a^2 - b^
 当 $a \ne b$ 时，取 $\phi = \frac{\pi}{4}$ 即可满足等号成立条件。
 故长方形面积的最大值为 $2(a^2 + b^2)$。
 \end{solution}
+
+\question 一条经过点 $A(0,16)$ 的直线与椭圆 $E:\dfrac{x^2}{144}+\dfrac{y^2}{400}=1$ 交于两个不同的点 $P(12\sin\theta,20\cos\theta)$ 及 $Q(12\sin\phi,20\cos\phi)$。$E$ 在 $P$ 及 $Q$ 处的切线交于点 $R$。
+\begin{parts}
+\part 证明 $\sin\theta\neq 0$ 且 $\sin\phi\neq 0$。
+\begin{solution}
+设 $\sin\theta=0$ 或 $\sin\phi=0$。则 $P$ 或 $Q$ 位于 $y$ 轴上。由于 $PQ$ 经过 $A$，故 $P$ 及 $Q$ 均位于 $y$ 轴上。于是 $E$ 在 $P$ 及 $Q$ 处的切线均平行于 $x$ 轴，故这两条切线不相交，矛盾。
+
+故 $\sin\theta\neq 0$ 且 $\sin\phi\neq 0$。
+\end{solution}
+\part （i）求 $E$ 在 $P$ 处的切线方程，并写出 $E$ 在 $Q$ 处的切线方程。
+
+（ii）证明 $\sin(\theta-\phi)\neq 0$。
+\begin{solution}
+（i）$E$ 在 $P$ 处的切线方程为
+\[
+\frac{(12\sin\theta)x}{144}+\frac{(20\cos\theta)y}{400}=1
+\]
+即
+\[
+(5\sin\theta)x+(3\cos\theta)y=60
+\]
+同理，$E$ 在 $Q$ 处的切线方程为
+\[
+(5\sin\phi)x+(3\cos\phi)y=60
+\]
+
+（ii）由于 $E$ 在 $P$ 及 $Q$ 处的切线交于点 $R$，故线性方程组
+\[
+\begin{cases}
+(5\sin\theta)x+(3\cos\theta)y=60\\
+(5\sin\phi)x+(3\cos\phi)y=60
+\end{cases}
+\]
+有唯一解，因此
+\[
+\begin{vmatrix} 5\sin\theta & 3\cos\theta \\ 5\sin\phi & 3\cos\phi \end{vmatrix} \neq 0
+\]
+即
+\[
+15\sin\theta\cos\phi-15\sin\phi\cos\theta \neq 0
+\]
+故 $\sin\theta\cos\phi-\sin\phi\cos\theta\neq 0$，即 $\sin(\theta-\phi)\neq 0$。
+\end{solution}
+\part 证明
+
+（i）$4(\sin\theta-\sin\phi)=5\sin(\theta-\phi)$
+
+（ii）$R$ 的坐标为 $\left(\dfrac{3(4-5\cos\theta)}{\sin\theta},25\right)$
+\begin{solution}
+（i）由于 $PQ$ 经过 $A(0,16)$，故
+\[
+\frac{20\cos\theta-16}{12\sin\theta-0} = \frac{20\cos\phi-16}{12\sin\phi-0}
+\]
+即
+\[
+\frac{5\cos\theta-4}{\sin\theta} = \frac{5\cos\phi-4}{\sin\phi}
+\]
+故
+\[
+(5\cos\phi-4)\sin\theta = (5\cos\theta-4)\sin\phi
+\]
+展开整理，得
+\[
+4(\sin\theta-\sin\phi) = 5\sin(\theta-\phi)
+\]
+
+（ii）由(b)(i)，$E$ 在 $P$ 及 $Q$ 处的切线方程分别为
+\[
+(5\sin\theta)x+(3\cos\theta)y=60,\qquad (5\sin\phi)x+(3\cos\phi)y=60
+\]
+解此方程组，得
+\[
+y\sin(\theta-\phi) = 20(\sin\theta-\sin\phi)
+\]
+由(c)(i)，
+\[
+y\sin(\theta-\phi) = 25\sin(\theta-\phi)
+\]
+由(b)(ii)，$\sin(\theta-\phi)\neq 0$，故 $y=25$。
+
+将 $y=25$ 代入 $(5\sin\theta)x+(3\cos\theta)y=60$，得
+\[
+x = \frac{3(4-5\cos\theta)}{\sin\theta}
+\]
+故 $R$ 的坐标为 $\left(\dfrac{3(4-5\cos\theta)}{\sin\theta},25\right)$。
+\end{solution}
+\part $\triangle PAR$ 是否为直角三角形？说明你的答案。
+\begin{solution}
+注意到
+\[
+PA^2 = (12\sin\theta)^2+(20\cos\theta-16)^2 = 16(5-4\cos\theta)^2
+\]
+又
+\[
+RA^2 = \left(\frac{3(4-5\cos\theta)}{\sin\theta}\right)^2+(25-16)^2 = \frac{9(5-4\cos\theta)^2}{\sin^2\theta}
+\]
+故
+\[
+PA^2+RA^2 = \frac{(5-4\cos\theta)^2(9+16\sin^2\theta)}{\sin^2\theta}
+\]
+又
+\[
+PR^2 = \left(12\sin\theta-\frac{3(4-5\cos\theta)}{\sin\theta}\right)^2+(20\cos\theta-25)^2
+\]
+化简得
+\[
+PR^2 = \frac{(5-4\cos\theta)^2(9+16\sin^2\theta)}{\sin^2\theta}
+\]
+故 $PA^2+RA^2=PR^2$，因此 $\triangle PAR$ 是直角三角形。
+\end{solution}
+\end{parts}
 %hyperbola
     \question 双曲线 
     \[
@@ -21186,6 +21430,66 @@ P_n Q_n &= \sqrt{\left( a_n + \frac{1}{4a_n} - a_n \right)^2 + \left( a_n - \fra
         \Gamma_{2}:\quad x^{2}+\frac{y^{2}}{12}=1.
         \]
     \end{solution}
+
+\question
+\begin{parts}
+\part 写出在笛卡尔平面上表示绕原点逆时针旋转
+\[
+\frac{\pi}{2}
+\]
+的矩阵。
+\begin{solution}
+所求矩阵为：
+\[
+\begin{pmatrix} \cos\frac{\pi}{2} & -\sin\frac{\pi}{2} \\ \sin\frac{\pi}{2} & \cos\frac{\pi}{2} \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+\]
+\end{solution}
+
+\part 设 $O$ 为原点。已知 $P(1, 3)$ 及 $Q$ 为等腰三角形 $OPQ$ 的顶点，其中
+\[
+\angle POQ = \frac{\pi}{2}
+\]
+且 $Q$ 在第二象限。
+\begin{subparts}
+\subpart 求 $Q$ 的坐标。
+\begin{solution}
+设 $Q$ 的坐标为 $(x, y)$。点 $Q$ 是将点 $P(1, 3)$ 绕原点逆时针旋转 $\frac{\pi}{2}$ 得到的：
+\[
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} -3 \\ 1 \end{pmatrix}
+\]
+故 $Q$ 的坐标为 $(-3, 1)$。
+\end{solution}
+
+\subpart 设 $T$ 为将点 $(1, 0)$ 及 $(0, 1)$ 分别变换为点 $(0, -1)$ 及 $(-1, 0)$ 的变换，且 $M$ 为表示变换 $T$ 的 $2 \times 2$ 实矩阵。
+\begin{subsubparts}
+\subsubpart 写出矩阵 $M$。
+\begin{solution}
+根据定义，
+\[
+M = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix}
+\]
+\end{solution}
+
+\subsubpart 描述变换 $T$ 的几何意义。
+\begin{solution}
+注意到
+\[
+\begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -y \\ -x \end{pmatrix}
+\]
+因此，$T$ 是关于直线 $x + y = 0$ 的反射变换。
+\end{solution}
+
+\subsubpart 变换 $T$ 分别将 $O$、$P$ 及 $Q$ 变换为 $O'$、$P'$ 及 $Q'$。求 $\triangle O'P'Q'$ 的面积。
+\begin{solution}
+由于 $T$ 为反射变换，反射保持面积不变：
+\[
+\triangle O'P'Q' \text{ 的面积} = \triangle OPQ \text{ 的面积} = \frac{1}{2} \cdot OP^2 = \frac{1}{2} (\sqrt{1^2 + 3^2})^2 = 5
+\]
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+\end{parts}
+
 \end{questions}
 \pagebreak
 

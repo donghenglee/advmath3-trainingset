@@ -1537,6 +1537,40 @@ $$S_n = 4 - \frac{2n+2n+2}{n(n+1)} = \frac{4n(n+1) - 4n - 2}{n(n+1)} = \frac{4n^
     \end{solution}
 
     \question
+设 $a_{1}=8$,$a_{2}=66$,且对所有正整数 $n$,$a_{n+2}-8a_{n+1}-a_{n}=0$。利用数学归纳法,证明对任意正整数 $n$,
+\[
+a_{n}=\left(4+\sqrt{17}\right)^{n}+\left(4-\sqrt{17}\right)^{n}
+\]
+
+\begin{solution}
+设 $\alpha=4+\sqrt{17}$,$\beta=4-\sqrt{17}$。则 $\alpha$ 与 $\beta$ 是方程 $x^{2}-8x-1=0$ 的两根,即
+\[
+\alpha^{2}=8\alpha+1,\qquad\beta^{2}=8\beta+1
+\]
+且 $\alpha+\beta=8$,$\alpha\beta=-1$。
+
+当 $n=1$ 时,$\alpha+\beta=8=a_{1}$。
+当 $n=2$ 时,
+\[
+\alpha^{2}+\beta^{2}=(\alpha+\beta)^{2}-2\alpha\beta=64-(-2)=66=a_{2}
+\]
+故命题对 $n=1,2$ 皆成立。
+
+假设当 $n=k$ 及 $n=k+1$ 时命题成立,即 $a_{k}=\alpha^{k}+\beta^{k}$,$a_{k+1}=\alpha^{k+1}+\beta^{k+1}$,其中 $k$ 为某正整数。考虑 $n=k+2$,
+\begin{align*}
+a_{k+2}&=8a_{k+1}+a_{k}\\
+&=8\left(\alpha^{k+1}+\beta^{k+1}\right)+\left(\alpha^{k}+\beta^{k}\right)\\
+&=\alpha^{k}\left(8\alpha+1\right)+\beta^{k}\left(8\beta+1\right)\\
+&=\alpha^{k}\cdot\alpha^{2}+\beta^{k}\cdot\beta^{2}\\
+&=\alpha^{k+2}+\beta^{k+2}
+\end{align*}
+故命题对 $n=k+2$ 亦成立。由数学归纳法原理,对任意正整数 $n$,
+\[
+a_{n}=\left(4+\sqrt{17}\right)^{n}+\left(4-\sqrt{17}\right)^{n}
+\]
+\end{solution}
+
+    \question
 【2005 大阪大 理科】
 对于正整数 $n$，已知：
 \[

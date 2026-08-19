@@ -3117,6 +3117,319 @@ x+y \ge 0, \quad y+z \ge 0, \quad z+x \ge 0
 
 综上所述，原命题得证，即 $x = y = z$。
 \end{solution}
+
+\question
+设 $f(x)$ 及 $g(x)$ 为实系数多项式,满足 $(f(x))^{2}-1=(x^{2}-1)(g(x))^{2}$。已知 $f(x)$ 的次数为 $n$,其中 $n\in\mathbb{N}$。
+\begin{parts}
+\part 求 $g(x)$ 的次数。
+
+\begin{solution}
+设 $g(x)$ 的次数为 $m$。比较方程
+\[
+(f(x))^{2}-1=(x^{2}-1)(g(x))^{2}
+\]
+两边最高次数,得
+\[
+2n=2+2m
+\]
+故 $m=n-1$,即 $g(x)$ 的次数为 $n-1$。
+\end{solution}
+
+\part 证明 $f(x)$ 与 $g(x)$ 没有非常数的公因式。
+
+\begin{solution}
+假设 $f(x)$ 与 $g(x)$ 有非常数公因式 $x-\alpha$,则 $f(\alpha)=0$ 且 $g(\alpha)=0$。代入方程,
+\[
+(f(\alpha))^{2}-1=(\alpha^{2}-1)(g(\alpha))^{2}
+\]
+得
+\[
+0-1=(\alpha^{2}-1)\cdot 0
+\]
+即 $-1=0$,矛盾。故 $f(x)$ 与 $g(x)$ 没有非常数的公因式。
+\end{solution}
+
+\part 证明 $f'(x)$ 可被 $g(x)$ 整除。
+
+\begin{solution}
+将方程
+\[
+(f(x))^{2}-1=(x^{2}-1)(g(x))^{2}
+\]
+两边对 $x$ 求导,得
+\[
+2f(x)f'(x)=2x(g(x))^{2}+2(x^{2}-1)g(x)g'(x)
+\]
+即
+\[
+f(x)f'(x)=g(x)\left[xg(x)+(x^{2}-1)g'(x)\right]
+\]
+可见 $g(x)$ 整除 $f(x)f'(x)$。由 (b),$f(x)$ 与 $g(x)$ 没有非常数公因式,故 $g(x)$ 必整除 $f'(x)$。
+\end{solution}
+
+\part 利用 (c),证明
+\[
+n^{2}\left[(f(x))^{2}-1\right]=(x^{2}-1)(f'(x))^{2}
+\]
+
+\begin{solution}
+由 (c),设 $g(x)=k f'(x)$,其中 $k$ 为常数。设 $f(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_{0}$,则 $f'(x)$ 的首项系数为 $na_{n}$。将 $g(x)=kf'(x)$ 代入方程并比较两边最高次项系数,得
+\[
+a_{n}^{2}=k^{2}n^{2}a_{n}^{2}
+\]
+即
+\[
+k^{2}=\frac{1}{n^{2}}
+\]
+因此
+\[
+(f(x))^{2}-1=\frac{1}{n^{2}}(x^{2}-1)(f'(x))^{2}
+\]
+即
+\[
+n^{2}\left[(f(x))^{2}-1\right]=(x^{2}-1)(f'(x))^{2}
+\]
+\end{solution}
+
+\part 设方程 $f(x)=0$ 的根为 $\alpha_{1},\alpha_{2},\ldots,\alpha_{n}$。求 $\displaystyle\sum_{k=1}^{n}\alpha_{k}$。
+
+\begin{solution}
+比较
+\[
+n^{2}\left[(f(x))^{2}-1\right]=(x^{2}-1)(f'(x))^{2}
+\]
+两边次高项系数,可得
+\[
+2n^{2}a_{n}a_{n-1}=2n^{2}a_{n}a_{n-1}-2na_{n}a_{n-1}
+\]
+化简得
+\[
+a_{n}a_{n-1}=0
+\]
+由于 $f(x)$ 的次数为 $n$,$a_{n}\neq0$,故 $a_{n-1}=0$。由韦达定理,
+\[
+\sum_{k=1}^{n}\alpha_{k}=-\frac{a_{n-1}}{a_{n}}=0
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $p(x)$ 为实系数多项式,满足对任意正整数 $n$,$p(n)=p(n-1)$。证明对所有 $x\in\mathbb{R}$,$p(x)=p(0)$。
+
+\begin{solution}
+设 $h(x)=p(x)-p(0)$。用数学归纳法证明 $h(n)=0$ 对所有非负整数 $n$ 成立。
+
+当 $n=0$ 时,$h(0)=p(0)-p(0)=0$,显然成立。假设 $h(k)=0$ 对某非负整数 $k$ 成立,即 $p(k)=p(0)$。由题设,$p(k+1)=p(k)=p(0)$,故 $h(k+1)=0$。由数学归纳法,$h(n)=0$ 对所有非负整数 $n$ 成立。
+
+因此 $h(x)$ 有无穷多个根(所有非负整数)。由于 $h(x)$ 是次数有限的多项式,故 $h(x)\equiv0$,即
+\[
+p(x)=p(0)\qquad\text{对所有 }x\in\mathbb{R}
+\]
+\end{solution}
+
+\part 设 $f(x)$ 为实系数多项式,满足 $xf(x-1)=(x-\pi)f(x)$。证明
+\begin{subparts}
+\subpart 若存在整数 $k$ 使得 $f(k)=0$,则 $f(k+1)=0$。
+
+\begin{solution}
+在关系式中代入 $x=k+1$,
+\[
+(k+1)f(k)=(k+1-\pi)f(k+1)
+\]
+由于 $f(k)=0$,左边为 $0$,故 $(k+1-\pi)f(k+1)=0$。由于 $k$ 为整数而 $\pi$ 为无理数,$k+1-\pi\neq0$,故 $f(k+1)=0$。
+\end{solution}
+
+\subpart $f(x)=0$ 对所有 $x\in\mathbb{R}$ 成立。
+
+\begin{solution}
+在关系式中代入 $x=0$,
+\[
+0\cdot f(-1)=(0-\pi)f(0)
+\]
+即 $0=-\pi f(0)$,由于 $\pi\neq0$,得 $f(0)=0$。
+
+由 (b)(i),$f(0)=0\implies f(1)=0\implies f(2)=0\implies\cdots$,用数学归纳法可得 $f(n)=0$ 对所有非负整数 $n$ 成立。
+
+故 $f(x)$ 有无穷多个根,由于 $f(x)$ 为次数有限的多项式,得 $f(x)\equiv0$,即 $f(x)=0$ 对所有 $x\in\mathbb{R}$ 成立。
+\end{solution}
+\end{subparts}
+
+\part 设 $g(x)$ 为实系数多项式,满足 $xg(x-1)=(x-3)g(x)$。证明
+\begin{subparts}
+\subpart $g(0)=g(1)=g(2)=0$。
+
+\begin{solution}
+代入 $x=0$:$0=(0-3)g(0)$,即 $-3g(0)=0$,故 $g(0)=0$。
+
+代入 $x=1$:$g(0)=(1-3)g(1)=-2g(1)$。由于 $g(0)=0$,得 $g(1)=0$。
+
+代入 $x=2$:$2g(1)=(2-3)g(2)=-g(2)$。由于 $g(1)=0$,得 $g(2)=0$。
+\end{solution}
+
+\subpart $g(x)=Cx(x-1)(x-2)$,其中 $C$ 为常数。
+
+\begin{solution}
+由 (c)(i),$0,1,2$ 皆为 $g(x)$ 的根,故可设
+\[
+g(x)=x(x-1)(x-2)Q(x)
+\]
+其中 $Q(x)$ 为多项式。代入 $xg(x-1)=(x-3)g(x)$,
+\[
+x\cdot(x-1)(x-2)(x-3)Q(x-1)=(x-3)\cdot x(x-1)(x-2)Q(x)
+\]
+当 $x\neq0,1,2,3$ 时,两边同除以 $x(x-1)(x-2)(x-3)$,得
+\[
+Q(x-1)=Q(x)
+\]
+此式对无穷多个实数 $x$ 成立,而两边皆为多项式,故 $Q(x-1)=Q(x)$ 对所有 $x\in\mathbb{R}$ 恒成立。
+
+设 $Q(x)$ 的次数为 $d$,首项系数为 $a_{d}\neq0$。若 $d\geq1$,则 $Q(x)-Q(x-1)$ 的首项为 $a_{d}\left[x^{d}-(x-1)^{d}\right]$,其最高次项系数为 $a_{d}d\neq0$,即 $Q(x)-Q(x-1)$ 是次数为 $d-1$ 的非零多项式,与 $Q(x)-Q(x-1)\equiv0$ 矛盾。故 $d=0$,即 $Q(x)$ 为常数,记为 $C$。
+
+因此
+\[
+g(x)=Cx(x-1)(x-2)
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part 把
+\[
+\frac{x}{(x^2-1)(x^2-4)}
+\]
+化为部分分式。
+\begin{solution}
+设
+\[
+\frac{x}{(x^2-1)(x^2-4)} = \frac{C_1}{x+1} + \frac{C_2}{x-1} + \frac{C_3}{x+2} + \frac{C_4}{x-2}
+\]
+解得 $C_1 = -\frac{1}{6}$，$C_2 = -\frac{1}{6}$，$C_3 = \frac{1}{6}$，$C_4 = \frac{1}{6}$。
+因此，
+\[
+\frac{x}{(x^2-1)(x^2-4)} = \frac{1}{6} \left( \frac{-1}{x+1} + \frac{-1}{x-1} + \frac{1}{x+2} + \frac{1}{x-2} \right)
+\]
+\end{solution}
+
+\part 通过微分
+\[
+\frac{x}{(x^2-1)(x^2-4)}
+\]
+或用其他方法，把
+\[
+\frac{3x^4-5x^2-4}{(x^2-1)^2(x^2-4)^2}
+\]
+化为部分分式。
+\begin{solution}
+注意到
+\[
+\frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{x}{(x^2-1)(x^2-4)} \right) = \frac{-3x^4+5x^2+4}{(x^2-1)^2(x^2-4)^2}
+\]
+由 (a)，对两边关于 $x$ 求导：
+\[
+\frac{-3x^4+5x^2+4}{(x^2-1)^2(x^2-4)^2} = \frac{1}{6(x+1)^2} + \frac{1}{6(x-1)^2} + \frac{-1}{6(x+2)^2} + \frac{-1}{6(x-2)^2}
+\]
+两边同乘以 $-1$，得：
+\[
+\frac{3x^4-5x^2-4}{(x^2-1)^2(x^2-4)^2} = \frac{-1}{6(x+1)^2} + \frac{-1}{6(x-1)^2} + \frac{1}{6(x+2)^2} + \frac{1}{6(x-2)^2}
+\]
+\end{solution}
+
+\part 求
+\[
+\sum_{k=3}^{\infty} \frac{3k^4-5k^2-4}{(k^2-1)^2(k^2-4)^2}
+\]
+的值。
+\begin{solution}
+由 (b)，前 $n$ 项和为：
+\begin{align*}
+\sum_{k=3}^{n} \frac{3k^4-5k^2-4}{(k^2-1)^2(k^2-4)^2} &= \frac{1}{6} \sum_{k=3}^{n} \left( \left( \frac{1}{(k+2)^2} - \frac{1}{(k+1)^2} \right) + \left( \frac{1}{(k-2)^2} - \frac{1}{(k-1)^2} \right) \right) \\
+&= \frac{1}{6} \left( \left( \frac{1}{(n+2)^2} - \frac{1}{16} \right) + \left( 1 - \frac{1}{(n-1)^2} \right) \right) \\
+&= \frac{5}{32} + \frac{1}{6(n+2)^2} - \frac{1}{6(n-1)^2}
+\end{align*}
+因此，
+\[
+\sum_{k=3}^{\infty} \frac{3k^4-5k^2-4}{(k^2-1)^2(k^2-4)^2} = \lim_{n \to \infty} \left( \frac{5}{32} + \frac{1}{6(n+2)^2} - \frac{1}{6(n-1)^2} \right) = \frac{5}{32}
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $\lambda$ 为实数，$p(x)$ 为实系数多项式。证明 $\lambda$ 是方程 $p(x)=0$ 的重根，当且仅当 $p(\lambda)=p'(\lambda)=0$。
+\begin{solution}
+（$\Rightarrow$）由于 $\lambda$ 是方程 $p(x)=0$ 的重根，故
+\[
+p(x) = (x-\lambda)^2 q_1(x)
+\]
+其中 $q_1(x)$ 为多项式。于是
+\[
+p'(x) = 2(x-\lambda)q_1(x) + (x-\lambda)^2 q_1'(x)
+\]
+故 $p(\lambda)=p'(\lambda)=0$。
+
+（$\Leftarrow$）由于 $p(\lambda)=0$，故 $p(x)=(x-\lambda)q_2(x)$，其中 $q_2(x)$ 为多项式。于是
+\[
+p'(x) = q_2(x) + (x-\lambda)q_2'(x)
+\]
+由于 $p'(\lambda)=0$，故 $q_2(\lambda)+(\lambda-\lambda)q_2'(\lambda)=0$，即 $q_2(\lambda)=0$。故 $q_2(x)=(x-\lambda)q_3(x)$，其中 $q_3(x)$ 为多项式。因此
+\[
+p(x) = (x-\lambda)^2 q_3(x)
+\]
+故 $\lambda$ 是方程 $p(x)=0$ 的重根。
+\end{solution}
+\part 设 $f(x)=x^6+ax^5+bx^4+cx^3+bx^2+ax+1$，其中 $a$，$b$，$c$ 为实数。设实数 $\mu$ 是方程 $f(x)=0$ 的重根。证明
+
+（i）$\mu\neq 0$；
+
+（ii）$\dfrac{1}{\mu}$ 是方程 $f(x)=0$ 的重根。
+\begin{solution}
+（i）由于 $f(\mu)=0$ 且 $f(0)=1$，故 $f(\mu)\neq f(0)$，因此 $\mu\neq 0$。
+
+（ii）由于 $f(\mu)=0$，故
+\[
+\mu^6+a\mu^5+b\mu^4+c\mu^3+b\mu^2+a\mu+1=0
+\]
+两边除以 $\mu^6$，得
+\[
+1+a\left(\frac{1}{\mu}\right)+b\left(\frac{1}{\mu}\right)^2+c\left(\frac{1}{\mu}\right)^3+b\left(\frac{1}{\mu}\right)^4+a\left(\frac{1}{\mu}\right)^5+\left(\frac{1}{\mu}\right)^6=0
+\]
+故 $f\left(\dfrac{1}{\mu}\right)=0$。
+
+又由(a)，$\mu$ 是 $f(x)=0$ 的重根，故 $f(\mu)=f'(\mu)=0$，其中
+\[
+f'(x) = 6x^5+5ax^4+4bx^3+3cx^2+2bx+a
+\]
+由 $f'(\mu)=0$ 及 $f(\mu)=0$ 消去，可得
+\[
+a+2b\left(\frac{1}{\mu}\right)+3c\left(\frac{1}{\mu}\right)^2+4b\left(\frac{1}{\mu}\right)^3+5a\left(\frac{1}{\mu}\right)^4+6\left(\frac{1}{\mu}\right)^5=0
+\]
+故 $f'\left(\dfrac{1}{\mu}\right)=0$。由(a)，$\dfrac{1}{\mu}$ 是方程 $f(x)=0$ 的重根。
+\end{solution}
+\part 设 $g(x)=4x^6-16x^5+17x^4-7x^3+17x^2-16x+4$。
+
+（i）求方程 $g(x)=0$ 的一个重根。
+
+（ii）$g(x)$ 能否分解为实系数一次多项式的乘积？说明你的答案。
+\begin{solution}
+（i）注意到 $g(2)=0$。又
+\[
+g'(x) = 24x^5-80x^4+68x^3-21x^2+34x-16
+\]
+可验证 $g'(2)=0$。故由(a)，$2$ 是方程 $g(x)=0$ 的重根。
+
+（ii）由(i)及(b)(ii)，$\dfrac{1}{2}$ 也是方程 $g(x)=0$ 的重根。因此
+\[
+g(x) = (x-2)^2(2x-1)^2(x^2+x+1)
+\]
+注意到 $1^2-4(1)(1)=-3<0$，故 $x^2+x+1$ 不能分解为实系数一次多项式的乘积。
+
+故 $g(x)$ 不能分解为实系数一次多项式的乘积。
+\end{solution}
+\end{parts}
+
 \end{questions}
 \pagebreak
 
@@ -11581,6 +11894,361 @@ f'(\xi_1) < f'(\xi_2) \implies \frac{\sqrt{x} - \sqrt{y}}{x - y} < \frac{\sqrt{y
 (y - z)\sqrt{x} + (z - x)\sqrt{y} + (x - y)\sqrt{z} < 0
 \]
 \end{solution}
+
+\question
+设 $S=\displaystyle\sum_{k=1}^{n}\left(1+\frac{1}{k}\right)$,其中 $n\in\mathbb{N}\setminus\{1\}$。
+\begin{parts}
+\part 利用算术平均数大于或等于几何平均数,或用其他方法,证明
+\[
+\frac{2n-S}{n-1}\geq\left(\frac{1}{n}\right)^{\frac{1}{n-1}}
+\]
+
+\begin{solution}
+考虑
+\begin{align*}
+2n-S&=2n-\sum_{k=1}^{n}\left(1+\frac{1}{k}\right)\\
+&=\sum_{k=1}^{n}\left(2-1-\frac{1}{k}\right)\\
+&=\sum_{k=2}^{n}\left(1-\frac{1}{k}\right)
+\end{align*}
+由算术平均数大于或等于几何平均数,得
+\[
+\frac{1}{n-1}\sum_{k=2}^{n}\left(1-\frac{1}{k}\right)\geq\left[\prod_{k=2}^{n}\left(1-\frac{1}{k}\right)\right]^{\frac{1}{n-1}}
+\]
+右边连乘积可化简为
+\[
+\prod_{k=2}^{n}\frac{k-1}{k}=\frac{1}{n}
+\]
+因此
+\[
+\frac{2n-S}{n-1}\geq\left(\frac{1}{n}\right)^{\frac{1}{n-1}}
+\]
+\end{solution}
+
+\part 证明
+\[
+2n-(n-1)n^{\frac{1}{1-n}}\geq S\geq n(n+1)^{\frac{1}{n}}
+\]
+
+\begin{solution}
+由 (a) 的结果,
+\[
+2n-S\geq(n-1)\left(\frac{1}{n}\right)^{\frac{1}{n-1}}=(n-1)n^{\frac{1}{1-n}}
+\]
+所以
+\[
+S\leq 2n-(n-1)n^{\frac{1}{1-n}}
+\]
+另一方面,由算术平均数大于或等于几何平均数,
+\[
+S=\sum_{k=1}^{n}\left(1+\frac{1}{k}\right)\geq n\left[\prod_{k=1}^{n}\left(1+\frac{1}{k}\right)\right]^{\frac{1}{n}}
+\]
+连乘积化简为
+\[
+\prod_{k=1}^{n}\frac{k+1}{k}=n+1
+\]
+故
+\[
+S\geq n(n+1)^{\frac{1}{n}}
+\]
+综合两部分,得
+\[
+2n-(n-1)n^{\frac{1}{1-n}}\geq S\geq n(n+1)^{\frac{1}{n}}
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $\dfrac{1}{r}+\dfrac{1}{s}=1$,其中 $r>1$ 且 $s>1$。
+\begin{subparts}
+\subpart 设 $\mu_{1}$ 及 $\mu_{2}$ 为正实数。
+\begin{subsubparts}
+\subsubpart 通过对 $f(x)=\mu_{1}x+\mu_{2}(1-x^{s})^{\frac{1}{s}}$ 求导,证明对所有 $x\in(0,1)$,
+\[
+\mu_{1}x+\mu_{2}(1-x^{s})^{\frac{1}{s}}\leq\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}
+\]
+
+\begin{solution}
+求导,得
+\[
+f'(x)=\mu_{1}-\mu_{2}\left(x^{-s}-1\right)^{\frac{1}{s}-1}
+\]
+令 $f'(x)=0$,解得
+\[
+x=\left[\left(\frac{\mu_{2}}{\mu_{1}}\right)^{r}+1\right]^{-\frac{1}{s}}
+\]
+可验证在此点 $f''(x)<0$,故 $f(x)$ 在该点取极大值。因此对所有 $x\in(0,1)$,
+\[
+f(x)\leq f\left(\left[\left(\frac{\mu_{2}}{\mu_{1}}\right)^{r}+1\right]^{-\frac{1}{s}}\right)
+\]
+把右边化简,利用 $1+\dfrac{r}{s}=r$,可得
+\[
+f(x)\leq\frac{\mu_{1}^{r}+\mu_{2}^{r}}{\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{s}}}=\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}
+\]
+即
+\[
+\mu_{1}x+\mu_{2}(1-x^{s})^{\frac{1}{s}}\leq\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}
+\]
+\end{solution}
+
+\subsubpart 利用 (a)(i)(1),证明对任意正实数 $\lambda_{1}$ 及 $\lambda_{2}$,
+\[
+\mu_{1}\lambda_{1}+\mu_{2}\lambda_{2}\leq\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}
+\]
+
+\begin{solution}
+取
+\[
+x=\frac{\lambda_{1}}{\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}}\in(0,1)
+\]
+代入 (a)(i)(1) 的不等式,得
+\[
+\mu_{1}\cdot\frac{\lambda_{1}}{\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}}+\mu_{2}\cdot\frac{\lambda_{2}}{\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}}\leq\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}
+\]
+两边乘以 $\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}$,即得
+\[
+\mu_{1}\lambda_{1}+\mu_{2}\lambda_{2}\leq\left(\mu_{1}^{r}+\mu_{2}^{r}\right)^{\frac{1}{r}}\left(\lambda_{1}^{s}+\lambda_{2}^{s}\right)^{\frac{1}{s}}
+\]
+\end{solution}
+\end{subsubparts}
+
+\subpart 利用 (a)(i)(2),证明对任意正实数 $a_{1},a_{2},\ldots,a_{n},b_{1},b_{2},\ldots,b_{n}$,
+\[
+\sum_{k=1}^{n}a_{k}b_{k}\leq\left(\sum_{k=1}^{n}a_{k}^{r}\right)^{\frac{1}{r}}\left(\sum_{k=1}^{n}b_{k}^{s}\right)^{\frac{1}{s}}
+\]
+
+\begin{solution}
+用数学归纳法证明。当 $n=2$ 时,由 (a)(i)(2) 即得结论。假设当 $n=m$ 时结论成立,即
+\[
+\sum_{k=1}^{m}a_{k}b_{k}\leq\left(\sum_{k=1}^{m}a_{k}^{r}\right)^{\frac{1}{r}}\left(\sum_{k=1}^{m}b_{k}^{s}\right)^{\frac{1}{s}}
+\]
+则
+\begin{align*}
+\sum_{k=1}^{m+1}a_{k}b_{k}
+&=\sum_{k=1}^{m}a_{k}b_{k}+a_{m+1}b_{m+1}\\
+&\leq\left(\sum_{k=1}^{m}a_{k}^{r}\right)^{\frac{1}{r}}\left(\sum_{k=1}^{m}b_{k}^{s}\right)^{\frac{1}{s}}+a_{m+1}b_{m+1}\\
+&\leq\left(\sum_{k=1}^{m}a_{k}^{r}+a_{m+1}^{r}\right)^{\frac{1}{r}}\left(\sum_{k=1}^{m}b_{k}^{s}+b_{m+1}^{s}\right)^{\frac{1}{s}}\\
+&=\left(\sum_{k=1}^{m+1}a_{k}^{r}\right)^{\frac{1}{r}}\left(\sum_{k=1}^{m+1}b_{k}^{s}\right)^{\frac{1}{s}}
+\end{align*}
+其中第二步用了 (a)(i)(2)。由数学归纳法原理,结论对所有正整数 $n$ 成立。
+\end{solution}
+\end{subparts}
+
+\part 设 $0<\beta<1$。利用 (a)(ii),证明对任意正实数 $x_{1},x_{2},\ldots,x_{n}$,
+\[
+\sum_{k=1}^{n}x_{k}^{1-\beta}\leq n^{\beta}\left(\sum_{k=1}^{n}x_{k}\right)^{1-\beta}
+\]
+
+\begin{solution}
+取 $a_{k}=1$,$b_{k}=x_{k}^{1-\beta}$,并令 $\dfrac{1}{s}=1-\beta$,$\dfrac{1}{r}=\beta$。由于 $0<\beta<1$,可知 $r>1$ 且 $s>1$,且 $\dfrac{1}{r}+\dfrac{1}{s}=1$ 成立。由 (a)(ii),
+\[
+\sum_{k=1}^{n}x_{k}^{1-\beta}\leq\left(\sum_{k=1}^{n}1\right)^{\beta}\left(\sum_{k=1}^{n}x_{k}\right)^{1-\beta}=n^{\beta}\left(\sum_{k=1}^{n}x_{k}\right)^{1-\beta}
+\]
+\end{solution}
+
+\part 利用 (b),证明
+\[
+\sum_{k=1}^{1331}(2k-1)^{\frac{1}{3}}\leq14641
+\]
+
+\begin{solution}
+取 $x_{k}=2k-1$,$\beta=\dfrac{2}{3}$,$n=1331$。由 (b),
+\[
+\sum_{k=1}^{1331}(2k-1)^{\frac{1}{3}}\leq1331^{\frac{2}{3}}\left(\sum_{k=1}^{1331}(2k-1)\right)^{\frac{1}{3}}
+\]
+由于
+\[
+\sum_{k=1}^{1331}(2k-1)=1331^{2}
+\]
+及 $1331=11^{3}$,得
+\[
+1331^{\frac{2}{3}}\left(1331^{2}\right)^{\frac{1}{3}}=11^{2}\cdot11^{2}=121\times121=14641
+\]
+因此
+\[
+\sum_{k=1}^{1331}(2k-1)^{\frac{1}{3}}\leq14641
+\]
+\end{solution}
+\end{parts}
+
+\question
+设 $n$ 为正整数。
+\begin{parts}
+\part 设 $a_{1},a_{2},\ldots,a_{n+1}$ 为正实数。定义 $A=\displaystyle\sum_{k=1}^{n+1}a_{k}$。
+\begin{subparts}
+\subpart 证明 $\displaystyle\sum_{k=1}^{n+1}\frac{A-a_{k}}{A}=n$。
+
+\begin{solution}
+\begin{align*}
+\sum_{k=1}^{n+1}\frac{A-a_{k}}{A}&=\sum_{k=1}^{n+1}\left(1-\frac{a_{k}}{A}\right)\\
+&=(n+1)-\frac{1}{A}\sum_{k=1}^{n+1}a_{k}\\
+&=(n+1)-\frac{A}{A}\\
+&=n
+\end{align*}
+\end{solution}
+
+\subpart 利用柯西不等式,或用其他方法,证明 $\displaystyle\sum_{k=1}^{n+1}\frac{A}{A-a_{k}}\geq\frac{(n+1)^{2}}{n}$。
+
+\begin{solution}
+由柯西不等式,
+\[
+\left[\sum_{k=1}^{n+1}\sqrt{\frac{A-a_{k}}{A}}\cdot\sqrt{\frac{A}{A-a_{k}}}\right]^{2}\leq\left[\sum_{k=1}^{n+1}\frac{A-a_{k}}{A}\right]\left[\sum_{k=1}^{n+1}\frac{A}{A-a_{k}}\right]
+\]
+左边等于 $\left(\displaystyle\sum_{k=1}^{n+1}1\right)^{2}=(n+1)^{2}$,而由 (a) 的结果,右边第一个因子等于 $n$。因此
+\[
+(n+1)^{2}\leq n\sum_{k=1}^{n+1}\frac{A}{A-a_{k}}
+\]
+即
+\[
+\sum_{k=1}^{n+1}\frac{A}{A-a_{k}}\geq\frac{(n+1)^{2}}{n}
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用 (a)(ii),证明 $\displaystyle\sum_{k=1}^{n+1}\frac{1}{(n+1)(n+2)-2k}\geq\frac{n+1}{n(n+2)}$。
+
+\begin{solution}
+取 $a_{k}=2k$,$k=1,2,\ldots,n+1$。则
+\[
+A=\sum_{k=1}^{n+1}2k=2\cdot\frac{(n+1)(n+2)}{2}=(n+1)(n+2)
+\]
+且
+\[
+A-a_{k}=(n+1)(n+2)-2k
+\]
+由 (a)(ii),
+\[
+\sum_{k=1}^{n+1}\frac{(n+1)(n+2)}{(n+1)(n+2)-2k}\geq\frac{(n+1)^{2}}{n}
+\]
+两边除以 $(n+1)(n+2)$,得
+\[
+\sum_{k=1}^{n+1}\frac{1}{(n+1)(n+2)-2k}\geq\frac{(n+1)^{2}}{n(n+1)(n+2)}=\frac{n+1}{n(n+2)}
+\]
+\end{solution}
+\end{parts}
+
+\question
+设 $\alpha, \beta, \gamma$ 及 $\delta$ 为正实数。证明：
+\begin{parts}
+\part
+\[
+(\alpha + \beta + \gamma + \delta) \left( \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\gamma} + \frac{1}{\delta} \right) \ge 16
+\]
+\begin{solution}
+由柯西-施瓦茨不等式：
+\[
+(\alpha + \beta + \gamma + \delta) \left( \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\gamma} + \frac{1}{\delta} \right) \ge (1 + 1 + 1 + 1)^2 = 16
+\]
+\end{solution}
+
+\part
+\[
+\frac{1}{\beta + \gamma + \delta} + \frac{3}{\gamma + \delta + \alpha} + \frac{3}{\delta + \alpha + \beta} + \frac{1}{\alpha + \beta + \gamma} \ge \frac{16}{\alpha + \beta + \gamma + \delta}
+\]
+\begin{solution}
+设 $S = \alpha + \beta + \gamma + \delta$。
+由柯西-施瓦茨不等式：
+\[
+\left( \frac{1}{S-\alpha} + \frac{3}{S-\beta} + \frac{3}{S-\gamma} + \frac{1}{S-\delta} \right) \left( (S-\alpha) + \frac{1}{3}(S-\beta) + \frac{1}{3}(S-\gamma) + (S-\delta) \right) \ge (1 + 1 + 1 + 1)^2 = 16
+\]
+由于
+\[
+(S-\alpha) + \frac{1}{3}(S-\beta) + \frac{1}{3}(S-\gamma) + (S-\delta) = \frac{8}{3}S - (\alpha + \frac{1}{3}\beta + \frac{1}{3}\gamma + \delta) \le S
+\]
+可得：
+\[
+\frac{1}{\beta + \gamma + \delta} + \frac{3}{\gamma + \delta + \alpha} + \frac{3}{\delta + \alpha + \beta} + \frac{1}{\alpha + \beta + \gamma} \ge \frac{16}{\alpha + \beta + \gamma + \delta}
+\]
+\end{solution}
+
+\part
+\[
+\frac{\alpha}{\beta + \gamma + \delta} + \frac{\beta}{\gamma + \delta + \alpha} + \frac{\gamma}{\delta + \alpha + \beta} + \frac{\delta}{\alpha + \beta + \gamma} \ge \frac{4}{3}
+\]
+\begin{solution}
+设 $S = \alpha + \beta + \gamma + \delta$。注意到
+\[
+\sum \frac{\alpha}{\beta + \gamma + \delta} = \sum \left( \frac{S}{\beta + \gamma + \delta} - 1 \right) = S \left( \frac{1}{S-\alpha} + \frac{1}{S-\beta} + \frac{1}{S-\gamma} + \frac{1}{S-\delta} \right) - 4
+\]
+由柯西-施瓦茨不等式：
+\[
+((S-\alpha) + (S-\beta) + (S-\gamma) + (S-\delta)) \left( \frac{1}{S-\alpha} + \frac{1}{S-\beta} + \frac{1}{S-\gamma} + \frac{1}{S-\delta} \right) \ge 16
+\]
+即
+\[
+3S \left( \frac{1}{S-\alpha} + \frac{1}{S-\beta} + \frac{1}{S-\gamma} + \frac{1}{S-\delta} \right) \ge 16 \implies S \left( \frac{1}{S-\alpha} + \frac{1}{S-\beta} + \frac{1}{S-\gamma} + \frac{1}{S-\delta} \right) \ge \frac{16}{3}
+\]
+因此，
+\[
+\sum \frac{\alpha}{\beta + \gamma + \delta} \ge \frac{16}{3} - 4 = \frac{4}{3}
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明：对所有 $x \ge 0$，$1 - x \le e^{-x}$。
+\begin{solution}
+设 $f(x) = e^{-x} - (1-x)$，则 $f'(x) = 1 - e^{-x} \ge 0$ （对 $x \ge 0$）。
+又 $f(0) = 0$，故对所有 $x \ge 0$，$f(x) \ge 0$，即 $1 - x \le e^{-x}$。
+\end{solution}
+
+\subpart 设 $a_1, \dots, a_n$ 及 $b_1, \dots, b_n$ 为正实数，满足 $\sum_{i=1}^n a_i b_i = 1$。证明：$\prod_{i=1}^n a_i^{b_i} \le 1$。
+\begin{solution}
+由 (i)， $a_i \le e^{a_i - 1} \implies a_i^{b_i} \le e^{b_i(a_i - 1)}$。
+累乘得：
+\[
+\prod_{i=1}^n a_i^{b_i} \le \exp\left( \sum_{i=1}^n a_i b_i - \sum_{i=1}^n b_i \right) \le e^{1 - 1} = 1
+\]
+\end{solution}
+\end{subparts}
+
+\part
+\begin{subparts}
+\subpart 证明：对所有 $x > 0$，$e^x \ge 1 + x$。
+\begin{solution}
+设 $g(x) = e^x - 1 - x$，则 $g'(x) = e^x - 1 > 0$ （对 $x > 0$）。
+因 $g(0) = 0$，故对所有 $x > 0$，$e^x \ge 1 + x$。
+\end{solution}
+
+\subpart 设 $w_1, \dots, w_n$ 为满足 $\sum_{i=1}^n w_i = 1$ 的正实数。证明：$\prod_{i=1}^n x_i^{w_i} \le \sum_{i=1}^n w_i x_i$。
+\begin{solution}
+加权算术-几何平均值不等式（Weighted AM-GM）：
+由 Jensen 不等式或利用 (i) 结论直接可得 $\prod_{i=1}^n x_i^{w_i} \le \sum_{i=1}^n w_i x_i$。
+\end{solution}
+\end{subparts}
+
+\part 设 $x_1, \dots, x_n$ 为正实数。证明：
+\begin{subparts}
+\subpart
+\[
+x_1^{x_1} x_2^{x_2} \cdots x_n^{x_n} \ge \left( \frac{x_1 + \dots + x_n}{n} \right)^{x_1 + \dots + x_n}
+\]
+\begin{solution}
+考虑函数 $f(t) = t \ln t$ 为凸函数，由 Jensen 不等式：
+\[
+\sum_{i=1}^n \frac{1}{n} x_i \ln x_i \ge \left( \frac{\sum x_i}{n} \right) \ln \left( \frac{\sum x_i}{n} \right)
+\]
+两边乘以 $n$ 并取指数，即得结论。
+\end{solution}
+
+\subpart
+\[
+x_1^{x_1} x_2^{x_2} \cdots x_n^{x_n} \ge \left( \sqrt[n]{x_1 x_2 \cdots x_n} \right)^{x_1 + \dots + x_n}
+\]
+\begin{solution}
+由加权平均不等式可得：
+\[
+\sum_{i=1}^n x_i \ln x_i \ge \left( \sum_{i=1}^n x_i \right) \left( \frac{1}{n} \sum_{i=1}^n \ln x_i \right)
+\]
+取指数即得所求不等式。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
 %inequality paste here
     \question 已知 $x, y$ 是实数且 $x^2 + xy + y^2 = 10$，求 $2x^2 + 2xy + y^2 - 4y + 11$ 的最大可能值。
 
@@ -20902,6 +21570,57 @@ $(\sqrt[3]{7} + \sqrt[12]{11})^n = (7^{\frac{1}{3}} + 11^{\frac{1}{12}})^n$
 故正确选项为 (1)。
 \end{solution}
 
+\question
+设 $n$ 为正整数。以 $a_{k}$ 表示 $(3+x)^{n}$ 展开式中 $x^{k}$ 的系数。求
+\begin{parts}
+\part $\displaystyle\sum_{k=0}^{n}a_{k}$
+
+\begin{solution}
+由二项式定理,
+\[
+(3+x)^{n}=\sum_{k=0}^{n}a_{k}x^{k}
+\]
+代入 $x=1$,得
+\[
+\sum_{k=0}^{n}a_{k}=(3+1)^{n}=4^{n}
+\]
+\end{solution}
+
+\part $\displaystyle\sum_{k=0}^{n}\frac{a_{k}}{k+1}$
+
+\begin{solution}
+两边对 $x$ 从 $0$ 到 $1$ 积分,
+\[
+\int_{0}^{1}(3+x)^{n}\,dx=\sum_{k=0}^{n}a_{k}\int_{0}^{1}x^{k}\,dx=\sum_{k=0}^{n}\frac{a_{k}}{k+1}
+\]
+左边
+\[
+\int_{0}^{1}(3+x)^{n}\,dx=\left[\frac{(3+x)^{n+1}}{n+1}\right]_{0}^{1}=\frac{4^{n+1}-3^{n+1}}{n+1}
+\]
+故
+\[
+\sum_{k=0}^{n}\frac{a_{k}}{k+1}=\frac{4^{n+1}-3^{n+1}}{n+1}
+\]
+\end{solution}
+
+\part $\displaystyle\sum_{k=1}^{n}\frac{ka_{k}}{k+1}$
+
+\begin{solution}
+由于 $\dfrac{k}{k+1}=1-\dfrac{1}{k+1}$,
+\[
+\sum_{k=1}^{n}\frac{ka_{k}}{k+1}=\sum_{k=1}^{n}a_{k}-\sum_{k=1}^{n}\frac{a_{k}}{k+1}
+\]
+由 (a),$\displaystyle\sum_{k=1}^{n}a_{k}=\sum_{k=0}^{n}a_{k}-a_{0}=4^{n}-3^{n}$(注意 $a_{0}=3^{n}$)。
+
+由 (b),$\displaystyle\sum_{k=1}^{n}\frac{a_{k}}{k+1}=\sum_{k=0}^{n}\frac{a_{k}}{k+1}-a_{0}=\frac{4^{n+1}-3^{n+1}}{n+1}-3^{n}$
+
+代入,
+\[
+\sum_{k=1}^{n}\frac{ka_{k}}{k+1}=\left(4^{n}-3^{n}\right)-\left(\frac{4^{n+1}-3^{n+1}}{n+1}-3^{n}\right)=4^{n}-\frac{4^{n+1}-3^{n+1}}{n+1}
+\]
+\end{solution}
+\end{parts}
+
     \question 若将 $(x+1)^{2000}$ 展开,问有多少个系数是奇数？
     \begin{solution}
         一般地,若 $(x+1)^n$ 展开式中奇数系数的个数为 $2^{a}$,其中 $a$ 是 $n$ 的二进制表示中 1 的个数,将 $2000$ 转换为二进制:
@@ -22999,6 +23718,92 @@ Q = \begin{pmatrix} a_1 & b_1 & 0 \\ a_2 & b_2 & 0 \\ 0 & 0 & c_3 \end{pmatrix}
         \]
         同上。
     \end{solution}
+    
+    \question
+\begin{parts}
+\part 设 $A=\begin{pmatrix}4-b & a\\b & 4-a\end{pmatrix}$ 为实矩阵,$P=\begin{pmatrix}a & -1\\b & 1\end{pmatrix}$,其中 $ab>0$。
+\begin{subparts}
+\subpart 证明 $P$ 为非奇异矩阵。
+
+\begin{solution}
+\[
+\det P=a(1)-(-1)(b)=a+b
+\]
+由于 $ab>0$,$a$ 与 $b$ 同号且皆不为零,故 $a+b\neq0$(若 $a+b=0$ 则 $a=-b$,$ab=-b^{2}\leq0$,与 $ab>0$ 矛盾)。因此 $\det P\neq0$,$P$ 为非奇异矩阵。
+\end{solution}
+
+\subpart 求 $P^{-1}AP$。
+
+\begin{solution}
+\[
+P^{-1}=\frac{1}{a+b}\begin{pmatrix}1 & 1\\-b & a\end{pmatrix}
+\]
+先计算 $AP$,
+\[
+AP=\begin{pmatrix}4-b & a\\b & 4-a\end{pmatrix}\begin{pmatrix}a & -1\\b & 1\end{pmatrix}=\begin{pmatrix}4a & a+b-4\\4b & 4-a-b\end{pmatrix}
+\]
+再计算 $P^{-1}(AP)$,
+\[
+P^{-1}AP=\frac{1}{a+b}\begin{pmatrix}1 & 1\\-b & a\end{pmatrix}\begin{pmatrix}4a & a+b-4\\4b & 4-a-b\end{pmatrix}
+\]
+第一行:$\dfrac{4a+4b}{a+b}=4$,$\dfrac{(a+b-4)+(4-a-b)}{a+b}=0$。
+
+第二行:$\dfrac{-4ab+4ab}{a+b}=0$,$\dfrac{-b(a+b-4)+a(4-a-b)}{a+b}=\dfrac{4(a+b)-(a+b)^{2}}{a+b}=4-(a+b)$。
+
+因此
+\[
+P^{-1}AP=\begin{pmatrix}4 & 0\\0 & 4-a-b\end{pmatrix}
+\]
+\end{solution}
+
+\subpart 对任意正整数 $n$,求 $d_{1}$ 及 $d_{2}$,使得 $A^{n}=P\begin{pmatrix}d_{1} & 0\\0 & d_{2}\end{pmatrix}P^{-1}$。
+
+\begin{solution}
+由 (a)(ii),$A=P\begin{pmatrix}4 & 0\\0 & 4-a-b\end{pmatrix}P^{-1}$,故
+\[
+A^{n}=P\begin{pmatrix}4 & 0\\0 & 4-a-b\end{pmatrix}^{n}P^{-1}=P\begin{pmatrix}4^{n} & 0\\0 & (4-a-b)^{n}\end{pmatrix}P^{-1}
+\]
+因此
+\[
+d_{1}=4^{n},\qquad d_{2}=(4-a-b)^{n}
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $B=\begin{pmatrix}3 & 4\\1 & 0\end{pmatrix}$。对任意正整数 $n$,求 $B+B^{3}+B^{5}+\cdots+B^{2n-1}$。
+
+\begin{solution}
+$B$ 的特征多项式为
+\[
+\det(B-xI)=(3-x)(-x)-4=x^{2}-3x-4=(x-4)(x+1)
+\]
+故特征值为 $4$ 及 $-1$。对应特征向量:对 $x=4$,解 $(B-4I)v=0$ 得 $v=\begin{pmatrix}4\\1\end{pmatrix}$;对 $x=-1$,解 $(B+I)v=0$ 得 $v=\begin{pmatrix}1\\-1\end{pmatrix}$。
+
+取 $Q=\begin{pmatrix}4 & 1\\1 & -1\end{pmatrix}$,则 $\det Q=-5$,
+\[
+Q^{-1}=\frac{1}{5}\begin{pmatrix}1 & 1\\1 & -4\end{pmatrix}
+\]
+且 $B=Q\begin{pmatrix}4 & 0\\0 & -1\end{pmatrix}Q^{-1}$,故对任意正整数 $j$,$B^{2j-1}=Q\begin{pmatrix}4^{2j-1} & 0\\0 & (-1)^{2j-1}\end{pmatrix}Q^{-1}$。
+
+因此
+\[
+\sum_{j=1}^{n}B^{2j-1}=Q\begin{pmatrix}\displaystyle\sum_{j=1}^{n}4^{2j-1} & 0\\[6pt]0 & \displaystyle\sum_{j=1}^{n}(-1)^{2j-1}\end{pmatrix}Q^{-1}
+\]
+其中
+\[
+\sum_{j=1}^{n}4^{2j-1}=4\cdot\frac{16^{n}-1}{15}=\frac{4^{2n+1}-4}{15},\qquad\sum_{j=1}^{n}(-1)^{2j-1}=-n
+\]
+记 $S_{1}=\dfrac{4^{2n+1}-4}{15}$,$S_{2}=-n$。计算
+\[
+Q\begin{pmatrix}S_{1} & 0\\0 & S_{2}\end{pmatrix}Q^{-1}=\frac{1}{5}\begin{pmatrix}4S_{1}+S_{2} & 4S_{1}-4S_{2}\\S_{1}-S_{2} & S_{1}+4S_{2}\end{pmatrix}
+\]
+代入 $S_{1}$,$S_{2}$ 并化简,得
+\[
+B+B^{3}+\cdots+B^{2n-1}=\frac{1}{75}\begin{pmatrix}4^{2n+2}-15n-16 & 4^{2n+2}+60n-16\\4^{2n+1}+15n-4 & 4^{2n+1}-60n-4\end{pmatrix}
+\]
+\end{solution}
+\end{parts}
+
 
     \question 设矩阵 $$A=\begin{pmatrix} 7 & -8 \\ -7 & 8 \end{pmatrix}$$ 满足 $$(I+A)^n = I + a_n A,$$其中 $n$ 为自然数,$$I=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},$$且 $\{a_n\}$ 为一个数列,求 $a_n$ 的通项公式。
     \begin{solution}
@@ -25079,6 +25884,255 @@ Q158. JEE Main 2024 (30 Jan Shift 1)
         \end{itemize}
     \end{solution}
 
+\question
+\begin{parts}
+\part 考虑实变量 $x,y,z$ 的线性方程组
+\[
+(S):\begin{cases}
+y+(\lambda+1)z=0\\
+\lambda x+2y+2z=\mu\\
+x-\lambda y-4z=\mu^{2}
+\end{cases},\qquad\lambda,\mu\in\mathbb{R}
+\]
+\begin{subparts}
+\subpart 设 $\mu=0$。
+\begin{subsubparts}
+\subsubpart 证明 $(S)$ 有非平凡解当且仅当 $\lambda^{3}+\lambda^{2}-2\lambda=0$。
+
+\begin{solution}
+$(S)$ 的系数行列式为
+\[
+D=\begin{vmatrix}0 & 1 & \lambda+1\\\lambda & 2 & 2\\1 & -\lambda & -4\end{vmatrix}
+\]
+沿第一行展开,
+\begin{align*}
+D&=-1\cdot\left[\lambda(-4)-2(1)\right]+(\lambda+1)\left[\lambda(-\lambda)-2(1)\right]\\
+&=-(-4\lambda-2)+(\lambda+1)\left(-\lambda^{2}-2\right)\\
+&=4\lambda+2-\lambda^{3}-2\lambda-\lambda^{2}-2\\
+&=-\lambda^{3}-\lambda^{2}+2\lambda\\
+&=-\left(\lambda^{3}+\lambda^{2}-2\lambda\right)
+\end{align*}
+当 $\mu=0$ 时,$(S)$ 为齐次线性方程组,它有非平凡解当且仅当 $D=0$,即
+\[
+\lambda^{3}+\lambda^{2}-2\lambda=0
+\]
+\end{solution}
+
+\subsubpart 当 $\lambda=1$ 时,解 $(S)$。
+
+\begin{solution}
+当 $\lambda=1$,$\mu=0$ 时,$(S)$ 成为
+\[
+\begin{cases}
+y+2z=0\\
+x+2y+2z=0\\
+x-y-4z=0
+\end{cases}
+\]
+由第一式,$y=-2z$。代入第二式,
+\[
+x+2(-2z)+2z=0\implies x-2z=0\implies x=2z
+\]
+代入第三式验证,$x-y-4z=2z-(-2z)-4z=0$,恒成立。
+
+故 $(S)$ 的解为
+\[
+\left\{(2t,-2t,t):t\in\mathbb{R}\right\}
+\]
+\end{solution}
+\end{subsubparts}
+
+\subpart 设 $\mu\neq0$。
+\begin{subsubparts}
+\subsubpart 求使 $(S)$ 有唯一解的 $\lambda$ 的范围。
+
+\begin{solution}
+$(S)$ 有唯一解当且仅当 $D\neq0$,即
+\[
+-\lambda(\lambda+2)(\lambda-1)\neq0
+\]
+故 $\lambda\neq0$,$\lambda\neq-2$ 且 $\lambda\neq1$。
+\end{solution}
+
+\subsubpart 当 $(S)$ 有唯一解时,解 $(S)$。
+
+\begin{solution}
+由第一式,$y=-(\lambda+1)z$。代入第三式,
+\[
+x=\mu^{2}+\lambda y+4z=\mu^{2}+\left(4-\lambda-\lambda^{2}\right)z
+\]
+代入第二式,
+\[
+\lambda\left[\mu^{2}+\left(4-\lambda-\lambda^{2}\right)z\right]+2\left[-(\lambda+1)z\right]+2z=\mu
+\]
+\[
+\lambda\mu^{2}+z\left[\lambda\left(4-\lambda-\lambda^{2}\right)-2\lambda\right]=\mu
+\]
+括号内化简为
+\[
+4\lambda-\lambda^{2}-\lambda^{3}-2\lambda=-\left(\lambda^{3}+\lambda^{2}-2\lambda\right)=D
+\]
+故 $\lambda\mu^{2}+Dz=\mu$,即
+\[
+z=\frac{\mu-\lambda\mu^{2}}{D}=\frac{\mu(1-\lambda\mu)}{D}
+\]
+从而
+\[
+y=-(\lambda+1)z=-\frac{(\lambda+1)\mu(1-\lambda\mu)}{D}
+\]
+\[
+x=\mu^{2}+\left(4-\lambda-\lambda^{2}\right)z=\mu^{2}+\frac{\left(4-\lambda-\lambda^{2}\right)\mu(1-\lambda\mu)}{D}
+\]
+其中 $D=-\lambda(\lambda+2)(\lambda-1)$。
+\end{solution}
+
+\subsubpart 求使 $(S)$ 有无穷多解的 $\lambda$ 及 $\mu$。
+
+\begin{solution}
+$(S)$ 有无穷多解要求 $D=0$,即 $\lambda=0,-2$ 或 $1$,且方程组相容。
+
+由上面的关系式 $\lambda\mu^{2}+Dz=\mu$,当 $D=0$ 时须有 $\lambda\mu^{2}=\mu$,由于 $\mu\neq0$,得 $\lambda\mu=1$。
+
+当 $\lambda=0$ 时,$\lambda\mu=0\neq1$,不成立,舍去。
+
+当 $\lambda=1$ 时,$\mu=1$。此时
+\[
+y=-2z,\qquad x=\mu^{2}+2z=1+2z
+\]
+代入第二式验证:$x+2y+2z=(1+2z)+2(-2z)+2z=1$,对任意 $z$ 皆成立,故方程组相容,有无穷多解。
+
+当 $\lambda=-2$ 时,$\mu=-\dfrac{1}{2}$。此时
+\[
+y=z,\qquad x=\mu^{2}+2z=\frac{1}{4}+2z
+\]
+代入第二式验证:$-2x+2y+2z=-2\left(\dfrac{1}{4}+2z\right)+2z+2z=-\dfrac{1}{2}$,对任意 $z$ 皆成立,故方程组相容,有无穷多解。
+
+故当 $(\lambda,\mu)=(1,1)$ 或 $\left(-2,-\dfrac{1}{2}\right)$ 时,$(S)$ 有无穷多解。
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+
+\part 是否存在实变量 $x,y,z$ 的解满足线性方程组
+\[
+\begin{cases}
+y+2z=0\\
+x+2y+2z=1\\
+x-y-4z=1
+\end{cases}
+\]
+且同时满足 $3x^{2}+2y^{2}+z^{2}=1$?试解释你的答案。
+
+\begin{solution}
+此方程组恰为 (a) 中 $\lambda=1$,$\mu=1$ 的情形,其解为
+\[
+y=-2z,\qquad x=1+2z,\qquad z=t\in\mathbb{R}
+\]
+即 $(x,y,z)=(1+2t,-2t,t)$。代入 $3x^{2}+2y^{2}+z^{2}=1$,
+\begin{align*}
+3(1+2t)^{2}+2(4t^{2})+t^{2}&=1\\
+3\left(1+4t+4t^{2}\right)+8t^{2}+t^{2}&=1\\
+3+12t+21t^{2}&=1\\
+21t^{2}+12t+2&=0
+\end{align*}
+此二次方程的判别式为
+\[
+\Delta=12^{2}-4(21)(2)=144-168=-24<0
+\]
+判别式为负,故此方程无实数解 $t$。因此不存在满足两个条件的实解 $(x,y,z)$。
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 考虑关于 $x$，$y$，$z$ 的线性方程组
+\[
+(E):\quad
+\begin{cases}
+x+y+z=2\\
+ax-4z=2\\
+3x+4y+(a+4)z=b
+\end{cases}
+\quad a,b\in\mathbb{R}
+\]
+（i）求使 $(E)$ 有唯一解的 $a$ 的取值范围，并在 $(E)$ 有唯一解时求解 $(E)$。
+
+（ii）设 $a=2$。求使 $(E)$ 相容的 $b$ 的值，并在此时求解 $(E)$。
+\begin{solution}
+（i）$(E)$ 有唯一解当且仅当
+\[
+\Delta = \begin{vmatrix} 1 & 1 & 1 \\ a & 0 & -4 \\ 3 & 4 & a+4 \end{vmatrix} \neq 0
+\]
+展开得
+\[
+-12+4a+16-a(a+4) \neq 0
+\]
+即
+\[
+4-a^2 \neq 0
+\]
+故 $a\neq -2$ 且 $a\neq 2$，即 $a<-2$，$-2<a<2$ 或 $a>2$。
+
+当 $(E)$ 有唯一解时，由克莱姆法则，
+\[
+x = \frac{2(16-2b-a)}{4-a^2},\quad y = \frac{-22-6a+4b+ab-2a^2}{4-a^2},\quad z = \frac{-2+8a-ab}{4-a^2}
+\]
+
+（ii）当 $a=2$ 时，$(E)$ 的增广矩阵化简为
+\[
+\begin{pmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 0 & b-7 \end{pmatrix}
+\]
+故 $(E)$ 相容当且仅当 $b=7$。此时解集为
+\[
+\{(1+2s,\ 1-3s,\ s) : s\in\mathbb{R}\}
+\]
+\end{solution}
+\part 考虑关于 $x$，$y$，$z$ 的线性方程组
+\[
+(F):\quad
+\begin{cases}
+x+y+z=2\\
+x+2z=-1\\
+3x+4y+2z=\lambda\\
+7x+17y-3z=\mu
+\end{cases}
+\quad \lambda,\mu\in\mathbb{R}
+\]
+求使 $(F)$ 相容的 $\lambda$ 及 $\mu$ 的值。
+\begin{solution}
+$(F)$ 的前三条方程的增广矩阵化简为
+\[
+\begin{pmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & -1 & 3 \\ 0 & 0 & 0 & \lambda-9 \end{pmatrix}
+\]
+故前三条方程可解当且仅当 $\lambda=9$，此时解集为
+\[
+\{(-1-2t,\ t+3,\ t) : t\in\mathbb{R}\}
+\]
+将其代入第四条方程，得 $(F)$ 相容当且仅当 $\lambda=9$ 且
+\[
+\mu = 7(-1-2t)+17(3+t)-3t = 44
+\]
+故 $\lambda=9$ 且 $\mu=44$。
+\end{solution}
+\part 考虑关于 $x$，$y$，$z$ 的线性方程组
+\[
+(G):\quad
+\begin{cases}
+x+y+z=2\\
+x-6z=3\\
+9x+12y+14z=15\\
+5x-2y-18z=16
+\end{cases}
+\]
+$(G)$ 是否相容？说明你的答案。
+\begin{solution}
+取 $a=\dfrac{2}{3}$，$b=5$ 代入(a)，$(G)$ 的前三条方程有唯一解 $x=3$，$y=-1$，$z=0$。
+
+注意到 $5(3)-2(-1)-18(0)=17\neq 16$。
+
+故 $(G)$ 不相容。
+\end{solution}
+\end{parts}
+
     \question
 Q157. JEE Main 2024 (31 Jan Shift 2)
 设 $A$ 为 $3 \times 3$ 实矩阵，满足：
@@ -26645,6 +27699,126 @@ z^{2} - (\omega - \omega^{2})^{2} - (1 - \omega - \omega^{2} + \omega^{3}) = 0
 因此所有根均为 \(z = 0\)，互不相同的复数 \(z\) 只有 1 个。
 答案为 1。
 \end{solution}
+
+\question
+\begin{parts}
+\part 设 $z=\cos\theta+i\sin\theta$,其中 $\theta\in\mathbb{R}$。求使 $\operatorname{Im}\left(z^{2}+\bar{z}\right)=0$ 的四个 $z$ 值。
+
+\begin{solution}
+\[
+z^{2}+\bar{z}=(\cos2\theta+i\sin2\theta)+(\cos\theta-i\sin\theta)=(\cos2\theta+\cos\theta)+i(\sin2\theta-\sin\theta)
+\]
+故
+\[
+\operatorname{Im}\left(z^{2}+\bar{z}\right)=\sin2\theta-\sin\theta=2\sin\theta\cos\theta-\sin\theta=\sin\theta\left(2\cos\theta-1\right)
+\]
+令此式为 $0$,得 $\sin\theta=0$ 或 $\cos\theta=\dfrac{1}{2}$。
+
+当 $\sin\theta=0$ 时,$\theta=0$ 或 $\pi$,对应 $z=1$ 或 $z=-1$。
+
+当 $\cos\theta=\dfrac{1}{2}$ 时,$\theta=\dfrac{\pi}{3}$ 或 $-\dfrac{\pi}{3}$,对应
+\[
+z=\frac{1}{2}+i\frac{\sqrt{3}}{2}\quad\text{或}\quad z=\frac{1}{2}-i\frac{\sqrt{3}}{2}
+\]
+故所求的四个值为
+\[
+z=1,\ -1,\ \frac{1}{2}+i\frac{\sqrt{3}}{2},\ \frac{1}{2}-i\frac{\sqrt{3}}{2}
+\]
+\end{solution}
+
+\part 设 $z_{1}$ 及 $z_{2}$ 为 (a) 中所得的两个值,满足 $\operatorname{Im}(z_{1})<0<\operatorname{Im}(z_{2})$。对任意正整数 $n$,定义 $S_{n}=\displaystyle\sum_{r=1}^{n}\omega^{r}$,其中 $\omega=\dfrac{z_{2}}{z_{1}}$。
+\begin{subparts}
+\subpart 证明 $\omega^{3}=1$。
+
+\begin{solution}
+由 (a),$z_{1}=\dfrac{1}{2}-i\dfrac{\sqrt{3}}{2}$,$z_{2}=\dfrac{1}{2}+i\dfrac{\sqrt{3}}{2}$,即 $z_{1}=\cos\left(-\dfrac{\pi}{3}\right)+i\sin\left(-\dfrac{\pi}{3}\right)$,$z_{2}=\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}$。
+
+由棣莫弗定理,
+\[
+\omega=\frac{z_{2}}{z_{1}}=\cos\left(\frac{\pi}{3}-\left(-\frac{\pi}{3}\right)\right)+i\sin\left(\frac{\pi}{3}-\left(-\frac{\pi}{3}\right)\right)=\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}
+\]
+故
+\[
+\omega^{3}=\cos2\pi+i\sin2\pi=1
+\]
+\end{solution}
+
+\subpart 若 $n$ 为 $3$ 的倍数,证明 $S_{n}=0$。
+
+\begin{solution}
+由等比数列求和公式(注意 $\omega\neq1$),
+\[
+S_{n}=\sum_{r=1}^{n}\omega^{r}=\frac{\omega\left(\omega^{n}-1\right)}{\omega-1}
+\]
+若 $n$ 为 $3$ 的倍数,设 $n=3q$,则由 (b)(i),$\omega^{n}=\left(\omega^{3}\right)^{q}=1$,故
+\[
+S_{n}=\frac{\omega(1-1)}{\omega-1}=0
+\]
+\end{solution}
+
+\subpart 若 $n$ 不是 $3$ 的倍数,求 $S_{n}$。
+
+\begin{solution}
+由 $\omega^{3}=1$ 且 $\omega\neq1$,$\omega$ 满足 $\omega^{2}+\omega+1=0$,故对任意整数 $j$,
+\[
+\omega^{3j+1}+\omega^{3j+2}+\omega^{3j+3}=\omega^{3j}\left(\omega+\omega^{2}+\omega^{3}\right)=\omega^{3j}\left(1+\omega+\omega^{2}\right)=0
+\]
+即任意连续三项之和为 $0$。
+
+设 $n=3q+s$,其中 $s=1$ 或 $2$。由上述性质,
+\[
+S_{n}=S_{3q}+\sum_{r=3q+1}^{3q+s}\omega^{r}=0+\omega^{3q}\left(\omega+\omega^{2}+\cdots+\omega^{s}\right)=\omega+\omega^{2}+\cdots+\omega^{s}
+\]
+若 $s=1$,$S_{n}=\omega$;若 $s=2$,$S_{n}=\omega+\omega^{2}=-1$(由 $1+\omega+\omega^{2}=0$)。
+
+综上,
+\[
+S_{n}=\begin{cases}\omega & \text{当 }n\equiv1\pmod{3}\\-1 & \text{当 }n\equiv2\pmod{3}\end{cases}
+\]
+\end{solution}
+
+\subpart 是否存在整数 $m$,使得 $\left(S_{2009}+S_{2010}+S_{2011}\right)^{m}=2$?试解释你的答案。
+
+\begin{solution}
+由于 $2009=3(669)+2$,$2010=3(670)$,$2011=3(670)+1$,由 (b)(ii)(iii),
+\[
+S_{2009}=-1,\qquad S_{2010}=0,\qquad S_{2011}=\omega
+\]
+故
+\[
+S_{2009}+S_{2010}+S_{2011}=\omega-1
+\]
+计算模长,$\omega-1=-\dfrac{3}{2}+i\dfrac{\sqrt{3}}{2}$,
+\[
+\left|\omega-1\right|=\sqrt{\left(\frac{3}{2}\right)^{2}+\left(\frac{\sqrt{3}}{2}\right)^{2}}=\sqrt{\frac{9}{4}+\frac{3}{4}}=\sqrt{3}
+\]
+若存在整数 $m$ 使得 $\left(\omega-1\right)^{m}=2$,取模长得 $\left(\sqrt{3}\right)^{m}=2$,即 $m=\dfrac{2\ln2}{\ln3}$,此值不是整数(为无理数)。故不存在整数 $m$ 使得 $\left(\omega-1\right)^{m}=2$。
+\end{solution}
+
+\subpart 求所有正整数 $k$,使得对任意正整数 $n$,$\left(S_{n}\right)^{k}+\left(S_{n+1}\right)^{k}+\left(S_{n+2}\right)^{k}=2$。
+
+\begin{solution}
+由于任意三个连续整数 $n,n+1,n+2$ 除以 $3$ 的余数恰好覆盖 $0,1,2$ 各一次,故集合 $\{S_{n},S_{n+1},S_{n+2}\}=\{0,\omega,-1\}$,与 $n$ 的选取无关。
+
+因此对任意正整数 $k$,
+\[
+\left(S_{n}\right)^{k}+\left(S_{n+1}\right)^{k}+\left(S_{n+2}\right)^{k}=0^{k}+\omega^{k}+(-1)^{k}=\omega^{k}+(-1)^{k}
+\]
+要求此式恒等于 $2$。由于 $\left|\omega^{k}\right|=1$,$\left|(-1)^{k}\right|=1$,两者之和的模长不超过 $2$,且等于 $2$ 当且仅当两者皆等于 $1$(方向相同且模长皆为最大值)。
+
+故需 $(-1)^{k}=1$,即 $k$ 为偶数;且 $\omega^{k}=1$,由于 $\omega$ 为本原三次单位根,须 $k$ 为 $3$ 的倍数。
+
+因此 $k$ 须同时为 $2$ 与 $3$ 的倍数,即 $k$ 为 $6$ 的倍数。
+
+故所求的正整数 $k$ 为
+\[
+k=6,12,18,\ldots
+\]
+即所有 $6$ 的正整数倍。
+\end{solution}
+\end{subparts}
+\end{parts}
+
 
     \question 已知两复数 $z_1, z_2$ 满足 $|z_1 - (3 + 3i)| = 2,|iz_2 - 1| = 1$,求 $|z_1 - z_2|$ 的最小值。
     \begin{solution}
@@ -29761,6 +30935,86 @@ $Q(z) = -\alpha^7 z^3 + 3\alpha^6 z^2 + (c+2)\alpha z - c$
         由于 $\alpha - \beta = \delta - \gamma$，意味着 $BA = CD$ 且 $BA \parallel CD$。
         因此，四边形 $ABCD$ 是平行四边形。
     \end{solution}
+\end{parts}
+
+    \question
+设 $n\in\mathbb{N}\setminus\{1\}$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明
+\[
+\sin\frac{\pi}{2n}\sum_{k=1}^{n-1}\sin\frac{k\pi}{n}=\sin\frac{(n-1)\pi}{2n}
+\]
+
+\begin{solution}
+利用积化和差公式,
+\begin{align*}
+\sin\frac{\pi}{2n}\sum_{k=1}^{n-1}\sin\frac{k\pi}{n}
+&=\sum_{k=1}^{n-1}\sin\frac{\pi}{2n}\sin\frac{k\pi}{n}\\
+&=\frac{1}{2}\sum_{k=1}^{n-1}\left[\cos\left(k-\frac{1}{2}\right)\frac{\pi}{n}-\cos\left(k+\frac{1}{2}\right)\frac{\pi}{n}\right]\\
+&=\frac{1}{2}\left(\cos\frac{\pi}{2n}-\cos\left(n-\frac{1}{2}\right)\frac{\pi}{n}\right)\\
+&=\sin\frac{\pi}{2}\sin\frac{(n-1)\pi}{2n}\\
+&=\sin\frac{(n-1)\pi}{2n}
+\end{align*}
+\end{solution}
+
+\subpart 设 $\alpha=\cos\dfrac{2\pi}{n}+i\sin\dfrac{2\pi}{n}$。证明
+\[
+\sum_{k=1}^{n-1}\left|\alpha^{k}-1\right|=2\cot\frac{\pi}{2n}
+\]
+
+\begin{solution}
+由棣莫弗定理,
+\begin{align*}
+\sum_{k=1}^{n-1}\left|\alpha^{k}-1\right|
+&=\sum_{k=1}^{n-1}\left|\cos\frac{2k\pi}{n}+i\sin\frac{2k\pi}{n}-1\right|\\
+&=\sum_{k=1}^{n-1}\sqrt{\left(\cos\frac{2k\pi}{n}-1\right)^{2}+\sin^{2}\frac{2k\pi}{n}}\\
+&=\sum_{k=1}^{n-1}\sqrt{2\left(1-\cos\frac{2k\pi}{n}\right)}\\
+&=2\sum_{k=1}^{n-1}\sin\frac{k\pi}{n}
+\end{align*}
+由 (a)(i) 的结果,
+\[
+2\sum_{k=1}^{n-1}\sin\frac{k\pi}{n}=2\sin\frac{(n-1)\pi}{2n}\left(\sin\frac{\pi}{2n}\right)^{-1}=2\cot\frac{\pi}{2n}
+\]
+最后一步用了
+\[
+\sin\frac{(n-1)\pi}{2n}=\sin\left(\frac{\pi}{2}-\frac{\pi}{2n}\right)=\cos\frac{\pi}{2n}
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $\beta\in\mathbb{C}$ 满足 $\beta^{n}=1$ 且对所有 $k=1,2,\ldots,n-1$ 皆有 $\beta^{k}\neq 1$。
+\begin{subparts}
+\subpart 证明 $1,\beta,\beta^{2},\ldots,\beta^{n-1}$ 皆不相同。
+
+\begin{solution}
+假设 $1,\beta,\ldots,\beta^{n-1}$ 并非全部不同,则存在 $0\leq i<j\leq n-1$ 使得
+\[
+\beta^{i}=\beta^{j}
+\]
+于是 $\beta^{j-i}=1$,且 $0<j-i<n-1$,这与题设对所有 $k=1,\ldots,n-1$ 皆有 $\beta^{k}\neq1$ 矛盾。故 $1,\beta,\beta^{2},\ldots,\beta^{n-1}$ 皆不相同。
+\end{solution}
+
+\subpart 求 $\displaystyle\sum_{k=1}^{2n-1}\left|\beta^{k}-1\right|$。
+
+\begin{solution}
+由于 $\beta^{n}=1$ 且 $\beta^{k}\neq1$ 对 $k=1,\ldots,n-1$ 成立,可知 $\beta$ 为 $1$ 的 $n$ 次本原单位根,即
+\[
+\beta=\cos\frac{2\pi}{n}+i\sin\frac{2\pi}{n}
+\]
+于是
+\begin{align*}
+\sum_{k=1}^{2n-1}\left|\beta^{k}-1\right|
+&=\sum_{k=1}^{n-1}\left|\beta^{k}-1\right|+\left|\beta^{n}-1\right|+\sum_{k=n+1}^{2n-1}\left|\beta^{k}-1\right|\\
+&=\sum_{k=1}^{n-1}\left|\beta^{k}-1\right|+0+\sum_{k=1}^{n-1}\left|\beta^{n+k}-1\right|\\
+&=\sum_{k=1}^{n-1}\left|\beta^{k}-1\right|+\sum_{k=1}^{n-1}\left|\beta^{k}-1\right|\\
+&=2\sum_{k=1}^{n-1}\left|\beta^{k}-1\right|\\
+&=4\cot\frac{\pi}{2n}
+\end{align*}
+最后一步用了 (a)(ii) 的结果。
+\end{solution}
+\end{subparts}
 \end{parts}
 \end{questions}
 
