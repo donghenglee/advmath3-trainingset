@@ -19,6 +19,6468 @@
 \nopagecolor
 \begin{questions}
     %hkale dump start
+    % ========== Paper 1 ==========
+
+\question
+设 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 为多项式。
+\begin{parts}
+\part 证明非零多项式 $u(x)$ 是 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的公因式，当且仅当 $u(x)$ 是 $\mathrm{f}(x)-\mathrm{g}(x)$ 和 $\mathrm{g}(x)$ 的公因式。
+\begin{solution}
+设 $u(x)$ 是 $\mathrm{f}(x)-\mathrm{g}(x)$ 和 $\mathrm{g}(x)$ 的公因式，则存在多项式 $p(x)$ 和 $q(x)$，使得
+\[
+\mathrm{f}(x)-\mathrm{g}(x)=u(x)p(x),\qquad \mathrm{g}(x)=u(x)q(x)。
+\]
+因此
+\begin{align*}
+\mathrm{f}(x) &= \mathrm{g}(x)+u(x)p(x)\\
+&= u(x)q(x)+u(x)p(x)\\
+&= u(x)\left[p(x)+q(x)\right]。
+\end{align*}
+由于 $p(x)+q(x)$ 为多项式，所以 $u(x)$ 是 $\mathrm{f}(x)$ 的因式。故 $u(x)$ 是 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的公因式。
+
+反之，设 $u(x)$ 是 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的公因式，则存在多项式 $r(x)$ 和 $s(x)$，使得
+\[
+\mathrm{f}(x)=u(x)r(x),\qquad \mathrm{g}(x)=u(x)s(x)。
+\]
+因此
+\[
+\mathrm{f}(x)-\mathrm{g}(x)=u(x)r(x)-u(x)s(x)=u(x)\left[r(x)-s(x)\right]。
+\]
+由于 $r(x)-s(x)$ 为多项式，所以 $u(x)$ 是 $\mathrm{f}(x)-\mathrm{g}(x)$ 的因式。故 $u(x)$ 是 $\mathrm{f}(x)-\mathrm{g}(x)$ 和 $\mathrm{g}(x)$ 的公因式。证毕。
+\end{solution}
+
+\part 设 $\mathrm{f}(x)=x^4-3x^3+6x^2-5x+3$，$\mathrm{g}(x)=x^4-4x^3+8x^2-7x+4$。利用(a)或其他方法，求 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的最大公因式。
+\begin{solution}
+\[
+\mathrm{f}(x)-\mathrm{g}(x)=x^3-2x^2+2x-1=(x-1)\left(x^2-x+1\right)。
+\]
+由(a)可知，$\mathrm{f}(x)-\mathrm{g}(x)$ 和 $\mathrm{g}(x)$ 的每个公因式都是 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的公因式。
+
+用长除法可知 $(x-1)$ 不是 $\mathrm{g}(x)$ 的因式，而 $\left(x^2-x+1\right)$ 是 $\mathrm{g}(x)$ 的因式。故 $x^2-x+1$ 是 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的公因式。
+
+由于
+\[
+\mathrm{f}(x)=\left(x^2-x+1\right)\left(x^2-2x+3\right),\qquad \mathrm{g}(x)=\left(x^2-x+1\right)\left(x^2-3x+4\right),
+\]
+且 $\left(x^2-2x+3\right)$ 和 $\left(x^2-3x+4\right)$ 的最大公因式为 $1$，所以 $\mathrm{f}(x)$ 和 $\mathrm{g}(x)$ 的最大公因式为 $\left(x^2-x+1\right)$。
+\end{solution}
+\end{parts}
+
+\question
+设 $k=1,2,3$，$z_k=\cos\theta_k+i\sin\theta_k$，其中 $\theta_1+\theta_2+\theta_3=2\pi$。
+\begin{parts}
+\part 求 $z_1z_2z_3$ 的值。
+\begin{solution}
+\begin{align*}
+z_1z_2z_3 &= \left(\cos\theta_1+i\sin\theta_1\right)\left(\cos\theta_2+i\sin\theta_2\right)\left(\cos\theta_3+i\sin\theta_3\right)\\
+&= \cos\left(\theta_1+\theta_2+\theta_3\right)+i\sin\left(\theta_1+\theta_2+\theta_3\right)\\
+&= \cos2\pi+i\sin2\pi\\
+&= 1。
+\end{align*}
+\end{solution}
+
+\part 证明 $\cos\theta_k=\dfrac{1}{2}\left(z_k+\dfrac{1}{z_k}\right)$ 及 $\cos2\theta_k=\dfrac{1}{2}\left(z_k^2+\dfrac{1}{z_k^2}\right)$。因此，或用其他方法，证明
+\[
+\cos2\theta_1+\cos2\theta_2+\cos2\theta_3=4\cos\theta_1\cos\theta_2\cos\theta_3-1。
+\]
+\begin{solution}
+由于 $z_k=\cos\theta_k+i\sin\theta_k$ 及 $\dfrac{1}{z_k}=\cos\theta_k-i\sin\theta_k$，所以
+\[
+\cos\theta_k=\frac{1}{2}\left(z_k+\frac{1}{z_k}\right)。
+\]
+同理，$z_k^2=\cos2\theta_k+i\sin2\theta_k$ 及 $\dfrac{1}{z_k^2}=\cos2\theta_k-i\sin2\theta_k$，所以
+\[
+\cos2\theta_k=\frac{1}{2}\left(z_k^2+\frac{1}{z_k^2}\right)。
+\]
+
+因此
+\begin{align*}
+4\cos\theta_1\cos\theta_2\cos\theta_3
+&= 4\left[\frac{1}{2}\left(z_1+\frac{1}{z_1}\right)\right]\left[\frac{1}{2}\left(z_2+\frac{1}{z_2}\right)\right]\left[\frac{1}{2}\left(z_3+\frac{1}{z_3}\right)\right]\\
+&= \frac{1}{2}\left(z_1z_2z_3+\frac{z_1}{z_2z_3}+\frac{z_2}{z_1z_3}+\frac{z_3}{z_1z_2}+\frac{z_1z_2}{z_3}+\frac{z_2z_3}{z_1}+\frac{z_1z_3}{z_2}+\frac{1}{z_1z_2z_3}\right)\\
+&= \frac{1}{2}\left(1+z_1^2+z_2^2+z_3^2+\frac{1}{z_1^2}+\frac{1}{z_2^2}+\frac{1}{z_3^2}+1\right)\qquad\left(\because\ z_1z_2z_3=1\right)\\
+&= 1+\frac{1}{2}\left(z_1^2+z_2^2+z_3^2+\frac{1}{z_1^2}+\frac{1}{z_2^2}+\frac{1}{z_3^2}\right)。
+\end{align*}
+
+另一方面，
+\begin{align*}
+\cos2\theta_1+\cos2\theta_2+\cos2\theta_3
+&= \frac{1}{2}\left(z_1^2+\frac{1}{z_1^2}\right)+\frac{1}{2}\left(z_2^2+\frac{1}{z_2^2}\right)+\frac{1}{2}\left(z_3^2+\frac{1}{z_3^2}\right)\\
+&= \frac{1}{2}\left(z_1^2+z_2^2+z_3^2+\frac{1}{z_1^2}+\frac{1}{z_2^2}+\frac{1}{z_3^2}\right)\\
+&= 4\cos\theta_1\cos\theta_2\cos\theta_3-1。
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+设 $m$ 和 $k$ 为正整数，且 $k\le m$。
+\begin{parts}
+\part 证明当 $k>1$ 时，
+\[
+\frac{m(m-1)\cdots(m-k+1)}{m^k}<\frac{(m+1)m\cdots(m-k+2)}{(m+1)^k}。
+\]
+证明当 $k=1$ 时，上述不等式不成立。
+\begin{solution}
+\begin{align*}
+\frac{m(m-1)\cdots(m-k+1)}{m^k}
+&= \frac{m-1}{m}\cdot\frac{m-2}{m}\cdots\frac{m-k+1}{m}\\
+&= \left(1-\frac{1}{m}\right)\left(1-\frac{2}{m}\right)\cdots\left(1-\frac{k-1}{m}\right)\\
+&< \left(1-\frac{1}{m+1}\right)\left(1-\frac{2}{m+1}\right)\cdots\left(1-\frac{k-1}{m+1}\right)\\
+&= \frac{m}{m+1}\cdot\frac{m-1}{m+1}\cdots\frac{m-k+2}{m+1}\\
+&= \frac{(m+1)m(m-1)\cdots(m-k+2)}{(m+1)^k}。
+\end{align*}
+
+当 $k=1$ 时，不等式左边 $=\dfrac{m}{m}=1$，右边 $=\dfrac{m+1}{m+1}=1$。故不等式不成立。
+\end{solution}
+
+\part 设 $m$ 为正整数。利用(a)或其他方法，证明
+\[
+\left(1+\frac{1}{m}\right)^m<\left(1+\frac{1}{m+1}\right)^{m+1}。
+\]
+\begin{solution}
+\begin{align*}
+\left(1+\frac{1}{m}\right)^m
+&= 1+\sum_{k=1}^m C_k^m\cdot\frac{1}{m^k}\\
+&= 1+\sum_{k=1}^m \frac{1}{k!}\cdot\frac{m(m-1)\cdots(m-k+1)}{m^k}\\
+&\le 1+\sum_{k=1}^m \frac{1}{k!}\cdot\frac{(m+1)m\cdots(m-k+2)}{(m+1)^k}\qquad\text{（由(a)）}\\
+&< 1+\left\{\sum_{k=1}^m\frac{(m+1)m\cdots(m-k+2)}{k!}\cdot\frac{1}{(m+1)^k}\right\}+\frac{1}{(m+1)^{m+1}}\\
+&= \left(1+\frac{1}{m+1}\right)^{m+1}。
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 考虑关于 $x,y,z$ 的线性方程组
+\[
+(S):\ \left\{
+\begin{aligned}
+ax-2y+z &= 0\\
+x-y+2z &= b\\
+y+az &= b
+\end{aligned}
+\right.,\qquad a,b\in\mathbb{R}。
+\]
+\begin{subparts}
+\subpart 证明 $(S)$ 有唯一解当且仅当 $a^2\ne1$，并在此情况下解 $(S)$。
+\begin{solution}
+$(S)$ 有唯一解当且仅当
+\[
+\Delta=\begin{vmatrix}a&-2&1\\1&-1&2\\0&1&a\end{vmatrix}=-\left(a^2-1\right)\ne0，
+\]
+即 $a^2\ne1$。
+
+在此情况下，由克莱姆法则，
+\begin{align*}
+x&=\frac{\begin{vmatrix}0&-2&1\\b&-1&2\\b&1&a\end{vmatrix}}{-\left(a^2-1\right)}=-\frac{2b}{a+1}，\\
+y&=\frac{\begin{vmatrix}a&0&1\\1&b&2\\0&b&a\end{vmatrix}}{-\left(a^2-1\right)}=-\frac{b(a-1)}{a+1}，\\
+z&=\frac{\begin{vmatrix}a&-2&0\\1&-1&b\\0&1&b\end{vmatrix}}{-\left(a^2-1\right)}=\frac{2b}{a+1}。
+\end{align*}
+\end{solution}
+
+\subpart 就下列各情况，求使 $(S)$ 相容的 $b$ 的值，并就该(等) $b$ 值解 $(S)$：
+\begin{subsubparts}
+\subsubpart $a=1$；
+\subsubpart $a=-1$。
+\end{subsubparts}
+\begin{solution}
+当 $a=1$ 时，$(S)$ 化为
+\[
+\left\{
+\begin{aligned}
+x-2y+z&=0\\
+x-y+2z&=b\\
+y+z&=b
+\end{aligned}
+\right.。
+\]
+第一式减第二式得 $-y-z=-b$，即 $y+z=b$，与第三式相同，故 $(S)$ 对所有 $b$ 值都相容。此时
+\[
+\left\{
+\begin{aligned}
+x&=2b-3t\\
+y&=b-t\\
+z&=t
+\end{aligned}
+\right.,\qquad t\in\mathbb{R}。
+\]
+
+当 $a=-1$ 时，$(S)$ 化为
+\[
+\left\{
+\begin{aligned}
+-x-2y+z&=0\\
+x-y+2z&=b\\
+y-z&=b
+\end{aligned}
+\right.。
+\]
+第一式加第二式得 $-3y+3z=b$，即 $3y-3z=-b$，故 $(S)$ 相容当且仅当 $-3b=b$，即 $b=0$。此时
+\[
+\left\{
+\begin{aligned}
+x&=-t\\
+y&=z=t
+\end{aligned}
+\right.,\qquad t\in\mathbb{R}。
+\]
+\end{solution}
+\end{subparts}
+
+\part 考虑关于 $x,y,z$ 的线性方程组
+\[
+(T):\ \left\{
+\begin{aligned}
+ax-2y+z &= 0\\
+x-y+2z &= -1\\
+y+az &= -1\\
+5x-2y+z &= a
+\end{aligned}
+\right.,\qquad a\in\mathbb{R}。
+\]
+求使 $(T)$ 相容的所有 $a$ 值，并就每个这样的 $a$ 值解 $(T)$。
+\begin{solution}
+把 $b=-1$ 代入 $(S)$，则 $(S)$ 化为 $(T)$ 的前三条方程。由(a)，有两种可能：(i) $a^2\ne1$ 且 $b=-1$；(ii) $a=1$ 且 $b=-1$。
+
+(i) 若 $a^2\ne1$ 且 $b=-1$，则 $(S)$ 有唯一解
+\[
+x=\frac{2}{a+1},\qquad y=\frac{a-1}{a+1},\qquad z=-\frac{2}{a+1}。
+\]
+$(T)$ 相容当且仅当此解满足第四条方程，即
+\[
+5\left(\frac{2}{a+1}\right)-2\left(\frac{a-1}{a+1}\right)-\frac{2}{a+1}=a，
+\]
+化简得 $a^2+3a-10=0$，故 $a=2$ 或 $a=-5$。
+
+当 $a=2$ 时，$(T)$ 的解为 $x=\dfrac{2}{3}$，$y=\dfrac{1}{3}$，$z=-\dfrac{2}{3}$。
+
+当 $a=-5$ 时，$(T)$ 的解为 $x=-\dfrac{1}{2}$，$y=\dfrac{3}{2}$，$z=\dfrac{1}{2}$。
+
+(ii) 若 $a=1$ 且 $b=-1$，则 $(T)$ 相容当且仅当
+\[
+\left\{
+\begin{aligned}
+x&=-2-3t\\
+y&=-1-t\\
+z&=t
+\end{aligned}
+\right.
+\]
+满足第四条方程，即 $5(-2-3t)-2(-1-t)+t=1$，解得 $t=-\dfrac{3}{4}$。此时 $(T)$ 的解为
+\[
+x=\frac{1}{4},\qquad y=-\frac{1}{4},\qquad z=-\frac{3}{4}。
+\]
+\end{solution}
+\end{parts}
+
+\question
+向量 $\mathbf{u},\mathbf{v},\mathbf{w}\in\mathbb{R}^3$ 称为正交，当且仅当 $\mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{w}=\mathbf{w}\cdot\mathbf{u}=0$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明若 $\mathbf{u},\mathbf{v},\mathbf{w}$ 为非零正交向量，则 $\mathbf{u},\mathbf{v},\mathbf{w}$ 线性无关。
+\begin{solution}
+设
+\[
+\lambda_1\mathbf{u}+\lambda_2\mathbf{v}+\lambda_3\mathbf{w}=\mathbf{0}
+\]
+其中 $\lambda_1,\lambda_2,\lambda_3$ 为纯量。则
+\[
+\mathbf{u}\cdot\left(\lambda_1\mathbf{u}+\lambda_2\mathbf{v}+\lambda_3\mathbf{w}\right)=0，
+\]
+即 $\lambda_1\mathbf{u}\cdot\mathbf{u}+\lambda_2\mathbf{u}\cdot\mathbf{v}+\lambda_3\mathbf{u}\cdot\mathbf{w}=0$。由于 $\mathbf{u}\ne\mathbf{0}$ 且 $\mathbf{u}\cdot\mathbf{v}=0$，$\mathbf{u}\cdot\mathbf{w}=0$，所以 $\lambda_1=0$。同理 $\lambda_2=\lambda_3=0$。故 $\mathbf{u},\mathbf{v},\mathbf{w}$ 线性无关。
+\end{solution}
+
+\subpart 举一反例，说明(i)中命题的逆命题不成立。
+\begin{solution}
+设 $\mathbf{u}=\mathbf{i}$，$\mathbf{v}=\mathbf{j}$，$\mathbf{w}=\mathbf{j}+\mathbf{k}$。设
+\[
+\lambda_1\mathbf{u}+\lambda_2\mathbf{v}+\lambda_3\mathbf{w}=\mathbf{0}。
+\]
+比较各分量得 $\lambda_1=0$，$\lambda_2+\lambda_3=0$ 及 $\lambda_3=0$，故 $\lambda_1=\lambda_2=\lambda_3=0$。所以 $\mathbf{u},\mathbf{v},\mathbf{w}$ 线性无关。
+
+但 $\mathbf{v}\cdot\mathbf{w}=1\ne0$，故 $\mathbf{u},\mathbf{v},\mathbf{w}$ 不正交。
+\end{solution}
+\end{subparts}
+
+\part 设 $\mathbf{u}=(u_1,u_2,u_3)$，$\mathbf{v}=(v_1,v_2,v_3)$，$\mathbf{w}=(w_1,w_2,w_3)$ 为 $\mathbb{R}^3$ 中三个非零正交向量。
+\begin{subparts}
+\subpart 通过计算乘积
+\[
+\begin{pmatrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}\begin{pmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{pmatrix}，
+\]
+证明
+\[
+\begin{vmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{vmatrix}\ne0。
+\]
+\begin{solution}
+计算可得
+\[
+\begin{pmatrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}\begin{pmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{pmatrix}
+=\begin{pmatrix}u_1^2+u_2^2+u_3^2&u_1v_1+u_2v_2+u_3v_3&u_1w_1+u_2w_2+u_3w_3\\u_1v_1+u_2v_2+u_3v_3&v_1^2+v_2^2+v_3^2&v_1w_1+v_2w_2+v_3w_3\\u_1w_1+u_2w_2+u_3w_3&v_1w_1+v_2w_2+v_3w_3&w_1^2+w_2^2+w_3^2\end{pmatrix}。
+\]
+由于 $\mathbf{u},\mathbf{v},\mathbf{w}$ 为非零正交向量，
+\[
+u_1^2+u_2^2+u_3^2\ne0,\quad v_1^2+v_2^2+v_3^2\ne0,\quad w_1^2+w_2^2+w_3^2\ne0，
+\]
+且 $u_1v_1+u_2v_2+u_3v_3=0$，其余交叉项亦为 $0$。所以
+\[
+\begin{pmatrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}\begin{pmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{pmatrix}
+=\begin{pmatrix}u_1^2+u_2^2+u_3^2&0&0\\0&v_1^2+v_2^2+v_3^2&0\\0&0&w_1^2+w_2^2+w_3^2\end{pmatrix}。
+\]
+取行列式，
+\[
+\begin{vmatrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{vmatrix}\begin{vmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{vmatrix}
+=\left(u_1^2+u_2^2+u_3^2\right)\left(v_1^2+v_2^2+v_3^2\right)\left(w_1^2+w_2^2+w_3^2\right)\ne0。
+\]
+故
+\[
+\begin{vmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{vmatrix}\ne0。
+\]
+\end{solution}
+
+\subpart 设 $\mathbf{p}=(p_1,p_2,p_3)$ 为 $\mathbb{R}^3$ 中的向量。证明 $\mathbf{p}$ 是 $\mathbf{u},\mathbf{v},\mathbf{w}$ 的线性组合。
+\begin{solution}
+考虑方程组
+\[
+\left\{
+\begin{aligned}
+u_1\lambda_1+v_1\lambda_2+w_1\lambda_3 &= p_1\\
+u_2\lambda_1+v_2\lambda_2+w_2\lambda_3 &= p_2\\
+u_3\lambda_1+v_3\lambda_2+w_3\lambda_3 &= p_3
+\end{aligned}
+\right.\quad(*)
+\]
+由(i)，
+\[
+\begin{vmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{vmatrix}\ne0，
+\]
+所以方程组 $(*)$ 有唯一解 $\lambda_1,\lambda_2,\lambda_3$。故 $\mathbf{p}=\lambda_1\mathbf{u}+\lambda_2\mathbf{v}+\lambda_3\mathbf{w}$，即 $\mathbf{p}$ 是 $\mathbf{u},\mathbf{v},\mathbf{w}$ 的线性组合。
+\end{solution}
+\end{subparts}
+
+\part 设 $\mathbf{x}=\left(\dfrac{1}{\sqrt2},0,-\dfrac{1}{\sqrt2}\right)$，$\mathbf{y}=(0,1,0)$，$\mathbf{z}=\left(\dfrac{1}{\sqrt2},0,\dfrac{1}{\sqrt2}\right)$ 及 $\mathbf{q}=(-1,2,0)$ 为 $\mathbb{R}^3$ 中的向量。
+\begin{subparts}
+\subpart 证明 $\mathbf{x},\mathbf{y},\mathbf{z}$ 正交。
+\begin{solution}
+\[
+\mathbf{x}\cdot\mathbf{y}=0,\qquad \mathbf{y}\cdot\mathbf{z}=0，
+\]
+且
+\[
+\mathbf{x}\cdot\mathbf{z}=\frac{1}{2}-\frac{1}{2}=0。
+\]
+故 $\mathbf{x},\mathbf{y},\mathbf{z}$ 为正交向量。
+\end{solution}
+
+\subpart 把 $\mathbf{q}$ 表示为 $\mathbf{x},\mathbf{y},\mathbf{z}$ 的线性组合。
+\begin{solution}
+设 $\mathbf{q}=\lambda_1\mathbf{x}+\lambda_2\mathbf{y}+\lambda_3\mathbf{z}$。由 $(*)$，
+\[
+\left\{
+\begin{aligned}
+\frac{1}{\sqrt2}\lambda_1+\frac{1}{\sqrt2}\lambda_3 &= -1\\
+\lambda_2 &= 2\\
+-\frac{1}{\sqrt2}\lambda_1+\frac{1}{\sqrt2}\lambda_3 &= 0
+\end{aligned}
+\right.。
+\]
+解得 $\lambda_1=-\sqrt2$，$\lambda_2=2$，$\lambda_3=-\sqrt2$。所以
+\[
+\mathbf{q}=-\sqrt2\,\mathbf{x}+2\mathbf{y}-\sqrt2\,\mathbf{z}。
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $a_1,a_2,\ldots,a_n$ 为实数，$b_1,b_2,\ldots,b_n$ 为非零实数。
+\begin{parts}
+\part 通过考虑 $\displaystyle\sum_{i=1}^n\left(a_ix+b_i\right)^2$，或用其他方法，证明柯西不等式
+\[
+\left(\sum_{i=1}^na_ib_i\right)^2\le\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)，
+\]
+并证明等号成立当且仅当 $\dfrac{a_1}{b_1}=\dfrac{a_2}{b_2}=\cdots=\dfrac{a_n}{b_n}$。
+\begin{solution}
+由于对所有 $x\in\mathbb{R}$，$\displaystyle\sum_{i=1}^n\left(a_ix+b_i\right)^2\ge0$，所以
+\[
+\left(\sum_{i=1}^na_i^2\right)x^2+2\left(\sum_{i=1}^na_ib_i\right)x+\sum_{i=1}^nb_i^2\ge0\qquad\text{对所有 }x\in\mathbb{R}。
+\]
+当 $\displaystyle\sum_{i=1}^na_i^2=0$ 时，不等式显然成立。
+
+设 $\displaystyle\sum_{i=1}^na_i^2>0$。由于该二次式对所有 $x$ 非负，其判别式
+\[
+4\left(\sum_{i=1}^na_ib_i\right)^2-4\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)\le0，
+\]
+即
+\[
+\left(\sum_{i=1}^na_ib_i\right)^2\le\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)。
+\]
+
+若等号成立，则二次方程 $\displaystyle\left(\sum_{i=1}^na_i^2\right)x^2+2\left(\sum_{i=1}^na_ib_i\right)x+\sum_{i=1}^nb_i^2=0$ 有等实根，且此实根非零（因 $\displaystyle\sum_{i=1}^nb_i^2\ne0$），故存在非零 $x\in\mathbb{R}$ 使得 $\displaystyle\sum_{i=1}^n\left(a_ix+b_i\right)^2=0$。因此对每个 $i$，$a_ix+b_i=0$，即
+\[
+\frac{a_1}{b_1}=\frac{a_2}{b_2}=\cdots=\frac{a_n}{b_n}\left(=-\frac{1}{x}\right)。
+\]
+
+反之，若 $\dfrac{a_1}{b_1}=\dfrac{a_2}{b_2}=\cdots=\dfrac{a_n}{b_n}=p$，则 $a_i=pb_i$ 对每个 $i$ 成立，于是
+\[
+\left(\sum_{i=1}^na_ib_i\right)^2=p^2\left(\sum_{i=1}^nb_i^2\right)^2=\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)。
+\]
+\end{solution}
+
+\part
+\begin{subparts}
+\subpart 证明
+\[
+\left(\frac{\sum_{i=1}^nx_i}{n}\right)^2\le\frac{\sum_{i=1}^nx_i^2}{n}，
+\]
+其中 $x_1,x_2,\ldots,x_n$ 为实数。
+\begin{solution}
+在(a)中取 $a_i=x_i$，$b_i=1$（对所有 $i=1,2,\ldots,n$），得
+\[
+\left(\sum_{i=1}^nx_i\right)^2\le\left(\sum_{i=1}^nx_i^2\right)\cdot n。
+\]
+两边除以 $n^2$ 即得
+\[
+\left(\frac{\sum_{i=1}^nx_i}{n}\right)^2\le\frac{\sum_{i=1}^nx_i^2}{n}。
+\]
+\end{solution}
+
+\subpart 证明
+\[
+\left(\sum_{i=1}^n\lambda_ix_i\right)^2\le\left(\sum_{i=1}^n\lambda_i\right)\left(\sum_{i=1}^n\lambda_ix_i^2\right)，
+\]
+其中 $x_1,x_2,\ldots,x_n$ 为实数，$\lambda_1,\lambda_2,\ldots,\lambda_n$ 为正数。求使等号成立的充要条件。
+\begin{solution}
+在(a)中取 $b_i=\sqrt{\lambda_i}$，$a_i=\sqrt{\lambda_i}\,x_i$（对所有 $i=1,2,\ldots,n$），得
+\[
+\left(\sum_{i=1}^n\lambda_ix_i\right)^2\le\left(\sum_{i=1}^n\lambda_i\right)\left(\sum_{i=1}^n\lambda_ix_i^2\right)。
+\]
+等号成立的充要条件为
+\[
+\frac{\sqrt{\lambda_1}x_1}{\sqrt{\lambda_1}}=\frac{\sqrt{\lambda_2}x_2}{\sqrt{\lambda_2}}=\cdots=\frac{\sqrt{\lambda_n}x_n}{\sqrt{\lambda_n}}，
+\]
+即 $x_1=x_2=\cdots=x_n$。
+\end{solution}
+
+\subpart 利用(b)(ii)或其他方法，证明
+\[
+\left(\frac{y_1}{t}+\frac{y_2}{t^2}+\cdots+\frac{y_n}{t^n}\right)^2<\frac{y_1^2}{t}+\frac{y_2^2}{t^2}+\cdots+\frac{y_n^2}{t^n}，
+\]
+其中 $y_1,y_2,\ldots,y_n$ 为不全为零的实数，且 $t\ge2$。
+\begin{solution}
+在(b)(ii)中取 $\lambda_i=\dfrac{1}{t^i}$，$x_i=y_i$，得
+\[
+\left(\sum_{i=1}^n\frac{1}{t^i}\cdot y_i\right)^2\le\left(\sum_{i=1}^n\frac{1}{t^i}\right)\left(\sum_{i=1}^n\frac{1}{t^i}y_i^2\right)。
+\]
+由于
+\[
+\sum_{i=1}^n\frac{1}{t^i}=\frac{\frac{1}{t}\left(1-\frac{1}{t^n}\right)}{1-\frac{1}{t}}=\frac{1}{t-1}\left(1-\frac{1}{t^n}\right)，
+\]
+且 $t\ge2$，所以 $\displaystyle\sum_{i=1}^n\frac{1}{t^i}<1$。
+
+因此
+\[
+\left(\sum_{i=1}^n\frac{y_i}{t^i}\right)^2<\sum_{i=1}^n\frac{y_i^2}{t^i}，
+\]
+即
+\[
+\left(\frac{y_1}{t}+\frac{y_2}{t^2}+\cdots+\frac{y_n}{t^n}\right)^2<\frac{y_1^2}{t}+\frac{y_2^2}{t^2}+\cdots+\frac{y_n^2}{t^n}。
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $\mathrm{f}(x)=x^3-3px+1$，其中 $p\in\mathbb{R}$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明方程 $\mathrm{f}(x)=0$ 至少有一个实根。
+\begin{solution}
+设 $A,B$ 为足够大的正数。由于
+\[
+\mathrm{f}(x)=x^3\left(1-\frac{3p}{x^2}+\frac{1}{x^3}\right)，
+\]
+所以 $\mathrm{f}(A)>0$ 及 $\mathrm{f}(-B)<0$。由介值定理，方程 $\mathrm{f}(x)=0$ 至少有一个实根。
+\end{solution}
+
+\subpart 利用微分法或其他方法，证明若 $p\le0$，则方程 $\mathrm{f}(x)=0$ 有且只有一个实根。
+\begin{solution}
+$\mathrm{f}'(x)=3x^2-3p$。
+
+当 $p\le0$ 时，对所有 $x\ne0$，$\mathrm{f}'(x)>0$，所以 $\mathrm{f}(x)$ 对所有 $x$ 严格递增。故方程 $\mathrm{f}(x)=0$ 至多有一个实根。
+
+结合(i)，当 $p\le0$ 时，方程 $\mathrm{f}(x)=0$ 有且只有一个实根。
+\end{solution}
+
+\subpart 若 $p>0$，就下列各情况求 $p$ 的取值范围：
+\begin{subsubparts}
+\subsubpart 方程 $\mathrm{f}(x)=0$ 恰有一个实根；
+\subsubpart 方程 $\mathrm{f}(x)=0$ 恰有两个相异实根；
+\subsubpart 方程 $\mathrm{f}(x)=0$ 有三个相异实根。
+\end{subsubparts}
+\begin{solution}
+注意 $\mathrm{f}''(x)=6x$。若 $p>0$，则
+\[
+\mathrm{f}'(x)=0\iff x=\pm\sqrt{p}。
+\]
+由于 $\mathrm{f}''(-\sqrt{p})<0$ 及 $\mathrm{f}''(\sqrt{p})>0$，所以 $\mathrm{f}(x)$ 的极大值为
+\[
+\mathrm{f}(-\sqrt{p})=2p^{\frac32}+1，
+\]
+极小值为
+\[
+\mathrm{f}(\sqrt{p})=-2p^{\frac32}+1。
+\]
+
+(1) 方程 $\mathrm{f}(x)=0$ 恰有一个实根，当且仅当
+\[
+\left(2p^{\frac32}+1\right)\left(-2p^{\frac32}+1\right)>0，
+\]
+即 $0<p<\dfrac{1}{\sqrt[3]{4}}$。
+
+(2) 方程 $\mathrm{f}(x)=0$ 恰有两个相异实根，当且仅当
+\[
+2p^{\frac32}+1=0\quad\text{或}\quad -2p^{\frac32}+1=0，
+\]
+即 $p=\dfrac{1}{\sqrt[3]{4}}$。
+
+(3) 方程 $\mathrm{f}(x)=0$ 有三个相异实根，当且仅当
+\[
+\left(2p^{\frac32}+1\right)\left(-2p^{\frac32}+1\right)<0，
+\]
+即 $p>\dfrac{1}{\sqrt[3]{4}}$。
+\end{solution}
+\end{subparts}
+
+\part 设 $\mathrm{g}(x)=x^4+4x+a$，其中 $a\in\mathbb{R}$。
+\begin{subparts}
+\subpart 证明方程 $\mathrm{g}(x)=0$ 至多有两个实根。
+\begin{solution}
+\[
+\mathrm{g}'(x)=4\left(x^3+1\right),\qquad \mathrm{g}''(x)=12x^2>0\quad\text{对所有 }x\ne0。
+\]
+由(a)(ii)，方程 $\mathrm{g}'(x)=0$ 有且只有一个实根，且它给出 $\mathrm{g}(x)$ 的极小值。故方程 $\mathrm{g}(x)=0$ 至多有两个实根。
+\end{solution}
+
+\subpart 证明方程 $\mathrm{g}(x)=0$ 有两个相异实根当且仅当 $a<3$。
+\begin{solution}
+$\mathrm{g}'(x)=0$ 当且仅当 $x=-1$，故 $\mathrm{g}(x)$ 的极小值为
+\[
+\mathrm{g}(-1)=1-4+a=a-3。
+\]
+方程 $\mathrm{g}(x)=0$ 有两个相异实根当且仅当 $a-3<0$，即 $a<3$。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $A$ 为 $3\times3$ 矩阵，满足 $A^3+A^2+A+I=0$，其中 $I$ 为 $3\times3$ 单位矩阵。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明 $A$ 有逆矩阵，并用 $A$ 表示 $A^{-1}$。
+\begin{solution}
+由于 $A^3+A^2+A+I=0$，所以
+\[
+A\left(-A^2-A-I\right)=\left(-A^2-A-I\right)A=I。
+\]
+故 $A$ 有逆矩阵，且
+\[
+A^{-1}=-\left(A^2+A+I\right)。
+\]
+\end{solution}
+
+\subpart 证明 $A^4=I$。
+\begin{solution}
+由于 $A^3+A^2+A+I=0$，所以
+\[
+(A-I)\left(A^3+A^2+A+I\right)=0，
+\]
+即 $A^4-I=0$，故 $A^4=I$。
+\end{solution}
+
+\subpart 证明 $\left(A^{-1}\right)^3+\left(A^{-1}\right)^2+A^{-1}+I=0$。
+\begin{solution}
+\begin{align*}
+\left(A^{-1}\right)^3+\left(A^{-1}\right)^2+A^{-1}+I
+&= A^4\left[\left(A^{-1}\right)^3+\left(A^{-1}\right)^2+A^{-1}+I\right]\qquad\left(\because A^4=I\right)\\
+&= A+A^2+A^3+A^4\\
+&= -I+I\qquad\left(\because A^3+A^2+A=-I,\ A^4=I\right)\\
+&= 0。
+\end{align*}
+\end{solution}
+
+\subpart 求一个 $3\times3$ 可逆矩阵 $B$，使得 $B^3+B^2+B+I\ne0$。
+\begin{solution}
+取单位矩阵 $I$ 作为 $B$，即 $B=I$。由于
+\[
+I^3+I^2+I+I=4I\ne0，
+\]
+且 $\left|I\right|\ne0$，故 $I$ 为一个满足要求的可逆矩阵。
+\end{solution}
+\end{subparts}
+
+\part 设
+\[
+X=\begin{pmatrix}1&1&1\\-1&-1&0\\-1&0&-1\end{pmatrix}。
+\]
+\begin{subparts}
+\subpart 利用(a)(i)或其他方法，求 $X^{-1}$。
+\begin{solution}
+计算得
+\[
+X^2=\begin{pmatrix}-1&0&0\\0&0&-1\\0&-1&0\end{pmatrix},\qquad X^3=\begin{pmatrix}-1&-1&-1\\1&0&1\\1&1&0\end{pmatrix}。
+\]
+可验证 $X^3+X^2+X+I=0$。由(a)(i)，
+\[
+X^{-1}=-\left(X^2+X+I\right)=\begin{pmatrix}-1&-1&-1\\1&0&1\\1&1&0\end{pmatrix}。
+\]
+\end{solution}
+
+\subpart 设 $n$ 为正整数，求 $X^n$。
+\begin{solution}
+由于 $X^3=X^{-1}$，所以 $X^4=I$。设 $p$ 为正整数，则
+
+当 $n=4p$ 时，$X^n=I$。
+
+当 $n=4p+1$ 时，
+\[
+X^n=X=\begin{pmatrix}1&1&1\\-1&-1&0\\-1&0&-1\end{pmatrix}。
+\]
+
+当 $n=4p+2$ 时，
+\[
+X^n=X^2=\begin{pmatrix}-1&0&0\\0&0&-1\\0&-1&0\end{pmatrix}。
+\]
+
+当 $n=4p+3$ 时，
+\[
+X^n=X^3=\begin{pmatrix}-1&-1&-1\\1&0&1\\1&1&0\end{pmatrix}。
+\]
+\end{solution}
+
+\subpart 求两个异于 $X$ 的 $3\times3$ 矩阵 $Y$ 和 $Z$，使得
+\[
+Y^3+Y^2+Y+I=0,\qquad Z^3+Z^2+Z+I=0。
+\]
+\begin{solution}
+设 $Y=-I$，则
+\[
+Y^3+Y^2+Y+I=-I+I-I+I=0。
+\]
+故 $Y=-I$ 是一个可行的答案。
+
+设 $Z=X^3$，则
+\[
+Z^3+Z^2+Z+I=X^9+X^6+X^3+I=X+X^2+X^3+I=0。
+\]
+故 $Z=X^3$ 是另一个可行的答案。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ========== Paper 2 ==========
+
+\question
+设 $\mathrm{f}:\mathbb{R}\to\mathbb{R}$ 为连续函数，满足下列条件：
+\begin{itemize}
+\item[(i)] $\displaystyle\lim_{x\to0}\frac{\mathrm{f}(x)-1}{x}=1$；
+\item[(ii)] $\mathrm{f}(x+y)=\mathrm{f}(x)\mathrm{f}(y)$ 对所有 $x$ 和 $y$ 成立。
+\end{itemize}
+\begin{parts}
+\part 证明 $\mathrm{f}'(x)$ 存在，且对每个 $x\in\mathbb{R}$，$\mathrm{f}'(x)=\mathrm{f}(x)$。
+\begin{solution}
+\begin{align*}
+\lim_{h\to0}\frac{\mathrm{f}(x+h)-\mathrm{f}(x)}{h}
+&= \lim_{h\to0}\frac{\mathrm{f}(x)\cdot\mathrm{f}(h)-\mathrm{f}(x)}{h}\\
+&= \lim_{h\to0}\frac{\mathrm{f}(h)-1}{h}\cdot\mathrm{f}(x)\\
+&= \mathrm{f}(x)。
+\end{align*}
+故 $\mathrm{f}'(x)$ 存在，且 $\mathrm{f}'(x)=\mathrm{f}(x)$。
+\end{solution}
+
+\part 通过考虑 $\dfrac{\mathrm{f}(x)}{e^x}$ 的导数，证明 $\mathrm{f}(x)=e^x$。
+\begin{solution}
+由(a)，
+\[
+\frac{d}{dx}\left(\frac{\mathrm{f}(x)}{e^x}\right)=\frac{e^x\mathrm{f}'(x)-e^x\mathrm{f}(x)}{e^{2x}}=0。
+\]
+故 $\mathrm{f}(x)=Ce^x$，其中 $C$ 为常数。代入 $x=0$ 得 $C=\mathrm{f}(0)$。
+
+由(ii)，$\mathrm{f}(0+0)=\left[\mathrm{f}(0)\right]^2$，即 $\mathrm{f}(0)=0$ 或 $\mathrm{f}(0)=1$。
+
+由(i)，$\displaystyle\lim_{x\to0}\left(\mathrm{f}(x)-1\right)=0$，即 $\displaystyle\lim_{x\to0}\mathrm{f}(x)=1$，故 $\mathrm{f}(0)=1$。
+
+因此 $C=\mathrm{f}(0)=1$，故 $\mathrm{f}(x)=e^x$。
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 求
+\[
+\lim_{x\to0^+}\left(\frac{1}{x}\right)^{\sin x}。
+\]
+\begin{solution}
+设 $y=\left(\dfrac{1}{x}\right)^{\sin x}$，则对 $x>0$，
+\[
+\ln y=-\sin x\ln x。
+\]
+\begin{align*}
+\lim_{x\to0^+}\ln y
+&= -\lim_{x\to0^+}\sin x\ln x\\
+&= -\lim_{x\to0^+}\frac{\ln x}{\csc x}\\
+&= \lim_{x\to0^+}\frac{\frac{1}{x}}{\cot x\csc x}\\
+&= \lim_{x\to0^+}\frac{\sin x}{x}\cdot\tan x\\
+&= 0。
+\end{align*}
+故
+\[
+\lim_{x\to0^+}y=e^0=1。
+\]
+\end{solution}
+
+\part 设函数 $\mathrm{f}(t)$ 定义为：当 $t\ne0$ 时，$\mathrm{f}(t)=\dfrac{\sin t}{t}$；当 $t=0$ 时，$\mathrm{f}(t)=1$。求
+\[
+\lim_{x\to0}\frac{\int_0^x\mathrm{f}(t)\,dt-x}{x^3}。
+\]
+\begin{solution}
+由于 $\mathrm{f}(t)$ 对所有 $t$ 连续，由微积分基本定理，
+\[
+\frac{d}{dx}\int_0^x\mathrm{f}(t)\,dt=\mathrm{f}(x)。
+\]
+\begin{align*}
+\lim_{x\to0}\frac{\int_0^x\mathrm{f}(t)\,dt-x}{x^3}
+&= \lim_{x\to0}\frac{\mathrm{f}(x)-1}{3x^2}\\
+&= \lim_{x\to0}\frac{\frac{\sin x}{x}-1}{3x^2}\\
+&= \lim_{x\to0}\frac{\sin x-x}{3x^3}\\
+&= \lim_{x\to0}\frac{\cos x-1}{9x^2}\\
+&= \lim_{x\to0}\frac{-\sin x}{18x}\\
+&= -\frac{1}{18}。
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 求
+\[
+\int e^{-x}\sin x\,dx。
+\]
+\begin{solution}
+\begin{align*}
+\int e^{-x}\sin x\,dx
+&= -\int\sin x\,d\left(e^{-x}\right)\\
+&= -e^{-x}\sin x+\int e^{-x}\cos x\,dx\\
+&= -e^{-x}\sin x-\int\cos x\,d\left(e^{-x}\right)\\
+&= -e^{-x}\sin x-e^{-x}\cos x-\int e^{-x}\sin x\,dx。
+\end{align*}
+移项整理得
+\[
+\int e^{-x}\sin x\,dx=-\frac{e^{-x}}{2}\left(\sin x+\cos x\right)+C。
+\]
+\end{solution}
+
+\part 设 $\mathrm{f}:\mathbb{R}\to[0,\infty)$ 为以 $T$ 为周期的周期函数。
+\begin{subparts}
+\subpart 证明对任意正整数 $k$，
+\[
+\int_{a+kT}^{b+kT}e^{-x}\mathrm{f}(x)\,dx=e^{-kT}\int_a^be^{-x}\mathrm{f}(x)\,dx。
+\]
+\begin{solution}
+设 $x=y+kT$，则
+\begin{align*}
+\int_{a+kT}^{b+kT}e^{-x}\mathrm{f}(x)\,dx
+&= \int_a^be^{-(y+kT)}\mathrm{f}(y+kT)\,dy\\
+&= e^{-kT}\int_a^be^{-y}\mathrm{f}(y)\,dy\\
+&= e^{-kT}\int_a^be^{-x}\mathrm{f}(x)\,dx。
+\end{align*}
+\end{solution}
+
+\subpart 设 $\displaystyle I_n=\int_0^{nT}e^{-x}\mathrm{f}(x)\,dx$。证明对任意正整数 $n$，
+\[
+I_n=\frac{1-e^{-nT}}{1-e^{-T}}I_1。
+\]
+\begin{solution}
+\begin{align*}
+I_n
+&= \int_0^Te^{-x}\mathrm{f}(x)\,dx+\int_{0+T}^{T+T}e^{-x}\mathrm{f}(x)\,dx+\cdots+\int_{0+(n-1)T}^{T+(n-1)T}e^{-x}\mathrm{f}(x)\,dx\\
+&= I_1+e^{-T}I_1+\cdots+e^{-(n-1)T}I_1\\
+&= \frac{1-e^{-nT}}{1-e^{-T}}I_1。
+\end{align*}
+\end{solution}
+
+\subpart 若 $\ell$ 为正数，且 $n$ 为正整数，使得 $nT\le\ell\le(n+1)T$，证明
+\[
+\frac{1-e^{-nT}}{1-e^{-T}}I_1\le\int_0^\ell e^{-x}\mathrm{f}(x)\,dx\le\frac{1-e^{-(n+1)T}}{1-e^{-T}}I_1。
+\]
+因此，求以 $I_1$ 和 $T$ 表示的反常积分 $\displaystyle\int_0^\infty e^{-x}\mathrm{f}(x)\,dx$。
+\begin{solution}
+由于 $\mathrm{f}(x)\ge0$，所以 $e^{-x}\mathrm{f}(x)\ge0$。因此
+\[
+I_n=\int_0^{nT}e^{-x}\mathrm{f}(x)\,dx\le\int_0^\ell e^{-x}\mathrm{f}(x)\,dx\le\int_0^{(n+1)T}e^{-x}\mathrm{f}(x)\,dx=I_{n+1}，
+\]
+即
+\[
+\frac{1-e^{-nT}}{1-e^{-T}}I_1\le\int_0^\ell e^{-x}\mathrm{f}(x)\,dx\le\frac{1-e^{-(n+1)T}}{1-e^{-T}}I_1。
+\]
+
+当 $\ell\to\infty$ 时，$n\to\infty$，且
+\[
+\lim_{n\to\infty}\frac{1-e^{-(n+1)T}}{1-e^{-T}}I_1=\lim_{n\to\infty}\frac{1-e^{-nT}}{1-e^{-T}}I_1=\frac{I_1}{1-e^{-T}}。
+\]
+故
+\[
+\int_0^\infty e^{-x}\mathrm{f}(x)\,dx=\lim_{\ell\to\infty}\int_0^\ell e^{-x}\mathrm{f}(x)\,dx=\frac{I_1}{1-e^{-T}}。
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用(a)及(b)(iii)的结果，求
+\[
+\int_0^\infty e^{-x}\left|\sin x\right|\,dx
+\]
+的值。
+\begin{solution}
+设 $\mathrm{f}(x)=\left|\sin x\right|$，则
+\[
+\mathrm{f}(x+\pi)=\left|\sin(x+\pi)\right|=\left|-\sin x\right|=\mathrm{f}(x)，
+\]
+故 $\mathrm{f}$ 是以 $\pi$ 为周期的周期函数。
+
+由(b)(iii)，
+\begin{align*}
+\int_0^\infty e^{-x}\left|\sin x\right|\,dx
+&= \frac{1}{1-e^{-\pi}}\int_0^\pi e^{-x}\sin x\,dx\\
+&= \frac{1}{1-e^{-\pi}}\left[-\frac{e^{-x}}{2}\left(\sin x+\cos x\right)\right]_0^\pi\\
+&= \frac{e^{-\pi}+1}{2\left(1-e^{-\pi}\right)}\\
+&= \frac{e^\pi+1}{2\left(e^\pi-1\right)}。
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+设 $\mathrm{f}$ 和 $\mathrm{g}$ 为定义在 $[0,1]$ 上的连续函数，其中 $\mathrm{f}$ 为递减函数，且对所有 $x\in[0,1]$，$0\le\mathrm{g}(x)\le1$。对 $x\in[0,1]$，定义 $\mathrm{G}(x)=\displaystyle\int_0^x\mathrm{g}(t)\,dt$ 及
+\[
+\varphi(x)=\int_0^{\mathrm{G}(x)}\mathrm{f}(t)\,dt-\int_0^x\mathrm{f}(t)\mathrm{g}(t)\,dt。
+\]
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明 $\mathrm{G}(x)\le x$。因此证明对所有 $x\in(0,1)$，$\varphi'(x)\ge0$。
+\begin{solution}
+由于 $0\le\mathrm{g}(t)\le1$，
+\[
+\mathrm{G}(x)=\int_0^x\mathrm{g}(t)\,dt\le\int_0^x1\,dt=x。
+\]
+
+\begin{align*}
+\varphi'(x)
+&= \mathrm{f}\left(\mathrm{G}(x)\right)\cdot\mathrm{G}'(x)-\mathrm{f}(x)\mathrm{g}(x)\\
+&= \mathrm{f}\left(\mathrm{G}(x)\right)\cdot\mathrm{g}(x)-\mathrm{f}(x)\mathrm{g}(x)。
+\end{align*}
+由于 $\mathrm{f}$ 递减，且 $\mathrm{G}(x)\le x$，所以 $\mathrm{f}\left(\mathrm{G}(x)\right)\ge\mathrm{f}(x)$。因此
+\[
+\varphi'(x)\ge\mathrm{f}(x)\mathrm{g}(x)-\mathrm{f}(x)\mathrm{g}(x)=0\qquad\left(\because\ 0\le\mathrm{g}(x)\le1\right)。
+\]
+\end{solution}
+
+\subpart 求 $\varphi(0)$ 的值，因此证明
+\[
+\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt\le\int_0^{\mathrm{G}(1)}\mathrm{f}(t)\,dt。
+\]
+\begin{solution}
+由于 $\mathrm{G}(0)=\displaystyle\int_0^0\mathrm{g}(t)\,dt=0$，所以
+\[
+\varphi(0)=\int_0^{\mathrm{G}(0)}\mathrm{f}(t)\,dt-\int_0^0\mathrm{f}(t)\mathrm{g}(t)\,dt=\int_0^0\mathrm{f}(t)\,dt=0。
+\]
+
+由于 $\varphi'(x)\ge0$ 对所有 $x\in(0,1)$ 成立，且 $\varphi$ 在 $[0,1]$ 上连续，所以 $\varphi(1)\ge\varphi(0)=0$，即
+\[
+\varphi(1)=\int_0^{\mathrm{G}(1)}\mathrm{f}(t)\,dt-\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt\ge0。
+\]
+故
+\[
+\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt\le\int_0^{\mathrm{G}(1)}\mathrm{f}(t)\,dt。
+\]
+\end{solution}
+\end{subparts}
+
+\part 设对所有 $x\in[0,1]$，$\mathrm{H}(x)=\displaystyle\int_0^x\left[1-\mathrm{g}(t)\right]\,dt$。
+\begin{subparts}
+\subpart 证明 $\mathrm{G}(1)+\mathrm{H}(1)=1$。
+\begin{solution}
+\begin{align*}
+\mathrm{G}(1)+\mathrm{H}(1)
+&= \int_0^1\mathrm{g}(t)\,dt+\int_0^1\left[1-\mathrm{g}(t)\right]\,dt\\
+&= \int_0^11\,dt\\
+&= 1。
+\end{align*}
+\end{solution}
+
+\subpart 利用(a)(ii)，证明
+\[
+\int_{1-\mathrm{G}(1)}^1\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt。
+\]
+\begin{solution}
+由于 $0\le\mathrm{g}(t)\le1$，所以 $0\le1-\mathrm{g}(t)\le1$。把 $\mathrm{g}(t)$ 换成 $1-\mathrm{g}(t)$，由(a)(ii)，
+\[
+\int_0^1\mathrm{f}(t)\left[1-\mathrm{g}(t)\right]\,dt\le\int_0^{\mathrm{H}(1)}\mathrm{f}(t)\,dt=\int_0^{1-\mathrm{G}(1)}\mathrm{f}(t)\,dt。
+\]
+因此
+\[
+\int_0^1\mathrm{f}(t)\,dt-\int_0^{1-\mathrm{G}(1)}\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt，
+\]
+即
+\[
+\int_{1-\mathrm{G}(1)}^1\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\mathrm{g}(t)\,dt。
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用(a)(ii)及(b)(ii)的结果，证明
+\[
+\int_{\frac{n}{n+1}}^1\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\cdot t^n\,dt\le\int_0^{\frac{1}{n+1}}\mathrm{f}(t)\,dt，
+\]
+其中 $n$ 为正整数。因此证明
+\[
+\lim_{n\to\infty}\int_0^1\mathrm{f}(t)\cdot t^n\,dt=0。
+\]
+\begin{solution}
+取 $\mathrm{g}(x)=x^n$，则对所有 $x\in[0,1]$，$0\le\mathrm{g}(x)\le1$，且
+\[
+\mathrm{G}(1)=\int_0^1t^n\,dt=\frac{1}{n+1}。
+\]
+代入(a)(ii)及(b)(ii)的结果，
+\[
+\int_{1-\frac{1}{n+1}}^1\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\cdot t^n\,dt\le\int_0^{\frac{1}{n+1}}\mathrm{f}(t)\,dt，
+\]
+即
+\[
+\int_{\frac{n}{n+1}}^1\mathrm{f}(t)\,dt\le\int_0^1\mathrm{f}(t)\cdot t^n\,dt\le\int_0^{\frac{1}{n+1}}\mathrm{f}(t)\,dt。
+\]
+
+由于 $\displaystyle\lim_{n\to\infty}\frac{n}{n+1}=1$ 及 $\displaystyle\lim_{n\to\infty}\frac{1}{n+1}=0$，所以
+\[
+\lim_{n\to\infty}\int_{\frac{n}{n+1}}^1\mathrm{f}(t)\,dt=\lim_{n\to\infty}\int_0^{\frac{1}{n+1}}\mathrm{f}(t)\,dt=0。
+\]
+故
+\[
+\lim_{n\to\infty}\int_0^1\mathrm{f}(t)\cdot t^n\,dt=0。
+\]
+\end{solution}
+\end{parts}
+
+\question
+考虑抛物线 $C_1:y^2=4(x+1)$ 及 $C_2:y^2=4x$。设 $P\left(p^2-1,2p\right)$ 为 $C_1$ 上的一点。由 $P$ 向 $C_2$ 所作的两条切线与 $C_2$ 分别相切于点 $S\left(s^2,2s\right)$ 及 $T\left(t^2,2t\right)$。
+\begin{parts}
+\part 求 $PS$ 和 $PT$ 的方程，因此证明 $s+t=2p$，$st=p^2-1$。
+\begin{solution}
+对 $C_2$，$\dfrac{dy}{dx}=\dfrac{2}{y}$。故 $PS$ 的方程为
+\[
+y-2s=\frac{2}{2s}\left(x-s^2\right)，
+\]
+即 $x-sy+s^2=0$。同理 $PT$ 的方程为
+\[
+x-ty+t^2=0。
+\]
+
+由于 $P$ 在两切线上，
+\[
+\left(p^2-1\right)-2ps+s^2=0,\qquad \left(p^2-1\right)-2pt+t^2=0。
+\]
+故 $s,t$ 为方程 $\left(p^2-1\right)-2px+x^2=0$ 的两根，所以
+\[
+s+t=2p,\qquad st=p^2-1。
+\]
+\end{solution}
+
+\part 设 $Q\left(q^2,2q\right)$ 为 $C_2$ 上弧 $ST$ 上的一点。证明 $\triangle SQT$ 的面积取得最大值当且仅当 $q=p$。
+\begin{solution}
+\begin{align*}
+\begin{vmatrix}q^2&2q&1\\s^2&2s&1\\t^2&2t&1\end{vmatrix}
+&= 2\left\{q^2\begin{vmatrix}s&1\\t&1\end{vmatrix}-q\begin{vmatrix}s^2&1\\t^2&1\end{vmatrix}+\begin{vmatrix}s^2&s\\t^2&t\end{vmatrix}\right\}\\
+&= 2\left\{(s-t)q^2-\left(s^2-t^2\right)q+st(s-t)\right\}\\
+&= 2(s-t)\left[q^2-(s+t)q+st\right]。
+\end{align*}
+所以
+\[
+\text{$\triangle SQT$ 的面积}=\left|s-t\right|\cdot\left|q^2-(s+t)q+st\right|。
+\]
+由(a)的结果，
+\[
+\left|s-t\right|=\sqrt{(s+t)^2-4st}=\sqrt{(2p)^2-4\left(p^2-1\right)}=2。
+\]
+
+又 $\triangle SQT$ 的面积 $=2\left|q^2-2pq+p^2-1\right|=2\left|(q-p)^2-1\right|$。
+
+由于 $p=\dfrac{s+t}{2}$，$(q-p)^2\le1$（因 $Q$ 在弧 $ST$ 上），且 $\left|s-t\right|=2$，所以面积取得最大值当且仅当 $q=p$。
+\end{solution}
+
+\part 设 $Q$ 为(b)中使 $\triangle SQT$ 面积最大的点。若直线 $PQ$ 与弦 $ST$ 相交于 $M$，求当 $P$ 沿 $C_1$ 移动时，$M$ 的轨迹方程。
+\begin{solution}
+$ST$ 的方程为
+\[
+y-2s=\frac{2(t-s)}{t^2-s^2}\left(x-s^2\right)，
+\]
+即
+\[
+(s+t)y=2x+2st。
+\]
+由(a)的结果，
+\[
+py=x+\left(p^2-1\right)\qquad\cdots\cdots(1)。
+\]
+
+$PQ$ 的方程为（当 $q=p$ 时，$Q$ 与 $P$ 的纵坐标相同）
+\[
+y=2p\qquad\cdots\cdots(2)。
+\]
+
+由 $(1)$ 及 $(2)$ 消去 $p$，
+\[
+\left(\frac{y}{2}\right)y=x+\left(\frac{y}{2}\right)^2-1，
+\]
+即
+\[
+y^2=4(x-1)。
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $\mathrm{g}(x)$ 为定义在 $[a,b]$ 上连续、在 $(a,b)$ 内可微的函数，且 $\mathrm{g}'(x)$ 在 $(a,b)$ 内递减，$\mathrm{g}(a)=\mathrm{g}(b)=0$。利用中值定理，证明存在 $c\in(a,b)$，使得 $\mathrm{g}$ 在 $(a,c)$ 上递增，在 $(c,b)$ 上递减。因此证明对所有 $x\in[a,b]$，$\mathrm{g}(x)\ge0$。
+\begin{solution}
+由中值定理，
+\[
+\frac{\mathrm{g}(b)-\mathrm{g}(a)}{b-a}=\mathrm{g}'(c)
+\]
+对某个 $c\in(a,b)$ 成立。由于 $\mathrm{g}(a)=\mathrm{g}(b)=0$，所以 $\mathrm{g}'(c)=0$。
+
+设 $x_1,x_2\in(a,c)$，$x_1<x_2$。由中值定理，
+\[
+\frac{\mathrm{g}(x_2)-\mathrm{g}(x_1)}{x_2-x_1}=\mathrm{g}'(\xi)
+\]
+对某个 $\xi\in(x_1,x_2)$ 成立。由于 $a<x_1<\xi<x_2<c$ 且 $\mathrm{g}'(x)$ 递减，所以 $\mathrm{g}'(\xi)\ge\mathrm{g}'(c)=0$。故 $\mathrm{g}(x_2)\ge\mathrm{g}(x_1)$，即 $\mathrm{g}$ 在 $(a,c)$ 上递增。
+
+同理，设 $x_3,x_4\in(c,b)$，$x_3<x_4$。由中值定理，
+\[
+\frac{\mathrm{g}(x_4)-\mathrm{g}(x_3)}{x_4-x_3}=\mathrm{g}'(\eta)
+\]
+对某个 $\eta\in(x_3,x_4)$ 成立。由于 $c<x_3<\eta<x_4<b$ 且 $\mathrm{g}'(x)$ 递减，所以 $\mathrm{g}'(\eta)\le\mathrm{g}'(c)=0$。故 $\mathrm{g}(x_4)\le\mathrm{g}(x_3)$，即 $\mathrm{g}$ 在 $(c,b)$ 上递减。
+
+由于 $\mathrm{g}$ 在 $(a,c)$ 上递增，所以对所有 $a<x\le c$，$\mathrm{g}(x)\ge\mathrm{g}(a)=0$。同理，由于 $\mathrm{g}$ 在 $(c,b)$ 上递减，所以对所有 $c\le x<b$，$\mathrm{g}(x)\ge\mathrm{g}(b)=0$。故对所有 $x\in[a,b]$，$\mathrm{g}(x)\ge0$。
+\end{solution}
+
+\part 设 $\mathrm{f}$ 为二阶可微函数，且在开区间 $I$ 内 $\mathrm{f}''(x)\ge0$。设 $a,b,x\in I$，且 $a<x<b$。通过考虑函数
+\[
+\mathrm{g}(x)=(b-x)\mathrm{f}(a)+(x-a)\mathrm{f}(b)-(b-a)\mathrm{f}(x)
+\]
+或用其他方法，证明
+\[
+\mathrm{f}(x)\le\frac{b-x}{b-a}\mathrm{f}(a)+\frac{x-a}{b-a}\mathrm{f}(b)。
+\]
+因此，或用其他方法，证明对所有 $x_1,x_2\in I$，
+\[
+\mathrm{f}\left(\lambda_1x_1+\lambda_2x_2\right)\le\lambda_1\mathrm{f}\left(x_1\right)+\lambda_2\mathrm{f}\left(x_2\right)，
+\]
+其中 $\lambda_1,\lambda_2\ge0$ 且 $\lambda_1+\lambda_2=1$。
+\begin{solution}
+\[
+\mathrm{g}'(x)=-\mathrm{f}(a)+\mathrm{f}(b)-(b-a)\mathrm{f}'(x)，
+\]
+\[
+\mathrm{g}''(x)=-(b-a)\mathrm{f}''(x)\le0\qquad\left(\because\ \mathrm{f}''(x)\ge0\right)。
+\]
+又 $\mathrm{g}(a)=\mathrm{g}(b)=0$。由(a)的结果，对所有 $x\in I$，$\mathrm{g}(x)\ge0$，即
+\[
+(b-x)\mathrm{f}(a)+(x-a)\mathrm{f}(b)-(b-a)\mathrm{f}(x)\ge0。
+\]
+故
+\[
+\mathrm{f}(x)\le\frac{b-x}{b-a}\mathrm{f}(a)+\frac{x-a}{b-a}\mathrm{f}(b)。
+\]
+
+不妨设 $x_1<x_2$，$\lambda_1,\lambda_2>0$。设 $x=\lambda_1x_1+\lambda_2x_2=\lambda_1x_1+(1-\lambda_1)x_2$，则 $x_1<x<x_2$。代入上式（以 $x_1,x_2$ 代替 $a,b$），
+\begin{align*}
+\mathrm{f}\left(\lambda_1x_1+\lambda_2x_2\right)
+&= \mathrm{f}(x)\\
+&\le \frac{x_2-\left[\lambda_1x_1+(1-\lambda_1)x_2\right]}{x_2-x_1}\mathrm{f}\left(x_1\right)+\frac{\left[\lambda_1x_1+(1-\lambda_1)x_2\right]-x_1}{x_2-x_1}\mathrm{f}\left(x_2\right)\\
+&= \lambda_1\mathrm{f}\left(x_1\right)+\lambda_2\mathrm{f}\left(x_2\right)。
+\end{align*}
+\end{solution}
+
+\part 设 $x_1$ 和 $x_2$ 为正数。
+\begin{subparts}
+\subpart 若 $\lambda_1,\lambda_2\ge0$ 且 $\lambda_1+\lambda_2=1$，证明
+\[
+\lambda_1x_1+\lambda_2x_2\ge x_1^{\lambda_1}x_2^{\lambda_2}。
+\]
+\begin{solution}
+设 $\mathrm{f}(x)=-\ln x$，则 $\mathrm{f}'(x)=-\dfrac{1}{x}$，$\mathrm{f}''(x)=\dfrac{1}{x^2}>0$ 对所有 $x>0$ 成立。
+
+由(b)的结果，当 $\lambda_1,\lambda_2\ge0$ 且 $\lambda_1+\lambda_2=1$ 时，
+\[
+-\ln\left(\lambda_1x_1+\lambda_2x_2\right)\le-\lambda_1\ln x_1-\lambda_2\ln x_2=-\ln\left(x_1^{\lambda_1}x_2^{\lambda_2}\right)。
+\]
+故
+\[
+\lambda_1x_1+\lambda_2x_2\ge e^{\ln\left(x_1^{\lambda_1}x_2^{\lambda_2}\right)}=x_1^{\lambda_1}x_2^{\lambda_2}。
+\]
+\end{solution}
+
+\subpart 若 $\beta_1,\beta_2$ 为正数，证明
+\[
+\left(\frac{\beta_1x_1+\beta_2x_2}{\beta_1+\beta_2}\right)^{\beta_1+\beta_2}\ge x_1^{\beta_1}x_2^{\beta_2}。
+\]
+\begin{solution}
+在(i)中取 $\lambda_k=\dfrac{\beta_k}{\beta_1+\beta_2}$（$k=1,2$），则 $\lambda_1,\lambda_2>0$ 且 $\lambda_1+\lambda_2=1$。由(i)，
+\[
+\frac{\beta_1x_1+\beta_2x_2}{\beta_1+\beta_2}\ge\left(x_1^{\beta_1}x_2^{\beta_2}\right)^{\frac{1}{\beta_1+\beta_2}}，
+\]
+即
+\[
+\left(\frac{\beta_1x_1+\beta_2x_2}{\beta_1+\beta_2}\right)^{\beta_1+\beta_2}\ge x_1^{\beta_1}x_2^{\beta_2}。
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $I_n(\theta)=\displaystyle\int_0^\theta\tan^nu\,du$，其中 $n$ 为非负整数，且 $-\dfrac{\pi}{2}<\theta<\dfrac{\pi}{2}$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明对所有 $n\ge1$，
+\[
+I_{2n}(\theta)=\frac{\tan^{2n-1}\theta}{2n-1}-I_{2n-2}(\theta)。
+\]
+\begin{solution}
+\begin{align*}
+I_{2n}(\theta)
+&= \int_0^\theta\tan^{2n-2}u\left(\sec^2u-1\right)\,du\\
+&= \int_0^\theta\tan^{2n-2}u\sec^2u\,du-\int_0^\theta\tan^{2n-2}u\,du\\
+&= \left[\frac{\tan^{2n-1}u}{2n-1}\right]_0^\theta-I_{2n-2}(\theta)\\
+&= \frac{\tan^{2n-1}\theta}{2n-1}-I_{2n-2}(\theta)。
+\end{align*}
+\end{solution}
+
+\subpart 利用代换 $t=\tan u$，或用其他方法，证明对任意正整数 $n$，
+\[
+\int_0^x\frac{t^{2n}}{1+t^2}\,dt=\frac{x^{2n-1}}{2n-1}-\frac{x^{2n-3}}{2n-3}+\cdots+(-1)^{n-1}\frac{x}{1}+(-1)^n\tan^{-1}x。
+\]
+\begin{solution}
+设 $t=\tan u$，则
+\[
+\int_0^x\frac{t^{2n}}{1+t^2}\,dt=\int_0^{\tan^{-1}x}\frac{\tan^{2n}u}{1+\tan^2u}\cdot\sec^2u\,du=\int_0^{\tan^{-1}x}\tan^{2n}u\,du=I_{2n}\left(\tan^{-1}x\right)。
+\]
+
+由(i)，反复递推，
+\begin{align*}
+I_{2n}\left(\tan^{-1}x\right)
+&= \frac{\tan^{2n-1}\left(\tan^{-1}x\right)}{2n-1}-I_{2n-2}\left(\tan^{-1}x\right)\\
+&= \frac{x^{2n-1}}{2n-1}-I_{2n-2}\left(\tan^{-1}x\right)\\
+&= \frac{x^{2n-1}}{2n-1}-\left(\frac{x^{2n-3}}{2n-3}-I_{2n-4}\left(\tan^{-1}x\right)\right)\\
+&= \frac{x^{2n-1}}{2n-1}-\frac{x^{2n-3}}{2n-3}+\cdots+(-1)^{n-1}\frac{x}{1}+(-1)^nI_0。
+\end{align*}
+由于 $I_0=\displaystyle\int_0^{\tan^{-1}x}du=\tan^{-1}x$，所以
+\[
+\int_0^x\frac{t^{2n}}{1+t^2}\,dt=\frac{x^{2n-1}}{2n-1}-\frac{x^{2n-3}}{2n-3}+\cdots+(-1)^{n-1}\frac{x}{1}+(-1)^n\tan^{-1}x。
+\]
+\end{solution}
+\end{subparts}
+
+\part
+\begin{subparts}
+\subpart 设 $x\ge0$，$n$ 为正整数。证明
+\[
+\frac{x^{2n+1}}{(2n+1)\left(1+x^2\right)}\le\int_0^x\frac{t^{2n}}{1+t^2}\,dt\le\frac{x^{2n+1}}{2n+1}。
+\]
+\begin{solution}
+对 $0\le t\le x$，
+\[
+\frac{t^{2n}}{1+x^2}\le\frac{t^{2n}}{1+t^2}\le t^{2n}。
+\]
+两边对 $t$ 从 $0$ 到 $x$ 积分，
+\[
+\int_0^x\frac{t^{2n}}{1+x^2}\,dt\le\int_0^x\frac{t^{2n}}{1+t^2}\,dt\le\int_0^xt^{2n}\,dt，
+\]
+即
+\[
+\frac{1}{1+x^2}\left[\frac{t^{2n+1}}{2n+1}\right]_0^x\le\int_0^x\frac{t^{2n}}{1+t^2}\,dt\le\left[\frac{t^{2n+1}}{2n+1}\right]_0^x，
+\]
+故
+\[
+\frac{x^{2n+1}}{(2n+1)\left(1+x^2\right)}\le\int_0^x\frac{t^{2n}}{1+t^2}\,dt\le\frac{x^{2n+1}}{2n+1}。
+\]
+\end{solution}
+
+\subpart 利用(a)或其他方法，证明
+\[
+\frac{1}{2(2n+1)}\le\left|\frac{\pi}{4}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\right|\le\frac{1}{2n+1}。
+\]
+\begin{solution}
+由(a)(ii)，
+\[
+\tan^{-1}x+(-1)^n\left(\frac{x^{2n-1}}{2n-1}-\frac{x^{2n-3}}{2n-3}+\cdots+(-1)^{n-1}\frac{x}{1}\right)=(-1)^n\int_0^x\frac{t^{2n}}{1+t^2}\,dt，
+\]
+即
+\[
+\tan^{-1}x-\left(x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+\frac{(-1)^{n-1}x^{2n-1}}{2n-1}\right)=(-1)^n\int_0^x\frac{t^{2n}}{1+t^2}\,dt。
+\]
+故对 $x\ge0$，
+\[
+\left|\tan^{-1}x-\left(x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+\frac{(-1)^{n-1}x^{2n-1}}{2n-1}\right)\right|=\int_0^x\frac{t^{2n}}{1+t^2}\,dt。
+\]
+
+利用(b)(i)的结果，代入 $x=1$，
+\[
+\frac{1}{2(2n+1)}\le\left|\frac{\pi}{4}-\left(1-\frac{1}{3}+\frac{1}{5}-\cdots+\frac{(-1)^{n-1}}{2n-1}\right)\right|\le\frac{1}{2n+1}，
+\]
+即
+\[
+\frac{1}{2(2n+1)}\le\left|\frac{\pi}{4}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\right|\le\frac{1}{2n+1}。
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $\tan\alpha=\dfrac{1}{5}$。求 $\tan2\alpha$ 及 $\tan4\alpha$ 的值，并证明
+\[
+\frac{\pi}{4}=4\tan^{-1}\left(\frac{1}{5}\right)-\tan^{-1}\left(\frac{1}{239}\right)。
+\]
+因此证明
+\[
+\left|\frac{\pi}{4}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\left(\frac{4}{5^{2p-1}}-\frac{1}{239^{2p-1}}\right)\right|\le\frac{1}{2n+1}\left(\frac{4}{5^{2n+1}}+\frac{1}{239^{2n+1}}\right)。
+\]
+\begin{solution}
+\[
+\tan2\alpha=\frac{2\tan\alpha}{1-\tan^2\alpha}=\frac{5}{12},\qquad \tan4\alpha=\frac{2\tan2\alpha}{1-\tan^22\alpha}=\frac{120}{119}。
+\]
+
+\begin{align*}
+\tan\left(4\tan^{-1}\frac{1}{5}-\tan^{-1}\frac{1}{239}\right)
+&= \frac{\tan\left(4\tan^{-1}\frac{1}{5}\right)-\tan\left(\tan^{-1}\frac{1}{239}\right)}{1+\tan\left(4\tan^{-1}\frac{1}{5}\right)\tan\left(\tan^{-1}\frac{1}{239}\right)}\\
+&= \frac{\dfrac{120}{119}-\dfrac{1}{239}}{1+\dfrac{120}{119}\cdot\dfrac{1}{239}}\\
+&= 1。
+\end{align*}
+且 $0<4\tan^{-1}\dfrac{1}{5}-\tan^{-1}\dfrac{1}{239}<\pi$，所以
+\[
+\frac{\pi}{4}=4\tan^{-1}\left(\frac{1}{5}\right)-\tan^{-1}\left(\frac{1}{239}\right)。
+\]
+
+由(b)(i)，对所有 $x\ge0$，
+\[
+\left|\tan^{-1}x-\left(x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+\frac{(-1)^{n-1}x^{2n-1}}{2n-1}\right)\right|=\int_0^x\frac{t^{2n}}{1+t^2}\,dt\le\frac{x^{2n+1}}{2n+1}。
+\]
+
+取 $x=\dfrac{1}{5}$，
+\[
+\left|\tan^{-1}\frac{1}{5}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\left(\frac{1}{5}\right)^{2p-1}\right|\le\frac{1}{(2n+1)\cdot5^{2n+1}}。
+\]
+同理，取 $x=\dfrac{1}{239}$，
+\[
+\left|\tan^{-1}\frac{1}{239}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\left(\frac{1}{239}\right)^{2p-1}\right|\le\frac{1}{(2n+1)\cdot239^{2n+1}}。
+\]
+
+由于 $\dfrac{\pi}{4}=4\tan^{-1}\dfrac{1}{5}-\tan^{-1}\dfrac{1}{239}$，所以
+\begin{align*}
+&\left|\frac{\pi}{4}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\left(\frac{4}{5^{2p-1}}-\frac{1}{239^{2p-1}}\right)\right|\\
+={}&\left|4\left(\tan^{-1}\frac{1}{5}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\cdot\frac{1}{5^{2p-1}}\right)-\left(\tan^{-1}\frac{1}{239}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\cdot\frac{1}{239^{2p-1}}\right)\right|\\
+\le{}&4\left|\tan^{-1}\frac{1}{5}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\cdot\frac{1}{5^{2p-1}}\right|+\left|\tan^{-1}\frac{1}{239}-\sum_{p=1}^n\frac{(-1)^{p-1}}{2p-1}\cdot\frac{1}{239^{2p-1}}\right|\\
+\le{}&4\cdot\frac{1}{(2n+1)\cdot5^{2n+1}}+\frac{1}{(2n+1)\cdot239^{2n+1}}\\
+={}&\frac{1}{2n+1}\left(\frac{4}{5^{2n+1}}+\frac{1}{239^{2n+1}}\right)。
+\end{align*}
+\end{solution}
+\end{parts}
+
+    %==================== Paper 1 ====================
+
+% ---------- P1 Q2 ----------
+\question 对任意正整数 $n$,设 $C_k^n$ 为 $(1+x)^n$ 展开式中 $x^k$ 的系数,求
+\begin{parts}
+\part $C_1^n+C_2^n+C_3^n+\cdots+C_n^n$
+\begin{solution}
+由二项式定理
+\[
+(1+x)^n=C_0^n+C_1^n x+C_2^n x^2+\cdots+C_n^n x^n
+\]
+令 $x=1$,并利用 $C_0^n=1$,得
+\[
+C_1^n+C_2^n+C_3^n+\cdots+C_n^n=2^n-1
+\]
+\end{solution}
+
+\part $C_1^n+2C_2^n+3C_3^n+\cdots+nC_n^n$
+\begin{solution}
+由 $(1+x)^n=C_0^n+C_1^n x+C_2^n x^2+\cdots+C_n^n x^n$,两边对 $x$ 求导,得
+\[
+C_1^n+2C_2^n x+3C_3^n x^2+\cdots+nC_n^n x^{n-1}=n(1+x)^{n-1}\quad\cdots\cdots(*)
+\]
+令 $x=1$,得
+\[
+C_1^n+2C_2^n+3C_3^n+\cdots+nC_n^n=n\left(2^{n-1}\right)
+\]
+\end{solution}
+
+\part $C_1^n+2^2C_2^n+3^2C_3^n+\cdots+n^2C_n^n$
+\begin{solution}
+将 $(*)$ 两边乘以 $x$,得
+\[
+C_1^n x+2C_2^n x^2+3C_3^n x^3+\cdots+nC_n^n x^n=nx(1+x)^{n-1}
+\]
+两边再对 $x$ 求导,得
+\[
+C_1^n+2^2C_2^n x+3^2C_3^n x^2+\cdots+n^2C_n^n x^{n-1}=n(1+x)^{n-1}+n(n-1)x(1+x)^{n-2}
+\]
+令 $x=1$,得
+\begin{align*}
+C_1^n+2^2C_2^n+3^2C_3^n+\cdots+n^2C_n^n&=n\left(2^{n-1}\right)+n(n-1)\left(2^{n-2}\right)\\
+&=2^{n-2}\left(2n+n^2-n\right)\\
+&=2^{n-2}\left(n^2+n\right)\\
+&=n(n+1)\left(2^{n-2}\right)
+\end{align*}
+\end{solution}
+\end{parts}
+
+% ---------- P1 Q4 ----------
+\question 设 $\{x_n\}$ 为正实数数列,其中 $x_1=2$,且 $x_{n+1}=x_n^2-x_n+1$,对所有 $n=1,2,3,\ldots$ 成立。定义
+\[
+S_n=\sum_{i=1}^{n}\frac{1}{x_i}
+\]
+对所有 $n=1,2,3,\ldots$。
+\begin{parts}
+\part 利用数学归纳法证明,对任意正整数 $n$
+\begin{subparts}
+\subpart $x_n>n$
+\begin{solution}
+当 $n=1$ 时,$x_1=2>1$,故命题对 $n=1$ 成立
+
+设对某正整数 $k$,$x_k>k$ 成立,则
+\begin{align*}
+x_{k+1}&=x_k^2-x_k+1\\
+&=x_k(x_k-1)+1\\
+&>k(x_k-1)+1\\
+&\geq k+1
+\end{align*}
+（因 $x_k>k\geq1$,且 $x_k$ 为整数,故 $x_k\geq2$）
+
+故 $x_{k+1}>k+1$,由数学归纳法,对任意正整数 $n$,$x_n>n$
+\end{solution}
+
+\subpart $S_n=1-\dfrac{1}{x_{n+1}-1}$
+\begin{solution}
+当 $n=1$ 时
+\[
+1-\frac{1}{x_2-1}=1-\frac{1}{3-1}=\frac{1}{2}=\frac{1}{x_1}=S_1
+\]
+故命题对 $n=1$ 成立
+
+设对某正整数 $k$,$S_k=1-\dfrac{1}{x_{k+1}-1}$ 成立,则
+\begin{align*}
+S_{k+1}&=S_k+\frac{1}{x_{k+1}}\\
+&=1-\frac{1}{x_{k+1}-1}+\frac{1}{x_{k+1}}\\
+&=1+\frac{-x_{k+1}+x_{k+1}-1}{x_{k+1}^2-x_{k+1}}\\
+&=1-\frac{1}{x_{k+1}^2-x_{k+1}}\\
+&=1-\frac{1}{x_{k+2}-1}
+\end{align*}
+由数学归纳法,对任意正整数 $n$,$S_n=1-\dfrac{1}{x_{n+1}-1}$ 成立
+\end{solution}
+\end{subparts}
+
+\part 利用 (a),或其他方法,证明 $\displaystyle\lim_{n\to\infty}S_n$ 存在
+\begin{solution}
+由 (a)(i),$x_n>n\Rightarrow x_n>0$,故 $\{S_n\}$ 是（严格）递增的（因为 $S_n=\sum_{i=1}^{n}\dfrac{1}{x_i}$）
+
+又由 (a)(ii),$S_n=1-\dfrac{1}{x_{n+1}-1}<1$,故 $\{S_n\}$ 有上界 $1$
+
+因此 $\displaystyle\lim_{n\to\infty}S_n$ 存在
+\end{solution}
+\end{parts}
+
+% ---------- P1 Q9 ----------
+\question
+\begin{parts}
+\part 考虑向量 $\mathbf{a}=(p,q,0)$,$\mathbf{b}=(q,-p,0)$,$\mathbf{c}=(0,0,r)$,其中 $p,q,r$ 均为非零实数。
+\begin{subparts}
+\subpart 证明 $\mathbf{a}$,$\mathbf{b}$,$\mathbf{c}$ 线性无关
+\begin{solution}
+设 $\alpha\mathbf{a}+\beta\mathbf{b}+\gamma\mathbf{c}=\mathbf{0}$,其中 $\alpha,\beta,\gamma\in\mathbb{R}$
+
+则 $\alpha(p,q,0)+\beta(q,-p,0)+\gamma(0,0,r)=\mathbf{0}$,即
+\[
+\begin{cases}
+p\alpha+q\beta=0\\
+q\alpha-p\beta=0\\
+r\gamma=0
+\end{cases}
+\]
+注意到
+\[
+\begin{vmatrix}
+p&q&0\\
+q&-p&0\\
+0&0&r
+\end{vmatrix}
+=-r\left(p^2+q^2\right)\neq0
+\]
+（因 $p,q,r\neq0$）,故该方程组只有零解,即 $\alpha=\beta=\gamma=0$
+
+因此 $\mathbf{a}$,$\mathbf{b}$,$\mathbf{c}$ 线性无关
+\end{solution}
+
+\subpart 设 $\mathbf{d}$ 为 $\mathbb{R}^3$ 中的向量,证明
+\[
+\mathbf{d}=\left(\frac{\mathbf{d}\cdot\mathbf{a}}{|\mathbf{a}|^2}\right)\mathbf{a}+\left(\frac{\mathbf{d}\cdot\mathbf{b}}{|\mathbf{b}|^2}\right)\mathbf{b}+\left(\frac{\mathbf{d}\cdot\mathbf{c}}{|\mathbf{c}|^2}\right)\mathbf{c}
+\]
+\begin{solution}
+设 $\mathbf{d}=(d_1,d_2,d_3)$,考虑关于 $\alpha,\beta,\gamma$ 的方程组
+\[
+\begin{cases}
+p\alpha+q\beta=d_1\\
+q\alpha-p\beta=d_2\\
+r\gamma=d_3
+\end{cases}
+\]
+由 (a)(i) 中的行列式非零,该方程组存在唯一解 $(\alpha,\beta,\gamma)$,故 $\mathbf{d}=\alpha\mathbf{a}+\beta\mathbf{b}+\gamma\mathbf{c}$（对某些 $\alpha,\beta,\gamma\in\mathbb{R}$）
+
+注意到 $\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{c}=\mathbf{c}\cdot\mathbf{a}=0$,于是
+\[
+\mathbf{d}\cdot\mathbf{a}=\alpha\,\mathbf{a}\cdot\mathbf{a}=\alpha|\mathbf{a}|^2\Rightarrow\alpha=\frac{\mathbf{d}\cdot\mathbf{a}}{|\mathbf{a}|^2}
+\]
+同理
+\[
+\beta=\frac{\mathbf{d}\cdot\mathbf{b}}{|\mathbf{b}|^2}\qquad\gamma=\frac{\mathbf{d}\cdot\mathbf{c}}{|\mathbf{c}|^2}
+\]
+因此
+\[
+\mathbf{d}=\left(\frac{\mathbf{d}\cdot\mathbf{a}}{|\mathbf{a}|^2}\right)\mathbf{a}+\left(\frac{\mathbf{d}\cdot\mathbf{b}}{|\mathbf{b}|^2}\right)\mathbf{b}+\left(\frac{\mathbf{d}\cdot\mathbf{c}}{|\mathbf{c}|^2}\right)\mathbf{c}
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $\mathbf{x}$,$\mathbf{y}$,$\mathbf{z}$ 为 $\mathbb{R}^3$ 中线性无关的向量,定义 $\mathbf{u}=\mathbf{x}$,以及
+\[
+\mathbf{v}=\mathbf{y}-\left(\frac{\mathbf{y}\cdot\mathbf{u}}{|\mathbf{u}|^2}\right)\mathbf{u}
+\]
+\begin{subparts}
+\subpart 证明 $\mathbf{v}$ 是非零向量
+\begin{solution}
+设 $\mathbf{v}=\mathbf{0}$,则
+\[
+\mathbf{y}-\frac{\mathbf{y}\cdot\mathbf{x}}{|\mathbf{x}|^2}\mathbf{x}=\mathbf{0}
+\]
+即 $-\dfrac{\mathbf{y}\cdot\mathbf{x}}{|\mathbf{x}|^2}\mathbf{x}+(1)\mathbf{y}+(0)\mathbf{z}=\mathbf{0}$,其中系数 $1\neq0$
+
+故 $\mathbf{x}$,$\mathbf{y}$,$\mathbf{z}$ 线性相关,这与 $\mathbf{x}$,$\mathbf{y}$,$\mathbf{z}$ 线性无关矛盾
+
+因此 $\mathbf{v}$ 是非零向量
+\end{solution}
+
+\subpart 定义
+\[
+\mathbf{w}=\mathbf{z}-\left(\frac{\mathbf{z}\cdot\mathbf{u}}{|\mathbf{u}|^2}\right)\mathbf{u}-\left(\frac{\mathbf{z}\cdot\mathbf{v}}{|\mathbf{v}|^2}\right)\mathbf{v}
+\]
+\begin{subsubparts}
+\subsubpart 证明 $\mathbf{u}$,$\mathbf{v}$,$\mathbf{w}$ 两两正交
+\begin{solution}
+\begin{align*}
+\mathbf{u}\cdot\mathbf{v}&=\mathbf{x}\cdot\left(\mathbf{y}-\frac{\mathbf{y}\cdot\mathbf{x}}{|\mathbf{x}|^2}\mathbf{x}\right)\\
+&=\mathbf{x}\cdot\mathbf{y}-\frac{(\mathbf{y}\cdot\mathbf{x})(\mathbf{x}\cdot\mathbf{x})}{|\mathbf{x}|^2}\\
+&=\mathbf{x}\cdot\mathbf{y}-\mathbf{x}\cdot\mathbf{y}\\
+&=0
+\end{align*}
+\begin{align*}
+\mathbf{v}\cdot\mathbf{w}&=\mathbf{v}\cdot\left(\mathbf{z}-\frac{\mathbf{z}\cdot\mathbf{u}}{|\mathbf{u}|^2}\mathbf{u}-\frac{\mathbf{z}\cdot\mathbf{v}}{|\mathbf{v}|^2}\mathbf{v}\right)\\
+&=\mathbf{v}\cdot\mathbf{z}-\frac{(\mathbf{z}\cdot\mathbf{u})(\mathbf{v}\cdot\mathbf{u})}{|\mathbf{u}|^2}-\frac{(\mathbf{z}\cdot\mathbf{v})(\mathbf{v}\cdot\mathbf{v})}{|\mathbf{v}|^2}\\
+&=\mathbf{v}\cdot\mathbf{z}-\mathbf{v}\cdot\mathbf{z}\\
+&=0
+\end{align*}
+\begin{align*}
+\mathbf{w}\cdot\mathbf{u}&=\left(\mathbf{z}-\frac{\mathbf{z}\cdot\mathbf{u}}{|\mathbf{u}|^2}\mathbf{u}-\frac{\mathbf{z}\cdot\mathbf{v}}{|\mathbf{v}|^2}\mathbf{v}\right)\cdot\mathbf{u}\\
+&=\mathbf{z}\cdot\mathbf{u}-\frac{(\mathbf{z}\cdot\mathbf{u})(\mathbf{u}\cdot\mathbf{u})}{|\mathbf{u}|^2}-\frac{(\mathbf{z}\cdot\mathbf{v})(\mathbf{v}\cdot\mathbf{u})}{|\mathbf{v}|^2}\\
+&=\mathbf{z}\cdot\mathbf{u}-\mathbf{z}\cdot\mathbf{u}\\
+&=0
+\end{align*}
+因此 $\mathbf{u}$,$\mathbf{v}$,$\mathbf{w}$ 两两正交
+\end{solution}
+
+\subsubpart 描述 $\mathbf{w}$ 与含 $\mathbf{x}$,$\mathbf{y}$ 两向量的平面之间的几何关系
+\begin{solution}
+$\mathbf{w}$ 是含 $\mathbf{x}$,$\mathbf{y}$ 两向量的平面的法向量
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+\end{parts}
+
+% ---------- P1 Q10 ----------
+\question
+\begin{parts}
+\part 设 $a,b$ 为非负实数,证明
+\[
+(a+b)^n\geq a^n+na^{n-1}b\qquad\text{对所有 }n=2,3,4,\ldots
+\]
+并写出等号成立的充要条件
+\begin{solution}
+由二项式定理
+\[
+(a+b)^n=a^n+C_1^n a^{n-1}b+C_2^n a^{n-2}b^2+\cdots+C_n^n b^n
+\]
+因 $a\geq0$,$b\geq0$,$n\geq2$,且 $C_1^n=n$,故
+\[
+(a+b)^n\geq a^n+na^{n-1}b
+\]
+等号成立当且仅当 $C_2^n a^{n-2}b^2=C_3^n a^{n-3}b^3=\cdots=C_n^n b^n=0$,即当且仅当 $b=0$
+\end{solution}
+
+\part 设 $\{a_1,a_2,a_3,\ldots\}$ 为满足 $a_1\leq a_2\leq a_3\leq\cdots$ 的正实数数列。对任意正整数 $n$,定义
+\[
+A_n=\frac{a_1+a_2+a_3+\cdots+a_n}{n}\qquad G_n=\left(a_1a_2a_3\cdots a_n\right)^{\frac{1}{n}}
+\]
+\begin{subparts}
+\subpart 证明对所有 $k=1,2,3,\ldots$,$A_{k+1}\geq A_k$
+\begin{solution}
+\begin{align*}
+A_{k+1}-A_k&=\frac{a_1+a_2+\cdots+a_{k+1}}{k+1}-\frac{a_1+a_2+\cdots+a_k}{k}\\
+&=\frac{ka_{k+1}-(a_1+a_2+\cdots+a_k)}{k(k+1)}\\
+&=\frac{(a_{k+1}-a_1)+(a_{k+1}-a_2)+\cdots+(a_{k+1}-a_k)}{k(k+1)}\\
+&\geq0
+\end{align*}
+（因 $a_1\leq a_2\leq\cdots\leq a_{k+1}$）
+
+因此对所有 $k=1,2,3,\ldots$,$A_{k+1}\geq A_k$
+\end{solution}
+
+\subpart 利用 (a),证明对所有 $k=1,2,3,\ldots$,$A_{k+1}^{\,k+1}\geq A_k^{\,k}a_{k+1}$,并由此证明 $A_n\geq G_n$,且 $A_n=G_n$ 当且仅当 $a_1=a_2=a_3=\cdots=a_n$（对所有 $n=1,2,3,\ldots$）
+\begin{solution}
+由 (b)(i),$A_{k+1}-A_k\geq0$,注意 $A_k>0$,$G_k>0$（对所有 $k\in\mathbb{N}$）,于是
+\begin{align*}
+A_{k+1}^{\,k+1}&=\left(A_k+(A_{k+1}-A_k)\right)^{k+1}\\
+&\geq A_k^{\,k+1}+(k+1)A_k^{\,k}(A_{k+1}-A_k)\qquad(\text{由 (a)})\\
+&=A_k^{\,k}\left(A_k+(k+1)(A_{k+1}-A_k)\right)\\
+&=A_k^{\,k}\left((k+1)A_{k+1}-kA_k\right)\\
+&=A_k^{\,k}a_{k+1}
+\end{align*}
+因此对所有 $k=1,2,3,\ldots$,$A_{k+1}^{\,k+1}\geq A_k^{\,k}a_{k+1}$
+
+以下用数学归纳法证明 $A_n\geq G_n$
+
+当 $n=1$ 时,$A_n=A_1=a_1=G_1=G_n$,故命题对 $n=1$ 成立且此时 $A_k=G_k$ 当且仅当 $a_1=a_2=\cdots=a_k$
+
+设对某正整数 $k$,$A_k\geq G_k$,且 $A_k=G_k$ 当且仅当 $a_1=a_2=\cdots=a_k$,则
+\begin{align*}
+A_{k+1}^{\,k+1}&\geq A_k^{\,k}a_{k+1}\\
+&\geq G_k^{\,k}a_{k+1}\qquad(\text{由归纳假设})\\
+&=a_1a_2a_3\cdots a_{k+1}\\
+&=G_{k+1}^{\,k+1}
+\end{align*}
+故 $A_{k+1}\geq G_{k+1}$
+
+又若 $a_1=a_2=\cdots=a_{k+1}$,则
+\[
+A_{k+1}=\frac{a_1+a_2+\cdots+a_{k+1}}{k+1}=a_1\qquad G_{k+1}=\left(a_1a_2\cdots a_{k+1}\right)^{\frac{1}{k+1}}=a_1
+\]
+故 $A_{k+1}=G_{k+1}$
+
+反之若 $A_{k+1}=G_{k+1}$,则由不等式链取等,得 $A_{k+1}-A_k=0$（由 (a)）,且 $a_1=a_2=\cdots=a_k$（由归纳假设）
+
+故 $a_1=a_2=\cdots=a_k$ 且 $\dfrac{a_1+a_2+\cdots+a_{k+1}}{k+1}=\dfrac{a_1+a_2+\cdots+a_k}{k}$,因此 $a_1=a_2=\cdots=a_{k+1}$
+
+即 $A_{k+1}=G_{k+1}$ 当且仅当 $a_1=a_2=\cdots=a_{k+1}$
+
+由数学归纳法,对所有 $n=1,2,3,\ldots$,$A_n\geq G_n$,且 $A_n=G_n$ 当且仅当 $a_1=a_2=a_3=\cdots=a_n$
+\end{solution}
+
+\subpart 设 $n$ 为正整数,利用 (b),证明
+\[
+\frac{n+2}{n+1}>\left(\frac{n+1}{n}\right)^{\frac{n}{n+1}}
+\]
+并由此推出
+\[
+\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^{n}
+\]
+\begin{solution}
+取 $a_1=1$,$a_2=a_3=\cdots=a_n=a_{n+1}=\dfrac{n+1}{n}$
+
+注意到 $a_1,a_2,\ldots,a_{n+1}$ 不全相等（因 $a_1<a_2=a_3=\cdots=a_{n+1}$）,由 (b),得
+\[
+\frac{1+n\left(\dfrac{n+1}{n}\right)}{n+1}>\left((1)\left(\frac{n+1}{n}\right)^n\right)^{\frac{1}{n+1}}
+\]
+即
+\[
+\frac{n+2}{n+1}>\left(\frac{n+1}{n}\right)^{\frac{n}{n+1}}
+\]
+两边同取 $(n+1)$ 次方,得
+\[
+1+\frac{1}{n+1}>\left(1+\frac{1}{n}\right)^{\frac{n}{n+1}}
+\]
+再将两边同取 $(n+1)$ 次方,即得
+\[
+\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^{n}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- P1 Q11 ----------
+\question 考虑方程
+\[
+x^4=ax^2+bx+c\qquad\cdots\cdots(*)
+\]
+其中 $a,b,c$ 均为实数。
+\begin{parts}
+\part 设 $b=0$,解 $(*)$
+\begin{solution}
+当 $b=0$ 时,$(*)$ 变为 $x^4-ax^2-c=0$,于是
+\[
+x^2=\frac{a\pm\sqrt{a^2+4c}}{2}
+\]
+即
+\[
+x=\pm\sqrt{\frac{a\pm\sqrt{a^2+4c}}{2}}
+\]
+\end{solution}
+
+\part 设 $b\neq0$
+\begin{subparts}
+\subpart 证明 $(*)$ 可写成
+\[
+\left(x^2-t\right)^2=(a-2t)x^2+bx+\left(c+t^2\right)
+\]
+其中 $t$ 为任意实数
+\begin{solution}
+\begin{align*}
+x^4=ax^2+bx+c
+&\iff x^4-2tx^2+t^2=ax^2-2tx^2+bx+c+t^2\\
+&\iff \left(x^2-t\right)^2=(a-2t)x^2+bx+\left(c+t^2\right)
+\end{align*}
+\end{solution}
+
+\subpart 证明存在实数 $t_0$,使得方程
+\[
+(a-2t_0)x^2+bx+\left(c+t_0^2\right)=0
+\]
+有重根，并由此推出 $(*)$ 可写成
+\[
+\left(x^2-t_0\right)^2=(a-2t_0)(x-\lambda)^2
+\]
+其中 $\lambda$ 为某实数
+\begin{solution}
+注意到方程 $(a-2t)x^2+bx+(c+t^2)=0$ 有重根
+\[
+\iff a-2t\neq0\ \text{且}\ b^2-4(a-2t)\left(c+t^2\right)=0
+\]
+又注意到若 $b^2-4(a-2t)(c+t^2)=0$,由 $b\neq0$,必有 $a-2t\neq0$
+
+故 $(a-2t)x^2+bx+(c+t^2)=0$ 有重根 $\iff b^2-4(a-2t)(c+t^2)=0$
+
+将上式展开,得
+\[
+8t^3-4at^2+8ct+\left(b^2-4ac\right)=0
+\]
+由于方程 $8t^3-4at^2+8ct+(b^2-4ac)=0$ 是三次方程,故存在实数 $t_0$,使得
+\[
+8t_0^3-4at_0^2+8ct_0+\left(b^2-4ac\right)=0
+\]
+因此存在实数 $t_0$,使得方程 $(a-2t_0)x^2+bx+(c+t_0^2)=0$ 有重根 $\lambda$
+
+于是 $(a-2t_0)x^2+bx+(c+t_0^2)=(a-2t_0)(x-\lambda)^2$
+
+结合 (b)(i),$(*)$ 可写成
+\[
+\left(x^2-t_0\right)^2=(a-2t_0)(x-\lambda)^2
+\]
+其中 $\lambda$ 是该重根,为实数
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question 考虑方程
+\[
+x^4=6x^2+12x+8\qquad\cdots\cdots(**)
+\]
+求一个实数 $t$,使得方程
+\[
+(6-2t)x^2+12x+\left(8+t^2\right)=0
+\]
+有重根，并由此解 $(**)$
+\begin{solution}
+方程 $(6-2t)x^2+12x+(8+t^2)=0$ 有重根
+\[
+\iff 6-2t\neq0\ \text{且}\ 12^2-4(6-2t)\left(8+t^2\right)=0
+\]
+\[
+\iff 6-2t\neq0\ \text{且}\ 2t^3-6t^2+16t-12=0
+\]
+由于 $t\neq3$,故
+\[
+2t^3-6t^2+16t-12=0\iff t^3-3t^2+8t-6=0\iff(t-1)\left(t^2-2t+6\right)=0
+\]
+即 $t=1$ 或 $t=\dfrac{2\pm\sqrt{-20}}{2}$（舍去，因不是实数）
+
+故所求实数为 $t=1$
+
+注意到 $4x^2+12x+9=0$ 有重根 $\dfrac{-3}{2}$
+
+由前题结果，$(**)$ 可写成
+\[
+\left(x^2-1\right)^2=4\left(x+\frac{3}{2}\right)^2
+\]
+即
+\[
+\left(x^2-1\right)^2=(2x+3)^2
+\]
+于是
+\[
+x^2-1=2x+3\qquad\text{或}\qquad x^2-1=-2x-3
+\]
+即
+\[
+x^2-2x-4=0\qquad\text{或}\qquad x^2+2x+2=0
+\]
+解得
+\[
+x=\frac{2\pm\sqrt{20}}{2}\qquad\text{或}\qquad x=\frac{-2\pm\sqrt{-4}}{2}
+\]
+即
+\[
+x=1\pm\sqrt{5}\qquad\text{或}\qquad x=-1\pm i
+\]
+故 $(**)$ 的所有根为 $1+\sqrt{5}$，$1-\sqrt{5}$，$-1+i$ 和 $-1-i$
+\end{solution}
+
+% ---------- P1 Q12 ----------
+\question 设 $n$ 为正整数。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 求 $z^{2n}+1=0$ 的所有根
+\begin{solution}
+\[
+z^{2n}+1=0\iff z^{2n}=-1\iff z^{2n}=\cos\pi+i\sin\pi
+\]
+故
+\[
+z=\cos\frac{(2k+1)\pi}{2n}+i\sin\frac{(2k+1)\pi}{2n}\qquad k=0,1,2,\ldots,2n-1
+\]
+\end{solution}
+
+\subpart 通过将 $z^{2n}+1$ 分解为具有实系数的若干个二次因式之积,或用其他方法,证明
+\[
+z^n+\frac{1}{z^n}=\prod_{k=0}^{n-1}\left(z+\frac{1}{z}-2\cos\frac{(2k+1)\pi}{2n}\right)\qquad\text{对所有 }z\neq0
+\]
+\begin{solution}
+设 $z_k=\cos\dfrac{(2k+1)\pi}{2n}+i\sin\dfrac{(2k+1)\pi}{2n}$，$k=0,1,2,\ldots,2n-1$
+
+则
+\begin{align*}
+z_{2n-k-1}&=\cos\frac{\left(2(2n-k-1)+1\right)\pi}{2n}+i\sin\frac{\left(2(2n-k-1)+1\right)\pi}{2n}\\
+&=\cos\left(2\pi-\frac{(2k+1)\pi}{2n}\right)+i\sin\left(2\pi-\frac{(2k+1)\pi}{2n}\right)\\
+&=\cos\frac{(2k+1)\pi}{2n}-i\sin\frac{(2k+1)\pi}{2n}\\
+&=\overline{z_k}
+\end{align*}
+对所有 $k=0,1,2,\ldots,n-1$ 成立
+
+于是
+\begin{align*}
+z^{2n}+1&=\prod_{k=0}^{2n-1}\left(z-z_k\right)\\
+&=\prod_{k=0}^{n-1}\left(z-z_k\right)\left(z-\overline{z_k}\right)\\
+&=\prod_{k=0}^{n-1}\left(z^2-\left(z_k+\overline{z_k}\right)z+z_k\overline{z_k}\right)\\
+&=\prod_{k=0}^{n-1}\left(z^2-2z\cos\frac{(2k+1)\pi}{2n}+1\right)
+\end{align*}
+两边同除以 $z^n$（$z\neq0$）,得
+\[
+\frac{1}{z^n}\left(z^{2n}+1\right)=\frac{1}{z^n}\prod_{k=0}^{n-1}\left(z^2-2z\cos\frac{(2k+1)\pi}{2n}+1\right)
+\]
+即
+\[
+z^n+\frac{1}{z^n}=\prod_{k=0}^{n-1}\left(z-2\cos\frac{(2k+1)\pi}{2n}+\frac{1}{z}\right)
+\]
+因此
+\[
+z^n+\frac{1}{z^n}=\prod_{k=0}^{n-1}\left(z+\frac{1}{z}-2\cos\frac{(2k+1)\pi}{2n}\right)\qquad\text{对所有 }z\neq0
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用 (a),证明
+\begin{subparts}
+\subpart 对任意 $\theta\in\mathbb{R}$
+\[
+\prod_{k=0}^{n-1}\left(\cos\theta-\cos\frac{(2k+1)\pi}{2n}\right)=\frac{\cos n\theta}{2^{n-1}}
+\]
+\begin{solution}
+将 $z=\cos\theta+i\sin\theta$ 代入 (a)(ii),得
+\[
+(\cos n\theta+i\sin n\theta)+(\cos n\theta-i\sin n\theta)=\prod_{k=0}^{n-1}\left((\cos\theta+i\sin\theta)+(\cos\theta-i\sin\theta)-2\cos\frac{(2k+1)\pi}{2n}\right)
+\]
+即
+\[
+2\cos n\theta=\prod_{k=0}^{n-1}\left(2\cos\theta-2\cos\frac{(2k+1)\pi}{2n}\right)
+\]
+\[
+2\cos n\theta=2^n\prod_{k=0}^{n-1}\left(\cos\theta-\cos\frac{(2k+1)\pi}{2n}\right)
+\]
+因此
+\[
+\prod_{k=0}^{n-1}\left(\cos\theta-\cos\frac{(2k+1)\pi}{2n}\right)=\frac{\cos n\theta}{2^{n-1}}
+\]
+\end{solution}
+
+\subpart
+\[
+\prod_{k=0}^{n-1}\cos\frac{(2k+1)\pi}{4n}=\frac{\sqrt{2}}{2^n}
+\]
+\begin{solution}
+将 $z=-1$ 代入 (a)(ii),得
+\[
+2(-1)^n=\prod_{k=0}^{n-1}\left(-2-2\cos\frac{(2k+1)\pi}{2n}\right)
+\]
+\[
+2(-1)^n=\prod_{k=0}^{n-1}\left((-2)\left(2\cos^2\frac{(2k+1)\pi}{4n}\right)\right)
+\]
+\[
+2(-1)^n=(-2)^n\left(2^n\right)\prod_{k=0}^{n-1}\cos^2\frac{(2k+1)\pi}{4n}
+\]
+即
+\[
+\prod_{k=0}^{n-1}\cos^2\frac{(2k+1)\pi}{4n}=\frac{2}{2^{2n}}
+\]
+注意到对所有 $k=0,1,2,\ldots,n-1$，有 $0<\dfrac{(2k+1)\pi}{4n}<\dfrac{\pi}{2}$，故 $\cos\dfrac{(2k+1)\pi}{4n}>0$
+
+所以 $\displaystyle\prod_{k=0}^{n-1}\cos\frac{(2k+1)\pi}{4n}>0$
+
+因此
+\[
+\prod_{k=0}^{n-1}\cos\frac{(2k+1)\pi}{4n}=\frac{\sqrt{2}}{2^n}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+%==================== Paper 2 ====================
+
+% ---------- P2 Q1 ----------
+\question 求
+\begin{parts}
+\part $\displaystyle\lim_{x\to0}\left(\frac{1}{\sin x}-\frac{1}{\tan x}\right)$
+\begin{solution}
+\begin{align*}
+\lim_{x\to0}\left(\frac{1}{\sin x}-\frac{1}{\tan x}\right)&=\lim_{x\to0}\frac{1-\cos x}{\sin x}\\
+&=\lim_{x\to0}\frac{\sin x}{\cos x}\qquad(\text{洛必达法则})\\
+&=0
+\end{align*}
+\end{solution}
+
+\part $\displaystyle\lim_{x\to\infty}\frac{x-\cos x}{x+\cos x}$
+\begin{solution}
+考虑 $0\leq\left|\dfrac{\cos x}{x}\right|\leq\left|\dfrac{1}{x}\right|$（因 $|\cos x|\leq1$）
+
+由于 $\displaystyle\lim_{x\to\infty}\left|\frac{1}{x}\right|=0$，故 $\displaystyle\lim_{x\to\infty}\left|\frac{\cos x}{x}\right|=0$，即 $\displaystyle\lim_{x\to\infty}\frac{\cos x}{x}=0$
+
+于是
+\[
+\lim_{x\to\infty}\frac{x-\cos x}{x+\cos x}=\lim_{x\to\infty}\frac{1-\dfrac{\cos x}{x}}{1+\dfrac{\cos x}{x}}=1
+\]
+\end{solution}
+\end{parts}
+
+% ---------- P2 Q8 ----------
+\question 设 $f:\mathbb{R}\to\mathbb{R}$ 为非常数函数，满足以下条件：
+\begin{parts}
+\part[(1)] $f(x+y)=f(x)+f(y)+f(x)f(y)$ 对所有 $x,y\in\mathbb{R}$
+\part[(2)] $\displaystyle\lim_{h\to0}\frac{f(h)}{h}=a$，其中 $a\in\mathbb{R}$
+\end{parts}
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明 $f(0)\left(1+f(x)\right)=0$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+在 (1) 中令 $y=0$，得
+\[
+f(x)=f(x)+f(0)+f(x)f(0)
+\]
+故 $f(0)\left(1+f(x)\right)=0$ 对所有 $x\in\mathbb{R}$ 成立
+\end{solution}
+
+\subpart 证明 $f(0)=0$，且 $f(x)\neq-1$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+由 (a)(i)，$f(0)=0$ 或 $f(x)=-1$（对所有 $x$）
+
+设 $f(0)\neq0$，则 $f(x)=-1$ 对所有 $x$ 成立，但 $f$ 是非常数函数，矛盾
+
+故 $f(0)=0$
+
+设存在某实数 $r$，使得 $f(r)=-1$
+
+由 (1)，$f(x+r)=f(x)+f(r)+f(x)f(r)$ 对所有 $x$ 成立，即 $f(x+r)=-1$ 对所有 $x$ 成立
+
+令 $x=-r$，得 $f(0)=-1$，与 $f(0)=0$ 矛盾
+
+因此 $f(x)\neq-1$ 对所有 $x\in\mathbb{R}$
+\end{solution}
+\end{subparts}
+
+\part 通过考虑 $f(x)=f\left(\dfrac{x}{2}+\dfrac{x}{2}\right)$，或用其他方法，证明 $f(x)>-1$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+\begin{align*}
+f(x)&=f\left(\frac{x}{2}+\frac{x}{2}\right)\\
+&=f\left(\frac{x}{2}\right)+f\left(\frac{x}{2}\right)+f\left(\frac{x}{2}\right)f\left(\frac{x}{2}\right)\\
+&=\left(f\left(\frac{x}{2}\right)+1\right)^2-1\\
+&>-1
+\end{align*}
+（因 $f(x)\neq-1$ 对所有 $x$，故 $f\left(\dfrac{x}{2}\right)+1\neq0$，从而 $\left(f\left(\dfrac{x}{2}\right)+1\right)^2>0$）
+
+因此 $f(x)>-1$ 对所有 $x\in\mathbb{R}$
+\end{solution}
+
+\part 证明 $f$ 处处可导，且 $f'(x)=a\left(1+f(x)\right)$ 对所有 $x\in\mathbb{R}$。并由此推出 $a\neq0$
+\begin{solution}
+\begin{align*}
+f'(x)&=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\\
+&=\lim_{h\to0}\frac{f(x)+f(h)+f(x)f(h)-f(x)}{h}\\
+&=\lim_{h\to0}\frac{f(h)+f(x)f(h)}{h}\\
+&=\lim_{h\to0}\frac{f(h)\left(1+f(x)\right)}{h}\\
+&=a\left(1+f(x)\right)
+\end{align*}
+因此 $f$ 处处可导，且 $f'(x)=a\left(1+f(x)\right)$ 对所有 $x\in\mathbb{R}$
+
+设 $a=0$，则 $f'(x)=0$ 对所有 $x$，于是 $f$ 为常数函数，与题设矛盾
+
+因此 $a\neq0$
+\end{solution}
+
+\part 通过考虑函数 $\ln\left(1+f(x)\right)$ 的导数，证明 $f(x)=e^{ax}-1$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+由 (c)，得
+\[
+\left[\ln\left(1+f(x)\right)\right]'=\frac{f'(x)}{1+f(x)}=a
+\]
+故
+\[
+\ln\left(1+f(x)\right)=ax+c
+\]
+其中 $c$ 为常数。令 $x=0$，得 $c=0$，故
+\[
+\ln\left(1+f(x)\right)=ax
+\]
+因此
+\[
+f(x)=e^{ax}-1\qquad\text{对所有 }x\in\mathbb{R}
+\]
+\end{solution}
+\end{parts}
+
+% ---------- P2 Q9 ----------
+\question
+\begin{parts}
+\part 设 $u:\mathbb{R}\to\mathbb{R}$ 为二阶可导函数，满足以下条件：
+\begin{subparts}
+\subpart[(1)] $u''(x)=-u(x)$ 对所有 $x\in\mathbb{R}$
+\subpart[(2)] $u(0)=0$
+\subpart[(3)] $u'(0)=1$
+\end{subparts}
+定义 $v(x)=u(x)-\sin x$ 对所有 $x\in\mathbb{R}$。通过对 $w(x)=\left(v(x)\right)^2+\left(v'(x)\right)^2$ 求导，证明 $u(x)=\sin x$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+\begin{align*}
+w'(x)&=2v(x)v'(x)+2v'(x)v''(x)\\
+&=2\left(u(x)-\sin x\right)\left(u'(x)-\cos x\right)+2\left(u'(x)-\cos x\right)\left(u''(x)+\sin x\right)\\
+&=2\left(u(x)-\sin x\right)\left(u'(x)-\cos x\right)+2\left(u'(x)-\cos x\right)\left(-u(x)+\sin x\right)\\
+&=0
+\end{align*}
+因此 $w(x)$ 是常数函数
+
+令 $x=0$，得
+\[
+v(0)=u(0)-0=0\qquad v'(0)=u'(0)-1=0
+\]
+故 $w(x)=0$，即
+\[
+\left(v(x)\right)^2+\left(v'(x)\right)^2=0
+\]
+于是 $v(x)=0$，即 $u(x)=\sin x$ 对所有 $x\in\mathbb{R}$
+\end{solution}
+
+\part 设 $f:\mathbb{R}\to\mathbb{R}$ 和 $g:\mathbb{R}\to\mathbb{R}$ 为连续函数，满足
+\[
+f(x)=e^{-x}\int_0^x e^t g(t)\,\mathrm{d}t\qquad g(x)=e^{-x}-e^{-x}\int_0^x e^t f(t)\,\mathrm{d}t
+\]
+对所有 $x\in\mathbb{R}$
+\begin{subparts}
+\subpart 证明 $f(x)+f'(x)=g(x)$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+\[
+f'(x)=e^{-x}\left(e^x g(x)\right)-e^{-x}\int_0^x e^t g(t)\,\mathrm{d}t=g(x)-f(x)
+\]
+因此 $f(x)+f'(x)=g(x)$ 对所有 $x\in\mathbb{R}$
+\end{solution}
+
+\subpart
+\begin{subsubparts}
+\subsubpart 证明 $f''(x)+2f'(x)+2f(x)=0$ 对所有 $x\in\mathbb{R}$
+\begin{solution}
+\begin{align*}
+g'(x)&=-e^{-x}+e^{-x}\int_0^x e^t f(t)\,\mathrm{d}t-e^{-x}\left(e^x f(x)\right)\\
+&=-g(x)-f(x)
+\end{align*}
+由 (b)(i)，$f''(x)=g'(x)-f'(x)$，故
+\[
+f''(x)=-g(x)-f(x)-f'(x)=-\left(f(x)+f'(x)\right)-f(x)-f'(x)
+\]
+因此 $f''(x)+2f'(x)+2f(x)=0$ 对所有 $x\in\mathbb{R}$
+\end{solution}
+
+\subsubpart 设 $h(x)=e^x f(x)$ 对所有 $x\in\mathbb{R}$。证明 $h''(x)=-h(x)$，并利用 (a)，求 $f(x)$
+\begin{solution}
+\[
+h'(x)=e^x f'(x)+e^x f(x)
+\]
+\[
+h''(x)=e^x f''(x)+e^x f'(x)+e^x f'(x)+e^x f(x)=e^x\left[f''(x)+2f'(x)+f(x)\right]=e^x\left[-f(x)\right]=-h(x)
+\]
+又 $h(0)=0$（因 $f(0)=0$），$h'(0)=f'(0)+f(0)=g(0)=1$
+
+由 (a)，$h(x)=\sin x$，因此
+\[
+f(x)=e^{-x}\sin x
+\]
+\end{solution}
+\end{subsubparts}
+
+\subpart 求 $g(x)$
+\begin{solution}
+\begin{align*}
+g(x)&=e^{-x}\sin x+f'(x)\\
+&=e^{-x}\sin x+e^{-x}\cos x-e^{-x}\sin x\\
+&=e^{-x}\cos x
+\end{align*}
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- P2 Q10 ----------
+\question
+\begin{parts}
+\part 设 $f:[1,\infty)\to[0,\infty)$ 为连续且递减函数。对每个 $n=1,2,3,\ldots$，定义
+\[
+F_n=\int_1^n f(x)\,\mathrm{d}x\qquad S_n=\sum_{j=1}^{n}f(j)
+\]
+\begin{subparts}
+\subpart 证明 $f(j+1)\leq\displaystyle\int_j^{j+1}f(x)\,\mathrm{d}x\leq f(j)$ 对所有 $j=1,2,3,\ldots$，并由此推出
+\[
+S_n-f(1)\leq F_n\leq S_{n-1}\qquad\text{对所有 }n=2,3,4,\ldots
+\]
+\begin{solution}
+由于 $f$ 递减，对 $j\leq x\leq j+1$，有 $f(j+1)\leq f(x)\leq f(j)$，于是
+\[
+\int_j^{j+1}f(j+1)\,\mathrm{d}x\leq\int_j^{j+1}f(x)\,\mathrm{d}x\leq\int_j^{j+1}f(j)\,\mathrm{d}x
+\]
+即
+\[
+f(j+1)\leq\int_j^{j+1}f(x)\,\mathrm{d}x\leq f(j)
+\]
+对上式关于 $j=1,2,\ldots,n-1$ 求和，得
+\[
+\sum_{j=1}^{n-1}f(j+1)\leq\sum_{j=1}^{n-1}\int_j^{j+1}f(x)\,\mathrm{d}x\leq\sum_{j=1}^{n-1}f(j)
+\]
+即
+\[
+S_n-f(1)\leq\int_1^n f(x)\,\mathrm{d}x\leq S_{n-1}
+\]
+因此 $S_n-f(1)\leq F_n\leq S_{n-1}$ 对所有 $n=2,3,4,\ldots$
+\end{solution}
+
+\subpart 利用 (a)(i)，证明级数 $\displaystyle\sum_{j=1}^{\infty}f(j)$ 收敛，当且仅当存在与 $n$ 无关的常数 $K$，使得 $F_n\leq K$ 对所有 $n=1,2,3,\ldots$ 成立
+\begin{solution}
+（$\Leftarrow$）显然 $\{S_n\}$ 是递增数列，且 $f:[1,\infty)\to[0,\infty)$
+
+由 (a)(i)，$f(1)+F_n\geq S_n\geq F_n+f(n)$
+
+故 $f(1)+K\geq S_n$，即 $\{S_n\}$ 有上界
+
+因此 $\{S_n\}$ 收敛，即 $\displaystyle\sum_{j=1}^{\infty}f(j)$ 收敛
+
+（$\Rightarrow$）由 (a)(i)，$f(1)+F_n\geq S_n\geq F_n+f(n)$
+
+由于 $\displaystyle\lim_{n\to\infty}S_n$ 存在，故 $\{S_n\}$ 有界
+
+又 $S_n\geq F_n+f(n)$，故 $\{F_n\}$ 有界
+
+因此存在与 $n$ 无关的常数 $K$，使得 $F_n\leq K$ 对所有 $n=1,2,3,\ldots$ 成立
+\end{solution}
+\end{subparts}
+
+\part 利用 (a)，证明
+\begin{subparts}
+\subpart $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n^3}}$ 收敛
+\begin{solution}
+设 $f(x)=\dfrac{1}{\sqrt[3]{x}}$，显然 $f$ 在 $x\geq1$ 时连续且递减
+
+\[
+F_n=\int_1^n\frac{1}{\sqrt[3]{x}}\,\mathrm{d}x=\left[-2x^{-\frac{1}{2}}\right]_1^n=2\left(1-\frac{1}{\sqrt{n}}\right)\leq2
+\]
+由 (a)(ii)，$\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt[3]{n}}$ 收敛
+\end{solution}
+
+\subpart $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ 发散
+\begin{solution}
+设 $f(x)=\dfrac{1}{x}$，显然 $f$ 在 $x\geq1$ 时连续且递减
+
+\[
+F_n=\int_1^n\frac{1}{x}\,\mathrm{d}x=\left[\ln x\right]_1^n=\ln n
+\]
+当 $n\to\infty$ 时，$F_n\to\infty$，故不存在与 $n$ 无关的常数 $K$，使得 $F_n\leq K$ 对所有 $n$ 成立
+
+由 (a)(ii)，$\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ 发散
+\end{solution}
+\end{subparts}
+
+\part 利用 (a)，判断 $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n\left(\ln n\right)^2}$ 是否收敛，并说明理由
+\begin{solution}
+\[
+\sum_{n=2}^{\infty}\frac{1}{n\left(\ln n\right)^2}=\sum_{n=1}^{\infty}\frac{1}{(n+1)\left(\ln(n+1)\right)^2}
+\]
+设 $f(x)=\dfrac{1}{(x+1)\left(\ln(x+1)\right)^2}$，显然 $f$ 在 $x\geq1$ 时连续且递减
+
+\[
+F_n=\int_1^n\frac{1}{(x+1)\left(\ln(x+1)\right)^2}\,\mathrm{d}x=\left[\frac{-1}{\ln(x+1)}\right]_1^n=\frac{1}{\ln2}-\frac{1}{\ln(n+1)}\leq\frac{1}{\ln2}
+\]
+由 (a)(ii)，$\displaystyle\sum_{n=2}^{\infty}\frac{1}{n\left(\ln n\right)^2}$ 收敛
+\end{solution}
+\end{parts}
+
+% ---------- P2 Q11 ----------
+\question 考虑抛物线 $P:y^2=4x$。设 $A\left(a^2,2a\right)$ 为 $P$ 上一点，$L_1$ 为 $P$ 在 $A$ 处的切线，$F$ 为点 $(1,0)$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 求 $L_1$ 的方程
+\begin{solution}
+$y^2=4x$ 两边对 $x$ 求导，得 $2y\dfrac{\mathrm{d}y}{\mathrm{d}x}=4$，故 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{2}{y}$
+
+在 $A\left(a^2,2a\right)$ 处，斜率为 $\dfrac{2}{2a}=\dfrac{1}{a}$（设 $a\neq0$）
+
+故 $L_1$ 的方程为
+\[
+y-2a=\frac{1}{a}\left(x-a^2\right)
+\]
+即
+\[
+ay=x+a^2
+\]
+\end{solution}
+
+\subpart 设 $F'$ 为一点，使得 $L_1$ 是 $FF'$ 的垂直平分线。证明 $F'$ 的横坐标为 $-1$，并求 $F'$ 的纵坐标
+\begin{solution}
+设 $F'=(x_0,y_0)$，$FF'$ 的中点为 $\left(\dfrac{1+x_0}{2},\dfrac{y_0}{2}\right)$，该点在 $L_1$ 上，故
+\[
+a\cdot\frac{y_0}{2}=\frac{1+x_0}{2}+a^2\qquad\cdots\cdots(1)
+\]
+又 $FF'$ 垂直于 $L_1$，$L_1$ 斜率为 $\dfrac{1}{a}$，故 $FF'$ 斜率为 $-a$（设 $a\neq0$），即
+\[
+\frac{y_0-0}{x_0-1}=-a\qquad\cdots\cdots(2)
+\]
+由 (2)，$y_0=-a(x_0-1)$，代入 (1)，得
+\[
+a\cdot\frac{-a(x_0-1)}{2}=\frac{1+x_0}{2}+a^2
+\]
+\[
+-a^2(x_0-1)=1+x_0+2a^2
+\]
+\[
+-a^2x_0+a^2=1+x_0+2a^2
+\]
+\[
+-a^2x_0-x_0=1+a^2
+\]
+\[
+-x_0\left(a^2+1\right)=1+a^2
+\]
+故 $x_0=-1$（因 $a^2+1\neq0$）
+
+代入 (2)，得 $y_0=-a(-1-1)=2a$
+
+因此 $F'$ 的横坐标为 $-1$，纵坐标为 $2a$
+\end{solution}
+\end{subparts}
+
+\part 设 $a=2$。直线 $x=-1$ 与 $L_1$ 交于点 $B$。设 $L_2$ 为过 $B$ 且垂直于 $L_1$ 的直线。
+\begin{subparts}
+\subpart 证明 $L_2$ 与 $P$ 相切，并求切点
+\begin{solution}
+当 $a=2$ 时，$L_1$ 的方程为 $2y=x+4$
+
+将 $x=-1$ 代入，得 $2y=3$，即 $y=\dfrac{3}{2}$，故 $B=\left(-1,\dfrac{3}{2}\right)$
+
+$L_1$ 斜率为 $\dfrac{1}{2}$，故 $L_2$ 斜率为 $-2$
+
+$L_2$ 的方程为
+\[
+y-\frac{3}{2}=-2(x+1)
+\]
+即
+\[
+y=-2x-\frac{1}{2}
+\]
+设 $L_2$ 在 $P$ 上一点 $\left(t^2,2t\right)$ 处相切，由 (a)(i)，切线方程为 $ty=x+t^2$，即斜率为 $\dfrac{1}{t}$
+
+故 $\dfrac{1}{t}=-2$，即 $t=-\dfrac{1}{2}$
+
+切点为 $\left(\dfrac{1}{4},-1\right)$
+
+验证：将 $\left(\dfrac{1}{4},-1\right)$ 代入 $y=-2x-\dfrac{1}{2}$，得 $-2\left(\dfrac{1}{4}\right)-\dfrac{1}{2}=-1$，成立
+
+因此 $L_2$ 与 $P$ 相切，切点为 $\left(\dfrac{1}{4},-1\right)$
+\end{solution}
+
+\subpart 设 $L_3$ 为 $P$ 在点 $(1,2)$ 处的切线。$L_3$ 分别与 $L_1$，$L_2$ 交于点 $C$，$D$。证明 $B$，$C$，$F$，$D$ 四点共圆
+\begin{solution}
+点 $(1,2)$ 对应 $a=1$，由 (a)(i)，$L_3$ 的方程为 $y=x+1$
+
+$L_3$ 与 $L_1$（即 $2y=x+4$）的交点 $C$：将 $y=x+1$ 代入 $2y=x+4$，得 $2x+2=x+4$，即 $x=2$，$y=3$，故 $C=(2,3)$
+
+$L_3$ 与 $L_2$（即 $y=-2x-\dfrac{1}{2}$）的交点 $D$：将 $y=x+1$ 代入，得 $x+1=-2x-\dfrac{1}{2}$，即 $3x=-\dfrac{3}{2}$，$x=-\dfrac{1}{2}$，$y=\dfrac{1}{2}$，故 $D=\left(-\dfrac{1}{2},\dfrac{1}{2}\right)$
+
+由于 $BD\perp BC$（因 $L_1\perp L_2$，即 $BC\subset L_1$，$BD\subset L_2$），故 $\angle DBC=90^\circ$
+
+计算 $DF$，$FC$ 斜率，验证 $\angle DFC=90^\circ$
+
+$F=(1,0)$，$D=\left(-\dfrac{1}{2},\dfrac{1}{2}\right)$，$FD$ 斜率为 $\dfrac{0-\frac{1}{2}}{1-\left(-\frac{1}{2}\right)}=\dfrac{-\frac{1}{2}}{\frac{3}{2}}=-\dfrac{1}{3}$
+
+$FC$ 斜率为 $\dfrac{0-3}{1-2}=3$
+
+两斜率之积为 $-1$，故 $FD\perp FC$，即 $\angle DFC=90^\circ$
+
+由于 $\angle DBC=\angle DFC=90^\circ$，即 $B$，$F$ 在以 $DC$ 为直径的圆上同侧张直角
+
+因此 $B$，$C$，$F$，$D$ 四点共圆（$DC$ 为该圆的直径）
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- P2 Q12 ----------
+\question
+\begin{parts}
+\part 设 $f:(-1,1)\to\mathbb{R}$ 为具有任意阶导数的函数。对每个 $m=1,2,3,\ldots$ 及 $x\in(-1,1)$，定义
+\[
+I_m=\frac{1}{(m-1)!}\int_0^x(x-t)^{m-1}f^{(m)}(t)\,\mathrm{d}t
+\]
+\begin{subparts}
+\subpart 证明 $I_{m+1}=I_m-\dfrac{f^{(m)}(0)}{m!}x^m$
+\begin{solution}
+\begin{align*}
+I_{m+1}&=\frac{1}{m!}\int_0^x(x-t)^m f^{(m+1)}(t)\,\mathrm{d}t\\
+&=\frac{1}{m!}\left[\left[(x-t)^m f^{(m)}(t)\right]_0^x+m\int_0^x(x-t)^{m-1}f^{(m)}(t)\,\mathrm{d}t\right]\\
+&=-\frac{1}{m!}x^m f^{(m)}(0)+\frac{1}{(m-1)!}\int_0^x(x-t)^{m-1}f^{(m)}(t)\,\mathrm{d}t\\
+&=I_m-\frac{f^{(m)}(0)}{m!}x^m
+\end{align*}
+\end{solution}
+
+\subpart 利用 (a)(i)，证明
+\[
+f(x)=\sum_{k=0}^{m-1}\frac{f^{(k)}(0)}{k!}x^k+I_m
+\]
+其中 $f^{(0)}=f$
+\begin{solution}
+由 (a)(i)，
+\[
+I_m=I_{m-1}-\frac{f^{(m-1)}(0)}{(m-1)!}x^{m-1}=I_{m-2}-\frac{f^{(m-2)}(0)}{(m-2)!}x^{m-2}-\frac{f^{(m-1)}(0)}{(m-1)!}x^{m-1}=\cdots
+\]
+依此类推，得
+\[
+I_m=I_1-\sum_{k=1}^{m-1}\frac{f^{(k)}(0)}{k!}x^k
+\]
+其中
+\[
+I_1=\int_0^x f'(t)\,\mathrm{d}t=f(x)-f(0)
+\]
+故
+\[
+I_m=f(x)-\sum_{k=0}^{m-1}\frac{f^{(k)}(0)}{k!}x^k
+\]
+因此
+\[
+f(x)=\sum_{k=0}^{m-1}\frac{f^{(k)}(0)}{k!}x^k+I_m
+\]
+\end{solution}
+\end{subparts}
+
+\part 定义 $g(x)=\dfrac{1}{\sqrt{1-x^2}}$ 对所有 $x\in(-1,1)$。设 $n$ 为正整数。
+\begin{subparts}
+\subpart 证明
+\[
+\left(1-x^2\right)g'(x)-xg(x)=0
+\]
+并由此推出
+\[
+\left(1-x^2\right)g^{(n+1)}(x)-(2n+1)xg^{(n)}(x)-n^2g^{(n-1)}(x)=0
+\]
+其中 $g^{(0)}=g$
+\begin{solution}
+\[
+g'(x)=-\frac{1}{2}\left(1-x^2\right)^{-\frac{3}{2}}(-2x)=x\left(1-x^2\right)^{-\frac{3}{2}}
+\]
+\begin{align*}
+\left(1-x^2\right)g'(x)-xg(x)&=\left(1-x^2\right)x\left(1-x^2\right)^{-\frac{3}{2}}-x\left(1-x^2\right)^{-\frac{1}{2}}\\
+&=x\left(1-x^2\right)^{-\frac{1}{2}}-x\left(1-x^2\right)^{-\frac{1}{2}}\\
+&=0
+\end{align*}
+将上式两边关于 $x$ 求 $n$ 次导数（利用莱布尼兹公式），得
+\[
+\left(1-x^2\right)g^{(n+1)}(x)-C_1^n(-2x)g^{(n)}(x)+C_2^n(-2)g^{(n-1)}(x)-xg^{(n)}(x)-C_1^n g^{(n-1)}(x)=0
+\]
+化简得
+\[
+\left(1-x^2\right)g^{(n+1)}(x)-(2n+1)xg^{(n)}(x)-n^2g^{(n-1)}(x)=0
+\]
+\end{solution}
+
+\subpart 证明 $g^{(2n-1)}(0)=0$，且
+\[
+g^{(2n)}(0)=\left(\frac{(2n)!}{2^n n!}\right)^2
+\]
+\begin{solution}
+在 (b)(i) 中令 $x=0$，得
+\[
+g^{(n+1)}(0)=n^2g^{(n-1)}(0)
+\]
+于是
+\begin{align*}
+g^{(2n-1)}(0)&=(2n-2)^2g^{(2n-3)}(0)\\
+&=(2n-2)^2(2n-4)^2g^{(2n-5)}(0)\\
+&\;\;\vdots\\
+&=(2n-2)^2(2n-4)^2\cdots2^2g^{(1)}(0)\\
+&=0\qquad(\text{因 }g'(0)=0)
+\end{align*}
+同理
+\begin{align*}
+g^{(2n)}(0)&=(2n-1)^2(2n-3)^2\cdots1^2\,g(0)\\
+&=(2n-1)^2(2n-3)^2\cdots1^2\qquad(\text{因 }g(0)=1)\\
+&=\frac{\left[(2n)!\right]^2}{2^24^2\cdots(2n)^2}\\
+&=\left(\frac{(2n)!}{2^n n!}\right)^2
+\end{align*}
+\end{solution}
+
+\subpart 利用 (a)，证明
+\[
+g(x)=\sum_{k=0}^{n-1}\frac{C_k^{2k}}{2^{2k}}x^{2k}+\frac{1}{(2n-1)!}\int_0^x(x-t)^{2n-1}g^{(2n)}(t)\,\mathrm{d}t
+\]
+\begin{solution}
+在 (a) 中取 $f(x)=g(x)$，$m=2n$，得
+\[
+g(x)=\sum_{k=0}^{2n-1}\frac{g^{(k)}(0)}{k!}x^k+\frac{1}{(2n-1)!}\int_0^x(x-t)^{2n-1}g^{(2n)}(t)\,\mathrm{d}t
+\]
+由 (b)(ii)，当 $k$ 为奇数时 $g^{(k)}(0)=0$，且 $g^{(2n)}(0)=\dfrac{(2n)!}{2^{2n}}C_n^{2n}$
+
+因此
+\[
+g(x)=\sum_{k=0}^{n-1}\frac{C_k^{2k}}{2^{2k}}x^{2k}+\frac{1}{(2n-1)!}\int_0^x(x-t)^{2n-1}g^{(2n)}(t)\,\mathrm{d}t
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+    %==================== 2004 年 AL Pure Mathematics ====================
+%========================= Paper 1 =========================
+
+% ---------- Paper 1  第 5 题 ----------
+\question 设 $n$ 为正整数。
+\begin{parts}
+\part 设 $a>0$。
+\begin{subparts}
+\subpart 若 $k$ 为正整数，证明
+\[
+a+a^k\le 1+a^{k+1}
+\]
+\begin{solution}
+考虑
+\[
+1+a^{k+1}-a-a^k=a^k(a-1)+1-a=(a-1)(a^k-1)
+\]
+
+又
+\[
+(a-1)(a^k-1)=(a-1)^2\left(a^{k-1}+a^{k-2}+\cdots+a+1\right)\ge 0
+\]
+
+因此
+\[
+a+a^k\le 1+a^{k+1}
+\]
+\end{solution}
+\subpart 证明
+\[
+(1+a)^n\le 2^{n-1}(1+a^n)
+\]
+\begin{solution}
+当 $n=1$ 时结论显然成立
+
+设当 $n=k$ 时结论成立，即
+\[
+(1+a)^k\le 2^{k-1}(1+a^k)
+\]
+
+当 $n=k+1$ 时
+\[
+(1+a)^{k+1}\le (1+a)\cdot 2^{k-1}(1+a^k)=2^{k-1}\left(1+a^k+a+a^{k+1}\right)
+\]
+
+由(a)(i)得
+\[
+2^{k-1}\left(1+a^k+a+a^{k+1}\right)\le 2^{k-1}\left(1+a^{k+1}+1+a^{k+1}\right)=2^k(1+a^{k+1})
+\]
+
+故由数学归纳法原理，对所有正整数 $n$ 结论成立
+\end{solution}
+\end{subparts}
+\part 设 $x$ 和 $y$ 为正实数。利用(a)(ii)，或其他方法，证明
+\[
+\left(\frac{x+y}{2}\right)^n\le \frac{x^n+y^n}{2}
+\]
+\begin{solution}
+设 $a=\dfrac{y}{x}$，由(a)(ii)得
+\[
+\left(1+\frac{y}{x}\right)^n\le 2^{n-1}\left(1+\left(\frac{y}{x}\right)^n\right)
+\]
+
+两边乘以 $x^n$ 得
+\[
+(x+y)^n\le 2^{n-1}(x^n+y^n)
+\]
+
+因此
+\[
+\left(\frac{x+y}{2}\right)^n\le \frac{x^n+y^n}{2}
+\]
+\end{solution}
+\end{parts}
+
+% ---------- Paper 1  第 6 题 ----------
+\question 设 $\theta\in\mathbf{R}$。对每个 $n\in\mathbf{N}$，定义 $x_n=\sin^n\theta+\cos^n\theta$。
+\begin{parts}
+\part 求一个与 $n$ 无关的函数 $f(\theta)$，使得
+\[
+x_{n+1}x_1-x_{n+2}=f(\theta)x_n
+\]
+并用 $x_1$ 表示 $f(\theta)$。
+\begin{solution}
+\[
+x_{n+1}x_1-x_{n+2}=\left(\sin^{n+1}\theta+\cos^{n+1}\theta\right)(\sin\theta+\cos\theta)-\left(\sin^{n+2}\theta+\cos^{n+2}\theta\right)
+\]
+
+展开化简得
+\[
+x_{n+1}x_1-x_{n+2}=\sin^{n+1}\theta\cos\theta+\sin\theta\cos^{n+1}\theta=\left(\sin^n\theta+\cos^n\theta\right)\cos\theta\sin\theta
+\]
+
+因此
+\[
+f(\theta)=\cos\theta\sin\theta
+\]
+
+又
+\[
+f(\theta)=\frac{(\sin\theta+\cos\theta)^2-1}{2}=\frac{x_1^2-1}{2}
+\]
+\end{solution}
+\part 设 $x_1$ 为有理数。利用数学归纳法，证明对每个 $n$，$x_n$ 均为有理数。
+\begin{solution}
+$x_1$ 为有理数
+
+又
+\[
+x_2=\sin^2\theta+\cos^2\theta=1
+\]
+
+亦为有理数
+
+设 $x_k$，$x_{k+1}$ 均为有理数，由(a)得
+\[
+x_{k+2}=x_{k+1}x_1-\frac{x_1^2-1}{2}x_k
+\]
+
+由于等号右边均为有理数，故 $x_{k+2}$ 为有理数
+
+因此由数学归纳法原理，对每个 $n$，$x_n$ 均为有理数
+\end{solution}
+\end{parts}
+
+% ---------- Paper 1  第 8 题 ----------
+\question 设
+\[
+A=\begin{pmatrix}\alpha-k&\alpha-\beta-k\\k&\beta+k\end{pmatrix}
+\]
+其中 $\alpha,\beta,k\in\mathbf{R}$，且 $\alpha\neq\beta$。
+
+设 $X=\dfrac{1}{\alpha-\beta}(A-\beta I)$，$Y=\dfrac{1}{\beta-\alpha}(A-\alpha I)$，其中 $I$ 为 $2\times2$ 单位矩阵。
+\begin{parts}
+\part 求 $XY$，$YX$，$X+Y$，$X^2$ 和 $Y^2$。
+\begin{solution}
+\[
+XY=\frac{1}{(\alpha-\beta)(\beta-\alpha)}(A-\beta I)(A-\alpha I)=\begin{pmatrix}0&0\\0&0\end{pmatrix}
+\]
+
+\[
+YX=\frac{1}{(\alpha-\beta)(\beta-\alpha)}(A-\alpha I)(A-\beta I)=\begin{pmatrix}0&0\\0&0\end{pmatrix}
+\]
+
+\[
+X+Y=\begin{pmatrix}1&0\\0&1\end{pmatrix}
+\]
+
+\[
+X^2=\frac{1}{(\alpha-\beta)^2}\begin{pmatrix}\alpha-k-\beta&\alpha-\beta-k\\k&k\end{pmatrix}\begin{pmatrix}\alpha-k-\beta&\alpha-\beta-k\\k&k\end{pmatrix}=X
+\]
+
+\[
+Y^2=\frac{1}{(\beta-\alpha)^2}\begin{pmatrix}-k&\alpha-\beta-k\\k&\beta+k-\alpha\end{pmatrix}\begin{pmatrix}-k&\alpha-\beta-k\\k&\beta+k-\alpha\end{pmatrix}=Y
+\]
+\end{solution}
+\part 证明对所有正整数 $n$，
+\[
+A^n=\alpha^nX+\beta^nY
+\]
+\begin{solution}
+当 $n=1$ 时
+\[
+\alpha X+\beta Y=\frac{\alpha}{\alpha-\beta}(A-\beta I)+\frac{\beta}{\beta-\alpha}(A-\alpha I)=\frac{\alpha}{\alpha-\beta}A+\frac{\beta}{\beta-\alpha}A=A
+\]
+
+设当 $n=k$ 时
+\[
+A^k=\alpha^kX+\beta^kY
+\]
+
+当 $n=k+1$ 时
+\[
+A^{k+1}=A^kA=\left(\alpha^kX+\beta^kY\right)(\alpha X+\beta Y)=\alpha^{k+1}X^2+\alpha^k\beta XY+\alpha\beta^kYX+\beta^{k+1}Y^2
+\]
+
+由(a)，$XY=YX=\begin{pmatrix}0&0\\0&0\end{pmatrix}$，$X^2=X$，$Y^2=Y$，故
+\[
+A^{k+1}=\alpha^{k+1}X+\beta^{k+1}Y
+\]
+
+因此由数学归纳法原理，对所有正整数 $n$，结论成立
+\end{solution}
+\part 计算
+\[
+\begin{pmatrix}5&4\\2&3\end{pmatrix}^{2004}
+\]
+\begin{solution}
+设 $k=2$，$\alpha=7$，$\beta=1$，则
+\[
+A^{2004}=7^{2004}\cdot\frac{1}{6}\begin{pmatrix}4&4\\2&2\end{pmatrix}+1^{2004}\cdot\frac{1}{-6}\begin{pmatrix}-2&4\\2&-4\end{pmatrix}
+\]
+
+因此
+\[
+\begin{pmatrix}5&4\\2&3\end{pmatrix}^{2004}=\begin{pmatrix}\dfrac{2\cdot7^{2004}+1}{3}&\dfrac{2\cdot7^{2004}-2}{3}\\[2mm]\dfrac{7^{2004}-1}{3}&\dfrac{7^{2004}+2}{3}\end{pmatrix}
+\]
+\end{solution}
+\part 若 $\alpha$ 和 $\beta$ 为非零实数，猜测 $A^{-1}$ 用 $\alpha$，$\beta$，$X$ 和 $Y$ 表示的表达式，并加以验证。
+\begin{solution}
+猜测
+\[
+A^{-1}=\frac{1}{\alpha\beta}(\beta X+\alpha Y)
+\]
+
+验证如下
+
+\[
+AA^{-1}=\frac{1}{\alpha\beta}(\alpha X+\beta Y)(\beta X+\alpha Y)=\frac{1}{\alpha\beta}\left(\alpha\beta X^2+\alpha^2XY+\beta^2YX+\alpha\beta Y^2\right)
+\]
+
+由(a)，$XY=YX=\begin{pmatrix}0&0\\0&0\end{pmatrix}$，$X^2=X$，$Y^2=Y$，故
+\[
+AA^{-1}=X^2+Y^2=X+Y=\begin{pmatrix}1&0\\0&1\end{pmatrix}
+\]
+
+因此 $A^{-1}=\dfrac{1}{\alpha\beta}(\beta X+\alpha Y)$ 成立
+\end{solution}
+\end{parts}
+
+% ---------- Paper 1  第 9 题 ----------
+\question
+\begin{parts}
+\part 设 $f(x)$ 为实系数多项式。证明实数 $r$ 为 $f(x)=0$ 的重根当且仅当
+\[
+f(r)=f'(r)=0
+\]
+\begin{solution}
+（$\Rightarrow$）设 $f(x)=(x-r)^2q(x)$，则
+\[
+f(r)=0
+\]
+
+又
+\[
+f'(x)=2(x-r)q(x)+(x-r)^2q'(x)
+\]
+
+故
+\[
+f'(r)=0
+\]
+
+（$\Leftarrow$）设 $f(r)=0$，则 $f(x)=(x-r)q(x)$，于是
+\[
+f'(x)=q'(x)(x-r)+q(x)
+\]
+
+由 $f'(r)=0$ 得 $q(r)=0$，故 $q(x)=(x-r)h(x)$
+
+因此
+\[
+f(x)=(x-r)^2h(x)
+\]
+
+即 $r$ 为 $f(x)=0$ 的重根
+\end{solution}
+\part 设 $g(x)=x^3+ax^2+bx+c$，其中 $a$，$b$，$c$ 为实数。若 $a^2<3b$，证明 $g(x)=0$ 的所有根均不相同。
+\begin{solution}
+设 $g(x)=0$ 有重根 $r$，由(a)得
+\[
+g'(r)=0
+\]
+
+其中
+\[
+g'(x)=3x^2+2ax+b
+\]
+
+对方程 $3x^2+2ax+b=0$，其判别式
+\[
+\Delta=4a^2-12b<0
+\]
+
+（因为 $a^2<3b$），故 $g'(x)=0$ 没有实根，因此重根 $r$ 为复数
+
+由于 $a$，$b$，$c$ 均为实数，故若 $r$ 为重根，则 $\bar{r}$ 亦为 $g(x)=0$ 的根
+
+但 $g(x)=0$ 为三次多项式方程，最多只有三个根，矛盾
+
+因此 $g(x)=0$ 的所有根均不相同
+\end{solution}
+\part 设 $k$ 为实常数。若方程
+\[
+12x^3-8x^2-x+k=0
+\]
+有一个正的重根，求此方程的所有根。
+\begin{solution}
+设 $r$ 为此方程的正重根，设 $f(x)=12x^3-8x^2-x+k$，则
+\[
+f'(x)=36x^2-16x-1
+\]
+
+由(a)得
+\[
+36r^2-16r-1=0
+\]
+
+即
+\[
+(18r+1)(2r-1)=0
+\]
+
+故 $r=\dfrac{1}{2}$ 或 $r=-\dfrac{1}{18}$（舍去，因为 $r>0$）
+
+代入 $f(r)=0$ 得
+\[
+12\left(\frac{1}{2}\right)^3-8\left(\frac{1}{2}\right)^2-\frac{1}{2}+k=0
+\]
+
+解得
+\[
+k=1
+\]
+
+因此方程为
+\[
+12x^3-8x^2-x+1=0
+\]
+
+即
+\[
+(2x-1)^2(3x+1)=0
+\]
+
+故方程的所有根为 $x=\dfrac{1}{2}$ 或 $x=-\dfrac{1}{3}$
+\end{solution}
+\end{parts}
+
+% ---------- Paper 1  第 10 题 ----------
+\question 设 $n$ 为正整数。
+\begin{parts}
+\part 设 $0<p<1$。
+\begin{subparts}
+\subpart 考虑函数 $f(x)=x^p-px$ 在 $(0,\infty)$ 上的性质，或用其他方法，证明
+\[
+x^p\le px+1-p
+\]
+对所有 $x>0$ 成立。
+\begin{solution}
+\[
+f'(x)=px^{p-1}-p=0
+\]
+
+解得 $x=1$
+
+当 $0<x<1$ 时，$f'(x)>0$，故 $f(x)$ 严格递增
+
+当 $x>1$ 时，$f'(x)<0$，故 $f(x)$ 严格递减
+
+因此 $f(x)$ 在 $x=1$ 处取得绝对最大值，即对 $x>0$
+\[
+f(x)\le f(1)=1-p
+\]
+
+因此
+\[
+x^p\le px+1-p
+\]
+\end{solution}
+\subpart 利用(a)(i)，或其他方法，证明
+\[
+a^pb^{1-p}\le pa+(1-p)b
+\]
+对所有 $a,b>0$ 成立。
+\begin{solution}
+设 $x=\dfrac{a}{b}$，代入(a)(i)得
+\[
+\left(\frac{a}{b}\right)^p\le p\left(\frac{a}{b}\right)+1-p
+\]
+
+两边乘以 $b$ 得
+\[
+a^pb^{1-p}\le pa+b-pb=pa+(1-p)b
+\]
+\end{solution}
+\subpart 设 $a_1,a_2,a_3,\ldots,a_n$ 和 $b_1,b_2,b_3,\ldots,b_n$ 为正实数。利用(a)(ii)，或其他方法，证明
+\[
+\sum_{i=1}^na_i^pb_i^{1-p}\le\left(\sum_{i=1}^na_i\right)^p\left(\sum_{i=1}^nb_i\right)^{1-p}
+\]
+\begin{solution}
+设 $a=\dfrac{a_i}{\sum_{i=1}^na_i}$，$b=\dfrac{b_i}{\sum_{i=1}^nb_i}$，由(a)(ii)得
+
+\[
+\left(\frac{a_i}{\sum_{i=1}^na_i}\right)^p\left(\frac{b_i}{\sum_{i=1}^nb_i}\right)^{1-p}\le p\frac{a_i}{\sum_{i=1}^na_i}+(1-p)\frac{b_i}{\sum_{i=1}^nb_i}
+\]
+
+将上式对 $i$ 求和得
+\[
+\sum_{i=1}^n\left(\frac{a_i}{\sum_{i=1}^na_i}\right)^p\left(\frac{b_i}{\sum_{i=1}^nb_i}\right)^{1-p}\le\sum_{i=1}^n\left[p\frac{a_i}{\sum_{i=1}^na_i}+(1-p)\frac{b_i}{\sum_{i=1}^nb_i}\right]=1
+\]
+
+因此
+\[
+\sum_{i=1}^na_i^pb_i^{1-p}\le\left(\sum_{i=1}^na_i\right)^p\left(\sum_{i=1}^nb_i\right)^{1-p}
+\]
+\end{solution}
+\end{subparts}
+\part 设 $0<s<2$。设 $x_1,x_2,x_3,\ldots,x_n$ 和 $y_1,y_2,y_3,\ldots,y_n$ 为正实数。证明
+\begin{subparts}
+\subpart
+\[
+\sum_{i=1}^nx_iy_i\le\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)^{\frac{1}{2}}\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)^{\frac{1}{2}}
+\]
+\begin{solution}
+由(a)(iii)，设 $p=\dfrac{1}{2}$，$a_i=x_i^sy_i^{2-s}$，$b_i=x_i^{2-s}y_i^s$，得
+\[
+\sum_{i=1}^n\left(x_i^sy_i^{2-s}\right)^{\frac{1}{2}}\left(x_i^{2-s}y_i^s\right)^{\frac{1}{2}}\le\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)^{\frac{1}{2}}\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)^{\frac{1}{2}}
+\]
+
+由于
+\[
+\left(x_i^sy_i^{2-s}\right)^{\frac{1}{2}}\left(x_i^{2-s}y_i^s\right)^{\frac{1}{2}}=x_iy_i
+\]
+
+因此
+\[
+\sum_{i=1}^nx_iy_i\le\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)^{\frac{1}{2}}\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)^{\frac{1}{2}}
+\]
+\end{solution}
+\subpart
+\[
+\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)\le\left(\sum_{i=1}^nx_i^2\right)\left(\sum_{i=1}^ny_i^2\right)
+\]
+\begin{solution}
+由(a)(iii)，设 $p=\dfrac{s}{2}$，$a_i=x_i^2$，$b_i=y_i^2$，得
+\[
+\sum_{i=1}^n\left(x_i^2\right)^{\frac{s}{2}}\left(y_i^2\right)^{1-\frac{s}{2}}\le\left(\sum_{i=1}^nx_i^2\right)^{\frac{s}{2}}\left(\sum_{i=1}^ny_i^2\right)^{1-\frac{s}{2}}
+\]
+
+即
+\[
+\sum_{i=1}^nx_i^sy_i^{2-s}\le\left(\sum_{i=1}^nx_i^2\right)^{\frac{s}{2}}\left(\sum_{i=1}^ny_i^2\right)^{1-\frac{s}{2}}\quad\cdots\cdots(1)
+\]
+
+由(a)(iii)，再设 $p=\dfrac{s}{2}$，$a_i=y_i^2$，$b_i=x_i^2$，得
+\[
+\sum_{i=1}^ny_i^sx_i^{2-s}\le\left(\sum_{i=1}^ny_i^2\right)^{\frac{s}{2}}\left(\sum_{i=1}^nx_i^2\right)^{1-\frac{s}{2}}\quad\cdots\cdots(2)
+\]
+
+由(1)和(2)，且所有各项均为正数，得
+\[
+\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)\le\left(\sum_{i=1}^nx_i^2\right)^{\frac{s}{2}}\left(\sum_{i=1}^ny_i^2\right)^{1-\frac{s}{2}}\left(\sum_{i=1}^ny_i^2\right)^{\frac{s}{2}}\left(\sum_{i=1}^nx_i^2\right)^{1-\frac{s}{2}}
+\]
+
+即
+\[
+\left(\sum_{i=1}^nx_i^sy_i^{2-s}\right)\left(\sum_{i=1}^nx_i^{2-s}y_i^s\right)\le\left(\sum_{i=1}^nx_i^2\right)\left(\sum_{i=1}^ny_i^2\right)
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- Paper 1  第 11 题 ----------
+\question
+\begin{parts}
+\part 设 $\vec{u}=2\vec{i}+\vec{j}+\vec{k}$ 和 $\vec{v}=3\vec{i}+4\vec{j}-\vec{k}$ 为 $\mathbf{R}^3$ 中的向量。
+\begin{subparts}
+\subpart 求所有满足 $\vec{w}\cdot\vec{u}=9$ 和 $\vec{w}\cdot\vec{v}=1$ 的向量 $\vec{w}\in\mathbf{R}^3$。
+\begin{solution}
+设 $\vec{w}=x\vec{i}+y\vec{j}+z\vec{k}$，则
+\[
+\begin{cases}
+2x+y+z=9\\
+3x+4y-z=1
+\end{cases}
+\]
+
+利用矩阵化简
+\[
+\begin{pmatrix}2&1&1&9\\3&4&-1&1\end{pmatrix}\sim\begin{pmatrix}1&1&0&2\\3&4&-1&1\end{pmatrix}\sim\begin{pmatrix}1&1&0&2\\0&1&-1&-5\end{pmatrix}
+\]
+
+因此，$\vec{w}=(2-t)\vec{i}+t\vec{j}+(5+t)\vec{k}$，其中 $t\in\mathbf{R}$
+\end{solution}
+\subpart 求(a)(i)所得向量中模最小的向量 $\vec{w}_0$。
+
+证明 $\vec{u}$，$\vec{v}$ 和 $\vec{w}_0$ 线性相关。
+\begin{solution}
+\[
+|\vec{w}|^2=(2-t)^2+t^2+(5+t)^2=3t^2+6t+29=3(t+1)^2+26
+\]
+
+因此当 $t=-1$ 时，$|\vec{w}|$ 取得最小值，即
+\[
+|\vec{w}_0|=\sqrt{26}
+\]
+
+且
+\[
+\vec{w}_0=3\vec{i}-\vec{j}+4\vec{k}
+\]
+
+考虑
+\[
+\begin{vmatrix}2&1&1\\3&4&-1\\3&-1&4\end{vmatrix}=2(15)-1(15)-1(-15)=0
+\]
+
+因此 $\vec{u}$，$\vec{v}$ 和 $\vec{w}_0$ 线性相关
+\end{solution}
+\end{subparts}
+\part 设 $\vec{a}$ 和 $\vec{b}$ 为 $\mathbf{R}^3$ 中的线性无关向量。设 $\vec{c}$ 为 $\vec{a}$ 和 $\vec{b}$ 的线性组合，$p=\vec{c}\cdot\vec{a}$，$q=\vec{c}\cdot\vec{b}$。
+\begin{subparts}
+\subpart 对任意满足 $\vec{r}\cdot\vec{a}=p$ 和 $\vec{r}\cdot\vec{b}=q$ 的向量 $\vec{r}\in\mathbf{R}^3$，证明 $\vec{r}-\vec{c}$ 与 $\vec{a}$ 和 $\vec{b}$ 均正交。由此推出 $|\vec{r}|\ge|\vec{c}|$。
+\begin{solution}
+\[
+(\vec{r}-\vec{c})\cdot\vec{a}=\vec{r}\cdot\vec{a}-\vec{c}\cdot\vec{a}=p-p=0
+\]
+
+\[
+(\vec{r}-\vec{c})\cdot\vec{b}=\vec{r}\cdot\vec{b}-\vec{c}\cdot\vec{b}=q-q=0
+\]
+
+因此 $\vec{r}-\vec{c}$ 与 $\vec{a}$ 和 $\vec{b}$ 均正交
+
+由于 $\vec{c}$ 为 $\vec{a}$ 和 $\vec{b}$ 的线性组合，故 $\vec{a}$，$\vec{b}$ 和 $\vec{c}$ 共面
+
+又 $\vec{r}-\vec{c}$ 与 $\vec{a}$ 和 $\vec{b}$ 均正交，故 $\vec{c}$ 为 $\vec{r}$ 在 $\vec{a}$ 和 $\vec{b}$ 所张成平面上的正交投影
+
+由勾股定理
+\[
+|\vec{r}|^2=|\vec{c}|^2+|\vec{r}-\vec{c}|^2\ge|\vec{c}|^2
+\]
+
+因此
+\[
+|\vec{r}|\ge|\vec{c}|
+\]
+\end{solution}
+\subpart 若 $\vec{c}=s\vec{a}+t\vec{b}$，用 $p$，$q$，$\vec{a}$ 和 $\vec{b}$ 表示 $s$ 和 $t$。
+\begin{solution}
+\[
+\begin{cases}
+\vec{c}\cdot\vec{a}=p\\
+\vec{c}\cdot\vec{b}=q
+\end{cases}
+\]
+
+即
+\[
+\begin{cases}
+s(\vec{a}\cdot\vec{a})+t(\vec{b}\cdot\vec{a})=p&\cdots\cdots(1)\\
+s(\vec{a}\cdot\vec{b})+t(\vec{b}\cdot\vec{b})=q&\cdots\cdots(2)
+\end{cases}
+\]
+
+$(1)\times(\vec{b}\cdot\vec{b})-(2)\times(\vec{a}\cdot\vec{b})$ 得
+\[
+s\left[(\vec{a}\cdot\vec{a})(\vec{b}\cdot\vec{b})-(\vec{a}\cdot\vec{b})^2\right]=p(\vec{b}\cdot\vec{b})-q(\vec{a}\cdot\vec{b})
+\]
+
+因此
+\[
+s=\frac{p(\vec{b}\cdot\vec{b})-q(\vec{a}\cdot\vec{b})}{(\vec{a}\cdot\vec{a})(\vec{b}\cdot\vec{b})-(\vec{a}\cdot\vec{b})^2}
+\]
+
+代入(1)得
+\[
+t=\frac{p(\vec{a}\cdot\vec{b})-q(\vec{a}\cdot\vec{a})}{(\vec{a}\cdot\vec{b})^2-(\vec{a}\cdot\vec{a})(\vec{b}\cdot\vec{b})}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- Paper 1  第 12 题 ----------
+\question 设 $n$ 为正整数。
+\begin{parts}
+\part 假设 $\theta$ 不是 $\pi$ 的整数倍。
+\begin{subparts}
+\subpart 证明
+\[
+\frac{(\cos\theta+i\sin\theta)^n-1}{\cos\theta+i\sin\theta-1}=\frac{\sin\dfrac{n\theta}{2}}{\sin\dfrac{\theta}{2}}\left(\cos\frac{(n-1)\theta}{2}+i\sin\frac{(n-1)\theta}{2}\right)
+\]
+\begin{solution}
+\[
+\frac{(\cos\theta+i\sin\theta)^n-1}{\cos\theta+i\sin\theta-1}=\frac{\cos n\theta+i\sin n\theta-1}{\cos\theta+i\sin\theta-1}
+\]
+
+\[
+=\frac{-2\sin^2\dfrac{n\theta}{2}+2i\cos\dfrac{n\theta}{2}\sin\dfrac{n\theta}{2}}{-2\sin^2\dfrac{\theta}{2}+2i\cos\dfrac{\theta}{2}\sin\dfrac{\theta}{2}}
+\]
+
+\[
+=\frac{\sin\dfrac{n\theta}{2}}{\sin\dfrac{\theta}{2}}\cdot\frac{-\sin\dfrac{n\theta}{2}+i\cos\dfrac{n\theta}{2}}{-\sin\dfrac{\theta}{2}+i\cos\dfrac{\theta}{2}}
+\]
+
+\[
+=\frac{\sin\dfrac{n\theta}{2}}{\sin\dfrac{\theta}{2}}\left(\cos\frac{(n-1)\theta}{2}+i\sin\frac{(n-1)\theta}{2}\right)
+\]
+\end{solution}
+\subpart 利用等式 $\displaystyle\sum_{k=1}^nz^k=z\left(\dfrac{z^n-1}{z-1}\right)$（其中 $z\ne1$），或其他方法，证明
+\[
+\sum_{k=1}^n\cos k\theta=\frac{\sin\dfrac{n\theta}{2}\cos\dfrac{(n+1)\theta}{2}}{\sin\dfrac{\theta}{2}}
+\]
+以及
+\[
+\sum_{k=1}^n\sin k\theta=\frac{\sin\dfrac{n\theta}{2}\sin\dfrac{(n+1)\theta}{2}}{\sin\dfrac{\theta}{2}}
+\]
+\begin{solution}
+设 $z=\cos\theta+i\sin\theta$，由题设等式及(a)(i)得
+\[
+\sum_{k=1}^n(\cos\theta+i\sin\theta)^k=(\cos\theta+i\sin\theta)\cdot\frac{\sin\dfrac{n\theta}{2}}{\sin\dfrac{\theta}{2}}\left(\cos\frac{(n-1)\theta}{2}+i\sin\frac{(n-1)\theta}{2}\right)
+\]
+
+即
+\[
+\sum_{k=1}^n(\cos k\theta+i\sin k\theta)=\frac{\sin\dfrac{n\theta}{2}}{\sin\dfrac{\theta}{2}}\left(\cos\frac{(n+1)\theta}{2}+i\sin\frac{(n+1)\theta}{2}\right)
+\]
+
+比较实部及虚部得
+\[
+\sum_{k=1}^n\cos k\theta=\frac{\sin\dfrac{n\theta}{2}\cos\dfrac{(n+1)\theta}{2}}{\sin\dfrac{\theta}{2}}
+\]
+
+\[
+\sum_{k=1}^n\sin k\theta=\frac{\sin\dfrac{n\theta}{2}\sin\dfrac{(n+1)\theta}{2}}{\sin\dfrac{\theta}{2}}
+\]
+\end{solution}
+\subpart 利用(a)(ii)，证明
+\[
+\sum_{k=1}^n\cos^2(k\theta)=\frac{n}{2}+\frac{\sin n\theta\cos(n+1)\theta}{2\sin\theta}
+\]
+\begin{solution}
+由(a)(ii)，将 $\theta$ 换成 $2\theta$ 得
+\[
+\sum_{k=1}^n\cos2k\theta=\frac{\sin n\theta\cos(n+1)\theta}{\sin\theta}
+\]
+
+即
+\[
+\sum_{k=1}^n\left(2\cos^2k\theta-1\right)=\frac{\sin n\theta\cos(n+1)\theta}{\sin\theta}
+\]
+
+\[
+2\sum_{k=1}^n\cos^2k\theta-n=\frac{\sin n\theta\cos(n+1)\theta}{\sin\theta}
+\]
+
+因此
+\[
+\sum_{k=1}^n\cos^2k\theta=\frac{n}{2}+\frac{\sin n\theta\cos(n+1)\theta}{2\sin\theta}
+\]
+\end{solution}
+\end{subparts}
+\part 当 $n>1$ 时，求下列各式的值。
+\begin{subparts}
+\subpart
+\[
+\sum_{k=1}^n\sin^2\left(\frac{k\pi}{n}\right)
+\]
+\begin{solution}
+由(a)(iii)得
+\[
+\sum_{k=1}^n\left(1-\sin^2k\theta\right)=\frac{n}{2}+\frac{\sin n\theta\cos(n+1)\theta}{2\sin\theta}
+\]
+
+即
+\[
+n-\sum_{k=1}^n\sin^2k\theta=\frac{n}{2}+\frac{\sin n\theta\cos(n+1)\theta}{2\sin\theta}
+\]
+
+\[
+\sum_{k=1}^n\sin^2k\theta=\frac{n}{2}-\frac{\sin n\theta\cos(n+1)\theta}{2\sin\theta}
+\]
+
+设 $\theta=\dfrac{\pi}{n}$，则 $\sin n\theta=\sin\pi=0$，因此
+\[
+\sum_{k=1}^n\sin^2\left(\frac{k\pi}{n}\right)=\frac{n}{2}
+\]
+\end{solution}
+\subpart
+\[
+\sum_{k=1}^n\left(\sin\frac{k\pi}{n}+\cos\frac{k\pi}{n}\right)^2
+\]
+\begin{solution}
+\[
+\sum_{k=1}^n\left(\sin\frac{k\pi}{n}+\cos\frac{k\pi}{n}\right)^2=\sum_{k=1}^n\left(\sin^2\frac{k\pi}{n}+\cos^2\frac{k\pi}{n}+2\sin\frac{k\pi}{n}\cos\frac{k\pi}{n}\right)
+\]
+
+\[
+=\sum_{k=1}^n\left(1+\sin\frac{2k\pi}{n}\right)=n+\sum_{k=1}^n\sin\frac{2k\pi}{n}
+\]
+
+由(a)(ii)，设 $\theta=\dfrac{2\pi}{n}$，得
+\[
+\sum_{k=1}^n\sin\frac{2k\pi}{n}=\frac{\sin\dfrac{n\theta}{2}\sin\dfrac{(n+1)\theta}{2}}{\sin\dfrac{\theta}{2}}
+\]
+
+其中 $\dfrac{n\theta}{2}=\pi$，故 $\sin\dfrac{n\theta}{2}=0$，因此
+\[
+\sum_{k=1}^n\sin\frac{2k\pi}{n}=0
+\]
+
+因此
+\[
+\sum_{k=1}^n\left(\sin\frac{k\pi}{n}+\cos\frac{k\pi}{n}\right)^2=n
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
+%========================= Paper 2 =========================
+
+% ---------- Paper 2  第 1 题 ----------
+\question 求下列各式的值。
+\begin{parts}
+\part
+\[
+\lim_{x\to0}(\tan3x+\cos4x)^{\frac{1}{x}}
+\]
+\begin{solution}
+设
+\[
+y=(\tan3x+\cos4x)^{\frac{1}{x}}
+\]
+
+则
+\[
+\lim_{x\to0}\ln y=\lim_{x\to0}\frac{\ln(\tan3x+\cos4x)}{x}
+\]
+
+由罗必达法则
+\[
+\lim_{x\to0}\frac{\ln(\tan3x+\cos4x)}{x}=\lim_{x\to0}\frac{3\sec^23x-4\sin4x}{\tan3x+\cos4x}=3
+\]
+
+因此
+\[
+\lim_{x\to0}y=e^3
+\]
+\end{solution}
+\part
+\[
+\lim_{x\to\infty}\left(\cos\sqrt{2004+x}-\cos\sqrt{x}\right)
+\]
+\begin{solution}
+\[
+\cos\sqrt{2004+x}-\cos\sqrt{x}=-2\sin\left(\frac{\sqrt{2004+x}+\sqrt{x}}{2}\right)\sin\left(\frac{\sqrt{2004+x}-\sqrt{x}}{2}\right)
+\]
+
+\[
+=-2\sin\left(\frac{\sqrt{2004+x}+\sqrt{x}}{2}\right)\sin\left(\frac{2004}{2\left(\sqrt{2004+x}+\sqrt{x}\right)}\right)
+\]
+
+当 $x\to\infty$ 时
+\[
+\sin\left(\frac{2004}{\sqrt{2004+x}+\sqrt{x}}\right)\to0
+\]
+
+且
+\[
+-1\le\sin\left(\frac{\sqrt{2004+x}+\sqrt{x}}{2}\right)\le1
+\]
+
+因此
+\[
+\lim_{x\to\infty}\left(\cos\sqrt{2004+x}-\cos\sqrt{x}\right)=0
+\]
+\end{solution}
+\end{parts}
+
+% ---------- Paper 2  第 6 题 ----------
+\question 设两平面 $\Pi_1:x+y+z=1$ 和 $\Pi_2:x-y+z=2$。
+\begin{parts}
+\part 求 $\Pi_1$ 和 $\Pi_2$ 的交线的参数方程。
+\begin{solution}
+由
+\[
+\begin{cases}
+x+y+z=1\\
+x-y+z=2
+\end{cases}
+\]
+
+两式相减得
+\[
+2y=-1
+\]
+
+即
+\[
+y=-\frac{1}{2}
+\]
+
+代入得
+\[
+x+z=\frac{3}{2}
+\]
+
+设 $z=t$，则交线的参数方程为
+\[
+\begin{cases}
+x=\dfrac{3}{2}-t\\[1mm]
+y=-\dfrac{1}{2}\\[1mm]
+z=t
+\end{cases}
+\]
+其中 $t\in\mathbf{R}$
+\end{solution}
+\part 求包含所有与 $\Pi_1$ 和 $\Pi_2$ 等距的点的平面的方程。
+\begin{solution}
+设此平面的方程为
+\[
+x+y+z-1+k(x-y+z-2)=0
+\]
+
+即
+\[
+(k+1)x+(1-k)y+(k+1)z-1-2k=0
+\]
+
+此平面与 $\Pi_1$ 及 $\Pi_2$ 的夹角相等，故
+\[
+\frac{\left|(k+1)+(1-k)+(k+1)\right|}{\sqrt{(k+1)^2+(1-k)^2+(k+1)^2}\cdot\sqrt{1^2+1^2+1^2}}=\frac{\left|(k+1)-(1-k)+(k+1)\right|}{\sqrt{(k+1)^2+(1-k)^2+(k+1)^2}\cdot\sqrt{1^2+1^2+1^2}}
+\]
+
+即
+\[
+|k+3|=|3k+1|
+\]
+
+解得 $k=1$ 或 $k=-1$
+
+因此所求平面的方程为
+\[
+2x+2z-3=0
+\]
+或
+\[
+2y+1=0
+\]
+\end{solution}
+\end{parts}
+
+% ---------- Paper 2  第 7 题 ----------
+\question 设
+\[
+f(x)=\frac{|x|x^3}{x^3-2}\quad\left(x\ne\sqrt[3]{2}\right)
+\]
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 求 $x>0$ 时的 $f'(x)$ 和 $f''(x)$。
+\begin{solution}
+当 $x>0$ 时，$f(x)=\dfrac{x^4}{x^3-2}$，故
+\[
+f'(x)=\frac{x^6-8x^3}{(x^3-2)^2}
+\]
+
+\[
+f''(x)=\frac{12x^5+48x^2}{(x^3-2)^3}
+\]
+\end{solution}
+\subpart 写出 $x<0$ 时的 $f'(x)$ 和 $f''(x)$。
+\begin{solution}
+当 $x<0$ 时，$f(x)=-\dfrac{x^4}{x^3-2}$，故
+\[
+f'(x)=-\frac{x^6-8x^3}{(x^3-2)^2}
+\]
+
+\[
+f''(x)=-\frac{12x^5+48x^2}{(x^3-2)^3}
+\]
+\end{solution}
+\subpart 证明 $f'(0)$ 存在。
+\begin{solution}
+\[
+f'(0)=\lim_{h\to0}\frac{f(h)-f(0)}{h}=\lim_{h\to0}\frac{|h|h^3}{(h^3-2)h}=\lim_{h\to0}\frac{|h|h^2}{h^3-2}=0
+\]
+
+因此 $f'(0)$ 存在
+\end{solution}
+\subpart $f''(0)$ 是否存在？请解释。
+\begin{solution}
+\[
+\lim_{h\to0^+}\frac{f'(0+h)-f'(0)}{h}=\lim_{h\to0^+}\frac{h^6-8h^3}{(h^3-2)^2h}=\lim_{h\to0^+}\frac{h^5-8h^2}{(h^3-2)^2}=0
+\]
+
+\[
+\lim_{h\to0^-}\frac{f'(0+h)-f'(0)}{h}=\lim_{h\to0^-}-\frac{h^6-8h^3}{(h^3-2)^2h}=\lim_{h\to0^-}-\frac{h^5-8h^2}{(h^3-2)^2}=0
+\]
+
+由于左极限与右极限相等，故 $f''(0)$ 存在，且 $f''(0)=0$
+\end{solution}
+\end{subparts}
+\part 就下列各情况，求 $x$ 的取值范围。
+\begin{subparts}
+\subpart
+\[
+f'(x)>0
+\]
+\begin{solution}
+\[
+f'(x)>0\Longrightarrow x>2
+\]
+\end{solution}
+\subpart
+\[
+f'(x)<0
+\]
+\begin{solution}
+$f'(x)<0$ 当且仅当 $x<2$ 且 $x\ne\sqrt[3]{2}$
+\end{solution}
+\subpart
+\[
+f''(x)>0
+\]
+\begin{solution}
+$f''(x)>0$ 当且仅当 $\sqrt[3]{-4}<x<0$ 或 $x>\sqrt[3]{2}$
+\end{solution}
+\subpart
+\[
+f''(x)<0
+\]
+\begin{solution}
+$f''(x)<0$ 当且仅当 $x<\sqrt[3]{-4}$ 或 $0<x<\sqrt[3]{2}$
+\end{solution}
+\end{subparts}
+\part 求 $f(x)$ 的相对极值点及拐点。
+\begin{solution}
+由 $f'(x)=0$ 得 $x=0$ 或 $x=2$
+
+由于 $f''(2)>0$，故 $\left(2,\dfrac{8}{3}\right)$ 为相对极小值点
+
+由 $f''(x)=0$ 得 $x=0$ 或 $x=\sqrt[3]{-4}$，故 $(0,0)$ 及 $\left(\sqrt[3]{-4},f\left(\sqrt[3]{-4}\right)\right)$ 为拐点
+\end{solution}
+\part 求 $f(x)$ 图像的渐近线。
+\begin{solution}
+垂直渐近线为 $x=\sqrt[3]{2}$
+
+当 $x\to+\infty$ 时
+\[
+a=\lim_{x\to+\infty}\frac{|x|x^3}{x(x^3-2)}=\lim_{x\to+\infty}\frac{x^4}{x(x^3-2)}=1
+\]
+
+\[
+b=\lim_{x\to+\infty}\left(\frac{x^4}{x^3-2}-x\right)=\lim_{x\to+\infty}\frac{2x}{x^3-2}=0
+\]
+
+因此 $y=x$ 为渐近线
+
+当 $x\to-\infty$ 时
+\[
+a=\lim_{x\to-\infty}\frac{|x|x^3}{x(x^3-2)}=\lim_{x\to-\infty}-\frac{x^4}{x(x^3-2)}=-1
+\]
+
+\[
+b=\lim_{x\to-\infty}\left(-\frac{x^4}{x^3-2}+x\right)=\lim_{x\to-\infty}-\frac{2x}{x^3-2}=0
+\]
+
+因此 $y=-x$ 为渐近线
+\end{solution}
+\part 画出 $f(x)$ 的图像。
+\begin{solution}
+根据以上结果，$f(x)$ 的图像通过原点，在 $x=\sqrt[3]{2}$ 处有垂直渐近线，当 $x\to+\infty$ 时以 $y=x$ 为渐近线，当 $x\to-\infty$ 时以 $y=-x$ 为渐近线，在 $\left(2,\dfrac{8}{3}\right)$ 处有相对极小值，并在 $(0,0)$ 及 $\left(\sqrt[3]{-4},f\left(\sqrt[3]{-4}\right)\right)$ 处有拐点
+\end{solution}
+\end{parts}
+
+% ---------- Paper 2  第 8 题 ----------
+\question
+\begin{parts}
+\part 对任意非负整数 $m$ 和 $n$，定义
+\[
+I_{m,n}(x)=\int_0^x\cos^m\theta\cos n\theta\,\mathrm{d}\theta\quad(x\in\mathbf{R})
+\]
+
+证明
+\[
+I_{m+1,n+1}(x)=\frac{\cos^{m+1}x\sin(n+1)x}{m+n+2}+\frac{m+1}{m+n+2}I_{m,n}(x)
+\]
+\begin{solution}
+考虑
+\[
+I_{m+1,n+1}(x)-\frac{\cos^{m+1}x\sin(n+1)x}{m+n+2}-\frac{m+1}{m+n+2}I_{m,n}(x)
+\]
+
+对上式求导得
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}\left[I_{m+1,n+1}(x)-\frac{\cos^{m+1}x\sin(n+1)x}{m+n+2}-\frac{m+1}{m+n+2}I_{m,n}(x)\right]
+\]
+
+\[
+=\cos^{m+1}x\cos(n+1)x-\frac{(n+1)\cos^{m+1}x\cos(n+1)x-(m+1)\cos^mx\sin x\sin(n+1)x}{m+n+2}-\frac{m+1}{m+n+2}\cos^mx\cos nx
+\]
+
+\[
+=\frac{(m+1)\cos^{m+1}x\cos(n+1)x+(m+1)\cos^mx\sin x\sin(n+1)x}{m+n+2}-\frac{m+1}{m+n+2}\cos^mx\cos nx
+\]
+
+\[
+=\frac{(m+1)\cos^mx\left[\cos x\cos(n+1)x+\sin x\sin(n+1)x\right]}{m+n+2}-\frac{m+1}{m+n+2}\cos^mx\cos nx
+\]
+
+\[
+=\frac{(m+1)\cos^mx\cos nx}{m+n+2}-\frac{m+1}{m+n+2}\cos^mx\cos nx=0
+\]
+
+因此
+\[
+I_{m+1,n+1}(x)-\frac{\cos^{m+1}x\sin(n+1)x}{m+n+2}-\frac{m+1}{m+n+2}I_{m,n}(x)
+\]
+为常数
+
+设 $x=0$，此常数为
+\[
+I_{m+1,n+1}(0)-0-\frac{m+1}{m+n+2}I_{m,n}(0)=0
+\]
+
+因此
+\[
+I_{m+1,n+1}(x)=\frac{\cos^{m+1}x\sin(n+1)x}{m+n+2}+\frac{m+1}{m+n+2}I_{m,n}(x)
+\]
+\end{solution}
+\part 求
+\[
+\int_0^{\frac{\pi}{2}}\cos^4\theta\cos3\theta\,\mathrm{d}\theta
+\]
+\begin{solution}
+由(a)得
+\[
+I_{4,3}\left(\frac{\pi}{2}\right)=\frac{\cos^4\dfrac{\pi}{2}\sin\dfrac{3\pi}{2}}{7}+\frac{4}{7}I_{3,2}\left(\frac{\pi}{2}\right)=\frac{4}{7}I_{3,2}\left(\frac{\pi}{2}\right)
+\]
+
+\[
+I_{3,2}\left(\frac{\pi}{2}\right)=\frac{\cos^3\dfrac{\pi}{2}\sin\pi}{5}+\frac{3}{5}I_{2,1}\left(\frac{\pi}{2}\right)=\frac{3}{5}I_{2,1}\left(\frac{\pi}{2}\right)
+\]
+
+\[
+I_{2,1}\left(\frac{\pi}{2}\right)=\frac{\cos^2\dfrac{\pi}{2}\sin\dfrac{\pi}{2}}{3}+\frac{2}{3}I_{1,0}\left(\frac{\pi}{2}\right)=\frac{2}{3}I_{1,0}\left(\frac{\pi}{2}\right)
+\]
+
+\[
+I_{1,0}\left(\frac{\pi}{2}\right)=\int_0^{\frac{\pi}{2}}\cos\theta\,\mathrm{d}\theta=\Bigl[\sin\theta\Bigr]_0^{\frac{\pi}{2}}=1
+\]
+
+因此 $I_{2,1}\left(\dfrac{\pi}{2}\right)=\dfrac{2}{3}$，$I_{3,2}\left(\dfrac{\pi}{2}\right)=\dfrac{3}{5}\cdot\dfrac{2}{3}=\dfrac{2}{5}$，$I_{4,3}\left(\dfrac{\pi}{2}\right)=\dfrac{4}{7}\cdot\dfrac{2}{5}=\dfrac{8}{35}$
+
+即
+\[
+\int_0^{\frac{\pi}{2}}\cos^4\theta\cos3\theta\,\mathrm{d}\theta=\frac{8}{35}
+\]
+\end{solution}
+\part 求
+\[
+\int_0^{\frac{\pi}{2}}\sin^4\theta\cos3\theta\,\mathrm{d}\theta
+\]
+\begin{solution}
+\[
+\int_0^{\frac{\pi}{2}}\sin^4\theta\cos3\theta\,\mathrm{d}\theta=\int_0^{\frac{\pi}{2}}\left(1-\cos^2\theta\right)^2\cos3\theta\,\mathrm{d}\theta
+\]
+
+\[
+=\int_0^{\frac{\pi}{2}}\left(1-2\cos^2\theta+\cos^4\theta\right)\cos3\theta\,\mathrm{d}\theta
+\]
+
+\[
+=\int_0^{\frac{\pi}{2}}\cos3\theta\,\mathrm{d}\theta-2\int_0^{\frac{\pi}{2}}\cos^2\theta\cos3\theta\,\mathrm{d}\theta+\int_0^{\frac{\pi}{2}}\cos^4\theta\cos3\theta\,\mathrm{d}\theta
+\]
+
+\[
+=\int_0^{\frac{\pi}{2}}\cos3\theta\,\mathrm{d}\theta-2I_{2,3}\left(\frac{\pi}{2}\right)+I_{4,3}\left(\frac{\pi}{2}\right)
+\]
+
+其中
+\[
+\int_0^{\frac{\pi}{2}}\cos3\theta\,\mathrm{d}\theta=\left[\frac{\sin3\theta}{3}\right]_0^{\frac{\pi}{2}}=-\frac{1}{3}
+\]
+
+由(a)得
+\[
+I_{2,3}\left(\frac{\pi}{2}\right)=\frac{\cos^2\dfrac{\pi}{2}\sin\dfrac{3\pi}{2}}{5}+\frac{2}{5}I_{1,2}\left(\frac{\pi}{2}\right)=\frac{2}{5}I_{1,2}\left(\frac{\pi}{2}\right)
+\]
+
+\[
+I_{1,2}\left(\frac{\pi}{2}\right)=\frac{\cos\dfrac{\pi}{2}\sin\pi}{3}+\frac{1}{3}I_{0,1}\left(\frac{\pi}{2}\right)=\frac{1}{3}I_{0,1}\left(\frac{\pi}{2}\right)
+\]
+
+\[
+I_{0,1}\left(\frac{\pi}{2}\right)=\int_0^{\frac{\pi}{2}}\cos\theta\,\mathrm{d}\theta=1
+\]
+
+因此 $I_{1,2}\left(\dfrac{\pi}{2}\right)=\dfrac{1}{3}$，$I_{2,3}\left(\dfrac{\pi}{2}\right)=\dfrac{2}{5}\cdot\dfrac{1}{3}=\dfrac{2}{15}$
+
+由(b)，$I_{4,3}\left(\dfrac{\pi}{2}\right)=\dfrac{8}{35}$，因此
+\[
+\int_0^{\frac{\pi}{2}}\sin^4\theta\cos3\theta\,\mathrm{d}\theta=-\frac{1}{3}-2\cdot\frac{2}{15}+\frac{8}{35}=-\frac{13}{35}
+\]
+\end{solution}
+\end{parts}
+
+% ---------- Paper 2  第 10 题 ----------
+\question
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 求
+\[
+\int\frac{\mathrm{d}x}{1-\sqrt{2}x+x^2}
+\]
+\begin{solution}
+\[
+\int\frac{\mathrm{d}x}{1-\sqrt{2}x+x^2}=\int\frac{\mathrm{d}x}{\left(x-\dfrac{\sqrt{2}}{2}\right)^2+\dfrac{1}{2}}=\sqrt{2}\tan^{-1}\left[\sqrt{2}\left(x-\frac{\sqrt{2}}{2}\right)\right]+C
+\]
+\end{solution}
+\subpart 证明
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}}{1-\sqrt{2}x+x^2}\,\mathrm{d}x=\pi
+\]
+\begin{solution}
+由(a)(i)得
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}}{1-\sqrt{2}x+x^2}\,\mathrm{d}x=4\left[\tan^{-1}\left(\sqrt{2}\left(x-\frac{\sqrt{2}}{2}\right)\right)\right]_0^{\frac{1}{\sqrt{2}}}
+\]
+
+在 $x=\dfrac{1}{\sqrt{2}}$ 时，$\sqrt{2}\left(x-\dfrac{\sqrt{2}}{2}\right)=0$，$\tan^{-1}(0)=0$
+
+在 $x=0$ 时，$\sqrt{2}\left(x-\dfrac{\sqrt{2}}{2}\right)=-1$，$\tan^{-1}(-1)=-\dfrac{\pi}{4}$
+
+因此
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}}{1-\sqrt{2}x+x^2}\,\mathrm{d}x=4\left[0-\left(-\frac{\pi}{4}\right)\right]=\pi
+\]
+\end{solution}
+\subpart 利用(a)(ii)，推出
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}+4x+2\sqrt{2}x^2}{1+x^4}\,\mathrm{d}x=\pi
+\]
+\begin{solution}
+\[
+2\sqrt{2}+4x+2\sqrt{2}x^2=2\sqrt{2}\left(1+\sqrt{2}x+x^2\right)
+\]
+
+又
+\[
+1+x^4=\left(1+\sqrt{2}x+x^2\right)\left(1-\sqrt{2}x+x^2\right)
+\]
+
+因此
+\[
+\frac{2\sqrt{2}+4x+2\sqrt{2}x^2}{1+x^4}=\frac{2\sqrt{2}\left(1+\sqrt{2}x+x^2\right)}{\left(1+\sqrt{2}x+x^2\right)\left(1-\sqrt{2}x+x^2\right)}=\frac{2\sqrt{2}}{1-\sqrt{2}x+x^2}
+\]
+
+由(a)(ii)得
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}+4x+2\sqrt{2}x^2}{1+x^4}\,\mathrm{d}x=\int_0^{\frac{1}{\sqrt{2}}}\frac{2\sqrt{2}}{1-\sqrt{2}x+x^2}\,\mathrm{d}x=\pi
+\]
+\end{solution}
+\end{subparts}
+\part
+\begin{subparts}
+\subpart 设 $k$ 为非负整数。证明
+\[
+-x^{4k+4}\le\sum_{n=0}^k(-1)^nx^{4n}-\frac{1}{1+x^4}\le x^{4k+4}
+\]
+对所有实数 $x$ 成立。
+\begin{solution}
+由等比数列求和公式
+\[
+\sum_{n=0}^k(-1)^nx^{4n}=\sum_{n=0}^k\left(-x^4\right)^n=\frac{1-\left(-x^4\right)^{k+1}}{1-\left(-x^4\right)}=\frac{1-(-1)^{k+1}x^{4k+4}}{1+x^4}
+\]
+
+因此
+\[
+\sum_{n=0}^k(-1)^nx^{4n}-\frac{1}{1+x^4}=\frac{-(-1)^{k+1}x^{4k+4}}{1+x^4}
+\]
+
+于是
+\[
+\left|\sum_{n=0}^k(-1)^nx^{4n}-\frac{1}{1+x^4}\right|=\frac{x^{4k+4}}{1+x^4}\le x^{4k+4}
+\]
+
+因此
+\[
+-x^{4k+4}\le\sum_{n=0}^k(-1)^nx^{4n}-\frac{1}{1+x^4}\le x^{4k+4}
+\]
+\end{solution}
+\subpart 利用(b)(i)和(a)(iii)，或其他方法，证明
+\[
+\sum_{n=0}^\infty\left(-\frac{1}{4}\right)^n\left(\frac{2}{4n+1}+\frac{2}{4n+2}+\frac{1}{4n+3}\right)=\pi
+\]
+
+（考生可以不加证明地使用以下事实：对任意给定的多项式 $p(x)$，
+\[
+\lim_{k\to\infty}\int_0^{\frac{1}{\sqrt{2}}}x^kp(x)\,\mathrm{d}x=0
+\]
+）
+\begin{solution}
+设
+\[
+p(x)=2\sqrt{2}+4x+2\sqrt{2}x^2
+\]
+
+由(b)(i)，对 $x\in\left[0,\dfrac{1}{\sqrt{2}}\right]$，$p(x)\ge0$，故
+\[
+-x^{4k+4}p(x)\le\left[\sum_{n=0}^k(-1)^nx^{4n}-\frac{1}{1+x^4}\right]p(x)\le x^{4k+4}p(x)
+\]
+
+在 $\left[0,\dfrac{1}{\sqrt{2}}\right]$ 上积分得
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\left[-x^{4k+4}p(x)\right]\mathrm{d}x\le\sum_{n=0}^k(-1)^n\int_0^{\frac{1}{\sqrt{2}}}\left[2\sqrt{2}x^{4n}+4x^{4n+1}+2\sqrt{2}x^{4n+2}\right]\mathrm{d}x-\int_0^{\frac{1}{\sqrt{2}}}\frac{p(x)}{1+x^4}\,\mathrm{d}x\le\int_0^{\frac{1}{\sqrt{2}}}\left[x^{4k+4}p(x)\right]\mathrm{d}x
+\]
+
+计算得
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\left[2\sqrt{2}x^{4n}+4x^{4n+1}+2\sqrt{2}x^{4n+2}\right]\mathrm{d}x=\left[\frac{2\sqrt{2}x^{4n+1}}{4n+1}+\frac{4x^{4n+2}}{4n+2}+\frac{2\sqrt{2}x^{4n+3}}{4n+3}\right]_0^{\frac{1}{\sqrt{2}}}
+\]
+
+\[
+=\left(\frac{1}{4}\right)^n\left(\frac{2}{4n+1}+\frac{2}{4n+2}+\frac{1}{4n+3}\right)
+\]
+
+由(a)(iii)，
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\frac{p(x)}{1+x^4}\,\mathrm{d}x=\pi
+\]
+
+因此
+\[
+\int_0^{\frac{1}{\sqrt{2}}}\left[-x^{4k+4}p(x)\right]\mathrm{d}x\le\sum_{n=0}^k\left(-\frac{1}{4}\right)^n\left(\frac{2}{4n+1}+\frac{2}{4n+2}+\frac{1}{4n+3}\right)-\pi\le\int_0^{\frac{1}{\sqrt{2}}}\left[x^{4k+4}p(x)\right]\mathrm{d}x
+\]
+
+由题目所给事实，当 $k\to\infty$ 时
+\[
+\lim_{k\to\infty}\int_0^{\frac{1}{\sqrt{2}}}\left[-x^{4k+4}p(x)\right]\mathrm{d}x=\lim_{k\to\infty}\int_0^{\frac{1}{\sqrt{2}}}\left[x^{4k+4}p(x)\right]\mathrm{d}x=0
+\]
+
+由夹逼定理
+\[
+\lim_{k\to\infty}\sum_{n=0}^k\left(-\frac{1}{4}\right)^n\left(\frac{2}{4n+1}+\frac{2}{4n+2}+\frac{1}{4n+3}\right)-\pi=0
+\]
+
+因此
+\[
+\sum_{n=0}^\infty\left(-\frac{1}{4}\right)^n\left(\frac{2}{4n+1}+\frac{2}{4n+2}+\frac{1}{4n+3}\right)=\pi
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+% ---------- Paper 2  第 12 题 ----------
+\question
+\begin{parts}
+\part 设 $f:\mathbf{R}\to\mathbf{R}$ 为二次可微函数。假设 $a$ 和 $b$ 为两个不同的实数。
+\begin{subparts}
+\subpart 求一个与 $x$ 无关的常数 $k$，使得函数
+\[
+h(x)=f(x)-f(b)-f'(x)(x-b)-k(x-b)^2
+\]
+满足 $h(a)=0$，并求 $h(b)$。
+\begin{solution}
+由 $h(a)=0$ 得
+\[
+f(a)-f(b)-f'(a)(a-b)-k(a-b)^2=0
+\]
+
+因此
+\[
+k=\frac{f(a)-f(b)-f'(a)(a-b)}{(a-b)^2}
+\]
+
+又
+\[
+h(b)=f(b)-f(b)-f'(b)(b-b)-k(b-b)^2=0
+\]
+\end{solution}
+\subpart 设 $I$ 为以 $a$ 和 $b$ 为端点的开区间。利用中值定理及(a)(i)，证明存在实数 $c\in I$，使得
+\[
+f(b)=f(a)+f'(a)(b-a)+\frac{f''(c)}{2}(b-a)^2
+\]
+\begin{solution}
+由(a)(i)，$h(a)=h(b)=0$，故由中值定理，存在 $c\in I$，使得
+\[
+h'(c)=0
+\]
+
+又
+\[
+h'(x)=f'(x)-f''(x)(x-b)-f'(x)-2k(x-b)=-(x-b)\left[f''(x)+2k\right]
+\]
+
+因此
+\[
+h'(c)=-(c-b)\left[f''(c)+2k\right]=0
+\]
+
+由于 $c\in I$，$c\ne b$，故
+\[
+f''(c)+2k=0
+\]
+
+即
+\[
+k=-\frac{f''(c)}{2}
+\]
+
+代入(a)(i)所得的 $k$ 得
+\[
+\frac{f(a)-f(b)-f'(a)(a-b)}{(a-b)^2}=-\frac{f''(c)}{2}
+\]
+
+因此
+\[
+f(a)-f(b)-f'(a)(a-b)=-\frac{f''(c)}{2}(a-b)^2
+\]
+
+即
+\[
+f(b)=f(a)+f'(a)(b-a)+\frac{f''(c)}{2}(b-a)^2
+\]
+\end{solution}
+\end{subparts}
+\part 设 $g:\mathbf{R}\to\mathbf{R}$ 为二次可微函数。假设存在实数 $\beta\in(0,1)$，使得对所有 $x\in(0,1)$，$g(x)\le g(\beta)=1$。
+\begin{subparts}
+\subpart 利用(a)(ii)，证明存在实数 $\gamma\in(0,1)$，使得
+\[
+g(1)=1+\frac{g''(\gamma)}{2}(1-\beta)^2
+\]
+\begin{solution}
+由(a)(ii)，设 $f=g$，$a=\beta$，$b=1$，则存在 $\gamma\in(\beta,1)\subset(0,1)$，使得
+\[
+g(1)=g(\beta)+g'(\beta)(1-\beta)+\frac{g''(\gamma)}{2}(1-\beta)^2
+\]
+
+由于 $g$ 可微，且在 $\beta$ 处取得相对最大值，故
+\[
+g'(\beta)=0
+\]
+
+又 $g(\beta)=1$，因此
+\[
+g(1)=1+\frac{g''(\gamma)}{2}(1-\beta)^2
+\]
+\end{solution}
+\subpart 若对所有 $x\in(0,1)$，$g''(x)\ge-2$，证明
+\[
+g(0)+g(1)\ge1
+\]
+\begin{solution}
+由(a)(ii)，设 $f=g$，$a=\beta$，$b=0$，则存在 $\alpha\in(0,\beta)\subset(0,1)$，使得
+\[
+g(0)=g(\beta)+g'(\beta)(0-\beta)+\frac{g''(\alpha)}{2}(0-\beta)^2=1+\frac{g''(\alpha)}{2}\beta^2
+\]
+
+因此
+\[
+g(1)+g(0)=2+\frac{g''(\gamma)}{2}(1-\beta)^2+\frac{g''(\alpha)}{2}\beta^2
+\]
+
+由于 $g''(x)\ge-2$ 对 $x\in(0,1)$ 成立，故
+\[
+g(1)+g(0)\ge2-(1-\beta)^2-\beta^2=1+2\beta-2\beta^2=1+2\beta(1-\beta)
+\]
+
+由于 $\beta\in(0,1)$，故 $\beta(1-\beta)\ge0$，因此
+\[
+g(0)+g(1)\ge1
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+    % ===================== 2005 AL Pure Mathematics =====================
+% ===================== Paper 1 =====================
+
+\question 证明:对所有正整数 $n$,若 $f(x) = x - \ln(x+1)$
+
+\begin{parts}
+\part 通过考虑函数 $f(x) = x - \ln(x+1)$,或其他方法,证明对所有 $x > -1$,都有 $x \geq \ln(x+1)$
+\begin{solution}
+设 $f(x) = x - \ln(x+1)$,其中 $x > -1$ 则
+
+\[
+f'(x) = 1 - \frac{1}{x+1} = \frac{x}{x+1}
+\]
+
+于是
+
+\[
+f'(x)
+\begin{cases}
+< 0 & -1 < x < 0 \\
+= 0 & x = 0 \\
+> 0 & x > 0
+\end{cases}
+\]
+
+因此 $f$ 在 $x=0$ 处取得绝对最小值,所以对所有 $x > -1$,有
+
+\[
+f(x) \geq f(0)
+\]
+
+即
+
+\[
+x - \ln(x+1) \geq 0 \quad \text{对所有 } x > -1
+\]
+\end{solution}
+
+\part 利用 (a) 的结果,证明级数 $\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}$ 发散
+\begin{solution}
+设 $n$ 为正整数,在 (a) 中代入 $x = \dfrac{1}{n}$,得
+
+\[
+\frac{1}{n} \geq \ln\left(\frac{1}{n} + 1\right) = \ln \frac{n+1}{n}
+\]
+
+于是对所有正整数 $k$,有
+
+\[
+\sum_{n=1}^{k} \frac{1}{n} \geq \sum_{n=1}^{k} \ln \frac{n+1}{n} = \ln \prod_{n=1}^{k} \frac{n+1}{n} = \ln(k+1)
+\]
+
+由于当 $k \to \infty$ 时 $\ln(k+1) \to \infty$,所以当 $k \to \infty$ 时
+
+\[
+\sum_{n=1}^{k} \frac{1}{n} \to \infty
+\]
+
+因此级数 $\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}$ 发散
+\end{solution}
+\end{parts}
+
+
+\question 设 $f(x)$ 是一个次数为 $4$ 且系数为实数的多项式,当 $f(x)$ 除以 $x-2$ 时,余式为 $4$,当 $f(x)$ 除以 $x+3$ 时,余式为 $-6$,设 $r(x)$ 是 $f(x)$ 除以 $(x-2)(x+3)$ 时的余式
+
+\begin{parts}
+\part 求 $r(x)$
+\begin{solution}
+设 $r(x) = Ax + B$,其中 $A,B$ 为常数,于是
+
+\[
+f(x) = (x-2)(x+3)q_1(x) + Ax + B
+\]
+
+其中 $q_1(x)$ 为某多项式,由于 $f(2)=4$ 及 $f(-3)=-6$,得
+
+\[
+2A + B = 4 \quad \text{及} \quad -3A + B = -6
+\]
+
+解得 $A=2$,$B=0$,因此
+
+\[
+r(x) = 2x
+\]
+\end{solution}
+
+\part 设 $g(x) = f(x) - r(x)$,已知 $g(x)$ 能被 $x^2+1$ 整除,且 $g(1) = -16$,求 $g(x)$
+\begin{solution}
+由 (a),有 $g(x) = (x-2)(x+3)q_1(x)$,而 $g(x) = (x^2+1)q_2(x)$,其中 $q_2(x)$ 为某多项式
+
+由于 $(x-2)(x+3)$ 与 $x^2+1$ 互质,且 $g(x)$ 的次数为 $4$,所以
+
+\[
+g(x) = k(x-2)(x+3)(x^2+1)
+\]
+
+其中 $k$ 为非零常数,由 $g(1) = -16$,得
+
+\[
+(-1)(4)(2)k = -16
+\]
+
+即 $-8k = -16$,解得 $k=2$,因此
+
+\[
+g(x) = 2(x-2)(x+3)(x^2+1) = 2x^4 + 2x^3 - 10x^2 + 2x - 12
+\]
+\end{solution}
+\end{parts}
+
+
+\question 设 $M = \begin{pmatrix} p & q \\ r & s \end{pmatrix}$,其中 $p,q,r,s \in \mathbf{R}$
+
+\begin{parts}
+\part[(a)]
+\begin{subparts}
+\subpart 设 $\det M = 0$,证明对任何正整数 $n$,都有 $M^{n+1} = (p+s)^n M$
+\begin{solution}
+由 $\det M = 0$,得 $qr = ps$,于是
+
+\[
+M^2 = \begin{pmatrix} p^2+qr & pq+qs \\ pr+rs & qr+s^2 \end{pmatrix} = \begin{pmatrix} p^2+ps & pq+qs \\ pr+rs & ps+s^2 \end{pmatrix} = \begin{pmatrix} (p+s)p & (p+s)q \\ (p+s)r & (p+s)s \end{pmatrix} = (p+s)M
+\]
+
+设存在正整数 $k$,使得 $M^{k+1} = (p+s)^k M$,则
+
+\[
+M^{k+2} = M^{k+1}M = (p+s)^k M^2 = (p+s)^k (p+s)M = (p+s)^{k+1}M
+\]
+
+因此,由数学归纳法,对任何正整数 $n$,都有 $M^{n+1} = (p+s)^n M$
+\end{solution}
+
+\subpart 设 $qr > 0$,设 $\alpha,\beta$ 是二次方程 $x^2 - (p+s)x + \det M = 0$ 的根,设 $I$ 表示 $2\times 2$ 单位矩阵
+\begin{subsubparts}
+\subsubpart 证明 $\alpha,\beta$ 是两个不同的实数
+\begin{solution}
+考虑判别式
+
+\[
+(p+s)^2 - 4\det M = (p+s)^2 - 4(ps-qr) = (p-s)^2 + 4qr
+\]
+
+由于 $qr > 0$,所以
+
+\[
+(p+s)^2 - 4\det M > 0
+\]
+
+因此 $\alpha,\beta$ 是两个不同的实数
+\end{solution}
+
+\subsubpart 证明 $M^2 - (\alpha+\beta)M + \alpha\beta I = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$
+\begin{solution}
+由于 $\alpha+\beta = p+s$,$\alpha\beta = \det M = ps-qr$,所以
+
+\[
+M^2 - (\alpha+\beta)M + \alpha\beta I = \begin{pmatrix} p^2+qr & pq+qs \\ pr+rs & qr+s^2 \end{pmatrix} - (p+s)\begin{pmatrix} p & q \\ r & s \end{pmatrix} + (ps-qr)\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+\]
+
+逐项化简后,得
+
+\[
+M^2 - (\alpha+\beta)M + \alpha\beta I = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+\]
+\end{solution}
+
+\subsubpart 设 $A = M - \alpha I$,$B = M - \beta I$,证明 $AB = BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$ 且 $\det A = \det B = 0$,并求实数 $\lambda,\mu$(用 $\alpha,\beta$ 表示),使得 $M = \lambda A + \mu B$
+\begin{solution}
+由 (2),有
+
+\[
+AB = (M-\alpha I)(M-\beta I) = M^2 - (\alpha+\beta)M + \alpha\beta I = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+\]
+
+\[
+BA = (M-\beta I)(M-\alpha I) = M^2 - (\alpha+\beta)M + \alpha\beta I = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+\]
+
+因此 $AB = BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$,又
+
+\[
+\det A = (\alpha-p)(\alpha-s)-qr = \alpha^2-(p+s)\alpha+\det M
+\]
+
+\[
+\det B = (\beta-p)(\beta-s)-qr = \beta^2-(p+s)\beta+\det M
+\]
+
+由于 $\alpha,\beta$ 是 $x^2-(p+s)x+\det M=0$ 的根,所以 $\det A = \det B = 0$
+
+对于 $M = \lambda A + \mu B$,即
+
+\[
+M = (\lambda+\mu)M - (\alpha\lambda+\beta\mu)I
+\]
+
+只需选取 $\lambda,\mu$ 使得
+
+\[
+\lambda + \mu = 1 \quad \text{及} \quad \alpha\lambda + \beta\mu = 0
+\]
+
+解得
+
+\[
+\lambda = \frac{\beta}{\beta-\alpha} \quad \text{及} \quad \mu = \frac{\alpha}{\alpha-\beta}
+\]
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+
+\part[(b)] 求 $\begin{pmatrix} 1 & 2 \\ 4 & 3 \end{pmatrix}^n$,其中 $n$ 为正整数
+\begin{solution}
+代入 $p=1,q=2,r=4,s=3$ 于 (a),得 $\det M = -5$,$qr = 8 > 0$,选取 $\alpha=5,\beta=-1$,于是
+
+\[
+A = M - \alpha I = \begin{pmatrix} -4 & 2 \\ 4 & -2 \end{pmatrix} \quad \text{及} \quad B = M - \beta I = \begin{pmatrix} 2 & 2 \\ 4 & 4 \end{pmatrix}
+\]
+
+又 $\lambda = \dfrac{1}{6}$,$\mu = \dfrac{5}{6}$,所以
+
+\[
+\begin{pmatrix} 1 & 2 \\ 4 & 3 \end{pmatrix}^n = \left( \frac{1}{6}\begin{pmatrix} -4 & 2 \\ 4 & -2 \end{pmatrix} + \frac{5}{6}\begin{pmatrix} 2 & 2 \\ 4 & 4 \end{pmatrix} \right)^n = \left( \begin{pmatrix} -\frac{2}{3} & \frac{1}{3} \\ \frac{2}{3} & -\frac{1}{3} \end{pmatrix} + \begin{pmatrix} \frac{5}{3} & \frac{5}{3} \\ \frac{10}{3} & \frac{10}{3} \end{pmatrix} \right)^n
+\]
+
+由已知事实,得
+
+\[
+\begin{pmatrix} 1 & 2 \\ 4 & 3 \end{pmatrix}^n = \begin{pmatrix} -\frac{2}{3} & \frac{1}{3} \\ \frac{2}{3} & -\frac{1}{3} \end{pmatrix}^n + \begin{pmatrix} \frac{5}{3} & \frac{5}{3} \\ \frac{10}{3} & \frac{10}{3} \end{pmatrix}^n
+\]
+
+由 (a)(i),得
+
+\[
+\begin{pmatrix} 1 & 2 \\ 4 & 3 \end{pmatrix}^n = (-1)^{n-1}\begin{pmatrix} -\frac{2}{3} & \frac{1}{3} \\ \frac{2}{3} & -\frac{1}{3} \end{pmatrix} + 5^{n-1}\begin{pmatrix} \frac{5}{3} & \frac{5}{3} \\ \frac{10}{3} & \frac{10}{3} \end{pmatrix}
+\]
+
+因此
+
+\[
+\begin{pmatrix} 1 & 2 \\ 4 & 3 \end{pmatrix}^n = \begin{pmatrix} \dfrac{5^n+2(-1)^n}{3} & \dfrac{5^n+(-1)^{n-1}}{3} \\[2mm] \dfrac{2(5^n)+2(-1)^{n-1}}{3} & \dfrac{2(5^n)+(-1)^n}{3} \end{pmatrix}
+\]
+\end{solution}
+\end{parts}
+
+
+\question 设 $a_1,b_1$ 是满足 $a_1 b_1 > 0$ 的实数,对每个 $n=1,2,3,\ldots$,定义
+
+\[
+a_{n+1} = \frac{a_n^2 + b_n^2}{a_n + b_n} \quad \text{及} \quad b_{n+1} = \frac{2a_n b_n}{a_n + b_n}
+\]
+
+\begin{parts}
+\part[(a)] 设 $a_1 \geq b_1 > 0$
+\begin{subparts}
+\subpart 证明对所有 $n=1,2,3,\ldots$,都有 $a_n \geq b_n$
+\begin{solution}
+由于 $a_1,b_1 > 0$,归纳可知 $a_n>0,b_n>0$ 对所有 $n$ 成立,于是
+
+\[
+a_{n+1} - b_{n+1} = \frac{a_n^2+b_n^2}{a_n+b_n} - \frac{2a_n b_n}{a_n+b_n} = \frac{(a_n-b_n)^2}{a_n+b_n} \geq 0
+\]
+
+因此 $a_n \geq b_n$ 对所有 $n=1,2,3,\ldots$ 成立
+\end{solution}
+
+\subpart 证明数列 $\{a_n\}$ 单调递减,数列 $\{b_n\}$ 单调递增
+\begin{solution}
+由 (a)(i),有
+
+\[
+a_{n+1} - a_n = \frac{a_n^2+b_n^2}{a_n+b_n} - a_n = \frac{-b_n(a_n-b_n)}{a_n+b_n} \leq 0
+\]
+
+因此 $\{a_n\}$ 单调递减,又
+
+\[
+b_{n+1} - b_n = \frac{2a_n b_n}{a_n+b_n} - b_n = \frac{b_n(a_n-b_n)}{a_n+b_n} \geq 0
+\]
+
+因此 $\{b_n\}$ 单调递增
+\end{solution}
+
+\subpart 证明 $\displaystyle\lim_{n\to\infty} a_n$ 及 $\displaystyle\lim_{n\to\infty} b_n$ 都存在
+\begin{solution}
+由 (a)(i) 及 (a)(ii),对所有 $n=1,2,3,\ldots$,有
+
+\[
+a_1 \geq a_n \geq b_n \geq b_1
+\]
+
+$\{a_n\}$ 单调递减且以 $b_1$ 为下界,$\{b_n\}$ 单调递增且以 $a_1$ 为上界,因此 $\displaystyle\lim_{n\to\infty} a_n$ 及 $\displaystyle\lim_{n\to\infty} b_n$ 都存在
+\end{solution}
+
+\subpart 证明 $\displaystyle\lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$
+\begin{solution}
+设 $\displaystyle\lim_{n\to\infty} a_n = l_1$,$\displaystyle\lim_{n\to\infty} b_n = l_2$,则
+
+\[
+l_1 = \frac{l_1^2+l_2^2}{l_1+l_2}
+\]
+
+于是 $l_1^2+l_1 l_2 = l_1^2+l_2^2$,即 $(l_1-l_2)l_2 = 0$,注意 $l_2 = \displaystyle\lim_{n\to\infty} b_n \geq b_1$,而 $b_1>0$,所以 $l_2>0$,因此
+
+\[
+l_1 = l_2
+\]
+
+即 $\displaystyle\lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$
+\end{solution}
+
+\subpart 求 $\displaystyle\lim_{n\to\infty}(a_n+b_n)$ 及 $\displaystyle\lim_{n\to\infty} a_n$(用 $a_1,b_1$ 表示)
+\begin{solution}
+注意
+
+\[
+a_n+b_n = \frac{(a_{n-1}+b_{n-1})^2}{a_{n-1}+b_{n-1}} = a_{n-1}+b_{n-1} = \cdots = a_1+b_1
+\]
+
+因此
+
+\[
+\lim_{n\to\infty}(a_n+b_n) = a_1+b_1
+\]
+
+由 (a)(iv),得
+
+\[
+\lim_{n\to\infty} a_n = \frac{1}{2}\lim_{n\to\infty} a_n + \frac{1}{2}\lim_{n\to\infty} b_n = \frac{1}{2}\lim_{n\to\infty}(a_n+b_n) = \frac{a_1+b_1}{2}
+\]
+\end{solution}
+\end{subparts}
+
+\part[(b)] 设 $a_1 \leq b_1 < 0$,数列 $\{a_n\}$ 及 $\{b_n\}$ 的极限是否存在,解释你的答案
+\begin{solution}
+若 $a_1 \leq b_1 < 0$,则 $-a_1 \geq -b_1 > 0$,定义
+
+\[
+A_{n+1} = \frac{A_n^2+B_n^2}{A_n+B_n} \quad \text{及} \quad B_{n+1} = \frac{2A_n B_n}{A_n+B_n}
+\]
+
+其中 $A_1=-a_1,B_1=-b_1$,注意 $A_1 \geq B_1 > 0$,由 (a),$\displaystyle\lim_{n\to\infty} A_n$ 及 $\displaystyle\lim_{n\to\infty} B_n$ 都存在,又 $a_n=-A_n,b_n=-B_n$ 对所有 $n$ 成立,因此
+
+\[
+\lim_{n\to\infty} a_n = -\lim_{n\to\infty} A_n \quad \text{及} \quad \lim_{n\to\infty} b_n = -\lim_{n\to\infty} B_n
+\]
+
+所以数列 $\{a_n\}$ 及 $\{b_n\}$ 的极限都存在
+\end{solution}
+\end{parts}
+
+
+\question 设 $f(x) = x^4 + 2ax^2 + 4bx + c$,其中 $a,b,c \in \mathbf{R}$ 且 $b \neq 0$,已知
+
+\[
+f(x) \equiv (x^2+2tx+r)(x^2-2tx+s)
+\]
+
+其中 $r,s,t \in \mathbf{R}$
+
+\begin{parts}
+\part[(a)]
+\begin{subparts}
+\subpart 证明 $t \neq 0$
+\begin{solution}
+比较等式两边 $x$ 的系数,得
+
+\[
+2ts - 2tr = 4b
+\]
+
+即 $t(s-r) = 2b$,由于 $b \neq 0$,所以 $t \neq 0$
+\end{solution}
+
+\subpart 用 $a,b,t$ 表示 $r$ 及 $s$
+\begin{solution}
+比较等式两边 $x^2$ 的系数,得
+
+\[
+s+r-4t^2 = 2a
+\]
+
+由 (a)(i),有 $s-r = \dfrac{2b}{t}$,因此
+
+\[
+r = a+2t^2-\frac{b}{t} \quad \text{及} \quad s = a+2t^2+\frac{b}{t}
+\]
+\end{solution}
+
+\subpart 证明 $4t^6+4at^4+(a^2-c)t^2-b^2 = 0$
+\begin{solution}
+比较等式两边常数项,得 $rs = c$,由 (a)(ii),有
+
+\[
+\left(a+2t^2-\frac{b}{t}\right)\left(a+2t^2+\frac{b}{t}\right) = c
+\]
+
+于是
+
+\[
+(a+2t^2)^2 - \frac{b^2}{t^2} = c
+\]
+
+因此
+
+\[
+t^2(2t^2+a)^2 - b^2 - ct^2 = 0
+\]
+
+即
+
+\[
+4t^6+4at^4+(a^2-c)t^2-b^2 = 0
+\]
+\end{solution}
+\end{subparts}
+
+\part[(b)] 考虑方程 $y^4+4y^3-2y^2+52y+9=0$
+\begin{subparts}
+\subpart 求常数 $h$,使得当 $y=x+h$ 时,该方程可写成 $x^4-8x^2+64x-48=0$
+\begin{solution}
+代入 $y=x+h$ 于 $y^4+4y^3-2y^2+52y+9=0$,得
+
+\[
+(x+h)^4+4(x+h)^3-2(x+h)^2+52(x+h)+9=0
+\]
+
+于是可写成
+
+\[
+x^4+(4h+4)x^3+p(h)x^2+q(h)x+r(h)=0
+\]
+
+其中
+
+\[
+p(h)=6h^2+12h-2, \quad q(h)=4h^3+12h^2-4h+52, \quad r(h)=h^4+4h^3-2h^2+52h+9
+\]
+
+为使 $x^3$ 的系数为零,令 $4h+4=0$,得 $h=-1$,又
+
+\[
+p(-1)=-8, \quad q(-1)=64, \quad r(-1)=48
+\]
+
+因此当 $y=x-1$ 时,该方程可写成
+
+\[
+x^4-8x^2+64x-48=0
+\]
+\end{solution}
+
+\subpart 利用 (a) 的结果,求上题中方程 $x^4-8x^2+64x-48=0$ 的解,并写出原方程的所有根
+\begin{solution}
+代入 $a=-4,b=16,c=-48$ 于 (a),得
+
+\[
+x^4-8x^2+64x-48 \equiv (x^2+2tx+r)(x^2-2tx+s)
+\]
+
+其中
+
+\[
+4t^6-16t^4+64t^2-64=0
+\]
+
+即
+
+\[
+t^6-4t^4+16t^2-64=0
+\]
+
+注意 $2^6-4(2^4)+16(2^2)-64=0$,所以方程有实根 $t=2$,由 (a)(ii),得 $r=-4$,$s=12$,于是
+
+\[
+x^4-8x^2+64x-48 = (x^2+4x-4)(x^2-4x+12) = 0
+\]
+
+解得
+
+\[
+x = \frac{-4\pm\sqrt{16+16}}{2} \quad \text{或} \quad x = \frac{4\pm\sqrt{16-48}}{2}
+\]
+
+即
+
+\[
+x = -2\pm 2\sqrt{2} \quad \text{或} \quad x = 2\pm 2\sqrt{2}\,i
+\]
+
+由于 $y=x-1$,原方程的所有根为
+
+\[
+-3+2\sqrt{2}, \quad -3-2\sqrt{2}, \quad 1+2\sqrt{2}\,i, \quad 1-2\sqrt{2}\,i
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
+\question
+\begin{parts}
+\part[(a)] 对任何正整数 $n$,证明对所有 $t>0$,都有 $t^n-1 \geq n(t-1)$
+\begin{solution}
+注意
+
+\[
+t^n-1 = (t-1)(t^{n-1}+t^{n-2}+\cdots+t+1)
+\]
+
+情形一 当 $0<t<1$ 时,$t-1<0$ 且 $0<t^{n-1}+t^{n-2}+\cdots+t+1<n$,所以
+
+\[
+(t-1)(t^{n-1}+\cdots+t+1) > n(t-1)
+\]
+
+情形二 当 $t=1$ 时,$t^n-1=0=n(t-1)$
+
+情形三 当 $t>1$ 时,$t-1>0$ 且 $t^{n-1}+t^{n-2}+\cdots+t+1>n$,所以
+
+\[
+(t-1)(t^{n-1}+\cdots+t+1) > n(t-1)
+\]
+
+综合三种情形,对所有 $t>0$,都有
+
+\[
+t^n-1 \geq n(t-1)
+\]
+\end{solution}
+
+\part[(b)]
+\begin{subparts}
+\subpart 设 $a,b,c$ 为正实数,在 (a) 中代入 $n=3$ 及 $t=\dfrac{\sqrt[3]{abc}}{\sqrt{ab}}$,证明
+
+\[
+\frac{a+b+c}{3} - \sqrt[3]{abc} \geq \frac{2}{3}\left(\frac{a+b}{2}-\sqrt{ab}\right)
+\]
+\begin{solution}
+由 (a),有
+
+\[
+\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}\right)^3 - 1 \geq 3\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}-1\right)
+\]
+
+因此
+
+\[
+\frac{c}{\sqrt{ab}}-1 \geq 3\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}\right)-3
+\]
+
+所以
+
+\[
+c \geq \left(3\sqrt[3]{abc}\right)-2\sqrt{ab}
+\]
+
+注意 $c = 3\left(\dfrac{a+b+c}{3}\right)-2\left(\dfrac{a+b}{2}\right)$,因此
+
+\[
+3\left(\frac{a+b+c}{3}\right)-2\left(\frac{a+b}{2}\right) \geq 3\left(\sqrt[3]{abc}\right)-2\sqrt{ab}
+\]
+
+即
+
+\[
+3\left(\frac{a+b+c}{3}\right)-3\sqrt[3]{abc} \geq 2\left(\frac{a+b}{2}\right)-2\sqrt{ab}
+\]
+
+因此
+
+\[
+\frac{a+b+c}{3} - \sqrt[3]{abc} \geq \frac{2}{3}\left(\frac{a+b}{2}-\sqrt{ab}\right)
+\]
+\end{solution}
+
+\subpart 设 $y_1,y_2,\ldots,y_{k+1}$ 为正实数,其中 $k$ 为正整数,利用 (a),证明
+
+\[
+y_{k+1} \geq (k+1)G_{k+1} - kG_k
+\]
+
+其中 $G_k = \sqrt[k]{y_1 y_2 \cdots y_k}$,$G_{k+1} = \sqrt[k+1]{y_1 y_2 \cdots y_{k+1}}$
+\begin{solution}
+由 (a),代入 $n=k+1$ 及 $t=\dfrac{G_{k+1}}{G_k}$,得
+
+\[
+\left(\frac{G_{k+1}}{G_k}\right)^{k+1} - 1 \geq (k+1)\left(\frac{G_{k+1}}{G_k}-1\right)
+\]
+
+因此
+
+\[
+\frac{y_{k+1}}{G_k} - 1 \geq (k+1)\left(\frac{G_{k+1}}{G_k}-1\right)
+\]
+
+所以
+
+\[
+y_{k+1} \geq (k+1)G_{k+1} - kG_k
+\]
+\end{solution}
+
+\subpart 利用数学归纳法及 (b)(ii),证明对任何 $n$ 个正实数 $x_1,x_2,\ldots,x_n$,都有
+
+\[
+\frac{x_1+x_2+\cdots+x_n}{n} \geq \sqrt[n]{x_1 x_2 \cdots x_n}
+\]
+\begin{solution}
+用数学归纳法证明该命题,当 $n=1$ 时,命题显然成立
+
+设存在正整数 $k$,使得对任何 $k$ 个正实数 $x_1,x_2,\ldots,x_k$,都有
+
+\[
+\frac{x_1+x_2+\cdots+x_k}{k} \geq \sqrt[k]{x_1 x_2 \cdots x_k}
+\]
+
+对任何 $k+1$ 个正实数 $y_1,y_2,\ldots,y_{k+1}$,定义
+
+\[
+A_l = \frac{y_1+y_2+\cdots+y_l}{l} \quad \text{及} \quad G_l = \sqrt[l]{y_1 y_2 \cdots y_l}
+\]
+
+其中 $l=k,k+1$,注意 $y_{k+1} = (k+1)A_{k+1}-kA_k$,由 (b)(ii),得
+
+\[
+(k+1)A_{k+1}-kA_k \geq (k+1)G_{k+1}-kG_k
+\]
+
+于是
+
+\[
+(k+1)(A_{k+1}-G_{k+1}) \geq k(A_k-G_k)
+\]
+
+因此
+
+\[
+A_{k+1}-G_{k+1} \geq \frac{k}{k+1}(A_k-G_k)
+\]
+
+在归纳假设中代入 $x_i=y_i$($1 \leq i \leq k$),得 $A_k \geq G_k$,因此当 $A_k \geq G_k$ 时,有 $A_{k+1} \geq G_{k+1}$
+
+所以当 $n=k$ 时命题成立,则 $n=k+1$ 时命题也成立,由数学归纳法,该命题对所有正整数 $n$ 成立
+\end{solution}
+\end{subparts}
+
+\part[(c)] 设 $n$ 为正整数,利用 (b)(iii),证明
+
+\[
+n^n \geq (1)(3)(5)\cdots(2n-1)
+\]
+
+并证明 $(n^2+n)^n \geq (2n)!$
+\begin{solution}
+在 (b)(iii) 中代入 $x_i=2i-1$($1 \leq i \leq n$),得
+
+\[
+\frac{1+3+5+\cdots+(2n-1)}{n} \geq \sqrt[n]{(1)(3)(5)\cdots(2n-1)}
+\]
+
+因此
+
+\[
+\frac{(1+2n-1)n}{2n} \geq \sqrt[n]{(1)(3)(5)\cdots(2n-1)}
+\]
+
+所以
+
+\[
+n^n \geq (1)(3)(5)\cdots(2n-1)
+\]
+
+又在 (b)(iii) 中代入 $x_i=2i$($1 \leq i \leq n$),得
+
+\[
+\frac{2+4+6+\cdots+2n}{n} \geq \sqrt[n]{(2)(4)(6)\cdots(2n)}
+\]
+
+因此
+
+\[
+\frac{(2+2n)n}{2n} \geq \sqrt[n]{(2)(4)(6)\cdots(2n)}
+\]
+
+所以
+
+\[
+(n+1)^n \geq (2)(4)(6)\cdots(2n)
+\]
+
+从而
+
+\[
+n^n(n+1)^n \geq (1)(2)(3)(4)\cdots(2n-1)(2n)
+\]
+
+因此
+
+\[
+(n^2+n)^n \geq (2n)!
+\]
+\end{solution}
+\end{parts}
+
+
+\question
+\begin{parts}
+\part[(a)] 设 $\mathbf{a},\mathbf{b},\mathbf{c}$ 是 $\mathbf{R}^3$ 中的向量
+\begin{subparts}
+\subpart 证明
+
+\[
+\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}
+\]
+
+其中 $\mathbf{a}=a_1\mathbf{i}+a_2\mathbf{j}+a_3\mathbf{k}$,$\mathbf{b}=b_1\mathbf{i}+b_2\mathbf{j}+b_3\mathbf{k}$,$\mathbf{c}=c_1\mathbf{i}+c_2\mathbf{j}+c_3\mathbf{k}$,并由此推出 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \mathbf{b}\cdot(\mathbf{c}\times\mathbf{a}) = \mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})$
+\begin{solution}
+设 $\mathbf{a}=a_1\mathbf{i}+a_2\mathbf{j}+a_3\mathbf{k}$,$\mathbf{b}=b_1\mathbf{i}+b_2\mathbf{j}+b_3\mathbf{k}$,$\mathbf{c}=c_1\mathbf{i}+c_2\mathbf{j}+c_3\mathbf{k}$,则
+
+\[
+\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = a_1(b_2c_3-b_3c_2) - a_2(b_1c_3-b_3c_1) + a_3(b_1c_2-b_2c_1)
+\]
+
+因此
+
+\[
+\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = a_1\begin{vmatrix} b_2 & c_2 \\ b_3 & c_3 \end{vmatrix} - a_2\begin{vmatrix} b_1 & c_1 \\ b_3 & c_3 \end{vmatrix} + a_3\begin{vmatrix} b_1 & c_1 \\ b_2 & c_2 \end{vmatrix} = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}
+\]
+
+由行列式交换两行变号的性质,得
+
+\[
+\mathbf{b} \cdot (\mathbf{c} \times \mathbf{a}) = \begin{vmatrix} b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \\ a_1 & a_2 & a_3 \end{vmatrix} = -\begin{vmatrix} b_1 & b_2 & b_3 \\ a_1 & a_2 & a_3 \\ c_1 & c_2 & c_3 \end{vmatrix} = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}
+\]
+
+同理
+
+\[
+\mathbf{c} \cdot (\mathbf{a} \times \mathbf{b}) = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}
+\]
+
+因此 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \mathbf{b}\cdot(\mathbf{c}\times\mathbf{a}) = \mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})$
+\end{solution}
+
+\subpart 设 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) \neq 0$,证明对 $\mathbf{R}^3$ 中任何向量 $\mathbf{x}$,都有
+
+\[
+\mathbf{x} = \left(\frac{\mathbf{x}\cdot(\mathbf{b}\times\mathbf{c})}{\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})}\right)\mathbf{a} + \left(\frac{\mathbf{x}\cdot(\mathbf{c}\times\mathbf{a})}{\mathbf{b}\cdot(\mathbf{c}\times\mathbf{a})}\right)\mathbf{b} + \left(\frac{\mathbf{x}\cdot(\mathbf{a}\times\mathbf{b})}{\mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})}\right)\mathbf{c}
+\]
+\begin{solution}
+设 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) \neq 0$,由 (a)(i),有
+
+\[
+\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} \neq 0
+\]
+
+设 $\mathbf{x}=x_1\mathbf{i}+x_2\mathbf{j}+x_3\mathbf{k}$,考虑线性方程组
+
+\[
+\begin{cases} a_1x+b_1y+c_1z=x_1 \\ a_2x+b_2y+c_2z=x_2 \\ a_3x+b_3y+c_3z=x_3 \end{cases}
+\]
+
+由于该方程组的系数行列式不为零,所以存在唯一解 $(\alpha_0,\beta_0,\gamma_0)$,使得
+
+\[
+\mathbf{x} = \alpha_0\mathbf{a}+\beta_0\mathbf{b}+\gamma_0\mathbf{c}
+\]
+
+由于 $\mathbf{b}\cdot(\mathbf{b}\times\mathbf{c}) = \mathbf{c}\cdot(\mathbf{b}\times\mathbf{c}) = 0$,得
+
+\[
+\mathbf{x}\cdot(\mathbf{b}\times\mathbf{c}) = \alpha_0\,\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})
+\]
+
+因此
+
+\[
+\alpha_0 = \frac{\mathbf{x}\cdot(\mathbf{b}\times\mathbf{c})}{\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})}
+\]
+
+同理
+
+\[
+\beta_0 = \frac{\mathbf{x}\cdot(\mathbf{c}\times\mathbf{a})}{\mathbf{b}\cdot(\mathbf{c}\times\mathbf{a})} \quad \text{及} \quad \gamma_0 = \frac{\mathbf{x}\cdot(\mathbf{a}\times\mathbf{b})}{\mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})}
+\]
+
+因此
+
+\[
+\mathbf{x} = \left(\frac{\mathbf{x}\cdot(\mathbf{b}\times\mathbf{c})}{\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})}\right)\mathbf{a} + \left(\frac{\mathbf{x}\cdot(\mathbf{c}\times\mathbf{a})}{\mathbf{b}\cdot(\mathbf{c}\times\mathbf{a})}\right)\mathbf{b} + \left(\frac{\mathbf{x}\cdot(\mathbf{a}\times\mathbf{b})}{\mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})}\right)\mathbf{c}
+\]
+\end{solution}
+
+\subpart 设 $\mathbf{a}\cdot\mathbf{a}=\mathbf{b}\cdot\mathbf{b}=\mathbf{c}\cdot\mathbf{c}=1$ 且 $\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{c}=\mathbf{c}\cdot\mathbf{a}=0$
+\begin{subsubparts}
+\subsubpart 证明 $|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})| = 1$
+\begin{solution}
+由于 $\mathbf{a},\mathbf{b},\mathbf{c}$ 是非零向量且 $\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{c}=\mathbf{c}\cdot\mathbf{a}=0$,所以
+
+\[
+\mathbf{b}\times\mathbf{c} = l\mathbf{a}, \quad \mathbf{c}\times\mathbf{a} = m\mathbf{b}, \quad \mathbf{a}\times\mathbf{b} = n\mathbf{c}
+\]
+
+其中 $l,m,n$ 为非零实数,注意 $|\mathbf{b}\times\mathbf{c}| = |\mathbf{b}||\mathbf{c}| = 1$(由于 $\mathbf{b}\cdot\mathbf{c}=0$),由于 $|\mathbf{a}|=1$,所以 $|l|=1$,因此
+
+\[
+|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})| = |l||\mathbf{a}|^2 = 1
+\]
+\end{solution}
+
+\subsubpart 利用 (a)(ii),证明对 $\mathbf{R}^3$ 中任何向量 $\mathbf{x}$,都有
+
+\[
+\mathbf{x} = (\mathbf{x}\cdot\mathbf{a})\mathbf{a} + (\mathbf{x}\cdot\mathbf{b})\mathbf{b} + (\mathbf{x}\cdot\mathbf{c})\mathbf{c}
+\]
+\begin{solution}
+由 (a)(iii)(1),有 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) \neq 0$,又 $\mathbf{b}\times\mathbf{c}=l\mathbf{a}$,$\mathbf{c}\times\mathbf{a}=m\mathbf{b}$,$\mathbf{a}\times\mathbf{b}=n\mathbf{c}$,其中 $l,m,n$ 为非零实数,设 $\mathbf{x}$ 为 $\mathbf{R}^3$ 中的向量,由 (a)(ii),得
+
+\[
+\mathbf{x} = \left(\frac{\mathbf{x}\cdot(l\mathbf{a})}{\mathbf{a}\cdot(l\mathbf{a})}\right)\mathbf{a} + \left(\frac{\mathbf{x}\cdot(m\mathbf{b})}{\mathbf{b}\cdot(m\mathbf{b})}\right)\mathbf{b} + \left(\frac{\mathbf{x}\cdot(n\mathbf{c})}{\mathbf{c}\cdot(n\mathbf{c})}\right)\mathbf{c}
+\]
+
+由于 $\mathbf{a}\cdot\mathbf{a}=\mathbf{b}\cdot\mathbf{b}=\mathbf{c}\cdot\mathbf{c}=1$,得
+
+\[
+\mathbf{x} = \left(\frac{l\,\mathbf{x}\cdot\mathbf{a}}{l}\right)\mathbf{a} + \left(\frac{m\,\mathbf{x}\cdot\mathbf{b}}{m}\right)\mathbf{b} + \left(\frac{n\,\mathbf{x}\cdot\mathbf{c}}{n}\right)\mathbf{c}
+\]
+
+由于 $l,m,n$ 均不为零,所以
+
+\[
+\mathbf{x} = (\mathbf{x}\cdot\mathbf{a})\mathbf{a} + (\mathbf{x}\cdot\mathbf{b})\mathbf{b} + (\mathbf{x}\cdot\mathbf{c})\mathbf{c}
+\]
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+
+\part[(b)] 设 $\mathbf{u} = \dfrac{1}{\sqrt{3}}(\mathbf{i}+\mathbf{j}+\mathbf{k})$,$\mathbf{v} = \dfrac{1}{\sqrt{2}}(\mathbf{i}-\mathbf{k})$,$\mathbf{w} = \dfrac{1}{\sqrt{6}}(\mathbf{i}-2\mathbf{j}+\mathbf{k})$ 及 $\mathbf{r} = 6\mathbf{i}-\mathbf{j}+10\mathbf{k}$,求实数 $\alpha,\beta,\gamma$,使得 $\mathbf{r} = \alpha\mathbf{u}+\beta\mathbf{v}+\gamma\mathbf{w}$
+\begin{solution}
+由于 $\mathbf{u}=\dfrac{1}{\sqrt{3}}(\mathbf{i}+\mathbf{j}+\mathbf{k})$,$\mathbf{v}=\dfrac{1}{\sqrt{2}}(\mathbf{i}-\mathbf{k})$,$\mathbf{w}=\dfrac{1}{\sqrt{6}}(\mathbf{i}-2\mathbf{j}+\mathbf{k})$,可验证
+
+\[
+\mathbf{u}\cdot\mathbf{u}=\mathbf{v}\cdot\mathbf{v}=\mathbf{w}\cdot\mathbf{w}=1 \quad \text{及} \quad \mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{w}=\mathbf{w}\cdot\mathbf{u}=0
+\]
+
+由 (a)(iii)(2),有
+
+\[
+\mathbf{r} = (\mathbf{r}\cdot\mathbf{u})\mathbf{u} + (\mathbf{r}\cdot\mathbf{v})\mathbf{v} + (\mathbf{r}\cdot\mathbf{w})\mathbf{w}
+\]
+
+因此
+
+\[
+\alpha = \mathbf{r}\cdot\mathbf{u} = \frac{1}{\sqrt{3}}(6\mathbf{i}-\mathbf{j}+10\mathbf{k})\cdot(\mathbf{i}+\mathbf{j}+\mathbf{k}) = 5\sqrt{3}
+\]
+
+\[
+\beta = \mathbf{r}\cdot\mathbf{v} = \frac{1}{\sqrt{2}}(6\mathbf{i}-\mathbf{j}+10\mathbf{k})\cdot(\mathbf{i}-\mathbf{k}) = -2\sqrt{2}
+\]
+
+\[
+\gamma = \mathbf{r}\cdot\mathbf{w} = \frac{1}{\sqrt{6}}(6\mathbf{i}-\mathbf{j}+10\mathbf{k})\cdot(\mathbf{i}-2\mathbf{j}+\mathbf{k}) = 3\sqrt{6}
+\]
+\end{solution}
+\end{parts}
+
+
+% ===================== Paper 2 =====================
+
+\question 设 $P: y^2 = 80x$ 为一条抛物线
+
+\begin{parts}
+\part 证明直线 $y=mx+c$ 是 $P$ 的切线,当且仅当 $mc=20$
+\begin{solution}
+注意 $m \neq 0$,代入 $y=mx+c$ 于 $y^2=80x$,得
+
+\[
+(mx+c)^2 = 80x
+\]
+
+即
+
+\[
+m^2x^2+(2mc-80)x+c^2=0
+\]
+
+由于 $m \neq 0$,该方程为二次方程,直线 $y=mx+c$ 是 $P$ 的切线,当且仅当
+
+\[
+(2mc-80)^2-4m^2c^2=0
+\]
+
+即
+
+\[
+(mc-40)^2-m^2c^2=0
+\]
+
+化简得
+
+\[
+m^2c^2-80mc+1600-m^2c^2=0
+\]
+
+因此
+
+\[
+mc=20
+\]
+\end{solution}
+
+\part 考虑曲线 $\Gamma: x=3\cos\theta,\ y=\sin\theta$,其中 $\dfrac{\pi}{2}<\theta<\dfrac{3\pi}{2}$,求 $\Gamma$ 上两点的坐标,使得在该两点处 $\Gamma$ 的法线是 $P$ 的切线
+\begin{solution}
+设在 $(3\cos\theta,\sin\theta)$ 处 $\Gamma$ 的法线是 $P$ 的切线,$\Gamma$ 在该点处切线的斜率为
+
+\[
+\frac{\dfrac{\mathrm{d}y}{\mathrm{d}\theta}}{\dfrac{\mathrm{d}x}{\mathrm{d}\theta}} = \frac{\cos\theta}{-3\sin\theta} = -\frac{1}{3}\cot\theta
+\]
+
+因此在 $(3\cos\theta,\sin\theta)$ 处的法线方程为
+
+\[
+\frac{y-\sin\theta}{x-3\cos\theta} = 3\tan\theta
+\]
+
+即
+
+\[
+y = (3\tan\theta)x - 8\sin\theta
+\]
+
+由 (a),得
+
+\[
+(3\tan\theta)(-8\sin\theta) = 20
+\]
+
+因此
+
+\[
+\left(\frac{\sin\theta}{\cos\theta}\right)(\sin\theta) = -\frac{5}{6}
+\]
+
+即
+
+\[
+6\cos^2\theta-5\cos\theta-6=0
+\]
+
+解得
+
+\[
+\cos\theta = -\frac{2}{3} \quad \text{或} \quad \cos\theta = \frac{3}{2}\ (\text{舍去})
+\]
+
+由于 $\dfrac{\pi}{2}<\theta<\dfrac{3\pi}{2}$,有
+
+\[
+\sin\theta = \pm\frac{\sqrt{5}}{3}
+\]
+
+因此这两点的坐标为
+
+\[
+\left(-2,\frac{\sqrt{5}}{3}\right) \quad \text{及} \quad \left(-2,-\frac{\sqrt{5}}{3}\right)
+\]
+\end{solution}
+\end{parts}
+
+
+\question 设 $f(x) = -x + |x|\sqrt{\dfrac{x}{x+2}}$,其中 $x<-2$ 或 $x>0$
+
+\begin{parts}
+\part[(a)]
+\begin{subparts}
+\subpart 求 $f'(x)$ 及 $f''(x)$,其中 $x>0$
+\begin{solution}
+当 $x>0$ 时,$f(x)=-x+x\sqrt{\dfrac{x}{x+2}}$,于是
+
+\[
+f'(x) = -1+\frac{x+3}{x+2}\sqrt{\frac{x}{x+2}}
+\]
+
+\[
+f''(x) = \frac{3}{x(x+2)^2}\sqrt{\frac{x}{x+2}}
+\]
+\end{solution}
+
+\subpart 写出 $f'(x)$ 及 $f''(x)$,其中 $x<-2$
+\begin{solution}
+当 $x<-2$ 时,$f(x)=-x-x\sqrt{\dfrac{x}{x+2}}$,于是
+
+\[
+f'(x) = -1-\frac{x+3}{x+2}\sqrt{\frac{x}{x+2}}
+\]
+
+\[
+f''(x) = \frac{-3}{x(x+2)^2}\sqrt{\frac{x}{x+2}}
+\]
+\end{solution}
+\end{subparts}
+
+\part[(b)] 解以下每个不等式
+\begin{subparts}
+\subpart $f'(x)>0$
+\begin{solution}
+情形一 $x>0$ 时,$f'(x)>0$ 等价于
+
+\[
+\frac{x+3}{x+2}\sqrt{\frac{x}{x+2}} > 1
+\]
+
+平方得
+
+\[
+\left(\frac{x+3}{x+2}\right)^2\left(\frac{x}{x+2}\right) > 1
+\]
+
+即 $x(x+3)^2-(x+2)^3>0$,解得 $x<-\dfrac{8}{3}$,因此该情形下无解
+
+情形二 $-3<x<-2$ 时,$f'(x)>0$ 等价于
+
+\[
+\frac{x+3}{x+2}\sqrt{\frac{x}{x+2}} < -1
+\]
+
+平方后同理得 $x(x+3)^2-(x+2)^3<0$,解得 $x>-\dfrac{8}{3}$,因此该情形下的解为 $-\dfrac{8}{3}<x<-2$
+
+情形三 $x \leq -3$ 时,左式恒为负,故该情形下无解
+
+综合三种情形,得
+
+\[
+f'(x)>0 \iff -\frac{8}{3}<x<-2
+\]
+\end{solution}
+
+\subpart $f''(x)>0$
+\begin{solution}
+由 (a),有
+
+\[
+f''(x) =
+\begin{cases}
+\dfrac{-3}{x(x+2)^2}\sqrt{\dfrac{x}{x+2}} & x<-2 \\[2mm]
+\dfrac{3}{x(x+2)^2}\sqrt{\dfrac{x}{x+2}} & x>0
+\end{cases}
+\]
+
+因此
+
+\[
+f''(x)>0 \iff x<-2 \text{ 或 } x>0
+\]
+\end{solution}
+\end{subparts}
+
+\part 求 $y=f(x)$ 图像的相对极值点
+\begin{solution}
+根据 (b) 的结果,得下表
+
+\[
+\begin{array}{c|ccccc}
+x & (-\infty,-\tfrac{8}{3}) & -\tfrac{8}{3} & (-\tfrac{8}{3},-2) & (0,\infty) \\
+\hline
+f'(x) & - & 0 & + & - \\
+f(x) & \searrow & 8 & \nearrow & \searrow
+\end{array}
+\]
+
+由上表可知,相对极小值点为 $\left(-\dfrac{8}{3},8\right)$,没有相对极大值点
+\end{solution}
+
+\part 求 $y=f(x)$ 图像的渐近线
+\begin{solution}
+由于
+
+\[
+\lim_{x\to -2^-} f(x) = \lim_{x\to -2^-}\left(-x-x\sqrt{\frac{x}{x+2}}\right) = +\infty
+\]
+
+所以垂直渐近线为 $x=-2$,又
+
+\[
+\lim_{x\to +\infty} f(x) = \lim_{x\to+\infty}\left(-x+x\sqrt{\frac{x}{x+2}}\right) = \lim_{x\to+\infty}\left(-1+\sqrt{\frac{x}{x+2}}\right) = 0
+\]
+
+所以水平渐近线为 $y=0$,又
+
+\[
+\lim_{x\to+\infty}(f(x)) = \lim_{x\to+\infty}\frac{x^2-\dfrac{x^3}{x+2}}{-x-x\sqrt{\dfrac{x}{x+2}}} = -1
+\]
+
+于是水平渐近线为 $y=-1$,又
+
+\[
+\lim_{x\to -\infty} \frac{f(x)}{x} = -2 \quad \text{及} \quad \lim_{x\to -\infty}(f(x)+2x) = 1
+\]
+
+所以斜渐近线为
+
+\[
+y = -2x+1
+\]
+\end{solution}
+
+\part 描绘 $y=f(x)$ 图像的草图
+\begin{solution}
+根据以上结果,曲线 $y=f(x)$ 在 $x>0$ 部分以 $y=-1$ 为水平渐近线,并经过原点
+
+在 $x<-2$ 部分,曲线以 $x=-2$ 为垂直渐近线,以 $y=-2x+1$ 为斜渐近线,并在 $x=-\dfrac{8}{3}$ 处取得相对极小值点 $\left(-\dfrac{8}{3},8\right)$
+\end{solution}
+\end{parts}
+
+
+\question 设 $f:\mathbf{R}\to\mathbf{R}$ 是满足以下条件的函数
+
+\[
+(1)\quad f(x+y)=e^xf(y)+e^yf(x) \quad \text{对所有 } x,y\in\mathbf{R}
+\]
+
+\[
+(2)\quad \lim_{h\to 0}\frac{f(h)}{h}=2005
+\]
+
+\begin{parts}
+\part 求 $f(0)$
+\begin{solution}
+由 (1),代入 $x=y=0$,得
+
+\[
+f(0+0) = e^0f(0)+e^0f(0)
+\]
+
+因此 $f(0)=f(0)+f(0)$,所以
+
+\[
+f(0)=0
+\]
+\end{solution}
+
+\part 求 $\displaystyle\lim_{h\to 0} f(h)$,并由此证明 $f$ 是连续函数
+\begin{solution}
+由于 $\displaystyle\lim_{h\to 0}\frac{f(h)}{h}$ 存在(由 (2))且 $\displaystyle\lim_{h\to 0} h$ 存在,所以
+
+\[
+\lim_{h\to 0} f(h) = \left(\lim_{h\to 0} h\right)\left(\lim_{h\to 0}\frac{f(h)}{h}\right) = (0)(2005) = 0
+\]
+
+设 $x\in\mathbf{R}$,由 (1),得
+
+\[
+\lim_{h\to 0} f(x+h) = \lim_{h\to 0}\left(e^xf(h)+e^hf(x)\right) = e^x\lim_{h\to 0}f(h) + f(x)\lim_{h\to 0}e^h = e^x(0)+f(x)(1) = f(x)
+\]
+
+因此 $f$ 是连续函数
+\end{solution}
+
+\part
+\begin{subparts}
+\subpart 证明 $f$ 处处可导,且对所有 $x\in\mathbf{R}$,都有 $f'(x)=2005e^x+f(x)$
+\begin{solution}
+设 $x\in\mathbf{R}$,由 (1),有
+
+\[
+\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} = \lim_{h\to 0}\frac{e^xf(h)+e^hf(x)-f(x)}{h} = e^x\lim_{h\to 0}\frac{f(h)}{h} + f(x)\lim_{h\to 0}\frac{e^h-1}{h}
+\]
+
+注意
+
+\[
+\lim_{h\to 0}\frac{e^h-1}{h} = \lim_{h\to 0}e^h = e^0 = 1
+\]
+
+由 (2),得
+
+\[
+\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} = 2005e^x+f(x)
+\]
+
+因此 $f$ 处处可导,且 $f'(x)=2005e^x+f(x)$ 对所有 $x\in\mathbf{R}$ 成立
+\end{solution}
+
+\subpart 设 $n$ 为正整数,利用 (c)(i),求 $f^{(n)}(0)$
+\begin{solution}
+由 (c)(i),有 $f'(x)=2005e^x+f(x)$ 对所有 $x\in\mathbf{R}$ 成立,于是
+
+\[
+f''(x) = 2005e^x+f'(x) = 2005(2)e^x+f(x)
+\]
+
+\[
+f'''(x) = 2005(3)e^x+f(x)
+\]
+
+归纳可得
+
+\[
+f^{(n)}(x) = 2005ne^x+f(x)
+\]
+
+由 (a),$f(0)=0$,因此
+
+\[
+f^{(n)}(0) = 2005n
+\]
+
+对所有正整数 $n$ 成立
+\end{solution}
+\end{subparts}
+
+\part 通过考虑函数 $\dfrac{f(x)}{e^x}$ 的导数,求 $f(x)$
+\begin{solution}
+考虑
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{f(x)}{e^x}\right) = \frac{f'(x)e^x-e^xf(x)}{e^{2x}} = \frac{(2005e^x+f(x))e^x-e^xf(x)}{e^{2x}} = 2005
+\]
+
+因此
+
+\[
+\frac{f(x)}{e^x} = 2005x+C
+\]
+
+其中 $C$ 为常数,所以
+
+\[
+f(x) = 2005xe^x+Ce^x
+\]
+
+由于 $f(0)=0$,得 $C=0$,因此
+
+\[
+f(x) = 2005xe^x
+\]
+
+对所有 $x\in\mathbf{R}$ 成立
+\end{solution}
+\end{parts}
+
+
+\question 设 $H_1: xy=4$ 及 $H_2: xy=1$ 为两条双曲线,设 $L$ 为 $H_1$ 在点 $P\left(2t,\dfrac{2}{t}\right)$ 处的切线
+
+\begin{parts}
+\part 求 $L$ 的方程
+\begin{solution}
+由 $H_1: xy=4$,得 $x\dfrac{\mathrm{d}y}{\mathrm{d}x}+y=0$,因此
+
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{y}{x}
+\]
+
+于是在点 $\left(2t,\dfrac{2}{t}\right)$ 处
+
+\[
+\left.\frac{\mathrm{d}y}{\mathrm{d}x}\right|_{\left(2t,\frac{2}{t}\right)} = \frac{-\dfrac{2}{t}}{2t} = -\frac{1}{t^2}
+\]
+
+因此 $L$ 的方程为
+
+\[
+\frac{y-\dfrac{2}{t}}{x-2t} = -\frac{1}{t^2}
+\]
+
+即
+
+\[
+x+t^2y-4t=0
+\]
+\end{solution}
+
+\part 设 $A\left(\alpha,\dfrac{1}{\alpha}\right)$ 及 $B\left(\beta,\dfrac{1}{\beta}\right)$ 是 $L$ 与 $H_2$ 相交的两个不同点
+\begin{subparts}
+\subpart 证明 $\alpha+\beta=4t$ 及 $\alpha\beta=t^2$
+\begin{solution}
+代入 $y=\dfrac{4t-x}{t^2}$ 于 $xy=1$,得
+
+\[
+x\left(\frac{4t-x}{t^2}\right)=1
+\]
+
+因此 $4tx-x^2=t^2$,即
+
+\[
+x^2-4tx+t^2=0
+\]
+
+由于 $\alpha,\beta$ 是方程 $x^2-4tx+t^2=0$ 的根,所以
+
+\[
+\alpha+\beta=4t \quad \text{及} \quad \alpha\beta=t^2
+\]
+\end{solution}
+
+\subpart 证明弦 $AB$ 的长度为 $\sqrt{12\left(t^2+\dfrac{1}{t^2}\right)}$
+\begin{solution}
+弦 $AB$ 的长度为
+
+\[
+\sqrt{(\alpha-\beta)^2+\left(\frac{1}{\alpha}-\frac{1}{\beta}\right)^2} = \sqrt{(\alpha-\beta)^2\left(1+\frac{1}{(\alpha\beta)^2}\right)} = \sqrt{\left((\alpha+\beta)^2-4\alpha\beta\right)\left(1+\frac{1}{(\alpha\beta)^2}\right)}
+\]
+
+由 (b)(i),得
+
+\[
+AB = \sqrt{\left((4t)^2-4t^2\right)\left(1+\frac{1}{t^4}\right)} = \sqrt{\left(16t^2-4t^2\right)\left(1+\frac{1}{t^4}\right)} = \sqrt{12\left(t^2+\frac{1}{t^2}\right)}
+\]
+\end{solution}
+\end{subparts}
+
+\part 已知 $H_2$ 在 $A$ 及 $B$ 处的切线相交于 $Q$,其中 $A,B$ 是 (b) 中所述的点
+\begin{subparts}
+\subpart 求 $Q$ 的坐标(用 $t$ 表示)
+\begin{solution}
+$H_2$ 在 $A$ 处的切线方程为 $x+\alpha^2y-2\alpha=0$,在 $B$ 处的切线方程为 $x+\beta^2y-2\beta=0$
+
+设 $Q$ 的坐标为 $(x,y)$,解方程组
+
+\[
+x+\alpha^2y-2\alpha=0 \quad \text{及} \quad x+\beta^2y-2\beta=0
+\]
+
+得
+
+\[
+x=\frac{2\alpha\beta}{\alpha+\beta} \quad \text{及} \quad y=\frac{2}{\alpha+\beta}
+\]
+
+由 (b)(i),得
+
+\[
+x=\frac{t}{2} \quad \text{及} \quad y=\frac{1}{2t}
+\]
+
+因此 $Q$ 的坐标为 $\left(\dfrac{t}{2},\dfrac{1}{2t}\right)$
+\end{solution}
+
+\subpart 利用 (b)(ii),或其他方法,证明 $\triangle QAB$ 的面积与 $t$ 无关
+\begin{solution}
+$Q$ 到 $AB$ 的距离为
+
+\[
+\frac{\left|\dfrac{t}{2}+t^2\left(\dfrac{1}{2t}\right)-4t\right|}{\sqrt{1+t^4}} = \frac{3|t|}{\sqrt{1+t^4}}
+\]
+
+于是 $\triangle QAB$ 的面积为
+
+\[
+\frac{1}{2}\left(\frac{3|t|}{\sqrt{1+t^4}}\right)\sqrt{12\left(t^2+\frac{1}{t^2}\right)} = 3\sqrt{3}
+\]
+
+因此 $\triangle QAB$ 的面积为 $3\sqrt{3}$,与 $t$ 无关
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
+\question 设对每个正整数 $n$,$g_0(x)=1$ 及 $g_n(x)=(x^2-1)^n$
+
+\begin{parts}
+\part 设对每个非负整数 $n$,$I_n=\displaystyle\int_{-1}^{1}g_n(x)\,\mathrm{d}x$,把 $I_{n+1}$ 用 $I_n$ 表示,并由此证明
+
+\[
+I_{n+1} = \frac{(-1)^{n+1}2^{2n+3}\left((n+1)!\right)^2}{(2n+3)!}
+\]
+\begin{solution}
+考虑
+
+\[
+I_{n+1} = \int_{-1}^{1}g_{n+1}(x)\,\mathrm{d}x = \Big[xg_{n+1}(x)\Big]_{-1}^{1} - \int_{-1}^{1}(n+1)(2x^2)g_n(x)\,\mathrm{d}x
+\]
+
+因此
+
+\[
+I_{n+1} = -2(n+1)\int_{-1}^{1}x^2g_n(x)\,\mathrm{d}x = -2(n+1)\int_{-1}^{1}\left((x^2-1)g_n(x)+g_n(x)\right)\mathrm{d}x
+\]
+
+即
+
+\[
+I_{n+1} = -2(n+1)\int_{-1}^{1}g_{n+1}(x)\,\mathrm{d}x - 2(n+1)\int_{-1}^{1}g_n(x)\,\mathrm{d}x = -2(n+1)I_{n+1}-2(n+1)I_n
+\]
+
+于是 $(2n+3)I_{n+1}=-(2n+2)I_n$,因此
+
+\[
+I_{n+1} = -\frac{2n+2}{2n+3}I_n
+\]
+
+反复利用该递推关系,得
+
+\[
+I_{n+1} = (-1)^{n+1}\frac{(2n+2)(2n)\cdots(2)}{(2n+3)(2n+1)\cdots(3)}I_0
+\]
+
+由于 $I_0=\displaystyle\int_{-1}^{1}g_0(x)\,\mathrm{d}x=\int_{-1}^{1}\mathrm{d}x=2$,所以
+
+\[
+I_{n+1} = (-1)^{n+1}\frac{\left((2n+2)(2n)\cdots(2)\right)^2}{(2n+3)!}(2) = (-1)^{n+1}\frac{\left(2^{n+1}(n+1)!\right)^2}{(2n+3)!}(2)
+\]
+
+因此
+
+\[
+I_{n+1} = \frac{(-1)^{n+1}2^{2n+3}\left((n+1)!\right)^2}{(2n+3)!}
+\]
+\end{solution}
+
+\part 证明对所有 $k=0,1,\ldots,n$,都有 $g_{n+1}^{(k)}(-1)=g_{n+1}^{(k)}(1)=0$,其中 $n$ 为非负整数
+\begin{solution}
+注意 $g_{n+1}(x)=(x^2-1)^{n+1}=(x+1)^{n+1}(x-1)^{n+1}$,由莱布尼茨公式,得
+
+\[
+g_{n+1}^{(k)}(x) = \sum_{r=0}^{k}C_r^k\left((x+1)^{n+1}\right)^{(k-r)}\left((x-1)^{n+1}\right)^{(r)}
+\]
+
+即
+
+\[
+g_{n+1}^{(k)}(x) = \sum_{r=0}^{k}C_r^k\big((n+1)n\cdots(n-k+r+2)\big)\big((n+1)n\cdots(n-r+2)\big)(x+1)^{n-k+r+1}(x-1)^{n-r+1}
+\]
+
+对每个 $k=0,1,\ldots,n$,$(x+1)$ 及 $(x-1)$ 均是 $g_{n+1}^{(k)}(x)$ 各项的因子,因此
+
+\[
+g_{n+1}^{(k)}(-1) = g_{n+1}^{(k)}(1) = 0
+\]
+
+对所有 $k=0,1,\ldots,n$ 成立
+\end{solution}
+
+\part 设对每个非负整数 $n$,$h_n(x)=\dfrac{g_n^{(n)}(x)}{2^n n!}$
+\begin{subparts}
+\subpart 利用 (b),证明
+
+\[
+\int_{-1}^{1}p(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}}{2^{n+1}(n+1)!}\int_{-1}^{1}p^{(n+1)}(x)g_{n+1}(x)\,\mathrm{d}x
+\]
+
+对任何多项式 $p(x)$ 成立
+\begin{solution}
+考虑
+
+\[
+\int_{-1}^{1}p(x)h_{n+1}(x)\,\mathrm{d}x = \frac{1}{2^{n+1}(n+1)!}\int_{-1}^{1}p(x)g_{n+1}^{(n+1)}(x)\,\mathrm{d}x
+\]
+
+分部积分,得
+
+\[
+\int_{-1}^{1}p(x)h_{n+1}(x)\,\mathrm{d}x = \frac{1}{2^{n+1}(n+1)!}\left(\Big[p(x)g_{n+1}^{(n)}(x)\Big]_{-1}^{1} - \int_{-1}^{1}g_{n+1}^{(n)}(x)p'(x)\,\mathrm{d}x\right)
+\]
+
+由 (b),得
+
+\[
+\int_{-1}^{1}p(x)h_{n+1}(x)\,\mathrm{d}x = \frac{-1}{2^{n+1}(n+1)!}\int_{-1}^{1}p'(x)g_{n+1}^{(n)}(x)\,\mathrm{d}x
+\]
+
+反复分部积分并利用 (b),最终得
+
+\[
+\int_{-1}^{1}p(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}}{2^{n+1}(n+1)!}\int_{-1}^{1}p^{(n+1)}(x)g_{n+1}(x)\,\mathrm{d}x
+\]
+\end{solution}
+
+\subpart 利用 (c)(i),或其他方法,求 $\displaystyle\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x$
+\begin{solution}
+由 (c)(i),取 $p(x)=xh_n(x)$,得
+
+\[
+\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}}{2^{n+1}(n+1)!}\int_{-1}^{1}\left(xh_n(x)\right)^{(n+1)}g_{n+1}(x)\,\mathrm{d}x
+\]
+
+注意
+
+\[
+\left(xh_n(x)\right)^{(n+1)} = \frac{1}{2^n n!}\left(xg_n^{(2n+1)}(x)+(n+1)g_n^{(2n)}(x)\right)
+\]
+
+由于 $g_n^{(2n+1)}(x)=0$,所以
+
+\[
+\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}}{2^{2n+1}(n+1)!n!}\int_{-1}^{1}(n+1)(2n)!g_{n+1}(x)\,\mathrm{d}x
+\]
+
+即
+
+\[
+\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}(n+1)(2n)!}{2^{2n+1}(n+1)!n!}I_{n+1}
+\]
+
+由 (a),得
+
+\[
+\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x = \frac{(-1)^{n+1}(n+1)(2n)!}{2^{2n+1}(n+1)!n!}\cdot\frac{(-1)^{n+1}2^{2n+3}\left((n+1)!\right)^2}{(2n+3)!}
+\]
+
+化简得
+
+\[
+\int_{-1}^{1}xh_n(x)h_{n+1}(x)\,\mathrm{d}x = \frac{2(n+1)}{(2n+1)(2n+3)}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
+\question 设 $f_n:\mathbf{R}\to\mathbf{R}$ 定义为
+
+\[
+f_n(x) = \cos x+\cos^2x+\cdots+\cos^{n+1}x
+\]
+
+其中 $n=1,2,3,\ldots$
+
+\begin{parts}
+\part[(a)]
+\begin{subparts}
+\subpart 证明 $f_n$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上严格递减
+\begin{solution}
+由于 $f_n(x)=\cos x+\cos^2x+\cdots+\cos^{n+1}x$,得
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}f_n(x) = -\sin x\left(1+2\cos x+3\cos^2x+\cdots+(n+1)\cos^nx\right)
+\]
+
+对所有 $x\in\left(0,\dfrac{\pi}{2}\right)$,上式恒小于零,又 $f_n$ 在 $x=0$ 处连续,因此 $f_n$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上严格递减
+\end{solution}
+
+\subpart 证明方程 $f_n(x)=1$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内恰有一个根
+\begin{solution}
+由 (a)(i),$f_n$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上严格递减,所以方程 $f_n(x)=1$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内至多有一个根
+
+设 $g_n(x)=f_n(x)-1$,其中 $x\in\left[0,\dfrac{\pi}{2}\right]$,则
+
+\[
+g_n(0) = f_n(0)-1 = (n+1)-1 = n > 0
+\]
+
+\[
+g_n\left(\frac{\pi}{2}\right) = f_n\left(\frac{\pi}{2}\right)-1 = 0-1 = -1 < 0
+\]
+
+于是 $g_n(0)g_n\left(\dfrac{\pi}{2}\right)<0$,又 $g_n$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上连续,因此方程 $f_n(x)=1$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内恰有一个根
+\end{solution}
+\end{subparts}
+
+\part[(b)] 对每个 $n=1,2,3,\ldots$,设 $\alpha_n$ 为方程 $f_n(x)=1$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内的根
+\begin{subparts}
+\subpart 证明 $\cos\alpha_1 \leq \dfrac{2}{3}$
+\begin{solution}
+由于 $\cos\alpha_1+\cos^2\alpha_1=1$,所以
+
+\[
+\cos^2\alpha_1+\cos\alpha_1-1=0
+\]
+
+解得
+
+\[
+\cos\alpha_1 = \frac{-1\pm\sqrt{5}}{2}
+\]
+
+由于 $0\leq\alpha_1\leq\dfrac{\pi}{2}$,所以
+
+\[
+\cos\alpha_1 = \frac{\sqrt{5}-1}{2} = \frac{2}{\sqrt{5}+1} \leq \frac{2}{\sqrt{4}+1} = \frac{2}{3}
+\]
+\end{solution}
+
+\subpart 数列 $\{\alpha_n\}$ 是否单调,解释你的答案
+\begin{solution}
+由于 $f_n(\alpha_n)=1$,又
+
+\[
+f_n(\alpha_{n+1}) = \cos\alpha_{n+1}+\cos^2\alpha_{n+1}+\cdots+\cos^{n+1}\alpha_{n+1} = f_{n+1}(\alpha_{n+1})-\cos^{n+2}\alpha_{n+1}
+\]
+
+由于 $f_{n+1}(\alpha_{n+1})=1$,所以
+
+\[
+f_n(\alpha_{n+1}) = 1-\cos^{n+2}\alpha_{n+1} \leq 1
+\]
+
+因此 $f_n(\alpha_{n+1}) \leq f_n(\alpha_n)$,由 (a)(i),$f_n$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上严格递减,所以
+
+\[
+\alpha_{n+1} \geq \alpha_n
+\]
+
+因此数列 $\{\alpha_n\}$ 单调递增
+\end{solution}
+
+\subpart 求 $\displaystyle\lim_{n\to\infty}\cos^n\alpha_n$
+\begin{solution}
+由 (b)(ii),$0 \leq \alpha_1 \leq \alpha_n \leq \dfrac{\pi}{2}$,所以
+
+\[
+0 \leq \cos\alpha_n \leq \cos\alpha_1
+\]
+
+由 (b)(i),得
+
+\[
+0 \leq \cos\alpha_n \leq \frac{2}{3}
+\]
+
+因此对所有正整数 $n$,有
+
+\[
+0 \leq \cos^n\alpha_n \leq \left(\frac{2}{3}\right)^n
+\]
+
+由于 $\displaystyle\lim_{n\to\infty}\left(\frac{2}{3}\right)^n=0$,所以
+
+\[
+\lim_{n\to\infty}\cos^n\alpha_n = 0
+\]
+\end{solution}
+
+\subpart 证明数列 $\{\alpha_n\}$ 收敛,并求其极限
+\begin{solution}
+数列 $\{\alpha_n\}$ 单调递增(由 (b)(ii))且以 $\dfrac{\pi}{2}$ 为上界,因此该数列收敛,设 $\displaystyle\lim_{n\to\infty}\alpha_n=\alpha$,由 $f_n(\alpha_n)=1$,得
+
+\[
+\cos\alpha_n+\cos^2\alpha_n+\cdots+\cos^{n+1}\alpha_n = 1
+\]
+
+因此
+
+\[
+\frac{\cos\alpha_n\left(1-\cos^{n+1}\alpha_n\right)}{1-\cos\alpha_n} = 1
+\]
+
+由 $\displaystyle\lim_{n\to\infty}\cos\alpha_n=\cos\alpha$ 及 (b)(iii),$\displaystyle\lim_{n\to\infty}\cos^n\alpha_n=0$,所以
+
+\[
+\lim_{n\to\infty}\cos^{n+1}\alpha_n = \left(\lim_{n\to\infty}\cos\alpha_n\right)\left(\lim_{n\to\infty}\cos^n\alpha_n\right) = 0
+\]
+
+因此
+
+\[
+\frac{(\cos\alpha)(1-0)}{1-\cos\alpha} = 1
+\]
+
+即 $\cos\alpha=1-\cos\alpha$,所以
+
+\[
+\cos\alpha = \frac{1}{2}
+\]
+
+由于 $0\leq\alpha\leq\dfrac{\pi}{2}$,解得 $\alpha=\dfrac{\pi}{3}$,因此
+
+\[
+\lim_{n\to\infty}\alpha_n = \frac{\pi}{3}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+
+\question
+\begin{parts}
+\part[(a)] 设 $f:\mathbf{R}\to\mathbf{R}$ 是具有任意阶导数的函数,对每个 $m=0,1,2,\ldots$ 及 $x\in\mathbf{R}$,定义
+
+\[
+E_m(x) = f(x)-\sum_{k=0}^{m}\frac{f^{(k)}(0)}{k!}x^k
+\]
+
+其中 $f^{(0)}=f$
+\begin{subparts}
+\subpart 利用分部积分,证明
+
+\[
+E_m(x) = \frac{1}{m!}\int_{0}^{x}(x-t)^m f^{(m+1)}(t)\,\mathrm{d}t
+\]
+\begin{solution}
+用数学归纳法证明该命题,当 $m=0$ 时
+
+\[
+\int_{0}^{x}f'(t)\,\mathrm{d}t = \Big[f(t)\Big]_{t=0}^{t=x} = f(x)-f(0) = E_0(x)
+\]
+
+命题成立,设存在非负整数 $l$,使得
+
+\[
+E_l(x) = \frac{1}{l!}\int_{0}^{x}(x-t)^lf^{(l+1)}(t)\,\mathrm{d}t
+\]
+
+则
+
+\[
+E_{l+1}(x) = E_l(x)-\frac{f^{(l+1)}(0)}{(l+1)!}x^{l+1}
+\]
+
+即
+
+\[
+E_{l+1}(x) = \frac{1}{l!}\int_{0}^{x}(x-t)^lf^{(l+1)}(t)\,\mathrm{d}t - \frac{f^{(l+1)}(0)}{(l+1)!}x^{l+1}
+\]
+
+分部积分,得
+
+\[
+\frac{1}{l!}\int_{0}^{x}(x-t)^lf^{(l+1)}(t)\,\mathrm{d}t = \frac{-1}{(l+1)!}\left(\Big[f^{(l+1)}(t)(x-t)^{l+1}\Big]_{t=0}^{t=x} - \int_{0}^{x}(x-t)^{l+1}f^{(l+2)}(t)\,\mathrm{d}t\right)
+\]
+
+因此
+
+\[
+E_{l+1}(x) = \frac{f^{(l+1)}(0)}{(l+1)!}x^{l+1} + \frac{1}{(l+1)!}\int_{0}^{x}(x-t)^{l+1}f^{(l+2)}(t)\,\mathrm{d}t - \frac{f^{(l+1)}(0)}{(l+1)!}x^{l+1}
+\]
+
+即
+
+\[
+E_{l+1}(x) = \frac{1}{(l+1)!}\int_{0}^{x}(x-t)^{l+1}f^{(l+2)}(t)\,\mathrm{d}t
+\]
+
+由数学归纳法,该命题对所有 $m=0,1,2,\ldots$ 成立
+\end{solution}
+
+\subpart 设存在常数 $C$,使得对所有 $k=0,1,2,\ldots$ 及 $x\in\mathbf{R}$,都有 $|f^{(k)}(x)| \leq C$,利用 (a)(i),证明
+
+\[
+|E_m(x)| \leq \frac{C}{(m+1)!}|x|^{m+1}
+\]
+\begin{solution}
+由 (a)(i),有
+
+\[
+|E_m(x)| = \frac{1}{m!}\left|\int_{0}^{x}(x-t)^mf^{(m+1)}(t)\,\mathrm{d}t\right| \leq \frac{1}{m!}\left|\int_{0}^{x}|(x-t)^m||f^{(m+1)}(t)|\,\mathrm{d}t\right|
+\]
+
+因此
+
+\[
+|E_m(x)| \leq \frac{C}{m!}\left|\int_{0}^{x}(x-t)^m\,\mathrm{d}t\right| = \frac{C}{m!}\left|\left[\frac{-(x-t)^{m+1}}{m+1}\right]_{t=0}^{t=x}\right|
+\]
+
+因此
+
+\[
+|E_m(x)| \leq \frac{C}{(m+1)!}|x|^{m+1}
+\]
+\end{solution}
+\end{subparts}
+
+\part[(b)] 设 $n$ 为非负整数
+\begin{subparts}
+\subpart 利用 (a)(i),证明
+
+\[
+\sin x = \sum_{k=0}^{n}\frac{(-1)^kx^{2k+1}}{(2k+1)!} + \frac{(-1)^{n+1}}{(2n+1)!}\int_{0}^{x}(x-t)^{2n+1}\sin t\,\mathrm{d}t
+\]
+
+对所有 $x\in\mathbf{R}$ 成立
+\begin{solution}
+设 $f(x)=\sin x$,其中 $x\in\mathbf{R}$,则
+
+\[
+f^{(k)}(x) =
+\begin{cases}
+\sin x & k=0,4,8,\ldots \\
+\cos x & k=1,5,9,\ldots \\
+-\sin x & k=2,6,10,\ldots \\
+-\cos x & k=3,7,11,\ldots
+\end{cases}
+\]
+
+因此对所有 $k=0,1,2,\ldots$,有
+
+\[
+f^{(2k)}(x)=(-1)^k\sin x \quad \text{及} \quad f^{(2k+1)}(x)=(-1)^k\cos x
+\]
+
+于是
+
+\[
+f^{(2k)}(0)=0 \quad \text{及} \quad f^{(2k+1)}(0)=(-1)^k
+\]
+
+对所有 $k=0,1,2,\ldots$ 成立,又 $\sin x$ 具有任意阶导数,由 (a)(i),在其中代入 $m=2n+1$,得
+
+\[
+\sin x = f(x) = \sum_{k=0}^{2n+1}\frac{f^{(k)}(0)}{k!}x^k + \frac{1}{(2n+1)!}\int_{0}^{x}(x-t)^{2n+1}f^{(2n+2)}(t)\,\mathrm{d}t
+\]
+
+即
+
+\[
+\sin x = \sum_{k=0}^{n}\frac{f^{(2k)}(0)}{(2k)!}x^{2k} + \sum_{k=0}^{n}\frac{f^{(2k+1)}(0)}{(2k+1)!}x^{2k+1} + \frac{1}{(2n+1)!}\int_{0}^{x}(x-t)^{2n+1}f^{(2n+2)}(t)\,\mathrm{d}t
+\]
+
+因此
+
+\[
+\sin x = \sum_{k=0}^{n}\frac{(-1)^kx^{2k+1}}{(2k+1)!} + \frac{(-1)^{n+1}}{(2n+1)!}\int_{0}^{x}(x-t)^{2n+1}\sin t\,\mathrm{d}t
+\]
+\end{solution}
+
+\subpart 利用 (b)(i) 及恒等式 $\sin^3x=\dfrac{3}{4}\sin x-\dfrac{1}{4}\sin 3x$,证明
+
+\[
+\left|\sin^3\frac{1}{3} - \frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^{k+1}\left(1-\dfrac{1}{9^k}\right)}{(2k+1)!}\right| \leq \frac{1}{4(2n+2)!}\left(1+\frac{1}{3^{2n+1}}\right)
+\]
+\begin{solution}
+设 $\displaystyle R_{2n+1}(x)=\frac{(-1)^{n+1}}{(2n+1)!}\int_{0}^{x}(x-t)^{2n+1}\sin t\,\mathrm{d}t$,由 (b)(i),得
+
+\[
+\sin x = \sum_{k=0}^{n}\frac{(-1)^kx^{2k+1}}{(2k+1)!} + R_{2n+1}(x)
+\]
+
+于是
+
+\[
+\frac{3}{4}\sin\frac{1}{3} = \frac{3}{4}\sum_{k=0}^{n}\frac{(-1)^k\left(\dfrac{1}{3}\right)^{2k+1}}{(2k+1)!} + \frac{3}{4}R_{2n+1}\left(\frac{1}{3}\right) = \frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^k\left(\dfrac{1}{9^k}\right)}{(2k+1)!} + \frac{3}{4}R_{2n+1}\left(\frac{1}{3}\right)
+\]
+
+及
+
+\[
+\frac{1}{4}\sin 1 = \frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^k}{(2k+1)!} + \frac{1}{4}R_{2n+1}(1)
+\]
+
+因此
+
+\[
+\frac{3}{4}\sin\frac{1}{3}-\frac{1}{4}\sin 1 = \frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^{k+1}\left(1-\dfrac{1}{9^k}\right)}{(2k+1)!} + \frac{3}{4}R_{2n+1}\left(\frac{1}{3}\right) - \frac{1}{4}R_{2n+1}(1)
+\]
+
+由题设恒等式,得
+
+\[
+\sin^3\frac{1}{3} = \frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^{k+1}\left(1-\dfrac{1}{9^k}\right)}{(2k+1)!} + \frac{3}{4}R_{2n+1}\left(\frac{1}{3}\right) - \frac{1}{4}R_{2n+1}(1)
+\]
+
+因此
+
+\[
+\left|\sin^3\frac{1}{3}-\frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^{k+1}\left(1-\dfrac{1}{9^k}\right)}{(2k+1)!}\right| = \left|\frac{3}{4}R_{2n+1}\left(\frac{1}{3}\right)-\frac{1}{4}R_{2n+1}(1)\right| \leq \frac{3}{4}\left|R_{2n+1}\left(\frac{1}{3}\right)\right| + \frac{1}{4}\left|R_{2n+1}(1)\right|
+\]
+
+注意对所有 $k=0,1,2,\ldots$ 及 $x\in\mathbf{R}$,有 $|f^{(k)}(x)| \leq 1$,由 (a)(ii),得
+
+\[
+\left|R_{2n+1}\left(\frac{1}{3}\right)\right| \leq \frac{1}{3^{2n+2}(2n+2)!} \quad \text{及} \quad \left|R_{2n+1}(1)\right| \leq \frac{1}{(2n+2)!}
+\]
+
+因此
+
+\[
+\left|\sin^3\frac{1}{3}-\frac{1}{4}\sum_{k=0}^{n}\frac{(-1)^{k+1}\left(1-\dfrac{1}{9^k}\right)}{(2k+1)!}\right| \leq \frac{1}{3^{2n+1}(4)(2n+2)!} + \frac{1}{4(2n+2)!} = \frac{1}{4(2n+2)!}\left(1+\frac{1}{3^{2n+1}}\right)
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+    \question
+设 $a$、$b$、$c$ 为正实数，且 $a^2+b^2+c^2=3$。
+
+\begin{parts}
+\part 利用柯西不等式（Cauchy-Schwarz 不等式），
+\begin{subparts}
+\subpart 证明 $a+b+c\le 3$。
+
+\begin{solution}
+由柯西不等式：
+\[
+(a\cdot 1+b\cdot 1+c\cdot 1)^2\le\left(a^2+b^2+c^2\right)\left(1^2+1^2+1^2\right)
+\]
+\[
+(a+b+c)^2\le 3\left(a^2+b^2+c^2\right)=3^2
+\]
+故 $a+b+c\le 3$
+\end{solution}
+
+\subpart 证明 $a^3+b^3+c^3\ge 3$。
+
+\begin{solution}
+由柯西不等式：
+\[
+\left(a^3+b^3+c^3\right)(a+b+c)\ge\left(a^2+b^2+c^2\right)^2
+\]
+由于 $a+b+c>0$：
+\[
+a^3+b^3+c^3\ge\frac{\left(a^2+b^2+c^2\right)^2}{a+b+c}=\frac{3^2}{a+b+c}
+\]
+由(a)(i)，$a+b+c\le 3$，故
+\[
+a^3+b^3+c^3\ge\frac{3^2}{3}=3
+\]
+\end{solution}
+\end{subparts}
+
+\part 对每个 $n=2,3,4,\ldots$，设 $P(n)$ 为命题：$a^n+b^n+c^n\ge 3$。设 $k$ 为任意正整数，若 $P(k)$ 成立，即 $a^k+b^k+c^k\ge 3$，证明：
+\begin{subparts}
+\subpart $P(2k)$ 成立。
+
+\begin{solution}
+由柯西不等式：
+\[
+\left(\left(a^k\right)^2+\left(b^k\right)^2+\left(c^k\right)^2\right)\left(1^2+1^2+1^2\right)\ge\left(a^k+b^k+c^k\right)^2
+\]
+\[
+3\left(a^{2k}+b^{2k}+c^{2k}\right)\ge\left(a^k+b^k+c^k\right)^2\ge 3^2
+\]
+故 $a^{2k}+b^{2k}+c^{2k}\ge 3$，即 $P(2k)$ 成立
+\end{solution}
+
+\subpart $P(2k-1)$ 成立。
+
+\begin{solution}
+由柯西不等式：
+\[
+\left(\left(a^{\frac{2k-1}{2}}\right)^2+\left(b^{\frac{2k-1}{2}}\right)^2+\left(c^{\frac{2k-1}{2}}\right)^2\right)\left(a+b+c\right)\ge\left(a^k+b^k+c^k\right)^2
+\]
+\[
+\left(a^{2k-1}+b^{2k-1}+c^{2k-1}\right)(a+b+c)\ge\left(a^k+b^k+c^k\right)^2\ge 3^2
+\]
+由于 $a+b+c>0$：
+\[
+a^{2k-1}+b^{2k-1}+c^{2k-1}\ge\frac{3^2}{a+b+c}
+\]
+由(a)(i)，$a+b+c\le 3$，故
+\[
+a^{2k-1}+b^{2k-1}+c^{2k-1}\ge\frac{3^2}{3}=3
+\]
+即 $P(2k-1)$ 成立
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $M=\begin{pmatrix}m&-m\\m&m\end{pmatrix}$，其中 $m>0$。
+
+\begin{parts}
+\part 求 $M^2$。
+
+\begin{solution}
+\[
+M^2=\begin{pmatrix}m&-m\\m&m\end{pmatrix}\begin{pmatrix}m&-m\\m&m\end{pmatrix}=\begin{pmatrix}0&-2m^2\\2m^2&0\end{pmatrix}
+\]
+\end{solution}
+
+\part 设 $X=\begin{pmatrix}a&b\\c&d\end{pmatrix}$ 为非零实矩阵，且 $MX=XM$。
+\begin{subparts}
+\subpart 证明 $c=-b$ 且 $d=a$。
+
+\begin{solution}
+\[
+MX=\begin{pmatrix}am-cm&bm-dm\\am+cm&bm+dm\end{pmatrix},\quad XM=\begin{pmatrix}am+bm&bm-am\\cm+dm&dm-cm\end{pmatrix}
+\]
+由 $MX=XM$ 且 $m>0$，比较对应元素：
+\[
+a-c=a+b,\quad b-d=b-a,\quad a+c=c+d,\quad b+d=d-c
+\]
+解得 $c=-b$ 且 $d=a$
+\end{solution}
+
+\subpart 证明 $X$ 为非奇异矩阵。
+
+\begin{solution}
+\[
+\det X=ad-bc=a^2+b^2
+\]
+由于 $X=\begin{pmatrix}a&b\\-b&a\end{pmatrix}$ 为非零实矩阵，故 $a,b$ 中至少一个不为零，因此 $\det X>0$，即 $\det X\ne 0$
+
+故 $X$ 为非奇异矩阵
+\end{solution}
+
+\subpart 设 $X-6X^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$。
+\begin{subsubparts}
+\subsubpart 求 $X$。
+
+\begin{solution}
+\[
+X^{-1}=\frac{1}{a^2+b^2}\begin{pmatrix}a&-b\\b&a\end{pmatrix}
+\]
+由 $X-6X^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$：
+\[
+a-\frac{6a}{a^2+b^2}=1,\quad b+\frac{6b}{a^2+b^2}=0
+\]
+解得 $a=3,b=0$ 或 $a=-2,b=0$
+
+故 $X=\begin{pmatrix}3&0\\0&3\end{pmatrix}$ 或 $X=\begin{pmatrix}-2&0\\0&-2\end{pmatrix}$
+\end{solution}
+
+\subsubpart 若 $a>0$，且 $\left(M-kX\right)^2=-M^2$，以 $m$ 表示 $k$。
+
+\begin{solution}
+由于 $a>0$，故 $X=\begin{pmatrix}3&0\\0&3\end{pmatrix}$
+\[
+\left(M-kX\right)^2=\begin{pmatrix}m-3k&-m\\m&m-3k\end{pmatrix}^2=\begin{pmatrix}(m-3k)^2-m^2&-2m(m-3k)\\2m(m-3k)&(m-3k)^2-m^2\end{pmatrix}
+\]
+又 $-M^2=\begin{pmatrix}0&2m^2\\-2m^2&0\end{pmatrix}$
+
+比较元素：
+\[
+(m-3k)^2-m^2=0,\quad -2m(m-3k)=2m^2
+\]
+解得 $k=\frac{2m}{3}$
+\end{solution}
+\end{subsubparts}
+\end{subparts}
+
+\part 利用(b)(iii)(2)的结果，求两个不同于 $M$ 与 $-M$ 的实矩阵 $P$ 和 $Q$，使得 $P^4+Q^4=M^4$。
+
+\begin{solution}
+由(b)(iii)(2)，$k=\frac{2m}{3}$，故
+\[
+\left[\begin{pmatrix}m&-m\\m&m\end{pmatrix}-\begin{pmatrix}2m&0\\0&2m\end{pmatrix}\right]^2=-M^2
+\]
+即
+\[
+\begin{pmatrix}-m&-m\\m&-m\end{pmatrix}^2=-M^2
+\]
+因此
+\[
+\begin{pmatrix}-m&-m\\m&-m\end{pmatrix}^4=\left(-M^2\right)^2=M^4
+\]
+又
+\[
+\begin{pmatrix}m&m\\-m&m\end{pmatrix}^4=\begin{pmatrix}-m&-m\\m&-m\end{pmatrix}^4=M^4
+\]
+故所求的两个实矩阵为 $\begin{pmatrix}-m&-m\\m&-m\end{pmatrix}$ 和 $\begin{pmatrix}m&m\\-m&m\end{pmatrix}$
+\end{solution}
+\end{parts}
+
+\question
+设 $b,c,d\in\mathbb{R}$，且 $\alpha,\beta,\gamma$ 为方程 $x^3+bx^2+cx+d=0$ 的根。对任意正整数 $k$，定义 $S_k=\alpha^k+\beta^k+\gamma^k$。
+
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 利用系数与根的关系，以 $b,c,d$ 表示 $S_1,S_2,S_3$。
+
+\begin{solution}
+由系数与根的关系：
+\[
+\alpha+\beta+\gamma=-b,\quad\alpha\beta+\beta\gamma+\gamma\alpha=c,\quad\alpha\beta\gamma=-d
+\]
+\[
+S_1=\alpha+\beta+\gamma=-b
+\]
+\[
+S_2=\alpha^2+\beta^2+\gamma^2=(\alpha+\beta+\gamma)^2-2(\alpha\beta+\beta\gamma+\gamma\alpha)=b^2-2c
+\]
+\[
+S_3=\left(-b\alpha^2-c\alpha-d\right)+\left(-b\beta^2-c\beta-d\right)+\left(-b\gamma^2-c\gamma-d\right)=-bS_2-cS_1-3d=-b^3+3bc-3d
+\]
+\end{solution}
+
+\subpart 证明对任意正整数 $k$，$S_{k+3}+bS_{k+2}+cS_{k+1}+dS_k=0$。
+
+\begin{solution}
+由于 $\alpha,\beta,\gamma$ 为方程的根：
+\[
+\alpha^3+b\alpha^2+c\alpha+d=0,\quad\beta^3+b\beta^2+c\beta+d=0,\quad\gamma^3+b\gamma^2+c\gamma+d=0
+\]
+分别乘以 $\alpha^k,\beta^k,\gamma^k$ 后相加：
+\[
+\left(\alpha^{k+3}+\beta^{k+3}+\gamma^{k+3}\right)+b\left(\alpha^{k+2}+\beta^{k+2}+\gamma^{k+2}\right)+c\left(\alpha^{k+1}+\beta^{k+1}+\gamma^{k+1}\right)+d\left(\alpha^k+\beta^k+\gamma^k\right)=0
+\]
+即 $S_{k+3}+bS_{k+2}+cS_{k+1}+dS_k=0$
+\end{solution}
+
+\subpart 设 $d=bc$，利用(a)(i)及(a)(ii)的结果，证明对任意正整数 $n$，$S_{2n+1}+bS_{2n}=(-1)^n 2bc^n$ 且 $S_{2n}+bS_{2n-1}=(-1)^n 2c^n$。
+
+\begin{solution}
+由(a)(ii)，当 $d=bc$ 时，对任意正整数 $k$：
+\[
+S_{k+3}+bS_{k+2}=-c\left(S_{k+1}+bS_k\right)
+\]
+故
+\[
+S_{2n+1}+bS_{2n}=-c\left(S_{2n-1}+bS_{2n-2}\right)=(-c)^2\left(S_{2n-3}+bS_{2n-4}\right)=\cdots=(-c)^{n-1}\left(S_3+bS_2\right)
+\]
+由(a)(i)，代入 $d=bc$：
+\[
+S_3+bS_2=-b^3+3bc-3bc+b\left(b^2-2c\right)=-2bc
+\]
+因此
+\[
+S_{2n+1}+bS_{2n}=(-c)^{n-1}(-2bc)=(-1)^n 2bc^n
+\]
+类似地：
+\[
+S_{2n}+bS_{2n-1}=-c\left(S_{2n-2}+bS_{2n-3}\right)=\cdots=(-c)^{n-1}\left(S_2+bS_1\right)
+\]
+由(a)(i)：
+\[
+S_2+bS_1=b^2-2c+b(-b)=-2c
+\]
+因此
+\[
+S_{2n}+bS_{2n-1}=(-c)^{n-1}(-2c)=(-1)^n 2c^n
+\]
+\end{solution}
+\end{subparts}
+
+\part 求三个数，使得它们的和为3，平方和为3203，立方和为9603。
+
+\begin{solution}
+设所求三数为 $\alpha,\beta,\gamma$，为方程 $x^3+bx^2+cx+d=0$ 的根
+
+由题设，$S_1=3$，$S_2=3203$，$S_3=9603$
+
+由(a)(i)：$-b=3$，故 $b=-3$
+
+$b^2-2c=3203$，即 $9-2c=3203$，故 $c=-1597$
+
+$-b^3+3bc-3d=9603$，代入 $b=-3,c=-1597$：
+\[
+27+14373-3d=9603
+\]
+解得 $d=1599$
+
+故方程为 $x^3-3x^2-1597x+1599=0$
+
+注意到
+\[
+x^3-3x^2-1597x+1599=(x-1)(x+39)(x-41)
+\]
+故所求三数为 $1,-39,41$
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $f(x)=x\ln x-x$，$x>0$。证明 $x\ln x-x+1\ge 0$ 对所有 $x>0$ 成立。
+
+\begin{solution}
+\[
+f'(x)=\ln x+1-1=\ln x
+\]
+当 $0<x<1$ 时 $f'(x)<0$，当 $x=1$ 时 $f'(x)=0$，当 $x>1$ 时 $f'(x)>0$
+
+故 $f(x)$ 于 $x=1$ 处取得最小值，因此 $f(x)\ge f(1)$ 对所有 $x>0$ 成立
+
+即 $x\ln x-x\ge -1$，故 $x\ln x-x+1\ge 0$ 对所有 $x>0$ 成立
+\end{solution}
+
+\part 设 $a$ 为正实数，定义 $g(x)=\frac{a^x-1}{x}$，$x>0$。利用(a)，证明 $g$ 为增函数。
+
+\begin{solution}
+\[
+g'(x)=\frac{\left(a^x\ln a\right)x-\left(a^x-1\right)}{x^2}=\frac{a^x\ln a^x-a^x+1}{x^2}
+\]
+由(a)，$a^x\ln a^x-a^x+1\ge 0$ 对所有 $x>0$ 成立
+
+故 $g'(x)\ge 0$ 对所有 $x>0$ 成立，因此 $g$ 为增函数
+\end{solution}
+
+\part 设 $p,q$ 为实数，且 $p>q>0$。
+\begin{subparts}
+\subpart 设 $a_1,a_2,\ldots,a_n$ 为正实数，且 $\sum_{k=1}^n a_k^q=n$。利用(b)，证明 $\sum_{k=1}^n a_k^p\ge n$。
+
+\begin{solution}
+由(b)，对所有 $k=1,2,\ldots,n$：
+\[
+\frac{a_k^p-1}{p}\ge\frac{a_k^q-1}{q}
+\]
+将各式相加：
+\[
+\sum_{k=1}^n\frac{a_k^p-1}{p}\ge\sum_{k=1}^n\frac{a_k^q-1}{q}
+\]
+即
+\[
+\frac{1}{p}\left(\sum_{k=1}^n a_k^p-n\right)\ge\frac{1}{q}\left(\sum_{k=1}^n a_k^q-n\right)
+\]
+由于 $\sum_{k=1}^n a_k^q=n$，右边等于零，故
+\[
+\sum_{k=1}^n a_k^p\ge n
+\]
+\end{solution}
+
+\subpart 设 $b_1,b_2,\ldots,b_n$ 为正实数。利用(c)(i)，证明
+\[
+\left(\frac{1}{n}\sum_{k=1}^n b_k^p\right)^{\frac{1}{p}}\ge\left(\frac{1}{n}\sum_{k=1}^n b_k^q\right)^{\frac{1}{q}}
+\]
+
+\begin{solution}
+设 $B=\left(\frac{1}{n}\sum_{r=1}^n b_r^q\right)^{\frac{1}{q}}$，则 $B>0$
+
+注意到
+\[
+\sum_{k=1}^n\left(\frac{b_k}{B}\right)^q=\frac{1}{B^q}\sum_{k=1}^n b_k^q=n
+\]
+在(c)(i)中取 $a_k=\frac{b_k}{B}$，$k=1,2,\ldots,n$，得
+\[
+\sum_{k=1}^n\left(\frac{b_k}{B}\right)^p\ge n
+\]
+即
+\[
+\frac{1}{n}\sum_{k=1}^n b_k^p\ge B^p
+\]
+故
+\[
+\left(\frac{1}{n}\sum_{k=1}^n b_k^p\right)^{\frac{1}{p}}\ge B=\left(\frac{1}{n}\sum_{k=1}^n b_k^q\right)^{\frac{1}{q}}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $0<\theta<\pi$。
+
+\begin{parts}
+\part 解方程 $z^2=\cos\theta+i\sin\theta$。
+
+\begin{solution}
+\[
+z=\cos\frac{\theta+2k\pi}{2}+i\sin\frac{\theta+2k\pi}{2},\quad k=0,1
+\]
+故
+\[
+z=\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}\quad\text{或}\quad z=-\cos\frac{\theta}{2}-i\sin\frac{\theta}{2}
+\]
+\end{solution}
+
+\part 设 $u_1,u_2$ 为方程 $(u+1)^2=\cos\theta+i\sin\theta$ 的根，且 $\operatorname{Im}(u_1)<0$。
+\begin{subparts}
+\subpart 求 $u_1$ 及 $u_2$。
+
+\begin{solution}
+由(a)：
+\[
+u+1=\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}\quad\text{或}\quad u+1=-\cos\frac{\theta}{2}-i\sin\frac{\theta}{2}
+\]
+由于 $\operatorname{Im}(u_1)<0$，故
+\[
+u_1=-\cos\frac{\theta}{2}-1-i\sin\frac{\theta}{2},\quad u_2=\cos\frac{\theta}{2}-1+i\sin\frac{\theta}{2}
+\]
+\end{solution}
+
+\subpart 证明 $\left(\frac{u_2}{u_1}\right)^n=(-1)^n i^n\tan^n\frac{\theta}{4}$。由此，求使 $\left(\frac{u_2}{u_1}\right)^n$ 为实数的所有正整数 $n$。
+
+\begin{solution}
+\[
+u_1=-\left(\cos\frac{\theta}{2}+1\right)-i\sin\frac{\theta}{2}=-2\cos\frac{\theta}{4}\left(\cos\frac{\theta}{4}+i\sin\frac{\theta}{4}\right)
+\]
+\[
+u_2=\cos\frac{\theta}{2}-1+i\sin\frac{\theta}{2}=-2\sin\frac{\theta}{4}\left(\cos\left(\frac{\theta}{4}-\frac{\pi}{2}\right)+i\sin\left(\frac{\theta}{4}-\frac{\pi}{2}\right)\right)
+\]
+故
+\[
+\frac{u_2}{u_1}=\tan\frac{\theta}{4}\left(\cos\left(-\frac{\pi}{2}\right)+i\sin\left(-\frac{\pi}{2}\right)\right)=-i\tan\frac{\theta}{4}
+\]
+因此
+\[
+\left(\frac{u_2}{u_1}\right)^n=(-1)^n i^n\tan^n\frac{\theta}{4}
+\]
+由于 $0<\theta<\pi$，$\tan^n\frac{\theta}{4}\ne 0$
+
+$\left(\frac{u_2}{u_1}\right)^n$ 为实数当且仅当 $i^n$ 为实数，即当且仅当 $n$ 为偶数
+\end{solution}
+
+\subpart 证明
+\[
+u_1^{12}-u_2^{12}=2^{12}\left(\cos^{12}\frac{\theta}{4}-\sin^{12}\frac{\theta}{4}\right)\left(\cos 3\theta+i\sin 3\theta\right)
+\]
+由此，求使 $u_1^{12}-u_2^{12}$ 为实数的 $\theta$ 的所有值。
+
+\begin{solution}
+\[
+u_1^{12}=\left(-2\cos\frac{\theta}{4}\left(\cos\frac{\theta}{4}+i\sin\frac{\theta}{4}\right)\right)^{12}=2^{12}\cos^{12}\frac{\theta}{4}\left(\cos 3\theta+i\sin 3\theta\right)
+\]
+由(b)(ii)，由于12为偶数，$\left(\frac{u_2}{u_1}\right)^{12}$ 为实数，且
+\[
+\left(\frac{u_2}{u_1}\right)^{12}=\left(-i\tan\frac{\theta}{4}\right)^{12}=\tan^{12}\frac{\theta}{4}
+\]
+因此
+\[
+u_2^{12}=\tan^{12}\frac{\theta}{4}\cdot u_1^{12}=2^{12}\sin^{12}\frac{\theta}{4}\left(\cos 3\theta+i\sin 3\theta\right)
+\]
+故
+\[
+u_1^{12}-u_2^{12}=2^{12}\left(\cos^{12}\frac{\theta}{4}-\sin^{12}\frac{\theta}{4}\right)\left(\cos 3\theta+i\sin 3\theta\right)
+\]
+$u_1^{12}-u_2^{12}$ 为实数
+
+$\iff\sin 3\theta\left(\cos^{12}\frac{\theta}{4}-\sin^{12}\frac{\theta}{4}\right)=0$
+
+$\iff\sin 3\theta=0$ 或 $\tan\frac{\theta}{4}=1$
+
+由于 $0<\theta<\pi$，$\tan\frac{\theta}{4}\ne 1$
+
+故 $u_1^{12}-u_2^{12}$ 为实数 $\iff\sin 3\theta=0\iff\theta=\frac{\pi}{3}$ 或 $\theta=\frac{2\pi}{3}$
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+对任意正整数 $m,n$，定义 $I_{m,n}=\int_0^{\frac{\pi}{4}}\frac{\sin^m\theta}{\cos^n\theta}\,d\theta$。
+
+\begin{parts}
+\part 证明 $I_{m+2,n+2}=\frac{1}{n+1}\left(\frac{1}{\sqrt{2}}\right)^{m-n}-\frac{m+1}{n+1}I_{m,n}$。
+
+\begin{solution}
+\[
+I_{m+2,n+2}=\int_0^{\frac{\pi}{4}}\frac{\sin^{m+1}\theta}{n+1}\,d\left(\frac{1}{\cos^{n+1}\theta}\right)
+\]
+\[
+=\frac{1}{n+1}\left[\frac{\sin^{m+1}\theta}{\cos^{n+1}\theta}\right]_0^{\frac{\pi}{4}}-\frac{m+1}{n+1}\int_0^{\frac{\pi}{4}}\frac{\sin^m\theta\cos\theta}{\cos^{n+1}\theta}\,d\theta
+\]
+\[
+=\frac{1}{n+1}\left(\frac{1}{\sqrt{2}}\right)^{m-n}-\frac{m+1}{n+1}I_{m,n}
+\]
+\end{solution}
+
+\part 利用代换 $u=\cos\theta$，求 $I_{3,1}$。
+
+\begin{solution}
+设 $u=\cos\theta$，则 $\frac{du}{d\theta}=-\sin\theta$
+\[
+I_{3,1}=\int_0^{\frac{\pi}{4}}\frac{\sin^3\theta}{\cos\theta}\,d\theta=\int_{\frac{1}{\sqrt{2}}}^1\left(\frac{1}{u}-u\right)\,du
+\]
+\[
+=\left[\ln u-\frac{u^2}{2}\right]_{\frac{1}{\sqrt{2}}}^1=\frac{1}{2}\ln 2-\frac{1}{4}
+\]
+\end{solution}
+
+\part 利用(a)及(b)的结果，求 $I_{7,5}$。
+
+\begin{solution}
+由(a)，取 $m=5,n=3$：
+\[
+I_{7,5}=\frac{1}{4}\left(\frac{1}{\sqrt{2}}\right)^2-\frac{6}{4}I_{5,3}
+\]
+再取 $m=3,n=1$：
+\[
+I_{5,3}=\frac{1}{2}\left(\frac{1}{\sqrt{2}}\right)^2-\frac{4}{2}I_{3,1}=\frac{1}{4}-2I_{3,1}
+\]
+因此
+\[
+I_{7,5}=\frac{1}{8}-\frac{3}{2}\left(\frac{1}{4}-2I_{3,1}\right)=-\frac{1}{4}+3I_{3,1}
+\]
+由(b)：
+\[
+I_{7,5}=-\frac{1}{4}+3\left(\frac{1}{2}\ln 2-\frac{1}{4}\right)=\frac{3}{2}\ln 2-1
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 对任意两个不同的正整数 $m,n$，求 $\int_0^\pi\cos mx\cos nx\,dx$。
+
+\begin{solution}
+\[
+\int_0^\pi\cos mx\cos nx\,dx=\frac{1}{2}\int_0^\pi\left(\cos(m+n)x+\cos(m-n)x\right)\,dx
+\]
+\[
+=\frac{1}{2(m+n)}\left[\sin(m+n)x\right]_0^\pi+\frac{1}{2(m-n)}\left[\sin(m-n)x\right]_0^\pi=0
+\]
+\end{solution}
+
+\subpart 对任意正整数 $n$，求 $\int_0^\pi\cos nx\,dx$ 及 $\int_0^\pi\cos^2 nx\,dx$。
+
+\begin{solution}
+\[
+\int_0^\pi\cos nx\,dx=\frac{1}{n}\left[\sin nx\right]_0^\pi=0
+\]
+\[
+\int_0^\pi\cos^2 nx\,dx=\frac{1}{2}\int_0^\pi\left(1+\cos 2nx\right)\,dx=\frac{1}{2}\left[x+\frac{1}{2n}\sin 2nx\right]_0^\pi=\frac{\pi}{2}
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用分部积分法，证明对任意正整数 $n$，$\int_0^\pi x^2\cos nx\,dx=\frac{(-1)^n 2\pi}{n^2}$。
+
+\begin{solution}
+\[
+\int_0^\pi x^2\cos nx\,dx=\frac{1}{n}\left[x^2\sin nx\right]_0^\pi-\frac{2}{n}\int_0^\pi x\sin nx\,dx
+\]
+\[
+=\frac{2}{n^2}\left[x\cos nx\right]_0^\pi-\frac{2}{n^2}\int_0^\pi\cos nx\,dx=\frac{2\pi\cos n\pi}{n^2}-0=\frac{(-1)^n 2\pi}{n^2}
+\]
+\end{solution}
+
+\part 设 $N$ 为正整数，且 $f(x)=a_0+\sum_{m=1}^N a_m\cos mx$，其中 $a_0,a_1,\ldots,a_N$ 为常数。已知
+\[
+\int_0^\pi\left(f(x)-x^2\right)\,dx=0
+\]
+且对所有 $n=1,2,\ldots,N$，
+\[
+\int_0^\pi\left(f(x)-x^2\right)\cos nx\,dx=0
+\]
+\begin{subparts}
+\subpart 求 $a_0$。
+
+\begin{solution}
+\[
+a_0\int_0^\pi\,dx+\sum_{m=1}^N a_m\int_0^\pi\cos mx\,dx=\int_0^\pi x^2\,dx
+\]
+由(a)(ii)：
+\[
+\pi a_0=\left[\frac{x^3}{3}\right]_0^\pi
+\]
+故 $a_0=\frac{\pi^2}{3}$
+\end{solution}
+
+\subpart 证明对所有 $n=1,2,\ldots,N$，$a_n=\frac{(-1)^n 4}{n^2}$。
+
+\begin{solution}
+对每个 $n=1,2,\ldots,N$：
+\[
+a_0\int_0^\pi\cos nx\,dx+\sum_{m=1}^N a_m\int_0^\pi\cos mx\cos nx\,dx=\int_0^\pi x^2\cos nx\,dx
+\]
+由(a)(ii)、(a)(i)及(b)：
+\[
+\frac{\pi a_n}{2}=\frac{(-1)^n 2\pi}{n^2}
+\]
+故 $a_n=\frac{(-1)^n 4}{n^2}$，对所有 $n=1,2,\ldots,N$ 成立
+\end{solution}
+
+\subpart 对任意正整数 $k$，设 $I_k=\int_0^\pi\left(f(x)-x^2\right)\cos(N+k)x\,dx$。求 $\lim_{k\to\infty}I_k$。
+
+\begin{solution}
+\[
+I_k=\int_0^\pi f(x)\cos(N+k)x\,dx-\int_0^\pi x^2\cos(N+k)x\,dx
+\]
+由(a)(ii)及(a)(i)，$a_0\int_0^\pi\cos(N+k)x\,dx=0$，且 $\sum_{m=1}^N a_m\int_0^\pi\cos mx\cos(N+k)x\,dx=0$
+
+由(b)：
+\[
+I_k=\frac{(-1)^{N+k+1}2\pi}{(N+k)^2}
+\]
+故对所有 $k\in\mathbb{N}$：
+\[
+\frac{-2\pi}{(N+k)^2}\le I_k\le\frac{2\pi}{(N+k)^2}
+\]
+由于 $\lim_{k\to\infty}\frac{-2\pi}{(N+k)^2}=0=\lim_{k\to\infty}\frac{2\pi}{(N+k)^2}$
+
+由夹逼定理，$\lim_{k\to\infty}I_k=0$
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part 证明对任意正整数 $n$，$\lim_{x\to 0^+}\frac{x^{-n}}{e^{\frac{1}{x}}}=0$。
+
+\begin{solution}
+重复使用洛必达法则 $n$ 次：
+\[
+\lim_{x\to 0^+}\frac{x^{-n}}{e^{\frac{1}{x}}}=\lim_{x\to 0^+}\frac{-nx^{-n-1}}{-\frac{1}{x^2}e^{\frac{1}{x}}}=\lim_{x\to 0^+}\frac{nx^{-n+1}}{e^{\frac{1}{x}}}=\cdots=\lim_{x\to 0^+}\frac{n!}{e^{\frac{1}{x}}}=0
+\]
+\end{solution}
+
+\part 设
+\[
+f(x)=\begin{cases}0&x\le 0\\e^{-\frac{1}{x}}&x>0\end{cases}
+\]
+\begin{subparts}
+\subpart 求所有 $x\ne 0$ 时 $f'(x)$ 的值。
+
+\begin{solution}
+\[
+f'(x)=\begin{cases}0&x<0\\\frac{1}{x^2}e^{-\frac{1}{x}}&x>0\end{cases}
+\]
+\end{solution}
+
+\subpart 证明 $f'(0)=0$。由此证明 $f'(x)$ 在 $x=0$ 处连续。
+
+\begin{solution}
+\[
+\lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0}=\lim_{x\to 0^-}\frac{0}{x}=0
+\]
+\[
+\lim_{x\to 0^+}\frac{f(x)-f(0)}{x-0}=\lim_{x\to 0^+}\frac{x^{-1}}{e^{\frac{1}{x}}}=0\quad(\text{由(a)})
+\]
+因此 $f'(0)=0$
+
+又
+\[
+\lim_{x\to 0^+}f'(x)=\lim_{x\to 0^+}\frac{x^{-2}}{e^{\frac{1}{x}}}=0\quad(\text{由(a)})
+\]
+且 $\lim_{x\to 0^-}f'(x)=0$
+
+由于 $f'(0)=0$，故 $\lim_{x\to 0^+}f'(x)=f'(0)=\lim_{x\to 0^-}f'(x)$
+
+因此 $f'(x)$ 在 $x=0$ 处连续
+\end{solution}
+
+\subpart 对任意 $x>0$，证明 $f^{(n)}(x)=e^{-\frac{1}{x}}p_n\left(\frac{1}{x}\right)$ 对任意正整数 $n$ 成立，其中 $p_n(t)$ 为 $t$ 的多项式。
+
+\begin{solution}
+由(b)(i)，$f'(x)=e^{-\frac{1}{x}}\frac{1}{x^2}=e^{-\frac{1}{x}}p_1\left(\frac{1}{x}\right)$，其中 $p_1(t)=t^2$，命题对 $n=1$ 成立
+
+设命题对某正整数 $k$ 成立，即 $f^{(k)}(x)=e^{-\frac{1}{x}}p_k\left(\frac{1}{x}\right)$
+
+则
+\[
+f^{(k+1)}(x)=\frac{-1}{x^2}e^{-\frac{1}{x}}p_k'\left(\frac{1}{x}\right)+\frac{1}{x^2}e^{-\frac{1}{x}}p_k\left(\frac{1}{x}\right)
+\]
+设 $p_{k+1}(t)=-t^2p_k'(t)+t^2p_k(t)$，则 $p_{k+1}(t)$ 为多项式，且
+\[
+f^{(k+1)}(x)=e^{-\frac{1}{x}}p_{k+1}\left(\frac{1}{x}\right)
+\]
+由数学归纳法，命题对任意正整数 $n$ 成立
+\end{solution}
+
+\subpart 证明对任意正整数 $n$，$f^{(n)}(0)=0$。
+
+\begin{solution}
+由(b)(ii)，$f'(0)=0$，命题对 $n=1$ 成立
+
+设命题对某正整数 $k$ 成立，即 $f^{(k)}(0)=0$
+\[
+\lim_{x\to 0^-}\frac{f^{(k)}(x)-f^{(k)}(0)}{x-0}=0\quad(\text{由(b)(i)及归纳假设})
+\]
+\[
+\lim_{x\to 0^+}\frac{f^{(k)}(x)-f^{(k)}(0)}{x-0}=\lim_{x\to 0^+}\frac{x^{-1}p_k\left(x^{-1}\right)}{e^{\frac{1}{x}}}=0\quad(\text{由(a)})
+\]
+故若 $f^{(k)}(0)=0$，则 $f^{(k+1)}(0)=0$
+
+由数学归纳法，对任意正整数 $n$，$f^{(n)}(0)=0$
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设抛物线 $P$ 的方程为 $y^2=4ax$，其中 $a>0$。设 $t\in\mathbb{R}$，点 $(at^2,2at)$ 为 $P$ 上一点。
+
+\begin{parts}
+\part 求 $P$ 在点 $(at^2,2at)$ 处法线的方程。
+
+\begin{solution}
+情形一：$t=0$，法线的方程为 $y=0$
+
+情形二：$t\ne 0$
+\[
+2y\frac{dy}{dx}=4a,\quad\frac{dy}{dx}=\frac{2a}{y}
+\]
+\[
+\left.\frac{dy}{dx}\right|_{(at^2,2at)}=\frac{2a}{2at}=\frac{1}{t}
+\]
+法线方程为
+\[
+\frac{y-2at}{x-at^2}=-t
+\]
+即 $tx+y-2at-at^3=0$
+
+综合以上两种情形，所求方程为 $tx+y-2at-at^3=0$
+\end{solution}
+
+\part 设 $P$ 上两点 $\left(at_1^2,2at_1\right)$ 与 $\left(at_2^2,2at_2\right)$（$t_1\ne t_2$）处的法线相交于点 $(h,k)$。
+\begin{subparts}
+\subpart 证明 $t_1,t_2$ 为方程 $at^3+(2a-h)t-k=0$ 的根，并设 $t_3=-(t_1+t_2)$，证明 $t_3$ 亦为该方程的根。
+
+\begin{solution}
+由(a)，$t_1x+y-2at_1-at_1^3=0$ 及 $t_2x+y-2at_2-at_2^3=0$ 均过 $(h,k)$：
+\[
+at_1^3+(2a-h)t_1-k=0,\quad at_2^3+(2a-h)t_2-k=0
+\]
+故 $t_1,t_2$ 为方程 $at^3+(2a-h)t-k=0$ 的根
+
+设该方程三根为 $t_1,t_2,s$，则
+\[
+t_1+t_2+s=\frac{0}{a}=0
+\]
+故 $s=-(t_1+t_2)=t_3$，因此 $t_3$ 亦为该方程的根
+\end{solution}
+
+\subpart $P$ 在点 $\left(at_3^2,2at_3\right)$ 处的法线是否经过点 $(h,k)$？说明你的答案。
+
+\begin{solution}
+由(b)(i)，$at_3^3+(2a-h)t_3-k=0$
+
+由(a)，$P$ 在 $\left(at_3^2,2at_3\right)$ 处法线的方程为 $t_3x+y-2at_3-at_3^3=0$
+
+注意到
+\[
+t_3h+k-2at_3-at_3^3=-\left(at_3^3+(2a-h)t_3-k\right)=0
+\]
+因此，$P$ 在 $\left(at_3^2,2at_3\right)$ 处的法线经过点 $(h,k)$
+\end{solution}
+
+\subpart 以 $a,h,k$ 表示 $t_1t_2+t_2t_3+t_3t_1$ 及 $t_1t_2t_3$。
+
+\begin{solution}
+由(b)(i)，$t_1,t_2,t_3$ 为方程 $at^3+(2a-h)t-k=0$ 的根，由根与系数关系：
+\[
+t_1t_2+t_2t_3+t_3t_1=\frac{2a-h}{a},\quad t_1t_2t_3=\frac{k}{a}
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $A\left(at_1^2,2at_1\right)$ 与 $B\left(at_2^2,2at_2\right)$ 为 $P$ 上两点，且 $P$ 在 $A,B$ 处的法线互相垂直。利用(b)(iii)的结果，求这两条法线交点的轨迹方程。
+
+\begin{solution}
+设两法线交于点 $(h,k)$，设 $t_3=-(t_1+t_2)$
+
+法线斜率分别为 $-t_1,-t_2$，由垂直条件：$(-t_1)(-t_2)=-1$，即 $t_1t_2=-1$
+
+由(b)(iii)，$t_1t_2t_3=\frac{k}{a}$，故 $t_3=\frac{-k}{a}$
+
+又由(b)(iii)，$t_1t_2+t_3(t_1+t_2)=\frac{2a-h}{a}$，由于 $t_1+t_2=-t_3$：
+\[
+-1-t_3^2=\frac{2a-h}{a}
+\]
+代入 $t_3=\frac{-k}{a}$：
+\[
+-1-\left(\frac{-k}{a}\right)^2=\frac{2a-h}{a}
+\]
+化简得 $k^2=a(h-3a)$
+
+故所求轨迹方程为 $y^2=a(x-3a)$
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $f:\mathbb{R}\to\mathbb{R}$ 及 $g:\mathbb{R}\to\mathbb{R}$ 均在闭区间 $[a,b]$ 上连续，且在开区间 $(a,b)$ 上可导，其中 $a<b$，且 $g'(x)\ne 0$ 对所有 $x\in(a,b)$ 成立。定义
+\[
+h(x)=f(x)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}\left(g(x)-g(a)\right),\quad x\in[a,b]
+\]
+\begin{subparts}
+\subpart 求 $h(a)$ 及 $h(b)$。
+
+\begin{solution}
+\[
+h(a)=f(a)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}\left(g(a)-g(a)\right)=0
+\]
+\[
+h(b)=f(b)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}\left(g(b)-g(a)\right)=0
+\]
+\end{solution}
+
+\subpart 利用中值定理，证明存在 $\beta\in(a,b)$，使得
+\[
+\frac{f'(\beta)}{g'(\beta)}=\frac{f(b)-f(a)}{g(b)-g(a)}
+\]
+
+\begin{solution}
+由中值定理，存在 $\beta\in(a,b)$，使得
+\[
+\frac{h(b)-h(a)}{b-a}=h'(\beta)
+\]
+由(a)(i)，$h(a)=h(b)=0$，故 $h'(\beta)=0$
+
+又
+\[
+h'(x)=f'(x)-\frac{f(b)-f(a)}{g(b)-g(a)}g'(x)
+\]
+故 $f'(\beta)-\frac{f(b)-f(a)}{g(b)-g(a)}g'(\beta)=0$
+
+由于 $g'(\beta)\ne 0$，因此
+\[
+\frac{f'(\beta)}{g'(\beta)}=\frac{f(b)-f(a)}{g(b)-g(a)}
+\]
+\end{solution}
+\end{subparts}
+
+\part 设 $u:\mathbb{R}\to\mathbb{R}$ 二次可导，设 $c,x\in\mathbb{R}$，且 $c\ne x$，设 $I$ 为以 $c,x$ 为端点的闭区间。定义 $F:\mathbb{R}\to\mathbb{R}$ 及 $G:\mathbb{R}\to\mathbb{R}$ 为
+\[
+F(t)=u(x)-u(t)-u'(t)(x-t),\quad G(t)=\frac{(x-t)^2}{2},\quad t\in\mathbb{R}
+\]
+利用(a)(ii)，证明存在 $\gamma\in I$，使得
+\[
+u(x)=u(c)+u'(c)(x-c)+\frac{u''(\gamma)}{2}(x-c)^2
+\]
+
+\begin{solution}
+$F,G$ 在 $\mathbb{R}$ 上可导，且 $G(x)\ne G(c)$，$G'(t)\ne 0$ 对所有 $t\in I$ 成立
+
+由(a)(ii)，存在 $\gamma\in I$，使得
+\[
+\frac{F'(\gamma)}{G'(\gamma)}=\frac{F(c)-F(x)}{G(c)-G(x)}
+\]
+由于 $F(x)=0$，$G(x)=0$，故
+\[
+\frac{F'(\gamma)}{G'(\gamma)}=\frac{F(c)}{G(c)}
+\]
+又 $F'(t)=-u''(t)(x-t)$，$G'(t)=-(x-t)$
+
+因此
+\[
+\frac{-u''(\gamma)(x-\gamma)}{-(x-\gamma)}=\frac{u(x)-u(c)-u'(c)(x-c)}{\frac{(x-c)^2}{2}}
+\]
+故
+\[
+u(x)=u(c)+u'(c)(x-c)+\frac{u''(\gamma)}{2}(x-c)^2
+\]
+\end{solution}
+
+\part 设 $v:\mathbb{R}\to\mathbb{R}$ 二次可导，且在 $x=0$ 处连续，$v''(x)\ge 2$ 对所有 $x\in\mathbb{R}$ 成立，且 $\lim_{x\to 0}\frac{v(x)}{x}=2006$。
+\begin{subparts}
+\subpart 求 $v(0)$ 及 $v'(0)$。
+
+\begin{solution}
+由于 $v$ 在 $x=0$ 处连续：
+\[
+v(0)=\lim_{x\to 0}v(x)=\left(\lim_{x\to 0}x\right)\left(\lim_{x\to 0}\frac{v(x)}{x}\right)=(0)(2006)=0
+\]
+\[
+v'(0)=\lim_{x\to 0}\frac{v(x)-v(0)}{x-0}=\lim_{x\to 0}\frac{v(x)}{x}=2006
+\]
+\end{solution}
+
+\subpart 证明 $v(x)\ge 2006x+x^2$ 对所有 $x\in\mathbb{R}$ 成立。
+
+\begin{solution}
+情形一：$x=0$
+
+左边 $=v(0)=0$，右边 $=(2006)(0)+0^2=0$，不等式成立
+
+情形二：$x\ne 0$
+
+在(b)中取 $u=v$，$c=0$，存在 $d\in\mathbb{R}$，使得
+\[
+v(x)=v(0)+v'(0)x+\frac{v''(d)}{2}x^2
+\]
+由(c)(i)：
+\[
+v(x)=2006x+\frac{v''(d)}{2}x^2
+\]
+由于 $v''(d)\ge 2$ 且 $x^2\ge 0$，故
+\[
+v(x)\ge 2006x+x^2
+\]
+综合以上两种情形，$v(x)\ge 2006x+x^2$ 对所有 $x\in\mathbb{R}$ 成立
+\end{solution}
+\end{subparts}
+\end{parts}
+
     \question 考虑抛物线 $P: y^2 = 4x$ 。设 $A(a^2, 2a)$ 为 $P$ 上的一点， $L_1$ 为 $P$ 在 $A$ 处的切线，且 $F$ 为点 $(1, 0)$ 。
 \begin{parts}
 \part 
