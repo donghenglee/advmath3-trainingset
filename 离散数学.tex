@@ -1138,6 +1138,144 @@ x_1 x_2 = b^2 - k
 从而有 $x_2 + b < a + b$，这与 $a + b$ 的最小性矛盾。
 故假设不成立，$k$ 必须是完美平方数。
 \end{solution}
+
+\question
+\begin{parts}
+\part
+(i) 证明 $\sqrt{10}$ 是无理数
+
+(ii) 利用(a)(i)，证明若 $m$ 和 $n$ 为整数，使得 $m+n\sqrt{10}=0$，则 $m=n=0$
+
+\begin{solution}
+(i) 假设 $\sqrt{10}$ 是有理数
+
+设 $\sqrt{10}=\dfrac{p}{q}$，其中 $p$ 和 $q$ 为互质整数
+
+则 $10q^2=p^2$
+
+因此 $p^2$ 为偶数，所以 $p$ 亦为偶数
+
+设 $p=2h$，其中 $h$ 为整数
+
+则 $5q^2=2h^2$
+
+所以 $q^2$ 为偶数，因此 $q$ 亦为偶数
+
+这与 $p$ 和 $q$ 互质矛盾
+
+因此 $\sqrt{10}$ 是无理数
+
+(ii) 假设 $n\ne0$
+
+则
+\[
+\sqrt{10}=\frac{-m}{n}
+\]
+
+由(a)(i)，$\sqrt{10}$ 是无理数，但 $\dfrac{-m}{n}$ 是有理数，矛盾
+
+因此 $n=0$
+
+所以 $m=n=0$
+\end{solution}
+
+\part 证明对任意正整数 $n$，存在唯一一对正整数 $a_n$ 和 $b_n$，使得
+\[
+(3+\sqrt{10})^n=a_n+b_n\sqrt{10}
+\]
+及
+\[
+(3-\sqrt{10})^n=a_n-b_n\sqrt{10}
+\]
+
+\begin{solution}
+[存在性]
+
+设 $a_1=3$，$b_1=1$，则
+\[
+3+\sqrt{10}=a_1+b_1\sqrt{10}
+\]
+及
+\[
+3-\sqrt{10}=a_1-b_1\sqrt{10}
+\]
+
+假设存在一对正整数 $a_k$ 和 $b_k$，使得
+\[
+(3+\sqrt{10})^k=a_k+b_k\sqrt{10}
+\]
+及
+\[
+(3-\sqrt{10})^k=a_k-b_k\sqrt{10}
+\]
+对某个 $k\in\mathbb{N}$ 成立，则
+
+\[
+(3\pm\sqrt{10})^{k+1}=(3\pm\sqrt{10})^k(3\pm\sqrt{10})=(a_k\pm b_k\sqrt{10})(3\pm\sqrt{10})=(3a_k+10b_k)\pm(3b_k+a_k)\sqrt{10}
+\]
+
+设 $a_{k+1}=3a_k+10b_k$，$b_{k+1}=3b_k+a_k$，则
+\[
+(3\pm\sqrt{10})^{k+1}=a_{k+1}\pm b_{k+1}\sqrt{10}
+\]
+其中 $a_{k+1}$ 和 $b_{k+1}$ 为正整数
+
+所以当 $n=k$ 时命题成立可推出当 $n=k+1$ 时命题亦成立
+
+由数学归纳法，对任意正整数 $n$，存在一对正整数 $a_n$ 和 $b_n$，使得
+\[
+(3+\sqrt{10})^n=a_n+b_n\sqrt{10}
+\]
+及
+\[
+(3-\sqrt{10})^n=a_n-b_n\sqrt{10}
+\]
+
+[唯一性]
+
+假设存在整数 $a_n$，$b_n$，$c_n$，$d_n$，使得
+\[
+(3\pm\sqrt{10})^n=a_n\pm b_n\sqrt{10}=c_n\pm d_n\sqrt{10}
+\]
+
+则
+\[
+(a_n-c_n)\pm(b_n-d_n)\sqrt{10}=0
+\]
+
+由(a)(ii)，得 $a_n-c_n=\pm(b_n-d_n)=0$
+
+因此 $a_n=c_n$ 且 $b_n=d_n$
+
+综合以上结果，对任意正整数 $n$，存在唯一一对正整数 $a_n$ 和 $b_n$，使得
+\[
+(3+\sqrt{10})^n=a_n+b_n\sqrt{10}
+\]
+及
+\[
+(3-\sqrt{10})^n=a_n-b_n\sqrt{10}
+\]
+\end{solution}
+
+\part 对每个正整数 $n$，定义 $x_n=(3+\sqrt{10})^n$。证明对任意正整数 $n$，小于 $x_{2n-1}$ 的最大整数是偶数，而小于 $x_{2n}$ 的最大整数是奇数
+
+\begin{solution}
+对每个正整数 $n$，定义 $y_n=(3-\sqrt{10})^n$
+
+由(b)，得 $x_{2n-1}+y_{2n-1}=2a_{2n-1}$ 且 $x_{2n}+y_{2n}=2a_{2n}$
+
+由于 $-1<3-\sqrt{10}<0$，所以 $-1<y_{2n-1}<0$ 且 $0<y_{2n}<1$
+
+因此 $2a_{2n-1}<x_{2n-1}<2a_{2n-1}+1$ 且 $2a_{2n}-1<x_{2n}<2a_{2n}$
+
+由(b)，$a_{2n-1}$ 和 $a_{2n}$ 为正整数
+
+因此小于 $x_{2n-1}$ 的最大整数是 $2a_{2n-1}$，而小于 $x_{2n}$ 的最大整数是 $2a_{2n}-1$
+
+所以小于 $x_{2n-1}$ 的最大整数是偶数，而小于 $x_{2n}$ 的最大整数是奇数
+\end{solution}
+\end{parts}
+
 \end{questions}
 
 \pagebreak
@@ -3081,6 +3219,202 @@ D^{m+1} = \left( \cos m\theta I + \sin m\theta A \right) \left( \cos \theta I + 
 归纳成立。
 \end{solution}
 
+
+
+\question 设 $\theta\in\mathbf{R}$。对每个 $n\in\mathbf{N}$，定义 $x_n=\sin^n\theta+\cos^n\theta$。
+\begin{parts}
+\part 求一个与 $n$ 无关的函数 $f(\theta)$，使得
+\[
+x_{n+1}x_1-x_{n+2}=f(\theta)x_n
+\]
+并用 $x_1$ 表示 $f(\theta)$。
+\begin{solution}
+\[
+x_{n+1}x_1-x_{n+2}=\left(\sin^{n+1}\theta+\cos^{n+1}\theta\right)(\sin\theta+\cos\theta)-\left(\sin^{n+2}\theta+\cos^{n+2}\theta\right)
+\]
+
+展开化简得
+\[
+x_{n+1}x_1-x_{n+2}=\sin^{n+1}\theta\cos\theta+\sin\theta\cos^{n+1}\theta=\left(\sin^n\theta+\cos^n\theta\right)\cos\theta\sin\theta
+\]
+
+因此
+\[
+f(\theta)=\cos\theta\sin\theta
+\]
+
+又
+\[
+f(\theta)=\frac{(\sin\theta+\cos\theta)^2-1}{2}=\frac{x_1^2-1}{2}
+\]
+\end{solution}
+\part 设 $x_1$ 为有理数。利用数学归纳法，证明对每个 $n$，$x_n$ 均为有理数。
+\begin{solution}
+$x_1$ 为有理数
+
+又
+\[
+x_2=\sin^2\theta+\cos^2\theta=1
+\]
+
+亦为有理数
+
+设 $x_k$，$x_{k+1}$ 均为有理数，由(a)得
+\[
+x_{k+2}=x_{k+1}x_1-\frac{x_1^2-1}{2}x_k
+\]
+
+由于等号右边均为有理数，故 $x_{k+2}$ 为有理数
+
+因此由数学归纳法原理，对每个 $n$，$x_n$ 均为有理数
+\end{solution}
+\end{parts}
+
+\question 利用二项式定理
+\[
+(x_1+x_2)^N=\sum_{r=0}^{N}\binom{N}{r}x_1^{N-r}x_2^r
+\]
+对所有正整数 $N$ 成立，试证
+\[
+(y_1+y_2+\dots+y_n)^N=\sum_{j_1+j_2+\dots+j_n=N}\frac{N!}{j_1!\,j_2!\cdots j_n!}\,y_1^{j_1}y_2^{j_2}\cdots y_n^{j_n}
+\]
+对所有正整数 $n$ 及 $N$ 成立。
+
+\begin{solution}
+用数学归纳法证明（对 $n$ 归纳）。
+
+当 $n=1$ 时，右边
+\[
+=\sum_{j_1=N}\frac{N!}{j_1!}y_1^{j_1}=\frac{N!}{N!}y_1^N=\ \text{左边}\ .
+\]
+
+设当 $n=k$ 时结论成立，即
+\[
+(y_1+y_2+\dots+y_k)^N=\sum_{j_1+j_2+\dots+j_k=N}\frac{N!}{j_1!j_2!\cdots j_k!}\,y_1^{j_1}y_2^{j_2}\cdots y_k^{j_k}
+\]
+对所有正整数 $N$ 成立。
+
+令 $N-r=j_{k+1}$，则
+\begin{align*}
+(y_1+y_2+\dots+y_k+y_{k+1})^N&=\left[(y_1+y_2+\dots+y_k)+y_{k+1}\right]^N\\
+&=\sum_{r=0}^{N}\frac{N!}{r!\,(N-r)!}\,y_{k+1}^{r}(y_1+y_2+\dots+y_k)^{N-r}\\
+&=\sum_{r=0}^{N}\frac{N!}{r!\,(N-r)!}\,y_{k+1}^{r}\sum_{j_1+\dots+j_k=N-r}\frac{(N-r)!}{j_1!\cdots j_k!}y_1^{j_1}\cdots y_k^{j_k}\\
+&=\sum_{j_1+j_2+\dots+j_k+j_{k+1}=N}\frac{N!}{j_1!j_2!\cdots j_k!\,j_{k+1}!}\,y_1^{j_1}y_2^{j_2}\cdots y_k^{j_k}y_{k+1}^{j_{k+1}}\ .
+\end{align*}
+
+故当 $n=k+1$ 时结论亦成立，由数学归纳法，结论对所有正整数 $n$ 成立。
+\end{solution}
+
+
+\question
+\begin{parts}
+\part
+使用数学归纳法证明，对于所有正整数 $n$，
+\[
+\sum_{k=n}^{2n} \sin\left(2k\right) = \frac{\sin\left(3n\right)\sin\left(n+1\right)}{\sin\left(1\right)}
+\]
+\begin{solution}
+当 $n = 1$ 时，左边为
+\[
+\sum_{k=1}^{2} \sin\left(2k\right) = \sin\left(2\right) + \sin\left(4\right)
+\]
+右边为
+\[
+\frac{\sin\left(3\right)\sin\left(2\right)}{\sin\left(1\right)} = \frac{\sin\left(3\right) \cdot 2\sin\left(1\right)\cos\left(1\right)}{\sin\left(1\right)} = 2\sin\left(3\right)\cos\left(1\right) = \sin\left(4\right) + \sin\left(2\right)
+\]
+左边等于右边，命题成立。
+
+假设当 $n = m$ 时命题成立，即
+\[
+\sum_{k=m}^{2m} \sin\left(2k\right) = \frac{\sin\left(3m\right)\sin\left(m+1\right)}{\sin\left(1\right)}
+\]
+当 $n = m + 1$ 时，左边为
+\[
+\sum_{k=m+1}^{2m+2} \sin\left(2k\right) = \sum_{k=m}^{2m} \sin\left(2k\right) - \sin\left(2m\right) + \sin\left(4m+2\right) + \sin\left(4m+4\right)
+\]
+根据归纳假设，这等于
+\[
+\frac{\sin\left(3m\right)\sin\left(m+1\right)}{\sin\left(1\right)} - \sin\left(2m\right) + \sin\left(4m+2\right) + \sin\left(4m+4\right)
+\]
+将上式通分并提取积化和差公式，
+分子部分为
+\[
+\sin\left(3m\right)\sin\left(m+1\right) - \sin\left(2m\right)\sin\left(1\right) + \sin\left(4m+2\right)\sin\left(1\right) + \sin\left(4m+4\right)\sin\left(1\right)
+\]
+\[
+= \frac{1}{2} \left( \cos\left(2m-1\right) - \cos\left(4m+1\right) - \cos\left(2m-1\right) + \cos\left(2m+1\right) + \cos\left(4m+1\right) - \cos\left(4m+3\right) + \cos\left(4m+3\right) - \cos\left(4m+5\right) \right)
+\]
+抵消同类项后得到
+\[
+= \frac{1}{2} \left( \cos\left(2m+1\right) - \cos\left(4m+5\right) \right)
+\]
+将其转化为乘积形式
+\[
+= \sin\left(3m+3\right)\sin\left(m+2\right)
+\]
+因此，当 $n = m + 1$ 时，式子等于
+\[
+\frac{\sin\left(3m+3\right)\sin\left(m+2\right)}{\sin\left(1\right)} = \frac{\sin\left(3\left(m+1\right)\right)\sin\left(\left(m+1\right)+1\right)}{\sin\left(1\right)}
+\]
+结论得证。根据数学归纳法，原等式对所有正整数 $n$ 均成立。
+\end{solution}
+
+\part
+设 $A$、$B$ 和 $C$ 为正整数，其中 $B \le C$。已知
+\[
+\sum_{k=500}^{2001} \frac{\cos\left(8k-1\right) - \cos\left(8k+1\right)}{\cos\left(6k\right) + \cos\left(2k\right)} = A \sin B \sin C
+\]
+求 $A$、$B$ 和 $C$ 的值。
+\begin{solution}
+首先化简求和式中的一般项。
+分子使用和差化积公式：
+\[
+\cos\left(8k-1\right) - \cos\left(8k+1\right) = -2 \sin\left(8k\right) \sin\left(-1\right) = 2 \sin\left(8k\right) \sin\left(1\right)
+\]
+分母使用和差化积公式：
+\[
+\cos\left(6k\right) + \cos\left(2k\right) = 2 \cos\left(4k\right) \cos\left(2k\right)
+\]
+将正弦二倍角公式展开：
+\[
+2 \sin\left(8k\right) = 4 \sin\left(4k\right) \cos\left(4k\right) = 8 \sin\left(2k\right) \cos\left(2k\right) \cos\left(4k\right)
+\]
+因此一般项可以化简为：
+\[
+\frac{8 \sin\left(2k\right) \cos\left(2k\right) \cos\left(4k\right) \sin\left(1\right)}{2 \cos\left(4k\right) \cos\left(2k\right)} = 4 \sin\left(2k\right) \sin\left(1\right)
+\]
+代入原求和式得到：
+\[
+\sum_{k=500}^{2001} 4 \sin\left(2k\right) \sin\left(1\right) = 4 \sin\left(1\right) \sum_{k=500}^{2001} \sin\left(2k\right)
+\]
+为了计算 $\sum_{k=500}^{2001} \sin\left(2k\right)$，我们在上下同乘 $2\sin\left(1\right)$：
+\[
+\sum_{k=500}^{2001} \sin\left(2k\right) = \frac{1}{2\sin\left(1\right)} \sum_{k=500}^{2001} 2\sin\left(2k\right)\sin\left(1\right)
+\]
+\[
+= \frac{1}{2\sin\left(1\right)} \sum_{k=500}^{2001} \left( \cos\left(2k-1\right) - \cos\left(2k+1\right) \right)
+\]
+这是一个裂项相消求和，展开后各项抵消，只剩下首项和末项：
+\[
+= \frac{1}{2\sin\left(1\right)} \left( \cos\left(999\right) - \cos\left(4003\right) \right)
+\]
+再次使用和差化积公式：
+\[
+\cos\left(999\right) - \cos\left(4003\right) = -2 \sin\left(\frac{999+4003}{2}\right) \sin\left(\frac{999-4003}{2}\right) = -2 \sin\left(2501\right) \sin\left(-1502\right) = 2 \sin\left(2501\right) \sin\left(1502\right)
+\]
+代回求和式中得到：
+\[
+\sum_{k=500}^{2001} \sin\left(2k\right) = \frac{\sin\left(2501\right) \sin\left(1502\right)}{\sin\left(1\right)}
+\]
+因此原式为：
+\[
+4 \sin\left(1\right) \cdot \frac{\sin\left(2501\right) \sin\left(1502\right)}{\sin\left(1\right)} = 4 \sin\left(1502\right) \sin\left(2501\right)
+\]
+对照 $A \sin B \sin C$，且 $B \le C$，可得：
+$A = 4$，$B = 1502$，$C = 2501$。
+\end{solution}
+\end{parts}
+
     \question 设 $V_n$ 为 $n$ 阶范德蒙行列式,定义如下:
     \[
     V_n = \begin{vmatrix}
@@ -3329,6 +3663,1759 @@ D^{m+1} = \left( \cos m\theta I + \sin m\theta A \right) \left( \cos \theta I + 
         
         由数学归纳法,对任意正整数 $n,P^{(n)}(x)$ 至少有一个实数根。
     \end{solution}
+
+    \question
+对任意正整数 $m$ 及 $n$，设
+\begin{align*}
+T(m,n)&=(1-x^m)(1-x^{m+1})\cdots(1-x^{m+n-1})\\
+D(n)&=(1-x)(1-x^2)\cdots(1-x^n)
+\end{align*}
+设 $P(m,n)$ 表示命题“$T(m,n)$ 能被 $D(n)$ 整除”。
+
+\begin{parts}
+\part 证明对任意正整数 $m$ 及 $n$：
+\begin{subparts}
+\subpart $P(m,1)$ 及 $P(1,n)$ 成立。
+
+\begin{solution}
+当 $n=1$ 时，$T(m,1)=1-x^m$，$D(1)=1-x$，而
+\[
+T(m,1)=(1-x)\left(1+x+x^2+\cdots+x^{m-1}\right)
+\]
+故 $D(1)$ 整除 $T(m,1)$，即 $P(m,1)$ 成立。
+
+当 $m=1$ 时，$T(1,n)=(1-x)(1-x^2)\cdots(1-x^n)=D(n)$，显然 $D(n)$ 整除 $T(1,n)$，即 $P(1,n)$ 成立。
+\end{solution}
+
+\subpart 若 $P(m,n+1)$ 及 $P(m+1,n)$ 成立，则 $P(m+1,n+1)$ 也成立。（提示：考虑 $T(m+1,n+1)-T(m,n+1)$。）
+
+\begin{solution}
+由定义，
+\begin{align*}
+T(m,n+1)&=(1-x^m)\,T(m+1,n)\\
+T(m+1,n+1)&=T(m+1,n)\,(1-x^{m+n+1})
+\end{align*}
+故
+\begin{align*}
+T(m+1,n+1)-T(m,n+1)
+&=T(m+1,n)\left[(1-x^{m+n+1})-(1-x^m)\right]\\
+&=T(m+1,n)\left(x^m-x^{m+n+1}\right)\\
+&=x^m(1-x^{n+1})\,T(m+1,n)
+\end{align*}
+由 $P(m+1,n)$ 成立，设 $T(m+1,n)=D(n)\,Q(x)$（$Q(x)$ 为某多项式），则
+\[
+T(m+1,n+1)-T(m,n+1)=x^m\,D(n)(1-x^{n+1})\,Q(x)=x^m\,D(n+1)\,Q(x)
+\]
+即上式能被 $D(n+1)$ 整除。又由 $P(m,n+1)$ 成立，$D(n+1)$ 整除 $T(m,n+1)$。故
+\[
+T(m+1,n+1)=T(m,n+1)+x^m\,D(n+1)\,Q(x)
+\]
+的两项均能被 $D(n+1)$ 整除，因此 $D(n+1)$ 整除 $T(m+1,n+1)$，即 $P(m+1,n+1)$ 成立。
+\end{solution}
+\end{subparts}
+
+\part 对任意正整数 $r\ge2$，设 $Q(r)$ 表示命题“$P(r-n,n)$ 对 $n=1,2,\ldots,r-1$ 均成立”。
+\begin{subparts}
+\subpart 证明 $Q(2)$ 成立。
+
+\begin{solution}
+$Q(2)$ 即命题“$P(1,1)$ 成立”。由 (a)(i)，$P(m,1)$ 对所有正整数 $m$ 成立，特别地 $P(1,1)$ 成立，故 $Q(2)$ 成立。
+\end{solution}
+
+\subpart 若 $Q(r)$（$r\ge2$）成立，证明 $Q(r+1)$ 也成立。
+
+\begin{solution}
+设 $Q(r)$ 成立，即 $P(r-n,n)$ 对 $n=1,\ldots,r-1$ 均成立。要证 $Q(r+1)$，即证 $P(r+1-n,n)$ 对 $n=1,\ldots,r$ 均成立。
+
+当 $n=1$ 时，由 (a)(i)，$P(r,1)$ 成立。
+
+当 $n=r$ 时，由 (a)(i)，$P(1,r)$ 成立。
+
+当 $2\le n\le r-1$ 时，设 $n=n'+1$，其中 $1\le n'\le r-2$。由 $Q(r)$，$P(r-n',n')$ 及 $P(r-n'-1,n'+1)$ 均成立（两者都在 $Q(r)$ 所述范围内）。取 $m=r-n'-1$，由 (a)(ii)，$P(m,n'+1)$ 与 $P(m+1,n')$ 成立可推出 $P(m+1,n'+1)$ 成立，即
+\[
+P(r-n',n'+1)\text{ 成立}
+\]
+亦即 $P(r+1-n,n)$ 成立（此处 $n=n'+1$）。
+
+综合以上三种情形，$P(r+1-n,n)$ 对 $n=1,2,\ldots,r$ 均成立，即 $Q(r+1)$ 成立。
+\end{solution}
+\end{subparts}
+
+\part 利用 (b)，或其他方法，证明对任意正整数 $m,n$，
+\[
+(1-x^m)(1-x^{m+1})\cdots(1-x^{m+n-1})
+\]
+能被
+\[
+(1-x)(1-x^2)\cdots(1-x^n)
+\]
+整除。
+
+\begin{solution}
+由 (b)(i) 及 (b)(ii)，利用数学归纳法，$Q(r)$ 对所有整数 $r\ge2$ 成立。
+
+对任意正整数 $m,n$，设 $r=m+n$。由于 $m\ge1$，有 $n\le r-1$；又 $n\ge1$。故 $n$ 落在 $1,2,\ldots,r-1$ 之内，由 $Q(r)$ 成立，得 $P(r-n,n)=P(m,n)$ 成立，即 $T(m,n)$ 能被 $D(n)$ 整除。
+\end{solution}
+\end{parts}
+
+\question
+设 $\mathbb{Z}_+$ 为所有正整数所成的集合，$m,n\in\mathbb{Z}_+$。设
+\[
+A(m,n)=(1-x^m)(1-x^{m+1})\cdots(1-x^{m+n-1}),\qquad B(n)=(1-x)(1-x^2)\cdots(1-x^n)
+\]
+
+\begin{parts}
+
+\part 证明 $A(m+1,n+1)-A(m,n+1)$ 能被 $(1-x^{n+1})A(m+1,n)$ 整除
+
+\begin{solution}
+\begin{align*}
+A(m+1,n+1)-A(m,n+1)&=(1-x^{m+1})\cdots(1-x^{m+n+1})-(1-x^m)(1-x^{m+1})\cdots(1-x^{m+n})\\
+&=(1-x^{m+1})\cdots(1-x^{m+n})\left[(1-x^{m+n+1})-(1-x^m)\right]\\
+&=A(m+1,n)\cdot x^m(1-x^{n+1})
+\end{align*}
+故 $A(m+1,n+1)-A(m,n+1)$ 能被 $(1-x^{n+1})A(m+1,n)$ 整除。
+\end{solution}
+
+\part 设 $P(m,n)$ 表示命题“$A(m,n)$ 能被 $B(n)$ 整除”。
+\begin{subparts}
+
+\subpart 证明 $P(1,n)$ 及 $P(m,1)$ 成立
+
+\begin{solution}
+由于 $A(1,n)=(1-x)(1-x^2)\cdots(1-x^n)=B(n)$，故 $A(1,n)$ 能被 $B(n)$ 整除，即 $P(1,n)$ 成立。
+
+由于 $A(m,1)=1-x^m=(1-x)(1+x+\cdots+x^{m-1})$ 且 $B(1)=1-x$，故 $A(m,1)$ 能被 $B(1)$ 整除，即 $P(m,1)$ 成立。
+\end{solution}
+
+\subpart 利用 (a)，或以其他方法，证明若 $P(m,n+1)$ 及 $P(m+1,n)$ 成立，则 $P(m+1,n+1)$ 也成立
+
+\begin{solution}
+由 (a)，
+\[
+A(m+1,n+1)-A(m,n+1)=x^m(1-x^{n+1})A(m+1,n)
+\]
+因为 $P(m,n+1)$ 成立，$A(m,n+1)$ 能被 $B(n+1)$ 整除。
+
+因为 $P(m+1,n)$ 成立，$A(m+1,n)$ 能被 $B(n)$ 整除，从而 $(1-x^{n+1})A(m+1,n)$ 能被 $(1-x^{n+1})B(n)=B(n+1)$ 整除。
+
+所以上式右边能被 $B(n+1)$ 整除，故 $A(m+1,n+1)$ 也能被 $B(n+1)$ 整除，即 $P(m+1,n+1)$ 成立。
+\end{solution}
+
+\subpart 设 $k$ 为固定的正整数，使得 $P(m,k)$ 对所有 $m\in\mathbb{Z}_+$ 成立，用数学归纳法证明 $P(m,k+1)$ 对所有 $m\in\mathbb{Z}_+$ 成立
+
+\begin{solution}
+由 (b)(i)，$P(1,k+1)$ 成立。假设 $P(j,k+1)$ 对某个正整数 $j$ 成立。由于题设 $P(j+1,k)$ 成立，由 (b)(ii)，$P(j+1,k+1)$ 也成立。由数学归纳法原理，$P(m,k+1)$ 对所有正整数 $m$ 成立。
+\end{solution}
+
+\end{subparts}
+
+\part 利用 (b)，或以其他方法，证明 $P(m,n)$ 对所有 $m,n\in\mathbb{Z}_+$ 成立
+
+\begin{solution}
+由 (b)(i)，$P(m,1)$ 对所有正整数 $m$ 成立。假设 $P(m,k)$ 对所有正整数 $m$ 成立，由 (b)(iii)，$P(m,k+1)$ 对所有正整数 $m$ 也成立。由数学归纳法原理，$P(m,n)$ 对所有正整数 $m,n$ 成立。
+\end{solution}
+
+\end{parts}
+
+\question
+\begin{parts}
+\part 证明
+\[
+\left(\frac{a_1+a_2}{2}\right)^m \le \frac{a_1^m+a_2^m}{2}
+\]
+其中 $a_1$、$a_2$ 是正数,$m$ 是正整数。
+
+\begin{solution}
+当 $m=1$ 时,不等式显然成立。
+
+设 $\left(\dfrac{a_1+a_2}{2}\right)^k \le \dfrac{a_1^k+a_2^k}{2}$ 对某个正整数 $k$ 成立,则
+\[
+\left(\frac{a_1+a_2}{2}\right)^{k+1} \le \left(\frac{a_1^k+a_2^k}{2}\right)\left(\frac{a_1+a_2}{2}\right) = \frac{a_1^{k+1}+a_2^{k+1}}{4}+\frac{a_1^ka_2+a_1a_2^k}{4}
+\]
+\[
+\le \frac{a_1^{k+1}+a_2^{k+1}}{2}
+\]
+因为
+\[
+\frac{a_1^{k+1}+a_2^{k+1}}{4}-\frac{a_1^ka_2+a_1a_2^k}{4} = \frac{\left(a_1^k-a_2^k\right)(a_1-a_2)}{4} \ge 0
+\]
+由数学归纳法原理,此结论对所有正整数 $m$ 都成立。
+
+另解:当 $m=1$ 时,不等式显然成立。设 $f(x)=x^m$($m\ge2$),则
+\[
+f''(x) = m(m-1)x^{m-2} \ge 0 \quad \forall x>0
+\]
+由凸性,
+\[
+\frac{a_1^m+a_2^m}{2} \ge \left(\frac{a_1+a_2}{2}\right)^m
+\]
+\end{solution}
+
+\part 证明
+\[
+\left(\frac{a_1+a_2+a_3+a_4}{4}\right)^m \le \frac{a_1^m+a_2^m+a_3^m+a_4^m}{4}
+\]
+其中 $a_1$、$a_2$、$a_3$、$a_4$ 是正数,$m$ 是正整数。
+
+\begin{solution}
+由(a),
+\[
+\frac{a_1^m+a_2^m+a_3^m+a_4^m}{4} = \frac{1}{2}\left[\frac{a_1^m+a_2^m}{2}+\frac{a_3^m+a_4^m}{2}\right]
+\]
+\[
+\ge \frac{1}{2}\left[\left(\frac{a_1+a_2}{2}\right)^m+\left(\frac{a_3+a_4}{2}\right)^m\right]
+\ge \left(\frac{\dfrac{a_1+a_2}{2}+\dfrac{a_3+a_4}{2}}{2}\right)^m
+\]
+\[
+= \left(\frac{a_1+a_2+a_3+a_4}{4}\right)^m
+\]
+\end{solution}
+
+\part 对 $n=1,2,3,\ldots$,设 $\mathrm{P}(n)$ 为命题
+\[
+\left(\frac{a_1+a_2+\cdots+a_n}{n}\right)^m \le \frac{a_1^m+a_2^m+\cdots+a_n^m}{n}
+\]
+其中 $a_1$、$a_2$、$\ldots$、$a_n$ 是正数,$m$ 是正整数。
+
+\begin{subparts}
+\subpart 证明对 $h=0,1,2,\ldots$,若 $\mathrm{P}(2^h)$ 成立,则 $\mathrm{P}(2^{h+1})$ 也成立。
+
+\begin{solution}
+设
+\[
+\frac{a_1^m+a_2^m+\cdots+a_{2^h}^m}{2^h} \ge \left(\frac{a_1+a_2+\cdots+a_{2^h}}{2^h}\right)^m
+\]
+则
+\[
+\frac{a_1^m+a_2^m+\cdots+a_{2^{h+1}}^m}{2^{h+1}}
+= \frac{1}{2}\left[\frac{a_1^m+\cdots+a_{2^h}^m}{2^h}+\frac{a_{2^h+1}^m+\cdots+a_{2^{h+1}}^m}{2^h}\right]
+\]
+\[
+\ge \frac{1}{2}\left[\left(\frac{a_1+\cdots+a_{2^h}}{2^h}\right)^m+\left(\frac{a_{2^h+1}+\cdots+a_{2^{h+1}}}{2^h}\right)^m\right]
+\]
+\[
+\ge \left(\frac{\dfrac{a_1+\cdots+a_{2^h}}{2^h}+\dfrac{a_{2^h+1}+\cdots+a_{2^{h+1}}}{2^h}}{2}\right)^m
+= \left(\frac{a_1+a_2+\cdots+a_{2^{h+1}}}{2^{h+1}}\right)^m
+\]
+所以 $\mathrm{P}(2^{h+1})$ 成立。
+\end{solution}
+
+\subpart 证明对 $k=1,2,3,\ldots$,若 $\mathrm{P}(k+1)$ 成立,则 $\mathrm{P}(k)$ 也成立。
+
+\begin{solution}
+设
+\[
+\frac{a_1^m+a_2^m+\cdots+a_{k+1}^m}{k+1} \ge \left(\frac{a_1+a_2+\cdots+a_{k+1}}{k+1}\right)^m
+\]
+取 $a_{k+1} = \dfrac{a_1+a_2+\cdots+a_k}{k}$,则
+\[
+a_1^m+a_2^m+\cdots+a_k^m+\left(\frac{a_1+a_2+\cdots+a_k}{k}\right)^m
+\]
+\[
+\ge \left(k+1\right)\left(\frac{a_1+a_2+\cdots+a_k+\dfrac{a_1+a_2+\cdots+a_k}{k}}{k+1}\right)^m = (k+1)\left(\frac{a_1+a_2+\cdots+a_k}{k}\right)^m
+\]
+所以
+\[
+a_1^m+a_2^m+\cdots+a_k^m \ge k\left(\frac{a_1+a_2+\cdots+a_k}{k}\right)^m
+\]
+即
+\[
+\frac{a_1^m+a_2^m+\cdots+a_k^m}{k} \ge \left(\frac{a_1+a_2+\cdots+a_k}{k}\right)^m
+\]
+所以 $\mathrm{P}(k)$ 成立。
+\end{solution}
+
+\subpart 由此证明 $\mathrm{P}(n)$ 对所有正整数 $n$ 都成立。
+
+\begin{solution}
+$\mathrm{P}(2^0)$ 显然成立。由(c)(i)及数学归纳法原理,$\mathrm{P}(2^k)$ 对所有非负整数 $k$ 都成立。
+
+对任意正整数 $n$,存在非负整数 $k$ 使得 $n\le2^k$。由于 $\mathrm{P}(2^k)$ 成立,由(c)(ii),$\mathrm{P}(n)$ 也成立。
+
+所以 $\mathrm{P}(n)$ 对所有正整数 $n$ 都成立。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part 若 $a,b$ 是满足 $a\le1\le b$ 的实数，证明 $a+b\ge ab+1$，且等号成立当且仅当 $a=1$ 或 $b=1$．
+\begin{solution}
+若 $a\le1\le b$，则
+\[
+a+b-ab-1=(a-1)(1-b)\ge0\qquad\cdots\cdots(1)
+\]
+所以 $a+b\ge ab+1$．
+由 $(1)$，等号成立当且仅当 $a-1=0$ 或 $1-b=0$，即当且仅当 $a=1$ 或 $b=1$．
+\end{solution}
+\part 用数学归纳法证明若 $x_1,x_2,\dots,x_n$ 是 $n\ (n\ge2)$ 个满足 $x_1x_2\cdots x_n=1$ 的正实数，则 $x_1+x_2+\cdots+x_n\ge n$，且等号成立当且仅当 $x_1=x_2=\cdots=x_n=1$．
+\begin{solution}
+若 $x_1,x_2$ 是满足 $x_1x_2=1$ 的正实数，不妨设 $x_1\le1\le x_2$．
+由(a)，$x_1+x_2\ge x_1x_2+1=2$，且等号成立当且仅当 $x_1=1$ 或 $x_2=1$，即当且仅当 $x_1=x_2=1$（因 $x_1x_2=1$）。
+所以命题对 $n=2$ 成立．
+
+假设命题对 $n=k$ 成立，其中 $k\in\mathbb{N}$，$k\ge2$．
+设 $x_1,x_2,\dots,x_{k+1}$ 是满足 $x_1x_2\cdots x_{k+1}=1$ 的正实数．
+必存在两个数，设为 $x_1,x_2$，使得 $x_1\le1\le x_2$．
+利用归纳假设（对 $x_1x_2,x_3,\dots,x_{k+1}$，其乘积为 $1$），
+\[
+x_1x_2+x_3+x_4+\cdots+x_{k+1}\ge k
+\]
+且等号成立当且仅当 $x_1x_2=x_3=x_4=\cdots=x_{k+1}=1$．
+再利用(a)，$x_1+x_2\ge x_1x_2+1$，等号成立当且仅当 $x_1=1$ 或 $x_2=1$．
+所以
+\[
+x_1+x_2+x_3+\cdots+x_{k+1}\ge x_1x_2+x_3+\cdots+x_{k+1}+1\ge k+1
+\]
+且等号成立当且仅当
+\[
+(x_1=1\ \text{或}\ x_2=1)\ \text{且}\ x_1x_2=x_3=\cdots=x_{k+1}=1
+\]
+即当且仅当 $x_1=x_2=\cdots=x_{k+1}=1$．
+\end{solution}
+\part 设 $a_1,a_2,\dots,a_n$ 是 $n\ (n\ge2)$ 个正实数．利用(b)或其他方法，证明
+\[
+\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}
+\]
+且等号成立当且仅当 $a_1=a_2=\cdots=a_n$．
+\begin{solution}
+对 $i=1,2,\dots,n$，设
+\[
+x_i=\frac{a_i}{\sqrt[n]{a_1a_2\cdots a_n}}
+\]
+则 $x_1,x_2,\dots,x_n$ 满足(b)中的条件，所以
+\[
+\frac{a_1+a_2+\cdots+a_n}{\sqrt[n]{a_1a_2\cdots a_n}}\ge n
+\]
+即
+\[
+\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}
+\]
+且等号成立当且仅当
+\[
+\frac{a_1}{\sqrt[n]{a_1a_2\cdots a_n}}=\frac{a_2}{\sqrt[n]{a_1a_2\cdots a_n}}=\cdots=\frac{a_n}{\sqrt[n]{a_1a_2\cdots a_n}}
+\]
+即当且仅当 $a_1=a_2=\cdots=a_n$．
+\end{solution}
+\part 对 $u\ge0$，$n=2,3,4,\dots$，利用恒等式
+\[
+(1+u)^n-1=u\left[(1+u)^{n-1}+(1+u)^{n-2}+\cdots+1\right]
+\]
+或其他方法，证明
+\[
+(1+u)^n\ge1+nu(1+u)^{\frac{n-1}{2}}
+\]
+且等号成立当且仅当 $u=0$．
+\begin{solution}
+对 $u\ge0$，$(1+u)^k>0$ 对任意非负整数 $k$ 成立．
+对 $n=2,3,4,\dots$，
+\[
+(1+u)^n-1=u\left[(1+u)^{n-1}+(1+u)^{n-2}+\cdots+1\right]
+\]
+\[
+\frac{(1+u)^n-1}{n}=u\cdot\frac{(1+u)^{n-1}+(1+u)^{n-2}+\cdots+1}{n}
+\]
+利用(c)，
+\begin{align*}
+\frac{(1+u)^n-1}{n}
+&\ge u\sqrt[n]{(1+u)^{(n-1)+(n-2)+\cdots+1}}\\
+&=u(1+u)^{\frac{1}{n}\cdot\frac{(n-1)(n-1+1)}{2}}\\
+&=u(1+u)^{\frac{n-1}{2}}
+\end{align*}
+所以
+\[
+(1+u)^n\ge1+nu(1+u)^{\frac{n-1}{2}}
+\]
+等号成立当且仅当 $(1+u)^{n-1}=(1+u)^{n-2}=\cdots=1$（由(c)），即当且仅当 $u=0$．
+\end{solution}
+\end{parts}
+\question
+\begin{parts}
+\part 对任何正整数 $n$,证明对所有 $t>0$,都有 $t^n-1 \geq n(t-1)$
+\begin{solution}
+注意
+
+\[
+t^n-1 = (t-1)(t^{n-1}+t^{n-2}+\cdots+t+1)
+\]
+
+情形一 当 $0<t<1$ 时,$t-1<0$ 且 $0<t^{n-1}+t^{n-2}+\cdots+t+1<n$,所以
+
+\[
+(t-1)(t^{n-1}+\cdots+t+1) > n(t-1)
+\]
+
+情形二 当 $t=1$ 时,$t^n-1=0=n(t-1)$
+
+情形三 当 $t>1$ 时,$t-1>0$ 且 $t^{n-1}+t^{n-2}+\cdots+t+1>n$,所以
+
+\[
+(t-1)(t^{n-1}+\cdots+t+1) > n(t-1)
+\]
+
+综合三种情形,对所有 $t>0$,都有
+
+\[
+t^n-1 \geq n(t-1)
+\]
+\end{solution}
+
+\part
+\begin{subparts}
+\subpart 设 $a,b,c$ 为正实数,在 (a) 中代入 $n=3$ 及 $t=\dfrac{\sqrt[3]{abc}}{\sqrt{ab}}$,证明
+
+\[
+\frac{a+b+c}{3} - \sqrt[3]{abc} \geq \frac{2}{3}\left(\frac{a+b}{2}-\sqrt{ab}\right)
+\]
+\begin{solution}
+由 (a),有
+
+\[
+\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}\right)^3 - 1 \geq 3\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}-1\right)
+\]
+
+因此
+
+\[
+\frac{c}{\sqrt{ab}}-1 \geq 3\left(\frac{\sqrt[3]{abc}}{\sqrt{ab}}\right)-3
+\]
+
+所以
+
+\[
+c \geq \left(3\sqrt[3]{abc}\right)-2\sqrt{ab}
+\]
+
+注意 $c = 3\left(\dfrac{a+b+c}{3}\right)-2\left(\dfrac{a+b}{2}\right)$,因此
+
+\[
+3\left(\frac{a+b+c}{3}\right)-2\left(\frac{a+b}{2}\right) \geq 3\left(\sqrt[3]{abc}\right)-2\sqrt{ab}
+\]
+
+即
+
+\[
+3\left(\frac{a+b+c}{3}\right)-3\sqrt[3]{abc} \geq 2\left(\frac{a+b}{2}\right)-2\sqrt{ab}
+\]
+
+因此
+
+\[
+\frac{a+b+c}{3} - \sqrt[3]{abc} \geq \frac{2}{3}\left(\frac{a+b}{2}-\sqrt{ab}\right)
+\]
+\end{solution}
+
+\subpart 设 $y_1,y_2,\ldots,y_{k+1}$ 为正实数,其中 $k$ 为正整数,利用 (a),证明
+
+\[
+y_{k+1} \geq (k+1)G_{k+1} - kG_k
+\]
+
+其中 $G_k = \sqrt[k]{y_1 y_2 \cdots y_k}$,$G_{k+1} = \sqrt[k+1]{y_1 y_2 \cdots y_{k+1}}$
+\begin{solution}
+由 (a),代入 $n=k+1$ 及 $t=\dfrac{G_{k+1}}{G_k}$,得
+
+\[
+\left(\frac{G_{k+1}}{G_k}\right)^{k+1} - 1 \geq (k+1)\left(\frac{G_{k+1}}{G_k}-1\right)
+\]
+
+因此
+
+\[
+\frac{y_{k+1}}{G_k} - 1 \geq (k+1)\left(\frac{G_{k+1}}{G_k}-1\right)
+\]
+
+所以
+
+\[
+y_{k+1} \geq (k+1)G_{k+1} - kG_k
+\]
+\end{solution}
+
+\subpart 利用数学归纳法及 (b)(ii),证明对任何 $n$ 个正实数 $x_1,x_2,\ldots,x_n$,都有
+
+\[
+\frac{x_1+x_2+\cdots+x_n}{n} \geq \sqrt[n]{x_1 x_2 \cdots x_n}
+\]
+\begin{solution}
+用数学归纳法证明该命题,当 $n=1$ 时,命题显然成立
+
+设存在正整数 $k$,使得对任何 $k$ 个正实数 $x_1,x_2,\ldots,x_k$,都有
+
+\[
+\frac{x_1+x_2+\cdots+x_k}{k} \geq \sqrt[k]{x_1 x_2 \cdots x_k}
+\]
+
+对任何 $k+1$ 个正实数 $y_1,y_2,\ldots,y_{k+1}$,定义
+
+\[
+A_l = \frac{y_1+y_2+\cdots+y_l}{l} \quad \text{及} \quad G_l = \sqrt[l]{y_1 y_2 \cdots y_l}
+\]
+
+其中 $l=k,k+1$,注意 $y_{k+1} = (k+1)A_{k+1}-kA_k$,由 (b)(ii),得
+
+\[
+(k+1)A_{k+1}-kA_k \geq (k+1)G_{k+1}-kG_k
+\]
+
+于是
+
+\[
+(k+1)(A_{k+1}-G_{k+1}) \geq k(A_k-G_k)
+\]
+
+因此
+
+\[
+A_{k+1}-G_{k+1} \geq \frac{k}{k+1}(A_k-G_k)
+\]
+
+在归纳假设中代入 $x_i=y_i$($1 \leq i \leq k$),得 $A_k \geq G_k$,因此当 $A_k \geq G_k$ 时,有 $A_{k+1} \geq G_{k+1}$
+
+所以当 $n=k$ 时命题成立,则 $n=k+1$ 时命题也成立,由数学归纳法,该命题对所有正整数 $n$ 成立
+\end{solution}
+\end{subparts}
+
+\part 设 $n$ 为正整数,利用 (b)(iii),证明
+
+\[
+n^n \geq (1)(3)(5)\cdots(2n-1)
+\]
+
+并证明 $(n^2+n)^n \geq (2n)!$
+\begin{solution}
+在 (b)(iii) 中代入 $x_i=2i-1$($1 \leq i \leq n$),得
+
+\[
+\frac{1+3+5+\cdots+(2n-1)}{n} \geq \sqrt[n]{(1)(3)(5)\cdots(2n-1)}
+\]
+
+因此
+
+\[
+\frac{(1+2n-1)n}{2n} \geq \sqrt[n]{(1)(3)(5)\cdots(2n-1)}
+\]
+
+所以
+
+\[
+n^n \geq (1)(3)(5)\cdots(2n-1)
+\]
+
+又在 (b)(iii) 中代入 $x_i=2i$($1 \leq i \leq n$),得
+
+\[
+\frac{2+4+6+\cdots+2n}{n} \geq \sqrt[n]{(2)(4)(6)\cdots(2n)}
+\]
+
+因此
+
+\[
+\frac{(2+2n)n}{2n} \geq \sqrt[n]{(2)(4)(6)\cdots(2n)}
+\]
+
+所以
+
+\[
+(n+1)^n \geq (2)(4)(6)\cdots(2n)
+\]
+
+从而
+
+\[
+n^n(n+1)^n \geq (1)(2)(3)(4)\cdots(2n-1)(2n)
+\]
+
+因此
+
+\[
+(n^2+n)^n \geq (2n)!
+\]
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+
+\part
+设 $\alpha$ 为正实数。透过对 $f(t)=\dfrac{(t+1)^{\alpha+1}}{t^\alpha}$ 求导,证明对所有 $t>0$,都有
+\[
+\frac{(t+1)^{\alpha+1}}{t^\alpha}\geq\frac{(\alpha+1)^{\alpha+1}}{\alpha^\alpha}
+\]
+
+\begin{solution}
+设 $f(t)=\dfrac{(t+1)^{\alpha+1}}{t^\alpha}$,其中 $t>0$。则
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}f(t)=\frac{(t+1)^\alpha(t-\alpha)}{t^{\alpha+1}}
+\]
+当 $0<t<\alpha$ 时,$f'(t)<0$;当 $t=\alpha$ 时,$f'(t)=0$;当 $t>\alpha$ 时,$f'(t)>0$。所以 $f(t)$ 在 $t=\alpha$ 处取得最小值,即对所有 $t>0$,都有 $f(t)\geq f(\alpha)$。因此,对所有 $t>0$,都有
+\[
+\frac{(t+1)^{\alpha+1}}{t^\alpha}\geq\frac{(\alpha+1)^{\alpha+1}}{\alpha^\alpha}
+\]
+\end{solution}
+
+\part
+设 $\alpha_1$ 及 $\alpha_2$ 为正实数。
+
+(i) 在 (a) 中代入 $\alpha=\dfrac{\alpha_1}{\alpha_2}$,证明对所有 $t>0$,都有 $\dfrac{(t+1)^{\alpha_1+\alpha_2}}{t^{\alpha_1}}\geq\dfrac{(\alpha_1+\alpha_2)^{\alpha_1+\alpha_2}}{\alpha_1^{\alpha_1}\alpha_2^{\alpha_2}}$。
+
+(ii) 利用 (b)(i),证明对任何正实数 $\beta_1$ 及 $\beta_2$,都有 $\left(\dfrac{\beta_1+\beta_2}{\alpha_1+\alpha_2}\right)^{\alpha_1+\alpha_2}\geq\left(\dfrac{\beta_1}{\alpha_1}\right)^{\alpha_1}\left(\dfrac{\beta_2}{\alpha_2}\right)^{\alpha_2}$。
+
+\begin{solution}
+注意到 $\dfrac{\alpha_1}{\alpha_2}>0$。在 (a) 中代入 $\alpha=\dfrac{\alpha_1}{\alpha_2}$,得对所有 $t>0$,都有
+\[
+\frac{(t+1)^{\frac{\alpha_1}{\alpha_2}+1}}{t^{\frac{\alpha_1}{\alpha_2}}}\geq\frac{\left(\frac{\alpha_1}{\alpha_2}+1\right)^{\frac{\alpha_1}{\alpha_2}+1}}{\left(\frac{\alpha_1}{\alpha_2}\right)^{\frac{\alpha_1}{\alpha_2}}}
+\]
+化简,得
+\[
+\frac{(t+1)^{\alpha_1+\alpha_2}}{t^{\alpha_1}}\geq\frac{(\alpha_1+\alpha_2)^{\alpha_1+\alpha_2}}{\alpha_1^{\alpha_1}\alpha_2^{\alpha_2}}
+\]
+
+注意到 $\dfrac{\beta_1}{\beta_2}>0$。在 (b)(i) 中代入 $t=\dfrac{\beta_1}{\beta_2}$,得
+\[
+\frac{\left(\frac{\beta_1}{\beta_2}+1\right)^{\alpha_1+\alpha_2}}{\left(\frac{\beta_1}{\beta_2}\right)^{\alpha_1}}\geq\frac{(\alpha_1+\alpha_2)^{\alpha_1+\alpha_2}}{\alpha_1^{\alpha_1}\alpha_2^{\alpha_2}}
+\]
+化简,得
+\[
+\frac{(\beta_1+\beta_2)^{\alpha_1+\alpha_2}}{\beta_1^{\alpha_1}\beta_2^{\alpha_2}}\geq\frac{(\alpha_1+\alpha_2)^{\alpha_1+\alpha_2}}{\alpha_1^{\alpha_1}\alpha_2^{\alpha_2}}
+\]
+因此
+\[
+\left(\frac{\beta_1+\beta_2}{\alpha_1+\alpha_2}\right)^{\alpha_1+\alpha_2}\geq\left(\frac{\beta_1}{\alpha_1}\right)^{\alpha_1}\left(\frac{\beta_2}{\alpha_2}\right)^{\alpha_2}
+\]
+\end{solution}
+
+\part
+利用数学归纳法,证明对任何正实数 $x_1,x_2,\ldots,x_n$ 及 $y_1,y_2,\ldots,y_n$,都有
+\[
+\left(\frac{y_1+y_2+\cdots+y_n}{x_1+x_2+\cdots+x_n}\right)^{x_1+x_2+\cdots+x_n}\geq\left(\frac{y_1}{x_1}\right)^{x_1}\left(\frac{y_2}{x_2}\right)^{x_2}\cdots\left(\frac{y_n}{x_n}\right)^{x_n}
+\]
+
+\begin{solution}
+由于 $\left(\dfrac{y_1}{x_1}\right)^{x_1}=\left(\dfrac{y_1}{x_1}\right)^{x_1}$,故当 $n=1$ 时命题成立。
+
+假设当 $n=k$($k$ 为正整数)时命题成立,即对任何正实数 $a_1,a_2,\ldots,a_k$ 及 $b_1,b_2,\ldots,b_k$,都有
+\[
+\left(\frac{b_1+b_2+\cdots+b_k}{a_1+a_2+\cdots+a_k}\right)^{a_1+a_2+\cdots+a_k}\geq\left(\frac{b_1}{a_1}\right)^{a_1}\left(\frac{b_2}{a_2}\right)^{a_2}\cdots\left(\frac{b_k}{a_k}\right)^{a_k}
+\]
+则对任何正实数 $x_1,x_2,\ldots,x_{k+1}$ 及 $y_1,y_2,\ldots,y_{k+1}$,
+\begin{align*}
+&\left(\frac{y_1+y_2+\cdots+y_{k+1}}{x_1+x_2+\cdots+x_{k+1}}\right)^{x_1+x_2+\cdots+x_{k+1}}\\
+={}&\left(\frac{(y_1+y_2+\cdots+y_k)+y_{k+1}}{(x_1+x_2+\cdots+x_k)+x_{k+1}}\right)^{(x_1+x_2+\cdots+x_k)+x_{k+1}}\\
+\geq{}&\left(\frac{y_1+y_2+\cdots+y_k}{x_1+x_2+\cdots+x_k}\right)^{x_1+x_2+\cdots+x_k}\left(\frac{y_{k+1}}{x_{k+1}}\right)^{x_{k+1}}\\
+\geq{}&\left(\frac{y_1}{x_1}\right)^{x_1}\left(\frac{y_2}{x_2}\right)^{x_2}\cdots\left(\frac{y_k}{x_k}\right)^{x_k}\left(\frac{y_{k+1}}{x_{k+1}}\right)^{x_{k+1}}
+\end{align*}
+所以当 $n=k+1$ 时命题也成立。由数学归纳法,命题对所有正整数 $n$ 都成立。
+\end{solution}
+
+\end{parts}
+
+
+\question
+\begin{parts}
+\part 设 $f(x)$ 为多项式，$n$ 为正整数，且 $\deg f(x)\ge n$。证明对任意 $a\in\mathbb{R}$，若
+\[
+f(a)=f'(a)=f''(a)=\cdots=f^{(n-1)}(a)=0
+\]
+则 $f(x)$ 可被 $(x-a)^n$ 整除。
+
+\begin{solution}
+用数学归纳法证明对一切满足条件之多项式，此结论成立。
+
+当 $n=1$ 时，$f(a)=0$，由因式定理，$(x-a)\mid f(x)$。
+
+假设当 $n$ 成立时，即若 $f(a)=f'(a)=\cdots=f^{(n-1)}(a)=0$，则 $(x-a)^n\mid f(x)$，此对一切符合条件之多项式成立。
+
+设 $f(a)=f'(a)=\cdots=f^{(n)}(a)=0$。由于 $f(a)=\cdots=f^{(n-1)}(a)=0$，由归纳假设，$(x-a)^n\mid f(x)$，即 $f(x)=(x-a)^nq(x)$，其中 $q(x)$ 为多项式。
+
+将 $f(x)$ 微分 $n$ 次，
+\[
+f^{(n)}(x) = n!\,q(x)+(x-a)\times(\text{其他项})
+\]
+于 $x=a$ 处，$f^{(n)}(a)=n!\,q(a)$。由 $f^{(n)}(a)=0$，得 $q(a)=0$，由因式定理，$(x-a)\mid q(x)$，即 $q(x)=(x-a)q_1(x)$，故
+\[
+f(x) = (x-a)^{n+1}q_1(x)
+\]
+即 $(x-a)^{n+1}\mid f(x)$，当 $n+1$ 时结论成立。由数学归纳法，对所有正整数 $n$，结论成立。
+\end{solution}
+
+\part 设 $p(x),q(x),r(x),s(x)$ 为多项式，且
+\[
+F(x)=\left(\int_1^x p(t)r(t)\,\mathrm{d}t\right)\left(\int_1^x q(t)s(t)\,\mathrm{d}t\right)-\left(\int_1^x p(t)q(t)\,\mathrm{d}t\right)\left(\int_1^x r(t)s(t)\,\mathrm{d}t\right)
+\]
+证明若 $\deg F(x)\ge 4$，则 $F(x)$ 可被 $(x-1)^4$ 整除。
+
+\begin{solution}
+由(a)，由于 $\deg F(x)\ge 4$，只需证明 $F(1)=F'(1)=F''(1)=F'''(1)=0$。
+
+设 $P(x)=\displaystyle\int_1^x pr\,\mathrm{d}t$，$Q(x)=\displaystyle\int_1^x qs\,\mathrm{d}t$，$R(x)=\displaystyle\int_1^x pq\,\mathrm{d}t$，$S(x)=\displaystyle\int_1^x rs\,\mathrm{d}t$，则 $F=PQ-RS$，且 $P(1)=Q(1)=R(1)=S(1)=0$。
+
+$F(1)=P(1)Q(1)-R(1)S(1)=0$。
+
+$F'(x)=P'Q+PQ'-R'S-RS'=(pr)Q+P(qs)-(pq)S-R(rs)$，故 $F'(1)=0$。
+
+\begin{align*}
+F''(x) &= (pr)'Q+(pr)(qs)+(pr)(qs)+P(qs)'-(pq)'S-(pq)(rs)-(pq)(rs)-R(rs)' \\
+&= (pr)'Q+2(pr)(qs)+P(qs)'-(pq)'S-2(pq)(rs)-R(rs)'
+\end{align*}
+于 $x=1$，$P(1)=Q(1)=R(1)=S(1)=0$，故
+\[
+F''(1) = 2p(1)r(1)q(1)s(1)-2p(1)q(1)r(1)s(1) = 0
+\]
+
+再微分一次，于 $x=1$ 处，含 $P,Q,R,S$ 之项均为零，只余下
+\[
+F'''(1) = 3\left[(pr)'(qs)+(pr)(qs)'-(pq)'(rs)-(pq)(rs)'\right]_{x=1}
+\]
+将各项展开：
+\[
+(pr)'(qs) = p'rqs+pr'qs , \qquad (pr)(qs)' = prq's+prqs'
+\]
+\[
+(pq)'(rs) = p'qrs+pq'rs , \qquad (pq)(rs)' = pqr's+pqrs'
+\]
+由乘法交换律，$p'rqs=p'qrs$，$pr'qs=pqr's$，$prq's=pq'rs$，$prqs'=pqrs'$，故上述八项两两相消，
+\[
+F'''(1) = 0
+\]
+由于 $F(1)=F'(1)=F''(1)=F'''(1)=0$ 且 $\deg F(x)\ge 4$，由(a)（取 $n=4$），$F(x)$ 可被 $(x-1)^4$ 整除。
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 证明对任何正整数 $n$,存在唯一的正整数 $a_n$ 及 $b_n$,使得 $(1+\sqrt3)^{2n}=a_n+b_n\sqrt3$,且(i) $a_n^2-3b_n^2=2^{2n}$,(ii) $a_n$ 及 $b_n$ 都能被 $2^n$ 整除。
+\begin{solution}
+[存在性]
+当 $n=1$ 时,$(1+\sqrt3)^2=4+2\sqrt3$。设 $a_1=4$、$b_1=2$,则(i) $a_1^2-3b_1^2=16-12=4=2^2$;(ii) $a_1,b_1$ 都能被 $2$ 整除。所以当 $n=1$ 时命题成立。
+
+设命题对 $n=k$（$k\ge1$）成立,则对 $n=k+1$,
+\begin{align*}
+(1+\sqrt3)^{2(k+1)}&=(1+\sqrt3)^{2k}(1+\sqrt3)^2\\
+&=(a_k+b_k\sqrt3)(4+2\sqrt3)\\
+&=(4a_k+6b_k)+(2a_k+4b_k)\sqrt3
+\end{align*}
+设 $a_{k+1}=4a_k+6b_k$、$b_{k+1}=2a_k+4b_k$,则
+(i)
+\begin{align*}
+a_{k+1}^2-3b_{k+1}^2&=(4a_k+6b_k)^2-3(2a_k+4b_k)^2\\
+&=16a_k^2+48a_kb_k+36b_k^2-3(4a_k^2+16a_kb_k+16b_k^2)\\
+&=4a_k^2-12b_k^2\\
+&=4(a_k^2-3b_k^2)\\
+&=2^2\cdot2^{2k}\\
+&=2^{2(k+1)}
+\end{align*}
+(ii) 因为 $a_k,b_k$ 能被 $2^k$ 整除,所以 $a_{k+1}=2(2a_k+3b_k)$ 及 $b_{k+1}=2(a_k+2b_k)$ 能被 $2^{k+1}$ 整除。
+所以命题对 $n=k+1$ 也成立。由数学归纳法原理,命题对所有正整数 $n$ 成立。
+
+[唯一性]
+设对某些 $a,b,c,d\in\mathbb{Z}^+$,$a+b\sqrt3=c+d\sqrt3$,则 $(a-c)=(b-d)\sqrt3$。因为 $\sqrt3$ 是无理数,所以 $a-c=b-d=0$,即 $a=c$ 及 $b=d$。
+\end{solution}
+\part 对(a)中求得的 $a_n$ 及 $b_n$,证明 $(1-\sqrt3)^{2n}=a_n-b_n\sqrt3$。
+\begin{solution}
+由(a),$a_n^2-3b_n^2=2^{2n}$,所以
+\begin{align*}
+a_n-b_n\sqrt3&=\frac{2^{2n}}{a_n+b_n\sqrt3}\\
+&=\frac{2^{2n}}{(1+\sqrt3)^{2n}}\cdot\frac{(1-\sqrt3)^{2n}}{(1-\sqrt3)^{2n}}\\
+&=\frac{2^{2n}}{(-2)^{2n}}(1-\sqrt3)^{2n}\\
+&=(1-\sqrt3)^{2n}
+\end{align*}
+\end{solution}
+\part 利用(b),或用其他方法,证明 $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}=\sqrt3$。
+\begin{solution}
+由(b),
+\[
+\frac{a_n}{b_n}-\sqrt3=\frac{(1-\sqrt3)^{2n}}{b_n}
+\]
+因为 $b_n$ 能被 $2^n$ 整除,所以 $\displaystyle\lim_{n\to\infty}\frac{1}{b_n}=0$。因为 $|1-\sqrt3|<1$,所以 $\displaystyle\lim_{n\to\infty}(1-\sqrt3)^{2n}=0$。所以
+\[
+\lim_{n\to\infty}\left(\frac{a_n}{b_n}-\sqrt3\right)=\lim_{n\to\infty}(1-\sqrt3)^{2n}\cdot\lim_{n\to\infty}\frac{1}{b_n}=0
+\]
+所以 $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}=\sqrt3$。
+\end{solution}
+\part 利用(a)及(b),或用其他方法,证明对任何正整数 $n$,大于 $(1+\sqrt3)^{2n}$ 的最小整数能被 $2^{n+1}$ 整除。
+\begin{solution}
+因为 $(1+\sqrt3)^{2n}+(1-\sqrt3)^{2n}=2a_n\in\mathbb{Z}^+$ 且 $0<(1-\sqrt3)^{2n}<1$,所以 $2a_n$ 是大于 $(1+\sqrt3)^{2n}$ 的最小整数。
+因为 $a_n$ 能被 $2^n$ 整除,所以 $2a_n$ 能被 $2^{n+1}$ 整除。
+\end{solution}
+\end{parts}
+
+
+\question
+\begin{parts}
+\part
+证明：对任何正整数 $n$，存在唯一的正整数 $a_n$ 及 $b_n$，使得
+\[
+(\sqrt2+1)^n=a_n\sqrt2+b_n
+\]
+并证明
+\begin{subparts}
+\subpart 对所有 $n$，$b_n$ 为奇数．
+\begin{solution}
+先证明唯一性．设存在整数 $a,b,c,d$ 使得 $a\sqrt2+b=c\sqrt2+d$，则
+\[
+(a-c)\sqrt2=d-b
+\]
+由于 $\sqrt2$ 为无理数，只有当 $a-c=d-b=0$ 时上式才成立，即 $a=c$，$b=d$．唯一性得证。
+
+当 $n=1$ 时，命题以 $a_1=b_1=1$ 成立．
+设当 $n=k$（$k\ge1$）时命题成立，即 $(\sqrt2+1)^k=a_k\sqrt2+b_k$，其中 $a_k,b_k$ 为正整数，$b_k$ 为奇数，且 $b_k\ge a_k\ge2^{k-1}$．
+\[
+(\sqrt2+1)^{k+1}=(a_k\sqrt2+b_k)(\sqrt2+1)=(a_k+b_k)\sqrt2+(2a_k+b_k)=a_{k+1}\sqrt2+b_{k+1}
+\]
+$(a_k+b_k)$ 及 $(2a_k+b_k)$ 均为正整数，且 $2a_k+b_k$ 为奇数（因为 $b_k$ 为奇数）．
+又 $2a_k+b_k\ge a_k+b_k\ge2a_k\ge2^k$．
+故命题对所有正整数 $n$ 成立，即 $b_n$ 对所有 $n$ 为奇数。
+\end{solution}
+\subpart 当 $n$ 为奇数时，$a_n$ 为奇数．
+\begin{solution}
+$a_1=1$ 为奇数．设当 $n=k$（$k$ 为奇数）时 $a_k$ 为奇数．
+\[
+(\sqrt2+1)^{k+2}=(a_k\sqrt2+b_k)(2\sqrt2+3)=(3a_k+2b_k)\sqrt2+(4a_k+3b_k)
+\]
+由于 $a_k$ 为奇数，$3a_k+2b_k$ 为奇数．故当 $n=k+2$ 时 $a_n$ 也为奇数．
+由归纳法，当 $n$ 为奇数时，$a_n$ 为奇数。
+\end{solution}
+\end{subparts}
+\part
+对(a)中所定的 $a_n$ 及 $b_n$，证明
+\begin{subparts}
+\subpart $(\sqrt2-1)^n=(-1)^{n+1}(a_n\sqrt2-b_n)$．
+\begin{solution}
+当 $n=1$ 时，$(\sqrt2-1)^1=(-1)^2(1\times\sqrt2-1)$，命题成立．
+设当 $n=k$（$k\ge1$）时命题成立，即 $(\sqrt2-1)^k=(-1)^{k+1}(a_k\sqrt2-b_k)$．
+\[
+(a_k\sqrt2-b_k)(\sqrt2-1)=(2a_k+b_k)-(a_k+b_k)\sqrt2=-\left[(a_{k+1})\sqrt2-b_{k+1}\right]
+\]
+故
+\[
+(\sqrt2-1)^{k+1}=(-1)^{k+1}(a_k\sqrt2-b_k)(\sqrt2-1)=(-1)^{k+2}(a_{k+1}\sqrt2-b_{k+1})
+\]
+由归纳法，$(\sqrt2-1)^n=(-1)^{n+1}(a_n\sqrt2-b_n)$ 对所有 $n\ge1$ 成立。
+\end{solution}
+\subpart $b_n>a_n>2^{n-1}$．由此，或用其他方法，证明 $\left|\sqrt2-\dfrac{b_n}{a_n}\right|<\dfrac{1}{2^{2n-1}}$，并求 $\displaystyle\lim_{n\to\infty}\frac{b_n}{a_n}$ 的值．
+\begin{solution}
+由(a)的归纳证明可知 $b_n\ge a_n\ge2^{n-1}$，且由归纳过程 $b_{n+1}>a_{n+1}$，故 $b_n>a_n>2^{n-1}$．
+
+现在 $0<(\sqrt2-1)<\dfrac12$，故
+\[
+0<(\sqrt2-1)^n<\frac{1}{2^n}
+\]
+由(i)，$|a_n\sqrt2-b_n|<\dfrac{1}{2^n}$，即
+\[
+\left|\sqrt2-\frac{b_n}{a_n}\right|<\frac{1}{a_n2^n}<\frac{1}{2^{n-1}\cdot2^n}=\frac{1}{2^{2n-1}}
+\]
+由于 $\displaystyle\lim_{n\to\infty}\frac{1}{2^{2n-1}}=0$，由夹逼定理，
+\[
+\lim_{n\to\infty}\left|\sqrt2-\frac{b_n}{a_n}\right|=0
+\]
+故 $\displaystyle\lim_{n\to\infty}\frac{b_n}{a_n}=\sqrt2$。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question 设 $f(x)=\dfrac{1}{\sqrt{1+x^2}}$ ，对所有 $x\in\mathbb{R}$ 。设 $f^{(n)}$ 表示 $f$ 的第 $n$ 阶导数，对 $n=1,2,\ldots$ ，且 $f^{(0)}=f$ 。
+
+\begin{parts}
+\part 证明
+\[
+(1+x^2)f'(x)+xf(x)=0
+\]
+由此推出
+\[
+(1+x^2)f^{(n+1)}(x)+(2n+1)xf^{(n)}(x)+n^2f^{(n-1)}(x)=0
+\]
+对 $n=1,2,\ldots$ 成立。
+
+\begin{solution}
+\[
+f'(x)=\frac{-x}{\left(1+x^2\right)^{\frac{3}{2}}}=\frac{-x}{1+x^2}\cdot\frac{1}{\sqrt{1+x^2}}=\frac{-xf(x)}{1+x^2}
+\]
+即
+\[
+(1+x^2)f'(x)+xf(x)=0
+\]
+记为 $(*)$ 。对 $(*)$ 式两边关于 $x$ 求 $n$ 阶导数，由莱布尼兹公式，
+\[
+\left[(1+x^2)f'(x)\right]^{(n)}=(1+x^2)f^{(n+1)}(x)+2nxf^{(n)}(x)+n(n-1)f^{(n-1)}(x)
+\]
+\[
+\left[xf(x)\right]^{(n)}=xf^{(n)}(x)+nf^{(n-1)}(x)
+\]
+将两式相加并令其等于 $0$ ，
+\[
+(1+x^2)f^{(n+1)}(x)+2nxf^{(n)}(x)+n(n-1)f^{(n-1)}(x)+xf^{(n)}(x)+nf^{(n-1)}(x)=0
+\]
+\[
+(1+x^2)f^{(n+1)}(x)+(2n+1)xf^{(n)}(x)+n^2f^{(n-1)}(x)=0
+\]
+（因为 $n(n-1)+n=n^2$ ）
+\end{solution}
+
+\part 定义 $P_n(x)=(1+x^2)^{n+\frac{1}{2}}f^{(n)}(x)$ ，对 $n=0,1,2,\ldots$ 。
+
+\begin{subparts}
+
+\subpart 对 $n=0,1,2,\ldots$ ，证明
+\[
+P_{n+1}(x)=(1+x^2)P_n'(x)-(2n+1)xP_n(x)
+\]
+并推出 $P_n(x)$ 是一个 $n$ 次多项式，其首项系数为 $(-1)^nn!$ 。
+
+\begin{solution}
+\[
+P_{n+1}(x)=(1+x^2)^{n+\frac{3}{2}}f^{(n+1)}(x)
+\]
+\[
+P_n'(x)=\left(n+\frac{1}{2}\right)(2x)(1+x^2)^{n-\frac{1}{2}}f^{(n)}(x)+(1+x^2)^{n+\frac{1}{2}}f^{(n+1)}(x)
+\]
+于是
+\[
+(1+x^2)P_n'(x)-(2n+1)xP_n(x)
+\]
+\[
+=(1+x^2)^{n+\frac{3}{2}}f^{(n+1)}(x)+(2n+1)x(1+x^2)^{n+\frac{1}{2}}f^{(n)}(x)-(2n+1)x(1+x^2)^{n+\frac{1}{2}}f^{(n)}(x)
+\]
+\[
+=(1+x^2)^{n+\frac{3}{2}}f^{(n+1)}(x)
+\]
+\[
+=P_{n+1}(x)
+\]
+
+用数学归纳法证明 $P_n(x)$ 是一个 $n$ 次多项式，其首项系数为 $(-1)^nn!$：当 $n=0$ 时，
+\[
+P_0(x)=(1+x^2)^{\frac{1}{2}}f(x)=(1+x^2)^{\frac{1}{2}}\cdot(1+x^2)^{-\frac{1}{2}}=1
+\]
+命题对 $n=0$ 成立（首项系数为 $(-1)^0\cdot0!=1$）。设命题对 $n=k$ 成立，即
+\[
+P_k(x)=(-1)^kk!x^k+a_{k-1}x^{k-1}+\cdots+a_1x+a_0
+\]
+则
+\[
+P_{k+1}(x)=(1+x^2)P_k'(x)-(2k+1)xP_k(x)
+\]
+比较 $x^{k+1}$ 项的系数，
+\[
+(-1)^kk!k-(2k+1)(-1)^kk!=(-1)^kk!\left[k-(2k+1)\right]=(-1)^{k+1}(k+1)!
+\]
+所以 $P_{k+1}(x)$ 是一个 $k+1$ 次多项式，其首项系数为 $(-1)^{k+1}(k+1)!$ ，命题对 $n=k+1$ 也成立。由数学归纳法原理，命题对所有非负整数 $n$ 成立。
+\end{solution}
+
+\subpart 对 $n=1,2,\ldots$ ，证明
+\[
+P_{n+1}(x)+(2n+1)xP_n(x)+n^2(1+x^2)P_{n-1}(x)=0
+\]
+并求 $P_n(0)$ 。
+
+\begin{solution}
+\[
+P_{n+1}(x)+(2n+1)xP_n(x)=(1+x^2)^{n+\frac{3}{2}}f^{(n+1)}(x)+(2n+1)x(1+x^2)^{n+\frac{1}{2}}f^{(n)}(x)
+\]
+\[
+=(1+x^2)^{n+\frac{1}{2}}\left[(1+x^2)f^{(n+1)}(x)+(2n+1)xf^{(n)}(x)\right]
+\]
+\[
+=(1+x^2)^{n+\frac{1}{2}}\left[-n^2f^{(n-1)}(x)\right]
+\]
+（由(a)）
+\[
+=-n^2(1+x^2)P_{n-1}(x)
+\]
+即
+\[
+P_{n+1}(x)+(2n+1)xP_n(x)+n^2(1+x^2)P_{n-1}(x)=0
+\]
+在上式中令 $x=0$ ，
+\[
+P_{n+1}(0)=-n^2P_{n-1}(0)
+\]
+当 $n$ 是偶数时，由 $P_0(0)=1$ ，递推可得
+\[
+P_n(0)=(-1)^{\frac{n}{2}}\left[(n-1)(n-3)\cdots1\right]^2
+\]
+当 $n$ 是奇数时，因为 $f'(0)=0$ ，故 $P_1(0)=(1+0^2)^{\frac{3}{2}}f'(0)=0$ ，递推可得
+\[
+P_n(0)=0
+\]
+\end{solution}
+
+\subpart 对 $n=1,2,\ldots$ ，证明
+\[
+P_n'(x)=-n^2P_{n-1}(x)
+\]
+并推出对 $r=1,2,\ldots,n$ ，
+\[
+P_n^{(r)}(x)=(-1)^r\left(n(n-1)\cdots(n-r+1)\right)^2P_{n-r}(x)
+\]
+
+\begin{solution}
+由(b)(i)，
+\[
+P_n'(x)=\frac{1}{1+x^2}\left[P_{n+1}(x)+(2n+1)xP_n(x)\right]=\frac{1}{1+x^2}\left[-n^2(1+x^2)P_{n-1}(x)\right]
+\]
+（由(b)(ii)）
+\[
+=-n^2P_{n-1}(x)
+\]
+
+用数学归纳法证明所给公式：当 $r=1$ 时，由上式， $P_n'(x)=-n^2P_{n-1}(x)=(-1)^1n^2P_{n-1}(x)$ ，命题成立。设命题对 $r$ 成立，即
+\[
+P_n^{(r)}(x)=(-1)^r\left[n(n-1)\cdots(n-r+1)\right]^2P_{n-r}(x)
+\]
+则
+\[
+P_n^{(r+1)}(x)=(-1)^r\left[n(n-1)\cdots(n-r+1)\right]^2P_{n-r}'(x)
+\]
+\[
+=(-1)^r\left[n(n-1)\cdots(n-r+1)\right]^2\left[-(n-r)^2P_{n-r-1}(x)\right]
+\]
+\[
+=(-1)^{r+1}\left[n(n-1)\cdots(n-r+1)(n-r)\right]^2P_{n-r-1}(x)
+\]
+即命题对 $r+1$ 也成立。由数学归纳法原理，命题对所有 $r=1,2,\ldots,n$ 成立。
+\end{solution}
+
+\subpart 由此证明对 $n=1,2,\ldots$ ， $P_n(x)$ 是奇函数或偶函数。
+
+\begin{solution}
+由麦克劳林展开式，
+\[
+P_n(x)=\sum_{r=0}^n\frac{P_n^{(r)}(0)}{r!}x^r
+\]
+
+情形一：当 $n$ 是偶数时，设 $n=2m$ 。由(b)(iii)，
+\[
+P_{2m}^{(2r-1)}(0)=(-1)^{2r-1}\left[2m(2m-1)\cdots(2m-2r+2)\right]^2P_{2m-2r+1}(0)
+\]
+因为 $2m-2r+1$ 是奇数，由(b)(ii)， $P_{2m-2r+1}(0)=0$ 。所以
+\[
+P_n(x)=\sum_{r=0}^m\frac{P_{2m}^{(2r)}(0)}{(2r)!}x^{2r}
+\]
+因为 $x^{2r}=(-x)^{2r}$ ，所以 $P_n(x)$ 是偶函数。
+
+情形二：当 $n$ 是奇数时，设 $n=2m+1$ 。同理，由(b)(ii)， $2m+1-2r$ 是奇数时对应系数为 $0$ ，所以
+\[
+P_n(x)=\sum_{r=0}^m\frac{P_{2m+1}^{(2r+1)}(0)}{(2r+1)!}x^{2r+1}
+\]
+因为 $x^{2r+1}=-(-x)^{2r+1}$ ，所以 $P_n(x)$ 是奇函数。
+
+综合以上两种情形，对 $n=1,2,\ldots$ ， $P_n(x)$ 是奇函数或偶函数。
+\end{solution}
+
+\end{subparts}
+
+\end{parts}
+
+\question 设
+\[I_n=\int_0^1e^tt^n\,dt\]
+其中 $n$ 为任意非负整数。
+\begin{parts}
+\part 用归纳法证明
+\[I_n=(-1)^{n+1}n!+e\sum_{i=0}^n(-1)^i\frac{n!}{(n-i)!}\]
+\begin{solution}
+当 $n=0$ 时,
+\[\text{R.S.}=I_0=\int_0^1e^t\,dt=e^t\Big|_0^1=e-1\]
+\[\text{L.S.}=(-1)+e=\text{R.S.}\]
+设对某 $k\geq0$,$I_k=(-1)^{k+1}k!+e\displaystyle\sum_{i=0}^k(-1)^i\frac{k!}{(k-i)!}$ 成立。设 $u=t^{k+1}$,$dv=e^t\,dt$,则 $du=(k+1)t^k\,dt$,$v=e^t$,故
+\begin{align*}
+I_{k+1}&=e^tt^{k+1}\Big|_0^1-(k+1)\int_0^1t^ke^t\,dt\\
+&=e-(k+1)I_k\\
+&=e-(k+1)\left[(-1)^{k+1}k!+e\sum_{i=0}^k(-1)^i\frac{k!}{(k-i)!}\right]\\
+&=e+(-1)^{k+2}(k+1)!-e\sum_{i=0}^k(-1)^i\frac{(k+1)!}{(k-i)!}\\
+&=(-1)^{k+2}(k+1)!+e\sum_{j=1}^{k+1}(-1)^j\frac{(k+1)!}{(k+1-j)!}+e\qquad(i=j-1)\\
+&=(-1)^{k+2}(k+1)!+e\sum_{j=0}^{k+1}(-1)^j\frac{(k+1)!}{(k+1-j)!}
+\end{align*}
+故 $I_n=(-1)^{n+1}n!+e\displaystyle\sum_{i=0}^n(-1)^i\frac{n!}{(n-i)!}$ 对所有 $n\geq0$ 成立。
+\end{solution}
+
+\part 证明对所有 $n\geq1$,
+\[\frac{1}{n+1}<I_n<\int_0^1et^n\,dt<\frac{e}{n}\]
+\begin{solution}
+对 $0\leq t\leq1$,$1\leq e^t\leq e$,故 $t^n\leq e^tt^n\leq et^n$,从而
+\[I_n=\int_0^1e^tt^n\,dt\leq\int_0^1et^n\,dt=e\cdot\frac{t^{n+1}}{n+1}\Big|_0^1=\frac{e}{n+1}<\frac{e}{n}\]
+又
+\[I_n\geq\int_0^1t^n\,dt=\frac{t^{n+1}}{n+1}\Big|_0^1=\frac{1}{n+1}\]
+故
+\[\frac{1}{n+1}\leq I_n\leq\int_0^1et^n\,dt<\frac{e}{n}\]
+\end{solution}
+
+\part 利用以上结果,证明 $e$ 必为无理数。
+\begin{solution}
+假设 $e=\dfrac{p}{q}$,其中 $p,q\geq1$,则对所有 $n\geq1$,
+\[\frac{q}{n+1}\leq(-1)^{n+1}n!\,q+p\sum_{i=0}^n(-1)^i\frac{n!}{(n-i)!}<\frac{p}{n}\]
+由于 $(-1)^{n+1}n!\,q+p\displaystyle\sum_{i=0}^n(-1)^i\frac{n!}{(n-i)!}$ 是一个整数,而 $\dfrac{q}{n+1}>0$,取 $n_0>p$,则 $\dfrac{p}{n_0}<1$,故
+\[0<\frac{q}{n_0+1}\leq(-1)^{n_0+1}n_0!\,q+p\sum_{i=0}^{n_0}(-1)^i\frac{n_0!}{(n_0-i)!}<\frac{p}{n_0}<1\]
+此为一整数介于 $0$ 与 $1$ 之间,产生矛盾。故 $e$ 不能是有理数。
+\end{solution}
+\end{parts}
+
+\question
+对 $n=0,1,2,\ldots$，设 $R_n(x)=(x^2-1)^n$，$P_n(x)=R_n^{(n)}(x)$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明 $P_n(x)$ 是 $x$ 的 $n$ 次多项式，$n=0,1,2,\ldots$。
+\begin{solution}
+$R_n(x)=(x^2-1)^n=x^{2n}+(\text{次数不超过}\ 2n-2\ \text{的项})$（因展开式只含偶次幂，次高次为 $2n-2$）。将 $x^{2n}$ 求 $n$ 次导数，得首项
+\[
+\frac{(2n)!}{n!}x^n
+\]
+是次数恰为 $n$ 的项（系数非零）。而次数不超过 $2n-2$ 的其余部分求 $n$ 次导数后，其次数不超过 $2n-2-n=n-2<n$。故 $P_n(x)=R_n^{(n)}(x)$ 是次数恰为 $n$ 的多项式。
+\end{solution}
+
+\subpart 用数学归纳法证明每个 $n$ 次多项式都可表示为 $\displaystyle\sum_{j=0}^n\alpha_jP_j(x)$，其中 $\alpha_j\in\mathbf{R}$。
+\begin{solution}
+当 $n=0$ 时，$P_0(x)=R_0(x)=1$。任意 $0$ 次多项式为常数 $c$，取 $\alpha_0=c$，则 $c=\alpha_0P_0(x)$，成立。
+
+假设结论对次数不超过 $k$ 的多项式成立。设 $Q(x)$ 为 $k+1$ 次多项式，首项系数为 $c_{k+1}$。由 (i)，$P_{k+1}(x)$ 是 $k+1$ 次多项式，设其首项系数为 $\lambda_{k+1}\ne0$。取 $\alpha_{k+1}=\dfrac{c_{k+1}}{\lambda_{k+1}}$，则 $Q(x)-\alpha_{k+1}P_{k+1}(x)$ 的最高次项相消，其次数不超过 $k$。由归纳假设，
+\[
+Q(x)-\alpha_{k+1}P_{k+1}(x) = \sum_{j=0}^k\alpha_jP_j(x)
+\]
+即
+\[
+Q(x) = \sum_{j=0}^{k+1}\alpha_jP_j(x)
+\]
+由数学归纳法，结论对所有 $n$ 成立。
+\end{solution}
+\end{subparts}
+
+\part 用数学归纳法证明
+\[
+(1-x^2)R_n^{(k+2)}(x)+2x(n-k-1)R_n^{(k+1)}(x)+(k+1)(2n-k)R_n^{(k)}(x) = 0
+\]
+对 $k=0,1,2,\ldots$ 成立。由此推出
+\[
+\left[(1-x^2)P_n'(x)\right]' = -n(n+1)P_n(x) \tag{*}
+\]
+\begin{solution}
+先建立基础关系：$R_n'(x)=n(x^2-1)^{n-1}\cdot2x$，故 $(1-x^2)R_n'(x)=-2nx(x^2-1)^n=-2nxR_n(x)$，即
+\[
+(1-x^2)R_n'(x)+2nxR_n(x) = 0
+\]
+
+（$k=0$ 情形）对上式两边求导，
+\[
+-2xR_n'(x)+(1-x^2)R_n''(x)+2nR_n(x)+2nxR_n'(x) = 0
+\]
+即
+\[
+(1-x^2)R_n''(x)+2x(n-1)R_n'(x)+2nR_n(x) = 0
+\]
+即 $k=0$ 时的等式成立。
+
+（归纳步）假设对 $k=l$ 等式成立，即
+\[
+(1-x^2)R_n^{(l+2)}(x)+2x(n-l-1)R_n^{(l+1)}(x)+(l+1)(2n-l)R_n^{(l)}(x) = 0
+\]
+两边求导，得
+\begin{align*}
+&\left[-2xR_n^{(l+2)}(x)+(1-x^2)R_n^{(l+3)}(x)\right]\\
+&+\left[2(n-l-1)R_n^{(l+1)}(x)+2x(n-l-1)R_n^{(l+2)}(x)\right]\\
+&+(l+1)(2n-l)R_n^{(l+1)}(x) = 0
+\end{align*}
+整理 $R_n^{(l+2)}(x)$ 的系数：$-2x+2x(n-l-1)=2x(n-l-2)=2x(n-(l+1)-1)$。
+
+整理 $R_n^{(l+1)}(x)$ 的系数：$2(n-l-1)+(l+1)(2n-l)$，经展开化简后等于 $(l+2)(2n-l-1)=(l+2)(2n-(l+1))$。
+
+故
+\[
+(1-x^2)R_n^{(l+3)}(x)+2x(n-(l+1)-1)R_n^{(l+2)}(x)+(l+2)(2n-(l+1))R_n^{(l+1)}(x) = 0
+\]
+即等式对 $k=l+1$ 成立。由数学归纳法，等式对所有 $k=0,1,2,\ldots$ 成立。
+
+（推出 (*)）在已证等式中取 $k=n$（$n\ge0$），并注意 $P_n(x)=R_n^{(n)}(x)$，$P_n'(x)=R_n^{(n+1)}(x)$，$P_n''(x)=R_n^{(n+2)}(x)$，得
+\[
+(1-x^2)R_n^{(n+2)}(x)+2x(n-n-1)R_n^{(n+1)}(x)+(n+1)(2n-n)R_n^{(n)}(x) = 0
+\]
+即
+\[
+(1-x^2)P_n''(x)-2xP_n'(x)+n(n+1)P_n(x) = 0
+\]
+故
+\[
+\left[(1-x^2)P_n'(x)\right]' = (1-x^2)P_n''(x)-2xP_n'(x) = -n(n+1)P_n(x)
+\]
+\end{solution}
+
+\part
+\begin{subparts}
+\subpart 利用 (*) 或其他方法，证明若 $m,n\ge0$，则
+\[
+n(n+1)\int_{-1}^1P_m(x)P_n(x)\,dx = \int_{-1}^1(1-x^2)P_n'(x)P_m'(x)\,dx
+\]
+\begin{solution}
+由 (*)，$-n(n+1)P_n(x)=\left[(1-x^2)P_n'(x)\right]'$，故
+\[
+n(n+1)\int_{-1}^1P_m(x)P_n(x)\,dx = -\int_{-1}^1P_m(x)\left[(1-x^2)P_n'(x)\right]'\,dx
+\]
+用分部积分，令 $u=P_m(x)$，$dv=\left[(1-x^2)P_n'(x)\right]'dx$，则 $du=P_m'(x)\,dx$，$v=(1-x^2)P_n'(x)$，得
+\[
+\int_{-1}^1P_m(x)\left[(1-x^2)P_n'(x)\right]'\,dx = \left[P_m(x)(1-x^2)P_n'(x)\right]_{-1}^1 - \int_{-1}^1(1-x^2)P_n'(x)P_m'(x)\,dx
+\]
+边界项在 $x=\pm1$ 处因 $1-x^2=0$ 而为零，故
+\[
+n(n+1)\int_{-1}^1P_m(x)P_n(x)\,dx = \int_{-1}^1(1-x^2)P_n'(x)P_m'(x)\,dx
+\]
+\end{solution}
+
+\subpart 由此推出若 $m,n$ 为不同的非负整数，则 $\displaystyle\int_{-1}^1P_m(x)P_n(x)\,dx=0$。
+\begin{solution}
+由 (c)(i)（将 $m,n$ 角色互换），
+\[
+m(m+1)\int_{-1}^1P_n(x)P_m(x)\,dx = \int_{-1}^1(1-x^2)P_m'(x)P_n'(x)\,dx
+\]
+右边与 (c)(i) 的右边相同，故
+\[
+n(n+1)\int_{-1}^1P_m(x)P_n(x)\,dx = m(m+1)\int_{-1}^1P_m(x)P_n(x)\,dx
+\]
+即
+\[
+\left[n(n+1)-m(m+1)\right]\int_{-1}^1P_m(x)P_n(x)\,dx = 0
+\]
+而
+\[
+n(n+1)-m(m+1) = (n-m)(n+m+1)
+\]
+若 $m\ne n$，则 $n-m\ne0$，且 $n+m+1>0$（因 $m,n\ge0$），故 $(n-m)(n+m+1)\ne0$，从而
+\[
+\int_{-1}^1P_m(x)P_n(x)\,dx = 0
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $g$ 为连续可微函数，且 $p\ge 1$。证明
+\[
+\int_0^x (x-t)^pg'(t)\,\mathrm{d}t = -x^pg(0)+p\int_0^x g(t)(x-t)^{p-1}\,\mathrm{d}t
+\]
+对任意 $x\in\mathbb{R}$ 成立。
+
+\begin{solution}
+用分部积分法，设 $u=(x-t)^p$，$\mathrm{d}v=g'(t)\,\mathrm{d}t$，则 $\mathrm{d}u=-p(x-t)^{p-1}\,\mathrm{d}t$，$v=g(t)$。
+\begin{align*}
+\int_0^x (x-t)^pg'(t)\,\mathrm{d}t &= \left[(x-t)^pg(t)\right]_0^x - \int_0^x g(t)\cdot\left(-p(x-t)^{p-1}\right)\mathrm{d}t \\
+&= \left(0-x^pg(0)\right)+p\int_0^x g(t)(x-t)^{p-1}\,\mathrm{d}t \\
+&= -x^pg(0)+p\int_0^x g(t)(x-t)^{p-1}\,\mathrm{d}t
+\end{align*}
+\end{solution}
+
+\part 对任意 $n=1,2,\cdots$ 及 $x\in\mathbb{R}$，证明
+\[
+e^x = 1+\frac{x}{1!}+\frac{x^2}{2!}+\cdots+\frac{x^{n-1}}{(n-1)!}+\frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}e^t\,\mathrm{d}t
+\]
+由此，或用其他方法，证明
+\[
+\left|\left(e+\frac{1}{e}\right)-2\left(1+\frac{1}{2!}+\frac{1}{4!}+\cdots+\frac{1}{(2n)!}\right)\right| < \frac{3}{(2n)!}
+\]
+
+\begin{solution}
+当 $n=1$ 时，左边 $=e^x$，右边 $=1+\int_0^x e^t\,\mathrm{d}t=1+(e^x-1)=e^x$，等式成立。
+
+假设当 $n$ 成立时，
+\[
+e^x = 1+\frac{x}{1!}+\cdots+\frac{x^{n-1}}{(n-1)!}+\frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}e^t\,\mathrm{d}t
+\]
+应用(a)于 $p=n$，$g(t)=e^t$：
+\[
+\int_0^x (x-t)^ne^t\,\mathrm{d}t = -x^n+n\int_0^x (x-t)^{n-1}e^t\,\mathrm{d}t
+\]
+故
+\[
+\int_0^x (x-t)^{n-1}e^t\,\mathrm{d}t = \frac{x^n}{n}+\frac{1}{n}\int_0^x (x-t)^ne^t\,\mathrm{d}t
+\]
+代入得
+\[
+e^x = 1+\frac{x}{1!}+\cdots+\frac{x^{n-1}}{(n-1)!}+\frac{x^n}{n!}+\frac{1}{n!}\int_0^x (x-t)^ne^t\,\mathrm{d}t
+\]
+即当 $n+1$ 时结论成立。由数学归纳法，对所有 $n=1,2,\cdots$，结论成立。
+
+取上式之 $n$ 为 $2n+1$，于 $x=1$：
+\[
+e = \sum_{k=0}^{2n}\frac{1}{k!}+\frac{1}{(2n)!}\int_0^1 (1-t)^{2n}e^t\,\mathrm{d}t
+\]
+于 $x=-1$：
+\[
+\frac{1}{e} = \sum_{k=0}^{2n}\frac{(-1)^k}{k!}+\frac{1}{(2n)!}\int_0^{-1} (-1-t)^{2n}e^t\,\mathrm{d}t
+\]
+两式相加，注意 $\dfrac{1+(-1)^k}{k!}=\dfrac{2}{k!}$（$k$ 为偶数）或 $0$（$k$ 为奇数），
+\[
+e+\frac{1}{e} = 2\left(1+\frac{1}{2!}+\cdots+\frac{1}{(2n)!}\right)+\frac{1}{(2n)!}\left[\int_0^1 (1-t)^{2n}e^t\,\mathrm{d}t+\int_0^{-1} (-1-t)^{2n}e^t\,\mathrm{d}t\right]
+\]
+故
+\[
+\left(e+\frac{1}{e}\right)-2\left(1+\frac{1}{2!}+\cdots+\frac{1}{(2n)!}\right) = \frac{1}{(2n)!}\left[\int_0^1 (1-t)^{2n}e^t\,\mathrm{d}t+\int_{-1}^0 (-1-t)^{2n}e^t\,\mathrm{d}t\right]
+\]
+由于对 $t\in[0,1]$，$|1-t|\le 1$，对 $t\in[-1,0]$，$|-1-t|\le 1$，故
+\begin{align*}
+\left|\left(e+\frac{1}{e}\right)-2\left(1+\cdots+\frac{1}{(2n)!}\right)\right| &\le \frac{1}{(2n)!}\left[\int_0^1 e^t\,\mathrm{d}t+\int_{-1}^0 e^t\,\mathrm{d}t\right] \\
+&= \frac{1}{(2n)!}\left[(e-1)+\left(1-\frac{1}{e}\right)\right] \\
+&= \frac{1}{(2n)!}\left(e-\frac{1}{e}\right) \\
+&< \frac{e}{(2n)!} < \frac{3}{(2n)!}
+\end{align*}
+\end{solution}
+
+\part
+\begin{subparts}
+\subpart 设 $f_0$ 为连续函数。对任意 $n=1,2,\cdots$ 及 $x\in\mathbb{R}$，定义
+\[
+f_n(x) = \int_0^x f_{n-1}(t)\,\mathrm{d}t
+\]
+证明
+\[
+f_n(x) = \frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}f_0(t)\,\mathrm{d}t
+\]
+
+\begin{solution}
+当 $n=1$ 时，$f_1(x)=\displaystyle\int_0^x f_0(t)\,\mathrm{d}t=\dfrac{1}{0!}\displaystyle\int_0^x (x-t)^0f_0(t)\,\mathrm{d}t$，等式成立。
+
+假设当 $n$ 成立时，$f_n(x)=\dfrac{1}{(n-1)!}\displaystyle\int_0^x (x-t)^{n-1}f_0(t)\,\mathrm{d}t$。则
+\[
+f_{n+1}(x) = \int_0^x f_n(s)\,\mathrm{d}s = \int_0^x \frac{1}{(n-1)!}\int_0^s (s-t)^{n-1}f_0(t)\,\mathrm{d}t\,\mathrm{d}s
+\]
+交换积分次序，
+\[
+f_{n+1}(x) = \frac{1}{(n-1)!}\int_0^x f_0(t)\int_t^x (s-t)^{n-1}\,\mathrm{d}s\,\mathrm{d}t = \frac{1}{(n-1)!}\int_0^x f_0(t)\cdot\frac{(x-t)^n}{n}\,\mathrm{d}t = \frac{1}{n!}\int_0^x (x-t)^nf_0(t)\,\mathrm{d}t
+\]
+即当 $n+1$ 时结论成立。由数学归纳法，对所有 $n=1,2,\cdots$，结论成立。
+\end{solution}
+
+\subpart 求 $\dfrac{\mathrm{d}^{100}}{\mathrm{d}x^{100}}\displaystyle\int_0^x (x-t)^{99}\left|\sin(t^2)\right|\,\mathrm{d}t$
+
+\begin{solution}
+设 $f_0(x)=\left|\sin(x^2)\right|$，为连续函数。定义 $f_n(x)=\displaystyle\int_0^x f_{n-1}(t)\,\mathrm{d}t$，$n=1,2,\cdots$。
+
+由(c)(i)，
+\[
+f_{100}(x) = \frac{1}{99!}\int_0^x (x-t)^{99}\left|\sin(t^2)\right|\,\mathrm{d}t
+\]
+即
+\[
+\int_0^x (x-t)^{99}\left|\sin(t^2)\right|\,\mathrm{d}t = 99!\,f_{100}(x)
+\]
+由定义，$f_n'(x)=f_{n-1}(x)$，故 $f_{100}^{(100)}(x)=f_0(x)=\left|\sin(x^2)\right|$。故
+\[
+\frac{\mathrm{d}^{100}}{\mathrm{d}x^{100}}\int_0^x (x-t)^{99}\left|\sin(t^2)\right|\,\mathrm{d}t = 99!\,f_{100}^{(100)}(x) = 99!\left|\sin(x^2)\right|
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part 证明 $1+ex > e^x > 1+x$,其中 $0<x\le1$。
+
+\begin{solution}
+由拉格朗日中值定理,
+\[
+\frac{e^x-1}{x} = e^c
+\]
+对某个 $c\in(0,x)$。对 $0<x\le1$,
+\[
+e \ge e^x > e^c > e^0 = 1
+\]
+所以
+\[
+e > \frac{e^x-1}{x} > 1 \Rightarrow 1+ex > e^x > 1+x
+\]
+
+另解:设 $f(x)=1+ex-e^x$($0<x\le1$),则 $f'(x)=e-e^x>0$($0<x<1$),所以 $f(x)>f(0)=0$,即 $1+ex<e^x$……(这里应为 $1+ex>e^x$,即)
+\[
+1+ex > e^x \quad (0<x\le1)
+\]
+设 $g(x)=e^x-1-x$($0<x\le1$),则 $g'(x)=e^x-1>0$($0<x<1$),所以 $g(x)>g(0)=0$,即
+\[
+e^x < 1+x \quad \text{此处应为 } e^x > 1+x \quad (0<x\le1)
+\]
+\end{solution}
+
+\part 利用数学归纳法,或用其他方法,证明
+\[
+\sum_{r=0}^{n}\frac{x^r}{r!}+\frac{ex^{n+1}}{(n+1)!} > e^x > \sum_{r=0}^{n+1}\frac{x^r}{r!}
+\]
+对 $n=0,1,2,\ldots$ 及 $x\in(0,1]$ 都成立。由此证明
+\[
+\lim_{n\to\infty}\left(1+1+\frac{1}{2!}+\cdots+\frac{1}{n!}\right) = e
+\]
+
+\begin{solution}
+由(a),命题当 $n=0$ 时成立。
+
+设命题当 $n=k$($k\ge0$ 为整数)时对 $x\in(0,1]$ 成立,即
+\[
+\sum_{r=0}^{k}\frac{x^r}{r!}+\frac{ex^{k+1}}{(k+1)!} > e^x > \sum_{r=0}^{k+1}\frac{x^r}{r!}
+\]
+两边从 $0$ 到 $x$ 积分,得
+\[
+\int_0^x\left(\sum_{r=0}^{k}\frac{t^r}{r!}+\frac{et^{k+1}}{(k+1)!}\right)dt > \int_0^x e^t\,dt > \int_0^x\left(\sum_{r=0}^{k+1}\frac{t^r}{r!}\right)dt
+\]
+\[
+\sum_{r=0}^{k}\frac{x^{r+1}}{(r+1)!}+\frac{ex^{k+2}}{(k+2)!} > e^x-1 > \sum_{r=0}^{k+1}\frac{x^{r+1}}{(r+1)!}
+\]
+\[
+\sum_{r=0}^{k+1}\frac{x^r}{r!}+\frac{ex^{k+2}}{(k+2)!} > e^x > \sum_{r=0}^{k+2}\frac{x^r}{r!}
+\]
+由数学归纳法原理,命题对 $n=0,1,2,\ldots$ 及 $x\in(0,1]$ 都成立。
+
+代入 $x=1$,得
+\[
+1+1+\frac{1}{2!}+\cdots+\frac{1}{n!}+\frac{e}{(n+1)!} > e > 1+1+\frac{1}{2!}+\cdots+\frac{1}{(n+1)!}
+\]
+\[
+e-\frac{e}{(n+1)!} < 1+1+\frac{1}{2!}+\cdots+\frac{1}{n!} < e-\frac{1}{(n+1)!}
+\]
+由于
+\[
+\lim_{n\to\infty}\frac{e}{(n+1)!} = \lim_{n\to\infty}\frac{1}{(n+1)!} = 0
+\]
+由夹逼定理,
+\[
+\lim_{n\to\infty}\left(1+1+\frac{1}{2!}+\cdots+\frac{1}{n!}\right) = e
+\]
+\end{solution}
+\end{parts}
+
+\question
+设数列 $\{a_n\}$ 满足
+(1) $a_1>a_2>0$,
+(2) $a_{n+2}=\dfrac{1}{2}(a_{n+1}+a_n)$,其中 $n=1,2,\ldots$。
+
+\begin{parts}
+
+\part 证明对 $n\geqslant 1$,
+\[
+a_{n+2}-a_n=\frac{(-1)^n}{2^n}(a_1-a_2)
+\]
+并由此证明数列 $\{a_1,a_3,a_5,\ldots\}$ 严格递减,而数列 $\{a_2,a_4,a_6,\ldots\}$ 严格递增。
+
+\begin{solution}
+由 $a_{n+2}=\dfrac{1}{2}(a_{n+1}+a_n)$,
+\[
+a_{n+2}-a_{n+1}=\frac{1}{2}(a_n-a_{n+1})=-\frac{1}{2}(a_{n+1}-a_n)
+\]
+记 $d_n=a_{n+1}-a_n$,则 $d_{n+1}=-\dfrac{1}{2}d_n$,故
+\[
+d_n=\left(-\frac{1}{2}\right)^{n-1}d_1=-\left(-\frac{1}{2}\right)^{n-1}(a_1-a_2)
+\]
+
+\begin{align*}
+a_{n+2}-a_n&=d_{n+1}+d_n\\
+&=-\left(-\frac{1}{2}\right)^{n}(a_1-a_2)-\left(-\frac{1}{2}\right)^{n-1}(a_1-a_2)\\
+&=-(a_1-a_2)\left(-\frac{1}{2}\right)^{n-1}\left[\left(-\frac{1}{2}\right)+1\right]\\
+&=-(a_1-a_2)\left(-\frac{1}{2}\right)^{n-1}\cdot\frac{1}{2}\\
+&=\frac{(-1)^n}{2^n}(a_1-a_2)
+\end{align*}
+
+由于 $a_1>a_2$,故 $a_1-a_2>0$。当 $n$ 为奇数时,$(-1)^n<0$,故 $a_{n+2}-a_n<0$,即 $a_{n+2}<a_n$,故数列 $\{a_1,a_3,a_5,\ldots\}$ 严格递减。
+
+当 $n$ 为偶数时,$(-1)^n>0$,故 $a_{n+2}-a_n>0$,即 $a_{n+2}>a_n$,故数列 $\{a_2,a_4,a_6,\ldots\}$ 严格递增。
+\end{solution}
+
+\part 对任意正整数 $m$ 和 $n$,证明 $a_{2m}<a_{2n-1}$。
+
+\begin{solution}
+先证明:对所有正整数 $m$,$a_{2m}<a_{2m-1}$。
+
+当 $m=1$ 时,即 $a_2<a_1$,由题设成立。
+
+设 $a_{2m-2}<a_{2m-1}$ 成立。由递推关系,
+\[
+2a_{2m}=a_{2m-1}+a_{2m-2}<a_{2m-1}+a_{2m-1}=2a_{2m-1}
+\]
+故 $a_{2m}<a_{2m-1}$。由数学归纳法,对所有正整数 $m$,$a_{2m}<a_{2m-1}$ 成立。
+
+现证一般情形。
+
+情形一:$m\leqslant n$。由(a),$\{a_2,a_4,\ldots\}$ 严格递增,故 $a_{2m}\leqslant a_{2n}$;又由上述结果,$a_{2n}<a_{2n-1}$。故 $a_{2m}<a_{2n-1}$。
+
+情形二:$m>n$。由上述结果,$a_{2m}<a_{2m-1}$;又由(a),$\{a_1,a_3,\ldots\}$ 严格递减,而 $2m-1>2n-1$,故 $a_{2m-1}<a_{2n-1}$。因此 $a_{2m}<a_{2n-1}$。
+
+综合两种情形,对任意正整数 $m,n$,$a_{2m}<a_{2n-1}$。
+\end{solution}
+
+\part 证明两数列 $\{a_1,a_3,a_5,\ldots\}$ 和 $\{a_2,a_4,a_6,\ldots\}$ 收敛于同一极限。
+
+\begin{solution}
+由(a),$\{a_1,a_3,a_5,\ldots\}$ 严格递减;由(b),它以 $a_2$ 为下界,故此数列收敛,设其极限为 $\ell_1$。
+
+由(a),$\{a_2,a_4,a_6,\ldots\}$ 严格递增;由(b),它以 $a_1$ 为上界,故此数列收敛,设其极限为 $\ell_2$。
+
+由递推关系,对 $m=1,2,\ldots$,
+\[
+a_{2m+1}=\frac{1}{2}(a_{2m}+a_{2m-1})
+\]
+当 $m\to\infty$ 时,$a_{2m+1}\to\ell_1$,$a_{2m-1}\to\ell_1$,$a_{2m}\to\ell_2$,故
+\[
+\ell_1=\frac{1}{2}(\ell_2+\ell_1)
+\]
+因此 $\ell_1=\ell_2$,即两数列收敛于同一极限。
+\end{solution}
+
+\end{parts}
+
+\question
+\begin{parts}
+
+\part 设$a_i,b_i$为实数,$i=1,2,\ldots,n$。考虑函数$f(t)=\sum_{i=1}^n\left(a_it-b_i\right)^2$,或用其他方法,证明施瓦兹不等式
+
+\[
+\left(\sum_{i=1}^na_ib_i\right)^2\leq\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)
+\]
+
+\begin{solution}
+\[
+\because\ \sum_{i=1}^n\left(a_it-b_i\right)^2\geq0\qquad\text{对所有}\ t\in\mathbf{R}
+\]
+
+\[
+\therefore\ \left(\sum_{i=1}^na_i^2\right)t^2-2\left(\sum_{i=1}^na_ib_i\right)t+\sum_{i=1}^nb_i^2\geq0\qquad\text{对所有}\ t\in\mathbf{R}
+\]
+
+当$\sum_{i=1}^na_i^2=0$时,不等式显然成立
+
+设$\sum_{i=1}^na_i^2>0$,由于该二次式对所有$t$非负,判别式须满足
+
+\begin{align*}
+&4\left(\sum_{i=1}^na_ib_i\right)^2-4\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)\leq0\\
+\Leftrightarrow{}&\left(\sum_{i=1}^na_ib_i\right)^2\leq\left(\sum_{i=1}^na_i^2\right)\left(\sum_{i=1}^nb_i^2\right)
+\end{align*}
+\end{solution}
+
+\part 设$x_1,x_2,\ldots,x_n$为正实数。证明对任何非负整数$k$,
+
+\[
+\left(\sum_{i=1}^nx_i^{k+1}\right)^2\leq\left(\sum_{i=1}^nx_i^{k+2}\right)\left(\sum_{i=1}^nx_i^k\right)
+\]
+
+\begin{solution}
+设$a_i=x_i^{\frac{k+2}2}$,$b_i=x_i^{\frac k2}$,$i=1,2,\ldots,n$($\because x_i>0$)
+
+由(a),
+
+\[
+\left(\sum_{i=1}^nx_i^{k+1}\right)^2=\left[\sum_{i=1}^n\left(x_i^{\frac{k+2}2}\right)\left(x_i^{\frac k2}\right)\right]^2\leq\left(\sum_{i=1}^nx_i^{k+2}\right)\left(\sum_{i=1}^nx_i^k\right)
+\]
+\end{solution}
+
+\part 设$x_1,x_2,\ldots,x_n$为正实数,且$\sum_{i=1}^nx_i=1$。用数学归纳法证明对任何非负整数$p$,
+
+\[
+\sum_{i=1}^nx_i^p\leq n\sum_{i=1}^nx_i^{p+1}
+\]
+
+\begin{solution}
+当$p=0$时,
+
+\[
+\text{左边}=\sum_{i=1}^nx_i^0=n,\qquad\text{右边}=n\sum_{i=1}^nx_i^1=n\sum_{i=1}^nx_i=n\qquad\left(\because\sum_{i=1}^nx_i=1\right)
+\]
+
+故不等式对$p=0$成立
+
+设对某正整数$k$,$\sum_{i=1}^nx_i^k\leq n\sum_{i=1}^nx_i^{k+1}$成立
+
+当$p=k+1$时,
+
+\begin{align*}
+\left(\sum_{i=1}^nx_i^{k+1}\right)^2&\leq\left(\sum_{i=1}^nx_i^{k+2}\right)\left(\sum_{i=1}^nx_i^k\right)\qquad\left(\text{由(b)}\right)\\
+&\leq\left(\sum_{i=1}^nx_i^{k+2}\right)\left(n\sum_{i=1}^nx_i^{k+1}\right)\qquad\left(\text{由归纳假设}\right)
+\end{align*}
+
+\[
+\therefore\ \sum_{i=1}^nx_i^{k+1}\leq n\sum_{i=1}^nx_i^{k+2}\qquad\left(\because x_1,x_2,\ldots,x_n>0\right)
+\]
+
+根据数学归纳法原理,不等式对任何非负整数$p$成立
+\end{solution}
+
+\part 设$y_1,y_2,\ldots,y_n$为正实数。证明对任何非负整数$p$,
+
+\[
+\left(\sum_{i=1}^ny_i\right)\left(\sum_{i=1}^ny_i^p\right)\leq n\sum_{i=1}^ny_i^{p+1}
+\]
+
+\begin{solution}
+设$x_i=\dfrac{y_i}{\sum_{k=1}^ny_k}$($\because y_1,y_2,\ldots,y_n>0$),则$\sum_{i=1}^nx_i=1$
+
+由(c),
+
+\[
+\sum_{i=1}^n\frac{y_i^p}{\left(\sum_{k=1}^ny_k\right)^p}\leq n\sum_{i=1}^n\frac{y_i^{p+1}}{\left(\sum_{k=1}^ny_k\right)^{p+1}}
+\]
+
+\begin{align*}
+\frac{\sum_{i=1}^ny_i^p}{\left(\sum_{k=1}^ny_k\right)^p}&\leq\frac{n\sum_{i=1}^ny_i^{p+1}}{\left(\sum_{k=1}^ny_k\right)^{p+1}}\\
+\left(\sum_{k=1}^ny_k\right)\left(\sum_{i=1}^ny_i^p\right)&\leq n\sum_{i=1}^ny_i^{p+1}\qquad\left(\because y_1,y_2,\ldots,y_n>0\right)
+\end{align*}
+\end{solution}
+
+\end{parts}
+
+\question 设 $\{x_n\}$ 为正实数数列,其中 $x_1=2$,且 $x_{n+1}=x_n^2-x_n+1$,对所有 $n=1,2,3,\ldots$ 成立。定义
+\[
+S_n=\sum_{i=1}^{n}\frac{1}{x_i}
+\]
+对所有 $n=1,2,3,\ldots$。
+\begin{parts}
+\part 利用数学归纳法证明,对任意正整数 $n$
+\begin{subparts}
+\subpart $x_n>n$
+\begin{solution}
+当 $n=1$ 时,$x_1=2>1$,故命题对 $n=1$ 成立
+
+设对某正整数 $k$,$x_k>k$ 成立,则
+\begin{align*}
+x_{k+1}&=x_k^2-x_k+1\\
+&=x_k(x_k-1)+1\\
+&>k(x_k-1)+1\\
+&\geq k+1
+\end{align*}
+（因 $x_k>k\geq1$,且 $x_k$ 为整数,故 $x_k\geq2$）
+
+故 $x_{k+1}>k+1$,由数学归纳法,对任意正整数 $n$,$x_n>n$
+\end{solution}
+
+\subpart $S_n=1-\dfrac{1}{x_{n+1}-1}$
+\begin{solution}
+当 $n=1$ 时
+\[
+1-\frac{1}{x_2-1}=1-\frac{1}{3-1}=\frac{1}{2}=\frac{1}{x_1}=S_1
+\]
+故命题对 $n=1$ 成立
+
+设对某正整数 $k$,$S_k=1-\dfrac{1}{x_{k+1}-1}$ 成立,则
+\begin{align*}
+S_{k+1}&=S_k+\frac{1}{x_{k+1}}\\
+&=1-\frac{1}{x_{k+1}-1}+\frac{1}{x_{k+1}}\\
+&=1+\frac{-x_{k+1}+x_{k+1}-1}{x_{k+1}^2-x_{k+1}}\\
+&=1-\frac{1}{x_{k+1}^2-x_{k+1}}\\
+&=1-\frac{1}{x_{k+2}-1}
+\end{align*}
+由数学归纳法,对任意正整数 $n$,$S_n=1-\dfrac{1}{x_{n+1}-1}$ 成立
+\end{solution}
+\end{subparts}
+
+\part 利用 (a),或其他方法,证明 $\displaystyle\lim_{n\to\infty}S_n$ 存在
+\begin{solution}
+由 (a)(i),$x_n>n\Rightarrow x_n>0$,故 $\{S_n\}$ 是（严格）递增的（因为 $S_n=\sum_{i=1}^{n}\dfrac{1}{x_i}$）
+
+又由 (a)(ii),$S_n=1-\dfrac{1}{x_{n+1}-1}<1$,故 $\{S_n\}$ 有上界 $1$
+
+因此 $\displaystyle\lim_{n\to\infty}S_n$ 存在
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $a,b$ 为非负实数,证明
+\[
+(a+b)^n\geq a^n+na^{n-1}b\qquad\text{对所有 }n=2,3,4,\ldots
+\]
+并写出等号成立的充要条件
+\begin{solution}
+由二项式定理
+\[
+(a+b)^n=a^n+C_1^n a^{n-1}b+C_2^n a^{n-2}b^2+\cdots+C_n^n b^n
+\]
+因 $a\geq0$,$b\geq0$,$n\geq2$,且 $C_1^n=n$,故
+\[
+(a+b)^n\geq a^n+na^{n-1}b
+\]
+等号成立当且仅当 $C_2^n a^{n-2}b^2=C_3^n a^{n-3}b^3=\cdots=C_n^n b^n=0$,即当且仅当 $b=0$
+\end{solution}
+
+\part 设 $\{a_1,a_2,a_3,\ldots\}$ 为满足 $a_1\leq a_2\leq a_3\leq\cdots$ 的正实数数列。对任意正整数 $n$,定义
+\[
+A_n=\frac{a_1+a_2+a_3+\cdots+a_n}{n}\qquad G_n=\left(a_1a_2a_3\cdots a_n\right)^{\frac{1}{n}}
+\]
+\begin{subparts}
+\subpart 证明对所有 $k=1,2,3,\ldots$,$A_{k+1}\geq A_k$
+\begin{solution}
+\begin{align*}
+A_{k+1}-A_k&=\frac{a_1+a_2+\cdots+a_{k+1}}{k+1}-\frac{a_1+a_2+\cdots+a_k}{k}\\
+&=\frac{ka_{k+1}-(a_1+a_2+\cdots+a_k)}{k(k+1)}\\
+&=\frac{(a_{k+1}-a_1)+(a_{k+1}-a_2)+\cdots+(a_{k+1}-a_k)}{k(k+1)}\\
+&\geq0
+\end{align*}
+（因 $a_1\leq a_2\leq\cdots\leq a_{k+1}$）
+
+因此对所有 $k=1,2,3,\ldots$,$A_{k+1}\geq A_k$
+\end{solution}
+
+\subpart 利用 (a),证明对所有 $k=1,2,3,\ldots$,$A_{k+1}^{\,k+1}\geq A_k^{\,k}a_{k+1}$,并由此证明 $A_n\geq G_n$,且 $A_n=G_n$ 当且仅当 $a_1=a_2=a_3=\cdots=a_n$（对所有 $n=1,2,3,\ldots$）
+\begin{solution}
+由 (b)(i),$A_{k+1}-A_k\geq0$,注意 $A_k>0$,$G_k>0$（对所有 $k\in\mathbb{N}$）,于是
+\begin{align*}
+A_{k+1}^{\,k+1}&=\left(A_k+(A_{k+1}-A_k)\right)^{k+1}\\
+&\geq A_k^{\,k+1}+(k+1)A_k^{\,k}(A_{k+1}-A_k)\qquad(\text{由 (a)})\\
+&=A_k^{\,k}\left(A_k+(k+1)(A_{k+1}-A_k)\right)\\
+&=A_k^{\,k}\left((k+1)A_{k+1}-kA_k\right)\\
+&=A_k^{\,k}a_{k+1}
+\end{align*}
+因此对所有 $k=1,2,3,\ldots$,$A_{k+1}^{\,k+1}\geq A_k^{\,k}a_{k+1}$
+
+以下用数学归纳法证明 $A_n\geq G_n$
+
+当 $n=1$ 时,$A_n=A_1=a_1=G_1=G_n$,故命题对 $n=1$ 成立且此时 $A_k=G_k$ 当且仅当 $a_1=a_2=\cdots=a_k$
+
+设对某正整数 $k$,$A_k\geq G_k$,且 $A_k=G_k$ 当且仅当 $a_1=a_2=\cdots=a_k$,则
+\begin{align*}
+A_{k+1}^{\,k+1}&\geq A_k^{\,k}a_{k+1}\\
+&\geq G_k^{\,k}a_{k+1}\qquad(\text{由归纳假设})\\
+&=a_1a_2a_3\cdots a_{k+1}\\
+&=G_{k+1}^{\,k+1}
+\end{align*}
+故 $A_{k+1}\geq G_{k+1}$
+
+又若 $a_1=a_2=\cdots=a_{k+1}$,则
+\[
+A_{k+1}=\frac{a_1+a_2+\cdots+a_{k+1}}{k+1}=a_1\qquad G_{k+1}=\left(a_1a_2\cdots a_{k+1}\right)^{\frac{1}{k+1}}=a_1
+\]
+故 $A_{k+1}=G_{k+1}$
+
+反之若 $A_{k+1}=G_{k+1}$,则由不等式链取等,得 $A_{k+1}-A_k=0$（由 (a)）,且 $a_1=a_2=\cdots=a_k$（由归纳假设）
+
+故 $a_1=a_2=\cdots=a_k$ 且 $\dfrac{a_1+a_2+\cdots+a_{k+1}}{k+1}=\dfrac{a_1+a_2+\cdots+a_k}{k}$,因此 $a_1=a_2=\cdots=a_{k+1}$
+
+即 $A_{k+1}=G_{k+1}$ 当且仅当 $a_1=a_2=\cdots=a_{k+1}$
+
+由数学归纳法,对所有 $n=1,2,3,\ldots$,$A_n\geq G_n$,且 $A_n=G_n$ 当且仅当 $a_1=a_2=a_3=\cdots=a_n$
+\end{solution}
+
+\subpart 设 $n$ 为正整数,利用 (b),证明
+\[
+\frac{n+2}{n+1}>\left(\frac{n+1}{n}\right)^{\frac{n}{n+1}}
+\]
+并由此推出
+\[
+\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^{n}
+\]
+\begin{solution}
+取 $a_1=1$,$a_2=a_3=\cdots=a_n=a_{n+1}=\dfrac{n+1}{n}$
+
+注意到 $a_1,a_2,\ldots,a_{n+1}$ 不全相等（因 $a_1<a_2=a_3=\cdots=a_{n+1}$）,由 (b),得
+\[
+\frac{1+n\left(\dfrac{n+1}{n}\right)}{n+1}>\left((1)\left(\frac{n+1}{n}\right)^n\right)^{\frac{1}{n+1}}
+\]
+即
+\[
+\frac{n+2}{n+1}>\left(\frac{n+1}{n}\right)^{\frac{n}{n+1}}
+\]
+两边同取 $(n+1)$ 次方,得
+\[
+1+\frac{1}{n+1}>\left(1+\frac{1}{n}\right)^{\frac{n}{n+1}}
+\]
+再将两边同取 $(n+1)$ 次方,即得
+\[
+\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^{n}
+\]
+\end{solution}
+\end{subparts}
+\end{parts}
+
 \end{questions}
 
 \pagebreak
@@ -7411,7 +9498,108 @@ f(x) \equiv f(y) \pmod 3
 \end{solution}
 \end{parts}
 
+\question
+\begin{parts}
+\part 对 $n=1,2,\ldots$，证明存在唯一的正整数 $p_n$ 及 $q_n$，使
+\[
+(\sqrt3+\sqrt2)^{2n} = p_n+q_n\sqrt6 \tag{*}
+\]
+以及 $(\sqrt3-\sqrt2)^{2n}=p_n-q_n\sqrt6$。由此推出 $2p_n-1<(\sqrt3+\sqrt2)^{2n}<2p_n$。〔提示：利用 $0<\sqrt3-\sqrt2<1$〕
+\begin{solution}
+由二项式定理，
+\[
+(\sqrt3+\sqrt2)^{2n} = \sum_{k=0}^{2n}\binom{2n}{k}(\sqrt3)^k(\sqrt2)^{2n-k}
+\]
+将求和按 $k$ 的奇偶分开。当 $k=2l$（$l=0,1,\ldots,n$）时，对应项为
+\[
+\binom{2n}{2l}3^l2^{n-l}
+\]
+是正整数；当 $k=2l-1$（$l=1,\ldots,n$）时，对应项为
+\[
+\binom{2n}{2l-1}3^{l-1}2^{n-l}\sqrt6
+\]
+故
+\[
+(\sqrt3+\sqrt2)^{2n} = p_n+q_n\sqrt6
+\]
+其中
+\[
+p_n = \sum_{l=0}^n\binom{2n}{2l}3^l2^{n-l}, \qquad q_n = \sum_{l=1}^n\binom{2n}{2l-1}3^{l-1}2^{n-l}
+\]
+均为正整数。同理，由 $(\sqrt3-\sqrt2)^{2n}=\sum_{k=0}^{2n}\binom{2n}{k}(\sqrt3)^k(-\sqrt2)^{2n-k}$，且当 $k$ 偶时 $(-1)^{2n-k}=1$，当 $k$ 奇时 $(-1)^{2n-k}=-1$，故
+\[
+(\sqrt3-\sqrt2)^{2n} = p_n-q_n\sqrt6
+\]
 
+（唯一性）若另有正整数 $r_n,s_n$ 使 $(\sqrt3+\sqrt2)^{2n}=r_n+s_n\sqrt6$，则 $p_n-r_n=(s_n-q_n)\sqrt6$。由 $\sqrt6$ 为无理数，若 $s_n\ne q_n$，则左边为有理数而右边为无理数，矛盾，故 $s_n=q_n$，从而 $p_n=r_n$。
+
+（不等式）由 $p_n\pm q_n\sqrt6$ 的定义，
+\[
+(\sqrt3+\sqrt2)^{2n}+(\sqrt3-\sqrt2)^{2n} = 2p_n
+\]
+由 $0<\sqrt3-\sqrt2<1$，得 $0<(\sqrt3-\sqrt2)^{2n}<1$，于是
+\[
+2p_n-1 < 2p_n-(\sqrt3-\sqrt2)^{2n} < 2p_n
+\]
+即
+\[
+2p_n-1 < (\sqrt3+\sqrt2)^{2n} < 2p_n
+\]
+\end{solution}
+
+\part 对 $n=1,2,\ldots$，证明下列各数都是 $10$ 的正倍数：
+\begin{subparts}
+\subpart $2^{5n}-2^n$
+\begin{solution}
+\[
+2^{5n}-2^n = 32^n-2^n = (32-2)\left(32^{n-1}+32^{n-2}\cdot2+\cdots+2^{n-1}\right) = 30\times(\text{正整数})
+\]
+故 $2^{5n}-2^n$ 是 $10$ 的正倍数。
+\end{solution}
+
+\subpart $3^{4n}-1$
+\begin{solution}
+\[
+3^{4n}-1 = 81^n-1^n = (81-1)\left(81^{n-1}+81^{n-2}+\cdots+1\right) = 80\times(\text{正整数})
+\]
+故 $3^{4n}-1$ 是 $10$ 的正倍数。
+\end{solution}
+
+\subpart $2p_{2n}-(2^{3n+1})(3^n)$，其中 $p_{2n}$ 由 (*) 给出。
+\begin{solution}
+注意 $(\sqrt3+\sqrt2)^2=5+2\sqrt6$，故 $(\sqrt3+\sqrt2)^{4n}=(5+2\sqrt6)^{2n}$，同理 $(\sqrt3-\sqrt2)^{4n}=(5-2\sqrt6)^{2n}$，从而
+\[
+2p_{2n} = (5+2\sqrt6)^{2n}+(5-2\sqrt6)^{2n} = 2\sum_{l=0}^n\binom{2n}{2l}5^{2n-2l}(2\sqrt6)^{2l} = 2\sum_{l=0}^n\binom{2n}{2l}5^{2n-2l}24^l
+\]
+当 $l=n$ 时，该项为 $\binom{2n}{2n}5^024^n=24^n=8^n3^n$，故
+\[
+2p_{2n} = 2\sum_{l=0}^{n-1}\binom{2n}{2l}5^{2n-2l}24^l + 2\times24^n
+\]
+于是
+\[
+2p_{2n}-2^{3n+1}3^n = 2\sum_{l=0}^{n-1}\binom{2n}{2l}5^{2n-2l}24^l + 2\times8^n3^n - 2\times8^n3^n = 2\sum_{l=0}^{n-1}\binom{2n}{2l}5^{2n-2l}24^l
+\]
+当 $0\le l\le n-1$ 时，$2n-2l\ge2$，故每一项都含因子 $5^2$，从而都是 $5$ 的倍数，故整个和是 $5$ 的倍数，乘以 $2$ 后是 $10$ 的倍数。又当 $n\ge1$ 时该和至少含 $l=0$ 一项，为正，故 $2p_{2n}-2^{3n+1}3^n$ 是 $10$ 的正倍数。
+\end{solution}
+\end{subparts}
+
+\part 利用 (a) 和 (b) 或其他方法，求 $(\sqrt3+\sqrt2)^{100}$ 表示成小数时的个位数字。
+\begin{solution}
+取 (a) 中 $n=50$，得
+\[
+2p_{50}-1 < (\sqrt3+\sqrt2)^{100} < 2p_{50}
+\]
+故 $(\sqrt3+\sqrt2)^{100}$ 的整数部分为 $2p_{50}-1$。
+
+取 (b)(iii) 中 $n=25$（即以 $2n=50$），得 $2p_{50}-2^{76}3^{25}$ 是 $10$ 的倍数，故
+\[
+2p_{50} \equiv 2^{76}\times3^{25} \pmod{10}
+\]
+$2^n$ 的个位数字以 $4$ 为周期循环：$2,4,8,6$；$76\equiv0\pmod4$，对应个位数字为 $6$。$3^n$ 的个位数字以 $4$ 为周期循环：$3,9,7,1$；$25\equiv1\pmod4$，对应个位数字为 $3$。故 $2^{76}\times3^{25}$ 的个位数字为 $6\times3=18$ 的个位数字，即 $8$，从而 $2p_{50}$ 的个位数字为 $8$，$2p_{50}-1$ 的个位数字为 $7$。
+
+由于 $(\sqrt3+\sqrt2)^{100}$ 的整数部分为 $2p_{50}-1$，故 $(\sqrt3+\sqrt2)^{100}$ 表示成小数时的个位数字为 $7$。
+\end{solution}
+\end{parts}
 \end{questions}
 \pagebreak
 \begin{center}
@@ -13355,6 +15543,1190 @@ $(x_1, y_1) \, R \, (x_2, y_2) \leftrightarrow (1) \text{ 或 } (2) \text{ 或 }
 * 最终生成的几何图形是一个**环面 (Torus)**，形状类似于甜甜圈。
 
 \end{solution}
+
+
+
+\question
+对任何 $2\times2$ 实矩阵 $A=\begin{bmatrix}x&y\\z&w\end{bmatrix}$，设 $|A|=xw-yz$。
+
+设
+\[
+S=\{A:|A|\ne0\}\ ,\qquad G=\left\{\begin{bmatrix}x&y\\0&1\end{bmatrix}:x\ne0\right\}\ .
+\]
+
+\begin{parts}
+
+\part $G$ 在通常的矩阵乘法之下是否构成一个群？试证明你的论断。
+
+\begin{solution}
+首先 $I=\begin{bmatrix}1&0\\0&1\end{bmatrix}\in G$，且结合律显然成立。
+
+对任何 $A=\begin{bmatrix}x_1&y_1\\0&1\end{bmatrix}$，$B=\begin{bmatrix}x_2&y_2\\0&1\end{bmatrix}\in G$，由于 $x_1,x_2\ne0$，故 $x_1x_2\ne0$，且
+\[
+AB=\begin{bmatrix}x_1x_2&x_1y_2+y_1\\0&1\end{bmatrix}\in G\ .
+\]
+故乘法在 $G$ 中封闭。
+
+对任何 $A=\begin{bmatrix}x&y\\0&1\end{bmatrix}\in G$，设 $B=\begin{bmatrix}\dfrac{1}{x}&-\dfrac{y}{x}\\0&1\end{bmatrix}$。
+
+由于 $x\ne0$，可得 $AB=BA=I$。故 $A^{-1}=B$ 存在于 $G$ 中。
+
+因此 $G$ 在通常的矩阵乘法之下构成一个群。
+\end{solution}
+
+\part 关系 $\sim$ 定义于 $S$ 上如下：
+对 $A,B\in S$，若存在 $D\in G$ 使得 $AD=B$，则 $A\sim B$。
+试证 $\sim$ 为 $S$ 上的一个等价关系。
+
+\begin{solution}
+（i）自反性：对任何 $A\in S$，由于 $I\in G$ 且 $AI=A$，故 $A\sim A$，即 $\sim$ 具自反性。
+
+（ii）对称性：对任何 $A,B\in S$，若 $A\sim B$，设 $AD=B$，其中 $D\in G$。
+
+则 $D^{-1}\in G$ 且 $BD^{-1}=A$。故 $B\sim A$，即 $\sim$ 具对称性。
+
+（iii）传递性：对任何 $A,B,C\in S$，若 $A\sim B$ 且 $B\sim C$，设 $AD_1=B$，$BD_2=C$，其中 $D_1,D_2\in G$。
+
+则 $D_1D_2\in G$，且 $A(D_1D_2)=BD_2=C$。故 $A\sim C$，即 $\sim$ 具传递性。
+
+由（i）、（ii）、（iii），$\sim$ 为 $S$ 上的一个等价关系。
+\end{solution}
+
+\part 设 $\mathbb{C}$ 为复数集合，映射 $\Phi:S\to\mathbb{C}\setminus\{0\}$ 定义为
+\[
+\Phi(A)=\frac{x}{|A|}+i\frac{z}{|A|}\ ,\qquad\text{其中}\ A=\begin{bmatrix}x&y\\z&w\end{bmatrix}\ .
+\]
+试证
+\begin{subparts}
+\subpart $\Phi$ 为满射，
+\begin{solution}
+    对任何 $u\in\mathbb{C}\setminus\{0\}$，设 $u=x+iz$，则 $x\ne0$ 或 $z\ne0$。
+
+    不妨设 $x\ne0$，考虑矩阵 $A=\begin{bmatrix}x&0\\z&\frac{1}{x}\end{bmatrix}$。由于 $|A|=1\ne0$，故 $A\in S$，且
+    \[
+    \Phi(A)=\frac{x}{1}+i\frac{z}{1}=x+iz=u\ .
+    \]
+    （若 $z\ne0$，情况类似。）故 $\Phi$ 为满射。
+\end{solution}
+\subpart $\Phi(A)=\Phi(B)$ 当且仅当 $A\sim B$（如（b）所定义）。
+\begin{solution}
+设 $A=\begin{bmatrix}x_1&y_1\\z_1&w_1\end{bmatrix}$，$B=\begin{bmatrix}x_2&y_2\\z_2&w_2\end{bmatrix}\in S$。
+
+\textbf{充分性}
+
+若 $A\sim B$，设 $AD=B$，其中 $D=\begin{bmatrix}x_0&y_0\\0&1\end{bmatrix}\in G$，则
+\[
+AD=\begin{bmatrix}x_1x_0&x_1y_0+y_1\\z_1x_0&z_1y_0+w_1\end{bmatrix}=B\ ,
+\]
+故 $x_2=x_1x_0$，$z_2=z_1x_0$，且 $|B|=|A||D|=|A|x_0$。
+
+于是
+\[
+\Phi(B)=\frac{x_2}{|B|}+i\frac{z_2}{|B|}=\frac{x_1x_0}{|A|x_0}+i\frac{z_1x_0}{|A|x_0}=\frac{x_1}{|A|}+i\frac{z_1}{|A|}=\Phi(A)\ .
+\]
+
+\textbf{必要性}
+
+若 $\Phi(A)=\Phi(B)$，则
+\[
+\frac{x_1}{|A|}=\frac{x_2}{|B|}\ ,\qquad\frac{z_1}{|A|}=\frac{z_2}{|B|}\ .
+\]
+
+由于 $A\in S$，其第一列 $(x_1,z_1)\ne(0,0)$，不妨设 $x_1\ne0$（$z_1\ne0$ 的情形类似）。
+
+取 $x_0=\dfrac{x_2}{x_1}=\dfrac{|B|}{|A|}$，由于 $A,B\in S$，$|A|,|B|\ne0$，故 $x_0\ne0$。
+
+由上述两式知 $z_1x_0=z_2$ 亦自动成立（两式的比例相同）。
+
+取 $y_0=\dfrac{y_2-y_1}{x_1}$，则 $D=\begin{bmatrix}x_0&y_0\\0&1\end{bmatrix}\in G$，且直接验证可得 $AD=B$。
+
+故 $A\sim B$。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question 设F为定义在实数集R上的所有取正值的连续函数所成的集合。对任意$f,g\in F$，定义$f*g$为
+\begin{align*}
+(f*g)(x)=f(x)g(x),\qquad x\in R
+\end{align*}
+已知F在运算$*$下构成一个群。此群的单位元I及$f\in F$的逆元g分别为
+\begin{align*}
+I(x)=1,\qquad x\in R,\qquad g(x)=\frac{1}{f(x)},\qquad x\in R
+\end{align*}
+在F上定义关系$\sim$如下：对$f,g\in F$，若存在F中的多项式p，q使得$p*f=q*g$，则称$f\sim g$。
+
+\begin{parts}
+\part 证明$\sim$是F上的一个等价关系。
+
+\begin{solution}
+自反性：设$I(x)\equiv1$。对任意$f\in F$，$I*f=f*I$且I是多项式，故$f\sim f$。
+
+对称性：若$f\sim g$，则存在多项式$p,q\in F$使得$p*f=q*g$，即$q*g=p*f$，故$g\sim f$。
+
+传递性：若$f\sim g$且$g\sim h$，则存在多项式$p,q,r,s\in F$使得$p*f=q*g$，$r*g=s*h$。由于$*$满足交换律及结合律，可得
+\begin{align*}
+(r*p)*f=(q*s)*h
+\end{align*}
+其中$r*p$及$q*s$均为F中的多项式。因此$f\sim h$。
+\end{solution}
+
+\part 设$f/\sim$表示f关于$\sim$的等价类，$F/\sim$为由这些等价类组成的商集。对任意$f/\sim,\ g/\sim\ \in F/\sim$，定义$f/\sim\ \otimes\ g/\sim$为$(f*g)/\sim$。
+
+\begin{subparts}
+\subpart 证明$\otimes$在$F/\sim$上是良好定义的，即若$f/\sim=f_1/\sim$且$g/\sim=g_1/\sim$，则$f/\sim\ \otimes\ g/\sim\ =\ f_1/\sim\ \otimes\ g_1/\sim$。
+
+\begin{solution}
+若$f/\sim=f_1/\sim$且$g/\sim=g_1/\sim$，则存在多项式$p,q,r,s\in F$使得
+\begin{align*}
+p*f=q*f_1,\qquad r*g=s*g_1
+\end{align*}
+于是
+\begin{align*}
+(p*r)*(f*g)=(q*s)*(f_1*g_1)
+\end{align*}
+其中$p*r$及$q*s$均为F中的多项式。因此$f*g\sim f_1*g_1$，即$(f*g)/\sim=(f_1*g_1)/\sim$，也就是$f/\sim\ \otimes\ g/\sim\ =\ f_1/\sim\ \otimes\ g_1/\sim$。
+\end{solution}
+
+\subpart 证明$F/\sim$在运算$\otimes$下构成一个群。
+
+\begin{solution}
+封闭性：由(b)(i)可得。
+
+结合律：由$\otimes$的定义及$*$满足结合律可得。
+
+单位元：$I/\sim$是$F/\sim$中的单位元，因为对任意$f/\sim\ \in F/\sim$，
+\begin{align*}
+f/\sim\ \otimes\ I/\sim\ =(f*I)/\sim\ =f/\sim,\qquad I/\sim\ \otimes\ f/\sim\ =(I*f)/\sim\ =f/\sim
+\end{align*}
+
+逆元：对任意$f/\sim\ \in F/\sim$，设$f^{-1}$为f在F中的逆元，则
+\begin{align*}
+f/\sim\ \otimes\ f^{-1}/\sim\ =I/\sim,\qquad f^{-1}/\sim\ \otimes\ f/\sim\ =I/\sim
+\end{align*}
+因此$F/\sim$在运算$\otimes$下构成一个群。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $A$ 为一集合。设 $f$ 为由 $A$ 映至其自身的映射，且 $f$ 为单射但非满射。记集合 $\{f(a):a\in A\}$ 为 $f[A]$。
+
+\begin{parts}
+
+\part 试证
+\begin{subparts}
+\subpart $A\ne\varnothing$，
+\begin{solution}
+    若 $A=\varnothing$，则映射 $f:\varnothing\to\varnothing$ 显然既是单射亦是满射（空真命题），与 $f$ 非满射矛盾。故 $A\ne\varnothing$。
+\end{solution}
+\subpart $A$ 含有多于两个元素。
+\begin{solution}
+若 $A$ 只含一个元素，设 $A=\{a\}$，则 $f(a)$ 必等于 $a$，故 $f$ 为满射，与题设矛盾。
+
+若 $A$ 恰含两个元素，设 $A=\{a,b\}$。由于 $f$ 为单射且 $A$ 为有限集合，$f$ 由 $A$ 映至自身的单射必为满射，与题设矛盾。
+
+故 $A$ 必含有多于两个元素。
+\end{solution}
+\end{subparts}
+\part 设 $\varphi:A\to A$ 为一映射，满足
+\[
+\varphi(f(x))=x
+\]
+对所有 $A$ 中的 $x$ 成立，试证 $\varphi$ 不是双射。
+
+\begin{solution}
+由于 $f$ 非满射，存在 $z\in A$ 使得 $z\notin f[A]$。
+
+设 $w=\varphi(z)$。考虑 $f(w)\in f[A]$；由于 $z\notin f[A]$，故 $z\ne f(w)$。
+
+由题设，$\varphi(f(w))=w$。又由定义 $\varphi(z)=w$。
+
+因此
+\[
+\varphi(z)=w=\varphi(f(w))\ ,
+\]
+而 $z\ne f(w)$，故 $\varphi$ 并非单射，因而 $\varphi$ 不是双射。
+\end{solution}
+
+\part 试证存在唯一的映射 $g:f[A]\to A$，使得
+\begin{itemize}
+\item $g(f(x))=x$ 对所有 $A$ 中的 $x$ 成立，且
+\item $g$ 为双射。
+\end{itemize}
+
+\begin{solution}
+\textbf{存在性}
+
+对任何 $x\in A$，设 $y=f(x)\in f[A]$，定义 $g(y)=x$。由于 $f$ 为单射，$x$ 由 $y$ 唯一决定。再者，由 $f[A]$ 的定义，$g$ 对所有 $y\in f[A]$ 均有定义。故 $g$ 为由 $f[A]$ 映至 $A$ 的映射，且 $g(f(x))=x$ 对所有 $A$ 中的 $x$ 成立。
+
+\textbf{满射}
+
+由 $g$ 的定义，此为显然（对任何 $x\in A$，取 $y=f(x)\in f[A]$，则 $g(y)=x$）。
+
+\textbf{单射}
+
+对任何 $y_1,y_2\in f[A]$，设 $y_1=f(x_1)$，$y_2=f(x_2)$。若 $g(y_1)=g(y_2)$，即 $x_1=x_2$，则 $y_1=f(x_1)=f(x_2)=y_2$。
+
+故 $g$ 为单射，因而 $g$ 为双射。
+
+\textbf{唯一性}
+
+设 $h:f[A]\to A$ 为另一双射，满足 $h(f(x))=x$ 对所有 $A$ 中的 $x$ 成立。
+
+对任何 $y\in f[A]$，设 $y=f(x_1)$，其中 $g(y)=x_1$（由 $g$ 的定义）。则
+\[
+x_1=h(f(x_1))=h(y)\ .
+\]
+
+故 $h(y)=x_1=g(y)$ 对所有 $y\in f[A]$ 成立，即 $h=g$。
+\end{solution}
+
+\end{parts}
+
+\question 设 $f:X\to Y$ 为集合 $X$ 到集合 $Y$ 的映射。对于 $X$ 的任何子集 $S$,$S$ 在 $f$ 下的直接像定义为
+\[f[S]=\{y:y=f(x)\ \text{for some}\ x\in S\}\]
+\begin{parts}
+\part 证明对 $X$ 的任何子集 $A,B$,$f[A\cup B]=f[A]\cup f[B]$。
+\begin{solution}
+对任何 $A,B\subset X$,由于 $A,B\subset A\cup B$,故 $f[A],f[B]\subset f[A\cup B]$,从而 $f[A]\cup f[B]\subset f[A\cup B]$。另一方面,对任何 $y$,
+\[y\in f[A\cup B]\Rightarrow \exists\,x\in A\cup B\ \text{s.t.}\ f(x)=y\Rightarrow(\exists\,x\in A\ \text{s.t.}\ f(x)=y)\ \text{or}\ (\exists\,x\in B\ \text{s.t.}\ f(x)=y)\]
+故 $y\in f[A]\cup f[B]$,从而 $f[A\cup B]\subset f[A]\cup f[B]$。综合以上,$f[A\cup B]=f[A]\cup f[B]$ 对所有 $A,B\subset X$ 成立。
+\end{solution}
+
+\part 证明若对 $X$ 的任何子集 $A,B$ 都有 $f[A\cap B]=f[A]\cap f[B]$,则 $f$ 是单射。
+\begin{solution}
+设 $A=\{x_1\}$,$B=\{x_2\}$ 为 $X$ 中任何两个单点集。由于 $f[A]\cap f[B]=f[A\cap B]$,当 $x_1\neq x_2$ 时 $f(x_1)\neq f(x_2)$,即 $f(x_1)=f(x_2)\Rightarrow x_1=x_2$。故 $f$ 是单射。
+\end{solution}
+
+\part 证明若 $f$ 是双射,则对 $X$ 的任何子集 $A$,$f[X\setminus A]=Y\setminus f[A]$。
+\begin{solution}
+设 $f$ 是双射。对任何 $A\subset X$,
+\[y\in f[X\setminus A]\Rightarrow \exists\,x\in X\setminus A\ \text{s.t.}\ y=f(x)\Rightarrow y\notin f[A]\ (\text{由于}\ f\ \text{是单射})\Rightarrow y\in Y\setminus f[A]\]
+故 $f[X\setminus A]\subset Y\setminus f[A]$。对任何 $y$,由于 $f$ 是满射,$y\in Y\setminus f[A]\Rightarrow \exists\,x\in X\ \text{s.t.}\ f(x)=y$。显然 $x\notin A$,故 $x\in X\setminus A$,即 $y\in f[X\setminus A]$,从而 $Y\setminus f[A]\subset f[X\setminus A]$。故 $f[X\setminus A]=Y\setminus f[A]$ 对所有 $A\subset X$ 成立。
+\end{solution}
+\end{parts}
+
+\question
+设 $A$ 和 $B$ 为两个非空集合,又设 $f:A\to B$ 和 $g:B\to A$ 为两个映射。$A$ 的幂集记为 $\mathcal{P}(A)$,而 $A$ 的子集 $X$ 在 $f$ 下的直接像记为 $f[X]$。
+
+\begin{parts}
+
+\part 映射 $\Phi:\mathcal{P}(A)\to\mathcal{P}(A)$ 定义为 $\Phi(X)=g[B\setminus f[X]]$,对所有 $X\in\mathcal{P}(A)$。证明若 $X_1\subset X_2\subset A$,则 $\Phi(X_1)\supset\Phi(X_2)$。
+
+\begin{solution}
+\begin{align*}
+X_1\subset X_2\subset A&\Rightarrow f[X_1]\subset f[X_2]\\
+&\Rightarrow B\setminus f[X_1]\supset B\setminus f[X_2]\\
+&\Rightarrow g\left[B\setminus f[X_1]\right]\supset g\left[B\setminus f[X_2]\right]\\
+&\Rightarrow \Phi(X_1)\supset\Phi(X_2)
+\end{align*}
+\end{solution}
+
+\part 映射 $\Psi:\mathcal{P}(A)\to\mathcal{P}(A)$ 定义为 $\Psi(X)=A\setminus\Phi(X)$,对所有 $X\in\mathcal{P}(A)$。设 $\mathcal{F}=\{X\in\mathcal{P}(A):\Psi(X)\subset X\}$。以 $S$ 表示 $\mathcal{F}$ 中所有元素的交集。证明若 $X_1\subset X_2\subset A$,则 $\Psi(X_1)\subset\Psi(X_2)$,并由此证明 $S\in\mathcal{F}$。
+
+\begin{solution}
+由(a),$X_1\subset X_2\subset A\Rightarrow\Phi(X_1)\supset\Phi(X_2)$,故
+\[
+\Psi(X_1)=A\setminus\Phi(X_1)\subset A\setminus\Phi(X_2)=\Psi(X_2)
+\]
+
+由于对所有 $X\in\mathcal{F}$ 均有 $S\subset X$,由上述单调性,
+\[
+\Psi(S)\subset\Psi(X)\quad\text{对所有 }X\in\mathcal{F}
+\]
+又因为 $X\in\mathcal{F}$ 表示 $\Psi(X)\subset X$,故
+\[
+\Psi(S)\subset\Psi(X)\subset X\quad\text{对所有 }X\in\mathcal{F}
+\]
+因此 $\Psi(S)\subset S$,即 $S\in\mathcal{F}$。
+\end{solution}
+
+\part 证明 $\Psi(S)\in\mathcal{F}$ 且 $A\setminus S=\Phi(S)$。
+
+\begin{solution}
+由(b),$\Psi(S)\subset S$,故由单调性,$\Psi(\Psi(S))\subset\Psi(S)$,即 $\Psi(S)\in\mathcal{F}$。
+
+由 $S$ 的定义,$\Psi(S)\in\mathcal{F}\Rightarrow S\subset\Psi(S)$。
+
+但已知 $\Psi(S)\subset S$,故 $S=\Psi(S)$。
+
+因此
+\[
+A\setminus S=A\setminus\Psi(S)=A\setminus\left(A\setminus\Phi(S)\right)=\Phi(S)
+\]
+\end{solution}
+
+\end{parts}
+
+\question
+\begin{parts}
+\part 设 $X$ 为非空集合，$f:X\to X$ 为满足 $f\circ f=f$ 的函数。
+\begin{subparts}
+\subpart 证明：若 $f$ 为单射或满射，则 $f=i_X$，即 $X$ 上的恒等函数。
+
+\begin{solution}
+设 $f$ 为单射。对任意 $x\in X$，由 $f\circ f=f$ 得
+\[
+f(f(x))=f(x)
+\]
+由 $f$ 单射，得 $f(x)=x$，故 $f=i_X$。
+
+设 $f$ 为满射。对任意 $y\in X$，存在 $x\in X$ 使得 $y=f(x)$，则
+\begin{align*}
+f(y)&=f(f(x))\\
+&=f(x)\\
+&=y
+\end{align*}
+故 $f=i_X$。
+\end{solution}
+
+\subpart 设 $X=\{a,b\}$。构造函数 $f:X\to X$，使得 $f\circ f=f$，但 $f$ 既非单射亦非满射。
+
+\begin{solution}
+定义 $f(a)=f(b)=a$。显然 $f\circ f=f$，但 $f(a)=f(b)$ 而 $a\neq b$，故 $f$ 不是单射；又 $b$ 不在 $f$ 的值域中，故 $f$ 不是满射。
+\end{solution}
+
+\subpart 设 $X$ 含有多于两个元素。构造非常数函数 $f:X\to X$，使得 $f\circ f=f$，但 $f$ 既非单射亦非满射。
+
+\begin{solution}
+设 $a,b$ 为 $X$ 中两个不同的元素。定义 $f$ 为
+\[
+f(a)=f(b)=a,\qquad f(x)=x \text{（对其余 } x\in X\text{）}
+\]
+则 $f$ 非常数，且 $f\circ f=f$，但 $f(a)=f(b)$ 而 $a\neq b$，故 $f$ 不是单射，也不是满射。
+\end{solution}
+\end{subparts}
+
+\part 设 $B$ 为给定集合 $E$ 的子集。定义幂集上的函数 $h:\mathcal{P}(E)\to\mathcal{P}(E)$ 为
+\[
+h(A)=A\cap B \qquad \text{对所有 } A\subset E
+\]
+利用 (a)(i)，或其他方法，证明：若 $h$ 为单射或满射，则 $B=E$。
+
+\begin{solution}
+对任意 $A\subset E$，
+\begin{align*}
+h(h(A))&=h(A\cap B)\\
+&=(A\cap B)\cap B\\
+&=A\cap B\\
+&=h(A)
+\end{align*}
+故 $h\circ h=h$。若 $h$ 为单射或满射，由 (a)(i)，$h=i_{\mathcal{P}(E)}$，故
+\[
+E=h(E)=E\cap B=B
+\]
+\end{solution}
+\end{parts}
+
+
+
+\question
+设 $A$ 和 $B$ 为两个非空集合，且设 $f$ 和 $g$ 为两个从 $A$ 到 $B$ 的映射。在 $A$ 上定义关系 $R$ 和 $S$ 如下：
+$x R y$ 如果 $f(x) = f(y)$ 且 $g(x) = g(y)$，
+$x S y$ 如果 $f(x) = f(y)$ 或 $g(x) = g(y)$。
+
+\begin{parts}
+\part
+\begin{subparts}
+\subpart
+证明 $R$ 是一个等价关系。
+
+\begin{solution}
+对于任意的 $x, y, z \in A$：
+1. 因为 $f(x) = f(x)$ 且 $g(x) = g(x)$，所以 $x R x$。$R$ 满足自反性。
+2. 若 $x R y$，则 $f(x) = f(y)$ 且 $g(x) = g(y)$，从而 $f(y) = f(x)$ 且 $g(y) = g(x)$，故 $y R x$。$R$ 满足对称性。
+3. 若 $x R y$ 且 $y R z$，则 $f(x) = f(y), g(x) = g(y)$ 以及 $f(y) = f(z), g(y) = g(z)$，因此 $f(x) = f(z)$ 且 $g(x) = g(z)$，故 $x R z$。$R$ 满足传递性。
+因此 $R$ 是等价关系。
+\end{solution}
+
+\subpart
+对于 $A = B = \{1, 2, 3\}$，寻找映射 $f$ 和 $g$ 使得 $S$ 不是一个等价关系。
+
+\begin{solution}
+设 $A = B = \{1, 2, 3\}$。定义映射 $f$ 和 $g$ 使得 $S$ 不满足传递性即可：
+设 $f(1) = 1, f(2) = 1, f(3) = 2$。
+设 $g(1) = 1, g(2) = 2, g(3) = 2$。
+此时 $1 S 2$ 成立（因为 $f(1) = f(2) = 1$），且 $2 S 3$ 成立（因为 $g(2) = g(3) = 2$）。
+但是 $f(1) \neq f(3)$ 且 $g(1) \neq g(3)$，所以 $1 S 3$ 不成立。
+因此 $S$ 不具有传递性，不是等价关系。
+\end{solution}
+\end{subparts}
+
+\part
+设 $u$ 为从 $A$ 到商集 $A/R$ 的自然满射，将每个 $a \in A$ 映射到等价类 $a/R$。
+证明存在唯一的映射 $h: A/R \to B$ 使得 $f = h \circ u$。
+进一步，假设 $g$ 是一个常值映射。证明如果 $f$ 是满射，那么 $h$ 是双射。
+
+\begin{solution}
+对于任意 $a/R \in A/R$，定义 $h(a/R) = f(a)$。
+若 $a/R = a'/R$，则 $a R a'$，这意味着 $f(a) = f(a')$。因此 $h$ 是良定义的。
+对于任意 $a \in A$，$(h \circ u)(a) = h(u(a)) = h(a/R) = f(a)$，所以 $f = h \circ u$。
+设 $h': A/R \to B$ 为任意满足 $h' \circ u = f$ 的映射。
+因为 $u$ 是满射，商集 $A/R$ 中的任意元素都可以表示为 $u(a)$（其中 $a \in A$）。
+$h'(u(a)) = (h' \circ u)(a) = f(a) = h(u(a))$。
+因此 $h' = h$，即 $h$ 是唯一的。
+
+假设 $g$ 是一个常值映射，且 $f$ 是满射。
+由于 $f = h \circ u$ 且 $f$ 是满射，故 $h$ 必须是满射。
+再证明 $h$ 是单射：设 $h(a/R) = h(a'/R)$，即 $f(a) = f(a')$。
+因为 $g$ 是常值映射，自动有 $g(a) = g(a')$。
+所以 $f(a) = f(a')$ 且 $g(a) = g(a')$，这意味着 $a R a'$，即 $a/R = a'/R$。
+故 $h$ 是单射。综上，$h$ 是双射。
+\end{solution}
+\end{parts}
+
+\question 
+考虑映射 $f: A \to B$。
+\begin{parts}
+\part 
+\begin{subparts}
+\subpart 证明对于 $A$ 的任意子集 $X_1, X_2$，若 $X_1 \subset X_2$，则 $f[X_1] \subset f[X_2]$。
+\begin{solution}
+设 $y \in f[X_1]$。则存在 $x \in X_1$ 使得 $y = f(x)$。
+因为 $X_1 \subset X_2$，所以 $x \in X_2$。
+由此可得 $y = f(x) \in f[X_2]$。
+故 $f[X_1] \subset f[X_2]$。
+\end{solution}
+
+\subpart 证明对于 $B$ 的任意子集 $Y_1, Y_2$，若 $Y_1 \subset Y_2$，则 $f^{-1}[Y_1] \subset f^{-1}[Y_2]$。
+\begin{solution}
+设 $x \in f^{-1}[Y_1]$。则 $f(x) \in Y_1$。
+因为 $Y_1 \subset Y_2$，所以 $f(x) \in Y_2$。
+由此可得 $x \in f^{-1}[Y_2]$。
+故 $f^{-1}[Y_1] \subset f^{-1}[Y_2]$。
+\end{solution}
+\end{subparts}
+
+\part
+(b) 证明 $f$ 是单射当且仅当对于 $A$ 的任意子集 $X_1, X_2$，$f[X_1] \subset f[X_2] \implies X_1 \subset X_2$。
+\begin{solution}
+必要性：假设 $f$ 是单射。设 $f[X_1] \subset f[X_2]$。对于任意 $x \in X_1$，有 $f(x) \in f[X_1] \subset f[X_2]$，故存在 $x' \in X_2$ 使得 $f(x) = f(x')$。由于 $f$ 是单射，得 $x = x' \in X_2$。因此 $X_1 \subset X_2$。
+充分性：设条件成立。取 $X_1 = \{x_1\}$，$X_2 = \{x_2\}$。若 $f(x_1) = f(x_2)$，则 $f[X_1] = f[X_2]$，于是 $f[X_1] \subset f[X_2]$，推得 $X_1 \subset X_2$，即 $x_1 = x_2$。故 $f$ 是单射。
+\end{solution}
+
+\part
+(c) 证明 $f$ 是满射当且仅当对于 $B$ 的任意子集 $Y_1, Y_2$，$f^{-1}[Y_1] \subset f^{-1}[Y_2] \implies Y_1 \subset Y_2$。
+\begin{solution}
+必要性：假设 $f$ 是满射。设 $f^{-1}[Y_1] \subset f^{-1}[Y_2]$。对于任意 $y \in Y_1$，由于 $f$ 是满射，存在 $x \in A$ 使得 $f(x) = y$。则 $x \in f^{-1}[Y_1] \subset f^{-1}[Y_2]$，故 $y = f(x) \in Y_2$。因此 $Y_1 \subset Y_2$。
+充分性：设条件成立。反证法，假设 $f$ 不是满射，则存在 $y \in B \setminus f[A]$。取 $Y_1 = B$，$Y_2 = f[A]$。则 $f^{-1}[Y_1] = A$ 且 $f^{-1}[Y_2] = A$，故 $f^{-1}[Y_1] \subset f^{-1}[Y_2]$ 成立。但 $Y_1 = B \not\subset f[A] = Y_2$，矛盾。故 $f$ 必须是满射。
+\end{solution}
+\end{parts}
+
+
+
+\question
+在集合 $A=\{(m,n):m,n=0,1,2,\ldots\}$ 上定义一个关系 $R$，使得 $(m',n')R(m'',n'')$ 当且仅当 $m'+n''=n'+m''$．
+
+\begin{parts}
+
+\part 证明 $R$ 是一个等价关系．
+
+\begin{solution}
+自反性：对任何 $(m,n)\in A$，$m+n=n+m$，故 $(m,n)R(m,n)$．
+
+对称性：若 $(m,n)R(m',n')$，即 $m+n'=n+m'$，则 $m'+n=n'+m$，即 $(m',n')R(m,n)$．
+
+传递性：若 $(m,n)R(m',n')$ 且 $(m',n')R(m'',n'')$，即
+\[
+m+n'=n+m' \quad\text{且}\quad m'+n''=n'+m'',
+\]
+把两式相加,得 $m+n'+m'+n''=n+m'+n'+m''$，消去 $m'+n'$，得 $m+n''=n+m''$，即 $(m,n)R(m'',n'')$．
+
+故 $R$ 是等价关系．
+\end{solution}
+
+\part 设 $A/R$ 为由 $R$ 决定的商集,而 $[m,n]$ 表示包含 $(m,n)$ 的等价类．函数 $f:A/R\to\mathbb{Z}$ 定义为 $f([m,n])=m-n$．
+\begin{subparts}
+\subpart 证明 $f$ 是有定义的（well defined）．
+\subpart 证明 $f$ 是双射．
+\end{subparts}
+
+\begin{solution}
+设 $[m,n]=[m',n']$，即 $(m,n)R(m',n')$，即 $m+n'=n+m'$，即 $m-n=m'-n'$．
+故 $f([m,n])=m-n=m'-n'=f([m',n'])$，即 $f$ 是有定义的．
+\end{solution}
+
+\begin{solution}
+满射：对任何 $k\in\mathbb{Z}$，若 $k\geq0$，则 $f([k,0])=k$；若 $k<0$，则 $-k>0$，$(0,-k)\in A$ 且 $f([0,-k])=k$．故 $f$ 是满射．
+
+单射：设 $f([m,n])=f([m',n'])$，即 $m-n=m'-n'$，即 $m+n'=n+m'$，即 $(m,n)R(m',n')$，即 $[m,n]=[m',n']$．故 $f$ 是单射．
+
+因此 $f$ 是双射．
+\end{solution}
+
+\part 设 $(a,b)\in A$ 且 $a,b\neq0$，函数 $h:A/R\to A/R$ 定义为 $h([m,n])=[am+bn,bm+an]$．
+\begin{subparts}
+\subpart 证明 $(f\circ h)([m,n])=(a-b)(m-n)$．
+\subpart 证明 $h$ 是单射当且仅当 $a\neq b$．
+\subpart 证明 $h$ 是满射当且仅当 $|a-b|=1$．
+\end{subparts}
+
+\begin{solution}
+\begin{align*}
+(f\circ h)([m,n]) &= f\left([am+bn,bm+an]\right)\\
+&= (am+bn)-(bm+an)\\
+&= (a-b)m+(b-a)n\\
+&= (a-b)(m-n).
+\end{align*}
+\end{solution}
+
+\begin{solution}
+（$\Rightarrow$）设 $h$ 是单射．若 $a=b$，则对任何 $[m,n]$，
+\[
+h([m,n]) = [a(m+n),a(m+n)] = [0,0]
+\]
+（因为对任何 $k$，$[k,k]=[0,0]$）,即 $h$ 是常数映射,与 $h$ 为单射矛盾．故 $a\neq b$．
+
+（$\Leftarrow$）设 $a\neq b$．若 $h([m,n])=h([m',n'])$，由(i)及 $f$ 是单射,
+\[
+(a-b)(m-n) = f(h([m,n])) = f(h([m',n'])) = (a-b)(m'-n').
+\]
+因 $a\neq b$，$a-b\neq0$，故 $m-n=m'-n'$，即 $f([m,n])=f([m',n'])$．由 $f$ 是单射,$[m,n]=[m',n']$．
+故 $h$ 是单射．
+\end{solution}
+
+\begin{solution}
+（$\Rightarrow$）设 $h$ 是满射,则存在 $[m,n]$ 使得 $h([m,n])=[1,0]$．由(i),
+\[
+(a-b)(m-n) = f([1,0]) = 1.
+\]
+由于 $a-b$ 与 $m-n$ 均为整数,故必有 $a-b=\pm1$，即 $|a-b|=1$．
+
+（$\Leftarrow$）设 $|a-b|=1$．
+
+当 $a-b=1$ 时,即 $a=b+1$，
+\begin{align*}
+h([m,n]) &= [(b+1)m+bn,\ bm+(b+1)n]\\
+&= [b(m+n)+m,\ b(m+n)+n].
+\end{align*}
+由于 $\left[b(m+n)+m\right]+n=\left[b(m+n)+n\right]+m$，故 $h([m,n])=[m,n]$，即 $h$ 是恒等映射,自然是满射．
+
+当 $a-b=-1$ 时,即 $b=a+1$，同理可得
+\[
+h([m,n]) = [a(m+n)+n,\ a(m+n)+m] = [n,m],
+\]
+当 $[m,n]$ 取遍 $A/R$ 中所有元素时,$[n,m]$ 亦取遍 $A/R$，故 $h$ 是满射．
+
+两种情形下,$h$ 均是满射．
+\end{solution}
+
+\end{parts}
+
+\question
+
+设 $N=\{0,1,2,\ldots\}$。映射 $f:N^2\to N^2$ 定义为 $f((x,y))=(x,y+1)$,对任意 $(x,y)\in N^2$。
+
+\begin{parts}
+
+\part 给定 $k\in N$,设 $S_k=\{(x,y)\in N^2:x+2y=k\}$。
+
+\begin{subparts}
+
+\subpart 证明 $f$ 是单射但不是满射。
+
+\begin{solution}
+对任意 $(a,b),(a',b')\in N^2$,
+\[
+f((a,b))=f((a',b'))\ \Longrightarrow\ (a,b+1)=(a',b'+1)\ \Longrightarrow\ a=a',\ b=b'
+\]
+故 $f$ 是单射。又 $(1,0)\in N^2$,但 $(1,0)\notin f[N^2]$(因为 $f[N^2]$ 中每个元素第二个坐标至少为 1),故 $f$ 不是满射。
+\end{solution}
+
+\subpart 证明 $S_{k+2}=f[S_k]\cup\{(k+2,0)\}$。由此推出 $\mathrm{n}(S_{k+2})=\mathrm{n}(S_k)+1$,其中 $\mathrm{n}(S_k)$ 表示 $S_k$ 中元素的个数。
+
+\begin{solution}
+显然,$(a,b)=(k+2,0)$ 是 $S_{k+2}$ 中唯一满足 $b=0$ 的元素。又对 $b>0$,
+\[
+(a,b)\in f[S_k]\iff(a,b-1)\in S_k\iff a+2(b-1)=k\iff a+2b=k+2\iff(a,b)\in S_{k+2}
+\]
+故 $S_{k+2}=f[S_k]\cup\{(k+2,0)\}$。由于 $f$ 是单射,且 $(k+2,0)\notin f[S_k]$,故
+\[
+\mathrm{n}(S_{k+2})=\mathrm{n}(S_k)+1
+\]
+\end{solution}
+
+\subpart 用数学归纳法证明,对任意 $k\in N$,当 $k$ 为偶数时
+\[
+n(S_k)=\frac{k+2}{2}
+\]
+当 $k$ 为奇数时
+\[
+n(S_k)=\frac{k+1}{2}
+\]
+
+\begin{solution}
+当 $k=0$ 时 $S_0=\{(0,0)\}$,$n(S_0)=1=\dfrac{0+2}{2}$;当 $k=1$ 时 $S_1=\{(1,0)\}$,$n(S_1)=1=\dfrac{1+1}{2}$,故命题在 $k=0,1$ 时成立。设命题在 $k=j$ 时成立,即当 $j$ 为偶数时 $n(S_j)=\dfrac{j+2}{2}$,当 $j$ 为奇数时 $n(S_j)=\dfrac{j+1}{2}$。由(a)(ii),$n(S_{j+2})=n(S_j)+1$。若 $j$ 为偶数(故 $j+2$ 亦为偶数),
+\[
+n(S_{j+2})=\frac{j+2}{2}+1=\frac{(j+2)+2}{2}
+\]
+若 $j$ 为奇数(故 $j+2$ 亦为奇数),
+\[
+n(S_{j+2})=\frac{j+1}{2}+1=\frac{(j+2)+1}{2}
+\]
+故命题在 $k=j+2$ 时也成立。由归纳法,命题对所有 $k\in N$ 成立。
+\end{solution}
+
+\end{subparts}
+
+\part 设 $p$ 为非负整数,考虑不等式 $x+2y\leq p$。证明该不等式的非负整数解 $(x,y)$ 的个数,当 $p$ 为偶数时为
+\[
+\frac{(p+2)^2}{4}
+\]
+当 $p$ 为奇数时为
+\[
+\frac{(p+1)(p+3)}{4}
+\]
+
+\begin{solution}
+解的个数为 $\displaystyle\sum_{k=0}^{p}n(S_k)$。
+
+若 $p$ 为偶数,将 $k=1,\ldots,p$ 两两配对 $(2j-1,2j)$,$j=1,\ldots,p/2$,每对之和为 $n(S_{2j-1})+n(S_{2j})=j+(j+1)=2j+1$,再加上 $n(S_0)=1$,得
+\[
+\sum_{k=0}^{p}n(S_k)=1+\sum_{j=1}^{p/2}(2j+1)=1+\frac{p}{2}\left(\frac{p}{2}+2\right)=\frac{(p+2)^2}{4}
+\]
+
+若 $p$ 为奇数,将 $k=0,\ldots,p$ 两两配对 $(2j,2j+1)$,$j=0,\ldots,\dfrac{p-1}{2}$,每对之和为 $n(S_{2j})+n(S_{2j+1})=(j+1)+(j+1)=2(j+1)$,得
+\[
+\sum_{k=0}^{p}n(S_k)=\sum_{j=0}^{(p-1)/2}2(j+1)=\frac{p+1}{2}\left(\frac{p+1}{2}+1\right)=\frac{(p+1)(p+3)}{4}
+\]
+\end{solution}
+
+\end{parts}
+
+\question
+映射 $f:\mathbb{C}\setminus\{-1\}\to\mathbb{C}\setminus\{-i\}$ 定义为 $f(z)=\dfrac{i(1-z)}{1+z}$．
+\begin{parts}
+\part 证明 $f$ 为双射．
+\begin{solution}
+对任何 $z_1,z_2\in\mathbb{C}\setminus\{-1\}$，若 $f(z_1)=f(z_2)$，则
+\[
+\frac{i(1-z_1)}{1+z_1}=\frac{i(1-z_2)}{1+z_2}\Rightarrow1-z_1+z_2-z_1z_2=1+z_1-z_2-z_1z_2\Rightarrow z_1=z_2
+\]
+故 $f$ 为单射。
+
+对任何 $w\in\mathbb{C}\setminus\{-i\}$，考虑 $z=\dfrac{i-w}{i+w}$（因为 $w\ne-i$，此式有意义）．
+可验证 $z\ne-1$ 且 $f(z)=w$，故 $f$ 为满射，因此 $f$ 为双射。
+\end{solution}
+\part
+求出并画出在 $f$ 之下，下列各集合的像：
+\begin{subparts}
+\subpart 虚轴的上半部分（包括原点）．
+\begin{solution}
+设 $z=ti$，$t\ge0$，为虚轴上半部分上任一点．
+\[
+f(z)=\frac{i(1-ti)}{1+ti}=\frac{2t+(1-t^2)i}{1+t^2}=x+iy
+\]
+其中 $x=\dfrac{2t}{1+t^2}$，$y=\dfrac{1-t^2}{1+t^2}$．
+\[
+x^2+y^2=\frac{4t^2}{(1+t^2)^2}+\frac{(1-t^2)^2}{(1+t^2)^2}=1
+\]
+由于 $x=\dfrac{2t}{1+t^2}\ge0$，$f(z)$ 落在单位圆的右半部分（包括端点 $i$）上．
+
+反过来，对单位圆右半部分上任一点 $w=x+iy$（$w\ne-i$），有 $x^2+y^2=1$，$x\ge0$．由(a)，$w$ 的原像为
+\[
+z=\frac{i-w}{i+w}=\frac{i-(x+iy)}{i+(x+iy)}=\frac{-x+(1-y)i}{x+(1+y)i}=\frac{2xi}{x^2+(1+y)^2}\quad(\text{因为}x^2+y^2=1)
+\]
+故 $z$ 落在虚轴的上半部分上。
+
+因此，虚轴上半部分（包括原点）在 $f$ 之下的像，是单位圆的右半部分（包括端点 $i$，不包括端点 $-i$）。
+\end{solution}
+\subpart 正实轴．
+\begin{solution}
+设 $z=t$，$t>0$．
+\[
+f(z)=\frac{i(1-t)}{1+t}
+\]
+落在虚轴上．又 $-1<\dfrac{1-t}{1+t}<1$，故 $f(z)$ 落在 $-i$ 与 $i$ 之间（不包括端点）．
+
+反过来，对任何 $w=yi$（$-1<y<1$），
+\[
+f^{-1}(w)=\frac{i-yi}{i+yi}=\frac{1-y}{1+y}>0
+\]
+
+因此，正实轴在 $f$ 之下的像，恰为虚轴上介于 $-i$ 与 $i$ 之间的部分（不包括两端点）。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question 设函数 $f:\mathbb{C}\setminus\{0\}\to\mathbb{C}$ 定义为 $f(z)=z+\dfrac{1}{z}$ 。
+
+\begin{parts}
+
+\part 若 $z=r(\cos\theta+i\sin\theta)$ 且 $f(z)=u+iv$ ，其中 $r>0$ ， $u,v\in\mathbb{R}$ ，试以 $r$ 和 $\theta$ 表示 $u$ 和 $v$ 。
+
+\begin{solution}
+\[
+f(z)=r(\cos\theta+i\sin\theta)+\frac{1}{r(\cos\theta+i\sin\theta)}
+\]
+\[
+=r(\cos\theta+i\sin\theta)+\frac{1}{r}(\cos\theta-i\sin\theta)
+\]
+\[
+=\left(r+\frac{1}{r}\right)\cos\theta+i\sin\theta\left(r-\frac{1}{r}\right)
+\]
+比较实部和虚部，
+\[
+u=\left(r+\frac{1}{r}\right)\cos\theta,\quad v=\left(r-\frac{1}{r}\right)\sin\theta
+\]
+\end{solution}
+
+\part 求下列各圆在 $f$ 之下的像，并画出简图：
+
+\begin{subparts}
+
+\subpart $|z|=1$ ；
+
+\begin{solution}
+当 $|z|=1$ 时， $r=1$ ，故
+\[
+u=2\cos\theta,\quad v=0
+\]
+所以 $f(z)$ 的轨迹是实轴。
+\end{solution}
+
+\subpart $|z|=a$ ， $0<a<1$ 。
+
+\begin{solution}
+当 $|z|=a$ 时， $r=a$ ，故
+\[
+u=\left(a+\frac{1}{a}\right)\cos\theta,\quad v=\left(a-\frac{1}{a}\right)\sin\theta
+\]
+\[
+\frac{u^2}{\left(a+\dfrac{1}{a}\right)^2}+\frac{v^2}{\left(a-\dfrac{1}{a}\right)^2}=1
+\]
+所以 $f(z)$ 的轨迹是一个以原点为中心的椭圆，其半轴长分别为 $a+\dfrac{1}{a}$ 和 $\dfrac{1}{a}-a$ 。
+\end{solution}
+
+\end{subparts}
+
+\part 证明 $f$ 是满射但不是单射。
+
+\begin{solution}
+\[
+f(3)=3+\frac{1}{3}=\frac{10}{3}
+\]
+\[
+f\left(\frac{1}{3}\right)=\frac{1}{3}+3=\frac{10}{3}
+\]
+因为 $3\ne\dfrac{1}{3}$ 但 $f(3)=f\left(\dfrac{1}{3}\right)$ ，所以 $f$ 不是单射。
+
+对任意 $w\in\mathbb{C}$ ，考虑 $\dfrac{w+\sqrt{w^2-4}}{2}$ 。假设
+\[
+\frac{w+\sqrt{w^2-4}}{2}=0
+\]
+则
+\[
+w=-\sqrt{w^2-4}
+\]
+\[
+w^2=w^2-4
+\]
+\[
+0=-4
+\]
+矛盾，故 $\dfrac{w+\sqrt{w^2-4}}{2}\in\mathbb{C}\setminus\{0\}$ 。
+\[
+f\left(\frac{w+\sqrt{w^2-4}}{2}\right)=\frac{w+\sqrt{w^2-4}}{2}+\frac{1}{\dfrac{w+\sqrt{w^2-4}}{2}}
+\]
+\[
+=\frac{w+\sqrt{w^2-4}}{2}+\frac{2\left(w-\sqrt{w^2-4}\right)}{w^2-\left(w^2-4\right)}
+\]
+\[
+=\frac{w+\sqrt{w^2-4}}{2}+\frac{w-\sqrt{w^2-4}}{2}
+\]
+\[
+=w
+\]
+所以 $f$ 是满射。
+\end{solution}
+
+\part 设 $E=\left\{z\in\mathbb{C}\setminus\{0\}:|z|<1\right\}$ ，及 $f_E:E\to\mathbb{C}$ 定义为对所有 $z\in E$ ， $f_E(z)=f(z)$ 。证明 $f_E$ 是单射但不是满射。
+
+\begin{solution}
+设 $z_1,z_2\in E$ 且
+\[
+f_E(z_1)=f_E(z_2)
+\]
+\[
+z_1+\frac{1}{z_1}=z_2+\frac{1}{z_2}
+\]
+\[
+(z_1-z_2)+\frac{z_2-z_1}{z_1z_2}=0
+\]
+\[
+(z_1-z_2)\left(1-\frac{1}{z_1z_2}\right)=0
+\]
+因此 $z_1=z_2$ 或 $z_1z_2=1$ 。因为 $|z_1|<1$ 且 $|z_2|<1$ ，所以 $|z_1z_2|<1$ ，故 $z_1z_2\ne1$ ，从而 $z_1=z_2$ ，即 $f_E$ 是单射。
+
+对于 $-2\in\mathbb{C}$ ，因为 $f$ 是满射，所以存在 $z\in\mathbb{C}\setminus\{0\}$ 使得 $f(z)=-2$ ：
+\[
+z+\frac{1}{z}=-2
+\]
+\[
+z^2+2z+1=0
+\]
+\[
+(z+1)^2=0
+\]
+\[
+z=-1
+\]
+但 $|z|=1\not<1$ ，即 $z\notin E$ ，所以 $-2$ 在 $f_E$ 之下没有原像，即 $f_E$ 不是满射。
+\end{solution}
+
+\end{parts}
+
+\question
+$\mathbf{R}^3$ 的子集 $X$ 称为凸集，若
+\[
+u,v\in X \implies \alpha u+\beta v\in X, \qquad \forall\alpha,\beta\ge0,\ \alpha+\beta=1
+\]
+\begin{parts}
+\part 证明两个凸集的交集是凸集。并举例说明两个凸集的并集未必是凸集。
+\begin{solution}
+设 $A,B$ 为凸集，$u,v\in A\cap B$，$\alpha,\beta\ge0$，$\alpha+\beta=1$。由 $u,v\in A$ 且 $A$ 凸，$\alpha u+\beta v\in A$；由 $u,v\in B$ 且 $B$ 凸，$\alpha u+\beta v\in B$。故 $\alpha u+\beta v\in A\cap B$，即 $A\cap B$ 是凸集。
+
+举例：设 $A=\{(0,0,0)\}$，$B=\{(1,1,1)\}$，均为凸集。但 $A\cup B$ 不是凸集，因取 $\alpha=\beta=\dfrac{1}{2}$，
+\[
+\frac{1}{2}(0,0,0)+\frac{1}{2}(1,1,1) = \left(\frac{1}{2},\frac{1}{2},\frac{1}{2}\right) \notin A\cup B
+\]
+\end{solution}
+
+\part 对任意 $\mathbf{R}^3$ 的子集 $A,B$，定义
+\[
+A+B = \{w\in\mathbf{R}^3 : w=u+v,\ \text{某个}\ u\in A,\ v\in B\}
+\]
+证明若 $A,B$ 为凸集，则 $A+B$ 也是凸集。
+\begin{solution}
+设 $w_1,w_2\in A+B$，则存在 $u_1,u_2\in A$，$v_1,v_2\in B$，使 $w_1=u_1+v_1$，$w_2=u_2+v_2$。对任意 $\alpha,\beta\ge0$，$\alpha+\beta=1$，
+\[
+\alpha w_1+\beta w_2 = (\alpha u_1+\beta u_2)+(\alpha v_1+\beta v_2)
+\]
+由 $A$ 凸，$\alpha u_1+\beta u_2\in A$；由 $B$ 凸，$\alpha v_1+\beta v_2\in B$。故 $\alpha w_1+\beta w_2\in A+B$，即 $A+B$ 是凸集。
+\end{solution}
+
+\part 对任意 $\mathbf{R}^3$ 的子集 $A$ 及任意 $\gamma\in\mathbf{R}$，定义
+\[
+\gamma A = \{w\in\mathbf{R}^3 : w=\gamma u,\ \text{某个}\ u\in A\}
+\]
+证明若 $A$ 为凸集，则 $\gamma A$ 也是凸集。
+\begin{solution}
+设 $w_1,w_2\in\gamma A$，则存在 $u_1,u_2\in A$，使 $w_1=\gamma u_1$，$w_2=\gamma u_2$。对任意 $\alpha,\beta\ge0$，$\alpha+\beta=1$，
+\[
+\alpha w_1+\beta w_2 = \gamma(\alpha u_1+\beta u_2)
+\]
+由 $A$ 凸，$\alpha u_1+\beta u_2\in A$，故 $\alpha w_1+\beta w_2\in\gamma A$，即 $\gamma A$ 是凸集。
+\end{solution}
+
+\part 对任意 $a_1,a_2,\ldots,a_n\in\mathbf{R}^3$，定义
+\[
+\operatorname{cov}(a_1,a_2,\cdots,a_n) = \left\{w\in\mathbf{R}^3 : w=\alpha_1a_1+\cdots+\alpha_na_n,\ \alpha_1,\ldots,\alpha_n\ge0,\ \alpha_1+\cdots+\alpha_n=1\right\}
+\]
+证明：
+\begin{subparts}
+\subpart $\operatorname{cov}(a_1,\cdots,a_n)$ 是凸集。
+\begin{solution}
+设 $u,v\in\operatorname{cov}(a_1,\cdots,a_n)$，则 $u=\sum_{i=1}^n\alpha_ia_i$，$v=\sum_{i=1}^n\beta_ia_i$，其中 $\alpha_i,\beta_i\ge0$，$\sum\alpha_i=\sum\beta_i=1$。对任意 $\lambda,\mu\ge0$，$\lambda+\mu=1$，
+\[
+\lambda u+\mu v = \sum_{i=1}^n(\lambda\alpha_i+\mu\beta_i)a_i
+\]
+其中每个系数 $\lambda\alpha_i+\mu\beta_i\ge0$，且
+\[
+\sum_{i=1}^n(\lambda\alpha_i+\mu\beta_i) = \lambda\sum\alpha_i+\mu\sum\beta_i = \lambda+\mu = 1
+\]
+故 $\lambda u+\mu v\in\operatorname{cov}(a_1,\cdots,a_n)$，即该集合是凸集。
+\end{solution}
+
+\subpart 若 $S$ 是 $\mathbf{R}^3$ 的凸子集，且 $S$ 含有 $a_1,\cdots,a_n$，则 $\operatorname{cov}(a_1,\cdots,a_n)\subset S$。
+\begin{solution}
+只需用数学归纳法证明：对任意 $\alpha_1,\ldots,\alpha_n\ge0$，$\sum\alpha_i=1$，都有 $\sum_{i=1}^n\alpha_ia_i\in S$。
+
+当 $n=1$ 时，$\alpha_1=1$，$\alpha_1a_1=a_1\in S$，成立。
+
+假设对 $n=k$ 成立。设 $\alpha_1,\ldots,\alpha_{k+1}\ge0$，$\sum_{i=1}^{k+1}\alpha_i=1$。若 $\alpha_{k+1}=1$，则 $\sum\alpha_ia_i=a_{k+1}\in S$，成立。否则令 $\lambda=\sum_{i=1}^k\alpha_i=1-\alpha_{k+1}>0$，则
+\[
+\sum_{i=1}^{k+1}\alpha_ia_i = \lambda\sum_{i=1}^k\frac{\alpha_i}{\lambda}a_i+\alpha_{k+1}a_{k+1}
+\]
+其中 $\dfrac{\alpha_i}{\lambda}\ge0$ 且 $\sum_{i=1}^k\dfrac{\alpha_i}{\lambda}=1$，由归纳假设，$w=\sum_{i=1}^k\dfrac{\alpha_i}{\lambda}a_i\in S$。又 $a_{k+1}\in S$，$S$ 为凸集，且 $\lambda+\alpha_{k+1}=1$，$\lambda,\alpha_{k+1}\ge0$，故
+\[
+\lambda w+\alpha_{k+1}a_{k+1} = \sum_{i=1}^{k+1}\alpha_ia_i \in S
+\]
+由数学归纳法，结论对所有 $n$ 成立，即 $\operatorname{cov}(a_1,\cdots,a_n)\subset S$。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+设 $u\in\mathbf{R}^3$ 为单位向量（即 $u\cdot u=1$）。$\mathbf{R}^3$ 上的关系 $\sim$ 定义为
+\[
+v\sim w \iff v-w=ku,\ \text{某个}\ k\in\mathbf{R}
+\]
+\begin{parts}
+\part 证明 $\sim$ 是等价关系。
+\begin{solution}
+（自反性）对任意 $v\in\mathbf{R}^3$，$v-v=0=0\cdot u$，故 $v\sim v$。
+
+（对称性）若 $v\sim w$，则 $v-w=ku$，某个 $k\in\mathbf{R}$，于是 $w-v=(-k)u$，$-k\in\mathbf{R}$，故 $w\sim v$。
+
+（传递性）若 $v\sim w$ 且 $w\sim x$，则 $v-w=ku$，$w-x=k'u$，某些 $k,k'\in\mathbf{R}$，于是
+\[
+v-x = (v-w)+(w-x) = (k+k')u
+\]
+$k+k'\in\mathbf{R}$，故 $v\sim x$。
+
+故 $\sim$ 是等价关系。
+\end{solution}
+
+\part 用 $[v]$ 表示含 $v$ 的等价类。设 $f:\mathbf{R}^3/\!\sim\ \to\mathbf{R}^3$ 定义为 $f([v])=v-(v\cdot u)u$。
+\begin{subparts}
+\subpart 证明 $f$ 是良定义的。
+\begin{solution}
+设 $[v]=[w]$，即 $v\sim w$，则 $v-w=ku$，某个 $k\in\mathbf{R}$，即 $v=w+ku$。于是
+\[
+v\cdot u = (w+ku)\cdot u = w\cdot u+k(u\cdot u) = w\cdot u+k
+\]
+故
+\[
+f([v]) = v-(v\cdot u)u = (w+ku)-(w\cdot u+k)u = w-(w\cdot u)u = f([w])
+\]
+即 $f$ 良定义。
+\end{solution}
+
+\subpart 证明 $f$ 是单射。
+\begin{solution}
+设 $f([v])=f([w])$，即
+\[
+v-(v\cdot u)u = w-(w\cdot u)u
+\]
+移项，得
+\[
+v-w = \left[(v\cdot u)-(w\cdot u)\right]u = ku
+\]
+其中 $k=(v\cdot u)-(w\cdot u)\in\mathbf{R}$，故 $v\sim w$，即 $[v]=[w]$，故 $f$ 是单射。
+\end{solution}
+
+\subpart 对任意非零 $w\in\mathbf{R}^3$，证明 $w$ 垂直于 $u$ 当且仅当 $w\in f(\mathbf{R}^3/\!\sim)$。由此推出 $f$ 不是满射。
+\begin{solution}
+（$\Leftarrow$）若 $w\in f(\mathbf{R}^3/\!\sim)$，则 $w=f([v])=v-(v\cdot u)u$，某个 $v$。于是
+\[
+w\cdot u = v\cdot u-(v\cdot u)(u\cdot u) = v\cdot u-(v\cdot u) = 0
+\]
+即 $w\perp u$。
+
+（$\Rightarrow$）若 $w\perp u$，即 $w\cdot u=0$，且 $w\ne0$，则
+\[
+f([w]) = w-(w\cdot u)u = w-0 = w
+\]
+故 $w\in f(\mathbf{R}^3/\!\sim)$。
+
+（推出 $f$ 不是满射）由于 $u\cdot u=1\ne0$，$u$ 不垂直于 $u$，由上述等价关系（反向），$u\notin f(\mathbf{R}^3/\!\sim)$。故存在 $u\in\mathbf{R}^3$ 不在 $f$ 的值域中，即 $f$ 不是满射。
+\end{solution}
+\end{subparts}
+
+\part 若 $u=(0,0,1)$，$v=(0,1,2)$，画出集合 $\{w\in\mathbf{R}^3 : w\sim v\}$。
+\begin{solution}
+由定义，$w\sim v$ 当且仅当 $w-v=ku$，某个 $k\in\mathbf{R}$，即
+\[
+w = v+ku = (0,\ 1,\ 2+k), \qquad k\in\mathbf{R}
+\]
+故该集合是经过点 $(0,1,2)$、方向为 $(0,0,1)$（即平行于 $z$ 轴）的一条直线。
+\end{solution}
+\end{parts}
+
+\question
+设 $f:\mathbb{R}\to\mathbb{R}$ 为双射，且 $a_1<a_2<\cdots<a_n$，其中 $n\ge 2$。
+
+\begin{parts}
+\part 设 $f$ 严格递增。证明其反函数 $f^{-1}$ 亦严格递增，并推出
+\[
+a_1 < f^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} f(a_k)\right) < a_n
+\]
+
+\begin{solution}
+设 $x<y$。由于 $f$ 为双射，存在 $x_0,y_0$ 使得 $f(x_0)=x$，$f(y_0)=y$，即 $x_0=f^{-1}(x)$，$y_0=f^{-1}(y)$。若 $x_0\ge y_0$，由 $f$ 严格递增得 $f(x_0)\ge f(y_0)$，即 $x\ge y$，与 $x<y$ 矛盾。故 $x_0<y_0$，即 $f^{-1}(x)<f^{-1}(y)$。所以 $f^{-1}$ 严格递增。
+
+由于 $a_1<a_k$（$k=2,\cdots,n$），$f$ 严格递增给出 $f(a_1)<f(a_k)$，故
+\[
+nf(a_1) < \sum_{k=1}^{n} f(a_k)
+\]
+即 $f(a_1) < \dfrac{1}{n}\sum_{k=1}^{n} f(a_k)$。由 $f^{-1}$ 严格递增，
+\[
+a_1 = f^{-1}(f(a_1)) < f^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} f(a_k)\right)
+\]
+同理可证
+\[
+f^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} f(a_k)\right) < a_n
+\]
+\end{solution}
+
+\part 定义 $h(x)=pf(x)+q$，其中 $p,q\in\mathbb{R}$ 且 $p\neq 0$。证明
+\[
+h^{-1}(x) = f^{-1}\left(\frac{x-q}{p}\right)
+\]
+并推出
+\[
+h^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} h(a_k)\right) = f^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} f(a_k)\right)
+\]
+
+\begin{solution}
+设 $y=h(x)=pf(x)+q$，则
+\[
+\frac{y-q}{p} = f(x)
+\]
+即 $x=f^{-1}\left(\dfrac{y-q}{p}\right)$。故 $h^{-1}(y)=f^{-1}\left(\dfrac{y-q}{p}\right)$，即
+\[
+h^{-1}(x) = f^{-1}\left(\frac{x-q}{p}\right)
+\]
+由此，
+\begin{align*}
+h^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} h(a_k)\right) &= f^{-1}\left(\frac{\dfrac{1}{n}\sum\limits_{k=1}^{n} h(a_k) - q}{p}\right) \\
+&= f^{-1}\left(\frac{\dfrac{1}{n}\sum\limits_{k=1}^{n} \left(pf(a_k)+q\right) - q}{p}\right) \\
+&= f^{-1}\left(\frac{1}{n}\sum_{k=1}^{n} f(a_k)\right)
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+函数 $f:\mathbb{C}\to\mathbb{C}$ 称为\emph{实线性}，如果
+\[
+f(\alpha z_1+\beta z_2)=\alpha f(z_1)+\beta f(z_2)
+\]
+对所有 $\alpha,\beta\in\mathbb{R}$ 及 $z_1,z_2\in\mathbb{C}$ 成立。
+
+\begin{parts}
+
+\part 设 $f$ 为实线性函数。证明
+\begin{subparts}
+
+\subpart 若当 $f(z)=0$ 时必有 $z=0$，则 $f$ 是单射
+
+\begin{solution}
+设 $z_1,z_2\in\mathbb{C}$ 且 $f(z_1)=f(z_2)$，由 $f$ 的实线性，
+\[
+f(z_1-z_2)=f(z_1)-f(z_2)=0
+\]
+由假设，$z_1-z_2=0$，即 $z_1=z_2$。故 $f$ 是单射。
+\end{solution}
+
+\subpart 若 $f(i)=if(1)$ 且 $f(i)\neq0$，则 $f$ 是双射
+
+\begin{solution}
+对任意 $z=x+iy\in\mathbb{C}$（$x,y\in\mathbb{R}$），由实线性，
+\[
+f(z)=xf(1)+yf(i)=xf(1)+yif(1)=(x+iy)f(1)=zf(1)
+\]
+因为 $f(i)=if(1)\ne0$，所以 $f(1)\ne0$，故 $f(z)=0\Rightarrow z=0$。由 (a)(i)，$f$ 是单射。
+
+对任意 $z\in\mathbb{C}$，$\dfrac{z}{f(1)}\in\mathbb{C}$，且
+\[
+f\left(\frac{z}{f(1)}\right)=f(1)\cdot\frac{z}{f(1)}=z
+\]
+故 $f$ 是满射。因此 $f$ 是双射。
+\end{solution}
+
+\end{subparts}
+
+\part 设 $\lambda,\mu\in\mathbb{C}$，且
+\[
+g(z)=\lambda z+\mu\bar{z} \quad \text{对所有 } z\in\mathbb{C}
+\]
+证明
+\begin{subparts}
+
+\subpart $g$ 是实线性的
+
+\begin{solution}
+对任意 $z_1,z_2\in\mathbb{C}$ 及 $\alpha,\beta\in\mathbb{R}$，
+\begin{align*}
+g(\alpha z_1+\beta z_2)&=\lambda(\alpha z_1+\beta z_2)+\mu(\alpha\bar{z_1}+\beta\bar{z_2})\\
+&=\alpha(\lambda z_1+\mu\bar{z_1})+\beta(\lambda z_2+\mu\bar{z_2})\\
+&=\alpha g(z_1)+\beta g(z_2)
+\end{align*}
+故 $g$ 是实线性的。
+\end{solution}
+
+\subpart $g$ 是单射当且仅当 $|\lambda|\neq|\mu|$
+
+\begin{solution}
+（必要性）若 $g$ 不是单射，则存在 $z\in\mathbb{C}$，$z\ne0$，使得 $g(z)=0$，即
+\[
+\lambda z+\mu\bar{z}=0 \Rightarrow |\lambda||z|=|\mu||z| \Rightarrow |\lambda|=|\mu|
+\]
+取逆否命题，若 $|\lambda|\ne|\mu|$，则 $g$ 是单射。
+
+（充分性）若 $|\lambda|=|\mu|=0$，则 $g(z)=0$ 对所有 $z$ 成立，$g$ 不是单射。
+
+若 $|\lambda|=|\mu|\ne0$，则 $\lambda=\gamma\mu$，其中 $\gamma\in\mathbb{C}$ 且 $|\gamma|=1$。考虑方程 $g(z)=0$：
+\[
+\lambda z+\mu\bar{z}=0 \Rightarrow \gamma z+\bar{z}=0
+\]
+设 $z=x+yi$，$\gamma=p+qi$（$x,y,p,q\in\mathbb{R}$），代入并比较实部虚部，
+\[
+\begin{cases}
+(p+1)x-qy=0\\
+qx+(p-1)y=0
+\end{cases}
+\]
+此齐次方程组的系数行列式为
+\[
+\begin{vmatrix}p+1&-q\\q&p-1\end{vmatrix}=p^2-1-q^2=0
+\]
+（因为 $p^2+q^2=1$）。故方程组有非零解，即 $g$ 不是单射。
+
+综合以上，$g$ 是单射当且仅当 $|\lambda|\ne|\mu|$。
+\end{solution}
+
+\end{subparts}
+
+\part 若 $f$ 为实线性函数，求 $a,b\in\mathbb{C}$ 使得
+\[
+f(z)=az+b\bar{z}\quad\text{对所有 } z\in\mathbb{C}
+\]
+
+\begin{solution}
+设 $z=x+yi$，$x,y\in\mathbb{R}$，则
+\begin{align*}
+f(z)&=f(x+yi)=xf(1)+yf(i)\\
+&=\left(\frac{z+\bar{z}}{2}\right)f(1)-\left(\frac{z-\bar{z}}{2}\right)if(i)\\
+&=\frac{1}{2}\left[f(1)-if(i)\right]z+\frac{1}{2}\left[f(1)+if(i)\right]\bar{z}
+\end{align*}
+故
+\[
+a=\frac{1}{2}\left[f(1)-if(i)\right],\qquad b=\frac{1}{2}\left[f(1)+if(i)\right]
+\]
+\end{solution}
+
+\end{parts}
+
+\question
+设 $f(x)=\displaystyle\int_1^x \sin(\cos t)\,\mathrm{d}t$，其中 $x\in\left[0,\dfrac{\pi}{2}\right)$。
+
+\begin{parts}
+
+\part 证明 $f$ 是单射
+
+\begin{solution}
+由于
+\[
+f'(x)=\sin(\cos x) > 0 \quad \text{对所有 } x\in\left[0,\frac{\pi}{2}\right)
+\]
+故 $f$ 在 $\left[0,\dfrac{\pi}{2}\right)$ 上严格递增，从而 $f$ 是单射。
+\end{solution}
+
+\part 若 $g$ 为 $f$ 的反函数，求 $g'(0)$
+
+\begin{solution}
+由于 $f(g(x))=x$，两边对 $x$ 求导，
+\[
+f'(g(x))g'(x)=1 \Rightarrow g'(x)=\frac{1}{f'(g(x))}
+\]
+因为 $f(1)=0$，故 $g(0)=1$。所以
+\[
+g'(0)=\frac{1}{f'(g(0))}=\frac{1}{f'(1)}=\frac{1}{\sin(\cos1)}
+\]
+\end{solution}
+
+\end{parts}
 \end{questions}
 \pagebreak
 

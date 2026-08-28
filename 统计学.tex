@@ -2563,6 +2563,474 @@ P(X=0) + P(X=1) + P(X=2) \leq 0.05 = \frac{1}{20}
     \[ p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\lfloor \frac{n}{2} \rfloor + 1} = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2} \text{ 或 } \frac{n+2}{2}}  \]
     答：$n$ 为偶数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n}{2}+1}$；$n$ 为奇数时 $p_n = \frac{1}{2} - \left(\frac{1}{2}\right)^{\frac{n+1}{2}}$。
 \end{solution}
+
+\question
+\begin{parts}
+\part $A$ 掷 $m$ 枚公平硬币,接着 $B$ 掷 $n$ 枚硬币,其中 $n\leq m$。证明他们得到相同正面数目的概率为
+\[\binom{m+n}{n}\left(\frac{1}{2}\right)^{m+n}\]
+\begin{solution}
+$A$ 得 $k$ 个正面的概率为
+\[\binom{m}{k}\left(\frac{1}{2}\right)^k\left(\frac{1}{2}\right)^{m-k}=\binom{m}{k}\left(\frac{1}{2}\right)^m\]
+故 $A$ 及 $B$ 都得 $k$ 个正面的概率为
+\[\binom{m}{k}\left(\frac{1}{2}\right)^m\binom{n}{k}\left(\frac{1}{2}\right)^n=\binom{m}{k}\binom{n}{k}\left(\frac{1}{2}\right)^{m+n}\qquad(k\leq n)\]
+所求概率为
+\[\sum_{k=0}^n\binom{m}{k}\binom{n}{k}\left(\frac{1}{2}\right)^{m+n}\]
+由于
+\[(1+x)^{m+n}=\sum_{i=0}^{m+n}\binom{m+n}{i}x^i\]
+及
+\[(1+x)^m(1+x)^n=\left(\sum_{k=0}^m\binom{m}{k}x^k\right)\left(\sum_{k=0}^n\binom{n}{k}x^k\right)\]
+由于 $(1+x)^{m+n}=(1+x)^m(1+x)^n$,比较 $x^n$ 的系数,得
+\[\binom{m+n}{n}=\sum_{k=0}^n\binom{m}{k}\binom{n}{n-k}=\sum_{k=0}^n\binom{m}{k}\binom{n}{k}\]
+故所求概率为 $\dbinom{m+n}{n}\left(\dfrac{1}{2}\right)^{m+n}$。
+\end{solution}
+
+\part $A$ 与 $B$ 进行一游戏,二人各掷 $n$ 枚硬币,正面数目较多者获胜,若正面数目相同则平局。证明所掷的硬币越多,平局的机会便越小。由此,或用其他方法,证明若 $n\geq3$,则 $A$ 获胜的机会比 $A$ 与 $B$ 平局的机会大。
+\begin{solution}
+设 $x_n$ 为 $A$ 获胜的概率,$y_n$ 为 $A$ 与 $B$ 平局的概率。由(a),
+\[y_n=\binom{2n}{n}\left(\frac{1}{2}\right)^{2n}\]
+\begin{align*}
+\frac{y_{n+1}}{y_n}&=\frac{\binom{2n+2}{n+1}\left(\frac{1}{2}\right)^{2n+2}}{\binom{2n}{n}\left(\frac{1}{2}\right)^{2n}}\\
+&=\frac{(2n+2)(2n+1)}{(n+1)(n+1)}\left(\frac{1}{2}\right)^2\\
+&=\frac{2n+1}{2n+2}<1
+\end{align*}
+故 $y_{n+1}<y_n$,即所掷的硬币越多,平局的机会便越小。由对称性,$B$ 获胜的概率等于 $A$ 获胜的概率,故 $2x_n+y_n=1$。由于 $y_{n+1}<y_n$,得 $x_{n+1}>x_n$,即 $\{x_n\}$ 单调递增。当 $n=3$ 时,$y_3=\dfrac{5}{16}$,$x_3=\dfrac{11}{32}>y_3$。由于 $\{x_n\}$ 单调递增而 $\{y_n\}$ 单调递减,故对所有 $n\geq3$ 都有 $x_n\geq x_3>y_3\geq y_n$。
+\end{solution}
+\end{parts}
+
+\question
+在一个雨天,每位到达聚会的男士离开自己的雨伞,并在离去时随机取走一把伞,假设每位男士取伞的选择是完全随机的。设 $P_{n,k}$ 为在 $n$ 位男士中,恰好有 $k$ 位男士取回自己雨伞的概率。
+
+\begin{parts}
+
+\part 证明 $P_{n,k}=(k+1)P_{n+1,k+1}$。
+
+\begin{solution}
+设 $E(n,k)$ 为 $n$ 位男士中恰有 $k$ 位取回自己雨伞的简单事件数,$F(n)$ 为 $n$ 位男士全部取错雨伞的方法数。
+
+\[
+E(n+1,k+1)=C_{k+1}^{n+1}\,F(n-k)
+\]
+\[
+E(n,k)=C_k^n\,F(n-k)
+\]
+
+故
+\[
+\frac{E(n+1,k+1)}{E(n,k)}=\frac{C_{k+1}^{n+1}}{C_k^n}=\frac{n+1}{k+1}
+\]
+
+因此
+\[
+(k+1)E(n+1,k+1)=(n+1)E(n,k)
+\]
+\[
+(k+1)\frac{E(n+1,k+1)}{(n+1)!}=\frac{E(n,k)}{n!}
+\]
+\[
+(k+1)P_{n+1,k+1}=P_{n,k}
+\]
+\end{solution}
+
+\part 设 $F_n(x)=P_{n,0}+P_{n,1}x+\cdots+P_{n,k}x^k+\cdots+P_{n,n}x^n$。证明
+
+\begin{subparts}
+
+\subpart $F_n(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}F_{n+1}(x)$。
+
+\begin{solution}
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}x}F_{n+1}(x)&=\frac{\mathrm{d}}{\mathrm{d}x}\sum_{k=0}^{n+1}P_{n+1,k}x^k\\
+&=\sum_{k=1}^{n+1}kP_{n+1,k}x^{k-1}\\
+&=\sum_{k=0}^{n}(k+1)P_{n+1,k+1}x^{k}\\
+&=\sum_{k=0}^{n}P_{n,k}x^{k}\quad(\text{由(a)})\\
+&=F_n(x)
+\end{align*}
+\end{solution}
+
+\subpart $F_n^{(k)}(1)=1$,其中 $0\leqslant k\leqslant n$。
+
+\begin{solution}
+由(b)(i),
+\[
+F_n^{(k)}(1)=F_{n-1}^{(k-1)}(1)=F_{n-2}^{(k-2)}(1)=\cdots=F_{n-k}^{(0)}(1)=F_{n-k}(1)
+\]
+而
+\[
+F_{n-k}(1)=\sum_{r=0}^{n-k}P_{n-k,r}=1
+\]
+因为这是概率的总和。故 $F_n^{(k)}(1)=1$。
+\end{solution}
+
+\end{subparts}
+
+\part 利用 $F_n(x)$ 在 $a=0$ 和 $a=1$ 处的展开式,证明
+\[
+P_{n,k}=\frac{1}{k!}\sum_{j=k}^{n}\frac{(-1)^{j-k}}{(j-k)!},\quad 0\leqslant k\leqslant n
+\]
+
+\begin{solution}
+在给定的展开式中取 $a=0$:
+\[
+F_n(x)=\sum_{k=0}^{n}\frac{1}{k!}F_n^{(k)}(0)x^k
+\]
+但由定义 $F_n(x)=\displaystyle\sum_{k=0}^n P_{n,k}x^k$,故
+\[
+P_{n,k}=\frac{1}{k!}F_n^{(k)}(0)
+\]
+
+取 $a=1$:
+\[
+F_n(x)=\sum_{k=0}^{n}\frac{1}{k!}F_n^{(k)}(1)(x-1)^k=\sum_{k=0}^{n}\frac{1}{k!}(x-1)^k
+\]
+其中用到(b)(ii)的结果。
+
+对上式 $k$ 次求导:
+\[
+F_n^{(k)}(x)=\sum_{j=k}^{n}\frac{1}{(j-k)!}(x-1)^{j-k}
+\]
+
+在 $x=0$ 处:
+\[
+F_n^{(k)}(0)=\sum_{j=k}^{n}\frac{(-1)^{j-k}}{(j-k)!}
+\]
+
+因此
+\[
+P_{n,k}=\frac{1}{k!}\sum_{j=k}^{n}\frac{(-1)^{j-k}}{(j-k)!}
+\]
+\end{solution}
+
+\end{parts}
+
+\question
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 证明
+\[
+\sum_{r=1}^{n+1}C_{n+r}^{2n+1}=2^{2n}
+\]
+
+\begin{solution}
+在 $(1+x)^{2n+1}=\displaystyle\sum_{r=0}^{2n+1}C_r^{2n+1}x^r$ 中令 $x=1$，得
+\[
+2^{2n+1}=\sum_{r=0}^{2n+1}C_r^{2n+1}
+\]
+由于 $C_r^{2n+1}=C_{2n+1-r}^{2n+1}$，故
+\[
+\sum_{r=n+1}^{2n+1}C_r^{2n+1}=\frac{1}{2}\cdot2^{2n+1}=2^{2n}
+\]
+即
+\[
+\sum_{r=1}^{n+1}C_{n+r}^{2n+1}=2^{2n}
+\]
+\end{solution}
+
+\subpart 考虑 $(1+x)^m(1+\dfrac1x)^n$ 中 $x^k$ 的系数，证明
+\[
+\sum_{r=0}^{m-k}C_{k+r}^{m}C_r^{n}=C_{n+k}^{m+n},\qquad m-n\le k\le m
+\]
+
+\begin{solution}
+由于
+\[
+(1+x)^m\left(1+\frac1x\right)^n=\frac{1}{x^n}(1+x)^{m+n}=\frac{1}{x^n}\sum_{r=0}^{m+n}C_r^{m+n}x^r
+\]
+故对 $m-n\le k\le m$，$x^k$ 的系数为 $C_{n+k}^{m+n}$。
+
+另一方面，
+\[
+(1+x)^m\left(1+\frac1x\right)^n=\left(\sum_{s=0}^{m}C_s^{m}x^s\right)\left(\sum_{r=0}^{n}C_r^{n}\frac{1}{x^r}\right)
+\]
+$x^k$ 的系数为
+\[
+\sum_{r=0}^{m-k}C_{k+r}^{m}C_r^{n}
+\]
+比较两者的系数，即得所要证明的结果。
+\end{solution}
+\end{subparts}
+
+\part 甲及乙分别拥有 $n+1$ 枚及 $n$ 枚公平硬币，两人同时抛掷各自的硬币。
+\begin{subparts}
+\subpart 求甲所得的正面数比乙所得的正面数多 $k$（$1\le k\le n+1$）个的概率。
+
+\begin{solution}
+乙抛掷 $n$ 枚硬币恰得 $r$（$r=0,1,\ldots,n$）个正面的概率为
+\[
+C_r^{n}\cdot\frac{1}{2^r}\cdot\frac{1}{2^{n-r}}=\frac{C_r^{n}}{2^{n}}
+\]
+故甲所得正面数比乙多 $k$（$1\le k\le n+1$）个的概率为
+\begin{align*}
+\sum_{r=0}^{n+1-k}\frac{C_{k+r}^{n+1}}{2^{n+1}}\cdot\frac{C_r^{n}}{2^{n}}
+&=\frac{1}{2^{2n+1}}\sum_{r=0}^{n+1-k}C_{k+r}^{n+1}C_r^{n}\\
+&=\frac{1}{2^{2n+1}}C_{n+k}^{2n+1}
+\end{align*}
+（由 (a)(ii) 结果）。
+\end{solution}
+
+\subpart 证明甲所得正面数比乙多的概率等于 $\dfrac12$。
+
+\begin{solution}
+甲所得正面数比乙多的概率为
+\begin{align*}
+\sum_{k=1}^{n+1}\frac{1}{2^{2n+1}}C_{n+k}^{2n+1}
+&=\frac{1}{2^{2n+1}}\sum_{k=1}^{n+1}C_{n+k}^{2n+1}\\
+&=\frac{1}{2^{2n+1}}\cdot2^{2n}\\
+&=\frac{1}{2}
+\end{align*}
+（由 (a)(i) 结果）。
+\end{solution}
+\end{subparts}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+设 $n$ 为正整数，$\Delta$ 为由
+\[
+x = y
+\]
+\[
+x + y = n
+\]
+和
+\[
+x = n
+\]
+围成的三角形。求 $\Delta$ 内部的整点（即坐标均为整数的点）个数 $A_n$，分别考虑 $n$ 为偶数和 $n$ 为奇数的情况。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{images/image525.png}
+    \end{figure}
+\begin{solution}
+当 $n$ 为偶数时：
+\begin{align*}
+A_n &= (n - 3) + (n - 5) + \dots + 1 \\
+&= \frac{1}{2} \left( \frac{n - 2}{2} \right) (n - 3 + 1) \\
+&= \left( \frac{n - 2}{2} \right)^2
+\end{align*}
+当 $n$ 为奇数时：
+\begin{align*}
+A_n &= (n - 3) + (n - 5) + \dots + 2 \\
+&= \frac{1}{2} \left( \frac{n - 3}{2} \right) (n - 3 + 2) \\
+&= \left( \frac{n - 1}{2} \right) \left( \frac{n - 3}{2} \right)
+\end{align*}
+\end{solution}
+
+\part
+从前 $2k$ 个正整数 $1, 2, 3, \dots, 2k$ 中任取三个不同的数 $y < x < t$ 组成一个（非退化）三角形的边。
+设 $B_{2k}$ 为可能构成的三角形的总数。
+\begin{subparts}
+\subpart
+证明当 $t = n$ 时，以最长边构成的三角形个数为 $A_n$。
+
+\begin{solution}
+为构成非退化三角形，其最长边为 $t = n$，我们需要 $y < x < n$ 且 $x + y > n$。
+满足这些条件的整数对 $(x, y)$ 的数量恰好等于(a)中给出的三角形 $\Delta$ 内部的整点数量，即 $A_n$。
+\end{solution}
+
+\subpart
+证明
+\[
+B_{2k} = \frac{k(k - 1)(4k - 5)}{6}
+\]
+[你可以使用结论 $\sum_{i=1}^k i^2 = \frac{1}{6} k(k + 1)(2k + 1)$]
+
+\begin{solution}
+可能构成的三角形总数为
+\begin{align*}
+B_{2k} &= \sum_{n=1}^{2k} A_n \\
+&= \sum_{i=2}^k A_{2i} + \sum_{i=2}^k A_{2i-1} \\
+&= \sum_{i=2}^k (i - 1)^2 + \sum_{i=2}^k (i - 1)(i - 2) \\
+&= \sum_{i=1}^{k-1} i^2 + \sum_{i=1}^{k-1} (i^2 - i) \\
+&= 2 \sum_{i=1}^{k-1} i^2 - \sum_{i=1}^{k-1} i \\
+&= 2 \left( \frac{1}{6} (k - 1)k(2k - 1) \right) - \frac{1}{2} (k - 1)k \\
+&= \frac{k(k - 1)}{6} \left( 2(2k - 1) - 3 \right) \\
+&= \frac{k(k - 1)(4k - 5)}{6}
+\end{align*}
+\end{solution}
+\end{subparts}
+
+\part
+使用上述结果解决以下问题：
+从前 $2k$ 个正整数中随机取出三个不同的数。求它们能构成（非退化）三角形的边长的概率 $p(2k)$。
+计算极限 $\lim_{k \to \infty} p(2k)$。
+
+\begin{solution}
+从 $2k$ 个数中任取三个数的总组合数为 $C_{3}^{2k}$。
+\begin{align*}
+p(2k) &= \frac{B_{2k}}{C_{3}^{2k}} \\
+&= \frac{\frac{k(k - 1)(4k - 5)}{6}}{\frac{2k(2k - 1)(2k - 2)}{6}} \\
+&= \frac{4k - 5}{4(2k - 1)}
+\end{align*}
+计算极限：
+\begin{align*}
+\lim_{k \to \infty} p(2k) &= \lim_{k \to \infty} \frac{4k - 5}{4(2k - 1)} \\
+&= \frac{1}{2}
+\end{align*}
+\end{solution}
+\end{parts}
+
+\question
+现有 $n(n>1)$ 个不同的箱子,每个箱子最多可容纳 $n+2$ 本书．求下列各事件的概率:
+
+\begin{parts}
+
+\part 把 $n$ 本不同的书随机放入这些箱子中,没有箱子是空的．
+
+\begin{solution}
+把 $n$ 本不同的书随机放入 $n$ 个不同的箱子的总方法数为 $n^n$．
+其中没有箱子是空的方法数为 $n!$（一一对应放入）．
+所求概率为
+\[
+\frac{n!}{n^n}.
+\]
+\end{solution}
+
+\part 把 $n$ 本不同的书随机放入这些箱子中,恰有一个箱子是空的．
+
+\begin{solution}
+选一个箱子作为空箱,有 $n$ 种选法；再从余下 $n-1$ 个箱子中选一个放 $2$ 本书,有 $n-1$ 种选法,故共有 $n(n-1)$ 种选法．
+从 $n$ 本书中选出 $2$ 本放入该箱,有 $\binom{n}{2}$ 种选法,其余 $n-2$ 本书一一对应放入其余 $n-2$ 个箱子．
+所求概率为
+\[
+\frac{n(n-1)\binom{n}{2}(n-2)!}{n^n} = \frac{n!\,n(n-1)}{2n^n}.
+\]
+\end{solution}
+
+\part 把 $n+1$ 本不同的书随机放入这些箱子中,没有箱子是空的．
+
+\begin{solution}
+没有箱子空,即恰有一个箱子放 $2$ 本书,其余箱子各放 $1$ 本．
+选放 $2$ 本书的箱子有 $n$ 种选法,从 $n+1$ 本书中选 $2$ 本放入该箱有 $\binom{n+1}{2}$ 种选法,其余 $n-1$ 本书一一对应放入其余 $n-1$ 个箱子．
+所求概率为
+\[
+\frac{n\binom{n+1}{2}(n-1)!}{n^{n+1}} = \frac{(n+1)!}{2n^n}.
+\]
+\end{solution}
+
+\part 把 $n+2$ 本不同的书随机放入这些箱子中,没有箱子是空的．
+
+\begin{solution}
+没有箱子空时,分配情形有以下两种可能:
+
+（1）一个箱子放 $3$ 本书,其余箱子各放 $1$ 本．
+选该箱子有 $n$ 种选法,选 $3$ 本书有 $\binom{n+2}{3}$ 种选法,其余 $n-1$ 本书一一对应放入其余 $n-1$ 个箱子,概率为
+\[
+\frac{n\binom{n+2}{3}(n-1)!}{n^{n+2}} = \frac{(n+2)!}{6n^{n+1}}.
+\]
+
+（2）两个箱子各放 $2$ 本书,其余箱子各放 $1$ 本．
+选这两个箱子有 $\binom{n}{2}$ 种选法；从 $n+2$ 本书中先选 $2$ 本放入第一个箱子,有 $\binom{n+2}{2}$ 种选法,再从余下 $n$ 本中选 $2$ 本放入第二个箱子,有 $\binom{n}{2}$ 种选法,其余 $n-2$ 本书一一对应放入其余 $n-2$ 个箱子,概率为
+\[
+\frac{\binom{n}{2}\binom{n+2}{2}\binom{n}{2}(n-2)!}{n^{n+2}} = \frac{(n+2)!(n-1)}{4n^{n+1}}.
+\]
+
+所求概率为
+\begin{align*}
+\frac{(n+2)!}{6n^{n+1}}+\frac{(n+2)!(n-1)}{4n^{n+1}}
+&= \frac{(n+2)!}{n^{n+1}}\left(\frac{1}{6}+\frac{n-1}{4}\right)\\
+&= \frac{(n+2)!(3n-1)}{12n^{n+1}}.
+\end{align*}
+\end{solution}
+
+\part 把 $n+1$ 本不同的书随机放入这些箱子中,恰有一个箱子是空的．
+
+\begin{solution}
+选定一个箱子作为空箱,有 $n$ 种选法．把 $n+1$ 本书全部放入其余 $n-1$ 个箱子且使这 $n-1$ 个箱子都不空,这与(d)的情形（$n-1$ 个箱子,$n+1=(n-1)+2$ 本书,没有箱子空）相同,把(d)中的 $n$ 换为 $n-1$,可得把这 $n+1$ 本书放入这 $n-1$ 个指定箱子（不空）的方法数为
+\[
+(n-1)^{n+1}\cdot\frac{\left[(n-1)+2\right]!\left[3(n-1)-1\right]}{12(n-1)^{(n-1)+1}} = \frac{(n-1)(n+1)!(3n-4)}{12}.
+\]
+所求概率为
+\[
+\frac{n\cdot\dfrac{(n-1)(n+1)!(3n-4)}{12}}{n^{n+1}} = \frac{(n-1)(n+1)!(3n-4)}{12n^n}.
+\]
+\end{solution}
+
+\end{parts}
+
+\question
+
+一枚公正骰子被反复投掷。用 $a_k$($k\geq1$)表示前 $k$ 次投掷所得点数之和。对任意正整数 $n$,设 $p(n)$ 为存在某个 $k\geq1$,使 $a_k=n$ 的概率。
+
+\begin{parts}
+
+\part
+\begin{subparts}
+
+\subpart 求 $p(1)$,$p(2)$ 及 $p(3)$。
+
+\begin{solution}
+\[
+p(1)=\frac{1}{6}
+\]
+\[
+p(2)=\frac{1}{6}+\frac{1}{6}\times\frac{1}{6}=\frac{7}{36}
+\]
+\[
+p(3)=\frac{1}{6}+2\times\frac{1}{6}\times\frac{1}{6}+\frac{1}{6}\times\frac{1}{6}\times\frac{1}{6}=\frac{49}{216}
+\]
+\end{solution}
+
+\subpart 将 $p(4)$ 用 $p(1)$,$p(2)$ 及 $p(3)$ 表示。
+
+\begin{solution}
+\[
+p(4)=\frac{1}{6}+\frac{1}{6}\left(p(1)+p(2)+p(3)\right)
+\]
+\end{solution}
+
+\subpart 对 $n>6$,将 $p(n)$ 用 $p(n-1),p(n-2),\ldots,p(n-6)$ 表示。
+
+\begin{solution}
+\[
+p(n)=\frac{1}{6}\left(p(n-6)+p(n-5)+p(n-4)+p(n-3)+p(n-2)+p(n-1)\right)
+\]
+\end{solution}
+
+\end{subparts}
+
+\part 定义 $p(k)=0$($k<0$)及 $p(0)=1$。
+
+\begin{subparts}
+
+\subpart 对任意正整数 $n$,证明
+\[
+p(n)+\frac{5}{6}p(n-1)+\frac{4}{6}p(n-2)+\frac{3}{6}p(n-3)+\frac{2}{6}p(n-4)+\frac{1}{6}p(n-5)=1
+\]
+
+\begin{solution}
+对 $k\geq1$,
+\[
+p(k)=\frac{1}{6}\left(p(k-6)+p(k-5)+p(k-4)+p(k-3)+p(k-2)+p(k-1)\right)
+\]
+故
+\begin{align*}
+\sum_{k=1}^{n}p(k)&=\frac{1}{6}\sum_{k=1}^{n}\left(p(k-6)+p(k-5)+\cdots+p(k-1)\right)\\
+&=\frac{1}{6}\left[6\sum_{k=0}^{n}p(k)-6p(n)-5p(n-1)-4p(n-2)-3p(n-3)-2p(n-4)-p(n-5)\right]
+\end{align*}
+移项整理,得
+\[
+p(n)+\frac{5}{6}p(n-1)+\frac{4}{6}p(n-2)+\frac{3}{6}p(n-3)+\frac{2}{6}p(n-4)+\frac{1}{6}p(n-5)=\sum_{k=0}^{n}p(k)-\sum_{k=1}^{n}p(k)=p(0)=1
+\]
+\end{solution}
+
+\subpart 已知 $\displaystyle\lim_{n\to\infty}p(n)$ 存在,求其值。
+
+\begin{solution}
+在(b)(i)的等式中令 $n\to\infty$,得
+\[
+\left(1+\frac{5}{6}+\frac{4}{6}+\frac{3}{6}+\frac{2}{6}+\frac{1}{6}\right)\lim_{n\to\infty}p(n)=1
+\]
+即 $\dfrac{7}{2}\displaystyle\lim_{n\to\infty}p(n)=1$,故
+\[
+\lim_{n\to\infty}p(n)=\frac{2}{7}
+\]
+\end{solution}
+
+\end{subparts}
+
+\end{parts}
 \end{questions}
 
 \pagebreak
