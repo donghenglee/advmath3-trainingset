@@ -2256,6 +2256,74 @@ $f(x)$ 的斜率为：
 综上所述，由数学归纳法可知，对所有 $n \ge 2$，原不等式均成立。
 \end{solution}
 
+\question 设 $A_k = \begin{pmatrix} 1 & k \\ k+1 & 2 \end{pmatrix}$ 及 $B_k = \begin{pmatrix} -k & 1 \\ -2 & k+1 \end{pmatrix}$。
+\begin{parts}
+\part 证明 $|A_k| + |B_k| = |A_k + B_k|$。
+\begin{solution}
+计算矩阵的行列式：
+\[
+|A_k| = (1)(2) - (k)(k+1) = 2 - k - k^2 = -(k-1)(k+2)
+\]
+\[
+|B_k| = (-k)(k+1) - (1)(-2) = -k^2 - k + 2 = -(k-1)(k+2)
+\]
+因此，它们的和为：
+\[
+|A_k| + |B_k| = 2(2 - k - k^2) = 4 - 2k - 2k^2
+\]
+接着计算 $A_k + B_k$：
+\[
+A_k + B_k = \begin{pmatrix} 1-k & k+1 \\ k-1 & k+3 \end{pmatrix}
+\]
+其行列式为：
+\[
+|A_k + B_k| = (1-k)(k+3) - (k+1)(k-1) = (1-k)(k+3) + (1-k)(k+1)
+\]
+\[
+|A_k + B_k| = (1-k)(2k+4) = -2(k-1)(k+2) = 4 - 2k - 2k^2
+\]
+由此可见，$|A_k| + |B_k| = |A_k + B_k|$ 成立。
+\end{solution}
+
+\part 由此，以数学归纳法证明
+\[
+\sum_{k=1}^n \frac{|(A_k)^2|}{|(A_k)^2| - |A_k + B_k|} = \frac{n(n-1)}{n+1}
+\]
+对所有正整数 $n$ 成立。
+\begin{solution}
+首先化简求和的通项（注：当 $k=1$ 时分母为零，此处依照代数化简的形式处理通项）：
+利用 (a) 的结果，可知 $|A_k + B_k| = 2|A_k|$，且 $|(A_k)^2| = |A_k|^2$。
+\[
+\frac{|A_k|^2}{|A_k|^2 - |A_k + B_k|} = \frac{|A_k|^2}{|A_k|^2 - 2|A_k|} = \frac{|A_k|}{|A_k| - 2}
+\]
+代入 $|A_k| = 2 - k - k^2$：
+\[
+\frac{2 - k - k^2}{2 - k - k^2 - 2} = \frac{2 - k - k^2}{-k - k^2} = \frac{(k-1)(k+2)}{k(k+1)} = \frac{k^2+k-2}{k^2+k} = 1 - \frac{2}{k(k+1)}
+\]
+利用部分分式展开：
+\[
+1 - \frac{2}{k(k+1)} = 1 - 2\left( \frac{1}{k} - \frac{1}{k+1} \right)
+\]
+设命题 $P(n)$ 为该求和公式。
+当 $n=1$ 时，左边代数化简后的项为 $1 - 2\left( 1 - \frac{1}{2} \right) = 0$。右边为 $\frac{1(0)}{2} = 0$，$P(1)$ 成立。
+假设当 $n=m$ 时 $P(m)$ 成立，即：
+\[
+\sum_{k=1}^m \left[ 1 - 2\left( \frac{1}{k} - \frac{1}{k+1} \right) \right] = \frac{m(m-1)}{m+1}
+\]
+当 $n=m+1$ 时：
+\[
+\sum_{k=1}^{m+1} = \frac{m(m-1)}{m+1} + 1 - 2\left( \frac{1}{m+1} - \frac{1}{m+2} \right)
+\]
+\[
+= \frac{m^2-m+m+1}{m+1} - \frac{2}{m+1} + \frac{2}{m+2} = \frac{m^2-1}{m+1} + \frac{2}{m+2} = m - 1 + \frac{2}{m+2}
+\]
+\[
+= \frac{(m-1)(m+2) + 2}{m+2} = \frac{m^2+m-2+2}{m+2} = \frac{m(m+1)}{m+2}
+\]
+这与代入 $n=m+1$ 到右边公式的结果一致。由数学归纳法可知，原命题对所有正整数 $n$ 成立。
+\end{solution}
+\end{parts}
+
     \question 证明对所有整数 $n \ge 1$, 有
     \[
     (a+b)^n = \comb{n}{0} a^n + \comb{n}{1} a^{n-1}b + \comb{n}{2} a^{n-2}b^2 + \dots + \comb{n}{n} b^n.

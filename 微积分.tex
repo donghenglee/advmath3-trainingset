@@ -216,6 +216,71 @@
         \end{align*}
     \end{solution}
 
+    \question 求极限：
+\[
+\lim_{x \to -\infty} \left( x + \sqrt{x^2 + x + 1} \right)
+\]
+\begin{solution}
+令 $t = -x$，当 $x \to -\infty$ 时，$t \to \infty$。原式化为：
+\[
+\lim_{t \to \infty} \left( \sqrt{t^2 - t + 1} - t \right)
+\]
+分子有理化：
+\[
+\lim_{t \to \infty} \frac{\left( \sqrt{t^2 - t + 1} - t \right) \left( \sqrt{t^2 - t + 1} + t \right)}{\sqrt{t^2 - t + 1} + t} = \lim_{t \to \infty} \frac{-t + 1}{\sqrt{t^2 - t + 1} + t}
+\]
+分子分母同除以 $t$：
+\[
+\lim_{t \to \infty} \frac{-1 + \frac{1}{t}}{\sqrt{1 - \frac{1}{t} + \frac{1}{t^2}} + 1}
+\]
+取极限得：
+\[
+\frac{-1 + 0}{\sqrt{1 - 0 + 0} + 1} = -\frac{1}{2}
+\]
+\end{solution}
+
+\question 求极限：
+\[
+\lim_{x \to 0} \frac{e - (1+x)^{\frac{1}{x}}}{x}
+\]
+\begin{solution}
+此极限为 $\frac{0}{0}$ 型未定式，应用洛必达法则：
+\[
+\lim_{x \to 0} \frac{e - (1+x)^{\frac{1}{x}}}{x} = \lim_{x \to 0} \left( -\frac{d}{dx} (1+x)^{\frac{1}{x}} \right)
+\]
+先对复合函数 $(1+x)^{\frac{1}{x}} = e^{\frac{\ln(1+x)}{x}}$ 求导：
+\[
+\frac{d}{dx} (1+x)^{\frac{1}{x}} = (1+x)^{\frac{1}{x}} \cdot \frac{d}{dx} \left[ \frac{\ln(1+x)}{x} \right]
+\]
+利用商的求导法则求得：
+\[
+\frac{d}{dx} \left[ \frac{\ln(1+x)}{x} \right] = \frac{\frac{x}{1+x} - \ln(1+x)}{x^2} = \frac{x - (1+x)\ln(1+x)}{x^2(1+x)}
+\]
+因此，原极限可拆分为两个极限的乘积：
+\[
+\lim_{x \to 0} \frac{e - (1+x)^{\frac{1}{x}}}{x} = -\lim_{x \to 0} (1+x)^{\frac{1}{x}} \cdot \lim_{x \to 0} \frac{x - (1+x)\ln(1+x)}{x^2(1+x)}
+\]
+分别计算这两个极限：
+
+第一项由重要极限得：
+\[
+\lim_{x \to 0} (1+x)^{\frac{1}{x}} = e
+\]
+
+第二项继续应用洛必达法则：
+\[
+\lim_{x \to 0} \frac{x - (1+x)\ln(1+x)}{x^2 + x^3} = \lim_{x \to 0} \frac{1 - \left( \ln(1+x) + 1 \right)}{2x + 3x^2} = \lim_{x \to 0} \frac{-\ln(1+x)}{2x + 3x^2}
+\]
+再次应用洛必达法则：
+\[
+\lim_{x \to 0} \frac{-\ln(1+x)}{2x + 3x^2} = \lim_{x \to 0} \frac{-\frac{1}{1+x}}{2 + 6x} = -\frac{1}{2}
+\]
+将两项极限结果合并，最终得到：
+\[
+\lim_{x \to 0} \frac{e - (1+x)^{\frac{1}{x}}}{x} = -e \cdot \left( -\frac{1}{2} \right) = \frac{e}{2}
+\]
+\end{solution}
+
     \question 已知等差数列 $\{a_n\},\{b_n\}$ 公差均不为 $0$, 且$\displaystyle \lim_{n\to\infty}\frac{a_n}{b_n}=5$,求
     \[
     \lim_{n\to\infty}\frac{a_1+a_2+\cdots+a_n}{n\cdot b_{2n}}.
@@ -25668,6 +25733,209 @@ I=\int_{\infty}^{0} \frac{\log\left(\frac{1}{u}\right)}{1-\frac{1}{u}+\frac{1}{u
 I=0
 \]
 \end{solution}
+
+\question
+\begin{parts}
+\part 求积分：
+\[
+\int x^{-1} \tan^2(\ln x) \, dx
+\]
+\begin{solution}
+将原积分变形为：
+\[
+\int \frac{\tan^2(\ln x)}{x} \, dx
+\]
+令 $u = \ln x$，则 $du = \frac{1}{x} \, dx$。代入得：
+\[
+\int \tan^2 u \, du = \int \left( \sec^2 u - 1 \right) \, du = \tan u - u + C
+\]
+将 $u = \ln x$ 代回，最终得到：
+\[
+\tan(\ln x) - \ln x + C
+\]
+\end{solution}
+
+\part 求积分：
+\[
+\int \frac{x}{x^2 + 1} \left[ \tan^2 \left( \ln \sqrt{x^2 + 1} \right) - \frac{x^2}{2} \right] \, dx
+\]
+\begin{solution}
+令 $u = \ln \sqrt{x^2 + 1} = \frac{1}{2} \ln \left( x^2 + 1 \right)$，微分得：
+\[
+du = \frac{x}{x^2 + 1} \, dx
+\]
+同时由 $u$ 的定义可得 $e^{2u} = x^2 + 1$，即 $x^2 = e^{2u} - 1$，所以：
+\[
+\frac{x^2}{2} = \frac{e^{2u} - 1}{2}
+\]
+将上述各式代入原积分：
+\[
+\int \left( \tan^2 u - \frac{e^{2u} - 1}{2} \right) \, du = \int \left( \sec^2 u - 1 - \frac{1}{2} e^{2u} + \frac{1}{2} \right) \, du
+\]
+整理积分：
+\[
+\int \left( \sec^2 u - \frac{1}{2} - \frac{1}{2} e^{2u} \right) \, du = \tan u - \frac{1}{2} u - \frac{1}{4} e^{2u} + C
+\]
+将 $u = \ln \sqrt{x^2 + 1}$ 及 $e^{2u} = x^2 + 1$ 代回：
+\[
+\tan \left( \ln \sqrt{x^2 + 1} \right) - \frac{1}{2} \ln \sqrt{x^2 + 1} - \frac{1}{4} \left( x^2 + 1 \right) + C
+\]
+吸收常数项，化简最终得到：
+\[
+\tan \left( \ln \sqrt{x^2 + 1} \right) - \frac{1}{4} \ln \left( x^2 + 1 \right) - \frac{1}{4} x^2 + C
+\]
+\end{solution}
+\end{parts}
+
+\question 设
+\[
+I=\int \frac{1}{x\sqrt{x^2+x+2}}\,dx
+\]
+
+\begin{parts}
+\part 令 $x^2+x+2=(x+u)^2$
+
+\begin{subparts}
+\subpart 用 $u$ 表示 $x$
+
+\begin{solution}
+展开等式两边，得
+\[
+x^2+x+2=x^2+2ux+u^2
+\]
+
+消去两边的 $x^2$，并移项，得
+\[
+x-2ux=u^2-2
+\]
+
+提取公因式 $x$，得
+\[
+x\left(1-2u\right)=u^2-2
+\]
+
+解得
+\[
+x=\frac{u^2-2}{1-2u}
+\]
+\end{solution}
+
+\subpart 用 $u$ 表示 $\frac{dx}{du}$
+
+\begin{solution}
+由上一小题可知
+\[
+x=\frac{u^2-2}{1-2u}
+\]
+
+对 $u$ 求导，利用商的求导法则，得
+\[
+\frac{dx}{du}
+=\frac{2u\left(1-2u\right)-\left(u^2-2\right)(-2)}{\left(1-2u\right)^2}
+\]
+\[
+=\frac{2u-4u^2+2u^2-4}{\left(1-2u\right)^2}
+\]
+\[
+=\frac{-2u^2+2u-4}{\left(1-2u\right)^2}
+\]
+\end{solution}
+\end{subparts}
+
+\part 使用 (a) 中的代换，并令 $t=\frac{u-\sqrt{2}}{u+\sqrt{2}}$，求 $I$
+
+\begin{solution}
+由
+\[
+x^2+x+2=(x+u)^2
+\]
+取正平方根，得
+\[
+x+u=\sqrt{x^2+x+2}
+\]
+
+根据 (a) 中的结果
+\[
+x=\frac{u^2-2}{1-2u}
+\]
+及
+\[
+\frac{dx}{du}
+=\frac{-2u^2+2u-4}{\left(1-2u\right)^2}
+\]
+
+可得
+\[
+x+u=\frac{-u^2+u-2}{1-2u}
+\]
+
+将上述表达式代入原积分，得
+\[
+I=\int \frac{1}{x(x+u)}\frac{dx}{du}\,du
+\]
+\[
+=\int
+\frac{1}{\frac{u^2-2}{1-2u}\cdot\frac{-u^2+u-2}{1-2u}}
+\cdot\frac{-2u^2+2u-4}{\left(1-2u\right)^2}\,du
+\]
+
+约去公因式并整理，得
+\[
+I=\int \frac{2}{u^2-2}\,du
+\]
+
+令
+\[
+t=\frac{u-\sqrt{2}}{u+\sqrt{2}}
+\]
+
+解出 $u$，得
+\[
+u=\sqrt{2}\frac{1+t}{1-t}
+\]
+
+对 $t$ 求导，得
+\[
+\frac{du}{dt}
+=\frac{2\sqrt{2}}{\left(1-t\right)^2}
+\]
+
+同时
+\[
+u^2-2=\frac{8t}{\left(1-t\right)^2}
+\]
+
+因此
+\[
+I=\int \frac{2}{\frac{8t}{\left(1-t\right)^2}}
+\cdot\frac{2\sqrt{2}}{\left(1-t\right)^2}\,dt
+\]
+\[
+=\frac{1}{\sqrt{2}}\int \frac{1}{t}\,dt
+\]
+\[
+=\frac{1}{\sqrt{2}}\ln\left|t\right|+C
+\]
+
+代回
+\[
+t=\frac{u-\sqrt{2}}{u+\sqrt{2}}
+\]
+以及
+\[
+u=\sqrt{x^2+x+2}-x
+\]
+
+最终得到
+\[
+I=\frac{1}{\sqrt{2}}
+\ln\left|
+\frac{\sqrt{x^2+x+2}-x-\sqrt{2}}
+{\sqrt{x^2+x+2}-x+\sqrt{2}}
+\right|+C
+\]
+\end{solution}
+\end{parts}
 %exponential
     \question 
     \[
@@ -29844,6 +30112,238 @@ p+2q=-4 \\
 \end{align*}
 \end{solution}
 \end{parts}
+
+\question 求积分的值：
+\[
+\int_0^{\frac{\pi}{2}} \frac{\sin x + \cos x + 1}{\sqrt{1 + \sin x} + \sqrt{1 + \cos x} + 1} \, dx
+\]
+\begin{solution}
+设被积函数的分子和分母分别为 $N$ 和 $D$。为了有理化分母，将分子与分母同乘 $\sqrt{1 + \sin x} + \sqrt{1 + \cos x} - 1$。
+分母变为：
+\[
+\left( \sqrt{1 + \sin x} + \sqrt{1 + \cos x} \right)^2 - 1^2
+\]
+\[
+= 1 + \sin x + 1 + \cos x + 2\sqrt{(1 + \sin x)(1 + \cos x)} - 1
+\]
+\[
+= 1 + \sin x + \cos x + 2\sqrt{1 + \sin x + \cos x + \sin x \cos x}
+\]
+观察根号内的式子，令 $y = \sin x + \cos x$，则 $\sin x \cos x = \frac{1}{2}(y^2 - 1)$。
+根号内部为 $1 + y + \frac{1}{2}(y^2 - 1) = \frac{1}{2}(y^2 + 2y + 1) = \frac{1}{2}(y + 1)^2$。
+由于在 $[0, \frac{\pi}{2}]$ 上 $y + 1 > 0$，所以 $2\sqrt{\frac{1}{2}(y+1)^2} = \sqrt{2}(y+1) = \sqrt{2}(\sin x + \cos x + 1)$。
+因此，分母化简为：
+\[
+(1 + \sin x + \cos x) + \sqrt{2}(\sin x + \cos x + 1) = (1 + \sqrt{2})(\sin x + \cos x + 1)
+\]
+原积分可以消去公因式 $(\sin x + \cos x + 1)$，变为：
+\[
+\int_0^{\frac{\pi}{2}} \frac{\sqrt{1 + \sin x} + \sqrt{1 + \cos x} - 1}{1 + \sqrt{2}} \, dx = (\sqrt{2} - 1) \int_0^{\frac{\pi}{2}} \left( \sqrt{1 + \sin x} + \sqrt{1 + \cos x} - 1 \right) \, dx
+\]
+分别计算各项积分。利用半角公式 $1 + \cos x = 2\cos^2\left(\frac{x}{2}\right)$：
+\[
+\int_0^{\frac{\pi}{2}} \sqrt{1 + \cos x} \, dx = \int_0^{\frac{\pi}{2}} \sqrt{2}\cos\left(\frac{x}{2}\right) \, dx = \left[ 2\sqrt{2}\sin\left(\frac{x}{2}\right) \right]_0^{\frac{\pi}{2}} = 2\sqrt{2}\sin\left(\frac{\pi}{4}\right) = 2
+\]
+由对称性（或用 $1 + \sin x = \left(\sin\frac{x}{2} + \cos\frac{x}{2}\right)^2$），同理可得：
+\[
+\int_0^{\frac{\pi}{2}} \sqrt{1 + \sin x} \, dx = 2
+\]
+积分余下常数项为 $-\frac{\pi}{2}$。最终积分为：
+\[
+(\sqrt{2} - 1)\left( 2 + 2 - \frac{\pi}{2} \right) = (\sqrt{2} - 1)\left( 4 - \frac{\pi}{2} \right)
+\]
+\end{solution}
+
+\question 假设 $x \in \mathbb{R}$ 且 $\cos x \neq 0$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 考虑 $(1 - \sin x)(1 + \sin x) = \cos^2 x$，分别求 $\int (\sec x - \tan x) \, dx$ 及 $\int (\sec x + \tan x) \, dx$。
+\begin{solution}
+对于第一个积分：
+\[
+\int (\sec x - \tan x) \, dx = \int \frac{1 - \sin x}{\cos x} \, dx = \int \frac{(1 - \sin x)\cos x}{\cos^2 x} \, dx
+\]
+\[
+= \int \frac{\cos x}{1 + \sin x} \, dx = \ln(1 + \sin x) + C_1
+\]
+对于第二个积分：
+\[
+\int (\sec x + \tan x) \, dx = \int \frac{1 + \sin x}{\cos x} \, dx = \int \frac{(1 + \sin x)\cos x}{\cos^2 x} \, dx
+\]
+\[
+= \int \frac{\cos x}{1 - \sin x} \, dx = -\ln(1 - \sin x) + C_2
+\]
+\end{solution}
+
+\subpart 由此，求 $\int \sec x \, dx$。
+\begin{solution}
+利用恒等式 $2\sec x = (\sec x - \tan x) + (\sec x + \tan x)$：
+\[
+\int \sec x \, dx = \frac{1}{2} \left( \int (\sec x - \tan x) \, dx + \int (\sec x + \tan x) \, dx \right)
+\]
+\[
+= \frac{1}{2} \left( \ln(1 + \sin x) - \ln(1 - \sin x) \right) + C = \frac{1}{2} \ln\left( \frac{1 + \sin x}{1 - \sin x} \right) + C
+\]
+\end{solution}
+\end{subparts}
+
+\part 利用 (a)(ii)，求积分：
+\[
+\int_{\frac{\pi}{12162}}^{\frac{\pi}{6081}} \csc(2027x) \, dx
+\]
+\begin{solution}
+令 $u = 2027x$，则 $du = 2027 \, dx$。
+当 $x = \frac{\pi}{12162}$ 时，$u = \frac{\pi}{6}$；当 $x = \frac{\pi}{6081}$ 时，$u = \frac{\pi}{3}$。
+积分转换为：
+\[
+\frac{1}{2027} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \csc u \, du
+\]
+为了利用正割积分的结果，令 $v = \frac{\pi}{2} - u$，则 $dv = -du$ 且 $\csc u = \sec v$。
+下限 $v = \frac{\pi}{3}$，上限 $v = \frac{\pi}{6}$。
+\[
+= \frac{1}{2027} \int_{\frac{\pi}{3}}^{\frac{\pi}{6}} \sec v (-dv) = \frac{1}{2027} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \sec v \, dv
+\]
+代入 (a)(ii) 的公式：
+\[
+= \frac{1}{2027} \left[ \frac{1}{2} \ln\left( \frac{1 + \sin v}{1 - \sin v} \right) \right]_{\frac{\pi}{6}}^{\frac{\pi}{3}}
+\]
+当 $v = \frac{\pi}{3}$，$\sin v = \frac{\sqrt{3}}{2}$，代数式为 $\frac{1 + \sqrt{3}/2}{1 - \sqrt{3}/2} = \frac{2 + \sqrt{3}}{2 - \sqrt{3}} = (2 + \sqrt{3})^2$。
+当 $v = \frac{\pi}{6}$，$\sin v = \frac{1}{2}$，代数式为 $\frac{1 + 1/2}{1 - 1/2} = 3$。
+最终结果为：
+\[
+\frac{1}{2027} \left( \frac{1}{2}\ln(2 + \sqrt{3})^2 - \frac{1}{2}\ln 3 \right) = \frac{1}{2027} \left( \ln(2 + \sqrt{3}) - \ln\sqrt{3} \right) = \frac{1}{2027} \ln\left( \frac{2\sqrt{3} + 3}{3} \right)
+\]
+\end{solution}
+\end{parts}
+
+\question 求积分：
+\[
+\int_{0}^{\frac{\pi}{4}} \frac{\sin x}{(2 + \sin 2x)^2} \, dx
+\]
+\begin{solution}
+利用三角恒等式将分子拆分：
+\[
+\sin x = \frac{1}{2} (\sin x + \cos x) + \frac{1}{2} (\sin x - \cos x)
+\]
+将原积分拆分为 $I = I_1 + I_2$：
+\[
+I_1 = \frac{1}{2} \int_{0}^{\frac{\pi}{4}} \frac{\sin x + \cos x}{(2 + \sin 2x)^2} \, dx
+\]
+\[
+I_2 = \frac{1}{2} \int_{0}^{\frac{\pi}{4}} \frac{\sin x - \cos x}{(2 + \sin 2x)^2} \, dx
+\]
+
+对于 $I_1$，令 $u = \sin x - \cos x$，则 $du = (\cos x + \sin x) \, dx$，$u^2 = 1 - \sin 2x$，即 $2 + \sin 2x = 3 - u^2$。当 $x = 0$ 时 $u = -1$；当 $x = \frac{\pi}{4}$ 时 $u = 0$。由偶函数性质得：
+\[
+I_1 = \frac{1}{2} \int_{-1}^{0} \frac{1}{\left( 3 - u^2 \right)^2} \, du = \frac{1}{2} \int_{0}^{1} \frac{1}{\left( 3 - u^2 \right)^2} \, du
+\]
+利用积分公式可得：
+\[
+\int \frac{1}{\left( 3 - u^2 \right)^2} \, du = \frac{u}{6 \left( 3 - u^2 \right)} + \frac{1}{12\sqrt{3}} \ln \left( \frac{\sqrt{3} + u}{\sqrt{3} - u} \right)
+\]
+代入上下限：
+\[
+I_1 = \frac{1}{2} \left[ \frac{1}{12} + \frac{1}{12\sqrt{3}} \ln \left( \frac{\sqrt{3} + 1}{\sqrt{3} - 1} \right) \right] = \frac{1}{24} + \frac{1}{24\sqrt{3}} \ln \left( 2 + \sqrt{3} \right)
+\]
+
+对于 $I_2$，令 $v = \sin x + \cos x$，则 $dv = (\cos x - \sin x) \, dx$，$v^2 = 1 + \sin 2x$，即 $2 + \sin 2x = v^2 + 1$。当 $x = 0$ 时 $v = 1$；当 $x = \frac{\pi}{4}$ 时 $v = \sqrt{2}$：
+\[
+I_2 = -\frac{1}{2} \int_{1}^{\sqrt{2}} \frac{1}{\left( v^2 + 1 \right)^2} \, dv
+\]
+利用积分公式：
+\[
+\int \frac{1}{\left( v^2 + 1 \right)^2} \, dv = \frac{v}{2 \left( v^2 + 1 \right)} + \frac{1}{2} \arctan v
+\]
+代入上下限：
+\[
+I_2 = -\frac{1}{2} \left[ \frac{\sqrt{2}}{6} + \frac{1}{2} \arctan \left( \sqrt{2} \right) - \frac{1}{4} - \frac{\pi}{8} \right] = -\frac{\sqrt{2}}{12} - \frac{1}{4} \arctan \left( \sqrt{2} \right) + \frac{1}{8} + \frac{\pi}{16}
+\]
+
+合并 $I_1$ 与 $I_2$，最终得到：
+\[
+I = \frac{1}{6} - \frac{\sqrt{2}}{12} + \frac{\pi}{16} + \frac{1}{24\sqrt{3}} \ln \left( 2 + \sqrt{3} \right) - \frac{1}{4} \arctan \left( \sqrt{2} \right)
+\]
+\end{solution}
+
+\question 求下列不定积分
+\[
+\int \frac{\sec^2 2x-1}{\cos^{\frac{3}{2}}2x\sqrt{2\sin 2x-\cos 2x}}\,dx
+\]
+
+\begin{solution}
+利用三角恒等式
+\[
+\sec^2 2x-1=\tan^2 2x
+\]
+原积分可化为
+\[
+\int \frac{\tan^2 2x}{\cos^{\frac{3}{2}}2x\sqrt{2\sin 2x-\cos 2x}}\,dx
+\]
+
+在被积函数有定义的实数区间内，$\cos 2x>0$，因此
+\[
+\sqrt{2\sin 2x-\cos 2x}
+=\sqrt{\cos 2x\left(2\tan 2x-1\right)}
+\]
+\[
+=\sqrt{\cos 2x}\sqrt{2\tan 2x-1}
+\]
+
+于是原积分化为
+\[
+\int \frac{\tan^2 2x}{\cos^2 2x\sqrt{2\tan 2x-1}}\,dx
+\]
+即
+\[
+\int \frac{\tan^2 2x\sec^2 2x}{\sqrt{2\tan 2x-1}}\,dx
+\]
+
+令
+\[
+t=\tan 2x
+\]
+则
+\[
+dt=2\sec^2 2x\,dx
+\]
+
+原积分变为
+\[
+\frac{1}{2}\int \frac{t^2}{\sqrt{2t-1}}\,dt
+\]
+
+再令
+\[
+v=2t-1
+\]
+则
+\[
+t=\frac{v+1}{2}
+\]
+\[
+dt=\frac{1}{2}\,dv
+\]
+
+因此
+\[
+\frac{1}{2}\int \frac{t^2}{\sqrt{2t-1}}\,dt
+=\frac{1}{16}\int \left(v+1\right)^2v^{-\frac{1}{2}}\,dv
+\]
+\[
+=\frac{1}{16}\int \left(v^{\frac{3}{2}}+2v^{\frac{1}{2}}+v^{-\frac{1}{2}}\right)\,dv
+\]
+\[
+=\frac{1}{40}v^{\frac{5}{2}}+\frac{1}{12}v^{\frac{3}{2}}+\frac{1}{8}v^{\frac{1}{2}}+C
+\]
+
+代回 $v=2t-1$ 及 $t=\tan 2x$，得
+\[
+\frac{1}{40}\left(2\tan 2x-1\right)^{\frac{5}{2}}
++\frac{1}{12}\left(2\tan 2x-1\right)^{\frac{3}{2}}
++\frac{1}{8}\sqrt{2\tan 2x-1}+C
+\]
+\end{solution}
 %分部积分by parts
     \question 使用分部积分法,求
     \[ 
@@ -30063,6 +30563,40 @@ p+2q=-4 \\
         I = \frac{1}{4}x \sec^4 x - \frac{1}{4} \tan x - \frac{1}{12} \tan^3 x + C 
         \]
     \end{solution}
+
+
+    \question 使用分部积分法，证明对于 $n \in \mathbb{N}$、$n \geq 1$ 且 $x > 0$，
+\[
+\int \sqrt[n]{x} \sin \sqrt[n]{x} \, \mathrm{d}x = -nx \cos \sqrt[n]{x} + n^2 \sqrt[n]{x^{n-1}} \sin \sqrt[n]{x} - n(n - 1) \int \frac{\sin \sqrt[n]{x}}{\sqrt[n]{x}} \, \mathrm{d}x
+\]
+
+\begin{solution}
+令 $u = \sqrt[n]{x} = x^{\frac{1}{n}}$，则 $x = u^n$，从而 $\mathrm{d}x = n u^{n-1} \, \mathrm{d}u$。
+原积分变为：
+\[
+\int u \sin u \cdot n u^{n-1} \, \mathrm{d}u = n \int u^n \sin u \, \mathrm{d}u
+\]
+利用分部积分法，设 $v = u^n$，$\mathrm{d}w = \sin u \, \mathrm{d}u$，则 $\mathrm{d}v = n u^{n-1} \, \mathrm{d}u$，$w = -\cos u$：
+\[
+n \int u^n \sin u \, \mathrm{d}u = n \left(-u^n \cos u - \int (-\cos u) n u^{n-1} \, \mathrm{d}u\right)
+\]
+\[
+= -n u^n \cos u + n^2 \int u^{n-1} \cos u \, \mathrm{d}u
+\]
+再次对 $\int u^{n-1} \cos u \, \mathrm{d}u$ 使用分部积分法，设 $v = u^{n-1}$，$\mathrm{d}w = \cos u \, \mathrm{d}u$，则 $\mathrm{d}v = (n - 1)u^{n-2} \, \mathrm{d}u$，$w = \sin u$：
+\[
+\int u^{n-1} \cos u \, \mathrm{d}u = u^{n-1} \sin u - \int (n - 1)u^{n-2} \sin u \, \mathrm{d}u
+\]
+代回上式：
+\[
+= -n u^n \cos u + n^2 \left(u^{n-1} \sin u - (n - 1) \int u^{n-2} \sin u \, \mathrm{d}u\right)
+\]
+由于 $u = \sqrt[n]{x}$ 且 $\int u^{n-2} \sin u \, \mathrm{d}u = \int \frac{\sin \sqrt[n]{x}}{\sqrt[n]{x^2}} \cdot \frac{n}{\sqrt[n]{x^{n-1}}} \, \mathrm{d}x$ 转换变量后对应原题形式，整理可得：
+\[
+= -nx \cos \sqrt[n]{x} + n^2 \sqrt[n]{x^{n-1}} \sin \sqrt[n]{x} - n(n - 1) \int \frac{\sin \sqrt[n]{x}}{\sqrt[n]{x}} \, \mathrm{d}x
+\]
+证毕。
+\end{solution}
 
     \question
 计算定积分 $I = \int_{-1}^{\frac{3}{2}} |\pi^2 x \sin(\pi x)| \,dx$。
@@ -35115,6 +35649,7 @@ q!\left(\frac{p}{q}\right)-\sum_{k=0}^q \frac{q!}{k!}
 \end{solution}
 %symmetries
 
+
 \question
 计算定积分：
 \[ I = \int_{0}^{1} (2x^3 - 3x^2 - x + 1)^{\frac{1}{3}} \, dx \]
@@ -35569,6 +36104,191 @@ x^2G'''(x)=x^5g'''(x)+9x^4g''(x)+18x^3g'(x)+6x^2g(x)
 \]
 \end{solution}
 \end{parts}
+
+\question 假设 $a > 0$ 且 $a \neq 1$。
+\begin{parts}
+\part
+\begin{subparts}
+\subpart 将 $\cos 3x$ 表示为 $\cos x$ 的形式。
+\begin{solution}
+利用三倍角公式：
+\[
+\cos 3x = 4\cos^3 x - 3\cos x
+\]
+\end{solution}
+
+\subpart 求 $\int u^2 (a^u) \, du$，答案以 $a$ 表示。
+\begin{solution}
+利用分部积分法，令 $w = u^2$ 及 $dv = a^u \, du$，则 $dw = 2u \, du$ 且 $v = \frac{a^u}{\ln a}$。
+\[
+\int u^2 a^u \, du = \frac{u^2 a^u}{\ln a} - \int \frac{2u a^u}{\ln a} \, du
+\]
+再次分部积分：
+\[
+= \frac{u^2 a^u}{\ln a} - \frac{2}{\ln a} \left( \frac{u a^u}{\ln a} - \int \frac{a^u}{\ln a} \, du \right)
+\]
+\[
+= \frac{u^2 a^u}{\ln a} - \frac{2u a^u}{(\ln a)^2} + \frac{2a^u}{(\ln a)^3} + C
+\]
+\end{solution}
+
+\subpart 求 $\int (a^{\sin x}) \cos(3x) \, dx$，答案以 $a$ 表示。
+\begin{solution}
+将 (a)(i) 结果代入：
+\[
+\int a^{\sin x} (4\cos^3 x - 3\cos x) \, dx = \int a^{\sin x} (1 - 4\sin^2 x) \cos x \, dx
+\]
+令 $u = \sin x$，则 $du = \cos x \, dx$，积分转换为：
+\[
+\int a^u (1 - 4u^2) \, du = \int a^u \, du - 4 \int u^2 a^u \, du
+\]
+应用 (a)(ii) 的结果：
+\[
+= \frac{a^u}{\ln a} - 4 \left( \frac{u^2 a^u}{\ln a} - \frac{2u a^u}{(\ln a)^2} + \frac{2a^u}{(\ln a)^3} \right) + C
+\]
+将 $u = \sin x$ 代回：
+\[
+= \frac{a^{\sin x}}{\ln a} - \frac{4\sin^2 x \cdot a^{\sin x}}{\ln a} + \frac{8\sin x \cdot a^{\sin x}}{(\ln a)^2} - \frac{8a^{\sin x}}{(\ln a)^3} + C
+\]
+\end{solution}
+\end{subparts}
+
+\part 假设 $r \neq 0$ 是一个无理数常数，且 $n_k$ 对于所有正整数 $k$ 都是正整数。
+\begin{subparts}
+\subpart 利用 (a)(iii)，求积分：
+\[
+\int_0^1 \frac{4x^3 - 4x}{\sqrt{1 - x^2} \left( 2^{\sqrt{1 - x^2}} \right)} \, dx
+\]
+答案以 $\frac{n_1 r^2 + n_2 r - n_3}{r^{n_4}}$ 的形式表示。
+\begin{solution}
+令 $u = \sqrt{1 - x^2}$，则 $u^2 = 1 - x^2$ 且 $-u \, du = x \, dx$。
+当 $x=0$ 时 $u=1$；当 $x=1$ 时 $u=0$。
+分子可写为 $4x(x^2 - 1) = -4x u^2$。代入积分得：
+\[
+\int_1^0 \frac{-4x u^2}{u \cdot 2^u} \left( \frac{-u \, du}{x} \right) = \int_1^0 4u^2 \left(\frac{1}{2}\right)^u \, du = -4 \int_0^1 u^2 \left(\frac{1}{2}\right)^u \, du
+\]
+这里 $a = \frac{1}{2}$，$\ln a = -\ln 2 = -r$（设 $r = \ln 2$）。利用 (a)(ii) 对此定积分进行计算：
+\[
+\int_0^1 u^2 a^u \, du = \left[ \frac{u^2 a^u}{-r} - \frac{2u a^u}{(-r)^2} + \frac{2a^u}{(-r)^3} \right]_0^1
+\]
+\[
+= \left( \frac{1}{2(-r)} - \frac{1}{r^2} - \frac{1}{r^3} \right) - \left( 0 - 0 - \frac{2}{r^3} \right) = \frac{-r^2 - 2r - 2 + 4}{2r^3} = \frac{-r^2 - 2r + 2}{2r^3}
+\]
+因此原积分为：
+\[
+-4 \left( \frac{-r^2 - 2r + 2}{2r^3} \right) = \frac{2r^2 + 4r - 4}{r^3}
+\]
+匹配格式，得 $n_1=2, n_2=4, n_3=4, n_4=3$。
+\end{solution}
+
+\subpart 利用 (b)(i) 或其他方法，求积分：
+\[
+\int_0^1 \frac{x^3 - 3x^2 + 2x}{\sqrt{x(2-x)} \left( 2^{\sqrt{x(2-x)}} \right)} \, dx
+\]
+\begin{solution}
+令 $x = y + 1$，当 $x=0$ 时 $y=-1$；当 $x=1$ 时 $y=0$。
+根号下 $x(2-x) = (1+y)(1-y) = 1 - y^2$。
+分子 $x^3 - 3x^2 + 2x = x(x-1)(x-2) = (y+1)y(y-1) = y^3 - y$。
+积分为：
+\[
+\int_{-1}^0 \frac{y^3 - y}{\sqrt{1 - y^2} \left( 2^{\sqrt{1 - y^2}} \right)} \, dy
+\]
+设被积函数为 $f(y)$，易验证 $f(-y) = -f(y)$ 为奇函数。
+通过变量代换 $y = -t$：
+\[
+\int_{-1}^0 f(y) \, dy = -\int_0^1 f(t) \, dt
+\]
+由 (b)(i) 可知 $\int_0^1 4f(t) \, dt = \frac{2r^2 + 4r - 4}{r^3}$，所以 $\int_0^1 f(t) \, dt = \frac{2r^2 + 4r - 4}{4r^3}$。
+因此结果为：
+\[
+-\frac{2r^2 + 4r - 4}{4r^3} = \frac{-r^2 - 2r + 2}{2r^3}
+\]
+\end{solution}
+\end{subparts}
+
+\part 求积分：
+\[
+\int_0^1 \frac{\left( x^{13} - 3x^9 + 2x^5 \right) \left( \frac{1}{2} \right)^{x^2 \sqrt{2-x^4}}}{\sqrt{2-x^4}} \, dx
+\]
+\begin{solution}
+提取分子中的公因式：$x^{13} - 3x^9 + 2x^5 = x^5(x^8 - 3x^4 + 2) = x^5(1 - x^4)(2 - x^4)$。
+令 $u = x^2\sqrt{2 - x^4}$，那么 $u^2 = x^4(2 - x^4) = 2x^4 - x^8$。
+对 $u$ 求导：
+\[
+du = \frac{4x - 4x^5}{\sqrt{2 - x^4}} \, dx = \frac{4x(1 - x^4)}{\sqrt{2 - x^4}} \, dx
+\]
+将原积分变形以便代换：
+\[
+\int_0^1 \frac{1}{4} x^4(2 - x^4) \cdot \frac{4x(1 - x^4)}{\sqrt{2 - x^4}} \left( \frac{1}{2} \right)^u \, dx
+\]
+这恰好等于：
+\[
+\int_0^1 \frac{1}{4} u^2 \left(\frac{1}{2}\right)^u \, du
+\]
+当 $x=0$ 时 $u=0$；当 $x=1$ 时 $u=1$。
+调用 (b)(i) 的中间结论 $\int_0^1 u^2 \left(\frac{1}{2}\right)^u \, du = \frac{-r^2 - 2r + 2}{2r^3}$，代入可得：
+\[
+\frac{1}{4} \left( \frac{-r^2 - 2r + 2}{2r^3} \right) = \frac{-r^2 - 2r + 2}{8r^3}
+\]
+\end{solution}
+\end{parts}
+
+\question 求积分：
+\[
+\int_{-1}^{1} \frac{8^x + 4^x + 1}{16^x + 4^x + 1} \, dx
+\]
+\begin{solution}
+设
+\[
+I = \int_{-1}^{1} \frac{8^x + 4^x + 1}{16^x + 4^x + 1} \, dx
+\]
+进行换元 $x = -u$，则 $dx = -du$，积分可化为：
+\[
+I = \int_{1}^{-1} \frac{8^{-u} + 4^{-u} + 1}{16^{-u} + 4^{-u} + 1} (-du) = \int_{-1}^{1} \frac{8^{-u} + 4^{-u} + 1}{16^{-u} + 4^{-u} + 1} \, du
+\]
+分子分母同乘以 $16^u$，得：
+\[
+\frac{16^u \left( 8^{-u} + 4^{-u} + 1 \right)}{16^u \left( 16^{-u} + 4^{-u} + 1 \right)} = \frac{16^u + 4^u + 2^u}{16^u + 4^u + 1}
+\]
+因此，利用区间对称性：
+\[
+2I = \int_{-1}^{1} \frac{\left( 8^x + 4^x + 1 \right) + \left( 16^x + 4^x + 2^x \right)}{16^x + 4^x + 1} \, dx = \int_{-1}^{1} \frac{16^x + 8^x + 2 \cdot 4^x + 2^x + 1}{16^x + 4^x + 1} \, dx
+\]
+令 $t = 2^x$，被积函数分子与分母可分别因式分解为：
+\[
+t^4 + t^3 + 2t^2 + t + 1 = \left( t^2 + t + 1 \right) \left( t^2 + 1 \right)
+\]
+\[
+t^4 + t^2 + 1 = \left( t^2 + t + 1 \right) \left( t^2 - t + 1 \right)
+\]
+分子分母约去公因式 $t^2 + t + 1$ 得：
+\[
+2I = \int_{-1}^{1} \frac{4^x + 1}{4^x - 2^x + 1} \, dx
+\]
+被积函数 $g(x) = \frac{4^x + 1}{4^x - 2^x + 1}$ 为偶函数，故：
+\[
+I = \int_{0}^{1} \frac{4^x + 1}{4^x - 2^x + 1} \, dx
+\]
+作换元 $t = 2^x$，则 $dt = 2^x \ln 2 \, dx$，即 $dx = \frac{dt}{t \ln 2}$，积分变为：
+\[
+I = \frac{1}{\ln 2} \int_{1}^{2} \frac{t^2 + 1}{t \left( t^2 - t + 1 \right)} \, dt
+\]
+进行部分分式分解：
+\[
+\frac{t^2 + 1}{t \left( t^2 - t + 1 \right)} = \frac{1}{t} + \frac{1}{t^2 - t + 1}
+\]
+逐项求积分：
+\[
+\int_{1}^{2} \frac{1}{t} \, dt = \ln 2
+\]
+\[
+\int_{1}^{2} \frac{1}{t^2 - t + 1} \, dt = \left. \frac{2}{\sqrt{3}} \arctan \left( \frac{2t - 1}{\sqrt{3}} \right) \right|_{1}^{2} = \frac{2}{\sqrt{3}} \left( \frac{\pi}{3} - \frac{\pi}{6} \right) = \frac{\pi}{3\sqrt{3}}
+\]
+代回合并，最终得到：
+\[
+I = \frac{1}{\ln 2} \left( \ln 2 + \frac{\pi}{3\sqrt{3}} \right) = 1 + \frac{\pi}{3\sqrt{3} \ln 2}
+\]
+\end{solution}
 %piecewise/floor func
     \question
     \[
@@ -36859,6 +37579,29 @@ I = \int_{0}^{\pi} \frac{(\pi - x + 3) \sin(\pi - x)}{1+3 \cos^2(\pi - x)} \,dx 
         \]
     \end{solution}
 %mixed fancy techniques/uncategorized
+\question
+\[
+\int_0^\infty \cos x^2 \, dx
+\]
+\begin{solution}
+\[
+\int_0^\infty (\cos x^2 + i \sin x^2) \, dx = \int_0^\infty e^{ix^2} \, dx
+\]
+(令 $x = r e^{\pi i / 4} \Rightarrow dx = e^{\pi i / 4} \, dr$)
+\[
+= \int_0^\infty e^{i(r e^{\pi i / 4})^2} e^{\pi i / 4} \, dr = e^{\pi i / 4} \int_0^\infty e^{-r^2} \, dr
+\]
+\[
+= \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right) \frac{\sqrt{\pi}}{2}
+\]
+\[
+= \frac{1}{2}\sqrt{\frac{\pi}{2}} + i \frac{1}{2}\sqrt{\frac{\pi}{2}}
+\]
+即
+\[
+\int_0^\infty \cos x^2 \, dx = \int_0^\infty \sin x^2 \, dx = \frac{1}{2}\sqrt{\frac{\pi}{2}}
+\]
+\end{solution}
     \question
     求
     \[
@@ -37725,22 +38468,6 @@ J = \frac{x}{2}[\sin(\ln x) - \cos(\ln x)].
 该级数的和为 $\frac{\pi^2}{12}$。
 所以,$[\int_0^1 \frac{\ln(x+1)}{x} dx] = \frac{\pi^2}{12}$。
 \end{solution}
-    
-    \question 
-    \[
-    \int_0^1 \frac{2x e^x - 1}{2x^2 e^x + 2} \, dx = 0.156631
-    \]
-    \begin{solution}
-    \textcolor{red}{(待解)}
-    \end{solution}     %https://artofproblemsolving.com/community/c3108789_2017_asdan_math_tournament
-    
-    \question 
-    \[
-    \int_0^4 \frac{x^4 - 4x + 4}{1 + 2017^{x - 2}} \, dx = 7.22255
-    \]
-    \begin{solution}
-    \textcolor{red}{(待解)}
-    \end{solution}
 
 \end{questions}
 \pagebreak

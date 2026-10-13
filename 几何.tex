@@ -4972,6 +4972,48 @@ C = 30^\circ \quad \left( \sin C = \frac{1}{2} \right)
         故恒等式得证。
     \end{solution}
 
+    \question
+证明：
+\[
+\frac{\sin 4x - \sin x}{\cos 4x + \cos x} - \frac{\sin 4x + \sin x}{\cos 4x - \cos x} = 2\csc 3x
+\]
+
+\begin{solution}
+利用和差化积公式：
+\[
+\sin A - \sin B = 2\cos\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
+\]
+\[
+\sin A + \sin B = 2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
+\]
+\[
+\cos A + \cos B = 2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
+\]
+\[
+\cos A - \cos B = -2\sin\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
+\]
+将 $A = 4x, B = x$ 代入，得 $\frac{A+B}{2} = \frac{5x}{2}$，$\frac{A-B}{2} = \frac{3x}{2}$。
+
+化简第一项：
+\[
+\frac{\sin 4x - \sin x}{\cos 4x + \cos x} = \frac{2\cos\left(\frac{5x}{2}\right)\sin\left(\frac{3x}{2}\right)}{2\cos\left(\frac{5x}{2}\right)\cos\left(\frac{3x}{2}\right)} = \frac{\sin\left(\frac{3x}{2}\right)}{\cos\left(\frac{3x}{2}\right)} = \tan\left(\frac{3x}{2}\right)
+\]
+化简第二项：
+\[
+\frac{\sin 4x + \sin x}{\cos 4x - \cos x} = \frac{2\sin\left(\frac{5x}{2}\right)\cos\left(\frac{3x}{2}\right)}{-2\sin\left(\frac{5x}{2}\right)\sin\left(\frac{3x}{2}\right)} = -\frac{\cos\left(\frac{3x}{2}\right)}{\sin\left(\frac{3x}{2}\right)} = -\cot\left(\frac{3x}{2}\right)
+\]
+将两项代入原式左边：
+\[
+\text{左边} = \tan\left(\frac{3x}{2}\right) - \left(-\cot\left(\frac{3x}{2}\right)\right) = \tan\left(\frac{3x}{2}\right) + \cot\left(\frac{3x}{2}\right)
+\]
+利用 $\tan \theta + \cot \theta = \frac{\sin \theta}{\cos \theta} + \frac{\cos \theta}{\sin \theta} = \frac{\sin^2 \theta + \cos^2 \theta}{\sin \theta \cos \theta} = \frac{1}{\sin \theta \cos \theta} = \frac{2}{\sin(2\theta)}$：
+令 $\theta = \frac{3x}{2}$，则 $2\theta = 3x$：
+\[
+\text{左边} = \frac{2}{\sin 3x} = 2\csc 3x = \text{右边}
+\]
+等式得证。
+\end{solution}
+
     \question 已知
     \[
     x=\csc\theta-\sin\theta,\quad y=\sec\theta-\cos\theta,\quad 0<\theta<\frac{\pi}{2}
@@ -8265,6 +8307,42 @@ x - y &= -8
 \[
 BD = 27 + x = 35
 \]
+\end{solution}
+
+\question
+如图，$AB$ 为切线，$A$ 为切点，$CD$ 为切线，$D$ 为切点，两直线交于 $P$ 点，且 $P$ 在圆上。已知 $AB = 7$，$CD = 15$。
+求 $BC = ?$
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image531.png}
+    \end{figure}
+    \ifprintanswers
+    \begin{figure}[H]
+        \centering        
+        \includegraphics[width=0.4\textwidth]{images/image532.png}
+    \end{figure}
+    \fi
+\begin{solution}
+作 $\triangle ABD$ 的外接圆，交 $CD$、$AC$ 于 $E$、$F$ 两点。
+
+因为 $A$、$D$ 为切点
+$\Rightarrow \angle BAD = \angle EDA$
+$\Rightarrow ABED$ 为等腰梯形
+$\Rightarrow AB = DE = 7$
+
+$\because \angle BAP = \frac{1}{2} \widehat{AP} = \angle ADB = \frac{1}{2} \widehat{AB} = \angle AFB$
+$\therefore BF = AB = 7$
+
+由圆的外幂可知
+\[
+CF \times CA = CE \times CD \Rightarrow CF \times CA = 8 \times 15
+\]
+运用 $\triangle ABF$ 等腰三角形的中线定理延伸可知
+\[
+CF \times CA = CB^2 - AB^2 \Rightarrow CB^2 - 49
+\]
+综合可得 $CB^2 - 49 = 120$，
+故 $BC = 13$。
 \end{solution}
 
     \question 右图中，$AB$ 是圆的直径，$CAD$ 是圆的切线。直线 $BC$ 及 $BD$ 分别与圆相交于点 $E$ 及 $F$。已知 $CE : CB = 4 : 13$ 及 $DF : DB = 1 : 2$，求 $\tan \angle CBD$。
