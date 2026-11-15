@@ -5132,6 +5132,53 @@ C = 30^\circ \quad \left( \sin C = \frac{1}{2} \right)
 \[ = \text{左边 (L.H.S.)} \]
 \end{solution}
 
+\question
+证明：
+\[
+\csc x \sin 3x \tan 3x - \sec x \cos 3x \cot 3x = 2(\csc 6x - 2\cot 6x \cos 2x)
+\]
+\begin{solution}
+从左边出发，将其化为正弦和余弦的形式：
+\begin{align*}
+\text{LHS} &= \frac{1}{\sin x} \cdot \sin 3x \cdot \frac{\sin 3x}{\cos 3x} - \frac{1}{\cos x} \cdot \cos 3x \cdot \frac{\cos 3x}{\sin 3x} \\
+&= \frac{\sin^2 3x}{\sin x \cos 3x} - \frac{\cos^2 3x}{\cos x \sin 3x} \\
+&= \frac{\sin^3 3x \cos x - \cos^3 3x \sin x}{\sin x \cos x \sin 3x \cos 3x}
+\end{align*}
+分母利用二倍角公式化简：
+\[
+\sin x \cos x \sin 3x \cos 3x = \left(\frac{1}{2}\sin 2x\right)\left(\frac{1}{2}\sin 6x\right) = \frac{1}{4}\sin 2x \sin 6x
+\]
+分子利用降幂公式 $\sin^3 \theta = \frac{3\sin \theta - \sin 3\theta}{4}$ 与 $\cos^3 \theta = \frac{3\cos \theta + \cos 3\theta}{4}$（其中 $\theta = 3x$）化简：
+\begin{align*}
+\sin^3 3x \cos x - \cos^3 3x \sin x &= \frac{3\sin 3x - \sin 9x}{4}\cos x - \frac{3\cos 3x + \cos 9x}{4}\sin x \\
+&= \frac{3(\sin 3x \cos x - \cos 3x \sin x) - (\sin 9x \cos x + \cos 9x \sin x)}{4} \\
+&= \frac{3\sin(3x - x) - \sin(9x + x)}{4} \\
+&= \frac{3\sin 2x - \sin 10x}{4}
+\end{align*}
+将分子分母代回原式，约去 $\frac{1}{4}$：
+\[
+\text{LHS} = \frac{3\sin 2x - \sin 10x}{\sin 2x \sin 6x}
+\]
+注意到 $\sin 10x = \sin(6x + 4x)$ 或利用和差化积拆分分子：
+\begin{align*}
+3\sin 2x - \sin 10x &= 2\sin 2x + (\sin 2x - \sin 10x) \\
+&= 2\sin 2x - 2\cos 6x \sin 4x
+\end{align*}
+进一步利用 $\sin 4x = 2\sin 2x \cos 2x$，得：
+\begin{align*}
+3\sin 2x - \sin 10x &= 2\sin 2x - 2\cos 6x (2\sin 2x \cos 2x) \\
+&= 2\sin 2x (1 - 2\cos 6x \cos 2x)
+\end{align*}
+代入 $\text{LHS}$ 并约去 $\sin 2x$：
+\begin{align*}
+\text{LHS} &= \frac{2\sin 2x (1 - 2\cos 6x \cos 2x)}{\sin 2x \sin 6x} \\
+&= 2\left(\frac{1}{\sin 6x} - \frac{2\cos 6x \cos 2x}{\sin 6x}\right) \\
+&= 2(\csc 6x - 2\cot 6x \cos 2x) \\
+&= \text{RHS}
+\end{align*}
+得证。
+\end{solution}
+
     \question 证明以下恒等式:
     \begin{parts}
     \part 
@@ -5838,6 +5885,81 @@ $= -\tan C(1 - \tan A \tan B) + \tan C = \tan A \tan B \tan C$.
 \[
 x = \frac{7\pi}{12} \quad \text{或} \quad x = \frac{11\pi}{12}
 \]
+\end{solution}
+\end{parts}
+
+\question
+已知 $x$ 不是 $\frac{\pi}{2}$ 的倍数。
+\begin{parts}
+\part 证明
+\[
+\frac{\cos x - \sin x + 1}{\cos x + \sin x + 1} = \sec x + \cot 2x - \csc 2x
+\]
+\begin{solution}
+从右边出发化简：
+\begin{align*}
+\text{RHS} &= \sec x + \cot 2x - \csc 2x \\
+&= \frac{1}{\cos x} + \frac{\cos 2x}{\sin 2x} - \frac{1}{\sin 2x} \\
+&= \frac{1}{\cos x} - \frac{1 - \cos 2x}{\sin 2x} \\
+&= \frac{1}{\cos x} - \frac{2\sin^2 x}{2\sin x \cos x} \\
+&= \frac{1}{\cos x} - \frac{\sin x}{\cos x} \\
+&= \frac{1 - \sin x}{\cos x}
+\end{align*}
+另一方面，从左边出发利用二倍角公式化简：
+\begin{align*}
+\text{LHS} &= \frac{\cos x - \sin x + 1}{\cos x + \sin x + 1} \\
+&= \frac{(1 + \cos x) - \sin x}{(1 + \cos x) + \sin x} \\
+&= \frac{2\cos^2 \frac{x}{2} - 2\sin \frac{x}{2} \cos \frac{x}{2}}{2\cos^2 \frac{x}{2} + 2\sin \frac{x}{2} \cos \frac{x}{2}} \\
+&= \frac{\cos \frac{x}{2} - \sin \frac{x}{2}}{\cos \frac{x}{2} + \sin \frac{x}{2}}
+\end{align*}
+分子分母同乘以 $\cos \frac{x}{2} - \sin \frac{x}{2}$：
+\begin{align*}
+\text{LHS} &= \frac{\left(\cos \frac{x}{2} - \sin \frac{x}{2}\right)^2}{\cos^2 \frac{x}{2} - \sin^2 \frac{x}{2}} \\
+&= \frac{\cos^2 \frac{x}{2} - 2\sin \frac{x}{2}\cos \frac{x}{2} + \sin^2 \frac{x}{2}}{\cos x} \\
+&= \frac{1 - \sin x}{\cos x}
+\end{align*}
+因此 $\text{LHS} = \text{RHS}$，得证。
+\end{solution}
+
+\part 对于 $0 < x < 2\pi$，解方程：
+\[
+\frac{2\cos^2 x - \sin 2x}{2\cos^2 x + \sin 2x} = \frac{(1 - \cos 4x)\cos 4x + (2 - \sin 4x)\sin 4x}{\sin 4x}
+\]
+\begin{solution}
+首先注意方程有意义的条件为 $\sin 4x \neq 0$ 且 $2\cos^2 x + \sin 2x \neq 0$，即 $x$ 不是 $\frac{\pi}{4}$ 的倍数（从而 $2x$ 不是 $\frac{\pi}{2}$ 的倍数）。
+观察方程左边，利用 $2\cos^2 x = \cos 2x + 1$：
+\[
+\text{LHS} = \frac{\cos 2x - \sin 2x + 1}{\cos 2x + \sin 2x + 1}
+\]
+将 (a) 中的 $x$ 替换为 $2x$，可得：
+\[
+\text{LHS} = \sec 2x + \cot 4x - \csc 4x
+\]
+再化简方程右边：
+\begin{align*}
+\text{RHS} &= \frac{\cos 4x - \cos^2 4x + 2\sin 4x - \sin^2 4x}{\sin 4x} \\
+&= \frac{\cos 4x + 2\sin 4x - (\cos^2 4x + \sin^2 4x)}{\sin 4x} \\
+&= \frac{\cos 4x + 2\sin 4x - 1}{\sin 4x} \\
+&= \cot 4x + 2 - \csc 4x
+\end{align*}
+令 $\text{LHS} = \text{RHS}$，得：
+\[
+\sec 2x + \cot 4x - \csc 4x = \cot 4x + 2 - \csc 4x
+\]
+两边消去 $\cot 4x - \csc 4x$，得：
+\[
+\sec 2x = 2 \implies \cos 2x = \frac{1}{2}
+\]
+因为 $0 < x < 2\pi$，所以 $0 < 2x < 4\pi$。
+解得：
+\[
+2x = \frac{\pi}{3}, \frac{5\pi}{3}, \frac{7\pi}{3}, \frac{11\pi}{3}
+\]
+即：
+\[
+x = \frac{\pi}{6}, \frac{5\pi}{6}, \frac{7\pi}{6}, \frac{11\pi}{6}
+\]
+经检验，以上四个解均满足 $\sin 4x \neq 0$ 且 $2\cos^2 x + \sin 2x \neq 0$，均为原方程的解。
 \end{solution}
 \end{parts}
 

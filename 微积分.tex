@@ -26103,6 +26103,39 @@ e^{[\ln(1+e^y)]^2} \left( 1 - \frac{1}{1 + e^y} \right) = e^{[\ln(1+e^y)]^2} \le
 \frac{1}{2} \int_{(\ln 2)^2}^1 e^v \,dv = \frac{1}{2} \left( e - e^{(\ln 2)^2} \right)
 \]
 \end{solution}
+
+\question
+计算不定积分：
+\[
+\int \frac{e^{\frac{2}{x}}\left(1 + e^{\frac{1}{x}}\right)}{x^2 \sqrt{1 - e^{\frac{2}{x}}}} \,dx
+\]
+\begin{solution}
+作换元，令 $u = e^{\frac{1}{x}}$，则 $du = -\frac{1}{x^2} e^{\frac{1}{x}} \,dx$，即 $\frac{e^{\frac{1}{x}}}{x^2} \,dx = -du$。
+原积分可改写并代入换元：
+\begin{align*}
+\int \frac{e^{\frac{2}{x}}\left(1 + e^{\frac{1}{x}}\right)}{x^2 \sqrt{1 - e^{\frac{2}{x}}}} \,dx &= \int \frac{e^{\frac{1}{x}}\left(1 + e^{\frac{1}{x}}\right)}{\sqrt{1 - \left(e^{\frac{1}{x}}\right)^2}} \cdot \frac{e^{\frac{1}{x}}}{x^2} \,dx \\
+&= -\int \frac{u(1 + u)}{\sqrt{1 - u^2}} \,du \\
+&= -\int \frac{u}{\sqrt{1 - u^2}} \,du - \int \frac{u^2}{\sqrt{1 - u^2}} \,du
+\end{align*}
+分别计算这两部分积分。对于第一部分：
+\[
+-\int \frac{u}{\sqrt{1 - u^2}} \,du = \frac{1}{2} \int (1 - u^2)^{-\frac{1}{2}} \,d(1 - u^2) = \sqrt{1 - u^2}
+\]
+对于第二部分，令 $u = \sin \theta$（其中 $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$），则 $du = \cos \theta \,d\theta$：
+\begin{align*}
+-\int \frac{u^2}{\sqrt{1 - u^2}} \,du &= -\int \frac{\sin^2 \theta}{\cos \theta} \cos \theta \,d\theta \\
+&= -\int \sin^2 \theta \,d\theta \\
+&= -\frac{1}{2} \int (1 - \cos 2\theta) \,d\theta \\
+&= -\frac{1}{2}\theta + \frac{1}{4}\sin 2\theta \\
+&= -\frac{1}{2}\theta + \frac{1}{2}\sin \theta \cos \theta \\
+&= -\frac{1}{2}\arcsin u + \frac{1}{2}u\sqrt{1 - u^2}
+\end{align*}
+将两部分合并并代回 $u = e^{\frac{1}{x}}$，得：
+\begin{align*}
+\int \frac{e^{\frac{2}{x}}\left(1 + e^{\frac{1}{x}}\right)}{x^2 \sqrt{1 - e^{\frac{2}{x}}}} \,dx &= \sqrt{1 - u^2} + \frac{1}{2}u\sqrt{1 - u^2} - \frac{1}{2}\arcsin u + C \\
+&= \frac{1}{2}\left(e^{\frac{1}{x}} + 2\right)\sqrt{1 - e^{\frac{2}{x}}} - \frac{1}{2}\arcsin \left(e^{\frac{1}{x}}\right) + C
+\end{align*}
+\end{solution}
 %radicals
     \question 
     \[
@@ -32755,6 +32788,120 @@ e^{-2}\left[\frac{(\ln x)^{n+1}}{n+1}\right]_1^e \leq I_n \leq \left[\frac{(\ln 
 
 \end{parts}
 
+\question
+\begin{parts}
+\part 求 $\int \tan x \sec^2 x \,dx$。
+\begin{solution}
+利用凑微分法，因为 $\frac{d}{dx}(\tan x) = \sec^2 x$，所以：
+\begin{align*}
+\int \tan x \sec^2 x \,dx &= \int \tan x \,d(\tan x) \\
+&= \frac{1}{2}\tan^2 x + C
+\end{align*}
+\end{solution}
+
+\part 利用分部积分法，证明 $\int e^{kx} \tan^2 x \,dx = e^{kx} \tan x - \frac{1}{k} e^{kx} - k \int e^{kx} \tan x \,dx$。
+\begin{solution}
+利用三角恒等式 $\tan^2 x = \sec^2 x - 1$，并应用分部积分法：
+\begin{align*}
+\int e^{kx} \tan^2 x \,dx &= \int e^{kx} (\sec^2 x - 1) \,dx \\
+&= \int e^{kx} \sec^2 x \,dx - \int e^{kx} \,dx \\
+&= \int e^{kx} \,d(\tan x) - \frac{1}{k} e^{kx} \\
+&= e^{kx} \tan x - \int \tan x \,d(e^{kx}) - \frac{1}{k} e^{kx} \\
+&= e^{kx} \tan x - \frac{1}{k} e^{kx} - k \int e^{kx} \tan x \,dx
+\end{align*}
+得证。
+\end{solution}
+
+\part 利用 (b)，求 $\int e^{\sqrt{2}x} \tan^3 x \,dx$。
+\begin{solution}
+先对原积分进行凑微分与分部积分：
+\begin{align*}
+\int e^{\sqrt{2}x} \tan^3 x \,dx &= \int e^{\sqrt{2}x} \tan x (\sec^2 x - 1) \,dx \\
+&= \int e^{\sqrt{2}x} \tan x \sec^2 x \,dx - \int e^{\sqrt{2}x} \tan x \,dx
+\end{align*}
+由 (a) 可知 $\int \tan x \sec^2 x \,dx = \frac{1}{2}\tan^2 x$，对第一项使用分部积分法：
+\begin{align*}
+\int e^{\sqrt{2}x} \tan x \sec^2 x \,dx &= \int e^{\sqrt{2}x} \,d\left(\frac{1}{2}\tan^2 x\right) \\
+&= \frac{1}{2} e^{\sqrt{2}x} \tan^2 x - \frac{\sqrt{2}}{2} \int e^{\sqrt{2}x} \tan^2 x \,dx
+\end{align*}
+在 (b) 的结论中令 $k = \sqrt{2}$，得：
+\[
+\int e^{\sqrt{2}x} \tan^2 x \,dx = e^{\sqrt{2}x} \tan x - \frac{1}{\sqrt{2}} e^{\sqrt{2}x} - \sqrt{2} \int e^{\sqrt{2}x} \tan x \,dx
+\]
+代入上式：
+\begin{align*}
+\int e^{\sqrt{2}x} \tan^3 x \,dx &= \frac{1}{2} e^{\sqrt{2}x} \tan^2 x - \frac{\sqrt{2}}{2}\left(e^{\sqrt{2}x} \tan x - \frac{1}{\sqrt{2}} e^{\sqrt{2}x} - \sqrt{2} \int e^{\sqrt{2}x} \tan x \,dx\right) - \int e^{\sqrt{2}x} \tan x \,dx \\
+&= \frac{1}{2} e^{\sqrt{2}x} \tan^2 x - \frac{\sqrt{2}}{2} e^{\sqrt{2}x} \tan x + \frac{1}{2} e^{\sqrt{2}x} + \int e^{\sqrt{2}x} \tan x \,dx - \int e^{\sqrt{2}x} \tan x \,dx + C \\
+&= \frac{1}{2} e^{\sqrt{2}x} (\tan^2 x - \sqrt{2}\tan x + 1) + C
+\end{align*}
+\end{solution}
+
+\part 求 $\int \tan^3 \left(\frac{\ln x}{\sqrt{2}}\right) \,dx$。
+\begin{solution}
+作换元，令 $u = \frac{\ln x}{\sqrt{2}}$，则 $\ln x = \sqrt{2}u$，即 $x = e^{\sqrt{2}u}$，从而 $dx = \sqrt{2} e^{\sqrt{2}u} \,du$。
+代入原积分并利用 (c) 的结果：
+\begin{align*}
+\int \tan^3 \left(\frac{\ln x}{\sqrt{2}}\right) \,dx &= \int \tan^3 u \cdot \sqrt{2} e^{\sqrt{2}u} \,du \\
+&= \sqrt{2} \int e^{\sqrt{2}u} \tan^3 u \,du \\
+&= \frac{\sqrt{2}}{2} e^{\sqrt{2}u} (\tan^2 u - \sqrt{2}\tan u + 1) + C
+\end{align*}
+将 $u = \frac{\ln x}{\sqrt{2}}$ 与 $e^{\sqrt{2}u} = x$ 代回，得：
+\[
+\int \tan^3 \left(\frac{\ln x}{\sqrt{2}}\right) \,dx = \frac{\sqrt{2}}{2} x \left(\tan^2 \left(\frac{\ln x}{\sqrt{2}}\right) - \sqrt{2}\tan \left(\frac{\ln x}{\sqrt{2}}\right) + 1\right) + C
+\]
+\end{solution}
+\end{parts}
+
+\question
+计算定积分：
+\[
+\int_0^{\ln 3} \frac{x e^x}{(e^{2x} + 3)^2} \,dx
+\]
+\begin{solution}
+作换元，令 $u = e^x$，则 $du = e^x \,dx$。当 $x = 0$ 时，$u = 1$；当 $x = \ln 3$ 时，$u = 3$。
+原积分化为：
+\[
+I = \int_1^3 \frac{\ln u}{(u^2 + 3)^2} \,du
+\]
+再作三角换元，令 $u = \sqrt{3}\tan \theta$，则 $du = \sqrt{3}\sec^2 \theta \,d\theta$。当 $u = 1$ 时，$\theta = \frac{\pi}{6}$；当 $u = 3$ 时，$\theta = \frac{\pi}{3}$。
+代入积分得：
+\begin{align*}
+I &= \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{\ln(\sqrt{3}\tan \theta)}{(3\tan^2 \theta + 3)^2} \sqrt{3}\sec^2 \theta \,d\theta \\
+&= \frac{\sqrt{3}}{9} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{\ln(\sqrt{3}\tan \theta)}{\sec^4 \theta} \sec^2 \theta \,d\theta \\
+&= \frac{\sqrt{3}}{9} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \cos^2 \theta \ln(\sqrt{3}\tan \theta) \,d\theta
+\end{align*}
+拆分对数项，记 $J_1 = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \cos^2 \theta \ln \sqrt{3} \,d\theta$ 与 $J_2 = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \cos^2 \theta \ln(\tan \theta) \,d\theta$。
+先计算 $J_1$：
+\begin{align*}
+J_1 &= \frac{1}{2}\ln 3 \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{1 + \cos 2\theta}{2} \,d\theta \\
+&= \frac{1}{4}\ln 3 \left[ \theta + \frac{1}{2}\sin 2\theta \right]_{\frac{\pi}{6}}^{\frac{\pi}{3}} \\
+&= \frac{1}{4}\ln 3 \left( \left(\frac{\pi}{3} + \frac{\sqrt{3}}{4}\right) - \left(\frac{\pi}{6} + \frac{\sqrt{3}}{4}\right) \right) \\
+&= \frac{\pi \ln 3}{24}
+\end{align*}
+再计算 $J_2$。在 $J_2$ 中作换元 $\theta = \frac{\pi}{2} - t$，利用区间再现性质得：
+\[
+J_2 = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \sin^2 t \ln(\cot t) \,dt = -\int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \sin^2 \theta \ln(\tan \theta) \,d\theta
+\]
+将 $J_2$ 的原式与变换式相加，利用 $\cos^2 \theta - \sin^2 \theta = \cos 2\theta$：
+\[
+2J_2 = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \cos 2\theta \ln(\tan \theta) \,d\theta
+\]
+使用分部积分法计算上式：
+\begin{align*}
+2J_2 &= \left[ \frac{1}{2}\sin 2\theta \ln(\tan \theta) \right]_{\frac{\pi}{6}}^{\frac{\pi}{3}} - \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{1}{2}\sin 2\theta \cdot \frac{\sec^2 \theta}{\tan \theta} \,d\theta \\
+&= \frac{1}{2}\left( \frac{\sqrt{3}}{2}\ln \sqrt{3} - \frac{\sqrt{3}}{2}\ln \frac{1}{\sqrt{3}} \right) - \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \sin \theta \cos \theta \cdot \frac{1}{\sin \theta \cos \theta} \,d\theta \\
+&= \frac{\sqrt{3}}{2}\ln \sqrt{3} - \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} 1 \,d\theta \\
+&= \frac{\sqrt{3}}{4}\ln 3 - \frac{\pi}{6}
+\end{align*}
+因此 $J_2 = \frac{\sqrt{3}}{8}\ln 3 - \frac{\pi}{12}$。
+将 $J_1$ 与 $J_2$ 代回 $I$：
+\begin{align*}
+I &= \frac{\sqrt{3}}{9} (J_1 + J_2) \\
+&= \frac{\sqrt{3}}{9} \left( \frac{\pi \ln 3}{24} + \frac{\sqrt{3}}{8}\ln 3 - \frac{\pi}{12} \right) \\
+&= \frac{1}{24}\ln 3 + \frac{\sqrt{3}\pi \ln 3}{216} - \frac{\sqrt{3}\pi}{108} \\
+&= \frac{1}{24}\ln 3 + \frac{\sqrt{3}\pi (\ln 3 - 2)}{216}
+\end{align*}
+\end{solution}
 % reduction formula
     \question
     证明
@@ -36288,6 +36435,69 @@ I = \frac{1}{\ln 2} \int_{1}^{2} \frac{t^2 + 1}{t \left( t^2 - t + 1 \right)} \,
 \[
 I = \frac{1}{\ln 2} \left( \ln 2 + \frac{\pi}{3\sqrt{3}} \right) = 1 + \frac{\pi}{3\sqrt{3} \ln 2}
 \]
+\end{solution}
+
+\question
+计算定积分：
+\[
+\int_0^{\frac{\pi}{2}} \frac{x \sin^2 2x}{(\sin^3 x + \cos^3 x)^2} \,dx
+\]
+\begin{solution}
+设 $I = \int_0^{\frac{\pi}{2}} \frac{x \sin^2 2x}{(\sin^3 x + \cos^3 x)^2} \,dx$。
+利用定积分的区间再现公式 $\int_0^a f(x) \,dx = \int_0^a f(a - x) \,dx$，令 $x$ 替换为 $\frac{\pi}{2} - x$，得：
+\[
+I = \int_0^{\frac{\pi}{2}} \frac{\left(\frac{\pi}{2} - x\right) \sin^2 (\pi - 2x)}{\left(\sin^3 \left(\frac{\pi}{2} - x\right) + \cos^3 \left(\frac{\pi}{2} - x\right)\right)^2} \,dx = \int_0^{\frac{\pi}{2}} \frac{\left(\frac{\pi}{2} - x\right) \sin^2 2x}{(\cos^3 x + \sin^3 x)^2} \,dx
+\]
+将两式相加，得：
+\begin{align*}
+2I &= \frac{\pi}{2} \int_0^{\frac{\pi}{2}} \frac{\sin^2 2x}{(\sin^3 x + \cos^3 x)^2} \,dx \\
+&= \frac{\pi}{2} \int_0^{\frac{\pi}{2}} \frac{4\sin^2 x \cos^2 x}{(\sin^3 x + \cos^3 x)^2} \,dx
+\end{align*}
+两边除以 $2$，并将分子分母同除以 $\cos^6 x$：
+\begin{align*}
+I &= \pi \int_0^{\frac{\pi}{2}} \frac{\sin^2 x \cos^2 x}{(\sin^3 x + \cos^3 x)^2} \,dx \\
+&= \pi \int_0^{\frac{\pi}{2}} \frac{\tan^2 x \sec^2 x}{(\tan^3 x + 1)^2} \,dx
+\end{align*}
+作换元，令 $t = \tan x$，则 $dt = \sec^2 x \,dx$。当 $x = 0$ 时，$t = 0$；当 $x \to \frac{\pi}{2}^-$ 时，$t \to +\infty$。
+代入积分得：
+\begin{align*}
+I &= \pi \int_0^{\infty} \frac{t^2}{(t^3 + 1)^2} \,dt \\
+&= \frac{\pi}{3} \int_0^{\infty} \frac{1}{(t^3 + 1)^2} \,d(t^3 + 1) \\
+&= \frac{\pi}{3} \left[ -(t^3 + 1)^{-1} \right]_0^{\infty} \\
+&= \frac{\pi}{3} (0 - (-1)) \\
+&= \frac{\pi}{3}
+\end{align*}
+\end{solution}
+
+\question
+计算定积分：
+\[
+\int_0^{\frac{\pi}{2}} \frac{\sin x + 1}{\sin 2x + 1} \,dx
+\]
+\begin{solution}
+设 $I = \int_0^{\frac{\pi}{2}} \frac{\sin x + 1}{\sin 2x + 1} \,dx$。注意到分母 $\sin 2x + 1 = (\sin x + \cos x)^2$。
+利用定积分的区间再现公式 $\int_0^{\frac{\pi}{2}} f(x) \,dx = \int_0^{\frac{\pi}{2}} f\left(\frac{\pi}{2} - x\right) \,dx$，得：
+\[
+I = \int_0^{\frac{\pi}{2}} \frac{\cos x + 1}{(\sin x + \cos x)^2} \,dx
+\]
+将两式相加，得：
+\begin{align*}
+2I &= \int_0^{\frac{\pi}{2}} \frac{\sin x + \cos x + 2}{(\sin x + \cos x)^2} \,dx \\
+&= \int_0^{\frac{\pi}{2}} \frac{1}{\sin x + \cos x} \,dx + 2\int_0^{\frac{\pi}{2}} \frac{1}{(\sin x + \cos x)^2} \,dx
+\end{align*}
+两边除以 $2$，并利用辅助角公式 $\sin x + \cos x = \sqrt{2}\sin\left(x + \frac{\pi}{4}\right)$：
+\begin{align*}
+I &= \frac{1}{2} \int_0^{\frac{\pi}{2}} \frac{1}{\sqrt{2}\sin\left(x + \frac{\pi}{4}\right)} \,dx + \int_0^{\frac{\pi}{2}} \frac{1}{2\sin^2\left(x + \frac{\pi}{4}\right)} \,dx \\
+&= \frac{\sqrt{2}}{4} \int_0^{\frac{\pi}{2}} \csc\left(x + \frac{\pi}{4}\right) \,dx + \frac{1}{2} \int_0^{\frac{\pi}{2}} \csc^2\left(x + \frac{\pi}{4}\right) \,dx
+\end{align*}
+分别求原函数并代入上下限：
+\begin{align*}
+I &= \left[ -\frac{\sqrt{2}}{4} \ln \left|\csc\left(x + \frac{\pi}{4}\right) + \cot\left(x + \frac{\pi}{4}\right)\right| - \frac{1}{2}\cot\left(x + \frac{\pi}{4}\right) \right]_0^{\frac{\pi}{2}} \\
+&= \left( -\frac{\sqrt{2}}{4} \ln \left|\sqrt{2} - 1\right| - \frac{1}{2}(-1) \right) - \left( -\frac{\sqrt{2}}{4} \ln \left|\sqrt{2} + 1\right| - \frac{1}{2}(1) \right) \\
+&= 1 + \frac{\sqrt{2}}{4} \ln \left(\frac{\sqrt{2} + 1}{\sqrt{2} - 1}\right) \\
+&= 1 + \frac{\sqrt{2}}{4} \ln \left(\left(\sqrt{2} + 1\right)^2\right) \\
+&= 1 + \frac{\sqrt{2}}{4} \ln \left(3 + 2\sqrt{2}\right)
+\end{align*}
 \end{solution}
 %piecewise/floor func
     \question

@@ -2324,6 +2324,63 @@ A_k + B_k = \begin{pmatrix} 1-k & k+1 \\ k-1 & k+3 \end{pmatrix}
 \end{solution}
 \end{parts}
 
+\question
+设 $A = \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix}$ 且 $B = \begin{pmatrix} 1 & 1 \\ 0 & a \end{pmatrix}$，其中 $a \neq 1$。
+\begin{parts}
+\part 求 $A^2, A^n$。
+\begin{solution}
+由矩阵乘法可得：
+\begin{align*}
+A^2 &= \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a^2 & -a-1 \\ 0 & 1 \end{pmatrix}
+\end{align*}
+继续计算 $A^3$：
+\begin{align*}
+A^3 &= A^2 A \\
+&= \begin{pmatrix} a^2 & -a-1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a^3 & -a^2-a-1 \\ 0 & 1 \end{pmatrix}
+\end{align*}
+由此猜想，对于正整数 $n$，有：
+\[
+A^n = \begin{pmatrix} a^n & -(1 + a + a^2 + \dots + a^{n-1}) \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a^n & -\frac{a^n - 1}{a - 1} \\ 0 & 1 \end{pmatrix}
+\]
+下面用数学归纳法证明：
+当 $n = 1$ 时，$-\frac{a^1 - 1}{a - 1} = -1$，结论成立。
+假设当 $n = k$（$k \ge 1$）时结论成立，即 $A^k = \begin{pmatrix} a^k & -\frac{a^k - 1}{a - 1} \\ 0 & 1 \end{pmatrix}$。
+则当 $n = k + 1$ 时：
+\begin{align*}
+A^{k+1} &= A^k A \\
+&= \begin{pmatrix} a^k & -\frac{a^k - 1}{a - 1} \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a^{k+1} & -a^k - \frac{a^k - 1}{a - 1} \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a^{k+1} & -\frac{a^{k+1} - a^k + a^k - 1}{a - 1} \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a^{k+1} & -\frac{a^{k+1} - 1}{a - 1} \\ 0 & 1 \end{pmatrix}
+\end{align*}
+故对所有正整数 $n$，均有 $A^n = \begin{pmatrix} a^n & -\frac{a^n - 1}{a - 1} \\ 0 & 1 \end{pmatrix}$。
+\end{solution}
+
+\part 由此证明 $A^n + B^n = (1 + a^n)I$。
+\begin{solution}
+注意到 $A + B = \begin{pmatrix} a & -1 \\ 0 & 1 \end{pmatrix} + \begin{pmatrix} 1 & 1 \\ 0 & a \end{pmatrix} = \begin{pmatrix} a+1 & 0 \\ 0 & a+1 \end{pmatrix} = (a+1)I$，
+因此 $B = (a+1)I - A$。
+也可以直接观察矩阵 $B$ 的结构，设 $P = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$，容易验证 $P^2 = I$ 且 $B = P A P$（或直接由相似/归纳法计算 $B^n$）：
+\begin{align*}
+B^2 &= \begin{pmatrix} 1 & 1 \\ 0 & a \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & a \end{pmatrix} = \begin{pmatrix} 1 & 1+a \\ 0 & a^2 \end{pmatrix}
+\end{align*}
+同理，由数学归纳法易得：
+\[
+B^n = \begin{pmatrix} 1 & \frac{a^n - 1}{a - 1} \\ 0 & a^n \end{pmatrix}
+\]
+将 $A^n$ 与 $B^n$ 相加，得：
+\begin{align*}
+A^n + B^n &= \begin{pmatrix} a^n & -\frac{a^n - 1}{a - 1} \\ 0 & 1 \end{pmatrix} + \begin{pmatrix} 1 & \frac{a^n - 1}{a - 1} \\ 0 & a^n \end{pmatrix} \\
+&= \begin{pmatrix} a^n + 1 & 0 \\ 0 & 1 + a^n \end{pmatrix} \\
+&= (1 + a^n) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\
+&= (1 + a^n)I
+\end{align*}
+得证。
+\end{solution}
+\end{parts}
+
     \question 证明对所有整数 $n \ge 1$, 有
     \[
     (a+b)^n = \comb{n}{0} a^n + \comb{n}{1} a^{n-1}b + \comb{n}{2} a^{n-2}b^2 + \dots + \comb{n}{n} b^n.
